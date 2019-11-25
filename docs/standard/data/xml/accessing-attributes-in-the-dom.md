@@ -8,12 +8,12 @@ dev_langs:
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 272c224c8a1c5061392856685f374237f8a10579
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 9b456dc407f634e7f40f69bbac9b6d932f1f4420
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956871"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350709"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Accès aux attributs dans le DOM
 
@@ -28,7 +28,6 @@ Si vous voulez que tous les attributs d’un nœud d’élément soient inséré
 L’exemple de code suivant montre comment extraire une collection d’attributs et, à l’aide de la méthode **Count** pour l’index de boucle, comment itérer sur cette collection. Le code montre ensuite comment extraire un attribut unique de la collection et afficher sa valeur.
 
 ```vb
-Imports System
 Imports System.IO
 Imports System.Xml
 
@@ -147,7 +146,6 @@ Comme **XmlAttributeCollection** est une collection et peut faire l’objet d’
 Option Explicit On
 Option Strict On
 
-Imports System
 Imports System.IO
 Imports System.Xml
 
@@ -197,7 +195,6 @@ public class Sample
 Pour extraire un seul nœud d'attribut d'un élément, la méthode <xref:System.Xml.XmlElement.GetAttributeNode%2A?displayProperty=nameWithType> est utilisée. Elle retourne un objet de type **XmlAttribute**. Une fois que vous disposez de **XmlAttribute**, toutes les méthodes et propriétés disponibles dans la classe <xref:System.Xml.XmlAttribute?displayProperty=nameWithType> sont disponibles sur cet objet, comme la recherche de **OwnerElement**.
 
 ```vb
-Imports System
 Imports System.IO
 Imports System.Xml
 

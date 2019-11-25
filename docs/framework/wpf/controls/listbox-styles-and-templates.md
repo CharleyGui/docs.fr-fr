@@ -9,15 +9,15 @@ helpviewer_keywords:
 - parts [WPF], ListBox
 - ListBox [WPF], styles and templates
 ms.assetid: fc5764cb-c27b-495b-88d4-d969a8213ccb
-ms.openlocfilehash: 279683752e6767bbf3e5bc359ec1e72193602c00
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: cb7043a21020193a4b2a2569ec610f311834a698
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459297"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283751"
 ---
 # <a name="listbox-styles-and-templates"></a>Styles et modèles ListBox
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ListBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.ListBox>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="listbox-parts"></a>Parties de ListBox  
  Le contrôle <xref:System.Windows.Controls.ListBox> n’a pas de parties nommées.  
@@ -43,7 +43,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
-|Disabled|CommonStates|L’élément est désactivé.|  
+|Désactivé|CommonStates|L’élément est désactivé.|  
 |Avec focus|FocusStates|L’élément a le focus.|  
 |Sans focus|FocusStates|L’élément n’a pas le focus.|  
 |Non sélectionné|SelectionStates|L’élément n’est pas sélectionné.|  
@@ -71,4 +71,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

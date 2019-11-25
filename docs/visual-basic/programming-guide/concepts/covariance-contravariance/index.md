@@ -1,13 +1,13 @@
 ---
-title: Covariance et contravariance (Visual Basic)
+title: Covariance et contravariance
 ms.date: 07/20/2015
 ms.assetid: 59224c46-9931-466b-8c6e-3648c3e609c6
-ms.openlocfilehash: 8315a272aca891820f7349d854a16375abdae900
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a75970d98890cb1fb363d4672bd90d376bccf89c
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524251"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352148"
 ---
 # <a name="covariance-and-contravariance-visual-basic"></a>Covariance et contravariance (Visual Basic)
 
@@ -79,7 +79,7 @@ Shared Sub Test()
 End Sub
 ```
 
-Dans .NET Framework 4 ou version ultérieure, Visual Basic prend en charge la covariance et la contravariance dans les interfaces et les délégués génériques, et permet la conversion implicite de paramètres de type générique. Pour plus d’informations, consultez [Variance dans les interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) et [Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
+In .NET Framework 4 or later, Visual Basic supports covariance and contravariance in generic interfaces and delegates and allows for implicit conversion of generic type parameters. Pour plus d’informations, consultez [Variance dans les interfaces génériques (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md) et [Variance dans les délégués (Visual Basic)](../../../../visual-basic/programming-guide/concepts/covariance-contravariance/variance-in-delegates.md).
 
 L’exemple de code suivant illustre la conversion de références implicite pour les interfaces génériques.
 

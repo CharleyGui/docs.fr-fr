@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : écrire des messages de journal (Visual Basic)'
+title: 'Comment : écrire des messages de journal'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - My.Application.Log object, writing log messages
 ms.assetid: 972a3e0c-2996-4623-a7a9-d7ebc4d207f8
-ms.openlocfilehash: 007d08917ed5ecae6889d03d820d48e4695c9344
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: 38570047db48e009aea2af376304430db1ec29f4
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57676120"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352054"
 ---
-# <a name="how-to-write-log-messages-visual-basic"></a>Procédure : écrire des messages de journal (Visual Basic)
+# <a name="how-to-write-log-messages-visual-basic"></a>Comment : écrire des messages de journal (Visual Basic)
 
 Vous pouvez utiliser les objets `My.Application.Log` et `My.Log` pour enregistrer des informations sur votre application. Cet exemple montre comment utiliser la méthode `My.Application.Log.WriteEntry` pour enregistrer des informations de traçage.
 
-Pour journaliser des informations sur les exceptions, utilisez la méthode `My.Application.Log.WriteException`. Voir [Guide pratique pour journaliser des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
+Pour enregistrer des informations sur les exceptions, utilisez la méthode `My.Application.Log.WriteException`. Consultez [Guide pratique pour enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md).
 
 ## <a name="example"></a>Exemple
 
@@ -33,7 +33,7 @@ Vérifiez que les données que vous écrivez dans le journal n’incluent pas d�
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteEntry%2A>
 - <xref:Microsoft.VisualBasic.Logging.Log.WriteException%2A>
 - [Utilisation des journaux des applications](../../../../visual-basic/developing-apps/programming/log-info/working-with-application-logs.md)
-- [Guide pratique pour journaliser des exception](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
-- [Procédure pas à pas : Détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : Modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
-- [Procédure pas à pas : Filtrage de la sortie de My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)
+- [Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)
+- [Procédure pas à pas : détermination de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-determining-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : modification de l’emplacement des informations My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-changing-where-my-application-log-writes-information.md)
+- [Procédure pas à pas : filtrage de la sortie de My.Application.Log](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md)

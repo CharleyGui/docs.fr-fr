@@ -1,5 +1,5 @@
 ---
-title: '>> (Visual Basic), opérateur'
+title: '>> opérateur'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.>>
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - operator >>
 - right shift operators [Visual Basic]
 ms.assetid: 054dc6a6-47d9-47ef-82da-cfa2b59fbf8f
-ms.openlocfilehash: 337d651e831dc2ab132056f6e9a1f2b5300bf7f8
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: cabf8c569435cc0fc98282f5e8f5fd410e6708dc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701330"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347821"
 ---
-# <a name="-operator-visual-basic"></a>> >, opérateur (Visual Basic)
-Effectue un décalage arithmétique vers la droite sur un modèle binaire.  
+# <a name="-operator-visual-basic"></a>>> Operator (Visual Basic)
+Performs an arithmetic right shift on a bit pattern.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,63 +28,63 @@ result = pattern >> amount
   
 ## <a name="parts"></a>Composants  
  `result`  
- Obligatoire. Valeur numérique intégrale. Résultat de l’évolution du modèle binaire. Le type de données est le même que celui `pattern`de.  
+ Requis. Integral numeric value. The result of shifting the bit pattern. The data type is the same as that of `pattern`.  
   
  `pattern`  
- Obligatoire. Expression numérique intégrale. Modèle binaire à décaler. Le type de données doit être un type intégral`SByte`( `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, ou `ULong`).  
+ Requis. Integral numeric expression. The bit pattern to be shifted. The data type must be an integral type (`SByte`, `Byte`, `Short`, `UShort`, `Integer`, `UInteger`, `Long`, or `ULong`).  
   
  `amount`  
- Obligatoire. Expression numérique. Nombre de bits de décalage du modèle binaire. Le type de données doit `Integer` être ou étendu `Integer`à.  
+ Requis. Numeric expression. The number of bits to shift the bit pattern. The data type must be `Integer` or widen to `Integer`.  
   
 ## <a name="remarks"></a>Notes  
- Les décalages arithmétiques ne sont pas circulaires, ce qui signifie que les bits décalés d’une extrémité du résultat ne sont pas réintroduits à l’autre extrémité. Dans un décalage arithmétique vers la droite, les bits décalés au-delà de la position du bit le plus à droite sont ignorés, et le bit le plus à gauche (signe) est propagé dans les positions de bits libérées à gauche. Cela signifie que si `pattern` a une valeur négative, les positions libérées sont définies sur un. dans le cas contraire, elles ont la valeur zéro.  
+ Arithmetic shifts are not circular, which means the bits shifted off one end of the result are not reintroduced at the other end. In an arithmetic right shift, the bits shifted beyond the rightmost bit position are discarded, and the leftmost (sign) bit is propagated into the bit positions vacated at the left. This means that if `pattern` has a negative value, the vacated positions are set to one; otherwise they are set to zero.  
   
- Notez que les types de données `Byte`, `UShort`, `UInteger` et `ULong` ne sont pas signés, ce qui signifie qu’il n’y a aucun bit de signe à propager. Si `pattern` est de type non signé, les positions libérées sont toujours définies sur zéro.  
+ Note that the data types `Byte`, `UShort`, `UInteger`, and `ULong` are unsigned, so there is no sign bit to propagate. If `pattern` is of any unsigned type, the vacated positions are always set to zero.  
   
- Pour empêcher le décalage par plus de bits que le résultat ne peut en contenir, Visual Basic masque la valeur de `amount` avec un masque de taille correspondant au type de données de `pattern`. Le binaire et de ces valeurs est utilisé pour la valeur de décalage. Les masques de taille sont les suivants :  
+ To prevent shifting by more bits than the result can hold, Visual Basic masks the value of `amount` with a size mask corresponding to the data type of `pattern`. The binary AND of these values is used for the shift amount. The size masks are as follows:  
   
-|Type de données de `pattern`|Masque de taille (décimal)|Masque de taille (hexadécimal)|  
+|Data type of `pattern`|Size mask (decimal)|Size mask (hexadecimal)|  
 |----------------------------|---------------------------|-------------------------------|  
 |`SByte`, `Byte`|7|&H00000007|  
 |`Short`, `UShort`|15|&H0000000F|  
 |`Integer`, `UInteger`|31|&H0000001F|  
 |`Long`, `ULong`|63|&H0000003F|  
   
- Si `amount` est égal à zéro, la valeur de `result` est identique à la valeur de `pattern`. Si `amount` est négatif, il est considéré comme une valeur non signée et masqué avec le masque de taille approprié.  
+ If `amount` is zero, the value of `result` is identical to the value of `pattern`. If `amount` is negative, it is taken as an unsigned value and masked with the appropriate size mask.  
   
- Les décalages arithmétiques ne génèrent jamais d’exceptions de dépassement de capacité.  
+ Arithmetic shifts never generate overflow exceptions.  
   
 ## <a name="overloading"></a>Surcharge  
- L’opérateur `>>` peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The `>>` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise l’opérateur `>>` pour effectuer des décalages arithmétiques vers la droite sur les valeurs intégrales. Le résultat a toujours le même type de données que celui de l’expression en cours de décalage.  
+ The following example uses the `>>` operator to perform arithmetic right shifts on integral values. The result always has the same data type as that of the expression being shifted.  
   
  [!code-vb[VbVbalrOperators#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#14)]  
   
- Les résultats de l’exemple précédent sont les suivants :  
+ The results of the preceding example are as follows:  
   
-- `result1` est 2560 (0000 1010 0000 0000).  
+- `result1` is 2560 (0000 1010 0000 0000).  
   
-- `result2` est 160 (0000 0000 1010 0000).  
+- `result2` is 160 (0000 0000 1010 0000).  
   
-- `result3` correspond à 2 (0000 0000 0000 0010).  
+- `result3` is 2 (0000 0000 0000 0010).  
   
-- `result4` est 640 (0000 0010 1000 0000).  
+- `result4` is 640 (0000 0010 1000 0000).  
   
-- `result5` correspond à 0 (décalage de 15 places à droite).  
+- `result5` is 0 (shifted 15 places to the right).  
   
- Le nombre de décalages pour `result4` est calculé comme 18 et 15, ce qui équivaut à 2.  
+ The shift amount for `result4` is calculated as 18 AND 15, which equals 2.  
   
- L’exemple suivant montre des décalages arithmétiques sur une valeur négative.  
+ The following example shows arithmetic shifts on a negative value.  
   
  [!code-vb[VbVbalrOperators#55](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#55)]  
   
- Les résultats de l’exemple précédent sont les suivants :  
+ The results of the preceding example are as follows:  
   
-- `negresult1` est-512 (1111 1110 0000 0000).  
+- `negresult1` is -512 (1111 1110 0000 0000).  
   
-- `negresult2` est égal à-1 (le bit de signe est propagé).  
+- `negresult2` is -1 (the sign bit is propagated).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -93,4 +93,4 @@ result = pattern >> amount
 - [>>= (opérateur)](../../../visual-basic/language-reference/operators/right-shift-assignment-operator.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Opérateurs arithmétiques dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

@@ -12,17 +12,17 @@ helpviewer_keywords:
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 5b25d35f9c356b6d55806611a3ce39d193b42586
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: bb231df9ed33b89fa15cde998379b2964cf32ff9
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491028"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204769"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 Des données similaires peuvent souvent être gérées plus efficacement quand elles sont stockées et manipulées en tant que collection. Vous pouvez utiliser la classe <xref:System.Array?displayProperty=nameWithType>, ou les classes qui se trouvent dans les espaces de noms <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent> et System.Collections.Immutable, pour ajouter, supprimer et modifier des éléments individuels ou une série d’éléments dans une collection.  
   
- Il existe deux principaux types de collections : les collections génériques et non génériques. Les collections génériques ont été ajoutées au .NET Framework 2.0 et fournissent des collections de type sécurisé au moment de la compilation. Pour cette raison, les collections génériques offrent généralement de meilleures performances. Les collections génériques acceptent un paramètre de type lorsqu'elles sont construites, et ne nécessitent pas de transtypage du type <xref:System.Object> quand vous ajoutez ou supprimez des éléments de la collection.  De plus, la plupart des collections génériques sont prises en charge par les applications du [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)]. Les collections non génériques stockent les éléments en tant que <xref:System.Object>, nécessitent un transtypage, et la plupart ne sont pas prises en charge pour le développement d'applications [!INCLUDE[win8_appstore_long](../../../includes/win8-appstore-long-md.md)]. Cependant, vous pouvez rencontrer ces collections non génériques dans du code plus ancien.  
+ Il existe deux principaux types de collections : les collections génériques et non génériques. Les collections génériques ont été ajoutées au .NET Framework 2.0 et fournissent des collections de type sécurisé au moment de la compilation. Pour cette raison, les collections génériques offrent généralement de meilleures performances. Les collections génériques acceptent un paramètre de type lorsqu'elles sont construites, et ne nécessitent pas de transtypage du type <xref:System.Object> quand vous ajoutez ou supprimez des éléments de la collection.  In addition, most generic collections are supported in Windows Store apps. Non-generic collections store items as <xref:System.Object>, require casting, and most are not supported for Windows Store app development. Cependant, vous pouvez rencontrer ces collections non génériques dans du code plus ancien.  
   
  À compter de .NET Framework 4, les collections de l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection de plusieurs threads. Les classes de collection immuable de l’espace de noms System.Collections.Immutable ([NuGet package](https://www.nuget.org/packages/System.Collections.Immutable)) sont thread-safe, car les opérations sont effectuées sur une copie de la collection d’origine et celle-ci ne peut donc pas être modifiée.  
 
@@ -86,7 +86,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|  
   
 <a name="BKMK_Reference"></a>   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

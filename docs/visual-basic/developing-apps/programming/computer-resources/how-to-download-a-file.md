@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : télécharger un fichier en Visual Basic'
+title: 'Comment : télécharger un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - downloading Internet resources [Visual Basic], files
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - files [Visual Basic], downloading
 - files [Visual Basic], transferring
 ms.assetid: ac479f81-c0e2-4b99-af73-217f446b73da
-ms.openlocfilehash: 4dd45ef70dbe3b1949e6d787748bbb27bb88d52c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 4923feb46ff638de9514a4d70fc00367491a6f44
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046613"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345623"
 ---
-# <a name="how-to-download-a-file-in-visual-basic"></a>Procédure : télécharger un fichier en Visual Basic
+# <a name="how-to-download-a-file-in-visual-basic"></a>Guide pratique pour télécharger un fichier en Visual Basic
 
 Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A> pour télécharger un fichier distant et le stocker à un emplacement spécifique. Si le paramètre `ShowUI` a la valeur `True`, une boîte de dialogue s’affiche pour indiquer la progression du téléchargement et permettre aux utilisateurs d’annuler l’opération. Par défaut, les fichiers existants ayant le même nom ne sont pas remplacés. Si vous souhaitez remplacer les fichiers existants, affectez la valeur `True` au paramètre `overwrite`.
 
@@ -59,5 +59,5 @@ Les conditions ci-dessous peuvent générer une exception.
 
 - <xref:Microsoft.VisualBasic.Devices.Network>
 - <xref:Microsoft.VisualBasic.Devices.Network.DownloadFile%2A>
-- [Guide pratique pour charger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)
-- [Guide pratique pour analyser des chemins](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Guide pratique : charger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-upload-a-file.md)
+- [Guide pratique : analyser des chemins d’accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

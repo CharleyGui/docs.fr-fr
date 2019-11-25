@@ -13,12 +13,12 @@ helpviewer_keywords:
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 4cf0ffae2c5803324d4941581855d5dc10224e07
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e287d3c73df247febf99967a9dc4b0413f01def0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795224"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353848"
 ---
 # <a name="decrypting-data"></a>Déchiffrement de données
 
@@ -43,12 +43,11 @@ CryptoStream cryptStream = new CryptoStream(myStream, rmCrypto.CreateDecryptor(K
 L'exemple suivant montre l'intégralité des processus de création de flux, de déchiffrement de flux, de lecture depuis un flux et de fermeture de flux. Un objet <xref:System.Net.Sockets.TcpListener> est créé. Cet objet initialise un flux de réseau quand une connexion est établie avec l’objet d’écoute. Le flux de réseau est ensuite déchiffré à l'aide de la classe **CryptoStream** et de la classe **RijndaelManaged** . Cet exemple suppose que les valeurs de la clé et du vecteur d'initialisation ont été transférées ou qu'elles ont fait l'objet d'un accord. Il ne montre pas le code nécessaire pour chiffrer et transférer ces valeurs.
 
 ```vb
-Imports System
-Imports System.Net.Sockets
-Imports System.Threading
 Imports System.IO
 Imports System.Net
+Imports System.Net.Sockets
 Imports System.Security.Cryptography
+Imports System.Threading
 
 Module Module1
     Sub Main()
@@ -105,11 +104,11 @@ End Module
 
 ```csharp
 using System;
-using System.Net.Sockets;
-using System.Threading;
 using System.IO;
 using System.Net;
+using System.Net.Sockets;
 using System.Security.Cryptography;
+using System.Threading;
 
 class Class1
 {
@@ -175,9 +174,9 @@ Pour que l'exemple précédent fonctionne, une connexion chiffrée doit être é
 
 ## <a name="asymmetric-decryption"></a>Déchiffrement asymétrique
 
-En règle générale, une partie (partie A) génère à la fois une clé publique et une clé privée, et stocke ces clés dans la mémoire ou dans un conteneur de clé de chiffrement. La partie A envoie ensuite la clé publique à une autre partie (partie B). À l’aide de la clé publique, la partie B chiffre les données et envoie les données au tiers A. Après avoir reçu les données, le tiers A les déchiffre à l’aide de la clé privée qui correspond. Le déchiffrement réussira uniquement si la partie A utilise la clé privée qui correspond à la clé publique utilisée par la partie B pour chiffrer les données.
+En règle générale, une partie (partie A) génère à la fois une clé publique et une clé privée, et stocke ces clés dans la mémoire ou dans un conteneur de clé de chiffrement. La partie A envoie ensuite la clé publique à une autre partie (partie B). Using the public key, party B encrypts data and sends the data back to party A. After receiving the data, party A decrypts it using the private key that corresponds. Le déchiffrement réussira uniquement si la partie A utilise la clé privée qui correspond à la clé publique utilisée par la partie B pour chiffrer les données.
 
-Pour plus d’informations sur la façon de stocker une clé asymétrique dans un conteneur de clé de chiffrement sécurisé et comment récupérer la clé asymétrique, consultez [Comment : Store les clés asymétriques dans un conteneur de clé](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
+Pour plus d’informations sur le stockage des clés asymétriques dans un conteneur de clé de chiffrement sécurisé et sur la récupération des clés asymétriques, consultez [How to: Store Asymmetric Keys in a Key Container](../../../docs/standard/security/how-to-store-asymmetric-keys-in-a-key-container.md).
 
 L'exemple suivant montre le déchiffrement de deux tableaux d'octets qui représentent une clé symétrique et un vecteur d'initialisation. Pour plus d’informations sur l’extraction de la clé publique asymétrique de l’objet <xref:System.Security.Cryptography.RSACryptoServiceProvider> dans un format que vous pouvez facilement envoyer à un tiers, consultez [Encrypting Data](../../../docs/standard/security/encrypting-data.md).
 
@@ -209,4 +208,4 @@ symmetricIV = rsa.Decrypt(encryptedSymmetricIV , false);
 
 - [Génération de clés pour le chiffrement et le déchiffrement](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
 - [Chiffrement de données](../../../docs/standard/security/encrypting-data.md)
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)

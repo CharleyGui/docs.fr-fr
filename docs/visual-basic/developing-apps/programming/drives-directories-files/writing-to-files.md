@@ -1,5 +1,5 @@
 ---
-title: Écriture dans des fichiers en Visual Basic
+title: Écriture dans des fichiers
 ms.date: 07/20/2015
 helpviewer_keywords:
 - I/O [Visual Basic], writing to files
@@ -8,17 +8,19 @@ helpviewer_keywords:
 - writing to files [Visual Basic]
 - Visual Basic, writing to files
 ms.assetid: ac6fb453-0d6c-4ce4-93b4-1bbcd06de83e
-ms.openlocfilehash: 92e9d717eb52fa393d9215068d8fe70c84f613ae
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 8511a96c7abcc28997c293a09ef10bad543dc261
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33588117"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352136"
 ---
 # <a name="writing-to-files-in-visual-basic"></a>Écriture dans des fichiers en Visual Basic
+
 Cette section explique comment effectuer des tâches qui impliquent l’écriture dans des fichiers.  
   
 ## <a name="in-this-section"></a>Dans cette section  
+
  [Guide pratique : insérer du texte dans des fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files.md)  
  Montre comment écrire dans des fichiers texte.  
   
@@ -34,7 +36,8 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  [Guide pratique : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
  Montre comment écrire dans un fichier avec un objet <xref:System.IO.StreamWriter?displayProperty=nameWithType>.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
+
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem`, ses méthodes et ses propriétés.  
   
@@ -48,6 +51,7 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  Décrit la méthode `WriteAllText`.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
+
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Explique comment effectuer les tâches qui impliquent la lecture de fichiers.  
   

@@ -15,12 +15,12 @@ helpviewer_keywords:
 - binary resources files
 - embedding files in runtime binary executable
 ms.assetid: 8ef159de-b660-4bec-9213-c3fbc4d1c6f4
-ms.openlocfilehash: 4605c7361705ba37091eb2e34d8425810854973e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5fc2bcb03ae6814d69e229ba083c1d5c44ae8ff3
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104907"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204615"
 ---
 # <a name="resgenexe-resource-file-generator"></a>Resgen.exe (Resource File Generator)
 Le Générateur de fichiers de ressources (Resgen.exe) convertit les fichiers texte (.txt ou .restext) et les fichiers de format de ressource XML (.resx) en fichiers binaires Common Language Runtime (.resources) pouvant être incorporés dans un exécutable binaire runtime ou un assembly satellite. (Consultez [Création de fichiers de ressources](../resources/creating-resource-files-for-desktop-apps.md).)  
@@ -33,13 +33,13 @@ Le Générateur de fichiers de ressources (Resgen.exe) convertit les fichiers te
   
 - Il convertit les fichiers .resx en fichiers .txt ou .resources ;  
   
-- Il extrait les ressources de chaîne d'un assembly dans un fichier .resw adapté pour une utilisation dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] ;  
+- Extracts the string resources from an assembly into a .resw file that is suitable for use in a Windows 8.x Store app.  
   
 - Il crée une classe fortement typée qui permet d'accéder aux ressources individuelles nommées et à l'instance <xref:System.Resources.ResourceManager>.  
   
  Si Resgen.exe échoue pour une raison quelconque, la valeur de retour sera -1.  
   
- Pour obtenir de l'aide concernant Resgen, exe, vous pouvez utiliser la commande suivante, sans spécifier d'options, pour afficher les options et une syntaxe de commande relatives à Resgen.exe :  
+ To get help with Resgen.exe, you can use the following command, with no options specified, to display the command syntax and options for Resgen.exe:  
   
 ```console  
 resgen  
@@ -51,7 +51,7 @@ resgen
 resgen /?  
 ```  
   
- Si vous utilisez Resgen.exe pour générer des fichiers .resources binaires, vous pouvez utiliser un compilateur de langage pour incorporer les fichiers binaires dans des assemblys exécutables, ou vous pouvez utiliser [Assembly Linker (Al.exe)](al-exe-assembly-linker.md) pour les compiler dans des assemblys satellites.  
+ If you use Resgen.exe to generate binary .resources files, you can use a language compiler to embed the binary files into executable assemblies, or you can use the [Assembly Linker (Al.exe)](al-exe-assembly-linker.md) to compile them into satellite assemblies.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
@@ -75,9 +75,9 @@ resgen filename.extension [outputDirectory]
 |`useSourcePath`|Précise que le répertoire actif du fichier d’entrée sera utilisé pour résoudre les chemins d’accès relatifs du fichier.|  
 |`/compile`|Permet de spécifier plusieurs fichiers .resx ou texte à convertir en différents fichiers .resources en une seule opération globale. Si vous omettez cette option, vous ne pouvez spécifier qu’un seul argument de fichier d’entrée. Les fichiers de sortie sont nommés *nom_fichier*.resources.<br /><br /> Cette option ne peut pas être utilisée avec l'option `/str:`.<br /><br /> Pour plus d’informations sur cette option, consultez [Compilation ou conversion de plusieurs fichiers](#Multiple) plus loin dans cette rubrique.|  
 |`/r:` `assembly`|Référence les métadonnées à partir de l'assembly spécifié. Cette option est utilisée lors de la conversion de fichiers .resx et permet à Resgen.exe de sérialiser ou de désérialiser des ressources d'objet. Elle est semblable à `/reference:` ou aux options `/r:` des compilateurs C# et Visual Basic.|  
-|`filename.extension`|Spécifie le nom du fichier d'entrée à convertir. Si vous utilisez la première syntaxe de ligne de commande, plus longue, présentée avant ce tableau, `extension` doit être l'une des opérations suivantes :<br /><br /> .txt ou .restext<br /> Un fichier texte à convertir en fichier .resources ou .resx. Les fichiers texte ne peuvent comporter que des ressources de chaîne. Pour plus d’informations sur le format de fichier, consultez la section « Ressources dans les fichiers texte » de [Création de fichiers de ressources](../resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Un fichier de ressource XML à convertir en fichier .resources ou en fichier texte (.txt ou .restext).<br /><br /> .resources<br /> Un fichier de ressources binaire à convertir en fichier .resx ou en fichier texte (.txt ou .restext).<br /><br /> Si vous utilisez la deuxième syntaxe de ligne de commande, plus courte, présentée avant ce tableau, `extension` doit être la suivante :<br /><br /> .exe ou .dll<br /> Un assembly .NET Framework (fichier exécutable ou bibliothèque) dont les ressources de chaîne doivent être extraites dans un fichier .resw à utiliser dans le développement des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].|  
+|`filename.extension`|Spécifie le nom du fichier d'entrée à convertir. Si vous utilisez la première syntaxe de ligne de commande, plus longue, présentée avant ce tableau, `extension` doit être l'une des opérations suivantes :<br /><br /> .txt ou .restext<br /> Un fichier texte à convertir en fichier .resources ou .resx. Les fichiers texte ne peuvent comporter que des ressources de chaîne. Pour plus d’informations sur le format de fichier, consultez la section « Ressources dans les fichiers texte » de [Création de fichiers de ressources](../resources/creating-resource-files-for-desktop-apps.md).<br /><br /> .resx<br /> Un fichier de ressource XML à convertir en fichier .resources ou en fichier texte (.txt ou .restext).<br /><br /> .resources<br /> Un fichier de ressources binaire à convertir en fichier .resx ou en fichier texte (.txt ou .restext).<br /><br /> Si vous utilisez la deuxième syntaxe de ligne de commande, plus courte, présentée avant ce tableau, `extension` doit être la suivante :<br /><br /> .exe ou .dll<br /> A .NET Framework assembly (executable or library) whose string resources are to be extracted to a .resw file for use in developing Windows 8.x Store apps.|  
 |`outputFilename.extension`|Spécifie le nom et le type du fichier de ressources à créer.<br /><br /> Cet argument est facultatif lors de la conversion d'un fichier .txt, .restext ou .resx en un fichier .resources. Si vous ne spécifiez pas de valeur pour `outputFilename`, Resgen.exe ajoute une extension .resources à l'entrée `filename` et écrit le fichier dans le répertoire qui contient `filename,extension`.<br /><br /> L'argument `outputFilename.extension` est obligatoire lors d'une conversion à partir d'un fichier .resources. Spécifiez un nom de fichier avec l'extension .resx lors de la conversion d'un fichier .resources en fichier de ressources XML. Spécifiez un nom de fichier avec l'extension .txt ou .restext lors de la conversion d'un fichier .resources en fichier texte. Vous devez uniquement convertir un fichier .resources en fichier .txt lorsque le fichier .resources ne comporte que des valeurs de chaînes.|  
-|`outputDirectory`|Pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], spécifie le répertoire dans lequel un fichier .resw qui contient des ressources de chaîne dans `filename.extension` sera enregistré. `outputDirectory` doit déjà exister.|  
+|`outputDirectory`|For Windows 8.x Store apps, specifies the directory in which a .resw file that contains the string resources in `filename.extension` will be written. `outputDirectory` doit déjà exister.|  
 |`/str:` `language[,namespace[,classname[,filename]]]`|Crée un fichier de la classe de ressource fortement typée dans le langage de programmation spécifié dans l'option `language`. `language` peut être un des littéraux suivants :<br /><br /> -   Pour C# : `c#`, `cs` ou `csharp`.<br />-   Pour Visual Basic : `vb` ou `visualbasic`.<br />-   Pour VBScript : `vbs` ou `vbscript`.<br />-   Pour C++ : `c++`, `mc` ou `cpp`.<br />-   Pour JavaScript : `js`, `jscript` ou `javascript`.<br /><br /> L'option `namespace` permet de spécifier l'espace de noms par défaut du projet, l'option `classname` permet de spécifier le nom de la classe générée et l'option `filename` permet de spécifier le nom du fichier de classe.<br /><br /> Un seul fichier d'entrée est autorisé lorsque l'option `/str:` est utilisée, afin qu'il ne puisse pas être utilisé avec l'option `/compile`.<br /><br /> Si `namespace` est spécifié, mais que `classname` ne l'est pas, le nom de la classe est dérivé du nom de fichier de sortie (par exemple, les traits de soulignement sont substitués pour les périodes). Les ressources fortement typées peuvent ne pas fonctionner correctement en conséquence. Pour éviter ce problème, spécifiez à la fois le nom de la classe et le nom du fichier de sortie.<br /><br /> Pour plus d’informations sur cette option, consultez [Génération d’une classe de ressource fortement typée](#Strong) plus loin dans cette rubrique.|  
 |`/publicClass`|Crée une classe de ressource fortement typée en tant que classe publique. Par défaut, la classe de ressource en C# est `internal` et `Friend` en Visual Basic.<br /><br /> Cette option est ignorée si l'option `/str:` n'est pas utilisée.|  
   
@@ -178,7 +178,7 @@ resgen Resources.resx Resources.resources
   
  La syntaxe est la même que celle représentée dans la section précédente.  
   
- Il est également possible d'utiliser Resgen.exe pour convertir des ressources incorporées dans un assembly .Net Framework en un fichier .resw pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
+ In addition, you can use Resgen.exe to convert embedded resources in a .NET Framework assembly to a .resw file tor Windows 8.x Store apps.  
   
  La commande suivante lit un fichier de ressources binaire Resources.resources et crée un fichier de sortie XML nommé Resources.resx.  
   
@@ -215,10 +215,10 @@ resgen /compile StringResources.txt TableResources.resx ImageResources.resx
   
 <a name="Exporting"></a>   
 ### <a name="exporting-resources-to-a-resw-file"></a>Exportation de ressources vers un fichier .resw  
- Si vous développez une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], il est possible d'utiliser des ressources d'une application de bureau existante. Toutefois, les deux genres d'applications prennent en charge différents formats de fichier. Dans les applications de bureau, les ressources en texte (.txt ou .restext) ou les fichiers .resx sont compilés en fichiers binaires .resources. Dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], les fichiers .resw sont compilés en fichiers binaires PRI (Package Resource Index). Il est possible d'utiliser Resgen.exe pour combler ces différences en extrayant les ressources d'un fichier exécutable ou un assembly satellite, puis en les écrivant dans un ou plusieurs fichiers .resw qui peuvent être utilisés lors du développement d'une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].  
+ If you're developing a Windows 8.x Store app, you may want to use resources from an existing desktop app. Toutefois, les deux genres d'applications prennent en charge différents formats de fichier. Dans les applications de bureau, les ressources en texte (.txt ou .restext) ou les fichiers .resx sont compilés en fichiers binaires .resources. In Windows 8.x Store apps, .resw files are compiled into binary package resource index (PRI) files. You can use Resgen.exe to bridge this gap by extracting resources from an executable or a satellite assembly and writing them to one or more .resw files that can be used when developing a Windows 8.x Store app.  
   
 > [!IMPORTANT]
-> Visual Studio exécute automatiquement toutes les conversions nécessaires pour incorporer les ressources à une bibliothèque portable dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. L'utilisation directe de Resgen.exe pour convertir les ressources contenues dans un assembly en un fichier au format .resw format est intéressante uniquement pour les développeurs qui souhaitent développer une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] en dehors de Visual Studio.  
+> Visual Studio automatically handles all conversions necessary for incorporating the resources in a portable library into a Windows 8.x Store app. Using Resgen.exe directly to convert the resources in an assembly to .resw file format is of interest only to developers who want to develop a Windows 8.x Store app outside of Visual Studio.  
   
  La syntaxe pour générer des fichiers .resw depuis un assembly est :  
   
@@ -313,7 +313,7 @@ resgen inputFilename [outputFilename] /str:language[,namespace,[classname[,filen
   
  La classe de ressource fortement typée possède les entités suivantes :  
   
-- Un constructeur qui ne prend pas de paramètres et qui peut être utilisé pour instancier la classe de ressource fortement typée.  
+- A parameterless constructor, which can be used to instantiate the strongly typed resource class.  
   
 - Une propriété `static` (C#) ou `Shared` (Visual Basic) et accessible en lecture seule du `ResourceManager`, qui retourne l'instance du <xref:System.Resources.ResourceManager>, qui gère la ressource fortement typée.  
   

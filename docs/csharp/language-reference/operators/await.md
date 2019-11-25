@@ -1,19 +1,19 @@
 ---
 title: Opérateur await – Informations de référence sur C#
 ms.custom: seodec18
-ms.date: 08/30/2019
+ms.date: 11/08/2019
 f1_keywords:
 - await_CSharpKeyword
 helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 5ed9d467bcbfa37a9809a530d11b3692fd2b984e
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 36cb4a5def6b75281edbe878d89af0c18ab226ec
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036330"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140659"
 ---
 # <a name="await-operator-c-reference"></a>Opérateur await (informations de référence sur C#)
 
@@ -31,6 +31,8 @@ L’exemple précédent utilise la [méthode async `Main`](../../programming-gui
 Vous pouvez utiliser l’opérateur `await` uniquement dans une méthode, une [expression lambda](../../programming-guide/statements-expressions-operators/lambda-expressions.md) ou une [méthode anonyme](delegate-operator.md) modifiée par le mot clé [async](../keywords/async.md). Dans une méthode async, vous ne pouvez pas utiliser l’opérateur `await` dans le corps d’une fonction synchrone, à l’intérieur du bloc d’une [instruction lock](../keywords/lock-statement.md) et dans un contexte [unsafe](../keywords/unsafe.md).
 
 L’opérande de l’opérateur `await` est généralement un des types .NET suivants : <xref:System.Threading.Tasks.Task>, <xref:System.Threading.Tasks.Task%601>, <xref:System.Threading.Tasks.ValueTask> ou <xref:System.Threading.Tasks.ValueTask%601>. Cependant, n’importe quelle expression awaitable peut être l’opérande de l’opérateur `await`. Pour plus d’informations, consultez la section [Expressions awaitable](~/_csharplang/spec/expressions.md#awaitable-expressions) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
+
+À partir C# de 8,0, vous pouvez utiliser l’instruction `await foreach` pour consommer un flux de données asynchrone. Pour plus d’informations, consultez la section [Streams asynchrones](../../whats-new/csharp-8.md#asynchronous-streams) de l’article [Nouveautés de C# 8,0](../../whats-new/csharp-8.md) .
 
 Le type d’expression `await t` est `TResult` si le type d’expression `t` est <xref:System.Threading.Tasks.Task%601> ou <xref:System.Threading.Tasks.ValueTask%601>. Si le type de `t` est <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.ValueTask>, le type de `await t` est `void`. Dans les deux cas, si `t` lève une exception, `await t` lève à nouveau l’exception. Pour plus d’informations sur le gestion des exceptions, consultez la section [Exceptions dans les méthodes async](../keywords/try-catch.md#exceptions-in-async-methods) de l’article [Instruction try-catch](../keywords/try-catch.md).
 
@@ -53,3 +55,4 @@ Pour plus d’informations, consultez la section [Expressions await](~/_csharpla
 - [Programmation asynchrone](../../async.md)
 - [Async en détail](../../../standard/async-in-depth.md)
 - [Procédure pas à pas : accès au web avec async et await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Didacticiel : générer et utiliser des flux asynchrones à l’aide C# de 8,0 et .net Core 3,0](../../tutorials/generate-consume-asynchronous-stream.md)

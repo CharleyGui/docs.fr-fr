@@ -3,29 +3,29 @@ title: Types non managés - Référence C#
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 25aa42ba8c8f0023b4f818feb2edbb325f805fb6
-ms.sourcegitcommit: c70542d02736e082e8dac67dad922c19249a8893
+ms.openlocfilehash: 81eef59ceb20bcae6c749dd59578ce35da253826
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/05/2019
-ms.locfileid: "70374116"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204471"
 ---
 # <a name="unmanaged-types-c-reference"></a>Types non managés (référence C#)
 
-Un type est un **type non managé** s’il s’agit de l’un des types suivants :
+A type is an **unmanaged type** if it's any of the following types:
 
 - `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` ou `bool`
 - Tout type [enum](../keywords/enum.md)
 - Tout type [pointer](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- Tout type [struct](../keywords/struct.md) défini par l’utilisateur qui contient des champs de types non managés uniquement et C# , dans 7,3 et les versions antérieures, n’est pas un type construit (un type qui inclut au moins un argument de type)
+- Any user-defined [struct](../keywords/struct.md) type that contains fields of unmanaged types only and, in C# 7.3 and earlier, is not a constructed type (a type that includes at least one type argument)
 
-À compter de C# 7.3, vous pouvez utiliser la [`unmanaged`contrainte](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) pour spécifier qu’un paramètre de type est un type non managé « non-pointer ».
+Beginning with C# 7.3, you can use the [`unmanaged` constraint](../../programming-guide/generics/constraints-on-type-parameters.md#unmanaged-constraint) to specify that a type parameter is a non-pointer, non-nullable unmanaged type.
 
-À C# partir de 8,0, un type struct *construit* qui contient des champs de types non managés uniquement est également non managé, comme le montre l’exemple suivant :
+Beginning with C# 8.0, a *constructed* struct type that contains fields of unmanaged types only is also unmanaged, as the following example shows:
 
 [!code-csharp[unmanaged constructed types](~/samples/csharp/language-reference/builtin-types/UnmanagedTypes.cs#ProgramExample)]
 
-Un struct générique peut être la source des types construits non managés et non managés. L’exemple précédent définit un struct `Coords<T>` générique et présente les exemples de types construits non managés. L’exemple de n’est `Coords<object>`pas un type non managé. Elle n’est pas non plus gérée, car elle contient les `object` champs du type, qui ne sont pas non managés. Si vous souhaitez que *tous les* types construits soient des types non managés, `unmanaged` utilisez la contrainte dans la définition d’un struct générique :
+A generic struct may be the source of both unmanaged and not unmanaged constructed types. The preceding example defines a generic struct `Coords<T>` and presents the examples of unmanaged constructed types. The example of not an unmanaged type is `Coords<object>`. It's not unmanaged because it has the fields of the `object` type, which is not unmanaged. If you want *all* constructed types to be unmanaged types, use the `unmanaged` constraint in the definition of a generic struct:
 
 [!code-csharp[unmanaged constraint in type definition](~/samples/csharp/language-reference/builtin-types/UnmanagedTypes.cs#AlwaysUnmanaged)]
 

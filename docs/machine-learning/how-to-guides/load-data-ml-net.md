@@ -1,20 +1,22 @@
 ---
 title: Charger des données depuis des fichiers et d’autres sources
-description: Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
+description: Learn how to load data for processing and training into ML.NET using the API. Data is stored in files, databases, JSON, XML or in-memory collections.
 ms.date: 11/07/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to, title-hack-0625
-ms.openlocfilehash: 07b3e7f5302a03f5fa4c936679c8a3c00d19a7b0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 83aaae2d2e75b3076841750bf5d505390a538bc0
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740549"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344756"
 ---
 # <a name="load-data-from-files-and-other-sources"></a>Charger des données depuis des fichiers et d’autres sources
 
-Ce guide pratique vous montre comment charger des données à des fins de traitement et d’entraînement dans ML.NET. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
+Learn how to load data for processing and training into ML.NET using the API. Les données sont stockées à l’origine dans des fichiers ou d’autres sources de données, comme des bases de données, du JSON, du XML ou des collections en mémoire.
+
+If you're using Model Builder, see [Load training data into Model Builder](load-data-model-builder.md).
 
 ## <a name="create-the-data-model"></a>Créer le modèle de données
 
@@ -105,14 +107,14 @@ TextLoader textLoader = mlContext.Data.CreateTextLoader<HousingData>(separatorCh
 IDataView data = textLoader.Load("DataFolder/SubFolder1/1.txt", "DataFolder/SubFolder2/1.txt");
 ```
 
-## <a name="load-data-from-a-relational-database"></a>Charger des données à partir d’une base de données relationnelle
+## <a name="load-data-from-a-relational-database"></a>Load data from a relational database
 
-ML.NET prend en charge le chargement de données à partir de diverses bases de données relationnelles prises en charge par [`System.Data`](xref:System.Data) qui incluent SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2 et bien d’autres encore.
+ML.NET supports loading data from a variety of relational databases supported by [`System.Data`](xref:System.Data) that include SQL Server, Azure SQL Database, Oracle, SQLite, PostgreSQL, Progress, IBM DB2, and many more.
 
 > [!NOTE]
-> Pour utiliser `DatabaseLoader`, référencez le package NuGet [System. Data. SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) .
+> To use `DatabaseLoader`, reference the [System.Data.SqlClient](https://www.nuget.org/packages/System.Data.SqlClient) NuGet package.
 
-À partir d’une base de données avec une table nommée `House` et le schéma suivant :
+Given a database with a table named `House` and the following schema:
 
 ```SQL
 CREATE TABLE [House] (
@@ -130,14 +132,14 @@ Les données peuvent être modélisées par une classe comme `HouseData`.
 public class HouseData
 {
     public float Size { get; set; }
-    
+
     public float NumBed { get; set; }
 
     public float Price { get; set; }
 }
 ```
 
-Ensuite, à l’intérieur de votre application, créez une `DatabaseLoader`.
+Then, inside of your application, create a `DatabaseLoader`.
 
 ```csharp
 MLContext mlContext = new MLContext();
@@ -145,7 +147,7 @@ MLContext mlContext = new MLContext();
 DatabaseLoader loader = mlContext.Data.CreateDatabaseLoader<HouseData>();
 ```
 
-Définissez votre chaîne de connexion, ainsi que la commande SQL à exécuter sur la base de données et créez une instance `DatabaseSource`. Cet exemple utilise une base de données locale SQL Server avec un chemin d’accès de fichier. Toutefois, DatabaseLoader prend en charge toute autre chaîne de connexion valide pour les bases de données locales et dans le Cloud.
+Define your connection string as well as the SQL command to be executed on the database and create a `DatabaseSource` instance. This sample uses a LocalDB SQL Server database with a file path. However, DatabaseLoader supports any other valid connection string for databases on-premises and in the cloud.
 
 ```csharp
 string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=<YOUR-DB-FILEPATH>;Database=<YOUR-DB-NAME>;Integrated Security=True;Connect Timeout=30";
@@ -155,9 +157,9 @@ string sqlCommand = "SELECT Size, CAST(NumBed as REAL) as NumBed, Price FROM Hou
 DatabaseSource dbSource = new DatabaseSource(SqlClientFactory.Instance, connectionString, sqlCommand);
 ```
 
-Les données numériques qui ne sont pas de type [`Real`](xref:System.Data.SqlDbType) doivent être converties en [`Real`](xref:System.Data.SqlDbType). Le type de [`Real`](xref:System.Data.SqlDbType) est représenté sous la forme d’une valeur à virgule flottante simple précision ou d’un [`Single`](xref:System.Single), le type d’entrée attendu par les algorithmes ml.net. Dans cet exemple, la colonne `NumBed` est un entier dans la base de données. À l’aide de la fonction intégrée `CAST`, elle est convertie en [`Real`](xref:System.Data.SqlDbType). Étant donné que la propriété `Price` est déjà de type [`Real`](xref:System.Data.SqlDbType) elle est chargée telle quelle.
+Numerical data that is not of type [`Real`](xref:System.Data.SqlDbType) has to be converted to [`Real`](xref:System.Data.SqlDbType). The [`Real`](xref:System.Data.SqlDbType) type is represented as a single-precision floating-point value or [`Single`](xref:System.Single), the input type expected by ML.NET algorithms. In this sample, the `NumBed` column is an integer in the database. Using the `CAST` built-in function, it's converted to [`Real`](xref:System.Data.SqlDbType). Because the `Price` property is already of type [`Real`](xref:System.Data.SqlDbType) it is loaded as is.
 
-Utilisez la méthode `Load` pour charger les données dans une [`IDataView`](xref:Microsoft.ML.IDataView).
+Use the `Load` method to load the data into an [`IDataView`](xref:Microsoft.ML.IDataView).
 
 ```csharp
 IDataView data = loader.Load(dbSource);
@@ -213,4 +215,5 @@ IDataView data = mlContext.Data.LoadFromEnumerable<HousingData>(inMemoryCollecti
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Si vous utilisez le générateur de modèles pour effectuer l’apprentissage du modèle de Machine Learning, consultez [charger des données d’apprentissage dans le générateur de modèles](load-data-model-builder.md).
+- To clean or otherwise process data, see [Prepare data for building a model](prepare-data-ml-net.md).
+- When you're ready to build a model, see [Train and evaluate a model](train-machine-learning-model-ml-net.md).

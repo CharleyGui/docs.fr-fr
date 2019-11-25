@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Rechercher des caractères dans une chaîne (LINQ) (C#)'
+title: Guide pratique pour interroger des caractères dans une chaîne (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: 1212ebcf264aab756eca1acb81ae617c2218a065
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: bc72c4370ff408a60f48aa020a16dae7f48f702a
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592893"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74140959"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Procédure : Rechercher des caractères dans une chaîne (LINQ) (C#)
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Guide pratique pour interroger des caractères dans une chaîne (LINQ) (C#)
 La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères. Toutefois, ceci n’est pas une utilisation courante de LINQ. Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant interroge une chaîne pour déterminer le nombre de chiffres qu’elle contient. Notez que la requête est « réutilisée » après sa première exécution. Ceci est possible car la requête proprement dite ne stocke pas de résultats réels.  
   
 ```csharp  
@@ -60,4 +60,4 @@ class QueryAString
 ## <a name="see-also"></a>Voir aussi
 
 - [LINQ et chaînes (C#)](./linq-and-strings.md)
-- [Guide pratique pour combiner des requêtes LINQ avec des expressions régulières (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)
+- [Comment combiner des requêtes LINQ avec des expressions régulières (C#)](./how-to-combine-linq-queries-with-regular-expressions.md)

@@ -12,12 +12,12 @@ helpviewer_keywords:
 ms.assetid: 4f4a33a9-66b7-4cd7-a285-4ad3e4276cd2
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: d3b3dcc3b96e12f89508f4d2708c5ab083516dba
-ms.sourcegitcommit: 5bc85ad81d96b8dc2a90ce53bada475ee5662c44
-ms.translationtype: HT
+ms.openlocfilehash: 889271ca41fb84b44757adfffc61ffbfbc0a03a8
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/12/2019
-ms.locfileid: "67025500"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204797"
 ---
 # <a name="file-and-stream-io"></a>Fichier et flux de données E/S
 
@@ -47,7 +47,7 @@ Vous devez toujours fournir une gestion des exceptions robuste lors de l’appel
 
 En plus d'utiliser ces classes, les utilisateurs de Visual Basic peuvent utiliser les méthodes et les propriétés fournies par la classe <xref:Microsoft.VisualBasic.FileIO.FileSystem?displayProperty=nameWithType> pour l'E/S de fichier.
 
-Voir [Guide pratique pour copier des répertoires](how-to-copy-directories.md), [Guide pratique pour créer un listing de répertoires](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)) et [Guide pratique pour énumérer des répertoires et des fichiers](how-to-enumerate-directories-and-files.md).
+Voir [Comment : copier des répertoires](how-to-copy-directories.md), [Comment : créer une liste de répertoires](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/5cf8zcfh(v=vs.100)) et [Comment : énumérer des répertoires et des fichiers](how-to-enumerate-directories-and-files.md).
 
 ## <a name="streams"></a>Flux
 
@@ -95,11 +95,11 @@ Voici quelques classes de lecteur et writer couramment utilisées :
 
 - <xref:System.IO.TextReader> et <xref:System.IO.TextWriter> servent de classes de base abstraites à d'autres lecteurs et writers qui lisent et écrivent des caractères et des chaînes, mais pas des données binaires.
 
-Voir [Guide pratique pour lire du texte dans un fichier](how-to-read-text-from-a-file.md), [Guide pratique pour écrire du texte dans un fichier](how-to-write-text-to-a-file.md), [Guide pratique pour lire les caractères d’une chaîne](how-to-read-characters-from-a-string.md) et [Guide pratique pour écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md).
+Voir [Comment : lire du texte dans un fichier](how-to-read-text-from-a-file.md), [Comment : écrire du texte dans un fichier](how-to-write-text-to-a-file.md), [Comment : lire les caractères d'une chaîne](how-to-read-characters-from-a-string.md) et [Comment : écrire des caractères dans une chaîne](how-to-write-characters-to-a-string.md).
 
 ## <a name="asynchronous-io-operations"></a>Opérations d’E/S asynchrones
 
-La lecture ou l'écriture de grandes quantités de données peut consommer beaucoup de ressources. Vous devez effectuer ces tâches de façon asynchrone si votre application doit rester réactive aux actions de l'utilisateur. Avec les opérations d'E/S synchrones, le thread d'interface utilisateur est bloqué jusqu'à ce que l'opération consommatrice de ressources soit terminée.  Utilisez des opérations d'E/S asynchrones lors du développement d'applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pour empêcher de donner l'impression que votre application a cessé de fonctionner.
+La lecture ou l'écriture de grandes quantités de données peut consommer beaucoup de ressources. Vous devez effectuer ces tâches de façon asynchrone si votre application doit rester réactive aux actions de l'utilisateur. Avec les opérations d'E/S synchrones, le thread d'interface utilisateur est bloqué jusqu'à ce que l'opération consommatrice de ressources soit terminée.  Use asynchronous I/O operations when developing Windows 8.x Store apps to prevent creating the impression that your app has stopped working.
 
 Les membres asynchrones contiennent `Async` dans leurs noms, comme les méthodes <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.FlushAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A>. Utilisez ces méthodes avec `async` et les mots clés `await`.
 
@@ -123,13 +123,13 @@ Les classes suivantes sont fréquemment utilisées lors de la compression et de 
 
 - <xref:System.IO.Compression.GZipStream> pour la compression et la décompression des flux au format de données gzip.
 
-Voir [Guide pratique pour compresser et extraire des fichiers](how-to-compress-and-extract-files.md).
+Voir [Comment : compresser et extraire des fichiers](how-to-compress-and-extract-files.md).
 
 ## <a name="isolated-storage"></a>Stockage isolé
 
 Le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. Le stockage fournit un système de fichiers virtuel qui est isolé par utilisateur, assembly et (éventuellement) domaine. Le stockage isolé est particulièrement utile lorsque votre application n'a pas l'autorisation d'accès aux fichiers utilisateur. Enregistrez les paramètres ou les fichiers de votre application d'une façon contrôlée par la stratégie de sécurité de l'ordinateur.
 
-Le stockage isolé n'est pas disponible pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Utilisez à la place les classes de données d'application de l'espace de noms <xref:Windows.Storage?displayProperty=nameWithType>. Pour plus d’informations, consultez [Données de l’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
+Isolated storage is not available for Windows 8.x Store apps; instead, use application data classes in the <xref:Windows.Storage?displayProperty=nameWithType> namespace. Pour plus d’informations, consultez [Données de l’application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917%28v=win.10%29).
 
 Les classes suivantes sont fréquemment utilisées lors d'une implémentation de stockage isolé :
 
@@ -145,7 +145,7 @@ Voir [Stockage isolé](isolated-storage.md).
 
 [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] contient plusieurs types pour la lecture et l'écriture dans les flux. Toutefois, cet ensemble n'inclut pas tous les types d'E/S du .NET Framework.
 
-Quelques différences importantes sont notables pour les opérations d'E/S dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] :
+Some important differences to note when using I/O operations in Windows 8.x Store apps:
 
 - Les types spécifiquement liés aux opérations sur les fichiers, tels que <xref:System.IO.File>, <xref:System.IO.FileInfo>, <xref:System.IO.Directory> et <xref:System.IO.DirectoryInfo> ne sont pas inclus dans [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage?displayProperty=nameWithType> de Windows Runtime, par exemple <xref:Windows.Storage.StorageFile> et <xref:Windows.Storage.StorageFolder>.
 
@@ -155,15 +155,15 @@ Quelques différences importantes sont notables pour les opérations d'E/S dans 
 
 - Les types de compression <xref:System.IO.Compression.ZipFile> et <xref:System.IO.Compression.ZipFileExtensions> basés sur le chemin d’accès ne sont pas disponibles. À la place, utilisez les types dans l’espace de noms <xref:Windows.Storage.Compression?displayProperty=nameWithType>.
 
-Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. Pour plus d'informations, voir [Procédure : effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime](how-to-convert-between-dotnet-streams-and-winrt-streams.md) ou <xref:System.IO.WindowsRuntimeStreamExtensions>.
+Vous pouvez convertir entre les flux .NET Framework et les flux Windows Runtime, si nécessaire. For more information, see [How to: Convert Between .NET Framework Streams and Windows Runtime Streams](how-to-convert-between-dotnet-streams-and-winrt-streams.md) or <xref:System.IO.WindowsRuntimeStreamExtensions>.
 
-Pour plus d’informations sur les opérations d’E/S dans une application [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], consultez [Démarrage rapide : lecture et écriture de fichiers](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
+For more information about I/O operations in a Windows 8.x Store app, see [Quickstart: Reading and writing files](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)).
 
 ## <a name="io-and-security"></a>E/S et sécurité
 
-Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, voir [Procédure : ajouter ou supprimer des entrées dans la liste de contrôle d’accès](how-to-add-or-remove-access-control-list-entries.md).
+Lorsque vous utilisez les classes de l’espace de noms <xref:System.IO?displayProperty=nameWithType>, vous devez suivre les exigences de sécurité du système d’exploitation telles que les listes de contrôle d’accès (ACL) pour contrôler l’accès aux fichiers et aux répertoires. Ces spécifications s'ajoutent aux spécifications <xref:System.Security.Permissions.FileIOPermission> existantes. Les listes de contrôle d'accès peuvent être gérées par programmation. Pour plus d'informations, consultez [Comment : ajouter ou supprimer des entrées dans la liste de contrôle d'accès](how-to-add-or-remove-access-control-list-entries.md).
 
-Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. À la place, utilisez le [stockage isolé](isolated-storage.md) pour les applications .NET Framework traditionnelles ou les [données d'application](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)].
+Les stratégies de sécurité par défaut empêchent les applications provenant d'Internet ou de l'intranet d'accéder aux fichiers sur l'ordinateur de l'utilisateur. Par conséquent, n’utilisez pas les classes d’E/S qui requièrent un chemin d’accès à un fichier physique lors de l’écriture du code qui sera téléchargé sur Internet ou sur l’intranet. Instead, use [isolated storage](isolated-storage.md) for traditional .NET Framework applications, or use [application data](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) for Windows 8.x Store apps.
 
 La vérification de sécurité n'est exécutée qu'à la création du flux. Par conséquent, n'ouvrez pas de flux pour le passer ensuite à du code ou à des domaines d'application d'un niveau de sécurité inférieur.
 

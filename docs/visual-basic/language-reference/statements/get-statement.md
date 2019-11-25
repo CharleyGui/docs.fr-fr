@@ -1,5 +1,5 @@
 ---
-title: Instruction d’extraction (Visual Basic)
+title: Get, instruction
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Get
@@ -11,15 +11,15 @@ helpviewer_keywords:
 - Get keyword [Visual Basic]
 - property procedures [Visual Basic], Get statements
 ms.assetid: 56b05cdc-bd64-4dfd-bb12-824eacec6f94
-ms.openlocfilehash: d76155b8ff29e4f5e9206ae8fc689fa4fcaf3b8c
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 9560faf90d531c32f104dbd053a7c1f5584cfb1b
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72581835"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351174"
 ---
 # <a name="get-statement"></a>Get, instruction
-Déclare une procédure de propriété `Get` utilisée pour récupérer la valeur d’une propriété.  
+Declares a `Get` property procedure used to retrieve the value of a property.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,43 +33,43 @@ End Get
   
 |Terme|Définition|  
 |---|---|  
-|`attributelist`|Optionnel. Consultez la [liste des attributs](../../../visual-basic/language-reference/statements/attribute-list.md).|  
-|`accessmodifier`|Facultatif sur au plus une des instructions `Get` et `Set` de cette propriété. Il peut s'agir d'une des valeurs suivantes :<br /><br /> -   [protégé](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [privé](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Consultez [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
-|`statements`|Optionnel. Une ou plusieurs instructions qui s’exécutent lorsque la procédure de propriété `Get` est appelée.|  
-|`End Get`|Requis. Met fin à la définition de la procédure de propriété `Get`.|  
+|`attributelist`|Optionnel. See [Attribute List](../../../visual-basic/language-reference/statements/attribute-list.md).|  
+|`accessmodifier`|Optional on at most one of the `Get` and `Set` statements in this property. Il peut s'agir d'une des valeurs suivantes :<br /><br /> -   [Protected](../../../visual-basic/language-reference/modifiers/protected.md)<br />-   [Friend](../../../visual-basic/language-reference/modifiers/friend.md)<br />-   [Private](../../../visual-basic/language-reference/modifiers/private.md)<br />-   `Protected Friend`<br /><br /> Consultez [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).|  
+|`statements`|Optionnel. One or more statements that run when the `Get` property procedure is called.|  
+|`End Get`|Requis. Terminates the definition of the `Get` property procedure.|  
   
 ## <a name="remarks"></a>Notes  
- Chaque propriété doit avoir une procédure de propriété `Get`, sauf si la propriété est marquée comme `WriteOnly`. La procédure `Get` est utilisée pour retourner la valeur actuelle de la propriété.  
+ Every property must have a `Get` property procedure unless the property is marked `WriteOnly`. The `Get` procedure is used to return the current value of the property.  
   
- Visual Basic appelle automatiquement la procédure `Get` d’une propriété lorsqu’une expression demande la valeur de la propriété.  
+ Visual Basic automatically calls a property's `Get` procedure when an expression requests the property's value.  
   
- Le corps de la déclaration de propriété peut contenir uniquement les procédures `Get` et `Set` de la propriété entre l' [instruction Property](../../../visual-basic/language-reference/statements/property-statement.md) et l’instruction `End Property`. Elle ne peut pas stocker d’autres éléments que ces procédures. En particulier, il ne peut pas stocker la valeur actuelle de la propriété. Vous devez stocker cette valeur en dehors de la propriété, car si vous la stockez à l’intérieur de l’une des procédures de propriété, l’autre procédure de propriété ne peut pas y accéder. L’approche habituelle consiste à stocker la valeur dans une variable [privée](../../../visual-basic/language-reference/modifiers/private.md) déclarée au même niveau que la propriété. Vous devez définir une procédure `Get` à l’intérieur de la propriété à laquelle elle s’applique.  
+ The body of the property declaration can contain only the property's `Get` and `Set` procedures between the [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) and the `End Property` statement. It cannot store anything other than those procedures. In particular, it cannot store the property's current value. You must store this value outside the property, because if you store it inside either of the property procedures, the other property procedure cannot access it. The usual approach is to store the value in a [Private](../../../visual-basic/language-reference/modifiers/private.md) variable declared at the same level as the property. You must define a `Get` procedure inside the property to which it applies.  
   
- La procédure `Get` a comme valeur par défaut le niveau d’accès de sa propriété conteneur, sauf si vous utilisez `accessmodifier` dans l’instruction `Get`.  
+ The `Get` procedure defaults to the access level of its containing property unless you use `accessmodifier` in the `Get` statement.  
   
 ## <a name="rules"></a>Règles  
   
-- **Niveaux d’accès mixtes.** Si vous définissez une propriété en lecture-écriture, vous pouvez éventuellement spécifier un niveau d’accès différent pour la `Get` ou la procédure `Set`, mais pas les deux. Dans ce cas, le niveau d’accès de la procédure doit être plus restrictif que le niveau d’accès de la propriété. Par exemple, si la propriété est déclarée `Friend`, vous pouvez déclarer la procédure `Get` `Private`, mais pas `Public`.  
+- **Mixed Access Levels.** If you are defining a read-write property, you can optionally specify a different access level for either the `Get` or the `Set` procedure, but not both. If you do this, the procedure access level must be more restrictive than the property's access level. For example, if the property is declared `Friend`, you can declare the `Get` procedure `Private`, but not `Public`.  
   
-     Si vous définissez une propriété `ReadOnly`, la procédure `Get` représente la propriété entière. Vous ne pouvez pas déclarer un niveau d’accès différent pour `Get`, car cela aurait pour effet de définir deux niveaux d’accès pour la propriété.  
+     If you are defining a `ReadOnly` property, the `Get` procedure represents the entire property. You cannot declare a different access level for `Get`, because that would set two access levels for the property.  
   
-- **Type de retour.** L' [instruction Property](../../../visual-basic/language-reference/statements/property-statement.md) peut déclarer le type de données de la valeur qu’elle retourne. La procédure `Get` retourne automatiquement ce type de données. Vous pouvez spécifier n’importe quel type de données ou le nom d’une énumération, d’une structure, d’une classe ou d’une interface.  
+- **Return Type.** The [Property Statement](../../../visual-basic/language-reference/statements/property-statement.md) can declare the data type of the value it returns. The `Get` procedure automatically returns that data type. You can specify any data type or the name of an enumeration, structure, class, or interface.  
   
-     Si l’instruction `Property` ne spécifie pas `returntype`, la procédure retourne `Object`.  
+     If the `Property` statement does not specify `returntype`, the procedure returns `Object`.  
   
 ## <a name="behavior"></a>Comportement  
   
-- **Retour d’une procédure.** Lorsque la procédure `Get` retourne au code appelant, l’exécution continue dans l’instruction qui a demandé la valeur de la propriété.  
+- **Returning from a Procedure.** When the `Get` procedure returns to the calling code, execution continues within the statement that requested the property value.  
   
-     `Get` procédures de propriété peuvent retourner une valeur à l’aide de l' [instruction return](../../../visual-basic/language-reference/statements/return-statement.md) ou en affectant la valeur de retour au nom de la propriété. Pour plus d’informations, consultez « valeur de retour » dans l' [instruction de fonction](../../../visual-basic/language-reference/statements/function-statement.md).  
+     `Get` property procedures can return a value using either the [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md) or by assigning the return value to the property name. For more information, see "Return Value" in [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md).  
   
-     Les instructions `Exit Property` et `Return` provoquent une sortie immédiate d’une procédure de propriété. Un nombre quelconque d’instructions `Exit Property` et `Return` peuvent apparaître n’importe où dans la procédure, et vous pouvez mélanger des instructions `Exit Property` et `Return`.  
+     The `Exit Property` and `Return` statements cause an immediate exit from a property procedure. Any number of `Exit Property` and `Return` statements can appear anywhere in the procedure, and you can mix `Exit Property` and `Return` statements.  
   
-- **Valeur de retour.** Pour retourner une valeur à partir d’une procédure `Get`, vous pouvez affecter la valeur au nom de la propriété ou l’inclure dans une [instruction return](../../../visual-basic/language-reference/statements/return-statement.md). L’instruction `Return` assigne simultanément la valeur de retour de la procédure `Get` et quitte la procédure.  
+- **Return Value.** To return a value from a `Get` procedure, you can either assign the value to the property name or include it in a [Return Statement](../../../visual-basic/language-reference/statements/return-statement.md). The `Return` statement simultaneously assigns the `Get` procedure return value and exits the procedure.  
   
-     Si vous utilisez `Exit Property` sans assigner de valeur au nom de la propriété, la procédure `Get` retourne la valeur par défaut pour le type de données de la propriété. Pour plus d’informations, consultez « valeur de retour » dans l' [instruction de fonction](../../../visual-basic/language-reference/statements/function-statement.md).  
+     If you use `Exit Property` without assigning a value to the property name, the `Get` procedure returns the default value for the property's data type. For more information, see "Return Value" in [Function Statement](../../../visual-basic/language-reference/statements/function-statement.md).  
   
-     L’exemple suivant illustre deux façons pour la propriété en lecture seule `quoteForTheDay` peut retourner la valeur contenue dans la variable privée `quoteValue`.  
+     The following example illustrates two ways the read-only property `quoteForTheDay` can return the value held in the private variable `quoteValue`.  
   
      [!code-vb[VbVbalrStatements#27](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#27)]  
   
@@ -78,7 +78,7 @@ End Get
      [!code-vb[VbVbalrStatements#29](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#29)]  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise l’instruction `Get` pour retourner la valeur d’une propriété.  
+ The following example uses the `Get` statement to return the value of a property.  
   
  [!code-vb[VbVbalrStatements#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#30)]  
   

@@ -1,30 +1,30 @@
 ---
-title: 'Procédure : Créer une chaîne à partir d’un tableau de valeurs Char (Visual Basic)'
+title: "Comment : créer une chaîne à partir d'un tableau de valeurs Char"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - examples [Visual Basic], arrays
 - examples [Visual Basic], Char data type
 ms.assetid: 69f94e85-d57c-4ccc-a62a-426e829f5c5e
-ms.openlocfilehash: 1f72cb86ffa38dc929062fab2f5592a781f2de27
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 03138a851afc55f735cc66edeb345817428a0452
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62054053"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344384"
 ---
-# <a name="how-to-create-a-string-from-an-array-of-char-values-visual-basic"></a>Procédure : Créer une chaîne à partir d’un tableau de valeurs Char (Visual Basic)
-Cet exemple crée la chaîne « abcd » à partir de différents caractères.  
+# <a name="how-to-create-a-string-from-an-array-of-char-values-visual-basic"></a>Comment : créer une chaîne à partir d'un tableau de valeurs Char (Visual Basic)
+This example creates the string "abcd" from individual characters.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrStrings#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#61)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cette méthode n’a aucune exigence particulière.  
+ This method has no special requirements.  
   
- La syntaxe `"a"c`, où un seul `c` suit un caractère unique entre guillemets, est utilisé pour créer un caractère littéral.  
+ The syntax `"a"c`, where a single `c` follows a single character in quotation marks, is used to create a character literal.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Les caractères null (équivalent à `Chr(0)`) dans la chaîne de produire des résultats inattendus lors de l’utilisation de la chaîne. Le caractère null sera inclus dans la chaîne, mais pas les caractères qui suivent le caractère null seront affichera dans certaines situations.  
+ Null characters (equivalent to `Chr(0)`) in the string lead to unexpected results when using the string. The null character will be included with the string, but characters following the null character will not be displayed in some situations.  
   
 ## <a name="see-also"></a>Voir aussi
 

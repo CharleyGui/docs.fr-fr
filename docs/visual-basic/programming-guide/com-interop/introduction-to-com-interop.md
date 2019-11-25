@@ -1,60 +1,60 @@
 ---
-title: Introduction à COM Interop (Visual Basic)
+title: Présentation de COM Interop
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interop assemblies
 - COM interop [Visual Basic], about COM interop
 ms.assetid: 8bd62e68-383d-407f-998b-29aa0ce0fd67
-ms.openlocfilehash: 5eb862d75f8870da40af4cd817fa32a3d2781f38
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: c7909b3b6a2c9f0b397b9621b7e5125c232be313
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592718"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353199"
 ---
 # <a name="introduction-to-com-interop-visual-basic"></a>Introduction à COM Interop (Visual Basic)
-Le composant COM (Object Model) permet un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. Bien que les objets COM ont été essentiels à Windows de programmation de nombreuses années, les applications conçues pour le common language runtime (CLR) offrent de nombreux avantages.  
+The Component Object Model (COM) lets an object expose its functionality to other components and to host applications. While COM objects have been fundamental to Windows programming for many years, applications designed for the common language runtime (CLR) offer many advantages.  
   
- Les applications .NET framework finira par remplacer celles développées avec COM. En attendant, vous devrez peut-être utiliser ou créer des objets COM à l’aide de Visual Studio. L’interopérabilité avec COM, ou *COM interop*, vous pouvez ainsi utiliser des objets COM existants lors de la transition vers le .NET Framework à votre propre rythme.  
+ .NET Framework applications will eventually replace those developed with COM. Until then, you may have to use or create COM objects by using Visual Studio. Interoperability with COM, or *COM interop*, enables you to use existing COM objects while transitioning to the .NET Framework at your own pace.  
   
- En utilisant le .NET Framework pour créer des composants COM, vous pouvez utiliser COM interop sans inscription. Cela vous permet de contrôler quelle version de DLL est activée lorsque plusieurs versions sont installée sur un ordinateur et permet aux utilisateurs finaux d’utiliser XCOPY ou FTP pour copier votre application dans un répertoire approprié sur leur ordinateur où il peut être exécuté. Pour plus d’informations, consultez [Registration-Free COM Interop](../../../framework/interop/registration-free-com-interop.md).  
+ By using the .NET Framework to create COM components, you can use registration-free COM interop. This lets you control which DLL version is enabled when more than one version is installed on a computer, and lets end users use XCOPY or FTP to copy your application to an appropriate directory on their computer where it can be run. For more information, see [Registration-Free COM Interop](../../../framework/interop/registration-free-com-interop.md).  
   
-## <a name="managed-code-and-data"></a>Le Code managé et des données  
- Le code développé pour le .NET Framework est appelé *du code managé*et contient des métadonnées qui sont utilisée par le CLR. Données utilisées par les applications .NET Framework sont appelées *les données managées* , car le runtime gère les tâches liées aux données telles que la vérification de type allocation et libération de la mémoire et l’exécution. Par défaut, Visual Basic .NET utilise des données et le code managé, mais vous pouvez accéder à du code non managé et les données des objets COM à l’aide des assemblys d’interopérabilité (décrites plus loin dans cette page).  
+## <a name="managed-code-and-data"></a>Managed Code and Data  
+ Code developed for the .NET Framework is referred to as *managed code*, and contains metadata that is used by the CLR. Data used by .NET Framework applications is called *managed data* because the runtime manages data-related tasks such as allocating and reclaiming memory and performing type checking. By default, Visual Basic .NET uses managed code and data, but you can access the unmanaged code and data of COM objects using interop assemblies (described later on this page).  
   
 ## <a name="assemblies"></a>Assemblys  
- Un assembly est le principal bloc de construction d’une application .NET Framework. C’est un ensemble de fonctionnalités qui sont générées, avec contrôle de version et déployées comme une unité de mise en œuvre unique contenant un ou plusieurs fichiers. Chaque assembly contient un manifeste d’assembly.  
+ An assembly is the primary building block of a .NET Framework application. It is a collection of functionality that is built, versioned, and deployed as a single implementation unit containing one or more files. Each assembly contains an assembly manifest.  
   
-## <a name="type-libraries-and-assembly-manifests"></a>Bibliothèques de types et les manifestes d’Assembly  
- Bibliothèques de types décrivent les caractéristiques des objets COM, tels que les noms des membres et types de données. Manifestes d’assembly exécutent la même fonction pour les applications .NET Framework. Ils incluent des informations sur les éléments suivants :  
+## <a name="type-libraries-and-assembly-manifests"></a>Type Libraries and Assembly Manifests  
+ Type libraries describe characteristics of COM objects, such as member names and data types. Assembly manifests perform the same function for .NET Framework applications. They include information about the following:  
   
-- Identité de l’assembly, version, culture et signature numérique.  
+- Assembly identity, version, culture, and digital signature.  
   
-- Fichiers qui composent l’implémentation de l’assembly.  
+- Files that make up the assembly implementation.  
   
-- Types et ressources qui composent l’assembly. Comprennent celles qui sont exportés à partir de celui-ci.  
+- Types and resources that make up the assembly. This includes those that are exported from it.  
   
-- Dépendances de compilation des autres assemblys.  
+- Compile-time dependencies on other assemblies.  
   
-- Autorisations requises pour l’assembly pour s’exécuter correctement.  
+- Permissions required for the assembly to run correctly.  
   
- Pour plus d’informations sur les assemblys et les manifestes d’assembly, consultez [assemblys dans .NET](../../../standard/assembly/index.md).  
+ For more information about assemblies and assembly manifests, see [Assemblies in .NET](../../../standard/assembly/index.md).  
   
-### <a name="importing-and-exporting-type-libraries"></a>Importation et exportation de bibliothèques de types  
- Visual Studio contient un utilitaire, Tlbimp, qui vous permet d’importer des informations à partir d’une bibliothèque de types dans une application .NET Framework. Vous pouvez générer des bibliothèques de types provenant d’assemblys à l’aide de l’utilitaire Tlbexp.  
+### <a name="importing-and-exporting-type-libraries"></a>Importing and Exporting Type Libraries  
+ Visual Studio contains a utility, Tlbimp, that lets you import information from a type library into a .NET Framework application. You can generate type libraries from assemblies by using the Tlbexp utility.  
   
- Pour plus d’informations sur Tlbimp et Tlbexp, consultez [Tlbimp.exe (Type Library Importer)](../../../framework/tools/tlbimp-exe-type-library-importer.md) et [Tlbexp.exe (exportateur)](../../../framework/tools/tlbexp-exe-type-library-exporter.md).  
+ For information about Tlbimp and Tlbexp, see [Tlbimp.exe (Type Library Importer)](../../../framework/tools/tlbimp-exe-type-library-importer.md) and [Tlbexp.exe (Type Library Exporter)](../../../framework/tools/tlbexp-exe-type-library-exporter.md).  
   
-## <a name="interop-assemblies"></a>Assemblys PIA  
- Assemblys d’interopérabilité sont des assemblys .NET Framework qui géré de pont entre et membres de code non managé, mappage des membres de l’objet COM équivalent .NET Framework managés. Assemblys d’interopérabilité créés par Visual Basic .NET gèrent de nombreux détails de l’utilisation des objets COM, tels que le marshaling d’interopérabilité.  
+## <a name="interop-assemblies"></a>Interop Assemblies  
+ Interop assemblies are .NET Framework assemblies that bridge between managed and unmanaged code, mapping COM object members to equivalent .NET Framework managed members. Interop assemblies created by Visual Basic .NET handle many of the details of working with COM objects, such as interoperability marshaling.  
   
-## <a name="interoperability-marshaling"></a>Marshaling d’interopérabilité  
- Toutes les applications .NET Framework partagent un ensemble de types courants qui permettent l’interopérabilité des objets, quel que soit le langage de programmation qui est utilisé. Les paramètres et les valeurs de retour des objets COM utilisent parfois des types de données qui diffèrent de celles utilisées dans le code managé. *Marshaling d’interopérabilité* est le processus empaqueter des paramètres et valeurs de retour dans les types de données équivalents lors de leur déplacement vers et depuis des objets COM. Pour plus d’informations, consultez [Marshaling d’interopérabilité](../../../framework/interop/interop-marshaling.md).  
+## <a name="interoperability-marshaling"></a>Interoperability Marshaling  
+ All .NET Framework applications share a set of common types that enable interoperability of objects, regardless of the programming language that is used. The parameters and return values of COM objects sometimes use data types that differ from those used in managed code. *Interoperability marshaling* is the process of packaging parameters and return values into equivalent data types as they move to and from COM objects. For more information, see [Interop Marshaling](../../../framework/interop/interop-marshaling.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)
-- [Procédure pas à pas : Implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
+- [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)
 - [Interopération avec du code non managé](../../../framework/interop/index.md)
 - [Dépannage des problèmes liés à l’interopérabilité](../../../visual-basic/programming-guide/com-interop/troubleshooting-interoperability.md)
 - [Assemblys dans .NET](../../../standard/assembly/index.md)

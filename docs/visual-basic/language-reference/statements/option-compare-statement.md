@@ -1,5 +1,5 @@
 ---
-title: Instruction Option Compare (Visual Basic)
+title: Option Compare, instruction
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Compare
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - Option Compare statement [Visual Basic]
 - text [Visual Basic], comparing
 ms.assetid: 54e8eeeb-3b0d-4fb9-acce-fbfbd5975f6e
-ms.openlocfilehash: efd033e6c12637b8dc12fb886f46a267e677aa42
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 7538466c8f4b90e2e655a2ec762d8c545546a481
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775509"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344430"
 ---
 # <a name="option-compare-statement"></a>Option Compare, instruction
 Déclare la méthode de comparaison par défaut à utiliser lors de la comparaison de données de type chaîne.  
@@ -59,7 +59,7 @@ Option Compare { Binary | Text }
  `(A=a) < (À = à) < (B=b) < (E=e) < (Ê = ê) < (Z=z) < (Ø = ø)`  
   
 ## <a name="when-an-option-compare-statement-is-not-present"></a>En l'absence d'instruction Option Compare  
- Si le code source ne contient pas d’instruction `Option Compare`, le paramètre **option compare** sur la [page compiler, concepteur de projets (Visual Basic),](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) est utilisé. Si vous utilisez le compilateur de ligne de commande, le paramètre spécifié par l’option [de compilateur-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) est utilisé.  
+ If the source code does not contain an `Option Compare` statement, the **Option Compare** setting on the [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic) is used. If you use the command-line compiler, the setting specified by the [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) compiler option is used.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
@@ -69,13 +69,13 @@ Option Compare { Binary | Text }
   
 2. Cliquez sur l’onglet **Compiler**.  
   
-3. Définissez la valeur dans la zone **option compare** .  
+3. Set the value in the **Option Compare** box.  
   
- Lorsque vous créez un projet, le paramètre **option compare** de l’onglet **compiler** est défini sur le paramètre **option compare** dans la boîte de dialogue **options** . Pour modifier ce paramètre, dans le menu **Outils** , cliquez sur **options**. Dans la boîte de dialogue **Options**, développez **Projets et solutions**, puis cliquez sur **Valeurs par défaut VB**. Le paramètre par défaut initial dans les **valeurs par défaut VB** est **binaire**.  
+ When you create a project, the **Option Compare** setting on the **Compile** tab is set to the **Option Compare** setting in the **Options** dialog box. To change this setting, on the **Tools** menu, click **Options**. Dans la boîte de dialogue **Options**, développez **Projets et solutions**, puis cliquez sur **Valeurs par défaut VB**. The initial default setting in **VB Defaults** is **Binary**.  
   
 #### <a name="to-set-option-compare-on-the-command-line"></a>Pour définir Option Compare sur la ligne de commande  
   
-- Incluez l’option de compilateur [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) dans la commande **vbc** .  
+- Include the [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md) compiler option in the **vbc** command.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant utilise l'instruction `Option Compare` pour définir la comparaison binaire comme méthode de comparaison de chaînes par défaut. Pour utiliser ce code, supprimez les commentaires de l'instruction `Option Compare Binary` et placez-la en haut du fichier source.  
@@ -96,7 +96,7 @@ Option Compare { Binary | Text }
 - <xref:Microsoft.VisualBasic.Strings.StrComp%2A>
 - [-optioncompare](../../../visual-basic/reference/command-line-compiler/optioncompare.md)
 - [Opérateurs de comparaison](../../../visual-basic/language-reference/operators/comparison-operators.md)
-- [Opérateurs de comparaison dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Like (opérateur)](../../../visual-basic/language-reference/operators/like-operator.md)
 - [Fonctions de chaîne](../../../visual-basic/language-reference/functions/string-functions.md)
 - [Option Explicit (instruction)](../../../visual-basic/language-reference/statements/option-explicit-statement.md)

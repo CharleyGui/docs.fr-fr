@@ -1,13 +1,13 @@
 ---
-title: Annuler des tâches Asynch après une période spécifique (Visual Basic)
+title: Annuler des tâches Asynch après une période spécifique
 ms.date: 07/20/2015
 ms.assetid: a48045a3-6a99-42af-b824-af340f0b9a5d
-ms.openlocfilehash: 37cc1936dc9c55e0dadb4ccb57d549f3653a11b0
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4b1cfe03e0bbcc0e601a1ec641c95bd68266b7c8
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419825"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74347946"
 ---
 # <a name="cancel-async-tasks-after-a-period-of-time-visual-basic"></a>Annuler des tâches Asynch après une période spécifique (Visual Basic)
 
@@ -74,7 +74,7 @@ Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web. La sortie suivante est un exemple :
+Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web. The following output is a sample:
 
 ```console
 Length of the downloaded string: 35990.

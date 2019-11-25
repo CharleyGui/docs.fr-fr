@@ -1,5 +1,5 @@
 ---
-title: Inférence de type local (Visual Basic)
+title: Inférence de type local
 ms.date: 07/20/2015
 f1_keywords:
 - local type inference
@@ -12,68 +12,68 @@ helpviewer_keywords:
 - inference [Visual Basic]
 - type inference [Visual Basic]
 ms.assetid: b8307f18-2e56-4ab3-a45a-826873f400f6
-ms.openlocfilehash: 2b239e17ba7fa0b6a6b08d52f4394541eaa08b28
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: f79ac70aecb5805a3a4a4fea8f7e7ccd3f8243fc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775721"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351832"
 ---
 # <a name="local-type-inference-visual-basic"></a>Inférence de type local (Visual Basic)
 
-Le compilateur Visual Basic utilise l' *inférence de type* pour déterminer les types de données des variables locales déclarées sans clause `As`. Le compilateur déduit le type de la variable à partir du type de l’expression d’initialisation. Cela vous permet de déclarer des variables sans déclarer explicitement un type, comme indiqué dans l’exemple suivant. À la suite des déclarations, `num1` et `num2` sont fortement typées en tant qu’entiers.
+The Visual Basic compiler uses *type inference* to determine the data types of local variables declared without an `As` clause. The compiler infers the type of the variable from the type of the initialization expression. This enables you to declare variables without explicitly stating a type, as shown in the following example. As a result of the declarations, both `num1` and `num2` are strongly typed as integers.
 
 [!code-vb[VbVbalrTypeInference#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#1)]
 
 > [!NOTE]
-> Si vous ne souhaitez pas que `num2` dans l’exemple précédent soit tapé comme `Integer`, vous pouvez spécifier un autre type à l’aide d’une déclaration comme `Dim num3 As Object = 3` ou `Dim num4 As Double = 3`.
+> If you do not want `num2` in the previous example to be typed as an `Integer`, you can specify another type by using a declaration like `Dim num3 As Object = 3` or `Dim num4 As Double = 3`.
 
 > [!NOTE]
-> L’inférence de type ne peut être utilisée que pour les variables locales non statiques ; elle ne peut pas être utilisée pour déterminer le type des champs de classe, des propriétés ou des fonctions.
+> Type inference can be used only for non-static local variables; it cannot be used to determine the type of class fields, properties, or functions.
 
-L’inférence de type local s’applique au niveau de la procédure. Elle ne peut pas être utilisée pour déclarer des variables au niveau du module (dans une classe, une structure, un module ou une interface, mais pas dans une procédure ou un bloc). Si `num2` dans l’exemple précédent était un champ d’une classe au lieu d’une variable locale dans une procédure, la déclaration provoquerait une erreur avec `Option Strict` sur et classerait `num2` en tant que `Object` avec `Option Strict` désactivé. De même, l’inférence de type local ne s’applique pas aux variables de niveau procédure déclarées comme `Static`.
+Local type inference applies at procedure level. It cannot be used to declare variables at module level (within a class, structure, module, or interface but not within a procedure or block). If `num2` in the previous example were a field of a class instead of a local variable in a procedure, the declaration would cause an error with `Option Strict` on, and would classify `num2` as an `Object` with `Option Strict` off. Similarly, local type inference does not apply to procedure level variables declared as `Static`.
 
-## <a name="type-inference-vs-late-binding"></a>Inférence de type et liaison tardive
+## <a name="type-inference-vs-late-binding"></a>Type Inference vs. Late Binding
 
-Le code qui utilise l’inférence de type ressemble au code qui s’appuie sur la liaison tardive. Toutefois, l’inférence de type attribue fortement la variable au lieu de la laisser en tant que `Object`. Le compilateur utilise l’initialiseur d’une variable pour déterminer le type de la variable au moment de la compilation pour produire du code à liaison anticipée. Dans l’exemple précédent, `num2`, comme `num1`, est tapé comme un `Integer`.
+Code that uses type inference resembles code that relies on late binding. However, type inference strongly types the variable instead of leaving it as `Object`. The compiler uses a variable's initializer to determine the variable's type at compile time to produce early-bound code. In the previous example, `num2`, like `num1`, is typed as an `Integer`.
 
-Le comportement des variables à liaison anticipée diffère de celui des variables à liaison tardive, pour lesquelles le type est connu uniquement au moment de l’exécution. La connaissance du type le plus tôt permet au compilateur d’identifier les problèmes avant leur exécution, d’allouer de la mémoire avec précision et d’effectuer d’autres optimisations. La liaison précoce permet également au Visual Basic environnement de développement intégré (IDE) de fournir une aide IntelliSense sur les membres d’un objet. La liaison précoce est également préférable pour les performances. Cela est dû au fait que toutes les données stockées dans une variable à liaison tardive doivent être encapsulées en tant que type `Object` et que l’accès aux membres du type au moment de l’exécution rend le programme plus lent.
+The behavior of early-bound variables differs from that of late-bound variables, for which the type is known only at run time. Knowing the type early enables the compiler to identify problems before execution, allocate memory precisely, and perform other optimizations. Early binding also enables the Visual Basic integrated development environment (IDE) to provide IntelliSense Help about the members of an object. Early binding is also preferred for performance. This is because all data stored in a late-bound variable must be wrapped as type `Object`, and accessing members of the type at run time makes the program slower.
 
 ## <a name="examples"></a>Exemples
 
-L’inférence de type se produit lorsqu’une variable locale est déclarée sans clause `As` et initialisée. Le compilateur utilise le type de la valeur initiale affectée comme type de la variable. Par exemple, chacune des lignes de code suivantes déclare une variable de type `String`.
+Type inference occurs when a local variable is declared without an `As` clause and initialized. The compiler uses the type of the assigned initial value as the type of the variable. For example, each of the following lines of code declares a variable of type `String`.
 
 [!code-vb[VbVbalrTypeInference#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#2)]
 
-Le code suivant illustre deux façons équivalentes de créer un tableau d’entiers.
+The following code demonstrates two equivalent ways to create an array of integers.
 
 [!code-vb[VbVbalrTypeInference#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#3)]
 
-Il est pratique d’utiliser l’inférence de type pour déterminer le type d’une variable de contrôle de boucle. Dans le code suivant, le compilateur déduit que `number` est un `Integer`, car `someNumbers2` de l’exemple précédent est un tableau d’entiers.
+It is convenient to use type inference to determine the type of a loop control variable. In the following code, the compiler infers that `number` is an `Integer` because `someNumbers2` from the previous example is an array of integers.
 
 [!code-vb[VbVbalrTypeInference#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#4)]
 
-L’inférence de type local peut être utilisée dans les instructions `Using` pour établir le type du nom de la ressource, comme le montre l’exemple suivant.
+Local type inference can be used in `Using` statements to establish the type of the resource name, as the following example demonstrates.
 
 [!code-vb[VbVbalrTypeInference#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#7)]
 
-Le type d’une variable peut également être déduit à partir des valeurs de retour des fonctions, comme le montre l’exemple suivant. @No__t_0 et `pList2` sont des tableaux de processus, car `Process.GetProcesses` retourne un tableau de processus.
+The type of a variable can also be inferred from the return values of functions, as the following example demonstrates. Both `pList1` and `pList2` are arrays of processes because `Process.GetProcesses` returns an array of processes.
 
 [!code-vb[VbVbalrTypeInference#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrTypeInference/VB/Class1.vb#5)]
 
 ## <a name="option-infer"></a>Option Infer
 
-`Option Infer` vous permet de spécifier si l’inférence de type local est autorisée dans un fichier particulier. Pour activer ou bloquer l’option, tapez l’une des instructions suivantes au début du fichier.
+`Option Infer` enables you specify whether local type inference is allowed in a particular file. To enable or to block the option, type one of the following statements at the start of the file.
 
 `Option Infer On`
 
 `Option Infer Off`
 
-Si vous ne spécifiez pas de valeur pour `Option Infer` dans votre code, la valeur par défaut du compilateur est `Option Infer On`.
+If you do not specify a value for `Option Infer` in your code, the compiler default is `Option Infer On`.
 
 Si la valeur définie pour `Option Infer` dans un fichier est en conflit avec la valeur définie dans l'IDE ou sur la ligne de commande, la valeur contenue dans le fichier est prioritaire.
 
-Pour plus d’informations, consultez [instruction Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md) et [page compiler, concepteur de projets (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
+For more information, see [Option Infer Statement](../../../../visual-basic/language-reference/statements/option-infer-statement.md) and [Compile Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic).
 
 ## <a name="see-also"></a>Voir aussi
 

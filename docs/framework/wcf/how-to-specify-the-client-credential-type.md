@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security credentials, adding to SOAP messages
 - WCF, security
 ms.assetid: 10f51bee-5f92-4c1a-9126-fa5418535d8f
-ms.openlocfilehash: d62011728b6b03023ef4039480cea8dfa0ec8f02
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: df18f89ee18bfa33ecc0aced617d168c805e3515
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321285"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74138580"
 ---
 # <a name="how-to-specify-the-client-credential-type"></a>Comment : spécifier le type d'informations d'identification du client
 Après avoir défini un mode de sécurité (transport ou message), vous avez pouvez définir le type d'informations d'identification du client. Cette propriété spécifie le type d'informations d'identification que le client doit fournir au service dans le cadre de l'authentification. Pour plus d’informations sur la définition du mode de sécurité (étape nécessaire avant de définir le type d’informations d’identification du client), consultez [Comment : définir le mode de sécurité](how-to-set-the-security-mode.md).  
@@ -31,13 +31,13 @@ Après avoir défini un mode de sécurité (transport ou message), vous avez pou
   
 ### <a name="to-set-the-client-credential-type-in-configuration"></a>Pour définir le type d'informations d'identification du client dans la configuration  
   
-1. Ajoutez un élément [\<Système. serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) au fichier de configuration.  
+1. Ajoutez un [\<élément System. serviceModel >](../configure-apps/file-schema/wcf/system-servicemodel.md) au fichier de configuration.  
   
-2. En tant qu’élément enfant, ajoutez un élément [@no__t 1bindings >](../configure-apps/file-schema/wcf/bindings.md) .  
+2. En tant qu’élément enfant, ajoutez une [\<liaisons >](../configure-apps/file-schema/wcf/bindings.md) élément.  
   
 3. Ajoutez une liaison appropriée. Cet exemple utilise l’élément [\<wsHttpBinding >](../configure-apps/file-schema/wcf/wshttpbinding.md) .  
   
-4. Ajoutez un élément [\<binding >](../misc/binding.md) et affectez à l’attribut `name` une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
+4. Ajoutez un élément de [> de liaison\<](../configure-apps/file-schema/wcf/bindings.md) et définissez l’attribut `name` sur une valeur appropriée. Cet exemple utilise le nom « SecureBinding ».  
   
 5. Ajoutez une liaison `<security>`. Affectez la valeur appropriée à l'attribut `mode`. Cet exemple lui affecte la valeur `"Message"`.  
   

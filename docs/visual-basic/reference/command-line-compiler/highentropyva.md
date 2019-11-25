@@ -1,19 +1,19 @@
 ---
-title: -highentropyva (Visual Basic)
+title: -highentropyva
 ms.date: 03/10/2018
 helpviewer_keywords:
 - highentropyva compiler option (Visual Basic)
 - /highentropyva compiler option (Visual Basic)
 ms.assetid: ff25f20a-6ca2-467b-9e52-5cf439f5028e
-ms.openlocfilehash: 203380bbe2b2828e159ee36d795b6cd4a24e2917
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 7934dcaada4675bf687624bef5ed1ea25e842832
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775656"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344249"
 ---
 # <a name="-highentropyva-visual-basic"></a>-highentropyva (Visual Basic)
-Indique si un exécutable 64 bits ou un exécutable marqué par l’option [de compilateur-Platform : AnyCPU](../../../visual-basic/reference/command-line-compiler/platform.md) prend en charge la randomisation du format d’espace d’adresse (ASLR) de forte entropie.  
+Indicates whether a 64-bit executable or an executable that's marked by the [-platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) compiler option supports high entropy Address Space Layout Randomization (ASLR).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,12 +23,12 @@ Indique si un exécutable 64 bits ou un exécutable marqué par l’option [de c
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Ce paramètre est facultatif. L’option est désactivée par défaut ou si vous spécifiez `-highentropyva-`. L’option est activée si vous spécifiez `-highentropyva` ou `-highentropyva+`.  
+ Optionnel. The option is off by default or if you specify `-highentropyva-`. The option is on if you specify `-highentropyva` or `-highentropyva+`.  
   
 ## <a name="remarks"></a>Notes  
- Si vous spécifiez cette option, les versions compatibles du noyau Windows peuvent utiliser un degré d’entropie plus élevé lorsque le noyau rend aléatoire la disposition de l’espace d’adressage d’un processus dans le cadre de l’ASLR. Si le noyau utilise un degré d’entropie plus élevé, un plus grand nombre d’adresses peuvent être allouées aux régions de mémoire, telles que les piles et les tas. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  
+ If you specify this option, compatible versions of the Windows kernel can use higher degrees of entropy when the kernel randomizes the address space layout of a process as part of ASLR. If the kernel uses higher degrees of entropy, a larger number of addresses can be allocated to memory regions such as stacks and heaps. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  
   
- Lorsque l’option est activée, l’exécutable cible et tous les modules dont il dépend doivent être en mesure de gérer les valeurs de pointeur supérieures à 4 gigaoctets (Go) lorsque ces modules s’exécutent en tant que processus 64 bits.  
+ When the option is on, the target executable and any modules on which it depends must be able to handle pointer values that are larger than 4 gigabytes (GB) when those modules are running as 64-bit processes.  
   
 ## <a name="see-also"></a>Voir aussi
 

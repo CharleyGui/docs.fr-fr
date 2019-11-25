@@ -2,12 +2,12 @@
 title: -target:winmdobj (Options du compilateur C#)
 ms.date: 07/20/2015
 ms.assetid: 1819a045-659d-498a-9457-c466e902986f
-ms.openlocfilehash: fe1332f9ed6de9c50c2509e29f22ed7c0e57ade9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 85ae9a3f5e9b038c0c56935ec5af2b9b09d19f20
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69606358"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204491"
 ---
 # <a name="-targetwinmdobj-c-compiler-options"></a>-target:winmdobj (Options du compilateur C#)
 Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur crée un fichier .winmdobj intermédiaire que vous pouvez convertir en fichier binaire (.winmd) Windows Runtime. Le fichier .winmd peut ensuite être consommé par des programmes JavaScript et C++, en plus des programmes en langage managé.  
@@ -18,7 +18,7 @@ Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur 
 -target:winmdobj  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le paramètre **winmdobj** signale au compilateur qu’un module intermédiaire est requis. En réponse, Visual Studio compile la bibliothèque de classes C# comme fichier .winmdobj. Le fichier .winmdobj peut ensuite être acheminé via l'outil d'exportation <xref:Microsoft.Build.Tasks.WinMDExp> pour produire un fichier de métadonnées Windows (.winmd). Le fichier .winmd contient à la fois le code de la bibliothèque d'origine et les métadonnées WinMD utilisées par JavaScript ou C++ et par le Windows Runtime.  
   
  La sortie d’un fichier qui est compilé à l’aide de l’option du compilateur **-target:winmdobj** est conçue pour être utilisée uniquement comme entrée pour l’outil d’exportation WimMDExp ; le fichier .winmdobj proprement dit n’est pas référencé directement.  
@@ -35,11 +35,11 @@ Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur 
   
 3. Dans la liste **Type de sortie**, choisissez **Fichier WinMD**.  
   
-     L’option **Fichier WinMD** est disponible uniquement pour les modèles d’application [!INCLUDE[win8_appname_long](~/includes/win8-appname-long-md.md)].  
+     The **WinMD File** option is available only for Windows 8.x Store app templates.  
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  La commande suivante compile `filename.cs` dans un fichier .winmdobj intermédiaire.  
   
 ```console  

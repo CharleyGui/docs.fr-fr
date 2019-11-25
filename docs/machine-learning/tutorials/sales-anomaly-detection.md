@@ -1,17 +1,17 @@
 ---
-title: 'Didacticiel : détecter les anomalies dans les ventes de produits'
+title: 'Tutorial: Detect anomalies in product sales'
 description: Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio 2019.
-ms.date: 07/17/2019
+ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 37c6b99fbd7db63c19201e0c6dce9b2b6d9f1932
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: fe2904dee349f32feb115ea533adbb4b1d8b7140
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423611"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74204938"
 ---
-# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : détecter les anomalies dans les ventes de produits avec ML.NET
+# <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Tutorial: Detect anomalies in product sales with ML.NET
 
 Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
@@ -28,7 +28,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 ## <a name="prerequisites"></a>Configuration requise
 
-* [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail « développement multiplateforme .net Core » installée.
+* [Visual Studio 2017 version 15.6 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the ".NET Core cross-platform development" workload installed.
 
 * [Jeu de données product-sales.csv](https://raw.githubusercontent.com/dotnet/machinelearning-samples/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)
 
@@ -44,7 +44,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 3. Installez le **package NuGet Microsoft.ML** :
 
-    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choisissez « nuget.org » comme source du package, sélectionnez l’onglet Parcourir, recherchez **Microsoft.ML**, sélectionnez le package **v1.0.0** dans la liste, puis cliquez sur le bouton **Installer**. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés. Répétez ces étapes pour **Microsoft.ML.TimeSeries v0.12.0**.
+    Dans l'Explorateur de solutions, cliquez avec le bouton droit sur votre projet, puis sélectionnez **Gérer les packages NuGet**. Choose "nuget.org" as the Package source, select the Browse tab, search for **Microsoft.ML** and select the **Install** button. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés. Repeat these steps for **Microsoft.ML.TimeSeries**.
 
 4. Ajoutez les instructions `using` suivantes en tête de votre fichier *Program.cs* :
 
@@ -123,18 +123,18 @@ Les données dans ML.NET sont représentées en tant que [classe IDataView](xref
 
     [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) définit le schéma de données et lit le fichier. Elle prend les variables de chemin de données et retourne un `IDataView`.
 
-## <a name="time-series-anomaly-detection"></a>Détection des anomalies de série chronologique
+## <a name="time-series-anomaly-detection"></a>Time series anomaly detection
 
 La détection d’anomalie signale des événements ou des comportements inattendus ou inhabituels. Elle fournit des indices sur la localisation des problèmes potentiels et vous aide à déterminer si une situation est « étrange ».
 
-![Exemple de détection d’anomalie « est-ce étrange ».](./media/sales-anomaly-detection/time-series-anomaly-detection.png)
+![Example of the "Is this weird" anomaly detection.](./media/sales-anomaly-detection/time-series-anomaly-detection.png)
 
 La détection d’anomalie est le processus d’identification des valeurs hors norme dans une série chronologique donnée, c’est-à-dire les points dont le comportement est inattendu ou « étrange ».
 
 La détection d’anomalie peut se révéler utile dans de nombreux cas. Par exemple :
 
-Si vous disposez d’une voiture, vous souhaiterez peut-être en savoir : cette jauge d’huile est-elle normale ou est-ce que j’ai une fuite ?
-Si vous surveillez la consommation d’énergie, voulez-vous en savoir : existe-t-il une panne ?
+If you have a car, you might want to know: Is this oil gauge reading normal, or do I have a leak?
+If you're monitoring power consumption, you’d want to know: Is there an outage?
 
 Vous pouvez détecter deux types d’anomalies dans les séries chronologiques :
 
@@ -152,7 +152,7 @@ Vous allez analyser les mêmes données de ventes d’un produit pour détecter 
 
 L’objectif est d’identifier les poussées d’activité, par définition soudaines et temporaires, qui diffèrent considérablement de la majorité des valeurs de données de la série chronologique. Il est important de détecter au plus vite ces éléments, événements ou constats suspects pour pouvoir les minimiser. Vous pouvez utiliser l’approche suivante pour détecter de nombreuses anomalies, notamment des pannes, des cyberattaques et du contenu web viral. L’image suivante illustre des pics dans le jeu de données d’une série chronologique :
 
-![Capture d’écran montrant deux détections pic.](./media/sales-anomaly-detection/two-spike-detections.png)
+![Screenshot that shows two spike detections.](./media/sales-anomaly-detection/two-spike-detections.png)
 
 ### <a name="add-the-createemptydataview-method"></a>Ajouter la méthode CreateEmptyDataView()
 
@@ -266,7 +266,7 @@ Alert   Score   P-Value
 
 Les points de changement (`Change points`) indiquent des changements persistants dans la distribution de valeurs d’un flux d’événements d’une série chronologique, comme des changements de niveau ou des tendances. Ces changements persistants durent beaucoup plus longtemps que les pics (`spikes`) et peuvent indiquer des événements catastrophiques. `Change points` ne sont généralement pas visibles à l’œil nu, mais vous pouvez les détecter dans vos données à l’aide d’approches comme celles décrites dans la méthode suivante.  L’image suivante illustre la détection des points de changement :
 
-![Capture d’écran montrant une détection de point de modification.](./media/sales-anomaly-detection/change-point-detection.png)
+![Screenshot that shows a change point detection.](./media/sales-anomaly-detection/change-point-detection.png)
 
 ### <a name="create-the-detectchangepoint-method"></a>Créer la méthode DetectChangepoint()
 

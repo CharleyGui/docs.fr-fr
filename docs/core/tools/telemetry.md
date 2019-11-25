@@ -4,12 +4,12 @@ description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Co
 author: KathleenDollard
 ms.date: 08/27/2019
 ms.custom: seodec18
-ms.openlocfilehash: 253f69392f034e330a75ed387d9346e8a5ae2a08
-ms.sourcegitcommit: 77e33b682db39955e331b8e8eda4ef1925a24e78
-ms.translationtype: HT
+ms.openlocfilehash: ecb8dbed036a04726867d004dbadf6205c1fa09f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/29/2019
-ms.locfileid: "70133696"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281776"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
 
@@ -17,7 +17,7 @@ Le kit [SDK .NET Core](index.md) comprend une fonctionnalité de télémétrie q
 
 Les données collectées sont anonymes et publiées de manière groupée selon les termes de la [licence Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/). 
 
-## <a name="scope"></a>Portée
+## <a name="scope"></a>`Scope`
 
 `dotnet` a deux fonctions : exécuter les applications et exécuter les commandes CLI. Les informations de télémétrie *ne sont pas collectées* quand vous utilisez `dotnet` pour démarrer une application au format suivant :
 
@@ -57,13 +57,13 @@ La fonctionnalité de télémétrie collecte les données suivantes :
 
 | Versions du SDK | Données |
 |--------------|------|
-| Tous          | Horodatage de l’appel. |
-| Tous          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
-| Tous          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
-| Tous          | Système d’exploitation et version. |
-| Tous          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
-| Tous          | Version du kit SDK .NET Core. |
-| Tous          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
+| Tout          | Horodatage de l’appel. |
+| Tout          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
+| Tout          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
+| Tout          | Système d’exploitation et version. |
+| Tout          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
+| Tout          | Version du kit SDK .NET Core. |
+| Tout          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
 | >=2.0        | Arguments et options de commande : plusieurs arguments et options sont collectés (pas de chaînes arbitraires). Consultez [options collectées](#collected-options). Hachage après la version 2.1.300. |
 | >=2.0         | Si le SDK est en cours d’exécution dans un conteneur. |
 | >=2.0         | Frameworks cibles (tirés de l’événement `TargetFramework`), hachés à partir de la version 2.1. |
@@ -114,7 +114,7 @@ L’interface CLI .NET Core collecte des informations pour les exceptions CLI/SD
 
 L’exemple suivant montre le type des données collectées :
 
-```
+```console
 System.IO.IOException
 at System.ConsolePal.WindowsConsoleStream.Write(Byte[] buffer, Int32 offset, Int32 count)
 at System.IO.StreamWriter.Flush(Boolean flushStream, Boolean flushEncoder)

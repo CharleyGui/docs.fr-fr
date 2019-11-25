@@ -1,18 +1,18 @@
 ---
-title: Comparaison de la programmation fonctionnelle et de la Programmation impérative (Visual Basic)
+title: Comparaison de la programmation fonctionnelle et de la programmation impérative
 ms.date: 07/20/2015
 ms.assetid: 6a1f3b57-00e6-447d-9906-74c7c4d5d85c
-ms.openlocfilehash: 140e9b8cae78c3e3ad073c2aace0636dacd11c1e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 704beadc29af0de606b8f246360dc6fffca8cfcc
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64618286"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353440"
 ---
-# <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Comparaison de la programmation fonctionnelle et de la Programmation impérative (Visual Basic)
+# <a name="functional-programming-vs-imperative-programming-visual-basic"></a>Functional Programming vs. Imperative Programming (Visual Basic)
 Cette rubrique compare et contraste la programmation fonctionnelle avec la programmation impérative (procédurale) plus traditionnelle.  
   
-## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la Programmation impérative  
+## <a name="functional-programming-vs-imperative-programming"></a>Comparaison de la programmation fonctionnelle et de la programmation impérative  
  Le paradigme *programmation fonctionnelle* a été créé explicitement afin de prendre en charge une approche fonctionnelle pure de la résolution des problèmes. La programmation fonctionnelle est une forme de *programmation déclarative*. Par contraste, la plupart des langages courants, y compris des langages de programmation orientés objets tels que C#, Visual Basic, C++ et Java, ont été conçus principalement pour prendre en charge la programmation *impérative* (procédurale).  
   
  Avec une approche impérative, un développeur écrit du code qui décrit exactement et en détail les étapes que l'ordinateur doit effectuer pour atteindre l'objectif. On appelle parfois cela la programmation *algorithmique*. Par contraste, une approche fonctionnelle suppose la composition du problème sous la forme d'un ensemble de fonctions à exécuter. Vous définissez soigneusement l'entrée de chaque fonction et ce que chaque fonction retourne. Le tableau suivant décrit quelques-unes des différences générales entre ces deux approches.  
@@ -25,12 +25,12 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
 |Contrôle de flux principal|Boucles, conditions et appels de fonctions (méthodes).|Appels de fonctions, y compris la récursivité.|  
 |Unité de manipulation principale|Instances de structures ou classes.|Fonctions en tant que collectes de données et objets de première classe.|  
   
- Bien que la plupart des langages aient été conçus pour prendre en charge un paradigme de programmation spécifique, de nombreux langages généraux sont suffisamment flexibles pour prendre en charge plusieurs paradigmes. Par exemple, la plupart des langages qui contiennent des pointeurs fonction peuvent être utilisés pour prendre en charge de manière crédible la programmation fonctionnelle. En outre, Visual Basic inclut des extensions de langage explicites pour prendre en charge la programmation fonctionnelle, y compris les expressions lambda et l’inférence de type. La technologie LINQ est une forme de programmation déclarative fonctionnelle.  
+ Bien que la plupart des langages aient été conçus pour prendre en charge un paradigme de programmation spécifique, de nombreux langages généraux sont suffisamment flexibles pour prendre en charge plusieurs paradigmes. Par exemple, la plupart des langages qui contiennent des pointeurs fonction peuvent être utilisés pour prendre en charge de manière crédible la programmation fonctionnelle. Furthermore, Visual Basic includes explicit language extensions to support functional programming, including lambda expressions and type inference. La technologie LINQ est une forme de programmation déclarative fonctionnelle.  
   
 ## <a name="functional-programming-using-xslt"></a>Programmation fonctionnelle à l'aide de XSLT  
  De nombreux développeurs XSLT connaissent l'approche fonctionnelle pure. La manière la plus efficace de développer une feuille de style XSLT consiste à traiter chaque modèle comme une transformation composable et isolée. L'ordre d'exécution n'est pas du tout mis en évidence. XSLT n'autorise pas les effets secondaires (hormis le fait que les mécanismes d'échappement pour l'exécution de procédures de code peuvent introduire des effets secondaires qui entraînent une impureté fonctionnelle). Toutefois, même si XSLT est un outil efficace, certaines de ses caractéristiques ne sont pas optimales. Par exemple, l'expression de constructions de programmation en XML rend le code relativement détaillé, et par conséquent difficile à maintenir. De plus, la forte dépendance envers la récursivité pour le contrôle de flux peut nuire à la lisibilité du code. Pour plus d’informations sur XSLT, consultez [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md).  
   
- Toutefois, le langage XSLT a prouvé la valeur de l'utilisation d'une approche fonctionnelle pure pour la transformation de code XML d'une forme en une autre. La programmation fonctionnelle pure à l'aide de LINQ to XML est semblable en de nombreux points au langage XSLT. Toutefois, les constructions de programmation introduites par LINQ to XML et Visual Basic vous permettent d’écrire des transformations fonctionnelles pures plus lisibles et gérables que XSLT.  
+ Toutefois, le langage XSLT a prouvé la valeur de l'utilisation d'une approche fonctionnelle pure pour la transformation de code XML d'une forme en une autre. La programmation fonctionnelle pure à l'aide de LINQ to XML est semblable en de nombreux points au langage XSLT. However, the programming constructs introduced by LINQ to XML and Visual Basic allow you to write pure functional transformations that are more readable and maintainable than XSLT.  
   
 ## <a name="advantages-of-pure-functions"></a>Avantages des fonctions pures  
  La raison principale pour implémenter des transformations fonctionnelles en tant que fonctions pures est que celles-ci sont composables, autrement dit autonomes et sans état. Ces caractéristiques apportent un certain nombre d'avantages, notamment les suivants :  
@@ -48,10 +48,10 @@ Cette rubrique compare et contraste la programmation fonctionnelle avec la progr
   
  Par contraste, la programmation fonctionnelle traite les problèmes de calcul comme un exercice d'évaluation de transformations fonctionnelles pures de collectes de données. La programmation fonctionnelle évite l'état et les données mutables, et insiste plutôt sur l'application de fonctions.  
   
- Heureusement, Visual Basic ne nécessite pas la transition totale vers la programmation fonctionnelle, car il prend en charge les approches de programmation impératives et fonctionnelles. Un développeur peut choisir quelle approche convient le mieux à un scénario particulier. En fait, les programmes combinent souvent les deux approches.  
+ Fortunately, Visual Basic doesn't require the full leap to functional programming, because it supports both imperative and functional programming approaches. Un développeur peut choisir quelle approche convient le mieux à un scénario particulier. En fait, les programmes combinent souvent les deux approches.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Introduction aux Transformations fonctionnelles pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
+- [Introduction to Pure Functional Transformations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/introduction-to-pure-functional-transformations.md)
 - [Transformations XSLT](../../../../standard/data/xml/xslt-transformations.md)
-- [Refactorisation dans des fonctions pures (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)
+- [Refactoring Into Pure Functions (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/refactoring-into-pure-functions.md)

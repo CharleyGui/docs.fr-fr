@@ -1,5 +1,5 @@
 ---
-title: Manipulation de fichiers et de répertoires en Visual Basic
+title: Manipulation de fichiers et de répertoires
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], reading text
@@ -15,14 +15,15 @@ helpviewer_keywords:
 - writing to files [Visual Basic], walkthroughs
 - I/O [Visual Basic], reading text from files
 ms.assetid: cae77565-9f78-4e46-8e42-eb2f9f8e1ffd
-ms.openlocfilehash: 4d0aac533759f8cc20ac4f19d7f0e49fef17bf56
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 83dc6ce0d29c1c368c36b51fc84ecad34d72e01f
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59314683"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74333805"
 ---
-# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Procédure pas à pas : Manipulation de fichiers et de répertoires en Visual Basic
+# <a name="walkthrough-manipulating-files-and-directories-in-visual-basic"></a>Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic
+
 Cette procédure pas à pas présente les notions de base d’E/S de fichier dans Visual Basic. Elle décrit comment créer une petite application qui répertorie et examine des fichiers texte dans un répertoire. Pour chaque fichier texte sélectionné, l’application fournit des attributs de fichier et la première ligne de contenu. Elle comprend une option pour écrire des informations dans un fichier journal.  
   
  Cette procédure pas à pas utilise des membres de `My.Computer.FileSystem Object`, qui sont disponibles dans Visual Basic. Pour plus d'informations, voir <xref:Microsoft.VisualBasic.FileIO.FileSystem>. À la fin de la procédure pas à pas, un exemple équivalent est fourni, qui utilise des classes de l’espace de noms <xref:System.IO>.  
@@ -43,13 +44,13 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
   
 4. Ajoutez au formulaire les contrôles répertoriés dans le tableau ci-après et définissez les valeurs de propriété correspondantes.  
   
-    |Contrôle|Property|Value|  
+    |Contrôle|Property|valeur|  
     |-------------|--------------|-----------|  
-    |**ListBox**|**Name**|`filesListBox`|  
-    |**Button**|**Name**<br /><br /> **Text**|`browseButton`<br /><br /> **Parcourir**|  
-    |**Button**|**Name**<br /><br /> **Text**|`examineButton`<br /><br /> **Examiner**|  
-    |**CheckBox**|**Name**<br /><br /> **Text**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
-    |**FolderBrowserDialog**|**Name**|`FolderBrowserDialog1`|  
+    |**ListBox**|**Nom**|`filesListBox`|  
+    |**Button**|**Nom**<br /><br /> **Texte**|`browseButton`<br /><br /> **Parcourir**|  
+    |**Button**|**Nom**<br /><br /> **Texte**|`examineButton`<br /><br /> **Examiner**|  
+    |**CheckBox**|**Nom**<br /><br /> **Texte**|`saveCheckBox`<br /><br /> **Enregistrer les résultats**|  
+    |**FolderBrowserDialog**|**Nom**|`FolderBrowserDialog1`|  
   
 ### <a name="to-select-a-folder-and-list-files-in-a-folder"></a>Pour sélectionner un dossier et répertorier les fichiers dans un dossier  
   
@@ -150,11 +151,13 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
 6. Exécutez l'application. La case **Enregistrer les résultats** et le bouton **Examiner** sont désactivés si aucun élément n’est sélectionné dans le contrôle `ListBox`.  
   
 ## <a name="full-example-using-mycomputerfilesystem"></a>Exemple complet de l’utilisation de My.Computer.FileSystem  
+
  L’exemple complet se trouve ci-dessous.  
   
  [!code-vb[VbVbcnMyFileSystem#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class2.vb#101)]  
   
 ## <a name="full-example-using-systemio"></a>Exemple complet de l’utilisation de System.IO  
+
  L’exemple équivalent suivant utilise des classes de l’espace de noms <xref:System.IO> au lieu d’utiliser des objets `My.Computer.FileSystem`.  
   
  [!code-vb[VbVbcnMyFileSystem#111](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnMyFileSystem/VB/class3.vb#111)]  
@@ -164,4 +167,4 @@ Cette procédure pas à pas présente les notions de base d’E/S de fichier dan
 - <xref:System.IO>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CurrentDirectory%2A>
-- [Procédure pas à pas : Manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)
+- [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)

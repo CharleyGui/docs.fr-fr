@@ -1,33 +1,34 @@
 ---
-title: Modules (Visual Basic)
+title: Modules
 ms.date: 07/20/2015
 helpviewer_keywords:
 - modules, Visual Basic
 ms.assetid: 370bfc90-e8f2-4942-bdec-9897ce605d31
-ms.openlocfilehash: 0bb33b102358fd2d0290fd413b09448255522856
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 48092fd39128f0068a27029541216c9dd9ba9d97
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778649"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344184"
 ---
 # <a name="modules-visual-basic"></a>Modules (Visual Basic)
-Visual Basic fournit plusieurs modules qui vous permettent de simplifier les tâches courantes dans votre code, notamment la manipulation de chaînes, en effectuant des calculs mathématiques, l’obtention des informations système, effectuer des opérations de fichiers et de répertoires et ainsi de suite. Le tableau suivant répertorie les modules fournis par Visual Basic.  
+
+Visual Basic provides several modules that enable you to simplify common tasks in your code, including manipulating strings, performing mathematical calculations, getting system information, performing file and directory operations, and so on. The following table lists the modules provided by Visual Basic.  
   
 |||  
 |---|---|  
-|<xref:Microsoft.VisualBasic.Constants>|Contient diverses constantes. Ces constantes peuvent être utilisées n’importe où dans votre code.|  
-|<xref:Microsoft.VisualBasic.ControlChars>|Contient des caractères de contrôle de constante pour l’impression et l’affichage du texte.|  
-|<xref:Microsoft.VisualBasic.Conversion>|Contient des membres qui convertissent les nombres décimaux en d’autres bases, de nombres en chaînes, des chaînes en nombres et données d’un type vers un autre.|  
-|<xref:Microsoft.VisualBasic.DateAndTime>|Contient des membres qui obtenir la date actuelle ou l’heure, effectuent des calculs de date, retournent une date ou heure, définissent la date ou l’heure ou la durée d’un processus.|  
-|<xref:Microsoft.VisualBasic.ErrObject>|Contient des informations sur les erreurs d’exécution et les méthodes à générer ou de supprimer une erreur.|  
-|<xref:Microsoft.VisualBasic.FileSystem>|Contient des membres qui effectuent des opérations de fichier, répertoire ou dossier et système.|  
-|<xref:Microsoft.VisualBasic.Financial>|Contient des procédures qui sont utilisés pour effectuer des calculs financiers.|  
-|<xref:Microsoft.VisualBasic.Globals>|Contient des informations sur la version actuelle du moteur de script.|  
-|<xref:Microsoft.VisualBasic.Information>|Contient les membres qui retournent, tester ou vérifier les informations telles que la taille du tableau, les noms de type et ainsi de suite.|  
-|<xref:Microsoft.VisualBasic.Interaction>|Contient des membres qui interagissent avec les objets, les applications et les systèmes.|  
-|<xref:Microsoft.VisualBasic.Strings>|Contient des membres qui effectuent des opérations de chaînes telles que la remise en forme des chaînes, rechercher une chaîne, en obtenant la longueur d’une chaîne et ainsi de suite.|  
-|<xref:Microsoft.VisualBasic.VBMath>|Contient des membres effectuent des opérations mathématiques.|  
+|<xref:Microsoft.VisualBasic.Constants>|Contains miscellaneous constants. These constants can be used anywhere in your code.|  
+|<xref:Microsoft.VisualBasic.ControlChars>|Contains constant control characters for printing and displaying text.|  
+|<xref:Microsoft.VisualBasic.Conversion>|Contains members that convert decimal numbers to other bases, numbers to strings, strings to numbers, and one data type to another.|  
+|<xref:Microsoft.VisualBasic.DateAndTime>|Contains members that get the current date or time, perform date calculations, return a date or time, set the date or time, or time the duration of a process.|  
+|<xref:Microsoft.VisualBasic.ErrObject>|Contains information about run-time errors and methods to raise or clear an error.|  
+|<xref:Microsoft.VisualBasic.FileSystem>|Contains members that perform file, directory or folder, and system operations.|  
+|<xref:Microsoft.VisualBasic.Financial>|Contains procedures that are used to perform financial calculations.|  
+|<xref:Microsoft.VisualBasic.Globals>|Contains information about the current scripting engine version.|  
+|<xref:Microsoft.VisualBasic.Information>|Contains the members that return, test for, or verify information such as array size, type names, and so on.|  
+|<xref:Microsoft.VisualBasic.Interaction>|Contains members interact with objects, applications, and systems.|  
+|<xref:Microsoft.VisualBasic.Strings>|Contains members that perform string operations such as reformatting strings, searching a string, getting the length of a string, and so on.|  
+|<xref:Microsoft.VisualBasic.VBMath>|Contains members perform mathematical operations.|  
   
 ## <a name="see-also"></a>Voir aussi
 

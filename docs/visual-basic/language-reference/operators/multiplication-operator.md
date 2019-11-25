@@ -1,5 +1,5 @@
 ---
-title: '* (Visual Basic), opérateur'
+title: '* opérateur'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.*
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - multiplication operator [Visual Basic], syntax
 - math operators [Visual Basic]
 ms.assetid: 2b210382-99da-4195-89ba-b1d06f5e89ad
-ms.openlocfilehash: b5b601c7604cb7ce1afaebc98b2157634a77fda4
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 4f6a8ea2c5f4e23791afdfe98d2a08bf67219048
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701090"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348362"
 ---
 # <a name="-operator-visual-basic"></a>*, opérateur (Visual Basic)
 Multiplie deux nombres.  
@@ -30,32 +30,32 @@ number1 * number2
   
 |Terme|Définition|  
 |---|---|  
-|`number1`|Obligatoire. Toute expression numérique.|  
-|`number2`|Obligatoire. Toute expression numérique.|  
+|`number1`|Requis. Toute expression numérique.|  
+|`number2`|Requis. Toute expression numérique.|  
   
 ## <a name="result"></a>Résultat  
- Le résultat est le produit de `number1` et `number2`.  
+ The result is the product of `number1` and `number2`.  
   
 ## <a name="supported-types"></a>Types pris en charge  
- Tous les types numériques, y compris les types non signés et à virgule flottante, et `Decimal`.  
+ All numeric types, including the unsigned and floating-point types and `Decimal`.  
   
 ## <a name="remarks"></a>Notes  
- Le type de données du résultat dépend des types des opérandes. Le tableau suivant montre comment le type de données du résultat est déterminé.  
+ The data type of the result depends on the types of the operands. The following table shows how the data type of the result is determined.  
   
-|Types de données des opérandes|Type de données de résultat|  
+|Operand data types|Result data type|  
 |---|---|  
-|Les deux expressions sont des types de données intégraux ([SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md), [short](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md), [Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md), [UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md), [long](../../../visual-basic/language-reference/data-types/long-data-type.md), [ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md))|Type de données numérique approprié pour les types de données de `number1` et `number2`. Consultez les tables « arithmétiques sur les entiers » dans [types de données des résultats d’opérateur](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).|  
-|Les deux expressions sont [décimales](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`|  
-|Les deux expressions sont [uniques](../../../visual-basic/language-reference/data-types/single-data-type.md)|`Single`|  
-|L’une des expressions est un type de données à virgule flottante (`Single` ou [double](../../../visual-basic/language-reference/data-types/double-data-type.md)), mais pas les deux `Single` (Notez `Decimal` n’est pas un type de données à virgule flottante)|`Double`|  
+|Both expressions are integral data types ([SByte](../../../visual-basic/language-reference/data-types/sbyte-data-type.md), [Byte](../../../visual-basic/language-reference/data-types/byte-data-type.md), [Short](../../../visual-basic/language-reference/data-types/short-data-type.md), [UShort](../../../visual-basic/language-reference/data-types/ushort-data-type.md), [Integer](../../../visual-basic/language-reference/data-types/integer-data-type.md), [UInteger](../../../visual-basic/language-reference/data-types/uinteger-data-type.md), [Long](../../../visual-basic/language-reference/data-types/long-data-type.md), [ULong](../../../visual-basic/language-reference/data-types/ulong-data-type.md))|A numeric data type appropriate for the data types of `number1` and `number2`. See the "Integer Arithmetic" tables in [Data Types of Operator Results](../../../visual-basic/language-reference/operators/data-types-of-operator-results.md).|  
+|Both expressions are [Decimal](../../../visual-basic/language-reference/data-types/decimal-data-type.md)|`Decimal`|  
+|Both expressions are [Single](../../../visual-basic/language-reference/data-types/single-data-type.md)|`Single`|  
+|Either expression is a floating-point data type (`Single` or [Double](../../../visual-basic/language-reference/data-types/double-data-type.md)) but not both `Single` (note `Decimal` is not a floating-point data type)|`Double`|  
   
- Si une expression prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), elle est considérée comme égale à zéro.  
+ If an expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), it is treated as zero.  
   
 ## <a name="overloading"></a>Surcharge  
- L’opérateur `*` peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The `*` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise l’opérateur `*` pour multiplier deux nombres. Le résultat est le produit des deux opérandes.  
+ This example uses the `*` operator to multiply two numbers. The result is the product of the two operands.  
   
  [!code-vb[VbVbalrOperators#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#4)]  
   
@@ -65,4 +65,4 @@ number1 * number2
 - [Opérateurs arithmétiques](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Opérateurs arithmétiques dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

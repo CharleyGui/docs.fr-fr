@@ -1,5 +1,5 @@
 ---
-title: += (opérateur Visual Basic)
+title: +=, opérateur
 ms.date: 07/20/2015
 f1_keywords:
 - vb.+=
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - += operator [Visual Basic], appending strings
 - compound assignment statements [Visual Basic]
 ms.assetid: d3e959f4-85d4-4e47-87c4-77b62335a5b3
-ms.openlocfilehash: 249a19abfb08677c01ac4cc484d049a7ed1a983c
-ms.sourcegitcommit: 35da8fb45b4cca4e59cc99a5c56262c356977159
+ms.openlocfilehash: 31a6da163061b905b8ffddcfc4b44978f5cdd55e
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/28/2019
-ms.locfileid: "71591648"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350309"
 ---
 # <a name="-operator-visual-basic"></a>+= (opérateur Visual Basic)
-Ajoute la valeur d’une expression numérique à la valeur d’une variable ou d’une propriété numérique et assigne le résultat à la variable ou à la propriété. Peut également être utilisé pour concaténer une expression `String` à une variable ou une propriété `String` et assigner le résultat à la variable ou à la propriété.  
+Adds the value of a numeric expression to the value of a numeric variable or property and assigns the result to the variable or property. Can also be used to concatenate a `String` expression to a `String` variable or property and assign the result to the variable or property.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,34 +28,34 @@ variableorproperty += expression
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Obligatoire. Toute variable ou propriété numérique ou `String`.  
+ Requis. Any numeric or `String` variable or property.  
   
  `expression`  
- Obligatoire. Toute expression numérique ou `String`.  
+ Requis. Any numeric or `String` expression.  
   
 ## <a name="remarks"></a>Notes  
- L’élément situé à gauche de l’opérateur `+=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ The element on the left side of the `+=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- L’opérateur `+=` ajoute la valeur à droite à la variable ou à la propriété à sa gauche, et assigne le résultat à la variable ou à la propriété à sa gauche. L’opérateur `+=` peut également être utilisé pour concaténer l’expression `String` à sa droite à la variable ou à la propriété `String` à gauche, et assigner le résultat à la variable ou à la propriété à sa gauche.  
+ The `+=` operator adds the value on its right to the variable or property on its left, and assigns the result to the variable or property on its left. The `+=` operator can also be used to concatenate the `String` expression on its right to the `String` variable or property on its left, and assign the result to the variable or property on its left.  
   
 > [!NOTE]
-> Lorsque vous utilisez l’opérateur `+=`, vous ne pourrez peut-être pas déterminer si l’addition ou la concaténation de chaînes aura lieu. Utilisez l’opérateur `&=` pour la concaténation afin d’éliminer toute ambiguïté et de fournir du code auto-documenté.  
+> When you use the `+=` operator, you might not be able to determine whether addition or string concatenation will occur. Use the `&=` operator for concatenation to eliminate ambiguity and to provide self-documenting code.  
   
- Cet opérateur d’assignation effectue implicitement des conversions étendues mais non restrictives si l’environnement de compilation impose une sémantique stricte. Pour plus d’informations sur ces conversions, consultez [élargissement et conversions restrictives](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). Pour plus d’informations sur la sémantique stricte et permissive, consultez [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
+ This assignment operator implicitly performs widening but not narrowing conversions if the compilation environment enforces strict semantics. For more information on these conversions, see [Widening and Narrowing Conversions](../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md). For more information on strict and permissive semantics, see [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md).  
   
- Si la sémantique permissive est autorisée, l’opérateur `+=` effectue implicitement une variété de conversions de chaînes et de nombres identiques à celles effectuées par l’opérateur `+`. Pour plus d’informations sur ces conversions, consultez [opérateur +](../../../visual-basic/language-reference/operators/addition-operator.md).  
+ If permissive semantics are allowed, the `+=` operator implicitly performs a variety of string and numeric conversions identical to those performed by the `+` operator. For details on these conversions, see [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md).  
   
 ## <a name="overloading"></a>Surcharge  
- L’opérateur `+` peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `+` affecte le comportement de l’opérateur `+=`. Si votre code utilise `+=` sur une classe ou une structure qui surcharge `+`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ The `+` operator can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `+` operator affects the behavior of the `+=` operator. If your code uses `+=` on a class or structure that overloads `+`, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise l’opérateur `+=` pour combiner la valeur d’une variable à une autre. La première partie utilise `+=` avec des variables numériques pour ajouter une valeur à une autre. La deuxième partie utilise `+=` avec des variables de `String` pour concaténer une valeur avec une autre. Dans les deux cas, le résultat est affecté à la première variable.  
+ The following example uses the `+=` operator to combine the value of one variable with another. The first part uses `+=` with numeric variables to add one value to another. The second part uses `+=` with `String` variables to concatenate one value with another. In both cases, the result is assigned to the first variable.  
   
  [!code-vb[VbVbalrOperators#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#7)]  
   
  [!code-vb[VbVbalrOperators#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#8)]  
   
- La valeur de `num1` est maintenant 13 et la valeur de `str1` est désormais « 103 ».  
+ The value of `num1` is now 13, and the value of `str1` is now "103".  
   
 ## <a name="see-also"></a>Voir aussi
 

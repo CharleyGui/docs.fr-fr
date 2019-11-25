@@ -1,5 +1,5 @@
 ---
-title: Types de données caractères (Visual Basic)
+title: Types de données caractère
 ms.date: 07/20/2015
 helpviewer_keywords:
 - data types [Visual Basic], character
@@ -8,43 +8,43 @@ helpviewer_keywords:
 - Char data type [Visual Basic], character data types
 - data types [Visual Basic], choosing
 ms.assetid: 902479ef-1679-47fc-9911-0c1c5008226c
-ms.openlocfilehash: d29e8771d61c04cf35aa71b5ba7fbba0d308c730
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: edd1d3a41dd878649aa422256b7858d7bce366e1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965675"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346396"
 ---
 # <a name="character-data-types-visual-basic"></a>Types de données caractères (Visual Basic)
-Visual Basic fournit des *types de données caractères* pour gérer les caractères imprimables et affichables. Bien qu’ils traitent tous deux des `Char` caractères Unicode, contient un `String` caractère unique, tandis que contient un nombre indéfini de caractères.  
+Visual Basic provides *character data types* to deal with printable and displayable characters. While they both deal with Unicode characters, `Char` holds a single character whereas `String` contains an indefinite number of characters.  
   
- Pour obtenir une table qui affiche une comparaison côte à côte des types de données Visual Basic, consultez [types de données](../../../../visual-basic/language-reference/data-types/index.md).  
+ For a table that displays a side-by-side comparison of the Visual Basic data types, see [Data Types](../../../../visual-basic/language-reference/data-types/index.md).  
   
-## <a name="char-type"></a>Char, type  
- Le `Char` type de données est un caractère Unicode codé sur deux octets (16 bits). Si une variable stocke toujours un caractère exactement, déclarez `Char`-la comme. Par exemple :  
+## <a name="char-type"></a>Char Type  
+ The `Char` data type is a single two-byte (16-bit) Unicode character. If a variable always stores exactly one character, declare it as `Char`. Exemple :  
   
  [!code-vb[VbVbalrCharTypes#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#1)]
   
- Chaque valeur possible dans une `Char` variable `String` ou est un *point de code*, ou code de caractère, dans le jeu de caractères Unicode. Les caractères Unicode incluent le jeu de caractères ASCII de base, les autres lettres de l’alphabet, les accents, les symboles monétaires, les fractions, les signes diacritiques et les symboles mathématiques et techniques.  
+ Each possible value in a `Char` or `String` variable is a *code point*, or character code, in the Unicode character set. Unicode characters include the basic ASCII character set, various other alphabet letters, accents, currency symbols, fractions, diacritics, and mathematical and technical symbols.  
   
 > [!NOTE]
-> Le jeu de caractères Unicode réserve les points de code D800 à DFFF (55296 à 55551 décimal) pour les *paires de substitution*, qui requièrent des valeurs de 2 16 bits pour représenter un point de code unique. Une `Char` variable ne peut pas contenir une paire de substitution `String` et un utilise deux positions pour contenir une telle paire.  
+> The Unicode character set reserves the code points D800 through DFFF (55296 through 55551 decimal) for *surrogate pairs*, which require two 16-bit values to represent a single code point. A `Char` variable cannot hold a surrogate pair, and a `String` uses two positions to hold such a pair.  
   
- Pour plus d’informations, consultez [type de données char](../../../../visual-basic/language-reference/data-types/char-data-type.md).  
+ For more information, see [Char Data Type](../../../../visual-basic/language-reference/data-types/char-data-type.md).  
   
-## <a name="string-type"></a>Type de chaîne  
- Le `String` type de données est une séquence de zéro, un ou plusieurs caractères Unicode (16 bits) de 2 octets. Si une variable peut contenir un nombre indéfini de caractères, déclarez- `String`la comme. Par exemple :  
+## <a name="string-type"></a>String Type  
+ The `String` data type is a sequence of zero or more two-byte (16-bit) Unicode characters. If a variable can contain an indefinite number of characters, declare it as `String`. Exemple :  
   
  [!code-vb[VbVbalrCharTypes#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvbalrchartypes/vb/module1.vb#2)]
   
- Pour plus d’informations, consultez [type de données String](../../../../visual-basic/language-reference/data-types/string-data-type.md).  
+ For more information, see [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md)
 - [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
-- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Caractères de type](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)

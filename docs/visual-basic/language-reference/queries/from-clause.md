@@ -1,5 +1,5 @@
 ---
-title: From, clause (Visual Basic)
+title: From, clause
 ms.date: 07/20/2015
 f1_keywords:
 - vb.QueryFrom
@@ -10,15 +10,15 @@ helpviewer_keywords:
 - From clause [Visual Basic]
 - From statement [Visual Basic]
 ms.assetid: 83e3665e-68a0-4540-a3a3-3d777a0f95d5
-ms.openlocfilehash: 781902f1bf28bd029c8d9825aee155a6691cbae9
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: a63fb41fc2b0ad885acf76ad5d56e446922f5b90
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004782"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343776"
 ---
 # <a name="from-clause-visual-basic"></a>From, clause (Visual Basic)
-Spécifie une ou plusieurs variables de plage et une collection à interroger.  
+Specifies one or more range variables and a collection to query.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,41 +31,41 @@ From element [ As type ] In collection [ _ ]
   
 |Terme|Définition|  
 |---|---|  
-|`element`|Obligatoire. *Variable de portée* utilisée pour itérer au sein des éléments de la collection. Une variable de portée est utilisée pour faire référence à chaque membre du `collection`, car la requête itère au sein de la `collection`. Doit être un type énumérable.|  
-|`type`|facultatif. Type d'élément `element`. Si aucun `type` n’est spécifié, le type de `element` est déduit à partir de `collection`.|  
-|`collection`|Obligatoire. Fait référence à la collection à interroger. Doit être un type énumérable.|  
+|`element`|Requis. A *range variable* used to iterate through the elements of the collection. A range variable is used to refer to each member of the `collection` as the query iterates through the `collection`. Must be an enumerable type.|  
+|`type`|Optionnel. Type d'élément `element`. If no `type` is specified, the type of `element` is inferred from `collection`.|  
+|`collection`|Requis. Refers to the collection to be queried. Must be an enumerable type.|  
   
 ## <a name="remarks"></a>Notes  
- La clause `From` est utilisée pour identifier les données sources d’une requête et les variables utilisées pour faire référence à un élément de la collection source. Ces variables sont appelées *variables de portée*. La clause `From` est requise pour une requête, sauf lorsque la clause `Aggregate` est utilisée pour identifier une requête qui retourne uniquement des résultats agrégés. Pour plus d’informations, consultez [Aggregate, clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
+ The `From` clause is used to identify the source data for a query and the variables that are used to refer to an element from the source collection. These variables are called *range variables*. The `From` clause is required for a query, except when the `Aggregate` clause is used to identify a query that returns only aggregated results. For more information, see [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
- Vous pouvez spécifier plusieurs clauses `From` dans une requête pour identifier plusieurs collections à joindre. Lorsque plusieurs regroupements sont spécifiés, ils sont itérés indépendamment ou vous pouvez les joindre s’ils sont liés. Vous pouvez joindre implicitement des collections à l’aide de la clause `Select`, ou explicitement à l’aide des clauses `Join` ou `Group Join`. En guise d’alternative, vous pouvez spécifier plusieurs variables et collections de portée dans une seule clause `From`, avec chaque variable de portée associée et chaque collection, séparées par une virgule. L’exemple de code suivant affiche les deux options de syntaxe pour la clause `From`.  
+ You can specify multiple `From` clauses in a query to identify multiple collections to be joined. When multiple collections are specified, they are iterated over independently, or you can join them if they are related. You can join collections implicitly by using the `Select` clause, or explicitly by using the `Join` or `Group Join` clauses. As an alternative, you can specify multiple range variables and collections in a single `From` clause, with each related range variable and collection separated from the others by a comma. The following code example shows both syntax options for the `From` clause.  
   
  [!code-vb[VbSimpleQuerySamples#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#21)]  
   
- La clause `From` définit la portée d’une requête, qui est similaire à la portée d’une boucle `For`. Par conséquent, chaque variable de portée `element` dans l’étendue d’une requête doit avoir un nom unique. Étant donné que vous pouvez spécifier plusieurs clauses `From` pour une requête, les clauses `From` suivantes peuvent faire référence à des variables de portée dans la clause `From`, ou elles peuvent faire référence à des variables de portée dans une clause `From` précédente. Par exemple, l’exemple suivant montre une clause `From` imbriquée dans laquelle la collection de la deuxième clause est basée sur une propriété de la variable de portée dans la première clause.  
+ The `From` clause defines the scope of a query, which is similar to the scope of a `For` loop. Therefore, each `element` range variable in the scope of a query must have a unique name. Because you can specify multiple `From` clauses for a query, subsequent `From` clauses can refer to range variables in the `From` clause, or they can refer to range variables in a previous `From` clause. For example, the following example shows a nested `From` clause where the collection in the second clause is based on a property of the range variable in the first clause.  
   
  [!code-vb[VbSimpleQuerySamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#22)]  
   
- Chaque clause `From` peut être suivie d’une combinaison quelconque de clauses de requête supplémentaires pour affiner la requête. Vous pouvez affiner la requête de l’une des manières suivantes :  
+ Each `From` clause can be followed by any combination of additional query clauses to refine the query. You can refine the query in the following ways:  
   
-- Combinez plusieurs collections implicitement en utilisant les clauses `From` et `Select`, ou explicitement à l’aide des clauses `Join` ou `Group Join`.  
+- Combine multiple collections implicitly by using the `From` and `Select` clauses, or explicitly by using the `Join` or `Group Join` clauses.  
   
-- Utilisez la clause `Where` pour filtrer le résultat de la requête.  
+- Use the `Where` clause to filter the query result.  
   
-- Triez le résultat à l’aide de la clause `Order By`.  
+- Sort the result by using the `Order By` clause.  
   
-- Regroupez les résultats similaires en utilisant la clause `Group By`.  
+- Group similar results together by using the `Group By` clause.  
   
-- Utilisez la clause `Aggregate` pour identifier les fonctions d’agrégation à évaluer pour l’ensemble du résultat de la requête.  
+- Use the `Aggregate` clause to identify aggregate functions to evaluate for the whole query result.  
   
-- Utilisez la clause `Let` pour introduire une variable d’itération dont la valeur est déterminée par une expression au lieu d’une collection.  
+- Use the `Let` clause to introduce an iteration variable whose value is determined by an expression instead of a collection.  
   
-- Utilisez la clause `Distinct` pour ignorer les résultats de la requête en double.  
+- Use the `Distinct` clause to ignore duplicate query results.  
   
-- Identifiez les parties du résultat à retourner à l’aide des clauses `Skip`, `Take`, `Skip While` et `Take While`.  
+- Identify parts of the result to return by using the `Skip`, `Take`, `Skip While`, and `Take While` clauses.  
   
 ## <a name="example"></a>Exemple  
- L’expression de requête suivante utilise une clause `From` pour déclarer une variable de portée `cust` pour chaque objet `Customer` dans la collection `customers`. La clause `Where` utilise la variable de portée pour limiter la sortie aux clients de la région spécifiée. La boucle `For Each` affiche le nom de la société pour chaque client dans le résultat de la requête.  
+ The following query expression uses a `From` clause to declare a range variable `cust` for each `Customer` object in the `customers` collection. The `Where` clause uses the range variable to restrict the output to customers from the specified region. The `For Each` loop displays the company name for each customer in the query result.  
   
  [!code-vb[VbSimpleQuerySamples#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#23)]  
   

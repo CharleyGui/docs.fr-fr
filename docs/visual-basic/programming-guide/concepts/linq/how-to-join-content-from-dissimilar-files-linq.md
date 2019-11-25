@@ -1,15 +1,15 @@
 ---
-title: 'Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)'
+title: 'Comment : joindre du contenu issu de différents fichiers (LINQ)'
 ms.date: 06/27/2018
 ms.assetid: e7530857-c467-41ea-9730-84e6b1065a4d
-ms.openlocfilehash: f5bdfecc91f5b2f0ed3764d0f38dee99570d66d4
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: a6528f623d084003bb85dc5bae784b8d96c84d02
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524209"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344556"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>Comment : joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)
+# <a name="how-to-join-content-from-dissimilar-files-linq-visual-basic"></a>How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)
 
 Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.
 
@@ -122,5 +122,5 @@ End Class
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-file-directories.md)

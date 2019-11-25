@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : charger un fichier dans Visual Basic'
+title: 'Comment : transférer un fichier'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - networks, uploading files
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - UploadFile method [Visual Basic]
 - My.Computer.Network.UploadFile method
 ms.assetid: a8b37924-c523-4fd3-b5ca-cb0074df29cd
-ms.openlocfilehash: b2c313078e3438c84068b6cc54d787b567a768b8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 52b731606c74ab7ff06a42dfdbe078616ba33d88
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662695"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345558"
 ---
-# <a name="how-to-upload-a-file-in-visual-basic"></a>Procédure : charger un fichier dans Visual Basic
+# <a name="how-to-upload-a-file-in-visual-basic"></a>Guide pratique pour charger un fichier dans Visual Basic
+
 Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A> pour charger un fichier et le stocker dans un emplacement distant. Si le paramètre `ShowUI` a la valeur `True`, une boîte de dialogue s’affiche pour indiquer la progression du chargement et permettre aux utilisateurs d’annuler l’opération.  
   
 ### <a name="to-upload-a-file"></a>Pour charger un fichier  
@@ -37,6 +38,7 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.Upl
      [!code-vb[VbResourceTasks#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#8)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Les conditions suivantes peuvent lever une exception :  
   
 - Le chemin local n’est pas valide (<xref:System.ArgumentException>).  
@@ -49,5 +51,5 @@ Vous pouvez utiliser la méthode <xref:Microsoft.VisualBasic.Devices.Network.Upl
 
 - <xref:Microsoft.VisualBasic.Devices.Network?displayProperty=nameWithType>
 - <xref:Microsoft.VisualBasic.Devices.Network.UploadFile%2A>
-- [Guide pratique pour télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
-- [Guide pratique pour analyser des chemins](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)
+- [Guide pratique : télécharger un fichier](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-download-a-file.md)
+- [Guide pratique : analyser des chemins d’accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)

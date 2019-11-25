@@ -1,5 +1,5 @@
 ---
-title: Résolution de surcharge (Visual Basic)
+title: Overload Resolution
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic code, procedures
@@ -10,53 +10,53 @@ helpviewer_keywords:
 - signatures [Visual Basic], procedure
 - overloads [Visual Basic], resolution
 ms.assetid: 766115d1-4352-45fb-859f-6063e0de0ec0
-ms.openlocfilehash: 4f81c7377423899c142c4270f325bbd7ed20b877
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0e69136b1e3015055cad9852bf04151f57558b88
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61792029"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352643"
 ---
 # <a name="overload-resolution-visual-basic"></a>Résolution de surcharge (Visual Basic)
-Lorsque le compilateur Visual Basic rencontre un appel à une procédure qui est défini dans plusieurs versions surchargées, le compilateur doit décider de la surcharge à appeler. Il effectue cela en effectuant les étapes suivantes :  
+When the Visual Basic compiler encounters a call to a procedure that is defined in several overloaded versions, the compiler must decide which of the overloads to call. It does this by performing the following steps:  
   
-1. **Accessibilité.** Il élimine toute surcharge avec un niveau d’accès qui empêche le code appelant de l’appeler.  
+1. **Accessibilité.** It eliminates any overload with an access level that prevents the calling code from calling it.  
   
-2. **Nombre de paramètres.** Il élimine les surcharges qui définit un nombre différent de paramètres que ceux spécifiés dans l’appel.  
+2. **Number of Parameters.** It eliminates any overload that defines a different number of parameters than are supplied in the call.  
   
-3. **Types de données de paramètre.** Le compilateur donne la préférence de méthodes d’instance sur les méthodes d’extension. Si n’importe quelle méthode d’instance est trouvée qui nécessite uniquement des conversions pour faire correspondre l’appel de procédure étendues, toutes les méthodes d’extension sont supprimées et le compilateur continue avec uniquement les candidats de méthode d’instance. Si aucune méthode d’instance de ce type n’est trouvé, il continue avec l’instance et de méthodes d’extension.  
+3. **Parameter Data Types.** The compiler gives instance methods preference over extension methods. If any instance method is found that requires only widening conversions to match the procedure call, all extension methods are dropped and the compiler continues with only the instance method candidates. If no such instance method is found, it continues with both instance and extension methods.  
   
-     Dans cette étape, il élimine toute surcharge pour lequel les types de données des arguments appelantes ne peut pas être convertis pour les types de paramètres définis dans la surcharge.  
+     In this step, it eliminates any overload for which the data types of the calling arguments cannot be converted to the parameter types defined in the overload.  
   
-4. **Conversions restrictives.** Il élimine les surcharges qui requiert une conversion restrictive à partir des types d’argument appelant pour les types de paramètres définies. Cela est vrai si le type commutateur de vérification ([Option Strict, instruction](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) est `On` ou `Off`.  
+4. **Narrowing Conversions.** It eliminates any overload that requires a narrowing conversion from the calling argument types to the defined parameter types. This is true whether the type checking switch ([Option Strict Statement](../../../../visual-basic/language-reference/statements/option-strict-statement.md)) is `On` or `Off`.  
   
-5. **Moindre extension.** Le compilateur considère les surcharges restantes par paires. Pour chaque paire, il compare les types de données des paramètres définis. Si les types dans une des surcharges de tous les s’étend à des types correspondants dans l’autre, le compilateur élimine ce dernier. Autrement dit, il conserve la surcharge qui nécessite le moins importante.  
+5. **Least Widening.** The compiler considers the remaining overloads in pairs. For each pair, it compares the data types of the defined parameters. If the types in one of the overloads all widen to the corresponding types in the other, the compiler eliminates the latter. That is, it retains the overload that requires the least amount of widening.  
   
-6. **Candidat unique.** Il continue à rassembler les surcharges par paires jusqu'à ce que la seule surcharge et il résout l’appel à cette surcharge. Si le compilateur ne peut pas réduire la surcharge à un seul candidat, il génère une erreur.  
+6. **Single Candidate.** It continues considering overloads in pairs until only one overload remains, and it resolves the call to that overload. If the compiler cannot reduce the overloads to a single candidate, it generates an error.  
   
- L’illustration suivante montre le processus qui détermine un ensemble de versions surchargées à appeler.  
+ The following illustration shows the process that determines which of a set of overloaded versions to call.  
   
- ![Diagramme de flux de processus de résolution de surcharge](./media/overload-resolution/determine-overloaded-version.gif "résolution parmi des versions surchargées")    
+ ![Flow diagram of overload resolution process](./media/overload-resolution/determine-overloaded-version.gif "Resolving among overloaded versions")    
   
- L’exemple suivant illustre ce processus de résolution de surcharge.  
+ The following example illustrates this overload resolution process.  
   
  [!code-vb[VbVbcnProcedures#62](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#62)]  
   
  [!code-vb[VbVbcnProcedures#63](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#63)]  
   
- Dans le premier appel, le compilateur élimine la première surcharge, car le type du premier argument (`Short`) restreint au type du paramètre correspondant (`Byte`). Il élimine ensuite la troisième surcharge, car chaque argument de type dans la deuxième surcharge (`Short` et `Single`) s’étend au type correspondant dans la troisième surcharge (`Integer` et `Single`). La deuxième surcharge requiert une extension moins importante, donc le compilateur utilise pour l’appel.  
+ In the first call, the compiler eliminates the first overload because the type of the first argument (`Short`) narrows to the type of the corresponding parameter (`Byte`). It then eliminates the third overload because each argument type in the second overload (`Short` and `Single`) widens to the corresponding type in the third overload (`Integer` and `Single`). The second overload requires less widening, so the compiler uses it for the call.  
   
- Dans le deuxième appel, le compilateur ne peut pas éliminer une des surcharges sur la base de conversions restrictives. Il élimine la troisième surcharge pour la même raison, comme dans le premier appel, car elle peut appeler la deuxième surcharge avec une extension moins importante des types d’arguments. Toutefois, le compilateur ne peut pas résoudre entre les premier et deuxième surcharges. Chacun a un type de paramètre défini qui s’étend au type correspondant dans l’autre (`Byte` à `Short`, mais `Single` à `Double`). Par conséquent, le compilateur génère une erreur de résolution de surcharge.  
+ In the second call, the compiler cannot eliminate any of the overloads on the basis of narrowing. It eliminates the third overload for the same reason as in the first call, because it can call the second overload with less widening of the argument types. However, the compiler cannot resolve between the first and second overloads. Each has one defined parameter type that widens to the corresponding type in the other (`Byte` to `Short`, but `Single` to `Double`). The compiler therefore generates an overload resolution error.  
   
-## <a name="overloaded-optional-and-paramarray-arguments"></a>Surchargé facultatif et Arguments ParamArray  
- Si deux surcharges d’une procédure ont des signatures identiques, mais que le dernier paramètre est déclaré [facultatif](../../../../visual-basic/language-reference/modifiers/optional.md) dans un et [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) dans l’autre, le compilateur résout un appel à cette procédure en tant que suit :  
+## <a name="overloaded-optional-and-paramarray-arguments"></a>Overloaded Optional and ParamArray Arguments  
+ If two overloads of a procedure have identical signatures except that the last parameter is declared [Optional](../../../../visual-basic/language-reference/modifiers/optional.md) in one and [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) in the other, the compiler resolves a call to that procedure as follows:  
   
-|Si l’appel fournit le dernier argument en tant que|Le compilateur résout l’appel à la surcharge en déclarant le dernier argument en tant que|  
+|If the call supplies the last argument as|The compiler resolves the call to the overload declaring the last argument as|  
 |---|---|  
-|Aucune valeur (argument omis)|`Optional`|  
-|Une valeur unique|`Optional`|  
-|Deux ou plusieurs valeurs dans une liste séparée par des virgules|`ParamArray`|  
-|Un tableau d’une longueur quelconque (y compris un tableau vide)|`ParamArray`|  
+|No value (argument omitted)|`Optional`|  
+|A single value|`Optional`|  
+|Two or more values in a comma-separated list|`ParamArray`|  
+|An array of any length (including an empty array)|`ParamArray`|  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -64,10 +64,10 @@ Lorsque le compilateur Visual Basic rencontre un appel à une procédure qui est
 - [tableaux de paramètres](./parameter-arrays.md)
 - [Surcharge de procédure](./procedure-overloading.md)
 - [Procédures de dépannage](./troubleshooting-procedures.md)
-- [Guide pratique pour Définir plusieurs Versions d’une procédure](./how-to-define-multiple-versions-of-a-procedure.md)
-- [Guide pratique pour Appeler une procédure surchargée](./how-to-call-an-overloaded-procedure.md)
-- [Guide pratique pour Surcharger une procédure qui accepte des paramètres optionnels](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
-- [Guide pratique pour Surcharger une procédure qui accepte un nombre indéfini de paramètres](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
+- [Guide pratique : définir plusieurs versions d’une procédure](./how-to-define-multiple-versions-of-a-procedure.md)
+- [Guide pratique : appeler une procédure surchargée](./how-to-call-an-overloaded-procedure.md)
+- [Guide pratique : surcharger une procédure qui accepte des paramètres optionnels](./how-to-overload-a-procedure-that-takes-optional-parameters.md)
+- [Guide pratique : surcharger une procédure qui accepte un nombre indéfini de paramètres](./how-to-overload-a-procedure-that-takes-an-indefinite-number-of-parameters.md)
 - [Considérations sur les surcharges de procédures](./considerations-in-overloading-procedures.md)
-- [Overloads](../../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Surcharges](../../../../visual-basic/language-reference/modifiers/overloads.md)
 - [Méthodes d’extension](./extension-methods.md)

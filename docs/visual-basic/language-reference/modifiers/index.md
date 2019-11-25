@@ -1,13 +1,13 @@
 ---
-title: Modificateurs (Visual Basic)
+title: Modificateurs
 ms.date: 07/20/2015
 ms.assetid: a49a0e51-d700-4705-9196-3e0eb582dda6
-ms.openlocfilehash: 466d69ec966037ae3a980bba381fc61be52f30e6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0379a0d0571a66bda4df06f5c2d3282d80034cae
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62051180"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74351539"
 ---
 # <a name="modifiers-visual-basic"></a>Modificateurs (Visual Basic)
 Les rubriques de cette section documentent les modificateurs du runtime Visual Basic.  
@@ -51,7 +51,7 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
   
- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Surcharges](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
   

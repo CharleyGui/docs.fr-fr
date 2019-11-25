@@ -1,15 +1,15 @@
 ---
-title: 'Comment : joindre deux collections (LINQ to XML) (Visual Basic)'
+title: 'How to: Join Two Collections (LINQ to XML)'
 ms.date: 07/20/2015
 ms.assetid: 5a5758d4-906b-4285-908d-5b930db192e6
-ms.openlocfilehash: cb39895ec5916eb417fb2a161e7c1307087c09c5
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 404a43f52fce141b515da389090c81c57186f2e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320579"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344532"
 ---
-# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>Comment : joindre deux collections (LINQ to XML) (Visual Basic)
+# <a name="how-to-join-two-collections-linq-to-xml-visual-basic"></a>How to: Join Two Collections (LINQ to XML) (Visual Basic)
 Un élément ou attribut dans un document XML peut parfois faire référence à un autre élément ou attribut. Par exemple, l’[Exemple de fichier XML : Clients et commandes (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-customers-and-orders-linq-to-xml.md) contient une liste de clients et une liste de commandes. Chaque élément `Customer` contient un attribut `CustomerID`. Chaque élément `Order` contient un élément `CustomerID`. L'élément `CustomerID` dans chaque commande fait référence à l'attribut `CustomerID` dans un client.  
   
  La rubrique [Exemple de fichier XSD : Clients et commandes](../../../../visual-basic/programming-guide/concepts/linq/sample-xsd-file-customers-and-orders.md) contient un XSD qui peut servir à valider ce document. Il utilise les fonctionnalités `xs:key` et `xs:keyref` de XSD pour déterminer que l'attribut `CustomerID` de l'élément `Customer` est une clé et pour établir une relation entre l'élément `CustomerID` dans chaque élément `Order` et l'attribut `CustomerID` dans chaque élément `Customer`.  
@@ -18,7 +18,7 @@ Un élément ou attribut dans un document XML peut parfois faire référence à 
   
  Notez que dans la mesure où aucun index n'est disponible, une telle jointure présentera de faibles performances à l'exécution.  
   
- Pour plus d’informations sur `Join`, consultez [opérations de jointure (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md).  
+ For more detailed information about `Join`, see [Join Operations (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/join-operations.md).  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant joint les éléments `Customer` aux éléments `Order` et génère un nouveau document XML qui inclut l'élément `CompanyName` dans les commandes.  
@@ -137,4 +137,4 @@ Attempting to validate, custOrdDoc validated
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

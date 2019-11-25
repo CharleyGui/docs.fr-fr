@@ -9,15 +9,15 @@ helpviewer_keywords:
 - Label [WPF], styles and templates
 - states [WPF], Label
 ms.assetid: c1d5359a-8e4a-4925-ab3e-e92bf6694859
-ms.openlocfilehash: c3bf4dc629bbb3e4ea21862c6893b001749f4649
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 35fcd9c15bf44d15a08c16d58847698c5ec6e574
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459392"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283507"
 ---
 # <a name="label-styles-and-templates"></a>Styles et modèles Label
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Label>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Label>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="label-parts"></a>Parties de l’étiquette  
  Le contrôle <xref:System.Windows.Controls.Label> n’a pas de parties nommées.  
@@ -49,4 +49,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

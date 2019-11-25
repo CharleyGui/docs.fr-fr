@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Regrouper les fichiers par Extension (LINQ) (Visual Basic)'
+title: 'Comment : regrouper des fichiers par extension (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 904dc6d7-7162-4655-a7f4-5785d669bc5a
-ms.openlocfilehash: f36be784641d45aaae447097ae2bebb5fd650034
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 9e0b5bc29cbfc454cc8031bcd62ed723b8995095
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593473"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344548"
 ---
-# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>Procédure : Regrouper les fichiers par Extension (LINQ) (Visual Basic)
+# <a name="how-to-group-files-by-extension-linq-visual-basic"></a>How to: Group Files by Extension (LINQ) (Visual Basic)
 Cet exemple montre comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide des méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>.  
   
 ## <a name="example"></a>Exemple  
@@ -94,7 +94,7 @@ End Module
  La sortie de ce programme peut être longue, en fonction des détails du système de fichiers local et de la valeur de `startFolder`. Pour permettre l’affichage de tous les résultats, cet exemple montre comment parcourir les résultats. Les mêmes techniques sont applicables aux applications Windows et web. Notez qu’étant donné que le code organise les éléments dans un groupe, une boucle `For Each` imbriquée est nécessaire. Il existe également une logique supplémentaire pour calculer la position actuelle dans la liste et pour permettre aux utilisateurs d’arrêter la pagination et de quitter le programme. Dans ce cas particulier, la requête de pagination est exécutée par rapport aux résultats de la requête d’origine mis en cache. Dans d’autres contextes, tels que LINQ to SQL, ce type de mise en cache n’est pas nécessaire.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Créer un projet d’application console VB.NET, avec un `Imports` instruction pour l’espace de noms System.Linq.
+Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
   
 ## <a name="see-also"></a>Voir aussi
 

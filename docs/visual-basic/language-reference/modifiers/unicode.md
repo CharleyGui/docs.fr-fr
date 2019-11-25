@@ -1,5 +1,5 @@
 ---
-title: Unicode (Visual Basic)
+title: Unicode
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Unicode
@@ -9,29 +9,29 @@ helpviewer_keywords:
 - Unicode keyword [Visual Basic]
 - Unicode, marshaling strings
 ms.assetid: 0021d5ff-3209-444e-8497-420f3e6ee075
-ms.openlocfilehash: b3c9452f8d144fb18ea3efcb35b85caed80e8692
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4286ed9e9d5fd768ae29b7050b3d1505ccca9dd
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778675"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74344221"
 ---
 # <a name="unicode-visual-basic"></a>Unicode (Visual Basic)
-Spécifie que Visual Basic doit marshaler toutes les chaînes en valeurs Unicode, quel que soit le nom de la procédure externe déclarée.  
+Specifies that Visual Basic should marshal all strings to Unicode values regardless of the name of the external procedure being declared.  
   
- Lorsque vous appelez une procédure définie en dehors de votre projet, le compilateur Visual Basic n’a pas accès aux informations qu’il doit avoir pour appeler la procédure correctement. Ces informations incluent où se trouve la procédure, comment il est identifié, sa séquence d’appel et de type de retour, et chaîne de jeu de caractères qu’il utilise. Le [instruction Declare](../../../visual-basic/language-reference/statements/declare-statement.md) crée une référence à une procédure externe et fournit ces informations nécessaires.  
+ When you call a procedure defined outside your project, the Visual Basic compiler does not have access to the information it must have in order to call the procedure correctly. This information includes where the procedure is located, how it is identified, its calling sequence and return type, and the string character set it uses. The [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) creates a reference to an external procedure and supplies this necessary information.  
   
- Le `charsetmodifier` dans le `Declare` instruction fournit les informations de jeu de caractères pour marshaler des chaînes lors d’un appel à la procédure externe. Elle affecte également la façon dont Visual Basic recherche le fichier externe pour le nom de la procédure externe. Le `Unicode` modificateur Spécifie que Visual Basic doit marshaler toutes les chaînes en valeurs Unicode et doit rechercher la procédure sans modifier son nom durant la recherche.  
+ The `charsetmodifier` part in the `Declare` statement supplies the character set information to marshal strings during a call to the external procedure. It also affects how Visual Basic searches the external file for the external procedure name. The `Unicode` modifier specifies that Visual Basic should marshal all strings to Unicode values and should look up the procedure without modifying its name during the search.  
   
- Si aucun modificateur de jeu de caractères est spécifié, `Ansi` est la valeur par défaut.  
+ If no character set modifier is specified, `Ansi` is the default.  
   
 ## <a name="remarks"></a>Notes  
- Le `Unicode` modificateur peut être utilisé dans ce contexte :  
+ The `Unicode` modifier can be used in this context:  
   
  [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
-## <a name="smart-device-developer-notes"></a>Remarques sur le développement Smart Device  
- Ce mot clé n’est pas pris en charge.  
+## <a name="smart-device-developer-notes"></a>Smart Device Developer Notes  
+ This keyword is not supported.  
   
 ## <a name="see-also"></a>Voir aussi
 

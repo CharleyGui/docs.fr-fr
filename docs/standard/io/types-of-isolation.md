@@ -20,12 +20,12 @@ helpviewer_keywords:
 ms.assetid: 14812988-473f-44ae-b75f-fd5c2f21fb7b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: c6c5337fedd13cb18b8e5eeadec48a2e4695a543
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 323b3fedb570ff97012b148aaeda2311b01960b5
+ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969355"
+ms.lasthandoff: 11/20/2019
+ms.locfileid: "74205020"
 ---
 # <a name="types-of-isolation"></a>Types d'isolation
 L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a créé. Pour implémenter ce type d’isolation, le Common Language Runtime utilise la même notion d’identité de l’utilisateur reconnue par le système d’exploitation, c’est-à-dire l’identité associée au processus par lequel le code s’exécute lorsque le magasin est ouvert. Cette identité est l’identité d’un utilisateur, mais l’emprunt d’identité peut provoquer un changement dynamique de l’identité actuelle de l’utilisateur.  
@@ -53,7 +53,7 @@ L’accès au stockage isolé est toujours limité à l’utilisateur qui l’a 
  Notez que, à l’exception des magasins itinérants, le stockage isolé est toujours implicitement isolé par l’ordinateur car il utilise les installations de stockage locales d’un ordinateur donné.  
   
 > [!IMPORTANT]
-> Le stockage isolé n'est pas disponible pour les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] . À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.  
+> Isolated storage is not available for Windows 8.x Store apps. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.  
   
 <a name="UserAssembly"></a>   
 ## <a name="isolation-by-user-and-assembly"></a>Isolation par utilisateur et par assembly  

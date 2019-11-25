@@ -1,18 +1,19 @@
 ---
-title: 'Procédure : analyser des chemins d’accès dans Visual Basic'
+title: 'Comment : analyser des chemins d’accès'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - file names [Visual Basic], parsing [Visual Basic]
 - parsing, file paths [Visual Basic]
 ms.assetid: c1bd99c9-8160-456a-b5ab-60a49139b923
-ms.openlocfilehash: 6961f481126d34b18c5a11d83c4c6c37c2c81c71
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 6a959994be3a57795dc9f7e3447fa54bf075d3ec
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64629164"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74335349"
 ---
-# <a name="how-to-parse-file-paths-in-visual-basic"></a>Procédure : analyser des chemins d’accès dans Visual Basic
+# <a name="how-to-parse-file-paths-in-visual-basic"></a>Comment : analyser des chemins d'accès dans Visual Basic
+
 L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méthodes qui facilitent l’analyse des chemins de fichier.  
   
 - La méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A> combine deux chemins et affiche un chemin combiné au format correct.  
@@ -41,4 +42,4 @@ L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méth
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.CombinePath%2A>
 - <xref:System.IO.FileInfo>
 - <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFileInfo%2A>
-- [Guide pratique pour placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)
+- [Guide pratique : placer la collection de fichiers dans un répertoire](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-get-the-collection-of-files-in-a-directory.md)

@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Rechercher un élément avec un attribut spécifique (C#)'
+title: Comment rechercher un élément avec un attribut spécifique (C#)
 ms.date: 07/20/2015
 ms.assetid: b92591aa-3cfb-490e-99f6-da8de335e362
-ms.openlocfilehash: da2d1691af6268a97e1f586e92c26bbb26906100
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 106885b8658c493caab3101e6b4ce921589076eb
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593604"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141161"
 ---
-# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Procédure : Rechercher un élément avec un attribut spécifique (C#)
+# <a name="how-to-find-an-element-with-a-specific-attribute-c"></a>Comment rechercher un élément avec un attribut spécifique (C#)
 Cette rubrique montre comment rechercher un élément qui possède un attribut qui a une valeur spécifique.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple montre comment rechercher l'élément `Address` qui possède un attribut `Type` avec la valeur « Billing ».  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commande fournisseur standard (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrder.xml");  
@@ -40,10 +40,10 @@ foreach (XElement el in address)
 </Address>  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [Vue d’ensemble des espaces de noms (LINQ to XML) (C#)](namespaces-overview-linq-to-xml.md).  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commande fournisseur standard dans un espace de noms](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique dans un espace de noms](./sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   
 ```csharp  
 XElement root = XElement.Load("PurchaseOrderInNamespace.xml");  

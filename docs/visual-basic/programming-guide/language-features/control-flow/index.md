@@ -1,5 +1,5 @@
 ---
-title: Flux de contrôle en Visual Basic
+title: Flux de contrôle
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [Visual Basic], control flow
@@ -8,18 +8,18 @@ helpviewer_keywords:
 - structures [Visual Basic], control
 - conditional statements [Visual Basic], control flow
 ms.assetid: 5623ef47-52b1-4202-befd-9af36422ec6f
-ms.openlocfilehash: 6a9b769c2ef7fe3b6e2d39279f11b49b64641339
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: e47a48755c6752dc8c46e35399f1a1efae9c4a08
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71701030"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353928"
 ---
 # <a name="control-flow-in-visual-basic"></a>Flux de contrôle en Visual Basic
 
 Lorsqu’un programme n’est pas réglé, il traite ses instructions du début à la fin. L’écriture de certains programmes très simples peut comprendre uniquement ce flux unidirectionnel. Toutefois, la puissance et l’utilité d’un langage de programmation proviennent de la possibilité de modifier l’ordre d’exécution grâce à des instructions de contrôle et à des boucles.
 
- Les structures de contrôle permettent de réguler le flux de l’exécution de votre programme. À l’aide de structures de contrôle, vous pouvez écrire Visual Basic code qui prend des décisions ou qui répète des actions. D’autres structures de contrôle vous permettent de garantir l’élimination d’une ressource ou d’exécuter une série d’instructions sur la même référence d’objet.
+ Les structures de contrôle permettent de réguler le flux de l’exécution de votre programme. Using control structures, you can write Visual Basic code that makes decisions or that repeats actions. D’autres structures de contrôle vous permettent de garantir l’élimination d’une ressource ou d’exécuter une série d’instructions sur la même référence d’objet.
   
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -35,7 +35,7 @@ Lorsqu’un programme n’est pas réglé, il traite ses instructions du début 
  [Structures de contrôle imbriquées](nested-control-structures.md)  
  Aborde les structures de contrôle contenues dans d’autres structures de contrôle.
 
-## <a name="related-sections"></a>Sections connexes
+## <a name="related-sections"></a>Rubriques connexes
 
  [Liste des flux de contrôle](../../../language-reference/keywords/control-flow-summary.md)  
  Fournit des liens vers des pages d’informations de référence du langage à ce sujet.

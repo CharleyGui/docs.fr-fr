@@ -9,15 +9,15 @@ helpviewer_keywords:
 - styles [WPF], TreeView
 - TreeView [WPF], styles and templates
 ms.assetid: a49adb77-0202-4caa-b94a-8bb110d7fa9a
-ms.openlocfilehash: f6dbe54324a5ad5e2f85719d819c035abfd644b1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 45276d23380fe956fc3d59b90d5baae23ee8a7e2
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460186"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283631"
 ---
 # <a name="treeview-styles-and-templates"></a>Styles et modèles TreeView
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TreeView>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.TreeView>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="treeview-parts"></a>Composants TreeView  
  Le contrôle <xref:System.Windows.Controls.TreeView> n’a pas de parties nommées.  
@@ -36,7 +36,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="treeviewitem-parts"></a>Parties de TreeViewItem  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.TreeViewItem>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |----------|----------|-----------------|  
 |PART_Header|<xref:System.Windows.FrameworkElement>|Élément visuel qui contient le contenu d’en-tête du contrôle <xref:System.Windows.Controls.TreeView>.|  
   
@@ -47,7 +47,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |----------------------|---------------------------|-----------------|  
 |Normale|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.TreeViewItem>.|  
-|Disabled|CommonStates|Le <xref:System.Windows.Controls.TreeViewItem> est désactivé.|  
+|Désactivé|CommonStates|Le <xref:System.Windows.Controls.TreeViewItem> est désactivé.|  
 |Avec focus|FocusStates|Le <xref:System.Windows.Controls.TreeViewItem> a le focus.|  
 |Sans focus|FocusStates|Le <xref:System.Windows.Controls.TreeViewItem> n’a pas le focus.|  
 |Étendu|ExpansionStates|Le contrôle <xref:System.Windows.Controls.TreeViewItem> est développé.|  
@@ -79,4 +79,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

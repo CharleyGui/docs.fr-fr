@@ -1,19 +1,19 @@
 ---
-title: <permission> (Visual Basic)
+title: <permission>
 ms.date: 07/20/2015
 helpviewer_keywords:
 - <permission> XML tag
 - permission XML tag
 ms.assetid: 0edf0500-5cd7-49c0-9255-64c48f972b77
-ms.openlocfilehash: 904d573514bf35b773d47321b7fd3b6a86e90262
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 71b00b669804e644d1171480192b9d55455bdf53
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72524704"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74352265"
 ---
-# <a name="permission-visual-basic"></a>> \<permission (Visual Basic)
-Spécifie une autorisation requise pour le membre.  
+# <a name="permission-visual-basic"></a>\<permission> (Visual Basic)
+Specifies a required permission for the member.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,18 +23,18 @@ Spécifie une autorisation requise pour le membre.
   
 ## <a name="parameters"></a>Paramètres  
  `member`  
- Référence à un membre ou à un champ qui peut être appelé à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe et traduit `member` en nom d’élément canonique dans le fichier XML de sortie. Placez `member` entre guillemets ("").  
+ Référence à un membre ou à un champ qui peut être appelé à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe et traduit `member` en nom d’élément canonique dans le fichier XML de sortie. Enclose `member` in quotation marks (" ").  
   
  `description`  
  Description de l’accès au membre.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez la balise `<permission>` pour documenter l’accès d’un membre. Utilisez la classe <xref:System.Security.PermissionSet> pour spécifier l’accès à un membre.  
+ Use the `<permission>` tag to document the access of a member. Use the <xref:System.Security.PermissionSet> class to specify access to a member.  
   
  Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise la balise `<permission>` pour décrire que la <xref:System.Security.Permissions.FileIOPermission> est requise par la méthode `ReadFile`.  
+ This example uses the `<permission>` tag to describe that the <xref:System.Security.Permissions.FileIOPermission> is required by the `ReadFile` method.  
   
  [!code-vb[VbVbcnXmlDocComments#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#7)]  
   

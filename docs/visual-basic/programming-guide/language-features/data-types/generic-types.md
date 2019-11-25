@@ -1,5 +1,5 @@
 ---
-title: Types génériques Visual Basic (Visual Basic)
+title: Types génériques
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generic interfaces
@@ -36,19 +36,19 @@ helpviewer_keywords:
 - type arguments [Visual Basic], defining
 - arguments [Visual Basic], type
 ms.assetid: 89f771d9-ecbb-4737-88b8-116b63c6cf4d
-ms.openlocfilehash: 813ee167fdc09c7c7ea12f5f09602230e711d362
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 3dcd7756b10fab8f66f4d5c10acedd8f600eb2e7
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65593388"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350120"
 ---
 # <a name="generic-types-in-visual-basic-visual-basic"></a>Types génériques Visual Basic (Visual Basic)
 Un *type générique* est un élément de programmation unique qui s’adapte pour exécuter la même fonction sur différents types de données. Quand vous définissez une classe ou procédure générique, vous n’avez pas besoin de définir une version distincte pour chaque type de données pour lequel vous voulez exécuter la fonction.  
   
  On pourrait comparer cet élément de programmation à un tournevis à têtes interchangeables. Vous examinez quel type de vis vous devez serrer et vous choisissez la tête de vis adaptée (fendue, cruciforme, en étoile). Quelle que soit la tête insérée dans le manche du tournevis, vous exécutez toujours la même fonction : vous serrez une vis.  
   
- ![Diagramme d’un tournevis à têtes différents.](./media/generic-types/generic-screwdriver-set.gif)  
+ ![Diagram of a screwdriver set with different heads.](./media/generic-types/generic-screwdriver-set.gif)  
   
  Quand vous définissez un type générique, vous devez le paramétrer avec un ou plusieurs types de données. Cela permet au code utilisé d’adapter les types de données à ses besoins. Votre code peut déclarer plusieurs éléments de programmation différents à partir de l’élément générique, chacun d’eux agissant sur un ensemble différent de types de données. Ces éléments déclarés exécutent tous la même logique, quel que soit le type de données qu’ils utilisent.  
   
@@ -58,7 +58,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
  Vous pouvez maintenant utiliser `stringQ` pour agir uniquement sur des valeurs `String` . Étant donné que `stringQ` est spécifique aux valeurs `String` au lieu d’être généralisé pour les valeurs `Object` , aucune liaison tardive ou conversion de type n’est nécessaire. Cela permet de réduire le délai d’exécution et les erreurs d’exécution.  
   
- Pour plus d’informations sur l’utilisation d’un type générique, consultez [Comment : Utiliser une classe générique](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md).  
+ Pour plus d’informations sur l’utilisation d’un type générique, consultez [How to: Use a Generic Class](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md).  
   
 ## <a name="example-of-a-generic-class"></a>Exemple d’une classe générique  
  L’exemple suivant présente une définition squelette d’une classe générique.  
@@ -73,10 +73,10 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
  [!code-vb[VbVbalrDataTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#4)]  
   
- Pour un exemple plus complet, consultez [Comment : Définissez une classe qui fournisse des fonctionnalités identiques pour différents Types de données](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
+ For a more complete example, see [How to: Define a Class That Can Provide Identical Functionality on Different Data Types](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Éléments de programmation disponibles  
- Vous pouvez définir et utiliser des délégués, structures, interfaces, procédures et classes génériques. Notez que le .NET Framework définit plusieurs classes génériques, des structures et des interfaces qui représentent des éléments génériques couramment utilisés. L’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fournit des dictionnaires, des listes, des files d’attente et des piles. Avant de définir votre propre élément générique, vérifiez s’il est disponible dans <xref:System.Collections.Generic?displayProperty=nameWithType>.  
+ Vous pouvez définir et utiliser des délégués, structures, interfaces, procédures et classes génériques. Note that the .NET Framework defines several generic classes, structures, and interfaces that represent commonly used generic elements. L’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fournit des dictionnaires, des listes, des files d’attente et des piles. Avant de définir votre propre élément générique, vérifiez s’il est disponible dans <xref:System.Collections.Generic?displayProperty=nameWithType>.  
   
  Les procédures ne sont pas des types, mais vous pouvez définir et utiliser des procédures génériques. Consultez [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
@@ -124,7 +124,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
 - L’argument de type doit être un *type référence*ou un type *valeur*.  
   
- Si vous devez spécifier plusieurs contraintes, utilisez une *liste de contraintes* séparée par des virgules et mise entre accolades (`{ }`). Pour exiger un constructeur accessible, vous incluez le [nouvel opérateur](../../../../visual-basic/language-reference/operators/new-operator.md) mot clé dans la liste. Pour exiger un type référence ou un type valeur, ajoutez le mot clé `Class` ou le mot clé `Structure` , respectivement.  
+ Si vous devez spécifier plusieurs contraintes, utilisez une *liste de contraintes* séparée par des virgules et mise entre accolades (`{ }`). To require an accessible constructor, you include the [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) keyword in the list. Pour exiger un type référence ou un type valeur, ajoutez le mot clé `Class` ou le mot clé `Structure` , respectivement.  
   
  Pour plus d’informations sur les contraintes, consultez [Type List](../../../../visual-basic/language-reference/statements/type-list.md).  
   
@@ -150,8 +150,8 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
 
 - [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Caractères de type](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
-- [Value Types and Reference Types](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Conversions de type en Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
+- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Types de données](../../../../visual-basic/language-reference/data-types/index.md)
 - [Of](../../../../visual-basic/language-reference/statements/of-clause.md)

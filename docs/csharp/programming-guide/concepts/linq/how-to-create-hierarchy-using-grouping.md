@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Créer une hiérarchie à l’aide de regroupements (C#)'
+title: Procédure de création d’une hiérarchie à l'C#aide de GROUPING ()
 ms.date: 07/20/2015
 ms.assetid: 0213d59e-5f76-438c-9cab-4bf11f7b971d
-ms.openlocfilehash: 7d9a58e5b36d6096c156f458c8ba700e04fd8eca
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: c5a96b02595446b2efa01868cc88377c3a5151c9
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593855"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141301"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-c"></a>Procédure : Créer une hiérarchie à l’aide de regroupements (C#)
+# <a name="how-to-create-hierarchy-using-grouping-c"></a>Procédure de création d’une hiérarchie à l'C#aide de GROUPING ()
 Cet exemple montre comment grouper des données, puis générer du code XML basé sur le regroupement.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple groupe tout d'abord les données par catégorie, puis il génère un nouveau fichier XML dans lequel la hiérarchie XML reflète le regroupement.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Données numériques (LINQ to XML)](./sample-xml-file-numerical-data-linq-to-xml.md).  
   
 ```csharp  
 XElement doc = XElement.Load("Data.xml");  

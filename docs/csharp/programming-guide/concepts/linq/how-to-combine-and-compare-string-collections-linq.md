@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Combiner et comparer des collections de chaînes (LINQ) (C#)'
+title: Comment combiner et comparer des collections de chaînes (LINQ)C#()
 ms.date: 07/20/2015
 ms.assetid: 25926e5b-fde2-4dc1-86a0-16ead7aa13d2
-ms.openlocfilehash: 414d9764d8de0a1d7cd395a3192a097d48983856
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
-ms.translationtype: HT
+ms.openlocfilehash: 23089835e710a7905693f8e3e3b57173085d0694
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205365"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141419"
 ---
-# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Procédure : Combiner et comparer des collections de chaînes (LINQ) (C#)
+# <a name="how-to-combine-and-compare-string-collections-linq-c"></a>Comment combiner et comparer des collections de chaînes (LINQ)C#()
 Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de texte, puis comment trier les résultats. Il montre plus précisément comment effectuer une concaténation simple, une union et une intersection avec les deux ensembles de lignes de texte.  
   
 ### <a name="to-set-up-the-project-and-the-text-files"></a>Pour configurer le projet et les fichiers texte  

@@ -1,5 +1,5 @@
 ---
-title: Short, type de données (Visual Basic)
+title: Short, type de données
 ms.date: 01/31/2018
 f1_keywords:
 - vb.Short
@@ -16,37 +16,39 @@ helpviewer_keywords:
 - Short data type
 - literal type characters [Visual Basic], S
 ms.assetid: 65fcbcf3-a841-400e-885e-301497729a8b
-ms.openlocfilehash: eedc2804652fb6f2f73e7288d6db830a6f4bd98a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8dfdfb56de32e4b3a96729b09ccf46a6fee9a424
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647021"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74343935"
 ---
-# <a name="short-data-type-visual-basic"></a>Type de données de type short (Visual Basic)
-Contient des entiers 16 bits (2 octets) de valeurs comprises entre-32 768 à 32 767 signés.  
+# <a name="short-data-type-visual-basic"></a>Short data type (Visual Basic)
+
+Holds signed 16-bit (2-byte) integers that range in value from -32,768 through 32,767.  
   
 ## <a name="remarks"></a>Notes  
- Utilisez le `Short` type de données pour contenir des valeurs entières qui ne nécessitent pas la largeur totale des données de `Integer`. Dans certains cas, le common language runtime peut regrouper votre `Short` variables étroitement ensemble et d’enregistrer la consommation de mémoire.  
+
+ Use the `Short` data type to contain integer values that do not require the full data width of `Integer`. In some cases, the common language runtime can pack your `Short` variables closely together and save memory consumption.  
   
  La valeur par défaut de `Short` est 0.  
   
-## <a name="literal-assignments"></a>Affectations de littéraux
+## <a name="literal-assignments"></a>Literal assignments
 
-Vous pouvez déclarer et initialiser une `Short` variable en lui assignant un littéral décimal, un littéral hexadécimal, un littéral octal, ou (à partir de Visual Basic 2017) un littéral binaire. Si le littéral entier est en dehors de la plage de `Short` (autrement dit, s’il est inférieur à <xref:System.Int16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.Int16.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
+You can declare and initialize a `Short` variable by assigning it a decimal literal, a hexadecimal literal, an octal literal, or (starting with Visual Basic 2017) a binary literal. Si le littéral entier est en dehors de la plage de `Short` (autrement dit, s’il est inférieur à <xref:System.Int16.MinValue?displayProperty=nameWithType> ou supérieur à <xref:System.Int16.MaxValue?displayProperty=nameWithType>, une erreur de compilation se produit.
 
-Dans l’exemple suivant, les entiers égaux à 1 034 représentés comme séparateur décimal, hexadécimal, et les littéraux binaires sont implicitement convertis à partir de [entier](integer-data-type.md) à `Short` valeurs.
+In the following example, integers equal to 1,034 that are represented as decimal, hexadecimal, and binary literals are implicitly converted from [Integer](integer-data-type.md) to `Short` values.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#Short)]
 
 > [!NOTE]
-> Vous utilisez le préfixe `&h` ou `&H` pour désigner un littéral hexadécimal, le préfixe `&b` ou `&B` pour désigner un littéral binaire et le préfixe `&o` ou `&O` pour désigner un littéral octal. Les littéraux décimaux n’ont pas de préfixe.
+> You use the prefix `&h` or `&H` to denote a hexadecimal literal, the prefix `&b` or `&B` to denote a binary literal, and the prefix `&o` or `&O` to denote an octal literal. Les littéraux décimaux n’ont pas de préfixe.
 
-À partir de Visual Basic 2017, vous pouvez également utiliser le caractère de soulignement, `_`, comme un séparateur numérique pour améliorer la lisibilité, comme dans l’exemple suivant montre.
+Starting with Visual Basic 2017, you can also use the underscore character, `_`, as a digit separator to enhance readability, as the following example shows.
 
 [!code-vb[Short](../../../../samples/snippets/visualbasic/language-reference/data-types/numeric-literals.vb#ShortS)]
 
-À partir de Visual Basic 15.5, vous pouvez également utiliser le caractère de soulignement (`_`) comme séparateur de début entre le préfixe et les chiffres hexadécimaux, binaires ou octaux. Exemple :
+Starting with Visual Basic 15.5, you can also use the underscore character (`_`) as a leading separator between the prefix and the hexadecimal, binary, or octal digits. Exemple :
 
 ```vb
 Dim number As Short = &H_3264
@@ -54,7 +56,7 @@ Dim number As Short = &H_3264
 
 [!INCLUDE [supporting-underscores](../../../../includes/vb-separator-langversion.md)]
 
-Littéraux numériques peuvent également inclure le `S` [caractère de type](../../programming-guide/language-features/data-types/type-characters.md) pour désigner le `Short` type de données, comme le montre l’exemple suivant.
+Numeric literals can also include the `S` [type character](../../programming-guide/language-features/data-types/type-characters.md) to denote the `Short` data type, as the following example shows.
 
 ```vb
 Dim number = &H_3264S
@@ -62,11 +64,11 @@ Dim number = &H_3264S
 
 ## <a name="programming-tips"></a>Conseils de programmation
 
-- **Étendues.** Le `Short` type de données s’étend à `Integer`, `Long`, `Decimal`, `Single`, ou `Double`. Cela signifie que vous pouvez convertir `Short` en l'un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=nameWithType>.  
+- **Widening.** The `Short` data type widens to `Integer`, `Long`, `Decimal`, `Single`, or `Double`. Cela signifie que vous pouvez convertir `Short` en l'un de ces types sans rencontrer d'erreur <xref:System.OverflowException?displayProperty=nameWithType>.  
   
-- **Caractères de type.** L'ajout du caractère de type littéral `S` à un littéral force ce dernier en type de données `Short`. `Short` n’a aucun caractère de type d’identificateur.  
+- **Type Characters.** L'ajout du caractère de type littéral `S` à un littéral force ce dernier en type de données `Short`. `Short` has no identifier type character.  
   
-- **Type de Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int16?displayProperty=nameWithType>.  
+- **Framework Type.** Le type correspondant dans le .NET Framework est la structure <xref:System.Int16?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi
 

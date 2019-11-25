@@ -2,40 +2,40 @@
 title: Fonctionnalités spécifiques à Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 063d2472443431423cea9b164831cd1e7a669408
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0c312eed1a5ba064771e7cc4c260b43d97b16315
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753720"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141871"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 
-[!INCLUDE[netfx40_long](../../../includes/netfx40-long-md.md)] ajoute un certain nombre de fonctionnalités à Windows Workflow Foundation. Ce document décrit quelques-unes de ces nouvelles fonctionnalités et donne des détails relatifs à certains scénarios dans lesquels elles peuvent être utiles.
+.NET Framework 4 ajoute un certain nombre de fonctionnalités à Windows Workflow Foundation. Ce document décrit quelques-unes de ces nouvelles fonctionnalités et donne des détails relatifs à certains scénarios dans lesquels elles peuvent être utiles.
 
 ## <a name="messaging-activities"></a>Activités de messagerie
 
-Les activités de messagerie (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) sont utilisés pour envoyer et recevoir des messages WCF à partir de votre flux de travail. <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> activités sont utilisées pour former une opération de service Windows Communication Foundation (WCF) qui est exposée via WSDL comme les services web WCF standards. <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply> permettent de consommer un service web similaire à un service WCF <xref:System.ServiceModel.ChannelFactory>; une **ajouter une référence de Service** expérience existe également pour Workflow Foundation qui génère des activités préconfigurées.
+Les activités de messagerie (<xref:System.ServiceModel.Activities.Receive>, <xref:System.ServiceModel.Activities.SendReply>, <xref:System.ServiceModel.Activities.Send>, <xref:System.ServiceModel.Activities.ReceiveReply>) sont utilisées pour envoyer et recevoir des messages WCF à partir de votre flux de travail. les activités <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> sont utilisées pour former une opération de service Windows Communication Foundation (WCF) qui est exposée via WSDL, tout comme les services Web WCF standard. <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply> sont utilisés pour utiliser un service Web similaire à un <xref:System.ServiceModel.ChannelFactory>WCF. une expérience **Ajouter une référence de service** existe également pour Workflow Foundation qui génère des activités préconfigurées.
 
 ### <a name="getting-started-with-messaging-activities"></a>Activités de messagerie - Mise en route
 
-- Dans Visual Studio 2012, créez un projet d’Application de Service de Workflow WCF. Une combinaison <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> sera placée sur votre zone de dessin.
+- Dans Visual Studio 2012, créez un projet d’application de service de flux de travail WCF. Une combinaison <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> sera placée sur votre zone de dessin.
 
-- Avec le bouton droit sur le projet, puis sélectionnez **ajouter une référence de Service**. Pointer vers un WSDL de service web existant et cliquez sur **OK**. Générez votre projet pour afficher les activités générées (implémentées à l’aide <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply>) dans votre boîte à outils.
+- Cliquez avec le bouton droit sur le projet, puis sélectionnez **Ajouter une référence de service**. Pointez sur un service Web existant WSDL, puis cliquez sur **OK**. Générez votre projet pour afficher les activités générées (implémentées à l’aide de <xref:System.ServiceModel.Activities.Send> et <xref:System.ServiceModel.Activities.ReceiveReply>) dans votre boîte à outils.
 
-- [Documentation des services de workflow](../wcf/feature-details/workflow-services.md)
+- [Documentation sur les services de workflow](../wcf/feature-details/workflow-services.md)
 
 ### <a name="messaging-activities-example-scenario"></a>Exemple de scénario d'activités de messagerie
 
-Un `BestPriceFinder` service appelle plusieurs services de compagnies aériennes afin de trouver le tarif d’un itinéraire particulier. Implémentation de ce scénario vous oblige à utiliser les activités de message pour recevoir la demande de prix, de récupérer les tarifs à partir des services principaux et de répondre à la demande de prix en indiquant le meilleur tarif. Elle vous oblige également à utiliser d’autres activités out-of-box pour créer la logique métier pour calculer le meilleur tarif.
+Un service de `BestPriceFinder` appelle à plusieurs services de compagnie aérienne pour trouver le meilleur prix de ticket pour un itinéraire donné. L’implémentation de ce scénario nécessite que vous utilisiez les activités de message pour recevoir la demande de prix, récupérer les prix des services principaux et répondre à la demande de prix avec le meilleur prix. Cela nécessite également que vous utilisiez d’autres activités prêtes à l’emploi pour créer la logique métier pour le calcul du meilleur prix.
 
 ## <a name="workflowservicehost"></a>WorkflowServiceHost
 
-Le <xref:System.ServiceModel.WorkflowServiceHost> est l’hôte de flux de travail out-of-box qui prend en charge plusieurs instances, la configuration et la messagerie WCF (bien que les flux de travail ne sont pas requis pour utiliser la messagerie afin d’être hébergés). Il permet également la persistance, le suivi et le contrôle de l'instance par un ensemble de comportements de service. Tout comme de WCF <xref:System.ServiceModel.ServiceHost>, le <xref:System.ServiceModel.WorkflowServiceHost> peut être auto-hébergé dans une application console/WinForms/WPF ou le service de Windows ou hébergé sur le web (comme un fichier .xamlx) dans IIS ou WAS.
+Le <xref:System.ServiceModel.WorkflowServiceHost> est l’hôte de flux de travail prêt à l’emploi qui prend en charge plusieurs instances, la configuration et la messagerie WCF (bien que les flux de travail ne soient pas requis pour l’utilisation de la messagerie pour être hébergés). Il permet également la persistance, le suivi et le contrôle de l'instance par un ensemble de comportements de service. Tout comme les <xref:System.ServiceModel.ServiceHost>WCF, les <xref:System.ServiceModel.WorkflowServiceHost> peuvent être auto-hébergés dans une application console/WinForms/WPF ou un service Windows ou hébergé sur le Web (sous forme de fichier. xamlx) dans IIS ou WAS.
 
 ### <a name="getting-started-with-workflow-service-host"></a>Mise en route avec l'hôte du service de workflow
 
-- Dans Visual Studio 2010, créez un projet d’Application de Service de Workflow WCF : ce projet est configuré pour utiliser <xref:System.ServiceModel.WorkflowServiceHost> dans un environnement d’hôte sur le web.
+- Dans Visual Studio 2010, créez un projet d’application de service de flux de travail WCF : ce projet sera configuré pour utiliser <xref:System.ServiceModel.WorkflowServiceHost> dans un environnement d’hôte Web.
 
 - Pour héberger un flux de travail sans rapport avec la messagerie, ajoutez un <xref:System.ServiceModel.Activities.WorkflowHostingEndpoint> personnalisé qui créera l'instance en fonction d'un message.
 
@@ -45,13 +45,13 @@ Le <xref:System.ServiceModel.WorkflowServiceHost> est l’hôte de flux de trava
 
   - [Exécution](./samples/execution.md)
 
-  - Application : [Gestion de l’instance interrompue](./samples/suspended-instance-management.md)
+  - Application : [gestion des instances suspendues](./samples/suspended-instance-management.md)
 
-- [Vue d’ensemble des services de Workflow d’hébergement](../wcf/feature-details/hosting-workflow-services-overview.md)
+- [Vue d’ensemble de l’hébergement des services de workflow](../wcf/feature-details/hosting-workflow-services-overview.md)
 
 ### <a name="workflowservicehost-scenario"></a>Scénario WorkflowServiceHost
 
-Un service BestPriceFinder appelle plusieurs services de compagnies aériennes afin de trouver le tarif d’un itinéraire particulier. Implémentation de ce scénario vous oblige à héberger le flux de travail dans <xref:System.ServiceModel.WorkflowServiceHost>. Il utilise également les activités de message pour recevoir la demande de prix, de récupérer les tarifs à partir des services principaux et de répondre à la demande de prix en indiquant le meilleur tarif.
+Un service BestPriceFinder appelle plusieurs services de compagnies aériennes pour trouver le meilleur prix de ticket pour un itinéraire donné. L’implémentation de ce scénario nécessite l’hébergement du flux de travail dans <xref:System.ServiceModel.WorkflowServiceHost>. Elle utilise également les activités de message pour recevoir la demande de prix, récupérer les prix des services principaux et répondre à la demande de prix avec le meilleur prix.
 
 ## <a name="correlation"></a>Corrélation
 
@@ -61,53 +61,53 @@ Une corrélation correspond à l'un des deux concepts suivants :
 
 - manière de mapper des données à une instance de service.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
 - Pour démarrer une corrélation, créez un projet dans Visual Studio. Créez une variable de type <xref:System.ServiceModel.Activities.CorrelationHandle>.
 
 - À titre d'exemple de corrélation utilisé pour regrouper des messages, citons une corrélation demande-réponse.
 
-  - Sur un <xref:System.ServiceModel.Activities.Receive> activité, cliquez sur le <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> propriété et ajoutez un <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> à l’aide du CorrelationHandle créé dans la première étape ci-dessus.
+  - Dans une activité de <xref:System.ServiceModel.Activities.Receive>, cliquez sur la propriété <xref:System.ServiceModel.Activities.Receive.CorrelationInitializers%2A> et ajoutez un <xref:System.ServiceModel.Activities.RequestReplyCorrelationInitializer> à l’aide du CorrelationHandle créé à la première étape ci-dessus.
 
-  - Créer un <xref:System.ServiceModel.Activities.SendReply> activité en cliquant sur le <xref:System.ServiceModel.Activities.Receive> et en cliquant sur « Create SendReply ». Collez-la dans votre flux de travail à la suite de l'activité <xref:System.ServiceModel.Activities.Receive>.
+  - Pour créer une activité de <xref:System.ServiceModel.Activities.SendReply>, cliquez avec le bouton droit sur le <xref:System.ServiceModel.Activities.Receive> et cliquez sur « créer un SendReply ». Collez-la dans votre flux de travail à la suite de l'activité <xref:System.ServiceModel.Activities.Receive>.
 
 - Une corrélation basée sur le contenu qui mappe des données (un numéro de commande, par exemple) à une instance de flux de travail particulière constitue un exemple de mappage de données à une instance de service.
 
   - Dans une activité de messagerie, cliquez sur la propriété `CorrelationInitializers` et ajoutez un <xref:System.ServiceModel.Activities.QueryCorrelationInitializer> à l'aide de la variable <xref:System.ServiceModel.Activities.CorrelationHandle> créée ci-dessus. Double-cliquez sur la propriété de votre choix dans le message (par exemple, OrderID) du menu déroulant. Définissez la propriété `CorrelatesWith` avec la variable <xref:System.ServiceModel.Activities.CorrelationHandle> utilisée précédemment.
 
-- [Documentation conceptuelle de corrélation](../wcf/feature-details/correlation.md)
+- [Documentation conceptuelle sur la corrélation](../wcf/feature-details/correlation.md)
 
 ### <a name="correlation-scenario"></a>Scénario de corrélation
 
-Un flux de travail de traitement des commandes est utilisé pour gérer la création de nouvelles commandes et les commandes figurant dans le processus de mise à jour. Implémentation de ce scénario vous oblige à héberger le flux de travail dans <xref:System.ServiceModel.WorkflowServiceHost> et utiliser les activités de messagerie. Cela impliquerait également une corrélation basée sur les `orderId` pour vous assurer que les mises à jour sont effectuées dans le flux de travail correct.
+Un flux de travail de traitement des commandes est utilisé pour gérer la création de nouvelles commandes et mettre à jour les commandes existantes qui sont en cours. L’implémentation de ce scénario nécessite l’hébergement du flux de travail dans <xref:System.ServiceModel.WorkflowServiceHost> et l’utilisation des activités de messagerie. Elle nécessite également une corrélation basée sur la `orderId` pour s’assurer que les mises à jour sont apportées au flux de travail correct.
 
 ## <a name="simplified-configuration"></a>Configuration simplifiée
 
-Le schéma de configuration WCF est complexe et fournit aux utilisateurs plusieurs fonctionnalités difficiles à trouver. Dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], nous nous sommes concentrés à aider les utilisateurs WCF configurent leurs services avec les fonctionnalités suivantes :
+Le schéma de configuration WCF est complexe et offre aux utilisateurs de nombreuses fonctionnalités difficiles à trouver. Dans [!INCLUDE[netfx_current_short](../../../includes/netfx-current-short-md.md)], nous nous sommes concentrés sur l’aide des utilisateurs WCF qui configurent leurs services avec les fonctionnalités suivantes :
 
-- Plus besoin de configuration explicite par service. Si vous ne configurez aucune \<service > éléments de votre service et votre service ne définit pas par programmation à n’importe quel point de terminaison, puis un jeu de points de terminaison est ajouté automatiquement à votre service, un pour chaque adresse de base de service et chaque contrat implémenté par votre service.
+- Plus besoin de configuration explicite par service. Si vous ne configurez aucun \<service > des éléments pour votre service et que votre service ne définit aucun point de terminaison par programme, un jeu de points de terminaison est automatiquement ajouté à votre service, une par adresse de base de service et par contrat implémenté par votre service.
 
 - Permet à l’utilisateur de définir pour les comportements et les liaisons WCF des valeurs par défaut qui seront appliquées aux services sans configuration explicite.
 
 - Les points de terminaison standard définissent les points de terminaison préconfigurés réutilisables qui ont des valeurs fixes pour une ou plusieurs propriétés de point de terminaison (adresse, liaison ou contrat) et permettent la définition de propriétés personnalisées.
 
-- Enfin, le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> vous permet d’effectuer une gestion centralisée de la configuration de client WCF, utile dans les scénarios dans lesquels la configuration est sélectionnée ou modifiée après le temps de chargement du domaine application.
+- Enfin, le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> vous permet d’effectuer une gestion centralisée de la configuration du client WCF, utile dans les scénarios où la configuration est sélectionnée ou modifiée après le temps de chargement du domaine d’application.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- [Guide du développeur pour WCF 4.0](https://go.microsoft.com/fwlink/?LinkId=204940)
+- [Guide du développeur pour WCF 4,0](https://go.microsoft.com/fwlink/?LinkId=204940)
 
 - [Fabrique de canaux de configuration](https://go.microsoft.com/fwlink/?LinkId=204941)
 
 - [Élément de point de terminaison standard](https://go.microsoft.com/fwlink/?LinkId=204942)
 
-- [Améliorations de configuration de service dans .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [Améliorations de la configuration du service dans .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
 
-- [Erreur utilisateur courante dans .NET 4 : Erreur de frappe le nom de Configuration du Service WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
+- [Erreur courante de l’utilisateur dans .NET 4 : saisie incorrecte du nom de configuration du service WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
 
 ### <a name="simplified-configuration-scenarios"></a>Scénarios de configuration simplifiée
 
-- Un développeur ASMX expérimenté souhaite commencer à utiliser WCF. Cependant, WCF semble trop compliqué ! Quelles sont les informations dont j'ai besoin pour écrire dans un fichier de configuration ? Dans .NET 4, vous pouvez même décider de ne pas avoir de fichier de configuration du tout.
+- Un développeur ASMX expérimenté souhaite commencer à utiliser WCF. Toutefois, WCF semble trop compliqué ! Quelles sont les informations dont j'ai besoin pour écrire dans un fichier de configuration ? Dans .NET 4, vous pouvez même décider de ne pas avoir de fichier de configuration du tout.
 
 - Il est très difficile de configurer et de gérer un ensemble existant de services WCF. Le fichier de configuration contient des milliers de lignes de code XML qui doivent être manipulées avec la plus grande prudence. De l'aide est nécessaire pour réduire la quantité de code afin que ce dernier soit plus facile à gérer.
 
@@ -121,13 +121,13 @@ Dans .NET 3.5, il existait quelques limitations à la conception de types connu
 
 - Il n'était pas possible pour les utilisateurs de spécifier le xsi:type qu'ils souhaitaient voir apparaître sur le câble pour, par exemple, réduire la taille d'une instance de sérialisation sur ce dernier.
 
-Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces problèmes dans .NET 4.5.
+Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces problèmes dans .net 4,5.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- [Documentation des API de programme de résolution de contrat de données](https://go.microsoft.com/fwlink/?LinkId=204946)
+- [Documentation sur l’API de résolution de contrat de données](https://go.microsoft.com/fwlink/?LinkId=204946)
 
-- [Présentation du programme de résolution de contrat de données](https://go.microsoft.com/fwlink/?LinkId=204947)
+- [Présentation du programme de résolution des contrats de données](https://go.microsoft.com/fwlink/?LinkId=204947)
 
 - Exemples :
 
@@ -145,9 +145,9 @@ Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces pr
 
 Un organigramme est un paradigme connu permettant la représentation visuelle de problèmes liés à un domaine. Il s'agit d'un nouveau style de flux de contrôle qui a été introduit dans .NET 4. La principale caractéristique d'un organigramme tient dans le fait qu'une seule activité est exécutée à un moment donné. Les organigrammes peuvent représenter des boucles et des alternatives possibles, mais ne peuvent pas, de manière native, représenter l'exécution simultanée de plusieurs nœuds.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Dans Visual Studio 2012, créez une application console de workflow. Ajoutez un organigramme dans le concepteur de workflow.
+- Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez un organigramme dans le concepteur de workflow.
 
 - La fonctionnalité d’organigramme utilise les classes suivantes :
 
@@ -173,7 +173,7 @@ Un organigramme est un paradigme connu permettant la représentation visuelle de
 
 ### <a name="flowchart-scenarios"></a>Scénarios d'organigramme
 
-Une activité d'organigramme peut permettre d'implémenter un jeu de devinette. Le jeu de devinette est très simple : l'ordinateur sélectionne un nombre aléatoire et le joueur doit deviner ce nombre. Lorsque le joueur fait une proposition, l’ordinateur lui donne un indice (par exemple, « essayez un nombre inférieur »). Si le joueur devine le nombre en moins de 7 tentatives, il reçoit un message de félicitations spécial de l'ordinateur. Ce jeu peut être implémenté avec une combinaison des activités procédurales suivantes :
+Une activité d'organigramme peut permettre d'implémenter un jeu de devinette. Le jeu de devinette est très simple : l'ordinateur sélectionne un nombre aléatoire et le joueur doit deviner ce nombre. Lorsque le joueur envoie chaque estimation, l’ordinateur lui indique un indice (par exemple, « essayez un nombre inférieur »). Si le joueur devine le nombre en moins de 7 tentatives, il reçoit un message de félicitations spécial de l'ordinateur. Ce jeu peut être implémenté avec une combinaison des activités procédurales suivantes :
 
 - <xref:System.Activities.Statements.Sequence>
 
@@ -191,9 +191,9 @@ Une activité d'organigramme peut permettre d'implémenter un jeu de devinette. 
 
 Les activités procédurales fournissent un mécanisme de modélisation d'un flux de contrôle séquentiel en faisant appel à des concepts que connaissent bien les programmeurs. Ces activités permettent les constructions de langage de programmation structurées de manière traditionnelle et, lorsque cela s'avère nécessaire, une parité de langages avec les langages procéduraux courants, tels que C#/VB.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Dans Visual Studio 2012, créez une application console de workflow. Ajoutez des activités procédurales dans le concepteur de workfow.
+- Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez des activités procédurales dans le concepteur de workfow.
 
 - Exemples :
 
@@ -205,23 +205,23 @@ Les activités procédurales fournissent un mécanisme de modélisation d'un flu
 
   - [Concepteur d’activités Parallel](/visualstudio/workflow-designer/parallel-activity-designer)
 
-  - [ParallelForEach\<T > Concepteur d’activités](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
+  - [Concepteur d’activités ParallelForEach\<T >](/visualstudio/workflow-designer/parallelforeach-t-activity-designer)
 
 ### <a name="procedural-activity-scenarios"></a>Scénarios d'activités procédurales
 
-- <xref:System.Activities.Statements.Parallel>: Un système de gestion documentaire intranet dispose d’un workflow d’approbation de document. Les documents doivent être approuvés par du personnel travaillant dans plusieurs services différents avant d'être publiés sur le réseau intranet. Il n’est pas un ordre établi pour les approbations ; ils peuvent se produire à tout moment, tandis que le document est en phase de « approbation en attente ». Lorsqu’un utilisateur soumet un document à des fins de revue, ce dernier doit être approuvé par son supérieur hiérarchique direct, par l’administrateur de l’intranet et par le responsable de la communication interne.
+- <xref:System.Activities.Statements.Parallel>: un système de gestion des documents intranet a un flux de travail d’approbation de document. Les documents doivent être approuvés par du personnel travaillant dans plusieurs services différents avant d'être publiés sur le réseau intranet. Il n’existe pas d’ordre établi pour les approbations ; ils peuvent se produire à tout moment pendant que le document est dans la phase « approbation en attente ». Lorsqu’un utilisateur soumet un document à des fins de revue, ce dernier doit être approuvé par son supérieur hiérarchique direct, par l’administrateur de l’intranet et par le responsable de la communication interne.
 
-- <xref:System.Activities.Statements.ParallelForEach%601>: Une application de WF gère les achats au sein d’une grande entreprise. Les règles d'entreprise imposent une évaluation de trois fournisseurs différents avant toute planification d'une opération d'achat. Un employé travaillant dans le service Achat sélectionne trois fournisseurs dans la liste des fournisseurs de la société. Une fois que ces fournisseurs ont été sélectionnés et informés, la société attend de recevoir leur offre. L'ordre de réception des offres n'a pas d'importance. Pour implémenter ce scénario dans WF, nous utilisons un <xref:System.Activities.Statements.ParallelForEach%601> qui permettra une recherche au sein de la liste de fournisseurs et demandera une offre de leur part. Une fois que toutes les offres ont été recueillies, la meilleure est sélectionnée et affichée.
+- <xref:System.Activities.Statements.ParallelForEach%601> : une application WF gère les achats au sein d'une grande entreprise. Les règles d'entreprise imposent une évaluation de trois fournisseurs différents avant toute planification d'une opération d'achat. Un employé travaillant dans le service Achat sélectionne trois fournisseurs dans la liste des fournisseurs de la société. Une fois que ces fournisseurs ont été sélectionnés et informés, la société attend de recevoir leur offre. L'ordre de réception des offres n'a pas d'importance. Pour implémenter ce scénario dans WF, nous utilisons un <xref:System.Activities.Statements.ParallelForEach%601> qui permettra une recherche au sein de la liste de fournisseurs et demandera une offre de leur part. Une fois que toutes les offres ont été recueillies, la meilleure est sélectionnée et affichée.
 
 ## <a name="invokemethod"></a>InvokeMethod
 
 L'activité <xref:System.Activities.Statements.InvokeMethod> permet l'appel de méthodes publiques dans des objets ou des types de l'étendue. Elle prend en charge l'appel de méthodes statiques et d'instances avec ou sans paramètres (y compris les tableaux de paramètres), ainsi que les méthodes génériques. Elle permet également l’exécution de la méthode de façon synchrone et de façon asynchrone.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Dans Visual Studio 2012, créez une application console de workflow. Ajoutez une activité <xref:System.Activities.Statements.InvokeMethod> dans le concepteur de workflow et configurez-y des méthodes d'instances et statiques.
+- Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.InvokeMethod> dans le concepteur de workflow et configurez-y des méthodes d'instances et statiques.
 
-- Documentation relative au concepteur : [Concepteur d’activités InvokeMethod](/visualstudio/workflow-designer/invokemethod-activity-designer)
+- Documentation du concepteur : [Concepteur d’activités InvokeMethod](/visualstudio/workflow-designer/invokemethod-activity-designer)
 
 ### <a name="invokemethod-scenarios"></a>Scénarios InvokeMethod
 
@@ -233,13 +233,13 @@ L'activité <xref:System.Activities.Statements.InvokeMethod> permet l'appel de m
 
 L'activité <xref:System.Activities.Statements.TryCatch> fournit un mécanisme d'interception d'exceptions qui se produisent lors de l'exécution d'un ensemble d'activités contenues (similaire à la construction Try/Catch dans C#/VB). <xref:System.Activities.Statements.TryCatch> permet la gestion des exceptions au niveau du flux de travail. Si une exception non gérée est levée, le flux de travail est abandonné et le bloc Finally n'est pas exécuté. Ce comportement est cohérent avec le langage C#.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Dans Visual Studio 2012, créez une application console de workflow. Ajoutez une activité <xref:System.Activities.Statements.TryCatch> dans le concepteur de workflow.
+- Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.TryCatch> dans le concepteur de workflow.
 
-- Aperçu : [Gestion des erreurs dans une activité Flowchart à l’aide de TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
+- Exemple : [gestion des erreurs dans une activité Flowchart à l’aide de TryCatch](./samples/fault-handling-in-a-flowchart-activity-using-trycatch.md)
 
-- Documentation relative au concepteur : [Concepteurs d’activités de gestion des erreurs](/visualstudio/workflow-designer/error-handling-activity-designers)
+- Documentation du concepteur : [concepteurs d’activités de gestion des erreurs](/visualstudio/workflow-designer/error-handling-activity-designers)
 
 ### <a name="error-handling-scenarios"></a>Scénarios de gestion des erreurs
 
@@ -249,13 +249,13 @@ Un ensemble d'activités doit être exécuté et une logique spécifique être e
 
 L'activité <xref:System.Activities.Statements.Pick> fournit une modélisation de flux de contrôle basée sur les événements dans WF. <xref:System.Activities.Statements.Pick> contient de nombreuses branches, où chacune d'entre elles attend qu'un événement particulier se produise avant de s'exécuter. Dans cette configuration, un <xref:System.Activities.Statements.Pick> se comporte de manière similaire à un <xref:System.Activities.Statements.Switch%601> dans lequel l'activité exécutera un seul des jeux d'événements qu'elle écoute. Chaque branche est pilotée par l’événement et celui qui se produit exécute la branche correspondante. Toutes les autres branches annulent et arrêtent l'écoute des événements.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Dans Visual Studio 2012, créez une application console de workflow. Ajoutez une activité <xref:System.Activities.Statements.Pick> dans le concepteur de workflow.
+- Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.Pick> dans le concepteur de workflow.
 
-- Aperçu : [Utilisation de l’activité Pick](./samples/using-the-pick-activity.md)
+- Exemple : [utilisation de l’activité Pick](./samples/using-the-pick-activity.md)
 
-- Documentation relative au concepteur : [Concepteur d’activités Pick](/visualstudio/workflow-designer/pick-activity-designer)
+- Documentation du concepteur : [Concepteur d’activités Pick](/visualstudio/workflow-designer/pick-activity-designer)
 
 ### <a name="pick-scenario"></a>Scénario de l'activité Pick
 
@@ -263,7 +263,7 @@ Un utilisateur doit être invité à entrer des informations. Dans des circonsta
 
 ## <a name="wcf-routing-service"></a>Service de routage WCF
 
-Le Service de routage est conçu pour être une routeur qui vous permet de contrôler le flux des messages WCF entre vos clients et les services des logiciels générique. Le Service de routage vous permet de découpler vos clients à partir de vos services, qui vous donne beaucoup plus de liberté en termes de configurations que vous pouvez prendre en charge et la flexibilité que lorsque vous envisagez d’héberger vos services. Dans .NET 3.5, les clients et services ont été étroitement couplés ; un client devait connaître sur tous les services, il est nécessaire pour communiquer avec et où ils se trouvaient. En outre, WCF dans .NET Framework 3.5 limites était les suivantes :
+Le service de routage est conçu pour être un routeur logiciel générique qui vous permet de contrôler la façon dont les messages WCF circulent entre vos clients et services. Le service de routage vous permet de découpler vos clients de vos services, ce qui vous offre une plus grande liberté quant aux configurations que vous pouvez prendre en charge et à la flexibilité dont vous disposez lorsque vous envisagez d’héberger vos services. Dans .NET 3,5, les clients et les services étaient étroitement couplés ; un client devait connaître tous les services dont il a besoin pour communiquer avec l’emplacement où ils se trouvaient. En outre, WCF dans .NET Framework 3,5 comportait les limitations suivantes :
 
 - La gestion des erreurs était complexe car cette logique devait être codée en dur côté client.
 
@@ -271,23 +271,23 @@ Le Service de routage est conçu pour être une routeur qui vous permet de contr
 
 - Les services étaient rarement conçus de manière appropriée : il est plus facile de faire communiquer le client avec un service qui implémente tout un ensemble, plutôt que de choisir entre plusieurs services.
 
-Le service de routage dans .NET 4 est conçu pour faciliter la résoudre ces problèmes. Le nouveau service de routage présente les fonctionnalités suivantes :
+Le service de routage dans .NET 4 est conçu pour faciliter la résolution de ces problèmes. Le nouveau service de routage présente les fonctionnalités suivantes :
 
 1. Routage basé sur le contenu (les objets <xref:System.ServiceModel.Dispatcher.MessageFilter> examinent un message afin de déterminer sa destination.)
 
-2. Protocole pontage (transport et message)
+2. Pontage de protocoles (message & de transport)
 
 3. Gestion des erreurs (le routeur intercepte les exceptions de communication et bascule sur les points de terminaison de sauvegarde)
 
 4. Mise à jour dynamique (en mémoire) de <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> et configuration du routage.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-1. Documentation : [Le routage](../wcf/feature-details/routing.md)
+1. Documentation : [routage](../wcf/feature-details/routing.md)
 
-2. Exemples : [Services de routage &#91;exemples WCF&#93;](../wcf/samples/routing-services.md)
+2. Exemples : [services &#91;de routage exemples&#93; WCF](../wcf/samples/routing-services.md)
 
-3. Blog : [Règles de routage !](https://go.microsoft.com/fwlink/?LinkId=204956)
+3. Blog : [règles de routage !](https://go.microsoft.com/fwlink/?LinkId=204956)
 
 ### <a name="routing-scenarios"></a>Scénarios de routage
 
@@ -305,7 +305,7 @@ Le service de routage s'avère utile dans les scénarios suivants :
 
 ## <a name="wcf-discovery"></a>Discovery WCF
 
-La découverte WCF est une technologie d’infrastructure qui vous permet d’incorporer un mécanisme de découverte pour votre infrastructure d’application. Vous pouvez vous en servir pour rendre votre service détectable et configurer vos clients pour qu'ils recherchent des services. Les clients n'ont plus besoin d'être codés en dur avec un point de terminaison, ce qui rend votre application plus fiable et plus tolérante aux pannes. Discovery est la plateforme parfaite pour intégrer des fonctionnalités d'auto-configuration à votre application.
+La découverte WCF est une technologie d’infrastructure qui vous permet d’incorporer un mécanisme de découverte à votre infrastructure d’application. Vous pouvez vous en servir pour rendre votre service détectable et configurer vos clients pour qu'ils recherchent des services. Les clients n'ont plus besoin d'être codés en dur avec un point de terminaison, ce qui rend votre application plus fiable et plus tolérante aux pannes. Discovery est la plateforme parfaite pour intégrer des fonctionnalités d'auto-configuration à votre application.
 
 Le produit repose sur la norme WS-Discovery. Il est conçu pour être interopérable, extensible et générique. Le produit prend en charge deux modes d'opération :
 
@@ -313,13 +313,13 @@ Le produit repose sur la norme WS-Discovery. Il est conçu pour être interopér
 
 2. Ad-hoc : lorsque les clients utilisent des messages de multidiffusion pour localiser des services.
 
-Par ailleurs, les messages de découverte ne dépendent pas du protocole réseau ; vous pouvez les utiliser avec tout protocole qui prend en charge les besoins de chaque mode. Par exemple, découverte pour les messages de multidiffusion peuvent être envoyés sur le canal UDP ou tout autre réseau qui prend en charge la messagerie multidiffusion. Ces points de conception, combinés avec la flexibilité des fonctionnalités, vous permettent d’adapter la détection spécifiquement à votre solution.
+Par ailleurs, les messages de découverte ne dépendent pas du protocole réseau ; vous pouvez les utiliser avec tout protocole qui prend en charge les besoins de chaque mode. Par exemple, les messages de multidiffusion de découverte peuvent être envoyés via le canal UDP ou tout autre réseau qui prend en charge la messagerie multidiffusion. Ces points de conception, combinés à la flexibilité des fonctionnalités, vous permettent d’adapter la détection spécifiquement à votre solution.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-- Documentation : [Découverte WCF](../wcf/feature-details/wcf-discovery.md)
+- Documentation : [découverte WCF](../wcf/feature-details/wcf-discovery.md)
 
-- Exemples : [Découverte (exemples)](../wcf/samples/discovery-samples.md)
+- Exemples : [découverte (exemples)](../wcf/samples/discovery-samples.md)
 
 ### <a name="discovery-scenarios"></a>Scénarios Discovery
 
@@ -327,9 +327,9 @@ Un développeur ne souhaite pas coder en dur les points de terminaison car la da
 
 ## <a name="tracking"></a>Suivi
 
-Suivi de workflow fournit un aperçu de l’exécution d’une instance de workflow. Les événements de suivi sont émis à partir d’un flux de travail au niveau de l’instance de flux de travail et lorsque les activités dans le flux de travail s’exécutent. Un participant au suivi du flux de travail doit être ajouté à l'hôte du flux de travail pour s'abonner aux enregistrements de suivi. Les enregistrements de suivi sont filtrés à l'aide d'un profil de suivi. Le .NET Framework fournit un participant de suivi ETW (Event Tracing pour Windows), et un profil de base est installé dans le fichier machine.config.
+Le suivi de flux de travail fournit des informations sur l’exécution d’une instance de Workflow. Les événements de suivi sont émis à partir d’un flux de travail au niveau de l’instance de workflow et lors de l’exécution des activités dans le Workflow. Un participant au suivi du flux de travail doit être ajouté à l'hôte du flux de travail pour s'abonner aux enregistrements de suivi. Les enregistrements de suivi sont filtrés à l'aide d'un profil de suivi. Le .NET Framework fournit un participant de suivi ETW (Suivi d’v nements pour Windows) et un profil de base est installé dans le fichier machine. config.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
 1. Dans Visual Studio 2010, créez un projet d'application de service de flux de travail WCF. Une paire <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> sera placée dans votre zone de dessin pour le démarrage.
 
@@ -337,24 +337,24 @@ Suivi de workflow fournit un aperçu de l’exécution d’une instance de workf
 
     1. Le profil par défaut est utilisé.
 
-    2. Ouvrez l’Observateur d’événements et activer le canal analytique dans le nœud suivant : **Observateur d’événements**, **journaux des Applications et Services**, **Microsoft**, **Windows**, **serveur d’applications-Applications**. Avec le bouton droit **analyse** et sélectionnez **activer le journal**.
+    2. Ouvrez l’observateur d’événements et activez le canal analytique dans le nœud suivant : **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **activer le journal**.
 
     3. Exécutez le service de flux de travail.
 
     4. Observez les événements de suivi du flux de travail dans l'observateur d'événements.
 
-3. Exemples : [Suivi](./samples/tracking.md)
+3. Exemples : [suivi](./samples/tracking.md)
 
-4. Documentation conceptuelle : [Suivi et traçage de workflow](workflow-tracking-and-tracing.md)
+4. Documentation conceptuelle : [suivi et traçage de workflow](workflow-tracking-and-tracing.md)
 
 ## <a name="sql-workflow-instance-store"></a>Magasin d'instances de workflow SQL
 
 Le <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> est une implémentation basée sur SQL d'un magasin d'instances. Un magasin d'instances stocke l'état d'une instance en cours d'exécution avec l'ensemble des données nécessaires au chargement et à la reprise de cette instance. L'hôte du service demande au magasin d'instances d'enregistrer l'état de l'instance si le flux de travail persiste et de charger l'état de l'instance quand un message arrive pour cette instance ou qu'une activité de report arrive à expiration.
 
-### <a name="getting-started"></a>Prise en main
+### <a name="getting-started"></a>Commencer
 
-1. Dans Visual Studio 2012, créez un flux de travail qui contient un implicite ou explicite <xref:System.Activities.Statements.Persist> activité. Ajoutez le comportement <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> à votre hôte de service de workflow. Cela peut se faire dans le code ou dans le fichier de configuration de l'application.
+1. Dans Visual Studio 2012, créez un flux de travail qui contient une activité <xref:System.Activities.Statements.Persist> implicite ou explicite. Ajoutez le comportement <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> à votre hôte de service de workflow. Cela peut se faire dans le code ou dans le fichier de configuration de l'application.
 
-2. Exemples : [Persistance](./samples/persistence.md)
+2. Exemples : [persistance](/previous-versions/dotnet/netframework-4.0/dd699769(v%3dvs.100))
 
-3. Documentation conceptuelle : [SQL Workflow Instance Store](sql-workflow-instance-store.md).
+3. Documentation conceptuelle : [magasin d’instances de workflow SQL](sql-workflow-instance-store.md).

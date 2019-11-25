@@ -6,12 +6,12 @@ helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: 7010c38797ab64e5106c96c06cd814c143ca9c24
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: dab708bfbc33458bc2664c0d04757f0badcc2575
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419386"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141600"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 
@@ -30,13 +30,13 @@ Le mot clé `var` peut être utilisé dans les contextes suivants :
 - Dans une instruction d’initialisation [for](../../language-reference/keywords/for.md)
 
     ```csharp
-    for(var x = 1; x < 10; x++)
+    for (var x = 1; x < 10; x++)
     ```
 
 - Dans une instruction d’initialisation [foreach](../../language-reference/keywords/foreach-in.md)
 
     ```csharp
-    foreach(var item in list){...}
+    foreach (var item in list) {...}
     ```
 
 - Dans une instruction [using](../../language-reference/keywords/using-statement.md)
@@ -45,7 +45,7 @@ Le mot clé `var` peut être utilisé dans les contextes suivants :
     using (var file = new StreamReader("C:\\myfile.txt")) {...}
     ```
 
-Pour plus d’informations, consultez [Guide pratique pour utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
+Pour plus d’informations, consultez [comment utiliser des variables locales et des tableaux implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md).
 
 ## <a name="var-and-anonymous-types"></a>Types var et anonymes
 
@@ -63,7 +63,7 @@ Les restrictions suivantes s’appliquent aux déclarations de variables implici
 
 - `var` ne peut pas être utilisé dans les champs situés dans la portée de la classe.
 
-- Les variables déclarées à l’aide de `var` ne peuvent pas être utilisées dans l’expression d’initialisation. En d’autres termes, l’expression `: int i = (i = 20);` est légale, mais l’expression `var i = (i = 20);` génère une erreur de compilation.
+- Les variables déclarées à l’aide de `var` ne peuvent pas être utilisées dans l’expression d’initialisation. En d’autres termes, cette expression est légale : `int i = (i = 20);` mais cette expression génère une erreur au moment de la compilation : `var i = (i = 20);`
 
 - Il n’est pas possible d’initialiser plusieurs variables implicitement typées dans la même instruction.
 
@@ -95,7 +95,7 @@ Toutefois, l’utilisation de `var` risque de rendre votre code plus difficile �
 
 - [Informations de référence sur C#](../../language-reference/index.md)
 - [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md)
-- [Comment : utiliser des tableaux et des variables locales implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
+- [Comment utiliser des variables locales et des tableaux implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Types anonymes](anonymous-types.md)
 - [Initialiseurs d’objets et de collections](object-and-collection-initializers.md)
 - [var](../../language-reference/keywords/var.md)

@@ -6,33 +6,17 @@ helpviewer_keywords:
 - performance counters
 - performance monitoring, counters
 ms.assetid: 06a4ae8c-eeb2-4d5a-817e-b1b95c0653e1
-ms.openlocfilehash: 02163f923bc93a1cf377cc608b5f390472c60edd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a592cbb49c1b9ec8f36b90f2ec1097f6c84efbe9
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121597"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281809"
 ---
-# <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
+# <a name="performance-counters-in-the-net-framework"></a>Compteurs de performance dans le .NET Framework
+
 Cette rubrique fournit une liste des compteurs de performance que vous pouvez trouver dans l' [Analyseur de performances Windows](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc749249%28v=ws.11%29).  
-  
-- [Compteurs de performance pour les exceptions](#exception)  
-  
-- [Compteurs de performance pour l’interopérabilité](#interop)  
-  
-- [Compteurs de performance JIT](#jit)  
-  
-- [Compteurs de performance pour le chargement](#loading)  
-  
-- [Compteurs de performance pour les verrous et les threads](#lockthread)  
-  
-- [Compteurs de performance pour la mémoire](#memory)  
-  
-- [Compteurs de performance pour le réseau](#networking)  
-  
-- [Compteurs de performance pour la sécurité](#security)  
-  
-<a name="exception"></a>   
+
 ## <a name="exception-performance-counters"></a>Compteurs de performance pour les exceptions  
  La catégorie Exceptions CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les exceptions levées par une application. Le tableau suivant décrit ces compteurs de performance.  
   
@@ -43,8 +27,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre de filtres/s**|Affiche le nombre de filtres d'exception .NET exécutés par seconde. Un filtre d'exception évalue si une exception doit être gérée ou non.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Nombre de Finally/s**|Affiche le nombre de blocs finally exécutés par seconde. Un bloc finally est toujours exécuté, quelle que soit la méthode de sortie du bloc try.  Seuls les blocs finally exécutés pour une exception sont comptabilisés ; ceux situés dans les chemins de code standard sont ignorés par ce compteur.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Profondeur Throw à Catch/s**|Affiche le nombre de frames de pile traversés, par seconde, entre le frame qui a levé l'exception et celui qui l'a gérée. Ce compteur est remis à zéro quand un gestionnaire d'exceptions est entré. Les exceptions imbriquées indiquent donc la profondeur de la pile entre les gestionnaires.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
-  
-<a name="interop"></a>   
+     
 ## <a name="interop-performance-counters"></a>Compteurs de performance pour l'interopérabilité  
  La catégorie Interopérabilité CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur l'interaction entre une application et les composants COM, les services COM+ et les bibliothèques de types externes. Le tableau suivant décrit ces compteurs de performance.  
   
@@ -55,8 +38,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Nombre de stubs**|Affiche le nombre actuel de stubs créés par le common language runtime. Les stubs sont chargés de marshaler les arguments et les valeurs de retour du code managé vers le code non managé, et vice versa, pendant un appel COM Interop ou un appel de code non managé.|  
 |**Nombre d’exportations TLB/s**|Réservé à un usage ultérieur.|  
 |**Nombre d’importations TLB/s**|Réservé à un usage ultérieur.|  
-  
-<a name="jit"></a>   
+    
 ## <a name="jit-performance-counters"></a>compteurs de performance JIT  
  La catégorie JIT CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur du code ayant été compilé juste-à-temps (JIT). Le tableau suivant décrit ces compteurs de performance.  
   
@@ -68,8 +50,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Octets IL traités avec Jit/s**|Affiche le nombre d'octets MSIL ayant été compilés juste-à-temps (JIT) par seconde. Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Échecs Jit standard**|Affiche le nombre maximal de méthodes que le compilateur JIT n'a pas pu compiler depuis le démarrage de l'application. Ce type d'échec peut se produire quand le MSIL ne peut pas être vérifié ou en cas d'erreur interne au niveau du compilateur JIT.|  
 |**Nombre total d’octets IL traités avec Jit**|Affiche le nombre total d'octets MSIL ayant fait l'objet d'une compilation JIT depuis le démarrage de l'application. Ce compteur est équivalent au compteur **Nombre d’octets IL traités avec Jit**.|  
-  
-<a name="loading"></a>   
+     
 ## <a name="loading-performance-counters"></a>Compteurs de performance pour le chargement  
  La catégorie Chargement CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les assemblys, les classes et les domaines d'application qui sont chargés. Le tableau suivant décrit ces compteurs de performance.  
   
@@ -91,8 +72,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Total de appdomains déchargés**|Affiche le nombre total de domaines d'application qui ont été déchargés depuis le démarrage de l'application. Si un domaine d'application est chargé et déchargé plusieurs fois, ce compteur s'incrémente à chaque déchargement du domaine d'application.|  
 |**Total d’assemblys**|Affiche le nombre total d'assemblys qui ont été chargés depuis le démarrage de l'application. Si l'assembly est chargé comme étant indépendant du domaine à partir de plusieurs domaines d'application, ce compteur n'est incrémenté qu'une seule fois.|  
 |**Total de classes chargées**|Affiche le nombre total de classes qui ont été chargées dans tous les assemblys depuis le démarrage de l'application.|  
-  
-<a name="lockthread"></a>   
+   
 ## <a name="lock-and-thread-performance-counters"></a>Compteurs de performance pour les verrous et les threads  
  La catégorie Verrous et threads CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les verrous et les threads managés qu'une application utilise. Le tableau suivant décrit ces compteurs de performance.  
   
@@ -108,8 +88,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Longueur de la file maximale**|Affiche le nombre total de threads qui ont attendu d'acquérir un verrou managé depuis le démarrage de l'application.|  
 |**Taux de threads reconnus/s**|Affiche le nombre de threads par seconde qui ont été reconnus par le runtime. Ces threads sont associés à un objet thread managé correspondant. Il ne s'agit pas de threads créés par le runtime, mais de threads qui ont été exécutés au moins une fois dans le runtime.<br /><br /> Seuls les threads uniques sont pris en compte. Les threads avec le même ID qui rentrent dans le runtime ou sont recréés après en être sortis sont comptabilisés une seule fois.<br /><br /> Ce compteur ne représente pas une moyenne temporelle ; il affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Nombre total de conflits**|Affiche le nombre total de fois où les threads du runtime ont tenté en vain d'acquérir un verrou managé.|  
-  
-<a name="memory"></a>   
+    
 ## <a name="memory-performance-counters"></a>Compteurs de performance pour la mémoire  
  La catégorie Mémoire CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur le garbage collector (le récupérateur de mémoire). Le tableau suivant décrit ces compteurs de performance.  
   
@@ -133,15 +112,15 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
 |**Taille du tas de la génération 1**|Affiche le nombre d'octets actuellement alloués à la génération 1. Ce compteur n'affiche pas la taille maximale de la génération 1. Les objets ne sont pas alloués directement à cette génération : ils sont promus à partir des précédents garbage collection de la génération 0. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
 |**Octets promus de la génération 1/s**|Affiche le nombre d'octets par seconde promus de la génération 1 à la génération 2. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur.<br /><br /> La mémoire est promue quand elle survit à un garbage collection. La génération 2 étant la plus ancienne, les promotions depuis celle-ci ne sont pas possibles. Ce compteur est un indicateur du nombre d'objets à durée de vie très longue qui sont créés par seconde.<br /><br /> Ce compteur affiche la différence entre les valeurs observées dans les deux derniers intervalles de temps, divisée par la durée de l'intervalle échantillon.|  
 |**Taille du tas de la génération 2**|Affiche le nombre d'octets actuellement alloués à la génération 2. Les objets ne sont pas alloués directement à cette génération : ils sont promus à partir de la génération 1 durant les précédents garbage collection de la génération 1. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
-|**Taille du tas des objets volumineux**|Affiche la taille actuelle, en octets, du tas des objets volumineux. Les objets dont la taille est supérieure à environ 85 000 octets sont considérés comme des objets volumineux par le garbage collector et sont directement alloués à un tas spécifique. Ils ne sont pas promus d'une génération à l'autre. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
-|**ID du processus**|Affiche l'ID de processus de l'instance de CLR qui est surveillée.|  
+|**Taille du tas des objets volumineux**|Affiche la taille actuelle, en octets, du tas d’objets volumineux. Les objets qui sont supérieurs à environ 85 000 octets sont traités comme des objets volumineux par le garbage collector et sont directement alloués dans un tas spécial. Ils ne sont pas promus via les générations. Ce compteur est actualisé à la fin de chaque garbage collection, et non à chaque allocation.|  
+|**ID de processus**|Affiche l'ID de processus de l'instance de CLR qui est surveillée.|  
 |**Finalisation-mémoire promues de la génération 0**|Affiche le nombre d'octets de mémoire qui sont promus de la génération 0 à la génération 1 uniquement parce qu'ils sont en attente de finalisation. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
 |**Mémoire promue de la génération 0**|Affiche le nombre d'octets de mémoire qui survivent au garbage collection et sont promus de la génération 0 à la génération 1. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement.|  
 |**Mémoire promue de la génération 1**|Affiche le nombre d’octets de mémoire qui survivent au garbage collection et sont promus de la génération 1 à la génération 2. Les objets promus uniquement parce qu'ils attendent d'être finalisés sont ignorés par ce compteur. Ce compteur n’est pas cumulatif : il affiche la valeur observée à la fin du dernier garbage collection uniquement. Ce compteur est remis à 0 uniquement si le dernier garbage collection était de la génération 0.|  
-  
-<a name="networking"></a>   
+     
 ## <a name="networking-performance-counters"></a>Compteurs de performance pour le réseau  
- La catégorie Réseau CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les données qu'une application envoie et reçoit via le réseau. Le tableau suivant décrit ces compteurs de performance.  
+
+La catégorie Réseau CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les données qu'une application envoie et reçoit via le réseau. Le tableau suivant décrit ces compteurs de performance.  
   
 |Compteur de performance|Description|  
 |-------------------------|-----------------|  
@@ -167,7 +146,7 @@ Cette rubrique fournit une liste des compteurs de performance que vous pouvez tr
   
 - Compteurs par intervalle qui comptabilisent le nombre d'objets faisant une transition particulière par intervalle (généralement par seconde).  
   
- Les compteurs de performance réseau pour les événements sont les suivants :  
+Les compteurs de performance réseau pour les événements sont les suivants :  
   
 - **Connexions établies**  
   
@@ -236,8 +215,7 @@ for (int i = 0; i < Array.Length; i++)
 - « Réseau CLR .NET 4.0.0.0 » : regroupe tous les compteurs de socket ci-dessus ainsi que les nouveaux compteurs de performance pris en charge par .NET Framework 4 et les versions ultérieures. Ces nouveaux compteurs fournissent des informations sur les performances des objets <xref:System.Net.HttpWebRequest>.  
   
  Pour plus d’informations sur l’accès aux compteurs de performance et la gestion de ces derniers dans une application, consultez [Compteurs de performance](performance-counters.md).  
-  
-<a name="security"></a>   
+    
 ## <a name="security-performance-counters"></a>Compteurs de performance pour la sécurité  
  La catégorie Sécurité CLR .NET de la Console de performances comprend des compteurs qui fournissent des informations sur les vérifications de sécurité effectuées par le common language runtime pour une application. Le tableau suivant décrit ces compteurs de performance.  
   
@@ -251,5 +229,5 @@ for (int i = 0; i < Array.Length; i++)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Compteurs de performance](performance-counters.md)
+- [Performance Counters](performance-counters.md)
 - [Profilage d’exécution](runtime-profiling.md)

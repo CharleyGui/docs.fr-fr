@@ -9,16 +9,16 @@ helpviewer_keywords:
 - ControlTemplate [WPF], Thumb
 - parts [WPF], Thumb
 ms.assetid: 86a49235-62d9-414e-923e-53126e3f930a
-ms.openlocfilehash: c2114a02016db96d898a394b6892b6d3042d81ff
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0d0d88e3b527beacfa5f879027e696aa75b18147
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458237"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283679"
 ---
 # <a name="thumb-styles-and-templates"></a>Styles et modèles Thumb
 
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Primitives.Thumb>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.Primitives.Thumb>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 
 ## <a name="thumb-parts"></a>Éléments Thumb
 
@@ -33,7 +33,7 @@ Le tableau suivant répertorie les États visuels du contrôle <xref:System.Wind
 |Normale|CommonStates|État par défaut.|
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|
 |Appuyé|CommonStates|Le contrôle est enfoncé.|
-|Disabled|CommonStates|Le contrôle est désactivé.|
+|Désactivé|CommonStates|Le contrôle est désactivé.|
 |Avec focus|FocusStates|Le contrôle a le focus.|
 |Sans focus|FocusStates|Le contrôle n’a pas le focus.|
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|
@@ -59,4 +59,4 @@ Pour voir l’exemple complet, consultez [Styling with ControlTemplates Sample](
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

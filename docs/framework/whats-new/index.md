@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: be6f6b2d2213e96bc4e695ffbf7bc77f755ed492
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ffcb288995975433bdd915362fccca03f345b5f5
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454984"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74281652"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -28,7 +28,7 @@ Cet article résume les principales nouvelles fonctionnalités et améliorations
 - [.NET 2015 et .NET Framework 4.6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
-- [.NET Framework 4.5](#v45)
+- [.NET Framework 4.5](#v45)
 
 Cet article ne fournit pas d'informations complètes sur chacune des nouvelles fonctionnalités et peut faire l'objet de modifications. Pour obtenir des informations générales sur le .NET Framework, consultez [Prise en main](../get-started/index.md). Pour connaître les plateformes prises en charge, consultez [Configuration requise](../get-started/system-requirements.md). Pour obtenir des liens de téléchargement et des instructions d’installation, consultez [Guide d’installation](../install/guide-for-developers.md).
 
@@ -102,7 +102,7 @@ Les points de terminaison d’intégrité sont couramment utilisés par les outi
 
 Deux méthodes permettent d’exposer le point de terminaison d’intégrité et de publier les informations d’intégrité du service WCF :
 
-- Par le biais du code. Exemple :
+- Par le biais du code. Par exemple :
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -124,7 +124,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- À l’aide d’un fichier de configuration. Exemple :
+- À l’aide d’un fichier de configuration. Par exemple :
 
   ```xml
   <behaviors>
@@ -136,7 +136,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   </behaviors>
   ```
 
-L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Exemple :
+L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Par exemple :
 
 - OnServiceFailure : `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -252,7 +252,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Exemple :
+Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Par exemple :
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -340,7 +340,7 @@ Dim cStream = New CryptoStream(stream, transform, mode, leaveOpen:=true)
 
 **Changements de décompression dans DeflateStream**
 
-À compter de .NET Framework 4.7.2, l’implémentation des opérations de décompression de la classe <xref:System.IO.Compression.DeflateStream> a été changée de façon à utiliser des API Windows natives par défaut. En règle générale, cela entraîne une amélioration sensible des performances.
+À compter de .NET Framework 4.7.2, l’implémentation des opérations de décompression de la classe <xref:System.IO.Compression.DeflateStream> a été changée de façon à utiliser des API Windows natives par défaut. En règle générale, s’ensuit une amélioration sensible des performances.
 
 La prise en charge de la décompression à l’aide des API Windows est activée par défaut pour les applications qui ciblent .NET Framework 4.7.2. Les applications qui ciblent les versions antérieures du .NET Framework mais qui s’exécutent sur .NET Framework 4.7.2 peuvent adopter ce comportement en ajoutant le [commutateur AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant au fichier de configuration d’application :
 
@@ -434,7 +434,7 @@ Vous pouvez ajouter SameSite pour des cookies <xref:System.Web.Security.FormsAut
 
 <a name="net472" />
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 **Implémentation des propriétés HttpClientHandler**
 
@@ -467,7 +467,7 @@ Pour plus d’informations et pour obtenir un exemple, consultez « SQL -- Azur
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, qui fournit les paramètres d’attestation utilisés par SQL Server afin d’obtenir les informations requises pour exécuter un protocole d’attestation spécifique.
 
-Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Exemple :
+Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Par exemple :
 
 ```xml
 <configuration>
@@ -626,11 +626,11 @@ La classe <xref:System.Runtime.CompilerServices.RuntimeFeature?displayProperty=n
 
 **Amélioration des performances du garbage collection**
 
-Des modifications apportées à garbage collection (GC) dans .NET Framework 4.7.1 améliorent les performances globales, plus particulièrement pour les allocations de tas d’objets volumineux (LOH). Dans .NET Framework 4.7.1, des verrous distincts sont utilisés pour les allocations de tas de petits objets (SOH) et LOH, ce qui permet aux allocations LOH de se produire lors du GC en arrière-plan (BGC) ou du nettoyage du SOH. Les applications qui créent un grand nombre d’allocations LOH bénéficient donc d’une réduction de la contention de verrouillage des allocations et de meilleures performances. Pour plus d’informations, consultez la section « Runtime -- GC Performance Improvements » dans le billet de blog [.NET Framework 4.7.1 Runtime and Compiler Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/).
+Les modifications apportées à garbage collection (GC) dans .NET Framework 4.7.1 améliorent les performances globales, en particulier pour les allocations de tas d’objets volumineux (LOH). Dans .NET Framework 4.7.1, des verrous distincts sont utilisés pour les allocations de tas d’objets de petite taille (SOH) et LOH, ce qui permet d’obtenir des allocations LOH quand le garbage collector d’arrière-plan nettoie l’SOH. Les applications qui créent un grand nombre d’allocations LOH bénéficient donc d’une réduction de la contention de verrouillage des allocations et de meilleures performances. Pour plus d’informations, consultez la section « Runtime -- GC Performance Improvements » dans le billet de blog [.NET Framework 4.7.1 Runtime and Compiler Features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/).
 
 <a name="net471"/>
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 **Prise en charge de SHA-2 pour Message.HashAlgorithm**
 
@@ -650,7 +650,7 @@ ASP.NET traite les demandes dans un pipeline prédéfini comprenant 23 événeme
 
 **Options de hachage SHA-2 pour les informations d’identification de l’authentification par formulaires ASP.NET**
 
-Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Exemple :
+Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Par exemple :
 
 ```xml
 <system.web>
@@ -699,7 +699,7 @@ Dans .NET Framework 4.7, le <xref:System.Runtime.Serialization.Json.DataContract
 
 <a name="net47" />
 
-#### <a name="networking"></a>Réseau
+#### <a name="networking"></a>Mise en réseau
 
 .NET Framework 4.7 ajoute les fonctionnalités liées au réseau suivantes :
 
@@ -816,7 +816,7 @@ Les validateurs d’annotations de données vous permettent d’effectuer une va
 
 2. Le fichier de ressources est stocké dans le dossier App_LocalResources.
 
-3. Le nom du fichier de ressources localisées se présente sous la forme `DataAnnotation.Localization.{`*nom*`}.resx`, où *nom* est le nom de culture au format *code_languepays*`-`*code_région* ou *code_langue*.
+3. Le nom du fichier des ressources localisées se présente sous la forme `DataAnnotation.Localization.{`*nom*`}.resx`, où *nom* est le nom de culture au format *code_langue*`-`*pays/code_région* ou *code_langue*.
 
 4. Le nom de clé de la ressource est la chaîne assignée à l’attribut <xref:System.ComponentModel.DataAnnotations.ValidationAttribute.ErrorMessage%2A?displayProperty=nameWithType>, et sa valeur correspond au message d’erreur localisé.
 
@@ -841,7 +841,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Name                                 | valeur                                     |
+| Nom                                 | Valeur                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -965,7 +965,7 @@ Pour résoudre ce problème dans .NET Framework 4.6.2, les trois méthodes suiv
 
 La bibliothèque de chiffrement Windows (CNG) a ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et .NET Framework 4.6.2 a permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
 
-La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Exemple :
+La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Par exemple :
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1178,7 +1178,7 @@ Dans les versions précédentes du .NET Framework, les applications WPF ne peuve
 
 Pour faire face à la prolifération récente des environnements à haute résolution et à résolution hybride pour les applications WPF, WPF dans le .NET Framework 4.6.2 autorise une prise en charge par moniteur. Pour savoir comment permettre à votre application WPF de prendre en charge la résolution par moniteur, consultez les [exemples et le guide du développeur](https://github.com/Microsoft/WPF-Samples/tree/master/PerMonitorDPI) sur GitHub.
 
-Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée. ,
+Dans les versions précédentes du .NET Framework, les applications WPF prennent en charge la résolution au niveau du système. En d’autres termes, l’interface utilisateur de l’application est éventuellement mise à l’échelle par le système d’exploitation, en fonction de la résolution du moniteur sur lequel l’application est affichée.
 
 Pour les applications s’exécutant sous le .NET Framework 4.6.2, vous pouvez désactiver les changements de résolution par moniteur dans les applications WPF en ajoutant une instruction de configuration à la section [\<runtime>](../configure-apps/file-schema/runtime/runtime-element.md) du fichier de configuration de votre application, comme suit :
 
@@ -1300,7 +1300,7 @@ Les clients doivent installer le fournisseur CSP fourni par le fabricant des mod
 
 **Amélioration du comportement de connexion de <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> pour AlwaysOn**
 
-Désormais, SqlClient fournit automatiquement une connexion plus rapide à un groupe de disponibilité AlwaysOn. Il détecte de façon transparente si votre application se connecte à un groupe de disponibilité AlwaysOn sur un autre sous-réseau, détecte rapidement le serveur actif actuel et fournit une connexion au serveur. Avant cette mise en production, une application devait définir la chaîne de connexion à inclure `"MultisubnetFailover=true"` pour indiquer qu’elle était connectée à un groupe de disponibilité AlwaysOn. Si le mot clé de connexion n’était pas défini sur `true`, une application pouvait rencontrer un dépassement du délai lors de la connexion à un groupe de disponibilité AlwaysOn. Avec cette version, une application *n’a plus* besoin de définir <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> sur `true`. Pour plus d’informations sur la prise en charge de SqlClient pour les groupes de disponibilité AlwaysOn, consultez [Prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
+Désormais, SqlClient fournit automatiquement une connexion plus rapide à un groupe de disponibilité AlwaysOn. Il détecte de façon transparente si votre application se connecte à un groupe de disponibilité AlwaysOn sur un autre sous-réseau, détecte rapidement le serveur actif actuel et fournit une connexion au serveur. Avant cette mise en production, une application devait définir la chaîne de connexion à inclure `"MultisubnetFailover=true"` pour indiquer qu’elle était connectée à un groupe de disponibilité AlwaysOn. Si le mot clé de connexion n’était pas défini sur `true`, une application pouvait rencontrer un dépassement du délai lors de la connexion à un groupe de disponibilité AlwaysOn. Avec cette mise en production, une application *n’a plus* besoin de définir <xref:System.Data.SqlClient.SqlConnectionStringBuilder.MultiSubnetFailover%2A> sur `true`. Pour plus d’informations sur la prise en charge de SqlClient pour les groupes de disponibilité AlwaysOn, consultez [Prise en charge de SqlClient pour la haute disponibilité et la récupération d’urgence](../data/adonet/sql/sqlclient-support-for-high-availability-disaster-recovery.md).
 
 <a name="WPF461" />
 
@@ -1786,7 +1786,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 - **Nouvelle fonctionnalité de flux de travail.** Un gestionnaire de ressources qui utilise la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> (et qui implémente donc l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification>) peut utiliser la nouvelle méthode <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> pour demander :
 
-  - La promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator)
+  - la promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator) ;
 
   - le remplacement de <xref:System.Transactions.IPromotableSinglePhaseNotification> par <xref:System.Transactions.ISinglePhaseNotification>, qui correspond à une inscription durable qui prend en charge les validations en une seule phase.
 
@@ -1812,7 +1812,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
   - [GetActiveReJitRequestILCode, méthode](../unmanaged-api/debugging/icordebugfunction3-getactiverejitrequestilcode-method.md)
   - [GetInstrumentedILMap, méthode](../unmanaged-api/debugging/icordebugilcode2-getinstrumentedilmap-method.md)
 
-- **Modifications du suivi d’événements.** .NET Framework 4.5.2 permet le traçage des activités de type Suivi d’événements pour Windows (ETW) hors processus pour une surface d’exposition plus importante. Ce dernier permet aux fournisseurs de gestion avancée de l'alimentation (APM) de fournir des outils légers qui suivent avec précision les coûts des demandes et activités individuelles qui traversent les threads.  Ces événements sont déclenchés uniquement quand les contrôleurs ETW les autorisent ; par conséquent, les modifications ne concernent pas le code ETW écrit auparavant ni le code qui s'exécute avec la fonctionnalité ETW désactivée.
+- **Modifications du suivi d'événements.** .NET Framework 4.5.2 permet le traçage des activités de type Suivi d’événements pour Windows (ETW) hors processus pour une surface d’exposition plus importante. Ce dernier permet aux fournisseurs de gestion avancée de l'alimentation (APM) de fournir des outils légers qui suivent avec précision les coûts des demandes et activités individuelles qui traversent les threads.  Ces événements sont déclenchés uniquement quand les contrôleurs ETW les autorisent ; par conséquent, les modifications ne concernent pas le code ETW écrit auparavant ni le code qui s'exécute avec la fonctionnalité ETW désactivée.
 
 - **Promotion d’une transaction et sa conversion en une inscription durable**
 
@@ -1834,13 +1834,13 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
                                           enlistmentOptions As EnlistmentOptions) As Enlistment
   ```
 
-  La méthode peut être utilisée par une inscription précédemment créée par <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> en réponse à la méthode <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. Elle demande à `System.Transactions` de promouvoir la transaction en une transaction MSDTC et de « convertir » l'inscription à promouvoir en une inscription durable. Après que la méthode s'est terminée avec succès, l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification> n'est plus référencée par `System.Transactions` et toutes les futures notifications parviennent sur l'interface <xref:System.Transactions.ISinglePhaseNotification> fournie. L'inscription en question doit agir comme inscription durable, en prenant en charge la récupération et la journalisation des transactions. Consultez <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType> pour plus d'informations. En outre, l'inscription doit prendre en charge <xref:System.Transactions.ISinglePhaseNotification>.  Cette méthode peut être appelée *seulement* lors du traitement d’un appel <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. Si tel n'est pas le cas, une exception <xref:System.Transactions.TransactionException> est levée.
+  La méthode peut être utilisée par une inscription précédemment créée par <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A?displayProperty=nameWithType> en réponse à la méthode <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. Elle demande à `System.Transactions` de promouvoir la transaction en une transaction MSDTC et de « convertir » l'inscription à promouvoir en une inscription durable. Après que la méthode s'est terminée avec succès, l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification> n'est plus référencée par `System.Transactions` et toutes les futures notifications parviennent sur l'interface <xref:System.Transactions.ISinglePhaseNotification> fournie. L'inscription en question doit agir comme inscription durable, en prenant en charge la récupération et la journalisation des transactions. Consultez <xref:System.Transactions.Transaction.EnlistDurable%2A?displayProperty=nameWithType> pour plus d'informations. En outre, l'inscription doit prendre en charge <xref:System.Transactions.ISinglePhaseNotification>.  Cette méthode peut *uniquement* être appelée lors du traitement d'un appel <xref:System.Transactions.ITransactionPromoter.Promote%2A?displayProperty=nameWithType>. Si tel n'est pas le cas, une exception <xref:System.Transactions.TransactionException> est levée.
 
 <a name="v451" />
 
 ## <a name="whats-new-in-net-framework-451"></a>Nouveautés de .NET Framework 4.5.1
 
-**Mises à jour d’avril 2014** :
+**Mises à jour d'avril 2014** :
 
 - [Visual Studio 2013 Update 2](https://go.microsoft.com/fwlink/p/?LinkId=393658) inclut les mises à jour des modèles de la bibliothèque de classes portable pour prendre en charge les scénarios suivants :
 
@@ -1876,7 +1876,7 @@ Les améliorations apportées à Windows Forms incluent :
   - <xref:System.Windows.Forms.TreeView>
   - Certains aspects de <xref:System.Windows.Forms.DataGridView> (voir [nouvelles fonctionnalités dans 4.5.2](#v452) pour connaître les autres contrôles pris en charge)
 
-  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `true` à l'élément `EnableWindowsFormsHighDpiAutoResizing` :
+  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `EnableWindowsFormsHighDpiAutoResizing` à l'élément `true` :
 
   ```xml
   <appSettings>
@@ -1894,7 +1894,7 @@ Les améliorations lors du débogage de vos applications .NET Framework dans Vis
 
 - Meilleure prise en charge des exceptions pour les composants Windows Runtime. Dans [!INCLUDE[win81](../../../includes/win81-md.md)], une exception qui provient des applications Windows Store conserve les informations sur l'erreur qui a provoqué l'exception, même au-delà des limites du langage. Vous pouvez en savoir plus sur cette fonctionnalité en lisant la section sur le développement d’applications du Windows Store dans l’[annonce relative au .NET Framework 4.5.1](https://devblogs.microsoft.com/dotnet/announcing-the-net-framework-4-5-1-preview/).
 
-Depuis Visual Studio 2013, vous pouvez utiliser [Mpgo.exe (Outil d'optimisation guidée par profil managé)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) pour optimiser les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ainsi que les applications de bureau.
+Depuis Visual Studio 2013, vous pouvez utiliser [Mpgo.exe (Outil d'optimisation guidée par profil managé)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md) pour optimiser les applications Windows 8.x Store, ainsi que les applications de bureau.
 
 Pour les nouvelles fonctionnalités dans ASP.NET 4.5.1, consultez [Notes de mise à jour ASP.NET et Web Tools pour Visual Studio 2013](/aspnet/visual-studio/overview/2013/release-notes).
 
@@ -1944,7 +1944,7 @@ Dans le .NET Framework 4.5, le package Managed Extensibility Framework (MEF) fou
 
 - Portées multiples.
 
-- Sous-ensemble MEF que vous pouvez utiliser lorsque vous créez des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)]. Ce sous-ensemble est disponible sous la forme d’un [package téléchargeable](https://go.microsoft.com/fwlink/?LinkId=256238) à partir de la galerie NuGet. Pour installer ce package, ouvrez votre projet dans Visual Studio, dans le menu **Projet** choisissez **Gérer les packages NuGet**, puis recherchez en ligne le package `Microsoft.Composition`.
+- Sous-ensemble MEF que vous pouvez utiliser lorsque vous créez des applications Windows 8.x Store. Ce sous-ensemble est disponible sous la forme d’un [package téléchargeable](https://go.microsoft.com/fwlink/?LinkId=256238) à partir de la galerie NuGet. Pour installer ce package, ouvrez votre projet dans Visual Studio, dans le menu **Projet** choisissez **Gérer les packages NuGet**, puis recherchez en ligne le package `Microsoft.Composition`.
 
 Pour plus d’informations, consultez [Vue d’ensemble de Managed Extensibility Framework](../mef/index.md).
 
@@ -1956,9 +1956,9 @@ Dans le .NET Framework 4.5, de nouvelles fonctionnalités asynchrones ont été 
 
 ### <a name="tools"></a>Outils
 
-Dans le .NET Framework 4.5, l’outil Resource File Generator (Resgen.exe) vous permet de créer un fichier .resw à utiliser dans les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] à partir d’un fichier .resources incorporé dans un assembly .NET Framework. Pour plus d’informations, consultez [Resgen.exe (Resource File Generator)](../tools/resgen-exe-resource-file-generator.md).
+Dans le .NET Framework 4.5, l'outil Resource File Generator (Resgen.exe) vous permet de créer un fichier .resw à utiliser dans les applications Windows 8.x Store à partir d'un fichier .resources incorporé dans un assembly .NET Framework. Pour plus d’informations, consultez [Resgen.exe (Resource File Generator)](../tools/resgen-exe-resource-file-generator.md).
 
-L'outil d'optimisation guidée par profil managé (Mpgo.exe) vous permet d'améliorer le temps de démarrage de l'application, l'utilisation de la mémoire (taille du jeu de travail) et le débit en optimisant les assemblys d'image natifs. L'outil en ligne de commande génère des données de profil pour les assemblys natifs d'application graphique. Consultez [Mpgo.exe (Outil d’optimisation guidée par profil managé)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Depuis Visual Studio 2013, vous pouvez utiliser Mpgo.exe pour optimiser les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)], ainsi que les applications de bureau.
+L'outil d'optimisation guidée par profil managé (Mpgo.exe) vous permet d'améliorer le temps de démarrage de l'application, l'utilisation de la mémoire (taille du jeu de travail) et le débit en optimisant les assemblys d'image natifs. L'outil en ligne de commande génère des données de profil pour les assemblys natifs d'application graphique. Consultez [Mpgo.exe (Outil d’optimisation guidée par profil managé)](../tools/mpgo-exe-managed-profile-guided-optimization-tool.md). Depuis Visual Studio 2013, vous pouvez utiliser Mpgo.exe pour optimiser les applications Windows 8.x Store, ainsi que les applications de bureau.
 
 <a name="parallel" />
 
@@ -2118,7 +2118,7 @@ Pour plus d’informations, consultez [Nouveautés de Windows Workflow Foundatio
 
 ### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
 
-Les applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications [!INCLUDE[win8_appname_long](../../../includes/win8-appname-long-md.md)] pour Windows à l’aide de C# ou de Visual Basic. Ce sous-ensemble s’appelle [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] et est décrit dans une [vue d’ensemble](https://go.microsoft.com/fwlink/?LinkId=228491) disponible dans le Centre de développement Windows.
+Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble s’appelle [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] et est décrit dans une [vue d’ensemble](https://go.microsoft.com/fwlink/?LinkId=228491) disponible dans le Centre de développement Windows.
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Bibliothèques de classes portables<a name="portable" />
 
@@ -2130,4 +2130,4 @@ Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les vers
 - [Nouveautés de l’accessibilité dans le .NET Framework](whats-new-in-accessibility.md)
 - [Nouveautés de Visual Studio 2017](/visualstudio/ide/whats-new-visual-studio-2017)
 - [ASP.NET](/aspnet)
-- [Nouveautés de Visual C++](/cpp/what-s-new-for-visual-cpp-in-visual-studio)
+- [Nouveautés de C++ dans Visual Studio](/cpp/what-s-new-for-visual-cpp-in-visual-studio)

@@ -1,15 +1,15 @@
 ---
-title: Opérations de définition (Visual Basic)
+title: Opérations ensemblistes
 ms.date: 07/20/2015
 ms.assetid: 2b06e822-e030-438f-9db7-ee402bd3a706
-ms.openlocfilehash: fe8dbff00ecd6da9b3b0e9792e67422583a00180
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: fe9d910415f30fe672dc702f719fdefdb9c0b3d1
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582923"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74350615"
 ---
-# <a name="set-operations-visual-basic"></a>Opérations de définition (Visual Basic)
+# <a name="set-operations-visual-basic"></a>Set Operations (Visual Basic)
 
 Les opérations ensemblistes dans LINQ font référence à des opérations de requête qui génèrent un jeu de résultats basé sur la présence ou l’absence d’éléments équivalents dans la même collection (ou le même ensemble) ou dans une collection distincte (ou un ensemble distinct).
 
@@ -17,7 +17,7 @@ Les méthodes d’opérateur de requête standard qui effectuent des opérations
 
 ## <a name="methods"></a>Méthodes
 
-|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations complémentaires|
+|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |distinct|Supprime les valeurs en double d’une collection.|`Distinct`|<xref:System.Linq.Enumerable.Distinct%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Distinct%2A?displayProperty=nameWithType>|
 |À l'exception|Retourne la différence ensembliste, à savoir les éléments d’une collection qui n’apparaissent pas dans une seconde collection.|Non applicable.|<xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Except%2A?displayProperty=nameWithType>|
@@ -36,7 +36,7 @@ L’illustration suivante représente le comportement de la méthode <xref:Syste
 
 L’illustration suivante représente le comportement de <xref:System.Linq.Enumerable.Except%2A?displayProperty=nameWithType>. La séquence retournée contient uniquement les éléments de la première séquence d’entrée qui ne figurent pas dans la seconde séquence d’entrée.
 
-![Graphique présentant l’action de Except&#40;&#41;.](./media/set-operations/except-behavior-graphic.png "Montre le comportement de except.")
+![Graphic showing the action of Except&#40;&#41;.](./media/set-operations/except-behavior-graphic.png "Shows the behavior of Except.")
 
 ### <a name="intersect"></a>Définir une intersection
 
@@ -52,7 +52,7 @@ L’illustration suivante représente une opération d’union sur deux séquenc
 
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête
 
-L’exemple suivant utilise la clause `Distinct` dans une requête LINQ pour retourner les nombres uniques d’une liste d’entiers.
+The following example uses the `Distinct` clause in a LINQ query to return the unique numbers from a list of integers.
 
 [!code-vb[CsLINQSetOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/CsLINQSetOps/VB/setops.vb#1)]
 
@@ -61,5 +61,5 @@ L’exemple suivant utilise la clause `Distinct` dans une requête LINQ pour ret
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Distinct (clause)](../../../../visual-basic/language-reference/queries/distinct-clause.md)
-- [Comment : combiner et comparer des collections de chaînes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)
-- [Comment : Rechercher la différence définie entre deux listes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)
+- [How to: Combine and Compare String Collections (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-combine-and-compare-string-collections-linq.md)
+- [How to: Find the Set Difference Between Two Lists (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-find-the-set-difference-between-two-lists-linq.md)

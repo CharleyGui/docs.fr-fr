@@ -1,5 +1,5 @@
 ---
-title: Structures de décision (Visual Basic)
+title: Structures de décision
 ms.date: 07/20/2015
 helpviewer_keywords:
 - statements [Visual Basic], control flow
@@ -9,41 +9,41 @@ helpviewer_keywords:
 - decision structures [Visual Basic]
 - conditional statements [Visual Basic], decision structures
 ms.assetid: 2e2e0895-4483-442a-b17c-26aead751ec2
-ms.openlocfilehash: f0df649c4be50e9cadd51258c89137b68b4ffe22
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: d0d4039ff2edc61ee8b4b732c6adcb6e420d73ea
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963196"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74353974"
 ---
 # <a name="decision-structures-visual-basic"></a>Structures de décision (Visual Basic)
-Visual Basic vous permet de tester des conditions et d’effectuer différentes opérations en fonction des résultats de ce test. Vous pouvez tester si une condition est true ou false, pour différentes valeurs d’une expression ou pour différentes exceptions générées lorsque vous exécutez une série d’instructions.  
+Visual Basic lets you test conditions and perform different operations depending on the results of that test. You can test for a condition being true or false, for various values of an expression, or for various exceptions generated when you execute a series of statements.  
   
- L’illustration suivante montre une structure de décision qui teste la présence d’une condition ayant la valeur true et qui effectue des actions différentes selon qu’il s’agit d’une valeur true ou false.  
+ The following illustration shows a decision structure that tests for a condition being true and takes different actions depending on whether it is true or false.  
   
- ![Organigramme d’une If...Then...Else construction.](./media/decision-structures/if-then-else-construction.gif)  
+ ![A flow chart of an If...Then...Else construction.](./media/decision-structures/if-then-else-construction.gif)  
   
-## <a name="ifthenelse-construction"></a>If...Then...Else construction  
- `If...Then...Else`les constructions vous permettent de tester une ou plusieurs conditions et d’exécuter une ou plusieurs instructions en fonction de chaque condition. Vous pouvez tester des conditions et prendre des mesures de la manière suivante:  
+## <a name="ifthenelse-construction"></a>If...Then...Else Construction  
+ `If...Then...Else` constructions let you test for one or more conditions and run one or more statements depending on each condition. You can test conditions and take actions in the following ways:  
   
-- Exécuter une ou plusieurs instructions si une condition est`True`  
+- Run one or more statements if a condition is `True`  
   
-- Exécuter une ou plusieurs instructions si une condition est`False`  
+- Run one or more statements if a condition is `False`  
   
-- Exécuter des instructions si une condition est `True` et d’autres si elle est`False`  
+- Run some statements if a condition is `True` and others if it is `False`  
   
-- Tester une condition supplémentaire si une condition antérieure est`False`  
+- Test an additional condition if a prior condition is `False`  
   
- La structure de contrôle qui offre toutes ces possibilités est le [If...Then...Else instruction](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). Vous pouvez utiliser une version sur une seule ligne si vous n’avez qu’un seul test et une seule instruction à exécuter. Si vous avez un ensemble plus complexe de conditions et d’actions, vous pouvez utiliser la version sur plusieurs lignes.  
+ The control structure that offers all these possibilities is the [If...Then...Else Statement](../../../../visual-basic/language-reference/statements/if-then-else-statement.md). You can use a single-line version if you have just one test and one statement to run. If you have a more complex set of conditions and actions, you can use the multiple-line version.  
   
-## <a name="selectcase-construction"></a>Select...Case construction  
- La `Select...Case` construction vous permet d’évaluer une expression une fois et d’exécuter différents jeux d’instructions en fonction de différentes valeurs possibles. Pour plus d’informations, consultez [Select...Case, instruction](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
+## <a name="selectcase-construction"></a>Select...Case Construction  
+ The `Select...Case` construction lets you evaluate an expression one time and run different sets of statements based on different possible values. For more information, see [Select...Case Statement](../../../../visual-basic/language-reference/statements/select-case-statement.md).  
   
-## <a name="trycatchfinally-construction"></a>Try...Catch...Finally de la construction  
- `Try...Catch...Finally`les constructions vous permettent d’exécuter un ensemble d’instructions sous un environnement qui conserve le contrôle si l’une de vos instructions provoque une exception. Vous pouvez effectuer différentes actions pour différentes exceptions. Vous pouvez éventuellement spécifier un bloc de code qui s’exécute avant de quitter la construction `Try...Catch...Finally` entière, indépendamment de ce qui se produit. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+## <a name="trycatchfinally-construction"></a>Try...Catch...Finally Construction  
+ `Try...Catch...Finally` constructions let you run a set of statements under an environment that retains control if any one of your statements causes an exception. You can take different actions for different exceptions. You can optionally specify a block of code that runs before you exit the whole `Try...Catch...Finally` construction, regardless of what occurs. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 > [!NOTE]
-> Pour de nombreuses structures de contrôle, lorsque vous cliquez sur un mot clé, tous les mots clés de la structure sont mis en surbrillance. Par exemple, lorsque vous cliquez `If` dans une `If...Then...Else` construction, `ElseIf`toutes les `Else`instances `If`de `Then`,,, et `End If` de la construction sont mises en surbrillance. Pour passer au mot clé en surbrillance suivant ou précédent, appuyez sur CTRL + MAJ + flèche bas ou CTRL + MAJ + haut.  
+> For many control structures, when you click a keyword, all of the keywords in the structure are highlighted. For instance, when you click `If` in an `If...Then...Else` construction, all instances of `If`, `Then`, `ElseIf`, `Else`, and `End If` in the construction are highlighted. To move to the next or previous highlighted keyword, press CTRL+SHIFT+DOWN ARROW or CTRL+SHIFT+UP ARROW.  
   
 ## <a name="see-also"></a>Voir aussi
 

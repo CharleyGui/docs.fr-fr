@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Appeler une fonction Windows qui prend des types non signés (Visual Basic)'
+title: 'Comment : appeler une fonction Windows qui possède des types non signés'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Windows functions [Visual Basic], calling
@@ -14,28 +14,28 @@ helpviewer_keywords:
 - data types [Visual Basic], numeric
 - unsigned types [Visual Basic], using
 ms.assetid: c2c0e712-8dc2-43b9-b4c6-345fbb02e7ce
-ms.openlocfilehash: 97075fb6149ed8c0ce06318d0e5bb6f01b841f30
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 790c680744e2100a40a7cea8b8cef80c68d586bb
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053324"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74348731"
 ---
-# <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Procédure : Appeler une fonction Windows qui prend des types non signés (Visual Basic)
+# <a name="how-to-call-a-windows-function-that-takes-unsigned-types-visual-basic"></a>Comment : appeler une fonction Windows qui possède des types non signés (Visual Basic)
 
-Si vous utilisez une classe, un module ou une structure qui a des membres de types entiers non signés, vous pouvez accéder à ces membres avec Visual Basic.
+If you are consuming a class, module, or structure that has members of unsigned integer types, you can access these members with Visual Basic.
 
-## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>Pour appeler une fonction Windows qui accepte un type non signé
+## <a name="to-call-a-windows-function-that-takes-an-unsigned-type"></a>To call a Windows function that takes an unsigned type
 
-1. Utilisez une [instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md) pour indiquer Visual Basic la bibliothèque qui contient la fonction, son nom dans cette bibliothèque, son ordre d’appel, et comment convertir des chaînes lors de son appel.
+1. Use a [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) to tell Visual Basic which library holds the function, what its name is in that library, what its calling sequence is, and how to convert strings when calling it.
 
-2. Dans l' `Declare` instruction, utilisez `UInteger`, `ULong` `UShort`, ou`Byte` , selon le cas, pour chaque paramètre avec un type non signé.
+2. In the `Declare` statement, use `UInteger`, `ULong`, `UShort`, or `Byte` as appropriate for each parameter with an unsigned type.
 
-3. Consultez la documentation de la fonction Windows que vous appelez pour rechercher les noms et les valeurs des constantes qu’elle utilise. Un grand nombre d’entre eux sont définis dans le fichier WinUser. h.
+3. Consult the documentation for the Windows function you are calling to find the names and values of the constants it uses. Many of these are defined in the WinUser.h file.
 
-4. Déclarez les constantes nécessaires dans votre code. De nombreuses constantes Windows sont des valeurs non signées de 32 bits, et vous devez `As UInteger`les déclarer.
+4. Declare the necessary constants in your code. Many Windows constants are 32-bit unsigned values, and you should declare these `As UInteger`.
 
-5. Appelez la fonction de manière normale. L’exemple suivant appelle la fonction `MessageBox`Windows, qui accepte un argument d’entier non signé.
+5. Call the function in the normal way. The following example calls the Windows function `MessageBox`, which takes an unsigned integer argument.
 
     ```vb
     Public Class windowsMessage
@@ -60,7 +60,7 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
     End Class
     ```
 
-     Vous pouvez tester la fonction `messageThroughWindows` avec le code suivant.
+     You can test the function `messageThroughWindows` with the following code.
 
     ```vb
     Public Sub consumeWindowsMessage()
@@ -70,13 +70,13 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
     ```
 
     > [!CAUTION]
-    > Les `UInteger`types `ULong`de données`UShort`, `SByte` , et ne font pas partie de l' [indépendance du langage et des composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md) (CLS). par conséquent, le code conforme CLS ne peut pas consommer un composant qui les utilise.
+    > The `UInteger`, `ULong`, `UShort`, and `SByte` data types are not part of the [Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md) (CLS), so CLS-compliant code cannot consume a component that uses them.
 
     > [!IMPORTANT]
-    > Le fait d’appeler du code non managé, tel que l’interface de programmation d’applications (API) Windows, expose votre code à des risques de sécurité potentiels.
+    > Making a call to unmanaged code, such as the Windows application programming interface (API), exposes your code to potential security risks.
 
     > [!IMPORTANT]
-    > L’appel de l’API Windows requiert une autorisation de code non managé, qui peut affecter son exécution dans des situations de confiance partielle. Pour plus d’informations, <xref:System.Security.Permissions.SecurityPermission> consultez et [autorisations d’accès du code](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
+    > Calling the Windows API requires unmanaged code permission, which might affect its execution in partial-trust situations. For more information, see <xref:System.Security.Permissions.SecurityPermission> and [Code Access Permissions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/h846e9b3(v=vs.100)).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -84,4 +84,4 @@ Si vous utilisez une classe, un module ou une structure qui a des membres de typ
 - [Integer (type de données)](../../../visual-basic/language-reference/data-types/integer-data-type.md)
 - [UInteger (type de données)](../../../visual-basic/language-reference/data-types/uinteger-data-type.md)
 - [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)
-- [Procédure pas à pas : Appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
+- [Procédure pas à pas : appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)

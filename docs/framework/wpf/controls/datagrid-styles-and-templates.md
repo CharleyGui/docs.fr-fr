@@ -9,20 +9,20 @@ helpviewer_keywords:
 - styles [WPF], DataGrid
 - parts [WPF], DataGrid
 ms.assetid: 9cb31d63-f148-4d25-b079-816e73f988c7
-ms.openlocfilehash: d1ef962132f4c057229c8150a8d49809ce8c7430
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 066e8c9ce1112399be8128d0821498f0d56a3dc3
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460394"
+ms.lasthandoff: 11/21/2019
+ms.locfileid: "74283802"
 ---
 # <a name="datagrid-styles-and-templates"></a>Styles et modèles DataGrid
-Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DataGrid>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [Personnalisation de l'apparence d'un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md).  
+Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Windows.Controls.DataGrid>. Vous pouvez modifier le <xref:System.Windows.Controls.ControlTemplate> par défaut pour attribuer une apparence unique au contrôle. Pour plus d’informations, consultez [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).  
   
 ## <a name="datagrid-parts"></a>Composants DataGrid  
  Le tableau suivant répertorie les parties nommées du contrôle <xref:System.Windows.Controls.DataGrid>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_ColumnHeadersPresenter|<xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>|Ligne qui contient les en-têtes de colonnes.|  
   
@@ -36,7 +36,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
 |Normale|CommonStates|État par défaut.|  
-|Disabled|CommonStates|Le contrôle est désactivé.|  
+|Désactivé|CommonStates|Le contrôle est désactivé.|  
 |InvalidFocused|ValidationStates|Le contrôle n’est pas valide et a le focus.|  
 |InvalidUnfocused|ValidationStates|Le contrôle n’est pas valide et n’a pas le focus.|  
 |Valide|ValidationStates|Le contrôle est valide.|  
@@ -89,7 +89,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="datagridrowheader-parts"></a>Composants DataGridRowHeader  
  Le tableau suivant répertorie les parties nommées de l’élément <xref:System.Windows.Controls.Primitives.DataGridRowHeader>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_TopHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Élément utilisé pour redimensionner l’en-tête de ligne à partir du haut.|  
 |PART_BottomHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Élément utilisé pour redimensionner l’en-tête de ligne à partir du bas.|  
@@ -122,7 +122,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="datagridcolumnheaderspresenter-parts"></a>Composants DataGridColumnHeadersPresenter  
  Le tableau suivant répertorie les parties nommées de l’élément <xref:System.Windows.Controls.Primitives.DataGridColumnHeadersPresenter>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_FillerColumnHeader|<xref:System.Windows.Controls.Primitives.DataGridColumnHeader>|Espace réservé pour les en-têtes de colonnes.|  
   
@@ -138,7 +138,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 ## <a name="datagridcolumnheader-parts"></a>Composants DataGridColumnHeader  
  Le tableau suivant répertorie les parties nommées de l’élément <xref:System.Windows.Controls.Primitives.DataGridColumnHeader>.  
   
-|Élément|Tapez|Description|  
+|Élément|Type|Description|  
 |-|-|-|  
 |PART_LeftHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Élément utilisé pour redimensionner l’en-tête de colonne à partir de la gauche.|  
 |PART_RightHeaderGripper|<xref:System.Windows.Controls.Primitives.Thumb>|Élément utilisé pour redimensionner l’en-tête de colonne à partir de la droite.|  
@@ -176,4 +176,4 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 - [Styles et modèles Control](control-styles-and-templates.md)
 - [Personnalisation des contrôles](control-customization.md)
 - [Application d’un style et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md)
-- [Personnalisation de l’apparence d’un contrôle existant en créant un ControlTemplate](customizing-the-appearance-of-an-existing-control.md)
+- [Créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md)

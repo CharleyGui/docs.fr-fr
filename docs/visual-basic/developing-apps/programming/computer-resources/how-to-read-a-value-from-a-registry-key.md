@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : lire une valeur à partir d’une clé de Registre en Visual Basic'
+title: "Comment : lire une valeur à partir d'une clé de Registre"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry keys [Visual Basic], determining if a value exists in
@@ -8,14 +8,15 @@ helpviewer_keywords:
 - registry keys [Visual Basic], reading from
 - registry [Visual Basic], reading
 ms.assetid: 775d0a57-68c9-464e-8949-9a39bd29cc64
-ms.openlocfilehash: 36183290a1ffdf4216eb845625aa38d63739eff6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 73c32aefe06a68bb42fcb5f4615da0927e57e892
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662755"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74345613"
 ---
-# <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Procédure : lire une valeur à partir d’une clé de Registre en Visual Basic
+# <a name="how-to-read-a-value-from-a-registry-key-in-visual-basic"></a>Guide pratique pour lire une valeur à partir d'une clé de Registre en Visual Basic
+
 La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée pour lire les valeurs dans le Registre Windows.  
   
  Si la clé « Software\MyApp » de l’exemple suivant n’existe pas, une exception est levée. Si le `ValueName` (« Name » dans l’exemple suivant) n’existe pas, `Nothing` est retourné.  
@@ -30,7 +31,7 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
   
      [!code-vb[VbResourceTasks#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#4)]  
   
- Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système d’exploitation Windows > Registre**. Pour plus d’informations, consultez [Extraits de code](/visualstudio/ide/code-snippets).  
+ Cet exemple de code est également disponible sous la forme d’un extrait de code IntelliSense. Dans le sélecteur d’extraits de code, il se trouve dans **Système d’exploitation Windows > Registre**. Pour plus d'informations, consultez [Code Snippets](/visualstudio/ide/code-snippets).  
   
 ### <a name="to-determine-whether-a-value-exists-in-a-registry-key"></a>Pour déterminer si une clé existe dans une clé de Registre  
   
@@ -39,6 +40,7 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
      [!code-vb[VbResourceTasks#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbResourceTasks/VB/Class1.vb#12)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
+
  Le Registre contient les clés de niveau supérieur, ou racine, qui sont utilisées pour stocker des données. Par exemple, la clé racine HKEY_LOCAL_MACHINE est utilisée pour stocker des paramètres d’ordinateur utilisés par tous les utilisateurs, tandis que HKEY_CURRENT_USER est utilisée pour stocker des données spécifiques à un utilisateur.  
   
  Les conditions ci-dessous peuvent générer une exception.  
@@ -50,6 +52,7 @@ La méthode `GetValue` de l’objet `My.Computer.Registry` peut être utilisée 
 - Le nom de la clé dépasse la limite de 255 caractères (<xref:System.ArgumentException>).  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
+
  Pour exécuter ce processus, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.RegistryPermission>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. De même, l’utilisateur doit disposer de listes de contrôle d’accès (ACL) valides pour créer ou écrire des paramètres. Par exemple, une application locale qui dispose de l’autorisation de sécurité d’accès du code peut ne pas disposer des autorisations de système d’exploitation. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../../../framework/misc/code-access-security-basics.md).  
   
 ## <a name="see-also"></a>Voir aussi
