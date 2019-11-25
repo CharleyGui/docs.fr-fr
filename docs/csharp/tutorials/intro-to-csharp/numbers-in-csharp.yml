@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: 31647906dd3e1286220077831d2ce90b65a5b73c
-  ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+  ms.openlocfilehash: b417ba7ff340019c74b0c3430242f59d6217b07f
+  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 10/22/2019
-  ms.locfileid: "72774010"
+  ms.lasthandoff: 11/12/2019
+  ms.locfileid: "73969365"
 items:
 - durationInMinutes: 1
   content: >
@@ -24,7 +24,7 @@ items:
 - title: Explorer les mathématiques avec des entiers
   durationInMinutes: 4
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Pour ce faire, tapez le bloc de code suivant dans la fenêtre interactive et cliquez sur le bouton **Exécuter** :
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive et sélectionnez **exécuter**:
 
 
     ```csharp
@@ -58,7 +58,7 @@ items:
     > Vous pouvez explorer le contenu de ce tutoriel interactif à votre rythme en modifiant le code que vous avez écrit dans la fenêtre interactive. Il fournit des exemples que vous pouvez mettre en pratique à chaque étape.
 
 
-    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **Exécuter**.
+    Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **exécuter** .
 
 
     Soustraction :
@@ -181,7 +181,7 @@ items:
     ```
 
 
-    Cliquez de nouveau sur **Exécuter** pour afficher les résultats.
+    Sélectionnez **exécuter** à nouveau pour afficher les résultats.
 
 
     > [!NOTE]
@@ -415,7 +415,7 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez cliquer sur le lien **Branches et boucles** ci-dessous pour commencer le tutoriel interactif suivant, ou bien consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
+    Vous avez terminé le tutoriel interactif « Nombres en C# ». Vous pouvez sélectionner le lien **branches et boucles** ci-dessous pour démarrer le didacticiel interactif suivant, ou vous pouvez visiter le [site .net](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .net Core, créer un projet sur votre ordinateur et conserver le codage. La section « étapes suivantes » vous ramène à ces didacticiels.
 
 
     Pour en savoir plus sur les nombres en C#, consultez les rubriques suivantes :
