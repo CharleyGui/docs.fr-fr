@@ -1,21 +1,21 @@
 ---
-title: Guide pratique pour créer une arborescence à partir d’un XmlReader (C#)
+title: Comment créer une arborescence à partir d’un XmlReaderC#()
 ms.date: 07/20/2015
 ms.assetid: 60951c9c-7087-406c-b5bb-c60e58609b21
-ms.openlocfilehash: a0cff596e0a6d50aefab3645a99beec3277d05ec
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 196779a10678bdd3aa5399cf883af8c4b074e5df
+ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418324"
+ms.lasthandoff: 11/16/2019
+ms.locfileid: "74141313"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a><span data-ttu-id="83ee7-102">Guide pratique pour créer une arborescence à partir d’un XmlReader (C#)</span><span class="sxs-lookup"><span data-stu-id="83ee7-102">How to: Create a Tree from an XmlReader (C#)</span></span>
-<span data-ttu-id="83ee7-103">Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="83ee7-103">This topic shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="83ee7-104">Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="83ee7-104">To create an <xref:System.Xml.Linq.XElement> from an <xref:System.Xml.XmlReader>, you must position the <xref:System.Xml.XmlReader> on an element node.</span></span> <span data-ttu-id="83ee7-105">L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée.</span><span class="sxs-lookup"><span data-stu-id="83ee7-105">The <xref:System.Xml.XmlReader> will skip comments and processing instructions, but if the <xref:System.Xml.XmlReader> is positioned on a text node, an error will be thrown.</span></span> <span data-ttu-id="83ee7-106">Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="83ee7-106">To avoid such errors, always position the <xref:System.Xml.XmlReader> on an element before you create an XML tree from the <xref:System.Xml.XmlReader>.</span></span>  
+# <a name="how-to-create-a-tree-from-an-xmlreader-c"></a><span data-ttu-id="e291c-102">Comment créer une arborescence à partir d’un XmlReaderC#()</span><span class="sxs-lookup"><span data-stu-id="e291c-102">How to create a tree from an XmlReader (C#)</span></span>
+<span data-ttu-id="e291c-103">Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="e291c-103">This topic shows how to create an XML tree directly from an <xref:System.Xml.XmlReader>.</span></span> <span data-ttu-id="e291c-104">Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="e291c-104">To create an <xref:System.Xml.Linq.XElement> from an <xref:System.Xml.XmlReader>, you must position the <xref:System.Xml.XmlReader> on an element node.</span></span> <span data-ttu-id="e291c-105">L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée.</span><span class="sxs-lookup"><span data-stu-id="e291c-105">The <xref:System.Xml.XmlReader> will skip comments and processing instructions, but if the <xref:System.Xml.XmlReader> is positioned on a text node, an error will be thrown.</span></span> <span data-ttu-id="e291c-106">Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.</span><span class="sxs-lookup"><span data-stu-id="e291c-106">To avoid such errors, always position the <xref:System.Xml.XmlReader> on an element before you create an XML tree from the <xref:System.Xml.XmlReader>.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="83ee7-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="83ee7-107">Example</span></span>  
- <span data-ttu-id="83ee7-108">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="83ee7-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span></span>  
+## <a name="example"></a><span data-ttu-id="e291c-107">Exemple</span><span class="sxs-lookup"><span data-stu-id="e291c-107">Example</span></span>  
+ <span data-ttu-id="e291c-108">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="e291c-108">This example uses the following XML document: [Sample XML File: Books (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).</span></span>  
   
- <span data-ttu-id="83ee7-109">Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="83ee7-109">The following code creates an `T:System.Xml.XmlReader` object, and then reads nodes until it finds the first element node.</span></span> <span data-ttu-id="83ee7-110">Il charge ensuite l'objet <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="83ee7-110">It then loads the <xref:System.Xml.Linq.XElement> object.</span></span>  
+ <span data-ttu-id="e291c-109">Le code suivant crée un objet `T:System.Xml.XmlReader`, puis il lit les nœuds jusqu'à trouver le premier nœud d'élément.</span><span class="sxs-lookup"><span data-stu-id="e291c-109">The following code creates an `T:System.Xml.XmlReader` object, and then reads nodes until it finds the first element node.</span></span> <span data-ttu-id="e291c-110">Il charge ensuite l'objet <xref:System.Xml.Linq.XElement>.</span><span class="sxs-lookup"><span data-stu-id="e291c-110">It then loads the <xref:System.Xml.Linq.XElement> object.</span></span>  
   
 ```csharp  
 XmlReader r = XmlReader.Create("books.xml");  
@@ -25,7 +25,7 @@ XElement e = XElement.Load(r);
 Console.WriteLine(e);  
 ```  
   
- <span data-ttu-id="83ee7-111">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="83ee7-111">This example produces the following output:</span></span>  
+ <span data-ttu-id="e291c-111">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="e291c-111">This example produces the following output:</span></span>  
   
 ```xml  
 <Catalog>  
@@ -51,6 +51,6 @@ Console.WriteLine(e);
 </Catalog>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="83ee7-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="83ee7-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e291c-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e291c-112">See also</span></span>
 
-- [<span data-ttu-id="83ee7-113">Analyse de code XML (C#)</span><span class="sxs-lookup"><span data-stu-id="83ee7-113">Parsing XML (C#)</span></span>](how-to-parse-a-string.md)
+- [<span data-ttu-id="e291c-113">Analyse de code XML (C#)</span><span class="sxs-lookup"><span data-stu-id="e291c-113">Parsing XML (C#)</span></span>](how-to-parse-a-string.md)
