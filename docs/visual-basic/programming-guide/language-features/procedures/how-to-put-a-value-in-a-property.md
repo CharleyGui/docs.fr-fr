@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Placer une valeur dans une propriété (Visual Basic)'
+title: 'Comment : placer une valeur dans une propriété'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - property values [Visual Basic]
@@ -8,41 +8,41 @@ helpviewer_keywords:
 - Visual Basic code, properties
 - properties [Visual Basic], values
 ms.assetid: c39401e5-b5fc-4439-8f31-ed640f7ce6ed
-ms.openlocfilehash: e6aee5ea36c0315d5b01ae2734d17c9e7dab8e93
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ad0d0e81f94dd3dead50f21c3bd6ff580c004dd6
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61863894"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346055"
 ---
-# <a name="how-to-put-a-value-in-a-property-visual-basic"></a><span data-ttu-id="20405-102">Procédure : Placer une valeur dans une propriété (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="20405-102">How to: Put a Value in a Property (Visual Basic)</span></span>
-<span data-ttu-id="20405-103">Vous stockez une valeur dans une propriété en plaçant le nom de propriété sur le côté gauche d’une instruction d’assignation.</span><span class="sxs-lookup"><span data-stu-id="20405-103">You store a value in a property by putting the property name on the left side of an assignment statement.</span></span>  
+# <a name="how-to-put-a-value-in-a-property-visual-basic"></a><span data-ttu-id="59b9a-102">Comment : placer une valeur dans une propriété (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="59b9a-102">How to: Put a Value in a Property (Visual Basic)</span></span>
+<span data-ttu-id="59b9a-103">You store a value in a property by putting the property name on the left side of an assignment statement.</span><span class="sxs-lookup"><span data-stu-id="59b9a-103">You store a value in a property by putting the property name on the left side of an assignment statement.</span></span>  
   
- <span data-ttu-id="20405-104">La propriété `Set` stocke une valeur, mais vous ne l’appelez pas explicitement par son nom.</span><span class="sxs-lookup"><span data-stu-id="20405-104">The property's `Set` procedure stores a value, but you do not explicitly call it by name.</span></span> <span data-ttu-id="20405-105">Vous utilisez la propriété tout comme vous utiliseriez une variable.</span><span class="sxs-lookup"><span data-stu-id="20405-105">You use the property just as you would use a variable.</span></span> <span data-ttu-id="20405-106">Visual Basic effectue les appels à des procédures de la propriété.</span><span class="sxs-lookup"><span data-stu-id="20405-106">Visual Basic makes the calls to the property's procedures.</span></span>  
+ <span data-ttu-id="59b9a-104">The property's `Set` procedure stores a value, but you do not explicitly call it by name.</span><span class="sxs-lookup"><span data-stu-id="59b9a-104">The property's `Set` procedure stores a value, but you do not explicitly call it by name.</span></span> <span data-ttu-id="59b9a-105">You use the property just as you would use a variable.</span><span class="sxs-lookup"><span data-stu-id="59b9a-105">You use the property just as you would use a variable.</span></span> <span data-ttu-id="59b9a-106">Visual Basic makes the calls to the property's procedures.</span><span class="sxs-lookup"><span data-stu-id="59b9a-106">Visual Basic makes the calls to the property's procedures.</span></span>  
   
-### <a name="to-store-a-value-in-a-property"></a><span data-ttu-id="20405-107">Pour stocker une valeur dans une propriété</span><span class="sxs-lookup"><span data-stu-id="20405-107">To store a value in a property</span></span>  
+### <a name="to-store-a-value-in-a-property"></a><span data-ttu-id="59b9a-107">To store a value in a property</span><span class="sxs-lookup"><span data-stu-id="59b9a-107">To store a value in a property</span></span>  
   
-1. <span data-ttu-id="20405-108">Utilisez le nom de propriété sur le côté gauche d’une instruction d’assignation.</span><span class="sxs-lookup"><span data-stu-id="20405-108">Use the property name on the left side of an assignment statement.</span></span>  
+1. <span data-ttu-id="59b9a-108">Use the property name on the left side of an assignment statement.</span><span class="sxs-lookup"><span data-stu-id="59b9a-108">Use the property name on the left side of an assignment statement.</span></span>  
   
-     <span data-ttu-id="20405-109">L’exemple suivant définit la valeur de Visual Basic `TimeOfDay` propriété à midi, en appelant implicitement sa `Set` procédure.</span><span class="sxs-lookup"><span data-stu-id="20405-109">The following example sets the value of the Visual Basic `TimeOfDay` property to noon, implicitly calling its `Set` procedure.</span></span>  
+     <span data-ttu-id="59b9a-109">The following example sets the value of the Visual Basic `TimeOfDay` property to noon, implicitly calling its `Set` procedure.</span><span class="sxs-lookup"><span data-stu-id="59b9a-109">The following example sets the value of the Visual Basic `TimeOfDay` property to noon, implicitly calling its `Set` procedure.</span></span>  
   
      [!code-vb[VbVbcnProcedures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#11)]  
   
-2. <span data-ttu-id="20405-110">Si la propriété prend des arguments, faites suivre le nom de propriété entre parenthèses pour encadrer la liste d’arguments.</span><span class="sxs-lookup"><span data-stu-id="20405-110">If the property takes arguments, follow the property name with parentheses to enclose the argument list.</span></span> <span data-ttu-id="20405-111">S’il n’y a aucun argument, vous pouvez éventuellement omettre les parenthèses.</span><span class="sxs-lookup"><span data-stu-id="20405-111">If there are no arguments, you can optionally omit the parentheses.</span></span>  
+2. <span data-ttu-id="59b9a-110">If the property takes arguments, follow the property name with parentheses to enclose the argument list.</span><span class="sxs-lookup"><span data-stu-id="59b9a-110">If the property takes arguments, follow the property name with parentheses to enclose the argument list.</span></span> <span data-ttu-id="59b9a-111">If there are no arguments, you can optionally omit the parentheses.</span><span class="sxs-lookup"><span data-stu-id="59b9a-111">If there are no arguments, you can optionally omit the parentheses.</span></span>  
   
-3. <span data-ttu-id="20405-112">Placez les arguments dans la liste d’arguments entre parenthèses, séparées par des virgules.</span><span class="sxs-lookup"><span data-stu-id="20405-112">Place the arguments in the argument list within the parentheses, separated by commas.</span></span> <span data-ttu-id="20405-113">Veillez à que vous fournir les arguments dans le même ordre que la propriété définit les paramètres correspondants.</span><span class="sxs-lookup"><span data-stu-id="20405-113">Be sure you supply the arguments in the same order that the property defines the corresponding parameters.</span></span>  
+3. <span data-ttu-id="59b9a-112">Place the arguments in the argument list within the parentheses, separated by commas.</span><span class="sxs-lookup"><span data-stu-id="59b9a-112">Place the arguments in the argument list within the parentheses, separated by commas.</span></span> <span data-ttu-id="59b9a-113">Be sure you supply the arguments in the same order that the property defines the corresponding parameters.</span><span class="sxs-lookup"><span data-stu-id="59b9a-113">Be sure you supply the arguments in the same order that the property defines the corresponding parameters.</span></span>  
   
-4. <span data-ttu-id="20405-114">La valeur générée sur le côté droit de l’instruction d’assignation est stockée dans la propriété.</span><span class="sxs-lookup"><span data-stu-id="20405-114">The value generated on the right side of the assignment statement is stored in the property.</span></span>  
+4. <span data-ttu-id="59b9a-114">The value generated on the right side of the assignment statement is stored in the property.</span><span class="sxs-lookup"><span data-stu-id="59b9a-114">The value generated on the right side of the assignment statement is stored in the property.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="20405-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="20405-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="59b9a-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="59b9a-115">See also</span></span>
 
 - <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>
-- [<span data-ttu-id="20405-116">Procédures de propriété</span><span class="sxs-lookup"><span data-stu-id="20405-116">Property Procedures</span></span>](./property-procedures.md)
-- [<span data-ttu-id="20405-117">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="20405-117">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)
-- [<span data-ttu-id="20405-118">Property (instruction)</span><span class="sxs-lookup"><span data-stu-id="20405-118">Property Statement</span></span>](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [<span data-ttu-id="20405-119">Différences entre les propriétés et les Variables en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="20405-119">Differences Between Properties and Variables in Visual Basic</span></span>](./differences-between-properties-and-variables.md)
-- [<span data-ttu-id="20405-120">Guide pratique pour Créer une propriété</span><span class="sxs-lookup"><span data-stu-id="20405-120">How to: Create a Property</span></span>](./how-to-create-a-property.md)
-- [<span data-ttu-id="20405-121">Guide pratique pour Déclarer une propriété avec des niveaux d’accès mixtes</span><span class="sxs-lookup"><span data-stu-id="20405-121">How to: Declare a Property with Mixed Access Levels</span></span>](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [<span data-ttu-id="20405-122">Guide pratique pour Appeler une procédure de propriété</span><span class="sxs-lookup"><span data-stu-id="20405-122">How to: Call a Property Procedure</span></span>](./how-to-call-a-property-procedure.md)
-- [<span data-ttu-id="20405-123">Guide pratique pour Déclarer et appeler une propriété par défaut en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="20405-123">How to: Declare and Call a Default Property in Visual Basic</span></span>](./how-to-declare-and-call-a-default-property.md)
-- [<span data-ttu-id="20405-124">Guide pratique pour Obtenir une valeur d’une propriété</span><span class="sxs-lookup"><span data-stu-id="20405-124">How to: Get a Value from a Property</span></span>](./how-to-get-a-value-from-a-property.md)
+- [<span data-ttu-id="59b9a-116">Procédures de propriété</span><span class="sxs-lookup"><span data-stu-id="59b9a-116">Property Procedures</span></span>](./property-procedures.md)
+- [<span data-ttu-id="59b9a-117">Paramètres et arguments d’une procédure</span><span class="sxs-lookup"><span data-stu-id="59b9a-117">Procedure Parameters and Arguments</span></span>](./procedure-parameters-and-arguments.md)
+- [<span data-ttu-id="59b9a-118">Property (instruction)</span><span class="sxs-lookup"><span data-stu-id="59b9a-118">Property Statement</span></span>](../../../../visual-basic/language-reference/statements/property-statement.md)
+- [<span data-ttu-id="59b9a-119">Differences Between Properties and Variables in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="59b9a-119">Differences Between Properties and Variables in Visual Basic</span></span>](./differences-between-properties-and-variables.md)
+- [<span data-ttu-id="59b9a-120">Guide pratique : créer une propriété</span><span class="sxs-lookup"><span data-stu-id="59b9a-120">How to: Create a Property</span></span>](./how-to-create-a-property.md)
+- [<span data-ttu-id="59b9a-121">Guide pratique : déclarer une propriété avec des niveaux d’accès mixtes</span><span class="sxs-lookup"><span data-stu-id="59b9a-121">How to: Declare a Property with Mixed Access Levels</span></span>](./how-to-declare-a-property-with-mixed-access-levels.md)
+- [<span data-ttu-id="59b9a-122">Guide pratique : appeler une procédure de propriété</span><span class="sxs-lookup"><span data-stu-id="59b9a-122">How to: Call a Property Procedure</span></span>](./how-to-call-a-property-procedure.md)
+- [<span data-ttu-id="59b9a-123">How to: Declare and Call a Default Property in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="59b9a-123">How to: Declare and Call a Default Property in Visual Basic</span></span>](./how-to-declare-and-call-a-default-property.md)
+- [<span data-ttu-id="59b9a-124">Guide pratique : obtenir une valeur d’une propriété</span><span class="sxs-lookup"><span data-stu-id="59b9a-124">How to: Get a Value from a Property</span></span>](./how-to-get-a-value-from-a-property.md)

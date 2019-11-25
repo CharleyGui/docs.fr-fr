@@ -1,5 +1,5 @@
 ---
-title: 'Tutoriel : Utiliser un client Windows Communication Foundation'
+title: 'Tutorial: Use a Windows Communication Foundation client'
 ms.date: 03/19/2019
 helpviewer_keywords:
 - WCF clients [WCF], using
@@ -7,34 +7,34 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 190349fc-0573-49c7-bb85-8e316df7f31f
-ms.openlocfilehash: 5c280933c81ef54ba58181e3005e30775b9b8e42
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: d0ef525db16b2b2cedeea5fa03376fb4f3489a4a
+ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928887"
+ms.lasthandoff: 11/22/2019
+ms.locfileid: "74346768"
 ---
-# <a name="tutorial-use-a-windows-communication-foundation-client"></a><span data-ttu-id="ede3c-102">Tutoriel : Utiliser un client Windows Communication Foundation</span><span class="sxs-lookup"><span data-stu-id="ede3c-102">Tutorial: Use a Windows Communication Foundation client</span></span>
+# <a name="tutorial-use-a-windows-communication-foundation-client"></a><span data-ttu-id="d3645-102">Tutorial: Use a Windows Communication Foundation client</span><span class="sxs-lookup"><span data-stu-id="d3645-102">Tutorial: Use a Windows Communication Foundation client</span></span>
 
-<span data-ttu-id="ede3c-103">Ce didacticiel décrit la dernière des cinq tâches nécessaires à la création d’une application de base Windows Communication Foundation (WCF).</span><span class="sxs-lookup"><span data-stu-id="ede3c-103">This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="ede3c-104">Pour obtenir une vue d’ensemble des didacticiels, consultez [didacticiel : Prise en main des applications](getting-started-tutorial.md)Windows Communication Foundation.</span><span class="sxs-lookup"><span data-stu-id="ede3c-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span></span>
+<span data-ttu-id="d3645-103">This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span><span class="sxs-lookup"><span data-stu-id="d3645-103">This tutorial describes the last of five tasks required to create a basic Windows Communication Foundation (WCF) application.</span></span> <span data-ttu-id="d3645-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span><span class="sxs-lookup"><span data-stu-id="d3645-104">For an overview of the tutorials, see [Tutorial: Get started with Windows Communication Foundation applications](getting-started-tutorial.md).</span></span>
 
-<span data-ttu-id="ede3c-105">Une fois que vous avez créé et configuré un proxy Windows Communication Foundation (WCF), vous créez une instance cliente et compilez l’application cliente.</span><span class="sxs-lookup"><span data-stu-id="ede3c-105">After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application.</span></span> <span data-ttu-id="ede3c-106">Vous l’utilisez ensuite pour communiquer avec le service WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-106">You then use it to communicate with the WCF service.</span></span> 
+<span data-ttu-id="d3645-105">After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application.</span><span class="sxs-lookup"><span data-stu-id="d3645-105">After you've created and configured a Windows Communication Foundation (WCF) proxy, you create a client instance and compile the client application.</span></span> <span data-ttu-id="d3645-106">You then use it to communicate with the WCF service.</span><span class="sxs-lookup"><span data-stu-id="d3645-106">You then use it to communicate with the WCF service.</span></span> 
 
-<span data-ttu-id="ede3c-107">Ce tutoriel vous montre comment effectuer les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="ede3c-107">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="d3645-107">Dans ce didacticiel, vous apprendrez à :</span><span class="sxs-lookup"><span data-stu-id="d3645-107">In this tutorial, you learn how to:</span></span>
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="ede3c-108">Ajoutez du code pour utiliser le client WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-108">Add code to use the WCF client.</span></span>
-> - <span data-ttu-id="ede3c-109">Testez le client WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-109">Test the WCF client.</span></span>
+> - <span data-ttu-id="d3645-108">Add code to use the WCF client.</span><span class="sxs-lookup"><span data-stu-id="d3645-108">Add code to use the WCF client.</span></span>
+> - <span data-ttu-id="d3645-109">Test the WCF client.</span><span class="sxs-lookup"><span data-stu-id="d3645-109">Test the WCF client.</span></span>
 
-## <a name="add-code-to-use-the-wcf-client"></a><span data-ttu-id="ede3c-110">Ajouter du code pour utiliser le client WCF</span><span class="sxs-lookup"><span data-stu-id="ede3c-110">Add code to use the WCF client</span></span>
+## <a name="add-code-to-use-the-wcf-client"></a><span data-ttu-id="d3645-110">Add code to use the WCF client</span><span class="sxs-lookup"><span data-stu-id="d3645-110">Add code to use the WCF client</span></span>
 
-<span data-ttu-id="ede3c-111">Le code client effectue les étapes suivantes :</span><span class="sxs-lookup"><span data-stu-id="ede3c-111">The client code does the following steps:</span></span>
+<span data-ttu-id="d3645-111">The client code does the following steps:</span><span class="sxs-lookup"><span data-stu-id="d3645-111">The client code does the following steps:</span></span>
 
-- <span data-ttu-id="ede3c-112">Instancie le client WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-112">Instantiates the WCF client.</span></span>
-- <span data-ttu-id="ede3c-113">Appelle les opérations de service à partir du proxy généré.</span><span class="sxs-lookup"><span data-stu-id="ede3c-113">Calls the service operations from the generated proxy.</span></span>
-- <span data-ttu-id="ede3c-114">Ferme le client une fois l’appel d’opération terminé.</span><span class="sxs-lookup"><span data-stu-id="ede3c-114">Closes the client after the operation call is completed.</span></span>
+- <span data-ttu-id="d3645-112">Instantiates the WCF client.</span><span class="sxs-lookup"><span data-stu-id="d3645-112">Instantiates the WCF client.</span></span>
+- <span data-ttu-id="d3645-113">Appelle les opérations de service à partir du proxy généré.</span><span class="sxs-lookup"><span data-stu-id="d3645-113">Calls the service operations from the generated proxy.</span></span>
+- <span data-ttu-id="d3645-114">Closes the client after the operation call is completed.</span><span class="sxs-lookup"><span data-stu-id="d3645-114">Closes the client after the operation call is completed.</span></span>
 
-<span data-ttu-id="ede3c-115">Ouvrez le fichier **Program.cs** ou **Module1. vb** à partir du projet **GettingStartedClient** et remplacez son code par le code suivant :</span><span class="sxs-lookup"><span data-stu-id="ede3c-115">Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:</span></span>
+<span data-ttu-id="d3645-115">Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:</span><span class="sxs-lookup"><span data-stu-id="d3645-115">Open the **Program.cs** or **Module1.vb** file from the **GettingStartedClient** project and replace its code with the following code:</span></span>
 
 ```csharp
 using System;
@@ -87,7 +87,6 @@ namespace GettingStartedClient
 ```
 
 ```vb
-Imports System
 Imports System.Collections.Generic
 Imports System.Text
 Imports System.ServiceModel
@@ -135,27 +134,27 @@ Module Module1
 End Module
 ```
 
-<span data-ttu-id="ede3c-116">Notez l' `using` instruction (pour C#Visual) `Imports` ou (pour Visual Basic) qui importe `GettingStartedClient.ServiceReference1`.</span><span class="sxs-lookup"><span data-stu-id="ede3c-116">Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`.</span></span> <span data-ttu-id="ede3c-117">Cette instruction importe le code généré par Visual Studio avec la fonction **Ajouter une référence de service** .</span><span class="sxs-lookup"><span data-stu-id="ede3c-117">This statement imports the code that Visual Studio generated with the **Add Service Reference** function.</span></span> <span data-ttu-id="ede3c-118">Le code instancie le proxy WCF et appelle chacune des opérations de service exposées par le service de calculatrice.</span><span class="sxs-lookup"><span data-stu-id="ede3c-118">The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes.</span></span> <span data-ttu-id="ede3c-119">Il ferme ensuite le proxy et met fin au programme.</span><span class="sxs-lookup"><span data-stu-id="ede3c-119">It then closes the proxy and ends the program.</span></span>
+<span data-ttu-id="d3645-116">Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`.</span><span class="sxs-lookup"><span data-stu-id="d3645-116">Notice the `using` (for Visual C#) or `Imports` (for Visual Basic) statement that imports `GettingStartedClient.ServiceReference1`.</span></span> <span data-ttu-id="d3645-117">This statement imports the code that Visual Studio generated with the **Add Service Reference** function.</span><span class="sxs-lookup"><span data-stu-id="d3645-117">This statement imports the code that Visual Studio generated with the **Add Service Reference** function.</span></span> <span data-ttu-id="d3645-118">The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes.</span><span class="sxs-lookup"><span data-stu-id="d3645-118">The code instantiates the WCF proxy and calls each of the service operations that the calculator service exposes.</span></span> <span data-ttu-id="d3645-119">It then closes the proxy and ends the program.</span><span class="sxs-lookup"><span data-stu-id="d3645-119">It then closes the proxy and ends the program.</span></span>
 
-## <a name="test-the-wcf-client"></a><span data-ttu-id="ede3c-120">Tester le client WCF</span><span class="sxs-lookup"><span data-stu-id="ede3c-120">Test the WCF client</span></span>
+## <a name="test-the-wcf-client"></a><span data-ttu-id="d3645-120">Test the WCF client</span><span class="sxs-lookup"><span data-stu-id="d3645-120">Test the WCF client</span></span>
 
-### <a name="test-the-application-from-visual-studio"></a><span data-ttu-id="ede3c-121">Tester l’application à partir de Visual Studio</span><span class="sxs-lookup"><span data-stu-id="ede3c-121">Test the application from Visual Studio</span></span>
+### <a name="test-the-application-from-visual-studio"></a><span data-ttu-id="d3645-121">Test the application from Visual Studio</span><span class="sxs-lookup"><span data-stu-id="d3645-121">Test the application from Visual Studio</span></span>
 
-1. <span data-ttu-id="ede3c-122">Enregistrez et générez la solution.</span><span class="sxs-lookup"><span data-stu-id="ede3c-122">Save and build the solution.</span></span>
+1. <span data-ttu-id="d3645-122">Save and build the solution.</span><span class="sxs-lookup"><span data-stu-id="d3645-122">Save and build the solution.</span></span>
 
-2. <span data-ttu-id="ede3c-123">Sélectionnez le dossier **GettingStartedLib** , puis sélectionnez **définir comme projet de démarrage** dans le menu contextuel.</span><span class="sxs-lookup"><span data-stu-id="ede3c-123">Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.</span></span>
+2. <span data-ttu-id="d3645-123">Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.</span><span class="sxs-lookup"><span data-stu-id="d3645-123">Select the **GettingStartedLib** folder, and then select **Set as Startup Project** from the shortcut menu.</span></span>
 
-3. <span data-ttu-id="ede3c-124">Dans **projets de démarrage**, sélectionnez **GettingStartedLib** dans la liste déroulante, puis sélectionnez **exécuter** ou appuyez sur **F5**.</span><span class="sxs-lookup"><span data-stu-id="ede3c-124">From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.</span></span>
+3. <span data-ttu-id="d3645-124">From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.</span><span class="sxs-lookup"><span data-stu-id="d3645-124">From **Startup Projects**, select **GettingStartedLib** from the drop-down list, then select **Run** or press **F5**.</span></span>
 
-### <a name="test-the-application-from-a-command-prompt"></a><span data-ttu-id="ede3c-125">Tester l’application à partir d’une invite de commandes</span><span class="sxs-lookup"><span data-stu-id="ede3c-125">Test the application from a command prompt</span></span>
+### <a name="test-the-application-from-a-command-prompt"></a><span data-ttu-id="d3645-125">Test the application from a command prompt</span><span class="sxs-lookup"><span data-stu-id="d3645-125">Test the application from a command prompt</span></span>
 
-1. <span data-ttu-id="ede3c-126">Ouvrez une invite de commandes en tant qu’administrateur, puis accédez au répertoire de votre solution Visual Studio.</span><span class="sxs-lookup"><span data-stu-id="ede3c-126">Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory.</span></span> 
+1. <span data-ttu-id="d3645-126">Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory.</span><span class="sxs-lookup"><span data-stu-id="d3645-126">Open a command prompt as an administrator, and then navigate to your Visual Studio solution directory.</span></span> 
 
-2. <span data-ttu-id="ede3c-127">Pour démarrer le service : Entrez *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span><span class="sxs-lookup"><span data-stu-id="ede3c-127">To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span></span>
+2. <span data-ttu-id="d3645-127">To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span><span class="sxs-lookup"><span data-stu-id="d3645-127">To start the service: Enter *GettingStartedHost\bin\Debug\GettingStartedHost.exe*.</span></span>
 
-3. <span data-ttu-id="ede3c-128">Pour démarrer le client : Ouvrez une autre invite de commandes, accédez au répertoire de votre solution Visual Studio, puis entrez *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span><span class="sxs-lookup"><span data-stu-id="ede3c-128">To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span></span>
+3. <span data-ttu-id="d3645-128">To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span><span class="sxs-lookup"><span data-stu-id="d3645-128">To start the client: Open another command prompt, navigate to your Visual Studio solution directory, then enter *GettingStartedClient\bin\Debug\GettingStartedClient.exe*.</span></span>
 
-   <span data-ttu-id="ede3c-129">*GettingStartedHost. exe* génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="ede3c-129">*GettingStartedHost.exe* produces the following output:</span></span>
+   <span data-ttu-id="d3645-129">*GettingStartedHost.exe* produces the following output:</span><span class="sxs-lookup"><span data-stu-id="d3645-129">*GettingStartedHost.exe* produces the following output:</span></span>
 
    ```text
    The service is ready.
@@ -171,7 +170,7 @@ End Module
    Return: 3.14285714285714
    ```
 
-   <span data-ttu-id="ede3c-130">*GettingStartedClient. exe* génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="ede3c-130">*GettingStartedClient.exe* produces the following output:</span></span>
+   <span data-ttu-id="d3645-130">*GettingStartedClient.exe* produces the following output:</span><span class="sxs-lookup"><span data-stu-id="d3645-130">*GettingStartedClient.exe* produces the following output:</span></span>
 
    ```text
    Add(100,15.99) = 115.99
@@ -182,17 +181,17 @@ End Module
    Press <Enter> to terminate the client.
    ```
 
-## <a name="next-steps"></a><span data-ttu-id="ede3c-131">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="ede3c-131">Next steps</span></span>
+## <a name="next-steps"></a><span data-ttu-id="d3645-131">Étapes suivantes</span><span class="sxs-lookup"><span data-stu-id="d3645-131">Next steps</span></span>
 
-<span data-ttu-id="ede3c-132">Vous avez maintenant terminé toutes les tâches du didacticiel de prise en main de WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-132">You've now completed all the tasks in the WCF get started tutorial.</span></span> <span data-ttu-id="ede3c-133">Dans ce tutoriel, vous avez appris à :</span><span class="sxs-lookup"><span data-stu-id="ede3c-133">In this tutorial, you learned how to:</span></span>
+<span data-ttu-id="d3645-132">You've now completed all the tasks in the WCF get started tutorial.</span><span class="sxs-lookup"><span data-stu-id="d3645-132">You've now completed all the tasks in the WCF get started tutorial.</span></span> <span data-ttu-id="d3645-133">Dans ce didacticiel, vous avez appris à :</span><span class="sxs-lookup"><span data-stu-id="d3645-133">In this tutorial, you learned how to:</span></span>
 
-<span data-ttu-id="ede3c-134">Ce tutoriel vous montre comment effectuer les opérations suivantes :</span><span class="sxs-lookup"><span data-stu-id="ede3c-134">In this tutorial, you learn how to:</span></span>
+<span data-ttu-id="d3645-134">Dans ce didacticiel, vous apprendrez à :</span><span class="sxs-lookup"><span data-stu-id="d3645-134">In this tutorial, you learn how to:</span></span>
 > [!div class="checklist"]
 >
-> - <span data-ttu-id="ede3c-135">Ajoutez du code pour utiliser le client WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-135">Add code to use the WCF client.</span></span>
-> - <span data-ttu-id="ede3c-136">Testez le client WCF.</span><span class="sxs-lookup"><span data-stu-id="ede3c-136">Test the WCF client.</span></span>
+> - <span data-ttu-id="d3645-135">Add code to use the WCF client.</span><span class="sxs-lookup"><span data-stu-id="d3645-135">Add code to use the WCF client.</span></span>
+> - <span data-ttu-id="d3645-136">Test the WCF client.</span><span class="sxs-lookup"><span data-stu-id="d3645-136">Test the WCF client.</span></span>
 
-<span data-ttu-id="ede3c-137">Si vous rencontrez des problèmes ou des erreurs dans l’une de ces étapes, suivez les étapes de l’article sur la résolution des problèmes pour les corriger.</span><span class="sxs-lookup"><span data-stu-id="ede3c-137">If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.</span></span>
+<span data-ttu-id="d3645-137">If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.</span><span class="sxs-lookup"><span data-stu-id="d3645-137">If you have problems or errors in any of the steps, follow the steps in the troubleshooting article to fix them.</span></span>
 
 > [!div class="nextstepaction"]
-> [<span data-ttu-id="ede3c-138">Résoudre les problèmes liés aux didacticiels prise en main de WCF</span><span class="sxs-lookup"><span data-stu-id="ede3c-138">Troubleshoot the Get started with WCF tutorials</span></span>](troubleshooting-the-getting-started-tutorial.md)
+> [<span data-ttu-id="d3645-138">Troubleshoot the Get started with WCF tutorials</span><span class="sxs-lookup"><span data-stu-id="d3645-138">Troubleshoot the Get started with WCF tutorials</span></span>](troubleshooting-the-getting-started-tutorial.md)
