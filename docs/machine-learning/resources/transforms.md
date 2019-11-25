@@ -4,12 +4,12 @@ description: Explorez les composants d’ingénierie de fonctionnalité pris en 
 author: natke
 ms.author: nakersha
 ms.date: 04/02/2019
-ms.openlocfilehash: 25da3cceb3c9090661b34254ed240207aaf3b9d7
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: cb191b1688dce8f703bdabcd220eb39efe68fd48
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929255"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73977232"
 ---
 # <a name="data-transformations"></a>Transformations de données
 
@@ -21,7 +21,7 @@ Les transformations de données sont utilisées pour :
 
 Les transformations abordées dans ce guide retournent des classes qui implémentent l’interface [IEstimator](xref:Microsoft.ML.IEstimator%601). Les transformations de données peuvent s’enchaîner. Chacune transformation attend et génère des données de type et de format spécifiques, indiqués dans le lien de la documentation de référence.
 
-Certaines transformations de données ont besoin de données d’apprentissage pour calculer leurs paramètres. Par exemple, le transformateur <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> calcule la moyenne et la variance des données d’apprentissage au cours de l’opération `Fit()` et utilise ces paramètres dans l’opération `Transform()`. 
+Certaines transformations de données ont besoin de données d’apprentissage pour calculer leurs paramètres. Par exemple, le transformateur <xref:Microsoft.ML.NormalizationCatalog.NormalizeMeanVariance%2A> calcule la moyenne et la variance des données d’apprentissage au cours de l’opération `Fit()` et utilise ces paramètres dans l’opération `Transform()`.
 
 D’autres transformations de données n’exigent pas les données d’apprentissage. Par exemple, la transformation <xref:Microsoft.ML.ImageEstimatorsCatalog.ConvertToGrayscale*> peut effectuer l’opération `Transform()` sans consulter ces données durant l’opération `Fit()`.
 
@@ -62,7 +62,7 @@ D’autres transformations de données n’exigent pas les données d’apprenti
 
 | Transformer | Définition |
 | --- | --- |
-| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | Transformer une colonne de texte en un tableau float de nombres de n-grammes et de car-grammes normalisés | 
+| <xref:Microsoft.ML.TextCatalog.FeaturizeText*> | Transformer une colonne de texte en un tableau float de nombres de n-grammes et de car-grammes normalisés |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoWords*> | Fractionner une ou plusieurs colonnes de texte en mots |
 | <xref:Microsoft.ML.TextCatalog.TokenizeIntoCharactersAsKeys*> | Fractionner une ou plusieurs colonnes de texte en valeurs float de caractères sur un ensemble de rubriques |
 | <xref:Microsoft.ML.TextCatalog.NormalizeText*> | Modifier la casse, supprimer les signes diacritiques, les signes de ponctuation et les chiffres |

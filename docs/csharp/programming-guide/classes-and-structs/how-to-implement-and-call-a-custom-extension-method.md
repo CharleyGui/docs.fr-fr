@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Implémenter et appeler une méthode d’extension personnalisée - Guide de programmation C#'
+title: Comment implémenter et appeler une méthode d’extension personnalisée C# -Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - extension methods [C#], implementing and calling
 ms.assetid: 7dab2a56-cf8e-4a47-a444-fe610a02772a
-ms.openlocfilehash: 26ad1d2251388237e186d1ba0e885fd7def66467
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: f3d96c033380698ade37c49ecbfeed14f05d3e11
+ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596880"
+ms.lasthandoff: 11/12/2019
+ms.locfileid: "73970891"
 ---
-# <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Procédure : Implémenter et appeler une méthode d’extension personnalisée (Guide de programmation C#)
+# <a name="how-to-implement-and-call-a-custom-extension-method-c-programming-guide"></a>Comment implémenter et appeler une méthode d’extension personnaliséeC# (Guide de programmation)
 Cette rubrique montre comment implémenter vos propres méthodes d’extension pour n’importe quel type .NET. Le code client peut utiliser vos méthodes d’extension en ajoutant une référence à la DLL qui les contient, et en ajoutant une directive [using](../../language-reference/keywords/using-directive.md) qui spécifie l’espace de noms dans lequel les méthodes d’extension sont définies.  
   
 ## <a name="to-define-and-call-the-extension-method"></a>Pour définir et appeler la méthode d’extension  
@@ -31,7 +31,7 @@ Cette rubrique montre comment implémenter vos propres méthodes d’extension p
   
      Notez que le premier paramètre n’est pas spécifié par le code appelant, car il représente le type sur lequel l’opérateur est appliqué, et le compilateur connaît déjà le type de votre objet. Vous devez fournir des arguments uniquement pour les paramètres 2 à `n`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant implémente une méthode d’extension nommée `WordCount` dans la classe `CustomExtensions.StringExtension`. La méthode opère sur la classe <xref:System.String>, qui est spécifiée comme premier paramètre de méthode. L’espace de noms `CustomExtensions` est importé dans l’espace de noms d’application, et la méthode est appelée à l’intérieur de la méthode `Main`.  
   
  [!code-csharp[csProgGuideExtensionMethods#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExtensionMethods/cs/extensionmethods.cs#1)]  
