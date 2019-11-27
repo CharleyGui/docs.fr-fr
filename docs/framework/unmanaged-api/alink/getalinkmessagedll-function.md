@@ -22,20 +22,20 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449343"
 ---
-# <a name="getalinkmessagedll-function"></a><span data-ttu-id="4cfe2-102">GetALinkMessageDll, fonction</span><span class="sxs-lookup"><span data-stu-id="4cfe2-102">GetALinkMessageDll Function</span></span>
-<span data-ttu-id="4cfe2-103">Finds and loads the message DLL.</span><span class="sxs-lookup"><span data-stu-id="4cfe2-103">Finds and loads the message DLL.</span></span> <span data-ttu-id="4cfe2-104">Returns 0 if the message DLL could not be located or loaded.</span><span class="sxs-lookup"><span data-stu-id="4cfe2-104">Returns 0 if the message DLL could not be located or loaded.</span></span> <span data-ttu-id="4cfe2-105">The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.</span><span class="sxs-lookup"><span data-stu-id="4cfe2-105">The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.</span></span>  
+# <a name="getalinkmessagedll-function"></a><span data-ttu-id="69385-102">GetALinkMessageDll, fonction</span><span class="sxs-lookup"><span data-stu-id="69385-102">GetALinkMessageDll Function</span></span>
+<span data-ttu-id="69385-103">Recherche et charge la DLL du message.</span><span class="sxs-lookup"><span data-stu-id="69385-103">Finds and loads the message DLL.</span></span> <span data-ttu-id="69385-104">Retourne 0 si la DLL du message est introuvable ou n’a pas pu être chargée.</span><span class="sxs-lookup"><span data-stu-id="69385-104">Returns 0 if the message DLL could not be located or loaded.</span></span> <span data-ttu-id="69385-105">La DLL du message doit se trouver dans un sous-répertoire dont le nom est un ID de langue ou dans le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="69385-105">The message DLL should be either in a subdirectory whose name is a language ID, or in the current directory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="4cfe2-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4cfe2-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="69385-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="69385-106">Syntax</span></span>  
   
 ```cpp  
 HINSTANCE WINAPI GetALinkMessageDll();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="4cfe2-107">spécifications</span><span class="sxs-lookup"><span data-stu-id="4cfe2-107">Requirements</span></span>  
- <span data-ttu-id="4cfe2-108">**Header:** alink.h</span><span class="sxs-lookup"><span data-stu-id="4cfe2-108">**Header:** alink.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="69385-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="69385-107">Requirements</span></span>  
+ <span data-ttu-id="69385-108">**En-tête :** ALink. h</span><span class="sxs-lookup"><span data-stu-id="69385-108">**Header:** alink.h</span></span>  
   
- <span data-ttu-id="4cfe2-109">**Library**: alink.dll</span><span class="sxs-lookup"><span data-stu-id="4cfe2-109">**Library**: alink.dll</span></span>  
+ <span data-ttu-id="69385-109">**Bibliothèque**: ALink. dll</span><span class="sxs-lookup"><span data-stu-id="69385-109">**Library**: alink.dll</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="4cfe2-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4cfe2-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="69385-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="69385-110">See also</span></span>
 
-- [<span data-ttu-id="4cfe2-111">Al.exe (Assembly Linker)</span><span class="sxs-lookup"><span data-stu-id="4cfe2-111">Al.exe (Assembly Linker)</span></span>](../../tools/al-exe-assembly-linker.md)
+- [<span data-ttu-id="69385-111">Al.exe (Assembly Linker)</span><span class="sxs-lookup"><span data-stu-id="69385-111">Al.exe (Assembly Linker)</span></span>](../../tools/al-exe-assembly-linker.md)
