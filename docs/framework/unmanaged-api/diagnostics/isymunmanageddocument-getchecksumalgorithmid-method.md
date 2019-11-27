@@ -22,23 +22,23 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431066"
 ---
-# <a name="isymunmanageddocumentgetchecksumalgorithmid-method"></a><span data-ttu-id="0d9e9-102">ISymUnmanagedDocument::GetCheckSumAlgorithmId, méthode</span><span class="sxs-lookup"><span data-stu-id="0d9e9-102">ISymUnmanagedDocument::GetCheckSumAlgorithmId Method</span></span>
-<span data-ttu-id="0d9e9-103">Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.</span><span class="sxs-lookup"><span data-stu-id="0d9e9-103">Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.</span></span>  
+# <a name="isymunmanageddocumentgetchecksumalgorithmid-method"></a><span data-ttu-id="96410-102">ISymUnmanagedDocument::GetCheckSumAlgorithmId, méthode</span><span class="sxs-lookup"><span data-stu-id="96410-102">ISymUnmanagedDocument::GetCheckSumAlgorithmId Method</span></span>
+<span data-ttu-id="96410-103">Obtient l’identificateur de l’algorithme de somme de contrôle, ou retourne un GUID de tous les zéros s’il n’y a pas de somme de contrôle.</span><span class="sxs-lookup"><span data-stu-id="96410-103">Gets the checksum algorithm identifier, or returns a GUID of all zeros if there is no checksum.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0d9e9-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0d9e9-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="96410-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="96410-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCheckSumAlgorithmId(  
     [out, retval] GUID*  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0d9e9-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="0d9e9-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="96410-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="96410-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="0d9e9-106">[out] A pointer to a variable that receives the checksum algorithm identifier.</span><span class="sxs-lookup"><span data-stu-id="0d9e9-106">[out] A pointer to a variable that receives the checksum algorithm identifier.</span></span>  
+ <span data-ttu-id="96410-106">à Pointeur vers une variable qui reçoit l’identificateur d’algorithme de somme de contrôle.</span><span class="sxs-lookup"><span data-stu-id="96410-106">[out] A pointer to a variable that receives the checksum algorithm identifier.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0d9e9-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="0d9e9-107">Return Value</span></span>  
- <span data-ttu-id="0d9e9-108">S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="0d9e9-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="96410-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="96410-107">Return Value</span></span>  
+ <span data-ttu-id="96410-108">S_OK si la méthode est réussie.</span><span class="sxs-lookup"><span data-stu-id="96410-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0d9e9-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0d9e9-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="96410-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="96410-109">See also</span></span>
 
-- [<span data-ttu-id="0d9e9-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="0d9e9-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="96410-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="96410-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
