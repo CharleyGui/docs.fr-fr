@@ -1,6 +1,6 @@
 ---
-title: Install .NET Core on Linux RHEL 8.1 package manager - .NET Core
-description: Use a package manager to install .NET Core SDK and runtime on RHEL 8.1.
+title: Installer .NET Core sur Linux RHEL 8,1 Package Manager-.NET Core
+description: Utilisez un gestionnaire de package pour installer kit SDK .NET Core et le runtime sur RHEL 8,1.
 author: thraka
 ms.author: adegeo
 ms.date: 11/06/2019
@@ -11,28 +11,28 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450974"
 ---
-# <a name="rhel-81-package-manager---install-net-core"></a><span data-ttu-id="21312-103">RHEL 8.1 Package Manager - Install .NET Core</span><span class="sxs-lookup"><span data-stu-id="21312-103">RHEL 8.1 Package Manager - Install .NET Core</span></span>
+# <a name="rhel-81-package-manager---install-net-core"></a><span data-ttu-id="d21d8-103">Gestionnaire de package RHEL 8,1-installer .NET Core</span><span class="sxs-lookup"><span data-stu-id="d21d8-103">RHEL 8.1 Package Manager - Install .NET Core</span></span>
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
-<span data-ttu-id="21312-104">This article describes how to use a package manager to install .NET Core on RHEL 8.1.</span><span class="sxs-lookup"><span data-stu-id="21312-104">This article describes how to use a package manager to install .NET Core on RHEL 8.1.</span></span>
+<span data-ttu-id="d21d8-104">Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 8,1.</span><span class="sxs-lookup"><span data-stu-id="d21d8-104">This article describes how to use a package manager to install .NET Core on RHEL 8.1.</span></span>
 
-## <a name="register-your-red-hat-subscription"></a><span data-ttu-id="21312-105">Register your Red Hat subscription</span><span class="sxs-lookup"><span data-stu-id="21312-105">Register your Red Hat subscription</span></span>
+## <a name="register-your-red-hat-subscription"></a><span data-ttu-id="d21d8-105">Inscrire votre abonnement Red Hat</span><span class="sxs-lookup"><span data-stu-id="d21d8-105">Register your Red Hat subscription</span></span>
 
-<span data-ttu-id="21312-106">To install .NET Core from Red Hat on RHEL, you first need to register using the Red Hat Subscription Manager.</span><span class="sxs-lookup"><span data-stu-id="21312-106">To install .NET Core from Red Hat on RHEL, you first need to register using the Red Hat Subscription Manager.</span></span> <span data-ttu-id="21312-107">If this hasn't been done on your system, or if you're unsure, see the [Red Hat Product Documentation for .NET Core](https://access.redhat.com/documentation/net_core/).</span><span class="sxs-lookup"><span data-stu-id="21312-107">If this hasn't been done on your system, or if you're unsure, see the [Red Hat Product Documentation for .NET Core](https://access.redhat.com/documentation/net_core/).</span></span>
+<span data-ttu-id="d21d8-106">Pour installer .NET Core à partir de Red Hat sur RHEL, vous devez d’abord vous inscrire à l’aide du gestionnaire d’abonnements Red Hat.</span><span class="sxs-lookup"><span data-stu-id="d21d8-106">To install .NET Core from Red Hat on RHEL, you first need to register using the Red Hat Subscription Manager.</span></span> <span data-ttu-id="d21d8-107">Si cela n’a pas été fait sur votre système ou si vous n’en êtes pas sûr, consultez la [documentation du produit Red Hat pour .net Core](https://access.redhat.com/documentation/net_core/).</span><span class="sxs-lookup"><span data-stu-id="d21d8-107">If this hasn't been done on your system, or if you're unsure, see the [Red Hat Product Documentation for .NET Core](https://access.redhat.com/documentation/net_core/).</span></span>
 
-## <a name="install-the-net-core-sdk"></a><span data-ttu-id="21312-108">Install the .NET Core SDK</span><span class="sxs-lookup"><span data-stu-id="21312-108">Install the .NET Core SDK</span></span>
+## <a name="install-the-net-core-sdk"></a><span data-ttu-id="d21d8-108">Installer le kit SDK .NET Core</span><span class="sxs-lookup"><span data-stu-id="d21d8-108">Install the .NET Core SDK</span></span>
 
-<span data-ttu-id="21312-109">After registering with the Subscription Manager, you're ready to install and enable the .NET Core SDK.</span><span class="sxs-lookup"><span data-stu-id="21312-109">After registering with the Subscription Manager, you're ready to install and enable the .NET Core SDK.</span></span> <span data-ttu-id="21312-110">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="21312-110">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="d21d8-109">Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes prêt à installer et à activer le kit SDK .NET Core.</span><span class="sxs-lookup"><span data-stu-id="d21d8-109">After registering with the Subscription Manager, you're ready to install and enable the .NET Core SDK.</span></span> <span data-ttu-id="d21d8-110">Dans votre terminal, exécutez les commandes suivantes.</span><span class="sxs-lookup"><span data-stu-id="d21d8-110">In your terminal, run the following commands.</span></span>
 
 ```bash
 dnf install dotnet-sdk-3.0
 scl enable dotnet-sdk-3.0 bash
 ```
 
-## <a name="install-the-aspnet-core-runtime"></a><span data-ttu-id="21312-111">Install the ASP.NET Core Runtime</span><span class="sxs-lookup"><span data-stu-id="21312-111">Install the ASP.NET Core Runtime</span></span>
+## <a name="install-the-aspnet-core-runtime"></a><span data-ttu-id="d21d8-111">Installer le runtime ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="d21d8-111">Install the ASP.NET Core Runtime</span></span>
 
-<span data-ttu-id="21312-112">After registering with the Subscription Manager, you're ready to install and enable the ASP.NET Core Runtime.</span><span class="sxs-lookup"><span data-stu-id="21312-112">After registering with the Subscription Manager, you're ready to install and enable the ASP.NET Core Runtime.</span></span> <span data-ttu-id="21312-113">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="21312-113">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="d21d8-112">Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes prêt à installer et à activer le runtime ASP.NET Core.</span><span class="sxs-lookup"><span data-stu-id="d21d8-112">After registering with the Subscription Manager, you're ready to install and enable the ASP.NET Core Runtime.</span></span> <span data-ttu-id="d21d8-113">Dans votre terminal, exécutez les commandes suivantes.</span><span class="sxs-lookup"><span data-stu-id="d21d8-113">In your terminal, run the following commands.</span></span>
 
 <!-- TODO: is this the correct value? Taken from the webpage but it doesn't have aspnet in the name -->
 ```bash
@@ -40,9 +40,9 @@ dnf install aspnetcore-runtime-3.0
 scl enable aspnetcore-runtime-3.0 bash
 ```
 
-## <a name="install-the-net-core-runtime"></a><span data-ttu-id="21312-114">Install the .NET Core Runtime</span><span class="sxs-lookup"><span data-stu-id="21312-114">Install the .NET Core Runtime</span></span>
+## <a name="install-the-net-core-runtime"></a><span data-ttu-id="d21d8-114">Installer le Runtime .NET Core</span><span class="sxs-lookup"><span data-stu-id="d21d8-114">Install the .NET Core Runtime</span></span>
 
-<span data-ttu-id="21312-115">After registering with the Subscription Manager, you're ready to install and enable the .NET Core Runtime.</span><span class="sxs-lookup"><span data-stu-id="21312-115">After registering with the Subscription Manager, you're ready to install and enable the .NET Core Runtime.</span></span> <span data-ttu-id="21312-116">In your terminal, run the following commands.</span><span class="sxs-lookup"><span data-stu-id="21312-116">In your terminal, run the following commands.</span></span>
+<span data-ttu-id="d21d8-115">Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes prêt à installer et à activer le Runtime .NET Core.</span><span class="sxs-lookup"><span data-stu-id="d21d8-115">After registering with the Subscription Manager, you're ready to install and enable the .NET Core Runtime.</span></span> <span data-ttu-id="d21d8-116">Dans votre terminal, exécutez les commandes suivantes.</span><span class="sxs-lookup"><span data-stu-id="d21d8-116">In your terminal, run the following commands.</span></span>
 
 ```bash
 sudo dnf install dotnet-runtime-3.0

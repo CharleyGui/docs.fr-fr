@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448345"
 ---
-# <a name="isymunmanagedreadergetdocument-method"></a><span data-ttu-id="2c147-102">ISymUnmanagedReader::GetDocument, méthode</span><span class="sxs-lookup"><span data-stu-id="2c147-102">ISymUnmanagedReader::GetDocument Method</span></span>
-<span data-ttu-id="2c147-103">Finds a document.</span><span class="sxs-lookup"><span data-stu-id="2c147-103">Finds a document.</span></span> <span data-ttu-id="2c147-104">The document language, vendor, and type are optional.</span><span class="sxs-lookup"><span data-stu-id="2c147-104">The document language, vendor, and type are optional.</span></span>  
+# <a name="isymunmanagedreadergetdocument-method"></a><span data-ttu-id="22fb3-102">ISymUnmanagedReader::GetDocument, méthode</span><span class="sxs-lookup"><span data-stu-id="22fb3-102">ISymUnmanagedReader::GetDocument Method</span></span>
+<span data-ttu-id="22fb3-103">Recherche un document.</span><span class="sxs-lookup"><span data-stu-id="22fb3-103">Finds a document.</span></span> <span data-ttu-id="22fb3-104">La langue, le fournisseur et le type du document sont facultatifs.</span><span class="sxs-lookup"><span data-stu-id="22fb3-104">The document language, vendor, and type are optional.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="2c147-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="2c147-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="22fb3-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="22fb3-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetDocument (  
@@ -36,28 +36,28 @@ HRESULT GetDocument (
     [out, retval] ISymUnmanagedDocument** pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="2c147-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="2c147-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="22fb3-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="22fb3-106">Parameters</span></span>  
  `url`  
- <span data-ttu-id="2c147-107">[in] The URL that identifies the document.</span><span class="sxs-lookup"><span data-stu-id="2c147-107">[in] The URL that identifies the document.</span></span>  
+ <span data-ttu-id="22fb3-107">dans URL qui identifie le document.</span><span class="sxs-lookup"><span data-stu-id="22fb3-107">[in] The URL that identifies the document.</span></span>  
   
  `language`  
- <span data-ttu-id="2c147-108">[in] The document language.</span><span class="sxs-lookup"><span data-stu-id="2c147-108">[in] The document language.</span></span> <span data-ttu-id="2c147-109">Ce paramètre est optionnel.</span><span class="sxs-lookup"><span data-stu-id="2c147-109">This parameter is optional.</span></span>  
+ <span data-ttu-id="22fb3-108">dans Langue du document.</span><span class="sxs-lookup"><span data-stu-id="22fb3-108">[in] The document language.</span></span> <span data-ttu-id="22fb3-109">Ce paramètre est facultatif.</span><span class="sxs-lookup"><span data-stu-id="22fb3-109">This parameter is optional.</span></span>  
   
  `languageVendor`  
- <span data-ttu-id="2c147-110">[in] The identity of the vendor for the document language.</span><span class="sxs-lookup"><span data-stu-id="2c147-110">[in] The identity of the vendor for the document language.</span></span> <span data-ttu-id="2c147-111">Ce paramètre est optionnel.</span><span class="sxs-lookup"><span data-stu-id="2c147-111">This parameter is optional.</span></span>  
+ <span data-ttu-id="22fb3-110">dans Identité du fournisseur pour la langue du document.</span><span class="sxs-lookup"><span data-stu-id="22fb3-110">[in] The identity of the vendor for the document language.</span></span> <span data-ttu-id="22fb3-111">Ce paramètre est facultatif.</span><span class="sxs-lookup"><span data-stu-id="22fb3-111">This parameter is optional.</span></span>  
   
  `documentType`  
- <span data-ttu-id="2c147-112">[in] The type of the document.</span><span class="sxs-lookup"><span data-stu-id="2c147-112">[in] The type of the document.</span></span> <span data-ttu-id="2c147-113">Ce paramètre est optionnel.</span><span class="sxs-lookup"><span data-stu-id="2c147-113">This parameter is optional.</span></span>  
+ <span data-ttu-id="22fb3-112">dans Type du document.</span><span class="sxs-lookup"><span data-stu-id="22fb3-112">[in] The type of the document.</span></span> <span data-ttu-id="22fb3-113">Ce paramètre est facultatif.</span><span class="sxs-lookup"><span data-stu-id="22fb3-113">This parameter is optional.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="2c147-114">[out] A pointer to the returned interface.</span><span class="sxs-lookup"><span data-stu-id="2c147-114">[out] A pointer to the returned interface.</span></span>  
+ <span data-ttu-id="22fb3-114">à Pointeur vers l’interface retournée.</span><span class="sxs-lookup"><span data-stu-id="22fb3-114">[out] A pointer to the returned interface.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="2c147-115">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="2c147-115">Return Value</span></span>  
- <span data-ttu-id="2c147-116">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="2c147-116">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="22fb3-115">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="22fb3-115">Return Value</span></span>  
+ <span data-ttu-id="22fb3-116">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="22fb3-116">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="2c147-117">spécifications</span><span class="sxs-lookup"><span data-stu-id="2c147-117">Requirements</span></span>  
- <span data-ttu-id="2c147-118">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="2c147-118">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="22fb3-117">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="22fb3-117">Requirements</span></span>  
+ <span data-ttu-id="22fb3-118">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="22fb3-118">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="2c147-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2c147-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="22fb3-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="22fb3-119">See also</span></span>
 
-- [<span data-ttu-id="2c147-120">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="2c147-120">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [<span data-ttu-id="22fb3-120">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="22fb3-120">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

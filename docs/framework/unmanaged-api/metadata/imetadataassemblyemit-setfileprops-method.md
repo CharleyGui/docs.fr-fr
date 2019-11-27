@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431874"
 ---
-# <a name="imetadataassemblyemitsetfileprops-method"></a><span data-ttu-id="ea971-102">IMetaDataAssemblyEmit::SetFileProps, méthode</span><span class="sxs-lookup"><span data-stu-id="ea971-102">IMetaDataAssemblyEmit::SetFileProps Method</span></span>
-<span data-ttu-id="ea971-103">Modifie la structure de métadonnées `File` spécifiée.</span><span class="sxs-lookup"><span data-stu-id="ea971-103">Modifies the specified `File` metadata structure.</span></span>  
+# <a name="imetadataassemblyemitsetfileprops-method"></a><span data-ttu-id="53f87-102">IMetaDataAssemblyEmit::SetFileProps, méthode</span><span class="sxs-lookup"><span data-stu-id="53f87-102">IMetaDataAssemblyEmit::SetFileProps Method</span></span>
+<span data-ttu-id="53f87-103">Modifie la structure de métadonnées `File` spécifiée.</span><span class="sxs-lookup"><span data-stu-id="53f87-103">Modifies the specified `File` metadata structure.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ea971-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ea971-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="53f87-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="53f87-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT SetFileProps (  
@@ -36,31 +36,31 @@ HRESULT SetFileProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ea971-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ea971-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="53f87-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="53f87-105">Parameters</span></span>  
  `file`  
- <span data-ttu-id="ea971-106">[in] The metadata token that specifies the `File` metadata structure to be modified.</span><span class="sxs-lookup"><span data-stu-id="ea971-106">[in] The metadata token that specifies the `File` metadata structure to be modified.</span></span>  
+ <span data-ttu-id="53f87-106">dans Jeton de métadonnées qui spécifie la structure de métadonnées `File` à modifier.</span><span class="sxs-lookup"><span data-stu-id="53f87-106">[in] The metadata token that specifies the `File` metadata structure to be modified.</span></span>  
   
  `pbHashValue`  
- <span data-ttu-id="ea971-107">[in] A pointer to the hash data associated with the file.</span><span class="sxs-lookup"><span data-stu-id="ea971-107">[in] A pointer to the hash data associated with the file.</span></span>  
+ <span data-ttu-id="53f87-107">dans Pointeur vers les données de hachage associées au fichier.</span><span class="sxs-lookup"><span data-stu-id="53f87-107">[in] A pointer to the hash data associated with the file.</span></span>  
   
  `cbHashValue`  
- <span data-ttu-id="ea971-108">[in] The size in bytes of `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="ea971-108">[in] The size in bytes of `pbHashValue`.</span></span>  
+ <span data-ttu-id="53f87-108">dans Taille en octets de `pbHashValue`.</span><span class="sxs-lookup"><span data-stu-id="53f87-108">[in] The size in bytes of `pbHashValue`.</span></span>  
   
  `dwFileFlags`  
- <span data-ttu-id="ea971-109">[in] A bitwise combination of [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values that specify various attributes of the file.</span><span class="sxs-lookup"><span data-stu-id="ea971-109">[in] A bitwise combination of [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values that specify various attributes of the file.</span></span>  
+ <span data-ttu-id="53f87-109">dans Combinaison d’opérations de bits de valeurs [CorFileFlags,](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) qui spécifient différents attributs du fichier.</span><span class="sxs-lookup"><span data-stu-id="53f87-109">[in] A bitwise combination of [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values that specify various attributes of the file.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="ea971-110">Notes</span><span class="sxs-lookup"><span data-stu-id="ea971-110">Remarks</span></span>  
- <span data-ttu-id="ea971-111">To create a `File` metadata structure, use the [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) method.</span><span class="sxs-lookup"><span data-stu-id="ea971-111">To create a `File` metadata structure, use the [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) method.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="53f87-110">Notes</span><span class="sxs-lookup"><span data-stu-id="53f87-110">Remarks</span></span>  
+ <span data-ttu-id="53f87-111">Pour créer une `File` structure de métadonnées, utilisez la méthode [IMetaDataAssemblyEmit ::D efinefile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) .</span><span class="sxs-lookup"><span data-stu-id="53f87-111">To create a `File` metadata structure, use the [IMetaDataAssemblyEmit::DefineFile](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-definefile-method.md) method.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ea971-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="ea971-112">Requirements</span></span>  
- <span data-ttu-id="ea971-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ea971-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="53f87-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="53f87-112">Requirements</span></span>  
+ <span data-ttu-id="53f87-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="53f87-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ea971-114">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ea971-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="53f87-114">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="53f87-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="ea971-115">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ea971-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="53f87-115">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="53f87-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="ea971-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ea971-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="53f87-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="53f87-116">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ea971-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ea971-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53f87-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="53f87-117">See also</span></span>
 
-- [<span data-ttu-id="ea971-118">IMetaDataAssemblyEmit, interface</span><span class="sxs-lookup"><span data-stu-id="ea971-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)
+- [<span data-ttu-id="53f87-118">IMetaDataAssemblyEmit, interface</span><span class="sxs-lookup"><span data-stu-id="53f87-118">IMetaDataAssemblyEmit Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md)

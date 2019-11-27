@@ -22,12 +22,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439230"
 ---
-# <a name="icorprofilerinfogetcodeinfo-method"></a><span data-ttu-id="7bace-102">ICorProfilerInfo::GetCodeInfo, méthode</span><span class="sxs-lookup"><span data-stu-id="7bace-102">ICorProfilerInfo::GetCodeInfo Method</span></span>
-<span data-ttu-id="7bace-103">Obtient l'étendue de code natif associée à l'ID de la fonction spécifiée.</span><span class="sxs-lookup"><span data-stu-id="7bace-103">Gets the extent of native code associated with the specified function ID.</span></span>  
+# <a name="icorprofilerinfogetcodeinfo-method"></a><span data-ttu-id="cd374-102">ICorProfilerInfo::GetCodeInfo, méthode</span><span class="sxs-lookup"><span data-stu-id="cd374-102">ICorProfilerInfo::GetCodeInfo Method</span></span>
+<span data-ttu-id="cd374-103">Obtient l'étendue de code natif associée à l'ID de la fonction spécifiée.</span><span class="sxs-lookup"><span data-stu-id="cd374-103">Gets the extent of native code associated with the specified function ID.</span></span>  
   
- <span data-ttu-id="7bace-104">Cette méthode est obsolète.</span><span class="sxs-lookup"><span data-stu-id="7bace-104">This method is obsolete.</span></span> <span data-ttu-id="7bace-105">Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.</span><span class="sxs-lookup"><span data-stu-id="7bace-105">Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.</span></span>  
+ <span data-ttu-id="cd374-104">Cette méthode est obsolète.</span><span class="sxs-lookup"><span data-stu-id="cd374-104">This method is obsolete.</span></span> <span data-ttu-id="cd374-105">Utilisez la méthode [ICorProfilerInfo2 :: GetCodeInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) à la place.</span><span class="sxs-lookup"><span data-stu-id="cd374-105">Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7bace-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7bace-106">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cd374-106">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cd374-106">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetCodeInfo(  
@@ -36,32 +36,32 @@ HRESULT GetCodeInfo(
     [out] ULONG      *pcSize);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7bace-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="7bace-107">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="cd374-107">Paramètres</span><span class="sxs-lookup"><span data-stu-id="cd374-107">Parameters</span></span>  
  `functionId`  
- <span data-ttu-id="7bace-108">[in] ID de la fonction à laquelle le code natif est associé.</span><span class="sxs-lookup"><span data-stu-id="7bace-108">[in] The ID of the function with which the native code is associated.</span></span>  
+ <span data-ttu-id="cd374-108">[in] ID de la fonction à laquelle le code natif est associé.</span><span class="sxs-lookup"><span data-stu-id="cd374-108">[in] The ID of the function with which the native code is associated.</span></span>  
   
  `pStart`  
- <span data-ttu-id="7bace-109">[out] Pointeur vers un tableau d'octets qui composent le code natif de la fonction.</span><span class="sxs-lookup"><span data-stu-id="7bace-109">[out] A pointer to an array of bytes that compose the native code of the function.</span></span>  
+ <span data-ttu-id="cd374-109">[out] Pointeur vers un tableau d'octets qui composent le code natif de la fonction.</span><span class="sxs-lookup"><span data-stu-id="cd374-109">[out] A pointer to an array of bytes that compose the native code of the function.</span></span>  
   
  `pcSize`  
- <span data-ttu-id="7bace-110">[out] Pointeur vers un entier qui spécifie la taille, en octets, du code natif.</span><span class="sxs-lookup"><span data-stu-id="7bace-110">[out] A pointer to an integer that specifies the size, in bytes, of the native code.</span></span>  
+ <span data-ttu-id="cd374-110">[out] Pointeur vers un entier qui spécifie la taille, en octets, du code natif.</span><span class="sxs-lookup"><span data-stu-id="cd374-110">[out] A pointer to an integer that specifies the size, in bytes, of the native code.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="7bace-111">Notes</span><span class="sxs-lookup"><span data-stu-id="7bace-111">Remarks</span></span>  
- <span data-ttu-id="7bace-112">Pour optimiser la performance, le runtime dans la version 2.0 du .NET Framework fractionne le code natif précompilé d'une fonction en plusieurs régions.</span><span class="sxs-lookup"><span data-stu-id="7bace-112">To optimize performance, the runtime in the .NET Framework version 2.0 splits the precompiled, native code of a function into multiple regions.</span></span> <span data-ttu-id="7bace-113">Par conséquent, la méthode `GetCodeInfo` est obsolète dans .NET Framework 2.0, car elle ne peut pas gérer l'étendue du code natif d'une fonction.</span><span class="sxs-lookup"><span data-stu-id="7bace-113">Consequently, the `GetCodeInfo` method is obsolete in the .NET Framework 2.0 because it is unable to handle the extent of a function's native code.</span></span> <span data-ttu-id="7bace-114">Les profileurs doivent utiliser la méthode `ICorProfilerInfo2::GetCodeInfo2` plus générale à la place.</span><span class="sxs-lookup"><span data-stu-id="7bace-114">Profilers should switch to using the more general `ICorProfilerInfo2::GetCodeInfo2` method instead.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cd374-111">Notes</span><span class="sxs-lookup"><span data-stu-id="cd374-111">Remarks</span></span>  
+ <span data-ttu-id="cd374-112">Pour optimiser la performance, le runtime dans la version 2.0 du .NET Framework fractionne le code natif précompilé d'une fonction en plusieurs régions.</span><span class="sxs-lookup"><span data-stu-id="cd374-112">To optimize performance, the runtime in the .NET Framework version 2.0 splits the precompiled, native code of a function into multiple regions.</span></span> <span data-ttu-id="cd374-113">Par conséquent, la méthode `GetCodeInfo` est obsolète dans .NET Framework 2.0, car elle ne peut pas gérer l'étendue du code natif d'une fonction.</span><span class="sxs-lookup"><span data-stu-id="cd374-113">Consequently, the `GetCodeInfo` method is obsolete in the .NET Framework 2.0 because it is unable to handle the extent of a function's native code.</span></span> <span data-ttu-id="cd374-114">Les profileurs doivent utiliser la méthode `ICorProfilerInfo2::GetCodeInfo2` plus générale à la place.</span><span class="sxs-lookup"><span data-stu-id="cd374-114">Profilers should switch to using the more general `ICorProfilerInfo2::GetCodeInfo2` method instead.</span></span>  
   
- <span data-ttu-id="7bace-115">Cette fonction utilise des mémoires tampons allouées par l'appelant.</span><span class="sxs-lookup"><span data-stu-id="7bace-115">This function uses caller-allocated buffers.</span></span>  
+ <span data-ttu-id="cd374-115">Cette fonction utilise des mémoires tampons allouées par l'appelant.</span><span class="sxs-lookup"><span data-stu-id="cd374-115">This function uses caller-allocated buffers.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7bace-116">spécifications</span><span class="sxs-lookup"><span data-stu-id="7bace-116">Requirements</span></span>  
- <span data-ttu-id="7bace-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7bace-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cd374-116">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="cd374-116">Requirements</span></span>  
+ <span data-ttu-id="cd374-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cd374-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="7bace-118">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="7bace-118">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="cd374-118">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="cd374-118">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="7bace-119">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7bace-119">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="cd374-119">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cd374-119">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="7bace-120">**.NET Framework Versions:** 1.0</span><span class="sxs-lookup"><span data-stu-id="7bace-120">**.NET Framework Versions:** 1.0</span></span>  
+ <span data-ttu-id="cd374-120">**Versions de .NET Framework :** 1,0</span><span class="sxs-lookup"><span data-stu-id="cd374-120">**.NET Framework Versions:** 1.0</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7bace-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7bace-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cd374-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd374-121">See also</span></span>
 
-- [<span data-ttu-id="7bace-122">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="7bace-122">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="7bace-123">Interfaces de profilage</span><span class="sxs-lookup"><span data-stu-id="7bace-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [<span data-ttu-id="7bace-124">Profilage</span><span class="sxs-lookup"><span data-stu-id="7bace-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [<span data-ttu-id="cd374-122">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="cd374-122">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [<span data-ttu-id="cd374-123">Interfaces de profilage</span><span class="sxs-lookup"><span data-stu-id="cd374-123">Profiling Interfaces</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [<span data-ttu-id="cd374-124">Profilage</span><span class="sxs-lookup"><span data-stu-id="cd374-124">Profiling</span></span>](../../../../docs/framework/unmanaged-api/profiling/index.md)

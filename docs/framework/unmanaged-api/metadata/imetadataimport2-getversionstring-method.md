@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445226"
 ---
-# <a name="imetadataimport2getversionstring-method"></a><span data-ttu-id="a7f66-102">IMetaDataImport2::GetVersionString, méthode</span><span class="sxs-lookup"><span data-stu-id="a7f66-102">IMetaDataImport2::GetVersionString Method</span></span>
-<span data-ttu-id="a7f66-103">Gets the version number of the runtime that was used to build the assembly.</span><span class="sxs-lookup"><span data-stu-id="a7f66-103">Gets the version number of the runtime that was used to build the assembly.</span></span>  
+# <a name="imetadataimport2getversionstring-method"></a><span data-ttu-id="3a029-102">IMetaDataImport2::GetVersionString, méthode</span><span class="sxs-lookup"><span data-stu-id="3a029-102">IMetaDataImport2::GetVersionString Method</span></span>
+<span data-ttu-id="3a029-103">Obtient le numéro de version du runtime qui a été utilisé pour générer l’assembly.</span><span class="sxs-lookup"><span data-stu-id="3a029-103">Gets the version number of the runtime that was used to build the assembly.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="a7f66-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="a7f66-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="3a029-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="3a029-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetVersionString (  
@@ -35,29 +35,29 @@ HRESULT GetVersionString (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="a7f66-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="a7f66-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="3a029-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="3a029-105">Parameters</span></span>  
  `pwzBuf`  
- <span data-ttu-id="a7f66-106">[out] An array to store the string that specifies the version.</span><span class="sxs-lookup"><span data-stu-id="a7f66-106">[out] An array to store the string that specifies the version.</span></span>  
+ <span data-ttu-id="3a029-106">à Tableau pour stocker la chaîne qui spécifie la version.</span><span class="sxs-lookup"><span data-stu-id="3a029-106">[out] An array to store the string that specifies the version.</span></span>  
   
  `ccBufSize`  
- <span data-ttu-id="a7f66-107">[in] The size, in wide characters, of the `pwzBuf` array.</span><span class="sxs-lookup"><span data-stu-id="a7f66-107">[in] The size, in wide characters, of the `pwzBuf` array.</span></span>  
+ <span data-ttu-id="3a029-107">dans Taille, en caractères larges, du tableau de `pwzBuf`.</span><span class="sxs-lookup"><span data-stu-id="3a029-107">[in] The size, in wide characters, of the `pwzBuf` array.</span></span>  
   
  `pccBufSize`  
- <span data-ttu-id="a7f66-108">[out] The number of wide characters, including a null terminator, returned in the `pwzBuf` array.</span><span class="sxs-lookup"><span data-stu-id="a7f66-108">[out] The number of wide characters, including a null terminator, returned in the `pwzBuf` array.</span></span>  
+ <span data-ttu-id="3a029-108">à Nombre de caractères larges, y compris un terminateur null, retournés dans le tableau de `pwzBuf`.</span><span class="sxs-lookup"><span data-stu-id="3a029-108">[out] The number of wide characters, including a null terminator, returned in the `pwzBuf` array.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="a7f66-109">Notes</span><span class="sxs-lookup"><span data-stu-id="a7f66-109">Remarks</span></span>  
- <span data-ttu-id="a7f66-110">The `GetVersionString` method gets the built-for version of the current metadata scope.</span><span class="sxs-lookup"><span data-stu-id="a7f66-110">The `GetVersionString` method gets the built-for version of the current metadata scope.</span></span> <span data-ttu-id="a7f66-111">If the scope has never been saved, it will not have a built-for version, and an empty string will be returned.</span><span class="sxs-lookup"><span data-stu-id="a7f66-111">If the scope has never been saved, it will not have a built-for version, and an empty string will be returned.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="3a029-109">Notes</span><span class="sxs-lookup"><span data-stu-id="3a029-109">Remarks</span></span>  
+ <span data-ttu-id="3a029-110">La méthode `GetVersionString` obtient la version intégrée de la portée de métadonnées actuelle.</span><span class="sxs-lookup"><span data-stu-id="3a029-110">The `GetVersionString` method gets the built-for version of the current metadata scope.</span></span> <span data-ttu-id="3a029-111">Si l’étendue n’a jamais été enregistrée, elle n’a pas de version intégrée et une chaîne vide est retournée.</span><span class="sxs-lookup"><span data-stu-id="3a029-111">If the scope has never been saved, it will not have a built-for version, and an empty string will be returned.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="a7f66-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="a7f66-112">Requirements</span></span>  
- <span data-ttu-id="a7f66-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="a7f66-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="3a029-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="3a029-112">Requirements</span></span>  
+ <span data-ttu-id="3a029-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="3a029-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="a7f66-114">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="a7f66-114">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="3a029-114">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="3a029-114">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="a7f66-115">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="a7f66-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="3a029-115">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="3a029-115">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="a7f66-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="a7f66-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="3a029-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="3a029-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="a7f66-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a7f66-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="3a029-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="3a029-117">See also</span></span>
 
-- [<span data-ttu-id="a7f66-118">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="a7f66-118">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
-- [<span data-ttu-id="a7f66-119">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="a7f66-119">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="3a029-118">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="3a029-118">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="3a029-119">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="3a029-119">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
