@@ -28,7 +28,7 @@ Cette section décrit le workflow de développement de la *boucle interne* pour 
 Une application est composée de vos propres services et de bibliothèques supplémentaires (dépendances). La figure 5-1 illustre les principales étapes qu’un développeur doit généralement effectuer pour créer une application Docker.
 
 :::image type="complex" source="./media/docker-app-development-workflow/life-cycle-containerized-apps-docker-cli.png" alt-text="Diagramme montrant les 7 étapes nécessaires à la création d’une application en conteneur.":::
-Processus de développement pour les applications de l’arrimeur : 1-coder votre application, 2-écrire fichier dockerfile/s, 3-créer des images définies sur fichier dockerfile/s, 4-(facultatif) composer des services dans le fichier docker-compose. yml, 5-exécuter le conteneur ou l’application docker-compose, 6-tester votre application ou vos microservices, 7- Effectuez un push vers référentiel et répétez la procédure.
+Processus de développement pour les applications de l’arrimeur : 1-coder votre application, 2-écrire fichier dockerfile/s, 3-créer des images définies sur fichier dockerfile/s, 4-(facultatif) composer des services dans le fichier docker-compose. yml, 5-exécuter le conteneur ou l’application dockr-compose, 6-tester votre application ou vos microservices, 7-Push vers référentiel
 :::image-end:::
 
 **Figure 5-1.** Workflow pas à pas pour développer des applications Docker en conteneur
@@ -308,7 +308,7 @@ Vous pouvez créer votre propre image de base Docker à partir de zéro. Ce scé
 
 ![Image de l’étape 3.](./media/docker-app-development-workflow/step-3-create-dockerfile-defined-images.png)
 
-## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Étape 3. Créer vos images Docker personnalisées et incorporer votre application ou service dans ces images
+## <a name="step-3-create-your-custom-docker-images-and-embed-your-application-or-service-in-them"></a>Étape 3. Créer vos images Docker personnalisées et incorporer votre application ou service dans ces images
 
 Pour chaque service inclus dans votre application, vous devez créer une image associée. Si votre application est composée uniquement d’un service ou d’une application web, vous avez besoin d’une seule image.
 
@@ -455,7 +455,7 @@ Dans ce cas, la commande lie le port interne 5000 du conteneur au port 80 de la 
 
 Le code de hachage indiqué est l’ID de conteneur, auquel est attribué un nom lisible aléatoire si l’option `--name` n’est pas utilisée.
 
-#### <a name="using-visual-studio"></a>Utilisation de Visual Studio.
+#### <a name="using-visual-studio"></a>Utilisation de Visual Studio
 
 Si vous n’avez pas ajouté la prise en charge de l’orchestrateur de conteneurs, vous pouvez également exécuter une application monoconteneur dans Visual Studio en appuyant sur **Ctrl-F5** et vous pouvez aussi utiliser **F5** pour déboguer l’application dans le conteneur. Avec docker run, le conteneur s’exécute localement.
 
@@ -477,7 +477,7 @@ Pour exécuter une application multiconteneur avec l’interface CLI Docker, vou
 
 Après l’exécution de la commande docker-compose up, l’application et ses conteneurs associés sont déployés sur votre hôte Docker, comme indiqué dans la figure 5-10.
 
-#### <a name="using-visual-studio"></a>Utilisation de Visual Studio.
+#### <a name="using-visual-studio"></a>Utilisation de Visual Studio
 
 L’exécution d’une application multiconteneur à l’aide de Visual Studio 2017 est extrêmement simple. Appuyez simplement sur **Ctrl-F5** pour exécuter ou **F5** pour déboguer, comme d’habitude, en configurant le projet **docker-compose** comme projet de démarrage.  Visual Studio gère tous les paramètres nécessaires, vous pouvez donc créer des points d’arrêt comme d’habitude et déboguer ce qui devient des processus indépendants s’exécutant dans des « serveurs à distance », tout simplement.
 
@@ -543,7 +543,7 @@ Si vous avez choisi l’approche de développement avec un éditeur ou une inter
 En effet, le workflow avec Visual Studio est beaucoup plus simple que si vous utilisez un éditeur ou une CLI. La plupart des étapes requises par Docker liées aux fichiers Dockerfile et docker-compose.yml sont masquées ou simplifiées par Visual Studio, comme illustré à la figure 5-15.
 
 :::image type="complex" source="./media/docker-app-development-workflow/simplified-life-cycle-containerized-apps-docker-cli.png" alt-text="Diagramme montrant les cinq étapes simplifiées nécessaires à la création d’une application.":::
-Processus de développement pour les applications de l’arrimeur : 1-coder votre application, 2-écrire fichier dockerfile/s, 3-créer des images définies sur fichier dockerfile/s, 4-(facultatif) composer des services dans le fichier docker-compose. yml, 5-exécuter le conteneur ou l’application docker-compose, 6-tester votre application ou vos microservices, 7- Effectuez un push vers référentiel et répétez la procédure.
+Processus de développement pour les applications de l’arrimeur : 1-coder votre application, 2-écrire fichier dockerfile/s, 3-créer des images définies sur fichier dockerfile/s, 4-(facultatif) composer des services dans le fichier docker-compose. yml, 5-exécuter le conteneur ou l’application dockr-compose, 6-tester votre application ou vos microservices, 7-Push vers référentiel
 :::image-end:::
 
 **Figure 5-15**. Workflow simplifié du développement avec Visual Studio

@@ -29,7 +29,7 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.
 ```
 
-Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil). Ouvrez la fenêtre d'invite de commandes en tant qu'administrateur. Change the prompt directory to the .NET Framework 4 folder (%WINDIR%\Microsoft.NET\Framework[64]\v4.\<.NET version>\ ). Ce dossier contient le fichier ETW.man du CLR. À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.
+Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil). Ouvrez la fenêtre d'invite de commandes en tant qu'administrateur. Remplacez le répertoire de l’invite par le dossier .NET Framework 4 (%WINDIR%\Microsoft.NET\Framework [64] \v4.\<version .NET > \). Ce dossier contient le fichier ETW.man du CLR. À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.
 
 `wevtutil im CLR-ETW.man`
 
@@ -55,9 +55,9 @@ Pour activer la journalisation, un utilisateur doit spécifier trois éléments�
 
     - Le paramètre `-p` identifie le GUID du fournisseur.
 
-    - `0x1CCBD` spécifie les catégories d'événements qui seront déclenchés.
+    - `0x1CCBD` spécifie les catégories d’événements qui seront déclenchés.
 
-    - `0x5` définit le niveau de la journalisation (dans ce cas, détaillé (5)).
+    - `0x5` définit le niveau de journalisation (dans ce cas, verbose (5)).
 
     - Le paramètre `-ets` indique à Logman d'envoyer des commandes aux sessions de suivi d'événements.
 
@@ -113,5 +113,5 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Windows Performance Toolkit](/windows-hardware/test/wpt/)
+- [Kit de performances Windows](/windows-hardware/test/wpt/)
 - [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md)

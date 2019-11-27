@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450354"
 ---
 # <a name="icorprofilerinfogetilfunctionbody-method"></a>ICorProfilerInfo::GetILFunctionBody, méthode
-Gets a pointer to the body of a method in Microsoft intermediate language (MSIL) code, starting at its header.  
+Obtient un pointeur vers le corps d’une méthode dans le code MSIL (Microsoft Intermediate Language), en commençant à son en-tête.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +37,23 @@ HRESULT GetILFunctionBody(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] The ID of the module in which the function resides.  
+ dans ID du module dans lequel la fonction réside.  
   
  `methodId`  
- [in] The metadata token for the method.  
+ dans Jeton de métadonnées pour la méthode.  
   
  `ppMethodHeader`  
- [out] A pointer to the method's header.  
+ à Pointeur vers l’en-tête de la méthode.  
   
  `pcbMethodSize`  
- [out] An integer that specifies the size of the method.  
+ à Entier qui spécifie la taille de la méthode.  
   
 ## <a name="remarks"></a>Notes  
- A method is scoped by the module in which it lives. Because the `GetILFunctionBody` method is designed to give a tool access to the MSIL code before it has been loaded by the common language runtime (CLR), it uses the metadata token of the method to find the desired instance.  
+ Une méthode est délimitée par le module dans lequel elle réside. Étant donné que la méthode `GetILFunctionBody` est conçue pour permettre à un outil d’accéder au code MSIL avant qu’elle ait été chargée par le common language runtime (CLR), elle utilise le jeton de métadonnées de la méthode pour Rechercher l’instance souhaitée.  
   
- `GetILFunctionBody` can return a CORPROF_E_FUNCTION_NOT_IL HRESULT if the `methodId` points to a method without any MSIL code (such as an abstract method, or a platform invoke (PInvoke) method).  
+ `GetILFunctionBody` pouvez retourner un HRESULT CORPROF_E_FUNCTION_NOT_IL si le `methodId` pointe vers une méthode sans code MSIL (par exemple, une méthode abstraite ou une méthode d’appel de code non managé (PInvoke)).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

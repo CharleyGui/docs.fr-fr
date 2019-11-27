@@ -1,5 +1,5 @@
 ---
-title: IALink, interface
+title: Interface IALink
 ms.date: 03/30/2017
 f1_keywords:
 - IALink
@@ -13,13 +13,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441821"
 ---
-# <a name="ialink-interface"></a>IALink, interface
-Helps in constructing .NET Framework assemblies. Among other things, the interface contains methods that assist in writing assembly manifests for multi-module assemblies, signing assemblies with strong names, and creating netmodules.  
+# <a name="ialink-interface"></a>Interface IALink
+Facilite la construction d’assemblys .NET Framework. Entre autres choses, l’interface contient des méthodes qui facilitent l’écriture de manifestes d’assembly pour les assemblys multimodules, la signature d’assemblys avec des noms forts et la création de netmodules.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [AddFile Method](addfile-method.md)  
+ [Méthode AddFile](addfile-method.md)  
   
- [AddImport Method](addimport-method.md)  
+ [Méthode AddImport,](addimport-method.md)  
   
  [CloseAssembly, méthode](closeassembly-method.md)  
   
@@ -51,7 +51,7 @@ Helps in constructing .NET Framework assemblies. Among other things, the interfa
   
  [GetResolutionScope, méthode](getresolutionscope-method.md)  
   
- [GetScope Method](getscope-method.md)  
+ [Méthode GetScope,](getscope-method.md)  
   
  [GetWin32ResBlob, méthode](getwin32resblob-method.md)  
   
@@ -61,7 +61,7 @@ Helps in constructing .NET Framework assemblies. Among other things, the interfa
   
  [ImportTypes, méthode](importtypes-method.md)  
   
- "Init Method"  
+ "Init, méthode"  
   
  [LinkResource, méthode](linkresource-method.md)  
   

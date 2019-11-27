@@ -1,6 +1,6 @@
 ---
-title: Language Walkthroughs
-description: Step-by-step instructions for common scenarios in Visual Basic development
+title: Procédures pas à pas du langage
+description: Instructions pas à pas pour les scénarios courants de développement Visual Basic
 ms.date: 07/20/2015
 helpviewer_keywords:
 - Visual Basic, walkthroughs

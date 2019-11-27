@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426661"
 ---
 # <a name="imetadatatablesgettableinfo-method"></a>IMetaDataTables::GetTableInfo, méthode
-Gets the name, row size, number of rows, number of columns, and key column index of the specified table.  
+Obtient le nom, la taille de ligne, le nombre de lignes, le nombre de colonnes et l’index de colonne clé de la table spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,29 +40,29 @@ HRESULT GetTableInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `ixTbl`  
- [in] The identifier of the table whose properties to return.  
+ dans Identificateur de la table dont les propriétés doivent être retournées.  
   
  `pcbRow`  
- [out] A pointer to the size, in bytes, of a table row.  
+ à Pointeur vers la taille, en octets, d’une ligne de table.  
   
  `pcRows`  
- [out] A pointer to the number of rows in the table.  
+ à Pointeur vers le nombre de lignes dans la table.  
   
  `pcCols`  
- [out] A pointer to the number of columns in the table.  
+ à Pointeur vers le nombre de colonnes dans la table.  
   
  `piKey`  
- [out] A pointer to the index of the key column, or -1 if the table has no key column.  
+ à Pointeur vers l’index de la colonne clé, ou-1 si la table n’a pas de colonne clé.  
   
  `ppName`  
- [out] A pointer to a pointer to the table name.  
+ à Pointeur vers un pointeur vers le nom de la table.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

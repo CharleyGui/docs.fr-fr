@@ -21,8 +21,8 @@ ms.locfileid: "74445704"
  Cette section contient des informations détaillées sur l’implémentation des modèles de contrôle.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Exposer le contenu d’une table à l’aide d’UI Automation](expose-the-content-of-a-table-using-ui-automation.md)  
- [Obtenir des modèles de contrôle UI Automation pris en charge](get-supported-ui-automation-control-patterns.md)  
- [Obtenir l’état bascule d’une case à cocher à l’aide d’UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
- [Appeler un contrôle à l’aide d’UI Automation](invoke-a-control-using-ui-automation.md)  
- [Déplacer un élément UI Automation](move-a-ui-automation-element.md)
+ [Expose the Content of a Table Using UI Automation](expose-the-content-of-a-table-using-ui-automation.md)  
+ [Get Supported UI Automation Control Patterns](get-supported-ui-automation-control-patterns.md)  
+ [Get the Toggle State of a Check Box Using UI Automation](get-the-toggle-state-of-a-check-box-using-ui-automation.md)  
+ [Invoke a Control Using UI Automation](invoke-a-control-using-ui-automation.md)  
+ [Move a UI Automation Element](move-a-ui-automation-element.md)

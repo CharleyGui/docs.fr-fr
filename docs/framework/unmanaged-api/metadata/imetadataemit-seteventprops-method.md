@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450320"
 ---
 # <a name="imetadataemitseteventprops-method"></a>IMetaDataEmit::SetEventProps, méthode
-Sets or updates the specified feature of an event defined by a prior call to [IMetaDataEmit::DefineEvent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
+Définit ou met à jour la fonctionnalité spécifiée d’un événement défini par un appel antérieur à [IMetaDataEmit ::D efineevent](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineevent-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT SetEventProps (
   
 ## <a name="parameters"></a>Paramètres  
  `ev`  
- [in] The event token.  
+ dans Jeton d’événement.  
   
  `dwEventFlags`  
- [in] Event flags. This is a bitmask of `CorEventAttr` values.  
+ dans Indicateurs d’événement. Il s’agit d’un masque de ré`CorEventAttr` valeurs.  
   
  `tkEventType`  
- [in] The token for the event class. This is either a `mdTypeDef` or a `mdTypeRef` token.  
+ dans Jeton de la classe d’événements. Il s’agit soit d’un `mdTypeDef`, soit d’un jeton `mdTypeRef`.  
   
  `mdAddOn`  
- [in] The method used to subscribe to the event, or null.  
+ dans Méthode utilisée pour s’abonner à l’événement, ou null.  
   
  `mdRemoveOn`  
- [in] The method used to unsubscribe to the event, or null.  
+ dans Méthode utilisée pour annuler l’abonnement à l’événement, ou null.  
   
  `mdFire`  
- [in] The method used (by a derived class) to raise the event.  
+ dans Méthode utilisée (par une classe dérivée) pour déclencher l’événement.  
   
  `rmdOtherMethods[]`  
- [in] An array of tokens for other methods associated with the event. The last element of the array must be `mdMethodDefNil`.  
+ dans Tableau de jetons pour d’autres méthodes associées à l’événement. Le dernier élément du tableau doit être `mdMethodDefNil`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

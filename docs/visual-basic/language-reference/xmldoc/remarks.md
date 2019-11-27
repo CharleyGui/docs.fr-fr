@@ -12,8 +12,8 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352258"
 ---
-# <a name="remarks-visual-basic"></a>\<remarks> (Visual Basic)
-Specifies a remarks section for the member.  
+# <a name="remarks-visual-basic"></a>\<> Remarques (Visual Basic)
+Spécifie une section Notes pour le membre.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -26,14 +26,14 @@ Specifies a remarks section for the member.
  Description du membre.  
   
 ## <a name="remarks"></a>Notes  
- Use the `<remarks>` tag to add information about a type, supplementing the information specified with [\<summary>](../../../visual-basic/language-reference/xmldoc/summary.md).  
+ Utilisez la balise `<remarks>` pour ajouter des informations sur un type, en complétant les informations spécifiées avec [\<> Résumé](../../../visual-basic/language-reference/xmldoc/summary.md).  
   
- This information appears in the Object Browser. For information about the Object Browser, see [Viewing the Structure of Code](/visualstudio/ide/viewing-the-structure-of-code).  
+ Ces informations s’affichent dans l’Explorateur d’objets. Pour plus d’informations sur l’Explorateur d’objets, consultez [affichage de la structure du code](/visualstudio/ide/viewing-the-structure-of-code).  
   
  Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `<remarks>` tag to explain what the `UpdateRecord` method does.  
+ Cet exemple utilise la balise `<remarks>` pour expliquer ce que fait la méthode `UpdateRecord`.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

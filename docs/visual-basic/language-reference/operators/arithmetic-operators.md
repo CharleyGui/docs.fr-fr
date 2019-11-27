@@ -14,23 +14,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350217"
 ---
 # <a name="arithmetic-operators-visual-basic"></a>Opérateurs arithmétiques (Visual Basic)
-The following are the arithmetic operators defined in Visual Basic.  
+Voici les opérateurs arithmétiques définis dans Visual Basic.  
   
- [^ (opérateur)](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
+ [^, opérateur](../../../visual-basic/language-reference/operators/exponentiation-operator.md)  
   
- [* (opérateur)](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
+ [*, opérateur](../../../visual-basic/language-reference/operators/multiplication-operator.md)  
   
- [/ (opérateur)](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)  
+ [/, opérateur](../../../visual-basic/language-reference/operators/floating-point-division-operator.md)  
   
  [\ (opérateur)](../../../visual-basic/language-reference/operators/integer-division-operator.md)  
   
  [Mod (opérateur)](../../../visual-basic/language-reference/operators/mod-operator.md)  
   
- [+ Operator](../../../visual-basic/language-reference/operators/addition-operator.md) (unary and binary)  
+ [+, Opérateur](../../../visual-basic/language-reference/operators/addition-operator.md) (unaire et binaire)  
   
- [- Operator](../../../visual-basic/language-reference/operators/subtraction-operator.md) (unary and binary)  
+ [-, Opérateur](../../../visual-basic/language-reference/operators/subtraction-operator.md) (unaire et binaire)  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
-- [Arithmetic Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Opérateurs arithmétiques dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)

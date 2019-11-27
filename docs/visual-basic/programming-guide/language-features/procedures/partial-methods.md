@@ -19,28 +19,28 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352637"
 ---
 # <a name="partial-methods-visual-basic"></a>Méthodes partielles (Visual Basic)
-Partial methods enable developers to insert custom logic into code. Typically, the code is part of a designer-generated class. Partial methods are defined in a partial class that is created by a code generator, and they are commonly used to provide notification that something has been changed. They enable the developer to specify custom behavior in response to the change.  
+Les méthodes partielles permettent aux développeurs d’insérer une logique personnalisée dans le code. En règle générale, le code fait partie d’une classe générée par le concepteur. Les méthodes partielles sont définies dans une classe partielle créée par un générateur de code, et elles sont généralement utilisées pour fournir une notification indiquant qu’un événement a été modifié. Ils permettent au développeur de spécifier un comportement personnalisé en réponse à la modification.  
   
- The designer of the code generator defines only the method signature and one or more calls to the method. Developers can then provide implementations for the method if they want to customize the behavior of the generated code. When no implementation is provided, calls to the method are removed by the compiler, resulting in no additional performance overhead.  
+ Le concepteur du générateur de code définit uniquement la signature de la méthode et un ou plusieurs appels à la méthode. Les développeurs peuvent ensuite fournir des implémentations pour la méthode s’ils souhaitent personnaliser le comportement du code généré. Quand aucune implémentation n’est fournie, les appels à la méthode sont supprimés par le compilateur, ce qui entraîne une surcharge de performance supplémentaire.  
   
 ## <a name="declaration"></a>Déclaration  
- The generated code marks the definition of a partial method by placing the keyword `Partial` at the start of the signature line.  
+ Le code généré marque la définition d’une méthode partielle en plaçant le mot clé `Partial` au début de la ligne de signature.  
   
 ```vb  
 Partial Private Sub QuantityChanged()  
 End Sub  
 ```  
   
- The definition must meet the following conditions:  
+ La définition doit respecter les conditions suivantes :  
   
-- The method must be a `Sub`, not a `Function`.  
+- La méthode doit être une `Sub`, et non une `Function`.  
   
-- The body of the method must be left empty.  
+- Le corps de la méthode doit être laissé vide.  
   
-- The access modifier must be `Private`.  
+- Le modificateur d’accès doit être `Private`.  
   
 ## <a name="implementation"></a>Implémentation  
- The implementation consists primarily of filling in the body of the partial method. The implementation is typically in a separate partial class from the definition, and is written by a developer who wants to extend the generated code.  
+ L’implémentation consiste principalement à remplir le corps de la méthode partielle. L’implémentation est généralement dans une classe partielle distincte de la définition, et est écrite par un développeur qui souhaite étendre le code généré.  
   
 ```vb  
 Private Sub QuantityChanged()  
@@ -48,25 +48,25 @@ Private Sub QuantityChanged()
 End Sub  
 ```  
   
- The previous example duplicates the signature in the declaration exactly, but variations are possible. In particular, other modifiers can be added, such as `Overloads` or `Overrides`. Only one `Overrides` modifier is permitted. For more information about method modifiers, see [Sub Statement](../../../../visual-basic/language-reference/statements/sub-statement.md).  
+ L’exemple précédent duplique exactement la signature dans la déclaration, mais les variations sont possibles. En particulier, d’autres modificateurs peuvent être ajoutés, tels que `Overloads` ou `Overrides`. Un seul modificateur de `Overrides` est autorisé. Pour plus d’informations sur les modificateurs de méthode, consultez [instruction Sub](../../../../visual-basic/language-reference/statements/sub-statement.md).  
   
 ## <a name="use"></a>Utilisez  
- You call a partial method as you would call any other `Sub` procedure. If the method has been implemented, the arguments are evaluated and the body of the method is executed. However, remember that implementing a partial method is optional. If the method is not implemented, a call to it has no effect, and expressions passed as arguments to the method are not evaluated.  
+ Vous appelez une méthode partielle comme vous le feriez pour tout autre `Sub` procédure. Si la méthode a été implémentée, les arguments sont évalués et le corps de la méthode est exécuté. Toutefois, n’oubliez pas que l’implémentation d’une méthode partielle est facultative. Si la méthode n’est pas implémentée, un appel à celle-ci n’a aucun effet, et les expressions passées comme arguments à la méthode ne sont pas évaluées.  
   
 ## <a name="example"></a>Exemple  
- In a file named Product.Designer.vb, define a `Product` class that has a `Quantity` property.  
+ Dans un fichier nommé Product. Designer. vb, définissez une classe `Product` qui a une propriété `Quantity`.  
   
  [!code-vb[VbVbalrPartialMeths#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#4)]  
   
- In a file named Product.vb, provide an implementation for `QuantityChanged`.  
+ Dans un fichier nommé Product. vb, fournissez une implémentation pour `QuantityChanged`.  
   
  [!code-vb[VbVbalrPartialMeths#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#5)]  
   
- Finally, in the Main method of a project, declare a `Product` instance and provide an initial value for its `Quantity` property.  
+ Enfin, dans la méthode main d’un projet, déclarez une instance de `Product` et fournissez une valeur initiale pour sa propriété `Quantity`.  
   
  [!code-vb[VbVbalrPartialMeths#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrPartialMeths/VB/Class1.vb#6)]  
   
- A message box should appear that displays this message:  
+ Une boîte de message s’affiche pour afficher le message suivant :  
   
  `Quantity was changed to 100`  
   

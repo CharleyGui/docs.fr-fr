@@ -37,12 +37,12 @@ Le Open Data Protocol (OData) vous permet de créer des services de données afi
 |Jeux d'entités|-Supprimer le jeu d’entités|-Ajouter un type dérivé<br />-Modifier le type de base<br />-Ajouter un jeu d’entités|
 |Personnalisation de flux|-Modifier le mappage d’entité-propriété||
 
- <sup>1</sup> Cela peut dépendre de la façon dont une application cliente repose strictement sur la réception d'un code d'erreur spécifique.
+ <sup>1</sup> cela peut dépendre de la façon dont une application cliente s’appuie sur la réception d’un code d’erreur spécifique.
 
- <sup>2</sup> Vous pouvez affecter à la propriété <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> la valeur `true` pour que le client ignore toutes les nouvelles propriétés envoyées par le service de données qui ne sont pas définies sur le client. Toutefois, lorsque des insertions sont réalisées, les propriétés non incluses par le client dans la demande POST sont définies sur leurs valeurs par défaut. Pour les mises à jour, toutes les données existantes dans une propriété inconnue du client peuvent être remplacées par les valeurs par défaut. Dans ce cas, vous devez envoyer la mise à jour sous la forme d’une demande MERGE, qui est la valeur par défaut. Pour plus d’informations, consultez [gestion du contexte du service de données](managing-the-data-service-context-wcf-data-services.md).
+ <sup>2</sup> vous pouvez définir la propriété <xref:System.Data.Services.Client.DataServiceContext.IgnoreMissingProperties%2A> sur `true` pour que le client ignore toutes les nouvelles propriétés envoyées par le service de données qui ne sont pas définies sur le client. Toutefois, lorsque des insertions sont réalisées, les propriétés non incluses par le client dans la demande POST sont définies sur leurs valeurs par défaut. Pour les mises à jour, toutes les données existantes dans une propriété inconnue du client peuvent être remplacées par les valeurs par défaut. Dans ce cas, vous devez envoyer la mise à jour sous la forme d’une demande MERGE, qui est la valeur par défaut. Pour plus d’informations, consultez [gestion du contexte du service de données](managing-the-data-service-context-wcf-data-services.md).
 
 ### <a name="how-to-version-a-data-service"></a>Procédure de versionnage d'un service de données
- Si nécessaire, une nouvelle version de service de données est définie en créant une nouvelle instance du service avec un contrat de service ou un modèle de données mis à jour. Ce nouveau service est alors exposé à l'aide d'un nouveau point de terminaison d'URI, qui le distingue de la version antérieure. Par exemple :
+ Si nécessaire, une nouvelle version de service de données est définie en créant une nouvelle instance du service avec un contrat de service ou un modèle de données mis à jour. Ce nouveau service est alors exposé à l'aide d'un nouveau point de terminaison d'URI, qui le distingue de la version antérieure. Exemple :
 
 - Ancienne version : `http://services.odata.org/Northwind/v1/Northwind.svc/`
 
@@ -65,7 +65,7 @@ Le Open Data Protocol (OData) vous permet de créer des services de données afi
 |Version du protocole OData|Prise en charge depuis...|
 |-----------------------------------------------------------------------------------|----------------------------|
 |Version 1|-.NET Framework 3,5 Service Pack 1 (SP1)<br />-Silverlight version 3|
-|Version 2|-.NET Framework 4<br />-Mise à jour de .NET Framework 3,5 SP1. Vous pouvez télécharger et installer la mise à jour à partir du [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=158125).<br />-Silverlight version 4|
+|Version 2|-.NET Framework 4<br />-Mise à jour de .NET Framework 3,5 SP1. Vous pouvez télécharger et installer la mise à jour à partir du [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=158125).<br />-Silverlight version 4|
 |Version 3|-Vous pouvez télécharger et installer une version préliminaire qui prend en charge OData version 3 à partir du [Centre de téléchargement Microsoft](https://go.microsoft.com/fwlink/?LinkId=203885).|
 
 ### <a name="metadata-versions"></a>Versions de métadonnées

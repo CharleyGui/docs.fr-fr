@@ -15,7 +15,7 @@ ms.locfileid: "74283069"
 
 Spécifie le nombre de segments/threads à utiliser pour le garbage collection serveur.
 
-\<configuration>\
+\<> de configuration \
 &nbsp;&nbsp;\<Runtime > \
 &nbsp;&nbsp;&nbsp;&nbsp;\<GCHeapCount >
 
@@ -44,7 +44,7 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ### <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None.
 
 ### <a name="parent-elements"></a>Éléments parents
 

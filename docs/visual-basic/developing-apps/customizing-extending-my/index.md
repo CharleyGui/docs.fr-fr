@@ -15,31 +15,31 @@ ms.locfileid: "74330340"
 ---
 # <a name="customizing-projects-and-extending-my-with-visual-basic"></a>Personnalisation des projets et extension de My avec Visual Basic
 
-You can customize project templates to provide additional `My` objects. This makes it easy for other developers to find and use your objects.
+Vous pouvez personnaliser des modèles de projet pour fournir des objets `My` supplémentaires. Cela permet aux autres développeurs de trouver et d’utiliser facilement vos objets.
 
 ## <a name="in-this-section"></a>Dans cette section
 
 - [Extension de l’espace de noms My dans Visual Basic](extending-the-my-namespace.md)  
- Describes how to add custom members and values to the `My` namespace in Visual Basic.
+ Décrit comment ajouter des membres et des valeurs personnalisés à l’espace de noms `My` dans Visual Basic.
 - [Empaquetage et déploiement des extensions My personnalisées](packaging-and-deploying-custom-my-extensions.md)  
- Describes how to publish custom `My` namespace extensions by using Visual Studio templates.
+ Décrit comment publier des extensions d’espace de noms `My` personnalisées à l’aide de modèles Visual Studio.
 - [Extension du modèle d’application Visual Basic](extending-the-visual-basic-application-model.md)  
- Describes how to specify your own extensions to the application model by overriding members of the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase> class.
+ Décrit comment spécifier vos propres extensions du modèle d’application en substituant les membres de la classe <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase>.
 - [Personnalisation de la disponibilité ou non des objets dans My](customizing-which-objects-are-available-in-my.md)  
- Describes how to control which `My` objects are enabled by setting your project's \_MYTYPE conditional-compilation constant.
+ Décrit comment contrôler les `My` objets qui sont activés en définissant la constante de compilation conditionnelle \_MYTYPE de votre projet.
 
 ## <a name="related-sections"></a>Rubriques connexes
 
 - [Développement avec My](../development-with-my/index.md)  
- Describes which `My` objects are available in different project types by default.
+ Décrit les objets `My` disponibles dans différents types de projet par défaut.
 - [Vue d’ensemble du modèle d’application Visual Basic](../development-with-my/overview-of-the-visual-basic-application-model.md)  
- Describes Visual Basic's model for controlling the behavior of Windows Forms applications.
+ Décrit le modèle de Visual Basic pour le contrôle du comportement des applications Windows Forms.
 - [Comment My dépend du type de projet](../development-with-my/how-my-depends-on-project-type.md)  
- Describes which `My` objects are available in different project types by default.
+ Décrit les objets `My` disponibles dans différents types de projet par défaut.
 - [Compilation conditionnelle](../../programming-guide/program-structure/conditional-compilation.md)  
- Discusses how the compiler uses conditional-compilation to select particular sections of code to compile and exclude other sections.
+ Explique comment le compilateur utilise la compilation conditionnelle pour sélectionner des sections de code particulières à compiler et exclure d’autres sections.
 - <xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase>  
- Describes the `My` object that provides properties, methods, and events related to the current application.
+ Décrit l’objet `My` qui fournit des propriétés, des méthodes et des événements liés à l’application actuelle.
 
 ## <a name="see-also"></a>Voir aussi
 

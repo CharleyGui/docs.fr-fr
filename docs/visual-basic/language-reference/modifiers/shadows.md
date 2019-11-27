@@ -20,29 +20,29 @@ ms.locfileid: "74351261"
 ---
 # <a name="shadows-visual-basic"></a>Shadows (Visual Basic)
 
-Specifies that a declared programming element redeclares and hides an identically named element, or set of overloaded elements, in a base class.
+Spécifie qu’un élément de programmation déclaré redéclare et masque un élément portant le même nom, ou un ensemble d’éléments surchargés, dans une classe de base.
 
 ## <a name="remarks"></a>Notes
 
-The main purpose of shadowing (which is also known as *hiding by name*) is to preserve the definition of your class members. The base class might undergo a change that creates an element with the same name as one you have already defined. If this happens, the `Shadows` modifier forces references through your class to be resolved to the member you defined, instead of to the new base class element.
+L’objectif principal de l’occultation (qui est également connu sous le *nom de masquage par nom*) consiste à conserver la définition de vos membres de classe. La classe de base peut subir une modification qui crée un élément avec le même nom que celui que vous avez déjà défini. Dans ce cas, le modificateur de `Shadows` force les références via votre classe à être résolues sur le membre que vous avez défini, et non sur le nouvel élément de la classe de base.
 
-L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. For more information, see [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
+L'occultation et la substitution redéfinissent toutes les deux un élément hérité, mais il existe des différences importantes entre ces deux approches. Pour plus d’informations, consultez [occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md).
 
 ## <a name="rules"></a>Règles
 
-- **Declaration Context.** You can use `Shadows` only at class level. This means the declaration context for a `Shadows` element must be a class, and cannot be a source file, namespace, interface, module, structure, or procedure.
+- **Contexte de déclaration.** Vous pouvez utiliser `Shadows` uniquement au niveau de la classe. Cela signifie que le contexte de déclaration pour un élément de `Shadows` doit être une classe et ne peut pas être un fichier source, un espace de noms, une interface, un module, une structure ou une procédure.
 
-  You can declare only one shadowing element in a single declaration statement.
+  Vous pouvez déclarer un seul élément d’occultation dans une instruction de déclaration unique.
 
-- **Combined Modifiers.** You cannot specify `Shadows` together with `Overloads`, `Overrides`, or `Static` in the same declaration.
+- **Modificateurs combinés.** Vous ne pouvez pas spécifier `Shadows` avec `Overloads`, `Overrides`ou `Static` dans la même déclaration.
 
-- **Element Types.** Vous pouvez occulter tout type d'élément déclaré par un autre type. If you shadow a property or procedure with another property or procedure, the parameters and the return type do not have to match those in the base class property or procedure.
+- **Types d’éléments.** Vous pouvez occulter tout type d'élément déclaré par un autre type. Si vous occultez une propriété ou une procédure avec une autre propriété ou procédure, il n’est pas nécessaire que les paramètres et le type de retour correspondent à ceux de la procédure ou de la propriété de la classe de base.
 
-- **Accessing.** The shadowed element in the base class is normally unavailable from within the derived class that shadows it. However, the following considerations apply.
+- **L’accès à.** L’élément occulté dans la classe de base est normalement indisponible à partir de la classe dérivée qui l’occulte. Toutefois, les considérations suivantes s’appliquent.
 
-  - If the shadowing element is not accessible from the code referring to it, the reference is resolved to the shadowed element. For example, if a `Private` element shadows a base class element, code that does not have permission to access the `Private` element accesses the base class element instead.
+  - Si l’élément d’occultation n’est pas accessible à partir du code qui y fait référence, la référence est résolue en élément occulté. Par exemple, si un élément `Private` occulte un élément de classe de base, le code qui n’est pas autorisé à accéder à l’élément `Private` accède à l’élément de classe de base à la place.
 
-  - If you shadow an element, you can still access the shadowed element through an object declared with the type of the base class. You can also access it through `MyBase`.
+  - Si vous occultez un élément, vous pouvez toujours accéder à l’élément occulté à l’aide d’un objet déclaré avec le type de la classe de base. Vous pouvez également y accéder par le biais de `MyBase`.
 
 Le modificateur `Shadows` peut être utilisé dans les contextes suivants :
 
@@ -50,7 +50,7 @@ Le modificateur `Shadows` peut être utilisé dans les contextes suivants :
 
 - [Const (instruction)](../../../visual-basic/language-reference/statements/const-statement.md)
 
-- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
 
 - [Delegate (instruction)](../../../visual-basic/language-reference/statements/delegate-statement.md)
 
@@ -79,7 +79,7 @@ Le modificateur `Shadows` peut être utilisé dans les contextes suivants :
 - [Éléments fondamentaux de l’héritage](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)
 - [MustOverride](../../../visual-basic/language-reference/modifiers/mustoverride.md)
 - [NotOverridable](../../../visual-basic/language-reference/modifiers/notoverridable.md)
-- [Surcharges](../../../visual-basic/language-reference/modifiers/overloads.md)
+- [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)
 - [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)
 - [Overrides](../../../visual-basic/language-reference/modifiers/overrides.md)
-- [Shadowing in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Occultation dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)

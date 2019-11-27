@@ -377,11 +377,11 @@ Pour exclure toutes les propriétés de valeur null, affectez la valeur `true`à
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Les |Valeur  |
+|Propriété |Valeur  |
 |---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00|
 | TemperatureCelsius| 25 |
-| Récapitulatif| null|
+| Résumé| null|
 
 ```json
 {
@@ -571,11 +571,11 @@ Si vous désérialisez le JSON indiqué dans le type indiqué, les propriétés 
 
 Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple, les données supplémentaires deviennent des paires clé-valeur de la propriété `ExtensionData` :
 
-|Les |Valeur  |Notes  |
+|Propriété |Valeur  |Remarques  |
 |---------|---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00||
 | TemperatureCelsius| 0 | Incompatibilité sensible à la casse (`temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. |
-| Récapitulatif | Images ||
+| Résumé | Très chargé ||
 | ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
 || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 | |SummaryWords:<br>Cool<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442275"
 ---
 # <a name="imetadataemitsetfieldmarshal-method"></a>IMetaDataEmit::SetFieldMarshal, méthode
-Sets the PInvoke marshaling information for the field, method return, or method parameter referenced by the specified token.  
+Définit les informations de marshaling PInvoke pour le champ, le retour de méthode ou le paramètre de méthode référencé par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT SetFieldMarshal (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] The token for target data item. This is either a `mdFieldDef` or a `mdParamDef` token.  
+ dans Jeton pour l’élément de données cibles. Il s’agit soit d’un `mdFieldDef`, soit d’un jeton `mdParamDef`.  
   
  `pvNativeType`  
- [in] The signature for unmanaged type.  
+ dans Signature pour le type non managé.  
   
  `cbNativeType`  
- [in] The count of bytes in `pvNativeType`.  
+ dans Nombre d’octets dans `pvNativeType`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

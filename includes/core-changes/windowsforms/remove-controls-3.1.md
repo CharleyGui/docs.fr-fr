@@ -6,15 +6,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429237"
 ---
-### <a name="removed-controls"></a>Removed controls
+### <a name="removed-controls"></a>Contrôles supprimés
 
-Starting in .NET Core 3.1, some Windows Forms controls are no longer available.
+À compter de .NET Core 3,1, certains contrôles de Windows Forms ne sont plus disponibles.
 
-#### <a name="change-description"></a>Change description
+#### <a name="change-description"></a>Modifier la description
 
-Starting with .NET Core 3.1, various Windows Forms controls are no longer available. Replacement controls that have better design and support were introduced in .NET Framework 2.0. The deprecated controls were previously removed from designer toolboxes but were still available to be used.
+À compter de .NET Core 3,1, les différents contrôles de Windows Forms ne sont plus disponibles. Les contrôles de remplacement qui offrent une meilleure conception et une meilleure prise en charge ont été introduits dans .NET Framework 2,0. Les contrôles déconseillés ont été précédemment supprimés des boîtes à outils du concepteur, mais ils étaient toujours disponibles pour être utilisés.
 
-The following types are no longer available:
+Les types suivants ne sont plus disponibles :
 
 - <xref:System.Windows.Forms.Menu>
 - <xref:System.Windows.Forms.Menu.MenuItemCollection>
@@ -45,15 +45,15 @@ The following types are no longer available:
 - <xref:System.Windows.Forms.DataGrid.HitTestType>
 - <xref:System.Windows.Forms.Design.IMenuEditorService>
 
-#### <a name="version-introduced"></a>Version introduced
+#### <a name="version-introduced"></a>Version introduite
 
-3.1
+3,1
 
-#### <a name="recommended-action"></a>Recommended action
+#### <a name="recommended-action"></a>Action recommandée
 
-Each removed control has a recommended replacement control. Refer to the following table:
+Chaque contrôle supprimé a un contrôle de remplacement recommandé. Reportez-vous au tableau suivant :
 
-| Removed control (API) | Recommended replacement | Associated APIs that are removed |
+| Contrôle supprimé (API) | Remplacement recommandé | API associées supprimées |
 |-|-|-|
 | DataGrid | DataGridView | DataGridCell, DataGridRow, DataGridTableCollection, DataGridColumnCollection, DataGridTableStyle, DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, DataGridBoolColumn, DataGridTextBox, GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
 | ToolBar | ToolStrip | ToolBarAppearance |
@@ -63,7 +63,7 @@ Each removed control has a recommended replacement control. Refer to the followi
 | MainMenu | MenuStrip | |
 | MenuItem | ToolstripMenuItem | |
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 Windows Forms
 

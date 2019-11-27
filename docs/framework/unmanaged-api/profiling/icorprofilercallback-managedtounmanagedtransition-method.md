@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426177"
 ---
 # <a name="icorprofilercallbackmanagedtounmanagedtransition-method"></a>ICorProfilerCallback::ManagedToUnmanagedTransition, méthode
-Notifies the profiler that a transition from managed code to unmanaged code has occurred.  
+Notifie le profileur qu’une transition du code managé au code non managé s’est produite.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT ManagedToUnmanagedTransition(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The ID of the function that is being called.  
+ dans ID de la fonction appelée.  
   
  `reason`  
- [in] A value of the [COR_PRF_TRANSITION_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md) enumeration that indicates whether the transition occurred because of a call into unmanaged code from managed code, or because of a return from a managed function called by an unmanaged one.  
+ dans Valeur de l’énumération [COR_PRF_TRANSITION_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md) qui indique si la transition s’est produite en raison d’un appel dans du code non managé à partir du code managé, ou à cause d’un retour d’une fonction managée appelée par un qui n’est pas géré.  
   
 ## <a name="remarks"></a>Notes  
- If the value of `reason` is COR_PRF_TRANSITION_CALL, the function ID is that of the unmanaged function, which will never have been compiled using the just-in-time compiler. Unmanaged functions have basic information associated with them, such as a name and some metadata. If the unmanaged function was called by using implicit platform invoke (PInvoke), the runtime cannot determine the destination of the call and the value of `functionId` will be null. For more information on implicit PInvoke, see [Using C++ Interop (Implicit PInvoke)](/cpp/dotnet/using-cpp-interop-implicit-pinvoke).  
+ Si la valeur de `reason` est COR_PRF_TRANSITION_CALL, l’ID de fonction est celui de la fonction non managée, qui n’a jamais été compilée à l’aide du compilateur juste-à-temps. Les fonctions non managées sont associées à des informations de base, telles qu’un nom et des métadonnées. Si la fonction non managée a été appelée à l’aide d’un appel de code non managé implicite (PInvoke), le runtime ne peut pas déterminer la destination de l’appel et la valeur de `functionId` sera null. Pour plus d’informations sur PInvoke implicite, consultez [utilisation de C++ l’interopérabilité (PInvoke implicite)](/cpp/dotnet/using-cpp-interop-implicit-pinvoke).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

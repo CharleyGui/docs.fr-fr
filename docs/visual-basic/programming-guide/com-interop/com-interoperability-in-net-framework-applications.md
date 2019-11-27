@@ -15,18 +15,18 @@ ms.locfileid: "74348748"
 ---
 # <a name="com-interoperability-in-net-framework-applications-visual-basic"></a>Interopérabilité COM dans les applications .NET Framework (Visual Basic)
 
-When you want to use COM objects and .NET Framework objects in the same application, you need to address the differences in how the objects exist in memory. A .NET Framework object is located in managed memory—the memory controlled by the common language runtime—and may be moved by the runtime as needed. A COM object is located in unmanaged memory and is not expected to move to another memory location. Visual Studio and the .NET Framework provide tools to control the interaction of these managed and unmanaged components. For more information about managed code, see [Common Language Runtime](../../../standard/clr.md).
+Lorsque vous souhaitez utiliser des objets COM et des objets .NET Framework dans la même application, vous devez résoudre les différences dans la façon dont les objets existent en mémoire. Un objet .NET Framework se trouve dans la mémoire managée (la mémoire contrôlée par le common language runtime) et peut être déplacé par le runtime en fonction des besoins. Un objet COM se trouve dans la mémoire non managée et n’est pas censé se déplacer vers un autre emplacement de mémoire. Visual Studio et le .NET Framework fournissent des outils pour contrôler l’interaction de ces composants managés et non managés. Pour plus d’informations sur le code managé, consultez [Common Language Runtime](../../../standard/clr.md).
 
-In addition to using COM objects in .NET applications, you may also want to use Visual Basic to develop objects accessible from unmanaged code through COM.
+Outre l’utilisation d’objets COM dans les applications .NET, vous pouvez également utiliser Visual Basic pour développer des objets accessibles à partir de code non managé via COM.
 
-The links on this page provide details on the interactions between COM and .NET Framework objects.
+Les liens de cette page fournissent des détails sur les interactions entre les objets COM et .NET Framework.
 
 ## <a name="related-sections"></a>Rubriques connexes
 
 | | |
 |---------|---------|
-| [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md) | Provides links to topics covering COM interoperability in Visual Basic, including COM objects, ActiveX controls, Win32 DLLs, managed objects, and inheritance of COM objects. |
-| [Interopération avec du code non managé](../../../framework/interop/index.md) | Briefly describes some of the interaction issues between managed and unmanaged code, and provides links for further study. |
-| [Wrappers COM](../../../standard/native-interop/com-wrappers.md) | Discusses runtime callable wrappers, which allow managed code to call COM methods, and COM callable wrappers, which allow COM clients to call .NET object methods. |
-| [Interopérabilité COM avancée](../../../framework/interop/index.md) | Provides links to topics covering COM interoperability with respect to wrappers, exceptions, inheritance, threading, events, conversions, and marshaling. |
-| [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md) | Discusses the tool you can use to convert the type definitions found within a COM type library into equivalent definitions in a common language runtime assembly. |
+| [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md) | Fournit des liens vers les rubriques qui décrivent l’interopérabilité COM dans Visual Basic, y compris les objets COM, les contrôles ActiveX, les dll Win32, les objets managés et l’héritage d’objets COM. |
+| [Interopération avec du code non managé](../../../framework/interop/index.md) | Décrit brièvement certains des problèmes d’interaction entre le code managé et le code non managé, et fournit des liens pour approfondir l’étude. |
+| [Wrappers COM](../../../standard/native-interop/com-wrappers.md) | Traite des wrappers pouvant être appelés par le runtime, qui permettent au code managé d’appeler des méthodes COM et des wrappers CCW (COM Callable Wrapper), qui permettent aux clients COM d’appeler des méthodes d’objet .NET. |
+| [Interopérabilité COM avancée](../../../framework/interop/index.md) | Fournit des liens vers les rubriques qui décrivent l’interopérabilité COM en ce qui concerne les wrappers, les exceptions, l’héritage, les threads, les événements, les conversions et le marshaling. |
+| [Tlbimp.exe (importateur de bibliothèques de types)](../../../framework/tools/tlbimp-exe-type-library-importer.md) | Présente l’outil que vous pouvez utiliser pour convertir les définitions de types trouvées dans une bibliothèque de types COM en définitions équivalentes dans un assembly common language runtime. |

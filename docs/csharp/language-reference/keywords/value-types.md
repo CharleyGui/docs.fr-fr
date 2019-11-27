@@ -32,7 +32,7 @@ Tous les types valeur sont implicitement dérivés de <xref:System.ValueType?dis
 
 Contrairement aux types référence, vous ne pouvez pas faire dériver un nouveau type d’un type valeur. En revanche, comme les types référence, les structs peuvent implémenter des interfaces.
 
-Les variables de type valeur ne peut pas être `null` par défaut. However, variables of the corresponding [nullable value types](../builtin-types/nullable-value-types.md) can be `null`.
+Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types valeur Nullable](../builtin-types/nullable-value-types.md) correspondants peuvent être `null`.
 
 Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
 

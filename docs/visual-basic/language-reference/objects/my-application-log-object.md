@@ -17,17 +17,17 @@ Fournit une propriété et des méthodes pour écrire les informations des évé
 ## <a name="remarks"></a>Notes  
  Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Application.Log` , consultez <xref:Microsoft.VisualBasic.Logging.Log>.  
   
- For more information, see [Logging Information from the Application](../../../visual-basic/developing-apps/programming/log-info/index.md).  
+ Pour plus d’informations, consultez [journalisation des informations de l’application](../../../visual-basic/developing-apps/programming/log-info/index.md).  
   
 > [!NOTE]
 > Vous pouvez également utiliser les classes du .NET Framework pour enregistrer des informations provenant de votre application. Pour plus d'informations, consultez [Tracing and Instrumenting Applications](../../../framework/debug-trace-profile/tracing-and-instrumenting-applications.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Espace de noms :** <xref:Microsoft.VisualBasic.Logging>  
   
  **Classe :** <xref:Microsoft.VisualBasic.Logging.Log>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,9 +10,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441196"
 ---
 # <a name="ui-automation-specification-and-community-promise"></a>Spécification UI Automation et promesse de la communauté
-UI Automation provides programmatic access to most user interface (UI) elements on the desktop, enabling assistive technology products such as screen readers to provide information about the UI to end users and to manipulate the UI by means other than standard input.  
+UI Automation fournit un accès par programme à la plupart des éléments de l’interface utilisateur sur le bureau, permettant ainsi aux produits de technologie d’assistance tels que les lecteurs d’écran de fournir aux utilisateurs finaux des informations sur l’interface utilisateur et de manipuler l’interface utilisateur par d’autres moyens que l’entrée standard. .  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UI Automation Specification](https://developer.microsoft.com/windows/accessible-apps)
-- [UI Automation Community Promise](https://developer.microsoft.com/windows/accessible-apps)
+- [Spécification UI Automation](https://developer.microsoft.com/windows/accessible-apps)
+- [Promesse de la communauté UI Automation](https://developer.microsoft.com/windows/accessible-apps)

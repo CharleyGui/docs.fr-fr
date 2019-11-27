@@ -1,6 +1,6 @@
 ---
-title: FIPS compliance - .NET Core
-description: Explains .NET Core Federal Information Processing Standard (FIPS) compliance.
+title: Compatibilité FIPS-.NET Core
+description: Explique la conformité à la norme FIPS (.NET Core normes FIPS (Federal Information Processing Standard)).
 ms.date: 11/20/2019
 author: Rick-Anderson
 ms.author: riande
@@ -11,21 +11,21 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/20/2019
 ms.locfileid: "74205065"
 ---
-# <a name="net-core-federal-information-processing-standard-fips-compliance"></a>.NET Core Federal Information Processing Standard (FIPS) compliance
+# <a name="net-core-federal-information-processing-standard-fips-compliance"></a>Conformité de .NET Core normes FIPS (Federal Information Processing Standard) (FIPS)
 
-The Federal Information Processing Standard (FIPS) Publication 140-2 is a U.S. government standard that defines minimum security requirements for cryptographic modules in information technology products, as defined in Section 5131 of the Information Technology Management Reform Act of 1996.
+La publication de normes FIPS (Federal Information Processing Standard) (FIPS) 140-2 est une norme gouvernementale américaine qui définit les exigences de sécurité minimales pour les modules cryptographiques dans les produits informatiques, tels que définis dans la section 5131 des informations. La réforme de la gestion des technologies 1996.
 
 .NET Core :
 
-* Passes cryptographic primitives calls through to the standard modules the underlying operating system provides.
-* Does **not** enforce the use of FIPS Approved algorithms or key sizes in .NET Core apps.
+* Passe les appels de primitives de chiffrement par le biais des modules standard fournis par le système d’exploitation sous-jacent.
+* N’applique **pas** l’utilisation d’algorithmes ou de tailles de clé approuvés par FIPS dans les applications .net core.
 
-The system administrator is responsible for configuring the FIPS compliance for an operating system.
+L’administrateur système est responsable de la configuration de la conformité FIPS pour un système d’exploitation.
 
-If code is written for a FIPS-compliant environment, the developer is responsible for ensuring that non-compliant FIPS algorithms aren't used.
+Si le code est écrit pour un environnement conforme aux normes FIPS, le développeur est chargé de s’assurer que les algorithmes FIPS non conformes ne sont pas utilisés.
 
-For more information on FIPS compliance, see the following articles:
+Pour plus d’informations sur la conformité FIPS, consultez les articles suivants :
 
-* [Windows FIPS Compliance](/windows/security/threat-protection/fips-140-validation)
-* [Configuring Windows for FIPS Compliance](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
-* [10.2. FEDERAL INFORMATION PROCESSING STANDARD (FIPS)](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-federal_standards_and_regulations-federal_information_processing_standard)
+* [Conformité Windows FIPS](/windows/security/threat-protection/fips-140-validation)
+* [Configuration de Windows pour la conformité FIPS](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
+* [10,2. FEDERAL INFORMATION PROCESSING STANDARD (FIPS)](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-federal_standards_and_regulations-federal_information_processing_standard)

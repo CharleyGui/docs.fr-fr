@@ -39,17 +39,17 @@ typedef struct {
   
 |Membre|Description|  
 |------------|-----------------|  
-|Majeur|Major version build number.|  
-|Mineur|Minor version build number.|  
-|Sub|Sub-build number.|  
-|Générer|Build number.|  
+|Majeure|Numéro de build de la version principale.|  
+|Mineure|Numéro de build de la version mineure.|  
+|Sub|Numéro de sous-Build.|  
+|Build|Numéro de Build.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

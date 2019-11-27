@@ -1,5 +1,5 @@
 ---
-title: Ajout d'éléments, d'attributs et de nœuds à une arborescence XML
+title: Ajout d’éléments, d’attributs et de nœuds à une arborescence XML
 ms.date: 07/20/2015
 ms.assetid: e243e694-c987-43aa-8b22-1e33dace582c
 ms.openlocfilehash: 8d3d3a27194bb022434f09778dbf3960bd0b9853
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345823"
 ---
-# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Adding Elements, Attributes, and Nodes to an XML Tree (Visual Basic)
+# <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-visual-basic"></a>Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (Visual Basic)
 Vous pouvez ajouter du contenu (éléments, attributs, commentaires, instructions de traitement, texte et CData) à une arborescence XML existante.  
   
 ## <a name="methods-for-adding-content"></a>Méthodes pour ajouter du contenu  
@@ -64,7 +64,7 @@ xmlTree.Add(srcTree.Element("Child9"))
 Console.WriteLine(xmlTree)  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>Commentaires  
  Ce code génère la sortie suivante :  
   
 ```xml  
@@ -82,4 +82,4 @@ Console.WriteLine(xmlTree)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

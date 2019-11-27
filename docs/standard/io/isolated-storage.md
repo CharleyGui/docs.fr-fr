@@ -31,9 +31,9 @@ ms.locfileid: "74204777"
 <a name="top"></a> Pour les applications de bureau, le stockage isolé est un mécanisme de stockage de données qui offre une isolation et une sécurité en définissant des méthodes standardisées pour associer du code à des données enregistrées. La standardisation offre également d'autres avantages. Les administrateurs peuvent utiliser des outils conçus pour manipuler un stockage isolé afin de configurer l'espace de stockage du fichier, de définir des stratégies de sécurité et de supprimer des données inutilisées. Grâce au stockage isolé, votre code ne nécessite plus de chemins d'accès uniques pour spécifier des emplacements sécurisés dans le système de fichiers. En outre, les données sont protégées des autres applications qui possèdent uniquement un accès au stockage isolé. Les informations codées en dur concernant l'emplacement de la zone de stockage d'une application ne sont pas nécessaires.
 
 > [!IMPORTANT]
-> Isolated storage is not available for Windows 8.x Store apps. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
+> Le stockage isolé n’est pas disponible pour les applications du Windows 8. x Store. À la place, utilisez les classes de données d’application des espaces de noms `Windows.Storage` inclus dans l’API Windows Runtime pour stocker des données locales et des fichiers. Pour plus d’informations, consultez [Données d’applications](https://docs.microsoft.com/previous-versions/windows/apps/hh464917(v=win.10)) dans le Centre de développement Windows.
 
-Cette rubrique contient les sections suivantes :
+Cette rubrique contient les sections suivantes :
 
 - [Magasins et compartiments de données](#data_compartments_and_stores)
 
@@ -81,13 +81,13 @@ Les administrateurs peuvent limiter la quantité de stockage isolé disponible p
 
 Pour accéder au stockage isolé, le code doit posséder tous les droits de système d'exploitation de la plateforme native. Les listes de contrôle d'accès (ACL) qui contrôlent les utilisateurs autorisés à utiliser le système de fichiers doivent être respectées. Les applications .NET Framework possèdent déjà des droits de système d'exploitation pour accéder au stockage isolé, sauf si elles effectuent un emprunt d'identité (spécifique à la plateforme). Dans ce cas, l'application doit garantir que l'identité de l'utilisateur empruntée possède les droits de système d'exploitation appropriés pour accéder au stockage isolé. Cet accès permet au code exécuté ou téléchargé à partir du Web de lire et d'écrire facilement dans une zone de stockage liée à un utilisateur particulier.
 
-Pour contrôler l'accès au stockage isolé, le Common Language Runtime utilise des objets <xref:System.Security.Permissions.IsolatedStorageFilePermission> . Chaque objet possède des propriétés qui spécifient les valeurs suivantes :
+Pour contrôler l'accès au stockage isolé, le Common Language Runtime utilise des objets <xref:System.Security.Permissions.IsolatedStorageFilePermission> . Chaque objet possède des propriétés qui spécifient les valeurs suivantes :
 
 - Utilisation autorisée, qui indique le type d'accès autorisé. Les valeurs sont des membres de l'énumération <xref:System.Security.Permissions.IsolatedStorageContainment> . Pour plus d'informations sur ces valeurs, consultez le tableau de la section suivante.
 
 - Quota de stockage, comme décrit dans la section précédente.
 
-Le runtime exige l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> lors de la première tentative d'ouverture d'un magasin par le code. Il détermine s’il doit ou non accorder cette autorisation, en fonction du niveau de fiabilité du code. Si l'autorisation est accordée, l'utilisation autorisée et les valeurs de quota de stockage sont déterminées par la stratégie de sécurité et par la demande du code de l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission>. La configuration de la stratégie de sécurité est définie à l'aide de l'outil .NET Framework Configuration Tool (Mscorcfg.msc). Tous les appelants de la pile des appels sont vérifiés pour garantir que chaque appelant possède au moins l'utilisation autorisée appropriée. Le runtime vérifie également le quota imposé au code qui a ouvert ou créé le magasin dans lequel le fichier doit être enregistré. Si ces conditions sont remplies, l'autorisation est accordée. Le quota est revérifié à chaque fois qu'un fichier est écrit dans le magasin.
+Le runtime exige l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> lors de la première tentative d'ouverture d'un magasin par le code. Il détermine s’il doit ou non accorder cette autorisation, en fonction du niveau de fiabilité du code. Si l'autorisation est accordée, l'utilisation autorisée et les valeurs de quota de stockage sont déterminées par la stratégie de sécurité et par la demande du code de l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission>. La configuration de la stratégie de sécurité est définie à l'aide de l'outil .NET Framework Configuration Tool (Mscorcfg.msc). Tous les appelants de la pile des appels sont vérifiés pour garantir que chaque appelant possède au moins l'utilisation autorisée appropriée. Le runtime vérifie également le quota imposé au code qui a ouvert ou créé le magasin dans lequel le fichier doit être enregistré. Si ces conditions sont remplies, l'autorisation est accordée. Le quota est revérifié à chaque fois qu'un fichier est écrit dans le magasin.
 
 Le code d'application n'est pas nécessaire pour demander l'autorisation, car le Common Language Runtime accorde l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> appropriée selon la stratégie de sécurité. Toutefois, il existe de bonnes raisons de demander des autorisations spécifiques nécessaires à votre application, notamment l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission>.
 
@@ -116,9 +116,9 @@ Il est parfois utile de vérifier une modification apportée au stockage isolé 
 |Système d'exploitation|Emplacement dans le système de fichiers|
 |----------------------|-----------------------------|
 |Windows 2000, Windows XP, Windows Server 2003 (mise à niveau de Windows NT 4.0)|Magasins itinérants =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMROOT>\Profiles\\<user\>\Local Settings\Application Data|
-|Windows 2000 - Nouvelle installation (et mises à niveau de Windows 98 et Windows NT 3.51)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
-|Windows XP, Windows Server 2003 - Nouvelle installation (et mises à niveau de Windows 2000 et Windows 98)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
-|[!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7, Windows Server 2008, Windows Vista|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
+|Windows 2000 - Nouvelle installation (et mises à niveau de Windows 98 et Windows NT 3.51)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
+|Windows XP, Windows Server 2003 - Nouvelle installation (et mises à niveau de Windows 2000 et Windows 98)|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Application Data<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Documents and Settings\\<user\>\Local Settings\Application Data|
+|[!INCLUDE[win8](../../../includes/win8-md.md)], Windows 7, Windows Server 2008, Windows Vista|Magasins itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Roaming<br /><br /> Magasins non itinérants =<br /><br /> \<SYSTEMDRIVE>\Users\\<user\>\AppData\Local|
 
 <a name="isolated_storage_tasks"></a>
 
@@ -134,7 +134,7 @@ Le .NET Framework fournit trois classes dans l'espace de noms <xref:System.IO.Is
 
 Les classes de stockage isolé vous permettent de créer, d'énumérer et de supprimer le stockage isolé. Les méthodes permettant d'effectuer ces tâches sont disponibles par l'intermédiaire de l'objet <xref:System.IO.IsolatedStorage.IsolatedStorageFile> . Avec certaines opérations, vous devez disposer de l'autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> qui représente le droit d'administrer le stockage isolé ; vous pouvez également être amené à disposer de droits de système d'exploitation pour accéder au fichier ou au répertoire.
 
-Pour obtenir une série d’exemples illustrant les tâches de stockage isolé courantes, consultez les rubriques « comment » sous [Rubriques connexes](#related_topics).
+Pour obtenir une série d'exemples illustrant les tâches de stockage isolé courantes, consultez les rubriques « comment » sous [Rubriques connexes](#related_topics).
 
 <a name="scenarios_for_isolated_storage"></a>
 
@@ -179,7 +179,7 @@ De nombreuses applications utilisent une base de données pour stocker et isoler
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorage?displayProperty=nameWithType>
 

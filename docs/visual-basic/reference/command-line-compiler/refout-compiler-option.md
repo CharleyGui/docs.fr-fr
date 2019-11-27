@@ -14,7 +14,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348653"
 ---
-# <a name="-refout-visual-basic"></a>-refout (Visual Basic)
+# <a name="-refout-visual-basic"></a>-REFOUT (Visual Basic)
 
 L’option **-refout** spécifie un chemin de fichier où l’assembly de référence doit être généré.
 
@@ -29,13 +29,13 @@ L’option **-refout** spécifie un chemin de fichier où l’assembly de réfé
 ## <a name="arguments"></a>Arguments
 
 `filepath`  
-The path and filename of the reference assembly. It should generally be in a sub-folder of the primary assembly. La convention recommandée (utilisée par MSBuild) consiste à placer l’assembly de référence dans un sous-dossier « ref/ » par rapport à l’assembly principal. All folders in `filepath` must exist; the compiler does not create them.
+Chemin d’accès et nom de fichier de l’assembly de référence. Il doit généralement se trouver dans un sous-dossier de l’assembly principal. La convention recommandée (utilisée par MSBuild) consiste à placer l’assembly de référence dans un sous-dossier « ref/ » par rapport à l’assembly principal. Tous les dossiers de `filepath` doivent exister. le compilateur ne les crée pas.
 
 ## <a name="remarks"></a>Notes
 
-Visual Basic supports the `-refout` switch starting with version 15.3.
+Visual Basic prend en charge le commutateur `-refout` à partir de la version 15,3.
 
-Reference assemblies are a special type of assembly that contain only the minimum amount of metadata required to represent the library's public API surface. They include declarations for all members that are significant when referencing an assembly in build tools, but exclude all member implementations and declarations of private members that have no observable impact on their API contract. For more information, see [Reference assemblies](../../../standard/assembly/reference-assemblies.md) in .NET Guide.
+Les assemblys de référence sont un type spécial d’assembly qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface de l’API publique de la bibliothèque. Elles incluent des déclarations pour tous les membres qui sont significatifs lors du référencement d’un assembly dans les outils de génération, mais excluent toutes les implémentations de membres et les déclarations de membres privés qui n’ont aucun impact observable sur leur contrat d’API. Pour plus d’informations, consultez [références des assemblys](../../../standard/assembly/reference-assemblies.md) dans le guide .net.
 
 Les options `-refout` et [`-refonly`](refonly-compiler-option.md) s’excluent mutuellement.
 

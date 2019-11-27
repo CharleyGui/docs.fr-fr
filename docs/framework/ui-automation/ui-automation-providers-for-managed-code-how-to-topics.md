@@ -19,7 +19,7 @@ ms.locfileid: "74441267"
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- This section contains code examples that demonstrate tasks in writing [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] providers for [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elements.  
+ Cette section contient des exemples de code qui illustrent les tâches d’écriture de fournisseurs de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour les éléments [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Exposer un fournisseur UI Automation côté serveur](expose-a-server-side-ui-automation-provider.md)  

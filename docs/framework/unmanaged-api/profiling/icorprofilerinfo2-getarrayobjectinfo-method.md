@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436033"
 ---
 # <a name="icorprofilerinfo2getarrayobjectinfo-method"></a>ICorProfilerInfo2::GetArrayObjectInfo, méthode
-Gets detailed information about an array object.  
+Obtient des informations détaillées sur un objet de tableau.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,24 +38,24 @@ HRESULT GetArrayObjectInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `objectId`  
- [in] The ID of a valid array object.  
+ dans ID d’un objet de tableau valide.  
   
  `cDimensions`  
- [in] The rank (number of dimensions) of the array.  
+ dans Rang (nombre de dimensions) du tableau.  
   
  `pDimensionSizes`  
- [out] An array that contains integers, each representing the size of a dimension of the array.  
+ à Tableau qui contient des entiers, chacun représentant la taille d’une dimension du tableau.  
   
  `pDimensionLowerBounds`  
- [out] An array that contains integers, each representing the lower bound of a dimension of the array.  
+ à Tableau qui contient des entiers, chacun représentant la limite inférieure d’une dimension du tableau.  
   
  `ppData`  
- [out] A pointer to the address of the raw buffer for the array, which is laid out according to the C++ convention.  
+ à Pointeur vers l’adresse de la mémoire tampon brute pour le tableau, qui est disposé selon la C++ Convention.  
   
 ## <a name="remarks"></a>Notes  
- The `pDimensionSizes` and `pDimensionLowerBounds` are parallel arrays, so the elements located at the same index in each array are characteristics of the same entity.  
+ Les `pDimensionSizes` et `pDimensionLowerBounds` sont des tableaux parallèles, de sorte que les éléments situés dans le même index dans chaque tableau sont des caractéristiques de la même entité.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

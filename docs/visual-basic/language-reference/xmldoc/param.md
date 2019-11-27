@@ -12,8 +12,8 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352299"
 ---
-# <a name="param-visual-basic"></a>\<param> (Visual Basic)
-Defines a parameter name and description.  
+# <a name="param-visual-basic"></a>> \<param (Visual Basic)
+Définit un nom de paramètre et une description.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,24 +23,24 @@ Defines a parameter name and description.
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- Nom d’un paramètre de méthode. Mettez le nom entre guillemets doubles (" ").  
+ Nom d’un paramètre de méthode. Mettez le nom entre guillemets doubles (" ").  
   
  `description`  
  Description du paramètre.  
   
 ## <a name="remarks"></a>Notes  
- The `<param>` tag should be used in the comment for a method declaration to describe one of the parameters for the method.  
+ La balise `<param>` doit être utilisée dans le commentaire d’une déclaration de méthode pour décrire l’un des paramètres de la méthode.  
   
- The text for the `<param>` tag will appear in the following locations:  
+ Le texte de la balise `<param>` apparaît aux emplacements suivants :  
   
-- Parameter Info of IntelliSense. Pour plus d’informations, consultez [Utilisation d’IntelliSense](/visualstudio/ide/using-intellisense).  
+- Informations sur les paramètres d’IntelliSense. Pour plus d'informations, consultez [Using IntelliSense](/visualstudio/ide/using-intellisense).  
   
-- Object Browser. Pour plus d’informations, consultez [Affichage de la structure du code](/visualstudio/ide/viewing-the-structure-of-code).  
+- Explorateur d’objets. Pour plus d’informations, consultez [Affichage de la structure du code](/visualstudio/ide/viewing-the-structure-of-code).  
   
  Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `<param>` tag to describe the `id` parameter.  
+ Cet exemple utilise la balise `<param>` pour décrire le paramètre `id`.  
   
  [!code-vb[VbVbcnXmlDocComments#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#6)]  
   

@@ -12,7 +12,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354139"
 ---
 # <a name="clauses-visual-basic"></a>Clauses (Visual Basic)
-The topics in this section document Visual Basic run-time clauses.  
+Les rubriques de cette section documentent Visual Basic clauses Runtime.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Alias](../../../visual-basic/language-reference/statements/alias-clause.md)  
@@ -29,7 +29,7 @@ The topics in this section document Visual Basic run-time clauses.
   
  [Of](../../../visual-basic/language-reference/statements/of-clause.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

@@ -12,15 +12,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351685"
 ---
 # <a name="registry-summary-visual-basic"></a>Liste des registres (Visual Basic)
-Visual Studio language keywords and run-time library members are organized by purpose and use.  
+Les mots clés de langage et les membres de la bibliothèque Runtime de Visual Studio sont organisés par rôle et utilisation.  
   
- Using the `My` feature provides you with greater productivity and performance in registry operations than these elements. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
+ L’utilisation de la fonctionnalité de `My` vous offre une plus grande productivité et de meilleures performances dans les opérations de registre que ces éléments. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>.  
   
 |**Action**|**Élément de langage**|  
 |----------------|--------------------------|  
-|Delete program settings.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
-|Read program settings.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A>, <xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
-|Save program settings.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
+|Supprimer les paramètres du programme.|<xref:Microsoft.VisualBasic.Interaction.DeleteSetting%2A>|  
+|Lire les paramètres du programme.|<xref:Microsoft.VisualBasic.Interaction.GetSetting%2A>, <xref:Microsoft.VisualBasic.Interaction.GetAllSettings%2A>|  
+|Enregistrer les paramètres du programme.|<xref:Microsoft.VisualBasic.Interaction.SaveSetting%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

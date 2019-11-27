@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434333"
 ---
 # <a name="imetadataemitgetsavesize-method"></a>IMetaDataEmit::GetSaveSize, méthode
-Gets the estimated binary size of the assembly and its metadata in the current scope.  
+Obtient la taille estimée en binaire de l’assembly et de ses métadonnées dans la portée actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,30 +36,30 @@ HRESULT GetSaveSize (
   
 ## <a name="parameters"></a>Paramètres  
  `fSave`  
- [in] A value of the [CorSaveSize](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) enumeration that specifies whether to get an accurate or approximate size. Only three values are valid: cssAccurate, cssQuick, and cssDiscardTransientCAs:  
+ dans Valeur de l’énumération [CorSaveSize,](../../../../docs/framework/unmanaged-api/metadata/corsavesize-enumeration.md) qui spécifie s’il faut obtenir une taille exacte ou approximative. Seules trois valeurs sont valides : cssAccurate, cssQuick et cssDiscardTransientCAs :  
   
-- cssAccurate returns the exact save size but takes longer to calculate.  
+- cssAccurate retourne la taille d’enregistrement exacte, mais met plus de temps à calculer.  
   
-- cssQuick returns a size, padded for safety, but takes less time to calculate.  
+- cssQuick retourne une taille, complétée pour des raisons de sécurité, mais prend moins de temps pour le calcul.  
   
-- cssDiscardTransientCAs tells `GetSaveSize` that it can throw away discardable custom attributes.  
+- cssDiscardTransientCAs indique `GetSaveSize` qu’il peut lever des attributs personnalisés pouvant être éliminés.  
   
  `pdwSaveSize`  
- [out] A pointer to the size that is required to save the file.  
+ à Pointeur vers la taille requise pour enregistrer le fichier.  
   
 ## <a name="remarks"></a>Notes  
- `GetSaveSize` calculates the space required, in bytes, to save the assembly and all its metadata in the current scope. (A call to the [IMetaDataEmit::SaveToStream](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetostream-method.md) method would emit this number of bytes.)  
+ `GetSaveSize` calcule l’espace nécessaire, en octets, pour enregistrer l’assembly et toutes ses métadonnées dans l’étendue actuelle. (Un appel à la méthode [IMetaDataEmit :: SaveToStream,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-savetostream-method.md) émettra ce nombre d’octets.)  
   
- If the caller implements the [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) interface (through [IMetaDataEmit::SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) or [IMetaDataEmit::Merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md)), `GetSaveSize` will perform two passes over the metadata to optimize and compress it. Otherwise, no optimizations are performed.  
+ Si l’appelant implémente l’interface [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) (via [IMetaDataEmit :: SetHandler](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-sethandler-method.md) ou [IMetaDataEmit :: Merge](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-merge-method.md)), `GetSaveSize` effectue deux passes sur les métadonnées pour les optimiser et les compresser. Dans le cas contraire, aucune optimisation n’est effectuée.  
   
- If optimization is performed, the first pass simply sorts the metadata structures to tune the performance of import-time searches. This step typically results in moving records around, with the side effect that tokens retained by the tool for future reference are invalidated. The metadata does not inform the caller of these token changes until after the second pass, however. In the second pass, various optimizations are performed that are intended to reduce the overall size of the metadata, such as optimizing away (early binding) `mdTypeRef` and `mdMemberRef` tokens when the reference is to a type or member that is declared in the current metadata scope. In this pass, another round of token mapping occurs. After this pass, the metadata engine notifies the caller, through its `IMapToken` interface, of any changed token values.  
+ Si l’optimisation est effectuée, la première passe trie simplement les structures de métadonnées pour régler les performances des recherches au moment de l’importation. En général, cette étape entraîne le déplacement des enregistrements, avec l’effet secondaire que les jetons conservés par l’outil pour référence ultérieure sont invalidés. Toutefois, les métadonnées n’informent pas l’appelant de ces modifications de jeton jusqu’à la deuxième passe. Au cours de la deuxième passe, différentes optimisations sont effectuées pour réduire la taille globale des métadonnées, telles que l’optimisation de la `mdTypeRef` et des jetons de `mdMemberRef` lorsque la référence est un type ou un membre déclaré dans la portée des métadonnées actuelle. Dans cette étape, un autre mappage de jetons est effectué. Après cette étape, le moteur de métadonnées avertit l’appelant, via son interface `IMapToken`, des valeurs de jeton modifiées.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v11plus](../../../../includes/net-current-v11plus-md.md)]  
   

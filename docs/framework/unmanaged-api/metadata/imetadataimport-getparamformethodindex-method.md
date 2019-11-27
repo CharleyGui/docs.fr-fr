@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437167"
 ---
 # <a name="imetadataimportgetparamformethodindex-method"></a>IMetaDataImport::GetParamForMethodIndex, méthode
-Gets the token that represents a specified parameter of the method represented by the specified MethodDef token.  
+Obtient le jeton qui représente un paramètre spécifié de la méthode représentée par le jeton MethodDef spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT GetParamForMethodIndex (
   
 ## <a name="parameters"></a>Paramètres  
  `md`  
- [in] A token that represents the method to return the parameter token for.  
+ dans Jeton qui représente la méthode pour laquelle retourner le jeton de paramètre.  
   
  `ulParamSeq`  
- [in] The ordinal position in the parameter list where the requested parameter occurs. Parameters are numbered starting from one, with the method's return value in position zero.  
+ dans Position ordinale dans la liste de paramètres où le paramètre demandé se produit. Les paramètres sont numérotés à partir de un, avec la valeur de retour de la méthode dans la position zéro.  
   
  `ppd`  
- [out] A pointer to a ParamDef token that represents the requested parameter.  
+ à Pointeur vers un jeton ParamDef qui représente le paramètre demandé.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -1,5 +1,5 @@
 ---
-title: '&amp;= Operator'
+title: '&amp;=, opérateur'
 ms.date: 07/20/2015
 f1_keywords:
 - vb.&=
@@ -17,8 +17,8 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350264"
 ---
-# <a name="amp-operator-visual-basic"></a>&amp;= Operator (Visual Basic)
-Concatenates a `String` expression to a `String` variable or property and assigns the result to the variable or property.  
+# <a name="amp-operator-visual-basic"></a>&amp;=, opérateur (Visual Basic)
+Concatène une expression `String` à une variable ou une propriété `String` et assigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,28 +28,28 @@ variableorproperty &= expression
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Requis. Any `String` variable or property.  
+ Requis. Toute variable ou propriété de `String`.  
   
  `expression`  
  Requis. Toute expression `String` .  
   
 ## <a name="remarks"></a>Notes  
- The element on the left side of the `&=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md). The `&=` operator concatenates the `String` expression on its right to the `String` variable or property on its left, and assigns the result to the variable or property on its left.  
+ L’élément situé à gauche de l’opérateur `&=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md). L’opérateur `&=` concatène l’expression `String` à droite à la variable ou à la propriété `String` à gauche, et assigne le résultat à la variable ou à la propriété située à gauche.  
   
 ## <a name="overloading"></a>Surcharge  
- The [& Operator](../../../visual-basic/language-reference/operators/concatenation-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `&` operator affects the behavior of the `&=` operator. If your code uses `&=` on a class or structure that overloads `&`, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur &](../../../visual-basic/language-reference/operators/concatenation-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `&` affecte le comportement de l’opérateur `&=`. Si votre code utilise `&=` sur une classe ou une structure qui surcharge `&`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- The following example uses the `&=` operator to concatenate two `String` variables and assign the result to the first variable.  
+ L’exemple suivant utilise l’opérateur `&=` pour concaténer deux variables `String` et assigner le résultat à la première variable.  
   
  [!code-vb[VbVbalrOperators#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#3)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [& (opérateur)](../../../visual-basic/language-reference/operators/concatenation-operator.md)
-- [+= (opérateur)](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
+- [&, opérateur](../../../visual-basic/language-reference/operators/concatenation-operator.md)
+- [+=, opérateur](../../../visual-basic/language-reference/operators/addition-assignment-operator.md)
 - [Opérateurs d’assignation](../../../visual-basic/language-reference/operators/assignment-operators.md)
-- [opérateur de concaténation](../../../visual-basic/language-reference/operators/concatenation-operators.md)
+- [Opérateurs de concaténation](../../../visual-basic/language-reference/operators/concatenation-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Instructions](../../../visual-basic/programming-guide/language-features/statements.md)

@@ -1,5 +1,5 @@
 ---
-title: méthodes d’extension.
+title: Méthodes d'extension
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ExtensionMethods
@@ -16,35 +16,35 @@ ms.locfileid: "74341174"
 ---
 # <a name="extension-methods-visual-basic"></a>Méthodes d'extension (Visual Basic)
 
-Extension methods enable developers to add custom functionality to data types that are already defined without creating a new derived type. Extension methods make it possible to write a method that can be called as if it were an instance method of the existing type.
+Les méthodes d’extension permettent aux développeurs d’ajouter des fonctionnalités personnalisées aux types de données qui sont déjà définis sans créer de type dérivé. Les méthodes d’extension permettent d’écrire une méthode qui peut être appelée comme s’il s’agissait d’une méthode d’instance du type existant.
 
 ## <a name="remarks"></a>Notes
 
-An extension method can be only a `Sub` procedure or a `Function` procedure. You cannot define an extension property, field, or event. All extension methods must be marked with the extension attribute `<Extension>` from the <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> namespace and must be defined in a [Module](../../../language-reference/statements/module-statement.md). If an extension method is defined outside a module, the Visual Basic compiler generates error [BC36551](../../../misc/bc36551.md), "Extension methods can be defined only in modules".
+Une méthode d’extension peut être uniquement une procédure `Sub` ou une procédure `Function`. Vous ne pouvez pas définir une propriété, un champ ou un événement d’extension. Toutes les méthodes d’extension doivent être marquées avec l’attribut d’extension `<Extension>` à partir de l’espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> et doivent être définies dans un [module](../../../language-reference/statements/module-statement.md). Si une méthode d’extension est définie à l’extérieur d’un module, le compilateur Visual Basic génère l’erreur [BC36551](../../../misc/bc36551.md), « les méthodes d’extension ne peuvent être définies que dans des modules ».
 
-The first parameter in an extension method definition specifies which data type the method extends. When the method is run, the first parameter is bound to the instance of the data type that invokes the method.
+Le premier paramètre d’une définition de méthode d’extension spécifie le type de données que la méthode étend. Lorsque la méthode est exécutée, le premier paramètre est lié à l’instance du type de données qui appelle la méthode.
 
-The `Extension` attribute can only be applied to a Visual Basic [`Module`](../../../language-reference/statements/module-statement.md), [`Sub`](../../../language-reference/statements/sub-statement.md), or [`Function`](../../../language-reference/statements/function-statement.md). If you apply it to a `Class` or a `Structure`, the Visual Basic compiler generates error [BC36550](../../../language-reference/error-messages/extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations.md), "'Extension' attribute can be applied only to 'Module', 'Sub', or 'Function' declarations".
+L’attribut `Extension` ne peut être appliqué qu’à un Visual Basic [`Module`](../../../language-reference/statements/module-statement.md), [`Sub`](../../../language-reference/statements/sub-statement.md)ou [`Function`](../../../language-reference/statements/function-statement.md). Si vous l’appliquez à un `Class` ou à un `Structure`, le compilateur Visual Basic génère l’erreur [BC36550](../../../language-reference/error-messages/extension-attribute-can-be-applied-only-to-module-sub-or-function-declarations.md), l’attribut’extension’ne peut être appliqué qu’aux déclarations’module', 'Sub’ou’Function'.
 
 ## <a name="example"></a>Exemple
 
-The following example defines a `Print` extension to the <xref:System.String> data type. The method uses `Console.WriteLine` to display a string. The parameter of the `Print` method, `aString`, establishes that the method extends the <xref:System.String> class.
+L’exemple suivant définit une extension de `Print` pour le type de données <xref:System.String>. La méthode utilise `Console.WriteLine` pour afficher une chaîne. Le paramètre de la méthode `Print`, `aString`, établit que la méthode étend la classe <xref:System.String>.
 
 [!code-vb[VbVbalrExtensionMethods#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/StringExtensions.vb#1)]
 
-Notice that the extension method definition is marked with the extension attribute `<Extension()>`. Marking the module in which the method is defined is optional, but each extension method must be marked. <xref:System.Runtime.CompilerServices> must be imported in order to access the extension attribute.
+Notez que la définition de la méthode d’extension est marquée avec l’attribut d’extension `<Extension()>`. Le marquage du module dans lequel la méthode est définie est facultatif, mais chaque méthode d’extension doit être marquée. les <xref:System.Runtime.CompilerServices> doivent être importés pour accéder à l’attribut d’extension.
 
-Extension methods can be declared only within modules. Typically, the module in which an extension method is defined is not the same module as the one in which it is called. Instead, the module that contains the extension method is imported, if it needs to be, to bring it into scope. After the module that contains `Print` is in scope, the method can be called as if it were an ordinary instance method that takes no arguments, such as `ToUpper`:
+Les méthodes d’extension ne peuvent être déclarées que dans des modules. En général, le module dans lequel une méthode d’extension est définie n’est pas le même que celui dans lequel il est appelé. Au lieu de cela, le module qui contient la méthode d’extension est importé, si nécessaire, pour le placer dans la portée. Une fois que le module qui contient `Print` est dans la portée, la méthode peut être appelée comme s’il s’agissait d’une méthode d’instance ordinaire qui ne prend pas d’arguments, comme `ToUpper`:
 
 [!code-vb[VbVbalrExtensionMethods#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class1.vb#2)]
 
-The next example, `PrintAndPunctuate`, is also an extension to <xref:System.String>, this time defined with two parameters. The first parameter, `aString`, establishes that the extension method extends <xref:System.String>. The second parameter, `punc`, is intended to be a string of punctuation marks that is passed in as an argument when the method is called. The method displays the string followed by the punctuation marks.
+L’exemple suivant, `PrintAndPunctuate`, est également une extension de <xref:System.String>, cette fois définie avec deux paramètres. Le premier paramètre, `aString`, établit que la méthode d’extension étend <xref:System.String>. Le deuxième paramètre, `punc`, est destiné à être une chaîne de signes de ponctuation qui est passée comme argument lorsque la méthode est appelée. La méthode affiche la chaîne suivie des signes de ponctuation.
 
 [!code-vb[VbVbalrExtensionMethods#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class2.vb#3)]
 
-The method is called by sending in a string argument for `punc`: `example.PrintAndPunctuate(".")`
+La méthode est appelée en envoyant un argument de chaîne pour `punc`: `example.PrintAndPunctuate(".")`
 
-The following example shows `Print` and `PrintAndPunctuate` defined and called. <xref:System.Runtime.CompilerServices> is imported in the definition module in order to enable access to the extension attribute.
+L’exemple suivant montre `Print` et `PrintAndPunctuate` définis et appelés. <xref:System.Runtime.CompilerServices> est importé dans le module de définition afin d’autoriser l’accès à l’attribut d’extension.
 
 ```vb
 Imports System.Runtime.CompilerServices
@@ -63,7 +63,7 @@ Module StringExtensions
 End Module
 ```
 
-Next, the extension methods are brought into scope and called:
+Ensuite, les méthodes d’extension sont mises en portée et appelées :
 
 ```vb
 Imports ConsoleApplication2.StringExtensions
@@ -81,94 +81,94 @@ Module Module1
 End Module
 ```
 
-All that is required to be able to run these or similar extension methods is that they be in scope. If the module that contains an extension method is in scope, it is visible in IntelliSense and can be called as if it were an ordinary instance method.
+Tout ce qui est nécessaire pour pouvoir exécuter ces méthodes d’extension ou similaires, c’est qu’elles se trouvent dans la portée. Si le module qui contient une méthode d’extension est dans la portée, il est visible dans IntelliSense et peut être appelé comme s’il s’agissait d’une méthode d’instance ordinaire.
 
-Notice that when the methods are invoked, no argument is sent in for the first parameter. Parameter `aString` in the previous method definitions is bound to `example`, the instance of `String` that calls them. The compiler will use `example` as the argument sent to the first parameter.
+Notez que lorsque les méthodes sont appelées, aucun argument n’est envoyé dans pour le premier paramètre. Les `aString` de paramètres dans les définitions de méthode précédentes sont liées à `example`, l’instance de `String` qui les appelle. Le compilateur utilise `example` comme argument envoyé au premier paramètre.
 
-If an extension method is called for an object that is set to `Nothing`, the extension method executes. This does not apply to ordinary instance methods. You can explicitly check for `Nothing` in the extension method.
+Si une méthode d’extension est appelée pour un objet qui a la valeur `Nothing`, la méthode d’extension s’exécute. Cela ne s’applique pas aux méthodes d’instance ordinaires. Vous pouvez vérifier explicitement `Nothing` dans la méthode d’extension.
 
-## <a name="types-that-can-be-extended"></a>Types that can be extended
+## <a name="types-that-can-be-extended"></a>Types pouvant être étendus
 
-You can define an extension method on most types that can be represented in a Visual Basic parameter list, including the following:
+Vous pouvez définir une méthode d’extension sur la plupart des types qui peuvent être représentés dans une liste de paramètres Visual Basic, y compris les éléments suivants :
 
-- Classes (reference types)
-- Structures (value types)
+- Classes (types référence)
+- Structures (types valeur)
 - Interfaces
 - Délégués
-- ByRef and ByVal arguments
-- Generic method parameters
+- Arguments ByRef et ByVal
+- Paramètres de méthode générique
 - Tableaux
 
-Because the first parameter specifies the data type that the extension method extends, it is required and cannot be optional. For that reason, `Optional` parameters and `ParamArray` parameters cannot be the first parameter in the parameter list.
+Étant donné que le premier paramètre spécifie le type de données étendu par la méthode d’extension, il est obligatoire et ne peut pas être facultatif. Pour cette raison, `Optional` paramètres et `ParamArray` paramètres ne peuvent pas être le premier paramètre de la liste de paramètres.
 
-Extension methods are not considered in late binding. In the following example, the statement `anObject.PrintMe()` raises a <xref:System.MissingMemberException> exception, the same exception you would see if the second `PrintMe` extension method definition were deleted.
+Les méthodes d’extension ne sont pas prises en compte dans la liaison tardive. Dans l’exemple suivant, l’instruction `anObject.PrintMe()` lève une exception <xref:System.MissingMemberException>, la même exception que vous pouvez voir si la deuxième définition de la méthode d’extension `PrintMe` a été supprimée.
 
 [!code-vb[VbVbalrExtensionMethods#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class6.vb#9)]
 
 ## <a name="best-practices"></a>meilleures pratiques recommandées.
 
-Extension methods provide a convenient and powerful way to extend an existing type. However, to use them successfully, there are some points to consider. These considerations apply mainly to authors of class libraries, but they might affect any application that uses extension methods.
+Les méthodes d’extension offrent un moyen pratique et puissant d’étendre un type existant. Toutefois, pour les utiliser correctement, il existe des points à prendre en compte. Ces considérations s’appliquent principalement aux auteurs de bibliothèques de classes, mais elles peuvent affecter n’importe quelle application qui utilise des méthodes d’extension.
 
-Most generally, extension methods that you add to types that you do not own are more vulnerable than extension methods added to types that you control. A number of things can occur in classes you do not own that can interfere with your extension methods.
+En règle générale, les méthodes d’extension que vous ajoutez aux types que vous ne possédez pas sont plus vulnérables que les méthodes d’extension ajoutées aux types que vous contrôlez. Un certain nombre de choses peuvent se produire dans les classes dont vous n’êtes pas propriétaire et qui peuvent interférer avec vos méthodes d’extension.
 
-- If any accessible instance member exists that has a signature that is compatible with the arguments in the calling statement, with no narrowing conversions required from argument to parameter, the instance method will be used in preference to any extension method. Therefore, if an appropriate instance method is added to a class at some point, an existing extension member that you rely on may become inaccessible.
+- S’il existe un membre d’instance accessible qui a une signature compatible avec les arguments de l’instruction d’appel, sans conversions restrictives requises d’argument en paramètre, la méthode d’instance est utilisée de préférence à toute méthode d’extension. Par conséquent, si une méthode d’instance appropriée est ajoutée à une classe à un moment donné, un membre d’extension existant sur lequel vous vous fiez peut devenir inaccessible.
 
-- The author of an extension method cannot prevent other programmers from writing conflicting extension methods that may have precedence over the original extension.
+- L’auteur d’une méthode d’extension ne peut pas empêcher d’autres programmeurs d’écrire des méthodes d’extension conflictuelles qui peuvent avoir priorité sur l’extension d’origine.
 
-- You can improve robustness by putting extension methods in their own namespace. Consumers of your library can then include a namespace or exclude it, or select among namespaces, separately from the rest of the library.
+- Vous pouvez améliorer la robustesse en plaçant des méthodes d’extension dans leur propre espace de noms. Les consommateurs de votre bibliothèque peuvent alors inclure un espace de noms ou l’exclure, ou sélectionner parmi les espaces de noms, séparément du reste de la bibliothèque.
 
-- It may be safer to extend interfaces than it is to extend classes, especially if you do not own the interface or class. A change in an interface affects every class that implements it. Therefore, the author may be less likely to add or change methods in an interface. However, if a class implements two interfaces that have extension methods with the same signature, neither extension method is visible.
+- Il peut être plus sûr d’étendre les interfaces que d’étendre les classes, en particulier si vous n’êtes pas propriétaire de l’interface ou de la classe. Une modification dans une interface affecte chaque classe qui l’implémente. Par conséquent, l’auteur peut être moins susceptible d’ajouter ou de modifier des méthodes dans une interface. Toutefois, si une classe implémente deux interfaces qui ont des méthodes d’extension avec la même signature, aucune méthode d’extension n’est visible.
 
-- Extend the most specific type you can. In a hierarchy of types, if you select a type from which many other types are derived, there are layers of possibilities for the introduction of instance methods or other extension methods that might interfere with yours.
+- Étendez le type le plus spécifique que vous pouvez. Dans une hiérarchie de types, si vous sélectionnez un type à partir duquel de nombreux autres types sont dérivés, il existe des couches de possibilités pour l’introduction de méthodes d’instance ou d’autres méthodes d’extension qui peuvent interférer avec les vôtres.
 
-## <a name="extension-methods-instance-methods-and-properties"></a>Extension methods, instance methods, and properties
+## <a name="extension-methods-instance-methods-and-properties"></a>Méthodes d’extension, méthodes d’instance et propriétés
 
-When an in-scope instance method has a signature that is compatible with the arguments of a calling statement, the instance method is chosen in preference to any extension method. The instance method has precedence even if the extension method is a better match. In the following example, `ExampleClass` contains an instance method named `ExampleMethod` that has one parameter of type `Integer`. Extension method `ExampleMethod` extends `ExampleClass`, and has one parameter of type `Long`.
+Quand une méthode d’instance dans la portée a une signature qui est compatible avec les arguments d’une instruction d’appel, la méthode d’instance est choisie de préférence à toute méthode d’extension. La méthode d’instance a la priorité, même si la méthode d’extension est une meilleure correspondance. Dans l’exemple suivant, `ExampleClass` contient une méthode d’instance nommée `ExampleMethod` qui a un paramètre de type `Integer`. La méthode d’extension `ExampleMethod` étend `ExampleClass`et a un paramètre de type `Long`.
 
 [!code-vb[VbVbalrExtensionMethods#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#4)]
 
-The first call to `ExampleMethod` in the following code calls the extension method, because `arg1` is `Long` and is compatible only with the `Long` parameter in the extension method. The second call to `ExampleMethod` has an `Integer` argument, `arg2`, and it calls the instance method.
+Le premier appel à `ExampleMethod` dans le code suivant appelle la méthode d’extension, car `arg1` est `Long` et est compatible uniquement avec le paramètre `Long` dans la méthode d’extension. Le deuxième appel à `ExampleMethod` a un argument `Integer`, `arg2`, et il appelle la méthode d’instance.
 
 [!code-vb[VbVbalrExtensionMethods#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class4.vb#5)]
 
-Now reverse the data types of the parameters in the two methods:
+À présent, inversez les types de données des paramètres dans les deux méthodes :
 
 [!code-vb[VbVbalrExtensionMethods#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#6)]
 
-This time the code in `Main` calls the instance method both times. This is because both `arg1` and `arg2` have a widening conversion to `Long`, and the instance method takes precedence over the extension method in both cases.
+Cette fois, le code de `Main` appelle la méthode d’instance à la fois. Cela est dû au fait que `arg1` et `arg2` ont une conversion étendue en `Long`et que la méthode d’instance est prioritaire sur la méthode d’extension dans les deux cas.
 
 [!code-vb[VbVbalrExtensionMethods#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Class5.vb#7)]
 
-Therefore, an extension method cannot replace an existing instance method. However, when an extension method has the same name as an instance method but the signatures do not conflict, both methods can be accessed. For example, if class `ExampleClass` contains a method named `ExampleMethod` that takes no arguments, extension methods with the same name but different signatures are permitted, as shown in the following code.
+Par conséquent, une méthode d’extension ne peut pas remplacer une méthode d’instance existante. Toutefois, lorsqu’une méthode d’extension porte le même nom qu’une méthode d’instance, mais que les signatures ne sont pas en conflit, les deux méthodes sont accessibles. Par exemple, si la classe `ExampleClass` contient une méthode nommée `ExampleMethod` qui n’accepte aucun argument, les méthodes d’extension portant le même nom mais des signatures différentes sont autorisées, comme indiqué dans le code suivant.
 
 [!code-vb[VbVbalrExtensionMethods#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrExtensionMethods/VB/Module3.vb#8)]
 
-The output from this code is as follows:
+Le résultat de ce code est le suivant :
 
 ```console
 Extension method
 Instance method
 ```
 
-The situation is simpler with properties: if an extension method has the same name as a property of the class it extends, the extension method is not visible and cannot be accessed.
+La situation est plus simple avec des propriétés : si une méthode d’extension porte le même nom qu’une propriété de la classe qu’elle étend, la méthode d’extension n’est pas visible et n’est pas accessible.
 
-## <a name="extension-method-precedence"></a>Extension method precedence
+## <a name="extension-method-precedence"></a>Priorité de la méthode d’extension
 
-When two extension methods that have identical signatures are in scope and accessible, the one with higher precedence will be invoked. An extension method's precedence is based on the mechanism used to bring the method into scope. The following list shows the precedence hierarchy, from highest to lowest.
+Lorsque deux méthodes d’extension qui ont des signatures identiques sont dans la portée et sont accessibles, celle avec une priorité plus élevée est appelée. La priorité d’une méthode d’extension est basée sur le mécanisme utilisé pour mettre la méthode dans la portée. La liste suivante affiche la hiérarchie des priorités, du plus élevé au plus bas.
 
-1. Extension methods defined inside the current module.
+1. Méthodes d’extension définies dans le module en cours.
 
-2. Extension methods defined inside data types in the current namespace or any one of its parents, with child namespaces having higher precedence than parent namespaces.
+2. Méthodes d’extension définies dans les types de données de l’espace de noms actuel ou de l’un de ses parents, les espaces de noms enfants ayant une priorité plus élevée que les espaces de noms parents.
 
-3. Extension methods defined inside any type imports in the current file.
+3. Méthodes d’extension définies dans les importations de type dans le fichier actuel.
 
-4. Extension methods defined inside any namespace imports in the current file.
+4. Méthodes d’extension définies dans les importations d’espaces de noms dans le fichier actuel.
 
-5. Extension methods defined inside any project-level type imports.
+5. Méthodes d’extension définies dans les importations de type au niveau du projet.
 
-6. Extension methods defined inside any project-level namespace imports.
+6. Méthodes d’extension définies dans les importations d’espaces de noms au niveau du projet.
 
-If precedence does not resolve the ambiguity, you can use the fully qualified name to specify the method that you are calling. If the `Print` method in the earlier example is defined in a module named `StringExtensions`, the fully qualified name is `StringExtensions.Print(example)` instead of `example.Print()`.
+Si la précédence ne résout pas l’ambiguïté, vous pouvez utiliser le nom qualifié complet pour spécifier la méthode que vous appelez. Si la méthode `Print` dans l’exemple précédent est définie dans un module nommé `StringExtensions`, le nom qualifié complet est `StringExtensions.Print(example)` au lieu de `example.Print()`.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -180,4 +180,4 @@ If precedence does not resolve the ambiguity, you can use the fully qualified na
 - [Paramètres facultatifs](optional-parameters.md)
 - [tableaux de paramètres](parameter-arrays.md)
 - [Vue d’ensemble des attributs](../../concepts/attributes/index.md)
-- [Scope in Visual Basic](../declared-elements/scope.md)
+- [Étendue dans Visual Basic](../declared-elements/scope.md)

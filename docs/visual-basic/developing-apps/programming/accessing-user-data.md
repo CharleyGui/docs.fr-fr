@@ -26,7 +26,7 @@ Cette section contient des rubriques qui traitent de l’objet `My.User` et des 
   
 ## <a name="tasks"></a>Tâches  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |--------|---------|  
 |Obtenir le nom de connexion de l’utilisateur|<xref:Microsoft.VisualBasic.ApplicationServices.User.Name%2A>|  
 |Obtenir le nom de domaine de l’utilisateur si l’application utilise l’authentification Windows|<xref:Microsoft.VisualBasic.ApplicationServices.User.CurrentPrincipal>|  

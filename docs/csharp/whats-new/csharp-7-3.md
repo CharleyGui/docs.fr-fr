@@ -129,7 +129,7 @@ Pour plus d’informations, consultez l’article [Instruction `fixed`](../langu
 
 Vous pouvez maintenant spécifier le type <xref:System.Enum?displayProperty=nameWithType> ou <xref:System.Delegate?displayProperty=nameWithType> en tant que contraintes de classe de base pour un paramètre de type.
 
-You can also use the new `unmanaged` constraint, to specify that a type parameter must be a non-nullable [unmanaged type](../language-reference/builtin-types/unmanaged-types.md).
+Vous pouvez également utiliser la nouvelle contrainte de `unmanaged` pour spécifier qu’un paramètre de type doit être un type non [managé](../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL.
 
 Pour plus d’informations, consultez les articles sur les [contraintes génériques `where`](../language-reference/keywords/where-generic-type-constraint.md) et les [contraintes sur les paramètres de type](../programming-guide/generics/constraints-on-type-parameters.md).
 

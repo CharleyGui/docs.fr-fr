@@ -44,7 +44,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
 
     Les outils globaux peuvent être installés dans le répertoire par défaut ou dans un emplacement spécifique. Les répertoires par défaut sont :
 
-    | Système d’exploitation          | Chemin d’accès                          |
+    | Système d’exploitation          | Chemin d'accès                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |

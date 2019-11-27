@@ -14,16 +14,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345128"
 ---
 # <a name="how-to-declare-custom-events-to-conserve-memory-visual-basic"></a>Comment : déclarer des événements personnalisés pour économiser la mémoire (Visual Basic)
-There are several circumstances when it is important that an application keep its memory usage low. Custom events allow the application to use memory only for the events that it handles.  
+Dans certains cas, il est important qu’une application conserve son utilisation de la mémoire faible. Les événements personnalisés permettent à l’application d’utiliser uniquement la mémoire pour les événements qu’elle gère.  
   
- By default, when a class declares an event, the compiler allocates memory for a field to store the event information. If a class has many unused events, they needlessly take up memory.  
+ Par défaut, lorsqu’une classe déclare un événement, le compilateur alloue de la mémoire pour un champ afin de stocker les informations sur l’événement. Si une classe possède de nombreux événements inutilisés, ils occupent inutilement de la mémoire.  
   
- Instead of using the default implementation of events that Visual Basic provides, you can use custom events to manage the memory usage more carefully.  
+ Au lieu d’utiliser l’implémentation par défaut des événements fournis par Visual Basic, vous pouvez utiliser des événements personnalisés pour gérer l’utilisation de la mémoire plus attentivement.  
   
 ## <a name="example"></a>Exemple  
- In this example, the class uses one instance of the <xref:System.ComponentModel.EventHandlerList> class, stored in the `Events` field, to store information about the events in use. The <xref:System.ComponentModel.EventHandlerList> class is an optimized list class designed to hold delegates.  
+ Dans cet exemple, la classe utilise une instance de la classe <xref:System.ComponentModel.EventHandlerList>, stockée dans le champ `Events`, pour stocker des informations sur les événements en cours d’utilisation. La classe <xref:System.ComponentModel.EventHandlerList> est une classe de liste optimisée conçue pour contenir des délégués.  
   
- All events in the class use the `Events` field to keep track of what methods are handling each event.  
+ Tous les événements de la classe utilisent le champ `Events` pour effectuer le suivi des méthodes qui gèrent chaque événement.  
   
  [!code-vb[VbVbalrEvents#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#22)]  
   

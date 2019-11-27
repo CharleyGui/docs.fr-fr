@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431131"
 ---
 # <a name="imetadatadispenserexopenscopeonitypeinfo-method"></a>IMetaDataDispenserEx::OpenScopeOnITypeInfo, méthode
-Cette méthode n’est pas implémentée. If called, it returns E_NOTIMPL.  
+Cette méthode n’est pas implémentée. Si elle est appelée, elle retourne E_NOTIMPL.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT OpenScopeOnITypeInfo (
   
 ## <a name="parameters"></a>Paramètres  
  `pITI`  
- [in] Pointer to an [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) interface that provides the type information on which to open the scope.  
+ dans Pointeur vers une interface [ITypeInfo](https://docs.microsoft.com/previous-versions/windows/desktop/api/oaidl/nn-oaidl-itypeinfo) qui fournit les informations de type sur lesquelles ouvrir la portée.  
   
  `dwOpenFlags`  
- [in] The open mode flags.  
+ dans Indicateurs du mode d’ouverture.  
   
  `riid`  
- [in] The desired interface.  
+ dans Interface souhaitée.  
   
  `ppIUnk`  
- [out] Pointer to a pointer to the returned interface.  
+ à Pointeur vers un pointeur vers l’interface retournée.  
   
-## <a name="requirements"></a>spécifications  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

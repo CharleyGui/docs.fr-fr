@@ -12,13 +12,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430480"
 ---
-# <a name="gccpugroup-element"></a>\<GCCpuGroup> Element
+# <a name="gccpugroup-element"></a>\<élément GCCpuGroup >
 
 Indique si le garbage collection prend en charge plusieurs groupes de processeurs.
 
 [ **\<configuration>** ](../configuration-element.md)\
-&nbsp;&nbsp;[ **\<runtime>** ](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup>**
+&nbsp;&nbsp;[ **\<runtime >** ](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp; **\<GCCpuGroup** >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -39,14 +39,14 @@ Les sections suivantes décrivent des attributs, des éléments enfants et des �
 
 ## <a name="enabled-attribute"></a>Attribut enabled
 
-|valeur|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|`false`|Garbage collection does not support multiple CPU groups. Il s'agit de la valeur par défaut.|
-|`true`|Garbage collection supports multiple CPU groups, if server garbage collection is enabled.|
+|`false`|Le garbage collection ne prend pas en charge plusieurs groupes d’UC. Il s'agit de la valeur par défaut.|
+|`true`|Le garbage collection prend en charge plusieurs groupes de PROCESSEURs, si le serveur garbage collection est activé.|
 
 ### <a name="child-elements"></a>Éléments enfants
 
-Aucun(e).
+None.
 
 ### <a name="parent-elements"></a>Éléments parents
 
@@ -57,14 +57,14 @@ Aucun(e).
 
 ## <a name="remarks"></a>Notes
 
-When a computer has multiple CPU groups and server garbage collection is enabled (see the [\<gcServer>](gcserver-element.md) element), enabling this element extends garbage collection across all CPU groups and takes all cores into account when creating and balancing heaps.
+Quand un ordinateur a plusieurs groupes d’UC et que la garbage collection du serveur est activée (Voir l’élément [\<gcServer >](gcserver-element.md) ), l’activation de cet élément étend garbage collection sur tous les groupes de processeurs et prend en compte tous les cœurs lors de la création et de l’équilibrage des tas.
 
 > [!NOTE]
-> This element applies only to garbage collection threads. To enable the runtime to distribute user threads across all CPU groups, you must also enable the [\<Thread_UseAllCpuGroups>](thread-useallcpugroups-element.md) element.
+> Cet élément s’applique uniquement aux threads garbage collections. Pour permettre au runtime de distribuer des threads utilisateur sur tous les groupes de PROCESSEURs, vous devez également activer l’élément [\<Thread_UseAllCpuGroups >](thread-useallcpugroups-element.md) .
 
 ## <a name="example"></a>Exemple
 
-The following example shows how to enable garbage collection for multiple CPU groups.
+L’exemple suivant montre comment activer garbage collection pour plusieurs groupes d’UC.
 
 ```xml
 <configuration>
@@ -79,5 +79,5 @@ The following example shows how to enable garbage collection for multiple CPU gr
 
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
-- [To disable concurrent garbage collection](gcconcurrent-element.md#to-disable-background-garbage-collection)
+- [Pour désactiver les garbage collection simultanées](gcconcurrent-element.md#to-disable-background-garbage-collection)
 - [Garbage collection de station de travail et de serveur](../../../../standard/garbage-collection/fundamentals.md#workstation-and-server-garbage-collection)

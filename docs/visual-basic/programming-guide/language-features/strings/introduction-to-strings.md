@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344316"
 ---
 # <a name="introduction-to-strings-in-visual-basic"></a>Introduction aux chaînes en Visual Basic
-This section describes the basic concepts behind using strings in Visual Basic.  
+Cette section décrit les concepts de base qui sous-tendent l’utilisation de chaînes dans Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Concepts de base des chaînes](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- Introduces the basic concepts behind using strings and string variables.  
+ Présente les concepts de base qui sous-tendent l’utilisation de chaînes et de variables de chaîne.  
   
- [Types of String Manipulation Methods in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
- Introduces several different ways to analyze and manipulate strings.  
+ [Types de méthodes de manipulation de chaînes dans Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
+ Présente plusieurs méthodes différentes pour analyser et manipuler des chaînes.  
   
- [How Culture Affects Strings in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
- Discusses how Visual Basic uses culture information to perform string conversions and comparisons.  
+ [Impact de la culture sur les chaînes dans Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
+ Explique comment Visual Basic utilise les informations de culture pour effectuer des conversions de chaînes et des comparaisons.  
   
 ## <a name="see-also"></a>Voir aussi
 

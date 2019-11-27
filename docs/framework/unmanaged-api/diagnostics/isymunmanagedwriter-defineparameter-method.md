@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427994"
 ---
 # <a name="isymunmanagedwriterdefineparameter-method"></a>ISymUnmanagedWriter::DefineParameter, méthode
-Defines a single parameter in the current method. The parameter type is taken from the parameter's position (sequence) within the method's signature.  
+Définit un paramètre unique dans la méthode actuelle. Le type de paramètre est extrait de la position (séquence) du paramètre dans la signature de la méthode.  
   
- If parameters are defined in the metadata for a given method, you do not have to define them again by using this method. The symbol readers must check the normal metadata for the parameters before checking the symbol store.  
+ Si des paramètres sont définis dans les métadonnées d’une méthode donnée, vous n’avez pas à les redéfinir à l’aide de cette méthode. Les lecteurs de symboles doivent vérifier les métadonnées normales des paramètres avant de vérifier le magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,31 +42,31 @@ HRESULT DefineParameter(
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- [in] The parameter name.  
+ dans Nom du paramètre.  
   
  `attributes`  
- [in] The parameter attributes.  
+ dans Attributs du paramètre.  
   
  `sequence`  
- [in] The parameter signature.  
+ dans Signature du paramètre.  
   
  `addrKind`  
- [in] The address type.  
+ dans Type d’adresse.  
   
  `addr1`  
- [in] The first address for the parameter specification.  
+ dans Première adresse de la spécification de paramètre.  
   
  `addr2`  
- [in] The second address for the parameter specification.  
+ dans Deuxième adresse de la spécification de paramètre.  
   
  `addr3`  
- [in] The third address for the parameter specification.  
+ dans Troisième adresse de la spécification de paramètre.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349404"
 ---
 # <a name="xml-literals-visual-basic"></a>Littéraux XML (Visual Basic)
-The topics in this section document the syntax of XML literals in Visual Basic. La syntaxe des littéraux XML vous permet d’incorporer du code XML directement dans votre code.  
+Les rubriques de cette section documentent la syntaxe des littéraux XML dans Visual Basic. La syntaxe des littéraux XML vous permet d’incorporer du code XML directement dans votre code.  
   
 ## <a name="in-this-section"></a>Dans cette section  
   

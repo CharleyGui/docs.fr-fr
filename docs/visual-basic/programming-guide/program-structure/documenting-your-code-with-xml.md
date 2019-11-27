@@ -15,29 +15,29 @@ ms.locfileid: "74347439"
 ---
 # <a name="documenting-your-code-with-xml-visual-basic"></a>Documentation de votre code avec le langage XML (Visual Basic)
 
-In Visual Basic, you can document your code using XML
+Dans Visual Basic, vous pouvez documenter votre code à l’aide de XML
 
 ## <a name="xml-documentation-comments"></a>Commentaires de documentation XML
 
-Visual Basic provides an easy way to automatically create XML documentation for projects. You can automatically generate an XML skeleton for your types and members, and then provide summaries, descriptive documentation for each parameter, and other remarks. With the appropriate setup, the XML documentation is automatically emitted into an XML file with the same name as your project and the .xml extension. Pour plus d’informations, consultez [-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
+Visual Basic offre un moyen simple de créer automatiquement la documentation XML pour les projets. Vous pouvez générer automatiquement un squelette XML pour vos types et membres, puis fournir des résumés, une documentation descriptive pour chaque paramètre et d’autres remarques. Avec l’installation appropriée, la documentation XML est automatiquement émise dans un fichier XML portant le même nom que votre projet et l’extension. Xml. Pour plus d’informations, consultez [-doc](../../../visual-basic/reference/command-line-compiler/doc.md).
 
-The XML file can be consumed or otherwise manipulated as XML. This file is located in the same directory as the output .exe or .dll file of your project.
+Le fichier XML peut être consommé ou manipulé en tant que XML. Ce fichier se trouve dans le même répertoire que le fichier. exe ou. dll de sortie de votre projet.
 
-XML documentation starts with `'''`. Le traitement de ces commentaires présente certaines restrictions :
+La documentation XML commence par `'''`. Le traitement de ces commentaires présente certaines restrictions :
 
-- La documentation doit être dans un format XML correct. If the XML is not well formed, a warning is generated and the documentation file contains a comment saying that an error was encountered.
+- La documentation doit être dans un format XML correct. Si le XML n’est pas bien formé, un avertissement est généré et le fichier de documentation contient un commentaire indiquant qu’une erreur a été rencontrée.
 
-- Les développeurs sont libres de créer leur propre jeu de balises. There is a recommended set of tags (see "Related Sections" in this topic). Certaines des balises recommandées ont des significations spéciales :
+- Les développeurs sont libres de créer leur propre jeu de balises. Il existe un ensemble recommandé de balises (voir « sections connexes » dans cette rubrique). Certaines des balises recommandées ont des significations spéciales :
 
-  - La balise \<param> est utilisée pour décrire les paramètres. Quand elle est utilisée, le compilateur vérifie que le paramètre existe et que tous les paramètres sont décrits dans la documentation. If the verification fails, the compiler issues a warning.
+  - La balise \<param> est utilisée pour décrire les paramètres. Quand elle est utilisée, le compilateur vérifie que le paramètre existe et que tous les paramètres sont décrits dans la documentation. Si la vérification échoue, le compilateur émet un avertissement.
 
-  - L’attribut `cref` peut être joint à n’importe quelle balise pour fournir une référence à un élément de code. Le compilateur vérifie l’existence de cet élément de code. If the verification fails, the compiler issues a warning. The compiler also respects any `Imports` statements when looking for a type described in the `cref` attribute.
+  - L’attribut `cref` peut être joint à n’importe quelle balise pour fournir une référence à un élément de code. Le compilateur vérifie l’existence de cet élément de code. Si la vérification échoue, le compilateur émet un avertissement. Le compilateur respecte également les instructions de `Imports` lors de la recherche d’un type décrit dans l’attribut `cref`.
 
-  - The \<summary> tag is used by IntelliSense in Visual Studio to display additional information about a type or member.
+  - La balise Summary > \<est utilisée par IntelliSense dans Visual Studio pour afficher des informations supplémentaires sur un type ou un membre.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
-For details on creating an XML file with documentation comments, see the following topics:
+Pour plus d’informations sur la création d’un fichier XML avec des commentaires de documentation, consultez les rubriques suivantes :
 
 - [-doc](../../../visual-basic/reference/command-line-compiler/doc.md)
 

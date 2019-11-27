@@ -39,33 +39,33 @@ HRESULT EnumProperties (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `td`  
- [in] A TypeDef token representing the type with properties to enumerate.  
+ dans Jeton TypeDef représentant le type avec des propriétés à énumérer.  
   
  `rProperties`  
- [out] The array used to store the PropertyDef tokens.  
+ à Tableau utilisé pour stocker les jetons PropertyDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rProperties`.  
   
  `pcProperties`  
- [out] The number of PropertyDef tokens returned in `rProperties`.  
+ à Nombre de jetons PropertyDef retournés dans `rProperties`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumProperties` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcProperties` is zero.|  
+|`S_OK`|`EnumProperties` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcProperties` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432871"
 ---
 # <a name="corserializationtype-enumeration"></a>CorSerializationType, énumération
-Specifies how an object is serialized by the common language runtime.  
+Spécifie comment un objet est sérialisé par le common language runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -57,31 +57,31 @@ typedef enum CorSerializationType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`SERIALIZATION_TYPE_UNDEFINED`|Serialization of the object is undefined.|  
-|`SERIALIZATION_TYPE_BOOLEAN`|Object is serialized as a Boolean type|  
-|`SERIALIZATION_TYPE_CHAR`|Object is serialized as a character type.|  
-|`SERIALIZATION_TYPE_I1`|Object is serialized as a signed 1-byte integer.|  
-|`SERIALIZATION_TYPE_U1`|Object is serialized as an unsigned 1-byte integer.|  
-|`SERIALIZATION_TYPE_I2`|Object is serialized as a signed 2-byte integer.|  
-|`SERIALIZATION_TYPE_U2`|Object is serialized as an unsigned 2-byte integer.|  
-|`SERIALIZATION_TYPE_I4`|Object is serialized as a signed 4-byte integer.|  
-|`SERIALIZATION_TYPE_U4`|Object is serialized as an unsigned 4-byte integer.|  
-|`SERIALIZATION_TYPE_I8`|Object is serialized as a signed 8-byte integer.|  
-|`SERIALIZATION_TYPE_U8`|Object is serialized as an unsigned 8-byte integer.|  
-|`SERIALIZATION_TYPE_R4`|Object is serialized as a 4-byte floating point.|  
-|`SERIALIZATION_TYPE_R8`|Object is serialized as an 8-byte floating point.|  
-|`SERIALIZATION_TYPE_STRING`|Object is serialized as a System.String type.|  
-|`SERIALIZATION_TYPE_SZARRAY`|Object is serialized as a single-dimensional, zero lower-bound array.|  
-|`SERIALIZATION_TYPE_TYPE`|Object is serialized as a generic type.|  
-|`SERIALIZATION_TYPE_TAGGED_OBJECT`|Object is serialized as a tagged object.|  
-|`SERIALIZATION_TYPE_FIELD`|Object is serialized as a field.|  
-|`SERIALIZATION_TYPE_PROPERTY`|Object is serialized as a property.|  
-|`SERIALIZATION_TYPE_ENUM`|Object is serialized as an enumeration.|  
+|`SERIALIZATION_TYPE_UNDEFINED`|La sérialisation de l’objet n’est pas définie.|  
+|`SERIALIZATION_TYPE_BOOLEAN`|L’objet est sérialisé en tant que type booléen|  
+|`SERIALIZATION_TYPE_CHAR`|L’objet est sérialisé en tant que type de caractère.|  
+|`SERIALIZATION_TYPE_I1`|L’objet est sérialisé en tant qu’entier signé sur 1 octet.|  
+|`SERIALIZATION_TYPE_U1`|L’objet est sérialisé en tant qu’entier non signé sur 1 octet.|  
+|`SERIALIZATION_TYPE_I2`|L’objet est sérialisé comme un entier signé de 2 octets.|  
+|`SERIALIZATION_TYPE_U2`|L’objet est sérialisé en tant qu’entier non signé sur 2 octets.|  
+|`SERIALIZATION_TYPE_I4`|L’objet est sérialisé en tant qu’entier signé de 4 octets.|  
+|`SERIALIZATION_TYPE_U4`|L’objet est sérialisé en tant qu’entier non signé sur 4 octets.|  
+|`SERIALIZATION_TYPE_I8`|L’objet est sérialisé en tant qu’entier signé sur 8 octets.|  
+|`SERIALIZATION_TYPE_U8`|L’objet est sérialisé en tant qu’entier non signé sur 8 octets.|  
+|`SERIALIZATION_TYPE_R4`|L’objet est sérialisé en tant que virgule flottante sur 4 octets.|  
+|`SERIALIZATION_TYPE_R8`|L’objet est sérialisé en tant que virgule flottante sur 8 octets.|  
+|`SERIALIZATION_TYPE_STRING`|L’objet est sérialisé en tant que type System. String.|  
+|`SERIALIZATION_TYPE_SZARRAY`|L’objet est sérialisé sous la forme d’un tableau unidimensionnel, sans limite inférieure.|  
+|`SERIALIZATION_TYPE_TYPE`|L’objet est sérialisé en tant que type générique.|  
+|`SERIALIZATION_TYPE_TAGGED_OBJECT`|L’objet est sérialisé en tant qu’objet balisé.|  
+|`SERIALIZATION_TYPE_FIELD`|L’objet est sérialisé en tant que champ.|  
+|`SERIALIZATION_TYPE_PROPERTY`|L’objet est sérialisé en tant que propriété.|  
+|`SERIALIZATION_TYPE_ENUM`|L’objet est sérialisé en tant qu’énumération.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

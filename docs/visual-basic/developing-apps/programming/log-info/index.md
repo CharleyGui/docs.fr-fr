@@ -20,13 +20,13 @@ ms.locfileid: "74353259"
 
 Cette section contient des rubriques sur l’enregistrement d’informations provenant de l’application à l’aide de l’objet `My.Application.Log` ou `My.Log`, et sur l’extension des fonctionnalités de journalisation de l’application.  
   
- L’objet `Log` fournit des méthodes pour écrire des informations dans les écouteurs de journalisation de l’application, et la propriété `TraceSource` avancée de l’objet `Log` fournit des informations de configuration détaillées. L’objet `Log` est configuré par le fichier de configuration de l’application.  
+ L’objet `Log` fournit des méthodes pour écrire des informations dans les écouteurs de journalisation de l’application, et la propriété `Log` avancée de l’objet `TraceSource` fournit des informations de configuration détaillées. L’objet `Log` est configuré par le fichier de configuration de l’application.  
   
  L’objet `My.Log` est disponible uniquement pour les applications ASP.NET. Pour les applications clientes, utilisez `My.Application.Log`. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Logging.Log>.  
   
 ## <a name="tasks"></a>Tâches  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |--------|---------|  
 |Écrire des informations sur les événements dans les journaux de l’application.|[Guide pratique : écrire des messages de journal](../../../../visual-basic/developing-apps/programming/log-info/how-to-write-log-messages.md)|  
 |Écrire des informations sur les exceptions dans les journaux de l’application.|[Guide pratique : enregistrer des exceptions](../../../../visual-basic/developing-apps/programming/log-info/how-to-log-exceptions.md)|  

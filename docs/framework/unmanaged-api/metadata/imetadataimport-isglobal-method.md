@@ -36,17 +36,17 @@ HRESULT IsGlobal (
   
 ## <a name="parameters"></a>Paramètres  
  `pd`  
- [in] A metadata token that represents a type, field, or method.  
+ dans Jeton de métadonnées qui représente un type, un champ ou une méthode.  
   
  `pbGlobal`  
- [out] 1 if the object has global scope; otherwise, 0 (zero).  
+ [out] 1 si l’objet a une portée globale ; Sinon, 0 (zéro).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

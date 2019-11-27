@@ -7,22 +7,22 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450883"
 ---
 
-The packages added to the package manager feeds are named in a hackable format: `{product}-{type}-{version}`.
+Les packages ajoutés aux flux du gestionnaire de package sont nommés dans un format pirate : `{product}-{type}-{version}`.
 
-- **product**\
-The type of .NET product to install. Les options valides sont les suivantes :
+- \ du **produit**
+Type de produit .NET à installer. Les options admises sont les suivantes :
 
   - dotnet
   - aspnetcore
 
-- **type**\
-Chooses the SDK or the runtime. Les options valides sont les suivantes :
+- \ de **type**
+Choisit le kit de développement logiciel (SDK) ou le Runtime. Les options admises sont les suivantes :
 
   - sdk
   - runtime
 
-- **version**\
-The version of the SDK or runtime to install. This article will always give the instructions for the latest supported version. Valid options are any released version, such as:
+- \ de **version**
+Version du kit de développement logiciel (SDK) ou du runtime à installer. Cet article fournira toujours les instructions relatives à la dernière version prise en charge. Les options valides sont toutes les versions publiées, par exemple :
 
   - 3,0
   - 2.2
@@ -30,10 +30,10 @@ The version of the SDK or runtime to install. This article will always give the 
 
 ### <a name="examples"></a>Exemples
 
-- Install the .NET Core 2.2 SDK: `dotnet-sdk-2.2`
-- Install the ASP.NET Core 3.0 runtime: `aspnetcore-runtime-3.0`
-- Install the .NET Core 2.1 runtime: `dotnet-runtime-2.1`
+- Installez le kit de développement logiciel (SDK) .NET Core 2,2 : `dotnet-sdk-2.2`
+- Installer le ASP.NET Core 3,0 Runtime : `aspnetcore-runtime-3.0`
+- Installer le Runtime .NET Core 2,1 : `dotnet-runtime-2.1`
 
-### <a name="troubleshoot"></a>Résoudre les problèmes
+### <a name="troubleshoot"></a>Dépannage
 
-If the package combination doesn't work, it's not available. For example, there isn't an ASP.NET Core SDK, the SDK components are included with the .NET Core SDK. The value `aspnetcore-sdk-2.2` is incorrect and should be `dotnet-sdk-2.2`
+Si la combinaison de packages ne fonctionne pas, elle n’est pas disponible. Par exemple, il n’existe pas de ASP.NET Core SDK, les composants du kit de développement logiciel (SDK) sont inclus dans le kit SDK .NET Core. La valeur `aspnetcore-sdk-2.2` est incorrecte et doit être `dotnet-sdk-2.2`

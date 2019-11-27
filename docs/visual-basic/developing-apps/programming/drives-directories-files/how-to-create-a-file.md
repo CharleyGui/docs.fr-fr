@@ -30,7 +30,7 @@ Cet exemple crée un fichier texte vide à l’emplacement spécifié à l’aid
   
  Les conditions ci-dessous peuvent générer une exception.  
   
-- Le chemin d'accès est mal formé. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (<xref:System.ArgumentException>).  
+- Le chemin d’accès est mal formé. Par exemple, il contient des caractères non conformes ou uniquement des espaces blancs (<xref:System.ArgumentException>).  
   
 - Le chemin est en lecture seule (<xref:System.IO.IOException>).  
   

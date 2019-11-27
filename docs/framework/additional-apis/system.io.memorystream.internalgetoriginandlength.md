@@ -41,9 +41,9 @@ internal void InternalGetOriginAndLength(out int origin, out int length)
 >
 > Microsoft ne prend pas en charge l’utilisation de cette méthode dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>Conditions requises
+## <a name="requirements"></a>Configuration requise
 
-**Espace de noms :** <xref:System.IO>
+**Espace de noms :** <xref:System.IO>
 
 **Assembly :** mscorlib. dll (dans mscorlib. dll)
 

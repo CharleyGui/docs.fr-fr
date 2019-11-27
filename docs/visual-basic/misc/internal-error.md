@@ -1,5 +1,5 @@
 ---
-title: Internal error
+title: Erreur interne
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID51
@@ -12,7 +12,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74329505"
 ---
 # <a name="internal-error-visual-basic"></a>Erreur interne (Visual Basic)
-An internal malfunction has occurred in Visual Basic.  
+Un dysfonctionnement interne s’est produit dans Visual Basic.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   

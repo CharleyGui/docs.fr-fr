@@ -22,61 +22,61 @@ ms.locfileid: "74343639"
 ---
 # <a name="how-to-match-a-string-against-a-pattern-visual-basic"></a>Comment : faire correspondre une chaîne à un modèle (Visual Basic)
 
-If you want to find out if an expression of the [String Data Type](../../../../visual-basic/language-reference/data-types/string-data-type.md) satisfies a pattern, then you can use the [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md).
+Si vous souhaitez savoir si une expression du [type de données String](../../../../visual-basic/language-reference/data-types/string-data-type.md) est conforme à un modèle, vous pouvez utiliser l' [opérateur Like](../../../../visual-basic/language-reference/operators/like-operator.md).
 
-`Like` takes two operands. The left operand is a string expression, and the right operand is a string containing the pattern to be used for matching. `Like` returns a `Boolean` value indicating whether the string expression satisfies the pattern.
+`Like` prend deux opérandes. L’opérande de gauche est une expression de chaîne et l’opérande de droite est une chaîne contenant le modèle à utiliser pour la mise en correspondance. `Like` retourne une valeur `Boolean` indiquant si l’expression de chaîne respecte le modèle.
 
-You can match each character in the string expression against a specific character, a wildcard character, a character list, or a character range. The positions of the specifications in the pattern string correspond to the positions of the characters to be matched in the string expression.
+Vous pouvez faire correspondre chaque caractère de l’expression de chaîne à un caractère spécifique, un caractère générique, une liste de caractères ou une plage de caractères. Les positions des spécifications dans la chaîne de modèle correspondent aux positions des caractères à mettre en correspondance dans l’expression de chaîne.
 
-## <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>To match a character in the string expression against a specific character
+## <a name="to-match-a-character-in-the-string-expression-against-a-specific-character"></a>Pour faire correspondre un caractère de l’expression de chaîne à un caractère spécifique
 
-Put the specific character directly in the pattern string. Certain special characters must be enclosed in brackets (`[ ]`). For more information, see [Like Operator](../../../../visual-basic/language-reference/operators/like-operator.md).
+Placez le caractère spécifique directement dans la chaîne du modèle. Certains caractères spéciaux doivent être placés entre crochets (`[ ]`). Pour plus d’informations, consultez [Like, opérateur](../../../../visual-basic/language-reference/operators/like-operator.md).
 
-The following example tests whether `myString` consists exactly of the single character `H`.
+L’exemple suivant teste si `myString` se compose exactement du `H`de caractères unique.
 
 [!code-vb[VbVbalrOperators#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#70)]
 
-## <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>To match a character in the string expression against a wildcard character
+## <a name="to-match-a-character-in-the-string-expression-against-a-wildcard-character"></a>Pour faire correspondre un caractère de l’expression de chaîne à un caractère générique
 
-Put a question mark (`?`) in the pattern string. Any valid character in this position makes a successful match.
+Placez un point d’interrogation (`?`) dans la chaîne du modèle. Tout caractère valide dans cette position fait l’aboutissement d’une correspondance.
 
-The following example tests whether `myString` consists of the single character `W` followed by exactly two characters of any values.
+L’exemple suivant teste si `myString` est constitué du caractère unique `W` suivi de deux caractères exactement de toutes les valeurs.
 
 [!code-vb[VbVbalrOperators#71](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#71)]
 
-## <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>To match a character in the string expression against a list of characters
+## <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters"></a>Pour mettre en correspondance un caractère de l’expression de chaîne avec une liste de caractères
 
-Put brackets (`[ ]`) in the pattern string, and inside the brackets put the list of characters. Do not separate the characters with commas or any other separator. Any single character in the list makes a successful match.
+Placez les crochets (`[ ]`) dans la chaîne de modèle, et à l’intérieur des crochets, placez la liste des caractères. Ne séparez pas les caractères par des virgules ou tout autre séparateur. Tout caractère unique de la liste fait l’aboutissement d’une correspondance.
 
-The following example tests whether `myString` consists of any valid character followed by exactly one of the characters `A`, `C`, or `E`.
+L’exemple suivant teste si `myString` se compose d’un caractère valide suivi de l’un des caractères `A`, `C`ou `E`.
 
 [!code-vb[VbVbalrOperators#72](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#72)]
 
-Note that this match is case-sensitive.
+Notez que cette correspondance respecte la casse.
 
-## <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>To match a character in the string expression against a range of characters
+## <a name="to-match-a-character-in-the-string-expression-against-a-range-of-characters"></a>Pour faire correspondre un caractère de l’expression de chaîne à une plage de caractères
 
-Put brackets (`[ ]`) in the pattern string, and inside the brackets put the lowest and highest characters in the range, separated by a hyphen (`–`). Any single character within the range makes a successful match.
+Placez les crochets (`[ ]`) dans la chaîne de modèle, et à l’intérieur des crochets, placez les caractères les plus bas et les plus hauts dans la plage, séparés par un trait d’Union (`–`). Tout caractère unique dans la plage fait l’aboutissement d’une correspondance.
 
-The following example tests whether `myString` consists of the characters `num` followed by exactly one of the characters `i`, `j`, `k`, `l`, `m`, or `n`.
+L’exemple suivant teste si `myString` se compose des caractères `num` suivis de l’un des caractères `i`, `j`, `k`, `l`, `m`ou `n`.
 
 [!code-vb[VbVbalrOperators#73](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#73)]
 
-Note that this match is case-sensitive.
+Notez que cette correspondance respecte la casse.
 
-## <a name="matching-empty-strings"></a>Matching Empty Strings
+## <a name="matching-empty-strings"></a>Correspondance de chaînes vides
 
-`Like` treats the sequence `[]` as a zero-length string (`""`). You can use `[]` to test whether the entire string expression is empty, but you cannot use it to test if a particular position in the string expression is empty. If an empty position is one of the options you need to test for, you can use `Like` more than once.
+`Like` traite la séquence `[]` comme une chaîne de longueur nulle (`""`). Vous pouvez utiliser `[]` pour tester si la totalité de l’expression de chaîne est vide, mais vous ne pouvez pas l’utiliser pour tester si une position particulière dans l’expression de chaîne est vide. Si une position vide est l’une des options dont vous avez besoin pour tester, vous pouvez utiliser `Like` plusieurs fois.
 
-### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>To match a character in the string expression against a list of characters or no character
+### <a name="to-match-a-character-in-the-string-expression-against-a-list-of-characters-or-no-character"></a>Pour mettre en correspondance un caractère de l’expression de chaîne avec une liste de caractères ou aucun caractère
 
-1. Call the `Like` operator twice on the same string expression, and connect the two calls with either the [Or Operator](../../../../visual-basic/language-reference/operators/or-operator.md) or the [OrElse Operator](../../../../visual-basic/language-reference/operators/orelse-operator.md).
+1. Appelez l’opérateur `Like` deux fois sur la même expression de chaîne et connectez les deux appels avec l' [opérateur ou](../../../../visual-basic/language-reference/operators/or-operator.md) ou l' [opérateur OrElse](../../../../visual-basic/language-reference/operators/orelse-operator.md).
 
-2. In the pattern string for the first `Like` clause, include the character list, enclosed in brackets (`[ ]`).
+2. Dans la chaîne de modèle de la première `Like` clause, incluez la liste de caractères entre crochets (`[ ]`).
 
-3. In the pattern string for the second `Like` clause, do not put any character at the position in question.
+3. Dans la chaîne de modèle pour la deuxième clause `Like`, ne placez pas de caractère à la position en question.
 
-    The following example tests the seven-digit telephone number `phoneNum` for exactly three numeric digits, followed by a space, a hyphen (`–`), a period (`.`), or no character at all, followed by exactly four numeric digits.
+    L’exemple suivant teste le numéro de téléphone à sept chiffres `phoneNum` pour exactement trois chiffres numériques, suivis d’un espace, d’un trait d’Union (`–`), d’un point (`.`) ou d’aucun caractère, suivi de quatre chiffres exactement.
 
     [!code-vb[VbVbalrOperators#74](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#74)]
 

@@ -34,7 +34,7 @@ Les certificats sont stockés dans des magasins. Deux emplacements de magasin ma
 
 - **Magasin de la machine locale**. Contient les certificats accessibles par les processus de l’ordinateur, tels que ASP.NET. Utilisez cet emplacement pour y stocker les certificats qui authentifient les serveurs auprès des clients.
 
-- **Magasin de l'utilisateur en cours**. Les applications interactives stockent en principe les certificats à cet emplacement pour l'utilisateur en train d'utiliser l'ordinateur. Si vous créer des applications clientes, c'est également l'emplacement que vous utiliserez en principe pour stocker les certificats qui authentifient les utilisateurs auprès des services.
+- **Magasin de l’utilisateur actuel**. Les applications interactives stockent en principe les certificats à cet emplacement pour l'utilisateur en train d'utiliser l'ordinateur. Si vous créer des applications clientes, c'est également l'emplacement que vous utiliserez en principe pour stocker les certificats qui authentifient les utilisateurs auprès des services.
 
 Ces deux magasins sont divisés en sous-magasins. Les plus importants d’entre eux pour la programmation avec WCF sont notamment :
 
@@ -72,7 +72,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Class|Les|
+|Class|Propriété|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -119,7 +119,7 @@ Remarque : ce champ peut contenir plusieurs valeurs, chacune préfixée par une
 
 Notez également que le champ **Rôles prévus** du certificat doit contenir une valeur appropriée, par exemple « Authentification du serveur » ou « Authentification du client ».
 
-### <a name="client-certificates"></a>Certificats de client
+### <a name="client-certificates"></a>Certificats clients
 
 Les certificats de client ne sont en principe pas publiés par une autorité de certification tierce. Le magasin personnel de l'utilisateur en cours contient en principe des certificats qui y sont stockés par l'autorité racine, le rôle prévu étant « Authentification de client ». Le client peut utiliser ce genre de certificat lorsque l'authentification mutuelle requise.
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442154"
 ---
 # <a name="imetadataemitsethandler-method"></a>IMetaDataEmit::SetHandler, méthode
-Sets the method referenced by the specified `IUnknown` pointer as a notification callback for token remaps.  
+Définit la méthode référencée par le pointeur de `IUnknown` spécifié comme un rappel de notification pour les remappages de jetons.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT SetHandler (
   
 ## <a name="parameters"></a>Paramètres  
  `pUnk`  
- [in] The handler to register.  
+ dans Gestionnaire à inscrire.  
   
 ## <a name="remarks"></a>Notes  
- The metadata engine sends notification by using the method that is provided by `SetHandler`, to compilers that do not generate records in an optimized way and that would like to optimize saved records.  
+ Le moteur de métadonnées envoie une notification à l’aide de la méthode fournie par `SetHandler`, aux compilateurs qui ne génèrent pas d’enregistrements de manière optimisée et qui souhaitent optimiser les enregistrements enregistrés.  
   
- If the callback method is not provided through `SetHandler`, no optimization will be performed on save except where several import scopes have been merged using `IMapToken` on merge for each scope.  
+ Si la méthode de rappel n’est pas fournie par `SetHandler`, aucune optimisation n’est effectuée lors de l’enregistrement, sauf si plusieurs étendues d’importation ont été fusionnées à l’aide de `IMapToken` lors de la fusion pour chaque étendue.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -33,7 +33,7 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
  [Opérations relatives au port dans le .NET Framework](../../../../visual-basic/developing-apps/programming/computer-resources/port-operations-in-the-net-framework.md)  
  Montre comment utiliser le .NET Framework pour effectuer des opérations relatives au port.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.Devices.Ports>  
  Décrit l’objet `My.Computer.Ports` et ses membres.  
@@ -44,7 +44,7 @@ L’objet `My.Computer.Ports` fournit une propriété et une méthode pour accé
  <xref:Microsoft.VisualBasic.Devices.Ports.OpenSerialPort%2A>  
  Décrit la méthode `OpenSerialPort`, qui crée et ouvre un objet <xref:System.IO.Ports.SerialPort?displayProperty=nameWithType>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  <xref:System.IO.Ports.SerialPort>  
  Décrit la classe <xref:System.IO.Ports.SerialPort> du .NET Framework.

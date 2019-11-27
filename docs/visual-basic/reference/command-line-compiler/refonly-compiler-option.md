@@ -16,7 +16,7 @@ ms.locfileid: "74348574"
 ---
 # <a name="-refonly-visual-basic"></a>-refonly (Visual Basic)
 
-The **-refonly** option indicates that the primary output of the compilation should be a reference assembly instead of an implementation assembly. Le paramètre `-refonly` désactive sans assistance la génération de fichiers PDB, car les assemblys de référence ne peuvent pas être exécutés.
+L’option **-refonly** indique que la sortie principale de la compilation doit être un assembly de référence au lieu d’un assembly d’implémentation. Le paramètre `-refonly` désactive sans assistance la génération de fichiers PDB, car les assemblys de référence ne peuvent pas être exécutés.
 
 [!INCLUDE[compiler-options](~/includes/compiler-options.md)]
 
@@ -28,9 +28,9 @@ The **-refonly** option indicates that the primary output of the compilation sho
 
 ## <a name="remarks"></a>Notes
 
-Visual Basic supports the `-refonly` switch starting with version 15.3.
+Visual Basic prend en charge le commutateur `-refonly` à partir de la version 15,3.
 
-Reference assemblies are a special type of assembly that contain only the minimum amount of metadata required to represent the library's public API surface. They include declarations for all members that are significant when referencing an assembly in build tools, but exclude all member implementations and declarations of private members that have no observable impact on their API contract. For more information, see [Reference assemblies](../../../standard/assembly/reference-assemblies.md) in .NET Guide.
+Les assemblys de référence sont un type spécial d’assembly qui ne contient que la quantité minimale de métadonnées requises pour représenter la surface de l’API publique de la bibliothèque. Elles incluent des déclarations pour tous les membres qui sont significatifs lors du référencement d’un assembly dans les outils de génération, mais excluent toutes les implémentations de membres et les déclarations de membres privés qui n’ont aucun impact observable sur leur contrat d’API. Pour plus d’informations, consultez [références des assemblys](../../../standard/assembly/reference-assemblies.md) dans le guide .net.
 
 Les options `-refonly` et [`-refout`](refout-compiler-option.md) s’excluent mutuellement.
 

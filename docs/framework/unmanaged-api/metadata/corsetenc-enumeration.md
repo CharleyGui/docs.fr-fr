@@ -48,17 +48,17 @@ typedef enum CorSetENC {
 |------------|-----------------|  
 |`MDSetENCOn`|Obsolète.|  
 |`MDSetENCOff`|Obsolète.|  
-|`MDUpdateENC`|Indicates that whereas metadata can be updated, tokens cannot be moved.|  
-|`MDUpdateFull`|Indicates that tokens can be moved during updates.|  
-|`MDUpdateExtension`|Indicates that updates can consist only of additions. Tokens cannot be moved.|  
-|`MDUpdateIncremental`|Indicates that compilation is incremental.|  
-|`MDUpdateDelta`|Indicates that only changed metadata should be saved.|  
-|`MDUpdateMask`|Includes `MDUpdateENC`, `MDUpdateFull` and `MDUpdateIncremental`.|  
+|`MDUpdateENC`|Indique que les métadonnées peuvent être mises à jour et que les jetons ne peuvent pas être déplacés.|  
+|`MDUpdateFull`|Indique que les jetons peuvent être déplacés pendant les mises à jour.|  
+|`MDUpdateExtension`|Indique que les mises à jour ne peuvent comporter que des ajouts. Les jetons ne peuvent pas être déplacés.|  
+|`MDUpdateIncremental`|Indique que la compilation est incrémentielle.|  
+|`MDUpdateDelta`|Indique que seules les métadonnées modifiées doivent être enregistrées.|  
+|`MDUpdateMask`|Comprend `MDUpdateENC`, `MDUpdateFull` et `MDUpdateIncremental`.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

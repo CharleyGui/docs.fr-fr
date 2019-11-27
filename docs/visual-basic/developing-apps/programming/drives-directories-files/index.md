@@ -31,10 +31,10 @@ Vous pouvez utiliser Visual Basic pour manipuler des lecteurs, des dossiers et d
  [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  
  Montre comment utiliser le .NET Framework pour manipuler des fichiers et des dossiers.  
   
- [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ [Procédure pas à pas : manipulation de fichiers et de répertoires dans Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Montre comment utiliser l’objet `My.Computer.FileSystem` pour manipuler des fichiers et des dossiers.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Structure de programme et conventions de codage](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Fournit des indications relatives à la structure physique et l’apparence des programmes.  

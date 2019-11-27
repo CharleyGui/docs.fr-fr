@@ -1,5 +1,5 @@
 ---
-title: 'How to: Declare an Object Variable and Assign an Object to It'
+title: 'Comment : déclarer une variable objet et lui assigner un objet'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object variables [Visual Basic], declaring
@@ -14,18 +14,18 @@ ms.locfileid: "74352902"
 ---
 # <a name="how-to-declare-an-object-variable-and-assign-an-object-to-it-in-visual-basic"></a>Comment : déclarer une variable objet et lui affecter un objet dans Visual Basic
 
-You declare a variable of the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md) by specifying `As Object` in a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md). You assign an object to such a variable by placing the object after the equal sign (`=`) in an assignment statement or initialization clause.
+Vous déclarez une variable du [type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md) en spécifiant `As Object` dans une [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md). Vous assignez un objet à une telle variable en plaçant l’objet après le signe égal (`=`) dans une instruction d’assignation ou une clause d’initialisation.
 
 ## <a name="example"></a>Exemple
 
-The following example declares an `Object` variable and assigns the current instance to it.
+L’exemple suivant déclare une variable `Object` et lui affecte l’instance actuelle.
 
 ```vb
 Dim thisObject As Object
 thisObject = "This is an Object"
 ```
 
-You can combine the declaration and assignment by initializing the variable as part of its declaration. The following example is equivalent to the preceding example.
+Vous pouvez combiner la déclaration et l’assignation en initialisant la variable dans le cadre de sa déclaration. L’exemple suivant est équivalent à l’exemple précédent.
 
 ```vb
 Dim thisObject As Object= "This is an Object"
@@ -33,20 +33,20 @@ Dim thisObject As Object= "This is an Object"
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Cet exemple nécessite :
+Cet exemple nécessite :
 
 - une référence à l'espace de noms <xref:System>.
 
-- A class, structure, or module in which to put the `Dim` statement.
+- Classe, structure ou module dans lequel placer l’instruction `Dim`.
 
-- A procedure in which to put the assignment statement.
+- Procédure dans laquelle placer l’instruction d’assignation.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Déclaration des variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variable-declaration.md)
-- [Object (type de données)](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Dim (instruction)](../../../../visual-basic/language-reference/statements/dim-statement.md)
 - [Inférence de type local](../../../../visual-basic/programming-guide/language-features/variables/local-type-inference.md)
 - [Option Strict (instruction)](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

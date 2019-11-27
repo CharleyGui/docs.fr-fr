@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445532"
 ---
 # <a name="setpekind-method"></a>SetPEKind, méthode
-Determines the portable executable type, either machine-specific or machine-agnostic.  
+Détermine le type d’exécutable portable, propre à l’ordinateur ou indépendant de l’ordinateur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT SetPEKind(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID of the assembly.  
+ ID de l’assembly.  
   
  `FileToken`  
- Token of file for which the PE type is to be set. Can be NULL if `AssemblyID` does not indicate an unbound netmodule.  
+ Jeton du fichier pour lequel le type PE doit être défini. Peut avoir la valeur NULL si `AssemblyID` n’indique pas un netmodule indépendant.  
   
  `dwPEKind`  
- The type of PE, as indicated by the [CorPEKind Enumeration](../metadata/corpekind-enumeration.md).  
+ Type de PE, comme indiqué par l' [énumération CorPEKind,](../metadata/corpekind-enumeration.md).  
   
  `dwMachine`  
- The target machine architecture, as indicated in the NT header.  
+ Architecture de l’ordinateur cible, comme indiqué dans l’en-tête NT.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Returns S_OK if the method succeeds.  
+ Retourne S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>spécifications  
- Requires alink.h.  
+## <a name="requirements"></a>Configuration requise  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 

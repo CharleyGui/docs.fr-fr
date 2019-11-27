@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444160"
 ---
 # <a name="ceesectionreloctype-enumeration"></a>CeeSectionRelocType, énumération
-Provides values to influence the type of `reloc` instruction emitted in a call to [ICeeGen::AddSectionReloc](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
+Fournit des valeurs pour influencer le type d' `reloc` instruction émise dans un appel à [ICeeGen :: AddSectionReloc,](../../../../docs/framework/unmanaged-api/metadata/iceegen-addsectionreloc-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -52,28 +52,28 @@ typedef enum  {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`srRelocAbsolute`|Generates only a section-relative `reloc`, sending nothing into a .reloc section.|  
-|`srRelocHighLow`|Generates a `reloc` for a pointer-sized location. This is transformed into BASED_HIGHLOW or BASED_DIR64 depending on the platform.|  
-|`srRelocHighAdj`|Generates a `reloc` for the top 16 bits of a 32-bit number, where the bottom 16 bits are included in the next word in the .reloc table.|  
-|`srRelocMapToken`|Generates a token map relocation, sending nothing into a .reloc section.|  
-|`srRelocRelative`|Indicates that the value is a relative address fixup.|  
-|`srRelocFilePos`|Generates only a section-relative `reloc`, sending nothing into a .reloc section. This `reloc` is relative to the file position of the section, not the section's virtual address.|  
-|`srRelocCodeRelative`|Specifies a code-relative address fixup.|  
-|`srRelocIA64Imm64`|Generates a `reloc` for a 64 bit address in an ia64 `movl` instruction.|  
-|`srRelocDir64`|Generates a `reloc` for a 64-bit address.|  
-|`srRelocIA64PcRel25`|Generate a `reloc` for a 25-bit PC-relative address in an ia64 `br.call` instruction.|  
-|`srRelocIA64PcRel64`|Generates a `reloc` for a 64-bit PC-relative address in an ia64 `brl.call` instruction.|  
-|`srRelocAbsoluteTagged`|Generates a 30-bit section-relative `reloc`, used for tagged pointer values.|  
-|`srRelocSentinel`|A sentinel value to help ensure any additions to this enum are reflected to the internal `reloc` name array.|  
-|`srNoBaseReloc`|Specifies not to emit a base `reloc`.|  
-|`srRelocPtr`|A value indicating that the pre-fixup contents of memory are a pointer rather than a section offset.|  
+|`srRelocAbsolute`|Génère uniquement un `reloc`relatif à une section, en n’envoyant rien à une section. reloc.|  
+|`srRelocHighLow`|Génère un `reloc` pour un emplacement au format pointeur. Elle est transformée en BASED_HIGHLOW ou BASED_DIR64 en fonction de la plateforme.|  
+|`srRelocHighAdj`|Génère un `reloc` pour les 16 bits supérieurs d’un nombre 32 bits, où les 16 bits inférieurs sont inclus dans le mot suivant de la table. reloc.|  
+|`srRelocMapToken`|Génère un réadressage de la carte de jetons, en n’envoyant rien à une section. reloc.|  
+|`srRelocRelative`|Indique que la valeur est une correction d’adresse relative.|  
+|`srRelocFilePos`|Génère uniquement un `reloc`relatif à une section, en n’envoyant rien à une section. reloc. Cette `reloc` est relative à la position de fichier de la section, et non à l’adresse virtuelle de la section.|  
+|`srRelocCodeRelative`|Spécifie une correction d’adresse relative au code.|  
+|`srRelocIA64Imm64`|Génère une `reloc` pour une adresse de 64 bits dans une instruction ia64 `movl`.|  
+|`srRelocDir64`|Génère une `reloc` pour une adresse de 64 bits.|  
+|`srRelocIA64PcRel25`|Génère un `reloc` pour une adresse relative à un PC 25 bits dans une instruction ia64 `br.call`.|  
+|`srRelocIA64PcRel64`|Génère un `reloc` pour une adresse relative à un PC 64 bits dans une instruction ia64 `brl.call`.|  
+|`srRelocAbsoluteTagged`|Génère un `reloc`relatif à une section de 30 bits, utilisé pour les valeurs de pointeur avec balises.|  
+|`srRelocSentinel`|Une valeur de sentinelle pour aider à garantir que les ajouts à cette énumération sont reflétés dans le tableau de noms `reloc` interne.|  
+|`srNoBaseReloc`|Spécifie de ne pas émettre de `reloc`de base.|  
+|`srRelocPtr`|Valeur indiquant que le contenu de la précorrection de la mémoire est un pointeur plutôt qu’un décalage de section.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

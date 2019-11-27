@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447171"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs, méthode
-Gets the `ClassID` of a type by using the specified metadata token and the `ClassID` values of any type arguments.  
+Obtient le `ClassID` d’un type à l’aide du jeton de métadonnées spécifié et des valeurs de `ClassID` de tous les arguments de type.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,28 +38,28 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleID`  
- [in] The ID of the module in which the type resides.  
+ dans ID du module dans lequel le type réside.  
   
  `typeDef`  
- [in] An `mdTypeDef` metadata token that references the type.  
+ dans `mdTypeDef` jeton de métadonnées qui référence le type.  
   
  `cTypeArgs`  
- [in] The number of type parameters for the given type. This value must be zero for non-generic types.  
+ dans Nombre de paramètres de type pour le type donné. Cette valeur doit être égale à zéro pour les types non génériques.  
   
  `typeArgs`  
- [in] An array of `ClassID` values, each of which is an argument of the type. The value of `typeArgs` can be NULL if `cTypeArgs` is set to zero.  
+ dans Tableau de valeurs `ClassID`, chacune d’entre elles étant un argument du type. La valeur de `typeArgs` peut être NULL si `cTypeArgs` a la valeur zéro.  
   
  `pClassID`  
- [out] A pointer to the `ClassID` of the specified type.  
+ à Pointeur vers le `ClassID` du type spécifié.  
   
 ## <a name="remarks"></a>Notes  
- Calling the `GetClassFromTokenAndTypeArgs` method with an `mdTypeRef` instead of an `mdTypeDef` metadata token can have unpredictable results; callers should resolve the `mdTypeRef` to an `mdTypeDef` when passing it.  
+ L’appel de la méthode `GetClassFromTokenAndTypeArgs` avec un `mdTypeRef` au lieu d’un jeton de métadonnées `mdTypeDef` peut avoir des résultats imprévisibles ; les appelants doivent résoudre les `mdTypeRef` en `mdTypeDef` lors de leur passage.  
   
- If the type is not already loaded, calling `GetClassFromTokenAndTypeArgs` will trigger loading, which is a dangerous operation in many contexts. For example, calling this method during loading of modules or other types could lead to an infinite loop as the runtime attempts to circularly load things.  
+ Si le type n’est pas déjà chargé, l’appel de `GetClassFromTokenAndTypeArgs` déclenchera le chargement, ce qui constitue une opération dangereuse dans de nombreux contextes. Par exemple, l’appel de cette méthode pendant le chargement de modules ou d’autres types peut entraîner une boucle infinie, car le runtime tente de charger circulairement des éléments.  
   
- In general, use of `GetClassFromTokenAndTypeArgs` is discouraged. If profilers are interested in events for a particular type, they should store the `ModuleID` and `mdTypeDef` of that type, and use [ICorProfilerInfo2::GetClassIDInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) to check whether a given `ClassID` is that of the desired type.  
+ En général, l’utilisation de `GetClassFromTokenAndTypeArgs` est déconseillée. Si les profileurs sont intéressés par les événements d’un type particulier, ils doivent stocker les `ModuleID` et `mdTypeDef` de ce type, et utiliser [ICorProfilerInfo2 :: GetClassIDInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) pour vérifier si un `ClassID` donné correspond à celui du type souhaité.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

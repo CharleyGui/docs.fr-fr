@@ -1,5 +1,5 @@
 ---
-title: Attributes overview
+title: Vue d’ensemble des attributs
 ms.date: 07/20/2015
 ms.assetid: 1449f69b-c063-41de-8d89-f0bbdcf96ac6
 ms.openlocfilehash: 97a2a13102718b6ee8829fca678b2b49df21e5d1
@@ -11,7 +11,7 @@ ms.locfileid: "74349481"
 ---
 # <a name="attributes-overview-visual-basic"></a>Vue d’ensemble des attributs (Visual Basic)
 
-Les attributs fournissent une méthode puissante permettant d’associer des métadonnées ou des informations déclaratives avec du code (assemblys, types, méthodes, propriétés, etc.). Une fois associé à une entité de programme, l’attribut peut être interrogé à l’exécution à l’aide d’une technique appelée *réflexion*. Pour plus d’informations, consultez la page [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).
+Les attributs fournissent une méthode puissante permettant d’associer des métadonnées ou des informations déclaratives avec du code (assemblys, types, méthodes, propriétés, etc.). Une fois associé à une entité de programme, l’attribut peut être interrogé à l’exécution à l’aide d’une technique appelée *réflexion*. Pour plus d’informations, consultez [Réflexion (Visual Basic)](../../../../visual-basic/programming-guide/concepts/reflection.md).
 
 Les attributs ont les propriétés suivantes :
 
@@ -95,7 +95,7 @@ Pour identifier de manière explicite une cible d’attribut, utilisez la syntax
 
 La liste des valeurs `target` possibles est présentée dans le tableau suivant.
 
-|Valeur cible|S'applique à|
+|Valeur cible|Application|
 |------------------|----------------|
 |`assembly`|Assembly entier|
 |`module`|Module d’assembly actif (différent d’un module Visual Basic)|
@@ -134,7 +134,7 @@ La liste suivante comprend certaines des utilisations courantes des attributs da
 
 - Obtenir des informations sur l’appelant d’une méthode.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 Pour plus d'informations, voir :
 

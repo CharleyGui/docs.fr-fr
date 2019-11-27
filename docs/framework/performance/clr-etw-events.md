@@ -63,8 +63,8 @@ Les rubriques de cette section décrivent le suivi d’événements pour les év
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Improve Debugging And Performance Tuning With ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
-- [Windows Performance Blog](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
+- [Améliorer le débogage et le réglage des performances avec ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw)
+- [Blog sur les performances de Windows](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/)
 - [Contrôle de l’enregistrement .NET Framework](controlling-logging.md)
 - [Fournisseurs ETW du CLR](clr-etw-providers.md)
 - [Niveaux et mots clés ETW du CLR](clr-etw-keywords-and-levels.md)

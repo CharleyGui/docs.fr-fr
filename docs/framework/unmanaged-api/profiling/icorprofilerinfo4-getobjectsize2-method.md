@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442869"
 ---
 # <a name="icorprofilerinfo4getobjectsize2-method"></a>ICorProfilerInfo4::GetObjectSize2, méthode
-Returns the size of a specified object. Replaces the [ICorProfilerInfo::GetObjectSize](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) method by reporting sizes of objects that are larger than what can be expressed in a `ULONG`.  
+Retourne la taille d’un objet spécifié. Remplace la méthode [ICorProfilerInfo :: GetObjectSize,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getobjectsize-method.md) par la création de rapports sur la taille des objets qui sont plus grands que ce qui peut être exprimé dans un `ULONG`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT GetObjectSize2(
   
 ## <a name="parameters"></a>Paramètres  
  `objectId`  
- [in] The ID of the object.  
+ dans ID de l’objet.  
   
  `pcSize`  
- [out] A pointer to the object's size, in bytes.  
+ à Pointeur vers la taille de l’objet, en octets.  
   
 ## <a name="remarks"></a>Notes  
- Different objects of the same types often have the same size. However, some types, such as arrays or strings, may have a different size for each object.  
+ Les différents objets des mêmes types ont souvent la même taille. Toutefois, certains types, tels que les tableaux ou les chaînes, peuvent avoir une taille différente pour chaque objet.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

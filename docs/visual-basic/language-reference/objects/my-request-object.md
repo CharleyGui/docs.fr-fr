@@ -23,7 +23,7 @@ Obtient l’objet <xref:System.Web.HttpRequest> pour la page demandée.
  L’objet `My.Request` est disponible uniquement pour les applications ASP.NET.  
   
 ## <a name="example"></a>Exemple  
- The following example gets the header collection from the `My.Request` object and uses the `My.Response` object to write it to the ASP.NET page.  
+ L’exemple suivant obtient la collection d’en-têtes de l’objet `My.Request` et utilise l’objet `My.Response` pour l’écrire dans la page ASP.NET.  
   
  [!code-aspx-vb[VbVbalrMyWeb#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyWeb/VB/Default.aspx#1)]  
   

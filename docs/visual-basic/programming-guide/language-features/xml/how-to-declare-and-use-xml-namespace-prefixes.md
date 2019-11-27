@@ -13,13 +13,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332951"
 ---
 # <a name="how-to-declare-and-use-xml-namespace-prefixes-visual-basic"></a>Comment : déclarer et utiliser des préfixes d'espaces de noms XML (Visual Basic)
-This example shows how to import the XML namespace prefix `ns` and use it in an XML literal and XML axis properties.  
+Cet exemple montre comment importer le préfixe d’espace de noms XML `ns` et l’utiliser dans un littéral XML et des propriétés d’axe XML.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbXMLSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - une référence à l'espace de noms <xref:System.Xml.Linq>.  
   

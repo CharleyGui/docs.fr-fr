@@ -19,7 +19,7 @@ ms.locfileid: "74447031"
   
  Cette rubrique présente des conventions et des directives pour implémenter <xref:System.Windows.Automation.Provider.IWindowProvider>, notamment des informations sur les propriétés, méthodes et événements <xref:System.Windows.Automation.WindowPattern> . Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- The <xref:System.Windows.Automation.WindowPattern> control pattern is used to support controls that provide fundamental window-based functionality within a traditional graphical user interface (GUI). Examples of controls that must implement this control pattern include top-level application windows, multiple-document interface (MDI) child windows, resizable split pane controls, modal dialogs and balloon help windows.  
+ Le modèle de contrôle <xref:System.Windows.Automation.WindowPattern> est utilisé pour prendre en charge des contrôles qui fournissent des fonctionnalités fondamentales basées sur des fenêtres dans une interface graphique utilisateur (GUI) traditionnelle. Voici des exemples de contrôles qui doivent implémenter ce modèle de contrôle : les fenêtres d’application de niveau supérieur, les fenêtres enfants de l’interface multidocument (MDI), les contrôles de volet de fractionnement redimensionnables, les boîtes de dialogue modales et les fenêtres d’aide de bulle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
@@ -39,34 +39,34 @@ ms.locfileid: "74447031"
 ## <a name="required-members-for-iwindowprovider"></a>Membres obligatoires pour IWindowProvider  
  Les propriétés, méthodes et événements suivants sont obligatoires pour l’interface IWindowProvider.  
   
-|Membre obligatoire|Type de membre|Notes|  
+|Membre requis|Type de membre|Remarques|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Méthode|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Méthode|aucune.|  
-|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Méthode|aucune.|  
-|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|événement|aucune.|  
-|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|événement|aucune.|  
-|<xref:System.Windows.Automation.WindowInteractionState>|événement|N’est pas nécessairement défini sur <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.InteractionState%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsModal%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.IsTopmost%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Maximizable%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Minimizable%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.VisualState%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.Close%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.WindowPattern.WindowClosedEvent>|Événement|Aucune|  
+|<xref:System.Windows.Automation.WindowPattern.WindowOpenedEvent>|Événement|Aucune|  
+|<xref:System.Windows.Automation.WindowInteractionState>|Événement|N’est pas nécessairement défini sur <xref:System.Windows.Automation.WindowInteractionState.ReadyForUserInteraction>|  
   
 <a name="Exceptions"></a>   
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> -   When a control does not support a requested behavior.|  
-|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> -   When the parameter is not a valid number.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IWindowProvider.SetVisualState%2A><br /><br /> -Lorsqu’un contrôle ne prend pas en charge un comportement demandé.|  
+|<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.Provider.IWindowProvider.WaitForInputIdle%2A><br /><br /> -Lorsque le paramètre n’est pas un nombre valide.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
 - [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)
