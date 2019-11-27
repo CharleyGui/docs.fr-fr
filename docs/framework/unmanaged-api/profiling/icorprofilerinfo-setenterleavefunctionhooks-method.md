@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438646"
 ---
 # <a name="icorprofilerinfosetenterleavefunctionhooks-method"></a>ICorProfilerInfo::SetEnterLeaveFunctionHooks, méthode
-Specifies profiler-implemented functions to be called on "enter", "leave", and "tailcall" hooks of managed functions.  
+Spécifie les fonctions implémentées par le profileur à appeler sur les raccordements « Enter », « Leave » et « tailcall » des fonctions managées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT SetEnterLeaveFunctionHooks(
   
 ## <a name="parameters"></a>Paramètres  
  `pFuncEnter`  
- [in] A pointer to the implementation to be used as the [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) callback.  
+ dans Pointeur vers l’implémentation à utiliser comme rappel [FunctionEnter](../../../../docs/framework/unmanaged-api/profiling/functionenter-function.md) .  
   
  `pFuncLeave`  
- [in] A pointer to the implementation to be used as the [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) callback.  
+ dans Pointeur vers l’implémentation à utiliser comme rappel [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) .  
   
  `pFuncTailcall`  
- [in] A pointer to the implementation to be used as the [FunctionTailcall](../../../../docs/framework/unmanaged-api/profiling/functiontailcall-function.md) callback.  
+ dans Pointeur vers l’implémentation à utiliser comme rappel [FunctionTailcall (](../../../../docs/framework/unmanaged-api/profiling/functiontailcall-function.md) .  
   
 ## <a name="remarks"></a>Notes  
- In the .NET Framework version 1.0, each function pointer can be null to disable that corresponding callback.  
+ Dans la version de .NET Framework 1,0, chaque pointeur de fonction peut avoir la valeur null pour désactiver ce rappel correspondant.  
   
- Only one set of callbacks can be active at a time. Thus, if a profiler calls both `SetEnterLeaveFunctionHooks` and [ICorProfilerInfo2::SetEnterLeaveFunctionHooks2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md), then `SetEnterLeaveFunctionHooks2` takes precedence.  
+ Un seul ensemble de rappels peut être actif à la fois. Ainsi, si un profileur appelle à la fois `SetEnterLeaveFunctionHooks` et [ICorProfilerInfo2 :: SetEnterLeaveFunctionHooks2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md), `SetEnterLeaveFunctionHooks2` est prioritaire.  
   
- The `SetEnterLeaveFunctionHooks` method can be called only from the profiler's [ICorProfilerCallback::Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) callback.  
+ La méthode `SetEnterLeaveFunctionHooks` peut être appelée uniquement à partir du rappel [ICorProfilerCallback :: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) du profileur.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

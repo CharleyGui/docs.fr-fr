@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439465"
 ---
 # <a name="icorprofilercallback3profilerattachcomplete-method"></a>ICorProfilerCallback3::ProfilerAttachComplete, méthode
-Called by the common language runtime (CLR) to indicate that the profiler can now call the [ICorProfilerInfo3::EnumJITedFunctions](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enumjitedfunctions-method.md) and [ICorProfilerInfo3::EnumModules](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enummodules-method.md) catch-up methods.  
+Appelée par le common language runtime (CLR) pour indiquer que le profileur peut désormais appeler les méthodes de rattrapage [ICorProfilerInfo3 :: EnumJITedFunctions,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enumjitedfunctions-method.md) et [Icorprofilerinfo3 :: EnumModules](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-enummodules-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ HRESULT ProfilerAttachComplete ();
 ```  
   
 ## <a name="remarks"></a>Notes  
- The `ProfilerAttachComplete` callback is issued after the [ICorProfilerCallback3::InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) method is called. Il indique ce qui suit :  
+ Le rappel `ProfilerAttachComplete` est émis après l’appel de la méthode [ICorProfilerCallback3 :: InitializeForAttach](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md) . Il indique ce qui suit :  
   
 - Les rappels demandés par le profileur dans `InitializeForAttach` ont été activés.  
   
@@ -40,7 +40,7 @@ HRESULT ProfilerAttachComplete ();
   
  Le CLR ignore la valeur de retour de ce rappel.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

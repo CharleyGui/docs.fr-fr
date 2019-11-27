@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445681"
 ---
 # <a name="importtypes-method"></a>ImportTypes, méthode
-Initiates the importing of types from each scope imported via [ImportFile Method](importfile-method.md).  
+Lance l’importation de types à partir de chaque étendue importée via la [méthode ImportFile](importfile-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT ImportTypes(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID of the assembly to import to.  
+ ID de l’assembly dans lequel effectuer l’importation.  
   
  `FileToken`  
- ID of the file to import from.  
+ ID du fichier à partir duquel effectuer l’importation.  
   
  `dwScope`  
- Zero-based scope to import.  
+ Étendue de base zéro à importer.  
   
  `phEnum`  
- Receives enumerator handle for the types in this scope.  
+ Reçoit un handle d’énumérateur pour les types de cette portée.  
   
  `ppImportScope`  
- Optionally receives [IMetaDataImport Interface](../metadata/imetadataimport-interface.md) interface.  
+ Reçoit éventuellement l’interface d' [interface IMetaDataImport](../metadata/imetadataimport-interface.md) .  
   
  `pdwCountOfTypes`  
- Optionally receives count of types in the indicated scope.  
+ Reçoit éventuellement le nombre de types dans l’étendue indiquée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Returns S_OK if the method succeeds.  
+ Retourne S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>spécifications  
- Requires alink.h  
+## <a name="requirements"></a>Configuration requise  
+ Requiert ALink. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -1,5 +1,5 @@
 ---
-title: 'How to: read from comma-delimited text files'
+title: 'Comment : lire des fichiers texte délimités par des virgules'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [Visual Basic], parsing
@@ -62,5 +62,5 @@ L’objet `TextFieldParser` permet d’analyser facilement et efficacement les f
 - [Guide pratique : lire des fichiers texte de largeur fixe](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-fixed-width-text-files.md)
 - [Guide pratique : lire des fichiers texte avec plusieurs formats](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-from-text-files-with-multiple-formats.md)
 - [Analyse des fichiers texte avec l’objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)
-- [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
+- [Procédure pas à pas : manipulation de fichiers et de répertoires dans Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)
 - [Dépannage : lecture et écriture dans des fichiers texte](../../../../visual-basic/developing-apps/programming/drives-directories-files/troubleshooting-reading-from-and-writing-to-text-files.md)

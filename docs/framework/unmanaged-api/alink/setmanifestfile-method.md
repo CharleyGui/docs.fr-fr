@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445562"
 ---
 # <a name="setmanifestfile-method"></a>SetManifestFile, méthode
-Enables you to specify or reset the manifest file that the linker uses when it creates the assembly.  
+Vous permet de spécifier ou de réinitialiser le fichier manifeste que l’éditeur de liens utilise lorsqu’il crée l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT SetManifestFile(
 ## <a name="parameters"></a>Paramètres  
  `pszFile`  
   
- The name of the manifest file whose contents are put into the Win32 resources blob.  
+ Nom du fichier manifeste dont le contenu est placé dans l’objet blob de ressources Win32.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Returns S_OK if the method succeeds.  
+ Retourne S_OK si la méthode est réussie.  
   
 ## <a name="remarks"></a>Notes  
- Call this before asking for the Win32ResBlob. The value of the `pszFile` parameter is the name of the manifest file whose contents are read and put in the Win32 resources with ID of RT_MANIFEST. When called by using a parameter of NULL, any previously read manifest is cleared. This enables one to reset the state of the linker to that of initialization time.  
+ Appelez-le avant de demander le Win32ResBlob. La valeur du paramètre `pszFile` est le nom du fichier manifeste dont le contenu est lu et placé dans les ressources Win32 avec l’ID de RT_MANIFEST. En cas d’appel à l’aide d’un paramètre de valeur NULL, tout manifeste précédemment lu est effacé. Cela permet à l’un de réinitialiser l’état de l’éditeur de liens à celui du temps d’initialisation.  
   
-## <a name="requirements"></a>spécifications  
- Requires aLink.h  
+## <a name="requirements"></a>Configuration requise  
+ Requiert aLink. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -33,9 +33,9 @@ HRESULT GetCount([out] ULONG * pcelt);
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [out] The number of runtime modules in the collection.  
+ à Nombre de modules Runtime dans la collection.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

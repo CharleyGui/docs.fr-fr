@@ -20,7 +20,7 @@ ms.locfileid: "74446849"
 
 Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.
 
-The implementation for Windows Presentation Foundation (WPF) elements and non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] elements (such as those designed for [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) is fundamentally different. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.
+L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (tels que ceux conçus pour [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) est fondamentalement différente. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.
 
 <a name="Security_Considerations"></a>
 
@@ -59,7 +59,7 @@ Chaque fournisseur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharpt
 |Interface|Description|
 |---------------|-----------------|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderSimple>|Fournit les fonctionnalités pour un contrôle simple hébergé dans une fenêtre, y compris une prise en charge pour les modèles de contrôle et les propriétés.|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Ajoute des fonctionnalités pour un élément d’un contrôle complexe, y compris celles permettant de naviguer dans le fragment, de définir le focus et de retourner le rectangle englobant de l’élément.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderFragment>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple>. Ajoute des fonctionnalités pour un élément d'un contrôle complexe, y compris celles permettant de naviguer dans le fragment, de définir le focus et de retourner le rectangle englobant de l'élément.|
 |<xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>|Hérite de <xref:System.Windows.Automation.Provider.IRawElementProviderFragment>. Ajoute des fonctionnalités pour l'élément racine d'un contrôle complexe, y compris la localisation d'un élément enfant à des coordonnées spécifiées et la définition de l'état du focus pour l'ensemble du contrôle.|
 
 Les interfaces suivantes fournissent des fonctionnalités supplémentaires, mais leur implémentation n'est pas obligatoire.
@@ -79,12 +79,12 @@ Pour communiquer avec [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sha
 
 |Fonctionnalité|Implémentation|
 |-------------------|--------------------|
-|Exposer le fournisseur à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|En réponse à un message WM_GETOBJECT envoyé à la fenêtre de contrôle, retournez l'objet qui implémente <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (ou une interface dérivée). Pour les fragments, il doit s’agir du fournisseur pour la racine du fragment.|
+|Exposer le fournisseur à [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]|En réponse à un message WM_GETOBJECT envoyé à la fenêtre de contrôle, retournez l'objet qui implémente <xref:System.Windows.Automation.Provider.IRawElementProviderSimple> (ou une interface dérivée). Pour les fragments, il doit s'agir du fournisseur pour la racine du fragment.|
 |Fournir des valeurs de propriété|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPropertyValue%2A> pour fournir ou substituer des valeurs.|
 |Permettre au client d'interagir avec le contrôle|Implémentez des interfaces qui prennent en charge des modèles de contrôle, tels qu’ <xref:System.Windows.Automation.Provider.IInvokeProvider>. Retournez ces fournisseurs de modèles dans votre implémentation de <xref:System.Windows.Automation.Provider.IRawElementProviderSimple.GetPatternProvider%2A>.|
 |Déclencher des événements|Appelez une des méthodes statiques d' <xref:System.Windows.Automation.Provider.AutomationInteropProvider> pour déclencher un événement que le client pourra écouter.|
 |Activer la navigation et le focus dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment> pour chaque élément du fragment (sauf pour les éléments qui ne font pas partie d'un fragment).|
-|Activer le focus et l’emplacement d’un élément enfant dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Sauf pour les éléments qui ne sont pas des racines de fragment.)|
+|Activer le focus et l'emplacement d'un élément enfant dans un fragment|Implémentez <xref:System.Windows.Automation.Provider.IRawElementProviderFragmentRoot>. (Sauf pour les éléments qui ne sont pas des racines de fragment.)|
 
 <a name="Property_Values_in_Non_WPF_Providers"></a>
 
@@ -142,7 +142,7 @@ Pour optimiser les performances, un fournisseur peut déclencher des événement
 |Méthode|Description|
 |------------|-----------------|
 |<xref:System.Windows.Automation.Provider.AutomationInteropProvider.ClientsAreListening%2A>|Cette propriété statique spécifie si des applications clientes se sont abonnées à des événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] .|
-|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|L’implémentation de cette interface par le fournisseur sur une racine de fragment lui permet d’être avertie quand des clients enregistrent et annulent l’enregistrement de gestionnaires d’événements pour les événements situés sur le fragment.|
+|<xref:System.Windows.Automation.Provider.IRawElementProviderAdviseEvents>|L'implémentation de cette interface par le fournisseur sur une racine de fragment lui permet d'être avertie quand des clients enregistrent et annulent l'enregistrement de gestionnaires d'événements pour les événements situés sur le fragment.|
 
 <a name="Non_WPF_Provider_Navigation"></a>
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74438911"
 ---
 # <a name="icorprofilerinfogetinprocinspectionithisthread-method"></a>ICorProfilerInfo::GetInprocInspectionIThisThread, méthode
-Gets an object that can be queried for the ICorDebugThread interface. This method is obsolete in the .NET Framework version 2.0.  
+Obtient un objet qui peut être interrogé pour l’interface ICorDebugThread. Cette méthode est obsolète dans la version 2,0 de .NET Framework.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT GetInprocInspectionIThisThread(
   
 ## <a name="parameters"></a>Paramètres  
  `ppicd`  
- [out](/cpp/atl/iunknown) object that can be queried for the `ICorDebugThread` interface.  
+ objet [out](/cpp/atl/iunknown) qui peut être interrogé pour l’interface `ICorDebugThread`.  
   
 ## <a name="remarks"></a>Notes  
- The common language runtime (CLR) debugging services supported limited in-process debugging in the .NET Framework version 1.0. In-process debugging enabled a profiler to use the inspection portions of the debugging API. As a result of customer feedback, in-process debugging has been removed from the .NET Framework in version 2.0, and replaced with a set of functionality that is more in line with the profiling API.  
+ Les services de débogage common language runtime (CLR) ont pris en charge le débogage in-process limité dans le .NET Framework version 1,0. Le débogage en cours de processus permettait à un profileur d’utiliser les parties d’inspection de l’API de débogage. Suite aux commentaires des clients, le débogage en cours de processus a été supprimé de la .NET Framework dans la version 2,0 et remplacé par un ensemble de fonctionnalités qui est plus conforme à l’API de profilage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Framework Version:** 1.0  
+ **Version de .NET Framework :** 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 

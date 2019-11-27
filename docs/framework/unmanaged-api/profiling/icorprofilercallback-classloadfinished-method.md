@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445118"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished, méthode
-Notifies the profiler that a class has finished loading.  
+Notifie le profileur qu’une classe a fini de se charger.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT ClassLoadFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] Identifies the class that was loaded.  
+ dans Identifie la classe qui a été chargée.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether the class loaded successfully.  
+ dans HRESULT qui indique si la classe a été chargée avec succès.  
   
 ## <a name="remarks"></a>Notes  
- The value of `classId` is not valid for an information request until the `ClassLoadFinished` method is called.  
+ La valeur de `classId` n’est pas valide pour une demande d’informations jusqu’à ce que la méthode `ClassLoadFinished` soit appelée.  
   
- Some parts of loading the class might continue after the `ClassLoadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of loading the class has succeeded.  
+ Certaines parties du chargement de la classe peuvent continuer après le rappel `ClassLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de la classe a réussi.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

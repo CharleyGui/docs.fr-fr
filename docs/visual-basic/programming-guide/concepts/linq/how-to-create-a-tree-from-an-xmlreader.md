@@ -1,5 +1,5 @@
 ---
-title: "Comment : créer une arborescence à partir d'un XmlReader"
+title: 'Comment : créer une arborescence à partir d’un XmlReader'
 ms.date: 07/20/2015
 ms.assetid: 6de683d8-177d-402b-b0de-d0539f1ce5d8
 ms.openlocfilehash: 7d8d7f5b6389bef520e11fd2b7cc3e1c7e862e73
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353084"
 ---
-# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a>How to: Create a Tree from an XmlReader (Visual Basic)
+# <a name="how-to-create-a-tree-from-an-xmlreader-visual-basic"></a>Comment : créer une arborescence à partir d’un XmlReader (Visual Basic)
 
 Cette rubrique montre comment créer une arborescence XML directement à partir d'un objet <xref:System.Xml.XmlReader>. Pour créer un objet <xref:System.Xml.Linq.XElement> à partir d'un objet <xref:System.Xml.XmlReader>, vous devez placer l'objet <xref:System.Xml.XmlReader> sur un nœud d'élément. L'objet <xref:System.Xml.XmlReader> ignorera les commentaires et les instructions de traitement, mais si l'objet <xref:System.Xml.XmlReader> est placé sur un nœud de texte, une erreur sera renvoyée. Pour éviter de telles erreurs, placez toujours l'objet <xref:System.Xml.XmlReader> sur un élément avant de créer une arborescence XML à partir de l'objet <xref:System.Xml.XmlReader>.
 
@@ -56,4 +56,4 @@ Cet exemple génère la sortie suivante :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432153"
 ---
 # <a name="imaptokenmap-method"></a>IMapToken::Map, méthode
-Maps a relationship between the assemblies using metadata signatures.  
+Mappe une relation entre les assemblys à l’aide de signatures de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT Map (
   
 ## <a name="parameters"></a>Paramètres  
  `tkImp`  
- [in] The metadata token that represents the imported code object.  
+ dans Jeton de métadonnées qui représente l’objet de code importé.  
   
  `tkEmit`  
- [in] The metadata token that represents the emitted code object.  
+ dans Jeton de métadonnées qui représente l’objet de code émis.  
   
 ## <a name="remarks"></a>Notes  
- When the token re-map occurs during a merge, the original token is scoped in the imported (source) metadata scope and the new token is scoped in the emitted (target) metadata scope.  
+ Lorsque le mappage de jeton se produit pendant une fusion, le jeton d’origine est étendu dans l’étendue de métadonnées importée (source) et le nouveau jeton est défini dans la portée des métadonnées (cible) émise.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

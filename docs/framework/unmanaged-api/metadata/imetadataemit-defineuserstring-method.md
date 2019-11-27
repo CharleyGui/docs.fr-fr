@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450173"
 ---
 # <a name="imetadataemitdefineuserstring-method"></a>IMetaDataEmit::DefineUserString, méthode
-Gets a metadata token for the specified literal string.  
+Obtient un jeton de métadonnées pour la chaîne littérale spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,20 +37,20 @@ HRESULT DefineUserString (
   
 ## <a name="parameters"></a>Paramètres  
  `szString`  
- [in] The user string to store.  
+ dans Chaîne utilisateur à stocker.  
   
  `cchString`  
- [in] The count of wide characters in `szString`.  
+ dans Nombre de caractères larges dans `szString`.  
   
  `pstk`  
- [out] The string token assigned.  
+ à Jeton de chaîne assigné.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

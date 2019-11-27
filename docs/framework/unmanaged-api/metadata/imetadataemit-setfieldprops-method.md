@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445464"
 ---
 # <a name="imetadataemitsetfieldprops-method"></a>IMetaDataEmit::SetFieldProps, méthode
-Sets or updates the default value for the field referenced by the specified field token.  
+Définit ou met à jour la valeur par défaut pour le champ référencé par le jeton de champ spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,26 +39,26 @@ HRESULT SetFieldProps (
   
 ## <a name="parameters"></a>Paramètres  
  `fd`  
- [in] The token for the target field.  
+ dans Jeton pour le champ cible.  
   
  `dwFieldFlags`  
- [in] Field attributes. This is a bitmask of `CorFieldAttr` values.  
+ dans Attributs du champ. Il s’agit d’un masque de ré`CorFieldAttr` valeurs.  
   
  `dwCPlusTypeFlag`  
- [in] The `ELEMENT_TYPE_` *\** for the constant value. This is a `CorElementType` value. If a constant is not being defined, set this value to `ELEMENT_TYPE_END`.  
+ dans `ELEMENT_TYPE_` *\** pour la valeur de constante. Il s’agit d’une valeur `CorElementType`. Si une constante n’est pas définie, définissez cette valeur sur `ELEMENT_TYPE_END`.  
   
  `pValue`  
- [in] The constant value for the field.  
+ dans Valeur de constante pour le champ.  
   
  `cchValue`  
- [in] The size, in Unicode characters, of `pValue`.  
+ dans Taille, en caractères Unicode, de `pValue`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

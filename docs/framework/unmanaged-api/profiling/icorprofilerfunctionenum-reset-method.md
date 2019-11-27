@@ -31,7 +31,7 @@ Déplace le curseur de l'énumérateur à la position de départ de la séquence
 HRESULT Reset();  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

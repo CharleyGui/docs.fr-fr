@@ -38,33 +38,33 @@ HRESULT EnumTypeSpecs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This value must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Cette valeur doit être NULL pour le premier appel de cette méthode.  
   
  `rTypeSpecs`  
- [out] The array used to store the TypeSpec tokens.  
+ à Tableau utilisé pour stocker les jetons TypeSpec.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeSpecs`.  
   
  `pcTypeSpecs`  
- [out] The number of TypeSpec tokens returned in `rTypeSpecs`.  
+ à Nombre de jetons TypeSpec retournés dans `rTypeSpecs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeSpecs` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeSpecs` is zero.|  
+|`S_OK`|`EnumTypeSpecs` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTypeSpecs` est égal à zéro.|  
   
 ## <a name="remarks"></a>Notes  
- The TypeSpec tokens are created by the [IMetaDataEmit::GetTokenFromTypeSpec](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) method.  
+ Les jetons TypeSpec sont créés par la méthode [IMetaDataEmit :: GetTokenFromTypeSpec,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromtypespec-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

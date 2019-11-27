@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431852"
 ---
 # <a name="imetadataemitdefineimporttype-method"></a>IMetaDataEmit::DefineImportType, méthode
-Creates a reference to the specified type that is defined outside the current scope, and defines a token for that reference.  
+Crée une référence au type spécifié qui est défini en dehors de la portée actuelle et définit un jeton pour cette référence.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,35 +41,35 @@ HRESULT DefineImportType (
   
 ## <a name="parameters"></a>Paramètres  
  `pAssemImport`  
- [in] An [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) interface that represents the assembly from which the target type is imported.  
+ dans Interface [IMetaDataAssemblyImport](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyimport-interface.md) qui représente l’assembly à partir duquel le type cible est importé.  
   
  `pbHashValue`  
- [in] An array that contains the hash for the assembly specified by `pAssemImport`.  
+ dans Tableau qui contient le hachage de l’assembly spécifié par `pAssemImport`.  
   
  `cbHashValue`  
  [in] Nombre d'octets dans le tableau `pbHashValue`.  
   
  `pImport`  
- [in] An [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) interface that represents the metadata scope from which the target type is imported.  
+ dans Interface [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) qui représente la portée des métadonnées à partir de laquelle le type cible est importé.  
   
  `tdImport`  
- [in] An `mdTypeDef` token that specifies the target type.  
+ dans Jeton `mdTypeDef` qui spécifie le type de cible.  
   
  `pAssemEmit`  
- [in] An [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) interface that represents the assembly into which the target type is imported.  
+ dans Interface [IMetaDataAssemblyEmit](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-interface.md) qui représente l’assembly dans lequel le type cible est importé.  
   
  `ptr`  
- [out] The `mdTypeRef` token that is defined in the current scope for the type reference.  
+ à Jeton `mdTypeRef` qui est défini dans la portée actuelle pour la référence de type.  
   
 ## <a name="remarks"></a>Notes  
- Prior to calling the [IMetaDataEmit::DefineImportMember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) method, you can use the `DefineImportType` method to create a type reference, in the current scope, for the member's parent class or parent interface.  
+ Avant d’appeler la méthode [IMetaDataEmit ::D efineimportmember](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineimportmember-method.md) , vous pouvez utiliser la méthode `DefineImportType` pour créer une référence de type, dans la portée actuelle, pour la classe parente ou l’interface parente du membre.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

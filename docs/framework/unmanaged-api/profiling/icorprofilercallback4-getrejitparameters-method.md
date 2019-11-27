@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439438"
 ---
 # <a name="icorprofilercallback4getrejitparameters-method"></a>ICorProfilerCallback4::GetReJITParameters, méthode
-Allows the code profiler to set alternate code generation flags for a new recompiled method body.  
+Permet au profileur de code de définir d’autres indicateurs de génération de code pour un nouveau corps de méthode recompilée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,18 +33,18 @@ HRESULT GetReJITParameters(     [in] ModuleID moduleId,     [in] mdMethodDef met
   
 ## <a name="parameters"></a>Paramètres  
  `moduleID`  
- [in] The module that contains the method for which the CLR needs JIT recompilation parameters.  
+ dans Module qui contient la méthode pour laquelle le CLR a besoin de paramètres de recompilation JIT.  
   
  `methodId`  
- [in] The `MethodDef` of the method for which the CLR needs JIT recompilation parameters.  
+ dans `MethodDef` de la méthode pour laquelle le CLR a besoin de paramètres de recompilation JIT.  
   
  `pFunctionControl`  
- [in] A pointer to an [ICorProfilerFunctionControl](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md) interface that the profiler can use to provide JIT recompilation information for the method being recompiled.  
+ dans Pointeur vers une interface [ICorProfilerFunctionControl](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-interface.md) que le profileur peut utiliser pour fournir des informations de recompilation JIT pour la méthode en cours de recompilation.  
   
 ## <a name="remarks"></a>Notes  
- The CLR issues a `GetReJITParameters` callback so that the profiler can specify the parameters for recompiling a given method. The `GetReJITParameters` callback is issued only once per function; the parameters supplied by the profiler apply to all instances of that function.  
+ Le CLR émet un rappel de `GetReJITParameters` afin que le profileur puisse spécifier les paramètres pour la recompilation d’une méthode donnée. Le rappel `GetReJITParameters` est émis une seule fois par fonction ; les paramètres fournis par le profileur s’appliquent à toutes les instances de cette fonction.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

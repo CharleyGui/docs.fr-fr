@@ -38,33 +38,33 @@ HRESULT EnumSignatures (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `rSignatures`  
- [out] The array used to store the Signature tokens.  
+ à Tableau utilisé pour stocker les jetons de signature.  
   
  `cMax`  
  [in] Taille maximale du tableau `rSignatures`.  
   
  `pcSignatures`  
- [out] The number of Signature tokens returned in `rSignatures`.  
+ à Nombre de jetons de signature renvoyés dans `rSignatures`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumSignatures` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcSignatures` is zero.|  
+|`S_OK`|`EnumSignatures` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcSignatures` est égal à zéro.|  
   
 ## <a name="remarks"></a>Notes  
- The Signature tokens are created by the [IMetaDataEmit::GetTokenFromSig](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromsig-method.md) method.  
+ Les jetons de signature sont créés par la méthode [IMetaDataEmit :: GetTokenFromSig,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-gettokenfromsig-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

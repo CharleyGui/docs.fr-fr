@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447211"
 ---
 # <a name="imetadataassemblyimportgetfileprops-method"></a>IMetaDataAssemblyImport::GetFileProps, méthode
-Gets the properties of the file with the specified metadata signature.  
+Obtient les propriétés du fichier avec la signature de métadonnées spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT GetFileProps (
   
 ## <a name="parameters"></a>Paramètres  
  `mdf`  
- [in] The `mdFile` metadata token that represents the file for which to get the properties.  
+ dans `mdFile` jeton de métadonnées qui représente le fichier pour lequel obtenir les propriétés.  
   
  `szName`  
- [out] The simple name of the file.  
+ à Nom simple du fichier.  
   
  `cchName`  
- [in] The size, in wide chars, of `szName`.  
+ dans Taille, en caractères larges, de `szName`.  
   
  `pchName`  
- [out] The number of wide chars actually returned in `szName`.  
+ à Nombre de caractères larges réellement retournés dans `szName`.  
   
  `ppbHashValue`  
- [out] A pointer to the hash value. This is the hash, using the SHA-1 algorithm, of the file.  
+ à Pointeur vers la valeur de hachage. Il s’agit du hachage, à l’aide de l’algorithme SHA-1, du fichier.  
   
  `pcbHashValue`  
- [out] The number of wide chars in the returned hash value.  
+ à Nombre de caractères larges dans la valeur de hachage retournée.  
   
  `pdwFileFlags`  
- [out] A pointer to the flags that describe the metadata applied to a file. The flags value is a combination of one or more [CorFileFlags](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) values.  
+ à Pointeur vers les indicateurs qui décrivent les métadonnées appliquées à un fichier. La valeur flags est une combinaison d’une ou plusieurs valeurs [CorFileFlags,](../../../../docs/framework/unmanaged-api/metadata/corfileflags-enumeration.md) .  
   
-## <a name="requirements"></a>spécifications  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

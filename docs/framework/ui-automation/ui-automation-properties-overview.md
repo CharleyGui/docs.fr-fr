@@ -20,17 +20,17 @@ ms.locfileid: "74447955"
   
  Cette section offre une vue générale des propriétés [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] . Des informations plus spécifiques sont disponibles dans les rubriques suivantes :  
   
-- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)  
+- [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)  
   
 - [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)  
   
 <a name="Property_Identifiers"></a>   
 ## <a name="property-identifiers"></a>Identificateurs de propriété  
- Chaque propriété est identifiée par un numéro et un nom. Les noms de propriétés sont utilisés uniquement pour le débogage et le diagnostic. Providers use the numeric IDs to identify incoming property requests. Les applications clientes, toutefois, utilisent uniquement <xref:System.Windows.Automation.AutomationProperty>, qui encapsule le numéro et le nom, pour identifier les propriétés qu’elles souhaitent récupérer.  
+ Chaque propriété est identifiée par un numéro et un nom. Les noms de propriétés sont utilisés uniquement pour le débogage et le diagnostic. Les fournisseurs utilisent les ID numériques pour identifier les demandes de propriété entrantes. Les applications clientes, toutefois, utilisent uniquement <xref:System.Windows.Automation.AutomationProperty>, qui encapsule le numéro et le nom, pour identifier les propriétés qu’elles souhaitent récupérer.  
   
  Les objets<xref:System.Windows.Automation.AutomationProperty> qui représentent des propriétés particulières sont disponibles sous forme de champs dans différentes classes. Pour des raisons de sécurité, les fournisseurs UI Automation obtiennent ces objets à partir d’un ensemble distinct de classes contenues dans Uiautomationtypes.dll.  
   
- The following table categorizes properties by the classes that contain the <xref:System.Windows.Automation.AutomationProperty>IDs.  
+ Le tableau suivant classe les propriétés selon les classes qui contiennent les ID de <xref:System.Windows.Automation.AutomationProperty>.  
   
 |Types de propriétés|Les clients obtiennent les ID par le biais de|Les fournisseurs obtiennent les ID par le biais de|  
 |-------------------------|--------------------------|----------------------------|  
@@ -53,24 +53,24 @@ ms.locfileid: "74447955"
   
 <a name="Properties_by_Category"></a>   
 ## <a name="properties-by-category"></a>Propriétés par catégorie  
- The following tables categorize the properties whose IDs are found in <xref:System.Windows.Automation.AutomationElement> and <xref:System.Windows.Automation.AutomationElementIdentifiers>. Ces propriétés sont communes à tous les contrôles. Toutefois, certaines d’entre elles sont susceptibles d’être statiques pendant la durée de vie de l’application fournisseur. Les propriétés les plus dynamiques sont associées à des modèles de contrôle.  
+ Les tableaux suivants catégorisent les propriétés dont les ID se trouvent dans <xref:System.Windows.Automation.AutomationElement> et <xref:System.Windows.Automation.AutomationElementIdentifiers>. Ces propriétés sont communes à tous les contrôles. Toutefois, certaines d’entre elles sont susceptibles d’être statiques pendant la durée de vie de l’application fournisseur. Les propriétés les plus dynamiques sont associées à des modèles de contrôle.  
   
  La colonne **Accès à la propriété** répertorie tous les autres accesseurs pour chaque propriété, en plus de <xref:System.Windows.Automation.AutomationElement.GetCurrentPropertyValue%2A> et <xref:System.Windows.Automation.AutomationElement.GetCachedPropertyValue%2A>. Pour plus d’informations sur l’obtention des propriétés d’une application cliente, consultez [UI Automation Properties for Clients](ui-automation-properties-for-clients.md).  
   
 > [!NOTE]
 > Pour obtenir des informations spécifiques sur chaque propriété, suivez le lien de la colonne **Accès à la propriété** .  
   
-### <a name="display-characteristics"></a>Caractéristiques d’affichage  
+### <a name="display-characteristics"></a>Afficher les caractéristiques  
   
 |Identificateur de la propriété|Accès à la propriété|  
 |-------------------------|---------------------|  
 |<xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.BoundingRectangle%2A>|  
-|<xref:System.Windows.Automation.AutomationElement.CultureProperty>|N/A|  
+|<xref:System.Windows.Automation.AutomationElement.CultureProperty>|Non applicable|  
 |<xref:System.Windows.Automation.AutomationElement.HelpTextProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.HelpText%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.IsOffscreenProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsOffscreen%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.OrientationProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.Orientation%2A>|  
   
-### <a name="element-type"></a>Type d'élément  
+### <a name="element-type"></a>Type, élément  
   
 |Identificateur de la propriété|Accès à la propriété|  
 |-------------------------|---------------------|  
@@ -93,7 +93,7 @@ ms.locfileid: "74447955"
 |<xref:System.Windows.Automation.AutomationElement.RuntimeIdProperty>|<xref:System.Windows.Automation.AutomationElement.GetRuntimeId%2A>|  
 |<xref:System.Windows.Automation.AutomationElement.NativeWindowHandleProperty>|<xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.NativeWindowHandle%2A>|  
   
-### <a name="interaction"></a>Interaction  
+### <a name="interaction"></a>interaction  
   
 |Identificateur de la propriété|Accès à la propriété|  
 |-------------------------|---------------------|  
@@ -161,8 +161,8 @@ ms.locfileid: "74447955"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md)
-- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)
+- [Caching in UI Automation Clients](caching-in-ui-automation-clients.md)
+- [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)
 - [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)
 - [Rechercher un élément UI Automation basé sur une condition de propriété](find-a-ui-automation-element-based-on-a-property-condition.md)
 - [Retourner les propriétés d’un fournisseur UI Automation](return-properties-from-a-ui-automation-provider.md)

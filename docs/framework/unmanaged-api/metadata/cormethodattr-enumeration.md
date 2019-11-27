@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450229"
 ---
 # <a name="cormethodattr-enumeration"></a>CorMethodAttr, énumération
-Contains values that describe the features of a method.  
+Contient des valeurs qui décrivent les fonctionnalités d’une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -66,35 +66,35 @@ typedef enum CorMethodAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`mdMemberAccessMask`|Specifies member access.|  
-|`mdPrivateScope`|Specifies that the member cannot be referenced.|  
-|`mdPrivate`|Specifies that the member is accessible only by the parent type.|  
-|`mdFamANDAssem`|Specifies that the member is accessible by subtypes only in this assembly.|  
-|`mdAssem`|Specifies that the member is accessibly by anyone in the assembly.|  
-|`mdFamily`|Specifies that the member is accessible only by type and subtypes.|  
-|`mdFamORAssem`|Specifies that the member is accessible by derived classes and by other types in its assembly.|  
-|`mdPublic`|Specifies that the member is accessible by all types with access to the scope.|  
-|`mdStatic`|Specifies that the member is defined as part of the type rather than as a member of an instance.|  
-|`mdFinal`|Specifies that the method cannot be overridden.|  
-|`mdVirtual`|Specifies that the method can be overridden.|  
-|`mdHideBySig`|Specifies that the method hides by name and signature, rather than just by name.|  
-|`mdVtableLayoutMask`|Specifies virtual table layout.|  
-|`mdReuseSlot`|Specifies that the slot used for this method in the virtual table be reused. Il s'agit de la valeur par défaut.|  
-|`mdNewSlot`|Specifies that the method always gets a new slot in the virtual table.|  
-|`mdCheckAccessOnOverride`|Specifies that the method can be overridden by the same types to which it is visible.|  
-|`mdAbstract`|Specifies that the method is not implemented.|  
-|`mdSpecialName`|Specifies that the method is special, and that its name describes how.|  
-|`mdPinvokeImpl`|Specifies that the method implementation is forwarded using PInvoke.|  
-|`mdUnmanagedExport`|Specifies that the method is a managed method exported to unmanaged code.|  
-|`mdReservedMask`|Reserved for internal use by the common language runtime.|  
-|`mdRTSpecialName`|Specifies that the common language runtime should check the encoding of the method name.|  
-|`mdHasSecurity`|Specifies that the method has security associated with it.|  
-|`mdRequireSecObject`|Specifies that the method calls another method containing security code.|  
+|`mdMemberAccessMask`|Spécifie l’accès au membre.|  
+|`mdPrivateScope`|Spécifie que le membre ne peut pas être référencé.|  
+|`mdPrivate`|Spécifie que le membre est accessible uniquement par le type parent.|  
+|`mdFamANDAssem`|Spécifie que le membre est accessible par les sous-types uniquement dans cet assembly.|  
+|`mdAssem`|Spécifie que le membre est accessibly par toute personne de l’assembly.|  
+|`mdFamily`|Spécifie que le membre est accessible uniquement par type et sous-types.|  
+|`mdFamORAssem`|Spécifie que le membre est accessible par les classes dérivées et par d’autres types dans son assembly.|  
+|`mdPublic`|Spécifie que le membre est accessible par tous les types ayant accès à la portée.|  
+|`mdStatic`|Spécifie que le membre est défini dans le cadre du type plutôt qu’en tant que membre d’une instance.|  
+|`mdFinal`|Spécifie que la méthode ne peut pas être substituée.|  
+|`mdVirtual`|Spécifie que la méthode peut être substituée.|  
+|`mdHideBySig`|Spécifie que la méthode masque par nom et par signature, plutôt que simplement par nom.|  
+|`mdVtableLayoutMask`|Spécifie la disposition de la table virtuelle.|  
+|`mdReuseSlot`|Spécifie que l’emplacement utilisé pour cette méthode dans la table virtuelle doit être réutilisé. Il s'agit de la valeur par défaut.|  
+|`mdNewSlot`|Spécifie que la méthode obtient toujours un nouvel emplacement dans la table virtuelle.|  
+|`mdCheckAccessOnOverride`|Spécifie que la méthode peut être substituée par les mêmes types auxquels elle est visible.|  
+|`mdAbstract`|Spécifie que la méthode n’est pas implémentée.|  
+|`mdSpecialName`|Spécifie que la méthode est spéciale et que son nom décrit comment.|  
+|`mdPinvokeImpl`|Spécifie que l’implémentation de la méthode est transférée à l’aide de PInvoke.|  
+|`mdUnmanagedExport`|Spécifie que la méthode est une méthode managée exportée vers du code non managé.|  
+|`mdReservedMask`|Réservé à un usage interne par la common language runtime.|  
+|`mdRTSpecialName`|Spécifie que le common language runtime doit vérifier l’encodage du nom de la méthode.|  
+|`mdHasSecurity`|Spécifie que la méthode est associée à la sécurité.|  
+|`mdRequireSecObject`|Spécifie que la méthode appelle une autre méthode contenant du code de sécurité.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -25,7 +25,7 @@ Cette rubrique explique comment résoudre les problèmes de configuration de Win
   
 - HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\MSDTC Bridge 3.0.0.0  
   
- Les clés ne sont pas recréées si vous exécutez la réparation en lançant le programme d'installation du .NET Framework 3.0 à partir de l'applet **Ajout/Suppression de programmes** située dans **Panneau de configuration**. Pour recréer ces clés correctement, l'utilisateur doit désinstaller, puis réinstaller le .NET Framework 3.0.  
+ Les clés ne sont pas recréées si vous exécutez la réparation à l’aide du programme d’installation .NET Framework 3,0 lancé à partir de l’applet **Ajout/suppression de programmes** du **panneau de configuration**. Pour recréer ces clés correctement, l'utilisateur doit désinstaller, puis réinstaller le .NET Framework 3.0.  
   
 ## <a name="wmi-service-corruption-blocks-installation-of-the-windows-communication-foundation-wmi-provider-during-installation-of-net-framework-30-package"></a>La corruption des services WMI bloque l'installation du fournisseur WMI Windows Communication Foundation pendant l'installation du package .NET Framework 3.0  
  La corruption des services WMI peut bloquer l'installation du fournisseur WMI Windows Communication Foundation. Pendant l'installation, le programme d'installation de Windows Communication Foundation ne peut pas enregistrer le fichier WCF .mof à l'aide du composant mofcomp.exe. La section suivante présente la liste des symptômes :  
@@ -46,7 +46,7 @@ Cette rubrique explique comment résoudre les problèmes de configuration de Win
   
      ou :  
   
-     ServiceModelReg [07:19:32:750] : System.IO.FileNotFoundException : impossible de charger le fichier ou l'assembly 'C:\WINDOWS\system32\wbem\mofcomp.exe' ou l'une de ses dépendances. Le système ne trouve pas le fichier spécifié.  
+     ServiceModelReg [07:19:32:750] : System.IO.FileNotFoundException : impossible de charger le fichier ou l'assembly 'C:\WINDOWS\system32\wbem\mofcomp.exe' ou l'une de ses dépendances. Le système ne parvient pas à localiser le fichier spécifié.  
   
      Nom de fichier : 'C:\WINDOWS\system32\wbem\mofcomp.exe  
   
@@ -54,7 +54,7 @@ Cette rubrique explique comment résoudre les problèmes de configuration de Win
   
 1. Exécutez [le WMI Diagnosis Utility, version 2,0](https://go.microsoft.com/fwlink/?LinkId=94685) pour réparer le service WMI. Pour plus d’informations sur l’utilisation de cet outil, consultez la rubrique [WMI Diagnosis Utility](https://go.microsoft.com/fwlink/?LinkId=94686) .  
   
- Réparez l'installation du .NET Framework 3.0 à l'aide de l'applet **Ajout/Suppression de programmes** située dans **Panneau de configuration**, ou désinstallation/réinstallez le .NET Framework 3.0.  
+ Réparez l’installation .NET Framework 3,0 à l’aide de l’applet **Ajout/suppression de programmes** située dans le **panneau de configuration**, ou désinstallez/réinstallez le .NET Framework 3,0.  
   
 ## <a name="repairing-net-framework-30-after-net-framework-35-installation-removes-configuration-elements-introduced-by-net-framework-35-in-machineconfig"></a>La réparation du .NET Framework 3.0 après l'installation du .NET Framework 3.5 supprime les éléments de configuration introduits par le .NET Framework 3.5 dans machine.config  
  Si vous effectuez une réparation de .NET Framework 3,0 après avoir installé .NET Framework 3,5, les éléments de configuration introduits par .NET Framework 3,5 dans le fichier machine. config sont supprimés. Cependant, web.config reste intact. La solution consiste à réparer .NET Framework 3,5 après cela via le protocole ARP, ou à utiliser l' [outil Workflow Service Registration (WFServicesReg. exe)](workflow-service-registration-tool-wfservicesreg-exe.md) avec le commutateur `/c`.  

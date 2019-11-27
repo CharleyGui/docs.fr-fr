@@ -1,5 +1,5 @@
 ---
-title: 'How to: Build a multifile assembly'
+title: 'Comment : générer un assembly multifichier'
 ms.date: 08/20/2019
 helpviewer_keywords:
 - assemblies [.NET Framework], multifile
@@ -24,16 +24,16 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429558"
 ---
-# <a name="how-to-build-a-multifile-assembly"></a>How to: Build a multifile assembly
+# <a name="how-to-build-a-multifile-assembly"></a>Comment : générer un assembly multifichier
 
 Cet article explique comment créer un assembly multifichier et fournit le code illustrant chaque étape de la procédure.
 
 > [!NOTE]
-> L'IDE de Visual Studio pour C# et Visual Basic ne peut être utilisé que pour créer des assemblys à fichier unique. Si vous souhaitez créer des assemblys multifichiers, vous devez utiliser les compilateurs de ligne de commande ou Visual Studio avec Visual C++. Multifile assemblies are supported by .NET Framework only.
+> L'IDE de Visual Studio pour C# et Visual Basic ne peut être utilisé que pour créer des assemblys à fichier unique. Si vous souhaitez créer des assemblys multifichiers, vous devez utiliser les compilateurs de ligne de commande ou Visual Studio avec Visual C++. Les assemblys multifichiers sont pris en charge par .NET Framework uniquement.
 
-## <a name="create-a-multifile-assembly"></a>Create a multifile assembly
+## <a name="create-a-multifile-assembly"></a>Créer un assembly multifichier
 
-1. Compilez tous les fichiers contenant des espaces de noms référencés par d'autres modules de l'assembly dans des modules de code. The default extension for code modules is *.netmodule*.
+1. Compilez tous les fichiers contenant des espaces de noms référencés par d'autres modules de l'assembly dans des modules de code. L’extension par défaut pour les modules de code est *. netmodule*.
 
    Par exemple, supposons que le fichier `Stringer` a un espace de noms appelé `myStringer`, qui inclut une classe appelée `Stringer`. La classe `Stringer` contient une méthode appelée `StringerMethod` qui écrit une seule ligne dans la console.
 
@@ -95,11 +95,11 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
    vbc /t:module Stringer.vb
    ```
 
-   La spécification du paramètre *module* à l’aide de l’option du compilateur **/t:** indique que le fichier doit être compilé comme module et non comme assembly. The compiler produces a module called *Stringer.netmodule*, which can be added to an assembly.
+   La spécification du paramètre *module* à l’aide de l’option du compilateur **/t:** indique que le fichier doit être compilé comme module et non comme assembly. Le compilateur produit un module appelé *Stringer. netmodule*, qui peut être ajouté à un assembly.
 
 3. Compilez tous les autres modules à l'aide des options du compilateur nécessaires pour indiquer les autres modules référencés dans le code. Cette étape utilise l’option du compilateur **/addmodule**.
 
-   In the following example, a code module called *Client* has an entry point `Main` method that references a method in the *Stringer.dll* module created in step 1.
+   Dans l’exemple suivant, un module de code appelé *client* a un point d’entrée `Main` méthode qui référence une méthode dans le module *Stringer. dll* créé à l’étape 1.
 
    ```cpp
    #using "Stringer.netmodule"
@@ -168,7 +168,7 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
    vbc /addmodule:Stringer.netmodule /t:module Client.vb
    ```
 
-   Spécifiez l’option **/t:module**, car ce module sera ajouté à un assembly lors d’une étape ultérieure. Specify the **/addmodule** option because the code in *Client* references a namespace created by the code in *Stringer.netmodule*. The compiler produces a module called *Client.netmodule* that contains a reference to another module, *Stringer.netmodule*.
+   Spécifiez l’option **/t:module**, car ce module sera ajouté à un assembly lors d’une étape ultérieure. Spécifiez l’option **/addmodule** , car le code du *client* référence un espace de noms créé par le code dans *Stringer. netmodule*. Le compilateur produit un module appelé *client. netmodule* qui contient une référence à un autre module, *Stringer. netmodule*.
 
    > [!NOTE]
    > Les compilateurs C# et Visual Basic prennent en charge la création directe d'assemblys multifichiers à l'aide de deux syntaxes différentes.
@@ -207,13 +207,13 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
 
 5. Utilisez l’utilitaire [Assembly Linker (Al.exe)](../tools/al-exe-assembly-linker.md) pour créer le fichier de sortie qui contient le manifeste d’assembly. Ce fichier contient des informations sur les références de tous les modules ou ressources faisant partie de l'assembly.
 
-    À l'invite de commandes, tapez la commande suivante :
+    À l’invite de commandes, tapez la commande suivante :
 
     **al** \<*nom_module*> \<*nom_module*> … **/main:** \<*nom_méthode*>  **/out:** \<*nom_fichier*>  **/target:** \<*type_fichier_assembly*>
 
-    Dans cette commande, les arguments *nom_module* spécifient le nom de chaque module à inclure dans l’assembly. L’option **/main:** spécifie le nom de la méthode représentant le point d’entrée de l’assembly. L’option **/out:** spécifie le nom du fichier de sortie, qui contient les métadonnées de l’assembly. The **/target:** option specifies that the assembly is a console application executable ( *.exe*) file, a Windows executable ( *.win*) file, or a library ( *.lib*) file.
+    Dans cette commande, les arguments *nom_module* spécifient le nom de chaque module à inclure dans l’assembly. L’option **/main:** spécifie le nom de la méthode représentant le point d’entrée de l’assembly. L’option **/out:** spécifie le nom du fichier de sortie, qui contient les métadonnées de l’assembly. L’option **/target :** spécifie que l’assembly est un fichier exécutable ( *. exe*) d’application console, un fichier exécutable Windows ( *. Win*) ou un fichier de bibliothèque ( *. lib*).
 
-    In the following example, *Al.exe* creates an assembly that is a console application executable called *myAssembly.exe*. The application consists of two modules called *Client.netmodule* and *Stringer.netmodule*, and the executable file called *myAssembly.exe*, which contains only assembly metadata. The entry point of the assembly is the `Main` method in the class `MainClientApp`, which is located in *Client.dll*.
+    Dans l’exemple suivant, *al. exe* crée un assembly qui est un exécutable d’application console appelé *myAssembly. exe*. L’application se compose de deux modules appelés *client. netmodule* et *Stringer. netmodule*, et du fichier exécutable appelé *myAssembly. exe*, qui contient uniquement les métadonnées de l’assembly. Le point d’entrée de l’assembly est la méthode `Main` dans la classe `MainClientApp`, qui se trouve dans *client. dll*.
 
     ```cmd
     al Client.netmodule Stringer.netmodule /main:MainClientApp.Main /out:myAssembly.exe /target:exe
@@ -223,7 +223,7 @@ Cet article explique comment créer un assembly multifichier et fournit le code 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Create assemblies](../../standard/assembly/create.md)
-- [How to: View assembly contents](../../standard/assembly/view-contents.md)
+- [Créer des assemblys](../../standard/assembly/create.md)
+- [Comment : afficher le contenu d’un assembly](../../standard/assembly/view-contents.md)
 - [Méthode de localisation des assemblys par le runtime](../deployment/how-the-runtime-locates-assemblies.md)
-- [Multifile assemblies](multifile-assemblies.md)
+- [Assemblys multifichiers](multifile-assemblies.md)
