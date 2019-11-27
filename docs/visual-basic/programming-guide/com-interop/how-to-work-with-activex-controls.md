@@ -13,22 +13,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353211"
 ---
 # <a name="how-to-work-with-activex-controls-visual-basic"></a>Comment : utiliser les contrôles ActiveX (Visual Basic)
-ActiveX controls are COM components or objects you can insert into a Web page or other application to reuse packaged functionality someone else has programmed. You can use ActiveX controls developed for Visual Basic 6.0 and earlier versions to add features to the **Toolbox** of Visual Studio.  
+Les contrôles ActiveX sont des composants COM ou des objets que vous pouvez insérer dans une page Web ou une autre application pour réutiliser les fonctionnalités empaquetées que quelqu’un d’autre a programmées. Vous pouvez utiliser des contrôles ActiveX développés pour Visual Basic 6,0 et des versions antérieures afin d’ajouter des fonctionnalités à la **boîte à outils** de Visual Studio.  
   
-### <a name="to-add-activex-controls-to-the-toolbox"></a>To add ActiveX controls to the toolbox  
+### <a name="to-add-activex-controls-to-the-toolbox"></a>Pour ajouter des contrôles ActiveX à la boîte à outils  
   
-1. On the **Tools** menu, click **Choose Toolbox Items**.  
+1. Dans le menu **Outils** , cliquez sur **choisir des éléments de boîte à outils**.  
   
-     The **Choose Toolbox** dialog box appears.  
+     La boîte de dialogue choisir une boîte **à outils** s’affiche.  
   
-2. Click the **COM Components** tab.  
+2. Cliquez sur l’onglet **composants com** .  
   
-3. Select the check box next to the ActiveX control you want to use, and then click **OK**.  
+3. Activez la case à cocher en regard du contrôle ActiveX que vous souhaitez utiliser, puis cliquez sur **OK**.  
   
-     The new control appears with the other tools in the **Toolbox**.  
+     Le nouveau contrôle s’affiche avec les autres outils de la **boîte à outils**.  
   
     > [!NOTE]
-    > You can use the Aximp utility to manually create an interop assembly for ActiveX controls. For more information, see [Aximp.exe (Windows Forms ActiveX Control Importer)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
+    > Vous pouvez utiliser l’utilitaire Aximp pour créer manuellement un assembly d’interopérabilité pour les contrôles ActiveX. Pour plus d’informations, consultez [Aximp. exe (Windows Forms ActiveX Control importateur)](../../../framework/tools/aximp-exe-windows-forms-activex-control-importer.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

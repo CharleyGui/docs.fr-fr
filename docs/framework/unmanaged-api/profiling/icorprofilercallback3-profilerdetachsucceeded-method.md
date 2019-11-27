@@ -35,13 +35,13 @@ HRESULT ProfilerDetachSucceeded();
  La valeur de retour de ce rappel est ignorée.  
   
 ## <a name="remarks"></a>Notes  
- Le rappel `ProfilerDetachSucceeded` est émis une fois que tous les threads ont quitté le code du profileur. Quand cette méthode est appelée, le profileur doit effectuer les tâches de dernière minute qui ne sont pas appropriées pour son destructeur, telles que la notification de son interface utilisateur ou l’enregistrement du composant. However, the profiler must not call functions on interfaces that are provided by the CLR during this callback (such as the [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) or `IMetaData*` interfaces).  
+ Le rappel `ProfilerDetachSucceeded` est émis une fois que tous les threads ont quitté le code du profileur. Quand cette méthode est appelée, le profileur doit effectuer les tâches de dernière minute qui ne sont pas appropriées pour son destructeur, telles que la notification de son interface utilisateur ou l’enregistrement du composant. Toutefois, le profileur ne doit pas appeler de fonctions sur les interfaces fournies par le CLR pendant ce rappel (comme les interfaces [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) ou `IMetaData*`).  
   
  Le CLR crée une entrée dans le journal des événements d'application Windows pour indiquer que l'opération de détachement a abouti.  
   
  Quand le profileur retourne de ce rappel, le CLR libère l'objet de profileur et décharge la DLL du profileur. Par conséquent, le profileur ne doit pas exécuter d'actions susceptibles de provoquer l'exécution à l'intérieur de la DLL du profileur après le retour de ce rappel. Par exemple, il ne doit pas créer de threads ou enregistrer de rappels de la minuterie.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

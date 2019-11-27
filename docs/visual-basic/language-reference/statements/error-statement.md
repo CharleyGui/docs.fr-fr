@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351239"
 ---
 # <a name="error-statement"></a>Error, instruction
-Simulates the occurrence of an error.  
+Simule l’occurrence d’une erreur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,39 +28,39 @@ Error errornumber
   
 ## <a name="parts"></a>Composants  
  `errornumber`  
- Requis. Can be any valid error number.  
+ Requis. Peut être n’importe quel numéro d’erreur valide.  
   
 ## <a name="remarks"></a>Notes  
- The `Error` statement is supported for backward compatibility. In new code, especially when creating objects, use the `Err` object's `Raise` method to generate run-time errors.  
+ L’instruction `Error` est prise en charge pour la compatibilité descendante. Dans le nouveau code, en particulier lors de la création d’objets, utilisez la méthode `Raise` de l’objet `Err` pour générer des erreurs d’exécution.  
   
- If `errornumber` is defined, the `Error` statement calls the error handler after the properties of the `Err` object are assigned the following default values:  
+ Si `errornumber` est défini, l’instruction `Error` appelle le gestionnaire d’erreurs après que les propriétés de l’objet `Err` reçoivent les valeurs par défaut suivantes :  
   
-|Property|valeur|  
+|Propriété|Valeur|  
 |--------------|-----------|  
-|`Number`|Value specified as argument to `Error` statement. Can be any valid error number.|  
-|`Source`|Name of the current Visual Basic project.|  
-|`Description`|String expression corresponding to the return value of the `Error` function for the specified `Number`, if this string exists. If the string does not exist, `Description` contains a zero-length string ("").|  
-|`HelpFile`|The fully qualified drive, path, and file name of the appropriate Visual Basic Help file.|  
-|`HelpContext`|The appropriate Visual Basic Help file context ID for the error corresponding to the `Number` property.|  
-|`LastDLLError`|Zero.|  
+|`Number`|Valeur spécifiée comme argument pour `Error` instruction. Peut être n’importe quel numéro d’erreur valide.|  
+|`Source`|Nom du projet de Visual Basic actif.|  
+|`Description`|Expression de chaîne correspondant à la valeur de retour de la fonction `Error` pour le `Number`spécifié, si cette chaîne existe. Si la chaîne n’existe pas, `Description` contient une chaîne de longueur nulle ("").|  
+|`HelpFile`|Le lecteur complet, le chemin d’accès et le nom de fichier du fichier d’aide Visual Basic approprié.|  
+|`HelpContext`|L’ID de contexte du fichier d’aide Visual Basic approprié pour l’erreur correspondant à la propriété `Number`.|  
+|`LastDLLError`|Nuls.|  
   
- If no error handler exists, or if none is enabled, an error message is created and displayed from the `Err` object properties.  
+ Si aucun gestionnaire d’erreurs n’existe ou si aucun n’est activé, un message d’erreur est créé et affiché à partir des propriétés de l’objet `Err`.  
   
 > [!NOTE]
-> Some Visual Basic host applications cannot create objects. See your host application's documentation to determine whether it can create classes and objects.  
+> Certaines applications hôtes Visual Basic ne peuvent pas créer d’objets. Consultez la documentation de votre application hôte pour déterminer si elle peut créer des classes et des objets.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `Error` statement to generate error number 11.  
+ L’exemple suivant utilise l’instruction `Error` pour générer le numéro d’erreur 11.  
   
 ```vb  
 On Error Resume Next   ' Defer error handling.  
 Error 11   ' Simulate the "Division by zero" error.  
 ```  
   
-## <a name="requirements"></a>spécifications  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>Configuration requise  
+ **Espace de noms :** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

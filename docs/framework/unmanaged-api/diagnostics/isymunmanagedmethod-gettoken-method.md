@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448850"
 ---
 # <a name="isymunmanagedmethodgettoken-method"></a>ISymUnmanagedMethod::GetToken, méthode
-Returns the metadata token for this method.  
+Retourne le jeton de métadonnées pour cette méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetToken(
   
 ## <a name="parameters"></a>Paramètres  
  `pToken`  
- [out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.  
+ à Pointeur vers un `mdMethodDef` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir les métadonnées.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

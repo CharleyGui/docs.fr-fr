@@ -62,7 +62,7 @@ Vous pouvez définir une classe à partir de laquelle vous créez des objets qui
   
 6. Vérifiez que votre code utilise uniquement des opérations et des méthodes qui sont prises en charge par tous les types de données qu’il peut fournir à `itemType`.  
   
-     L’exemple suivant définit une classe qui gère une liste très simple. Cette liste est contenue dans le tableau interne `items`. Le code utilisé peut déclarer le type de données des éléments de la liste. A parameterized constructor allows the using code to set the upper bound of `items`, and the parameterless constructor sets this to 9 (for a total of 10 items).  
+     L’exemple suivant définit une classe qui gère une liste très simple. Cette liste est contenue dans le tableau interne `items`. Le code utilisé peut déclarer le type de données des éléments de la liste. Un constructeur paramétrable permet au code à l’aide de définir la limite supérieure de `items`, et le constructeur sans paramètre définit cette valeur sur 9 (pour un total de 10 éléments).  
   
      [!code-vb[VbVbalrDataTypes#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#7)]  
   
@@ -82,4 +82,4 @@ Vous pouvez définir une classe à partir de laquelle vous créez des objets qui
 - [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [Liste de types](../../../../visual-basic/language-reference/statements/type-list.md)
 - [Guide pratique : utiliser une classe générique](../../../../visual-basic/programming-guide/language-features/data-types/how-to-use-a-generic-class.md)
-- [Object (type de données)](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)

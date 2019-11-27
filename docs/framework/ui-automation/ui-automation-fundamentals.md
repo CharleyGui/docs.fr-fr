@@ -17,7 +17,7 @@ ms.locfileid: "74441379"
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- This section contains high-level overviews of the [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] API.  
+ Cette section contient des vues d’ensemble générales de l’API [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble d’UI Automation](ui-automation-overview.md)  
@@ -29,7 +29,7 @@ ms.locfileid: "74441379"
  [Vue d’ensemble de la sécurité UI Automation](ui-automation-security-overview.md)  
  [Utilisation d’UI Automation pour des tests automatisés](using-ui-automation-for-automated-testing.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation>  
   
  <xref:System.Windows.Automation.Provider>  

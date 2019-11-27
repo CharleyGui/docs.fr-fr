@@ -37,7 +37,7 @@ Fournit des méthodes pour boucler séquentiellement dans une collection de modu
 ## <a name="remarks"></a>Notes  
  L'interface `ICorProfilerModuleEnum` est un énumérateur. Elle permet au récepteur d’un tableau de récupérer des éléments de l’expéditeur à une fréquence appropriée pour le récepteur. En d'autres termes, le récepteur peut contrôler explicitement le flux d'éléments de tableau et éviter ainsi les problèmes liés au passage de tableaux volumineux en tant que paramètres de méthode.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

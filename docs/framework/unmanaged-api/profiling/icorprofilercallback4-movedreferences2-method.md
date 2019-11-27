@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439370"
 ---
 # <a name="icorprofilercallback4movedreferences2-method"></a>ICorProfilerCallback4::MovedReferences2, méthode
-Appelée pour signaler la nouvelle disposition d'objets dans le tas suite à un garbage collection de compactage. This method is called if the profiler has implemented the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interface. This callback replaces the [ICorProfilerCallback::MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) method, because it can report larger ranges of objects whose lengths exceed what can be expressed in a ULONG.  
+Appelée pour signaler la nouvelle disposition d'objets dans le tas suite à un garbage collection de compactage. Cette méthode est appelée si le profileur a implémenté l’interface [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) . Ce rappel remplace la méthode [ICorProfilerCallback :: MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) , car il peut signaler des plages plus larges d’objets dont les longueurs dépassent ce qui peut être exprimé dans un ulong.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -65,17 +65,17 @@ HRESULT MovedReferences2(
   
  Pour toute valeur d'`i` se trouvant dans la plage suivante :  
   
- 0 <= `i` < `cMovedObjectIDRanges`  
+ 0 < = `i` < `cMovedObjectIDRanges`  
   
  Vous pouvez calculer le nouvel `ObjectID` comme suit :  
   
  `newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)  
   
- Aucune des valeurs `ObjectID` passées par `MovedReferences2` n'est valide pendant le rappel lui-même, car le garbage collector peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `MovedReferences2`. A [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) callback indicates that all objects have been moved to their new locations and inspection can be performed.  
+ Aucune des valeurs `ObjectID` passées par `MovedReferences2` n'est valide pendant le rappel lui-même, car le garbage collector peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `MovedReferences2`. Un rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) indique que tous les objets ont été déplacés vers leurs nouveaux emplacements et que l’inspection peut être effectuée.  
   
- If the profiler implements both the [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) and the [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) interfaces, the `MovedReferences2` method is called before the [ICorProfilerCallback::MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) method, but only if the `MovedReferences2` method returns successfully. Les profileurs peuvent retourner un HRESULT qui indique un échec de la méthode `MovedReferences2` pour éviter d'appeler la seconde méthode.  
+ Si le profileur implémente à la fois les interfaces [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) et [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) , la méthode `MovedReferences2` est appelée avant la méthode [ICorProfilerCallback :: MovedReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-movedreferences-method.md) , mais uniquement si la méthode `MovedReferences2` est correctement retournée. Les profileurs peuvent retourner un HRESULT qui indique un échec de la méthode `MovedReferences2` pour éviter d'appeler la seconde méthode.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

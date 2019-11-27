@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448866"
 ---
 # <a name="isymunmanagedmethodgetsourcestartend-method"></a>ISymUnmanagedMethod::GetSourceStartEnd, méthode
-Gets the start and end document positions for the source of this method. The first array position is the start, and the second array position is the end.  
+Obtient les positions de début et de fin du document pour la source de cette méthode. La première position de tableau est le début, tandis que la deuxième position de tableau est la fin.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetSourceStartEnd(
   
 ## <a name="parameters"></a>Paramètres  
  `docs`  
- [in] The starting and ending source documents.  
+ dans Documents source de début et de fin.  
   
  `lines`  
- [in] The starting and ending lines in the corresponding source documents.  
+ dans Lignes de début et de fin dans les documents sources correspondants.  
   
  `columns`  
- [in] The starting and ending columns in the corresponding source documents.  
+ dans Colonnes de début et de fin dans les documents sources correspondants.  
   
  `pRetVal`  
- [out] `true` if positions were defined; otherwise, `false`.  
+ [out] `true` si les positions ont été définies ; Sinon, `false`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

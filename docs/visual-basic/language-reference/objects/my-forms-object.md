@@ -16,57 +16,57 @@ ms.locfileid: "74350371"
 ---
 # <a name="myforms-object"></a>My.Forms, objet
 
-Provides properties for accessing an instance of each Windows form declared in the current project.
+Fournit des propriétés pour accéder à une instance de chaque Windows Form déclaré dans le projet actuel.
 
 ## <a name="remarks"></a>Notes
 
-The `My.Forms` object provides an instance of each form in the current project. The name of the property is the same as the name of the form that the property accesses.
+L’objet `My.Forms` fournit une instance de chaque formulaire dans le projet actuel. Le nom de la propriété est le même que celui du formulaire auquel la propriété accède.
 
-You can access the forms provided by the `My.Forms` object by using the name of the form, without qualification. Because the property name is the same as the form's type name, this allows you to access a form as if it had a default instance. Par exemple, `My.Forms.Form1.Show` équivaut à `Form1.Show`.
+Vous pouvez accéder aux formulaires fournis par l’objet `My.Forms` à l’aide du nom du formulaire, sans qualification. Étant donné que le nom de la propriété est le même que le nom du type du formulaire, cela vous permet d’accéder à un formulaire comme s’il avait une instance par défaut. Par exemple, `My.Forms.Form1.Show` équivaut à `Form1.Show`.
 
-The `My.Forms` object exposes only the forms associated with the current project. It does not provide access to forms declared in referenced DLLs. To access a form that a DLL provides, you must use the qualified name of the form, written as *DllName*.*FormName*.
+L’objet `My.Forms` expose uniquement les formulaires associés au projet actif. Elle ne fournit pas l’accès aux formulaires déclarés dans les dll référencées. Pour accéder à un formulaire fourni par une DLL, vous devez utiliser le nom qualifié du formulaire, écrit sous la forme *DllName*. *NomFormulaire*.
 
-You can use the <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> property to get a collection of all the application's open forms.
+Vous pouvez utiliser la propriété <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A> pour obtenir une collection de tous les formulaires ouverts de l’application.
 
-The object and its properties are available only for Windows applications.
+L’objet et ses propriétés sont uniquement disponibles pour les applications Windows.
 
 ## <a name="properties"></a>Propriétés
 
-Each property of the `My.Forms` object provides access to an instance of a form in the current project. The name of the property is the same as the name of the form that the property accesses, and the property type is the same as the form's type.
+Chaque propriété de l’objet `My.Forms` fournit l’accès à une instance d’un formulaire dans le projet actuel. Le nom de la propriété est le même que celui du formulaire auquel la propriété accède, et le type de propriété est le même que le type du formulaire.
 
 > [!NOTE]
-> If there is a name collision, the property name to access a form is *RootNamespace*_*Namespace*\_*FormName*. For example, consider two forms named `Form1.`If one of these forms is in the root namespace `WindowsApplication1` and in the namespace `Namespace1`, you would access that form through `My.Forms.WindowsApplication1_Namespace1_Form1`.
+> En cas de collision de nom, le nom de la propriété permettant d’accéder à un formulaire est *RootNamespace*_*namespace*\_*FormName*. Par exemple, considérez deux formulaires nommés `Form1.`si l’un de ces formulaires se trouve dans l’espace de noms racine `WindowsApplication1` et dans l’espace de noms `Namespace1`, vous accéderiez à ce formulaire via `My.Forms.WindowsApplication1_Namespace1_Form1`.
 
-The `My.Forms` object provides access to the instance of the application's main form that was created on startup. For all other forms, the `My.Forms` object creates a new instance of the form when it is accessed and stores it. Subsequent attempts to access that property return that instance of the form.
+L’objet `My.Forms` permet d’accéder à l’instance du formulaire principal de l’application qui a été créée au démarrage. Pour tous les autres formulaires, l’objet `My.Forms` crée une nouvelle instance du formulaire lors de son accès et le stocke. Les tentatives suivantes d’accès à cette propriété retournent cette instance du formulaire.
 
-You can dispose of a form by assigning `Nothing` to the property for that form. The property setter calls the <xref:System.Windows.Forms.Form.Close%2A> method of the form, and then assigns `Nothing` to the stored value. If you assign any value other than `Nothing` to the property, the setter throws an <xref:System.ArgumentException> exception.
+Vous pouvez supprimer un formulaire en affectant des `Nothing` à la propriété de ce formulaire. L’accesseur Set de propriété appelle la méthode <xref:System.Windows.Forms.Form.Close%2A> du formulaire, puis affecte `Nothing` à la valeur stockée. Si vous assignez une valeur autre que `Nothing` à la propriété, la méthode setter lève une exception <xref:System.ArgumentException>.
 
-You can test whether a property of the `My.Forms` object stores an instance of the form by using the `Is` or `IsNot` operator. You can use those operators to check if the value of the property is `Nothing`.
+Vous pouvez tester si une propriété de l’objet `My.Forms` stocke une instance du formulaire à l’aide de l’opérateur `Is` ou `IsNot`. Vous pouvez utiliser ces opérateurs pour vérifier si la valeur de la propriété est `Nothing`.
 
 > [!NOTE]
-> Typically, the `Is` or `IsNot` operator has to read the value of the property to perform the comparison. However, if the property currently stores `Nothing`, the property creates a new instance of the form and then returns that instance. However, the Visual Basic compiler treats the properties of the `My.Forms` object differently and allows the `Is` or `IsNot` operator to check the status of the property without altering its value.
+> En règle générale, l’opérateur `Is` ou `IsNot` doit lire la valeur de la propriété pour effectuer la comparaison. Toutefois, si la propriété stocke actuellement `Nothing`, la propriété crée une nouvelle instance du formulaire, puis retourne cette instance. Toutefois, le compilateur Visual Basic traite différemment les propriétés de l’objet `My.Forms` et permet à l’opérateur `Is` ou `IsNot` de vérifier l’état de la propriété sans modifier sa valeur.
 
 ## <a name="example"></a>Exemple
 
-This example changes the title of the default `SidebarMenu` form.
+Cet exemple modifie le titre du formulaire `SidebarMenu` par défaut.
 
 [!code-vb[VbVbalrMyForms#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrMyForms/VB/Class1.vb#2)]
 
-For this example to work, your project must have a form named `SidebarMenu`.
+Pour que cet exemple fonctionne, votre projet doit avoir un formulaire nommé `SidebarMenu`.
 
-This code will work only in a Windows Application project.
+Ce code ne fonctionne que dans un projet d’application Windows.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
-### <a name="availability-by-project-type"></a>Availability by Project Type
+### <a name="availability-by-project-type"></a>Disponibilité par type de projet
 
 |Type de projet|Disponible|
 |---|---|
 |Application Windows|**Oui**|
 |Bibliothèque de classes|Non|
 |Application console|Non|
-|Windows Control Library|Non|
-|Web Control Library|Non|
+|Bibliothèque de contrôles Windows|Non|
+|Bibliothèque de contrôles Web|Non|
 |Service Windows|Non|
 |Site web|Non|
 
@@ -75,7 +75,7 @@ This code will work only in a Windows Application project.
 - <xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>
 - <xref:System.Windows.Forms.Form>
 - <xref:System.Windows.Forms.Form.Close%2A>
-- [Objects](../../../visual-basic/language-reference/objects/index.md)
+- [Objets](../../../visual-basic/language-reference/objects/index.md)
 - [Is (opérateur)](../../../visual-basic/language-reference/operators/is-operator.md)
 - [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)
 - [Accès aux formulaires de l’application](../../../visual-basic/developing-apps/programming/accessing-application-forms.md)

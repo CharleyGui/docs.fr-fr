@@ -17,39 +17,39 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354100"
 ---
 # <a name="declaration-contexts-and-default-access-levels-visual-basic"></a>Contextes de déclaration et niveaux d'accès par défaut (Visual Basic)
-This topic describes which Visual Basic types can be declared within which other types, and what their access levels default to if not specified.  
+Cette rubrique décrit les types de Visual Basic qui peuvent être déclarés dans lesquels d’autres types, et les niveaux d’accès par défaut, s’ils ne sont pas spécifiés.  
   
-## <a name="declaration-context-levels"></a>Declaration Context Levels  
- The *declaration context* of a programming element is the region of code in which it is declared. This is often another programming element, which is then called the *containing element*.  
+## <a name="declaration-context-levels"></a>Niveaux de contexte de déclaration  
+ Le *contexte de déclaration* d’un élément de programmation est la région de code dans laquelle il est déclaré. Il s’agit souvent d’un autre élément de programmation, qui est ensuite appelé *élément conteneur*.  
   
- The levels for declaration contexts are the following:  
+ Les niveaux des contextes de déclaration sont les suivants :  
   
-- *Namespace level* — within a source file or namespace but not within a class, structure, module, or interface  
+- *Niveau* de l’espace de noms : dans un fichier source ou un espace de noms, mais pas dans une classe, une structure, un module ou une interface  
   
-- *Module level* — within a class, structure, module, or interface but not within a procedure or block  
+- *Niveau module* : dans une classe, une structure, un module ou une interface, mais pas dans une procédure ou un bloc  
   
-- *Procedure level* — within a procedure or block (such as `If` or `For`)  
+- *Niveau de procédure* : dans une procédure ou un bloc (par exemple, `If` ou `For`)  
   
- The following table shows the default access levels for various declared programming elements, depending on their declaration contexts.  
+ Le tableau suivant indique les niveaux d’accès par défaut pour les différents éléments de programmation déclarés, en fonction de leurs contextes de déclaration.  
   
-|Élément déclaré|Namespace level|Module level|Procedure level|  
+|Élément déclaré|Niveau de l’espace de noms|Niveau de module|Niveau de procédure|  
 |----------------------|---------------------|------------------|---------------------|  
-|Variable ([Dim Statement](../../../visual-basic/language-reference/statements/dim-statement.md))|Non autorisé|`Private` (`Public` in `Structure`, not allowed in `Interface`)|`Public`|  
-|Constant ([Const Statement](../../../visual-basic/language-reference/statements/const-statement.md))|Non autorisé|`Private` (`Public` in `Structure`, not allowed in `Interface`)|`Public`|  
-|Enumeration ([Enum Statement](../../../visual-basic/language-reference/statements/enum-statement.md))|`Friend`|`Public`|Non autorisé|  
-|Class ([Class Statement](../../../visual-basic/language-reference/statements/class-statement.md))|`Friend`|`Public`|Non autorisé|  
-|Structure ([Structure Statement](../../../visual-basic/language-reference/statements/structure-statement.md))|`Friend`|`Public`|Non autorisé|  
-|Module ([Module Statement](../../../visual-basic/language-reference/statements/module-statement.md))|`Friend`|Non autorisé|Non autorisé|  
-|Interface ([Interface Statement](../../../visual-basic/language-reference/statements/interface-statement.md))|`Friend`|`Public`|Non autorisé|  
-|Procedure ([Function Statement](../../../visual-basic/language-reference/statements/function-statement.md), [Sub Statement](../../../visual-basic/language-reference/statements/sub-statement.md))|Non autorisé|`Public`|Non autorisé|  
-|External reference ([Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md))|Non autorisé|`Public` (not allowed in `Interface`)|Non autorisé|  
-|Operator ([Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md))|Non autorisé|`Public` (not allowed in `Interface` or `Module`)|Non autorisé|  
-|Property ([Property Statement](../../../visual-basic/language-reference/statements/property-statement.md))|Non autorisé|`Public`|Non autorisé|  
-|Default property ([Default](../../../visual-basic/language-reference/modifiers/default.md))|Non autorisé|`Public` (not allowed in `Module`)|Non autorisé|  
-|Event ([Event Statement](../../../visual-basic/language-reference/statements/event-statement.md))|Non autorisé|`Public`|Non autorisé|  
-|Delegate ([Delegate Statement](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|Non autorisé|  
+|Variable ([instruction Dim](../../../visual-basic/language-reference/statements/dim-statement.md))|Non autorisé|`Private` (`Public` dans `Structure`, non autorisé dans `Interface`)|`Public`|  
+|Constant ([instruction Const](../../../visual-basic/language-reference/statements/const-statement.md))|Non autorisé|`Private` (`Public` dans `Structure`, non autorisé dans `Interface`)|`Public`|  
+|Enumeration ([instruction enum](../../../visual-basic/language-reference/statements/enum-statement.md))|`Friend`|`Public`|Non autorisé|  
+|Class ([instruction class](../../../visual-basic/language-reference/statements/class-statement.md))|`Friend`|`Public`|Non autorisé|  
+|Structure ([instruction de structure](../../../visual-basic/language-reference/statements/structure-statement.md))|`Friend`|`Public`|Non autorisé|  
+|Module ([instruction module](../../../visual-basic/language-reference/statements/module-statement.md))|`Friend`|Non autorisé|Non autorisé|  
+|Interface ([instruction interface](../../../visual-basic/language-reference/statements/interface-statement.md))|`Friend`|`Public`|Non autorisé|  
+|Procedure ([instruction Function](../../../visual-basic/language-reference/statements/function-statement.md), [Sub, instruction](../../../visual-basic/language-reference/statements/sub-statement.md))|Non autorisé|`Public`|Non autorisé|  
+|Référence externe ([instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md))|Non autorisé|`Public` (non autorisé dans `Interface`)|Non autorisé|  
+|Operator ([instruction d’opérateur](../../../visual-basic/language-reference/statements/operator-statement.md))|Non autorisé|`Public` (non autorisé dans `Interface` ou `Module`)|Non autorisé|  
+|Property ([instruction Property](../../../visual-basic/language-reference/statements/property-statement.md))|Non autorisé|`Public`|Non autorisé|  
+|Propriété par défaut ([par défaut](../../../visual-basic/language-reference/modifiers/default.md))|Non autorisé|`Public` (non autorisé dans `Module`)|Non autorisé|  
+|Event ([instruction d’événement](../../../visual-basic/language-reference/statements/event-statement.md))|Non autorisé|`Public`|Non autorisé|  
+|Délégué ([instruction Delegate](../../../visual-basic/language-reference/statements/delegate-statement.md))|`Friend`|`Public`|Non autorisé|  
   
- For more information, see [Access levels in Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+ Pour plus d’informations, consultez [niveaux d’accès dans Visual Basic](../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

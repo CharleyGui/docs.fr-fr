@@ -39,36 +39,36 @@ HRESULT EnumMethodSemantics (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `mb`  
- [in] A MethodDef token that limits the scope of the enumeration.  
+ dans Jeton MethodDef qui limite la portée de l’énumération.  
   
  `rEventProp`  
- [out] The array used to store the events or properties.  
+ à Tableau utilisé pour stocker les événements ou les propriétés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rEventProp`.  
   
  `pcEventProp`  
- [out] The number of events or properties returned in `rEventProp`.  
+ à Nombre d’événements ou de propriétés retournés dans `rEventProp`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodSemantics` returned successfully.|  
-|`S_FALSE`|There are no events or properties to enumerate. In that case, `pcEventProp` is zero.|  
+|`S_OK`|`EnumMethodSemantics` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun événement ou propriété à énumérer. Dans ce cas, `pcEventProp` est égal à zéro.|  
   
 ## <a name="remarks"></a>Notes  
- Many common language runtime types define *Property*`Changed` events and `On`*Property*`Changed` methods related to their properties. For example, the <xref:System.Windows.Forms.Control?displayProperty=nameWithType> type defines a <xref:System.Windows.Forms.Control.Font%2A> property, a <xref:System.Windows.Forms.Control.FontChanged> event, and an <xref:System.Windows.Forms.Control.OnFontChanged%2A> method. The set accessor method of the <xref:System.Windows.Forms.Control.Font%2A> property calls <xref:System.Windows.Forms.Control.OnFontChanged%2A> method, which in turn raises the <xref:System.Windows.Forms.Control.FontChanged> event. You would call `EnumMethodSemantics` using the MethodDef for <xref:System.Windows.Forms.Control.OnFontChanged%2A> to get references to the <xref:System.Windows.Forms.Control.Font%2A> property and the <xref:System.Windows.Forms.Control.FontChanged> event.  
+ De nombreux types de common language runtime définissent les événements de`Changed` de *propriété* et `On`méthodes de`Changed` de *propriété* associées à leurs propriétés. Par exemple, le type de <xref:System.Windows.Forms.Control?displayProperty=nameWithType> définit une propriété <xref:System.Windows.Forms.Control.Font%2A>, un événement <xref:System.Windows.Forms.Control.FontChanged> et une méthode <xref:System.Windows.Forms.Control.OnFontChanged%2A>. La méthode d’accesseur Set de la propriété <xref:System.Windows.Forms.Control.Font%2A> appelle <xref:System.Windows.Forms.Control.OnFontChanged%2A> méthode, qui à son tour déclenche l’événement <xref:System.Windows.Forms.Control.FontChanged>. Vous appelez `EnumMethodSemantics` à l’aide du MethodDef pour <xref:System.Windows.Forms.Control.OnFontChanged%2A> pour obtenir des références à la propriété <xref:System.Windows.Forms.Control.Font%2A> et à l’événement <xref:System.Windows.Forms.Control.FontChanged>.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

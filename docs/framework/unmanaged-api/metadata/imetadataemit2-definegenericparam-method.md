@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444652"
 ---
 # <a name="imetadataemit2definegenericparam-method"></a>IMetaDataEmit2::DefineGenericParam, méthode
-Creates a definition for a generic type parameter, and gets a token to that generic type parameter.  
+Crée une définition pour un paramètre de type générique et obtient un jeton pour ce paramètre de type générique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -41,32 +41,32 @@ HRESULT DefineGenericParam (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] An `mdTypeDef` or `mdMethodDef` token that represents the method or constructor for which to define a generic parameter.  
+ dans Jeton `mdTypeDef` ou `mdMethodDef` qui représente la méthode ou le constructeur pour lequel définir un paramètre générique.  
   
  `ulParamSeq`  
- [in] The index of the generic parameter.  
+ dans Index du paramètre générique.  
   
  `dwParamFlags`  
- [in] A value of the [CorGenericParamAttr](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) enumeration that describes the type for the generic parameter.  
+ dans Valeur de l’énumération [CorGenericParamAttr,](../../../../docs/framework/unmanaged-api/metadata/corgenericparamattr-enumeration.md) qui décrit le type du paramètre générique.  
   
  `szname`  
- [in] The name of the parameter.  
+ dans Nom du paramètre.  
   
  `reserved`  
- [in] This parameter is reserved for future extensibility.  
+ dans Ce paramètre est réservé pour une future extensibilité.  
   
  `rtkConstraints`  
- [in] A zero-terminated array of type constraints. Array members must be an `mdTypeDef`, `mdTypeRef`, or `mdTypeSpec` metadata token.  
+ dans Tableau de contraintes de type se terminant par zéro. Les membres de tableau doivent être un jeton de métadonnées `mdTypeDef`, `mdTypeRef`ou `mdTypeSpec`.  
   
  `pgp`  
- [out] A token that represents the generic parameter.  
+ à Jeton qui représente le paramètre générique.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

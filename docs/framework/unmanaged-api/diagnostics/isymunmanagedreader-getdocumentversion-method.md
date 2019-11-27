@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448312"
 ---
 # <a name="isymunmanagedreadergetdocumentversion-method"></a>ISymUnmanagedReader::GetDocumentVersion, méthode
-Gets the specified version of the specified document. The document version starts at 1 and is incremented each time the document is updated using the [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) method. If the `pbCurrent` parameter is `true`, this is the latest version of the document.  
+Obtient la version spécifiée du document spécifié. La version du document commence à 1 et est incrémentée chaque fois que le document est mis à jour à l’aide de la méthode [UpdateSymbolStore](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-updatesymbolstore-method.md) . Si le paramètre `pbCurrent` est `true`, il s’agit de la dernière version du document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,19 +36,19 @@ HRESULT GetDocumentVersion (
   
 ## <a name="parameters"></a>Paramètres  
  `pDoc`  
- [in] The specified document.  
+ dans Document spécifié.  
   
  `version`  
- [out] A pointer to a variable that receives the version of the specified document.  
+ à Pointeur vers une variable qui reçoit la version du document spécifié.  
   
  `pbCurrent`  
- [out] A pointer to a variable that receives `true` if this is the latest version of the document, or `false` if it isn't the latest version.  
+ à Pointeur vers une variable qui reçoit `true` s’il s’agit de la version la plus récente du document, ou `false` s’il ne s’agit pas de la version la plus récente.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

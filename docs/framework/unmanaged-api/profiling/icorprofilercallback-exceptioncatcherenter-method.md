@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445019"
 ---
 # <a name="icorprofilercallbackexceptioncatcherenter-method"></a>ICorProfilerCallback::ExceptionCatcherEnter, méthode
-Notifies the profiler that control is being passed to the appropriate `catch` block.  
+Indique au profileur que le contrôle est passé au bloc de `catch` approprié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,19 +35,19 @@ HRESULT ExceptionCatcherEnter(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The identifier of the function containing the `catch` block.  
+ dans Identificateur de la fonction contenant le bloc `catch`.  
   
  `objectId`  
- [in] The identifier of the exception being handled.  
+ dans Identificateur de l’exception gérée.  
   
 ## <a name="remarks"></a>Notes  
- The `ExceptionCatcherEnter` method is called only if the catch point is in code compiled with the just-in-time (JIT) compiler. An exception that is caught in unmanaged code or in the internal code of the runtime will not call this notification. The `objectId` value is passed again since a garbage collection could have moved the object since the `ExceptionThrown` notification.  
+ La méthode `ExceptionCatcherEnter` est appelée uniquement si le point catch se trouve dans le code compilé avec le compilateur juste-à-temps (JIT). Une exception interceptée dans du code non managé ou dans le code interne du runtime n’appelle pas cette notification. La valeur `objectId` est retransmise, car un garbage collection peut avoir déplacé l’objet depuis la notification de `ExceptionThrown`.  
   
- The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
+ Le profileur ne doit pas se bloquer dans son implémentation de cette méthode, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé. Si le profileur est bloqué ici et que garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.  
   
- The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
+ L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

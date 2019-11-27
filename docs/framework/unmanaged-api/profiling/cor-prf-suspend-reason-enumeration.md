@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447709"
 ---
 # <a name="cor_prf_suspend_reason-enumeration"></a>COR_PRF_SUSPEND_REASON, énumération
-Indicates the reason that the runtime is suspended.  
+Indique la raison pour laquelle le runtime est suspendu.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,19 +42,19 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_FIELD_SUSPEND_OTHER`|The runtime is suspended for an unspecified reason.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC`|The runtime is suspended to service a garbage collection request.<br /><br /> The garbage collection-related callbacks occur between the [ICorProfilerCallback::RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) and [ICorProfilerCallback::RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) callbacks.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|The runtime is suspended so that an `AppDomain` can be shut down.<br /><br /> While the runtime is suspended, the runtime will determine which threads are in the `AppDomain` that is being shut down and set them to abort when they resume. There are no `AppDomain`-specific callbacks during this suspension.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|The runtime is suspended so that code pitching can occur.<br /><br /> Code pitching ensues only when the just-in-time (JIT) compiler is active with code pitching enabled. Code pitching callbacks occur between the `ICorProfilerCallback::RuntimeSuspendFinished` and `ICorProfilerCallback::RuntimeResumeStarted` callbacks. **Note:**  The CLR JIT does not pitch functions in the .NET Framework version 2.0, so this value is not used in 2.0.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|The runtime is suspended so that it can shut down. It must suspend all threads to complete the operation.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|The runtime is suspended for in-process debugging.|  
-|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|The runtime is suspended to prepare for a garbage collection.|  
-|`COR_PRF_SUSPEND_FOR_REJIT`|The runtime is suspended for JIT recompilation.|  
+|`COR_PRF_FIELD_SUSPEND_OTHER`|Le runtime est suspendu pour une raison non spécifiée.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC`|Le runtime est suspendu pour traiter une demande de garbage collection.<br /><br /> Les rappels liés à garbage collection se produisent entre les rappels [ICorProfilerCallback :: RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) et [ICorProfilerCallback :: RuntimeResumeStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimeresumestarted-method.md) .|  
+|`COR_PRF_FIELD_SUSPEND_FOR_APPDOMAIN_SHUTDOWN`|Le runtime est interrompu afin qu’un `AppDomain` puisse être arrêté.<br /><br /> Pendant que le runtime est suspendu, le runtime détermine les threads qui se trouvent dans le `AppDomain` en cours d’arrêt et les affecte à la valeur Abort lorsqu’ils reprennent. Il n’y a pas de rappels spécifiques à `AppDomain`pendant cette interruption.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_CODE_PITCHING`|Le runtime est interrompu afin que la présentation du code puisse se produire.<br /><br /> La mise à l’échelle du code se présente uniquement lorsque le compilateur juste-à-temps (JIT) est actif avec la mise à l’échelle du code activée. Les rappels de présentation de code se produisent entre le `ICorProfilerCallback::RuntimeSuspendFinished` et les rappels de `ICorProfilerCallback::RuntimeResumeStarted`. **Remarque :**  Le JIT CLR ne met pas en valeur les fonctions dans la version 2,0 de .NET Framework, donc cette valeur n’est pas utilisée dans 2,0.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_SHUTDOWN`|Le runtime est suspendu pour pouvoir être arrêté. Il doit suspendre tous les threads pour terminer l’opération.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_INPROC_DEBUGGER`|Le runtime est suspendu pour le débogage en cours de processus.|  
+|`COR_PRF_FIELD_SUSPEND_FOR_GC_PREP`|Le runtime est suspendu pour préparer un garbage collection.|  
+|`COR_PRF_SUSPEND_FOR_REJIT`|Le runtime est suspendu pour la recompilation JIT.|  
   
 ## <a name="remarks"></a>Notes  
- All runtime threads that are in unmanaged code are permitted to continue running until they try to re-enter the runtime, at which point they will also be suspended until the runtime resumes. This also applies to new threads that enter the runtime. All threads within the runtime are either suspended immediately if they are in interruptible code, or asked to suspend when they do reach interruptible code.  
+ Tous les threads d’exécution qui se trouvent dans du code non managé sont autorisés à continuer à s’exécuter jusqu’à ce qu’ils essaient d’entrer à nouveau le Runtime. à partir de là, ils sont également suspendus jusqu’à la reprise du Runtime. Cela s’applique également aux nouveaux threads qui entrent dans le Runtime. Tous les threads au sein du runtime sont suspendus immédiatement s’ils sont dans le code interruptible, ou ils sont invités à s’interrompre lorsqu’ils atteignent du code interruptible.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

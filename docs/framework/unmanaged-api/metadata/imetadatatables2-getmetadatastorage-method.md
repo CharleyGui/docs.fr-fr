@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442654"
 ---
 # <a name="imetadatatables2getmetadatastorage-method"></a>IMetaDataTables2::GetMetaDataStorage, méthode
-Gets the size and contents of the metadata stored in the specified section.  
+Obtient la taille et le contenu des métadonnées stockées dans la section spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,17 +36,17 @@ HRESULT GetMetaDataStorage (
   
 ## <a name="parameters"></a>Paramètres  
  `ppvMd`  
- [in, out] A pointer to a metadata section.  
+ [in, out] Pointeur vers une section de métadonnées.  
   
  `pcbMd`  
- [out] The size of the metadata stream.  
+ à Taille du flux de métadonnées.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

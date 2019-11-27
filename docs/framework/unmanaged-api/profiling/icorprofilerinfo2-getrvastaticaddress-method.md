@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74433020"
 ---
 # <a name="icorprofilerinfo2getrvastaticaddress-method"></a>ICorProfilerInfo2::GetRVAStaticAddress, méthode
-Gets the address of the specified relative virtual address (RVA) static field.  
+Obtient l’adresse du champ statique d’adresse virtuelle relative (RVA) spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,24 +36,24 @@ HRESULT GetRVAStaticAddress(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] The ID of the class that contains the requested RVA-static field.  
+ dans ID de la classe qui contient le champ statique RVA demandé.  
   
  `fieldToken`  
- [in] Metadata token for the requested RVA-static field.  
+ dans Jeton de métadonnées pour le champ statique RVA demandé.  
   
  `ppAddress`  
- [out] A pointer to the address of the RVA-static field.  
+ à Pointeur vers l’adresse du champ RVA-static.  
   
 ## <a name="remarks"></a>Notes  
- The `GetRVAStaticAddress` method may return one of the following:  
+ La méthode `GetRVAStaticAddress` peut retourner l’un des éléments suivants :  
   
-- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
+- CORPROF_E_DATAINCOMPLETE HRESULT si aucune adresse n’a été assignée au champ statique donné dans le contexte spécifié.  
   
-- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection, profilers should not assume that they are valid.  
+- Adresses des objets qui peuvent figurer dans le tas garbage collection. Ces adresses peuvent devenir non valides après garbage collection. par conséquent, après garbage collection, les profileurs ne doivent pas supposer qu’ils sont valides.  
   
- Before a class’s class constructor is completed, `GetRVAStaticAddress` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and may be rooting garbage collection objects.  
+ Avant la fin du constructeur de classe d’une classe, `GetRVAStaticAddress` retourne CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains champs statiques soient déjà initialisés et peuvent être des objets de racine garbage collection.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350588"
 ---
-# <a name="sorting-data-visual-basic"></a>Sorting Data (Visual Basic)
+# <a name="sorting-data-visual-basic"></a>Tri des données (Visual Basic)
 
 Une opération de tri ordonne les éléments d’une séquence en fonction d’un ou de plusieurs attributs. Le premier critère de tri effectue un tri principal sur les éléments. En spécifiant un deuxième critère de tri, vous pouvez trier les éléments dans chaque groupe de tri principal.
 
@@ -21,7 +21,7 @@ Les méthodes d’opérateurs de requête standard qui trient les données sont 
 
 ## <a name="methods"></a>Méthodes
 
-|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|
+|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations supplémentaires|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |OrderBy|Trie les valeurs dans l’ordre croissant.|`Order By`|<xref:System.Linq.Enumerable.OrderBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderBy%2A?displayProperty=nameWithType>|
 |OrderByDescending|Trie les valeurs dans l’ordre décroissant.|`Order By … Descending`|<xref:System.Linq.Enumerable.OrderByDescending%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OrderByDescending%2A?displayProperty=nameWithType>|
@@ -153,4 +153,4 @@ MsgBox(sb.ToString())
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Order By (clause)](../../../../visual-basic/language-reference/queries/order-by-clause.md)
 - [Guide pratique : trier les résultats d’une requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-sort-query-results-by-using-linq.md)
-- [How to: Sort or Filter Text Data by Any Word or Field (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

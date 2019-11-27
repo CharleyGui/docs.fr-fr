@@ -136,7 +136,7 @@ Public Class TestAttributeUsage
 End Class
 ```
 
-## <a name="sample-output"></a>Résultat de l'exemple
+## <a name="sample-output"></a>Sortie exemple
 
 ```console
 Attributes on Base Class:

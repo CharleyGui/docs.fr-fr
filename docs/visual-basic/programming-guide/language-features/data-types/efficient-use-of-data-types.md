@@ -21,32 +21,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350111"
 ---
 # <a name="efficient-use-of-data-types-visual-basic"></a>Utilisation efficace des types de données (Visual Basic)
-Undeclared variables and variables declared without a data type are assigned the `Object` data type. This makes it easy to write programs quickly, but it can cause them to execute more slowly.
+Les variables non déclarées et les variables déclarées sans type de données se voient attribuer le type de données `Object`. Cela facilite l’écriture rapide de programmes, mais peut entraîner une exécution plus lente.
 
-## <a name="strong-typing"></a>Strong Typing
- Specifying data types for all your variables is known as *strong typing*. Using strong typing has several advantages:
+## <a name="strong-typing"></a>Typage fort
+ La spécification des types de données pour toutes vos variables est appelée *typage fort*. L’utilisation du typage fort présente plusieurs avantages :
 
-- It enables IntelliSense support for your variables. This allows you to see their properties and other members as you type in the code.
+- Il permet la prise en charge d’IntelliSense pour vos variables. Cela vous permet de voir leurs propriétés et d’autres membres au fur et à mesure que vous tapez dans le code.
 
-- It takes advantage of compiler type checking. This catches statements that can fail at run time due to errors such as overflow. It also catches calls to methods on objects that do not support them.
+- Elle tire parti de la vérification du type de compilateur. Cela permet d’intercepter les instructions qui peuvent échouer au moment de l’exécution en raison d’erreurs telles que le dépassement de capacité. Il intercepte également les appels aux méthodes sur les objets qui ne les prennent pas en charge.
 
-- It results in faster execution of your code.
+- Cela permet d’accélérer l’exécution de votre code.
 
-## <a name="most-efficient-data-types"></a>Most Efficient Data Types
- For variables that never contain fractions, the integral data types are more efficient than the nonintegral types. In Visual Basic, `Integer` and `UInteger` are the most efficient numeric types.
+## <a name="most-efficient-data-types"></a>Types de données les plus efficaces
+ Pour les variables qui ne contiennent jamais de fractions, les types de données intégraux sont plus efficaces que les types non intégraux. Dans Visual Basic, `Integer` et `UInteger` sont les types numériques les plus efficaces.
 
- For fractional numbers, `Double` is the most efficient data type, because the processors on current platforms perform floating-point operations in double precision. However, operations with `Double` are not as fast as with the integral types such as `Integer`.
+ Pour les nombres fractionnaires, `Double` est le type de données le plus efficace, car les processeurs sur les plateformes actuelles effectuent des opérations à virgule flottante en double précision. Toutefois, les opérations avec `Double` ne sont pas aussi rapides qu’avec les types intégraux tels que `Integer`.
 
-## <a name="specifying-data-type"></a>Specifying Data Type
- Use the [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md) to declare a variable of a specific type. You can simultaneously specify its access level by using the [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), or [Private](../../../../visual-basic/language-reference/modifiers/private.md) keyword, as in the following example.
+## <a name="specifying-data-type"></a>Spécification du type de données
+ Utilisez l' [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md) pour déclarer une variable d’un type spécifique. Vous pouvez spécifier simultanément son niveau d’accès à l’aide du mot clé [public](../../../../visual-basic/language-reference/modifiers/public.md), [protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md)ou [Private](../../../../visual-basic/language-reference/modifiers/private.md) , comme dans l’exemple suivant.
 
 ```vb
 Private x As Double
 Protected s As String
 ```
 
-## <a name="character-conversion"></a>Character Conversion
- The `AscW` and `ChrW` functions operate in Unicode. You should use them in preference to `Asc` and `Chr`, which must translate into and out of Unicode.
+## <a name="character-conversion"></a>Conversion de caractères
+ Les fonctions `AscW` et `ChrW` fonctionnent en Unicode. Vous devez les utiliser de préférence pour `Asc` et `Chr`, qui doivent traduire à l’intérieur et à l’extérieur d’Unicode.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -57,4 +57,4 @@ Protected s As String
 - [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Types de données numériques](../../../../visual-basic/programming-guide/language-features/data-types/numeric-data-types.md)
 - [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
-- [Utilisation de la fonctionnalité IntelliSense](/visualstudio/ide/using-intellisense)
+- [Utilisation d’IntelliSense](/visualstudio/ide/using-intellisense)

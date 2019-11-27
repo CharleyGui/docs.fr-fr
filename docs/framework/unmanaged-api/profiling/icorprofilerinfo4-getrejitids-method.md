@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442857"
 ---
 # <a name="icorprofilerinfo4getrejitids-method"></a>ICorProfilerInfo4::GetReJITIDs, méthode
-Returns an array of IDs that identify all JIT-recompiled versions of the specified function that are still allocated. This includes JIT-recompiled versions of functions that have been subsequently reverted but not yet freed (for example, when the application domain that contains the reverted function is still in use).  
+Retourne un tableau d’ID identifiant toutes les versions recompilées juste-à-temps de la fonction spécifiée qui sont toujours allouées. Cela inclut les versions recompilées par le JIT des fonctions qui ont été annulées par la suite, mais qui n’ont pas encore été libérées (par exemple, quand le domaine d’application qui contient la fonction restaurée est toujours utilisé).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,21 +37,21 @@ HRESULT GetReJITIDs (
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The `FunctionID` of the function instance for which to enumerate versions.  
+ dans `FunctionID` de l’instance de fonction pour laquelle énumérer les versions.  
   
  `cReJitIds`  
- [in] The number of JIT-recompiled IDs allocated in the `reJitIds` array.  
+ dans Nombre d’ID recompilés par le compilateur JIT alloués dans le tableau `reJitIds`.  
   
  `pcReJitIds`  
- [out] The actual number of JIT-recompiled IDs.  
+ à Nombre réel d’ID recompilés juste-à-temps.  
   
  `reJitIds`  
- [out] A caller-allocated array that will contain the JIT-recompiled IDs for the specified function.  
+ à Tableau alloué par l’appelant qui contient les ID recompilés juste-à-temps pour la fonction spécifiée.  
   
 ## <a name="remarks"></a>Notes  
- `GetReJITIDs` enumerates the active JIT-recompiled IDs for a given function instance. It follows the same usage pattern as other `ICorProfilerInfo` functions that accept caller-allocated buffers.  
+ `GetReJITIDs` énumère les ID recompilés JIT actifs pour une instance de fonction donnée. Il suit le même modèle d’utilisation que les autres fonctions de `ICorProfilerInfo` qui acceptent les mémoires tampons allouées par l’appelant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

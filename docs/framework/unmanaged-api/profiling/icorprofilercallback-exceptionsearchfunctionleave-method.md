@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445372"
 ---
 # <a name="icorprofilercallbackexceptionsearchfunctionleave-method"></a>ICorProfilerCallback::ExceptionSearchFunctionLeave, méthode
-Notifies the profiler that the search phase of exception handling has finished searching a function.  
+Indique au profileur que la phase de recherche de la gestion des exceptions a fini de rechercher une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Notifies the profiler that the search phase of exception handling has finished s
 HRESULT ExceptionSearchFunctionLeave();  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

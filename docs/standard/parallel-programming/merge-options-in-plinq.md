@@ -32,7 +32,7 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
   
 - `Not Buffered`  
   
-     Avec l’option <xref:System.Linq.ParallelMergeOptions.NotBuffered>, chaque élément traité est retourné à partir de chaque thread dès qu’il est généré. Ce comportement revient à « diffuser en continu » la sortie. Si l’opérateur <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> est présent dans la requête, `NotBuffered` conserve l’ordre des éléments sources. Although `NotBuffered` starts yielding results as soon as they're available, the total time to produce all the results might still be longer than using one of the other merge options.  
+     Avec l’option <xref:System.Linq.ParallelMergeOptions.NotBuffered>, chaque élément traité est retourné à partir de chaque thread dès qu’il est généré. Ce comportement revient à « diffuser en continu » la sortie. Si l’opérateur <xref:System.Linq.ParallelEnumerable.AsOrdered%2A> est présent dans la requête, `NotBuffered` conserve l’ordre des éléments sources. Bien que `NotBuffered` commence à produire des résultats dès qu’ils sont disponibles, la durée totale de production de tous les résultats peut toujours être plus longue que l’utilisation de l’une des autres options de fusion.  
   
 - `Auto Buffered`  
   
@@ -45,19 +45,19 @@ Quand une requête s’exécute en parallèle, PLINQ partitionne la séquence so
 ## <a name="query-operators-that-support-merge-options"></a>Opérateurs de requête prenant en charge les options de fusion  
  Le tableau suivant répertorie les opérateurs qui prennent en charge tous les modes d’options de fusion, qui sont soumis aux restrictions spécifiées.  
   
-|opérateur|Restrictions|  
+|Opérateur|Restrictions|  
 |--------------|------------------|  
-|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.Cast%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.AsEnumerable%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.Cast%2A>|Aucune|  
 |<xref:System.Linq.ParallelEnumerable.Concat%2A>|Requêtes non ordonnées qui ont uniquement une source de type Tableau ou Liste.|  
-|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.OfType%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.DefaultIfEmpty%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.OfType%2A>|Aucune|  
 |<xref:System.Linq.ParallelEnumerable.Reverse%2A>|Requêtes non ordonnées qui ont uniquement une source de type Tableau ou Liste.|  
-|<xref:System.Linq.ParallelEnumerable.Select%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.Skip%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.Take%2A>|aucune.|  
-|<xref:System.Linq.ParallelEnumerable.Where%2A>|aucune.|  
+|<xref:System.Linq.ParallelEnumerable.Select%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.SelectMany%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.Skip%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.Take%2A>|Aucune|  
+|<xref:System.Linq.ParallelEnumerable.Where%2A>|Aucune|  
   
  Tous les autres opérateurs de requête PLINQ peuvent ignorer les options de fusion fournis par l’utilisateur. Certains opérateurs de requête, tels que <xref:System.Linq.ParallelEnumerable.Reverse%2A> et <xref:System.Linq.ParallelEnumerable.OrderBy%2A>, ne peuvent pas transmettre d’éléments tant qu’ils n’ont pas tous été générés et réorganisés. Par conséquent, si vous utilisez <xref:System.Linq.ParallelMergeOptions> dans une requête qui contient également un opérateur tel que <xref:System.Linq.ParallelEnumerable.Reverse%2A>, le comportement de fusion ne sera appliqué dans la requête qu’une fois que l’opérateur aura généré ses résultats.  
   

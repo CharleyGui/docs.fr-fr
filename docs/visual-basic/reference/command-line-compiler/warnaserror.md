@@ -26,8 +26,8 @@ Indique au compilateur de considérer la première occurrence d’un avertisseme
   
 |Terme|Définition|  
 |---|---|  
-|+ &#124; -|Optionnel. Par défaut, `-warnaserror-` est en vigueur ; les avertissements n’empêchent pas le compilateur de produire un fichier de sortie. Du fait de l’option `-warnaserror`, qui est identique à `-warnaserror+`, les avertissements sont considérés comme des erreurs.|  
-|`numberList`|Optionnel. Liste délimitée par des virgules des numéros d’ID d’avertissement auxquels l’option `-warnaserror` s’applique. Si aucun ID d’avertissement n’est spécifié, l’option `-warnaserror` s’applique à tous les avertissements.|  
+|+ &#124; -|Ce paramètre est facultatif. Par défaut, `-warnaserror-` est en vigueur ; les avertissements n’empêchent pas le compilateur de produire un fichier de sortie. Du fait de l’option `-warnaserror`, qui est identique à `-warnaserror+`, les avertissements sont considérés comme des erreurs.|  
+|`numberList`|Ce paramètre est facultatif. Liste délimitée par des virgules des numéros d’ID d’avertissement auxquels l’option `-warnaserror` s’applique. Si aucun ID d’avertissement n’est spécifié, l’option `-warnaserror` s’applique à tous les avertissements.|  
   
 ## <a name="remarks"></a>Notes  
  L’option `-warnaserror` considère tous les avertissements comme des erreurs. Les messages qui d’ordinaire sont signalés comme des avertissements s’affichent en tant qu’erreurs. Le compilateur signale les occurrences suivantes du même avertissement comme des avertissements.  
@@ -41,11 +41,11 @@ Indique au compilateur de considérer la première occurrence d’un avertisseme
   
 |Pour définir -warnaserror de manière à considérer tous les avertissements comme des erreurs dans l’IDE Visual Studio|  
 |---|  
-|1.  Have a project selected in **Solution Explorer**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Click the **Compile** tab.<br />3.  Make sure the **Disable all warnings** check box is unchecked.<br />4.  Check the **Treat all warnings as errors** check box.|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. Assurez-vous que la case à cocher **Désactiver tous les avertissements** est désactivée.<br />4. activez la case à cocher **considérer tous les avertissements comme des erreurs** .|  
   
 |Pour définir -warnaserror de manière à considérer certains avertissements comme des erreurs dans l’IDE Visual Studio|  
 |---|  
-|1.  Have a project selected in **Solution Explorer**. Dans le menu **Projet**, cliquez sur **Propriétés**.<br />2.  Click the **Compile** tab.<br />3.  Make sure the **Disable all warnings** check box is unchecked.<br />4.  Make sure the **Treat all warnings as errors** check box is unchecked.<br />5.  Select **Error** from the **Notification** column adjacent to the warning that should be treated as an error.|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**.<br />2. cliquez sur l’onglet **compiler** .<br />3. Assurez-vous que la case à cocher **Désactiver tous les avertissements** est désactivée.<br />4. Assurez-vous que la case à cocher **considérer tous les avertissements comme des erreurs** est désactivée.<br />5. Sélectionnez **erreur** dans la colonne **notification** adjacente à l’avertissement qui doit être traité comme une erreur.|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `In.vb` et indique au compilateur d’afficher une erreur à la première occurrence de chaque avertissement rencontré.  
@@ -65,4 +65,4 @@ vbc -warnaserror:42024 t2.vb
 
 - [Compilateur de ligne de commande de Visual Basic](../../../visual-basic/reference/command-line-compiler/index.md)
 - [Exemples de lignes de commande de compilation](../../../visual-basic/reference/command-line-compiler/sample-compilation-command-lines.md)
-- [Configuring Warnings in Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)
+- [Configuration d’avertissements en Visual Basic](/visualstudio/ide/configuring-warnings-in-visual-basic)

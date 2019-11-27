@@ -22,22 +22,22 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439394"
 ---
 # <a name="icorprofilercallback4-interface"></a>ICorProfilerCallback4, interface
-Provides callback methods that the common language runtime (CLR) uses to communicate information to the profiler.  
+Fournit des méthodes de rappel que le common language runtime (CLR) utilise pour communiquer des informations au profileur.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetReJITParameters, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-getrejitparameters-method.md)|Allows the code profiler to set alternate code generation flags for a new recompiled method body.|  
-|[MovedReferences2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)|Reports the new layout of objects in the heap as a result of a compacting garbage collection.|  
-|[ReJITCompilationFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)|Notifies the profiler that the just-in-time (JIT) compiler has finished the recompilation of a function.|  
-|[ReJITCompilationStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)|Notifies the profiler that the just-in-time (JIT) compiler has started to recompile a function.|  
-|[ReJITError, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md)|Reports an error encountered while processing a recompile request.|  
+|[GetReJITParameters, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-getrejitparameters-method.md)|Permet au profileur de code de définir d’autres indicateurs de génération de code pour un nouveau corps de méthode recompilée.|  
+|[MovedReferences2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)|Signale la nouvelle disposition d’objets dans le tas à la suite d’un compactage garbage collection.|  
+|[ReJITCompilationFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)|Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la recompilation d’une fonction.|  
+|[ReJITCompilationStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)|Notifie le profileur que le compilateur juste-à-temps (JIT) a commencé à recompiler une fonction.|  
+|[ReJITError, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejiterror-method.md)|Signale une erreur rencontrée lors du traitement d’une demande de recompilation.|  
 |[SurvivingReferences2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-survivingreferences2-method.md)|Signale la disposition d'objets dans le tas suite à un garbage collection de non-compactage.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

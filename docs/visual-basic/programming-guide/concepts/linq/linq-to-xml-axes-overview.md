@@ -20,7 +20,7 @@ Après avoir créé une arborescence XML ou chargé un document XML dans une arb
   
  Outre les méthodes d’axe qui récupèrent des collections d’éléments et d’attributs, il existe des méthodes d’axe qui vous permettent d’itérer au sein de l’arborescence en détail. Par exemple, au lieu de travailler au niveau des éléments et des attributs, vous pouvez travailler avec les nœuds de l'arborescence. Les nœuds représentent un niveau de granularité plus élevé que les éléments et les attributs. Lorsque vous travaillez avec des nœuds, vous pouvez examiner les commentaires XML, les nœuds de texte, les instructions de traitement, et bien plus encore. Cette fonctionnalité est importante, par exemple pour quelqu'un qui écrit un traitement de texte et qui souhaite enregistrer des documents au format XML. Toutefois, la plupart des programmeurs XML sont principalement concernés par les éléments, les attributs et leurs valeurs.  
   
-## <a name="methods-for-retrieving-a-collection-of-elements"></a>Méthodes pour récupérer une collection d'éléments  
+## <a name="methods-for-retrieving-a-collection-of-elements"></a>Méthodes pour récupérer une collection d’éléments  
  Voici un récapitulatif des méthodes de la classe <xref:System.Xml.Linq.XElement> (ou de ses classes de base) que vous appelez sur un objet <xref:System.Xml.Linq.XElement> pour retourner une collection d'éléments.  
   
 |Méthode|Description|  
@@ -40,7 +40,7 @@ Après avoir créé une arborescence XML ou chargé un document XML dans une arb
 |------------|-----------------|  
 |<xref:System.Xml.Linq.XContainer.Element%2A?displayProperty=nameWithType>|Retourne le premier objet <xref:System.Xml.Linq.XElement> enfant qui a l'objet <xref:System.Xml.Linq.XName> spécifié.|  
   
-## <a name="method-for-retrieving-a-collection-of-attributes"></a>Méthode pour récupérer une collection d'attributs  
+## <a name="method-for-retrieving-a-collection-of-attributes"></a>Méthode pour récupérer une collection d’attributs  
  La méthode suivante récupère des attributs à partir d'un objet <xref:System.Xml.Linq.XElement>.  
   
 |Méthode|Description|  

@@ -41,7 +41,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
 |Désactivé|CommonStates|L’élément est désactivé.|  
 |Avec focus|FocusStates|L’élément a le focus.|  

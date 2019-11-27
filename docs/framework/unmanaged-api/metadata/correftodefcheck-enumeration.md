@@ -40,16 +40,16 @@ typedef enum CorRefToDefCheck {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`MDRefToDefDefault`|Specifies that type references and member references should be converted to definitions. This is the default value (`MDTypeRefToDef` &#124; `MDMemberRefToDef`).|  
-|`MDRefToDefAll`|Specifies that all referenced items should be converted to definitions.|  
-|`MDRefToDefNone`|Specifies that no referenced items should be converted to definitions.|  
-|`MDTypeRefToDef`|Specifies that only type references should be converted to type definitions.|  
-|`MDMemberRefToDef`|Specifies that only member references should be converted to definitions. That is, member references should be converted to either method definitions or field definitions.|  
+|`MDRefToDefDefault`|Spécifie que les références de type et les références de membre doivent être converties en définitions. Il s’agit de la valeur par &#124; défaut (`MDTypeRefToDef` `MDMemberRefToDef`).|  
+|`MDRefToDefAll`|Spécifie que tous les éléments référencés doivent être convertis en définitions.|  
+|`MDRefToDefNone`|Spécifie qu’aucun élément référencé ne doit être converti en définitions.|  
+|`MDTypeRefToDef`|Spécifie que seules les références de type doivent être converties en définitions de type.|  
+|`MDMemberRefToDef`|Spécifie que seules les références de membre doivent être converties en définitions. Autrement dit, les références de membre doivent être converties en définitions de méthode ou définitions de champ.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

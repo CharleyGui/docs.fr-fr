@@ -20,7 +20,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350889"
 ---
 # <a name="typeof-operator-visual-basic"></a>TypeOf, opérateur (Visual Basic)
-Checks whether the runtime type of an expression's result is type-compatible with the specified type.
+Vérifie si le type d’exécution du résultat d’une expression est compatible avec le type spécifié.
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -49,11 +49,11 @@ result = TypeOf objectexpression IsNot typename
 |---------------------------------|-----------------------------|  
 |Class|`objectexpression` est de type `typename` ou hérite de `typename`|  
 |Structure|`objectexpression` est de type `typename`|  
-|Interface|`objectexpression` implémente `typename` ou hérite d'une classe qui implémente `typename`|  
+|Interface|`objectexpression` implémente `typename` ou hérite d’une classe qui implémente `typename`|  
   
  Si le type de l'exécution de `objectexpression` satisfait le critère de compatibilité, `result` est `True`. Sinon, `result` est `False`.  Si `objectexpression` est null, alors `TypeOf`...`Is` retourne `False`, et ...`IsNot` retourne `True`.  
   
- `TypeOf` est toujours utilisé avec le mot clé `Is` pour construire une expression `TypeOf`...`Is`, ou avec le mot clé `IsNot` pour construire une expression `TypeOf`...`IsNot`.  
+ `TypeOf` est toujours utilisé avec le mot clé `Is` pour construire une expression `TypeOf`...`Is` ou avec le mot clé `IsNot` pour construire une expression `TypeOf`...`IsNot`.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant utilise des expressions `TypeOf`...`Is` pour tester la compatibilité du type de deux variables de référence d'objet avec différents types de données.  
@@ -66,7 +66,7 @@ result = TypeOf objectexpression IsNot typename
 
 - [Is (opérateur)](../../../visual-basic/language-reference/operators/is-operator.md)
 - [IsNot (opérateur)](../../../visual-basic/language-reference/operators/isnot-operator.md)
-- [Comparison Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Opérateurs de comparaison dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
 - [Opérateurs et expressions](../../../visual-basic/programming-guide/language-features/operators-and-expressions/index.md)

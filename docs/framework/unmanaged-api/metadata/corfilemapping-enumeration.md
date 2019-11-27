@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450295"
 ---
 # <a name="corfilemapping-enumeration"></a>CorFileMapping, énumération
-Contains values that describe the type of file mapping that is returned from a call to the [IMetaDataInfo::GetFileMapping](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) method.  
+Contient des valeurs qui décrivent le type de mappage de fichier retourné à partir d’un appel à la méthode [IMetaDataInfo :: GetFileMapping,](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,13 +39,13 @@ typedef enum CorFileMapping {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`fmFlat`|The file is mapped as a data file. That is, the `SEC_IMAGE` flag was not passed to the Microsoft Win32 `CreateFileMapping` function.|  
-|`fmExecutableImage`|The file is mapped for execution, by using either the `LoadLibrary` function or the `CreateFileMapping` function with the `SEC_IMAGE` flag.|  
+|`fmFlat`|Le fichier est mappé en tant que fichier de données. Autrement dit, l’indicateur `SEC_IMAGE` n’a pas été passé à la fonction de `CreateFileMapping` Microsoft Win32.|  
+|`fmExecutableImage`|Le fichier est mappé pour exécution, à l’aide de la fonction `LoadLibrary` ou de la fonction `CreateFileMapping` avec l’indicateur `SEC_IMAGE`.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

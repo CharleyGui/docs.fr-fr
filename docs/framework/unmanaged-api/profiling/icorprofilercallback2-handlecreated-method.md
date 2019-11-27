@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439760"
 ---
 # <a name="icorprofilercallback2handlecreated-method"></a>ICorProfilerCallback2::HandleCreated, méthode
-Notifies the code profiler that a garbage collection handle has been created.  
+Notifie le profileur de code qu’un handle de garbage collection a été créé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT HandleCreated(
   
 ## <a name="parameters"></a>Paramètres  
  `handleId`  
- [in] The ID of the handle for the garbage collection.  
+ dans ID du descripteur pour le garbage collection.  
   
  `initialObjectId`  
- [in] The ID of the object for which the garbage collection handle was created.  
+ dans ID de l’objet pour lequel le handle de garbage collection a été créé.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

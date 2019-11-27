@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348344"
 ---
-# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>How to: Write a LINQ to XML Axis Method (Visual Basic)
+# <a name="how-to-write-a-linq-to-xml-axis-method-visual-basic"></a>Comment : écrire une méthode d’axe LINQ to XML (Visual Basic)
 Vous pouvez écrire vos propres méthodes d’axe pour récupérer des collections à partir d’une arborescence XML. Pour cela, l'un des meilleurs moyens consiste à écrire une méthode d'extension qui retourne une collection d'éléments ou d'attributs. Vous pouvez écrire votre méthode d’extension de façon à retourner des sous-ensembles spécifiques d’éléments ou d’attributs, selon les exigences de votre application.  
   
 ## <a name="example"></a>Exemple  
@@ -217,4 +217,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

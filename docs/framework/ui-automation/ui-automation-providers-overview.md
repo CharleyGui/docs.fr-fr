@@ -27,12 +27,12 @@ ms.locfileid: "74447979"
  Les fournisseurs UI Automation sont divisés en deux catégories : les fournisseurs côté client et les fournisseurs côté serveur.  
   
 ### <a name="client-side-providers"></a>Fournisseurs côté client  
- Les fournisseurs côté client sont implémentés par les clients UI Automation pour communiquer avec une application qui ne prend pas en charge, ou ne prend pas entièrement en charge, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Client-side providers usually communicate with the server across the process boundary by sending and receiving Windows messages.  
+ Les fournisseurs côté client sont implémentés par les clients UI Automation pour communiquer avec une application qui ne prend pas en charge, ou ne prend pas entièrement en charge, [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Les fournisseurs côté client communiquent généralement avec le serveur à travers la limite de processus en envoyant et en recevant des messages Windows.  
   
- Because UI Automation providers for controls in [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms, or [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] applications are supplied as part of the operating system, client applications seldom have to implement their own providers, and this overview does not cover them further.  
+ Étant donné que les fournisseurs UI Automation pour les contrôles des applications [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms ou [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] sont fournis dans le cadre du système d’exploitation, les applications clientes ont rarement besoin d’implémenter leurs propres fournisseurs, et cette vue d’ensemble ne les traite pas encore plus en détail.  
   
 ### <a name="server-side-providers"></a>Fournisseurs côté serveur  
- Server-side providers are implemented by custom controls or by applications that are based on a UI framework other than [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms, or [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
+ Les fournisseurs côté serveur sont implémentés par des contrôles personnalisés ou par des applications basées sur une infrastructure d’interface utilisateur autre que [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)], Windows Forms ou [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)].  
   
  Les fournisseurs côté serveur communiquent avec les applications clientes à travers la limite de processus en exposant des interfaces au système de base [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui, à son tour, prend en charge les demandes des clients.  
   
@@ -55,7 +55,7 @@ ms.locfileid: "74447979"
 |-|-|  
 |Affichage brut|Contient tous les éléments.|  
 |Vue de contrôle|Contient les éléments qui sont des contrôles.|  
-|Vue de contenu|Contient les éléments disposant d’un contenu.|  
+|Vue Contenu|Contient les éléments disposant d’un contenu.|  
   
  Pour plus d’informations sur les vues client de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , consultez [UI Automation Tree Overview](ui-automation-tree-overview.md).  
   
@@ -66,12 +66,12 @@ ms.locfileid: "74447979"
   
  Les contrôles conteneurs[!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] , tels que les zones de liste et les arborescences, sont considérés comme des infrastructures, car ils contiennent leur propre code pour restituer des éléments enfants et effectuer des tests de positionnement sur ces derniers. En revanche, une zone de liste [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] n’est pas une infrastructure, car le rendu et les tests de positionnement sont gérés par la fenêtre [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] contenante.  
   
- L’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] d’une application peut être composée de différentes infrastructures. For example, an HWND application window might contain Dynamic HTML (DHTML) which in turn contains a component such as a combo box in an HWND.  
+ L’ [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] d’une application peut être composée de différentes infrastructures. Par exemple, une fenêtre d’application HWND peut contenir du HTML dynamique (DHTML) qui contient à son tour un composant tel qu’une zone de liste déroulante dans un HWND.  
   
 ### <a name="fragments"></a>Fragments  
  Un fragment est une sous-arborescence complète d’éléments issus d’une infrastructure particulière. L’élément au niveau du nœud racine de la sous-arborescence est appelé racine de fragment. Une racine de fragment n’a pas de parent, mais elle est hébergée au sein d’une autre infrastructure, habituellement une fenêtre [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] (HWND).  
   
-### <a name="hosts"></a>Hôtes  
+### <a name="hosts"></a>Ordinateurs hôtes  
  Le nœud racine de chaque fragment doit être hébergé dans un élément, généralement une fenêtre [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] (HWND). Le bureau est une exception et il n’est hébergé dans aucun autre élément. L’hôte d’un contrôle personnalisé est le HWND du contrôle lui-même, et non pas la fenêtre d’application ni aucune autre fenêtre susceptible de contenir des groupes de contrôles de niveau supérieur.  
   
  L’hôte d’un fragment joue un rôle important dans l’offre des services [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Il permet la navigation vers la racine de fragment et fournit des propriétés par défaut afin que le fournisseur personnalisé n’ait pas à les implémenter.  

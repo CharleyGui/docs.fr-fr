@@ -13,35 +13,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346271"
 ---
 # <a name="types-of-string-manipulation-methods-in-visual-basic"></a>Types de méthodes de manipulation de chaînes en Visual Basic
-There are several different ways to analyze and manipulate your strings. Some of the methods are a part of the Visual Basic language, and others are inherent in the `String` class.  
+Il existe différentes façons d’analyser et de manipuler vos chaînes. Certaines méthodes font partie du langage de Visual Basic, tandis que d’autres sont inhérentes à la classe `String`.  
   
-## <a name="visual-basic-language-and-the-net-framework"></a>Visual Basic Language and the .NET Framework  
- Visual Basic methods are used as inherent functions of the language. They may be used without qualification in your code. The following example shows typical use of a Visual Basic string-manipulation command:  
+## <a name="visual-basic-language-and-the-net-framework"></a>Visual Basic langage et le .NET Framework  
+ Les méthodes de Visual Basic sont utilisées comme fonctions inhérentes du langage. Elles peuvent être utilisées sans qualification dans votre code. L’exemple suivant illustre l’utilisation classique d’une commande de manipulation de chaînes Visual Basic :  
   
  [!code-vb[VbVbalrStrings#44](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#44)]  
   
- In this example, the `Mid` function performs a direct operation on `aString` and assigns the value to `bString`.  
+ Dans cet exemple, la fonction `Mid` effectue une opération directe sur `aString` et affecte la valeur à `bString`.  
   
- For a list of Visual Basic string manipulation methods, see [String Manipulation Summary](../../../../visual-basic/language-reference/keywords/string-manipulation-summary.md).  
+ Pour obtenir la liste des Visual Basic méthodes de manipulation de chaînes, consultez Résumé de la [manipulation de chaînes](../../../../visual-basic/language-reference/keywords/string-manipulation-summary.md).  
   
-### <a name="shared-methods-and-instance-methods"></a>Shared Methods and Instance Methods  
- You can also manipulate strings with the methods of the `String` class. There are two types of methods in `String`: *shared* methods and *instance* methods.  
+### <a name="shared-methods-and-instance-methods"></a>Méthodes partagées et méthodes d’instance  
+ Vous pouvez également manipuler des chaînes avec les méthodes de la classe `String`. Il existe deux types de méthodes dans `String`: les méthodes *partagées* et les méthodes d' *instance* .  
   
-#### <a name="shared-methods"></a>Shared Methods  
- A shared method is a method that stems from the `String` class itself and does not require an instance of that class to work. These methods can be qualified with the name of the class (`String`) rather than with an instance of the `String` class. Exemple :  
+#### <a name="shared-methods"></a>Méthodes partagées  
+ Une méthode partagée est une méthode qui provient de la classe `String` elle-même et qui ne requiert pas l’utilisation d’une instance de cette classe. Ces méthodes peuvent être qualifiées avec le nom de la classe (`String`) plutôt qu’avec une instance de la classe `String`. Exemple :  
   
  [!code-vb[VbVbalrStrings#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#45)]  
   
- In the preceding example, the <xref:System.String.Copy%2A?displayProperty=nameWithType> method is a static method, which acts upon an expression it is given and assigns the resulting value to `bString`.  
+ Dans l’exemple précédent, la méthode <xref:System.String.Copy%2A?displayProperty=nameWithType> est une méthode statique qui agit sur une expression à laquelle elle est donnée et assigne la valeur résultante à `bString`.  
   
-#### <a name="instance-methods"></a>Instance Methods  
- Instance methods, by contrast, stem from a particular instance of `String` and must be qualified with the instance name. Exemple :  
+#### <a name="instance-methods"></a>Méthodes d’instance  
+ En revanche, les méthodes d’instance proviennent d’une instance particulière de `String` et doivent être qualifiées avec le nom de l’instance. Exemple :  
   
  [!code-vb[VbVbalrStrings#46](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#46)]  
   
- In this example, the <xref:System.String.Substring%2A?displayProperty=nameWithType> method is a method of the instance of `String` (that is, `aString`). It performs an operation on `aString` and assigns that value to `bString`.  
+ Dans cet exemple, la méthode <xref:System.String.Substring%2A?displayProperty=nameWithType> est une méthode de l’instance de `String` (autrement dit, `aString`). Il effectue une opération sur `aString` et assigne cette valeur à `bString`.  
   
- For more information, see the documentation for the <xref:System.String> class.  
+ Pour plus d’informations, consultez la documentation de la classe <xref:System.String>.  
   
 ## <a name="see-also"></a>Voir aussi
 

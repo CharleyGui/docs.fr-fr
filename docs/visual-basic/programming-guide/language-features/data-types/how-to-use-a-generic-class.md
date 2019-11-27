@@ -33,13 +33,13 @@ Une classe qui accepte des *paramètres de type* est appelée *classe génériqu
   
  En plus des classes, vous pouvez définir et utiliser des structures, interfaces, procédures et délégués génériques.  
   
- The following procedure takes a generic class defined in the .NET Framework and creates an instance from it.  
+ La procédure suivante prend une classe générique définie dans le .NET Framework et crée une instance à partir de celle-ci.  
   
 ### <a name="to-use-a-class-that-takes-a-type-parameter"></a>Pour utiliser une classe qui prend un paramètre de type  
   
-1. At the beginning of your source file, include an [Imports Statement (.NET Namespace and Type)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) to import the <xref:System.Collections.Generic?displayProperty=nameWithType> namespace. Cela vous permet de faire référence à la classe <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> sans avoir à la qualifier pleinement pour la différencier des autres classes de file d’attente, telles que <xref:System.Collections.Queue?displayProperty=nameWithType>.  
+1. Au début de votre fichier source, incluez une [instruction Imports (espace de noms et type .net)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour importer l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Cela vous permet de faire référence à la classe <xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType> sans avoir à la qualifier pleinement pour la différencier des autres classes de file d’attente, telles que <xref:System.Collections.Queue?displayProperty=nameWithType>.  
   
-2. Create the object in the normal way, but add `(Of type)` immediately after the class name.  
+2. Créez l’objet de façon normale, mais ajoutez `(Of type)` immédiatement après le nom de la classe.  
   
      L’exemple suivant utilise la même classe (<xref:System.Collections.Generic.Queue%601?displayProperty=nameWithType>) pour créer deux objets de file d’attente qui contiennent des éléments de différents types de données. Il ajoute des éléments à la fin de chaque file d’attente, puis supprime et affiche les éléments du début de chaque file d’attente.  
   

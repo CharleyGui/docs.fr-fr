@@ -21,7 +21,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346732"
 ---
 # <a name="rem-statement-visual-basic"></a>REM, instruction (Visual Basic)
-Used to include explanatory remarks in the source code of a program.  
+Utilisé pour inclure des remarques explicatives dans le code source d’un programme.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,18 +32,18 @@ REM comment
   
 ## <a name="parts"></a>Composants  
  `comment`  
- Optionnel. The text of any comment you want to include. A space is required between the `REM` keyword and `comment`.  
+ Ce paramètre est facultatif. Texte de tous les commentaires que vous souhaitez inclure. Un espace est requis entre le mot clé `REM` et `comment`.  
   
 ## <a name="remarks"></a>Notes  
- You can put a `REM` statement alone on a line, or you can put it on a line following another statement. The `REM` statement must be the last statement on the line. If it follows another statement, the `REM` must be separated from that statement by a space.  
+ Vous pouvez placer une instruction `REM` seule sur une ligne, ou vous pouvez la placer sur une ligne après une autre instruction. L’instruction `REM` doit être la dernière instruction de la ligne. S’il suit une autre instruction, le `REM` doit être séparé de cette instruction par un espace.  
   
- You can use a single quotation mark (`'`) instead of `REM`. This is true whether your comment follows another statement on the same line or sits alone on a line.  
+ Vous pouvez utiliser un guillemet simple (`'`) au lieu de `REM`. Cela est vrai si votre commentaire suit une autre instruction sur la même ligne ou s’il se trouve seul sur une ligne.  
   
 > [!NOTE]
-> You cannot continue a `REM` statement by using a line-continuation sequence (`_`). Once a comment begins, the compiler does not examine the characters for special meaning. For a multiple-line comment, use another `REM` statement or a comment symbol (`'`) on each line.  
+> Vous ne pouvez pas continuer une instruction `REM` à l’aide d’une séquence de continuation de ligne (`_`). Une fois qu’un commentaire commence, le compilateur n’examine pas les caractères pour une signification particulière. Pour un commentaire sur plusieurs lignes, utilisez une autre instruction `REM` ou un symbole de commentaire (`'`) sur chaque ligne.  
   
 ## <a name="example"></a>Exemple  
- The following example illustrates the `REM` statement, which is used to include explanatory remarks in a program. It also shows the alternative of using the single quotation-mark character (`'`) instead of `REM`.  
+ L’exemple suivant illustre l’instruction `REM`, qui est utilisée pour inclure des remarques explicatives dans un programme. Il montre également l’alternative à l’utilisation du caractère guillemet simple (`'`) au lieu de `REM`.  
   
  [!code-vb[VbVbalrStatements#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#6)]  
   

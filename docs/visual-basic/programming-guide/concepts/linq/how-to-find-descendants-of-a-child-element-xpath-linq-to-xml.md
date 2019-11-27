@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344671"
 ---
-# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>How to: Find Descendants of a Child Element (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-descendants-of-a-child-element-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des descendants d’un élément enfant (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir les éléments descendants d'un élément enfant avec un nom particulier.  
   
- L’expression XPath est la suivante :  
+ L'expression XPath est la suivante :  
   
  `./Paragraph//Text/text()`  
   
@@ -71,4 +71,4 @@ This is the start of a sentence.  This is a second sentence.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

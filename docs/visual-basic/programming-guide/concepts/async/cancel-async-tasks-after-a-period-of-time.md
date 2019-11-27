@@ -74,7 +74,7 @@ Private Async Sub startButton_Click(sender As Object, e As RoutedEventArgs)
 End Sub
 ```
 
-Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web. The following output is a sample:
+Exécutez le programme plusieurs fois pour vérifier qu’il peut afficher la sortie pour tous les sites web, aucun site web ou certains sites web. La sortie suivante est un exemple :
 
 ```console
 Length of the downloaded string: 35990.
@@ -88,7 +88,7 @@ Downloads canceled.
 
 ## <a name="complete-example"></a>Exemple complet
 
-Le code suivant est le texte complet du fichier MainWindow.xaml.vb de l’exemple. Des astérisques marquent les éléments ajoutés pour cet exemple.
+Le code suivant est le texte complet du fichier MainWindow.xaml.vb de l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.
 
 Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
@@ -199,4 +199,4 @@ End Class
 - [Procédure pas à pas : accès au web avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Annuler une tâche Asynch ou une liste de tâches (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)
 - [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
-- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

@@ -12,17 +12,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349662"
 ---
 # <a name="object-required-visual-basic"></a>Objet requis (Visual Basic)
-References to properties and methods often require an explicit object qualifier. This is such a case.  
+Les références aux propriétés et aux méthodes requièrent souvent un qualificateur d’objet explicite. C’est le cas.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Check that references to an object property or method have valid object qualifier. Specify an object qualifier if you didn't provide one.  
+1. Vérifiez que les références à une méthode ou une propriété d’objet possèdent un qualificateur d’objet valide. Spécifiez un qualificateur d’objet si vous n’en avez pas fourni un.  
   
-2. Check the spelling of the object qualifier and make sure the object is visible in the part of the program in which you are referencing it.  
+2. Vérifiez l’orthographe du qualificateur de l’objet et assurez-vous que l’objet est visible dans la partie du programme dans laquelle vous le référencez.  
   
-3. If a path is supplied to a host application's **File Open** command, check that the arguments in it are correct.  
+3. Si un chemin d’accès est fourni à la commande **ouvrir un fichier** de l’application hôte, vérifiez que les arguments qu’il contient sont corrects.  
   
-4. Check the object's documentation and make sure the action is valid.  
+4. Vérifiez la documentation de l’objet et assurez-vous que l’action est valide.  
   
 ## <a name="see-also"></a>Voir aussi
 

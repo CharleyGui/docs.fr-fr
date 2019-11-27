@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448744"
 ---
 # <a name="iceegencomputepointer-method"></a>ICeeGen::ComputePointer, méthode
-Determines the buffer for the specified code section.  
+Détermine la mémoire tampon pour la section de code spécifiée.  
   
- This method is obsolete and should not be used.  
+ Cette méthode est obsolète et ne doit pas être utilisée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,20 +39,20 @@ HRESULT ComputePointer (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] The code section for which to return a buffer.  
+ dans Section de code pour laquelle retourner une mémoire tampon.  
   
  `RVA`  
- [in] The relative virtual address of the method for which to get a pointer.  
+ dans Adresse virtuelle relative de la méthode pour laquelle obtenir un pointeur.  
   
  `lpBuffer`  
- [out] A pointer to the returned buffer.  
+ à Pointeur vers la mémoire tampon retournée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

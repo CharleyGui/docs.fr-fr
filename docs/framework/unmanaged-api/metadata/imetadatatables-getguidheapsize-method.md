@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443494"
 ---
 # <a name="imetadatatablesgetguidheapsize-method"></a>IMetaDataTables::GetGuidHeapSize, méthode
-Gets the size, in bytes, of the GUID heap.  
+Obtient la taille, en octets, du tas GUID.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,14 +35,14 @@ HRESULT GetGuidHeapSize (
   
 ## <a name="parameters"></a>Paramètres  
  `pcbGuids`  
- [out] A pointer to the size, in bytes, of the GUID heap.  
+ à Pointeur vers la taille, en octets, du tas GUID.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

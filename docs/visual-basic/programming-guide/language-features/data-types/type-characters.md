@@ -43,17 +43,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352928"
 ---
-# <a name="type-characters-visual-basic"></a>Type characters (Visual Basic)
+# <a name="type-characters-visual-basic"></a>Caractères de type (Visual Basic)
 
-In addition to specifying a data type in a declaration statement, you can force the data type of some programming elements with a *type character*. The type character must immediately follow the element, with no intervening characters of any kind.
+En plus de spécifier un type de données dans une instruction de déclaration, vous pouvez forcer le type de données de certains éléments de programmation avec un *caractère de type*. Le caractère de type doit suivre immédiatement l’élément, sans aucun caractère intermédiaire de quelque sorte que ce soit.
 
-The type character is not part of the name of the element. An element defined with a type character can be referenced without the type character.
+Le caractère de type ne fait pas partie du nom de l’élément. Un élément défini avec un caractère de type peut être référencé sans le caractère de type.
 
-## <a name="identifier-type-characters"></a>Identifier type characters
+## <a name="identifier-type-characters"></a>Caractères de type d’identificateur
 
-Visual Basic supplies a set of *identifier type characters* that you can use in a declaration to specify the data type of a variable or constant. The following table shows the available identifier type characters with examples of usage.
+Visual Basic fournit un ensemble de *caractères de type d’identificateur* que vous pouvez utiliser dans une déclaration pour spécifier le type de données d’une variable ou d’une constante. Le tableau suivant présente les caractères de type d’identificateur disponibles avec des exemples d’utilisation.
   
-|Identifier type character|Type de données|Exemple|  
+|Caractère de type d’identificateur|Type de données|Exemple|  
 |-------------------------------|---------------|-------------|  
 |`%`|`Integer`|`Dim L%`|  
 |`&`|`Long`|`Dim M&`|  
@@ -62,33 +62,33 @@ Visual Basic supplies a set of *identifier type characters* that you can use in 
 |`#`|`Double`|`Dim X#`|  
 |`$`|`String`|`Dim V$ = "Secret"`|  
   
- No identifier type characters exist for the `Boolean`, `Byte`, `Char`, `Date`, `Object`, `SByte`, `Short`, `UInteger`, `ULong`, or `UShort` data types, or for any composite data types such as arrays or structures.
+ Il n’existe aucun caractère de type d’identificateur pour les types de données `Boolean`, `Byte`, `Char`, `Date`, `Object`, `SByte`, `Short`, `UInteger`, `ULong`ou `UShort`, ou pour tous les types de données composites tels que les tableaux ou les structures.
 
-In some cases, you can append the `$` character to a Visual Basic function, for example `Left$` instead of `Left`, to obtain a returned value of type `String`.
+Dans certains cas, vous pouvez ajouter le caractère `$` à une fonction Visual Basic, par exemple `Left$` au lieu de `Left`, pour obtenir une valeur retournée de type `String`.
 
-In all cases, the identifier type character must immediately follow the identifier name.
+Dans tous les cas, le caractère de type d’identificateur doit suivre immédiatement le nom de l’identificateur.
 
-## <a name="literal-type-characters"></a>Literal type characters
+## <a name="literal-type-characters"></a>Caractères de type littéral
 
-A *literal* is a textual representation of a particular value of a data type.  
+Un *littéral* est une représentation textuelle d’une valeur particulière d’un type de données.  
 
-### <a name="default-literal-types"></a>Default literal types
+### <a name="default-literal-types"></a>Types de littéraux par défaut
 
-The form of a literal as it appears in your code ordinarily determines its data type. The following table shows these default types.  
+La forme d’un littéral tel qu’il apparaît dans votre code détermine normalement son type de données. Le tableau suivant présente ces types par défaut.  
   
-|Textual form of literal|Default data type|Exemple|  
+|Forme textuelle du littéral|Type de données par défaut|Exemple|  
 |-----------------------------|-----------------------|-------------|  
-|Numeric, no fractional part|`Integer`|`2147483647`|  
-|Numeric, no fractional part, too large for `Integer`|`Long`|`2147483648`|  
-|Numeric, fractional part|`Double`|`1.2`|  
-|Enclosed in double quotation marks|`String`|`"A"`|  
-|Enclosed within number signs|`Date`|`#5/17/1993 9:32 AM#`|  
+|Numérique, aucune partie fractionnaire|`Integer`|`2147483647`|  
+|Numérique, aucune partie fractionnaire, trop grande pour `Integer`|`Long`|`2147483648`|  
+|Numérique, partie fractionnaire|`Double`|`1.2`|  
+|délimité par des guillemets doubles ;|`String`|`"A"`|  
+|Entre les signes dièse|`Date`|`#5/17/1993 9:32 AM#`|  
 
-### <a name="forced-literal-types"></a>Forced literal types
+### <a name="forced-literal-types"></a>Types de littéraux forcés
 
-Visual Basic supplies a set of *literal type characters*, which you can use to force a literal to assume a data type other than the one its form indicates. You do this by appending the character to the end of the literal. The following table shows the available literal type characters with examples of usage.
+Visual Basic fournit un ensemble de *caractères de type de littéral*, que vous pouvez utiliser pour forcer un littéral à supposer un type de données autre que celui que son formulaire indique. Pour ce faire, ajoutez le caractère à la fin du littéral. Le tableau suivant présente les caractères de type de littéral disponibles avec des exemples d’utilisation.
   
-|Literal type character|Type de données|Exemple|  
+|Caractère de type littéral|Type de données|Exemple|  
 |----------------------------|---------------|-------------|  
 |`S`|`Short`|`I = 347S`|
 |`I`|`Integer`|`J = 347I`|
@@ -101,38 +101,38 @@ Visual Basic supplies a set of *literal type characters*, which you can use to f
 |`UL`|`ULong`|`N = 347UL`|
 |`C`|`Char`|`Q = "."C`|
 
-No literal type characters exist for the `Boolean`, `Byte`, `Date`, `Object`, `SByte`, or `String` data types, or for any composite data types such as arrays or structures.
+Il n’existe aucun caractère de type de littéral pour les types de données `Boolean`, `Byte`, `Date`, `Object`, `SByte`ou `String`, ou pour tous les types de données composites tels que les tableaux ou les structures.
 
-Literals can also use the identifier type characters (`%`, `&`, `@`, `!`, `#`, `$`), as can variables, constants, and expressions. However, the literal type characters (`S`, `I`, `L`, `D`, `F`, `R`, `C`) can be used only with literals.
+Les littéraux peuvent également utiliser les caractères de type d’identificateur (`%`, `&`, `@`, `!`, `#`, `$`), comme les variables, les constantes et les expressions. Toutefois, les caractères de type de littéral (`S`, `I`, `L`, `D`, `F`, `R`, `C`) ne peuvent être utilisés qu’avec des littéraux.
 
-In all cases, the literal type character must immediately follow the literal value.
+Dans tous les cas, le caractère de type de littéral doit suivre immédiatement la valeur littérale.
 
-## <a name="hexadecimal-binary-and-octal-literals"></a>Hexadecimal, binary, and octal literals
+## <a name="hexadecimal-binary-and-octal-literals"></a>Littéraux hexadécimaux, binaires et octaux
 
-The compiler normally interprets an integer literal to be in the decimal (base 10) number system. You can also define an integer literal as a hexadecimal (base 16) number with the `&H` prefix, as a binary (base 2) number with the `&B` prefix, and as an octal (base 8) number with the `&O` prefix. The digits that follow the prefix must be appropriate for the number system. The following table illustrates this.  
+Le compilateur interprète normalement un littéral d’entier comme étant dans le système de nombre décimal (base 10). Vous pouvez également définir un littéral d’entier comme nombre hexadécimal (base 16) avec le préfixe `&H`, comme nombre binaire (base 2) avec le préfixe `&B` et comme nombre octal (base 8) avec le préfixe `&O`. Les chiffres qui suivent le préfixe doivent être appropriés pour le système de nombres. Le tableau suivant illustre cela.  
   
-|Number base|Préfixe|Valid digit values|Exemple|
+|Base numérique|Préfixe|Valeurs de chiffres valides|Exemple|
 |-----------------|------------|------------------------|-------------|
-|Hexadécimale (base 16)|`&H`|0-9 and A-F|`&HFFFF`|
-|Binary (base 2)|`&B`|0-1|`&B01111100`|
+|Hexadécimale (base 16)|`&H`|0-9 et A-F|`&HFFFF`|
+|Binaire (base 2)|`&B`|0-1|`&B01111100`|
 |Octale (base 8)|`&O`|0-7|`&O77`|
 
-Starting in Visual Basic 2017, you can use the underscore character (`_`) as a group separator to enhance the readability of an integral literal. The following example uses the `_` character to group a binary literal into 8-bit groups:
+À partir de Visual Basic 2017, vous pouvez utiliser le caractère de soulignement (`_`) comme séparateur de groupes pour améliorer la lisibilité d’un littéral intégral. L’exemple suivant utilise le caractère `_` pour regrouper un littéral binaire en groupes 8 bits :
 
 ```vb
 Dim number As Integer = &B00100010_11000101_11001111_11001101
 ```
 
-You can follow a prefixed literal with a literal type character. The following example shows this.
+Vous pouvez suivre un littéral préfixé avec un caractère de type littéral. L’exemple suivant illustre cela.
 
 ```vb
 Dim counter As Short = &H8000S
 Dim flags As UShort = &H8000US
 ```
 
-In the previous example, `counter` has the decimal value of -32768, and `flags` has the decimal value of +32768.
+Dans l’exemple précédent, `counter` a la valeur décimale-32768 et `flags` a la valeur décimale + 32768.
 
-Starting with Visual Basic 15.5, you can also use the underscore character (`_`) as a leading separator between the prefix and the hexadecimal, binary, or octal digits. Exemple :
+À compter de Visual Basic 15,5, vous pouvez également utiliser le caractère de soulignement (`_`) comme séparateur de début entre le préfixe et les chiffres hexadécimaux, binaires ou octaux. Exemple :
 
 ```vb
 Dim number As Integer = &H_C305_F860
@@ -145,7 +145,7 @@ Dim number As Integer = &H_C305_F860
 - [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Déclaration de variable](../../../../visual-basic/programming-guide/language-features/variables/variable-declaration.md)
 - [Types de données](../../../../visual-basic/language-reference/data-types/index.md)

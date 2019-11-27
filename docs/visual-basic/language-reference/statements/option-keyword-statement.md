@@ -1,5 +1,5 @@
 ---
-title: <keyword> option, instruction
+title: Option <keyword> (instruction)
 ms.date: 07/20/2015
 f1_keywords:
 - vb.option
@@ -13,11 +13,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353775"
 ---
-# <a name="option-keyword-statement"></a>Option \<keyword> Statement
-Introduces a statement that specifies a compiler option that applies to the entire source file.  
+# <a name="option-keyword-statement"></a>Option \<mot clé > instruction
+Introduit une instruction qui spécifie une option du compilateur s’appliquant à l’intégralité du fichier source.  
   
 ## <a name="remarks"></a>Notes  
- The compiler options can control whether all variables must be explicitly declared, whether narrowing type conversions must be explicit, or whether strings should be compared as text or as binary quantities.  
+ Les options du compilateur peuvent déterminer si toutes les variables doivent être déclarées explicitement, si les conversions de type restrictives doivent être explicites ou si les chaînes doivent être comparées en tant que texte ou en tant que quantités binaires.  
   
  Le mot clé `Option` peut être utilisé dans les contextes suivants :  
   

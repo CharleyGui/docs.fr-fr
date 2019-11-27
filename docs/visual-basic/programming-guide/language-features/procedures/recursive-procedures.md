@@ -19,25 +19,25 @@ ms.locfileid: "74352554"
 ---
 # <a name="recursive-procedures-visual-basic"></a>Procédures récursives (Visual Basic)
 
-A *recursive* procedure is one that calls itself. In general, this is not the most effective way to write Visual Basic code.  
+Une procédure *récursive* est une procédure qui s’appelle elle-même. En général, il ne s’agit pas de la méthode la plus efficace pour écrire du code Visual Basic.  
   
- The following procedure uses recursion to calculate the factorial of its original argument.  
+ La procédure suivante utilise la récursivité pour calculer la factorielle de son argument d’origine.  
   
  [!code-vb[VbVbcnProcedures#51](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#51)]  
   
-## <a name="considerations-with-recursive-procedures"></a>Considerations with Recursive Procedures
+## <a name="considerations-with-recursive-procedures"></a>Considérations relatives aux procédures récursives
 
- **Limiting Conditions**. You must design a recursive procedure to test for at least one condition that can terminate the recursion, and you must also handle the case where no such condition is satisfied within a reasonable number of recursive calls. Without at least one condition that can be met without fail, your procedure runs a high risk of executing in an infinite loop.
+ **Limitation des conditions**. Vous devez concevoir une procédure récursive pour tester au moins une condition qui peut mettre fin à la récursivité, et vous devez également gérer le cas où aucune condition n’est satisfaite dans un nombre raisonnable d’appels récursifs. Si au moins une condition peut être remplie sans échouer, votre procédure exécute un risque élevé d’exécution dans une boucle infinie.
 
- **Utilisation de la mémoire**. Your application has a limited amount of space for local variables. Each time a procedure calls itself, it uses more of that space for additional copies of its local variables. If this process continues indefinitely, it eventually causes a <xref:System.StackOverflowException> error.
+ **Utilisation de la mémoire**. Votre application dispose d’une quantité limitée d’espace pour les variables locales. Chaque fois qu’une procédure s’appelle elle-même, elle utilise plus d’espace pour les copies supplémentaires de ses variables locales. Si ce processus se poursuit indéfiniment, il finit par provoquer une erreur de <xref:System.StackOverflowException>.
 
- **Efficiency**. You can almost always substitute a loop for recursion. A loop does not have the overhead of passing arguments, initializing additional storage, and returning values. Your performance can be much better without recursive calls.
+ **Efficacité**. Vous pouvez presque toujours substituer une boucle pour la récursivité. Une boucle n’a pas la surcharge liée au passage des arguments, à l’initialisation d’un stockage supplémentaire et au retour de valeurs. Vos performances peuvent être nettement meilleures sans appels récursifs.
 
- **Mutual Recursion**. You might observe very poor performance, or even an infinite loop, if two procedures call each other. Such a design presents the same problems as a single recursive procedure, but can be harder to detect and debug.
+ **Récurrence mutuelle**. Vous pouvez observer des performances très médiocres, voire une boucle infinie, si deux procédures s’appellent mutuellement. Une telle conception présente les mêmes problèmes qu’une seule procédure récursive, mais peut être plus difficile à détecter et à déboguer.
 
- **Calling with Parentheses**. When a `Function` procedure calls itself recursively, you must follow the procedure name with parentheses, even if there is no argument list. Otherwise, the function name is taken as representing the return value of the function.
+ **Appel avec des parenthèses**. Quand une procédure `Function` s’appelle elle-même de manière récursive, vous devez faire suivre le nom de la procédure de parenthèses, même s’il n’y a pas de liste d’arguments. Dans le cas contraire, le nom de la fonction est considéré comme représentant la valeur de retour de la fonction.
 
- **Testing**. If you write a recursive procedure, you should test it very carefully to make sure it always meets some limiting condition. You should also ensure that you cannot run out of memory due to having too many recursive calls.
+ **Test**. Si vous écrivez une procédure récursive, vous devez la tester très attentivement pour vous assurer qu’elle répond toujours à certaines conditions de limitation. Vous devez également vous assurer que vous ne pouvez pas manquer de mémoire en raison d’un trop grand nombre d’appels récursifs.
 
 ## <a name="see-also"></a>Voir aussi
 

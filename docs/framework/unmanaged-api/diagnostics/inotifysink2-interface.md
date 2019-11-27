@@ -22,19 +22,19 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440973"
 ---
 # <a name="inotifysink2-interface"></a>INotifySink2, interface
-Declares methods for sink notification.  
+Déclare des méthodes pour la notification du récepteur.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Gets invoked when entering a call.|  
-|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Gets invoked when exiting a call.|  
-|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Gets invoked when a call is out.|  
-|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Gets invoked when a call returns.|  
+|[OnSyncCallEnter, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallenter-method.md)|Est appelé lors de l’entrée d’un appel.|  
+|[OnSyncCallExit, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallexit-method.md)|Est appelé lors de la sortie d’un appel.|  
+|[OnSyncCallOut, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallout-method.md)|Est appelé quand un appel est en sortie.|  
+|[OnSyncCallReturn, méthode](../../../../docs/framework/unmanaged-api/diagnostics/inotifysink2-onsynccallreturn-method.md)|Est appelé quand un appel est retourné.|  
   
-## <a name="requirements"></a>spécifications  
- **Header:** ProtocolNotify2.idl  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 

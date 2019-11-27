@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439671"
 ---
 # <a name="icorprofilercallback2rootreferences2-method"></a>ICorProfilerCallback2::RootReferences2, méthode
-Notifies the profiler about root references after a garbage collection has occurred. This method is an extension of the [ICorProfilerCallback::RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) method.  
+Notifie le profileur des références racines après qu’un garbage collection s’est produit. Cette méthode est une extension de la méthode [ICorProfilerCallback :: RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +38,32 @@ HRESULT RootReferences2(
   
 ## <a name="parameters"></a>Paramètres  
  `cRootRefs`  
- [in] The number of elements in the `rootRefIds`, `rootKinds`, `rootFlags`, and `rootIds` arrays.  
+ dans Nombre d’éléments dans les tableaux `rootRefIds`, `rootKinds`, `rootFlags`et `rootIds`.  
   
  `rootRefIds`  
- [in] An array of object IDs, each of which references either a static object or an object on the stack. Elements in the `rootKinds` array provide information to classify corresponding elements in the `rootRefIds` array.  
+ dans Tableau d’ID d’objet, chacun d’entre eux référençant un objet statique ou un objet sur la pile. Les éléments du tableau `rootKinds` fournissent des informations pour classer les éléments correspondants dans le tableau `rootRefIds`.  
   
  `rootKinds`  
- [in] An array of [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) values that indicate the type of the garbage collection root.  
+ dans Tableau de valeurs [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) qui indiquent le type de la racine garbage collection.  
   
  `rootFlags`  
- [in] An array of [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) values that describe the properties of a garbage collection root.  
+ dans Tableau de valeurs [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) qui décrivent les propriétés d’une racine garbage collection.  
   
  `rootIds`  
- [in] An array of UINT_PTR values that point to an integer that contains additional information about the garbage collection root, depending on the value of the `rootKinds` parameter.  
+ dans Tableau de valeurs UINT_PTR qui pointent vers un entier qui contient des informations supplémentaires sur la racine garbage collection, en fonction de la valeur du paramètre `rootKinds`.  
   
- If the type of the root is a stack, the root ID is for the function that contains the variable. If that root ID is 0, the function is an unnamed function that is internal to the CLR. If the type of the root is a handle, the root ID is for the garbage collection handle. For the other root types, the ID is an opaque value and should be ignored.  
+ Si le type de la racine est une pile, l’ID racine est pour la fonction qui contient la variable. Si cet ID racine est égal à 0, la fonction est une fonction sans nom qui est interne au CLR. Si le type de la racine est un handle, l’ID racine est pour le handle garbage collection. Pour les autres types racine, l’ID est une valeur opaque et doit être ignoré.  
   
 ## <a name="remarks"></a>Notes  
- The `rootRefIds`, `rootKinds`, `rootFlags`, and `rootIds` arrays are parallel arrays. That is, `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`, and `rootIds[i]` all concern the same root.  
+ Les tableaux `rootRefIds`, `rootKinds`, `rootFlags`et `rootIds` sont des tableaux parallèles. Autrement dit, `rootRefIds[i]`, `rootKinds[i]`, `rootFlags[i]`et `rootIds[i]` concernent la même racine.  
   
- Both `RootReferences` and `RootReferences2` are called to notify the profiler. Profilers will normally implement one method or the other, but not both, because the information passed in `RootReferences2` is a superset of that passed in `RootReferences`.  
+ `RootReferences` et `RootReferences2` sont appelés pour avertir le profileur. Les profileurs implémentent normalement une méthode ou l’autre, mais pas les deux, car les informations transmises `RootReferences2` sont un sur-ensemble de celles passées dans `RootReferences`.  
   
- It is possible for entries in `rootRefIds` to be zero, which implies that the corresponding root reference is null and does not refer to an object on the managed heap.  
+ Il est possible que les entrées de `rootRefIds` soient égales à zéro, ce qui signifie que la référence racine correspondante est null et ne fait pas référence à un objet sur le tas managé.  
   
- The object IDs returned by `RootReferences2` are not valid during the callback itself, because the garbage collection might be in the middle of moving objects from old addresses to new addresses. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `RootReferences2`. When [ICorProfilerCallback2::GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) is called, all objects have been moved to their new locations and can be safely inspected.  
+ Les ID d’objet retournés par `RootReferences2` ne sont pas valides pendant le rappel lui-même, car le garbage collection peut être en train de déplacer des objets d’anciennes adresses vers de nouvelles adresses. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `RootReferences2`. Quand [ICorProfilerCallback2 :: GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) est appelé, tous les objets ont été déplacés vers leurs nouveaux emplacements et peuvent être inspectés en toute sécurité.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

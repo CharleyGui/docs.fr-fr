@@ -1,5 +1,5 @@
 ---
-title: ICorProfilerFunctionControl::SetILFunctionBody, méthode
+title: Méthode ICorProfilerFunctionControl::SetILFunctionBody
 ms.date: 03/30/2017
 api_name:
 - ICorProfilerFunctionControl.SetILFunctionBody
@@ -22,7 +22,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429885"
 ---
-# <a name="icorprofilerfunctioncontrolsetilfunctionbody-method"></a>ICorProfilerFunctionControl::SetILFunctionBody, méthode
+# <a name="icorprofilerfunctioncontrolsetilfunctionbody-method"></a>Méthode ICorProfilerFunctionControl::SetILFunctionBody
 Remplace le corps Common Intermediate Language (CIL) de la méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -48,9 +48,9 @@ HRESULT SetILFunctionBody(
 |S_OK|Le remplacement a été correctement effectué.|  
   
 ## <a name="remarks"></a>Notes  
- Unlike the [ICorProfilerInfo::SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) method, the `SetILFunctionBody` method manages the memory required for the new CIL body. This means that the CIL body provided by the profiler does not have to be allocated by using the [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) interface or allocated within a particular range. Il peut être alloué sur n'importe quel segment de mémoire. The profiler can free the memory used for its CIL body after `SetILFunctionBody` returns.  
+ Contrairement à la méthode [ICorProfilerInfo :: SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) , la méthode `SetILFunctionBody` gère la mémoire requise pour le nouveau corps cil. Cela signifie que le corps CIL fourni par le profileur ne doit pas être alloué à l’aide de l’interface [IMethodMalloc](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-interface.md) ou alloué dans une plage particulière. Il peut être alloué sur n'importe quel segment de mémoire. Le profileur peut libérer la mémoire utilisée pour son corps CIL après le retour de `SetILFunctionBody`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

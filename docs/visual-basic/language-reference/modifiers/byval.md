@@ -16,26 +16,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351594"
 ---
 # <a name="byval-visual-basic"></a>Byval (Visual Basic)
-Specifies that an argument is passed [by value](../../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md), so that the called procedure or property cannot change the value of a variable underlying the argument in the calling code. If no modifier is specified, ByVal is the default.
+Spécifie qu’un argument est passé [par valeur](../../programming-guide/language-features/procedures/passing-arguments-by-value-and-by-reference.md), de sorte que la procédure ou propriété appelée ne peut pas modifier la valeur d’une variable sous-jacente à l’argument dans le code appelant. Si aucun modificateur n’est spécifié, ByVal est la valeur par défaut.
 
 > [!NOTE]
-> Because it is the default, you do not have to explicitly specify the `ByVal` keyword in method signatures. It tends to produce noisy code and often leads to the non-default `ByRef` keyword being overlooked.
+> Étant donné qu’il s’agit de la valeur par défaut, il n’est pas nécessaire de spécifier explicitement le mot clé `ByVal` dans les signatures de méthode. Il a tendance à produire du code bruyant et entraîne souvent un surexamen du mot clé `ByRef` non défini par défaut.
 
 ## <a name="remarks"></a>Notes
  Le modificateur `ByVal` peut être utilisé dans les contextes suivants :
 
- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)
+ [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
 
  [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
   
- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)
+ [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
   
  [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
   
  [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)
 
 ## <a name="example"></a>Exemple
- The following example demonstrates the use of the `ByVal` parameter passing mechanism with a reference type argument. In the example, the argument is `c1`, an instance of class `Class1`. `ByVal` prevents the code in the procedures from changing the underlying value of the reference argument, `c1`, but does not protect the accessible fields and properties of `c1`.
+ L’exemple suivant illustre l’utilisation du mécanisme de passage de paramètre `ByVal` avec un argument de type référence. Dans l’exemple, l’argument est `c1`, une instance de la classe `Class1`. `ByVal` empêche le code des procédures de modifier la valeur sous-jacente de l’argument de référence, `c1`, mais ne protège pas les champs et les propriétés accessibles de `c1`.
 
  [!code-vb[VbVbalrKeywords#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/Class5.vb#10)]
 

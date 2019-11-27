@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353389"
 ---
-# <a name="grouping-data-visual-basic"></a>Grouping Data (Visual Basic)
+# <a name="grouping-data-visual-basic"></a>Regroupement de données (Visual Basic)
 Le regroupement consiste à placer des données dans des groupes afin que les éléments de chaque groupe partagent un attribut commun.  
   
  L’illustration suivante montre les résultats du regroupement d’une séquence de caractères. La clé de chaque groupe est le caractère.  
@@ -20,7 +20,7 @@ Le regroupement consiste à placer des données dans des groupes afin que les é
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|  
+|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations supplémentaires|  
 |-----------------|-----------------|------------------------------------------|----------------------|  
 |GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`Group … By … Into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
 |ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clés.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
@@ -68,5 +68,5 @@ MsgBox(sb.ToString())
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Group By (clause)](../../../../visual-basic/language-reference/queries/group-by-clause.md)
-- [How to: Group Files by Extension (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)
-- [How to: Split a File Into Many Files by Using Groups (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Comment : regrouper des fichiers par extension (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-group-files-by-extension-linq.md)
+- [Comment : fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-split-a-file-into-many-files-by-using-groups-linq.md)

@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449357"
 ---
 # <a name="isymunmanagedbindergetreaderforfile-method"></a>ISymUnmanagedBinder::GetReaderForFile, méthode
-Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface that will read the debugging symbols associated with the module.  
+À partir d’une interface de métadonnées et d’un nom de fichier, retourne l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) appropriée qui lira les symboles de débogage associés au module.  
   
- This method will open the program database (PDB) file only if it is next to the executable file. This change has been made for security purposes. If you need a more extensive search for the PDB file, use the [ISymUnmanagedBinder2::GetReaderForFile2](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) method.  
+ Cette méthode ouvre le fichier de base de données du programme (PDB) uniquement s’il est en regard du fichier exécutable. Cette modification a été apportée pour des raisons de sécurité. Si vous avez besoin d’une recherche plus complète pour le fichier PDB, utilisez la méthode [ISymUnmanagedBinder2 :: GetReaderForFile2,](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder2-getreaderforfile2-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,22 +39,22 @@ HRESULT GetReaderForFile(
   
 ## <a name="parameters"></a>Paramètres  
  `importer`  
- [in] A pointer to the metadata import interface.  
+ dans Pointeur vers l’interface d’importation de métadonnées.  
   
  `fileName`  
- [in] A pointer to the file name.  
+ dans Pointeur vers le nom de fichier.  
   
  `searchPath`  
- [in] A pointer to the search path.  
+ dans Pointeur vers le chemin de recherche.  
   
  `pRetVal`  
- [out] A pointer that is set to the returned [ISymUnmanagedReader](isymunmanagedreader-interface.md) interface.  
+ à Pointeur qui a pour valeur l’interface [ISymUnmanagedReader](isymunmanagedreader-interface.md) retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

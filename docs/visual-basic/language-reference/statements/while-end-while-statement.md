@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352751"
 ---
 # <a name="whileend-while-statement-visual-basic"></a>While...End While, instruction (Visual Basic)
-Runs a series of statements as long as a given condition is `True`.  
+Exécute une série d’instructions tant qu’une condition donnée n’est `True`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,49 +35,49 @@ End While
   
 |Terme|Définition|  
 |---|---|  
-|`condition`|Requis. `Boolean` expression. If `condition` is `Nothing`, Visual Basic treats it as `False`.|  
-|`statements`|Optionnel. One or more statements following `While`, which run every time `condition` is `True`.|  
-|`Continue While`|Optionnel. Transfers control to the next iteration of the `While` block.|  
-|`Exit While`|Optionnel. Transfers control out of the `While` block.|  
+|`condition`|Requis. expression `Boolean`. Si `condition` est `Nothing`, Visual Basic le traite comme `False`.|  
+|`statements`|Ce paramètre est facultatif. Une ou plusieurs instructions qui suivent `While`, qui s’exécutent chaque fois que `condition` est `True`.|  
+|`Continue While`|Ce paramètre est facultatif. Transfère le contrôle à l’itération suivante du bloc `While`.|  
+|`Exit While`|Ce paramètre est facultatif. Transfère le contrôle hors du bloc `While`.|  
 |`End While`|Requis. Met fin à la définition du bloc `While`.|  
   
 ## <a name="remarks"></a>Notes  
- Use a `While...End While` structure when you want to repeat a set of statements an indefinite number of times, as long as a condition remains `True`. If you want more flexibility with where you test the condition or what result you test it for, you might prefer the [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md). If you want to repeat the statements a set number of times, the [For...Next Statement](../../../visual-basic/language-reference/statements/for-next-statement.md) is usually a better choice.  
+ Utilisez une structure `While...End While` lorsque vous souhaitez répéter un ensemble d’instructions un nombre infini de fois, tant qu’une condition reste `True`. Si vous souhaitez plus de flexibilité lorsque vous testez la condition ou le résultat pour lequel vous la Testez, vous pouvez préférer le [... Instruction de boucle](../../../visual-basic/language-reference/statements/do-loop-statement.md). Si vous souhaitez répéter les instructions un nombre défini de fois, le [... L’instruction suivante](../../../visual-basic/language-reference/statements/for-next-statement.md) est généralement un meilleur choix.  
   
 > [!NOTE]
-> The `While` keyword is also used in the [Do...Loop Statement](../../../visual-basic/language-reference/statements/do-loop-statement.md), the [Skip While Clause](../../../visual-basic/language-reference/queries/skip-while-clause.md) and the [Take While Clause](../../../visual-basic/language-reference/queries/take-while-clause.md).  
+> Le mot clé `While` est également utilisé dans le [... Instruction de boucle](../../../visual-basic/language-reference/statements/do-loop-statement.md), la [clause Skip While](../../../visual-basic/language-reference/queries/skip-while-clause.md) et la [clause Take While](../../../visual-basic/language-reference/queries/take-while-clause.md).  
   
- If `condition` is `True`, all of the `statements` run until the `End While` statement is encountered. Control then returns to the `While` statement, and `condition` is again checked. If `condition` is still `True`, the process is repeated. If it’s `False`, control passes to the statement that follows the `End While` statement.  
+ Si `condition` est `True`, toutes les `statements` s’exécutent jusqu’à ce que l’instruction `End While` soit rencontrée. Le contrôle retourne ensuite à l’instruction `While` et `condition` est à nouveau vérifié. Si `condition` est toujours `True`, le processus est répété. S’il est `False`, le contrôle passe à l’instruction qui suit l’instruction `End While`.  
   
- The `While` statement always checks the condition before it starts the loop. Looping continues while the condition remains `True`. If `condition` is `False` when you first enter the loop, it doesn’t run even once.  
+ L’instruction `While` vérifie toujours la condition avant de démarrer la boucle. Le bouclage continue tant que la condition reste `True`. Si `condition` est `False` lorsque vous entrez pour la première fois la boucle, elle ne s’exécute pas même une fois.  
   
- The `condition` usually results from a comparison of two values, but it can be any expression that evaluates to a [Boolean Data Type](../../../visual-basic/language-reference/data-types/boolean-data-type.md) value (`True` or `False`). This expression can include a value of another data type, such as a numeric type, that has been converted to `Boolean`.  
+ Le `condition` résulte généralement d’une comparaison de deux valeurs, mais il peut s’agir d’une expression qui prend la valeur d’une valeur de [type de données booléenne](../../../visual-basic/language-reference/data-types/boolean-data-type.md) (`True` ou `False`). Cette expression peut inclure une valeur d’un autre type de données, tel qu’un type numérique, qui a été convertie en `Boolean`.  
   
- You can nest `While` loops by placing one loop within another. You can also nest different kinds of control structures within one another. For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
+ Vous pouvez imbriquer des boucles `While` en plaçant une boucle dans une autre. Vous pouvez également imbriquer différents genres de structures de contrôle dans l’un l’autre. Pour plus d’informations, consultez [structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).  
   
-## <a name="exit-while"></a>Exit While  
- The [Exit While](../../../visual-basic/language-reference/statements/exit-statement.md) statement can provide another way to exit a `While` loop. `Exit While` immediately transfers control to the statement that follows the `End While` statement.  
+## <a name="exit-while"></a>Quitter pendant  
+ L’instruction [Exit while](../../../visual-basic/language-reference/statements/exit-statement.md) peut fournir une autre façon de quitter une boucle `While`. `Exit While` transfère immédiatement le contrôle à l’instruction qui suit l’instruction `End While`.  
   
- You typically use `Exit While` after some condition is evaluated (for example, in an `If...Then...Else` structure). You might want to exit a loop if you detect a condition that makes it unnecessary or impossible to continue iterating, such as an erroneous value or a termination request. You can use `Exit While` when you test for a condition that could cause an *endless loop*, which is a loop that could run an extremely large or even infinite number of times. You can then use `Exit While` to escape the loop.  
+ En général, vous utilisez `Exit While` une fois qu’une condition est évaluée (par exemple, dans une structure `If...Then...Else`). Vous pouvez quitter une boucle si vous détectez une condition qui le rend inutile ou impossible de poursuivre l’itération, telle qu’une valeur erronée ou une demande d’arrêt. Vous pouvez utiliser `Exit While` lorsque vous testez une condition susceptible de provoquer une *boucle infinie*, qui est une boucle qui peut exécuter un nombre de fois très long, voire infini. Vous pouvez ensuite utiliser `Exit While` pour échapper à la boucle.  
   
- You can place any number of `Exit While` statements anywhere in the `While` loop.  
+ Vous pouvez placer n’importe quel nombre d’instructions `Exit While` n’importe où dans la boucle `While`.  
   
- When used within nested `While` loops, `Exit While` transfers control out of the innermost loop and into the next higher level of nesting.  
+ Lorsqu’il est utilisé dans des boucles `While` imbriquées, `Exit While` transfère le contrôle hors de la boucle la plus profonde et le plus élevé de l’imbrication.  
   
- The `Continue While` statement immediately transfers control to the next iteration of the loop. For more information, see [Continue Statement](../../../visual-basic/language-reference/statements/continue-statement.md).  
+ L’instruction `Continue While` transfère immédiatement le contrôle à l’itération suivante de la boucle. Pour plus d’informations, consultez [instruction continue](../../../visual-basic/language-reference/statements/continue-statement.md).  
   
 ## <a name="example"></a>Exemple  
- In the following example, the statements in the loop continue to run until the `index` variable is greater than 10.  
+ Dans l’exemple suivant, les instructions de la boucle continuent à s’exécuter jusqu’à ce que la variable `index` soit supérieure à 10.  
   
  [!code-vb[VbVbalrStatements#171](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#171)]  
   
 ## <a name="example"></a>Exemple  
- The following example illustrates the use of the `Continue While` and `Exit While` statements.  
+ L’exemple suivant illustre l’utilisation des instructions `Continue While` et `Exit While`.  
   
  [!code-vb[VbVbalrStatements#172](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#172)]  
   
 ## <a name="example"></a>Exemple  
- The following example reads all lines in a text file. The <xref:System.IO.File.OpenText%2A> method opens the file and returns a <xref:System.IO.StreamReader> that reads the characters. In the `While` condition, the <xref:System.IO.StreamReader.Peek%2A> method of the `StreamReader` determines whether the file contains additional characters.  
+ L’exemple suivant lit toutes les lignes d’un fichier texte. La méthode <xref:System.IO.File.OpenText%2A> ouvre le fichier et retourne un <xref:System.IO.StreamReader> qui lit les caractères. Dans la condition `While`, la méthode <xref:System.IO.StreamReader.Peek%2A> de l' `StreamReader` détermine si le fichier contient des caractères supplémentaires.  
   
  [!code-vb[VbVbalrStatements#173](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class14.vb#173)]  
   

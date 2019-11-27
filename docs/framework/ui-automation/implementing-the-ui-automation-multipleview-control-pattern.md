@@ -21,7 +21,7 @@ ms.locfileid: "74435059"
   
  Le modèle de contrôle <xref:System.Windows.Automation.MultipleViewPattern> permet de prendre en charge des contrôles qui fournissent plusieurs représentations du même ensemble d’informations ou de contrôles enfants, et permettent de basculer entre elles.  
   
- Examples of controls that can present multiple views include the list view (which can show its contents as thumbnails, tiles, icons, or details), Microsoft Excel charts (pie, line, bar, cell value with a formula), Microsoft Word documents (normal, Web layout, print layout, reading layout, outline), Microsoft Outlook calendar (year, month, week, day), and Microsoft Windows Media Player skins. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
+ Les exemples de contrôles qui peuvent présenter plusieurs affichages sont le mode liste (qui peut afficher son contenu sous forme de miniatures, de vignettes, d’icônes ou de détails), les graphiques Microsoft Excel (secteurs, courbes, barres, valeurs de cellule avec une formule), les documents Microsoft Word (normal, page Web, imprimer). disposition, lecture, disposition, plan), calendrier Microsoft Outlook (année, mois, semaine, jour) et habillages du lecteur Microsoft Windows Media. Les vues prises en charge sont déterminées par le développeur de contrôle et sont spécifiques à chaque contrôle.  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
@@ -39,12 +39,12 @@ ms.locfileid: "74435059"
 ## <a name="required-members-for-imultipleviewprovider"></a>Membres requis pour IMultipleViewProvider  
  Les propriétés et méthodes suivantes sont requises pour implémenter IMultipleViewProvider.  
   
-|Membres nécessaires|Type de membre|Notes|  
+|Membres nécessaires|Type de membre|Remarques|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Méthode|aucune.|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Méthode|aucune.|  
-|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Méthode|aucune.|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.CurrentView%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetSupportedViews%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A>|Méthode|Aucune|  
+|<xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A>|Méthode|Aucune|  
   
  Aucun événement n’est associé à ce modèle de contrôle.  
   
@@ -52,7 +52,7 @@ ms.locfileid: "74435059"
 ## <a name="exceptions"></a>Exceptions  
  Le fournisseur doit lever les exceptions suivantes.  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
 |<xref:System.ArgumentException>|Quand la méthode <xref:System.Windows.Automation.Provider.IMultipleViewProvider.SetCurrentView%2A> ou <xref:System.Windows.Automation.Provider.IMultipleViewProvider.GetViewName%2A> est appelée avec un paramètre qui n’est pas membre de la collection de vues prises en charge.|  
   
@@ -60,6 +60,6 @@ ms.locfileid: "74435059"
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
 - [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

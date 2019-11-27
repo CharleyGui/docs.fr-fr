@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353697"
 ---
-# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a>How to: Count Occurrences of a Word in a String (LINQ) (Visual Basic)
+# <a name="how-to-count-occurrences-of-a-word-in-a-string-linq-visual-basic"></a>Comment : compter les occurrences d’un mot dans une chaîne (LINQ) (Visual Basic)
 
 Cet exemple montre comment utiliser une requête LINQ pour compter les occurrences d’un mot spécifié dans une chaîne. Notez que, pour effectuer le décompte, la méthode <xref:System.String.Split%2A> est d’abord appelée pour créer un tableau de mots. La méthode <xref:System.String.Split%2A> a un coût en matière de performances. Si la seule opération sur la chaîne consiste à compter les mots, il est préférable d’utiliser les méthodes <xref:System.Text.RegularExpressions.Regex.Matches%2A> ou <xref:System.String.IndexOf%2A>. Toutefois, si les performances ne sont pas un facteur critique, ou si vous avez déjà fractionné la phrase pour effectuer d’autres types de requêtes sur elle, il est judicieux d’utiliser LINQ pour compter les mots ou les expressions.
 
@@ -60,8 +60,8 @@ End Class
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

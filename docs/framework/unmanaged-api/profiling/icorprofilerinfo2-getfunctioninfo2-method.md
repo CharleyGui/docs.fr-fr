@@ -65,7 +65,7 @@ HRESULT GetFunctionInfo2(
  [out] Tableau de valeurs `ClassID` qui représentent chacune l'ID d'un argument de type de la fonction. Suite au retour de la méthode, `typeArgs` contient une partie ou la totalité des valeurs `ClassID`.  
   
 ## <a name="remarks"></a>Notes  
- The profiler code can call [ICorProfilerInfo::GetModuleMetaData](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) to obtain a [metadata](../../../../docs/framework/unmanaged-api/metadata/index.md) interface for a given module. Le jeton de métadonnées qui est retourné à l'emplacement référencé par `pToken` peut alors servir à accéder aux métadonnées pour la fonction.  
+ Le code du profileur peut appeler [ICorProfilerInfo :: GetModuleMetaData,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmodulemetadata-method.md) pour obtenir une interface de [métadonnées](../../../../docs/framework/unmanaged-api/metadata/index.md) pour un module donné. Le jeton de métadonnées qui est retourné à l'emplacement référencé par `pToken` peut alors servir à accéder aux métadonnées pour la fonction.  
   
  L'ID de classe et les arguments de type retournés via les paramètres `pClassId` et `typeArgs` dépendent de la valeur qui est passée dans le paramètre `frameInfo`, comme indiqué dans le tableau suivant.  
   
@@ -79,7 +79,7 @@ HRESULT GetFunctionInfo2(
   
  Vous pouvez également commencer par appeler `GetFunctionInfo2` avec un tampon `pcTypeArgs` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite affecter à la taille de la mémoire tampon la valeur retournée dans `pcTypeArgs` divisée par la taille d'une valeur `ClassID` et rappeler `GetFunctionInfo2`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

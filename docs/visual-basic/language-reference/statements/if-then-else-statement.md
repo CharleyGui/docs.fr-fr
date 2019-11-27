@@ -48,79 +48,79 @@ End If
 If condition Then [ statements ] [ Else [ elsestatements ] ]
 ```
 
-## <a name="quick-links-to-example-code"></a>Quick links to example code
+## <a name="quick-links-to-example-code"></a>Liens rapides vers l’exemple de code
 
-This article includes several examples that illustrate uses of the `If`...`Then`...`Else` statement:
+Cet article contient plusieurs exemples qui illustrent l’utilisation de l’instruction `If`...`Then`...`Else` :
 
-- [Multiline syntax example](#multi-line)
-- [Nested syntax example](#nested)
-- [Single-line syntax example](#single-line)
+- [Exemple de syntaxe multiligne](#multi-line)
+- [Exemple de syntaxe imbriquée](#nested)
+- [Exemple de syntaxe sur une seule ligne](#single-line)
 
 ## <a name="parts"></a>Composants
 
 `condition` \
-Requis. Expression. Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.
+Requis. Formule. Doit correspondre à `True` ou `False`, ou à un type de données implicitement convertible en `Boolean`.
 
-If the expression is a [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) `Boolean` variable that evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the condition is treated as if the expression is `False`, and the `ElseIf` blocks are evaluated if they exist, or the `Else` block is executed if it exists.
+Si l’expression est une variable `Boolean` [Nullable](../../../visual-basic/programming-guide/language-features/data-types/nullable-value-types.md) qui prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), la condition est traitée comme si l’expression était `False`, et les blocs `ElseIf` sont évalués s’ils existent, ou le bloc `Else` est exécuté s’il existe.
 
 `Then` \
-Required in the single-line syntax; optional in the multiline syntax.
+Obligatoire dans la syntaxe sur une seule ligne ; facultatif dans la syntaxe multiligne.
 
 `statements` \
-Optionnel. One or more statements following `If`...`Then` that are executed if `condition` evaluates to `True`.
+Ce paramètre est facultatif. Une ou plusieurs instructions qui suivent `If`...`Then` qui sont exécutées si `condition` prend la valeur `True`.
 
 `elseifcondition` \
-Required if `ElseIf` is present. Expression. Must evaluate to `True` or `False`, or to a data type that is implicitly convertible to `Boolean`.
+Obligatoire si `ElseIf` est présent. Formule. Doit correspondre à `True` ou `False`, ou à un type de données implicitement convertible en `Boolean`.
 
 `elseifstatements` \
-Optionnel. One or more statements following `ElseIf`...`Then` that are executed if `elseifcondition` evaluates to `True`.
+Ce paramètre est facultatif. Une ou plusieurs instructions qui suivent `ElseIf`...`Then` qui sont exécutées si `elseifcondition` prend la valeur `True`.
 
 `elsestatements` \
-Optionnel. One or more statements that are executed if no previous `condition` or `elseifcondition` expression evaluates to `True`.
+Ce paramètre est facultatif. Une ou plusieurs instructions qui sont exécutées si aucune expression `condition` ou `elseifcondition` précédente ne prend la valeur `True`.
 
 `End If` \
-Terminates the multiline version of `If`...`Then`...`Else` block.
+Met fin à la version multiligne du bloc `If`...`Then`...`Else`.
 
 ## <a name="remarks"></a>Notes
 
-### <a name="multiline-syntax"></a>Multiline syntax
+### <a name="multiline-syntax"></a>Syntaxe multiligne
 
-When an `If`...`Then`...`Else` statement is encountered, `condition` is tested. If `condition` is `True`, the statements following `Then` are executed. If `condition` is `False`, each `ElseIf` statement (if there are any) is evaluated in order. When a `True` `elseifcondition` is found, the statements immediately following the associated `ElseIf` are executed. If no `elseifcondition` evaluates to `True`, or if there are no `ElseIf` statements, the statements following `Else` are executed. After executing the statements following `Then`, `ElseIf`, or `Else`, execution continues with the statement following `End If`.
+Lorsqu’une `If`...`Then`instruction`Else` est rencontrée, `condition` est testé. Si `condition` est `True`, les instructions qui suivent `Then` sont exécutées. Si `condition` est `False`, chaque instruction `ElseIf` (le cas échéant) est évaluée dans l’ordre. Lorsqu’un `True` `elseifcondition` est trouvé, les instructions qui suivent immédiatement les `ElseIf` associées sont exécutées. Si aucun `elseifcondition` n’a la valeur `True`, ou s’il n’existe aucune instruction `ElseIf`, les instructions qui suivent `Else` sont exécutées. Après l’exécution des instructions qui suivent `Then`, `ElseIf`ou `Else`, l’exécution se poursuit avec l’instruction qui suit `End If`.
 
-The `ElseIf` and `Else` clauses are both optional. You can have as many `ElseIf` clauses as you want in an `If`...`Then`...`Else` statement, but no `ElseIf` clause can appear after an `Else` clause. `If`...`Then`...`Else` statements can be nested within each other.
+Les clauses `ElseIf` et `Else` sont toutes deux facultatives. Vous pouvez avoir autant de clauses de `ElseIf` que vous le souhaitez dans une instruction `If`...`Then`...`Else`, mais aucune clause `ElseIf` ne peut apparaître après une clause `Else`. les instructions `If`...`Then`...`Else` peuvent être imbriquées les unes dans les autres.
 
-In the multiline syntax, the `If` statement must be the only statement on the first line. The `ElseIf`, `Else`, and `End If` statements can be preceded only by a line label. The `If`...`Then`...`Else` block must end with an `End If` statement.
+Dans la syntaxe multiligne, l’instruction `If` doit être la seule instruction sur la première ligne. Les instructions `ElseIf`, `Else`et `End If` peuvent être précédées uniquement d’une étiquette de ligne. Le bloc `If`...`Then`...`Else` doit se terminer par une instruction `End If`.
 
 > [!TIP]
-> The [Select...Case Statement](../../../visual-basic/language-reference/statements/select-case-statement.md) might be more useful when you evaluate a single expression that has several possible values.
+> L' [option Select... L’instruction case](../../../visual-basic/language-reference/statements/select-case-statement.md) peut être plus utile lorsque vous évaluez une expression unique qui a plusieurs valeurs possibles.
 
-### <a name="single-line-syntax"></a>Single-Line syntax
+### <a name="single-line-syntax"></a>Syntaxe sur une seule ligne
 
-You can use the single-line syntax for a single condition with code to execute if it's true. However, the multiple-line syntax provides more structure and flexibility and is easier to read, maintain, and debug.
+Vous pouvez utiliser la syntaxe sur une seule ligne pour une seule condition avec le code à exécuter si elle est vraie. Toutefois, la syntaxe sur plusieurs lignes offre davantage de structure et de flexibilité, et est plus facile à lire, à gérer et à déboguer.
 
-What follows the `Then` keyword is examined to determine whether a statement is a single-line `If`. If anything other than a comment appears after `Then` on the same line, the statement is treated as a single-line `If` statement. If `Then` is absent, it must be the start of a multiple-line `If`...`Then`...`Else`.
+Ce qui suit le mot clé `Then` est examiné pour déterminer si une instruction est un `If`à une seule ligne. Si tout autre chose qu’un commentaire apparaît après `Then` sur la même ligne, l’instruction est traitée comme une instruction de `If` à une seule ligne. Si `Then` est absent, il doit s’agir du début d’un `If`à plusieurs lignes...`Then`...`Else`.
 
-In the single-line syntax, you can have multiple statements executed as the result of an `If`...`Then` decision. All statements must be on the same line and be separated by colons.
+Dans la syntaxe d’une seule ligne, vous pouvez exécuter plusieurs instructions à la suite d’une `If`...`Then` décision. Toutes les instructions doivent se trouver sur la même ligne et être séparées par deux-points.
 
-## <a name="multiline-syntax-example"></a>Multiline syntax example
+## <a name="multiline-syntax-example"></a>Exemple de syntaxe multiligne
 
 <a name="multi-line"></a>
 
-The following example illustrates the use of the multiline syntax of the `If`...`Then`...`Else` statement.
+L’exemple suivant illustre l’utilisation de la syntaxe multiligne de l’instruction `If`...`Then`...`Else`.
 
 [!code-vb[VbVbalrStatements#101](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class6.vb#101)]
 
-## <a name="nested-syntax-example"></a>Nested syntax example
+## <a name="nested-syntax-example"></a>Exemple de syntaxe imbriquée
 
 <a name="nested"></a>
 
-The following example contains nested `If`...`Then`...`Else` statements.
+L’exemple suivant contient des instructions `If`...`Then`...`Else` imbriquées.
 
 [!code-vb[VbVbalrStatements#102](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class6.vb#102)]
 
-## <a name="single-line-syntax-example"></a>Single-Line syntax example
+## <a name="single-line-syntax-example"></a>Exemple de syntaxe sur une seule ligne
 
-<a name="single-line"></a> The following example illustrates the use of the single-line syntax.
+<a name="single-line"></a>L’exemple suivant illustre l’utilisation de la syntaxe sur une seule ligne.
 
 [!code-vb[VbVbalrStatements#103](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/class6.vb#103)]
 
@@ -132,5 +132,5 @@ The following example contains nested `If`...`Then`...`Else` statements.
 - [Select...Case (instruction)](../../../visual-basic/language-reference/statements/select-case-statement.md)
 - [Structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md)
 - [Structures de décision](../../../visual-basic/programming-guide/language-features/control-flow/decision-structures.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Opérateurs logiques et au niveau du bit dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
 - [If (opérateur)](../../../visual-basic/language-reference/operators/if-operator.md)

@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347706"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>How to: Query for Duplicate Files in a Directory Tree (LINQ) (Visual Basic)
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-visual-basic"></a>Comment : interroger des Fichiers dupliqués dans une arborescence de répertoires (LINQ) (Visual Basic)
 Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment rechercher des fichiers dont la taille et l’heure de création correspondent également.  
   
 ## <a name="example"></a>Exemple  
@@ -101,7 +101,7 @@ End Module
  La première requête utilise une clé simple pour déterminer une correspondance ; elle trouve les fichiers qui ont le même nom mais dont le contenu peut être différent. La deuxième requête utilise une clé composée à comparer à trois propriétés de l’objet <xref:System.IO.FileInfo>. Cette requête est beaucoup plus susceptible de trouver les fichiers ayant le même nom et un contenu similaire ou identique.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445941"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished, méthode
-Notifies the profiler that a module has finished loading.  
+Notifie le profileur qu’un module a fini de se charger.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT ModuleLoadFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] The ID of the module that has finished loading.  
+ dans ID du module dont le chargement est terminé.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether the module was loaded successfully.  
+ dans HRESULT qui indique si le module a été chargé avec succès.  
   
 ## <a name="remarks"></a>Notes  
- The value of `moduleId` is not valid for an information request until the `ModuleLoadFinished` method is called.  
+ La valeur de `moduleId` n’est pas valide pour une demande d’informations jusqu’à ce que la méthode `ModuleLoadFinished` soit appelée.  
   
- Some parts of loading the module might continue after the `ModuleLoadFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of loading the module has succeeded.  
+ Certaines parties du chargement du module peuvent continuer après le rappel `ModuleLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement du module a réussi.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

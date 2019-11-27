@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441996"
 ---
 # <a name="imetadatatablesgetcolumn-method"></a>IMetaDataTables::GetColumn, méthode
-Gets a pointer to the value contained in the cell of the specified column and row in the given table.  
+Obtient un pointeur vers la valeur contenue dans la cellule de la colonne et de la ligne spécifiées dans la table donnée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,46 +39,46 @@ HRESULT GetColumn (
 ## <a name="parameters"></a>Paramètres
 
  `ixTbl`  
- [in] The index of the table.  
+ dans Index de la table.  
   
  `ixCol`  
- [in] The index of the column in the table.  
+ dans Index de la colonne dans la table.  
   
  `rid`  
- [in] The index of the row in the table.  
+ dans Index de la ligne dans la table.  
   
  `pVal`  
- [out] A pointer to the value in the cell.  
+ à Pointeur vers la valeur dans la cellule.  
  
 ## <a name="remarks"></a>Notes
 
-The interpretion of the value returned through `pVal` depends on the column's type. The column type can be determined by calling [IMetaDataTables.GetColumnInfo](imetadatatables-getcolumninfo-method.md).
+L’interprétation de la valeur retournée par `pVal` dépend du type de la colonne. Le type de colonne peut être déterminé en appelant [IMetaDataTables. GetColumnInfo](imetadatatables-getcolumninfo-method.md).
 
-- The **GetColumn** method automatically converts columns of type **Rid** or **CodedToken** to full 32-bit `mdToken` values.
-- It also automatically converts 8-bit or 16-bit values to full 32-bit values. 
-- For *heap* type columns, the returned *pVal* will be an index into the corresponding heap.
+- La méthode **GetColumn** convertit automatiquement les colonnes de type **RID** ou **CodedToken** en valeurs de `mdToken` 32 bits complètes.
+- Il convertit également automatiquement les valeurs de 8 ou 16 bits en valeurs 32 bits complètes. 
+- Pour les colonnes de type *Heap* , le *pval* retourné est un index dans le tas correspondant.
 
-| Column type              | pVal contains | Commentaire                          |
+| Type de colonne              | pVal contient | Commentaire                          |
 |--------------------------|---------------|-----------------------------------|
-| `0`..`iRidMax`<br>(0..63)  | mdToken     | *pVal* will contain a full Token. The function automatically converts the Rid into a full token. |
-| `iCodedToken`..`iCodedTokenMax`<br>(64..95) | mdToken | Upon return, *pVal* will contain a full Token. The function automatically decompresses the CodedToken into a full token. |
-| `iSHORT` (96)            | Int16         | Automatically sign-extended to 32-bit.  |
-| `iUSHORT` (97)           | UInt16        | Automatically sign-extended to 32-bit.  |
+| `0`..`iRidMax`<br>(0.. 63)  | mdToken     | *pval* contient un jeton complet. La fonction convertit automatiquement le RID en jeton complet. |
+| `iCodedToken`..`iCodedTokenMax`<br>(64.. 95) | mdToken | Lors du retour, *pval* contient un jeton complet. La fonction décompresse automatiquement le CodedToken en jeton complet. |
+| `iSHORT` (96)            | Int16         | Signature automatique-étendu à 32 bits.  |
+| `iUSHORT` (97)           | UInt16        | Signature automatique-étendu à 32 bits.  |
 | `iLONG` (98)             | Int32         |                                        | 
 | `iULONG` (99)            | UInt32        |                                        |
-| `iBYTE` (100)            | Byte          | Automatically sign-extended to 32-bit.  |
-| `iSTRING` (101)          | String heap index | *pVal* is an index into the String heap. Use [IMetadataTables::GetString](imetadatatables-getstring-method.md) to get the actual column String value. |
-| `iGUID` (102)            | Guid heap index | *pVal* is an index into the Guid heap. Use [IMetadataTables::GetGuid](imetadatatables-getguid-method.md) to get the actual column Guid value. |
-| `iBLOB` (103)            | Blob heap index | *pVal* is an index into the Blob heap. Use [IMetadataTables::GetBlob](imetadatatables-getblob-method.md) to get the actual column Blob value. |
+| `iBYTE` (100)            | Byte          | Signature automatique-étendu à 32 bits.  |
+| `iSTRING` (101)          | Index du tas de chaîne | *pval* est un index dans le tas de chaîne. Utilisez [IMetadataTables :: GetString](imetadatatables-getstring-method.md) pour récupérer la valeur de la chaîne de colonne réelle. |
+| `iGUID` (102)            | Index du tas GUID | *pval* est un index dans le tas GUID. Utilisez [IMetadataTables :: GetGuid](imetadatatables-getguid-method.md) pour récupérer la valeur du GUID de colonne réel. |
+| `iBLOB` (103)            | Index du tas d’objets BLOB | *pval* est un index dans le tas d’objets BLOB. Utilisez [IMetadataTables :: GetBlob](imetadatatables-getblob-method.md) pour récupérer la valeur réelle de l’objet blob de colonne. |
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
- **.NET Framework Versions** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
+ **Versions de .NET Framework** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

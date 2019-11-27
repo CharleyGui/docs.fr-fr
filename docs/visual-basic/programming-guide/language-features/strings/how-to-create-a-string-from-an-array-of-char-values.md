@@ -13,18 +13,18 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344384"
 ---
 # <a name="how-to-create-a-string-from-an-array-of-char-values-visual-basic"></a>Comment : créer une chaîne à partir d'un tableau de valeurs Char (Visual Basic)
-This example creates the string "abcd" from individual characters.  
+Cet exemple crée la chaîne « ABCD » à partir de caractères individuels.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrStrings#61](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#61)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- This method has no special requirements.  
+ Cette méthode n’a pas d’exigences particulières.  
   
- The syntax `"a"c`, where a single `c` follows a single character in quotation marks, is used to create a character literal.  
+ La syntaxe `"a"c`, où un seul `c` suit un caractère unique entre guillemets, est utilisé pour créer un littéral de caractère.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Null characters (equivalent to `Chr(0)`) in the string lead to unexpected results when using the string. The null character will be included with the string, but characters following the null character will not be displayed in some situations.  
+ Les caractères null (équivalents à `Chr(0)`) dans la chaîne entraînent des résultats inattendus lors de l’utilisation de la chaîne. Le caractère null sera inclus avec la chaîne, mais les caractères qui suivent le caractère NULL ne seront pas affichés dans certaines situations.  
   
 ## <a name="see-also"></a>Voir aussi
 

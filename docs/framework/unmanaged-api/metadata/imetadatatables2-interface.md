@@ -22,21 +22,21 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432348"
 ---
 # <a name="imetadatatables2-interface"></a>IMetaDataTables2, interface
-Extends [IMetaDataTables](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md) to include methods for working with metadata streams.  
+Étend [IMetaDataTables](../../../../docs/framework/unmanaged-api/metadata/imetadatatables-interface.md) pour inclure des méthodes permettant d’utiliser des flux de métadonnées.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetMetaDataStorage, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastorage-method.md)|Gets the size and contents of the metadata stored in the specified section.|  
-|[GetMetaDataStreamInfo, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastreaminfo-method.md)|Gets the name, size, and contents of the metadata stream at the specified index.|  
+|[GetMetaDataStorage, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastorage-method.md)|Obtient la taille et le contenu des métadonnées stockées dans la section spécifiée.|  
+|[GetMetaDataStreamInfo, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatatables2-getmetadatastreaminfo-method.md)|Obtient le nom, la taille et le contenu du flux de métadonnées au niveau de l’index spécifié.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

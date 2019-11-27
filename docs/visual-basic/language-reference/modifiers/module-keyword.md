@@ -1,5 +1,5 @@
 ---
-title: Module, mot clé
+title: Module <keyword>
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ModuleAttribute
@@ -15,15 +15,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351551"
 ---
-# <a name="module-keyword-visual-basic"></a>Module \<keyword> (Visual Basic)
-Specifies that an attribute at the beginning of a source file applies to the current assembly module.  
+# <a name="module-keyword-visual-basic"></a>Module \<de mot clé > (Visual Basic)
+Spécifie qu’un attribut au début d’un fichier source s’applique au module d’assembly actuel.  
   
 ## <a name="remarks"></a>Notes  
- Many attributes pertain to an individual programming element, such as a class or property. You apply such an attribute by attaching the attribute block, within angle brackets (`< >`), directly to the declaration statement.  
+ De nombreux attributs se rapportent à un élément de programmation individuel, tel qu’une classe ou une propriété. Vous appliquez ce type d’attribut en attachant le bloc d’attributs, entre crochets pointus (`< >`), directement à l’instruction de déclaration.  
   
- If an attribute pertains not only to the following element but to the current assembly module, you place the attribute block at the beginning of the source file and identify the attribute with the `Module` keyword. If it applies to the entire assembly, you use the [Assembly](../../../visual-basic/language-reference/modifiers/assembly.md) keyword.  
+ Si un attribut se rapporte non seulement à l’élément suivant mais au module d’assembly actuel, vous placez le bloc d’attributs au début du fichier source et identifiez l’attribut à l’aide du mot clé `Module`. S’il s’applique à l’intégralité de l’assembly, vous utilisez le mot clé [assembly](../../../visual-basic/language-reference/modifiers/assembly.md) .  
   
- The `Module` modifier is not the same as the [Module Statement](../../../visual-basic/language-reference/statements/module-statement.md).  
+ Le modificateur `Module` n’est pas le même que l' [instruction module](../../../visual-basic/language-reference/statements/module-statement.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

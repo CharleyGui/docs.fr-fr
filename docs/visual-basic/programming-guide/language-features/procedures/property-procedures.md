@@ -22,26 +22,26 @@ ms.locfileid: "74352562"
 ---
 # <a name="property-procedures-visual-basic"></a>Procédures de propriété (Visual Basic)
 
-A property procedure is a series of Visual Basic statements that manipulate a custom property on a module, class, or structure. Property procedures are also known as *property accessors*.
+Une procédure de propriété est une série d’instructions Visual Basic qui manipulent une propriété personnalisée sur un module, une classe ou une structure. Les procédures de propriété sont également appelées *accesseurs de propriété*.
 
-Visual Basic provides for the following property procedures:
+Visual Basic fournit les procédures de propriété suivantes :
 
-- A `Get` procedure returns the value of a property. It is called when you access the property in an expression.
-- A `Set` procedure sets a property to a value, including an object reference. It is called when you assign a value to the property.
+- Une procédure `Get` retourne la valeur d’une propriété. Elle est appelée lorsque vous accédez à la propriété dans une expression.
+- Une procédure `Set` affecte une valeur à une propriété, y compris une référence d’objet. Elle est appelée lorsque vous assignez une valeur à la propriété.
 
-You usually define property procedures in pairs, using the `Get` and `Set` statements, but you can define either procedure alone if the property is read-only ([Get Statement](../../../../visual-basic/language-reference/statements/get-statement.md)) or write-only ([Set Statement](../../../../visual-basic/language-reference/statements/set-statement.md)).
+Vous définissez généralement des procédures de propriété par paires, à l’aide des instructions `Get` et `Set`, mais vous pouvez définir l’une ou l’autre procédure uniquement si la propriété est en lecture seule ([instruction d’extraction](../../../../visual-basic/language-reference/statements/get-statement.md)) ou en écriture seule ([instruction Set](../../../../visual-basic/language-reference/statements/set-statement.md)).
 
-You can omit the `Get` and `Set` procedure when using an auto-implemented property. Pour plus d’informations, consultez [Propriétés implémentées automatiquement](./auto-implemented-properties.md).
+Vous pouvez omettre les `Get` et `Set` procédure lors de l’utilisation d’une propriété implémentée automatiquement. Pour plus d’informations, consultez [Propriétés implémentées automatiquement](./auto-implemented-properties.md).
 
-You can define properties in classes, structures, and modules. Properties are `Public` by default, which means you can call them from anywhere in your application that can access the property's container.
+Vous pouvez définir des propriétés dans des classes, des structures et des modules. Les propriétés sont `Public` par défaut, ce qui signifie que vous pouvez les appeler à partir de n’importe où dans votre application qui peut accéder au conteneur de la propriété.
 
-For a comparison of properties and variables, see [Differences Between Properties and Variables in Visual Basic](differences-between-properties-and-variables.md).
+Pour une comparaison des propriétés et des variables, consultez [différences entre les propriétés et les variables dans Visual Basic](differences-between-properties-and-variables.md).
 
-## <a name="declaration-syntax"></a>Declaration syntax
+## <a name="declaration-syntax"></a>Syntaxe de déclaration
 
-A property itself is defined by a block of code enclosed within the [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md) and the `End Property` statement. Inside this block, each property procedure appears as an internal block enclosed within a declaration statement (`Get` or `Set`) and the matching `End` declaration.
+Une propriété elle-même est définie par un bloc de code placé entre l' [instruction Property](../../../../visual-basic/language-reference/statements/property-statement.md) et l’instruction `End Property`. À l’intérieur de ce bloc, chaque procédure de propriété apparaît sous la forme d’un bloc interne délimité par une instruction de déclaration (`Get` ou `Set`) et de la déclaration de `End` correspondante.
 
-The syntax for declaring a property and its procedures is as follows:
+La syntaxe de déclaration d’une propriété et de ses procédures est la suivante :
 
 ```vb
 [Default] [Modifiers] Property PropertyName[(ParameterList)] [As DataType]
@@ -60,62 +60,62 @@ End Property
 [Default] [Modifiers] Property PropertyName [(ParameterList)] [As DataType]
 ```
 
-The `Modifiers` can specify access level and information regarding overloading, overriding, sharing, and shadowing, as well as whether the property is read-only or write-only. The `AccessLevel` on the `Get` or `Set` procedure can be any level that is more restrictive than the access level specified for the property itself. For more information, see [Property Statement](../../../../visual-basic/language-reference/statements/property-statement.md).
+La `Modifiers` peut spécifier le niveau d’accès et les informations relatives à la surcharge, à la substitution, au partage et à l’occultation, ainsi que la propriété en lecture seule ou en écriture seule. La `AccessLevel` sur la procédure `Get` ou `Set` peut être n’importe quel niveau qui est plus restrictif que le niveau d’accès spécifié pour la propriété elle-même. Pour plus d’informations, consultez [Property, instruction](../../../../visual-basic/language-reference/statements/property-statement.md).
 
 ### <a name="data-type"></a>Type de données
 
-A property's data type and principal access level are defined in the `Property` statement, not in the property procedures. A property can have only one data type. For example, you cannot define a property to store a `Decimal` value but retrieve a `Double` value.
+Le type de données et le niveau d’accès principal d’une propriété sont définis dans l’instruction `Property`, pas dans les procédures de propriété. Une propriété ne peut avoir qu’un seul type de données. Par exemple, vous ne pouvez pas définir une propriété pour stocker une valeur de `Decimal`, mais récupérer une valeur de `Double`.
 
-### <a name="access-level"></a>Access Level
+### <a name="access-level"></a>Niveau d’accès
 
-However, you can define a principal access level for a property and further restrict the access level in one of its property procedures. For example, you can define a `Public` property and then define a `Private Set` procedure. The `Get` procedure remains `Public`. You can change the access level in only one of a property's procedures, and you can only make it more restrictive than the principal access level. For more information, see [How to: Declare a Property with Mixed Access Levels](how-to-declare-a-property-with-mixed-access-levels.md).
+Toutefois, vous pouvez définir un niveau d’accès principal pour une propriété et restreindre davantage le niveau d’accès dans l’une de ses procédures de propriété. Par exemple, vous pouvez définir une propriété `Public`, puis définir une procédure `Private Set`. La procédure `Get` reste `Public`. Vous pouvez modifier le niveau d’accès dans une seule des procédures d’une propriété, et vous pouvez le rendre plus restrictif que le niveau d’accès du principal. Pour plus d’informations, consultez [Comment : déclarer une propriété avec des niveaux d’accès mixtes](how-to-declare-a-property-with-mixed-access-levels.md).
 
-## <a name="parameter-declaration"></a>Parameter declaration
+## <a name="parameter-declaration"></a>Déclaration de paramètre
 
-You declare each parameter the same way you do for [Sub Procedures](sub-procedures.md), except that the passing mechanism must be `ByVal`.
+Vous déclarez chaque paramètre de la même façon que pour les [procédures Sub](sub-procedures.md), à ceci près que le mécanisme de passage doit être `ByVal`.
 
-The syntax for each parameter in the parameter list is as follows:
+La syntaxe de chaque paramètre dans la liste de paramètres est la suivante :
 
 ```vb
 [Optional] ByVal [ParamArray] parametername As datatype
 ```
 
-If the parameter is optional, you must also supply a default value as part of its declaration. The syntax for specifying a default value is as follows:
+Si le paramètre est facultatif, vous devez également fournir une valeur par défaut dans le cadre de sa déclaration. La syntaxe permettant de spécifier une valeur par défaut est la suivante :
 
 ```vb
 Optional ByVal parametername As datatype = defaultvalue
 ```
 
-## <a name="property-value"></a>Property value
+## <a name="property-value"></a>Valeur de la propriété
 
-In a `Get` procedure, the return value is supplied to the calling expression as the value of the property.
+Dans une procédure `Get`, la valeur de retour est fournie à l’expression appelante comme valeur de la propriété.
 
-In a `Set` procedure, the new property value is passed to the parameter of the `Set` statement. If you explicitly declare a parameter, you must declare it with the same data type as the property. If you do not declare a parameter, the compiler uses the implicit parameter `Value` to represent the new value to be assigned to the property.
+Dans une procédure `Set`, la nouvelle valeur de propriété est passée au paramètre de l’instruction `Set`. Si vous déclarez explicitement un paramètre, vous devez le déclarer avec le même type de données que la propriété. Si vous ne déclarez pas de paramètre, le compilateur utilise le paramètre implicite `Value` pour représenter la nouvelle valeur à assigner à la propriété.
 
-## <a name="calling-syntax"></a>Calling syntax
+## <a name="calling-syntax"></a>Syntaxe d’appel
 
-You invoke a property procedure implicitly by making reference to the property. You use the name of the property the same way you would use the name of a variable, except that you must provide values for all arguments that are not optional, and you must enclose the argument list in parentheses. If no arguments are supplied, you can optionally omit the parentheses.
+Vous appelez une procédure de propriété implicitement en faisant référence à la propriété. Vous utilisez le nom de la propriété de la même façon que vous utilisez le nom d’une variable, mais vous devez fournir des valeurs pour tous les arguments qui ne sont pas facultatifs, et vous devez placer la liste d’arguments entre parenthèses. Si aucun argument n’est fourni, vous pouvez éventuellement omettre les parenthèses.
 
-The syntax for an implicit call to a `Set` procedure is as follows:
+La syntaxe d’un appel implicite à une procédure `Set` se présente comme suit :
 
 ```vb
 propertyname[(argumentlist)] = expression
 ```
 
-The syntax for an implicit call to a `Get` procedure is as follows:
+La syntaxe d’un appel implicite à une procédure `Get` se présente comme suit :
 
 ```vb
 lvalue = propertyname[(argumentlist)]
 Do While (propertyname[(argumentlist)] > expression)
 ```
 
-### <a name="illustration-of-declaration-and-call"></a>Illustration of declaration and call
+### <a name="illustration-of-declaration-and-call"></a>Illustration de la déclaration et de l’appel
 
-The following property stores a full name as two constituent names, the first name and the last name. When the calling code reads `fullName`, the `Get` procedure combines the two constituent names and returns the full name. When the calling code assigns a new full name, the `Set` procedure attempts to break it into two constituent names. If it does not find a space, it stores it all as the first name.
+La propriété suivante stocke un nom complet sous la forme de deux noms constitutifs, le prénom et le nom. Lorsque le code appelant lit `fullName`, la procédure `Get` combine les deux noms constitutifs et retourne le nom complet. Lorsque le code appelant assigne un nouveau nom complet, la procédure `Set` tente de la décomposer en deux noms constitutifs. S’il ne trouve pas d’espace, il le stocke comme premier nom.
 
 [!code-vb[VbVbcnProcedures#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#8)]
 
-The following example shows typical calls to the property procedures of `fullName`:
+L’exemple suivant montre des appels classiques aux procédures de propriété de `fullName`:
 
 [!code-vb[VbVbcnProcedures#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#9)]
 
@@ -125,9 +125,9 @@ The following example shows typical calls to the property procedures of `fullNam
 - [Procédures Function](function-procedures.md)
 - [Procédures d’opérateur](operator-procedures.md)
 - [Paramètres et arguments d’une procédure](procedure-parameters-and-arguments.md)
-- [Differences Between Properties and Variables in Visual Basic](differences-between-properties-and-variables.md)
+- [Différences entre les propriétés et les variables dans Visual Basic](differences-between-properties-and-variables.md)
 - [Guide pratique : créer une propriété](how-to-create-a-property.md)
 - [Guide pratique : appeler une procédure de propriété](how-to-call-a-property-procedure.md)
-- [How to: Declare and Call a Default Property in Visual Basic](how-to-declare-and-call-a-default-property.md)
+- [Comment : déclarer et appeler une propriété par défaut dans Visual Basic](how-to-declare-and-call-a-default-property.md)
 - [Guide pratique : placer une valeur dans une propriété](how-to-put-a-value-in-a-property.md)
 - [Guide pratique : obtenir une valeur d’une propriété](how-to-get-a-value-from-a-property.md)

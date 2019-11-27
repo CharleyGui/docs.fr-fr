@@ -39,7 +39,7 @@ End With
 |Terme|Définition|
 |---|---|
 |`objectExpression`|Requis. Expression qui correspond à un objet. L'expression peut être arbitrairement complexe et n'est évaluée qu'une seule fois. L'expression peut correspondre à tout type de données, y compris des types élémentaires.|
-|`statements`|Optionnel. Une ou plusieurs instructions entre `With` et `End With` qui peuvent faire référence aux membres d'un objet produit par l'évaluation de `objectExpression`.|
+|`statements`|Ce paramètre est facultatif. Une ou plusieurs instructions entre `With` et `End With` qui peuvent faire référence aux membres d'un objet produit par l'évaluation de `objectExpression`.|
 |`End With`|Requis. Met fin à la définition du bloc `With`.|
 
 ## <a name="remarks"></a>Notes
@@ -64,10 +64,10 @@ Vous pouvez placer une instruction `With...End With` dans une autre. Les instruc
 
 Vous ne pouvez pas créer de branche dans un bloc d’instructions `With` à partir de l’extérieur du bloc.
 
-À moins que le bloc ne contienne une boucle, les instructions ne sont exécutées qu'une seule fois. Vous pouvez imbriquer différentes sortes de structures de contrôle. For more information, see [Nested Control Structures](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).
+À moins que le bloc ne contienne une boucle, les instructions ne sont exécutées qu'une seule fois. Vous pouvez imbriquer différentes sortes de structures de contrôle. Pour plus d’informations, consultez [structures de contrôle imbriquées](../../../visual-basic/programming-guide/language-features/control-flow/nested-control-structures.md).
 
 > [!NOTE]
-> Vous pouvez également utiliser le mot clé `With` dans les initialiseurs d'objets. For more information and examples, see [Object Initializers: Named and Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) and [Anonymous Types](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
+> Vous pouvez également utiliser le mot clé `With` dans les initialiseurs d'objets. Pour plus d’informations et d’exemples, consultez [initialiseurs d’objets : types nommés et anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md) et [types anonymes](../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).
 >
 > Si vous utilisez un bloc `With` uniquement pour initialiser les propriétés ou les champs d'un objet que vous venez d'instancier, utilisez plutôt un initialiseur d'objet à la place.
 

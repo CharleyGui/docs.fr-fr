@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74439892"
 ---
 # <a name="icorprofilercallbackunmanagedtomanagedtransition-method"></a>ICorProfilerCallback::UnmanagedToManagedTransition, méthode
-Notifies the profiler that a transition from unmanaged code to managed code has occurred.  
+Notifie le profileur qu’une transition du code non managé au code managé s’est produite.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT UnmanagedToManagedTransition(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The ID of the function that is being called.  
+ dans ID de la fonction appelée.  
   
  `reason`  
- [in] A value of the [COR_PRF_TRANSITION_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md) enumeration that indicates whether the transition occurred because of a call into managed code from unmanaged code, or because of a return from an unmanaged function called by a managed one.  
+ dans Valeur de l’énumération [COR_PRF_TRANSITION_REASON](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md) qui indique si la transition s’est produite en raison d’un appel dans du code managé à partir de code non managé, ou à cause d’un retour d’une fonction non managée appelée par une fonction managée.  
   
 ## <a name="remarks"></a>Notes  
- If the value of `reason` is COR_PRF_TRANSITION_RETURN and `functionId` is not null, the function ID is that of the unmanaged function, and will never have been compiled using the just-in-time (JIT) compiler. Unmanaged functions have some basic information associated with them, such as a name and some metadata.  
+ Si la valeur de `reason` est COR_PRF_TRANSITION_RETURN et `functionId` n’est pas null, l’ID de fonction est celui de la fonction non managée et n’aura jamais été compilé à l’aide du compilateur juste-à-temps (JIT). Des informations de base sont associées aux fonctions non managées, telles qu’un nom et des métadonnées.  
   
- If the value of `reason` is COR_PRF_TRANSITION_CALL, it may be possible that the called function (that is, the managed function) has not yet been JIT-compiled.  
+ Si la valeur de `reason` est COR_PRF_TRANSITION_CALL, il est possible que la fonction appelée (autrement dit, la fonction managée) n’ait pas encore été compilée juste-à-temps.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

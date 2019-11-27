@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333036"
 ---
 # <a name="removehandler-statement"></a>RemoveHandler, instruction
-Removes the association between an event and an event handler.  
+Supprime l’association entre un événement et un gestionnaire d’événements.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,14 +29,14 @@ RemoveHandler event, AddressOf eventhandler
   
 |Terme|Définition|  
 |---|---|  
-|`event`|The name of the event being handled.|  
-|`eventhandler`|The name of the procedure currently handling the event.|  
+|`event`|Nom de l’événement géré.|  
+|`eventhandler`|Nom de la procédure qui gère actuellement l’événement.|  
   
 ## <a name="remarks"></a>Notes  
- The `AddHandler` and `RemoveHandler` statements allow you to start and stop event handling for a specific event at any time during program execution.  
+ Les instructions `AddHandler` et `RemoveHandler` vous permettent de démarrer et d’arrêter la gestion des événements pour un événement spécifique à tout moment pendant l’exécution du programme.  
   
 > [!NOTE]
-> For custom events, the `RemoveHandler` statement invokes the event's `RemoveHandler` accessor. For more information on custom events, see [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
+> Pour les événements personnalisés, l’instruction `RemoveHandler` appelle l’accesseur `RemoveHandler` de l’événement. Pour plus d’informations sur les événements personnalisés, consultez [Event Statement](../../../visual-basic/language-reference/statements/event-statement.md).  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrEvents#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#17)]  

@@ -22,20 +22,20 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449373"
 ---
 # <a name="isymunmanagedbinder-interface"></a>ISymUnmanagedBinder, interface
-Represents a symbol binder for unmanaged code.  
+Représente un Binder de symboles pour du code non managé.  
   
 > [!IMPORTANT]
-> It is a security risk to open a program database (PDB) file from an untrusted source.  
+> L’ouverture d’un fichier de base de données du programme (PDB) à partir d’une source non fiable constitue un risque pour la sécurité.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetReaderForFile, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|Given a metadata interface and a file name, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols associated with the module.|  
-|[GetReaderFromStream, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|Given a metadata interface and a stream that contains the symbol store, returns the correct [ISymUnmanagedReader](isymunmanagedreader-interface.md) structure that will read the debugging symbols from the given symbol store.|  
+|[GetReaderForFile, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderforfile-method.md)|Pour une interface de métadonnées et un nom de fichier donnés, retourne la structure [ISymUnmanagedReader](isymunmanagedreader-interface.md) correcte qui lira les symboles de débogage associés au module.|  
+|[GetReaderFromStream, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedbinder-getreaderfromstream-method.md)|À partir d’une interface de métadonnées et d’un flux de données qui contient le magasin de symboles, retourne la structure [ISymUnmanagedReader](isymunmanagedreader-interface.md) appropriée qui lira les symboles de débogage du magasin de symboles donné.|  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

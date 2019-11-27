@@ -39,16 +39,16 @@ typedef struct
   
 |Membre|Description|  
 |------------|-----------------|  
-|`m_linkType`|The type to be linked in native code. This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.|  
-|`m_flags`|Flags used by the linker when linking native code. This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.|  
-|`m_entryPoint`|The MemberRef metadata token that represents the entry point. The format is `lib:entrypoint`.|  
+|`m_linkType`|Type à lier en code natif. Cette valeur est l’une des valeurs [CorNativeLinkType,](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) .|  
+|`m_flags`|Indicateurs utilisés par l’éditeur de liens lors de la liaison de code natif. Cette valeur est l’une des valeurs [CorNativeLinkFlags,](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) .|  
+|`m_entryPoint`|Jeton de métadonnées MemberRef qui représente le point d’entrée. Le format est `lib:entrypoint`.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

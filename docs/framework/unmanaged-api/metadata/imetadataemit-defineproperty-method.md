@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431526"
 ---
 # <a name="imetadataemitdefineproperty-method"></a>IMetaDataEmit::DefineProperty, méthode
-Creates a property definition for the specified type, with the specified `get` and `set` method accessors, and gets a token to that property definition.  
+Crée une définition de propriété pour le type spécifié, avec les accesseurs de méthode `get` et `set` spécifiés, et obtient un jeton pour cette définition de propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,47 +46,47 @@ HRESULT DefineProperty (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] The token for class or interface on which the property is being defined.  
+ dans Jeton de la classe ou de l’interface sur laquelle la propriété est définie.  
   
  `szProperty`  
- [in] The name of the property.  
+ dans Nom de la propriété.  
   
  `dwPropFlags`  
- [in] The property flags.  
+ dans Indicateurs de propriété.  
   
  `pvSig`  
- [in] The property signature.  
+ dans Signature de la propriété.  
   
  `cbSig`  
- [in] The count of bytes in `pvSig`.  
+ dans Nombre d’octets dans `pvSig`.  
   
  `dwCPlusTypeFlag`  
- [in] The type of the property's default value.  
+ dans Type de la valeur par défaut de la propriété.  
   
  `pValue`  
- [in] The default value for the property.  
+ dans Valeur par défaut de la propriété.  
   
  `cchValue`  
- [in] The count of (Unicode) characters in `pValue`.  
+ dans Nombre de caractères (Unicode) dans `pValue`.  
   
  `mdSetter`  
- [in] The method that sets the property value.  
+ dans Méthode qui définit la valeur de la propriété.  
   
  `mdGetter`  
- [in] The method that gets the property value.  
+ dans Méthode qui obtient la valeur de la propriété.  
   
  `rmdOtherMethods[]`  
- [in] An array of other methods associated with the property. Terminate the array with an `mdTokenNil`.  
+ dans Tableau d’autres méthodes associées à la propriété. Terminez le tableau par un `mdTokenNil`.  
   
  `pmdProp`  
- [out] The `mdProperty` token assigned.  
+ à Jeton `mdProperty` assigné.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

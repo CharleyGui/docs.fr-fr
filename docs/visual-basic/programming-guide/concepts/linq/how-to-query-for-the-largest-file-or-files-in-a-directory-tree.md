@@ -118,7 +118,7 @@ End Module
  La requête appelle une méthode distincte pour obtenir la taille du fichier en octets et ainsi permettre l’utilisation de l’exception éventuellement levée si un fichier a été supprimé sur un autre thread depuis la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> en utilisant la taille en octets la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, nous respectons la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi
 

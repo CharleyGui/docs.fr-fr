@@ -40,36 +40,36 @@ HRESULT EnumMethodImpls (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `td`  
- [in] A TypeDef token for the type whose method implementations to enumerate.  
+ dans Jeton TypeDef pour le type dont les implémentations de méthode doivent être énumérées.  
   
  `rMethodBody`  
- [out] The array to store the MethodBody tokens.  
+ à Tableau pour stocker les jetons MethodBody.  
   
  `rMethodDecl`  
- [out] The array to store the MethodDeclaration tokens.  
+ à Tableau pour stocker les jetons MethodDeclaration.  
   
  `cMax`  
- [in] The maximum size of the `rMethodBody` and `rMethodDecl` arrays.  
+ dans Taille maximale des tableaux `rMethodBody` et `rMethodDecl`.  
   
  `pcTokens`  
- [in] The actual number of methods returned in `rMethodBody` and `rMethodDecl`.  
+ dans Nombre réel de méthodes retournées dans `rMethodBody` et `rMethodDecl`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumMethodImpls` returned successfully.|  
-|`S_FALSE`|There are no method tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumMethodImpls` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton de méthode à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

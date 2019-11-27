@@ -31,7 +31,7 @@ Les rubriques de cette section contiennent des tableaux des instructions déclar
   
  [Liste de types](../../../visual-basic/language-reference/statements/type-list.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

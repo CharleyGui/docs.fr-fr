@@ -13,16 +13,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344352"
 ---
 # <a name="how-to-validate-strings-that-represent-dates-or-times-visual-basic"></a>Comment : valider des chaînes qui représentent des dates ou des heures (Visual Basic)
-The following code example sets a `Boolean` value that indicates whether a string represents a valid date or time.  
+L’exemple de code suivant définit une valeur `Boolean` qui indique si une chaîne représente une date ou une heure valide.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbcnRegEx#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#2)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Replace `("01/01/03")` and `"9:30 PM"` with the date and time you want to validate. You can replace the string with another hard-coded string, with a `String` variable, or with a method that returns a string, such as `InputBox`.  
+ Remplacez `("01/01/03")` et `"9:30 PM"` par la date et l’heure que vous souhaitez valider. Vous pouvez remplacer la chaîne par une autre chaîne codée en dur, par une variable `String` ou par une méthode qui retourne une chaîne, telle que `InputBox`.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- Use this method to validate the string before trying to convert the `String` to a `DateTime` variable. By checking the date or time first, you can avoid generating an exception at run time.  
+ Utilisez cette méthode pour valider la chaîne avant d’essayer de convertir le `String` en une variable `DateTime`. En vérifiant d’abord la date ou l’heure, vous pouvez éviter de générer une exception au moment de l’exécution.  
   
 ## <a name="see-also"></a>Voir aussi
 

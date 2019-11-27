@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350632"
 ---
-# <a name="serializing-with-an-xml-declaration-visual-basic"></a>Serializing with an XML Declaration (Visual Basic)
+# <a name="serializing-with-an-xml-declaration-visual-basic"></a>Sérialisation avec une déclaration XML (Visual Basic)
 Cette rubrique décrit comment contrôler si la sérialisation génère une déclaration XML.  
   
 ## <a name="xml-declaration-generation"></a>Génération de déclaration XML  
@@ -63,4 +63,4 @@ Console.WriteLine(sb.ToString())
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Serializing XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)
+- [Sérialisation d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/serializing-xml-trees.md)

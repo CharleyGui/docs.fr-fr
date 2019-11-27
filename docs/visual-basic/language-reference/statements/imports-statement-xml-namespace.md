@@ -1,5 +1,5 @@
 ---
-title: Imports Statement - XML Namespace
+title: Instruction Imports-espace de noms XML
 ms.date: 07/20/2015
 f1_keywords:
 - vb.ImportsXmlns
@@ -18,7 +18,7 @@ ms.locfileid: "74351061"
 ---
 # <a name="imports-statement-xml-namespace"></a>Imports, instruction (espace de noms XML)
 
-Imports XML namespace prefixes for use in XML literals and XML axis properties.
+Importe les préfixes d’espaces de noms XML à utiliser dans les littéraux XML et les propriétés d’axe XML.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -29,28 +29,28 @@ Imports <xmlns:xmlNamespacePrefix = "xmlNamespaceName">
 ## <a name="parts"></a>Composants
 
 `xmlNamespacePrefix`  
-Optionnel. The string by which XML elements and attributes can refer to `xmlNamespaceName`. If no `xmlNamespacePrefix` is supplied, the imported XML namespace is the default XML namespace. Must be a valid XML identifier. For more information, see [Names of Declared XML Elements and Attributes](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).
+Ce paramètre est facultatif. Chaîne par laquelle les éléments et attributs XML peuvent faire référence à `xmlNamespaceName`. Si aucun `xmlNamespacePrefix` n’est fourni, l’espace de noms XML importé est l’espace de noms XML par défaut. Doit être un identificateur XML valide. Pour plus d’informations, consultez [noms des éléments et attributs XML déclarés](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).
 
 `xmlNamespaceName`  
-Requis. The string identifying the XML namespace being imported.
+Requis. Chaîne identifiant l’espace de noms XML importé.
 
 ## <a name="remarks"></a>Notes
 
-You can use the `Imports` statement to define global XML namespaces that you can use with XML literals and XML axis properties, or as parameters passed to the `GetXmlNamespace` operator. (For information about using the `Imports` statement to import an alias that can be used where type names are used in your code, see [Imports Statement (.NET Namespace and Type)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).) The syntax for declaring an XML namespace by using the `Imports` statement is identical to the syntax used in XML. Therefore, you can copy a namespace declaration from an XML file and use it in an `Imports` statement.
+Vous pouvez utiliser l’instruction `Imports` pour définir des espaces de noms XML globaux que vous pouvez utiliser avec des littéraux XML et des propriétés d’axe XML, ou en tant que paramètres passés à l’opérateur `GetXmlNamespace`. (Pour plus d’informations sur l’utilisation de l’instruction `Imports` pour importer un alias qui peut être utilisé lorsque des noms de types sont utilisés dans votre code, consultez [instructions Imports (espace de noms et type .net)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).) La syntaxe permettant de déclarer un espace de noms XML à l’aide de l’instruction `Imports` est identique à la syntaxe utilisée dans XML. Par conséquent, vous pouvez copier une déclaration d’espace de noms à partir d’un fichier XML et l’utiliser dans une instruction `Imports`.
 
-XML namespace prefixes are useful when you want to repeatedly create XML elements that are from the same namespace. The XML namespace prefix declared with the `Imports` statement is global in the sense that it is available to all code in the file. You can use it when you create XML element literals and when you access XML axis properties. For more information, see [XML Element Literal](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) and [XML Axis Properties](../../../visual-basic/language-reference/xml-axis/index.md).
+Les préfixes d’espaces de noms XML sont utiles lorsque vous souhaitez créer plusieurs éléments XML à partir du même espace de noms. Le préfixe d’espace de noms XML déclaré avec l’instruction `Imports` est global dans le sens où il est disponible pour l’ensemble du code du fichier. Vous pouvez l’utiliser lorsque vous créez des littéraux d’élément XML et lorsque vous accédez à des propriétés d’axe XML. Pour plus d’informations, consultez [littéraux d’élément XML](../../../visual-basic/language-reference/xml-literals/xml-element-literal.md) et [propriétés d’axe XML](../../../visual-basic/language-reference/xml-axis/index.md).
 
-If you define a global XML namespace without a namespace prefix (for example, `Imports <xmlns="http://SomeNameSpace>"`), that namespace is considered the default XML namespace. The default XML namespace is used for any XML element literals or XML attribute axis properties that do not explicitly specify a namespace. The default namespace is also used if the specified namespace is the empty namespace (that is, `xmlns=""`). The default XML namespace does not apply to XML attributes in XML literals or to XML attribute axis properties that do not have a namespace.
+Si vous définissez un espace de noms XML global sans préfixe d’espace de noms (par exemple, `Imports <xmlns="http://SomeNameSpace>"`), cet espace de noms est considéré comme l’espace de noms XML par défaut. L’espace de noms XML par défaut est utilisé pour les littéraux d’élément XML ou les propriétés d’axe d’attribut XML qui ne spécifient pas explicitement un espace de noms. L’espace de noms par défaut est également utilisé si l’espace de noms spécifié est l’espace de noms vide (autrement dit, `xmlns=""`). L’espace de noms XML par défaut ne s’applique pas aux attributs XML des littéraux XML ou aux propriétés d’axe d’attribut XML qui n’ont pas d’espace de noms.
 
-XML namespaces that are defined in an XML literal, which are called *local XML namespaces*, take precedence over XML namespaces that are defined by the `Imports` statement as global. XML namespaces that are defined by the `Imports` statement take precedence over XML namespaces imported for a Visual Basic project. If an XML literal defines an XML namespace, that local namespace does not apply to embedded expressions.
+Les espaces de noms XML définis dans un littéral XML, appelés espaces de *noms XML locaux*, ont la priorité sur les espaces de noms XML définis par l’instruction `Imports` comme global. Les espaces de noms XML définis par l’instruction `Imports` sont prioritaires sur les espaces de noms XML importés pour un projet Visual Basic. Si un littéral XML définit un espace de noms XML, cet espace de noms local ne s’applique pas aux expressions incorporées.
 
-Global XML namespaces follow the same scoping and definition rules as .NET Framework namespaces. As a result, you can include an `Imports` statement to define a global XML namespace anywhere you can import a .NET Framework namespace. This includes both code files and project-level imported namespaces. For information about project-level imported namespaces, see [References Page, Project Designer (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic).
+Les espaces de noms XML globaux suivent les mêmes règles d’étendue et de définition que les espaces de noms .NET Framework. Par conséquent, vous pouvez inclure une instruction `Imports` pour définir un espace de noms XML global partout où vous pouvez importer un espace de noms .NET Framework. Cela comprend à la fois les fichiers de code et les espaces de noms importés au niveau du projet. Pour plus d’informations sur les espaces de noms importés au niveau du projet, consultez la [page références, concepteur de projets (Visual Basic)](/visualstudio/ide/reference/references-page-project-designer-visual-basic).
 
-Each source file can contain any number of `Imports` statements. These must follow option declarations, such as the `Option Strict` statement, and they must precede programming element declarations, such as `Module` or `Class` statements.
+Chaque fichier source peut contenir un nombre quelconque d’instructions `Imports`. Celles-ci doivent suivre les déclarations d’option, telles que l’instruction `Option Strict`, et elles doivent précéder les déclarations d’éléments de programmation, telles que les instructions `Module` ou `Class`.
 
 ## <a name="example"></a>Exemple
 
-The following example imports a default XML namespace and an XML namespace identified with the prefix `ns`. It then creates XML literals that use both namespaces.
+L’exemple suivant importe un espace de noms XML par défaut et un espace de noms XML identifié par le préfixe `ns`. Il crée ensuite des littéraux XML qui utilisent les deux espaces de noms.
 
 [!code-vb[VbXMLSamples#45](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/Module1.vb#45)]
 
@@ -67,7 +67,7 @@ Ce code affiche le texte suivant :
 
 ## <a name="example"></a>Exemple
 
-The following example imports the XML namespace prefix `ns`. It then creates an XML literal that uses the namespace prefix and displays the element's final form.
+L’exemple suivant importe le préfixe d’espace de noms XML `ns`. Il crée ensuite un littéral XML qui utilise le préfixe d’espace de noms et affiche le formulaire final de l’élément.
 
 [!code-vb[VbXMLSamples#22](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples10.vb#22)]
 
@@ -82,11 +82,11 @@ Ce code affiche le texte suivant :
 </ns:outer>
 ```
 
-Notice that the compiler converted the XML namespace prefix from a global prefix to a local prefix definition.
+Notez que le compilateur a converti le préfixe d’espace de noms XML d’un préfixe global en définition de préfixe local.
 
 ## <a name="example"></a>Exemple
 
-The following example imports the XML namespace prefix `ns`. Il utilise ensuite le préfixe de l'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié `ns:name`.
+L’exemple suivant importe le préfixe d’espace de noms XML `ns`. Il utilise ensuite le préfixe de l'espace de noms pour créer un littéral XML et accéder au premier nœud enfant avec le nom qualifié `ns:name`.
 
 [!code-vb[VbXMLSamples#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples8.vb#19)]
 

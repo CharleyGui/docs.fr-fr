@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353492"
 ---
-# <a name="filtering-data-visual-basic"></a>Filtering Data (Visual Basic)
+# <a name="filtering-data-visual-basic"></a>Filtrage des données (Visual Basic)
 
 Le filtrage fait référence à l’opération de restriction du jeu de résultats pour que celui-ci contienne uniquement les éléments qui répondent à une condition spécifiée. Cette opération est également appelée « sélection ».
 
@@ -21,14 +21,14 @@ Les méthodes d’opérateurs de requête standard qui effectuent des opération
 
 ## <a name="methods"></a>Méthodes
 
-|Nom de la méthode|Description|Visual Basic Query Expression Syntax|Informations complémentaires|
+|Nom de la méthode|Description|Syntaxe des expressions de requête Visual Basic|Informations supplémentaires|
 |-----------------|-----------------|------------------------------------------|----------------------|
 |OfType|Sélectionne des valeurs, en fonction de leur capacité à être castées en un type spécifié.|Non applicable.|<xref:System.Linq.Enumerable.OfType%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.OfType%2A?displayProperty=nameWithType>|
 |Où|Sélectionne les valeurs qui sont basées sur une fonction de prédicat.|`Where`|<xref:System.Linq.Enumerable.Where%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Where%2A?displayProperty=nameWithType>|
 
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête
 
-The following example uses the `Where` to filter from an array those strings that have a specific length.
+L’exemple suivant utilise la `Where` pour filtrer à partir d’un tableau les chaînes qui ont une longueur spécifique.
 
 ```vb
 Dim words() As String = {"the", "quick", "brown", "fox", "jumps"}
@@ -57,6 +57,6 @@ MsgBox(sb.ToString())
 - [Vue d’ensemble des opérateurs de requête standard (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/standard-query-operators-overview.md)
 - [Where (clause)](../../../../visual-basic/language-reference/queries/where-clause.md)
 - [Guide pratique : filtrer les résultats d’une requête](../../../../visual-basic/programming-guide/language-features/linq/how-to-filter-query-results-by-using-linq.md)
-- [How to: Query An Assembly's Metadata with Reflection (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
-- [How to: Query for Files with a Specified Attribute or Name (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)
-- [How to: Sort or Filter Text Data by Any Word or Field (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)
+- [Comment : interroger les métadonnées d’un assembly avec la réflexion (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-an-assembly-s-metadata-with-reflection-linq.md)
+- [Comment : interroger des fichiers ayant un attribut ou un nom spécifié (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-query-for-files-with-a-specified-attribute-or-name.md)
+- [Comment : trier ou filtrer des données texte par mot ou par champ (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-sort-or-filter-text-data-by-any-word-or-field-linq.md)

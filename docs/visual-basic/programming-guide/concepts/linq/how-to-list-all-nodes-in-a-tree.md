@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336137"
 ---
-# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>How to: List All Nodes in a Tree (Visual Basic)
+# <a name="how-to-list-all-nodes-in-a-tree-visual-basic"></a>Comment : répertorier tous les nœuds d’une arborescence (Visual Basic)
 Il est parfois utile de répertorier tous les nœuds d’une arborescence. Cela peut être utile pour savoir exactement comment une méthode ou une propriété affecte l'arborescence. L'une des manières de répertorier tous les nœuds sous forme textuelle consiste à générer une expression XPath qui identifie exactement et spécifiquement tout nœud dans l'arborescence.  
   
  Il n'est pas particulièrement utile d'exécuter des expressions XPath à l'aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Les expressions XPath procurent des performances inférieures aux requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], et les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sont beaucoup plus puissantes. Toutefois, XPath fonctionne bien comme méthode d’identification des nœuds de l’arborescence XML.  
@@ -265,4 +265,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

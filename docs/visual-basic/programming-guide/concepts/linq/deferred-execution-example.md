@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354225"
 ---
-# <a name="deferred-execution-example-visual-basic"></a>Deferred Execution Example (Visual Basic)
+# <a name="deferred-execution-example-visual-basic"></a>Exemple d’exécution différée (Visual Basic)
 
 Cette rubrique montre comment l'exécution et l'évaluation différées affectent l'exécution de vos requêtes LINQ to XML.
 
@@ -63,4 +63,4 @@ Vous pouvez constater que l'intégralité du tableau de chaînes n'est pas conve
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutorial: Deferred Execution (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)
+- [Didacticiel : exécution différée (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-deferred-execution.md)

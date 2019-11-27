@@ -1,5 +1,5 @@
 ---
-title: Propriété d'indexeur d'extension
+title: Propriété d’indexeur d’extension
 ms.date: 07/20/2015
 f1_keywords:
 - vb.XmlPropertyExtensionIndexer
@@ -29,25 +29,25 @@ object(index)
   
 |Terme|Définition|  
 |---|---|  
-|`object`|Requis. A queryable collection. That is, a collection that implements <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Linq.IQueryable%601>.|  
-|(|Requis. Denotes the start of the indexer property.|  
-|`index`|Requis. An integer expression that specifies the zero-based position of an element of the collection.|  
-|)|Requis. Denotes the end of the indexer property.|  
+|`object`|Requis. Collection interrogeable. Autrement dit, une collection qui implémente <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IQueryable%601>.|  
+|(|Requis. Indique le début de la propriété de l’indexeur.|  
+|`index`|Requis. Expression entière qui spécifie la position de base zéro d’un élément de la collection.|  
+|)|Requis. Indique la fin de la propriété de l’indexeur.|  
   
 ## <a name="return-value"></a>Valeur de retour  
- The object from the specified location in the collection, or `Nothing` if the index is out of range.  
+ Objet à partir de l’emplacement spécifié dans la collection, ou `Nothing` si l’index est hors limites.  
   
 ## <a name="remarks"></a>Notes  
- You can use the extension indexer property to access individual elements in a collection. This indexer property is typically used on the output of XML axis properties. The XML child and XML descendent axis properties return collections of <xref:System.Xml.Linq.XElement> objects or an attribute value.  
+ Vous pouvez utiliser la propriété d’indexeur d’extension pour accéder à des éléments individuels dans une collection. Cette propriété d’indexeur est généralement utilisée sur la sortie des propriétés d’axe XML. Les propriétés de l’axe de descendant XML et de l’enfant XML retournent des collections d’objets <xref:System.Xml.Linq.XElement> ou une valeur d’attribut.  
   
- The Visual Basic compiler converts extension indexer properties to calls to the `ElementAtOrDefault` method. Unlike an array indexer, the `ElementAtOrDefault` method returns `Nothing` if the index is out of range. This behavior is useful when you cannot easily determine the number of elements in a collection.  
+ Le compilateur Visual Basic convertit les propriétés d’indexeur d’extension en appels à la méthode `ElementAtOrDefault`. Contrairement à un indexeur de tableau, la méthode `ElementAtOrDefault` retourne `Nothing` si l’index est hors limites. Ce comportement est utile lorsque vous ne pouvez pas déterminer facilement le nombre d’éléments d’une collection.  
   
- This indexer property is like an extension property for collections that implement <xref:System.Collections.Generic.IEnumerable%601> or <xref:System.Linq.IQueryable%601>: it is used only if the collection does not have an indexer or a default property.  
+ Cette propriété d’indexeur est semblable à une propriété d’extension pour les collections qui implémentent <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Linq.IQueryable%601>: elle est utilisée uniquement si la collection n’a pas d’indexeur ou de propriété par défaut.  
   
- To access the value of the first element in a collection of <xref:System.Xml.Linq.XElement> or <xref:System.Xml.Linq.XAttribute> objects, you can use the XML `Value` property. For more information, see [XML Value Property](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
+ Pour accéder à la valeur du premier élément d’une collection d’objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute>, vous pouvez utiliser la propriété XML `Value`. Pour plus d’informations, consultez [propriété de valeur XML](../../../visual-basic/language-reference/xml-axis/xml-value-property.md).  
   
 ## <a name="example"></a>Exemple  
- The following example shows how to use the extension indexer to access the second child node in a collection of <xref:System.Xml.Linq.XElement> objects. The collection is accessed by using the child axis property, which gets all child elements named `phone` in the `contact` object.  
+ L’exemple suivant montre comment utiliser l’indexeur d’extension pour accéder au deuxième nœud enfant d’une collection d’objets <xref:System.Xml.Linq.XElement>. La collection est accessible à l’aide de la propriété d’axe enfant, qui obtient tous les éléments enfants nommés `phone` dans l’objet `contact`.  
   
  [!code-vb[VbXMLSamples#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples11.vb#24)]  
   

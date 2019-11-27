@@ -23,9 +23,9 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333027"
 ---
 # <a name="resume-statement"></a>Resume, instruction
-Resumes execution after an error-handling routine is finished.  
+Reprend l’exécution après la fin d’une routine de gestion des erreurs.  
   
- We suggest that you use structured exception handling in your code whenever possible, rather than using unstructured exception handling and the `On Error` and `Resume` statements. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+ Nous vous suggérons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion non structurée des exceptions et les instructions `On Error` et `Resume`. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,32 +35,32 @@ Resume [ Next | line ]
   
 ## <a name="parts"></a>Composants  
  `Resume`  
- Requis. If the error occurred in the same procedure as the error handler, execution resumes with the statement that caused the error. If the error occurred in a called procedure, execution resumes at the statement that last called out of the procedure containing the error-handling routine.  
+ Requis. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend au niveau de l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs.  
   
  `Next`  
- Optionnel. If the error occurred in the same procedure as the error handler, execution resumes with the statement immediately following the statement that caused the error. If the error occurred in a called procedure, execution resumes with the statement immediately following the statement that last called out of the procedure containing the error-handling routine (or `On Error Resume Next` statement).  
+ Ce paramètre est facultatif. Si l’erreur s’est produite dans la même procédure que le gestionnaire d’erreurs, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a provoqué l’erreur. Si l’erreur s’est produite dans une procédure appelée, l’exécution reprend avec l’instruction qui suit immédiatement l’instruction qui a appelé en dehors de la procédure qui contient la routine de gestion des erreurs (ou `On Error Resume Next` instruction).  
   
  `line`  
- Optionnel. Execution resumes at the line specified in the required `line` argument. The `line` argument is a line label or line number and must be in the same procedure as the error handler.  
+ Ce paramètre est facultatif. L’exécution reprend à la ligne spécifiée dans l’argument `line` requis. L’argument `line` est une étiquette de ligne ou un numéro de ligne et doit être dans la même procédure que le gestionnaire d’erreurs.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
-> We recommend that you use structured exception handling in your code whenever possible, rather than using unstructured exception handling and the `On Error` and `Resume` statements. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
+> Nous vous recommandons d’utiliser la gestion structurée des exceptions dans votre code dans la mesure du possible, au lieu d’utiliser la gestion des exceptions non structurées et les instructions `On Error` et `Resume`. Pour plus d’informations, consultez [Try...Catch...Finally, instruction](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md).  
   
- If you use a `Resume` statement anywhere other than in an error-handling routine, an error occurs.  
+ Si vous utilisez une instruction `Resume` n’importe où dans une routine de gestion des erreurs, une erreur se produit.  
   
- The `Resume` statement cannot be used in any procedure that contains a `Try...Catch...Finally` statement.  
+ L’instruction `Resume` ne peut pas être utilisée dans une procédure qui contient une instruction `Try...Catch...Finally`.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `Resume` statement to end error handling in a procedure and then resume execution with the statement that caused the error. Error number 55 is generated to illustrate use of the `Resume` statement.  
+ Cet exemple utilise l’instruction `Resume` pour terminer la gestion des erreurs dans une procédure, puis reprendre l’exécution avec l’instruction qui a provoqué l’erreur. L’erreur numéro 55 est générée pour illustrer l’utilisation de l’instruction `Resume`.  
   
  [!code-vb[VbVbalrErrorHandling#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrErrorHandling/VB/Class1.vb#16)]  
   
-## <a name="requirements"></a>spécifications  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>Configuration requise  
+ **Espace de noms :** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

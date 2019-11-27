@@ -1,5 +1,5 @@
 ---
-title: Authentification Windows intégrée avec protection étendue
+title: Integrated Windows Authentication with Extended Protection (en anglais)
 ms.date: 03/30/2017
 ms.assetid: 81731998-d5e7-49e4-ad38-c8e6d01689d0
 ms.openlocfilehash: c4afc008f600c9be0040f8d7623f5e20623dfd7d
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444232"
 ---
-# <a name="integrated-windows-authentication-with-extended-protection"></a>Authentification Windows intégrée avec protection étendue
+# <a name="integrated-windows-authentication-with-extended-protection"></a>Integrated Windows Authentication with Extended Protection (en anglais)
 Certaines améliorations apportées changent la manière dont l’authentification Windows intégrée est gérée par les classes <xref:System.Net.HttpWebRequest>, <xref:System.Net.HttpListener>, <xref:System.Net.Mail.SmtpClient>, <xref:System.Net.Security.SslStream>, <xref:System.Net.Security.NegotiateStream> et les classes associées dans l’espace de noms <xref:System.Net> et les espaces de noms associés. La prise en charge de la protection étendue a été ajoutée pour renforcer la sécurité.  
   
  Ces modifications peuvent affecter les applications qui utilisent ces classes pour effectuer des demandes web et recevoir des réponses quand l’authentification Windows intégrée est utilisée. Elles peuvent aussi avoir un impact sur les serveurs web et les applications clientes configurés pour utiliser l’authentification Windows intégrée.  
@@ -18,7 +18,7 @@ Certaines améliorations apportées changent la manière dont l’authentificati
   
  Les modifications pour la prise en charge de la protection étendue concernent uniquement les applications s’exécutant sur Windows 7 et Windows Server 2008 R2. Les fonctionnalités de protection étendue ne sont pas disponibles dans les versions antérieures de Windows.  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Overview  
  La conception de l’authentification Windows intégrée permet à certaines réponses aux demandes d’informations d’identification d’être universelles, ce qui signifie qu’elles peuvent être réutilisées ou transférées. Les réponses aux demandes doivent être construites au minimum avec des informations spécifiques à la cible et, de préférence, avec également des informations spécifiques au canal. Les services peuvent alors fournir une protection étendue pour garantir que les réponses aux demandes d’informations d’identification contiennent des informations propres aux services, telles qu’un nom de principal du service (SPN). Grâce à la présence de ces informations dans les échanges d’informations d’identification, les services assurent une meilleure protection contre l’utilisation malveillante de certaines réponses aux demandes d’informations d’identification qui ont été utilisées de manière incorrecte.  
   
  La conception de la protection étendue est une amélioration apportée aux protocoles d’authentification qui vise à atténuer les risques d’attaques par relais d’authentification. Elle repose sur le concept d’informations de liaison de service et de canal.  

@@ -12,26 +12,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74329557"
 ---
 # <a name="error-in-loading-dll-visual-basic"></a>Erreur de chargement de la DLL (Visual Basic)
-A dynamic-link library (DLL) is a library specified in the `Lib` clause of a `Declare` statement. Possible causes for this error include:  
+Une bibliothèque de liens dynamiques (DLL) est une bibliothèque spécifiée dans la clause `Lib` d’une instruction `Declare`. Les raisons possibles de cette erreur sont les suivantes :  
   
-- The file is not DLL executable.  
+- Le fichier n’est pas un fichier exécutable DLL.  
   
-- The file is not a Microsoft Windows DLL.  
+- Le fichier n’est pas une DLL Microsoft Windows.  
   
-- The DLL references another DLL that is not present.  
+- La DLL fait référence à une autre DLL qui n’est pas présente.  
   
-- The DLL or referenced DLL is not in a directory specified in the path.  
+- La DLL ou la DLL référencée ne se trouve pas dans un répertoire spécifié dans le chemin d’accès.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- If the file is a source-text file and therefore not DLL executable, it must be compiled and linked to a DLL-executable form.  
+- Si le fichier est un fichier de texte source et qu’il n’est par conséquent pas un exécutable DLL, il doit être compilé et lié à un formulaire exécutable DLL.  
   
-- If the file is not a Microsoft Windows DLL, obtain the Microsoft Windows equivalent.  
+- Si le fichier n’est pas une DLL Microsoft Windows, obtenez l’équivalent Microsoft Windows.  
   
-- If the DLL references another DLL that is not present, obtain the referenced DLL and make it available.  
+- Si la DLL fait référence à une autre DLL qui n’est pas présente, obtenez la DLL référencée et rendez-la disponible.  
   
-- If the DLL or referenced DLL is not in a directory specified by the path, move the DLL to a referenced directory.  
+- Si la dll ou la DLL référencée ne se trouve pas dans un répertoire spécifié par le chemin d’accès, déplacez la DLL vers un répertoire référencé.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)

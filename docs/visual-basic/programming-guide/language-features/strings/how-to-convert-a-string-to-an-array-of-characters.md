@@ -16,15 +16,15 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352448"
 ---
 # <a name="how-to-convert-a-string-to-an-array-of-characters-in-visual-basic"></a>Comment : convertir une chaîne en tableau de caractères en Visual Basic
-Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string, such as when you are parsing a string. This example shows how you can get an array of the characters in a string by calling the string's <xref:System.String.ToCharArray%2A> method.  
+Il est parfois utile d’avoir des données sur les caractères de votre chaîne et les positions de ces caractères dans votre chaîne, par exemple lorsque vous analysez une chaîne. Cet exemple montre comment obtenir un tableau de caractères dans une chaîne en appelant la méthode <xref:System.String.ToCharArray%2A> de la chaîne.  
   
 ## <a name="example"></a>Exemple  
- This example demonstrates how to split a string into a `Char` array, and how to split a string into a `String` array of its Unicode text characters. The reason for this distinction is that Unicode text characters can be composed of two or more `Char` characters (such as a surrogate pair or a combining character sequence). For more information, see <xref:System.Globalization.TextElementEnumerator> and [The Unicode Standard](https://www.unicode.org/standard/standard.html).  
+ Cet exemple montre comment fractionner une chaîne en tableau `Char` et comment fractionner une chaîne en un tableau `String` de ses caractères de texte Unicode. Cette distinction est due au fait que les caractères de texte Unicode peuvent être composés d’au moins deux caractères `Char` (par exemple, une paire de substitution ou une séquence de caractères d’association). Pour plus d’informations, consultez <xref:System.Globalization.TextElementEnumerator> et [la norme Unicode](https://www.unicode.org/standard/standard.html).  
   
  [!code-vb[VbVbalrStrings#75](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class4.vb#75)]  
   
 ## <a name="example"></a>Exemple  
- It is more difficult to split a string into its Unicode text characters, but this is necessary if you need information about the visual representation of a string. This example uses the <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> method to get information about the Unicode text characters that make up a string.  
+ Il est plus difficile de fractionner une chaîne en ses caractères de texte Unicode, mais cela est nécessaire si vous avez besoin d’informations sur la représentation visuelle d’une chaîne. Cet exemple utilise la méthode <xref:System.Globalization.StringInfo.SubstringByTextElements%2A> pour obtenir des informations sur les caractères de texte Unicode qui composent une chaîne.  
   
  [!code-vb[VbVbalrStrings#76](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class4.vb#76)]  
   

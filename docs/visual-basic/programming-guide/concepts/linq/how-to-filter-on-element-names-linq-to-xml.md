@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353019"
 ---
-# <a name="how-to-filter-on-element-names-linq-to-xml-visual-basic"></a>How to: Filter on Element Names (LINQ to XML) (Visual Basic)
+# <a name="how-to-filter-on-element-names-linq-to-xml-visual-basic"></a>Comment : filtrer sur des noms d’éléments (LINQ to XML) (Visual Basic)
 Lorsque vous appelez l'une des méthodes qui retournent <xref:System.Collections.Generic.IEnumerable%601> de collections <xref:System.Xml.Linq.XElement>, vous pouvez filtrer sur le nom de l'élément.  
   
 ## <a name="example"></a>Exemple  
@@ -51,7 +51,7 @@ ProductName:Baby Monitor
 - <xref:System.Xml.Linq.XElement.DescendantsAndSelf%2A>  
   
 ## <a name="example"></a>Exemple  
- L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. For more information, see [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
+ L'exemple suivant illustre la même requête pour du code XML qui est dans un espace de noms. Pour plus d’informations, consultez [vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md).  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique dans un espace de noms](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-typical-purchase-order-in-a-namespace.md).  
   

@@ -16,15 +16,15 @@ ms.locfileid: "74351866"
 ---
 # <a name="arrays-in-visual-basic"></a>Tableaux dans Visual Basic
 
-An array is a set of values, which are termed *elements*, that are logically related to each other. For example, an array may consist of the number of students in each grade in a grammar school; each element of the array is the number of students in a single grade. Similarly, an array may consist of a student's grades for a class; each element of the array is a single grade.
+Un tableau est un ensemble de valeurs, qui sont des *éléments*de termes, qui sont logiquement liés les uns aux autres. Par exemple, un tableau peut comprendre le nombre d’étudiants de chaque grade dans une école grammaticale. chaque élément du tableau est le nombre d’élèves dans une seule classe. De même, un tableau peut se composer des notes d’un étudiant pour une classe ; chaque élément du tableau est un seul niveau.
 
-It is possible individual variables to store each of our data items. For example, if our application analyzes student grades, we can use a separate variable for each student's grade, such as `englishGrade1`, `englishGrade2`, etc. This approach has three major limitations:
+Il peut y avoir des variables individuelles pour stocker chacun de nos éléments de données. Par exemple, si notre application analyse les notes des étudiants, nous pouvons utiliser une variable distincte pour chaque grade de l’étudiant, par exemple `englishGrade1`, `englishGrade2`, etc. Cette approche présente trois principales limitations :
 
-- We have to know at design time exactly how many grades we have to handle.
-- Handling large numbers of grades quickly becomes unwieldy. This in turn makes an application much more likely to have serious bugs.
-- It is difficult to maintain. Each new grade that we add requires that the application be modified, recompiled, and redeployed.
+- Nous devons savoir au moment de la conception exactement le nombre de notes à gérer.
+- La gestion d’un grand nombre de grades devient rapidement difficile. Cela rend à son tour une application plus susceptible d’avoir des bogues sérieux.
+- Il est difficile à gérer. Chaque nouvelle classe ajoutée requiert que l’application soit modifiée, recompilée et redéployée.
 
-By using an array, you can refer to these related values by the same name, and use a number that’s called an *index* or *subscript* to identify an individual element based on its position in the array. The indexes of an array range from 0 to one less than the total number of elements in the array. When you use Visual Basic syntax to define the size of an array, you specify its highest index, not the total number of elements in the array. You can work with the array as a unit, and the ability to iterate its elements frees you from needing to know exactly how many elements it contains at design time.
+En utilisant un tableau, vous pouvez faire référence à ces valeurs associées par le même nom et utiliser un nombre appelé *index* ou *indice* pour identifier un élément individuel en fonction de sa position dans le tableau. Les index d’un tableau sont compris entre 0 et un nombre inférieur au nombre total d’éléments dans le tableau. Quand vous utilisez Visual Basic syntaxe pour définir la taille d’un tableau, vous spécifiez son index le plus élevé, et non le nombre total d’éléments dans le tableau. Vous pouvez utiliser le tableau en tant qu’unité, et la possibilité d’itérer ses éléments vous évite de devoir connaître exactement le nombre d’éléments qu’il contient au moment de la conception.
 
 Voici quelques exemples sommaires avant d’entrer dans les détails :
 
@@ -51,111 +51,111 @@ Dim matrix = New Integer(3, 2) {{1, 2, 3}, {2, 3, 4}, {3, 4, 5}, {4, 5, 6}}
 Dim sales()() As Double = New Double(11)() {}
 ```
 
-## <a name="array-elements-in-a-simple-array"></a>Array elements in a simple array
+## <a name="array-elements-in-a-simple-array"></a>Éléments de tableau dans un tableau simple
 
-Let's create an array named `students` to store the number of students in each grade in a grammar school. Les index des éléments s’échelonnent de 0 à 6. Using this array is simpler than declaring seven variables.
+Nous allons créer un tableau nommé `students` pour stocker le nombre d’étudiants de chaque niveau dans une école grammaticale. Les index des éléments s’échelonnent de 0 à 6. Il est plus simple d’utiliser ce tableau que de déclarer sept variables.
 
-The following illustration shows the `students` array. Pour chaque élément du tableau :
+L’illustration suivante montre le tableau de `students`. Pour chaque élément du tableau :
 
 - L’index de l’élément représente le niveau scolaire (l’index 0 représente le niveau maternelle).
 
 - La valeur contenue dans l’élément représente le nombre d’élèves de cette catégorie.
 
-![Diagram showing an array of the numbers of students](./media/index/students-array-elements.gif)
+![Diagramme montrant un tableau des nombres d’élèves](./media/index/students-array-elements.gif)
 
-The following example contains the Visual Basic code that creates and uses the array:
+L’exemple suivant contient le code Visual Basic qui crée et utilise le tableau :
 
 [!code-vb[simple-array](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/simple-array.vb)]
 
-The example does three things:
+L’exemple effectue trois opérations :
 
-- It declares a `students` array with seven elements. The number `6` in the array declaration indicates the last index in the array; it is one less than the number of elements in the array.
-- It assigns values to each element in the array. Array elements are accessed by using the array name and including the index of the individual element in parentheses.
-- It lists each value of the array. The example uses a [`For`](../../../language-reference/statements/for-next-statement.md) statement to access each element of the array by its index number.
+- Elle déclare un tableau de `students` avec sept éléments. Le nombre `6` dans la déclaration de tableau indique le dernier index dans le tableau ; la valeur est inférieure au nombre d’éléments du tableau.
+- Elle assigne des valeurs à chaque élément du tableau. Les éléments de tableau sont accessibles en utilisant le nom du tableau et en incluant l’index de l’élément individuel entre parenthèses.
+- Elle répertorie chaque valeur du tableau. L’exemple utilise une instruction [`For`](../../../language-reference/statements/for-next-statement.md) pour accéder à chaque élément du tableau par son numéro d’index.
 
-The `students` array in the preceding example is a one-dimensional array because it uses one index. An array that uses more than one index or subscript is called *multidimensional*. For more information, see the rest of this article and [Array Dimensions in Visual Basic](../../language-features/arrays/array-dimensions.md).
+Le tableau `students` dans l’exemple précédent est un tableau unidimensionnel, car il utilise un index. Un tableau qui utilise plusieurs index ou indices est appelé *multidimensionnel*. Pour plus d’informations, consultez le reste de cet article et les [dimensions des tableaux dans Visual Basic](../../language-features/arrays/array-dimensions.md).
 
-## <a name="creating-an-array"></a>Creating an array
+## <a name="creating-an-array"></a>Création d’un tableau
 
-You can define the size of an array in several ways:
+Vous pouvez définir la taille d’un tableau de plusieurs façons :
 
-- You can specify the size when the array is declared:
+- Vous pouvez spécifier la taille lorsque le tableau est déclaré :
 
   [!code-vb[creating1](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#1)]
 
-- You can use a `New` clause to supply the size of an array when it’s created:
+- Vous pouvez utiliser une clause `New` pour fournir la taille d’un tableau lors de sa création :
 
   [!code-vb[creating2](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#2)]
 
-If you have an existing array, you can redefine its size by using the [`ReDim`](../../../language-reference/statements/redim-statement.md) statement. You can specify that the `ReDim` statement keep the values that are in the array, or you can specify that it create an empty array. L’exemple suivant montre les différentes utilisations possibles de l’instruction `ReDim` pour modifier la taille d’un tableau existant.
+Si vous disposez d’un tableau existant, vous pouvez redéfinir sa taille à l’aide de l’instruction [`ReDim`](../../../language-reference/statements/redim-statement.md) . Vous pouvez spécifier que l’instruction `ReDim` conserver les valeurs qui se trouvent dans le tableau, ou vous pouvez spécifier qu’elle crée un tableau vide. L’exemple suivant montre les différentes utilisations possibles de l’instruction `ReDim` pour modifier la taille d’un tableau existant.
 
 [!code-vb[redimensioning](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#3)]
 
-For more information, see the [ReDim Statement](../../../language-reference/statements/redim-statement.md).
+Pour plus d’informations, consultez l' [instruction ReDim](../../../language-reference/statements/redim-statement.md).
 
-## <a name="storing-values-in-an-array"></a>Storing values in an array
+## <a name="storing-values-in-an-array"></a>Stockage de valeurs dans un tableau
 
-Vous pouvez accéder à chaque emplacement d’un tableau en utilisant un index de type `Integer`. Vous pouvez stocker des valeurs dans un tableau et les récupérer par la suite en référençant chaque emplacement du tableau en utilisant son index entre parenthèses. Indexes for multidimensional arrays are separated by commas (,). Vous avez besoin d’un index pour chaque dimension de tableau.
+Vous pouvez accéder à chaque emplacement d’un tableau en utilisant un index de type `Integer`. Vous pouvez stocker des valeurs dans un tableau et les récupérer par la suite en référençant chaque emplacement du tableau en utilisant son index entre parenthèses. Les index des tableaux multidimensionnels sont séparés par des virgules (,). Vous avez besoin d’un index pour chaque dimension de tableau.
 
-The following example shows some statements that store and retrieve values in arrays.
+L’exemple suivant montre des instructions qui stockent et récupèrent des valeurs dans des tableaux.
 
 [!code-vb[store-and-retrieve](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/store-and-retrieve.vb)]
 
-## <a name="populating-an-array-with-array-literals"></a>Populating an array with array literals
+## <a name="populating-an-array-with-array-literals"></a>Remplissage d’un tableau avec des littéraux de tableau
 
-By using an array literal, you can populate an array with an initial set of values at the same time that you create it. Un littéral de tableau se compose d’une liste de valeurs séparées par des virgules mise entre accolades (`{}`).
+En utilisant un littéral de tableau, vous pouvez remplir un tableau avec un ensemble initial de valeurs en même temps que vous le créez. Un littéral de tableau se compose d’une liste de valeurs séparées par des virgules mise entre accolades (`{}`).
 
-Quand vous créez un tableau en utilisant un littéral de tableau, vous pouvez soit indiquer le type du tableau, soit utiliser l’inférence de type pour déterminer le type du tableau. The following example shows both options.
+Quand vous créez un tableau en utilisant un littéral de tableau, vous pouvez soit indiquer le type du tableau, soit utiliser l’inférence de type pour déterminer le type du tableau. L’exemple suivant illustre les deux options.
 
 [!code-vb[create-with-literals](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#4)]
 
-When you use type inference, the type of the array is determined by the *dominant type* in the list of literal values. The dominant type is the type to which all other types in the array can widen. Si ce type unique ne peut pas être déterminé, le type dominant est le type unique auquel tous les autres types du tableau peuvent se réduire. Si aucun de ces types uniques ne peut être déterminé, le type dominant est `Object`. Par exemple, si la liste de valeurs fournie au littéral de tableau contient des valeurs de type `Integer`, `Long`et `Double`, le tableau qui en résulte est de type `Double`. Because `Integer` and `Long` widen only to `Double`, `Double` is the dominant type. Pour plus d’informations, consultez [Widening and Narrowing Conversions](../../language-features/data-types/widening-and-narrowing-conversions.md).
+Quand vous utilisez l’inférence de type, le type du tableau est déterminé par le *type dominant* dans la liste de valeurs littérales. Le type dominant est le type vers lequel tous les autres types du tableau peuvent s’étendre. Si ce type unique ne peut pas être déterminé, le type dominant est le type unique auquel tous les autres types du tableau peuvent se réduire. Si aucun de ces types uniques ne peut être déterminé, le type dominant est `Object`. Par exemple, si la liste de valeurs fournie au littéral de tableau contient des valeurs de type `Integer`, `Long`et `Double`, le tableau qui en résulte est de type `Double`. Étant donné que `Integer` et `Long` s’étendent uniquement à `Double`, `Double` est le type dominant. Pour plus d’informations, consultez [Widening and Narrowing Conversions](../../language-features/data-types/widening-and-narrowing-conversions.md).
 
 > [!NOTE]
-> You can use type inference only for arrays that are defined as local variables in a type member. If an explicit type definition is absent, arrays defined with array literals at the class level are of type `Object[]`. For more information, see [Local type inference](../variables/local-type-inference.md).
+> Vous pouvez utiliser l’inférence de type uniquement pour les tableaux qui sont définis en tant que variables locales dans un membre de type. Si une définition de type explicite est absente, les tableaux définis avec des littéraux de tableau au niveau de la classe sont de type `Object[]`. Pour plus d’informations, consultez [inférence de type local](../variables/local-type-inference.md).
 
-Note that the previous example defines `values` as an array of type `Double` even though all the array literals are of type `Integer`. You can create this array because the values in the array literal can widen to `Double` values.
+Notez que l’exemple précédent définit `values` sous la forme d’un tableau de type `Double` même si tous les littéraux de tableau sont de type `Integer`. Vous pouvez créer ce tableau, car les valeurs du littéral de tableau peuvent s’étendre à `Double` valeurs.
 
-You can also create and populate a multidimensional array by using *nested array literals*. Nested array literals must have a number of dimensions that’s consistent with the resulting array. The following example creates a two-dimensional array of integers by using nested array literals.
+Vous pouvez également créer et remplir un tableau multidimensionnel en utilisant des *littéraux de tableau imbriqués*. Les littéraux de tableau imbriqués doivent avoir un certain nombre de dimensions qui sont cohérentes avec le tableau résultant. L’exemple suivant crée un tableau à deux dimensions d’entiers à l’aide de littéraux de tableaux imbriqués.
 
 [!code-vb[nested-array-literals](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#5)]
 
-When using nested array literals to create and populate an array, an error occurs if the number of elements in the nested array literals don't match. An error also occurs if you explicitly declare the array variable to have a different number of dimensions than the array literals.
+Lorsque vous utilisez des littéraux de tableaux imbriqués pour créer et remplir un tableau, une erreur se produit si le nombre d’éléments contenus dans les littéraux de tableau imbriqués ne correspond pas. Une erreur se produit également si vous déclarez explicitement la variable tableau pour avoir un nombre de dimensions différent de celui des littéraux de tableau.
 
-Just as you can for one-dimensional arrays, you can rely on type inference when creating a multidimensional array with nested array literals. The inferred type is the dominant type for all the values in all the array literals for all nesting level. The following example creates a two-dimensional array of type `Double[,]` from values that are of type `Integer` and `Double`.
+De la même façon que pour les tableaux unidimensionnels, vous pouvez vous appuyer sur l’inférence de type lors de la création d’un tableau multidimensionnel avec des littéraux de tableau imbriqués. Le type déduit est le type dominant pour toutes les valeurs de tous les littéraux de tableau pour tous les niveaux d’imbrication. L’exemple suivant crée un tableau à deux dimensions de type `Double[,]` à partir de valeurs de type `Integer` et `Double`.
 
 [!code-vb[nested-type-inference](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/create-array.vb#6)]
 
 Pour obtenir des exemples supplémentaires, consultez [Comment : initialiser une variable tableau en Visual Basic](../../language-features/arrays/how-to-initialize-an-array-variable.md).
 
-## <a name="iterating-through-an-array"></a>Iterating through an array
+## <a name="iterating-through-an-array"></a>Itération au sein d’un tableau
 
-When you iterate through an array, you access each element in the array from the lowest index to the highest or from the highest to the lowest. Typically, use either the [For...Next Statement](../../../language-reference/statements/for-next-statement.md) or the [For Each...Next Statement](../../../language-reference/statements/for-each-next-statement.md) to iterate through the elements of an array. When you don't know the upper bounds of the array, you can call the <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType> method to get the highest value of the index. Although lowest index value is almost always 0, you can call the <xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType> method to get the lowest value of the index.
+Lorsque vous itérez au sein d’un tableau, vous accédez à chaque élément du tableau de l’index le plus bas au plus élevé ou du plus élevé au plus bas. En général, utilisez l’une [des... Next Statement](../../../language-reference/statements/for-next-statement.md) ou les instructions [for each... Instruction Next](../../../language-reference/statements/for-each-next-statement.md) pour itérer au sein des éléments d’un tableau. Lorsque vous ne connaissez pas les limites supérieures du tableau, vous pouvez appeler la méthode <xref:System.Array.GetUpperBound%2A?displayProperty=nameWithType> pour obtenir la valeur la plus élevée de l’index. Bien que la valeur d’index la plus basse soit presque toujours 0, vous pouvez appeler la méthode <xref:System.Array.GetLowerBound%2A?displayProperty=nameWithType> pour récupérer la valeur la plus faible de l’index.
 
-The following example iterates through a one-dimensional array by using the [`For...Next`](../../../language-reference/statements/for-next-statement.md) statement.
+L’exemple suivant itère au sein d’un tableau unidimensionnel à l’aide de l’instruction [`For...Next`](../../../language-reference/statements/for-next-statement.md) .
 
 [!code-vb[iterate-one-dimensional-array](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate1d.vb)]
 
-The following example iterates through a multidimensional array by using a [`For...Next`](../../../language-reference/statements/for-next-statement.md) statement. La méthode <xref:System.Array.GetUpperBound%2A> dispose d’un paramètre qui spécifie la dimension. `GetUpperBound(0)` returns the highest index of the first dimension, and `GetUpperBound(1)` returns the highest index of the second dimension.
+L’exemple suivant itère au sein d’un tableau multidimensionnel à l’aide d’une instruction [`For...Next`](../../../language-reference/statements/for-next-statement.md) . La méthode <xref:System.Array.GetUpperBound%2A> dispose d’un paramètre qui spécifie la dimension. `GetUpperBound(0)` retourne l’index le plus élevé de la première dimension, et `GetUpperBound(1)` retourne l’index le plus élevé de la deuxième dimension.
 
 [!code-vb[iterate-two-dimensional-array](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate2d.vb)]
 
-The following example uses a [For Each...Next Statement](../../../language-reference/statements/for-each-next-statement.md)to iterate through a one-dimensional array and a two-dimensional array.
+L’exemple suivant utilise une commande [for each... Next Statement](../../../language-reference/statements/for-each-next-statement.md)pour itérer au sein d’un tableau unidimensionnel et d’un tableau à deux dimensions.
 
 [!code-vb[iterate-for-each-next](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/iterate-for-each-next.vb)]
 
-## <a name="array-size"></a>Array size
+## <a name="array-size"></a>Taille du tableau
 
-La taille d’un tableau est le produit des longueurs de toutes ses dimensions. Elle représente le nombre total d’éléments actuellement contenus dans le tableau.  For example, the following example declares a 2-dimensional array with four elements in each dimension. As the output from the example shows, the array's size is 16 (or (3 + 1) * (3 + 1).
+La taille d’un tableau est le produit des longueurs de toutes ses dimensions. Elle représente le nombre total d’éléments actuellement contenus dans le tableau.  Par exemple, l’exemple suivant déclare un tableau à deux dimensions avec quatre éléments dans chaque dimension. Comme le montre la sortie de l’exemple, la taille du tableau est 16 (ou (3 + 1) * (3 + 1).
 
 [!code-vb[array-size](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size.vb)]
 
 > [!NOTE]
-> This discussion of array size does not apply to jagged arrays. For information on jagged arrays and determining the size of a jagged array, see the [Jagged arrays](#jagged-arrays) section.
+> Cette présentation de la taille d’un tableau ne s’applique pas aux tableaux en escalier. Pour plus d’informations sur les tableaux en escalier et la détermination de la taille d’un tableau en escalier, consultez la section [tableaux en escalier](#jagged-arrays) .
 
-Vous pouvez trouver la taille d’un tableau en utilisant la propriété <xref:System.Array.Length%2A?displayProperty=nameWithType>. You can find the length of each dimension of a multidimensional array by using the <xref:System.Array.GetLength%2A?displayProperty=nameWithType> method.
+Vous pouvez trouver la taille d’un tableau en utilisant la propriété <xref:System.Array.Length%2A?displayProperty=nameWithType>. Vous pouvez trouver la longueur de chaque dimension d’un tableau multidimensionnel à l’aide de la méthode <xref:System.Array.GetLength%2A?displayProperty=nameWithType>.
 
-You can resize an array variable by assigning a new array object to it or by using the [`ReDim` Statement](../../../language-reference/statements/redim-statement.md) statement. The following example uses the `ReDim` statement to change a 100-element array to a 51-element array.
+Vous pouvez redimensionner une variable tableau en lui assignant un nouvel objet tableau ou en utilisant l’instruction [`ReDim` Statement](../../../language-reference/statements/redim-statement.md) . L’exemple suivant utilise l’instruction `ReDim` pour remplacer un tableau de 100 éléments par un tableau de 51 éléments.
 
 [!code-vb[resize-an-array](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/array-size2.vb)]
 
@@ -163,69 +163,69 @@ Il y a plusieurs points à prendre en compte en ce qui concerne la taille d’un
 
 |||
 |---|---|
-|Longueur de dimension|The index of each dimension is 0-based, which means it ranges from 0 to its upper bound. Therefore, the length of a given dimension is one greater than the declared upper bound of that dimension.|
-|Limites de longueur|The length of every dimension of an array is limited to the maximum value of the `Integer` data type, which is <xref:System.Int32.MaxValue?displayProperty=nameWithType> or (2 ^ 31) - 1. Cependant, la taille totale d’un tableau est aussi limitée par la mémoire disponible sur votre système. If you attempt to initialize an array that exceeds the amount of available memory, the runtime throws an <xref:System.OutOfMemoryException>.|
-|Taille et taille d’élément|La taille d’un tableau est indépendante du type de données de ses éléments. The size always represents the total number of elements, not the number of bytes that they consume in memory.|
+|Longueur de dimension|L’index de chaque dimension est basé sur 0, ce qui signifie qu’elle est comprise entre 0 et sa limite supérieure. Par conséquent, la longueur d’une dimension donnée est supérieure à la limite supérieure déclarée de cette dimension.|
+|Limites de longueur|La longueur de chaque dimension d’un tableau est limitée à la valeur maximale du type de données `Integer`, qui est <xref:System.Int32.MaxValue?displayProperty=nameWithType> ou (2 ^ 31)-1. Cependant, la taille totale d’un tableau est aussi limitée par la mémoire disponible sur votre système. Si vous tentez d’initialiser un tableau qui dépasse la quantité de mémoire disponible, le runtime lève une <xref:System.OutOfMemoryException>.|
+|Taille et taille d’élément|La taille d’un tableau est indépendante du type de données de ses éléments. La taille représente toujours le nombre total d’éléments, et non le nombre d’octets qu’ils consomment en mémoire.|
 |Consommation de mémoire|Il est déconseillé de faire des hypothèses sur la façon dont un tableau est stocké en mémoire. Le stockage varie selon la largeur de données de la plateforme. Par exemple, un même tableau utilise plus de mémoire sur un système 64 bits que sur un système 32 bits. Selon la configuration du système au moment de l’initialisation d’un tableau, le Common Language Runtime (CLR) peut assigner du stockage de façon à regrouper les éléments aussi près que possible les uns des autres ou pour tous les adapter aux limites matérielles naturelles. De même, un tableau nécessite un supplément de stockage pour ses informations de contrôle, un supplément qui augmente d’autant à chaque dimension ajoutée.|
 
-## <a name="the-array-type"></a>The array type
+## <a name="the-array-type"></a>Le type de tableau
 
-Every array has a data type, which differs from the data type of its elements. Le type de données varie d’un tableau à un autre. En effet, le type de données d’un tableau est déterminé par le nombre de dimensions (ou *rang*) qu’il possède et par le type de données de ses éléments. Two array variables are of the same data type only when they have the same rank and their elements have the same data type. The lengths of the dimensions of an array do not influence the array data type.
+Chaque tableau a un type de données, qui diffère du type de données de ses éléments. Le type de données varie d’un tableau à un autre. En effet, le type de données d’un tableau est déterminé par le nombre de dimensions (ou *rang*) qu’il possède et par le type de données de ses éléments. Deux variables de tableau sont du même type de données uniquement lorsqu’elles ont le même rang et que leurs éléments ont le même type de données. Les longueurs des dimensions d’un tableau n’influencent pas le type de données du tableau.
 
-Chaque tableau hérite de la classe <xref:System.Array?displayProperty=nameWithType> et vous pouvez déclarer une variable de type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. For example, although the following code declares the `arr` variable to be of type `Array` and calls the <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> method to instantiate the array, the array's type proves to be Object[].
+Chaque tableau hérite de la classe <xref:System.Array?displayProperty=nameWithType> et vous pouvez déclarer une variable de type `Array`, mais vous ne pouvez pas créer un tableau de type `Array`. Par exemple, bien que le code suivant déclare que la variable `arr` soit de type `Array` et appelle la méthode <xref:System.Array.CreateInstance%2A?displayProperty=nameWithType> pour instancier le tableau, le type du tableau prouve qu’il s’agit de l’objet [].
 
 [!code-vb[array-class](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/array-class.vb)]
 
-De même, [l’instruction ReDim](../../../language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. For these reasons, and for type safety, it is advisable to declare every array as a specific type.
+De même, [l’instruction ReDim](../../../language-reference/statements/redim-statement.md) ne peut pas opérer sur une variable déclarée comme étant du type `Array`. Pour ces raisons, et pour la sécurité de type, il est recommandé de déclarer chaque tableau en tant que type spécifique.
 
 Vous pouvez déterminer le type de données d’un tableau ou de ses éléments de plusieurs façons.
 
-- You can call the <xref:System.Object.GetType%2A> method on the variable to get a <xref:System.Type> object that represents the run-time type of the variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.
-- You can pass the variable to the <xref:Microsoft.VisualBasic.Information.TypeName%2A> function to get a `String` with the name of run-time type.
+- Vous pouvez appeler la méthode <xref:System.Object.GetType%2A> sur la variable pour obtenir un objet <xref:System.Type> qui représente le type au moment de l’exécution de la variable. L’objet <xref:System.Type> contient des informations complètes dans ses propriétés et méthodes.
+- Vous pouvez passer la variable à la fonction <xref:Microsoft.VisualBasic.Information.TypeName%2A> pour obtenir une `String` avec le nom du type au moment de l’exécution.
 
-The following example calls the both the `GetType` method and the `TypeName` function to determine the type of an array. The array type is `Byte(,)`. Note that the <xref:System.Type.BaseType%2A?displayProperty=nameWithType> property also indicates that the base type of the byte array is the <xref:System.Array> class.
+L’exemple suivant appelle la méthode `GetType` et la fonction `TypeName` pour déterminer le type d’un tableau. Le type de tableau est `Byte(,)`. Notez que la propriété <xref:System.Type.BaseType%2A?displayProperty=nameWithType> indique également que le type de base du tableau d’octets est la classe <xref:System.Array>.
 
 [!code-vb[array-type](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/array-type.vb)]
 
-## <a name="arrays-as-return-values-and-parameters"></a>Arrays as return values and parameters
+## <a name="arrays-as-return-values-and-parameters"></a>Tableaux en tant que valeurs de retour et paramètres
 
 Pour retourner un tableau à partir d’une procédure `Function`, spécifiez le type de données du tableau et le nombre de dimensions en tant que type de retour de [l’instruction Function](../../../language-reference/statements/function-statement.md). Dans la fonction, déclarez une variable tableau locale avec le même type de données et le même nombre de dimensions. Dans [l’instruction Return](../../../language-reference/statements/return-statement.md), incluez la variable tableau locale sans parenthèses.
 
-Pour spécifier un tableau en tant que paramètre d’une procédure `Sub` ou `Function` , définissez le paramètre en tant que tableau avec un type de données et un nombre de dimensions spécifiés. In the call to the procedure, pass an array variable with the same data type and number of dimensions.
+Pour spécifier un tableau en tant que paramètre d’une procédure `Sub` ou `Function` , définissez le paramètre en tant que tableau avec un type de données et un nombre de dimensions spécifiés. Dans l’appel à la procédure, transmettez une variable tableau avec le même type de données et le même nombre de dimensions.
 
-In the following example, the `GetNumbers` function returns an `Integer()`, a one-dimensional array of type `Integer`. La procédure `ShowNumbers` accepte un argument `Integer()` .
+Dans l’exemple suivant, la fonction `GetNumbers` retourne un `Integer()`, un tableau unidimensionnel de type `Integer`. La procédure `ShowNumbers` accepte un argument `Integer()` .
 
 [!code-vb[return-value-and-params](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params.vb)]
 
-In the following example, the `GetNumbersMultiDim` function returns an `Integer(,)`, a two-dimensional array of type `Integer`.  La procédure `ShowNumbersMultiDim` accepte un argument `Integer(,)` .
+Dans l’exemple suivant, la fonction `GetNumbersMultiDim` retourne un `Integer(,)`, un tableau à deux dimensions de type `Integer`.  La procédure `ShowNumbersMultiDim` accepte un argument `Integer(,)` .
 
 [!code-vb[multidimensional-return-value](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/return-values-and-params-2d.vb)]
 
 ## <a name="jagged-arrays"></a>Tableaux en escalier
 
-Parfois, la structure de données de votre application est à deux dimensions, mais pas rectangulaire. For example, you might use an array to store data about the high temperature of each day of the month. The first dimension of the array represents the month, but the second dimension represents the number of days, and the number of days in a month is not uniform. A *jagged array*, which is also called an *array of arrays*, is designed for such scenarios. A jagged array is an array whose elements are also arrays. Un tableau en escalier et chaque élément qu’il contient peut avoir une ou plusieurs dimensions.
+Parfois, la structure de données de votre application est à deux dimensions, mais pas rectangulaire. Par exemple, vous pouvez utiliser un tableau pour stocker des données sur la température élevée de chaque jour du mois. La première dimension du tableau représente le mois, mais la deuxième dimension représente le nombre de jours et le nombre de jours dans un mois n’est pas uniforme. Un *tableau en escalier*, qui est également appelé un *tableau de tableaux*, est conçu pour de tels scénarios. Un tableau en escalier est un tableau dont les éléments sont également des tableaux. Un tableau en escalier et chaque élément qu’il contient peut avoir une ou plusieurs dimensions.
 
-The following example uses an array of months, each element of which is an array of days. The example uses a jagged array because different months have different numbers of days.  The example shows how to create a jagged array, assign values to it, and retrieve and display its values.
+L’exemple suivant utilise un tableau de mois, dont chaque élément est un tableau de jours. L’exemple utilise un tableau en escalier, car les différents mois ont un nombre de jours différent.  L’exemple montre comment créer un tableau en escalier, lui assigner des valeurs et récupérer et afficher ses valeurs.
 
 [!code-vb[jagged-arrays](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged.vb)]
 
-The previous example assigns values to the jagged array on an element-by-element basis by using a `For...Next` loop. You can also assign values to the elements of a jagged array by using nested array literals. However, the attempt to use nested array literals (for example, `Dim valuesjagged = {{1, 2}, {2, 3, 4}}`) generates compiler error [BC30568](../../../,,/../misc/bc30568.md). To correct the error, enclose the inner array literals in parentheses. The parentheses force the array literal expression to be evaluated, and the resulting values are used with the outer array literal, as the following example shows.
+L’exemple précédent assigne des valeurs au tableau en escalier au niveau élément par élément à l’aide d’une boucle `For...Next`. Vous pouvez également assigner des valeurs aux éléments d’un tableau en escalier en utilisant des littéraux de tableau imbriqués. Toutefois, la tentative d’utilisation de littéraux de tableaux imbriqués (par exemple, `Dim valuesjagged = {{1, 2}, {2, 3, 4}}`) génère une erreur du compilateur [BC30568](../../../,,/../misc/bc30568.md). Pour corriger l’erreur, placez les littéraux de tableau internes entre parenthèses. Les parenthèses forcent l’évaluation de l’expression de littéral de tableau, et les valeurs résultantes sont utilisées avec le littéral de tableau externe, comme le montre l’exemple suivant.
 
 [!code-vb[jagged-array-initialization](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-assign.vb)]
 
-A jagged array is a one-dimensional array whose elements contain arrays. Therefore, the <xref:System.Array.Length%2A?displayProperty=nameWithType> property and the `Array.GetLength(0)` method return the number of elements in the one-dimensional array, and `Array.GetLength(1)` throws an <xref:System.IndexOutOfRangeException> because a jagged array is not multidimensional. You determine the number of elements in each subarray by retrieving the value of each subarray's <xref:System.Array.Length%2A?displayProperty=nameWithType> property. The following example illustrates how to determine the number of elements in a jagged array.
+Un tableau en escalier est un tableau unidimensionnel dont les éléments contiennent des tableaux. Par conséquent, la propriété <xref:System.Array.Length%2A?displayProperty=nameWithType> et la méthode `Array.GetLength(0)` retournent le nombre d’éléments dans le tableau unidimensionnel, et `Array.GetLength(1)` lève une <xref:System.IndexOutOfRangeException>, car un tableau en escalier n’est pas multidimensionnel. Vous déterminez le nombre d’éléments dans chaque sous-tableau en extrayant la valeur de la propriété <xref:System.Array.Length%2A?displayProperty=nameWithType> de chaque sous-tableau. L’exemple suivant montre comment déterminer le nombre d’éléments dans un tableau en escalier.
 
 [!code-vb[jagged-array-size](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/jagged-length.vb)]
 
-## <a name="zero-length-arrays"></a>Zero-length arrays
+## <a name="zero-length-arrays"></a>Tableaux de longueur zéro
 
-Visual Basic differentiates between a uninitialized array (an array whose value is `Nothing`) and a *zero-length array* or empty array (an array that has no elements.) An uninitialized array is one that has not been dimensioned or had any values assigned to it. Exemple :
+Visual Basic fait la distinction entre un tableau non initialisé (un tableau dont la valeur est `Nothing`) et un tableau de *longueur zéro* ou un tableau vide (tableau sans éléments). Un tableau non initialisé est un tableau qui n’a pas été dimensionné ou auquel des valeurs ont été assignées. Exemple :
 
 ```vb
 Dim arr() As String
 ```
 
-A zero-length array is declared with a dimension of -1. Exemple :
+Un tableau de longueur zéro est déclaré avec une dimension de-1. Exemple :
 
 ```vb
 Dim arrZ(-1) As String
@@ -233,64 +233,64 @@ Dim arrZ(-1) As String
 
 Vous pouvez être amené à créer un tableau de longueur zéro dans les cas suivants :
 
-- Without risking a <xref:System.NullReferenceException> exception, your code must access members of the <xref:System.Array> class, such as <xref:System.Array.Length%2A> or <xref:System.Array.Rank%2A>, or call a Visual Basic function such as <xref:Microsoft.VisualBasic.Information.UBound%2A>.
+- Sans risquer une exception <xref:System.NullReferenceException>, votre code doit accéder aux membres de la classe <xref:System.Array>, tels que <xref:System.Array.Length%2A> ou <xref:System.Array.Rank%2A>, ou appeler une fonction Visual Basic comme <xref:Microsoft.VisualBasic.Information.UBound%2A>.
 
-- You want to keep your code simple by not having to check for `Nothing` as a special case.
+- Vous souhaitez que votre code reste simple en n’ayant pas à vérifier `Nothing` comme un cas particulier.
 
 - Votre code interagit avec une interface de programmation d’applications (API) qui vous oblige à passer un tableau de longueur zéro à une ou plusieurs procédures ou qui retourne un tableau de longueur zéro à partir d’une ou plusieurs procédures.
 
-## <a name="splitting-an-array"></a>Splitting an array
+## <a name="splitting-an-array"></a>Fractionnement d’un tableau
 
-In some cases, you may need to split a single array into multiple arrays. This involves identifying the point or points at which the array is to be split, and then spitting the array into two or more separate arrays.
+Dans certains cas, il se peut que vous deviez fractionner un tableau unique en plusieurs tableaux. Cela implique d’identifier le ou les points à partir desquels le tableau doit être fractionné, puis de Spitting le tableau en deux ou plusieurs tableaux distincts.
 
 > [!NOTE]
-> This section does not discuss splitting a single string into a string array based on some delimiter. For information on splitting a string, see the <xref:System.String.Split%2A?displayProperty=nameWithType> method.
+> Cette section n’aborde pas le fractionnement d’une chaîne unique en un tableau de chaînes en fonction d’un délimiteur. Pour plus d’informations sur le fractionnement d’une chaîne, consultez la méthode <xref:System.String.Split%2A?displayProperty=nameWithType>.
 
-The most common criteria for splitting an array are:
+Les critères les plus courants pour le fractionnement d’un tableau sont les suivants :
 
-- Nombre d’éléments dans le tableau. For example, you might want to split an array of more than a specified number of elements into a number of approximately equal parts. For this purpose, you can use the value returned by either the <xref:System.Array.Length%2A?displayProperty=nameWithType> or <xref:System.Array.GetLength%2A?displayProperty=nameWithType> method.
+- Nombre d’éléments dans le tableau. Par exemple, vous souhaiterez peut-être fractionner un tableau de plus d’un nombre spécifié d’éléments en plusieurs parties égales. À cet effet, vous pouvez utiliser la valeur retournée par la méthode <xref:System.Array.Length%2A?displayProperty=nameWithType> ou <xref:System.Array.GetLength%2A?displayProperty=nameWithType>.
 
-- The value of an element, which serves as a delimiter that indicates where the array should be split. You can search for a specific value by calling the <xref:System.Array.FindIndex%2A?displayProperty=nameWithType> and <xref:System.Array.FindLastIndex%2A?displayProperty=nameWithType> methods.
+- Valeur d’un élément, qui sert de délimiteur qui indique où le tableau doit être fractionné. Vous pouvez rechercher une valeur spécifique en appelant les méthodes <xref:System.Array.FindIndex%2A?displayProperty=nameWithType> et <xref:System.Array.FindLastIndex%2A?displayProperty=nameWithType>.
 
-Once you've determined the index or indexes at which the array should be split, you can then create the individual arrays by calling the <xref:System.Array.Copy%2A?displayProperty=nameWithType> method.
+Une fois que vous avez déterminé l’index ou les index auxquels le tableau doit être fractionné, vous pouvez créer les tableaux individuels en appelant la méthode <xref:System.Array.Copy%2A?displayProperty=nameWithType>.
 
-The following example splits an array into two arrays of approximately equal size. (If the total number of array elements is odd, the first array has one more element than the second.)
+L’exemple suivant fractionne un tableau en deux tableaux de taille approximativement égale. (Si le nombre total d’éléments de tableau est impair, le premier tableau a un élément supérieur à la seconde.)
 
 [!code-vb[splitting-an-array-by-length](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/split1.vb)]
 
-The following example splits a string array into two arrays based on the presence of an element whose value is "zzz", which serves as the array delimiter. The new arrays do not include the element that contains the delimiter.
+L’exemple suivant fractionne un tableau de chaînes en deux tableaux en fonction de la présence d’un élément dont la valeur est « zzz », qui sert de délimiteur de tableau. Les nouveaux tableaux n’incluent pas l’élément qui contient le délimiteur.
 
 [!code-vb[splitting-an-array-by-delimiter](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/split2.vb)]
 
-## <a name="joining-arrays"></a>Joining arrays
+## <a name="joining-arrays"></a>Jointure de tableaux
 
-You can also combine a number of arrays into a single larger array. To do this, you also use the <xref:System.Array.Copy%2A?displayProperty=nameWithType> method.
+Vous pouvez également combiner un certain nombre de tableaux dans un même tableau de plus grande taille. Pour ce faire, vous utilisez également la méthode <xref:System.Array.Copy%2A?displayProperty=nameWithType>.
 
 > [!NOTE]
-> This section does not discuss joining a string array into a single string. For information on joining a string array, see the <xref:System.String.Join%2A?displayProperty=nameWithType> method.
+> Cette section n’aborde pas la jointure d’un tableau de chaînes en une seule chaîne. Pour plus d’informations sur la jointure d’un tableau de chaînes, consultez la méthode <xref:System.String.Join%2A?displayProperty=nameWithType>.
 
-Before copying the elements of each array into the new array, you must first ensure that you have initialized the array so that it is large enough to accommodate the new array. Vous pouvez le faire de deux façons :
+Avant de copier les éléments de chaque tableau dans le nouveau tableau, vous devez d’abord vous assurer que vous avez initialisé le tableau afin qu’il soit suffisamment grand pour accueillir le nouveau tableau. Vous pouvez le faire de deux façons :
 
-- Use the [`ReDim Preserve`](../../../language-reference/statements/redim-statement.md) statement to dynamically expand the array before adding new elements to it. This is the easiest technique, but it can result in performance degradation and excessive memory consumption when you are copying large arrays.
-- Calculate the total number of elements needed for the new large array, then add the elements of each source array to it.
+- Utilisez l’instruction [`ReDim Preserve`](../../../language-reference/statements/redim-statement.md) pour développer dynamiquement le tableau avant d’y ajouter de nouveaux éléments. Il s’agit de la technique la plus simple, mais elle peut entraîner une dégradation des performances et une consommation excessive de la mémoire lorsque vous copiez de grands tableaux.
+- Calculez le nombre total d’éléments nécessaires pour le nouveau tableau volumineux, puis ajoutez-y les éléments de chaque tableau source.
 
-The following example uses the second approach to add four arrays with ten elements each to a single array.
+L’exemple suivant utilise la deuxième approche pour ajouter quatre tableaux avec dix éléments à un seul tableau.
 
 [!code-vb[joining-an-array](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/join.vb)]
 
-Since in this case the source arrays are all small, we can also dynamically expand the array as we add the elements of each new array to it. L’exemple suivant effectue cette opération.
+Étant donné que, dans ce cas, les tableaux sources sont tous petits, nous pouvons également développer le tableau de manière dynamique à mesure que nous y ajoutons les éléments de chaque nouveau tableau. L’exemple suivant effectue cette opération.
 
 [!code-vb[joining-an-array-dynamically](~/samples/snippets/visualbasic/programming-guide/language-features/arrays/join2.vb)]
 
-## <a name="collections-as-an-alternative-to-arrays"></a>Collections as an alternative to arrays
+## <a name="collections-as-an-alternative-to-arrays"></a>Collections comme alternative aux tableaux
 
-Les tableaux s’avèrent particulièrement utiles pour créer et utiliser un nombre fixe d’objets fortement typés. Les collections offrent plus de souplesse quand il s’agit d’utiliser des groupes d’objets. Unlike arrays, which require that you explicitly change the size of an array with the [`ReDim` Statement](../../../language-reference/statements/redim-statement.md), collections grow and shrink dynamically as the needs of an application change.
+Les tableaux s’avèrent particulièrement utiles pour créer et utiliser un nombre fixe d’objets fortement typés. Les collections offrent plus de souplesse quand il s’agit d’utiliser des groupes d’objets. Contrairement aux tableaux, qui requièrent que vous modifiiez explicitement la taille d’un tableau avec l' [instruction`ReDim`](../../../language-reference/statements/redim-statement.md), les collections augmentent et diminuent de manière dynamique à mesure que les besoins d’une application changent.
 
-When you use `ReDim` to redimension an array, Visual Basic creates a new array and releases the previous one. Cela prend du temps d’exécution. Therefore, if the number of items you are working with changes frequently, or you cannot predict the maximum number of items you need, you'll usually obtain better performance by using a collection.
+Lorsque vous utilisez `ReDim` pour redimensionner un tableau, Visual Basic crée un nouveau tableau et libère le précédent. Cela prend du temps d’exécution. Par conséquent, si le nombre d’éléments que vous utilisez change fréquemment ou si vous ne pouvez pas prédire le nombre maximal d’éléments dont vous avez besoin, vous obtiendrez généralement de meilleures performances à l’aide d’une collection.
 
-Pour certaines collections, vous pouvez affecter une clé à tout objet que vous placez dans la collection de sorte à pouvoir récupérer rapidement l’objet à l’aide de la clé.
+Pour certaines collections, vous pouvez assigner une clé à un objet que vous placez dans la collection pour vous permettre de récupérer rapidement l’objet à l’aide de la clé.
 
-Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser une des classes dans l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté.
+Si votre collection contient des éléments d’un seul type de données, vous pouvez utiliser l’une des classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> . Une collection générique applique la cohérence des types pour éviter qu’un autre type puisse y être ajouté.
 
 Pour plus d’informations sur les collections, consultez [Collections](../../concepts/collections.md).
 

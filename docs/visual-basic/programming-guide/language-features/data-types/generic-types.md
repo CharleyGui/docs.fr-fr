@@ -48,7 +48,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
  On pourrait comparer cet élément de programmation à un tournevis à têtes interchangeables. Vous examinez quel type de vis vous devez serrer et vous choisissez la tête de vis adaptée (fendue, cruciforme, en étoile). Quelle que soit la tête insérée dans le manche du tournevis, vous exécutez toujours la même fonction : vous serrez une vis.  
   
- ![Diagram of a screwdriver set with different heads.](./media/generic-types/generic-screwdriver-set.gif)  
+ ![Diagramme d’un tournevis défini avec des têtes différentes.](./media/generic-types/generic-screwdriver-set.gif)  
   
  Quand vous définissez un type générique, vous devez le paramétrer avec un ou plusieurs types de données. Cela permet au code utilisé d’adapter les types de données à ses besoins. Votre code peut déclarer plusieurs éléments de programmation différents à partir de l’élément générique, chacun d’eux agissant sur un ensemble différent de types de données. Ces éléments déclarés exécutent tous la même logique, quel que soit le type de données qu’ils utilisent.  
   
@@ -73,10 +73,10 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
  [!code-vb[VbVbalrDataTypes#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDataTypes/VB/Class1.vb#4)]  
   
- For a more complete example, see [How to: Define a Class That Can Provide Identical Functionality on Different Data Types](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
+ Pour obtenir un exemple plus complet, consultez [Comment : définir une classe qui peut fournir des fonctionnalités identiques sur différents types de données](../../../../visual-basic/programming-guide/language-features/data-types/how-to-define-a-class-that-can-provide-identical-functionality.md).  
   
 ## <a name="eligible-programming-elements"></a>Éléments de programmation disponibles  
- Vous pouvez définir et utiliser des délégués, structures, interfaces, procédures et classes génériques. Note that the .NET Framework defines several generic classes, structures, and interfaces that represent commonly used generic elements. L’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fournit des dictionnaires, des listes, des files d’attente et des piles. Avant de définir votre propre élément générique, vérifiez s’il est disponible dans <xref:System.Collections.Generic?displayProperty=nameWithType>.  
+ Vous pouvez définir et utiliser des délégués, structures, interfaces, procédures et classes génériques. Notez que le .NET Framework définit plusieurs classes, structures et interfaces génériques qui représentent des éléments génériques couramment utilisés. L’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType> fournit des dictionnaires, des listes, des files d’attente et des piles. Avant de définir votre propre élément générique, vérifiez s’il est disponible dans <xref:System.Collections.Generic?displayProperty=nameWithType>.  
   
  Les procédures ne sont pas des types, mais vous pouvez définir et utiliser des procédures génériques. Consultez [Generic Procedures in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-procedures.md).  
   
@@ -91,7 +91,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
 - **Sécurité des types** . Avec les types génériques, une vérification des types est effectuée au moment de la compilation. Les types basés sur `Object` acceptent tous les types de données. Vous devez écrire le code permettant de vérifier si un type de données d’entrée est pris en charge. Avec les types génériques, le compilateur est capable d’identifier les incompatibilités de type avant l’exécution.  
   
-- **Performances** . Les types génériques ne nécessitent pas de conversion *boxing* et *unboxing* des données, car chacun d’eux est utilisé pour un type de données spécifique. Les opérations basées sur `Object` doivent effectuer une conversion boxing des types de données d’entrée pour les convertir en `Object` et effectuer une conversion unboxing des données de sortie. Les conversions boxing et unboxing réduisent les performances.  
+- **Performances.** . Les types génériques ne nécessitent pas de conversion *boxing* et *unboxinging* des données, car chacun d’eux est utilisé pour un type de données spécifique. Les opérations basées sur `Object` doivent effectuer une conversion boxing des types de données d’entrée pour les convertir en `Object` et effectuer une conversion unboxing des données de sortie. Les conversions boxing et unboxing réduisent les performances.  
   
      Les types basés sur `Object` sont également à liaison tardive, ce qui signifie que l’accès à leurs membres nécessite du code supplémentaire au moment de l’exécution. Cela réduit aussi les performances.  
   
@@ -116,7 +116,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
 ### <a name="types-of-constraints"></a>Types de contraintes  
  Une contrainte peut spécifier les exigences suivantes dans n’importe quelle combinaison :  
   
-- L’argument de type doit implémenter une ou plusieurs interfaces.  
+- L’argument de type doit implémenter une ou plusieurs interfaces  
   
 - L’argument de type doit être du type d’une seule classe (ou hériter de cette classe).  
   
@@ -124,7 +124,7 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
   
 - L’argument de type doit être un *type référence*ou un type *valeur*.  
   
- Si vous devez spécifier plusieurs contraintes, utilisez une *liste de contraintes* séparée par des virgules et mise entre accolades (`{ }`). To require an accessible constructor, you include the [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) keyword in the list. Pour exiger un type référence ou un type valeur, ajoutez le mot clé `Class` ou le mot clé `Structure` , respectivement.  
+ Si vous devez spécifier plusieurs contraintes, utilisez une *liste de contraintes* séparée par des virgules et mise entre accolades (`{ }`). Pour exiger un constructeur accessible, vous devez inclure le mot clé [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) dans la liste. Pour exiger un type référence ou un type valeur, ajoutez le mot clé `Class` ou le mot clé `Structure` , respectivement.  
   
  Pour plus d’informations sur les contraintes, consultez [Type List](../../../../visual-basic/language-reference/statements/type-list.md).  
   
@@ -151,11 +151,11 @@ Un *type générique* est un élément de programmation unique qui s’adapte po
 - [Types de données](../../../../visual-basic/programming-guide/language-features/data-types/index.md)
 - [Caractères de type](../../../../visual-basic/programming-guide/language-features/data-types/type-characters.md)
 - [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Types de données](../../../../visual-basic/language-reference/data-types/index.md)
 - [Of](../../../../visual-basic/language-reference/statements/of-clause.md)
 - [As](../../../../visual-basic/language-reference/statements/as-clause.md)
-- [Object (type de données)](../../../../visual-basic/language-reference/data-types/object-data-type.md)
+- [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)
 - [Covariance et contravariance](../../concepts/covariance-contravariance/index.md)
 - [Itérateurs](../../../../visual-basic/programming-guide/concepts/iterators.md)

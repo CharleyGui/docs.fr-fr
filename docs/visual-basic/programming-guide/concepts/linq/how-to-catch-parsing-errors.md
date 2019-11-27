@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353342"
 ---
-# <a name="how-to-catch-parsing-errors-visual-basic"></a>How to: Catch Parsing Errors (Visual Basic)
+# <a name="how-to-catch-parsing-errors-visual-basic"></a>Comment : intercepter des erreurs d’analyse (Visual Basic)
 Cette rubrique montre comment détecter du code XML incorrect ou non valide.  
   
  [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est implémenté avec <xref:System.Xml.XmlReader>. Si du code XML incorrect ou non valide est passé à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], la classe sous-jacente <xref:System.Xml.XmlReader> ève une exception. Les différentes méthodes qui analysent le code XML, telles que <xref:System.Xml.Linq.XElement.Parse%2A?displayProperty=nameWithType>, n’interceptent pas l’exception. Celle-ci peut donc être interceptée par votre application.  
@@ -43,4 +43,4 @@ The 'Contacts' start tag on line 1 does not match the end tag of 'Contcts'. Line
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

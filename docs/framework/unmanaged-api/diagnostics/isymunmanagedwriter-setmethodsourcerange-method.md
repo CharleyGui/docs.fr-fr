@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427865"
 ---
 # <a name="isymunmanagedwritersetmethodsourcerange-method"></a>ISymUnmanagedWriter::SetMethodSourceRange, méthode
-Specifies the true start and end of a method within a source file. Use this method to specify the extent of a method independently of the sequence points that exist within the method.  
+Spécifie le début et la fin d’une méthode dans un fichier source. Utilisez cette méthode pour spécifier l’étendue d’une méthode indépendamment des points de séquence qui existent dans la méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT SetMethodSourceRange(
   
 ## <a name="parameters"></a>Paramètres  
  `startDoc`  
- [in] A pointer to the document containing the starting position.  
+ dans Pointeur vers le document contenant la position de départ.  
   
  `startLine`  
- [in] The starting line number.  
+ dans Numéro de la ligne de départ.  
   
  `startColumn`  
- [in] The starting column.  
+ dans Colonne de départ.  
   
  `endDoc`  
- [in] A pointer to the document containing the ending position.  
+ dans Pointeur vers le document contenant la position de fin.  
   
  `endLine`  
- [in] The ending line number.  
+ dans Numéro de la ligne de fin.  
   
  `endColumn`  
- [in] The ending column number.  
+ dans Numéro de la colonne de fin.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

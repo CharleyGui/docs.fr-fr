@@ -16,19 +16,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351373"
 ---
 # <a name="paramarray-visual-basic"></a>ParamArray (Visual Basic)
-Specifies that a procedure parameter takes an optional array of elements of the specified type. `ParamArray` can be used only on the last parameter of a parameter list.  
+Spécifie qu’un paramètre de procédure accepte un tableau facultatif d’éléments du type spécifié. `ParamArray` peut être utilisé uniquement sur le dernier paramètre d’une liste de paramètres.  
   
 ## <a name="remarks"></a>Notes  
- `ParamArray` allows you to pass an arbitrary number of arguments to the procedure. A `ParamArray` parameter is always declared using [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).  
+ `ParamArray` vous permet de passer un nombre arbitraire d’arguments à la procédure. Un paramètre `ParamArray` est toujours déclaré à l’aide de [ByVal](../../../visual-basic/language-reference/modifiers/byval.md).  
   
- You can supply one or more arguments to a `ParamArray` parameter by passing an array of the appropriate data type, a comma-separated list of values, or nothing at all. For details, see "Calling a ParamArray" in [Parameter Arrays](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
+ Vous pouvez fournir un ou plusieurs arguments à un paramètre `ParamArray` en passant un tableau du type de données approprié, une liste de valeurs séparées par des virgules, ou rien du tout. Pour plus d’informations, consultez « appel d’un ParamArray » dans les [tableaux de paramètres](../../../visual-basic/programming-guide/language-features/procedures/parameter-arrays.md).  
   
 > [!IMPORTANT]
-> Whenever you deal with an array which can be indefinitely large, there is a risk of overrunning some internal capacity of your application. If you accept a parameter array from the calling code, you should test its length and take appropriate steps if it is too large for your application.  
+> Chaque fois que vous traitez un tableau qui peut être indéfiniment volumineux, il existe un risque de surexécution de la capacité interne de votre application. Si vous acceptez un tableau de paramètres du code appelant, vous devez tester sa longueur et prendre les mesures appropriées s’il est trop grand pour votre application.  
   
  Le modificateur `ParamArray` peut être utilisé dans les contextes suivants :  
   
- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)  
   

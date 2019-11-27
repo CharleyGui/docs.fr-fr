@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449678"
 ---
 # <a name="icorprofilerinfo3getruntimeinformation-method"></a>ICorProfilerInfo3::GetRuntimeInformation, méthode
-Provides version information about the common language runtime (CLR) that is being profiled.  
+Fournit des informations de version sur le common language runtime (CLR) en cours de profilage.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,36 +43,36 @@ HRESULT GetRuntimeInformation(
   
 ## <a name="parameters"></a>Paramètres  
  `pClrInstanceId`  
- [out] The representative ID of a running CLR instance in a process. This is the same as the `ClrInstanceID` that the event tracing for Windows (ETW) startup event reports.  
+ à ID représentatif d’une instance CLR en cours d’exécution dans un processus. Il s’agit du même que le `ClrInstanceID` que l’événement de démarrage suivi d’événements pour Windows (ETW) signale.  
   
  `pRuntimeType`  
- [out] The runtime type. This parameter returns `COR_PRF_DESKTOP_CLR` for the desktop version of the CLR, or `COR_PRF_CORE_CLR` for the core version of the CLR used in Silverlight.  
+ à Type au moment de l’exécution. Ce paramètre retourne `COR_PRF_DESKTOP_CLR` pour la version de bureau du CLR, ou `COR_PRF_CORE_CLR` pour la version principale du CLR utilisée dans Silverlight.  
   
  `pMajorVersion`  
- [out] The major version number of the CLR.  
+ à Numéro de version principale du CLR.  
   
  `pMinorVersion`  
- [out] The minor version number of the CLR.  
+ à Numéro de version mineure du CLR.  
   
  `pBuildVersion`  
- [out] The build version number of the CLR.  
+ à Numéro de la version de build du CLR.  
   
  `pQFEVersion`  
- [out] The version number of the CLR that is associated with a software update.  
+ à Numéro de version du CLR qui est associé à une mise à jour logicielle.  
   
  `cchVersionString`  
- [in] The length, in characters, of the buffer that `szVersionString` points to.  
+ dans Longueur, en caractères, de la mémoire tampon vers laquelle `szVersionString` pointe.  
   
  `pcchVersionString`  
- [out] The length, in characters, of `szVersionString`.  
+ à Longueur, en caractères, de `szVersionString`.  
   
  `szVersionString`  
- [out] The CLR version string.  
+ à Chaîne de version CLR.  
   
 ## <a name="remarks"></a>Notes  
- You may pass null for any parameter. However, `pcchVersionString` cannot be null unless `szVersionString` is also null.  
+ Vous pouvez passer NULL pour n’importe quel paramètre. Toutefois, `pcchVersionString` ne peut pas avoir la valeur null, sauf si `szVersionString` est également null.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -91,56 +91,56 @@ typedef enum CorNativeType {
 |------------|-----------------|  
 |`NATIVE_TYPE_END`|Obsolète.|  
 |`NATIVE_TYPE_VOID`|Obsolète.|  
-|`NATIVE_TYPE_BOOLEAN`|A 4-byte Boolean value, where TRUE is non-zero and FALSE is zero.|  
-|`NATIVE_TYPE_I1`|A signed 8-bit integer value.|  
-|`NATIVE_TYPE_U1`|An unsigned 8-bit integer value.|  
-|`NATIVE_TYPE_I2`|A signed 16-bit integer value.|  
-|`NATIVE_TYPE_U2`|An unsigned 16-bit integer value.|  
+|`NATIVE_TYPE_BOOLEAN`|Valeur booléenne sur 4 octets, où TRUE est différent de zéro et FALSe est égal à zéro.|  
+|`NATIVE_TYPE_I1`|Valeur entière 8 bits signée.|  
+|`NATIVE_TYPE_U1`|Valeur entière 8 bits non signée.|  
+|`NATIVE_TYPE_I2`|Valeur entière 16 bits signée.|  
+|`NATIVE_TYPE_U2`|Valeur entière 16 bits non signée.|  
 |`NATIVE_TYPE_I4`|Valeur d’entier 32 bits signé.|  
 |`NATIVE_TYPE_U4`|Valeur d'entier 32 bits non signé.|  
-|`NATIVE_TYPE_I8`|A signed 64-bit integer value.|  
-|`NATIVE_TYPE_U8`|An unsigned 64-bit integer value.|  
-|`NATIVE_TYPE_R4`|A 4-byte floating-point numeric value.|  
-|`NATIVE_TYPE_R8`|An 8-byte floating-point numeric value.|  
+|`NATIVE_TYPE_I8`|Valeur entière 64 bits signée.|  
+|`NATIVE_TYPE_U8`|Valeur entière 64 bits non signée.|  
+|`NATIVE_TYPE_R4`|Valeur numérique à virgule flottante sur 4 octets.|  
+|`NATIVE_TYPE_R8`|Valeur numérique à virgule flottante sur 8 octets.|  
 |`NATIVE_TYPE_SYSCHAR`|Obsolète.|  
 |`NATIVE_TYPE_VARIANT`|Obsolète.|  
-|`NATIVE_TYPE_CURRENCY`|A numeric COM type that corresponds to the managed <xref:System.Decimal> type.|  
+|`NATIVE_TYPE_CURRENCY`|Type COM numérique qui correspond au type de <xref:System.Decimal> managé.|  
 |`NATIVE_TYPE_PTR`|Obsolète.|  
 |`NATIVE_TYPE_DECIMAL`|Obsolète.|  
 |`NATIVE_TYPE_DATE`|Obsolète.|  
 |`NATIVE_TYPE_BSTR`|COM Interop.|  
-|`NATIVE_TYPE_LPSTR`|An LPSTR string value.|  
-|`NATIVE_TYPE_LPWSTR`|An LPWSTR string value.|  
-|`NATIVE_TYPE_LPTSTR`|An LPTSTR string value.|  
-|`NATIVE_TYPE_FIXEDSYSSTRING`|A fixed, system-defined string value.|  
+|`NATIVE_TYPE_LPSTR`|Valeur de chaîne LPSTR.|  
+|`NATIVE_TYPE_LPWSTR`|Valeur de chaîne LPWSTR.|  
+|`NATIVE_TYPE_LPTSTR`|Valeur de chaîne LPTSTR.|  
+|`NATIVE_TYPE_FIXEDSYSSTRING`|Valeur de chaîne fixe définie par le système.|  
 |`NATIVE_TYPE_OBJECTREF`|Obsolète.|  
 |`NATIVE_TYPE_IUNKNOWN`|COM Interop.|  
 |`NATIVE_TYPE_IDISPATCH`|COM Interop.|  
-|`NATIVE_TYPE_STRUCT`|A native structure value.|  
+|`NATIVE_TYPE_STRUCT`|Valeur de structure native.|  
 |`NATIVE_TYPE_INTF`|COM Interop.|  
 |`NATIVE_TYPE_SAFEARRAY`|COM Interop.|  
-|`NATIVE_TYPE_FIXEDARRAY`|A fixed-length array value.|  
-|`NATIVE_TYPE_INT`|A native 16-bit signed integer value.|  
-|`NATIVE_TYPE_UINT`|A native 16-bit unsigned integer value.|  
-|`NATIVE_TYPE_NESTEDSTRUCT`|Obsolète.<br /><br /> Use NATIVE_TYPE_STRUCT.|  
+|`NATIVE_TYPE_FIXEDARRAY`|Valeur de tableau de longueur fixe.|  
+|`NATIVE_TYPE_INT`|Valeur d’entier 16 bits signé natif.|  
+|`NATIVE_TYPE_UINT`|Valeur de l’entier non signé 16 bits natif.|  
+|`NATIVE_TYPE_NESTEDSTRUCT`|Obsolète.<br /><br /> Utilisez NATIVE_TYPE_STRUCT.|  
 |`NATIVE_TYPE_BYVALSTR`|COM Interop.|  
 |`NATIVE_TYPE_ANSIBSTR`|COM Interop.|  
-|`NATIVE_TYPE_TBSTR`|COM Interop.<br /><br /> Select BSTR or ANSIBSTR depending on the platform.|  
-|`NATIVE_TYPE_VARIANTBOOL`|A 2-byte Boolean value, where TRUE is -1 and FALSE is zero.|  
+|`NATIVE_TYPE_TBSTR`|COM Interop.<br /><br /> Sélectionnez BSTR ou ANSIBSTR en fonction de la plateforme.|  
+|`NATIVE_TYPE_VARIANTBOOL`|Valeur booléenne sur 2 octets, où TRUE est-1 et FALSe est égal à zéro.|  
 |`NATIVE_TYPE_FUNC`|Pointeur de fonction.|  
-|`NATIVE_TYPE_ASANY`|A reference to any native type.|  
-|`NATIVE_TYPE_ARRAY`|A reference to an array with members of an unspecified type.|  
-|`NATIVE_TYPE_LPSTRUCT`|A 32-bit integer pointer to a structure.|  
-|`NATIVE_TYPE_CUSTOMMARSHALER`|A custom marshaler native type.<br /><br /> This must be followed by a string of the following format: "Native type name/0Custom marshaler type name/0Optional cookie/0" or "{Native type GUID}/0Custom marshaler type name/0Optional cookie/0"|  
-|`NATIVE_TYPE_ERROR`|COM Interop.<br /><br /> With ELEMENT_TYPE_I4 this type maps to VT_HRESULT.|  
-|`NATIVE_TYPE_IINSPECTABLE`|A native `IInspectable` type.|  
-|`NATIVE_TYPE_HSTRING`|A native `HString`.|  
-|`NATIVE_TYPE_MAX`|An invalid value.|  
+|`NATIVE_TYPE_ASANY`|Référence à n’importe quel type natif.|  
+|`NATIVE_TYPE_ARRAY`|Référence à un tableau avec des membres d’un type non spécifié.|  
+|`NATIVE_TYPE_LPSTRUCT`|Pointeur d’entier 32 bits vers une structure.|  
+|`NATIVE_TYPE_CUSTOMMARSHALER`|Type natif de marshaleur personnalisé.<br /><br /> Il doit être suivi d’une chaîne au format suivant : « nom de type natif/nom de type de marshaleur 0Custom/0Optional cookie/0 » ou « {native type GUID}/0Custom nom de type de marshaleur/0Optional cookie/0 »|  
+|`NATIVE_TYPE_ERROR`|COM Interop.<br /><br /> Avec ELEMENT_TYPE_I4 ce type est mappé à VT_HRESULT.|  
+|`NATIVE_TYPE_IINSPECTABLE`|Type de `IInspectable` natif.|  
+|`NATIVE_TYPE_HSTRING`|`HString`natif.|  
+|`NATIVE_TYPE_MAX`|Valeur non valide.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

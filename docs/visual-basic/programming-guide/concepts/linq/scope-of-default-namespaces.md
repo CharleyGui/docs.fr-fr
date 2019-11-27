@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343644"
 ---
-# <a name="scope-of-default-namespaces-in-visual-basic"></a>Scope of Default Namespaces in Visual Basic
+# <a name="scope-of-default-namespaces-in-visual-basic"></a>Portée des espaces de noms par défaut dans Visual Basic
 Les espaces de noms tels que représentés dans l'arborescence XML par défaut ne sont pas dans la portée pour les requêtes. Si vous avez du code XML qui est dans un espace de noms par défaut, vous devez déclarer une variable <xref:System.Xml.Linq.XNamespace> et la combiner avec le nom local afin de créer un nom complet utilisable dans la requête.  
   
  L'un des problèmes les plus courants lors de l'interrogation d'une arborescence XML est que si celle-ci possède un espace de noms par défaut, le développeur écrit parfois la requête comme si le code XML n'était dans aucun espace de noms.  
@@ -47,7 +47,7 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>Commentaires  
  Cet exemple génère le résultat suivant :  
   
 ```console  
@@ -58,7 +58,7 @@ End of result set
 ## <a name="example"></a>Exemple  
  Cet exemple illustre la création de code XML dans un espace de noms et une requête codée correctement.  
   
- In contrast to the incorrectly coded example above, the correct approach when using Visual Basic is to declare and initialize a global default namespace. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.  
+ Contrairement à l’exemple de code incorrect ci-dessus, l’approche appropriée lors de l’utilisation de Visual Basic consiste à déclarer et à initialiser un espace de noms global par défaut. Cela place toutes les propriétés XML dans l'espace de noms par défaut. Aucune autre modification n'est nécessaire pour que l'exemple fonctionne correctement.  
   
 ### <a name="code"></a>Code  
   
@@ -88,7 +88,7 @@ Module Module1
 End Module  
 ```  
   
-### <a name="comments"></a>Comments  
+### <a name="comments"></a>Commentaires  
  Cet exemple génère le résultat suivant :  
   
 ```console  
@@ -101,4 +101,4 @@ End of result set
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Namespaces Overview (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)
+- [Vue d’ensemble des espaces de noms (LINQ to XML) (Visual Basic)](namespaces-overview-linq-to-xml.md)

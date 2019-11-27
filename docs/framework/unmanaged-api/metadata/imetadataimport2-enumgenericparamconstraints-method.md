@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74426727"
 ---
 # <a name="imetadataimport2enumgenericparamconstraints-method"></a>IMetaDataImport2::EnumGenericParamConstraints, méthode
-Gets an enumerator for an array of generic parameter constraints associated with the generic parameter represented by the specified token.  
+Obtient un énumérateur pour un tableau de contraintes de paramètres génériques associées au paramètre générique représenté par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,33 +39,33 @@ HRESULT EnumGenericParamConstraints (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `tk`  
- [in]   A token that represents the generic parameter whose constraints are to be enumerated.  
+ dans   Jeton qui représente le paramètre générique dont les contraintes doivent être énumérées.  
   
  `rGenericParamConstraints`  
- [out] The array of generic parameter constraints to enumerate.  
+ à Tableau de contraintes de paramètres génériques à énumérer.  
   
  `cMax`  
- [in]   The requested maximum number of tokens to place in `rGenericParamConstraints`.  
+ dans   Nombre maximal de jetons demandés à placer dans `rGenericParamConstraints`.  
   
  `pcGenericParamConstraints`  
- [out] A pointer to the number of tokens placed in `rGenericParamConstraints`.  
+ à Pointeur vers le nombre de jetons placés dans `rGenericParamConstraints`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumGenericParameterConstraints` returned successfully.|  
-|`S_FALSE`|`phEnum` has no member elements. In this case, `pcGenericParameterConstraints` is set to 0 (zero).|  
+|`S_OK`|`EnumGenericParameterConstraints` retourné avec succès.|  
+|`S_FALSE`|`phEnum` n’a aucun élément membre. Dans ce cas, `pcGenericParameterConstraints` a la valeur 0 (zéro).|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

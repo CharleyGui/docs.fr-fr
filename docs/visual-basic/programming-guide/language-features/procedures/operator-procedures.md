@@ -20,33 +20,33 @@ ms.locfileid: "74345997"
 ---
 # <a name="operator-procedures-visual-basic"></a>Procédures d'opérateur (Visual Basic)
 
-An operator procedure is a series of Visual Basic statements that define the behavior of a standard operator (such as `*`, `<>`, or `And`) on a class or structure you have defined. This is also called *operator overloading*.
+Une procédure d’opérateur est une série d’instructions Visual Basic qui définissent le comportement d’un opérateur standard (comme `*`, `<>`ou `And`) sur une classe ou une structure que vous avez définie. C’est ce que l’on appelle également la *surcharge d’opérateur*.
 
-## <a name="when-to-define-operator-procedures"></a>When to Define Operator Procedures
+## <a name="when-to-define-operator-procedures"></a>Quand définir des procédures d’opérateur
 
-When you have defined a class or structure, you can declare variables to be of the type of that class or structure. Sometimes such a variable needs to participate in an operation as part of an expression. To do this, it must be an operand of an operator.
+Lorsque vous avez défini une classe ou une structure, vous pouvez déclarer des variables comme étant du type de cette classe ou structure. Parfois, une telle variable doit participer à une opération dans le cadre d’une expression. Pour ce faire, il doit s’agir d’un opérande d’un opérateur.
 
-Visual Basic defines operators only on its fundamental data types. You can define the behavior of an operator when one or both of the operands are of the type of your class or structure.
+Visual Basic définit des opérateurs uniquement sur ses types de données fondamentaux. Vous pouvez définir le comportement d’un opérateur quand l’un des opérandes ou les deux sont du type de votre classe ou structure.
 
-For more information, see [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md).
+Pour plus d’informations, consultez [Operator, instruction](../../../../visual-basic/language-reference/statements/operator-statement.md).
 
-## <a name="types-of-operator-procedure"></a>Types of Operator Procedure
+## <a name="types-of-operator-procedure"></a>Types de procédure d’opérateur
 
-An operator procedure can be one of the following types:
+Une procédure d’opérateur peut être de l’un des types suivants :
 
-- A definition of a unary operator where the argument is of the type of your class or structure.
+- Définition d’un opérateur unaire dans lequel l’argument est du type de votre classe ou structure.
 
-- A definition of a binary operator where at least one of the arguments is of the type of your class or structure.
+- Définition d’un opérateur binaire où au moins l’un des arguments est du type de votre classe ou structure.
 
-- A definition of a conversion operator where the argument is of the type of your class or structure.
+- Définition d’un opérateur de conversion où l’argument est du type de votre classe ou structure.
 
-- A definition of a conversion operator that returns the type of your class or structure.
+- Définition d’un opérateur de conversion qui retourne le type de votre classe ou structure.
 
- Conversion operators are always unary, and you always use `CType` as the operator you are defining.
+ Les opérateurs de conversion sont toujours unaires, et vous utilisez toujours `CType` comme opérateur que vous définissez.
 
 ## <a name="declaration-syntax"></a>Syntaxe de déclaration
 
-The syntax for declaring an operator procedure is as follows:
+La syntaxe de la déclaration d’une procédure d’opérateur est la suivante :
 
 ```vb
 Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  operand2 ]) As datatype
@@ -56,35 +56,35 @@ Public Shared [Widening | Narrowing] Operator operatorsymbol ( operand1 [,  oper
 End Operator
 ```
 
-You use the `Widening` or `Narrowing` keyword only on a type conversion operator. The operator symbol is always [CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md) for a type conversion operator.
+Vous utilisez le mot clé `Widening` ou `Narrowing` uniquement sur un opérateur de conversion de type. Le symbole d’opérateur est toujours la [fonction CType](../../../../visual-basic/language-reference/functions/ctype-function.md) pour un opérateur de conversion de type.
 
-You declare two operands to define a binary operator, and you declare one operand to define a unary operator, including a type conversion operator. All operands must be declared `ByVal`.
+Vous pouvez déclarer deux opérandes pour définir un opérateur binaire et déclarer un opérande pour définir un opérateur unaire, y compris un opérateur de conversion de type. Tous les opérandes doivent être déclarés `ByVal`.
 
-You declare each operand the same way you declare parameters for [Sub Procedures](./sub-procedures.md).
+Vous déclarez chaque opérande de la même façon que vous déclarez des paramètres pour les [procédures Sub](./sub-procedures.md).
 
 ### <a name="data-type"></a>Type de données
 
-Because you are defining an operator on a class or structure you have defined, at least one of the operands must be of the data type of that class or structure. For a type conversion operator, either the operand or the return type must be of the data type of the class or structure.
+Étant donné que vous définissez un opérateur sur une classe ou une structure que vous avez définie, au moins l’un des opérandes doit être du type de données de cette classe ou structure. Pour un opérateur de conversion de type, l’opérande ou le type de retour doit être du type de données de la classe ou de la structure.
 
-For more details, see [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md).
+Pour plus d’informations, consultez [Operator, instruction](../../../../visual-basic/language-reference/statements/operator-statement.md).
 
-## <a name="calling-syntax"></a>Calling Syntax
+## <a name="calling-syntax"></a>Syntaxe d’appel
 
-You invoke an operator procedure implicitly by using the operator symbol in an expression. You supply the operands the same way you do for predefined operators.
+Vous appelez une procédure d’opérateur implicitement en utilisant le symbole d’opérateur dans une expression. Vous fournissez les opérandes de la même façon que pour les opérateurs prédéfinis.
 
-The syntax for an implicit call to an operator procedure is as follows:
+La syntaxe d’un appel implicite à une procédure d’opérateur est la suivante :
 
-`Dim testStruct As`  *structurename*
+`Dim testStruct As`*structurename*
 
-`Dim testNewStruct As`  *structurename*  `= testStruct`  *operatorsymbol*  `10`
+`Dim testNewStruct As`*structurename*`= testStruct`*operatorsymbol*`10`
 
-### <a name="illustration-of-declaration-and-call"></a>Illustration of Declaration and Call
+### <a name="illustration-of-declaration-and-call"></a>Illustration de la déclaration et de l’appel
 
-The following structure stores a signed 128-bit integer value as the constituent high-order and low-order parts. It defines the `+` operator to add two `veryLong` values and generate a resulting `veryLong` value.
+La structure suivante stocke une valeur d’entier 128 bits signée comme parties de poids fort et de poids faible constituantes. Il définit l’opérateur `+` pour ajouter deux valeurs `veryLong` et générer une valeur de `veryLong` résultante.
 
 [!code-vb[VbVbcnProcedures#23](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#23)]
 
-The following example shows a typical call to the `+` operator defined on `veryLong`.
+L’exemple suivant montre un appel typique à l’opérateur `+` défini sur `veryLong`.
 
 [!code-vb[VbVbcnProcedures#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#24)]
 
@@ -95,7 +95,7 @@ The following example shows a typical call to the `+` operator defined on `veryL
 - [Procédures Function](./function-procedures.md)
 - [Procédures de propriété](./property-procedures.md)
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
-- [Operator (instruction)](../../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Guide pratique : définir un opérateur](./how-to-define-an-operator.md)
 - [Guide pratique : définir un opérateur de conversion](./how-to-define-a-conversion-operator.md)
 - [Guide pratique : appeler une procédure d’opérateur](./how-to-call-an-operator-procedure.md)

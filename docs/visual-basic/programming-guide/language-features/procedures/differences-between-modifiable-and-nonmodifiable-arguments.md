@@ -16,26 +16,26 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341389"
 ---
 # <a name="differences-between-modifiable-and-nonmodifiable-arguments-visual-basic"></a>Différences entre les arguments modifiables et non modifiables (Visual Basic)
-When you call a procedure, you typically pass one or more arguments to it. Each argument corresponds to an underlying programming element. Both the underlying elements and the arguments themselves can be either modifiable or nonmodifiable.  
+Lorsque vous appelez une procédure, vous lui transmettez généralement un ou plusieurs arguments. Chaque argument correspond à un élément de programmation sous-jacent. Les éléments sous-jacents et les arguments peuvent eux-mêmes être modifiables ou non modifiables.  
   
-## <a name="modifiable-and-nonmodifiable-elements"></a>Modifiable and Nonmodifiable Elements  
- A programming element can be either a *modifiable element*, which can have its value changed, or a *nonmodifiable element*, which has a fixed value once it has been created.  
+## <a name="modifiable-and-nonmodifiable-elements"></a>Éléments modifiables et non modifiables  
+ Un élément de programmation peut être un *élément modifiable*, dont la valeur peut être modifiée ou un *élément non modifiable*, qui a une valeur fixe une fois qu’il a été créé.  
   
- The following table lists modifiable and nonmodifiable programming elements.  
+ Le tableau suivant répertorie les éléments de programmation modifiables et non modifiables.  
   
-|Modifiable elements|Nonmodifiable elements|  
+|Éléments modifiables|Éléments non modifiables|  
 |-------------------------|----------------------------|  
-|Local variables (declared inside procedures), including object variables, except for read-only|Read-only variables, fields, and properties|  
-|Fields (member variables of modules, classes, and structures), except for read-only|Constants and literals|  
-|Properties, except for read-only|Enumeration members|  
-|Array elements|Expressions (even if their elements are modifiable)|  
+|Variables locales (déclarées dans les procédures), y compris les variables objets, à l’exception de en lecture seule|Variables, champs et propriétés en lecture seule|  
+|Champs (variables de membre de modules, classes et structures), à l’exception de en lecture seule|Constantes et littéraux|  
+|Propriétés, à l’exception de lecture seule|Membres de l’énumération|  
+|Éléments de tableau|Expressions (même si leurs éléments sont modifiables)|  
   
-## <a name="modifiable-and-nonmodifiable-arguments"></a>Modifiable and Nonmodifiable Arguments  
- A *modifiable argument* is one with a modifiable underlying element. The calling code can store a new value at any time, and if you pass the argument [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), the code in the procedure can also modify the underlying element in the calling code.  
+## <a name="modifiable-and-nonmodifiable-arguments"></a>Arguments modifiables et non modifiables  
+ Un *argument modifiable* est un argument avec un élément sous-jacent modifiable. Le code appelant peut stocker une nouvelle valeur à tout moment, et si vous transmettez l’argument [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), le code de la procédure peut également modifier l’élément sous-jacent dans le code appelant.  
   
- A *nonmodifiable argument* either has a nonmodifiable underlying element or is passed [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). The procedure cannot modify the underlying element in the calling code, even if it is a modifiable element. If it is a nonmodifiable element, the calling code itself cannot modify it.  
+ Un *argument non modifiable* a un élément sous-jacent non modifiable ou est passé avec la valeur [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md). La procédure ne peut pas modifier l’élément sous-jacent dans le code appelant, même s’il s’agit d’un élément modifiable. S’il s’agit d’un élément non modifiable, le code appelant lui-même ne peut pas le modifier.  
   
- The called procedure might modify its local copy of a nonmodifiable argument, but that modification does not affect the underlying element in the calling code.  
+ La procédure appelée peut modifier sa copie locale d’un argument non modifiable, mais cette modification n’affecte pas l’élément sous-jacent dans le code appelant.  
   
 ## <a name="see-also"></a>Voir aussi
 

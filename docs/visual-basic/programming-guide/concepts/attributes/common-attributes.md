@@ -9,9 +9,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353526"
 ---
-# <a name="common-attributes-visual-basic"></a>Common Attributes (Visual Basic)
+# <a name="common-attributes-visual-basic"></a>Attributs communs (Visual Basic)
 
-This topic describes the attributes that are most commonly used in Visual Basic programs.
+Cette rubrique décrit les attributs les plus couramment utilisés dans les programmes Visual Basic.
 
 - [Attributs globaux](#Global)
 
@@ -21,7 +21,7 @@ This topic describes the attributes that are most commonly used in Visual Basic 
 
 - [Attributs d’informations de l’appelant](#CallerInfo)
 
-- [Visual Basic Attributes](#VB)
+- [Attributs Visual Basic](#VB)
 
 ## <a name="Global"></a> Attributs globaux
 
@@ -31,9 +31,9 @@ La plupart des attributs sont appliqués à des éléments de langage spécifiqu
 <Assembly: AssemblyVersion("1.0.0.0")>
 ```
 
-Global attributes appear in the source code after any top-level `Imports` statements and before any type, module, or namespace declarations. Les attributs globaux peuvent apparaître dans plusieurs fichiers sources, mais les fichiers doivent être compilés en un seul passage. For Visual Basic projects, global attributes are generally put in the AssemblyInfo.vb file (the file is created automatically when you create a project in Visual Studio).
+Les attributs globaux apparaissent dans le code source après les instructions de `Imports` de niveau supérieur et avant les déclarations de type, de module ou d’espace de noms. Les attributs globaux peuvent apparaître dans plusieurs fichiers sources, mais les fichiers doivent être compilés en un seul passage. Pour les projets Visual Basic, les attributs globaux sont généralement placés dans le fichier AssemblyInfo. vb (le fichier est créé automatiquement lorsque vous créez un projet dans Visual Studio).
 
-Les attributs d’assembly sont des valeurs qui fournissent des informations sur un assembly. Ils sont répartis dans les catégories suivantes :
+Les attributs d’assembly sont des valeurs qui fournissent des informations sur un assembly. Ils sont classés en plusieurs catégories :
 
 - Attributs d’identité de l’assembly
 
@@ -224,36 +224,36 @@ End Class
 
 Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :
 
-|Attribut|Description|Tapez|
+|Attribut|Description|Type|
 |---|---|---|
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin complet du fichier source qui contient l’appelant. C’est le chemin au moment de la compilation.|`String`|
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source à partir duquel la méthode est appelée.|`Integer`|
-|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. For more information, see [Caller Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).|`String`|
+|<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Nom de la méthode ou nom de la propriété de l’appelant. Pour plus d’informations, consultez [informations relatives à l’appelant (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).|`String`|
 
-For more information about the Caller Info attributes, see [Caller Information (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).
+Pour plus d’informations sur les attributs d’informations de l’appelant, consultez [informations relatives à l’appelant (Visual Basic)](../../../../visual-basic/programming-guide/concepts/caller-information.md).
 
-## <a name="VB"></a> Visual Basic Attributes
+## <a name="VB"></a>Attributs Visual Basic
 
-The following table lists the attributes that are specific to Visual Basic.
+Le tableau suivant répertorie les attributs qui sont spécifiques à Visual Basic.
 
 |Attribut|Fonction|
 |---------------|-------------|
-|<xref:Microsoft.VisualBasic.ComClassAttribute>|Indicates to the compiler that the class should be exposed as a COM object.|
-|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Allows module members to be accessed using only the qualification needed for the module.|
-|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Specifies the size of a fixed-length string in a structure for use with file input and output functions.|
-|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Specifies the size of a fixed array in a structure for use with file input and output functions.|
+|<xref:Microsoft.VisualBasic.ComClassAttribute>|Indique au compilateur que la classe doit être exposée en tant qu’objet COM.|
+|<xref:Microsoft.VisualBasic.HideModuleNameAttribute>|Permet aux membres du module d’être accessibles uniquement à l’aide de la qualification nécessaire pour le module.|
+|<xref:Microsoft.VisualBasic.VBFixedStringAttribute>|Spécifie la taille d’une chaîne de longueur fixe dans une structure à utiliser avec les fonctions d’entrée et de sortie de fichier.|
+|<xref:Microsoft.VisualBasic.VBFixedArrayAttribute>|Spécifie la taille d’un tableau fixe dans une structure à utiliser avec les fonctions d’entrée et de sortie de fichier.|
 
-### <a name="comclassattribute"></a>COMClassAttribute
+### <a name="comclassattribute"></a>Attribut
 
-Use `COMClassAttribute` to simplify the process of creating COM components from Visual Basic. COM objects are considerably different from .NET Framework assemblies, and without `COMClassAttribute`, you need to follow a number of steps to generate a COM object from Visual Basic. For classes marked with `COMClassAttribute`, the compiler performs many of these steps automatically.
+Utilisez `COMClassAttribute` pour simplifier le processus de création de composants COM à partir de Visual Basic. Les objets COM sont très différents des assemblys .NET Framework, et sans `COMClassAttribute`, vous devez suivre un certain nombre d’étapes pour générer un objet COM à partir de Visual Basic. Pour les classes marquées avec `COMClassAttribute`, le compilateur effectue automatiquement un grand nombre de ces étapes.
 
 ### <a name="hidemodulenameattribute"></a>HideModuleNameAttribute
 
-Use `HideModuleNameAttribute` to allow module members to be accessed by using only the qualification needed for the module.
+Utilisez `HideModuleNameAttribute` pour permettre aux membres du module d’être accessibles en utilisant uniquement la qualification nécessaire pour le module.
 
 ### <a name="vbfixedstringattribute"></a>VBFixedStringAttribute
 
-Use `VBFixedStringAttribute` to force Visual Basic to create a fixed-length string. Strings are of variable length by default, and this attribute is useful when storing strings to files. The following code demonstrates this:
+Utilisez `VBFixedStringAttribute` pour forcer Visual Basic à créer une chaîne de longueur fixe. Les chaînes sont de longueur variable par défaut, et cet attribut est utile lors du stockage de chaînes dans des fichiers. Le code suivant illustre cela :
 
 ```vb
 Structure Worker
@@ -267,7 +267,7 @@ End Structure
 
 ### <a name="vbfixedarrayattribute"></a>VBFixedArrayAttribute
 
-Use `VBFixedArrayAttribute` to declare arrays that are fixed in size. Like Visual Basic strings, arrays are of variable length by default. This attribute is useful when serializing or writing data to files.
+Utilisez `VBFixedArrayAttribute` pour déclarer des tableaux dont la taille est fixe. Comme Visual Basic chaînes, les tableaux sont de longueur variable par défaut. Cet attribut est utile lors de la sérialisation ou de l’écriture de données dans des fichiers.
 
 ## <a name="see-also"></a>Voir aussi
 

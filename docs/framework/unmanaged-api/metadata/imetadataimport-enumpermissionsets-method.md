@@ -40,36 +40,36 @@ HRESULT EnumPermissionSets
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `tk`  
- [in] A metadata token that limits the scope of the search, or NULL to search the widest scope possible.  
+ dans Un jeton de métadonnées qui limite l’étendue de la recherche, ou NULL pour effectuer une recherche dans l’étendue la plus étendue possible.  
   
  `dwActions`  
- [in] Flags representing the <xref:System.Security.Permissions.SecurityAction> values to include in `rPermission`, or zero to return all actions.  
+ dans Indicateurs représentant les valeurs <xref:System.Security.Permissions.SecurityAction> à inclure dans `rPermission`, ou zéro pour retourner toutes les actions.  
   
  `rPermission`  
- [out] The array used to store the Permission tokens.  
+ à Tableau utilisé pour stocker les jetons d’autorisation.  
   
  `cMax`  
  [in] Taille maximale du tableau `rPermission`.  
   
  `pcTokens`  
- [out] The number of Permission tokens returned in `rPermission`.  
+ à Nombre de jetons d’autorisation retournés dans `rPermission`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumPermissionSets` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumPermissionSets` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

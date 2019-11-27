@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441768"
 ---
 # <a name="imetadataemitsetclasslayout-method"></a>IMetaDataEmit::SetClassLayout, méthode
-Completes the layout of fields for a class that has been defined by a prior call to [DefineTypeDef Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
+Termine la disposition des champs pour une classe qui a été définie par un appel antérieur à la [méthode DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,32 +38,32 @@ HRESULT SetClassLayout (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] An `mdTypeDef` token that specifies the class to be laid out.  
+ dans Jeton `mdTypeDef` qui spécifie la classe à mettre en sortie.  
   
  `dwPackSize`  
- [in] The packing size: 1, 2, 4, 8 or 16 bytes. The packing size is the number of bytes between adjacent fields.  
+ dans Taille de compression : 1, 2, 4, 8 ou 16 octets. La taille de compression est le nombre d’octets entre les champs adjacents.  
   
  `rFieldOffsets`  
- [in] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) structures, each of which specifies a field of the class and the field's offset within the class. Terminate the array with `mdTokenNil`.  
+ dans Tableau de structures [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) , chacune spécifiant un champ de la classe et l’offset du champ dans la classe. Mettez fin au tableau avec `mdTokenNil`.  
   
  `ulClassSize`  
- [in] The size, in bytes, of the class.  
+ dans Taille, en octets, de la classe.  
   
 ## <a name="remarks"></a>Notes  
- The class is initially defined by calling the [IMetaDataEmit::DefineTypeDef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) method, and specifying one of three layouts for the fields of the class: automatic, sequential, or explicit. Normally, you would use automatic layout and let the runtime choose the best way to lay out the fields.  
+ La classe est initialement définie en appelant la méthode [IMetaDataEmit ::D efinetypedef](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-definetypedef-method.md) et en spécifiant l’une des trois dispositions pour les champs de la classe : automatique, séquentielle ou explicite. Normalement, vous utilisez la disposition automatique et laissez le runtime choisir la meilleure façon de disposer les champs.  
   
- However, you might want the fields laid out according to the arrangement that unmanaged code uses. In this case, choose either sequential or explicit layout and call `SetClassLayout` to complete the layout of the fields:  
+ Toutefois, vous souhaiterez peut-être disposer des champs présentés en fonction de la structure utilisée par le code non managé. Dans ce cas, choisissez une disposition séquentielle ou explicite et appelez `SetClassLayout` pour terminer la disposition des champs :  
   
-- Sequential layout: Specify the packing size. A field is aligned according to either its natural size or the packing size, whichever results in the smaller offset of the field. Set `rFieldOffsets` and `ulClassSize` to zero.  
+- Disposition séquentielle : spécifiez la taille de compression. Un champ est aligné en fonction de sa taille naturelle ou de sa taille de compression, selon la valeur la plus petite du décalage du champ. Définissez `rFieldOffsets` et `ulClassSize` sur zéro.  
   
-- Explicit layout: Either specify the offset of each field or specify the class size and the packing size.  
+- Disposition explicite : spécifiez le décalage de chaque champ ou spécifiez la taille de la classe et la taille de la compression.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

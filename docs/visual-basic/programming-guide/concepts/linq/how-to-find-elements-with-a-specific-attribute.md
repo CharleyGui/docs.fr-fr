@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343685"
 ---
-# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>How to: Find Elements with a Specific Attribute (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-elements-with-a-specific-attribute-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments avec un attribut spécifique (XPath-LINQ to XML) (Visual Basic)
 Parfois, vous souhaitez rechercher tous les éléments qui ont un attribut spécifique. Vous ne vous souciez pas du contenu de l'attribut. Au lieu de cela, vous souhaitez sélectionner les éléments en fonction de l'existence de l'attribut.  
   
- L’expression XPath est la suivante :  
+ L'expression XPath est la suivante :  
   
  `./*[@Select]`  
   
@@ -61,4 +61,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

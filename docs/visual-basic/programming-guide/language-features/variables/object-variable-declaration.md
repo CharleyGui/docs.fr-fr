@@ -20,20 +20,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351816"
 ---
 # <a name="object-variable-declaration-visual-basic"></a>Déclaration des variables objets (Visual Basic)
-You use a normal declaration statement to declare an object variable. For the data type, you specify either `Object` (that is, the [Object Data Type](../../../../visual-basic/language-reference/data-types/object-data-type.md)) or a more specific class from which the object is to be created.  
+Vous utilisez une instruction de déclaration normale pour déclarer une variable objet. Pour le type de données, vous spécifiez soit `Object` (autrement dit, le [type de données Object](../../../../visual-basic/language-reference/data-types/object-data-type.md)), soit une classe plus spécifique à partir de laquelle l’objet doit être créé.  
   
- Declaring a variable as `Object` is the same as declaring it as <xref:System.Object?displayProperty=nameWithType>.  
+ La déclaration d’une variable comme `Object` revient à la déclarer comme <xref:System.Object?displayProperty=nameWithType>.  
   
- When you declare a variable with a specific object class, it can access all the methods and properties exposed by that class and the classes from which it inherits. If you declare the variable with <xref:System.Object>, it can access only the members of the <xref:System.Object> class, unless you turn `Option Strict Off` to allow late binding.  
+ Quand vous déclarez une variable avec une classe d’objet spécifique, elle peut accéder à toutes les méthodes et propriétés exposées par cette classe et les classes dont elle hérite. Si vous déclarez la variable avec <xref:System.Object>, elle ne peut accéder qu’aux membres de la classe <xref:System.Object>, sauf si vous activez `Option Strict Off` pour autoriser la liaison tardive.  
   
 ## <a name="declaration-syntax"></a>Syntaxe de déclaration  
- Use the following syntax to declare an object variable:  
+ Pour déclarer une variable objet, utilisez la syntaxe ci-après :  
   
 ```vb  
 Dim variablename As [New] { objectclass | Object }  
 ```  
   
- You can also specify [Public](../../../../visual-basic/language-reference/modifiers/public.md), [Protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), `Protected Friend`, [Private](../../../../visual-basic/language-reference/modifiers/private.md), [Shared](../../../../visual-basic/language-reference/modifiers/shared.md), or [Static](../../../../visual-basic/language-reference/modifiers/static.md) in the declaration. The following example declarations are valid:  
+ Vous pouvez également spécifier [public](../../../../visual-basic/language-reference/modifiers/public.md), [protected](../../../../visual-basic/language-reference/modifiers/protected.md), [Friend](../../../../visual-basic/language-reference/modifiers/friend.md), `Protected Friend`, [Private](../../../../visual-basic/language-reference/modifiers/private.md), [Shared](../../../../visual-basic/language-reference/modifiers/shared.md)ou [static](../../../../visual-basic/language-reference/modifiers/static.md) dans la déclaration. Les exemples de déclarations suivants sont valides :  
   
 ```vb  
 Private objA As Object  
@@ -41,30 +41,30 @@ Static objB As System.Windows.Forms.Label
 Dim objC As System.OperatingSystem  
 ```  
   
-## <a name="late-binding-and-early-binding"></a>Late Binding and Early Binding  
- Sometimes the specific class is unknown until your code runs. In this case, you must declare the object variable with the `Object` data type. This creates a general reference to any type of object, and the specific class is assigned at run time. This is called *late binding*. Late binding requires additional execution time. It also limits your code to the methods and properties of the class you have most recently assigned to it. This can cause run-time errors if your code attempts to access members of a different class.  
+## <a name="late-binding-and-early-binding"></a>Liaison tardive et liaison précoce  
+ Parfois, la classe spécifique est inconnue jusqu’à ce que votre code s’exécute. Dans ce cas, vous devez déclarer la variable objet avec le type de données `Object`. Cela crée une référence générale à tout type d’objet, et la classe spécifique est assignée au moment de l’exécution. C’est ce que l’on appelle la *liaison tardive*. La liaison tardive requiert une durée d’exécution supplémentaire. Il limite également votre code aux méthodes et aux propriétés de la classe que vous avez récemment assignée. Cela peut provoquer des erreurs au moment de l’exécution si votre code tente d’accéder aux membres d’une classe différente.  
   
- When you know the specific class at compile time, you should declare the object variable to be of that class. Il s’agit de la *liaison anticipée*. Early binding improves performance and guarantees your code access to all the methods and properties of the specific class. In the preceding example declarations, if variable `objA` uses only objects of class <xref:System.Windows.Forms.Label?displayProperty=nameWithType>, you should specify `As System.Windows.Forms.Label` in its declaration.  
+ Lorsque vous connaissez la classe spécifique au moment de la compilation, vous devez déclarer la variable objet comme étant de cette classe. Il s’agit de la *liaison anticipée*. La liaison précoce améliore les performances et garantit que votre code accède à toutes les méthodes et propriétés de la classe spécifique. Dans les exemples de déclarations précédents, si la variable `objA` utilise uniquement des objets de la classe <xref:System.Windows.Forms.Label?displayProperty=nameWithType>, vous devez spécifier `As System.Windows.Forms.Label` dans sa déclaration.  
   
 ### <a name="advantages-of-early-binding"></a>Avantages de la liaison anticipée  
- Declaring an object variable as a specific class gives you several advantages:  
+ La déclaration d’une variable objet en tant que classe spécifique vous offre plusieurs avantages :  
   
-- Automatic type checking  
+- Vérification automatique des types  
   
-- Guaranteed access to all members of the specific class  
+- Accès garanti à tous les membres de la classe spécifique  
   
-- Microsoft IntelliSense support in the Code Editor  
+- Prise en charge de Microsoft IntelliSense dans l’éditeur de code  
   
-- Improved readability of your code  
+- Amélioration de la lisibilité de votre code  
   
-- Fewer errors in your code  
+- Moins d’erreurs dans votre code  
   
-- Errors caught at compile time rather than run time  
+- Erreurs détectées au moment de la compilation plutôt qu’au moment de l’exécution  
   
-- Faster code execution  
+- Exécution de code plus rapide  
   
-## <a name="access-to-object-variable-members"></a>Access to Object Variable Members  
- When `Option Strict` is turned `On`, an object variable can access only the methods and properties of the class with which you declare it. L'exemple suivant illustre ce comportement.  
+## <a name="access-to-object-variable-members"></a>Accès aux membres d’une variable objet  
+ Lorsque `Option Strict` est activé `On`, une variable objet peut accéder uniquement aux méthodes et aux propriétés de la classe avec laquelle vous la déclarez. L’exemple suivant illustre ces actions.  
   
 ```vb  
 ' Option statements must precede all other source file lines.  
@@ -86,8 +86,8 @@ End Sub
   
  Dans cet exemple, `p` peut utiliser uniquement les membres de la <xref:System.Object> classe proprement dite, qui n’incluent pas la propriété `Left` . En revanche, `q` a été déclaré comme étant de type <xref:System.Windows.Forms.Label>. Il peut donc utiliser toutes les méthodes et propriétés de la classe <xref:System.Windows.Forms.Label> dans l’espace de noms <xref:System.Windows.Forms> .  
   
-## <a name="flexibility-of-object-variables"></a>Flexibility of Object Variables  
- When working with objects in an inheritance hierarchy, you have a choice of which class to use for declaring your object variables. In making this choice, you must balance flexibility of object assignment against access to members of a class. For example, consider the inheritance hierarchy that leads to the <xref:System.Windows.Forms.Form?displayProperty=nameWithType> class:  
+## <a name="flexibility-of-object-variables"></a>Flexibilité des variables d’objet  
+ Lorsque vous utilisez des objets dans une hiérarchie d’héritage, vous avez le choix de la classe à utiliser pour déclarer vos variables d’objet. Dans ce choix, vous devez équilibrer la flexibilité de l’assignation d’objet par rapport à l’accès aux membres d’une classe. Par exemple, considérez la hiérarchie d’héritage qui amène la classe <xref:System.Windows.Forms.Form?displayProperty=nameWithType> :  
   
  <xref:System.Object>  
   
@@ -103,7 +103,7 @@ End Sub
   
  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<xref:System.Windows.Forms.Form>  
   
- Suppose your application defines a form class called `specialForm`, which inherits from class <xref:System.Windows.Forms.Form>. You can declare an object variable that refers specifically to `specialForm`, as the following example shows.  
+ Supposons que votre application définit une classe de formulaire appelée `specialForm`, qui hérite de la classe <xref:System.Windows.Forms.Form>. Vous pouvez déclarer une variable objet qui fait spécifiquement référence à `specialForm`, comme le montre l’exemple suivant.  
   
 ```vb  
 Public Class specialForm  
@@ -113,24 +113,24 @@ End Class
 Dim nextForm As New specialForm  
 ```  
   
- The declaration in the preceding example limits the variable `nextForm` to objects of class `specialForm`, but it also makes all the methods and properties of `specialForm` available to `nextForm`, as well as all the members of all the classes from which `specialForm` inherits.  
+ La déclaration de l’exemple précédent limite la variable `nextForm` aux objets de la classe `specialForm`, mais rend également toutes les méthodes et propriétés de `specialForm` disponibles pour `nextForm`, ainsi que tous les membres de toutes les classes dont `specialForm` hérite.  
   
- You can make an object variable more general by declaring it to be of type <xref:System.Windows.Forms.Form>, as the following example shows.  
+ Vous pouvez rendre une variable objet plus générale en la déclarant comme étant de type <xref:System.Windows.Forms.Form>, comme le montre l’exemple suivant.  
   
 ```vb  
 Dim anyForm As System.Windows.Forms.Form  
 ```  
   
- The declaration in the preceding example lets you assign any form in your application to `anyForm`. However, although `anyForm` can access all the members of class <xref:System.Windows.Forms.Form>, it cannot use any of the additional methods or properties defined for specific forms such as `specialForm`.  
+ La déclaration de l’exemple précédent vous permet d’assigner n’importe quel formulaire de votre application à `anyForm`. Toutefois, même si `anyForm` peut accéder à tous les membres de la classe <xref:System.Windows.Forms.Form>, il ne peut pas utiliser les méthodes ou propriétés supplémentaires définies pour des formulaires spécifiques tels que `specialForm`.  
   
- All the members of a base class are available to derived classes, but the additional members of a derived class are unavailable to the base class.  
+ Tous les membres d’une classe de base sont disponibles pour les classes dérivées, mais les membres supplémentaires d’une classe dérivée ne sont pas disponibles pour la classe de base.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variables.md)
 - [Assignation des variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variable-assignment.md)
 - [Valeurs des variables objets](../../../../visual-basic/programming-guide/language-features/variables/object-variable-values.md)
-- [How to: Declare an Object Variable and Assign an Object to It in Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
+- [Comment : déclarer une variable objet et lui assigner un objet dans Visual Basic](../../../../visual-basic/programming-guide/language-features/variables/how-to-declare-an-object-variable-and-assign-an-object-to-it.md)
 - [Guide pratique : accéder aux membres d’un objet](../../../../visual-basic/programming-guide/language-features/variables/how-to-access-members-of-an-object.md)
 - [New (opérateur)](../../../../visual-basic/language-reference/operators/new-operator.md)
 - [Option Strict (instruction)](../../../../visual-basic/language-reference/statements/option-strict-statement.md)

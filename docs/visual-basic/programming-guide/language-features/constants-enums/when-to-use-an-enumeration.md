@@ -12,35 +12,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353962"
 ---
 # <a name="when-to-use-an-enumeration-visual-basic"></a>Quand utiliser une énumération (Visual Basic)
-Enumerations offer an easy way to work with sets of related constants. An enumeration, or `Enum`, is a symbolic name for a set of values. Enumerations are treated as data types, and you can use them to create sets of constants for use with variables and properties.  
+Les énumérations offrent un moyen simple de travailler avec des ensembles de constantes associées. Une énumération, ou `Enum`, est un nom symbolique pour un ensemble de valeurs. Les énumérations sont traitées comme des types de données, et vous pouvez les utiliser pour créer des ensembles de constantes à utiliser avec des variables et des propriétés.  
   
 ## <a name="when-to-use-an-enumeration"></a>Quand utiliser une énumération  
- Whenever a procedure accepts a limited set of variables, consider using an enumeration. Enumerations make for clearer and more readable code, particularly when meaningful names are used.  
+ Chaque fois qu’une procédure accepte un ensemble limité de variables, envisagez d’utiliser une énumération. Les énumérations rendent le code plus clair et plus lisible, en particulier quand des noms explicites sont utilisés.  
   
- The benefits of using enumerations include:  
+ Les avantages de l’utilisation des énumérations sont les suivants :  
   
-- Reduces errors caused by transposing or mistyping numbers.  
+- Réduit les erreurs dues à la transposition ou à la frappe de nombres.  
   
-- Makes it easy to change values in the future.  
+- Facilite la modification des valeurs à l’avenir.  
   
-- Makes code easier to read, which means it is less likely that errors will creep into it.  
+- Rend le code plus facile à lire, ce qui signifie qu’il est moins probable que des erreurs se produiront.  
   
-- Ensures forward compatibility. With enumerations, your code is less likely to fail if in the future someone changes the values corresponding to the member names.  
+- Garantit la compatibilité ascendante. Avec les énumérations, votre code risque d’échouer si, à l’avenir, un utilisateur modifie les valeurs correspondant aux noms des membres.  
   
-## <a name="naming-enumerations"></a>Naming Enumerations  
- Use a naming convention for enumeration members. When Visual Basic encounters an enumeration member name, an exception may be thrown if other referenced type libraries contain the same name. Use a unique prefix that identifies the values from your application or component.  
+## <a name="naming-enumerations"></a>Énumération des noms  
+ Utilisez une convention d’affectation de noms pour les membres de l’énumération. Lorsque Visual Basic rencontre un nom de membre d’énumération, une exception peut être levée si d’autres bibliothèques de types référencées contiennent le même nom. Utilisez un préfixe unique qui identifie les valeurs de votre application ou composant.  
   
- When referring to a member of an enumeration, you must qualify the member name with the enumeration name or else use the `Imports` statement. For more information, see [Enumerations and Name Qualification](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
+ Lorsque vous faites référence à un membre d’une énumération, vous devez qualifier le nom du membre avec le nom de l’énumération ou utiliser l’instruction `Imports`. Pour plus d’informations, consultez [énumérations et qualification de nom](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md).  
   
-## <a name="predefined-enumerations"></a>Predefined Enumerations  
- Visual Basic provides a number of predefined enumerations, such as `FirstDayOfWeek` and `MsgBoxResult`, to facilitate your code. For a list of these see [Constants and Enumerations](../../../../visual-basic/language-reference/constants-and-enumerations.md).  
+## <a name="predefined-enumerations"></a>Énumérations prédéfinies  
+ Visual Basic fournit un certain nombre d’énumérations prédéfinies, telles que `FirstDayOfWeek` et `MsgBoxResult`, pour faciliter votre code. Pour obtenir la liste de ces [énumérations, consultez constantes et énumérations](../../../../visual-basic/language-reference/constants-and-enumerations.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
+- [Comment : déclarer une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)
 - [Guide pratique : faire référence à un membre d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)
 - [Énumérations et qualification de noms](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)
-- [How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
+- [Comment : itérer au sein d’une énumération dans Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)
 - [Guide pratique : déterminer la chaîne associée à une valeur d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)
 - [Enum (instruction)](../../../../visual-basic/language-reference/statements/enum-statement.md)
 - [Constantes et énumérations](../../../../visual-basic/language-reference/constants-and-enumerations.md)

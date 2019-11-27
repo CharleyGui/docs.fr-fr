@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446332"
 ---
 # <a name="isymunmanagedscopegetlocals-method"></a>ISymUnmanagedScope::GetLocals, méthode
-Gets the local variables defined within this scope.  
+Obtient les variables locales définies dans cette portée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,19 +37,19 @@ HRESULT GetLocals(
   
 ## <a name="parameters"></a>Paramètres  
  `cLocals`  
- [in] A `ULONG32` that indicates the size of the `locals` array.  
+ dans `ULONG32` qui indique la taille du tableau de `locals`.  
   
  `pcLocals`  
- [out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the local variables.  
+ à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables locales.  
   
  `locals`  
- [out] The array that receives the local variables.  
+ à Tableau qui reçoit les variables locales.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

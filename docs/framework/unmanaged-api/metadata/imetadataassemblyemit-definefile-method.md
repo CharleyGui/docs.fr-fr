@@ -39,29 +39,29 @@ HRESULT DefineFile (
   
 ## <a name="parameters"></a>Paramètres  
  `szName`  
- [in] The name of the file to be consumed.  
+ dans Nom du fichier à consommer.  
   
  `pbHashValue`  
- [in] A pointer to the hash data associated with the assembly.  
+ dans Pointeur vers les données de hachage associées à l’assembly.  
   
  `cbHashValue`  
- [in] The size in bytes of `pbHashValue`.  
+ dans Taille en octets de `pbHashValue`.  
   
  `dwFileFlags`  
- [in] A bitwise combination of `FileFlags` values that specify property settings.  
+ dans Combinaison d’opérations de bits de `FileFlags` valeurs qui spécifient des paramètres de propriété.  
   
  `pmdf`  
- [out] A pointer to the returned `File` token.  
+ à Pointeur vers le jeton de `File` retourné.  
   
 ## <a name="remarks"></a>Notes  
- One `File` metadata structure must be defined for each file that was part of this assembly at the time that this assembly was built, excluding the file that contains the metadata.  
+ Une `File` structure de métadonnées doit être définie pour chaque fichier qui faisait partie de cet assembly au moment de la génération de cet assembly, à l’exception du fichier qui contient les métadonnées.  
   
-## <a name="requirements"></a>spécifications  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

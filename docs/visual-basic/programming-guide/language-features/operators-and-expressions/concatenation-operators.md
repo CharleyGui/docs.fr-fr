@@ -32,9 +32,9 @@ Ces opérateurs peuvent également concaténer les variables `String`, comme ill
 
 ## <a name="differences-between-the-two-concatenation-operators"></a>Différences entre ces deux opérateurs de concaténation
 
-The [+ Operator](../../../../visual-basic/language-reference/operators/addition-operator.md) has the primary purpose of adding two numbers. Toutefois, il peut également concaténer des opérandes numériques avec des opérandes de chaîne. L'opérateur `+` comporte un ensemble complexe de règles qui déterminent s'il faut ajouter, concaténer, signaler une erreur du compilateur ou lever une exception <xref:System.InvalidCastException> d'exécution.
+L' [opérateur +](../../../../visual-basic/language-reference/operators/addition-operator.md) a l’objectif principal d’ajouter deux nombres. Toutefois, il peut également concaténer des opérandes numériques avec des opérandes de chaîne. L'opérateur `+` comporte un ensemble complexe de règles qui déterminent s'il faut ajouter, concaténer, signaler une erreur du compilateur ou lever une exception <xref:System.InvalidCastException> d'exécution.
 
-The [& Operator](../../../../visual-basic/language-reference/operators/concatenation-operator.md) is defined only for `String` operands, and it always widens its operands to `String`, regardless of the setting of `Option Strict`. L'opérateur `&` est recommandé pour la concaténation de chaîne car il est exclusivement défini pour les chaînes et limite les risques de conversion inattendue.
+L' [opérateur &](../../../../visual-basic/language-reference/operators/concatenation-operator.md) est défini uniquement pour les opérandes `String`, et élargit toujours ses opérandes à `String`, quel que soit le paramètre de `Option Strict`. L'opérateur `&` est recommandé pour la concaténation de chaîne car il est exclusivement défini pour les chaînes et limite les risques de conversion inattendue.
 
 ## <a name="performance-string-and-stringbuilder"></a>Performance : String et StringBuilder
 
@@ -43,7 +43,7 @@ Si vous effectuez un nombre important de manipulations sur une chaîne, telles q
 ## <a name="see-also"></a>Voir aussi
 
 - [Option Strict (instruction)](../../../../visual-basic/language-reference/statements/option-strict-statement.md)
-- [Types of String Manipulation Methods in Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
-- [Arithmetic Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
-- [Comparison Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Types de méthodes de manipulation de chaînes dans Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)
+- [Opérateurs arithmétiques dans Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/arithmetic-operators.md)
+- [Opérateurs de comparaison dans Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/comparison-operators.md)
+- [Opérateurs logiques et au niveau du bit dans Visual Basic](../../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

@@ -20,13 +20,13 @@ ms.locfileid: "74433623"
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- This topic shows how [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] can be used to expose the content and intrinsic properties of each cell within a tabular control.  
+ Cette rubrique montre comment vous pouvez utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour exposer le contenu et les propriétés intrinsèques de chaque cellule dans un contrôle tabulaire.  
   
 ## <a name="example"></a>Exemple  
- The following code example demonstrates how to obtain a <xref:System.Windows.Automation.AutomationElement> that represents the content of a table cell; cell properties such as row and column indices, row and column spans, and row and column header information are also obtained. This example uses a focus change event handler to simulate keyboard traversal of a tabular control that implements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Information for each table item is exposed on a focus change event.  
+ L’exemple de code suivant montre comment obtenir une <xref:System.Windows.Automation.AutomationElement> qui représente le contenu d’une cellule de tableau ; les propriétés de cellule telles que les index de ligne et de colonne, les étendues de ligne et de colonne, ainsi que les informations d’en-tête de ligne et de colonne sont également obtenues. Cet exemple utilise un gestionnaire d’événements de modification de focus pour simuler le parcours clavier d’un contrôle tabulaire qui implémente [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Les informations de chaque élément de table sont exposées sur un événement de modification de focus.  
   
 > [!NOTE]
-> Since focus changes are global desktop events, focus change events outside the table should be filtered. See the [TrackFocus Sample](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) for a related implementation.  
+> Étant donné que les modifications de focus sont des événements de bureau globaux, les événements de modification de focus en dehors de la table doivent être filtrés. Consultez l' [exemple TrackFocus](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771428(v=vs.90)) pour une implémentation connexe.  
   
  [!code-csharp[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIATableItemPattern_snip/CSharp/UIATableItemPattern_snippets.cs#starttarget)]
  [!code-vb[UIATableItemPattern_snip#StartTarget](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIATableItemPattern_snip/VisualBasic/UIATableItemPattern_snippets.vb#starttarget)]  
@@ -44,7 +44,7 @@ ms.locfileid: "74433623"
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
 - [Implémentation du modèle de contrôle Table d’UI Automation](implementing-the-ui-automation-table-control-pattern.md)
 - [Implémentation du modèle de contrôle TableItem d’UI Automation](implementing-the-ui-automation-tableitem-control-pattern.md)
 - [Implémentation du modèle de contrôle Grid d’UI Automation](implementing-the-ui-automation-grid-control-pattern.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448057"
 ---
 # <a name="imetadataemitmerge-method"></a>IMetaDataEmit::Merge, méthode
-Adds the specified imported scope to the list of scopes to be merged.  
+Ajoute l’étendue importée spécifiée à la liste des étendues à fusionner.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +37,23 @@ HRESULT Merge (
   
 ## <a name="parameters"></a>Paramètres  
  `pImport`  
- [in] A pointer to an [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) object that identifies the imported scope to be merged.  
+ dans Pointeur vers un objet [IMetaDataImport](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md) qui identifie l’étendue importée à fusionner.  
   
  `pIMap`  
- [in] A pointer to an [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) object that specifies the token re-map.  
+ dans Pointeur vers un objet [IMapToken](../../../../docs/framework/unmanaged-api/metadata/imaptoken-interface.md) qui spécifie le nouveau mappage du jeton.  
   
  `pHandler`  
- [in] A pointer to an [IUnknown](/cpp/atl/iunknown) object that specifies the errors.  
+ dans Pointeur vers un objet [IUnknown](/cpp/atl/iunknown) qui spécifie les erreurs.  
   
 ## <a name="remarks"></a>Notes  
- Call [IMetaDataEmit::MergeEnd](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) to trigger the merger of metadata into a single scope.  
+ Appelez [IMetaDataEmit :: MergeEnd,](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-mergeend-method.md) pour déclencher la fusion des métadonnées dans une seule portée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

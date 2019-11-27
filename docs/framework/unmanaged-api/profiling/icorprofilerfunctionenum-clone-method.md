@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447835"
 ---
 # <a name="icorprofilerfunctionenumclone-method"></a>ICorProfilerFunctionEnum::Clone, méthode
-Gets an interface pointer to a copy of this [ICorProfilerFunctionEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md) interface.  
+Obtient un pointeur d’interface vers une copie de cette interface [ICorProfilerFunctionEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,9 +33,9 @@ HRESULT Clone([out] ICorProfilerFunctionEnum **ppEnum);
   
 ## <a name="parameters"></a>Paramètres  
  `ppEnum`  
- [out] A pointer to the interface pointer, which, in turn, points to the copy of this [ICorProfilerFunctionEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md) interface. The copy of the enumerator maintains its own enumeration state separately from this enumerator. However, the copy's initial cursor position is the same as this enumerator's current cursor position.  
+ à Pointeur vers le pointeur d’interface qui, à son tour, pointe vers la copie de cette interface [ICorProfilerFunctionEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md) . La copie de l’énumérateur conserve son propre état d’énumération séparément de cet énumérateur. Toutefois, la position initiale du curseur de la copie est la même que la position actuelle du curseur de cet énumérateur.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

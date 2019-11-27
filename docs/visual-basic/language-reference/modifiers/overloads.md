@@ -23,15 +23,15 @@ Spécifie qu'une propriété ou une procédure redéclare une ou plusieurs propr
 
 ## <a name="remarks"></a>Notes
 
-*Overloading* is the practice of supplying more than one definition for a given property or procedure name in the same scope. Redeclaring a property or procedure with a different signature is sometimes called *hiding by signature*.
+La *surcharge* consiste à fournir plusieurs définitions pour un nom de propriété ou de procédure donné dans la même portée. La redéclaration d’une propriété ou d’une procédure avec une signature différente est parfois appelée *masquage par signature*.
 
 ## <a name="rules"></a>Règles
 
-- **Declaration Context.** You can use `Overloads` only in a property or procedure declaration statement.
+- **Contexte de déclaration.** Vous pouvez utiliser `Overloads` uniquement dans une instruction de déclaration de propriété ou de procédure.
 
-- **Combined Modifiers.** You cannot specify `Overloads` together with [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) in the same procedure declaration.
+- **Modificateurs combinés.** Vous ne pouvez pas spécifier `Overloads` avec des [Shadows](../../../visual-basic/language-reference/modifiers/shadows.md) dans la même déclaration de procédure.
 
-- **Required Differences.** The *signature* in this declaration must be different from the signature of every property or procedure that it overloads. La signature comprend le nom de la propriété ou de la procédure ainsi que les éléments suivants :
+- **Différences requises.** La *signature* de cette déclaration doit être différente de la signature de chaque propriété ou procédure qu’elle surcharge. La signature comprend le nom de la propriété ou de la procédure ainsi que les éléments suivants :
 
   - le nombre de paramètres
 
@@ -45,7 +45,7 @@ Spécifie qu'une propriété ou une procédure redéclare une ou plusieurs propr
 
   Toutes les surcharges doivent avoir le même nom, mais chacune doit différer de toutes les autres à l'égard d'une ou de plusieurs des raisons ci-dessus. Cela permet au compilateur de distinguer la version à utiliser quand le code appelle la propriété ou la procédure.
 
-- **Disallowed Differences.** La modification d'un ou de plusieurs des éléments suivants n'est pas valide pour la surcharge d'une propriété ou d'une procédure, parce qu'elles ne font pas partie de la signature :
+- **Différences non autorisées.** La modification d'un ou de plusieurs des éléments suivants n'est pas valide pour la surcharge d'une propriété ou d'une procédure, parce qu'elles ne font pas partie de la signature :
 
   - elle retourne ou non une valeur (pour une procédure)
 
@@ -59,9 +59,9 @@ Spécifie qu'une propriété ou une procédure redéclare une ou plusieurs propr
 
   - les mots clés de modificateur de propriété ou de procédure (tels que `Public` ou `Shared`)
 
-- **Optional Modifier.** You do not have to use the `Overloads` modifier when you are defining multiple overloaded properties or procedures in the same class. Toutefois, si vous utilisez `Overloads` dans l'une des déclarations, vous devez l'utiliser dans toutes.
+- **Modificateur facultatif.** Vous n’avez pas besoin d’utiliser le modificateur `Overloads` lorsque vous définissez plusieurs propriétés ou procédures surchargées dans la même classe. Toutefois, si vous utilisez `Overloads` dans l'une des déclarations, vous devez l'utiliser dans toutes.
 
-- **Shadowing and Overloading.** `Overloads` can also be used to shadow an existing member, or set of overloaded members, in a base class. Quand vous utilisez `Overloads` de cette façon, vous déclarez la propriété ou la méthode avec le même nom et la même liste de paramètres que le membre de classe de base, et vous ne spécifiez pas le mot clé `Shadows`.
+- **Occultation et surcharge.** `Overloads` peut également être utilisé pour occulter un membre existant ou un ensemble de membres surchargés dans une classe de base. Quand vous utilisez `Overloads` de cette façon, vous déclarez la propriété ou la méthode avec le même nom et la même liste de paramètres que le membre de classe de base, et vous ne spécifiez pas le mot clé `Shadows`.
 
 Si vous utilisez `Overrides`, le compilateur ajoute implicitement `Overloads` afin que vos API de bibliothèque fonctionnent plus facilement avec C#.
 
@@ -69,7 +69,7 @@ Le modificateur `Overloads` peut être utilisé dans les contextes suivants :
 
 - [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
 
-- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
 
 - [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
 

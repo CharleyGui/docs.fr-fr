@@ -26,19 +26,19 @@ Take count
   
 ## <a name="parts"></a>Composants  
  `count`  
- Requis. A value or an expression that evaluates to the number of elements of the sequence to return.  
+ Requis. Valeur ou expression qui prend la valeur du nombre d’éléments de la séquence à retourner.  
   
 ## <a name="remarks"></a>Notes  
- The `Take` clause causes a query to include a specified number of contiguous elements from the start of a results list. The number of elements to include is specified by the `count` parameter.  
+ La clause `Take` amène une requête à inclure un nombre spécifié d’éléments contigus à partir du début d’une liste de résultats. Le nombre d’éléments à inclure est spécifié par le paramètre `count`.  
   
- You can use the `Take` clause with the `Skip` clause to return a range of data from any segment of a query. To do this, pass the index of the first element of the range to the `Skip` clause and the size of the range to the `Take` clause. In this case, the `Take` clause must be specified after the `Skip` clause.  
+ Vous pouvez utiliser la clause `Take` avec la clause `Skip` pour retourner une plage de données à partir d’un segment d’une requête. Pour ce faire, transmettez l’index du premier élément de la plage à la clause `Skip` et la taille de la plage à la clause `Take`. Dans ce cas, la clause `Take` doit être spécifiée après la clause `Skip`.  
   
- When you use the `Take` clause in a query, you may also need to ensure that the results are returned in an order that will enable the `Take` clause to include the intended results. For more information about ordering query results, see [Order By Clause](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Lorsque vous utilisez la clause `Take` dans une requête, vous devrez peut-être également vous assurer que les résultats sont retournés dans un ordre qui permettra à la clause `Take` d’inclure les résultats souhaités. Pour plus d’informations sur la façon de classer les résultats d’une requête, consultez [clause ORDER BY](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- You can use the `TakeWhile` clause to specify that only certain elements be returned, depending on a supplied condition.  
+ Vous pouvez utiliser la clause `TakeWhile` pour spécifier que seuls certains éléments doivent être retournés, en fonction d’une condition fournie.  
   
 ## <a name="example"></a>Exemple  
- The following code example uses the `Take` clause together with the `Skip` clause to return data from a query in pages. The GetCustomers function uses the `Skip` clause to bypass the customers in the list until the supplied starting index value, and uses the `Take` clause to return a page of customers starting from that index value.  
+ L’exemple de code suivant utilise la clause `Take` avec la clause `Skip` pour retourner des données d’une requête dans des pages. La fonction GetCustomers utilise la clause `Skip` pour ignorer les clients de la liste jusqu’à la valeur d’index de départ fournie, et utilise la clause `Take` pour retourner une page de clients à partir de cette valeur d’index.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   

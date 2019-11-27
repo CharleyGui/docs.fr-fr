@@ -42,18 +42,18 @@ HRESULT GetGenerationBounds(
  [out] Pointeur vers un entier qui spécifie le nombre total de plages, dont une partie ou la totalité sera retournée dans le tableau `ranges`.  
   
  `ranges`  
- [out] An array of [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) structures, each of which describes a range (that is, block) of memory within the generation that is undergoing garbage collection.  
+ à Tableau de structures [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) , qui décrivent chacune une plage (autrement dit, un bloc) de mémoire dans la génération qui est en cours d’garbage collection.  
   
 ## <a name="remarks"></a>Notes  
  La méthode `GetGenerationBounds` peut être appelée à partir de tout rappel de profileur, à condition que le garbage collection ne soit pas en cours d'exécution.
 
  La plupart des décalages de générations ont lieu pendant les opérations de garbage collection. Les générations peuvent devenir plus volumineuses entre les collections, mais elles ne se déplacent généralement pas. Par conséquent, les endroits les plus intéressants pour appeler `GetGenerationBounds` sont dans `ICorProfilerCallback2::GarbageCollectionStarted` et `ICorProfilerCallback2::GarbageCollectionFinished`.  
   
- Pendant le démarrage du programme, certains objets sont alloués par le Common Language Runtime (CLR) lui-même, en général dans les générations 3 et 0. Ainsi, quand le code managé commence à s'exécuter, ces générations contiennent déjà des objets. Normalement, les générations 1 et 2 sont vides, à l'exception des objets factices qui sont générés par le garbage collector. (The size of dummy objects is 12 bytes in 32-bit implementations of the CLR; the size is larger in 64-bit implementations.) You might also see generation 2 ranges that are inside modules produced by the Native Image Generator (NGen.exe). In this case, the objects in generation 2 are *frozen objects*, which are allocated when NGen.exe runs rather than by the garbage collector.  
+ Pendant le démarrage du programme, certains objets sont alloués par le Common Language Runtime (CLR) lui-même, en général dans les générations 3 et 0. Ainsi, quand le code managé commence à s'exécuter, ces générations contiennent déjà des objets. Normalement, les générations 1 et 2 sont vides, à l'exception des objets factices qui sont générés par le garbage collector. (La taille des objets factices est de 12 octets dans les implémentations 32 bits du CLR ; la taille est supérieure dans les implémentations de 64 bits.) Vous pouvez également voir les plages de génération 2 qui se trouvent dans les modules produits par le générateur d’images natives (NGen. exe). Dans ce cas, les objets de la génération 2 sont des *objets figés*qui sont alloués quand Ngen. exe s’exécute plutôt que par le garbage collector.  
   
  Cette fonction utilise des mémoires tampons allouées par l'appelant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

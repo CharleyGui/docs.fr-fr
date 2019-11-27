@@ -67,7 +67,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 > [!NOTE]
 > Contrairement à ServiceModelReg.exe, WFServicesReg.exe n'autorise pas l'ajout, la suppression ou la réparation des mappages de scripts ou des gestionnaires correspondant à un site Web particulier. Pour contourner ce problème, consultez la section « Réparation des mappages de scripts ».  
   
-## <a name="usage-scenarios"></a>Scénarios d'utilisation  
+## <a name="usage-scenarios"></a>Scénarios d’utilisation  
   
 ### <a name="installing-iis-after-net-framework-35-is-installed"></a>Installation des services IIS après l'installation de .NET Framework 3.5  
  Sur un ordinateur [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], .NET Framework 3,5 est installé avant l’installation d’IIS. En raison de l’indisponibilité de la métabase IIS, l’installation de .NET Framework 3,5 s’effectue correctement sans installer les scriptmaps. xoml et. Rules.  
