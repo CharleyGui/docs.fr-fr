@@ -30,7 +30,7 @@ Les anciennes normes d’encodage de caractères se composaient de jeux de carac
 
 La classe <xref:System.Text.Encoding> représente un encodage de caractères. Ce tableau liste et décrit les types d’encodages disponibles.
 
-|Name|Description|
+|Nom|Description|
 |---|---|
 |<xref:System.Text.ASCIIEncoding>|Représente un encodage de caractères ASCII de caractères Unicode.|
 |<xref:System.Text.UnicodeEncoding>|Représente un encodage UTF-16 de caractères Unicode.|

@@ -27,7 +27,7 @@ Ces instructions ont pour but de vous aider à installer les versions du .NET Fr
 
 [.NET Framework 4.8](https://github.com/Microsoft/dotnet/tree/master/releases/net48) peut être utilisé pour exécuter des applications conçues pour .NET Framework version 4.0 ou ultérieure.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Suivez les instructions pour installer le [.NET Framework 3.5 sur Windows 8.1 et 10](dotnet-35-windows-10.md).
 

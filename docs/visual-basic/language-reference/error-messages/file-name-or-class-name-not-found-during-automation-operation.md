@@ -12,11 +12,11 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353724"
 ---
 # <a name="file-name-or-class-name-not-found-during-automation-operation-visual-basic"></a>Nom du fichier ou de la classe introuvable lors de l'opération Automation (Visual Basic)
-The name specified for file name or class in a call to the `GetObject` function could not be found.  
+Le nom spécifié pour le nom de fichier ou la classe dans un appel à la fonction `GetObject` est introuvable.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-- Check the names and try again. Make sure the name used for the `class` parameter matches that registered with the system.  
+- Vérifiez les noms, puis réessayez. Assurez-vous que le nom utilisé pour le paramètre `class` correspond à celui inscrit auprès du système.  
   
 ## <a name="see-also"></a>Voir aussi
 

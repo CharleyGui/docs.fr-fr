@@ -18,7 +18,7 @@ L’outil Manifest Generation and Editing (*Mage.exe*) est un outil en ligne de 
 
 Vous pouvez également utiliser *MageUI.exe*, une application graphique, à la place de *Mage.exe*. Pour plus d'informations, consultez [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’Invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’Invite de commandes développeur pour Visual Studio. Pour plus d’informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 Deux versions de *Mage.exe* et *MageUI.exe* sont founies avec Visual Studio. Pour afficher les informations de version, exécutez *MageUI.exe* et sélectionnez **Aide / ?** , puis **À propos de**. Cette documentation décrit la version 4.0.x.x de *Mage.exe* et *MageUI.exe*.
 
@@ -70,7 +70,7 @@ Le tableau suivant affiche les options prises en charge par les commandes `-New`
 |**-tr, -TrustLevel** `level`|Selon la zone dans laquelle réside l'URL de l'application.|Manifestes d'application.|Niveau de confiance à accorder à l'application sur les ordinateurs clients. Les valeurs possibles sont "Internet", "Intranet" et "FullTrust".|
 |**-um, -UseManifestForTrust** `willUseForTrust`|False|Manifestes d'application.|Spécifie si la signature numérique du manifeste d'application sera utilisée pour prendre des décisions d'approbation lorsque l'application s'exécute sur le client. Spécifier "true" ou "t" indique que le manifeste d'application sera utilisé pour les décisions d'approbation. Spécifier "false" ou "f" indique que la signature du manifeste de déploiement sera utilisée.|
 |**-v, -Version** `versionNumber`|1.0.0.0|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Version du déploiement. L’argument doit être une chaîne de version valide au format «*N.N.N.N*», où «*N*» est un entier 32 bits non signé.|
-|**-wpf, -WPFBrowserApp**  `isWPFApp`|False|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Utilisez cet indicateur uniquement si l'application est une application Windows Presentation Foundation (WPF) qui sera hébergée dans Internet Explorer et n'est pas un exécutable autonome. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Pour les manifestes d'application, insère l'attribut `hostInBrowser` sous l'élément `entryPoint` du manifeste d'application.<br /><br /> Pour les manifestes de déploiement, affecte la valeur false à l'attribut `install` sur l'élément `deployment` et enregistre le manifeste de déploiement avec une extension .xbap. La spécification de cet argument avec l’argument **-Install** génère une erreur car une application hébergée par le navigateur ne peut pas être une application hors ligne installée.|
+|**-wpf, -WPFBrowserApp**  `isWPFApp`|false|Manifestes d'application.<br /><br /> Manifestes de déploiement.|Utilisez cet indicateur uniquement si l'application est une application Windows Presentation Foundation (WPF) qui sera hébergée dans Internet Explorer et n'est pas un exécutable autonome. Les valeurs valides sont "true" ou "t", et "false" ou "f".<br /><br /> Pour les manifestes d'application, insère l'attribut `hostInBrowser` sous l'élément `entryPoint` du manifeste d'application.<br /><br /> Pour les manifestes de déploiement, affecte la valeur false à l'attribut `install` sur l'élément `deployment` et enregistre le manifeste de déploiement avec une extension .xbap. La spécification de cet argument avec l’argument **-Install** génère une erreur car une application hébergée par le navigateur ne peut pas être une application hors ligne installée.|
 
 ## <a name="sign-command-options"></a>Options de la commande Sign
 
@@ -118,13 +118,13 @@ Les tableaux suivants contiennent ces fonctionnalités et restrictions :
 |Version du manifeste|Opération|Mage v2.0|Mage v4.0|
 |----------------------|---------------|---------------|---------------|
 |Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouvrir|OK|OK|
-||Close|OK|OK|
+||Fermer|OK|OK|
 ||Enregistrer|OK|OK|
 ||Nouvelle signature|OK|OK|
 ||Nouveau|OK|Non pris en charge|
 ||Mise à jour (voir ci-dessous)|OK|OK|
 |Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouvrir|OK|OK|
-||Close|OK|OK|
+||Fermer|OK|OK|
 ||Enregistrer|OK|OK|
 ||Nouvelle signature|OK|OK|
 ||Nouveau|Non pris en charge|OK|

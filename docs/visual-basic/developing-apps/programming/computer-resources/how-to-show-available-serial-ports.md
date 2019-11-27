@@ -32,7 +32,7 @@ Cette rubrique explique comment utiliser `My.Computer.Ports` pour afficher les p
   
 ## <a name="compiling-the-code"></a>Compilation du code  
 
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Une référence de projet à System.Windows.Forms.dll  
   

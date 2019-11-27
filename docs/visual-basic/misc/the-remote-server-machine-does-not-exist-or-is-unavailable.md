@@ -1,5 +1,5 @@
 ---
-title: The remote server machine does not exist or is unavailable
+title: L’ordinateur serveur distant n’existe pas ou n’est pas disponible
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID462

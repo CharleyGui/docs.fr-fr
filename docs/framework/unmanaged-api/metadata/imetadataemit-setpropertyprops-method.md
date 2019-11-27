@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440546"
 ---
 # <a name="imetadataemitsetpropertyprops-method"></a>IMetaDataEmit::SetPropertyProps, méthode
-Sets the features stored in metadata for a property defined by a prior call to [DefineProperty Method](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
+Définit les fonctionnalités stockées dans les métadonnées d’une propriété définie par un appel antérieur à la [méthode DefineProperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -42,35 +42,35 @@ HRESULT SetPropertyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pr`  
- [in] The token for the property to be changed  
+ dans Jeton de la propriété à modifier.  
   
  `dwPropFlags`  
- [in] Property flags.  
+ dans Indicateurs de propriété.  
   
  `dwCPlusTypeFlag`  
- [in] The type of the property's default value.  
+ dans Type de la valeur par défaut de la propriété.  
   
  `pValue`  
- [in] The default value for the property.  
+ dans Valeur par défaut de la propriété.  
   
  `cchValue`  
- [in] The count of (Unicode) characters in `pValue`.  
+ dans Nombre de caractères (Unicode) dans `pValue`.  
   
  `mdSetter`  
- [in] The method that sets the property value.  
+ dans Méthode qui définit la valeur de la propriété.  
   
  `mdGetter`  
- [in] The method that gets the property value.  
+ dans Méthode qui obtient la valeur de la propriété.  
   
  `rmdOtherMethods[]`  
- [in] An array of other methods associated with the property. Terminate this array with an `mdTokenNil` token.  
+ dans Tableau d’autres méthodes associées à la propriété. Mettez fin à ce tableau avec un jeton `mdTokenNil`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

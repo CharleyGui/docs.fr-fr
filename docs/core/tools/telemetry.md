@@ -17,7 +17,7 @@ Le kit [SDK .NET Core](index.md) comprend une fonctionnalité de télémétrie q
 
 Les données collectées sont anonymes et publiées de manière groupée selon les termes de la [licence Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/). 
 
-## <a name="scope"></a>`Scope`
+## <a name="scope"></a>Portée
 
 `dotnet` a deux fonctions : exécuter les applications et exécuter les commandes CLI. Les informations de télémétrie *ne sont pas collectées* quand vous utilisez `dotnet` pour démarrer une application au format suivant :
 
@@ -91,7 +91,7 @@ Certaines commandes envoient des données supplémentaires. Un sous-ensemble de 
 
 Un sous-ensemble de commandes envoie les options sélectionnées si elles sont utilisées, ainsi que leurs valeurs :
 
-| Option                  | Commandes                                                                                       |
+| Option                  | Commands                                                                                       |
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Toutes les commandes                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |

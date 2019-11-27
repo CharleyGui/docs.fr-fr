@@ -49,9 +49,9 @@ Si vous vous intéressez à certains des principaux concepts de .NET, consultez�
 * [Composants architecturaux de .NET](components.md)
 * [.NET Standard](net-standard.md)
 * [Interopérabilité native](native-interop/index.md)
-* [Garbage collection](garbage-collection/index.md)
+* [Nettoyage de la mémoire](garbage-collection/index.md)
 * [Types de base dans .NET](base-types/index.md)
-* [Collections](collections/index.md)
+* [Regroupements](collections/index.md)
 * [Dates, heures et fuseaux horaires](datetime/index.md)
 * [Programmation asynchrone](async.md)
 
@@ -61,6 +61,6 @@ Vous pouvez également consulter le guide propre à chaque langage pour en savoi
 * [Guide F#](../fsharp/index.md)
 * [Guide Visual Basic](../visual-basic/index.md)
 
-## <a name="api-reference"></a>Informations de référence sur les API
+## <a name="api-reference"></a>Référence de l'API
 
 Consultez [Informations de référence sur les API .NET](../../api/index.md) pour découvrir l’éventail des API disponibles.

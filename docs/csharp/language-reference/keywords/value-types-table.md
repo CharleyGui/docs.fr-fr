@@ -1,5 +1,5 @@
 ---
-title: Value types table - C# reference
+title: Table des types valeur C# -référence
 ms.custom: seodec18
 ms.date: 11/06/2019
 helpviewer_keywords:
@@ -13,11 +13,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428464"
 ---
-# <a name="value-types-table-c-reference"></a>Value types table (C# reference)
+# <a name="value-types-table-c-reference"></a>Table des types valeurC# (référence)
 
 Le tableau suivant présente les types valeur dans C# :
 
-|Type de valeur|Category|
+|Type de valeur|Catégorie|
 |----------------|--------------|
 |[bool](bool.md)|Booléen|
 |`byte`|Non signé, numérique, [intégral](../builtin-types/integral-numeric-types.md)|

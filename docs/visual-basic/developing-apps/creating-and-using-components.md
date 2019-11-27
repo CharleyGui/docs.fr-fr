@@ -11,11 +11,11 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74330295"
 ---
-# <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants dans Visual Basic
+# <a name="creating-and-using-components-in-visual-basic"></a>Création et utilisation de composants en Visual Basic
 
-Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. A .NET Framework component is an object that is reusable, can interact with other objects, and provides control over external resources and design-time support.  
+Un *composant* est une classe qui implémente l’interface <xref:System.ComponentModel.IComponent?displayProperty=nameWithType> ou qui dérive directement ou indirectement d’une classe implémentant <xref:System.ComponentModel.IComponent>. Un composant .NET Framework est un objet réutilisable, qui peut interagir avec d’autres objets et permet de contrôler les ressources externes et la prise en charge au moment du Design.  
   
- Une caractéristique importante des composants est qu’ils peuvent servir au design, ce qui signifie qu’une classe qui est un composant peut être utilisée dans l’environnement de développement intégré (IDE) de Visual Studio. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. Notice that base design-time support for components is built into the .NET Framework; a component developer does not have to do any additional work to take advantage of the base design-time functionality.  
+ Une caractéristique importante des composants est qu’ils peuvent servir au design, ce qui signifie qu’une classe qui est un composant peut être utilisée dans l’environnement de développement intégré (IDE) de Visual Studio. Un composant peut être ajouté à la boîte à outils, faire l’objet d’un glisser-déplacer sur un formulaire et être manipulé sur une aire de conception. Notez que la prise en charge de base au moment du design pour les composants est intégrée au .NET Framework ; un développeur de composants n’a pas à effectuer de travail supplémentaire pour tirer parti des fonctionnalités de base au moment de la conception.  
   
  Un *contrôle* est similaire à un composant dans la mesure où tous les deux peuvent servir au design. Toutefois, un contrôle fournit une interface utilisateur, ce qui n’est pas le cas d’un composant. Un contrôle doit dériver de l’une des classes de contrôle de base : <xref:System.Windows.Forms.Control> ou <xref:System.Web.UI.Control>.  
   
@@ -37,31 +37,31 @@ Un *composant* est une classe qui implémente l’interface <xref:System.Compone
   
  Les classes de composant principales sont les suivantes :  
   
-- <xref:System.ComponentModel.Component>., Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>. Cette classe permet le partage d’objets entre applications.  
+- <xref:System.ComponentModel.Component> Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>. Cette classe permet le partage d’objets entre applications.  
   
-- <xref:System.ComponentModel.MarshalByValueComponent>., Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>.  
+- <xref:System.ComponentModel.MarshalByValueComponent> Implémentation de base pour l’interface <xref:System.ComponentModel.IComponent>.  
   
-- <xref:System.ComponentModel.Container>., Implémentation de base pour l’interface <xref:System.ComponentModel.IContainer>. Cette classe encapsule zéro, un ou plusieurs composants.  
+- <xref:System.ComponentModel.Container> Implémentation de base pour l’interface <xref:System.ComponentModel.IContainer>. Cette classe encapsule zéro, un ou plusieurs composants.  
   
  Les classes utilisées pour la gestion des licences des composants sont, entre autres, les suivantes :  
   
-- <xref:System.ComponentModel.License>., Classe de base abstraite pour toutes les licences. Une licence est accordée à une instance spécifique d’un composant.  
+- <xref:System.ComponentModel.License> Classe de base abstraite pour toutes les licences. Une licence est accordée à une instance spécifique d’un composant.  
   
-- <xref:System.ComponentModel.LicenseManager>., Fournit des propriétés et des méthodes permettant d’ajouter une licence à un composant et de gérer un <xref:System.ComponentModel.LicenseProvider>.  
+- <xref:System.ComponentModel.LicenseManager> Fournit des propriétés et des méthodes permettant d’ajouter une licence à un composant et de gérer un <xref:System.ComponentModel.LicenseProvider>.  
   
-- <xref:System.ComponentModel.LicenseProvider>., Classe de base abstraite pour l’implémentation d’un fournisseur de licences.  
+- <xref:System.ComponentModel.LicenseProvider> Classe de base abstraite pour l’implémentation d’un fournisseur de licences.  
   
-- <xref:System.ComponentModel.LicenseProviderAttribute>., Spécifie la classe <xref:System.ComponentModel.LicenseProvider> à utiliser avec une classe.  
+- <xref:System.ComponentModel.LicenseProviderAttribute> Spécifie la classe <xref:System.ComponentModel.LicenseProvider> à utiliser avec une classe.  
   
  Classes couramment utilisées pour la description et la persistance des composants.  
   
-- <xref:System.ComponentModel.TypeDescriptor>., Fournit des informations relatives aux caractéristiques d’un composant, telles que ses attributs, ses propriétés et ses événements.  
+- <xref:System.ComponentModel.TypeDescriptor> Fournit des informations relatives aux caractéristiques d’un composant, telles que ses attributs, ses propriétés et ses événements.  
   
-- <xref:System.ComponentModel.EventDescriptor>., Fournit des informations sur un événement.  
+- <xref:System.ComponentModel.EventDescriptor> Fournit des informations sur un événement.  
   
-- <xref:System.ComponentModel.PropertyDescriptor>., Fournit des informations sur une propriété.  
+- <xref:System.ComponentModel.PropertyDescriptor> Fournit des informations sur une propriété.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Dépannage de la création de contrôles et de composants](../../framework/winforms/controls/troubleshooting-control-and-component-authoring.md)  
  Explique comment résoudre certains problèmes courants.  

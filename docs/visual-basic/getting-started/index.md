@@ -47,7 +47,7 @@ Fournit des liens vers un exemple de code en Visual Basic.
 - [Procédures pas à pas](../../visual-basic/walkthroughs.md)\
 Fournit une liste de pages d’aide qui illustrent les aspects du langage Visual Basic.
 
-- [Feedback options for Visual Studio](/visualstudio/ide/feedback-options)\
+- [Options de commentaires pour Visual Studio](/visualstudio/ide/feedback-options)\
 Décrit la procédure à suivre pour recevoir de l'aide de la part des services de Support Technique et envoyer des commentaires.
 
 - [Visual Studio](/visualstudio/)\

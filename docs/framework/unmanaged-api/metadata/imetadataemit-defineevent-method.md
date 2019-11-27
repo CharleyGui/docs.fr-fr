@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432566"
 ---
 # <a name="imetadataemitdefineevent-method"></a>IMetaDataEmit::DefineEvent, méthode
-Creates a definition for an event with the specified metadata signature, and gets a token to that event definition.  
+Crée une définition pour un événement avec la signature de métadonnées spécifiée et obtient un jeton pour cette définition d’événement.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,38 +43,38 @@ HRESULT DefineEvent (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] The token for the target class or interface. This is either a `mdTypeDef` or `mdTypeDefNil` token.  
+ dans Jeton de la classe ou de l’interface cible. Il s’agit d’un jeton `mdTypeDef` ou `mdTypeDefNil`.  
   
  `szEvent`  
- [in] The name of the event.  
+ dans Nom de l’événement.  
   
  `dwEventFlags`  
- [in] Event flags.  
+ dans Indicateurs d’événement.  
   
  `tkEventType`  
- [in] The token for the event class. This is a `mdTypeDef`, a `mdTypeRef`, or a `mdTokenNil` token.  
+ dans Jeton de la classe d’événements. Il s’agit d’un `mdTypeDef`, d’un `mdTypeRef`ou d’un jeton de `mdTokenNil`.  
   
  `mdAddOn`  
- [in] The method used to subscribe to the event, or null.  
+ dans Méthode utilisée pour s’abonner à l’événement, ou null.  
   
  `mdRemoveOn`  
- [in] The method used to unsubscribe to the event, or null.  
+ dans Méthode utilisée pour annuler l’abonnement à l’événement, ou null.  
   
  `mdFire`  
- [in] The method used (by a derived class) to raise the event.  
+ dans Méthode utilisée (par une classe dérivée) pour déclencher l’événement.  
   
  `rmdOtherMethods[]`  
- [in] An array of tokens for other methods associated with the event. The array is terminated with a `mdMethodDefNil` token.  
+ dans Tableau de jetons pour d’autres méthodes associées à l’événement. Le tableau se termine par un jeton de `mdMethodDefNil`.  
   
  `pmdEvent`  
- [out] The metadata token assigned to the event.  
+ à Jeton de métadonnées affecté à l’événement.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

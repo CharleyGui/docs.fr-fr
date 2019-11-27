@@ -1,5 +1,5 @@
 ---
-title: événements
+title: Événements
 ms.date: 07/20/2015
 helpviewer_keywords:
 - events [Visual Basic], about events
@@ -13,12 +13,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345123"
 ---
 # <a name="events-visual-basic"></a>Événements (Visual Basic)
-While you might visualize a Visual Studio project as a series of procedures that execute in a sequence, in reality, most programs are event driven—meaning the flow of execution is determined by external occurrences called *events*.  
+Si vous pouvez visualiser un projet Visual Studio sous la forme d’une série de procédures qui s’exécutent dans une séquence, en réalité, la plupart des programmes sont pilotés par les événements, ce qui signifie que le déroulement de l’exécution est déterminé par des occurrences externes appelées *événements*.  
   
  Un événement est un signal qui informe l’application que quelque chose d’important s’est produit. Par exemple, lorsqu’un utilisateur clique sur un contrôle sur un formulaire, le formulaire peut déclencher un événement `Click` et appeler une procédure qui gère l’événement. Les événements permettent également à des tâches distinctes de communiquer. Supposons, par exemple, que votre application exécute une tâche de tri de façon distincte de l’application principale. Si un utilisateur annule le tri, votre application peut envoyer un événement d’annulation demandant l’arrêt du processus de tri.  
   
 ## <a name="event-terms-and-concepts"></a>Concepts et termes relatifs aux événements  
- This section describes the terms and concepts used with events in Visual Basic.  
+ Cette section décrit les termes et les concepts utilisés avec les événements dans Visual Basic.  
   
 ### <a name="declaring-events"></a>Déclaration d'événements  
  On déclare des événements dans des classes, des structures, des modules et des interfaces à l’aide du mot clé `Event`, comme dans l’exemple suivant :  
@@ -26,7 +26,7 @@ While you might visualize a Visual Studio project as a series of procedures that
  [!code-vb[VbVbalrEvents#24](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#24)]  
   
 ### <a name="raising-events"></a>Déclencher des événements  
- Un événement est comme un message qui annonce que quelque chose d’important s’est produit. L’acte de diffusion du message est appelé *déclenchement* de l’événement. In Visual Basic, you raise events with the `RaiseEvent` statement, as in the following example:  
+ Un événement est comme un message qui annonce que quelque chose d’important s’est produit. L’acte de diffusion du message est appelé *déclenchement* de l’événement. Dans Visual Basic, vous déclenchez des événements avec l’instruction `RaiseEvent`, comme dans l’exemple suivant :  
   
  [!code-vb[VbVbalrEvents#25](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#25)]  
   
@@ -38,7 +38,7 @@ While you might visualize a Visual Studio project as a series of procedures that
 ### <a name="event-handlers"></a>Gestionnaires d'événements  
  Les *gestionnaires d’événements* sont des procédures qui sont appelées lorsqu’un événement correspondant se produit. Une sous-routine valide avec une signature correspondante peut être utilisée comme gestionnaire d’événements. Il n’est pas possible d’utiliser une fonction comme gestionnaire d’événements, toutefois, car elle ne peut pas retourner de valeur à la source de l’événement.  
   
- Visual Basic uses a standard naming convention for event handlers that combines the name of the event sender, an underscore, and the name of the event. Par exemple, l’événement `Click` d’un bouton nommé `button1` serait nommé `Sub button1_Click`.  
+ Visual Basic utilise une convention d’affectation de noms standard pour les gestionnaires d’événements qui associe le nom de l’expéditeur de l’événement, un trait de soulignement et le nom de l’événement. Par exemple, l’événement `Click` d’un bouton nommé `button1` serait nommé `Sub button1_Click`.  
   
 > [!NOTE]
 > Nous recommandons d’utiliser cette convention d’affectation de noms pour définir des gestionnaires d’événements pour vos propres événements, mais ce n’est pas obligatoire ; il est possible d’utiliser n’importe quel nom de sous-routine valide.  
@@ -55,7 +55,7 @@ While you might visualize a Visual Studio project as a series of procedures that
   
 - Il n’est pas possible d’utiliser une variable `WithEvents` comme variable objet. Autrement dit, vous ne pouvez pas la déclarer comme `Object` : vous devez spécifier le nom de classe lorsque vous déclarez la variable.  
   
-- Because shared events are not tied to class instances, you cannot use `WithEvents` to declaratively handle shared events. De même, vous ne pouvez pas utiliser `WithEvents` ni `Handles` pour gérer les événements d’une `Structure`. Dans les deux cas, vous pouvez utiliser l’instruction `AddHandler` pour gérer ces événements.  
+- Étant donné que les événements partagés ne sont pas liés aux instances de classe, vous ne pouvez pas utiliser `WithEvents` pour gérer de façon déclarative les événements partagés. De même, vous ne pouvez pas utiliser `WithEvents` ni `Handles` pour gérer les événements d’une `Structure`. Dans les deux cas, vous pouvez utiliser l’instruction `AddHandler` pour gérer ces événements.  
   
 - Il n’est pas possible de créer des tableaux de variables `WithEvents`.  
   
@@ -63,7 +63,7 @@ While you might visualize a Visual Studio project as a series of procedures that
   
  Bien que la clause `Handles` représente le moyen standard d’associer un événement à un gestionnaire d’événements, elle est limitée à l’association d’événements avec des gestionnaires d’événements à la compilation.  
   
- In some cases, such as with events associated with forms or controls, Visual Basic automatically stubs out an empty event handler and associates it with an event. For example, when you double-click a command button on a form in design mode, Visual Basic creates an empty event handler and a `WithEvents` variable for the command button, as in the following code:  
+ Dans certains cas, par exemple avec des événements associés à des formulaires ou des contrôles, Visual Basic détourne automatiquement un gestionnaire d’événements vide et l’associe à un événement. Par exemple, lorsque vous double-cliquez sur un bouton de commande dans un formulaire en mode création, Visual Basic crée un gestionnaire d’événements vide et une variable `WithEvents` pour le bouton de commande, comme dans le code suivant :  
   
  [!code-vb[VbVbalrEvents#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#26)]  
   
@@ -95,7 +95,7 @@ While you might visualize a Visual Studio project as a series of procedures that
   
      [!code-vb[VbVbalrEvents#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#12)]  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  

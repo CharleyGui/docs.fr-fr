@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343547"
 ---
-# <a name="-codepage-visual-basic"></a>-codepage (Visual Basic)
+# <a name="-codepage-visual-basic"></a>-CodePage (Visual Basic)
 Spécifie la page de codes à utiliser pour tous les fichiers de code source inclus dans la compilation.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -26,15 +26,15 @@ Spécifie la page de codes à utiliser pour tous les fichiers de code source inc
   
 |Terme|Définition|  
 |---|---|  
-|`id`|Requis. The compiler uses the code page specified by `id` to interpret the encoding of the source files.|  
+|`id`|Requis. Le compilateur utilise la page de codes spécifiée par `id` pour interpréter l’encodage des fichiers sources.|  
   
 ## <a name="remarks"></a>Notes  
- To compile source code saved with a specific encoding, you can use `-codepage` to specify which code page should be used. The `-codepage` option applies to all source-code files in your compilation. For more information, see [Character Encoding in the .NET Framework](../../../standard/base-types/character-encoding.md).  
+ Pour compiler le code source enregistré avec un encodage spécifique, vous pouvez utiliser `-codepage` pour spécifier la page de codes à utiliser. L’option `-codepage` s’applique à tous les fichiers de code source de votre compilation. Pour plus d’informations, consultez [encodage de caractères dans le .NET Framework](../../../standard/base-types/character-encoding.md).  
   
- The `-codepage` option is not needed if the source-code files were saved using the current ANSI code page, Unicode, or UTF-8 with a signature. Visual Studio saves all source-code files with the current ANSI code page by default, unless the user specifies another encoding in the **Encoding** dialog box. Visual Studio uses the **Encoding** dialog box to open source-code files saved with a different code page.  
+ L’option `-codepage` n’est pas nécessaire si les fichiers de code source ont été enregistrés à l’aide de la page de codes ANSI, Unicode ou UTF-8 actuelle avec une signature. Visual Studio enregistre par défaut tous les fichiers de code source avec la page de codes ANSI actuelle, à moins que l’utilisateur spécifie un autre encodage dans la boîte de dialogue **encodage** . Visual Studio utilise la boîte de dialogue **encodage** pour ouvrir des fichiers de code source enregistrés avec une page de codes différente.  
   
 > [!NOTE]
-> The `-codepage` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
+> L’option `-codepage` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="see-also"></a>Voir aussi
 

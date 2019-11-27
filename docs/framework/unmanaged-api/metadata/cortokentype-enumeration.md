@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436468"
 ---
 # <a name="cortokentype-enumeration"></a>CorTokenType, énumération
-Indicates the type of a metadata token.  
+Indique le type d’un jeton de métadonnées.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -63,40 +63,40 @@ typedef enum CorTokenType {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`mdtModule`|An `mdModule` token.|  
-|`mdtTypeRef`|An `mdTypeRef` token.|  
-|`mdtTypeDef`|An `mdTypeDef` token.|  
-|`mdtFieldDef`|An `mdFieldDef` token.|  
-|`mdtMethodDef`|An `mdMethodDef` token.|  
-|`mdtParamDef`|An `mdParamDef` token.|  
-|`mdtInterfaceImpl`|An `mdInterfaceImpl` token.|  
-|`mdtMemberRef`|An `mdMemberRef` token.|  
-|`mdtCustomAttribute`|An `mdCustomAttribute` token.|  
-|`mdtPermission`|An `mdPermission` token.|  
-|`mdtSignature`|An `mdSignature` token.|  
-|`mdtEvent`|An `mdEvent` token.|  
-|`mdtProperty`|An `mdProperty` token.|  
-|`mdtModuleRef`|An `mdModuleRef` token.|  
-|`mdtTypeSpec`|An `mdTypeSpec` token.|  
-|`mdtAssembly`|An `mdAssembly` token.|  
-|`mdtAssemblyRef`|An `mdAssemblyRef` token.|  
-|`mdtFile`|An `mdFile` token.|  
-|`mdtExportedType`|An `mdExportedType` token.|  
-|`mdtManifestResource`|An `mdManifestResource` token.|  
-|`mdtGenericParam`|An `mdGenericParam` token.|  
-|`mdtMethodSpec`|An `mdMethodSpec` token.|  
-|`mdtGenericParamConstraint`|An `mdGenericParamConstraint` token.|  
-|`mdtString`|An `mdString` token.|  
-|`mdtName`|An `mdName` token.|  
+|`mdtModule`|Jeton `mdModule`.|  
+|`mdtTypeRef`|Jeton `mdTypeRef`.|  
+|`mdtTypeDef`|Jeton `mdTypeDef`.|  
+|`mdtFieldDef`|Jeton `mdFieldDef`.|  
+|`mdtMethodDef`|Jeton `mdMethodDef`.|  
+|`mdtParamDef`|Jeton `mdParamDef`.|  
+|`mdtInterfaceImpl`|Jeton `mdInterfaceImpl`.|  
+|`mdtMemberRef`|Jeton `mdMemberRef`.|  
+|`mdtCustomAttribute`|Jeton `mdCustomAttribute`.|  
+|`mdtPermission`|Jeton `mdPermission`.|  
+|`mdtSignature`|Jeton `mdSignature`.|  
+|`mdtEvent`|Jeton `mdEvent`.|  
+|`mdtProperty`|Jeton `mdProperty`.|  
+|`mdtModuleRef`|Jeton `mdModuleRef`.|  
+|`mdtTypeSpec`|Jeton `mdTypeSpec`.|  
+|`mdtAssembly`|Jeton `mdAssembly`.|  
+|`mdtAssemblyRef`|Jeton `mdAssemblyRef`.|  
+|`mdtFile`|Jeton `mdFile`.|  
+|`mdtExportedType`|Jeton `mdExportedType`.|  
+|`mdtManifestResource`|Jeton `mdManifestResource`.|  
+|`mdtGenericParam`|Jeton `mdGenericParam`.|  
+|`mdtMethodSpec`|Jeton `mdMethodSpec`.|  
+|`mdtGenericParamConstraint`|Jeton `mdGenericParamConstraint`.|  
+|`mdtString`|Jeton `mdString`.|  
+|`mdtName`|Jeton `mdName`.|  
 |`mdtBaseType`|Non utilisé.|  
   
 ## <a name="remarks"></a>Notes  
- Each value is equal to the value of the top byte in the corresponding metadata token.  
+ Chaque valeur est égale à la valeur de l’octet de poids le plus élevé dans le jeton de métadonnées correspondant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

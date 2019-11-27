@@ -36,7 +36,7 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  [Guide pratique : écrire du texte dans des fichiers à l'aide de Streamwriter](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-write-text-to-files-with-a-streamwriter.md)  
  Montre comment écrire dans un fichier avec un objet <xref:System.IO.StreamWriter?displayProperty=nameWithType>.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem`, ses méthodes et ses propriétés.  
@@ -50,7 +50,7 @@ Cette section explique comment effectuer des tâches qui impliquent l’écritur
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.WriteAllText%2A>  
  Décrit la méthode `WriteAllText`.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Explique comment effectuer les tâches qui impliquent la lecture de fichiers.  

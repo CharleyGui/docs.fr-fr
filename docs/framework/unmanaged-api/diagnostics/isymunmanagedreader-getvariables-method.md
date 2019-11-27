@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429761"
 ---
 # <a name="isymunmanagedreadergetvariables-method"></a>ISymUnmanagedReader::GetVariables, méthode
-Returns a non-local variable, given its parent and name.  
+Retourne une variable non locale, en fonction de son parent et de son nom.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,22 +38,22 @@ HRESULT GetVariables (
   
 ## <a name="parameters"></a>Paramètres  
  `parent`  
- [in] The parent of the variable.  
+ dans Parent de la variable.  
   
  `cVars`  
  [in] Taille du tableau `pVars`.  
   
  `pcVars`  
- [out] A pointer to the variable that receives the number of variables returned in `pVars`.  
+ à Pointeur vers la variable qui reçoit le nombre de variables retournées dans `pVars`.  
   
  `pVars`  
- [out] A pointer to the variable that receives the variables.  
+ à Pointeur vers la variable qui reçoit les variables.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

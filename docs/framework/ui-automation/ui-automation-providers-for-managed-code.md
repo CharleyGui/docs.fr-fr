@@ -19,10 +19,10 @@ ms.locfileid: "74441484"
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).  
   
- This section contains overviews and how-to topics that describe how to write [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] providers for custom [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] elements.  
+ Cette section contient des vues d’ensemble et des rubriques de procédures qui décrivent comment écrire des fournisseurs de [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour des éléments de [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] personnalisés.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Implémentation de fournisseur UI Automation côté serveur](server-side-ui-automation-provider-implementation.md)  
  [Vue d’ensemble des fournisseurs UI Automation](ui-automation-providers-overview.md)  
  [Implémentation de fournisseur UI Automation côté client](client-side-ui-automation-provider-implementation.md)  
- [Rubriques de guide pratique](ui-automation-providers-for-managed-code-how-to-topics.md)
+ [Rubriques pratiques](ui-automation-providers-for-managed-code-how-to-topics.md)

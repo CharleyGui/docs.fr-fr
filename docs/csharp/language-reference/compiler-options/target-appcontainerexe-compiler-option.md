@@ -10,7 +10,7 @@ ms.lasthandoff: 11/20/2019
 ms.locfileid: "74204523"
 ---
 # <a name="-targetappcontainerexe-c-compiler-options"></a>-target:appcontainerexe (Options du compilateur C#)
-Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compilateur crée un fichier exécutable Windows (.exe) qui doit être exécuté dans un conteneur d’application. This option is equivalent to [-target:winexe](./target-winexe-compiler-option.md) but is designed for Windows 8.x Store apps.  
+Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compilateur crée un fichier exécutable Windows (.exe) qui doit être exécuté dans un conteneur d’application. Cette option est équivalente à [-target : winexe,](./target-winexe-compiler-option.md) mais elle est conçue pour les applications du Windows 8. x Store.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Si vous utilisez l’option du compilateur **-target:appcontainerexe**, le compi
   
 2. Sous l’onglet **Application**, dans la liste **Type de sortie**, choisissez **Application Windows Store**.  
   
-     This option is available only for Windows 8.x Store app templates.  
+     Cette option est disponible uniquement pour les modèles d’application du Windows 8. x Store.  
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   

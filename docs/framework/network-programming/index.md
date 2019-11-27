@@ -64,7 +64,7 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  [Améliorations des performances de socket dans la version 3.5](socket-performance-enhancements-in-version-3-5.md)  
  Décrit un ensemble d'améliorations apportées à la classe <xref:System.Net.Sockets.Socket?displayProperty=nameWithType> dans la version 3.5, 3.0 SP1 et 2.0 SP1 qui fournit un autre modèle asynchrone pouvant être utilisé par les applications de socket spécialisées très performantes.  
   
- [Peer Name Resolution Protocol](peer-name-resolution-protocol.md)  
+ [Protocole PNRP](peer-name-resolution-protocol.md)  
  Décrit l’ajout de la prise en charge à la version 3.5 pour prendre en charge le protocole PNRP (Peer Name Resolution Protocol), une inscription de noms dynamiques et sans serveur et un protocole de résolution de noms. Ces nouvelles fonctionnalités sont prises en charge par l'espace de noms <xref:System.Net.PeerToPeer?displayProperty=nameWithType> .  
   
  [Collaboration pair à pair](peer-to-peer-collaboration.md)  
@@ -80,12 +80,12 @@ Microsoft .NET Framework fournit une implémentation en couche, extensible et ma
  Décrit les améliorations apportées aux espaces de noms <xref:System.Net?displayProperty=nameWithType>, <xref:System.Net.NetworkInformation?displayProperty=nameWithType>, et <xref:System.Net.Sockets?displayProperty=nameWithType> pour prendre en charge le parcours NAT avec IPv6 et Teredo.  
   
  [Isolement réseau pour les applications du Windows Store](network-isolation-for-windows-store-apps.md)  
- Describes the impact of network isolation when classes in the <xref:System.Net>, <xref:System.Net.Http>, and <xref:System.Net.Http.Headers> namespaces are used in Windows 8.x Store apps.  
+ Décrit l’impact de l’isolement réseau lorsque les classes des espaces de noms <xref:System.Net>, <xref:System.Net.Http>et <xref:System.Net.Http.Headers> sont utilisées dans les applications du Windows 8. x Store.  
   
  [Exemples de programmation réseau](network-programming-samples.md)  
  Liens vers des exemples téléchargeables de programmation qui utilisent des classes dans les espaces de noms <xref:System.Net>, <xref:System.Net.Cache>, <xref:System.Net.Configuration>, <xref:System.Net.Mail>, <xref:System.Net.Mime>, <xref:System.Net.NetworkInformation>, <xref:System.Net.PeerToPeer>, <xref:System.Net.Security>, <xref:System.Net.Sockets> .  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Net?displayProperty=nameWithType>  
  Constitue une interface de programmation simple pour un grand nombre des protocoles réseau employés aujourd'hui. Les classes <xref:System.Net.WebRequest?displayProperty=nameWithType> et <xref:System.Net.WebResponse?displayProperty=nameWithType> de cet espace de noms servent de base aux protocoles enfichables.  
   

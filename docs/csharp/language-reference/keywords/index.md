@@ -26,7 +26,7 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |---|---|---|---|  
 |[abstract](abstract.md)|[as](../operators/type-testing-and-cast.md#as-operator)|[base](base.md)|[bool](bool.md)|  
 |[break](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[case](switch.md)|[catch](try-catch.md)|  
-|[char](../builtin-types/char.md)|[checked](checked.md)|[class](class.md)|[const](const.md)|  
+|[char](../builtin-types/char.md)|[checked](checked.md)|[classe](class.md)|[const](const.md)|  
 |[continue](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[default](default.md)|[delegate](../builtin-types/reference-types.md)|  
 |[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[enum](enum.md)|  
 |[event](event.md)|[explicit](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](false-literal.md)|  
@@ -59,8 +59,8 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[let](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
 |[orderby](orderby-clause.md)|[partial (type)](partial-type.md)|[partial (méthode)](partial-method.md)|
 |[remove](remove.md)|[select](select-clause.md)|[set](set.md)|
-|[unmanaged (generic type constraint)](where-generic-type-constraint.md)|[valeur](value.md)|[var](var.md)|
-|[when (condition du filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
+|[non managé (contrainte de type générique)](where-generic-type-constraint.md)|[valeur](value.md)|[var](var.md)|
+|[when (condition de filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
 |[yield](yield.md)| | |
   
 ## <a name="see-also"></a>Voir aussi

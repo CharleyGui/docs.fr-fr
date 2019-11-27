@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446591"
 ---
 # <a name="assemblyoptions-enumeration"></a>Énumération AssemblyOptions
-Enumerates the assembly options.  
+Énumère les options de l’assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -56,31 +56,31 @@ typedef enum _AssemblyOptions {
   
 |Champ|Description|  
 |-----------|-----------------|  
-|optAssemTitle|String - Represents the assembly title.|  
-|optAssemDescription|String - Contains the assembly description.|  
-|optAssemConfig|String - Contains the assembly configuration.|  
-|optAssemOS|String - Encoded as: "dwOSPlatformId.dwOSMajorVersion.dwOSMinorVersion".|  
+|optAssemTitle|String : représente le titre de l’assembly.|  
+|optAssemDescription|Chaîne : contient la description de l’assembly.|  
+|optAssemConfig|Chaîne : contient la configuration de l’assembly.|  
+|optAssemOS|Encodée sous forme de chaîne comme : "dwOSPlatformId. dwOSMajorVersion. dwOSMinorVersion".|  
 |optAssemProcessor|ULONG|  
-|optAssemLocale|String - Contains the assembly locale.|  
-|optAssemVersion|String - Encoded as: "Major.Minor.Build.Revision".|  
-|optAssemCompany|String - Contains the company.|  
-|optAssemProduct|String - Contains the product name.|  
-|optAssemProductVersion|String (also known as InformationalVersion).|  
-|optAssemCopyright|String - Contains the copyright information.|  
-|optAssemTrademark|String - Contains the trademark information.|  
-|optAssemKeyFile|String (file name).|  
-|optAssemKeyName|String (The key name).|  
+|optAssemLocale|Chaîne : contient les paramètres régionaux de l’assembly.|  
+|optAssemVersion|Encodée sous forme de chaîne comme : "major. minor. Build. Revision".|  
+|optAssemCompany|Chaîne : contient la société.|  
+|optAssemProduct|Chaîne : contient le nom du produit.|  
+|optAssemProductVersion|Chaîne (également appelée InformationalVersion).|  
+|optAssemCopyright|Chaîne : contient les informations de copyright.|  
+|optAssemTrademark|Chaîne : contient les informations relatives à la marque.|  
+|optAssemKeyFile|Chaîne (nom de fichier).|  
+|optAssemKeyName|Chaîne (nom de la clé).|  
 |optAssemAlgID|ULONG|  
 |optAssemFlags|ULONG|  
-|optAssemHalfSign|Bool (Also known as DelaySign).|  
-|optAssemFileVersion|String - Encoded as "Major.Minor.Build.Revision"--same as ProductVersion.|  
-|optAssemSatelliteVer|String - Encoded as "Major.Minor.Build.Revision".|  
-|optLastAssemOption|A counter of the number of elements.|  
+|optAssemHalfSign|Bool (également appelé DelaySign).|  
+|optAssemFileVersion|Encodée sous forme de chaîne « major. minor. Build. Revision »--identique à ProductVersion.|  
+|optAssemSatelliteVer|Encodée sous forme de chaîne « major. minor. Build. revision ».|  
+|optLastAssemOption|Compteur du nombre d’éléments.|  
   
-## <a name="requirements"></a>spécifications  
- **Header:** alink.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** ALink. h  
   
- **Library**: alink.dll  
+ **Bibliothèque**: ALink. dll  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -26,7 +26,7 @@ Le [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130
 
 Le [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130&e6b34bbe-475b-1abd-2c51-b5034bcdd6d2=True) prend en charge les applications conçues pour le .NET Framework 4.0 à 4.6.
 
-## <a name="net-framework-35"></a>.NET Framework 3.5
+## <a name="net-framework-35"></a>.NET Framework 3.5
 
 Vous pouvez installer le [.NET Framework 3.5](https://dotnet.microsoft.com/download/dotnet-framework/net35-sp1) sur Windows Vista.
 

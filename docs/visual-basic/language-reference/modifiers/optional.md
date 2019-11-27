@@ -1,5 +1,5 @@
 ---
-title: Facultative
+title: Facultatif
 ms.date: 07/20/2015
 f1_keywords:
 - vb.Optional
@@ -17,17 +17,17 @@ ms.locfileid: "74351435"
 ---
 # <a name="optional-visual-basic"></a>Optional (Visual Basic)
 
-Specifies that a procedure argument can be omitted when the procedure is called.
+Spécifie qu’un argument de procédure peut être omis lorsque la procédure est appelée.
 
 ## <a name="remarks"></a>Notes
 
-For each optional parameter, you must specify a constant expression as the default value of that parameter. If the expression evaluates to [Nothing](../../../visual-basic/language-reference/nothing.md), the default value of the value data type is used as the default value of the parameter.
+Pour chaque paramètre facultatif, vous devez spécifier une expression constante comme valeur par défaut de ce paramètre. Si l’expression prend la valeur [Nothing](../../../visual-basic/language-reference/nothing.md), la valeur par défaut du type de données value est utilisée comme valeur par défaut du paramètre.
 
-If the parameter list contains an optional parameter, every parameter that follows it must also be optional.
+Si la liste de paramètres contient un paramètre facultatif, chaque paramètre qui le suit doit également être facultatif.
 
 Le modificateur `Optional` peut être utilisé dans les contextes suivants :
 
-- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)
+- [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)
 
 - [Function (instruction)](../../../visual-basic/language-reference/statements/function-statement.md)
 
@@ -36,14 +36,14 @@ Le modificateur `Optional` peut être utilisé dans les contextes suivants :
 - [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)
 
 > [!NOTE]
-> When calling a procedure with or without optional parameters, you can pass arguments by position or by name. For more information, see [Passing Arguments by Position and by Name](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
+> Lors de l’appel d’une procédure avec ou sans paramètres facultatifs, vous pouvez passer des arguments par position ou par nom. Pour plus d’informations, consultez [passage des arguments par position et par nom](../../../visual-basic/programming-guide/language-features/procedures/passing-arguments-by-position-and-by-name.md).
 
 > [!NOTE]
-> You can also define a procedure with optional parameters by using overloading. If you have one optional parameter, you can define two overloaded versions of the procedure, one that accepts the parameter and one that doesn’t. Pour plus d'informations, consultez [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
+> Vous pouvez également définir une procédure avec des paramètres facultatifs à l’aide de la surcharge. Si vous avez un paramètre facultatif, vous pouvez définir deux versions surchargées de la procédure, une qui accepte le paramètre et une autre qui ne l’est pas. Pour plus d'informations, consultez [Procedure Overloading](../../../visual-basic/programming-guide/language-features/procedures/procedure-overloading.md).
 
 ## <a name="example"></a>Exemple
 
-The following example defines a procedure that has an optional parameter.
+L’exemple suivant définit une procédure qui a un paramètre facultatif.
 
 ```vb
 Public Function FindMatches(ByRef values As List(Of String),
@@ -66,7 +66,7 @@ End Function
 
 ## <a name="example"></a>Exemple
 
-The following example demonstrates how to call a procedure with arguments passed by position and with arguments passed by name. The procedure has two optional parameters.
+L’exemple suivant montre comment appeler une procédure avec des arguments passés par position et avec des arguments passés par nom. La procédure a deux paramètres facultatifs.
 
 [!code-vb[VbVbalrKeywords#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class8.vb#21)]
 

@@ -18,7 +18,7 @@ ms.locfileid: "74204570"
 Les clichés instantanés permettent aux assemblys qui sont utilisés dans un domaine d'application d'être mis à jour sans décharger le domaine d'application. Ceci est particulièrement utile pour les applications qui doivent être disponibles en permanence, comme des sites ASP.NET.
 
 > [!IMPORTANT]
-> Shadow copying is not supported in Windows 8.x Store apps.
+> Les clichés instantanés ne sont pas pris en charge dans les applications du Windows 8. x Store.
 
 Le common language runtime verrouille un fichier d'assembly quand l'assembly est chargé, de sorte que le fichier ne peut pas être mis à jour jusqu'à ce que l'assembly soit déchargé. La seule façon de décharger un assembly d'un domaine d'application est de décharger le domaine d'application. Donc, dans des circonstances normales, un assembly ne peut pas être mis à jour sur le disque tant que tous les domaines d'application qui l'utilisent n'ont pas été déchargés.
 

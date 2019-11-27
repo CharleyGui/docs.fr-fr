@@ -23,10 +23,10 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74429736"
 ---
 # <a name="isymunmanagedreaderinitialize-method"></a>ISymUnmanagedReader::Initialize, méthode
-Initializes the symbol reader with the metadata importer interface that this reader will be associated with, along with the file name of the module.  
+Initialise le lecteur de symboles avec l’interface de l’importateur de métadonnées à laquelle ce lecteur sera associé, ainsi que le nom de fichier du module.  
   
 > [!NOTE]
-> This method can be called only once, and must be called before any other reader methods.  
+> Cette méthode ne peut être appelée qu’une seule fois et doit être appelée avant toute autre méthode de lecteur.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,25 +40,25 @@ HRESULT Initialize (
   
 ## <a name="parameters"></a>Paramètres  
  `importer`  
- [in] The metadata importer interface with which this reader will be associated.  
+ dans Interface de l’importateur de métadonnées à laquelle ce lecteur sera associé.  
   
  `filename`  
- [in] The file name of the module. You can use the `pIStream` parameter instead.  
+ dans Nom de fichier du module. Vous pouvez utiliser le paramètre `pIStream` à la place.  
   
  `searchPath`  
- [in] The path to search. Ce paramètre est optionnel.  
+ dans Chemin d’accès à rechercher. Ce paramètre est facultatif.  
   
  `pIStream`  
- [in] The file stream, used as an alternative to the filename parameter.  
+ dans Le flux de fichier, utilisé comme alternative au paramètre filename.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
 ## <a name="remarks"></a>Notes  
- You need to specify only one of the `filename` or the `pIStream` parameters, not both. Le paramètre `searchPath` est optionnel.  
+ Vous ne devez spécifier qu’un seul des paramètres `filename` ou `pIStream`, pas les deux. Le paramètre `searchPath` est optionnel.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

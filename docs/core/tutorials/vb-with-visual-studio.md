@@ -18,15 +18,15 @@ Cette rubrique fournit une introduction pas à pas pour la création, le déboga
 
 ## <a name="prerequisites"></a>Configuration requise
 
-[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), avec la charge de travail « Développement multiplateforme .Net Core » installée. You can develop your app with .NET Core 2.1 or later versions.
+[Visual Studio 2017](https://aka.ms/vsdownload?utm_source=mscom&utm_campaign=msdocs), avec la charge de travail « Développement multiplateforme .Net Core » installée. Vous pouvez développer votre application avec .NET Core 2,1 ou versions ultérieures.
 
-For more information, see [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
 ## <a name="a-simple-hello-world-application"></a>Une application Hello World simple
 
-Commencez par créer une application console « Hello World » simple. Procédez comme suit :
+Commencez par créer une application console « Hello World » simple. Suivez ces étapes :
 
-1. Lancez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue *Nouveau projet*\*, sélectionnez le nœud **Visual Basic** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « HelloWorld ». Sélectionnez le bouton **OK**.
+1. Lancez Visual Studio 2017. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue *Nouveau projet**, sélectionnez le nœud **Visual Basic** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « HelloWorld ». Sélectionnez le bouton **OK**.
 
    ![Boîte de dialogue Nouveau projet avec Application console sélectionné](./media/vb-with-visual-studio/visual-studio-new-project.png)
 

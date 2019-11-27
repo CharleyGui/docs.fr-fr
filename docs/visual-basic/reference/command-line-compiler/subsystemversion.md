@@ -13,7 +13,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348535"
 ---
-# <a name="-subsystemversion-visual-basic"></a>-subsystemversion (Visual Basic)
+# <a name="-subsystemversion-visual-basic"></a>-SubSystemVersion (Visual Basic)
 
 Spécifie la version minimale du sous-système sur lequel le fichier exécutable généré peut s’exécuter, déterminant ainsi les versions de Windows sur lesquelles le fichier exécutable peut s’exécuter. En règle générale, cette option garantit que le fichier exécutable peut tirer parti de fonctionnalités de sécurité particulières qui ne sont pas disponibles avec des versions antérieures de Windows.
 
@@ -44,7 +44,7 @@ Le tableau suivant répertorie les versions courantes de sous-système de Window
 |Windows XP|5.01|
 |Windows Server 2003|5.02|
 |Windows Vista|6.00|
-|Windows 7|6.01|
+|Windows 7|6.01|
 |Windows Server 2008|6.01|
 |[!INCLUDE[win8](~/includes/win8-md.md)]|6.02|
 
@@ -66,7 +66,7 @@ La valeur par défaut de l’option du compilateur **-subsystemversion** dépend
 
 ## <a name="setting-this-option"></a>Définition de cette option
 
-To set the **-subsystemversion** compiler option in Visual Studio, you must open the .vbproj file and specify a value for the `SubsystemVersion` property in the MSBuild XML. Vous ne pouvez pas définir cette option dans l’environnement IDE de Visual Studio. Pour plus d’informations, consultez « Valeurs par défaut » plus haut dans cette rubrique ou [Propriétés communes des projets MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
+Pour définir l’option de compilateur **-SubSystemVersion** dans Visual Studio, vous devez ouvrir le fichier. vbproj et spécifier une valeur pour la propriété `SubsystemVersion` dans le XML MSBuild. Vous ne pouvez pas définir cette option dans l’environnement IDE de Visual Studio. Pour plus d’informations, consultez « Valeurs par défaut » plus haut dans cette rubrique ou [Propriétés communes des projets MSBuild](/visualstudio/msbuild/common-msbuild-project-properties).
 
 ## <a name="see-also"></a>Voir aussi
 

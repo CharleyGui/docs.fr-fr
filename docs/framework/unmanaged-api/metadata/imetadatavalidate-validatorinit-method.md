@@ -36,17 +36,17 @@ HRESULT ValidatorInit (
   
 ## <a name="parameters"></a>Paramètres  
  `dwModule`  
- [in] A value of the [CorValidatorModuleType](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md) enumeration that specifies the type of the module in the current metadata scope.  
+ dans Valeur de l’énumération [CorValidatorModuleType,](../../../../docs/framework/unmanaged-api/metadata/corvalidatormoduletype-enumeration.md) qui spécifie le type du module dans la portée des métadonnées actuelle.  
   
  `pUnk`  
- [in] A pointer to an [IUnknown](/cpp/atl/iunknown) instance that serves as a function callback for validation errors.  
+ dans Pointeur vers une instance [IUnknown](/cpp/atl/iunknown) qui sert de rappel de fonction pour les erreurs de validation.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

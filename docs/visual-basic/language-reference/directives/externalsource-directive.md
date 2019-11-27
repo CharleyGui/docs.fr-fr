@@ -21,7 +21,7 @@ ms.locfileid: "74343829"
 ---
 # <a name="externalsource-directive"></a>#ExternalSource, directive
 
-Indicates a mapping between specific lines of source code and text external to the source.  
+Indique un mappage entre des lignes spécifiques de code source et du texte externe à la source.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,24 +34,24 @@ Indicates a mapping between specific lines of source code and text external to t
 ## <a name="parts"></a>Composants  
 
  `StringLiteral`  
- The path to the external source.  
+ Chemin d’accès à la source externe.  
   
  `IntLiteral`  
- The line number of the first line of the external source.  
+ Numéro de ligne de la première ligne de la source externe.  
   
  `LogicalLine`  
- The line where the error occurs in the external source.  
+ Ligne où l’erreur se produit dans la source externe.  
   
  `#End ExternalSource`  
  Met fin au bloc `#ExternalSource`.  
   
 ## <a name="remarks"></a>Notes  
 
- This directive is used only by the compiler and the debugger.  
+ Cette directive est utilisée uniquement par le compilateur et le débogueur.  
   
- A source file may include external source directives, which indicate a mapping between specific lines of code in the source file and text external to the source, such as an .aspx file. If errors are encountered in the designated source code during compilation, they are identified as coming from the external source.  
+ Un fichier source peut inclure des directives de source externe, qui indiquent un mappage entre des lignes de code spécifiques dans le fichier source et du texte externe à la source, tel qu’un fichier. aspx. Si des erreurs sont rencontrées dans le code source désigné pendant la compilation, elles sont identifiées comme provenant de la source externe.  
   
- External source directives have no effect on compilation and cannot be nested. They are intended for internal use by the application only.  
+ Les directives de source externe n’ont aucun effet sur la compilation et ne peuvent pas être imbriquées. Ils sont destinés à un usage interne par l’application uniquement.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344662"
 ---
-# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>How to: Find Elements in a Namespace (XPath-LINQ to XML) (Visual Basic)
-Les expressions XPath peuvent rechercher des nœuds dans un espace de noms particulier. Les expressions XPath utilisent des préfixes d'espaces de noms pour spécifier des espaces de noms. Pour analyser une expression XPath qui contient des préfixes d'espaces de noms, vous devez passer un objet aux méthodes XPath qui implémente <xref:System.Xml.IXmlNamespaceResolver>. Cet exemple utilise <xref:System.Xml.XmlNamespaceManager>.  
+# <a name="how-to-find-elements-in-a-namespace-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments dans un espace de noms (XPath-LINQ to XML) (Visual Basic)
+Les expressions XPath peuvent rechercher des nœuds dans un espace de noms particulier. Les expressions XPath utilisent des préfixes d’espaces de noms pour spécifier des espaces de noms. Pour analyser une expression XPath qui contient des préfixes d'espaces de noms, vous devez passer un objet aux méthodes XPath qui implémente <xref:System.Xml.IXmlNamespaceResolver>. Cet exemple utilise <xref:System.Xml.XmlNamespaceManager>.  
   
- L’expression XPath est la suivante :  
+ L'expression XPath est la suivante :  
   
  `./aw:*`  
   
@@ -82,4 +82,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

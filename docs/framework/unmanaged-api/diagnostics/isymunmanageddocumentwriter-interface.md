@@ -29,10 +29,10 @@ Fournit des méthodes d'écriture dans un document référencé par un magasin d
 |Méthode|Description|  
 |------------|-----------------|  
 |[SetCheckSum, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setchecksum-method.md)|Définit les informations de la somme de contrôle.|  
-|[SetSource, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|Sets embedded source for a document that is being written.|  
+|[SetSource, méthode](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocumentwriter-setsource-method.md)|Définit la source incorporée pour un document en cours d’écriture.|  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

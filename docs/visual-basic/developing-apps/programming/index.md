@@ -1,5 +1,5 @@
 ---
-title: Programming
+title: Langage
 ms.date: 07/20/2015
 helpviewer_keywords:
 - programming [Visual Basic], Visual Basic
@@ -33,7 +33,7 @@ Cette section décrit les tâches de programmation qu’il peut être intéressa
  [Accès aux services web d’une application](../../../visual-basic/developing-apps/programming/accessing-application-web-services.md)  
  Contient une documentation sur l’accès aux services web référencés par l’application avec l’objet `My.WebServices`.  
   
- [Accès aux paramètres d’application](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
+ [Accessing Application Settings](../../../visual-basic/developing-apps/programming/app-settings/index.md)  
  Contient une documentation sur l’accès aux paramètres d’une application avec l’objet `My.Settings`.  
   
  [Traitement de lecteurs, de répertoires et de fichiers](drives-directories-files/index.md)  

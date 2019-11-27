@@ -32,9 +32,9 @@ Un *élément déclaré* est un élément de programmation qui est défini dans 
   
 - [Sub (instruction)](../../../../visual-basic/language-reference/statements/sub-statement.md)  
   
-- [Declare (instruction)](../../../../visual-basic/language-reference/statements/declare-statement.md)  
+- [Declare Statement](../../../../visual-basic/language-reference/statements/declare-statement.md)  
   
-- [Operator (instruction)](../../../../visual-basic/language-reference/statements/operator-statement.md)  
+- [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md)  
   
 - [Property (instruction)](../../../../visual-basic/language-reference/statements/property-statement.md)  
   
@@ -52,7 +52,7 @@ Un *élément déclaré* est un élément de programmation qui est défini dans 
  [Références aux éléments déclarés](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)  
  Décrit comment le compilateur met en correspondance une référence avec une déclaration, et comment qualifier un nom.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Structure de programme et conventions de codage](../../../../visual-basic/programming-guide/program-structure/program-structure-and-code-conventions.md)  
  Présente des recommandations pour rendre votre code plus facile à lire, à comprendre et à gérer.  
   

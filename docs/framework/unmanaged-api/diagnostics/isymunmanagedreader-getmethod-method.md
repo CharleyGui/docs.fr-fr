@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448275"
 ---
 # <a name="isymunmanagedreadergetmethod-method"></a>ISymUnmanagedReader::GetMethod, méthode
-Gets a symbol reader method, given a method token.  
+Obtient une méthode de lecteur de symboles, en fonction d’un jeton de méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT GetMethod (
   
 ## <a name="parameters"></a>Paramètres  
  `token`  
- [in] The method token.  
+ dans Jeton de méthode.  
   
  `pRetVal`  
- [out] A pointer to the returned interface.  
+ à Pointeur vers l’interface retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -35,7 +35,7 @@ Si vous utilisez l’option du compilateur **-target:winmdobj**, le compilateur 
   
 3. Dans la liste **Type de sortie**, choisissez **Fichier WinMD**.  
   
-     The **WinMD File** option is available only for Windows 8.x Store app templates.  
+     L’option de **fichier WinMD** est disponible uniquement pour les modèles d’application du Windows 8. x Store.  
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   

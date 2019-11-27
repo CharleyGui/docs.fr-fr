@@ -23,9 +23,9 @@ Visual Studio pour Mac fournit un environnement de développement intégré (ID
 
 ## <a name="prerequisites"></a>Configuration requise
 
-See the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos) topic.
+Consultez la rubrique [dépendances et exigences de .net Core](../install/dependencies.md?tabs=netcore30&pivots=os-macos) .
 
-Check the [.NET Core Support](/visualstudio/mac/net-core-support) article to ensure you're using a supported version of .NET Core.
+Consultez l’article sur la [prise en charge de .net Core](/visualstudio/mac/net-core-support) pour vous assurer que vous utilisez une version prise en charge de .net core.
 
 ## <a name="get-started"></a>Prise en main
 

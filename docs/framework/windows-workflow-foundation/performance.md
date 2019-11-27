@@ -21,7 +21,7 @@ ms.locfileid: "74283236"
 
  Windows Communication Foundation (WCF) est le modèle de programmation unifié de Microsoft pour la création d’applications orientées service. Il a été introduit pour la première fois dans le cadre de .NET 3,0 avec WF3 et est maintenant l’un des principaux composants de l' .NET Framework.
 
- Windows Server AppFabric est un jeu de technologies intégrées permettant de générer, mettre à l'échelle et gérer facilement des applications Web et composites qui s'exécutent sur les Services Internet (IIS). Il fournit des outils pour déployer, surveiller et gérer les services et les workflows. Pour plus d’informations, consultez [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
+ Windows Server AppFabric est un jeu de technologies intégrées qui permettent de générer, de faire évoluer et de gérer facilement des applications Web et composites qui s'exécutent sur IIS. Il fournit des outils pour déployer, surveiller et gérer les services et les workflows. Pour plus d’informations, consultez [Windows Server AppFabric 1,0](https://docs.microsoft.com/previous-versions/appfabric/ff384253(v=azure.10)).
 
 ## <a name="goals"></a>Objectifs
  Cette rubrique a pour objectif d'illustrer les caractéristiques de performances de WF4 à l'aide des données mesurées pour différents scénarios. Elle présente également une comparaison détaillée entre WF4 et WF3, qui permet d'illustrer les grandes améliorations apportées à cette nouvelle révision. Les scénarios et données présentés dans cet article permettent de quantifier le coût sous-jacent de différents aspects de WF4 et WF3. Ces données permettent de comprendre les caractéristiques de performances générales de WF4 et peuvent s'avérer utiles pour planifier les migrations de WF3 vers WF4 ou utiliser WF4 pour le développement d'applications. Toutefois, nous vous recommandons de faire preuve de prudence lorsque vous tirez des conclusions des données présentées dans cet article. Les performances d'une application de workflow composite dépendent beaucoup de la façon dont le workflow est implémenté et de la manière dont les différents composants sont intégrés. Il est nécessaire d'évaluer chaque application afin de déterminer ses caractéristiques de performances.
@@ -166,7 +166,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
 
 ![Flux de travail de compensation de base WF3 et WF4](./media/performance/basic-compensation-workflows-wf3-wf4.gif)
 
-### <a name="performance-test-results"></a>Résultats des test de performances
+### <a name="performance-test-results"></a>Résultats du test de performances
 
  ![Tableau contenant les données des résultats des tests de performances](./media/performance/performance-test-data.gif)
 
@@ -201,7 +201,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
  Dans une application de service de flux de travail WCF, la latence pour le démarrage d’un nouveau Workflow ou le chargement d’un flux de travail existant est importante, car elle peut être bloquée.  Ce cas de test compare un hôte XOML WF3 à un hôte XAMLX WF4 dans un scénario classique.
 
 ##### <a name="environment-setup"></a>Configuration de l'environnement
- ![Configuration de l'environnement pour les tests de latence et de débit](./media/performance/latency-throughput-environment-setup.gif)
+ ![Environnement configuré pour les tests de latence et de débit](./media/performance/latency-throughput-environment-setup.gif)
 
 ##### <a name="test-setup"></a>Configuration du test
  Dans le scénario, un ordinateur client contacte un service de flux de travail WCF à l’aide de la corrélation basée sur le contexte.  La corrélation de contexte nécessite une liaison de contexte spéciale et utilise un en-tête ou un cookie de contexte pour lier les messages à l’instance de workflow correcte.  Elle offre un avantage en termes de performances, car dans la mesure où l'ID de corrélation se trouve dans l'en-tête du message, il n'est pas nécessaire d'analyser le corps du message.
@@ -218,7 +218,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
 
  ![Histogramme présentant la latence à froid et à chaud pour les services de workflow WCF à l’aide de WF3 et WF4](./media/performance/latency-results-graph.gif)
 
- Dans le graphique précédent, Cold fait référence au cas où il n’existe pas de <xref:System.ServiceModel.WorkflowServiceHost> existant pour le workflow donné.  En d'autres termes, la latence à froid correspond au cas dans lequel le workflow est utilisé pour la première fois et le XOML ou le XAML doit être compilé.  La latence à chaud correspond à la création d'une nouvelle instance de workflow lorsque le type de workflow a déjà été compilé.  La complexité du workflow a très peu d'impact dans le cas de WF4, mais a une progression linéaire dans le cas de WF3.
+ Dans le graphique précédent, Cold fait référence au cas où il n’existe pas de <xref:System.ServiceModel.WorkflowServiceHost> existant pour le workflow donné.  En d'autres termes, la latence froide indique le moment où le flux de travail est utilisé pour la première fois et le XOML ou le XAML doit être compilé.  La latence chaude indique le moment où une nouvelle instance de flux de travail doit être créée lorsque le type de flux de travail a déjà été compilé.  La complexité du workflow a très peu d'impact dans le cas de WF4, mais a une progression linéaire dans le cas de WF3.
 
 #### <a name="correlation-throughput"></a>Débit de corrélation
  WF4 introduit une nouvelle fonctionnalité de corrélation basée sur le contenu.  WF3 offrait seulement la corrélation basée sur le contexte.  La corrélation basée sur le contexte ne peut être effectuée que sur des liaisons de canal WCF spécifiques.  L’ID de workflow est inséré dans l’en-tête de message lors de l’utilisation de ces liaisons.  Le runtime WF3 peut uniquement identifier un flux de travail par son ID.  Avec la corrélation basée sur le contenu, l’auteur du flux de travail peut créer une clé de corrélation à partir d’un élément de données approprié, tel qu’un numéro de compte ou un ID client.
@@ -255,7 +255,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
 
  Le nombre d'activités dans un test donné est déterminé par la profondeur et nombre d'activités par séquence.  L'équation suivante calcule le nombre d'activités dans le test de WF4 :
 
- ![Équation pour calculer le nombre d'activités](./media/performance/number-activities-equation.gif)
+ ![Équation de calcul du nombre d'activités](./media/performance/number-activities-equation.gif)
 
  Le nombre d'activités du test de WF3 peut être calculé à l'aide d'une équation un peu différente à cause d'une séquence supplémentaire :
 
@@ -397,7 +397,7 @@ public class Workflow1 : Activity
 
 - SQLServer : Verrous internes\Attentes de verrous NP internes/s
 
-### <a name="tracking"></a>Suivi
+### <a name="tracking"></a>Tracking
  Le suivi de workflow permet de suivre la progression d'un workflow.  Les informations incluses dans les événements de suivi sont déterminées par un modèle de suivi.  Plus le modèle de suivi est complexe, plus cette opération est coûteuse.
 
  WF3 était fourni avec un service de suivi SQL.  Ce service fonctionnait en mode batch et non-batch.  En mode non-batch, les événements de suivi sont écrits directement dans la base de données.  En mode batch, les événements de suivi sont regroupés dans le même lot que l'état de l'instance de workflow.  Le mode batch offre les meilleures performances pour l'éventail de conceptions de workflow le plus large.  Toutefois, le traitement par lots peut avoir un impact négatif sur les performances si le workflow exécute de nombreuses activités sans persistance et que ces activités sont suivies.  Cela se produit généralement dans les boucles et la meilleure façon d'éviter ce scénario consiste à concevoir de grandes boucles pour contenir un point de persistance.  L'introduction d'un point de persistance dans une boucle peut également avoir un impact négatif sur les performances. Il est donc important de mesurer les coûts de chaque élément et d'atteindre un équilibre.
@@ -451,5 +451,5 @@ Le tableau suivant présente les résultats de l’exécution d’un flux de tra
 
  On constate une amélioration notable lors de l'utilisation d'Interop par rapport à WF3 simple.  Toutefois, par rapport aux activités WF4, l'augmentation est négligeable.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
  Les lourds efforts consacrés aux performances pour WF4 ont payé dans de nombreux domaines cruciaux.  Dans certains cas, les performances des composants de workflow individuels sont des centaines de fois plus rapides dans WF4 que dans WF3 grâce à un runtime [!INCLUDE[wf1](../../../includes/wf1-md.md)] plus léger.  Les chiffres de latence sont également considérablement meilleurs.  Cela signifie que la baisse des performances pour l’utilisation de [!INCLUDE[wf1](../../../includes/wf1-md.md)], par opposition au codage manuel des services d’orchestration WCF, est très faible, en tenant compte des avantages supplémentaires de l’utilisation de [!INCLUDE[wf1](../../../includes/wf1-md.md)].  Les performances de la persistance ont augmenté d'un facteur de 2,5 à 3.  Le contrôle d'état au moyen du suivi de workflow nécessite désormais très peu de charge mémoire.  Un ensemble complet de guides de migration est disponible pour les utilisateurs qui envisagent de passer de WF3 à WF4.  Pour toutes ces raisons, WF4 constitue une option avantageuse pour l'écriture d'applications complexes.

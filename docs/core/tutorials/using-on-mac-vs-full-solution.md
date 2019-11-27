@@ -25,11 +25,11 @@ Ce didacticiel vous montre comment créer une application qui accepte un terme d
 
 ## <a name="prerequisites"></a>Configuration requise
 
-- OpenSSL (if running .NET Core 1.1): See the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos) topic.
+- OpenSSL (en cas d’exécution de .NET Core 1,1) : consultez la rubrique [dépendances et exigences de .net Core](../install/dependencies.md?tabs=netcore30&pivots=os-macos) .
 - [Kit SDK .NET Core 1.1 ou version ultérieure](https://dotnet.microsoft.com/download)
 - [Visual Studio 2017 pour Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
 
-For more information on prerequisites, see the [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos). Pour connaître l’ensemble des exigences système de Visual Studio 2017 pour Mac, consultez la page [Exigences système de la famille de produits Visual Studio 2017 pour Mac](/visualstudio/productinfo/vs2017-system-requirements-mac).
+Pour plus d’informations sur les conditions préalables requises, consultez [.net Core Dependencies and Requirements](../install/dependencies.md?tabs=netcore30&pivots=os-macos). Pour connaître l’ensemble des exigences système de Visual Studio 2017 pour Mac, consultez la page [Exigences système de la famille de produits Visual Studio 2017 pour Mac](/visualstudio/productinfo/vs2017-system-requirements-mac).
 
 ## <a name="building-a-library"></a>Génération d'une bibliothèque
 
@@ -75,7 +75,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Pour que la bibliothèque de test fonctionne avec la classe `WordCount`, ajoutez une référence au projet `TextUtils`. Dans la barre latérale **Solution**, cliquez avec le bouton droit sur **Dépendances** sous **TestLibrary**. Sélectionnez **Modifier les références** dans le menu contextuel.
 
-1. In the **Edit References** dialog, select the **TextUtils** project on the **Projects** tab. Select **OK**.
+1. Dans la boîte de dialogue **modifier les références** , sélectionnez le projet **TextUtils** sous l’onglet **projets** . Sélectionnez **OK**.
 
    ![Boîte de dialogue Modifier les références dans Visual Studio pour Mac](./media/using-on-mac-vs-full-solution/visual-studio-mac-edit-references.png)
 

@@ -1,6 +1,6 @@
 ---
 title: XML
-description: Learn how to use XML and LINQ to XML features in your Visual Basic code.
+description: Apprenez à utiliser les fonctionnalités XML et LINQ to XML dans votre code Visual Basic.
 ms.date: 10/20/2017
 helpviewer_keywords:
 - LINQ to XML [Visual Basic]
@@ -14,7 +14,7 @@ ms.locfileid: "74330801"
 ---
 # <a name="xml-in-visual-basic"></a>XML en Visual Basic
 
-Visual Basic provides integrated language support that enables it to interact with [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
+Visual Basic fournit une prise en charge linguistique intégrée qui lui permet d’interagir avec [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
@@ -22,7 +22,7 @@ Visual Basic provides integrated language support that enables it to interact wi
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Describes how Visual Basic supports [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Vue d’ensemble de LINQ to XML en Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/overview-of-linq-to-xml.md)|Décrit comment Visual Basic prend en charge [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
 |[Création de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md)|Explique comment créer des objets littéraux XML à l’aide de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
 |[Manipulation de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/manipulating-xml.md)|Explique comment charger et analyser du code XML à l’aide de Visual Basic.|  
 |[Accès au code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md)|Décrit les propriétés d’axe XML et les méthodes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] permettant d’accéder aux éléments et attributs XML.|  

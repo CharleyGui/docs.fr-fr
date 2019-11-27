@@ -39,7 +39,7 @@ Cette section explique comment effectuer les tâches associées à la lecture à
  [Guide pratique : lire le texte des fichiers avec un StreamReader](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-read-text-from-files-with-a-streamreader.md)  
  Montre comment utiliser un <xref:System.IO.StreamReader> pour lire un fichier.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  
@@ -56,7 +56,7 @@ Cette section explique comment effectuer les tâches associées à la lecture à
  <xref:Microsoft.VisualBasic.FileIO.FileSystem.OpenTextFileReader%2A>  
  Décrit la méthode `OpenTextFileReader`.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Stockage de données dans le Presse-papiers et lecture du Presse-papiers](../../../../visual-basic/developing-apps/programming/computer-resources/storing-data-to-and-reading-from-the-clipboard.md)  
  Explique comment effectuer les tâches associées à `My.Computer.Clipboard`, telles que la lecture ou l’écriture de données dans le Presse-papiers.  
@@ -64,7 +64,7 @@ Cette section explique comment effectuer les tâches associées à la lecture à
  [Analyse des fichiers texte avec l’objet TextFieldParser](../../../../visual-basic/developing-apps/programming/drives-directories-files/parsing-text-files-with-the-textfieldparser-object.md)  
  Fournit une vue d’ensemble de la lecture des fichiers texte avec l’objet `TextFieldParser`.  
   
- [Procédure pas à pas : manipulation de fichiers et de répertoires en Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
+ [Procédure pas à pas : manipulation de fichiers et de répertoires dans Visual Basic](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-and-directories.md)  
  Illustre comment utiliser la fonctionnalité `My` avec des fichiers et des répertoires.  
   
  [Procédure pas à pas : manipulation de fichiers à l’aide de méthodes du .NET Framework](../../../../visual-basic/developing-apps/programming/drives-directories-files/walkthrough-manipulating-files-by-using-net-framework-methods.md)  

@@ -36,19 +36,19 @@ HRESULT SetCheckSum(
   
 ## <a name="parameters"></a>Paramètres  
  `algorithmId`  
- [in] The GUID that represents the algorithm identifier.  
+ dans GUID qui représente l’identificateur d’algorithme.  
   
  `checkSumSize`  
- [in] A `ULONG32` that indicates the size, in bytes, of the `checkSum` buffer.  
+ dans `ULONG32` qui indique la taille, en octets, de la mémoire tampon de `checkSum`.  
   
  `checkSum`  
- [in] The buffer that stores the checksum information.  
+ dans Mémoire tampon qui stocke les informations de somme de contrôle.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

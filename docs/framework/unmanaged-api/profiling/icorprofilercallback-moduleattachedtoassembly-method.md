@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448071"
 ---
 # <a name="icorprofilercallbackmoduleattachedtoassembly-method"></a>ICorProfilerCallback::ModuleAttachedToAssembly, méthode
-Notifies the profiler that a module is being attached to its parent assembly.  
+Notifie le profileur qu’un module est attaché à son assembly parent.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,15 +35,15 @@ HRESULT ModuleAttachedToAssembly(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] The ID of the module that is being attached.  
+ dans ID du module qui est attaché.  
   
  `AssemblyId`  
- [in] The ID of the parent assembly to which the module is attached.  
+ dans ID de l’assembly parent auquel le module est attaché.  
   
 ## <a name="remarks"></a>Notes  
- A module can be loaded through an import address table (IAT), through a call to `LoadLibrary`, or through a metadata reference. As a result, the common language runtime (CLR) loader has multiple code paths for determining the assembly in which a module lives. Therefore, it is possible that after [ICorProfilerCallback::ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) is called, the module does not know what assembly it is in and getting the parent assembly ID is not possible. The `ModuleAttachedToAssembly` method is called when the module is attached to its parent assembly and its parent assembly ID can be obtained.  
+ Un module peut être chargé par le biais d’une table d’adresses d’importation (IAT), via un appel à `LoadLibrary`ou par le biais d’une référence de métadonnées. Par conséquent, le chargeur common language runtime (CLR) a plusieurs chemins de code pour déterminer l’assembly dans lequel un module vit. Par conséquent, il est possible qu’après l’appel de [ICorProfilerCallback :: ModuleLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadfinished-method.md) , le module ne connaisse pas l’assembly dans lequel il se trouve et l’obtention de l’ID d’assembly parent n’est pas possible. La méthode `ModuleAttachedToAssembly` est appelée quand le module est attaché à son assembly parent et que son ID d’assembly parent peut être obtenu.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

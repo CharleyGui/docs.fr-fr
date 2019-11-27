@@ -68,7 +68,7 @@ Cette section décrit les énumérations non managées utilisées par l'API de p
  [COR_PRF_TRANSITION_REASON, énumération](../../../../docs/framework/unmanaged-api/profiling/cor-prf-transition-reason-enumeration.md)  
  Indique la raison d'une transition de code managé en code non managé, ou l'inverse.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d’ensemble du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)  
   
  [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)  

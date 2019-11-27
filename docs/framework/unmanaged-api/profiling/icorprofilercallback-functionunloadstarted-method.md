@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448017"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a>ICorProfilerCallback::FunctionUnloadStarted, méthode
-Notifies the profiler that the runtime has started to unload a function.  
+Notifie le profileur que le runtime a commencé à décharger une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,12 +34,12 @@ HRESULT FunctionUnloadStarted(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The ID of the function that is being unloaded.  
+ dans ID de la fonction en cours de déchargement.  
   
 ## <a name="remarks"></a>Notes  
- The value of the `functionId` parameter is no longer valid after this method returns to the caller.  
+ La valeur du paramètre `functionId` n’est plus valide après le retour de cette méthode à l’appelant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

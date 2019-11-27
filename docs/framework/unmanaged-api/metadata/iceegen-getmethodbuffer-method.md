@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436331"
 ---
 # <a name="iceegengetmethodbuffer-method"></a>ICeeGen::GetMethodBuffer, méthode
-Gets a buffer of the appropriate size for the method at the specified relative virtual address.  
+Obtient une mémoire tampon de la taille appropriée pour la méthode à l’adresse virtuelle relative spécifiée.  
   
- This method is obsolete and should not be used.  
+ Cette méthode est obsolète et ne doit pas être utilisée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,17 +38,17 @@ HRESULT GetMethodBuffer (
   
 ## <a name="parameters"></a>Paramètres  
  `RVA`  
- [in] The relative virtual address of the method for which to return a buffer.  
+ dans Adresse virtuelle relative de la méthode pour laquelle retourner une mémoire tampon.  
   
  `lpBuffer`  
- [out] A pointer to the returned buffer.  
+ à Pointeur vers la mémoire tampon retournée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

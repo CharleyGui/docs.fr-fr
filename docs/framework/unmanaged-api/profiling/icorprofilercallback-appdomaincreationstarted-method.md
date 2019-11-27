@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445213"
 ---
 # <a name="icorprofilercallbackappdomaincreationstarted-method"></a>ICorProfilerCallback::AppDomainCreationStarted, méthode
-Notifies the profiler that an application domain is being created.  
+Notifie le profileur qu’un domaine d’application est en cours de création.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,12 +34,12 @@ HRESULT AppDomainCreationStarted(
   
 ## <a name="parameters"></a>Paramètres  
  `appDomainId`  
- [in] Identifies the domain which is being created.  
+ dans Identifie le domaine en cours de création.  
   
 ## <a name="remarks"></a>Notes  
- The ID is not valid for any information request until the [ICorProfilerCallback::AppDomainCreationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) method is called.  
+ L’ID n’est pas valide pour toute demande d’informations tant que la méthode [ICorProfilerCallback :: AppDomainCreationFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-appdomaincreationfinished-method.md) n’est pas appelée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

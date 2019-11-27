@@ -23,7 +23,7 @@ L’objet `My.Forms` permet d’accéder facilement à une instance de chaque Wi
 
  Le tableau suivant donne des exemples montrant comment accéder aux formulaires d’une application.  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |---|---|  
 |Accéder à un formulaire à partir d’un autre formulaire d’une application.|[My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)|  
 |Afficher les titres de tous les formulaires ouverts de l’application.|<xref:Microsoft.VisualBasic.ApplicationServices.WindowsFormsApplicationBase.OpenForms%2A>|  

@@ -22,23 +22,23 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441618"
 ---
 # <a name="imetadataerror-interface"></a>IMetaDataError, interface
-Provides a callback mechanism for reporting errors during the metadata merge.  
+Fournit un mécanisme de rappel pour signaler les erreurs pendant la fusion des métadonnées.  
   
 > [!NOTE]
-> The `IMetaDataError` interface must be implemented by the client.  
+> L’interface `IMetaDataError` doit être implémentée par le client.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[OnError, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Provides notification of errors that occur during the metadata merge.|  
+|[OnError, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadataerror-onerror-method.md)|Fournit une notification des erreurs qui se produisent pendant la fusion des métadonnées.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

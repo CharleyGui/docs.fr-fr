@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445234"
 ---
 # <a name="imetadataimport2getpekind-method"></a>IMetaDataImport2::GetPEKind, méthode
-Gets a value identifying the nature of the code in the portable executable (PE) file, typically a DLL or EXE file, that is defined in the current metadata scope.  
+Obtient une valeur identifiant la nature du code dans le fichier exécutable portable (PE), en général un fichier DLL ou EXE, qui est défini dans la portée de métadonnées actuelle.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,26 +36,26 @@ HRESULT GetPEKind (
   
 ## <a name="parameters"></a>Paramètres  
  `pdwPEKind`  
- [out] A pointer to a value of the [CorPEKind](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) enumeration that describes the PE file.  
+ à Pointeur vers une valeur de l’énumération [CorPEKind,](../../../../docs/framework/unmanaged-api/metadata/corpekind-enumeration.md) qui décrit le fichier PE.  
   
  `pdwMachine`  
- [out] A pointer to a value that identifies the architecture of the machine. See the next section for possible values.  
+ à Pointeur vers une valeur qui identifie l’architecture de l’ordinateur. Consultez la section suivante pour connaître les valeurs possibles.  
   
 ## <a name="remarks"></a>Notes  
- The value referenced by the `pdwMachine` parameter can be one of the following.  
+ La valeur référencée par le paramètre `pdwMachine` peut être l’une des valeurs suivantes.  
   
-|valeur|Machine architecture|  
+|Valeur|Architecture de l’ordinateur|  
 |-----------|--------------------------|  
 |IMAGE_FILE_MACHINE_I386<br /><br /> 0x014C|x86|  
 |IMAGE_FILE_MACHINE_IA64<br /><br /> 0x0200|Intel IPF|  
-|IMAGE_FILE_MACHINE_AMD64<br /><br /> 0x8664|X64|  
+|IMAGE_FILE_MACHINE_AMD64<br /><br /> 0x8664|x64|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

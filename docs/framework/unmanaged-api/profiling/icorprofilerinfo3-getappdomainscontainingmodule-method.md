@@ -52,7 +52,7 @@ HRESULT GetAppDomainsContainingModule(
 ## <a name="remarks"></a>Notes  
  Cette méthode utilise des mémoires tampons allouées par l'appelant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

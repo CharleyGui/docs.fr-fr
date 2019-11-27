@@ -1,5 +1,5 @@
 ---
-title: Off
+title: Inactif
 ms.date: 07/20/2015
 f1_keywords:
 - Off
@@ -15,7 +15,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331934"
 ---
 # <a name="off-visual-basic"></a>Off (Visual Basic)
-Turns a compiler option off.  
+Désactive une option du compilateur.  
   
 ## <a name="remarks"></a>Notes  
  Le mot clé `Off` peut être utilisé dans les contextes suivants :  

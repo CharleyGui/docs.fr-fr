@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448094"
 ---
 # <a name="iceegengetsectioncreate-method"></a>ICeeGen::GetSectionCreate, méthode
-Generates and gets a code section using the specified name and flag values.  
+Génère et obtient une section de code à l’aide du nom et des valeurs d’indicateur spécifiés.  
   
- This method is obsolete and should not be used.  
+ Cette méthode est obsolète et ne doit pas être utilisée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,23 +39,23 @@ HRESULT GetSectionCreate (
   
 ## <a name="parameters"></a>Paramètres  
  `name`  
- [in] A pointer to a string that specifies the name of the section to be created.  
+ dans Pointeur vers une chaîne qui spécifie le nom de la section à créer.  
   
  `flags`  
- [in] Flags that specify options.  
+ dans Indicateurs qui spécifient des options.  
   
  `section`  
- [out] A pointer to the newly created code section.  
+ à Pointeur vers la section de code nouvellement créée.  
   
 ## <a name="remarks"></a>Notes  
- Call `GetSectionCreate` only if you have special section requirements that are not handled by other methods.  
+ Appelez `GetSectionCreate` uniquement si vous avez des exigences de section spéciales qui ne sont pas gérées par d’autres méthodes.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

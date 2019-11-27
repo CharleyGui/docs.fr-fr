@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449884"
 ---
 # <a name="icorprofilerinfosetilfunctionbody-method"></a>ICorProfilerInfo::SetILFunctionBody, méthode
-Replaces the body of the specified function in the specified module.  
+Remplace le corps de la fonction spécifiée dans le module spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT SetILFunctionBody(
   
 ## <a name="parameters"></a>Paramètres  
  `moduleId`  
- [in] The ID of the module in which the function resides.  
+ dans ID du module dans lequel la fonction réside.  
   
  `methodid`  
- [in] The token of the function for which to replace the body.  
+ dans Jeton de la fonction pour laquelle remplacer le corps.  
   
  `pbNewILMethodHeader`  
- [in] The new header for the function.  
+ dans Nouvel en-tête de la fonction.  
   
 ## <a name="remarks"></a>Notes  
- The `SetILFunctionBody` method replaces the relative virtual address of the function in the metadata so that it points to the new function body, and adjusts any internal data structures as required.  
+ La méthode `SetILFunctionBody` remplace l’adresse virtuelle relative de la fonction dans les métadonnées afin qu’elle pointe vers le nouveau corps de la fonction, et ajuste toutes les structures de données internes selon les besoins.  
   
- The `SetILFunctionBody` method can be called on only those functions that have never been compiled by a just-in-time (JIT) compiler.  
+ La méthode `SetILFunctionBody` peut être appelée uniquement sur les fonctions qui n’ont jamais été compilées par un compilateur juste-à-temps (JIT).  
   
- Use the [ICorProfilerInfo::GetILFunctionBodyAllocator](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) method to allocate space for the new method to ensure that the buffer is compatible.  
+ Utilisez la méthode [ICorProfilerInfo :: GetILFunctionBodyAllocator,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getilfunctionbodyallocator-method.md) pour allouer de l’espace pour la nouvelle méthode afin de garantir la compatibilité de la mémoire tampon.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

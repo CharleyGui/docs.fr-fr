@@ -1,5 +1,5 @@
 ---
-title: 'Troubleshooting: reading from and writing to text files'
+title: 'Résolution des problèmes : lecture et écriture dans des fichiers texte'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - troubleshooting file I/O

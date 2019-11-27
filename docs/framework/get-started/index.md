@@ -75,11 +75,11 @@ Pour plus d’informations sur le développement d’applications qui ciblent le
 
 | Titre | Description |
 | ----- |------------ |
-| [Overview](overview.md) | Fournit des informations détaillées pour les développeurs qui créent des applications ciblant le .NET Framework. |
+| [Vue d’ensemble](overview.md) | Fournit des informations détaillées pour les développeurs qui créent des applications ciblant le .NET Framework. |
 | [Guide d’installation](../install/index.md) | Fournit des informations sur l'installation du .NET Framework. |  
 | [Versions finales hors plage de .NET Framework](the-net-framework-and-out-of-band-releases.md) | Décrit les versions release hors bande du .NET Framework et leur utilisation dans votre application. |
-| [Configuration requise](system-requirements.md) | Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework. |
-| [.NET Core et open source](net-core-and-open-source.md) | Décrit le .NET Core en rapport avec le .NET Framework et comment accéder aux projets .NET Core open source. |
+| [Configuration système requise](system-requirements.md) | Répertorie les configurations matérielle et logicielle requises pour exécuter le .NET Framework. |
+| [.NET Core et Open-Source](net-core-and-open-source.md) | Décrit le .NET Core en rapport avec le .NET Framework et comment accéder aux projets .NET Core open source. |
 | [Documentation .NET Core](../../core/index.md) | Fournit la documentation de référence sur les concepts et les API de .NET Core. |
 | [.NET Standard](../../standard/net-standard.md) | Traite de .NET Standard, une spécification avec version prise en charge par les implémentations .NET individuelles afin de garantir la disponibilité d’un ensemble cohérent d’API sur plusieurs plateformes.
 

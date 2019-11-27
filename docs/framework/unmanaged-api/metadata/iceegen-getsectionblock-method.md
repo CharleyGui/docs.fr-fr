@@ -23,9 +23,9 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74434881"
 ---
 # <a name="iceegengetsectionblock-method"></a>ICeeGen::GetSectionBlock, méthode
-Gets a section block of the code base.  
+Obtient un bloc de section de la base de code.  
   
- This method is obsolete and should not be used.  
+ Cette méthode est obsolète et ne doit pas être utilisée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,26 +40,26 @@ HRESULT GetSectionBlock (
   
 ## <a name="parameters"></a>Paramètres  
  `section`  
- [in] The section from which to retrieve a block of the code base.  
+ dans Section à partir de laquelle récupérer un bloc de la base de code.  
   
  `len`  
- [in] The length of the block to be retrieved.  
+ dans Longueur du bloc à récupérer.  
   
  `align`  
- [in] The byte, relative to the beginning of the section, with which to align the first byte of the block. This is the position of the block within the section.  
+ dans Octet, relatif au début de la section, avec lequel aligner le premier octet du bloc. Il s’agit de la position du bloc dans la section.  
   
  `ppBytes`  
- [out] A pointer to a location that receives the address of the retrieved block.  
+ à Pointeur vers un emplacement qui reçoit l’adresse du bloc récupéré.  
   
 ## <a name="remarks"></a>Notes  
- Call `GetSectionBlock` only if you have special section requirements that are not handled by other methods.  
+ Appelez `GetSectionBlock` uniquement si vous avez des exigences de section spéciales qui ne sont pas gérées par d’autres méthodes.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

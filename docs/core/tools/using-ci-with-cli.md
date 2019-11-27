@@ -34,7 +34,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. For more information, see [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-linux).
+> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/dependencies.md?tabs=netcore30&pivots=os-linux).
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 

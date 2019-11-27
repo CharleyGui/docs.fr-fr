@@ -16,7 +16,7 @@ ms.locfileid: "74353623"
 
 Cette procédure pas à pas illustre comment créer un écouteur de journalisation personnalisé et le configurer pour écouter la sortie de l’objet `My.Application.Log`.
 
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Mise en route
 
 Les écouteurs de journalisation doivent hériter de la classe <xref:System.Diagnostics.TraceListener>.
 
@@ -79,7 +79,7 @@ Avec le nom fort, vous pouvez ajouter l’écouteur à la collection de l’éco
 
 1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.
 
-     ou
+     -ou-
 
      S’il existe un fichier app.config :
 

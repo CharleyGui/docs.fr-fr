@@ -21,16 +21,16 @@ ms.locfileid: "74448804"
  Cette section contient des vues d’ensemble et des rubriques de procédure pour vous aider à développer des clients UI Automation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Mise à l’échelle de l’écran et UI Automation](ui-automation-and-screen-scaling.md)  
- [Prise en charge d’UI Automation pour les contrôles standard](ui-automation-support-for-standard-controls.md)  
- [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)  
- [Mise en cache dans les clients UI Automation](caching-in-ui-automation-clients.md)  
- [Propriétés UI Automation pour les clients](ui-automation-properties-for-clients.md)  
- [Mappage de modèle de contrôle pour les clients UI Automation](control-pattern-mapping-for-ui-automation-clients.md)  
- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)  
- [Obtention d’éléments UI Automation](obtaining-ui-automation-elements.md)  
- [Problèmes liés aux threads UI Automation](ui-automation-threading-issues.md)  
- [Rubriques de guide pratique](ui-automation-clients-for-managed-code-how-to-topics.md)  
+ [UI Automation and Screen Scaling](ui-automation-and-screen-scaling.md)  
+ [UI Automation Support for Standard Controls](ui-automation-support-for-standard-controls.md)  
+ [UI Automation Events for Clients](ui-automation-events-for-clients.md)  
+ [Caching in UI Automation Clients](caching-in-ui-automation-clients.md)  
+ [UI Automation Properties for Clients](ui-automation-properties-for-clients.md)  
+ [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md)  
+ [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)  
+ [Obtaining UI Automation Elements](obtaining-ui-automation-elements.md)  
+ [UI Automation Threading Issues](ui-automation-threading-issues.md)  
+ [Rubriques pratiques](ui-automation-clients-for-managed-code-how-to-topics.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Automation>
