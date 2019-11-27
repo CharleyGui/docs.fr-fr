@@ -22,12 +22,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427994"
 ---
-# <a name="isymunmanagedwriterdefineparameter-method"></a><span data-ttu-id="cd1ea-102">ISymUnmanagedWriter::DefineParameter, méthode</span><span class="sxs-lookup"><span data-stu-id="cd1ea-102">ISymUnmanagedWriter::DefineParameter Method</span></span>
-<span data-ttu-id="cd1ea-103">Defines a single parameter in the current method.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-103">Defines a single parameter in the current method.</span></span> <span data-ttu-id="cd1ea-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span></span>  
+# <a name="isymunmanagedwriterdefineparameter-method"></a><span data-ttu-id="edbe7-102">ISymUnmanagedWriter::DefineParameter, méthode</span><span class="sxs-lookup"><span data-stu-id="edbe7-102">ISymUnmanagedWriter::DefineParameter Method</span></span>
+<span data-ttu-id="edbe7-103">Définit un paramètre unique dans la méthode actuelle.</span><span class="sxs-lookup"><span data-stu-id="edbe7-103">Defines a single parameter in the current method.</span></span> <span data-ttu-id="edbe7-104">Le type de paramètre est extrait de la position (séquence) du paramètre dans la signature de la méthode.</span><span class="sxs-lookup"><span data-stu-id="edbe7-104">The parameter type is taken from the parameter's position (sequence) within the method's signature.</span></span>  
   
- <span data-ttu-id="cd1ea-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span></span> <span data-ttu-id="cd1ea-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span></span>  
+ <span data-ttu-id="edbe7-105">Si des paramètres sont définis dans les métadonnées d’une méthode donnée, vous n’avez pas à les redéfinir à l’aide de cette méthode.</span><span class="sxs-lookup"><span data-stu-id="edbe7-105">If parameters are defined in the metadata for a given method, you do not have to define them again by using this method.</span></span> <span data-ttu-id="edbe7-106">Les lecteurs de symboles doivent vérifier les métadonnées normales des paramètres avant de vérifier le magasin de symboles.</span><span class="sxs-lookup"><span data-stu-id="edbe7-106">The symbol readers must check the normal metadata for the parameters before checking the symbol store.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cd1ea-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cd1ea-107">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="edbe7-107">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="edbe7-107">Syntax</span></span>  
   
 ```cpp  
 HRESULT DefineParameter(  
@@ -40,34 +40,34 @@ HRESULT DefineParameter(
     [in] ULONG32      addr3);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="cd1ea-108">Paramètres</span><span class="sxs-lookup"><span data-stu-id="cd1ea-108">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="edbe7-108">Paramètres</span><span class="sxs-lookup"><span data-stu-id="edbe7-108">Parameters</span></span>  
  `name`  
- <span data-ttu-id="cd1ea-109">[in] The parameter name.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-109">[in] The parameter name.</span></span>  
+ <span data-ttu-id="edbe7-109">dans Nom du paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-109">[in] The parameter name.</span></span>  
   
  `attributes`  
- <span data-ttu-id="cd1ea-110">[in] The parameter attributes.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-110">[in] The parameter attributes.</span></span>  
+ <span data-ttu-id="edbe7-110">dans Attributs du paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-110">[in] The parameter attributes.</span></span>  
   
  `sequence`  
- <span data-ttu-id="cd1ea-111">[in] The parameter signature.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-111">[in] The parameter signature.</span></span>  
+ <span data-ttu-id="edbe7-111">dans Signature du paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-111">[in] The parameter signature.</span></span>  
   
  `addrKind`  
- <span data-ttu-id="cd1ea-112">[in] The address type.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-112">[in] The address type.</span></span>  
+ <span data-ttu-id="edbe7-112">dans Type d’adresse.</span><span class="sxs-lookup"><span data-stu-id="edbe7-112">[in] The address type.</span></span>  
   
  `addr1`  
- <span data-ttu-id="cd1ea-113">[in] The first address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-113">[in] The first address for the parameter specification.</span></span>  
+ <span data-ttu-id="edbe7-113">dans Première adresse de la spécification de paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-113">[in] The first address for the parameter specification.</span></span>  
   
  `addr2`  
- <span data-ttu-id="cd1ea-114">[in] The second address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-114">[in] The second address for the parameter specification.</span></span>  
+ <span data-ttu-id="edbe7-114">dans Deuxième adresse de la spécification de paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-114">[in] The second address for the parameter specification.</span></span>  
   
  `addr3`  
- <span data-ttu-id="cd1ea-115">[in] The third address for the parameter specification.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-115">[in] The third address for the parameter specification.</span></span>  
+ <span data-ttu-id="edbe7-115">dans Troisième adresse de la spécification de paramètre.</span><span class="sxs-lookup"><span data-stu-id="edbe7-115">[in] The third address for the parameter specification.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="cd1ea-116">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="cd1ea-116">Return Value</span></span>  
- <span data-ttu-id="cd1ea-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="cd1ea-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="edbe7-116">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="edbe7-116">Return Value</span></span>  
+ <span data-ttu-id="edbe7-117">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="edbe7-117">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cd1ea-118">spécifications</span><span class="sxs-lookup"><span data-stu-id="cd1ea-118">Requirements</span></span>  
- <span data-ttu-id="cd1ea-119">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="cd1ea-119">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="edbe7-118">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="edbe7-118">Requirements</span></span>  
+ <span data-ttu-id="edbe7-119">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="edbe7-119">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="cd1ea-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cd1ea-120">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="edbe7-120">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="edbe7-120">See also</span></span>
 
-- [<span data-ttu-id="cd1ea-121">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="cd1ea-121">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)
+- [<span data-ttu-id="edbe7-121">ISymUnmanagedWriter, interface</span><span class="sxs-lookup"><span data-stu-id="edbe7-121">ISymUnmanagedWriter Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedwriter-interface.md)

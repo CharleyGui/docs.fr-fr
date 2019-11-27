@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436250"
 ---
-# <a name="imetadataconvertergettypelibfrommetadata-method"></a><span data-ttu-id="fcfa6-102">IMetaDataConverter::GetTypeLibFromMetaData, méthode</span><span class="sxs-lookup"><span data-stu-id="fcfa6-102">IMetaDataConverter::GetTypeLibFromMetaData Method</span></span>
-<span data-ttu-id="fcfa6-103">Gets a pointer to an `ITypeLib` instance that represents the type library that has the specified library and module names.</span><span class="sxs-lookup"><span data-stu-id="fcfa6-103">Gets a pointer to an `ITypeLib` instance that represents the type library that has the specified library and module names.</span></span>  
+# <a name="imetadataconvertergettypelibfrommetadata-method"></a><span data-ttu-id="02da5-102">IMetaDataConverter::GetTypeLibFromMetaData, méthode</span><span class="sxs-lookup"><span data-stu-id="02da5-102">IMetaDataConverter::GetTypeLibFromMetaData Method</span></span>
+<span data-ttu-id="02da5-103">Obtient un pointeur vers une instance de `ITypeLib` qui représente la bibliothèque de types qui a la bibliothèque et les noms de modules spécifiés.</span><span class="sxs-lookup"><span data-stu-id="02da5-103">Gets a pointer to an `ITypeLib` instance that represents the type library that has the specified library and module names.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="fcfa6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="fcfa6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="02da5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="02da5-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetTypeLibFromMetaData (  
@@ -35,25 +35,25 @@ HRESULT GetTypeLibFromMetaData (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="fcfa6-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="fcfa6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="02da5-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="02da5-105">Parameters</span></span>  
  `strModule`  
- <span data-ttu-id="fcfa6-106">[in] The name of the type library's module.</span><span class="sxs-lookup"><span data-stu-id="fcfa6-106">[in] The name of the type library's module.</span></span>  
+ <span data-ttu-id="02da5-106">dans Nom du module de la bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="02da5-106">[in] The name of the type library's module.</span></span>  
   
  `strTlbName`  
- <span data-ttu-id="fcfa6-107">[in] The name of the type library.</span><span class="sxs-lookup"><span data-stu-id="fcfa6-107">[in] The name of the type library.</span></span>  
+ <span data-ttu-id="02da5-107">dans Nom de la bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="02da5-107">[in] The name of the type library.</span></span>  
   
  `ppITL`  
- <span data-ttu-id="fcfa6-108">[out] A pointer to a location that receives the address of the `ITypeLib` instance that represents the type library.</span><span class="sxs-lookup"><span data-stu-id="fcfa6-108">[out] A pointer to a location that receives the address of the `ITypeLib` instance that represents the type library.</span></span>  
+ <span data-ttu-id="02da5-108">à Pointeur vers un emplacement qui reçoit l’adresse de l’instance de `ITypeLib` qui représente la bibliothèque de types.</span><span class="sxs-lookup"><span data-stu-id="02da5-108">[out] A pointer to a location that receives the address of the `ITypeLib` instance that represents the type library.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="fcfa6-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="fcfa6-109">Requirements</span></span>  
- <span data-ttu-id="fcfa6-110">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="fcfa6-110">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="02da5-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="02da5-109">Requirements</span></span>  
+ <span data-ttu-id="02da5-110">**Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="02da5-110">**Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="fcfa6-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="fcfa6-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="02da5-111">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="02da5-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="fcfa6-112">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="fcfa6-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="02da5-112">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="02da5-112">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="fcfa6-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="fcfa6-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="02da5-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="02da5-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="fcfa6-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="fcfa6-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="02da5-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="02da5-114">See also</span></span>
 
-- [<span data-ttu-id="fcfa6-115">IMetaDataConverter, interface</span><span class="sxs-lookup"><span data-stu-id="fcfa6-115">IMetaDataConverter Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-interface.md)
+- [<span data-ttu-id="02da5-115">IMetaDataConverter, interface</span><span class="sxs-lookup"><span data-stu-id="02da5-115">IMetaDataConverter Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataconverter-interface.md)

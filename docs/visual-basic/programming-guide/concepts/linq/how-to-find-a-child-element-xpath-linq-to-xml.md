@@ -9,15 +9,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353032"
 ---
-# <a name="how-to-find-a-child-element-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="2c192-102">How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c192-102">How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)</span></span>
-<span data-ttu-id="2c192-103">Cette rubrique compare l’axe des éléments enfants XPath à la méthode <xref:System.Xml.Linq.XContainer.Element%2A> [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].</span><span class="sxs-lookup"><span data-stu-id="2c192-103">This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>  
+# <a name="how-to-find-a-child-element-xpath-linq-to-xml-visual-basic"></a><span data-ttu-id="a2947-102">Comment : Rechercher un élément enfant (XPath-LINQ to XML) (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a2947-102">How to: Find a Child Element (XPath-LINQ to XML) (Visual Basic)</span></span>
+<span data-ttu-id="a2947-103">Cette rubrique compare l’axe des éléments enfants XPath à la méthode [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A>.</span><span class="sxs-lookup"><span data-stu-id="a2947-103">This topic compares the XPath child element axis to the [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] <xref:System.Xml.Linq.XContainer.Element%2A> method.</span></span>  
   
- <span data-ttu-id="2c192-104">L'expression XPath est `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="2c192-104">The XPath expression is `DeliveryNotes`.</span></span>  
+ <span data-ttu-id="a2947-104">L'expression XPath est `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="a2947-104">The XPath expression is `DeliveryNotes`.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="2c192-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="2c192-105">Example</span></span>  
- <span data-ttu-id="2c192-106">Cet exemple recherche l'élément enfant `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="2c192-106">This example finds the child element `DeliveryNotes`.</span></span>  
+## <a name="example"></a><span data-ttu-id="a2947-105">Exemple</span><span class="sxs-lookup"><span data-stu-id="a2947-105">Example</span></span>  
+ <span data-ttu-id="a2947-106">Cet exemple recherche l'élément enfant `DeliveryNotes`.</span><span class="sxs-lookup"><span data-stu-id="a2947-106">This example finds the child element `DeliveryNotes`.</span></span>  
   
- <span data-ttu-id="2c192-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="2c192-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
+ <span data-ttu-id="a2947-107">Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Plusieurs commandes fournisseur (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span><span class="sxs-lookup"><span data-stu-id="a2947-107">This example uses the following XML document: [Sample XML File: Multiple Purchase Orders (LINQ to XML)](../../../../visual-basic/programming-guide/concepts/linq/sample-xml-file-multiple-purchase-orders-linq-to-xml.md).</span></span>  
   
 ```vb  
 Dim cpo As XDocument = XDocument.Load("PurchaseOrders.xml")  
@@ -39,13 +39,13 @@ End If
 Console.WriteLine(el1)  
 ```  
   
- <span data-ttu-id="2c192-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="2c192-108">This example produces the following output:</span></span>  
+ <span data-ttu-id="a2947-108">Cet exemple génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="a2947-108">This example produces the following output:</span></span>  
   
 ```console
 Results are identical  
 <DeliveryNotes>Please leave packages in shed by driveway.</DeliveryNotes>  
 ```  
   
-## <a name="see-also"></a><span data-ttu-id="2c192-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="2c192-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="a2947-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="a2947-109">See also</span></span>
 
-- [<span data-ttu-id="2c192-110">LINQ to XML for XPath Users (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="2c192-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [<span data-ttu-id="a2947-110">LINQ to XML pour les utilisateurs XPath (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="a2947-110">LINQ to XML for XPath Users (Visual Basic)</span></span>](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437317"
 ---
-# <a name="imetadataimportgetmodulerefprops-method"></a><span data-ttu-id="07d7d-102">IMetaDataImport::GetModuleRefProps, méthode</span><span class="sxs-lookup"><span data-stu-id="07d7d-102">IMetaDataImport::GetModuleRefProps Method</span></span>
-<span data-ttu-id="07d7d-103">Obtient le nom du module référencé par le jeton de métadonnées spécifié.</span><span class="sxs-lookup"><span data-stu-id="07d7d-103">Gets the name of the module referenced by the specified metadata token.</span></span>  
+# <a name="imetadataimportgetmodulerefprops-method"></a><span data-ttu-id="b3d19-102">IMetaDataImport::GetModuleRefProps, méthode</span><span class="sxs-lookup"><span data-stu-id="b3d19-102">IMetaDataImport::GetModuleRefProps Method</span></span>
+<span data-ttu-id="b3d19-103">Obtient le nom du module référencé par le jeton de métadonnées spécifié.</span><span class="sxs-lookup"><span data-stu-id="b3d19-103">Gets the name of the module referenced by the specified metadata token.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="07d7d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="07d7d-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b3d19-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b3d19-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetModuleRefProps (  
@@ -36,29 +36,29 @@ HRESULT GetModuleRefProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="07d7d-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="07d7d-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="b3d19-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="b3d19-105">Parameters</span></span>  
  `mur`  
- <span data-ttu-id="07d7d-106">[in] The ModuleRef metadata token that references the module to get metadata information for.</span><span class="sxs-lookup"><span data-stu-id="07d7d-106">[in] The ModuleRef metadata token that references the module to get metadata information for.</span></span>  
+ <span data-ttu-id="b3d19-106">dans Jeton de métadonnées ModuleRef qui référence le module pour lequel obtenir les informations de métadonnées.</span><span class="sxs-lookup"><span data-stu-id="b3d19-106">[in] The ModuleRef metadata token that references the module to get metadata information for.</span></span>  
   
  `szName`  
- <span data-ttu-id="07d7d-107">[out] A buffer to hold the module name.</span><span class="sxs-lookup"><span data-stu-id="07d7d-107">[out] A buffer to hold the module name.</span></span>  
+ <span data-ttu-id="b3d19-107">à Mémoire tampon destinée à contenir le nom du module.</span><span class="sxs-lookup"><span data-stu-id="b3d19-107">[out] A buffer to hold the module name.</span></span>  
   
  `cchName`  
- <span data-ttu-id="07d7d-108">[in] The requested size of `szName` in wide characters.</span><span class="sxs-lookup"><span data-stu-id="07d7d-108">[in] The requested size of `szName` in wide characters.</span></span>  
+ <span data-ttu-id="b3d19-108">dans Taille de `szName` demandée en caractères larges.</span><span class="sxs-lookup"><span data-stu-id="b3d19-108">[in] The requested size of `szName` in wide characters.</span></span>  
   
  `pchName`  
- <span data-ttu-id="07d7d-109">[out] The returned size of `szName` in wide characters.</span><span class="sxs-lookup"><span data-stu-id="07d7d-109">[out] The returned size of `szName` in wide characters.</span></span>  
+ <span data-ttu-id="b3d19-109">à Taille retournée de `szName` en caractères larges.</span><span class="sxs-lookup"><span data-stu-id="b3d19-109">[out] The returned size of `szName` in wide characters.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="07d7d-110">spécifications</span><span class="sxs-lookup"><span data-stu-id="07d7d-110">Requirements</span></span>  
- <span data-ttu-id="07d7d-111">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="07d7d-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b3d19-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="b3d19-110">Requirements</span></span>  
+ <span data-ttu-id="b3d19-111">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b3d19-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="07d7d-112">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="07d7d-112">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="b3d19-112">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="b3d19-112">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="07d7d-113">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="07d7d-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="b3d19-113">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="b3d19-113">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="07d7d-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="07d7d-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="b3d19-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b3d19-114">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="07d7d-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="07d7d-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b3d19-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b3d19-115">See also</span></span>
 
-- [<span data-ttu-id="07d7d-116">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="07d7d-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="07d7d-117">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="07d7d-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="b3d19-116">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="b3d19-116">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="b3d19-117">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="b3d19-117">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

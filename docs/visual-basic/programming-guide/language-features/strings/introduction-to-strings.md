@@ -11,19 +11,19 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344316"
 ---
-# <a name="introduction-to-strings-in-visual-basic"></a><span data-ttu-id="d02e3-102">Introduction aux chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d02e3-102">Introduction to Strings in Visual Basic</span></span>
-<span data-ttu-id="d02e3-103">This section describes the basic concepts behind using strings in Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="d02e3-103">This section describes the basic concepts behind using strings in Visual Basic.</span></span>  
+# <a name="introduction-to-strings-in-visual-basic"></a><span data-ttu-id="adf09-102">Introduction aux chaînes en Visual Basic</span><span class="sxs-lookup"><span data-stu-id="adf09-102">Introduction to Strings in Visual Basic</span></span>
+<span data-ttu-id="adf09-103">Cette section décrit les concepts de base qui sous-tendent l’utilisation de chaînes dans Visual Basic.</span><span class="sxs-lookup"><span data-stu-id="adf09-103">This section describes the basic concepts behind using strings in Visual Basic.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="d02e3-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="d02e3-104">In This Section</span></span>  
- [<span data-ttu-id="d02e3-105">Concepts de base des chaînes</span><span class="sxs-lookup"><span data-stu-id="d02e3-105">String Basics</span></span>](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
- <span data-ttu-id="d02e3-106">Introduces the basic concepts behind using strings and string variables.</span><span class="sxs-lookup"><span data-stu-id="d02e3-106">Introduces the basic concepts behind using strings and string variables.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="adf09-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="adf09-104">In This Section</span></span>  
+ [<span data-ttu-id="adf09-105">Concepts de base des chaînes</span><span class="sxs-lookup"><span data-stu-id="adf09-105">String Basics</span></span>](../../../../visual-basic/programming-guide/language-features/strings/string-basics.md)  
+ <span data-ttu-id="adf09-106">Présente les concepts de base qui sous-tendent l’utilisation de chaînes et de variables de chaîne.</span><span class="sxs-lookup"><span data-stu-id="adf09-106">Introduces the basic concepts behind using strings and string variables.</span></span>  
   
- [<span data-ttu-id="d02e3-107">Types of String Manipulation Methods in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d02e3-107">Types of String Manipulation Methods in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
- <span data-ttu-id="d02e3-108">Introduces several different ways to analyze and manipulate strings.</span><span class="sxs-lookup"><span data-stu-id="d02e3-108">Introduces several different ways to analyze and manipulate strings.</span></span>  
+ [<span data-ttu-id="adf09-107">Types de méthodes de manipulation de chaînes dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="adf09-107">Types of String Manipulation Methods in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/types-of-string-manipulation-methods.md)  
+ <span data-ttu-id="adf09-108">Présente plusieurs méthodes différentes pour analyser et manipuler des chaînes.</span><span class="sxs-lookup"><span data-stu-id="adf09-108">Introduces several different ways to analyze and manipulate strings.</span></span>  
   
- [<span data-ttu-id="d02e3-109">How Culture Affects Strings in Visual Basic</span><span class="sxs-lookup"><span data-stu-id="d02e3-109">How Culture Affects Strings in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
- <span data-ttu-id="d02e3-110">Discusses how Visual Basic uses culture information to perform string conversions and comparisons.</span><span class="sxs-lookup"><span data-stu-id="d02e3-110">Discusses how Visual Basic uses culture information to perform string conversions and comparisons.</span></span>  
+ [<span data-ttu-id="adf09-109">Impact de la culture sur les chaînes dans Visual Basic</span><span class="sxs-lookup"><span data-stu-id="adf09-109">How Culture Affects Strings in Visual Basic</span></span>](../../../../visual-basic/programming-guide/language-features/strings/how-culture-affects-strings.md)  
+ <span data-ttu-id="adf09-110">Explique comment Visual Basic utilise les informations de culture pour effectuer des conversions de chaînes et des comparaisons.</span><span class="sxs-lookup"><span data-stu-id="adf09-110">Discusses how Visual Basic uses culture information to perform string conversions and comparisons.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d02e3-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d02e3-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="adf09-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="adf09-111">See also</span></span>
 
-- [<span data-ttu-id="d02e3-112">Chaînes</span><span class="sxs-lookup"><span data-stu-id="d02e3-112">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)
+- [<span data-ttu-id="adf09-112">Chaînes</span><span class="sxs-lookup"><span data-stu-id="adf09-112">Strings</span></span>](../../../../visual-basic/programming-guide/language-features/strings/index.md)

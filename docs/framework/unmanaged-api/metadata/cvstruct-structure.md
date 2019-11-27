@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436428"
 ---
-# <a name="cvstruct-structure"></a><span data-ttu-id="85d3c-102">CVStruct, structure</span><span class="sxs-lookup"><span data-stu-id="85d3c-102">CVStruct Structure</span></span>
-<span data-ttu-id="85d3c-103">Contient des informations utilisées lors de l'installation d'un module ou d'une image composite.</span><span class="sxs-lookup"><span data-stu-id="85d3c-103">Contains information that is used when installing a module or a composite image.</span></span>  
+# <a name="cvstruct-structure"></a><span data-ttu-id="5ebbd-102">CVStruct, structure</span><span class="sxs-lookup"><span data-stu-id="5ebbd-102">CVStruct Structure</span></span>
+<span data-ttu-id="5ebbd-103">Contient des informations utilisées lors de l'installation d'un module ou d'une image composite.</span><span class="sxs-lookup"><span data-stu-id="5ebbd-103">Contains information that is used when installing a module or a composite image.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="85d3c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="85d3c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5ebbd-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5ebbd-104">Syntax</span></span>  
   
 ```cpp  
 typedef struct {  
@@ -35,24 +35,24 @@ typedef struct {
 } CVStruct;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="85d3c-105">Membres</span><span class="sxs-lookup"><span data-stu-id="85d3c-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="5ebbd-105">Membres</span><span class="sxs-lookup"><span data-stu-id="5ebbd-105">Members</span></span>  
   
-|<span data-ttu-id="85d3c-106">Membre</span><span class="sxs-lookup"><span data-stu-id="85d3c-106">Member</span></span>|<span data-ttu-id="85d3c-107">Description</span><span class="sxs-lookup"><span data-stu-id="85d3c-107">Description</span></span>|  
+|<span data-ttu-id="5ebbd-106">Membre</span><span class="sxs-lookup"><span data-stu-id="5ebbd-106">Member</span></span>|<span data-ttu-id="5ebbd-107">Description</span><span class="sxs-lookup"><span data-stu-id="5ebbd-107">Description</span></span>|  
 |------------|-----------------|  
-|<span data-ttu-id="85d3c-108">Majeur</span><span class="sxs-lookup"><span data-stu-id="85d3c-108">Major</span></span>|<span data-ttu-id="85d3c-109">Major version build number.</span><span class="sxs-lookup"><span data-stu-id="85d3c-109">Major version build number.</span></span>|  
-|<span data-ttu-id="85d3c-110">Mineur</span><span class="sxs-lookup"><span data-stu-id="85d3c-110">Minor</span></span>|<span data-ttu-id="85d3c-111">Minor version build number.</span><span class="sxs-lookup"><span data-stu-id="85d3c-111">Minor version build number.</span></span>|  
-|<span data-ttu-id="85d3c-112">Sub</span><span class="sxs-lookup"><span data-stu-id="85d3c-112">Sub</span></span>|<span data-ttu-id="85d3c-113">Sub-build number.</span><span class="sxs-lookup"><span data-stu-id="85d3c-113">Sub-build number.</span></span>|  
-|<span data-ttu-id="85d3c-114">Générer</span><span class="sxs-lookup"><span data-stu-id="85d3c-114">Build</span></span>|<span data-ttu-id="85d3c-115">Build number.</span><span class="sxs-lookup"><span data-stu-id="85d3c-115">Build number.</span></span>|  
+|<span data-ttu-id="5ebbd-108">Majeure</span><span class="sxs-lookup"><span data-stu-id="5ebbd-108">Major</span></span>|<span data-ttu-id="5ebbd-109">Numéro de build de la version principale.</span><span class="sxs-lookup"><span data-stu-id="5ebbd-109">Major version build number.</span></span>|  
+|<span data-ttu-id="5ebbd-110">Mineure</span><span class="sxs-lookup"><span data-stu-id="5ebbd-110">Minor</span></span>|<span data-ttu-id="5ebbd-111">Numéro de build de la version mineure.</span><span class="sxs-lookup"><span data-stu-id="5ebbd-111">Minor version build number.</span></span>|  
+|<span data-ttu-id="5ebbd-112">Sub</span><span class="sxs-lookup"><span data-stu-id="5ebbd-112">Sub</span></span>|<span data-ttu-id="5ebbd-113">Numéro de sous-Build.</span><span class="sxs-lookup"><span data-stu-id="5ebbd-113">Sub-build number.</span></span>|  
+|<span data-ttu-id="5ebbd-114">Build</span><span class="sxs-lookup"><span data-stu-id="5ebbd-114">Build</span></span>|<span data-ttu-id="5ebbd-115">Numéro de Build.</span><span class="sxs-lookup"><span data-stu-id="5ebbd-115">Build number.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="85d3c-116">spécifications</span><span class="sxs-lookup"><span data-stu-id="85d3c-116">Requirements</span></span>  
- <span data-ttu-id="85d3c-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="85d3c-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5ebbd-116">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="5ebbd-116">Requirements</span></span>  
+ <span data-ttu-id="5ebbd-117">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5ebbd-117">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="85d3c-118">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="85d3c-118">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="5ebbd-118">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="5ebbd-118">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="85d3c-119">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="85d3c-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="5ebbd-119">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="5ebbd-119">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="85d3c-120">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="85d3c-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5ebbd-120">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5ebbd-120">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="85d3c-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="85d3c-121">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5ebbd-121">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5ebbd-121">See also</span></span>
 
-- [<span data-ttu-id="85d3c-122">Structures de métadonnées</span><span class="sxs-lookup"><span data-stu-id="85d3c-122">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [<span data-ttu-id="5ebbd-122">Structures de métadonnées</span><span class="sxs-lookup"><span data-stu-id="5ebbd-122">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
