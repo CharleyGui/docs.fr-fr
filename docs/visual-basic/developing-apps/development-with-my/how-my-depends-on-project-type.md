@@ -13,50 +13,50 @@ ms.locfileid: "74330268"
 ---
 # <a name="how-my-depends-on-project-type-visual-basic"></a>Comment My dépend du type de projet (Visual Basic)
 
-`My` exposes only those objects required by a particular project type. For example, the `My.Forms` object is available in a Windows Forms application but not available in a console application. This topic describes which `My` objects are available in different project types.  
+`My` expose uniquement les objets requis par un type de projet particulier. Par exemple, l’objet `My.Forms` est disponible dans une application Windows Forms, mais n’est pas disponible dans une application console. Cette rubrique décrit les objets `My` disponibles dans différents types de projets.  
   
-## <a name="my-in-windows-applications-and-web-sites"></a>My in Windows Applications and Web Sites  
+## <a name="my-in-windows-applications-and-web-sites"></a>My dans les applications et sites Web Windows  
 
- `My` exposes only objects that are useful in the current project type; it suppresses objects that are not applicable. For example, the following image shows the `My` object model in a Windows Forms project.  
+ `My` expose uniquement les objets qui sont utiles dans le type de projet actuel ; elle supprime les objets qui ne sont pas applicables. Par exemple, l’image suivante montre le modèle d’objet `My` dans un projet Windows Forms.  
   
- ![Diagram that shows the My object model in a Windows Forms application.](./media/how-my-depends-on-project-type/my-object-model-windows-forms.png)  
+ ![Diagramme qui montre le modèle mon objet dans une application Windows Forms.](./media/how-my-depends-on-project-type/my-object-model-windows-forms.png)  
   
- In a Web site project, `My` exposes objects that are relevant to a Web developer (such as the `My.Request` and `My.Response` objects) while suppressing objects that are not relevant (such as the `My.Forms` object). The following image shows the `My` object model in a Web site project:  
+ Dans un projet de site Web, `My` expose des objets pertinents pour un développeur Web (tels que les objets `My.Request` et `My.Response`) tout en supprimant les objets qui ne sont pas pertinents (tels que l’objet `My.Forms`). L’illustration suivante montre le modèle d’objet `My` dans un projet de site Web :  
   
- ![Diagram that shows the My object model in a Web application.](./media/how-my-depends-on-project-type/my-object-model-web.png)  
+ ![Diagramme qui montre le modèle mon objet dans une application Web.](./media/how-my-depends-on-project-type/my-object-model-web.png)  
   
-## <a name="project-details"></a>Project Details  
+## <a name="project-details"></a>Détails du projet  
 
- The following table shows which `My` objects are enabled by default for eight project types: Windows application, class Library, console application, Windows control library, Web control library, Windows service, empty, and Web site.  
+ Le tableau suivant indique les objets `My` sont activés par défaut pour huit types de projets : application Windows, bibliothèque de classes, application console, bibliothèque de contrôles Windows, bibliothèque de contrôles Web, service Windows, vide et site Web.  
   
- There are three versions of the `My.Application` object, two versions of the `My.Computer` object, and two versions of `My.User` object; details about these versions are given in the footnotes after the table.  
+ Il existe trois versions de l’objet `My.Application`, deux versions de l’objet `My.Computer` et deux versions de `My.User` objet. des informations détaillées sur ces versions sont fournies dans les notes de bas de page après le tableau.  
   
-|My Object|Application Windows|Bibliothèque de classes|Application console|Windows Control Library|Web Control Library|Service Windows|Empty|Site web|  
+|Mon objet|Application Windows|Bibliothèque de classes|Application console|Bibliothèque de contrôles Windows|Bibliothèque de contrôles Web|Service Windows|Vide|Site web|  
 |---|---|---|---|---|---|---|---|---|  
-|`My.Application`|**Yes** <sup>1</sup>|**Yes** <sup>2</sup>|**Yes** <sup>3</sup>|**Yes** <sup>2</sup>|Non|**Yes** <sup>3</sup>|Non|Non|  
-|`My.Computer`|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>4</sup>|**Yes** <sup>5</sup>|**Yes** <sup>4</sup>|Non|**Yes** <sup>5</sup>|  
+|`My.Application`|**Oui** <sup>1</sup>|**Oui** <sup>2</sup>|**Oui** <sup>3</sup>|**Oui** <sup>2</sup>|Non|**Oui** <sup>3</sup>|Non|Non|  
+|`My.Computer`|**Oui** <sup>4</sup>|**Oui** <sup>4</sup>|**Oui** <sup>4</sup>|**Oui** <sup>4</sup>|**Oui** <sup>5</sup>|**Oui** <sup>4</sup>|Non|**Oui** <sup>5</sup>|  
 |`My.Forms`|**Oui**|Non|Non|**Oui**|Non|Non|Non|Non|  
 |`My.Log`|Non|Non|Non|Non|Non|Non|Non|**Oui**|  
 |`My.Request`|Non|Non|Non|Non|Non|Non|Non|**Oui**|  
 |`My.Resources`|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|Non|Non|  
 |`My.Response`|Non|Non|Non|Non|Non|Non|Non|**Oui**|  
 |`My.Settings`|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|Non|Non|  
-|`My.User`|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>6</sup>|**Yes** <sup>7</sup>|**Yes** <sup>6</sup>|Non|**Yes** <sup>7</sup>|  
+|`My.User`|**Oui** <sup>6</sup>|**Oui** <sup>6</sup>|**Oui** <sup>6</sup>|**Oui** <sup>6</sup>|**Oui** <sup>7</sup>|**Oui** <sup>6</sup>|Non|**Oui** <sup>7</sup>|  
 |`My.WebServices`|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|**Oui**|Non|Non|  
   
- <sup>1</sup> Windows Forms version of `My.Application`. Derives from the console version (see Note 3); adds support for interacting with the application's windows and provides the Visual Basic Application model.  
+ <sup>1</sup> Windows Forms version de `My.Application`. Dérive de la version de la console (voir la remarque 3); Ajoute la prise en charge de l’interaction avec les fenêtres de l’application et fournit le modèle d’application Visual Basic.  
   
- <sup>2</sup> Library version of `My.Application`. Provides the basic functionality needed by an application: provides members for writing to the application log and accessing application information.  
+ <sup>2</sup> version de la bibliothèque de `My.Application`. Fournit les fonctionnalités de base requises par une application : fournit des membres pour l’écriture dans le journal des applications et l’accès aux informations de l’application.  
   
- <sup>3</sup> Console version of `My.Application`. Derives from the library version (see Note 2), and adds additional members for accessing the application's command-line arguments and ClickOnce deployment information.  
+ <sup>3</sup> version de la Console de `My.Application`. Dérive de la version de bibliothèque (voir la remarque 2) et ajoute des membres supplémentaires pour accéder aux arguments de ligne de commande et aux informations de déploiement ClickOnce de l’application.  
   
- <sup>4</sup> Windows version of `My.Computer`. Derives from the Server version (see Note 5), and provides access to useful objects on a client machine, such as the keyboard, screen, and mouse.  
+ <sup>4</sup> version de Windows de `My.Computer`. Dérive de la version du serveur (voir remarque 5) et donne accès à des objets utiles sur un ordinateur client, tels que le clavier, l’écran et la souris.  
   
- <sup>5</sup> Server version of `My.Computer`. Provides basic information about the computer, such as the name, access to the clock, and so on.  
+ <sup>5</sup> version du serveur de `My.Computer`. Fournit des informations de base sur l’ordinateur, telles que le nom, l’accès à l’horloge, etc.  
   
- <sup>6</sup> Windows version of `My.User`. This object is associated with the thread's current identity.  
+ <sup>6</sup> version de Windows de `My.User`. Cet objet est associé à l’identité actuelle du thread.  
   
- <sup>7</sup> Web version of `My.User`. This object is associated with the user identity of the application's current HTTP request.  
+ <sup>7</sup> version Web de `My.User`. Cet objet est associé à l’identité de l’utilisateur de la requête HTTP actuelle de l’application.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -66,7 +66,7 @@ ms.locfileid: "74330268"
 - <xref:Microsoft.VisualBasic.ApplicationServices.User>
 - [Personnalisation de la disponibilité ou non des objets dans My](../../../visual-basic/developing-apps/customizing-extending-my/customizing-which-objects-are-available-in-my.md)
 - [Compilation conditionnelle](../../../visual-basic/programming-guide/program-structure/conditional-compilation.md)
-- [-define (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
+- [-définir (Visual Basic)](../../../visual-basic/reference/command-line-compiler/define.md)
 - [My.Forms (objet)](../../../visual-basic/language-reference/objects/my-forms-object.md)
 - [My.Request (objet)](../../../visual-basic/language-reference/objects/my-request-object.md)
 - [My.Response (objet)](../../../visual-basic/language-reference/objects/my-response-object.md)

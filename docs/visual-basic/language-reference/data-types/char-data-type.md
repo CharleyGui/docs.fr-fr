@@ -19,25 +19,25 @@ ms.locfileid: "74344046"
 ---
 # <a name="char-data-type-visual-basic"></a>Char, type de données (Visual Basic)
 
-Holds unsigned 16-bit (2-byte) code points ranging in value from 0 through 65535. Each *code point*, or character code, represents a single Unicode character.
+Contient des points de code non signés de 16 bits (2 octets) dont la valeur est comprise entre 0 et 65535. Chaque *point de code*, ou code de caractère, représente un caractère Unicode unique.
 
 ## <a name="remarks"></a>Notes
 
-Use the `Char` data type when you need to hold only a single character and do not need the overhead of `String`. In some cases you can use `Char()`, an array of `Char` elements, to hold multiple characters.
+Utilisez le type de données `Char` lorsque vous ne devez contenir qu’un seul caractère et que vous n’avez pas besoin de la surcharge de `String`. Dans certains cas, vous pouvez utiliser `Char()`, un tableau d’éléments `Char`, pour contenir plusieurs caractères.
 
-The default value of `Char` is the character with a code point of 0.
+La valeur par défaut de `Char` est le caractère avec un point de code de 0.
 
 ## <a name="unicode-characters"></a>Caractères Unicode
 
-The first 128 code points (0–127) of Unicode correspond to the letters and symbols on a standard U.S. keyboard. These first 128 code points are the same as those the ASCII character set defines. The second 128 code points (128–255) represent special characters, such as Latin-based alphabet letters, accents, currency symbols, and fractions. Unicode uses the remaining code points (256-65535) for a wide variety of symbols, including worldwide textual characters, diacritics, and mathematical and technical symbols.
+Les premiers points de code 128 (0 à 127) d’Unicode correspondent aux lettres et aux symboles sur un clavier américain standard. Ces premiers points de code 128 sont les mêmes que ceux définis par le jeu de caractères ASCII. Le deuxième point de code 128 (128 à 255) représente des caractères spéciaux, tels que des lettres alphabetées latines, des accents, des symboles monétaires et des fractions. Unicode utilise les points de code restants (256-65535) pour un large éventail de symboles, y compris les caractères textuels mondiaux, les signes diacritiques et les symboles mathématiques et techniques.
 
-You can use methods like <xref:System.Char.IsDigit%2A> and <xref:System.Char.IsPunctuation%2A> on a `Char` variable to determine its Unicode classification.
+Vous pouvez utiliser des méthodes comme <xref:System.Char.IsDigit%2A> et <xref:System.Char.IsPunctuation%2A> sur une variable `Char` pour déterminer sa classification Unicode.
 
 ## <a name="type-conversions"></a>Conversions de type
 
-Visual Basic does not convert directly between `Char` and the numeric types. You can use the <xref:Microsoft.VisualBasic.Strings.Asc%2A> or <xref:Microsoft.VisualBasic.Strings.AscW%2A> function to convert a `Char` value to an `Integer` that represents its code point. You can use the <xref:Microsoft.VisualBasic.Strings.Chr%2A> or <xref:Microsoft.VisualBasic.Strings.ChrW%2A> function to convert an `Integer` value to a `Char` that has that code point.
+Visual Basic ne se convertit pas directement entre `Char` et les types numériques. Vous pouvez utiliser la fonction <xref:Microsoft.VisualBasic.Strings.Asc%2A> ou <xref:Microsoft.VisualBasic.Strings.AscW%2A> pour convertir une valeur `Char` en une `Integer` qui représente son point de code. Vous pouvez utiliser la fonction <xref:Microsoft.VisualBasic.Strings.Chr%2A> ou <xref:Microsoft.VisualBasic.Strings.ChrW%2A> pour convertir une valeur `Integer` en `Char` qui a ce point de code.
 
-If the type checking switch (the [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)) is on, you must append the literal type character to a single-character string literal to identify it as the `Char` data type. L'exemple suivant illustre ce comportement. The first assignment to the `charVar` variable generates compiler error [BC30512](../../misc/bc30512.md) because `Option Strict` is on. The second compiles successfully because the `c` literal type character identifies the literal as a `Char` value.
+Si le commutateur de vérification de type ( [Option Strict Statement](../../../visual-basic/language-reference/statements/option-strict-statement.md)) est activé, vous devez ajouter le caractère de type littéral à un littéral de chaîne à un seul caractère pour l’identifier en tant que type de données `Char`. L’exemple suivant illustre ces actions. La première assignation à la variable `charVar` génère une erreur du compilateur [BC30512](../../misc/bc30512.md) , car `Option Strict` est activé. La deuxième compilation réussit, car le `c` caractère de type de littéral identifie le littéral comme une valeur de `Char`.
 
 ```vb
 Option Strict On
@@ -57,15 +57,15 @@ End Module
 
 ## <a name="programming-tips"></a>Conseils de programmation
 
-- **Negative Numbers.** `Char` is an unsigned type and cannot represent a negative value. In any case, you should not use `Char` to hold numeric values.
+- **Nombres négatifs.** `Char` est un type non signé et ne peut pas représenter une valeur négative. Dans tous les cas, vous ne devez pas utiliser `Char` pour contenir des valeurs numériques.
 
-- **Interop Considerations.** If you interface with components not written for the .NET Framework, for example Automation or COM objects, remember that character types have a different data width (8 bits) in other environments. If you pass an 8-bit argument to such a component, declare it as `Byte` instead of `Char` in your new Visual Basic code.
+- **Considérations relatives à l’interopérabilité.** Si vous interface avec des composants non écrits pour le .NET Framework, par exemple des objets Automation ou COM, n’oubliez pas que les types de caractères ont une largeur de données différente (8 bits) dans d’autres environnements. Si vous transmettez un argument de 8 bits à un tel composant, déclarez-le comme `Byte` au lieu de `Char` dans votre nouveau code Visual Basic.
 
-- **Widening.** The `Char` data type widens to `String`. This means you can convert `Char` to `String` and will not encounter a <xref:System.OverflowException?displayProperty=nameWithType>.
+- **Étendue.** Le type de données `Char` s’étend à `String`. Cela signifie que vous pouvez convertir `Char` en `String` et que vous ne rencontrerez pas de <xref:System.OverflowException?displayProperty=nameWithType>.
 
-- **Type Characters.** Appending the literal type character `C` to a single-character string literal forces it to the `Char` data type. `Char` has no identifier type character.
+- **Caractères de type.** L’ajout du caractère de type de littéral `C` à un littéral de chaîne à un seul caractère force ce dernier en type de données `Char`. `Char` n’a pas de caractère de type d’identificateur.
 
-- **Framework Type.** Le type correspondant dans le .NET Framework est la structure <xref:System.Char?displayProperty=nameWithType>.
+- **Type de Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Char?displayProperty=nameWithType>.
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -76,7 +76,7 @@ End Module
 - <xref:Microsoft.VisualBasic.Strings.ChrW%2A>
 - [Types de données](../../../visual-basic/language-reference/data-types/index.md)
 - [String (type de données)](../../../visual-basic/language-reference/data-types/string-data-type.md)
-- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)
 - [Guide pratique : appeler une fonction Windows qui possède des types non signés](../../../visual-basic/programming-guide/com-interop/how-to-call-a-windows-function-that-takes-unsigned-types.md)
 - [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

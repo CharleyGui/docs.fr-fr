@@ -33,7 +33,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 - `listField1`, `listField2`  
   
-     Optionnel. Un ou plusieurs champs de la ou des variables de requête qui identifient explicitement les champs à inclure dans le résultat groupé. Si aucun champ n’est spécifié, tous les champs de la ou des variables de requête sont inclus dans le résultat groupé.  
+     Ce paramètre est facultatif. Un ou plusieurs champs de la ou des variables de requête qui identifient explicitement les champs à inclure dans le résultat groupé. Si aucun champ n’est spécifié, tous les champs de la ou des variables de requête sont inclus dans le résultat groupé.  
   
 - `keyExp1`  
   
@@ -41,7 +41,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
   
 - `keyExp2`  
   
-     Optionnel. Une ou plusieurs clés supplémentaires combinées à `keyExp1` pour créer une clé composite.  
+     Ce paramètre est facultatif. Une ou plusieurs clés supplémentaires combinées à `keyExp1` pour créer une clé composite.  
   
 - `aggregateList`  
   
@@ -51,7 +51,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
     Into Group  
     ```  
   
-     ou  
+     -ou-  
   
     ```vb  
     Into <alias> = Group  
@@ -65,7 +65,7 @@ Group [ listField1 [, listField2 [...] ] By keyExp1 [, keyExp2 [...] ]
  Utilisez le paramètre `aggregateList` de la clause `Into` et le mot clé `Group` pour identifier le nom de membre servant à référencer le groupe. Vous pouvez aussi inclure des fonctions d’agrégation dans la clause `Into` pour calculer les valeurs des éléments groupés. Pour obtenir la liste des fonctions d’agrégation standard, consultez [Aggregate Clause](../../../visual-basic/language-reference/queries/aggregate-clause.md).  
   
 ## <a name="example"></a>Exemple  
- The following code example groups a list of customers based on their location (country/region) and provides a count of the customers in each group. The results are ordered by country/region name. Les résultats groupés sont organisés par nom de ville.  
+ L’exemple de code suivant regroupe une liste de clients en fonction de leur emplacement (pays/région) et fournit le nombre de clients dans chaque groupe. Les résultats sont triés par nom de pays/région. Les résultats groupés sont organisés par nom de ville.  
   
  [!code-vb[VbSimpleQuerySamples#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#11)]  
   

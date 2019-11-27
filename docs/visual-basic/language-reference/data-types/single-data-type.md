@@ -29,25 +29,25 @@ ms.locfileid: "74343919"
 ---
 # <a name="single-data-type-visual-basic"></a>Single, type de données (Visual Basic)
 
-Holds signed IEEE 32-bit (4-byte) single-precision floating-point numbers ranging in value from -3.4028235E+38 through -1.401298E-45 for negative values and from 1.401298E-45 through 3.4028235E+38 for positive values. Single-precision numbers store an approximation of a real number.  
+Contient les nombres à virgule flottante simple précision IEEE 32 bits (4 octets) signés dont la valeur est comprise entre-3.4028235 E + 38 et-1.401298 E-45 pour les valeurs négatives et de 1.401298 E-45 à 3.4028235 E + 38 pour les valeurs positives. Les nombres à simple précision stockent une approximation d’un nombre réel.  
   
 ## <a name="remarks"></a>Notes  
 
- Use the `Single` data type to contain floating-point values that do not require the full data width of `Double`. In some cases the common language runtime might be able to pack your `Single` variables closely together and save memory consumption.  
+ Utilisez le type de données `Single` pour contenir des valeurs à virgule flottante qui ne nécessitent pas la largeur totale des données de `Double`. Dans certains cas, l’common language runtime peut être en mesure de regrouper vos variables de `Single` étroitement et de réduire la consommation de mémoire.  
   
  La valeur par défaut de `Single` est 0.  
   
 ## <a name="programming-tips"></a>Conseils de programmation  
   
-- **Precision.** When you work with floating-point numbers, keep in mind that they do not always have a precise representation in memory. This could lead to unexpected results from certain operations, such as value comparison and the `Mod` operator. For more information, see [Troubleshooting Data Types](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
+- **Précision.** Lorsque vous travaillez avec des nombres à virgule flottante, gardez à l’esprit qu’ils n’ont pas toujours une représentation précise en mémoire. Cela peut entraîner des résultats inattendus de certaines opérations, telles que la comparaison de valeurs et l’opérateur `Mod`. Pour plus d’informations, consultez [Dépannage des types de données](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md).  
   
-- **Widening.** The `Single` data type widens to `Double`. This means you can convert `Single` to `Double` without encountering a <xref:System.OverflowException?displayProperty=nameWithType> error.  
+- **Étendue.** Le type de données `Single` s’étend à `Double`. Cela signifie que vous pouvez convertir `Single` en `Double` sans rencontrer d’erreur <xref:System.OverflowException?displayProperty=nameWithType>.  
   
-- **Trailing Zeros.** The floating-point data types do not have any internal representation of trailing 0 characters. For example, they do not distinguish between 4.2000 and 4.2. Consequently, trailing 0 characters do not appear when you display or print floating-point values.  
+- **Zéros de fin.** Les types de données à virgule flottante n’ont pas de représentation interne des 0 caractères de fin. Par exemple, ils ne font pas la distinction entre 4,2000 et 4,2. Par conséquent, les caractères de fin 0 ne s’affichent pas lorsque vous affichez ou imprimez des valeurs à virgule flottante.  
   
-- **Type Characters.** L'ajout du caractère de type littéral `F` à un littéral force ce dernier en type de données `Single`. L'ajout du caractère de type identificateur `!` à un identificateur force ce dernier en type `Single`.  
+- **Caractères de type.** L'ajout du caractère de type littéral `F` à un littéral force ce dernier en type de données `Single`. L'ajout du caractère de type identificateur `!` à un identificateur force ce dernier en type `Single`.  
   
-- **Framework Type.** Le type correspondant dans le .NET Framework est la structure <xref:System.Single?displayProperty=nameWithType>.  
+- **Type de Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.Single?displayProperty=nameWithType>.  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -55,7 +55,7 @@ Holds signed IEEE 32-bit (4-byte) single-precision floating-point numbers rangin
 - [Types de données](../../../visual-basic/language-reference/data-types/index.md)
 - [Decimal (type de données)](../../../visual-basic/language-reference/data-types/decimal-data-type.md)
 - [Double (type de données)](../../../visual-basic/language-reference/data-types/double-data-type.md)
-- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)
 - [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)
 - [Dépannage des types de données](../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)

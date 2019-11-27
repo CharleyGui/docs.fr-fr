@@ -31,7 +31,7 @@ Vous pouvez changer le comportement du journal et des écouteurs de suivi en mod
 
 ## <a name="where-messages-are-logged"></a>Emplacement d’enregistrement des messages
 
-Si l’assembly n’a pas de fichier de configuration, les objets `My.Application.Log` et `My.Log` écrivent dans la sortie de débogage de l’application (via la classe <xref:System.Diagnostics.DefaultTraceListener> ). En outre, l’objet `My.Application.Log` écrit dans le fichier journal de l’assembly (par l’intermédiaire de la classe <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener>), tandis que l’objet `My.Log` écrit dans la sortie de la page web ASP.NET (par l’intermédiaire de la classe <xref:System.Web.WebPageTraceListener>).
+Si l’assembly n’a pas de fichier de configuration, les objets `My.Application.Log` et `My.Log` écrivent dans la sortie de débogage de l’application (via la classe <xref:System.Diagnostics.DefaultTraceListener> ). En outre, l’objet `My.Application.Log` écrit dans le fichier journal de l’assembly (via la classe <xref:Microsoft.VisualBasic.Logging.FileLogTraceListener> ), tandis que l’objet `My.Log` écrit dans la sortie de la page web ASP.NET (via la classe <xref:System.Web.WebPageTraceListener> ).
 
 Vous pouvez voir la sortie de débogage dans la fenêtre **Sortie** de Visual Studio lors de l’exécution de votre application en mode débogage. Pour ouvrir la fenêtre **Sortie** , cliquez sur l’élément de menu **Déboguer** , pointez sur **Windows**, puis cliquez sur **Sortie**. Dans la fenêtre **Sortie** , sélectionnez **Déboguer** dans la zone **Afficher la sortie à partir de** .
 
@@ -49,7 +49,7 @@ Vous pouvez remplacer le comportement par défaut en ajoutant ou en modifiant le
 
 ## <a name="configuring-log-settings"></a>Configuration des paramètres de journalisation
 
-The `Log` object has a default implementation that works without an application configuration file, app.config. To change the defaults, you must add a configuration file with the new settings. Pour plus d'informations, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
+L’objet `Log` a une implémentation par défaut qui fonctionne sans fichier de configuration d’application, app. config. Pour modifier les valeurs par défaut, vous devez ajouter un fichier de configuration avec les nouveaux paramètres. Pour plus d'informations, consultez [Walkthrough: Filtering My.Application.Log Output](../../../../visual-basic/developing-apps/programming/log-info/walkthrough-filtering-my-application-log-output.md).
 
 Les sections de configuration de la journalisation se trouvent dans le nœud `<system.diagnostics>` du nœud `<configuration>` principal du fichier app.config. Les informations de la journalisation sont définies dans plusieurs nœuds :
 

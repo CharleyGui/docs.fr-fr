@@ -35,7 +35,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |Désactivé|CommonStates|Le contrôle est désactivé.|  
 |InvalidFocused|ValidationStates|Le contrôle n’est pas valide et a le focus.|  
 |InvalidUnfocused|ValidationStates|Le contrôle n’est pas valide et n’a pas le focus.|  
@@ -49,13 +49,13 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur la cellule.|  
 |Avec focus|FocusStates|La cellule a le focus.|  
 |Sans focus|FocusStates|La cellule n’a pas le focus|  
-|Actuelle|CurrentStates|La cellule est la cellule active.|  
+|Current|CurrentStates|La cellule est la cellule active.|  
 |Normale|CurrentStates|La cellule n’est pas la cellule active.|  
-|Afficher|InteractionStates|La cellule est en mode d’affichage.|  
+|Affichage|InteractionStates|La cellule est en mode d’affichage.|  
 |Modification|InteractionStates|La cellule est en mode édition.|  
 |Selected|SelectionStates|La cellule est sélectionnée.|  
 |Non sélectionné|SelectionStates|La cellule n’est pas sélectionnée.|  
@@ -71,7 +71,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur la ligne.|  
 |MouseOver_Editing|CommonStates|Le pointeur de la souris est positionné sur la ligne et la ligne est en mode édition.|  
 |MouseOver_Selected|CommonStates|Le pointeur de la souris est positionné sur la ligne et la ligne est sélectionnée.|  
@@ -99,7 +99,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur la ligne.|  
 |MouseOver_CurrentRow|CommonStates|Le pointeur de la souris est positionné sur la ligne et la ligne est la ligne actuelle.|  
 |MouseOver_CurrentRow_Selected|CommonStates|Le pointeur de la souris est positionné sur la ligne, et la ligne est active et sélectionnée.|  
@@ -148,7 +148,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de souris est positionné sur le contrôle.|  
 |Appuyé|CommonStates|Le contrôle est enfoncé.|  
 |SortAscending|SortStates|La colonne est triée dans l’ordre croissant.|  

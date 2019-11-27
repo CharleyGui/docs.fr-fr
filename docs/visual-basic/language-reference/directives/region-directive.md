@@ -37,7 +37,7 @@ Réduit et masque des sections de code dans des fichiers Visual Basic.
   
 ## <a name="remarks"></a>Notes  
 
- Utilisez la directive `#Region` pour spécifier un bloc de code que vous pouvez développer ou réduire dans le mode Plan de l'éditeur de code Visual Studio. You can place, or *nest*, regions within other regions to group similar regions together.  
+ Utilisez la directive `#Region` pour spécifier un bloc de code que vous pouvez développer ou réduire dans le mode Plan de l'éditeur de code Visual Studio. Vous pouvez placer ou *imbriquer*des régions dans d’autres régions pour regrouper des régions similaires.  
   
 ## <a name="example"></a>Exemple  
 

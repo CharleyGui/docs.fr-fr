@@ -72,7 +72,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarDayButton> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.CalendarDayButton>.|  
 |Appuyé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarDayButton> est enfoncé.|  
@@ -82,8 +82,8 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Le bouton n’a pas le focus.|  
 |Avec focus|FocusStates|Le bouton a le focus.|  
 |Sans focus|FocusStates|Le bouton n’a pas le focus.|  
-|Actif|ActiveStates|Le bouton est actif.|  
-|Inactif|ActiveStates|Le bouton est inactif.|  
+|Active|ActiveStates|Le bouton est actif.|  
+|Inactive|ActiveStates|Le bouton est inactif.|  
 |RegularDay|DayStates|Le bouton ne représente pas <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
 |Aujourd'hui|DayStates|Le bouton représente <xref:System.DateTime.Today%2A?displayProperty=nameWithType>.|  
 |NormalDay|BlackoutDayStates|Le bouton représente un jour qui peut être sélectionné.|  
@@ -100,7 +100,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |Désactivé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarButton> est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.Primitives.CalendarButton>.|  
 |Appuyé|CommonStates|Le <xref:System.Windows.Controls.Primitives.CalendarButton> est enfoncé.|  
@@ -110,8 +110,8 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |CalendarButtonUnfocused|CalendarButtonFocusStates|Le bouton n’a pas le focus.|  
 |Avec focus|FocusStates|Le bouton a le focus.|  
 |Sans focus|FocusStates|Le bouton n’a pas le focus.|  
-|Actif|ActiveStates|Le bouton est actif.|  
-|Inactif|ActiveStates|Le bouton est inactif.|  
+|Active|ActiveStates|Le bouton est actif.|  
+|Inactive|ActiveStates|Le bouton est inactif.|  
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
 |InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
 |InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  

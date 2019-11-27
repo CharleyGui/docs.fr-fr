@@ -8,7 +8,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349584"
 ---
-# <a name="-visual-basic-reference"></a>$ (Visual Basic Reference)
+# <a name="-visual-basic-reference"></a>$ (Référence Visual Basic)
 
 Identifie un littéral de chaîne comme une [chaîne interpolée](../../programming-guide/language-features/strings/interpolated-strings.md). Une chaîne interpolée est une chaîne de type modèle qui contient du texte littéral et des *expressions interpolées*. Lorsque la chaîne interpolée est résolue, par exemple dans une instruction d’assignation ou un appel de méthode, ses expressions interpolées sont remplacées par leur représentation sous forme de chaînes dans la chaîne de résultat. Les chaînes interpolées remplacent les [chaînes de format composite](../../../standard/base-types/composite-formatting.md) prises en charge par le .NET Framework.
 
@@ -21,4 +21,4 @@ Pour plus d’informations sur les chaînes interpolées, consultez la rubrique 
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur Visual Basic](../index.md)
-- [Visual Basic Special Characters](index.md)
+- [Visual Basic les caractères spéciaux](index.md)

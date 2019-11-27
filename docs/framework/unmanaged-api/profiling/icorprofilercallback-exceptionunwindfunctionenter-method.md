@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445288"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionenter-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionEnter, méthode
-Notifies the profiler that the unwind phase of exception handling has begun to unwind a function.  
+Notifie le profileur que la phase de déroulement de la gestion des exceptions a commencé à dérouler une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,14 +34,14 @@ HRESULT ExceptionUnwindFunctionEnter(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The ID of the function that is being unwound.  
+ dans ID de la fonction qui est déroulée.  
   
 ## <a name="remarks"></a>Notes  
- The profiler should not block in its implementation of this method because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and garbage collection is attempted, the runtime will block until this callback returns.  
+ Le profileur ne doit pas se bloquer dans son implémentation de cette méthode, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé. Si le profileur est bloqué ici et que garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.  
   
- The profiler's implementation of this method should not call into managed code or in any way cause a managed-memory allocation.  
+ L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

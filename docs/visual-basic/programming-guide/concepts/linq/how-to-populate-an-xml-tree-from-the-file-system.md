@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344474"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>How to: Populate an XML Tree from the File System (Visual Basic)
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-visual-basic"></a>Comment : remplir une arborescence XML à partir du système de fichiers (Visual Basic)
 Une application courante et utile des arborescences XML consiste à les utiliser en tant que banque de données nom/valeur hiérarchique. Vous pouvez remplir une arborescence XML avec des données hiérarchiques, puis les interroger, les transformer et, si nécessaire, les sérialiser. Dans ce scénario, une grande partie de la sémantique spécifique au langage XML, telle que les espaces de noms et le comportement d'espace blanc, n'est pas importante. Au lieu de cela, vous utilisez l’arborescence XML en tant que petite base de données hiérarchique en mémoire et à utilisateur unique.  
   
 ## <a name="example"></a>Exemple  
@@ -116,4 +116,4 @@ Total File Size:59089
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)

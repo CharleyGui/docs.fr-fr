@@ -1,5 +1,5 @@
 ---
-title: 'How to: Sort An Array'
+title: 'Comment : trier un tableau'
 ms.date: 07/20/2015
 f1_keywords:
 - Array.Sort
@@ -14,13 +14,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351850"
 ---
-# <a name="how-to-sort-an-array-in-visual-basic"></a>How to: sort an array in Visual Basic
+# <a name="how-to-sort-an-array-in-visual-basic"></a>Comment : trier un tableau dans Visual Basic
 
-This article shows an example of how to sort an array of strings in Visual Basic.
+Cet article montre un exemple de tri d’un tableau de chaînes dans Visual Basic.
 
 ## <a name="example"></a>Exemple
 
-This example declares an array of `String` objects named `zooAnimals`, populates it, and then sorts it alphabetically:
+Cet exemple déclare un tableau d’objets `String` nommés `zooAnimals`, le remplit, puis le trie par ordre alphabétique :
   
 ```vb
 Private Sub SortAnimals()
@@ -36,9 +36,9 @@ End Sub
 
 Les conditions ci-dessous peuvent générer une exception.
 
-- Array is empty (<xref:System.ArgumentNullException> class).
-- Array is multidimensional (<xref:System.RankException> class).
-- One or more elements of the array don't implement the <xref:System.IComparable> interface (<xref:System.InvalidOperationException> class).
+- Le tableau est vide (classe<xref:System.ArgumentNullException>).
+- Le tableau est multidimensionnel (classe<xref:System.RankException>).
+- Un ou plusieurs éléments du tableau n’implémentent pas l’interface <xref:System.IComparable> (classe<xref:System.InvalidOperationException>).
 
 ## <a name="see-also"></a>Voir aussi
 

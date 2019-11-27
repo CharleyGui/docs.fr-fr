@@ -16,7 +16,7 @@ ms.locfileid: "74351421"
 ---
 # <a name="out-generic-modifier-visual-basic"></a>Out (modificateur générique) (Visual Basic)
 
-For generic type parameters, the `Out` keyword specifies that the type is covariant.
+Pour les paramètres de type générique, le mot clé `Out` spécifie que le type est covariant.
 
 ## <a name="remarks"></a>Notes
 
@@ -37,11 +37,11 @@ Dans une interface générique, un paramètre de type peut être déclaré covar
 
 - Le paramètre de type n’est pas utilisé comme contrainte générique pour les méthodes d’interface.
 
-In a generic delegate, a type parameter can be declared covariant if it is used only as a method return type and not used for method arguments.
+Dans un délégué générique, un paramètre de type peut être déclaré covariant s’il est utilisé uniquement comme type de retour de méthode et n’est pas utilisé pour les arguments de méthode.
 
 La covariance et la contravariance sont prises en charge pour les types référence, mais pas pour les types valeur.
 
-In Visual Basic, you cannot declare events in covariant interfaces without specifying the delegate type. Also, covariant interfaces cannot have nested classes, enums, or structures, but they can have nested interfaces.
+Dans Visual Basic, vous ne pouvez pas déclarer d’événements dans des interfaces covariants sans spécifier le type délégué. En outre, les interfaces covariantes ne peuvent pas avoir de classes imbriquées, d’énumérations ou de structures, mais elles peuvent avoir des interfaces imbriquées.
 
 ## <a name="behavior"></a>Comportement
 
@@ -57,7 +57,7 @@ L’exemple suivant montre comment déclarer, étendre et implémenter une inter
 
 ## <a name="example"></a>Exemple
 
-L’exemple de code suivant montre comment déclarer, instancier et appeler un délégué générique covariant. It also shows how you can use implicit conversion for delegate types.
+L’exemple de code suivant montre comment déclarer, instancier et appeler un délégué générique covariant. Il montre également comment vous pouvez utiliser la conversion implicite pour les types délégués.
 
 [!code-vb[vbVarianceKeywords#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/vbvariancekeywords/vb/module1.vb#4)]
 

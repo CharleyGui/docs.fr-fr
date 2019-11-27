@@ -47,11 +47,11 @@ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et
 > [!NOTE]
 > Cette implémentation est considérée comme un problème d’accessibilité si le contrôle ne peut être appelé que suite à un effet secondaire lié à la souris.
 
-- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. For example, invoking a Microsoft Word document list item in the My Documents folder both selects the item and opens the document.
+- L’appel d’un contrôle est différent de la sélection d’un élément. Toutefois, selon le contrôle, l’appel peut avoir comme effet secondaire la sélection de l’élément. Par exemple, l’appel d’un élément de liste de documents Microsoft Word dans le dossier Mes documents sélectionne l’élément et ouvre le document.
 
 - Un élément peut disparaître de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dès qu’il est appelé. La requête d’informations de l’élément fourni par le rappel d’événement peut échouer. La pré-récupération des informations mises en cache est la solution recommandée.
 
-- Les contrôles peuvent implémenter plusieurs modèles de contrôle. For example, the Fill Color control on the Microsoft Excel toolbar implements both the <xref:System.Windows.Automation.InvokePattern> and the <xref:System.Windows.Automation.ExpandCollapsePattern> control patterns. <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
+- Les contrôles peuvent implémenter plusieurs modèles de contrôle. Par exemple, le contrôle Fill Color dans la barre d’outils Microsoft Excel implémente à la fois les modèles de contrôle <xref:System.Windows.Automation.InvokePattern> et <xref:System.Windows.Automation.ExpandCollapsePattern>. <xref:System.Windows.Automation.ExpandCollapsePattern> expose le menu et le <xref:System.Windows.Automation.InvokePattern> remplit la sélection active de la couleur choisie.
 
 <a name="Required_Members_for_the_IValueProvider_Interface"></a>
 
@@ -59,7 +59,7 @@ Quand vous implémentez le modèle de contrôle Invoke, notez les conventions et
 
 Les propriétés et méthodes suivantes sont nécessaires à l'implémentation d' <xref:System.Windows.Automation.Provider.IInvokeProvider>.
 
-|Membres nécessaires|Type de membre|Notes|
+|Membres nécessaires|Type de membre|Remarques|
 |----------------------|-----------------|-----------|
 |<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A>|méthode|<xref:System.Windows.Automation.Provider.IInvokeProvider.Invoke%2A> est un appel asynchrone et doit retourner immédiatement une valeur sans se bloquer.<br /><br /> Ce comportement est particulièrement critique pour les contrôles qui, directement ou indirectement, lancent une boîte de dialogue modale lorsqu’ils sont appelés. Tout client UI Automation à l’origine de l’événement reste bloqué jusqu’à la fermeture de la boîte de dialogue modale.|
 
@@ -77,7 +77,7 @@ Les fournisseurs doivent lever les exceptions suivantes.
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
-- [Appeler un contrôle à l’aide d’UI Automation](invoke-a-control-using-ui-automation.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
+- [Invoke a Control Using UI Automation](invoke-a-control-using-ui-automation.md)
 - [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

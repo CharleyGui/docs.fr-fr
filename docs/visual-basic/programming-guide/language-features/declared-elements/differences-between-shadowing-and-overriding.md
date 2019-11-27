@@ -13,48 +13,48 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345414"
 ---
 # <a name="differences-between-shadowing-and-overriding-visual-basic"></a>Différences entre l'occultation et la substitution (Visual Basic)
-When you define a class that inherits from a base class, you sometimes want to redefine one or more of the base class elements in the derived class. Shadowing and overriding are both available for this purpose.  
+Quand vous définissez une classe qui hérite d’une classe de base, vous souhaitez parfois redéfinir un ou plusieurs des éléments de la classe de base dans la classe dérivée. L’occultation et la substitution sont toutes deux disponibles à cet effet.  
   
 ## <a name="comparison"></a>Comparaison  
- Shadowing and overriding are both used when a derived class inherits from a base class, and both redefine one declared element with another. But there are significant differences between the two.  
+ L’occultation et la substitution sont toutes deux utilisées lorsqu’une classe dérivée hérite d’une classe de base, et toutes deux redéfinissent un élément déclaré avec un autre. Mais il existe des différences significatives entre les deux.  
   
- The following table compares shadowing with overriding.  
+ Le tableau suivant compare l’occultation et la substitution.  
   
 ||||  
 |---|---|---|  
-|Point of comparison|Copie shadow|Overriding|  
-|Fonction|Protects against a subsequent base-class modification that introduces a member you have already defined in your derived class|Achieves polymorphism by defining a different implementation of a procedure or property with the same calling sequence<sup>1</sup>|  
-|Redefined element|Any declared element type|Only a procedure (`Function`, `Sub`, or `Operator`) or property|  
-|Redefining element|Any declared element type|Only a procedure or property with the identical calling sequence<sup>1</sup>|  
-|Access level of redefining element|Any access level|Cannot change access level of overridden element|  
-|Readability and writability of redefining element|Any combination|Cannot change readability or writability of overridden property|  
-|Control over redefining|Base class element cannot enforce or prohibit shadowing|Base class element can specify `MustOverride`, `NotOverridable`, or `Overridable`|  
-|Keyword usage|`Shadows` recommended in derived class; `Shadows` assumed if neither `Shadows` nor `Overrides` specified<sup>2</sup>|`Overridable` or `MustOverride` required in base class; `Overrides` required in derived class|  
-|Inheritance of redefining element by classes deriving from your derived class|Shadowing element inherited by further derived classes; shadowed element still hidden<sup>3</sup>|Overriding element inherited by further derived classes; overridden element still overridden|  
+|Point de comparaison|Copie shadow|Substitution|  
+|Fonction|Protège contre une modification de classe de base suivante qui introduit un membre que vous avez déjà défini dans votre classe dérivée.|Atteint le polymorphisme en définissant une implémentation différente d’une procédure ou d’une propriété avec la même séquence d’appel<sup>1</sup>|  
+|Élément redéfini|Tout type d’élément déclaré|Seule une procédure (`Function`, `Sub`ou `Operator`) ou une propriété|  
+|Redéfinissant l’élément|Tout type d’élément déclaré|Seule une procédure ou une propriété avec la séquence d’appel<sup>1</sup> identique|  
+|Niveau d’accès de l’élément redéfinissant|Tout niveau d’accès|Impossible de modifier le niveau d’accès de l’élément substitué|  
+|Lisibilité et accessibilité de l’élément redéfinissant|Toute combinaison|Impossible de modifier la lisibilité ou l’écriture dans la propriété substituée|  
+|Contrôle de la redéfinition|L’élément de classe de base ne peut pas appliquer ou interdire l’occultation|L’élément de classe de base peut spécifier `MustOverride`, `NotOverridable`ou `Overridable`|  
+|Utilisation des mots clés|`Shadows` recommandé dans la classe dérivée ; `Shadows` supposée si ni `Shadows` ni `Overrides` spécifiés<sup>2</sup>|`Overridable` ou `MustOverride` requis dans la classe de base ; `Overrides` requis dans une classe dérivée|  
+|Héritage de la redéfinition d’un élément par des classes dérivant de votre classe dérivée|Élément occultant hérité par des classes dérivées supplémentaires ; élément occulté toujours masqué<sup>3</sup>|Substitution d’un élément hérité par des classes dérivées supplémentaires ; élément substitué toujours substitué|  
   
- <sup>1</sup> The *calling sequence* consists of the element type (`Function`, `Sub`, `Operator`, or `Property`), name, parameter list, and return type. You cannot override a procedure with a property, or the other way around. You cannot override one kind of procedure (`Function`, `Sub`, or `Operator`) with another kind.  
+ <sup>1</sup> la *séquence appelante* se compose du type d’élément (`Function`, `Sub`, `Operator`ou `Property`), du nom, de la liste de paramètres et du type de retour. Vous ne pouvez pas substituer une procédure avec une propriété, ou l’inverse. Vous ne pouvez pas remplacer un genre de procédure (`Function`, `Sub`ou `Operator`) par un autre type.  
   
- <sup>2</sup> If you do not specify either `Shadows` or `Overrides`, the compiler issues a warning message to help you be sure which kind of redefinition you want to use. If you ignore the warning, the shadowing mechanism is used.  
+ <sup>2</sup> si vous ne spécifiez pas `Shadows` ou `Overrides`, le compilateur émet un message d’avertissement pour vous aider à vérifier le type de redéfinition que vous souhaitez utiliser. Si vous ignorez l’avertissement, le mécanisme d’occultation est utilisé.  
   
- <sup>3</sup> If the shadowing element is inaccessible in a further derived class, shadowing is not inherited. For example, if you declare the shadowing element as `Private`, a class deriving from your derived class inherits the original element instead of the shadowing element.  
+ <sup>3</sup> si l’élément d’occultation est inaccessible dans une classe dérivée supplémentaire, l’occultation n’est pas héritée. Par exemple, si vous déclarez l’élément d’occultation comme `Private`, une classe dérivant de votre classe dérivée hérite de l’élément d’origine au lieu de l’élément d’occultation.  
   
-## <a name="guidelines"></a>Recommandations  
- You normally use overriding in the following cases:  
+## <a name="guidelines"></a>Guidelines  
+ Normalement, vous utilisez la substitution dans les cas suivants :  
   
-- You are defining polymorphic derived classes.  
+- Vous définissez des classes dérivées polymorphes.  
   
-- You want the safety of having the compiler enforce the identical element type and calling sequence.  
+- Vous souhaitez que le compilateur applique le type d’élément identique et la séquence d’appel.  
   
- You normally use shadowing in the following cases:  
+ Normalement, vous utilisez l’occultation dans les cas suivants :  
   
-- You anticipate that your base class might be modified and define an element using the same name as yours.  
+- Vous pensez que votre classe de base peut être modifiée et définir un élément en utilisant le même nom que le vôtre.  
   
-- You want the freedom of changing the element type or calling sequence.  
+- Vous souhaitez la liberté de modifier le type d’élément ou la séquence d’appel.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Références aux éléments déclarés](../../../../visual-basic/programming-guide/language-features/declared-elements/references-to-declared-elements.md)
-- [Shadowing in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
+- [Occultation dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/shadowing.md)
 - [Guide pratique : masquer une variable portant le même nom que votre variable](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-a-variable-with-the-same-name-as-your-variable.md)
 - [Guide pratique : masquer une variable héritée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-hide-an-inherited-variable.md)
 - [Guide pratique : accéder à une variable masquée par une classe dérivée](../../../../visual-basic/programming-guide/language-features/declared-elements/how-to-access-a-variable-hidden-by-a-derived-class.md)

@@ -22,21 +22,21 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447548"
 ---
 # <a name="imethodmalloc-interface"></a>IMethodMalloc, interface
-Provides a method to allocate memory for a new Microsoft intermediate language (MSIL) function body.  
+Fournit une méthode pour allouer de la mémoire pour un nouveau corps de fonction MSIL (Microsoft Intermediate Language).  
   
 > [!NOTE]
-> The `IMethodMalloc` interface is a simple memory allocator. It allows you to allocate memory, but not to free it.  
+> L’interface `IMethodMalloc` est un allocateur de mémoire simple. Elle vous permet d’allouer de la mémoire, mais pas de la libérer.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Alloc, méthode](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Attempts to allocate a specified amount of memory for a new MSIL function body.|  
+|[Alloc, méthode](../../../../docs/framework/unmanaged-api/profiling/imethodmalloc-alloc-method.md)|Tente d’allouer une quantité de mémoire spécifiée pour un nouveau corps de fonction MSIL.|  
   
 ## <a name="remarks"></a>Notes  
- Each allocator is module-specific and ensures that the function body will be at a positive offset from the base of the module. Memory above the base of a module can be precious, so the allocator should be used to allocate memory only for a function body.  
+ Chaque allocateur est spécifique à un module et garantit que le corps de la fonction sera à un décalage positif par rapport à la base du module. La mémoire au-dessus de la base d’un module peut être précieuse, l’allocateur doit donc être utilisé pour allouer de la mémoire uniquement pour un corps de fonction.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

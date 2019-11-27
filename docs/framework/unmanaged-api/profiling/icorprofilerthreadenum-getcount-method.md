@@ -34,9 +34,9 @@ HRESULT GetCount (    [out] ULONG * pcelt
   
 ## <a name="parameters"></a>Paramètres  
  `celt`  
- [out] The number of threads used by the application.  
+ à Nombre de threads utilisés par l’application.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

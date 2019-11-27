@@ -32,13 +32,13 @@ or
 ```  
   
 ## <a name="remarks"></a>Notes  
- If you include this option in a compilation, no output file is created and no compilation takes place.  
+ Si vous incluez cette option dans une compilation, aucun fichier de sortie n’est créé et aucune compilation n’a lieu.  
   
 > [!NOTE]
-> The `-help` option is not available from within the Visual Studio development environment; it is available only when compiling from the command line.  
+> L’option `-help` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- The following code displays help from the command line.  
+ Le code suivant affiche l’aide à partir de la ligne de commande.  
   
 ```console  
 vbc -help  

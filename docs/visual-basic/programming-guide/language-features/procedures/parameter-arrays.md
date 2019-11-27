@@ -18,39 +18,39 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351123"
 ---
 # <a name="parameter-arrays-visual-basic"></a>Tableaux de paramètres (Visual Basic)
-Usually, you cannot call a procedure with more arguments than the procedure declaration specifies. When you need an indefinite number of arguments, you can declare a *parameter array*, which allows a procedure to accept an array of values for a parameter. You do not have to know the number of elements in the parameter array when you define the procedure. The array size is determined individually by each call to the procedure.  
+En règle générale, vous ne pouvez pas appeler une procédure avec plus d’arguments que la déclaration de procédure ne le spécifie. Lorsque vous avez besoin d’un nombre indéfini d’arguments, vous pouvez déclarer un *tableau de paramètres*, ce qui permet à une procédure d’accepter un tableau de valeurs pour un paramètre. Vous n’avez pas besoin de connaître le nombre d’éléments dans le tableau de paramètres lorsque vous définissez la procédure. La taille du tableau est déterminée individuellement par chaque appel à la procédure.  
   
-## <a name="declaring-a-paramarray"></a>Declaring a ParamArray  
- You use the [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) keyword to denote a parameter array in the parameter list. Les règles suivantes s'appliquent :  
+## <a name="declaring-a-paramarray"></a>Déclaration d’un ParamArray  
+ Vous utilisez le mot clé [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) pour désigner un tableau de paramètres dans la liste de paramètres. Les règles suivantes s'appliquent :  
   
-- A procedure can define only one parameter array, and it must be the last parameter in the procedure definition.  
+- Une procédure ne peut définir qu’un seul tableau de paramètres, et doit être le dernier paramètre de la définition de la procédure.  
   
-- The parameter array must be passed by value. It is good programming practice to explicitly include the [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) keyword in the procedure definition.  
+- Le tableau de paramètres doit être passé par valeur. Il est recommandé d’inclure explicitement le mot clé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) dans la définition de la procédure.  
   
-- The parameter array is automatically optional. Its default value is an empty one-dimensional array of the parameter array's element type.  
+- Le tableau de paramètres est automatiquement facultatif. Sa valeur par défaut est un tableau unidimensionnel vide du type d’élément du tableau de paramètres.  
   
-- All parameters preceding the parameter array must be required. The parameter array must be the only optional parameter.  
+- Tous les paramètres qui précèdent le tableau de paramètres doivent être requis. Le tableau de paramètres doit être le seul paramètre facultatif.  
   
-## <a name="calling-a-paramarray"></a>Calling a ParamArray  
- When you call a procedure that defines a parameter array, you can supply the argument in any one of the following ways:  
+## <a name="calling-a-paramarray"></a>Appel d’un ParamArray  
+ Quand vous appelez une procédure qui définit un tableau de paramètres, vous pouvez fournir l’argument de l’une des manières suivantes :  
   
-- Nothing — that is, you can omit the [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) argument. In this case, an empty array is passed to the procedure. If you explicitly pass the [Nothing](../../../../visual-basic/language-reference/nothing.md) keyword, a null array is passed to the procedure and may result in a NullReferenceException if the called procedure does not check for this condition.
+- Rien : vous pouvez omettre l’argument [ParamArray](../../../../visual-basic/language-reference/modifiers/paramarray.md) . Dans ce cas, un tableau vide est passé à la procédure. Si vous transmettez explicitement le mot clé [Nothing](../../../../visual-basic/language-reference/nothing.md) , un tableau null est passé à la procédure et peut provoquer une exception NullReferenceException si la procédure appelée ne vérifie pas cette condition.
   
-- A list of an arbitrary number of arguments, separated by commas. The data type of each argument must be implicitly convertible to the `ParamArray` element type.  
+- Liste d’un nombre arbitraire d’arguments, séparés par des virgules. Le type de données de chaque argument doit être implicitement convertible en type d’élément `ParamArray`.  
   
-- An array with the same element type as the parameter array's element type.  
+- Tableau avec le même type d’élément que le type d’élément du tableau de paramètres.  
   
- In all cases, the code within the procedure treats the parameter array as a one-dimensional array with elements of the same data type as the `ParamArray` data type.  
+ Dans tous les cas, le code de la procédure traite le tableau de paramètres comme un tableau unidimensionnel avec des éléments du même type de données que le type de données `ParamArray`.  
   
 > [!IMPORTANT]
-> Whenever you deal with an array which can be indefinitely large, there is a risk of overrunning some internal capacity of your application. If you accept a parameter array, you should test for the size of the array that the calling code passed to it. Take appropriate steps if it is too large for your application. Pour plus d’informations, consultez [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+> Chaque fois que vous traitez un tableau qui peut être indéfiniment volumineux, il existe un risque de surexécution de la capacité interne de votre application. Si vous acceptez un tableau de paramètres, vous devez tester la taille du tableau auquel le code appelant est passé. Prenez les mesures appropriées si elle est trop volumineuse pour votre application. Pour plus d’informations, consultez [Tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="example"></a>Exemple  
- The following example defines and calls the function `calcSum`. The `ParamArray` modifier for the parameter `args` enables the function to accept a variable number of arguments.  
+ L’exemple suivant définit et appelle la fonction `calcSum`. Le modificateur `ParamArray` pour le paramètre `args` permet à la fonction d’accepter un nombre variable d’arguments.  
   
  [!code-vb[VbVbalrStatements#26](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#26)]  
   
- The following example defines a procedure with a parameter array, and outputs the values of all the array elements passed to the parameter array.  
+ L’exemple suivant définit une procédure avec un tableau de paramètres et renvoie les valeurs de tous les éléments de tableau passés au tableau de paramètres.  
   
  [!code-vb[VbVbcnProcedures#48](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#48)]  
   

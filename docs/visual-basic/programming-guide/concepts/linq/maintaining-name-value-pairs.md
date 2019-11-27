@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331663"
 ---
-# <a name="maintaining-namevalue-pairs-visual-basic"></a>Maintaining Name/Value Pairs (Visual Basic)
+# <a name="maintaining-namevalue-pairs-visual-basic"></a>Gestion des paires nom/valeur (Visual Basic)
 De nombreuses applications doivent maintenir des informations qu'il est préférable de conserver sous forme de paires nom/valeur. Il peut s'agir d'informations de configuration ou de paramètres globaux. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient des méthodes qui facilitent la maintenance d'un ensemble de paires nom/valeur. Vous pouvez conserver les informations en tant qu'attributs ou en tant qu'ensemble d'éléments enfants.  
   
  L'une des différences est qu'il ne peut y avoir qu'un seul attribut avec un nom donné pour un élément. Cette limitation ne s'applique pas aux éléments enfants.  
@@ -17,7 +17,7 @@ De nombreuses applications doivent maintenir des informations qu'il est préfér
 ## <a name="setattributevalue-and-setelementvalue"></a>SetAttributeValue et SetElementValue  
  Les deux méthodes qui facilitent la conservation de paires nom/valeur sont <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> et <xref:System.Xml.Linq.XElement.SetElementValue%2A>. Ces deux méthodes ont une sémantique similaire.  
   
- <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> peut ajouter, modifier ou supprimer des attributs d'un élément.  
+ <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> pouvez ajouter, modifier ou supprimer des attributs d’un élément.  
   
 - Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec un nom d'un attribut qui n'existe pas, la méthode crée un nouvel attribut et l'ajoute à l'élément spécifié.  
   
@@ -25,7 +25,7 @@ De nombreuses applications doivent maintenir des informations qu'il est préfér
   
 - Si vous appelez <xref:System.Xml.Linq.XElement.SetAttributeValue%2A> avec un nom d'un attribut existant et que vous spécifiez une valeur Null pour le contenu, l'attribut est supprimé de son parent.  
   
- <xref:System.Xml.Linq.XElement.SetElementValue%2A> peut ajouter, modifier ou supprimer des éléments enfants d'un élément.  
+ <xref:System.Xml.Linq.XElement.SetElementValue%2A> pouvez ajouter, modifier ou supprimer des éléments enfants d’un élément.  
   
 - Si vous appelez <xref:System.Xml.Linq.XElement.SetElementValue%2A> avec un nom d'un élément enfant qui n'existe pas, la méthode crée un nouvel élément et l'ajoute à l'élément spécifié.  
   
@@ -122,4 +122,4 @@ Console.WriteLine(root)
 
 - <xref:System.Xml.Linq.XElement.SetAttributeValue%2A>
 - <xref:System.Xml.Linq.XElement.SetElementValue%2A>
-- [Modifying XML Trees (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)
+- [Modification d’arborescences XML (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/modifying-xml-trees-linq-to-xml.md)

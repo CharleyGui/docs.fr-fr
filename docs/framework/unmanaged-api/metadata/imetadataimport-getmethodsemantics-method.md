@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437448"
 ---
 # <a name="imetadataimportgetmethodsemantics-method"></a>IMetaDataImport::GetMethodSemantics, méthode
-Gets flags indicating the relationship between the method referenced by the specified MethodDef token and the paired property and event referenced by the specified EventProp token.  
+Obtient des indicateurs qui indiquent la relation entre la méthode référencée par le jeton MethodDef spécifié et la propriété et l’événement associés référencés par le jeton EventProp spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,23 +37,23 @@ HRESULT GetMethodSemantics (
   
 ## <a name="parameters"></a>Paramètres  
  `mb`  
- [in] A MethodDef token representing the method to get the semantic role information for.  
+ dans Jeton MethodDef représentant la méthode pour laquelle obtenir les informations de rôle sémantique.  
   
  `tkEventProp`  
- [in] A token representing the paired property and event for which to get the method's role.  
+ dans Jeton représentant la propriété et l’événement associés pour lesquels obtenir le rôle de la méthode.  
   
  `pdwSemanticsFlags`  
- [out] A pointer to the associated semantics flags. This value is a bitmask from the [CorMethodSemanticsAttr](../../../../docs/framework/unmanaged-api/metadata/cormethodsemanticsattr-enumeration.md) enumeration.  
+ à Pointeur vers les indicateurs de sémantique associés. Cette valeur est un masque de masque de l’énumération [CorMethodSemanticsAttr,](../../../../docs/framework/unmanaged-api/metadata/cormethodsemanticsattr-enumeration.md) .  
   
 ## <a name="remarks"></a>Notes  
- The [IMetaDataEmit::DefineProperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md) method sets a method's semantics flags.  
+ La méthode [IMetaDataEmit ::D efineproperty](../../../../docs/framework/unmanaged-api/metadata/imetadataemit-defineproperty-method.md) définit les indicateurs de sémantique d’une méthode.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

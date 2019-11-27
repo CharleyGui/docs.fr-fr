@@ -28,14 +28,14 @@ Fournit une méthode qui obtient des informations sur le mappage de métadonnée
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFileMapping, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md)|Gets the memory region of the mapped file, and the kind of mapping.|  
+|[GetFileMapping, méthode](../../../../docs/framework/unmanaged-api/metadata/imetadatainfo-getfilemapping-method.md)|Obtient la région de mémoire du fichier mappé et le type de mappage.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v40plus](../../../../includes/net-current-v40plus-md.md)]  
   

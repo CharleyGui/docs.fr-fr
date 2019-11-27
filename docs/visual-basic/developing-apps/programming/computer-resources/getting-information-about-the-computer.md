@@ -19,7 +19,7 @@ L’objet `My.Computer.Info` fournit des propriétés pour obtenir des informati
 
 Ce tableau liste les tâches couramment exécutées par le biais de l’objet `My.Computer.Info` et pointe vers des rubriques qui expliquent comment effectuer chacune d’elles.
 
-|Vers|Voir|
+|Pour|Consultez|
 |---|---|
 |Déterminer la quantité d’espace d’adressage virtuel disponible pour l’ordinateur sur lequel l’application est installée|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.TotalVirtualMemory%2A>|
 |Déterminer le type de plateforme de l’ordinateur sur lequel l’application s’exécute|<xref:Microsoft.VisualBasic.Devices.ComputerInfo.OSPlatform%2A>|

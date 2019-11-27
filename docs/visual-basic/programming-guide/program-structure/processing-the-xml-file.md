@@ -12,32 +12,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347300"
 ---
 # <a name="processing-the-xml-file-visual-basic"></a>Traitement du fichier XML (Visual Basic)
-Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (For information on how to tag your code, see [XML Comment Tags](../../../visual-basic/language-reference/xmldoc/index.md).) The ID string uniquely identifies the construct. Programs that process the XML file can use the ID string to identify the corresponding .NET Framework metadata/reflection item.  
+Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (Pour plus d’informations sur la façon de baliser votre code, consultez [balises de commentaire XML](../../../visual-basic/language-reference/xmldoc/index.md).) La chaîne d’ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’ID pour identifier l’élément de métadonnées/réflexion .NET Framework correspondant.  
   
- The XML file is not a hierarchical representation of your code; it is a flat list with a generated ID for each element.  
+ Le fichier XML n’est pas une représentation hiérarchique de votre code. Il s’agit d’une liste plate avec un ID généré pour chaque élément.  
   
  Le compilateur respecte les règles suivantes quand il génère les chaînes d’ID :  
   
 - La chaîne ne contient aucun espace blanc.  
   
-- La première partie de la chaîne d’ID identifie le type du membre, avec un caractère unique suivi de deux-points. The following member types are used.  
+- La première partie de la chaîne d’ID identifie le type du membre, avec un caractère unique suivi de deux-points. Les types de membres suivants sont utilisés.  
   
 |Caractère|Description|  
 |---|---|  
-|N|namespace<br /><br /> You cannot add documentation comments to a namespace, but you can make CREF references to them, where supported.|  
-|T|type: `Class`, `Module`, `Interface`, `Structure`, `Enum`, `Delegate`|  
-|F|field: `Dim`|  
-|P|property: `Property` (including default properties)|  
-|M|method: `Sub`, `Function`, `Declare`, `Operator`|  
-|E|event: `Event`|  
-|!|chaîne d’erreur<br /><br /> Le reste de la chaîne fournit des informations sur l’erreur. The Visual Basic compiler generates error information for links that cannot be resolved.|  
+|N|namespace<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez y faire référence à CREF, le cas échéant.|  
+|T|type : `Class`, `Module`, `Interface`, `Structure`, `Enum`, `Delegate`|  
+|F|champ : `Dim`|  
+|P|propriété : `Property` (y compris les propriétés par défaut)|  
+|M|méthode : `Sub`, `Function`, `Declare`, `Operator`|  
+|E|événement : `Event`|  
+|!|chaîne d’erreur<br /><br /> Le reste de la chaîne fournit des informations sur l’erreur. Le compilateur Visual Basic génère des informations d’erreur pour les liens qui ne peuvent pas être résolus.|  
   
-- The second part of the `String` is the fully qualified name of the item, starting at the root of the namespace. The name of the item, its enclosing type(s), and the namespace are separated by periods. If the name of the item itself contains periods, they are replaced by the number sign (#). It is assumed that no item has a number sign directly in its name. For example, the fully qualified name of the `String` constructor would be `System.String.#ctor`.  
+- La deuxième partie du `String` est le nom qualifié complet de l’élément, en commençant à la racine de l’espace de noms. Le nom de l’élément, son ou ses types englobants et l’espace de noms sont séparés par des points. Si le nom de l’élément lui-même contient des points, ils sont remplacés par le signe dièse (#). Il est supposé qu’aucun élément n’a un signe dièse directement dans son nom. Par exemple, le nom qualifié complet du constructeur `String` serait `System.String.#ctor`.  
   
-- Pour les propriétés et méthodes, si la méthode a des arguments, la liste d’arguments entre parenthèses suit. S’il n’y a pas d’arguments, aucune parenthèse n’est présente. Les arguments sont séparés par des virgules. The encoding of each argument follows directly how it is encoded in a .NET Framework signature.  
+- Pour les propriétés et méthodes, si la méthode a des arguments, la liste d’arguments entre parenthèses suit. S’il n’y a pas d’arguments, aucune parenthèse n’est présente. Les arguments sont séparés par des virgules. L’encodage de chaque argument suit directement la manière dont il est encodé dans une signature de .NET Framework.  
   
 ## <a name="example"></a>Exemple  
- The following code shows how the ID strings for a class and its members are generated.  
+ Le code suivant montre comment les chaînes d’ID pour une classe et ses membres sont générées.  
   
  [!code-vb[VbVbcnXmlDocComments#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#10)]  
   

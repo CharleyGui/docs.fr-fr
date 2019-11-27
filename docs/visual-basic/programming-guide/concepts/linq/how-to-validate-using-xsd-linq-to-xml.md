@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332385"
 ---
-# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>How to: Validate Using XSD (LINQ to XML) (Visual Basic)
+# <a name="how-to-validate-using-xsd-linq-to-xml-visual-basic"></a>Procédure : valider à l’aide de XSD (LINQ to XML) (Visual Basic)
 L'espace de noms <xref:System.Xml.Schema> contient des méthodes d'extension qui facilitent la validation d'une arborescence XML par rapport à un fichier XSD (XML Schema Definition Language). Pour plus d'informations, consultez la documentation sur la méthode <xref:System.Xml.Schema.Extensions.Validate%2A>.  
   
 ## <a name="example"></a>Exemple  
@@ -125,4 +125,4 @@ custOrdDoc did not validate
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Xml.Schema.Extensions.Validate%2A>
-- [Creating XML Trees (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)
+- [Création d’arborescences XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/creating-xml-trees.md)

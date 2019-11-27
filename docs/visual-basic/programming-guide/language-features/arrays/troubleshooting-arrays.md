@@ -17,12 +17,12 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349063"
 ---
 # <a name="troubleshooting-arrays-visual-basic"></a>Dépannage des tableaux (Visual Basic)
-This page lists some common problems that can occur when working with arrays.  
+Cette page répertorie certains problèmes courants qui peuvent se produire lors de l’utilisation de tableaux.  
   
-## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Compilation Errors Declaring and Initializing an Array  
- Compilation errors can arise from misunderstanding of the rules for declaring, creating, and initializing arrays. The most common causes of errors are the following:  
+## <a name="compilation-errors-declaring-and-initializing-an-array"></a>Erreurs de compilation lors de la déclaration et de l’initialisation d’un tableau  
+ Les erreurs de compilation peuvent provenir d’une mauvaise compréhension des règles de déclaration, de création et d’initialisation de tableaux. Les causes les plus courantes des erreurs sont les suivantes :  
   
-- Supplying a [New Operator](../../../../visual-basic/language-reference/operators/new-operator.md) clause after specifying dimension lengths in the array variable declaration. The following code lines show invalid declarations of this type.  
+- En fournissant une [nouvelle](../../../../visual-basic/language-reference/operators/new-operator.md) clause d’opérateur après avoir spécifié des longueurs de dimensions dans la déclaration de variable de tableau. Les lignes de code suivantes affichent des déclarations non valides de ce type.  
   
      `Dim INVALIDsingleDimByteArray(2) As Byte = New Byte()`  
   
@@ -30,15 +30,15 @@ This page lists some common problems that can occur when working with arrays.
   
      `Dim INVALIDjaggedByteArray(1)() As Byte = New Byte()()`  
   
-- Specifying dimension lengths for more than the top-level array of a jagged array. The following code line shows an invalid declaration of this type.  
+- Spécification des longueurs de dimensions pour plus que le tableau de niveau supérieur d’un tableau en escalier. La ligne de code suivante montre une déclaration non valide de ce type.  
   
      `Dim INVALIDjaggedByteArray(1)(1) As Byte`  
   
-- Omitting the `New` keyword when specifying the element values. The following code line shows an invalid declaration of this type.  
+- Omission du mot clé `New` lors de la spécification des valeurs de l’élément. La ligne de code suivante montre une déclaration non valide de ce type.  
   
      `Dim INVALIDoneDimShortArray() As Short = Short() {0, 1, 2, 3}`  
   
-- Supplying a `New` clause without braces (`{}`). The following code lines show invalid declarations of this type.  
+- Spécification d’une clause `New` sans accolades (`{}`). Les lignes de code suivantes affichent des déclarations non valides de ce type.  
   
      `Dim INVALIDsingleDimByteArray() As Byte = New Byte()`  
   
@@ -48,14 +48,14 @@ This page lists some common problems that can occur when working with arrays.
   
      `Dim INVALIDtwoDimShortArray(,) As Short = New Short(1, 1)`  
   
-## <a name="accessing-an-array-out-of-bounds"></a>Accessing an Array Out of Bounds  
- The process of initializing an array assigns an upper bound and a lower bound to each dimension. Every access to an element of the array must specify a valid index, or subscript, for every dimension. If any index is below its lower bound or above its upper bound, an <xref:System.IndexOutOfRangeException> exception results. The compiler cannot detect such an error, so an error occurs at run time.  
+## <a name="accessing-an-array-out-of-bounds"></a>Accès à un tableau hors limites  
+ Le processus d’initialisation d’un tableau assigne une limite supérieure et une limite inférieure à chaque dimension. Chaque accès à un élément du tableau doit spécifier un index valide, ou indice, pour chaque dimension. Si un index est inférieur à sa limite inférieure ou au-dessus de sa limite supérieure, une <xref:System.IndexOutOfRangeException> exception se produit. Le compilateur ne peut pas détecter une telle erreur, de sorte qu’une erreur se produit au moment de l’exécution.  
   
-### <a name="determining-bounds"></a>Determining Bounds  
- If another component passes an array to your code, for example as a procedure argument, you do not know the size of that array or the lengths of its dimensions. You should always determine the upper bound for every dimension of an array before you attempt to access any elements. If the array has been created by some means other than a Visual Basic `New` clause, the lower bound might be something other than 0, and it is safest to determine that lower bound as well.  
+### <a name="determining-bounds"></a>Détermination des limites  
+ Si un autre composant passe un tableau à votre code, par exemple en tant qu’argument de procédure, vous ne connaissez pas la taille de ce tableau ni les longueurs de ses dimensions. Vous devez toujours déterminer la limite supérieure pour chaque dimension d’un tableau avant de tenter d’accéder à tous les éléments. Si le tableau a été créé par d’autres moyens que la clause Visual Basic `New`, la limite inférieure peut être différente de 0, et il est plus sûr de déterminer également la limite inférieure.  
   
-### <a name="specifying-the-dimension"></a>Specifying the Dimension  
- When determining the bounds of a multidimensional array, take care how you specify the dimension. The `dimension` parameters of the <xref:System.Array.GetLowerBound%2A> and <xref:System.Array.GetUpperBound%2A> methods are 0-based, while the `Rank` parameters of the Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> and <xref:Microsoft.VisualBasic.Information.UBound%2A> functions are 1-based.  
+### <a name="specifying-the-dimension"></a>Spécification de la dimension  
+ Lorsque vous déterminez les limites d’un tableau multidimensionnel, prenez soin de la façon dont vous spécifiez la dimension. Les paramètres `dimension` des méthodes <xref:System.Array.GetLowerBound%2A> et <xref:System.Array.GetUpperBound%2A> sont basés sur 0, tandis que les paramètres `Rank` des fonctions Visual Basic <xref:Microsoft.VisualBasic.Information.LBound%2A> et <xref:Microsoft.VisualBasic.Information.UBound%2A> sont basés sur 1.  
   
 ## <a name="see-also"></a>Voir aussi
 

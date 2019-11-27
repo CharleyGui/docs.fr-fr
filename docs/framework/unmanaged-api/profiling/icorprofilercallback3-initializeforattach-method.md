@@ -39,7 +39,7 @@ HRESULT InitializeForAttach(
  [in] Pointeur d'interface pour l'interface `ICorProfilerInfo*`.  
   
  `pvClientData`  
- [in] A pointer to the data passed to the [IClrProfiling::AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) method in its `pvClientData` parameter. Si ce paramètre est null, `cbClientData` est égal à 0 (zéro). Le CLR libère cette mémoire au retour de `InitializeForAttach`.  
+ dans Pointeur vers les données passées à la méthode [ICLRProfiling :: AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) dans son paramètre `pvClientData`. Si ce paramètre est null, `cbClientData` est égal à 0 (zéro). Le CLR libère cette mémoire au retour de `InitializeForAttach`.  
   
  `cbClientData`  
  [in] Taille, en octets, des données vers lesquelles `pvClientData` pointe.  
@@ -47,7 +47,7 @@ HRESULT InitializeForAttach(
 ## <a name="remarks"></a>Notes  
  Le CLR appelle `InitializeForAttach` pour permettre au profileur de demander des rappels.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

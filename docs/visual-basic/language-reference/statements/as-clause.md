@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350176"
 ---
 # <a name="as-clause-visual-basic"></a>As, clause (Visual Basic)
-Introduces an `As` clause, which identifies a data type in a declaration statement or a constraint list on a generic type parameter.  
+Introduit une clause `As`, qui identifie un type de données dans une instruction de déclaration ou une liste de contraintes sur un paramètre de type générique.  
   
 ## <a name="remarks"></a>Notes  
  Le mot clé `As` peut être utilisé dans les contextes suivants :  
@@ -27,7 +27,7 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Const (instruction)](../../../visual-basic/language-reference/statements/const-statement.md)  
   
- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
  [Delegate (instruction)](../../../visual-basic/language-reference/statements/delegate-statement.md)  
   
@@ -37,9 +37,9 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Event (instruction)](../../../visual-basic/language-reference/statements/event-statement.md)  
   
- [For...Next Statements](../../../visual-basic/language-reference/statements/for-next-statement.md)  
+ [Pour... Instructions Next](../../../visual-basic/language-reference/statements/for-next-statement.md)  
   
- [For Each...Next Statements](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
+ [For each... Instructions Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md)  
   
  [From (clause)](../../../visual-basic/language-reference/queries/from-clause.md)  
   
@@ -49,7 +49,7 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Interface (instruction)](../../../visual-basic/language-reference/statements/interface-statement.md)  
   
- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)  
+ [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)  
   
  [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)  
   
@@ -57,7 +57,7 @@ Introduces an `As` clause, which identifies a data type in a declaration stateme
   
  [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)  
   
- [Try...Catch...Finally Statements](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
+ [Essayer... Catch... Instructions finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -19,25 +19,25 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346039"
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a>Comment : utiliser une classe qui définit des opérateurs (Visual Basic)
-If you are using a class or structure that defines its own operators, you can access those operators from Visual Basic.  
+Si vous utilisez une classe ou une structure qui définit ses propres opérateurs, vous pouvez accéder à ces opérateurs à partir de Visual Basic.  
   
- Defining an operator on a class or structure is also called *overloading* the operator.  
+ La définition d’un opérateur sur une classe ou une structure est également appelée *surcharge* de l’opérateur.  
   
 ## <a name="example"></a>Exemple  
- The following example accesses the SQL structure <xref:System.Data.SqlTypes.SqlString>, which defines the conversion operators ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) in both directions between a SQL string and a Visual Basic string. Use `CType(`*SQL string expression*, `String)` to convert a SQL string to a Visual Basic string, and `CType(`*Visual Basic string expression*, <xref:System.Data.SqlTypes.SqlString>`)` to convert in the other direction.  
+ L’exemple suivant accède à la structure SQL <xref:System.Data.SqlTypes.SqlString>, qui définit les opérateurs de conversion ([fonction CType](../../../../visual-basic/language-reference/functions/ctype-function.md)) dans les deux directions entre une chaîne SQL et une chaîne Visual Basic. Utilisez `CType(`*expression de chaîne SQL*, `String)` pour convertir une chaîne SQL en une chaîne Visual Basic et `CType(`*Visual Basic expression de chaîne*, <xref:System.Data.SqlTypes.SqlString>`)` pour la convertir dans l’autre sens.  
   
  [!code-vb[VbVbcnProcedures#30](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#30)]  
   
  [!code-vb[VbVbcnProcedures#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#31)]  
   
- The <xref:System.Data.SqlTypes.SqlString> structure defines a conversion operator ([CType Function](../../../../visual-basic/language-reference/functions/ctype-function.md)) from `String` to <xref:System.Data.SqlTypes.SqlString> and another from <xref:System.Data.SqlTypes.SqlString> to `String`. The statement that assigns `title` to `jobTitle` makes use of the first operator, and the <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> function call uses the second.  
+ La structure <xref:System.Data.SqlTypes.SqlString> définit un opérateur de conversion ([fonction CType](../../../../visual-basic/language-reference/functions/ctype-function.md)) de `String` à <xref:System.Data.SqlTypes.SqlString> et une autre <xref:System.Data.SqlTypes.SqlString> à `String`. L’instruction qui assigne `title` à `jobTitle` utilise le premier opérateur, et l’appel de fonction <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> utilise la seconde.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Be sure the class or structure you are using defines the operator you want to use. Do not assume that the class or structure has defined every operator available for overloading. For a list of available operators, see [Operator Statement](../../../../visual-basic/language-reference/statements/operator-statement.md).  
+ Assurez-vous que la classe ou la structure que vous utilisez définit l’opérateur que vous souhaitez utiliser. Ne partez pas du principe que la classe ou la structure a défini chaque opérateur disponible pour la surcharge. Pour obtenir la liste des opérateurs disponibles, consultez [instruction Operator](../../../../visual-basic/language-reference/statements/operator-statement.md).  
   
- Include the appropriate `Imports` statement for the SQL string at the beginning of your source file (in this case <xref:System.Data.SqlTypes>).  
+ Incluez l’instruction de `Imports` appropriée pour la chaîne SQL au début de votre fichier source (dans ce cas <xref:System.Data.SqlTypes>).  
   
- Your project must have references to System.Data and System.XML.  
+ Votre projet doit avoir des références à System. Data et System. XML.  
   
 ## <a name="see-also"></a>Voir aussi
 

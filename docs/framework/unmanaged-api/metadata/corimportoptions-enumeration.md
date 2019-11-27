@@ -46,20 +46,20 @@ typedef enum CorImportOptions {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`MDImportOptionDefault`|Indicates the default behavior, which is to skip deleted records.|  
-|`MDImportOptionAll`|Indicates that all metadata should be enumerated.|  
-|`MDImportOptionAllTypeDefs`|Indicates that all TypeDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllMethodDefs`|Indicates that all MethodDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllFieldDefs`|Indicates that all FieldDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllProperties`|Indicates that all PropertyDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllEvents`|Indicates that all EventDefs, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllCustomAttributes`|Indicates that all custom attributes, including deleted ones, should be enumerated.|  
-|`MDImportOptionAllExportedTypes`|Indicates that all exported types, including deleted ones, should be enumerated.|  
+|`MDImportOptionDefault`|Indique le comportement par défaut, qui consiste à ignorer les enregistrements supprimés.|  
+|`MDImportOptionAll`|Indique que toutes les métadonnées doivent être énumérées.|  
+|`MDImportOptionAllTypeDefs`|Indique que tous les TypeDefs, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllMethodDefs`|Indique que tous les MethodDefs, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllFieldDefs`|Indique que tous les FieldDefs, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllProperties`|Indique que tous les PropertyDefs, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllEvents`|Indique que tous les EventDefs, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllCustomAttributes`|Indique que tous les attributs personnalisés, y compris ceux qui sont supprimés, doivent être énumérés.|  
+|`MDImportOptionAllExportedTypes`|Indique que tous les types exportés, y compris ceux qui sont supprimés, doivent être énumérés.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

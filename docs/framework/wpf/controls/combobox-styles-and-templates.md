@@ -34,7 +34,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |Désactivé|CommonStates|Le contrôle est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle de <xref:System.Windows.Controls.ComboBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  
@@ -43,7 +43,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
 |Valide|ValidationStates|Le contrôle utilise la classe <xref:System.Windows.Controls.Validation> et la propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `false`.|  
 |InvalidFocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le focus.|  
 |InvalidUnfocused|ValidationStates|La propriété jointe <xref:System.Windows.Controls.Validation.HasError%2A?displayProperty=nameWithType> est `true` a le contrôle n’a pas le focus.|  
-|Modifiée|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `true`.|  
+|Editable|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `true`.|  
 |Alors impossibles|EditStates|La propriété <xref:System.Windows.Controls.ComboBox.IsEditable%2A> a la valeur `false`.|  
   
 ## <a name="comboboxitem-parts"></a>Composants de ComboBoxItem  
@@ -54,7 +54,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |-|-|-|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |Désactivé|CommonStates|Le contrôle est désactivé.|  
 |MouseOver|CommonStates|Le pointeur de la souris se trouve sur le contrôle de <xref:System.Windows.Controls.ComboBox>.|  
 |Avec focus|FocusStates|Le contrôle a le focus.|  

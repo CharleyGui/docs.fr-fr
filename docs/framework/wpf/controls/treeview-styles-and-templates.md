@@ -45,7 +45,7 @@ Cette rubrique décrit les styles et les modèles du contrôle <xref:System.Wind
   
 |Nom VisualState|Nom VisualStateGroup|Description|  
 |----------------------|---------------------------|-----------------|  
-|Normale|CommonStates|État par défaut.|  
+|Normal|CommonStates|État par défaut.|  
 |MouseOver|CommonStates|Le pointeur de la souris est positionné sur le <xref:System.Windows.Controls.TreeViewItem>.|  
 |Désactivé|CommonStates|Le <xref:System.Windows.Controls.TreeViewItem> est désactivé.|  
 |Avec focus|FocusStates|Le <xref:System.Windows.Controls.TreeViewItem> a le focus.|  

@@ -16,51 +16,51 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74340552"
 ---
 # <a name="how-to-call-a-property-procedure-visual-basic"></a>Comment : appeler une procédure de propriété (Visual Basic)
-You call a property procedure by storing a value in the property or retrieving its value. You access a property the same way you access a variable.  
+Vous appelez une procédure de propriété en stockant une valeur dans la propriété ou en récupérant sa valeur. Vous accédez à une propriété de la même façon que vous accédez à une variable.  
   
- The property's `Set` procedure stores a value, and its `Get` procedure retrieves the value. However, you do not explicitly call these procedures by name. You use the property in an assignment statement or an expression, just as you would store or retrieve the value of a variable. Visual Basic makes the calls to the property's procedures.  
+ La procédure `Set` de la propriété stocke une valeur, et sa procédure `Get` récupère la valeur. Toutefois, vous n’appelez pas explicitement ces procédures par nom. Vous utilisez la propriété dans une instruction d’assignation ou une expression, de la même façon que vous stockez ou récupérez la valeur d’une variable. Visual Basic effectue les appels aux procédures de la propriété.  
   
-### <a name="to-call-a-propertys-get-procedure"></a>To call a property's Get procedure  
+### <a name="to-call-a-propertys-get-procedure"></a>Pour appeler la procédure d’extraction d’une propriété  
   
-1. Use the property name in an expression the same way you would use a variable name. You can use a property anywhere you can use a variable or a constant.  
+1. Utilisez le nom de la propriété dans une expression de la même façon que vous utilisez un nom de variable. Vous pouvez utiliser une propriété partout où vous pouvez utiliser une variable ou une constante.  
   
-     ou  
+     -ou-  
   
-     Use the property name following the equal (`=`) sign in an assignment statement.  
+     Utilisez le nom de propriété après le signe égal (`=`) dans une instruction d’assignation.  
   
-     The following example reads the value of the <xref:Microsoft.VisualBasic.DateAndTime.Now%2A> property, implicitly calling its `Get` procedure.  
+     L’exemple suivant lit la valeur de la propriété <xref:Microsoft.VisualBasic.DateAndTime.Now%2A>, en appelant implicitement sa procédure `Get`.  
   
      [!code-vb[VbVbalrDateProperties#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDateProperties/VB/Module1.vb#4)]  
   
-2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
+2. Si la propriété accepte des arguments, placez le nom de la propriété entre parenthèses pour encadrer la liste d’arguments. S’il n’y a pas d’arguments, vous pouvez éventuellement omettre les parenthèses.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
+3. Placez les arguments dans la liste d’arguments entre parenthèses, séparés par des virgules. Veillez à fournir les arguments dans l’ordre dans lequel la propriété définit les paramètres correspondants.  
   
- The value of the property participates in the expression just as a variable or constant would, or it is stored in the variable or property on the left side of the assignment statement.  
+ La valeur de la propriété participe à l’expression de la même manière qu’une variable ou une constante, ou elle est stockée dans la variable ou la propriété à gauche de l’instruction d’assignation.  
   
-### <a name="to-call-a-propertys-set-procedure"></a>To call a property's Set procedure  
+### <a name="to-call-a-propertys-set-procedure"></a>Pour appeler la procédure Set d’une propriété  
   
-1. Use the property name on the left side of an assignment statement.  
+1. Utilisez le nom de la propriété sur le côté gauche d’une instruction d’assignation.  
   
-     The following example sets the value of the <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A> property, implicitly calling the `Set` procedure.  
+     L’exemple suivant définit la valeur de la propriété <xref:Microsoft.VisualBasic.DateAndTime.TimeOfDay%2A>, en appelant implicitement la procédure `Set`.  
   
      [!code-vb[VbVbcnProcedures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#11)]  
   
-2. If the property takes arguments, follow the property name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses.  
+2. Si la propriété accepte des arguments, placez le nom de la propriété entre parenthèses pour encadrer la liste d’arguments. S’il n’y a pas d’arguments, vous pouvez éventuellement omettre les parenthèses.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the property defines the corresponding parameters.  
+3. Placez les arguments dans la liste d’arguments entre parenthèses, séparés par des virgules. Veillez à fournir les arguments dans l’ordre dans lequel la propriété définit les paramètres correspondants.  
   
- The value generated on the right side of the assignment statement is stored in the property.  
+ La valeur générée sur le côté droit de l’instruction d’assignation est stockée dans la propriété.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Procédures de propriété](./property-procedures.md)
 - [Paramètres et arguments d’une procédure](./procedure-parameters-and-arguments.md)
 - [Property (instruction)](../../../../visual-basic/language-reference/statements/property-statement.md)
-- [Differences Between Properties and Variables in Visual Basic](./differences-between-properties-and-variables.md)
+- [Différences entre les propriétés et les variables dans Visual Basic](./differences-between-properties-and-variables.md)
 - [Guide pratique : créer une propriété](./how-to-create-a-property.md)
 - [Guide pratique : déclarer une propriété avec des niveaux d’accès mixtes](./how-to-declare-a-property-with-mixed-access-levels.md)
-- [How to: Declare and Call a Default Property in Visual Basic](./how-to-declare-and-call-a-default-property.md)
+- [Comment : déclarer et appeler une propriété par défaut dans Visual Basic](./how-to-declare-and-call-a-default-property.md)
 - [Guide pratique : placer une valeur dans une propriété](./how-to-put-a-value-in-a-property.md)
 - [Guide pratique : obtenir une valeur d’une propriété](./how-to-get-a-value-from-a-property.md)
 - [Get (instruction)](../../../../visual-basic/language-reference/statements/get-statement.md)

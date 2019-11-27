@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347923"
 ---
-# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Cancel Remaining Async Tasks after One Is Complete (Visual Basic)
+# <a name="cancel-remaining-async-tasks-after-one-is-complete-visual-basic"></a>Annuler les tâches asynchrones restantes une fois l’opération terminée (Visual Basic)
 
 Utilisez la méthode <xref:System.Threading.Tasks.Task.WhenAny%2A?displayProperty=nameWithType> avec un <xref:System.Threading.CancellationToken> pour annuler toutes les tâches restantes quand une tâche est terminée. La méthode `WhenAny` accepte un argument qui est une collection de tâches. La méthode démarre toutes les tâches et retourne une tâche unique. Cette dernière est terminée une fois que toutes les tâches de la collection sont terminées.
 
@@ -40,11 +40,11 @@ Si vous ne souhaitez pas télécharger le projet, vous pouvez passer en revue le
 
 ## <a name="building-the-example"></a>Génération de l’exemple
 
-The example in this topic adds to the project that's developed in [Cancel an Async Task or a List of Tasks](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) to cancel a list of tasks. Il utilise la même interface utilisateur, bien que le bouton **Annuler** ne soit pas utilisé explicitement.
+L’exemple de cette rubrique ajoute au projet développé dans [annuler une tâche asynchrone ou une liste de tâches](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md) pour annuler une liste de tâches. Il utilise la même interface utilisateur, bien que le bouton **Annuler** ne soit pas utilisé explicitement.
 
 Pour générer vous-même l’exemple, suivez les instructions pas à pas de la section « Téléchargement de l’exemple », mais choisissez **CancelAListOfTasks** comme **Projet de démarrage**. Ajoutez les changements de cette rubrique à ce projet.
 
-In the MainWindow.xaml.vb file of the **CancelAListOfTasks** project, start the transition by moving the processing steps for each website from the loop in `AccessTheWebAsync` to the following async method.
+Dans le fichier MainWindow. Xaml. vb du projet **CancelAListOfTasks** , commencez la transition en déplaçant les étapes de traitement de chaque site Web de la boucle dans `AccessTheWebAsync` vers la méthode Async suivante.
 
 ```vb
 ' ***Bundle the processing steps for a website into one async method.
@@ -107,7 +107,7 @@ Exécutez le programme plusieurs fois pour vérifier que différents télécharg
 
 ## <a name="complete-example"></a>Exemple complet
 
-The following code is the complete MainWindow.xaml.vb or MainWindow.xaml.cs file for the example. Des astérisques marquent les éléments ajoutés pour cet exemple.
+Le code suivant est le fichier MainWindow. Xaml. vb ou MainWindow.xaml.cs complet pour l’exemple. Les astérisques signalent les éléments ajoutés à cet exemple.
 
 Notez que vous devez ajouter une référence pour <xref:System.Net.Http>.
 
@@ -241,4 +241,4 @@ End Class
 - <xref:System.Threading.Tasks.Task.WhenAny%2A>
 - [Ajuster une application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md)
 - [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)
+- [Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)

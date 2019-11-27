@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74333013"
 ---
 # <a name="return-statement-visual-basic"></a>Return, instruction (Visual Basic)
-Returns control to the code that called a `Function`, `Sub`, `Get`, `Set`, or `Operator` procedure.  
+Retourne le contrôle au code qui a appelé une procédure `Function`, `Sub`, `Get`, `Set`ou `Operator`.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,20 +29,20 @@ Return expression
   
 ## <a name="part"></a>Élément  
  `expression`  
- Required in a `Function`, `Get`, or `Operator` procedure. Expression that represents the value to be returned to the calling code.  
+ Obligatoire dans une procédure `Function`, `Get`ou `Operator`. Expression qui représente la valeur à retourner au code appelant.  
   
 ## <a name="remarks"></a>Notes  
- In a `Sub` or `Set` procedure, the `Return` statement is equivalent to an `Exit Sub` or `Exit Property` statement, and `expression` must not be supplied.  
+ Dans une procédure `Sub` ou `Set`, l’instruction `Return` est équivalente à une instruction `Exit Sub` ou `Exit Property`, et `expression` ne doit pas être fourni.  
   
- In a `Function`, `Get`, or `Operator` procedure, the `Return` statement must include `expression`, and `expression` must evaluate to a data type that is convertible to the return type of the procedure. In a `Function` or `Get` procedure, you also have the alternative of assigning an expression to the procedure name to serve as the return value, and then executing an `Exit Function` or `Exit Property` statement. In an `Operator` procedure, you must use `Return expression`.  
+ Dans une procédure `Function`, `Get`ou `Operator`, l’instruction `Return` doit inclure `expression`, et `expression` doit correspondre à un type de données convertible en type de retour de la procédure. Dans une procédure `Function` ou `Get`, vous avez également la possibilité d’affecter une expression au nom de la procédure pour servir de valeur de retour, puis d’exécuter une instruction `Exit Function` ou `Exit Property`. Dans une procédure `Operator`, vous devez utiliser `Return expression`.  
   
- You can include as many `Return` statements as appropriate in the same procedure.  
+ Vous pouvez inclure autant d’instructions `Return` que nécessaire dans la même procédure.  
   
 > [!NOTE]
-> The code in a `Finally` block runs after a `Return` statement in a `Try` or `Catch` block is encountered, but before that `Return` statement executes. A `Return` statement cannot be included in a `Finally` block.  
+> Le code d’un bloc `Finally` s’exécute après la détection d’une instruction `Return` dans un bloc `Try` ou `Catch`, mais avant l’exécution de cette `Return` instruction. Une instruction `Return` ne peut pas être incluse dans un bloc `Finally`.  
   
 ## <a name="example"></a>Exemple  
- The following example uses the `Return` statement several times to return to the calling code when the procedure does not have to do anything else.  
+ L’exemple suivant utilise plusieurs fois l’instruction `Return` pour retourner au code appelant lorsque la procédure n’a pas à faire autre chose.  
   
  [!code-vb[VbVbalrStatements#53](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStatements/VB/Class1.vb#53)]  
   
@@ -52,7 +52,7 @@ Return expression
 - [Sub (instruction)](../../../visual-basic/language-reference/statements/sub-statement.md)
 - [Get (instruction)](../../../visual-basic/language-reference/statements/get-statement.md)
 - [Set (instruction)](../../../visual-basic/language-reference/statements/set-statement.md)
-- [Operator (instruction)](../../../visual-basic/language-reference/statements/operator-statement.md)
+- [Operator Statement](../../../visual-basic/language-reference/statements/operator-statement.md)
 - [Property (instruction)](../../../visual-basic/language-reference/statements/property-statement.md)
 - [Exit (instruction)](../../../visual-basic/language-reference/statements/exit-statement.md)
 - [Try...Catch...Finally (instruction)](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md)

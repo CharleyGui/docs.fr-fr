@@ -16,17 +16,17 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345103"
 ---
 # <a name="troubleshooting-inherited-event-handlers-in-visual-basic"></a>Dépannage des gestionnaires d'événements hérités dans Visual Basic
-This topic lists common issues that arise with event handlers in inherited components.  
+Cette rubrique répertorie les problèmes courants qui surviennent avec les gestionnaires d’événements dans les composants hérités.  
   
 ## <a name="procedures"></a>Procédures  
   
-#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Code in Event Handler Executes Twice for Every Call  
+#### <a name="code-in-event-handler-executes-twice-for-every-call"></a>Le code dans le gestionnaire d’événements s’exécute deux fois pour chaque appel  
   
-- An inherited event handler must not include a [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) clause. The method in the base class is already associated with the event and will fire accordingly. Remove the `Handles` clause from the inherited method.  
+- Un gestionnaire d’événements hérité ne doit pas inclure une clause [Handles](../../../../visual-basic/language-reference/statements/handles-clause.md) . La méthode dans la classe de base est déjà associée à l’événement et est déclenchée en conséquence. Supprimez la clause `Handles` de la méthode héritée.  
   
      [!code-vb[VbVbalrEvents#32](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrEvents/VB/Class1.vb#32)]  
   
-- If the inherited method does not have a `Handles` keyword, verify that your code does not contain an extra [AddHandler Statement](../../../../visual-basic/language-reference/statements/addhandler-statement.md) or any additional methods that handle the same event.  
+- Si la méthode héritée n’a pas de mot clé `Handles`, vérifiez que votre code ne contient pas d' [instruction AddHandler](../../../../visual-basic/language-reference/statements/addhandler-statement.md) supplémentaire ou de toute autre méthode qui gère le même événement.  
   
 ## <a name="see-also"></a>Voir aussi
 

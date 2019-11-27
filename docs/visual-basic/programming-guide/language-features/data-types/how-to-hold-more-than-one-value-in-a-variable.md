@@ -20,27 +20,27 @@ ms.locfileid: "74350021"
 ---
 # <a name="how-to-hold-more-than-one-value-in-a-variable-visual-basic"></a>Comment : stocker plusieurs valeurs dans une variable (Visual Basic)
 
-A variable holds more than one value if you declare it to be of a *composite data type*.
+Une variable contient plusieurs valeurs si vous la déclarez comme étant d’un *type de données composite*.
 
-[Composite Data Types](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) include structures, arrays, and classes. A variable of a composite data type can hold a combination of elementary data types and other composite types. Structures and classes can hold code as well as data.
+Les [types de données composites](../../../../visual-basic/programming-guide/language-features/data-types/composite-data-types.md) incluent des structures, des tableaux et des classes. Une variable d’un type de données composite peut contenir une combinaison de types de données élémentaires et d’autres types composites. Les structures et les classes peuvent contenir du code ainsi que des données.
 
-## <a name="to-hold-more-than-one-value-in-a-variable"></a>To hold more than one value in a variable
+## <a name="to-hold-more-than-one-value-in-a-variable"></a>Pour stocker plusieurs valeurs dans une variable
 
-1. Determine what composite data type you want to use for your variable.
+1. Déterminez le type de données composite que vous souhaitez utiliser pour votre variable.
 
-2. If the composite data type is not already defined, define it so that your variable can use it.
+2. Si le type de données composite n’est pas déjà défini, définissez-le afin que votre variable puisse l’utiliser.
 
-    - Define a structure with a [Structure Statement](../../../../visual-basic/language-reference/statements/structure-statement.md).
+    - Définissez une structure avec une [instruction structure](../../../../visual-basic/language-reference/statements/structure-statement.md).
 
-    - Define an array with a [Dim Statement](../../../../visual-basic/language-reference/statements/dim-statement.md).
+    - Définissez un tableau avec une [instruction Dim](../../../../visual-basic/language-reference/statements/dim-statement.md).
 
-    - Define a class with a [Class Statement](../../../../visual-basic/language-reference/statements/class-statement.md).
+    - Définissez une classe avec une [instruction de classe](../../../../visual-basic/language-reference/statements/class-statement.md).
 
-3. Declare your variable with a `Dim` statement.
+3. Déclarez votre variable avec une instruction `Dim`.
 
-4. Follow the variable name with an `As` clause.
+4. Suivez le nom de la variable avec une clause `As`.
 
-5. Follow the `As` keyword with the name of the appropriate composite data type.
+5. Suivez le mot clé `As` avec le nom du type de données composite approprié.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347719"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>How to: Query for Characters in a String (LINQ) (Visual Basic)
+# <a name="how-to-query-for-characters-in-a-string-linq-visual-basic"></a>Comment : interroger des caractères dans une chaîne (LINQ) (Visual Basic)
 
 La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères. Toutefois, ceci n’est pas une utilisation courante de LINQ. Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.
 
@@ -58,9 +58,9 @@ End Class
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Create a VB.NET console application project, with an `Imports` statement for the System.Linq namespace.
+Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ and Strings (Visual Basic)](linq-and-strings.md)
-- [How to combine LINQ queries with regular expressions (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md)
+- [LINQ et Strings (Visual Basic)](linq-and-strings.md)
+- [Comment combiner des requêtes LINQ avec des expressions régulières (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md)

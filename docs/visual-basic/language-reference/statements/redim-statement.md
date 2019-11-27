@@ -46,7 +46,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 |Terme|Définition|  
 |----------|----------------|  
-|`Preserve`|Optionnel. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
+|`Preserve`|Ce paramètre est facultatif. Modificateur utilisé pour conserver les données du tableau existant quand vous modifiez la taille de la dernière dimension uniquement.|  
 |`name`|Requis. Nom de la variable de tableau. Consultez [Declared Element Names](../../../visual-basic/programming-guide/language-features/declared-elements/declared-element-names.md).|  
 |`boundlist`|Requis. Liste des limites de chaque dimension du tableau redéfini.|  
   
@@ -59,31 +59,31 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
 ## <a name="rules"></a>Règles  
   
-- **Multiple Variables.** You can resize several array variables in the same declaration statement and specify the `name` and `boundlist` parts for each variable. Les variables multiples sont séparées par des virgules.  
+- **Plusieurs variables.** Vous pouvez redimensionner plusieurs variables de tableau dans la même instruction de déclaration et spécifier les parties `name` et `boundlist` pour chaque variable. Les variables multiples sont séparées par des virgules.  
   
-- **Array Bounds.** Each entry in `boundlist` can specify the lower and upper bounds of that dimension. La limite inférieure est toujours 0 (zéro). La limite supérieure est la valeur d'index la plus élevée possible pour cette dimension, pas la longueur de la dimension (qui est la limite supérieure plus un). L'index pour chaque dimension varie de 0 à sa valeur liée supérieure.  
+- **Limites du tableau.** Chaque entrée de `boundlist` peut spécifier les limites inférieure et supérieure de cette dimension. La limite inférieure est toujours 0 (zéro). La limite supérieure est la valeur d'index la plus élevée possible pour cette dimension, pas la longueur de la dimension (qui est la limite supérieure plus un). L'index pour chaque dimension varie de 0 à sa valeur liée supérieure.  
   
      Le nombre de dimensions dans `boundlist` doit correspondre au nombre de dimensions (rang) d'origine du tableau.  
   
-- **Data Types.** The `ReDim` statement cannot change the data type of an array variable or its elements.  
+- **Types de données.** L’instruction `ReDim` ne peut pas modifier le type de données d’une variable tableau ou de ses éléments.  
   
-- **Initialization.** The `ReDim` statement cannot provide new initialization values for the array elements.  
+- **D’initialisation.** L’instruction `ReDim` ne peut pas fournir de nouvelles valeurs d’initialisation pour les éléments du tableau.  
   
-- **Rank.** The `ReDim` statement cannot change the rank (the number of dimensions) of the array.  
+- **Moteurs.** L’instruction `ReDim` ne peut pas modifier le rang (nombre de dimensions) du tableau.  
   
-- **Resizing with Preserve.** If you use `Preserve`, you can resize only the last dimension of the array. Pour chaque autre dimension, vous devez spécifier la limite du tableau existant.  
+- **Redimensionnement avec Preserve.** Si vous utilisez `Preserve`, vous pouvez redimensionner uniquement la dernière dimension du tableau. Pour chaque autre dimension, vous devez spécifier la limite du tableau existant.  
   
      Par exemple, si votre tableau ne comporte qu'une seule dimension, vous pouvez la redimensionner tout en conservant le contenu du tableau, car vous modifiez la dernière et seule dimension. Toutefois, si votre tableau comporte deux dimensions ou plus, vous pouvez modifier la taille de la dernière dimension seulement si vous utilisez `Preserve`.  
   
-- **Properties.** You can use `ReDim` on a property that holds an array of values.  
+- **Sous.** Vous pouvez utiliser `ReDim` sur une propriété qui contient un tableau de valeurs.  
   
 ## <a name="behavior"></a>Comportement  
   
-- **Array Replacement.** `ReDim` releases the existing array and creates a new array with the same rank. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
+- **Remplacement de tableau.** `ReDim` libère le tableau existant et crée un nouveau tableau avec le même rang. Le nouveau tableau remplace le tableau libéré dans la variable tableau.  
   
-- **Initialization without Preserve.** If you do not specify `Preserve`, `ReDim` initializes the elements of the new array by using the default value for their data type.  
+- **Initialisation sans Preserve.** Si vous ne spécifiez pas `Preserve`, `ReDim` initialise les éléments du nouveau tableau en utilisant la valeur par défaut pour leur type de données.  
   
-- **Initialization with Preserve.** If you specify `Preserve`, Visual Basic copies the elements from the existing array to the new array.  
+- **Initialisation avec Preserve.** Si vous spécifiez `Preserve`, Visual Basic copie les éléments du tableau existant dans le nouveau tableau.  
   
 ## <a name="example"></a>Exemple  
  L'exemple suivant augmente la taille de la dernière dimension d'un tableau dynamique sans perte de données existantes dans le tableau, puis réduit la taille avec une perte de données partielle. Enfin, il réduit la taille à sa valeur d'origine et réinitialise tous les éléments du tableau.  
@@ -98,7 +98,7 @@ ReDim [ Preserve ] name(boundlist) [ ,  name(boundlist) [, ... ] ]
   
  La troisième instruction `ReDim` crée un autre tableau et supprime cinq autres colonnes de la fin de chaque ligne dans chaque couche. Cette fois-ci, elle ne copie pas les éléments existants. Cette instruction rétablit la taille d'origine du tableau. Étant donné que l'instruction n'inclut pas le modificateur `Preserve`, elle définit tous les éléments de tableau à leurs valeurs par défaut d'origine.  
   
- For additional examples, see [Arrays](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Pour obtenir des exemples supplémentaires, consultez [tableaux](../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

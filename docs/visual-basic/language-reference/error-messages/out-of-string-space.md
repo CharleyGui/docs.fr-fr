@@ -12,13 +12,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349178"
 ---
 # <a name="out-of-string-space-visual-basic"></a>Espace de chaîne insuffisant (Visual Basic)
-With Visual Basic, you can use very large strings. However, the requirements of other programs and the way you work with your strings can still cause this error.  
+Avec Visual Basic, vous pouvez utiliser des chaînes très volumineuses. Toutefois, les exigences d’autres programmes et la façon dont vous travaillez avec vos chaînes peuvent toujours provoquer cette erreur.  
   
 ## <a name="to-correct-this-error"></a>Pour corriger cette erreur  
   
-1. Make sure that an expression requiring temporary string creation during evaluation is not causing the error.  
+1. Assurez-vous qu’une expression nécessitant la création d’une chaîne temporaire pendant l’évaluation n’est pas à l’origine de l’erreur.  
   
-2. Remove any unnecessary applications from memory to create more space.  
+2. Supprimez les applications inutiles de la mémoire pour créer davantage d’espace.  
   
 ## <a name="see-also"></a>Voir aussi
 

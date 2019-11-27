@@ -15,13 +15,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332337"
 ---
 # <a name="how-to-access-xml-child-elements-visual-basic"></a>Comment : accéder à des éléments enfants XML (Visual Basic)
-This example shows how to use a child axis property to access all XML child elements that have a specified name in an XML element. In particular, it uses the <xref:System.Xml.Linq.XElement.Value%2A> property to get the value of the first element in the collection that the `name` child axis property returns. The `name` child axis property gets all child elements named `phone` in the `contact` object. This example also uses the `phone` child axis property to access all child elements named `phone` that are contained in the `contact` object.  
+Cet exemple montre comment utiliser une propriété d’axe enfant pour accéder à tous les éléments enfants XML portant un nom spécifié dans un élément XML. En particulier, elle utilise la propriété <xref:System.Xml.Linq.XElement.Value%2A> pour récupérer la valeur du premier élément de la collection retournée par la propriété d’axe enfant `name`. La propriété d’axe enfant `name` obtient tous les éléments enfants nommés `phone` dans l’objet `contact`. Cet exemple utilise également la propriété d’axe enfant `phone` pour accéder à tous les éléments enfants nommés `phone` qui sont contenus dans l’objet `contact`.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbXMLSamples#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples4.vb#10)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - une référence à l'espace de noms <xref:System.Xml.Linq>.  
   

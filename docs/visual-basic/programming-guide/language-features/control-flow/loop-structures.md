@@ -18,23 +18,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353916"
 ---
 # <a name="loop-structures-visual-basic"></a>Structures de boucle (Visual Basic)
-Visual Basic loop structures allow you to run one or more lines of code repetitively. You can repeat the statements in a loop structure until a condition is `True`, until a condition is `False`, a specified number of times, or once for each element in a collection.  
+Les structures de boucle Visual Basic vous permettent d’exécuter une ou plusieurs lignes de code de façon répétée. Vous pouvez répéter les instructions dans une structure de boucle jusqu’à ce qu’une condition soit `True`, jusqu’à ce qu’une condition soit `False`, un nombre de fois spécifié ou une fois pour chaque élément d’une collection.  
   
- The following illustration shows a loop structure that runs a set of statements until a condition becomes true:  
+ L’illustration suivante montre une structure de boucle qui exécute un ensemble d’instructions jusqu’à ce qu’une condition devienne vraie :  
   
- ![Flow chart that shows a Do...Until loop.](./media/loop-structures/do-until-loop-true-condition.gif)  
+ ![Organigramme qui affiche un... Boucle until.](./media/loop-structures/do-until-loop-true-condition.gif)  
   
-## <a name="while-loops"></a>While Loops  
- The `While`...`End While` construction runs a set of statements as long as the condition specified in the `While` statement is `True`. For more information, see [While...End While Statement](../../../../visual-basic/language-reference/statements/while-end-while-statement.md).  
+## <a name="while-loops"></a>Boucles While  
+ La construction `While`...`End While` exécute un ensemble d’instructions tant que la condition spécifiée dans l’instruction `While` est `True`. Pour plus d’informations, consultez [while... Instruction End While](../../../../visual-basic/language-reference/statements/while-end-while-statement.md).  
   
-## <a name="do-loops"></a>Do Loops  
- The `Do`...`Loop` construction allows you to test a condition at either the beginning or the end of a loop structure. You can also specify whether to repeat the loop while the condition remains `True` or until it becomes `True`. For more information, see [Do...Loop Statement](../../../../visual-basic/language-reference/statements/do-loop-statement.md).  
+## <a name="do-loops"></a>Boucles do  
+ La construction `Do`...`Loop` vous permet de tester une condition au début ou à la fin d’une structure de boucle. Vous pouvez également spécifier si la boucle doit être répétée pendant que la condition reste `True` ou jusqu’à ce qu’elle devienne `True`. Pour plus d’informations, consultez [do... Instruction de boucle](../../../../visual-basic/language-reference/statements/do-loop-statement.md).  
   
-## <a name="for-loops"></a>For Loops  
- The `For`...`Next` construction performs the loop a set number of times. It uses a loop control variable, also called a *counter*, to keep track of the repetitions. You specify the starting and ending values for this counter, and you can optionally specify the amount by which it increases from one repetition to the next. For more information, see [For...Next Statement](../../../../visual-basic/language-reference/statements/for-next-statement.md).  
+## <a name="for-loops"></a>Boucles for  
+ La construction `For`...`Next` exécute la boucle un nombre de fois défini. Elle utilise une variable de contrôle de boucle, également appelée *compteur*, pour effectuer le suivi des répétitions. Vous spécifiez les valeurs de début et de fin pour ce compteur et vous pouvez éventuellement spécifier la quantité d’augmentation d’une répétition à la suivante. Pour plus d’informations, consultez [pour... Instruction suivante](../../../../visual-basic/language-reference/statements/for-next-statement.md).  
   
-## <a name="for-each-loops"></a>For Each Loops  
- The `For Each`...`Next` construction runs a set of statements once for each element in a collection. You specify the loop control variable, but you do not have to determine starting or ending values for it. For more information, see [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
+## <a name="for-each-loops"></a>Boucles for each  
+ La construction `For Each`...`Next` exécute un ensemble d’instructions une fois pour chaque élément d’une collection. Vous spécifiez la variable de contrôle de boucle, mais vous n’avez pas besoin de déterminer les valeurs de début ou de fin pour celle-ci. Pour plus d’informations, consultez [for each... Instruction suivante](../../../../visual-basic/language-reference/statements/for-each-next-statement.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

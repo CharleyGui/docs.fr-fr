@@ -13,7 +13,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344249"
 ---
 # <a name="-highentropyva-visual-basic"></a>-highentropyva (Visual Basic)
-Indicates whether a 64-bit executable or an executable that's marked by the [-platform:anycpu](../../../visual-basic/reference/command-line-compiler/platform.md) compiler option supports high entropy Address Space Layout Randomization (ASLR).  
+Indique si un exécutable 64 bits ou un exécutable marqué par l’option [de compilateur-Platform : AnyCPU](../../../visual-basic/reference/command-line-compiler/platform.md) prend en charge la randomisation du format d’espace d’adresse (ASLR) de forte entropie.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -23,12 +23,12 @@ Indicates whether a 64-bit executable or an executable that's marked by the [-pl
   
 ## <a name="arguments"></a>Arguments  
  `+` &#124; `-`  
- Optionnel. The option is off by default or if you specify `-highentropyva-`. The option is on if you specify `-highentropyva` or `-highentropyva+`.  
+ Ce paramètre est facultatif. L’option est désactivée par défaut ou si vous spécifiez `-highentropyva-`. L’option est activée si vous spécifiez `-highentropyva` ou `-highentropyva+`.  
   
 ## <a name="remarks"></a>Notes  
- If you specify this option, compatible versions of the Windows kernel can use higher degrees of entropy when the kernel randomizes the address space layout of a process as part of ASLR. If the kernel uses higher degrees of entropy, a larger number of addresses can be allocated to memory regions such as stacks and heaps. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  
+ Si vous spécifiez cette option, les versions compatibles du noyau Windows peuvent utiliser un degré d’entropie plus élevé lorsque le noyau rend aléatoire la disposition de l’espace d’adressage d’un processus dans le cadre de l’ASLR. Si le noyau utilise un degré d’entropie plus élevé, un plus grand nombre d’adresses peuvent être allouées aux régions de mémoire, telles que les piles et les tas. Par conséquent, il est plus difficile de deviner l’emplacement d’une zone de mémoire.  
   
- When the option is on, the target executable and any modules on which it depends must be able to handle pointer values that are larger than 4 gigabytes (GB) when those modules are running as 64-bit processes.  
+ Lorsque l’option est activée, l’exécutable cible et tous les modules dont il dépend doivent être en mesure de gérer les valeurs de pointeur supérieures à 4 gigaoctets (Go) lorsque ces modules s’exécutent en tant que processus 64 bits.  
   
 ## <a name="see-also"></a>Voir aussi
 

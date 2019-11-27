@@ -14,9 +14,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344780"
 ---
-# <a name="-debug-visual-basic"></a>-debug (Visual Basic)
+# <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
 
-Causes the compiler to generate debugging information and place it in the output file(s).
+Fait en sorte que le compilateur génère des informations de débogage et les place dans le ou les fichiers de sortie.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,24 +34,24 @@ or
 
 |Terme|Définition|
 |---|---|
-|`+` &#124; `-`|Optionnel. Specifying `+` or `/debug` causes the compiler to generate debugging information and place it in a .pdb file. Specifying `-` has the same effect as not specifying `/debug`.|
-|`full` &#124; `pdbonly`|Optionnel. Indique le type d'informations de débogage générées par le compilateur. If you do not specify `/debug:pdbonly`, the default is `full`, which enables you to attach a debugger to the running program. The `pdbonly` argument allows source-code debugging when the program is started in the debugger, but it displays assembly-language code only when the running program is attached to the debugger.|
+|`+` &#124; `-`|Ce paramètre est facultatif. Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `/debug`.|
+|`full` &#124; `pdbonly`|Ce paramètre est facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
 
 ## <a name="remarks"></a>Notes
 
-Utilisez cette option pour créer des versions Debug. If you do not specify `/debug`, `/debug+`, or `/debug:full`, you will be unable to debug the output file of your program.
+Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `/debug`, `/debug+`ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.
 
-By default, debugging information is not emitted (`/debug-`). To emit debugging information, specify `/debug` or `/debug+`.
+Par défaut, les informations de débogage ne sont pas émises (`/debug-`). Pour émettre des informations de débogage, spécifiez `/debug` ou `/debug+`.
 
 Pour plus d’informations sur la configuration des performances de débogage d’une application, consultez [Simplification du débogage d’une image](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).
 
-|To set -debug in the Visual Studio integrated development environment|
+|Pour définir-Debug dans l’environnement de développement intégré de Visual Studio|
 |---|
-|1.  With a project selected in **Solution Explorer**, on the **Project** menu, click **Properties**. <br />2.  Click the **Compile** tab.<br />3.  Click **Advanced Compile Options**.<br />4.  Modify the value in the **Generate Debug Info** box.|
+|1. quand un projet est sélectionné dans **Explorateur de solutions**, dans le menu **projet** , cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **compiler** .<br />3. cliquez sur **Options avancées de compilation**.<br />4. modifiez la valeur dans la zone **générer des informations de débogage** .|
 
 ## <a name="example"></a>Exemple
 
-The following example puts debugging information in output file `App.exe`.
+L’exemple suivant place des informations de débogage dans le fichier de sortie `App.exe`.
 
 ```console
 vbc -debug -out:app.exe test.vb

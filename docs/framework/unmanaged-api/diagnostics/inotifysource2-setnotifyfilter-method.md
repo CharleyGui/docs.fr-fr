@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435954"
 ---
 # <a name="inotifysource2setnotifyfilter-method"></a>INotifySource2::SetNotifyFilter, méthode
-Assigns a notification filter for use with this source.  
+Affecte un filtre de notification à utiliser avec cette source.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,16 +37,16 @@ HRESULT SetNotifyFilter
   
 ## <a name="parameters"></a>Paramètres  
  `in_NotifyFilter`  
- [in] A bitwise combination of the [NOTIFY_FILTER](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) enumeration values that identify callbacks for the debugger API.  
+ dans Combinaison d’opérations de bits des valeurs d’énumération [notify_filter](../../../../docs/framework/unmanaged-api/diagnostics/notify-filter-enumeration.md) qui identifient les rappels pour l’API du débogueur.  
   
  `in_pUserThreadFilter`  
- [in] A pointer to a [USER_THREAD](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) structure that identifies threads for the debugger API.  
+ dans Pointeur vers une structure [USER_THREAD](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md) qui identifie des threads pour l’API du débogueur.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds.  
+ S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** ProtocolNotify2.idl  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** ProtocolNotify2. idl  
   
 ## <a name="see-also"></a>Voir aussi
 

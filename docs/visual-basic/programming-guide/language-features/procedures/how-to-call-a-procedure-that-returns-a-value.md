@@ -15,32 +15,32 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74340741"
 ---
 # <a name="how-to-call-a-procedure-that-returns-a-value-visual-basic"></a>Comment : appeler une procédure qui retourne une valeur (Visual Basic)
-A `Function` procedure returns a value to the calling code. You call it by including its name and arguments either on the right side of an assignment statement or in an expression.  
+Une procédure `Function` retourne une valeur au code appelant. Vous l’appelez en incluant son nom et ses arguments sur le côté droit d’une instruction d’assignation ou dans une expression.  
   
-### <a name="to-call-a-function-procedure-within-an-expression"></a>To call a Function procedure within an expression  
+### <a name="to-call-a-function-procedure-within-an-expression"></a>Pour appeler une procédure de fonction dans une expression  
   
-1. Use the `Function` procedure name the same way you would use a variable. You can use a `Function` procedure call anywhere you can use a variable or constant in an expression.  
+1. Utilisez le nom de la procédure `Function` de la même façon que vous utilisez une variable. Vous pouvez utiliser une `Function` appel de procédure partout où vous pouvez utiliser une variable ou une constante dans une expression.  
   
-2. Follow the procedure name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses. However, using the parentheses makes your code easier to read.  
+2. Faites suivre le nom de la procédure de parenthèses pour encadrer la liste d’arguments. S’il n’y a pas d’arguments, vous pouvez éventuellement omettre les parenthèses. Toutefois, l’utilisation de parenthèses rend votre code plus facile à lire.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the `Function` procedure defines the corresponding parameters.  
+3. Placez les arguments dans la liste d’arguments entre parenthèses, séparés par des virgules. Veillez à fournir les arguments dans l’ordre dans lequel la procédure `Function` définit les paramètres correspondants.  
   
-     Alternatively, you can pass one or more arguments by name. For more information, see [Passing Arguments by Position and by Name](./passing-arguments-by-position-and-by-name.md).  
+     Vous pouvez également passer un ou plusieurs arguments par nom. Pour plus d’informations, consultez [passage des arguments par position et par nom](./passing-arguments-by-position-and-by-name.md).  
   
-4. The value returned from the procedure participates in the expression just as the value of a variable or constant would.  
+4. La valeur retournée par la procédure participe à l’expression comme la valeur d’une variable ou d’une constante.  
   
-### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>To call a Function procedure in an assignment statement  
+### <a name="to-call-a-function-procedure-in-an-assignment-statement"></a>Pour appeler une procédure de fonction dans une instruction d’assignation  
   
-1. Use the `Function` procedure name following the equal (`=`) sign in the assignment statement.  
+1. Utilisez le nom de la procédure `Function` après le signe égal (`=`) de l’instruction d’assignation.  
   
-2. Follow the procedure name with parentheses to enclose the argument list. If there are no arguments, you can optionally omit the parentheses. However, using the parentheses makes your code easier to read.  
+2. Faites suivre le nom de la procédure de parenthèses pour encadrer la liste d’arguments. S’il n’y a pas d’arguments, vous pouvez éventuellement omettre les parenthèses. Toutefois, l’utilisation de parenthèses rend votre code plus facile à lire.  
   
-3. Place the arguments in the argument list within the parentheses, separated by commas. Be sure you supply the arguments in the same order that the `Function` procedure defines the corresponding parameters, unless you are passing them by name.  
+3. Placez les arguments dans la liste d’arguments entre parenthèses, séparés par des virgules. Veillez à fournir les arguments dans l’ordre dans lequel la procédure `Function` définit les paramètres correspondants, sauf si vous les passez par nom.  
   
-4. The value returned from the procedure is stored in the variable or property on the left side of the assignment statement.  
+4. La valeur retournée par la procédure est stockée dans la variable ou la propriété sur le côté gauche de l’instruction d’assignation.  
   
 ## <a name="example"></a>Exemple  
- The following example calls the Visual Basic <xref:Microsoft.VisualBasic.Interaction.Environ%2A> to retrieve the value of an operating system environment variable. The first line calls `Environ` within an expression, and the second line calls it in an assignment statement. `Environ` takes the variable name as its sole argument. It returns the variable's value to the calling code.  
+ L’exemple suivant appelle la <xref:Microsoft.VisualBasic.Interaction.Environ%2A> Visual Basic pour récupérer la valeur d’une variable d’environnement de système d’exploitation. La première ligne appelle `Environ` dans une expression, et la deuxième ligne l’appelle dans une instruction d’assignation. `Environ` prend le nom de la variable en tant qu’argument unique. Elle retourne la valeur de la variable au code appelant.  
   
  [!code-vb[VbVbcnProcedures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#7)]  
   

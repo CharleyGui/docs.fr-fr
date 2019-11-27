@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437685"
 ---
 # <a name="imetadataimportgetcustomattributebyname-method"></a>IMetaDataImport::GetCustomAttributeByName, méthode
-Gets the custom attribute, given its name and owner.  
+Obtient l’attribut personnalisé, en fonction de son nom et de son propriétaire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,26 +38,26 @@ HRESULT GetCustomAttributeByName (
   
 ## <a name="parameters"></a>Paramètres  
  `tkObj`  
- [in] A metadata token representing the object that owns the custom attribute.  
+ dans Jeton de métadonnées représentant l’objet qui possède l’attribut personnalisé.  
   
  `szName`  
- [in] The name of the custom attribute.  
+ dans Nom de l’attribut personnalisé.  
   
  `ppData`  
- [out] A pointer to an array of data that is the value of the custom attribute.  
+ à Pointeur vers un tableau de données qui est la valeur de l’attribut personnalisé.  
   
  `pcbData`  
- [out] The size in bytes of the data returned in *`ppData`.  
+ à Taille en octets des données retournées dans *`ppData`.  
   
 ## <a name="remarks"></a>Notes  
- It is legal to define multiple custom attributes for the same owner; they may even have the same name. However, `GetCustomAttributeByName` returns only one instance. (`GetCustomAttributeByName` returns the first instance that it encounters.) To find all instances of a custom attribute, call the [IMetaDataImport::EnumCustomAttributes](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) method.  
+ Il est légal de définir plusieurs attributs personnalisés pour le même propriétaire ; ils peuvent même avoir le même nom. Toutefois, `GetCustomAttributeByName` ne retourne qu’une seule instance. (`GetCustomAttributeByName` retourne la première instance qu’il rencontre.) Pour rechercher toutes les instances d’un attribut personnalisé, appelez la méthode [IMetaDataImport :: EnumCustomAttributes (](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumcustomattributes-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

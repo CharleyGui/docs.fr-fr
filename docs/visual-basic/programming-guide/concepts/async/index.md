@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346685"
 ---
-# <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Asynchronous programming with Async and Await (Visual Basic)
+# <a name="asynchronous-programming-with-async-and-await-visual-basic"></a>Programmation asynchrone avec Async et await (Visual Basic)
 
 Vous pouvez éviter des goulots d'étranglement de performance et améliorer la réactivité globale de votre application à l'aide de la programmation asynchrone. Toutefois, les techniques traditionnelles pour écrire des applications asynchrones peuvent être complexes et rendre ces applications difficiles à écrire, déboguer et mettre à jour.
 
@@ -81,11 +81,11 @@ Si `AccessTheWebAsync` n'a aucun travail qu'il peut effectuer entre l'appel de `
 Dim urlContents As String = Await client.GetStringAsync()
 ```
 
-The following characteristics summarize what makes the previous example an async method:
+Les caractéristiques suivantes résument ce qui fait de l’exemple précédent une méthode Async :
 
 - La signature de la méthode inclut un modificateur `Async`.
 - Le nom d'une méthode async, par convention, se termine par un suffixe « Async ».
-- Le type de retour est l'un des types suivants :
+- Le type de retour est l’un des types suivants :
 
   - <xref:System.Threading.Tasks.Task%601> si votre méthode a une instruction de retour dans laquelle l'opérande a le type TResult.
   - <xref:System.Threading.Tasks.Task> si votre méthode n'a aucune instruction de retour, ou si elle a une instruction de retour sans opérande.
@@ -99,15 +99,15 @@ Dans les méthodes async, vous utilisez les mots clés et les types fournis pour
 
 Pour plus d’informations sur le comportement asynchrone dans les versions antérieures de .NET Framework, consultez la page [Programmation asynchrone .NET Framework traditionnelle et TPL](../../../../standard/parallel-programming/tpl-and-traditional-async-programming.md).
 
-## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a> What happens in an Async method
+## <a name="BKMK_WhatHappensUnderstandinganAsyncMethod"></a>Ce qui se passe dans une méthode Async
 
 La chose la plus importante à comprendre en programmation asynchrone est le déplacement du flux de contrôle d'une méthode à l'autre. Le diagramme suivant présente le processus :
 
 ![Diagramme illustrant le suivi d’un programme asynchrone.](./media/index/navigation-trace-async-program.png)
 
-The numbers in the diagram correspond to the following steps:
+Les nombres dans le diagramme correspondent aux étapes suivantes :
 
-1. An event handler calls and awaits the `AccessTheWebAsync` async method.
+1. Un gestionnaire d’événements appelle et attend la méthode Async `AccessTheWebAsync`.
 
 2. `AccessTheWebAsync` crée une instance <xref:System.Net.Http.HttpClient> et appelle la méthode asynchrone <xref:System.Net.Http.HttpClient.GetStringAsync%2A> pour télécharger le contenu d'un site Web comme une chaîne.
 
@@ -138,17 +138,17 @@ Pour plus d’informations sur le flux de contrôle, consultez la page [Flux de 
 
 ## <a name="BKMK_APIAsyncMethods"></a> Méthodes async d’API
 
-Vous pouvez vous demander où rechercher les méthodes telles que `GetStringAsync` qui prennent en charge la programmation async. The .NET Framework 4.5 or higher contains many members that work with `Async` and `Await`. You can recognize these members by the "Async" suffix that's attached to the member name and a return type of <xref:System.Threading.Tasks.Task> or <xref:System.Threading.Tasks.Task%601>. Par exemple, la classe `System.IO.Stream` contient des méthodes telles que <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A> en même temps que les méthodes synchrones <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A> et <xref:System.IO.Stream.Write%2A>.
+Vous pouvez vous demander où rechercher les méthodes telles que `GetStringAsync` qui prennent en charge la programmation async. La .NET Framework 4,5 ou une version ultérieure contient de nombreux membres qui fonctionnent avec `Async` et `Await`. Vous pouvez reconnaître ces membres par le suffixe « Async » joint au nom de membre et un type de retour <xref:System.Threading.Tasks.Task> ou <xref:System.Threading.Tasks.Task%601>. Par exemple, la classe `System.IO.Stream` contient des méthodes telles que <xref:System.IO.Stream.CopyToAsync%2A>, <xref:System.IO.Stream.ReadAsync%2A> et <xref:System.IO.Stream.WriteAsync%2A> en même temps que les méthodes synchrones <xref:System.IO.Stream.CopyTo%2A>, <xref:System.IO.Stream.Read%2A> et <xref:System.IO.Stream.Write%2A>.
 
-Windows Runtime contient également de nombreuses méthodes utilisables avec `Async` et `Await` dans les applications Windows. For more information and example methods, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic), [Asynchronous programming (Windows Runtime apps)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10)), and [WhenAny: Bridging between the .NET Framework and the Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120)).
+Windows Runtime contient également de nombreuses méthodes utilisables avec `Async` et `Await` dans les applications Windows. Pour plus d’informations et pour obtenir des exemples de méthodes, consultez [appeler des API asynchrones dans C# ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic), [programmation asynchrone (applications Windows Runtime)](https://docs.microsoft.com/previous-versions/windows/apps/hh464924(v=win.10))et [WhenAny : pontage entre le .NET Framework et le Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120)).
 
 ## <a name="BKMK_Threads"></a> Threads
 
-Les méthodes Async sont conçues pour être des opérations non bloquantes. An `Await` expression in an async method doesn't block the current thread while the awaited task is running. Au lieu de cela, l'expression inscrit le reste de la méthode comme continuation et retourne le contrôle à l'appelant de la méthode async.
+Les méthodes Async sont conçues pour être des opérations non bloquantes. Une expression `Await` dans une méthode Async ne bloque pas le thread actuel pendant que la tâche attendue est en cours d’exécution. Au lieu de cela, l'expression inscrit le reste de la méthode comme continuation et retourne le contrôle à l'appelant de la méthode async.
 
-Les mots clés `Async` et `Await` n’entraînent pas la création de threads supplémentaires. Async methods don't require multi-threading because an async method doesn't run on its own thread. La méthode s'exécute sur le contexte de synchronisation actuel et utilise du temps sur le thread uniquement lorsqu'elle est active. Vous pouvez utiliser <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> pour déplacer le travail lié au processeur vers un thread d'arrière-plan, mais un thread d'arrière-plan ne permet pas à un processus qui attend simplement les résultats de devenir disponible.
+Les mots clés `Async` et `Await` n’entraînent pas la création de threads supplémentaires. Les méthodes Async ne requièrent pas de Multi-Threading, car une méthode Async ne s’exécute pas sur son propre thread. La méthode s’exécute sur le contexte de synchronisation actuel et utilise du temps sur le thread uniquement lorsqu’elle est active. Vous pouvez utiliser <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType> pour déplacer le travail lié au processeur vers un thread d'arrière-plan, mais un thread d'arrière-plan ne permet pas à un processus qui attend simplement les résultats de devenir disponible.
 
-L’approche basée sur async en matière de programmation asynchrone est préférable aux approches existantes, dans presque tous les cas. In particular, this approach is better than <xref:System.ComponentModel.BackgroundWorker> for I/O-bound operations because the code is simpler and you don't have to guard against race conditions. Combinée à <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType>, la programmation asynchrone est meilleure que <xref:System.ComponentModel.BackgroundWorker> pour les opérations utilisant le processeur de manière intensive car la programmation asynchrone sépare les détails de coordination de l'exécution de votre code à partir du travail que `Task.Run` transfère au pool de threads.
+L’approche basée sur async en matière de programmation asynchrone est préférable aux approches existantes, dans presque tous les cas. En particulier, cette approche est mieux que <xref:System.ComponentModel.BackgroundWorker> pour les opérations liées aux e/s, car le code est plus simple et vous n’avez pas à vous prémunir contre les conditions de concurrence. Combinée à <xref:System.Threading.Tasks.Task.Run%2A?displayProperty=nameWithType>, la programmation asynchrone est meilleure que <xref:System.ComponentModel.BackgroundWorker> pour les opérations utilisant le processeur de manière intensive car la programmation asynchrone sépare les détails de coordination de l'exécution de votre code à partir du travail que `Task.Run` transfère au pool de threads.
 
 ## <a name="BKMK_AsyncandAwait"></a> Async et Await
 
@@ -156,11 +156,11 @@ Si vous spécifiez qu’une méthode est une méthode async en utilisant un modi
 
 - La méthode async marquée peut utiliser [Await](../../../../visual-basic/language-reference/operators/await-operator.md) pour indiquer des points d’interruption. L'opérateur await indique au compilateur que la méthode async ne peut pas continuer au-delà de ce point, tant que le processus asynchrone attendu n'est pas terminé. Entre-temps, le contrôle retourne à l'appelant de la méthode async.
 
-  The suspension of an async method at an `Await` expression doesn't constitute an exit from the method, and `Finally` blocks don't run.
+  La suspension d’une méthode Async au niveau d’une expression `Await` ne constitue pas une sortie de la méthode et les blocs `Finally` ne s’exécutent pas.
 
 - La méthode async marquée peut elle-même être attendue par les méthodes qui l'appellent.
 
-An async method typically contains one or more occurrences of an `Await` operator, but the absence of `Await` expressions doesn't cause a compiler error. If an async method doesn't use an `Await` operator to mark a suspension point, the method executes as a synchronous method does, despite the `Async` modifier. Le compilateur émet un avertissement pour ces méthodes.
+Une méthode Async contient généralement une ou plusieurs occurrences d’un opérateur `Await`, mais l’absence d' `Await` expressions ne provoque pas d’erreur du compilateur. Si une méthode Async n’utilise pas un opérateur `Await` pour marquer un point de suspension, la méthode s’exécute en tant que méthode synchrone, en dépit du modificateur `Async`. Le compilateur émet un avertissement pour ces méthodes.
 
 `Async` et `Await` sont des mots clés contextuels. Pour plus d'informations et des exemples, consultez les rubriques suivantes :
 
@@ -175,7 +175,7 @@ Vous spécifiez <xref:System.Threading.Tasks.Task%601> comme type de retour si l
 
 Vous utilisez `Task` comme type de retour si la méthode n'a aucune instruction return ou une instruction return qui ne retourne pas d'opérande.
 
-The following example shows how you declare and call a method that returns a <xref:System.Threading.Tasks.Task%601> or a <xref:System.Threading.Tasks.Task>:
+L’exemple suivant montre comment déclarer et appeler une méthode qui retourne un <xref:System.Threading.Tasks.Task%601> ou un <xref:System.Threading.Tasks.Task>:
 
 ```vb
 ' Signature specifies Task(Of Integer)
@@ -211,7 +211,7 @@ Chaque tâche retournée représente le travail en cours. Une tâche encapsule d
 
 Une méthode async peut également être une méthode `Sub`. Ce type de retour est essentiellement utilisé pour définir les gestionnaires d’événements, où un type de retour est obligatoire. Les gestionnaires d'événements asynchrones servent souvent de point de départ aux programmes asynchrones.
 
-An async method that's a `Sub` procedure can't be awaited, and the caller can't catch any exceptions that the method throws.
+Une méthode Async qui est une procédure `Sub` ne peut pas être attendue, et l’appelant ne peut pas intercepter les exceptions levées par la méthode.
 
 Une méthode async ne peut pas déclarer de paramètres [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), mais elle peut appeler des méthodes qui comportent ces paramètres.
 
@@ -224,13 +224,13 @@ Les API asynchrones dans la programmation Windows Runtime ont l’un des types d
 - <xref:Windows.Foundation.IAsyncActionWithProgress%601>
 - <xref:Windows.Foundation.IAsyncOperationWithProgress%602>
 
-For more information and an example, see [Call asynchronous APIs in C# or Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).
+Pour plus d’informations et pour obtenir un exemple, consultez [appeler C# des API asynchrones dans ou Visual Basic](/windows/uwp/threading-async/call-asynchronous-apis-in-csharp-or-visual-basic).
 
 ## <a name="BKMK_NamingConvention"></a> Convention d’affectation de noms
 
 Par convention, on ajoute « Async » aux noms des méthodes qui possèdent un modificateur `Async`.
 
-Vous pouvez ignorer la convention où un événement, une classe de base, ou un contrat d'interface suggère un nom différent. For example, you shouldn't rename common event handlers, such as `Button1_Click`.
+Vous pouvez ignorer la convention où un événement, une classe de base, ou un contrat d'interface suggère un nom différent. Par exemple, vous ne devez pas renommer les gestionnaires d’événements communs, tels que `Button1_Click`.
 
 ## <a name="BKMK_RelatedTopics"></a> Rubriques connexes et exemples (Visual Studio)
 
@@ -241,8 +241,8 @@ Vous pouvez ignorer la convention où un événement, une classe de base, ou un 
 |[Guide pratique : effectuer plusieurs requêtes web en parallèle avec Async et Await (Visual Basic)](how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)|Explique comment démarrer plusieurs tâches en même temps.|[Exemple Async : effectuer plusieurs requêtes web en parallèle](https://code.msdn.microsoft.com/Async-Make-Multiple-Web-49adb82e)|
 |[Types de retour Async (Visual Basic)](async-return-types.md)|Décrit les types que les méthodes async peuvent retourner et explique quand chaque type est approprié.||
 |[Flux de contrôle dans les programmes Async (Visual Basic)](control-flow-in-async-programs.md)|Effectue le suivi en détail du flux de contrôle via une série d'expressions await dans un programme asynchrone.|[Exemple Async : flux de contrôle dans les programmes Async](https://code.msdn.microsoft.com/Async-Sample-Control-Flow-5c804fc0)|
-|[Ajuster une application Async (Visual Basic)](fine-tuning-your-async-application.md)|Indique comment ajouter les fonctionnalités suivantes à votre solution async :<br /><br /> - [Annuler une tâche Asynch ou une liste de tâches (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)<br />- [Annuler des tâches Asynch après une période spécifique (Visual Basic)](cancel-async-tasks-after-a-period-of-time.md)<br />- [Annuler les tâches Asynch restantes lorsque l’une d’elles est terminée (Visual Basic)](cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [Démarrer plusieurs tâches Asynch et les traiter une fois terminées (Visual Basic)](start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Exemple Async : ajuster une application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
-|[Gérer la réentrance dans Async Apps (Visual Basic)](handling-reentrancy-in-async-apps.md)|Shows how to handle cases in which an active asynchronous operation is restarted while it's running.||
+|[Ajuster une application Async (Visual Basic)](fine-tuning-your-async-application.md)|Indique comment ajouter les fonctionnalités suivantes à votre solution async :<br /><br /> - [Annuler une tâche Asynch ou une liste de tâches (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/cancel-an-async-task-or-a-list-of-tasks.md)<br />- [Annuler des tâches Asynch après une période spécifique (Visual Basic)](cancel-async-tasks-after-a-period-of-time.md)<br />- [Annuler les tâches Asynch restantes lorsque l’une d’elles est terminée (Visual Basic)](cancel-remaining-async-tasks-after-one-is-complete.md)<br />- [Démarrer plusieurs tâches Asynch et les traiter une fois terminées (Visual Basic)](start-multiple-async-tasks-and-process-them-as-they-complete.md)|[Exemple Async : réglage de votre application](https://code.msdn.microsoft.com/Async-Fine-Tuning-Your-a676abea)|
+|[Gérer la réentrance dans Async Apps (Visual Basic)](handling-reentrancy-in-async-apps.md)|Montre comment gérer les cas dans lesquels une opération asynchrone active est redémarrée pendant son exécution.||
 |[WhenAny : transition entre .NET Framework et Windows Runtime](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|Montre comment établir un pont entre les types de tâches du .NET Framework et IAsyncOperations dans Windows Runtime pour pouvoir utiliser <xref:System.Threading.Tasks.Task.WhenAny%2A> avec une méthode Windows Runtime.|[Exemple Async : transition entre .NET et Windows Runtime (AsTask et WhenAny)](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/jj635140(v=vs.120))|
 |Annulation Asynch : combler l'écart entre .NET Framework et Windows Runtime|Montre comment établir un pont entre les types de tâches du .NET Framework et IAsyncOperations dans Windows Runtime pour pouvoir utiliser <xref:System.Threading.CancellationTokenSource> avec une méthode Windows Runtime.|[Exemple Async : transition entre .NET et Windows Runtime (AsTask & Annulation)](https://code.msdn.microsoft.com/Async-Sample-Bridging-9479eca3)|
 |[Utiliser async pour l’accès aux fichiers (Visual Basic)](using-async-for-file-access.md)|Répertorie et explique les avantages de l'utilisation d'async et d'await pour accéder aux fichiers.||
@@ -251,7 +251,7 @@ Vous pouvez ignorer la convention où un événement, une classe de base, ou un 
 
 ## <a name="BKMK_CompleteExample"></a> Exemple complet
 
-Le code suivant est le fichier MainWindow.xaml.vb de l’application WPF (Windows Presentation Foundation) traitée dans cette rubrique. Vous pouvez télécharger l’exemple sur [Exemple async : exemple de « programmation asynchrone avec async et await »](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-vb/).
+Le code suivant est le fichier MainWindow.xaml.vb de l’application WPF (Windows Presentation Foundation) traitée dans cette rubrique. Vous pouvez télécharger l’exemple sur [Exemple async : exemple de « programmation asynchrone avec async et await »](https://docs.microsoft.com/samples/dotnet/samples/async-and-await-vb/).
 
 [!code-vb[async](~/samples/async/async-and-await/vb/MainWindow.xaml.vb)]
 

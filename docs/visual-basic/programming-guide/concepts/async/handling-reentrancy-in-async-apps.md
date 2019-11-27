@@ -9,15 +9,15 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74354267"
 ---
-# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Handling Reentrancy in Async Apps (Visual Basic)
+# <a name="handling-reentrancy-in-async-apps-visual-basic"></a>Gestion de la réentrance dans les applications Async (Visual Basic)
 
 Quand vous incluez du code asynchrone dans votre application, vous devez prendre en compte et éventuellement empêcher la réentrance, qui fait référence à une nouvelle entrée d'une opération asynchrone avant qu'elle soit terminée. Si vous n'identifiez pas et ne gérez pas les possibilités de réentrance, les résultats peuvent être inattendus.
 
 > [!NOTE]
-> Pour exécuter l’exemple, vous devez avoir Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure installés sur votre ordinateur.
+> Pour exécuter l’exemple, Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure doivent être installés sur votre ordinateur.
 
 > [!NOTE]
-> Transport Layer Security (TLS) version 1.2 is now the minimum version to use in your app development. If your app targets a .NET framework version earlier than 4.7, please refer to the following article for [Transport Layer Security (TLS) best practices with the .NET Framework](../../../../framework/network-programming/tls.md) 
+> La version 1,2 de TLS (Transport Layer Security) est désormais la version minimale à utiliser dans le développement de votre application. Si votre application cible une version du .NET Framework antérieure à 4,7, reportez-vous à l’article suivant pour [les meilleures pratiques de Transport Layer Security (TLS) avec le .NET Framework](../../../../framework/network-programming/tls.md) 
 
 ## <a name="BKMK_RecognizingReentrancy"></a> Identification de la réentrance
 
@@ -126,7 +126,7 @@ Suite aux modifications, le bouton ne répond pas pendant que `AccessTheWebAsync
 
 Au lieu de désactiver le bouton **Démarrer**, vous pouvez garder le bouton actif. Toutefois, si l’utilisateur choisit de nouveau ce bouton, annulez l’opération qui est déjà en cours d’exécution et laissez continuer l’opération le plus récemment démarrée.
 
-For more information about cancellation, see [Fine-Tuning Your Async Application (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
+Pour plus d’informations sur l’annulation, consultez [réglage de votre application Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/fine-tuning-your-async-application.md).
 
 Pour configurer ce scénario, apportez les modifications suivantes au code de base fourni dans [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample). Vous pouvez également télécharger l’application finalisée dans la rubrique [Exemples Async : la réentrance dans les applications de bureau .NET](https://code.msdn.microsoft.com/Async-Sample-Preventing-a8489f06). Le nom de ce projet est CancelAndRestart.
 
@@ -139,7 +139,7 @@ Pour configurer ce scénario, apportez les modifications suivantes au code de ba
         Dim cts As CancellationTokenSource
     ```
 
-2. Dans `StartButton_Click`, déterminez si une opération est déjà en cours d'exécution. If the value of `cts` is `Nothing`, no operation is already active. If the value isn't `Nothing`, the operation that is already running is canceled.
+2. Dans `StartButton_Click`, déterminez si une opération est déjà en cours d'exécution. Si la valeur de `cts` est `Nothing`, aucune opération n’est déjà active. Si la valeur n’est pas `Nothing`, l’opération qui est déjà en cours d’exécution est annulée.
 
     ```vb
     ' *** If a download process is already underway, cancel it.
@@ -156,7 +156,7 @@ Pour configurer ce scénario, apportez les modifications suivantes au code de ba
     cts = newCTS
     ```
 
-4. At the end of `StartButton_Click`, the current process is complete, so set the value of `cts` back to `Nothing`.
+4. À la fin de `StartButton_Click`, le processus actuel est terminé, donc réaffectez la valeur de `cts` à `Nothing`.
 
     ```vb
     ' *** When the process completes, signal that another process can proceed.
@@ -248,7 +248,7 @@ Private Async Function AccessTheWebAsync(ct As CancellationToken) As Task
 End Function
 ```
 
-If you choose the **Start** button several times while this app is running, it should produce results that resemble the following output:
+Si vous choisissez le bouton **Démarrer** plusieurs fois pendant l’exécution de cette application, elle doit produire des résultats qui ressemblent à la sortie suivante :
 
 ```console
 1. msdn.microsoft.com/library/hh191443.aspx                83732
@@ -516,7 +516,7 @@ La sortie affiche les modèles suivants.
   TOTAL bytes returned:  915908
   ```
 
-- The `pendingWork` task is `Nothing` at the start of `FinishOneGroupAsync` only for group A, which started first. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
+- La tâche `pendingWork` est `Nothing` au début de `FinishOneGroupAsync` uniquement pour le groupe A, qui a démarré en premier. Le groupe A n'a pas encore terminé une expression await quand il atteint `FinishOneGroupAsync`. Par conséquent, le contrôle n'a pas retourné à `AccessTheWebAsync`, et la première assignation à `pendingWork` ne s'est pas produite.
 
 - Les deux lignes suivantes apparaissent toujours ensemble dans la sortie. Le code n'est jamais interrompu entre le démarrage d'une opération de groupe dans `StartButton_Click` et l'affectation d'une tâche pour le groupe à `pendingWork`.
 
@@ -560,11 +560,11 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
      La boîte de dialogue **Nouveau projet** s'affiche.
 
-3. In the **Installed Templates** pane, expand **Visual Basic**, and then expand **Windows**.
+3. Dans le volet **modèles installés** , développez **Visual Basic**, puis développez **Windows**.
 
 4. Dans la liste des types de projets, choisissez **Application WPF**.
 
-5. Name the project `WebsiteDownloadWPF`, choose .NET Framework version of 4.6 or higher and then click the **OK** button.
+5. Nommez le projet `WebsiteDownloadWPF`, choisissez .NET Framework version 4,6 ou ultérieure, puis cliquez sur le bouton **OK** .
 
      Le nouveau projet s’affiche dans l’**Explorateur de solutions**.
 
@@ -592,13 +592,13 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
      Une fenêtre simple contenant une zone de texte et un bouton apparaît dans la vue **Design** de MainWindow.xaml.
 
-8. In **Solution Explorer**, right-click on **References** and select **Add Reference**.
+8. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur **références** , puis sélectionnez **Ajouter une référence**.
 
-     Add a reference for <xref:System.Net.Http>, if it is not selected already.
+     Ajoutez une référence pour <xref:System.Net.Http>, si elle n’est pas déjà sélectionnée.
 
-9. In **Solution Explorer**, open the shortcut menu for MainWindow.xaml.vb, and then choose **View Code**.
+9. Dans **Explorateur de solutions**, ouvrez le menu contextuel de MainWindow. Xaml. vb, puis choisissez **afficher le code**.
 
-10. In MainWindow.xaml.vb , replace the code with the following code.
+10. Dans MainWindow. Xaml. vb, remplacez le code par le code suivant.
 
     ```vb
     ' Add the following Imports statements, and add a reference for System.Net.Http.

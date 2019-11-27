@@ -15,13 +15,13 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74332315"
 ---
 # <a name="how-to-access-xml-descendant-elements-visual-basic"></a>Comment : accéder à des éléments descendants XML (Visual Basic)
-This example shows how to use a descendant axis property to access all XML elements that have a specified name and that are contained under an XML element. In particular, it uses the `Value` property to get the value of the first element in the collection that the `name` descendant axis property returns. The `name` descendant axis property gets all elements named `name` that are contained in the `contacts` object. This example also uses the `phone` descendant axis property to access all descendants named `phone` that are contained in the `contacts` object.  
+Cet exemple montre comment utiliser une propriété d’axe descendant pour accéder à tous les éléments XML portant un nom spécifié et contenus sous un élément XML. En particulier, elle utilise la propriété `Value` pour récupérer la valeur du premier élément de la collection que la propriété de l’axe descendant `name` retourne. La `name` propriété d’axe descendant obtient tous les éléments nommés `name` qui sont contenus dans l’objet `contacts`. Cet exemple utilise également la propriété d’axe descendant `phone` pour accéder à tous les descendants nommés `phone` qui sont contenus dans l’objet `contacts`.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbXMLSamples#31](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples13.vb#31)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - une référence à l'espace de noms <xref:System.Xml.Linq>.  
   

@@ -15,22 +15,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348700"
 ---
 # <a name="how-to-call-windows-apis-visual-basic"></a>Comment : appeler des API Windows (Visual Basic)
-This example defines and calls the `MessageBox` function in user32.dll and then passes a string to it.  
+Cet exemple définit et appelle la fonction `MessageBox` dans User32. dll, puis passe une chaîne à celle-ci.  
   
 ## <a name="example"></a>Exemple  
  [!code-vb[VbVbalrInterop#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrInterop/VB/Class1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - une référence à l'espace de noms <xref:System>.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  
   
-- The method is not static, is abstract, or has been previously defined. The parent type is an interface, or the length of *name* or *dllName* is zero. (<xref:System.ArgumentException>)  
+- La méthode n’est pas statique, est abstraite ou a été définie précédemment. Le type parent est une interface, ou la longueur de *Name* ou de *DllName* est égale à zéro. (<xref:System.ArgumentException>)  
   
-- The *name* or *dllName* is `Nothing`. (<xref:System.ArgumentNullException>)  
+- Le *nom* ou le *DllName* est `Nothing`. (<xref:System.ArgumentNullException>)  
   
 - Le type conteneur a déjà été créé à l’aide de `CreateType`. (<xref:System.InvalidOperationException>)  
   
@@ -39,6 +39,6 @@ This example defines and calls the `MessageBox` function in user32.dll and then 
 - [Présentation détaillée de l’appel de code non managé](../../../framework/interop/consuming-unmanaged-dll-functions.md#a-closer-look-at-platform-invoke)
 - [Exemples d'appel de code non managé](../../../framework/interop/platform-invoke-examples.md)
 - [Consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md)
-- [Defining a Method with Reflection Emit](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
+- [Définition d’une méthode avec l’émission de réflexion](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w63y4d4f(v=vs.100))
 - [Procédure pas à pas : appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)
 - [COM Interop](../../../visual-basic/programming-guide/com-interop/index.md)

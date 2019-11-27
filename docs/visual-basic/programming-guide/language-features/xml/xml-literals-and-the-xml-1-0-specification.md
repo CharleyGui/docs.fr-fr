@@ -12,21 +12,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346182"
 ---
 # <a name="xml-literals-and-the-xml-10-specification-visual-basic"></a>Littéraux XML et spécification XML 1.0 (Visual Basic)
-The XML literal syntax in Visual Basic supports most of the Extensible Markup Language (XML) 1.0 specification. For details about the XML 1.0 specification, see [Extensible Markup Language (XML) 1.0](https://www.w3.org/TR/xml) on the W3C Web site.  
+La syntaxe de littéral XML dans Visual Basic prend en charge la majeure partie de la spécification Extensible Markup Language (XML) 1,0. Pour plus d’informations sur la spécification XML 1,0, consultez [Extensible Markup Language (XML) 1,0](https://www.w3.org/TR/xml) sur le site Web de W3C.  
   
-## <a name="what-visual-basic-does-not-support"></a>What Visual Basic Does Not Support  
+## <a name="what-visual-basic-does-not-support"></a>Ce que Visual Basic ne prend pas en charge  
   
-- An XML literal cannot contain a document type definition (DTD).  
+- Un littéral XML ne peut pas contenir une définition de type de document (DTD).  
   
-- An XML document literal must start with an XML document declaration.  
+- Un littéral de document XML doit commencer par une déclaration de document XML.  
   
-- An XML literal cannot contain more than 65,535 characters on one line.  
+- Un littéral XML ne peut pas contenir plus de 65 535 caractères sur une seule ligne.  
   
-- XML namespace prefixes, element names, and attribute names cannot contain more than 1,024 characters.  
+- Les préfixes d’espaces de noms XML, les noms d’éléments et les noms d’attributs ne peuvent pas contenir plus de 1 024 caractères.  
   
-## <a name="extra-features-that-visual-basic-supports"></a>Extra Features That Visual Basic Supports  
+## <a name="extra-features-that-visual-basic-supports"></a>Fonctionnalités supplémentaires prises en charge par Visual Basic  
   
-- The embedded expression syntax allowed in document and element literals is not valid XML.  
+- La syntaxe d’expression incorporée autorisée dans les littéraux de document et d’élément n’est pas un XML valide.  
   
 ## <a name="see-also"></a>Voir aussi
 

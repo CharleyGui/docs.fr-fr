@@ -38,11 +38,11 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`PROFILER_PARENT_UNKNOWN`|The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.|  
-|`PROFILER_GLOBAL_CLASS`|The default class identifier for global constants that do not belong to a class.|  
-|`PROFILER_GLOBAL_MODULE`|The default module identifier for global objects that do not belong to a module.|  
+|`PROFILER_PARENT_UNKNOWN`|Identificateur par défaut utilisé par [ICorProfilerInfo :: GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) pour un module qui n’a pas encore été attaché à un assembly.|  
+|`PROFILER_GLOBAL_CLASS`|Identificateur de classe par défaut pour les constantes globales qui n’appartiennent pas à une classe.|  
+|`PROFILER_GLOBAL_MODULE`|Identificateur de module par défaut pour les objets globaux qui n’appartiennent pas à un module.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -39,7 +39,7 @@ Le tableau suivant récapitule les différentes fonctionnalités fournies par ce
 >
 > En outre, les commutateurs `/r` et `/ct` pour les types de référencement sont destinés à la génération de contrats de données. Ces commutateurs ne fonctionnent pas lors de l'utilisation de XmlSerializer.
 
-### <a name="timeout"></a>Délai
+### <a name="timeout"></a>Délai d'expiration
 
 L’outil a un délai d’expiration de cinq minutes lors de l’extraction des métadonnées. Ce délai d'attente s'applique uniquement à la récupération des métadonnées sur le réseau. Il ne s'applique pas au traitement de ces métadonnées.
 
@@ -62,7 +62,7 @@ Le tableau suivant présente quelques options couramment utilisées pour cet out
 |/Répertoire :\<> de répertoire|Répertoire à utiliser pour la création des fichiers.<br /><br /> Valeur par défaut : le répertoire actif.<br /><br /> Forme abrégée : `/d`|
 |/help|Affiche la syntaxe de commande et les options de l'outil.<br /><br /> Forme abrégée : `/?`|
 |/noLogo|Supprime le message de copyright et de bannière.|
-|/svcutilConfig:\<configFile>|Spécifie un fichier de configuration personnalisé à utiliser en remplacement du fichier App.config. Peut être utilisé pour enregistrer des extensions system.serviceModel sans modifier le fichier de configuration de l’outil.|
+|En utilisant/svcutilConfig :\<configFile >|Spécifie un fichier de configuration personnalisé à utiliser en remplacement du fichier App.config. Peut être utilisé pour enregistrer des extensions system.serviceModel sans modifier le fichier de configuration de l’outil.|
 |/target :\<type de sortie >|Spécifie la sortie à générer par l'outil.<br /><br /> Les valeurs valides sont code, métadonnées ou xmlSerializer.<br /><br /> Forme abrégée : `/t`|
 
 ### <a name="code-generation"></a>Génération de code
@@ -125,7 +125,7 @@ Svcutil.exe peut exporter des métadonnées pour des services, des contrats et d
 
 |Option|Description|
 |------------|-----------------|
-|/serviceName:\<serviceConfigName>|Spécifie le nom de configuration d'un service à exporter. Si cette option est utilisée, un assembly exécutable avec un fichier de configuration associé doit être passé en tant qu'entrée. Svcutil.exe recherche tous les fichiers de configuration associés la configuration du service. Si les fichiers de configuration contiennent des types d’extension, les assemblys qui contiennent ces types doivent être dans le GAC ou être explicitement fournis à l’aide de l’option `/reference`.|
+|/serviceName :\<serviceConfigName >|Spécifie le nom de configuration d'un service à exporter. Si cette option est utilisée, un assembly exécutable avec un fichier de configuration associé doit être passé en tant qu'entrée. Svcutil.exe recherche tous les fichiers de configuration associés la configuration du service. Si les fichiers de configuration contiennent des types d’extension, les assemblys qui contiennent ces types doivent être dans le GAC ou être explicitement fournis à l’aide de l’option `/reference`.|
 |/Reference : chemin d’accès au fichier\<>|Ajoute l'assembly spécifié au jeu d'assemblys utilisé pour résoudre des références de type. Si vous exportez ou validez un service qui utilise des extensions tierces (Comportements, Liaisons et BindingElements) enregistrées dans la configuration, utilisez cette option pour localiser des assemblys d’extension qui ne figurent pas dans le GAC.<br /><br /> Forme abrégée : `/r`|
 |/dataContractOnly|Fonctionne uniquement sur les types de contrat de données. Les contrats de service ne sont pas traités.<br /><br /> Pour cette option, vous devez spécifier uniquement des fichiers de métadonnées locaux.<br /><br /> Forme abrégée : `/dconly`|
 |/excludeType : type de\<>|Spécifie le nom qualifié complet ou qualifié d'assembly d'un type à exclure de l'exportation. Cette option peut être utilisée lors de l'exportation des métadonnées d'un service (ou d'un ensemble de contrats de services) afin d'exclure certains types de l'opération d'exportation. Cette option ne peut pas être utilisée avec l'option `/dconly`.<br /><br /> Lorsqu'un assembly contient plusieurs services et que chacun d'entre eux utilise des classes séparées tout en portant le même nom XSD, vous devez spécifier le nom du service au lieu du nom de la classe XSD pour ce commutateur.<br /><br /> Les types XSD ou les types de contrat de données ne sont pas pris en charge.<br /><br /> Forme abrégée : `/et`|
@@ -143,7 +143,7 @@ La validation peut être utilisée pour détecter des erreurs dans les implémen
 |Option|Description|
 |------------|-----------------|
 |/validate|Valide une implémentation de service spécifiée par l'option `/serviceName`. Si cette option est utilisée, un assembly exécutable avec un fichier de configuration associé doit être passé en tant qu'entrée.<br /><br /> Forme abrégée : `/v`|
-|/serviceName:\<serviceConfigName>|Spécifie le nom de configuration d'un service à valider. Svcutil.exe recherche tous les fichiers de configuration associés de tous les assemblys d'entrée pour la configuration du service. Si les fichiers de configuration contiennent des types d'extension, les assemblys qui contiennent ces types doivent être dans le GAC ou être explicitement fournis à l'aide de l'option `/reference`.|
+|/serviceName :\<serviceConfigName >|Spécifie le nom de configuration d'un service à valider. Svcutil.exe recherche tous les fichiers de configuration associés de tous les assemblys d'entrée pour la configuration du service. Si les fichiers de configuration contiennent des types d'extension, les assemblys qui contiennent ces types doivent être dans le GAC ou être explicitement fournis à l'aide de l'option `/reference`.|
 |/Reference : chemin d’accès au fichier\<>|Ajoute l'assembly spécifié au jeu d'assemblys utilisé pour résoudre des références de type. Si vous exportez ou validez un service qui utilise des extensions tierces (Comportements, Liaisons et BindingElements) enregistrées dans la configuration, utilisez cette option pour localiser des assemblys d’extension qui ne figurent pas dans le GAC.<br /><br /> Forme abrégée : `/r`|
 |/dataContractOnly|Fonctionne uniquement sur les types de contrat de données. Les contrats de service ne sont pas traités.<br /><br /> Pour cette option, vous devez spécifier uniquement des fichiers de métadonnées locaux.<br /><br /> Forme abrégée : `/dconly`|
 |/excludeType : type de\<>|Spécifie le nom qualifié complet ou qualifié d’assembly d’un type à exclure de la validation.<br /><br /> Forme abrégée : `/et`|

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447228"
 ---
 # <a name="getresolutionscope-method"></a>GetResolutionScope, méthode
-Retrieves the scope of a given type.  
+Récupère la portée d’un type donné.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetResolutionScope(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID of the assembly.  
+ ID de l’assembly.  
   
  `FileToken`  
- File that is in need of a reference.  
+ Fichier qui a besoin d’une référence.  
   
  `TargetFile`  
- Token of file that type is defined in, usually retrieved with [ImportFile Method](importfile-method.md).  
+ Jeton du fichier dans lequel le type est défini dans, généralement récupéré à l’aide de la [méthode ImportFile](importfile-method.md).  
   
  `pScope`  
- Receives the assembly or module reference.  
+ Reçoit la référence de l’assembly ou du module.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Returns S_OK if the method succeeds.  
+ Retourne S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>spécifications  
- Requires alink.h.  
+## <a name="requirements"></a>Configuration requise  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 

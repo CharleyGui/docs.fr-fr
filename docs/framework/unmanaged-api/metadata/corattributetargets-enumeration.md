@@ -62,32 +62,32 @@ typedef enum CorAttributeTargets
   
 |Membre|Description|  
 |------------|-----------------|  
-|`catAssembly`|Attribute can be applied to an assembly.|  
-|`catModule`|Attribute can be applied to a portable executable (.dll or .exe) module.|  
-|`catClass`|Attribute can be applied to a class.|  
-|`catStruct`|Attribute can be applied to a structure; that is, a value type.|  
-|`catEnum`|Attribute can be applied to an enumeration.|  
-|`catConstructor`|Attribute can be applied to a constructor.|  
-|`catMethod`|Attribute can be applied to a method.|  
-|`catProperty`|Attribute can be applied to a property.|  
-|`catField`|Attribute can be applied to a field.|  
-|`catEvent`|Attribute can be applied to an event.|  
-|`catInterface`|Attribute can be applied to an interface.|  
-|`catParameter`|Attribute can be applied to a parameter.|  
-|`catDelegate`|Attribute can be applied to a delegate.|  
-|`catGenericParameter`|Attribute can be applied to a generic parameter.|  
-|`catAll`|Attribute can be applied to any application element.|  
-|`catClassMembers`|Attribute can be applied to a member of a class.|  
+|`catAssembly`|L’attribut peut être appliqué à un assembly.|  
+|`catModule`|L’attribut peut être appliqué à un module exécutable portable (. dll ou. exe).|  
+|`catClass`|L’attribut peut être appliqué à une classe.|  
+|`catStruct`|L’attribut peut être appliqué à une structure ; autrement dit, un type valeur.|  
+|`catEnum`|L’attribut peut être appliqué à une énumération.|  
+|`catConstructor`|L’attribut peut être appliqué à un constructeur.|  
+|`catMethod`|L’attribut peut être appliqué à une méthode.|  
+|`catProperty`|L’attribut peut être appliqué à une propriété.|  
+|`catField`|L’attribut peut être appliqué à un champ.|  
+|`catEvent`|L’attribut peut être appliqué à un événement.|  
+|`catInterface`|L’attribut peut être appliqué à une interface.|  
+|`catParameter`|L’attribut peut être appliqué à un paramètre.|  
+|`catDelegate`|L’attribut peut être appliqué à un délégué.|  
+|`catGenericParameter`|L’attribut peut être appliqué à un paramètre générique.|  
+|`catAll`|L’attribut peut être appliqué à n’importe quel élément d’application.|  
+|`catClassMembers`|L’attribut peut être appliqué à un membre d’une classe.|  
   
 ## <a name="remarks"></a>Notes  
- The `CorAttributeTargets` enumeration values can be combined with a bitwise OR operation to get the preferred combination.  
+ Les `CorAttributeTargets` valeurs d’énumération peuvent être combinées avec une opération or au niveau du bit pour obtenir la combinaison préférée.  
   
- The `CorAttributeTargets` parallels the managed <xref:System.AttributeTargets?displayProperty=nameWithType> enumeration.  
+ Le `CorAttributeTargets` parallèle l’énumération <xref:System.AttributeTargets?displayProperty=nameWithType> managée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

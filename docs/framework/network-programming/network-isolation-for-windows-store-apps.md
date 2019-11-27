@@ -23,7 +23,7 @@ Les classes des espaces de noms <xref:System.Net>, <xref:System.Net.Http> et <xr
   
 4. Déployez et exécutez votre application pour la tester à l’aide des outils d’isolement réseau fournis pour la résolution des problèmes.  
   
- For more detailed information on how to configure network capabilities and isolation tools used for troubleshooting network isolation, see [How to configure network isolation capabilities](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) in the Windows 8.x Store developer documentation.
+ Pour plus d’informations sur la façon de configurer les fonctionnalités réseau et les outils d’isolation utilisés pour la résolution des problèmes d’isolement réseau, consultez [Comment configurer les fonctionnalités d’isolement réseau](https://docs.microsoft.com/previous-versions/windows/apps/hh770532(v=win.10)) dans la documentation du développeur du Windows 8. x Store.
   
 ## <a name="see-also"></a>Voir aussi
 

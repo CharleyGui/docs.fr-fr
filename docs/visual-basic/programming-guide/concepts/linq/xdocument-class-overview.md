@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349292"
 ---
-# <a name="xdocument-class-overview-visual-basic"></a>XDocument Class Overview (Visual Basic)
+# <a name="xdocument-class-overview-visual-basic"></a>Vue d’ensemble de la classe XDocument (Visual Basic)
 Cette rubrique présente la classe <xref:System.Xml.Linq.XDocument>.  
   
 ## <a name="overview-of-the-xdocument-class"></a>Vue d'ensemble de la classe XDocument  
@@ -83,4 +83,4 @@ doc.Save("test.xml")
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML Programming Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

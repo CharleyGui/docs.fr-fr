@@ -13,9 +13,9 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353654"
 ---
 # <a name="visual-basic-run-time-messages"></a>Messages d’exécution Visual Basic
-This section contains the Visual Basic error messages that occur at run time.  
+Cette section contient les Visual Basic des messages d’erreur qui se produisent au moment de l’exécution.  
   
- [\<address> is not a valid remote file address](../../visual-basic/misc/address-is-not-a-valid-remote-file-address.md)  
+ [l’adresse de \<> n’est pas une adresse de fichier distant valide](../../visual-basic/misc/address-is-not-a-valid-remote-file-address.md)  
   
  [Un délimiteur ne peut pas être Nothing ou une chaîne vide](../../visual-basic/misc/a-delimiter-cannot-be-nothing-or-an-empty-string.md)  
   
@@ -27,9 +27,9 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Un formulaire de démarrage n’a pas été spécifié](../../visual-basic/language-reference/error-messages/a-startup-form-has-not-been-specified.md)  
   
- [Access denied to '\<name>'](../../visual-basic/misc/access-denied-to-name.md)  
+ [Accès refusé à « nom de la\<> »](../../visual-basic/misc/access-denied-to-name.md)  
   
- [Add failed. Duplicate key value supplied](../../visual-basic/misc/add-failed-duplicate-key-value-supplied.md)  
+ [Échec de l’ajout. Valeur de clé dupliquée fournie](../../visual-basic/misc/add-failed-duplicate-key-value-supplied.md)  
   
  [Toutes les largeurs de champs, à l’exception de celle du dernier élément, doivent être supérieures à zéro](../../visual-basic/misc/all-field-widths-except-the-last-element-must-be-greater-than-zero.md)  
   
@@ -41,51 +41,51 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Erreur définie par l’application ou définie par l’objet](../../visual-basic/misc/application-defined-or-object-defined-error.md)  
   
- [Argument '\<argument1>' must be less than or equal to the length of argument '\<argument2>'](../../visual-basic/misc/argument-argument1-must-be-less-than-or-equal-to-the-length-of-argument2.md)  
+ [L’argument'\<argument1 > 'doit être inférieur ou égal à la longueur de l’argument'\<argument2 > '](../../visual-basic/misc/argument-argument1-must-be-less-than-or-equal-to-the-length-of-argument2.md)  
   
- [Argument '\<argumentname>' cannot be a multidimensional array](../../visual-basic/misc/argument-argumentname-cannot-be-a-multidimensional-array.md)  
+ [L’argument'\<ArgumentName > 'ne peut pas être un tableau multidimensionnel](../../visual-basic/misc/argument-argumentname-cannot-be-a-multidimensional-array.md)  
   
- [Argument \<argumentname> cannot be an empty string or Nothing](../../visual-basic/misc/argument-argumentname-cannot-be-an-empty-string-or-nothing.md)  
+ [L’argument \<ArgumentName > ne peut pas être une chaîne vide ou rien](../../visual-basic/misc/argument-argumentname-cannot-be-an-empty-string-or-nothing.md)  
   
- [Argument '\<argumentname>' cannot be converted to a numeric value](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-a-numeric-value.md)  
+ [L’argument'\<ArgumentName > 'ne peut pas être converti en valeur numérique](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-a-numeric-value.md)  
   
- [Argument '\<argumentname>' cannot be converted to type '\<typename>'](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-type-typename.md)  
+ [L’argument'\<ArgumentName > 'ne peut pas être converti en type'\<TypeName > '](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-type-typename.md)  
   
- [Argument '\<argumentname>' cannot be converted to type 'Date'](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-type-date.md)  
+ [L’argument'\<ArgumentName > 'ne peut pas être converti en type’date'](../../visual-basic/misc/argument-argumentname-cannot-be-converted-to-type-date.md)  
   
- [Argument '\<argumentname>' is not a valid value](../../visual-basic/misc/argument-argumentname-is-not-a-valid-value.md)  
+ [L’argument'\<ArgumentName > 'n’est pas une valeur valide](../../visual-basic/misc/argument-argumentname-is-not-a-valid-value.md)  
   
- [Argument '\<argumentname>' is not valid for the array](../../visual-basic/misc/argument-argumentname-is-not-valid-for-the-array.md)  
+ [L’argument'\<ArgumentName > 'n’est pas valide pour le tableau](../../visual-basic/misc/argument-argumentname-is-not-valid-for-the-array.md)  
   
- [Argument '\<argumentname>' is Nothing](../../visual-basic/misc/argument-argumentname-is-nothing.md)  
+ [L’argument'\<ArgumentName > 'a la valeur Nothing](../../visual-basic/misc/argument-argumentname-is-nothing.md)  
   
- [Argument '\<argumentname>' is Nothing or empty](../../visual-basic/misc/argument-argumentname-is-nothing-or-empty.md)  
+ [L’argument'\<ArgumentName > 'a la valeur Nothing ou est vide](../../visual-basic/misc/argument-argumentname-is-nothing-or-empty.md)  
   
- [Argument '\<argumentname>' must be greater than 0 or equal to -1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-0-or-equal-to-1.md)  
+ [L’argument'\<ArgumentName > 'doit être supérieur à 0 ou égal à-1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-0-or-equal-to-1.md)  
   
- [Argument '\<argumentname>' must be greater than or equal to 1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-1.md)  
+ [L’argument'\<ArgumentName > 'doit être supérieur ou égal à 1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-1.md)  
   
- [Argument '\<argumentname>' must be greater than or equal to -1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-1-1.md)  
+ [L’argument'\<ArgumentName > 'doit être supérieur ou égal à-1](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-1-1.md)  
   
- [Argument \<argumentname> must be greater than or equal to zero](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-zero-1.md)  
+ [L’argument \<> ArgumentName doit être supérieur ou égal à zéro](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-zero-1.md)  
   
- [Argument '\<argumentname>' must be greater than or equal to zero](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-zero.md)  
+ [L’argument'\<ArgumentName > 'doit être supérieur ou égal à zéro](../../visual-basic/misc/argument-argumentname-must-be-greater-than-or-equal-to-zero.md)  
   
- [Argument '\<argumentname>' must be greater than zero](../../visual-basic/misc/argument-argumentname-must-be-greater-than-zero.md)  
+ [L’argument'\<ArgumentName > 'doit être supérieur à zéro](../../visual-basic/misc/argument-argumentname-must-be-greater-than-zero.md)  
   
- [Argument '\<argumentname>' must be in the range of -32768 to 65535](../../visual-basic/misc/argument-argumentname-must-be-in-the-range-of-32768-to-65535.md)  
+ [L’argument'\<ArgumentName > 'doit être compris entre-32768 et 65535](../../visual-basic/misc/argument-argumentname-must-be-in-the-range-of-32768-to-65535.md)  
   
- [Argument '\<argumentname>' must be within the range 0 to 99](../../visual-basic/misc/argument-argumentname-must-be-within-the-range-0-to-99.md)  
+ [L’argument'\<ArgumentName > 'doit être compris entre 0 et 99](../../visual-basic/misc/argument-argumentname-must-be-within-the-range-0-to-99.md)  
   
- [Argument '\<argumentname>' must be within the range 1 to 255](../../visual-basic/misc/argument-argumentname-must-be-within-the-range-1-to-255.md)  
+ [L’argument'\<ArgumentName > 'doit se trouver dans la plage comprise entre 1 et 255](../../visual-basic/misc/argument-argumentname-must-be-within-the-range-1-to-255.md)  
   
- [Argument '\<argumentname1>' must be less than or equal the length of argument '\<argumentname2>'](../../visual-basic/misc/argument-argumentname1-must-be-less-than-or-equal-the-length-of-argumentname2.md)  
+ [L’argument'\<argumentname1 > 'doit être inférieur ou égal à la longueur de l’argument'\<argumentname2 > '](../../visual-basic/misc/argument-argumentname1-must-be-less-than-or-equal-the-length-of-argumentname2.md)  
   
- [Argument 'Access' is not valid. Valid values for Append mode are 'OpenAccess.Write' and 'OpenAccess.Default'](../../visual-basic/misc/argument-access-is-not-valid-append-mode.md)  
+ [L’argument’Access’n’est pas valide. Les valeurs valides pour le mode Append sont’OpenAccess. Write’et’OpenAccess. default'](../../visual-basic/misc/argument-access-is-not-valid-append-mode.md)  
   
- [Argument 'Access' is not valid. Valid values for Input mode are 'OpenAccess.Read' and 'OpenAccess.Default'](../../visual-basic/misc/argument-access-is-not-valid-input-mode.md)  
+ [L’argument’Access’n’est pas valide. Les valeurs valides pour le mode Input sont’OpenAccess. Read’et’OpenAccess. default'](../../visual-basic/misc/argument-access-is-not-valid-input-mode.md)  
   
- [Argument 'Access' is not valid. Valid values for Output mode are 'OpenAccess.Write' and 'OpenAccess.Default'](../../visual-basic/misc/argument-access-is-not-valid.md)  
+ [L’argument’Access’n’est pas valide. Les valeurs valides pour le mode de sortie sont’OpenAccess. Write’et’OpenAccess. default'](../../visual-basic/misc/argument-access-is-not-valid.md)  
   
  [L’argument BasePath doit être un chemin vers un dossier](../../visual-basic/misc/argument-basepath-must-be-a-path-to-a-folder.md)  
   
@@ -99,7 +99,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [L’argument 'Life' ne peut pas être égal à zéro](../../visual-basic/misc/argument-life-cannot-be-zero.md)  
   
- [Argument not optional (Visual Basic)](../../visual-basic/language-reference/error-messages/argument-not-optional.md)  
+ [Argument non facultatif (Visual Basic)](../../visual-basic/language-reference/error-messages/argument-not-optional.md)  
   
  [L’argument 'NPer' doit être supérieur à zéro](../../visual-basic/misc/argument-nper-must-be-greater-than-zero.md)  
   
@@ -109,7 +109,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [L’argument 'Period' doit être inférieur ou égal à l’argument 'Life'](../../visual-basic/misc/argument-period-must-be-less-than-or-equal-to-argument-life.md)  
   
- [Argument value '\<pathname>' contains characters that are not valid in a path name](../../visual-basic/misc/argument-value-pathname-contains-characters-that-are-not-valid-in-a-path-name.md)  
+ [La valeur d’argument'\<PathName > 'contient des caractères qui ne sont pas valides dans un nom de chemin d’accès](../../visual-basic/misc/argument-value-pathname-contains-characters-that-are-not-valid-in-a-path-name.md)  
   
  [Les arguments ne sont pas valides](../../visual-basic/misc/arguments-are-not-valid.md)  
   
@@ -141,11 +141,11 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Impossible d’appeler une fonction friend pour un objet qui n’est pas une instance de la classe de définition](../../visual-basic/misc/cannot-call-friend-function-on-object-which-is-not-instance-of-defining-class.md)  
   
- [Cannot convert argument '\<argumentname>' of type '\<type1>' to type '\<type2>'](../../visual-basic/misc/cannot-convert-argument-argumentname-of-type-type1-to-type-type2.md)  
+ [Impossible de convertir l’argument «\<ArgumentName > » de type «\<type1 > » en type «\<type2 > »](../../visual-basic/misc/cannot-convert-argument-argumentname-of-type-type1-to-type-type2.md)  
   
- [Cannot convert start value of type '\<type1>' and step value of type '\<type2>' to a common type](../../visual-basic/misc/cannot-convert-start-value-of-type1-and-step-value-of-type2-to-a-common-type.md)  
+ [Impossible de convertir la valeur de départ de type'\<type1 > 'et la valeur de pas de type'\<type2 > 'en type commun](../../visual-basic/misc/cannot-convert-start-value-of-type1-and-step-value-of-type2-to-a-common-type.md)  
   
- [Cannot convert start value of type '\<type1>', limit value of '\<type2>' and step value of '\<type3>' to a common type](../../visual-basic/misc/cannot-convert-start-value-to-a-common-type.md)  
+ [Impossible de convertir la valeur de départ de type'\<type1 > ', limitez la valeur'\<type2 > 'et la valeur de pas'\<Type3 > 'en type commun](../../visual-basic/misc/cannot-convert-start-value-to-a-common-type.md)  
   
  [Impossible de créer le composant ActiveX](../../visual-basic/language-reference/error-messages/cannot-create-activex-component.md)  
   
@@ -161,11 +161,11 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Impossible d’effectuer l’opération demandée (Visual Basic)](../../visual-basic/misc/cant-perform-requested-operation.md)  
   
- [Cast from string "\<string>" to type '\<typename>' is not valid](../../visual-basic/misc/cast-from-string-string-to-type-typename-is-not-valid.md)  
+ [Le cast de la chaîne «\<chaîne > » en type «\<TypeName > » n’est pas valide](../../visual-basic/misc/cast-from-string-string-to-type-typename-is-not-valid.md)  
   
- [Cast from type '\<typename1>' to type '\<typename2>' is not valid](../../visual-basic/misc/cast-from-type-typename1-to-type-typename2-is-not-valid.md)  
+ [Le cast du type'\<typename1 > 'en type'\<typename2 > 'n’est pas valide](../../visual-basic/misc/cast-from-type-typename1-to-type-typename2-is-not-valid.md)  
   
- [Class '\<classname>' does not implement the System.Collections.ICollection interface](../../visual-basic/misc/class-classname-does-not-implement-the-system-collections-icollection-interface.md)  
+ [La classe'\<ClassName > 'n’implémente pas l’interface System. Collections. ICollection](../../visual-basic/misc/class-classname-does-not-implement-the-system-collections-icollection-interface.md)  
   
  [La classe ne prend pas en charge Automation ou l’interface attendue](../../visual-basic/language-reference/error-messages/class-does-not-support-automation-or-does-not-support-expected-interface.md)  
   
@@ -203,27 +203,27 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Division par zéro (erreur d’exécution Visual Basic)](../../visual-basic/misc/division-by-zero-run-time-error.md)  
   
- [Drive '\<drivename>' not found](../../visual-basic/misc/drive-drivename-not-found.md)  
+ [Le lecteur'\<lettre_lecteur > 'est introuvable](../../visual-basic/misc/drive-drivename-not-found.md)  
   
  [Le codage ne peut pas avoir la valeur Nothing](../../visual-basic/misc/encoding-cannot-be-set-to-nothing.md)  
   
- [Error in loading DLL (Visual Basic)](../../visual-basic/language-reference/error-messages/error-in-loading-dll.md)  
+ [Erreur lors du chargement de la DLL (Visual Basic)](../../visual-basic/language-reference/error-messages/error-in-loading-dll.md)  
   
  [Le numéro d’erreur doit être compris entre 0 et 65 535](../../visual-basic/misc/error-number-must-be-within-the-range-0-and-65535.md)  
   
- [Expression '\<name>' is not a procedure, but occurs as the target of a procedure call](../../visual-basic/misc/expression-name-is-not-a-procedure-but-occurs-as-the-target-of-a-procedure-call.md)  
+ [L’expression'\<name > 'n’est pas une procédure, mais elle se produit en tant que cible d’un appel de procédure](../../visual-basic/misc/expression-name-is-not-a-procedure-but-occurs-as-the-target-of-a-procedure-call.md)  
   
  [Expression trop complexe](../../visual-basic/language-reference/error-messages/expression-too-complex.md)  
   
  [Cette fonctionnalité n’est pas encore implémentée](../../visual-basic/misc/feature-not-yet-implemented.md)  
   
- [Field '\<fieldname>' of type '\<typename>' is 'ReadOnly'](../../visual-basic/misc/field-fieldname-of-type-typename-is-readonly.md)  
+ [Le champ'\<FieldName > 'de type'\<TypeName > 'est’ReadOnly'](../../visual-basic/misc/field-fieldname-of-type-typename-is-readonly.md)  
   
- [File '\<filename>' cannot be deleted because it is open](../../visual-basic/misc/file-filename-cannot-be-deleted-because-it-is-open.md)  
+ [Impossible de supprimer le fichier «\<filename > », car il est ouvert](../../visual-basic/misc/file-filename-cannot-be-deleted-because-it-is-open.md)  
   
- [File '\<filename>' is write protected](../../visual-basic/misc/file-filename-is-write-protected.md)  
+ [Le fichier'\<filename > 'est protégé en écriture](../../visual-basic/misc/file-filename-is-write-protected.md)  
   
- [File '\<filename>' not found](../../visual-basic/misc/file-filename-not-found.md)  
+ [Le fichier'\<filename > 'est introuvable](../../visual-basic/misc/file-filename-not-found.md)  
   
  [Le fichier existe déjà](../../visual-basic/misc/file-already-exists.md)  
   
@@ -231,9 +231,9 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Format de fichier non valide](../../visual-basic/misc/file-format-not-valid.md)  
   
- [File I/O of a structure with field '\<fieldname>' of type '\<typename>' is not valid](../../visual-basic/misc/file-io-of-a-structure-with-field-fieldname-of-type-typename-is-not-valid.md)  
+ [L’e/s de fichier d’une structure avec le champ'\<FieldName > 'de type'\<TypeName > 'n’est pas valide](../../visual-basic/misc/file-io-of-a-structure-with-field-fieldname-of-type-typename-is-not-valid.md)  
   
- [File I/O with type '\<typename>' is not valid](../../visual-basic/misc/file-i-o-with-type-typename-is-not-valid.md)  
+ [L’e/s de fichier avec le type'\<TypeName > 'n’est pas valide](../../visual-basic/misc/file-i-o-with-type-typename-is-not-valid.md)  
   
  [Impossible d’interroger les informations du fichier si ce dernier n’existe pas](../../visual-basic/misc/file-information-cannot-be-queried-if-the-file-does-not-exist.md)  
   
@@ -241,7 +241,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Le fichier est trop volumineux pour être lu dans un tableau d’octets](../../visual-basic/language-reference/error-messages/file-is-too-large-to-read-into-a-byte-array.md)  
   
- [File name or class name not found during Automation operation (Visual Basic)](../../visual-basic/language-reference/error-messages/file-name-or-class-name-not-found-during-automation-operation.md)  
+ [Nom de fichier ou nom de classe introuvable lors de l’opération d’automatisation (Visual Basic)](../../visual-basic/language-reference/error-messages/file-name-or-class-name-not-found-during-automation-operation.md)  
   
  [Fichier introuvable (erreur d’exécution Visual Basic)](../../visual-basic/language-reference/error-messages/file-not-found-visual-basic-run-time-error.md)  
   
@@ -269,7 +269,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Erreur interne (Visual Basic)](../../visual-basic/misc/internal-error.md)  
   
- [Internal error happened at \<location>](../../visual-basic/language-reference/error-messages/internal-error-happened-at-location.md)  
+ [Une erreur interne s’est produite à \<emplacement >](../../visual-basic/language-reference/error-messages/internal-error-happened-at-location.md)  
   
  [Erreur interne dans le runtime Microsoft Visual Basic](../../visual-basic/misc/internal-error-in-the-microsoft-visual-basic-runtime.md)  
   
@@ -277,31 +277,31 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [La clé ne peut pas être supprimée, car elle a des sous-clés](../../visual-basic/misc/key-cannot-be-deleted-because-it-has-subkeys.md)  
   
- [Late-bound assignment to a field of value type '\<typename>' is not valid when '\<name>' is the result of a late-bound expression](../../visual-basic/misc/late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid.md)  
+ [L’assignation à liaison tardive à un champ de type valeur'\<TypeName > 'n’est pas valide lorsque'\<name > 'est le résultat d’une expression à liaison tardive](../../visual-basic/misc/late-bound-assignment-to-a-field-of-value-type-typename-is-not-valid.md)  
   
- [Length of argument '\<argumentname>' must be greater than zero](../../visual-basic/misc/length-of-argument-argumentname-must-be-greater-than-zero.md)  
+ [La longueur de l’argument'\<ArgumentName > 'doit être supérieure à zéro](../../visual-basic/misc/length-of-argument-argumentname-must-be-greater-than-zero.md)  
   
- [Line \<number> cannot be parsed using the current Delimiters](../../visual-basic/misc/line-number-cannot-be-parsed-using-the-current-delimiters.md)  
+ [Impossible d’analyser le nombre d' \<de ligne > à l’aide des délimiteurs actuels](../../visual-basic/misc/line-number-cannot-be-parsed-using-the-current-delimiters.md)  
   
- [Line \<number> cannot be parsed using the current FieldWidths](../../visual-basic/misc/line-number-cannot-be-parsed-using-the-current-fieldwidths.md)  
+ [Impossible d’analyser le nombre d' \<de ligne > à l’aide du FieldWidths actuel](../../visual-basic/misc/line-number-cannot-be-parsed-using-the-current-fieldwidths.md)  
   
- [Line \<number> cannot be read because it exceeds the maximum line size.](../../visual-basic/misc/line-number-cannot-be-read-because-it-exceeds-the-maximum-line-size.md)  
+ [Impossible de lire le nombre de \<de ligne >, car il dépasse la taille de ligne maximale.](../../visual-basic/misc/line-number-cannot-be-read-because-it-exceeds-the-maximum-line-size.md)  
   
- [Locale ID '\<name>' is not supported on this system](../../visual-basic/misc/locale-id-name-is-not-supported-on-this-system.md)  
+ [L’ID de paramètres régionaux «\<name > » n’est pas pris en charge sur ce système](../../visual-basic/misc/locale-id-name-is-not-supported-on-this-system.md)  
   
- [Loop control variable of type '\<typename>' does not implement the 'System.IComparable' interface](../../visual-basic/misc/loop-control-variable-of-type-typename-does-not-implement-system-icomparable.md)  
+ [La variable de contrôle de boucle de type'\<TypeName > 'n’implémente pas l’interface’System. IComparable'](../../visual-basic/misc/loop-control-variable-of-type-typename-does-not-implement-system-icomparable.md)  
   
  [Les classes managées dérivées d’une classe COM ne peuvent pas être appelées avec une liaison tardive](../../visual-basic/misc/managed-classes-derived-from-a-com-class-cannot-be-called-late-bound.md)  
   
- [Method '\<methodname>' cannot be called with \<number> arguments](../../visual-basic/misc/method-methodname-cannot-be-called-with-number-arguments.md)  
+ [La méthode'\<MethodName > 'ne peut pas être appelée avec \<nombre > arguments](../../visual-basic/misc/method-methodname-cannot-be-called-with-number-arguments.md)  
   
- [Method '\<methodname>' has no parameter named '\<parametername>'](../../visual-basic/misc/method-methodname-has-no-parameter-named-parametername.md)  
+ [La méthode'\<MethodName > 'n’a aucun paramètre nommé'\<ParameterName > '](../../visual-basic/misc/method-methodname-has-no-parameter-named-parametername.md)  
   
  [Méthode ou membre de données introuvable](../../visual-basic/misc/method-or-data-member-not-found.md)  
   
- [My.Application.Log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)  
+ [My. application. log](xref:Microsoft.VisualBasic.ApplicationServices.ApplicationBase.Log)  
   
- [Named argument '\<argumentname>' specified multiple times](../../visual-basic/misc/named-argument-argumentname-specified-multiple-times.md)  
+ [Argument nommé'\<ArgumentName > 'spécifié plusieurs fois](../../visual-basic/misc/named-argument-argumentname-specified-multiple-times.md)  
   
  [Argument nommé introuvable (Visual Basic)](../../visual-basic/misc/named-argument-not-found.md)  
   
@@ -309,19 +309,19 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Index de tableau de propriétés requis](../../visual-basic/language-reference/error-messages/need-property-array-index.md)  
   
- [No accessible overloaded '\<methodname>' can be called with these arguments without a narrowing conversion](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments.md)  
+ [Aucun'\<MethodName > 'surchargé accessible ne peut être appelé avec ces arguments sans conversion restrictive](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments.md)  
   
- [No accessible overloaded '\<methodname>' can be called with these arguments without a narrowing conversion: \<list>](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
+ [Aucun'\<MethodName > 'surchargé accessible ne peut être appelé avec ces arguments sans conversion restrictive : \<liste >](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list-2.md)  
   
- [No accessible overloaded '\<methodname>' can be called with these arguments without a widening conversion: \<list>](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-without-widening.md)  
+ [Aucun'\<MethodName > 'surchargé accessible ne peut être appelé avec ces arguments sans conversion étendue : \<liste >](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-without-widening.md)  
   
- [No accessible overloaded '\<methodname>' can be called with these arguments: \<list>](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list.md)  
+ [Aucun'\<MethodName > 'surchargé accessible ne peut être appelé avec ces arguments : \<liste >](../../visual-basic/misc/no-accessible-overloaded-methodname-can-be-called-with-these-arguments-list.md)  
   
- [No default member found for type '\<typename>'](../../visual-basic/misc/no-default-member-found-for-type-typename.md)  
+ [Aucun membre par défaut trouvé pour le type'\<TypeName > '](../../visual-basic/misc/no-default-member-found-for-type-typename.md)  
   
- [No files found matching '\<filename>'](../../visual-basic/misc/no-files-found-matching-filename.md)  
+ [Aucun fichier correspondant à «\<filename > » n’a été trouvé](../../visual-basic/misc/no-files-found-matching-filename.md)  
   
- [No method '\<methodname>' can accept an argument of type '\<typename>' for parameter '\<parametername>'](../../visual-basic/misc/no-method-methodname-can-accept-an-argument-of-type-typename-for-parameter.md)  
+ [Aucune méthode'\<MethodName > 'ne peut accepter un argument de type'\<TypeName > 'pour le paramètre'\<ParameterName > '](../../visual-basic/misc/no-method-methodname-can-accept-an-argument-of-type-typename-for-parameter.md)  
   
  [Absence de souris](../../visual-basic/misc/no-mouse-is-present.md)  
   
@@ -347,39 +347,39 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Seuls les premiers huit caractères sont pris en compte dans un nom de journal personnalisé](../../visual-basic/misc/only-the-first-eight-characters-of-a-custom-log-name-are-significant.md)  
   
- [Operator is not valid for '\<name1>' and '\<name2>'](../../visual-basic/misc/operator-is-not-valid-for-name1-and-name2.md)  
+ [L’opérateur n’est pas valide pour «\<nom1 > » et «\<nom2 > »](../../visual-basic/misc/operator-is-not-valid-for-name1-and-name2.md)  
   
- [Operator is not valid for type '\<typename>'](../../visual-basic/misc/operator-is-not-valid-for-type-typename.md)  
+ [L’opérateur n’est pas valide pour le type'\<TypeName > '](../../visual-basic/misc/operator-is-not-valid-for-type-typename.md)  
   
  [Nombre non valide](../../visual-basic/language-reference/error-messages/ordinal-is-not-valid.md)  
   
  [Mémoire insuffisante (erreur d’exécution Visual Basic)](../../visual-basic/misc/out-of-memory-run-time-error.md)  
   
- [Out of stack space (Visual Basic)](../../visual-basic/language-reference/error-messages/out-of-stack-space.md)  
+ [Espace de pile insuffisant (Visual Basic)](../../visual-basic/language-reference/error-messages/out-of-stack-space.md)  
   
- [Out of string space (Visual Basic)](../../visual-basic/language-reference/error-messages/out-of-string-space.md)  
+ [Espace de chaîne insuffisant (Visual Basic)](../../visual-basic/language-reference/error-messages/out-of-string-space.md)  
   
  [Dépassement de capacité (erreur d’exécution Visual Basic)](../../visual-basic/language-reference/error-messages/overflow-visual-basic-run-time-error.md)  
   
- [Path '\<pathname>' not found](../../visual-basic/misc/path-pathname-not-found.md)  
+ [Le chemin d’accès'\<> 'est introuvable](../../visual-basic/misc/path-pathname-not-found.md)  
   
  [Chemin d’accès introuvable](../../visual-basic/language-reference/error-messages/path-not-found.md)  
   
- [Path/File access error](../../visual-basic/language-reference/error-messages/path-file-access-error.md)  
+ [Erreur d’accès au chemin d’accès/fichier](../../visual-basic/language-reference/error-messages/path-file-access-error.md)  
   
- [Permission denied (Visual Basic)](../../visual-basic/language-reference/error-messages/permission-denied.md)  
+ [Autorisation refusée (Visual Basic)](../../visual-basic/language-reference/error-messages/permission-denied.md)  
   
  [Image non valide](../../visual-basic/misc/picture-is-not-valid.md)  
   
  [Erreur d’imprimante](../../visual-basic/misc/printer-error.md)  
   
- [Procedure call or argument is not valid (Visual Basic)](../../visual-basic/language-reference/error-messages/procedure-call-or-argument-is-not-valid.md)  
+ [L’appel ou l’argument de procédure n’est pas valide (Visual Basic)](../../visual-basic/language-reference/error-messages/procedure-call-or-argument-is-not-valid.md)  
   
- [Process '\<processname>' was not found](../../visual-basic/misc/process-processname-was-not-found.md)  
+ [Le processus'\<ProcessName > 'est introuvable](../../visual-basic/misc/process-processname-was-not-found.md)  
   
- [Property \<propertyname> cannot be set to an empty string or Nothing](../../visual-basic/misc/property-propertyname-cannot-be-set-to-an-empty-string-or-nothing.md)  
+ [La propriété \<PropertyName > ne peut pas être définie sur une chaîne vide ou rien](../../visual-basic/misc/property-propertyname-cannot-be-set-to-an-empty-string-or-nothing.md)  
   
- [Property \<propertyname> cannot be set to Nothing](../../visual-basic/misc/property-propertyname-cannot-be-set-to-nothing.md)  
+ [La propriété \<PropertyName > ne peut pas avoir la valeur Nothing](../../visual-basic/misc/property-propertyname-cannot-be-set-to-nothing.md)  
   
  [L’index de tableau de propriétés est non valide](../../visual-basic/language-reference/error-messages/property-array-index-is-not-valid.md)  
   
@@ -391,7 +391,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Valeur de propriété non valide](../../visual-basic/misc/property-value-is-not-valid.md)  
   
- [Public member '\<membername>' on type '\<typename>' not found](../../visual-basic/misc/public-member-membername-on-type-typename-not-found.md)  
+ [Le membre public'\<MemberName > 'sur le type'\<TypeName > 'est introuvable](../../visual-basic/misc/public-member-membername-on-type-typename-not-found.md)  
   
  ['ReDim' peut changer seulement la dimension la plus à droite](../../visual-basic/misc/redim-can-only-change-the-right-most-dimension.md)  
   
@@ -399,9 +399,9 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [L’opérande Preserve de 'ReDim' ne peut pas être Nothing](../../visual-basic/misc/redim-preserve-operand-cannot-be-nothing.md)  
   
- [Registry key '\<keyname>' could not be created](../../visual-basic/misc/registry-key-keyname-could-not-be-created.md)  
+ [Impossible de créer la clé de Registre «\<KeyName > »](../../visual-basic/misc/registry-key-keyname-could-not-be-created.md)  
   
- [Registry key '\<keyname>' could not be found](../../visual-basic/misc/registry-key-keyname-could-not-be-found.md)  
+ [La clé de Registre'\<KeyName > 'est introuvable](../../visual-basic/misc/registry-key-keyname-could-not-be-found.md)  
   
  [Remplacements trop longs](../../visual-basic/misc/replacements-too-long.md)  
   
@@ -443,9 +443,9 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [La chaîne dépasse la longueur maximale (32 767 caractères) autorisée pour les API 'FileSystem'](../../visual-basic/misc/string-length-exceeds-maximum-length-of-32767-characters-for-filesystem-apis.md)  
   
- [Sub or Function not defined (Visual Basic)](../../visual-basic/language-reference/error-messages/sub-or-function-not-defined.md)  
+ [Sub ou Function non défini (Visual Basic)](../../visual-basic/language-reference/error-messages/sub-or-function-not-defined.md)  
   
- [Subscript out of range (Visual Basic)](../../visual-basic/language-reference/error-messages/subscript-out-of-range.md)  
+ [Indice hors limites (Visual Basic)](../../visual-basic/language-reference/error-messages/subscript-out-of-range.md)  
   
  [Impossible de supprimer le journal des événements système](../../visual-basic/misc/system-event-log-cannot-be-deleted.md)  
   
@@ -453,7 +453,7 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [TargetFilePath spécifie un dossier existant](../../visual-basic/misc/targetfilepath-specifies-an-existing-folder.md)  
   
- [TextFieldParser does not support comment tokens that contain white space](../../visual-basic/misc/textfieldparser-does-not-support-comment-tokens-that-contain-whitespace.md)  
+ [TextFieldParser ne prend pas en charge les jetons de commentaires qui contiennent un espace blanc](../../visual-basic/misc/textfieldparser-does-not-support-comment-tokens-that-contain-whitespace.md)  
   
  [TextFieldParser ne prend pas en charge les délimiteurs qui contiennent des caractères de fin de ligne](../../visual-basic/misc/textfieldparser-does-not-support-delimiters-that-contain-endline-characters.md)  
   
@@ -485,11 +485,11 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Le flux passé à TextFieldParser est illisible](../../visual-basic/misc/the-stream-passed-to-textfieldparser-cannot-be-read.md)  
   
- [The value of \<argumentname> must be a positive number](../../visual-basic/misc/the-value-of-argumentname-must-be-a-positive-number.md)  
+ [La valeur de \<> ArgumentName doit être un nombre positif](../../visual-basic/misc/the-value-of-argumentname-must-be-a-positive-number.md)  
   
- [The value of \<argumentname> must be greater than or equal to 1000](../../visual-basic/misc/the-value-of-argumentname-must-be-greater-than-or-equal-to-1000.md)  
+ [La valeur de \<> ArgumentName doit être supérieure ou égale à 1000](../../visual-basic/misc/the-value-of-argumentname-must-be-greater-than-or-equal-to-1000.md)  
   
- [This array is fixed or temporarily locked (Visual Basic)](../../visual-basic/language-reference/error-messages/this-array-is-fixed-or-temporarily-locked.md)  
+ [Ce tableau est fixe ou temporairement verrouillé (Visual Basic)](../../visual-basic/language-reference/error-messages/this-array-is-fixed-or-temporarily-locked.md)  
   
  [Cette clé est déjà associée à un élément de cette collection](../../visual-basic/language-reference/error-messages/this-key-is-already-associated-with-an-element-of-this-collection.md)  
   
@@ -509,9 +509,9 @@ This section contains the Visual Basic error messages that occur at run time.
   
  [Trop de fichiers](../../visual-basic/language-reference/error-messages/too-many-files.md)  
   
- [Type mismatch (Visual Basic)](../../visual-basic/language-reference/error-messages/type-mismatch.md)  
+ [Incompatibilité de type (Visual Basic)](../../visual-basic/language-reference/error-messages/type-mismatch.md)  
   
- [Type of argument '\<argumentname>' is '\<typename>', which is not numeric](../../visual-basic/misc/type-of-argument-argumentname-is-typename-which-is-not-numeric.md)  
+ [Le type d’argument'\<ArgumentName > 'est'\<TypeName > ', qui n’est pas numérique](../../visual-basic/misc/type-of-argument-argumentname-is-typename-which-is-not-numeric.md)  
   
  [Impossible d’obtenir le nom des ports série en raison d’une erreur système interne](../../visual-basic/language-reference/error-messages/unable-to-get-serial-port-names-because-of-an-internal-system-error.md)  
   

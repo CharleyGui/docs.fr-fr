@@ -20,7 +20,7 @@ L’objet `My.Computer.Mouse` permet de rechercher des informations sur la souri
 
  Ce tableau liste les tâches associées à l’objet `My.Computer.Mouse` et indique les rubriques qui expliquent comment les accomplir.  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |--------|---------|  
 |Déterminer si la souris a une roulette de défilement.|<xref:Microsoft.VisualBasic.Devices.Mouse.WheelExists>|  
 |Déterminer si les boutons gauche et droit de la souris ont été inversés.|<xref:Microsoft.VisualBasic.Devices.Mouse.ButtonsSwapped>|  

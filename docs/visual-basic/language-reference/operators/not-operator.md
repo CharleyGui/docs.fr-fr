@@ -22,7 +22,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348308"
 ---
 # <a name="not-operator-visual-basic"></a>Not, opérateur (Visual Basic)
-Performs logical negation on a `Boolean` expression, or bitwise negation on a numeric expression.  
+Effectue une négation logique sur une expression `Boolean` ou une négation au niveau du bit sur une expression numérique.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,52 +32,52 @@ result = Not expression
   
 ## <a name="parts"></a>Composants  
  `result`  
- Requis. Any `Boolean` or numeric expression.  
+ Requis. Toute expression `Boolean` ou numérique.  
   
  `expression`  
- Requis. Any `Boolean` or numeric expression.  
+ Requis. Toute expression `Boolean` ou numérique.  
   
 ## <a name="remarks"></a>Notes  
- For `Boolean` expressions, the following table illustrates how `result` is determined.  
+ Pour les expressions `Boolean`, le tableau suivant illustre la façon dont `result` est déterminé.  
   
-|If `expression` is|The value of `result` is|  
+|Si `expression` est|La valeur de `result` est|  
 |------------------------|------------------------------|  
 |`True`|`False`|  
 |`False`|`True`|  
   
- For numeric expressions, the `Not` operator inverts the bit values of any numeric expression and sets the corresponding bit in `result` according to the following table.  
+ Pour les expressions numériques, l’opérateur `Not` inverse les valeurs de bits d’une expression numérique et définit le bit correspondant dans `result` selon le tableau suivant.  
   
-|If bit in `expression` is|The bit in `result` is|  
+|Si le bit de `expression` est|Le bit de `result` est|  
 |-------------------------------|----------------------------|  
 |1|0|  
 |0|1|  
   
 > [!NOTE]
-> Since the logical and bitwise operators have a lower precedence than other arithmetic and relational operators, any bitwise operations should be enclosed in parentheses to ensure accurate execution.  
+> Étant donné que les opérateurs logiques et au niveau du bit ont une priorité inférieure à celle des autres opérateurs arithmétiques et relationnels, toutes les opérations au niveau du bit doivent être mises entre parenthèses pour garantir une exécution précise.  
   
 ## <a name="data-types"></a>Types de données  
- For a Boolean negation, the data type of the result is `Boolean`. For a bitwise negation, the result data type is the same as that of `expression`. However, if expression is `Decimal`, the result is `Long`.  
+ Pour une négation booléenne, le type de données du résultat est `Boolean`. Pour une négation au niveau du bit, le type de données de résultat est le même que celui de `expression`. Toutefois, si expression est `Decimal`, le résultat est `Long`.  
   
 ## <a name="overloading"></a>Surcharge  
- The `Not` operator can be *overloaded*, which means that a class or structure can redefine its behavior when its operand has the type of that class or structure. If your code uses this operator on such a class or structure, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L’opérateur `Not` peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsque son opérande a le type de cette classe ou de cette structure. Si votre code utilise cet opérateur sur une classe ou une structure de ce type, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- The following example uses the `Not` operator to perform logical negation on a `Boolean` expression. The result is a `Boolean` value that represents the reverse of the value of the expression.  
+ L’exemple suivant utilise l’opérateur `Not` pour effectuer une négation logique sur une expression de `Boolean`. Le résultat est une valeur `Boolean` qui représente l’inverse de la valeur de l’expression.  
   
  [!code-vb[VbVbalrOperators#33](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#33)]  
   
- The preceding example produces results of `False` and `True`, respectively.  
+ L’exemple précédent produit les résultats de `False` et `True`, respectivement.  
   
 ## <a name="example"></a>Exemple  
- The following example uses the `Not` operator to perform logical negation of the individual bits of a numeric expression. The bit in the result pattern is set to the reverse of the corresponding bit in the operand pattern, including the sign bit.  
+ L’exemple suivant utilise l’opérateur `Not` pour effectuer une négation logique des bits individuels d’une expression numérique. Le bit dans le modèle de résultat est défini à l’inverse du bit correspondant dans le modèle d’opérande, y compris le bit de signe.  
   
  [!code-vb[VbVbalrOperators#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#34)]  
   
- The preceding example produces results of –11, –9, and –7, respectively.  
+ L’exemple précédent produit respectivement les résultats-11, – 9 et-7.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Logical/Bitwise Operators (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
+- [Opérateurs logiques/de bits (Visual Basic)](../../../visual-basic/language-reference/operators/logical-bitwise-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)
 - [Opérateurs répertoriés par fonctionnalité](../../../visual-basic/language-reference/operators/operators-listed-by-functionality.md)
-- [Logical and Bitwise Operators in Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)
+- [Opérateurs logiques et au niveau du bit dans Visual Basic](../../../visual-basic/programming-guide/language-features/operators-and-expressions/logical-and-bitwise-operators.md)

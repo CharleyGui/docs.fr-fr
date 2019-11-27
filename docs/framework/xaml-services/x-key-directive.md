@@ -20,7 +20,7 @@ ms.locfileid: "74283854"
 # <a name="xkey-directive"></a>x:Key, directive
 Identifie de façon unique les éléments qui sont créés et référencés dans un dictionnaire défini en XAML. L’ajout d’une valeur `x:Key` à un élément objet XAML est le moyen le plus courant d’identifier une ressource dans un dictionnaire de ressources, par exemple dans une <xref:System.Windows.ResourceDictionary>WPF.  
   
-## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML  
   
 ```xaml  
 <object x:Key="stringKeyValue".../>  

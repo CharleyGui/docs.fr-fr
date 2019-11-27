@@ -16,13 +16,13 @@ ms.locfileid: "74346703"
 
 Un *objet* est une combinaison de code et de données qui peuvent être traités en tant qu’unité. Un objet peut être une partie d’une application, comme une commande ou un formulaire. Une application entière peut également être un objet.
 
-When you create an application in Visual Basic, you constantly work with objects. You can use objects provided by Visual Basic, such as controls, forms, and data access objects. You can also use objects from other applications within your Visual Basic application. Vous pouvez même créer vos propres objets et définir des propriétés et des méthodes supplémentaires pour ceux-ci. Les objets se comportent comme des blocs de construction préfabriqués : ils vous permettent d’écrire un fragment de code une seule fois et de le réutiliser maintes fois.
+Lorsque vous créez une application dans Visual Basic, vous travaillez constamment avec des objets. Vous pouvez utiliser les objets fournis par Visual Basic, tels que les contrôles, les formulaires et les objets d’accès aux données. Vous pouvez également utiliser des objets d’autres applications au sein de votre application Visual Basic. Vous pouvez même créer vos propres objets et définir des propriétés et des méthodes supplémentaires pour ceux-ci. Les objets se comportent comme des blocs de construction préfabriqués : ils vous permettent d’écrire un fragment de code une seule fois et de le réutiliser maintes fois.
 
 Cette rubrique présente les objets en détail.
 
 ## <a name="objects-and-classes"></a>Objets et classes
 
-Each object in Visual Basic is defined by a *class*. Une classe décrit les variables, les propriétés, les procédures et les événements d’un objet. Les objets sont des instances de classes. Vous pouvez créer autant d’objets que nécessaire dès que vous avez défini une classe.
+Chaque objet de Visual Basic est défini par une *classe*. Une classe décrit les variables, les propriétés, les procédures et les événements d’un objet. Les objets sont des instances de classes. Vous pouvez créer autant d’objets que nécessaire dès que vous avez défini une classe.
 
 Pour comprendre la relation entre un objet et sa classe, prenez l’exemple des emporte-pièces et des biscuits. L’emporte-pièce est la classe. Il définit les caractéristiques de chaque biscuit, par exemple la taille et la forme. La classe est utilisée pour créer des objets. Les objets sont les biscuits.
 
@@ -71,7 +71,7 @@ warningLabel.Text = "Data not saved"
 
 #### <a name="intellisense-listing-of-members"></a>Liste de membres IntelliSense
 
-IntelliSense répertorie les membres d’une classe lorsque vous appelez son option Liste des membres, par exemple lorsque vous tapez un point (`.`) comme opérateur d’accès au membre. Si vous tapez le point après le nom d’une variable déclarée comme une instance de cette classe, IntelliSense répertorie tous les membres de l’instance et aucun des membres partagés. Si vous tapez le point après le nom de la classe, IntelliSense répertorie tous les membres partagés et aucun des membres de l’instance. Pour plus d’informations, consultez [Utilisation d’IntelliSense](/visualstudio/ide/using-intellisense).
+IntelliSense répertorie les membres d’une classe lorsque vous appelez son option Liste des membres, par exemple lorsque vous tapez un point (`.`) comme opérateur d’accès au membre. Si vous tapez le point après le nom d’une variable déclarée comme une instance de cette classe, IntelliSense répertorie tous les membres de l’instance et aucun des membres partagés. Si vous tapez le point après le nom de la classe, IntelliSense répertorie tous les membres partagés et aucun des membres de l’instance. Pour plus d'informations, consultez [Using IntelliSense](/visualstudio/ide/using-intellisense).
 
 ### <a name="fields-and-properties"></a>Champs et propriétés
 
@@ -121,11 +121,11 @@ Notez qu’une méthode est simplement une *procédure* qui est exposée par un 
 
 Pour plus d’informations, consultez [Procédures](../../../../visual-basic/programming-guide/language-features/procedures/index.md).
 
-### <a name="events"></a>événements
+### <a name="events"></a>Événements
 
 Un événement est une action reconnue par un objet, par exemple le fait de cliquer sur la souris ou d’appuyer sur une touche, et pour laquelle vous pouvez écrire du code en réponse. Les événements peuvent se produire à la suite d’une action de l’utilisateur ou du code de programme, ou ils peuvent être provoqués par le système. On dit que le code qui signale un événement le *déclenche* et le code qui y répond le *gère*.
 
-Vous pouvez également développer vos propres événements personnalisés pour qu’ils soient déclenchés par vos objets et gérés par d’autres objets. Pour plus d’informations, consultez [Événements](../../../../visual-basic/programming-guide/language-features/events/index.md).
+Vous pouvez également développer vos propres événements personnalisés pour qu’ils soient déclenchés par vos objets et gérés par d’autres objets. Pour plus d'informations, consultez [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).
 
 ### <a name="instance-members-and-shared-members"></a>Membres d’instance et membres partagés
 
@@ -176,7 +176,7 @@ En revanche, les membres déclarés dans un module sont publiquement accessibles
 
 Les objets vous permettent de déclarer des variables et des procédures une seule fois, puis de les réutiliser à chaque fois que cela est nécessaire. Par exemple, si vous souhaitez ajouter un vérificateur d’orthographe à une application, vous pouvez définir toutes les variables et fonctions de support pour fournir la fonctionnalité de vérification orthographique. Si vous créez votre vérificateur d’orthographe en tant que classe, vous pouvez ensuite le réutiliser dans d’autres applications en ajoutant une référence à l’assembly compilé. Mieux encore, vous pouvez vous épargner du travail à l’aide d’une classe de vérificateur d’orthographe que quelqu’un d’autre a déjà développé.
 
-The .NET Framework provides many examples of components that are available for use. L’exemple suivant utilise la classe <xref:System.TimeZone> dans l’espace de noms <xref:System>. <xref:System.TimeZone> fournit des membres qui vous permettent de récupérer des informations sur le fuseau horaire de l’ordinateur actuel.
+Le .NET Framework fournit de nombreux exemples de composants qui peuvent être utilisés. L’exemple suivant utilise la classe <xref:System.TimeZone> dans l’espace de noms <xref:System>. <xref:System.TimeZone> fournit des membres qui vous permettent de récupérer des informations sur le fuseau horaire de l’ordinateur actuel.
 
 ```vb
 Public Sub examineTimeZone()
@@ -249,14 +249,14 @@ Les objets peuvent également être liés par une *relation d’imbrication*. Le
 
 #### <a name="collections"></a>Collections
 
-Un type particulier de relation d’imbrication d’objet est représenté par les *collections*. Les collections sont des groupes d’objets similaires qui peuvent être énumérés. Visual Basic supports a specific syntax in the [For Each...Next Statement](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) that allows you to iterate through the items of a collection. En outre, les collections vous permettent souvent d’utiliser un <xref:Microsoft.VisualBasic.Collection.Item%2A> pour récupérer des éléments à l’aide de leur index ou en les associant à une chaîne unique. Les collections peuvent être plus faciles à utiliser que les tableaux car elles vous permettent d’ajouter ou de supprimer des éléments sans utiliser d’index. En raison de leur simplicité d’utilisation, les collections sont souvent utilisées pour stocker les formulaires et les commandes.
+Un type particulier de relation d’imbrication d’objet est représenté par les *collections*. Les collections sont des groupes d’objets similaires qui peuvent être énumérés. Visual Basic prend en charge une syntaxe spécifique dans le [... Instruction suivante](../../../../visual-basic/language-reference/statements/for-each-next-statement.md) qui vous permet d’itérer au sein des éléments d’une collection. En outre, les collections vous permettent souvent d’utiliser un <xref:Microsoft.VisualBasic.Collection.Item%2A> pour récupérer des éléments à l’aide de leur index ou en les associant à une chaîne unique. Les collections peuvent être plus faciles à utiliser que les tableaux car elles vous permettent d’ajouter ou de supprimer des éléments sans utiliser d’index. En raison de leur simplicité d’utilisation, les collections sont souvent utilisées pour stocker les formulaires et les commandes.
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-[Walkthrough: Defining Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)\
+[Procédure pas à pas : définition de Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/walkthrough-defining-classes.md)\
 Fournit une description pas à pas pour la création d’une classe.
 
-[Overloaded Properties and Methods](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)\
+[Propriétés et méthodes surchargées](../../../../visual-basic/programming-guide/language-features/objects-and-classes/overloaded-properties-and-methods.md)\
 Propriétés et méthodes surchargées
 
 [Éléments fondamentaux de l’héritage](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)\
@@ -271,5 +271,5 @@ Décrit comment créer et utiliser les types anonymes, qui vous permettent de cr
 [Initialiseurs d’objets : types nommés et anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)\
 Décrit les initialiseurs d’objets, qui servent à créer des instances de types nommés et anonymes à l’aide d’une expression unique.
 
-[How to: Infer Property Names and Types in Anonymous Type Declarations](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
+[Comment : déduire les types et les noms de propriétés dans des déclarations de type anonyme](../../../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-infer-property-names-and-types-in-anonymous-type-declarations.md)\
 Explique comment déduire les types et les noms de propriétés dans des déclarations de types anonymes. Fournit des exemples d’inférence possible et impossible.

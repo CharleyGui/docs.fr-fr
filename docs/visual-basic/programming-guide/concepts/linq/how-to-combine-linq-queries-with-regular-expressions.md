@@ -1,5 +1,5 @@
 ---
-title: How to combine LINQ queries with regular expressions
+title: Guide pratique pour combiner des requêtes LINQ avec des expressions régulières
 ms.date: 07/20/2015
 ms.assetid: 3da1bd10-b0d8-4d5b-a637-966891c13592
 ms.openlocfilehash: 27fc46056ad78567339ca0c5818aef38d0fbb9a6
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348416"
 ---
-# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>How to combine LINQ queries with regular expressions (Visual Basic)
+# <a name="how-to-combine-linq-queries-with-regular-expressions-visual-basic"></a>Comment combiner des requêtes LINQ avec des expressions régulières (Visual Basic)
 
 Cet exemple montre comment utiliser la classe <xref:System.Text.RegularExpressions.Regex> afin de créer une expression régulière pour les correspondances plus complexes des chaînes de texte. La requête LINQ facilite le filtrage des fichiers à parcourir à l’aide de l’expression régulière, et facilite également la personnalisation des résultats.
 
@@ -86,9 +86,9 @@ Notez que vous pouvez également interroger l’objet <xref:System.Text.RegularE
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Create a VB.NET console application project, copy and paste the code sample, and adjust the Startup object value in the project properties.
+Créez un projet d’application console VB.NET, copiez et collez l’exemple de code, puis ajustez la valeur de l’objet Startup dans les propriétés du projet.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ and Strings (Visual Basic)](linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](linq-and-strings.md)
 - [LINQ et répertoires de fichiers (Visual Basic)](linq-and-file-directories.md)

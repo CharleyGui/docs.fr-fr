@@ -17,7 +17,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74331293"
 ---
 # <a name="-operator-visual-basic"></a>^=, opérateur (Visual Basic)
-Raises the value of a variable or property to the power of an expression and assigns the result back to the variable or property.  
+Élève la valeur d’une variable ou d’une propriété à la puissance d’une expression et assigne le résultat à la variable ou à la propriété.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -27,31 +27,31 @@ variableorproperty ^= expression
   
 ## <a name="parts"></a>Composants  
  `variableorproperty`  
- Requis. Any numeric variable or property.  
+ Requis. Toute variable ou propriété numérique.  
   
  `expression`  
  Requis. Toute expression numérique.  
   
 ## <a name="remarks"></a>Notes  
- The element on the left side of the `^=` operator can be a simple scalar variable, a property, or an element of an array. The variable or property cannot be [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
+ L’élément situé à gauche de l’opérateur `^=` peut être une variable scalaire simple, une propriété ou un élément d’un tableau. La variable ou la propriété ne peut pas être [ReadOnly](../../../visual-basic/language-reference/modifiers/readonly.md).  
   
- The `^=` operator first raises the value of the variable or property (on the left-hand side of the operator) to the power of the value of the expression (on the right-hand side of the operator). The operator then assigns the result of that operation back to the variable or property.  
+ L’opérateur `^=` commence par déclencher la valeur de la variable ou de la propriété (sur le côté gauche de l’opérateur) à la puissance de la valeur de l’expression (sur le côté droit de l’opérateur). L’opérateur assigne ensuite le résultat de cette opération à la variable ou à la propriété.  
   
- Visual Basic always performs exponentiation in the [Double Data Type](../../../visual-basic/language-reference/data-types/double-data-type.md). Operands of any different type are converted to `Double`, and the result is always `Double`.  
+ Visual Basic effectue toujours une élévation à la puissance dans le [type de données double](../../../visual-basic/language-reference/data-types/double-data-type.md). Les opérandes de tout type différent sont convertis en `Double`, et le résultat est toujours `Double`.  
   
- The value of `expression` can be fractional, negative, or both.  
+ La valeur de `expression` peut être fractionnaire, négative ou les deux.  
   
 ## <a name="overloading"></a>Surcharge  
- The [^ Operator](../../../visual-basic/language-reference/operators/exponentiation-operator.md) can be *overloaded*, which means that a class or structure can redefine its behavior when an operand has the type of that class or structure. Overloading the `^` operator affects the behavior of the `^=` operator. If your code uses `^=` on a class or structure that overloads `^`, be sure you understand its redefined behavior. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
+ L' [opérateur ^](../../../visual-basic/language-reference/operators/exponentiation-operator.md) peut être *surchargé*, ce qui signifie qu’une classe ou une structure peut redéfinir son comportement lorsqu’un opérande a le type de cette classe ou de cette structure. La surcharge de l’opérateur `^` affecte le comportement de l’opérateur `^=`. Si votre code utilise `^=` sur une classe ou une structure qui surcharge `^`, veillez à bien comprendre son comportement redéfini. Pour plus d'informations, consultez [Operator Procedures](../../../visual-basic/programming-guide/language-features/procedures/operator-procedures.md).  
   
 ## <a name="example"></a>Exemple  
- The following example uses the `^=` operator to raise the value of one `Integer` variable to the power of a second variable and assign the result to the first variable.  
+ L’exemple suivant utilise l’opérateur `^=` pour élever la valeur d’une variable `Integer` à la puissance d’une deuxième variable et assigner le résultat à la première variable.  
   
  [!code-vb[VbVbalrOperators#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOperators/VB/Class1.vb#21)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [^ (opérateur)](../../../visual-basic/language-reference/operators/exponentiation-operator.md)
+- [^, opérateur](../../../visual-basic/language-reference/operators/exponentiation-operator.md)
 - [Opérateurs d’assignation](../../../visual-basic/language-reference/operators/assignment-operators.md)
 - [Opérateurs arithmétiques](../../../visual-basic/language-reference/operators/arithmetic-operators.md)
 - [Priorité des opérateurs en Visual Basic](../../../visual-basic/language-reference/operators/operator-precedence.md)

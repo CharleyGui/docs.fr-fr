@@ -1,5 +1,5 @@
 ---
-title: How to query the contents of files in a folder (LINQ)
+title: Comment interroger le contenu de fichiers dans un dossier (LINQ)
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
 ms.openlocfilehash: 02ffa398c495ca5af77685d62299c59cfc3b9d9c
@@ -9,9 +9,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347614"
 ---
-# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>How to query the contents of files in a folder (LINQ) (Visual Basic)
+# <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>Comment interroger le contenu de fichiers dans un dossier (LINQ) (Visual Basic)
 
-Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. For more information, see [How to: Combine LINQ Queries with Regular Expressions (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md).  
+Cet exemple montre comment interroger tous les fichiers d’une arborescence de répertoires spécifiée, comment ouvrir chaque fichier et comment inspecter son contenu. Ce type de technique peut être utilisé pour créer des index ou des index inversés à partir du contenu d’une arborescence de répertoires. Dans cet exemple, une recherche de chaîne simple est effectuée. Toutefois, il est possible d’effectuer une recherche avec des critères spéciaux plus complexes à l’aide d’une expression régulière. Pour plus d’informations, consultez [Comment : combiner des requêtes LINQ avec des expressions régulières (Visual Basic)](how-to-combine-linq-queries-with-regular-expressions.md).  
   
 ## <a name="example"></a>Exemple  
   
@@ -75,7 +75,7 @@ End Module
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Create a VB.NET console application project, copy and paste the code sample, and adjust the Startup object value in the project properties.
+Créez un projet d’application console VB.NET, copiez et collez l’exemple de code, puis ajustez la valeur de l’objet Startup dans les propriétés du projet.
 
 ## <a name="see-also"></a>Voir aussi
 

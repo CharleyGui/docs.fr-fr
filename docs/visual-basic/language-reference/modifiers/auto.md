@@ -17,21 +17,21 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351615"
 ---
 # <a name="auto-visual-basic"></a>Auto (Visual Basic)
-Specifies that Visual Basic should marshal strings according to .NET Framework rules based on the external name of the external procedure being declared.  
+Spécifie que Visual Basic doit marshaler des chaînes d’après les règles de .NET Framework en fonction du nom externe de la procédure externe déclarée.  
   
- When you call a procedure defined outside your project, the Visual Basic compiler does not have access to the information it must have to call the procedure correctly. This information includes where the procedure is located, how it is identified, its calling sequence and return type, and the string character set it uses. The [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) creates a reference to an external procedure and supplies this necessary information.  
+ Quand vous appelez une procédure définie à l’extérieur de votre projet, le compilateur Visual Basic n’a pas accès aux informations qu’il doit avoir pour appeler correctement la procédure. Ces informations incluent l’emplacement de la procédure, son identification, sa séquence d’appel et son type de retour, ainsi que le jeu de caractères de chaîne qu’elle utilise. L' [instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md) crée une référence à une procédure externe et fournit ces informations nécessaires.  
   
- The `charsetmodifier` part in the `Declare` statement supplies the character set information for marshaling strings during a call to the external procedure. It also affects how Visual Basic searches the external file for the external procedure name. The `Auto` modifier specifies that Visual Basic should marshal strings according to .NET Framework rules, and that it should determine the base character set of the run-time platform and possibly modify the external procedure name if the initial search fails. For more information, see "Character Sets" in [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md).  
+ La partie `charsetmodifier` de l’instruction `Declare` fournit les informations de jeu de caractères pour le marshaling des chaînes lors d’un appel à la procédure externe. Cela affecte également la manière dont Visual Basic recherche le nom de la procédure externe dans le fichier externe. Le modificateur de `Auto` spécifie que Visual Basic doit marshaler des chaînes d’après les règles d' .NET Framework et qu’il doit déterminer le jeu de caractères de base de la plateforme d’exécution et éventuellement modifier le nom de la procédure externe en cas d’échec de la recherche initiale. Pour plus d’informations, consultez « Jeux de caractères » dans l' [instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md).  
   
- If no character set modifier is specified, `Ansi` is the default.  
+ Si aucun modificateur de jeu de caractères n’est spécifié, `Ansi` est la valeur par défaut.  
   
 ## <a name="remarks"></a>Notes  
- The `Auto` modifier can be used in this context:  
+ Le modificateur `Auto` peut être utilisé dans ce contexte :  
   
- [Declare (instruction)](../../../visual-basic/language-reference/statements/declare-statement.md)  
+ [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md)  
   
-## <a name="smart-device-developer-notes"></a>Smart Device Developer Notes  
- This keyword is not supported.  
+## <a name="smart-device-developer-notes"></a>Notes de développement Smart Device  
+ Ce mot clé n’est pas pris en charge.  
   
 ## <a name="see-also"></a>Voir aussi
 

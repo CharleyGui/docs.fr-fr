@@ -15,16 +15,16 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348494"
 ---
 # <a name="math-summary-visual-basic"></a>Liste des mots clés mathématiques (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|Élément du langage|  
+|Action|élément Language|  
 |------------|----------------------|  
-|Derive trigonometric functions.|<xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A>|  
-|General calculations.|<xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A>|  
-|Generate random numbers.|<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>, <xref:Microsoft.VisualBasic.VBMath.Rnd%2A>|  
-|Get absolute value.|<xref:System.Math.Abs%2A>|  
-|Get the sign of an expression.|<xref:System.Math.Sign%2A>|  
-|Perform numeric conversions.|<xref:Microsoft.VisualBasic.Conversion.Fix%2A>, <xref:Microsoft.VisualBasic.Conversion.Int%2A>|  
+|Dérivez les fonctions trigonométriques.|<xref:System.Math.Atan%2A>, <xref:System.Math.Cos%2A>, <xref:System.Math.Sin%2A>, <xref:System.Math.Tan%2A>|  
+|Calculs généraux.|<xref:System.Math.Exp%2A>, <xref:System.Math.Log%2A>, <xref:System.Math.Sqrt%2A>|  
+|Générer des nombres aléatoires.|<xref:Microsoft.VisualBasic.VBMath.Randomize%2A>, <xref:Microsoft.VisualBasic.VBMath.Rnd%2A>|  
+|Obtient la valeur absolue.|<xref:System.Math.Abs%2A>|  
+|Obtient le signe d’une expression.|<xref:System.Math.Sign%2A>|  
+|Effectuez des conversions numériques.|<xref:Microsoft.VisualBasic.Conversion.Fix%2A>, <xref:Microsoft.VisualBasic.Conversion.Int%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

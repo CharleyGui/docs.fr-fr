@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442039"
 ---
 # <a name="imetadatatablesgetblobheapsize-method"></a>IMetaDataTables::GetBlobHeapSize, méthode
-Gets the size, in bytes, of the binary large object (BLOB) heap.  
+Obtient la taille, en octets, du tas d’objets BLOB (Binary Large Object).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,14 +35,14 @@ HRESULT GetBlobHeapSize (
   
 ## <a name="parameters"></a>Paramètres  
  `pcbBlobs`  
- [out] A pointer to the size, in bytes, of the BLOB heap.  
+ à Pointeur vers la taille, en octets, du tas d’objets BLOB.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

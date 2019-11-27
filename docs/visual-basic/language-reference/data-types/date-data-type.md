@@ -38,7 +38,7 @@ Vous pouvez obtenir les date et heure actuelles à partir de la classe <xref:Mic
 
 Vous devez placer un littéral `Date` entre des signes dièse (`# #`). Vous devez spécifier la valeur de date au format M/j/aaaa, par exemple `#5/31/1993#`, ou aaaa-MM-jj, par exemple `#1993-5-31#`. Vous pouvez utiliser des barres obliques quand vous spécifiez l'année en premier.  Cette exigence est indépendante de vos paramètres régionaux et des paramètres de format de date et d’heure de votre ordinateur.
 
-Cette restriction tient au fait que la signification de votre code ne doit jamais changer en fonction des paramètres régionaux dans lesquels votre application s'exécute. Supposez que vous codez en dur un littéral `Date` égal à `#3/4/1998#` et qu'il doit correspondre au 4 mars 1998. Dans des paramètres régionaux qui utilisent le format mm/jj/aaaa, la date 3/4/1998 est compilée comme vous le souhaitez. But suppose you deploy your application in many countries/regions. Dans des paramètres régionaux qui utilisent le format jj/mm/aaaa, votre littéral codé en dur sera compilé en tant que 3 avril 1998. Dans des paramètres régionaux qui utilisent le format aaaa/mm/jj, le littéral sera non valide (avril 1998, 0003) et provoquera une erreur du compilateur.
+Cette restriction tient au fait que la signification de votre code ne doit jamais changer en fonction des paramètres régionaux dans lesquels votre application s'exécute. Supposez que vous codez en dur un littéral `Date` égal à `#3/4/1998#` et qu'il doit correspondre au 4 mars 1998. Dans des paramètres régionaux qui utilisent le format mm/jj/aaaa, la date 3/4/1998 est compilée comme vous le souhaitez. Mais supposons que vous déployiez votre application dans de nombreux pays ou régions. Dans des paramètres régionaux qui utilisent le format jj/mm/aaaa, votre littéral codé en dur sera compilé en tant que 3 avril 1998. Dans des paramètres régionaux qui utilisent le format aaaa/mm/jj, le littéral sera non valide (avril 1998, 0003) et provoquera une erreur du compilateur.
 
 ## <a name="workarounds"></a>Solutions
 
@@ -68,15 +68,15 @@ Si vous convertissez une valeur `Date` vers le type `String`, Visual Basic resti
 
 ## <a name="programming-tips"></a>Conseils de programmation
 
-- **Interop Considerations.** Si vous utilisez des composants non écrits pour le .NET Framework, tels que des objets Automation ou COM, n'oubliez pas que les types de date et d'heure utilisés dans les autres environnements ne sont pas compatibles avec le type `Date` de Visual Basic. Si vous transmettez un argument de date et d’heure à un tel composant, déclarez-le en tant que `Double` et non `Date` dans votre nouveau code Visual Basic, et utilisez les méthodes de conversion <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> et <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
+- **Considérations relatives à l’interopérabilité.** Si vous utilisez des composants non écrits pour le .NET Framework, tels que des objets Automation ou COM, n'oubliez pas que les types de date et d'heure utilisés dans les autres environnements ne sont pas compatibles avec le type `Date` de Visual Basic. Si vous transmettez un argument de date et d’heure à un tel composant, déclarez-le en tant que `Double` et non `Date` dans votre nouveau code Visual Basic, et utilisez les méthodes de conversion <xref:System.DateTime.FromOADate%2A?displayProperty=nameWithType> et <xref:System.DateTime.ToOADate%2A?displayProperty=nameWithType>.
 
-- **Type Characters.** `Date` has no literal type character or identifier type character. Toutefois, le compilateur traite les littéraux compris entre des signes dièse (`# #`) en tant que `Date`.
+- **Caractères de type.** `Date` n’a aucun caractère de type de littéral ou caractère de type d’identificateur. Toutefois, le compilateur traite les littéraux compris entre des signes dièse (`# #`) en tant que `Date`.
 
-- **Framework Type.** Le type correspondant dans le .NET Framework est la structure <xref:System.DateTime?displayProperty=nameWithType>.
+- **Type de Framework.** Le type correspondant dans le .NET Framework est la structure <xref:System.DateTime?displayProperty=nameWithType>.
 
 ## <a name="example"></a>Exemple
 
-Une variable ou une constante du type de données `Date` contient à la fois la date et l'heure. L'exemple suivant illustre ce comportement.
+Une variable ou une constante du type de données `Date` contient à la fois la date et l'heure. L’exemple suivant illustre ces actions.
 
 ```vb
 Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
@@ -86,8 +86,8 @@ Dim someDateAndTime As Date = #8/13/2002 12:14 PM#
 
 - <xref:System.DateTime?displayProperty=nameWithType>
 - [Types de données](../../../visual-basic/language-reference/data-types/index.md)
-- [Chaînes de format de date et d'heure standard](../../../standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d’heure personnalisées](../../../standard/base-types/custom-date-and-time-format-strings.md)
-- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
+- [Standard Date and Time Format Strings](../../../standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure personnalisées](../../../standard/base-types/custom-date-and-time-format-strings.md)
+- [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)
 - [Liste des conversions](../../../visual-basic/language-reference/keywords/conversion-summary.md)
 - [Utilisation efficace des types de données](../../../visual-basic/programming-guide/language-features/data-types/efficient-use-of-data-types.md)

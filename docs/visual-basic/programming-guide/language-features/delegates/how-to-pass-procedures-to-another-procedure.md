@@ -1,5 +1,5 @@
 ---
-title: 'How to: Pass Procedures to Another Procedure'
+title: 'Comment : passer des procédures à une autre procédure'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - AddressOf operator [Visual Basic]
@@ -13,37 +13,37 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345249"
 ---
 # <a name="how-to-pass-procedures-to-another-procedure-in-visual-basic"></a>Comment : passer des procédures à une autre procédure en Visual Basic
-This example shows how to use delegates to pass a procedure to another procedure.  
+Cet exemple montre comment utiliser des délégués pour passer une procédure à une autre procédure.  
   
- A delegate is a type that you can use like any other type in Visual Basic. The `AddressOf` operator returns a delegate object when applied to a procedure name.  
+ Un délégué est un type que vous pouvez utiliser comme tout autre type dans Visual Basic. L’opérateur `AddressOf` retourne un objet délégué lorsqu’il est appliqué à un nom de procédure.  
   
- This example has a procedure with a delegate parameter that can take a reference to another procedure, obtained with the `AddressOf` operator.  
+ Cet exemple contient une procédure avec un paramètre délégué qui peut prendre une référence à une autre procédure, obtenue avec l’opérateur `AddressOf`.  
   
-### <a name="create-the-delegate-and-matching-procedures"></a>Create the delegate and matching procedures  
+### <a name="create-the-delegate-and-matching-procedures"></a>Créer le délégué et les procédures de correspondance  
   
-1. Create a delegate named `MathOperator`.  
+1. Créez un délégué nommé `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#1)]  
   
-2. Create a procedure named `AddNumbers` with parameters and return value that match those of `MathOperator`, so that the signatures match.  
+2. Créez une procédure nommée `AddNumbers` avec des paramètres et une valeur de retour qui correspondent à ceux de `MathOperator`, afin que les signatures correspondent.  
   
      [!code-vb[VbVbalrDelegates#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#2)]  
   
-3. Create a procedure named `SubtractNumbers` with a signature that matches `MathOperator`.  
+3. Créez une procédure nommée `SubtractNumbers` avec une signature qui correspond à `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#3](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#3)]  
   
-4. Create a procedure named `DelegateTest` that takes a delegate as a parameter.  
+4. Créez une procédure nommée `DelegateTest` qui prend un délégué comme paramètre.  
   
-     This procedure can accept a reference to `AddNumbers` or `SubtractNumbers`, because their signatures match the `MathOperator` signature.  
+     Cette procédure peut accepter une référence à `AddNumbers` ou `SubtractNumbers`, car leurs signatures correspondent à la signature de `MathOperator`.  
   
      [!code-vb[VbVbalrDelegates#4](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#4)]  
   
-5. Create a procedure named `Test` that calls `DelegateTest` once with the delegate for `AddNumbers` as a parameter, and again with the delegate for `SubtractNumbers` as a parameter.  
+5. Créez une procédure nommée `Test` qui appelle `DelegateTest` une fois avec le délégué pour `AddNumbers` en tant que paramètre, et à nouveau avec le délégué pour `SubtractNumbers` en tant que paramètre.  
   
      [!code-vb[VbVbalrDelegates#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrDelegates/VB/Class1.vb#5)]  
   
-     When `Test` is called, it first displays the result of `AddNumbers` acting on `5` and `3`, which is 8. Then the result of `SubtractNumbers` acting on `9` and `3` is displayed, which is 6.  
+     Lorsque `Test` est appelé, il affiche tout d’abord le résultat de `AddNumbers` agissant sur `5` et `3`, qui est 8. Le résultat de `SubtractNumbers` agissant sur `9` et `3` s’affiche, ce qui correspond à 6.  
   
 ## <a name="see-also"></a>Voir aussi
 

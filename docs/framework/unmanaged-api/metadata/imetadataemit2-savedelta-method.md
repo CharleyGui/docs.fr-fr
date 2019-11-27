@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447908"
 ---
 # <a name="imetadataemit2savedelta-method"></a>IMetaDataEmit2::SaveDelta, méthode
-Saves changes from the current edit-and-continue session to the specified file.  
+Enregistre les modifications de la session de modification et de poursuite en cours dans le fichier spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,17 +36,17 @@ HRESULT SaveDelta (
   
 ## <a name="parameters"></a>Paramètres  
  `szFile`  
- [in] The file name under which to save changes.  
+ dans Nom de fichier sous lequel enregistrer les modifications.  
   
  `dwSaveFlags`  
- [in] Réservée. Must be zero.  
+ [in] Réservée. Doit être égal à zéro.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

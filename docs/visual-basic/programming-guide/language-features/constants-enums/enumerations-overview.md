@@ -13,20 +13,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74347483"
 ---
 # <a name="enumerations-overview-visual-basic"></a>Vue d'ensemble des énumérations (Visual Basic)
-Enumerations provide a convenient way to work with sets of related constants and to associate constant values with names. Par exemple, vous pouvez déclarer une énumération pour un ensemble de constantes entières associées aux jours de la semaine puis utiliser les noms des jours au lieu de leur valeur entière dans votre code.  
+Les énumérations offrent un moyen pratique d’utiliser des ensembles de constantes associées et d’associer des valeurs constantes à des noms. Par exemple, vous pouvez déclarer une énumération pour un ensemble de constantes entières associées aux jours de la semaine puis utiliser les noms des jours au lieu de leur valeur entière dans votre code.  
   
-## <a name="tasks-involving-enumerations"></a>Tasks involving Enumerations  
- The following table lists common tasks involving enumerations.  
+## <a name="tasks-involving-enumerations"></a>Tâches impliquant des énumérations  
+ Le tableau suivant répertorie les tâches courantes impliquant des énumérations.  
   
-|Tâche|Voir|  
+|Tâche|Consultez|  
 |----------------|---------|  
-|Find a pre-defined enumeration|[Constantes et énumérations](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
-|Declare an enumeration|[How to: Declare an Enumeration](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
-|Fully qualify an enumeration's name|[Énumérations et qualification de noms](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
-|Refer to an enumeration member|[Guide pratique : faire référence à un membre d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
-|Iterate through an enumeration|[How to: Iterate Through An Enumeration in Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
-|Determine the string associated with an enumeration|[Guide pratique : déterminer la chaîne associée à une valeur d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
-|Decide when to use an enumeration|[Quand utiliser une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
+|Rechercher une énumération prédéfinie|[Constantes et énumérations](../../../../visual-basic/language-reference/constants-and-enumerations.md)|  
+|Déclarer une énumération|[Comment : déclarer une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-declare-enumerations.md)|  
+|Qualifier complètement le nom d’une énumération|[Énumérations et qualification de noms](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-and-name-qualification.md)|  
+|Faire référence à un membre d’énumération|[Guide pratique : faire référence à un membre d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-refer-to-an-enumeration-member.md)|  
+|Itérer au sein d’une énumération|[Comment : itérer au sein d’une énumération dans Visual Basic](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-iterate-through-an-enumeration.md)|  
+|Déterminer la chaîne associée à une énumération|[Guide pratique : déterminer la chaîne associée à une valeur d’énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/how-to-determine-the-string-associated-with-an-enumeration-value.md)|  
+|Décider quand utiliser une énumération|[Quand utiliser une énumération](../../../../visual-basic/programming-guide/language-features/constants-enums/when-to-use-an-enumeration.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 

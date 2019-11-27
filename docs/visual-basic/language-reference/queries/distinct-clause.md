@@ -16,7 +16,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335378"
 ---
 # <a name="distinct-clause-visual-basic"></a>Distinct, clause (Visual Basic)
-Restricts the values of the current range variable to eliminate duplicate values in subsequent query clauses.  
+Restreint les valeurs de la variable de portée actuelle pour éliminer les valeurs en double dans les clauses de requête suivantes.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -25,10 +25,10 @@ Distinct
 ```  
   
 ## <a name="remarks"></a>Notes  
- You can use the `Distinct` clause to return a list of unique items. The `Distinct` clause causes the query to ignore duplicate query results. The `Distinct` clause applies to duplicate values for all return fields specified by the `Select` clause. If no `Select` clause is specified, the `Distinct` clause is applied to the range variable for the query identified in the `From` clause. If the range variable is not an immutable type, the query will only ignore a query result if all members of the type match an existing query result.  
+ Vous pouvez utiliser la clause `Distinct` pour retourner une liste d’éléments uniques. La clause `Distinct` fait en sorte que la requête ignore les résultats de la requête en double. La clause `Distinct` s’applique aux valeurs dupliquées pour tous les champs de retour spécifiés par la clause `Select`. Si aucune clause `Select` n’est spécifiée, la clause `Distinct` est appliquée à la variable de portée pour la requête identifiée dans la clause `From`. Si la variable de portée n’est pas un type immuable, la requête n’ignore un résultat de requête que si tous les membres du type correspondent à un résultat de requête existant.  
   
 ## <a name="example"></a>Exemple  
- The following query expression joins a list of customers and a list of customer orders. The `Distinct` clause is included to return a list of unique customer names and order dates.  
+ L’expression de requête suivante joint une liste de clients et une liste de commandes client. La clause `Distinct` est incluse pour retourner une liste de noms de clients uniques et de dates de commande.  
   
  [!code-vb[VbSimpleQuerySamples#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#20)]  
   

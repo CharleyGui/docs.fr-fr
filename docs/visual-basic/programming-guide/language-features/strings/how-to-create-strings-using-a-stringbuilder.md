@@ -1,5 +1,5 @@
 ---
-title: 'How to: create strings using a StringBuilder'
+title: 'Comment : créer des chaînes à l’aide d’un StringBuilder'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - StringBuilder class
@@ -12,20 +12,20 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344380"
 ---
-# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>How to: create strings using a StringBuilder in Visual Basic
+# <a name="how-to-create-strings-using-a-stringbuilder-in-visual-basic"></a>Comment : créer des chaînes à l’aide d’un StringBuilder dans Visual Basic
 
-This example constructs a long string from many smaller strings using the <xref:System.Text.StringBuilder> class. The <xref:System.Text.StringBuilder> class is more efficient than the `&=` operator for concatenating many strings.
+Cet exemple construit une longue chaîne à partir de plusieurs chaînes plus petites à l’aide de la classe <xref:System.Text.StringBuilder>. La classe <xref:System.Text.StringBuilder> est plus efficace que l’opérateur `&=` pour concaténer de nombreuses chaînes.
 
 ## <a name="example"></a>Exemple
 
-The following example creates an instance of the <xref:System.Text.StringBuilder> class, appends 1,000 strings to that instance, and then returns its string representation:
+L’exemple suivant crée une instance de la classe <xref:System.Text.StringBuilder>, ajoute 1 000 chaînes à cette instance, puis retourne sa représentation sous forme de chaîne :
 
  [!code-vb[VbVbalrStrings#70](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#70)]
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation de la classe StringBuilder](../../../../standard/base-types/stringbuilder.md)
-- [&= (opérateur)](../../../language-reference/operators/and-assignment-operator.md)
+- [&=, opérateur](../../../language-reference/operators/and-assignment-operator.md)
 - [Chaînes](index.md)
 - [Création de chaînes](../../../../standard/base-types/creating-new.md)
 - [Manipulation de chaînes](../../../../standard/base-types/manipulating-strings.md)

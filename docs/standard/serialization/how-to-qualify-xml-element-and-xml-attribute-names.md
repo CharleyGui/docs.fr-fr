@@ -18,7 +18,7 @@ ms.locfileid: "74353102"
 ---
 # <a name="how-to-qualify-xml-element-and-xml-attribute-names"></a>Comment : qualifier des noms d'éléments XML et des noms d'attributs XML
 
-XML namespaces contained by instances of the <xref:System.Xml.Serialization.XmlSerializerNamespaces> class must conform to the World Wide Web Consortium (W3C) specification called [Namespaces in XML](https://www.w3.org/TR/REC-xml-names/).
+Les espaces de noms XML contenus par les instances de la classe <xref:System.Xml.Serialization.XmlSerializerNamespaces> doivent se conformer à la spécification World Wide Web Consortium (W3C) appelée [Namespaces in XML](https://www.w3.org/TR/REC-xml-names/).
 
 Les espaces de noms XML offrent une méthode permettant de qualifier les noms d'éléments et d'attributs XML dans des documents XML. Un nom qualifié se compose d'un préfixe et d'un nom local, séparés par le caractère deux-points. Le préfixe joue uniquement le rôle d'espace réservé ; il est mappé à un URI (Universal Resource Identifier) qui spécifie un espace de noms. L'association entre l'espace de noms URI géré de manière universelle et le nom local génère un nom dont l'unicité universelle est garantie.
 
@@ -175,7 +175,7 @@ public class Book
 - <xref:System.Xml.Serialization.XmlSerializer>
 - [Outil XML Schema Definition et sérialisation XML](the-xml-schema-definition-tool-and-xml-serialization.md)
 - [Introduction à la sérialisation XML](introducing-xml-serialization.md)
-- [XmlSerializer Class](xref:System.Xml.Serialization.XmlSerializer)
+- [Classe XmlSerializer](xref:System.Xml.Serialization.XmlSerializer)
 - [Attributs qui contrôlent la sérialisation XML](attributes-that-control-xml-serialization.md)
 - [Guide pratique pour spécifier un nom d’élément différent pour un flux XML](how-to-specify-an-alternate-element-name-for-an-xml-stream.md)
 - [Guide pratique pour sérialiser un objet](how-to-serialize-an-object.md)

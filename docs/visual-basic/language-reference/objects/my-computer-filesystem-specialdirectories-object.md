@@ -18,14 +18,14 @@ Fournit des propriétés utilisées pour accéder aux répertoires communément 
 ## <a name="remarks"></a>Notes  
  Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Computer.FileSystem.SpecialDirectories` , consultez <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>.  
   
- For more information, see [How to: Retrieve the Contents of the My Documents Directory](../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md).  
+ Pour plus d’informations, consultez [Comment : récupérer le contenu du répertoire Mes documents](../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-retrieve-the-contents-of-the-my-documents-directory.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Espace de noms :** <xref:Microsoft.VisualBasic.MyServices>  
   
- **Class:** <xref:Microsoft.VisualBasic.MyServices.SpecialDirectoriesProxy> (provides access to <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>)  
+ **Classe :** <xref:Microsoft.VisualBasic.MyServices.SpecialDirectoriesProxy> (fournit l’accès à <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>)  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

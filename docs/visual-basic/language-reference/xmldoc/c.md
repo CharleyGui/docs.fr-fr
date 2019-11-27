@@ -12,8 +12,8 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348510"
 ---
-# <a name="c-visual-basic"></a>\<c> (Visual Basic)
-Indicates that text within a description is code.  
+# <a name="c-visual-basic"></a>> \<c (Visual Basic)
+Indique que le texte d’une description est du code.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -28,12 +28,12 @@ Indicates that text within a description is code.
 |`text`|Texte que vous souhaitez indiquer comme étant du code.|  
   
 ## <a name="remarks"></a>Notes  
- The `<c>` tag gives you a way to indicate that text within a description should be marked as code. Utilisez [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) pour indiquer plusieurs lignes comme étant du code.  
+ La balise `<c>` vous donne un moyen d’indiquer que le texte d’une description doit être marqué comme étant du code. Utilisez [\<code>](../../../visual-basic/language-reference/xmldoc/code.md) pour indiquer plusieurs lignes comme étant du code.  
   
  Compilez avec [-doc](../../../visual-basic/reference/command-line-compiler/doc.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `<c>` tag in the summary section to indicate that `Counter` is code.  
+ Cet exemple utilise la balise `<c>` dans la section Summary pour indiquer que `Counter` est du code.  
   
  [!code-vb[VbVbcnXmlDocComments#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnXmlDocComments/VB/Class1.vb#1)]  
   

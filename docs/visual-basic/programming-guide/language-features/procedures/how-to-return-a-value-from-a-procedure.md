@@ -14,35 +14,35 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346025"
 ---
 # <a name="how-to-return-a-value-from-a-procedure-visual-basic"></a>Comment : retourner une valeur d'une procédure (Visual Basic)
-A `Function` procedure returns a value to the calling code either by executing a `Return` statement or by encountering an `Exit Function` or `End Function` statement.  
+Une procédure `Function` retourne une valeur au code appelant en exécutant une instruction `Return` ou en rencontrant une instruction `Exit Function` ou `End Function`.  
   
-### <a name="to-return-a-value-using-the-return-statement"></a>To return a value using the Return statement  
+### <a name="to-return-a-value-using-the-return-statement"></a>Pour retourner une valeur à l’aide de l’instruction return  
   
-1. Put a `Return` statement at the point where the procedure's task is completed.  
+1. Placez une `Return` instruction au point où la tâche de la procédure est terminée.  
   
-2. Follow the `Return` keyword with an expression that yields the value you want to return to the calling code.  
+2. Suivez le mot clé `Return` avec une expression qui génère la valeur que vous souhaitez retourner au code appelant.  
   
 3. Vous pouvez utiliser plusieurs instructions `Return` dans la même procédure.  
   
-     The following `Function` procedure calculates the longest side, or hypotenuse, of a right triangle, and returns it to the calling code.  
+     La procédure `Function` suivante calcule le côté le plus long, ou hypoténuse, d’un triangle rectangle, puis le retourne au code appelant.  
   
      [!code-vb[VbVbcnProcedures#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#1)]  
   
-     The following example shows a typical call to `hypotenuse`, which stores the returned value.  
+     L’exemple suivant montre un appel typique à `hypotenuse`, qui stocke la valeur retournée.  
   
      [!code-vb[VbVbcnProcedures#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnProcedures/VB/Class1.vb#6)]  
   
-### <a name="to-return-a-value-using-exit-function-or-end-function"></a>To return a value using Exit Function or End Function  
+### <a name="to-return-a-value-using-exit-function-or-end-function"></a>Pour retourner une valeur à l’aide de la fonction EXIT ou end  
   
-1. In at least one place in the `Function` procedure, assign a value to the procedure's name.  
+1. Dans au moins un emplacement de la procédure `Function`, assignez une valeur au nom de la procédure.  
   
-2. When you execute an `Exit Function` or `End Function` statement, Visual Basic returns the value most recently assigned to the procedure's name.  
+2. Lorsque vous exécutez une instruction `Exit Function` ou `End Function`, Visual Basic retourne la valeur la plus récemment affectée au nom de la procédure.  
   
 3. Vous pouvez utiliser plusieurs instructions `Exit Function` dans la même procédure et combiner des instructions `Return` et `Exit Function` dans la même procédure.  
   
-4. You can have only one `End Function` statement in a `Function` procedure.  
+4. Vous ne pouvez avoir qu’une seule instruction `End Function` dans une procédure `Function`.  
   
-     For more information and an example, see "Return Value" in [Function Statement](../../../../visual-basic/language-reference/statements/function-statement.md).  
+     Pour plus d’informations et pour obtenir un exemple, consultez « valeur de retour » dans l' [instruction de fonction](../../../../visual-basic/language-reference/statements/function-statement.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

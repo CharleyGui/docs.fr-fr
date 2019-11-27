@@ -52,7 +52,7 @@ Cette rubrique contient les sections suivantes :
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Configuration requise
 
 Cette rubrique suppose que vous savez comment créer un <xref:System.Windows.Controls.ControlTemplate> pour un contrôle existant, que vous connaissez bien les éléments d’un contrat de contrôle et que vous comprenez les concepts abordés dans [créer un modèle pour un contrôle](../../../desktop-wpf/themes/how-to-create-apply-template.md).
 

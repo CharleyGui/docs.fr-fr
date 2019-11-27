@@ -14,9 +14,9 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336121"
 ---
 # <a name="bit-shift-operators-visual-basic"></a>Opérateurs de décalage de bits (Visual Basic)
-The following are the bit shift operators defined in Visual Basic.  
+Voici les opérateurs de décalage de bits définis dans Visual Basic.  
   
- [<\< Operator](../../../visual-basic/language-reference/operators/left-shift-operator.md)  
+ [Opérateur <\<](../../../visual-basic/language-reference/operators/left-shift-operator.md)  
   
  [>>, opérateur](../../../visual-basic/language-reference/operators/right-shift-operator.md)  
   

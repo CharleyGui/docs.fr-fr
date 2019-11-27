@@ -19,30 +19,30 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346377"
 ---
 # <a name="composite-data-types-visual-basic"></a>Types de données composites (Visual Basic)
-In addition to the elementary data types Visual Basic supplies, you can also assemble items of different types to create *composite data types* such as structures, arrays, and classes. You can build composite data types from elementary types and from other composite types. For example, you can define an array of structure elements, or a structure with array members.  
+En plus des types de données élémentaires fournis par Visual Basic, vous pouvez également assembler des éléments de types différents pour créer des *types de données composites* , tels que des structures, des tableaux et des classes. Vous pouvez générer des types de données composites à partir de types élémentaires et d’autres types composites. Par exemple, vous pouvez définir un tableau d’éléments de structure ou une structure avec des membres de tableau.  
   
 ## <a name="data-types"></a>Types de données  
- A composite type is different from the data type of any of its components. For example, an array of `Integer` elements is not of the `Integer` data type.  
+ Un type composite est différent du type de données de l’un de ses composants. Par exemple, un tableau d’éléments `Integer` n’est pas du type de données `Integer`.  
   
- An array data type is normally represented using the element type, parentheses, and commas as necessary. For example, a one-dimensional array of `String` elements is represented as `String()`, and a two-dimensional array of `Boolean` elements is represented as `Boolean(,)`.  
+ Un type de données de tableau est normalement représenté à l’aide du type d’élément, des parenthèses et des virgules, si nécessaire. Par exemple, un tableau unidimensionnel d’éléments `String` est représenté comme `String()`, et un tableau à deux dimensions d’éléments `Boolean` est représenté comme `Boolean(,)`.  
   
-## <a name="structure-types"></a>Structure Types  
- There is no single data type comprising all structures. Instead, each definition of a structure represents a unique data type, even if two structures define identical elements in the same order. However, if you create two or more instances of the same structure, Visual Basic considers them to be of the same data type.  
+## <a name="structure-types"></a>Types de structures  
+ Il n’existe pas de type de données unique comprenant toutes les structures. Au lieu de cela, chaque définition d’une structure représente un type de données unique, même si deux structures définissent des éléments identiques dans le même ordre. Toutefois, si vous créez deux instances ou plus de la même structure, Visual Basic les considère comme étant du même type de données.  
   
 ## <a name="tuples"></a>Tuples
 
-A tuple is a lightweight structure that contains two or more fields whose types are predefined. Tuples are supported starting with Visual Basic 2017. Tuples are most commonly used to return multiple values from a single method call without having to pass arguments by reference or packaging the returned fields in a more heavy-weight class or structure. See the [Tuples](tuples.md) topic for more information on tuples.
+Un tuple est une structure légère qui contient au moins deux champs dont les types sont prédéfinis. Les tuples sont pris en charge à partir de Visual Basic 2017. Les tuples sont généralement utilisés pour retourner plusieurs valeurs à partir d’un seul appel de méthode sans avoir à passer d’arguments par référence ou à empaqueter les champs retournés dans une classe ou une structure plus lourde. Pour plus d’informations sur les tuples, consultez la rubrique [tuples](tuples.md) .
 
-## <a name="array-types"></a>Array Types  
- There is no single data type comprising all arrays. The data type of a particular instance of an array is determined by the following:  
+## <a name="array-types"></a>Types tableau  
+ Il n’existe pas de type de données unique comprenant tous les tableaux. Le type de données d’une instance particulière d’un tableau est déterminé par les éléments suivants :  
   
-- The fact of being an array  
+- Le fait qu’il s’agit d’un tableau  
   
-- The rank (number of dimensions) of the array  
+- Rang (nombre de dimensions) du tableau  
   
-- The element type of the array  
+- Type d’élément du tableau  
   
- In particular, the length of a given dimension is not part of the instance's data type. L'exemple suivant illustre ce comportement.  
+ En particulier, la longueur d’une dimension donnée ne fait pas partie du type de données de l’instance. L’exemple suivant illustre ces actions.  
   
 ```vb  
 Dim arrayA( ) As Byte = New Byte(12) {}  
@@ -52,14 +52,14 @@ Dim arrayD( , ) As Short
 Dim arrayE( , ) As Short = New Short(4, 10) {}  
 ```  
   
- In the preceding example, array variables `arrayA` and `arrayB` are considered to be of the same data type — `Byte()` — even though they are initialized to different lengths. Variables `arrayB` and `arrayC` are not of the same type because their element types are different. Variables `arrayC` and `arrayD` are not of the same type because their ranks are different. Variables `arrayD` and `arrayE` have the same type — `Short(,)` — because their ranks and element types are the same, even though `arrayD` is not yet initialized.  
+ Dans l’exemple précédent, les variables de tableau `arrayA` et `arrayB` sont considérées comme ayant le même type de données (`Byte()`), même si elles sont initialisées avec des longueurs différentes. Les variables `arrayB` et `arrayC` ne sont pas du même type, car leurs types d’éléments sont différents. Les variables `arrayC` et `arrayD` ne sont pas du même type, car leurs rangs sont différents. Les variables `arrayD` et `arrayE` avoir le même type, `Short(,)`, car leurs rangs et leurs types d’éléments sont les mêmes, même si `arrayD` n’est pas encore initialisé.  
   
- For more information on arrays, see [Arrays](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
+ Pour plus d’informations sur les tableaux, consultez [tableaux](../../../../visual-basic/programming-guide/language-features/arrays/index.md).  
   
 ## <a name="class-types"></a>Types de classes  
- There is no single data type comprising all classes. Although one class can inherit from another class, each is a separate data type. Multiple instances of the same class are of the same data type. If you assign one class instance variable to another, not only do they have the same data type, they point to the same class instance in memory.  
+ Il n’existe pas de type de données unique comprenant toutes les classes. Même si une classe peut hériter d’une autre classe, chacun d’eux est un type de données distinct. Plusieurs instances de la même classe sont du même type de données. Si vous assignez une variable d’instance de classe à une autre, non seulement elles ont le même type de données, mais elles pointent vers la même instance de classe en mémoire.  
   
- For more information on classes, see [Objects and Classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
+ Pour plus d’informations sur les classes, consultez [objets et classes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -67,7 +67,7 @@ Dim arrayE( , ) As Short = New Short(4, 10) {}
 - [Types de données élémentaires](../../../../visual-basic/programming-guide/language-features/data-types/elementary-data-types.md)
 - [Generic Types in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/generic-types.md)
 - [Types valeur et types référence](../../../../visual-basic/programming-guide/language-features/data-types/value-types-and-reference-types.md)
-- [Type Conversions in Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
+- [Conversions de type dans Visual Basic](../../../../visual-basic/programming-guide/language-features/data-types/type-conversions.md)
 - [Structures](../../../../visual-basic/programming-guide/language-features/data-types/structures.md)
 - [Dépannage des types de données](../../../../visual-basic/programming-guide/language-features/data-types/troubleshooting-data-types.md)
 - [Guide pratique : stocker plusieurs valeurs dans une variable](../../../../visual-basic/programming-guide/language-features/data-types/how-to-hold-more-than-one-value-in-a-variable.md)

@@ -14,23 +14,23 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74351655"
 ---
 # <a name="string-manipulation-summary-visual-basic"></a>Liste des manipulations de chaînes (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|Élément du langage|  
+|Action|élément Language|  
 |------------|----------------------|  
-|Compare two strings.|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|  
-|Convert strings.|<xref:Microsoft.VisualBasic.Strings.StrConv%2A>|  
-|Reverse a string.|<xref:Microsoft.VisualBasic.Strings.InStrRev%2A>, <xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|  
-|Convert to lowercase or uppercase.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Strings.LCase%2A>, <xref:Microsoft.VisualBasic.Strings.UCase%2A>|  
-|Create a string of repeating characters.|<xref:Microsoft.VisualBasic.Strings.Space%2A>, <xref:Microsoft.VisualBasic.Strings.StrDup%2A>|  
-|Find the length of a string.|<xref:Microsoft.VisualBasic.Strings.Len%2A>|  
-|Format a string.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>, <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>, <xref:Microsoft.VisualBasic.Strings.FormatNumber%2A>, <xref:Microsoft.VisualBasic.Strings.FormatPercent%2A>|  
-|Manipulate strings.|<xref:Microsoft.VisualBasic.Strings.InStr%2A>, <xref:Microsoft.VisualBasic.Strings.Left%2A>, <xref:Microsoft.VisualBasic.Strings.LTrim%2A>, <xref:Microsoft.VisualBasic.Strings.Mid%2A>, <xref:Microsoft.VisualBasic.Strings.Right%2A>, <xref:Microsoft.VisualBasic.Strings.RTrim%2A>, <xref:Microsoft.VisualBasic.Strings.Trim%2A>|  
-|Set string comparison rules.|[Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)|  
-|Work with ASCII and ANSI values.|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>, <xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|  
-|Replace a specified substring.|<xref:Microsoft.VisualBasic.Strings.Replace%2A>|  
-|Return a filter-based string array.|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|  
-|Return a specified number of substrings.|<xref:Microsoft.VisualBasic.Strings.Split%2A>, <xref:Microsoft.VisualBasic.Strings.Join%2A>|  
+|Compare deux chaînes.|<xref:Microsoft.VisualBasic.Strings.StrComp%2A>|  
+|Convertir des chaînes.|<xref:Microsoft.VisualBasic.Strings.StrConv%2A>|  
+|Inverser une chaîne.|<xref:Microsoft.VisualBasic.Strings.InStrRev%2A>, <xref:Microsoft.VisualBasic.Strings.StrReverse%2A>|  
+|Convertir en minuscules ou en majuscules.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Strings.LCase%2A>, <xref:Microsoft.VisualBasic.Strings.UCase%2A>|  
+|Créer une chaîne de caractères répétitifs.|<xref:Microsoft.VisualBasic.Strings.Space%2A>, <xref:Microsoft.VisualBasic.Strings.StrDup%2A>|  
+|Rechercher la longueur d’une chaîne.|<xref:Microsoft.VisualBasic.Strings.Len%2A>|  
+|Mettre en forme une chaîne.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.Strings.FormatCurrency%2A>, <xref:Microsoft.VisualBasic.Strings.FormatDateTime%2A>, <xref:Microsoft.VisualBasic.Strings.FormatNumber%2A>, <xref:Microsoft.VisualBasic.Strings.FormatPercent%2A>|  
+|Manipuler des chaînes.|<xref:Microsoft.VisualBasic.Strings.InStr%2A>, <xref:Microsoft.VisualBasic.Strings.Left%2A>, <xref:Microsoft.VisualBasic.Strings.LTrim%2A>, <xref:Microsoft.VisualBasic.Strings.Mid%2A>, <xref:Microsoft.VisualBasic.Strings.Right%2A>, <xref:Microsoft.VisualBasic.Strings.RTrim%2A>, <xref:Microsoft.VisualBasic.Strings.Trim%2A>|  
+|Définir des règles de comparaison de chaînes.|[Option Compare](../../../visual-basic/language-reference/statements/option-compare-statement.md)|  
+|Utilisez des valeurs ASCII et ANSI.|<xref:Microsoft.VisualBasic.Strings.Asc%2A>, <xref:Microsoft.VisualBasic.Strings.AscW%2A>, <xref:Microsoft.VisualBasic.Strings.Chr%2A>, <xref:Microsoft.VisualBasic.Strings.ChrW%2A>|  
+|Remplace une sous-chaîne spécifiée.|<xref:Microsoft.VisualBasic.Strings.Replace%2A>|  
+|Retourne un tableau de chaînes basé sur un filtre.|<xref:Microsoft.VisualBasic.Strings.Filter%2A>|  
+|Retourne un nombre spécifié de sous-chaînes.|<xref:Microsoft.VisualBasic.Strings.Split%2A>, <xref:Microsoft.VisualBasic.Strings.Join%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

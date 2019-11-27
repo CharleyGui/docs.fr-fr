@@ -12,7 +12,7 @@ ms.locfileid: "74346577"
 # <a name="querying-xml-trees-visual-basic"></a>Interrogation d’arborescences XML (Visual Basic)
 Cette section fournit des exemples de requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
   
- For more information about writing [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] queries, see [Getting Started with LINQ in Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).  
+ Pour plus d’informations sur l’écriture de requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], consultez [prise en main avec LINQ dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md).  
   
  Une fois que vous avez instancié une arborescence XML, l’écriture de requêtes est le moyen le plus efficace pour extraire des données de l’arborescence. De plus, l'interrogation combinée à la construction fonctionnelle vous permet de générer un nouveau document XML qui possède une forme différente du document d'origine.  
   
@@ -20,13 +20,13 @@ Cette section fournit des exemples de requêtes [!INCLUDE[sqltecxlinq](~/include
   
 |Rubrique|Description|  
 |-----------|-----------------|  
-|[Basic Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)|Fournit des exemples courants d’interrogation d’arborescences XML.|  
-|[Projections and Transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)|Fournit des exemples courants de projection à partir d’arborescences XML et de transformation d’arborescences XML.|  
-|[Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)|Fournit des techniques d'interrogation utiles dans les scénarios plus avancés.|  
-|[LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)|Présente un certain nombre d’expressions XPath et leurs équivalents [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
-|[Pure Functional Transformations of XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)|Présente un petit didacticiel sur l'écriture des requêtes dans le style de programmation fonctionnelle.|  
+|[Requêtes de base (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-queries-linq-to-xml.md)|Fournit des exemples courants d’interrogation d’arborescences XML.|  
+|[Projections et transformations (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/projections-and-transformations-linq-to-xml.md)|Fournit des exemples courants de projection à partir d’arborescences XML et de transformation d’arborescences XML.|  
+|[Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)|Fournit des techniques d'interrogation utiles dans les scénarios plus avancés.|  
+|[LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)|Présente un certain nombre d’expressions XPath et leurs équivalents [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
+|[Transformations fonctionnelles pures de XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pure-functional-transformations-of-xml.md)|Présente un petit didacticiel sur l'écriture des requêtes dans le style de programmation fonctionnelle.|  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Guide de programmation (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
 - [Bien démarrer avec LINQ en Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/getting-started-with-linq.md)

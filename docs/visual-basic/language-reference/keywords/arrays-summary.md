@@ -12,14 +12,14 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349942"
 ---
 # <a name="arrays-summary-visual-basic"></a>Liste des tableaux (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|Élément du langage|  
+|Action|élément Language|  
 |------------|----------------------|  
-|Verify an array.|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|  
-|Declare and initialize an array.|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md), [Private](../../../visual-basic/language-reference/modifiers/private.md), [Public](../../../visual-basic/language-reference/modifiers/public.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
-|Find the limits of an array.|<xref:Microsoft.VisualBasic.Information.LBound%2A>, <xref:Microsoft.VisualBasic.Information.UBound%2A>|  
-|Reinitialize an array|[Erase](../../../visual-basic/language-reference/statements/erase-statement.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
+|Vérifiez un tableau.|<xref:Microsoft.VisualBasic.Information.IsArray%2A>|  
+|Déclarez et initialisez un tableau.|[Dim](../../../visual-basic/language-reference/statements/dim-statement.md), [Private](../../../visual-basic/language-reference/modifiers/private.md), [public](../../../visual-basic/language-reference/modifiers/public.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
+|Recherche les limites d’un tableau.|<xref:Microsoft.VisualBasic.Information.LBound%2A>, <xref:Microsoft.VisualBasic.Information.UBound%2A>|  
+|Réinitialisation d’un tableau|[Effacer](../../../visual-basic/language-reference/statements/erase-statement.md), [ReDim](../../../visual-basic/language-reference/statements/redim-statement.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 

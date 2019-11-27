@@ -18,9 +18,9 @@ Cette section décrit les unions non managées utilisées par l'API de métadonn
   
 ## <a name="in-this-section"></a>Dans cette section  
  [CeeSectionRelocExtra, union](../../../../docs/framework/unmanaged-api/metadata/ceesectionrelocextra-union.md)  
- Represents an address offset that is used by the [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) interface to relocate a section  
+ Représente un décalage d’adresse utilisé par l’interface [ICeeGen](../../../../docs/framework/unmanaged-api/metadata/iceegen-interface.md) pour déplacer une section  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
   
  [Fonctions statiques globales des métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  

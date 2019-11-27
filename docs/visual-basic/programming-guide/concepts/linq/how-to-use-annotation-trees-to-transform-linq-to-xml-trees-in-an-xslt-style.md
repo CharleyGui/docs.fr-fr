@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348358"
 ---
-# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>How to: Use Annotations to Transform LINQ to XML Trees in an XSLT Style (Visual Basic)
+# <a name="how-to-use-annotations-to-transform-linq-to-xml-trees-in-an-xslt-style-visual-basic"></a>Comment : utiliser des annotations pour transformer des arbres LINQ to XML dans un style XSLT (Visual Basic)
 
 Les annotations peuvent servir à faciliter les transformations d’une arborescence XML.
 
@@ -19,7 +19,7 @@ Certains documents XML sont « centrés sur les documents avec du contenu mixte 
 <text>A phrase with <b>bold</b> and <i>italic</i> text.</text>
 ```
 
-Pour tout nœud de texte donné, il peut exister une quantité quelconque d'éléments enfants `<b>` et `<i>`. This approach extends to a number of other situations: such as, pages that can contain a variety of child elements, such as regular paragraphs, bulleted paragraphs, and bitmaps. Les cellules d’un tableau peuvent contenir du texte, des listes déroulantes ou des bitmaps. L'une des principales caractéristiques du code XML centré sur les documents est que vous ne savez pas quel élément enfant un élément particulier aura.
+Pour tout nœud de texte donné, il peut exister une quantité quelconque d'éléments enfants `<b>` et `<i>`. Cette approche s’étend à plusieurs autres situations : par exemple, des pages qui peuvent contenir divers éléments enfants, tels que des paragraphes réguliers, des paragraphes à puces et des bitmaps. Les cellules d’un tableau peuvent contenir du texte, des listes déroulantes ou des bitmaps. L'une des principales caractéristiques du code XML centré sur les documents est que vous ne savez pas quel élément enfant un élément particulier aura.
 
 Si vous souhaitez transformer des éléments d'une arborescence dans laquelle vous ne connaissez pas forcément grand chose des enfants des éléments que vous souhaitez transformer, cette approche qui utilise des annotations est une approche efficace.
 
@@ -31,19 +31,19 @@ La synthèse de l'approche est la suivante :
 
 En détail, l'approche se compose des étapes suivantes :
 
-- Exécutez une ou plusieurs requêtes LINQ to XML qui retournent l'ensemble d'éléments que vous souhaitez transformer d'une forme à une autre. Pour chaque élément dans la requête, ajoutez un nouvel objet <xref:System.Xml.Linq.XElement> en tant qu'annotation de l'élément. Ce nouvel élément remplacera l'élément annoté dans la nouvelle arborescence transformée. Ce code est simple à écrire, comme illustré dans l'exemple.
+- Exécutez une ou plusieurs requêtes LINQ to XML qui retournent l'ensemble d'éléments que vous souhaitez transformer d'une forme à une autre. Pour chaque élément dans la requête, ajoutez un nouvel objet <xref:System.Xml.Linq.XElement> en tant qu'annotation de l'élément. Ce nouvel élément remplacera l’élément annoté dans la nouvelle arborescence transformée. Ce code est simple à écrire, comme illustré dans l'exemple.
 
 - Le nouvel élément ajouté en tant qu'annotation peut contenir de nouveaux nœuds enfants ; il peut former une sous-arborescence de toute forme souhaitée.
 
 - Il existe une règle spéciale : si un nœud enfant du nouvel élément est dans un espace de noms différent, un espace de noms créé à cet effet (dans cet exemple, l'espace de noms est `http://www.microsoft.com/LinqToXmlTransform/2007`), cet élément enfant n'est pas copié dans la nouvelle arborescence. Au lieu de cela, si l'espace de noms est l'espace de noms spécial mentionné ci-dessus et que le nom local de l'élément est `ApplyTransforms`, les nœuds enfants de l'élément dans l'arborescence source sont itérés et copiés dans la nouvelle arborescence (hormis le fait que les éléments enfants annotés sont eux-mêmes transformés conformément à ces règles).
 
-- Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l'expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu'annotation est analogue au constructeur de séquence en XSL et l'élément `ApplyTransforms` est analogue en termes de fonction à l'élément `xsl:apply-templates` en XSL.
+- Cela est quelque peu analogue à la spécification des transformations en XSL. La requête qui sélectionne un ensemble de nœuds est analogue à l’expression XPath pour un modèle. Le code permettant de créer le nouvel objet <xref:System.Xml.Linq.XElement> qui est enregistré en tant qu'annotation est analogue au constructeur de séquence en XSL et l'élément `ApplyTransforms` est analogue en termes de fonction à l'élément `xsl:apply-templates` en XSL.
 
-- L'un des avantages offerts par cette approche est que lorsque vous formulez des requêtes, vous écrivez toujours des requêtes sur l'arborescence source non modifiée. Vous n'avez pas à vous soucier de l'impact des modifications apportées à l'arborescence sur les requêtes que vous écrivez.
+- L’un des avantages offerts par cette approche est que lorsque vous formulez des requêtes, vous écrivez toujours des requêtes sur l’arborescence source non modifiée. Vous n'avez pas à vous soucier de l'impact des modifications apportées à l'arborescence sur les requêtes que vous écrivez.
 
 ## <a name="transforming-a-tree"></a>Transformation d'une arborescence
 
-This first example renames all `Paragraph` nodes to `para`:
+Ce premier exemple renomme tous les nœuds `Paragraph` en `para`:
 
 ```vb
 Imports <xmlns:xf="http://www.microsoft.com/LinqToXmlTransform/2007">
@@ -83,7 +83,7 @@ End Module
 </Root>
 ```
 
-## <a name="a-more-complicated-transform"></a>A more complicated transform
+## <a name="a-more-complicated-transform"></a>Transformation plus complexe
 
 L'exemple suivant interroge l'arborescence et calcule la moyenne et la somme des éléments `Data`, puis les ajoute à l'arborescence en tant que nouveaux éléments.
 
@@ -158,29 +158,29 @@ After Transform
 </Root>
 ```
 
-## <a name="effecting-the-transform"></a>Effecting the transform
+## <a name="effecting-the-transform"></a>Effet de la transformation
 
 Une petite fonction, `XForm`, crée une nouvelle arborescence transformée à partir de l'arborescence d'origine annotée.
 
 Le pseudo code de la fonction est assez simple :
 
-> The function takes an XElement as an argument and returns an XElement.
+> La fonction prend un XElement comme argument et retourne un XElement.
 >
-> If an element has an XElement annotation, then return a new XElement:
+> Si un élément a une annotation XElement, retourne un nouveau XElement :
 >
-> - The name of the new XElement is the annotation element's name.
-> - All attributes are copied from the annotation to the new node.
-> - All child nodes are copied from the annotation, with the exception that the special node xf:ApplyTransforms is recognized, and the source element's child nodes are iterated. If the source child node is not an XElement, it is copied to the new tree. If the source child is an XElement, then it is transformed by calling this function recursively.
+> - Le nom du nouveau XElement est le nom de l’élément d’annotation.
+> - Tous les attributs sont copiés de l’annotation vers le nouveau nœud.
+> - Tous les nœuds enfants sont copiés à partir de l’annotation, à l’exception près que le nœud spécial XF : ApplyTransforms est reconnu et que les nœuds enfants de l’élément source sont itérés. Si le nœud enfant source n’est pas un XElement, il est copié dans la nouvelle arborescence. Si la source enfant est un XElement, elle est transformée en appelant cette fonction de manière récursive.
 >
-> If an element is not annotated:
+> Si un élément n’est pas annoté :
 >
-> - Return a new XElement
->   - The name of the new XElement is the source element's name.
->   - All attributes are copied from the source element to the destination's element.
->   - All child nodes are copied from the source element.
->   - If the source child node is not an XElement, it is copied to the new tree. If the source child is an XElement, then it is transformed by calling this function recursively.
+> - Retourner un nouveau XElement
+>   - Le nom du nouveau XElement est le nom de l’élément source.
+>   - Tous les attributs sont copiés de l’élément source vers l’élément de destination.
+>   - Tous les nœuds enfants sont copiés à partir de l’élément source.
+>   - Si le nœud enfant source n’est pas un XElement, il est copié dans la nouvelle arborescence. Si la source enfant est un XElement, elle est transformée en appelant cette fonction de manière récursive.
 
-The following code is the implementation of this function:
+Le code suivant est l’implémentation de cette fonction :
 
 ```vb
 ' Build a transformed XML tree per the annotations.
@@ -376,4 +376,4 @@ After Transform
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced LINQ to XML Programming (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)
+- [Visual Basic (Advanced LINQ to XML Programming)](../../../../visual-basic/programming-guide/concepts/linq/advanced-linq-to-xml-programming.md)

@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74336112"
 ---
-# <a name="how-to-load-xml-from-a-file-visual-basic"></a>How to: Load XML from a File (Visual Basic)
+# <a name="how-to-load-xml-from-a-file-visual-basic"></a>Comment : charger du code XML à partir d’un fichier (Visual Basic)
 
 Cette rubrique montre comment charger des données XML à partir d'un URI en utilisant la méthode <xref:System.Xml.Linq.XElement.Load%2A?displayProperty=nameWithType>.
 
@@ -52,4 +52,4 @@ Ce code génère la sortie suivante :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Parsing XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)
+- [Analyse XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/parsing-xml.md)

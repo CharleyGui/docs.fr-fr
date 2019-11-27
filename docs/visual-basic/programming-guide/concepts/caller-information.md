@@ -9,14 +9,14 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349473"
 ---
-# <a name="caller-information-visual-basic"></a>Caller Information (Visual Basic)
+# <a name="caller-information-visual-basic"></a>Informations sur l’appelant (Visual Basic)
 À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin d'accès du fichier de code source, le numéro de ligne dans le code source, puis le nom du membre de l'appelant. Ces informations sont utiles pour suivre, déboguer, et créer des outils de diagnostic.  
   
  Pour obtenir ces informations, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs, qui a une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :  
   
-|Attribut|Description|Tapez|  
+|Attribut|Description|Type|  
 |---|---|---|  
-|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin d’accès complet du fichier source qui contient l’appelant. C’est le chemin d’accès au moment de la compilation.|`String`|  
+|<xref:System.Runtime.CompilerServices.CallerFilePathAttribute>|Chemin complet du fichier source qui contient l’appelant. C’est le chemin du fichier au moment de la compilation.|`String`|  
 |<xref:System.Runtime.CompilerServices.CallerLineNumberAttribute>|Numéro de ligne dans le fichier source dans lequel la méthode est appelée.|`Integer`|  
 |<xref:System.Runtime.CompilerServices.CallerMemberNameAttribute>|Méthode ou nom de la propriété de l'appelant. Consultez [Noms de membres](#MEMBERNAMES), plus loin dans cette rubrique.|`String`|  
   

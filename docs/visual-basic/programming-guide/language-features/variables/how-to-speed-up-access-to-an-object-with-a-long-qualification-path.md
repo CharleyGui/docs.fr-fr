@@ -1,5 +1,5 @@
 ---
-title: "Comment : accélérer l'accès à un objet comportant un chemin d'accès de qualification long"
+title: 'Comment : accélérer l’accès à un objet comportant un chemin d’accès de qualification long'
 ms.date: 07/20/2015
 helpviewer_keywords:
 - variables [Visual Basic], accessing
@@ -17,19 +17,19 @@ ms.locfileid: "74346816"
 ---
 # <a name="how-to-speed-up-access-to-an-object-with-a-long-qualification-path-visual-basic"></a>Comment : accélérer l’accès à un objet comportant un chemin d’accès de qualification long (Visual Basic)
 
-If you frequently access an object that requires a qualification path of several methods and properties, you can speed up your code by not repeating the qualification path.
+Si vous accédez fréquemment à un objet qui requiert un chemin d’accès de qualification de plusieurs méthodes et propriétés, vous pouvez accélérer votre code en ne répétant pas le chemin d’accès de qualification.
 
-There are two ways you can avoid repeating the qualification path. You can assign the object to a variable, or you can use it in a `With`...`End With` block.
+Vous pouvez éviter de répéter le chemin d’accès de qualification de deux manières. Vous pouvez assigner l’objet à une variable, ou vous pouvez l’utiliser dans un bloc `With`...`End With`.
 
-### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>To speed up access to a heavily qualified object by assigning it to a variable
+### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-assigning-it-to-a-variable"></a>Pour accélérer l’accès à un objet très qualifié en l’assignant à une variable
 
-1. Declare a variable of the type of the object that you are accessing frequently. Specify the qualification path in the initialization part of the declaration.
+1. Déclarez une variable du type de l’objet auquel vous accédez fréquemment. Spécifiez le chemin d’accès de qualification dans la partie initialisation de la déclaration.
 
     ```vb
     Dim ctrlActv As Control = someForm.ActiveForm.ActiveControl
     ```
 
-2. Use the variable to access the object's members.
+2. Utilisez la variable pour accéder aux membres de l’objet.
 
     ```vb
     ctrlActv.Text = "Test"
@@ -37,15 +37,15 @@ There are two ways you can avoid repeating the qualification path. You can assig
     ctrlActv.Show()
     ```
 
-### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-using-a-withend-with-block"></a>To speed up access to a heavily qualified object by using a With...End With block
+### <a name="to-speed-up-access-to-a-heavily-qualified-object-by-using-a-withend-with-block"></a>Pour accélérer l’accès à un objet très qualifié à l’aide d’un avec... Terminer par un bloc
 
-1. Put the qualification path in a `With` statement.
+1. Placez le chemin d’accès de qualification dans une instruction `With`.
 
     ```vb
     With someForm.ActiveForm.ActiveControl
     ```
 
-2. Access the object's members inside the `With` block, before the `End With` statement.
+2. Accédez aux membres de l’objet à l’intérieur du bloc `With`, avant l’instruction `End With`.
 
     ```vb
         .Text = "Test"

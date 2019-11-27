@@ -26,19 +26,19 @@ Skip count
   
 ## <a name="parts"></a>Composants  
  `count`  
- Requis. A value or an expression that evaluates to the number of elements of the sequence to skip.  
+ Requis. Valeur ou expression qui prend la valeur du nombre d’éléments de la séquence à ignorer.  
   
 ## <a name="remarks"></a>Notes  
- The `Skip` clause causes a query to bypass elements at the beginning of a results list and return the remaining elements. The number of elements to skip is identified by the `count` parameter.  
+ La clause `Skip` amène une requête à ignorer les éléments au début d’une liste de résultats et à retourner les éléments restants. Le nombre d’éléments à ignorer est identifié par le paramètre `count`.  
   
- You can use the `Skip` clause with the `Take` clause to return a range of data from any segment of a query. To do this, pass the index of the first element of the range to the `Skip` clause and the size of the range to the `Take` clause.  
+ Vous pouvez utiliser la clause `Skip` avec la clause `Take` pour retourner une plage de données à partir d’un segment d’une requête. Pour ce faire, transmettez l’index du premier élément de la plage à la clause `Skip` et la taille de la plage à la clause `Take`.  
   
- When you use the `Skip` clause in a query, you may also need to ensure that the results are returned in an order that will enable the `Skip` clause to bypass the intended results. For more information about ordering query results, see [Order By Clause](../../../visual-basic/language-reference/queries/order-by-clause.md).  
+ Lorsque vous utilisez la clause `Skip` dans une requête, vous devrez peut-être également vous assurer que les résultats sont retournés dans un ordre qui permettra à la clause `Skip` de contourner les résultats souhaités. Pour plus d’informations sur la façon de classer les résultats d’une requête, consultez [clause ORDER BY](../../../visual-basic/language-reference/queries/order-by-clause.md).  
   
- You can use the `SkipWhile` clause to specify that only certain elements are ignored, depending on a supplied condition.  
+ Vous pouvez utiliser la clause `SkipWhile` pour spécifier que seuls certains éléments sont ignorés, en fonction d’une condition fournie.  
   
 ## <a name="example"></a>Exemple  
- The following code example uses the `Skip` clause together with the `Take` clause to return data from a query in pages. The `GetCustomers` function uses the `Skip` clause to bypass the customers in the list until the supplied starting index value, and uses the `Take` clause to return a page of customers starting from that index value.  
+ L’exemple de code suivant utilise la clause `Skip` avec la clause `Take` pour retourner des données d’une requête dans des pages. La fonction `GetCustomers` utilise la clause `Skip` pour contourner les clients de la liste jusqu’à la valeur d’index de départ fournie et utilise la clause `Take` pour retourner une page de clients à partir de cette valeur d’index.  
   
  [!code-vb[VbSimpleQuerySamples#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbSimpleQuerySamples/VB/QuerySamples1.vb#1)]  
   
