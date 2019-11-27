@@ -64,5 +64,5 @@ Pour obtenir une liste plus complète, consultez [Vue d’ensemble de la bibliot
 
 - [Composition de flux](../../../../standard/io/composing-streams.md)
 - [Fichier et flux de données E/S](../../../../standard/io/index.md)
-- [Asynchronous File I/O](../../../../standard/io/asynchronous-file-i-o.md)
+- [E/S sur fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
 - [Concepts de base du système de fichiers et des E/S de fichier du .NET Framework (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/basics-of-net-framework-file-io-and-the-file-system.md)

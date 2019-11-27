@@ -22,7 +22,7 @@ L’objet `My.Computer.Keyboard` fournit des propriétés pour accéder à l’�
 
  Ce tableau liste les tâches associées à l’objet `My.Computer.Keyboard` et indique les rubriques qui expliquent comment accomplir chaque tâche.  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |--------|---------|  
 |Déterminer si la touche Verr. maj est activée|<xref:Microsoft.VisualBasic.Devices.Keyboard.CapsLock%2A>|  
 |Déterminer si la touche Maj est enfoncée|<xref:Microsoft.VisualBasic.Devices.Keyboard.ShiftKeyDown%2A>|  

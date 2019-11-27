@@ -41,13 +41,13 @@ Active ou désactive les compteurs de performance réseau.
 |`enabled`|Spécifie si les compteurs de performance réseau sont activés. La valeur par défaut est `false`.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- aucune.  
+ None.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[settings](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
+|[Paramètres](settings-element-network-settings.md)|Configure les options réseau de base pour l’espace de noms <xref:System.Net>.|  
   
 ## <a name="remarks"></a>Notes  
  Cet élément peut être défini dans le fichier de configuration de l'application ou dans le fichier de configuration de l'ordinateur (Machine.config).  

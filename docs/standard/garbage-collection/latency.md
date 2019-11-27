@@ -66,4 +66,4 @@ Lorsque vous utilisez le mode [GCLatencyMode. LowLatency](xref:System.Runtime.GC
 
 - <xref:System.GC?displayProperty=nameWithType>
 - [Collections forcées](../../../docs/standard/garbage-collection/induced.md)
-- [Garbage collection](../../../docs/standard/garbage-collection/index.md)
+- [Nettoyage de la mémoire](../../../docs/standard/garbage-collection/index.md)

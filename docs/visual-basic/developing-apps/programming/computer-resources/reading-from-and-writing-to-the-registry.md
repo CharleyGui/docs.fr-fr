@@ -36,7 +36,7 @@ Cette rubrique décrit les rubriques de concepts et de tâches associées au Reg
  [Sécurité et Registre](../../../../visual-basic/developing-apps/programming/computer-resources/security-and-the-registry.md)  
  Décrit les problèmes de sécurité impliquant le Registre.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  <xref:Microsoft.VisualBasic.MyServices.RegistryProxy>  
  Répertorie et décrit les membres de l’objet `My.Computer.Registry`.  

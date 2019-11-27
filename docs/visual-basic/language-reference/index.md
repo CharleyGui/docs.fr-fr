@@ -19,12 +19,12 @@ ms.locfileid: "74349952"
 ---
 # <a name="visual-basic-language-reference"></a>Informations de référence sur le langage Visual Basic
 
-This section provides reference information for various aspects of the Visual Basic language.  
+Cette section fournit des informations de référence pour différents aspects du langage de Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
 
  [Conventions typographiques](../../visual-basic/language-reference/typographic-and-code-conventions.md)  
- Summarizes the way that keywords, placeholders, and other elements of the language are formatted in the Visual Basic documentation.  
+ Résume la façon dont les mots clés, les espaces réservés et d’autres éléments du langage sont mis en forme dans la documentation de Visual Basic.  
   
  [Membres de la bibliothèque runtime Visual Basic](../../visual-basic/language-reference/runtime-library-members.md)  
  Liste les classes et modules de l’espace de noms <xref:Microsoft.VisualBasic?displayProperty=nameWithType>, avec des liens vers leurs fonctions, méthodes, propriétés, constantes et énumérations membres.  
@@ -33,46 +33,46 @@ This section provides reference information for various aspects of the Visual Ba
  Liste tous les mots clés Visual Basic et fournit des liens vers d’autres informations.  
   
  [Attributs (Visual Basic)](../../visual-basic/language-reference/attributes.md)  
- Documents the attributes available in Visual Basic.  
+ Documente les attributs disponibles dans Visual Basic.  
   
  [Constantes et énumérations](../../visual-basic/language-reference/constants-and-enumerations.md)  
- Documents the constants and enumerations available in Visual Basic.  
+ Documente les constantes et énumérations disponibles dans Visual Basic.  
   
  [Types de données](../../visual-basic/language-reference/data-types/index.md)  
- Documents the data types available in Visual Basic.  
+ Documente les types de données disponibles dans Visual Basic.  
   
  [Directives](../../visual-basic/language-reference/directives/index.md)  
- Documents the compiler directives available in Visual Basic.  
+ Documente les directives de compilateur disponibles dans Visual Basic.  
   
  [Fonctions](../../visual-basic/language-reference/functions/index.md)  
- Documents the run-time functions available in Visual Basic.  
+ Documente les fonctions d’exécution disponibles dans Visual Basic.  
   
  [Modificateurs](../../visual-basic/language-reference/modifiers/index.md)  
  Liste les modificateurs runtime de Visual Basic et fournit des liens vers d’autres informations.  
   
  [Modules](../../visual-basic/language-reference/modules.md)  
- Documents the modules available in Visual Basic and their members.  
+ Documente les modules disponibles dans Visual Basic et leurs membres.  
   
  [Nothing](../../visual-basic/language-reference/nothing.md)  
  Décrit la valeur par défaut de tout type de données.  
   
- [Objects](../../visual-basic/language-reference/objects/index.md)  
- Documents the objects available in Visual Basic and their members.  
+ [Objets](../../visual-basic/language-reference/objects/index.md)  
+ Documente les objets disponibles dans Visual Basic et leurs membres.  
   
  [Opérateurs](../../visual-basic/language-reference/operators/index.md)  
- Documents the operators available in Visual Basic.  
+ Documente les opérateurs disponibles dans Visual Basic.  
   
  [Propriétés](../../visual-basic/language-reference/properties.md)  
- Documents the properties available in Visual Basic.  
+ Documente les propriétés disponibles dans Visual Basic.  
   
  [Requêtes](../../visual-basic/language-reference/queries/index.md)  
  Fournit des informations de référence sur l’utilisation d’expressions [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dans votre code.  
   
  [Instructions](../../visual-basic/language-reference/statements/index.md)  
- Documents the declaration and executable statements available in Visual Basic.  
+ Documente la déclaration et les instructions exécutables disponibles dans Visual Basic.  
   
  [Étiquettes XML pour les commentaires](../../visual-basic/language-reference/xmldoc/index.md)  
- Describes the documentation comments for which IntelliSense is provided in the Visual Basic Code Editor.  
+ Décrit les commentaires de documentation pour lesquels IntelliSense est fourni dans l’éditeur de code Visual Basic.  
   
  [Propriétés d’axe XML](../../visual-basic/language-reference/xml-axis/index.md)  
  Fournit des liens vers des informations sur l’utilisation de propriétés d’axe XML pour accéder directement au code XML dans votre code.  
@@ -81,12 +81,12 @@ This section provides reference information for various aspects of the Visual Ba
  Fournit des liens vers les informations sur l’utilisation de littéraux XML pour incorporer du code XML directement dans votre code.  
   
  [Messages d’erreur](../../visual-basic/language-reference/error-messages/index.md)  
- Provides a listing of Visual Basic compiler and run-time error messages and help on how to handle them.  
+ Fournit une liste de Visual Basic des messages d’erreur du compilateur et de l’exécution, et vous aide à les gérer.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Visual Basic](../../visual-basic/index.md)  
- Provides comprehensive help on all areas of the Visual Basic language.  
+ Fournit une aide complète sur toutes les zones du langage de Visual Basic.  
   
  [Compilateur de ligne de commande de Visual Basic](../../visual-basic/reference/command-line-compiler/index.md)  
- Describes how to use the command-line compiler as an alternative to compiling programs from within the Visual Studio integrated development environment (IDE).
+ Décrit comment utiliser le compilateur de ligne de commande comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio.

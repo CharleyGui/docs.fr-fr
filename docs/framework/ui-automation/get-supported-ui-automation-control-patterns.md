@@ -45,4 +45,4 @@ ms.locfileid: "74435642"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)

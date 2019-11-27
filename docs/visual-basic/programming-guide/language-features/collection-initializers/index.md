@@ -1,5 +1,5 @@
 ---
-title: Initialiseurs de collection
+title: Initialiseurs de collections
 ms.date: 07/20/2015
 f1_keywords:
 - vb.CollectionInitializer
@@ -39,7 +39,7 @@ Lorsque vous créez une collection, comme un <xref:System.Collections.Generic.Li
 > [!NOTE]
 > Vous ne pouvez pas combiner un initialiseur de collection et un initialiseur d’objet pour initialiser le même objet de collection. Vous pouvez utiliser des initialiseurs d’objets pour initialiser des objets dans un initialiseur de collection.
 
-## <a name="creating-a-collection-by-using-a-collection-initializer"></a>Creating a Collection by Using a Collection Initializer
+## <a name="creating-a-collection-by-using-a-collection-initializer"></a>Création d’une collection à l’aide d’un initialiseur de collection
 
 Lorsque vous créez une collection à l’aide d’un initialiseur de collection, chaque valeur fournie dans l’initialiseur de collection est passée à la méthode `Add` appropriée de la collection. Par exemple, si vous créez un <xref:System.Collections.Generic.List%601> en utilisant un initialiseur de collection, chaque valeur de chaîne de l’initialiseur de collection est passée à la méthode <xref:System.Collections.Generic.List%601.Add%2A>. Si vous souhaitez créer une collection à l’aide d’un initialiseur de collection, le type spécifié doit être un type de collection valide. Les types de collections valides sont, par exemple, des classes qui implémentent l’interface <xref:System.Collections.Generic.IEnumerable%601> ou qui héritent de la classe <xref:System.Collections.CollectionBase>. Le type spécifié doit également exposer une méthode `Add` qui répond aux critères suivants.
 

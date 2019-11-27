@@ -19,7 +19,7 @@ ms.locfileid: "74435100"
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IRangeValueProvider>, notamment des informations sur les événements et les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> est utilisé pour prendre en charge les contrôles auxquels vous pouvez affecter une valeur comprise dans une plage. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
+ Le modèle de contrôle <xref:System.Windows.Automation.RangeValuePattern> est utilisé pour prendre en charge les contrôles auxquels vous pouvez affecter une valeur comprise dans une plage. Pour obtenir des exemples de contrôles qui implémentent ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
 ## <a name="implementation-guidelines-and-conventions"></a>Conventions et directives d'implémentation  
@@ -29,21 +29,21 @@ ms.locfileid: "74435100"
   
 - Les contrôles qui ont des valeurs de plage ambiguës, telles que les barres de progression ou les curseurs, doivent normaliser ces valeurs.  
   
- ![Progress bar.](./media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
+ ![Barre de progression.](./media/uia-rangevaluepattern-progress-bar.PNG "UIA_RangeValuePattern_Progress_Bar")  
 Exemple d’une barre de progression où la valeur est de type entier, et où les valeurs de propriété minimale et maximale sont normalisées à 0 et 100, respectivement  
   
 <a name="Required_Members_for_the_IRangeValueProvider"></a>   
 ## <a name="required-members-for-irangevalueprovider"></a>Membres obligatoires pour IRangeValueProvider  
   
-|Membre obligatoire|Type de membre|Notes|  
+|Membre requis|Type de membre|Remarques|  
 |---------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Property|aucune.|  
-|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|aucune.|  
+|<xref:System.Windows.Automation.RangeValuePattern.IsReadOnlyProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.ValueProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.LargeChangeProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.SmallChangeProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.MaximumProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A>|Méthodes|Aucune|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
@@ -51,7 +51,7 @@ Exemple d’une barre de progression où la valeur est de type entier, et où le
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
 |<xref:System.ArgumentOutOfRangeException>|<xref:System.Windows.Automation.RangeValuePattern.SetValue%2A> est appelé avec une valeur supérieure à <xref:System.Windows.Automation.RangeValuePattern.MaximumProperty> , ou inférieure à <xref:System.Windows.Automation.RangeValuePattern.MinimumProperty>.|  
   
@@ -59,6 +59,6 @@ Exemple d’une barre de progression où la valeur est de type entier, et où le
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
 - [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

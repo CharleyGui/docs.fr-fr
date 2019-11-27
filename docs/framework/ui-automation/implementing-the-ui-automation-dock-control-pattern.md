@@ -19,9 +19,9 @@ ms.locfileid: "74435436"
   
  Cette rubrique présente les conventions et recommandations à respecter pour implémenter <xref:System.Windows.Automation.Provider.IDockProvider>, notamment des informations sur les propriétés. Des liens vers des références supplémentaires sont répertoriés à la fin de la rubrique.  
   
- Le modèle de contrôle <xref:System.Windows.Automation.DockPattern> est utilisé pour exposer les propriétés de l’ancrage d’un contrôle dans un conteneur d’ancrage. Un conteneur d’ancrage est un contrôle qui vous permet de réorganiser des éléments enfants horizontalement et verticalement, les uns par rapport aux autres. Pour obtenir des exemples de contrôles implémentant ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
+ Le modèle de contrôle <xref:System.Windows.Automation.DockPattern> est utilisé pour exposer les propriétés de l’ancrage d’un contrôle dans un conteneur d’ancrage. Un conteneur d’ancrage est un contrôle qui vous permet de réorganiser des éléments enfants horizontalement et verticalement, les uns par rapport aux autres. Pour obtenir des exemples de contrôles qui implémentent ce modèle de contrôle, consultez [Control Pattern Mapping for UI Automation Clients](control-pattern-mapping-for-ui-automation-clients.md).  
   
- ![Docking container with two docked children.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
+ ![Conteneur d’ancrage avec deux enfants ancrés.](./media/uia-dockpattern-dockingexample.PNG "UIA_DockPattern_DockingExample")  
 Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » est DockPosition.Right et la fenêtre « Liste d’erreurs » est DockPosition.Bottom  
   
 <a name="Implementation_Guidelines_and_Conventions"></a>   
@@ -40,10 +40,10 @@ Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » 
 ## <a name="required-members-for-idockprovider"></a>Membres requis pour IDockProvider  
  Les propriétés et méthodes suivantes sont requises pour implémenter l’interface IDockProvider.  
   
-|Membres nécessaires|Type de membre|Notes|  
+|Membres nécessaires|Type de membre|Remarques|  
 |----------------------|-----------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Property|aucune.|  
-|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|Méthode|aucune.|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.DockPosition%2A>|Propriété|Aucune|  
+|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A>|Méthode|Aucune|  
   
  Ce modèle de contrôle n’est associé aucun événement.  
   
@@ -51,14 +51,14 @@ Exemple d’ancrage de Visual Studio où la fenêtre « Affichage de classes » 
 ## <a name="exceptions"></a>Exceptions  
  Les fournisseurs doivent lever les exceptions suivantes.  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -   When a control is not able to execute the requested dock style.|  
+|<xref:System.InvalidOperationException>|<xref:System.Windows.Automation.Provider.IDockProvider.SetDockPosition%2A><br /><br /> -Lorsqu’un contrôle n’est pas en mesure d’exécuter le style d’ancrage demandé.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble des modèles de contrôle UI Automation](ui-automation-control-patterns-overview.md)
 - [Prendre en charge des modèles de contrôle dans un fournisseur UI Automation](support-control-patterns-in-a-ui-automation-provider.md)
-- [Modèles de contrôle UI Automation pour les clients](ui-automation-control-patterns-for-clients.md)
+- [UI Automation Control Patterns for Clients](ui-automation-control-patterns-for-clients.md)
 - [Présentation de l’arborescence UI Automation](ui-automation-tree-overview.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)

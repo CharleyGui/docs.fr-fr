@@ -38,7 +38,7 @@ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez tél
 
 ## <a name="design-a-simple-wpf-mainwindow"></a>Concevoir une simple fenêtre MainWindow WPF
 
-1. Dans l’éditeur de Visual Studio Code, choisissez l’onglet **MainWindow.xaml**.
+1. Dans l'éditeur de code Visual Studio, choisissez l'onglet **MainWindow.xaml** .
 
 2. Si la fenêtre **Boîte à outils** n’est pas visible, ouvrez le menu **Affichage**, puis choisissez **Boîte à outils**.
 
@@ -62,15 +62,15 @@ Si vous ne souhaitez pas générer les applications vous-même, vous pouvez tél
 
 6. Placez la zone de texte et le bouton de manière à ce qu’ils apparaissent tous les deux dans la fenêtre **MainWindow**.
 
-     Pour plus d'informations sur le concepteur XAML WPF, consultez [Création d'une interface utilisateur à l'aide du concepteur XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
+     Pour plus d’informations sur le concepteur XAML WPF, consultez [Création d’une interface utilisateur à l’aide du concepteur XAML](/visualstudio/xaml-tools/creating-a-ui-by-using-xaml-designer-in-visual-studio).
 
 ## <a name="add-a-reference"></a>Ajouter une référence
 
-1. Dans l'**Explorateur de solutions**, mettez en surbrillance le nom de votre projet.
+1. Dans l’**Explorateur de solutions**, mettez en surbrillance le nom de votre projet.
 
 2. Dans la barre de menus, choisissez **Projet** > **Ajouter une référence**.
 
-     La boîte de dialogue **Gestionnaire de références** s'affiche.
+     La boîte de dialogue **Gestionnaire de références** s’affiche.
 
 3. En haut de la boîte de dialogue, vérifiez que votre projet cible .NET Framework 4.5 ou version ultérieure.
 
@@ -393,7 +393,7 @@ Notez que quelques secondes suffisent pour afficher les nombres. Pendant ce temp
 
     - Les résultats ne se produisent pas tous en même temps, une fois le traitement terminé. Par exemple, les deux programmes contiennent une ligne dans `startButton_Click` qui efface la zone de texte. L’objectif est d’effacer la zone de texte entre les exécutions si vous choisissez le bouton **Démarrer** une deuxième fois, une fois qu’un jeu de résultats est apparu. Dans la version synchrone, la zone de texte s’efface juste avant que les nombres n’apparaissent pour la deuxième fois, quand les téléchargements sont terminés et que le thread d’interface utilisateur est libre d’effectuer autre chose. Dans la version asynchrone, la zone de texte s’efface immédiatement après avoir choisi le bouton **Démarrer**.
 
-    - Plus important encore, le thread d'interface utilisateur n'est pas bloqué pendant les téléchargements. Vous pouvez déplacer ou redimensionner la fenêtre pendant le téléchargement, la comptabilisation et l'affichage des ressources web. Si l'un des sites web est lent ou ne répond ne pas, vous pouvez annuler l'opération en choisissant le bouton **Fermer** (le x dans le champ rouge situé dans le coin supérieur droit).
+    - Plus important encore, le thread d'interface utilisateur n'est pas bloqué pendant les téléchargements. Vous pouvez déplacer ou redimensionner la fenêtre pendant le téléchargement, la comptabilisation et l'affichage des ressources web. Si l’un des sites web est lent ou ne répond pas, vous pouvez annuler l’opération en choisissant le bouton **Fermer** (le x dans le champ rouge situé dans le coin supérieur droit).
 
 ## <a name="replace-method-geturlcontentsasync-with-a-net-framework-method"></a>Remplacer la méthode GetURLContentsAsync par une méthode .NET Framework
 

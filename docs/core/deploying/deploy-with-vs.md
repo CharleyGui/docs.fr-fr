@@ -24,7 +24,7 @@ Les sections suivantes montrent comment utiliser Microsoft Visual Studio pour cr
 - Déploiement autonome
 - Déploiement autonome avec des dépendances tierces
 
-For information on using Visual Studio to develop .NET Core applications, see [.NET Core dependencies and requirements](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Pour plus d’informations sur l’utilisation de Visual Studio pour développer des applications .NET Core, consultez [dépendances et exigences de .net Core](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
 ## <a name="framework-dependent-deployment"></a>Déploiement dépendant du framework
 
@@ -71,7 +71,7 @@ Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dé
 
 1. Utilisez le **Gestionnaire de package NuGet** pour ajouter à votre projet une référence à un package NuGet et installer le package s’il n’est pas disponible sur votre système. Pour ouvrir le Gestionnaire de package, sélectionnez **Outils** > **Gestionnaire de package NuGet** > **Gérer les packages NuGet pour la solution**.
 
-1. Confirm that your third-party dependencies (for example, `Newtonsoft.Json`) are installed on your system and, if they aren't, install them. L’onglet **Installé** répertorie les packages NuGet installés sur votre système. Si `Newtonsoft.Json` n’est pas répertorié, sélectionnez l’onglet **Parcourir** et entrez « Newtonsoft.Json » dans la zone de recherche. Sélectionnez `Newtonsoft.Json` et, dans le volet droit, choisissez votre projet avant de sélectionner **Installer**.
+1. Vérifiez que vos dépendances tierces (par exemple, `Newtonsoft.Json`) sont installées sur votre système et, si elles ne le sont pas, installez-les. L’onglet **Installé** répertorie les packages NuGet installés sur votre système. Si `Newtonsoft.Json` n’est pas répertorié, sélectionnez l’onglet **Parcourir** et entrez « Newtonsoft.Json » dans la zone de recherche. Sélectionnez `Newtonsoft.Json` et, dans le volet droit, choisissez votre projet avant de sélectionner **Installer**.
 
 1. Si `Newtonsoft.Json` est déjà installé sur votre système, ajoutez-le à votre projet en sélectionnant votre projet dans le volet droit de l’onglet **Gérer les packages de la solution**.
 
@@ -87,7 +87,7 @@ L’exécution d’un déploiement autonome sans aucune dépendance tierce impli
 
 1. Ajoutez le code source de l’application.
 
-   Open the *Program.cs* or *Program.vb* file in your editor, and replace the auto-generated code with the following code. Il invite l’utilisateur à entrer du texte et affiche les différents mots entrés. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
+   Ouvrez le fichier *Program.cs* ou *Program. vb* dans votre éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte et affiche les différents mots entrés. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
    [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
    [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
@@ -144,7 +144,7 @@ Pour publier votre application à partir de Visual Studio, effectuez les étapes
 
       1. Sous l’onglet **Publier**, sélectionnez **Publier**. Visual Studio écrit les fichiers qui composent votre application dans le système de fichiers local.
 
-      1. L’onglet **Publier** affiche maintenant un seul profil, **FolderProfile**. The profile's configuration settings are shown in the **Summary** section of the tab. **Target Runtime** identifies which runtime has been published, and **Target Location** identifies where the files for the self-contained deployment were written.
+      1. L’onglet **Publier** affiche maintenant un seul profil, **FolderProfile**. Les paramètres de configuration du profil s’affichent dans la section **Résumé** de l’onglet. le **Runtime cible** identifie le runtime qui a été publié et l' **emplacement cible** identifie l’emplacement d’écriture des fichiers pour le déploiement autonome.
 
       1. Par défaut, Visual Studio écrit tous les fichiers publiés dans un répertoire unique. Pour des raisons pratiques, il est préférable de créer des profils séparés pour chaque runtime cible et de placer les fichiers publiés dans un répertoire spécifique à la plateforme. Vous devez donc créer un profil de publication distinct pour chaque plateforme cible. À présent, effectuez les étapes suivantes pour regénérer l’application pour chaque plateforme :
 
@@ -192,7 +192,7 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
   
 1. Sélectionnez l’emplacement où Visual Studio publie votre application.
 
-   If you're only publishing to a single platform, you can accept the default value in the **Choose a folder** text box; this publishes the framework dependent deployment of your application to the *\<project-directory>\bin\Release\netcoreapp2.1\publish* directory.
+   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant de l’infrastructure de votre application dans le\<répertoire du *projet > Répertoire \bin\Release\netcoreapp2.1\publish* .
 
    Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « linux » au chemin de fichier, Visual Studio publie le déploiement dépendant du framework de votre application sur *\<répertoire-projet>\bin\Release\netcoreapp2.1\publish\linux*.
 
@@ -216,7 +216,7 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
 
 Répétez ces étapes pour définir les plateformes cibles supplémentaires ciblées par votre application.
 
-Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour cela :
+Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour effectuer cette opération :
 
    1. Si la fenêtre **Publier** n’est pas ouverte, cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Publier**.
 
@@ -268,7 +268,7 @@ L’exécution d’un déploiement autonome avec une ou plusieurs dépendances t
 
 1. Utilisez le **Gestionnaire de package NuGet** pour ajouter à votre projet une référence à un package NuGet et installer le package s’il n’est pas disponible sur votre système. Pour ouvrir le Gestionnaire de package, sélectionnez **Outils** > **Gestionnaire de package NuGet** > **Gérer les packages NuGet pour la solution**.
 
-1. Confirm that your third-party dependencies (for example, `Newtonsoft.Json`) are installed on your system and, if they aren't, install them. L’onglet **Installé** répertorie les packages NuGet installés sur votre système. Si `Newtonsoft.Json` n’est pas répertorié, sélectionnez l’onglet **Parcourir** et entrez « Newtonsoft.Json » dans la zone de recherche. Sélectionnez `Newtonsoft.Json` et, dans le volet droit, choisissez votre projet avant de sélectionner **Installer**.
+1. Vérifiez que vos dépendances tierces (par exemple, `Newtonsoft.Json`) sont installées sur votre système et, si elles ne le sont pas, installez-les. L’onglet **Installé** répertorie les packages NuGet installés sur votre système. Si `Newtonsoft.Json` n’est pas répertorié, sélectionnez l’onglet **Parcourir** et entrez « Newtonsoft.Json » dans la zone de recherche. Sélectionnez `Newtonsoft.Json` et, dans le volet droit, choisissez votre projet avant de sélectionner **Installer**.
 
 1. Si `Newtonsoft.Json` est déjà installé sur votre système, ajoutez-le à votre projet en sélectionnant votre projet dans le volet droit de l’onglet **Gérer les packages de la solution**.
 

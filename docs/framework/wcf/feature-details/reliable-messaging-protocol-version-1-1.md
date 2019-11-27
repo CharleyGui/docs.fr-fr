@@ -352,11 +352,11 @@ WCF fournit une protection pour les séquences WS-ReliableMessaging en utilisant
 
 - R2301 : pour protéger l’intégrité d’une séquence WS-ReliableMessaging en plus de l’intégrité et de la confidentialité des messages individuels, WCF requiert l’utilisation de la conversation WS-Secure.
 
-- R2302 : AWS-une session de conversation sécurisée doit être établie avant d’établir une ou plusieurs séquences WS-ReliableMessaging.
+- R2302 :unesession WS-Secure Conversation doit être établie avant l'établissement de la ou des séquences WS-ReliableMessaging.
 
 - R2303 : si la durée de vie de la séquence WS-ReliableMessaging dépasse celle de la session WS-Secure Conversation, le `SecurityContextToken` établi à l’aide de WS-Secure Conversation doit être renouvelé par le biais de la liaison de renouvellement WS-Secure Conversation correspondante.
 
-- B2304 : la séquence WS-ReliableMessaging ou une paire de séquences réciproques corrélées est toujours liée à une session WS-SecureConversation unique.
+- B2304 :la séquence WS-ReliableMessaging ou une paire de séquences réciproques corrélées est toujours liée à une session WS-SecureConversation unique.
 
 - R2305 : lorsqu’il est composé avec WS-Secure conversation, le répondeur WCF exige que le `CreateSequence` message contienne l’élément `wsse:SecurityTokenReference` et l’en-tête `wsrm:UsesSequenceSTR`.
 

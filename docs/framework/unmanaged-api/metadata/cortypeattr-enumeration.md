@@ -77,44 +77,44 @@ typedef enum CorTypeAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`tdVisibilityMask`|Used for type visibility information.|  
-|`tdNotPublic`|Specifies that the type is not in public scope.|  
-|`tdPublic`|Specifies that the type is in public scope.|  
-|`tdNestedPublic`|Specifies that the type is nested with public visibility.|  
-|`tdNestedPrivate`|Specifies that the type is nested with private visibility.|  
-|`tdNestedFamily`|Specifies that the type is nested with family visibility.|  
-|`tdNestedAssembly`|Specifies that the type is nested with assembly visibility.|  
-|`tdNestedFamANDAssem`|Specifies that the type is nested with family and assembly visibility.|  
-|`tdNestedFamORAssem`|Specifies that the type is nested with family or assembly visibility.|  
-|`tdLayoutMask`|Gets layout information for the type.|  
-|`tdAutoLayout`|Specifies that the fields of this type are laid out automatically.|  
-|`tdSequentialLayout`|Specifies that the fields of this type are laid out sequentially.|  
-|`tdExplicitLayout`|Specifies that field layout is supplied explicitly.|  
-|`tdClassSemanticsMask`|Gets semantic information about the type.|  
+|`tdVisibilityMask`|Utilisé pour les informations de visibilité du type.|  
+|`tdNotPublic`|Spécifie que le type n’est pas dans la portée publique.|  
+|`tdPublic`|Spécifie que le type est dans une portée publique.|  
+|`tdNestedPublic`|Spécifie que le type est imbriqué avec une visibilité publique.|  
+|`tdNestedPrivate`|Spécifie que le type est imbriqué avec une visibilité privée.|  
+|`tdNestedFamily`|Spécifie que le type est imbriqué avec la visibilité de la famille.|  
+|`tdNestedAssembly`|Spécifie que le type est imbriqué avec la visibilité de l’assembly.|  
+|`tdNestedFamANDAssem`|Spécifie que le type est imbriqué avec la visibilité de la famille et de l’assembly.|  
+|`tdNestedFamORAssem`|Spécifie que le type est imbriqué avec une visibilité Family ou assembly.|  
+|`tdLayoutMask`|Obtient des informations de disposition pour le type.|  
+|`tdAutoLayout`|Spécifie que les champs de ce type sont disposés automatiquement.|  
+|`tdSequentialLayout`|Spécifie que les champs de ce type sont disposés de manière séquentielle.|  
+|`tdExplicitLayout`|Spécifie que la disposition des champs est fournie explicitement.|  
+|`tdClassSemanticsMask`|Obtient des informations sémantiques sur le type.|  
 |`tdClass`|Spécifie que le type est une classe.|  
 |`tdInterface`|Spécifie que le type est une interface.|  
 |`tdAbstract`|Spécifie que le type est abstrait.|  
-|`tdSealed`|Specifies that the type cannot be extended.|  
-|`tdSpecialName`|Specifies that the class name is special. Its name describes how.|  
-|`tdImport`|Specifies that the type is imported.|  
-|`tdSerializable`|Specifies that the type is serializable.|  
-|`tdWindowsRuntime`|Specifies that this type is a Windows Runtime type.|  
-|`tdStringFormatMask`|Gets information about how strings are encoded and formatted.|  
-|`tdAnsiClass`|Specifies that this type interprets an LPTSTR as ANSI.|  
-|`tdUnicodeClass`|Specifies that this type interprets an LPTSTR as Unicode.|  
-|`tdAutoClass`|Specifies that this type interprets an LPTSTR automatically.|  
-|`tdCustomFormatClass`|Specifies that the type has a non-standard encoding, as specified by `CustomFormatMask`.|  
-|`tdCustomFormatMask`|Use this mask to get non-standard encoding information for native interop. The meaning of the values of these two bits is unspecified.|  
-|`tdBeforeFieldInit`|Specifies that the type must be initialized before the first attempt to access a static field.|  
-|`tdForwarder`|Specifies that the type is exported, and a type forwarder.|  
-|`tdReservedMask`|This flag and the flags below are used internally by the common language runtime.|  
-|`tdRTSpecialName`|Specifies that the common language runtime should check the name encoding.|  
-|`tdHasSecurity`|Specifies that the type has security associated with it.|  
+|`tdSealed`|Spécifie que le type ne peut pas être étendu.|  
+|`tdSpecialName`|Spécifie que le nom de la classe est spécial. Son nom décrit comment.|  
+|`tdImport`|Spécifie que le type est importé.|  
+|`tdSerializable`|Spécifie que le type est sérialisable.|  
+|`tdWindowsRuntime`|Spécifie que ce type est un type de Windows Runtime.|  
+|`tdStringFormatMask`|Obtient des informations sur la façon dont les chaînes sont encodées et mises en forme.|  
+|`tdAnsiClass`|Spécifie que ce type interprète un LPTSTR comme ANSI.|  
+|`tdUnicodeClass`|Spécifie que ce type interprète un LPTSTR comme Unicode.|  
+|`tdAutoClass`|Spécifie que ce type interprète un LPTSTR automatiquement.|  
+|`tdCustomFormatClass`|Spécifie que le type a un encodage non standard, comme spécifié par `CustomFormatMask`.|  
+|`tdCustomFormatMask`|Utilisez ce masque pour obtenir des informations d’encodage non standard pour une interopérabilité native. La signification des valeurs de ces deux bits n’est pas spécifiée.|  
+|`tdBeforeFieldInit`|Spécifie que le type doit être initialisé avant la première tentative d’accès à un champ statique.|  
+|`tdForwarder`|Spécifie que le type est exporté et un redirecteur de type.|  
+|`tdReservedMask`|Cet indicateur et les indicateurs ci-dessous sont utilisés en interne par le common language runtime.|  
+|`tdRTSpecialName`|Spécifie que le common language runtime doit vérifier l’encodage du nom.|  
+|`tdHasSecurity`|Spécifie que la sécurité est associée au type.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

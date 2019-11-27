@@ -34,15 +34,15 @@ typedef struct _COR_PRF_FUNCTION {    FunctionID functionId;    ReJITID    reJit
   
 |Membre|Description|  
 |------------|-----------------|  
-|`functionId`|The ID of the function.|  
-|`reJitId`|The ID of the recompiled function. A value of 0 (zero) represents the original version of the function.|  
+|`functionId`|ID de la fonction.|  
+|`reJitId`|ID de la fonction recompilée. La valeur 0 (zéro) représente la version d’origine de la fonction.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorProf.idl  
+ **En-tête :** CorProf. idl  
   
  **Bibliothèque :** CorGuids.lib  
   

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74430717"
 ---
 # <a name="icorprofilercallbackremotingserversendingreply-method"></a>ICorProfilerCallback::RemotingServerSendingReply, méthode
-Notifies the profiler that the process has finished processing a remote method invocation request and is about to transmit the reply through a channel.  
+Indique au profileur que le processus a terminé le traitement d’une demande d’appel de méthode distante et qu’il est sur le paragraphe de transmettre la réponse via un canal.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,20 +35,20 @@ HRESULT RemotingServerSendingReply(
   
 ## <a name="parameters"></a>Paramètres  
  `pCookie`  
- [in] A pointer to a GUID that will correspond with the value provided in [ICorProfilerCallback::RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) under these conditions:  
+ dans Pointeur vers un GUID qui correspond à la valeur fournie dans [ICorProfilerCallback :: RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) dans les conditions suivantes :  
   
-- Remoting GUID cookies are active.  
+- Les cookies du GUID de communication à distance sont actifs.  
   
-- The channel succeeds in transmitting the message.  
+- Le canal parvient à transmettre le message.  
   
-- GUID cookies are active on the client-side process.  
+- Les cookies GUID sont actifs sur le processus côté client.  
   
- This allows easy pairing of remoting calls and the creation of a logical call stack.  
+ Cela permet d’associer facilement les appels de communication à distance et la création d’une pile des appels logiques.  
   
  `fIsAsync`  
- [in] A value that is `true` if the call is asynchronous; otherwise, `false`.  
+ dans Valeur `true` si l’appel est asynchrone ; Sinon, `false`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

@@ -77,7 +77,7 @@ Cette section liste les tâches associées à la création, la suppression, le d
  [Guide pratique : analyser des chemins d’accès](../../../../visual-basic/developing-apps/programming/drives-directories-files/how-to-parse-file-paths.md)  
  Montre comment utiliser les méthodes `My` pour combiner des chemins d’accès aux fichiers.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.FileIO.FileSystem>  
  Décrit l’objet `My.Computer.FileSystem` et ses membres.  
@@ -118,7 +118,7 @@ Cette section liste les tâches associées à la création, la suppression, le d
  <xref:Microsoft.VisualBasic.FileIO.SpecialDirectories>  
  Décrit l’objet `SpecialDirectories`.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Lecture à partir de fichiers](../../../../visual-basic/developing-apps/programming/drives-directories-files/reading-from-files.md)  
  Liste les tâches associées à la lecture de fichiers.  

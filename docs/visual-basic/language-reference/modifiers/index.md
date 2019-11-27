@@ -51,7 +51,7 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [Out](../../../visual-basic/language-reference/modifiers/out-generic-modifier.md)  
   
- [Surcharges](../../../visual-basic/language-reference/modifiers/overloads.md)  
+ [Overloads](../../../visual-basic/language-reference/modifiers/overloads.md)  
   
  [Overridable](../../../visual-basic/language-reference/modifiers/overridable.md)  
   
@@ -87,7 +87,7 @@ Les rubriques de cette section documentent les modificateurs du runtime Visual B
   
  [WriteOnly](../../../visual-basic/language-reference/modifiers/writeonly.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

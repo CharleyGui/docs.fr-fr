@@ -17,7 +17,7 @@ ms.locfileid: "74428536"
 
 Le tableau suivant présente les valeurs par défaut des types C# :
 
-|Tapez|Valeur par défaut|
+|Type|Valeur par défaut|
 |---------|------------------|
 |tout type référence ;|`null`|
 |Tout [type numérique intégral intégré](../builtin-types/integral-numeric-types.md)|0 (zéro)|
@@ -26,7 +26,7 @@ Le tableau suivant présente les valeurs par défaut des types C# :
 |[char](../builtin-types/char.md)|`'\0'` (U+0000)|
 |[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
-|Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. That default value is also known as the *null* value of a nullable value type.|
+|Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *null* d’un type valeur Nullable.|
 
 Utilisez l’[opérateur par défaut](../operators/default.md) pour produire la valeur par défaut d’un type, comme illustré dans l’exemple suivant :
 

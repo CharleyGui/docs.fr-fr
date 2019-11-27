@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74341598"
 ---
-# <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>How to: Create Hierarchy Using Grouping (Visual Basic)
+# <a name="how-to-create-hierarchy-using-grouping-visual-basic"></a>Procédure : créer une hiérarchie à l’aide d’un regroupement (Visual Basic)
 Cet exemple montre comment grouper des données, puis générer du code XML basé sur le regroupement.  
   
 ## <a name="example"></a>Exemple  
@@ -81,4 +81,4 @@ Console.WriteLine(newData)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Advanced Query Techniques (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
+- [Techniques de requêtes avancées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/advanced-query-techniques-linq-to-xml.md)
