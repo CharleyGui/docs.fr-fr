@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74432279"
 ---
-# <a name="cor_prf_misc-enumeration"></a><span data-ttu-id="0d8b5-102">COR_PRF_MISC, énumération</span><span class="sxs-lookup"><span data-stu-id="0d8b5-102">COR_PRF_MISC Enumeration</span></span>
-<span data-ttu-id="0d8b5-103">Contient des valeurs de constante qui spécifient des identificateurs spéciaux.</span><span class="sxs-lookup"><span data-stu-id="0d8b5-103">Contains constant values that specify special identifiers.</span></span>  
+# <a name="cor_prf_misc-enumeration"></a><span data-ttu-id="7a339-102">COR_PRF_MISC, énumération</span><span class="sxs-lookup"><span data-stu-id="7a339-102">COR_PRF_MISC Enumeration</span></span>
+<span data-ttu-id="7a339-103">Contient des valeurs de constante qui spécifient des identificateurs spéciaux.</span><span class="sxs-lookup"><span data-stu-id="7a339-103">Contains constant values that specify special identifiers.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0d8b5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0d8b5-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7a339-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7a339-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum {  
@@ -34,23 +34,23 @@ typedef enum {
 } COR_PRF_MISC;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="0d8b5-105">Membres</span><span class="sxs-lookup"><span data-stu-id="0d8b5-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="7a339-105">Membres</span><span class="sxs-lookup"><span data-stu-id="7a339-105">Members</span></span>  
   
-|<span data-ttu-id="0d8b5-106">Membre</span><span class="sxs-lookup"><span data-stu-id="0d8b5-106">Member</span></span>|<span data-ttu-id="0d8b5-107">Description</span><span class="sxs-lookup"><span data-stu-id="0d8b5-107">Description</span></span>|  
+|<span data-ttu-id="7a339-106">Membre</span><span class="sxs-lookup"><span data-stu-id="7a339-106">Member</span></span>|<span data-ttu-id="7a339-107">Description</span><span class="sxs-lookup"><span data-stu-id="7a339-107">Description</span></span>|  
 |------------|-----------------|  
-|`PROFILER_PARENT_UNKNOWN`|<span data-ttu-id="0d8b5-108">The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.</span><span class="sxs-lookup"><span data-stu-id="0d8b5-108">The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.</span></span>|  
-|`PROFILER_GLOBAL_CLASS`|<span data-ttu-id="0d8b5-109">The default class identifier for global constants that do not belong to a class.</span><span class="sxs-lookup"><span data-stu-id="0d8b5-109">The default class identifier for global constants that do not belong to a class.</span></span>|  
-|`PROFILER_GLOBAL_MODULE`|<span data-ttu-id="0d8b5-110">The default module identifier for global objects that do not belong to a module.</span><span class="sxs-lookup"><span data-stu-id="0d8b5-110">The default module identifier for global objects that do not belong to a module.</span></span>|  
+|`PROFILER_PARENT_UNKNOWN`|<span data-ttu-id="7a339-108">Identificateur par défaut utilisé par [ICorProfilerInfo :: GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) pour un module qui n’a pas encore été attaché à un assembly.</span><span class="sxs-lookup"><span data-stu-id="7a339-108">The default identifier used by [ICorProfilerInfo::GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) for a module that has not yet been attached to an assembly.</span></span>|  
+|`PROFILER_GLOBAL_CLASS`|<span data-ttu-id="7a339-109">Identificateur de classe par défaut pour les constantes globales qui n’appartiennent pas à une classe.</span><span class="sxs-lookup"><span data-stu-id="7a339-109">The default class identifier for global constants that do not belong to a class.</span></span>|  
+|`PROFILER_GLOBAL_MODULE`|<span data-ttu-id="7a339-110">Identificateur de module par défaut pour les objets globaux qui n’appartiennent pas à un module.</span><span class="sxs-lookup"><span data-stu-id="7a339-110">The default module identifier for global objects that do not belong to a module.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="0d8b5-111">spécifications</span><span class="sxs-lookup"><span data-stu-id="0d8b5-111">Requirements</span></span>  
- <span data-ttu-id="0d8b5-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="0d8b5-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7a339-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="7a339-111">Requirements</span></span>  
+ <span data-ttu-id="7a339-112">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="7a339-112">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="0d8b5-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="0d8b5-113">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="7a339-113">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="7a339-113">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="0d8b5-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="0d8b5-114">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="7a339-114">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="7a339-114">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="0d8b5-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="0d8b5-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="7a339-115">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="7a339-115">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0d8b5-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0d8b5-116">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7a339-116">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7a339-116">See also</span></span>
 
-- [<span data-ttu-id="0d8b5-117">Énumérations de profilage</span><span class="sxs-lookup"><span data-stu-id="0d8b5-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [<span data-ttu-id="7a339-117">Énumérations de profilage</span><span class="sxs-lookup"><span data-stu-id="7a339-117">Profiling Enumerations</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)

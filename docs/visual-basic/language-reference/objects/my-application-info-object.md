@@ -12,22 +12,22 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344147"
 ---
-# <a name="myapplicationinfo-object"></a><span data-ttu-id="d2e11-102">My.Application.Info, objet</span><span class="sxs-lookup"><span data-stu-id="d2e11-102">My.Application.Info Object</span></span>
-<span data-ttu-id="d2e11-103">Provides properties for getting the information about the application, such as the version number, description, loaded assemblies, and so on.</span><span class="sxs-lookup"><span data-stu-id="d2e11-103">Provides properties for getting the information about the application, such as the version number, description, loaded assemblies, and so on.</span></span>  
+# <a name="myapplicationinfo-object"></a><span data-ttu-id="37e66-102">My.Application.Info, objet</span><span class="sxs-lookup"><span data-stu-id="37e66-102">My.Application.Info Object</span></span>
+<span data-ttu-id="37e66-103">Fournit des propriétés pour obtenir des informations sur l’application, telles que le numéro de version, la description, les assemblys chargés, etc.</span><span class="sxs-lookup"><span data-stu-id="37e66-103">Provides properties for getting the information about the application, such as the version number, description, loaded assemblies, and so on.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="d2e11-104">Notes</span><span class="sxs-lookup"><span data-stu-id="d2e11-104">Remarks</span></span>  
- <span data-ttu-id="d2e11-105">Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Application.Info` , consultez <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.</span><span class="sxs-lookup"><span data-stu-id="d2e11-105">For information about the methods and properties of the `My.Application.Info` object, see <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="37e66-104">Notes</span><span class="sxs-lookup"><span data-stu-id="37e66-104">Remarks</span></span>  
+ <span data-ttu-id="37e66-105">Pour plus d’informations sur les méthodes et les propriétés de l’objet `My.Application.Info` , consultez <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.</span><span class="sxs-lookup"><span data-stu-id="37e66-105">For information about the methods and properties of the `My.Application.Info` object, see <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo>.</span></span>  
   
 > [!NOTE]
-> <span data-ttu-id="d2e11-106">You can use properties of the <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> class to obtain information about a file on disk.</span><span class="sxs-lookup"><span data-stu-id="d2e11-106">You can use properties of the <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> class to obtain information about a file on disk.</span></span>  
+> <span data-ttu-id="37e66-106">Vous pouvez utiliser les propriétés de la classe <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> pour obtenir des informations sur un fichier sur le disque.</span><span class="sxs-lookup"><span data-stu-id="37e66-106">You can use properties of the <xref:System.Diagnostics.FileVersionInfo?displayProperty=nameWithType> class to obtain information about a file on disk.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="d2e11-107">spécifications</span><span class="sxs-lookup"><span data-stu-id="d2e11-107">Requirements</span></span>  
- <span data-ttu-id="d2e11-108">**Espace de noms :** <xref:Microsoft.VisualBasic.ApplicationServices></span><span class="sxs-lookup"><span data-stu-id="d2e11-108">**Namespace:** <xref:Microsoft.VisualBasic.ApplicationServices></span></span>  
+## <a name="requirements"></a><span data-ttu-id="37e66-107">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="37e66-107">Requirements</span></span>  
+ <span data-ttu-id="37e66-108">**Espace de noms :** <xref:Microsoft.VisualBasic.ApplicationServices></span><span class="sxs-lookup"><span data-stu-id="37e66-108">**Namespace:** <xref:Microsoft.VisualBasic.ApplicationServices></span></span>  
   
- <span data-ttu-id="d2e11-109">**Classe :** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo></span><span class="sxs-lookup"><span data-stu-id="d2e11-109">**Class:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo></span></span>  
+ <span data-ttu-id="37e66-109">**Classe :** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo></span><span class="sxs-lookup"><span data-stu-id="37e66-109">**Class:** <xref:Microsoft.VisualBasic.ApplicationServices.AssemblyInfo></span></span>  
   
- <span data-ttu-id="d2e11-110">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span><span class="sxs-lookup"><span data-stu-id="d2e11-110">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
+ <span data-ttu-id="37e66-110">**Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)</span><span class="sxs-lookup"><span data-stu-id="37e66-110">**Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d2e11-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d2e11-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="37e66-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="37e66-111">See also</span></span>
 
-- [<span data-ttu-id="d2e11-112">My.Application (objet)</span><span class="sxs-lookup"><span data-stu-id="d2e11-112">My.Application Object</span></span>](../../../visual-basic/language-reference/objects/my-application-object.md)
+- [<span data-ttu-id="37e66-112">My.Application (objet)</span><span class="sxs-lookup"><span data-stu-id="37e66-112">My.Application Object</span></span>](../../../visual-basic/language-reference/objects/my-application-object.md)

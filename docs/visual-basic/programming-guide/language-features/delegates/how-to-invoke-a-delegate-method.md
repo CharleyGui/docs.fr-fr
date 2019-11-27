@@ -9,19 +9,19 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74345262"
 ---
-# <a name="how-to-invoke-a-delegate-method-visual-basic"></a><span data-ttu-id="c7677-102">Comment : appeler une méthode déléguée (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c7677-102">How to: Invoke a Delegate Method (Visual Basic)</span></span>
+# <a name="how-to-invoke-a-delegate-method-visual-basic"></a><span data-ttu-id="17ca2-102">Comment : appeler une méthode déléguée (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="17ca2-102">How to: Invoke a Delegate Method (Visual Basic)</span></span>
 
-<span data-ttu-id="c7677-103">This example shows how to associate a method with a delegate and then invoke that method through the delegate.</span><span class="sxs-lookup"><span data-stu-id="c7677-103">This example shows how to associate a method with a delegate and then invoke that method through the delegate.</span></span>
+<span data-ttu-id="17ca2-103">Cet exemple montre comment associer une méthode à un délégué, puis comment appeler cette méthode via le délégué.</span><span class="sxs-lookup"><span data-stu-id="17ca2-103">This example shows how to associate a method with a delegate and then invoke that method through the delegate.</span></span>
 
-### <a name="create-the-delegate-and-matching-procedures"></a><span data-ttu-id="c7677-104">Create the delegate and matching procedures</span><span class="sxs-lookup"><span data-stu-id="c7677-104">Create the delegate and matching procedures</span></span>
+### <a name="create-the-delegate-and-matching-procedures"></a><span data-ttu-id="17ca2-104">Créer le délégué et les procédures de correspondance</span><span class="sxs-lookup"><span data-stu-id="17ca2-104">Create the delegate and matching procedures</span></span>
 
-1. <span data-ttu-id="c7677-105">Create a delegate named `MySubDelegate`.</span><span class="sxs-lookup"><span data-stu-id="c7677-105">Create a delegate named `MySubDelegate`.</span></span>
+1. <span data-ttu-id="17ca2-105">Créez un délégué nommé `MySubDelegate`.</span><span class="sxs-lookup"><span data-stu-id="17ca2-105">Create a delegate named `MySubDelegate`.</span></span>
 
     ```vb
     Delegate Sub MySubDelegate(ByVal x As Integer)
     ```
 
-2. <span data-ttu-id="c7677-106">Declare a class that contains a method with the same signature as the delegate.</span><span class="sxs-lookup"><span data-stu-id="c7677-106">Declare a class that contains a method with the same signature as the delegate.</span></span>
+2. <span data-ttu-id="17ca2-106">Déclarez une classe qui contient une méthode avec la même signature que le délégué.</span><span class="sxs-lookup"><span data-stu-id="17ca2-106">Declare a class that contains a method with the same signature as the delegate.</span></span>
 
     ```vb
     Class class1
@@ -31,7 +31,7 @@ ms.locfileid: "74345262"
     End Class
     ```
 
-3. <span data-ttu-id="c7677-107">Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.</span><span class="sxs-lookup"><span data-stu-id="c7677-107">Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.</span></span>
+3. <span data-ttu-id="17ca2-107">Définissez une méthode qui crée une instance du délégué et appelle la méthode associée au délégué en appelant la méthode `Invoke` intégrée.</span><span class="sxs-lookup"><span data-stu-id="17ca2-107">Define a method that creates an instance of the delegate and invokes the method associated with the delegate by calling the built-in `Invoke` method.</span></span>
 
     ```vb
     Protected Sub DelegateTest()
@@ -43,9 +43,9 @@ ms.locfileid: "74345262"
     End Sub
     ```
 
-## <a name="see-also"></a><span data-ttu-id="c7677-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c7677-108">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="17ca2-108">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="17ca2-108">See also</span></span>
 
-- [<span data-ttu-id="c7677-109">Delegate (instruction)</span><span class="sxs-lookup"><span data-stu-id="c7677-109">Delegate Statement</span></span>](../../../../visual-basic/language-reference/statements/delegate-statement.md)
-- [<span data-ttu-id="c7677-110">Délégués</span><span class="sxs-lookup"><span data-stu-id="c7677-110">Delegates</span></span>](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
-- [<span data-ttu-id="c7677-111">Événements</span><span class="sxs-lookup"><span data-stu-id="c7677-111">Events</span></span>](../../../../visual-basic/programming-guide/language-features/events/index.md)
-- [<span data-ttu-id="c7677-112">Applications multithread</span><span class="sxs-lookup"><span data-stu-id="c7677-112">Multithreaded Applications</span></span>](../../../../standard/threading/using-threads-and-threading.md)
+- [<span data-ttu-id="17ca2-109">Delegate (instruction)</span><span class="sxs-lookup"><span data-stu-id="17ca2-109">Delegate Statement</span></span>](../../../../visual-basic/language-reference/statements/delegate-statement.md)
+- [<span data-ttu-id="17ca2-110">Délégués</span><span class="sxs-lookup"><span data-stu-id="17ca2-110">Delegates</span></span>](../../../../visual-basic/programming-guide/language-features/delegates/index.md)
+- [<span data-ttu-id="17ca2-111">Événements</span><span class="sxs-lookup"><span data-stu-id="17ca2-111">Events</span></span>](../../../../visual-basic/programming-guide/language-features/events/index.md)
+- [<span data-ttu-id="17ca2-112">Applications multithread</span><span class="sxs-lookup"><span data-stu-id="17ca2-112">Multithreaded Applications</span></span>](../../../../standard/threading/using-threads-and-threading.md)
