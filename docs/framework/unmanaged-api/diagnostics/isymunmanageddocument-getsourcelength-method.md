@@ -22,23 +22,23 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449149"
 ---
-# <a name="isymunmanageddocumentgetsourcelength-method"></a><span data-ttu-id="b3f70-102">ISymUnmanagedDocument::GetSourceLength, méthode</span><span class="sxs-lookup"><span data-stu-id="b3f70-102">ISymUnmanagedDocument::GetSourceLength Method</span></span>
-<span data-ttu-id="b3f70-103">Obtient la longueur, en octets, de la source incorporée.</span><span class="sxs-lookup"><span data-stu-id="b3f70-103">Gets the length, in bytes, of the embedded source.</span></span>  
+# <a name="isymunmanageddocumentgetsourcelength-method"></a><span data-ttu-id="93dc6-102">ISymUnmanagedDocument::GetSourceLength, méthode</span><span class="sxs-lookup"><span data-stu-id="93dc6-102">ISymUnmanagedDocument::GetSourceLength Method</span></span>
+<span data-ttu-id="93dc6-103">Obtient la longueur, en octets, de la source incorporée.</span><span class="sxs-lookup"><span data-stu-id="93dc6-103">Gets the length, in bytes, of the embedded source.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="b3f70-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b3f70-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="93dc6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="93dc6-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetSourceLength(  
     [out, retval]  ULONG32*  pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="b3f70-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="b3f70-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="93dc6-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="93dc6-105">Parameters</span></span>  
  `pRetVal`  
- <span data-ttu-id="b3f70-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span><span class="sxs-lookup"><span data-stu-id="b3f70-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span></span>  
+ <span data-ttu-id="93dc6-106">à Pointeur vers une variable qui indique la longueur, en octets, de la source incorporée.</span><span class="sxs-lookup"><span data-stu-id="93dc6-106">[out] A pointer to a variable that indicates the length, in bytes, of the embedded source.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="b3f70-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="b3f70-107">Return Value</span></span>  
- <span data-ttu-id="b3f70-108">S_OK if the method succeeds.</span><span class="sxs-lookup"><span data-stu-id="b3f70-108">S_OK if the method succeeds.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="93dc6-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="93dc6-107">Return Value</span></span>  
+ <span data-ttu-id="93dc6-108">S_OK si la méthode est réussie.</span><span class="sxs-lookup"><span data-stu-id="93dc6-108">S_OK if the method succeeds.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="b3f70-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b3f70-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="93dc6-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="93dc6-109">See also</span></span>
 
-- [<span data-ttu-id="b3f70-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="b3f70-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)
+- [<span data-ttu-id="93dc6-110">ISymUnmanagedDocument, interface</span><span class="sxs-lookup"><span data-stu-id="93dc6-110">ISymUnmanagedDocument Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanageddocument-interface.md)

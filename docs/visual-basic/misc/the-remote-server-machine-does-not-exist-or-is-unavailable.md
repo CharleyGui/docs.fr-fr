@@ -1,5 +1,5 @@
 ---
-title: The remote server machine does not exist or is unavailable
+title: L’ordinateur serveur distant n’existe pas ou n’est pas disponible
 ms.date: 07/20/2015
 f1_keywords:
 - vbrID462
@@ -11,13 +11,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348181"
 ---
-# <a name="the-remote-server-machine-does-not-exist-or-is-unavailable-visual-basic"></a><span data-ttu-id="f3ef7-102">Le serveur distant n’existe pas ou n’est pas disponible (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="f3ef7-102">The remote server machine does not exist or is unavailable (Visual Basic)</span></span>
-<span data-ttu-id="f3ef7-103">Vous essayez de vous connecter à un serveur distant qui n’est pas disponible ou qui n’existe pas.</span><span class="sxs-lookup"><span data-stu-id="f3ef7-103">You are trying to connect to a remote server that is unavailable or does not exist.</span></span> <span data-ttu-id="f3ef7-104">Cette erreur peut être due à l’interruption de votre connexion réseau.</span><span class="sxs-lookup"><span data-stu-id="f3ef7-104">This error may be caused by your network connection being lost.</span></span>  
+# <a name="the-remote-server-machine-does-not-exist-or-is-unavailable-visual-basic"></a><span data-ttu-id="93eff-102">Le serveur distant n’existe pas ou n’est pas disponible (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="93eff-102">The remote server machine does not exist or is unavailable (Visual Basic)</span></span>
+<span data-ttu-id="93eff-103">Vous essayez de vous connecter à un serveur distant qui n’est pas disponible ou qui n’existe pas.</span><span class="sxs-lookup"><span data-stu-id="93eff-103">You are trying to connect to a remote server that is unavailable or does not exist.</span></span> <span data-ttu-id="93eff-104">Cette erreur peut être due à l’interruption de votre connexion réseau.</span><span class="sxs-lookup"><span data-stu-id="93eff-104">This error may be caused by your network connection being lost.</span></span>  
   
-## <a name="to-correct-this-error"></a><span data-ttu-id="f3ef7-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="f3ef7-105">To correct this error</span></span>  
+## <a name="to-correct-this-error"></a><span data-ttu-id="93eff-105">Pour corriger cette erreur</span><span class="sxs-lookup"><span data-stu-id="93eff-105">To correct this error</span></span>  
   
-- <span data-ttu-id="f3ef7-106">Reconnectez-vous au réseau et réessayez.</span><span class="sxs-lookup"><span data-stu-id="f3ef7-106">Reconnect to the network and try again.</span></span>  
+- <span data-ttu-id="93eff-106">Reconnectez-vous au réseau et réessayez.</span><span class="sxs-lookup"><span data-stu-id="93eff-106">Reconnect to the network and try again.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="f3ef7-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f3ef7-107">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="93eff-107">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="93eff-107">See also</span></span>
 
-- [<span data-ttu-id="f3ef7-108">Types d’erreurs</span><span class="sxs-lookup"><span data-stu-id="f3ef7-108">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)
+- [<span data-ttu-id="93eff-108">Types d’erreurs</span><span class="sxs-lookup"><span data-stu-id="93eff-108">Error Types</span></span>](../../visual-basic/programming-guide/language-features/error-types.md)
