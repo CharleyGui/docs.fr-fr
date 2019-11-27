@@ -16,7 +16,7 @@ ms.locfileid: "74428542"
 ---
 # <a name="built-in-types-table-c-reference"></a>Tableau des types intégrés (référence C#)
 
-The following table shows the keywords for built-in C# types, which are aliases of predefined types in the <xref:System> namespace:
+Le tableau suivant présente les mots clés des C# types intégrés, qui sont des alias de types prédéfinis dans l’espace de noms <xref:System> :
 
 |Type C#|Type .NET|  
 |--------------|-------------------------|  
@@ -63,7 +63,7 @@ Console.WriteLine(doubleType.FullName);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Types valeur](value-types.md)

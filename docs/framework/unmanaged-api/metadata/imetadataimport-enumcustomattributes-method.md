@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440238"
 ---
 # <a name="imetadataimportenumcustomattributes-method"></a>IMetaDataImport::EnumCustomAttributes, méthode
-Enumerates custom attribute-definition tokens associated with the specified type or member.  
+Énumère les jetons de définition d’attribut personnalisés associés au type ou au membre spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,36 +40,36 @@ HRESULT EnumCustomAttributes (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the returned enumerator.  
+ [in, out] Pointeur vers l’énumérateur retourné.  
   
  `tk`  
- [in] A token for the scope of the enumeration, or zero for all custom attributes.  
+ dans Jeton pour la portée de l’énumération, ou zéro pour tous les attributs personnalisés.  
   
  `tkType`  
- [in] A token for the constructor of the type of the attributes to be enumerated, or `null` for all types.  
+ dans Jeton pour le constructeur du type des attributs à énumérer, ou `null` pour tous les types.  
   
  `rCustomAttributes`  
- [out] An array of custom attribute tokens.  
+ à Tableau de jetons d’attributs personnalisés.  
   
  `cMax`  
  [in] Taille maximale du tableau `rCustomAttributes`.  
   
  `pcCustomAttributes`  
- [out, optional] The actual number of token values returned in `rCustomAttributes`.  
+ [out, optional] Nombre réel de valeurs de jeton retournées dans `rCustomAttributes`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumCustomAttributes` returned successfully.|  
-|`S_FALSE`|There are no custom attributes to enumerate. In that case, `pcCustomAttributes` is zero.|  
+|`S_OK`|`EnumCustomAttributes` retourné avec succès.|  
+|`S_FALSE`|Il n’existe aucun attribut personnalisé à énumérer. Dans ce cas, `pcCustomAttributes` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

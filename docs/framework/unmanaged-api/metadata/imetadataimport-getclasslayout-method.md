@@ -40,29 +40,29 @@ HRESULT GetClassLayout  (
   
 ## <a name="parameters"></a>Paramètres  
  `td`  
- [in] The TypeDef token for the class with the layout to return.  
+ dans Jeton TypeDef pour la classe avec la disposition à retourner.  
   
  `pdwPackSize`  
- [out] One of the values 1, 2, 4, 8, or 16, representing the pack size of the class.  
+ à L’une des valeurs 1, 2, 4, 8 ou 16, représentant la taille de Pack de la classe.  
   
  `rFieldOffset`  
- [out] An array of [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) values.  
+ à Tableau de valeurs [COR_FIELD_OFFSET](../../../../docs/framework/unmanaged-api/metadata/cor-field-offset-structure.md) .  
   
  `cMax`  
  [in] Taille maximale du tableau `rFieldOffset`.  
   
  `pcFieldOffset`  
- [out] The number of elements returned in `rFieldOffset`.  
+ à Nombre d’éléments retournés dans `rFieldOffset`.  
   
  `pulClassSize`  
- [out] The size in bytes of the class represented by `td`.  
+ à Taille en octets de la classe représentée par `td`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

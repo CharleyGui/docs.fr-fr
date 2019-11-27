@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443052"
 ---
 # <a name="icorprofilerinfo2getthreadstaticaddress-method"></a>ICorProfilerInfo2::GetThreadStaticAddress, méthode
-Gets the address of the specified thread-static field that is in the scope of the specified thread.  
+Obtient l’adresse du champ statique de thread spécifié qui se trouve dans la portée du thread spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,27 +37,27 @@ HRESULT GetThreadStaticAddress(
   
 ## <a name="parameters"></a>Paramètres  
  `classId`  
- [in] The ID of the class that contains the requested thread-static field.  
+ dans ID de la classe qui contient le champ statique de thread demandé.  
   
  `fieldToken`  
- [in] The metadata token for the requested thread-static field.  
+ dans Jeton de métadonnées pour le champ statique de thread demandé.  
   
  `threadId`  
- [in] The ID of the thread that is the scope for the requested static field.  
+ dans ID du thread qui est l’étendue du champ statique demandé.  
   
  `ppAddress`  
- [out] A pointer to the address of the static field that is within the specified thread.  
+ à Pointeur vers l’adresse du champ statique qui est dans le thread spécifié.  
   
 ## <a name="remarks"></a>Notes  
- The `GetThreadStaticAddress` method may return one of the following:  
+ La méthode `GetThreadStaticAddress` peut retourner l’un des éléments suivants :  
   
-- A CORPROF_E_DATAINCOMPLETE HRESULT if the given static field has not been assigned an address in the specified context.  
+- CORPROF_E_DATAINCOMPLETE HRESULT si aucune adresse n’a été assignée au champ statique donné dans le contexte spécifié.  
   
-- The addresses of objects that may be in the garbage collection heap. These addresses may become invalid after garbage collection, so after garbage collection profilers should not assume that they are valid.  
+- Adresses des objets qui peuvent figurer dans le tas garbage collection. Ces adresses peuvent devenir non valides après garbage collection. par conséquent, une fois que garbage collection profileurs ne doivent pas supposer qu’ils sont valides.  
   
- Before a class’s class constructor is completed, `GetThreadStaticAddress` will return CORPROF_E_DATAINCOMPLETE for all its static fields, although some of the static fields may already be initialized and rooting garbage collection objects.  
+ Avant la fin du constructeur de classe d’une classe, `GetThreadStaticAddress` retourne CORPROF_E_DATAINCOMPLETE pour tous ses champs statiques, bien que certains champs statiques soient déjà initialisés et que les objets de racine garbage collection.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

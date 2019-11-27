@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447736"
 ---
 # <a name="isymunmanagedreadergetnamespaces-method"></a>ISymUnmanagedReader::GetNamespaces, méthode
-Gets the namespaces defined at global scope within this symbol store.  
+Obtient les espaces de noms définis au niveau de la portée globale dans ce magasin de symboles.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,19 +38,19 @@ HRESULT GetNamespaces (
   
 ## <a name="parameters"></a>Paramètres  
  `cNameSpaces`  
- [in] The size of the namespaces array.  
+ dans Taille du tableau d’espaces de noms.  
   
  `pcNameSpaces`  
- [out] A pointer to a variable that receives the length of the namespace list.  
+ à Pointeur vers une variable qui reçoit la longueur de la liste d’espaces de noms.  
   
  `namespaces`  
- [out] A pointer to a variable that receives the namespace list.  
+ à Pointeur vers une variable qui reçoit la liste d’espaces de noms.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

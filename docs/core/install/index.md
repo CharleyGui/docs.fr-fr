@@ -1,6 +1,6 @@
 ---
-title: Install .NET Core on Windows, Linux, and macOS - .NET Core
-description: Learn where and what to install for .NET Core on Windows, Linux, and macOS versions. Discover the dependencies required to develop, deploy, and run .NET Core apps.
+title: Installer .NET Core sur Windows, Linux et macOS-.NET Core
+description: Découvrez où et quoi installer pour .NET Core sur les versions Windows, Linux et macOS. Découvrez les dépendances requises pour développer, déployer et exécuter des applications .NET Core.
 author: thraka
 ms.author: adegeo
 ms.date: 11/06/2019
@@ -11,17 +11,17 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451086"
 ---
-# <a name="download-and-install-net-core"></a>Download and install .NET Core
+# <a name="download-and-install-net-core"></a>Télécharger et installer .NET Core
 
-This article provides information on how to download and install .NET Core. There are two parts to .NET Core, the **runtime** which is used to run apps, and the **SDK** which is used to create apps. The SDK includes the runtime.
+Cet article fournit des informations sur le téléchargement et l’installation de .NET Core. Il existe deux parties à .NET Core, le **Runtime** utilisé pour exécuter des applications et le kit de **développement logiciel (SDK)** qui est utilisé pour créer des applications. Le kit de développement logiciel (SDK) comprend le Runtime.
 
-- If you're a user who needs .NET Core to run apps, see [Install the .NET Core Runtime](runtime.md).
+- Si vous êtes un utilisateur qui a besoin de .NET Core pour exécuter des applications, consultez [installer le Runtime .net Core](runtime.md).
 
-- If you're a developer who needs .NET Core to create apps, see the [Install the .NET Core SDK](sdk.md).
+- Si vous êtes un développeur qui a besoin de .NET Core pour créer des applications, consultez la page [installer le kit SDK .net Core](sdk.md).
 
 > [!NOTE]
-> The .NET Core SDK includes the runtime.
+> Le kit SDK .NET Core comprend le Runtime.
 
 ## <a name="dependencies"></a>Dépendances
 
-.NET Core is supported on Windows, Linux, and macOS. For a full list of requirements, see [Supported operating systems](dependencies.md).
+.NET Core est pris en charge sur Windows, Linux et macOS. Pour obtenir la liste complète des conditions requises, consultez [systèmes d’exploitation pris en charge](dependencies.md).

@@ -25,7 +25,7 @@ ms.locfileid: "74439230"
 # <a name="icorprofilerinfogetcodeinfo-method"></a>ICorProfilerInfo::GetCodeInfo, méthode
 Obtient l'étendue de code natif associée à l'ID de la fonction spécifiée.  
   
- Cette méthode est obsolète. Use the [ICorProfilerInfo2::GetCodeInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) method instead.  
+ Cette méthode est obsolète. Utilisez la méthode [ICorProfilerInfo2 :: GetCodeInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getcodeinfo2-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -51,14 +51,14 @@ HRESULT GetCodeInfo(
   
  Cette fonction utilise des mémoires tampons allouées par l'appelant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
   
  **Bibliothèque :** CorGuids.lib  
   
- **.NET Framework Versions:** 1.0  
+ **Versions de .NET Framework :** 1,0  
   
 ## <a name="see-also"></a>Voir aussi
 

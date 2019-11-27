@@ -38,7 +38,7 @@ Cette section décrit les structures non managées utilisées par l'API de profi
  [COR_PRF_GC_GENERATION_RANGE, structure](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md)  
  Décrit une plage (un bloc) de mémoire qui va faire l'objet d'une récupération de mémoire.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  COR_DEBUG_IL_TO_NATIVE_MAP  
   
  COR_IL_MAP  

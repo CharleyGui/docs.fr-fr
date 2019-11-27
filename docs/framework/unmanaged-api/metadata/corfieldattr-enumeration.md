@@ -60,30 +60,30 @@ typedef enum CorFieldAttr {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`fdFieldAccessMask`|Specifies accessibility information.|  
-|`fdPrivateScope`|Specifies that the field cannot be referenced.|  
-|`fdPrivate`|Specifies that the field is accessible only by its parent type.|  
-|`fdFamANDAssem`|Specifies that the field is accessible by derived classes in its assembly.|  
-|`fdAssembly`|Specifies that the field is accessible by all types in its assembly.|  
-|`fdFamily`|Specifies that the field is accessible only by its type and derived classes.|  
-|`fdFamORAssem`|Specifies that the field is accessible by derived classes and by all types in its assembly.|  
-|`fdPublic`|Specifies that the field is accessible by all types with visibility of this scope.|  
-|`fdStatic`|Specifies that the field is a member of its type rather than an instance member.|  
-|`fdInitOnly`|Specifies that the field cannot be changed after it is initialized.|  
-|`fdLiteral`|Specifies that the field value is a compile-time constant.|  
-|`fdNotSerialized`|Specifies that the field is not serialized when its type is remoted.|  
-|`fdSpecialName`|Specifies that the field is special, and that its name describes how.|  
-|`fdPinvokeImpl`|Specifies that the field implementation is forwarded through PInvoke.|  
-|`fdReservedMask`|Reserved for internal use by the common language runtime.|  
-|`fdRTSpecialName`|Specifies that the common language runtime metadata internal APIs should check the encoding of the name.|  
-|`fdHasFieldMarshal`|Specifies that the field contains marshaling information.|  
-|`fdHasDefault`|Specifies that the field has a default value.|  
-|`fdHasFieldRVA`|Specifies that the field has a relative virtual address.|  
+|`fdFieldAccessMask`|Spécifie les informations d’accessibilité.|  
+|`fdPrivateScope`|Spécifie que le champ ne peut pas être référencé.|  
+|`fdPrivate`|Spécifie que le champ est accessible uniquement par son type parent.|  
+|`fdFamANDAssem`|Spécifie que le champ est accessible par les classes dérivées dans son assembly.|  
+|`fdAssembly`|Spécifie que le champ est accessible par tous les types de son assembly.|  
+|`fdFamily`|Spécifie que le champ est accessible uniquement par son type et ses classes dérivées.|  
+|`fdFamORAssem`|Spécifie que le champ est accessible par les classes dérivées et par tous les types de son assembly.|  
+|`fdPublic`|Spécifie que le champ est accessible par tous les types ayant une visibilité de cette portée.|  
+|`fdStatic`|Spécifie que le champ est un membre de son type plutôt qu’un membre d’instance.|  
+|`fdInitOnly`|Spécifie que le champ ne peut pas être modifié une fois qu’il a été initialisé.|  
+|`fdLiteral`|Spécifie que la valeur de champ est une constante au moment de la compilation.|  
+|`fdNotSerialized`|Spécifie que le champ n’est pas sérialisé quand son type est distant.|  
+|`fdSpecialName`|Spécifie que le champ est spécial et que son nom décrit comment.|  
+|`fdPinvokeImpl`|Spécifie que l’implémentation de champ est transférée par le biais de PInvoke.|  
+|`fdReservedMask`|Réservé à un usage interne par la common language runtime.|  
+|`fdRTSpecialName`|Spécifie que l’common language runtime les API internes de métadonnées doivent vérifier l’encodage du nom.|  
+|`fdHasFieldMarshal`|Spécifie que le champ contient des informations de marshaling.|  
+|`fdHasDefault`|Spécifie que le champ a une valeur par défaut.|  
+|`fdHasFieldRVA`|Spécifie que le champ a une adresse virtuelle relative.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

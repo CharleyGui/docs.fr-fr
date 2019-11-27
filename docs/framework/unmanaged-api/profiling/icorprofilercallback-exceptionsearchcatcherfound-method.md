@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445392"
 ---
 # <a name="icorprofilercallbackexceptionsearchcatcherfound-method"></a>ICorProfilerCallback::ExceptionSearchCatcherFound, méthode
-Notifies the profiler that the search phase of exception handling has located a handler for the exception that was thrown.  
+Notifie le profileur que la phase de recherche de la gestion des exceptions a localisé un gestionnaire pour l’exception qui a été levée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,9 +34,9 @@ RESULT ExceptionSearchCatcherFound(
   
 ## <a name="parameters"></a>Paramètres  
  `functionId`  
- [in] The ID of the function that contains the exception handler.  
+ dans ID de la fonction qui contient le gestionnaire d’exceptions.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

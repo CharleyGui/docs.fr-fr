@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443146"
 ---
 # <a name="icorprofilerinfo4getfunctionfromip2-method"></a>ICorProfilerInfo4::GetFunctionFromIP2, méthode
-Maps a managed code instruction pointer to the JIT-recompiled version of a function.  
+Mappe un pointeur d’instruction de code managé à la version recompilée juste-à-temps d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,21 +36,21 @@ HRESULT GetFunctionFromIP2(
   
 ## <a name="parameters"></a>Paramètres  
  `ip`  
- [in] The instruction pointer in managed code.  
+ dans Pointeur d’instruction dans du code managé.  
   
  `pFunctionId`  
- [out] The function ID.  
+ à ID de la fonction.  
   
  `pReJitId`  
- [out] The identity of the JIT-recompiled version of the function.  
+ à Identité de la version recompilée juste-à-temps de la fonction.  
   
 ## <a name="remarks"></a>Notes  
- `GetFunctionFromIP2` is similar to `GetFunctionFromIP`, except that it gets the JIT-recompiled ID instead of the function ID of the function that contains the specified IP address.  
+ `GetFunctionFromIP2` est semblable à `GetFunctionFromIP`, à ceci près qu’elle obtient l’ID recompilé juste-à-temps au lieu de l’ID de fonction de la fonction qui contient l’adresse IP spécifiée.  
   
 > [!NOTE]
-> `GetFunctionFromIP2` can trigger a garbage collection, whereas `GetFunctionFromIP` will not.  For more information, see [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
+> `GetFunctionFromIP2` pouvez déclencher un garbage collection, alors que `GetFunctionFromIP` ne le sera pas.  Pour plus d’informations, consultez [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

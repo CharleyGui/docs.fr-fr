@@ -38,9 +38,9 @@ Les références à ce type peuvent être incorporées dans les netmodules dont 
 
 Les références à ce type indiquent des attributs personnalisés qui sont liés à la sécurité et ne peuvent pas être utilisés plusieurs fois.
 
-These types are marked "internal" within the .NET Framework and are located in the <xref:System.Runtime.CompilerServices> namespace.
+Ces types sont marqués « internal » dans le .NET Framework et se trouvent dans l’espace de noms <xref:System.Runtime.CompilerServices>.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
 mscorlib.dll
 

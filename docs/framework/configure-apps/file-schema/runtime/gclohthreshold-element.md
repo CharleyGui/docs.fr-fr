@@ -1,5 +1,5 @@
 ---
-title: GCLOHThreshold element
+title: Élément GCLOHThreshold
 ms.date: 11/20/2019
 helpviewer_keywords:
 - GCLOHThreshold element
@@ -11,13 +11,13 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74451219"
 ---
-# <a name="gclohthreshold-element"></a>GCLOHThreshold element
+# <a name="gclohthreshold-element"></a>Élément GCLOHThreshold
 
-Specifies the threshold size, in bytes, that causes the garbage collector to put objects on the large object heap (LOH).
+Spécifie la taille du seuil, en octets, qui amène le garbage collector à placer des objets sur le tas d’objets volumineux (LOH).
 
 [\<configuration>](../configuration-element.md)\
-&nbsp;&nbsp;[\<runtime>](runtime-element.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold>
+&nbsp;&nbsp;[\<runtime >](runtime-element.md)\
+&nbsp;&nbsp;&nbsp;&nbsp;\<GCLOHThreshold >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -30,17 +30,17 @@ Specifies the threshold size, in bytes, that causes the garbage collector to put
 
 |Attribut|Description|
 |---------------|-----------------|
-|`enabled`|Attribut requis.<br /><br />Specifies the threshold size that causes objects to go on the large object heap.|
+|`enabled`|Attribut requis.<br /><br />Spécifie la taille du seuil qui amène les objets sur le tas des objets volumineux.|
 
-### <a name="enabled-attribute"></a>enabled attribute
+### <a name="enabled-attribute"></a>attribut activé
 
-|valeur|Description|
+|Valeur|Description|
 |-----------|-----------------|
-|`nnnn`|The threshold size, in bytes, that causes objects to go on the large object heap.|
+|`nnnn`|Taille du seuil, en octets, qui provoque l’accès des objets sur le tas d’objets volumineux.|
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun(e).
+None.
 
 ## <a name="parent-elements"></a>Éléments parents
 
@@ -51,11 +51,11 @@ Aucun(e).
 
 ## <a name="remarks"></a>Notes
 
-This setting was introduced in .NET Framework 4.8.
+Ce paramètre a été introduit dans .NET Framework 4,8.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Run-time settings schema](index.md)
+- [Schéma des paramètres au moment de l’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)
 - [Notions de base du garbage collection](../../../../standard/garbage-collection/fundamentals.md)
-- [NET Core run-time config options for GC](../../../../core/run-time-config/garbage-collector.md)
+- [Options de configuration du runtime NET Core pour GC](../../../../core/run-time-config/garbage-collector.md)

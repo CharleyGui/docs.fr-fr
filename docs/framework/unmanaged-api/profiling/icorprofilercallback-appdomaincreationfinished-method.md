@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445277"
 ---
 # <a name="icorprofilercallbackappdomaincreationfinished-method"></a>ICorProfilerCallback::AppDomainCreationFinished, méthode
-Notifies the profiler that an application domain has been created.  
+Notifie le profileur qu’un domaine d’application a été créé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,17 +35,17 @@ HRESULT AppDomainCreationFinished(
   
 ## <a name="parameters"></a>Paramètres  
  `appDomainId`  
- [in] Identifies the domain which has been created.  
+ dans Identifie le domaine qui a été créé.  
   
  `hrStatus`  
- [in] An HRESULT that indicates whether creation of the application domain completed successfully.  
+ dans HRESULT qui indique si la création du domaine d’application s’est terminée avec succès.  
   
 ## <a name="remarks"></a>Notes  
- The application ID is not valid for any information request until the `AppDomainCreationFinished` method is called.  
+ L’ID d’application n’est pas valide pour toute demande d’informations jusqu’à ce que la méthode `AppDomainCreationFinished` soit appelée.  
   
- Some parts of loading the application domain might continue after the `AppDomainCreationFinished` callback. A failure HRESULT in `hrStatus` indicates a failure. However, a success HRESULT in `hrStatus` indicates only that the first part of creating the application domain has succeeded.  
+ Certaines parties du chargement du domaine d’application peuvent continuer après le rappel `AppDomainCreationFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie de la création du domaine d’application a réussi.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

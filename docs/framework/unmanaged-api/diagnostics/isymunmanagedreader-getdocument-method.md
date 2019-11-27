@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448345"
 ---
 # <a name="isymunmanagedreadergetdocument-method"></a>ISymUnmanagedReader::GetDocument, méthode
-Finds a document. The document language, vendor, and type are optional.  
+Recherche un document. La langue, le fournisseur et le type du document sont facultatifs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,25 +38,25 @@ HRESULT GetDocument (
   
 ## <a name="parameters"></a>Paramètres  
  `url`  
- [in] The URL that identifies the document.  
+ dans URL qui identifie le document.  
   
  `language`  
- [in] The document language. Ce paramètre est optionnel.  
+ dans Langue du document. Ce paramètre est facultatif.  
   
  `languageVendor`  
- [in] The identity of the vendor for the document language. Ce paramètre est optionnel.  
+ dans Identité du fournisseur pour la langue du document. Ce paramètre est facultatif.  
   
  `documentType`  
- [in] The type of the document. Ce paramètre est optionnel.  
+ dans Type du document. Ce paramètre est facultatif.  
   
  `pRetVal`  
- [out] A pointer to the returned interface.  
+ à Pointeur vers l’interface retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

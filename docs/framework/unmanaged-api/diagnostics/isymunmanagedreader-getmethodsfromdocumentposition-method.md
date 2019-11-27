@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74441809"
 ---
 # <a name="isymunmanagedreadergetmethodsfromdocumentposition-method"></a>ISymUnmanagedReader::GetMethodsFromDocumentPosition, méthode
-Returns an array of methods, each of which contains the breakpoint at the given position in a document.  
+Retourne un tableau de méthodes, chacune contenant le point d’arrêt à la position donnée dans un document.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -40,28 +40,28 @@ HRESULT GetMethodsFromDocumentPosition (
   
 ## <a name="parameters"></a>Paramètres  
  `document`  
- [in] The specified document.  
+ dans Document spécifié.  
   
  `line`  
- [in] The line of the specified document.  
+ dans Ligne du document spécifié.  
   
  `column`  
- [in] The column of the specified document.  
+ dans Colonne du document spécifié.  
   
  `cMethod`  
  [in] Taille du tableau `pRetVal`.  
   
  `pcMethod`  
- [out] A pointer to a variable that receives the number of elements returned in the `pRetVal` array.  
+ à Pointeur vers une variable qui reçoit le nombre d’éléments retournés dans le tableau de `pRetVal`.  
   
  `pRetVal`  
- [out] An array of pointers, each of which points to an [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) object that represents a method containing the breakpoint.  
+ à Tableau de pointeurs, chacun pointant vers un objet [ISymUnmanagedMethod](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md) qui représente une méthode contenant le point d’arrêt.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

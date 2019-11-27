@@ -38,23 +38,23 @@ HRESULT GetUserString (
   
 ## <a name="parameters"></a>Paramètres  
  `stk`  
- [in] The String token to return the associated string for.  
+ dans Jeton de chaîne pour lequel retourner la chaîne associée.  
   
  `szString`  
- [out] A copy of the requested string.  
+ à Copie de la chaîne demandée.  
   
  `cchString`  
- [in] The maximum size in wide characters of the requested `szString`.  
+ dans Taille maximale en caractères larges de la `szString`demandée.  
   
  `pchString`  
- [out] The size in wide characters of the returned `szString`.  
+ à Taille en caractères larges de la `szString`retournée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

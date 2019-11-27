@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74442438"
 ---
 # <a name="corunmanagedcallingconvention-enumeration"></a>CorUnmanagedCallingConvention, énumération
-Specifies the calling conventions for unmanaged code.  
+Spécifie les conventions d’appel pour le code non managé.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,22 +46,22 @@ typedef enum CorUnmanagedCallingConvention {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|The C language calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|The standard calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|The "this" calling convention.|  
-|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|The "fast" calling convention.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_C`|Convention d’appel du langage C.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_STDCALL`|Convention d’appel standard.|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_THISCALL`|Convention d’appel « This ».|  
+|`IMAGE_CEE_UNMANAGED_CALLCONV_FASTCALL`|Convention d’appel « Fast ».|  
 |`IMAGE_CEE_CS_CALLCONV_C`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_STDCALL`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_THISCALL`|Non utilisé.|  
 |`IMAGE_CEE_CS_CALLCONV_FASTCALL`|Non utilisé.|  
   
 ## <a name="remarks"></a>Notes  
- The CLR does not support the "fast" calling convention in the .NET Framework version 1.0.  
+ Le CLR ne prend pas en charge la Convention d’appel « Fast » dans le .NET Framework version 1,0.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   
