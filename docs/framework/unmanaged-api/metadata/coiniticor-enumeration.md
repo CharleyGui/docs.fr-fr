@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444278"
 ---
-# <a name="coiniticor-enumeration"></a><span data-ttu-id="c29c7-102">COINITICOR, énumération</span><span class="sxs-lookup"><span data-stu-id="c29c7-102">COINITICOR Enumeration</span></span>
-<span data-ttu-id="c29c7-103">Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when it initializes the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="c29c7-103">Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when it initializes the common language runtime.</span></span>  
+# <a name="coiniticor-enumeration"></a><span data-ttu-id="53afe-102">COINITICOR, énumération</span><span class="sxs-lookup"><span data-stu-id="53afe-102">COINITICOR Enumeration</span></span>
+<span data-ttu-id="53afe-103">Spécifie les constantes utilisées par [CoInitializeCor,](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) lors de l’initialisation du Common Language Runtime.</span><span class="sxs-lookup"><span data-stu-id="53afe-103">Specifies constants used by [CoInitializeCor](../../../../docs/framework/unmanaged-api/hosting/coinitializecor-function.md) when it initializes the common language runtime.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="c29c7-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c29c7-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="53afe-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="53afe-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum tagCOINITCOR  
@@ -33,21 +33,21 @@ typedef enum tagCOINITCOR
 } COINITICOR;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="c29c7-105">Membres</span><span class="sxs-lookup"><span data-stu-id="c29c7-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="53afe-105">Membres</span><span class="sxs-lookup"><span data-stu-id="53afe-105">Members</span></span>  
   
-|<span data-ttu-id="c29c7-106">Membre</span><span class="sxs-lookup"><span data-stu-id="c29c7-106">Member</span></span>|<span data-ttu-id="c29c7-107">Description</span><span class="sxs-lookup"><span data-stu-id="c29c7-107">Description</span></span>|  
+|<span data-ttu-id="53afe-106">Membre</span><span class="sxs-lookup"><span data-stu-id="53afe-106">Member</span></span>|<span data-ttu-id="53afe-107">Description</span><span class="sxs-lookup"><span data-stu-id="53afe-107">Description</span></span>|  
 |------------|-----------------|  
-|`COINITCOR`|<span data-ttu-id="c29c7-108">Indicates the default initialization mode.</span><span class="sxs-lookup"><span data-stu-id="c29c7-108">Indicates the default initialization mode.</span></span>|  
+|`COINITCOR`|<span data-ttu-id="53afe-108">Indique le mode d’initialisation par défaut.</span><span class="sxs-lookup"><span data-stu-id="53afe-108">Indicates the default initialization mode.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="c29c7-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="c29c7-109">Requirements</span></span>  
- <span data-ttu-id="c29c7-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c29c7-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="53afe-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="53afe-109">Requirements</span></span>  
+ <span data-ttu-id="53afe-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="53afe-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="c29c7-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="c29c7-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="53afe-111">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="53afe-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="c29c7-112">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="c29c7-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="53afe-112">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="53afe-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="c29c7-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c29c7-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="53afe-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="53afe-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="c29c7-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c29c7-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="53afe-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="53afe-114">See also</span></span>
 
-- [<span data-ttu-id="c29c7-115">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="c29c7-115">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="53afe-115">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="53afe-115">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

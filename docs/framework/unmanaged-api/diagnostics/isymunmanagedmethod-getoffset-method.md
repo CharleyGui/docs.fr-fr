@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448949"
 ---
-# <a name="isymunmanagedmethodgetoffset-method"></a><span data-ttu-id="0cfc2-102">ISymUnmanagedMethod::GetOffset, méthode</span><span class="sxs-lookup"><span data-stu-id="0cfc2-102">ISymUnmanagedMethod::GetOffset Method</span></span>
-<span data-ttu-id="0cfc2-103">Returns the offset within this method that corresponds to a given position within a document.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-103">Returns the offset within this method that corresponds to a given position within a document.</span></span>  
+# <a name="isymunmanagedmethodgetoffset-method"></a><span data-ttu-id="ea2b5-102">ISymUnmanagedMethod::GetOffset, méthode</span><span class="sxs-lookup"><span data-stu-id="ea2b5-102">ISymUnmanagedMethod::GetOffset Method</span></span>
+<span data-ttu-id="ea2b5-103">Retourne l’offset dans cette méthode qui correspond à une position donnée dans un document.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-103">Returns the offset within this method that corresponds to a given position within a document.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="0cfc2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="0cfc2-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ea2b5-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ea2b5-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetOffset(  
@@ -35,25 +35,25 @@ HRESULT GetOffset(
     [out, retval] ULONG32*        pRetVal);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="0cfc2-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="0cfc2-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ea2b5-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ea2b5-105">Parameters</span></span>  
  `document`  
- <span data-ttu-id="0cfc2-106">[in] A pointer to the document for which the offset is requested.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-106">[in] A pointer to the document for which the offset is requested.</span></span>  
+ <span data-ttu-id="ea2b5-106">dans Pointeur vers le document pour lequel l’offset est demandé.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-106">[in] A pointer to the document for which the offset is requested.</span></span>  
   
  `line`  
- <span data-ttu-id="0cfc2-107">[in] The document line for which the offset is requested.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-107">[in] The document line for which the offset is requested.</span></span>  
+ <span data-ttu-id="ea2b5-107">dans Ligne de document pour laquelle l’offset est demandé.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-107">[in] The document line for which the offset is requested.</span></span>  
   
  `column`  
- <span data-ttu-id="0cfc2-108">[in] The document column for which the offset is requested.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-108">[in] The document column for which the offset is requested.</span></span>  
+ <span data-ttu-id="ea2b5-108">dans Colonne de document pour laquelle l’offset est demandé.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-108">[in] The document column for which the offset is requested.</span></span>  
   
  `pRetVal`  
- <span data-ttu-id="0cfc2-109">[out] A pointer to a `ULONG32` that receives the offsets.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-109">[out] A pointer to a `ULONG32` that receives the offsets.</span></span>  
+ <span data-ttu-id="ea2b5-109">à Pointeur vers un `ULONG32` qui reçoit les offsets.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-109">[out] A pointer to a `ULONG32` that receives the offsets.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="0cfc2-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="0cfc2-110">Return Value</span></span>  
- <span data-ttu-id="0cfc2-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="0cfc2-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ea2b5-110">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="ea2b5-110">Return Value</span></span>  
+ <span data-ttu-id="ea2b5-111">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="ea2b5-111">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="0cfc2-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="0cfc2-112">Requirements</span></span>  
- <span data-ttu-id="0cfc2-113">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="0cfc2-113">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ea2b5-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="ea2b5-112">Requirements</span></span>  
+ <span data-ttu-id="ea2b5-113">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="ea2b5-113">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="0cfc2-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0cfc2-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ea2b5-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ea2b5-114">See also</span></span>
 
-- [<span data-ttu-id="0cfc2-115">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="0cfc2-115">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="ea2b5-115">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="ea2b5-115">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)

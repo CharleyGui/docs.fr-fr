@@ -11,18 +11,18 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348036"
 ---
-# <a name="into-clause-visual-basic"></a><span data-ttu-id="e4aba-102">Into, clause (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="e4aba-102">Into Clause (Visual Basic)</span></span>
-<span data-ttu-id="e4aba-103">Identifies aggregate functions or groupings to apply to a collection.</span><span class="sxs-lookup"><span data-stu-id="e4aba-103">Identifies aggregate functions or groupings to apply to a collection.</span></span>  
+# <a name="into-clause-visual-basic"></a><span data-ttu-id="c692b-102">Into, clause (Visual Basic)</span><span class="sxs-lookup"><span data-stu-id="c692b-102">Into Clause (Visual Basic)</span></span>
+<span data-ttu-id="c692b-103">Identifie les fonctions d’agrégation ou les regroupements à appliquer à une collection.</span><span class="sxs-lookup"><span data-stu-id="c692b-103">Identifies aggregate functions or groupings to apply to a collection.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="e4aba-104">Notes</span><span class="sxs-lookup"><span data-stu-id="e4aba-104">Remarks</span></span>  
- <span data-ttu-id="e4aba-105">The `Each` keyword is used in the following contexts:</span><span class="sxs-lookup"><span data-stu-id="e4aba-105">The `Each` keyword is used in the following contexts:</span></span>  
+## <a name="remarks"></a><span data-ttu-id="c692b-104">Notes</span><span class="sxs-lookup"><span data-stu-id="c692b-104">Remarks</span></span>  
+ <span data-ttu-id="c692b-105">Le mot clé `Each` est utilisé dans les contextes suivants :</span><span class="sxs-lookup"><span data-stu-id="c692b-105">The `Each` keyword is used in the following contexts:</span></span>  
   
- [<span data-ttu-id="e4aba-106">Aggregate (clause)</span><span class="sxs-lookup"><span data-stu-id="e4aba-106">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
+ [<span data-ttu-id="c692b-106">Aggregate (clause)</span><span class="sxs-lookup"><span data-stu-id="c692b-106">Aggregate Clause</span></span>](../../../visual-basic/language-reference/queries/aggregate-clause.md)  
   
- [<span data-ttu-id="e4aba-107">Group By (clause)</span><span class="sxs-lookup"><span data-stu-id="e4aba-107">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)  
+ [<span data-ttu-id="c692b-107">Group By (clause)</span><span class="sxs-lookup"><span data-stu-id="c692b-107">Group By Clause</span></span>](../../../visual-basic/language-reference/queries/group-by-clause.md)  
   
- [<span data-ttu-id="e4aba-108">Group Join (clause)</span><span class="sxs-lookup"><span data-stu-id="e4aba-108">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)  
+ [<span data-ttu-id="c692b-108">Group Join (clause)</span><span class="sxs-lookup"><span data-stu-id="c692b-108">Group Join Clause</span></span>](../../../visual-basic/language-reference/queries/group-join-clause.md)  
   
-## <a name="see-also"></a><span data-ttu-id="e4aba-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e4aba-109">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c692b-109">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c692b-109">See also</span></span>
 
-- [<span data-ttu-id="e4aba-110">Mots clés</span><span class="sxs-lookup"><span data-stu-id="e4aba-110">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
+- [<span data-ttu-id="c692b-110">Mots clés</span><span class="sxs-lookup"><span data-stu-id="c692b-110">Keywords</span></span>](../../../visual-basic/language-reference/keywords/index.md)
