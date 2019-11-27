@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74428388"
 ---
-# <a name="cor_prf_code_info-structure"></a><span data-ttu-id="d6ae3-102">COR_PRF_CODE_INFO, structure</span><span class="sxs-lookup"><span data-stu-id="d6ae3-102">COR_PRF_CODE_INFO Structure</span></span>
-<span data-ttu-id="d6ae3-103">Représente un bloc contigu de code natif stocké en mémoire.</span><span class="sxs-lookup"><span data-stu-id="d6ae3-103">Represents one contiguous block of native code stored in memory.</span></span>  
+# <a name="cor_prf_code_info-structure"></a><span data-ttu-id="29674-102">COR_PRF_CODE_INFO, structure</span><span class="sxs-lookup"><span data-stu-id="29674-102">COR_PRF_CODE_INFO Structure</span></span>
+<span data-ttu-id="29674-103">Représente un bloc contigu de code natif stocké en mémoire.</span><span class="sxs-lookup"><span data-stu-id="29674-103">Represents one contiguous block of native code stored in memory.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="d6ae3-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="d6ae3-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="29674-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="29674-104">Syntax</span></span>  
   
 ```cpp  
 typedef struct _COR_PRF_CODE_INFO {  
@@ -33,22 +33,22 @@ typedef struct _COR_PRF_CODE_INFO {
 } COR_PRF_CODE_INFO;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="d6ae3-105">Membres</span><span class="sxs-lookup"><span data-stu-id="d6ae3-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="29674-105">Membres</span><span class="sxs-lookup"><span data-stu-id="29674-105">Members</span></span>  
   
-|<span data-ttu-id="d6ae3-106">Membre</span><span class="sxs-lookup"><span data-stu-id="d6ae3-106">Member</span></span>|<span data-ttu-id="d6ae3-107">Description</span><span class="sxs-lookup"><span data-stu-id="d6ae3-107">Description</span></span>|  
+|<span data-ttu-id="29674-106">Membre</span><span class="sxs-lookup"><span data-stu-id="29674-106">Member</span></span>|<span data-ttu-id="29674-107">Description</span><span class="sxs-lookup"><span data-stu-id="29674-107">Description</span></span>|  
 |------------|-----------------|  
-|`startAddress`|<span data-ttu-id="d6ae3-108">The starting address of the contiguous block of code.</span><span class="sxs-lookup"><span data-stu-id="d6ae3-108">The starting address of the contiguous block of code.</span></span>|  
-|`size`|<span data-ttu-id="d6ae3-109">The size of the block.</span><span class="sxs-lookup"><span data-stu-id="d6ae3-109">The size of the block.</span></span>|  
+|`startAddress`|<span data-ttu-id="29674-108">Adresse de début du bloc de code contigu.</span><span class="sxs-lookup"><span data-stu-id="29674-108">The starting address of the contiguous block of code.</span></span>|  
+|`size`|<span data-ttu-id="29674-109">Taille du bloc.</span><span class="sxs-lookup"><span data-stu-id="29674-109">The size of the block.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="d6ae3-110">spécifications</span><span class="sxs-lookup"><span data-stu-id="d6ae3-110">Requirements</span></span>  
- <span data-ttu-id="d6ae3-111">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="d6ae3-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="29674-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="29674-110">Requirements</span></span>  
+ <span data-ttu-id="29674-111">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="29674-111">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="d6ae3-112">**Header:** CorProf.idl</span><span class="sxs-lookup"><span data-stu-id="d6ae3-112">**Header:** CorProf.idl</span></span>  
+ <span data-ttu-id="29674-112">**En-tête :** CorProf. idl</span><span class="sxs-lookup"><span data-stu-id="29674-112">**Header:** CorProf.idl</span></span>  
   
- <span data-ttu-id="d6ae3-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="d6ae3-113">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="29674-113">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="29674-113">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="d6ae3-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="d6ae3-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="29674-114">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="29674-114">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="d6ae3-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="d6ae3-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="29674-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="29674-115">See also</span></span>
 
-- [<span data-ttu-id="d6ae3-116">Structures de profilage</span><span class="sxs-lookup"><span data-stu-id="d6ae3-116">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [<span data-ttu-id="29674-116">Structures de profilage</span><span class="sxs-lookup"><span data-stu-id="29674-116">Profiling Structures</span></span>](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
