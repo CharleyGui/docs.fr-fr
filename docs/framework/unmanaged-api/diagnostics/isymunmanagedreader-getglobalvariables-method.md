@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448317"
 ---
-# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="7166b-102">ISymUnmanagedReader::GetGlobalVariables, méthode</span><span class="sxs-lookup"><span data-stu-id="7166b-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
-<span data-ttu-id="7166b-103">Returns all global variables.</span><span class="sxs-lookup"><span data-stu-id="7166b-103">Returns all global variables.</span></span>  
+# <a name="isymunmanagedreadergetglobalvariables-method"></a><span data-ttu-id="60d00-102">ISymUnmanagedReader::GetGlobalVariables, méthode</span><span class="sxs-lookup"><span data-stu-id="60d00-102">ISymUnmanagedReader::GetGlobalVariables Method</span></span>
+<span data-ttu-id="60d00-103">Retourne toutes les variables globales.</span><span class="sxs-lookup"><span data-stu-id="60d00-103">Returns all global variables.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="7166b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7166b-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="60d00-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="60d00-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetGlobalVariables(  
@@ -35,22 +35,22 @@ HRESULT GetGlobalVariables(
         length_is(*pcVars)] ISymUnmanagedVariable *pVars[]);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="7166b-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="7166b-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="60d00-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="60d00-105">Parameters</span></span>  
  `cVars`  
- <span data-ttu-id="7166b-106">[in] The length of the buffer pointed to by `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="7166b-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
+ <span data-ttu-id="60d00-106">dans Longueur de la mémoire tampon vers laquelle pointe `pcVars`.</span><span class="sxs-lookup"><span data-stu-id="60d00-106">[in] The length of the buffer pointed to by `pcVars`.</span></span>  
   
  `pcVars`  
- <span data-ttu-id="7166b-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span><span class="sxs-lookup"><span data-stu-id="7166b-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
+ <span data-ttu-id="60d00-107">à Pointeur vers un `ULONG32` qui reçoit la taille de la mémoire tampon requise pour contenir les variables.</span><span class="sxs-lookup"><span data-stu-id="60d00-107">[out] A pointer to a `ULONG32` that receives the size of the buffer required to contain the variables.</span></span>  
   
  `pVars`  
- <span data-ttu-id="7166b-108">[out] A buffer that contains the variables.</span><span class="sxs-lookup"><span data-stu-id="7166b-108">[out] A buffer that contains the variables.</span></span>  
+ <span data-ttu-id="60d00-108">à Mémoire tampon qui contient les variables.</span><span class="sxs-lookup"><span data-stu-id="60d00-108">[out] A buffer that contains the variables.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="7166b-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="7166b-109">Return Value</span></span>  
- <span data-ttu-id="7166b-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="7166b-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="60d00-109">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="60d00-109">Return Value</span></span>  
+ <span data-ttu-id="60d00-110">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="60d00-110">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="7166b-111">spécifications</span><span class="sxs-lookup"><span data-stu-id="7166b-111">Requirements</span></span>  
- <span data-ttu-id="7166b-112">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="7166b-112">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="60d00-111">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="60d00-111">Requirements</span></span>  
+ <span data-ttu-id="60d00-112">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="60d00-112">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7166b-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7166b-113">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="60d00-113">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="60d00-113">See also</span></span>
 
-- [<span data-ttu-id="7166b-114">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="7166b-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)
+- [<span data-ttu-id="60d00-114">ISymUnmanagedReader, interface</span><span class="sxs-lookup"><span data-stu-id="60d00-114">ISymUnmanagedReader Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md)

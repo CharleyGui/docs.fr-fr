@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448638"
 ---
-# <a name="isymencunmanagedmethodgetlinefromoffset-method"></a><span data-ttu-id="ecac0-102">ISymENCUnmanagedMethod::GetLineFromOffset, méthode</span><span class="sxs-lookup"><span data-stu-id="ecac0-102">ISymENCUnmanagedMethod::GetLineFromOffset Method</span></span>
-<span data-ttu-id="ecac0-103">Gets the line information associated with an offset.</span><span class="sxs-lookup"><span data-stu-id="ecac0-103">Gets the line information associated with an offset.</span></span> <span data-ttu-id="ecac0-104">If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.</span><span class="sxs-lookup"><span data-stu-id="ecac0-104">If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.</span></span>  
+# <a name="isymencunmanagedmethodgetlinefromoffset-method"></a><span data-ttu-id="7ec23-102">ISymENCUnmanagedMethod::GetLineFromOffset, méthode</span><span class="sxs-lookup"><span data-stu-id="7ec23-102">ISymENCUnmanagedMethod::GetLineFromOffset Method</span></span>
+<span data-ttu-id="7ec23-103">Obtient les informations de ligne associées à un offset.</span><span class="sxs-lookup"><span data-stu-id="7ec23-103">Gets the line information associated with an offset.</span></span> <span data-ttu-id="7ec23-104">Si le paramètre de décalage (`dwOffset`) n’est pas un point de séquence, cette méthode obtient les informations de ligne associées au décalage précédent.</span><span class="sxs-lookup"><span data-stu-id="7ec23-104">If the offset parameter (`dwOffset`) is not a sequence point, this method gets the line information associated with the previous offset.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ecac0-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ecac0-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="7ec23-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="7ec23-105">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetLineFromOffset(  
@@ -37,31 +37,31 @@ HRESULT GetLineFromOffset(
      [out] ULONG32*  pdwStartOffset);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="ecac0-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ecac0-106">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="7ec23-106">Paramètres</span><span class="sxs-lookup"><span data-stu-id="7ec23-106">Parameters</span></span>  
  `dwOffset`  
- <span data-ttu-id="ecac0-107">[in] A `ULONG32` that contains the offset.</span><span class="sxs-lookup"><span data-stu-id="ecac0-107">[in] A `ULONG32` that contains the offset.</span></span>  
+ <span data-ttu-id="7ec23-107">dans `ULONG32` qui contient le décalage.</span><span class="sxs-lookup"><span data-stu-id="7ec23-107">[in] A `ULONG32` that contains the offset.</span></span>  
   
  `pline`  
- <span data-ttu-id="ecac0-108">[out] A pointer to a `ULONG32` that receives the line.</span><span class="sxs-lookup"><span data-stu-id="ecac0-108">[out] A pointer to a `ULONG32` that receives the line.</span></span>  
+ <span data-ttu-id="7ec23-108">à Pointeur vers un `ULONG32` qui reçoit la ligne.</span><span class="sxs-lookup"><span data-stu-id="7ec23-108">[out] A pointer to a `ULONG32` that receives the line.</span></span>  
   
  `pcolumn`  
- <span data-ttu-id="ecac0-109">[out] A pointer to a `ULONG32` that receives the column.</span><span class="sxs-lookup"><span data-stu-id="ecac0-109">[out] A pointer to a `ULONG32` that receives the column.</span></span>  
+ <span data-ttu-id="7ec23-109">à Pointeur vers un `ULONG32` qui reçoit la colonne.</span><span class="sxs-lookup"><span data-stu-id="7ec23-109">[out] A pointer to a `ULONG32` that receives the column.</span></span>  
   
  `pendLine`  
- <span data-ttu-id="ecac0-110">[out] A pointer to a `ULONG32` that receives the end line.</span><span class="sxs-lookup"><span data-stu-id="ecac0-110">[out] A pointer to a `ULONG32` that receives the end line.</span></span>  
+ <span data-ttu-id="7ec23-110">à Pointeur vers un `ULONG32` qui reçoit la ligne de fin.</span><span class="sxs-lookup"><span data-stu-id="7ec23-110">[out] A pointer to a `ULONG32` that receives the end line.</span></span>  
   
  `pendColumn`  
- <span data-ttu-id="ecac0-111">[out] A pointer to a `ULONG32` that receives the end column.</span><span class="sxs-lookup"><span data-stu-id="ecac0-111">[out] A pointer to a `ULONG32` that receives the end column.</span></span>  
+ <span data-ttu-id="7ec23-111">à Pointeur vers un `ULONG32` qui reçoit la colonne de fin.</span><span class="sxs-lookup"><span data-stu-id="7ec23-111">[out] A pointer to a `ULONG32` that receives the end column.</span></span>  
   
  `pdwStartOffset`  
- <span data-ttu-id="ecac0-112">[out] A pointer to a `ULONG32` that receives the associated sequence point.</span><span class="sxs-lookup"><span data-stu-id="ecac0-112">[out] A pointer to a `ULONG32` that receives the associated sequence point.</span></span>  
+ <span data-ttu-id="7ec23-112">à Pointeur vers un `ULONG32` qui reçoit le point de séquence associé.</span><span class="sxs-lookup"><span data-stu-id="7ec23-112">[out] A pointer to a `ULONG32` that receives the associated sequence point.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="ecac0-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="ecac0-113">Return Value</span></span>  
- <span data-ttu-id="ecac0-114">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="ecac0-114">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="7ec23-113">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="7ec23-113">Return Value</span></span>  
+ <span data-ttu-id="7ec23-114">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="7ec23-114">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="ecac0-115">spécifications</span><span class="sxs-lookup"><span data-stu-id="ecac0-115">Requirements</span></span>  
- <span data-ttu-id="ecac0-116">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="ecac0-116">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="7ec23-115">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="7ec23-115">Requirements</span></span>  
+ <span data-ttu-id="7ec23-116">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="7ec23-116">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ecac0-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ecac0-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="7ec23-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7ec23-117">See also</span></span>
 
-- [<span data-ttu-id="ecac0-118">ISymENCUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="ecac0-118">ISymENCUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)
+- [<span data-ttu-id="7ec23-118">ISymENCUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="7ec23-118">ISymENCUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymencunmanagedmethod-interface.md)

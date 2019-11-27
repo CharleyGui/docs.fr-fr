@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437790"
 ---
-# <a name="imetadataimportfindtyperef-method"></a><span data-ttu-id="8b055-102">IMetaDataImport::FindTypeRef, méthode</span><span class="sxs-lookup"><span data-stu-id="8b055-102">IMetaDataImport::FindTypeRef Method</span></span>
-<span data-ttu-id="8b055-103">Gets a pointer to the TypeRef token for the <xref:System.Type> reference that is in the specified scope and that has the specified name.</span><span class="sxs-lookup"><span data-stu-id="8b055-103">Gets a pointer to the TypeRef token for the <xref:System.Type> reference that is in the specified scope and that has the specified name.</span></span>  
+# <a name="imetadataimportfindtyperef-method"></a><span data-ttu-id="c3409-102">IMetaDataImport::FindTypeRef, méthode</span><span class="sxs-lookup"><span data-stu-id="c3409-102">IMetaDataImport::FindTypeRef Method</span></span>
+<span data-ttu-id="c3409-103">Obtient un pointeur vers le jeton TypeRef pour la référence <xref:System.Type> qui est dans la portée spécifiée et qui porte le nom spécifié.</span><span class="sxs-lookup"><span data-stu-id="c3409-103">Gets a pointer to the TypeRef token for the <xref:System.Type> reference that is in the specified scope and that has the specified name.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8b055-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8b055-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="c3409-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="c3409-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT FindTypeRef (  
@@ -35,26 +35,26 @@ HRESULT FindTypeRef (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="8b055-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="8b055-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="c3409-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="c3409-105">Parameters</span></span>  
  `tkResolutionScope`  
- <span data-ttu-id="8b055-106">[in] A ModuleRef, AssemblyRef, or TypeRef token that specifies the module, assembly, or type, respectively, in which the type reference is defined.</span><span class="sxs-lookup"><span data-stu-id="8b055-106">[in] A ModuleRef, AssemblyRef, or TypeRef token that specifies the module, assembly, or type, respectively, in which the type reference is defined.</span></span>  
+ <span data-ttu-id="c3409-106">dans Jeton ModuleRef, AssemblyRef ou TypeRef qui spécifie respectivement le module, l’assembly ou le type dans lequel la référence de type est définie.</span><span class="sxs-lookup"><span data-stu-id="c3409-106">[in] A ModuleRef, AssemblyRef, or TypeRef token that specifies the module, assembly, or type, respectively, in which the type reference is defined.</span></span>  
   
  `szName`  
- <span data-ttu-id="8b055-107">[in] The name of the type reference to search for.</span><span class="sxs-lookup"><span data-stu-id="8b055-107">[in] The name of the type reference to search for.</span></span>  
+ <span data-ttu-id="c3409-107">dans Nom de la référence de type à rechercher.</span><span class="sxs-lookup"><span data-stu-id="c3409-107">[in] The name of the type reference to search for.</span></span>  
   
  `ptr`  
- <span data-ttu-id="8b055-108">[out] A pointer to the matching TypeRef token.</span><span class="sxs-lookup"><span data-stu-id="8b055-108">[out] A pointer to the matching TypeRef token.</span></span>  
+ <span data-ttu-id="c3409-108">à Pointeur vers le jeton TypeRef correspondant.</span><span class="sxs-lookup"><span data-stu-id="c3409-108">[out] A pointer to the matching TypeRef token.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="8b055-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="8b055-109">Requirements</span></span>  
- <span data-ttu-id="8b055-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8b055-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="c3409-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="c3409-109">Requirements</span></span>  
+ <span data-ttu-id="c3409-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="c3409-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8b055-111">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="8b055-111">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="c3409-111">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="c3409-111">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="8b055-112">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="8b055-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="c3409-112">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="c3409-112">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="8b055-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8b055-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="c3409-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="c3409-113">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8b055-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8b055-114">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="c3409-114">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="c3409-114">See also</span></span>
 
-- [<span data-ttu-id="8b055-115">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="8b055-115">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="8b055-116">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="8b055-116">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="c3409-115">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="c3409-115">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="c3409-116">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="c3409-116">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

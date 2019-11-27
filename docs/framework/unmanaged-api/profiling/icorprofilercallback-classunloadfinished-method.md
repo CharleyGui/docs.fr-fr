@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74435912"
 ---
-# <a name="icorprofilercallbackclassunloadfinished-method"></a><span data-ttu-id="1462a-102">ICorProfilerCallback::ClassUnloadFinished, méthode</span><span class="sxs-lookup"><span data-stu-id="1462a-102">ICorProfilerCallback::ClassUnloadFinished Method</span></span>
-<span data-ttu-id="1462a-103">Notifies the profiler that a class has finished unloading.</span><span class="sxs-lookup"><span data-stu-id="1462a-103">Notifies the profiler that a class has finished unloading.</span></span>  
+# <a name="icorprofilercallbackclassunloadfinished-method"></a><span data-ttu-id="cfa69-102">ICorProfilerCallback::ClassUnloadFinished, méthode</span><span class="sxs-lookup"><span data-stu-id="cfa69-102">ICorProfilerCallback::ClassUnloadFinished Method</span></span>
+<span data-ttu-id="cfa69-103">Notifie le profileur qu’une classe a terminé le déchargement.</span><span class="sxs-lookup"><span data-stu-id="cfa69-103">Notifies the profiler that a class has finished unloading.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="1462a-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="1462a-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="cfa69-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cfa69-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ClassUnloadFinished(  
@@ -33,26 +33,26 @@ HRESULT ClassUnloadFinished(
     [in] HRESULT hrStatus);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="1462a-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="1462a-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="cfa69-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="cfa69-105">Parameters</span></span>  
  `classId`  
- <span data-ttu-id="1462a-106">[in] Identifies the class that was unloaded.</span><span class="sxs-lookup"><span data-stu-id="1462a-106">[in] Identifies the class that was unloaded.</span></span>  
+ <span data-ttu-id="cfa69-106">dans Identifie la classe qui a été déchargée.</span><span class="sxs-lookup"><span data-stu-id="cfa69-106">[in] Identifies the class that was unloaded.</span></span>  
   
  `hrStatus`  
- <span data-ttu-id="1462a-107">[in] An HRESULT that indicates whether the class was unloaded successfully.</span><span class="sxs-lookup"><span data-stu-id="1462a-107">[in] An HRESULT that indicates whether the class was unloaded successfully.</span></span>  
+ <span data-ttu-id="cfa69-107">dans HRESULT qui indique si la classe a été déchargée avec succès.</span><span class="sxs-lookup"><span data-stu-id="cfa69-107">[in] An HRESULT that indicates whether the class was unloaded successfully.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="1462a-108">Notes</span><span class="sxs-lookup"><span data-stu-id="1462a-108">Remarks</span></span>  
- <span data-ttu-id="1462a-109">Some parts of unloading the class might continue after the `ClassUnloadFinished` callback.</span><span class="sxs-lookup"><span data-stu-id="1462a-109">Some parts of unloading the class might continue after the `ClassUnloadFinished` callback.</span></span> <span data-ttu-id="1462a-110">A failure HRESULT in `hrStatus` indicates a failure.</span><span class="sxs-lookup"><span data-stu-id="1462a-110">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="1462a-111">However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the class has succeeded.</span><span class="sxs-lookup"><span data-stu-id="1462a-111">However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the class has succeeded.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="cfa69-108">Notes</span><span class="sxs-lookup"><span data-stu-id="cfa69-108">Remarks</span></span>  
+ <span data-ttu-id="cfa69-109">Certaines parties du déchargement de la classe peuvent continuer après le rappel `ClassUnloadFinished`.</span><span class="sxs-lookup"><span data-stu-id="cfa69-109">Some parts of unloading the class might continue after the `ClassUnloadFinished` callback.</span></span> <span data-ttu-id="cfa69-110">Un HRESULT d’échec dans `hrStatus` indique un échec.</span><span class="sxs-lookup"><span data-stu-id="cfa69-110">A failure HRESULT in `hrStatus` indicates a failure.</span></span> <span data-ttu-id="cfa69-111">Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du déchargement de la classe a réussi.</span><span class="sxs-lookup"><span data-stu-id="cfa69-111">However, a success HRESULT in `hrStatus` indicates only that the first part of unloading the class has succeeded.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="1462a-112">spécifications</span><span class="sxs-lookup"><span data-stu-id="1462a-112">Requirements</span></span>  
- <span data-ttu-id="1462a-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="1462a-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="cfa69-112">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="cfa69-112">Requirements</span></span>  
+ <span data-ttu-id="cfa69-113">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cfa69-113">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="1462a-114">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="1462a-114">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="cfa69-114">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="cfa69-114">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="1462a-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="1462a-115">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="cfa69-115">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cfa69-115">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="1462a-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="1462a-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="cfa69-116">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cfa69-116">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="1462a-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="1462a-117">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="cfa69-117">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="cfa69-117">See also</span></span>
 
-- [<span data-ttu-id="1462a-118">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="1462a-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [<span data-ttu-id="1462a-119">ClassUnloadStarted, méthode</span><span class="sxs-lookup"><span data-stu-id="1462a-119">ClassUnloadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadstarted-method.md)
+- [<span data-ttu-id="cfa69-118">ICorProfilerCallback, interface</span><span class="sxs-lookup"><span data-stu-id="cfa69-118">ICorProfilerCallback Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [<span data-ttu-id="cfa69-119">ClassUnloadStarted, méthode</span><span class="sxs-lookup"><span data-stu-id="cfa69-119">ClassUnloadStarted Method</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadstarted-method.md)

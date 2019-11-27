@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443949"
 ---
-# <a name="cor_native_link-structure"></a><span data-ttu-id="39b64-102">COR_NATIVE_LINK, structure</span><span class="sxs-lookup"><span data-stu-id="39b64-102">COR_NATIVE_LINK Structure</span></span>
-<span data-ttu-id="39b64-103">Contient des informations utilisées pour lier du code natif.</span><span class="sxs-lookup"><span data-stu-id="39b64-103">Contains information that is used to link native code.</span></span>  
+# <a name="cor_native_link-structure"></a><span data-ttu-id="5144d-102">COR_NATIVE_LINK, structure</span><span class="sxs-lookup"><span data-stu-id="5144d-102">COR_NATIVE_LINK Structure</span></span>
+<span data-ttu-id="5144d-103">Contient des informations utilisées pour lier du code natif.</span><span class="sxs-lookup"><span data-stu-id="5144d-103">Contains information that is used to link native code.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="39b64-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="39b64-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5144d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5144d-104">Syntax</span></span>  
   
 ```cpp  
 typedef struct   
@@ -35,25 +35,25 @@ typedef struct
 } COR_NATIVE_LINK;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="39b64-105">Membres</span><span class="sxs-lookup"><span data-stu-id="39b64-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="5144d-105">Membres</span><span class="sxs-lookup"><span data-stu-id="5144d-105">Members</span></span>  
   
-|<span data-ttu-id="39b64-106">Membre</span><span class="sxs-lookup"><span data-stu-id="39b64-106">Member</span></span>|<span data-ttu-id="39b64-107">Description</span><span class="sxs-lookup"><span data-stu-id="39b64-107">Description</span></span>|  
+|<span data-ttu-id="5144d-106">Membre</span><span class="sxs-lookup"><span data-stu-id="5144d-106">Member</span></span>|<span data-ttu-id="5144d-107">Description</span><span class="sxs-lookup"><span data-stu-id="5144d-107">Description</span></span>|  
 |------------|-----------------|  
-|`m_linkType`|<span data-ttu-id="39b64-108">The type to be linked in native code.</span><span class="sxs-lookup"><span data-stu-id="39b64-108">The type to be linked in native code.</span></span> <span data-ttu-id="39b64-109">This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.</span><span class="sxs-lookup"><span data-stu-id="39b64-109">This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.</span></span>|  
-|`m_flags`|<span data-ttu-id="39b64-110">Flags used by the linker when linking native code.</span><span class="sxs-lookup"><span data-stu-id="39b64-110">Flags used by the linker when linking native code.</span></span> <span data-ttu-id="39b64-111">This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.</span><span class="sxs-lookup"><span data-stu-id="39b64-111">This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.</span></span>|  
-|`m_entryPoint`|<span data-ttu-id="39b64-112">The MemberRef metadata token that represents the entry point.</span><span class="sxs-lookup"><span data-stu-id="39b64-112">The MemberRef metadata token that represents the entry point.</span></span> <span data-ttu-id="39b64-113">The format is `lib:entrypoint`.</span><span class="sxs-lookup"><span data-stu-id="39b64-113">The format is `lib:entrypoint`.</span></span>|  
+|`m_linkType`|<span data-ttu-id="5144d-108">Type à lier en code natif.</span><span class="sxs-lookup"><span data-stu-id="5144d-108">The type to be linked in native code.</span></span> <span data-ttu-id="5144d-109">Cette valeur est l’une des valeurs [CorNativeLinkType,](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) .</span><span class="sxs-lookup"><span data-stu-id="5144d-109">This value is one of the [CorNativeLinkType](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md) values.</span></span>|  
+|`m_flags`|<span data-ttu-id="5144d-110">Indicateurs utilisés par l’éditeur de liens lors de la liaison de code natif.</span><span class="sxs-lookup"><span data-stu-id="5144d-110">Flags used by the linker when linking native code.</span></span> <span data-ttu-id="5144d-111">Cette valeur est l’une des valeurs [CorNativeLinkFlags,](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) .</span><span class="sxs-lookup"><span data-stu-id="5144d-111">This value is one of the [CorNativeLinkFlags](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md) values.</span></span>|  
+|`m_entryPoint`|<span data-ttu-id="5144d-112">Jeton de métadonnées MemberRef qui représente le point d’entrée.</span><span class="sxs-lookup"><span data-stu-id="5144d-112">The MemberRef metadata token that represents the entry point.</span></span> <span data-ttu-id="5144d-113">Le format est `lib:entrypoint`.</span><span class="sxs-lookup"><span data-stu-id="5144d-113">The format is `lib:entrypoint`.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="39b64-114">spécifications</span><span class="sxs-lookup"><span data-stu-id="39b64-114">Requirements</span></span>  
- <span data-ttu-id="39b64-115">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="39b64-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5144d-114">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="5144d-114">Requirements</span></span>  
+ <span data-ttu-id="5144d-115">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5144d-115">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="39b64-116">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="39b64-116">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="5144d-116">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="5144d-116">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="39b64-117">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="39b64-117">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="5144d-117">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="5144d-117">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="39b64-118">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="39b64-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5144d-118">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5144d-118">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="39b64-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="39b64-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5144d-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5144d-119">See also</span></span>
 
-- [<span data-ttu-id="39b64-120">Structures de métadonnées</span><span class="sxs-lookup"><span data-stu-id="39b64-120">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
-- [<span data-ttu-id="39b64-121">CorNativeLinkType, énumération</span><span class="sxs-lookup"><span data-stu-id="39b64-121">CorNativeLinkType Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)
-- [<span data-ttu-id="39b64-122">CorNativeLinkFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="39b64-122">CorNativeLinkFlags Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)
+- [<span data-ttu-id="5144d-120">Structures de métadonnées</span><span class="sxs-lookup"><span data-stu-id="5144d-120">Metadata Structures</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-structures.md)
+- [<span data-ttu-id="5144d-121">CorNativeLinkType, énumération</span><span class="sxs-lookup"><span data-stu-id="5144d-121">CorNativeLinkType Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/cornativelinktype-enumeration.md)
+- [<span data-ttu-id="5144d-122">CorNativeLinkFlags, énumération</span><span class="sxs-lookup"><span data-stu-id="5144d-122">CorNativeLinkFlags Enumeration</span></span>](../../../../docs/framework/unmanaged-api/metadata/cornativelinkflags-enumeration.md)

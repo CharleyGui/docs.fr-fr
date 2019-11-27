@@ -22,26 +22,26 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448850"
 ---
-# <a name="isymunmanagedmethodgettoken-method"></a><span data-ttu-id="5be26-102">ISymUnmanagedMethod::GetToken, méthode</span><span class="sxs-lookup"><span data-stu-id="5be26-102">ISymUnmanagedMethod::GetToken Method</span></span>
-<span data-ttu-id="5be26-103">Returns the metadata token for this method.</span><span class="sxs-lookup"><span data-stu-id="5be26-103">Returns the metadata token for this method.</span></span>  
+# <a name="isymunmanagedmethodgettoken-method"></a><span data-ttu-id="ce23b-102">ISymUnmanagedMethod::GetToken, méthode</span><span class="sxs-lookup"><span data-stu-id="ce23b-102">ISymUnmanagedMethod::GetToken Method</span></span>
+<span data-ttu-id="ce23b-103">Retourne le jeton de métadonnées pour cette méthode.</span><span class="sxs-lookup"><span data-stu-id="ce23b-103">Returns the metadata token for this method.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="5be26-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5be26-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="ce23b-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ce23b-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetToken(  
    [out, retval]  mdMethodDef  *pToken);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="5be26-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="5be26-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="ce23b-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="ce23b-105">Parameters</span></span>  
  `pToken`  
- <span data-ttu-id="5be26-106">[out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.</span><span class="sxs-lookup"><span data-stu-id="5be26-106">[out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.</span></span>  
+ <span data-ttu-id="ce23b-106">à Pointeur vers un `mdMethodDef` qui reçoit la taille, en caractères, de la mémoire tampon requise pour contenir les métadonnées.</span><span class="sxs-lookup"><span data-stu-id="ce23b-106">[out] A pointer to a `mdMethodDef` that receives the size, in characters, of the buffer required to contain the metadata.</span></span>  
   
-## <a name="return-value"></a><span data-ttu-id="5be26-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="5be26-107">Return Value</span></span>  
- <span data-ttu-id="5be26-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span><span class="sxs-lookup"><span data-stu-id="5be26-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
+## <a name="return-value"></a><span data-ttu-id="ce23b-107">Valeur de retour</span><span class="sxs-lookup"><span data-stu-id="ce23b-107">Return Value</span></span>  
+ <span data-ttu-id="ce23b-108">S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.</span><span class="sxs-lookup"><span data-stu-id="ce23b-108">S_OK if the method succeeds; otherwise, E_FAIL or some other error code.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="5be26-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="5be26-109">Requirements</span></span>  
- <span data-ttu-id="5be26-110">**Header:** CorSym.idl, CorSym.h</span><span class="sxs-lookup"><span data-stu-id="5be26-110">**Header:** CorSym.idl, CorSym.h</span></span>  
+## <a name="requirements"></a><span data-ttu-id="ce23b-109">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="ce23b-109">Requirements</span></span>  
+ <span data-ttu-id="ce23b-110">**En-tête :** CorSym. idl, CorSym. h</span><span class="sxs-lookup"><span data-stu-id="ce23b-110">**Header:** CorSym.idl, CorSym.h</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="5be26-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5be26-111">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="ce23b-111">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ce23b-111">See also</span></span>
 
-- [<span data-ttu-id="5be26-112">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="5be26-112">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
+- [<span data-ttu-id="ce23b-112">ISymUnmanagedMethod, interface</span><span class="sxs-lookup"><span data-stu-id="ce23b-112">ISymUnmanagedMethod Interface</span></span>](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedmethod-interface.md)
