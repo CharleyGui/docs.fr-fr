@@ -21,7 +21,7 @@ L’objet `My.WebServices` fournit une instance de chaque service web référenc
 
 Le tableau suivant liste les moyens possibles d’accéder aux services web référencés par une application.
 
-|Vers|Voir|
+|Pour|Consultez|
 |---|---|
 |Appeler un service web|[My.WebServices (objet)](../../../visual-basic/language-reference/objects/my-webservices-object.md)|
 |Appeler un service web de façon asynchrone et gérer un événement quand il s’exécute|[Guide pratique : appeler un service web de manière asynchrone](../../../visual-basic/developing-apps/programming/how-to-call-a-web-service-asynchronously.md)|

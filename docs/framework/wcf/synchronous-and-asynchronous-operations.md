@@ -56,7 +56,7 @@ Cette rubrique traite de l'implémentation et de l'appel des opérations de serv
 3. Modèle asynchrone IAsyncResult  
   
 #### <a name="task-based-asynchronous-pattern"></a>Modèle asynchrone basé sur les tâches (TAP, Task-based Asynchronous Pattern)  
- Le modèle asynchrone basé sur des tâches constitue le meilleur moyen d’implémenter des opérations asynchrones, car il est le plus facile et le plus simple. Pour utiliser cette méthode, implémentez simplement votre opération de service et spécifiez un type de retour Task\<T>, où T est le type retourné par l'opération logique. Par exemple :  
+ Le modèle asynchrone basé sur des tâches constitue le meilleur moyen d’implémenter des opérations asynchrones, car il est le plus facile et le plus simple. Pour utiliser cette méthode, implémentez simplement votre opération de service et spécifiez un type de retour Task\<T>, où T est le type retourné par l'opération logique. Exemple :  
   
 ```csharp  
 public class SampleService:ISampleService   

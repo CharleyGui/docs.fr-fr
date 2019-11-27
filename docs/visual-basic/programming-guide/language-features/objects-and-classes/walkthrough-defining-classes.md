@@ -24,60 +24,60 @@ ms.locfileid: "74346076"
 ---
 # <a name="walkthrough-defining-classes-visual-basic"></a>Procédure pas à pas : définition des classes (Visual Basic)
 
-This walkthrough demonstrates how to define classes, which you can then use to create objects. It also shows you how to add properties and methods to the new class, and demonstrates how to initialize an object.  
+Cette procédure pas à pas montre comment définir des classes, que vous pouvez ensuite utiliser pour créer des objets. Elle vous montre également comment ajouter des propriétés et des méthodes à la nouvelle classe, et montre comment initialiser un objet.  
   
 [!INCLUDE[note_settings_general](~/includes/note-settings-general-md.md)]  
   
-## <a name="to-define-a-class"></a>To define a class
+## <a name="to-define-a-class"></a>Pour définir une classe
   
-1. Create a project by clicking **New Project** on the **File** menu. La boîte de dialogue **Nouveau projet** s’affiche.  
+1. Créez un projet en cliquant sur **nouveau projet** dans le menu **fichier** . La boîte de dialogue **Nouveau projet** s'affiche.  
   
-2. Select Windows Application from the list of Visual Basic project templates to display the new project.  
+2. Sélectionnez application Windows dans la liste des modèles de projet de Visual Basic pour afficher le nouveau projet.  
   
-3. Add a new class to the project by clicking **Add Class** on the **Project** menu. La boîte de dialogue **Ajouter un nouvel élément** s’affiche.  
+3. Ajoutez une nouvelle classe au projet en cliquant sur **Ajouter une classe** dans le menu **projet** . La boîte de dialogue **Ajouter un nouvel élément** s’affiche.  
   
-4. Select the **Class** template.  
+4. Sélectionnez le modèle de **classe** .  
   
-5. Name the new class `UserNameInfo.vb`, and then click **Add** to display the code for the new class.  
+5. Nommez la nouvelle classe `UserNameInfo.vb`, puis cliquez sur **Ajouter** pour afficher le code de la nouvelle classe.  
   
      [!code-vb[VbVbalrOOP#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#5)]
   
     > [!NOTE]
-    > You can use the Visual Basic **Code Editor** to add a class to your startup form by typing the `Class` keyword followed by the name of the new class. The **Code Editor** provides a corresponding `End Class` statement for you.  
+    > Vous pouvez utiliser l' **éditeur de Code** Visual Basic pour ajouter une classe à votre formulaire de démarrage en tapant le mot clé `Class` suivi du nom de la nouvelle classe. L' **éditeur de code** fournit une instruction `End Class` correspondante.  
   
-6. Define a private field for the class by adding the following code between the `Class` and `End Class` statements:  
+6. Définissez un champ privé pour la classe en ajoutant le code suivant entre les instructions `Class` et `End Class` :  
   
      [!code-vb[VbVbalrOOP#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#7)]
   
-     Declaring the field as `Private` means it can be used only within the class. You can make fields available from outside a class by using access modifiers such as `Public` that provide more access. For more information, see [Access levels in Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
+     La déclaration du champ comme `Private` signifie qu’il peut être utilisé uniquement dans la classe. Vous pouvez rendre les champs disponibles à l’extérieur d’une classe en utilisant des modificateurs d’accès tels que `Public` qui fournissent plus d’accès. Pour plus d’informations, consultez [niveaux d’accès dans Visual Basic](../../../../visual-basic/programming-guide/language-features/declared-elements/access-levels.md).  
   
-7. Define a property for the class by adding the following code:  
+7. Définissez une propriété pour la classe en ajoutant le code suivant :  
   
      [!code-vb[VbVbalrOOP#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#8)]
   
-8. Define a method for the class by adding the following code:  
+8. Définissez une méthode pour la classe en ajoutant le code suivant :  
   
      [!code-vb[VbVbalrOOP#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#9)]
   
-9. Define a parameterized constructor for the new class by adding a procedure named `Sub New`:  
+9. Définissez un constructeur paramétrable pour la nouvelle classe en ajoutant une procédure nommée `Sub New`:  
   
      [!code-vb[VbVbalrOOP#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#10)]
   
-     The `Sub New` constructor is called automatically when an object based on this class is created. This constructor sets the value of the field that holds the user name.  
+     Le constructeur `Sub New` est appelé automatiquement lorsqu’un objet basé sur cette classe est créé. Ce constructeur définit la valeur du champ qui contient le nom d’utilisateur.  
   
-## <a name="to-create-a-button-to-test-the-class"></a>To create a button to test the class
+## <a name="to-create-a-button-to-test-the-class"></a>Pour créer un bouton pour tester la classe
   
-1. Change the startup form to design mode by right-clicking its name in **Solution Explorer** and then clicking **View Designer**. By default, the startup form for Windows Application projects is named Form1.vb. The main form will then appear.  
+1. Modifiez le formulaire de démarrage en mode Design en cliquant avec le bouton droit sur son nom dans **Explorateur de solutions** puis en cliquant sur **Concepteur de vues**. Par défaut, le formulaire de démarrage pour les projets d’application Windows est nommé Form1. vb. Le formulaire principal s’affiche alors.  
   
-2. Add a button to the main form and double-click it to display the code for the `Button1_Click` event handler. Add the following code to call the test procedure:  
+2. Ajoutez un bouton au formulaire principal et double-cliquez dessus pour afficher le code du gestionnaire d’événements `Button1_Click`. Ajoutez le code suivant pour appeler la procédure de test :  
   
      [!code-vb[VbVbalrOOP#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrOOP/VB/OOP.vb#12)]
   
 ## <a name="to-run-your-application"></a>Pour exécuter votre application
   
-1. Run your application by pressing F5. Click the button on the form to call the test procedure. It displays a message stating that the original `UserName` is "MOORE, BOBBY", because the procedure called the `Capitalize` method of the object.  
+1. Exécutez votre application en appuyant sur F5. Cliquez sur le bouton du formulaire pour appeler la procédure de test. Il affiche un message indiquant que la `UserName` d’origine est « MOORE, BOBBY », car la procédure a appelé la méthode `Capitalize` de l’objet.  
   
-2. Cliquez sur **OK** pour fermer la boîte de message. The `Button1 Click` procedure changes the value of the `UserName` property and displays a message stating that the new value of `UserName` is "Worden, Joe".  
+2. Cliquez sur **OK** pour fermer la boîte de message. La procédure `Button1 Click` modifie la valeur de la propriété `UserName` et affiche un message indiquant que la nouvelle valeur de `UserName` est « worden, Joe ».  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -19,15 +19,15 @@ Les rubriques de cette section documentent les directives du compilateur de code
   
 ## <a name="in-this-section"></a>Dans cette section  
 
- [#Const Directive](../../../visual-basic/language-reference/directives/const-directive.md) -- Define a compiler constant  
+ [Directive #Const](../../../visual-basic/language-reference/directives/const-directive.md) : définir une constante de compilation  
   
- [#ExternalSource Directive](../../../visual-basic/language-reference/directives/externalsource-directive.md) -- Indicate a mapping between source lines and text external to the source  
+ [Directive de #ExternalSource](../../../visual-basic/language-reference/directives/externalsource-directive.md) --indiquer un mappage entre les lignes sources et le texte externe à la source  
   
- [#If...Then...#Else Directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md) -- Compile selected blocks of code  
+ [#If... Then... #Else directives](../../../visual-basic/language-reference/directives/if-then-else-directives.md) --compiler les blocs de code sélectionnés  
   
- [#Region Directive](../../../visual-basic/language-reference/directives/region-directive.md) -- Collapse and hide sections of code in the Visual Studio editor  
+ [Directive #Region](../../../visual-basic/language-reference/directives/region-directive.md) --réduire et masquer des sections de code dans l’éditeur Visual Studio  
   
- **#Disable, #Enable** -- Disable and enable specific warnings for regions of code.  
+ **#Disable, #Enable** --désactiver et activer des avertissements spécifiques pour les régions de code.  
   
 ```vb  
 #Disable Warning BC42356 ' suppress warning about no awaits in this method  
@@ -39,7 +39,7 @@ Les rubriques de cette section documentent les directives du compilateur de code
   
  Vous pouvez désactiver et activer une liste séparée par des virgules de codes d'avertissement.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
