@@ -22,10 +22,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74437577"
 ---
-# <a name="imetadataimportgeteventprops-method"></a><span data-ttu-id="91ac6-102">IMetaDataImport::GetEventProps, méthode</span><span class="sxs-lookup"><span data-stu-id="91ac6-102">IMetaDataImport::GetEventProps Method</span></span>
-<span data-ttu-id="91ac6-103">Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.</span><span class="sxs-lookup"><span data-stu-id="91ac6-103">Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.</span></span>  
+# <a name="imetadataimportgeteventprops-method"></a><span data-ttu-id="71765-102">IMetaDataImport::GetEventProps, méthode</span><span class="sxs-lookup"><span data-stu-id="71765-102">IMetaDataImport::GetEventProps Method</span></span>
+<span data-ttu-id="71765-103">Obtient des informations de métadonnées pour l’événement représenté par le jeton d’événement spécifié, y compris le type déclarant, les méthodes d’ajout et de suppression pour les délégués et tous les indicateurs et autres données associées.</span><span class="sxs-lookup"><span data-stu-id="71765-103">Gets metadata information for the event represented by the specified event token, including the declaring type, the add and remove methods for delegates, and any flags and other associated data.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="91ac6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="91ac6-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="71765-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="71765-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetEventProps (  
@@ -45,53 +45,53 @@ HRESULT GetEventProps (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="91ac6-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="91ac6-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="71765-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="71765-105">Parameters</span></span>  
  `ev`  
- <span data-ttu-id="91ac6-106">[in] The event metadata token representing the event to get metadata for.</span><span class="sxs-lookup"><span data-stu-id="91ac6-106">[in] The event metadata token representing the event to get metadata for.</span></span>  
+ <span data-ttu-id="71765-106">dans Jeton de métadonnées d’événement représentant l’événement pour lequel obtenir les métadonnées.</span><span class="sxs-lookup"><span data-stu-id="71765-106">[in] The event metadata token representing the event to get metadata for.</span></span>  
   
  `pClass`  
- <span data-ttu-id="91ac6-107">[out] A pointer to the TypeDef token representing the class that declares the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-107">[out] A pointer to the TypeDef token representing the class that declares the event.</span></span>  
+ <span data-ttu-id="71765-107">à Pointeur vers le jeton TypeDef représentant la classe qui déclare l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-107">[out] A pointer to the TypeDef token representing the class that declares the event.</span></span>  
   
  `szEvent`  
- <span data-ttu-id="91ac6-108">[out] The name of the event referenced by `ev`.</span><span class="sxs-lookup"><span data-stu-id="91ac6-108">[out] The name of the event referenced by `ev`.</span></span>  
+ <span data-ttu-id="71765-108">à Nom de l’événement référencé par `ev`.</span><span class="sxs-lookup"><span data-stu-id="71765-108">[out] The name of the event referenced by `ev`.</span></span>  
   
  `pchEvent`  
- <span data-ttu-id="91ac6-109">[in] The requested length in wide characters of `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="91ac6-109">[in] The requested length in wide characters of `szEvent`.</span></span>  
+ <span data-ttu-id="71765-109">dans Longueur demandée en caractères larges de `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="71765-109">[in] The requested length in wide characters of `szEvent`.</span></span>  
   
  `pdwEventFlags`  
- <span data-ttu-id="91ac6-110">[out] The returned length in wide characters of `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="91ac6-110">[out] The returned length in wide characters of `szEvent`.</span></span>  
+ <span data-ttu-id="71765-110">à Longueur retournée en caractères larges de `szEvent`.</span><span class="sxs-lookup"><span data-stu-id="71765-110">[out] The returned length in wide characters of `szEvent`.</span></span>  
   
  `ptkEventType`  
- <span data-ttu-id="91ac6-111">[out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-111">[out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.</span></span>  
+ <span data-ttu-id="71765-111">à Pointeur vers un jeton de métadonnées TypeRef ou TypeDef représentant le type de <xref:System.Delegate> de l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-111">[out] A pointer to a TypeRef or TypeDef metadata token representing the <xref:System.Delegate> type of the event.</span></span>  
   
  `pmdAddOn`  
- <span data-ttu-id="91ac6-112">[out] A pointer to the metadata token representing the method that adds handlers for the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-112">[out] A pointer to the metadata token representing the method that adds handlers for the event.</span></span>  
+ <span data-ttu-id="71765-112">à Pointeur vers le jeton de métadonnées représentant la méthode qui ajoute des gestionnaires pour l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-112">[out] A pointer to the metadata token representing the method that adds handlers for the event.</span></span>  
   
  `pmdRemoveOn`  
- <span data-ttu-id="91ac6-113">[out] A pointer to the metadata token representing the method that removes handlers for the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-113">[out] A pointer to the metadata token representing the method that removes handlers for the event.</span></span>  
+ <span data-ttu-id="71765-113">à Pointeur vers le jeton de métadonnées représentant la méthode qui supprime les gestionnaires de l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-113">[out] A pointer to the metadata token representing the method that removes handlers for the event.</span></span>  
   
  `pmdFire`  
- <span data-ttu-id="91ac6-114">[out] A pointer to the metadata token representing the method that raises the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-114">[out] A pointer to the metadata token representing the method that raises the event.</span></span>  
+ <span data-ttu-id="71765-114">à Pointeur vers le jeton de métadonnées représentant la méthode qui déclenche l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-114">[out] A pointer to the metadata token representing the method that raises the event.</span></span>  
   
  `rmdOtherMethod`  
- <span data-ttu-id="91ac6-115">[out] An array of token pointers to other methods associated with the event.</span><span class="sxs-lookup"><span data-stu-id="91ac6-115">[out] An array of token pointers to other methods associated with the event.</span></span>  
+ <span data-ttu-id="71765-115">à Tableau de pointeurs de jeton vers d’autres méthodes associées à l’événement.</span><span class="sxs-lookup"><span data-stu-id="71765-115">[out] An array of token pointers to other methods associated with the event.</span></span>  
   
  `cMax`  
- <span data-ttu-id="91ac6-116">[in] Taille maximale du tableau `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="91ac6-116">[in] The maximum size of the `rmdOtherMethod` array.</span></span>  
+ <span data-ttu-id="71765-116">[in] Taille maximale du tableau `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="71765-116">[in] The maximum size of the `rmdOtherMethod` array.</span></span>  
   
  `pcOtherMethod`  
- <span data-ttu-id="91ac6-117">[out] The number of tokens returned in `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="91ac6-117">[out] The number of tokens returned in `rmdOtherMethod`.</span></span>  
+ <span data-ttu-id="71765-117">à Nombre de jetons retournés dans `rmdOtherMethod`.</span><span class="sxs-lookup"><span data-stu-id="71765-117">[out] The number of tokens returned in `rmdOtherMethod`.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="91ac6-118">spécifications</span><span class="sxs-lookup"><span data-stu-id="91ac6-118">Requirements</span></span>  
- <span data-ttu-id="91ac6-119">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="91ac6-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="71765-118">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="71765-118">Requirements</span></span>  
+ <span data-ttu-id="71765-119">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="71765-119">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="91ac6-120">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="91ac6-120">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="71765-120">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="71765-120">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="91ac6-121">**Library:** Included as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="91ac6-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="71765-121">**Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="71765-121">**Library:** Included as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="91ac6-122">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="91ac6-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="71765-122">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="71765-122">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="91ac6-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="91ac6-123">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="71765-123">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="71765-123">See also</span></span>
 
-- [<span data-ttu-id="91ac6-124">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="91ac6-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
-- [<span data-ttu-id="91ac6-125">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="91ac6-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)
+- [<span data-ttu-id="71765-124">IMetaDataImport, interface</span><span class="sxs-lookup"><span data-stu-id="71765-124">IMetaDataImport Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-interface.md)
+- [<span data-ttu-id="71765-125">IMetaDataImport2, interface</span><span class="sxs-lookup"><span data-stu-id="71765-125">IMetaDataImport2 Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-interface.md)

@@ -21,10 +21,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74450209"
 ---
-# <a name="cormethodimpl-enumeration"></a><span data-ttu-id="6e1cb-102">CorMethodImpl, énumération</span><span class="sxs-lookup"><span data-stu-id="6e1cb-102">CorMethodImpl Enumeration</span></span>
-<span data-ttu-id="6e1cb-103">Contient des valeurs qui décrivent les fonctionnalités d’implémentation d’une méthode.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-103">Contains values that describe method implementation features.</span></span>  
+# <a name="cormethodimpl-enumeration"></a><span data-ttu-id="5bcf8-102">CorMethodImpl, énumération</span><span class="sxs-lookup"><span data-stu-id="5bcf8-102">CorMethodImpl Enumeration</span></span>
+<span data-ttu-id="5bcf8-103">Contient des valeurs qui décrivent les fonctionnalités d’implémentation d’une méthode.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-103">Contains values that describe method implementation features.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6e1cb-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6e1cb-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="5bcf8-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="5bcf8-104">Syntax</span></span>  
   
 ```cpp  
 typedef enum CorMethodImpl {  
@@ -52,34 +52,34 @@ typedef enum CorMethodImpl {
 } CorMethodImpl;  
 ```  
   
-## <a name="members"></a><span data-ttu-id="6e1cb-105">Membres</span><span class="sxs-lookup"><span data-stu-id="6e1cb-105">Members</span></span>  
+## <a name="members"></a><span data-ttu-id="5bcf8-105">Membres</span><span class="sxs-lookup"><span data-stu-id="5bcf8-105">Members</span></span>  
   
-|<span data-ttu-id="6e1cb-106">Membre</span><span class="sxs-lookup"><span data-stu-id="6e1cb-106">Member</span></span>|<span data-ttu-id="6e1cb-107">Description</span><span class="sxs-lookup"><span data-stu-id="6e1cb-107">Description</span></span>|  
+|<span data-ttu-id="5bcf8-106">Membre</span><span class="sxs-lookup"><span data-stu-id="5bcf8-106">Member</span></span>|<span data-ttu-id="5bcf8-107">Description</span><span class="sxs-lookup"><span data-stu-id="5bcf8-107">Description</span></span>|  
 |------------|-----------------|  
-|`miCodeTypeMask`|<span data-ttu-id="6e1cb-108">Flags that describe code type.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-108">Flags that describe code type.</span></span>|  
-|`miIL`|<span data-ttu-id="6e1cb-109">Specifies that the method implementation is Microsoft intermediate language (MSIL).</span><span class="sxs-lookup"><span data-stu-id="6e1cb-109">Specifies that the method implementation is Microsoft intermediate language (MSIL).</span></span>|  
-|`miNative`|<span data-ttu-id="6e1cb-110">Spécifie que l’implémentation de la méthode est native.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-110">Specifies that the method implementation is native.</span></span>|  
-|`miOPTIL`|<span data-ttu-id="6e1cb-111">Specifies that the method implementation is OPTIL.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-111">Specifies that the method implementation is OPTIL.</span></span>|  
-|`miRuntime`|<span data-ttu-id="6e1cb-112">Specifies that the method implementation is provided by the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-112">Specifies that the method implementation is provided by the common language runtime.</span></span>|  
-|`miManagedMask`|<span data-ttu-id="6e1cb-113">Flags that indicate whether the code is managed or unmanaged.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-113">Flags that indicate whether the code is managed or unmanaged.</span></span>|  
-|`miUnmanaged`|<span data-ttu-id="6e1cb-114">Specifies that the method implementation is unmanaged.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-114">Specifies that the method implementation is unmanaged.</span></span>|  
-|`miManaged`|<span data-ttu-id="6e1cb-115">Specifies that the method implementation is managed.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-115">Specifies that the method implementation is managed.</span></span>|  
-|`miForwardRef`|<span data-ttu-id="6e1cb-116">Specifies that the method is defined.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-116">Specifies that the method is defined.</span></span> <span data-ttu-id="6e1cb-117">This flag is used primarily in merge scenarios.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-117">This flag is used primarily in merge scenarios.</span></span>|  
-|`miPreserveSig`|<span data-ttu-id="6e1cb-118">Specifies that the method signature cannot be mangled for an HRESULT conversion.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-118">Specifies that the method signature cannot be mangled for an HRESULT conversion.</span></span>|  
-|`miInternalCall`|<span data-ttu-id="6e1cb-119">Reserved for internal use by the common language runtime.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-119">Reserved for internal use by the common language runtime.</span></span>|  
-|`miSynchronized`|<span data-ttu-id="6e1cb-120">Specifies that the method is single-threaded through its body.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-120">Specifies that the method is single-threaded through its body.</span></span>|  
-|`miNoInlining`|<span data-ttu-id="6e1cb-121">Spécifie que la méthode ne peut pas être inline.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-121">Specifies that the method cannot be inlined.</span></span>|  
-|`miAggressiveInlining`|<span data-ttu-id="6e1cb-122">Specifies that the method should be inlined if possible.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-122">Specifies that the method should be inlined if possible.</span></span>|  
-|`miNoOptimization`|<span data-ttu-id="6e1cb-123">Specifies that the method should not be optimized.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-123">Specifies that the method should not be optimized.</span></span>|  
-|`miMaxMethodImplVal`|<span data-ttu-id="6e1cb-124">The maximum valid value for a `CorMethodImpl`.</span><span class="sxs-lookup"><span data-stu-id="6e1cb-124">The maximum valid value for a `CorMethodImpl`.</span></span>|  
+|`miCodeTypeMask`|<span data-ttu-id="5bcf8-108">Indicateurs qui décrivent le type de code.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-108">Flags that describe code type.</span></span>|  
+|`miIL`|<span data-ttu-id="5bcf8-109">Spécifie que l’implémentation de la méthode est en langage MSIL (Microsoft Intermediate Language).</span><span class="sxs-lookup"><span data-stu-id="5bcf8-109">Specifies that the method implementation is Microsoft intermediate language (MSIL).</span></span>|  
+|`miNative`|<span data-ttu-id="5bcf8-110">Spécifie que l’implémentation de la méthode est native.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-110">Specifies that the method implementation is native.</span></span>|  
+|`miOPTIL`|<span data-ttu-id="5bcf8-111">Spécifie que l’implémentation de la méthode est OPTI.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-111">Specifies that the method implementation is OPTIL.</span></span>|  
+|`miRuntime`|<span data-ttu-id="5bcf8-112">Spécifie que l’implémentation de la méthode est fournie par le common language runtime.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-112">Specifies that the method implementation is provided by the common language runtime.</span></span>|  
+|`miManagedMask`|<span data-ttu-id="5bcf8-113">Indicateurs qui indiquent si le code est managé ou non managé.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-113">Flags that indicate whether the code is managed or unmanaged.</span></span>|  
+|`miUnmanaged`|<span data-ttu-id="5bcf8-114">Spécifie que l’implémentation de la méthode n’est pas gérée.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-114">Specifies that the method implementation is unmanaged.</span></span>|  
+|`miManaged`|<span data-ttu-id="5bcf8-115">Spécifie que l’implémentation de la méthode est managée.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-115">Specifies that the method implementation is managed.</span></span>|  
+|`miForwardRef`|<span data-ttu-id="5bcf8-116">Spécifie que la méthode est définie.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-116">Specifies that the method is defined.</span></span> <span data-ttu-id="5bcf8-117">Cet indicateur est principalement utilisé dans les scénarios de fusion.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-117">This flag is used primarily in merge scenarios.</span></span>|  
+|`miPreserveSig`|<span data-ttu-id="5bcf8-118">Spécifie que la signature de la méthode ne peut pas être tronquée pour une conversion HRESULT.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-118">Specifies that the method signature cannot be mangled for an HRESULT conversion.</span></span>|  
+|`miInternalCall`|<span data-ttu-id="5bcf8-119">Réservé à un usage interne par la common language runtime.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-119">Reserved for internal use by the common language runtime.</span></span>|  
+|`miSynchronized`|<span data-ttu-id="5bcf8-120">Spécifie que la méthode est à thread unique par le biais de son corps.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-120">Specifies that the method is single-threaded through its body.</span></span>|  
+|`miNoInlining`|<span data-ttu-id="5bcf8-121">Spécifie que la méthode ne peut pas être inline.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-121">Specifies that the method cannot be inlined.</span></span>|  
+|`miAggressiveInlining`|<span data-ttu-id="5bcf8-122">Spécifie que la méthode doit être inline si possible.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-122">Specifies that the method should be inlined if possible.</span></span>|  
+|`miNoOptimization`|<span data-ttu-id="5bcf8-123">Spécifie que la méthode ne doit pas être optimisée.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-123">Specifies that the method should not be optimized.</span></span>|  
+|`miMaxMethodImplVal`|<span data-ttu-id="5bcf8-124">Valeur valide maximale pour un `CorMethodImpl`.</span><span class="sxs-lookup"><span data-stu-id="5bcf8-124">The maximum valid value for a `CorMethodImpl`.</span></span>|  
   
-## <a name="requirements"></a><span data-ttu-id="6e1cb-125">spécifications</span><span class="sxs-lookup"><span data-stu-id="6e1cb-125">Requirements</span></span>  
- <span data-ttu-id="6e1cb-126">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6e1cb-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="5bcf8-125">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="5bcf8-125">Requirements</span></span>  
+ <span data-ttu-id="5bcf8-126">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="5bcf8-126">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6e1cb-127">**Header:** CorHdr.h</span><span class="sxs-lookup"><span data-stu-id="6e1cb-127">**Header:** CorHdr.h</span></span>  
+ <span data-ttu-id="5bcf8-127">**En-tête :** CorHdr. h</span><span class="sxs-lookup"><span data-stu-id="5bcf8-127">**Header:** CorHdr.h</span></span>  
   
- <span data-ttu-id="6e1cb-128">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6e1cb-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="5bcf8-128">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="5bcf8-128">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6e1cb-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6e1cb-129">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5bcf8-129">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5bcf8-129">See also</span></span>
 
-- [<span data-ttu-id="6e1cb-130">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="6e1cb-130">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)
+- [<span data-ttu-id="5bcf8-130">Énumérations de métadonnées</span><span class="sxs-lookup"><span data-stu-id="5bcf8-130">Metadata Enumerations</span></span>](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)

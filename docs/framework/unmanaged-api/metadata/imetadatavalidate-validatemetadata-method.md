@@ -22,24 +22,24 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74443403"
 ---
-# <a name="imetadatavalidatevalidatemetadata-method"></a><span data-ttu-id="ad8ea-102">IMetaDataValidate::ValidateMetaData, méthode</span><span class="sxs-lookup"><span data-stu-id="ad8ea-102">IMetaDataValidate::ValidateMetaData Method</span></span>
-<span data-ttu-id="ad8ea-103">Valide les signatures de métadonnées des objets dans la portée de métadonnées actuelle.</span><span class="sxs-lookup"><span data-stu-id="ad8ea-103">Validates the metadata signatures of the objects in the current metadata scope.</span></span>  
+# <a name="imetadatavalidatevalidatemetadata-method"></a><span data-ttu-id="e125d-102">IMetaDataValidate::ValidateMetaData, méthode</span><span class="sxs-lookup"><span data-stu-id="e125d-102">IMetaDataValidate::ValidateMetaData Method</span></span>
+<span data-ttu-id="e125d-103">Valide les signatures de métadonnées des objets dans la portée de métadonnées actuelle.</span><span class="sxs-lookup"><span data-stu-id="e125d-103">Validates the metadata signatures of the objects in the current metadata scope.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="ad8ea-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="ad8ea-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="e125d-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e125d-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT ValidateMetaData ();  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="ad8ea-105">spécifications</span><span class="sxs-lookup"><span data-stu-id="ad8ea-105">Requirements</span></span>  
- <span data-ttu-id="ad8ea-106">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="ad8ea-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="e125d-105">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="e125d-105">Requirements</span></span>  
+ <span data-ttu-id="e125d-106">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e125d-106">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="ad8ea-107">**Header:** Cor.h</span><span class="sxs-lookup"><span data-stu-id="ad8ea-107">**Header:** Cor.h</span></span>  
+ <span data-ttu-id="e125d-107">**En-tête :** Cor. h</span><span class="sxs-lookup"><span data-stu-id="e125d-107">**Header:** Cor.h</span></span>  
   
- <span data-ttu-id="ad8ea-108">**Library:** Used as a resource in MsCorEE.dll</span><span class="sxs-lookup"><span data-stu-id="ad8ea-108">**Library:** Used as a resource in MsCorEE.dll</span></span>  
+ <span data-ttu-id="e125d-108">**Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll</span><span class="sxs-lookup"><span data-stu-id="e125d-108">**Library:** Used as a resource in MsCorEE.dll</span></span>  
   
- <span data-ttu-id="ad8ea-109">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="ad8ea-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
+ <span data-ttu-id="e125d-109">**Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e125d-109">**.NET Framework Versions:** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="ad8ea-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="ad8ea-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="e125d-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="e125d-110">See also</span></span>
 
-- [<span data-ttu-id="ad8ea-111">IMetaDataValidate, interface</span><span class="sxs-lookup"><span data-stu-id="ad8ea-111">IMetaDataValidate Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)
+- [<span data-ttu-id="e125d-111">IMetaDataValidate, interface</span><span class="sxs-lookup"><span data-stu-id="e125d-111">IMetaDataValidate Interface</span></span>](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)
