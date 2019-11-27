@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74446126"
 ---
 # <a name="isymunmanagedvariablegetaddressfield2-method"></a>ISymUnmanagedVariable::GetAddressField2, méthode
-Gets the second address field for this variable. Its meaning depends on the kind of address.  
+Obtient le deuxième champ d’adresse pour cette variable. Sa signification dépend du type d’adresse.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,13 +34,13 @@ HRESULT GetAddressField2(
   
 ## <a name="parameters"></a>Paramètres  
  `pRetVal`  
- [out] A pointer to a `ULONG32` that receives the second address field.  
+ à Pointeur vers un `ULONG32` qui reçoit le deuxième champ d’adresse.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

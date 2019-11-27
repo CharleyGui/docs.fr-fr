@@ -13,19 +13,19 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352462"
 ---
 # <a name="how-to-access-characters-in-strings-in-visual-basic"></a>Comment : accéder aux caractères dans les chaînes en Visual Basic
-This example demonstrates how to use the <xref:System.String.Chars%2A> property to access the character at the specified location in a string.  
+Cet exemple montre comment utiliser la propriété <xref:System.String.Chars%2A> pour accéder au caractère à l’emplacement spécifié dans une chaîne.  
   
 ## <a name="example"></a>Exemple  
- Sometimes it is useful to have data about the characters in your string and the positions of those characters within your string. You can think of a string as an array of characters (`Char` instances); you can retrieve a particular character by referencing the index of that character through the <xref:System.String.Chars%2A> property.  
+ Il est parfois utile d’avoir des données sur les caractères de votre chaîne et les positions de ces caractères dans la chaîne. Vous pouvez considérer une chaîne comme un tableau de caractères (instances`Char`); vous pouvez récupérer un caractère particulier en référençant l’index de ce caractère via la propriété <xref:System.String.Chars%2A>.  
   
  [!code-vb[VbVbalrStrings#49](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class2.vb#49)]  
   
- The `index` parameter of the <xref:System.String.Chars%2A> property is zero-based.  
+ Le paramètre `index` de la propriété <xref:System.String.Chars%2A> est de base zéro.  
   
 ## <a name="robust-programming"></a>Programmation fiable  
- The <xref:System.String.Chars%2A> property returns the character at the specified position. However, some Unicode characters can be represented by more than one character. For more information on how to work with Unicode characters, see [How to: Convert a String to an Array of Characters](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md).  
+ La propriété <xref:System.String.Chars%2A> retourne le caractère à la position spécifiée. Toutefois, certains caractères Unicode peuvent être représentés par plusieurs caractères. Pour plus d’informations sur l’utilisation des caractères Unicode, consultez [Comment : convertir une chaîne en tableau de caractères](../../../../visual-basic/programming-guide/language-features/strings/how-to-convert-a-string-to-an-array-of-characters.md).  
   
- The <xref:System.String.Chars%2A> property throws an <xref:System.IndexOutOfRangeException> exception if the `index` parameter is greater than or equal to the length of the string, or if it is less than zero  
+ La propriété <xref:System.String.Chars%2A> lève une exception <xref:System.IndexOutOfRangeException> si le paramètre `index` est supérieur ou égal à la longueur de la chaîne, ou s’il est inférieur à zéro  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -38,33 +38,33 @@ HRESULT EnumTypeDefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [out] A pointer to the new enumerator. This must be NULL for the first call of this method.  
+ à Pointeur vers le nouvel énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `rTypeDefs`  
- [in] The array used to store the TypeDef tokens.  
+ dans Tableau utilisé pour stocker les jetons TypeDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeDefs`.  
   
  `pcTypeDefs`  
- [out] The number of TypeDef tokens returned in `rTypeDefs`.  
+ à Nombre de jetons TypeDef retournés dans `rTypeDefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeDefs` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeDefs` is zero.|  
+|`S_OK`|`EnumTypeDefs` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTypeDefs` est égal à zéro.|  
   
 ## <a name="remarks"></a>Notes  
- The TypeDef token represents a type such as a class or an interface, as well as any type added via an extensibility mechanism.  
+ Le jeton TypeDef représente un type tel qu’une classe ou une interface, ainsi qu’un type ajouté via un mécanisme d’extensibilité.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

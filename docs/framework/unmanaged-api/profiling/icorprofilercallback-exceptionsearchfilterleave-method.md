@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445355"
 ---
 # <a name="icorprofilercallbackexceptionsearchfilterleave-method"></a>ICorProfilerCallback::ExceptionSearchFilterLeave, méthode
-Notifies the profiler that a user filter has just finished executing.  
+Notifie le profileur qu’un filtre utilisateur vient de terminer son exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Notifies the profiler that a user filter has just finished executing.
 HRESULT ExceptionSearchFilterLeave();  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

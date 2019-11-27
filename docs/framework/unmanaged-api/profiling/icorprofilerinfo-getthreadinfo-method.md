@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449894"
 ---
 # <a name="icorprofilerinfogetthreadinfo-method"></a>ICorProfilerInfo::GetThreadInfo, méthode
-Gets the current Win32 thread identity for the specified thread.  
+Obtient l’identité de thread Win32 actuelle pour le thread spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,12 @@ HRESULT GetThreadInfo(
   
 ## <a name="parameters"></a>Paramètres  
  `threadId`  
- [in] The ID of the thread for which to get the current Win32 ID.  
+ dans ID du thread pour lequel obtenir l’ID Win32 actuel.  
   
  `pdwWin32ThreadId`  
- [out] A pointer to the specified thread's current Win32 thread ID.  
+ à Pointeur vers l’ID de thread Win32 actuel du thread spécifié.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

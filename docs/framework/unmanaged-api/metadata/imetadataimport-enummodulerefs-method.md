@@ -38,30 +38,30 @@ HRESULT EnumModuleRefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `rModuleRefs`  
- [out] The array used to store the ModuleRef tokens.  
+ à Tableau utilisé pour stocker les jetons ModuleRef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rModuleRefs`.  
   
  `pcModuleRefs`  
- [out] The number of ModuleRef tokens returned in `rModuleRefs`.  
+ à Nombre de jetons ModuleRef retournés dans `rModuleRefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumModuleRefs` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcModuleRefs` is zero.|  
+|`S_OK`|`EnumModuleRefs` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcModuleRefs` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

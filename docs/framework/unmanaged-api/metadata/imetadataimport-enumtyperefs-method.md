@@ -38,33 +38,33 @@ HRESULT EnumTypeRefs (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator. This must be NULL for the first call of this method.  
+ [in, out] Pointeur vers l’énumérateur. Il doit s’agir d’une valeur NULL pour le premier appel de cette méthode.  
   
  `rTypeRefs`  
- [out] The array used to store the TypeRef tokens.  
+ à Tableau utilisé pour stocker les jetons TypeRef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rTypeRefs`.  
   
  `pcTypeRefs`  
- [out] A pointer to the number of TypeRef tokens returned in `rTypeRefs`.  
+ à Pointeur vers le nombre de jetons TypeRef retournés dans `rTypeRefs`.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumTypeRefs` returned successfully.|  
-|`S_FALSE`|There are no tokens to enumerate. In that case, `pcTypeRefs` is zero.|  
+|`S_OK`|`EnumTypeRefs` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun jeton à énumérer. Dans ce cas, `pcTypeRefs` est égal à zéro.|  
   
 ## <a name="remarks"></a>Notes  
- A TypeRef token represents a reference to a type.  
+ Un jeton TypeRef représente une référence à un type.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

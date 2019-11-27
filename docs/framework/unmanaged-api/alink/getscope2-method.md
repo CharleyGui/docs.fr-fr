@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74447184"
 ---
 # <a name="getscope2-method"></a>GetScope2, méthode
-Gets an import scope.  
+Obtient une étendue d’importation.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -37,22 +37,22 @@ HRESULT GetScope2(
   
 ## <a name="parameters"></a>Paramètres  
  `AssemblyID`  
- ID of target assembly.  
+ ID de l’assembly cible.  
   
  `FileToken`  
- ID of file from which to import.  
+ ID du fichier à partir duquel effectuer l’importation.  
   
  `dwScope`  
- Zero-based scope to import.  
+ Étendue de base zéro à importer.  
   
  `ppImportScope`  
- Receives pointer to [IMetaDataImport2 Interface](../metadata/imetadataimport2-interface.md) interface for indicated scope.  
+ Reçoit un pointeur vers l’interface d' [interface IMetaDataImport2](../metadata/imetadataimport2-interface.md) pour la portée indiquée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- Returns S_OK if the method succeeds.  
+ Retourne S_OK si la méthode est réussie.  
   
-## <a name="requirements"></a>spécifications  
- Requires alink.h.  
+## <a name="requirements"></a>Configuration requise  
+ Requiert ALink. h.  
   
 ## <a name="see-also"></a>Voir aussi
 

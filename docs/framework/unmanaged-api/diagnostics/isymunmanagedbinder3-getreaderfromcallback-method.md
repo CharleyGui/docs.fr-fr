@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449305"
 ---
 # <a name="isymunmanagedbinder3getreaderfromcallback-method"></a>ISymUnmanagedBinder3::GetReaderFromCallback, méthode
-Allows the user to implement or supply via callback either an `IID_IDiaReadExeAtRVACallback` or `IID_IDiaReadExeAtOffsetCallback` to obtain the debug directory information from memory.  
+Permet à l’utilisateur d’implémenter ou de fournir via le rappel un `IID_IDiaReadExeAtRVACallback` ou `IID_IDiaReadExeAtOffsetCallback` pour obtenir les informations de répertoire de débogage à partir de la mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,28 +39,28 @@ HRESULT GetReaderFromCallback(
   
 ## <a name="parameters"></a>Paramètres  
  `importer`  
- [in] A pointer to the metadata import interface.  
+ dans Pointeur vers l’interface d’importation de métadonnées.  
   
  `fileName`  
- [in] A pointer to the file name.  
+ dans Pointeur vers le nom de fichier.  
   
  `searchPath`  
- [in] A pointer to the search path.  
+ dans Pointeur vers le chemin de recherche.  
   
  `searchPolicy`  
- [in] A value of the [CorSymSearchPolicyAttributes](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) enumeration that specifies the policy to be used when doing a search for a symbol reader.  
+ dans Valeur de l’énumération [CorSymSearchPolicyAttributes,](../../../../docs/framework/unmanaged-api/diagnostics/corsymsearchpolicyattributes-enumeration.md) qui spécifie la stratégie à utiliser lors de la recherche d’un lecteur de symboles.  
   
  `callback`  
- [in] A pointer to the callback function.  
+ dans Pointeur vers la fonction de rappel.  
   
  `pRetVal`  
- [out] A pointer that is set to the returned [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) interface.  
+ à Pointeur qui a pour valeur l’interface [ISymUnmanagedReader](../../../../docs/framework/unmanaged-api/diagnostics/isymunmanagedreader-interface.md) retournée.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl  
   
 ## <a name="see-also"></a>Voir aussi
 

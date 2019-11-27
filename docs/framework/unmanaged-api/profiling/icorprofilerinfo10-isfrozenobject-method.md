@@ -18,9 +18,9 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449824"
 ---
-# <a name="icorprofilerinfo10isfrozenobject-method"></a>ICorProfilerInfo10::IsFrozenObject Method
+# <a name="icorprofilerinfo10isfrozenobject-method"></a>ICorProfilerInfo10 :: IsFrozenObject, méthode
 
-Given an ObjectID, determines whether the object is in a read-only segment.
+À partir d’un ObjectID, détermine si l’objet se trouve dans un segment en lecture seule.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -32,21 +32,21 @@ HRESULT IsFrozenObject( [in]  ObjectID objectId,
 #### <a name="parameters"></a>Paramètres
 
 `objectId` \
-[in] The object to examine.
+dans Objet à examiner.
 
 `pbFrozen` \
-[out] A `BOOL` indicating if the object is in a read-only segment.
+à `BOOL` indiquant si l’objet se trouve dans un segment en lecture seule.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
 
-**Platforms:** See [.NET Core supported operating systems](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
 **En-tête :** CorProf.idl, CorProf.h
 
 **Bibliothèque :** CorGuids.lib
 
-**.NET Versions:** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
+**Versions de .net :** [!INCLUDE[net_core_22](../../../../includes/net-core-30-md.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo10 Interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)

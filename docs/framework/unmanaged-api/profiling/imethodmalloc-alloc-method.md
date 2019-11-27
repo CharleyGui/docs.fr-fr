@@ -24,7 +24,7 @@ ms.locfileid: "74447571"
 ---
 # <a name="imethodmallocalloc-method"></a>IMethodMalloc::Alloc, méthode
 
-Attempts to allocate a specified amount of memory for a new Microsoft intermediate language (MSIL) function body.
+Tente d’allouer une quantité de mémoire spécifiée pour un nouveau corps de fonction MSIL (Microsoft Intermediate Language).
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -37,15 +37,15 @@ PVOID Alloc (
 ## <a name="parameters"></a>Paramètres
 
 `cb`\
-[in] The number of bytes to allocate for the method body.
+dans Nombre d’octets à allouer pour le corps de la méthode.
 
 ## <a name="remarks"></a>Notes
 
- The allocated memory will begin at an address greater than the base address of the module that is associated with this allocator. In other words, each allocator is created for a particular module, and will attempt to allocate memory at a positive offset from its base address. If `Alloc` fails to allocate the requested number of bytes at an address greater than the base address of the module, it returns E_OUTOFMEMORY, regardless of the actual amount of memory space available.
+ La mémoire allouée commence à une adresse supérieure à l’adresse de base du module associé à cet allocateur. En d’autres termes, chaque allocateur est créé pour un module particulier et tente d’allouer de la mémoire à un décalage positif par rapport à son adresse de base. Si `Alloc` ne parvient pas à allouer le nombre d’octets demandé à une adresse supérieure à l’adresse de base du module, il retourne E_OUTOFMEMORY, quelle que soit la quantité réelle d’espace mémoire disponible.
 
- The `Alloc` method should be used in conjunction with the [ICorProfilerInfo::SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md) method.
+ La méthode `Alloc` doit être utilisée conjointement avec la méthode [ICorProfilerInfo :: SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md) .
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
  **En-tête :** CorProf.idl, CorProf.h

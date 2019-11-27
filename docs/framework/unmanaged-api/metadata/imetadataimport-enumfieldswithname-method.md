@@ -40,39 +40,39 @@ HRESULT EnumFieldsWithName (
   
 ## <a name="parameters"></a>Paramètres  
  `phEnum`  
- [in, out] A pointer to the enumerator.  
+ [in, out] Pointeur vers l’énumérateur.  
   
  `cl`  
- [in] The token of the type whose fields are to be enumerated.  
+ dans Jeton du type dont les champs doivent être énumérés.  
   
  `szName`  
- [in] The field name that limits the scope of the enumeration.  
+ dans Nom du champ qui limite la portée de l’énumération.  
   
  `rFields`  
- [out] Array used to store the FieldDef tokens.  
+ à Tableau utilisé pour stocker les jetons FieldDef.  
   
  `cMax`  
  [in] Taille maximale du tableau `rFields`.  
   
  `pcTokens`  
- [out] The actual number of FieldDef tokens returned in `rFields`.  
+ à Nombre réel de jetons FieldDef retournés dans `rFields`.  
   
 ## <a name="remarks"></a>Notes  
- Unlike [IMetaDataImport::EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` discards all field tokens that do not have the specified name.  
+ Contrairement à [IMetaDataImport :: EnumFields](../../../../docs/framework/unmanaged-api/metadata/imetadataimport-enumfields-method.md), `EnumFieldsWithName` ignore tous les jetons de champ qui n’ont pas le nom spécifié.  
   
 ## <a name="return-value"></a>Valeur de retour  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|`S_OK`|`EnumFieldsWithName` returned successfully.|  
-|`S_FALSE`|There are no fields to enumerate. In that case, `pcTokens` is zero.|  
+|`S_OK`|`EnumFieldsWithName` retourné avec succès.|  
+|`S_FALSE`|Il n’y a aucun champ à énumérer. Dans ce cas, `pcTokens` est égal à zéro.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74449459"
 ---
 # <a name="cor_prf_gc_root_flags-enumeration"></a>COR_PRF_GC_ROOT_FLAGS, énumération
-Indicates a property of a garbage collection root.  
+Indique une propriété d’une racine de garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,15 +39,15 @@ typedef enum {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COR_PRF_GC_ROOT_PINNING`|The root prevents a garbage collection from moving the object.|  
-|`COR_PRF_GC_ROOT_WEAKREF`|The root does not prevent garbage collection.|  
-|`COR_PRF_GC_ROOT_INTERIOR`|The root refers to a field of the object rather than the object itself.|  
-|`COR_PRF_GC_ROOT_REFCOUNTED`|The root prevents garbage collection if the reference count of the object is a certain value.|  
+|`COR_PRF_GC_ROOT_PINNING`|La racine empêche un garbage collection de déplacer l’objet.|  
+|`COR_PRF_GC_ROOT_WEAKREF`|La racine n’empêche pas les garbage collection.|  
+|`COR_PRF_GC_ROOT_INTERIOR`|La racine fait référence à un champ de l’objet plutôt qu’à l’objet lui-même.|  
+|`COR_PRF_GC_ROOT_REFCOUNTED`|La racine empêche garbage collection si le décompte de références de l’objet est une certaine valeur.|  
   
 ## <a name="remarks"></a>Notes  
- `COR_PRF_GC_ROOT_FLAGS` is a bitmask that provides additional information about special roots. However, not all roots are special. For example, some roots are not weak references, interior pointers, pinned, or reference-counted. For such roots, there are no flags to convey. Therefore, methods that use this enumeration, such as the [ICorProfilerCallback2::RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) method, send 0 for the flags bitmask, indicating that all flags are turned off.  
+ `COR_PRF_GC_ROOT_FLAGS` est un masque de données qui fournit des informations supplémentaires sur les racines spéciales. Toutefois, toutes les racines ne sont pas spéciales. Par exemple, certaines racines ne sont pas des références faibles, des pointeurs intérieurs, des épinglés ou des références comptées. Pour ces racines, il n’y a aucun indicateur à transmettre. Par conséquent, les méthodes qui utilisent cette énumération, telles que la méthode [ICorProfilerCallback2 :: RootReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-rootreferences2-method.md) , envoient 0 pour le masque de masque des indicateurs, ce qui indique que tous les indicateurs sont désactivés.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
