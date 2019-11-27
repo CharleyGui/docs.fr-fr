@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445857"
 ---
 # <a name="icorprofilercallbackobjectsallocatedbyclass-method"></a>ICorProfilerCallback::ObjectsAllocatedByClass, méthode
-Notifies the profiler about the number of instances of each specified class that have been created since the most recent garbage collection.  
+Notifie le profileur du nombre d’instances de chaque classe spécifiée qui ont été créées depuis la garbage collection la plus récente.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,22 +36,22 @@ HRESULT ObjectsAllocatedByClass(
   
 ## <a name="parameters"></a>Paramètres  
  `cClassCount`  
- [in] The size of the `classIds` and `cObjects` arrays.  
+ dans Taille des tableaux `classIds` et `cObjects`.  
   
  `classIds`  
- [in] An array of class IDs, where each ID specifies a class with one or more instances.  
+ dans Tableau d’ID de classe, où chaque ID spécifie une classe avec une ou plusieurs instances.  
   
  `cObjects`  
- [in] An array of integers, where each integer specifies the number of instances for the corresponding class in the `classIds` array.  
+ dans Tableau d’entiers, où chaque entier spécifie le nombre d’instances pour la classe correspondante dans le tableau de `classIds`.  
   
 ## <a name="remarks"></a>Notes  
- The `classIds` and `cObjects` arrays are parallel arrays. For example, `classIds[i]` and `cObjects[i]` reference the same class. If no instance of a class has been created since the previous garbage collection, the class is omitted. The `ObjectsAllocatedByClass` callback will not report objects allocated in the large object heap.  
+ Les tableaux `classIds` et `cObjects` sont des tableaux parallèles. Par exemple, `classIds[i]` et `cObjects[i]` référencent la même classe. Si aucune instance d’une classe n’a été créée depuis la garbage collection précédente, la classe est omise. Le rappel `ObjectsAllocatedByClass` ne signale pas les objets alloués dans le tas d’objets volumineux.  
   
- The numbers reported by `ObjectsAllocatedByClass` are only estimates. For exact counts, use [ICorProfilerCallback::ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
+ Les nombres signalés par `ObjectsAllocatedByClass` sont uniquement des estimations. Pour obtenir des nombres exacts, utilisez [ICorProfilerCallback :: ObjectAllocated](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-objectallocated-method.md).  
   
- The `classIds` array may contain one or more null entries if the corresponding `cObjects` array has types that are unloading.  
+ Le tableau `classIds` peut contenir une ou plusieurs entrées NULL si le tableau de `cObjects` correspondant a des types qui déchargent.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

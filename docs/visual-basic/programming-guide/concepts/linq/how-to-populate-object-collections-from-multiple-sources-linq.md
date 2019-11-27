@@ -1,5 +1,5 @@
 ---
-title: "Comment : remplir des collections d'objets issues de plusieurs sources (LINQ)"
+title: 'Comment : remplir des collections d’objets issues de plusieurs sources (LINQ)'
 ms.date: 06/22/2018
 ms.assetid: 63062a22-e6a9-42c0-b357-c7c965f58f33
 ms.openlocfilehash: 74a2a0f71e575136f1758f72f9a8db72549a9489
@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74346978"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>How to: Populate Object Collections from Multiple Sources (LINQ) (Visual Basic)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-visual-basic"></a>Comment : remplir des collections d’objets à partir de plusieurs sources (LINQ) (Visual Basic)
 
 Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.
 
@@ -18,7 +18,7 @@ Cet exemple montre comment fusionner des données de différentes sources en une
 
 ## <a name="to-create-the-data-file"></a>Pour créer le fichier de données
 
-- Copy the names.csv and scores.csv files into your project folder, as described in [How to: Join Content from Dissimilar Files (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
+- Copiez les fichiers Names. csv et scores. csv dans le dossier de votre projet, comme décrit dans Guide pratique [pour joindre du contenu issu de fichiers différents (LINQ) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-join-content-from-dissimilar-files-linq.md).
 
 ## <a name="example"></a>Exemple
 
@@ -100,7 +100,7 @@ End Class
 ' The average score of Michael Tucker is 92
 ```
 
-In the [Select Clause](../../../../visual-basic/language-reference/queries/select-clause.md) clause, an object initializer is used to instantiate each new `Student` object by using the data from the two sources.
+Dans la clause [Select](../../../../visual-basic/language-reference/queries/select-clause.md) , un initialiseur d’objet est utilisé pour instancier chaque nouvel objet `Student` à l’aide des données des deux sources.
 
 Si vous n’êtes pas obligé de stocker les résultats d’une requête, les types anonymes peuvent être plus pratiques que les types nommés. Les types nommés sont nécessaires si vous passez les résultats de requête en dehors de la méthode dans laquelle la requête est exécutée. L’exemple suivant effectue la même tâche que l’exemple précédent, mais il utilise des types anonymes plutôt que des types nommés :
 
@@ -130,4 +130,4 @@ Next
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ and Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)
+- [LINQ et Strings (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-and-strings.md)

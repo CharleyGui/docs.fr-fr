@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344645"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>How to: Find Related Elements (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher des éléments connexes (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment obtenir un élément en sélectionnant un attribut auquel il est fait référence par la valeur d'un autre élément.  
   
- L’expression XPath est la suivante :  
+ L'expression XPath est la suivante :  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
@@ -75,4 +75,4 @@ Results are identical
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74427886"
 ---
 # <a name="isymunmanagedwriterremaptoken-method"></a>ISymUnmanagedWriter::RemapToken, méthode
-Notifies the symbol writer that a metadata token has been remapped as the metadata was emitted. If the symbol writer has stored the old token within the symbol store, it must either update the stored token with the new value, or it must save the map for the corresponding symbol reader to remap during the read phase.  
+Notifie le writer de symbole qu’un jeton de métadonnées a été remappé à la sortie des métadonnées. Si le writer de symbole a stocké l’ancien jeton dans le magasin de symboles, il doit mettre à jour le jeton stocké avec la nouvelle valeur, ou il doit enregistrer la carte pour que le lecteur de symboles correspondant soit remappé au cours de la phase de lecture.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ HRESULT RemapToken(
   
 ## <a name="parameters"></a>Paramètres  
  `oldToken`  
- [in] The metadata token that was remapped.  
+ dans Jeton de métadonnées qui a été remappé.  
   
  `newToken`  
- [in] The new metadata token to which `oldToken` was remapped.  
+ dans Nouveau jeton de métadonnées auquel `oldToken` a été remappé.  
   
 ## <a name="return-value"></a>Valeur de retour  
- S_OK if the method succeeds; otherwise, E_FAIL or some other error code.  
+ S_OK si la méthode est réussie ; Sinon, E_FAIL ou un autre code d’erreur.  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

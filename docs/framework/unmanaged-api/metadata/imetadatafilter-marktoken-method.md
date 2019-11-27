@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74440348"
 ---
 # <a name="imetadatafiltermarktoken-method"></a>IMetaDataFilter::MarkToken, méthode
-Sets a value indicating that the specified metadata token has been processed.  
+Définit une valeur indiquant que le jeton de métadonnées spécifié a été traité.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,14 +35,14 @@ HRESULT MarkToken (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] The token to mark as processed.  
+ dans Jeton à marquer comme traité.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

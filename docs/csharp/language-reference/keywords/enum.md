@@ -35,7 +35,7 @@ enum Day {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
 
 Dans cette énumération, le début de la séquence des éléments est forcé à `1` au lieu de `0`. Il est cependant recommandé d’inclure une constante qui a la valeur 0. Pour plus d’informations, consultez [Types énumération](../../programming-guide/enumeration-types.md).
 
-Chaque type énumération a un type sous-jacent qui peut correspondre à n’importe quel [type numérique intégral](../builtin-types/integral-numeric-types.md). Le type [char](../builtin-types/char.md) ne peut pas être un type sous-jacent d’une énumération. The default underlying type of enumeration elements is [int](../builtin-types/integral-numeric-types.md). To declare an enum of another integral type, such as [byte](../builtin-types/integral-numeric-types.md), use a colon after the identifier followed by the type, as shown in the following example.
+Chaque type énumération a un type sous-jacent qui peut correspondre à n’importe quel [type numérique intégral](../builtin-types/integral-numeric-types.md). Le type [char](../builtin-types/char.md) ne peut pas être un type sous-jacent d’une énumération. Le type sous-jacent par défaut des éléments d’énumération est [int](../builtin-types/integral-numeric-types.md). Pour déclarer une énumération d’un autre type intégral, comme [Byte](../builtin-types/integral-numeric-types.md), utilisez un signe deux-points après l’identificateur, suivi du type, comme indiqué dans l’exemple suivant.
 
 ```csharp
 enum Day : byte {Sat=1, Sun, Mon, Tue, Wed, Thu, Fri};
@@ -82,7 +82,7 @@ L’exemple de code suivant montre l’utilisation et l’effet de l’attribut 
 
 [!code-csharp[csrefKeywordsTypes#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#12)]
 
-## <a name="comments"></a>Comments
+## <a name="comments"></a>Commentaires
 
 Si vous supprimez `Flags`, l’exemple affiche les valeurs suivantes :
 
@@ -96,7 +96,7 @@ Si vous supprimez `Flags`, l’exemple affiche les valeurs suivantes :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Types d’énumération](../../programming-guide/enumeration-types.md)
 - [Mots clés C#](index.md)
 - [Types intégraux](../builtin-types/integral-numeric-types.md)

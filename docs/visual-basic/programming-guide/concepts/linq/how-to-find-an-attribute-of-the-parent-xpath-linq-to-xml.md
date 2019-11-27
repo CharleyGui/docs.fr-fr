@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352959"
 ---
-# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>How to: Find an Attribute of the Parent (XPath-LINQ to XML) (Visual Basic)
+# <a name="how-to-find-an-attribute-of-the-parent-xpath-linq-to-xml-visual-basic"></a>Comment : Rechercher un attribut du parent (XPath-LINQ to XML) (Visual Basic)
 Cette rubrique montre comment naviguer jusqu'à l'élément parent et rechercher un attribut de celui-ci.  
   
- L’expression XPath est la suivante :  
+ L'expression XPath est la suivante :  
   
  `../@id`  
   
@@ -49,4 +49,4 @@ id="bk101"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML for XPath Users (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)
+- [LINQ to XML pour les utilisateurs XPath (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-for-xpath-users.md)

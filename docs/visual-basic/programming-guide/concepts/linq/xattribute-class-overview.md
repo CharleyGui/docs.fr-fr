@@ -9,10 +9,10 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74349327"
 ---
-# <a name="xattribute-class-overview-visual-basic"></a>XAttribute Class Overview (Visual Basic)
+# <a name="xattribute-class-overview-visual-basic"></a>Vue d’ensemble de la classe XAttribute (Visual Basic)
 Les attributs sont des paires nom/valeur associées à un élément. La classe <xref:System.Xml.Linq.XAttribute> représente des attributs XML.  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Overview  
  L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’attributs a une apparence très semblable à une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’éléments.  
   
  L'ordre dans lequel les attributs ont été ajoutés à un élément est conservé. Autrement dit, lorsque vous itérez au sein des attributs, vous les voyez dans l'ordre dans lequel ils ont été ajoutés.  
@@ -25,7 +25,7 @@ Les attributs sont des paires nom/valeur associées à un élément. La classe <
 |`XAttribute(XName name, object content)`|Elle crée un objet <xref:System.Xml.Linq.XAttribute>. L'argument `name` spécifie le nom de l'attribut ; l'argument `content` spécifie le contenu de l'attribut.|  
   
 ### <a name="creating-an-element-with-an-attribute"></a>Création d'un élément avec un attribut  
- The following code shows an element that contains an attribute using XML literals in Visual Basic:  
+ Le code suivant illustre un élément qui contient un attribut à l’aide de littéraux XML dans Visual Basic :  
   
 ```vb  
 Dim phone As XElement = <Phone Type="Home">555-555-5555</Phone>  
@@ -76,4 +76,4 @@ Console.WriteLine(c)
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ to XML Programming Overview (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)
+- [Vue d’ensemble de la programmation de LINQ to XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/linq-to-xml-programming-overview.md)

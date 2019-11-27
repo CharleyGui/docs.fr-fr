@@ -17,7 +17,7 @@ ms.locfileid: "74353588"
 
 Cette procédure pas à pas montre comment modifier le filtrage de journal par défaut de l’objet `My.Application.Log` pour contrôler les informations passées de l’objet `Log` aux écouteurs et celles qui sont écrites par les écouteurs. Vous pouvez modifier le comportement de journalisation même après avoir généré l’application, car les informations de configuration sont stockées dans le fichier de configuration de l’application.
 
-## <a name="getting-started"></a>Commencer
+## <a name="getting-started"></a>Mise en route
 
 Chaque message écrit par `My.Application.Log` a un niveau de gravité associé que les mécanismes de filtrage utilisent pour contrôler la sortie de journal. Cet exemple d’application utilise les méthodes `My.Application.Log` pour écrire plusieurs messages de journal avec différents niveaux de gravité.
 
@@ -60,7 +60,7 @@ Ce tableau affiche le niveau de gravité requis pour le journal afin d’écrire
 |---|---|
 |`Critical`|`Critical`|
 |`Error`|`Critical` ou `Error`|
-|`Warning`|`Critical`, `Error`ou `Warning`|
+|`Warning`|`Critical`, `Error` ou `Warning`|
 |`Information`|`Critical`, `Error`, `Warning`ou `Information`|
 |`Verbose`|`Critical`, `Error`, `Warning`, `Information` ou `Verbose`|
 |`ActivityTracing`|`Start`, `Stop`, `Suspend`, `Resume` ou `Transfer`|
@@ -76,7 +76,7 @@ Ce tableau explique la sortie de journal affichée dans l’exemple précédent�
 
 1. Cliquez avec le bouton droit sur app.config dans l’**Explorateur de solutions** et sélectionnez **Ouvrir**.
 
-     ou
+     -ou-
 
      S’il n’existe pas de fichier app.config :
 

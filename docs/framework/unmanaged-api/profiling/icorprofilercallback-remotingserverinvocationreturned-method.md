@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445784"
 ---
 # <a name="icorprofilercallbackremotingserverinvocationreturned-method"></a>ICorProfilerCallback::RemotingServerInvocationReturned, méthode
-Notifies the profiler that the process has finished invoking a method in response to a remote method invocation request.  
+Notifie le profileur que le processus a fini d’appeler une méthode en réponse à une demande d’appel de méthode distante.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ Notifies the profiler that the process has finished invoking a method in respons
 HRESULT RemotingServerInvocationReturned();  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

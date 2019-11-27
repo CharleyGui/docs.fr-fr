@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74444101"
 ---
 # <a name="coinitiee-enumeration"></a>COINITIEE, énumération
-Specifies constants used by [CoInitializeEE](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) when initializing the common language runtime.  
+Spécifie les constantes utilisées par [CoInitializeEE,](../../../../docs/framework/unmanaged-api/hosting/coinitializeee-function.md) lors de l’initialisation du Common Language Runtime.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,16 +38,16 @@ typedef enum tagCOINITEE {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`COINITEE_DEFAULT`|Default initialization mode. This initializes the runtime and creates the default <xref:System.AppDomain>.|  
-|`COINITEE_DLL`|Initializes to run a managed DLL.|  
-|`COINITEE_MAIN`|Initializes to run a managed EXE. This initializes the runtime but does not create the default <xref:System.AppDomain>, which is created after entering the main routine of the EXE.|  
+|`COINITEE_DEFAULT`|Mode d’initialisation par défaut. Cela initialise le runtime et crée le <xref:System.AppDomain>par défaut.|  
+|`COINITEE_DLL`|Initialise pour exécuter une DLL managée.|  
+|`COINITEE_MAIN`|Initialise pour exécuter un EXE managé. Cela initialise le runtime, mais ne crée pas le <xref:System.AppDomain>par défaut, qui est créé après l’entrée de la routine principale de l’EXE.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Included as a resource in MsCorEE.dll  
+ **Bibliothèque :** Inclus en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

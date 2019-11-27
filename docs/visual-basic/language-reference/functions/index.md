@@ -25,11 +25,11 @@ Les rubriques de cette section contiennent des tableaux des fonctions membres du
   
  [Fonctions de chaîne](../../../visual-basic/language-reference/functions/string-functions.md)  
   
- [Fonctions de conversion de types](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
+ [Type Conversion Functions](../../../visual-basic/language-reference/functions/type-conversion-functions.md)  
   
  [CType (fonction)](../../../visual-basic/language-reference/functions/ctype-function.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)  
   
  [Visual Basic](../../../visual-basic/index.md)

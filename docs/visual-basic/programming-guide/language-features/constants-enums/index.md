@@ -30,7 +30,7 @@ Les constantes sont un moyen d’utiliser des noms significatifs à la place d�
 |[Vue d’ensemble des constantes](../../../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)|Les rubriques de cette section décrivent les constantes et leurs utilisations.|  
 |[Vue d’ensemble des énumérations](../../../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)|Les rubriques de cette section décrivent les énumérations et leurs utilisations.|  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
   
 |Terme|Définition|  
 |---|---|  

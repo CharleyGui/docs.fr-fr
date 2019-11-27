@@ -47,7 +47,7 @@ Pour plus d'informations, consultez [Composing Streams](../../../../standard/io/
 
 Dans le .NET Framework, un flux est représenté par la classe <xref:System.IO.Stream>, qui forme la classe abstraite pour tous les autres flux. Vous ne pouvez pas créer directement une instance de la classe <xref:System.IO.Stream>. Vous devez utiliser l’une des classes qu’elle implémente.
 
-Il existe de nombreux types de flux, mais dans le cadre de l’utilisation des entrées/sorties (E/S) de fichiers, les types les plus importants sont la classe <xref:System.IO.FileStream>, qui permet de lire et d’écrire dans des fichiers, et la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>, qui permet de créer des fichiers et des répertoires dans un stockage isolé. Voici d’autres flux qui peuvent être utilisés avec les E/S de fichiers :
+Il existe de nombreux types de flux, mais dans le cadre de l’utilisation des entrées/sorties (E/S) de fichiers, les types les plus importants sont la classe <xref:System.IO.FileStream>, qui permet de lire et d’écrire dans des fichiers, et la classe <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>, qui permet de créer des fichiers et des répertoires dans un stockage isolé. Voici d’autres flux qui peuvent être utilisés avec les E/S de fichiers :
 
 - <xref:System.IO.BufferedStream>
 
@@ -55,18 +55,18 @@ Il existe de nombreux types de flux, mais dans le cadre de l’utilisation des e
 
 - <xref:System.IO.MemoryStream>
 
-- <xref:System.Net.Sockets.NetworkStream>.,
+- <xref:System.Net.Sockets.NetworkStream>
 
-Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
+Le tableau suivant répertorie les tâches couramment accomplies avec un flux :
 
-|Vers|Voir|
+|Pour|Consultez|
 |---|---|
 |Lire et écrire dans un fichier de données|[Comment : lire et écrire dans un fichier de données créé récemment](../../../../standard/io/how-to-read-and-write-to-a-newly-created-data-file.md)|
 |Lire le texte d’un fichier|[Comment : lire du texte dans un fichier](../../../../standard/io/how-to-read-text-from-a-file.md)|
 |Écrire du texte dans un fichier|[Comment : écrire du texte dans un fichier](../../../../standard/io/how-to-write-text-to-a-file.md)|
 |Lire les caractères d’une chaîne|[Comment : lire les caractères d’une chaîne](../../../../standard/io/how-to-read-characters-from-a-string.md)|
 |Écrire des caractères dans une chaîne|[Comment : écrire des caractères dans une chaîne](../../../../standard/io/how-to-write-characters-to-a-string.md)|
-|Chiffrer des données|[Chiffrement de données](../../../../standard/security/encrypting-data.md)|
+|Chiffrer les données|[Chiffrement de données](../../../../standard/security/encrypting-data.md)|
 |Déchiffrer des données|[Déchiffrement de données](../../../../standard/security/decrypting-data.md)|
 
 ## <a name="file-access-and-attributes"></a>Accès aux fichiers et attributs
@@ -75,9 +75,9 @@ Vous pouvez contrôler la façon dont les fichiers sont créés, ouverts et part
 
 L’énumération <xref:System.IO.FileAttributes> vous permet de recueillir des informations propres au fichier. L’énumération <xref:System.IO.FileAttributes> retourne les attributs stockés du fichier, par exemple s’il est compressé, chiffré, caché, en lecture seule, s’il s’agit d’une archive, d’un répertoire, d’un fichier système ou d’un fichier temporaire.
 
-Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichiers et les attributs de fichiers :
+Le tableau suivant répertorie les tâches qui impliquent l’accès aux fichiers et les attributs de fichiers :
 
-|Vers|Voir|
+|Pour|Consultez|
 |---|---|
 |Ouvrir un fichier journal et y ajouter du texte|[Comment : ouvrir un fichier journal et y ajouter des éléments](../../../../standard/io/how-to-open-and-append-to-a-log-file.md)|
 |Déterminer les attributs d’un fichier|<xref:System.IO.FileAttributes>|
@@ -92,7 +92,7 @@ Le stockage isolé est une tentative de résolution des problèmes créés lors 
 
 Le tableau suivant répertorie les tâches couramment associées au stockage de fichiers isolé.
 
-|Vers|Voir|
+|Pour|Consultez|
 |---|---|
 |Créer un magasin isolé|[Obtention de magasins](../../../../standard/io/how-to-obtain-stores-for-isolated-storage.md)|
 |Énumérer les magasins isolés|[Énumération de magasins](../../../../standard/io/how-to-enumerate-stores-for-isolated-storage.md)|
@@ -110,5 +110,5 @@ Le composant <xref:System.IO.FileSystemWatcher> vous permet de surveiller les mo
 
 - [Composition de flux](../../../../standard/io/composing-streams.md)
 - [Fichier et flux de données E/S](../../../../standard/io/index.md)
-- [Asynchronous File I/O](../../../../standard/io/asynchronous-file-i-o.md)
+- [E/S sur fichier asynchrones](../../../../standard/io/asynchronous-file-i-o.md)
 - [Classes utilisées dans les E/S de fichier du .NET Framework et le système de fichiers (Visual Basic)](../../../../visual-basic/developing-apps/programming/drives-directories-files/classes-used-in-net-framework-file-io-and-the-file-system.md)

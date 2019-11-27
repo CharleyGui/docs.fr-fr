@@ -20,7 +20,7 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
   
 - Utilisez la surcharge <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetFiles(System.String,Microsoft.VisualBasic.FileIO.SearchOption,System.String[])> pour spécifier des options supplémentaires pour votre recherche. Vous pouvez utiliser le paramètre `wildCards` pour spécifier un modèle de recherche. Pour inclure des sous-répertoires dans la recherche, affectez la valeur `searchType` au paramètre <xref:Microsoft.VisualBasic.FileIO.SearchOption.SearchAllSubDirectories?displayProperty=nameWithType>.  
   
- Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n'est détecté.  
+ Une collection vide est retournée si aucun fichier correspondant au modèle spécifié n’est détecté.  
   
 ### <a name="to-list-files-in-a-directory"></a>Pour énumérer les fichiers contenus dans un répertoire  
   
@@ -34,17 +34,17 @@ Les surcharges de la méthode <xref:Microsoft.VisualBasic.FileIO.FileSystem.GetF
   
 - Le chemin n’est pas valide pour l’une des raisons suivantes : il s’agit d’une chaîne de longueur nulle, il ne contient que des espaces blancs, il contient des caractères non valides ou il s’agit d’un chemin d’appareil (il commence par \\\\.\\) (<xref:System.ArgumentException>).  
   
-- Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
+- Le chemin n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
 - `directory` n'existe pas (<xref:System.IO.DirectoryNotFoundException>).  
   
 - `directory` pointe vers un fichier existant (<xref:System.IO.IOException>).  
   
-- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
-- Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
+- Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
-- L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).  
+- L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
 - L'utilisateur ne dispose pas des autorisations nécessaires (<xref:System.UnauthorizedAccessException>).  
   

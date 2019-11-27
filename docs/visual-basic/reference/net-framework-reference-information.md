@@ -14,20 +14,20 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74352851"
 ---
 # <a name="net-framework-reference-information-visual-basic"></a>Informations de référence du .NET Framework (Visual Basic)
-This topic provides links to information about how to work with the .NET Framework class library.  
+Cette rubrique fournit des liens vers des informations sur l’utilisation de la bibliothèque de classes .NET Framework.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Bien démarrer](../../framework/get-started/index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Prise en main](../../framework/get-started/index.md)  
  Fournit une vue d'ensemble complète du .NET Framework et des liens vers des ressources supplémentaires.  
   
- [Présentation des bibliothèques de classes .NET](../../standard/class-library-overview.md)  
- Introduces the classes, interfaces, and value types that help expedite and optimize the development process and provide access to system functionality.  
+ [Présentation des bibliothèques de classes](../../standard/class-library-overview.md)  
+ Présente les classes, les interfaces et les types valeur qui permettent d’accélérer et d’optimiser le processus de développement et de fournir un accès aux fonctionnalités du système.  
   
  [Guide de développement](../../framework/development-guide.md)  
- Provides a guide to all key technology areas and tasks for application development, including creating, configuring, debugging, securing, and deploying your application. This topic also provides information about dynamic programming, interoperability, extensibility, memory management, and threading.  
+ Fournit un guide sur tous les domaines technologiques clés et les tâches à effectuer pour le développement d’applications, notamment la création, la configuration, le débogage, la sécurisation et le déploiement de votre application. Cette rubrique fournit également des informations sur la programmation dynamique, l’interopérabilité, l’extensibilité, la gestion de la mémoire et le Threading.  
   
  [Outils](../../framework/tools/index.md)  
- Describes the tools that you can use to develop, configure, and deploy applications by using .NET Framework technologies.  
+ Décrit les outils que vous pouvez utiliser pour développer, configurer et déployer des applications à l’aide de .NET Framework technologies.  
   
  [Navigateur d’API .NET](../../../api/index.md)  
- Provides syntax, code examples, and related information for each class in the .NET Framework namespaces.
+ Fournit la syntaxe, des exemples de code et des informations connexes pour chaque classe dans les espaces de noms .NET Framework.

@@ -18,7 +18,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348029"
 ---
 # <a name="mid-statement"></a>Mid, instruction
-Replaces a specified number of characters in a `String` variable with characters from another string.  
+Remplace un nombre spécifié de caractères dans une variable `String` par des caractères d’une autre chaîne.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,42 +32,42 @@ Mid( _
   
 ## <a name="parts"></a>Composants  
  `Target`  
- Requis. Name of the `String` variable to modify.  
+ Requis. Nom de la variable `String` à modifier.  
   
  `Start`  
- Requis. `Integer` expression. Character position in `Target` where the replacement of text begins. `Start` uses a one-based index.  
+ Requis. expression `Integer`. Position du caractère dans `Target` où commence le remplacement de texte. `Start` utilise un index de base un.  
   
  `Length`  
- Optionnel. `Integer` expression. Number of characters to replace. If omitted, all of `String` is used.  
+ Ce paramètre est facultatif. expression `Integer`. Nombre de caractères à remplacer. En cas d’omission, tous les `String` sont utilisés.  
   
  `StringExpression`  
- Requis. `String` expression that replaces part of `Target`.  
+ Requis. expression `String` qui remplace une partie de `Target`.  
   
 ## <a name="exceptions"></a>Exceptions  
   
-|Type d'exception|Condition|  
+|Type d’exception|Condition|  
 |--------------------|---------------|  
-|<xref:System.ArgumentException>|`Start` <= 0 or `Length` < 0.|  
+|<xref:System.ArgumentException>|`Start` < = 0 ou `Length` < 0.|  
   
 ## <a name="remarks"></a>Notes  
- The number of characters replaced is always less than or equal to the number of characters in `Target`.  
+ Le nombre de caractères remplacés est toujours inférieur ou égal au nombre de caractères dans `Target`.  
   
- Visual Basic has a <xref:Microsoft.VisualBasic.Strings.Mid%2A> function and a `Mid` statement. These elements both operate on a specified number of characters in a string, but the `Mid` function returns the characters while the `Mid` statement replaces the characters. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
+ Visual Basic a une fonction <xref:Microsoft.VisualBasic.Strings.Mid%2A> et une instruction `Mid`. Ces éléments agissent tous deux sur un nombre spécifié de caractères dans une chaîne, mais la fonction `Mid` retourne les caractères lorsque l’instruction `Mid` remplace les caractères. Pour plus d'informations, consultez <xref:Microsoft.VisualBasic.Strings.Mid%2A>.  
   
 > [!NOTE]
-> The `MidB` statement of earlier versions of Visual Basic replaces a substring in bytes, rather than characters. It is used primarily for converting strings in double-byte character set (DBCS) applications. All Visual Basic strings are in Unicode, and `MidB` is no longer supported.  
+> L’instruction `MidB` des versions antérieures de Visual Basic remplace une sous-chaîne en octets plutôt que des caractères. Il est principalement utilisé pour convertir des chaînes dans des applications DBCS (Double-Byte Character Set). Toutes les chaînes Visual Basic sont au format Unicode et `MidB` ne sont plus prises en charge.  
   
 ## <a name="example"></a>Exemple  
- This example uses the `Mid` statement to replace a specified number of characters in a string variable with characters from another string.  
+ Cet exemple utilise l’instruction `Mid` pour remplacer un nombre spécifié de caractères dans une variable String par des caractères d’une autre chaîne.  
   
  [!code-vb[VbVbalrStrings#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrStrings/VB/Class1.vb#5)]  
   
-## <a name="requirements"></a>spécifications  
- **Namespace:** [Microsoft.VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
+## <a name="requirements"></a>Configuration requise  
+ **Espace de noms :** [Microsoft. VisualBasic](../../../visual-basic/language-reference/runtime-library-members.md)  
   
- **Module:** `Strings`  
+ **Module :** `Strings`  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

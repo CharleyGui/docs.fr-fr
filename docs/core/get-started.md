@@ -21,7 +21,7 @@ Si vous ne savez pas réellement à quoi sert .NET Core ou comment ce produit s�
 
 Tout d’abord, téléchargez et installez le [kit SDK .NET Core](https://dotnet.microsoft.com/download) sur votre ordinateur.
 
-Ensuite, ouvrez un terminal tel que **PowerShell**, une **invite de commandes** ou **Bash**. Type the following `dotnet` commands to create and run a C# application:
+Ensuite, ouvrez un terminal tel que **PowerShell**, une **invite de commandes** ou **Bash**. Tapez les commandes de `dotnet` suivantes pour créer et exécuter C# une application :
 
 ```dotnetcli
 dotnet new console --output sample1
@@ -42,7 +42,7 @@ Vous pouvez commencer à développer des applications .NET Core en suivant ces t
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windowstabwindows"></a>[Windows](#tab/windows)
 
 - [Générer une application C# « Hello World » avec .NET Core dans Visual Studio 2017.](./tutorials/with-visual-studio.md)
 - [Générer une bibliothèque de classes C# avec .NET Core dans Visual Studio 2017.](./tutorials/library-with-visual-studio.md)
@@ -52,20 +52,20 @@ Vous pouvez commencer à développer des applications .NET Core en suivant ces t
 - Visionnez une vidéo qui indique [comment installer et utiliser Visual Studio 2017 et .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017/).
 - [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/using-with-xplat-cli.md)
 
-See the [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-windows) article for a list of the supported Windows versions.
+Pour obtenir la liste des versions de Windows prises en charge, consultez l’article sur les [dépendances et les exigences de .net Core](install/dependencies.md?tabs=netcore30&pivots=os-windows) .
 
 # <a name="linuxtablinux"></a>[Linux](#tab/linux)
 
-You can get started developing .NET Core application by following these step-by-step tutorials:
+Vous pouvez commencer à développer une application .NET Core en suivant ces didacticiels pas à pas :
 
 - [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/using-with-xplat-cli.md)
 - Visionnez une vidéo qui explique comment [bien démarrer avec Visual Studio Code en utilisant C# et .NET Core sur Ubuntu](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-See the [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-linux) article for a list of the supported Linux distros and versions.
+Pour obtenir la liste des versions et distributions Linux prises en charge, consultez l’article [dépendances et exigences de .net Core](install/dependencies.md?tabs=netcore30&pivots=os-linux) .
 
 # <a name="macostabmacos"></a>[macOS](#tab/macos)
 
-You can get started developing .NET Core application by following these step-by-step tutorials:
+Vous pouvez commencer à développer une application .NET Core en suivant ces didacticiels pas à pas :
 
 - Visionnez une vidéo qui explique comment [bien démarrer avec Visual Studio Code en utilisant C# et .NET Core sur macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac).
 - [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio Code.](tutorials/using-on-macos.md)
@@ -73,6 +73,6 @@ You can get started developing .NET Core application by following these step-by-
 - [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio pour Mac.](tutorials/using-on-mac-vs.md)
 - [Générer une solution .NET Core complète sur macOS en utilisant Visual Studio pour Mac.](tutorials/using-on-mac-vs-full-solution.md)
 
-See the [.NET Core dependencies and requirements](install/dependencies.md?tabs=netcore30&pivots=os-macos) article for a list of the supported OS X / macOS versions.
+Pour obtenir la liste des versions OS X/macOS prises en charge, consultez l’article [dépendances et exigences .net Core](install/dependencies.md?tabs=netcore30&pivots=os-macos) .
 
 ---

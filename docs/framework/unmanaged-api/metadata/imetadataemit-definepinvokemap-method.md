@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74431487"
 ---
 # <a name="imetadataemitdefinepinvokemap-method"></a>IMetaDataEmit::DefinePinvokeMap, méthode
-Sets features of the PInvoke signature of the method referenced by the specified token.  
+Définit les fonctionnalités de la signature PInvoke de la méthode référencée par le jeton spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,23 +38,23 @@ HRESULT DefinePinvokeMap (
   
 ## <a name="parameters"></a>Paramètres  
  `tk`  
- [in] The token for the target method.  
+ dans Jeton pour la méthode cible.  
   
  `dwMappingFlags`  
- [in] Flags used by PInvoke to do the mapping.  
+ dans Indicateurs utilisés par PInvoke pour effectuer le mappage.  
   
  `szImportName`  
- [in] The name of the target export method in an unmanaged DLL.  
+ dans Nom de la méthode d’exportation cible dans une DLL non managée.  
   
  `mrImportDLL`  
- [in] The token for the target native DLL.  
+ dans Jeton pour la DLL native cible.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MSCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MSCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

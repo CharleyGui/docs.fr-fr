@@ -9,22 +9,22 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74353139"
 ---
-# <a name="performance-linq-to-xml-visual-basic"></a>Performance (LINQ to XML) (Visual Basic)
+# <a name="performance-linq-to-xml-visual-basic"></a>Performances (LINQ to XML) (Visual Basic)
 Cette section contient des informations relatives aux performances dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], et notamment aux performances des requêtes et de la construction fonctionnelle.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Performance of Chained Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-of-chained-queries-linq-to-xml.md)  
+ [Performances des requêtes chaînées (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/performance-of-chained-queries-linq-to-xml.md)  
  Fournit des informations de performance sur les requêtes [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] chaînées.  
   
- [Atomized XName and XNamespace Objects (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md)  
+ [Objets XName et XNamespace atomisés (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/atomized-xname-and-xnamespace-objects-linq-to-xml.md)  
  Fournit des informations de performance sur l'atomisation des objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace>.  
   
- [Pre-Atomization of XName Objects (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)  
+ [Préatomisation des objets XName (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/pre-atomization-of-xname-objects-linq-to-xml.md)  
  Décrit une technique permettant de pré-atomiser des objets <xref:System.Xml.Linq.XName> et <xref:System.Xml.Linq.XNamespace>. Cela peut améliorer considérablement les performances dans certains cas.  
   
- [Statically Compiled Queries (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
+ [Requêtes compilées statiquement (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/statically-compiled-queries-linq-to-xml.md)  
  Fournit des informations de performance sur les requêtes compilées statistiquement, par rapport à l’analyse et au traitement qui doivent être effectués par un évaluateur d’expression XPath.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Programming Guide (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)
+- [Guide de programmation (LINQ to XML) (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/programming-guide-linq-to-xml.md)

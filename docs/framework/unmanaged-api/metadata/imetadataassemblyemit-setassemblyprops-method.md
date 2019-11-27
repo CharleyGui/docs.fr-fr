@@ -41,35 +41,35 @@ HRESULT SetAssemblyProps (
   
 ## <a name="parameters"></a>Paramètres  
  `pma`  
- [in] The metadata token that specifies the `Assembly` metadata structure to be modified.  
+ dans Jeton de métadonnées qui spécifie la structure de métadonnées `Assembly` à modifier.  
   
  `pbPublicKey`  
- [in] A pointer to the public key of the publisher of the assembly.  
+ dans Pointeur vers la clé publique de l’éditeur de l’assembly.  
   
  `cbPublicKey`  
- [in] The size in bytes of `pbPublicKey`.  
+ dans Taille en octets de `pbPublicKey`.  
   
  `ulHashAlgId`  
- [in] The identifier for the hash algorithm used to hash the assembly files.  
+ dans Identificateur de l’algorithme de hachage utilisé pour hacher les fichiers d’assembly.  
   
  `szName`  
- [in] The human-readable text name of the assembly.  
+ dans Nom de texte explicite de l’assembly.  
   
  `pMetaData`  
- [in] A pointer to the ASSEMBLYMETADATA that contains version, platform, and locale information for the assembly.  
+ dans Pointeur vers ASSEMBLYMETADATA qui contient les informations de version, de plateforme et de paramètres régionaux de l’assembly.  
   
  `dwAssemblyFlags`  
- [in] A bitwise combination of [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) values that specify various attributes of the assembly.  
+ dans Combinaison d’opérations de bits de valeurs [AssemblyFlags](../../../../docs/framework/unmanaged-api/metadata/assemblyflags-enumeration.md) qui spécifient différents attributs de l’assembly.  
   
 ## <a name="remarks"></a>Notes  
- To create an `Assembly` metadata structure, use the [IMetaDataAssemblyEmit::DefineAssembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) method.  
+ Pour créer une structure de métadonnées `Assembly`, utilisez la méthode [IMetaDataAssemblyEmit ::D efineassembly](../../../../docs/framework/unmanaged-api/metadata/imetadataassemblyemit-defineassembly-method.md) .  
   
-## <a name="requirements"></a>spécifications  
- **Platform:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise  
+ **Plateforme :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** Cor.h  
+ **En-tête :** Cor. h  
   
- **Library:** Used as a resource in MsCorEE.dll  
+ **Bibliothèque :** Utilisé en tant que ressource dans MsCorEE. dll  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v10plus](../../../../includes/net-current-v10plus-md.md)]  
   

@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448578"
 ---
 # <a name="corsymaddrkind-enumeration"></a>CorSymAddrKind, énumération
-Indicates the type of memory address.  
+Indique le type d’adresse mémoire.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,19 +46,19 @@ typedef enum CorSymAddrKind
   
 |Membre|Description|  
 |------------|-----------------|  
-|`ADDR_IL_OFFSET`|Indicates a Microsoft intermediate language (MSIL) local variable or parameter index.|  
-|`ADDR_NATIVE_RVA`|Indicates a relative virtual address into a module.|  
-|`ADDR_NATIVE_REGISTER`|Indicates a CPU register.|  
-|`ADDR_NATIVE_REGREL`|Indicates that the first address is a register and the second address is an offset.|  
-|`ADDR_NATIVE_OFFSET`|Indicates an offset from a base address.|  
-|`ADDR_NATIVE_REGREG`|Indicates that the first address is the low portion of a register, and the second address is the high portion.|  
-|`ADDR_NATIVE_REGSTK`|Indicates that the first address is the low portion of a register, the second is the high portion, and the third is an offset.|  
-|`ADDR_NATIVE_STKREG`|Indicates that the first address is a register, the second is an offset, and the third is the high portion of the register.|  
-|`ADDR_BITFIELD`|Indicates that the first address is the start of a field and the second address is the field length.|  
-|`ADDR_NATIVE_ISECTOFFSET`|Indicates that the first address is the section and the second address is an offset.|  
+|`ADDR_IL_OFFSET`|Indique une variable locale MSIL (Microsoft Intermediate Language) ou un index de paramètre.|  
+|`ADDR_NATIVE_RVA`|Indique une adresse virtuelle relative dans un module.|  
+|`ADDR_NATIVE_REGISTER`|Indique un registre de l’UC.|  
+|`ADDR_NATIVE_REGREL`|Indique que la première adresse est un registre et que la deuxième adresse est un décalage.|  
+|`ADDR_NATIVE_OFFSET`|Indique un offset à partir d’une adresse de base.|  
+|`ADDR_NATIVE_REGREG`|Indique que la première adresse est la partie basse d’un registre et que la deuxième adresse est la partie haute.|  
+|`ADDR_NATIVE_REGSTK`|Indique que la première adresse est la partie basse d’un registre, la deuxième est la partie haute et la troisième est un décalage.|  
+|`ADDR_NATIVE_STKREG`|Indique que la première adresse est un registre, la deuxième est un décalage et la troisième la partie haute du Registre.|  
+|`ADDR_BITFIELD`|Indique que la première adresse est le début d’un champ et la deuxième adresse la longueur du champ.|  
+|`ADDR_NATIVE_ISECTOFFSET`|Indique que la première adresse est la section et que la deuxième adresse est un décalage.|  
   
-## <a name="requirements"></a>spécifications  
- **Header:** CorSym.idl, CorSym.h  
+## <a name="requirements"></a>Configuration requise  
+ **En-tête :** CorSym. idl, CorSym. h  
   
 ## <a name="see-also"></a>Voir aussi
 

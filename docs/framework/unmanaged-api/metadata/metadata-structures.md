@@ -32,7 +32,7 @@ Cette section décrit les structures non managées utilisées par l'API de méta
  [OSINFO, structure](../../../../docs/framework/unmanaged-api/metadata/osinfo-structure.md)  
  Contient des informations sur le système d'exploitation.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Interfaces de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-interfaces.md)  
   
  [Fonctions statiques globales des métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  

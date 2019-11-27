@@ -15,19 +15,19 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448514"
 ---
 # <a name="diagnostics-symbol-store-structures"></a>Structures du magasin de symboles de diagnostics
-This topic describes the unmanaged structures that the diagnostics symbol store API uses.  
+Cette rubrique décrit les structures non managées utilisées par l’API du magasin de symboles de Diagnostics.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [CALL_ID, structure](../../../../docs/framework/unmanaged-api/diagnostics/call-id-structure.md)  
- Provides information to a debugger about a function that is being called.  
+ Fournit des informations à un débogueur sur une fonction qui est appelée.  
   
  [SYMLINEDELTA, structure](../../../../docs/framework/unmanaged-api/diagnostics/symlinedelta-structure.md)  
- Provides information to the symbol handler about methods that were moved as a result of edits.  
+ Fournit des informations au gestionnaire de symboles sur les méthodes qui ont été déplacées suite à des modifications.  
   
  [USER_THREAD, structure](../../../../docs/framework/unmanaged-api/diagnostics/user-thread-structure.md)  
- Provides information to a debugger about a thread.  
+ Fournit des informations à un débogueur à propos d’un thread.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Interfaces du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-interfaces.md)  
   
  [Énumérations du magasin de symboles de diagnostics](../../../../docs/framework/unmanaged-api/diagnostics/diagnostics-symbol-store-enumerations.md)  

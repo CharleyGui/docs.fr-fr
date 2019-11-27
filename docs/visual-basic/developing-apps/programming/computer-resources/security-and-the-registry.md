@@ -26,13 +26,13 @@ Cette page décrit les implications en matière de sécurité du stockage des do
   
  Les valeurs des autorisations d’accès au Registre sont définies par l’énumération <xref:System.Security.Permissions.RegistryPermissionAccess>. Le tableau suivant détaille ses membres.  
   
-|valeur|Accès aux variables de Registre|  
+|Valeur|Accès aux variables de Registre|  
 |-----------|----------------------------------|  
 |`AllAccess`|Créer, lire et écrire|  
 |`Create`|Créer|  
-|`NoAccess`|Pas d’accès|  
+|`NoAccess`|Aucun accès|  
 |`Read`|Lecture|  
-|`Write`|Write|  
+|`Write`|Écriture|  
   
 ## <a name="checking-values-in-registry-keys"></a>Vérification des valeurs dans les clés de Registre  
 

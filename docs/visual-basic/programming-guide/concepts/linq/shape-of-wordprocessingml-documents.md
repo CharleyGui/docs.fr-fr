@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350602"
 ---
-# <a name="shape-of-wordprocessingml-documents-visual-basic"></a>Shape of WordprocessingML Documents (Visual Basic)
+# <a name="shape-of-wordprocessingml-documents-visual-basic"></a>Forme des documents WordprocessingML (Visual Basic)
 Cette rubrique présente la forme XML d'un document WordprocessingML.  
   
 ## <a name="microsoft-office-formats"></a>Formats Microsoft Office  
@@ -96,4 +96,4 @@ End Module
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutorial: Manipulating Content in a WordprocessingML Document (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/tutorial-manipulating-content-in-a-wordprocessingml-document.md)

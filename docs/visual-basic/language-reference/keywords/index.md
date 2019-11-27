@@ -19,7 +19,7 @@ ms.locfileid: "74338792"
 ---
 # <a name="keywords-visual-basic"></a>Mots clés (Visual Basic)
 
-The following tables list all Visual Basic language keywords.
+Les tableaux suivants répertorient tous les mots clés de Visual Basic Language.
 
 ## <a name="reserved-keywords"></a>Mots clés réservés
 
@@ -43,7 +43,7 @@ Les mots clés suivants sont *réservés*, ce qui signifie que vous ne pouvez p
 |[Dim](../statements/dim-statement.md)|[DirectCast](../operators/directcast-operator.md)|[Do](../statements/do-loop-statement.md)|[Double](../data-types/double-data-type.md)|  
 |[Each](../statements/for-each-next-statement.md)|[Else](../statements/else-statement.md)|[ElseIf](../statements/if-then-else-statement.md)|[End (instruction)](../statements/end-statement.md)|  
 |[End \<mot clé>](../statements/end-keyword-statement.md)|`EndIf`|[Enum](../statements/enum-statement.md)|[Erase](../statements/erase-statement.md)|  
-|[Error](../statements/on-error-statement.md)|[Event](../statements/event-statement.md)|[Exit](../statements/exit-statement.md)|[False](../data-types/boolean-data-type.md)|  
+|[Erreur](../statements/on-error-statement.md)|[Event](../statements/event-statement.md)|[Quitter](../statements/exit-statement.md)|[False](../data-types/boolean-data-type.md)|  
 |[Finally](../statements/try-catch-finally-statement.md)|[For (For…Next)](../statements/for-next-statement.md)|[For Each…Next](../statements/for-each-next-statement.md)|[Friend](../modifiers/friend.md)|  
 |[Function](../statements/function-statement.md)|[Get](../statements/get-statement.md)|[GetType](../operators/gettype-operator.md)|[GetXMLNamespace](../operators/getxmlnamespace-operator.md)|  
 |[Global](../../../visual-basic/programming-guide/program-structure/namespaces.md)|`GoSub`|[GoTo](../statements/goto-statement.md)|[Handles](../statements/handles-clause.md)|  
@@ -58,7 +58,7 @@ Les mots clés suivants sont *réservés*, ce qui signifie que vous ne pouvez p
 |[Next (dans l’instruction Resume)](../statements/resume-statement.md)|[Not](../operators/not-operator.md)|[Nothing](../nothing.md)|[NotInheritable](../modifiers/notinheritable.md)|
 |[NotOverridable](../modifiers/notoverridable.md)|[Objet](../data-types/object-data-type.md)|[Of](../statements/of-clause.md)|[On](../../../visual-basic/misc/on.md)|
 |[Operator](../statements/operator-statement.md)|[Option](../statements/option-keyword-statement.md)|[Optional](../modifiers/optional.md)|[Or](../operators/or-operator.md)|
-|[OrElse](../operators/orelse-operator.md)|[Out (modificateur générique)](../modifiers/out-generic-modifier.md)|[Surcharges](../modifiers/overloads.md)|[Overridable](../modifiers/overridable.md)|
+|[OrElse](../operators/orelse-operator.md)|[Out (modificateur générique)](../modifiers/out-generic-modifier.md)|[Overloads](../modifiers/overloads.md)|[Overridable](../modifiers/overridable.md)|
 |[Overrides](../modifiers/overrides.md)|[ParamArray](../modifiers/paramarray.md)|[Partial](../modifiers/partial.md)|[Private](../modifiers/private.md)|
 |[Property](../statements/property-statement.md)|[Protected](../modifiers/protected.md)|[Public](../modifiers/public.md)|[RaiseEvent](../statements/raiseevent-statement.md)|
 |[ReadOnly](../modifiers/readonly.md)|[ReDim](../statements/redim-statement.md)|[REM](../statements/rem-statement.md)|[RemoveHandler](../statements/removehandler-statement.md)|
@@ -76,11 +76,11 @@ Les mots clés suivants sont *réservés*, ce qui signifie que vous ne pouvez p
 |[&=](../operators/and-assignment-operator.md)|[*](../operators/multiplication-operator.md)|[*=](../operators/multiplication-assignment-operator.md)|[/](../operators/floating-point-division-operator.md)|
 [/=](../operators/floating-point-division-assignment-operator.md)|[\\](../operators/integer-division-operator.md)|[\\=](../operators/integer-division-assignment-operator.md)|[^](../operators/exponentiation-operator.md)|
 |[^=](../operators/exponentiation-assignment-operator.md)|[+](../operators/addition-operator.md)|[+=](../operators/addition-assignment-operator.md)|[-](../operators/subtraction-operator.md)|
-|[-=](../operators/subtraction-assignment-operator.md)|[>>, opérateur](../operators/right-shift-operator.md)|[>>= (opérateur)](../operators/right-shift-assignment-operator.md)|[<<](../operators/left-shift-operator.md)|
+|[-=](../operators/subtraction-assignment-operator.md)|[>>, opérateur](../operators/right-shift-operator.md)|[>>=, opérateur](../operators/right-shift-assignment-operator.md)|[<<](../operators/left-shift-operator.md)|
 |[<\<=](../operators/left-shift-assignment-operator.md)|
 
 > [!NOTE]
-> `EndIf`, `GoSub`, `Variant`, and `Wend` are retained as reserved keywords, although they are no longer used in Visual Basic. La signification du mot clé `Let` a changé. `Let` est maintenant utilisé dans les requêtes LINQ. Pour plus d’informations, consultez [Let, clause](../queries/let-clause.md).
+> `EndIf`, `GoSub`, `Variant`et `Wend` sont conservés en tant que Mots clés réservés, bien qu’ils ne soient plus utilisés dans Visual Basic. La signification du mot clé `Let` a changé. `Let` est maintenant utilisé dans les requêtes LINQ. Pour plus d’informations, consultez [Let, clause](../queries/let-clause.md).
 
 ## <a name="unreserved-keywords"></a>Mots clés non réservés
 
@@ -90,7 +90,7 @@ Les mots clés suivants ne sont pas réservés, ce qui signifie que vous pouvez
 |---|---|---|---|  
 |[Aggregate](../queries/aggregate-clause.md)|[Ansi](../modifiers/ansi.md)|[Assembly](../modifiers/assembly.md)|[Async](../modifiers/async.md)|  
 |[Auto](../modifiers/auto.md)|[Await](../operators/await-operator.md)|[Binary](../statements/option-compare-statement.md)|[Compare](../statements/option-compare-statement.md)|  
-|[Custom](../statements/event-statement.md)|[Distinct](../queries/distinct-clause.md)|[Equals](../queries/equals-clause.md)|[Explicit](../statements/option-explicit-statement.md)|  
+|[Personnalisé](../statements/event-statement.md)|[Distinct](../queries/distinct-clause.md)|[Equals](../queries/equals-clause.md)|[Explicit](../statements/option-explicit-statement.md)|  
 |[From](../queries/from-clause.md)|[Group By](../queries/group-by-clause.md)|[Group Join](../queries/group-join-clause.md)|[Into](../statements/into-clause.md)|  
 |[IsFalse](../operators/isfalse-operator.md)|[IsTrue](../operators/istrue-operator.md)|[Iterator](../modifiers/iterator.md)|[Join](../queries/join-clause.md)|  
 |[Key](../modifiers/key.md)|[Mid](../statements/mid-statement.md)|[Off](../../../visual-basic/misc/off.md)|[Order By](../queries/order-by-clause.md)|  
@@ -107,7 +107,7 @@ Les mots clés suivants ne sont pas réservés, ce qui signifie que vous pouvez
 |[Liste des objets Collection](collection-object-summary.md)|Liste les éléments de langage utilisés pour les collections.|  
 |[Liste des flux de contrôle](control-flow-summary.md)|Liste les instructions utilisées pour l’exécution en boucle et le contrôle du flux de procédure.|  
 |[Liste des conversions](conversion-summary.md)|Liste les fonctions utilisées pour convertir les nombres, les dates, les heures et les chaînes.|  
-|[Liste des types de données](data-types-summary.md)|Liste les types de données. Répertorie également les fonctions utilisées pour effectuer des conversions entre plusieurs types de données et vérifier des types de données.|  
+|[Data Types Summary](data-types-summary.md)|Liste les types de données. Répertorie également les fonctions utilisées pour effectuer des conversions entre plusieurs types de données et vérifier des types de données.|  
 |[Liste des dates et heures](dates-and-times-summary.md)|Liste les éléments de langage utilisés pour les dates et les heures.|  
 |[Liste des déclarations et des constantes](declarations-and-constants-summary.md)|Liste les instructions utilisées pour déclarer les variables, les constantes, les classes, les modules et d’autres éléments de programmation. Répertorie également les éléments de langage utilisés pour obtenir les informations relatives aux objets, gérer les événements et implémenter l’héritage.|  
 |[Liste des répertoires et des fichiers](directories-and-files-summary.md)|Répertorie les fonctions utilisées pour contrôler le système de fichiers et traiter les fichiers.|  

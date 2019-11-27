@@ -40,4 +40,4 @@ ms.locfileid: "74447002"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [InvokePattern, ExpandCollapsePattern, and TogglePattern Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)
+- [Exemple InvokePattern, ExpandCollapsePattern et TogglePattern](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InvokePattern)

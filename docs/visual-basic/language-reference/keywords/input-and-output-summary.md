@@ -14,22 +14,22 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348524"
 ---
 # <a name="input-and-output-summary-visual-basic"></a>Liste des entrées et sorties (Visual Basic)
-Visual Basic language keywords and run-time library members are organized by purpose and use.  
+Les mots clés de langage Visual Basic et les membres de la bibliothèque Runtime sont organisés par rôle et utilisation.  
   
-|Action|Élément du langage|  
+|Action|élément Language|  
 |------------|----------------------|  
-|Access or create a file.|<xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>|  
-|Close files.|<xref:Microsoft.VisualBasic.FileSystem.FileClose%2A>, <xref:Microsoft.VisualBasic.FileSystem.Reset%2A>|  
-|Control output appearance.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.SPC%2A>, <xref:Microsoft.VisualBasic.FileSystem.TAB%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileWidth%2A>|  
-|Copy a file.|<xref:Microsoft.VisualBasic.FileSystem.FileCopy%2A>|  
-|Get information about a file.|<xref:Microsoft.VisualBasic.FileSystem.EOF%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileDateTime%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>, <xref:Microsoft.VisualBasic.FileSystem.FreeFile%2A>, <xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.Loc%2A>, <xref:Microsoft.VisualBasic.FileSystem.LOF%2A>, <xref:Microsoft.VisualBasic.FileSystem.Seek%2A>|  
-|Get or provide information from/to the user by means of a control dialog box.|<xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|  
-|Manage files.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>, <xref:Microsoft.VisualBasic.FileSystem.Kill%2A>, <xref:Microsoft.VisualBasic.FileSystem.Lock%2A>, <xref:Microsoft.VisualBasic.FileSystem.Unlock%2A>|  
-|Read from a file.|<xref:Microsoft.VisualBasic.FileSystem.FileGet%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileGetObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Input%2A>, <xref:Microsoft.VisualBasic.FileSystem.InputString%2A>, <xref:Microsoft.VisualBasic.FileSystem.LineInput%2A>|  
-|Return length of a file.|<xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>|  
-|Set or get file attributes.|<xref:Microsoft.VisualBasic.FileSystem.FileAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
-|Set read-write position in a file.|<xref:Microsoft.VisualBasic.FileSystem.Seek%2A>|  
-|Write to a file.|<xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>, <xref:Microsoft.VisualBasic.FileSystem.FilePutObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.Write%2A>, <xref:Microsoft.VisualBasic.FileSystem.WriteLine%2A>|  
+|Accéder ou créer un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileOpen%2A>|  
+|Fermez les fichiers.|<xref:Microsoft.VisualBasic.FileSystem.FileClose%2A>, <xref:Microsoft.VisualBasic.FileSystem.Reset%2A>|  
+|Contrôle l’apparence de la sortie.|<xref:Microsoft.VisualBasic.Strings.Format%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.SPC%2A>, <xref:Microsoft.VisualBasic.FileSystem.TAB%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileWidth%2A>|  
+|Copier un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileCopy%2A>|  
+|Obtenir des informations sur un fichier.|<xref:Microsoft.VisualBasic.FileSystem.EOF%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileDateTime%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>, <xref:Microsoft.VisualBasic.FileSystem.FreeFile%2A>, <xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.Loc%2A>, <xref:Microsoft.VisualBasic.FileSystem.LOF%2A>, <xref:Microsoft.VisualBasic.FileSystem.Seek%2A>|  
+|Obtenir ou fournir des informations à l’utilisateur au moyen d’une boîte de dialogue de contrôle.|<xref:Microsoft.VisualBasic.Interaction.InputBox%2A>, <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A>|  
+|Gérer les fichiers.|<xref:Microsoft.VisualBasic.FileSystem.Dir%2A>, <xref:Microsoft.VisualBasic.FileSystem.Kill%2A>, <xref:Microsoft.VisualBasic.FileSystem.Lock%2A>, <xref:Microsoft.VisualBasic.FileSystem.Unlock%2A>|  
+|Lire à partir d’un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileGet%2A>, <xref:Microsoft.VisualBasic.FileSystem.FileGetObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Input%2A>, <xref:Microsoft.VisualBasic.FileSystem.InputString%2A>, <xref:Microsoft.VisualBasic.FileSystem.LineInput%2A>|  
+|Retourne la longueur d’un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileLen%2A>|  
+|Définissez ou récupérez des attributs de fichier.|<xref:Microsoft.VisualBasic.FileSystem.FileAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.GetAttr%2A>, <xref:Microsoft.VisualBasic.FileSystem.SetAttr%2A>|  
+|Définir la position de lecture-écriture dans un fichier.|<xref:Microsoft.VisualBasic.FileSystem.Seek%2A>|  
+|Écrire dans un fichier.|<xref:Microsoft.VisualBasic.FileSystem.FilePut%2A>, <xref:Microsoft.VisualBasic.FileSystem.FilePutObject%2A>, <xref:Microsoft.VisualBasic.FileSystem.Print%2A>, <xref:Microsoft.VisualBasic.FileSystem.Write%2A>, <xref:Microsoft.VisualBasic.FileSystem.WriteLine%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

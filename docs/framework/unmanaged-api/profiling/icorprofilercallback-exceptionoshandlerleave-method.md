@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74445407"
 ---
 # <a name="icorprofilercallbackexceptionoshandlerleave-method"></a>ICorProfilerCallback::ExceptionOSHandlerLeave, méthode
-Non implémenté. A profiler that needs unmanaged exception information must obtain this information through other means.  
+Non implémenté. Un profileur qui a besoin d’informations sur les exceptions non managées doit obtenir ces informations par d’autres moyens.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,7 +32,7 @@ HRESULT ExceptionOSHandlerLeave(
     [in] UINT_PTR __unused);  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

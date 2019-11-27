@@ -32,7 +32,7 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
   
 - `newName` contient des informations de chemin (<xref:System.ArgumentException>).  
   
-- Le chemin d'accès n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
+- Le chemin n'est pas valide, car il a la valeur `Nothing` (<xref:System.ArgumentNullException>).  
   
 - `newName` est `Nothing` ou une chaîne vide (<xref:System.ArgumentNullException>).  
   
@@ -40,11 +40,11 @@ Utilisez la méthode `RenameFile` de l’objet `My.Computer.FileSystem` pour ren
   
 - Un fichier ou un répertoire porte déjà le nom spécifié dans `newName` (<xref:System.IO.IOException>).  
   
-- Le chemin d'accès dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
+- Le chemin dépasse la longueur maximale définie par le système (<xref:System.IO.PathTooLongException>).  
   
-- Un nom de fichier ou de répertoire du chemin d'accès contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
+- Un nom de fichier ou de répertoire du chemin contient un signe deux-points (:) ou n'a pas un format correct (<xref:System.NotSupportedException>).  
   
-- L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin d'accès (<xref:System.Security.SecurityException>).  
+- L'utilisateur n'a pas les autorisations nécessaires pour afficher le chemin (<xref:System.Security.SecurityException>).  
   
 - L’utilisateur ne dispose pas de l’autorisation nécessaire (<xref:System.UnauthorizedAccessException>).  
   

@@ -14,17 +14,17 @@ ms.locfileid: "74428561"
 ---
 # <a name="build-a-c-hello-world-application-with-the-net-core-sdk-in-visual-studio-2017"></a>Générer une application C# « Hello World » avec le SDK .NET Core dans Visual Studio 2017.
 
-This article provides a step-by-step introduction to building, debugging, and publishing a simple .NET Core console application using C# in Visual Studio 2017. Visual Studio 2017 fournit un environnement de développement complet pour la création d’applications .NET Core. Tant que l’application n’a pas de dépendances spécifiques à la plateforme, elle peut s’exécuter sur n’importe quelle plateforme ciblée par .NET Core et sur tout système où .NET Core est installé.
+Cet article fournit une présentation pas à pas de la création, du débogage et de la publication d’une application console .NET Core simple C# à l’aide de dans Visual Studio 2017. Visual Studio 2017 fournit un environnement de développement complet pour la création d’applications .NET Core. Tant que l’application n’a pas de dépendances spécifiques à la plateforme, elle peut s’exécuter sur n’importe quelle plateforme ciblée par .NET Core et sur tout système où .NET Core est installé.
 
 ## <a name="prerequisites"></a>Configuration requise
 
-[Visual Studio 2017 or later](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) with the ".NET Core cross-platform development" workload installed. You can develop your app with .NET Core 2.1 or later versions.
+[Visual Studio 2017 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail « développement multiplateforme .net Core » installée. Vous pouvez développer votre application avec .NET Core 2,1 ou versions ultérieures.
 
-For more information, see the [.NET Core dependencies and requirements](../install/sdk.md?tabs=netcore30&pivots=os-windows#install-with-visual-studio)article.
+Pour plus d’informations, consultez l’article sur les [dépendances et la configuration requise pour .net Core](../install/sdk.md?tabs=netcore30&pivots=os-windows#install-with-visual-studio).
 
 ## <a name="a-simple-hello-world-application"></a>Une application Hello World simple
 
-Commencez par créer une application console « Hello World » simple. Procédez comme suit :
+Commencez par créer une application console « Hello World » simple. Suivez ces étapes :
 
 1. Lancez Visual Studio. Sélectionnez **Fichier** > **Nouveau** > **Projet** dans la barre de menus. Dans la boîte de dialogue **Nouveau projet**, sélectionnez le nœud **Visual C#** suivi du nœud **.NET Core**. Ensuite, sélectionnez le modèle de projet **Application console (.NET Core)** . Dans la zone de texte **Nom**, tapez « HelloWorld ». Sélectionnez le bouton **OK**.
 
@@ -57,7 +57,7 @@ Commencez par créer une application console « Hello World » simple. Procéd
 
 Améliorez votre application pour inviter l’utilisateur à entrer son nom, et pour l’afficher avec la date et l’heure. Pour modifier et tester le programme, procédez comme suit :
 
-1. Enter the following C# code in the code window immediately after the opening bracket that follows the `static void Main(string[] args)` line and before the first closing curly bracket:
+1. Entrez le code C# suivant dans la fenêtre de code immédiatement après le crochet ouvrant qui suit la `static void Main(string[] args)` ligne et avant la première accolade fermante :
 
    [!code-csharp[GettingStarted#1](~/samples/snippets/csharp/getting_started/with_visual_studio/helloworld.cs#1)]
 

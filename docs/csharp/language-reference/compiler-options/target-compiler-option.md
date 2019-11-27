@@ -20,7 +20,7 @@ ms.locfileid: "74204514"
 L’option du compilateur **-target** peut être spécifiée sous quatre formes différentes :  
   
  [/target:appcontainerexe](./target-appcontainerexe-compiler-option.md)  
- To create an .exe file for Windows 8.x Store apps.  
+ Pour créer un fichier. exe pour les applications du Windows 8. x Store.  
   
  [/target:exe](./target-exe-compiler-option.md)  
  Pour créer un fichier .exe.  
@@ -37,7 +37,7 @@ L’option du compilateur **-target** peut être spécifiée sous quatre formes 
  [/target:winmdobj](./target-winmdobj-compiler-option.md)  
  Pour créer un fichier .winmdobj intermédiaire.  
   
- Sauf si vous spécifiez **-target:module**, **-target** entraîne le placement d’un manifeste de l’assembly .NET Framework dans un fichier de sortie. For more information, see [Assemblies in .NET](../../../standard/assembly/index.md) and [Common Attributes](../../programming-guide/concepts/attributes/common-attributes.md).  
+ Sauf si vous spécifiez **-target:module**, **-target** entraîne le placement d’un manifeste de l’assembly .NET Framework dans un fichier de sortie. Pour plus d’informations, consultez [assemblys dans .net](../../../standard/assembly/index.md) et [attributs communs](../../programming-guide/concepts/attributes/common-attributes.md).  
   
  Le manifeste de l’assembly est placé dans le premier fichier de sortie .exe dans la compilation ou dans le premier fichier DLL, en l’absence de fichier de sortie .exe. Par exemple, dans la ligne de commande suivante, le manifeste est placé dans `1.exe` :  
   

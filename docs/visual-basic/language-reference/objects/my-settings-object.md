@@ -15,42 +15,42 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74350356"
 ---
 # <a name="mysettings-object"></a>My.Settings, objet
-Provides properties and methods for accessing the application's settings.  
+Fournit des propriétés et des méthodes pour accéder aux paramètres de l’application.  
   
 ## <a name="remarks"></a>Notes  
- The `My.Settings` object provides access to the application's settings and allows you to dynamically store and retrieve property settings and other information for your application. Pour plus d'informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
+ L’objet `My.Settings` fournit l’accès aux paramètres de l’application et vous permet de stocker et de récupérer dynamiquement des paramètres de propriété et d’autres informations pour votre application. Pour plus d’informations, consultez [Gestion des paramètres d’une application (.NET)](/visualstudio/ide/managing-application-settings-dotnet).  
   
 ## <a name="properties"></a>Propriétés  
- Les propriétés de l’objet `My.Settings` fournissent l’accès aux paramètres de votre application. To add or remove settings, use the **Settings Designer**.  
+ Les propriétés de l’objet `My.Settings` fournissent l’accès aux paramètres de votre application. Pour ajouter ou supprimer des paramètres, utilisez le **Concepteur de paramètres**.  
   
- Each setting has a **Name**, **Type**, **Scope**, and **Value**, and these settings determine how the property to access each setting appears in the `My.Settings` object:  
+ Chaque paramètre a un **nom**, un **type**, une **étendue**et une **valeur**, et ces paramètres déterminent la façon dont la propriété pour accéder à chaque paramètre apparaît dans l’objet `My.Settings` :  
   
-- **Name** determines the name of the property.  
+- **Nom** détermine le nom de la propriété.  
   
-- **Type** determines the type of the property.  
+- **Type** détermine le type de la propriété.  
   
-- **Scope** indicates if the property is read-only. If the value is **Application**, the property is read-only; if the value is **User**, the property is read-write.  
+- L' **étendue** indique si la propriété est en lecture seule. Si la valeur est **application**, la propriété est en lecture seule ; Si la valeur est **User**, la propriété est en lecture-écriture.  
   
-- **Value** is the default value of the property.  
+- La **valeur** est la valeur par défaut de la propriété.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |---|---|  
-|`Reload`|Reloads the user settings from the last saved values.|  
-|`Save`|Saves the current user settings.|  
+|`Reload`|Recharge les paramètres utilisateur à partir des dernières valeurs enregistrées.|  
+|`Save`|Enregistre les paramètres utilisateur actuels.|  
   
- The `My.Settings` object also provides advanced properties and methods, inherited from the <xref:System.Configuration.ApplicationSettingsBase> class.  
+ L’objet `My.Settings` fournit également des propriétés et des méthodes avancées, héritées de la classe <xref:System.Configuration.ApplicationSettingsBase>.  
   
 ## <a name="tasks"></a>Tâches  
- The following table lists examples of tasks involving the `My.Settings` object.  
+ Le tableau suivant répertorie des exemples de tâches impliquant l’objet `My.Settings`.  
   
-|Vers|Voir|  
+|Pour|Consultez|  
 |---|---|  
-|Read an application setting|[Guide pratique pour lire des paramètres d’application dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
-|Change a user setting|[Guide pratique pour modifier les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
-|Persist user settings|[Guide pratique pour rendre persistants les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
-|Create a property grid for user settings|[Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
+|Lire un paramètre d’application|[Guide pratique pour lire des paramètres d’application dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-read-application-settings.md)|  
+|Modifier un paramètre utilisateur|[Guide pratique pour modifier les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-change-user-settings.md)|  
+|Conserver les paramètres utilisateur|[Guide pratique pour rendre persistants les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-persist-user-settings.md)|  
+|Créer une grille des propriétés pour les paramètres utilisateur|[Guide pratique pour créer des grilles de propriétés pour les paramètres utilisateur dans Visual Basic](../../../visual-basic/developing-apps/programming/app-settings/how-to-create-property-grids-for-user-settings.md)|  
   
 ## <a name="example"></a>Exemple  
  Cet exemple affiche la valeur du paramètre `Nickname`.  

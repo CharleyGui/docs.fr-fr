@@ -13,11 +13,11 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74344339"
 ---
 # <a name="strings-in-visual-basic"></a>Chaînes en Visual Basic
-This section describes the basic concepts behind using strings in Visual Basic.  
+Cette section décrit les concepts de base qui sous-tendent l’utilisation de chaînes dans Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction aux chaînes en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/introduction-to-strings.md)  
- Lists topics that describe the basic concepts behind using strings in Visual Basic.  
+ Répertorie les rubriques qui décrivent les concepts de base de l’utilisation de chaînes dans Visual Basic.  
   
  [Guide pratique pour créer des chaînes à l’aide de StringBuilder en Visual Basic](../../../../visual-basic/programming-guide/language-features/strings/how-to-create-strings-using-a-stringbuilder.md)  
  Montre comment créer efficacement une longue chaîne à partir de plusieurs chaînes plus petites.  

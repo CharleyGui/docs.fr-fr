@@ -19,12 +19,12 @@ Fournit des propriétés utilisées pour accéder à l’état actuel du clavier
   
  Pour plus d’informations, consultez [Accès au clavier](../../../visual-basic/developing-apps/programming/computer-resources/accessing-the-keyboard.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Espace de noms :** <xref:Microsoft.VisualBasic.Devices>  
   
  **Classe :** <xref:Microsoft.VisualBasic.Devices.Keyboard>  
   
- **Assembly:** Visual Basic Runtime Library (in Microsoft.VisualBasic.dll)  
+ **Assembly :** Visual Basic bibliothèque Runtime (dans Microsoft. VisualBasic. dll)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -13,7 +13,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74348004"
 ---
 # <a name="com-interop-visual-basic"></a>COM Interop (Visual Basic)
-Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. This section covers some of the issues associated with creating and using COM objects with Visual Basic.  
+Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonctionnalités à d’autres composants et d’héberger des applications. La plupart des logiciels actuels incluent des objets COM. Bien que les assemblys .NET représentent le meilleur choix pour les nouvelles applications, vous devrez peut-être parfois utiliser des objets COM. Cette section aborde certains des problèmes liés à la création et à l’utilisation d’objets COM avec Visual Basic.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à COM Interop](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)  
@@ -23,7 +23,7 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  Décrit la procédure à suivre pour ajouter des références aux objets COM qui ont des bibliothèques de types.  
   
  [Guide pratique : utiliser les contrôles ActiveX](../../../visual-basic/programming-guide/com-interop/how-to-work-with-activex-controls.md)  
- Demonstrates how to use existing ActiveX controls to add features to the Visual Studio Toolbox.  
+ Montre comment utiliser des contrôles ActiveX existants pour ajouter des fonctionnalités à la boîte à outils Visual Studio.  
   
  [Procédure pas à pas : appel des API Windows](../../../visual-basic/programming-guide/com-interop/walkthrough-calling-windows-apis.md)  
  Vous guide tout au long du processus d’appel des API qui font partie du système d’exploitation Windows.  
@@ -46,7 +46,7 @@ Le modèle COM (Component Object Model) permet à un objet d’exposer ses fonct
  [Procédure pas à pas : implémentation de l’héritage avec les objets COM](../../../visual-basic/programming-guide/com-interop/walkthrough-implementing-inheritance-with-com-objects.md)  
  Décrit l’utilisation d’objets COM existants comme base des nouveaux objets.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Interopération avec du code non managé](../../../framework/interop/index.md)  
  Décrit les services d'interopérabilité fournis par le common language runtime.  
   

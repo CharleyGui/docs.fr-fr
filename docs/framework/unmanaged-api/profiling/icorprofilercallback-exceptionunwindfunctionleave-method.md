@@ -23,7 +23,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74448046"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionleave-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionLeave, méthode
-Notifies the profiler that the unwind phase of exception handling has finished unwinding a function.  
+Notifie le profileur que la phase de déroulement de la gestion des exceptions a terminé le déroulement d’une fonction.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -32,13 +32,13 @@ HRESULT ExceptionUnwindFunctionLeave();
 ```  
   
 ## <a name="remarks"></a>Notes  
- When the `ExceptionUnwindFunctionLeave` method is called, the function instance and its stack data are removed from the stack.  
+ Lorsque la méthode `ExceptionUnwindFunctionLeave` est appelée, l’instance de la fonction et ses données de pile sont supprimés de la pile.  
   
- The profiler should not block during this call because the stack may not be in a state that allows garbage collection, and therefore preemptive garbage collection cannot be enabled. If the profiler blocks here and a garbage collection is attempted, the runtime will block until this callback returns.  
+ Le profileur ne doit pas se bloquer pendant cet appel, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé. Si le profileur est bloqué ici et qu’une garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.  
   
- Also, during this call, the profiler must not call into managed code or in any way cause a managed-memory allocation.  
+ En outre, pendant cet appel, le profileur ne doit pas appeler dans du code managé ou de quelque manière qu’il soit à l’origine d’une allocation de mémoire managée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

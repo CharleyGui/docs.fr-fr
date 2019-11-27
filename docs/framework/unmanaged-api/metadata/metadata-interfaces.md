@@ -36,7 +36,7 @@ Cette section décrit les interfaces non managées qui donnent accès aux métad
  Fournit des méthodes pour mapper des bibliothèques de types à leurs signatures de métadonnées et effectuer la conversion entre les deux.  
   
  [IMetaDataDispenser, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenser-interface.md)  
- `IMetaDataDispenser` est obsolète. Utilisez plutôt `IMetaDataDispenserEx`.  
+ `IMetaDataDispenser` est obsolète. Utilisez plutôt `IMetaDataDispenserEx` .  
   
  [IMetaDataDispenserEx, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatadispenserex-interface.md)  
  Fournit des méthodes qui mappent des zones de mémoire pour créer ou modifier des métadonnées.  
@@ -71,7 +71,7 @@ Cette section décrit les interfaces non managées qui donnent accès aux métad
  [IMetaDataValidate, interface](../../../../docs/framework/unmanaged-api/metadata/imetadatavalidate-interface.md)  
  Fournit des méthodes à utiliser pour la validation des signatures de métadonnées.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Fonctions statiques globales des métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-global-static-functions.md)  
   
  [Énumérations de métadonnées](../../../../docs/framework/unmanaged-api/metadata/metadata-enumerations.md)  

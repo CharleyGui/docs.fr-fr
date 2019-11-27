@@ -22,7 +22,7 @@ ms.lasthandoff: 11/23/2019
 ms.locfileid: "74436471"
 ---
 # <a name="corpekind-enumeration"></a>CorPEKind, énumération
-Contains values that describe a portable executable (PE) file, as returned from a call to [IMetaDataImport2::GetPEKind](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
+Contient des valeurs qui décrivent un fichier exécutable portable (PE, Portable Executable), tel qu’il est retourné à partir d’un appel à [IMetaDataImport2 :: GetPEKind,](../../../../docs/framework/unmanaged-api/metadata/imetadataimport2-getpekind-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -43,20 +43,20 @@ typedef enum CorPEKind {
   
 |Membre|Description|  
 |------------|-----------------|  
-|`peNot`|Indicates that this is not a PE file.|  
-|`peILOnly`|Indicates that this PE file contains only managed code.|  
-|`pe32BitRequired`|Indicates that this PE file makes Win32 calls.|  
-|`pe32Plus`|Indicates that this PE file runs on a 64-bit platform.|  
-|`pe32Unmanaged`|Indicates that this PE file is native code.|  
-|pe32BitPreferred|Indicates that this PE file is platform-neutral and prefers to be loaded in a 32-bit environment.|  
+|`peNot`|Indique qu’il ne s’agit pas d’un fichier PE.|  
+|`peILOnly`|Indique que ce fichier PE contient uniquement du code managé.|  
+|`pe32BitRequired`|Indique que ce fichier PE effectue des appels Win32.|  
+|`pe32Plus`|Indique que ce fichier PE s’exécute sur une plateforme 64 bits.|  
+|`pe32Unmanaged`|Indique que ce fichier PE est du code natif.|  
+|pe32BitPreferred|Indique que ce fichier PE est indépendant de la plateforme et qu’il préfère être chargé dans un environnement 32 bits.|  
   
 ## <a name="remarks"></a>Notes  
- These values can be used in bitwise combinations.  
+ Ces valeurs peuvent être utilisées dans des combinaisons au niveau du bit.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorHdr.h  
+ **En-tête :** CorHdr. h  
   
  **Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]  
   

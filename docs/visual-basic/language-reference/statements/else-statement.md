@@ -14,7 +14,7 @@ ms.lasthandoff: 11/22/2019
 ms.locfileid: "74343753"
 ---
 # <a name="else-statement-visual-basic"></a>Else, instruction (Visual Basic)
-Introduces a group of statements to be run or compiled if no other conditional group of statements has been run or compiled.  
+Introduit un groupe d’instructions à exécuter ou à compiler si aucun autre groupe conditionnel d’instructions n’a été exécuté ou compilé.  
   
 ## <a name="remarks"></a>Notes  
  Le mot clé `Else` peut être utilisé dans les contextes suivants :  
@@ -23,7 +23,7 @@ Introduces a group of statements to be run or compiled if no other conditional g
   
  [Select...Case (instruction)](../../../visual-basic/language-reference/statements/select-case-statement.md)  
   
- [#If...Then...#Else Directive](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
+ [#If... Then... #Else directive](../../../visual-basic/language-reference/directives/if-then-else-directives.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

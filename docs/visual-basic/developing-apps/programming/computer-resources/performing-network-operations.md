@@ -27,7 +27,7 @@ Les tableaux suivants listent les tâches associées à l’objet `My.Computer.N
  [Guide pratique : vérifier l’état de la connexion](../../../../visual-basic/developing-apps/programming/computer-resources/how-to-check-connection-status.md)  
  Montre comment déterminer si l’ordinateur dispose d’une connexion réseau active.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
  <xref:Microsoft.VisualBasic.Devices.Network>  
  Liste les méthodes, les propriétés et les événements permettant d’utiliser le réseau.  

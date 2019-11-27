@@ -19,7 +19,7 @@ ms.locfileid: "74448824"
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
-This section contains information about support for control types in [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].
+Cette section contient des informations sur la prise en charge des types de contrôle dans [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)].
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -63,7 +63,7 @@ This section contains information about support for control types in [!INCLUDE[T
 - [Prise en charge d’UI Automation pour le type de contrôle TreeItem](ui-automation-support-for-the-treeitem-control-type.md)
 - [Prise en charge d’UI Automation pour le type de contrôle Window](ui-automation-support-for-the-window-control-type.md)
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 <xref:System.Windows.Automation.ControlType>
 

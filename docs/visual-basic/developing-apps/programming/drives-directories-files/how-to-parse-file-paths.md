@@ -12,7 +12,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 11/22/2019
 ms.locfileid: "74335349"
 ---
-# <a name="how-to-parse-file-paths-in-visual-basic"></a>Comment : analyser des chemins d'accès dans Visual Basic
+# <a name="how-to-parse-file-paths-in-visual-basic"></a>Guide pratique pour analyser des chemins en Visual Basic
 
 L’objet <xref:Microsoft.VisualBasic.FileIO.FileSystem> fournit plusieurs méthodes qui facilitent l’analyse des chemins de fichier.  
   
