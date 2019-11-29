@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 395978a2e471260254caf3da8421adf2413c132c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d39e5912cf2ae73631c2f1192adb516e84dfed32
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450855"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552196"
 ---
 # <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
 
@@ -24,12 +24,16 @@ Vous pouvez télécharger et installer .NET Core directement avec l’un des lie
 - [Téléchargements .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 - [Téléchargements .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)
 
+::: zone pivot="os-windows,os-macos"
+
 ## <a name="install-with-an-installer"></a>Installer avec un programme d’installation
 
 Windows et macOS ont tous deux des programmes d’installation autonomes qui peuvent être utilisés pour installer le Runtime .NET Core 3,0.
 
 - UC Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x64-installer) | [UC x32](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-windows-x86-installer)
 - [processeurs MacOS x64](https://dotnet.microsoft.com/download/thank-you/dotnet-runtime-3.0.0-macos-x64-installer)
+
+::: zone-end
 
 ::: zone pivot="os-linux"
 

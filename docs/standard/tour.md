@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: e0e35562e2351f9b985c74b60d8769577c3e3f56
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 274fea83c474d4b67aab919b604eda893d8204d7
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283892"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552866"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -31,7 +31,7 @@ Microsoft développe et prend en charge activement trois langages .NET : C#, F#
 
 * C# est simple, puissant, de type sécurisé et orienté objet, tout en conservant l’expressivité et l’élégance des langages de style C. Les utilisateurs familiarisés avec le langage C et les langages similaires ont peu de difficultés à s’adapter à C#. Consultez le [Guide C#](../csharp/index.yml) pour en savoir plus sur C#.
 
-* F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.md) pour en savoir plus sur F#.
+* F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.yml) pour en savoir plus sur F#.
 
 * Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Parmi les langages .NET, la syntaxe de VB est la plus proche du langage humain ordinaire, ce qui rend VB souvent accessible aux personnes qui débutent dans le développement de logiciels.
 
@@ -59,7 +59,7 @@ Dans .NET, les objets qui font référence à des ressources non managées impl�
 
 [!code-csharp[UnmanagedResources](../../samples/csharp/snippets/tour/UnmanagedResources.csx#L1-L6)]
 
-Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode `stream` de l’objet <xref:System.IDisposable.Dispose> qui libère le handle de fichier. Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
+Une fois que le bloc `using` est fini, le runtime .NET appelle automatiquement la méthode <xref:System.IDisposable.Dispose> de l’objet `stream` qui libère le handle de fichier. Le runtime agit également ainsi quand une exception entraîne le contrôle à laisser le bloc.
 
 Pour plus de détails, consultez les rubriques suivantes :
 

@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 2f65e9dc39a4cd1076af1a70dfedfa671f20b42d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 6e9af6c84c81b1244e10fa7d5955ab67d34b1f0a
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450876"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552204"
 ---
 # <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
 
@@ -26,12 +26,16 @@ Vous pouvez télécharger et installer .NET Core directement avec l’un des lie
 
 Vous pouvez également installer .NET Core dans le cadre d’un environnement de développement intégré (IDE), détaillé dans les sections ci-dessous.
 
+::: zone pivot="os-windows,os-macos"
+
 ## <a name="install-with-an-installer"></a>Installer avec un programme d’installation
 
 Windows et macOS ont tous deux des programmes d’installation autonomes qui peuvent être utilisés pour installer le kit de développement logiciel (SDK) .NET Core 3,0.
 
 - UC Windows [x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x64-installer) | [UC x32](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-windows-x86-installer)
 - [processeurs MacOS x64](https://dotnet.microsoft.com/download/thank-you/dotnet-sdk-3.0.100-macos-x64-installer)
+
+::: zone-end
 
 ::: zone pivot="os-linux"
 
@@ -49,7 +53,7 @@ Si vous utilisez Visual Studio pour développer des applications .NET Core, le t
 
 | Version de kit SDK .NET Core | Version de Visual Studio                      |
 | --------------------- | ------------------------------------------ |
-| 3,0                   | Visual Studio 2019 version 16,3 ou ultérieure. |
+| 3.0                   | Visual Studio 2019 version 16,3 ou ultérieure. |
 | 2.2                   | Visual Studio 2017 version 15,9 ou ultérieure. |
 | 2.1                   | Visual Studio 2017 version 15,7 ou ultérieure. |
 

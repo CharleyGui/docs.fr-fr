@@ -2,12 +2,12 @@
 title: Programmation asynchrone en C#
 description: Vue d’ensemble de la prise en charge du langage C# pour la programmation asynchrone avec Async, Await, Task et Task<T>
 ms.date: 03/18/2019
-ms.openlocfilehash: 4ed48a2e74dde5ae0f24ebd680ace133e05e15d4
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 633da9485c5f74efb6e57234a31f0404e39605ec
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70167888"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552433"
 ---
 # <a name="asynchronous-programming-with-async-and-await"></a>Programmation asynchrone avec Async et Await
 
@@ -65,8 +65,8 @@ Vous démarrez une tâche puis vous gardez l’objet <xref:System.Threading.Task
 ```csharp
 Coffee cup = PourCoffee();
 Console.WriteLine("coffee is ready");
-Task<Egg> eggTask = FryEggs(2);
-Egg eggs = await eggTask;
+Task<Egg> eggsTask = FryEggs(2);
+Egg eggs = await eggsTask;
 Console.WriteLine("eggs are ready");
 Task<Bacon> baconTask = FryBacon(3);
 Bacon bacon = await baconTask;
@@ -87,7 +87,7 @@ Ensuite, vous pouvez déplacer les instructions `await` pour le bacon et les œu
 ```csharp
 Coffee cup = PourCoffee();
 Console.WriteLine("coffee is ready");
-Task<Egg> eggTask = FryEggs(2);
+Task<Egg> eggsTask = FryEggs(2);
 Task<Bacon> baconTask = FryBacon(3);
 Task<Toast> toastTask = ToastBread(2);
 Toast toast = await toastTask;
@@ -97,7 +97,7 @@ Console.WriteLine("toast is ready");
 Juice oj = PourOJ();
 Console.WriteLine("oj is ready");
 
-Egg eggs = await eggTask;
+Egg eggs = await eggsTask;
 Console.WriteLine("eggs are ready");
 Bacon bacon = await baconTask;
 Console.WriteLine("bacon is ready");
@@ -129,7 +129,7 @@ La modification précédente montre une technique importante pour l’utilisatio
 La série d’instructions `await` à la fin du code précédent peut être améliorée à l’aide des méthodes de la classe `Task`. L’une de ces API est <xref:System.Threading.Tasks.Task.WhenAll%2A>, qui retourne un <xref:System.Threading.Tasks.Task> se terminant lorsque toutes les tâches de sa liste d’arguments sont terminées, comme indiqué dans le code suivant :
 
 ```csharp
-await Task.WhenAll(eggTask, baconTask, toastTask);
+await Task.WhenAll(eggsTask, baconTask, toastTask);
 Console.WriteLine("eggs are ready");
 Console.WriteLine("bacon is ready");
 Console.WriteLine("toast is ready");

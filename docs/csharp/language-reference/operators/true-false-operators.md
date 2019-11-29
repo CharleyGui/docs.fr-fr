@@ -6,16 +6,16 @@ helpviewer_keywords:
 - false operator [C#]
 - true operator [C#]
 ms.assetid: 81a888fd-011e-4589-b242-6c261fea505e
-ms.openlocfilehash: 780c63e5a8f3f0d82559565b3319fe54507e3d21
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f65ed3b362080d7a8afe89e22bd132d1fc190b06
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036122"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552459"
 ---
 # <a name="true-and-false-operators-c-reference"></a>Opérateurs true et false (rférence C#)
 
-L’opérateur `true` retourne la valeur [bool](../keywords/bool.md) `true` pour indiquer que son opérande a la valeur true. L’opérateur `false` retourne la valeur `bool` `true` pour indiquer que son opérande est définitivement false. Les opérateurs `true` et `false` ne sont pas forcément complémentaires. Autrement dit, les opérateurs `true` et `false` peuvent retourner la valeur `bool` `false` pour le même opérande. Si un type définit un des deux opérateurs, il doit aussi définir un autre opérateur.
+L’opérateur `true` retourne la valeur [bool](../builtin-types/bool.md) `true` pour indiquer que son opérande a la valeur true. L’opérateur `false` retourne la valeur `bool` `true` pour indiquer que son opérande est définitivement false. Les opérateurs `true` et `false` ne sont pas forcément complémentaires. Autrement dit, les opérateurs `true` et `false` peuvent retourner la valeur `bool` `false` pour le même opérande. Si un type définit un des deux opérateurs, il doit aussi définir un autre opérateur.
 
 > [!TIP]
 > Utilisez le type de `bool?`, si vous avez besoin de prendre en charge la logique à trois valeurs (par exemple, lorsque vous utilisez des bases de données qui prennent en charge un type booléen à trois valeurs). C# fournit les opérateurs `&` et `|` qui prennent en charge la logique à trois valeurs avec les opérandes `bool?`. Pour plus d’informations, voir la section [Opérateurs logiques booléens Nullable](boolean-logical-operators.md#nullable-boolean-logical-operators) de l’article [Opérateurs logiques booléens](boolean-logical-operators.md).
@@ -45,5 +45,3 @@ Wait!
 
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
-- [true, littéral](../keywords/true-literal.md)
-- [false, littéral](../keywords/false-literal.md)

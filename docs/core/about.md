@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: a1127a39d67b6c24994a2957298c62d87703950d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4fe16475e18eb88e88fb33d30508f9ef5c9f2cd5
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73416747"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552242"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -29,18 +29,18 @@ Vous pouvez utiliser les langages C#, Visual Basic et F# pour écrire des applic
 - [Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp)
 - Texte sous-vert
 - Vim
- 
+
 Cette intégration est fournie, en partie, par les contributeurs des projets [OmniSharp](https://www.omnisharp.net/) et [Ionide](http://ionide.io) .
 
 ## <a name="apis"></a>API
 
 .NET Core expose des API pour de nombreux scénarios, en voici quelques-uns :
 
-- Types primitifs, comme [bool](../csharp/language-reference/keywords/bool.md) et [int](../csharp/language-reference/builtin-types/integral-numeric-types.md).
+- Types primitifs, tels que <xref:System.Boolean?displayProperty=nameWithType> et <xref:System.Int32?displayProperty=nameWithType>.
 - Collections, comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Types d’utilitaires, comme <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> et <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Types de données, comme <xref:System.Data.DataSet?displayProperty=nameWithType> et [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
-- Types haute performance, tels que <xref:System.Numerics.Vector?displayProperty=nameWithType> et [pipelines](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
+- Types haute performance, tels que les <xref:System.Numerics.Vector?displayProperty=nameWithType> et les [pipelines](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
 
 .NET Core assure la compatibilité avec les API .NET Framework et Mono en implémentant la spécification [.NET Standard](../standard/net-standard.md).
 
@@ -52,7 +52,7 @@ Plusieurs frameworks ont été construits à partir de .NET Core :
 - [Plateforme Windows universelle (UWP) Windows 10](https://developer.microsoft.com/windows)
 - [Tizen](https://developer.tizen.org/development/training/.net-application)
 
-## <a name="composition"></a>Composition
+## <a name="composition"></a>composition
 
 .NET Core est constitué des composants suivants :
 

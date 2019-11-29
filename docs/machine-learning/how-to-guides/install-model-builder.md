@@ -3,14 +3,14 @@ title: Guide pratique pour installer Model Builder
 description: Découvrir comment installer l’outil Model Builder ML.NET
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 06/21/2019
+ms.date: 11/21/2019
 ms.custom: mvc, how-to
-ms.openlocfilehash: a1034d294012b8df5ec778fc40602fe52223961d
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: b87f712ad7a8b2229c1d42db4bad1fe511475ac7
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774569"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552940"
 ---
 # <a name="how-to-install-mlnet-model-builder"></a>Guide pratique pour installer Model Builder ML.NET
 
@@ -19,10 +19,13 @@ Découvrez comment installer Model Builder ML.NET pour ajouter le machine learni
 > [!NOTE]
 > Model Builder est actuellement en préversion.
 
-## <a name="pre-requisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 - Visual Studio 2017 version 15.9.12 ou ultérieure/Visual Studio 2019
-- SDK .NET Core 2.1 ou ultérieur
+- .NET Core 2,1 SDK ou version ultérieure.
+
+> [!NOTE]
+> Le kit de développement logiciel (SDK) .NET Core 3,0 n’est pas pris en charge actuellement.
 
 ## <a name="limitations"></a>Limitations
 
@@ -31,7 +34,7 @@ Découvrez comment installer Model Builder ML.NET pour ajouter le machine learni
 - SQL Server a une limite de 100 000 lignes pour l’entraînement
 - Microsoft SQL Server Data Tools pour Visual Studio 2017 n’est pas pris en charge
 
-## <a name="install"></a>Installez
+## <a name="install"></a>Installez .
 
 Model Builder ML.NET peut être installé via Visual Studio Marketplace ou depuis Visual Studio.
 

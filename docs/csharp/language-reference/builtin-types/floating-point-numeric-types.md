@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 4d71f7eea3f574e483dc4250f5c87e1ffd551f2f
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 23aa33c6887db48a12f995efc5e1e2220d30216c
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771906"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552276"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -52,8 +52,8 @@ Le type `decimal` fournit une plus grande précision et une plage de valeurs plu
 
 Vous pouvez combiner des types [intégraux](integral-numeric-types.md) et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :
 
-- Si l’un des types à virgule flottante est `double`, l’expression prend la valeur `double`, ou la valeur [bool](../keywords/bool.md) dans les comparaisons d’égalité et relationnelles.
-- S’il n’existe aucun type de `double` dans l’expression, l’expression prend la valeur `float`, ou la valeur [bool](../keywords/bool.md) dans les comparaisons d’égalité et relationnelles.
+- Si l’un des types à virgule flottante est `double`, l’expression prend la valeur `double`, ou la valeur [bool](bool.md) dans les comparaisons d’égalité et relationnelles.
+- S’il n’existe aucun type de `double` dans l’expression, l’expression prend la valeur `float`, ou la valeur [bool](bool.md) dans les comparaisons d’égalité et relationnelles.
 
 Une expression à virgule flottante peut contenir les ensembles de valeurs suivants :
 

@@ -3,15 +3,15 @@ title: 'Didacticiel : classer les violations d’intégrité avec le générate
 description: Ce didacticiel explique comment créer un modèle de classification multiclasse à l’aide du générateur de modèles ML.NET pour classifier le niveau de gravité de violation de l’intégrité d’un restaurant à San Francisco.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 10/30/2019
+ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: cbe20183d317ac6fe39a937e1cfa8a5e3df81b74
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 07729e1667f8aa3aba74576943d79eaa3bcd14d8
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977209"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552888"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Didacticiel : classer la gravité des violations d’intégrité d’un restaurant avec le générateur de modèles
 
@@ -31,7 +31,7 @@ Dans ce didacticiel, vous apprendrez à :
 > [!NOTE]
 > Model Builder est actuellement en préversion.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 Pour obtenir la liste des conditions préalables et des instructions d’installation, consultez le [Guide d’installation du générateur de modèles](../how-to-guides/install-model-builder.md).
 
@@ -41,7 +41,7 @@ Cet exemple crée une C# application console .net core qui catégorise les risqu
 
 ## <a name="create-a-console-application"></a>Créer une application console
 
-1. Créez une  **C# application console .net Core** appelée « RestaurantViolations ».
+1. Créez une  **C# application console .net Core** appelée « RestaurantViolations ». Vérifiez que la case à cocher **Placer la solution et le projet dans le même répertoire** est **désactivée** (vs 2019) ou que l’option **créer le répertoire pour la solution** est **cochée** (vs 2017).
 
 ## <a name="prepare-and-understand-the-data"></a>Préparer et comprendre les données
 

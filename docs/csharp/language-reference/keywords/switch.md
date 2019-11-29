@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 012fa5b4d5f39b4dfa4d1c77bc3d6fbe181e78a6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6f0a2cfd5a6de9c8c05bc3daea1e242183ebf03e
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428493"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552341"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -35,7 +35,7 @@ Elle est équivalente à l’exemple suivant, qui utilise une construction `if`-
 
 ## <a name="the-match-expression"></a>Expression de correspondance
 
-L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
+L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
 
 ```csharp
    switch (expr)
@@ -45,7 +45,7 @@ Avec C# 6 (et les versions antérieures), l’expression de correspondance doit
 
 - [char](../builtin-types/char.md),
 - [string](../builtin-types/reference-types.md),
-- [bool](bool.md),
+- [bool](../builtin-types/bool.md),
 - valeur [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’une `int` ou une `long`.
 - ou valeur [enum](enum.md).
 
@@ -112,15 +112,15 @@ Chaque instruction `case` définit un modèle qui, s’il correspond à l’expr
 
 ### <a name="constant-pattern"></a>Modèle de constante
 
-Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
+Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
 
 ```csharp
    case constant:
 ```
 
-où *constant* est la valeur à tester. *constant* peut correspondre à l’une des expressions constantes suivantes :
+où *constant* est la valeur à tester. *constant* peut être l’une quelconque des expressions constantes suivantes :
 
-- Un littéral de [valeur booléenne](bool.md), `true` ou `false`
+- Littéral [bool](../builtin-types/bool.md) : `true` ou `false`.
 - Toute constante [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’un `int`, un `long`ou un `byte`.
 - Le nom d’une variable `const` déclarée
 - Une constante d’énumération
@@ -143,7 +143,7 @@ L’exemple suivant utilise le modèle de constante pour gérer l’entrée d’
 
 ### <a name="type-pattern"></a>Modèle de type
 
-Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
+Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
 
 ```csharp
    case type varname
@@ -151,7 +151,7 @@ Le modèle de type permet une évaluation et une conversion rapides de type. Lor
 
 où *type* est le nom du type vers lequel le résultat de *expr* doit être converti, et *varname* est l’objet vers lequel le résultat de *expr* est converti si la correspondance est établie. À compter de C# 7.1, le type *expr* au moment de la compilation peut être un paramètre de type générique.
 
-L’expression `case` est `true` si l’une des affirmations suivantes est vraie :
+L’expression `case` est `true` si l’une quelconque des affirmations suivantes est vraie :
 
 - *expr* est une instance du même type que *type*.
 
@@ -199,7 +199,7 @@ Pour plus d’informations, consultez la section [Instruction switch](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [if-else](if-else.md)

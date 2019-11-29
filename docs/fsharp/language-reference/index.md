@@ -2,12 +2,12 @@
 title: Référence du langage F#
 description: Recherchez F# des informations sur les fonctionnalités de langage à partir de cette référence à des jetons de langage, des concepts, des types, des expressions et des rubriques de construction prises en charge par le compilateur.
 ms.date: 05/16/2016
-ms.openlocfilehash: ac7e268b28d6bb654e4443d04695cb15fe756e9f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bd9894176fa736b9eed939d72972e676e2bd2671
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424988"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552903"
 ---
 # <a name="f-language-reference"></a>Référence du langage F#
 
@@ -110,7 +110,3 @@ Le tableau suivant liste les rubriques qui décrivent des constructions spécial
 |[Options du compilateur](compiler-options.md)|Décrit les options de ligne de commande du compilateur F#.|
 |[Directives de compilateur](compiler-directives.md)|Décrit les directives de processeur et de compilateur.|
 |[Identificateurs de ligne, de fichier et de chemin source](source-line-file-path-identifiers.md)|Décrit les identificateurs `__LINE__`, `__SOURCE_DIRECTORY__` et `__SOURCE_FILE__`, qui sont des valeurs intégrées vous permettant d’accéder au numéro de ligne source, au répertoire et au nom de fichier dans votre code.|
-
-## <a name="see-also"></a>Voir aussi
-
-- [Visual F#](../index.md)

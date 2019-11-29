@@ -7,20 +7,22 @@ f1_keywords:
 helpviewer_keywords:
 - char data type [C#]
 ms.assetid: b51cf4fb-124c-4067-af48-afbac122b228
-ms.openlocfilehash: 3b2eec4f0e17aa329fe3865fb3ef453ee030c6a7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ab49b8cbddac2569d6063a5f312105bef3033e84
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74451163"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552300"
 ---
 # <a name="char-c-reference"></a>Char (C# référence)
 
 Le mot clé `char` type est un alias pour le type de structure .NET <xref:System.Char?displayProperty=nameWithType> qui représente un caractère Unicode UTF-16.
 
-|Type|Plage|Taille|Type .NET|
+|Type|Range|Size|Type .NET|
 |----------|-----------|----------|-------------------------|
 |`char`|U+0000 à U+FFFF|16 bits|<xref:System.Char?displayProperty=nameWithType>|
+
+La valeur par défaut du type de `char` est `\0`, c’est-à-dire U + 0000.
 
 Le type [String](reference-types.md#the-string-type) représente du texte sous la forme d’une séquence de valeurs `char`.
 

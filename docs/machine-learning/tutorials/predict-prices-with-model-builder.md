@@ -3,15 +3,15 @@ title: 'Didacticiel : prédire les prix à l’aide de la régression avec le g
 description: Ce tutoriel montre comment créer un modèle de régression Model Builder ML.NET pour prédire des prix, plus précisément celui des courses de taxi à New York.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 10/08/2019
+ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: bd6acd83df4d2d5f19d30da847212d60b1576199
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ed2afe307492b6d38e7e2f9d8ae02dafbb5ae1f4
+ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977354"
+ms.lasthandoff: 11/27/2019
+ms.locfileid: "74552925"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-model-builder"></a>Didacticiel : prédire les prix à l’aide de la régression avec le générateur de modèles
 
@@ -38,7 +38,7 @@ Pour obtenir la liste des prérequis et les instructions d’installation, consu
 
 ## <a name="create-a-console-application"></a>Créer une application console
 
-1. Créez une **application console .NET Core** appelée « TaxiFarePrediction ».
+1. Créez une  **C# application console .net Core** appelée « TaxiFarePrediction ». Vérifiez que la case à cocher **Placer la solution et le projet dans le même répertoire** est **désactivée** (vs 2019) ou que l’option **créer le répertoire pour la solution** est **cochée** (vs 2017).
 
 ## <a name="prepare-and-understand-the-data"></a>Préparer et comprendre les données
 
