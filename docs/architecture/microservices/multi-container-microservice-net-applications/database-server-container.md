@@ -2,12 +2,12 @@
 title: Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utilisation d’un serveur de base de données s’exécutant en tant que conteneur ? Uniquement pour le développement ! Comprendre pourquoi.
 ms.date: 10/02/2018
-ms.openlocfilehash: a508ba734525b24e2f3f00408e2c59c8c00f1898
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 371d622dc39681edb0b52e723faccbf611b7797c
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291305"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568432"
 ---
 # <a name="using-a-database-server-running-as-a-container"></a>Utilisation d’un serveur de base de données s’exécutant en tant que conteneur
 
@@ -162,7 +162,7 @@ Toutefois, quand vous utilisez Redis en production, il est préférable de reche
 
 Redis fournit une image Docker. Cette image est accessible à partir de Docker Hub à l’URL suivante :
 
-<https://hub.docker.com/\_/redis/>
+<https://hub.docker.com/_/redis/>
 
 Vous pouvez exécuter directement un conteneur Docker Redis en utilisant la commande Docker CLI suivante à l’invite de commandes :
 

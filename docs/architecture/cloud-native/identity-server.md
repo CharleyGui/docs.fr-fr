@@ -2,12 +2,12 @@
 title: IdentityServer pour les applications Cloud natives
 description: Architecture des applications .NET natives Cloud pour Azure | IdentityServer
 ms.date: 06/30/2019
-ms.openlocfilehash: 3797214685d20109b2c5dc4440ae5fc64dfddce6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e96395766d1a4b63815c10c2c90e35a8f7f9159d
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087255"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568463"
 ---
 # <a name="identityserver-for-cloud-native-applications"></a>IdentityServer pour les applications Cloud natives
 
@@ -65,7 +65,7 @@ public class Startup
                 options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
 
                 options.ClientId = "<insert here>";
-                options.ClientSecret = "<inser here>";
+                options.ClientSecret = "<insert here>";
             })
             .AddOpenIdConnect("demoidsrv", "IdentityServer", options =>
             {
