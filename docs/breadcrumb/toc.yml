@@ -115,7 +115,7 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Compatibilité
+            - name: Modifications avec rupture
               tocHref: /dotnet/core/compatibility/
               topicHref: /dotnet/core/compatibility/index
             - name: Configuration d’exécution
@@ -127,10 +127,6 @@
             - name: Guide d’installation
               tocHref: /dotnet/core/install/
               topicHref: /dotnet/core/install/index
-              items:
-                - name: Gestionnaires de packages Linux
-                  tocHref: /dotnet/core/install/
-                  topicHref: /dotnet/core/install/index
         - name: ".NET\_Framework"
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
