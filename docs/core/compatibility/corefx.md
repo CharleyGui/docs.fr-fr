@@ -2,65 +2,65 @@
 title: Modifications importantes de la bibliothèque de classes de base-.NET Core
 description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: 859eb30b8f6fa48350f81ee1822247e72698fead
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9462e8f8a54a12c19744f7cce55b2a8998ae9f94
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429197"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568119"
 ---
-# <a name="corefx-breaking-changes"></a><span data-ttu-id="bc5d1-103">Modifications avec rupture CoreFx</span><span class="sxs-lookup"><span data-stu-id="bc5d1-103">CoreFx breaking changes</span></span>
+# <a name="corefx-breaking-changes"></a><span data-ttu-id="80f8d-103">Modifications avec rupture CoreFx</span><span class="sxs-lookup"><span data-stu-id="80f8d-103">CoreFx breaking changes</span></span>
 
-<span data-ttu-id="bc5d1-104">La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bc5d1-104">The following is a list of CoreFx breaking changes by .NET Core version.</span></span> <span data-ttu-id="bc5d1-105">CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="bc5d1-105">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
+<span data-ttu-id="80f8d-104">La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core.</span><span class="sxs-lookup"><span data-stu-id="80f8d-104">The following is a list of CoreFx breaking changes by .NET Core version.</span></span> <span data-ttu-id="80f8d-105">CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="80f8d-105">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
 
-## <a name="net-core-30-preview-7"></a><span data-ttu-id="bc5d1-106">.NET Core 3,0 Preview 7</span><span class="sxs-lookup"><span data-stu-id="bc5d1-106">.NET Core 3.0 Preview 7</span></span>
+## <a name="net-core-30"></a><span data-ttu-id="80f8d-106">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="80f8d-106">.NET Core 3.0</span></span>
 
-[!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/jsonelement-api-changes.md)]
-
-## <a name="net-core-30-preview-8"></a><span data-ttu-id="bc5d1-107">.NET Core 3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="bc5d1-107">.NET Core 3.0 Preview 8</span></span>
-
-[!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/change-in-null-in-utf8jsonwriter.md)]
+[!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/3.0/version-information-changes.md)]
 
 ***
 
-[!INCLUDE[JsonEncodedText.Encode methods have an additional JavaScriptEncoder argument](~/includes/core-changes/corefx/jsonencodedtext-encode-has-additional-argument.md)]
+[!INCLUDE[Custom EncoderFallbackBuffer instances cannot fall back recursively](~/includes/core-changes/corefx/3.0/custom-encoderfallbackbuffer-cannot-be-recursive.md)]
 
 ***
 
-[!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/jsonfactoryconverter-createconverter.md)]
-
-## <a name="net-core-30-preview-9"></a><span data-ttu-id="bc5d1-108">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="bc5d1-108">.NET Core 3.0 Preview 9</span></span>
-
-[!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/serializer-throws-notsupportedexception.md)]
-
-## <a name="net-core-30"></a><span data-ttu-id="bc5d1-109">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="bc5d1-109">.NET Core 3.0</span></span>
-
-[!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/version-information-changes.md)]
+[!INCLUDE[Floating point formatting and parsing behavior changes](~/includes/core-changes/corefx/3.0/floating-point-changes.md)]
 
 ***
 
-[!INCLUDE[Custom EncoderFallbackBuffer instances cannot fall back recursively](~/includes/core-changes/corefx/custom-encoderfallbackbuffer-cannot-be-recursive.md)]
+[!INCLUDE[Floating-point parsing operations no longer fail or throw an OverflowException](~/includes/core-changes/corefx/3.0/floating-point-parsing-does-not-overflow.md)]
 
 ***
 
-[!INCLUDE[Floating point formatting and parsing behavior changes](~/includes/core-changes/corefx/floating-point-changes.md)]
+[!INCLUDE[InvalidAsynchronousStateException moved to another assembly](~/includes/core-changes/corefx/3.0/move-invalidasynchronousstateexception.md)]
 
 ***
 
-[!INCLUDE[Floating-point parsing operations no longer fail or throw an OverflowException](~/includes/core-changes/corefx/floating-point-parsing-does-not-overflow.md)]
+[!INCLUDE[NET Core 3.0 follows Unicode best practices when replacing ill-formed UTF-8 byte sequences](~/includes/core-changes/corefx/3.0/net-core-3-0-follows-unicode-utf8-best-practices.md)]
 
 ***
 
-[!INCLUDE[InvalidAsynchronousStateException moved to another assembly](~/includes/core-changes/corefx/move-invalidasynchronousstateexception.md)]
+[!INCLUDE[TypeDescriptionProviderAttribute moved to another assembly](~/includes/core-changes/corefx/3.0/move-typedescriptionproviderattribute.md)]
 
 ***
 
-[!INCLUDE[NET Core 3.0 follows Unicode best practices when replacing ill-formed UTF-8 byte sequences](~/includes/core-changes/corefx/net-core-3-0-follows-unicode-utf8-best-practices.md)]
+[!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/3.0/ziparchiveentry-and-inconsistent-entry-sizes.md)]
+
+## <a name="net-core-30-preview-9"></a><span data-ttu-id="80f8d-107">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="80f8d-107">.NET Core 3.0 Preview 9</span></span>
+
+[!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
+
+## <a name="net-core-30-preview-8"></a><span data-ttu-id="80f8d-108">.NET Core 3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="80f8d-108">.NET Core 3.0 Preview 8</span></span>
+
+[!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/3.0/change-in-null-in-utf8jsonwriter.md)]
 
 ***
 
-[!INCLUDE[TypeDescriptionProviderAttribute moved to another assembly](~/includes/core-changes/corefx/move-typedescriptionproviderattribute.md)]
+[!INCLUDE[JsonEncodedText.Encode methods have an additional JavaScriptEncoder argument](~/includes/core-changes/corefx/3.0/jsonencodedtext-encode-has-additional-argument.md)]
 
 ***
 
-[!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/ziparchiveentry-and-inconsistent-entry-sizes.md)]
+[!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/3.0/jsonfactoryconverter-createconverter.md)]
+
+## <a name="net-core-30-preview-7"></a><span data-ttu-id="80f8d-109">.NET Core 3,0 Preview 7</span><span class="sxs-lookup"><span data-stu-id="80f8d-109">.NET Core 3.0 Preview 7</span></span>
+
+[!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/3.0/jsonelement-api-changes.md)]
