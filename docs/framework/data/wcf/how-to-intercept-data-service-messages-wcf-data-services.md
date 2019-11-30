@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Intercepter des messages de service de données (WCF Data Services)'
+title: 'Comment : intercepter les messages des services de données (services de données WCF)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, customizing
 - query interceptors [WCF Data Services]
 ms.assetid: 24b9df1b-b54b-4795-a033-edf333675de6
-ms.openlocfilehash: cecfdd74779e3ab1c908957afac3c9fccf79f383
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 4f2d6cf34c820c60181d5287298898af5eb8d038
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780034"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569041"
 ---
-# <a name="how-to-intercept-data-service-messages-wcf-data-services"></a>Procédure : Intercepter des messages de service de données (WCF Data Services)
-Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez intercepter des messages de demande afin de pouvoir ajouter la logique personnalisée à une opération. Pour intercepter un message, vous utilisez des méthodes attribuées spécialement dans le service de données. Pour plus d’informations, consultez [intercepteurs](interceptors-wcf-data-services.md).  
+# <a name="how-to-intercept-data-service-messages-wcf-data-services"></a>Comment : intercepter les messages des services de données (services de données WCF)
+Avec WCF Data Services, vous pouvez intercepter des messages de demande afin de pouvoir ajouter une logique personnalisée à une opération. Pour intercepter un message, vous utilisez des méthodes attribuées spécialement dans le service de données. Pour plus d’informations, consultez [intercepteurs](interceptors-wcf-data-services.md).  
   
  L'exemple de cette rubrique utilise l'exemple du service de données Northwind. Ce service est créé lorsque vous terminez le [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md).  
   
@@ -49,7 +49,7 @@ Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez in
  [!code-csharp[Astoria Northwind Service#QueryInterceptor](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#queryinterceptor)]
  [!code-vb[Astoria Northwind Service#QueryInterceptor](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_service/vb/northwind2.svc.vb#queryinterceptor)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Cet exemple définit une méthode d'interception de modification pour le jeu d'entités `Products`. Cette méthode valide l'entrée au service pour une opération <xref:System.Data.Services.UpdateOperations.Add> ou <xref:System.Data.Services.UpdateOperations.Change> et lève une exception si une modification est apportée à un produit de fin de série. Elle bloque également la suppression de produits comme une opération non prise en charge.  
   
  [!code-csharp[Astoria Northwind Service#ChangeInterceptor](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_service/cs/northwind2.svc.cs#changeinterceptor)]
@@ -57,5 +57,5 @@ Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez in
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Définir une opération de service](how-to-define-a-service-operation-wcf-data-services.md)
+- [Guide pratique pour définir une opération de service](how-to-define-a-service-operation-wcf-data-services.md)
 - [Définition de WCF Data Services](defining-wcf-data-services.md)

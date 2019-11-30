@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Activer l’accès au service de données (WCF Data Services)'
+title: "Procédure : activer l'accès au service de données (WCF Data Services)"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, configuring
 ms.assetid: 3d830bcd-32b4-4f26-9287-d58a071452c6
-ms.openlocfilehash: cbe25dcb62adf82921b24623cc4930c3076dd1fa
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0ec9c9a730516b22b4eaa215e042e9393c01d752
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790666"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569103"
 ---
-# <a name="how-to-enable-access-to-the-data-service-wcf-data-services"></a>Procédure : Activer l’accès au service de données (WCF Data Services)
-Dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous devez accorder explicitement l'accès aux ressources exposées par un service de données. Cela signifie qu'après avoir créé un service de données, vous devez encore fournir explicitement l'accès à des ressources individuelles comme les jeux d'entités. Cette rubrique montre comment activer l’accès en lecture et en écriture à cinq des jeux d’entités dans le service de données Northwind créé lorsque vous effectuez le [démarrage rapide](quickstart-wcf-data-services.md). Puisque l'énumération <xref:System.Data.Services.EntitySetRights> est définie à l'aide de l'objet <xref:System.FlagsAttribute>, vous pouvez utiliser un opérateur OR logique pour spécifier plusieurs autorisations pour un jeu d'entités unique.  
+# <a name="how-to-enable-access-to-the-data-service-wcf-data-services"></a>Procédure : activer l'accès au service de données (WCF Data Services)
+Dans WCF Data Services, vous devez accorder explicitement l’accès aux ressources exposées par un service de données. Cela signifie qu'après avoir créé un service de données, vous devez encore fournir explicitement l'accès à des ressources individuelles comme les jeux d'entités. Cette rubrique montre comment activer l’accès en lecture et en écriture à cinq des jeux d’entités dans le service de données Northwind créé lorsque vous effectuez le [démarrage rapide](quickstart-wcf-data-services.md). Puisque l'énumération <xref:System.Data.Services.EntitySetRights> est définie à l'aide de l'objet <xref:System.FlagsAttribute>, vous pouvez utiliser un opérateur OR logique pour spécifier plusieurs autorisations pour un jeu d'entités unique.  
   
 > [!NOTE]
 > Tout client qui peut accéder à l'application ASP.NET peut également accéder aux ressources exposées par le service de données. Dans un service de données de production, pour empêcher l'accès non autorisé aux ressources, vous devez également sécuriser l'application elle-même. Pour plus d’informations, consultez [sécurisation des sites Web ASP.net](https://docs.microsoft.com/previous-versions/aspnet/91f66yxt(v=vs.100)).  
@@ -31,5 +31,5 @@ Dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous devez acc
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Développer un service de données WCF s’exécutant sur IIS](how-to-develop-a-wcf-data-service-running-on-iis.md)
+- [Guide pratique pour développer un service de données WCF qui fonctionne sur IIS](how-to-develop-a-wcf-data-service-running-on-iis.md)
 - [Configuration du service de données](configuring-the-data-service-wcf-data-services.md)

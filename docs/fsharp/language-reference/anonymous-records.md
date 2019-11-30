@@ -1,21 +1,21 @@
 ---
 title: Enregistrements anonymes
-description: Découvrez comment utiliser la construction et utiliser des enregistrements anonymes, une fonctionnalité de langage qui facilite la manipulation de données.
+description: Apprenez à utiliser la construction et à utiliser des enregistrements anonymes, une fonctionnalité de langage qui facilite la manipulation des données.
 ms.date: 06/12/2019
-ms.openlocfilehash: e576210d4fb76ccfd09f8feb157ef4542aa94ccf
-ms.sourcegitcommit: c4dfe37032c64a1fba2cc3d5947550d79f95e3b5
+ms.openlocfilehash: 0a7a819cc471c6579feacd621ed15aa89a6423ba
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/13/2019
-ms.locfileid: "67041803"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569473"
 ---
 # <a name="anonymous-records"></a>Enregistrements anonymes
 
-Des enregistrements anonymes sont des agrégats simples de valeurs nommées qui ne doivent être déclarées pour être utilisées. Vous pouvez les déclarer en tant que types de structures ou de référence. Ils sont des types référence par défaut.
+Les enregistrements anonymes sont des agrégats simples de valeurs nommées qui n’ont pas besoin d’être déclarés avant leur utilisation. Vous pouvez les déclarer comme des structs ou des types référence. Ils sont des types référence par défaut.
 
 ## <a name="syntax"></a>Syntaxe
 
-Les exemples suivants illustrent la syntaxe de l’enregistrement anonyme. Éléments délimité comme `[item]` sont facultatifs.
+Les exemples suivants illustrent la syntaxe d’enregistrement anonyme. Les éléments délimités comme `[item]` sont facultatifs.
 
 ```fsharp
 // Construct an anonymous record
@@ -30,12 +30,11 @@ let function-name (arg-name: [struct] {| Label1: Type1; Label2: Type2; ...|}) ..
 
 ## <a name="basic-usage"></a>Utilisation de base
 
-Des enregistrements anonymes sont plus considérés comme F# types d’enregistrements qui n’avez pas besoin d’être déclaré avant l’instanciation.
+Il est préférable de considérer les enregistrements F# anonymes comme des types d’enregistrements qui n’ont pas besoin d’être déclarés avant l’instanciation.
 
-Par exemple, ici comment vous pouvez interagir avec une fonction qui génère un enregistrement anonyme :
+Par exemple, ici, vous pouvez interagir avec une fonction qui produit un enregistrement anonyme :
 
 ```fsharp
-
 open System
 
 let getCircleStats radius =
@@ -51,7 +50,7 @@ printfn "Circle with radius: %f has diameter %f, area %f, and circumference %f"
     r stats.Diameter stats.Area stats.Circumference
 ```
 
-L’exemple suivant développe sur la précédente avec un `printCircleStats` fonction qui prend un enregistrement anonyme en tant qu’entrée :
+L’exemple suivant développe le précédent avec une fonction `printCircleStats` qui accepte un enregistrement anonyme comme entrée :
 
 ```fsharp
 open System
@@ -72,7 +71,7 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-L’appel `printCircleStats` avec n’importe quel type d’enregistrement anonyme n’ayant pas la même « forme » comme le type d’entrée ne parviendra pas à compiler :
+L’appel de `printCircleStats` avec un type d’enregistrement anonyme qui n’a pas la même « forme » comme type d’entrée ne peut pas être compilé :
 
 ```fsharp
 printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
@@ -80,9 +79,9 @@ printCircleStats r {| Diameter = 2.0; Area = 4.0; MyCircumference = 12.566371 |}
 // '["Area"; "Circumference"; "Diameter"]' and '["Area"; "Diameter"; "MyCircumference"]'
 ```
 
-## <a name="struct-anonymous-records"></a>Structure des enregistrements anonymes
+## <a name="struct-anonymous-records"></a>Structurer des enregistrements anonymes
 
-Des enregistrements anonymes peuvent également être définis comme struct avec le paramètre facultatif `struct` mot clé. L’exemple suivant étend l’en production et en consommant un enregistrement de struct anonyme :
+Les enregistrements anonymes peuvent également être définis comme struct avec le mot clé facultatif `struct`. L’exemple suivant augmente le précédent en générant et en consommant un enregistrement anonyme de structure :
 
 ```fsharp
 open System
@@ -105,9 +104,9 @@ let stats = getCircleStats r
 printCircleStats r stats
 ```
 
-### <a name="structness-inference"></a>Inférence de Structness
+### <a name="structness-inference"></a>Inférence de la structure
 
-Structure des enregistrements anonymes permettent également « structness inférence » où vous n’avez pas besoin de spécifier le `struct` mot clé sur le site d’appel. Dans cet exemple, vous elide le `struct` mot clé lors de l’appel `printCircleStats`:
+Les enregistrements anonymes de struct autorisent également l’inférence de la structure, où vous n’avez pas besoin de spécifier le mot clé `struct` sur le site d’appel. Dans cet exemple, vous Elide le mot clé `struct` lors de l’appel de `printCircleStats`:
 
 ```fsharp
 
@@ -118,11 +117,11 @@ let printCircleStats r (stats: struct {| Area: float; Circumference: float; Diam
 printCircleStats r {| Area = 4.0; Circumference = 12.6; Diameter = 12.6 |}
 ```
 
-L’inverse de modèle - spécifiant `struct` lorsque le type d’entrée n’est pas un enregistrement anonyme struct - compilation échouera.
+Le modèle inverse, qui spécifie `struct` lorsque le type d’entrée n’est pas un enregistrement anonyme de struct, ne peut pas être compilé.
 
-## <a name="embedding-anonymous-records-within-other-types"></a>Incorporation des enregistrements anonymes avec d’autres types
+## <a name="embedding-anonymous-records-within-other-types"></a>Incorporation d’enregistrements anonymes dans d’autres types
 
-Il est utile déclarer [unions discriminées](discriminated-unions.md) dont la casse est des enregistrements. Mais si les données dans les enregistrements sont du même type que l’union discriminée, vous devez définir tous les types en tant que mutuellement récursives. À l’aide des enregistrements anonymes permet d’éviter cette restriction. Ce qui suit est un exemple type et la fonction de ce modèle correspond au dessus :
+Il est utile de déclarer des [unions discriminées](discriminated-unions.md) dont les cas sont des enregistrements. Toutefois, si les données des enregistrements sont du même type que l’union discriminée, vous devez définir tous les types comme étant mutuellement récursifs. L’utilisation d’enregistrements anonymes évite cette restriction. Ce qui suit est un exemple de type et de fonction qui correspond au modèle :
 
 ```fsharp
 type FullName = { FirstName: string; LastName: string }
@@ -142,14 +141,14 @@ let getFirstName e =
 
 ## <a name="copy-and-update-expressions"></a>Copier et mettre à jour des expressions
 
-Des enregistrements anonymes prennent en charge la construction avec [copier et mettre à jour des expressions](copy-and-update-record-expressions.md). Par exemple, voici comment vous pouvez construire une nouvelle instance d’un enregistrement anonyme qui copie existante de données :
+Les enregistrements anonymes prennent en charge la construction avec des [expressions de copie et de mise à jour](copy-and-update-record-expressions.md). Par exemple, voici comment vous pouvez construire une nouvelle instance d’un enregistrement anonyme qui copie les données d’un existant :
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
 let data' = {| data with Y = 3 |}
 ```
 
-Toutefois, contrairement aux enregistrements nommés, des enregistrements anonymes permettent construire des formes entièrement différentes par copie et de mettre à jour des expressions. L’exemple suivant prend le même enregistrement anonyme à partir de l’exemple précédent et développe dans un nouvel enregistrement anonyme :
+Toutefois, contrairement aux enregistrements nommés, les enregistrements anonymes vous permettent de construire des formulaires entièrement différents avec des expressions de copie et de mise à jour. L’exemple suivant prend le même enregistrement anonyme de l’exemple précédent et le développe dans un nouvel enregistrement anonyme :
 
 ```fsharp
 let data = {| X = 1; Y = 2 |}
@@ -164,7 +163,7 @@ let data = { X = 1 }
 let data' = {| data with Y = 2 |} // Gives {| X=1; Y=2 |}
 ```
 
-Vous pouvez également copier des données vers et à partir de la référence et la structure des enregistrements anonymes :
+Vous pouvez également copier des données vers et depuis des enregistrements anonymes de référence et de structure :
 
 ```fsharp
 // Copy data from a reference record into a struct anonymous record
@@ -186,20 +185,20 @@ let data3 = struct {| data2 with Z = r2.X |}
 
 ## <a name="properties-of-anonymous-records"></a>Propriétés des enregistrements anonymes
 
-Des enregistrements anonymes ont un certain nombre de caractéristiques qui sont essentiels pour comprendre pleinement comment elles peuvent être utilisées.
+Les enregistrements anonymes ont un certain nombre de caractéristiques qui sont essentielles pour comprendre parfaitement comment les utiliser.
 
-### <a name="anonymous-records-are-nominal"></a>Des enregistrements anonymes sont nominales
+### <a name="anonymous-records-are-nominal"></a>Les enregistrements anonymes sont nominaux
 
-Des enregistrements anonymes sont [types nominaux](https://en.wikipedia.org/wiki/Nominal_type_system). Ils sont considéré comme nommé [enregistrement](records.md) types (qui sont également nominales) qui ne nécessitent pas une déclaration initiale.
+Les enregistrements anonymes sont des [types nominaux](https://en.wikipedia.org/wiki/Nominal_type_system). Ils sont mieux considérés comme des types d' [enregistrements](records.md) nommés (qui sont également nominaux) qui ne nécessitent pas de déclaration initiale.
 
-Prenons l’exemple suivant avec deux déclarations d’enregistrement anonyme :
+Prenons l’exemple suivant avec deux déclarations d’enregistrement anonymes :
 
 ```fsharp
 let x = {| X = 1 |}
 let y = {| Y = 1 |}
 ```
 
-Le `x` et `y` valeurs ont des types différents et ne sont pas compatibles entre eux. Ils ne sont pas comparables, et ils ne sont pas comparables. Pour illustrer ce propos, considérez un enregistrement nommé équivalents :
+Les valeurs `x` et `y` ont des types différents et ne sont pas compatibles les unes avec les autres. Elles ne sont pas équivalentes et ne sont pas comparables. Pour illustrer cela, imaginez un enregistrement nommé équivalent :
 
 ```fsharp
 type X = { X: int }
@@ -209,11 +208,11 @@ let x = { X = 1 }
 let y = { Y = 1 }
 ```
 
-Il n’est pas quelque chose de différent, par nature, à propos des enregistrements anonymes par rapport à leurs équivalents d’enregistrement nommé lorsque concernant l’équivalence de type ou de comparaison.
+Il n’existe pas de différences inhérentes par rapport aux enregistrements anonymes lorsqu’ils sont comparés à leurs équivalents d’enregistrement nommés lorsqu’ils concernent l’équivalence de type ou la comparaison.
 
-### <a name="anonymous-records-use-structural-equality-and-comparison"></a>Des enregistrements anonymes, utilisez comparaison et égalité structurelle
+### <a name="anonymous-records-use-structural-equality-and-comparison"></a>Les enregistrements anonymes utilisent l’égalité et la comparaison structurelles
 
-Comme les types d’enregistrements, enregistrements anonymes sont structurellement égaux et comparables. Cela est vrai uniquement si tous les types qui le composent prennent en charge l’égalité et comparaison, comme avec les types d’enregistrements. Pour prendre en charge l’égalité ou comparaison, les deux enregistrements anonymes doivent avoir la même « forme ».
+Comme les types d’enregistrements, les enregistrements anonymes sont structurellement équivalents et comparables. Cela est vrai uniquement si tous les types constitutifs prennent en charge l’égalité et la comparaison, comme avec les types d’enregistrements. Pour prendre en charge l’égalité ou la comparaison, deux enregistrements anonymes doivent avoir la même « forme ».
 
 ```fsharp
 {| a = 1+1 |} = {| a = 2 |} // true
@@ -223,9 +222,9 @@ Comme les types d’enregistrements, enregistrements anonymes sont structurellem
 {| a = 1 + 1 |} = {| a = 2;  b = 1|}
 ```
 
-### <a name="anonymous-records-are-serializable"></a>Des enregistrements anonymes sont sérialisables
+### <a name="anonymous-records-are-serializable"></a>Les enregistrements anonymes sont sérialisables
 
-Vous pouvez sérialiser des enregistrements anonymes tout comme vous pouvez le faire avec les enregistrements nommés. Voici un exemple à l’aide de [Newtonsoft.Json](https://www.nuget.org/packages/Newtonsoft.Json/):
+Vous pouvez sérialiser des enregistrements anonymes de la même façon que vous le feriez avec des enregistrements nommés. Voici un exemple d’utilisation de [Newtonsoft. JSON](https://www.nuget.org/packages/Newtonsoft.Json/):
 
 ```fsharp
 open Newtonsoft.Json
@@ -237,11 +236,11 @@ let phillip = JsonConvert.DeserializeObject<{|name: string; age: int|}>(str)
 printfn "Name: %s Age: %d" phillip.name phillip.age
 ```
 
-Des enregistrements anonymes sont utiles pour l’envoi de données léger sur un réseau sans la nécessité de définir un domaine pour vos types de sérialisation/désérialisation en amont.
+Les enregistrements anonymes sont utiles pour envoyer des données légères sur un réseau sans avoir à définir un domaine pour vos types sérialisés/désérialisés à l’avance.
 
-### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a>Des enregistrements anonymes interopèrent avec C# types anonymes
+### <a name="anonymous-records-interoperate-with-c-anonymous-types"></a>Les enregistrements anonymes interagissent avec les C# types anonymes
 
-Il est possible d’utiliser une API .NET qui nécessite l’utilisation de [ C# types anonymes](../../csharp/programming-guide/classes-and-structs/anonymous-types.md). C#les types anonymes sont faciles à interagir avec à l’aide des enregistrements anonymes. L’exemple suivant montre comment utiliser des enregistrements anonymes d’appeler un [LINQ](../../csharp/programming-guide/concepts/linq/index.md) surcharge qui nécessite un type anonyme :
+Il est possible d’utiliser une API .net qui requiert l’utilisation de [ C# types anonymes](../../csharp/programming-guide/classes-and-structs/anonymous-types.md). C#les types anonymes sont trivials pour interagir avec à l’aide d’enregistrements anonymes. L’exemple suivant montre comment utiliser des enregistrements anonymes pour appeler une surcharge [LINQ](../../csharp/programming-guide/concepts/linq/index.md) qui requiert un type anonyme :
 
 ```fsharp
 open System.Linq
@@ -252,26 +251,26 @@ for ng in nameGrouping do
     printfn "%s has first letter %c" ng.Name ng.FirstLetter
 ```
 
-Il existe une multitude d’autres API utilisées dans .NET qui nécessitent l’utilisation de passage dans un type anonyme. Des enregistrements anonymes sont votre outil de leur utilisation.
+Il existe une multitude d’autres API utilisées dans .NET qui nécessitent l’utilisation du passage d’un type anonyme. Les enregistrements anonymes sont un outil qui vous aide à les utiliser.
 
 ## <a name="limitations"></a>Limitations
 
-Des enregistrements anonymes présentent quelques restrictions dans leur utilisation. Certains sont inhérents à leur conception, mais d’autres sont faciles à modifier.
+L’utilisation des enregistrements anonymes est soumise à certaines restrictions. Certains sont inhérents à leur conception, mais d’autres sont susceptibles d’être modifiés.
 
-### <a name="limitations-with-pattern-matching"></a>Limitations de critères spéciaux
+### <a name="limitations-with-pattern-matching"></a>Limitations avec les critères spéciaux
 
-Des enregistrements anonymes ne gèrent pas de critères spéciaux, contrairement aux enregistrements nommés. Il existe trois raisons :
+Les enregistrements anonymes ne prennent pas en charge les critères spéciaux, contrairement aux enregistrements nommés. Il y a trois raisons à cela :
 
-1. Un modèle aurait pour prendre en compte pour chaque champ d’un enregistrement anonyme, contrairement aux types d’enregistrements nommé. Il s’agit, car des enregistrements anonymes ne gèrent pas les sous-typage structurelle : ils sont des types nominaux.
-2. En raison de (1), il n’existe aucune possibilité d’avoir des modèles supplémentaires dans une expression de correspondance de modèle, car chaque modèle distinct nécessiterait un autre type anonyme.
-3. En raison de (3), n’importe quel modèle d’enregistrement anonyme serait plus détaillé que l’utilisation de la notation « point ».
+1. Un modèle devrait prendre en compte tous les champs d’un enregistrement anonyme, à la différence des types d’enregistrements nommés. Cela est dû au fait que les enregistrements anonymes ne prennent pas en charge le sous-typage structurel : il s’agit de types nominaux.
+2. En raison de (1), il n’est pas possible d’avoir des modèles supplémentaires dans une expression de correspondance de modèle, car chaque modèle distinct impliquerait un type d’enregistrement anonyme différent.
+3. En raison de (3), tout modèle d’enregistrement anonyme serait plus détaillé que l’utilisation de la notation « point ».
 
-Il existe une suggestion de langage open à [autoriser les critères spéciaux limitée dans les contextes](https://github.com/fsharp/fslang-suggestions/issues/713).
+Une suggestion de langue ouverte permet d' [autoriser les critères spéciaux dans les contextes limités](https://github.com/fsharp/fslang-suggestions/issues/713).
 
-### <a name="limitations-with-mutability"></a>Limitations avec la mutabilité
+### <a name="limitations-with-mutability"></a>Limitations avec mutabilité
 
-Il n’est pas encore possible de définir un enregistrement anonyme avec `mutable` données. Il existe un [ouvrir suggestion de langage](https://github.com/fsharp/fslang-suggestions/issues/732) pour autoriser les données mutables.
+Il n’est actuellement pas possible de définir un enregistrement anonyme avec `mutable` données. Il existe une [suggestion de langue ouverte](https://github.com/fsharp/fslang-suggestions/issues/732) pour autoriser les données mutables.
 
-### <a name="limitations-with-struct-anonymous-records"></a>Limitations des enregistrements anonymes struct
+### <a name="limitations-with-struct-anonymous-records"></a>Limitations des enregistrements anonymes de struct
 
-Il n’est pas possible de déclarer des enregistrements anonymes sous la forme de struct `IsByRefLike` ou `IsReadOnly`. Il existe un [ouvrir suggestion de langage](https://github.com/fsharp/fslang-suggestions/issues/712) à pour `IsByRefLike` et `IsReadOnly` des enregistrements anonymes.
+Il n’est pas possible de déclarer des enregistrements anonymes de struct en tant que `IsByRefLike` ou `IsReadOnly`. Il existe une [suggestion de langue ouverte](https://github.com/fsharp/fslang-suggestions/issues/712) pour pour `IsByRefLike` et `IsReadOnly` des enregistrements anonymes.

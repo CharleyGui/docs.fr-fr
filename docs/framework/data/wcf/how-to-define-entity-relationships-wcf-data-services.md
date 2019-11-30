@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Définir des relations d’entité (WCF Data Services)'
+title: "Comment : définir les relations d'entité (services de données WCF)"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, changing data
 ms.assetid: cc255524-1534-4fae-b83c-250933d5a72b
-ms.openlocfilehash: 63714f97e691b2ba0177a36a599b62ca7681dcf6
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: f693579883ae03a6c8df3e9a9f4941e1f9940a4c
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790649"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569121"
 ---
-# <a name="how-to-define-entity-relationships-wcf-data-services"></a>Procédure : Définir des relations d’entité (WCF Data Services)
-Lorsque vous ajoutez une nouvelle entité dans [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], les relations entre la nouvelle entité et les entités connexes ne sont pas définies automatiquement. Vous pouvez créer et modifier les relations entre des instances d'entité et faire répercuter par la bibliothèque cliente ces modifications dans le service de données. Pour plus d’informations, consultez [mise à jour du service de données](updating-the-data-service-wcf-data-services.md).  
+# <a name="how-to-define-entity-relationships-wcf-data-services"></a>Comment : définir les relations d'entité (services de données WCF)
+Lorsque vous ajoutez une nouvelle entité dans WCF Data Services, les relations entre la nouvelle entité et les entités associées ne sont pas définies automatiquement. Vous pouvez créer et modifier les relations entre des instances d'entité et faire répercuter par la bibliothèque cliente ces modifications dans le service de données. Pour plus d’informations, consultez [mise à jour du service de données](updating-the-data-service-wcf-data-services.md).  
   
  L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement. Ce service et les classes de données clientes sont créés lorsque vous terminez le [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md).  
   
@@ -34,4 +34,4 @@ Lorsque vous ajoutez une nouvelle entité dans [!INCLUDE[ssAstoria](../../../../
 ## <a name="see-also"></a>Voir aussi
 
 - [Bibliothèque cliente WCF Data Services](wcf-data-services-client-library.md)
-- [Guide pratique pour Ajouter, modifier et supprimer des entités](how-to-add-modify-and-delete-entities-wcf-data-services.md)
+- [Guide pratique pour ajouter, modifier et supprimer des entités](how-to-add-modify-and-delete-entities-wcf-data-services.md)

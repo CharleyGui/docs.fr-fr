@@ -2,20 +2,20 @@
 title: Expressions de calcul
 description: Découvrez comment créer une syntaxe pratique pour écrire des calculs dans F# qui peut être séquencé et combiné à l’aide de constructions et de liaisons de workflow de contrôle.
 ms.date: 11/04/2019
-ms.openlocfilehash: c9ac0454221782a7ccb3d41850ca6aba4e20a72a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4ff7def0ed3a46acd1b0b83b111f26f5d556071f
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976789"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569455"
 ---
 # <a name="computation-expressions"></a>Expressions de calcul
 
 Les expressions de calcul F# dans fournissent une syntaxe pratique pour écrire des calculs qui peuvent être séquencés et combinés à l’aide de constructions et de liaisons de workflow de contrôle. Selon le type d’expression de calcul, ils peuvent être considérés comme un moyen d’exprimer les monades, monoids, les transformateurs Monad et les functors applicative. Toutefois, contrairement à d’autres langages (comme la *notation do-notation* dans Haskell), ils ne sont pas liés à une abstraction unique et ne s’appuient pas sur des macros ou d’autres formes de surprogrammation pour accomplir une syntaxe pratique et contextuel.
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
-Les calculs peuvent prendre plusieurs formes. La forme la plus courante de calcul est l’exécution à thread unique, qui est facile à comprendre et à modifier. Toutefois, toutes les formes de calcul ne sont pas aussi simples qu’une exécution monothread. Voici quelques exemples :
+Les calculs peuvent prendre plusieurs formes. La forme la plus courante de calcul est l’exécution à thread unique, qui est facile à comprendre et à modifier. Toutefois, toutes les formes de calcul ne sont pas aussi simples qu’une exécution monothread. Quelques exemples :
 
 - Calculs non déterministes
 - Calculs asynchrones
@@ -209,7 +209,7 @@ let result = Async.RunSynchronously req
 
 ### `match!`
 
-À partir F# de 4,5, le mot clé`match!`vous permet d’incorporer un appel à une autre expression de calcul et une correspondance de modèle sur son résultat :
+Le mot clé `match!` vous permet d’incorporer un appel à une autre expression de calcul et une correspondance de modèle sur son résultat :
 
 ```fsharp
 let doThingsAsync url =
@@ -250,7 +250,7 @@ Le tableau suivant décrit les méthodes qui peuvent être utilisées dans une c
 |`Zero`|`unit -> M<'T>`|Appelé pour les branches de `else` vides d’expressions `if...then` dans les expressions de calcul.|
 |`Quote`|`Quotations.Expr<'T> -> Quotations.Expr<'T>`|Indique que l’expression de calcul est passée au membre `Run` en tant que quotation. Il convertit toutes les instances d’un calcul en un devis.|
 
-La plupart des méthodes d’une classe de générateur utilisent et retournent une construction `M<'T>`, qui est généralement un type défini séparément qui caractérise le type de calculs combinés, par exemple, `Async<'T>` pour les flux de travail asynchrones et les `Seq<'T>` pour la séquence workflows. Les signatures de ces méthodes leur permettent d’être combinées et imbriquées les unes avec les autres, afin que l’objet de flux de travail retourné à partir d’une construction puisse être passé au suivant. Lorsqu’il analyse une expression de calcul, le compilateur convertit l’expression en une série d’appels de fonction imbriqués à l’aide des méthodes du tableau précédent et du code de l’expression de calcul.
+La plupart des méthodes d’une classe de générateur utilisent et retournent une construction `M<'T>`, qui est généralement un type défini séparément qui caractérise le type de calculs combinés, par exemple, `Async<'T>` pour les flux de travail asynchrones et les `Seq<'T>` pour les workflows de séquence. Les signatures de ces méthodes leur permettent d’être combinées et imbriquées les unes avec les autres, afin que l’objet de flux de travail retourné à partir d’une construction puisse être passé au suivant. Lorsqu’il analyse une expression de calcul, le compilateur convertit l’expression en une série d’appels de fonction imbriqués à l’aide des méthodes du tableau précédent et du code de l’expression de calcul.
 
 L’expression imbriquée se présente sous la forme suivante :
 
@@ -258,7 +258,7 @@ L’expression imbriquée se présente sous la forme suivante :
 builder.Run(builder.Delay(fun () -> {| cexpr |}))
 ```
 
-Dans le code ci-dessus, les appels à `Run` et `Delay` sont omis s’ils ne sont pas définis dans la classe de générateur d’expressions de calcul. Le corps de l’expression de calcul, ici désigné comme `{| cexpr |}`, est traduit en appels impliquant les méthodes de la classe de générateur par les traductions décrites dans le tableau suivant. L’expression de calcul `{| cexpr |}` est définie de manière récursive en fonction de ces traductions, où `expr` F# est une expression et`cexpr`est une expression de calcul.
+Dans le code ci-dessus, les appels à `Run` et `Delay` sont omis s’ils ne sont pas définis dans la classe de générateur d’expressions de calcul. Le corps de l’expression de calcul, ici désigné comme `{| cexpr |}`, est traduit en appels impliquant les méthodes de la classe de générateur par les traductions décrites dans le tableau suivant. L’expression de calcul `{| cexpr |}` est définie de manière récursive en fonction de ces traductions, où `expr` F# est une expression et `cexpr` est une expression de calcul.
 
 |Expression|Traduction|
 |----------|-----------|

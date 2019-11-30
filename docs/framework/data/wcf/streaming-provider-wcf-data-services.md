@@ -10,12 +10,12 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: da575c65902ec8751c12482d0c8d0abd523623e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a5793eae92ffdfa65872c93273bd7cfefdc6f674
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975118"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568808"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Fournisseurs de diffusion en continu (WCF Data Services)
 
@@ -25,7 +25,7 @@ Un service de données peut exposer des données Large Object Binary. Ces donné
 
 - Entrée de lien média : une entité ayant une référence à un flux de ressources multimédias associé.
 
-Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous définissez un flux de ressources binaires en implémentant un fournisseur de données en continu. L’implémentation du fournisseur de diffusion en continu fournit le service de données avec le flux de ressources multimédia associé à une entité spécifique sous la forme d’un objet <xref:System.IO.Stream>. Cette implémentation permet au service de données d'accepter et de retourner les ressources multimédias sur HTTP sous forme de flux de données binaires d'un type MIME spécifié.
+Avec WCF Data Services, vous définissez un flux de ressources binaires en implémentant un fournisseur de données de streaming. L’implémentation du fournisseur de diffusion en continu fournit le service de données avec le flux de ressources multimédia associé à une entité spécifique sous la forme d’un objet <xref:System.IO.Stream>. Cette implémentation permet au service de données d'accepter et de retourner les ressources multimédias sur HTTP sous forme de flux de données binaires d'un type MIME spécifié.
 
 La configuration d'un service de données afin de prendre en charge la diffusion en continu de données binaires requiert les étapes suivantes :
 
@@ -67,7 +67,7 @@ Lorsque vous utilisez des fournisseurs de services personnalisés, vous impléme
 
 Pour créer un service de données qui prend en charge les flux de données binaires, vous devez implémenter l'interface <xref:System.Data.Services.Providers.IDataServiceStreamProvider>. Cette implémentation permet au service de données de retourner les données binaires comme un flux de données au client et de consommer les données binaires comme un flux de données transmis par le client. Ce service de données crée une instance de cette interface chaque fois qu'il doit accéder aux données binaires sous forme de flux de données. L'interface <xref:System.Data.Services.Providers.IDataServiceStreamProvider> spécifie les membres suivants.
 
-|Nom de membre|Description|
+|Nom du membre|Description|
 |-----------------|-----------------|
 |<xref:System.Data.Services.Providers.IDataServiceStreamProvider.DeleteStream%2A>|Cette méthode est appelée par le service de données pour supprimer la ressource multimédia correspondante lorsque son entrée de lien média est supprimée. Lorsque vous implémentez <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, cette méthode contient le code qui supprime la ressource multimédia associé à l'entrée de lien média fournie.|
 |<xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetReadStream%2A>|Cette méthode est appelée par le service de données pour retourner une ressource multimédia sous forme de flux de données. Lorsque vous implémentez <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, cette méthode contient le code qui fournit un flux de données utilisé par le service de données pour retourner la ressource multimédia associée à l'entrée de lien média fournie.|
@@ -79,7 +79,7 @@ Pour créer un service de données qui prend en charge les flux de données bina
 
 ## <a name="creating-the-streaming-data-service"></a>Création du service de données en continu
 
-Pour donner au runtime [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] accès à l'implémentation de <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, le service de données que vous créez doit également implémenter l'interface <xref:System.IServiceProvider>. L'exemple de code suivant illustre l'implémentation de la méthode <xref:System.IServiceProvider.GetService%2A> pour retourner une instance de classe `PhotoServiceStreamProvider` qui implémente <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
+Pour permettre au runtime WCF Data Services d’accéder à l’implémentation de <xref:System.Data.Services.Providers.IDataServiceStreamProvider>, le service de données que vous créez doit également implémenter l’interface <xref:System.IServiceProvider>. L'exemple de code suivant illustre l'implémentation de la méthode <xref:System.IServiceProvider.GetService%2A> pour retourner une instance de classe `PhotoServiceStreamProvider` qui implémente <xref:System.Data.Services.Providers.IDataServiceStreamProvider>.
 
 [!code-csharp[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_photo_streaming_service/cs/photodata.svc.cs#photoservicestreamingprovider)]
 [!code-vb[Astoria Photo Streaming Service#PhotoServiceStreamingProvider](../../../../samples/snippets/visualbasic/VS_Snippets_Misc/astoria_photo_streaming_service/vb/photodata.svc.vb#photoservicestreamingprovider)]
@@ -99,7 +99,7 @@ Par défaut, Internet Information Services (IIS) limite également la taille des
 
 ## <a name="using-data-streams-in-a-client-application"></a>Utilisation de flux de données en continu dans une application cliente
 
-La bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] vous permet de récupérer et de mettre à jour ces ressources exposées sous la forme de flux binaires sur le client. Pour plus d’informations, consultez [utilisation de données binaires](working-with-binary-data-wcf-data-services.md).
+La bibliothèque cliente WCF Data Services vous permet de récupérer et de mettre à jour ces ressources exposées sous forme de flux binaires sur le client. Pour plus d’informations, consultez [utilisation de données binaires](working-with-binary-data-wcf-data-services.md).
 
 ## <a name="considerations-for-working-with-a-streaming-provider"></a>Remarques sur l'utilisation d'un fournisseur de diffusion en continu
 

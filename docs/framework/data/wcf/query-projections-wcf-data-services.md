@@ -10,12 +10,12 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 17475cccf461371a909660bfe3f8db29bf1fa2fe
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 03fa40a895d322a8b5ad543f75424ef5b379672b
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975172"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568899"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projections de requête (services de données WCF)
 
@@ -65,7 +65,7 @@ Les éléments suivants décrivent les comportements lors de la projection de r�
 
 **Création d’une nouvelle instance projetée à l’aide d’initialiseurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithinitializer)]
    [!code-vb[Astoria Northwind Client#ProjectWithInitializer](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithinitializer)]
@@ -76,7 +76,7 @@ Les éléments suivants décrivent les comportements lors de la projection de r�
 
 **Création d’une nouvelle instance projetée à l’aide de constructeurs**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithconstructor)]
    [!code-vb[Astoria Northwind Client#ProjectWithConstructor](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithconstructor)]
@@ -87,7 +87,7 @@ Les éléments suivants décrivent les comportements lors de la projection de r�
 
 **Utilisation de la projection pour transformer une valeur de propriété**
 
-- Exemple :
+- Exemple :
 
    [!code-csharp[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/source.cs#projectwithtransform)]
    [!code-vb[Astoria Northwind Client#ProjectWithTransform](~/samples/snippets/visualbasic/VS_Snippets_Misc/astoria_northwind_client/vb/source.vb#projectwithtransform)]
@@ -112,7 +112,7 @@ Les considérations supplémentaires suivantes s'appliquent à la définition d'
 
 - Lorsqu'une projection inclut une propriété de navigation, les objets connexes sont chargés implicitement sans devoir appeler la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A>. La méthode <xref:System.Data.Services.Client.DataServiceQuery%601.Expand%2A> n'est pas prise en charge pour une utilisation dans une requête projetée.
 
-- Les requêtes de projections de requête sur le client sont traduites pour utiliser l'option de requête `$select` dans l'URI de requête. Lorsqu'une requête avec projection est exécutée sur une version précédente d'[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] qui ne prend pas en charge l'option de requête `$select`, une erreur est retournée. Cela peut également arriver lorsque <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> de <xref:System.Data.Services.DataServiceBehavior> pour le service de données est défini sur une valeur <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Pour plus d’informations, consultez contrôle de [version des services de données](data-service-versioning-wcf-data-services.md).
+- Les requêtes de projections de requête sur le client sont traduites pour utiliser l'option de requête `$select` dans l'URI de requête. Lorsqu’une requête avec projection est exécutée sur une version antérieure de WCF Data Services qui ne prend pas en charge l’option de requête `$select`, une erreur est retournée. Cela peut également arriver lorsque <xref:System.Data.Services.DataServiceBehavior.MaxProtocolVersion%2A> de <xref:System.Data.Services.DataServiceBehavior> pour le service de données est défini sur une valeur <xref:System.Data.Services.Common.DataServiceProtocolVersion.V1>. Pour plus d’informations, consultez contrôle de [version des services de données](data-service-versioning-wcf-data-services.md).
 
 Pour plus d’informations, consultez Guide pratique [pour projeter des résultats de requête](how-to-project-query-results-wcf-data-services.md).
 

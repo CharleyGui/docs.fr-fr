@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, getting started
 - WCF Data Services, accessing data
 ms.assetid: 9665ff5b-3e3a-495d-bf83-d531d5d060ed
-ms.openlocfilehash: cf6877dd67ad9e17a43be5eafb84a2ecf21d7190
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7eea23ba3dc5e9cc327d9cdfba10c72af7525c30
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975434"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569405"
 ---
 # <a name="accessing-data-service-resources-wcf-data-services"></a>Accès aux ressources d'un service de données (services de données WCF)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] prend en charge le Open Data Protocol (OData) pour exposer vos données en tant que flux avec des ressources adressables par des URI. Ces ressources sont représentées selon les conventions de relation d’entité de l' [Entity Data Model](../adonet/entity-data-model.md). Dans ce modèle, les entités représentent des unités opérationnelles de données qui sont des types de données dans un domaine d'application, par exemple les clients, ordres, éléments et produits. Les données d'entité sont accessibles et modifiées au moyen de la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE.  
+WCF Data Services prend en charge le Open Data Protocol (OData) pour exposer vos données en tant que flux avec des ressources adressables par des URI. Ces ressources sont représentées selon les conventions de relation d’entité de l' [Entity Data Model](../adonet/entity-data-model.md). Dans ce modèle, les entités représentent des unités opérationnelles de données qui sont des types de données dans un domaine d'application, par exemple les clients, ordres, éléments et produits. Les données d'entité sont accessibles et modifiées au moyen de la sémantique REST (Representational State Transfer), en particulier les verbes HTTP standard GET, PUT, POST et DELETE.  
   
 ## <a name="addressing-resources"></a>Adressage des ressources  
  Dans OData, vous traitez les données exposées par le modèle de données à l’aide d’un URI. Par exemple, l’URI suivant retourne un flux qui est le jeu d’entités Customers, qui contient des entrées pour toutes les instances du type d’entité Customer :  
@@ -56,7 +56,7 @@ ms.locfileid: "73975434"
   
  Les entrées du flux retourné sont également classées selon la valeur de la propriété ShipCity des commandes.  
   
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] prend en charge les options de requête système OData suivantes :  
+ WCF Data Services prend en charge les options de requête système OData suivantes :  
   
 |Option de requête|Description|  
 |------------------|-----------------|  

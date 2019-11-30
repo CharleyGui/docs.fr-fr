@@ -1,5 +1,5 @@
 ---
-title: "Comment : créer une stratégie d'éditeur"
+title: "Procédure : création d'une stratégie d'éditeur"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - publisher policy assembly
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - GAC (global assembly cache), publisher policy assembly
 - global assembly cache, publisher policy assembly
 ms.assetid: 8046bc5d-2fa9-4277-8a5e-6dcc96c281d9
-ms.openlocfilehash: 346671d4febd5f3999f1f4fbf2fe4b7e475ae5fa
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 313af6046fda8dd8905e8bda4e8c4aec187ef8bf
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040194"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568404"
 ---
-# <a name="how-to-create-a-publisher-policy"></a>Comment : créer une stratégie d'éditeur
+# <a name="how-to-create-a-publisher-policy"></a>Procédure : création d'une stratégie d'éditeur
 
 Les fournisseurs d’assemblys peuvent indiquer que les applications doivent utiliser une version plus récente d’un assembly en incluant un fichier de stratégie d’éditeur avec l’assembly mis à niveau. Le fichier de stratégie d’éditeur spécifie la redirection d’assembly et les paramètres de base de code, et utilise le même format qu’un fichier de configuration d’application. Le fichier de stratégie d’éditeur est compilé dans un assembly et placé dans le Global Assembly Cache.
 
@@ -53,7 +53,7 @@ Utilisez [Assembly Linker (al. exe)](../tools/al-exe-assembly-linker.md) pour cr
 
 #### <a name="to-create-a-publisher-policy-assembly"></a>Pour créer un assembly de stratégie d’éditeur
 
-À l’invite de commandes, tapez la commande suivante :
+À l'invite de commandes, tapez la commande suivante :
 
 ```console
 al /link:publisherPolicyFile /out:publisherPolicyAssemblyFile /keyfile:keyPairFile /platform:processorArchitecture
@@ -74,7 +74,7 @@ Dans cette commande :
   > [!NOTE]
   > La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0.
 
-La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0. La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur nommé `pub.config`, attribue un nom fort à l’assembly à l’aide de la paire de clés dans le fichier `sgKey.snk` et spécifie que l’assembly cible le processeur x86. SOA.
+La possibilité de cibler une architecture de processeur spécifique est disponible à partir de .NET Framework 2,0. La commande suivante crée un assembly de stratégie d’éditeur appelé `policy.1.0.myAssembly` à partir d’un fichier de stratégie d’éditeur nommé `pub.config`, attribue un nom fort à l’assembly à l’aide de la paire de clés dans le fichier `sgKey.snk` et spécifie que l’assembly cible l’architecture du processeur x86.
 
 ```console
 al /link:pub.config /out:policy.1.0.myAssembly.dll /keyfile:sgKey.snk /platform:x86
@@ -92,7 +92,7 @@ Utilisez l' [outil global assembly cache (Gacutil. exe)](../tools/gacutil-exe-ga
 
 ### <a name="to-add-the-publisher-policy-assembly-to-the-global-assembly-cache"></a>Pour ajouter l’assembly de stratégie d’éditeur au Global Assembly Cache
 
-À l’invite de commandes, tapez la commande suivante :
+À l'invite de commandes, tapez la commande suivante :
 
 ```console
 gacutil /i publisherPolicyAssemblyFile
@@ -105,7 +105,7 @@ gacutil /i policy.1.0.myAssembly.dll
 ```
 
 > [!IMPORTANT]
-> L’assembly de stratégie d’éditeur ne peut pas être ajouté au Global Assembly Cache, sauf si le fichier de stratégie d’éditeur d’origine se trouve dans le même répertoire que l’assembly.
+> L’assembly de stratégie d’éditeur ne peut pas être ajouté au Global Assembly Cache, sauf si le fichier de stratégie d’éditeur d’origine spécifié dans l’argument `/link` se trouve dans le même répertoire que l’assembly.
 
 ## <a name="see-also"></a>Voir aussi
 

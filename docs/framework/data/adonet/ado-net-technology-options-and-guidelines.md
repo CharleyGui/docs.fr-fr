@@ -2,12 +2,12 @@
 title: Options et instructions de technologie ADO.NET
 ms.date: 03/30/2017
 ms.assetid: c8577281-38e6-4ce5-b036-572039a4c3d8
-ms.openlocfilehash: d0f363d5eb102edf965c9c6068873fce0721d288
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 6c7ff59be7c163117ba990331e7cae75d10e8f59
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785770"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569433"
 ---
 # <a name="adonet-technology-options-and-guidelines"></a>Options et instructions de technologie ADO.NET
 La plateforme de données ADO.NET est une stratégie multiversion visant à limiter le codage et la maintenance requis des développeurs, en permettant à ces derniers de concevoir des programmes à partir de modèles de données d’entité conceptuels. Cette plateforme inclut ADO.NET Entity Framework et les technologies associées.  
@@ -37,7 +37,7 @@ La plateforme de données ADO.NET est une stratégie multiversion visant à limi
  LINQ to SQL est une implémentation de mappage relationnel objet qui vous permet de modéliser une base de données SQL Server à l'aide de classes .NET Framework. LINQ to SQL vous permet d'interroger la base de données en utilisant LINQ ainsi que de mettre à jour, d'insérer et de supprimer des données dans cette base de données. LINQ to SQL prend en charge les transactions, les vues et les procédures stockées, en fournissant un moyen facile d’intégrer la validation des données et des règles de logique métier dans le modèle de données. L'outil Concepteur Objet/Relationnel (Concepteur O/R) vous permet de modéliser les classes d'entité et les associations basées sur les objets dans une base de données. Pour plus d’informations, consultez [Outils LINQ to SQL dans Visual Studio](/visualstudio/data-tools/linq-to-sql-tools-in-visual-studio2).  
   
 ## <a name="wcf-data-services"></a>Services de données WCF  
- [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] déploie des services de données sur le Web ou sur un intranet. Les données sont structurées sous la forme d'entités et de relations conformément aux spécifications du modèle EDM. Les données déployées sur ce modèle sont adressables par le protocole HTTP standard. Pour plus d’informations, consultez [WCF Data Services 4.5](../wcf/index.md).  
+ WCF Data Services déploie des services de données sur le Web ou sur un intranet. Les données sont structurées sous la forme d'entités et de relations conformément aux spécifications du modèle EDM. Les données déployées sur ce modèle sont adressables par le protocole HTTP standard. Pour plus d’informations, consultez [WCF Data Services 4.5](../wcf/index.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

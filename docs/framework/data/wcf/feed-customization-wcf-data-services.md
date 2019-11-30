@@ -10,22 +10,22 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 56c91fd1e9ea4a2e35bacbebab0f489e337cfec5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 08df16be9df6d55ab9f1426e205e56d9609ce72e
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975298"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569224"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Personnalisation des flux (services de données WCF)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] utilise le Open Data Protocol (OData) pour exposer des données sous forme de flux. OData prend en charge les formats Atom et JavaScript Object Notation (JSON) pour les flux de données. Lorsque vous utilisez un flux Atom, OData fournit une méthode standard pour sérialiser les données, telles que les entités et les relations, dans un format XML qui peut être inclus dans le corps du message HTTP. OData définit un mappage de propriété d’entité par défaut entre les données contenues dans les entités et les éléments Atom. Pour plus d’informations, consultez [OData : format Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
+WCF Data Services utilise le Open Data Protocol (OData) pour exposer des données sous forme de flux. OData prend en charge les formats Atom et JavaScript Object Notation (JSON) pour les flux de données. Lorsque vous utilisez un flux Atom, OData fournit une méthode standard pour sérialiser les données, telles que les entités et les relations, dans un format XML qui peut être inclus dans le corps du message HTTP. OData définit un mappage de propriété d’entité par défaut entre les données contenues dans les entités et les éléments Atom. Pour plus d’informations, consultez [OData : format Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
   
  Vous pouvez avoir un scénario d'application qui requiert que les données de propriété retournées par le service des données soient sérialisées de façon personnalisée plutôt qu'au format de flux standard. Avec OData, vous pouvez personnaliser la sérialisation dans un flux de données afin que les propriétés d’une entité puissent être mappées aux éléments inutilisés et aux attributs d’une entrée ou à des éléments personnalisés d’une entrée dans le flux.  
   
 > [!NOTE]
 > La personnalisation de flux est prise en charge uniquement pour les flux Atom. Les flux personnalisés ne sont pas retournés lorsque le format JSON est demandé pour le flux retourné.  
   
- Avec [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez définir un autre mappage de propriété pour les charges utiles Atom en appliquant manuellement des attributs aux types d'entité dans le modèle de données. Le fournisseur de sources de données du service de données détermine le mode d'application de ces attributs.  
+ Avec WCF Data Services, vous pouvez définir un mappage de propriété d’entité alternatif pour une charge utile Atom en appliquant manuellement des attributs aux types d’entité dans le modèle de données. Le fournisseur de sources de données du service de données détermine le mode d'application de ces attributs.  
   
 > [!IMPORTANT]
 > Lorsque vous définissez des flux personnalisés, vous devez vérifier que toutes les propriétés de l'entité qui ont des mappages personnalisés définis sont incluses dans la projection. Lorsqu'une propriété d'entité mappée n'est pas incluse dans la projection, une perte de données peut se produire. Pour plus d’informations, consultez [projections de requête](query-projections-wcf-data-services.md).  
@@ -50,7 +50,7 @@ ms.locfileid: "73975298"
 |Nom d'attribut|Description|  
 |--------------------|-----------------|  
 |`FC_ContentKind`|Indique le type de contenu. Les mots clés suivants définissent des types de contenu de syndication.<br /><br /> `text:` la valeur de la propriété est affichée dans le flux sous forme de texte.<br /><br /> `html:` la valeur de la propriété est affichée dans le flux au format HTML.<br /><br /> `xhtml:` la valeur de la propriété est affichée dans le flux en tant que code HTML au format XML.<br /><br /> Ces mots clés sont équivalents aux valeurs de l'énumération <xref:System.Data.Services.Common.SyndicationTextContentKind> utilisées avec le fournisseur de réflexion.<br /><br /> Cet attribut n'est pas pris en charge lorsque les attributs `FC_NsPrefix` et `FC_NsUri` sont utilisés.<br /><br /> Lorsque vous spécifiez une valeur de `xhtml` pour l'attribut `FC_ContentKind`, vous devez vérifier que la valeur de propriété contient le formatage XML approprié. Le service de données retourne la valeur sans effectuer de transformations. Vous devez également vérifier que tous les préfixes d'élément XML dans le XML retourné ont un URI d'espace de noms et le préfixe défini dans le flux mappé.|  
-|`FC_KeepInContent`|Indique que la valeur de propriété référencée doit être incluse à la fois dans la section de contenu du flux et dans l'emplacement mappé. Les valeurs valides sont `true` et `false`. Pour rendre le flux résultant à compatibilité descendante avec les versions antérieures de [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], spécifiez la valeur `true` pour vous assurer que la valeur est incluse dans la section de contenu du flux.|  
+|`FC_KeepInContent`|Indique que la valeur de propriété référencée doit être incluse à la fois dans la section de contenu du flux et dans l'emplacement mappé. Les valeurs valides sont `true` et `false`. Pour rendre le flux résultant à compatibilité descendante avec les versions antérieures de WCF Data Services, spécifiez la valeur `true` pour vous assurer que la valeur est incluse dans la section de contenu du flux.|  
 |`FC_NsPrefix`|Préfixe d'espace de noms de l'élément XML dans un mappage de non-syndication. Cet attribut doit être utilisé avec l'attribut `FC_NsUri` et ne peut pas être utilisé avec l'attribut `FC_ContentKind`.|  
 |`FC_NsUri`|URI d'espace de noms de l'élément XML dans un mappage de non-syndication. Cet attribut doit être utilisé avec l'attribut `FC_NsPrefix` et ne peut pas être utilisé avec l'attribut `FC_ContentKind`.|  
 |`FC_SourcePath`|Chemin d'accès de la propriété de l'entité à laquelle s'applique cette règle de mappage de flux. Cet attribut est pris en charge uniquement lorsqu'il est utilisé dans un élément `EntityType`.<br /><br /> La propriété <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> ne peut pas référencer directement de type complexe. Pour les types complexes, vous devez utiliser une expression de chemin d’accès où les noms de propriété sont séparés par une barre oblique inverse (`/`). Par exemple, les valeurs suivantes sont autorisées pour un type d’entité `Person` avec une propriété de type entier `Age` et une propriété complexe<br /><br /> `Address`:<br /><br /> `Age`<br /><br /> `Address/Street`<br /><br /> La propriété <xref:System.Data.Services.Common.EntityPropertyMappingAttribute.SourcePath%2A> ne peut pas avoir une valeur qui contient un espace ou un autre caractère qui n'est pas valide dans un nom de propriété.|  
@@ -83,7 +83,7 @@ ms.locfileid: "73975298"
 ## <a name="feed-customization-considerations"></a>Considérations de personnalisation de flux  
  Tenez compte des considérations suivantes lorsque vous définissez des mappages de flux personnalisés.  
   
-- Le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] traite les éléments mappés dans un flux comme vides lorsqu’ils contiennent uniquement des espaces blancs. Pour cette raison, les éléments mappés qui contiennent uniquement des espaces blancs ne sont pas matérialisés sur le client avec le même espace blanc. Pour conserver cet espace blanc sur le client, vous devez définir la valeur de `KeepInContext` sur `true` dans l’attribut de mappage de flux.  
+- Le client WCF Data Services traite les éléments mappés dans un flux comme vides lorsqu’ils contiennent uniquement des espaces blancs. Pour cette raison, les éléments mappés qui contiennent uniquement des espaces blancs ne sont pas matérialisés sur le client avec le même espace blanc. Pour conserver cet espace blanc sur le client, vous devez définir la valeur de `KeepInContext` sur `true` dans l’attribut de mappage de flux.  
   
 ## <a name="versioning-requirements"></a>Exigences pour le contrôle de version  
  La personnalisation de flux présente les exigences suivantes en matière de contrôle de version du protocole OData :  

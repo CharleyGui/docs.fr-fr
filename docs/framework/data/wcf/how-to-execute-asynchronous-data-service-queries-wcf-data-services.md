@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Exécuter des requêtes de service de données asynchrones (WCF Data Services)'
+title: 'Comment : exécuter les requêtes de services de données asynchrones (services de données WCF)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, asynchronous operations
 - asynchronous operations [WCF Data Services]
 ms.assetid: 902a2dc1-d0e9-4b00-90a8-becc4cb1f6a7
-ms.openlocfilehash: 14bfc138c5ece45184fb939f19aaf3d7e73e7294
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 68e2035315780b7c6dd60e93ae6eb10d252aabb3
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790568"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569066"
 ---
-# <a name="how-to-execute-asynchronous-data-service-queries-wcf-data-services"></a>Procédure : Exécuter des requêtes de service de données asynchrones (WCF Data Services)
-En utilisant les bibliothèques clientes [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)], vous pouvez effectuer de façon asynchrone des opérations client-serveur, telles que l'exécution de requêtes et l'enregistrement de modifications. Pour plus d’informations, consultez [opérations asynchrones](asynchronous-operations-wcf-data-services.md).  
+# <a name="how-to-execute-asynchronous-data-service-queries-wcf-data-services"></a>Comment : exécuter les requêtes de services de données asynchrones (services de données WCF)
+En utilisant la bibliothèque cliente WCF Data Services, vous pouvez effectuer de façon asynchrone des opérations client-serveur, telles que l’exécution de requêtes et l’enregistrement de modifications. Pour plus d’informations, consultez [opérations asynchrones](asynchronous-operations-wcf-data-services.md).  
   
 > [!NOTE]
 > Dans une application où le rappel doit être appelé sur un thread spécifique, vous devez marshaler explicitement l'exécution de la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A>. Pour plus d’informations, consultez [opérations asynchrones](asynchronous-operations-wcf-data-services.md).  

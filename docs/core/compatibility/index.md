@@ -1,15 +1,15 @@
 ---
-title: Évaluer les changements cassants - .NET Core
-description: Pour en savoir plus sur les façons dont .NET Core tente de maintenir la compatibilité pour les développeurs entre les versions de .NET.
+title: Types de modifications avec rupture-.NET Core
+description: Découvrez comment .NET Core tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
 ms.date: 06/10/2019
-ms.openlocfilehash: 3ad3cbe36ee09d371e26dc7da36a31207a6c1b25
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5624a35a0d71224faf9adc5df2b02a529e650314
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973646"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567718"
 ---
-# <a name="evaluate-breaking-changes-in-net-core"></a>Évaluer les changements cassants dans .NET Core
+# <a name="changes-that-affect-compatibility"></a>Modifications qui affectent la compatibilité
 
 Tout au long de son histoire, .NET a tenté de maintenir un niveau élevé de compatibilité de version en version et entre les différentes déclinaisons de .NET. Cette philosophie s’applique toujours avec .NET Core. Bien que .NET Core peut être considéré comme une nouvelle technologie indépendante du .NET Framework, deux facteurs majeurs limitent la capacité de .NET Core à diverger du .NET Framework :
 
@@ -19,19 +19,19 @@ Tout au long de son histoire, .NET a tenté de maintenir un niveau élevé de co
 
 En plus de la compatibilité entre les implémentations de .NET, les développeurs s’attendent à un haut niveau de compatibilité entre les versions de .NET Core. En particulier, le code écrit pour une version antérieure de .NET Core doit s’exécuter sans problème sur une version ultérieure de .NET Core. En fait, de nombreux développeurs s’attendent à ce que les nouvelles API dans les dernières versions de .NET Core soient également compatibles avec les versions préliminaires dans lesquelles ces API ont été introduites.
 
-Cet article décrit les catégories de modifications de compatibilité (ou changements cassants) et la manière dont l’équipe .NET évalue les modifications dans chacune de ces catégories. Comprendre comment l’équipe .NET approche les changements cassants potentiels est particulièrement utile pour les développeurs qui ouvrent des demandes de tirage dans le référentiel GitHub [dotnet/corefx](https://github.com/dotnet/corefx) qui modifient le comportement des API existantes.
+Cet article décrit les catégories de modifications de compatibilité (ou changements cassants) et la manière dont l’équipe .NET évalue les modifications dans chacune de ces catégories. Comprendre comment l’équipe .NET approche des modifications avec rupture possibles est particulièrement utile pour les développeurs qui ouvrent des requêtes de tirage dans le référentiel GitHub [dotnet/corefx](https://github.com/dotnet/corefx) qui modifient le comportement des API existantes.
 
 > [!NOTE]
 > Pour une définition des catégories de compatibilité, comme la compatibilité binaire et la compatibilité descendante, consultez [Catégories de changements cassants](categories.md).
 
-Les sections suivantes décrivent les catégories de modifications apportées aux API .NET Core et leur impact sur la compatibilité des applications. L’icône ✔️ indique qu’un type particulier de modification est autorisé, ❌ indique qu’elle n’est pas autorisée et ❓ indique une modification qui peut ou non être autorisée. Les modifications de cette dernière catégorie nécessitent un jugement et une évaluation de la prévisibilité et de la cohérence du comportement.
+Les sections suivantes décrivent les catégories de modifications apportées aux API .NET Core et leur impact sur la compatibilité des applications. L’icône ✔️ indique qu’un type particulier de modification est autorisé, ❌ indique qu’elle n’est pas autorisée et ❓ indique une modification qui peut ou non être autorisée. Les modifications de cette dernière catégorie nécessitent un jugement et une évaluation de la prédiction, évidente et cohérente du comportement précédent.
 
 > [!NOTE]
 > En plus de servir de guide pour l’évaluation des modifications apportées aux bibliothèques .NET Core, les développeurs de bibliothèques peuvent également utiliser ces critères pour évaluer les modifications apportées à leurs bibliothèques qui ciblent plusieurs implémentations et versions de .NET.
 
 ## <a name="modifications-to-the-public-contract"></a>Modifications au contrat public
 
-Les modifications de cette catégorie *modifient* la surface d’exposition publique d’un type. La plupart des modifications de cette catégorie ne sont pas autorisées dans la mesure où elles enfreignent une *compatibilité descendante* (la possibilité pour une application qui a été développée avec une version précédente d’une API de s’exécuter sans recompilation sur une version ultérieure).
+Les modifications de cette catégorie modifient la surface d’exposition publique d’un type. La plupart des modifications de cette catégorie ne sont pas autorisées dans la mesure où elles enfreignent une *compatibilité descendante* (la possibilité pour une application qui a été développée avec une version précédente d’une API de s’exécuter sans recompilation sur une version ultérieure).
 
 ### <a name="types"></a>Types
 
@@ -194,7 +194,7 @@ Les modifications de cette catégorie *modifient* la surface d’exposition publ
 
 ## <a name="behavioral-changes"></a>Changements de comportement
 
-### <a name="assemblies"></a>Assemblys
+### <a name="assemblies"></a>Assemblies
 
 - **✔️ Rendre un assembly portable lorsque les mêmes plateformes sont toujours prises en charge**
 

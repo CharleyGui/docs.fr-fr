@@ -2,16 +2,24 @@
 title: Catégories de changements cassants - .NET Core
 description: Découvrez comment les changements cassants sont catégorisés dans .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 68bc51b6662de070ef901b73fb75ff3aced95726
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739363"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567925"
 ---
 # <a name="breaking-change-categories"></a>Catégories de changements cassants
 
-*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Un changement particulier peut affecter la compatibilité de six façons différentes. Les [différents types de changements individuels sont pris en compte lors de l’évaluation de la compatibilité](index.md) appartiennent aux cinq premières catégories.
+*Compatibilité* fait référence à la possibilité de compiler ou d’exécuter du code sur une version d’une implémentation de .NET autre que celle avec laquelle le code a été développé à l’origine. Un changement particulier peut affecter la compatibilité de six façons différentes. Les [différentes sortes de modifications](index.md) prises en compte lors de l’évaluation de la compatibilité appartiennent aux catégories suivantes :
+
+- [changement de comportement](#behavioral-change)
+- [compatibilité binaire](#binary-compatibility)
+- [compatibilité source](#source-compatibility)
+- [compatibilité au moment du design](#design-time-compatibility)
+- [compatibilité descendante](#backwards-compatibility)
+
+La [compatibilité ascendante](#forward-compatibility) n’est pas un objectif de .net core.
 
 ## <a name="behavioral-change"></a>Changements de comportement
 

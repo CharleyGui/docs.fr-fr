@@ -7,15 +7,15 @@ dev_langs:
 helpviewer_keywords:
 - WCF Data Services, customizing requests
 ms.assetid: 1632f9af-e45f-4363-9222-03823daa8e28
-ms.openlocfilehash: bb25319e3a4b1f8c7a3586c546ce1d589b48e438
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: bb6447c39c3de9605f6f7bc280da2778be2b3070
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975156"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568854"
 ---
 # <a name="how-to-specify-client-credentials-for-a-data-service-request-wcf-data-services"></a>Procédure : spécifier les informations d'identification du client pour une demande de service de données (WCF Data Services)
-Par défaut, la bibliothèque cliente ne fournit pas d’informations d’identification lors de l’envoi d’une demande à un service OData. Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md). L'exemple de cette rubrique décrit comment fournir explicitement des informations d'identification utilisées par le client [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] lors d'une demande de données au service de données.  
+Par défaut, la bibliothèque cliente ne fournit pas d’informations d’identification lors de l’envoi d’une demande à un service OData. Toutefois, vous pouvez spécifier que les informations d'identification soient transmises aux demandes authentifiées sur le service de données en fournissant un <xref:System.Net.NetworkCredential> pour la propriété <xref:System.Data.Services.Client.DataServiceContext.Credentials%2A> du <xref:System.Data.Services.Client.DataServiceContext>. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md). L’exemple de cette rubrique montre comment fournir explicitement des informations d’identification utilisées par le client WCF Data Services lors de la demande de données à partir du service de données.  
   
  L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement. Ce service et les classes de données clientes sont créés lorsque vous terminez le [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md). Vous pouvez également utiliser l' [exemple de service de données Northwind](https://go.microsoft.com/fwlink/?LinkId=187426) publié sur le site Web OData. Cet exemple de service de données est en lecture seule et toute tentative d’enregistrement des modifications retourne une erreur. Les exemples de services de données sur le site Web OData autorisent l’authentification anonyme.  
   
@@ -41,7 +41,7 @@ Par défaut, la bibliothèque cliente ne fournit pas d’informations d’identi
   
  [!code-xaml[Astoria Northwind Client#ClientCredentialsLoginXaml](../../../../samples/snippets/csharp/VS_Snippets_Misc/astoria_northwind_client/cs/clientcredentialslogin.xaml#clientcredentialsloginxaml)]  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Les considérations sur la sécurité suivantes s'appliquent à l'exemple de cette rubrique :  
   
 - Pour vérifier que les informations d'identification fournies dans cet exemple fonctionnent, le service de données Northwind doit utiliser un schéma d'authentification autre que l'accès anonyme. Autrement, le site web qui héberge le service de données ne demandera aucune information d’identification.  

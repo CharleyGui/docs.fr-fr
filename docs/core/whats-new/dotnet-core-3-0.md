@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 9cb2568aa36af9ced0525660962966375d69e35b
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 8c2d586a444412abd67198ad7f295e81cb3101fb
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140685"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567336"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -74,7 +74,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
-ou
+\- ou -
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -470,7 +470,7 @@ Pour plus d’informations, consultez [Intrinsèques dépendant de la plateforme
 
 ### <a name="improved-net-core-version-apis"></a>API de version de .NET Core améliorées
 
-À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Exemple :
+À compter de .NET Core 3.0, les API de version fournies avec .NET Core retournent les informations souhaitées. Par exemple :
 
 ```csharp
 System.Console.WriteLine($"Environment.Version: {System.Environment.Version}");
@@ -517,7 +517,7 @@ Souvent, lorsque vous développez une application, vous souhaiterez utiliser une
 
 [!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Passez en revue les modifications avec rupture entre .NET Core 2,2 et 3,0.](../compatibility/2.2-3.0.md)
-- [Passez en revue les modifications avec rupture entre .NET Framework et .NET Core 3,0.](../compatibility/framework-core.md)
+- [Passez en revue les modifications avec rupture entre .NET Framework et .NET Core 3,0 pour les applications Windows Forms.](../porting/winforms-breaking-changes.md)

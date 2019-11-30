@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Charger les résultats paginés (WCF Data Services)'
+title: 'Comment : charger les résultats paginés (services de données WCF)'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,15 +8,15 @@ helpviewer_keywords:
 - WCF Data Services, deferred content
 - WCF Data Services, loading data
 ms.assetid: bb786ea4-f3ef-4ad3-9a41-3a0b7feb6a1f
-ms.openlocfilehash: e718aad904a43d118a243afafc17834cba31f028
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d651a66ac619e46d3ec6b46b194436f51300ff25
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70790456"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74569022"
 ---
-# <a name="how-to-load-paged-results-wcf-data-services"></a>Procédure : Charger les résultats paginés (WCF Data Services)
-[!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] permet au service de données de limiter le nombre des entités retournées dans un flux de réponse unique. Lorsque cela arrive, la dernière entrée dans le flux contient un lien vers la page suivante de données. L'URI vers la page suivante de données s'obtient en appelant la méthode <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> sur le <xref:System.Data.Services.Client.QueryOperationResponse%601> retourné lorsque <xref:System.Data.Services.Client.DataServiceQuery%601> est exécuté. L'URI représenté par cet objet est ensuite utilisé pour charger la page suivante de résultats. Pour plus d’informations, consultez chargement d’un [contenu différé](loading-deferred-content-wcf-data-services.md).  
+# <a name="how-to-load-paged-results-wcf-data-services"></a>Comment : charger les résultats paginés (services de données WCF)
+WCF Data Services permet au service de données de limiter le nombre d’entités retournées dans un flux de réponse unique. Lorsque cela arrive, la dernière entrée dans le flux contient un lien vers la page suivante de données. L'URI vers la page suivante de données s'obtient en appelant la méthode <xref:System.Data.Services.Client.QueryOperationResponse%601.GetContinuation%2A> sur le <xref:System.Data.Services.Client.QueryOperationResponse%601> retourné lorsque <xref:System.Data.Services.Client.DataServiceQuery%601> est exécuté. L'URI représenté par cet objet est ensuite utilisé pour charger la page suivante de résultats. Pour plus d’informations, consultez chargement d’un [contenu différé](loading-deferred-content-wcf-data-services.md).  
   
  L'exemple dans cette rubrique utilise l'exemple de service de données Northwind et des classes de service de données clientes générées automatiquement. Ce service et les classes de données clientes sont créés lorsque vous terminez le [démarrage rapide WCF Data Services](quickstart-wcf-data-services.md).  
   
@@ -35,4 +35,4 @@ ms.locfileid: "70790456"
 ## <a name="see-also"></a>Voir aussi
 
 - [Chargement de contenu différé](loading-deferred-content-wcf-data-services.md)
-- [Guide pratique : Charger les entités associées](how-to-load-related-entities-wcf-data-services.md)
+- [Guide pratique pour charger les entités connexes](how-to-load-related-entities-wcf-data-services.md)

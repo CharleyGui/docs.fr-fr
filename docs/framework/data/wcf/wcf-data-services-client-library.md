@@ -6,19 +6,19 @@ helpviewer_keywords:
 - DataServiceQuery class, about DataServiceQuery class
 - DataServiceContext class, about DataServiceContext class
 ms.assetid: 21075e50-8917-413e-a8ea-35a0f6e65aa5
-ms.openlocfilehash: e078ba07072f71332aa2f19681b142df946ec391
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 74b3e50c36f0b3238b8fb74ca1ea1b336e0983c0
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975072"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74568780"
 ---
 # <a name="wcf-data-services-client-library"></a>Bibliothèque client services de données WCF
-Toute application peut interagir avec un service de données basé sur le Open Data Protocol (OData) si elle peut envoyer une requête HTTP et traiter le flux OData retourné par un service de données. Cette interopérabilité vous permet d’accéder à des services OData à partir d’une large gamme d’applications Web. [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] comprend des bibliothèques clientes qui fournissent une expérience de programmation plus riche lorsque vous consommez des flux OData à partir d’applications .NET Framework ou Silverlight.  
+Toute application peut interagir avec un service de données basé sur le Open Data Protocol (OData) si elle peut envoyer une requête HTTP et traiter le flux OData retourné par un service de données. Cette interopérabilité vous permet d’accéder à des services OData à partir d’une large gamme d’applications Web. WCF Data Services comprend des bibliothèques clientes qui fournissent une expérience de programmation plus riche lorsque vous consommez des flux OData à partir d’applications .NET Framework ou Silverlight.  
   
  Les deux classes principales de la bibliothèque cliente sont la classe <xref:System.Data.Services.Client.DataServiceContext> et la classe <xref:System.Data.Services.Client.DataServiceQuery%601>. La classe <xref:System.Data.Services.Client.DataServiceContext> encapsule des opérations prises en charge sur un service de données spécifié. Bien que les services OData soient sans État, le contexte ne l’est pas. Par conséquent, vous pouvez utiliser la classe <xref:System.Data.Services.Client.DataServiceContext> pour conserver l’État sur le client entre les interactions avec le service de données afin de prendre en charge des fonctionnalités telles que la gestion des modifications. Cette classe gère également des identités et suit les modifications. La classe <xref:System.Data.Services.Client.DataServiceQuery%601> représente une requête sur un jeu d'entités spécifique.  
   
- Cette section décrit comment utiliser des bibliothèques clientes pour accéder et modifier des données d'une application cliente .NET Framework. Pour plus d’informations sur l’utilisation de la bibliothèque cliente [!INCLUDE[ssAstoria](../../../../includes/ssastoria-md.md)] avec une application Silverlight, consultez [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=186016). D’autres bibliothèques clientes sont disponibles pour vous permettre de consommer un flux OData dans d’autres types d’applications. Pour plus d’informations, consultez le [Kit de développement logiciel (SDK) OData](https://go.microsoft.com/fwlink/?LinkID=185796).  
+ Cette section décrit comment utiliser des bibliothèques clientes pour accéder et modifier des données d'une application cliente .NET Framework. Pour plus d’informations sur l’utilisation de la bibliothèque cliente WCF Data Services avec une application Silverlight, consultez [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkId=186016). D’autres bibliothèques clientes sont disponibles pour vous permettre de consommer un flux OData dans d’autres types d’applications. Pour plus d’informations, consultez le [Kit de développement logiciel (SDK) OData](https://go.microsoft.com/fwlink/?LinkID=185796).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Génération de la bibliothèque cliente du service de données](generating-the-data-service-client-library-wcf-data-services.md)  

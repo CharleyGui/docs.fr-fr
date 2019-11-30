@@ -2,12 +2,12 @@
 title: Configuration de l’exécution
 description: Découvrez comment configurer des applications .NET Core à l’aide des paramètres de configuration de l’exécution.
 ms.date: 11/13/2019
-ms.openlocfilehash: f7074b07bdd5aca23b6caae78952d630d905c489
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e3922f6df81198b5e122f16d5cfc4b6d15cbb4ae
+ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283988"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74567393"
 ---
 # <a name="net-core-run-time-configuration-settings"></a>Paramètres de configuration du Runtime .NET Core
 
@@ -62,7 +62,7 @@ Le fichier *runtimeconfig. JSON* est automatiquement créé dans le répertoire 
 
 Certaines valeurs de configuration peuvent également être définies par programmation en appelant la méthode <xref:System.AppContext.SetSwitch%2A?displayProperty=nameWithType>.
 
-## <a name="environment-variables"></a>Variables d’environnement
+## <a name="environment-variables"></a>Variables d'environnement
 
 Les variables d’environnement peuvent être utilisées pour fournir des informations de configuration au moment de l’exécution. Les boutons de configuration spécifiés en tant que variables d’environnement ont généralement le préfixe **COMPlus_** .
 
