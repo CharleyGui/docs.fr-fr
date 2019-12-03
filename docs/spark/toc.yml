@@ -21,6 +21,8 @@
   items:
     - name: Déboguer votre application
       href: how-to-guides/debug.md
+    - name: Envoyer des travaux à HDInsight
+      href: how-to-guides/hdinsight-deploy-methods.md
 - name: Référence
   items:
     - name: Informations de référence sur les API
