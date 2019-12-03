@@ -73,7 +73,8 @@
       href: whats-new/dotnet-core-2-1.md
     - name: Nouveautés de .NET Core 2.0
       href: whats-new/dotnet-core-2-0.md
-- name: Compatibilité des applications
+- name: Modifications avec rupture
+  displayName: app compatibility
   href: compatibility/
 - name: Didacticiels
   href: tutorials/index.md
@@ -321,23 +322,27 @@
       href: additional-tools/dotnet-svcutil.xmlserializer-guide.md
     - name: Générateur de sérialiseur XML
       href: additional-tools/xml-serializer-generator.md
-- name: Portage à partir de .NET Framework
+- name: Porter depuis .NET Framework
   href: porting/index.md
   items:
     - name: Technologies .NET Framework non disponibles pour .NET Core
       href: porting/net-framework-tech-unavailable.md
-    - name: Analyse des dépendances tierces
+    - name: Analyser les dépendances tierces
       href: porting/third-party-deps.md
-    - name: Portage de bibliothèques
+    - name: Bibliothèques de portage
       href: porting/libraries.md
-    - name: Organisation de projets pour .NET Core
+    - name: Organiser les projets pour .NET Core
       href: porting/project-structure.md
-    - name: Outils facilitant le portage vers .NET Core
+    - name: Outils
       href: porting/tools.md
-    - name: Utilisation du pack de compatibilité Windows
+    - name: Utiliser le pack de compatibilité Windows
       href: porting/windows-compat-pack.md
     - name: Porter des projets Windows Forms
-      href: porting/winforms.md
+      items:
+        - name: Comment porter un projet
+          href: porting/winforms.md
+        - name: Modifications avec rupture
+          href: porting/winforms-breaking-changes.md
     - name: Porter des projets WPF
       href: porting/wpf.md
 - name: Chargement des dépendances
