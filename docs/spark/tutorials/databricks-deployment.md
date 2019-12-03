@@ -4,12 +4,12 @@ description: Découvrez comment déployer une application .NET pour Apache Spark
 ms.date: 05/17/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: c1c1a57fb2b79826218f8ed94d568b37d4689560
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e79b4c5bf38416cf45776488559bd0b2d5582361
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454279"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716478"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -50,7 +50,7 @@ Dans cette section, vous allez créer un espace de travail Azure Databricks à l
     |---------|---------|
     |**Nom de l’espace de travail**     | Donnez un nom à votre espace de travail Databricks.        |
     |**Abonnement**     | Dans la liste déroulante, sélectionnez votre abonnement Azure.        |
-    |**Groupe de ressources**     | Spécifiez si vous souhaitez créer un nouveau groupe de ressources ou utiliser un groupe existant. Un groupe de ressources est un conteneur qui contient les ressources associées à une solution Azure. Pour plus d’informations, consultez [vue d’ensemble du groupe de ressources Azure](/azure/azure-databricks/azure-resource-manager/resource-group-overview). |
+    |**Groupe de ressources**     | Spécifiez si vous souhaitez créer un nouveau groupe de ressources ou utiliser un groupe existant. Un groupe de ressources est un conteneur qui contient les ressources associées à une solution Azure. Pour plus d’informations, consultez [vue d’ensemble du groupe de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
     |**Emplacement**     | Sélectionnez la région de votre choix. Pour plus d’informations sur les régions disponibles, consultez [services Azure disponibles par région](https://azure.microsoft.com/regions/services/).        |
     |**Niveau tarifaire**     |  Choisissez entre **standard**, **Premium**ou **version d’évaluation**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Réseau virtuel**     |   Non       |
@@ -73,7 +73,7 @@ Vous pouvez utiliser l' **interface CLI Databricks** pour vous connecter à des 
    python3 --version
    ```
 
-2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante :
+2. Utilisez PIP pour installer l’interface de commande de Databricks. Python 3,4 et versions ultérieures incluent PIP par défaut. Utilisez PIP3 pour Python 3. Exécutez la commande suivante : .
 
    ```bash
    pip3 install databricks-cli
@@ -221,7 +221,7 @@ Votre application s’exécute sur Azure Databricks par le biais d’un travail 
 
 Si vous n’avez plus besoin de l’espace de travail Databricks, vous pouvez supprimer votre ressource Azure Databricks dans le Portail Azure. Vous pouvez également sélectionner le nom du groupe de ressources pour ouvrir la page groupe de ressources, puis sélectionner **supprimer le groupe de ressources**.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce tutoriel, vous avez déployé votre application .NET pour Apache Spark sur Databricks. Pour plus d’informations sur Databricks, consultez la documentation Azure Databricks.
 
