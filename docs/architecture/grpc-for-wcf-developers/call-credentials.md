@@ -2,36 +2,34 @@
 title: Appeler les informations d’identification-gRPC pour les développeurs WCF
 description: Comment implémenter et utiliser les informations d’identification d’appel gRPC dans ASP.NET Core 3,0.
 ms.date: 09/02/2019
-ms.openlocfilehash: 2588fe3590a63ea6071b85ff29b3685efbfa25db
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 01f21f58ed4235f45509c948c84653cd99d35618
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968001"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711533"
 ---
 # <a name="call-credentials"></a>Informations d’identification de l’appel
 
-Les informations d’identification d’appel sont toutes basées sur un type de jeton passé dans les métadonnées avec chaque demande.
+Les informations d’identification d’appel sont toutes basées sur un jeton passé dans les métadonnées avec chaque demande.
 
 ## <a name="ws-federation"></a>WS-Federation
 
-ASP.NET Core prend en charge WS-Federation à l’aide du package NuGet [WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) . WS-Federation est la alternative la plus proche disponible à l’authentification Windows, qui n’est pas prise en charge sur HTTP/2. Les utilisateurs sont authentifiés à l’aide d’Services ADFS (ADFS), qui fournit un jeton qui peut être utilisé pour s’authentifier auprès de ASP.NET Core.
+ASP.NET Core prend en charge WS-Federation à l’aide du package NuGet [WsFederation](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.WsFederation) . WS-Federation est l’alternative la plus proche disponible à l’authentification Windows, qui n’est pas prise en charge sur HTTP/2. Les utilisateurs sont authentifiés à l’aide de Services ADFS (AD FS), qui fournit un jeton qui peut être utilisé pour s’authentifier auprès d’ASP.NET Core.
 
-Pour plus d’informations sur la prise en main de cette méthode d’authentification, consultez l’article [authentifier les utilisateurs avec WS-Federation dans ASP.net Core](https://docs.microsoft.com/aspnet/core/security/authentication/ws-federation?view=aspnetcore-3.0) .
+Pour plus d’informations sur la prise en main de cette méthode d’authentification, consultez [authentifier les utilisateurs avec WS-Federation dans ASP.net Core](/aspnet/core/security/authentication/ws-federation).
 
 ## <a name="jwt-bearer-tokens"></a>Jetons du porteur JWT
 
-Le [JSON Web Token](https://jwt.io) standard offre un moyen d’encoder des informations sur un utilisateur et leurs revendications dans une chaîne encodée, et de signer ce jeton de telle sorte que le consommateur puisse vérifier l’intégrité du jeton à l’aide du chiffrement à clé publique. Vous pouvez utiliser différents services, tels que IdentityServer4, pour authentifier les utilisateurs et générer des jetons OpenID Connect (OIDC) à utiliser avec les API gRPC et HTTP.
+La norme [JSON Web Token](https://jwt.io) (JWT) offre un moyen d’encoder des informations sur un utilisateur et leurs revendications dans une chaîne encodée. Il fournit également un moyen de signer ce jeton, afin que le consommateur puisse vérifier l’intégrité du jeton à l’aide du chiffrement à clé publique. Vous pouvez utiliser différents services, tels que IdentityServer4, pour authentifier les utilisateurs et générer des jetons OpenID Connect (OIDC) à utiliser avec les API gRPC et HTTP.
 
-ASP.NET Core 3,0 peut gérer des jetons Web JSON à l’aide du package du porteur JWT. La configuration est exactement la même pour une application gRPC en tant qu’application ASP.NET Core MVC.
+ASP.NET Core 3,0 peut gérer jetons JWT à l’aide du package du porteur JWT. La configuration est exactement la même pour une application gRPC que pour une application MVC ASP.NET Core. Ici, nous allons nous concentrer sur les jetons de porteur JWT, car ils sont plus faciles à développer avec WS-Federation.
 
-Ce chapitre se concentre sur les jetons de porteur JWT, car ils sont plus faciles à développer avec WS-Federation.
-
-## <a name="adding-authentication-and-authorization-to-the-server"></a>Ajout de l’authentification et de l’autorisation au serveur
+## <a name="add-authentication-and-authorization-to-the-server"></a>Ajouter l’authentification et l’autorisation au serveur
 
 Le package du porteur JWT n’est pas inclus dans ASP.NET Core 3,0 par défaut. Installez le package NuGet [Microsoft. AspNetCore. Authentication. JwtBearer](https://www.nuget.org/packages/Microsoft.AspNetCore.Authentication.JwtBearer) dans votre application.
 
-Ajoutez le service d’authentification dans la classe Startup et configurez le gestionnaire du porteur JWT.
+Ajoutez le service d’authentification dans la classe Startup et configurez le gestionnaire du porteur JWT :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -57,9 +55,9 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-La propriété `IssuerSigningKey` nécessite une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Ce jeton doit être stocké en toute sécurité dans un *serveur de secrets* comme Azure Key Vault.
+La propriété `IssuerSigningKey` nécessite une implémentation de `Microsoft.IdentityModels.Tokens.SecurityKey` avec les données de chiffrement nécessaires pour valider les jetons signés. Stockez ce jeton en toute sécurité dans un *serveur de secrets*, comme Azure Key Vault.
 
-Ajoutez ensuite le service d’autorisation, qui contrôle l’accès au système.
+Ensuite, ajoutez le service d’autorisation, qui contrôle l’accès au système :
 
 ```csharp
     services.AddAuthorization(options =>
@@ -74,9 +72,9 @@ Ajoutez ensuite le service d’autorisation, qui contrôle l’accès au systèm
 ```
 
 > [!TIP]
-> L’authentification et l’autorisation sont deux étapes distinctes. L’authentification est utilisée pour déterminer l’identité de l’utilisateur. L’autorisation décide si cet utilisateur est autorisé à accéder aux différentes parties du système.
+> L’authentification et l’autorisation sont deux étapes distinctes. Vous utilisez l’authentification pour déterminer l’identité de l’utilisateur. Vous utilisez l’autorisation pour décider si cet utilisateur est autorisé à accéder aux différentes parties du système.
 
-Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.NET Core dans la méthode `Configure`.
+Ajoutez maintenant l’intergiciel d’authentification et d’autorisation au pipeline ASP.NET Core dans la méthode `Configure` :
 
 ```csharp
 public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -119,7 +117,7 @@ public override async Task<GetResponse> Get(GetRequest request, ServerCallContex
 }
 ```
 
-## <a name="providing-call-credentials-in-the-client-application"></a>Fournir des informations d’identification d’appel dans l’application cliente
+## <a name="provide-call-credentials-in-the-client-application"></a>Fournir les informations d’identification de l’appel dans l’application cliente
 
 Une fois que vous avez obtenu un jeton JWT à partir d’un serveur d’identité, vous pouvez l’utiliser pour authentifier les appels gRPC à partir du client en l’ajoutant comme en-tête de métadonnées à l’appel, comme suit :
 
@@ -141,7 +139,7 @@ public async Task ShowPortfolioAsync(int portfolioId)
 }
 ```
 
-Maintenant, vous avez sécurisé votre service gRPC en utilisant des jetons de porteur JWT comme informations d’identification d’appel. Une version de l' [exemple d’application GRPC portefeuille avec l’authentification et l’autorisation ajoutée](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/grpc/TraderSysAuth) se trouve sur GitHub.
+Maintenant, vous avez sécurisé votre service gRPC en utilisant des jetons de porteur JWT comme informations d’identification d’appel. Une version de l' [exemple d’application gRPC portefeuille avec l’authentification et l’autorisation ajoutée](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/PortfoliosSample/grpc/TraderSysAuth) se trouve sur GitHub.
 
 >[!div class="step-by-step"]
 >[Précédent](security.md)

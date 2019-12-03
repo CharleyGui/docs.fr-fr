@@ -2,12 +2,12 @@
 title: Maillages de service-gRPC pour les développeurs WCF
 description: Utilisation d’une maille de service pour acheminer et équilibrer les demandes vers les services gRPC dans un cluster Kubernetes.
 ms.date: 09/02/2019
-ms.openlocfilehash: d20275082973f30bddbb342da90454401d4f019b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cc4855b1ed27e29076e4f13f5c5d3dffa63a6554
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966966"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711273"
 ---
 # <a name="service-meshes"></a>Maillages de service
 
@@ -15,13 +15,13 @@ Une maille de service est un composant d’infrastructure qui prend le contrôle
 
 - Détection du service
 - Équilibrage de charge
-- Tolérance de panne
+- Tolérance de pannes
 - Chiffrement
 - Analyse
 
 Les maillages de service Kubernetes fonctionnent en ajoutant un conteneur supplémentaire, appelé *proxy de side-car*, à chaque Pod inclus dans la maille. Le proxy prend en charge la gestion de toutes les demandes réseau entrantes et sortantes, ce qui permet à la configuration et à la gestion de la mise en réseau de rester séparées des conteneurs d’applications et, dans de nombreux cas, sans nécessiter de modification du code de l’application.
 
-Prenons l' [exemple du chapitre précédent](kubernetes.md#testing-the-application), où les requêtes gRPC de l’application Web ont toutes été routées vers une seule instance du service gRPC. Cela est dû au fait que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache pendant la durée de vie de l’instance `HttpClientHandler`. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients, mais cela complique considérablement le code de l’application sans ajouter de valeur commerciale ou client.
+Prenons l' [exemple du chapitre précédent](kubernetes.md#test-the-application), où les requêtes gRPC de l’application Web ont toutes été routées vers une seule instance du service gRPC. Cela est dû au fait que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache pendant la durée de vie de l’instance `HttpClientHandler`. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients, mais cela complique considérablement le code de l’application sans ajouter de valeur commerciale ou client.
 
 À l’aide d’un maillage de service, les demandes du conteneur d’application sont envoyées au proxy side-car, qui peut les distribuer intelligemment sur toutes les instances de l’autre service. La maille peut également :
 
