@@ -2,12 +2,12 @@
 title: Configuration simplifiée pour WCF Services
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: c78f5ca281c784a8f554ad1f4e3a1f245eee4914
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: a1188ad9ed56ebb24754785546b6a5b54cd2b840
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141865"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715429"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Configuration simplifiée pour WCF Services
 Cet exemple montre comment implémenter et configurer un service et un client standard à l’aide de Windows Communication Foundation (WCF). Cet exemple constitue la base de tous les autres exemples de technologie de base.  
@@ -74,7 +74,7 @@ Cet exemple montre comment implémenter et configurer un service et un client st
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ConfigSimplificationIn40`  
   

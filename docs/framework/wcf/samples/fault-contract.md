@@ -2,12 +2,12 @@
 title: Contrat d'erreur
 ms.date: 03/30/2017
 ms.assetid: b31b140e-dc3b-408b-b3c7-10b6fe769725
-ms.openlocfilehash: 907497101c13e1f62ff2abb5da563178c9643c6c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d8ea7010bef389b49f68c811565a641a580e230a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039659"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716959"
 ---
 # <a name="fault-contract"></a>Contrat d'erreur
 Cet exemple illustre comment transmettre les informations relatives à une erreur d'un service à un client. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), avec un code supplémentaire ajouté au service pour convertir une exception interne en erreur. Le client tente d'effectuer une opération de division par zéro pour imposer la génération d'une erreur sur le service.  
@@ -113,7 +113,7 @@ catch (FaultException<MathFault> e)
 </behaviors>  
 ```  
   
- En outre, le comportement doit être associé au service en affectant `behaviorConfiguration` à l’attribut du service dans le fichier de configuration la valeur «CalculatorServiceBehavior».  
+ En outre, le comportement doit être associé au service en affectant à l’attribut `behaviorConfiguration` du service dans le fichier de configuration la valeur « CalculatorServiceBehavior ».  
   
  Pour intercepter de telles erreurs sur le client, il est nécessaire d'intercepter l'exception non générique <xref:System.ServiceModel.FaultException>.  
   
@@ -132,6 +132,6 @@ catch (FaultException<MathFault> e)
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Faults`  

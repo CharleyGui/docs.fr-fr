@@ -2,12 +2,12 @@
 title: DataContract Surrogate
 ms.date: 03/30/2017
 ms.assetid: b0188f3c-00a9-4cf0-a887-a2284c8fb014
-ms.openlocfilehash: f08226d3d871caea2dea3eeaf1cd411557853e45
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3246466f9268fc920fd58d4f1ba2c06c3627c88e
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976729"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715369"
 ---
 # <a name="datacontract-surrogate"></a>DataContract Surrogate
 Cet exemple illustre comment personnaliser des processus tels que la sérialisation, la désérialisation, l’exportation et l’importation de schémas à l’aide d’une classe de substitution d’un contrat de données. Cet exemple montre comment utiliser un substitut dans un scénario de client et de serveur où les données sont sérialisées et transmises entre un service et un client Windows Communication Foundation (WCF).  
@@ -265,6 +265,6 @@ public void ExportContract(WsdlExporter exporter, WsdlContractConversionContext 
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\DataContract`  

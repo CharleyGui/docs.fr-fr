@@ -2,12 +2,12 @@
 title: Windows Communication Foundation to Message Queuing
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 34ac2dd8b6e01e2d7ae6f7978e1b09af174b71dd
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1cbc1251a8e4eaaaf4b47357851dd681ae326f25
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038626"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715062"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Windows Communication Foundation to Message Queuing
 Cet exemple montre comment une application Windows Communication Foundation (WCF) peut envoyer un message à une application Message Queuing (MSMQ). Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente. Il n'est pas nécessaire que le service et le client s'exécutent simultanément.
@@ -98,7 +98,7 @@ client.Close();
 
  Le client utilise un client personnalisé pour envoyer le message MSMQ à la file d'attente. Étant donné que l’application qui reçoit et traite le message est une application MSMQ et non une application WCF, il n’existe pas de contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.
 
- Le client personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent `MsmqIntegration` la liaison pour envoyer des messages. Contrairement aux autres clients, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
+ Le client personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent la liaison `MsmqIntegration` pour envoyer des messages. Contrairement aux autres clients, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -130,7 +130,7 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client. Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément. Par exemple, vous pouvez exécuter le client, l'arrêtez, puis démarrer le service et il recevra toujours ses messages.
 
 > [!NOTE]
-> Cet exemple requiert l'installation de Message Queuing. Consultez les instructions d’installation dans [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968).  
+> Cet exemple requiert l'installation de Message Queuing (page pouvant être en anglais). Consultez les instructions d’installation dans [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968).  
   
 ### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -169,11 +169,11 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Échanger des messages avec des points de terminaison WCF et des applications de Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
+- [Guide pratique pour échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)
 - [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968)

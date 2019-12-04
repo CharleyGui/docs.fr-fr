@@ -2,12 +2,12 @@
 title: Custom Message Interceptor
 ms.date: 03/30/2017
 ms.assetid: 73f20972-53f8-475a-8bfe-c133bfa225b0
-ms.openlocfilehash: 61f9bae24f5edb70430f4f3eaa16e42da221a7b4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 53005212bc834d73ab5cbb4545d1477112f29c75
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978309"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716815"
 ---
 # <a name="custom-message-interceptor"></a>Custom Message Interceptor
 Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique en particulier comment implémenter un élément de liaison personnalisé qui crée des fabrications de canaux et des écouteurs de canal pour intercepter tous les messages entrants et sortants à un point particulier dans la pile d’exécution. L'exemple inclut également un client et serveur qui montrent l'utilisation de ces fabrications personnalisées.  
@@ -22,7 +22,7 @@ Cet exemple montre l'utilisation du modèle d'extensibilité des canaux. Indique
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\MessageInterceptor`  
   
@@ -57,7 +57,7 @@ class InterceptingChannelListener<TChannel> : ListenerFactoryBase<TChannel>
 ```  
   
 ## <a name="adding-a-binding-element"></a>Ajout d'un élément de liaison  
- l’exemple définit un élément de liaison personnalisé : `InterceptingBindingElement`. `InterceptingBindingElement` prend un `ChannelMessageInterceptor` comme entrée et utilise cette `ChannelMessageInterceptor` pour manipuler les messages qui le traversent. C'est la seule classe qui doit être publique. La fabrication, l'écouteur et les canaux peuvent tous être des implémentations internes des interfaces d'exécution publiques.  
+ l’exemple définit un élément de liaison personnalisé : `InterceptingBindingElement`. `InterceptingBindingElement` prend un `ChannelMessageInterceptor` comme entrée et utilise cette `ChannelMessageInterceptor` pour manipuler les messages qui le traversent. C'est la seule classe qui doit être publique. La fabrique, l'écouteur et les canaux peuvent tous être des implémentations internes des interfaces d'exécution publiques.  
   
 ```csharp
 public class InterceptingBindingElement : BindingElement

@@ -2,12 +2,12 @@
 title: DataContractResolver
 ms.date: 03/30/2017
 ms.assetid: 6c200c02-bc14-4b8d-bbab-9da31185b805
-ms.openlocfilehash: 224ffcf277f9ceaf6b1f970ad6f92480f5857999
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 101c33ca197be9dff52a73c844dd0b006e62b2ac
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045080"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716594"
 ---
 # <a name="datacontractresolver"></a>DataContractResolver
 Cet exemple montre comment les processus de sérialisation et de désérialisation peuvent être personnalisés à l'aide de la classe <xref:System.Runtime.Serialization.DataContractResolver>. Cet exemple illustre comment utiliser DataContractResolver pour mapper les types CLR vers et depuis une représentation xsi:type pendant la sérialisation et la désérialisation.
@@ -161,7 +161,7 @@ class MyDataContractResolver : DataContractResolver
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractResolver`  
   

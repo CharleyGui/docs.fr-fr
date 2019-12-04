@@ -2,12 +2,12 @@
 title: Programmation orientée objet (C#)
 ms.date: 07/20/2015
 ms.assetid: 89574786-65ef-4335-88bc-fbacd094f183
-ms.openlocfilehash: 121d2e43f6896179756067e661be6d7960a1ee64
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1de150f6eb4be893ca1afce6bd16afde5752c986
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418048"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711823"
 ---
 # <a name="object-oriented-programming-c"></a>Programmation orientée objet (C#)
 
@@ -77,7 +77,7 @@ struct SampleStruct
 }
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [class](../../language-reference/keywords/class.md)
 
@@ -131,7 +131,7 @@ class SampleClass
 
 La plupart des propriétés disposent de méthodes ou de procédures destinées à la fois à définir et à obtenir la valeur de propriété. Toutefois, vous pouvez créer des propriétés en lecture seule ou en écriture seule pour empêcher qu'elles soient modifiées ou lues. En C#, vous pouvez omettre la méthode de propriété `get` ou `set`. Toutefois, les propriétés implémentées automatiquement ne peuvent pas être en lecture seule ni en écriture seule.
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [get](../../language-reference/keywords/get.md)
 
@@ -158,13 +158,13 @@ Une classe peut avoir plusieurs implémentations, ou *surcharges*, de la même m
 Pour surcharger une méthode :
 
 ```csharp
-public int sampleMethod(string sampleParam) {};
+public int sampleMethod(string sampleParam) {}
 public int sampleMethod(int sampleParam) {}
 ```
 
 Dans la plupart des cas, vous déclarez une méthode dans une définition de classe. Toutefois, C# prend également en charge des *méthodes d’extension*, qui vous permettent d’ajouter des méthodes à une classe existante hors de la définition réelle de la classe.
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [Méthodes](../classes-and-structs/methods.md)
 
@@ -186,9 +186,7 @@ public class SampleClass
 }
 ```
 
-Pour plus d'informations, voir :
-
-[Constructeurs](../classes-and-structs/constructors.md).
+Pour plus d’informations, consultez [Constructeurs](../classes-and-structs/constructors.md).
 
 #### <a name="Finalizers"></a> Finaliseurs
 
@@ -198,7 +196,7 @@ Pour plus d’informations sur les finaliseurs et l’opération de garbage coll
 
 #### <a name="Events"></a> Événements
 
-Les événements permettent à une classe ou un objet de notifier d'autres classes ou objets lorsqu'une situation intéressante se produit. La classe qui envoie (ou déclenche) l’événement est appelée *éditeur* et les classes qui reçoivent (ou gèrent) l’événement sont appelées *abonnés*. Pour plus d’informations sur les événements, leur déclenchement et leur gestion, consultez [Événements](../../../standard/events/index.md).
+Les événements permettent à une classe ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit. La classe qui envoie (ou déclenche) l’événement est appelée *éditeur* et les classes qui reçoivent (ou gèrent) l’événement sont appelées *abonnés*. Pour plus d’informations sur les événements, leur déclenchement et leur gestion, consultez [Événements](../../../standard/events/index.md).
 
 - Pour déclarer un événement dans une classe, utilisez le mot clé [event](../../language-reference/keywords/event.md).
 
@@ -268,7 +266,7 @@ SampleClass sampleObject = new SampleClass
     { FirstProperty = "A", SecondProperty = "B" };
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [new, opérateur](../../language-reference/operators/new-operator.md)
 
@@ -338,7 +336,7 @@ Pour spécifier qu'une classe peut être utilisée uniquement comme classe de ba
 public abstract class B { }
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [sealed](../../language-reference/keywords/sealed.md)
 
@@ -382,7 +380,7 @@ class SampleClass : ISampleInterface
 }
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 [Interfaces](../interfaces/index.md)
 
@@ -408,7 +406,7 @@ SampleGeneric<string> sampleObject = new SampleGeneric<string>();
 sampleObject.Field = "Sample string";
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [Génériques](../../../standard/generics/index.md)
 
@@ -446,7 +444,7 @@ class SampleClass
 }
 ```
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [Délégués](../delegates/index.md)
 

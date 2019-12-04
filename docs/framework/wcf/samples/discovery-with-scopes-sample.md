@@ -2,12 +2,12 @@
 title: Exemple Discovery with Scopes
 ms.date: 03/30/2017
 ms.assetid: 6a37a754-6b8c-4ebe-bdf2-d4f0520271d5
-ms.openlocfilehash: 9b65a348c943b07e813e3fe690f1364b77a94890
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 23991002a5236c491a9f74c7efe71ceb2bf51a37
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972005"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712062"
 ---
 # <a name="discovery-with-scopes-sample"></a>Exemple Discovery with Scopes
 
@@ -36,6 +36,6 @@ La méthode `FindCalculatorServiceAddress()` montre comment utiliser un <xref:Sy
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\DiscoveryWithScopes`

@@ -2,12 +2,12 @@
 title: 'Procédure pas à pas : accès au Web avec Async et Await'
 ms.date: 07/20/2015
 ms.assetid: 84fd047f-fab8-4d89-8ced-104fb7310a91
-ms.openlocfilehash: c13e592eb155d14c2e7cb2388a96925a7f1fa413
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 7f649f1f16da545c4587f0ed76b8f1a443ee8744
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349096"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715856"
 ---
 # <a name="walkthrough-accessing-the-web-by-using-async-and-await-visual-basic"></a>Procédure pas à pas : accès au web avec Async et Await (Visual Basic)
 
@@ -65,7 +65,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 4. Mettez en surbrillance le contrôle **TextBox** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :
 
-    - Affectez la valeur **à la propriété**Name`resultsTextBox`.
+    - Affectez la valeur `resultsTextBox` à la propriété **Name**.
 
     - Affectez la valeur 250 à la propriété **Height**.
 
@@ -75,7 +75,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 5. Mettez en surbrillance le contrôle **Button** et, dans la fenêtre **Propriétés**, définissez les valeurs suivantes :
 
-    - Affectez la valeur **à la propriété**Name`startButton`.
+    - Affectez la valeur `startButton` à la propriété **Name**.
 
     - Remplacez la valeur **Button** de la propriété **Content** par **Démarrer**.
 
@@ -213,7 +213,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 ## <a name="test-the-synchronous-solution"></a>Tester la solution synchrone
 
-1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .
+1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
     Une sortie semblable à la liste suivante doit apparaître :
 
@@ -276,7 +276,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
     - Remplacez le nom de la méthode appelée par <xref:System.IO.Stream.CopyToAsync%2A>.
 
-    - La méthode `CopyTo` ou `CopyToAsync` copie les octets dans son argument, `content`, et ne retourne pas de valeur significative. Dans la version synchrone, l'appel à `CopyTo` est une simple instruction qui ne retourne aucune valeur. La version asynchrone, `CopyToAsync`, retourne un <xref:System.Threading.Tasks.Task>. La tâche fonctionne comme Task(void) et permet à la méthode d’être attendue. Appliquez `Await` ou `await` à l'appel à `CopyToAsync`, comme le montre le code suivant.
+    - La méthode `CopyTo` ou `CopyToAsync` copie les octets dans son argument, `content`, et ne retourne pas de valeur significative. Dans la version synchrone, l'appel à `CopyTo` est une simple instruction qui ne retourne aucune valeur. La version asynchrone, `CopyToAsync`, retourne un <xref:System.Threading.Tasks.Task>. La tâche fonctionne comme Task(void) et permet à la méthode d'être attendue. Appliquez `Await` ou `await` à l'appel à `CopyToAsync`, comme le montre le code suivant.
 
         ```vb
         Await responseStream.CopyToAsync(content)
@@ -403,7 +403,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 ## <a name="test-the-asynchronous-solution"></a>Tester la solution asynchrone
 
-1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .
+1. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
 2. Une sortie semblable à la sortie de la solution synchrone doit apparaître. En revanche, observez les différences ci-après.
 
@@ -432,7 +432,7 @@ Visual Studio 2012 ou version ultérieure doit être installé sur votre ordina
 
 3. Supprimez ou commentez la méthode `GetURLContentsAsync` que vous avez écrite.
 
-4. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** .
+4. Appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer**.
 
     Le comportement de cette version du projet doit correspondre à celui décrit par la procédure « Pour tester la solution asynchrone » mais avec encore moins d'efforts de votre part.
 
@@ -661,10 +661,10 @@ End Class
 ## <a name="see-also"></a>Voir aussi
 
 - [Exemple Async : accès à la procédure web (C# et Visual Basic)](https://code.msdn.microsoft.com/Async-Sample-Accessing-the-9c10497f)
-- [Await (opérateur)](../../../../visual-basic/language-reference/operators/await-operator.md)
-- [Async](../../../../visual-basic/language-reference/modifiers/async.md)
-- [Programmation asynchrone avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/index.md)
-- [Types de retour Async (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/async-return-types.md)
-- [Programmation asynchrone basée sur les tâches](https://go.microsoft.com/fwlink/?LinkId=204847)
-- [Guide pratique : étendre la procédure pas à pas Async à l’aide de Task.WhenAll (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
-- [Guide pratique : effectuer plusieurs requêtes web en parallèle avec Async et Await (Visual Basic)](../../../../visual-basic/programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)
+- [Await (opérateur)](../../../language-reference/operators/await-operator.md)
+- [Async](../../../language-reference/modifiers/async.md)
+- [Programmation asynchrone avec Async et Await (Visual Basic)](index.md)
+- [Types de retour Async (Visual Basic)](async-return-types.md)
+- [Programmation asynchrone basée sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957)
+- [Guide pratique : étendre la procédure pas à pas Async à l’aide de Task.WhenAll (Visual Basic)](how-to-extend-the-async-walkthrough-by-using-task-whenall.md)
+- [Guide pratique : effectuer plusieurs requêtes web en parallèle avec Async et Await (Visual Basic)](how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md)

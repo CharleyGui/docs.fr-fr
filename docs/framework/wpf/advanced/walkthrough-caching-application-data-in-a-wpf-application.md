@@ -9,12 +9,12 @@ helpviewer_keywords:
 - caching [.NET Framework]
 - caching [WPF]
 ms.assetid: dac2c9ce-042b-4d23-91eb-28f584415cef
-ms.openlocfilehash: f0082bd99b154f87ab90bee7a89afdb8405f6623
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: 922d91466731b331cc409cc362c4ada2c287916a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920313"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715889"
 ---
 # <a name="walkthrough-caching-application-data-in-a-wpf-application"></a>Procédure pas à pas : mise en cache de données d'application dans une application WPF
 La mise en cache vous permet de stocker des données en mémoire pour y accéder rapidement. Quand vous accédez à nouveau aux données, les applications peuvent obtenir les données à partir du cache au lieu de devoir les récupérer à partir de la source d’origine. Cela peut améliorer les performances et la scalabilité. La mise en cache rend également les données disponibles quand la source de données est temporairement indisponible.
@@ -78,7 +78,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
      Le Concepteur WPF s’ouvre en mode **création** et affiche le fichier MainWindow. Xaml. Visual Studio crée le dossier **My Project** , le fichier application. xaml et le fichier MainWindow. Xaml.
 
 ## <a name="targeting-the-net-framework-and-adding-a-reference-to-the-caching-assemblies"></a>Ciblage de la .NET Framework et ajout d’une référence aux assemblys de mise en cache
- Par défaut, les applications WPF ciblent le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]. Pour utiliser l’espace de noms <xref:System.Runtime.Caching> dans une application WPF, l’application doit cibler le .NET Framework 4 (pas le [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)]) et doit inclure une référence à l’espace de noms.
+ Par défaut, les applications WPF ciblent le profil client .NET Framework 4. Pour utiliser l’espace de noms <xref:System.Runtime.Caching> dans une application WPF, l’application doit cibler le .NET Framework 4 (et non le .NET Framework 4 Client Profile) et doit inclure une référence à l’espace de noms.
 
  Par conséquent, l’étape suivante consiste à modifier le .NET Framework cible et à ajouter une référence à l’espace de noms <xref:System.Runtime.Caching>.
 
@@ -97,7 +97,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
      La boîte de dialogue **Paramètres avancés du compilateur** s’affiche.
 
-4. Dans la liste **Framework cible (toutes les configurations)** , sélectionnez .NET Framework 4. (Ne sélectionnez pas [!INCLUDE[net_client_v40_long](../../../../includes/net-client-v40-long-md.md)].)
+4. Dans la liste **Framework cible (toutes les configurations)** , sélectionnez .NET Framework 4. (Ne sélectionnez pas .NET Framework 4 Client Profile.)
 
 5. Cliquez sur **OK**.
 
@@ -284,7 +284,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 12. Dans le menu **générer** , cliquez sur **générer WPFCaching** pour générer votre projet.
 
 ## <a name="testing-caching-in-the-wpf-application"></a>Test de la mise en cache dans l’application WPF
- Vous pouvez maintenant tester l’application.
+ Vous pouvez à présent tester l’application.
 
 #### <a name="to-test-caching-in-the-wpf-application"></a>Pour tester la mise en cache dans l’application WPF
 

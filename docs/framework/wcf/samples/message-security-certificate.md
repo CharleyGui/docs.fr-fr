@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS Security
 ms.assetid: 909333b3-35ec-48f0-baff-9a50161896f6
-ms.openlocfilehash: bd84cb45de68ee86cb042e85695f4893c0ca6988
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 3382aeb59f3500f9371f39cc892bce5fac65791f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424128"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714810"
 ---
 # <a name="message-security-certificate"></a>Message Security Certificate
 Cet exemple montre comment implémenter une application qui utilise WS-Security avec l'authentification de certificat X.509 v3 pour le client et requiert l'authentification de serveur à l'aide du certificat X.509 v3 du serveur. Il utilise des paramètres par défaut de sorte que tous les messages d'application entre le client et le serveur soient signés et chiffrés. Cet exemple est basé sur [WSHttpBinding](../../../../docs/framework/wcf/samples/wshttpbinding.md) et se compose d’un programme de console client et d’une bibliothèque de service hébergée par Internet Information Services (IIS). Le service implémente un contrat qui définit un modèle de communication demande-réponse.  
@@ -276,7 +276,7 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant :  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant :  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\WS\MessageSecurity`  
   

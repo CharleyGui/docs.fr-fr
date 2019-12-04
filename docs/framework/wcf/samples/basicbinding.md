@@ -2,12 +2,12 @@
 title: BasicBinding
 ms.date: 03/30/2017
 ms.assetid: 86fbeb87-4d89-4b61-9577-867e0ac12945
-ms.openlocfilehash: e98b1254710ebac2305fd7dd5d39a146d749ff44
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: ddbe3e505028acf3abbadc9a741f66fdceca3784
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990139"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716056"
 ---
 # <a name="basicbinding"></a>BasicBinding
 
@@ -21,7 +21,7 @@ Cet exemple montre l'utilisation de `basicHttpBinding` qui fournit la communicat
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Basic\Http`
 
@@ -29,7 +29,7 @@ Cet exemple montre l'utilisation de `basicHttpBinding` qui fournit la communicat
 
 Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice.
 
-Pour utiliser la liaison de base avec le comportement par défaut, seul le nom de section de liaison est requis. Si vous souhaitez configurer la liaison de base et modifier certains de ses paramètres, vous devez définir une configuration de liaison. Le point de terminaison doit référencer la configuration de liaison par `bindingConfiguration` nom à l’aide`endpoint`de l’attribut de l’élément < >, comme indiqué dans l’exemple de code suivant.
+Pour utiliser la liaison de base avec le comportement par défaut, seul le nom de section de liaison est requis. Si vous souhaitez configurer la liaison de base et modifier certains de ses paramètres, vous devez définir une configuration de liaison. Le point de terminaison doit référencer la configuration de liaison par nom à l’aide de l’attribut `bindingConfiguration` de la <`endpoint`> élément, comme indiqué dans l’exemple de code suivant.
 
 ```xml
 <services>

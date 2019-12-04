@@ -2,12 +2,12 @@
 title: Streaming Feeds, exemple
 ms.date: 03/30/2017
 ms.assetid: 1f1228c0-daaa-45f0-b93e-c4a158113744
-ms.openlocfilehash: ede1dbb4f5c682b8182dda4888a9cbd373b95dd8
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9d40a07b81474a283a8edbeb7aca1aa7ab3993b2
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976373"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716645"
 ---
 # <a name="streaming-feeds-sample"></a>Streaming Feeds, exemple
 Cet exemple indique comment gérer des flux de syndication qui contiennent de grandes quantités d'éléments. Sur le serveur, l'exemple décrit comment différer la création d'objets <xref:System.ServiceModel.Syndication.SyndicationItem> individuels dans le flux jusqu'au moment précédant immédiatement l'écriture de l'élément dans le flux de données réseau.  
@@ -114,7 +114,7 @@ private IEnumerable<SyndicationItem> DelayReadItems(XmlReader reader, Syndicatio
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StreamingFeeds`  
   

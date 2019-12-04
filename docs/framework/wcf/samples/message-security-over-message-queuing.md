@@ -2,12 +2,12 @@
 title: Message Security over Message Queuing
 ms.date: 03/30/2017
 ms.assetid: 329aea9c-fa80-45c0-b2b9-e37fd7b85b38
-ms.openlocfilehash: d27ee01636e37ac8f09c4f7dc497f14bfac1b0f1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 03f4bd3f580163868920622a74ae4f34d7a1a97a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424122"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714798"
 ---
 # <a name="message-security-over-message-queuing"></a>Message Security over Message Queuing
 Cet exemple montre comment implémenter une application qui utilise WS-Security avec l'authentification de certificat X.509v3 pour le client et requiert l'authentification de serveur à l'aide du certificat X.509v3 du serveur via MSMQ. La sécurité de message est parfois plus souhaitable pour garantir que les messages du magasin MSMQ demeurent chiffrés et que l'application peut effectuer sa propre authentification du message.
@@ -82,10 +82,10 @@ Cet exemple montre comment implémenter une application qui utilise WS-Security 
     > [!NOTE]
     > Ce script ne supprime pas de certificat de service sur un client lors de l'exécution de cet exemple sur plusieurs ordinateurs. Si vous avez exécuté des exemples de Windows Communication Foundation (WCF) qui utilisent des certificats sur des ordinateurs, veillez à effacer les certificats de service qui ont été installés dans le magasin CurrentUser-TrustedPeople. Pour ce faire, utilisez la commande suivante : `certmgr -del -r CurrentUser -s TrustedPeople -c -n <Fully Qualified Server Machine Name>`, par exemple : `certmgr -del -r CurrentUser -s TrustedPeople -c -n server1.contoso.com`.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
  Cet exemple requiert l'installation et l'exécution de MSMQ.
 
-## <a name="demonstrates"></a>Démonstrations
+## <a name="demonstrates"></a>Montre
  Le client chiffre le message à l'aide de la clé publique du service et signe le message qui utilise son propre certificat. Le service qui lit le message depuis la file d'attente authentifie le certificat client avec le certificat de son magasin de personnes de confiance. Il déchiffre alors le message et distribue le message à l'opération de service.
 
  Étant donné que le message Windows Communication Foundation (WCF) est transporté comme une charge dans le corps du message MSMQ, le corps reste chiffré dans le magasin MSMQ. Cela protège le message contre toute divulgation non désirée du message. Notez que MSMQ lui-même ne sait pas si le message qu'il transporte est chiffré.
@@ -323,7 +323,7 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
     makecert.exe -sr LocalMachine -ss MY -a sha1 -n CN=%SERVER_NAME% -sky exchange -pe
     ```
 
-     La variable %SERVER_NAME% spécifie le nom du serveur. Le certificat est stocké dans le magasin LocalMachine. Si le fichier de commandes d’installation est exécuté avec un argument service (par exemple, `setup.bat service`),% SERVER_NAME% contient le nom de domaine complet de l’ordinateur. Dans le cas contraire, la valeur par défaut est localhost
+     La variable %SERVER_NAME% spécifie le nom du serveur. Le certificat est stocké dans le magasin LocalMachine. Si le fichier de commandes d’installation est exécuté avec un argument service (par exemple, `setup.bat service`), le% SERVER_NAME% contient le nom de domaine complet de l’ordinateur. Dans le cas contraire, la valeur par défaut est localhost
 
 - Installation du certificat de serveur dans le magasin de certificats approuvés du client.
 
@@ -341,6 +341,6 @@ Processing Purchase Order: 6536e097-da96-4773-9da3-77bab4345b5d
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\MessageSecurity`  

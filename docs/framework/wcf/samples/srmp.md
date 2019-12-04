@@ -2,12 +2,12 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 51b0e0513ba20bf7aeae461dee6ac864f1d55897
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 0ee11b67dcd9c7251df17dc7523dc20765e157c5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417099"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716690"
 ---
 # <a name="srmp"></a>SRMP
 Cet exemple illustre comment établir une communication en file d'attente avec transaction à l'aide de MSMQ (Message Queuing) sur HTTP.  
@@ -34,10 +34,10 @@ Cet exemple illustre comment établir une communication en file d'attente avec t
   
 8. Exécutez le client. Assurez-vous de remplacer les occurrences de localhost de l'adresse de point de terminaison par le nom de l'ordinateur ou l'adresse IP appropriée. Le client envoie un message, puis s'arrête.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  Pour exécuter cet exemple, le protocole MSMQ ainsi que les services IIS doivent être installés sur l'ordinateur du client et celui du service.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  L’exemple montre comment envoyer des messages de mise en file d’attente WCF à l’aide de MSMQ sur HTTP. Ce type de transmission est également appelé messagerie SRMP. Lorsqu'un message en file d'attente est envoyé, le protocole MSMQ sur l'ordinateur expéditeur transfère les messages vers le gestionnaire de files d'attente de réception via le transport TCP ou HTTP. Lorsque l'utilisateur sélectionne SRMP, cela signifie que le transport HTTP sera utilisé pour le transfert des messages vers la file d'attente. Le protocole SRMP Secure permet d'utiliser HTTPS.  
   
 ## <a name="example"></a>Exemple  
@@ -92,6 +92,6 @@ OrderDetails
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\SRMP`  

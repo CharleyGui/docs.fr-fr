@@ -2,12 +2,12 @@
 title: Exemple Discovery Security
 ms.date: 03/30/2017
 ms.assetid: b8db01f4-b4a1-43fe-8e31-26d4e9304a65
-ms.openlocfilehash: dfc0dfcd3b4d814a158b328ef202d5438e583a8c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8469b69baabcd2ba9185956c276554b4bb929d85
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039813"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712053"
 ---
 # <a name="discovery-security-sample"></a>Exemple Discovery Security
 La spécification Discovery n'exige pas que les points de terminaison participant au processus de découverte soient sécurisés. L'ajout de la sécurité aux messages de découverte atténue divers types d'attaques (altération de messages, déni de service, relecture, usurpation). Cet exemple implémente des canaux personnalisés qui calculent et vérifient des signatures de message utilisant le format de signature compact (décrit dans la section 8.2 de la spécification WS-Discovery). L’exemple prend en charge la [spécification de découverte 2005](https://go.microsoft.com/fwlink/?LinkId=177912) et la [version 1,1](https://go.microsoft.com/fwlink/?LinkId=179677).  
@@ -37,7 +37,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
 > [!NOTE]
 > Le `PrefixList` a été ajouté dans le protocole Discovery version 2008.  
   
- Pour calculer la signature, l’exemple identifie les éléments de signature développés. Une signature XML (`SignedInfo`) est créée, à l'aide du préfixe d'espace de noms `ds`, comme requis par la spécification WS-Discovery. Le corps et tous les en-têtes des espaces de noms de découverte et d'adressage sont référencés dans la signature et ne peuvent donc pas être falsifiés. Chaque élément référencé est transformé à l’aide de la canonisation exclusive http://www.w3.org/2001/10/xml-exc-c14n# (), puis une valeur Digest SHA-1 est calculée (http://www.w3.org/2000/09/xmldsig#sha1 ). En fonction de tous les éléments référencés et de leurs valeurs de synthèse, la valeur de la signature est calculée http://www.w3.org/2000/09/xmldsig#rsa-sha1 à l’aide de l’algorithme RSA ().  
+ Pour calculer la signature, l’exemple identifie les éléments de signature développés. Une signature XML (`SignedInfo`) est créée, à l'aide du préfixe d'espace de noms `ds`, comme requis par la spécification WS-Discovery. Le corps et tous les en-têtes des espaces de noms de découverte et d'adressage sont référencés dans la signature et ne peuvent donc pas être falsifiés. Chaque élément référencé est transformé à l’aide de la canonisation exclusive (http://www.w3.org/2001/10/xml-exc-c14n# ), puis une valeur Digest SHA-1 est calculée (http://www.w3.org/2000/09/xmldsig#sha1 ). En fonction de tous les éléments référencés et de leurs valeurs de synthèse, la valeur de la signature est calculée à l’aide de l’algorithme RSA (http://www.w3.org/2000/09/xmldsig#rsa-sha1 ).  
   
  Les messages sont signés avec un certificat spécifié par le client. L’emplacement et le nom du magasin, ainsi que le nom de sujet du certificat doivent être spécifiés au moment de la création de l’élément de liaison. Le `KeyId` de la signature compacte représente l'identificateur de clé du jeton de signature et constitue l'identificateur de la clé du sujet (SKI, Subject Key Identifier) du jeton de signature ou, si le SKI n'existe pas, un hachage SHA-1 de la clé publique du jeton de signature.  
   
@@ -47,13 +47,13 @@ La spécification Discovery n'exige pas que les points de terminaison participan
 ## <a name="sample-details"></a>Détails de l'exemple  
  L'exemple comporte une bibliothèque et 4 applications console :  
   
-- **DiscoverySecurityChannels**: Bibliothèque qui expose la liaison sécurisée. Cette bibliothèque calcule et vérifie la signature compacte des messages sortants/entrants.  
+- **DiscoverySecurityChannels**: bibliothèque qui expose la liaison sécurisée. Cette bibliothèque calcule et vérifie la signature compacte des messages sortants/entrants.  
   
-- **Service** : Service exposant le contrat ICalculatorService, auto-hébergé. Ce service est marqué comme étant détectable. L'utilisateur spécifie les informations du certificat utilisé pour signer des messages en spécifiant l'emplacement et le nom du magasin, ainsi que le nom du sujet ou autre identificateur unique pour le certificat, et le magasin où se trouvent les certificats clients (certificats utilisés pour vérifier la signature des messages entrants). Sur la base de ces informations, un UdpDiscoveryEndpoint avec sécurité accrue est généré et utilisé.  
+- **Service**: service exposant le contrat ICalculatorService, auto-hébergé. Ce service est marqué comme étant détectable. L'utilisateur spécifie les informations du certificat utilisé pour signer des messages en spécifiant l'emplacement et le nom du magasin, ainsi que le nom du sujet ou autre identificateur unique pour le certificat, et le magasin où se trouvent les certificats clients (certificats utilisés pour vérifier la signature des messages entrants). Sur la base de ces informations, un UdpDiscoveryEndpoint avec sécurité accrue est généré et utilisé.  
   
-- **Client**: Cette classe tente de découvrir un ICalculatorService et d’appeler des méthodes sur le service. Là encore, un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> avec sécurité accrue est généré et utilisé pour signer et vérifier les messages.  
+- **Client**: cette classe tente de découvrir un ICalculatorService et d’appeler des méthodes sur le service. Là encore, un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> avec sécurité accrue est généré et utilisé pour signer et vérifier les messages.  
   
-- **AnnouncementListener**: Service auto-hébergé qui écoute les annonces en ligne et hors ligne et utilise le point de terminaison d’annonce sécurisé.  
+- **AnnouncementListener**: service auto-hébergé qui écoute les annonces en ligne et hors connexion et utilise le point de terminaison d’annonce sécurisé.  
   
 > [!NOTE]
 > Si Setup.bat est exécuté plusieurs fois, des certificats sont dupliqués et le gestionnaire de certificats vous invite à choisir le certificat à ajouter. Dans ce cas, Setup.bat doit être abandonné et Cleanup.bat doit être appelé, car les doublons ont déjà été créés. Cleanup.bat vous invite également à choisir le certificat à supprimer. Sélectionnez un certificat dans la liste et continuez à exécuter Cleanup.bat jusqu'à ce qu'il ne reste aucun certificat.  
@@ -62,7 +62,7 @@ La spécification Discovery n'exige pas que les points de terminaison participan
   
 1. Exécutez le script Setup. bat à partir d’un Invite de commandes développeur pour Visual Studio. L'exemple utilise des certificats pour signer et vérifier des messages. Le script crée les certificats à l'aide de Makecert.exe, puis les installe à l'aide de Certmgr.exe. Le script doit être exécuté avec des privilèges d'administrateur.  
   
-2. Pour générer et exécuter l’exemple, ouvrez le fichier Security. sln dans Visual Studio et choisissez **régénérer tout**. Mettez à jour les propriétés de la solution pour démarrer plusieurs projets: sélectionnez **Démarrer** pour tous les projets à l’exception de DiscoverySecureChannels. Exécutez la solution normalement.  
+2. Pour générer et exécuter l’exemple, ouvrez le fichier Security. sln dans Visual Studio et choisissez **régénérer tout**. Mettez à jour les propriétés de la solution pour démarrer plusieurs projets : sélectionnez **Démarrer** pour tous les projets à l’exception de DiscoverySecureChannels. Exécutez la solution normalement.  
   
 3. Lorsque vous en avez terminé avec l'exemple, exécutez le script Cleanup.bat, qui supprime les certificats créés pour cet exemple.  
   
@@ -71,6 +71,6 @@ La spécification Discovery n'exige pas que les points de terminaison participan
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DiscoveryScenario`  

@@ -2,12 +2,12 @@
 title: Dead Letter Queues
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: c8fea29fc420ea6bb922c93ea08e0e23d5bb941d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 70007289e457588e94128a573ced4b28e238acf4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928664"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710872"
 ---
 # <a name="dead-letter-queues"></a>Dead Letter Queues
 Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -26,11 +26,11 @@ Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être r
 
 - La propriété <xref:System.ServiceModel.MsmqBindingBase.DeadLetterQueue%2A> permet d'exprimer le type de file d'attente de lettres mortes requis par le client. L'énumération a les valeurs suivantes :
 
-- `None`: Aucune file d’attente de lettres mortes n’est requise par le client.
+- `None` : aucune file d'attente de lettres mortes n'est requise par le client.
 
-- `System`: La file d’attente de lettres mortes du système est utilisée pour stocker les messages morts. La file d'attente de lettres mortes du système est partagée par toutes les applications exécutées sur l'ordinateur.
+- `System`  la file d'attente de lettres mortes du système est utilisée pour stocker les lettres mortes. La file d'attente de lettres mortes du système est partagée par toutes les applications exécutées sur l'ordinateur.
 
-- `Custom`: Une file d’attente de lettres mortes personnalisée <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> spécifiée à l’aide de la propriété est utilisée pour stocker les messages morts. Cette fonctionnalité est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
+- `Custom` : une file d'attente de lettres mortes personnalisée spécifiée à l'aide de la propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> est utilisée pour stocker des messages morts. Cette fonctionnalité est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
 
 - La propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> permet d'exprimer la file d'attente spécifique à utiliser comme file d'attente de lettres mortes. Elle est disponible uniquement dans [!INCLUDE[wv](../../../../includes/wv-md.md)].
 
@@ -171,7 +171,7 @@ public void SubmitPurchaseOrder(PurchaseOrder po)
 
  Les messages dans la file d'attente de lettres mortes sont des messages adressés au service qui est le traite le message. Par conséquent, lorsque le service de message de lettres mortes lit des messages à partir de la file d’attente, la couche de canal Windows Communication Foundation (WCF) recherche l’incompatibilité dans les points de terminaison et ne distribue pas le message. Dans ce cas, le message est adressé au service de traitement des commandes mais est reçu par le service de lettres mortes. Pour recevoir un message adressé à un point de terminaison différent, un filtre d'adresse pouvant correspondre à n'importe quelle adresse est spécifié dans `ServiceBehavior`. Cela est requis pour traiter correctement les messages lus à partir de la file d'attente de lettres mortes.
 
- Dans cet exemple, le service de message de lettres mortes renvoie le message si la raison de l'échec est que le message a expiré. Pour toutes les autres raisons, il affiche l'échec de la remise, comme illustré dans l'exemple de code suivant :
+ Dans cet exemple, le service de message de lettres mortes renvoie le message si la raison de l’échec est que le message a expiré. Pour toutes les autres raisons, il affiche l’échec de la remise, comme indiqué dans l’exemple de code suivant :
 
 ```csharp
 // Service class that implements the service contract.
@@ -349,14 +349,14 @@ Processing Purchase Order: 97897eff-f926-4057-a32b-af8fb11b9bf9
     > [!NOTE]
     > L'affectation de `security mode` à `None` revient à affecter `MsmqAuthenticationMode` aux modes de sécurité `MsmqProtectionLevel`, `Message` et `None`.
 
-## <a name="comments"></a>Commentaires
- Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur qui ne fait pas partie d’un domaine, vous recevez l’erreur suivante : « Le certificat Message Queuing interne de l’utilisateur n’existe pas ».
+## <a name="comments"></a>Comments
+ Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par défaut. Les propriétés `MsmqAuthenticationMode` et `MsmqProtectionLevel` déterminent toutes deux le type de sécurité du transport. Par défaut, le mode d'authentification a la valeur `Windows` et le niveau de protection a la valeur `Sign`. Pour que MSMQ fournisse la fonctionnalité d’authentification et de signature, il doit faire partie d’un domaine. Si vous exécutez cet exemple sur un ordinateur ne faisant pas partie d'un domaine, vous recevez l'erreur suivante : "Le certificat Message Queuing interne pour l'utilisateur n'existe pas."
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\DeadLetter`  

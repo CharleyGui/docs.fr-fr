@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : créer un modèle d’activité personnalisé'
+title: "Procédure : créer un modèle d'activité personnalisé"
 ms.date: 03/30/2017
 ms.assetid: 6760a5cc-6eb8-465f-b4fa-f89b39539429
-ms.openlocfilehash: 4ec84658dbe3039a4d7d714f8da183e6a5eb6ca4
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f910d1367c941dbc319421d402cae8f4194872e5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989713"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715252"
 ---
-# <a name="how-to-create-a-custom-activity-template"></a>Procédure : créer un modèle d’activité personnalisé
+# <a name="how-to-create-a-custom-activity-template"></a>Procédure : créer un modèle d'activité personnalisé
 
-Les modèles d'activité personnalisés sont utilisés pour personnaliser la configuration des activités, parmi lesquelles les activités composites personnalisées, afin que les utilisateurs n'aient pas besoin de créer individuellement chaque activité et de configurer manuellement leurs propriétés et les autres paramètres. Ces modèles personnalisés peuvent être rendus disponibles dans la **boîte à outils** sur [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] ou à partir d’un concepteur réhébergé, à partir duquel les utilisateurs peuvent les faire glisser sur l’aire de conception préconfigurée. [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]fournit de bons exemples de ces modèles : le [Concepteur](/visualstudio/workflow-designer/sendandreceivereply-template-designer) de modèles SendAndReceiveReply et le [Concepteur de modèles ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) dans la catégorie des [concepteurs d’activités de messagerie](/visualstudio/workflow-designer/messaging-activity-designers) .
+Les modèles d'activité personnalisés sont utilisés pour personnaliser la configuration des activités, parmi lesquelles les activités composites personnalisées, afin que les utilisateurs n'aient pas besoin de créer individuellement chaque activité et de configurer manuellement leurs propriétés et les autres paramètres. Ces modèles personnalisés peuvent être rendus disponibles dans la **boîte à outils** de Windows concepteur de flux de travail ou d’un concepteur réhébergé, à partir duquel les utilisateurs peuvent les faire glisser sur l’aire de conception préconfigurée. Concepteur de flux de travail est fourni avec de bons exemples de ces modèles : le concepteur de modèles [SendAndReceiveReply](/visualstudio/workflow-designer/sendandreceivereply-template-designer) et le [Concepteur de modèles ReceiveAndSendReply](/visualstudio/workflow-designer/receiveandsendreply-template-designer) dans la catégorie des [concepteurs d’activités de messagerie](/visualstudio/workflow-designer/messaging-activity-designers) .
 
- La première procédure de cette rubrique décrit comment créer un modèle d’activité personnalisé pour une activité **delay** et la deuxième procédure décrit brièvement comment le rendre disponible dans un [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] pour vérifier que le modèle personnalisé fonctionne.
+ La première procédure de cette rubrique décrit comment créer un modèle d’activité personnalisé pour une activité **delay** et la deuxième procédure décrit brièvement comment le rendre disponible dans une concepteur de flux de travail pour vérifier que le modèle personnalisé fonctionne.
 
  Les modèles d'activité personnalisés doivent implémenter l'<xref:System.Activities.Presentation.IActivityTemplateFactory>. L'interface dispose d'une seule méthode <xref:System.Activities.Presentation.IActivityTemplateFactory.Create%2A> avec laquelle vous pouvez créer et configurer les instances d'activité utilisées dans le modèle.
 
@@ -76,7 +76,7 @@ Les modèles d'activité personnalisés sont utilisés pour personnaliser la con
 
 1. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur la solution DelayActivityTemplate et choisissez **Ajouter** , puis **nouveau projet** pour ouvrir la boîte de dialogue **Ajouter un nouveau projet** .
 
-2. Sélectionnez le modèle **application console de workflow** , nommez- `CustomActivityTemplateApp`le, puis cliquez sur **OK**.
+2. Sélectionnez le modèle **application console de workflow** , nommez-le `CustomActivityTemplateApp`, puis cliquez sur **OK**.
 
 3. Cliquez avec le bouton droit sur le répertoire References du projet CustomActivityTemplateApp dans **Explorateur de solutions** , puis choisissez **Ajouter une référence** pour ouvrir la boîte de dialogue **Ajouter une référence** .
 
@@ -90,7 +90,7 @@ Les modèles d'activité personnalisés sont utilisés pour personnaliser la con
 
 8. Ouvrez le fichier Workflow1. xaml et ouvrez la **boîte à outils**.
 
-9. Recherchez le modèle **MyDelayActivity** dans la catégorie **DelayActivityTemplate** . Faites-le glisser vers l'aire de conception. Dans la fenêtre **Propriétés** , vérifiez que `Duration` la propriété a été définie sur 10 secondes.
+9. Recherchez le modèle **MyDelayActivity** dans la catégorie **DelayActivityTemplate** . Faites-le glisser vers l'aire de conception. Dans la fenêtre **Propriétés** , vérifiez que la propriété `Duration` a été définie sur 10 secondes.
 
 ## <a name="example"></a>Exemple
  Le fichier MyDelayActivity.cs doit contenir le code suivant.

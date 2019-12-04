@@ -2,12 +2,12 @@
 title: Extending Control Over Error Handling and Reporting
 ms.date: 03/30/2017
 ms.assetid: 45f996a7-fa00-45cb-9d6f-b368f5778aaa
-ms.openlocfilehash: abb747a0deecb7e07776d9cd6ef5bc3775b1be9d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b7a3e0fa9b0799d98ea3df8df760e26851febf90
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281694"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716412"
 ---
 # <a name="extending-control-over-error-handling-and-reporting"></a>Extending Control Over Error Handling and Reporting
 Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et le rapport d’erreurs dans un service Windows Communication Foundation (WCF) à l’aide de l’interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) avec un code supplémentaire ajouté au service pour gérer les erreurs. Le client force plusieurs conditions d'erreur. Le service intercepte les erreurs et les enregistre dans un fichier.  
@@ -19,7 +19,7 @@ Cet exemple montre comment étendre le contrôle sur la gestion des erreurs et l
   
  Dans cet exemple, le type `CalculatorErrorHandler` implémente l'interface <xref:System.ServiceModel.Dispatcher.IErrorHandler>. Dans la section  
   
- <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A> méthode, le `CalculatorErrorHandler` écrit un journal de l’erreur dans un fichier texte Error. txt dans c:\Logs. Notez que l'exemple enregistre l'erreur et ne la supprime pas, ce qui permet de la signaler au client.  
+ méthode <xref:System.ServiceModel.Dispatcher.IErrorHandler.HandleError%2A>, le `CalculatorErrorHandler` écrit l'erreur dans un fichier texte Error.txt dans c:\logs. Notez que l'exemple enregistre l'erreur et ne la supprime pas, ce qui permet de la signaler au client.  
   
 ```csharp
 public class CalculatorErrorHandler : IErrorHandler
@@ -154,6 +154,6 @@ Fault: Reason = Invalid Argument: The argument must be greater than zero.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\ErrorHandling`  

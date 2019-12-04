@@ -1,23 +1,23 @@
 ---
-title: Suppression de l’état d’affichage du concepteur ajoute à un fichier XAML - WF
+title: Suppression de l’état d’affichage que le concepteur ajoute à un fichier XAML-WF
 ms.date: 03/30/2017
 ms.assetid: a801ce22-8699-483c-a392-7bb3834aae4f
-ms.openlocfilehash: af57f838ea12d7199268988bf01baa0b61447650
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: f431275140e821aa5ec4d2235322f06be87d5ee2
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637857"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715619"
 ---
-# <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Suppression de l’état d’affichage du concepteur ajoute à un fichier XAML
+# <a name="removing-the-view-state-the-designer-adds-to-an-xaml-file"></a>Suppression de l’état d’affichage que le concepteur ajoute à un fichier XAML
 
-Cet exemple montre comment créer une classe qui dérive de <xref:System.Xaml.XamlWriter> et supprime l'état d'affichage d'un fichier XAML. [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] écrit des informations dans le document XAML, qui est désigné sous le nom d'état d'affichage. L'état d'affichage fait référence aux informations qui sont requises au moment du design, telles que le positionnement, et qui ne le sont pas au moment de l'exécution. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] insère ces informations dans le document XAML pendant qu'il est modifié. [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)] écrit l'état d'affichage dans le fichier XAML à l'aide de l'attribut `mc:Ignorable`, ces informations ne sont pas chargées lorsque le runtime charge le fichier XAML. Cet exemple montre comment créer une classe qui supprime ces informations d'état d'affichage lors du traitement des nœuds XAML.
+Cet exemple montre comment créer une classe qui dérive de <xref:System.Xaml.XamlWriter> et supprime l'état d'affichage d'un fichier XAML. Windows Concepteur de flux de travail écrit des informations dans le document XAML, connu sous le nom d’état d’affichage. L'état d'affichage fait référence aux informations qui sont requises au moment du design, telles que le positionnement, et qui ne le sont pas au moment de l'exécution. Concepteur de flux de travail insère ces informations dans le document XAML au fur et à mesure de leur modification. Concepteur de flux de travail écrit l’état d’affichage dans le fichier XAML avec l’attribut `mc:Ignorable`, ces informations ne sont pas chargées lorsque le runtime charge le fichier XAML. Cet exemple montre comment créer une classe qui supprime ces informations d'état d'affichage lors du traitement des nœuds XAML.
 
 ## <a name="discussion"></a>Discussion
 
 Cet exemple montre comment créer un writer personnalisé.
 
-Pour générer un writer XAML personnalisé, créez une classe qui hérite de <xref:System.Xaml.XamlWriter>. Comme les writers XAML sont souvent imbriqués, il est courant pour suivre un writer XAML « interne ». Ces « interne » enregistreurs peuvent être considérés comme la référence à la pile restante de writers XAML, ce qui vous permet d’avoir plusieurs points d’entrée pour travailler, puis déléguer le traitement au reste de la pile.
+Pour générer un writer XAML personnalisé, créez une classe qui hérite de <xref:System.Xaml.XamlWriter>. Comme les writers XAML sont souvent imbriqués, il est courant d’effectuer le suivi d’un writer XAML « interne ». Ces Writers « internes » peuvent être considérés comme la référence à la pile restante des writers XAML, ce qui vous permet d’avoir plusieurs points d’entrée pour travailler, puis de déléguer le traitement au reste de la pile.
 
 Dans cet exemple, quelques points sont intéressants. L'un consiste à déterminer si l'élément qui est écrit provient de l'espace de noms d'un concepteur. Notez que cela supprime également l'utilisation d'autres types de l'espace de noms du concepteur dans un workflow.
 
@@ -87,7 +87,7 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
 
 ## <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2010, ouvrez le fichier solution ViewStateCleaningWriter.sln.
+1. À l’aide de Visual Studio 2010, ouvrez le fichier solution ViewStateCleaningWriter. sln.
 
 2. Ouvrez une invite de commandes et naviguez jusqu'au répertoire où ViewStageCleaningWriter.exe est généré.
 
@@ -99,7 +99,7 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
    ViewStateCleaningWriter.exe [input file] [output file]
    ```
 
-   Cette action génère un fichier XAML à \[outfile], qui a toutes ses informations d’état de vue supprimées.
+   Cela génère un fichier XAML vers \[fichier out], dont toutes les informations d’état d’affichage sont supprimées.
 
 > [!NOTE]
 > Pour un workflow <xref:System.Activities.Statements.Sequence>, plusieurs indicateurs de virtualisation sont supprimés. Le concepteur doit donc recalculer la disposition lors du chargement suivant. Lorsque vous utilisez cet exemple pour un <xref:System.Activities.Statements.Flowchart>, toutes les informations de routage de positionnement et de ligne sont supprimées et, lors du chargement suivant dans le concepteur, toutes les activités sont empilées sur le côté gauche de l'écran.
@@ -121,6 +121,6 @@ XamlServices.Save(new ViewStateCleaningWriter(ActivityXamlServices.CreateBuilder
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ViewStateCleaningWriter`

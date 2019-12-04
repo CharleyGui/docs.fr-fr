@@ -2,12 +2,12 @@
 title: Loosely-Typed Extensions, exemple
 ms.date: 03/30/2017
 ms.assetid: 56ce265b-8163-4b85-98e7-7692a12c4357
-ms.openlocfilehash: 6cfdef1d083a25999f62c23667c9c6ea00326dca
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: f3beed9b9ca1dd6b1d4bb32078e6cd35a636501c
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989789"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714880"
 ---
 # <a name="loosely-typed-extensions-sample"></a>Loosely-Typed Extensions, exemple
 Le modèle objet de syndication fournit une prise en charge complète pour l’utilisation des données d’extension : informations présentes dans la représentation XML d’un flux de syndication, mais qui ne sont pas exposées explicitement par les classes telles que <xref:System.ServiceModel.Syndication.SyndicationFeed> et <xref:System.ServiceModel.Syndication.SyndicationItem>. Cet exemple présente les techniques de base d’utilisation des données d’extension.  
@@ -56,13 +56,13 @@ w.w3.org/2001/XMLSchema" xmlns="">
   
 - Attribut `myAttribute` de l'élément `<feed>`.  
   
-- `<simpleString>`appartient.  
+- Élément `<simpleString>`.  
   
-- `<DataContractExtension>`appartient.  
+- Élément `<DataContractExtension>`.  
   
-- `<XmlSerializerExtension>`appartient.  
+- Élément `<XmlSerializerExtension>`.  
   
-- `<xElementExtension>`appartient.  
+- Élément `<xElementExtension>`.  
   
 ## <a name="writing-extension-data"></a>Écriture des données d’extension  
  Les extensions d’attribut sont créées en ajoutant des entrées à la collection <xref:System.ServiceModel.Syndication.SyndicationFeed.AttributeExtensions%2A>, comme l’illustre l’exemple de code suivant.  
@@ -151,7 +151,7 @@ foreach (SyndicationElementExtension extension in feed2.ElementExtensions.Where<
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Syndication\LooselyTypedExtensions`  
   

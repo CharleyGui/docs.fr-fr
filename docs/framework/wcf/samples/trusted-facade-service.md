@@ -2,12 +2,12 @@
 title: Trusted Facade Service
 ms.date: 03/30/2017
 ms.assetid: c34d1a8f-e45e-440b-a201-d143abdbac38
-ms.openlocfilehash: f49d0ee2a8f58e12ba8e250e2eacf4012c30cec8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 40264ee018d3c09d86e1bcd0b8cc96c0610219f9
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424256"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711888"
 ---
 # <a name="trusted-facade-service"></a>Trusted Facade Service
 Cet exemple de scénario montre comment transmettre les informations d’identité d’un appelant d’un service à un autre à l’aide de l’infrastructure de sécurité Windows Communication Foundation (WCF).  
@@ -287,6 +287,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\TrustedFacade`  

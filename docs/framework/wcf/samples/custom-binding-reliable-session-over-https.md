@@ -2,12 +2,12 @@
 title: Custom Binding Reliable Session over HTTPS
 ms.date: 03/30/2017
 ms.assetid: 16aaa80d-3ffe-47c4-8b16-ec65c4d25f8d
-ms.openlocfilehash: d4845a1058f42dab35919eb7bb83b16b45e42ff3
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b83f7af2cd4d0518454a5147904c21c9ffbbbf21
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990027"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710981"
 ---
 # <a name="custom-binding-reliable-session-over-https"></a>Custom Binding Reliable Session over HTTPS
 Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des sessions fiables. Les sessions fiables implémentent le protocole WS-Reliable Messaging. Vous pouvez obtenir une session fiable sécurisée en composant WS-Security sur des sessions fiables. Mais parfois, vous pouvez choisir d'utiliser à la place la sécurité de transport HTTP avec SSL.  
@@ -17,14 +17,14 @@ Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des se
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\ReliableSessionOverHttps`  
   
 ## <a name="sample-details"></a>Détails de l'exemple  
  SSL garantit que les paquets eux-mêmes sont sécurisés. Il est important de noter que cela diffère de la sécurisation de la session fiable à l'aide de WS-Secure Conversation.  
   
- Pour utiliser la session fiable sur HTTPS, vous devez créer une liaison personnalisée. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Une liaison personnalisée est créée à l’aide de l’élément de liaison de session fiable et du [ \<> httpsTransport](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md). La configuration suivante est celle de la liaison personnalisée.  
+ Pour utiliser la session fiable sur HTTPS, vous devez créer une liaison personnalisée. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Une liaison personnalisée est créée à l’aide de l’élément de liaison de session fiable et du [\<httpsTransport >](../../../../docs/framework/configure-apps/file-schema/wcf/httpstransport.md). La configuration suivante est celle de la liaison personnalisée.  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8" ?>  
@@ -102,7 +102,7 @@ Cet exemple illustre l'utilisation de la sécurité de transport SSL avec des se
   
  L'adresse spécifiée utilise le modèle https://.  
   
- Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert. exe, une alerte de sécurité s’affiche lorsque vous essayez d’accéder à une adresse https://localhost/servicemodelsamples/service.svc https : par exemple, à partir de votre navigateur. Pour permettre au client Windows Communication Foundation (WCF) d’utiliser un certificat de test sur place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
+ Étant donné que le certificat utilisé dans cet exemple est un certificat de test créé avec Makecert. exe, une alerte de sécurité s’affiche lorsque vous essayez d’accéder à une adresse https :, par exemple https://localhost/servicemodelsamples/service.svc, à partir de votre navigateur. Pour permettre au client Windows Communication Foundation (WCF) d’utiliser un certificat de test sur place, du code supplémentaire a été ajouté au client pour supprimer l’alerte de sécurité. Ce code, et la classe qui l'accompagne, n'est pas requis lors de l'utilisation de certificats de production.  
 
 ```csharp
 // This code is required only for test certificates like those created by Makecert.exe.  

@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 4fe16475e18eb88e88fb33d30508f9ef5c9f2cd5
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: b3cdc8d4aeaf85765b51543069a5f279e84f8623
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552242"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711205"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -40,7 +40,7 @@ Cette intégration est fournie, en partie, par les contributeurs des projets [Om
 - Collections, comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
 - Types d’utilitaires, comme <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> et <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Types de données, comme <xref:System.Data.DataSet?displayProperty=nameWithType> et [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
-- Types haute performance, tels que les <xref:System.Numerics.Vector?displayProperty=nameWithType> et les [pipelines](https://devblogs.microsoft.com/dotnet/system-io-pipelines-high-performance-io-in-net/).
+- Types haute performance, tels que les <xref:System.Numerics.Vector?displayProperty=nameWithType> et les [pipelines](../standard/io/pipelines.md).
 
 .NET Core assure la compatibilité avec les API .NET Framework et Mono en implémentant la spécification [.NET Standard](../standard/net-standard.md).
 

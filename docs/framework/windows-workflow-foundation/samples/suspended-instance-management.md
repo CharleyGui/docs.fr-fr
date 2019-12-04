@@ -2,20 +2,20 @@
 title: Gestion de l'instance interrompue
 ms.date: 03/30/2017
 ms.assetid: f5ca3faa-ba1f-4857-b92c-d927e4b29598
-ms.openlocfilehash: 7a2f36ac2c127376eea56601f54aa5e571d66a55
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3f1f4f8edcbe0e05067d3ca739ef3d5f4fe4d798
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037890"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715942"
 ---
 # <a name="suspended-instance-management"></a>Gestion de l'instance interrompue
 Cet exemple montre comment gérer des instances de workflow qui ont été interrompues.  L'action par défaut pour <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> est `AbandonAndSuspend`. Cela signifie que, par défaut, les exceptions non gérées levées à partir d'une instance de workflow hébergée dans le <xref:System.ServiceModel.WorkflowServiceHost> provoqueront la suppression de l'instance de la mémoire (abandon), et la version durable/persistante de l'instance sera marquée comme interrompue. Une instance de workflow interrompue ne sera pas en mesure de fonctionner tant que l'interruption n'a pas été annulée.
 
  L'exemple montre comment un utilitaire en ligne de commande peut être implémenté pour rechercher des instances interrompues et comment permettre à l'utilisateur de reprendre ou de terminer l'instance. Dans cet exemple, un service de workflow lève une exception intentionnellement, ce qui provoque son interruption. L'utilitaire en ligne de command peut ensuite être utilisé pour rechercher l'instance et, par la suite, la reprendre ou la terminer.
 
-## <a name="demonstrates"></a>Démonstrations
- <xref:System.ServiceModel.WorkflowServiceHost>avec <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> et<xref:System.ServiceModel.Activities.WorkflowControlEndpoint> en Windows Workflow Foundation (WF).
+## <a name="demonstrates"></a>Montre
+ <xref:System.ServiceModel.WorkflowServiceHost> avec <xref:System.ServiceModel.Activities.Description.WorkflowUnhandledExceptionBehavior> et <xref:System.ServiceModel.Activities.WorkflowControlEndpoint> dans Windows Workflow Foundation (WF).
 
 ## <a name="discussion"></a>Discussion
  L'utilitaire en ligne de commande implémenté dans cet exemple est spécifique à l'implémentation du magasin d'instances SQL fournie dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Si vous avez une implémentation personnalisée du magasin d'instances, vous pouvez adapter cet utilitaire en remplaçant les implémentations `WorkflowInstanceCommand` dans l'exemple par des implémentations qui sont spécifiques à votre magasin d'instances.
@@ -28,11 +28,11 @@ Cet exemple montre comment gérer des instances de workflow qui ont été interr
 
     1. Serveur de file d'attente Microsoft Message Queue (MSMQ)
 
-    2. SQL Server Express
+    2. SQL Server Express
 
 2. Configurez la base de données SQL Server.
 
-    1. À partir d’une invite de commandes Visual Studio 2010, exécutez «Setup. cmd» à partir du répertoire d’exemple SuspendedInstanceManagement, qui effectue les opérations suivantes:
+    1. À partir d’une invite de commandes Visual Studio 2010, exécutez « Setup. cmd » à partir du répertoire d’exemple SuspendedInstanceManagement, qui effectue les opérations suivantes :
 
         1. Crée une base de données de persistance à l'aide de SQL Server Express. Si la base de données de persistance existe déjà, elle est supprimée et recréée.
 
@@ -81,6 +81,6 @@ Cet exemple montre comment gérer des instances de workflow qui ont été interr
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\SuspendedInstanceManagement`

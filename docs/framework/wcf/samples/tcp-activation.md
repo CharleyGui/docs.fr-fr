@@ -2,16 +2,16 @@
 title: TCP Activation
 ms.date: 03/30/2017
 ms.assetid: bf8c215c-0228-4f4f-85c2-e33794ec09a7
-ms.openlocfilehash: e3bfbe9d7e7a6efafc8bf1e281e1f7a99c9c5fbe
-ms.sourcegitcommit: 2d42b7ae4252cfe1232777f501ea9ac97df31b63
+ms.openlocfilehash: c1a2c0de5fbb666ec3b68ec3da31cc27f8234cbd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/01/2019
-ms.locfileid: "67487520"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716610"
 ---
 # <a name="tcp-activation"></a>TCP Activation
 
-Cet exemple illustre l'hébergement d'un service utilisant les services d'activation des processus Windows (WAS, Windows Process Activation Services) afin d'activer un service qui communique à l'aide du protocole net.tcp. Cet exemple est basé sur le [mise en route](../../../../docs/framework/wcf/samples/getting-started-sample.md).
+Cet exemple illustre l'hébergement d'un service utilisant les services d'activation des processus Windows (WAS, Windows Process Activation Services) afin d'activer un service qui communique à l'aide du protocole net.tcp. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md).
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -21,7 +21,7 @@ Cet exemple illustre l'hébergement d'un service utilisant les services d'activa
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\TCPActivation`
 
@@ -141,19 +141,19 @@ Press <ENTER> to terminate client.
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Vérifiez que IIS 7.0 est installé. IIS 7.0 est requis pour l’activation WAS.
+1. Vérifiez qu’IIS 7,0 est installé. IIS 7,0 est requis pour l’activation WAS.
 
-2. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+2. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
-    En outre, vous devez installer les composants d’activation non-HTTP de WCF :
+    En outre, vous devez installer les composants d’activation non HTTP WCF :
 
     1. Dans le menu **Démarrer**, cliquez sur **Panneau de configuration**.
 
     2. Sélectionnez **programmes et fonctionnalités**.
 
-    3. Cliquez sur **activer ou désactiver les composants de Windows**.
+    3. Cliquez sur **activer ou désactiver des composants Windows**.
 
-    4. Développez le **Microsoft .NET Framework 3.0** nœud et vérifiez la **Activation Non-HTTP de Windows Communication Foundation** fonctionnalité.
+    4. Développez le nœud **Microsoft .NET Framework 3,0** et cochez la Windows Communication Foundation fonctionnalité d' **activation non-http** .
 
 3. Configurez le servie WAS afin d'assurer la prise en charge de l'activation TCP.
 
@@ -176,11 +176,11 @@ Press <ENTER> to terminate client.
         ```
 
         > [!NOTE]
-        > Cette commande est une ligne unique de texte. Cette commande active l’application accessible à l’aide de deux `http://localhost/servicemodelsamples` et `net.tcp://localhost/servicemodelsamples`.
+        > Cette commande est une ligne unique de texte. Cette commande permet d’accéder à l’application/servicemodelsamples à l’aide de `http://localhost/servicemodelsamples` et `net.tcp://localhost/servicemodelsamples`.
 
 4. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-5. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+5. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
     Supprimez la liaison de site net.tcp que vous avez ajoutée dans le cadre de cet exemple.
 

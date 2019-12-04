@@ -2,12 +2,12 @@
 title: Strongly-Typed Extensions, exemple
 ms.date: 03/30/2017
 ms.assetid: 02220f11-1a83-441c-9e5a-85f9a9367572
-ms.openlocfilehash: 8dc6bca87989b1ee8e1ee440b0d64e2c196cc28f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4ad0a8e10ecbcb5e3ddf9106dbbaa55356314020
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978237"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716617"
 ---
 # <a name="strongly-typed-extensions-sample"></a>Strongly-Typed Extensions, exemple
 L'exemple utilise la classe <xref:System.ServiceModel.Syndication.SyndicationFeed>. Toutefois, les modèles présentés dans cet exemple peuvent être utilisés avec toutes les classes Syndication qui prennent en charge les données d'extension.  
@@ -283,6 +283,6 @@ public class ThreadedItem : SyndicationItem
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Syndication\StronglyTypedExtensions`  

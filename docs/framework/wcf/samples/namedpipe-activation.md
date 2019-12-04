@@ -2,12 +2,12 @@
 title: NamedPipe Activation
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: 9d1f7c599f16b0974fb327888c080957c5cd9cee
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 78073ca222cab07bbc9cee5c1976cf7a6ee46295
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417085"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714691"
 ---
 # <a name="namedpipe-activation"></a>NamedPipe Activation
 
@@ -21,7 +21,7 @@ Cet exemple illustre l'hébergement d'un service qui utilise le service d'activa
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\WASHost\NamedPipeActivation`
 

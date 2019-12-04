@@ -2,15 +2,15 @@
 title: PII Security Lockdown
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: f82d3f19a3bf6fc6a5ac038034880dafc03fcce1
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 63410ecc19e94e57f943e5d7dc13a6098bd91d51
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044797"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714622"
 ---
 # <a name="pii-security-lockdown"></a>PII Security Lockdown
-Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) en:  
+Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) en :  
   
 - Chiffrement des informations sensibles dans le fichier de configuration du service.  
   
@@ -23,7 +23,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
@@ -37,17 +37,17 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
  Cet exemple illustre comment contrôler la fonctionnalité d'enregistrement des informations d'identification personnelle connues, telles que le nom d'utilisateur et le mot de passe, dans les journaux de suivi et de message. Par défaut, l'enregistrement des PII connues est désactivé. Toutefois, dans certaines situations, leur enregistrement peut s'avérer essentiel lors du débogage des applications. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md). En outre, cet exemple utilise l'enregistrement des suivis et des messages. Pour plus d’informations, consultez l’exemple [suivi et journalisation des messages](../../../../docs/framework/wcf/samples/tracing-and-message-logging.md) .  
   
 ## <a name="encrypting-configuration-file-elements"></a>Chiffrement des éléments de fichier de configuration  
- Pour des raisons de sécurité, dans le cadre d'un environnement partagé avec hébergement Web, le chiffrement de certains éléments de configuration tels que les chaînes de connexion aux bases de données, susceptibles de contenir des informations sensibles, peut s'avérer souhaitable. Un élément de configuration peut être chiffré à l’aide de l’outil Aspnet_regiis. exe figurant dans le dossier .NET Framework, par exemple%WINDIR%\Microsoft.NET\Framework\v4.0.20728.  
+ Pour des raisons de sécurité, dans le cadre d'un environnement partagé avec hébergement Web, le chiffrement de certains éléments de configuration tels que les chaînes de connexion aux bases de données, susceptibles de contenir des informations sensibles, peut s'avérer souhaitable. Un élément de configuration peut être chiffré à l’aide de l’outil aspnet_regiis. exe qui se trouve dans le dossier .NET Framework par exemple,%WINDIR%\Microsoft.NET\Framework\v4.0.20728.  
   
 #### <a name="to-encrypt-the-values-in-the-appsettings-section-in-webconfig-for-the-sample"></a>Pour chiffrer les valeurs dans la section appSettings du fichier Web.config de l'exemple  
   
-1. Ouvrez une invite de commandes en utilisant Start-> Run.... Tapez, puis cliquez sur **OK.** `cmd`  
+1. Ouvrez une invite de commandes en utilisant Start-> Run.... Tapez `cmd`, puis cliquez sur **OK**.  
   
 2. Naviguez jusqu'au répertoire .NET Framework actuel en publiant la commande suivante : `cd %WINDIR%\Microsoft.NET\Framework\v4.0.20728`.  
   
 3. Chiffrez les paramètres de configuration appSettings du dossier Web.config en publiant la commande suivante : `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
- Vous trouverez plus d’informations sur le chiffrement des sections de fichiers de configuration en lisant une procédure sur DPAPI dans Configuration de[ASP.net (création d’applications ASP.NET sécurisées: L’authentification, l’autorisation et la](https://go.microsoft.com/fwlink/?LinkId=95137)communication sécurisée) et une procédure sur RSA dans la configuration[de ASP.net (procédure: Chiffrez les sections de configuration dans ASP.NET](https://go.microsoft.com/fwlink/?LinkId=95138)2,0 à l’aide de RSA).  
+ Vous trouverez plus d’informations sur le chiffrement des sections de fichiers de configuration en lisant une procédure sur DPAPI dans la configuration ASP.NET ([création d’Applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://go.microsoft.com/fwlink/?LinkId=95137)) et d’une procédure sur RSA dans Configuration ASP.net ([procédure : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
   
 ## <a name="locking-configuration-file-elements"></a>Verrouillage des éléments de fichier de configuration  
  Dans le cadre de services hébergés par le Web, il est possible de placer ces services dans les sous-répertoires d'autres services. Dans ce genre de situation, les valeurs de configuration des services placés dans ces sous-répertoires sont calculées en examinant les valeurs du fichier Machine.config. Ces valeurs sont ensuite fusionnées avec les valeurs des éventuels fichiers Web.config figurant dans les répertoires parents en descendant la hiérarchie de l’arborescence de répertoires jusqu’au fichier Web.config du répertoire contenant les services concernés. Le comportement par défaut de la plupart des éléments de configuration permet aux fichiers de configuration des sous-répertoires de se substituer aux valeurs définies dans leurs répertoires parents. Dans certains cas, il peut s'avérer préférable d'empêcher une telle substitution.  
@@ -76,7 +76,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 ## <a name="pii-logging-configuration"></a>Configuration de l'enregistrement des informations d'identification personnelle  
  L'enregistrement des PII est contrôlé par deux commutateurs : paramètre à l'échelle de l'ordinateur situé dans le fichier Machine.config permettant à l'administrateur de cet ordinateur d'autoriser ou non leur enregistrement et paramètre d'application permettant aux administrateurs d'application d'activer ou non leur enregistrement pour chaque source dans les fichiers Web.config ou App.config.  
   
- Le paramètre à l'échelle de l'ordinateur est contrôlé en affectant à `enableLoggingKnownPii` la valeur `true` ou `false` au niveau de l'élément `machineSettings` du fichier Machine.config. Par exemple, le code suivant permet aux applications d'activer l'enregistrement des PII.  
+ Le paramètre à l’ensemble de l’ordinateur est contrôlé en définissant `enableLoggingKnownPii` sur `true` ou `false`, dans l’élément `machineSettings` du fichier machine. config. Par exemple, le code suivant permet aux applications d’activer la journalisation des informations d’identification personnelle.  
   
 ```xml  
 <configuration>  
@@ -120,13 +120,13 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 > System.Diagnostics ignore tous les attributs de toutes les sources, sauf le premier attribut répertorié dans le fichier de configuration. L'ajout de l'attribut `logKnownPii` à la seconde source du fichier de configuration est sans effet.  
   
 > [!IMPORTANT]
-> L'exécution de cet exemple implique de modifier manuellement le fichier Machine.config. Vous devez faire très attention lorsque vous modifiez le fichier Machine.config, toutes valeurs ou syntaxes incorrectes étant susceptibles d'empêcher l'exécution des applications .NET Framework.  
+> Pour exécuter cet exemple, vous devez modifier manuellement le fichier machine. config. Veillez à utiliser la modification de machine. config en tant que valeurs incorrectes ou que la syntaxe peut empêcher l’exécution de toutes les applications .NET Framework.  
   
  Les éléments de fichier de configuration peuvent également être chiffrés à l'aide de DPAPI et RSA. Pour plus d'informations, consultez les liens suivants :  
   
-- [Création d’applications ASP.NET sécurisées: Authentification, autorisation et communication sécurisée](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [Création d’applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://go.microsoft.com/fwlink/?LinkId=95137)  
   
-- [Guide pratique pour Chiffrer les sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [Comment : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   

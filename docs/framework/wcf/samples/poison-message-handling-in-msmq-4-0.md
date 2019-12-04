@@ -2,12 +2,12 @@
 title: Poison Message Handling in MSMQ 4,0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 6f3ec0f097f1b18ca45333b7dc66431277816c60
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: eb0801a3df0f6f384dd646598e43fe1c20b6eda0
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424311"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716521"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Poison Message Handling in MSMQ 4,0
 Cet exemple montre comment assurer la gestion des messages incohérents dans un service. Cet exemple est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -321,6 +321,6 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\MSMQ\Poison\MSMQ4`

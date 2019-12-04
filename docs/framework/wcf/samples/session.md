@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Sessions
 ms.assetid: 36e1db50-008c-4b32-8d09-b56e790b8417
-ms.openlocfilehash: d197c68d12eff0df9d79847349ffd65cd2a437ae
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e364b539e355f669037983813f9e6d1e0371da1f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038838"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715084"
 ---
 # <a name="session"></a>Session
 L'exemple Session montre comment implémenter un contrat qui requiert une session. Une session fournit le contexte pour effectuer plusieurs opérations. Cela permet à un service d'associer l'état à une session donnée ; ainsi les opérations suivantes peuvent utiliser l'état d'une opération précédente. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente un service de calculatrice. Le contrat `ICalculator` a été modifié afin de permettre l'exécution d'un ensemble d'opérations arithmétiques, tout en conservant un résultat en cours. Cette fonctionnalité est définie par le contrat `ICalculatorSession`. Le service maintient l'état pou un client tandis que plusieurs opérations de service sont appelées pour effectuer un calcul. Le client peut récupérer le résultat actuel en appelant `Result()` et remettre le résultat à zéro en appelant `Clear()`.  
@@ -88,6 +88,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Session`  

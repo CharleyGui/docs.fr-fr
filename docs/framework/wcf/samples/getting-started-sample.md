@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 5f5418da63b2bc5fc9b20f5c262890b7a06ce5dd
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 3282daff166a8fe56841a41bfe8bd9dd69f9d4c8
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989916"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716944"
 ---
 # <a name="getting-started-sample"></a>Getting Started, exemple
 
@@ -26,7 +26,7 @@ L’exemple Prise en main montre comment implémenter un service classique et un
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\GettingStarted\GettingStarted`
 
@@ -142,9 +142,9 @@ Le service expose un point de terminaison permettant de communiquer avec le serv
 
 Le service expose le point de terminaison au niveau de l'adresse de base fournie par l'hôte IIS ou WAS. La liaison est configurée avec un <xref:System.ServiceModel.WSHttpBinding> standard, qui fournit la communication HTTP et les protocoles de service Web standard pour l’adressage et la sécurité. Le contrat correspond au `ICalculator` implémenté par le service.
 
-Comme configuré, le service est accessible à `http://localhost/servicemodelsamples/service.svc` un client sur le même ordinateur. Pour que les clients installés sur des ordinateurs distants puissent accéder au service, un nom de domaine complet doit être spécifié au lieu de localhost.
+Comme configuré, le service est accessible à `http://localhost/servicemodelsamples/service.svc` par un client sur le même ordinateur. Pour que les clients installés sur des ordinateurs distants puissent accéder au service, un nom de domaine complet doit être spécifié au lieu de localhost.
 
-Par défaut, l'infrastructure n'expose pas de métadonnées. Par conséquent, le service Active <xref:System.ServiceModel.Description.ServiceMetadataBehavior> et expose un point de terminaison MEX (Metadata Exchange) à. `http://localhost/servicemodelsamples/service.svc/mex` La configuration suivante montre comment procéder.
+Par défaut, l'infrastructure n'expose pas de métadonnées. Par conséquent, le service Active la <xref:System.ServiceModel.Description.ServiceMetadataBehavior> et expose un point de terminaison MEX (Metadata Exchange) à `http://localhost/servicemodelsamples/service.svc/mex`. La configuration suivante montre comment procéder.
 
 ```xaml
 <system.serviceModel>
@@ -285,5 +285,5 @@ Cet exemple présente la méthode standard utilisée pour créer un service et u
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Héberger un service WCF dans une application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
-- [Guide pratique pour Héberger un service WCF dans IIS](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)
+- [Guide pratique pour héberger un service WCF dans une application managée](../../../../docs/framework/wcf/how-to-host-a-wcf-service-in-a-managed-application.md)
+- [How to: Host a WCF Service in IIS (Comment : héberger un service WCF dans IIS)](../../../../docs/framework/wcf/feature-details/how-to-host-a-wcf-service-in-iis.md)

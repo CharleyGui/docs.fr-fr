@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Formatter
 ms.assetid: e0a2fe89-3534-48c8-aa3c-819862224571
-ms.openlocfilehash: 675b6b8a177fe5851c2abd1f785ac617de2cf37d
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 59bbeb4091c101efeac4e0562f0e3cbd5a8b5f79
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045071"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716353"
 ---
 # <a name="datacontractserializer-sample"></a>DataContractSerializer, exemple
-Cet exemple illustre l’utilisation du sérialiseur <xref:System.Runtime.Serialization.DataContractSerializer>, lequel est chargé d’effectuer des processus de sérialisation et de désérialisation standard pour les classes de contrat de données. L’exemple crée un `Record` objet, le sérialise dans un flux de mémoire et désérialise le flux de mémoire vers un autre `Record` objet pour <xref:System.Runtime.Serialization.DataContractSerializer>illustrer l’utilisation de. L'exemple sérialise ensuite l'objet `Record` à l'aide d'un enregistreur binaire afin d'illustrer la manière dont l'utilisation d'un tel enregistreur affecte la sérialisation.  
+Cet exemple illustre l’utilisation du sérialiseur <xref:System.Runtime.Serialization.DataContractSerializer>, lequel est chargé d’effectuer des processus de sérialisation et de désérialisation standard pour les classes de contrat de données. L’exemple crée un objet `Record`, le sérialise dans un flux de mémoire et désérialise le flux de mémoire vers un autre objet `Record` pour illustrer l’utilisation de l' <xref:System.Runtime.Serialization.DataContractSerializer>. L'exemple sérialise ensuite l'objet `Record` à l'aide d'un enregistreur binaire afin d'illustrer la manière dont l'utilisation d'un tel enregistreur affecte la sérialisation.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -137,6 +137,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\DataContractSerializer`  

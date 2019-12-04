@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Net profile TCP
 ms.assetid: e8475fe6-0ecd-407a-8e7e-45860561bb74
-ms.openlocfilehash: f2dee85f3d84d840b33d81277419ab22e88e8556
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: dc417300eb6f62b89a1c07a4f2291b7366e410b1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928592"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716549"
 ---
 # <a name="default-nettcpbinding"></a>Default NetTcpBinding
 Cet exemple illustre l’utilisation de la liaison <xref:System.ServiceModel.NetTcpBinding>. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Dans cet exemple, le service est auto-hébergé. Le client et le service sont tous les deux des applications console.  
@@ -22,11 +22,11 @@ Cet exemple illustre l’utilisation de la liaison <xref:System.ServiceModel.Net
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Net\TCP\Default`  
   
- La liaison est spécifiée dans les fichiers de configuration pour le client et le service. Le type de liaison est spécifié dans `binding` l’attribut de l' [ \<élément de point de terminaison >](../../configure-apps/file-schema/wcf/endpoint-element.md) comme indiqué dans l’exemple de configuration suivant.  
+ La liaison est spécifiée dans les fichiers de configuration pour le client et le service. Le type de liaison est spécifié dans l’attribut `binding` de l’élément [> point de terminaison\<](../../configure-apps/file-schema/wcf/endpoint-element.md) , comme indiqué dans l’exemple de configuration suivant.  
   
 ```xml  
 <endpoint address=""  

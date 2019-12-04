@@ -2,16 +2,16 @@
 title: Imperative
 ms.date: 03/30/2017
 ms.assetid: 4f7ce807-c0e4-407a-92a6-22abafb40b51
-ms.openlocfilehash: d7404dca1ff6442d0daac3bfef8d09a0a9b6c524
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 897b4a37c25ff8f7cf5739cc9fca8cb3f3e9a4d6
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637645"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715829"
 ---
 # <a name="imperative"></a>Imperative
 
-Cet exemple montre comment définir <xref:System.ServiceModel.WSHttpBinding> pour un service à l’aide du code, au lieu de définir la liaison `wsHttpBinding` dans la configuration. Cet exemple est basé sur le [mise en route](getting-started-sample.md) qui implémente un service de calculatrice.
+Cet exemple montre comment définir <xref:System.ServiceModel.WSHttpBinding> pour un service à l’aide du code, au lieu de définir la liaison `wsHttpBinding` dans la configuration. Cet exemple est basé sur le [prise en main](getting-started-sample.md) qui implémente un service de calculatrice.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
@@ -80,17 +80,17 @@ Press <ENTER> to terminate client.
 
 ## <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Imperative`

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Data Contract
 ms.assetid: b124e9e0-cb73-4ae0-b9c3-e6cdf5eced98
-ms.openlocfilehash: a1599afa184fe4b4228305051018e6a8cb9efed9
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: fbcc93826ebe2857345823176ddc0054b7e62eea
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045755"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716109"
 ---
 # <a name="basic-data-contract"></a>Basic Data Contract
 
@@ -144,6 +144,6 @@ Press <ENTER> to terminate client.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\Basic`

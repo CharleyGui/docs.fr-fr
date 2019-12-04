@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Self hosted service
 - Self Host Sample [Windows Communication Foundation]
 ms.assetid: 05e68661-1ddf-4abf-a899-9bb1b8272a5b
-ms.openlocfilehash: a1fecb0ade00604d9a6e019ec50ceca04abeb545
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 9077f2b00c97ae2a2106a50780cfd2cd9596c1ec
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044749"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716319"
 ---
 # <a name="self-host"></a>Self-Host
 Cet exemple montre comment implémenter un service auto-hébergé dans une application console. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md). Le fichier de configuration de service Web.config a été renommé App.config et modifié pour configurer une adresse de base que l'hôte utilise. Le code source du service a été modifié pour implémenter une fonction `Main` statique qui crée et ouvre un hôte de service qui fournit l'adresse de base configurée. L'implémentation du service a été modifiée pour écrire la sortie dans la console à chaque opération. Le client n'a été pas modifié, excepté pour configurer l'adresse de point de terminaison correcte du service.  
@@ -41,7 +41,7 @@ public static void Main()
 }  
 ```  
   
- Lorsqu'un service est hébergé par IIS (Internet Information Services) ou WAS (Windows Process Activation Service), l'adresse de base du service est fournie par l'environnement d'hébergement. En cas d'auto-hébergement, vous devez spécifier l'adresse de base vous-même. Cette opération s’effectue à `add` l’aide de l’élément, enfant de [ \<baseAddresses >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md), de l’enfant de [ \<l’hôte >](../../../../docs/framework/configure-apps/file-schema/wcf/host.md), de l’enfant du [ \<> de service](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) , comme illustré dans l’exemple de configuration suivant.  
+ Lorsqu'un service est hébergé par IIS (Internet Information Services) ou WAS (Windows Process Activation Service), l'adresse de base du service est fournie par l'environnement d'hébergement. En cas d'auto-hébergement, vous devez spécifier l'adresse de base vous-même. Cette opération s’effectue à l’aide de l’élément `add`, de l’enfant de [\<baseAddresses >](../../../../docs/framework/configure-apps/file-schema/wcf/baseaddresses.md), de l’enfant de [\<> d’hôte](../../../../docs/framework/configure-apps/file-schema/wcf/host.md), de l’enfant de\<[service](../../../../docs/framework/configure-apps/file-schema/wcf/service.md) >, comme illustré dans l’exemple de configuration suivant.  
   
 ```xml  
 <service   
@@ -71,7 +71,7 @@ public static void Main()
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Hosting\SelfHost`  
   

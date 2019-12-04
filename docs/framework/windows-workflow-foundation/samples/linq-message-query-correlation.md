@@ -2,17 +2,17 @@
 title: Corrélation de requête de message LINQ
 ms.date: 03/30/2017
 ms.assetid: b746872e-57b1-4514-b337-53398a0e0deb
-ms.openlocfilehash: 202d65914d32245952f308d3115ec93231f95f15
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: a4b0ed058cfe8d3d487342c9feefdf1b1efe07c8
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989336"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715587"
 ---
 # <a name="linq-message-query-correlation"></a>Corrélation de requête de message LINQ
 Cet exemple montre comment effectuer une corrélation basée sur le contenu à l’aide d’une implémentation <xref:System.ServiceModel.Dispatcher.MessageQuery> personnalisée par opposition au <xref:System.ServiceModel.XPathMessageQuery> fourni par le système.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  <xref:System.ServiceModel.Dispatcher.MessageQuery> personnalisé, corrélation basée sur le contenu.  
   
 ## <a name="discussion"></a>Discussion  
@@ -39,6 +39,6 @@ Cet exemple montre comment effectuer une corrélation basée sur le contenu à l
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\LinqMessageQueryCorrelation`

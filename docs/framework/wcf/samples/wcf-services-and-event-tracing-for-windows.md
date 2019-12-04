@@ -2,12 +2,12 @@
 title: WCF Services et suivi d'événements Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: e1ee7154e2ad5b22ff0debcdd15d5809fc55df13
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 93663cbc33b6fab9b34bb02187e5b04192f5c13d
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044518"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715267"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>WCF Services et suivi d'événements Windows
 Cet exemple montre comment utiliser le traçage analytique dans Windows Communication Foundation (WCF) pour émettre des événements dans Suivi d’v nements pour Windows (ETW). Les traces analytiques sont des événements émis à des points clés dans la pile WCF qui permettent de résoudre les problèmes des services WCF dans l’environnement de production.
@@ -26,23 +26,23 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 
      Dans le navigateur Web, cliquez sur **Calculator. svc**. L'URI du document WSDL du service doit s'afficher dans le navigateur. Copiez cet URI.
 
-     Par défaut, le service commence à écouter les demandes sur le `http://localhost:1378/Calculator.svc`port 1378.
+     Par défaut, le service commence à écouter les demandes sur le port 1378 `http://localhost:1378/Calculator.svc`.
 
 4. Exécutez le client test WCF (WcfTestClient. exe).
 
-     Le client test WCF (WcfTestClient. exe) se trouve à `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`l’emplacement.  Le répertoire d’installation par défaut de Visual `C:\Program Files\Microsoft Visual Studio 10.0`Studio 2012 est.
+     Le client test WCF (WcfTestClient. exe) se trouve dans `\<Visual Studio 2012 Install Dir>\Common7\IDE\WcfTestClient.exe`.  Le répertoire d’installation par défaut de Visual Studio 2012 est `C:\Program Files\Microsoft Visual Studio 10.0`.
 
 5. Dans le client test WCF, ajoutez le service en sélectionnant **fichier**, puis **Ajouter un service**.
 
-     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. Par défaut, il s’agit de `http://localhost:1378/Calculator.svc`.
+     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. La valeur par défaut est `http://localhost:1378/Calculator.svc`,
 
 6. Ouvrez l'application Observateur d'événements.
 
      Avant d’appeler le service, démarrez observateur d’événements et assurez-vous que le journal des événements écoute les événements de suivi émis à partir du service WCF.
 
-7. Dans le menu **Démarrer** , sélectionnez **Outils d’administration**, puis **Observateur d’événements**.  Activez les journaux d' **analyse** et de débogage.
+7. Dans le menu **Démarrer** , sélectionnez **Outils d’administration**, puis **Observateur d’événements**.  Activez les journaux d' **analyse** et de **débogage** .
 
-8. Dans l’arborescence de observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis serveur d’applications **-applications**. Cliquez avec le bouton droit sur **serveur d’applications-applications**, sélectionnez **affichage**, puis affichez les **journaux d’analyse et de débogage**.
+8. Dans l’arborescence de observateur d’événements, accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis serveur d’applications **-applications**. Cliquez avec le bouton droit sur **serveur d’applications-applications**, sélectionnez **affichage**, puis **Affichez les journaux d’analyse et de débogage**.
 
      Assurez-vous que l’option **afficher les journaux d’analyse et de débogage** est activée.
 
@@ -52,7 +52,7 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 
 #### <a name="to-test-the-service"></a>Pour tester le service
 
-1. Revenez au client test WCF, double-cliquez `Divide` sur et conservez les valeurs par défaut, qui spécifient un dénominateur de 0.
+1. Revenez au client test WCF, double-cliquez sur `Divide` et conservez les valeurs par défaut, qui spécifient un dénominateur de 0.
 
      Si le dénominateur est 0, le service génère une erreur.
 
@@ -70,7 +70,7 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 
 #### <a name="to-cleanup-optional"></a>Pour effectuer un nettoyage (facultatif)
 
-1. Ouvrez l'observateur d'événements.
+1. Ouvrez l’Observateur d’événements.
 
 2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis **application-serveur-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.
 
@@ -83,7 +83,7 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\ETWTracing`  
   

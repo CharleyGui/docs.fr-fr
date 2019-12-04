@@ -2,17 +2,17 @@
 title: Prise en charge POCO
 ms.date: 03/30/2017
 ms.assetid: 3846ca73-2819-4ca2-8367-dc739dde5a5b
-ms.openlocfilehash: 6796d7948bd3ebe0a8b96a861c628b30b7540912
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 2962fa8a9eb824bbfbbb2f1e9347f8988b50ddcd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044777"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716542"
 ---
 # <a name="poco-support"></a>Prise en charge POCO
-Cet exemple illustre la prise en charge de la sérialisation pour les types non marqués, c'est-à-dire les types auxquels aucun attribut de sérialisation n'a été appliqué. Ces types sont parfois appelés types POCO (Plain Old CLR Object). Le <xref:System.Runtime.Serialization.DataContractSerializer> déduit un contrat de données pour tous les types non marqués publics qui ont un constructeur sans paramètre. Les contrats de données vous permettent de transférer des données structurées vers des services et à partir de ceux-ci. Pour plus d’informations sur les types non marqués, consultez [types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
+Cet exemple illustre la prise en charge de la sérialisation pour les types non marqués, c'est-à-dire les types auxquels aucun attribut de sérialisation n'a été appliqué. Ces types sont parfois appelés types POCO (Plain Old CLR Object). L' <xref:System.Runtime.Serialization.DataContractSerializer> déduit un contrat de données pour tous les types non marqués publics qui ont un constructeur sans paramètre. Les contrats de données vous permettent de transférer des données structurées vers des services et à partir de ceux-ci. Pour plus d’informations sur les types non marqués, consultez [types sérialisables](../../../../docs/framework/wcf/feature-details/serializable-types.md).  
   
- Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), mais utilise des nombres complexes au lieu de types numériques primitifs. Elle est également similaire à l’exemple de [contrat de données de base](../../../../docs/framework/wcf/samples/basic-data-contract.md) , <xref:System.Runtime.Serialization.DataContractAttribute> à <xref:System.Runtime.Serialization.DataMemberAttribute> la différence que les attributs et ne sont pas utilisés.  
+ Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), mais utilise des nombres complexes au lieu de types numériques primitifs. Elle est également similaire à l’exemple de [contrat de données de base](../../../../docs/framework/wcf/samples/basic-data-contract.md) , à ceci près que les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> ne sont pas utilisés.  
   
  Le client est une application de console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
@@ -52,7 +52,7 @@ public class ComplexNumber
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\POCO`  
   

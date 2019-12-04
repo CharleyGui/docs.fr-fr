@@ -2,12 +2,12 @@
 title: Utilisation de l'activité Pick
 ms.date: 03/30/2017
 ms.assetid: b89be812-a247-4025-b0e3-ffb20db027a6
-ms.openlocfilehash: 03b9ff7f552ad0cdcfbe9c46121a2f46f35de52a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: b0997254615ca962fd386dea70c67a8edb36c90a
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037880"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715528"
 ---
 # <a name="using-the-pick-activity"></a>Utilisation de l'activité Pick
 Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statements.Pick>.
@@ -16,7 +16,7 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 
  Cet exemple invite un utilisateur à taper son nom sur la console dans une période de temps donné. L’activité <xref:System.Activities.Statements.Pick> dans l’exemple a deux branches qui sont exécutées selon si l’utilisateur tape son nom dans les 5 secondes ou non. Si l'utilisateur tape son nom dans les 5 secondes, la première branche, qui contient une activité `ReadLine` personnalisée est exécutée ; sinon, l'autre branche, qui contient une activité <xref:System.Activities.Statements.Delay> est exécutée. Une fois qu'un nom d'utilisateur est tapé sur la console, il est imprimé sur la console. Si rien n'est entré dans les 5 secondes, l'opération expire.
 
-## <a name="demonstrates"></a>Démonstrations
+## <a name="demonstrates"></a>Montre
  Activité <xref:System.Activities.Statements.Pick>
 
 ## <a name="discussion"></a>Discussion
@@ -24,17 +24,17 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 
  Flux de travail du concepteur la version du concepteur de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
-- Program.cs: Comprend la `Main` fonction qui exécute l’exemple de flux de travail.
+- Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.
 
-- ReadString.cs: Activité personnalisée qui lit une entrée de la console.
+- ReadString.cs : activité personnalisée qui lit une entrée de la console.
 
-- Sequence1. xaml: Flux de travail créé à l’aide du concepteur qui utilise Pick.
+- Sequence1.xaml : workflow créé à l'aide du concepteur qui utilise Pick.
 
  Flux de travail codé la version codée de l’exemple montre comment créer un flux de travail dans le concepteur. Les fichiers suivants sont inclus :
 
-- Program.cs: Comprend la `Main` fonction qui exécute l’exemple de flux de travail.
+- Program.cs : inclut la fonction `Main` qui exécute l'exemple de workflow.
 
-- ReadString.cs: Activité personnalisée qui lit une entrée de la console.
+- ReadString.cs : activité personnalisée qui lit une entrée de la console.
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
@@ -49,6 +49,6 @@ Cet exemple montre comment utiliser l'activité <xref:System.Activities.Statemen
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\Pick`

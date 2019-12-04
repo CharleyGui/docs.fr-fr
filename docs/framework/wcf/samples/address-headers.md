@@ -1,22 +1,22 @@
 ---
-title: Address Headers
+title: En-têtes d'adresse
 ms.date: 03/30/2017
 ms.assetid: b0c94d4a-3bde-4b4d-bb6d-9f12bc3a6940
-ms.openlocfilehash: 4ccb309178251b32068d6cdbb81874322f991bb9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3bc8512fb2492a7249c81fc33a3c7b83904f1ccd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62002948"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715229"
 ---
-# <a name="address-headers"></a>Address Headers
+# <a name="address-headers"></a>En-têtes d'adresse
 
-Cet exemple montre comment les clients peuvent passer des paramètres de référence à un service à l’aide de Windows Communication Foundation (WCF).
+L’exemple d’en-têtes d’adresse montre comment les clients peuvent passer des paramètres de référence à un service à l’aide de Windows Communication Foundation (WCF).
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
-La spécification WS-Addressing définit la référence de point de terminaison permettant de s'adresser à un point de terminaison de service Web particulier. Dans WCF, les références de point de terminaison sont modélisées à l’aide de la `EndpointAddress` classe - `EndpointAddress` est le type du champ adresse de la `ServiceEndpoint` classe.
+La spécification WS-Addressing définit la référence de point de terminaison permettant de s'adresser à un point de terminaison de service Web particulier. Dans WCF, les références de point de terminaison sont modélisées à l’aide de la classe `EndpointAddress`-`EndpointAddress` est le type du champ d’adresse de la classe `ServiceEndpoint`.
 
 Chaque référence dans le modèle de référence de point de terminaison peut contenir des paramètres ajoutant des informations d'identification supplémentaires. Dans WCF, ces paramètres de référence sont modélisés en tant qu’instances de `AddressHeader` classe.
 
@@ -36,13 +36,13 @@ builder.Headers.Add(header);
 client.Endpoint.Address = builder.ToEndpointAddress();
 ```
 
-Le code crée un `EndpointAddressBuilder` en utilisant comme valeur initiale l'adresse `EndpointAddress` d'origine. Il ajoute ensuite un en-tête d’adresse qui vient d’être créé ; l’appel à `CreateAddressHeader` crée un en-tête avec un nom particulier, un espace de noms et une valeur. Dans cet exemple, la valeur est « John ». Une fois l'en-tête ajouté au générateur, la méthode `ToEndpointAddress()` reconvertit le générateur (altérable) en une adresse de point de terminaison (immuable) assignée de nouveau au champ d'adresse de point de terminaison du client.
+Le code crée un `EndpointAddressBuilder` en utilisant comme valeur initiale l'adresse `EndpointAddress` d'origine. Il ajoute ensuite un en-tête d’adresse nouvellement créé. l’appel à `CreateAddressHeader` crée un en-tête avec un nom, un espace de noms et une valeur particuliers. Dans cet exemple, la valeur est « John ». Une fois l'en-tête ajouté au générateur, la méthode `ToEndpointAddress()` reconvertit le générateur (altérable) en une adresse de point de terminaison (immuable) assignée de nouveau au champ d'adresse de point de terminaison du client.
 
 À présent, lorsque le client appelle la méthode `Console.WriteLine(client.Hello());`, le service peut obtenir la valeur de ce paramètre d'adresse, comme en témoigne le résultat obtenu par le client.
 
 `Hello, John`
 
-## <a name="server"></a>Serveur
+## <a name="server"></a>Server
 
 L'implémentation de l'opération de service `Hello()` utilise le contexte `OperationContext` actuel pour inspecter la valeur des en-têtes figurant dans le message entrant.
 
@@ -71,17 +71,17 @@ Le code recherche les en-têtes correspondant à des paramètres de référence 
 
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
 
 2. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).
 
-3. Pour exécuter l’exemple dans une configuration unique ou plusieurs ordinateurs, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\AddressHeaders`

@@ -2,12 +2,12 @@
 title: Dispatch by Body Element
 ms.date: 03/30/2017
 ms.assetid: f64a3c04-62b4-47b2-91d9-747a3af1659f
-ms.openlocfilehash: f1ff6d099ad0aee0c17b011000fe78f961293a82
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 307d6bbbab118392ef079942eae367a4c6792c22
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039758"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712028"
 ---
 # <a name="dispatch-by-body-element"></a>Dispatch by Body Element
 Cet exemple montre comment implémenter un autre algorithme pour l'assignation des messages entrants aux opérations.  
@@ -120,9 +120,9 @@ public void ApplyDispatchBehavior(ContractDescription contractDescription, Servi
 ## <a name="implementing-the-service"></a>Implémentation du service  
  Le comportement implémenté dans cet exemple affecte directement la façon dont les messages provenant du câble sont interprétés et distribués, ce qui constitue une fonction du contrat de service. Par conséquent, le comportement doit être déclaré sur le niveau de contrat de service dans toute implémentation de service qui choisit de l'utiliser.  
   
- L’exemple `DispatchByBodyElementBehaviorAttribute` de service `IDispatchedByBody` de projet applique le comportement de contrat au contrat de service et étiquette chacune des `OperationForBodyA()` deux `OperationForBodyB()` opérations et `DispatchBodyElementAttribute` avec un comportement d’opération. Lorsqu'un hôte est ouvert pour un service qui implémente ce contrat, ces métadonnées sont choisies par le générateur de répartiteurs comme décrit précédemment.  
+ L’exemple de service de projet applique le comportement de contrat `DispatchByBodyElementBehaviorAttribute` au contrat de service `IDispatchedByBody` et étiquette chacune des deux opérations `OperationForBodyA()` et `OperationForBodyB()` avec un comportement d’opération `DispatchBodyElementAttribute`. Lorsqu'un hôte est ouvert pour un service qui implémente ce contrat, ces métadonnées sont choisies par le générateur de répartiteurs comme décrit précédemment.  
   
- Étant donné que le sélecteur d'opération effectue la distribution uniquement en fonction l'élément de corps du message et ignore l'en-tête Action, il doit indiquer au runtime de ne pas vérifier cet en-tête sur les réponses retournées en assignant le caractère générique « * » à la propriété `ReplyAction` de la classe <xref:System.ServiceModel.OperationContractAttribute>. En outre, il doit avoir une opération par défaut dont la propriété «action» est définie sur le caractère générique\*«». L'opération par défaut reçoit tous les messages qui ne peuvent pas être distribués et n'ont pas de `DispatchBodyElementAttribute` :  
+ Étant donné que le sélecteur d'opération effectue la distribution uniquement en fonction l'élément de corps du message et ignore l'en-tête Action, il doit indiquer au runtime de ne pas vérifier cet en-tête sur les réponses retournées en assignant le caractère générique « * » à la propriété `ReplyAction` de la classe <xref:System.ServiceModel.OperationContractAttribute>. En outre, il doit avoir une opération par défaut dont la propriété « action » est définie sur le caractère générique «\*». L'opération par défaut reçoit tous les messages qui ne peuvent pas être distribués et n'ont pas de `DispatchBodyElementAttribute` :  
   
 ```csharp
 [ServiceContract(Namespace="http://Microsoft.ServiceModel.Samples"),  
@@ -175,6 +175,6 @@ public interface IDispatchedByBody
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Interop\AdvancedDispatchByBody`  

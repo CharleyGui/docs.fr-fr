@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: c2389ff0c94afc2156e594f5d93535d1ed0107a8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74336262"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74712349"
 ---
 # <a name="await-operator-visual-basic"></a>Await, opérateur (Visual Basic)
 
@@ -21,9 +21,9 @@ Vous appliquez l’opérateur `Await` à un opérande dans une méthode asynchro
 La méthode dans laquelle `Await` est utilisé doit avoir un modificateur [Async](../../../visual-basic/language-reference/modifiers/async.md) . Cette méthode, définie à l’aide du modificateur `Async` et contenant généralement une ou plusieurs expressions `Await`, est appelée *méthode async*.
 
 > [!NOTE]
-> Les mots clés `Async` et `Await` ont été introduites dans Visual Studio 2012. Pour une introduction à la programmation asynchrone, consultez [programmation asynchrone avec Async et await](../../../visual-basic/programming-guide/concepts/async/index.md).
+> Les mots clés `Async` et `Await` ont été introduits dans Visual Studio 2012. Pour une introduction à la programmation asynchrone, consultez [programmation asynchrone avec Async et await](../../../visual-basic/programming-guide/concepts/async/index.md).
 
-En règle générale, la tâche à laquelle vous appliquez l’opérateur `Await` est la valeur de retour d’un appel à une méthode qui implémente le [modèle asynchrone basé sur les tâches](https://go.microsoft.com/fwlink/?LinkId=204847), autrement dit, un <xref:System.Threading.Tasks.Task> ou un <xref:System.Threading.Tasks.Task%601>.
+En règle générale, la tâche à laquelle vous appliquez l’opérateur `Await` est la valeur de retour d’un appel à une méthode qui implémente le [modèle asynchrone basé sur les tâches](https://www.microsoft.com/download/details.aspx?id=19957), autrement dit, un <xref:System.Threading.Tasks.Task> ou un <xref:System.Threading.Tasks.Task%601>.
 
 Dans le code suivant, la méthode <xref:System.Net.Http.HttpClient> <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A> retourne `getContentsTask`, un `Task(Of Byte())`. La tâche est une promesse de produire le tableau d’octets réel lorsque l’opération est terminée. L'opérateur `Await` est appliqué à `getContentsTask` pour suspendre l'exécution dans `SumPageSizesAsync` jusqu'à ce que `getContentsTask` soit terminé. Entre-temps, le contrôle revient à l'appelant de `SumPageSizesAsync`. Quand `getContentsTask` est terminé, l'expression `Await` s'évalue en tableau d'octets.
 

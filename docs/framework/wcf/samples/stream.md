@@ -2,12 +2,12 @@
 title: Stream
 ms.date: 03/30/2017
 ms.assetid: 58a3db81-20ab-4627-bf31-39d30b70b4fe
-ms.openlocfilehash: 3f52ba01dfd3290e4b0f728e5832a11f2f9c3eeb
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: d4166ac0258001b3e4eb0b8ece0f5163863359a4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045469"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716657"
 ---
 # <a name="stream"></a>Stream
 Cet exemple de flux montre l'utilisation de la communication en mode de transfert par diffusion en continu. Le service expose plusieurs opérations qui envoient et reçoivent des flux. Cet exemple est auto-hébergé. Le client et le service sont tous deux des programmes de console.  
@@ -15,7 +15,7 @@ Cet exemple de flux montre l'utilisation de la communication en mode de transfer
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Windows Communication Foundation (WCF) peut communiquer en deux modes de transfert: mis en mémoire tampon ou streaming. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
+ Windows Communication Foundation (WCF) peut communiquer en deux modes de transfert : mis en mémoire tampon ou streaming. En mode de transfert par mise en mémoire tampon, un message doit être complètement remis avant qu'un récepteur puisse le lire. En mode de transfert par diffusion en continu, le récepteur peut commencer à traiter le message avant qu'il ne soit complètement remis. Le mode de diffusion en continu est utile lorsque les informations passées sont volumineuses et peuvent être traitées en série. Le mode de diffusion en continu est également utile lorsque le message est trop volumineux pour être mis entièrement en mémoire tampon.  
   
 ## <a name="streaming-and-service-contracts"></a>Diffusion en continu et contrats de service  
  La diffusion en continu est un élément à prendre en compte lors de la conception d'un contrat de service. Si une opération reçoit ou retourne des données volumineuses, diffusez-les en continu afin d'éviter d'utiliser une grande quantité de mémoire en raison de la mise en mémoire tampon des messages d'entrée ou de sortie. Pour diffuser des données en continu, le paramètre qui gère ces données doit être le seul de ce type dans le message. Par exemple, si le message d'entrée est celui à diffuser en continu, l'opération ne doit avoir qu'un seul paramètre d'entrée. De la même façon, si le message de sortie doit être diffusé en continu, l'opération ne doit avoir qu'un seul paramètre de sortie ou qu'une seule valeur de retour. Dans les deux cas, le type de paramètre ou de valeur de retour doit être `Stream`, `Message` ou `IXmlSerializable`. Le contrat de service utilisé dans cet exemple de diffusion en continu est le suivant :  
@@ -181,6 +181,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Stream`  

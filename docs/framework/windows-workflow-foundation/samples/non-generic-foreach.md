@@ -2,12 +2,12 @@
 title: ForEach non générique
 ms.date: 03/30/2017
 ms.assetid: 576cd07a-d58d-4536-b514-77bad60bff38
-ms.openlocfilehash: cb040d8bd5fbb34cc00b246f2e51789866fd8e78
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: a4bbc594ec0bf2d387e700508c7d92685216accc
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989036"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715657"
 ---
 # <a name="non-generic-foreach"></a>ForEach non générique
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] fournit, dans sa boîte à outils, un ensemble d'activités de flux de contrôle, notamment <xref:System.Activities.Statements.ForEach%601>, qui permet l'itération au sein des collections <xref:System.Collections.Generic.IEnumerable%601>.  
@@ -67,12 +67,12 @@ Activity sampleUsage =
    };  
 ```  
   
-|Condition|Message|Severity|Type d'exception|  
+|Condition|Message|Gravité|Type d'exception|  
 |---------------|-------------|--------------|--------------------|  
-|La valeur est `null`|La valeur d’un argument d’activité ’Values’ requis n’a pas été fournie.|Error|<xref:System.InvalidOperationException>|  
+|La valeur est `null`|La valeur d’un argument d’activité ’Values’ requis n’a pas été fournie.|Erreur du|<xref:System.InvalidOperationException>|  
   
 ## <a name="foreach-designer"></a>Concepteur ForEach  
- Le concepteur d'activités de l'exemple est semblable, en apparence, au concepteur fourni pour l'activité <xref:System.Activities.Statements.ForEach%601> intégrée. Le concepteur s’affiche dans la boîte à outils dans la catégorie **exemples**, **activités non génériques** . Le concepteur est nommé **ForEachWithBodyFactory** dans la boîte à outils, car l’activité expose un <xref:System.Activities.Presentation.IActivityTemplateFactory> dans la boîte à outils, ce qui crée l’activité avec un correctement configuré. <xref:System.Activities.ActivityAction>  
+ Le concepteur d'activités de l'exemple est semblable, en apparence, au concepteur fourni pour l'activité <xref:System.Activities.Statements.ForEach%601> intégrée. Le concepteur s’affiche dans la boîte à outils dans la catégorie **exemples**, **activités non génériques** . Le concepteur est nommé **ForEachWithBodyFactory** dans la boîte à outils, car l’activité expose un <xref:System.Activities.Presentation.IActivityTemplateFactory> dans la boîte à outils, ce qui crée l’activité avec un <xref:System.Activities.ActivityAction>correctement configuré.  
   
 ```csharp  
 public sealed class ForEachWithBodyFactory : IActivityTemplateFactory  
@@ -108,6 +108,6 @@ public sealed class ForEachWithBodyFactory : IActivityTemplateFactory
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericForEach`

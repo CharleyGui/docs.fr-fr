@@ -2,12 +2,12 @@
 title: Demande-réponse non typée
 ms.date: 03/30/2017
 ms.assetid: 0bf0f9d9-7caf-4d3d-8c9e-2d468cca16a5
-ms.openlocfilehash: 132ae05236b23ff5bb0cce67d66d26d308cce305
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ba1caddd8f37a37df63e2710883f3096e0989fcd
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038683"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715866"
 ---
 # <a name="untyped-requestreply"></a>Untyped Request/Reply
 Cet exemple montre comment définir des contrats d'opération qui utilisent la classe Message.  
@@ -85,6 +85,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Untyped`  

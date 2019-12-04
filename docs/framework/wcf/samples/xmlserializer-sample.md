@@ -2,15 +2,15 @@
 title: XMLSerializer, exemple
 ms.date: 03/30/2017
 ms.assetid: 7d134453-9a35-4202-ba77-9ca3a65babc3
-ms.openlocfilehash: ae8e4f7c9be427ec5107318443816c8ade6c5085
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 07211ff61091107d469a482cc60783b30621ee21
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044483"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714516"
 ---
 # <a name="xmlserializer-sample"></a>XMLSerializer, exemple
-Cet exemple montre comment sérialiser et désérialiser des types compatibles avec <xref:System.Xml.Serialization.XmlSerializer>. Le formateur par défaut Windows Communication Foundation (WCF) est <xref:System.Runtime.Serialization.DataContractSerializer> la classe. La classe <xref:System.Xml.Serialization.XmlSerializer> permet de sérialiser et de désérialiser des types lorsque la classe <xref:System.Runtime.Serialization.DataContractSerializer> ne peut pas être utilisée. C'est souvent le cas lorsqu'un contrôle précis sur le XML est requis (par exemple, si une donnée doit être un attribut XML et non pas un élément XML). En outre, <xref:System.Xml.Serialization.XmlSerializer> le est souvent sélectionné automatiquement lors de la création de clients pour les services non-WCF.  
+Cet exemple montre comment sérialiser et désérialiser des types compatibles avec <xref:System.Xml.Serialization.XmlSerializer>. Le formateur par défaut Windows Communication Foundation (WCF) est la classe <xref:System.Runtime.Serialization.DataContractSerializer>. La classe <xref:System.Xml.Serialization.XmlSerializer> permet de sérialiser et de désérialiser des types lorsque la classe <xref:System.Runtime.Serialization.DataContractSerializer> ne peut pas être utilisée. C'est souvent le cas lorsqu'un contrôle précis sur le XML est requis (par exemple, si une donnée doit être un attribut XML et non pas un élément XML). En outre, le <xref:System.Xml.Serialization.XmlSerializer> est souvent sélectionné automatiquement lors de la création de clients pour les services non-WCF.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
@@ -130,6 +130,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\XmlSerializer`  

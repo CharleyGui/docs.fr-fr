@@ -2,12 +2,12 @@
 title: Suivi SQL
 ms.date: 03/30/2017
 ms.assetid: bcaebeb1-b9e5-49e8-881b-e49af66fd341
-ms.openlocfilehash: a72ac326108a1d202231a684f21d5b70017dc6cc
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: c1bb4492695df3ff803dff893de24453d7c03dfb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774272"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715565"
 ---
 # <a name="sql-tracking"></a>Suivi SQL
 Cet exemple montre comment écrire un participant de suivi SQL personnalisé qui écrit des enregistrements de suivi dans une base de données SQL. Windows Workflow Foundation (WF) fournit le suivi de workflow pour obtenir une visibilité sur l’exécution d’une instance de Workflow. Le runtime de suivi émet des enregistrements de suivi de workflow lors de l'exécution du workflow. Pour plus d’informations sur le suivi de workflow, consultez [suivi et traçage de workflow](../workflow-tracking-and-tracing.md).
@@ -33,7 +33,7 @@ Cet exemple montre comment écrire un participant de suivi SQL personnalisé qui
 
 7. Le navigateur affiche la page StockPriceService, laquelle contient l'adresse WSDL du service local. Copiez cette adresse.
 
-     @No__t_0 est un exemple de l’adresse WSDL du service local.
+     `http://localhost:65193/StockPriceService.xamlx?wsdl`est un exemple de l’adresse WSDL du service local.
 
 8. À l’aide de l’Explorateur de fichiers, exécutez le client test WCF (WcfTestClient. exe). Il se trouve dans le répertoire Microsoft Visual Studio 10.0\Common7\IDE.
 
@@ -55,7 +55,7 @@ Cet exemple montre comment écrire un participant de suivi SQL personnalisé qui
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\SqlTracking`
 

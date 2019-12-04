@@ -1,18 +1,18 @@
 ---
-title: Limitation
+title: Throttling
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service behaviors, throttling sample
 - Throttling Sample [Windows Communication Foundation]
 ms.assetid: 40bb3582-8ae9-4410-96f0-6c515bfaf47c
-ms.openlocfilehash: b19e58222248e7ce5abddb118ec00ff3e17e9963
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 14d16a644aa89d5da9ec1adcbdef48367ddc1205
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044659"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715695"
 ---
-# <a name="throttling"></a>Limitation
+# <a name="throttling"></a>Throttling
 L'exemple Throttling illustre l'utilisation des contrôles de limitation. Les contrôles de limitation de requêtes limitent le nombre d'appels, d'instances ou de sessions simultanés pour empêcher une surconsommation des ressources. La fonctionnalité de limitation est spécifiée dans les paramètres du fichier de configuration du service. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
@@ -20,7 +20,7 @@ L'exemple Throttling illustre l'utilisation des contrôles de limitation. Les co
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Le fichier de configuration de service spécifie les contrôles de limitation dans un [ \<> serviceThrottling](../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md), comme illustré dans l’exemple de configuration suivant.  
+ Le fichier de configuration de service spécifie les contrôles de limitation dans une [\<serviceThrottling](../../../../docs/framework/configure-apps/file-schema/wcf/servicethrottling.md), comme indiqué dans l’exemple de configuration suivant.  
   
 ```xml  
 <behaviors>  
@@ -78,6 +78,6 @@ Press any key to continue . . .
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Throttling`  

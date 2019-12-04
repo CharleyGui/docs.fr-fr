@@ -2,12 +2,12 @@
 title: Using Performance Counters
 ms.date: 03/30/2017
 ms.assetid: 00a787af-1876-473c-a48d-f52b51e28a3f
-ms.openlocfilehash: 724580c1725cf6513e1d85f03b0abfdefb4d040a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3e0a0199e93abe1218f7d9c052807cb94e911140
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044527"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716710"
 ---
 # <a name="using-performance-counters"></a>Using Performance Counters
 Cet exemple montre comment accéder aux compteurs de performance Windows Communication Foundation (WCF) et comment créer des compteurs de performances définis par l’utilisateur. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md).  
@@ -41,7 +41,7 @@ Cet exemple montre comment accéder aux compteurs de performance Windows Communi
   
 ### <a name="to-view-performance-data"></a>Pour afficher les données de performances  
   
-1. Démarrez l’outil Analyseur de performances en cliquant sur **Démarrer**, **exécuter...** , entrez `perfmon` et cliquez sur **OK,** ou dans le panneau de configuration, sélectionnez **Outils d’administration** et double-cliquez sur **performances**.  
+1. Démarrez l’outil Analyseur de performances en cliquant sur **Démarrer**, **exécuter...** , entrez `perfmon`, cliquez sur **OK ou,** dans le panneau de configuration, sélectionnez **Outils d’administration** et double-cliquez sur **performances**.  
   
     > [!NOTE]
     > Vous ne pouvez pas ajouter de compteurs tant que l'exemple de code est en cours d'exécution.  
@@ -61,9 +61,9 @@ Cet exemple montre comment accéder aux compteurs de performance Windows Communi
   
 3. Naviguez jusqu'au dossier de service de l'exemple d'application et ouvrez le fichier Web.config.  
   
-4. Cliquez sur Diagnostics dans l’arborescence de configuration.  
+4. Cliquez sur **Diagnostics** dans l’arborescence de configuration.  
   
-5. Activez/désactivez le **compteur de performances** dans la fenêtre **Diagnostics** pour afficher «tout».  
+5. Activez/désactivez le **compteur de performances** dans la fenêtre **Diagnostics** pour afficher « tout ».  
   
 6. Enregistrez le fichier de configuration et quittez l'éditeur.  
   
@@ -72,7 +72,7 @@ Cet exemple montre comment accéder aux compteurs de performance Windows Communi
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\PerfCounters`  
   

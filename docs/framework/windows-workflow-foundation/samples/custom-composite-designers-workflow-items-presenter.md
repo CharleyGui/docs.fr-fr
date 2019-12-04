@@ -5,16 +5,16 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: b28981196490e249d053ecd1704f6ba978585520
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 542440d6bf9d6809abee1ec37c85c44ce72fd132
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67662865"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715156"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Concepteurs composites personnalisés - Présentateur d'éléments de workflow
 
-<xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> est un type de clé dans le modèle de programmation de concepteur WF qui permet la modification d’une collection d’éléments contenus. Cet exemple montre comment générer un concepteur d'activités qui expose une telle collection modifiable.
+<xref:System.Activities.Presentation.WorkflowItemsPresenter?displayProperty=nameWithType> est un type de clé dans le modèle de programmation de concepteur WF qui permet la modification d’une collection d’éléments contenus. Cet exemple montre comment générer un concepteur d’activités qui expose une telle collection modifiable.
 
 Cet exemple illustre les opérations suivantes :
 
@@ -26,7 +26,7 @@ Cet exemple illustre les opérations suivantes :
 
 ### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
-1. Ouvrez le **UsingWorkflowItemsPresenter.sln** exemple de solution pour c# ou Visual Basic dans Visual Studio 2010.
+1. Ouvrez l’exemple de solution **UsingWorkflowItemsPresenter. sln** pour C# ou pour VB dans Visual Studio 2010.
 
 2. Générez et exécutez la solution. Une application de concepteur de workflow réhébergée doit s'ouvrir, et vous pouvez faire glisser des activités sur la zone de dessin.
 
@@ -155,7 +155,7 @@ Le code de cet exemple illustre les points suivants :
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemsPresenter`
 

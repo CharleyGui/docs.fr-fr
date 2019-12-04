@@ -2,17 +2,17 @@
 title: Accès à OperationContext
 ms.date: 03/30/2017
 ms.assetid: 4e92efe8-7e79-41f3-b50e-bdc38b9f41f8
-ms.openlocfilehash: dea990e275125dc1cd2255b88e506d363c3ac78e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: b8a09aff7b5a30b5267fbdbd7bd6391996f359c7
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989388"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715100"
 ---
 # <a name="accessing-operationcontext"></a>Accès à OperationContext
-Cet exemple montre comment les activités de messagerie<xref:System.ServiceModel.Activities.Receive> ( <xref:System.ServiceModel.Activities.Send>et) peuvent être utilisées avec une activité d’étendue personnalisée <xref:System.ServiceModel.OperationContext.Current%2A> pour accéder à et attacher ou récupérer un en-tête de message personnalisé dans un message sortant ou entrant.  
+Cet exemple montre comment les activités de messagerie (<xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.Send>) peuvent être utilisées avec une activité d’étendue personnalisée pour accéder à <xref:System.ServiceModel.OperationContext.Current%2A> et attacher ou récupérer un en-tête de message personnalisé dans un message sortant ou entrant.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  Activités de messagerie, <xref:System.ServiceModel.Activities.ISendMessageCallback>, <xref:System.ServiceModel.Activities.IReceiveMessageCallback>.  
   
 ## <a name="discussion"></a>Discussion  
@@ -41,6 +41,6 @@ Cet exemple montre comment les activités de messagerie<xref:System.ServiceModel
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\Accessing Operation Context`

@@ -2,15 +2,15 @@
 title: ConcurrencyMode Reentrant
 ms.date: 03/30/2017
 ms.assetid: b2046c38-53d8-4a6c-a084-d6c7091d92b1
-ms.openlocfilehash: c6bb73957da055e9d867fbcb78ce78acdb8d0b76
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0ac3b811c59abfbb3148ddad3d518443f7633adc
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040143"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714967"
 ---
 # <a name="concurrencymode-reentrant"></a>ConcurrencyMode Reentrant
-Cet exemple illustre la nécessité d'utiliser ConcurrencyMode.Reentrant sur une implémentation de service et les conséquences d'une telle utilisation. ConcurrencyMode.Reentrant implique que le service (plus exactement l'interface de rappel) traite un seul message à la fois à un instant donné (traitement similaire à celui proposé par le mode `ConcurencyMode.Single`). Pour garantir la sécurité des threads, Windows Communication Foundation (WCF `InstanceContext` ) verrouille le traitement d’un message afin qu’aucun autre message ne puisse être traité. En mode ConcurrencyMode.Reentrant, le contexte `InstanceContext` est déverrouillé juste avant que le service n'effectue un appel externe, autorisant ainsi le prochain appel (lequel peut être réentrant tel qu'illustré dans l'exemple) et l'obtention du verrouillage lorsque le service reçoit la réponse à son appel. L'exemple illustre ce comportement en montrant comment un client et un service peuvent s'envoyer des messages en utilisant un contrat duplex.  
+Cet exemple illustre la nécessité d'utiliser ConcurrencyMode.Reentrant sur une implémentation de service et les conséquences d'une telle utilisation. ConcurrencyMode.Reentrant implique que le service (plus exactement l'interface de rappel) traite un seul message à la fois à un instant donné (traitement similaire à celui proposé par le mode `ConcurencyMode.Single`). Pour garantir la sécurité des threads, Windows Communication Foundation (WCF) verrouille le `InstanceContext` de traitement d’un message afin qu’aucun autre message ne puisse être traité. En mode ConcurrencyMode.Reentrant, le contexte `InstanceContext` est déverrouillé juste avant que le service n'effectue un appel externe, autorisant ainsi le prochain appel (lequel peut être réentrant tel qu'illustré dans l'exemple) et l'obtention du verrouillage lorsque le service reçoit la réponse à son appel. L'exemple illustre ce comportement en montrant comment un client et un service peuvent s'envoyer des messages en utilisant un contrat duplex.  
   
  Le contrat défini correspond à un contrat duplex dans lequel la méthode `Ping` est implémentée par le service et la méthode de rappel `Pong` par le client. Le client appelle la méthode `Ping` du serveur à l'aide d'un compteur de cycles initiant par la même l'appel. Le service s'assure que la valeur du compteur de cycles n'est pas égale à zéro, puis appelle la méthode de rappel `Pong` tout en décrémentant la valeur de ce compteur. Ce processus est illustré par l'exemple de code suivant.  
   
@@ -52,8 +52,8 @@ public void Pong(int ticks)
   
 3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
   
-## <a name="demonstrates"></a>Démonstrations  
- Pour exécuter l'exemple et générer les projets de client et de serveur. Ouvrez ensuite deux fenêtres de commande et accédez aux répertoires \<de l’exemple > \<\CS\Service\bin\debug et > répertoires \CS\Client\bin\debug. Ensuite, démarrez le service en `service.exe` tapant, puis appelez client. exe avec la valeur initiale des graduations transmise en tant qu’argument d’entrée. Le code suivant illustre le résultat pour 10 cycles.  
+## <a name="demonstrates"></a>Montre  
+ Pour exécuter l'exemple et générer les projets de client et de serveur. Ouvrez ensuite deux fenêtres de commande et remplacez les répertoires par l’exemple de \<> \CS\Service\bin\debug et \<exemple > répertoires \CS\Client\bin\debug. Démarrez ensuite le service en tapant `service.exe` puis appelez client. exe avec la valeur initiale des graduations transmises comme argument d’entrée. Le code suivant illustre le résultat pour 10 cycles.  
   
 ```console  
 Prompt>Service.exe  
@@ -78,6 +78,6 @@ Pong: Ticks = 1
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Reentrant`  

@@ -2,18 +2,18 @@
 title: ParallelForEach non générique
 ms.date: 03/30/2017
 ms.assetid: de17e7a2-257b-48b3-91a1-860e2e9bf6e6
-ms.openlocfilehash: 52b851686ea2fdc8c573a0622fe91ca5e205edeb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 33e0c8ef8c04b7d58815760ae1152f63891fdfd5
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637737"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715641"
 ---
 # <a name="non-generic-parallelforeach"></a>ParallelForEach non générique
 
 [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] fournit, dans sa boîte à outils, un ensemble d'activités de flux de contrôle, notamment <xref:System.Activities.Statements.ParallelForEach%601>, qui permet l'itération au sein des collections <xref:System.Collections.Generic.IEnumerable%601>.
 
-<xref:System.Activities.Statements.ParallelForEach%601> nécessite son <xref:System.Activities.Statements.ParallelForEach%601.Values%2A> propriété puisse être de type <xref:System.Collections.Generic.IEnumerable%601>. Cela empêche les utilisateurs d'itérer au sein des structures de données qui implémentent l'interface <xref:System.Collections.Generic.IEnumerable%601> (par exemple, <xref:System.Collections.ArrayList>). La version non générique de <xref:System.Activities.Statements.ParallelForEach%601> passe outre cette exigence, aux dépens d’un runtime plus complexe afin de garantir la compatibilité des types des valeurs dans la collection.
+<xref:System.Activities.Statements.ParallelForEach%601> nécessite que sa propriété <xref:System.Activities.Statements.ParallelForEach%601.Values%2A> soit de type <xref:System.Collections.Generic.IEnumerable%601>. Cela empêche les utilisateurs d'itérer au sein des structures de données qui implémentent l'interface <xref:System.Collections.Generic.IEnumerable%601> (par exemple, <xref:System.Collections.ArrayList>). La version non générique de <xref:System.Activities.Statements.ParallelForEach%601> passe outre cette exigence, aux dépens d’un runtime plus complexe afin de garantir la compatibilité des types des valeurs dans la collection.
 
 Cet exemple montre comment implémenter une activité <xref:System.Activities.Statements.ParallelForEach%601> non générique et son concepteur. Cette activité peut être utilisée pour itérer au sein de <xref:System.Collections.ArrayList>.
 
@@ -46,13 +46,13 @@ public class ParallelForEach : NativeActivity
 }
 ```
 
-Body (facultatif) \
+Corps (facultatif) \
 <xref:System.Activities.ActivityAction> de type <xref:System.Object>, qui est exécuté pour chaque élément de la collection. Chaque élément individuel est passé dans le corps (Body) via sa propriété Argument.
 
-Valeurs (facultatifs) \
+Valeurs (facultatif) \
 Collection des éléments sur lesquels est effectuée l’itération. La vérification que tous les éléments de la collection sont de types compatibles est effectuée au moment de l'exécution.
 
-CompletionCondition (facultative) \
+CompletionCondition (facultatif) \
 La propriété <xref:System.Activities.Statements.ParallelForEach%601.CompletionCondition%2A> est évaluée à l'issue de toute itération. Si sa valeur est `true`, les itérations en attente planifiées sont annulées. Si cette propriété n’est pas définie, toutes les activités de la collection Branches s’exécutent jusqu’à la fin.
 
 ## <a name="example-of-using-parallelforeach"></a>Exemple d’utilisation de ParallelForEach
@@ -81,7 +81,7 @@ Activity sampleUsage =
 
 ## <a name="parallelforeach-designer"></a>Concepteur ParallelForEach
 
-Le concepteur d'activités de l'exemple est semblable, en apparence, au concepteur fourni pour l'activité <xref:System.Activities.Statements.ParallelForEach%601> intégrée. Le concepteur s’affiche dans la boîte à outils dans le **exemples**, **activités Non génériques** catégorie. Le concepteur est nommé **ParallelForEachWithBodyFactory** dans la boîte à outils, car l’activité expose un <xref:System.Activities.Presentation.IActivityTemplateFactory> dans la boîte à outils qui crée l’activité avec un correctement configuré <xref:System.Activities.ActivityAction>.
+Le concepteur d'activités de l'exemple est semblable, en apparence, au concepteur fourni pour l'activité <xref:System.Activities.Statements.ParallelForEach%601> intégrée. Le concepteur s’affiche dans la boîte à outils dans la catégorie **exemples**, **activités non génériques** . Le concepteur est nommé **ParallelForEachWithBodyFactory** dans la boîte à outils, car l’activité expose un <xref:System.Activities.Presentation.IActivityTemplateFactory> dans la boîte à outils qui crée l’activité avec un <xref:System.Activities.ActivityAction>correctement configuré.
 
 ```csharp
 public sealed class ParallelForEachWithBodyFactory : IActivityTemplateFactory
@@ -102,7 +102,7 @@ public sealed class ParallelForEachWithBodyFactory : IActivityTemplateFactory
 }
 ```
 
-## <a name="to-run-the-sample"></a>Pour exécuter l'exemple
+## <a name="to-run-the-sample"></a>Pour exécuter l’exemple
 
 1. Définissez le projet de votre choix comme projet de démarrage de la solution.
 
@@ -117,6 +117,6 @@ public sealed class ParallelForEachWithBodyFactory : IActivityTemplateFactory
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\NonGenericParallelForEach`

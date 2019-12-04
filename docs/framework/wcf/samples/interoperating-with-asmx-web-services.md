@@ -2,12 +2,12 @@
 title: Interoperating with ASMX Web Services
 ms.date: 03/30/2017
 ms.assetid: a7c11f0a-9e68-4f03-a6b1-39cf478d1a89
-ms.openlocfilehash: 2ef4e34de76c046ba21dd7a3c50ea6ba782d459e
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 6d8be3fe6daa19a842dcaa92d05ec89ebef9fa5f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989801"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715745"
 ---
 # <a name="interoperating-with-asmx-web-services"></a>Interoperating with ASMX Web Services
 Cet exemple montre comment intégrer une application cliente Windows Communication Foundation (WCF) à un service Web ASMX existant.  
@@ -46,7 +46,7 @@ public class CalculatorService : System.Web.Services.WebService
     }  
 ```  
   
- Comme configuré, le service est accessible à `http://localhost/servicemodelsamples/service.asmx` un client sur le même ordinateur. Pour que les clients installés sur des ordinateurs distants puissent accéder au service, un nom de domaine complet doit être spécifié au lieu de localhost.  
+ Comme configuré, le service est accessible au `http://localhost/servicemodelsamples/service.asmx` par un client sur le même ordinateur. Pour que les clients installés sur des ordinateurs distants puissent accéder au service, un nom de domaine complet doit être spécifié au lieu de localhost.  
   
  La communication s’effectue via un client généré par l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md). Le client figure dans le fichier generatedClient.cs. Le service ASMX doit être disponible pour générer le code proxy, ce dernier permettant de récupérer les métadonnées mises à jour. Exécutez la commande suivante à partir d'une invite de commandes dans le répertoire client pour générer le proxy typé.  
   
@@ -127,6 +127,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\Interop\ASMX`  

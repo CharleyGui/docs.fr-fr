@@ -2,12 +2,12 @@
 title: Processus d'embauche
 ms.date: 03/30/2017
 ms.assetid: d5fcacbb-c884-4b37-a5d6-02b1b8eec7b4
-ms.openlocfilehash: 16975aaa56c8fde09fa6f57781f13280c147e73e
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 02968acfc762550c9010dd0ed29acbca845e08bb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038161"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715974"
 ---
 # <a name="hiring-process"></a>Processus d'embauche
 Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'activités de messagerie et de deux workflows hébergés en tant que services de workflow. Ces workflows font partie de l'infrastructure informatique d'une société fictive nommée Contoso, Inc.  
@@ -44,7 +44,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 - Minuteurs durables (activité <xref:System.Activities.Statements.Delay>)  
   
-- Transactions  
+- Transactions.  
   
 - Plusieurs workflows dans la même solution  
   
@@ -53,7 +53,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\HiringProcess`  
   
@@ -108,32 +108,32 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
 ## <a name="feature-summary"></a>Résumé des fonctionnalités  
  Le tableau suivant décrit l’utilisation de chaque fonctionnalité de cet exemple.  
   
-|Fonctionnalité|Description|Projet|  
+|Composant|Description|Projet|  
 |-------------|-----------------|-------------|  
 |Organigramme|Le processus métier est représenté par un organigramme. La description de cet organigramme représente le processus de la même façon que s'il était dessiné sur un tableau blanc.|HiringRequestService|  
 |Services de workflow|L’organigramme et la définition de processus sont hébergés dans un service (dans cet exemple, le service est hébergé dans une application console).|HiringRequestService|  
 |Activités de messagerie|L'organigramme utilise les activités de messagerie de deux façons :<br /><br /> -Pour obtenir des informations de l’utilisateur (pour recevoir les décisions et les informations associées dans chaque étape d’approbation).<br />-Pour interagir avec d’autres services existants (InboxService et OrgDataService, utilisés par le biais de références de service).|HiringRequestService|  
 |Corrélation basée sur le contenu|Les messages d'approbation sont mis en corrélation avec la propriété ID de la demande d'embauche :<br /><br /> -Quand un processus est démarré, le descripteur de corrélation est initialisé avec l’ID de la demande.<br />-Les messages d’approbation entrants sont corrélés sur leur ID (le premier paramètre de chaque message d’approbation est l’ID de la demande).|HiringRequestService / ResumeRequestService|  
-|Activités personnalisées (déclaratives et basées sur le code)|Cet exemple contient plusieurs activités personnalisées :<br /><br /> -   `SaveActionTracking` : Cette activité émet un personnalisé <xref:System.Activities.Tracking.TrackingRecord> (à <xref:System.Activities.NativeActivityContext.Track%2A>l’aide de). Elle a été créée à l'aide de code impératif qui étend <xref:System.Activities.NativeActivity>.<br />-   `GetEmployeesByPositionTypes` : Cette activité reçoit une liste d’ID de type de position et retourne une liste de personnes qui ont cette position dans contoso. Cette activité a été créée à l'aide de code déclaratif (à l'aide du concepteur d'activités).<br />-   `SaveHiringRequestInfo` : Cette activité enregistre les informations d’un `HiringRequest` (à `HiringRequestRepository.Save`l’aide de). Elle a été créée à l'aide de code impératif qui étend <xref:System.Activities.CodeActivity>.|HiringRequestService|  
+|Activités personnalisées (déclaratives et basées sur le code)|Cet exemple contient plusieurs activités personnalisées :<br /><br /> -   `SaveActionTracking`: cette activité émet un <xref:System.Activities.Tracking.TrackingRecord> personnalisé (à l’aide de <xref:System.Activities.NativeActivityContext.Track%2A>). Elle a été créée à l'aide de code impératif qui étend <xref:System.Activities.NativeActivity>.<br />-   `GetEmployeesByPositionTypes`: cette activité reçoit une liste d’ID de type de position et retourne une liste de personnes qui ont cette position dans contoso. Cette activité a été créée à l'aide de code déclaratif (à l'aide du concepteur d'activités).<br />-   `SaveHiringRequestInfo`: cette activité enregistre les informations d’un `HiringRequest` (à l’aide de `HiringRequestRepository.Save`). Elle a été créée à l'aide de code impératif qui étend <xref:System.Activities.CodeActivity>.|HiringRequestService|  
 |Persistance SQL Server fournie par le système|L’instance <xref:System.ServiceModel.Activities.WorkflowServiceHost> qui héberge la définition de processus Flowchart est configurée pour utiliser la persistance SQL Server fournie par le système.|HiringRequestService / ResumeRequestService|  
 |Suivi personnalisé|L'exemple comprend un participant de suivi personnalisé qui enregistre l'historique d'un `HiringRequestProcess` (enregistre l'action effectuée, par qui et à quel moment). Le code source se trouve dans le dossier Tracking de HiringRequestService.|HiringRequestService|  
 |Suivi ETW|Le suivi ETW fourni par le système est configuré dans le fichier App.config du service HiringRequestService.|HiringRequestService|  
 |Composition des activités|La définition de processus utilise la composition libre de <xref:System.Activities.Activity>. L'Organigramme contient plusieurs activités de séquence et parallèles qui contiennent simultanément d'autres activités (et ainsi de suite).|HiringRequestService|  
-|Activités parallèles|-   <xref:System.Activities.Statements.ParallelForEach%601>est utilisé pour s’inscrire dans la boîte de réception des responsables du PDG et des RH en parallèle (en attente de l’étape d’approbation de deux responsables des ressources humaines).<br />-   <xref:System.Activities.Statements.Parallel>permet d’effectuer des tâches de nettoyage dans les étapes terminées et rejetées.|HiringRequestService|  
+|Activités parallèles|-   <xref:System.Activities.Statements.ParallelForEach%601> est utilisé pour s’inscrire dans la boîte de réception des responsables du PDG et des RH en parallèle (en attente de l’étape d’approbation de deux responsables des ressources humaines).<br />-   <xref:System.Activities.Statements.Parallel> est utilisé pour effectuer des tâches de nettoyage dans les étapes terminé et rejeté|HiringRequestService|  
 |Annulation de modèle|L'organigramme utilise <xref:System.Activities.Statements.CancellationScope> pour créer le comportement d'annulation (dans ce cas, pour procéder à un nettoyage).|HiringRequestService|  
 |Participant de persistance client|`HiringRequestPersistenceParticipant` enregistre les données d'une variable de workflow dans une table stockée dans la base de données des Ressources Humaines de Contoso.|HiringRequestService|  
 |Services de workflow|`ResumeRequestService` est implémenté à l'aide de services de workflow. La définition du workflow et les informations sur les services se trouvent dans le fichier ResumeRequestService.xamlx. Le service est configuré pour utiliser la persistance et le suivi.|ResumeRequestService|  
 |Minuteurs durables|`ResumeRequestService` utilise des minuteurs durables pour définir la durée de validité d'une offre d'emploi (une fois le délai arrivé à expiration, l'offre d'emploi est fermée).|ResumeRequestService|  
-|Transactions|<xref:System.Activities.Statements.TransactionScope> est utilisé pour garantir la cohérence des données lors de l'exécution de plusieurs activités (lors de la réception d'un nouveau CV).|ResumeRequestService|  
-|Transactions|Le participant de persistance personnalisé (`HiringRequestPersistenceParticipant`) et le participant de suivi personnalisé (`HistoryFileTrackingParticipant`) utilisent la même transaction.|HiringRequestService|  
-|Utilisation [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans les applications ASP.net.|Les flux de travail sont accessibles à partir de deux applications ASP.NET.|InternalClient / CareersWebSite|  
+|transactions|<xref:System.Activities.Statements.TransactionScope> est utilisé pour garantir la cohérence des données lors de l'exécution de plusieurs activités (lors de la réception d'un nouveau CV).|ResumeRequestService|  
+|transactions|Le participant de persistance personnalisé (`HiringRequestPersistenceParticipant`) et le participant de suivi personnalisé (`HistoryFileTrackingParticipant`) utilisent la même transaction.|HiringRequestService|  
+|Utilisation de [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans les applications ASP.NET.|Les flux de travail sont accessibles à partir de deux applications ASP.NET.|InternalClient / CareersWebSite|  
   
-## <a name="data-storage"></a>Stockage des données  
+## <a name="data-storage"></a>Stockage de données  
  Les données sont stockées dans une base de données SQL Server nommée `ContosoHR` (le script pour créer cette base de données se trouve dans le dossier `DbSetup`). Les instances de workflow sont stockées dans une base de données SQL Server nommée `InstanceStore` (les scripts pour créer le magasin d'instances font partie de la distribution [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)]).  
   
  Les deux bases de données sont créées en exécutant le script Setup. cmd à partir d’un Invite de commandes développeur pour Visual Studio.  
   
-## <a name="running-the-sample"></a>Exécution de l’exemple  
+## <a name="running-the-sample"></a>Exécution de l'exemple  
   
 #### <a name="to-create-the-databases"></a>Pour créer les bases de données  
   
@@ -147,7 +147,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 #### <a name="to-set-up-the-solution-for-execution"></a>Pour configurer la solution en vue de l'exécution  
   
-1. Exécutez Visual Studio en tant qu’administrateur. Ouvrez HiringRequest.sln.  
+1. Exécutez Visual Studio en tant qu'administrateur. Ouvrez HiringRequest.sln.  
   
 2. Dans **Explorateur de solutions** , cliquez avec le bouton droit sur la solution, puis sélectionnez **Propriétés**.  
   
@@ -169,7 +169,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 6. Cliquez avec le bouton droit sur **CareersWebSite** dans la solution, puis sélectionnez **afficher dans le navigateur**.  
   
-7. Revenez à la `InternalClient` en cliquant avec le bouton droit sur **InternalClient** dans la solution et en sélectionnant **afficher dans le navigateur**.  
+7. Revenez au `InternalClient` en cliquant avec le bouton droit sur **InternalClient** dans la solution et en sélectionnant **afficher dans le navigateur**.  
   
 8. Accédez à la section **jobpostings** en cliquant sur le lien **postes de travail** dans le menu supérieur de la boîte de réception. Vous pouvez suivre le scénario détaillé ici.  
   
@@ -179,11 +179,11 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 1. Michael Alexander (Software Engineer) souhaite demander la création d'un poste dans le service Engineering pour embaucher un Software Engineer in Test (SDET) disposant au moins de trois ans d'expérience en C#.  
   
-2. Une fois créée, la demande apparaît dans la boîte de réception de Michael (cliquez sur Actualiser si vous ne voyez pas la demande) en attendant l’approbation de Peter Brehm, qui est le responsable de Michael.  
+2. Une fois créée, la demande apparaît dans la boîte de réception de Michael (cliquez sur **Actualiser** si vous ne voyez pas la demande) en attendant l’approbation de Peter Brehm, qui est le responsable de Michael.  
   
 3. Peter souhaite agir sur la demande de Michael. Il pense que le poste exige cinq ans d'expérience en C# plutôt que trois. Il renvoie donc son commentaire pour révision.  
   
-4. Michael voit le message de son responsable dans sa boîte de réception et il le prend en compte. Il consulte l'historique de la demande de poste et approuve le commentaire de Peter. Michael modifie la description pour exiger cinq ans d'expérience en C#, puis il accepte la modification.  
+4. Michael voit un message dans sa boîte de réception de son responsable et souhaite agir. Michael voit l’historique de la demande de position et accepte Peter. Michael modifie la description pour exiger cinq ans d'expérience en C#, puis il accepte la modification.  
   
 5. Peter prend connaissance de la demande telle que Michael l'a modifiée et l'accepte. La demande doit désormais être approuvée par le Director of Engineering, Tsvi Reiter.  
   
@@ -205,7 +205,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 1. Le poste doit apparaître sur le site web externe. Si vous êtes intéressé par ce poste, vous pouvez postuler et envoyer votre CV.  
   
-2. Si vous revenez au service de liste des postes de travail, vous pouvez «afficher les CV» qui ont été collectés jusqu’à présent.  
+2. Si vous revenez au service de liste des postes de travail, vous pouvez « afficher les CV » qui ont été collectés jusqu’à présent.  
   
 3. Les Ressources Humaines peuvent aussi arrêter la collecte de CV (par exemple, une fois que le candidat approprié a été identifié).  
   
@@ -215,7 +215,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
 2. En cas d'échec de la génération de la solution, vérifiez les points suivants :  
   
-    - La référence à `ContosoHR` n’est pas absente `CareersWebSite` `InternalClient` des projets ou.  
+    - La référence à `ContosoHR` n’est pas absente des projets `InternalClient` ou `CareersWebSite`.  
   
 3. En cas d'échec de l'exécution de la solution, vérifiez les points suivants :  
   
@@ -229,7 +229,7 @@ Cet exemple montre comment implémenter un processus d'entreprise à l'aide d'ac
   
         3. Régénérez la solution en appuyant sur CTRL + MAJ + B dans Visual Studio.  
   
-## <a name="uninstalling"></a>Désinstallation  
+## <a name="uninstalling"></a>Désinstallation de  
   
 1. Supprimez le magasin d’instances SQL Server en exécutant Cleanup.bat, situé dans le dossier DbSetup.  
   

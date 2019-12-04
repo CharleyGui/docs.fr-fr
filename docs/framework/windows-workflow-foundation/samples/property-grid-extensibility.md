@@ -1,19 +1,19 @@
 ---
-title: Extensibilité de la propriété grille - exemple WF
+title: Extensibilité de la grille des propriétés-exemple WF
 ms.date: 03/30/2017
 ms.assetid: 3530c3a3-756d-4712-9f10-fb2897414d3a
-ms.openlocfilehash: 1cc8b8b34d6236e263f95439da84994e35d627ed
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 130d8702795bccf0d5f28b5c0940bd7c25be3556
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170352"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715608"
 ---
-# <a name="property-grid-extensibility"></a>Extensibilité de grille de propriétés
+# <a name="property-grid-extensibility"></a>Extensibilité de la grille des propriétés
 
 Un développeur peut personnaliser la grille des propriétés qui s'affiche lorsqu'une activité donnée est sélectionnée dans le concepteur. Cela permet de créer une expérience d'édition enrichie. Cet exemple montre comment effectuer cette opération.
 
-## <a name="demonstrates"></a>Démonstrations
+## <a name="demonstrates"></a>Montre
 
 Extensibilité de la grille des propriétés du concepteur de workflow.
 
@@ -22,7 +22,7 @@ Extensibilité de la grille des propriétés du concepteur de workflow.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\PropertyGridExtensibility`
 
@@ -36,7 +36,7 @@ L'exemple d'éditeur inline montre les points suivants :
 
 - Il crée un type qui dérive de <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor>.
 
-- Dans le constructeur, le <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> a la valeur avec un modèle de données Windows Presentation Foundation (WPF). Il peut être lié à un modèle XAML, mais dans cet exemple, le code est utilisé pour initialiser la liaison de données.
+- Dans le constructeur, la valeur <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> est définie à l’aide d’un modèle de données Windows Presentation Foundation (WPF). Il peut être lié à un modèle XAML, mais dans cet exemple, le code est utilisé pour initialiser la liaison de données.
 
 - Le modèle de données a un contexte de données du <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> de l'élément restitué dans la grille des propriétés. Notez, dans le code suivant (provenant de CustomInlineEditor.cs), que ce contexte crée ensuite une liaison avec la propriété `Value`.
 
@@ -69,7 +69,7 @@ L'exemple d'éditeur de boîtes de dialogue montre les points suivants :
 
 1. Il crée un type qui dérive de <xref:System.Activities.Presentation.PropertyEditing.DialogPropertyValueEditor>.
 
-2. Définit la <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> valeur dans le constructeur avec un modèle de données WPF. Cet élément peut être créé en XAML, mais dans cet exemple, il est créé dans le code.
+2. Définit la valeur <xref:System.Activities.Presentation.PropertyEditing.PropertyValueEditor.InlineEditorTemplate%2A> dans le constructeur avec un modèle de données WPF. Cet élément peut être créé en XAML, mais dans cet exemple, il est créé dans le code.
 
 3. Le modèle de données a un contexte de données du <xref:System.Activities.Presentation.PropertyEditing.PropertyValue> de l'élément restitué dans la grille des propriétés. Dans le code suivant, ce contexte crée ensuite une liaison avec la propriété `Value`. Il est essentiel d'inclure également un <xref:System.Activities.Presentation.PropertyEditing.EditModeSwitchButton> pour fournir le bouton qui affiche la boîte de dialogue dans FilePickerEditor.cs.
 
@@ -123,15 +123,15 @@ L'exemple d'éditeur de boîtes de dialogue montre les points suivants :
 
 1. Générez la solution, puis ouvrez Workflow1.xaml.
 
-2. Faites glisser un **SimpleCodeActivity** à partir de la boîte à outils vers la zone de conception.
+2. Faites glisser un **SimpleCodeActivity** de la boîte à outils vers la zone de dessin du concepteur.
 
-3. Cliquez sur le **SimpleCodeActivity** , puis ouvrez la grille des propriétés où il existe un contrôle slider et un fichier de contrôle de sélection.
+3. Cliquez sur **SimpleCodeActivity** , puis ouvrez la grille des propriétés à l’endroit où se trouve un contrôle Slider et un contrôle de sélection de fichier.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\PropertyGridExtensibility`

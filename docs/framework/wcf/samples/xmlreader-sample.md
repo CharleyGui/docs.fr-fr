@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - XML Reader
 ms.assetid: 60e5848d-7d9c-4ea5-bed9-22758c9ac16c
-ms.openlocfilehash: afc6679b6ca9ba8991ff928b664552e02f494c6a
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: bb1cd02a60ec0ba62e1d0d9aa3560bbba0aaf668
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016062"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714542"
 ---
 # <a name="xmlreader-sample"></a>XmlReader, exemple
 
@@ -106,6 +106,6 @@ Press <ENTER> to terminate client.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\XmlReader`

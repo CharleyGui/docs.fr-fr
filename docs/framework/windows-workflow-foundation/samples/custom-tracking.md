@@ -2,12 +2,12 @@
 title: Suivi personnalisé
 ms.date: 03/30/2017
 ms.assetid: 2d191c9f-62f4-4c63-92dd-cda917fcf254
-ms.openlocfilehash: 5b6bcee2e889a7f7e64eb83155a92e5b4c27d719
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 0d9bd9262c6fc13a36fb7736245fa244ee61d8c3
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141972"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710871"
 ---
 # <a name="custom-tracking"></a>Suivi personnalisé
 Cet exemple montre comment créer un participant de suivi personnalisé et écrire le contenu des données de suivi sur la console. De plus, il montre comment émettre des objets <xref:System.Activities.Tracking.CustomTrackingRecord> remplis avec des données définies par l'utilisateur. Le participant de suivi basé sur la console filtre les objets <xref:System.Activities.Tracking.TrackingRecord> émis par le workflow à l'aide d'un objet de modèle de suivi créé dans le code.
@@ -144,7 +144,7 @@ context.Track(customRecord);
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Tracking\CustomTracking`  
   

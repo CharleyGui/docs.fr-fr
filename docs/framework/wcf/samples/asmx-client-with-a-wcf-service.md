@@ -2,12 +2,12 @@
 title: ASMX Client with a WCF Service
 ms.date: 03/30/2017
 ms.assetid: 3ea381ee-ac7d-4d62-8c6c-12dc3650879f
-ms.openlocfilehash: ed3cceb7806e0f0b71b9290da001ba0659e28f3c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a560650dba250d1ee4f0b959ead70a2915c9997f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045187"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716137"
 ---
 # <a name="asmx-client-with-a-wcf-service"></a>ASMX Client with a WCF Service
 
@@ -35,7 +35,7 @@ public interface ICalculator
 }
 ```
 
-Le <xref:System.Runtime.Serialization.DataContractSerializer> et le <xref:System.Xml.Serialization.XmlSerializer> mappent des types CLR à une représentation XML. Le <xref:System.Runtime.Serialization.DataContractSerializer> interprète des représentations XML différemment du XmlSerializer. Les générateurs de proxy non-WCF, tels que WSDL. exe, génèrent une interface plus utilisable lorsque le XmlSerializer est utilisé. Le <xref:System.ServiceModel.XmlSerializerFormatAttribute> est appliqué à l' `ICalculator` interface, pour s’assurer que le XmlSerializer est utilisé pour le mappage des types CLR au format XML. L'implémentation de service calcule et retourne le résultat approprié.
+Le <xref:System.Runtime.Serialization.DataContractSerializer> et le <xref:System.Xml.Serialization.XmlSerializer> mappent des types CLR à une représentation XML. Le <xref:System.Runtime.Serialization.DataContractSerializer> interprète des représentations XML différemment du XmlSerializer. Les générateurs de proxy non-WCF, tels que WSDL. exe, génèrent une interface plus utilisable lorsque le XmlSerializer est utilisé. La <xref:System.ServiceModel.XmlSerializerFormatAttribute> est appliquée à l’interface `ICalculator`, afin de garantir que le XmlSerializer est utilisé pour le mappage des types CLR au format XML. L'implémentation de service calcule et retourne le résultat approprié.
 
 Le service expose un point de terminaison unique de communication avec le service, lequel est défini à l'aide du fichier de configuration Web.config. Le point de terminaison se compose d'une adresse, d'une liaison et d'un contrat. Le service expose le point de terminaison à l'adresse de base fournie par l'hôte IIS (Internet Information Services). L'attribut `binding` a la valeur basicHttpBinding, qui fournit des communications HTTP à l'aide de SOAP 1.1, qui est conforme à WS-BasicProfile 1.1, comme le montre l'exemple de configuration suivant.
 
@@ -51,7 +51,7 @@ Le service expose un point de terminaison unique de communication avec le servic
 </services>
 ```
 
-Le client ASMX communique avec le service WCF à l’aide d’un proxy typé généré par l’utilitaire Web Services Description Language (WSDL) (WSDL. exe). Le proxy typé est contenu dans le fichier generatedClient.cs. L'utilitaire WSDL récupère les métadonnées pour le service spécifié et génère un proxy typé qui sera utilisé par un client pour communiquer. Par défaut, l'infrastructure n'expose pas de métadonnées. Pour exposer les métadonnées requises pour générer le proxy, vous devez ajouter un [ \<> serviceMetadata](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) et définir `httpGetEnabled` son attribut `True` sur comme indiqué dans la configuration suivante.
+Le client ASMX communique avec le service WCF à l’aide d’un proxy typé généré par l’utilitaire Web Services Description Language (WSDL) (WSDL. exe). Le proxy typé est contenu dans le fichier generatedClient.cs. L'utilitaire WSDL récupère les métadonnées pour le service spécifié et génère un proxy typé qui sera utilisé par un client pour communiquer. Par défaut, l'infrastructure n'expose pas de métadonnées. Pour exposer les métadonnées requises pour générer le proxy, vous devez ajouter un [\<serviceMetadata >](../../../../docs/framework/configure-apps/file-schema/wcf/servicemetadata.md) et définir son attribut `httpGetEnabled` sur `True` comme indiqué dans la configuration suivante.
 
 ```xml
 <behaviors>
@@ -139,13 +139,13 @@ Press <ENTER> to terminate client.
 3. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
 > [!NOTE]
-> Pour plus d’informations sur le passage et le retour de types de données complexes, consultez: [Liaison de données dans un client Windows Forms](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [liaison de données dans un client Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md)et [liaison de données dans un client ASP.net](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)
+> Pour plus d’informations sur le passage et le retour de types de données complexes, consultez : [liaison de données dans un client Windows Forms](../../../../docs/framework/wcf/samples/data-binding-in-a-windows-forms-client.md), [liaison de données dans un client Windows Presentation Foundation](../../../../docs/framework/wcf/samples/data-binding-in-a-wpf-client.md)et [liaison de données dans un client ASP.net](../../../../docs/framework/wcf/samples/data-binding-in-an-aspnet-client.md)
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Interop\ASMX`

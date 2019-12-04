@@ -2,12 +2,12 @@
 title: Activités d'accès aux bases de données
 ms.date: 03/30/2017
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-ms.openlocfilehash: 31794a583e87b5948457fac754cb5bf66fafa09c
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: eec368803eeacb2bab729bcd6d57cc7fc6107256
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016035"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710859"
 ---
 # <a name="database-access-activities"></a>Activités d'accès aux bases de données
 
@@ -18,7 +18,7 @@ Les activités d'accès aux bases de données vous permettent d'accéder à une 
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à la page de téléchargement pour télécharger tous les exemples de Windows Communication Foundation ( [!INCLUDE[wf1](../../../../includes/wf1-md.md)] WCF) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à la page de téléchargement pour télécharger tous les exemples de Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`
 
@@ -78,8 +78,8 @@ Public class DbUpdate: AsyncCodeActivity
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|SQL|Commande SQL à exécuter.|
-|Paramètres|Collection des paramètres de la requête SQL.|
+|Sql|Commande SQL à exécuter.|
+|Parameters|Collection des paramètres de la requête SQL.|
 |AffectedRecords|Nombre d'enregistrements affectés par la dernière opération.|
 
 ## <a name="dbqueryscalar"></a>DbQueryScalar
@@ -92,7 +92,7 @@ Les informations de connexion peuvent être configurées en définissant un nom 
 
 La requête à exécuter est configurée dans sa propriété `Sql` et les paramètres sont passés via la collection `Parameters`.
 
-Après `DbQueryScalar` l’exécution de, le scalaire est retourné dans `Result out` l’argument (de `TResult`type, qui est défini dans la classe <xref:System.Activities.AsyncCodeActivity%601>de base).
+Après l’exécution de `DbQueryScalar`, le scalaire est retourné dans l’argument `Result out` (de type `TResult`, qui est défini dans la classe de base <xref:System.Activities.AsyncCodeActivity%601>).
 
 ```csharp
 public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
@@ -132,19 +132,19 @@ public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|SQL|Commande SQL à exécuter.|
-|Paramètres|Collection des paramètres de la requête SQL.|
+|Sql|Commande SQL à exécuter.|
+|Parameters|Collection des paramètres de la requête SQL.|
 |Résultat|Scalaire obtenu une fois la requête exécutée. Cet argument est de type `TResult`.|
 
 ## <a name="dbquery"></a>DbQuery
 
-Exécute une requête qui récupère une liste d'objets. Une fois la requête exécutée, une fonction de mappage est exécutée ( <xref:System.Func%601>il `TResult`peut s’agir <xref:System.Activities.ActivityFunc%601> `TResult` < `DbDataReader`de, > ou < `DbDataReader`, >). Cette fonction de mappage obtient un enregistrement dans un `DbDataReader` et le mappe à l'objet à retourner.
+Exécute une requête qui récupère une liste d'objets. Une fois la requête exécutée, une fonction de mappage est exécutée (elle peut être <xref:System.Func%601><`DbDataReader`, `TResult`> ou un <xref:System.Activities.ActivityFunc%601><`DbDataReader`, `TResult`>). Cette fonction de mappage obtient un enregistrement dans un `DbDataReader` et le mappe à l'objet à retourner.
 
 Les informations de connexion peuvent être configurées en définissant un nom invariant de fournisseur (`ProviderName`) et la chaîne de connexion (`ConnectionString`), ou simplement à l'aide d'un nom de configuration de chaîne de connexion (`ConfigFileSectionName`) provenant du fichier de configuration de l'application.
 
 La requête à exécuter est configurée dans sa propriété `Sql` et les paramètres sont passés via la collection `Parameters`.
 
-Les résultats de la requête SQL sont récupérés à l'aide d'un `DbDataReader`. L'activité itère au sein de `DbDataReader` et mappe les lignes de `DbDataReader` à une instance de `TResult`. L’utilisateur de `DbQuery` doit fournir le code de mappage. cette opération peut être effectuée de deux façons: à <xref:System.Func%601>l’aide d’un <xref:System.Activities.ActivityFunc%601>, `TResult` < `DbDataReader` `TResult`d’un > ou d’un < `DbDataReader`>. Dans le premier cas, le mappage est effectué en une seule impulsion d'exécution. Par conséquent, il est plus rapide, mais ne peut pas être sérialisé en XAML. Dans le dernier cas, le mappage est effectué en plusieurs impulsions. Par conséquent, il peut être plus lent mais peut être sérialisé en XAML et créé de façon déclarative (toute activité existante peut participer au mappage).
+Les résultats de la requête SQL sont récupérés à l'aide d'un `DbDataReader`. L'activité itère au sein de `DbDataReader` et mappe les lignes de `DbDataReader` à une instance de `TResult`. L’utilisateur de `DbQuery` doit fournir le code de mappage. cette opération peut être effectuée de deux façons : à l’aide d’un <xref:System.Func%601><`DbDataReader`, `TResult`> ou d’un <xref:System.Activities.ActivityFunc%601><`DbDataReader``TResult`>. Dans le premier cas, le mappage est effectué en une seule impulsion d'exécution. Par conséquent, il est plus rapide, mais ne peut pas être sérialisé en XAML. Dans le dernier cas, le mappage est effectué en plusieurs impulsions. Par conséquent, il peut être plus lent mais peut être sérialisé en XAML et créé de façon déclarative (toute activité existante peut participer au mappage).
 
 ```csharp
 public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult : class
@@ -192,21 +192,21 @@ public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult 
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|SQL|Commande SQL à exécuter.|
-|Paramètres|Collection des paramètres de la requête SQL.|
-|Mapper|Fonction de mappage<xref:System.Func%601><(`DbDataReader`, `DataReader` `TResult` >) qui prend un enregistrement dans le obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type à ajouter à `TResult` `Result` collection.<br /><br /> Dans ce cas, le mappage est effectué en seule impulsion d'exécution, mais il ne peut pas être créé de façon déclarative à l'aide du concepteur.|
-|MapperFunc|Fonction de mappage<xref:System.Activities.ActivityFunc%601><(`DbDataReader`, `DataReader` `TResult` >) qui prend un enregistrement dans le obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type à ajouter à `TResult` `Result` collection.<br /><br /> Dans ce cas, le mappage est effectué en plusieurs impulsions d'exécution. Cette fonction peut être sérialisée en XAML et créée de façon déclarative (toute activité existante peut participer au mappage).|
+|Sql|Commande SQL à exécuter.|
+|Parameters|Collection des paramètres de la requête SQL.|
+|Mapper|Fonction de mappage (<xref:System.Func%601><`DbDataReader`, `TResult`>) qui prend un enregistrement dans le `DataReader` obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type `TResult` à ajouter à la collection `Result`.<br /><br /> Dans ce cas, le mappage est effectué en seule impulsion d'exécution, mais il ne peut pas être créé de façon déclarative à l'aide du concepteur.|
+|MapperFunc|Fonction de mappage (<xref:System.Activities.ActivityFunc%601><`DbDataReader`, `TResult`>) qui prend un enregistrement dans le `DataReader` obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type `TResult` à ajouter à la collection `Result`.<br /><br /> Dans ce cas, le mappage est effectué en plusieurs impulsions d'exécution. Cette fonction peut être sérialisée en XAML et créée de façon déclarative (toute activité existante peut participer au mappage).|
 |Résultat|Liste des objets obtenus en résultat de l'exécution de la requête et de l'exécution de la fonction de mappage pour chaque d'enregistrement de `DataReader`.|
 
 ## <a name="dbquerydataset"></a>DbQueryDataSet
 
-Exécute une requête qui retourne un <xref:System.Data.DataSet>. Cette classe effectue son travail de façon asynchrone. Il dérive de <xref:System.Activities.AsyncCodeActivity> < `TResult`> et utilise ses fonctionnalités asynchrones.
+Exécute une requête qui retourne un <xref:System.Data.DataSet>. Cette classe effectue son travail de façon asynchrone. Il dérive de <xref:System.Activities.AsyncCodeActivity><`TResult`> et utilise ses fonctionnalités asynchrones.
 
 Les informations de connexion peuvent être configurées en définissant un nom invariant de fournisseur (`ProviderName`) et la chaîne de connexion (`ConnectionString`), ou simplement à l'aide d'un nom de configuration de chaîne de connexion (`ConfigFileSectionName`) provenant du fichier de configuration de l'application.
 
 La requête à exécuter est configurée dans sa propriété `Sql` et les paramètres sont passés via la collection `Parameters`.
 
-<xref:System.Activities.AsyncCodeActivity%601> `TResult` `Result out` Une fois le `DataSet`estexécuté , est retourné dans l’argument (de type, qui est défini dans la classe de base). `DbQueryDataSet`
+Une fois la `DbQueryDataSet` exécutée, le `DataSet` est retourné dans l’argument `Result out` (de type `TResult`, qui est défini dans la classe de base <xref:System.Activities.AsyncCodeActivity%601>).
 
 ```csharp
 public class DbQueryDataSet : AsyncCodeActivity<DataSet>
@@ -246,15 +246,15 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|SQL|Commande SQL à exécuter.|
-|Paramètres|Collection des paramètres de la requête SQL.|
+|Sql|Commande SQL à exécuter.|
+|Parameters|Collection des paramètres de la requête SQL.|
 |Résultat|<xref:System.Data.DataSet> obtenu une fois la requête exécutée.|
 
 ## <a name="configuring-connection-information"></a>Configuration des informations de connexion
 
 Tous les DbActivities partagent les mêmes paramètres de configuration. Ils peuvent être configurés de deux façons :
 
-- `ConnectionString + InvariantName`: Définissez le nom invariant du fournisseur ADO.NET et la chaîne de connexion.
+- `ConnectionString + InvariantName` : définit le nom invariant du fournisseur ADO.NET et la chaîne de connexion.
 
   ```csharp
   Activity dbSelectCount = new DbQueryScalar<DateTime>()
@@ -267,7 +267,7 @@ Tous les DbActivities partagent les mêmes paramètres de configuration. Ils peu
   };
   ```
 
-- `ConfigName`: Définissez le nom de la section de configuration qui contient les informations de connexion.
+- `ConfigName` : définit le nom de la section de configuration qui contient les informations de connexion.
 
   ```xml
   <connectionStrings>
@@ -311,7 +311,7 @@ Le script Setup.cmd appelle le fichier de script CreateDb.sql, lequel contient d
 
 2. Accédez au dossier d'exemples DbActivities.
 
-3. Tapez «setup. cmd» et appuyez sur entrée.
+3. Tapez « setup. cmd » et appuyez sur entrée.
 
     > [!NOTE]
     > Setup.cmd tente d'installer l'exemple dans l'instance SqlExpress de votre ordinateur local. Si vous voulez l'installer dans une autre instance SQL Server, modifiez Setup.cmd avec le nom de la nouvelle instance.
@@ -320,7 +320,7 @@ Le script Setup.cmd appelle le fichier de script CreateDb.sql, lequel contient d
 
 1. Exécutez le fichier Cleanup.cmd du dossier d’exemples dans une invite de commandes.
 
-##### <a name="to-run-the-sample"></a>Pour exécuter l'exemple
+##### <a name="to-run-the-sample"></a>Pour exécuter l’exemple
 
 1. Ouvrir la solution dans Visual Studio 2010
 
@@ -333,6 +333,6 @@ Le script Setup.cmd appelle le fichier de script CreateDb.sql, lequel contient d
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\ActivityLibrary\DbActivities`

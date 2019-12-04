@@ -2,17 +2,17 @@
 title: Utilisation de la portée d'édition
 ms.date: 03/30/2017
 ms.assetid: 79306f9e-318b-4687-9863-8b93d1841716
-ms.openlocfilehash: 386c94e5c6761bb704efc9e48723d0e91a4aaf6b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3e99610fda78e50f6d6eb72c38ecc82bdc96b5a2
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70037798"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715554"
 ---
 # <a name="using-editing-scope"></a>Utilisation de la portée d'édition
 Cet exemple montre comment traiter par lot un ensemble de modifications afin qu'elles puissent être annulées dans une unité atomique unique. Par défaut, les actions effectuées par un auteur de concepteur d'activités sont automatiquement intégrées dans le système d'annulation/de rétablissement.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  Portée d'édition et annulation/rétablissement.  
   
 ## <a name="discussion"></a>Discussion  
@@ -39,6 +39,6 @@ Cet exemple montre comment traiter par lot un ensemble de modifications afin qu'
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\UsingEditingScope`

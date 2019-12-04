@@ -2,12 +2,12 @@
 title: Gestion des erreurs dans une activité Flowchart à l'aide de TryCatch
 ms.date: 03/30/2017
 ms.assetid: 50922964-bfe0-4ba8-9422-0e7220d514fd
-ms.openlocfilehash: 42eb660aff01c7e29227c28a6ad0d47d4370eb91
-ms.sourcegitcommit: 121ab70c1ebedba41d276e436dd2b1502748a49f
+ms.openlocfilehash: 8e3ca59bc9743300a230877a6fbcbed5468a1589
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/24/2019
-ms.locfileid: "70016016"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710838"
 ---
 # <a name="fault-handling-in-a-flowchart-activity-using-trycatch"></a>Gestion des erreurs dans une activité Flowchart à l'aide de TryCatch
 
@@ -17,9 +17,9 @@ Dans cet exemple, un code promotionnel et un nombre d'enfants sont passés en ta
 
 Le tableau suivant décrit en détail les variables pour l'activité `CreateFlowchartWithFaults`.
 
-|Paramètres|Description|
+|Parameters|Description|
 |----------------|-----------------|
-|promoCode|Code promotionnel. Tapez : String<br /><br /> Valeurs possibles avec la description entre parenthèses :<br /><br /> -Single (unique)<br />-MNK (marié sans enfants.)<br />-MWK (marié avec les enfants.)|
+|promoCode|Code de promotion. Type : chaîne<br /><br /> Valeurs possibles avec la description entre parenthèses :<br /><br /> -Single (unique)<br />-MNK (marié sans enfants.)<br />-MWK (marié avec les enfants.)|
 |numKids|Nombre d'enfants. Type : int|
 
 L'activité `CreateFlowchartWithFaults` utilise une activité <xref:System.Activities.Statements.FlowSwitch%601> qui active l'argument `promoCode` et calcule la remise à l'aide de la formule suivante.
@@ -28,7 +28,7 @@ L'activité `CreateFlowchartWithFaults` utilise une activité <xref:System.Activ
 |--------------------------|--------------------|
 |Single|10|
 |MNK|15|
-|MWK|15 + (1 – 1/`numberOfKids`)\*10 **Remarque:**  Potentiellement, ce calcul peut lever un <xref:System.DivideByZeroException>. Par conséquent, le calcul de la remise est inclus dans un wrapper dans une activité <xref:System.Activities.Statements.TryCatch> qui intercepte l'exception <xref:System.DivideByZeroException> et définit la remise à zéro.|
+|MWK|15 + (1 – 1/`numberOfKids`)\*10 **Remarque :** ce calcul peut éventuellement lever une <xref:System.DivideByZeroException>. Par conséquent, le calcul de la remise est inclus dans un wrapper dans une activité <xref:System.Activities.Statements.TryCatch> qui intercepte l'exception <xref:System.DivideByZeroException> et définit la remise à zéro.|
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
@@ -43,7 +43,7 @@ L'activité `CreateFlowchartWithFaults` utilise une activité <xref:System.Activ
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Built-InActivities\FlowChartWithFaultHandling`
 

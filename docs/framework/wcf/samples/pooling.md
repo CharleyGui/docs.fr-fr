@@ -1,15 +1,15 @@
 ---
-title: Pooling
+title: Regroupement
 ms.date: 03/30/2017
 ms.assetid: 688dfb30-b79a-4cad-a687-8302f8a9ad6a
-ms.openlocfilehash: 717dafb6ba9467590201511cbc0ac17690c931ae
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: d2962004376cf6f0752067d4e03828cd894efd01
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424282"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716516"
 ---
-# <a name="pooling"></a>Pooling
+# <a name="pooling"></a>Regroupement
 Cet exemple montre comment étendre Windows Communication Foundation (WCF) pour prendre en charge le regroupement d’objets. L'exemple montre comment créer un attribut syntaxiquement et sémantiquement similaire aux fonctionnalités de l'attribut `ObjectPoolingAttribute` de Enterprise Services. Le mise en pool d’objets permet une amélioration significative de la performance d'une application. Toutefois, il peut avoir l'effet inverse s'il n'est pas utilisé de manière appropriée. Le mise en pool d’objets évite d'avoir à recréer les objets fréquemment utilisés qui requièrent une initialisation complète. Toutefois, si un appel à une méthode sur un objet du pool met beaucoup de temps à s'exécuter, le mise en pool d’objets met les demandes supplémentaires en file d'attente dès que la taille de pool maximale est atteinte. Il peut donc ne pas traiter certaines demandes de création d'objet en levant une exception de délai d'attente.  
   
 > [!NOTE]
@@ -248,6 +248,6 @@ Press <ENTER> to exit.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Instancing\Pooling`  

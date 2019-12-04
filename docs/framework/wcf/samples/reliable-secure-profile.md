@@ -2,12 +2,12 @@
 title: Reliable Secure Profile
 ms.date: 03/30/2017
 ms.assetid: 921edc41-e91b-40f9-bde9-b6148b633e61
-ms.openlocfilehash: d7cfc028c5cf1ba5cfba009cd29c89f07c64fd9c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: ee94dc5be2c50f9e383a42d435996b2fd35df4a4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044800"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716505"
 ---
 # <a name="reliable-secure-profile"></a>Reliable Secure Profile
 Cet exemple montre comment composer WCF et [Reliable Secure Profile](https://go.microsoft.com/fwlink/?LinkId=178140) (RSP). Cet exemple illustre l’implémentation d’un canal [Make Connection](https://go.microsoft.com/fwlink/?LinkId=178141) qui peut être composé avec une messagerie fiable et éventuellement un canal sécurisé pour créer une liaison sécurisée fiable basée sur la spécification RSP.  
@@ -17,7 +17,7 @@ Cet exemple montre comment composer WCF et [Reliable Secure Profile](https://go.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ReliableSecureProfile`  
   
@@ -28,9 +28,9 @@ Cet exemple montre comment composer WCF et [Reliable Secure Profile](https://go.
   
 1. Ouvrez la solution **ReliableSecureProfile** .  
   
-2. Cliquez avec le bouton droit sur le projet de **service** dans **Explorateur de solutions**, sélectionnez Déboguer, **Démarrer une nouvelle instance** dans le menu contextuel. Cela démarre l'hôte de service.  
+2. Cliquez avec le bouton droit sur le projet de **service** dans **Explorateur de solutions**, sélectionnez **Déboguer**, **Démarrer une nouvelle instance** dans le menu contextuel. Cela démarre l'hôte de service.  
   
-3. Cliquez avec le bouton droit sur le projet **client** dans **Explorateur de solutions**, sélectionnez Déboguer, **Démarrer une nouvelle instance** dans le menu contextuel. Cela démarre le client.  
+3. Cliquez avec le bouton droit sur le projet **client** dans **Explorateur de solutions**, sélectionnez **Déboguer**, **Démarrer une nouvelle instance** dans le menu contextuel. Cela démarre le client.  
   
 4. Tapez une chaîne quelconque dans l'invite de la fenêtre de console du client et appuyez sur ENTRÉE. Cela envoie la chaîne entrée au service, qui calcule un hachage de cette chaîne.  
   

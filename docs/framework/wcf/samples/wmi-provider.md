@@ -2,12 +2,12 @@
 title: WMI Provider
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: dd24a6d270a0bd9012bbda2a53913167c9697bc5
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4db8873397b0136de88d00ebe62c429aee260911
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424515"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715005"
 ---
 # <a name="wmi-provider"></a>WMI Provider
 Cet exemple montre comment collecter des données à partir de services Windows Communication Foundation (WCF) au moment de l’exécution à l’aide du fournisseur Windows Management Instrumentation (WMI) intégré à WCF. Cet exemple montre également comment ajouter un objet WMI défini par l'utilisateur à un service. L’exemple active le fournisseur WMI pour la [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et montre comment collecter des données à partir du service `ICalculator` au moment de l’exécution.  
@@ -139,7 +139,7 @@ cscript EnumerateCustomObjects.js
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\WMIProvider`  
   

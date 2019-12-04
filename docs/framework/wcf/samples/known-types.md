@@ -2,12 +2,12 @@
 title: Known Types
 ms.date: 03/30/2017
 ms.assetid: 88d83720-ca38-4b2c-86a6-f149ed1d89ec
-ms.openlocfilehash: 40f1fd9b3051d643596c296a709e0df61ab4d955
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5d772caa262a271db180bf764e0763999fffd7f3
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045532"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715710"
 ---
 # <a name="known-types"></a>Known Types
 Cet exemple montre comment spécifier des informations sur les types dérivés d'un contrat de données. Les contrats de données vous permettent de transférer des données structurées vers des services et à partir de ceux-ci. Dans la programmation orientée objet, un type qui hérite d'un autre peut être utilisé à la place de celui d'origine. Dans la  programmation orientée service, ce sont les schémas et non pas les types qui sont communiqués et par conséquent, la relation entre les types n'est pas conservée. L'attribut <xref:System.Runtime.Serialization.KnownTypeAttribute> permet d'inclure les informations sur les types dérivés dans le contrat de données. Si ce mécanisme n'est pas utilisé, un type dérivé ne peut pas être envoyé ou reçu là où un type de base est attendu.  
@@ -71,7 +71,7 @@ public class ComplexNumberWithMagnitude : ComplexNumber
 }  
 ```  
   
- Pour illustrer la fonctionnalité des types connus, le service est implémenté de manière à retourner un `ComplexNumberWithMagnitude` seul pour l’addition et la soustraction. (Même si le contrat spécifie `ComplexNumber`, cela est autorisé en raison de l'attribut `KnownTypeAttribute`). La multiplication et la Division retournent `ComplexNumber` toujours le type de base.  
+ Pour illustrer la fonctionnalité des types connus, le service est implémenté de manière à retourner un `ComplexNumberWithMagnitude` uniquement pour l’addition et la soustraction. (Même si le contrat spécifie `ComplexNumber`, cela est autorisé en raison de l'attribut `KnownTypeAttribute`). La multiplication et la Division retournent toujours le type de `ComplexNumber` de base.  
   
 ```csharp
 public class DataContractCalculatorService : IDataContractCalculator  
@@ -167,6 +167,6 @@ No magnitude was sent from the service
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Data\KnownTypes`  

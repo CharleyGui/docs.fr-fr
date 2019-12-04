@@ -2,12 +2,12 @@
 title: Publication WSDL personnalisée
 ms.date: 03/30/2017
 ms.assetid: 3b3e8103-2c95-4db3-a05b-46aa8e9d4d29
-ms.openlocfilehash: 9d753ca30bdcf66f5225700245b9688c5226613e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 173deaf280c052b76e6937b2cec44ebdeafc57f9
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978285"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714918"
 ---
 # <a name="custom-wsdl-publication"></a>Publication WSDL personnalisée
 Cet exemple montre comment :  
@@ -303,6 +303,6 @@ public interface ICalculator
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Metadata\WsdlDocumentation`  

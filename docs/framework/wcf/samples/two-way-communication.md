@@ -2,12 +2,12 @@
 title: Two-Way Communication
 ms.date: 03/30/2017
 ms.assetid: fb64192d-b3ea-4e02-9fb3-46a508d26c60
-ms.openlocfilehash: 7bc513d270a860c104255ac5df6f6d890f6b2b0d
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9cf8d3746cea5746bee186a8a68a515c8503cb85
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424207"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715897"
 ---
 # <a name="two-way-communication"></a>Two-Way Communication
 Cet exemple montre comment effectuer une communication en file d'attente bidirectionnelle sur MSMQ. Cet exemple utilise la liaison `netMsmqBinding`. Dans le cas présent, le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.  
@@ -327,6 +327,6 @@ Status of order 124a1f69-3699-4b16-9bcc-43147a8756fc:Pending
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Binding\Net\MSMQ\Two-Way`  

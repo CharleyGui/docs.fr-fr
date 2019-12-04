@@ -2,12 +2,12 @@
 title: Message Correlation
 ms.date: 03/30/2017
 ms.assetid: 3f62babd-c991-421f-bcd8-391655c82a1f
-ms.openlocfilehash: 657f7c6e3fd544614e193d9e6843a8ed58881387
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 0f5124b8172a7a4d553d19e08309affb48e7468c
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039408"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714866"
 ---
 # <a name="message-correlation"></a>Message Correlation
 Cet exemple montre comment une application Message Queuing (MSMQ) peut envoyer un message MSMQ à un service Windows Communication Foundation (WCF) et comment les messages peuvent être corrélés entre les applications de l’expéditeur et du récepteur dans un scénario de demande/réponse. Cet exemple utilise la liaison msmqIntegrationBinding. Dans le cas présent, le service est une application console auto-hébergée qui vous permet d'observer le service qui reçoit les messages mis en file d'attente. k  
@@ -67,7 +67,7 @@ public class OrderProcessorService : IOrderProcessor
 
  Le service utilise un client `OrderResponseClient` personnalisé pour envoyer le message MSMQ à la file d'attente. Étant donné que l’application qui reçoit et traite le message est une application MSMQ et non une application WCF, il n’existe pas de contrat de service implicite entre les deux applications. Par conséquent, nous ne pouvons pas créer de proxy à l'aide de l'outil Svcutil.exe dans ce scénario.
 
- Le proxy personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent `msmqIntegrationBinding` la liaison pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
+ Le proxy personnalisé est fondamentalement le même pour toutes les applications WCF qui utilisent la liaison `msmqIntegrationBinding` pour envoyer des messages. Contrairement aux autres proxys, il n'inclut pas de plage d'opérations de service. Il s'agit uniquement d'une opération d'envoi de message.
 
 ```csharp
 [System.ServiceModel.ServiceContractAttribute(Namespace = "http://Microsoft.ServiceModel.Samples")]
@@ -213,7 +213,7 @@ static void PlaceOrder()
  La file d'attente MSMQ à partir de laquelle les réponses à la commande sont reçues est spécifiée dans une section appSettings du fichier de configuration, comme le montre l'exemple de configuration suivant.
 
 > [!NOTE]
-> Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma msmq. formatname et utilise «localhost» pour l’ordinateur local. Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.
+> Le nom de la file d'attente utilise un point (.) pour l'ordinateur local et des barres obliques inverses comme séparateur dans son chemin d'accès. L’adresse de point de terminaison WCF spécifie un schéma msmq. formatname et utilise « localhost » pour l’ordinateur local. Un nom de format correct suit msmq.formatname dans l'URI d'après les règles d'adressage MSMQ.
 
 ```xml
 <appSettings>
@@ -308,7 +308,7 @@ static void DisplayOrderStatus()
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\MessageCorrelation`  
   

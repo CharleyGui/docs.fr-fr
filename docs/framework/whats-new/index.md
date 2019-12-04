@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ffcb288995975433bdd915362fccca03f345b5f5
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c651f5c02bd49acc593c585395bc52e9ee64f870
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281652"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714493"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -28,7 +28,7 @@ Cet article résume les principales nouvelles fonctionnalités et améliorations
 - [.NET 2015 et .NET Framework 4.6](#v46)
 - [.NET Framework 4.5.2](#v452)
 - [.NET Framework 4.5.1](#v451)
-- [.NET Framework 4.5](#v45)
+- [.NET Framework 4.5](#v45)
 
 Cet article ne fournit pas d'informations complètes sur chacune des nouvelles fonctionnalités et peut faire l'objet de modifications. Pour obtenir des informations générales sur le .NET Framework, consultez [Prise en main](../get-started/index.md). Pour connaître les plateformes prises en charge, consultez [Configuration requise](../get-started/system-requirements.md). Pour obtenir des liens de téléchargement et des instructions d’installation, consultez [Guide d’installation](../install/guide-for-developers.md).
 
@@ -102,7 +102,7 @@ Les points de terminaison d’intégrité sont couramment utilisés par les outi
 
 Deux méthodes permettent d’exposer le point de terminaison d’intégrité et de publier les informations d’intégrité du service WCF :
 
-- Par le biais du code. Exemple :
+- Par le biais du code. Par exemple :
 
   ```csharp
   ServiceHost host = new ServiceHost(typeof(Service1),
@@ -124,7 +124,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   host.Description.Behaviors.Add(healthBehavior)
   ```
 
-- À l’aide d’un fichier de configuration. Exemple :
+- À l’aide d’un fichier de configuration. Par exemple :
 
   ```xml
   <behaviors>
@@ -136,7 +136,7 @@ Deux méthodes permettent d’exposer le point de terminaison d’intégrité et
   </behaviors>
   ```
 
-L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Exemple :
+L’état d’intégrité d’un service peut être interrogé à l’aide de paramètres de requête tels que `OnServiceFailure`, `OnDispatcherFailure`, `OnListenerFailure`, `OnThrottlePercentExceeded`, et un code de réponse HTTP peut être spécifié pour chaque paramètre de requête. Si le code de réponse HTTP est omis pour un paramètre de requête, un code de réponse HTTP 503 est utilisé par défaut. Par exemple :
 
 - OnServiceFailure : `https://contoso:81/Service1?health&OnServiceFailure=450`
 
@@ -252,7 +252,7 @@ Using rsa = RSA.Create(rsaParameters)
 End Using
 ```
 
-Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Exemple :
+Les méthodes <xref:System.Security.Cryptography.DSA.Create(System.Int32)?displayProperty=nameWithType> et <xref:System.Security.Cryptography.RSA.Create(System.Int32)?displayProperty=nameWithType> vous permettent de générer de nouvelles clés <xref:System.Security.Cryptography.DSA> ou <xref:System.Security.Cryptography.RSA> avec une taille de clé spécifique. Par exemple :
 
 ```csharp
 using (DSA dsa = DSA.Create(2048))
@@ -340,7 +340,7 @@ Dim cStream = New CryptoStream(stream, transform, mode, leaveOpen:=true)
 
 **Changements de décompression dans DeflateStream**
 
-À compter de .NET Framework 4.7.2, l’implémentation des opérations de décompression de la classe <xref:System.IO.Compression.DeflateStream> a été changée de façon à utiliser des API Windows natives par défaut. En règle générale, s’ensuit une amélioration sensible des performances.
+À compter de .NET Framework 4.7.2, l’implémentation des opérations de décompression de la classe <xref:System.IO.Compression.DeflateStream> a été changée de façon à utiliser des API Windows natives par défaut. En règle générale, cela entraîne une amélioration sensible des performances.
 
 La prise en charge de la décompression à l’aide des API Windows est activée par défaut pour les applications qui ciblent .NET Framework 4.7.2. Les applications qui ciblent les versions antérieures du .NET Framework mais qui s’exécutent sur .NET Framework 4.7.2 peuvent adopter ce comportement en ajoutant le [commutateur AppContext](../configure-apps/file-schema/runtime/appcontextswitchoverrides-element.md) suivant au fichier de configuration d’application :
 
@@ -467,7 +467,7 @@ Pour plus d’informations et pour obtenir un exemple, consultez « SQL -- Azur
 
 - <xref:System.Data.SqlClient.SqlEnclaveAttestationParameters>, qui fournit les paramètres d’attestation utilisés par SQL Server afin d’obtenir les informations requises pour exécuter un protocole d’attestation spécifique.
 
-Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Exemple :
+Le fichier de configuration d’application spécifie ensuite une implémentation concrète de la classe <xref:System.Data.SqlClient.SqlColumnEncryptionEnclaveProvider?displayProperty=nameWithType> abstraite qui fournit la fonctionnalité pour le fournisseur d’enclave. Par exemple :
 
 ```xml
 <configuration>
@@ -650,7 +650,7 @@ ASP.NET traite les demandes dans un pipeline prédéfini comprenant 23 événeme
 
 **Options de hachage SHA-2 pour les informations d’identification de l’authentification par formulaires ASP.NET**
 
-Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Exemple :
+Dans .NET Framework 4.7 et versions antérieures, ASP.NET permettait aux développeurs de stocker les informations d’identification des utilisateurs avec des mots de passe hachés dans des fichiers de configuration en utilisant MD5 ou SHA-1. À compter de .NET Framework 4.7.1, ASP.NET prend en charge de nouvelles options de hachage SHA-2 sécurisées, notamment SHA256, SHA384 et SHA512. SHA1 reste la valeur par défaut, et un algorithme de hachage autre que celui par défaut peut être défini dans le fichier de configuration web. Par exemple :
 
 ```xml
 <system.web>
@@ -841,7 +841,7 @@ End Class
 
 Vous pouvez ensuite créer un fichier de ressources DataAnnotation.Localization.fr.resx, dont la clé est la chaîne de message d’erreur et dont la valeur est le message d’erreur localisé. Le fichier doit se trouver dans le dossier `App.LocalResources`. Par exemple, voici la clé et sa valeur dans un message d’erreur localisé en français (fr) :
 
-| Nom                                 | Valeur                                     |
+| Name                                 | Value                                     |
 | ------------------------------------ | ----------------------------------------- |
 | The rating must be between 1 and 10. | La note doit être comprise entre 1 et 10. |
 
@@ -965,7 +965,7 @@ Pour résoudre ce problème dans .NET Framework 4.6.2, les trois méthodes suiv
 
 La bibliothèque de chiffrement Windows (CNG) a ajouté la prise en charge du stockage de clés symétriques persistantes et de l’utilisation des clés symétriques stockées sur du matériel, et .NET Framework 4.6.2 a permis aux développeurs d’utiliser cette fonctionnalité.  Sachant que la notion de noms de clés et de fournisseurs de clés est spécifique à l’implémentation, cette fonctionnalité impose l’utilisation du constructeur des types d’implémentation concrets plutôt que l’approche par défaut privilégiée (comme l’appel de `Aes.Create`).
 
-La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Exemple :
+La prise en charge du chiffrement symétrique des clés persistantes existe pour les algorithmes AES (<xref:System.Security.Cryptography.AesCng>) et 3DES (<xref:System.Security.Cryptography.TripleDESCng>). Par exemple :
 
 ```csharp
 public static byte[] EncryptDataWithPersistedKey(byte[] data, byte[] iv)
@@ -1037,7 +1037,7 @@ L’ajout du nouveau mot clé `PoolBlockingPeriod` vous permet de sélectionner 
 
 <xref:System.Data.SqlClient.PoolBlockingPeriod.Auto>
 
-La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Il s'agit de la valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
+La période de blocage de pool de connexions d’une application qui se connecte à une base de données Azure SQL Database est désactivée, pendant que celle d’une application qui se connecte à une autre instance SQL Server est activée. Valeur par défaut. Si le nom de point de terminaison d’un serveur se termine par l’un des éléments suivants, il est considéré comme une base de données Azure SQL Database :
 
 - .database.windows.net
 
@@ -1729,7 +1729,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
     Une nouvelle propriété, <xref:System.Uri.IdnHost%2A>, a été ajoutée à la classe <xref:System.Uri> pour mieux prendre en charge les noms de domaine internationaux et PunyCode.
 
-- **Redimensionnement dans les contrôles Windows Forms**
+- **Redimensionnement dans les contrôles Windows Forms.**
 
   Cette fonctionnalité a été développée dans .NET Framework 4.6 pour inclure les types <xref:System.Windows.Forms.DomainUpDown>, <xref:System.Windows.Forms.NumericUpDown>, <xref:System.Windows.Forms.DataGridViewComboBoxColumn>, <xref:System.Windows.Forms.DataGridViewColumn> et <xref:System.Windows.Forms.ToolStripSplitButton>, ainsi que le rectangle spécifié par la propriété <xref:System.Drawing.Design.PaintValueEventArgs.Bounds%2A> utilisée durant le dessin de <xref:System.Drawing.Design.UITypeEditor>.
 
@@ -1767,7 +1767,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   Les nouvelles propriétés <xref:System.Web.HttpResponse.HeadersWritten?displayProperty=nameWithType> et <xref:System.Web.HttpResponseBase.HeadersWritten?displayProperty=nameWithType> retournent des valeurs booléennes qui indiquent si les en-têtes de réponse ont été écrits. Vous pouvez utiliser ces propriétés pour vous assurer que les appels d'API comme <xref:System.Web.HttpResponse.StatusCode%2A?displayProperty=nameWithType> (qui lèvent des exceptions si les en-têtes ont été écrits) vont réussir.
 
-- **Redimensionnement dans les contrôles Windows Forms** Cette fonctionnalité a été étendue. Vous pouvez maintenant utiliser le paramètre PPP système pour redimensionner les composants des contrôles supplémentaires suivants (par exemple, la flèche déroulante vers le bas dans les zones de liste modifiable) :
+- **Redimensionnement dans les contrôles Windows Forms.** Cette fonctionnalité a été étendue. Vous pouvez maintenant utiliser le paramètre PPP système pour redimensionner les composants des contrôles supplémentaires suivants (par exemple, la flèche déroulante vers le bas dans les zones de liste modifiable) :
 
   - <xref:System.Windows.Forms.ComboBox>
   - <xref:System.Windows.Forms.ToolStripComboBox>
@@ -1786,13 +1786,13 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
 - **Nouvelle fonctionnalité de flux de travail.** Un gestionnaire de ressources qui utilise la méthode <xref:System.Transactions.Transaction.EnlistPromotableSinglePhase%2A> (et qui implémente donc l'interface <xref:System.Transactions.IPromotableSinglePhaseNotification>) peut utiliser la nouvelle méthode <xref:System.Transactions.Transaction.PromoteAndEnlistDurable%2A?displayProperty=nameWithType> pour demander :
 
-  - la promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator) ;
+  - La promotion de la transaction en transaction MSDTC (Microsoft Distributed Transaction Coordinator)
 
   - le remplacement de <xref:System.Transactions.IPromotableSinglePhaseNotification> par <xref:System.Transactions.ISinglePhaseNotification>, qui correspond à une inscription durable qui prend en charge les validations en une seule phase.
 
   Ces demandes peuvent être faites au sein du même domaine d'application et ne nécessitent pas de code non managé supplémentaire pour interagir avec MSDTC pour effectuer la promotion. La nouvelle méthode peut uniquement être appelée quand il existe un appel en suspens de <xref:System.Transactions?displayProperty=nameWithType> à la méthode <xref:System.Transactions.IPromotableSinglePhaseNotification> `Promote` qui est implémentée par l’inscription pouvant être promue.
 
-- **Améliorations du profilage.** Les nouvelles API de profilage non managées suivantes proposent un profilage plus robuste :
+- **Améliorations du profilage.** Les nouvelles API de profilage non managé suivantes propose un profilage plus robuste :
 
   - [COR_PRF_ASSEMBLY_REFERENCE_INFO, structure](../unmanaged-api/profiling/cor-prf-assembly-reference-info-structure.md)
   - [COR_PRF_MODULE_FLAGS, énumération](../unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md)
@@ -1803,7 +1803,7 @@ Le .NET Framework 2015 introduit le .NET Framework 4.6 et le .NET Core. Certain
 
   Les implémentations précédentes d'`ICorProfiler` prenaient en charge le chargement tardif des assemblys dépendants. Les nouvelles API de profilage ont besoin que les assemblys dépendants soient injectés par le profileur pour qu'ils puissent être chargés immédiatement, plutôt qu'une fois que l'application est entièrement initialisée. Cette modification ne concerne pas les utilisateurs des API `ICorProfiler` existantes.
 
-- **Améliorations du débogage.** Les nouvelles API de débogage non managées suivantes améliorent l'intégration à un profileur. Vous pouvez à présent accéder aux métadonnées insérées par le profileur ainsi qu'aux variables locales et au code produit par les demandes ReJIT du compilateur pendant le débogage de dump.
+- **Améliorations du débogage.** Les nouvelles API de débogage non managé suivantes améliorent l'intégration à un profileur. Vous pouvez à présent accéder aux métadonnées insérées par le profileur ainsi qu'aux variables locales et au code produit par les demandes ReJIT du compilateur pendant le débogage de dump.
 
   - [SetWriteableMetadataUpdateMode, méthode](../unmanaged-api/debugging/icordebugprocess7-setwriteablemetadataupdatemode-method.md)
   - [EnumerateLocalVariablesEx, méthode](../unmanaged-api/debugging/icordebugilframe4-enumeratelocalvariablesex-method.md)
@@ -1876,7 +1876,7 @@ Les améliorations apportées à Windows Forms incluent :
   - <xref:System.Windows.Forms.TreeView>
   - Certains aspects de <xref:System.Windows.Forms.DataGridView> (voir [nouvelles fonctionnalités dans 4.5.2](#v452) pour connaître les autres contrôles pris en charge)
 
-  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `EnableWindowsFormsHighDpiAutoResizing` à l'élément `true` :
+  Pour activer cette fonctionnalité, ajoutez un nouvel élément \<appSettings> au fichier de configuration (app.config) et affectez la valeur `true` à l'élément `EnableWindowsFormsHighDpiAutoResizing` :
 
   ```xml
   <appSettings>
@@ -1900,7 +1900,7 @@ Pour les nouvelles fonctionnalités dans ASP.NET 4.5.1, consultez [Notes de mis
 
 <a name="v45" />
 
-## <a name="whats-new-in-net-framework-45"></a>Nouveautés de .NET Framework 4.5
+## <a name="whats-new-in-net-framework-45"></a>What's new in .NET Framework 4.5 (Nouveautés dans .NET Framework 4.5)
 
 ### <a name="base-classes"></a>Classes de base
 
@@ -2116,13 +2116,13 @@ Pour plus d’informations, consultez [Nouveautés de Windows Workflow Foundatio
 
 <a name="tailored" />
 
-### [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]
+### <a name="net-for-windows-8x-store-apps"></a>.NET pour les applications du Windows Store sur Windows 8.x
 
-Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble s’appelle [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)] et est décrit dans une [vue d’ensemble](https://go.microsoft.com/fwlink/?LinkId=228491) disponible dans le Centre de développement Windows.
+Les applications Windows 8.x Store sont conçues pour des facteurs de forme spécifiques et tirent parti de la puissance du système d'exploitation Windows. Un sous-ensemble du .NET Framework 4.5 ou 4.5.1 est disponible pour générer des applications Windows 8.x Store pour Windows à l'aide de C# ou de Visual Basic. Ce sous-ensemble s’appelle .NET pour les applications Windows 8.x Store et est décrit dans une [vue d’ensemble](https://go.microsoft.com/fwlink/?LinkId=228491) disponible dans le Centre de développement Windows.
 
 ### <a name="portable-class-libraries-a-nameportable-"></a>Bibliothèques de classes portables<a name="portable" />
 
-Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les versions ultérieures) vous permet d'écrire et de générer des assemblys managés qui fonctionnent sur plusieurs plateformes .NET Framework. Un projet Bibliothèque de classes portable vous permet de choisir les plateformes (telles que Windows Phone et [!INCLUDE[net_win8_profile](../../../includes/net-win8-profile-md.md)]) à cibler. Les types et les membres disponibles dans votre projet sont automatiquement restreints aux types et aux membres communs entre ces plateformes. Pour plus d’informations, consultez [Bibliothèque de classes portable](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
+Le projet Bibliothèque de classes portable dans Visual Studio 2012 (et les versions ultérieures) vous permet d'écrire et de générer des assemblys managés qui fonctionnent sur plusieurs plateformes .NET Framework. À l’aide d’un projet de bibliothèque de classes portables, vous choisissez les plateformes (telles que Windows Phone et .NET pour les applications du Windows 8. x Store) à cibler. Les types et les membres disponibles dans votre projet sont automatiquement restreints aux types et aux membres communs entre ces plateformes. Pour plus d’informations, consultez [Bibliothèque de classes portable](../../standard/cross-platform/cross-platform-development-with-the-portable-class-library.md).
 
 ## <a name="see-also"></a>Voir aussi
 
