@@ -17,6 +17,8 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Déployer sur Databricks
       href: tutorials/databricks-deployment.md
+    - name: Structured Streaming
+      href: tutorials/streaming.md
 - name: Guides pratiques
   items:
     - name: Déboguer votre application
