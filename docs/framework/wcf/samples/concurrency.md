@@ -1,19 +1,19 @@
 ---
-title: Concurrence
+title: Concurrency
 ms.date: 03/30/2017
 helpviewer_keywords:
 - service behaviors, concurency sample
 - Concurrency Sample [Windows Communication Foundation]
 ms.assetid: f8dbdfb3-6858-4f95-abe3-3a1db7878926
-ms.openlocfilehash: 3a78612f679218711a81278184c16b04d6d6f802
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1342e50a5dca56260f832f5e0d684f4f79d355e2
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045678"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715990"
 ---
-# <a name="concurrency"></a>Concurrence
-Cet exemple montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le `ICalculator` contrat de service. Cet exemple définit un nouveau contrat, `ICalculatorConcurrency`, qui hérite d' `ICalculator`, fournissant deux opérations supplémentaires pour l'inspection de l'état d'accès concurrentiel du service. En modifiant le paramètre d'accès concurrentiel, vous pouvez observer le changement de comportement en exécutant le client.  
+# <a name="concurrency"></a>Concurrency
+Cet exemple montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAttribute> avec l'énumération <xref:System.ServiceModel.ConcurrencyMode> qui contrôle si une instance de service traite des messages l'un après l'autre ou simultanément. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le contrat de service `ICalculator`. Cet exemple définit un nouveau contrat, `ICalculatorConcurrency`, qui hérite d' `ICalculator`, fournissant deux opérations supplémentaires pour l'inspection de l'état d'accès concurrentiel du service. En modifiant le paramètre d'accès concurrentiel, vous pouvez observer le changement de comportement en exécutant le client.  
   
  Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
@@ -22,11 +22,11 @@ Cet exemple montre l'utilisation du <xref:System.ServiceModel.ServiceBehaviorAtt
   
  Trois modes d'accès concurrentiel sont disponibles :  
   
-- `Single`: Chaque instance de service traite un message à la fois. Il s'agit du mode d'accès concurrentiel par défaut.  
+- `Single` : chaque instance de service traite un message à la fois. Il s'agit du mode d'accès concurrentiel par défaut.  
   
-- `Multiple`: Chaque instance de service traite plusieurs messages simultanément. Pour utiliser ce mode, l'implémentation de service doit être « thread-safe ».  
+- `Multiple` : chaque instance de service traite plusieurs messages simultanément. Pour utiliser ce mode, l'implémentation de service doit être « thread-safe ».  
   
-- `Reentrant`: Chaque instance de service traite un message à la fois, mais accepte les appels réentrants. Le service accepte seulement ces appels lorsqu'il appelle. Reentrant est illustré dans l’exemple [ConcurrencyMode. Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md) .  
+- `Reentrant` : chaque instance de service traite un message à la fois, mais accepte des appels réentrants. Le service accepte uniquement ces appels lorsqu’il appelle. Reentrant est illustré dans l’exemple [ConcurrencyMode. Reentrant](../../../../docs/framework/wcf/samples/concurrencymode-reentrant.md) .  
   
  L'utilisation de l'accès concurrentiel est associée au mode d'instanciation. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.PerCall>, l'accès concurrentiel n'est pas pertinent, parce que chaque message est traité par une nouvelle instance de service. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.Single>, l'accès concurrentiel <xref:System.ServiceModel.ConcurrencyMode.Single> ou <xref:System.ServiceModel.ConcurrencyMode.Multiple> est pertinent, selon que la même instance traite des messages l'un après l'autre ou simultanément. Dans l'instanciation <xref:System.ServiceModel.InstanceContextMode.PerSession>, chacun des modes d'accès concurrentiel peut être pertinent.  
   
@@ -97,7 +97,7 @@ public class CalculatorService : ICalculatorConcurrency
   
 1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
   
-2. Si vous utilisez Svcutil. exe pour générer le client proxy, assurez-vous d' `/async` inclure l’option.  
+2. Si vous utilisez Svcutil. exe pour générer le client proxy, assurez-vous d’inclure l’option `/async`.  
   
 3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
@@ -108,6 +108,6 @@ public class CalculatorService : ICalculatorConcurrency
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Concurrency`  

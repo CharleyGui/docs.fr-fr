@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Manifest Generation and Editing tool
 - Mage.exe
 ms.assetid: 77dfe576-2962-407e-af13-82255df725a1
-ms.openlocfilehash: aa2ad9222460f8732397f8b1c72e36085bbe4a21
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3752ac7108a9fcd55b61b32b889a717ef7c0faff
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449420"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714471"
 ---
 # <a name="mageexe-manifest-generation-and-editing-tool"></a>Mage.exe (outil Manifest Generation and Editing)
 
@@ -18,7 +18,7 @@ L’outil Manifest Generation and Editing (*Mage.exe*) est un outil en ligne de 
 
 Vous pouvez également utiliser *MageUI.exe*, une application graphique, à la place de *Mage.exe*. Pour plus d'informations, consultez [MageUI.exe (Manifest Generation and Editing Tool, Graphical Client)](mageui-exe-manifest-generation-and-editing-tool-graphical-client.md).
 
-Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’Invite de commandes développeur pour Visual Studio. Pour plus d’informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
+Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’Invite de commandes développeur pour Visual Studio. Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).
 
 Deux versions de *Mage.exe* et *MageUI.exe* sont founies avec Visual Studio. Pour afficher les informations de version, exécutez *MageUI.exe* et sélectionnez **Aide / ?** , puis **À propos de**. Cette documentation décrit la version 4.0.x.x de *Mage.exe* et *MageUI.exe*.
 
@@ -28,14 +28,14 @@ Deux versions de *Mage.exe* et *MageUI.exe* sont founies avec Visual Studio. Pou
 Mage [commands] [commandOptions]
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 Le tableau ci-dessous répertorie les commandes prises en charge par *Mage.exe*. Pour plus d'informations sur les options prises en charge par ces commandes, consultez [Options des commandes New et Update](#new-and-update-command-options) et [Options de la commande Sign](#sign-command-options).
 
-|Commande|Description|
+|Command|Description|
 |-------------|-----------------|
 |**-cc, ClearApplicationCache**|Efface le cache d'application téléchargé de toutes les applications en ligne uniquement.|
-|**-n, -New** *fileType [newOptions]*|Crée un nouveau fichier du type donné. Les types valides sont :<br /><br /> -   `Deployment`: crée un manifeste de déploiement.<br />-   `Application`: crée un manifeste de l'application.<br /><br /> Si vous ne spécifiez pas de paramètres supplémentaires avec cette commande, elle crée un fichier du type approprié, avec les valeurs d’attributs et étiquettes par défaut adéquates.<br /><br /> Utilisez l’option **-ToFile** (voir le tableau ci-dessous) pour spécifier le nom de fichier et le chemin du nouveau fichier.<br /><br /> Utilisez l’option **-FromDirectory** (voir le tableau ci-dessous) pour créer un manifeste d’application avec tous les assemblys d’une application ajoutés à la section \<dependency> du manifeste.|
+|**-n, -New** *fileType [newOptions]*|Crée un nouveau fichier du type donné. Les types valides sont :<br /><br /> -   `Deployment`: crée un manifeste de déploiement.<br />-   `Application`: crée un manifeste de l'application.<br /><br /> Si vous ne spécifiez pas de paramètres supplémentaires avec cette commande, elle crée un fichier du type approprié, avec les valeurs d’attributs et étiquettes par défaut adéquates.<br /><br /> Utilisez l’option **-ToFile** (voir le tableau ci-dessous) pour spécifier le nom de fichier et le chemin du nouveau fichier.<br /><br /> Utilisez l’option **-FromDirectory** (voir le tableau ci-dessous) pour créer un manifeste d’application avec tous les assemblys d’une application ajoutés à la section \<dependency> du manifeste.|
 |**-u, -Update** *[filePath] [updateOptions]*|Apporte une ou plusieurs modifications à un fichier manifeste. Vous n'avez pas à spécifier le type de fichier que vous modifiez. Mage.exe examinera le fichier en utilisant un jeu de paramètres heuristiques et déterminera s'il s'agit d'un manifeste de déploiement ou d'un manifeste d'application.<br /><br /> Si vous avez déjà signé un fichier avec un certificat, **-Update** supprime le bloc de signature de clé. En effet, la signature de clé contient un hachage du fichier, et la modification du fichier rend le hachage non valide.<br /><br /> Utilisez l’option **-ToFile** (voir le tableau ci-dessous) pour spécifier un nouveau nom et chemin de fichier au lieu de remplacer le fichier existant.|
 |**-s, -Sign** `[signOptions]`|Utilise une paire de clés ou un certificat X509 pour signer un fichier. Les signatures sont insérées en tant qu'éléments XML dans les fichiers.<br /><br /> Vous devez être connecté à Internet lors de la signature d’un manifeste qui spécifie une valeur **-TimestampUri** .|
 |**-ver, -Verify** *[nom-fichier-manifeste]*|Vérifie que le manifeste est correctement signé. Non combinable avec d’autres commandes. <br/><br/>**Disponible dans .NET Framework 4.7 (et versions ultérieures).**|
@@ -117,14 +117,14 @@ Les tableaux suivants contiennent ces fonctionnalités et restrictions :
 
 |Version du manifeste|Opération|Mage v2.0|Mage v4.0|
 |----------------------|---------------|---------------|---------------|
-|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Ouvrir|OK|OK|
-||Fermer|OK|OK|
+|Manifeste pour les applications qui ciblent la version 2.0 ou 3.x du .NET Framework|Open|OK|OK|
+||Close|OK|OK|
 ||Enregistrer|OK|OK|
 ||Nouvelle signature|OK|OK|
 ||Nouveau|OK|Non pris en charge|
 ||Mise à jour (voir ci-dessous)|OK|OK|
-|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Ouvrir|OK|OK|
-||Fermer|OK|OK|
+|Manifeste pour les applications qui ciblent la version 4 du .NET Framework|Open|OK|OK|
+||Close|OK|OK|
 ||Enregistrer|OK|OK|
 ||Nouvelle signature|OK|OK|
 ||Nouveau|Non pris en charge|OK|
@@ -139,9 +139,9 @@ Les tableaux suivants contiennent ces fonctionnalités et restrictions :
 ||Ajouter un assembly|Non pris en charge|OK|
 ||Supprimer un assembly|Non pris en charge|OK|
 
- Mage.exe crée des nouveaux manifestes qui ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)]. Les applications ClickOnce qui ciblent le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] peuvent s'exécuter à la fois sur le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] et sur la version complète du .NET Framework 4. Si votre application vise la version complète du .NET Framework 4 et ne peut pas fonctionner sur le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)], supprimez l'élément client `<framework>` à l'aide d'un éditeur de texte et signez de nouveau le manifeste.
+ Mage. exe crée de nouveaux manifestes qui ciblent le profil client .NET Framework 4. Les applications ClickOnce qui ciblent le profil client .NET Framework 4 peuvent s’exécuter à la fois sur le profil client .NET Framework 4 et sur la version complète du .NET Framework 4. Si votre application cible la version complète du .NET Framework 4 et ne peut pas s’exécuter sur le .NET Framework 4 Client Profile, supprimez l’élément client `<framework>` à l’aide d’un éditeur de texte et signez à nouveau le manifeste.
 
-Voici un exemple d’élément `<framework>` qui cible le [!INCLUDE[net_client_v40_long](../../../includes/net-client-v40-long-md.md)] :
+Voici un exemple d’élément `<framework>` qui cible le profil client .NET Framework 4 :
 
 ```xml
 <framework targetVersion="4.0" profile="client" supportedRuntime="4.0.20506" />

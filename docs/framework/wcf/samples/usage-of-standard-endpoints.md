@@ -2,12 +2,12 @@
 title: Utilisation de points de terminaison standard
 ms.date: 03/30/2017
 ms.assetid: ecd6a62f-9619-4778-a497-6f888087a9ea
-ms.openlocfilehash: a2af1ae793166d1ed3742782b911ded30d0b9d35
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 2b210bfe683669aeebf54a1701f07d492e6abdb4
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64662389"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715344"
 ---
 # <a name="usage-of-standard-endpoints"></a>Utilisation de points de terminaison standard
 
@@ -139,17 +139,17 @@ public class CustomEndpoint : ServiceEndpoint
 
 #### <a name="to-use-this-sample"></a>Pour utiliser cet exemple
 
-1. À l’aide de Visual Studio 2012, ouvrez le fichier StandardEndpoints.sln.
+1. À l’aide de Visual Studio 2012, ouvrez le fichier StandardEndpoints. sln.
 
 2. Permettez à plusieurs projets de démarrer.
 
-    1. Dans **l’Explorateur de solutions**, avec le bouton droit de la solution de points de terminaison Standard, puis sélectionnez **propriétés**.
+    1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur la solution points de terminaison standard, puis sélectionnez **Propriétés**.
 
-    2. Dans **propriétés communes**, sélectionnez **projet de démarrage**, puis cliquez sur **plusieurs projets de démarrage**.
+    2. Dans **Propriétés communes**, sélectionnez **projet de démarrage**, puis cliquez sur **plusieurs projets de démarrage**.
 
-    3. Déplacer le projet de Service au début de la liste, avec la **Action** définie sur **Démarrer**.
+    3. Déplacez le projet de service au début de la liste, avec l' **action** définie sur **Démarrer**.
 
-    4. Déplacer le projet Client après le projet de Service, également avec la **Action** définie sur **Démarrer**.
+    4. Déplacez le projet client après le projet de service, également avec l' **action** définie sur **Démarrer**.
 
          De cette façon, le projet Client est exécuté après le projet Service.
 
@@ -158,15 +158,15 @@ public class CustomEndpoint : ServiceEndpoint
 > [!NOTE]
 > Si ces étapes ne fonctionnent pas, assurez-vous que votre environnement a été correctement configuré, en procédant comme suit :
 >
-> 1. Vérifiez que vous avez effectué la [procédure d’installation unique pour les exemples Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
-> 2. Pour générer la solution, suivez les instructions de [génération des exemples Windows Communication Foundation](building-the-samples.md).
-> 3. Pour exécuter l’exemple dans un seul ou plusieurs configurations d’ordinateur, suivez les instructions de [en cours d’exécution les exemples Windows Communication Foundation](running-the-samples.md).
+> 1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](one-time-setup-procedure-for-the-wcf-samples.md).
+> 2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](building-the-samples.md).
+> 3. Pour exécuter l’exemple dans une seule ou plusieurs configurations d’ordinateur, suivez les instructions de [la](running-the-samples.md)procédure d’exécution des exemples de Windows Communication Foundation.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et des exemples de Windows Workflow Foundation (WF) pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)] exemples. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\StandardEndpoints`

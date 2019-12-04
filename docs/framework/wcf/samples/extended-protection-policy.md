@@ -2,17 +2,17 @@
 title: Stratégie de protection étendue
 ms.date: 03/30/2017
 ms.assetid: e2616a10-317e-4c34-8023-0c015a80a82f
-ms.openlocfilehash: c7c2e85872c158facb2de91a7413ac5a04491d7f
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 1cb6d44e8f6ee8f54f776453e5a1783ab0cfa4f0
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044983"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716420"
 ---
 # <a name="extended-protection-policy"></a>Stratégie de protection étendue
 La protection étendue est une initiative de sécurité visant à se protéger des attaques de l'intercepteur (MITM, Man In The Middle). Une attaque de l'intercepteur est une atteinte à la sécurité dans laquelle un intercepteur prend les informations d'identification d'un client et les envoie à un serveur.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  Protection étendue  
   
 ## <a name="discussion"></a>Discussion  
@@ -34,7 +34,7 @@ La protection étendue est une initiative de sécurité visant à se protéger d
   
 4. Cet exemple requiert l'établissement par le client d'un canal sécurisé avec le serveur et nécessite donc la présence d'un certificat de serveur qui peut être installé à partir du Gestionnaire des services Internet (IIS).  
   
-    1. Ouvrez le gestionnaire des services Internet (IIS). Ouvrez **certificats de serveur**, qui apparaît sous l’onglet **affichage des fonctionnalités** lorsque le nœud racine (nom de l’ordinateur) est sélectionné.  
+    1. Ouvrez le Gestionnaire de services Internet (IIS). Ouvrez **certificats de serveur**, qui apparaît sous l’onglet **affichage des fonctionnalités** lorsque le nœud racine (nom de l’ordinateur) est sélectionné.  
   
     2. À des fins de test de cet exemple, créez un certificat auto-signé. Si vous ne souhaitez pas qu'Internet Explorer vous informe que le certificat n'est pas sécurisé, installez le certificat dans le magasin d'autorités racine approuvées de certificats.  
   
@@ -42,7 +42,7 @@ La protection étendue est une initiative de sécurité visant à se protéger d
   
 6. Générez le service. Un répertoire virtuel est alors créé dans IIS et les fichiers dll, .svc et .config requis pour l'hébergement Web du service sont copiés.  
   
-7. Ouvrez le gestionnaire des services Internet (IIS). Cliquez avec le bouton droit sur le répertoire virtuel (**ExtendedProtection**) qui a été créé à l’étape précédente. Sélectionnez **convertir en application**.  
+7. Ouvrez le Gestionnaire de services Internet (IIS). Cliquez avec le bouton droit sur le répertoire virtuel (**ExtendedProtection**) qui a été créé à l’étape précédente. Sélectionnez **convertir en application**.  
   
 8. Ouvrez le module **d’authentification** dans le gestionnaire des services Internet pour ce répertoire virtuel et activez **l’authentification Windows**.  
   
@@ -59,6 +59,6 @@ La protection étendue est une initiative de sécurité visant à se protéger d
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Security\ExtendedProtection`

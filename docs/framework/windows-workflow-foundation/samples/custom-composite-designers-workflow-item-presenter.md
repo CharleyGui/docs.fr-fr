@@ -2,19 +2,19 @@
 title: Concepteurs composites personnalisés - Présentateur d'éléments de workflow
 ms.date: 03/30/2017
 ms.assetid: f85224cf-9e30-44a5-9a81-3bc438a34364
-ms.openlocfilehash: 239f7ccd81d5bb60eed32298220df215b09e3e47
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 31dfae70a8b95bdfd457efe7a20ce44c2ba9c61f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038371"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715186"
 ---
 # <a name="custom-composite-designers---workflow-item-presenter"></a>Concepteurs composites personnalisés - Présentateur d'éléments de workflow
-Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de clé dans le modèle de programmation de concepteur WF qui permet la création d’une «zone de dépôt» où une activité arbitraire peut être placée. Cet exemple montre comment générer un concepteur d’activités qui couvre une telle «zone de dépôt».
+Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de clé dans le modèle de programmation de concepteur WF qui permet la création d’une « zone de dépôt » où une activité arbitraire peut être placée. Cet exemple montre comment générer un concepteur d’activités qui couvre une telle « zone de dépôt ».
 
  Cet exemple illustre les opérations suivantes :
 
-## <a name="demonstrates"></a>Démonstrations
+## <a name="demonstrates"></a>Montre
 
 - Création d'un concepteur d'activités personnalisées avec un <xref:System.Activities.Presentation.WorkflowItemPresenter>.
 
@@ -63,7 +63,7 @@ Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de cl
 </sap:ActivityDesigner>
 ```
 
- Notez l'utilisation de la liaison de données WPF pour lier à `ModelItem.Body`. `ModelItem`est la propriété sur <xref:System.Activities.Presentation.ActivityDesigner> qui fait référence à l’objet sous-jacent pour lequel le concepteur est utilisé, dans ce cas, **SimpleNativeActivity**.
+ Notez l'utilisation de la liaison de données WPF pour lier à `ModelItem.Body`. `ModelItem` est la propriété sur <xref:System.Activities.Presentation.ActivityDesigner> qui fait référence à l’objet sous-jacent pour lequel le concepteur est utilisé, dans ce cas, **SimpleNativeActivity**.
 
 #### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
 
@@ -76,7 +76,7 @@ Le <xref:System.Activities.Presentation.WorkflowItemPresenter> est un type de cl
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\CustomActivities\CustomActivityDesigners\WorkflowItemPresenter`  
   

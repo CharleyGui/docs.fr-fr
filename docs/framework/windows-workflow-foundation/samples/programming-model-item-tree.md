@@ -2,18 +2,18 @@
 title: Programmation de l'arborescence des éléments de modèle
 ms.date: 03/30/2017
 ms.assetid: 0229efde-19ac-4bdc-a187-c6227a7bd1a5
-ms.openlocfilehash: f2d89cb2a3b0f6167f043148ea793ec1c264a556
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: efda69ac568b0ad9c5fdcf4d42722c5b7dadd3f3
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038171"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715663"
 ---
 # <a name="programming-model-item-tree"></a>Programmation de l'arborescence des éléments de modèle
-Cet exemple montre comment naviguer dans l' <xref:System.Activities.Presentation.Model.ModelItem> arborescence à l’aide de la liaison de données déclarative à partir de l’arborescence Windows Presentation Foundation (WPF).
+Cet exemple montre comment naviguer dans l’arborescence <xref:System.Activities.Presentation.Model.ModelItem> à l’aide de la liaison de données déclarative à partir de l’arborescence Windows Presentation Foundation (WPF).
 
 ## <a name="sample-details"></a>Détails de l'exemple
- L’arborescence <xref:System.Activities.Presentation.Model.ModelItem> est l’abstraction utilisée par l’infrastructure du [!INCLUDE[wfd1](../../../../includes/wfd1-md.md)] pour exposer les données relatives à l’instance sous-jacente en cours de modification. L'illustration suivante est une description des différentes couches d'infrastructure dans le [!INCLUDE[wfd2](../../../../includes/wfd2-md.md)].
+ L’arborescence <xref:System.Activities.Presentation.Model.ModelItem> est l’abstraction utilisée par l’infrastructure Windows Concepteur de flux de travail pour exposer les données relatives à l’instance sous-jacente en cours de modification. L’illustration suivante est une représentation des différentes couches d’infrastructure au sein du Concepteur de flux de travail.
 
  ![Diagramme qui montre l’architecture Concepteur de flux de travail.](./media/programming-model-item-tree/workflow-designer-architecture.jpg)
 
@@ -35,7 +35,7 @@ justAdded.Properties["DisplayName"].SetValue("new name");
 
 3. Appuyez sur F5 pour exécuter l'application. Le formulaire WPF s’affiche alors.
 
-4. Cliquez sur le bouton **charger WF** pour charger <xref:System.Activities.Presentation.Model.ModelItem> et le lier à l’arborescence.
+4. Cliquez sur le bouton **charger WF** pour charger le <xref:System.Activities.Presentation.Model.ModelItem> et le lier à l’arborescence.
 
 5. En cliquant sur le bouton **modifier l’arborescence d’éléments de modèle** , vous exécutez le code précédent pour ajouter un élément à l’arborescence et définir une propriété.
 
@@ -44,7 +44,7 @@ justAdded.Properties["DisplayName"].SetValue("new name");
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Basic\Designer\ProgrammingModelItemTree`  
   

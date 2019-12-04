@@ -2,12 +2,12 @@
 title: Custom Binding Reliable Session
 ms.date: 03/30/2017
 ms.assetid: c5fcd409-246f-4f3e-b3f1-629506ca4c04
-ms.openlocfilehash: b2679ad4c6e8595a7b6d6bc9818880da56781e38
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: c39dc9c57332800628012e88e1b274296556e756
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989992"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74710943"
 ---
 # <a name="custom-binding-reliable-session"></a>Custom Binding Reliable Session
 
@@ -18,7 +18,7 @@ Une liaison personnalisée est définie par une liste ordonnée d’éléments d
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\Custom\ReliableSession`
 
@@ -116,7 +116,7 @@ Press <ENTER> to terminate client.
 4. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
 
     > [!IMPORTANT]
-    > Quand vous exécutez le client dans une configuration inter-ordinateurs, veillez à remplacer « localhost » dans l' `address` attribut [ \<du point de terminaison >](../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) élément et `clientBaseAddress` l’attribut de [ \<CompositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) par le nom de l’ordinateur approprié, comme indiqué dans l’exemple suivant.
+    > Quand vous exécutez le client dans une configuration inter-ordinateurs, veillez à remplacer « localhost » dans l’attribut `address` de l’élément de [> de point de terminaison\<](../../../../docs/framework/configure-apps/file-schema/wcf/endpoint-element.md) et l’attribut `clientBaseAddress` du [\<CompositeDuplex >](../../../../docs/framework/configure-apps/file-schema/wcf/compositeduplex.md) par le nom de l’ordinateur approprié, comme indiqué dans l’exemple suivant.
 
     ```xml
     <endpoint name = ""

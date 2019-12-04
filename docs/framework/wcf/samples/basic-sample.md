@@ -2,12 +2,12 @@
 title: Exemple Basic
 ms.date: 03/30/2017
 ms.assetid: c1910bc1-3d0a-4fa6-b12a-4ed6fe759620
-ms.openlocfilehash: 07015c61ccab303d0fe38e65077d984ff40ce357
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 5d0470fefff86ee3a88fa290be5f349c38ca8276
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045719"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716079"
 ---
 # <a name="basic-sample"></a>Exemple Basic
 
@@ -16,7 +16,7 @@ Cet exemple montre comment rendre un service détectable, et comment rechercher 
 > [!NOTE]
 > Cet exemple implémente la découverte dans le code.  Pour obtenir un exemple qui implémente la découverte dans la configuration, consultez [configuration](../../../../docs/framework/wcf/samples/configuration-sample.md).
 
-## <a name="service"></a>de diffusion en continu
+## <a name="service"></a>Service
 
 Il s'agit d'une implémentation simple du service de calculatrice. Le code de découverte associé se trouve dans `Main`, où un <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> est ajouté à l'hôte de service et où un <xref:System.ServiceModel.Discovery.UdpDiscoveryEndpoint> est ajouté comme indiqué dans le code suivant.
 
@@ -100,6 +100,6 @@ static void InvokeCalculatorService(ServiceEndpoint serviceEndpoint)
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Basic`

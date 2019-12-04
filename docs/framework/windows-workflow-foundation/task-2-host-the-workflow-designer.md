@@ -2,30 +2,30 @@
 title: 'Tâche 2 : héberger le Workflow Designer'
 ms.date: 03/30/2017
 ms.assetid: 0a29b138-270d-4846-b78e-2b875e34e501
-ms.openlocfilehash: 15657ad79632812d3802e4da22b9ef297d08f932
-ms.sourcegitcommit: dfd612ba454ce775a766bcc6fe93bc1d43dfda47
+ms.openlocfilehash: 8e4c17ed182cec7748b9a1f11f76ff90aa60c39e
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/09/2019
-ms.locfileid: "72180263"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715789"
 ---
 # <a name="task-2-host-the-workflow-designer"></a>Tâche 2 : héberger le Workflow Designer
 
-Cette rubrique décrit la procédure d’hébergement d’une instance du [!INCLUDE[wfd1](../../../includes/wfd1-md.md)] dans une application Windows Presentation Foundation (WPF).
+Cette rubrique décrit la procédure d’hébergement d’une instance de Windows Concepteur de flux de travail dans une application Windows Presentation Foundation (WPF).
 
-La procédure configure le contrôle de **grille** qui contient le concepteur, crée par programmation une instance du <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une activité de <xref:System.Activities.Statements.Sequence> par défaut, inscrit les métadonnées du concepteur pour fournir la prise en charge du concepteur pour toutes les activités intégrées et héberge les [!INCLUDE[wfd2](../../../includes/wfd2-md.md)] dans l’application WPF.
+La procédure configure le contrôle de **grille** qui contient le concepteur, crée par programmation une instance du <xref:System.Activities.Presentation.WorkflowDesigner> qui contient une activité de <xref:System.Activities.Statements.Sequence> par défaut, inscrit les métadonnées du concepteur pour fournir la prise en charge du concepteur pour toutes les activités intégrées et héberge les concepteur de flux de travail dans l’application WPF.
 
 ## <a name="to-host-the-workflow-designer"></a>Pour héberger le concepteur de workflow
 
 1. Ouvrez le projet HostingApplication que vous avez créé dans [tâche 1 : créer une application de Windows Presentation Foundation](task-1-create-a-new-wpf-app.md).
 
-2. Pour faciliter l'utilisation du [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], ajustez la taille de la fenêtre. Pour ce faire, sélectionnez **MainWindow** dans le concepteur, appuyez sur F4 pour afficher la fenêtre **Propriétés** , puis, dans la section **disposition** , affectez à la **largeur** la valeur 600 et à la **hauteur** la valeur 350.
+2. Ajustez la taille de la fenêtre pour faciliter l’utilisation de la Concepteur de flux de travail. Pour ce faire, sélectionnez **MainWindow** dans le concepteur, appuyez sur F4 pour afficher la fenêtre **Propriétés** , puis, dans la section **disposition** , affectez à la **largeur** la valeur 600 et à la **hauteur** la valeur 350.
 
 3. Définissez le nom de la grille en sélectionnant le panneau **grille** dans le concepteur (cliquez sur la zone à l’intérieur de **MainWindow**) et en définissant la propriété **Name** en haut de la fenêtre **Propriétés** sur « grid1 ».
 
 4. Dans la fenêtre **Propriétés** , cliquez sur le bouton de sélection ( **...** ) en regard de la propriété `ColumnDefinitions` pour ouvrir la boîte de dialogue **éditeur de collections** .
 
-5. Dans la boîte de dialogue **éditeur de collection** , cliquez trois fois sur le bouton **Ajouter** pour insérer trois colonnes dans la mise en page. La première colonne contient la **boîte à outils**, la deuxième héberge la [!INCLUDE[wfd2](../../../includes/wfd2-md.md)], et la troisième colonne est utilisée pour l’inspecteur de propriété.
+5. Dans la boîte de dialogue **éditeur de collection** , cliquez trois fois sur le bouton **Ajouter** pour insérer trois colonnes dans la mise en page. La première colonne contient la **boîte à outils**, la deuxième héberge la concepteur de flux de travail, et la troisième colonne est utilisée pour l’inspecteur de propriété.
 
 6. Affectez à la propriété `Width` de la colonne Middle la valeur « 4 * ».
 
@@ -88,7 +88,7 @@ La procédure configure le contrôle de **grille** qui contient le concepteur, c
         }
         ```
 
-    4. Pour ajouter la prise en charge du concepteur pour toutes les activités intégrées, enregistrez les métadonnées du concepteur. Cela vous permet de déplacer des activités, de la boîte à outils vers l'activité <xref:System.Activities.Statements.Sequence> d'origine dans le [!INCLUDE[wfd2](../../../includes/wfd2-md.md)]. Pour ce faire, ajoutez la méthode `RegisterMetadata` à la classe `MainWindow` :
+    4. Pour ajouter la prise en charge du concepteur pour toutes les activités intégrées, enregistrez les métadonnées du concepteur. Cela vous permet de déplacer des activités de la boîte à outils vers l’activité d' <xref:System.Activities.Statements.Sequence> d’origine dans le Concepteur de flux de travail. Pour ce faire, ajoutez la méthode `RegisterMetadata` à la classe `MainWindow` :
 
         ```csharp
         private void RegisterMetadata()

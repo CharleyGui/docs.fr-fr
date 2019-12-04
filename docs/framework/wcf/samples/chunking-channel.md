@@ -2,12 +2,12 @@
 title: Canal de segmentation
 ms.date: 03/30/2017
 ms.assetid: e4d53379-b37c-4b19-8726-9cc914d5d39f
-ms.openlocfilehash: 6bd7f1f31426c2d355b42f04ad770aac60183838
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 3811f7e7229dec1a46585a558b96f94bb202902f
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70990113"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716028"
 ---
 # <a name="chunking-channel"></a>Canal de segmentation
 
@@ -23,7 +23,7 @@ La segmentation doit toujours être employée uniquement une fois le message à 
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Extensibility\Channels\ChunkingChannel`
 
@@ -256,7 +256,7 @@ Autres informations dignes d'intérêt :
 
 - Le délai passé à la méthode Send correspond au délai appliqué à l'intégralité de l'opération d'envoi, notamment à l'envoi de tous les segments.
 
-- Le <xref:System.Xml.XmlDictionaryWriter> a été spécialement conçu pour éviter la mise en mémoire tampon de la totalité du corps des messages initiaux. Si le <xref:System.Xml.XmlDictionaryReader> du corps des messages était obtenu à l'aide de `message.GetReaderAtBodyContents`, tout leur corps serait mis en mémoire tampon. Au lieu de cela, nous <xref:System.Xml.XmlDictionaryWriter> avons un personnalisé qui `message.WriteBodyContents`est passé à. Les messages appelant WriteBase64 sur l'enregistreur, ce dernier emballe les segments dans des messages, puis les envoie à l'aide du canal interne. WriteBase64 est verrouillé jusqu'à l'envoi des segments.
+- Le <xref:System.Xml.XmlDictionaryWriter> a été spécialement conçu pour éviter la mise en mémoire tampon de la totalité du corps des messages initiaux. Si le <xref:System.Xml.XmlDictionaryReader> du corps des messages était obtenu à l'aide de `message.GetReaderAtBodyContents`, tout leur corps serait mis en mémoire tampon. Au lieu de cela, nous avons une <xref:System.Xml.XmlDictionaryWriter> personnalisée qui est transmise à `message.WriteBodyContents`. Les messages appelant WriteBase64 sur l'enregistreur, ce dernier emballe les segments dans des messages, puis les envoie à l'aide du canal interne. WriteBase64 est verrouillé jusqu'à l'envoi des segments.
 
 ## <a name="implementing-the-receive-operation"></a>Implémentation de l'opération de réception
 
@@ -282,7 +282,7 @@ Autres informations dignes d'intérêt :
 
 ### <a name="onclose"></a>OnClose
 
-`OnClose` affecte d'abord à `stopReceive` la valeur `true` pour arrêter l'exécution de la boucle `ReceiveChunkLoop` en attente. Il attend ensuite le `receiveStopped` <xref:System.Threading.ManualResetEvent>, qui est défini quand `ReceiveChunkLoop` s’arrête. En partant de l'hypothèse que la boucle `ReceiveChunkLoop` s'arrête avant l'expiration du délai spécifié, la méthode `OnClose` appelle alors `innerChannel.Close` dans le temps encore imparti.
+`OnClose` affecte d'abord à `stopReceive` la valeur `true` pour arrêter l'exécution de la boucle `ReceiveChunkLoop` en attente. Il attend ensuite la `receiveStopped` <xref:System.Threading.ManualResetEvent>, qui est définie lorsque `ReceiveChunkLoop` s’arrête. En partant de l'hypothèse que la boucle `ReceiveChunkLoop` s'arrête avant l'expiration du délai spécifié, la méthode `OnClose` appelle alors `innerChannel.Close` dans le temps encore imparti.
 
 ### <a name="onabort"></a>OnAbort
 
@@ -306,7 +306,7 @@ L'écouteur `ChunkingChannelListener` correspond à un wrapper autour d'un écou
 
 ## <a name="implementing-binding-element-and-binding"></a>Implémentation de l'élément de liaison et de la liaison
 
-L'élément `ChunkingBindingElement` est chargé de créer la fabrication `ChunkingChannelFactory` et l'écouteur `ChunkingChannelListener`. `CanBuildChannelFactory` `CanBuildChannelListener` Vérifiesi\<t `IDuplexSessionChannel` dans \<t > et t > est de type (le seul canal pris en charge par le canal de segmentation) et que les autres éléments de liaison de la liaison prennent en charge cette `ChunkingBindingElement` type de canal.
+L'élément `ChunkingBindingElement` est chargé de créer la fabrication `ChunkingChannelFactory` et l'écouteur `ChunkingChannelListener`. L' `ChunkingBindingElement` vérifie si T dans `CanBuildChannelFactory`\<T > et `CanBuildChannelListener`\<T > est de type `IDuplexSessionChannel` (le seul canal pris en charge par le canal de segmentation) et que les autres éléments de liaison de la liaison prennent en charge ce type de canal.
 
 `BuildChannelFactory`\<T > vérifie d’abord que le type de canal demandé peut être généré, puis obtient une liste d’actions de message à segmenter. Pour plus d'informations, consultez la section suivante. Cette méthode crée alors une nouvelle fabrication `ChunkingChannelFactory` à laquelle elle passe la fabrication de canal interne (telle que retournée depuis `context.BuildInnerChannelFactory<IDuplexSessionChannel>`), la liste d'actions de message et le nombre maximal de segments pouvant être mise en mémoire tampon. Ce nombre maximal est issu de la propriété appelée `MaxBufferedChunks`, laquelle est exposée par l'élément `ChunkingBindingElement`.
 
@@ -320,7 +320,7 @@ Cet exemple de code contient une liaison appelée `TcpChunkingBinding`. Cette li
 
 Les canaux de segmentation segmentent uniquement les messages identifiés à l'aide de l'attribut `ChunkingBehavior`. La classe `ChunkingBehavior` implémente `IOperationBehavior` et est elle-même implémentée par l'appel de la méthode `AddBindingParameter`. Dans cette méthode, la classe `ChunkingBehavior` examine la valeur de sa propriété `AppliesTo` (`InMessage` ou `OutMessage` ou encore les deux) afin d'identifier les messages à segmenter. Elle obtient ensuite l’action correspondant à chacun de ces messages (depuis la collection Messages sur `OperationDescription`), puis ajoute chacune de ces actions aux collections de chaînes contenue dans les instances de `ChunkingBindingParameter`. Elle ajoute enfin ce `ChunkingBindingParameter` à la collection `BindingParameterCollection`.
 
-Cette `BindingParameterCollection` est passée à l’intérieur du `BindingContext` à chaque élément de la liaison lorsque ces éléments génèrent la fabrication de canal ou l’écouteur de canal. L' `ChunkingBindingElement`implémentation de `BuildChannelFactory<T>` et `BuildChannelListener<T>` extrayez `ChunkingBindingParameter` -`BindingContext’`lade .`BindingParameterCollection` La collection d'actions contenue dans le `ChunkingBindingParameter` est passée à `ChunkingChannelFactory` ou à `ChunkingChannelListener`, qui la passe ensuite au `ChunkingDuplexSessionChannel`.
+Cette `BindingParameterCollection` est passée à l’intérieur du `BindingContext` à chaque élément de la liaison lorsque ces éléments génèrent la fabrication de canal ou l’écouteur de canal. L’implémentation de `ChunkingBindingElement`de `BuildChannelFactory<T>` et `BuildChannelListener<T>` extraire ce `ChunkingBindingParameter` de `BindingContext’`s `BindingParameterCollection`. La collection d'actions contenue dans le `ChunkingBindingParameter` est passée à `ChunkingChannelFactory` ou à `ChunkingChannelListener`, qui la passe ensuite au `ChunkingDuplexSessionChannel`.
 
 ## <a name="running-the-sample"></a>Exécution de l'exemple
 
@@ -369,7 +369,7 @@ Press enter when service is available
  < Received chunk 10 of message 5b226ad5-c088-4988-b737-6a565e0563dd
 ```
 
-Serveur :
+Serveur :
 
 ```console
 Service started, press enter to exit

@@ -2,12 +2,12 @@
 title: OperationContextScope
 ms.date: 03/30/2017
 ms.assetid: 11c11108-8eb4-4d49-95a0-83285a812262
-ms.openlocfilehash: 08f712167b502885486be3ce4398603339623415
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 581f75ece1a601b3baf590c1923a17a353de1ff1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039011"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714620"
 ---
 # <a name="operationcontextscope"></a>OperationContextScope
 L’exemple OperationContextScope montre comment envoyer des informations supplémentaires sur un appel de Windows Communication Foundation (WCF) à l’aide d’en-têtes. Dans cet exemple, le serveur et le client sont tous deux des applications consoles.  
@@ -63,7 +63,7 @@ MessageHeaderReaderClient client1 = new MessageHeaderReaderClient();
 MessageHeaderReaderClient client2 = new MessageHeaderReaderClient();  
 ```  
   
- Le client crée ensuite une portée OperationContextScope et l'étend à `client1`. Il ajoute un <xref:System.ServiceModel.Channels.MessageHeader> aux <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> et passe un appel sur les deux clients. Elle garantit que l’en-tête est envoyé `client1` uniquement sur et `client2` non en vérifiant la valeur de `RetrieveHeader` retour de l’appel.  
+ Le client crée ensuite une portée OperationContextScope et l'étend à `client1`. Il ajoute un <xref:System.ServiceModel.Channels.MessageHeader> aux <xref:System.ServiceModel.OperationContext.OutgoingMessageHeaders%2A> et passe un appel sur les deux clients. Elle garantit que l’en-tête est envoyé uniquement sur `client1` et non sur `client2` en vérifiant la valeur de retour de l’appel de `RetrieveHeader`.  
   
 ```csharp
 using (new OperationContextScope(client1.InnerChannel))  
@@ -126,6 +126,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\OperationContextScope`  

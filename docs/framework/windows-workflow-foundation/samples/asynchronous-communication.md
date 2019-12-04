@@ -2,17 +2,17 @@
 title: Communication asynchrone
 ms.date: 03/30/2017
 ms.assetid: 128dc092-9eb2-4e33-9470-9a7f62b60df6
-ms.openlocfilehash: b5cf788ce4587dacb5a7642e25cb1b5b1e6f3e3c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 28b325a6bd870282577a2989b616628d52262deb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044364"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74711864"
 ---
 # <a name="asynchronous-communication"></a>Communication asynchrone
 Cet exemple montre comment la communication entre deux services de Windows Workflow Foundation différents (WF) est effectuée de façon asynchrone par défaut.  
   
-## <a name="demonstrates"></a>Démonstrations  
+## <a name="demonstrates"></a>Montre  
  Communication asynchrone entre des services [!INCLUDE[wf1](../../../../includes/wf1-md.md)].  
   
 ## <a name="discussion"></a>Discussion  
@@ -44,6 +44,6 @@ Cet exemple montre comment la communication entre deux services de Windows Workf
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Scenario\Services\AsynchronousCommunication`

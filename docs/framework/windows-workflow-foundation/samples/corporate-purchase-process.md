@@ -2,25 +2,25 @@
 title: Processus d'achat d'entreprise
 ms.date: 03/30/2017
 ms.assetid: a5e57336-4290-41ea-936d-435593d97055
-ms.openlocfilehash: d019c1915e691fcba00fa8f1b0884a898ce02fab
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 95fa421ed44cf2d930fb4b80979d1b8bd9fda5ed
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951525"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715207"
 ---
 # <a name="corporate-purchase-process"></a>Processus d'achat d'entreprise
 Cet exemple montre comment créer un processus d'achat basé sur des appels d'offres très simples avec sélection automatique de la meilleure proposition. Il combine <xref:System.Activities.Statements.Parallel>, <xref:System.Activities.Statements.ParallelForEach%601> et <xref:System.Activities.Statements.ForEach%601> ainsi qu'une activité personnalisée pour créer un workflow qui représente le processus.
 
  Cet exemple contient une application cliente ASP.NET qui permet d’interagir avec le processus comme des participants différents (comme demandeur d’origine ou un fournisseur particulier).
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 - Visual Studio 2012.
 
 - [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)].
 
-## <a name="demonstrates"></a>Démonstrations
+## <a name="demonstrates"></a>Montre
 
 - Activités personnalisées.
 
@@ -36,14 +36,14 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
 
 - Suivi.
 
-- Hébergement [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans différents clients (applications Web ASP.net et applications WinForms).
+- Hébergement d' [!INCLUDE[wf1](../../../../includes/wf1-md.md)] dans différents clients (applications Web ASP.NET et applications WinForms).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\PurchaseProcess`  
   
@@ -80,7 +80,7 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
   
 |Projet|Description|  
 |-------------|-----------------|  
-|Courant|Objets entité utilisés dans le processus (Appel d'offres, Fournisseur et Proposition de fournisseur).|  
+|Communes|Objets entité utilisés dans le processus (Appel d'offres, Fournisseur et Proposition de fournisseur).|  
 |WfDefinition|Définition du processus (comme un programme [!INCLUDE[wf1](../../../../includes/wf1-md.md)]) et hôte (`PurchaseProcessHost`) utilisé par les applications clientes pour la création et l'utilisation des instances du workflow du processus d'achat.|  
 |WebClient|Application cliente ASP.NET qui permet aux utilisateurs de créer et de participer à des instances du processus d’achat. Elle utilise un hôte créé de façon personnalisée pour interagir avec le moteur de workflow.|  
 |WinFormsClient|Application cliente Windows Forms qui permet aux utilisateurs de créer des instances du processus d'achat et d'y participer. Elle utilise un hôte créé de façon personnalisée pour interagir avec le moteur de workflow.|  
@@ -88,7 +88,7 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
 ### <a name="wfdefinition"></a>WfDefinition  
  Le tableau suivant contient une description des fichiers les plus importants dans le projet WfDefinition.  
   
-|Fichier|Description|  
+|File|Description|  
 |----------|-----------------|  
 |IPurchaseProcessHost.cs|Interface pour l'hôte du workflow.|  
 |PurchaseProcessHost.cs|Implémentation d'un hôte pour le workflow. L'hôte rend les détails de l'exécution du workflow abstraits et est utilisé dans toutes les applications clientes pour charger et exécuter les instances de workflow `PurchaseProcess`, et interagir avec celles-ci.|  
@@ -99,12 +99,12 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
 |XmlPersistenceParticipant.cs|<xref:System.Activities.Persistence.PersistenceParticipant> personnalisé qui enregistre une instance d'appel d'offres dans un fichier XML.|  
 |AsyncResult.cs / CompletedAsyncResult.cs|Classes d’assistance pour l’implémentation du modèle asynchrone dans les composants de persistance.|  
   
-### <a name="common"></a>Courant  
+### <a name="common"></a>Communes  
  Le tableau suivant contient une description des classes les plus importantes dans le projet Common.  
   
 |Classe|Description|  
 |-----------|-----------------|  
-|Fournisseur|Fournisseur qui soumet des propositions dans un appel d'offres.|  
+|Console|Fournisseur qui soumet des propositions dans un appel d'offres.|  
 |RequestForProposal|Un appel d'offres est une invitation pour les fournisseurs à soumettre des propositions sur une marchandise ou un service spécifique.|  
 |VendorProposal|Proposition soumise par un fournisseur dans un appel d'offres concret.|  
 |VendorRepository|Référentiel de fournisseurs. Cette implémentation contient une collection en mémoire d'instances de Fournisseur et de méthodes pour l'exposition de ces instances.|  
@@ -114,7 +114,7 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
 ### <a name="web-client"></a>Client web  
  Le tableau suivant contient une description des pages web les plus importantes dans le projet web Client.  
   
-|Fichier|Description|  
+|File|Description|  
 |-|-|  
 |CreateRfp.aspx|Crée et soumet un nouvel appel d'offres.|  
 |Default.aspx|Affiche tous les appels d'offres actifs et terminés.|  
@@ -127,14 +127,14 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
 |Formulaire|Description|  
 |-|-|  
 |NewRfp|Crée et soumet un nouvel appel d'offres.|  
-|ShowProposals|Affiche tous les appels d'offres actifs et terminés. **Remarque :**  Vous devrez peut-être cliquer sur le bouton Actualiser dans l’interface utilisateur pour afficher les modifications apportées à cet écran après la création ou la modification d’une demande de proposition.|  
+|ShowProposals|Affiche tous les appels d'offres actifs et terminés. **Remarque :**  Vous devrez peut-être cliquer sur le bouton **Actualiser** dans l’interface utilisateur pour afficher les modifications apportées à cet écran après la création ou la modification d’une demande de proposition.|  
 |SubmitProposal|Obtient une proposition d'un fournisseur dans un appel d'offres concret. Cette fenêtre est utilisée uniquement par les fournisseurs.|  
 |ViewRfp|Affiche toutes les informations sur un appel d'offres (propositions reçues, dates, valeurs et autres informations). Cette fenêtre est utilisée uniquement par le créateur de l'appel d'offres.|  
   
 ### <a name="persistence-files"></a>Fichiers de persistance  
  Le tableau suivant indique que les fichiers générés par le fournisseur de persistance (`XmlPersistenceProvider`) se trouvent dans le chemin d’accès du dossier temporaire du système actuel (à l’aide de <xref:System.IO.Path.GetTempPath%2A>). Le fichier de suivi est créé dans le chemin d’exécution actuel.  
   
-|Nom du fichier|Description|path|  
+|Nom du fichier|Description|Path|  
 |-|-|-|  
 |rfps.xml|Fichier XML avec tous les appels d'offres actifs et terminés.|<xref:System.IO.Path.GetTempPath%2A>|  
 |[instanceid]|Ce fichier contient toutes les informations sur une instance de workflow.<br /><br /> Ce fichier est généré par l'implémentation de persistance schématisée (PersistenceParticipant dans XmlPersistenceProvider).|<xref:System.IO.Path.GetTempPath%2A>|  
@@ -155,20 +155,20 @@ Cet exemple montre comment créer un processus d'achat basé sur des appels d'of
   
 ### <a name="web-client-options"></a>Options de Web Client  
   
-- **Créer un appel d’offres**: Crée une demande de propositions (RFP) et démarre un workflow de processus d’achat.  
+- **Créer un appel d’offres**: crée une demande de propositions et démarre un flux de travail de processus d’achat.  
   
-- **Actualiser**: Actualise la liste des appels d’offres actifs et terminés dans la fenêtre principale.  
+- **Actualiser : actualise**la liste des appels d’offres actifs et terminés dans la fenêtre principale.  
   
-- **Vue** : Affiche le contenu d’un appel d’offres existant. Les fournisseurs peuvent soumettre leurs propositions (s'ils y sont invités ou si l'appel d'offres n'est pas terminé).  
+- **Vue**: affiche le contenu d’un appel d’offres existant. Les fournisseurs peuvent soumettre leurs propositions (s'ils y sont invités ou si l'appel d'offres n'est pas terminé).  
   
-- Afficher comme: L’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant souhaité dans la zone de liste déroulante **afficher en tant que** de la grille des appels d’offres actifs.  
+- Afficher comme : l’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant souhaité dans la zone de liste déroulante **afficher comme** dans la grille des appels d’offres actifs.  
   
 ### <a name="winforms-client-options"></a>Options de WinForms Client  
   
-- **Créer un appel d’offres**: Crée une demande de propositions (RFP) et démarre un workflow de processus d’achat.  
+- **Créer un appel d’offres**: crée une demande de propositions (RFP) et démarre un workflow de processus d’achat.  
   
-- **Actualiser**: Actualise la liste des appels d’offres actifs et terminés dans la fenêtre principale.  
+- **Actualiser : actualise**la liste des appels d’offres actifs et terminés dans la fenêtre principale.  
   
-- **Afficher l’appel d’offres**: Affiche le contenu d’un appel d’offres existant. Les fournisseurs peuvent soumettre leurs propositions (s'ils y sont invités ou si l'appel d'offres n'est pas terminé).  
+- **Afficher l’appel d’offres**: affiche le contenu d’un appel d’offres existant. Les fournisseurs peuvent soumettre leurs propositions (s'ils y sont invités ou si l'appel d'offres n'est pas terminé).  
   
-- **Se connecter en tant que**: L’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant souhaité dans la zone de liste déroulante **afficher en tant que** de la grille des appels d’offres actifs.
+- **Se connecter en tant que**: l’utilisateur peut accéder à l’appel d’offres à l’aide de différentes identités en sélectionnant le participant souhaité dans la zone de liste déroulante **afficher en tant que** dans la grille des appels d’offres

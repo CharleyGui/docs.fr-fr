@@ -2,16 +2,16 @@
 title: 'Tâche 3 : créer les volets de PropertyGrid et boîte à outils'
 ms.date: 03/30/2017
 ms.assetid: 72c1546a-eed5-4f0f-a616-719a163414f4
-ms.openlocfilehash: 402a25c1cb82c245afa94f58cefc180515622ea9
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: 29e50b24135cd3d6a02052d846e1781b0d9fa325
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275861"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716229"
 ---
 # <a name="task-3-create-the-toolbox-and-propertygrid-panes"></a>Tâche 3 : créer les volets de PropertyGrid et boîte à outils
 
-Dans cette tâche, vous allez créer les volets **boîte à outils** et **PropertyGrid** et les ajouter au [!INCLUDE[wfd1](../../../includes/wfd1-md.md)]réhébergé.
+Dans cette tâche, vous allez créer les volets **boîte à outils** et **PropertyGrid** et les ajouter au concepteur de flux de travail Windows réhébergé.
 
 Pour référence, le code qui doit se trouver dans le fichier MainWindow.xaml.cs après avoir effectué les trois tâches du [réhébergement de la série concepteur de flux de travail](rehosting-the-workflow-designer.md) de rubriques est fourni à la fin de cette rubrique.
 

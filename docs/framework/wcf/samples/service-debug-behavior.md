@@ -2,16 +2,16 @@
 title: Service Debug Behavior
 ms.date: 03/30/2017
 ms.assetid: 9d8fd3fb-dc39-427a-8235-336a7e7162ba
-ms.openlocfilehash: 67ae8cf72baf2d6a54010a05ca4c5e047120617a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 6a0a1c5d9f9741da978c633d35ea1e39664bed5b
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044745"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716304"
 ---
 # <a name="service-debug-behavior"></a>Service Debug Behavior
 
-Cet exemple montre comment configurer les paramètres de comportement de débogage de service. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le `ICalculator` contrat de service. Cet exemple définit explicitement le comportement de débogage de service dans le fichier de configuration. Cela peut également être fait de façon impérative dans le code.
+Cet exemple montre comment configurer les paramètres de comportement de débogage de service. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le contrat de service `ICalculator`. Cet exemple définit explicitement le comportement de débogage de service dans le fichier de configuration. Cela peut également être fait de façon impérative dans le code.
 
 Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).
 
@@ -32,14 +32,14 @@ Le fichier Web.config du serveur définit le comportement de débogage de servic
 </behaviors>
 ```
 
-serviceDebug > est l’élément de configuration qui permet de modifier les propriétés de comportement de débogage de service. [ \<](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) L'utilisateur peut modifier ce comportement aux fins suivantes :
+[\<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) est l’élément de configuration qui permet de modifier les propriétés de comportement de débogage de service. L'utilisateur peut modifier ce comportement aux fins suivantes :
 
 - Cela permet au service de retourner une exceptions levée par le code d'application même si celle-ci n'est pas déclarée à l'aide de <xref:System.ServiceModel.FaultContractAttribute>. Pour ce faire, affectez `includeExceptionDetailInFaults` à `true`. Ce paramètre est utile lors du débogage de cas où le serveur lève une exception inattendue.
 
   > [!IMPORTANT]
   > Pour des raisons de sécurité, il est déconseillé d'activer ce paramètre dans un environnement de production. Une exception de serveur inattendue peut contenir des informations qui ne sont pas destinées au client et l'affectation de `includeExceptionDetailsInFaults` à `true` peut entraîner une fuite des informations.
 
-- [ L'\<> serviceDebug](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) permet également à un utilisateur d’activer ou de désactiver la page d’aide. Chaque service peut éventuellement exposer une page d'aide qui contient des informations sur le service, et notamment le point de terminaison permettant d'obtenir le WSDL pour le service. Pour ce faire, affectez `httpHelpPageEnabled` à `true`. Cela permet de retourner la page d'aide dans une demande GET à l'adresse de base du service. Pour modifier cette adresse, définissez un autre attribut `httpHelpPageUrl`. Pour sécuriser cette procédure, utilisez HTTPS au lieu de HTTP. Pour ce faire, définissez `httpsHelpPageEnabled` et `httpsHelpPageUrl`
+- L' [\<serviceDebug >](../../../../docs/framework/configure-apps/file-schema/wcf/servicedebug.md) permet également à un utilisateur d’activer ou de désactiver la page d’aide. Chaque service peut éventuellement exposer une page d'aide qui contient des informations sur le service, et notamment le point de terminaison permettant d'obtenir le WSDL pour le service. Pour ce faire, affectez `httpHelpPageEnabled` à `true`. Cela permet de retourner la page d'aide dans une demande GET à l'adresse de base du service. Pour modifier cette adresse, définissez un autre attribut `httpHelpPageUrl`. Pour sécuriser cette procédure, utilisez HTTPS au lieu de HTTP. Pour ce faire, définissez `httpsHelpPageEnabled` et `httpsHelpPageUrl`
 
 Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affichent dans la fenêtre de console du client. Les trois premières opérations (ajout, soustraction et multiplication) doivent réussir. La dernière (division) échoue avec une exception de division par zéro.
 
@@ -56,6 +56,6 @@ Lorsque vous exécutez l'exemple, les demandes et réponses d'opération s'affic
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\ServiceDebug`

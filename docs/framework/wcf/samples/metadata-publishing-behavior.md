@@ -5,12 +5,12 @@ helpviewer_keywords:
 - service behaviors, metadata publishing sample
 - Metadata Publishing Behaviors Sample [Windows Communication Foundation]
 ms.assetid: 78c13633-d026-4814-910e-1c801cffdac7
-ms.openlocfilehash: 4b3bc0490f791776793e91de0bb8608264663af5
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 3b3057d845ac37280ff46e6e15415758f1f0ba77
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70044834"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714779"
 ---
 # <a name="metadata-publishing-behavior"></a>Metadata Publishing Behavior
 Cet exemple montre comment contrôler les fonctionnalités de publication des métadonnées d’un service. Pour empêcher la divulgation non intentionnelle de métadonnées de service potentiellement sensibles, la configuration par défaut pour les services Windows Communication Foundation (WCF) désactive la publication de métadonnées. Ce comportement est sécurisé par défaut, mais il signifie également que vous ne pouvez pas utiliser d'outil d'importation de métadonnées (tel que Svcutil.exe) pour générer le code client requis pour appeler le service, à moins que le comportement de publication des métadonnées du service soit activé explicitement dans la configuration.  
@@ -18,12 +18,12 @@ Cet exemple montre comment contrôler les fonctionnalités de publication des m�
 > [!IMPORTANT]
 > Pour plus de clarté, cet exemple montre comment créer un point de terminaison de publication de métadonnées non sécurisé. De tels points de terminaison sont potentiellement disponibles aux consommateurs non authentifiés anonymes et il est nécessaire de se montrer vigilant et de s'assurer que la divulgation publique des métadonnées d'un service est appropriée avant de déployer de tels points de terminaison. Consultez l’exemple de [point de terminaison de métadonnées sécurisées personnalisé](../../../../docs/framework/wcf/samples/custom-secure-metadata-endpoint.md) pour un exemple qui sécurise un point de terminaison de métadonnées.  
   
- L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le `ICalculator` contrat de service. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
+ L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), qui implémente le contrat de service `ICalculator`. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
   
- Pour qu'un service expose des métadonnées, <xref:System.ServiceModel.Description.ServiceMetadataBehavior> doit être configuré sur le service. Lorsque ce comportement est présent, vous pouvez publier des métadonnées en configurant un point de terminaison afin qu'il exposer le contrat <xref:System.ServiceModel.Description.IMetadataExchange> en tant qu'implémentation d'un protocole MEX (WS-MetadataExchange). Par commodité, le nom de configuration abrégé « IMetadataExchange » a été donné à ce contrat. Cet exemple utilise `mexHttpBinding`, qui est une liaison standard équivalente à `wsHttpBinding` dont le mode de sécurité a la valeur `None`. Une adresse relative de «MEX» est utilisée dans le point de terminaison, qui, lorsqu’elle est résolue par rapport à l’adresse `http://localhost/servicemodelsamples/service.svc/mex`de base des services, se traduit par une adresse de point de terminaison. La configuration de comportement se présente comme suit :  
+ Pour qu'un service expose des métadonnées, <xref:System.ServiceModel.Description.ServiceMetadataBehavior> doit être configuré sur le service. Lorsque ce comportement est présent, vous pouvez publier des métadonnées en configurant un point de terminaison afin qu'il exposer le contrat <xref:System.ServiceModel.Description.IMetadataExchange> en tant qu'implémentation d'un protocole MEX (WS-MetadataExchange). Par commodité, le nom de configuration abrégé « IMetadataExchange » a été donné à ce contrat. Cet exemple utilise `mexHttpBinding`, qui est une liaison standard équivalente à `wsHttpBinding` dont le mode de sécurité a la valeur `None`. Une adresse relative de « MEX » est utilisée dans le point de terminaison, qui, lorsqu’elle est résolue par rapport à l’adresse de base des services, se traduit par une adresse de point de terminaison de `http://localhost/servicemodelsamples/service.svc/mex`. La configuration de comportement se présente comme suit :  
   
 ```xml  
 <behaviors>  
@@ -55,7 +55,7 @@ Cet exemple montre comment contrôler les fonctionnalités de publication des m�
           contract="IMetadataExchange" />  
 ```  
   
- Cet exemple affecte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> à la propriété `true` qui expose également les métadonnées du service à l'aide de HTTP GET. Pour activer un point de terminaison de métadonnées HTTP GET, le service doit avoir une adresse de base HTTP. La chaîne de requête `?wsdl` est utilisée sur l'adresse de base du service pour accéder aux métadonnées. Par exemple, pour afficher le WSDL du service dans un navigateur Web, vous devez utiliser l’adresse `http://localhost/servicemodelsamples/service.svc?wsdl`. Vous pouvez également utiliser ce comportement pour exposer des métadonnées sur HTTPS en affectant <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> à `true`. Cela requiert une adresse de base HTTPS.  
+ Cet exemple affecte <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpGetEnabled%2A> à la propriété `true` qui expose également les métadonnées du service à l'aide de HTTP GET. Pour activer un point de terminaison de métadonnées HTTP GET, le service doit avoir une adresse de base HTTP. La chaîne de requête `?wsdl` est utilisée sur l'adresse de base du service pour accéder aux métadonnées. Par exemple, pour afficher le fichier WSDL du service dans un navigateur Web, vous devez utiliser l’adresse `http://localhost/servicemodelsamples/service.svc?wsdl`. Vous pouvez également utiliser ce comportement pour exposer des métadonnées sur HTTPS en affectant <xref:System.ServiceModel.Description.ServiceMetadataBehavior.HttpsGetEnabled%2A> à `true`. Cela requiert une adresse de base HTTPS.  
   
  Pour accéder au point de terminaison MEX du service [, utilisez l’outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).  
   
@@ -82,6 +82,6 @@ Cet exemple montre comment contrôler les fonctionnalités de publication des m�
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\Behaviors\Metadata`  

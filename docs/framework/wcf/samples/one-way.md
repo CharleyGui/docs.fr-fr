@@ -2,15 +2,15 @@
 title: One-Way
 ms.date: 03/30/2017
 ms.assetid: 74e3e03d-cd15-4191-a6a5-1efa2dcb9e73
-ms.openlocfilehash: f392fad0461dab4dff6e5e4efe0070d7017a700b
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 91bdc09e374b3a1c6d407d4bd95428fafaf3ecc1
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039041"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74714648"
 ---
 # <a name="one-way"></a>One-Way
-Cet exemple présente un contact de service avec des opérations de service monodirectionnelles. Le client n'attend pas que les opérations de service se terminent comme c'est le cas avec les opérations de service bidirectionnelles. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et utilise la `wsHttpBinding` liaison. Le service dans cet exemple est une application console auto-hébergée vous permettant d'observer le service qui reçoit et traite des demandes. Le client est également une application console.  
+Cet exemple présente un contact de service avec des opérations de service monodirectionnelles. Le client n'attend pas que les opérations de service se terminent comme c'est le cas avec les opérations de service bidirectionnelles. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et utilise la liaison `wsHttpBinding`. Le service dans cet exemple est une application console auto-hébergée vous permettant d'observer le service qui reçoit et traite des demandes. Le client est également une application console.  
   
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.  
@@ -102,6 +102,6 @@ Processing Divide(22,7) - result: 3.14285714285714
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Service\Oneway`  

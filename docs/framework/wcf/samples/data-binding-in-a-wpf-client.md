@@ -2,12 +2,12 @@
 title: Data Binding in a Windows Presentation Foundation Client
 ms.date: 03/30/2017
 ms.assetid: bb8c8293-5973-4aef-9b07-afeff5d3293c
-ms.openlocfilehash: b0f1eb8ca154ab8e37a15b35097f746662511f7c
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 44a208cf081ef00396dfc874349dff57363c0df3
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928633"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715399"
 ---
 # <a name="data-binding-in-a-windows-presentation-foundation-client"></a>Data Binding in a Windows Presentation Foundation Client
 Cet exemple illustre l’utilisation de la liaison de données dans un client Windows Presentation Foundation (WPF). L’exemple utilise un service Windows Communication Foundation (WCF) qui génère de manière aléatoire un tableau d’albums à retourner au client. Pour chaque album, un nom, un prix et une liste des pistes y figurant sont définis. Un nom et une durée sont indiqués pour chaque piste. Les informations retournées par le service sont automatiquement liées à l’interface utilisateur (IU) fournie par le client Windows Presentation Foundation (WPF).  
@@ -78,6 +78,6 @@ void client_GetAlbumListCompleted(object sender, GetAlbumListCompletedEventArgs 
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Scenario\DataBinding\WPFDataBinding`  

@@ -2,12 +2,12 @@
 title: Suivi de workflow visuel
 ms.date: 03/30/2017
 ms.assetid: 0143448f-2044-40a0-8a3d-941f6d12468b
-ms.openlocfilehash: 4ce9b06ede2c24839859e4b1f2c2f9c829f3380c
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 05f8fcf4c765998fc4e101d9dbef026d85b8b2fb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045334"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74715507"
 ---
 # <a name="visual-workflow-tracking"></a>Suivi de workflow visuel
 Cet exemple montre comment écrire une application de suivi de workflow visuel à l'aide des fonctionnalités de débogage disponibles via le [!INCLUDE[netfx_current_short](../../../../includes/netfx-current-short-md.md)].
@@ -36,6 +36,6 @@ Cet exemple montre comment écrire une application de suivi de workflow visuel �
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WF\Application\VisualWorkflowTracking`

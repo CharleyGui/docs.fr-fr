@@ -2,12 +2,12 @@
 title: ETW Tracing
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: fb1a1dc77ee6a7be25aade18f76f89464bef0387
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: c9f2b3019ee30ded59a7549a4d3be834c9ab9811
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989961"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716430"
 ---
 # <a name="etw-tracing"></a>ETW Tracing
 Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide du suivi d'événements pour Windows (ETW, Event Tracing for Windows) et du `ETWTraceListener` fourni dans cet exemple. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et comprend le suivi ETW.  
@@ -50,11 +50,11 @@ Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide
  Avant d'utiliser cet écouteur, une session de suivi ETW doit être démarrée. Pour ce faire, Logman.exe ou Tracelog.exe peut être utilisé. Cet exemple contient un fichier SetupETW.bat vous permettant de configurer une session de suivi ETW ainsi qu'un fichier CleanupETW.bat vous permettant de fermer la session et de compléter le fichier journal.  
   
 > [!NOTE]
-> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique. Pour plus d’informations sur ces outils, consultez.<https://go.microsoft.com/fwlink/?LinkId=56580>  
+> La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique. Pour plus d’informations sur ces outils, consultez <https://go.microsoft.com/fwlink/?LinkId=56580>  
   
  Lorsque l'écouteur ETWTraceListener est utilisé, les suivis sont enregistrés dans des fichiers .etl binaires. Si le suivi ServiceModel est activé, tous les suivis générés apparaissent dans le même fichier. Utilisez l' [outil Service Trace Viewer (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) pour afficher les fichiers journaux. etl et. svclog. La visionneuse affiche une vue de bout en bout du système, ce qui permet de suivre un message de sa source à ses destination et point de consommation.  
   
- L'écouteur de suivi ETW prend en charge l'enregistrement circulaire. Pour activer cette fonctionnalité, accédez à **Démarrer**, **exécuter** et tapez `cmd` pour démarrer une console de commandes. Dans la commande suivante, remplacez le paramètre `<logfilename>` par le nom de votre fichier journal.  
+ L'écouteur de suivi ETW prend en charge l'enregistrement circulaire. Pour activer cette fonctionnalité, accédez à **Démarrer**, **exécuter** , puis tapez `cmd` pour démarrer une console de commandes. Dans la commande suivante, remplacez le paramètre `<logfilename>` par le nom de votre fichier journal.  
   
 ```console  
 logman create trace Wcf -o <logfilename> -p "{411a0819-c24b-428c-83e2-26b41091702e}" -f bincirc -max 1000  
@@ -102,7 +102,7 @@ logman stop Wcf
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\AnalyticTrace`  
   

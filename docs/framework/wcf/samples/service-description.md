@@ -2,12 +2,12 @@
 title: Service Description
 ms.date: 03/30/2017
 ms.assetid: 7034b5d6-d608-45f3-b57d-ec135f83ff24
-ms.openlocfilehash: 430079cab91c61fe28db3f0a9d6c0797c7b0278a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: a087b595a426e1485e9990a5fa38e49ae940ffcb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038852"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716295"
 ---
 # <a name="service-description"></a>Service Description
 Cet exemple montre comment un service peut récupérer ses informations de description de service pendant l'exécution. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), avec une opération de service supplémentaire définie pour retourner des informations descriptives sur le service. Les informations retournées répertorient les points de terminaison et les adresses de base du service. Le service fournit ces informations à l'aide des classes <xref:System.ServiceModel.OperationContext>, <xref:System.ServiceModel.ServiceHost> et <xref:System.ServiceModel.Description.ServiceDescription>.  
@@ -98,6 +98,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Services\ServiceDescription`  

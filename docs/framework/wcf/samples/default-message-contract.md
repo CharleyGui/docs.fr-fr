@@ -4,15 +4,15 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - Message Contract
 ms.assetid: 5a200b78-1a46-4104-b7fb-da6dbab33893
-ms.openlocfilehash: 2115ac88c52efca09d32a870fc52905f80f6f746
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: dcdeeda0d6054c9cf6fefa31ea33d720c0c0f3f7
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045050"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716582"
 ---
 # <a name="default-message-contract"></a>Default Message Contract
-Cet exemple présente un service dans lequel un message personnalisé défini par l'utilisateur est passé à et depuis des opérations de service. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente une interface de calculatrice en tant que service typé. Au lieu des opérations de service individuelles pour l’addition, la soustraction, la multiplication et la Division utilisées dans le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), cet exemple passe un message personnalisé qui contient à la fois les opérandes et l’opérateur, et retourne le résultat de l’opération calcul arithmétique.  
+Cet exemple présente un service dans lequel un message personnalisé défini par l'utilisateur est passé à et depuis des opérations de service. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente une interface de calculatrice en tant que service typé. Au lieu des opérations de service individuelles pour l’addition, la soustraction, la multiplication et la Division utilisées dans le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md), cet exemple passe un message personnalisé qui contient à la fois les opérandes et l’opérateur, et retourne le résultat du calcul arithmétique.  
   
  Le client est un programme de console (.exe) et la bibliothèque de service (.dll) est hébergée par les services IIS. L'activité du client est affichée dans la fenêtre de console.  
   
@@ -181,6 +181,6 @@ Press <ENTER> to terminate client.
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Contract\Message\Default`  

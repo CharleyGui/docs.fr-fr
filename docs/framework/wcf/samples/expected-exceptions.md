@@ -1,15 +1,15 @@
 ---
-title: Expected Exceptions
+title: Exceptions attendues
 ms.date: 03/30/2017
 ms.assetid: 299a6987-ae6b-43c6-987f-12b034b583ae
-ms.openlocfilehash: a874b291202cb8c3c8752c13b357679c7fd5a556
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 24bb9b483a3f26241f895d68b763a1974b02151b
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989977"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716454"
 ---
-# <a name="expected-exceptions"></a>Expected Exceptions
+# <a name="expected-exceptions"></a>Exceptions attendues
 Cet exemple montre comment intercepter des exceptions attendues lors de l'utilisation d'un client typé. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) qui implémente un service de calculatrice. Dans cet exemple, le client est une application console (.exe) et le service est hébergé par les services IIS (Internet Information Services).  
   
 > [!NOTE]
@@ -19,7 +19,7 @@ Cet exemple montre comment intercepter des exceptions attendues lors de l'utilis
   
  Les exceptions qui sont levées à partir de méthodes de communication sur un client Windows Communication Foundation (WCF) sont attendues ou inattendues. Les exceptions inattendues incluent les pannes catastrophiques comme `OutOfMemoryException` et les erreurs de programmation comme `ArgumentNullException` ou `InvalidOperationException`. En règle générale, il n’existe aucun moyen utile de gérer les erreurs inattendues, donc généralement vous ne devez pas les intercepter lors de l’appel d’une méthode de communication cliente WCF.  
   
- Les exceptions attendues des méthodes de communication sur un `TimeoutException`client `CommunicationException`WCF incluent, et toute classe `CommunicationException`dérivée de. Ils indiquent un problème au cours de la communication qui peut être géré en toute sécurité en abandonnant le client WCF et en signalant un échec de communication. Étant donné que des facteurs externes peuvent provoquer ces erreurs dans toute application, les applications correctes doivent intercepter ces exceptions et récupérer lorsqu'elles se produisent.  
+ Les exceptions attendues des méthodes de communication sur un client WCF incluent `TimeoutException`, `CommunicationException`et toute classe dérivée de `CommunicationException`. Ils indiquent un problème au cours de la communication qui peut être géré en toute sécurité en abandonnant le client WCF et en signalant un échec de communication. Étant donné que des facteurs externes peuvent provoquer ces erreurs dans toute application, les applications correctes doivent intercepter ces exceptions et récupérer lorsqu'elles se produisent.  
   
  Il existe plusieurs classes dérivées de `CommunicationException` qu'un client peut lever. Dans certains cas, les applications en interceptent et procèdent à un traitement spécial, mais laissent les autres être traitées comme `CommunicationException`. Cela peut être accompli en interceptant le type d'exception plus spécifique en premier, puis en interceptant `CommunicationException` dans une clause « catch » ultérieure.  
   
@@ -76,6 +76,6 @@ Got System.TimeoutException
 >   
 > `<InstallDrive>:\WF_WCF_Samples`  
 >   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.  
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Client\ExpectedExceptions`  

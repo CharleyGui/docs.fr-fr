@@ -2,18 +2,18 @@
 title: Exemple Announcements
 ms.date: 03/30/2017
 ms.assetid: 954a75e4-9a97-41d6-94fc-43765d4205a9
-ms.openlocfilehash: 1acf51ebe36872424be1e0fdda65a7d18aa737f2
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 57b61dbd82338aafd248285c9cb11ecdf58d25bb
+ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045793"
+ms.lasthandoff: 12/03/2019
+ms.locfileid: "74716149"
 ---
 # <a name="announcements-sample"></a>Exemple Announcements
 
 Cet exemple montre comment utiliser les fonctionnalités d’annonce de la découverte. Les annonces permettent aux services d'envoyer des messages d'annonce qui contiennent des métadonnées relatives au service. Par défaut, une annonce de type Hello est envoyée lorsque le service démarre et une annonce de type Bye est envoyée lorsque le service s'arrête. Ces annonces peuvent être envoyées en mode multidiffusion ou de point à point. Cet exemple se compose de deux projets : service et client.
 
-## <a name="service"></a>de diffusion en continu
+## <a name="service"></a>Service
 
 Ce projet contient un service de calculatrice auto-hébergé. Dans la méthode `Main`, un hôte de service est créé et un point de terminaison de service lui est ajouté. Ensuite, un <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior> est créé. Pour activer les annonces, un point de terminaison d'annonce doit être ajouté au <xref:System.ServiceModel.Discovery.ServiceDiscoveryBehavior>. Dans ce cas, un point de terminaison standard utilisant la multidiffusion UDP est ajouté comme point de terminaison d'annonce. Celui-ci diffuse les annonces sur une adresse UDP bien connue.
 
@@ -86,6 +86,6 @@ static void OnOfflineEvent(object sender, AnnouncementEventArgs e)
 >
 > `<InstallDrive>:\WF_WCF_Samples`
 >
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=150780) pour télécharger tous les exemples Windows Communication Foundation (WCF [!INCLUDE[wf1](../../../../includes/wf1-md.md)] ) et. Cet exemple se trouve dans le répertoire suivant.
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Discovery\Announcements`
