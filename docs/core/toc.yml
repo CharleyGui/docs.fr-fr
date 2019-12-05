@@ -47,21 +47,21 @@
   items:
     - name: 'Prise en main de C# et Visual Studio Code'
       href: tutorials/with-visual-studio-code.md
-    - name: "Générer une application Hello World C# avec .NET Core dans Visual Studio\_2017"
+    - name: 'Générer une application Hello World C# dans Visual Studio'
       href: tutorials/with-visual-studio.md
-    - name: "Générer une application Hello World Visual Basic avec .NET Core dans Visual Studio\_2017"
+    - name: Générer une application Hello World Visual Basic dans Visual Studio
       href: tutorials/vb-with-visual-studio.md
-    - name: 'Déboguer une application Hello World .NET Core C# ou Visual Basic avec Visual Studio 2017'
+    - name: Déboguer une application en utilisant Visual Studio
       href: tutorials/debugging-with-visual-studio.md
-    - name: Publier votre application Hello World avec Visual Studio 2017
+    - name: Publier une application avec Visual Studio
       href: tutorials/publishing-with-visual-studio.md
-    - name: "Générer une bibliothèque .NET Standard avec C# et .NET Core dans Visual Studio\_2017"
+    - name: 'Générer une bibliothèque .NET Standard avec C# dans Visual Studio'
       href: tutorials/library-with-visual-studio.md
-    - name: "Générer une bibliothèque .NET Standard avec Visual Basic et .NET Core dans Visual Studio\_2017"
+    - name: Générer une bibliothèque .NET Standard avec Visual Basic dans Visual Studio
       href: tutorials/vb-library-with-visual-studio.md
-    - name: "Tester une bibliothèque .NET Standard avec .NET Core dans Visual Studio\_2017"
+    - name: Tester une bibliothèque .NET Standard dans Visual Studio
       href: tutorials/testing-library-with-visual-studio.md
-    - name: "Consommer une bibliothèque .NET Standard dans Visual Studio\_2017"
+    - name: Consommer une bibliothèque .NET Standard dans Visual Studio
       href: tutorials/consuming-library-with-visual-studio.md
 - name: Nouveautés de .NET Core
   items:
@@ -128,11 +128,11 @@
   items:
     - name: ".NET Core\_2.0 vers\_2.1"
       href: migration/20-21.md
-    - name: Migration à partir de project.json
+    - name: Migrer à partir de project.json
       href: migration/index.md
-    - name: Mappage entre project.json et csproj
+    - name: Mapper entre project.json et csproj
       href: tools/project-json-to-csproj.md
-    - name: Migration à partir de DNX
+    - name: Migrer à partir de DNX
       href: migration/from-dnx.md
 - name: Déploiement d’applications
   href: deploying/index.md
@@ -141,7 +141,7 @@
       href: deploying/deploy-with-cli.md
     - name: Déployer des applications avec Visual Studio
       href: deploying/deploy-with-vs.md
-    - name: Création d’un Package NuGet avec les outils multiplateformes
+    - name: Créer un package NuGet avec des outils multiplateformes
       href: deploying/creating-nuget-packages.md
     - name: Restauration par progression du runtime de déploiement autonome
       href: deploying/runtime-patch-selection.md
@@ -194,7 +194,7 @@
       href: testing/unit-testing-visual-basic-with-nunit.md
     - name: Tests unitaires VB avec MSTest
       href: testing/unit-testing-visual-basic-with-mstest.md
-    - name: Exécution de tests unitaires sélectifs
+    - name: Exécuter des tests unitaires sélectifs
       href: testing/selective-unit-tests.md
     - name: Sortie publiée des tests unitaires
       href: testing/unit-testing-published-output.md
@@ -207,7 +207,7 @@
   items:
     - name: Sélection de la version de .NET Core
       href: versions/selection.md
-    - name: Suppression des runtimes et SDK obsolètes
+    - name: Supprimer des runtimes et kits SDK obsolètes
       href: versions/remove-runtime-sdk-versions.md
 - name: Catalogue d’identificateurs de runtime (RID)
   href: rid-catalog.md
@@ -235,7 +235,7 @@
       href: tools/extensibility.md
     - name: Modèles personnalisés
       href: tools/custom-templates.md
-    - name: Activer la complétion via la touche TAB
+    - name: Activer la complétion avec la touche TAB
       href: tools/enable-tab-autocomplete.md
     - name: Télémétrie
       href: tools/telemetry.md
@@ -349,17 +349,17 @@
   items:
     - name: Vue d'ensemble
       href: dependency-loading/overview.md
-    - name: Présentation d’AssemblyLoadContext
+    - name: Comprendre AssemblyLoadContext
       href: dependency-loading/understanding-assemblyloadcontext.md
     - name: Chargement des détails
       items:
         - name: Sondage des dépendances par défaut
           href: dependency-loading/default-probing.md
-        - name: Chargement des assemblys managés
+        - name: Charger des assemblys managés
           href: dependency-loading/loading-managed.md
-        - name: Chargement des assemblys satellites
+        - name: Charger des assemblys satellites
           href: dependency-loading/loading-resources.md
-        - name: Chargement des bibliothèques non managées
+        - name: Charger des bibliothèques non managées
           href: dependency-loading/loading-unmanaged.md
     - name: Didacticiels
       items:
