@@ -13,19 +13,19 @@
           tocHref: /dotnet/architecture/
           topicHref: /dotnet/architecture/index
           items:
-            - name: Applications web ASP.NET modernes (livre électronique)
+            - name: Livre électronique sur les applications web ASP.NET modernes
               tocHref: /dotnet/architecture/modern-web-apps-azure/
               topicHref: /dotnet/architecture/modern-web-apps-azure/index
             - name: Microservices .NET - Architecture (livre électronique)
               tocHref: /dotnet/architecture/microservices/
               topicHref: /dotnet/architecture/microservices/index
-            - name: Natif cloud
+            - name: Cloud natif
               tocHref: /dotnet/architecture/cloud-native/
               topicHref: /dotnet/architecture/cloud-native/index
             - name: Modernisation des applications .NET (livre électronique)
               tocHref: /dotnet/architecture/modernize-with-azure-containers/
               topicHref: /dotnet/architecture/modernize-with-azure-containers/index
-            - name: Microservices .NET - DevOps (livre électronique)
+            - name: Livre électronique sur les microservices .NET - DevOps
               tocHref: /dotnet/architecture/containerized-lifecycle/
               topicHref: /dotnet/architecture/containerized-lifecycle/index
             - name: Livre électronique sur les applications serverless
@@ -37,7 +37,7 @@
             - name: gRPC ASP.NET Core pour les développeurs WCF
               tocHref: /dotnet/architecture/grpc-for-wcf-developers/
               topicHref: /dotnet/architecture/grpc-for-wcf-developers/index
-        - name: Guide de .NET
+        - name: Guide .NET
           tocHref: /dotnet/standard/
           topicHref: /dotnet/standard/index
           items:
@@ -50,10 +50,10 @@
             - name: Modèles de programmation asynchrone
               tocHref: /dotnet/standard/asynchronous-programming-patterns/
               topicHref: /dotnet/standard/asynchronous-programming-patterns/index
-            - name: Extension des métadonnées à l'aide des attributs
+            - name: Étendre des métadonnées en utilisant des attributs
               tocHref: /dotnet/standard/attributes/
               topicHref: /dotnet/standard/attributes/index
-            - name: Utilisation des types de base dans .NET
+            - name: Utiliser des types de base dans .NET
               tocHref: /dotnet/standard/base-types/
               topicHref: /dotnet/standard/base-types/index
             - name: Collections et structures de données
@@ -63,7 +63,7 @@
                 - name: Collections thread-safe
                   tocHref: /dotnet/standard/collections/thread-safe/
                   topicHref: /dotnet/standard/collections/thread-safe/index
-            - name: Développement pour plusieurs plateformes avec .NET
+            - name: Développer pour plusieurs plateformes avec .NET
               tocHref: /dotnet/standard/cross-platform/
               topicHref: /dotnet/standard/cross-platform/index
             - name: Documents et données XML
@@ -72,16 +72,16 @@
             - name: 'Dates, heures et fuseaux horaires'
               tocHref: /dotnet/standard/datetime/
               topicHref: /dotnet/standard/datetime/index
-            - name: "Règles de conception de .NET\_Framework"
+            - name: "Règles de conception du .NET\_Framework"
               tocHref: /dotnet/standard/design-guidelines/
               topicHref: /dotnet/standard/design-guidelines/index
-            - name: Gestion et déclenchement d'événements
+            - name: Gérer et déclencher des événements
               tocHref: /dotnet/standard/events/
               topicHref: /dotnet/standard/events/index
-            - name: Gestion et levée des exceptions
+            - name: Gérer et lever des exceptions
               tocHref: /dotnet/standard/exceptions/
               topicHref: /dotnet/standard/exceptions/index
-            - name: Garbage Collection
+            - name: Garbage collection
               tocHref: /dotnet/standard/garbage-collection/
               topicHref: /dotnet/standard/garbage-collection/index
             - name: Génériques en .NET
@@ -90,7 +90,7 @@
             - name: Globalisation et localisation
               tocHref: /dotnet/standard/globalization-localization/
               topicHref: /dotnet/standard/globalization-localization/index
-            - name: Fichier et flux de données E/S
+            - name: E/S de fichier et de flux
               tocHref: /dotnet/standard/io/
               topicHref: /dotnet/standard/io/index
             - name: Types liés à la mémoire et à l’étendue
@@ -115,18 +115,57 @@
           tocHref: /dotnet/core/
           topicHref: /dotnet/core/index
           items:
-            - name: Modifications avec rupture
-              tocHref: /dotnet/core/compatibility/
-              topicHref: /dotnet/core/compatibility/index
-            - name: Configuration d’exécution
-              tocHref: /dotnet/core/run-time-config/
-              topicHref: /dotnet/core/run-time-config/index
-            - name: Outils
-              tocHref: /dotnet/core/tools/
-              topicHref: /dotnet/core/tools/index
             - name: Guide d’installation
               tocHref: /dotnet/core/install/
               topicHref: /dotnet/core/install/index
+            - name: Nouveautés
+              tocHref: /dotnet/core/whats-new/
+              topicHref: /dotnet/core/whats-new/dotnet-core-3-0
+            - name: Modifications avec rupture
+              tocHref: /dotnet/core/compatibility/
+              topicHref: /dotnet/core/compatibility/index
+            - name: Didacticiels
+              tocHref: /dotnet/core/tutorials/
+              topicHref: /dotnet/core/tutorials/index
+            - name: Configuration d’exécution
+              tocHref: /dotnet/core/run-time-config/
+              topicHref: /dotnet/core/run-time-config/index
+            - name: Interopérabilité native
+              tocHref: /dotnet/core/native-interop/
+              topicHref: /dotnet/core/native-interop/expose-components-to-com
+            - name: Migration
+              tocHref: /dotnet/core/migration/
+              topicHref: /dotnet/core/migration/index
+            - name: Déploiement
+              tocHref: /dotnet/core/deploying/
+              topicHref: /dotnet/core/deploying/index
+            - name: Docker
+              tocHref: /dotnet/core/docker/
+              topicHref: /dotnet/core/docker/introduction
+            - name: Outils de diagnostic
+              tocHref: /dotnet/core/diagnostics/
+              topicHref: /dotnet/core/diagnostics/index
+            - name: Test unitaire
+              tocHref: /dotnet/core/testing/
+              topicHref: /dotnet/core/testing/index
+            - name: Gestion de version
+              tocHref: /dotnet/core/versions/
+              topicHref: /dotnet/core/versions/index
+            - name: Outils
+              tocHref: /dotnet/core/tools/
+              topicHref: /dotnet/core/tools/index
+            - name: Outils supplémentaires
+              tocHref: /dotnet/core/additional-tools/
+              topicHref: /dotnet/core/additional-tools/index
+            - name: Portage
+              tocHref: /dotnet/core/porting/
+              topicHref: /dotnet/core/porting/index
+            - name: Chargement des dépendances
+              tocHref: /dotnet/core/dependency-loading/
+              topicHref: /dotnet/core/dependency-loading/overview
+            - name: Générer avec .NET Core
+              tocHref: /dotnet/core/build/
+              topicHref: /dotnet/core/build/index
         - name: ".NET\_Framework"
           tocHref: /dotnet/framework/
           topicHref: /dotnet/framework/index
@@ -137,10 +176,10 @@
             - name: API supplémentaires
               tocHref: /dotnet/framework/additional-apis/
               topicHref: /dotnet/framework/additional-apis/index
-            - name: Domaines d'application et assemblys
+            - name: Domaines d’application et assemblys
               tocHref: /dotnet/framework/app-domains/
               topicHref: /dotnet/framework/app-domains/index
-            - name: Configuration des applications à l'aide de fichiers de configuration
+            - name: Configurer des applications en utilisant des fichiers de configuration
               tocHref: /dotnet/framework/configure-apps/
               topicHref: /dotnet/framework/configure-apps/index
               items:
@@ -157,7 +196,7 @@
                     - name: Schéma des paramètres réseau
                       tocHref: /dotnet/framework/configure-apps/file-schema/network/
                       topicHref: /dotnet/framework/configure-apps/file-schema/network/index
-                    - name: Schéma des paramètres d'exécution
+                    - name: Schéma des paramètres d’exécution
                       tocHref: /dotnet/framework/configure-apps/file-schema/runtime/
                       topicHref: /dotnet/framework/configure-apps/file-schema/runtime/index
                     - name: Schéma des paramètres de démarrage
@@ -175,13 +214,13 @@
                     - name: Schéma des paramètres web
                       tocHref: /dotnet/framework/configure-apps/file-schema/web/
                       topicHref: /dotnet/framework/configure-apps/file-schema/web/index
-                    - name: Schéma de configuration de Windows Identity Foundation
+                    - name: Schéma de configuration Windows Identity Foundation
                       tocHref: /dotnet/framework/configure-apps/file-schema/windows-identity-foundation/
                       topicHref: /dotnet/framework/configure-apps/file-schema/windows-identity-foundation/index
                     - name: Schéma de configuration Windows Workflow Foundation
                       tocHref: /dotnet/framework/configure-apps/file-schema/windows-workflow-foundation
                       topicHref: /dotnet/framework/configure-apps/file-schema/windows-workflow-foundation/index
-                    - name: Section de configuration de Windows Forms
+                    - name: Section de configuration Windows Forms
                       tocHref: /dotnet/framework/configure-apps/file-schema/winforms/
                       topicHref: /dotnet/framework/configure-apps/file-schema/winforms/index
             - name: Données et modélisation dans le .NET Framework
@@ -199,7 +238,7 @@
                       tocHref: /dotnet/framework/data/adonet/ef/
                       topicHref: /dotnet/framework/data/adonet/ef/index
                       items:
-                        - name: Guide de référence du langage Entity SQL
+                        - name: Informations de référence sur le langage Entity SQL
                           tocHref: /dotnet/framework/data/adonet/ef/language-reference/
                           topicHref: /dotnet/framework/data/adonet/ef/language-reference/index
                     - name: SQL Server et ADO.NET
@@ -209,7 +248,7 @@
                         - name: LINQ to SQL
                           tocHref: /dotnet/framework/data/adonet/sql/linq/
                           topicHref: /dotnet/framework/data/adonet/sql/linq/index
-                - name: Traitement transactionnel
+                - name: Traitement des transactions
                   tocHref: /dotnet/framework/data/transactions/
                   topicHref: /dotnet/framework/data/transactions/index
                 - name: Services de données WCF
@@ -221,16 +260,16 @@
             - name: Déployer le .NET Framework
               tocHref: /dotnet/framework/deployment/
               topicHref: /dotnet/framework/deployment/index
-            - name: Déploiement d’applications .NET Framework avec Docker
+            - name: Déployer des applications .NET Framework avec Docker
               tocHref: /dotnet/framework/docker/
               topicHref: /dotnet/framework/docker/index
-            - name: Bien démarrer
+            - name: Prise en main
               tocHref: /dotnet/framework/get-started/
               topicHref: /dotnet/framework/get-started/index
             - name: Guide d’installation
               tocHref: /dotnet/framework/install/
               topicHref: /dotnet/framework/install/index
-            - name: Interopération avec du code non managé
+            - name: Interopérer avec du code non managé
               tocHref: /dotnet/framework/interop/
               topicHref: /dotnet/framework/interop/index
             - name: Managed Extensibility Framework (MEF)
@@ -239,7 +278,7 @@
             - name: Guide de migration
               tocHref: /dotnet/framework/migration-guide/
               topicHref: /dotnet/framework/migration-guide/index
-            - name: Compilation d'applications avec .NET Native
+            - name: Compiler des applications avec .NET Native
               tocHref: /dotnet/framework/net-native/
               topicHref: /dotnet/framework/net-native/index
             - name: Programmation réseau dans le .NET Framework
@@ -294,7 +333,7 @@
                 - name: Nom fort (Informations de référence sur les API non managées)
                   tocHref: /dotnet/framework/unmanaged-api/strong-naming/
                   topicHref: /dotnet/framework/unmanaged-api/strong-naming/index
-                - name: Fonctions d'assistance de Tlbexp (Informations de référence sur les API non managées)
+                - name: Fonctions d’assistance Tlbexp (Informations de référence sur les API non managées)
                   tocHref: /dotnet/framework/unmanaged-api/tlbexp/
                   topicHref: /dotnet/framework/unmanaged-api/tlbexp/index
             - name: Windows Communication Foundation
@@ -323,19 +362,19 @@
                     - name: Utilisation de Windows Management Instrumentation pour les diagnostics
                       tocHref: /dotnet/framework/wcf/diagnostics/wmi/
                       topicHref: /dotnet/framework/wcf/diagnostics/wmi/index
-                - name: Extension de WCF
+                - name: Étendre WCF
                   tocHref: /dotnet/framework/wcf/extending/
                   topicHref: /dotnet/framework/wcf/extending/index
-                - name: Informations détaillées sur les fonctionnalités de WCF
+                - name: Informations détaillées sur les fonctionnalités WCF
                   tocHref: /dotnet/framework/wcf/feature-details/
                   topicHref: /dotnet/framework/wcf/feature-details/index
                 - name: Exemples Windows Communication Foundation (WCF)
                   tocHref: /dotnet/framework/wcf/samples/
                   topicHref: /dotnet/framework/wcf/samples/index
-            - name: Nouveautés dans le .NET Framework
+            - name: Nouveautés du .NET Framework
               tocHref: /dotnet/framework/whats-new/
               topicHref: /dotnet/framework/whats-new/index
-            - name: Développement des applications de service Windows
+            - name: Développer des applications du service Windows
               tocHref: /dotnet/framework/windows-services/
               topicHref: /dotnet/framework/windows-services/index
             - name: Windows Workflow Foundation
@@ -349,20 +388,20 @@
               tocHref: /dotnet/framework/winforms/
               topicHref: /dotnet/framework/winforms/index
               items:
-                - name: Amélioration des applications Windows Forms
+                - name: Améliorer des applications Windows Forms
                   tocHref: /dotnet/framework/winforms/advanced/
                   topicHref: /dotnet/framework/winforms/advanced/index
-                - name: contrôles Windows Forms
+                - name: Contrôles Windows Forms
                   tocHref: /dotnet/framework/winforms/controls/
                   topicHref: /dotnet/framework/winforms/controls/index
             - name: Windows Presentation Foundation
               tocHref: /dotnet/framework/wpf/
               topicHref: /dotnet/framework/wpf/index
               items:
-                - name: Aspects avancés (Windows Presentation Foundation)
+                - name: Avancé
                   tocHref: /dotnet/framework/wpf/advanced/
                   topicHref: /dotnet/framework/wpf/advanced/index
-                - name: Développement de l'application
+                - name: Développement d’applications
                   tocHref: /dotnet/framework/wpf/app-development/
                   topicHref: /dotnet/framework/wpf/app-development/index
                 - name: Contrôles
@@ -374,7 +413,7 @@
                 - name: Bien démarrer (WPF)
                   tocHref: /dotnet/framework/wpf/getting-started/
                   topicHref: /dotnet/framework/wpf/getting-started/index
-                - name: Graphiques et multimédia
+                - name: Graphisme et multimédia
                   tocHref: /dotnet/framework/wpf/graphics-multimedia/
                   topicHref: /dotnet/framework/wpf/graphics-multimedia/index
             - name: Services XAML
@@ -384,7 +423,7 @@
           tocHref: /dotnet/desktop-wpf/
           topicHref: /dotnet/desktop-wpf/index
           items:
-            - name: Bien démarrer
+            - name: Prise en main
               tocHref: /visualstudio/get-started/csharp/tutorial-wpf
               topicHref: /dotnet/desktop-wpf/getting-started/index
             - name: Migration
@@ -400,7 +439,7 @@
             - name: 'Présentation de C#'
               tocHref: /dotnet/csharp/tutorials/intro-to-csharp/
               topicHref: /dotnet/csharp/tutorials/intro-to-csharp/index
-            - name: Bien démarrer
+            - name: Prise en main
               tocHref: /dotnet/csharp/getting-started/
               topicHref: /dotnet/csharp/getting-started/index
             - name: Didacticiels
@@ -560,7 +599,7 @@
             - name: Prise en main
               tocHref: /dotnet/visual-basic/getting-started/
               topicHref: /dotnet/visual-basic/getting-started/index
-            - name: Développement d’applications
+            - name: Développer des applications
               tocHref: /dotnet/visual-basic/developing-apps/
               topicHref: /dotnet/visual-basic/developing-apps/index
             - name: Concepts de programmation
@@ -640,7 +679,7 @@
                 - name: XML
                   tocHref: /dotnet/visual-basic/programming-guide/language-features/xml/
                   topicHref: /dotnet/visual-basic/programming-guide/language-features/xml/index
-            - name: COM Interop
+            - name: COM interop
               tocHref: /dotnet/visual-basic/programming-guide/com-interop/
               topicHref: /dotnet/visual-basic/programming-guide/com-interop/index
             - name: Informations de référence sur le langage

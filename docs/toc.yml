@@ -1,10 +1,10 @@
 - name: Bienvenue
   href: welcome.md
-- name: Guide de .NET
+- name: Guide .NET
   href: standard/
 - name: Guide .NET Core
   href: core/
-- name: Guide du .NET Framework
+- name: Guide .NET Framework
   href: framework/
 - name: Guide .NET Desktop - WPF
   href: desktop-wpf/
