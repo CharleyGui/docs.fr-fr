@@ -1,13 +1,13 @@
 ---
-title: Événements de domaine. Conception et implémentation
+title: Événements de domaine. conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: f0dbd6b0e70d825122d319611a327438df065588
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: f427ed5216af11b90c5a8cede15806a11aedc76d
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739901"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835544"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -341,6 +341,8 @@ Enfin, il est important de mentionner qu’il est parfois utile de propager des 
 ## <a name="conclusions-on-domain-events"></a>Conclusions sur les événements de domaine
 
 Comme nous l’avons vu, les événements de domaine permettent d’implémenter explicitement les effets secondaires des modifications apportées à votre domaine. Pour utiliser la terminologie DDD, les événements de domaine permettent d’implémenter explicitement des effets secondaires sur un ou plusieurs agrégats. Si vous le souhaitez, pour une meilleure scalabilité et un impact moindre sur les verrous de base de données, utilisez la cohérence à terme entre les agrégats d’un même domaine.
+
+L’application de référence utilise [médiateur](https://github.com/jbogard/MediatR) pour propager les événements de domaine synchonously sur les agrégats, au sein d’une même transaction. Toutefois, vous pouvez également utiliser une implémentation AMQP comme [RabbitMQ](https://www.rabbitmq.com/) ou [Azure Service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) pour propager les événements de domaine de manière asynchrone, en utilisant la cohérence éventuelle, mais comme indiqué ci-dessus, vous devez prendre en compte le besoin d’actions compensatoires en cas de défaillance.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
