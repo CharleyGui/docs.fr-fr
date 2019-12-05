@@ -2,18 +2,18 @@
 title: Créer un projet LINQ to DataSet dans Visual Studio
 ms.date: 08/15/2018
 ms.assetid: 49ba6cb0-cdd2-4571-aeaa-25bf0f40e9b3
-ms.openlocfilehash: 8b905c65575c3c567459d843b2a5d1606bc63228
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 91032766248b11e51b90aa788b1c64c140347c25
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783778"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802028"
 ---
-# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Procédure : Créer un projet LINQ to DataSet dans Visual Studio
+# <a name="how-to-create-a-linq-to-dataset-project-in-visual-studio"></a>Comment : créer un projet LINQ to DataSet dans Visual Studio
 
-Les différents types de projets LINQ requièrent certaines références d’assembly et les espaces de noms importésC#(Visual Basic) ou les directives [using](../../../csharp/language-reference/keywords/using-directive.md) (). La configuration minimale requise pour LINQ est une référence à *System. Core. dll* et `using` une directive <xref:System.Linq>pour.
+Les différents types de projets LINQ requièrent certaines références d’assembly et les espaces de noms importésC#(Visual Basic) ou les directives [using](../../../csharp/language-reference/keywords/using-directive.md) (). La configuration minimale requise pour LINQ est une référence à *System. Core. dll* et une directive `using` pour <xref:System.Linq>.
 
-Ces exigences sont fournies par défaut si vous créez un projet C# d’application console dans Visual Studio 2017. Si vous mettez à niveau un projet à partir d’une version antérieure de Visual Studio, vous devrez peut-être fournir manuellement ces références liées à LINQ.
+Ces exigences sont fournies par défaut si vous créez un projet C# d’application console dans Visual Studio 2017 ou une version ultérieure. Si vous mettez à niveau un projet à partir d’une version antérieure de Visual Studio, vous devrez peut-être fournir manuellement ces références liées à LINQ.
 
 LINQ to DataSet requiert deux références supplémentaires à *System. Data. dll* et *System. Data. DataSetExtensions. dll*.
 
@@ -35,7 +35,7 @@ Procédez comme suit pour activer LINQ to DataSet fonctionnalité dans un projet
    using System.Linq;
    ```
 
-1. Si vous le souhaitez, `using` ajoutez une directive `Imports` (ou une instruction) pour **System. Data. Common** ou **System. Data. SqlClient**, selon la façon dont vous vous connectez à la base de données.
+1. Si vous le souhaitez, ajoutez une directive `using` (ou une instruction `Imports`) pour **System. Data. Common** ou **System. Data. SqlClient**, selon la façon dont vous vous connectez à la base de données.
 
 ## <a name="see-also"></a>Voir aussi
 

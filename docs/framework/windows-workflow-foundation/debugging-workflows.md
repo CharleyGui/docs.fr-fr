@@ -2,16 +2,16 @@
 title: Débogage de flux de travail
 ms.date: 03/30/2017
 ms.assetid: b23b4814-ebb1-4c51-b7a9-469f4da7a96d
-ms.openlocfilehash: 3947e61161b0e2108fa48fbc7e33fb7601645a1b
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 2bfc50215697636f1771d6bb35510fbf9e0b435d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291492"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802633"
 ---
 # <a name="debugging-workflows"></a>Débogage de flux de travail
 
-[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] offre plusieurs options pour déboguer les flux de travail en cours d’exécution à partir de l’environnement de développement. Les workflows peuvent être débogués dans le concepteur, dans XAML et dans le code.
+[!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] offre plusieurs options permettant de déboguer des workflows en cours d'exécution à partir de l'environnement de développement. Les workflows peuvent être débogués dans le concepteur, dans XAML et dans le code.
 
 ## <a name="debugging-in-the-workflow-designer"></a>Débogage dans le concepteur de workflow
 
@@ -29,9 +29,9 @@ Pour définir un point d’arrêt, cliquez sur la marge de gauche du volet de co
 
 Le débogage de workflow permet également d'utiliser l'infrastructure de Visual Studio pour attacher un processus. Cela permet à l'auteur de workflow de déboguer un workflow qui est exécuté dans un environnement hôte différent, tel qu'Internet Information Services 7.0 (IIS).
 
-## <a name="remote-debugging"></a>Débogage distant
+## <a name="remote-debugging"></a>Remote Debugging
 
-Les fonctions de débogage à distance Windows Workflow Foundation (WF) sont identiques au débogage à distance pour d’autres composants de Visual Studio. Pour plus d’informations sur l’utilisation du débogage à distance, consultez [Comment : activer le débogage distant](https://go.microsoft.com/fwlink/?LinkId=196257).
+Les fonctions de débogage à distance Windows Workflow Foundation (WF) sont identiques au débogage à distance pour d’autres composants de Visual Studio. Pour plus d’informations sur l’utilisation du débogage à distance, consultez [Comment : activer le débogage distant](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/febz73k0(v=vs.100)).
 
 > [!NOTE]
 > Si l’application de workflow cible l’architecture x86 et est hébergée sur un ordinateur exécutant un système d’exploitation 64 bits, le débogage à distance ne fonctionnera pas, sauf si Visual Studio est installé sur l’ordinateur distant ou si la cible de l’application de workflow est remplacée par **n’importe quel processeur**.

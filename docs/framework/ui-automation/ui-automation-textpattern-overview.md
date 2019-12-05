@@ -6,17 +6,17 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
-ms.openlocfilehash: 2f417aaba5361bea3bf2493001bca938d9dd08cb
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b7e378d79109d33859a38ea398cffd2193044abd
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975494"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800198"
 ---
 # <a name="ui-automation-textpattern-overview"></a>Vue d'ensemble de TextPattern d'UI Automation
 
 > [!NOTE]
-> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](https://go.microsoft.com/fwlink/?LinkID=156746).
+> Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
 Cette présentation décrit comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour exposer le contenu textuel, y compris les attributs de mise en forme et de style, des contrôles de texte dans les plateformes prises en charge par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Ces contrôles incluent, sans s’y limiter, le Microsoft .NET Framework <xref:System.Windows.Controls.TextBox> et <xref:System.Windows.Controls.RichTextBox>, ainsi que leurs équivalents [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)].
 
@@ -41,7 +41,7 @@ En résumé, les technologies accessibles qui nécessitent un accès en lecture 
 
 ## <a name="control-types"></a>Types de contrôles
 
-### <a name="text"></a>Texte
+### <a name="text"></a>Text
 
 Le contrôle Text est l'élément de base représentant une partie du texte à l'écran.
 
@@ -50,7 +50,7 @@ Un contrôle de texte autonome peut être utilisé comme étiquette ou texte sta
 > [!NOTE]
 > Il est possible que les contrôles de texte n’apparaissent pas dans l’affichage du contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] (consultez [UI Automation Tree Overview](ui-automation-tree-overview.md)). En effet, les contrôles Text sont souvent affichés via la propriété Name d'un autre contrôle. Par exemple, le texte utilisé pour étiqueter un contrôle Edit est exposé via la propriété Name du contrôle Edit. Étant donné que le contrôle Edit figure dans l'affichage du contenu de l'arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] , il est inutile que l'élément Text soit présent dans cet affichage de l'arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] . Le seul texte qui apparaît dans l'affichage du contenu est le texte qui ne présente pas d'informations redondantes. Cela permet aux technologies d'assistance de filtrer rapidement les informations dont leurs utilisateurs ont besoin.
 
-### <a name="edit"></a>Éditer
+### <a name="edit"></a>Edit
 
 Les contrôles Edit permettent à un utilisateur d'afficher et de modifier une seule ligne de texte.
 

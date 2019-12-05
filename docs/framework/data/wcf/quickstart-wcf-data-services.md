@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, quick-start example
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-ms.openlocfilehash: d0002182c5ae519c36348acdd2587bca499fe72e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: df3151dfd3628231d84d2d128c61d1c0b6b0d48e
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975142"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800355"
 ---
 # <a name="quickstart-wcf-data-services"></a>Démarrage rapide (services de données WCF)
 
 Ce guide de démarrage rapide vous permet de vous familiariser avec WCF Data Services et le Open Data Protocol (OData) par le biais d’une série de tâches qui prennent en charge les rubriques dans [prise en main](getting-started-with-wcf-data-services.md).
 
-## <a name="what-youll-learn"></a>Ce que vous allez apprendre
+## <a name="what-youll-learn"></a>Contenu du didacticiel
 
 La première tâche de ce guide de démarrage rapide montre comment créer un service de données pour exposer un flux OData à partir de l’exemple de base de données Northwind. Dans les rubriques ultérieures, vous accéderez au flux OData à l’aide d’un navigateur Web et vous créerez également une application cliente Windows Presentation Foundation (WPF) qui consomme le flux OData à l’aide des bibliothèques clientes.
 
@@ -26,7 +26,7 @@ Pour effectuer ce démarrage rapide, vous devez installer les composants suivant
 
 - Visual Studio
 
-- Instance de SQL Server. Cela inclut SQL Server Express, qui est inclus dans une installation par défaut de Visual Studio 2015 ou dans le cadre de la charge de travail **stockage et traitement des données** dans visual studio 2017.
+- Instance de SQL Server. Cela inclut SQL Server Express, qui est inclus dans une installation par défaut de Visual Studio 2015 ou dans le cadre de la charge de travail **stockage et traitement des données** dans visual studio 2017 ou version ultérieure.
 
 - Exemple de base de données Northwind. Pour télécharger cet exemple de base de données, consultez la page de téléchargement, [Exemples de bases de données pour SQL Server](https://go.microsoft.com/fwlink/?linkid=24758).
 
@@ -47,7 +47,7 @@ Pour effectuer ce démarrage rapide, vous devez installer les composants suivant
 > [!NOTE]
 > Les fichiers projet d’une version terminée du démarrage rapide peuvent être téléchargés à partir de la page [WCF Data Services Quickstart (OData Service and WPF Client)](https://go.microsoft.com/fwlink/?LinkId=179994) .
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 > [!div class="nextstepaction"]
 > [Démarrer le démarrage rapide](creating-the-data-service.md)

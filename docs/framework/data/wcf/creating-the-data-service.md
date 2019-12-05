@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 34d1d971-5e18-4c22-9bf6-d3612e27ea59
-ms.openlocfilehash: d30b2e30639837730ecb185a2c0f659a63955004
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72e3b35465968674a20aa48262d3425a2190ff74
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975394"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802269"
 ---
 # <a name="create-the-data-service"></a>Créer le service de données
 
@@ -26,7 +26,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
 
 ## <a name="create-the-aspnet-web-app"></a>Créer l’application Web ASP.NET
 
-1. Dans Visual Studio, dans le menu **fichier** , sélectionnez **nouveau**  > **projet**.
+1. Dans Visual Studio, dans le menu **Fichier**, sélectionnez **Nouveau** > **Projet**.
 
 1. Dans la boîte de dialogue **nouveau projet** , sous Visual Basic ou visuel C# , sélectionnez la catégorie **Web** , puis sélectionnez **application Web ASP.net**.
 
@@ -71,7 +71,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
    ![Modèle d’élément de service de données WCF dans Visual Studio 2015](./media/wcf-data-service-item-template.png)
 
    > [!NOTE]
-   > Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017.
+   > Le modèle de **service de données WCF** est disponible dans visual studio 2015, mais pas dans visual studio 2017 ou version ultérieure.
 
 3. Pour le nom du service, tapez `Northwind`.
 
@@ -94,7 +94,7 @@ Dans cette rubrique, vous allez créer un exemple de service de données qui uti
     > [!NOTE]
     > Tout client qui peut accéder à l'application ASP.NET peut également accéder aux ressources exposées par le service de données. Dans un service de données de production, pour empêcher l'accès non autorisé aux ressources, vous devez également sécuriser l'application elle-même. Pour plus d'informations, consultez [Securing WCF Data Services](securing-wcf-data-services.md).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Vous avez correctement créé un nouveau service de données qui expose un flux OData basé sur l’exemple de base de données Northwind, et vous avez activé l’accès au flux pour les clients qui ont des autorisations sur l’application Web ASP.NET. Ensuite, vous allez démarrer le service de données à partir de Visual Studio et accéder au flux OData en soumettant des demandes HTTP d’extraction via un navigateur Web :
 

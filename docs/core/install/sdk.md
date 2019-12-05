@@ -6,25 +6,35 @@ ms.author: adegeo
 ms.date: 11/06/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 54819b409422e8bda9efe25478aa3424683a380b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 290bdfb05b328bb311e6ff5ef493048b05985899
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567469"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801939"
 ---
 # <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
 
 Dans cet article, vous allez apprendre à installer le kit SDK .NET Core. Le kit SDK .NET Core est utilisé pour créer des applications et des bibliothèques .NET Core. Le Runtime .NET Core est toujours installé avec le kit de développement logiciel (SDK).
 
-::: zone pivot="os-windows,os-macos"
+::: zone pivot="os-windows"
 
 ## <a name="install-with-an-installer"></a>Installer avec un programme d’installation
 
-Windows et macOS ont tous deux des programmes d’installation autonomes qui peuvent être utilisés pour installer le kit de développement logiciel (SDK) .NET Core 3,0.
+Windows possède des programmes d’installation autonomes qui peuvent être utilisés pour installer le kit de développement logiciel (SDK) .NET Core 3,0 :
 
-- [UC Windows x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0) | [processeurs x86 (32 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
-- [UC MacOS x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+- [Processeurs x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0) 
+- [Processeurs x86 (32 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
+
+::: zone-end
+
+::: zone pivot="os-macos"
+
+## <a name="install-with-an-installer"></a>Installer avec un programme d’installation
+
+macOS possède des programmes d’installation autonomes qui peuvent être utilisés pour installer le kit de développement logiciel (SDK) .NET Core 3,0 :
+
+- [Processeurs x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 
 ::: zone-end
 

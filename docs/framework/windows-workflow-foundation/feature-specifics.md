@@ -2,12 +2,12 @@
 title: Fonctionnalités spécifiques à Windows Workflow Foundation
 ms.date: 03/30/2017
 ms.assetid: e84d12da-a055-45f6-b4d1-878d127b46b6
-ms.openlocfilehash: 0c312eed1a5ba064771e7cc4c260b43d97b16315
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 869d6108edaa7f32101b6fe8d077e4eba7eef6b5
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141871"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802594"
 ---
 # <a name="windows-workflow-foundation-feature-specifics"></a>Fonctionnalités spécifiques à Windows Workflow Foundation
 
@@ -61,7 +61,7 @@ Une corrélation correspond à l'un des deux concepts suivants :
 
 - manière de mapper des données à une instance de service.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Pour démarrer une corrélation, créez un projet dans Visual Studio. Créez une variable de type <xref:System.ServiceModel.Activities.CorrelationHandle>.
 
@@ -93,17 +93,17 @@ Le schéma de configuration WCF est complexe et offre aux utilisateurs de nombre
 
 - Enfin, le <xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601> vous permet d’effectuer une gestion centralisée de la configuration du client WCF, utile dans les scénarios où la configuration est sélectionnée ou modifiée après le temps de chargement du domaine d’application.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
-- [Guide du développeur pour WCF 4,0](https://go.microsoft.com/fwlink/?LinkId=204940)
+- [Guide du développeur pour WCF 4,0](https://docs.microsoft.com/previous-versions/dotnet/articles/ee354381(v=msdn.10))
 
-- [Fabrique de canaux de configuration](https://go.microsoft.com/fwlink/?LinkId=204941)
+- [Fabrique de canaux de configuration](xref:System.ServiceModel.Configuration.ConfigurationChannelFactory%601)
 
-- [Élément de point de terminaison standard](https://go.microsoft.com/fwlink/?LinkId=204942)
+- [Élément de point de terminaison standard](xref:System.ServiceModel.Configuration.StandardEndpointElement)
 
-- [Améliorations de la configuration du service dans .NET Framework 4](https://go.microsoft.com/fwlink/?LinkId=204943)
+- [Améliorations de la configuration du service dans .NET Framework 4](https://blogs.msdn.microsoft.com/endpoint/2009/06/30/service-configuration-improvements-in-net-4/)
 
-- [Erreur courante de l’utilisateur dans .NET 4 : saisie incorrecte du nom de configuration du service WF/WCF](https://go.microsoft.com/fwlink/?LinkId=204944)
+- [Erreur courante de l’utilisateur dans .NET 4 : saisie incorrecte du nom de configuration du service WF/WCF](https://blogs.msdn.microsoft.com/endpoint/2009/11/09/common-user-mistake-in-net-4-mistyping-the-wfwcf-service-configuration-name/)
 
 ### <a name="simplified-configuration-scenarios"></a>Scénarios de configuration simplifiée
 
@@ -123,11 +123,11 @@ Dans .NET 3.5, il existait quelques limitations à la conception de types connu
 
 Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces problèmes dans .net 4,5.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
-- [Documentation sur l’API de résolution de contrat de données](https://go.microsoft.com/fwlink/?LinkId=204946)
+- [Documentation sur l’API de résolution de contrat de données](xref:System.Runtime.Serialization.DataContractResolver)
 
-- [Présentation du programme de résolution des contrats de données](https://go.microsoft.com/fwlink/?LinkId=204947)
+- [Présentation du programme de résolution des contrats de données](https://blogs.msdn.microsoft.com/youssefm/2009/06/05/configuring-known-types-dynamically-introducing-the-datacontractresolver/)
 
 - Exemples :
 
@@ -145,7 +145,7 @@ Le [DataContractResolver](../wcf/samples/datacontractresolver.md) résout ces pr
 
 Un organigramme est un paradigme connu permettant la représentation visuelle de problèmes liés à un domaine. Il s'agit d'un nouveau style de flux de contrôle qui a été introduit dans .NET 4. La principale caractéristique d'un organigramme tient dans le fait qu'une seule activité est exécutée à un moment donné. Les organigrammes peuvent représenter des boucles et des alternatives possibles, mais ne peuvent pas, de manière native, représenter l'exécution simultanée de plusieurs nœuds.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez un organigramme dans le concepteur de workflow.
 
@@ -191,7 +191,7 @@ Une activité d'organigramme peut permettre d'implémenter un jeu de devinette. 
 
 Les activités procédurales fournissent un mécanisme de modélisation d'un flux de contrôle séquentiel en faisant appel à des concepts que connaissent bien les programmeurs. Ces activités permettent les constructions de langage de programmation structurées de manière traditionnelle et, lorsque cela s'avère nécessaire, une parité de langages avec les langages procéduraux courants, tels que C#/VB.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez des activités procédurales dans le concepteur de workfow.
 
@@ -217,7 +217,7 @@ Les activités procédurales fournissent un mécanisme de modélisation d'un flu
 
 L'activité <xref:System.Activities.Statements.InvokeMethod> permet l'appel de méthodes publiques dans des objets ou des types de l'étendue. Elle prend en charge l'appel de méthodes statiques et d'instances avec ou sans paramètres (y compris les tableaux de paramètres), ainsi que les méthodes génériques. Elle permet également l’exécution de la méthode de façon synchrone et de façon asynchrone.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.InvokeMethod> dans le concepteur de workflow et configurez-y des méthodes d'instances et statiques.
 
@@ -233,7 +233,7 @@ L'activité <xref:System.Activities.Statements.InvokeMethod> permet l'appel de m
 
 L'activité <xref:System.Activities.Statements.TryCatch> fournit un mécanisme d'interception d'exceptions qui se produisent lors de l'exécution d'un ensemble d'activités contenues (similaire à la construction Try/Catch dans C#/VB). <xref:System.Activities.Statements.TryCatch> permet la gestion des exceptions au niveau du flux de travail. Si une exception non gérée est levée, le flux de travail est abandonné et le bloc Finally n'est pas exécuté. Ce comportement est cohérent avec le langage C#.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.TryCatch> dans le concepteur de workflow.
 
@@ -249,7 +249,7 @@ Un ensemble d'activités doit être exécuté et une logique spécifique être e
 
 L'activité <xref:System.Activities.Statements.Pick> fournit une modélisation de flux de contrôle basée sur les événements dans WF. <xref:System.Activities.Statements.Pick> contient de nombreuses branches, où chacune d'entre elles attend qu'un événement particulier se produise avant de s'exécuter. Dans cette configuration, un <xref:System.Activities.Statements.Pick> se comporte de manière similaire à un <xref:System.Activities.Statements.Switch%601> dans lequel l'activité exécutera un seul des jeux d'événements qu'elle écoute. Chaque branche est pilotée par l’événement et celui qui se produit exécute la branche correspondante. Toutes les autres branches annulent et arrêtent l'écoute des événements.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Dans Visual Studio 2012, créez une application console de Workflow. Ajoutez une activité <xref:System.Activities.Statements.Pick> dans le concepteur de workflow.
 
@@ -281,13 +281,13 @@ Le service de routage dans .NET 4 est conçu pour faciliter la résolution de ce
 
 4. Mise à jour dynamique (en mémoire) de <xref:System.ServiceModel.Dispatcher.MessageFilterTable%601> et configuration du routage.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 1. Documentation : [routage](../wcf/feature-details/routing.md)
 
 2. Exemples : [services &#91;de routage exemples&#93; WCF](../wcf/samples/routing-services.md)
 
-3. Blog : [règles de routage !](https://go.microsoft.com/fwlink/?LinkId=204956)
+3. Blog : [règles de routage !](https://blogs.msdn.microsoft.com/RoutingRules/)
 
 ### <a name="routing-scenarios"></a>Scénarios de routage
 
@@ -315,7 +315,7 @@ Le produit repose sur la norme WS-Discovery. Il est conçu pour être interopér
 
 Par ailleurs, les messages de découverte ne dépendent pas du protocole réseau ; vous pouvez les utiliser avec tout protocole qui prend en charge les besoins de chaque mode. Par exemple, les messages de multidiffusion de découverte peuvent être envoyés via le canal UDP ou tout autre réseau qui prend en charge la messagerie multidiffusion. Ces points de conception, combinés à la flexibilité des fonctionnalités, vous permettent d’adapter la détection spécifiquement à votre solution.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 - Documentation : [découverte WCF](../wcf/feature-details/wcf-discovery.md)
 
@@ -325,11 +325,11 @@ Par ailleurs, les messages de découverte ne dépendent pas du protocole réseau
 
 Un développeur ne souhaite pas coder en dur les points de terminaison car la date de disponibilité de mon service n'est pas encore connue. Il souhaite plutôt choisir un service au moment du runtime. Un plus grand degré de découplage, de fiabilité et de configuration automatique est requis entre les composants de l'application.
 
-## <a name="tracking"></a>Suivi
+## <a name="tracking"></a>Tracking
 
 Le suivi de flux de travail fournit des informations sur l’exécution d’une instance de Workflow. Les événements de suivi sont émis à partir d’un flux de travail au niveau de l’instance de workflow et lors de l’exécution des activités dans le Workflow. Un participant au suivi du flux de travail doit être ajouté à l'hôte du flux de travail pour s'abonner aux enregistrements de suivi. Les enregistrements de suivi sont filtrés à l'aide d'un profil de suivi. Le .NET Framework fournit un participant de suivi ETW (Suivi d’v nements pour Windows) et un profil de base est installé dans le fichier machine. config.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 1. Dans Visual Studio 2010, créez un projet d'application de service de flux de travail WCF. Une paire <xref:System.ServiceModel.Activities.Receive> et <xref:System.ServiceModel.Activities.SendReply> sera placée dans votre zone de dessin pour le démarrage.
 
@@ -351,7 +351,7 @@ Le suivi de flux de travail fournit des informations sur l’exécution d’une 
 
 Le <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> est une implémentation basée sur SQL d'un magasin d'instances. Un magasin d'instances stocke l'état d'une instance en cours d'exécution avec l'ensemble des données nécessaires au chargement et à la reprise de cette instance. L'hôte du service demande au magasin d'instances d'enregistrer l'état de l'instance si le flux de travail persiste et de charger l'état de l'instance quand un message arrive pour cette instance ou qu'une activité de report arrive à expiration.
 
-### <a name="getting-started"></a>Commencer
+### <a name="getting-started"></a>Mise en route
 
 1. Dans Visual Studio 2012, créez un flux de travail qui contient une activité <xref:System.Activities.Statements.Persist> implicite ou explicite. Ajoutez le comportement <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> à votre hôte de service de workflow. Cela peut se faire dans le code ou dans le fichier de configuration de l'application.
 

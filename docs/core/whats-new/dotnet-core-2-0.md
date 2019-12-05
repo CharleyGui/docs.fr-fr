@@ -2,12 +2,12 @@
 title: Nouveautés de .NET Core 2.0
 description: Découvrez les nouvelles fonctionnalités de .NET Core.
 ms.date: 08/13/2017
-ms.openlocfilehash: fcac4255e7370f31ea6c26771fdd7d341bafe38b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 115b3adc72b6798c6a7bac9cc18044a8822808a6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100838"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801896"
 ---
 # <a name="whats-new-in-net-core-20"></a>Nouveautés de .NET Core 2.0
 
@@ -56,7 +56,7 @@ Pour plus d’informations sur la migration de votre projet vers .NET Core 2.0, 
 
 En plus de la prise en charge de C# et F#, .NET Core 2.0 prend également en charge Visual Basic.
 
-### <a name="visual-basic"></a>Visual Basic
+### <a name="visual-basic"></a>Visual Basic
 
 Avec la version 2.0, .NET Core prend désormais en charge Visual Basic 2017. Vous pouvez utiliser Visual Basic pour créer des types de projets suivants :
 
@@ -136,7 +136,7 @@ Pour recibler votre projet dans Visual Studio, ouvrez l’onglet **Application**
 
 Lorsque vous modifiez votre code, Live Unit Testing exécute automatiquement tous les tests unitaires affectés en arrière-plan et présente les résultats et la couverture du code dans l’environnement Visual Studio. .NET Core 2.0 prend désormais en charge Live Unit Testing. Live Unit Testing était auparavant disponible uniquement pour les applications .NET Framework.
 
-Pour plus d’informations, consultez [Live Unit Testing avec Visual Studio 2017](/visualstudio/test/live-unit-testing) et la [FAQ Live Unit Testing](/visualstudio/test/live-unit-testing-faq).
+Pour plus d’informations, consultez [Live Unit testing avec Visual Studio](/visualstudio/test/live-unit-testing) et le [Forum aux questions sur Live Unit testing](/visualstudio/test/live-unit-testing-faq).
 
 ### <a name="better-support-for-multiple-target-frameworks"></a>Meilleure prise en charge pour plusieurs infrastructures cibles
 

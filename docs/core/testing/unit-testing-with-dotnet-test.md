@@ -5,109 +5,135 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 11/29/2017
 ms.custom: seodec18
-ms.openlocfilehash: d85e3e69721d8933565b1c80fb7ed21b2291e60e
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: eee8ab675ecc66b842a1447e3f2de1b6b9765c4d
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117292"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801905"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires de C# dans .NET Core à l’aide de dotnet test et de xUnit
 
-Ce didacticiel vous guide pas à pas dans la création d’un exemple de solution pour apprendre les concepts des tests unitaires. Si vous préférez suivre le didacticiel à l’aide d’une solution prédéfinie, [affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/) avant de commencer. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
+Ce didacticiel montre comment générer une solution contenant un projet de test unitaire et un projet de code source. Pour suivre le didacticiel à l’aide d’une solution prédéfinie, [Affichez ou téléchargez l’exemple de code](https://github.com/dotnet/samples/tree/master/core/getting-started/unit-testing-using-dotnet-test/). Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-[!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
+## <a name="create-the-solution"></a>Créez la solution
 
-## <a name="creating-the-source-project"></a>Création du projet source
-
-Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appelé *unit-testing-using-dotnet-test* qui contiendra la solution.
-Dans ce nouveau répertoire, exécutez [`dotnet new sln`](../tools/dotnet-new.md) pour créer une solution. Le fait d’avoir une solution simplifie la gestion de la bibliothèque de classes et du projet de test unitaire.
-Dans le répertoire de la solution, créez un répertoire *PrimeService*. La structure du répertoire et des fichiers jusqu’ici doit être la suivante :
+Dans cette section, une solution qui contient les projets source et de test est créée. La solution terminée présente la structure de répertoire suivante :
 
 ```
 /unit-testing-using-dotnet-test
     unit-testing-using-dotnet-test.sln
     /PrimeService
-```
-
-Accédez au répertoire *PrimeService* et exécutez [`dotnet new classlib`](../tools/dotnet-new.md) pour créer le projet source. Renommez *Class1.cs* en *PrimeService.cs*. Créez d’abord une implémentation défaillante de la classe `PrimeService` :
-
-```csharp
-using System;
-
-namespace Prime.Services
-{
-    public class PrimeService
-    {
-        public bool IsPrime(int candidate)
-        {
-            throw new NotImplementedException("Please create a test first.");
-        }
-    }
-}
-```
-
-Accédez de nouveau au répertoire *unit-testing-using-dotnet-test*.
-
-Exécutez la commande [dotnet sln](../tools/dotnet-sln.md) pour ajouter le projet de la bibliothèque de classes à la solution :
-
-```dotnetcli
-dotnet sln add ./PrimeService/PrimeService.csproj
-```
-
-## <a name="creating-the-test-project"></a>Création du projet de test
-
-Ensuite, créez le répertoire *PrimeService.Tests*. La structure du répertoire est illustrée ci-dessous :
-
-```
-/unit-testing-using-dotnet-test
-    unit-testing-using-dotnet-test.sln
-    /PrimeService
-        Source Files
+        PrimeService.cs
         PrimeService.csproj
     /PrimeService.Tests
-```
-
-Accédez au répertoire *PrimeService.Tests* et créez un projet à l’aide de [`dotnet new xunit`](../tools/dotnet-new.md). Cette commande crée un projet de test qui utilise [xUnit](https://xunit.github.io/) comme bibliothèque de test. Le modèle généré configure Test Runner dans le fichier *PrimeServiceTests.csproj*. Le résultat est semblable au code suivant :
-
-```xml
-<ItemGroup>
-  <PackageReference Include="Microsoft.NET.Test.Sdk" Version="15.3.0" />
-  <PackageReference Include="xunit" Version="2.2.0" />
-  <PackageReference Include="xunit.runner.visualstudio" Version="2.2.0" />
-</ItemGroup>
-```
-
-Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` a ajouté xUnit et le Test Runner xUnit à l’étape précédente. Maintenant, ajoutez la bibliothèque de classes `PrimeService` en tant qu’une autre dépendance au projet. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
-
-```dotnetcli
-dotnet add reference ../PrimeService/PrimeService.csproj
-```
-
-Vous pouvez consulter le fichier dans son intégralité dans le [dépôt d’exemples](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService.Tests.csproj) sur GitHub.
-
-La solution finale se présente comme suit :
-
-```
-/unit-testing-using-dotnet-test
-    unit-testing-using-dotnet-test.sln
-    /PrimeService
-        Source Files
-        PrimeService.csproj
-    /PrimeService.Tests
-        Test Source Files
+        PrimeService_IsPrimeShould.cs
         PrimeServiceTests.csproj
 ```
 
-Pour ajouter le projet de test à la solution, exécutez la commande [dotnet sln](../tools/dotnet-sln.md) dans le répertoire *unit-testing-using-dotnet-test* :
+Les instructions suivantes fournissent les étapes permettant de créer la solution de test. Consultez [commandes pour créer une solution de test](#create-test-cmd) pour obtenir des instructions sur la création d’une solution de test en une seule étape.
+
+* Ouvrez une fenêtre d’interpréteur de commandes.
+* Exécutez la commande suivante : .
+
+  ```dotnetcli
+  dotnet new sln -o unit-testing-using-dotnet-test
+  ```
+
+  La commande [`dotnet new sln`](../tools/dotnet-new.md) crée une nouvelle solution dans le répertoire *Unit-testing-using-dotnet-test* .
+* Remplacez le répertoire par le dossier *Unit-testing-using-dotnet-test* .
+* Exécutez la commande suivante : .
+
+  ```dotnetcli
+  dotnet new classlib -o PrimeService
+  ```
+
+   La commande [`dotnet new classlib`](../tools/dotnet-new.md) crée un projet de bibliothèque de classes dans le dossier *PrimeService* . La nouvelle bibliothèque de classes contiendra le code à tester.
+* Renommez *Class1.cs* en *PrimeService.cs*.
+* Remplacez le code dans *PrimeService.cs* par le code suivant :
+  
+  ```csharp
+    using System;
+
+    namespace Prime.Services
+    {
+        public class PrimeService
+        {
+            public bool IsPrime(int candidate)
+            {
+                throw new NotImplementedException("Not implemented.");
+            }
+        }
+    }
+  ```
+
+* Le code précédent :
+  * Lève une <xref:System.NotImplementedException> avec un message indiquant qu’elle n’est pas implémentée.
+  * Est mis à jour ultérieurement dans le didacticiel.
+
+<!-- preceding code shows an english bias. Message makes no sense outside english -->
+
+* Dans le répertoire *Unit-testing-using-dotnet-test* , exécutez la commande suivante pour ajouter le projet de bibliothèque de classes à la solution :
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService/PrimeService.csproj
+  ```
+
+* Créez le projet *PrimeService. tests* en exécutant la commande suivante :
+
+  ```dotnetcli
+  dotnet new xunit -o PrimeService.Tests
+  ```
+
+* La commande précédente :
+  * Crée le projet *PrimeService. tests* dans le répertoire *PrimeService. tests* . Le projet de test utilise [xUnit](https://xunit.github.io/) comme bibliothèque de test.
+  * Configure Test Runner en ajoutant les éléments de `<PackageReference />`suivants au fichier projet :
+    * « Microsoft. NET. test. Sdk »
+    * xUnit
+    * « xUnit. Runner. VisualStudio »
+
+* Ajoutez le projet de test au fichier solution en exécutant la commande suivante :
+
+  ```dotnetcli
+  dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
+  ```
+
+* Ajoutez la bibliothèque de classes `PrimeService` en tant que dépendance au projet *PrimeService. tests* :
+
+  ```dotnetcli
+  dotnet add ./PrimeService.Tests/PrimeService.Tests.csproj reference ./PrimeService/PrimeService.csproj  
+  ```
+
+<a name="create-test-cmd"></a>
+
+### <a name="commands-to-create-the-solution"></a>Commandes pour créer la solution
+
+Cette section résume toutes les commandes de la section précédente. Ignorez cette section si vous avez effectué les étapes décrites dans la section précédente.
+
+Les commandes suivantes créent la solution de test sur un ordinateur Windows. Pour macOS et UNIX, mettez à jour la commande `ren` vers la version du système d’exploitation `ren` pour renommer un fichier :
 
 ```dotnetcli
+dotnet new sln -o unit-testing-using-dotnet-test
+cd unit-testing-using-dotnet-test
+dotnet new classlib -o PrimeService
+ren .\PrimeService\Class1.cs PrimeService.cs
+dotnet sln add ./PrimeService/PrimeService.csproj
+dotnet new xunit -o PrimeService.Tests
+dotnet add ./PrimeService.Tests/PrimeService.Tests.csproj reference ./PrimeService/PrimeService.csproj
 dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 ```
 
-## <a name="creating-the-first-test"></a>Création du premier test
+Suivez les instructions pour « remplacer le code dans *PrimeService.cs* par le code suivant » dans la section précédente.
 
-Vous allez écrire un test défaillant, le corriger pour qu’il réussisse, puis répéter le processus. Supprimez *UnitTest1.cs* du répertoire *PrimeService.Tests* et créez un fichier C# nommé *PrimeService_IsPrimeShould.cs*. Ajoutez le code suivant :
+## <a name="create-a-test"></a>Créez un test
+
+Une approche courante du développement piloté par les tests (TDD) consiste à écrire un test avant d’implémenter le code cible. Ce didacticiel utilise l’approche TDD. La méthode `IsPrime` peut être appelée, mais elle n’est pas implémentée. Un appel de test à `IsPrime` échoue. Avec TDD, un test est écrit et connu comme ayant échoué. Le code cible est mis à jour pour que le test réussisse. Vous continuez à répéter cette approche, en écrivant un test qui a échoué, puis en mettant à jour le code cible pour qu’il réussisse.
+
+Mettez à jour le projet *PrimeService. tests* :
+
+* Supprimez *PrimeService. tests/UnitTest1. cs*.
+* Créez un fichier *PrimeService. tests/PrimeService_IsPrimeShould. cs* .
+* Remplacez le code dans *PrimeService_IsPrimeShould. cs* par le code suivant :
 
 ```csharp
 using Xunit;
@@ -135,9 +161,9 @@ namespace Prime.UnitTests.Services
 }
 ```
 
-L’attribut `[Fact]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du dossier *PrimeService.Tests*, exécutez [`dotnet test`](../tools/dotnet-test.md) pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner xUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+L’attribut `[Fact]` déclare une méthode de test qui est exécutée par Test Runner. À partir du dossier *PrimeService. tests* , exécutez `dotnet test`. La commande [dotnet test](../tools/dotnet-test.md) génère les deux projets et exécute les tests. Le test Runner xUnit contient le point d’entrée de programme pour exécuter les tests. `dotnet test` démarre le testeur de test à l’aide du projet de test unitaire.
 
-Votre test échoue. Vous n’avez pas encore créé l’implémentation. Pour que ce test réussisse, écrivez le code le plus simple dans la classe `PrimeService` qui fonctionne. Remplacez l’implémentation de la méthode `IsPrime` existante par le code suivant :
+Le test échoue car `IsPrime` n’a pas été implémenté. À l’aide de l’approche TDD, écrivez uniquement le code suffisant pour que ce test soit réussi. Mettez à jour `IsPrime` avec le code suivant :
 
 ```csharp
 public bool IsPrime(int candidate)
@@ -146,33 +172,65 @@ public bool IsPrime(int candidate)
     {
         return false;
     }
-    throw new NotImplementedException("Please create a test first.");
+    throw new NotImplementedException("Not fully implemented.");
 }
 ```
 
-Dans le répertoire *PrimeService.Tests*, réexécutez `dotnet test`. La commande `dotnet test` exécute une build pour le projet `PrimeService` puis pour le projet `PrimeService.Tests`. Après la création des deux projets, il exécute ce test unique. Le test réussit.
+Exécutez `dotnet test`. Le test est réussi.
 
-## <a name="adding-more-features"></a>Ajout de fonctionnalités supplémentaires
+### <a name="add-more-tests"></a>Ajouter d’autres tests
 
-Maintenant que vous avez fait réussir un test, le moment est venu d’écrire plus de code. Il existe quelques autres cas simples pour des nombres premiers : 0, -1. Vous pouvez ajouter ces cas en tant que nouveaux tests, avec l’attribut `[Fact]`, mais cela devient vite fastidieux. D’autres attributs xUnit vous permettent d’écrire une suite de tests similaires :
+Ajoutez des tests de nombre premier pour 0 et-1. Vous pouvez copier le test précédent et modifier le code suivant pour utiliser 0 et-1 :
+
+```csharp
+var result = _primeService.IsPrime(1);
+
+Assert.False(result, "1 should not be prime");
+```
+
+La copie du code de test lorsque seul un paramètre change entraîne la duplication du code et l’augmentation des tests. Les attributs xUnit suivants permettent d’écrire une suite de tests similaires :
 
 - `[Theory]` représente une suite de tests qui exécutent le même code, mais qui ont des arguments d’entrée différents.
 
 - L’attribut `[InlineData]` spécifie des valeurs pour ces entrées.
 
-Au lieu de créer des tests, appliquez ces deux attributs, `[Theory]` et `[InlineData]`, pour créer une théorie unique dans le fichier *PrimeService_IsPrimeShould.cs*. La théorie est une méthode qui teste plusieurs valeurs inférieures à deux, qui est le plus petit nombre premier :
+Au lieu de créer de nouveaux tests, appliquez les attributs xUnit précédents pour créer une théorie unique. Remplacez le code suivant :
+
+```csharp
+[Fact]
+public void IsPrime_InputIs1_ReturnFalse()
+{
+    var result = _primeService.IsPrime(1);
+
+    Assert.False(result, "1 should not be prime");
+}
+```
+
+par le code suivant :
 
 [!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
-Réexécutez `dotnet test`. Deux de ces tests doivent échouer. Pour que tous les tests réussissent, changez la clause `if` au début de la méthode `IsPrime` dans le fichier *PrimeService.cs* :
+Dans le code précédent, `[Theory]` et `[InlineData]` permettent de tester plusieurs valeurs inférieures à deux. Deux est le plus petit nombre premier.
+
+Exécutez `dotnet test`, deux des tests échouent. Pour que tous les tests réussissent, mettez à jour la méthode `IsPrime` à l’aide du code suivant :
 
 ```csharp
-if (candidate < 2)
+public bool IsPrime(int candidate)
+{
+    if (candidate < 2)
+    {
+        return false;
+    }
+    throw new NotImplementedException("Not fully implemented.");
+}
 ```
 
-Poursuivez l’itération en ajoutant plus de tests, plus de théories et plus de code dans la bibliothèque principale. Vous disposez de la [version finale des tests](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs) et de [l’implémentation complète de la bibliothèque](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.cs).
+Après l’approche TDD, ajoutez d’autres tests ayant échoué, puis mettez à jour le code cible. Consultez la [version finale des tests](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs) et l' [implémentation complète de la bibliothèque](https://github.com/dotnet/samples/blob/master/core/getting-started/unit-testing-using-dotnet-test/PrimeService/PrimeService.cs).
+
+La méthode `IsPrime` terminée n’est pas un algorithme efficace pour tester primality.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
 - [Site officiel xUnit.net](https://xunit.github.io)
 - [Test de la logique de contrôleur dans ASP.NET Core](/aspnet/core/mvc/controllers/testing)
+- [`dotnet add reference`](../tools/dotnet-add-reference.md)

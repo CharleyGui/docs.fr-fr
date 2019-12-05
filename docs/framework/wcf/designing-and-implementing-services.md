@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - defining service contracts [WCF]
 ms.assetid: 036fae20-7c55-4002-b71d-ac4466e167a3
-ms.openlocfilehash: 0d569d12b5bc555a07e94fa89c5a19f52f4a6b6c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 9ddb3fe637cd0402f0ce850bc523ae8cb0c5dc37
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318397"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801978"
 ---
 # <a name="designing-and-implementing-services"></a>Conception et implémentation de services
 Cette section vous montre comment définir et implémenter des contrats WCF. Un contrat de service spécifie ce qu'un point de terminaison communique au monde extérieur. À un niveau plus concret, il s'agit d'une instruction à propos d'un ensemble de messages spécifiques organisé en modèles d'échange de messages de base, tels que les messages demande/réponse, unidirectionnels et duplex. Si un contrat de service est un ensemble d'échanges de messages liés de manière logique, une opération de service est un échange de messages unique. Par exemple, une opération `Hello` doit évidemment accepter un message (de sorte que l'appelant puisse annoncer la salutation) et peut ou non retourner un message (en fonction du niveau de courtoisie de l'opération).  
   
  Pour plus d’informations sur les contrats et les autres concepts de Core Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](fundamental-concepts.md). Cette rubrique est consacrée au fonctionnement des contrats de service. Pour plus d’informations sur la façon de créer des clients qui utilisent des contrats de service pour se connecter à des services, consultez [vue d’ensemble du client WCF](wcf-client-overview.md).  
   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Vue d'ensemble de  
  Cette rubrique fournit une orientation conceptuelle de haut niveau pour la conception et l’implémentation des services WCF. Les sous-rubriques contiennent des informations détaillées sur les particularités de ce type de conception et d'implémentation. Avant de concevoir et d’implémenter votre application WCF, il est recommandé d’exécuter les tâches suivantes :  
   
 - comprendre ce qu'est un contrat de service, comment il fonctionne et comment en créer un ;  
@@ -46,7 +46,7 @@ Cette section vous montre comment définir et implémenter des contrats WCF. Un 
   
 4. des instructions catégoriques à propos de l'infrastructure de communication nécessaire pour traiter les messages avec succès. Par exemple, ces détails incluent les éventuelles formes de sécurité requises pour établir la communication.  
   
- Pour transmettre ce type d’informations à d’autres applications sur de nombreuses plateformes (y compris les plateformes non-Microsoft), les contrats de service XML sont exprimés publiquement dans des formats XML standard, tels que les [Web Services Description Language](https://go.microsoft.com/fwlink/?LinkId=94952) (WSDL) et le [schéma XML ](https://go.microsoft.com/fwlink/?LinkId=94953)(XSD), entre autres. Les développeurs qui travaillent avec un grand nombre de plateformes différentes peuvent utiliser ces informations de contrat publiques pour créer des applications capables de communiquer avec le service, ces applications comprenant le langage des spécifications, d'une part, et ce langage assurant l'interopérabilité grâce à sa description de formes, formats et protocoles publics pris en charge par ce service, d'autre part. Pour plus d’informations sur la façon dont WCF gère ce type d’informations, consultez [métadonnées](./feature-details/metadata.md).  
+ Pour transmettre ce type d’informations à d’autres applications sur de nombreuses plateformes (y compris les plateformes non-Microsoft), les contrats de service XML sont exprimés publiquement dans des formats XML standard, tels que [Web Services Description Language](https://www.w3.org/TR/2001/NOTE-wsdl-20010315) (WSDL) et [XML Schema](https://www.w3.org/XML/Schema) (XSD), entre autres. Les développeurs qui travaillent avec un grand nombre de plateformes différentes peuvent utiliser ces informations de contrat publiques pour créer des applications capables de communiquer avec le service, ces applications comprenant le langage des spécifications, d'une part, et ce langage assurant l'interopérabilité grâce à sa description de formes, formats et protocoles publics pris en charge par ce service, d'autre part. Pour plus d’informations sur la façon dont WCF gère ce type d’informations, consultez [métadonnées](./feature-details/metadata.md).  
   
  Les contrats peuvent être exprimés dans un grand nombre de langages différents et bien que WSDL et XSD constituent d'excellents langages pour décrire des services de manière accessible, ce sont des langages difficiles à utiliser directement. En outre, ils contiennent uniquement des descriptions de service et ne correspondent pas à des implémentations de contrat de service. Par conséquent, les applications WCF utilisent des attributs, des interfaces et des classes managés pour définir la structure d’un service et l’implémenter.  
   
@@ -55,7 +55,7 @@ Cette section vous montre comment définir et implémenter des contrats WCF. Un 
  Pour plus d’informations sur la conception de contrats, consultez [conception de contrats de service](designing-service-contracts.md). Pour plus d’informations sur l’implémentation de contrats, consultez [implémentation de contrats de service](implementing-service-contracts.md).  
   
 ### <a name="messages-up-front-and-center"></a>Messages avant et centre  
- L'utilisation d'interfaces, de classes et de méthodes managées pour modeler des opérations de service ne pose aucune difficulté dès lors que vous êtes familiarisé avec les signatures de méthode de style « appels de procédure distante » (remote call procedure, RPC), pour lesquelles le passage des paramètres dans les méthodes et la réception des valeurs retournées constituent le procédé standard de demande de fonctionnalités auprès d'un objet ou d'un autre type de code. Par exemple, les programmeurs qui utilisent des langages managés tels que Visual Basic et C++ com peuvent appliquer leurs connaissances de l’approche de style RPC (que ce soit en utilisant des objets ou des interfaces) à la création de contrats de service WCF sans rencontrer les problèmes inhérents. dans les systèmes d’objets distribués de type RPC. La programmation orientée service présente les mêmes avantages que la programmation orientée message faiblement couplée tout en permettant aux développeurs de continuer à bénéficier de la convivialité de la programmation RPC.  
+ L'utilisation d'interfaces, de classes et de méthodes managées pour modeler des opérations de service ne pose aucune difficulté dès lors que vous êtes familiarisé avec les signatures de méthode de style « appels de procédure distante » (remote call procedure, RPC), pour lesquelles le passage des paramètres dans les méthodes et la réception des valeurs retournées constituent le procédé standard de demande de fonctionnalités auprès d'un objet ou d'un autre type de code. Par exemple, les programmeurs qui utilisent des langages managés tels que Visual Basic et C++ com peuvent appliquer leurs connaissances de l’approche de style RPC (que ce soit en utilisant des objets ou des interfaces) à la création de contrats de service WCF sans rencontrer les problèmes inhérents aux systèmes d’objets distribués de style RPC. La programmation orientée service présente les mêmes avantages que la programmation orientée message faiblement couplée tout en permettant aux développeurs de continuer à bénéficier de la convivialité de la programmation RPC.  
   
  De nombreux programmeurs préfèrent les interfaces de programmation d'application orientées message, telles que les files d'attente de messages comme Microsoft MSMQ, les espaces de noms <xref:System.Messaging> dans le .NET Framework ou l'envoi sous forme de langage XML non structuré dans les requêtes HTTP, pour n'en nommer que quelques-unes. Pour plus d’informations sur la programmation au niveau du message, consultez [utilisation de contrats de message](./feature-details/using-message-contracts.md), [programmation au niveau du canal de service](./extending/service-channel-level-programming.md)et [interopérabilité avec les applications POX](./feature-details/interoperability-with-pox-applications.md).  
   

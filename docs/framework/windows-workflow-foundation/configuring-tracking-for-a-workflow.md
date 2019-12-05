@@ -2,12 +2,12 @@
 title: Configuration du suivi d'un workflow
 ms.date: 03/30/2017
 ms.assetid: 905adcc9-30a0-4918-acd6-563f86db988a
-ms.openlocfilehash: 25edef2edc23a3823a892c64809df21f333478db
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 97b25873e9f20d5d390b7a59531b3a5af32296df
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458904"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802672"
 ---
 # <a name="configuring-tracking-for-a-workflow"></a>Configuration du suivi d'un workflow
 
@@ -134,7 +134,7 @@ if (null != workflowServiceHost)
 ```
 
 > [!NOTE]
-> Pour plus d’informations sur les profils de suivi, consultez la rubrique [profils de suivi](https://go.microsoft.com/fwlink/?LinkId=201310).
+> Pour plus d’informations sur les profils de suivi, consultez la rubrique [profils de suivi](tracking-profiles.md).
 
 ### <a name="configuring-tracking-using-workflowinvoker"></a>Configuration du suivi à l'aide de WorkflowInvoker
 
@@ -222,7 +222,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
 
 6. Générez la DLL de ressource en procédant comme suit.
 
-    1. Installez le Kit de développement logiciel (SDK) Windows. Le SDK Windows comprend le compilateur de messages ([MC. exe](https://go.microsoft.com/fwlink/?LinkId=184606)) et le compilateur de ressources ([RC. exe](https://go.microsoft.com/fwlink/?LinkId=184605)).
+    1. Installez le Kit de développement logiciel (SDK) Windows. Le SDK Windows comprend le compilateur de messages ([MC. exe](/windows/win32/wes/message-compiler--mc-exe-)) et le compilateur de ressources ([RC. exe](/windows/win32/menurc/using-rc-the-rc-command-line-)).
 
     2. Dans une invite de commandes du Kit de développement logiciel (SDK) Windows, exécutez mc.exe sur le nouveau fichier manifeste.
 
@@ -250,7 +250,7 @@ Si des événements doivent être écrits dans un journal des applications spéc
         <provider name="Microsoft-Windows-Application Server-Applications_Provider1" guid="{2720e974-9fe9-477a-bb60-81fe3bf91eec}" symbol="Microsoft_Windows_ApplicationServer_ApplicationEvents" resourceFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll" messageFileName="<dll directory>\Microsoft.Windows.ApplicationServer.Applications_Provider1.dll">
         ```
 
-    7. Utilisez [wevtutil](https://go.microsoft.com/fwlink/?LinkId=184608) pour inscrire le manifeste.
+    7. Utilisez [wevtutil](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc732848(v=ws.10)) pour inscrire le manifeste.
 
         ```console
         wevtutil im Microsoft.Windows.ApplicationServer.Applications_Provider1.man
@@ -258,5 +258,5 @@ Si des événements doivent être écrits dans un journal des applications spéc
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Surveillance des applications avec application Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

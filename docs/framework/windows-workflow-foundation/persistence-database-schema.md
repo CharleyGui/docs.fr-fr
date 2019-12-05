@@ -2,12 +2,12 @@
 title: Schéma de la base de données de persistance
 ms.date: 03/30/2017
 ms.assetid: 34f69f4c-df81-4da7-b281-a525a9397a5c
-ms.openlocfilehash: 65d8b2f7a6283d65823e1a186239d398ee4a530a
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 025e04acb0d9cf75ea54814274c1875f8661eb88
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70038337"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802503"
 ---
 # <a name="persistence-database-schema"></a>Schéma de la base de données de persistance
 Cette rubrique décrit les vues publiques prises en charge par le magasin d'instances de workflow SQL.  
@@ -27,7 +27,7 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |ActiveBookmarks|Nvarchar(max)|Si l'instance de workflow est inactive, cette propriété indique sur quels signets l'instance est bloquée. Si l'instance n'est pas inactive, cette colonne contient la valeur NULL.|  
 |CurrentMachine|Nvarchar(128)|Indique le nom de l'ordinateur ayant actuellement l'instance de workflow chargée en mémoire.|  
 |LastMachine|Nvarchar(450)|Indique le dernier ordinateur qui a chargé l'instance de workflow.|  
-|ExecutionStatus|Nvarchar(450)|Indique l'état d'exécution actuel du workflow. Les États possibles sont les suivants: **exécution**, inactif, **fermé**.|  
+|ExecutionStatus|Nvarchar(450)|Indique l'état d'exécution actuel du workflow. Les États possibles sont les suivants : **exécution**, **inactif**, **fermé**.|  
 |IsInitialized|Bit|Indique si l'instance de workflow a été initialisée. Une instance de workflow initialisée est une instance de workflow rendue persistante au moins une fois.|  
 |IsSuspended|Bit|Indique si l'instance de workflow a été interrompue.|  
 |IsCompleted|Bit|Indique si l'exécution de l'instance de workflow est terminée. **Remarque :**  IIF la propriété **InstanceCompletionAction** est définie sur **DeleteAll**, les instances sont supprimées de la vue une fois l’opération terminée.|  
@@ -38,9 +38,9 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |WriteOnlyComplexDataProperties|Varbinary(max)|Contient les propriétés de données d'instance sérialisée qui ne sont pas retournées au runtime de workflow lors du chargement de l'instance.<br /><br /> Un désérialiseur nécessiterait une connaissance de tous les types d'objets stockés dans cet objet blob.|  
 |IdentityName|Nvarchar(max)|Nom de la définition de workflow.|  
 |IdentityPackage|Nvarchar(max)|Informations sur le package fournies lors de la création du workflow (comme le nom de l'assembly).|  
-|Build|BigInt|Numéro de la build pour la version de workflow.|  
+|Générer|BigInt|Numéro de la build pour la version de workflow.|  
 |Majeur|BigInt|Numéro de la version majeure du workflow.|  
-|Mineur|BigInt|Numéro de la version mineure du workflow.|  
+|Mineure|BigInt|Numéro de la version mineure du workflow.|  
 |Revision|BigInt|Numéro de révision de la version du workflow.|  
   
 > [!CAUTION]
@@ -55,10 +55,10 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
 |SiteName|Nvarchar(max)|Représente le nom du site qui contient le service de flux de travail (par exemple, **site Web par défaut**).|  
 |RelativeServicePath|Nvarchar(max)|Représente le chemin d’accès virtuel relatif au site qui pointe vers le service de workflow. etc.  **/App1/PurchaseOrderService.svc**).|  
 |RelativeApplicationPath|Nvarchar(max)|Représente le chemin d’accès virtuel relatif au site qui pointe vers une application contenant le service de workflow. (par exemple, **/App1**).|  
-|ServiceName|Nvarchar(max)|Représente le nom du service de workflow. (par exemple, **PurchaseOrderService**).|  
+|NomService|Nvarchar(max)|Représente le nom du service de workflow. (par exemple, **PurchaseOrderService**).|  
 |ServiceNamespace|Nvarchar(max)|Représente l'espace de noms du service de workflow. (par exemple, **MyCompany**).|  
   
- La Vue ServiceDeployments contient également un déclencheur DELETE. Les utilisateurs disposant des autorisations appropriées peuvent exécuter, sur cette vue, des instructions de suppression pour supprimer des entrées ServiceDeployment de la base de données. Notez les points suivants :  
+ La Vue ServiceDeployments contient également un déclencheur DELETE. Les utilisateurs disposant des autorisations appropriées peuvent exécuter, sur cette vue, des instructions de suppression pour supprimer des entrées ServiceDeployment de la base de données. Sachez que :  
   
 1. La suppression d'entrées de cette vue est coûteuse, car l'intégralité de la base de données doit être verrouillée avant d'effectuer cette opération. Cela est nécessaire pour éviter le scénario où une instance de workflow pourrait faire référence à une entrée ServiceDeployment inexistante. Effectuez les suppressions dans cette vue uniquement pendant les temps d'inactivité/périodes de maintenance.  
   
@@ -78,4 +78,4 @@ Cette rubrique décrit les vues publiques prises en charge par le magasin d'inst
  La vue InstancePromotedProperties est liée à un schéma, ce qui signifie que les utilisateurs peuvent ajouter des index sur une ou plusieurs colonnes afin d'optimiser les requêtes sur cette vue.  
   
 > [!NOTE]
-> Une vue indexée requiert plus de stockage et ajoute une charge de traitement supplémentaire. Pour plus d’informations, consultez [amélioration des performances avec SQL Server vues indexées 2008](https://go.microsoft.com/fwlink/?LinkId=179529) .
+> Une vue indexée requiert plus de stockage et ajoute une charge de traitement supplémentaire. Pour plus d’informations, consultez [amélioration des performances avec SQL Server vues indexées 2008](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/dd171921(v=sql.100)) .

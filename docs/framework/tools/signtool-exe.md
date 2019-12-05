@@ -1,18 +1,18 @@
 ---
-title: SignTool.exe (outil Sign Tool)
+title: SignTool.exe (outil SignTool)
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Sign tool
 - SignTool.exe
 ms.assetid: 0c25ff6c-bff3-422e-b017-146a3ee86cb9
-ms.openlocfilehash: cb0aca3b527c16a7abf984952795a673948775dd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 636aa76a17a887aefe51b7e7858099c541dbb21f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73104642"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801841"
 ---
-# <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil Sign Tool)
+# <a name="signtoolexe-sign-tool"></a>SignTool.exe (outil SignTool)
 L'outil Signature est un outil en ligne de commande qui signe numériquement les fichiers, vérifie les signatures dans les fichiers et horodate les fichiers.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
@@ -25,7 +25,7 @@ L'outil Signature est un outil en ligne de commande qui signe numériquement les
 signtool [command] [options] [file_name | ...]  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
   
 |Argument|Description|  
 |--------------|-----------------|  
@@ -35,7 +35,7 @@ signtool [command] [options] [file_name | ...]
   
  Les commandes suivantes sont prises en charge par l'outil Signature. Chaque commande est utilisée avec un ensemble distinct d'options, qui sont affichées dans leurs sections respectives.  
   
-|Commande|Description|  
+|Command|Description|  
 |-------------|-----------------|  
 |`catdb`|Ajoute ou supprime un fichier catalogue dans une base de données de catalogue. Les bases de données de catalogue sont utilisées pour la récupération automatique des fichiers catalogue et sont identifiées par un GUID. Pour obtenir la liste des options prises en charge par la commande `catdb`, consultez [Options de commande catdb](signtool-exe.md#catdb).|  
 |`sign`|Signe numériquement les fichiers. Les signatures numériques protègent les fichiers contre la falsification et permettent aux utilisateurs de vérifier le signataire selon un certificat de signature. Pour obtenir la liste des options prises en charge par la commande `sign`, consultez [Options de commande sign](signtool-exe.md#sign).|  
@@ -87,11 +87,11 @@ signtool [command] [options] [file_name | ...]
 |`/ph`|En cas de prise en charge, génère les hachages de pages pour les fichiers exécutables.|  
 |`/r`  *RootSubjectName*|Spécifie le nom de l'objet du certificat racine auquel le certificat de signature doit être lié. Cette valeur peut être une sous-chaîne du nom de l'objet entier du certificat racine.|  
 |`/s`  *StoreName*|Spécifie le magasin à ouvrir lors de la recherche du certificat. Si cette option n'est pas spécifiée, le magasin `My` est ouvert.|  
-|`/sha1`  *Hash*|Spécifie le hachage SHA1 du certificat de signature. Le hachage SHA1 est souvent spécifié lorsque plusieurs certificats répondent aux critères spécifiés par les commutateurs restants.|  
+|`/sha1`  *Hash*|Spécifie le hachage SHA1 du certificat de signature. Le hachage SHA1 est souvent spécifié lorsque plusieurs certificats répondent aux critères spécifiés par les commutateurs restants.|  
 |`/sm`|Spécifie qu'un magasin d'ordinateur, au lieu d'un magasin d'utilisateur, est utilisé.|  
-|`/t`  *URL*|Spécifie l'URL du serveur d'horodatage. Si cette option (ou `/tr`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l'option `/tr`.|  
+|`/t`  *URL*|Spécifie l'URL du serveur d'horodatage. Si cette option (ou `/tr`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l’option `/tr`.|  
 |`/td`  *alg*|Utilisé avec l'option `/tr` pour demander un algorithme Digest utilisé par le serveur d'horodatage RFC 3161.|  
-|`/tr`  *URL*|Spécifie l'URL du serveur d'horodatage RFC 3161. Si cette option (ou `/t`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l'option `/t`.|  
+|`/tr`  *URL*|Spécifie l'URL du serveur d'horodatage RFC 3161. Si cette option (ou `/t`) n'est pas présente, le fichier signé ne sera pas horodaté. Un avertissement est généré si l'horodatage échoue. Cette option ne peut pas être utilisée avec l’option `/t`.|  
 |`/u`  *Usage*|Spécifie l'utilisation améliorée de la clé (EKU) qui doit être présente dans le certificat de signature. La valeur de l'utilisation peut être spécifiée par un OID ou une chaîne. L'utilisation par défaut est « Signature du code » (1.3.6.1.5.5.7.3.3).|  
 |`/uw`|Spécifie l'utilisation « Windows System Component Verification » (1.3.6.1.4.1.311.10.3.6).|  
   
@@ -126,7 +126,7 @@ signtool [command] [options] [file_name | ...]
 |`/ds`  *Index*|Vérifie la signature à un emplacement spécifié.|  
 |`/hash` (`SHA1`&#124;`SHA256`)|Spécifie un algorithme de hachage facultatif à utiliser lors de la recherche d'un fichier dans un catalogue.|  
 |`/kp`|Spécifie que la vérification doit être effectuée avec la stratégie de signature de pilotes en mode noyau.|  
-|`/ms`|Utilise plusieurs sémantiques de vérification. Il s’agit du comportement par défaut d’un appel [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) sur [!INCLUDE[win8](../../../includes/win8-md.md)] et ultérieur.|  
+|`/ms`|Utilise plusieurs sémantiques de vérification. Il s’agit du comportement par défaut d’un appel [WinVerifyTrust](/windows/desktop/api/wintrust/nf-wintrust-winverifytrust) sur Windows 8 et versions ultérieures.|  
 |`/o` *Version*|Vérifie le fichier par version du système d'exploitation. *Version* a le format suivant : *PlatformID*:*VerMajor*.*VerMinor*.*BuildNumber*. *PlatformID* représente la valeur sous-jacente d’un membre de l’énumération <xref:System.PlatformID>. **Important :** L’utilisation du commutateur `/o` est recommandée. Si `/o` n'est pas spécifié, SignTool.exe peut retourner des résultats inattendus. Par exemple, si vous n'incluez pas le commutateur `/o`, les catalogues système qui valident correctement sur un système d'exploitation plus ancien peuvent ne pas valider correctement sur un système d'exploitation plus récent.|  
 |`/p7`|Vérifie les fichiers PKCS #7. Aucune stratégie existante n'est utilisée pour la validation PKCS #7. La signature est vérifiée et une chaîne est générée pour le certificat de signature.|  
 |`/pa`|Spécifie que la stratégie de vérification Authenticode par défaut doit être utilisée. Si l'option `/pa` n'est pas spécifiée, l'outil Signature utilise la stratégie de vérification des pilotes Windows. Cette option ne peut pas être utilisée avec les options `catdb`.|  

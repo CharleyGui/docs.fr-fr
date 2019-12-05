@@ -3,19 +3,22 @@ title: Installer .NET Core sur Linux RHEL 8,1 Package Manager-.NET Core
 description: Utilisez un gestionnaire de package pour installer kit SDK .NET Core et le runtime sur RHEL 8,1.
 author: thraka
 ms.author: adegeo
-ms.date: 11/06/2019
-ms.openlocfilehash: 5b658fe4c56b945210534872fe3cc502eb31a763
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.date: 12/03/2019
+ms.openlocfilehash: 20fb3e9e517858b9cc5d6e9c1bd97bf949558843
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450974"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74800741"
 ---
 # <a name="rhel-81-package-manager---install-net-core"></a>Gestionnaire de package RHEL 8,1-installer .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
 Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 8,1.
+
+> [!NOTE]
+> RHEL 8,0 n’inclut pas .NET Core 3,0. Utilisez la commande `yum upgrade` pour effectuer une mise à jour vers RHEL 8,1.
 
 ## <a name="register-your-red-hat-subscription"></a>Inscrire votre abonnement Red Hat
 
@@ -48,3 +51,7 @@ Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes pr
 sudo dnf install dotnet-runtime-3.0
 scl enable dotnet-runtime-3.0 bash
 ```
+
+## <a name="see-also"></a>Voir aussi
+
+- [Utilisation de .NET Core 3,0 sur Red Hat Enterprise Linux 8](https://access.redhat.com/documentation/en-us/net_core/3.0/html/getting_started_guide_for_rhel_8/gs_install_dotnet)

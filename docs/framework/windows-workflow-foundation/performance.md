@@ -2,12 +2,12 @@
 title: Performances de Windows Workflow Foundation 4
 ms.date: 03/30/2017
 ms.assetid: 67d2b3e8-3777-49f8-9084-abbb33b5a766
-ms.openlocfilehash: 9a7e1dd2c5ab92ace955aa3b3095f2ed04ee3272
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6e6669cd41795c356e4b7b30f19d93bd8dfa917a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283236"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802646"
 ---
 # <a name="windows-workflow-foundation-4-performance"></a>Performances de Windows Workflow Foundation 4
 
@@ -17,7 +17,7 @@ ms.locfileid: "74283236"
 
 ## <a name="terminology"></a>Terminologie
 
- La version de [!INCLUDE[wf1](../../../includes/wf1-md.md)] introduite dans .NET Framework 4 sera appelée WF4 dans le reste de cette rubrique. [!INCLUDE[wf1](../../../includes/wf1-md.md)] a été introduite dans .NET Framework 3,0 et a subi quelques révisions mineures via .NET Framework 3,5 SP1. La .NET Framework version 3,5 de Workflow Foundation sera appelée WF3 pour le reste de cette rubrique. WF3 est fourni dans .NET Framework 4 côte à côte avec WF4. Pour plus d’informations sur la migration des artefacts WF3 vers WF4, consultez : [Windows Workflow Foundation 4 Guide de migration](https://go.microsoft.com/fwlink/?LinkID=153313).
+ La version de [!INCLUDE[wf1](../../../includes/wf1-md.md)] introduite dans .NET Framework 4 sera appelée WF4 dans le reste de cette rubrique. [!INCLUDE[wf1](../../../includes/wf1-md.md)] a été introduite dans .NET Framework 3,0 et a subi quelques révisions mineures via .NET Framework 3,5 SP1. La .NET Framework version 3,5 de Workflow Foundation sera appelée WF3 pour le reste de cette rubrique. WF3 est fourni dans .NET Framework 4 côte à côte avec WF4. Pour plus d’informations sur la migration des artefacts WF3 vers WF4, consultez : [Windows Workflow Foundation 4 Guide de migration](migration-guidance.md).
 
  Windows Communication Foundation (WCF) est le modèle de programmation unifié de Microsoft pour la création d’applications orientées service. Il a été introduit pour la première fois dans le cadre de .NET 3,0 avec WF3 et est maintenant l’un des principaux composants de l' .NET Framework.
 
@@ -59,7 +59,7 @@ ms.locfileid: "74283236"
 
  Dans WF4, XAML fournit une expérience véritablement déclarative et permet de définir l'intégralité du workflow dans le balisage XML, en référençant les activités et les types créés à l'aide de .NET. Il était difficile de le faire dans WF3 avec le format XOML sans impliquer une logique code-behind personnalisée. La nouvelle pile XAML dans .NET 4 offre de bien meilleures performances dans la sérialisation et la désérialisation des artefacts de flux de travail et rend la programmation déclarative plus attrayante et solide.
 
-### <a name="workflow-designer"></a>Concepteur de flux de travail
+### <a name="workflow-designer"></a>Concepteur de workflow
  La prise en charge de la programmation entièrement déclarative pour WF4 impose explicitement des exigences supérieures en matière de performances au moment de la conception pour les grands workflows. L'évolutivité du concepteur de workflow de WF4 pour les grands workflows est bien supérieure à celle du concepteur de WF3. La prise en charge de la virtualisation de l'interface permet au concepteur de charger facilement un grand workflow de 1000 activités en quelques secondes, alors qu'il est presque impossible de charger un workflow de quelques centaines d'activités avec le concepteur de WF3.
 
 ## <a name="component-level-performance-comparisons"></a>Comparaisons des performances au niveau des composants
@@ -105,11 +105,11 @@ ms.locfileid: "74283236"
  Le workflow en séquences contient une activité <xref:System.Activities.Statements.While> avec une activité enfant dans la boucle qui n'exécute aucun travail.
 
 ### <a name="replicator-compared-to-parallelforeach"></a>Replicator comparé à ParallelForEach
- <xref:System.Workflow.Activities.ReplicatorActivity> dans WF3 a des modes d’exécution séquentiels et parallèles.  En mode séquentiel, les performances de l'activité sont similaires à celles de <xref:System.Workflow.Activities.WhileActivity>.  <xref:System.Workflow.Activities.ReplicatorActivity> est surtout utile pour l'exécution parallèle.  L'équivalent WF4 de ceci est l'activité <xref:System.Activities.Statements.ParallelForEach%601>.
+ <xref:System.Workflow.Activities.ReplicatorActivity> de WF3 a des modes d'exécution séquentiels et parallèles.  En mode séquentiel, les performances de l'activité sont similaires à celles de <xref:System.Workflow.Activities.WhileActivity>.  <xref:System.Workflow.Activities.ReplicatorActivity> est surtout utile pour l'exécution parallèle.  L'équivalent WF4 de ceci est l'activité <xref:System.Activities.Statements.ParallelForEach%601>.
 
  Le diagramme suivant montre les workflows utilisés pour ce test. Le workflow WF3 est représenté sur la gauche et le workflow WF4 sur la droite.
 
- ![ReplicatorActivity WF3 et ParallelForEach WF4](./media/performance/replicator-parallel-wf3-wf4.gif)
+ ![ReplicatorActivity de WF3 et ParallelForEach de WF4](./media/performance/replicator-parallel-wf3-wf4.gif)
 
 ### <a name="sequential-workflow-with-five-activities"></a>Workflow séquentiel avec cinq activités.
  Ces tests visent à montrer le résultat de l'exécution de plusieurs activités en séquences.  La séquence inclut cinq activités.
@@ -180,7 +180,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
 ### <a name="online-store-service"></a>Service de magasin en ligne
  L’une des forces de Windows Workflow Foundation est la possibilité de composer des processus à l’aide de plusieurs services.  Dans cet exemple, un service de magasin en ligne organise deux appels de service pour passer une commande.  La première étape consiste à valider la commande par le biais d'un service de validation des commandes.  La seconde étape consiste à satisfaire la commande à l'aide d'un service d'entrepôt .
 
- Les deux services backend, de validation des commandes et d'entrepôt, sont les mêmes pour les deux tests.  La partie qui change est le service de magasin en ligne qui effectue l'orchestration.  Dans un cas, le service est codé manuellement en tant que service WCF.  Pour l’autre cas, le service est écrit sous la forme d’un service de workflow WCF dans WF4. les fonctionnalités spécifiques à [!INCLUDE[wf1](../../../includes/wf1-md.md)]telles que le suivi et la persistance sont désactivées pour ce test.
+ Les deux services backend, de validation des commandes et d'entrepôt, sont les mêmes pour les deux tests.  La partie qui change est le service de magasin en ligne qui effectue l'orchestration.  Dans un cas, le service est codé manuellement en tant que service WCF.  Pour l’autre cas, le service est écrit sous la forme d’un service de workflow WCF dans WF4. Les fonctionnalités spécifiques à [!INCLUDE[wf1](../../../includes/wf1-md.md)], telles que le suivi et la persistance, sont désactivées pour ce test.
 
 ### <a name="environment"></a>Environnement
 ![Configuration de l’environnement pour la mesure des performances](./media/performance/performance-test-environment.gif)
@@ -301,9 +301,9 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
  Une des tendances nettes à noter dans ce graphique est que l'imbrication a un impact relativement minime sur l'utilisation de la mémoire dans WF3 et WF4.  L'impact le plus important sur la mémoire vient du nombre d'activités dans un workflow donné.  Compte tenu des données de la séquence 1000, les variations de la séquence 5 de profondeur 5 complexe et de la séquence 1 de profondeur 7 complexe, il est clair que lorsque le nombre d'activités se compte en milliers, l'augmentation de l'utilisation de la mémoire devient plus notable.  Dans le cas extrême (séquence 1 de profondeur 7) qui contient environ 29 000 activités, WF4 utilise presque 79 % moins de mémoire que WF3.
 
 ### <a name="multiple-workflow-definitions-test"></a>Test de plusieurs définitions de workflow
- La mesure de la mémoire par définition de workflow fait l'objet de deux tests différents à cause des options disponibles pour l'hébergement de workflows dans WF3 et WF4.  Les tests sont exécutés de manière différente du test de complexité de workflow en ceci qu'un workflow donné est instancié et exécuté seulement une fois par définition.  Ceci est dû au fait que la définition de workflow et son hôte restent en mémoire pour la durée de vie de l'AppDomain.  La mémoire utilisée pour l'exécution d'une instance de workflow donnée doit être nettoyée lors de l'opération garbage collection.  Les conseils de migration pour WF4 contiennent des informations plus détaillées sur les options d'hébergement. Pour plus d’informations, consultez livre de recettes sur la [migration WF : Hébergement de workflow](https://go.microsoft.com/fwlink/?LinkID=153313).
+ La mesure de la mémoire par définition de workflow fait l'objet de deux tests différents à cause des options disponibles pour l'hébergement de workflows dans WF3 et WF4.  Les tests sont exécutés de manière différente du test de complexité de workflow en ceci qu'un workflow donné est instancié et exécuté seulement une fois par définition.  Ceci est dû au fait que la définition de workflow et son hôte restent en mémoire pour la durée de vie de l'AppDomain.  La mémoire utilisée pour l'exécution d'une instance de workflow donnée doit être nettoyée lors de l'opération garbage collection.  Les conseils de migration pour WF4 contiennent des informations plus détaillées sur les options d'hébergement. Pour plus d’informations, consultez livre de recettes sur la [migration WF : Hébergement de workflow](migration-guidance.md).
 
- Plusieurs méthodes permettent de créer de nombreuses définitions de workflow pour un test de définition de workflow.  Par exemple, la génération de code permet de créer 1000 workflows identiques, sauf en ce qui concerne leurs noms et d'enregistrer chaque workflow dans un fichier distinct.  Cette approche a été choisie pour le test hébergé sur console.  Dans WF3, la classe <xref:System.Workflow.Runtime.WorkflowRuntime> a été utilisée pour exécuter les définitions de workflow.  WF4 peut utiliser <xref:System.Activities.WorkflowApplication> pour créer une instance unique de workflow ou pour utiliser directement <xref:System.Activities.WorkflowInvoker> pour exécuter l'activité comme s'il s'agissait d'un appel de méthode.  <xref:System.Activities.WorkflowApplication> est l’hôte d’une instance de workflow unique et a une parité de fonctionnalité plus proche de <xref:System.Workflow.Runtime.WorkflowRuntime> afin que a été utilisé dans ce test.
+ Plusieurs méthodes permettent de créer de nombreuses définitions de workflow pour un test de définition de workflow.  Par exemple, la génération de code permet de créer 1000 workflows identiques, sauf en ce qui concerne leurs noms et d'enregistrer chaque workflow dans un fichier distinct.  Cette approche a été choisie pour le test hébergé sur console.  Dans WF3, la classe <xref:System.Workflow.Runtime.WorkflowRuntime> a été utilisée pour exécuter les définitions de workflow.  WF4 peut utiliser <xref:System.Activities.WorkflowApplication> pour créer une instance unique de workflow ou pour utiliser directement <xref:System.Activities.WorkflowInvoker> pour exécuter l'activité comme s'il s'agissait d'un appel de méthode.  <xref:System.Activities.WorkflowApplication> est l'hôte d'une instance de workflow unique et a une parité de fonctions plus proche de <xref:System.Workflow.Runtime.WorkflowRuntime> et a donc été utilisé dans ce test.
 
  En cas d'hébergement de workflows dans IIS, il est possible d'utiliser un <xref:System.Web.Hosting.VirtualPathProvider> pour créer un nouveau <xref:System.ServiceModel.WorkflowServiceHost> au lieu de générer tous les fichiers XAMLX ou XOML.  Le <xref:System.Web.Hosting.VirtualPathProvider> gère la requête entrante et répond avec un « fichier virtuel » qui peut être chargé à partir d’une base de données ou, dans ce cas, généré à la volée.  Il n'est donc pas nécessaire de créer 1000 fichiers physiques.
 
@@ -311,7 +311,7 @@ Le diagramme suivant montre le flux de travail de compensation de base. Le workf
 
 L’illustration suivante montre un flux de travail WF3 avec ReceiveActivity et un flux de travail WF4 avec un modèle de demande/réponse :
 
- ![Services de flux de travail dans WF3 et WF4](./media/performance/workflow-receive-activity.gif)
+ ![Services de workflow dans WF3 et WF4](./media/performance/workflow-receive-activity.gif)
 
  Le tableau suivant montre le delta dans la plage de travail entre une définition de workflow unique et les définitions 1001 :
 
@@ -434,7 +434,7 @@ public class Workflow1 : Activity
  Le contrôle d'état a un impact d'environ 3 % sur le débit.  Le coût du modèle de base est d'environ 8 %.
 
 ## <a name="interop"></a>Interop
- WF4 a été presque entièrement réécrit à partir de [!INCLUDE[wf1](../../../includes/wf1-md.md)], c'est pourquoi les workflows et les activités de WF3 ne sont pas directement compatibles avec WF4.  De nombreux clients qui ont adopté Windows Workflow Foundation tôt auront des définitions de flux de travail internes ou tiers et des activités personnalisées pour WF3.  Une façon de faciliter la transition vers WF4 consiste à utiliser l'activité Interop, qui peut exécuter des activités WF3 à partir d'un workflow WF4.  Il est recommandé d'utiliser l'activité <xref:System.Activities.Statements.Interop> seulement si nécessaire. Pour plus d’informations sur la migration vers WF4, consultez les [conseils de migration WF4](https://go.microsoft.com/fwlink/?LinkID=153313).
+ WF4 a été presque entièrement réécrit à partir de [!INCLUDE[wf1](../../../includes/wf1-md.md)], c'est pourquoi les workflows et les activités de WF3 ne sont pas directement compatibles avec WF4.  De nombreux clients qui ont adopté Windows Workflow Foundation tôt auront des définitions de flux de travail internes ou tiers et des activités personnalisées pour WF3.  Une façon de faciliter la transition vers WF4 consiste à utiliser l'activité Interop, qui peut exécuter des activités WF3 à partir d'un workflow WF4.  Il est recommandé d'utiliser l'activité <xref:System.Activities.Statements.Interop> seulement si nécessaire. Pour plus d’informations sur la migration vers WF4, consultez les [conseils de migration WF4](migration-guidance.md).
 
 ### <a name="environment-setup"></a>Configuration de l'environnement
  ![Configuration de l’environnement pour le test des performances de workflow](./media/performance/performance-test-environment.gif)
@@ -443,7 +443,7 @@ public class Workflow1 : Activity
  
 Le tableau suivant présente les résultats de l’exécution d’un flux de travail contenant cinq activités dans une séquence de différentes configurations.
 
-|Test|Débit (workflows/s)|
+|Tester|Débit (workflows/s)|
 |----------|-----------------------------------|
 |Séquence WF3 dans le runtime WF3|1,576|
 |Séquence WF3 dans le runtime WF4 utilisant Interop|2,745|
@@ -451,5 +451,5 @@ Le tableau suivant présente les résultats de l’exécution d’un flux de tra
 
  On constate une amélioration notable lors de l'utilisation d'Interop par rapport à WF3 simple.  Toutefois, par rapport aux activités WF4, l'augmentation est négligeable.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
  Les lourds efforts consacrés aux performances pour WF4 ont payé dans de nombreux domaines cruciaux.  Dans certains cas, les performances des composants de workflow individuels sont des centaines de fois plus rapides dans WF4 que dans WF3 grâce à un runtime [!INCLUDE[wf1](../../../includes/wf1-md.md)] plus léger.  Les chiffres de latence sont également considérablement meilleurs.  Cela signifie que la baisse des performances pour l’utilisation de [!INCLUDE[wf1](../../../includes/wf1-md.md)], par opposition au codage manuel des services d’orchestration WCF, est très faible, en tenant compte des avantages supplémentaires de l’utilisation de [!INCLUDE[wf1](../../../includes/wf1-md.md)].  Les performances de la persistance ont augmenté d'un facteur de 2,5 à 3.  Le contrôle d'état au moyen du suivi de workflow nécessite désormais très peu de charge mémoire.  Un ensemble complet de guides de migration est disponible pour les utilisateurs qui envisagent de passer de WF3 à WF4.  Pour toutes ces raisons, WF4 constitue une option avantageuse pour l'écriture d'applications complexes.

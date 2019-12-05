@@ -25,12 +25,12 @@ helpviewer_keywords:
 - custom formatting [.NET Framework]
 - strings [.NET Framework], formatting
 ms.assetid: 0d1364da-5b30-4d42-8e6b-03378343343f
-ms.openlocfilehash: e362ad75fd9989cc87751286f83918d340a58820
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 20aa7ecd354ef1a8982ae75eda87275c80cdaaf6
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141487"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802464"
 ---
 # <a name="format-types-in-net"></a>Types de format dans .NET
 
@@ -85,7 +85,7 @@ Chaque type qui est dérivé d' <xref:System.Object?displayProperty=nameWithType
 [!code-vb[Conceptual.Formatting.Overview#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.formatting.overview/vb/default1.vb#1)]
 
 > [!WARNING]
-> À partir de [!INCLUDE[win81](../../../includes/win81-md.md)], le Windows Runtime inclut une interface <xref:Windows.Foundation.IStringable> avec une méthode unique ([IStringable.ToString](xref:Windows.Foundation.IStringable.ToString%2A)) qui fournit la prise en charge par défaut de la mise en forme. Toutefois, nous recommandons que les types managés n'implémentent pas l'interface `IStringable` . Pour plus d’informations, consultez la section « Windows Runtime et interface `IStringable` » dans la page de référence de <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
+> À partir de Windows 8.1, le Windows Runtime inclut une interface <xref:Windows.Foundation.IStringable> avec une méthode unique, [IStringable. ToString](xref:Windows.Foundation.IStringable.ToString%2A), qui fournit la prise en charge de la mise en forme par défaut. Toutefois, nous recommandons que les types managés n'implémentent pas l'interface `IStringable` . Pour plus d’informations, consultez la section « Windows Runtime et interface `IStringable` » dans la page de référence de <xref:System.Object.ToString%2A?displayProperty=nameWithType>.
 
 Étant donné que tous les types autres que les interfaces sont dérivés de <xref:System.Object>, ces fonctionnalités sont fournies automatiquement à vos classes ou structures personnalisées. Toutefois, les fonctionnalités offertes par la méthode `ToString` par défaut sont limitées : Bien qu'elle identifie le type, elle ne fournit aucune information relative à une instance du type. Pour fournir une représentation sous forme de chaîne d'un objet qui donne des informations sur cet objet, vous devez substituer la méthode `ToString` .
 
@@ -101,7 +101,7 @@ L'utilité de l'affichage du nom d'un type est souvent limitée et ne permet pas
 
 Dans .NET, la méthode `ToString` de chaque type valeur primitif a été écrasée de façon à afficher la valeur de l’objet plutôt que son nom. Le tableau suivant montre la substitution pour chaque type primitif. Notez que la plupart des méthodes substituées appellent une autre surcharge de la méthode `ToString` et lui passent le spécificateur de format "G", qui définit le format général pour son type, ainsi qu'un objet <xref:System.IFormatProvider> qui représente la culture actuelle.
 
-|Tapez|Substitution de ToString|
+|Type|Substitution de ToString|
 |----------|-----------------------|
 |<xref:System.Boolean>|Retourne <xref:System.Boolean.TrueString?displayProperty=nameWithType> ou <xref:System.Boolean.FalseString?displayProperty=nameWithType>.|
 |<xref:System.Byte>|Appelle `Byte.ToString("G", NumberFormatInfo.CurrentInfo)` afin de mettre en forme la valeur <xref:System.Byte> pour la culture actuelle.|
@@ -251,7 +251,7 @@ Certaines méthodes de mise en forme ou de conversion de chaînes incluent un pa
 
 - <xref:System.Globalization.NumberFormatInfo>, une classe qui fournit des informations de mise en forme des nombres pour une culture spécifique. Son implémentation de <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> retourne une instance d'elle-même.
 
-- <xref:System.Globalization.CultureInfo>., Son implémentation de <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> peut retourner un objet <xref:System.Globalization.NumberFormatInfo> pour fournir des informations de mise en forme des nombres ou un objet <xref:System.Globalization.DateTimeFormatInfo> pour fournir des informations de mise en forme des valeurs de date et d'heure.
+- <xref:System.Globalization.CultureInfo>. Son implémentation de <xref:System.IFormatProvider.GetFormat%2A?displayProperty=nameWithType> peut retourner un objet <xref:System.Globalization.NumberFormatInfo> pour fournir des informations de mise en forme des nombres ou un objet <xref:System.Globalization.DateTimeFormatInfo> pour fournir des informations de mise en forme des valeurs de date et d'heure.
 
 Vous pouvez aussi implémenter votre propre fournisseur de format en remplacement de l'une de ces classes. Toutefois, la méthode <xref:System.IFormatProvider.GetFormat%2A> de votre implémentation doit retourner un objet du type répertorié dans le tableau précédent s'il doit fournir des informations de mise en forme à la méthode `ToString`.
 

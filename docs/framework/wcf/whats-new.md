@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: 0a065676d81b36f32729bb08c23025825e94d3bc
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320458"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802373"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Nouveautés dans Windows Communication Foundation 4.5
 
@@ -78,11 +78,11 @@ WebSockets est une technologie qui fournit la véritable communication bidirecti
 
 Le tableau suivant décrit les paramètres qui ont changé et où trouver des informations supplémentaires.
 
-|Property|Activé|Nouvelle valeur par défaut|Pour plus d'informations, consultez|
+|Property|On|Nouvelle valeur par défaut|Pour plus d'informations, consultez .|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 secondes|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * nombre de processeurs|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|
-|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * nombre de processeurs pour le transport<br /><br /> 4 \* nombre de processeurs pour SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [configuration du service de partage de ports net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
+|maxPendingAccepts|ConnectionOrientedTransportBindingElement<br /><br /> SMSvcHost.exe|2 * nombre de processeurs pour le transport<br /><br /> 4 \* nombre de processeurs pour SMSvcHost. exe|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingAccepts%2A> [la configuration du service de partage de ports net. TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 |maxPendingConnections|ConnectionOrientedTransportBindingElement|12 * nombre de processeurs|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.MaxPendingConnections%2A>|
 |receiveTimeout|SMSvcHost.exe|30 secondes|[Configuration du service de partage de ports Net.TCP](./feature-details/configuring-the-net-tcp-port-sharing-service.md)|
 
@@ -126,7 +126,7 @@ La prise en charge a été ajoutée pour tenir compte des services WCF avec des 
 
 ## <a name="httpclient"></a>HttpClient
 
-Une nouvelle classe appelée <xref:System.Net.Http.HttpClient> a été ajoutée pour faciliter l'utilisation des requêtes HTTP. Pour plus d’informations, consultez [création d’applications sociales et connexion avec les services http](https://go.microsoft.com/fwlink/?LinkId=231886) et l' [exemple de client http](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664).
+Une nouvelle classe appelée <xref:System.Net.Http.HttpClient> a été ajoutée pour faciliter l'utilisation des requêtes HTTP. Pour plus d’informations, consultez [création d’applications sociales et connexion avec les services http](https://channel9.msdn.com/Events/BUILD/BUILD2011/PLAT-581T) et l' [exemple de client http](https://code.msdn.microsoft.com/windowsapps/HttpClient-sample-55700664).
 
 ## <a name="configuration-intellisense"></a>Configuration Intellisense
 

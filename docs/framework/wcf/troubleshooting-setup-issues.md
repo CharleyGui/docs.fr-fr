@@ -1,15 +1,15 @@
 ---
-title: Résolution des problèmes d’installation
+title: Résolution des problèmes d'installation
 ms.date: 03/30/2017
 ms.assetid: 1644f885-c408-4d5f-a5c7-a1a907bc8acd
-ms.openlocfilehash: 586defea0f761f8b6dea691b778d221cff62c7cf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: becf2576528dc0011a77597b3665d77f6907a3cc
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281606"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802425"
 ---
-# <a name="troubleshooting-setup-issues"></a>Résolution des problèmes d’installation
+# <a name="troubleshooting-setup-issues"></a>Résolution des problèmes d'installation
 Cette rubrique explique comment résoudre les problèmes de configuration de Windows Communication Foundation (WCF).  
   
 ## <a name="some-windows-communication-foundation-registry-keys-are-not-repaired-by-performing-an-msi-repair-operation-on-the-net-framework-30"></a>Certaines clés de registre Windows Communication Foundation ne sont pas réparées par l'exécution d'une opération de réparation MSI sur le .NET Framework 3.0  
@@ -40,11 +40,11 @@ Cette rubrique explique comment résoudre les problèmes de configuration de Win
   
      ServiceModelReg [11:09:59:046] : System.ApplicationException : résultat 3 inattendu lors de l'exécution de E:\WINDOWS\system32\wbem\mofcomp.exe avec "E:\WINDOWS\Microsoft.NET\Framework\v3.0\Windows Communication Foundation\ServiceModel.mof"  
   
-     ou :  
+     ou :  
   
      ServiceModelReg [07:19:33:843] : System.TypeInitializationException : l'initialiseur de type de 'System.Management.ManagementPath' a levé une exception. ---> System. Runtime. InteropServices. COMException (0x80040154) : la récupération de la fabrique de classe COM pour le composant avec le CLSID {CF4CC405-E2C5-4DDD-B3CE-5E7582D8C9FA} a échoué en raison de l’erreur suivante : 80040154.  
   
-     ou :  
+     ou :  
   
      ServiceModelReg [07:19:32:750] : System.IO.FileNotFoundException : impossible de charger le fichier ou l'assembly 'C:\WINDOWS\system32\wbem\mofcomp.exe' ou l'une de ses dépendances. Le système ne parvient pas à localiser le fichier spécifié.  
   
@@ -52,7 +52,7 @@ Cette rubrique explique comment résoudre les problèmes de configuration de Win
   
  Suivez la procédure suivante pour résoudre le problème décrit précédemment.  
   
-1. Exécutez [le WMI Diagnosis Utility, version 2,0](https://go.microsoft.com/fwlink/?LinkId=94685) pour réparer le service WMI. Pour plus d’informations sur l’utilisation de cet outil, consultez la rubrique [WMI Diagnosis Utility](https://go.microsoft.com/fwlink/?LinkId=94686) .  
+1. Exécutez [le WMI Diagnosis Utility, version 2,0](https://go.microsoft.com/fwlink/?LinkId=94685) pour réparer le service WMI. Pour plus d’informations sur l’utilisation de cet outil, consultez l’article [WMI Diagnosis Utility](https://docs.microsoft.com/previous-versions/tn-archive/ff404265(v%3dmsdn.10)) .  
   
  Réparez l’installation .NET Framework 3,0 à l’aide de l’applet **Ajout/suppression de programmes** située dans le **panneau de configuration**, ou désinstallez/réinstallez le .NET Framework 3,0.  
   

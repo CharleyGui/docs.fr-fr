@@ -8,12 +8,12 @@ helpviewer_keywords:
 - graphics rendering tiers [WPF]
 - graphics [WPF], rendering tiers
 ms.assetid: 08dd1606-02a2-4122-9351-c0afd2ec3a70
-ms.openlocfilehash: c6856002288a46e78d1e1373201cf149407a814f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4c9acc3ef806eabea05d1b64080275293c83e895
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974018"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802138"
 ---
 # <a name="graphics-rendering-tiers"></a>Couches de rendu graphiques
 Une couche de rendu définit un niveau des capacités et des performances du matériel graphique pour un appareil qui exécute une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -54,7 +54,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
   
  Le tableau suivant indique les différences entre la couche de rendu 1 et la couche de rendu 2 au niveau des spécifications de matériel graphique :  
   
-|Fonction|Couche 1|Couche 2|  
+|Composant|Couche 1|Couche 2|  
 |-------------|------------|------------|  
 |Version de DirectX|Doit être supérieure ou égale à 9.0.|Doit être supérieure ou égale à 9.0.|  
 |RAM vidéo|Doit être supérieure ou égale à 60 Mo.|Doit être supérieure ou égale à 120 Mo.|  
@@ -64,7 +64,7 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
   
  Les fonctionnalités et fonctions suivantes sont à accélération matérielle pour les couches de rendu 1 et 2 :  
   
-|Fonction|Notes|  
+|Composant|Notes|  
 |-------------|-----------|  
 |Rendu 2D|La plupart des types de rendu 2D sont pris en charge.|  
 |Rastérisation 3D|La plupart des types de rastérisation 3D sont pris en charge.|  
@@ -76,20 +76,20 @@ Une couche de rendu définit un niveau des capacités et des performances du mat
   
  Les fonctionnalités et fonctions suivantes sont à accélération matérielle uniquement pour la couche de rendu 2 :  
   
-|Fonction|Notes|  
+|Composant|Notes|  
 |-------------|-----------|  
-|Anticrénelage 3D|l’anticrénelage 3D est pris en charge uniquement sur les systèmes d’exploitation qui prennent en charge le modèle WDDM (Windows Display Driver Model), tels que Windows Vista et [!INCLUDE[win7](../../../../includes/win7-md.md)].|  
+|Anticrénelage 3D|l’anticrénelage 3D est pris en charge uniquement sur les systèmes d’exploitation qui prennent en charge le modèle WDDM (Windows Display Driver Model), tels que Windows Vista et Windows 7.|  
   
  Les fonctionnalités et fonctions suivantes ne sont **pas** à accélération matérielle :  
   
-|Fonction|Notes|  
+|Composant|Notes|  
 |-------------|-----------|  
 |Contenu imprimé|Tout le contenu imprimé est restitué à l’aide du pipeline logiciel [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].|  
 |Contenu pixellisé qui utilise <xref:System.Windows.Media.Imaging.RenderTargetBitmap>|Tout contenu rendu à l’aide de la méthode <xref:System.Windows.Media.Imaging.RenderTargetBitmap.Render%2A> de <xref:System.Windows.Media.Imaging.RenderTargetBitmap>.|  
 |Contenu en mosaïque qui utilise <xref:System.Windows.Media.TileBrush>|Tout contenu en mosaïque dans lequel la propriété <xref:System.Windows.Media.TileBrush.TileMode%2A> du <xref:System.Windows.Media.TileBrush> a la valeur <xref:System.Windows.Media.TileMode.Tile>.|  
 |Surfaces qui dépassent la taille de texture maximale du matériel graphique|Pour la plupart des matériels graphiques, les grandes surfaces ont une taille de 2048 x 2048 ou 4096 x 4096 pixels.|  
 |Toute opération dont la spécification de RAM vidéo dépasse la mémoire du matériel graphique|Vous pouvez surveiller l’utilisation de la RAM vidéo par l’application à l’aide de l’outil Perforator compris dans la suite [WPF Performance Suite](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/aa969767(v=vs.100)) du SDK Windows.|  
-|Fenêtres superposées|Les fenêtres superposées permettent aux applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de restituer le contenu à l’écran dans une fenêtre non rectangulaire. Sur les systèmes d’exploitation qui prennent en charge le modèle WDDM (Windows Display Driver Model), tels que Windows Vista et [!INCLUDE[win7](../../../../includes/win7-md.md)], les fenêtres superposées sont accélérées par le matériel. Sur d’autres systèmes, tels que [!INCLUDE[winxp](../../../../includes/winxp-md.md)], les fenêtres superposées sont restituées par logiciel sans accélération matérielle.<br /><br /> Vous pouvez activer les fenêtres superposées dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en définissant les propriétés de <xref:System.Windows.Window> suivantes :<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
+|Fenêtres superposées|Les fenêtres superposées permettent aux applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de restituer le contenu à l’écran dans une fenêtre non rectangulaire. Sur les systèmes d’exploitation qui prennent en charge le modèle WDDM (Windows Display Driver Model), tels que Windows Vista et Windows 7, les fenêtres superposées sont accélérées par le matériel. Sur d’autres systèmes, tels que [!INCLUDE[winxp](../../../../includes/winxp-md.md)], les fenêtres superposées sont restituées par logiciel sans accélération matérielle.<br /><br /> Vous pouvez activer les fenêtres superposées dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en définissant les propriétés de <xref:System.Windows.Window> suivantes :<br /><br /> -   <xref:System.Windows.Window.WindowStyle%2A> = <xref:System.Windows.WindowStyle.None><br />-   <xref:System.Windows.Window.AllowsTransparency%2A> = `true`<br />-   <xref:System.Windows.Controls.Control.Background%2A> = <xref:System.Windows.Media.Brushes.Transparent%2A>|  
   
 <a name="other_resources"></a>   
 ## <a name="other-resources"></a>Autres ressources  

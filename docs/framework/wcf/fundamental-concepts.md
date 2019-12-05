@@ -7,12 +7,12 @@ helpviewer_keywords:
 - fundamentals [WCF]
 - Windows Communication Foundation [WCF], concepts
 ms.assetid: 3e7e0afd-7913-499d-bafb-eac7caacbc7a
-ms.openlocfilehash: 9dcaa5f73dd8a4ec1943cb7fc840feee889563b8
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 360479a2ba17c4542d61a737856d23992296e276
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319849"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802313"
 ---
 # <a name="fundamental-windows-communication-foundation-concepts"></a>Concepts fondamentaux concernant Windows Communication Foundation
 
@@ -144,18 +144,18 @@ Les métadonnées exposées par le service incluent des documents de schéma XML
 En cas d'activation, les métadonnées du service sont générées automatiquement par WCF par inspection du service et de ses points de terminaison. Pour publier les métadonnées d'un service, vous devez explicitement activer le comportement des métadonnées.
 
 **Security**  
- Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès à ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur HTTP (également appelé HTTPs), ou en implémentant une ou plusieurs des diverses spécifications de sécurité de WS-\*.
+ Dans WCF, comprend la confidentialité (chiffrement des messages pour empêcher l’espionnage), l’intégrité (la détection de la falsification du message), l’authentification (la validation des serveurs et des clients) et l’autorisation (le contrôle de l’accès à ressources). Ces fonctions sont fournies par l’utilisation de mécanismes de sécurité existants, tels que TLS sur HTTP (également appelé HTTPs), ou en implémentant une ou plusieurs des diverses spécifications de sécurité WS-\*.
 
 **Mode de sécurité du transport**  
  Spécifie que la confidentialité, l'intégrité et l'authentification sont assurées par les mécanismes de la couche de transport (tels que HTTPS). Lors de l'utilisation d'un transport comme le HTTPS, ce mode a l'avantage d'être efficace en termes de performances, et d'être bien compris grâce à sa prédominance sur Internet. L’inconvénient est que ce type de sécurité est appliqué séparément sur chaque saut dans la voie de communication, et rend la communication susceptible d’être victime d’une attaque de « l’homme du milieu ».
 
 **Mode de sécurité des messages**  
- Spécifie que la sécurité est fournie en implémentant une ou plusieurs des spécifications de sécurité, telles que la spécification nommée [Web Services Security : sécurité des messages SOAP](https://go.microsoft.com/fwlink/?LinkId=94684). Chaque message contient les mécanismes nécessaires pour assurer la sécurité pendant son transit et permettre aux récepteurs de détecter la falsification et de déchiffrer le message. En ce sens, la sécurité est encapsulée dans chaque message, en assurant la sécurité de bout en bout sur des sauts multiples. Étant donné que les informations de sécurité deviennent une partie du message, il est également possible d’inclure plusieurs types d’informations d’identification avec le message (ils sont appelés « _revendications_»). Cette approche a également l'avantage de permettre au message de voyager en toute sécurité sur n'importe quel transport, y compris les transports multiples, entre son origine et sa destination. L'inconvénient de cette approche réside dans la complexité des mécanismes de chiffrement employés, ce qui affecte les performances.
+ Spécifie que la sécurité est fournie en implémentant une ou plusieurs des spécifications de sécurité, telles que la spécification nommée [Web Services Security : sécurité des messages SOAP](http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0.pdf). Chaque message contient les mécanismes nécessaires pour assurer la sécurité pendant son transit et permettre aux récepteurs de détecter la falsification et de déchiffrer le message. En ce sens, la sécurité est encapsulée dans chaque message, en assurant la sécurité de bout en bout sur des sauts multiples. Étant donné que les informations de sécurité deviennent une partie du message, il est également possible d’inclure plusieurs types d’informations d’identification avec le message (ils sont appelés « _revendications_»). Cette approche a également l'avantage de permettre au message de voyager en toute sécurité sur n'importe quel transport, y compris les transports multiples, entre son origine et sa destination. L'inconvénient de cette approche réside dans la complexité des mécanismes de chiffrement employés, ce qui affecte les performances.
 
 **Transport avec le mode de sécurité des informations d’identification de message**  
  Spécifie l'utilisation de la couche de transport pour assurer la confidentialité, l'authentification et l'intégrité des messages, tandis que chacun des messages peut contenir plusieurs informations d'identification (revendications) requises par les récepteurs du message.
 
-**WS-\***  
+**\* WS**  
  Abrégé pour l'ensemble croissant des spécifications de services Web (WS), telles que WS-Security, WS-ReliableMessaging et ainsi de suite, implémentées dans WCF.
 
 ## <a name="see-also"></a>Voir aussi

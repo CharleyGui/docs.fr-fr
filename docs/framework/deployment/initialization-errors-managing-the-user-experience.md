@@ -8,12 +8,12 @@ helpviewer_keywords:
 ms.assetid: 680a7382-957f-4f6e-b178-4e866004a07e
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 3cd881044d45a276ec361d24097b59b8ce76b7e4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: cadcb5c2e85f046b5c1c561c17663b7c94829f4f
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975702"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802246"
 ---
 # <a name="net-framework-initialization-errors-managing-the-user-experience"></a>Erreurs d’initialisation du .NET Framework : gestion de l’expérience utilisateur
 
@@ -80,14 +80,14 @@ Le CLR inclut un ensemble d’hôtes pour divers scénarios, qui affichent tous 
 
 ## <a name="windows-8-behavior-and-ui"></a>Comportement et interface utilisateur de Windows 8
 
-Le système d’activation du CLR fournit les mêmes comportement et interface utilisateur sur [!INCLUDE[win8](../../../includes/win8-md.md)] que sur d’autres versions du système d’exploitation Windows, sauf quand il rencontre des problèmes pour charger CLR 2.0. [!INCLUDE[win8](../../../includes/win8-md.md)] inclut .NET Framework 4.5, qui utilise CLR 4.5. Toutefois, [!INCLUDE[win8](../../../includes/win8-md.md)] n’inclut pas .NET Framework 2.0, 3.0 ni 3.5, qui utilisent tous CLR 2.0. Par conséquent, les applications qui dépendent de CLR 2.0 ne fonctionnent pas sur [!INCLUDE[win8](../../../includes/win8-md.md)] par défaut. À la place, elles affichent la boîte de dialogue suivante pour permettre aux utilisateurs d’installer .NET Framework 3.5. Les utilisateurs peuvent également activer .NET Framework 3.5 dans le Panneau de configuration. Les deux options sont décrites dans l’article [Installer .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../install/dotnet-35-windows-10.md).
+Le système d’activation du CLR fournit le même comportement et la même interface utilisateur sur Windows 8 que sur d’autres versions du système d’exploitation Windows, sauf lorsqu’il rencontre des problèmes lors du chargement du CLR 2,0. Windows 8 comprend le .NET Framework 4,5, qui utilise CLR 4,5. Toutefois, Windows 8 n’inclut pas les .NET Framework 2,0, 3,0 ou 3,5, qui utilisent tous CLR 2,0. Par conséquent, les applications qui dépendent du CLR 2,0 ne s’exécutent pas sur Windows 8 par défaut. À la place, elles affichent la boîte de dialogue suivante pour permettre aux utilisateurs d’installer .NET Framework 3.5. Les utilisateurs peuvent également activer .NET Framework 3.5 dans le Panneau de configuration. Les deux options sont décrites dans l’article [Installer .NET Framework 3.5 sur Windows 10, Windows 8.1 et Windows 8](../install/dotnet-35-windows-10.md).
 
 ![Boîte de dialogue pour l’installation 3.5 sur Windows 8](./media/initialization-errors-managing-the-user-experience/install-framework-on-demand-dialog.png "Invite à installer le .NET Framework 3.5 à la demande")
 
 > [!NOTE]
-> .NET Framework 4.5 remplace .NET Framework 4 (CLR 4) sur l’ordinateur de l’utilisateur. Par conséquent, les applications .NET Framework 4 fonctionnent de façon fluide, sans afficher cette boîte de dialogue, sur [!INCLUDE[win8](../../../includes/win8-md.md)].
+> .NET Framework 4.5 remplace .NET Framework 4 (CLR 4) sur l’ordinateur de l’utilisateur. Par conséquent, les applications .NET Framework 4 s’exécutent de manière transparente, sans afficher cette boîte de dialogue, sur Windows 8.
 
-Quand le .NET Framework 3.5 est installé, les utilisateurs peuvent exécuter les applications qui dépendent du .NET Framework 2.0, 3.0 ou 3.5 sur leurs ordinateurs [!INCLUDE[win8](../../../includes/win8-md.md)]. Ils peuvent également exécuter des applications .NET Framework 1.0 et 1.1, à condition que ces applications ne soient pas explicitement configurées pour s’exécuter uniquement sur le .NET Framework 1.0 ou 1.1. Consultez [Migration à partir de .NET Framework 1.1](../migration-guide/migrating-from-the-net-framework-1-1.md).
+Lorsque la .NET Framework 3,5 est installée, les utilisateurs peuvent exécuter des applications qui dépendent du .NET Framework 2,0, 3,0 ou 3,5 sur leurs ordinateurs Windows 8. Ils peuvent également exécuter des applications .NET Framework 1.0 et 1.1, à condition que ces applications ne soient pas explicitement configurées pour s’exécuter uniquement sur le .NET Framework 1.0 ou 1.1. Consultez [Migration à partir de .NET Framework 1.1](../migration-guide/migrating-from-the-net-framework-1-1.md).
 
 À compter de .NET Framework 4.5, la journalisation de l’activation du CLR a été améliorée pour inclure les entrées de journal enregistrant quand et pourquoi le message d’erreur d’initialisation est affiché. Pour plus d’informations, consultez [Guide pratique pour déboguer les problèmes d’activation du CLR](how-to-debug-clr-activation-issues.md).
 

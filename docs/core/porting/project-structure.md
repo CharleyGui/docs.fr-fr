@@ -4,12 +4,12 @@ description: Aide destinée aux propriétaires de projet qui souhaitent compiler
 author: conniey
 ms.date: 12/07/2018
 ms.custom: seodec18
-ms.openlocfilehash: 701aa64be8d6c712ef635411ad6c226a3c3ab8ed
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 789f50ffb61b80f590a24bc45693df895b3424f7
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522970"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74801930"
 ---
 # <a name="organize-your-project-to-support-both-net-framework-and-net-core"></a>Organiser votre projet pour prendre en charge à la fois le .NET Framework et .NET Core
 
@@ -24,12 +24,12 @@ Découvrez comment créer une solution qui se compile parallèlement pour .NET F
   - Vous permet d’écrire du code pour une version spécifique du .NET Framework dans vos bibliothèques via l’utilisation de directives de compilation.
 
   *Scénarios non pris en charge :*
-  - Demander aux développeurs d’utiliser Visual Studio 2017 pour ouvrir des projets existants. Pour prendre en charge les versions antérieures de Visual Studio, [conserver vos fichiers projet dans des dossiers différents](#support-vs) est une meilleure option.
+  - Requiert que les développeurs utilisent Visual Studio 2017 ou une version ultérieure pour ouvrir des projets existants. Pour prendre en charge les versions antérieures de Visual Studio, [conserver vos fichiers projet dans des dossiers différents](#support-vs) est une meilleure option.
 
 - <a name="support-vs"></a>[**Séparer les projets existants des nouveaux projets .NET Core**](#keep-existing-projects-and-create-a-net-core-project)
 
   *En voici les avantages :*
-  - Continuation de la prise en charge du développement de projets existants sans devoir mettre à niveau pour les développeurs/contributeurs qui n’ont pas Visual Studio 2017.
+  - Prise en charge du développement sur des projets existants pour les développeurs et les contributeurs qui ne disposent pas de Visual Studio 2017 ou d’une version ultérieure.
   - Réduction du risque de création de bogues dans des projets existants car aucune évolution du code n’est nécessaire dans ces projets.
 
 ## <a name="example"></a>Exemple

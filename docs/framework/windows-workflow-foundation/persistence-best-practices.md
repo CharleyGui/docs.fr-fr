@@ -2,12 +2,12 @@
 title: Meilleures pratiques de persistance
 ms.date: 03/30/2017
 ms.assetid: 6974c5a4-1af8-4732-ab53-7d694608a3a0
-ms.openlocfilehash: 399d2f5dbb5f3114a58cc7fdaede249b253089c3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 8ffbb3ebfa8f85e2b0052a9df9ada30766accd8e
+ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64592117"
+ms.lasthandoff: 12/04/2019
+ms.locfileid: "74802516"
 ---
 # <a name="persistence-best-practices"></a>Meilleures pratiques de persistance
 Ce document traite des meilleures pratiques de conception et configuration de workflow associées à la persistance de workflow.  
@@ -21,7 +21,7 @@ Ce document traite des meilleures pratiques de conception et configuration de wo
   
  Si le workflow est occupé pendant longtemps, il est recommandé de rendre persistante l'instance de workflow régulièrement pendant toute cette période. Pour ce faire, vous pouvez ajouter des activités <xref:System.Activities.Statements.Persist> dans l'ensemble de la séquence des activités qui maintiennent l'instance de workflow occupée. De cette façon, un recyclage de domaine d'application, un échec de l'hôte ou de l'ordinateur n'entraîne pas la restauration au début de la période d'occupation. Soyez conscient que l'ajout d'activités <xref:System.Activities.Statements.Persist> à votre workflow peut provoquer une diminution des performances.  
   
- Windows Server AppFabric simplifie grandement la configuration et l'utilisation de la persistance. Pour plus d’informations, consultez [persistance de Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201200&clcid=0x409)  
+ Windows Server AppFabric simplifie grandement la configuration et l'utilisation de la persistance. Pour plus d’informations, consultez [persistance de l’infrastructure d’applications Windows Server](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10))  
   
 ## <a name="configuration-of-scalability-parameters"></a>Configuration des paramètres d'évolutivité  
  Les conditions requises en termes d'évolutivité et de performance déterminent la configuration des paramètres suivants :  
@@ -34,7 +34,7 @@ Ce document traite des meilleures pratiques de conception et configuration de wo
   
  Ces paramètres doivent être définis comme suit, en fonction du scénario actuel.  
   
-### <a name="scenario-a-small-number-of-workflow-instances-that-require-optimal-response-time"></a>Scénario : Un petit nombre d’Instances de Workflow qui nécessitent des temps de réponse Optimal  
+### <a name="scenario-a-small-number-of-workflow-instances-that-require-optimal-response-time"></a>Scénario : petit nombre d'instances de workflow qui nécessitent un temps de réponse optimal  
  Dans ce scénario, toutes les instances de workflow doivent rester chargées lorsqu'elles deviennent inactives. Affectez une valeur élevée à <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A>. L'utilisation de ce paramètre empêche une instance de workflow de se déplacer entre les ordinateurs. Utilisez ce paramètre uniquement si une ou plusieurs des conditions suivantes sont remplies :  
   
 - Une instance de workflow reçoit un seul message durant toute sa durée de vie.  
@@ -45,15 +45,15 @@ Ce document traite des meilleures pratiques de conception et configuration de wo
   
  Utilisez des activités <xref:System.Activities.Statements.Persist> ou affectez la valeur 0 à <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> pour permettre la récupération de votre instance de workflow après un échec de l'ordinateur ou de l'hôte de service.  
   
-### <a name="scenario-workflow-instances-are-idle-for-long-periods-of-time"></a>Scénario : Instances de workflow sont inactives pendant de longues périodes  
+### <a name="scenario-workflow-instances-are-idle-for-long-periods-of-time"></a>Scénario : les instances de workflow sont inactives pendant de longues périodes  
  Dans ce scénario, affectez la valeur 0 à la propriété <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> pour libérer les ressources dès que possible.  
   
-### <a name="scenario-workflow-instances-receive-multiple-messages-in-a-short-period-of-time"></a>Scénario : Instances de workflow reçoivent plusieurs Messages dans une courte période de temps  
+### <a name="scenario-workflow-instances-receive-multiple-messages-in-a-short-period-of-time"></a>Scénario : les instances de workflow reçoivent plusieurs messages dans une courte période  
  Dans ce scénario, affectez la valeur 60 à la propriété <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A> si ces messages sont reçus par le même ordinateur. Cela empêche une séquence rapide de déchargement et chargement d'une instance de workflow. Par ailleurs, l'instance n'est pas conservée trop longtemps en mémoire.  
   
  Affectez la valeur 0 à la propriété <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToUnload%2A>, et BasicRetry ou AggressiveRetry à la propriété <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior.InstanceLockedExceptionAction%2A> si ces messages peuvent être reçus par des ordinateurs distincts. Cela permet à l'instance de workflow d'être chargée par un autre ordinateur.  
   
-### <a name="scenario-workflow-uses-delay-activities-with-short-durations"></a>Scénario : Flux de travail utilise les activités de délai avec des durées courtes  
+### <a name="scenario-workflow-uses-delay-activities-with-short-durations"></a>Scénario : le workflow utilise des activités de délai avec des durées courtes  
  Dans ce scénario, <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> vérifie régulièrement dans la base de données de persistance la présence d'instances qui doivent être chargées en raison d'une activité <xref:System.Activities.Statements.Delay> arrivée à expiration. Si <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore> trouve un minuteur qui va expirer au cours de la fréquence d'interrogation suivante, le magasin d'instances de workflow SQL réduit la fréquence. L'interrogation suivante aura lieu dès que le minuteur aura expiré. De cette façon, le magasin d'instances de workflow SQL obtient une haute précision des minuteurs qui s'exécutent plus longtemps que la fréquence définie par la propriété <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore.RunnableInstancesDetectionPeriod%2A>. Pour permettre le traitement en temps voulu de délais plus courts, l'instance de workflow doit rester en mémoire pendant au moins une fréquence d'interrogation.  
   
  Affectez la valeur 0 à la propriété <xref:System.ServiceModel.Activities.Description.WorkflowIdleBehavior.TimeToPersist%2A> pour écrire le délai d'expiration dans la base de données de persistance.  
