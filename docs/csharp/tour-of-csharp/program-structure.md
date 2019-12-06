@@ -1,18 +1,18 @@
 ---
 title: Structure des programmes C# - Visite guidée du langage C#
-description: Découvrez les blocs de construction de base d’un programme C#
+description: Découvrez les composantes élémentaires d’un programme C#
 ms.date: 08/10/2016
 ms.assetid: 984f0314-507f-47a0-af56-9011243f5e65
-ms.openlocfilehash: 5102c72d68108f698a0456b9c14e6713778f4325
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: 5e095e71549ed3eec6c73e6a134fdb5a64fb63c0
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834159"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884382"
 ---
 # <a name="program-structure"></a>Structure du programme
 
-Les concepts clés d’organisation en C# sont les ***programmes***, ***espaces de noms***, ***types***, ***membres*** et ***assemblys***. Les programmes C# se composent d'un ou plusieurs fichiers sources. Les programmes déclarent des types qui contiennent des membres et peuvent être organisés en espaces de noms. Les classes et les interfaces sont des exemples de types. Les champs, méthodes, propriétés et événements sont des exemples de membres. Lorsque les programmes C# sont compilés, ils sont physiquement empaquetés dans des assemblys. Les assemblys ont généralement l’extension de fichier `.exe` ou `.dll`, selon qu’ils implémentent des ***applications*** ou des ***bibliothèques***, respectivement.
+Les concepts clés d’organisation en C# sont les ***programmes***, ***espaces de noms***, ***types***, ***membres*** et ***assemblys***. Les programmes C++, comme les programmes C, se composent d'un ou plusieurs fichiers sources. Les programmes déclarent des types qui contiennent des membres et peuvent être organisés en espaces de noms. Les classes et les interfaces sont des exemples de types. Les champs, méthodes, propriétés et événements sont des exemples de membres. Lorsque les programmes C# sont compilés, ils sont physiquement empaquetés dans des assemblys. Les assemblys ont généralement l’extension de fichier `.exe` ou `.dll`, selon qu’elles implémentent des ***applications*** ou des ***bibliothèques***, respectivement.
 
 L’exemple déclare une classe nommée `Stack` dans un espace de noms appelé `Acme.Collections` :
 
@@ -27,7 +27,7 @@ csc /t:library acme.cs
 compile l’exemple en tant que bibliothèque (code sans point d’entrée `Main`) et produit un assembly nommé `acme.dll`.
 
 > [!IMPORTANT]
-> Les exemples ci-dessus utilisent `csc` en tant que compilateur de ligne de commande C#. Ce compilateur est un exécutable Windows. Pour utiliser C# sur d’autres plateformes, vous devez utiliser les outils pour .NET Core. L’écosystème .NET Core utilise l’interface graphique `dotnet` pour gérer les versions en ligne de commande. Cela inclut la gestion des dépendances et l’appel du compilateur C#. Consultez [ce didacticiel](../../core/tutorials/using-with-xplat-cli.md) pour obtenir une description complète de ces outils sur les plateformes prises en charge par .NET Core.
+> Les exemples ci-dessus utilisent `csc` en tant que compilateur de ligne de commande C#. Ce compilateur est un exécutable Windows. Pour utiliser C# sur d’autres plateformes, vous devez utiliser les outils pour .NET Core. L’écosystème .NET Core utilise l’interface graphique `dotnet` pour gérer les versions en ligne de commande. Cela inclut la gestion des dépendances et l’appel du compilateur C#. Consultez [ce didacticiel](../../core/tutorials/cli-create-console-app.md) pour obtenir une description complète de ces outils sur les plateformes prises en charge par .NET Core.
 
 Les assemblys contiennent le code exécutable sous forme d’instructions de langage intermédiaire (IL) et des informations symboliques sous la forme de métadonnées. Avant son exécution, le code de langage intermédiaire dans un assembly est automatiquement converti en code spécifique au processeur par le compilateur juste à temps (JIT) du Common Language Runtime .NET.
 

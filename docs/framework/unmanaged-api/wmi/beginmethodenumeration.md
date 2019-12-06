@@ -14,14 +14,14 @@ helpviewer_keywords:
 - BeginMethodEnumeration function [.NET WMI and performance counters]
 topic_type:
 - Reference
-ms.openlocfilehash: a27787052757098d4edb2d8516e22d8a03b7009a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: be1e86e0b760ab403cf42ac19da03f84769a85cf
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138792"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884421"
 ---
-# <a name="beginenumeration-function"></a>BeginEnumeration, fonction
+# <a name="beginmethodenumeration-function"></a>BeginMethodEnumeration, fonction
 Commence une énumération des méthodes disponibles pour l’objet.  
 
 [!INCLUDE[internalonly-unmanaged](../../../../includes/internalonly-unmanaged.md)]
@@ -36,7 +36,7 @@ HRESULT BeginMethodEnumeration (
 ); 
 ```  
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `vFunc`  
 dans Ce paramètre n’est pas utilisé.
@@ -47,7 +47,7 @@ dans Pointeur vers une instance [IWbemClassObject](/windows/desktop/api/wbemcli/
 `lEnumFlags`  
 dans Zéro (0) pour toutes les méthodes, ou un indicateur qui spécifie la portée de l’énumération. Les indicateurs suivants sont définis dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-Constante  |valeur  |Description  |
+Constante  |Value  |Description  |
 |---------|---------|---------|
 | `WBEM_FLAG_LOCAL_ONLY` | 0x10 | Limitez l’énumération aux méthodes définies dans la classe elle-même. |
 | `WBEM_FLAG_PROPAGATED_ONLY` |  0x20 | Limitez l’énumération aux propriétés héritées des classes de base. |
@@ -56,7 +56,7 @@ Constante  |valeur  |Description  |
 
 Les valeurs suivantes retournées par cette fonction sont définies dans le fichier d’en-tête *WbemCli. h* , ou vous pouvez les définir comme des constantes dans votre code :
 
-|Constante  |valeur  |Description  |
+|Constante  |Value  |Description  |
 |---------|---------|---------|
 |`WBEM_E_INVALID_PARAMETER` | 0x80041008 | `lEnnumFlags` est différent de zéro et n’est pas l’un des indicateurs spécifiés. |
 |`WBEM_S_NO_ERROR` | 0 | L’appel de la fonction a réussi.  |
@@ -67,7 +67,7 @@ Cette fonction encapsule un appel à la méthode [IWbemClassObject :: BeginMeth
 
 Cet appel de méthode est pris en charge uniquement si l’objet actuel est une définition de classe. La manipulation de méthode n’est pas disponible à partir de pointeurs [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject) qui pointent vers des instances. L’ordre dans lequel les méthodes sont énumérées est toujours indifférent pour une instance donnée de [IWbemClassObject](/windows/desktop/api/wbemcli/nn-wbemcli-iwbemclassobject).
 
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** WMINet_Utils. idl  

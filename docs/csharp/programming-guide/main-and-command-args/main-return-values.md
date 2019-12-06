@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 1be04f98a4dec1317c485c7e482568cfe48ea9bf
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 13d1eda178a4c2580af67ef5a7198e7f0884a7d6
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588883"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884395"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 
@@ -24,9 +24,9 @@ Elle peut également retourner un `int` :
 
 Si la valeur de retour de `Main` n’est pas utilisée, retourner `void` permet d’avoir un code un peu plus simple. Cependant, retourner un entier permet au programme de communiquer des informations d’état à d’autres programmes ou scripts qui appellent le fichier exécutable. La valeur de retour de `Main` est traitée comme le code de sortie du processus. Si `void` est retourné à partir de `Main`, le code de sortie est implicitement `0`. L’exemple suivant montre comment accéder à la valeur de retour de `Main`.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
-Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.md). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/using-with-xplat-cli.md).
+Cet exemple utilise les outils de ligne de commande [.NET Core](../../../core/index.md). Si vous ne connaissez pas les outils de ligne de commande .NET Core, vous pouvez les découvrir dans cette [rubrique Bien démarrer](../../../core/tutorials/cli-create-console-app.md).
 
 Modifiez la méthode `Main` dans *program.cs* comme suit :
 
@@ -96,6 +96,6 @@ Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Guide pratique pour afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)
+- [Comment : afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)

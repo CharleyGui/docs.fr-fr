@@ -5,12 +5,12 @@ author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
 ms.custom: seodec18
-ms.openlocfilehash: 7b6265cb652e6f3db702584295fac948d06ad5fc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1355b3b0fa72a13263229848b3de2c6b9ccb3392
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420841"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884200"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez les outils .NET Core et SDK .NET Core en explorant ces didacticiels
 
@@ -39,7 +39,7 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 
 ## <a name="building-applications-with-the-net-core-cli-tools"></a>Création d’applications avec les outils CLI .NET Core
 
-- [Bien démarrer avec .NET Core sur Windows/Linux/macOS à l’aide des outils CLI .NET Core](using-with-xplat-cli.md)
+- [Bien démarrer avec .NET Core sur Windows/Linux/macOS à l’aide des outils CLI .NET Core](cli-create-console-app.md)
 - [Organisation et test de projets avec les outils CLI .NET Core](testing-with-cli.md)
 - [Prise en main de F#](../../fsharp/get-started/get-started-command-line.md)
 

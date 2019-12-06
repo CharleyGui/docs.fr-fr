@@ -4,12 +4,12 @@ description: Découvrez des ressources qui vous apprendront à créer des applic
 author: thraka
 ms.author: adegeo
 ms.date: 09/19/2019
-ms.openlocfilehash: 78066f2904f6a874b71165e4fe1769b6b778ae41
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 89db6d79336c01315983133d9041904d88cba301
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428869"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884252"
 ---
 # <a name="get-started-with-net-core"></a>Bien démarrer avec .NET Core
 
@@ -42,7 +42,7 @@ Vous pouvez commencer à développer des applications .NET Core en suivant ces t
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Windows](#tab/windows)
+# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
 
 - [Générer une application C# « Hello World » avec .NET Core dans Visual Studio 2017.](./tutorials/with-visual-studio.md)
 - [Générer une bibliothèque de classes C# avec .NET Core dans Visual Studio 2017.](./tutorials/library-with-visual-studio.md)
@@ -50,7 +50,7 @@ Vous pouvez commencer à développer des applications .NET Core en suivant ces t
 - [Générer une bibliothèque de classes avec Visual Basic et .NET Core dans Visual Studio 2017.](./tutorials/vb-library-with-visual-studio.md)  
 - Visionnez une vidéo qui indique [comment installer et utiliser Visual Studio Code et .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core/).
 - Visionnez une vidéo qui indique [comment installer et utiliser Visual Studio 2017 et .NET Core](https://channel9.msdn.com/Blogs/dotnet/Get-Started-NET-Core-Visual-Studio-2017/).
-- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/using-with-xplat-cli.md)
+- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/cli-create-console-app.md)
 
 Pour obtenir la liste des versions de Windows prises en charge, consultez l’article sur les [dépendances et les exigences de .net Core](install/dependencies.md?tabs=netcore30&pivots=os-windows) .
 
@@ -58,7 +58,7 @@ Pour obtenir la liste des versions de Windows prises en charge, consultez l’ar
 
 Vous pouvez commencer à développer une application .NET Core en suivant ces didacticiels pas à pas :
 
-- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/using-with-xplat-cli.md)
+- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/cli-create-console-app.md)
 - Visionnez une vidéo qui explique comment [bien démarrer avec Visual Studio Code en utilisant C# et .NET Core sur Ubuntu](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
 Pour obtenir la liste des versions et distributions Linux prises en charge, consultez l’article [dépendances et exigences de .net Core](install/dependencies.md?tabs=netcore30&pivots=os-linux) .
@@ -69,7 +69,7 @@ Vous pouvez commencer à développer une application .NET Core en suivant ces di
 
 - Visionnez une vidéo qui explique comment [bien démarrer avec Visual Studio Code en utilisant C# et .NET Core sur macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-VSCode-NET-Core-Mac).
 - [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio Code.](tutorials/using-on-macos.md)
-- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/using-with-xplat-cli.md)
+- [Bien démarrer avec .NET Core en utilisant la ligne de commande.](tutorials/cli-create-console-app.md)
 - [Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio pour Mac.](tutorials/using-on-mac-vs.md)
 - [Générer une solution .NET Core complète sur macOS en utilisant Visual Studio pour Mac.](tutorials/using-on-mac-vs-full-solution.md)
 

@@ -4,12 +4,12 @@ description: Informations sur les exemples et les didacticiels pour .NET Core, A
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 7953d178e9a24fc42f11b6bc5c866805ec381137
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 5132415a6be03787111aaed8d027d436bb6820fe
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423572"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884434"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
@@ -25,7 +25,7 @@ Ce guide montre comment créer une application web ASP.NET Core et les tests uni
 
 ### <a name="tutorials"></a>Didacticiels
 
-**[Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas](../core/tutorials/using-with-xplat-cli.md)**
+**[Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas](../core/tutorials/cli-create-console-app.md)**
 
 Ce guide indique comment utiliser les outils d’interface de ligne de commande (CLI) .NET Core pour créer des applications console multiplateformes. Il commence avec une application console simple qui s’étend finalement sur plusieurs projets, tests compris. Vous ajoutez des fonctionnalités pas à pas, en renforçant vos connaissances au fur à mesure. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/console-apps) est disponible dans le référentiel dotnet/samples sur GitHub.
 
