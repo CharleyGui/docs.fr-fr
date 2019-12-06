@@ -2,12 +2,12 @@
 title: Programmation asynchrone dansF#
 description: Découvrez comment F# fournit une prise en charge propre pour l’asynchronie basée sur un modèle de programmation au niveau du langage dérivé des concepts de programmation fonctionnelle de base.
 ms.date: 12/17/2018
-ms.openlocfilehash: 1ede4a5c1e26df271ac94f9b2c216ac84fb38f59
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 583b0f5154e6ad8875b21503cfb78f70a069ff7b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395787"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837101"
 ---
 # <a name="async-programming-in-f"></a>Programmation asynchrone en F\#
 
@@ -39,7 +39,7 @@ En pratique, les calculs asynchrones dans F# sont planifiés pour s’exécuter 
 
 Le principal pas à pas est que les calculs asynchrones sont indépendants du processus principal du programme. Bien qu’il existe peu de garanties quant au moment ou à l’exécution d’un calcul asynchrone, il existe des approches pour l’orchestration et la planification. Le reste de cet article explore les concepts fondamentaux F# de l’asynchronie et explique comment utiliser les types, les fonctions et les F#expressions intégrés à.
 
-## <a name="core-concepts"></a>Concepts de base
+## <a name="core-concepts"></a>Concepts principaux
 
 Dans F#, la programmation asynchrone est centrée autour de trois concepts fondamentaux :
 
@@ -127,6 +127,7 @@ let main argv =
     argv
     |> Array.map printTotalFileBytes
     |> Async.Sequential
+    |> Async.Ignore
     |> Async.RunSynchronously
     |> ignore
 ```
@@ -143,13 +144,13 @@ Lorsque vous écrivez du code asynchrone F# dans, vous interagissez généraleme
 
 Démarre un calcul enfant dans un calcul asynchrone. Cela permet l’exécution simultanée de plusieurs calculs asynchrones. Le calcul enfant partage un jeton d’annulation avec le calcul parent. Si le calcul parent est annulé, le calcul enfant est également annulé.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Lorsque vous souhaitez exécuter plusieurs calculs asynchrones simultanément plutôt qu’un à la fois, mais que vous ne les avez pas planifiés en parallèle.
 - Lorsque vous souhaitez lier la durée de vie d’un calcul enfant à celle d’un calcul parent.
@@ -161,15 +162,15 @@ Ce qu’il faut surveiller :
 
 ### <a name="asyncstartimmediate"></a>Async. StartImmediate
 
-Exécute un calcul asynchrone, en commençant immédiatement sur le thread de système d’exploitation actuel. Cela est utile si vous devez mettre à jour un événement sur le thread appelant pendant le calcul. Par exemple, si un calcul asynchrone doit mettre à jour une interface utilisateur (telle que la mise à jour d’une barre de progression), `Async.StartImmediate` doit être utilisé.
+Exécute un calcul asynchrone, en commençant immédiatement sur le thread du système d'exploitation actuel. Cela est utile si vous devez mettre à jour un événement sur le thread appelant pendant le calcul. Par exemple, si un calcul asynchrone doit mettre à jour une interface utilisateur (telle que la mise à jour d’une barre de progression), `Async.StartImmediate` doit être utilisé.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Lorsque vous devez mettre à jour un événement sur le thread appelant au milieu d’un calcul asynchrone.
 
@@ -181,13 +182,13 @@ Ce qu’il faut surveiller :
 
 Exécute un calcul dans le pool de threads. Retourne une <xref:System.Threading.Tasks.Task%601> qui sera terminée à l’état correspondant une fois le calcul terminé (produit le résultat, lève une exception ou est annulé). Si aucun jeton d’annulation n’est fourni, le jeton d’annulation par défaut est utilisé.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Lorsque vous devez appeler une API .NET qui attend un <xref:System.Threading.Tasks.Task%601> pour représenter le résultat d’un calcul asynchrone.
 
@@ -199,7 +200,7 @@ Ce qu’il faut surveiller :
 
 Planifie une séquence de calculs asynchrones à exécuter en parallèle. Le degré de parallélisme peut éventuellement être réglé/limité en spécifiant le paramètre `maxDegreesOfParallelism`.
 
-Signature
+Signature :
 
 ```fsharp
 computations: seq<Async<'T>> - ?maxDegreesOfParallelism: int -> Async<'T[]>
@@ -219,7 +220,7 @@ Ce qu’il faut surveiller :
 
 Planifie l’exécution d’une séquence de calculs asynchrones dans l’ordre dans lequel ils sont passés. Le premier calcul sera exécuté, puis le suivant, et ainsi de suite. Aucun calcul n’est exécuté en parallèle.
 
-Signature
+Signature :
 
 ```fsharp
 computations: seq<Async<'T>> -> Async<'T[]>
@@ -238,13 +239,13 @@ Ce qu’il faut surveiller :
 
 Retourne un calcul asynchrone qui attend la fin de l' <xref:System.Threading.Tasks.Task%601> donné et retourne son résultat sous la forme d’une `Async<'T>`
 
-Signature
+Signature :
 
 ```fsharp
 task: Task<'T>  -> Async<'T>
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Lorsque vous consommez une API .NET qui retourne un <xref:System.Threading.Tasks.Task%601> dans un F# calcul asynchrone.
 
@@ -256,13 +257,13 @@ Ce qu’il faut surveiller :
 
 Crée un calcul asynchrone qui exécute un `Async<'T>`donné, en retournant un `Async<Choice<'T, exn>>`. Si le `Async<'T>` donné se termine correctement, un `Choice1Of2` est retourné avec la valeur résultante. Si une exception est levée avant qu’elle ne se termine, une `Choice2of2` est retournée avec l’exception levée. S’il est utilisé sur un calcul asynchrone qui est lui-même composé de plusieurs calculs, et que l’un de ces calculs lève une exception, le calcul englobant est arrêté entièrement.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Lorsque vous effectuez un travail asynchrone qui peut échouer avec une exception et que vous souhaitez gérer cette exception dans l’appelant.
 
@@ -274,13 +275,13 @@ Ce qu’il faut surveiller :
 
 Crée un calcul asynchrone qui exécute le calcul donné et ignore son résultat.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<'T> -> Async<unit>
 ```
 
-Quand utiliser :
+Utilisation :
 
 - Quand vous avez un calcul asynchrone dont le résultat n’est pas nécessaire. Cela est analogue au code `ignore` pour le code non asynchrone.
 
@@ -292,7 +293,7 @@ Ce qu’il faut surveiller :
 
 Exécute un calcul asynchrone et attend son résultat sur le thread appelant. Cet appel est bloquant.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<'T> - timeout: ?int - cancellationToken: ?CancellationToken -> 'T
@@ -311,7 +312,7 @@ Ce qu’il faut surveiller :
 
 Démarre un calcul asynchrone dans le pool de threads qui retourne `unit`. N’attend pas son résultat. Les calculs imbriqués lancés avec `Async.Start` sont démarrés entièrement indépendamment du calcul parent qui les a appelés. Leur durée de vie n’est pas liée à un calcul parent. Si le calcul parent est annulé, aucun calcul enfant n’est annulé.
 
-Signature
+Signature :
 
 ```fsharp
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit

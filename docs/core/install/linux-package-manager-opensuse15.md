@@ -3,13 +3,13 @@ title: Installer .NET Core sur openSUSE 15-gestionnaire de package-.NET Core
 description: Utilisez un gestionnaire de package pour installer kit SDK .NET Core et le runtime sur openSUSE 15.
 author: thraka
 ms.author: adegeo
-ms.date: 11/06/2019
-ms.openlocfilehash: 0b0d63da0ea01830120233d9aadb8333008569ae
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.date: 12/04/2019
+ms.openlocfilehash: 0ea232438aa4c61e2064d0323dc706dffac15039
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450988"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74836968"
 ---
 # <a name="opensuse-15-package-manager---install-net-core"></a>Gestionnaire de package openSUSE 15-installer .NET Core
 
@@ -17,7 +17,7 @@ ms.locfileid: "74450988"
 
 Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur openSUSE 15. Si vous installez le runtime, nous vous suggérons d’installer le [runtime ASP.net Core](#install-the-aspnet-core-runtime), car il comprend des runtimes .net Core et ASP.net core.
 
-## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Inscrire le flux et la clé Microsoft
 
 Avant d’installer .NET, vous devez :
 
@@ -25,7 +25,7 @@ Avant d’installer .NET, vous devez :
 - inscrire le dépôt du produit
 - Installer les dépendances requises
 
-Cette opération ne doit être effectuée qu’une fois par ordinateur.
+Vous ne devez faire ces opérations qu’une seule fois par machine.
 
 Ouvrez un terminal et exécutez les commandes suivantes.
 
@@ -42,7 +42,7 @@ sudo chown root:root /etc/zypp/repos.d/microsoft-prod.repo
 Mettez à jour les produits disponibles pour l’installation, puis installez le kit SDK .NET Core. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
-sudo zypper install dotnet-sdk-3.0
+sudo zypper install dotnet-sdk-3.1
 ```
 
 ## <a name="install-the-aspnet-core-runtime"></a>Installer le runtime ASP.NET Core
@@ -50,7 +50,7 @@ sudo zypper install dotnet-sdk-3.0
 Mettez à jour les produits disponibles pour l’installation, puis installez le runtime ASP.NET. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
-sudo zypper install aspnetcore-runtime-3.0
+sudo zypper install aspnetcore-runtime-3.1
 ```
 
 ## <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
@@ -58,7 +58,7 @@ sudo zypper install aspnetcore-runtime-3.0
 Mettez à jour les produits disponibles pour l’installation, puis installez le Runtime .NET Core. Dans votre terminal, exécutez la commande suivante.
 
 ```bash
-sudo zypper install dotnet-runtime-3.0
+sudo zypper install dotnet-runtime-3.1
 ```
 
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions

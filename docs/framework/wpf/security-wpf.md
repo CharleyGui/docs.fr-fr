@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 939c9c6b8a8a8822174f08d5c0b50ef051264ee1
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 75e6c7b4886bd490c462e9128eca7ec13f233824
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802086"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837296"
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
 <a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] applications autonomes s’exécutent avec des autorisations illimitées (jeu d’autorisations**FULLTRUST** cas), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un <xref:System.AppDomain> de confiance partielle à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
@@ -87,7 +87,7 @@ ms.locfileid: "74802086"
   
 <a name="InternetExplorerSecuritySettings"></a>   
 ## <a name="web-browsing-software-security-settings"></a>Paramètres de sécurité des logiciels de navigation web  
- Les paramètres de sécurité de votre ordinateur déterminent l’accès accordé à n’importe quel logiciel de navigation web. Le logiciel de navigation Web inclut tout composant ou application qui utilise les API [WinInet](https://go.microsoft.com/fwlink/?LinkId=179379) ou [urlmon](https://go.microsoft.com/fwlink/?LinkId=179383) , y compris Internet Explorer et PresentationHost. exe.  
+ Les paramètres de sécurité de votre ordinateur déterminent l’accès accordé à n’importe quel logiciel de navigation web. Le logiciel de navigation Web inclut tout composant ou application qui utilise les API [WinInet](/windows/win32/wininet/portal) ou [urlmon](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa767916(v=vs.85)) , y compris Internet Explorer et PresentationHost. exe.  
   
  Internet Explorer fournit un mécanisme permettant de configurer les fonctionnalités autorisées à être exécutées par ou à partir d’Internet Explorer, y compris les éléments suivants :  
   
@@ -148,14 +148,14 @@ ms.locfileid: "74802086"
   
 <a name="webbrowser_control_and_feature_controls"></a>   
 ## <a name="webbrowser-control-and-feature-controls"></a>Contrôle WebBrowser et contrôles de fonctionnalités  
- Le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF peut être utilisé pour héberger du contenu Web. Le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF encapsule le contrôle ActiveX WebBrowser sous-jacent. WPF offre une prise en charge de la sécurisation de votre application lorsque vous utilisez le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF pour héberger du contenu Web non fiable. Toutefois, certaines fonctionnalités de sécurité doivent être appliquées directement par les applications à l’aide du contrôle <xref:System.Windows.Controls.WebBrowser>. Pour plus d’informations sur le contrôle ActiveX WebBrowser, consultez [vues d’ensemble et didacticiels du contrôle WebBrowser](https://go.microsoft.com/fwlink/?LinkId=179388).  
+ Le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF peut être utilisé pour héberger du contenu Web. Le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF encapsule le contrôle ActiveX WebBrowser sous-jacent. WPF offre une prise en charge de la sécurisation de votre application lorsque vous utilisez le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF pour héberger du contenu Web non fiable. Toutefois, certaines fonctionnalités de sécurité doivent être appliquées directement par les applications à l’aide du contrôle <xref:System.Windows.Controls.WebBrowser>. Pour plus d’informations sur le contrôle ActiveX WebBrowser, consultez [vues d’ensemble et didacticiels du contrôle WebBrowser](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/aa752041(v=vs.85)).  
   
 > [!NOTE]
 > Cette section s’applique également au contrôle <xref:System.Windows.Controls.Frame>, car il utilise le <xref:System.Windows.Controls.WebBrowser> pour accéder au contenu HTML.  
   
  Si le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF est utilisé pour héberger du contenu Web non approuvé, votre application doit utiliser une <xref:System.AppDomain> de confiance partielle pour aider à isoler le code de votre application du code de script HTML potentiellement malveillant. Cela est particulièrement vrai si votre application interagit avec le script hébergé à l’aide de la méthode <xref:System.Windows.Controls.WebBrowser.InvokeScript%2A> et de la propriété <xref:System.Windows.Controls.WebBrowser.ObjectForScripting%2A>. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
   
- Si votre application utilise le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF, une autre façon d’augmenter la sécurité et d’atténuer les attaques consiste à activer les contrôles de fonctionnalités d’Internet Explorer. Les contrôles de fonctionnalités sont des ajouts à Internet Explorer qui permettent aux administrateurs et aux développeurs de configurer des fonctionnalités d’Internet Explorer et des applications qui hébergent le contrôle ActiveX WebBrowser, que le contrôle <xref:System.Windows.Controls.WebBrowser> WPF encapsule. Les contrôles de fonctionnalités peuvent être configurés à l’aide de la fonction [CoInternetSetFeatureEnabled](https://go.microsoft.com/fwlink/?LinkId=179394) ou en modifiant les valeurs dans le registre. Pour plus d’informations sur les contrôles de fonctionnalités, consultez Présentation des contrôles [de fonctionnalités](https://go.microsoft.com/fwlink/?LinkId=179390) et des [contrôles de fonctionnalités Internet](https://go.microsoft.com/fwlink/?LinkId=179392).  
+ Si votre application utilise le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF, une autre façon d’augmenter la sécurité et d’atténuer les attaques consiste à activer les contrôles de fonctionnalités d’Internet Explorer. Les contrôles de fonctionnalités sont des ajouts à Internet Explorer qui permettent aux administrateurs et aux développeurs de configurer des fonctionnalités d’Internet Explorer et des applications qui hébergent le contrôle ActiveX WebBrowser, que le contrôle <xref:System.Windows.Controls.WebBrowser> WPF encapsule. Les contrôles de fonctionnalités peuvent être configurés à l’aide de la fonction [CoInternetSetFeatureEnabled](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537168(v=vs.85)) ou en modifiant les valeurs dans le registre. Pour plus d’informations sur les contrôles de fonctionnalités, consultez Présentation des contrôles [de fonctionnalités](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537184(v=vs.85)) et des [contrôles de fonctionnalités Internet](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/general-info/ee330720(v=vs.85)).  
   
  Si vous développez une application WPF autonome qui utilise le contrôle de <xref:System.Windows.Controls.WebBrowser> WPF, WPF active automatiquement les contrôles de fonctionnalités suivants pour votre application.  
   
@@ -184,7 +184,7 @@ ms.locfileid: "74802086"
  Les contrôles de fonctionnalités sont appliqués par le processus qui instancie l’objet ActiveX WebBrowser. Par conséquent, si vous créez une application autonome qui peut accéder à un contenu non approuvé, vous devez sérieusement envisager d’activer des contrôles de fonctionnalités supplémentaires.  
   
 > [!NOTE]
-> Cette recommandation est basée sur les recommandations générales sur la sécurité des hôtes MSHTML et SHDOCVW. Pour plus d’informations, consultez [le Forum aux questions sur la sécurité de l’hôte MSHTML : partie I sur II](https://go.microsoft.com/fwlink/?LinkId=179396) et [le faq sur la sécurité de l’hôte MSHTML : partie II de II](https://go.microsoft.com/fwlink/?LinkId=179415).  
+> Cette recommandation est basée sur les recommandations générales sur la sécurité des hôtes MSHTML et SHDOCVW. Pour plus d’informations, consultez [le Forum aux questions sur la sécurité de l’hôte MSHTML : partie I sur II](https://msrc-blog.microsoft.com/archive/2009/04/02/the-mshtml-host-security-faq.aspx) et [le faq sur la sécurité de l’hôte MSHTML : partie II de II](https://msrc-blog.microsoft.com/archive/2009/04/03/the-mshtml-host-security-faq-part-ii-of-ii.aspx).  
   
  Pour votre fichier exécutable, envisagez d’activer les contrôles de fonctionnalités suivants en définissant la valeur de Registre sur 1.  
   
@@ -209,7 +209,7 @@ ms.locfileid: "74802086"
   
  Si vous exécutez une application de navigateur XAML de confiance partielle (XBAP) qui comprend un contrôle de <xref:System.Windows.Controls.WebBrowser> WPF dans Windows Internet Explorer, WPF héberge le contrôle ActiveX WebBrowser dans l’espace d’adressage du processus Internet Explorer. Étant donné que le contrôle ActiveX WebBrowser est hébergé dans le processus Internet Explorer, tous les contrôles de fonctionnalités pour Internet Explorer sont également activés pour le contrôle ActiveX WebBrowser.  
   
- Les applications XBAP exécutées dans Internet Explorer bénéficient également d’un niveau de sécurité supplémentaire par rapport aux applications autonomes normales. Cette sécurité supplémentaire est due au fait qu’Internet Explorer et, par conséquent, le contrôle ActiveX WebBrowser, s’exécute en mode protégé par défaut sur Windows Vista et Windows 7. Pour plus d’informations sur le mode protégé, consultez [présentation et utilisation du mode protégé d’Internet Explorer](https://go.microsoft.com/fwlink/?LinkId=179393).  
+ Les applications XBAP exécutées dans Internet Explorer bénéficient également d’un niveau de sécurité supplémentaire par rapport aux applications autonomes normales. Cette sécurité supplémentaire est due au fait qu’Internet Explorer et, par conséquent, le contrôle ActiveX WebBrowser, s’exécute en mode protégé par défaut sur Windows Vista et Windows 7. Pour plus d’informations sur le mode protégé, consultez [présentation et utilisation du mode protégé d’Internet Explorer](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/).  
   
 > [!NOTE]
 > Si vous essayez d’exécuter une application XBAP qui comprend un contrôle de <xref:System.Windows.Controls.WebBrowser> WPF dans Firefox, alors que dans la zone Internet, un <xref:System.Security.SecurityException> est levé. conformément à la stratégie de sécurité de WPF.  
@@ -266,7 +266,7 @@ ms.locfileid: "74802086"
   
 |Zone|Ressource|  
 |----------|--------------|  
-|Code managé|[Index des directives, conseils et procédures de sécurité pour les applications](https://go.microsoft.com/fwlink/?LinkId=117426)|  
+|Code managé|[Index des directives, conseils et procédures de sécurité pour les applications](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))|  
 |CAS|[Sécurité d’accès du code](../misc/code-access-security.md)|  
 |ClickOnce|[Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)|  
 |[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)|  
@@ -276,7 +276,7 @@ ms.locfileid: "74802086"
 - [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)
 - [Stratégie de sécurité de WPF - sécurité de la plateforme](wpf-security-strategy-platform-security.md)
 - [Stratégie de sécurité de WPF - ingénierie de sécurité](wpf-security-strategy-security-engineering.md)
-- [Index des directives, conseils et procédures de sécurité pour les applications](https://go.microsoft.com/fwlink/?LinkId=117426)
+- [Index des directives, conseils et procédures de sécurité pour les applications](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))
 - [Sécurité d’accès du code](../misc/code-access-security.md)
 - [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)
 - [Vue d’ensemble du langage XAML (WPF)](../../desktop-wpf/fundamentals/xaml.md)

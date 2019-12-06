@@ -2,12 +2,12 @@
 title: Suivi de workflow
 ms.date: 03/30/2017
 ms.assetid: 18737989-0502-4367-b5f6-617ebfb77c96
-ms.openlocfilehash: 7bca78b24963d94bfa0f2e2245a677b7dce455c9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 972520aae7a2af950ed1ba079769861173784148
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69933438"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837504"
 ---
 # <a name="workflow-tracing"></a>Suivi de workflow
 Le suivi de workflow offre une méthode de capture des informations de diagnostic à l'aide d'écouteurs de suivi .NET Framework. Le suivi peut être activé si un problème a été détecté dans l'application, puis désactivé de nouveau une fois le problème résolu. Deux méthodes s'offrent à vous pour activer le suivi de débogage pour les flux de travail. Vous pouvez le configurer à l'aide de la visionneuse de suivi d'événements ou bien utiliser l'objet <xref:System.Diagnostics> pour envoyer des événements de suivi à un fichier.  
@@ -21,11 +21,11 @@ Le suivi de workflow offre une méthode de capture des informations de diagnosti
   
 3. Lorsqu'un flux de travail exécute le débogage et qu'un suivi est émis vers le canal de débogage ETW, le suivi peut être affiché dans l'Observateur d'événements. Accédez à **observateur d’événements > journaux des applications et des services-> serveur d’applications Microsoft > Windows->-applications**. Cliquez avec le bouton droit sur **Debug** , puis sélectionnez **Actualiser**.  
   
-4. La taille de la mémoire tampon de trace analytique par défaut est de 4 kilo-octet (Ko) seulement. Il est recommandé d'augmenter la taille à 32 Ko. Pour ce faire, procédez comme suit.  
+4. La taille de la mémoire tampon de trace analytique par défaut est de 4 kilo-octet (Ko) seulement. Il est recommandé d'augmenter la taille à 32 Ko. Pour ce faire, effectuez les étapes suivantes.  
   
     1. Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle (par exemple, C:\Windows\Microsoft.NET\Framework\v4.0.21203) : `wevtutil um Microsoft.Windows.ApplicationServer.Applications.man`  
   
-    2. Remplacez la \<valeur de > bufferSize dans le fichier Windows. ApplicationServer. applications. Man par 32.  
+    2. Remplacez la valeur \<bufferSize > dans le fichier Windows. ApplicationServer. applications. Man par 32.  
   
         ```xml  
         <channel name="Microsoft-Windows-Application Server-Applications/Analytic" chid="ANALYTIC_CHANNEL" symbol="ANALYTIC_CHANNEL" type="Analytic" enabled="false" isolation="Application" message="$(string.MICROSOFT_WINDOWS_APPLICATIONSERVER_APPLICATIONS.channel.ANALYTIC_CHANNEL.message)" >  
@@ -38,10 +38,10 @@ Le suivi de workflow offre une méthode de capture des informations de diagnosti
     3. Exécutez la commande suivante dans le répertoire de l'infrastructure actuelle (par exemple, C:\Windows\Microsoft.NET\Framework\v4.0.21203) : `wevtutil im Microsoft.Windows.ApplicationServer.Applications.man`  
   
 > [!NOTE]
-> Si vous utilisez le profil client .NET Framework 4, vous devez d’abord enregistrer le manifeste ETW en exécutant la commande suivante à partir du répertoire .NET Framework 4:`ServiceModelReg.exe –i –c:etw`  
+> Si vous utilisez le profil client .NET Framework 4, vous devez d’abord enregistrer le manifeste ETW en exécutant la commande suivante à partir du répertoire .NET Framework 4 : `ServiceModelReg.exe –i –c:etw`  
   
 ## <a name="enabling-debug-tracing-using-systemdiagnostics"></a>Activation du suivi de débogage à l'aide de System.Diagnostics  
- Ces écouteurs peuvent être configurés dans le fichier App.config de l'application de workflow ou le fichier Web.config pour un service de workflow. Dans cet exemple, un [TextWriterTraceListener](https://go.microsoft.com/fwlink/?LinkId=165424) est configuré pour enregistrer les informations de suivi dans le fichier MyTraceLog. txt dans le répertoire actif.  
+ Ces écouteurs peuvent être configurés dans le fichier App.config de l'application de workflow ou le fichier Web.config pour un service de workflow. Dans cet exemple, une <xref:System.Diagnostics.TextWriterTraceListener> est configurée pour enregistrer les informations de traçage dans le fichier MyTraceLog. txt dans le répertoire actif.  
   
 ```xml  
 <configuration>  
@@ -71,5 +71,5 @@ Le suivi de workflow offre une méthode de capture des informations de diagnosti
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Surveillance des applications avec application Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

@@ -2,16 +2,16 @@
 title: NamedPipe Activation
 ms.date: 03/30/2017
 ms.assetid: f3c0437d-006c-442e-bfb0-6b29216e4e29
-ms.openlocfilehash: 78073ca222cab07bbc9cee5c1976cf7a6ee46295
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a562ec51d35af08f49e89b652670e9a57b0f00c2
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714691"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837855"
 ---
 # <a name="namedpipe-activation"></a>NamedPipe Activation
 
-Cet exemple illustre l'hébergement d'un service qui utilise le service d'activation des processus Windows (WAS) pour activer un service qui communique sur des canaux nommés. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et requiert l’exécution de [!INCLUDE[wv](../../../../includes/wv-md.md)].
+Cet exemple illustre l'hébergement d'un service qui utilise le service d'activation des processus Windows (WAS) pour activer un service qui communique sur des canaux nommés. Cet exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et requiert l’exécution de Windows Vista.
 
 > [!NOTE]
 > La procédure d'installation ainsi que les instructions de génération correspondant à cet exemple figurent en fin de rubrique.

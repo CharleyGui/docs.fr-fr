@@ -1,27 +1,27 @@
 ---
-title: 'Tutoriel : Créer son premier analyseur et correctif de code'
+title: 'Tutoriel : Écrire votre premier analyseur et correctif de code'
 description: Ce tutoriel fournit des instructions détaillées pour générer un analyseur et un correctif de code à l’aide du SDK .NET Compiler (API Roslyn).
 ms.date: 08/01/2018
 ms.custom: mvc
-ms.openlocfilehash: d6645a2a6e83f68c1959c255756393c9251dc1ba
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 7bd0fda9fb717a48c09aafde47f9b7f4f360c357
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105758"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837049"
 ---
-# <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Créer son premier analyseur et correctif de code
+# <a name="tutorial-write-your-first-analyzer-and-code-fix"></a>Tutoriel : Écrire votre premier analyseur et correctif de code
 
 Le SDK .NET Compiler Platform fournit les outils nécessaires pour créer des avertissements personnalisés qui ciblent C# ou le code Visual Basic. Votre **analyseur** contient le code qui reconnaît les violations de votre règle. Votre **correctif de code** contient le code qui résout la violation. Les règles que vous implémentez peuvent aller de la structure du code au style de codage et aux conventions d’affectation de noms, et bien plus encore. .NET Compiler Platform fournit le framework permettant d’exécuter l’analyse alors que les développeurs écrivent du code, et toutes les fonctionnalités de l’IU Visual Studio pour corriger le code : afficher des tildes dans l’éditeur, renseigner la liste d’erreurs Visual Studio, créer des suggestions « ampoule » et afficher un aperçu détaillé des corrections suggérées.
 
 Dans ce tutoriel, vous allez explorer la création d’un **analyseur** et d’un **correctif de code** associé à l’aide des API Roslyn. Un analyseur consiste à effectuer une analyse du code source et signaler un problème à l’utilisateur. Un analyseur peut également fournir un correctif de code qui représente une modification du code source de l’utilisateur. Ce tutoriel crée un analyseur qui recherche des déclarations de variables locales qui pourraient être déclarées à l’aide du modificateur `const` mais qui ne le sont pas. Le correctif de code associé modifie ces déclarations pour ajouter le modificateur `const`.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - [Visual Studio 2017](https://visualstudio.microsoft.com/vs/older-downloads/#visual-studio-2017-and-other-products)
 - [Visual Studio 2019](https://www.visualstudio.com/downloads)
 
-Vous devez installer le kit **.NET Compiler Platform SDK** avec Visual Studio Installer :
+Vous devez installer le kit de **développement logiciel (SDK) .NET Compiler Platform** via le Visual Studio installer :
 
 [!INCLUDE[interactive-note](~/includes/roslyn-installation.md)]
 
@@ -60,7 +60,7 @@ Le modèle Analyseur avec correctif de code crée trois projets : un contient l
 > [!TIP]
 > Lorsque vous exécutez votre analyseur, vous démarrez une deuxième copie de Visual Studio. Cette deuxième copie utilise un hive de Registre différent pour stocker les paramètres. Cela vous permet de différencier les paramètres Visual dans les deux copies de Visual Studio. Vous pouvez choisir un autre thème pour l’exécution expérimentale de Visual Studio. En outre, ne rendez pas vos paramètres itinérants et ne vous connectez pas à votre compte Visual Studio à l’aide de l’exécution expérimentale de Visual Studio. Cela permet de conserver les paramètres différents.
 
-Dans la deuxième instance de Visual Studio que vous venez de démarrer, créez un nouveau projet Application console C# (un projet .NET Core ou .NET Framework fonctionne -- les analyseurs travaillent au niveau source.) Placez le curseur sur le jeton souligné d’un trait ondulé et le texte d’avertissement fourni par un analyseur s’affiche.
+Dans la deuxième instance de Visual Studio que vous venez de démarrer, créez C# un projet d’application console (.net Core ou .NET Framework projet fonctionne, les analyseurs fonctionnent au niveau de la source.) Placez le curseur sur le jeton avec un soulignement ondulé et le texte d’avertissement fourni par un analyseur s’affiche.
 
 Le modèle crée un analyseur qui émet un avertissement sur chaque déclaration de type dont le nom de type contient des lettres minuscules, comme indiqué dans la figure suivante :
 
@@ -216,7 +216,7 @@ private async Task<Document> MakeConstAsync(Document document,
 
 Votre nouvelle méthode `MakeConstAsync` transformera <xref:Microsoft.CodeAnalysis.Document> qui représente le fichier source de l’utilisateur en un nouveau <xref:Microsoft.CodeAnalysis.Document> qui contient à présent une déclaration `const`.
 
-Vous créez un nouveau jeton de mot clé `const` à insérer au début de l’instruction de déclaration. Veillez tout d’abord à supprimer les trivia de début dans le premier jeton de l’instruction de déclaration et à les associer au jeton `const`. Ajoutez le code suivant à la méthode `MakeConstAsync` :
+Vous créez un nouveau jeton de mot clé `const` à insérer au début de l’instruction de déclaration. Veillez tout d’abord à supprimer les trivia de début dans le premier jeton de l’instruction de déclaration et à les associer au jeton `const`. Ajoutez le code suivant à la méthode `MakeConstAsync` :
 
 [!code-csharp[Create a new const keyword token](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst/MakeConstCodeFixProvider.cs#CreateConstToken  "Create the new const keyword token")]
 
@@ -427,7 +427,7 @@ Vous avez presque terminé. Il existe quelques conditions de plus que votre anal
 
 [!code-csharp[Mismatched types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsInvalid "When the variable type and the constant type don't match, there's no diagnostic")]
 
-En outre, les types de référence ne sont pas gérés correctement. La seule valeur de constante autorisée pour un type de référence est `null`, sauf dans le cas de <xref:System.String?displayProperty=nameWIthType>, qui autorise des littéraux de chaîne. En d’autres termes, `const string s = "abc"` est légal, mais pas `const object s = "abc"`. Cet extrait de code vérifie cette condition :
+En outre, les types de référence ne sont pas gérés correctement. La seule valeur de constante autorisée pour un type de référence est `null`, sauf dans le cas de <xref:System.String?displayProperty=nameWithType>, qui autorise des littéraux de chaîne. En d’autres termes, `const string s = "abc"` est légal, mais pas `const object s = "abc"`. Cet extrait de code vérifie cette condition :
 
 [!code-csharp[Reference types don't raise diagnostics](~/samples/csharp/roslyn-sdk/Tutorials/MakeConst/MakeConst.Test/MakeConstUnitTests.cs#DeclarationIsntString "When the variable type is a reference type other than string, there's no diagnostic")]
 

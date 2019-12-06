@@ -2,13 +2,13 @@
 title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
-ms.date: 06/26/2019
-ms.openlocfilehash: 3299f79ec62aebdcdbef38f1e8b09a2dc5529ec4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 12/04/2019
+ms.openlocfilehash: 5e80295a570adc30a06d86b6735cb0387e39d5a3
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117499"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835517"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -26,7 +26,7 @@ ms.locfileid: "71117499"
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
-    [--no-service-endpoint] [-s|--source] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
+    [--no-service-endpoint] [-s|--source] [--skip-duplicate] [-sk|--symbol-api-key] [-ss|--symbol-source] [-t|--timeout]
 dotnet nuget push [-h|--help]
 ```
 
@@ -52,7 +52,7 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
 
 * **`-h|--help`**
 
-Affiche une aide brève pour la commande.
+  Affiche une aide brève pour la commande.
 
 * **`--interactive`**
 
@@ -74,6 +74,10 @@ Affiche une aide brève pour la commande.
 
   Spécifie l’URL du serveur. Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.
 
+* **`--skip-duplicate`**
+
+  Lors du push de plusieurs packages sur un serveur HTTP (S), traite toute réponse de conflit 409 comme un avertissement afin que l’envoi puisse continuer. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
+                                 
 * **`-sk|--symbol-api-key <API_KEY>`**
 
   Clé d’API pour le serveur de symboles.
@@ -127,3 +131,9 @@ Affiche une aide brève pour la commande.
   > [!NOTE]
   > Si cette commande ne fonctionne pas, cela peut être dû à un bogue qui existait dans les versions antérieures du SDK (Kit SDK .NET Core 2.1 et versions antérieures).
   > Pour résoudre ce problème, mettez à niveau votre version du SDK ou exécutez la commande suivante à la place : `dotnet nuget push **/*.nupkg`
+  
+* Exécute un push de tous les fichiers *. nupkg* même si une réponse de conflit 409 est retournée par un serveur http (S) :
+
+  ```dotnetcli
+  dotnet nuget push *.nupkg --skip-duplicate
+  ```

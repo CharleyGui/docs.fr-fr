@@ -4,18 +4,21 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
-ms.openlocfilehash: 20fb3e9e517858b9cc5d6e9c1bd97bf949558843
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 3ef639d5b76e81856ec8370d10e098c455ca8b3d
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800741"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74836926"
 ---
 # <a name="rhel-81-package-manager---install-net-core"></a>Gestionnaire de package RHEL 8,1-installer .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
-Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 8,1.
+Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 8,1. .NET Core 3,1 n’est pas encore disponible pour RHEL 8,1.
+
+> [!NOTE]
+> RHEL 8,0 n’inclut pas .NET Core 3,0. Utilisez la commande `yum upgrade` pour effectuer une mise à jour vers RHEL 8,1.
 
 > [!NOTE]
 > RHEL 8,0 n’inclut pas .NET Core 3,0. Utilisez la commande `yum upgrade` pour effectuer une mise à jour vers RHEL 8,1.

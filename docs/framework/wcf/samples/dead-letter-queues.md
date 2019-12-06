@@ -2,12 +2,12 @@
 title: Dead Letter Queues
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: 70007289e457588e94128a573ced4b28e238acf4
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 244920eb9a0cdb33f4d5d83b939fe1166f4f5fcd
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710872"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837907"
 ---
 # <a name="dead-letter-queues"></a>Dead Letter Queues
 Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -16,7 +16,7 @@ Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être r
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
 > [!NOTE]
-> Cet exemple montre chaque file d'attente de lettres mortes d'application qui est uniquement disponible sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. L'exemple peut être modifié pour utiliser les files d'attente à l'échelle du système par défaut pour MSMQ 3.0 sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Cet exemple illustre la file d’attente de lettres mortes d’une application qui est uniquement disponible sur Windows Vista. L'exemple peut être modifié pour utiliser les files d'attente à l'échelle du système par défaut pour MSMQ 3.0 sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
 
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.
 
@@ -30,9 +30,9 @@ Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être r
 
 - `System`  la file d'attente de lettres mortes du système est utilisée pour stocker les lettres mortes. La file d'attente de lettres mortes du système est partagée par toutes les applications exécutées sur l'ordinateur.
 
-- `Custom` : une file d'attente de lettres mortes personnalisée spécifiée à l'aide de la propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> est utilisée pour stocker des messages morts. Cette fonctionnalité est disponible uniquement sur [!INCLUDE[wv](../../../../includes/wv-md.md)]. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
+- `Custom` : une file d'attente de lettres mortes personnalisée spécifiée à l'aide de la propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> est utilisée pour stocker des messages morts. Cette fonctionnalité est disponible uniquement sur Windows Vista. Elle est utilisée lorsque l'application doit utiliser sa propre file d'attente de lettres mortes au lieu de la partager avec d'autres applications exécutées sur le même ordinateur.
 
-- La propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> permet d'exprimer la file d'attente spécifique à utiliser comme file d'attente de lettres mortes. Elle est disponible uniquement dans [!INCLUDE[wv](../../../../includes/wv-md.md)].
+- La propriété <xref:System.ServiceModel.MsmqBindingBase.CustomDeadLetterQueue%2A> permet d'exprimer la file d'attente spécifique à utiliser comme file d'attente de lettres mortes. Disponible uniquement dans Windows Vista.
 
  Dans cet exemple, le client envoie un lot de messages au service à partir de l’étendue d’une transaction et indique un valeur arbitraire faible de durée de vie pour ces messages (approximativement 2 secondes). Le client indique également la file d'attente de lettres mortes personnalisée à utiliser pour mettre les messages qui ont expiré en file d'attente.
 

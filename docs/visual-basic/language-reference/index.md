@@ -10,12 +10,12 @@ helpviewer_keywords:
 - language reference, Visual Basic
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
-ms.openlocfilehash: 7e1838fe6c9d563358757700d74cbf27228812a9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ba611be8e63380f2bff958e37b72ffe8e0f90d9a
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349952"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837088"
 ---
 # <a name="visual-basic-language-reference"></a>Informations de référence sur le langage Visual Basic
 
@@ -56,7 +56,7 @@ Cette section fournit des informations de référence pour différents aspects d
  [Nothing](../../visual-basic/language-reference/nothing.md)  
  Décrit la valeur par défaut de tout type de données.  
   
- [Objets](../../visual-basic/language-reference/objects/index.md)  
+ [Objects](../../visual-basic/language-reference/objects/index.md)  
  Documente les objets disponibles dans Visual Basic et leurs membres.  
   
  [Opérateurs](../../visual-basic/language-reference/operators/index.md)  
@@ -85,8 +85,5 @@ Cette section fournit des informations de référence pour différents aspects d
   
 ## <a name="related-sections"></a>Sections connexes  
 
- [Visual Basic](../../visual-basic/index.md)  
- Fournit une aide complète sur toutes les zones du langage de Visual Basic.  
-  
  [Compilateur de ligne de commande de Visual Basic](../../visual-basic/reference/command-line-compiler/index.md)  
  Décrit comment utiliser le compilateur de ligne de commande comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio.

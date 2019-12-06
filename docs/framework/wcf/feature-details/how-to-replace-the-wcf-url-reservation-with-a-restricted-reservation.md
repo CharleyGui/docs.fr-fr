@@ -1,20 +1,20 @@
 ---
-title: 'Procédure : remplacer la réservation d’URL WCF par une réservation restreinte'
+title: "Procédure : remplacer la réservation d'URL WCF par une réservation restreinte"
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 981c4890b11130b937e176da78f378340c0d3894
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 900b258a1119b069e5ef0a6ff66078281bb06f1b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991661"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837387"
 ---
-# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d’URL WCF par une réservation restreinte
+# <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d'URL WCF par une réservation restreinte
 Une réservation d'URL vous permet de limiter les personnes qui reçoivent les messages d'une URL ou d'un jeu d'URL. Une réservation se compose d'un modèle d'URL, d'une liste de contrôle d'accès (ACL) et d'un jeu d'indicateurs. Le modèle d'URL définit les URL affectées par la réservation. Pour plus d’informations sur le traitement des modèles d’URL, consultez [routage des demandes entrantes](https://go.microsoft.com/fwlink/?LinkId=136764). L'ACL contrôle quel utilisateur ou groupe d'utilisateurs est autorisé à recevoir des messages en provenance des URL spécifiées. Les indicateurs spécifient si la réservation consiste à donner directement à un utilisateur ou à un groupe l'autorisation d'écouter l'URL ou à déléguer l'autorisation d'écouter à d'autres processus.  
   
  Dans le cadre de la configuration du système d’exploitation par défaut, Windows Communication Foundation (WCF) crée une réservation accessible globalement pour le port 80 afin de permettre à tous les utilisateurs d’exécuter des applications qui utilisent une liaison HTTP double pour la communication duplex. Étant donné que l'ACL sur cette réservation concerne tous les utilisateurs, les administrateurs ne peuvent pas explicitement accorder ou refuser l'autorisation d'écouter une URL ou un jeu d'URL. Cette rubrique explique comment supprimer cette réservation et comment la recréer avec une ACL restreinte.  
   
- Sur [!INCLUDE[wv](../../../../includes/wv-md.md)] ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], vous pouvez consulter toutes les réservations d'URL HTTP d'une invite de commandes de niveau élevé en tapant `netsh http show urlacl`.  L’exemple suivant montre à quoi doit ressembler une réservation d’URL WCF.  
+ Sur Windows Vista ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)] vous pouvez afficher toutes les réservations d’URL HTTP à partir d’une invite de commandes avec élévation de privilèges en tapant `netsh http show urlacl`.  L’exemple suivant montre à quoi doit ressembler une réservation d’URL WCF.  
 
 ```
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  
@@ -30,7 +30,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. Cliquez sur **Démarrer**, pointez sur **tous les programmes**, cliquez sur **accessoires**, cliquez avec le bouton droit sur invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur** dans le menu contextuel qui s' **affiche** . Cliquez sur **Continuer** dans la fenêtre contrôle de compte d’utilisateur (UAC) qui peut demander des autorisations pour continuer.  
   
-2. Tapez **netsh http Delete urlacl http://+:80/Temporary_Listen_Addresses/ URL =** dans la fenêtre d’invite de commandes.  
+2. Dans la fenêtre d’invite de commandes, tapez **netsh http Delete urlacl url =http://+:80/Temporary_Listen_Addresses/** .  
   
 3. Si la réservation est supprimée avec succès, le message suivant s'affiche. **La réservation d’URL a été supprimée**  
   
@@ -41,7 +41,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. Cliquez sur **Démarrer**, pointez sur **tous les programmes**, cliquez sur **accessoires**, cliquez avec le bouton droit sur invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur** dans le menu contextuel qui s' **affiche** . Cliquez sur **Continuer** dans la fenêtre contrôle de compte d’utilisateur (UAC) qui peut demander des autorisations pour continuer.  
   
-2. Tapez dans **net localgroup "\<nom du groupe de sécurité >"/comment\<: "Description du groupe de sécurité >"/Add** à l’invite de commandes. **Remplacez\<le nom du groupe de sécurité >** par le nom du groupe de sécurité que vous souhaitez créer et  **\<la description du groupe de sécurité >** par une description appropriée du groupe de sécurité.  
+2. Tapez **net localgroup "\<nom du groupe de sécurité >"/Comment : "\<Description du groupe de sécurité >"/Add** à l’invite de commandes. Remplacez **\<nom du groupe de sécurité >** par le nom du groupe de sécurité que vous souhaitez créer et **\<Description du groupe de sécurité >** par une description appropriée du groupe de sécurité.  
   
 3. Si le groupe de sécurité est créé avec succès, le message suivant s'affiche. **La commande s’est terminée avec succès.**  
   
@@ -55,6 +55,6 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
   
 1. Cliquez sur **Démarrer**, pointez sur **tous les programmes**, cliquez sur **accessoires**, cliquez avec le bouton droit sur invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur** dans le menu contextuel qui s' **affiche** . Cliquez sur **Continuer** dans la fenêtre contrôle de compte d’utilisateur (UAC) qui peut demander des autorisations pour continuer.  
   
-2. Dans l’invite de commandes, tapez **netsh http://+:80/Temporary_Listen_Addresses/ http add urlacl\< URL = user\\ = "nom de\> l’ordinateur > < nom du groupe de sécurité** . **Remplacez\<nom** de l’ordinateur > par le nom de l’ordinateur sur lequel le groupe doit être créé et  **\<nom du groupe de sécurité >** par le nom du groupe de sécurité que vous avez créé précédemment.  
+2. Dans l’invite de commandes, tapez **netsh http add urlacl url =http://+:80/Temporary_Listen_Addresses/ user = "\< nom de l’ordinateur >\\ < nom du groupe de sécurité\>** . En remplaçant **\<nom** de l’ordinateur > par le nom de l’ordinateur sur lequel le groupe doit être créé et **\<nom du groupe de sécurité >** par le nom du groupe de sécurité que vous avez créé précédemment.  
   
 3. Si la réservation est créée avec succès, le message suivant s'affiche. La **réservation d’URL a été ajoutée**.

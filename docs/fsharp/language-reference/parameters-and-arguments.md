@@ -1,13 +1,13 @@
 ---
 title: Paramètres et arguments
 description: En savoir F# plus sur la prise en charge linguistique pour définir des paramètres et passer des arguments à des fonctions, des méthodes et des propriétés.
-ms.date: 05/16/2016
-ms.openlocfilehash: e8094ffbc55870b5de75acb740aa2736ec6590a5
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.date: 12/04/2019
+ms.openlocfilehash: b234ef939128e7cf09d35f9580d4d5010d7dc639
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216827"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837127"
 ---
 # <a name="parameters-and-arguments"></a>Paramètres et arguments
 
@@ -25,7 +25,7 @@ Les paramètres fournis aux fonctions et aux méthodes sont, en général, des m
 
 Les méthodes utilisent généralement la forme de tuple de passage des arguments. Cela permet d’obtenir un résultat plus clair du point de vue d’autres langages .NET, car la forme de tuple correspond à la façon dont les arguments sont passés dans les méthodes .NET.
 
-La forme curryfiée est le plus souvent utilisée avec les fonctions créées à `let` l’aide de liaisons.
+La forme curryfiée est le plus souvent utilisée avec les fonctions créées à l’aide de liaisons `let`.
 
 Le pseudo-code suivant montre des exemples de tuple et d’arguments curryfiés.
 
@@ -50,7 +50,7 @@ Le modèle de caractère générique peut être utile lorsque vous n’avez pas 
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/parameters-and-arguments-1/snippet3802.fs)]
 
-Les autres modèles qui sont parfois utilisés dans les arguments `as` sont le modèle et les modèles d’identificateur associés aux unions discriminées et aux modèles actifs. Vous pouvez utiliser le modèle d’union discriminée à cas unique comme suit.
+Les autres modèles qui sont parfois utilisés dans les arguments sont le modèle de `as` et les modèles d’identificateurs associés aux unions discriminées et aux modèles actifs. Vous pouvez utiliser le modèle d’union discriminée à cas unique comme suit.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/parameters-and-arguments-1/snippet3803.fs)]
 
@@ -73,7 +73,7 @@ let radius (Polar(r, _)) = r
 let angle (Polar(_, theta)) = theta
 ```
 
-Vous pouvez utiliser le `as` modèle pour stocker une valeur correspondante comme valeur locale, comme indiqué dans la ligne de code suivante.
+Vous pouvez utiliser le modèle de `as` pour stocker une valeur correspondante en tant que valeur locale, comme indiqué dans la ligne de code suivante.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/parameters-and-arguments-1/snippet3805.fs)]
 
@@ -95,7 +95,7 @@ Les arguments des méthodes peuvent être spécifiés par position dans une list
 
 Les arguments nommés peuvent rendre le code plus lisible et plus adaptable à certains types de modifications dans l’API, tels que la réorganisation des paramètres de méthode.
 
-Les arguments nommés sont autorisés uniquement pour les méthodes, `let`pas pour les fonctions liées aux fonctions, les valeurs de fonctions ou les expressions lambda.
+Les arguments nommés sont autorisés uniquement pour les méthodes, pas pour les fonctions liées à `let`, les valeurs de fonctions ou les expressions lambda.
 
 L’exemple de code suivant illustre l’utilisation d’arguments nommés.
 
@@ -109,11 +109,11 @@ Pour plus d’informations, consultez [constructeurs (F#)](https://msdn.microsof
 
 ## <a name="optional-parameters"></a>Paramètres facultatifs
 
-Vous pouvez spécifier un paramètre facultatif pour une méthode à l’aide d’un point d’interrogation devant le nom du paramètre. Les F# paramètres facultatifs sont interprétés comme le type d’option, ce qui vous permet de les interroger de manière régulière que les types d' `match` options sont interrogés, en utilisant une expression avec `Some` et `None`. Les paramètres facultatifs sont autorisés uniquement sur les membres, et non sur `let` les fonctions créées à l’aide de liaisons.
+Vous pouvez spécifier un paramètre facultatif pour une méthode à l’aide d’un point d’interrogation devant le nom du paramètre. Les paramètres facultatifs sont interprétés comme le F# type d’option, ce qui vous permet de les interroger de manière régulière que les types d’options sont interrogés, en utilisant une expression `match` avec `Some` et `None`. Les paramètres facultatifs sont autorisés uniquement sur les membres, et non sur les fonctions créées à l’aide de `let` liaisons.
 
-Vous pouvez passer des valeurs facultatives existantes à la méthode par nom de `?arg=None` paramètre `?arg=Some(3)` , `?arg=arg`tel que ou. Cela peut être utile lors de la génération d’une méthode qui transmet des arguments facultatifs à une autre méthode.
+Vous pouvez transmettre des valeurs facultatives existantes à la méthode par nom de paramètre, par exemple `?arg=None` ou `?arg=Some(3)` ou `?arg=arg`. Cela peut être utile lors de la génération d’une méthode qui transmet des arguments facultatifs à une autre méthode.
 
-Vous pouvez également utiliser une fonction `defaultArg`, qui définit une valeur par défaut d’un argument facultatif. La `defaultArg` fonction prend le paramètre facultatif comme premier argument et la valeur par défaut comme second.
+Vous pouvez également utiliser une fonction `defaultArg`, qui définit une valeur par défaut d’un argument facultatif. La fonction `defaultArg` prend le paramètre facultatif comme premier argument et la valeur par défaut comme second.
 
 L’exemple suivant illustre l’utilisation de paramètres facultatifs.
 
@@ -130,7 +130,7 @@ Baud Rate: 9600 Duplex: Full Parity: false
 Baud Rate: 4800 Duplex: Half Parity: false
 ```
 
-Dans le cadre de C# et Visual Basic Interop, vous pouvez utiliser les `[<Optional; DefaultParameterValue<(...)>]` attributs F#dans, afin que les appelants voient un argument comme facultatif. Cela équivaut à définir l’argument comme facultatif dans C# comme dans. `MyMethod(int i = 3)`
+Dans le cadre de C# et Visual Basic Interop, vous pouvez utiliser les attributs `[<Optional; DefaultParameterValue<(...)>]` F#dans, afin que les appelants voient un argument comme facultatif. Cela équivaut à définir l’argument comme facultatif dans C# comme dans `MyMethod(int i = 3)`.
 
 ```fsharp
 open System
@@ -140,7 +140,7 @@ type C =
         printfn "%s" message
 ```
 
-Vous pouvez également spécifier un nouvel objet en tant que valeur de paramètre par défaut. Par exemple, le `Foo` membre peut avoir un facultatif `CancellationToken` comme entrée à la place :
+Vous pouvez également spécifier un nouvel objet en tant que valeur de paramètre par défaut. Par exemple, le membre `Foo` peut avoir un `CancellationToken` facultatif comme entrée à la place :
 
 ```fsharp
 open System.Threading
@@ -150,14 +150,14 @@ type C =
         printfn "%A" ct
 ```
 
-La valeur donnée comme argument de `DefaultParameterValue` doit correspondre au type du paramètre. Par exemple, ce qui suit n’est pas autorisé :
+La valeur fournie comme argument à `DefaultParameterValue` doit correspondre au type du paramètre. Par exemple, ce qui suit n’est pas autorisé :
 
 ```fsharp
 type C =
     static member Wrong([<Optional; DefaultParameterValue("string")>] i:int) = ()
 ```
 
-Dans ce cas, le compilateur génère un avertissement et ignore les deux attributs. Notez que la valeur `null` par défaut doit être annotée de type, dans le cas contraire, le compilateur déduit le type incorrect, c.-à-d. `[<Optional; DefaultParameterValue(null:obj)>] o:obj`
+Dans ce cas, le compilateur génère un avertissement et ignore les deux attributs. Notez que la valeur par défaut `null` doit être annotée de type, dans le cas contraire, le compilateur déduit le type incorrect, c’est-à-dire `[<Optional; DefaultParameterValue(null:obj)>] o:obj`.
 
 ## <a name="passing-by-reference"></a>Passer par référence
 
@@ -176,29 +176,30 @@ let example3 (x: byref<int>) =
     printfn "It'd %d" x
     x <- x + 1
 
-// No need to make it mutable, since it's read-only
-let x = 1
-example1 &x
+let test () =
+    // No need to make it mutable, since it's read-only
+    let x = 1
+    example1 &x
 
-// Needs to be mutable, since we write to it
-let mutable y = 2
-example2 &y
-example3 &y // Now 'y' is 3
+    // Needs to be mutable, since we write to it
+    let mutable y = 2
+    example2 &y
+    example3 &y // Now 'y' is 3
 ```
 
 Étant donné que le paramètre est un pointeur et que la valeur est mutable, toute modification apportée à la valeur est conservée après l’exécution de la fonction.
 
-Vous pouvez utiliser un tuple comme valeur de retour pour stocker des `out` paramètres dans les méthodes de la bibliothèque .net. Vous pouvez également traiter le `out` paramètre `byref` en tant que paramètre. L’exemple de code suivant illustre les deux méthodes.
+Vous pouvez utiliser un tuple comme valeur de retour pour stocker des paramètres de `out` dans les méthodes de la bibliothèque .NET. Vous pouvez également traiter le paramètre `out` en tant que paramètre `byref`. L’exemple de code suivant illustre les deux méthodes.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/parameters-and-arguments-1/snippet3810.fs)]
 
 ## <a name="parameter-arrays"></a>Tableaux de paramètres
 
-Il est parfois nécessaire de définir une fonction qui accepte un nombre arbitraire de paramètres de type hétérogène. Il n’est pas pratique de créer toutes les méthodes surchargées possibles pour tenir compte de tous les types qui pourraient être utilisés. Les implémentations .NET prennent en charge ces méthodes par le biais de la fonctionnalité de tableau de paramètres. Une méthode qui accepte un tableau de paramètres dans sa signature peut être fournie avec un nombre arbitraire de paramètres. Les paramètres sont placés dans un tableau. Le type des éléments du tableau détermine les types de paramètres qui peuvent être passés à la fonction. Si vous définissez le tableau de paramètres `System.Object` avec comme type d’élément, le code client peut passer des valeurs de n’importe quel type.
+Il est parfois nécessaire de définir une fonction qui accepte un nombre arbitraire de paramètres de type hétérogène. Il n’est pas pratique de créer toutes les méthodes surchargées possibles pour tenir compte de tous les types qui pourraient être utilisés. Les implémentations .NET prennent en charge ces méthodes par le biais de la fonctionnalité de tableau de paramètres. Une méthode qui accepte un tableau de paramètres dans sa signature peut être fournie avec un nombre arbitraire de paramètres. Les paramètres sont placés dans un tableau. Le type des éléments du tableau détermine les types de paramètres qui peuvent être passés à la fonction. Si vous définissez le tableau de paramètres avec `System.Object` comme type d’élément, le code client peut passer des valeurs de n’importe quel type.
 
 Dans F#, les tableaux de paramètres ne peuvent être définis que dans des méthodes. Elles ne peuvent pas être utilisées dans des fonctions autonomes ou des fonctions définies dans des modules.
 
-Vous définissez un tableau de paramètres à l' `ParamArray` aide de l’attribut. L' `ParamArray` attribut ne peut être appliqué qu’au dernier paramètre.
+Vous définissez un tableau de paramètres à l’aide de l’attribut `ParamArray`. L’attribut `ParamArray` ne peut être appliqué qu’au dernier paramètre.
 
 Le code suivant illustre l’appel d’une méthode .NET qui accepte un tableau de paramètres et la définition d’un type F# dans, qui a une méthode qui prend un tableau de paramètres.
 

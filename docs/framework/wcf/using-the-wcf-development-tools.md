@@ -2,12 +2,12 @@
 title: Utilisation des outils de développement WCF
 ms.date: 03/30/2017
 ms.assetid: 054adb87-c244-4d5a-83d1-0b2b44bd454b
-ms.openlocfilehash: 59913f4c00c32699d788e2a0244798fc652361be
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 8253a9136b2310deeb7c6d162a9f190c13ba02da
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802406"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837725"
 ---
 # <a name="using-the-wcf-development-tools"></a>Utilisation des outils de développement WCF
 Cette section décrit les outils de développement Visual Studio qui peuvent vous aider à développer vos WCFservice.  
@@ -37,7 +37,7 @@ Cette section décrit les outils de développement Visual Studio qui peuvent vou
 ## <a name="using-the-tools-without-administrator-privilege"></a>Utilisation des outils sans privilège d'administrateur  
  Pour permettre aux utilisateurs sans privilège d’administrateur de développer des services WCF, une liste de contrôle d’accès Access Control (ACL) est créée pour l’espace de noms « http://+:8731/Design_Time_Addresses » pendant l’installation de Visual Studio. La liste ACL a la valeur (UI), qui inclut tous les utilisateurs interactifs ayant ouvert une session sur l'ordinateur. Les administrateurs peuvent ajouter ou supprimer des utilisateurs de cette liste ACL ou ouvrir des ports supplémentaires. Cette liste ACL permet aux modèles WCF ou WF d'envoyer et de recevoir des données dans leur configuration par défaut. Il permet également aux utilisateurs d’utiliser l’hôte auto du service WCF (wcfSvcHost. exe) sans leur accorder de privilèges d’administrateur.  
   
- Vous pouvez modifier l'accès à l'aide de l'outil Netsh.exe dans [!INCLUDE[wv](../../../includes/wv-md.md)] par le biais du compte d'administrateur supérieur. L'utilisation de Netsh.exe est illustrée dans l'exemple suivant.  
+ Vous pouvez modifier l’accès à l’aide de l’outil netsh. exe dans Windows Vista sous le compte d’administrateur avec élévation de privilèges. L'utilisation de Netsh.exe est illustrée dans l'exemple suivant.  
   
 ```console  
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>  

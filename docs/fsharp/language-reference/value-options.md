@@ -1,13 +1,13 @@
 ---
 title: Options de valeurs
 description: En savoir plus F# sur le type d’option de valeur, qui est une version struct du type d’option.
-ms.date: 02/06/2019
-ms.openlocfilehash: 4dc3f7217943345b7aaf1165fd648ab2e01bd727
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 12/04/2019
+ms.openlocfilehash: 0e9882ab4acdf2757705ef6022516d3572d87ef2
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424017"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837114"
 ---
 # <a name="value-options"></a>Options de valeurs
 
@@ -63,15 +63,13 @@ Il existe une propriété pour les options de valeur pour l’instant : `Value`
 
 ## <a name="value-option-functions"></a>Fonctions de l’option value
 
-Il existe actuellement une fonction liée à un module pour les options de valeur, `defaultValueArg`:
+Le module `ValueOption` dans FSharp. Core contient des fonctionnalités équivalentes à celles du module `Option`. Il existe quelques différences dans le nom, par exemple `defaultValueArg`:
 
 ```fsharp
 val defaultValueArg : arg:'T voption -> defaultValue:'T -> 'T
 ```
 
-Comme avec la fonction `defaultArg`, `defaultValueArg` retourne la valeur sous-jacente de l’option de valeur donnée, le cas échéant. Sinon, elle retourne la valeur par défaut spécifiée.
-
-À ce stade, il n’y a pas d’autres fonctions liées aux modules pour les options de valeur.
+Cela se fait de la même façon que `defaultArg` dans le module `Option`, mais fonctionne à la place sur une option de valeur.
 
 ## <a name="see-also"></a>Voir aussi
 

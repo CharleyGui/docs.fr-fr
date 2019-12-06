@@ -2,12 +2,12 @@
 title: ETW Tracing
 ms.date: 03/30/2017
 ms.assetid: ac99a063-e2d2-40cc-b659-d23c2f783f92
-ms.openlocfilehash: c9f2b3019ee30ded59a7549a4d3be834c9ab9811
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 25a4281cbf5a9ad81a63eee13d768715eebedfb6
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716430"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837894"
 ---
 # <a name="etw-tracing"></a>ETW Tracing
 Cet exemple montre comment implémenter le suivi de bout en bout (E2E) à l'aide du suivi d'événements pour Windows (ETW, Event Tracing for Windows) et du `ETWTraceListener` fourni dans cet exemple. L’exemple est basé sur le [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et comprend le suivi ETW.  
@@ -85,7 +85,7 @@ logman stop Wcf
 2. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
     > [!NOTE]
-    > Pour exécuter les commandes RegisterProvider.bat, SetupETW.bat et CleanupETW.bat, vous devez utiliser un compte d'administrateur local. Si vous utilisez [!INCLUDE[wv](../../../../includes/wv-md.md)] ou version ultérieure, vous devez également exécuter l'invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**.  
+    > Pour exécuter les commandes RegisterProvider.bat, SetupETW.bat et CleanupETW.bat, vous devez utiliser un compte d'administrateur local. Si vous utilisez Windows Vista ou une version ultérieure, vous devez également exécuter l’invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**.  
   
 3. Avant d'exécuter l'exemple, exécutez RegisterProvider.bat sur le client et le serveur. Cette opération installe le fichier ETWTracingSampleLog.etl qui permet de générer les suivis que vous pourrez ensuite afficher dans Service Trace Viewer. Ce fichier se trouve dans le dossier C:\logs. Si ce dossier n'existe pas, il doit être créé. Si vous ne respectez pas cette consigne, aucun suivi ne pourra être généré. Exécutez ensuite SetupETW.bat sur le client et le serveur pour démarrer la session de suivi ETW. Le fichier SetupETW.bat se trouve sous le dossier CS\Client.  
   

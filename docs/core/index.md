@@ -2,14 +2,14 @@
 title: Guide .NET Core
 description: .NET Core est une implémentation modulaire à hautes performances de .NET pour la création d’applications Windows, Linux et Mac. Découvrez .NET Core pour démarrer.
 author: richlander
-ms.date: 09/23/2019
+ms.date: 12/04/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 95f18ca09852ce139a4b99ed7aef4802d4883e13
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: b2622dba53d64c9dcf58e852d57de117fe79eb2e
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216222"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837010"
 ---
 # <a name="net-core-guide"></a>Guide .NET Core
 
@@ -25,13 +25,13 @@ Téléchargez le [Kit SDK .net Core](https://www.microsoft.com/net/download) pou
 
 Toutes les versions de .NET Core sont disponibles sur [Téléchargements de .NET Core](https://dotnet.microsoft.com/download/dotnet-core) si vous recherchez une autre version de .NET Core.
 
-## <a name="net-core-30"></a>.NET Core 3.0
+## <a name="net-core-31"></a>.NET Core 3,1
 
-La dernière version est .NET Core 3,0. Les nouvelles fonctionnalités incluent la prise en charge des postes de travail Windows avec Windows Presentation Foundation ( C# WPF) et Windows Forms, le développement Web de pile complet avec éblouissant, les nouvelles améliorations apportées aux services signalr et Azure signalr, de nouvelles C# fonctionnalités de langage avec C# 8 , et bien plus encore. Pour obtenir la liste complète des nouvelles fonctionnalités de .NET Core 3,0, consultez [Nouveautés de .net core 3,0](./whats-new/dotnet-core-3-0.md).
+La dernière version est .NET Core 3,1. Ce qui comprend des améliorations mineures par rapport à .NET Core 3,0. Toutefois, .NET Core 3,1 est une version prise en charge à long terme. Pour plus d’informations sur la version 3,1 de .NET Core, consultez [what’s New in .net core 3,1](./whats-new/dotnet-core-3-1.md).
 
 ## <a name="create-your-first-application"></a>Créer votre première application
 
-Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Tapez les commandes `dotnet` suivantes pour créer et exécuter une C# application :
+Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Tapez les commandes de `dotnet` suivantes pour créer et exécuter C# une application :
 
 ```dotnetcli
 dotnet new console
@@ -44,7 +44,7 @@ Vous devez voir la sortie suivante :
 Hello World!
 ```
 
-## <a name="support"></a>Support
+## <a name="support"></a>Prise en charge de
 
 .NET Core est [pris en charge par Microsoft](https://dotnet.microsoft.com/platform/support/policy), sur Windows, MacOS et Linux. La sécurité et la qualité sont mises à jour plusieurs fois par an, en général, tous les mois.
 

@@ -5,12 +5,12 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.custom: seodec18
-ms.openlocfilehash: ad02cf9eefafd3711ccf654e23f075a00f035e2a
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 63bbe2981f70093c94dde47510fd7786a1cc950b
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551828"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74835458"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
 
@@ -41,7 +41,7 @@ Les projets de test unitaire .NET Core sont pris en charge pour :
 
 - [C#](../../csharp/index.yml)
 - [F#](../../fsharp/index.yml)
-- [Visual Basic](../../visual-basic/index.md) 
+- [Visual Basic](../../visual-basic/index.yml) 
 
 Vous pouvez également choisir entre :
 

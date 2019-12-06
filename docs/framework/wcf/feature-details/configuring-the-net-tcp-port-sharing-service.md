@@ -2,12 +2,12 @@
 title: Configuration du service de partage de ports Net.TCP
 ms.date: 03/30/2017
 ms.assetid: b6dd81fa-68b7-4e1b-868e-88e5901b7ea0
-ms.openlocfilehash: 70ebaeb8b41b0191e0352b5ef6a4b1913994100c
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: 2ff622dc97e63bd0ee10f00c7515692be8df09a1
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69988228"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837452"
 ---
 # <a name="configuring-the-nettcp-port-sharing-service"></a>Configuration du service de partage de ports Net.TCP
 Les services auto-hébergés qui utilisent le transport Net.TCP peuvent contrôler plusieurs paramètres avancés, tels que `ListenBacklog` et `MaxPendingAccepts`, qui gouvernent le comportement du socket TCP sous-jacent utilisé pour la communication réseau. Toutefois, pour chaque socket, ces paramètres ne s’appliquent qu’au niveau de la liaison si la liaison de transport a désactivé le partage de port, activé par défaut.  
@@ -49,14 +49,14 @@ Les services auto-hébergés qui utilisent le transport Net.TCP peuvent contrôl
 ```  
   
 ## <a name="when-to-modify-smsvchostexeconfig"></a>Quand modifier SMSvcHost.exe.config  
- En général, il convient de prêter une attention particulière à la modification du contenu du fichier SMSvcHost.exe.config, parce que tout paramètre de configuration spécifié dans ce fichier affecte l'ensemble des services sur un ordinateur utilisant le service de partage de ports Net.TCP. Cela inclut les applications sous [!INCLUDE[wv](../../../../includes/wv-md.md)] qui utilisent les fonctionnalités d’activation TCP du service d’activation de processus de Windows (WAS).  
+ En général, il convient de prêter une attention particulière à la modification du contenu du fichier SMSvcHost.exe.config, parce que tout paramètre de configuration spécifié dans ce fichier affecte l'ensemble des services sur un ordinateur utilisant le service de partage de ports Net.TCP. Cela comprend les applications sur Windows Vista qui utilisent les fonctionnalités d’activation TCP du service d’activation des processus Windows (WAS).  
   
  Toutefois, il est parfois nécessaire de modifier la configuration par défaut du service de partage de ports Net.TCP. Par exemple, la valeur par défaut pour `maxPendingAccepts` est 4 * nombre de processeurs. Les serveurs qui hébergent un grand nombre des services utilisant le partage de port doivent augmenter cette valeur pour atteindre le débit maximal. La valeur par défaut `maxPendingConnections` est 100. Vous devez également envisager d’augmenter cette valeur s’il existe plusieurs clients simultanés appelant le service et le service supprime des connexions clientes.  
   
- SMSvcHost.exe.config contient également des informations concernant les identités de processus qui peuvent utiliser le service de partage de ports. Lorsqu'un processus se connecte au service de partage de ports pour utiliser un port TCP partagé, l'identité de processus de la connexion est vérifiée dans une liste répertoriant les identités autorisées à utiliser le service. Ces identités sont spécifiées comme identificateurs de sécurité (SID \<) dans la section allowAccounts > du fichier SMSvcHost. exe. config. Par défaut, l'autorisation d'utiliser le service de partage de ports est accordée aux comptes système (LocalService, LocalSystem et NetworkService) ainsi qu'aux membres du groupe Administrateurs. Les applications qui autorisent un processus exécuté en tant qu'autre identité (par exemple, une identité de l'utilisateur) à se connecter au service de partage de ports doivent ajouter explicitement le SID approprié au fichier SMSvcHost.exe.config (ces modifications ne sont appliquées que lorsque le processus SMSvc.exe est redémarré).  
+ SMSvcHost.exe.config contient également des informations concernant les identités de processus qui peuvent utiliser le service de partage de ports. Lorsqu'un processus se connecte au service de partage de ports pour utiliser un port TCP partagé, l'identité de processus de la connexion est vérifiée dans une liste répertoriant les identités autorisées à utiliser le service. Ces identités sont spécifiées comme identificateurs de sécurité (SID) dans la section \<allowAccounts > du fichier SMSvcHost. exe. config. Par défaut, l'autorisation d'utiliser le service de partage de ports est accordée aux comptes système (LocalService, LocalSystem et NetworkService) ainsi qu'aux membres du groupe Administrateurs. Les applications qui autorisent un processus exécuté en tant qu'autre identité (par exemple, une identité de l'utilisateur) à se connecter au service de partage de ports doivent ajouter explicitement le SID approprié au fichier SMSvcHost.exe.config (ces modifications ne sont appliquées que lorsque le processus SMSvc.exe est redémarré).  
   
 > [!NOTE]
-> Sous les systèmes [!INCLUDE[wv](../../../../includes/wv-md.md)] avec contrôle de compte utilisateur (UAC) activé, les utilisateurs locaux requièrent des autorisations élevées même si leur compte est un membre du groupe Administrateurs. Pour permettre à ces utilisateurs d’utiliser le service de partage de ports sans élévation, le SID de l’utilisateur (ou le SID d’un groupe dont l’utilisateur est membre) doit être ajouté explicitement à la \<section allowAccounts > de SMSvcHost. exe. config.  
+> Sur les systèmes Windows Vista avec le contrôle de compte d’utilisateur activé, les utilisateurs locaux nécessitent des autorisations élevées, même si leur compte est membre du groupe administrateurs. Pour permettre à ces utilisateurs d’utiliser le service de partage de ports sans élévation, le SID de l’utilisateur (ou le SID d’un groupe dont l’utilisateur est membre) doit être ajouté explicitement à la section \<allowAccounts > de SMSvcHost. exe. config.  
   
 > [!WARNING]
 > Le fichier SMSvcHost.exe.config par défaut spécifie un `etwProviderId` personnalisé pour empêcher le traçage SMSvcHost.exe d'interférer avec les traces de service.  

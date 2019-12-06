@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - basic samples [WCF], getting started
 ms.assetid: 967a3d94-0261-49ff-b85a-20bb07f1af20
-ms.openlocfilehash: 3282daff166a8fe56841a41bfe8bd9dd69f9d4c8
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 59f9edf67c03fb7d8670058eca8ea672a6f64c02
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716944"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837868"
 ---
 # <a name="getting-started-sample"></a>Getting Started, exemple
 
@@ -34,7 +34,7 @@ Le service décrit les opérations qu'il effectue dans un contrat de service qu'
 
 Le client contient une définition du contrat de service et une classe proxy permettant d'accéder au service. Le code proxy est généré à partir des métadonnées du service à l’aide de l' [outil ServiceModel Metadata Utility Tool (Svcutil. exe)](../../../../docs/framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md).
 
-Sur [!INCLUDE[wv](../../../../includes/wv-md.md)], le service est hébergé dans le service d'activation de processus de Windows (WAS). Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], il est hébergé par les services IIS (Internet Information Services) et ASP.NET. L'hébergement d'un service dans les services IIS ou WAS lui permet d'être activé automatiquement lorsqu'il est accédé pour la première fois.
+Sur Windows Vista, le service est hébergé dans le service d’activation Windows (WAS). Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], il est hébergé par les services IIS (Internet Information Services) et ASP.NET. L'hébergement d'un service dans les services IIS ou WAS lui permet d'être activé automatiquement lorsqu'il est accédé pour la première fois.
 
 > [!NOTE]
 > Si vous préférez prendre en main un exemple qui héberge le service dans une application console au lieu d’IIS, consultez l’exemple [auto-hôte](../../../../docs/framework/wcf/samples/self-host.md) .

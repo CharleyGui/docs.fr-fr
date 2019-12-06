@@ -1,15 +1,15 @@
 ---
-title: Objets
+title: Objets du
 ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [Visual Basic]
 ms.assetid: 651c73e4-dca8-402b-9c6b-e3902b3a3f4b
-ms.openlocfilehash: 8956d8dd8f46b4235d71802ccc743dfebcb051be
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2108e36956ada98e48e6ab05cec56dbf2a12b3dd
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344159"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838258"
 ---
 # <a name="objects-visual-basic"></a>Objets (Visual Basic)
 Cette rubrique fournit des liens vers d’autres rubriques qui documentent les objets runtime Visual Basic et contiennent des tables de leurs procédures, propriétés et événements membres.  
@@ -48,4 +48,3 @@ Cette rubrique fournit des liens vers d’autres rubriques qui documentent les o
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur le langage Visual Basic](../../../visual-basic/language-reference/index.md)
-- [Visual Basic](../../../visual-basic/index.md)

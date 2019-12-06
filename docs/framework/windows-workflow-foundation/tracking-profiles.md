@@ -2,12 +2,12 @@
 title: Modèles de suivi
 ms.date: 03/30/2017
 ms.assetid: 22682566-1cd9-4672-9791-fb3523638e18
-ms.openlocfilehash: a643cf37bbb3e72baefb434249aa54b386060627
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: 9217f25ba4499e7ff75020642be387aa79ba27bf
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67660927"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837621"
 ---
 # <a name="tracking-profiles"></a>Modèles de suivi
 
@@ -17,7 +17,7 @@ Les profils de suivi contiennent des requêtes de suivi qui permettent à un par
 
 Les modèles de suivi sont utilisés pour indiquer les informations suivi émises pour une instance de workflow. Si aucun profil n'est spécifié, tous les événements de suivi sont émis. Si un profil est spécifié, les événements de suivi spécifiés dans le profil seront émis. Selon vos exigences d’analyse, vous pouvez écrire un profil très général, qui s’abonne à un petit jeu de modifications d’état de haut niveau d’un flux de travail. Inversement, vous pouvez créer un profil très détaillé dont les événements résultants sont assez riches pour reconstruire ultérieurement un flux d'exécution détaillé.
 
-Profils de suivi se manifestent en tant qu’éléments XML dans un fichier de configuration .NET Framework standard ou spécifiée dans le code. L'exemple suivant illustre un modèle de suivi [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] dans un fichier de configuration qui permet à un participant au suivi de s'abonner aux événements de flux de travail `Started` et `Completed`.
+Les profils de suivi se manifestent eux-mêmes en tant qu’éléments XML dans un fichier de configuration .NET Framework standard ou spécifiés dans le code. L'exemple suivant illustre un modèle de suivi [!INCLUDE[netfx_current_long](../../../includes/netfx-current-long-md.md)] dans un fichier de configuration qui permet à un participant au suivi de s'abonner aux événements de flux de travail `Started` et `Completed`.
 
 ```xml
 <system.serviceModel>
@@ -59,13 +59,13 @@ TrackingProfile profile = new TrackingProfile()
 };
 ```
 
-Les enregistrements de suivi sont filtrés en mode de visibilité à l'aide de l'attribut <xref:System.Activities.Tracking.ImplementationVisibility> dans un modèle de suivi. Une activité composite est une activité de niveau supérieur qui contient d'autres activités qui forment son implémentation. Le mode de visibilité spécifie les enregistrements de suivi émis à partir d'activités composites dans une activité de flux de travail, afin de définir si les activités qui forment l'implémentation sont suivies. Le mode de visibilité s'applique au niveau du modèle de suivi. Les requêtes dans le modèle de suivi contrôlent le filtrage des enregistrements de suivi pour chaque activité d'un flux de travail. Pour plus d’informations, consultez le **Types de requêtes de profil de suivi** section dans ce document.
+Les enregistrements de suivi sont filtrés en mode de visibilité à l'aide de l'attribut <xref:System.Activities.Tracking.ImplementationVisibility> dans un modèle de suivi. Une activité composite est une activité de niveau supérieur qui contient d'autres activités qui forment son implémentation. Le mode de visibilité spécifie les enregistrements de suivi émis à partir d'activités composites dans une activité de flux de travail, afin de définir si les activités qui forment l'implémentation sont suivies. Le mode de visibilité s'applique au niveau du modèle de suivi. Les requêtes dans le modèle de suivi contrôlent le filtrage des enregistrements de suivi pour chaque activité d'un flux de travail. Pour plus d’informations, consultez la section **types de requêtes** de modèle de suivi dans ce document.
 
 Les deux modes de visibilité spécifiés par l'attribut `implementationVisibility` dans le modèle de suivi sont `RootScope` et `All`. Le mode `RootScope` supprime les enregistrements de suivi pour les activités qui forment l'implémentation d'une activité, dans le cas où une activité composite n'est pas la racine d'un flux de travail. Cela implique que, lorsqu'une activité implémentée à l'aide d'autres activités est ajoutée à un flux de travail et que l'attribut `implementationVisibility` est défini sur RootScope, seule l'activité de niveau supérieur dans cette activité composite est suivie. Si une activité est la racine du flux de travail, l'implémentation de cette activité est le flux de travail lui-même et les enregistrements de suivi sont émis pour les activités qui forment l'implémentation. Le mode All permet d'émettre tous les enregistrements de suivi pour l'activité racine et l'ensemble de ses activités composites.
 
-Par exemple, supposons que *MyActivity* est une activité composite dont l’implémentation contiendrait deux activités, *Activity1* et *Activity2*. Lorsque cette activité est ajoutée à un flux de travail et le suivi est activé avec un modèle de suivi avec `implementationVisibility` définie sur `RootScope`, enregistrements de suivi sont émis uniquement pour *MyActivity*. Toutefois, aucun enregistrement n’est émis pour les activités *Activity1* et *Activity2*.
+Par exemple, supposons que *MyActivity* est une activité composite dont l’implémentation contient deux activités, *Activity1* et *Activity2*. Lorsque cette activité est ajoutée à un flux de travail et que le suivi est activé avec un modèle de suivi avec `implementationVisibility` défini sur `RootScope`, les enregistrements de suivi sont émis uniquement pour *MyActivity*. Toutefois, aucun enregistrement n’est émis pour les activités *Activity1* et *Activity2*.
 
-Toutefois, si le `implementationVisibility` pour le profil de suivi a la valeur d’attribut `All`, puis les enregistrements de suivi sont émis non seulement pour *MyActivity*, mais aussi pour les activités *Activity1* et  *Activity2*.
+Toutefois, si l’attribut `implementationVisibility` du modèle de suivi est défini sur `All`, les enregistrements de suivi sont émis non seulement pour les *MyActivity*, mais également pour les activités *Activity1* et *Activity2*.
 
 L'indicateur `implementationVisibility` s'applique aux types d'enregistrements de suivi suivants :
 
@@ -150,7 +150,7 @@ Les modèles de suivi sont structurés comme des abonnements déclaratifs aux en
   };
   ```
 
-- Objet <xref:System.Activities.Tracking.ActivityStateQuery> - Permet de suivre les changements dans le cycle de vie des activités qui composent une instance de workflow. Par exemple, vous souhaiterez effectuer le suivi de chaque fois que l’activité « Envoyer un message électronique » se termine dans une instance de workflow. Cette requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.ActivityStateRecord>. Les états disponibles auxquels s'abonner sont spécifiés dans l'objet <xref:System.Activities.Tracking.ActivityStates>.
+- Objet <xref:System.Activities.Tracking.ActivityStateQuery> - Permet de suivre les changements dans le cycle de vie des activités qui composent une instance de workflow. Par exemple, vous pouvez effectuer le suivi de chaque fois que l’activité « Envoyer un message électronique » se termine dans une instance de Workflow. Cette requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.ActivityStateRecord>. Les états disponibles auxquels s'abonner sont spécifiés dans l'objet <xref:System.Activities.Tracking.ActivityStates>.
 
   L'exemple suivant indique la configuration et le code servant à s'abonner à des enregistrements de suivi d'état d'activité qui utilisent l'objet <xref:System.Activities.Tracking.ActivityStateQuery> pour l'activité `SendEmailActivity`.
 
@@ -234,7 +234,7 @@ Les modèles de suivi sont structurés comme des abonnements déclaratifs aux en
 
 - Objet <xref:System.Activities.Tracking.CancelRequestedQuery> - Permet de suivre les demandes d'annulation d'une activité enfant par l'activité parente. La requête est nécessaire pour qu'un objet <xref:System.Activities.Tracking.TrackingParticipant> s'abonne à des objets <xref:System.Activities.Tracking.CancelRequestedRecord>.
 
-  La configuration et le code utilisé pour s’abonner aux enregistrements liés à l’activité à l’aide de l’annulation <xref:System.Activities.Tracking.CancelRequestedQuery> est illustré dans l’exemple suivant.
+  La configuration et le code utilisés pour s’abonner aux enregistrements liés à l’annulation de l’activité à l’aide de <xref:System.Activities.Tracking.CancelRequestedQuery> sont présentés dans l’exemple suivant.
 
   ```xml
   <cancelRequestedQueries>
@@ -308,7 +308,7 @@ Les modèles de suivi sont structurés comme des abonnements déclaratifs aux en
 
 ### <a name="annotations"></a>Annotations
 
-Grâce aux annotations, vous pouvez baliser arbitrairement des enregistrements de suivi avec une valeur configurable après la génération. Par exemple, vous souhaiterez plusieurs enregistrements de suivi sur plusieurs flux de travail soient balisés avec « Mail Server » == « Mail Server1 ». Lors de l’interrogation ultérieure d’enregistrements de suivi, cela facilite la recherche de tous les enregistrements ayant cette étiquette.
+Grâce aux annotations, vous pouvez baliser arbitrairement des enregistrements de suivi avec une valeur configurable après la génération. Par exemple, vous pouvez avoir besoin de plusieurs enregistrements de suivi sur plusieurs flux de travail à baliser avec « serveur de messagerie » = = « messagerie Serveur1 ». Lors de l’interrogation ultérieure d’enregistrements de suivi, cela facilite la recherche de tous les enregistrements ayant cette étiquette.
 
 Pour ce faire, une annotation est ajoutée à une requête de suivi comme illustré dans l'exemple suivant.
 
@@ -344,9 +344,9 @@ Les éléments de requête de suivi servent à créer un modèle de suivi à l'a
 > [!WARNING]
 > Pour un WF utilisant l'hôte du service de flux de travail, le modèle de suivi est généralement créé à l'aide d'un fichier de configuration. Mais il peut également être créé avec le code, à l'aide de l'API de modèle de suivi et de requête de suivi.
 
-Un profil configuré en tant que fichier de configuration XML est appliqué à un participant au suivi à l’aide d’une extension de comportement. Il est ajouté à un objet WorkflowServiceHost comme décrit dans la section ultérieure [configuration du suivi d’un flux de travail](configuring-tracking-for-a-workflow.md).
+Un profil configuré en tant que fichier de configuration XML est appliqué à un participant au suivi à l’aide d’une extension de comportement. Elle est ajoutée à un WorkflowServiceHost comme décrit dans la section [configuration du suivi pour un workflow](configuring-tracking-for-a-workflow.md).
 
-Les paramètres de configuration du modèle de suivi déterminent les commentaires des enregistrements de suivi émis par l'hôte. Un participant au suivi s'abonne à des enregistrements de suivi en ajoutant des requêtes à un modèle de suivi. Pour vous abonner à tous les enregistrements de suivi, le modèle de suivi doit spécifier toutes les requêtes de suivi à l’aide de «\*» dans les champs de nom de chacune des requêtes.
+Les paramètres de configuration du modèle de suivi déterminent les commentaires des enregistrements de suivi émis par l'hôte. Un participant au suivi s'abonne à des enregistrements de suivi en ajoutant des requêtes à un modèle de suivi. Pour s’abonner à tous les enregistrements de suivi, le modèle de suivi doit spécifier toutes les requêtes de suivi à l’aide de «\*» dans les champs de nom de chacune des requêtes.
 
 Voici quelques exemples communs de profils de suivi :
 
@@ -388,5 +388,5 @@ Voici quelques exemples communs de profils de suivi :
 ## <a name="see-also"></a>Voir aussi
 
 - [Suivi SQL](./samples/sql-tracking.md)
-- [Surveillance de Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Surveillance des Applications avec App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

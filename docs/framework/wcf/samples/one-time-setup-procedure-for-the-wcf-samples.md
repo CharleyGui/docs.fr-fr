@@ -2,12 +2,12 @@
 title: Procédure d'installation unique pour les exemples Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: 7dbc4a1b5235c0cb6aa154379358c7761bc4ab1d
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: cfe50cb2bb017292b69f578bfff2bf84bf6ba8f0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141846"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837829"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Procédure d'installation unique pour les exemples Windows Communication Foundation
 
@@ -16,7 +16,7 @@ La plupart des exemples de Windows Communication Foundation (WCF) sont hébergé
 Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et exécuter tous les exemples qui utilisent un service hébergé par IIS. Il s'agit du seul répertoire virtuel requis pour exécuter les exemples. La génération d'un exemple remplace tout service déployé précédemment dans ce répertoire ; seul le dernier exemple généré sera déployé et disponible dans ce répertoire virtuel.
 
 > [!NOTE]
-> Vous devez exécuter toutes les commandes sous un compte d'administrateur local. Si vous utilisez Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)] ou Windows Server 2008 R2, vous devez également exécuter l'invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**. Toutes les commandes qui figurent dans cette rubrique doivent être exécutées dans une invite de commandes disposant des paramètres de chemin d’accès appropriés.  Le moyen le plus simple de vous en assurer consiste à utiliser l'invite de commandes de Visual Studio. Pour ouvrir cette invite, cliquez **sur Démarrer**, **sélectionnez tous les programmes**, faites défiler jusqu’à **Visual Studio 2010**, sélectionnez **Visual Studio Tools**, cliquez avec le bouton droit sur **invite de commandes Visual Studio (2010)** , puis cliquez sur **exécuter en tant qu’administrateur.** . Si l’une des éditions Visual Studio Express est installée, cette invite de commandes n’est pas disponible ; il vous faut ajouter « C:\Windows\Microsoft.Net\Framework\v4.0 » au chemin d’accès système.
+> Vous devez exécuter toutes les commandes sous un compte d'administrateur local. Si vous utilisez Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)] ou Windows Server 2008 R2, vous devez également exécuter l'invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**. Toutes les commandes qui figurent dans cette rubrique doivent être exécutées dans une invite de commandes disposant des paramètres de chemin d’accès appropriés.  Le moyen le plus simple de vous en assurer consiste à utiliser l'invite de commandes de Visual Studio. Pour ouvrir cette invite, cliquez **sur Démarrer**, sélectionnez **tous les programmes**, faites défiler jusqu’à **Visual Studio 2010**, sélectionnez **Visual Studio Tools**, cliquez avec le bouton droit sur **invite de commandes Visual Studio (2010)** , puis cliquez sur **exécuter en tant qu’administrateur**. Si l’une des éditions Visual Studio Express est installée, cette invite de commandes n’est pas disponible ; il vous faut ajouter « C:\Windows\Microsoft.Net\Framework\v4.0 » au chemin d’accès système.
 
 ### <a name="one-time-setup-procedure-for-wcf-samples"></a>Procédure d'installation unique pour les exemples WCF
 
@@ -63,9 +63,9 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
     > [!NOTE]
     > Si vous ne procédez pas à cette étape, tous les exemples hébergés par IIS échouent lors de la génération. Veillez à définir les autorisations correctement ou exécutez l'invite de commandes du Kit de développement logiciel (SDK) et de Visual Studio (2012) en tant qu'administrateur.
 
-11. Créez sur l'ordinateur un répertoire C:\logs ; certains exemples peuvent en avoir besoin. Assurez-vous que le compte approprié dispose d’un accès en écriture sur ce dossier. Pour Windows 7, [!INCLUDE[wv](../../../../includes/wv-md.md)]et Windows Server 2008 R2, ce compte est **service réseau**. Pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], le compte est Autorité NT\Service réseau. Pour [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], le compte est ASPNET.
+11. Créez sur l'ordinateur un répertoire C:\logs ; certains exemples peuvent en avoir besoin. Assurez-vous que le compte approprié dispose d’un accès en écriture sur ce dossier. Pour Windows 7, Windows Vista et Windows Server 2008 R2, ce compte est **service réseau**. Pour [!INCLUDE[lserver](../../../../includes/lserver-md.md)], le compte est Autorité NT\Service réseau. Pour [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], le compte est ASPNET.
 
-12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le dossier \<InstallPath > \ WF_WCF_Samples \WCF\Setup\  Ce script effectue les tâches suivantes :
+12. Exécutez le fichier Setupcerttool.bat. Ce fichier se trouve dans le \<dossier InstallPath > \WF_WCF_Samples\WCF\Setup  Ce script effectue les tâches suivantes :
 
     - génération de l'outil FindPrivateKey ;
 
@@ -85,4 +85,4 @@ Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et ex
     > [!NOTE]
     > Veillez à démarrez le service MSMQ avant d'exécuter un exemple qui requiert Message Queuing.
 
-15. Certains exemples requièrent des certificats. Consultez les [instructions d’installation du certificat de serveur Internet Information Services (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).
+15. Certains exemples requièrent des certificats. Voir [Instructions d'installation du certificat de serveur des services Internet (IIS)](../../../../docs/framework/wcf/samples/iis-server-certificate-installation-instructions.md).

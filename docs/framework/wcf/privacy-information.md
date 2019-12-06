@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 0b277728d2f2c224d5e45e3990ab2fd588bc81d3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: c5500b8fd8b35081e83e2e9279dc4f236ef3c7b0
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318696"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837933"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
 Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
@@ -44,7 +44,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'authentification peut entraîner l'établissement d'une session sécurisée entre les points de terminaison communicants. La session est identifiée par un GUID valide pendant toute la durée de vie de la session de sécurité. Le tableau suivant indique ce qui est conservé, et à quel emplacement.  
   
-|Données|Stockage|  
+|Données|Storage|  
 |----------|-------------|  
 |Informations d'identification de présentation, telles que nom d'utilisateur, certificats X.509, jetons Kerberos et références aux informations d'identification.|Mécanismes de gestion des informations d'identification Windows standard tels que le magasin de certificats Windows.|  
 |Informations d'appartenance utilisateur, telles que noms d'utilisateur et mots de passe.|Fournisseurs d’appartenances ASP.NET.|  
@@ -54,7 +54,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="auditing"></a>Audit  
  L'audit permet d'enregistrer le succès et l'échec des événements d'authentification et d'autorisation. Les enregistrements d'audit contiennent les données suivantes : URI de service, URI d'action et identification de l'appelant.  
   
- L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour [!INCLUDE[wv](../../../includes/wv-md.md)] et [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un enregistrement est entré dans le journal des événements de sécurité.  
+ L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour Windows Vista et [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un enregistrement est consigné dans le journal des événements de sécurité.  
   
 ## <a name="transactions"></a>transactions  
  La fonctionnalité transactions fournit des services transactionnels à une application WCF.  

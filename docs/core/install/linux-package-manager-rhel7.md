@@ -4,18 +4,18 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
-ms.openlocfilehash: cc7865727927eda1406da26e64b89325fd5665a4
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f17a410ccea1ef4dec32de1d80ef6aac889aa6f3
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801961"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74836954"
 ---
 # <a name="rhel-7-package-manager---install-net-core"></a>RHEL 7 Package Manager-installer .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
-Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 7.
+Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 7. .NET Core 3,1 n’est pas encore disponible pour RHEL 7.
 
 ## <a name="register-your-red-hat-subscription"></a>Inscrire votre abonnement Red Hat
 

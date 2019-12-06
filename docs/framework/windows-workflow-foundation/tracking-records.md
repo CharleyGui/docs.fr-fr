@@ -2,12 +2,12 @@
 title: Enregistrements de suivi
 ms.date: 03/30/2017
 ms.assetid: 51adbda3-bd8b-4892-a8ea-d343186472d2
-ms.openlocfilehash: c9c0d7d8c29d89ab47957c271444740f5f2f9b7f
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d59db7e4c90b3cffe523c89de093f58f3e520bde
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64650941"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837608"
 ---
 # <a name="tracking-records"></a>Enregistrements de suivi
 L'exécution du flux de travail est instrumentée pour émettre des enregistrements de suivi pour suivre l'exécution d'une instance de workflow.  
@@ -26,27 +26,27 @@ L'exécution du flux de travail est instrumentée pour émettre des enregistreme
   
  Les types suivants d'objets <xref:System.Activities.Tracking.TrackingRecord> sont émis par l'exécution du workflow :  
   
-- **WorkflowInstanceRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> décrit le cycle de vie de l’instance de flux de travail. Par exemple, un enregistrement est émis lorsque le workflow démarre ou se termine, et contient l'état de l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceRecord>.  
+- **WorkflowInstanceRecord** : cette <xref:System.Activities.Tracking.TrackingRecord> décrit le cycle de vie de l’instance de flux de travail. Par exemple, un enregistrement est émis lorsque le workflow démarre ou se termine, et contient l'état de l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceRecord>.  
   
-- **WorkflowInstanceAbortedRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis lorsqu’une instance de workflow est abandonnée. L'enregistrement contient la raison pour laquelle l'instance de workflow a échoué. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>.  
+- **WorkflowInstanceAbortedRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis lorsqu’une instance de workflow est abandonnée. L'enregistrement contient la raison pour laquelle l'instance de workflow a échoué. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceAbortedRecord>.  
   
-- **WorkflowInstanceUnhandledExceptionRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis si une exception se produit dans l’instance de workflow et n’est pas gérée par toute activité. L'enregistrement contient les détails d'exception. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>.  
+- **WorkflowInstanceUnhandledExceptionRecord** : cette <xref:System.Activities.Tracking.TrackingRecord> est émise si une exception se produit dans l’instance de workflow et n’est pas gérée par une activité. L'enregistrement contient les détails d'exception. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceUnhandledExceptionRecord>.  
   
-- **Un événement WorkflowInstanceSuspendedRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une instance de workflow est suspendue. L'enregistrement contient la raison pour laquelle l'instance de workflow a été interrompue. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>.  
+- **WorkflowInstanceSuspendedRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une instance de workflow est suspendue. L'enregistrement contient la raison pour laquelle l'instance de workflow a été interrompue. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceSuspendedRecord>.  
   
-- **WorkflowInstanceTerminatedRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une instance de workflow est arrêtée. L'enregistrement contient la raison pour laquelle l'instance de workflow a abouti. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>.  
+- **WorkflowInstanceTerminatedRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une instance de workflow est terminée. L'enregistrement contient la raison pour laquelle l'instance de workflow a abouti. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.WorkflowInstanceTerminatedRecord>.  
   
-- **ActivityStateRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis lorsqu’une activité dans un flux de travail s’exécute. Ces enregistrements indiquent l'état de l'activité dans l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.ActivityStateRecord>.  
+- **ActivityStateRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis lors de l’exécution d’une activité dans un Workflow. Ces enregistrements indiquent l'état de l'activité dans l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.ActivityStateRecord>.  
   
-- **ActivityScheduledRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis lorsqu’une activité planifie une activité enfant. Cet enregistrement contient des détails pour à la fois l'activité parent (planification de l'activité) et l'activité enfant planifiée. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.ActivityScheduledRecord>.  
+- **ActivityScheduledRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis lorsqu’une activité planifie une activité enfant. Cet enregistrement contient des détails pour à la fois l'activité parent (planification de l'activité) et l'activité enfant planifiée. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.ActivityScheduledRecord>.  
   
-- **FaultPropagationRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis pour chaque gestionnaire qui examine l’enregistrement jusqu'à ce qu’elle est gérée. Il est utilisé pour dénoter le chemin d'accès qu'une erreur a pris dans l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.FaultPropagationRecord>.  
+- **FaultPropagationRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis pour chaque gestionnaire qui examine l’enregistrement jusqu’à ce qu’il soit géré. Il est utilisé pour dénoter le chemin d'accès qu'une erreur a pris dans l'instance de workflow. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.FaultPropagationRecord>.  
   
-- **CancelRequestedRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une activité essaie d’annuler une activité enfant. Cet enregistrement contient des détails pour à la fois l'activité parent et l'activité enfant en cours d'annulation. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.CancelRequestedRecord>.  
+- **CancelRequestedRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> est émis chaque fois qu’une activité tente d’annuler une activité enfant. Cet enregistrement contient des détails pour à la fois l'activité parent et l'activité enfant en cours d'annulation. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.CancelRequestedRecord>.  
   
-- **BookmarkResumptionRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> suit tout signet repris avec succès. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.BookmarkResumptionRecord>.  
+- **BookmarkResumptionRecord** : ce <xref:System.Activities.Tracking.TrackingRecord> effectue le suivi de tous les signets qui ont été repris avec succès. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.BookmarkResumptionRecord>.  
   
-- **CustomTrackingRecord** - ce <xref:System.Activities.Tracking.TrackingRecord> est créé et émis par un auteur de workflow dans une activité de flux de travail personnalisé. Les enregistrements de suivi personnalisés peuvent être remplis à l'aide des données utilisées pour remplir les enregistrements. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.CustomTrackingRecord>.  
+- **Événement CustomTrackingRecord** : cet <xref:System.Activities.Tracking.TrackingRecord> est créé et émis par un auteur de flux de travail dans une activité de flux de travail personnalisée. Les enregistrements de suivi personnalisés peuvent être remplis à l'aide des données utilisées pour remplir les enregistrements. Les détails de cet enregistrement se trouvent dans <xref:System.Activities.Tracking.CustomTrackingRecord>.  
   
  Par exemple, il pourrait y avoir une activité <xref:System.Activities.Statements.Sequence> simple qui contient une opération <xref:System.Activities.Statements.WriteLine> avec les enregistrements de suivi émis dans l'ordre suivant :  
   
@@ -62,5 +62,5 @@ L'exécution du flux de travail est instrumentée pour émettre des enregistreme
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Surveillance de Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=201273)
-- [Surveillance des Applications avec App Fabric](https://go.microsoft.com/fwlink/?LinkId=201275)
+- [Analyse Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677251(v=azure.10))
+- [Surveillance des applications avec application Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677276(v=azure.10))

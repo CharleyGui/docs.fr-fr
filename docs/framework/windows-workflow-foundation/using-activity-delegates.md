@@ -2,12 +2,12 @@
 title: Utilisation de délégués d'activité
 ms.date: 03/30/2017
 ms.assetid: e33cf876-8979-440b-9b23-4a12d1139960
-ms.openlocfilehash: 63f550549456404b237067c98afdb18a8758dd7a
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: cbcc8f8e498be4f79f8fed5af7cd3557d7c55981
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989085"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837569"
 ---
 # <a name="using-activity-delegates"></a>Utilisation de délégués d'activité
 Les délégués d'activité permettent aux auteurs d'activités d'exposer des rappels avec des signatures spécifiques pour lesquelles les utilisateurs de l'activité peuvent fournir des gestionnaires basés sur l'activité. Deux types de délégués d'activité sont disponibles : <xref:System.Activities.ActivityAction%601> est utilisé pour définir des délégués d'activité qui n'ont pas de valeur de retour et <xref:System.Activities.ActivityFunc%601> est utilisé pour définir des délégués d'activité qui ont une valeur de retour.
@@ -30,9 +30,9 @@ Les exemples de cette rubrique utilisent la syntaxe d'initialisation d'objet. La
 
 [!code-csharp[CFX_ActivityExample#7](~/samples/snippets/csharp/VS_Snippets_CFX/CFX_ActivityExample/cs/Program.cs#7)]
 
-Pour plus d’informations sur les initialiseurs d' [objets, consultez Procédure : Initialiser des objets sans appeler de constructeurC# (Guide de](https://go.microsoft.com/fwlink/?LinkId=161015) programmation [) et comment : Déclarez un objet à l’aide d’un](https://go.microsoft.com/fwlink/?LinkId=161016)initialiseur d’objet.
+Pour plus d’informations sur les initialiseurs d’objets, consultez [Comment : initialiser des objets sans appelerC# de constructeur (Guide de programmation)](../../csharp/programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md) et [Comment : déclarer un objet à l’aide d’un initialiseur d’objet (Visual Basic)](../../visual-basic/programming-guide/language-features/objects-and-classes/how-to-declare-an-object-by-using-an-object-initializer.md).
 
-Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire de l' <xref:System.Activities.Statements.Catch%601> action d’activité de l’activité <xref:System.Activities.Statements.WriteLine> est une activité, et le détail de l’exception est transmis à celui `ex` -ci à l’aide <xref:System.Activities.DelegateInArgument%601>de.
+Dans l'exemple suivant, une activité <xref:System.Activities.Statements.TryCatch> est utilisée dans un workflow. Un <xref:System.ApplicationException> est levé par le workflow et géré par une activité <xref:System.Activities.Statements.Catch%601>. Le gestionnaire de l’action d’activité de l’activité de <xref:System.Activities.Statements.Catch%601> est une activité de <xref:System.Activities.Statements.WriteLine>, et le détail de l’exception est transmis à celui-ci à l’aide de la <xref:System.Activities.DelegateInArgument%601>`ex`.
 
 [!code-csharp[CFX_WorkflowApplicationExample#33](~/samples/snippets/csharp/VS_Snippets_CFX/cfx_workflowapplicationexample/cs/program.cs#33)]
 

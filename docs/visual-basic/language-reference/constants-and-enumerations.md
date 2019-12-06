@@ -6,12 +6,12 @@ helpviewer_keywords:
 - constants [Visual Basic]
 - constants [Visual Basic], list of
 ms.assetid: 309c0ad5-83e4-4f96-99ea-83cd95107417
-ms.openlocfilehash: de03ce61535d4695a00d0c4b8998ef4b81583425
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e47fd1c606f7d4cd0cf2fa6398beaa183ed95076
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347871"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74838154"
 ---
 # <a name="constants-and-enumerations-visual-basic"></a>Constantes et énumérations (Visual Basic)
 
@@ -43,7 +43,7 @@ Visual Basic fournit un certain nombre de constantes et d’énumérations préd
 |`vbNewLine`|Caractère de saut de ligne.|  
 |`vbNullChar`|Caractère null.|  
 |`vbNullString`|Différent d’une chaîne de longueur nulle (""); utilisé pour appeler des procédures externes.|  
-|`vbObjectError`|Numéro d'erreur. Les numéros d’erreur définis par l’utilisateur doivent être supérieurs à cette valeur. Exemple :<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
+|`vbObjectError`|Numéro d'erreur. Les numéros d’erreur définis par l’utilisateur doivent être supérieurs à cette valeur. Par exemple :<br /><br /> `Err.Raise(Number) = vbObjectError + 1000`|  
 |`vbTab`|Caractère de tabulation.|  
 |`vbBack`|Caractère de retour arrière.|  
 |`vbFormFeed`|Non utilisé dans Microsoft Windows.|  
@@ -84,6 +84,5 @@ Visual Basic fournit un certain nombre de constantes et d’énumérations préd
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur le langage Visual Basic](../../visual-basic/language-reference/index.md)
-- [Visual Basic](../../visual-basic/index.md)
 - [Vue d’ensemble des constantes](../../visual-basic/programming-guide/language-features/constants-enums/constants-overview.md)
 - [Vue d’ensemble des énumérations](../../visual-basic/programming-guide/language-features/constants-enums/enumerations-overview.md)

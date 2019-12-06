@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - programming [WF], workflow security
 ms.assetid: d712a566-f435-44c0-b8c0-49298e84b114
-ms.openlocfilehash: b14dd600526612b6af8b9fad15f65a748eb0b368
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 36d03a2fca8f143b98338050fc9da4490960bda9
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637536"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837517"
 ---
 # <a name="workflow-security"></a>Sécurité de workflow
 Windows Workflow Foundation (WF) est intégré à plusieurs technologies différentes, telles que Microsoft SQL Server et Windows Communication Foundation (WCF). L'interaction avec ces technologies peut poser des problèmes de sécurité dans votre workflow si elle est effectuée de façon incorrecte.
@@ -30,22 +30,22 @@ Windows Workflow Foundation (WF) est intégré à plusieurs technologies différ
 
 - Lors de l'utilisation d'un grand nombre d'activités enfants, d'emplacements, de signets, d'extensions hôtes ou d'étendues, ou de signets avec des charges utiles très importantes, la mémoire peut être épuisée ou des quantités inutiles d'espace de base de données peuvent être allouées pendant la persistance. Cette situation peut être atténuée en utilisant la sécurité aux niveaux objet et base de données.
 
-- Lors de l'utilisation de <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, le magasin d'instances doit être sécurisé. Pour plus d’informations, consultez [meilleures pratiques SQL Server](https://go.microsoft.com/fwlink/?LinkId=164972).
+- Lors de l'utilisation de <xref:System.Activities.DurableInstancing.SqlWorkflowInstanceStore>, le magasin d'instances doit être sécurisé.
 
-- Les données sensibles dans le magasin d'instances doivent être chiffrées. Pour plus d’informations, consultez [chiffrement SQL](https://go.microsoft.com/fwlink/?LinkId=164976).
+- Les données sensibles dans le magasin d'instances doivent être chiffrées. Pour plus d’informations, consultez [SQL Server Encryption](/sql/relational-databases/security/encryption/sql-server-encryption)
 
 - Étant donné que la chaîne de connexion à une base de données est souvent incluse dans un fichier de configuration, la sécurité au niveau fenêtre (ACL) doit être utilisée pour vérifier que le fichier de configuration (Web.Config généralement) est sécurisé, et que les informations de connexion et de mot de passe ne sont pas incluses dans la chaîne de connexion. L'authentification Windows doit être utilisée entre la base de données et le serveur Web à la place.
 
 ## <a name="considerations-for-workflowservicehost"></a>Considérations sur WorkflowServiceHost
 
-- Points de terminaison Windows Communication Foundation (WCF) utilisés dans les workflows doivent être sécurisés. Pour plus d’informations, consultez [vue d’ensemble de la sécurité WCF](https://go.microsoft.com/fwlink/?LinkID=164975).
+- Les points de terminaison Windows Communication Foundation (WCF) utilisés dans les workflows doivent être sécurisés. Pour plus d’informations, consultez [vue d’ensemble de la sécurité WCF](../wcf/feature-details/security-overview.md).
 
-- L'autorisation au niveau hôte peut être implémentée à l'aide de <xref:System.ServiceModel.ServiceAuthorizationManager>. Consultez [Comment : Créer un gestionnaire d’autorisation personnalisé pour un Service](https://go.microsoft.com/fwlink/?LinkId=192228) pour plus d’informations.
+- L'autorisation au niveau hôte peut être implémentée à l'aide de <xref:System.ServiceModel.ServiceAuthorizationManager>. Pour plus d’informations, consultez [Comment : créer un gestionnaire d’autorisations personnalisé pour un service](../wcf/extending/how-to-create-a-custom-authorization-manager-for-a-service.md) .
 
 - Le ServiceSecurityContext pour le message entrant est également disponible dans le workflow en accédant à OperationContext.
 
 ## <a name="wf-security-pack-ctp"></a>WF Security Pack CTP
- Microsoft WF Security Pack CTP 1 est la première version community technology preview (CTP) d’un ensemble d’activités et de leur implémentation basée sur [Windows Workflow Foundation](index.md) dans [.NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF (4) et [Windows Identity Foundation (WIF)](../security/index.md).  Microsoft WF Security Pack CTP 1 contient les deux activités et leurs concepteurs qui expliquent comment vérifier facilement plusieurs scénarios liés à la sécurité en utilisant un workflow, notamment :
+ Microsoft WF Security Pack CTP 1 est la première version préliminaire CTP (Community Technology Preview) d’un ensemble d’activités et de leur implémentation basée sur [Windows Workflow Foundation](index.md) dans [.NET Framework 4](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/w0x726c2(v=vs.100)) (WF 4) et [Windows Identity Foundation (WIF)](../security/index.md).  Microsoft WF Security Pack CTP 1 contient les deux activités et leurs concepteurs qui expliquent comment vérifier facilement plusieurs scénarios liés à la sécurité en utilisant un workflow, notamment :
 
 1. Emprunter l'identité d'un client dans le workflow
 
@@ -55,4 +55,4 @@ Windows Workflow Foundation (WF) est intégré à plusieurs technologies différ
 
 4. Transfert d'un jeton de sécurité client vers un service principal (délégation basée sur les revendications) à l'aide de WS-Trust ActAs
 
-Pour plus d’informations et pour télécharger WF Security Pack CTP, consultez : [WF Security Pack CTP](https://archive.codeplex.com/?p=wf)
+Pour plus d’informations et pour télécharger le Pack de sécurité WF CTP, consultez : [WF Security Pack CTP](https://archive.codeplex.com/?p=wf)

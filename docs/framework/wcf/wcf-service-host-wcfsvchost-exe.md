@@ -2,12 +2,12 @@
 title: Hôte de service WCF (WcfSvcHost.exe)
 ms.date: 03/30/2017
 ms.assetid: 8643a63d-a357-4c39-bd6c-cdfdf71e370e
-ms.openlocfilehash: c855fe7cc804fac14348990b7a6f5f84a0956b0c
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b8fb32111a80178f5eb92411eb4990decb645bb6
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802401"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837738"
 ---
 # <a name="wcf-service-host-wcfsvchostexe"></a>Hôte de service WCF (WcfSvcHost.exe)
 
@@ -113,7 +113,7 @@ Vous pouvez arrêter l’hôte de service WCF de l’une des quatre manières su
 
 Pour permettre aux utilisateurs sans privilège d’administrateur de développer des services WCF, une liste de contrôle d’accès Access Control (ACL) est créée pour l’espace de noms « http://+:8731/Design_Time_Addresses » pendant l’installation de Visual Studio. La liste ACL a la valeur (UI), qui inclut tous les utilisateurs interactifs ayant ouvert une session sur l'ordinateur. Les administrateurs peuvent ajouter ou supprimer des utilisateurs de cette liste de contrôle d’accès, ou ouvrir des ports supplémentaires. Cette liste de contrôle d’accès permet aux utilisateurs d’utiliser l’hôte auto du service WCF (wcfSvcHost. exe) sans leur accorder des privilèges d’administrateur.
 
-Vous pouvez modifier l'accès grâce à l'outil netsh.exe dans [!INCLUDE[wv](../../../includes/wv-md.md)], via le compte d'administrateur avec élévation de privilèges. Ceci est un exemple d'utilisation de netsh.exe .
+Vous pouvez modifier l’accès à l’aide de l’outil netsh. exe dans Windows Vista sous le compte d’administrateur avec élévation de privilèges. Ceci est un exemple d'utilisation de netsh.exe .
 
 ```console
 netsh http add urlacl url=http://+:8001/MyService user=<domain>\<user>

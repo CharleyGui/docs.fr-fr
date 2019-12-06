@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: dcff128a7718245fa765c57d3af80665699f4891
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2999d1ab4129c72c231b6dc80480d8bfef5186fa
+ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976052"
+ms.lasthandoff: 12/05/2019
+ms.locfileid: "74837309"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -25,7 +25,7 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** Dois-je mettre à niveau MSMQ pour utiliser les liaisons <xref:System.ServiceModel.NetMsmqBinding> et `MsmqIntegration` ?
 
-**R :** non. Les deux liaisons fonctionnent avec MSMQ 3.0 sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez la mise à niveau vers MSMQ 4.0 dans [!INCLUDE[wv](../../../../includes/wv-md.md)].
+**R :** non. Les deux liaisons fonctionnent avec MSMQ 3.0 sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
 
 **Q :** Quelles sont les fonctionnalités des liaisons <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
 
@@ -134,9 +134,9 @@ La file d'attente de lettres mortes du système, ainsi que toutes les files d'at
 
 **R :** Lorsque vous utilisez la liaison d’intégration MSMQ, vous devez utiliser le schéma msmq. formatname. Par exemple, msmq.formatname:DIRECT=OS:. \private $ \OrdersQueue. Mais lorsque vous spécifiez la file d'attente de lettres mortes personnalisée, vous devez utiliser le modèle net.msmq.
 
-**Q :** Lorsque j’utilise un nom de format public ou privé et que j’ouvre l’hôte de service sur [!INCLUDE[wv](../../../../includes/wv-md.md)], j’obtiens une erreur. Pourquoi ?
+**Q :** Lorsque j’utilise un nom de format public ou privé et que j’ouvre l’hôte de service sur Windows Vista, j’obtiens une erreur. Pourquoi ?
 
-**R :** Le canal d’intégration WCF sur [!INCLUDE[wv](../../../../includes/wv-md.md)] vérifie si une sous-file d’attente peut être ouverte pour la file d’attente d’application principale pour la gestion des messages incohérents. Le nom de la sous-file d'attente est dérivé d'un URI msmq.formatname transmis à l'écouteur. Le nom de la sous-file d'attente dans MSMQ peut uniquement être un nom de format direct. Donc vous obtenez l'erreur. Remplacez l'URI de la file d'attente par un nom de format direct.
+**R :** Le canal d’intégration WCF sur Windows Vista vérifie si une sous-file d’attente peut être ouverte pour la file d’attente d’application principale pour la gestion des messages incohérents. Le nom de la sous-file d'attente est dérivé d'un URI msmq.formatname transmis à l'écouteur. Le nom de la sous-file d'attente dans MSMQ peut uniquement être un nom de format direct. Donc vous obtenez l'erreur. Remplacez l'URI de la file d'attente par un nom de format direct.
 
 **Q :** Lors de la réception d’un message à partir d’une application MSMQ, le message se trouve dans la file d’attente et n’est pas lu par l’application WCF de réception. Pourquoi ?
 
@@ -174,7 +174,7 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 6. Ensuite, ajoutez un deuxième composant logiciel enfichable certificats à l’aide des étapes précédentes, mais cette fois, sélectionnez **compte d’ordinateur** , puis cliquez sur **suivant**.
 
-7. Sélectionnez **ordinateur local** , puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
+7. Sélectionnez **Ordinateur local**, puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
 
 **Q :** Lorsque mon service lit à partir d’une file d’attente sur un autre ordinateur en mode groupe de travail, j’obtiens une exception « accès refusé ».
 
@@ -200,7 +200,7 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 - Assurez-vous que MSDTC figure dans la liste des exceptions dans les paramètres du **pare-feu de connexion Internet** .
 
-- Vérifiez que vous utilisez [!INCLUDE[wv](../../../../includes/wv-md.md)]. MSMQ sur [!INCLUDE[wv](../../../../includes/wv-md.md)] prend en charge la lecture avec transaction distante. MSMQ sur les mises en production antérieures de Windows ne prend pas en charge la lecture avec transaction distante.
+- Vérifiez que vous utilisez Windows Vista. MSMQ sur Windows Vista prend en charge la lecture transactionnelle à distance. MSMQ sur les mises en production antérieures de Windows ne prend pas en charge la lecture avec transaction distante.
 
 **Q :** Lorsque le service lisant à partir de la file d’attente est un service réseau, par exemple, dans un hôte Web, pourquoi est-ce que j’obtiens une exception d’accès refusé est déclenchée lors de la lecture à partir de la file d’attente ?
 
