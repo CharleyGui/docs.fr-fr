@@ -2,12 +2,12 @@
 title: Événements de domaine. conception et implémentation
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Obtenir une vue détaillée des événements de domaine, un concept essentiel pour établir la communication entre les agrégats.
 ms.date: 10/08/2018
-ms.openlocfilehash: f427ed5216af11b90c5a8cede15806a11aedc76d
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3bba18d4a77b47abee55c16bae8a64ed27ac9aba
+ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835544"
+ms.lasthandoff: 12/06/2019
+ms.locfileid: "74884226"
 ---
 # <a name="domain-events-design-and-implementation"></a>Événements de domaine : conception et implémentation
 
@@ -342,7 +342,7 @@ Enfin, il est important de mentionner qu’il est parfois utile de propager des 
 
 Comme nous l’avons vu, les événements de domaine permettent d’implémenter explicitement les effets secondaires des modifications apportées à votre domaine. Pour utiliser la terminologie DDD, les événements de domaine permettent d’implémenter explicitement des effets secondaires sur un ou plusieurs agrégats. Si vous le souhaitez, pour une meilleure scalabilité et un impact moindre sur les verrous de base de données, utilisez la cohérence à terme entre les agrégats d’un même domaine.
 
-L’application de référence utilise [médiateur](https://github.com/jbogard/MediatR) pour propager les événements de domaine synchonously sur les agrégats, au sein d’une même transaction. Toutefois, vous pouvez également utiliser une implémentation AMQP comme [RabbitMQ](https://www.rabbitmq.com/) ou [Azure Service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) pour propager les événements de domaine de manière asynchrone, en utilisant la cohérence éventuelle, mais comme indiqué ci-dessus, vous devez prendre en compte le besoin d’actions compensatoires en cas de défaillance.
+L’application de référence utilise [médiateur](https://github.com/jbogard/MediatR) pour propager les événements de domaine de façon synchrone entre les agrégats, au sein d’une même transaction. Toutefois, vous pouvez également utiliser une implémentation AMQP comme [RabbitMQ](https://www.rabbitmq.com/) ou [Azure Service bus](https://docs.microsoft.com/azure/service-bus-messaging/service-bus-messaging-overview) pour propager les événements de domaine de manière asynchrone, en utilisant la cohérence éventuelle, mais comme indiqué ci-dessus, vous devez prendre en compte le besoin d’actions compensatoires en cas de défaillance.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
