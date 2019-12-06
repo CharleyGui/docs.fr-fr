@@ -5,15 +5,13 @@ metadata:
   title: C#documentation-prise en main, didacticiels, référence.
   description: En C# savoir plus sur la programmation-pour les développeurs C#débutants, les C# développeurs et les développeurs expérimentés/.net
   ms.topic: landing-page
-  author: billwagner
-  ms.author: wiwagn
   ms.date: 11/19/2019
-  ms.openlocfilehash: 5af88b8a75ecd3cfca7c93b08cb262f161498903
-  ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+  ms.openlocfilehash: fa778c4610dbfe8320d488098b5bfd39de8e4705
+  ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/21/2019
-  ms.locfileid: "74284016"
+  ms.lasthandoff: 12/05/2019
+  ms.locfileid: "74835470"
 landingContent:
 - title: Apprendre à programmer dansC#
   linkLists:
