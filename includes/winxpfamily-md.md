@@ -1,9 +1,0 @@
----
-ms.openlocfilehash: db5ad1eae510ed1b2614fc2ef77f9294bb8b937e
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
-ms.translationtype: MT
-ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "65669824"
----
-<span data-ttu-id="1e9dc-101">Windows XP Édition familiale, Windows XP Professionnel, Windows Server 2003</span><span class="sxs-lookup"><span data-stu-id="1e9dc-101">Windows XP Home Edition, Windows XP Professional, Windows Server 2003</span></span>
