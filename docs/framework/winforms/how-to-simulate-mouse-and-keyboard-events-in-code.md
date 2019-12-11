@@ -12,12 +12,12 @@ helpviewer_keywords:
 - mouse clicks [Windows Forms], simulating
 - mouse [Windows Forms], event simulation
 ms.assetid: 6abcb67e-3766-4af2-9590-bf5dabd17e41
-ms.openlocfilehash: 9fac74aacf6b902a25438151db247a1a4aee1f4c
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 52f89df8d7f28f0e00c3becd9005b46e52b5532c
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802477"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960204"
 ---
 # <a name="how-to-simulate-mouse-and-keyboard-events-in-code"></a>Comment : simuler des événements de la souris et du clavier dans le code
 
@@ -72,7 +72,7 @@ Bien que vous puissiez simuler l'entrée au clavier à l'aide des stratégies ab
 1. Activez la fenêtre d'application qui recevra les séquences de touches, puis appelez la méthode <xref:System.Windows.Forms.SendKeys.Send%2A> ou <xref:System.Windows.Forms.SendKeys.SendWait%2A> . Comme il n'existe aucune méthode managée permettant d'activer une autre application, vous devez utiliser des méthodes Windows natives pour forcer le focus sur d'autres applications. L'exemple de code suivant utilise l'appel de code non managé pour appeler les méthodes `FindWindow` et `SetForegroundWindow` pour activer la fenêtre de l'application Calculatrice, puis appelle <xref:System.Windows.Forms.SendKeys.SendWait%2A> pour émettre une série de calculs vers l'application Calculatrice.
 
     > [!NOTE]
-    > Les paramètres corrects de l'appel `FindWindow` qui recherche l'application Calculatrice varient en fonction de votre version de Windows.  Le code suivant recherche l’application Calculator sur Windows 7. Sur [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], remplacez le premier paramètre par « SciCalc ». Vous pouvez utiliser l'outil Spy++, fourni avec Visual Studio, pour déterminer les paramètres corrects.
+    > Les paramètres corrects de l'appel `FindWindow` qui recherche l'application Calculatrice varient en fonction de votre version de Windows.  Le code suivant recherche l’application Calculator sur Windows 7. Sur Windows Vista, remplacez le premier paramètre par « SciCalc ». Vous pouvez utiliser l'outil Spy++, fourni avec Visual Studio, pour déterminer les paramètres corrects.
 
     [!code-cpp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/cpp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/cpp/form1.cpp#5)]
     [!code-csharp[System.Windows.Forms.SimulateKeyPress#5](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.SimulateKeyPress/CS/form1.cs#5)]

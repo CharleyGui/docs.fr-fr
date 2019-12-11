@@ -1,5 +1,5 @@
 ---
-title: processus d'exécution managée
+title: Processus d'exécution managée
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 5ead3d1ac37b3c7ee50f18a81530720205678de2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0ce7182af33a795188d01ac457b9d45b8ad305dd
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122003"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960387"
 ---
-# <a name="managed-execution-process"></a>processus d'exécution managée
+# <a name="managed-execution-process"></a>Processus d'exécution managée
 <a name="introduction"></a> Le processus d'exécution managé inclut les étapes suivantes,qui sont décrites en détail plus loin dans cette rubrique :  
   
 1. [Choix d'un compilateur](#choosing_a_compiler)  
@@ -95,7 +95,7 @@ ms.locfileid: "73122003"
   
  Pendant l'exécution, le code managé bénéficie de services tels que le garbage collection, la sécurité, l'interopérabilité avec le code non managé, la prise en charge du débogage interlangage ainsi que la prise en charge améliorée du déploiement et du versioning.  
   
- Dans Microsoft [!INCLUDE[winxp](../../includes/winxp-md.md)] et [!INCLUDE[windowsver](../../includes/windowsver-md.md)], le chargeur du système d'exploitation recherche des modules managés en examinant un bit dans l'en-tête du format COFF (Common Object File Format). Le bit défini indique un module managé. Si le chargeur détecte des modules managés, il charge mscoree.dll. `_CorValidateImage` et `_CorImageUnloading` informent le chargeur quand les images de modules managés sont chargées et déchargées. `_CorValidateImage` effectue les actions suivantes :  
+ Dans Microsoft Windows Vista, le chargeur du système d’exploitation recherche des modules managés en examinant un bit dans l’en-tête COFF. Le bit défini indique un module managé. Si le chargeur détecte des modules managés, il charge mscoree.dll. `_CorValidateImage` et `_CorImageUnloading` informent le chargeur quand les images de modules managés sont chargées et déchargées. `_CorValidateImage` effectue les actions suivantes :  
   
 1. garantit que le code est du code managé valide ;  
   

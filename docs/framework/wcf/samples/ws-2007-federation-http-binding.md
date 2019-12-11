@@ -2,12 +2,12 @@
 title: WS 2007 Federation HTTP Binding
 ms.date: 03/30/2017
 ms.assetid: 91c1b477-a96e-4bf5-9330-5e9312113371
-ms.openlocfilehash: 2f924bdcbf9082d9d43e02d82c9d00c32ebcaacf
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 74f21494c08f33a61eb1e1b0a102638cff59a970
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714984"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960189"
 ---
 # <a name="ws-2007-federation-http-binding"></a>WS 2007 Federation HTTP Binding
 
@@ -119,7 +119,7 @@ Le fichier *Setup. bat* inclus dans cet exemple vous permet de configurer le ser
 
 1. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](building-the-samples.md).
 
-2. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md). Si vous utilisez [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], vous devez exécuter *service. exe*, *client. exe*et *SecurityTokenService. exe* avec des privilèges élevés (cliquez avec le bouton droit sur les fichiers, puis cliquez sur **exécuter en tant qu’administrateur**).
+2. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](running-the-samples.md). Si vous utilisez Windows Vista, vous devez exécuter *service. exe*, *client. exe*et *SecurityTokenService. exe* avec des privilèges élevés (cliquez avec le bouton droit sur les fichiers, puis cliquez sur **exécuter en tant qu’administrateur**).
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer :

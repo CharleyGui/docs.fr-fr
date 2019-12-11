@@ -9,12 +9,12 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - message loops [WPF]
 ms.assetid: f440c23f-fa5d-4d5a-852f-ba61150e6405
-ms.openlocfilehash: f3cddcd6cd90e7e43ea6af67725e709673f7650f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 46d8f00f9328e9c0a4df596b709195ae42d651bf
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978336"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960129"
 ---
 # <a name="troubleshooting-hybrid-applications"></a>Dépannage des applications hybrides
 <a name="introduction"></a> Cette rubrique répertorie certains problèmes courants qui peuvent se produire lors de la création d’applications hybrides qui utilisent à la fois les technologies [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].  
@@ -86,7 +86,7 @@ ms.locfileid: "73978336"
   
 <a name="enabling_visual_styles"></a>   
 ## <a name="enabling-visual-styles"></a>Activation des styles visuels  
- Les styles visuels [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] sur un contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] peuvent ne pas être activés. La méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> est appelée dans le modèle pour une application [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Bien que cette méthode ne soit pas appelée par défaut, si vous utilisez Visual Studio pour créer un projet, vous obtiendrez [!INCLUDE[TLA#tla_winxp](../../../../includes/tlasharptla-winxp-md.md)] styles visuels pour les contrôles, si la version 6,0 de Comctl32. dll est disponible. Vous devez appeler la méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> avant que les handles soient créés sur le thread. Pour plus d’informations, consultez [Guide pratique pour activer des styles visuels dans une application hybride](how-to-enable-visual-styles-in-a-hybrid-application.md).  
+ Les styles visuels Microsoft Windows XP sur un contrôle de [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ne sont peut-être pas activés. La méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A?displayProperty=nameWithType> est appelée dans le modèle pour une application [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]. Bien que cette méthode ne soit pas appelée par défaut, si vous utilisez Visual Studio pour créer un projet, vous obtiendrez les styles visuels Microsoft Windows XP pour les contrôles, si la version 6,0 de Comctl32. dll est disponible. Vous devez appeler la méthode <xref:System.Windows.Forms.Application.EnableVisualStyles%2A> avant que les handles soient créés sur le thread. Pour plus d’informations, consultez [Guide pratique pour activer des styles visuels dans une application hybride](how-to-enable-visual-styles-in-a-hybrid-application.md).  
   
 <a name="licensed_controls"></a>   
 ## <a name="licensed-controls"></a>Contrôles sous licence  

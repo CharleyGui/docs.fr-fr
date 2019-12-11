@@ -12,12 +12,12 @@ helpviewer_keywords:
 - dates [.NET Framework], milliseconds
 - milliseconds [.NET Framework]
 ms.assetid: ae1a0610-90b9-4877-8eb6-4e30bc5e00cf
-ms.openlocfilehash: 01a34289b4845048438a3d3fd9263d1dcd1028c1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 36d99753503d9ba4b1bde4143c86ba184674e53e
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138857"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960394"
 ---
 # <a name="how-to-display-milliseconds-in-date-and-time-values"></a>Comment : afficher les millisecondes dans les valeurs de date et d'heure
 Les méthodes de mise en forme de date et d’heure par défaut, telles que <xref:System.DateTime.ToString?displayProperty=nameWithType>, incluent les heures, les minutes et les secondes d’une valeur d’heure, mais excluent son composant « millisecondes ». Cette rubrique montre comment inclure le composant « millisecondes » d’une date et d’une heure dans des chaînes de date et d’heure mises en forme.  
@@ -47,7 +47,7 @@ Les méthodes de mise en forme de date et d’heure par défaut, telles que <xre
  [!code-vb[Formatting.HowTo.Millisecond#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.HowTo.Millisecond/vb/Millisecond.vb#3)]  
   
 > [!NOTE]
-> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et [!INCLUDE[windowsver](../../../includes/windowsver-md.md)], la résolution de l’horloge est d’environ 10-15 millisecondes.  
+> Il est possible d’afficher de très petites unités fractionnaires d’une seconde, telles que les dix millièmes de seconde ou les cent millièmes de seconde. Toutefois, ces valeurs peuvent ne pas être significatives. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur Windows NT 3,5 et versions ultérieures, ainsi que sur les systèmes d’exploitation Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.  
   
 ## <a name="see-also"></a>Voir aussi
 

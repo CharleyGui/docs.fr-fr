@@ -2,12 +2,12 @@
 title: Procédure d'installation unique pour les exemples Windows Communication Foundation
 ms.date: 03/30/2017
 ms.assetid: a5848ffd-3eb5-432d-812e-bd948ccb6bca
-ms.openlocfilehash: cfe50cb2bb017292b69f578bfff2bf84bf6ba8f0
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 95bba89546e6667cc36fa06a0090aa8e9570fc7e
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837829"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960139"
 ---
 # <a name="one-time-setup-procedure-for-the-windows-communication-foundation-samples"></a>Procédure d'installation unique pour les exemples Windows Communication Foundation
 
@@ -16,7 +16,7 @@ La plupart des exemples de Windows Communication Foundation (WCF) sont hébergé
 Le répertoire virtuel **servicemodelsamples** est utilisé pour générer et exécuter tous les exemples qui utilisent un service hébergé par IIS. Il s'agit du seul répertoire virtuel requis pour exécuter les exemples. La génération d'un exemple remplace tout service déployé précédemment dans ce répertoire ; seul le dernier exemple généré sera déployé et disponible dans ce répertoire virtuel.
 
 > [!NOTE]
-> Vous devez exécuter toutes les commandes sous un compte d'administrateur local. Si vous utilisez Windows 7, [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)] ou Windows Server 2008 R2, vous devez également exécuter l'invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**. Toutes les commandes qui figurent dans cette rubrique doivent être exécutées dans une invite de commandes disposant des paramètres de chemin d’accès appropriés.  Le moyen le plus simple de vous en assurer consiste à utiliser l'invite de commandes de Visual Studio. Pour ouvrir cette invite, cliquez **sur Démarrer**, sélectionnez **tous les programmes**, faites défiler jusqu’à **Visual Studio 2010**, sélectionnez **Visual Studio Tools**, cliquez avec le bouton droit sur **invite de commandes Visual Studio (2010)** , puis cliquez sur **exécuter en tant qu’administrateur**. Si l’une des éditions Visual Studio Express est installée, cette invite de commandes n’est pas disponible ; il vous faut ajouter « C:\Windows\Microsoft.Net\Framework\v4.0 » au chemin d’accès système.
+> Vous devez exécuter toutes les commandes sous un compte d'administrateur local. Si vous utilisez Windows 7, Windows Vista ou Windows Server 2008 R2, vous devez également exécuter l’invite de commandes avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur l’icône de l’invite de commandes, puis cliquez sur **exécuter en tant qu’administrateur**. Toutes les commandes qui figurent dans cette rubrique doivent être exécutées dans une invite de commandes disposant des paramètres de chemin d’accès appropriés.  Le moyen le plus simple de vous en assurer consiste à utiliser l'invite de commandes de Visual Studio. Pour ouvrir cette invite, cliquez **sur Démarrer**, sélectionnez **tous les programmes**, faites défiler jusqu’à **Visual Studio 2010**, sélectionnez **Visual Studio Tools**, cliquez avec le bouton droit sur **invite de commandes Visual Studio (2010)** , puis cliquez sur **exécuter en tant qu’administrateur**. Si l’une des éditions Visual Studio Express est installée, cette invite de commandes n’est pas disponible ; il vous faut ajouter « C:\Windows\Microsoft.Net\Framework\v4.0 » au chemin d’accès système.
 
 ### <a name="one-time-setup-procedure-for-wcf-samples"></a>Procédure d'installation unique pour les exemples WCF
 

@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 5ac2d7897ee4c6707669e4f9104317aeb2e1f473
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 1f7efaedaa1a0be90f7b619f954bdf78eecafa07
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835681"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959829"
 ---
 # <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
 
@@ -49,7 +49,7 @@ Vous pouvez installer les kit SDK .NET Core avec un grand nombre de gestionnaire
 Pour extraire le kit de développement logiciel (SDK) et rendre les commandes disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire de .net core. Ensuite, ouvrez un terminal et exécutez les commandes suivantes.
 
 ```bash
-mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.101-linux-musl-x64.tar.gz -C $HOME/dotnet
+mkdir -p $HOME/dotnet && tar zxf dotnet-sdk-3.1.100-linux-x64.tar.gz -C $HOME/dotnet
 export DOTNET_ROOT=$HOME/dotnet
 export PATH=$PATH:$HOME/dotnet
 ```
@@ -157,7 +157,7 @@ Par défaut, le script installe la dernière version de [support à long terme (
 
 Vous pouvez télécharger et installer .NET Core directement avec l’un des liens suivants :
 
-- [Téléchargements .NET Core 3,1 preview](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+- [Téléchargements .NET Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1)
 - [Téléchargements .NET Core 3,0](https://dotnet.microsoft.com/download/dotnet-core/3.0)
 - [Téléchargements .NET Core 2,2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 - [Téléchargements .NET Core 2,1](https://dotnet.microsoft.com/download/dotnet-core/2.1)

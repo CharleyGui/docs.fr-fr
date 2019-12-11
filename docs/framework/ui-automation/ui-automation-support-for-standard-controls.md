@@ -5,12 +5,12 @@ helpviewer_keywords:
 - controls, UI Automation support for
 - UI Automation, support for standard controls
 ms.assetid: 3770ea8a-2655-4add-9c59-fe0610ad5084
-ms.openlocfilehash: c59352f908c5f4a1fd2ca6dd631d26bb5d69f09a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 314526c1164f70e6b261df1a6f11ddce2b5fa240
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74441224"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960080"
 ---
 # <a name="ui-automation-support-for-standard-controls"></a>Prise en charge d'UI Automation pour les contrôles standard
 > [!NOTE]
@@ -26,7 +26,7 @@ ms.locfileid: "74441224"
 ## <a name="win32-controls"></a>Contrôles Win32  
  La plupart des contrôles [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] sont exposés à [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] via des fournisseurs côté client dans UIAutomationClientsideProviders.dll. Cet assembly est inscrit automatiquement pour être utilisé avec les applications clientes UI Automation.  
   
- La prise en charge complète n’est fournie que pour les contrôles de la version 6 de ComCtrl32.dll (disponible avec [!INCLUDE[TLA#tla_winxp](../../../includes/tlasharptla-winxp-md.md)] et les versions ultérieures).  
+ La prise en charge complète n’est fournie que pour les contrôles de la version 6 de *ComCtrl32. dll*.  
   
  Les contrôles suivants sont pris en charge.  
   
@@ -41,10 +41,10 @@ ms.locfileid: "74441224"
 |Button|Case à cocher|  
 |ComboBoxEx32|ComboBox|  
 |ComboBox|ComboBox|  
-|Modifier|Document|  
-|Modifier|Modifier|  
+|Edit|Document|  
+|Edit|Edit|  
 |SysLink|Lien hypertexte|  
-|Static|Texte|  
+|Static|Text|  
 |Static|Image|  
 |SysIPAddress32|Personnalisé|  
 |SysHeader32|Header/HeaderItem|  
@@ -63,7 +63,7 @@ ms.locfileid: "74441224"
 |msctls_trackbar32|Curseur|  
 |msctls_updown32|Spinner|  
 |msctls_statusbar32|StatusBar|  
-|SysTabControl32|Tab|  
+|SysTabControl32|Onglet|  
 |SysTabControl32|TabItem|  
 |ToolbarWindow32|ToolBar|  
 |ToolbarWindow32|MenuItem|  
@@ -73,7 +73,7 @@ ms.locfileid: "74441224"
 |ToolbarWindow32|Séparateur|  
 |tooltips_class32|Info-bulle|  
 |#32774|Info-bulle|  
-|ReBarWindow32|Barre d'outils|  
+|ReBarWindow32|ToolBar|  
 |SysTreeView32|Arborescence|  
 |SysTreeView32|TreeItem|  
   
@@ -110,7 +110,7 @@ ms.locfileid: "74441224"
 |GroupBox|  
 |HscrollBar|  
 |ImageList|  
-|Étiquette|  
+|Etiquette|  
 |ListBox|  
 |Affichage de liste|  
 |MainMenu/ContextMenu|  
@@ -129,7 +129,7 @@ ms.locfileid: "74441224"
 |TabControl/TabPage|  
 |TextBox|  
 |Minuterie|  
-|Barre d'outils|  
+|ToolBar|  
 |Info-bulle|  
 |TrackBar|  
 |TreeView|  
@@ -169,4 +169,4 @@ ms.locfileid: "74441224"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UI Automation Control Types](ui-automation-control-types.md)
+- [Types de contrôle UI Automation](ui-automation-control-types.md)

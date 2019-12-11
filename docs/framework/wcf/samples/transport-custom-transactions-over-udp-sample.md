@@ -2,12 +2,12 @@
 title: 'Transport: Custom Transactions over UDP Sample'
 ms.date: 03/30/2017
 ms.assetid: 6cebf975-41bd-443e-9540-fd2463c3eb23
-ms.openlocfilehash: 09ce715da4cf4d4fb4c959f63af3bb2c8c68b841
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 00e6d593e185cd09ea66e88f38cf1d8e71785704
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712002"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74960407"
 ---
 # <a name="transport-custom-transactions-over-udp-sample"></a>Transport: Custom Transactions over UDP Sample
 Cet exemple est basé sur l’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) dans l'[extensibilité du transport](../../../../docs/framework/wcf/samples/transport-extensibility.md)Windows Communication Foundation (WCF). Il étend l’exemple UDP Transport afin de prendre en charge le flux de transactions personnalisé et présente l’utilisation de la propriété <xref:System.ServiceModel.Channels.TransactionMessageProperty>.  
@@ -178,7 +178,7 @@ if (transaction != null)
   
 1. Pour générer la solution, suivez les instructions de [la création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).  
   
-2. L’exemple actuel doit être exécuté de la même façon que l’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) . Pour l'exécuter, démarrez le service avec UdpTestService.exe. Si vous exécutez [!INCLUDE[windowsver](../../../../includes/windowsver-md.md)], vous devez démarrer le service avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur UdpTestService. exe dans l’Explorateur de fichiers, puis cliquez sur **exécuter en tant qu’administrateur**.  
+2. L’exemple actuel doit être exécuté de la même façon que l’exemple [transport : UDP](../../../../docs/framework/wcf/samples/transport-udp.md) . Pour l'exécuter, démarrez le service avec UdpTestService.exe. Si vous exécutez Windows Vista, vous devez démarrer le service avec des privilèges élevés. Pour ce faire, cliquez avec le bouton droit sur UdpTestService. exe dans l’Explorateur de fichiers, puis cliquez sur **exécuter en tant qu’administrateur**.  
   
 3. La sortie suivante est alors générée.  
   

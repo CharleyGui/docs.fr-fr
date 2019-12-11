@@ -2,12 +2,12 @@
 title: Authentification dans SQL Server
 ms.date: 05/22/2018
 ms.assetid: 646ddbf5-dd4e-4285-8e4a-f565f666c5cc
-ms.openlocfilehash: 09f7825fd6b4f852b24142ea297c078bd8a1e221
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 0fb92f9e854e2a7a800335390d0195243a749b33
+ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040271"
+ms.lasthandoff: 12/10/2019
+ms.locfileid: "74959968"
 ---
 # <a name="authentication-in-sql-server"></a>Authentification dans SQL Server
 SQL Server prend en charge deux modes d'authentification, le mode d'authentification Windows et le mode mixte.  
@@ -17,9 +17,9 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
 - Le mode mixte prend en charge l'authentification par Windows et par SQL Server. Les paires nom d'utilisateur–mot de passe sont conservées dans SQL Server.  
   
 > [!IMPORTANT]
-> Il est recommandé d'utiliser l'authentification Windows chaque fois que possible. L'authentification Windows utilise une série de messages chiffrés pour authentifier les utilisateurs dans SQL Server. Lorsque SQL Server des connexions sont utilisées, les noms de connexion SQL Server et les mots de passe chiffrés sont transmis sur le réseau, ce qui les rend moins sécurisés.  
+> Il est recommandé d'utiliser l'authentification Windows chaque fois que possible. L'authentification Windows utilise une série de messages chiffrés pour authentifier les utilisateurs dans SQL Server. Quand des connexions SQL Server sont utilisées, les noms de connexion SQL Server et les mots de passe chiffrés sont transmis sur le réseau, ce qui les rend moins sûrs.  
   
- Avec l'authentification Windows, les utilisateurs ont déjà ouvert une session Windows et n'ont pas besoin d'ouvrir une session SQL Server distincte. L' `SqlConnection.ConnectionString` suivant spécifie l’authentification Windows sans que les utilisateurs aient besoin de fournir un nom d’utilisateur ou un mot de passe.  
+ Avec l'authentification Windows, les utilisateurs ont déjà ouvert une session Windows et n'ont pas besoin d'ouvrir une session SQL Server distincte. Le `SqlConnection.ConnectionString` suivant spécifie l’authentification Windows sans que les utilisateurs aient besoin de spécifier un nom d’utilisateur ou un mot de passe.  
   
 ```csharp  
 "Server=MSSQL1;Database=AdventureWorks;Integrated Security=true;"
@@ -35,7 +35,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
   
 - L'application et la base de données se trouvent sur le même ordinateur.  
   
-- Vous utilisez une instance de SQL Server Express ou de base de données locale.  
+- Vous utilisez une instance de SQL Server Express ou LocalDB.  
   
  Les connexions SQL Server sont souvent utilisées dans les situations suivantes :  
   
@@ -58,7 +58,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
 - Connexion SQL Server. SQL Server stocke le nom d'utilisateur et un hachage du mot de passe dans la base de données MASTER, en utilisant des méthodes d'authentification internes pour vérifier les tentatives de connexion.  
   
 > [!NOTE]
-> SQL Server fournit des connexions créées à partir de certificats ou de clés asymétriques qui sont utilisées uniquement pour la signature de code. Elles ne peuvent pas être utilisées pour se connecter à SQL Server.  
+> SQL Server fournit des connexions créées à partir de certificats ou de clés asymétriques qui sont utilisées seulement pour la signature de code. Elles ne peuvent pas être utilisées pour se connecter à SQL Server.  
   
 ## <a name="mixed-mode-authentication"></a>Authentification en mode mixte  
  Si vous devez utiliser l'authentification en mode mixte, vous devez créer des connexions SQL Server qui sont stockées dans SQL Server. Vous devez ensuite fournir le nom d'utilisateur et le mot de passe SQL Server au moment de l'exécution.  
@@ -66,7 +66,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
 > [!IMPORTANT]
 > SQL Server est installé avec une connexion SQL Server nommée `sa` (abréviation de « system administrator »). Attribuez un mot de passe fort à la connexion `sa` et n'utilisez pas la connexion `sa` dans votre application. La connexion `sa` correspond au rôle serveur fixe `sysadmin`, qui possède des informations d'identification d'administration irrévocables sur le serveur entier. Si un attaquant bénéficie de l'accès en tant qu'administrateur système, les dommages potentiels sont sans limite. Tous les membres du groupe `BUILTIN\Administrators` Windows (groupe des administrateurs locaux) sont membres du rôle `sysadmin` par défaut, mais peuvent être supprimés de ce rôle.  
   
- SQL Server fournit des mécanismes de stratégie de mot de passe Windows pour les connexions SQL Server lorsqu’il s’exécute sur [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] ou versions ultérieures. Les stratégies de complexité des mots de passe sont conçues pour prévenir les attaques en force brute en augmentant le nombre de mots de passe possibles. SQL Server pouvez appliquer les mêmes stratégies de complexité et d’expiration que celles utilisées dans les [!INCLUDE[winxpsvr](../../../../../includes/winxpsvr-md.md)] aux mots de passe utilisés dans SQL Server.  
+ SQL Server fournit des mécanismes de stratégie de mot de passe Windows pour les connexions SQL Server. Les stratégies de complexité des mots de passe sont conçues pour prévenir les attaques en force brute en augmentant le nombre de mots de passe possibles. SQL Server pouvez appliquer les mêmes stratégies de complexité et d’expiration aux mots de passe utilisés dans SQL Server.  
   
 > [!IMPORTANT]
 > La concaténation des chaînes de connexion à partir des entrées utilisateur peut vous rendre vulnérable à une attaque par injection de chaîne de connexion. Utilisez le <xref:System.Data.SqlClient.SqlConnectionStringBuilder> pour créer des chaînes de connexion valides du point de vue de la syntaxe au moment de l'exécution. Pour plus d’informations, consultez [Builders de chaînes de connexion](../connection-string-builders.md).  
@@ -76,7 +76,7 @@ SQL Server prend en charge deux modes d'authentification, le mode d'authentifica
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Principaux](/sql/relational-databases/security/authentication-access/principals-database-engine)|Décrit les connexions et autres entités de sécurité dans SQL Server.|  
+|[Principaux](/sql/relational-databases/security/authentication-access/principals-database-engine)|Décrit les connexions et autres principaux de sécurité dans SQL Server.|  
   
 ## <a name="see-also"></a>Voir aussi
 
