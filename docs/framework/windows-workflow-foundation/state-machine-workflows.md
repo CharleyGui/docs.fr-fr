@@ -21,7 +21,7 @@ Une machine à états représente un paradigme connu pour développer des progra
   
 - <xref:System.Activities.Statements.Transition>  
   
- Pour créer un workflow de machine à états, les états sont ajoutés à une activité <xref:System.Activities.Statements.StateMachine>, et les transitions sont utilisées pour contrôler le flux entre les états. La capture d’écran suivante, extraite de l’étape [prise en main didacticiel](getting-started-tutorial.md) [procédure : créer un workflow d’ordinateur d’État](how-to-create-a-state-machine-workflow.md), montre un workflow d’ordinateur d’État avec trois États et trois transitions. **Initialiser la cible** est l’état initial et représente le premier État du flux de travail. Cela est désigné par la ligne qui le mène à partir du nœud de **départ** . L’état final du flux de travail est nommé **FinalState**et représente le point auquel le flux de travail est terminé.  
+ Pour créer un workflow de machine à états, les états sont ajoutés à une activité <xref:System.Activities.Statements.StateMachine>, et les transitions sont utilisées pour contrôler le flux entre les états. La capture d’écran suivante, de l’étape [prise en main didacticiel](getting-started-tutorial.md) [procédure : Créer un](how-to-create-a-state-machine-workflow.md)de workflow d’ordinateur d’État, affiche un flux de travail d’ordinateur d’État avec trois États et trois transitions. **Initialiser la cible** est l’état initial et représente le premier État du flux de travail. Cela est désigné par la ligne qui le mène à partir du nœud de **départ** . L’état final du flux de travail est nommé **FinalState**et représente le point auquel le flux de travail est terminé.  
   
  ![Illustration qui montre le flux de travail de l’ordinateur d’état terminé.](./media/state-machine-workflows/complete-state-machine-workflow.jpg)  
   
@@ -59,7 +59,7 @@ Une machine à états représente un paradigme connu pour développer des progra
 > [!NOTE]
 > Notez que si la condition <xref:System.Activities.Statements.Transition.Condition%2A> d'une transition a pour valeur `False` (ou si toutes les conditions d'une transition de déclencheur partagée ont la valeur `False`), la transition n'a pas lieu et tous les déclencheurs de toutes les transitions de l'état sont replanifiés.  
   
- Pour plus d’informations sur la création de workflows de machine à États, consultez Guide pratique [pour créer un workflow d’ordinateur d’État, le concepteur d'](how-to-create-a-state-machine-workflow.md) [activités StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer), le [Concepteur](/visualstudio/workflow-designer/state-activity-designer)d’activités d’État, le [Concepteur d’activités FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)et le concepteur d’activités de [transition](/visualstudio/workflow-designer/transition-activity-designer).  
+ Pour plus d’informations sur la création de workflows de machine à États, consultez [procédure : Créez un flux de travail d’ordinateur d’État](how-to-create-a-state-machine-workflow.md), le [Concepteur d’activités StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer), le concepteur d’activités d' [État](/visualstudio/workflow-designer/state-activity-designer), le [Concepteur d’activités FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)et le [Concepteur d’activités de transition](/visualstudio/workflow-designer/transition-activity-designer).  
   
 ## <a name="state-machine-terminology"></a>Terminologie de machine à états  
  Cette section explique la terminologie de machine à états utilisée dans cette rubrique.  
@@ -102,7 +102,7 @@ Une machine à états représente un paradigme connu pour développer des progra
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour créer un workflow de machine à états](how-to-create-a-state-machine-workflow.md)
+- [Guide pratique : Créer un flux de travail d’ordinateur d’État](how-to-create-a-state-machine-workflow.md)
 - [Concepteur d’activités StateMachine](/visualstudio/workflow-designer/statemachine-activity-designer)
 - [Concepteur d’activités State](/visualstudio/workflow-designer/state-activity-designer)
 - [Concepteur d’activités FinalState](/visualstudio/workflow-designer/finalstate-activity-designer)
