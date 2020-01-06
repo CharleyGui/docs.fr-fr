@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer un workflow séquentiel'
+title: 'Procédure : créer un workflow séquentiel'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +12,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 09/14/2019
 ms.locfileid: "70989701"
 ---
-# <a name="how-to-create-a-sequential-workflow"></a>Procédure : Créer un workflow séquentiel
+# <a name="how-to-create-a-sequential-workflow"></a>Procédure : créer un workflow séquentiel
 
-Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique explique comment créer un workflow qui utilise à la fois des activités intégrées telles que <xref:System.Activities.Statements.Sequence> l’activité, et les activités personnalisées de [la procédure précédente Comment : Créer une rubrique](how-to-create-an-activity.md) d’activité. Le workflow modélise un jeu d'estimation de nombre.
+Les workflows peuvent être construits aussi bien à partir d'activités intégrées que d'activités personnalisées. Cette rubrique décrit comment créer un workflow qui utilise à la fois des activités intégrées, telles que l’activité <xref:System.Activities.Statements.Sequence>, et les activités personnalisées de la [précédente Comment : Créer une activité](how-to-create-an-activity.md) rubrique. Le workflow modélise un jeu d'estimation de nombre.
 
 > [!NOTE]
-> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord [effectuer les opérations suivantes : Créer une activité](how-to-create-an-activity.md).
+> Chaque rubrique du didacticiel de mise en route dépend des rubriques précédentes. Pour effectuer cette rubrique, vous devez d’abord terminer [procédure : Créer une](how-to-create-an-activity.md)d’activité.
 
 > [!NOTE]
 > Pour télécharger une version complète du didacticiel, consultez [Windows Workflow Foundation (WF45) - Getting Started Tutorial](https://go.microsoft.com/fwlink/?LinkID=248976)(Windows Workflow Foundation (WF45) - Didacticiel de mise en route).
@@ -44,7 +44,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 
 5. Cliquez sur **créer un argument**.
 
-6. Tapez `Turns` dans la zone **nom** située sous l’argument nouvellement ajouté `MaxNumber` , sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.
+6. Tapez `Turns` dans la zone **nom** située sous l’argument `MaxNumber` récemment ajouté, sélectionnez **out** dans la liste déroulante **direction** , sélectionnez **Int32** dans la liste déroulante **type d’argument** , puis appuyez sur entrée.
 
 7. Cliquez sur **arguments** dans la partie inférieure gauche du concepteur d’activités pour fermer le volet **arguments** .
 
@@ -94,7 +94,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 
 4. Faites glisser une activité **prompt** de la section **NumberGuessWorkflowActivities** de la **boîte à outils** et déposez-la dans l’activité en **cours** à partir de l’étape précédente.
 
-5. Dans la **fenêtre Propriétés**, tapez `"EnterGuess"` en incluant les guillemets dans la zone de valeur de propriété **NomSignet** pour l’activité **prompt** . Tapez `Guess` dans la zone valeur de la propriété de **résultat** , puis tapez l’expression suivante dans la zone de propriété **texte** .
+5. Dans la **fenêtre Propriétés**, tapez `"EnterGuess"` y compris les guillemets dans la zone de valeur de propriété **NomSignet** pour l’activité **prompt** . Tapez `Guess` dans la zone valeur de la propriété de **résultat** , puis tapez l’expression suivante dans la zone de propriété **texte** .
 
     ```vb
     "Please enter a number between 1 and " & MaxNumber
@@ -112,7 +112,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
     > [!NOTE]
     > Lorsque vous déposez l’activité **Assign** , Notez comment le concepteur de workflow ajoute automatiquement une activité **Sequence** pour contenir à la fois l’activité **prompt** et l’activité Assign qui vient d' **être** ajoutée.
 
-7. Tapez `Turns` dans la zone **à** , `Turns + 1` puis dans la zone **entrer une C# expression** ou **entrer une expression VB** .
+7. Tapez `Turns` dans la zone **à** et `Turns + 1` dans la zone **entrer C# une expression** ou **entrer une expression VB** .
 
 8. Faites glisser une activité **If** de la section **Control Flow** de **la boîte à outils** et déposez-la dans l’activité **Sequence** afin qu’elle suive l’activité Assign qui vient d' **être** ajoutée.
 
@@ -156,7 +156,7 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 
 1. Appuyez sur Ctrl+Maj+B pour générer la solution.
 
-     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique [suivante, comment : Exécuter un flux](how-to-run-a-workflow.md)de travail. Si vous avez déjà effectué les [opérations suivantes : Exécutez une étape](how-to-run-a-workflow.md) de workflow avec un style différent de workflow et souhaitez l’exécuter à l’aide du flux de travail séquentiel de cette étape, passez à la section [ [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) dans How to : Exécuter un flux](how-to-run-a-workflow.md)de travail.
+     Pour obtenir des instructions sur l’exécution du flux de travail, consultez la rubrique suivante, [procédure : Exécutez un](how-to-run-a-workflow.md)de Workflow. Si vous avez déjà effectué les [procédure : Exécuter un flux de travail](how-to-run-a-workflow.md) étape avec un style différent de workflow et souhaitez l’exécuter à l’aide du workflow séquentiel de cette étape, passez à la section [pour générer et exécuter l’application](how-to-run-a-workflow.md#BKMK_ToRunTheApplication) de [procédure: Exécutez un de Workflow](how-to-run-a-workflow.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -165,5 +165,5 @@ Les workflows peuvent être construits aussi bien à partir d'activités intégr
 - [Programmation Windows Workflow Foundation](programming.md)
 - [Conception des workflows](designing-workflows.md)
 - [Didacticiel Bien démarrer](getting-started-tutorial.md)
-- [Guide pratique pour Créer une activité](how-to-create-an-activity.md)
-- [Guide pratique pour Exécuter un flux de travail](how-to-run-a-workflow.md)
+- [Guide pratique : Créer une activité](how-to-create-an-activity.md)
+- [Guide pratique : Exécuter un flux de travail](how-to-run-a-workflow.md)
