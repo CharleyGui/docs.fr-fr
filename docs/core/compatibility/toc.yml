@@ -5,6 +5,7 @@
 - name: Sélecteurs de page
   href: breaking-changes.md
 - name: Par version
+  expanded: true
   items:
     - name: 3.0 à 3.1
       href: 3.0-3.1.md
@@ -12,7 +13,10 @@
       href: 2.2-3.1.md
     - name: 2.2 à 3.0
       href: 2.2-3.0.md
+    - name: 2.0 à 2.1
+      href: 2.0-2.1.md
 - name: Par domaine
+  expanded: true
   items:
     - name: ASP.NET Core
       href: aspnetcore.md

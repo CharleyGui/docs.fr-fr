@@ -5,8 +5,6 @@
 - name: Bien démarrer
   href: getting-started/index.md
   items:
-    - name: Modifications avec rupture de Visual Basic dans Visual Studio
-      href: getting-started/breaking-changes-in-visual-studio.md
     - name: Ressources supplémentaires pour les programmeurs Visual Basic
       href: getting-started/additional-resources.md
 - name: Développement d’applications
@@ -893,7 +891,7 @@
           href: language-reference/error-messages/expression-cannot-be-used-as-a-type-constraint.md
         - name: <functionname> n’est pas déclaré (erreur du compilateur Visual Basic/Smart Device)
           href: language-reference/error-messages/functionname-is-not-declared-smart-device-visual-basic-compiler-error.md
-        - name: <interfacename> <membername> est déjà implémenté par la classe de base <baseclassname>. Réimplémentation de <type> attendue
+        - name: <interfacename><membername> est déjà implémenté par la classe de base <baseclassname>. Réimplémentation de <type> attendue
           href: language-reference/error-messages/interfacename-membername-is-already-implemented-by-the-base-class.md
         - name: '''<keyword>'' est valide uniquement dans une méthode d''instance'
           href: language-reference/error-messages/keyword-is-valid-only-within-an-instance-method.md
@@ -911,9 +909,9 @@
           href: language-reference/error-messages/name1-is-ambiguous-imported-from-the-namespaces-or-types-name2.md
         - name: '<proceduresignature1> n’est pas conforme au CLS, car il surcharge <proceduresignature2> dont il diffère uniquement par un tableau de types de paramètres tableau ou par la dimension des types de paramètres tableau'
           href: language-reference/error-messages/proceduresignature1-not-cls-compliant-because-it-overloads-proceduresignature2.md
-        - name: <type1> <typename> doit implémenter <membername> pour l’interface <interfacename>
+        - name: <type1><typename> doit implémenter <membername> pour l’interface <interfacename>
           href: language-reference/error-messages/type1-must-implement-membername-for-interface.md
-        - name: <type1> <typename> doit implémenter <methodname> pour l’interface <interfacename>
+        - name: <type1><typename> doit implémenter <methodname> pour l’interface <interfacename>
           href: language-reference/error-messages/type1-typename-must-implement-methodname-for-interface-interfacename.md
         - name: '''<typename>'' ne peut pas hériter de <type> ''<basetypename>'' car il étend l''accès du <type> de base en dehors de l''assembly'
           href: language-reference/error-messages/typename-cannot-inherit-from-type-basetypename.md
