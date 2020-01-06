@@ -2,12 +2,12 @@
 title: Stockage de données dans Azure
 description: Architecture des applications .NET natives Cloud pour Azure | Stockage de données dans Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 1a86cecf005c6dbdfda5cf4cacfafaad4711c076
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5ba05f53faf65334f6269af8ae2c54d81e6b0779
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087766"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337466"
 ---
 # <a name="data-storage-in-azure"></a>Stockage de données dans Azure
 
@@ -63,11 +63,11 @@ Outre la pile de Microsoft SQL Server traditionnelle, Azure propose également d
 
 - Mise à l' [échelle](https://docs.microsoft.com/azure/mysql/concepts-high-availability) en quelques secondes.
 
-- Sécurisé pour protéger les données sensibles au repos et en mouvement.
+- La protection des données sensibles au repos et en mouvement ;
 
 - [Sauvegardes automatiques](https://docs.microsoft.com/azure/mysql/concepts-backup) et [restauration](https://docs.microsoft.com/azure/mysql/concepts-backup) jusqu’à une date et heure jusqu’à 35 jours.
 
-- Sécurité et conformité à l’échelle de l’entreprise.
+- Une sécurité et une conformité de classe Entreprise.
 
 Ces fonctionnalités PaaS intégrées sont importantes pour les organisations qui ont des centaines de bases de données « tactiques » (non stratégiques) dans leurs centres de données, mais qui n’ont pas les ressources nécessaires pour effectuer les mises à jour correctives, la sauvegarde, la sécurité et la surveillance des performances.
 
@@ -95,7 +95,7 @@ MariaDB a une bonne suite et est utilisée par de nombreuses grandes entreprises
 
 - [Sauvegardes automatiques](https://docs.microsoft.com/azure/mariadb/concepts-backup) et [restauration](https://docs.microsoft.com/azure/mariadb/concepts-backup) jusqu’à une date et heure jusqu’à 35 jours.
 
-- Sécurité et conformité à l’échelle de l’entreprise.
+- Une sécurité et une conformité de classe Entreprise.
 
 ## <a name="azure-database-for-postgresql"></a>Azure Database pour PostgreSQL
 
@@ -129,11 +129,11 @@ Cosmos DB prend en charge le clustering [actif/actif](https://kemptechnologies.c
 
 La fonctionnalité de protocole [multimaître](https://docs.microsoft.com/azure/cosmos-db/how-to-multi-master) dans Cosmos DB active les fonctionnalités suivantes :
 
-- Écriture élastique illimitée et évolutivité de lecture.
+- Bénéficier d’une évolutivité élastique illimitée en écriture et en lecture.
 
-- 99,999% de la disponibilité en lecture et en écriture partout dans le monde.
+- Disponibilité en lecture et en écriture de 99,999 % dans le monde entier.
 
-- Lectures et écritures garanties traitées en moins de 10 millisecondes au 99e centile.
+- Lectures et écritures traitées en moins de 10 millisecondes au 99e centile.
 
 En interne, Cosmos DB gère la réplication des données entre régions avec des garanties de niveau de cohérence et des contrats de niveau de service soutenu financièrement.
 
@@ -141,7 +141,7 @@ Avec l’Cosmos DB les [API d’hébergement multiple](https://docs.microsoft.co
 
 ### <a name="multi-model-support"></a>Prise en charge de plusieurs modèles
 
-Cosmos DB est une *plateforme de données à plusieurs modèles* qui vous permet d’interagir avec vos données à l’aide d’un certain nombre de modèles NoSQL pris en charge, notamment des documents, des paires clé-valeur, des colonnes larges et des représentations graphiques. En interne, les données sont stockées dans un format de [struct](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/using-structs) simple constitué de types de données primitifs, notamment des chaînes, des valeurs booléennes et des nombres. Pour chaque demande, le moteur de base de données traduit les données dans la représentation du modèle que vous avez sélectionnée. Vous avez le choix entre une API propriétaire Cosmos DB SQL ou l’une des [API de compatibilité](https://www.wikiwand.com/en/Cosmos_DB) illustrée dans la figure 5-14.
+Cosmos DB est une *plateforme de données à plusieurs modèles* qui vous permet d’interagir avec vos données à l’aide d’un certain nombre de modèles NoSQL pris en charge, notamment des documents, des paires clé-valeur, des colonnes larges et des représentations graphiques. En interne, les données sont stockées dans un simple format [struct](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/using-structs) constitué de types de données primitifs, notamment des chaînes, des valeurs booléennes et des nombres. Pour chaque demande, le moteur de base de données traduit les données dans la représentation du modèle que vous avez sélectionnée. Vous avez le choix entre une API propriétaire Cosmos DB SQL ou l’une des [API de compatibilité](https://www.wikiwand.com/en/Cosmos_DB) illustrée dans la figure 5-14.
 
 ![Fournisseurs de Cosmos DB](./media/cosmos-db-providers.png)
 
@@ -179,7 +179,7 @@ Vous gérez les données de Cosmos DB données en créant des [bases de données
 
 **Figure 5-17**: hiérarchie des entités Cosmos DB
 
-Notez dans la figure 5-17 comment vous commencez par créer une base de données Cosmos DB à l’intérieur d’un compte de base de données. Cette base de données devient l’unité de gestion pour un ensemble de conteneurs. Un conteneur est un regroupement indépendant du schéma des éléments qui peut être exprimé sous la forme d’une collection, d’une table ou d’un graphique, en fonction de votre fournisseur d’API sélectionné (abordé dans la section précédente). Les éléments sont les données que vous ajoutez au conteneur et sont représentés sous forme de documents, de lignes, de nœuds ou d’arêtes. Par défaut, tous les éléments que vous ajoutez à un conteneur sont automatiquement indexés sans nécessiter d’index ou de gestion de schéma explicites.
+Notez dans la figure 5-17 comment vous commencez par créer une base de données Cosmos DB à l’intérieur d’un compte de base de données. Cette base de données devient l’unité de gestion pour un ensemble de conteneurs. Un conteneur est un regroupement indépendant du schéma des éléments qui peut être exprimé sous la forme d’une collection, d’une table ou d’un graphique, en fonction de votre fournisseur d’API sélectionné (abordé dans la section précédente). Les éléments sont les données que vous ajoutez au conteneur et sont représentés sous forme de documents, de lignes, de nœuds ou d’arêtes. Par défaut, tous les éléments que vous ajoutez à un conteneur sont automatiquement indexés, sans que vous ayez à effectuer une gestion explicite d’index ou de schéma.
 
 Pour partitionner le conteneur, les éléments sont divisés en sous-ensembles distincts appelés [partitions logiques](https://docs.microsoft.com/azure/cosmos-db/partition-data). Les partitions logiques sont créées en fonction de la valeur d’une clé de partition qui est associée à chaque élément dans un conteneur. La figure 5-18 montre comment tous les éléments d’une partition logique ont la même valeur de clé de partition.
 
@@ -191,7 +191,7 @@ Notez dans la figure 5-18 comment chaque élément comprend une clé de partitio
 
 En interne, Cosmos DB gère automatiquement le placement des [partitions logiques](https://docs.microsoft.com/azure/cosmos-db/partition-data) sur les [partitions physiques](https://docs.microsoft.com/azure/cosmos-db/partition-data) pour répondre efficacement aux besoins d’évolutivité et de performances du conteneur. À mesure que le débit et le stockage requis par une application augmentent, Azure Cosmos DB déplace les partitions logiques pour redistribuer la charge sur un plus grand nombre de serveurs. Ces opérations de redistribution sont gérées par Cosmos DB et sont effectuées sans interruption ni temps d’arrêt.
 
-## <a name="azure-redis-cache"></a>Cache Redims Azure
+## <a name="azure-redis-cache"></a>Cache Azure Redis
 
 Les avantages de la mise en cache pour améliorer les performances et l’évolutivité sont bien compris.
 

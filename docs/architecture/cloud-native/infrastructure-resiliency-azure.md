@@ -2,12 +2,12 @@
 title: Résilience de la plateforme Azure
 description: Architecture des applications .NET natives Cloud pour Azure | Résilience de l’infrastructure cloud avec Azure
 ms.date: 06/30/2019
-ms.openlocfilehash: 02d661952c860da25442b0fa9fed0d5f93abe023
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 8b33c1cec1633c9fb25ae2b02e51f8be01c22941
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520771"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337388"
 ---
 # <a name="azure-platform-resiliency"></a>Résilience de la plateforme Azure
 
@@ -26,11 +26,11 @@ Comprendre comment ces caractéristiques fonctionnent ensemble et comment elles 
 
 Les échecs varient selon l’étendue de l’impact. Une défaillance matérielle, telle qu’un disque défaillant, peut affecter un nœud unique dans un cluster. Un commutateur réseau défaillant peut affecter un rack de serveurs entier. Les défaillances moins courantes, telles que la perte de puissance, peuvent perturber l’ensemble d’un centre de donné. Rarement, toute une région n’est plus disponible.
 
-La [redondance](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy) est un moyen d’assurer la résilience des applications. Le niveau exact de redondance nécessaire dépend des besoins de votre entreprise et a un impact sur le coût et la complexité de votre système. Par exemple, un déploiement sur plusieurs régions est plus onéreux et plus complexe à gérer qu’un déploiement sur une seule région. Vous aurez besoin de procédures opérationnelles pour gérer le basculement et la restauration automatique. Les coûts et la complexité supplémentaires peuvent être justifiés pour certains scénarios d’entreprise et pas pour d’autres.
+La [redondance](https://docs.microsoft.com/azure/architecture/guide/design-principles/redundancy) est un moyen d’assurer la résilience des applications. Le niveau exact de redondance nécessaire dépend des besoins de votre entreprise et a un impact sur le coût et la complexité de votre système. Par exemple, un déploiement sur plusieurs régions est plus onéreux et plus complexe à gérer qu’un déploiement sur une seule région. Vous aurez besoin de procédures opérationnelles pour gérer le basculement et la restauration automatique. Tous les scénarios métiers ne justifient pas ce surcroît de complexité et ces frais supplémentaires.
 
 Pour concevoir la redondance, vous devez identifier les chemins critiques dans votre application, puis déterminer s’il existe une redondance à chaque point du chemin d’accès ? En cas d’échec d’un sous-système, l’application bascule-t-elle vers autre chose ? Enfin, vous avez besoin d’une compréhension claire des fonctionnalités intégrées à la plateforme Cloud Azure que vous pouvez exploiter pour répondre à vos besoins en matière de redondance. Voici des recommandations pour l’architecture de la redondance :
 
-- *Déployez plusieurs instances de services.* Si votre application dépend d’une seule instance d’un service, elle crée un point de défaillance unique. L’approvisionnement de plusieurs instances améliore la résilience et l’évolutivité. Lors de l’hébergement dans le service Azure Kubernetes, vous pouvez configurer de manière déclarative des instances redondantes (jeux de réplicas) dans le fichier manifeste Kubernetes. La valeur du nombre de réplicas peut être gérée par programme, dans le portail ou via les fonctionnalités de mise à l’échelle automatique, qui seront abordées ultérieurement.
+- *Déployez plusieurs instances des services.* Si votre application repose sur une seule instance unique d’un service, cela crée un point de défaillance unique. L’approvisionnement de plusieurs instances améliore à la fois la résilience et l’extensibilité. Lors de l’hébergement dans le service Azure Kubernetes, vous pouvez configurer de manière déclarative des instances redondantes (jeux de réplicas) dans le fichier manifeste Kubernetes. La valeur du nombre de réplicas peut être gérée par programme, dans le portail ou via les fonctionnalités de mise à l’échelle automatique, qui seront abordées ultérieurement.
 
 - *Utilisation d’un équilibreur de charge.* L’équilibrage de charge distribue les demandes de votre application à des instances de service saines et supprime automatiquement les instances défectueuses de la rotation. Lors du déploiement sur Kubernetes, l’équilibrage de charge peut être spécifié dans le fichier manifeste Kubernetes de la section services.
 
@@ -42,13 +42,13 @@ Pour concevoir la redondance, vous devez identifier les chemins critiques dans v
 
 **Figure 6-6.** Ressources répliquées dans les régions
 
-- *Implémentez un équilibreur de charge du trafic DNS.* [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview) fournit une haute disponibilité pour les applications critiques en équilibrant la charge au niveau du DNS. Il peut acheminer le trafic vers différentes régions en fonction de la géographie, du temps de réponse du cluster et même de l’intégrité du point de terminaison d’application. Par exemple, Azure Traffic Manager peut diriger les clients vers l’instance d’application et le cluster AKS le plus proche. Si vous avez plusieurs clusters AKS dans différentes régions, utilisez Traffic Manager pour contrôler le flux du trafic vers les applications qui s’exécutent dans chaque cluster. La figure 6-7 illustre ce scénario.
+- *Implémentez un équilibreur de charge du trafic DNS.* [Azure Traffic Manager](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-overview) fournit une haute disponibilité pour les applications critiques en équilibrant la charge au niveau du DNS. Il peut acheminer le trafic vers différentes régions en fonction de la géographie, du temps de réponse du cluster et même de l’intégrité du point de terminaison d’application. Par exemple, Azure Traffic Manager peut diriger les clients vers l’instance d’application et le cluster AKS le plus proche. Si vous possédez plusieurs clusters AKS dans différentes régions, utilisez Traffic Manager pour contrôler la façon dont le trafic afflue vers les applications qui s’exécutent dans chaque cluster. La figure 6-7 illustre ce scénario.
 
 ![AKS et Azure Traffic Manager](./media/aks-traffic-manager.png)
 
 **Figure 6-7.** AKS et Azure Traffic Manager
 
-## <a name="design-for-scalability"></a>Conception pour l’évolutivité
+## <a name="design-for-scalability"></a>Conception dans l’optique de la scalabilité
 
 Le Cloud est très prospère en matière de mise à l’échelle. La possibilité d’augmenter ou de diminuer les ressources système pour résoudre la charge système en hausse/en baisse est un principe essentiel du Cloud Azure. Toutefois, pour mettre à l’échelle efficacement une application, vous devez comprendre les fonctionnalités de mise à l’échelle de chaque service Azure que vous incluez dans votre application.  Voici des recommandations pour implémenter efficacement la mise à l’échelle dans votre système.
 
@@ -78,7 +78,7 @@ Nous avons encouragé la meilleure pratique qui consiste à implémenter des op�
 
 - *Cache Redims Azure.* Le client StackExchanges ReDim utilise une classe de gestionnaire de connexions qui comprend les nouvelles tentatives en cas d’échec. Le nombre de nouvelles tentatives, la stratégie de nouvelle tentative spécifique et le temps d’attente sont tous configurables.
 
-- *Azure Service Bus.* Le client Service Bus expose une [classe RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) qui peut être configurée avec un intervalle de temporisation, un nombre de tentatives et un <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer>, qui spécifie la durée maximale pendant laquelle une opération peut prendre. La stratégie par défaut est de neuf tentatives de nouvelle tentative au maximum, avec une période d’interruption de 30 secondes entre chaque tentative.
+- *Azure Service Bus.* Le client Service Bus expose une [classe RetryPolicy](xref:Microsoft.ServiceBus.RetryPolicy) qui peut être configurée avec un intervalle de temporisation, un nombre de tentatives et un <xref:Microsoft.ServiceBus.RetryExponential.TerminationTimeBuffer%2A>, qui spécifie la durée maximale pendant laquelle une opération peut prendre. La stratégie par défaut est de neuf tentatives de nouvelle tentative au maximum, avec une période d’interruption de 30 secondes entre chaque tentative.
 
 - *Azure SQL Database.* La prise en charge des nouvelles tentatives est fournie lors de l’utilisation de la bibliothèque de [Entity Framework Core](https://docs.microsoft.com/ef/core/miscellaneous/connection-resiliency) .
 

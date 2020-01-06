@@ -4,20 +4,20 @@ description: En savoir plus sur la gestion des requêtes HTTP avec les modules, 
 author: danroth27
 ms.author: daroth
 ms.date: 10/11/2019
-ms.openlocfilehash: b0be6109b9226bddbb9cbe4cebf114fd2b2a6114
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: 3ecc109c54f88b5b06a1474f7c6e262d426a78a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291150"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337476"
 ---
 # <a name="modules-handlers-and-middleware"></a>Modules, gestionnaires et intergiciel (middleware)
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Une application ASP.NET Core est basée sur une série d’intergiciels (middleware). Les intergiciels sont des gestionnaires, qui sont organisés en pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une application éblouissante.
+Une application ASP.NET Core est basée sur une série d' *intergiciels (middleware*). L’intergiciel est un gestionnaire qui est organisé dans un pipeline pour gérer les demandes et les réponses. Dans une application Web Forms, les modules et les gestionnaires HTTP résolvent des problèmes similaires. Dans ASP.NET Core, les modules, les gestionnaires, *global.asax.cs*et le cycle de vie de l’application sont remplacés par un intergiciel (middleware). Dans ce chapitre, vous allez découvrir l’intergiciel (middleware) dans le contexte d’une application éblouissante.
 
-## <a name="overview"></a>Vue d’ensemble
+## <a name="overview"></a>Vue d'ensemble de
 
 Le pipeline de requête ASP.NET Core est composé d’une séquence de délégués de requête, appelés l’un après l’autre. Le diagramme suivant illustre le concept. Le thread d’exécution suit les flèches noires.
 
@@ -35,15 +35,15 @@ ASP.NET 4. x comprend de nombreux modules. De la même façon, ASP.NET Core poss
 
 Le tableau suivant répertorie les intergiciels et composants de remplacement dans ASP.NET Core.
 
-|Module                 |Module ASP.NET 4. x           |Option ASP.NET Core|
+|Module, mot clé                 |Module ASP.NET 4. x           |Option ASP.NET Core|
 |-----------------------|-----------------------------|-------------------|
 |Erreurs HTTP            |`CustomErrorModule`          |[Middleware (intergiciel) de pages de codes d’état](/aspnet/core/fundamentals/error-handling#usestatuscodepages)|
 |Document par défaut       |`DefaultDocumentModule`      |[Middleware de fichiers par défaut](/aspnet/core/fundamentals/static-files#serve-a-default-document)|
-|Exploration des répertoires     |`DirectoryListingModule`     |[Middleware d’exploration des répertoires](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
+|Exploration de répertoires     |`DirectoryListingModule`     |[Middleware d’exploration des répertoires](/aspnet/core/fundamentals/static-files#enable-directory-browsing)|
 |Compression dynamique    |`DynamicCompressionModule`   |[Intergiciel (middleware) de compression des réponses](/aspnet/core/performance/response-compression)|
 |Suivi des demandes ayant échoué|`FailedRequestsTracingModule`|[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index#tracesource-provider)|
-|Mise en cache de fichiers           |`FileCacheModule`            |[Intergiciel de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
-|Mise en cache HTTP           |`HttpCacheModule`            |[Intergiciel de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
+|Mise en cache de fichiers           |`FileCacheModule`            |[Intergiciel (middleware) de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
+|Mise en cache HTTP           |`HttpCacheModule`            |[Intergiciel (middleware) de mise en cache des réponses](/aspnet/core/performance/caching/middleware)|
 |Journalisation HTTP           |`HttpLoggingModule`          |[Journalisation ASP.NET Core](/aspnet/core/fundamentals/logging/index)|
 |Redirection HTTP       |`HttpRedirectionModule`      |[Intergiciel (middleware) de réécriture d’URL](/aspnet/core/fundamentals/url-rewriting)|
 |ISAPI, filtres          |`IsapiFilterModule`          |[Intergiciel (middleware)](/aspnet/core/fundamentals/middleware/index)|

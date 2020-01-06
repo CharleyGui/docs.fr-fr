@@ -4,12 +4,12 @@ description: Découvrez comment créer des composants d’interface utilisateur 
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 79919b183a4eb759f0b27c97500ee71c9378770b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5e5ca128bea2e77d795cede17df73963d9b49a48
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088101"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337399"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Créer des composants d’interface utilisateur réutilisables avec éblouissant
 
@@ -81,13 +81,13 @@ Le tableau suivant récapitule les différentes directives Razor utilisées dans
 |-------------|-----------|-------|--------------------|
 |`@attribute` |Ajoute un attribut de niveau classe au composant.|`@attribute [Authorize]`|Aucun|
 |`@code`      |Ajoute des membres de classe au composant|`@code { ... }`|`<script runat="server">...</script>`|
-|`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser du code-behind|
+|`@implements`|Implémente l’interface spécifiée|`@implements IDisposable`|Utiliser code-behind|
 |`@inherits`  |Hérite de la classe de base spécifiée|`@inherits MyComponentBase`|`<%@ Control Inherits="MyUserControlBase" %>`|
 |`@inject`    |Injecte un service dans le composant.|`@inject IJSRuntime JS`|Aucun|
 |`@layout`    |Spécifie un composant de disposition pour le composant|`@layout MainLayout`|`<%@ Page MasterPageFile="~/Site.Master" %>`|
 |`@namespace` |Définit l’espace de noms pour le composant|`@namespace MyNamespace`|Aucun|
 |`@page`      |Spécifie l’itinéraire pour le composant|`@page "/product/{id}"`|`<%@ Page %>`|
-|`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser du code-behind|
+|`@typeparam` |Spécifie un paramètre de type générique pour le composant|`@typeparam TItem`|Utiliser code-behind|
 |`@using`     |Spécifie un espace de noms à placer dans la portée|`@using MyComponentNamespace`|Ajouter un espace de noms dans *Web. config*|
 
 Les composants Razor utilisent également de manière intensive les *attributs de directive* sur les éléments pour contrôler différents aspects de la compilation des composants (gestion des événements, liaison de données, composants & références d’éléments, etc.). Les attributs de directive suivent une syntaxe générique commune dans laquelle les valeurs entre parenthèses sont facultatives :
@@ -98,7 +98,7 @@ Les composants Razor utilisent également de manière intensive les *attributs d
 
 Le tableau suivant résume les différents attributs des directives Razor utilisées dans éblouissant.
 
-|Attribut    |Description|Exemple|
+|Attribute    |Description|Exemple|
 |-------------|-----------|-------|
 |`@attributes`|Génère le rendu d’un dictionnaire d’attributs|`<input @attributes="ExtraAttributes" />`|
 |`@bind`      |Crée une liaison de données bidirectionnelle    |`<input @bind="username" @bind:event="oninput" />`|
@@ -115,7 +115,7 @@ La plupart des syntaxes utilisées dans les fichiers *. aspx* et *. ascx* ont de
 |Directives                   |`<%@ [directive] %>`|`<%@ Page %>`        |`@[directive]`|`@page`|
 |Blocs de code                  |`<% %>`             |`<% int x = 123; %>` |`@{ }`        |`@{ int x = 123; }`|
 |Expressions<br>(Encodé en HTML)|`<%: %>`            |`<%:DateTime.Now %>` |Implicite : `@`<br>Explicite : `@()`|`@DateTime.Now`<br>`@(DateTime.Now)`|
-|Commentaires                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
+|Comments                     |`<%-- --%>`         |`<%-- Commented --%>`|`@* *@`       |`@* Commented *@`|
 |Liaison de données                 |`<%# %>`            |`<%# Bind("Name") %>`|`@bind`       |`<input @bind="username" />`|
 
 Pour ajouter des membres à la classe de composant Razor, utilisez la directive `@code`. Cette technique est similaire à l’utilisation d’un bloc `<script runat="server">...</script>` dans un contrôle utilisateur ou une page ASP.NET Web Forms.
@@ -131,7 +131,7 @@ Pour ajouter des membres à la classe de composant Razor, utilisez la directive 
 }
 ```
 
-Comme Razor est basé sur C#, il doit être compilé à partir d' C# un projet ( *. csproj*). Vous ne pouvez pas compiler de fichiers *. Razor* à partir d’un projet VB ( *. vbproj*). Vous pouvez toujours référencer des projets VB à partir de votre projet éblouissant. L’inverse est également vrai.
+Comme Razor est basé sur C#, il doit être compilé à partir d' C# un projet ( *. csproj*). Vous ne pouvez pas compiler de fichiers *. Razor* à partir d’un projet de Visual Basic ( *. vbproj*). Vous pouvez toujours référencer des projets Visual Basic à partir de votre projet éblouissant. L’inverse est également vrai.
 
 Pour obtenir une référence complète syntaxe Razor, consultez [syntaxe Razor référence pour ASP.net Core](/aspnet/core/mvc/views/razor).
 

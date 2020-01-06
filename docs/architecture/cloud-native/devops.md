@@ -2,12 +2,12 @@
 title: DevOps Cloud Native
 description: Architecture des applications .NET natives Cloud pour Azure | DevOps Cloud Native
 ms.date: 06/30/2019
-ms.openlocfilehash: 2b3dd47eeeb69d63f5ae39705abb9d1d51295645
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d152989061964d78c8be97b69df413b975058319
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087549"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337415"
 ---
 # <a name="cloud-native-devops"></a>DevOps Cloud Native
 
@@ -59,7 +59,7 @@ Chacun de ces composants offre des avantages pour les applications Cloud natives
 
 L’organisation du code pour une application Cloud Native peut être difficile. Au lieu d’une seule application Giant, les applications Cloud natives ont tendance à être composées d’un Web d’applications de petite taille qui communiquent les unes avec les autres. Comme pour tout le monde informatique, la meilleure organisation du code reste une question ouverte. Il existe des exemples d’applications ayant réussi à utiliser différents types de dispositions, mais deux variantes semblent avoir la plus grande popularité.
 
-Avant d’accéder au contrôle de code source proprement dit, il est probablement judicieux de décider du nombre de projets appropriés. Au sein d’un même projet, il existe une prise en charge de plusieurs dépôts et des pipelines de génération. Les tableaux sont un peu plus compliqués, mais les tâches peuvent être facilement affectées à plusieurs équipes au sein d’un même projet. Il est certes possible de prendre en charge des centaines, voire des milliers de développeurs, en dehors d’un seul projet Azure DevOps. Il s’agit probablement de la meilleure approche, car elle fournit un emplacement unique où tous les développeurs peuvent travailler et réduit la confusion liée à la recherche d’une application lorsque les développeurs ne sont pas sûrs dans le projet dans lequel elle réside.
+Avant d’accéder au contrôle de code source proprement dit, il est probablement judicieux de décider du nombre de projets appropriés. Au sein d’un même projet, il existe une prise en charge de plusieurs dépôts et des pipelines de génération. Les tableaux sont un peu plus compliqués, mais dans certains cas, les tâches peuvent être facilement affectées à plusieurs équipes au sein d’un même projet. Il est certes possible de prendre en charge des centaines, voire des milliers de développeurs, en dehors d’un seul projet Azure DevOps. Il s’agit probablement de la meilleure approche, car elle fournit un emplacement unique où tous les développeurs peuvent travailler et réduit la confusion liée à la recherche d’une application lorsque les développeurs ne sont pas sûrs dans le projet dans lequel elle réside.
 
 Le fractionnement du code pour les microservices dans le projet Azure DevOps peut être un peu plus complexe.
 
@@ -238,11 +238,11 @@ Le résultat final d’une build est une collection de fichiers connus sous le n
 
 ### <a name="azure-devops-releases"></a>Versions d’Azure DevOps
 
-Les builds s’occupent de la compilation du logiciel dans un package livrable, mais les artefacts doivent toujours être envoyés à un environnement de test pour effectuer une livraison continue. Pour ce faire, Azure DevOps utilise un outil distinct appelé releases. Les versions utilisent la même bibliothèque de tâches qui étaient disponibles pour la build, mais introduisent un concept de « étapes ». Une étape est un environnement isolé dans lequel le package est installé. Par exemple, un produit peut utiliser un environnement de développement, d’assurance qualité et de production. Le code est distribué en permanence dans l’environnement de développement dans lequel les tests automatisés peuvent être exécutés sur ce dernier. Une fois que ces tests réussissent, la publication passe dans l’environnement AQ pour les tests manuels. Enfin, le code est poussé vers la production où il est visible par tous.
+Les builds s’occupent de la compilation du logiciel dans un package livrable, mais les artefacts doivent toujours être envoyés à un environnement de test pour effectuer une livraison continue. Pour ce faire, Azure DevOps utilise un outil distinct appelé releases. L’outil releases utilise la bibliothèque des tâches qui étaient disponibles pour la génération, mais introduit un concept de « étapes ». Une étape est un environnement isolé dans lequel le package est installé. Par exemple, un produit peut utiliser un environnement de développement, d’assurance qualité et de production. Le code est distribué en permanence dans l’environnement de développement dans lequel les tests automatisés peuvent être exécutés sur ce dernier. Une fois que ces tests réussissent, la publication passe dans l’environnement AQ pour les tests manuels. Enfin, le code est poussé vers la production où il est visible par tous.
 
 ![Figure 11-9 exemple de pipeline de mise en production avec phases de développement, d’assurance qualité et de production](./media/release-pipeline.png)
 
-Chaque étape de la build peut être automatiquement déclenchée par la fin de la phase précédente. Toutefois, dans de nombreux cas, cela n’est pas souhaitable. Le déplacement du code en production peut nécessiter l’approbation d’une personne. Les versions prennent en charge cette opération en autorisant les approbateurs à chaque étape du pipeline de mise en production. Des règles peuvent être définies de sorte qu’une personne spécifique ou un groupe de personnes doive se déconnecter d’une version avant de passer en production. Ces portes permettent d’effectuer des contrôles de qualité manuels et également de respecter les exigences réglementaires liées au contrôle des opérations de production.
+Chaque étape de la build peut être automatiquement déclenchée par la fin de la phase précédente. Toutefois, dans de nombreux cas, cela n’est pas souhaitable. Le déplacement du code en production peut nécessiter l’approbation d’une personne. L’outil releases prend en charge cette opération en autorisant les approbateurs à chaque étape du pipeline de mise en production. Des règles peuvent être définies de sorte qu’une personne spécifique ou un groupe de personnes doive se déconnecter d’une version avant de passer en production. Ces portes permettent d’effectuer des contrôles de qualité manuels et également de respecter les exigences réglementaires liées au contrôle des opérations de production.
 
 ### <a name="everybody-gets-a-build-pipeline"></a>Tout le monde obtient un pipeline de build
 

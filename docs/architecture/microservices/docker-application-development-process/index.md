@@ -1,15 +1,15 @@
 ---
-title: Processus de développement des applications basées sur Docker
-description: Obtenez une vue d’ensemble détaillée des options pour le développement d’applications basées sur Docker. Utilisation de votre choix de Visual Studio pour Windows, Visual Studio pour Mac ou Visual Studio Code pour la prise en charge multiplateforme (Windows, Mac et Linux).
+title: Processus de développement pour les applications basées sur un ancrage
+description: Obtenir une vue d’ensemble globale des options de développement d’applications basées sur un ancrage. À l’aide de votre choix de Visual Studio pour Windows, Visual Studio pour Mac ou Visual Studio Code pour la prise en charge multiplateforme (Windows, macOS et Linux).
 ms.date: 09/27/2018
-ms.openlocfilehash: 6299d67299948dce1081a211b350e657b2c1b951
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 95e940371f4dbef3b3a8f327c13acbbc55ff29ef
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72770138"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337700"
 ---
-# <a name="development-process-for-docker-based-applications"></a>Processus de développement des applications basées sur Docker
+# <a name="development-process-for-docker-based-applications"></a>Processus de développement pour les applications basées sur un ancrage
 
 *Développez des applications .NET en conteneur comme vous le souhaitez, soit dans un environnement de développement intégré (IDE) avec Visual Studio et Visual Studio Tools pour Docker, soit avec une interface CLI/un éditeur avec une interface CLI Docker et Visual Studio Code.*
 
@@ -21,9 +21,9 @@ Que vous préfériez un IDE complet et puissant ou un éditeur léger et agile, 
 
 **Visual Studio (pour Windows)** . Lors du développement d’applications basées sur un ancrage avec Visual Studio, il est recommandé d’utiliser Visual Studio 2017 version 15,7 ou ultérieure, qui est fourni avec les outils pour l’outil d’intégration intégré. Les outils pour Docker vous permettent de développer, exécuter et valider vos applications directement dans l’environnement Docker cible. Vous pouvez appuyer sur F5 pour exécuter et déboguer votre application (conteneur unique ou plusieurs conteneurs) directement dans un hôte Docker, ou appuyer sur Ctrl+F5 pour modifier et actualiser votre application sans avoir à régénérer le conteneur. Ceci est le meilleur choix pour le développement d’applications basées sur Docker.
 
-**Visual Studio pour Mac.** C’est un IDE (évolution de Xamarin Studio) qui s’exécute dans macOS et qui prend en charge Docker depuis la mi-année 2017. Ce choix est recommandé pour les développeurs qui travaillent sur des ordinateurs Mac et qui veulent utiliser un IDE puissant.
+**Visual Studio pour Mac.** C’est un IDE (évolution de Xamarin Studio) qui s’exécute dans macOS et qui prend en charge Docker depuis la mi-année 2017. Il doit s’agir du choix privilégié pour les développeurs qui travaillent sur des ordinateurs macOS qui souhaitent également utiliser un IDE puissant.
 
-**Visual Studio Code et interface CLI Docker**. Si vous préférez un éditeur léger et multiplateforme qui prend en charge n’importe quel langage de développement, vous pouvez utiliser Microsoft Visual Studio Code (VS Code) et l’interface CLI Docker. Il s’agit d’une approche de développement multiplateforme pour Mac, Linux et Windows. De plus, Visual Studio Code prend en charge les extensions pour Docker comme IntelliSense pour les Dockerfiles et les tâches de raccourci afin d’exécuter des commandes Docker à partir de l’éditeur.
+**Visual Studio Code et interface CLI Docker**. Si vous préférez un éditeur léger et multiplateforme qui prend en charge n’importe quel langage de développement, vous pouvez utiliser Microsoft Visual Studio Code (VS Code) et l’interface CLI Docker. Il s’agit d’une approche de développement multiplateforme pour macOS, Linux et Windows. De plus, Visual Studio Code prend en charge les extensions pour Docker comme IntelliSense pour les Dockerfiles et les tâches de raccourci afin d’exécuter des commandes Docker à partir de l’éditeur.
 
 En installant [Docker Desktop Community Edition (CE)](https://hub.docker.com/search/?type=edition&offering=community), vous pouvez utiliser une seule interface CLI Docker pour générer des applications pour Windows et Linux.
 

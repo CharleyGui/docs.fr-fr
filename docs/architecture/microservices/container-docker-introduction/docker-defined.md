@@ -2,12 +2,12 @@
 title: Présentation de Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Présentation de Docker
 ms.date: 08/31/2018
-ms.openlocfilehash: 215d756c631440c99a3a8ad8128ec61fef3bc26d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a53845d3bbcf24f3eaeb98b9e08b6f35a023c30e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740085"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337705"
 ---
 # <a name="what-is-docker"></a>Présentation de Docker
 
@@ -19,7 +19,7 @@ ms.locfileid: "73740085"
 
 Les conteneurs Docker peuvent s’exécuter n’importe où, en local dans le centre de données client, dans un fournisseur de services externe ou dans le cloud, sur Azure. Les conteneurs d’images Docker peuvent s’exécuter en mode natif sur Linux et Windows. Toutefois, les images Windows peuvent s’exécuter uniquement sur des hôtes Windows et les images Linux peuvent s’exécuter sur des hôtes Linux et des hôtes Windows (à l’aide d’une machine virtuelle Linux Hyper-V, jusqu’à présent), où le terme « hôte » désigne un serveur ou une machine virtuelle.
 
-Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux, et ils peuvent créer des images uniquement pour les conteneurs Linux. (Les développeurs qui travaillent sur le Mac peuvent modifier le code ou exécuter l’interface de commande de l’ancrer à partir de macOS, mais au moment de la rédaction de cet article, les conteneurs ne s’exécutent pas directement sur macOS.) Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
+Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou Mac OS utilisent un hôte de station d’accueil qui est basé sur Linux et peuvent créer des images uniquement pour les conteneurs Linux. (Les développeurs qui travaillent sur macOS peuvent modifier le code ou exécuter l’interface de commande de l’ancrer à partir de macOS, mais au moment de la rédaction de cet article, les conteneurs ne s’exécutent pas directement sur macOS.) Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
 
 Pour héberger des conteneurs dans un environnement de développement et fournir des outils de développement supplémentaires, Docker fournit [Docker Community Edition (CE)](https://www.docker.com/community-edition) pour Windows ou macOS. Ces produits installent la machine virtuelle nécessaire (l’hôte Docker) pour héberger les conteneurs. Docker fournit aussi [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), conçu pour le développement en entreprise et utilisé par les équipes informatiques qui génèrent, livrent et exécutent des applications métier stratégiques volumineuses en production.
 
@@ -35,7 +35,7 @@ Les images de ces deux types de conteneurs sont créées et fonctionnent de la m
 
 La figure 2-3 compare les machines virtuelles et les conteneurs Docker.
 
-| Ordinateurs virtuels | Conteneurs Docker |
+| Virtual Machines | Conteneurs Docker |
 | -----------------| ------------------|
 |![Diagramme montrant la pile matérielle/logicielle d’une machine virtuelle traditionnelle.](./media/docker-defined/virtual-machine-hardware-software.png)|![Diagramme montrant la pile matérielle/logicielle pour les conteneurs de l’ancrage.](./media/docker-defined/docker-container-hardware-software.png)|
 |Les machines virtuelles incluent l’application, les bibliothèques ou binaires requis, et un système d’exploitation invité complet. La virtualisation complète nécessite plus de ressources que la mise en conteneur. | Les conteneurs incluent l’application et toutes ses dépendances. Toutefois, ils partagent le noyau du système d’exploitation avec d’autres conteneurs, exécutés en tant que processus isolés dans l’espace utilisateur sur le système d’exploitation hôte. (Ce n’est pas le cas des conteneurs Hyper-V, où chaque conteneur s’exécute sur une machine virtuelle spécifique.) |

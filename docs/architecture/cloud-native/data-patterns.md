@@ -2,12 +2,12 @@
 title: Modèles de données cloud natifs
 description: Architecture des applications .NET natives Cloud pour Azure | Modèles de données natifs du Cloud
 ms.date: 06/30/2019
-ms.openlocfilehash: 0d251f3046fcd3f3a2f5d856a123a35d3f7ecff2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9e90409b0b633796b452cfcfecb3896e79002d4d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087698"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337422"
 ---
 # <a name="cloud-native-data-patterns"></a>Modèles de données cloud natifs
 
@@ -69,7 +69,7 @@ Notez comment, dans la figure précédente, cinq microservices indépendants par
 
 Un modèle répandu pour l’ajout par programmation de la prise en charge transactionnelle est le [modèle saga](https://blog.couchbase.com/saga-pattern-implement-business-transactions-using-microservices-part/). Elle est implémentée par le regroupement des transactions locales et l’appel séquentiel de chacune d’elles. En cas d’échec d’une transaction locale, saga abandonne l’opération et appelle un ensemble de [transactions de compensation](https://docs.microsoft.com/azure/architecture/patterns/compensating-transaction) pour annuler les modifications apportées par les transactions locales précédentes. La figure 5-9 montre une transaction ayant échoué avec le modèle saga.
 
-![Restauration dans le modèle saga](./media/saga-rollback-operation.png)
+![Revenir en arrière dans le modèle saga](./media/saga-rollback-operation.png)
 
 **Figure 5-9**. Restauration d'une transaction
 
@@ -139,7 +139,7 @@ Les bases de données NoSQL peuvent être classées selon les quatre modèles su
 
 Les bases de données NoSQL peuvent être optimisées pour gérer les données à grande échelle, en particulier lorsque les données sont relativement simples. Prenons l’exemple d’une base de données NoSQL :
 
-- Votre charge de travail nécessite une grande échelle et une haute concurrence.
+- Votre charge de travail nécessite une grande échelle et une concurrence élevée.
 - Vous avez un grand nombre d’utilisateurs.
 - Vos données peuvent être exprimées simplement sans relations.
 - Vous devez distribuer vos données géographiquement.

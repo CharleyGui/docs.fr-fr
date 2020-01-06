@@ -4,12 +4,12 @@ description: Découvrez comment aborder la migration d’une application Web For
 author: twsouthwick
 ms.author: tasou
 ms.date: 09/19/2019
-ms.openlocfilehash: b6604e000eaf79bcd8da15d72a3d85713c620851
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 52f463c66c2980d59a93f3210b3cfd825bec33da
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191937"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337449"
 ---
 # <a name="migrate-from-aspnet-web-forms-to-blazor"></a>Migrer de ASP.NET Web Forms vers éblouissant
 
@@ -252,7 +252,7 @@ Pour plus d’informations sur le démarrage de l’application, consultez déma
 
 ## <a name="migrate-http-modules-and-handlers-to-middleware"></a>Migrer des modules et gestionnaires HTTP vers des intergiciels (middleware)
 
-Les modules et gestionnaires HTTP sont des modèles courants dans Web Forms pour contrôler le pipeline de requête HTTP. Les classes qui implémentent `IHttpModule` ou `IHttpHandler` peuvent être inscrites et traiter les demandes entrantes. Web Forms configure des modules et des gestionnaires dans le fichier *Web. config* . Web Forms est également fortement basé sur la gestion des événements du cycle de vie des applications. ASP.NET Core utilise à la place intergiciel. Les intergiciels sont enregistrés dans la méthode `Configure` de la classe `Startup`. L’ordre d’exécution des intergiciels est déterminé par l’ordre d’enregistrement.
+Les modules et gestionnaires HTTP sont des modèles courants dans Web Forms pour contrôler le pipeline de requête HTTP. Les classes qui implémentent `IHttpModule` ou `IHttpHandler` peuvent être inscrites et traiter les demandes entrantes. Web Forms configure des modules et des gestionnaires dans le fichier *Web. config* . Web Forms est également fortement basé sur la gestion des événements du cycle de vie des applications. ASP.NET Core utilise à la place intergiciel. L’intergiciel est inscrit dans la méthode `Configure` de la classe `Startup`. L’ordre d’exécution des intergiciels est déterminé par l’ordre d’enregistrement.
 
 Dans la section [activer le processus de démarrage](#enable-startup-process) , un événement de cycle de vie a été déclenché par Web Forms comme la méthode `Application_BeginRequest`. Cet événement n’est pas disponible dans ASP.NET Core. Pour ce faire, il est possible d’implémenter un intergiciel (middleware) comme indiqué dans l’exemple de fichier *Startup.cs* . Cet intergiciel (middleware) fait la même logique, puis transfère le contrôle au gestionnaire suivant dans le pipeline d’intergiciel (middleware).
 
@@ -277,7 +277,7 @@ Le projet eShop active l’accès aux fichiers statiques de base. De nombreuses 
 
 ## <a name="migrate-runtime-bundling-and-minification-setup"></a>Migrer le regroupement et la minimisation du Runtime
 
-Le regroupement et la minimisation sont des techniques d’optimisation des performances pour réduire le nombre et la taille des demandes de serveur pour récupérer certains types de fichiers. JavaScript et CSS subissent souvent une certaine forme de regroupement ou de minimisation avant d’être envoyés au client. Dans ASP.NET Web Forms, ces optimisations sont gérées au moment de l’exécution. Les conventions d’optimisation sont définies comme un fichier *App_Start/BundleConfig. cs* . Dans ASP.NET Core, une approche plus déclarative est adoptée. Un fichier répertorie les fichiers à minimisésr, ainsi que les paramètres de minimisation spécifiques.
+Le regroupement et la minimisation sont des techniques d’optimisation des performances pour réduire le nombre et la taille des demandes de serveur pour récupérer certains types de fichiers. JavaScript et CSS subissent souvent une certaine forme de regroupement ou de minimisation avant d’être envoyés au client. Dans ASP.NET Web Forms, ces optimisations sont gérées au moment de l’exécution. Les conventions d’optimisation sont définies comme un fichier *App_Start/bundleconfig.cs* . Dans ASP.NET Core, une approche plus déclarative est adoptée. Un fichier répertorie les fichiers à minimisésr, ainsi que les paramètres de minimisation spécifiques.
 
 Pour plus d’informations sur le regroupement et la minimisation, consultez [regrouper et réduire des ressources statiques dans ASP.net Core](/aspnet/core/client-side/bundling-and-minification).
 
@@ -634,7 +634,7 @@ Enfin, il existe quelques différences architecturales importantes à prendre en
 Étant donné que éblouissant est basé sur .NET Core, il existe des considérations pour garantir la prise en charge de .NET Core. Parmi les principales modifications, citons la suppression des fonctionnalités suivantes :
 
 - AppDomains multiples
-- Communication à distance
+- Connexion à distance
 - sécurité d'accès du code (CAS, Code Access Security)
 - Transparence de la sécurité
 
@@ -642,7 +642,7 @@ Pour plus d’informations sur les techniques permettant d’identifier les modi
 
 ASP.NET Core est une version repensée de ASP.NET et contient des modifications qui peuvent ne pas paraître évidentes. Les principales modifications sont les suivantes :
 
-- Aucun contexte de synchronisation, ce qui signifie qu’il n’existe aucun `HttpContext.Current`, `Thread.CurrentPrincipal` ou d’autres accesseurs statiques
+- Aucun contexte de synchronisation, ce qui signifie qu’il n’existe aucun `HttpContext.Current`, `Thread.CurrentPrincipal`ou d’autres accesseurs statiques
 - Pas de clichés instantanés
 - Aucune file d’attente de demandes
 
