@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)'
+title: Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: 5f2ae7657162ba5a2c88e5378119eaad4cb1e288
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 934b6385a8634c23a4e29098367c9aaa7355f11c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253276"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347317"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Procédure : Fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQ) (C#)
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()
 Cet exemple montre comment fusionner le contenu de deux fichiers, puis créer un ensemble de fichiers qui organisent les données d’une nouvelle façon.  
   
-### <a name="to-create-the-data-files"></a>Pour créer les fichiers de données  
+### <a name="to-create-the-data-files"></a>Pour créer le fichier de données  
   
 1. Copiez ces noms dans un fichier texte nommé names1.txt, puis enregistrez-le dans votre dossier de projet :  
   
@@ -29,7 +29,7 @@ Cet exemple montre comment fusionner le contenu de deux fichiers, puis créer un
     Garcia, Debra  
     ```  
   
-2. Copiez ces noms dans un fichier texte nommé names2.txt, puis enregistrez-le dans votre dossier de projet : Notez que les deux fichiers ont des noms en commun.  
+2. Copiez ces noms dans un fichier texte nommé names2.txt, puis enregistrez-le dans votre dossier de projet. Notez que les deux fichiers ont certains noms en commun.  
   
     ```text  
     Liu, Jinghao  
@@ -44,7 +44,7 @@ Cet exemple montre comment fusionner le contenu de deux fichiers, puis créer un
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 class SplitWithGroups  

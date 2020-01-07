@@ -8,12 +8,12 @@ helpviewer_keywords:
 - procedures [Visual Basic], multiple versions
 - procedure overloading [Visual Basic], multiple versions
 ms.assetid: 71ccdd66-1b00-4b66-bee4-6926c0d696f4
-ms.openlocfilehash: 83e96e271f6613aa325d59a0ca2fce9fc69fe059
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e8ed9a6356b7177b2c029a9280d0790a93676653
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350486"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347607"
 ---
 # <a name="how-to-define-multiple-versions-of-a-procedure-visual-basic"></a>Comment : définir plusieurs versions d'une procédure (Visual Basic)
 Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant* , à l’aide du même nom mais d’une liste de paramètres différente pour chaque version. L’objectif de la surcharge est de définir plusieurs versions étroitement liées d’une procédure sans avoir à les différencier par nom.  
@@ -39,7 +39,7 @@ Vous pouvez définir une procédure dans plusieurs versions en la *surchargeant*
   
  Pour plus d’informations sur l’appel de ces versions de la procédure `post`, consultez [Comment : appeler une procédure surchargée](./how-to-call-an-overloaded-procedure.md).  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Vérifiez que chaque version surchargée a le même nom de procédure, mais une autre liste de paramètres.  
   
 ## <a name="see-also"></a>Voir aussi

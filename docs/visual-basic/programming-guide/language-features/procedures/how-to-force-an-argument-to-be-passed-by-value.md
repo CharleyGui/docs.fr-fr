@@ -14,12 +14,12 @@ helpviewer_keywords:
 - procedure arguments [Visual Basic], in parentheses
 - arguments [Visual Basic], changing value
 ms.assetid: 77b4f2d2-1055-4c2f-a521-874d1db86946
-ms.openlocfilehash: 8261d126f988bdcf05b4a2af3106b38717e46bc8
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 047738a2cbadc6b7d72f41aade22bbeff16d1bac
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344515"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347595"
 ---
 # <a name="how-to-force-an-argument-to-be-passed-by-value-visual-basic"></a>Comment : forcer le passage d’un argument par valeur (Visual Basic)
 La déclaration de procédure détermine le mécanisme de passage. Si un paramètre est déclaré [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md), Visual Basic s’attend à passer l’argument correspondant par référence. Cela permet à la procédure de modifier la valeur de l’élément de programmation sous-jacent à l’argument dans le code appelant. Si vous souhaitez protéger l’élément sous-jacent contre une telle modification, vous pouvez remplacer le `ByRef` mécanisme de passage dans l’appel de procédure en plaçant le nom de l’argument entre parenthèses. Ces parenthèses s’ajoutent aux parenthèses entourant la liste d’arguments dans l’appel.  
@@ -41,7 +41,7 @@ La déclaration de procédure détermine le mécanisme de passage. Si un paramè
   
  Lorsque `str` est placé entre parenthèses supplémentaires dans la liste d’arguments, la procédure `setNewString` ne peut pas modifier sa valeur dans le code appelant, et `MsgBox` affiche « ne peut pas être remplacé si passé ByVal ». Lorsque `str` n’est pas placé entre parenthèses supplémentaires, la procédure peut le changer et `MsgBox` affiche « il s’agit d’une nouvelle valeur pour l’argument inString ».  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Lorsque vous transmettez une variable par référence, vous devez utiliser le mot clé `ByRef` pour spécifier ce mécanisme.  
   
  La valeur par défaut de Visual Basic consiste à passer des arguments par valeur. Toutefois, il est recommandé d’inclure le mot clé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) avec chaque paramètre déclaré. Cela rend votre code plus facile à lire.  

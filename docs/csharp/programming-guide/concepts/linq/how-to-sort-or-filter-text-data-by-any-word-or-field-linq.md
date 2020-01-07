@@ -1,22 +1,22 @@
 ---
-title: 'Procédure : Trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)'
+title: Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQC#) ()
 ms.date: 07/20/2015
 ms.assetid: 7c04d42f-4a78-42c8-9ec8-57ef18fe13a9
-ms.openlocfilehash: e6c0cbf523095122be4227bebee8d7a234eba2d0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e869d57c413d175c092cdc15a6fe54cab94e04b8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592394"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347359"
 ---
-# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Procédure : Trier ou filtrer des données texte par mot ou par champ (LINQ) (C#)
+# <a name="how-to-sort-or-filter-text-data-by-any-word-or-field-linq-c"></a>Guide pratique pour trier ou filtrer des données texte par mot ou par champ (LINQC#) ()
 L’exemple suivant montre comment trier les lignes d’un texte structuré, telles que des valeurs séparées par des virgules, à l’aide d’un champ de la ligne. Le champ peut être spécifié de manière dynamique lors de l’exécution. Supposons que les champs du fichier scores.csv correspondent au numéro d’identification d’un étudiant, suivi d’une série de quatre notes d’examen.  
   
 ### <a name="to-create-a-file-that-contains-data"></a>Pour créer un fichier contenant des données  
   
-1. Copiez les données du fichier scores.csv disponible dans la rubrique [Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md), puis enregistrez-les dans le dossier de votre solution.  
+1. Copiez les données scores. csv de la rubrique [Comment joindre du contenu provenant de fichiers non similaires (C#Linq) ()](./how-to-join-content-from-dissimilar-files-linq.md) et enregistrez-le dans votre dossier de solution.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 public class SortLines  

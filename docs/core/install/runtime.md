@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 8f4a895ad66dea3063a32f785e4c521196266978
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: a45cb570ccf572a699359598319fd3867fb5e5dd
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835727"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340958"
 ---
 # <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
 
@@ -42,7 +42,32 @@ macOS possède des programmes d’installation autonomes qui peuvent être utili
 
 ## <a name="install-with-a-package-manager"></a>Installer avec un gestionnaire de package
 
-Vous pouvez installer le Runtime .NET Core avec un grand nombre de gestionnaires de packages Linux courants. Pour plus d’informations, consultez [Linux Package Manager-install .net Core](linux-package-manager-rhel7.md).
+Vous pouvez installer le Runtime .NET Core avec un grand nombre de gestionnaires de packages Linux courants. Pour plus d’informations, consultez [Linux Package Manager-install .net Core](linux-package-managers.md).
+
+Son installation avec un gestionnaire de package est uniquement prise en charge sur l’architecture x64. Si vous installez le Runtime .NET Core avec une architecture différente, par exemple ARM, suivez les instructions de la section [téléchargement et installation manuelle](#download-and-manually-install) . Pour plus d’informations sur les architectures prises en charge, consultez [.net Core Dependencies and Requirements](dependencies.md).
+
+## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
+
+Pour extraire le runtime et rendre les commandes CLI .NET Core disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire .net core. Ensuite, ouvrez un terminal et exécutez les commandes suivantes.
+
+```bash
+mkdir -p $HOME/dotnet && tar zxf aspnetcore-runtime-3.1.0-linux-x64.tar.gz -C $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
+
+> [!TIP]
+> Les commandes `export` précédentes rendent uniquement les commandes CLI .NET Core disponibles pour la session Terminal dans laquelle elles ont été exécutées.
+>
+> Vous pouvez modifier votre profil de Shell pour ajouter définitivement les commandes. Un certain nombre de shells différents sont disponibles pour Linux et chacun d’eux a un profil différent. Par exemple :
+>
+> - **Interpréteur**de commandes bash : *~/. bash_profile*, *~ fichier/.bashrc*
+> - **Shell Korn**: *~/.kshrc* ou *. Profile*
+> - **Z Shell**: *~/.zshrc* ou *. zprofile*
+> 
+> Modifiez le fichier source approprié pour votre shell et ajoutez `:$HOME/dotnet` à la fin de l’instruction `PATH` existante. Si aucune instruction `PATH` n’est incluse, ajoutez une nouvelle ligne avec `export PATH=$PATH:$HOME/dotnet`.
+>
+> En outre, ajoutez `export DOTNET_ROOT=$HOME/dotnet` à la fin du fichier.
 
 ::: zone-end
 
