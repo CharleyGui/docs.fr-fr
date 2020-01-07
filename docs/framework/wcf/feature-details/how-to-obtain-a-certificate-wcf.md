@@ -1,17 +1,17 @@
 ---
-title: 'Procédure : Obtenir un certificat (WCF)'
+title: 'Comment : obtenir un certificat (WCF)'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], obtaining
 ms.assetid: d53762fd-15ea-42dc-b0ea-6a6597aa23f7
-ms.openlocfilehash: e720a6742506f6270fda65de12f510c2a6224873
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 485741f98c4a120669eafe85d3a3810374f61378
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929193"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347153"
 ---
-# <a name="how-to-obtain-a-certificate-wcf"></a>Procédure : Obtenir un certificat (WCF)
+# <a name="how-to-obtain-a-certificate-wcf"></a>Comment : obtenir un certificat (WCF)
 Pour utiliser l’une des fonctionnalités de Windows Communication Foundation (WCF) de qui utilisent des certificats X. 509, vous devez tout d’abord obtenir des certificats.  
   
 ### <a name="to-obtain-an-x509-certificate"></a>Pour obtenir un certificat X.509  
@@ -20,7 +20,7 @@ Pour utiliser l’une des fonctionnalités de Windows Communication Foundation (
   
     - Achetez un certificat auprès d'une autorité de certification, telle que VeriSign, Inc.  
   
-    - Installez votre propre service de certificats et faites en sorte qu'une autorité de certification signe les certificats. [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], Windows 2000 Server, Windows 2000 Server Datacenter et Windows 2000 Datacenter Server incluent tous des services de certificat qui prennent en charge l'infrastructure à clé publique. Dans Windows Server 2008, utilisez le rôle [services de certificats Active Directory](https://go.microsoft.com/fwlink/?LinkID=153483) pour gérer une autorité de certification.  
+    - Installez votre propre service de certificats et faites en sorte qu'une autorité de certification signe les certificats. Windows Server 2003, Windows 2000 Server, Windows 2000 Server Datacenter et Windows 2000 Datacenter Server incluent tous les services de certificats qui prennent en charge l’infrastructure de clé publique (PKI). Dans Windows Server 2008, utilisez le rôle [services de certificats Active Directory](https://go.microsoft.com/fwlink/?LinkID=153483) pour gérer une autorité de certification.  
   
     - Installez votre propre service de certificats et ne faites pas signer les certificats.  
   
@@ -30,4 +30,4 @@ Pour utiliser l’une des fonctionnalités de Windows Communication Foundation (
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
-- [Guide pratique pour Créer des certificats temporaires à utiliser pendant le développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
+- [Guide pratique pour créer des certificats temporaires à utiliser au cours du développement](../../../../docs/framework/wcf/feature-details/how-to-create-temporary-certificates-for-use-during-development.md)
