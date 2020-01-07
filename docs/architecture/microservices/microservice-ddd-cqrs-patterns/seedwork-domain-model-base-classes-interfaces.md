@@ -3,10 +3,10 @@ title: Seedwork (interfaces et classes de base réutilisables pour votre modèle
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Utiliser le concept de seedwork comme point de départ pour démarrer l’implémentation d’un modèle de domaine orienté DDD.
 ms.date: 10/08/2018
 ms.openlocfilehash: f53988b92a05fb54f3f05d9f463450d1a11a0843
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/25/2019
 ms.locfileid: "73737218"
 ---
 # <a name="seedwork-reusable-base-classes-and-interfaces-for-your-domain-model"></a>Seedwork (interfaces et classes de base réutilisables pour votre modèle de domaine)

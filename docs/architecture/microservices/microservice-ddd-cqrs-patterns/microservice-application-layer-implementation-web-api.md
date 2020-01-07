@@ -3,10 +3,10 @@ title: Implémentation de la couche Application de microservices à l’aide de 
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre l’injection de dépendances et les modèles de médiateur, et leurs détails d’implémentation dans la couche Application de l’API web.
 ms.date: 10/08/2018
 ms.openlocfilehash: 08cb409b06a54c6b30afa393a817e14bd64fbcbf
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
+ms.lasthandoff: 12/25/2019
 ms.locfileid: "73737529"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
@@ -114,7 +114,7 @@ Quand vous utilisez l’injection de dépendances dans .NET Core, vous pouvez av
 - **Matthew King. Inscription de services avec scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
 
-- **Kristian Hellang. Scrutor.** GitHub repo. \
+- **Kristian Hellang. Scrutor.** Dépôt GitHub. \
   <https://github.com/khellang/Scrutor>
 
 #### <a name="use-autofac-as-an-ioc-container"></a>Utiliser Autofac comme conteneur IoC
@@ -439,7 +439,7 @@ Un médiateur est un objet qui encapsule le « comment » de ce processus : i
 
 Les éléments décoratifs et les comportements sont similaires à la [programmation orientée aspect](https://en.wikipedia.org/wiki/Aspect-oriented_programming), uniquement appliquée à un pipeline de processus spécifique géré par le composant médiateur. Les aspects en programmation orientée aspect qui implémentent des problèmes transversaux sont appliqués selon les *tisseurs d’aspect* injectés au moment de la compilation ou en fonction de l’interception des appels d’objet. Les deux approches usuelles de la programmation orientée aspect sont parfois considérées comme « magiques », car il n’est pas facile de voir comment leur travail est effectué. Lorsque qu’il s’agit de traiter des problèmes ou bogues graves, la programmation orientée aspect peut rendre le débogage difficile. En revanche, ces éléments décoratifs/comportements sont explicites et uniquement appliqués dans le contexte du médiateur, donc le débogage est beaucoup plus prévisible et facile.
 
-Par exemple, dans le microservice de passation de commandes eShopOnContainers, nous avons implémenté deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs). L’implémentation des comportements est décrite dans la section suivante, en montrant comment eShopOnContainers utilise des [comportements](https://www.nuget.org/packages/MediatR/3.0.0) [MediatR 3](https://github.com/jbogard/MediatR/wiki/Behaviors).
+Par exemple, dans le microservice de passation de commandes eShopOnContainers, nous avons implémenté deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs). L’implémentation des comportements est expliquée dans la section suivante en illustrant la façon dont eShopOnContainers utilise les [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors) [médiateurr 3](https://www.nuget.org/packages/MediatR/3.0.0) .
 
 ### <a name="use-message-queues-out-of-proc-in-the-commands-pipeline"></a>Utiliser de files d’attente de messages (hors processus) dans le pipeline de commandes
 
@@ -459,7 +459,7 @@ De plus, les commandes asynchrones sont des commandes unidirectionnelles, inutil
 
 > \[Burtsev Alexey\] Je trouve beaucoup de code où les informaticiens utilisent une gestion de commandes asynchrone ou des messages de commande unidirectionnels sans aucune raison de le faire (ils n’effectuent pas une opération longue, ils n’exécutent pas du code asynchrone externe, ils ne franchissent même pas la limite de l’application pour utiliser un bus de messages). Pourquoi introduisent-ils cette complexité inutile ? En fait, je n’ai jamais vu un exemple de code CQRS avec des gestionnaires de commandes bloquants jusqu’à présent, même si cela fonctionnerait parfaitement dans la plupart des cas.
 >
-> \[Greg Young\] \[...\] il n’existe pas de commande asynchrone ; il s’agit en fait d’un autre événement. Si je dois accepter ce que vous m’envoyez et déclencher un événement si je ne suis pas d’accord, alors ce n’est plus vous qui me dites de faire quelque chose, \[c’est-à-dire que ce n’est pas une commande\]. Mais vous qui me dites que quelque chose a été fait. La différence peut sembler légère dans un premier temps, mais ses implications sont nombreuses.
+> \[Greg Young\] \[...\] une commande asynchrone n’existe pas ; Il s’agit en fait d’un autre événement. Si je dois accepter ce que vous m’envoyez et déclencher un événement si je ne suis pas d’accord, alors ce n’est plus vous qui me dites de faire quelque chose, \[c’est-à-dire que ce n’est pas une commande\]. Mais vous qui me dites que quelque chose a été fait. La différence peut sembler légère dans un premier temps, mais ses implications sont nombreuses.
 
 Les commandes asynchrones augmentent considérablement la complexité d’un système, car il n’existe aucun moyen simple d’indiquer des échecs. Ainsi, les commandes asynchrones ne sont pas recommandées si ce n’est quand il existe des besoins de mise à l’échelle ou dans des cas spéciaux de communication des microservices internes par le biais d’une messagerie. Le cas échéant, vous devez concevoir un système de création de rapports et de récupération distinct pour les échecs.
 
@@ -813,7 +813,7 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 
-- **MediatR.** GitHub repo. \
+- **MediatR.** Dépôt GitHub. \
   <https://github.com/jbogard/MediatR>
 
 - **CQRS with MediatR and AutoMapper** \
@@ -839,7 +839,7 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="fluent-validation"></a>Validation fluide
 
-- **Jeremy Skinner. FluentValidation.** GitHub repo. \
+- **Jeremy Skinner. FluentValidation.** Dépôt GitHub. \
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]
