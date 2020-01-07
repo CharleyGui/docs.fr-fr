@@ -3,15 +3,15 @@ title: 'Didacticiel : inspection visuelle automatisée à l’aide de l’appre
 description: Ce didacticiel explique comment utiliser l’apprentissage de transfert pour former un modèle d’apprentissage profond TensorFlow dans ML.NET à l’aide de l’API de détection d’images pour classer les images de surfaces concrètes comme fissurées ou non fissurées.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 11/14/2019
+ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 443f9e9a83ebf31bb6c62323015af4a554323b67
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 4781e39a0c8827adb6ab0155d5215645242208a5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74205053"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348143"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -39,7 +39,7 @@ Cet exemple est une C# application console .net core qui classe les images à l�
 La classification d’images est un problème de vision par ordinateur. La classification d’image prend une image en tant qu’entrée et la classe dans une classe prescrite. Voici quelques scénarios où la classification d’images est utile :
 
 - Reconnaissance faciale
-- Détection d’émotion
+- Détection d’émotions
 - Diagnostic médical
 - Détection du repère géographique
 
@@ -76,7 +76,7 @@ Une fois les valeurs de sortie de la phase de goulot d’étranglement calculée
 
 Le modèle préformé utilisé dans ce didacticiel est la variante de couche 101 du modèle de réseau résiduel (ResNet) v2. Le modèle d’origine est formé pour classer les images en milliers de catégories. Le modèle prend comme entrée une image de taille 224 x 224 et génère les probabilités de la classe pour chacune des classes sur lesquelles il est formé. Une partie de ce modèle est utilisée pour l’apprentissage d’un nouveau modèle à l’aide d’images personnalisées pour effectuer des prédictions entre deux classes.
 
-## <a name="create-console-application"></a>Créer une application console
+## <a name="create-console-application"></a>Création d’une application de console
 
 Maintenant que vous avez une compréhension générale de la formation de transfert et de l’API de classification d’image, il est temps de générer l’application.
 

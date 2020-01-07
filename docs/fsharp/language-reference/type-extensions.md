@@ -2,12 +2,12 @@
 title: Extensions de type
 description: Découvrez comment F# les extensions de type vous permettent d’ajouter de nouveaux membres à un type d’objet précédemment défini.
 ms.date: 11/04/2019
-ms.openlocfilehash: d26d7b2b507f04e9cb68ade4c0409403643f74ba
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3e2c6971156bd562ed5d5428e6b7ffdc520c4cf5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978245"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341570"
 ---
 # <a name="type-extensions"></a>Extensions de type
 
@@ -78,7 +78,7 @@ Les extensions de type intrinsèque sont compilées en tant que membres du type 
 
 Une extension de type facultative est une extension qui apparaît à l’extérieur du module, de l’espace de noms ou de l’assembly d’origine du type en cours d’extension.
 
-Les extensions de type facultatives sont utiles pour étendre un type que vous n’avez pas défini vous-même. Exemple :
+Les extensions de type facultatives sont utiles pour étendre un type que vous n’avez pas défini vous-même. Par exemple :
 
 ```fsharp
 module Extensions
@@ -98,13 +98,13 @@ Les extensions facultatives n’apparaissent pas sur le type étendu lorsqu’el
 
 Les membres d’extension facultatifs sont compilés en membres statiques pour lesquels l’instance de l’objet est passée implicitement en tant que premier paramètre. Toutefois, ils agissent comme s’il s’agissait de membres d’instance ou de membres statiques en fonction de la façon dont ils sont déclarés.
 
-Les membres d’extension facultatifs ne sont C# pas non plus visibles pour les consommateurs de ou VB. Ils peuvent uniquement être consommés dans F# un autre code.
+Les membres d’extension facultatifs ne sont C# pas non plus visibles pour les consommateurs ou Visual Basic. Ils peuvent uniquement être consommés dans F# un autre code.
 
 ## <a name="generic-limitation-of-intrinsic-and-optional-type-extensions"></a>Limitation générique des extensions de type intrinsèques et facultatives
 
 Il est possible de déclarer une extension de type sur un type générique où la variable de type est contractionnelle. La spécification est que la contrainte de la déclaration d’extension correspond à la contrainte du type déclaré.
 
-Toutefois, même lorsque les contraintes sont mises en correspondance entre un type déclaré et une extension de type, il est possible qu’une contrainte soit déduite par le corps d’un membre étendu qui impose une exigence différente sur le paramètre de type que le type déclaré. Exemple :
+Toutefois, même lorsque les contraintes sont mises en correspondance entre un type déclaré et une extension de type, il est possible qu’une contrainte soit déduite par le corps d’un membre étendu qui impose une exigence différente sur le paramètre de type que le type déclaré. Par exemple :
 
 ```fsharp
 open System.Collections.Generic
@@ -128,7 +128,7 @@ Les méthodes statiques qui sont souhaitées sont des méthodes statiques qui «
 
 Enfin, les méthodes d’extension (parfoisC# appelées « membres d’extension de style » F# ) peuvent être déclarées dans en tant que méthode de membre statique sur une classe.
 
-Les méthodes d’extension sont utiles lorsque vous souhaitez définir des extensions sur un type générique qui contraignent la variable de type. Exemple :
+Les méthodes d’extension sont utiles lorsque vous souhaitez définir des extensions sur un type générique qui contraignent la variable de type. Par exemple :
 
 ```fsharp
 namespace Extensions
@@ -168,5 +168,5 @@ Enfin, s’il existe plusieurs extensions de type intrinsèques pour un type, to
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur le langage F#](index.md)
+- [Informations de référence du langage F#](index.md)
 - [Membres](./members/index.md)

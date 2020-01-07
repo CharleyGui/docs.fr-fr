@@ -3,19 +3,19 @@ title: Types non managés - Référence C#
 ms.date: 09/06/2019
 helpviewer_keywords:
 - unmanaged type [C#]
-ms.openlocfilehash: 81eef59ceb20bcae6c749dd59578ce35da253826
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 97aa4dd629e385dbe9641d82a7da21a0aaa63e92
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204471"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342580"
 ---
 # <a name="unmanaged-types-c-reference"></a>Types non managés (référence C#)
 
 Un type est un **type non managé** s’il s’agit de l’un des types suivants :
 
 - `sbyte`, `byte`, `short`, `ushort`, `int`, `uint`, `long`, `ulong`, `char`, `float`, `double`, `decimal` ou `bool`
-- Tout type [enum](../keywords/enum.md)
+- Tout type [enum](enum.md)
 - Tout type [pointer](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - Tout type [struct](../keywords/struct.md) défini par l’utilisateur qui contient des champs de types non managés uniquement et C# , dans 7,3 et les versions antérieures, n’est pas un type construit (un type qui inclut au moins un argument de type)
 
