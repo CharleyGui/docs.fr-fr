@@ -7,16 +7,16 @@ dev_langs:
 helpviewer_keywords:
 - WPF application [WPF], building
 ms.assetid: a58696fd-bdad-4b55-9759-136dfdf8b91c
-ms.openlocfilehash: bf673195f06475daf8341fd17cd701b84a970b39
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 48536d8fba3f86c2883e48cd4e5cf9a3a8752fcd
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740669"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636313"
 ---
 # <a name="building-a-wpf-application-wpf"></a>Génération d'une application WPF (WPF)
 
-Les applications Windows Presentation Foundation (WPF) peuvent être générées comme des fichiers exécutables .NET Framework (. exe), des bibliothèques (. dll) ou une combinaison des deux types d’assemblys. Cette rubrique présente comment générer des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et décrit les principales étapes du processus de génération.
+Les applications Windows Presentation Foundation (WPF) peuvent être générées comme des fichiers exécutables .NET Framework (. exe), des bibliothèques (. dll) ou une combinaison des deux types d’assemblys. Cette rubrique explique comment générer des applications WPF et décrit les étapes clés du processus de génération.
 
 <a name="Building_a_WPF_Application_using_Command_Line"></a>
 
@@ -34,7 +34,7 @@ Une application WPF peut être compilée des façons suivantes :
 
 ## <a name="wpf-build-pipeline"></a>Pipeline de génération WPF
 
-Quand un projet [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est généré, la combinaison de cibles spécifiques au langage et spécifiques à [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est appelée. Le processus d’exécution de ces cibles est appelé le pipeline de génération, et les principales étapes sont illustrées par la figure suivante.
+Lors de la génération d’un projet WPF, la combinaison de cibles spécifiques au langage et spécifiques à WPF est appelée. Le processus d’exécution de ces cibles est appelé le pipeline de génération, et les principales étapes sont illustrées par la figure suivante.
 
 ![Processus de génération WPF](./media/wpfbuildsystem-figure1.png "WPFBuildSystem_Figure1")
 
@@ -48,7 +48,7 @@ Avant de générer, MSBuild détermine l’emplacement des outils et bibliothèq
 
 - Répertoires de SDK Windows.
 
-- Emplacement des assemblys de référence [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+- Emplacement des assemblys de référence WPF.
 
 - Propriété pour les chemins de recherche des assemblys.
 
@@ -58,7 +58,7 @@ Le premier emplacement où MSBuild recherche les assemblys est le répertoire de
 
 ### <a name="resolving-references"></a>Résolution des références
 
-Le processus de génération localise et lie les assemblys requis pour générer le projet d’application. Cette logique est contenue dans la tâche `ResolveAssemblyReference`. Tous les assemblys déclarés comme `Reference` dans le fichier projet sont fournis à la tâche, ainsi que des informations sur les chemins de recherche et les métadonnées sur les assemblys déjà installés sur le système. La tâche examine les assemblys et utilise les métadonnées de l’assembly installé pour éliminer par filtrage les principaux assemblys [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] qui ne doivent pas apparaître dans les manifestes de sortie. Cela vise à éviter des informations redondantes dans les manifestes ClickOnce. Par exemple, étant donné que PresentationFramework. dll peut être considéré comme représentatif d’une application basée sur et pour la [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et, par ailleurs, étant donné que tous les assemblys [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] existent au même emplacement sur chaque ordinateur sur lequel le .NET Framework est installé, il existe Il n’est pas nécessaire d’inclure toutes les informations sur tous les .NET Framework assemblys de référence dans les manifestes.
+Le processus de génération localise et lie les assemblys requis pour générer le projet d’application. Cette logique est contenue dans la tâche `ResolveAssemblyReference`. Tous les assemblys déclarés comme `Reference` dans le fichier projet sont fournis à la tâche, ainsi que des informations sur les chemins de recherche et les métadonnées sur les assemblys déjà installés sur le système. La tâche recherche des assemblys et utilise les métadonnées de l’assembly installé pour filtrer les assemblys WPF de base qui n’ont pas besoin de s’afficher dans les manifestes de sortie. Cela vise à éviter des informations redondantes dans les manifestes ClickOnce. Par exemple, étant donné que PresentationFramework. dll peut être considéré comme représentatif d’une application basée sur et pour WPF, et puisque tous les assemblys WPF existent au même emplacement sur chaque ordinateur sur lequel le .NET Framework est installé, il n’est pas nécessaire d’inclure tous les informations sur tous les .NET Framework assemblys de référence dans les manifestes.
 
 <a name="Markup_Compilation___Pass_1"></a>
 
@@ -142,13 +142,13 @@ Le manifeste de l’application (un fichier .exe.manifest) décrit les assemblys
 
 Ces fichiers manifestes sont toujours créés pour les applications XBAP. Pour les applications installées, ils ne sont pas créés à moins que la propriété `GenerateManifests` ne soit spécifiée dans le fichier projet avec la valeur `true`.
 
-Les XBAP obtiennent deux autorisations supplémentaires au-dessus des autorisations affectées aux applications de zone Internet typiques : <xref:System.Security.Permissions.WebBrowserPermission> et <xref:System.Security.Permissions.MediaPermission>. Le système de génération [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] déclare ces autorisations dans le manifeste de l’application.
+Les XBAP obtiennent deux autorisations supplémentaires au-dessus des autorisations affectées aux applications de zone Internet typiques : <xref:System.Security.Permissions.WebBrowserPermission> et <xref:System.Security.Permissions.MediaPermission>. Le système de génération WPF déclare ces autorisations dans le manifeste de l’application.
 
 <a name="Incremental_Build_Support"></a>
 
 ## <a name="incremental-build-support"></a>Prise en charge de la build incrémentielle
 
-Le système de génération [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assure la prise en charge des builds incrémentielles. Il est assez intelligent pour détecter les modifications apportées au balisage ou au code, et il compile uniquement les artefacts affectés par la modification. Le mécanisme de build incrémentielle utilise les fichiers suivants :
+Le système de génération WPF assure la prise en charge des builds incrémentielles. Il est assez intelligent pour détecter les modifications apportées au balisage ou au code, et il compile uniquement les artefacts affectés par la modification. Le mécanisme de build incrémentielle utilise les fichiers suivants :
 
 - Un fichier $(*AssemblyName*)_MarkupCompiler.Cache pour gérer l’état du compilateur actuel.
 

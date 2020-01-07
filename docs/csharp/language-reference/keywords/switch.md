@@ -12,12 +12,12 @@ helpviewer_keywords:
 - case statement [C#]
 - default keyword [C#]
 ms.assetid: 44bae8b8-8841-4d85-826b-8a94277daecb
-ms.openlocfilehash: 6f0a2cfd5a6de9c8c05bc3daea1e242183ebf03e
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: e5580e81b9175cd95491fdba724bacbffa692a5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552341"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345390"
 ---
 # <a name="switch-c-reference"></a>switch (informations de référence sur C#)
 
@@ -35,7 +35,7 @@ Elle est équivalente à l’exemple suivant, qui utilise une construction `if`-
 
 ## <a name="the-match-expression"></a>Expression de correspondance
 
-L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
+L’expression de correspondance fournit la valeur à mettre en correspondance avec les modèles dans les étiquettes `case`. Sa syntaxe est la suivante :
 
 ```csharp
    switch (expr)
@@ -47,7 +47,7 @@ Avec C# 6 (et les versions antérieures), l’expression de correspondance doit
 - [string](../builtin-types/reference-types.md),
 - [bool](../builtin-types/bool.md),
 - valeur [intégrale](../builtin-types/integral-numeric-types.md) , telle qu’une `int` ou une `long`.
-- ou valeur [enum](enum.md).
+- ou valeur [enum](../builtin-types/enum.md).
 
 À compter de C# 7.0, l’expression de correspondance peut être toute expression non Null.
 
@@ -112,7 +112,7 @@ Chaque instruction `case` définit un modèle qui, s’il correspond à l’expr
 
 ### <a name="constant-pattern"></a>Modèle de constante
 
-Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
+Le modèle de constante teste si l’expression de correspondance est égale à une constante spécifiée. Sa syntaxe est la suivante :
 
 ```csharp
    case constant:
@@ -143,7 +143,7 @@ L’exemple suivant utilise le modèle de constante pour gérer l’entrée d’
 
 ### <a name="type-pattern"></a>Modèle de type
 
-Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
+Le modèle de type permet une évaluation et une conversion rapides de type. Lorsqu’il est utilisé avec l’instruction `switch` pour effectuer une mise en correspondance de modèle, il permet de tester si une expression peut être convertie en un type spécifié et, si tel est le cas, il effectue un cast de l’expression en une variable de ce type. Sa syntaxe est la suivante :
 
 ```csharp
    case type varname
@@ -199,7 +199,7 @@ Pour plus d’informations, consultez la section [Instruction switch](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [if-else](if-else.md)

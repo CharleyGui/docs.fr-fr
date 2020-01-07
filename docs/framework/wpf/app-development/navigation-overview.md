@@ -24,25 +24,25 @@ helpviewer_keywords:
 - programmatic navigation [WPF]
 - hyperlinks [WPF]
 ms.assetid: 86ad2143-606a-4e34-bf7e-51a2594248b8
-ms.openlocfilehash: a0916a2957eab6ae340fe914395eda44860da3b7
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 8afda2a314bd04e91c6686fb254a1bd9e773913d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733738"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636287"
 ---
 # <a name="navigation-overview"></a>Vue d'ensemble de la navigation
 
-Windows Presentation Foundation (WPF) prend en charge la navigation de style navigateur qui peut être utilisée dans deux types d’applications : les applications autonomes et les applications de navigateur XAML (XBAP). Pour empaqueter le contenu pour la navigation, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit la classe <xref:System.Windows.Controls.Page>. Vous pouvez naviguer d’une <xref:System.Windows.Controls.Page> à une autre de façon déclarative, à l’aide d’un <xref:System.Windows.Documents.Hyperlink> ou par programme, à l’aide de l' <xref:System.Windows.Navigation.NavigationService>. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise le journal pour se souvenir des pages visitées et y revenir.
+Windows Presentation Foundation (WPF) prend en charge la navigation de style navigateur qui peut être utilisée dans deux types d’applications : les applications autonomes et les applications de navigateur XAML (XBAP). Pour empaqueter le contenu pour la navigation, WPF fournit la classe <xref:System.Windows.Controls.Page>. Vous pouvez naviguer d’une <xref:System.Windows.Controls.Page> à une autre de façon déclarative, à l’aide d’un <xref:System.Windows.Documents.Hyperlink>ou par programme, à l’aide de l' <xref:System.Windows.Navigation.NavigationService>. WPF utilise le journal pour mémoriser les pages qui ont été parcourues et pour y revenir.
 
-<xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>et le journal constituent le cœur de la prise en charge de la navigation offerte par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Cette vue d’ensemble explore ces fonctionnalités en détail avant de couvrir la prise en charge de la navigation avancée qui comprend la navigation vers des fichiers [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des fichiers HTML et des objets libres.
+<xref:System.Windows.Controls.Page>, <xref:System.Windows.Documents.Hyperlink>, <xref:System.Windows.Navigation.NavigationService>et le journal constituent le cœur de la prise en charge de la navigation offerte par WPF. Cette vue d’ensemble explore ces fonctionnalités en détail avant de couvrir la prise en charge de la navigation avancée qui comprend la navigation vers des fichiers [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des fichiers HTML et des objets libres.
 
 > [!NOTE]
-> Dans cette rubrique, le terme « navigateur » fait référence uniquement aux navigateurs qui peuvent héberger des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], qui incluent actuellement Microsoft Internet Explorer et Firefox. Lorsque des fonctionnalités [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] spécifiques sont prises en charge uniquement par un navigateur particulier, la version du navigateur est indiquée.
+> Dans cette rubrique, le terme « navigateur » fait référence uniquement aux navigateurs qui peuvent héberger des applications WPF, qui incluent actuellement Microsoft Internet Explorer et Firefox. Lorsque des fonctionnalités WPF spécifiques sont prises en charge uniquement par un navigateur particulier, la version du navigateur est référencée.
 
 ## <a name="navigation-in-wpf-applications"></a>Navigation dans les applications WPF
 
-Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de navigation dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Ces fonctionnalités sont disponibles pour les applications autonomes et les applications XBAP, bien que cette rubrique les présente dans le contexte d’une application XBAP.
+Cette rubrique fournit une vue d’ensemble des principales fonctionnalités de navigation dans WPF. Ces fonctionnalités sont disponibles pour les applications autonomes et les applications XBAP, bien que cette rubrique les présente dans le contexte d’une application XBAP.
 
 > [!NOTE]
 > Cette rubrique n’explique pas comment créer et déployer des applications XBAP. Pour plus d’informations sur les XBAP, consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).
@@ -79,13 +79,13 @@ Cette section explique et illustre les aspects suivants de la navigation :
 
 ### <a name="implementing-a-page"></a>Implémentation d’une page
 
-Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vous pouvez accéder à plusieurs types de contenu qui incluent des objets .NET Framework, des objets personnalisés, des valeurs d’énumération, des contrôles utilisateur, des fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et des fichiers HTML. Toutefois, vous constaterez que la méthode la plus courante et la plus pratique pour empaqueter le contenu consiste à utiliser <xref:System.Windows.Controls.Page>. En outre, <xref:System.Windows.Controls.Page> implémente des fonctionnalités spécifiques à la navigation pour améliorer leur apparence et simplifier le développement.
+Dans WPF, vous pouvez accéder à plusieurs types de contenu qui incluent des objets .NET Framework, des objets personnalisés, des valeurs d’énumération, des contrôles utilisateur, des fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et des fichiers HTML. Toutefois, vous constaterez que la méthode la plus courante et la plus pratique pour empaqueter le contenu consiste à utiliser <xref:System.Windows.Controls.Page>. En outre, <xref:System.Windows.Controls.Page> implémente des fonctionnalités spécifiques à la navigation pour améliorer leur apparence et simplifier le développement.
 
 À l’aide de <xref:System.Windows.Controls.Page>, vous pouvez implémenter de manière déclarative une page navigable de contenu [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à l’aide d’un balisage similaire à ce qui suit.
 
 [!code-xaml[NavigationOverviewSnippets#Page1XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page1.xaml#page1xaml)]
 
-Une <xref:System.Windows.Controls.Page> implémentée dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage a `Page` comme élément racine et requiert la déclaration d’espace de noms XML [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. L’élément `Page` contient le contenu auquel vous souhaitez accéder et que vous souhaitez afficher. Vous ajoutez du contenu en définissant l’élément de propriété `Page.Content`, comme indiqué dans le balisage suivant.
+Une <xref:System.Windows.Controls.Page> implémentée dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage a `Page` comme élément racine et requiert la déclaration d’espace de noms XML WPF. L’élément `Page` contient le contenu auquel vous souhaitez accéder et que vous souhaitez afficher. Vous ajoutez du contenu en définissant l’élément de propriété `Page.Content`, comme indiqué dans le balisage suivant.
 
 [!code-xaml[NavigationOverviewSnippets#Page2XAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/Page2.xaml#page2xaml)]
 
@@ -115,15 +115,15 @@ Pour permettre à un fichier de balisage et un fichier code-behind de fonctionne
 > [!NOTE]
 > Lorsque vous ajoutez un nouveau <xref:System.Windows.Controls.Page> à votre projet à l’aide de Visual Studio, le <xref:System.Windows.Controls.Page> est implémenté à l’aide du balisage et du code-behind, et il comprend la configuration nécessaire pour créer l’association entre les fichiers de balisage et de code-behind, comme décrit ici.
 
-Une fois que vous disposez d’un <xref:System.Windows.Controls.Page>, vous pouvez accéder à celui-ci. Pour spécifier la première <xref:System.Windows.Controls.Page> à laquelle une application accède, vous devez configurer le <xref:System.Windows.Controls.Page> de démarrage.
+Une fois que vous disposez d’un <xref:System.Windows.Controls.Page>, vous pouvez accéder à celui-ci. Pour spécifier la première <xref:System.Windows.Controls.Page> à laquelle une application accède, vous devez configurer le <xref:System.Windows.Controls.Page>de démarrage.
 
 <a name="Configuring_a_Start_Page"></a>
 
 ### <a name="configuring-a-start-page"></a>Configuration d’une page de démarrage
 
-Les applications XBAP requièrent l’hébergement d’une certaine quantité d’infrastructure d’application dans un navigateur. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], la classe <xref:System.Windows.Application> fait partie d’une définition d’application qui établit l’infrastructure d’application requise (consultez [vue d’ensemble](application-management-overview.md)de la gestion des applications).
+Les applications XBAP requièrent l’hébergement d’une certaine quantité d’infrastructure d’application dans un navigateur. Dans WPF, la classe <xref:System.Windows.Application> fait partie d’une définition d’application qui établit l’infrastructure d’application requise (consultez [vue d’ensemble](application-management-overview.md)de la gestion des applications).
 
-Une définition d’application est généralement implémentée à l’aide du balisage et du code-behind, avec le fichier de balisage configuré en tant qu’élément de `ApplicationDefinition` MSBuild. Voici une définition d’application pour un XBAP.
+Une définition d’application est généralement implémentée à l’aide du balisage et du code-behind, avec le fichier de balisage configuré en tant qu’élément de`ApplicationDefinition` MSBuild. Voici une définition d’application pour un XBAP.
 
 [!code-xaml[XBAPAppDefSnippets#XBAPApplicationDefinitionMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/XBAPAppDefSnippets/CSharp/App.xaml#xbapapplicationdefinitionmarkup)]
 
@@ -190,7 +190,7 @@ De même que la prise en charge de la navigation d’un <xref:System.Windows.Con
 
 ### <a name="fragment-navigation"></a>Navigation vers un fragment
 
-La navigation vers un *fragment* est la navigation vers un fragment de contenu dans le <xref:System.Windows.Controls.Page> actuel ou dans un autre <xref:System.Windows.Controls.Page>. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un fragment de contenu est le contenu qui est contenu dans un élément nommé. Un élément nommé est un élément dont l’attribut `Name` est défini. Le balisage suivant montre un élément `TextBlock` nommé qui contient un fragment de contenu.
+La navigation vers un *fragment* est la navigation vers un fragment de contenu dans le <xref:System.Windows.Controls.Page> actuel ou dans un autre <xref:System.Windows.Controls.Page>. Dans WPF, un fragment de contenu est le contenu qui est contenu dans un élément nommé. Un élément nommé est un élément dont l’attribut `Name` est défini. Le balisage suivant montre un élément `TextBlock` nommé qui contient un fragment de contenu.
 
 [!code-xaml[NavigationOverviewSnippets#PageWithContentFragmentsMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithFragments.xaml#pagewithcontentfragmentsmarkup1)]
 [!code-xaml[NavigationOverviewSnippets#PageWithContentFragmentsMARKUP2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithFragments.xaml#pagewithcontentfragmentsmarkup2)]
@@ -206,7 +206,7 @@ Pour qu’un <xref:System.Windows.Documents.Hyperlink> accède à un fragment de
 
 Un URI de fragment a le format suivant.
 
-*URIPage* `#` *NomÉlément*
+*PageURI* `#` *ElementName*
 
 L’exemple suivant illustre un `Hyperlink` configuré pour naviguer vers un fragment de contenu.
 
@@ -215,7 +215,7 @@ L’exemple suivant illustre un `Hyperlink` configuré pour naviguer vers un fra
 [!code-xaml[NavigationOverviewSnippets#PageThatNavigatesXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageThatNavigatesToFragment.xaml#pagethatnavigatesxaml3)]
 
 > [!NOTE]
-> Cette section décrit l’implémentation de la navigation par fragment par défaut dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vous permet également d’implémenter votre propre schéma de navigation de fragment qui, en partie, requiert la gestion de l’événement <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>.
+> Cette section décrit l’implémentation de la navigation par fragment par défaut dans WPF. WPF vous permet également d’implémenter votre propre schéma de navigation de fragment qui, en partie, requiert la gestion de l’événement <xref:System.Windows.Navigation.NavigationService.FragmentNavigation?displayProperty=nameWithType>.
 
 > [!IMPORTANT]
 > Vous pouvez naviguer vers des fragments dans des pages libres [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] (fichiers de balisage uniquement [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] avec `Page` comme élément racine) uniquement si les pages peuvent être parcourues via HTTP.
@@ -226,12 +226,12 @@ L’exemple suivant illustre un `Hyperlink` configuré pour naviguer vers un fra
 
 ### <a name="navigation-service"></a>Service de navigation
 
-Même si <xref:System.Windows.Documents.Hyperlink> permet à un utilisateur d’initier la navigation vers une <xref:System.Windows.Controls.Page> particulière, le travail de localisation et de téléchargement de la page est effectué par la classe <xref:System.Windows.Navigation.NavigationService>. En fait, <xref:System.Windows.Navigation.NavigationService> permet de traiter une demande de navigation pour le compte du code client, comme le <xref:System.Windows.Documents.Hyperlink>. En outre, <xref:System.Windows.Navigation.NavigationService> implémente une prise en charge de niveau supérieur pour le suivi et l’influence d’une demande de navigation.
+Même si <xref:System.Windows.Documents.Hyperlink> permet à un utilisateur d’initier la navigation vers une <xref:System.Windows.Controls.Page>particulière, le travail de localisation et de téléchargement de la page est effectué par la classe <xref:System.Windows.Navigation.NavigationService>. En fait, <xref:System.Windows.Navigation.NavigationService> permet de traiter une demande de navigation pour le compte du code client, comme le <xref:System.Windows.Documents.Hyperlink>. En outre, <xref:System.Windows.Navigation.NavigationService> implémente une prise en charge de niveau supérieur pour le suivi et l’influence d’une demande de navigation.
 
-Lorsqu’un utilisateur clique sur un <xref:System.Windows.Documents.Hyperlink>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] appelle <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType> pour rechercher et télécharger les <xref:System.Windows.Controls.Page> à l’URI à en-tête pack spécifié. Le <xref:System.Windows.Controls.Page> téléchargé est converti en une arborescence d’objets dont l’objet racine est une instance du <xref:System.Windows.Controls.Page> téléchargé. Une référence à l’objet racine <xref:System.Windows.Controls.Page> est stockée dans la propriété <xref:System.Windows.Navigation.NavigationService.Content%2A?displayProperty=nameWithType>. L’URI à en-tête pack pour le contenu cible de la navigation est stocké dans la propriété <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>, tandis que le <xref:System.Windows.Navigation.NavigationService.CurrentSource%2A?displayProperty=nameWithType> stocke l’URI à en-tête pack pour la dernière page vers laquelle la navigation a eu lieu.
+Lorsqu’un utilisateur clique sur un <xref:System.Windows.Documents.Hyperlink>, WPF appelle <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType> pour localiser et télécharger le <xref:System.Windows.Controls.Page> à l’URI à en-tête pack spécifié. Le <xref:System.Windows.Controls.Page> téléchargé est converti en une arborescence d’objets dont l’objet racine est une instance du <xref:System.Windows.Controls.Page>téléchargé. Une référence à l’objet racine <xref:System.Windows.Controls.Page> est stockée dans la propriété <xref:System.Windows.Navigation.NavigationService.Content%2A?displayProperty=nameWithType>. L’URI à en-tête pack pour le contenu cible de la navigation est stocké dans la propriété <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>, tandis que le <xref:System.Windows.Navigation.NavigationService.CurrentSource%2A?displayProperty=nameWithType> stocke l’URI à en-tête pack pour la dernière page vers laquelle la navigation a eu lieu.
 
 > [!NOTE]
-> Il est possible qu’une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ait plusieurs <xref:System.Windows.Navigation.NavigationService>actuellement actives. Pour plus d’informations, consultez la section [hôtes de navigation](#Navigation_Hosts) plus loin dans cette rubrique.
+> Il est possible pour une application WPF d’avoir plusieurs <xref:System.Windows.Navigation.NavigationService>actuellement actives. Pour plus d’informations, consultez la section [hôtes de navigation](#Navigation_Hosts) plus loin dans cette rubrique.
 
 <a name="Programmatic_Navigation_with_the_Navigation_Service"></a>
 
@@ -251,7 +251,7 @@ Dans ces situations, vous devez écrire du code pour lancer la navigation par pr
 
 #### <a name="getting-a-reference-to-the-navigationservice"></a>Obtention d’une référence à NavigationService
 
-Pour les raisons décrites dans la section [hôtes de navigation](#Navigation_Hosts) , une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] peut avoir plusieurs <xref:System.Windows.Navigation.NavigationService>. Cela signifie que votre code a besoin d’un moyen de trouver un <xref:System.Windows.Navigation.NavigationService>, qui est généralement le <xref:System.Windows.Navigation.NavigationService> ayant navigué vers le <xref:System.Windows.Controls.Page> actuel. Vous pouvez obtenir une référence à une <xref:System.Windows.Navigation.NavigationService> en appelant la méthode `static`<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType>. Pour obtenir les <xref:System.Windows.Navigation.NavigationService> qui naviguent vers une <xref:System.Windows.Controls.Page>particulière, vous passez une référence au <xref:System.Windows.Controls.Page> en tant qu’argument de la méthode <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A>. Le code suivant montre comment obtenir le <xref:System.Windows.Navigation.NavigationService> pour le <xref:System.Windows.Controls.Page> actuel.
+Pour les raisons décrites dans la section [hôtes de navigation](#Navigation_Hosts) , une application WPF peut avoir plusieurs <xref:System.Windows.Navigation.NavigationService>. Cela signifie que votre code a besoin d’un moyen de trouver un <xref:System.Windows.Navigation.NavigationService>, qui est généralement le <xref:System.Windows.Navigation.NavigationService> ayant navigué vers le <xref:System.Windows.Controls.Page>actuel. Vous pouvez obtenir une référence à une <xref:System.Windows.Navigation.NavigationService> en appelant la méthode `static`<xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A?displayProperty=nameWithType>. Pour obtenir les <xref:System.Windows.Navigation.NavigationService> qui naviguent vers une <xref:System.Windows.Controls.Page>particulière, vous passez une référence au <xref:System.Windows.Controls.Page> en tant qu’argument de la méthode <xref:System.Windows.Navigation.NavigationService.GetNavigationService%2A>. Le code suivant montre comment obtenir le <xref:System.Windows.Navigation.NavigationService> pour le <xref:System.Windows.Controls.Page>actuel.
 
 [!code-csharp[NavigationOverviewSnippets#GetNSCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/GetNSPage.xaml.cs#getnscodebehind1)]
 [!code-csharp[NavigationOverviewSnippets#GetNSCODEBEHIND2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/GetNSPage.xaml.cs#getnscodebehind2)]
@@ -295,7 +295,7 @@ Si vous devez construire un URI à en-tête pack par programme (lorsque vous pou
 
 #### <a name="refreshing-the-current-page"></a>Actualisation de la page active
 
-Un <xref:System.Windows.Controls.Page> n’est pas téléchargé s’il a le même URI à en-tête pack que l’URI à en-tête pack stocké dans la propriété <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>. Pour forcer [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] à télécharger à nouveau la page actuelle, vous pouvez appeler la méthode <xref:System.Windows.Navigation.NavigationService.Refresh%2A?displayProperty=nameWithType>, comme indiqué dans l’exemple suivant.
+Un <xref:System.Windows.Controls.Page> n’est pas téléchargé s’il a le même URI à en-tête pack que l’URI à en-tête pack stocké dans la propriété <xref:System.Windows.Navigation.NavigationService.Source%2A?displayProperty=nameWithType>. Pour forcer WPF à télécharger à nouveau la page actuelle, vous pouvez appeler la méthode <xref:System.Windows.Navigation.NavigationService.Refresh%2A?displayProperty=nameWithType>, comme indiqué dans l’exemple suivant.
 
 [!code-xaml[NavigationOverviewSnippets#NSRefreshNavigationPageXAML1](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/NSRefreshNavigationPage.xaml#nsrefreshnavigationpagexaml1)]
 
@@ -308,21 +308,21 @@ Un <xref:System.Windows.Controls.Page> n’est pas téléchargé s’il a le mê
 
 ### <a name="navigation-lifetime"></a>Durée de vie de la navigation
 
-Comme vous l’avez vu, il existe de nombreuses façons de démarrer la navigation. Lorsque la navigation est lancée et que la navigation est en cours, vous pouvez suivre et influencer la navigation à l’aide des événements suivants qui sont implémentés par <xref:System.Windows.Navigation.NavigationService> :
+Comme vous l’avez vu, il existe de nombreuses façons de démarrer la navigation. Lorsque la navigation est lancée et que la navigation est en cours, vous pouvez suivre et influencer la navigation à l’aide des événements suivants qui sont implémentés par <xref:System.Windows.Navigation.NavigationService>:
 
-- <xref:System.Windows.Navigation.NavigationService.Navigating>., Se produit quand une nouvelle navigation est demandée. Permet d’annuler la navigation.
+- <xref:System.Windows.Navigation.NavigationService.Navigating>. Se produit quand une nouvelle navigation est demandée. Permet d’annuler la navigation.
 
-- <xref:System.Windows.Navigation.NavigationService.NavigationProgress>., Se produit périodiquement au cours d'un téléchargement, pour donner des informations sur la progression de la navigation.
+- <xref:System.Windows.Navigation.NavigationService.NavigationProgress>. Se produit périodiquement au cours d'un téléchargement, pour donner des informations sur la progression de la navigation.
 
-- <xref:System.Windows.Navigation.NavigationService.Navigated>., Se produit quand la page a été localisée et téléchargée.
+- <xref:System.Windows.Navigation.NavigationService.Navigated>. Se produit quand la page a été localisée et téléchargée.
 
-- <xref:System.Windows.Navigation.NavigationService.NavigationStopped>., Se produit lorsque la navigation est arrêtée (en appelant <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>) ou lorsqu’une nouvelle navigation est demandée alors qu’une navigation en cours est en cours.
+- <xref:System.Windows.Navigation.NavigationService.NavigationStopped>. Se produit lorsque la navigation est arrêtée (en appelant <xref:System.Windows.Navigation.NavigationService.StopLoading%2A>) ou lorsqu’une nouvelle navigation est demandée alors qu’une navigation en cours est en cours.
 
-- <xref:System.Windows.Navigation.NavigationService.NavigationFailed>., Se produit en cas d’erreur pendant la navigation vers le contenu demandé.
+- <xref:System.Windows.Navigation.NavigationService.NavigationFailed>. Se produit en cas d’erreur pendant la navigation vers le contenu demandé.
 
-- <xref:System.Windows.Navigation.NavigationService.LoadCompleted>., Se produit quand le contenu cible de la navigation est chargé et analysé, et que son rendu a commencé.
+- <xref:System.Windows.Navigation.NavigationService.LoadCompleted>. Se produit quand le contenu cible de la navigation est chargé et analysé, et que son rendu a commencé.
 
-- <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>., Se produit au début de la navigation vers un fragment de contenu, c’est-à-dire :
+- <xref:System.Windows.Navigation.NavigationService.FragmentNavigation>. Se produit au début de la navigation vers un fragment de contenu, c’est-à-dire :
 
   - immédiatement, si le fragment désiré est dans le contenu actuel ;
 
@@ -357,13 +357,13 @@ Dans certains cas, un <xref:System.Windows.Controls.Page> peut être intéressé
 [!code-csharp[NavigationOverviewSnippets#CancelNavigationPageCODEBEHIND](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/CancelNavigationPage.xaml.cs#cancelnavigationpagecodebehind)]
 [!code-vb[NavigationOverviewSnippets#CancelNavigationPageCODEBEHIND](~/samples/snippets/visualbasic/VS_Snippets_Wpf/NavigationOverviewSnippets/VisualBasic/CancelNavigationPage.xaml.vb#cancelnavigationpagecodebehind)]
 
-Si vous inscrivez un gestionnaire avec un événement de navigation à partir d’un <xref:System.Windows.Controls.Page>, comme le fait l’exemple précédent, vous devez également annuler l’inscription du gestionnaire d’événements. Si ce n’est pas le cas, il peut y avoir des effets secondaires sur la façon dont la navigation [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] se souvient <xref:System.Windows.Controls.Page> la navigation à l’aide du journal.
+Si vous inscrivez un gestionnaire avec un événement de navigation à partir d’un <xref:System.Windows.Controls.Page>, comme le fait l’exemple précédent, vous devez également annuler l’inscription du gestionnaire d’événements. Si ce n’est pas le cas, il peut y avoir des effets secondaires sur la façon dont la navigation WPF se souvient des <xref:System.Windows.Controls.Page> la navigation à l’aide du journal.
 
 <a name="NavigationHistory"></a>
 
 ### <a name="remembering-navigation-with-the-journal"></a>Mémorisation de la navigation avec le journal
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise deux piles pour mémoriser les pages à partir desquelles vous avez navigué : une pile Back et une pile Forward. Lorsque vous naviguez de la <xref:System.Windows.Controls.Page> actuelle vers une nouvelle <xref:System.Windows.Controls.Page> ou vers une <xref:System.Windows.Controls.Page> existante, le <xref:System.Windows.Controls.Page> actuel est ajouté à la *pile de retour*. Lorsque vous naviguez du <xref:System.Windows.Controls.Page> actuel vers le <xref:System.Windows.Controls.Page> précédent, le <xref:System.Windows.Controls.Page> actuel est ajouté à la *pile avant*. La pile Back, la pile Forward et les fonctionnalités qui permettent de les gérer représentent le journal. Chaque élément de la pile Back et de la pile Forward est une instance de la classe <xref:System.Windows.Navigation.JournalEntry>, et est désigné sous le nom d' *entrée de journal*.
+WPF utilise deux piles pour se souvenir des pages à partir desquelles vous avez accédé : une pile Back et une pile Forward. Lorsque vous naviguez de la <xref:System.Windows.Controls.Page> actuelle vers une nouvelle <xref:System.Windows.Controls.Page> ou vers une <xref:System.Windows.Controls.Page>existante, le <xref:System.Windows.Controls.Page> actuel est ajouté à la *pile de retour*. Lorsque vous naviguez du <xref:System.Windows.Controls.Page> actuel vers le <xref:System.Windows.Controls.Page>précédent, le <xref:System.Windows.Controls.Page> actuel est ajouté à la *pile avant*. La pile Back, la pile Forward et les fonctionnalités qui permettent de les gérer représentent le journal. Chaque élément de la pile Back et de la pile Forward est une instance de la classe <xref:System.Windows.Navigation.JournalEntry>, et est désigné sous le nom d' *entrée de journal*.
 
 #### <a name="navigating-the-journal-from-internet-explorer"></a>Navigation dans le journal à partir d’Internet Explorer
 
@@ -371,7 +371,7 @@ D’un plan conceptuel, le journal fonctionne de la même façon que les boutons
 
 ![Boutons précédent et suivant](./media/navigation-overview/back-and-forward-navigation.png "Naviguez avec les boutons précédent et suivant.")
 
-Pour les applications XBAP hébergées par Internet Explorer, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] intègre le journal dans le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de navigation d’Internet Explorer. Cela permet aux utilisateurs de parcourir les pages d’une application XBAP à l’aide des boutons **précédent**, **suivant**et **pages récentes** dans Internet Explorer.
+Pour les applications XBAP hébergées par Internet Explorer, WPF intègre le journal dans le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] de navigation d’Internet Explorer. Cela permet aux utilisateurs de parcourir les pages d’une application XBAP à l’aide des boutons **précédent**, **suivant**et **pages récentes** dans Internet Explorer.
 
 > [!IMPORTANT]
 > Dans Internet Explorer, quand un utilisateur quitte et revient à une application XBAP, seules les entrées de journal pour les pages qui n’étaient pas gardées actives sont conservées dans le journal. Pour plus d’informations sur la conservation des pages actives, consultez [durée de vie de la page et le journal](#PageLifetime) plus loin dans cette rubrique.
@@ -382,9 +382,9 @@ Par défaut, le texte de chaque <xref:System.Windows.Controls.Page> qui apparaî
 
 2. Valeur de l’attribut `Page.Title`.
 
-3. Valeur de l’attribut `Page.WindowTitle` et l’URI du <xref:System.Windows.Controls.Page> en cours.
+3. Valeur de l’attribut `Page.WindowTitle` et l’URI du <xref:System.Windows.Controls.Page>en cours.
 
-4. URI du <xref:System.Windows.Controls.Page> actuel. (Default)
+4. URI du <xref:System.Windows.Controls.Page>actuel. (par défaut)
 
 L’ordre dans lequel les options sont listées correspond à l’ordre de priorité de recherche du texte. Par exemple, si `JournalEntry.Name` est définie, les autres valeurs sont ignorées.
 
@@ -400,7 +400,7 @@ L’exemple suivant utilise l’attribut `Page.Title` pour modifier le texte qui
 
 #### <a name="navigating-the-journal-using-wpf"></a>Navigation dans le journal à l’aide de WPF
 
-Bien qu’un utilisateur puisse naviguer dans le journal à l’aide des pages **précédent**, **suivant**et **récent** dans Internet Explorer, vous pouvez également naviguer dans le journal à l’aide des mécanismes déclaratifs et de programmation fournis par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. L’une des raisons pour cela consiste à fournir des interfaces utilisateur de navigation personnalisées dans vos pages.
+Bien qu’un utilisateur puisse naviguer dans le journal à l’aide des pages **précédent**, **suivant**et **récent** dans Internet Explorer, vous pouvez également naviguer dans le journal à l’aide des mécanismes DÉCLARATIFS et de programmation fournis par WPF. L’une des raisons pour cela consiste à fournir des interfaces utilisateur de navigation personnalisées dans vos pages.
 
 Vous pouvez ajouter de façon déclarative la prise en charge de la navigation dans le journal à l’aide des commandes de navigation exposées par <xref:System.Windows.Input.NavigationCommands>. L’exemple suivant montre comment utiliser la commande de navigation `BrowseBack`.
 
@@ -427,13 +427,13 @@ Le journal peut également être manipulé par programme, comme indiqué dans co
 
 Considérez une application XBAP avec plusieurs pages qui contiennent du contenu riche, y compris des graphiques, des animations et des médias. L’encombrement mémoire de pages comme celles-ci peut être assez important, en particulier si des médias audio et vidéo sont utilisés. Étant donné que le journal « mémorise » les pages qui ont été parcourues, une telle application XBAP peut rapidement consommer une grande quantité de mémoire.
 
-Pour cette raison, le comportement par défaut du journal est de stocker les métadonnées <xref:System.Windows.Controls.Page> dans chaque entrée du journal plutôt qu’une référence à un objet <xref:System.Windows.Controls.Page>. Lors de la navigation dans une entrée de journal, ses <xref:System.Windows.Controls.Page> métadonnées sont utilisées pour créer une nouvelle instance du <xref:System.Windows.Controls.Page> spécifié. Par conséquent, chaque <xref:System.Windows.Controls.Page> de navigation a la durée de vie illustrée dans la figure suivante.
+Pour cette raison, le comportement par défaut du journal est de stocker les métadonnées <xref:System.Windows.Controls.Page> dans chaque entrée du journal plutôt qu’une référence à un objet <xref:System.Windows.Controls.Page>. Lors de la navigation dans une entrée de journal, ses <xref:System.Windows.Controls.Page> métadonnées sont utilisées pour créer une nouvelle instance du <xref:System.Windows.Controls.Page>spécifié. Par conséquent, chaque <xref:System.Windows.Controls.Page> de navigation a la durée de vie illustrée dans la figure suivante.
 
 ![Durée de vie de la page](./media/navigation-overview/navigated-page-lifetime.png "Indique la durée de vie lors de la navigation dans une page.")
 
 Bien que l’utilisation du comportement de journalisation par défaut puisse économiser sur la consommation de mémoire, les performances de rendu par page peuvent être réduites ; réinstanciation un <xref:System.Windows.Controls.Page> peut prendre beaucoup de temps, en particulier s’il a beaucoup de contenu. Si vous devez conserver une instance de <xref:System.Windows.Controls.Page> dans le journal, vous pouvez dessiner sur deux techniques pour effectuer cette tâche. Tout d’abord, vous pouvez naviguer par programmation vers un objet <xref:System.Windows.Controls.Page> en appelant la méthode <xref:System.Windows.Navigation.NavigationService.Navigate%2A?displayProperty=nameWithType>.
 
-Deuxièmement, vous pouvez spécifier que [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] conserver une instance d’une <xref:System.Windows.Controls.Page> dans le journal en affectant à la propriété <xref:System.Windows.Controls.Page.KeepAlive%2A> la valeur `true` (la valeur par défaut est `false`). Comme indiqué dans l’exemple suivant, vous pouvez définir <xref:System.Windows.Controls.Page.KeepAlive%2A> de façon déclarative dans le balisage.
+Deuxièmement, vous pouvez spécifier que WPF conserve une instance d’un <xref:System.Windows.Controls.Page> dans le journal en affectant à la propriété <xref:System.Windows.Controls.Page.KeepAlive%2A> la valeur `true` (la valeur par défaut est `false`). Comme indiqué dans l’exemple suivant, vous pouvez définir <xref:System.Windows.Controls.Page.KeepAlive%2A> de façon déclarative dans le balisage.
 
 [!code-xaml[NavigationOverviewSnippets#KeepAlivePageXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/KeepAlivePage.xaml#keepalivepagexaml)]
 
@@ -455,7 +455,7 @@ En général, vous devez préférer le comportement par défaut <xref:System.Win
 
 ### <a name="retaining-content-state-with-navigation-history"></a>Conservation de l’état du contenu avec l’historique de navigation
 
-Si un <xref:System.Windows.Controls.Page> n’est pas gardé actif et qu’il contient des contrôles qui collectent les données de l’utilisateur, qu’arrive-t-il aux données si un utilisateur quitte le <xref:System.Windows.Controls.Page> et revient à ce dernier ? Du point de vue de l’expérience utilisateur, l’utilisateur s’attend à voir les données qu’il a entrées. Malheureusement, étant donné qu’une nouvelle instance de l' <xref:System.Windows.Controls.Page> est créée avec chaque navigation, les contrôles qui ont collecté les données sont réinstanciés et les données sont perdues.
+Si un <xref:System.Windows.Controls.Page> n’est pas gardé actif et qu’il contient des contrôles qui collectent les données de l’utilisateur, qu’arrive-t-il aux données si un utilisateur quitte le <xref:System.Windows.Controls.Page>et revient à ce dernier ? Du point de vue de l’expérience utilisateur, l’utilisateur s’attend à voir les données qu’il a entrées. Malheureusement, étant donné qu’une nouvelle instance de l' <xref:System.Windows.Controls.Page> est créée avec chaque navigation, les contrôles qui ont collecté les données sont réinstanciés et les données sont perdues.
 
 Heureusement, le journal assure la prise en charge de la mémorisation des données dans <xref:System.Windows.Controls.Page> les navigations, y compris les données de contrôle. Plus précisément, l’entrée de journal pour chaque <xref:System.Windows.Controls.Page> agit comme un conteneur temporaire pour l’état de <xref:System.Windows.Controls.Page> associé. Les étapes suivantes décrivent l’utilisation de cette prise en charge lors de la navigation dans un <xref:System.Windows.Controls.Page> :
 
@@ -473,7 +473,7 @@ Lorsque vous accédez à la page <xref:System.Windows.Controls.Page>, à l’aid
 
 3. Le <xref:System.Windows.Controls.Page> accède à nouveau à.
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] utilise automatiquement cette prise en charge lorsque les contrôles suivants sont utilisés sur un <xref:System.Windows.Controls.Page>:
+WPF utilise automatiquement cette prise en charge lorsque les contrôles suivants sont utilisés sur un <xref:System.Windows.Controls.Page>:
 
 - <xref:System.Windows.Controls.CheckBox>
 
@@ -501,7 +501,7 @@ Lorsque vous accédez à la page <xref:System.Windows.Controls.Page>, à l’aid
 
 - <xref:System.Windows.Controls.TextBox>
 
-Si un <xref:System.Windows.Controls.Page> utilise ces contrôles, les données qui y sont entrées sont mémorisées sur <xref:System.Windows.Controls.Page> navigations, comme le montre la **couleur préférée** <xref:System.Windows.Controls.ListBox> dans la figure suivante.
+Si un <xref:System.Windows.Controls.Page> utilise ces contrôles, les données qui y sont entrées sont mémorisées sur <xref:System.Windows.Controls.Page> navigations, comme le montre la **couleur préférée**<xref:System.Windows.Controls.ListBox> dans la figure suivante.
 
 ![Page avec des contrôles qui mémorisent l’État](./media/navigation-overview/data-remembered-across-page-navigations.png "Les données entrées sont mémorisées au fil des navigations dans les pages.")
 
@@ -517,23 +517,23 @@ Si vous devez naviguer dans les différents États d’un <xref:System.Windows.C
 
 ### <a name="cookies"></a>Cookies
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications peuvent également stocker des données avec des cookies, qui sont créés, mis à jour et supprimés à l’aide des méthodes <xref:System.Windows.Application.SetCookie%2A> et <xref:System.Windows.Application.GetCookie%2A>. Les cookies que vous pouvez créer dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] sont les mêmes que ceux utilisés par les autres types d’applications Web. les cookies sont des éléments de données arbitraires stockés par une application sur un ordinateur client pendant ou à travers les sessions d’application. Les données de cookie prennent généralement la forme d’une paire nom/valeur au format suivant.
+Les applications WPF peuvent également stocker des données avec des cookies, qui sont créés, mis à jour et supprimés à l’aide des méthodes <xref:System.Windows.Application.SetCookie%2A> et <xref:System.Windows.Application.GetCookie%2A>. Les cookies que vous pouvez créer dans WPF sont les mêmes que ceux utilisés par les autres types d’applications Web. les cookies sont des éléments de données arbitraires stockés par une application sur un ordinateur client pendant ou à travers les sessions d’application. Les données de cookie prennent généralement la forme d’une paire nom/valeur au format suivant.
 
-*Nom* `=` *Valeur*
+*Nom* `=` *valeur*
 
 Lorsque les données sont passées à <xref:System.Windows.Application.SetCookie%2A>, ainsi que la <xref:System.Uri> de l’emplacement pour lequel le cookie doit être défini, un cookie est créé en mémoire et n’est disponible que pendant la durée de la session d’application actuelle. Ce type de cookie est appelé *cookie de session*.
 
 Pour stocker un cookie dans des sessions d’application, vous devez lui ajouter une date d’expiration au format suivant.
 
-*NOM* `=` *VALEUR* `; expires=DAY, DD-MMM-YYYY HH:MM:SS GMT`
+*Nom* `=` *valeur* `; expires=DAY, DD-MMM-YYYY HH:MM:SS GMT`
 
 Un cookie avec une date d’expiration est stocké dans le dossier fichiers Internet temporaires de l’installation Windows actuelle jusqu’à ce que le cookie expire. Un cookie de ce type est connu sous le nom de *cookie persistant* , car il persiste entre les sessions d’application.
 
 Vous récupérez les cookies de session et les cookies persistants en appelant la méthode <xref:System.Windows.Application.GetCookie%2A>, en passant le <xref:System.Uri> de l’emplacement où le cookie a été défini avec la méthode <xref:System.Windows.Application.SetCookie%2A>.
 
-Voici quelques-unes des façons dont les cookies sont pris en charge dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]:
+Voici quelques-unes des façons dont les cookies sont pris en charge dans WPF :
 
-- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications autonomes et les applications XBAP peuvent créer et gérer des cookies.
+- Les applications autonomes WPF et les applications XBAP peuvent créer et gérer des cookies.
 
 - Les cookies créés par une application XBAP sont accessibles à partir du navigateur.
 
@@ -545,17 +545,17 @@ Voici quelques-unes des façons dont les cookies sont pris en charge dans [!INCL
 
 - Les applications XBAP de niveau supérieur et les applications XBAP hébergées dans IFRAMEs peuvent accéder aux cookies.
 
-- La prise en charge des cookies dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est identique pour tous les navigateurs pris en charge.
+- La prise en charge des cookies dans WPF est la même pour tous les navigateurs pris en charge.
 
-- Dans Internet Explorer, la stratégie P3P relative aux cookies est respectée par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], en particulier en ce qui concerne les applications XBAP internes et tierces.
+- Dans Internet Explorer, la stratégie P3P relative aux cookies est respectée par WPF, en particulier en ce qui concerne les applications XBAP internes et tierces.
 
 <a name="Structured_Navigation"></a>
 
 ### <a name="structured-navigation"></a>Navigation structurée
 
-Si vous avez besoin de passer des données d’un <xref:System.Windows.Controls.Page> à un autre, vous pouvez passer les données en tant qu’arguments à un constructeur sans paramètre du <xref:System.Windows.Controls.Page>. Notez que si vous utilisez cette technique, vous devez garder le <xref:System.Windows.Controls.Page> actif ; Si ce n’est pas le cas, la prochaine fois que vous accédez à la <xref:System.Windows.Controls.Page>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] réinstancie le <xref:System.Windows.Controls.Page> à l’aide du constructeur sans paramètre.
+Si vous avez besoin de passer des données d’un <xref:System.Windows.Controls.Page> à un autre, vous pouvez passer les données en tant qu’arguments à un constructeur sans paramètre du <xref:System.Windows.Controls.Page>. Notez que si vous utilisez cette technique, vous devez garder le <xref:System.Windows.Controls.Page> actif ; Si ce n’est pas le cas, la prochaine fois que vous accédez à la <xref:System.Windows.Controls.Page>, WPF réinstancie le <xref:System.Windows.Controls.Page> à l’aide du constructeur sans paramètre.
 
-Votre <xref:System.Windows.Controls.Page> peut également implémenter des propriétés qui sont définies avec les données qui doivent être passées. Toutefois, les choses deviennent délicates quand un <xref:System.Windows.Controls.Page> doit renvoyer des données au <xref:System.Windows.Controls.Page> qui y a accédé. Le problème est que la navigation ne prend pas en charge de manière native des mécanismes permettant de garantir qu’un <xref:System.Windows.Controls.Page> sera renvoyé à après la navigation. Pour l’essentiel, la navigation ne prend pas en charge la sémantique d’appel/de retour. Pour résoudre ce problème, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit la classe <xref:System.Windows.Navigation.PageFunction%601> que vous pouvez utiliser pour vous assurer qu’un <xref:System.Windows.Controls.Page> est retourné à de manière prévisible et structurée. Pour plus d’informations, consultez [vue d’ensemble de la navigation structurée](structured-navigation-overview.md).
+Votre <xref:System.Windows.Controls.Page> peut également implémenter des propriétés qui sont définies avec les données qui doivent être passées. Toutefois, les choses deviennent délicates quand un <xref:System.Windows.Controls.Page> doit renvoyer des données au <xref:System.Windows.Controls.Page> qui y a accédé. Le problème est que la navigation ne prend pas en charge de manière native des mécanismes permettant de garantir qu’un <xref:System.Windows.Controls.Page> sera renvoyé à après la navigation. Pour l’essentiel, la navigation ne prend pas en charge la sémantique d’appel/de retour. Pour résoudre ce problème, WPF fournit la classe <xref:System.Windows.Navigation.PageFunction%601> que vous pouvez utiliser pour vous assurer qu’une <xref:System.Windows.Controls.Page> est retournée de manière prévisible et structurée. Pour plus d’informations, consultez [vue d’ensemble de la navigation structurée](structured-navigation-overview.md).
 
 <a name="The_NavigationWindow_Class"></a>
 
@@ -571,7 +571,7 @@ Votre <xref:System.Windows.Controls.Page> peut également implémenter des propr
 
 Pour incorporer la navigation de style navigateur dans vos applications autonomes, vous pouvez utiliser la classe <xref:System.Windows.Navigation.NavigationWindow>. <xref:System.Windows.Navigation.NavigationWindow> dérive de <xref:System.Windows.Window> et l’étend avec la même prise en charge de la navigation fournie par les applications XBAP. Vous pouvez utiliser <xref:System.Windows.Navigation.NavigationWindow> en tant que fenêtre principale de votre application autonome ou en tant que fenêtre secondaire telle qu’une boîte de dialogue.
 
-Pour implémenter un <xref:System.Windows.Navigation.NavigationWindow>, comme avec la plupart des classes de niveau supérieur dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] (<xref:System.Windows.Window>, <xref:System.Windows.Controls.Page>, etc.), vous utilisez une combinaison de balisage et de code-behind. L'exemple suivant le démontre.
+Pour implémenter un <xref:System.Windows.Navigation.NavigationWindow>, comme avec la plupart des classes de niveau supérieur dans WPF (<xref:System.Windows.Window>, <xref:System.Windows.Controls.Page>, etc.), vous utilisez une combinaison de balisage et de code-behind. L'exemple suivant le démontre.
 
 [!code-xaml[IntroToNavNavigationWindowSnippets#NavigationWindowMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/IntroToNavNavigationWindowSnippets/CSharp/MainWindow.xaml#navigationwindowmarkup)]
 
@@ -612,7 +612,7 @@ Comme vous pouvez le voir, <xref:System.Windows.Navigation.NavigationWindow> aff
 
 Si vos pages fournissent leur propre prise en charge de la navigation dans le journal et l’interface utilisateur, vous pouvez masquer les boutons **précédent** et **suivant** affichés par <xref:System.Windows.Navigation.NavigationWindow> en affectant à la propriété <xref:System.Windows.Navigation.NavigationWindow.ShowsNavigationUI%2A> la valeur `false`.
 
-Vous pouvez également utiliser la prise en charge de la personnalisation dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour remplacer le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] du <xref:System.Windows.Navigation.NavigationWindow> lui-même.
+Vous pouvez également utiliser la prise en charge de la personnalisation dans WPF pour remplacer le [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] du <xref:System.Windows.Navigation.NavigationWindow> lui-même.
 
 <a name="Frame_in_Standalone_Applications"></a>
 
@@ -681,7 +681,7 @@ Comme cela a déjà été mentionné, plusieurs journaux peuvent exister dans un
 
 ## <a name="navigating-to-content-other-than-xaml-pages"></a>Navigation vers un autre contenu que des pages XAML
 
-Tout au long de cette rubrique, les applications XBAP <xref:System.Windows.Controls.Page> et Pack ont été utilisées pour illustrer les différentes fonctionnalités de navigation de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Toutefois, une <xref:System.Windows.Controls.Page> qui est compilée dans une application n’est pas le seul type de contenu vers lequel une navigation peut être établie, et les applications XBAP à en-tête pack ne sont pas le seul moyen d’identifier le contenu.
+Tout au long de cette rubrique, les applications XBAP <xref:System.Windows.Controls.Page> et Pack ont été utilisées pour illustrer les diverses fonctionnalités de navigation de WPF. Toutefois, une <xref:System.Windows.Controls.Page> qui est compilée dans une application n’est pas le seul type de contenu vers lequel une navigation peut être établie, et les applications XBAP à en-tête pack ne sont pas le seul moyen d’identifier le contenu.
 
 Comme le montre cette section, vous pouvez également accéder à des fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], des fichiers HTML et des objets libres.
 
@@ -762,7 +762,7 @@ L’illustration suivante affiche le résultat.
 
 ![Page qui navigue vers une classe](./media/navigation-overview/page-navigates-to-an-object.png "Il s’agit d’un exemple de page qui navigue vers un objet.")
 
-Dans cette illustration, vous pouvez voir que rien d’utile n’est affiché. En fait, la valeur affichée est la valeur de retour de la méthode `ToString` pour l’objet **Person** ; par défaut, il s’agit de la seule valeur que [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pouvez utiliser pour représenter votre objet. Vous pouvez substituer la méthode `ToString` pour retourner des informations plus explicites, bien qu’il ne s’agisse toujours que d’une valeur de chaîne. L’une des techniques que vous pouvez utiliser pour tirer parti des fonctionnalités de présentation de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] consiste à utiliser un modèle de données. Vous pouvez implémenter un modèle de données que [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pouvez associer à un objet d’un type particulier. Le code suivant montre un modèle de données pour l’objet `Person`.
+Dans cette illustration, vous pouvez voir que rien d’utile n’est affiché. En fait, la valeur affichée est la valeur de retour de la méthode `ToString` pour l’objet **Person** ; par défaut, il s’agit de la seule valeur que WPF peut utiliser pour représenter votre objet. Vous pouvez substituer la méthode `ToString` pour retourner des informations plus explicites, bien qu’il ne s’agisse toujours que d’une valeur de chaîne. L’une des techniques que vous pouvez utiliser pour tirer parti des fonctionnalités de présentation de WPF consiste à utiliser un modèle de données. Vous pouvez implémenter un modèle de données que WPF peut associer à un objet d’un type particulier. Le code suivant montre un modèle de données pour l’objet `Person`.
 
 [!code-xaml[NavigateToObjectSnippets#DataTemplateMARKUP](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigateToObjectSnippets/CSharp/App.xaml#datatemplatemarkup)]
 
@@ -778,7 +778,7 @@ Pour plus d’informations sur les modèles de données, consultez [vue d’ense
 
 ## <a name="security"></a>Sécurité
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] la prise en charge de la navigation permet de naviguer sur Internet et permet aux applications d’héberger du contenu tiers. Pour protéger les applications et les utilisateurs contre les comportements dangereux, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fournit une variété de [fonctionnalités de sécurité](../security-wpf.md) qui sont abordées dans sécurité et [sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
+La prise en charge de la navigation WPF permet d’accéder à des XBAP sur Internet et permet aux applications d’héberger du contenu tiers. Pour protéger les applications et les utilisateurs contre les comportements dangereux, WPF fournit une variété de fonctionnalités de sécurité qui sont abordées dans [sécurité](../security-wpf.md) et [sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -788,5 +788,5 @@ Pour plus d’informations sur les modèles de données, consultez [vue d’ense
 - [URI à en-tête pack dans WPF](pack-uris-in-wpf.md)
 - [Vue d’ensemble de la navigation structurée](structured-navigation-overview.md)
 - [Vue d’ensemble des topologies de navigation](navigation-topologies-overview.md)
-- [Rubriques de guide pratique](navigation-how-to-topics.md)
+- [Guides pratiques](navigation-how-to-topics.md)
 - [Déploiement d’une application WPF](deploying-a-wpf-application-wpf.md)

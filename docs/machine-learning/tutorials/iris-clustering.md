@@ -5,12 +5,12 @@ author: pkulikov
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: a7199ce2e5217eaadfa10893eb1fbb3417e9be20
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
-ms.translationtype: MT
+ms.openlocfilehash: 77c077df27c856855322b27d6101218d59d29173
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204836"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75336673"
 ---
 # <a name="tutorial-categorize-iris-flowers-using-k-means-clustering-with-mlnet"></a>Didacticiel : classer des fleurs d’iris à l’aide du clustering k-signifiant avec ML.NET
 
@@ -118,9 +118,9 @@ Dans la méthode `Main`, remplacez la ligne `Console.WriteLine("Hello World!");`
 
 La classe <xref:Microsoft.ML.MLContext?displayProperty=nameWithType> représente l’environnement Machine Learning et fournit des mécanismes de journalisation et des points d’entrée pour le chargement des données, l’apprentissage du modèle, la prédiction et d’autres tâches. Cela s’apparente conceptuellement à l’aide `DbContext` dans Entity Framework.
 
-## <a name="setup-data-loading"></a>Configurer le chargement des données
+## <a name="set-up-data-loading"></a>Configurer le chargement des données
 
-Ajoutez le code suivant à la méthode `Main` pour configurer la façon de charger des données :
+Ajoutez le code suivant à la méthode `Main` pour configurer la façon de charger les données :
 
 [!code-csharp[Create text loader](~/samples/machine-learning/tutorials/IrisFlowerClustering/Program.cs#CreateDataView)]
 

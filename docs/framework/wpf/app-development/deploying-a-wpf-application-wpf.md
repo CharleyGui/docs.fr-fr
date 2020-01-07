@@ -5,15 +5,15 @@ helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: a1441f0cc3a7ac715a173be12e68c055ce36ff00
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d67919ba38c2e306672966ddc2f62140ef92b638
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460133"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636300"
 ---
 # <a name="deploying-a-wpf-application-wpf"></a>Déploiement d'une application WPF (WPF)
-Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. Windows et le .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépend du type d’application. Cette rubrique fournit une vue d’ensemble des différentes technologies de déploiement et explique leur utilisation avec les spécifications de déploiement de chaque type d’application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. Windows et le .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application WPF dépend du type d’application. Cette rubrique fournit une brève présentation de chaque technologie de déploiement et explique comment elles sont utilisées conjointement avec les exigences de déploiement de chaque type d’application WPF.  
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologies de déploiement  
@@ -63,7 +63,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
   
 <a name="Deploying_WPF_Applications"></a>   
 ## <a name="deploying-wpf-applications"></a>Déploiement d’applications WPF  
- Les options de déploiement d’une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] dépendent du type d’application. Du point de vue du déploiement, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] a trois types d’applications significatifs :  
+ Les options de déploiement pour une application WPF dépendent du type d’application. Du point de vue du déploiement, WPF a trois types d’applications significatifs :  
   
 - Applications autonomes.  
   
@@ -79,7 +79,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
 ### <a name="deploying-markup-only-xaml-applications"></a>Déploiement d’applications XAML à balisage  
  Les pages de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage sont généralement publiées sur des serveurs Web, comme des pages HTML, et peuvent être affichées à l’aide d’Internet Explorer. Les pages [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] à balisage sont exécutées dans un bac à sable (sandbox) de sécurité de confiance partielle en fonction de restrictions définies par le jeu d’autorisations de la zone Internet. Cela fournit un bac à sable (sandbox) de sécurité équivalent aux applications Web HTML.  
   
- Pour plus d’informations sur la sécurité pour les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], consultez [Sécurité](../security-wpf.md).  
+ Pour plus d’informations sur la sécurité des applications WPF, consultez [sécurité](../security-wpf.md).  
   
  Les pages de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage peuvent être installées dans le système de fichiers local à l’aide de XCopy ou de Windows Installer. Ces pages peuvent être affichées à l’aide d’Internet Explorer ou de l’Explorateur Windows.  
   
@@ -98,7 +98,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
 > [!NOTE]
 > Pour plus d’informations sur les manifestes de déploiement et d’application, consultez [Génération d’une application WPF](building-a-wpf-application-wpf.md).  
   
- Ces fichiers sont générés lors de la génération d’une application XBAP. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application de navigateur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Comme les pages de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage uniquement, les XBAP sont généralement publiées sur un serveur Web et affichées à l’aide d’Internet Explorer.  
+ Ces fichiers sont générés lors de la génération d’une application XBAP. Pour plus d’informations, consultez [Guide pratique pour créer un projet d’application de navigateur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)). Comme les pages de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] de balisage uniquement, les XBAP sont généralement publiées sur un serveur Web et affichées à l’aide d’Internet Explorer.  
   
  Les applications XBAP peuvent être déployées sur les clients à l’aide de l’une des techniques de déploiement. Toutefois, ClickOnce est recommandé, car il offre les fonctionnalités suivantes :  
   
@@ -112,7 +112,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
   
 <a name="Installing__NET_Framework_3_0"></a>   
 ## <a name="installing-the-net-framework"></a>Installation du .NET Framework  
- Pour exécuter une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le Microsoft .NET Framework doit être installé sur le client. Internet Explorer détecte automatiquement si les clients sont installés avec .NET Framework lorsque [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] applications hébergées sur le navigateur sont affichées. Si le .NET Framework n’est pas installé, Internet Explorer invite l’utilisateur à l’installer.  
+ Pour exécuter une application WPF, le Microsoft .NET Framework doit être installé sur le client. Internet Explorer détecte automatiquement si les clients sont installés avec .NET Framework lorsque les applications hébergées dans le navigateur WPF sont affichées. Si le .NET Framework n’est pas installé, Internet Explorer invite l’utilisateur à l’installer.  
   
  Pour détecter si la .NET Framework est installée, Internet Explorer comprend une application de programme d’amorçage qui est inscrite en tant que gestionnaire MIME (Multipurpose Internet Mail Extensions) de secours pour les fichiers de contenu avec les extensions suivantes :. xaml,. XPS,. XBAP , et. application. Si vous accédez à ces types de fichiers et que le .NET Framework n’est pas installé sur le client, l’application du programme d’amorçage demande l’autorisation de l’installer. Si aucune autorisation n’est fournie, le .NET Framework ou l’application n’est pas installé.  
   
