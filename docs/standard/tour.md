@@ -6,12 +6,12 @@ ms.author: wiwagn
 ms.date: 05/22/2017
 ms.technology: dotnet-standard
 ms.assetid: bbfe6465-329d-4982-869d-472e7ef85d93
-ms.openlocfilehash: 274fea83c474d4b67aab919b604eda893d8204d7
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 0154910b91df0b2f72daebe802e4c75bbca964bb
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552866"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337579"
 ---
 # <a name="tour-of-net"></a>Présentation de .NET
 
@@ -27,13 +27,13 @@ Pour savoir comment configurer un environnement de développement pour exécuter
 
 .NET prend en charge plusieurs langages de programmation. Les implémentations de .NET implémentent le [Common Language Infrastructure (CLI)](https://visualstudio.microsoft.com/license-terms/ecma-c-common-language-infrastructure-standards/), qui, entre autres, spécifie un runtime indépendant du langage et une interopérabilité des langages. Cela signifie que vous choisissez n’importe quel langage .NET pour générer des applications et services sur .NET.
 
-Microsoft développe et prend en charge activement trois langages .NET : C#, F# et Visual Basic (VB). 
+Microsoft développe et prend en charge activement trois langages .net : C#, F#et Visual Basic. 
 
 * C# est simple, puissant, de type sécurisé et orienté objet, tout en conservant l’expressivité et l’élégance des langages de style C. Les utilisateurs familiarisés avec le langage C et les langages similaires ont peu de difficultés à s’adapter à C#. Consultez le [Guide C#](../csharp/index.yml) pour en savoir plus sur C#.
 
 * F# est un langage de programmation multiplateforme et fonctionnel qui prend également en charge la programmation orientée objet et impérative traditionnelle. Consultez le [Guide F#](../fsharp/index.yml) pour en savoir plus sur F#.
 
-* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Parmi les langages .NET, la syntaxe de VB est la plus proche du langage humain ordinaire, ce qui rend VB souvent accessible aux personnes qui débutent dans le développement de logiciels.
+* Visual Basic est un langage facile à apprendre que vous utilisez pour créer une variété d’applications qui s’exécutent sur .NET. Dans les langages .NET, la syntaxe de Visual Basic est la plus proche de la langue de l’utilisateur ordinaire, ce qui facilite le développement logiciel.
 
 ## <a name="automatic-memory-management"></a>Gestion automatique de la mémoire
 
@@ -47,7 +47,7 @@ Il n’existe aucun mot clé analogue pour libérer de la mémoire, car la libé
 
 Le garbage collector est un des services qui garantissent la *sûreté de la mémoire*. Un programme est sûr du point de vue de la mémoire s’il accède uniquement à la mémoire allouée. Par exemple, le runtime garantit qu’une application n’accède pas à la mémoire non allouée au-delà des limites d’un tableau.
 
-Dans l’exemple suivant, le runtime lève une exception `InvalidIndexException` pour appliquer la sûreté de la mémoire :
+Dans l’exemple suivant, le runtime lève une exception <xref:System.IndexOutOfRangeException> pour appliquer la sûreté de la mémoire :
 
 [!code-csharp[MemoryManagement](../../samples/csharp/snippets/tour/MemoryManagement.csx#L4-L5)]
 
@@ -65,7 +65,7 @@ Pour plus de détails, consultez les rubriques suivantes :
 
 * Pour C#, consultez la rubrique [using, instruction (référence C#)](../csharp/language-reference/keywords/using-statement.md).
 * Pour F#, consultez [Gestion des ressources : mot clé use](../fsharp/language-reference/resource-management-the-use-keyword.md).
-* Pour VB, consultez la rubrique [using, instruction (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md).
+* Pour Visual Basic, consultez la rubrique relative [à l’instruction using (Visual Basic)](../visual-basic/language-reference/statements/using-statement.md) .
 
 ## <a name="type-safety"></a>Cohérence des types
 
@@ -79,11 +79,11 @@ La cohérence des types est également utilisée pour aider à appliquer l’enc
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L3-L3)]
 
-C#, VB et F# prennent en charge l’*inférence de type* locale. L’inférence de type signifie que le compilateur déduit le type de l’expression à gauche à partir de l’expression à droite. Cela ne signifie pas que la cohérence des types est interrompue ou évitée. Le type résultant a un type fort avec tout ce que cela implique. À partir de l’exemple précédent, `dog` est réécrit pour présenter l’inférence de type, et le reste de l’exemple reste inchangé :
+C#, Visual Basic et F# prennent en charge l’*inférence de type* locale. L’inférence de type signifie que le compilateur déduit le type de l’expression à gauche à partir de l’expression à droite. Cela ne signifie pas que la cohérence des types est interrompue ou évitée. Le type résultant a un type fort avec tout ce que cela implique. À partir de l’exemple précédent, `dog` est réécrit pour présenter l’inférence de type, et le reste de l’exemple reste inchangé :
 
 [!code-csharp[TypeSafety](../../samples/csharp/snippets/tour/TypeSafety.csx#L28-L34)]
 
-F# offre des fonctionnalités d’inférence de type qui vont au-delà de l’inférence de type limitée aux méthodes disponible en C# et VB. Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
+F#offre encore plus de fonctionnalités d’inférence de type que la méthode-inférence de C# type local trouvée dans et Visual Basic. Pour plus d’informations, consultez [Type Inference](../fsharp/language-reference/type-inference.md) (Inférence de type).
 
 ## <a name="delegates-and-lambdas"></a>Délégués et expressions lambda
 
@@ -97,7 +97,7 @@ Dans .NET, les délégués sont souvent utilisés dans les gestionnaires d’év
 
 Les génériques permettent au programmeur d’introduire un *paramètre de type* quand il désigne leurs classes qui permet au code client (les utilisateurs du type) de spécifier le type exact à utiliser à la place du paramètre de type.
 
-Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type comme `List` soit générique, il fallait utiliser des éléments qui étaient de type `object`. Cela entraînait différents problèmes liés aux performances et à la sémantique, ainsi que des erreurs d’exécution subtiles éventuelles. Les erreurs les plus connues dans cette dernière catégorie interviennent quand une structure de données contient, par exemple, des entiers et des chaînes et qu’une exception `InvalidCastException` est levée pendant l’utilisation des membres de la liste.
+Les génériques ont été ajoutés pour aider les programmeurs à implémenter des structures de données génériques. Avant leur arrivée, pour qu’un type, tel que le type `List` soit générique, il faudrait utiliser des éléments qui étaient de type `object`. Cela comportait de nombreux problèmes de performances et de sémantique, ainsi que d’éventuelles erreurs d’exécution subtiles. Une erreur d’exécution courante se produit quand une structure de données contient, par exemple, des entiers et des chaînes, et une <xref:System.InvalidCastException> est levée lors du traitement des membres de la liste.
 
 L’exemple suivant montre une exécution de programme de base utilisant une instance des types <xref:System.Collections.Generic.List%601> :
 
@@ -113,7 +113,7 @@ Pour en savoir plus sur la programmation asynchrone dans .NET, commencez par la 
 
 ## <a name="language-integrated-query-linq"></a>LINQ (Language-Integrated Query)
 
-LINQ est un ensemble puissant de fonctionnalités pour C# et VB qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, une base de données SQL ou un document XML), mais le code LINQ que vous écrivez ne diffère généralement pas d’une source de données à l’autre.
+LINQ est un ensemble puissant de fonctionnalités pour C# et Visual Basic qui vous permettent d’écrire du code simple et déclaratif pour l’exploitation des données. Les données peuvent se présenter sous plusieurs formes (comme des objets en mémoire, une base de données SQL ou un document XML), mais le code LINQ que vous écrivez ne diffère généralement pas d’une source de données à l’autre.
 
 Pour en savoir plus et obtenir des exemples, consultez la rubrique [LINQ (Language Integrated Query)](using-linq.md).
 

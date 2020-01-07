@@ -2,12 +2,12 @@
 title: Construction fonctionnelle (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: feac4273-39ab-43ae-bab7-4059c807a785
-ms.openlocfilehash: 6366c7781372d34e15d62f81a5ceae8ff4ccda2e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a51360d6c8d44770c462afb728a1fb78d3e2cd42
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353462"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636846"
 ---
 # <a name="functional-construction-linq-to-xml-visual-basic"></a>Construction fonctionnelle (LINQ to XML) (Visual Basic)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] offre un moyen puissant de créer des éléments XML appelé *construction fonctionnelle*. La construction fonctionnelle est la capacité à créer une arborescence XML en une seule instruction.  
@@ -18,11 +18,11 @@ ms.locfileid: "74353462"
   
 - Le constructeur <xref:System.Xml.Linq.XElement> prend un tableau `params` de type <xref:System.Object>, de sorte que vous puissiez passer toute quantité d'objets au constructeur. Cela vous permet de créer un élément dont le contenu est complexe.  
   
-- Si un objet implémente <xref:System.Collections.Generic.IEnumerable%601>, la collection dans l'objet est énumérée et tous les éléments de la collection sont ajoutés. Si la collection contient des objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute>, chaque élément de la collection est ajouté séparément. Ceci est important, car cela vous permet de passer les résultats d’une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] au constructeur.  
+- Si un objet implémente <xref:System.Collections.Generic.IEnumerable%601>, la collection dans l'objet est énumérée et tous les éléments de la collection sont ajoutés. Si la collection contient des objets <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute>, chaque élément de la collection est ajouté séparément. Cela est important car il vous permet de passer les résultats d’une requête LINQ au constructeur.  
   
  Voici un exemple :  
   
- Ces fonctionnalités vous permettent d’écrire du code à l’aide de littéraux XML pour créer une arborescence XML, ainsi que d’écrire du code qui utilise les résultats de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] requêtes lorsque vous créez une arborescence XML :  
+ Ces fonctionnalités vous permettent d’écrire du code à l’aide de littéraux XML pour créer une arborescence XML, ainsi que d’écrire du code qui utilise les résultats de requêtes LINQ lorsque vous créez une arborescence XML :  
   
 ```vb  
 Dim srcTree As XElement = _  

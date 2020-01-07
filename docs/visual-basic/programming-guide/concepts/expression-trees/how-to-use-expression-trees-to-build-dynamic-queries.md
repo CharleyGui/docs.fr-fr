@@ -1,13 +1,13 @@
 ---
-title: 'Comment : utiliser des arborescences d’expression pour générer des requêtes dynamiques'
+title: "Comment : utiliser des arborescences d'expression pour générer des requêtes dynamiques"
 ms.date: 07/20/2015
 ms.assetid: 16278787-7532-4b65-98b2-7a412406c4ee
-ms.openlocfilehash: bf15880c1988ac5639dd80ba56d330372dc3803b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 616aa3eba1e07a92983bb5d2048a9dbae936e77c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344713"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346050"
 ---
 # <a name="how-to-use-expression-trees-to-build-dynamic-queries-visual-basic"></a>Comment : utiliser des arborescences d’expression pour générer des requêtes dynamiques (Visual Basic)
 
@@ -101,7 +101,7 @@ Next
 
 Ce code utilise un nombre fixe d’expressions dans le prédicat qui est passé à la méthode `Queryable.Where`. Toutefois, vous pouvez écrire une application qui combine un nombre variable d’expressions de prédicat dépendant des entrées utilisateur. Vous pouvez également varier les opérateurs de requête standard qui sont appelés dans la requête, en fonction des entrées utilisateur.
 
-## <a name="compiling-the-code"></a>Compilation du code
+## <a name="compile-the-code"></a>Compiler le code
 
 - Créez un projet d’**Application console**.
 

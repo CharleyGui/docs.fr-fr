@@ -1,21 +1,21 @@
 ---
-title: "Procédure : Implémenter de manière explicite des membres d'interface - Guide de programmation C#"
+title: Comment implémenter de manière explicite des C# membres d’interface-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], explicitly implementing
 ms.assetid: 514cde76-f981-474e-8b40-9493619f899c
-ms.openlocfilehash: 5ef8b42fe5ca07548d52b88720ea4845d2408bb1
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 4efc325b3587ee790cce739727506a28c3a1f524
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589206"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635403"
 ---
-# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Procédure : Implémenter de manière explicite des membres d'interface (Guide de programmation C#)
+# <a name="how-to-explicitly-implement-interface-members-c-programming-guide"></a>Comment implémenter de manière explicite desC# membres d’interface (Guide de programmation)
 Cet exemple déclare une [interface](../../language-reference/keywords/interface.md), `IDimensions` et une classe `Box`, qui implémente de manière explicite les membres d’interface `getLength` et `getWidth`. Les membres sont accessibles via l’instance d’interface `dimensions`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csProgGuideInheritance#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#8)]  
   
 ## <a name="robust-programming"></a>Programmation fiable  
@@ -33,4 +33,4 @@ Cet exemple déclare une [interface](../../language-reference/keywords/interface
 - [Guide de programmation C#](../index.md)
 - [Classes et structs](../classes-and-structs/index.md)
 - [Interfaces](./index.md)
-- [Guide pratique pour implémenter de manière explicite des membres de deux interfaces](./how-to-explicitly-implement-members-of-two-interfaces.md)
+- [Comment implémenter explicitement des membres de deux interfaces](./how-to-explicitly-implement-members-of-two-interfaces.md)

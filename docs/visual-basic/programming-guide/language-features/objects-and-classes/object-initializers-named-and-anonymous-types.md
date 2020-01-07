@@ -10,12 +10,12 @@ helpviewer_keywords:
 - initializers [Visual Basic]
 - named types [Visual Basic]
 ms.assetid: e2df3807-a70f-49dd-ac94-f1e07f472b1b
-ms.openlocfilehash: 20e46d7ecc206abb28240075d9ec5f764ab78d01
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e6ffc649d7eb841c2d009b0ec1237975f46e2d2d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346136"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636807"
 ---
 # <a name="object-initializers-named-and-anonymous-types-visual-basic"></a>Initialiseurs d'objets : types nommés et anonymes (Visual Basic)
 Les initialiseurs d’objets vous permettent de spécifier des propriétés pour un objet complexe à l’aide d’une expression unique. Elles peuvent être utilisées pour créer des instances de types nommés et de types anonymes.  
@@ -105,7 +105,7 @@ Les initialiseurs d’objets vous permettent de spécifier des propriétés pour
   
  Étant donné que le nom du type n’est pas disponible, vous ne pouvez pas utiliser une clause `As` pour déclarer `cust13`. Son type doit être déduit. Sans utiliser la liaison tardive, cela limite l’utilisation des types anonymes aux variables locales.  
   
- Les types anonymes fournissent une prise en charge critique pour les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations sur l’utilisation de types anonymes dans les requêtes, consultez [types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) et [Introduction à LINQ dans Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
+ Les types anonymes fournissent une prise en charge critique pour les requêtes LINQ. Pour plus d’informations sur l’utilisation de types anonymes dans les requêtes, consultez [types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md) et [Introduction à LINQ dans Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md).  
   
 ### <a name="remarks-about-anonymous-types"></a>Remarques sur les types anonymes  
   

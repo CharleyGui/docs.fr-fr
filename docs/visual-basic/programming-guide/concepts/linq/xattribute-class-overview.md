@@ -2,18 +2,18 @@
 title: Vue d'ensemble de la classe XAttribute
 ms.date: 07/20/2015
 ms.assetid: 7781580a-9583-4a1b-ae1e-91c5936eb0b1
-ms.openlocfilehash: 00aeeec3f251ecd1d21a313290326b3ba49d63d3
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: ceafe5478e41fb4c2038fd9300ef7b1ee6cb8411
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349327"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636651"
 ---
 # <a name="xattribute-class-overview-visual-basic"></a>Vue d’ensemble de la classe XAttribute (Visual Basic)
 Les attributs sont des paires nom/valeur associées à un élément. La classe <xref:System.Xml.Linq.XAttribute> représente des attributs XML.  
   
-## <a name="overview"></a>Overview  
- L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’attributs a une apparence très semblable à une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour une collection d’éléments.  
+## <a name="overview"></a>Vue d'ensemble de  
+ L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête LINQ pour une collection d’attributs a une apparence très semblable à une expression de requête LINQ pour une collection d’éléments.  
   
  L'ordre dans lequel les attributs ont été ajoutés à un élément est conservé. Autrement dit, lorsque vous itérez au sein des attributs, vous les voyez dans l'ordre dans lequel ils ont été ajoutés.  
   

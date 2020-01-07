@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Obtenir des informations sur les fichiers, dossiers et lecteurs - Guide de programmation C#'
+title: Guide pratique pour obtenir des informations sur les fichiers, dossiers et C# lecteurs-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - files [C#], getting information about
 ms.assetid: 22fc2da6-5494-405b-995e-c0b99142a93e
-ms.openlocfilehash: 57c7811246dd1de3f009033403ec269082915c09
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e8bd65b1c8c24f69d280cf69deaf25daf7cf8818
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590027"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635390"
 ---
-# <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Procédure : Obtenir des informations sur les fichiers, dossiers et lecteurs (Guide de programmation C#)
+# <a name="how-to-get-information-about-files-folders-and-drives--c-programming-guide"></a>Comment obtenir des informations sur les fichiers, dossiers et lecteurs (C# Guide de programmation)
 Dans le .NET Framework, vous pouvez accéder aux informations sur le système de fichiers en utilisant les classes suivantes :  
   
 - <xref:System.IO.FileInfo?displayProperty=nameWithType>  
@@ -35,7 +35,7 @@ System.IO.DriveInfo di = new System.IO.DriveInfo(@"C:\");
   
  Les classes <xref:System.IO.Directory?displayProperty=nameWithType> et <xref:System.IO.File?displayProperty=nameWithType> fournissent des méthodes statiques pour récupérer des informations sur les répertoires et les fichiers.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant illustre différentes manières d’accéder aux informations sur les fichiers et dossiers.  
   
  [!code-csharp[csFilesandFolders#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#6)]  

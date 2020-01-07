@@ -1,23 +1,23 @@
 ---
-title: Nouveautés de .NET Core 3,1
+title: Nouveautés de .NET Core 3.1
 description: Découvrez les nouvelles fonctionnalités de .NET Core 3,1.
 dev_langs:
 - csharp
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 08ae824b79ba6a1ff5a92a0b4306eabe5ccadfd2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: a9f47c2909375251460b45792822e491d56fb242
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838322"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342861"
 ---
-# <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3,1
+# <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
 Cet article décrit les nouveautés de .NET Core 3,1. Cette version contient des améliorations mineures apportées à .NET Core 3,0, en se concentrant sur les correctifs les plus petits, mais importants. La fonctionnalité la plus importante de .NET Core 3,1 est qu’il s’agit d’une version de [prise en charge à long terme (LTS)](#long-term-support) .
 
-Si vous utilisez Visual Studio 2019, vous devez effectuer la mise à jour vers [Visual studio 2019 16,4](https://visualstudio.microsoft.com/downloads/) pour travailler avec les projets .net Core 3,1. Pour plus d’informations sur les nouveautés de Visual Studio, consultez le [blog Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
+Si vous utilisez Visual Studio 2019, vous devez effectuer la mise à jour vers [Visual studio 2019 version 16,4](https://visualstudio.microsoft.com/downloads/) pour travailler avec les projets .net Core 3,1. Pour plus d’informations sur les nouveautés de Visual Studio, consultez le [blog Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
 
 Visual Studio pour Mac prend également en charge et comprend .NET Core 3,1, dans le canal Visual Studio pour Mac 8,4 preview. Vous devez choisir le canal de la version préliminaire pour utiliser .NET Core 3,1.
 

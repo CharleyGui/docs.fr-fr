@@ -6,12 +6,12 @@ helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: c6e29781f566fac0fd1219ac842a4838d631afb6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: 46820fe4137f5080b956cd1345d3e95c2e06f9ca
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969718"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635078"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  
@@ -56,7 +56,7 @@ Une chaîne est un objet de type <xref:System.String> dont la valeur est du text
 |\\"|Guillemet double|0x0022|  
 |\\\\ |Barre oblique inverse|0x005C|  
 |\0|Null|0x0000|  
-|\a|Alerte|0x0007|  
+|\a|Alert|0x0007|  
 |\b|Retour arrière|0x0008|  
 |\f|Saut de page|0x000C|  
 |\n|Nouvelle ligne|0x000A|  
@@ -125,7 +125,7 @@ string s = String.Empty;
  [!code-csharp[TestStringBuilder#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideStrings/CS/TestStringBuilder.cs)]
   
 ## <a name="strings-extension-methods-and-linq"></a>Chaînes, méthodes d’extension et LINQ  
- Étant donné que le type <xref:System.String> implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser les méthodes d’extension définies dans la classe <xref:System.Linq.Enumerable> sur des chaînes. Pour éviter une surcharge visuelle, ces méthodes sont exclues d’IntelliSense pour le type <xref:System.String>, mais elles restent néanmoins disponibles. Vous pouvez également utiliser des expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur les chaînes. Pour plus d’informations, consultez [LINQ et Strings](../concepts/linq/linq-and-strings.md).  
+ Étant donné que le type <xref:System.String> implémente <xref:System.Collections.Generic.IEnumerable%601>, vous pouvez utiliser les méthodes d’extension définies dans la classe <xref:System.Linq.Enumerable> sur des chaînes. Pour éviter une surcharge visuelle, ces méthodes sont exclues d’IntelliSense pour le type <xref:System.String>, mais elles restent néanmoins disponibles. Vous pouvez également utiliser des expressions de requête LINQ sur des chaînes. Pour plus d’informations, consultez [LINQ et Strings](../concepts/linq/linq-and-strings.md).  
   
 ## <a name="related-topics"></a>Rubriques connexes  
   
@@ -139,7 +139,7 @@ string s = String.Empty;
 |[Comment déterminer si une chaîne représente une valeur numérique](./how-to-determine-whether-a-string-represents-a-numeric-value.md)|Montre comment analyser une chaîne en toute sécurité pour déterminer si elle possède une valeur numérique valide.|  
 |[Interpolation de chaîne](../../language-reference/tokens/interpolated.md)|Décrit la fonctionnalité d’interpolation de chaîne qui fournit une syntaxe pratique pour les chaînes de format.|
 |[Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)|Fournit des liens vers des rubriques utilisant les méthodes <xref:System.String?displayProperty=nameWithType> et <xref:System.Text.StringBuilder?displayProperty=nameWithType> pour effectuer des opérations de chaînes de base.|  
-|[Analyse de chaînes](../../../standard/base-types/parsing-strings.md)|Décrit comment convertir des représentations sous forme de chaîne de types de base .NET en instances de types correspondants.|  
+|[Parsing Strings](../../../standard/base-types/parsing-strings.md)|Décrit comment convertir des représentations sous forme de chaîne de types de base .NET en instances de types correspondants.|  
 |[Analyse des chaînes de date et d’heure dans .NET](../../../standard/base-types/parsing-datetime.md)|Montre comment convertir une chaîne telle que « 24/01/2008 » en objet <xref:System.DateTime?displayProperty=nameWithType>.|  
 |[Comparaison de chaînes](../../../standard/base-types/comparing.md)|Inclut des informations sur la façon de comparer des chaînes et fournit des exemples en C# et Visual Basic.|  
 |[Utilisation de la classe StringBuilder](../../../standard/base-types/stringbuilder.md)|Explique comment créer et modifier des objets string dynamiques avec la classe <xref:System.Text.StringBuilder>.|  

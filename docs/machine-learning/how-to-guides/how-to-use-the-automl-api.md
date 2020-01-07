@@ -1,14 +1,14 @@
 ---
 title: Guide pratique pour utiliser l’API de ML automatisé ML.NET
 description: L’API de ML automatisé ML.NET automatise le processus de génération de modèle prêt pour le déploiement. Découvrez les options que vous pouvez utiliser pour configurer des tâches de machine learning automatisé.
-ms.date: 11/7/2019
+ms.date: 12/18/2019
 ms.custom: mvc,how-to
-ms.openlocfilehash: c1c18decc48bc1499aa55210becff305cdec4a53
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977118"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636560"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
 
@@ -21,7 +21,7 @@ Le machine learning automatisé (AutoML) automatise le processus d’application
 
 Le machine learning automatisé prend en charge le chargement d’un jeu de données dans un [IDataView](xref:Microsoft.ML.IDataView). Les données peuvent se présenter sous la forme de fichiers de valeurs séparées par une tabulation (TSV) et de fichiers de valeurs séparées par une virgule (CSV).
 
-Exemple :
+Exemple :
 
 ```csharp
 using Microsoft.ML;
@@ -38,6 +38,7 @@ Avant de créer une expérience, déterminer le type de problème de machine lea
 * Classification binaire
 * Classification multiclasse
 * Régression
+* Recommandation
 
 ## <a name="create-experiment-settings"></a>Créer les paramètres de l’expérience
 
@@ -61,11 +62,17 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
   var experimentSettings = new RegressionExperimentSettings();
   ```
 
+* Recommandation
+
+  ```csharp
+  var experimentSettings = new RecommendationExperimentSettings();
+  ```
+
 ## <a name="configure-experiment-settings"></a>Configurer les paramètres de l’expérience
 
 Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) pour obtenir la liste complète des paramètres de configuration.
 
-Voici quelques exemples :
+Quelques exemples :
 
 1. Spécifier la durée maximale pendant laquelle l’expérience est autorisée à s’exécuter.
 
@@ -110,12 +117,13 @@ Vous trouverez la liste des entraîneurs pris en charge par tâche de ML en cliq
 * [Algorithmes de classification binaire pris en charge](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [Algorithmes de classification multiclasse pris en charge](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [Algorithmes de régression pris en charge](xref:Microsoft.ML.AutoML.RegressionTrainer)
+* [Algorithmes de recommandation pris en charge](xref:Microsoft.ML.AutoML.RecommendationTrainer)
 
 ## <a name="optimizing-metric"></a>Métrique d’optimisation
 
 La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, détermine la métrique à optimiser pendant l’entraînement du modèle. La métrique d’optimisation que vous pouvez sélectionner est déterminée par le type de tâche que vous choisissez. Voici la liste des métriques disponibles.
 
-|[Classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Régression](xref:Microsoft.ML.AutoML.RegressionMetric)
+|[Classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Recommandation de régression &](xref:Microsoft.ML.AutoML.RegressionMetric)
 |-- |-- |--
 |Précision| LogLoss | RSquared
 |AreaUnderPrecisionRecallCurve | LogLossReduction | MeanAbsoluteError
@@ -129,7 +137,7 @@ La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, déte
 ## <a name="data-pre-processing-and-featurization"></a>Prétraitement et caractérisation des données
 
 > [!NOTE]
-> La colonne de fonctionnalité ne prend en charge que les types de <xref:System.Boolean>, <xref:System.Single> et <xref:System.String>.
+> La colonne de fonctionnalité ne prend en charge que les types de <xref:System.Boolean>, <xref:System.Single>et <xref:System.String>.
 
 Le prétraitement des données a lieu par défaut et les étapes suivantes sont effectuées automatiquement :
 
@@ -187,7 +195,7 @@ Explorez d’autres surcharges pour `Execute()` si vous souhaitez passer des don
 
 ## <a name="training-modes"></a>Modes d’entraînement
 
-### <a name="training-dataset"></a>Jeu de données d’entraînement
+### <a name="training-dataset"></a>Jeu de données d'apprentissage
 
 AutoML met à votre disposition une méthode d’exécution d’expérience surchargée qui vous permet de fournir des données d’entraînement. En interne, le ML automatisé divise les données en fractionnements entraînement/validation.
 
@@ -219,7 +227,7 @@ Voici toutes les métriques disponibles par tâche de ML :
 
 * [Métriques de classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [Métriques de classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
-* [Métriques de régression](xref:Microsoft.ML.AutoML.RegressionMetric)
+* [Mesure de la régression & les mesures de recommandation](xref:Microsoft.ML.AutoML.RegressionMetric)
 
 ## <a name="see-also"></a>Voir aussi
 

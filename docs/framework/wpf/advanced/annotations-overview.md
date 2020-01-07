@@ -9,17 +9,17 @@ helpviewer_keywords:
 - documents [WPF], annotations
 - sticky notes [WPF]
 ms.assetid: 716bf474-29bd-4c74-84a4-8e0744bdad62
-ms.openlocfilehash: dc9c4125f9ac3c44be41efe92b9e495599e5c130
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: b82c7e7300ebc295ca06d565c2fb5f6f2b28e92c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72004035"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636508"
 ---
 # <a name="annotations-overview"></a>Vue d'ensemble des annotations
 Écrire des notes ou des commentaires sur des documents papier est une activité si banale que nous pensons qu’elle va de soi. Ces notes ou commentaires sont des « annotations » que nous ajoutons à un document pour marquer des informations ou mettre en évidence des éléments présentant un intérêt particulier afin de nous y référer plus tard. Bien que la rédaction de notes sur des documents imprimés soit une tâche simple et banale, la possibilité d’ajouter des commentaires personnels à des documents électroniques, quand cette fonctionnalité est disponible, est généralement très limitée.  
   
- Cette rubrique passe en revue plusieurs types d’annotations courants, en particulier les pense-bêtes et les mises en évidence, et illustre comment l’infrastructure des annotations Microsoft facilite ces types d’annotations dans les applications via le Windows Presentation Foundation (WPF ) des contrôles d’affichage de document.  [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] les contrôles d’affichage de document qui prennent en charge les annotations incluent <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que des contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase> tels que <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
+ Cette rubrique passe en revue plusieurs types d’annotations courants, en particulier les pense-bêtes et les mises en évidence, et illustre comment l’infrastructure des annotations Microsoft facilite ces types d’annotations dans les applications via le Windows Presentation Foundation (WPF ) des contrôles d’affichage de document.  Les contrôles d’affichage de document WPF qui prennent en charge les annotations incluent <xref:System.Windows.Controls.FlowDocumentReader> et <xref:System.Windows.Controls.FlowDocumentScrollViewer>, ainsi que des contrôles dérivés de <xref:System.Windows.Controls.Primitives.DocumentViewerBase> tels que <xref:System.Windows.Controls.DocumentViewer> et <xref:System.Windows.Controls.FlowDocumentPageViewer>.  
 
 <a name="caf1_type_stickynotes"></a>   
 ## <a name="sticky-notes"></a>Pense-bêtes  
@@ -27,7 +27,7 @@ ms.locfileid: "72004035"
   
  L’illustration suivante montre quelques exemples d’annotations sous forme de mises en surbrillance, de pense-bêtes ou de notes manuscrites.  
   
- ![Pense-bêtes de type mise en surbrillance, note tapée et note manuscrite.](./media/caf-stickynote.jpg "CAF_StickyNote")  
+ ![Annotations de pense-bête en surbrillance, texte et manuscrit.](./media/caf-stickynote.jpg "CAF_StickyNote")  
   
  L’exemple suivant illustre la méthode que vous pouvez utiliser pour activer la prise en charge des annotations dans votre application.  
   
@@ -36,7 +36,7 @@ ms.locfileid: "72004035"
   
 <a name="caf1_type_callouts"></a>   
 ## <a name="highlights"></a>Mises en surbrillance  
- Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance dans Microsoft annotations Framework offrent une fonctionnalité similaire pour marquer les informations affichées dans les contrôles d’affichage de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] document.  
+ Nous utilisons diverses méthodes créatives pour attirer l’attention sur des éléments présentant un intérêt particulier sur un document papier, par exemple en soulignant, en surlignant ou en encerclant des mots dans une phrase, ou en mettant des marques ou des annotations dans la marge.  Les annotations en surbrillance dans Microsoft annotations Framework offrent une fonctionnalité similaire pour marquer les informations affichées dans les contrôles d’affichage de document WPF.  
   
  L’illustration suivante montre un exemple d’annotation en surbrillance.  
   

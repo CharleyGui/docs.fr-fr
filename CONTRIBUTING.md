@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 25615dd43f1ae4f56c7bced7f79a0612093a21fb
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 469be53e14c42775f21ef1ef815becd5cad03a97
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73191698"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75336721"
 ---
 # <a name="contributing"></a>Contribuer
 
@@ -22,12 +22,9 @@ Le document aborde le processus de contribution aux articles et exemples de code
 
 Ce référentiel contient la documentation conceptuelle de .NET. Le site de la documentation de .NET repose sur plusieurs référentiels en plus de celui-ci :
 
-- [Exemples et extraits de code](https://github.com/dotnet/samples)  
-    Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
-- [Informations de référence sur l’API .NET](https://github.com/dotnet/dotnet-api-docs)  
-    Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/dotnet-API-docs/Problems](https://github.com/dotnet/dotnet-api-docs/issues).
-- [Informations de référence sur le kit SDK .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs)  
-    Les problèmes et Taks pour ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
+- [Exemples de code et extraits de code](https://github.com/dotnet/samples) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
+- Informations de référence sur l' [API .net](https://github.com/dotnet/dotnet-api-docs) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/dotnet-API-docs/Problems](https://github.com/dotnet/dotnet-api-docs/issues).
+- [Référence du kit de développement logiciel .NET Compiler Platform](https://github.com/dotnet/roslyn-api-docs) Les problèmes et les tâches de ce référentiel sont suivis dans [dotnet/docs/Problems](https://github.com/dotnet/docs/issues).
 
 ## <a name="dos-and-donts"></a>À faire et à ne pas faire
 
@@ -37,7 +34,7 @@ La liste suivante montre quelques règles directrices que vous devez garder à l
 - **Examinez** [les problèmes de recherche de suggestions](https://github.com/dotnet/docs/labels/up-for-grabs) sur les tâches.
 - **Créez un** PR pour chaque tâche. Les demandes de tirage qui incluent plusieurs modifications non liées sont beaucoup plus difficiles à examiner. Cela retarde les révisions et la fusion de PRs. Cette règle s’applique également aux révisions : nous essayons de ne pas suggérer de modifications non liées dans les révisions. Nous demandons aux révisions de la communauté d’adhérer à cette instruction.
 - **Fournissez** une description claire du travail dans votre demande de tirage. Dites-nous ce qui a changé et pourquoi. La description par défaut de « Update article.md » n’est pas utile pour les réviseurs.
-- **N’envoyez pas** PRs pour les modifications de style uniquement sans discussion préalable. Ces demandes de précision prennent plus de temps pour vérifier la précision, et la fusion peut souvent entraîner des conflits de fusion avec d’autres mises à jour importantes. Nous travaillons à la suite d’un style cohérent, mais nous équilibrerons ce travail avec d’autres tâches. Les articles sont mis en conformité du style lorsque nous faisons des mises à jour majeures pour d’autres raisons. 
+- **N’envoyez pas** PRs pour les modifications de style uniquement sans discussion préalable. Ces demandes de précision prennent plus de temps pour vérifier la précision, et la fusion peut souvent entraîner des conflits de fusion avec d’autres mises à jour importantes. Nous travaillons à la suite d’un style cohérent, mais nous équilibrerons ce travail avec d’autres tâches. Les articles sont mis en conformité du style lorsque nous faisons des mises à jour majeures pour d’autres raisons.
 - **À faire** : Lire le [guide de style](./styleguide/template.md) et les recommandations sur le [style et le ton](./styleguide/voice-tone.md). Les nouveaux ajouts doivent suivre ces instructions.
 - **À faire** : Créer une branche distincte dans votre duplication (fork) avant de travailler sur les articles.
 - **À faire** : Suivre le [workflow GitHub Flow](https://guides.github.com/introduction/flow/).
@@ -54,7 +51,7 @@ Vous devez avoir une connaissance élémentaire de [Git et GitHub.com](https://g
 **Étape 1 :** Ignorez cette étape pour les modifications mineures (par exemple, si vous corrigez une faute de frappe ou si vous ouvrez immédiatement une requête de tirage pour résoudre un problème que vous trouvez dans la documentation). Si vous souhaitez écrire un nouveau contenu ou examiner en détail un contenu existant, ouvrez un [problème](https://github.com/dotnet/docs/issues) en décrivant ce que vous voulez faire.
 Le contenu situé dans le dossier *docs* est organisé en sections que l’on retrouve dans la table des matières. Définissez l’emplacement de la rubrique dans la table des matières. Obtenez des commentaires sur votre proposition.
 
-ou
+\- ou -
 
 Vous pouvez également choisir des problèmes existants pour lesquels les contributions de la communauté sont les bienvenus. [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) répertorie la plupart des éléments de travail disponibles aux contributeurs de la communauté. Selon vos centres d’intérêt et votre niveau de participation, vous pouvez choisir des problèmes dans les catégories suivantes :
 
@@ -64,7 +61,7 @@ Vous pouvez également choisir des problèmes existants pour lesquels les contri
 
 - **Création de nouveau contenu**. Si vous souhaitez créer votre propre rubrique, ces problèmes répertorient les rubriques que nous aimerions ajouter à notre documentation. Veuillez nous prévenir avant de commencer à travailler sur une rubrique. Si vous souhaitez écrire une rubrique qui n’est pas répertoriée ici, ouvrez un problème.
 
-Vous pouvez également consulter la liste de nos [problèmes ouverts](https://github.com/dotnet/docs/issues) et vous porter volontaire pour travailler sur ceux qui vous intéressent. Nous utilisons l’étiquette [up-for-grabs](https://github.com/dotnet/docs/labels/up-for-grabs) pour signaler les problèmes auxquels vous pouvez apporter votre contribution. 
+Vous pouvez également consulter la liste de nos [problèmes ouverts](https://github.com/dotnet/docs/issues) et vous porter volontaire pour travailler sur ceux qui vous intéressent. Nous utilisons l’étiquette [up-for-grabs](https://github.com/dotnet/docs/labels/up-for-grabs) pour signaler les problèmes auxquels vous pouvez apporter votre contribution.
 
 **Étape 2 :** dupliquez les référentiels `dotnet/docs`, `dotnet/samples` ou `dotnet/dotnet-api-docs` si nécessaire et créez une branche pour vos modifications.
 
@@ -95,7 +92,7 @@ docs
             portability_report.png
 ```
 
-**Étape 4 :** Soumettez une demande de tirage (PR) de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master` ou `dotnet/samples/master`.
+**Étape 4 :** Soumettez une demande de tirage (PR) à partir de votre branche à `dotnet/docs/master`, `dotnet/dotnet-api-docs/master`ou `dotnet/samples/master`.
 
 Votre demande de tirage doit *toujours* cibler la branche par défaut du dépôt (à moins que vous ne travailliez sur une branche de version). Pour dotnet/docs, Master Branch est la branche par défaut. Pour les référentiels localisés, la branche active est celle par défaut. Vous ne devez *jamais* ouvrir une demande de tirage qui cible la branche Live sur dotnet/docs.
 
@@ -138,7 +135,7 @@ Pour plus d’informations, consultez le [fichier readme des échantillons](http
 
 ## <a name="the-c-interactive-experience"></a>L’expérience interactive C#
 
-De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les exemples de code inline utilisent la balise `csharp-interactive`, pour les extraits de code inclus dans la source, utilisez la balise `code-csharp-interactive`.) Ces exemples de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon. 
+De courts échantillons de code en C# peuvent utiliser la balise de langage `csharp-interactive` pour spécifier un échantillon C# qui s’exécute dans le navigateur. (Les exemples de code inline utilisent la balise `csharp-interactive`, pour les extraits de code inclus dans la source, utilisez la balise `code-csharp-interactive`.) Ces exemples de code affichent une fenêtre de code et une fenêtre de sortie dans l’article. La fenêtre de sortie affiche le résultat de l’exécution du code interactif une fois que l’utilisateur a exécuté l’échantillon.
 
 Le C# expérience interactive modifie comment nous collaborons avec des exemples. Les visiteurs peuvent exécuter l’échantillon pour afficher les résultats. Un certain nombre de facteurs aident à déterminer si l’échantillon ou le texte correspondant doit inclure des informations sur la sortie.
 
@@ -149,7 +146,7 @@ Le C# expérience interactive modifie comment nous collaborons avec des exemples
 - Lorsque l’échantillon et la sortie attendue sont courts, affichez plutôt la sortie. Cela permet de gagner un peu de temps.
 - Les articles expliquant comment une culture actuelle ou invariante affecte la sortie doivent expliquer la sortie attendue. La fenêtre REPL (Read Evaluate Print Loop) interactive s’exécute sur un ordinateur hôte sous Linux. La culture par défaut et la culture invariante produisent une sortie différente sur divers systèmes d’exploitation et ordinateurs. L’article doit expliquer la sortie dans les systèmes Windows, Linux et Mac.
 
-### <a name="when-to-exclude-expected-output-from-the-sample"></a>Conditions d’exclusion de la sortie attendue dans l’échantillon 
+### <a name="when-to-exclude-expected-output-from-the-sample"></a>Conditions d’exclusion de la sortie attendue dans l’échantillon
 
 - Les articles dans lesquels l’échantillon génère une sortie plus volumineuse ne doivent pas inclure ces informations dans les commentaires. Le code est masqué une fois l’échantillon exécuté.
 - Articles dans lesquels l’échantillon montre une rubrique, mais la sortie ne fait pas partie intégrante pour être comprise. Par exemple, le code exécute une requête LINQ pour expliquer la syntaxe de la requête et affiche chaque élément dans la collection en sortie.

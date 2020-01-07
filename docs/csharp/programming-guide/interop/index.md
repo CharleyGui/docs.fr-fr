@@ -8,12 +8,12 @@ helpviewer_keywords:
 - platform invoke, accessing APIs with C#
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
-ms.openlocfilehash: 560218361f470266654734971a12de7862722a46
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 64fac0245dcf5976786b51e0d96b795b8b1e5d68
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423184"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635195"
 ---
 # <a name="interoperability-c-programming-guide"></a>Interopérabilité (Guide de programmation C#)
 L’interopérabilité vous permet de préserver et de tirer parti d’investissements existants en code non managé. Le code qui s’exécute sous le contrôle du common language runtime (CLR) est appelé *code managé*, et le code qui s’exécute en dehors du CLR est appelé *code non managé*. COM, COM+, les composants C++, les composants ActiveX et l’API Microsoft Windows sont des exemples de code non managé.  
@@ -24,13 +24,13 @@ L’interopérabilité vous permet de préserver et de tirer parti d’investiss
  [Vue d’ensemble de l’interopérabilité](./interoperability-overview.md)  
  Décrit les méthodes qui permettent l’interopérabilité entre le code managé et le code non managé en C#.  
   
- [Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C#](./how-to-access-office-onterop-objects.md)  
+ [Comment accéder aux objets Office Interop à l' C# aide des fonctionnalités](./how-to-access-office-onterop-objects.md)  
  Décrit les fonctionnalités introduites dans Visual C# pour faciliter la programmation Office.  
   
- [Comment : utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)  
+ [Utilisation des propriétés indexées dans la programmation de COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)  
  Explique comment utiliser des propriétés indexées pour accéder aux propriétés COM qui ont des paramètres.  
   
- [Comment : utiliser l’appel de code non managé pour lire un fichier audio](./how-to-use-platform-invoke-to-play-a-wave-file.md)  
+ [Comment utiliser l’appel de code non managé pour lire un fichier WAV](./how-to-use-platform-invoke-to-play-a-wave-file.md)  
  Explique comment utiliser des services d’appel de code non managé pour lire un fichier son .wav sur le système d’exploitation Windows.  
   
  [Procédure pas à pas : programmation Office](./walkthrough-office-programming.md)  

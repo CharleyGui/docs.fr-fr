@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 2999d1ab4129c72c231b6dc80480d8bfef5186fa
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ed114cc9a37fff549e8bfc874765252fd18893a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837309"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345592"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -25,7 +25,7 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** Dois-je mettre à niveau MSMQ pour utiliser les liaisons <xref:System.ServiceModel.NetMsmqBinding> et `MsmqIntegration` ?
 
-**R :** non. Les deux liaisons fonctionnent avec MSMQ 3.0 sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
+**R :** non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
 
 **Q :** Quelles sont les fonctionnalités des liaisons <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
 
@@ -89,7 +89,7 @@ Si les garanties sont None (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnc
 
 **Q :** Mon service lève une exception dans SvcHost. Open avec un message « EndpointListener Requirements ne peut pas être respecté par ListenerFactory ». Pourquoi ?
 
-Un fichier . Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay =`true`» sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
+A. Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay =`true`» sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
 
 **Q :** Il y a des messages dans la file d’attente, mais aucune opération de service n’est appelée. Quel est le problème ?
 

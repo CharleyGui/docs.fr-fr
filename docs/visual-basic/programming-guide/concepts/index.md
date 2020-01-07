@@ -1,13 +1,13 @@
 ---
-title: Concepts de programmation - Visual Basic
+title: Concepts de programmation
 ms.date: 02/27/2017
 ms.assetid: cc9cac84-61f6-476e-b8c7-9bae7749bd90
-ms.openlocfilehash: 4c550002e1049fb716d2836737b6c3fa5b9df4f1
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d94f948e814aba9cb01e3b96939992d938b309a2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966165"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337317"
 ---
 # <a name="programming-concepts-visual-basic"></a>Concepts de programmation (Visual Basic)
 
@@ -24,7 +24,7 @@ Cette section explique les concepts de programmation en langage Visual Basic.
 |[Covariance et contravariance (Visual Basic)](../../../visual-basic/programming-guide/concepts/covariance-contravariance/index.md)|Montre comment activer la conversion implicite de paramètres de type générique dans les interfaces et les délégués.|
 |[Arborescences d’expressions (Visual Basic)](../../../visual-basic/programming-guide/concepts/expression-trees/index.md)|Explique comment utiliser des arborescences d’expressions pour activer la modification dynamique de code exécutable.|
 |[Itérateurs (Visual Basic)](../../../visual-basic/programming-guide/concepts/iterators.md)|Décrit les itérateurs, utilisés pour parcourir les collections et retourner les éléments un par un.|
-|[Language-Integrated Query (LINQ) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/index.md)|Décrit les puissantes fonctions de requête dans la syntaxe du langage de Visual Basic et le modèle pour l’interrogation des bases de données relationnelles, les documents XML, les jeux de données et les collections en mémoire.|
+|[Language-Integrated Query (LINQ) (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/index.md)|Décrit les puissantes fonctionnalités de requête dans la syntaxe de langage de Visual Basic, ainsi que le modèle d’interrogation des bases de données relationnelles, des documents XML, des DataSets et des collections en mémoire.|
 |[Programmation orientée objet (Visual Basic)](../../../visual-basic/programming-guide/concepts/object-oriented-programming.md)|Décrit les concepts orientés objet courants, notamment l’encapsulation, l’héritage et le polymorphisme.|
 |[Réflexion (Visual Basic)](../../../visual-basic/programming-guide/concepts/reflection.md)|Explique comment utiliser la réflexion pour créer dynamiquement une instance d’un type, pour lier le type à un objet existant ou pour obtenir le type d’un objet existant, et comment invoquer ses méthodes ou accéder à ses champs et propriétés.|
 |[Sérialisation (Visual Basic)](../../../visual-basic/programming-guide/concepts/serialization/index.md)|Décrit les concepts clés de la sérialisation binaire, XML et SOAP.|

@@ -1,5 +1,5 @@
 ---
-title: 'Comment : accéder aux objets Office Interop à l’aide C# des fonctionnalités C# visuelles-Guide de programmation'
+title: Comment accéder aux objets Office Interop- C# Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -10,16 +10,16 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: b6e45858b64ea1bf87ca0e73001a5cf07ddfd58b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 63a3bf422e19bbfb644b809aa9f4573bfdbd42bd
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417701"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635221"
 ---
-# <a name="how-to-access-office-interop-objects-by-using-visual-c-features-c-programming-guide"></a>Guide pratique pour accéder aux objets Office Interop à l’aide des fonctionnalités Visual C# (Guide de programmation C#)
+# <a name="how-to-access-office-interop-objects-c-programming-guide"></a>Comment accéder aux objets Office Interop (C# Guide de programmation)
 
-Visual C# offre des fonctionnalités qui simplifient l’accès aux objets d’API Office. Les nouvelles fonctionnalités incluent les arguments nommés et les arguments facultatifs, un nouveau type appelé `dynamic` et la possibilité de passer des arguments aux paramètres de référence dans les méthodes COM comme s'il s'agissait de paramètres de valeur.
+C#possède des fonctionnalités qui simplifient l’accès aux objets d’API Office. Les nouvelles fonctionnalités incluent les arguments nommés et les arguments facultatifs, un nouveau type appelé `dynamic` et la possibilité de passer des arguments aux paramètres de référence dans les méthodes COM comme s'il s'agissait de paramètres de valeur.
 
 Dans cette rubrique, vous allez utiliser les nouvelles fonctionnalités pour écrire le code qui crée et affiche une feuille de calcul Microsoft Office Excel. Vous écrirez ensuite le code pour ajouter un document Office Word qui contient une icône liée à la feuille de calcul Excel.
 
@@ -103,7 +103,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
      [!code-csharp[csProgGuideOfficeHowTo#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#8)]
 
-2. Appuyez sur CTRL+F5.
+2. Appuyez sur la combinaison de touches CTRL+F5.
 
      Une feuille de calcul Excel s'affiche avec les données des deux comptes.
 
@@ -131,7 +131,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel 2007 et Micr
 
      [!code-csharp[csProgGuideOfficeHowTo#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguideofficehowto/cs/program.cs#12)]
 
-4. Appuyez sur CTRL+F5.
+4. Appuyez sur la combinaison de touches CTRL+F5.
 
      Un document Word s'affiche avec une icône. Double-cliquez sur l'icône pour afficher la feuille de calcul au premier plan.
 
@@ -179,4 +179,4 @@ L'exemple de code suivant illustre l'exemple complet.
 - [dynamic](../../language-reference/builtin-types/reference-types.md)
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md)
-- [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Comment utiliser des arguments nommés et facultatifs dans la programmation Office](../classes-and-structs/how-to-use-named-and-optional-arguments-in-office-programming.md)

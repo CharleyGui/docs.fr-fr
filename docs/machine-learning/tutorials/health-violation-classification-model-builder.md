@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 11/21/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 07729e1667f8aa3aba74576943d79eaa3bcd14d8
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 90abbc9ffe5765880d18d0d29c8e13bc1330ddc3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552888"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341555"
 ---
 # <a name="tutorial-classify-the-severity-of-restaurant-health-violations-with-model-builder"></a>Didacticiel : classer la gravité des violations d’intégrité d’un restaurant avec le générateur de modèles
 
@@ -152,4 +152,4 @@ Pour en savoir plus sur les rubriques mentionnées dans ce tutoriel, consultez l
 
 - [Scénarios du Générateur de modèles](../automate-training-with-model-builder.md#scenarios)
 - [Classification multiclasse](../resources/glossary.md#multiclass-classification)
-- [Métriques du modèle de classification multiclasse](../resources/metrics.md#metrics-for-multi-class-classification)
+- [Métriques du modèle de classification multiclasse](../resources/metrics.md#evaluation-metrics-for-multi-class-classification)

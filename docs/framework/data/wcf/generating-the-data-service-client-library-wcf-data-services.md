@@ -6,20 +6,20 @@ helpviewer_keywords:
 - WCF Data Services, client library
 - Add Service Reference dialog box
 ms.assetid: 314077c1-ac10-47e1-bed4-940b5462359d
-ms.openlocfilehash: f73ea93fe76f31c81935dbfb29183c247e41d8cd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b938e419a5a650fe0e24445c44a67aead13349fa
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975286"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348106"
 ---
 # <a name="generating-the-data-service-client-library-wcf-data-services"></a>Génération de la bibliothèque client service de données (services de données WCF)
-Un service de données qui implémente le Open Data Protocol (OData) peut retourner un document de métadonnées de service qui décrit le modèle de données exposé par le flux OData. Pour plus d’informations, consultez [OData : document de métadonnées du service](https://go.microsoft.com/fwlink/?LinkId=186070). Vous pouvez utiliser la boîte de dialogue **Ajouter une référence de service** dans Visual Studio pour ajouter une référence à un service OData. Lorsque vous utilisez cet outil pour ajouter une référence aux métadonnées retournées par un flux OData dans un projet client, il effectue les actions suivantes :  
+Un service de données qui implémente le Open Data Protocol (OData) peut retourner un document de métadonnées de service qui décrit le modèle de données exposé par le flux OData. Pour plus d’informations, consultez la section document de métadonnées de service dans l’article [OData : Overview](https://www.odata.org/documentation/odata-version-2-0/overview/) . Vous pouvez utiliser la boîte de dialogue **Ajouter une référence de service** dans Visual Studio pour ajouter une référence à un service OData. Lorsque vous utilisez cet outil pour ajouter une référence aux métadonnées retournées par un flux OData dans un projet client, il effectue les actions suivantes :  
   
 - Demande le document de métadonnées du service de données et interprète les métadonnées retournées.  
   
     > [!NOTE]
-    > Les métadonnées retournées sont stockées dans le projet client sous forme de fichier .edmx. Ce fichier .edmx ne peut pas s’ouvrir à l’aide d’Entity Data Model Designer parce qu’il n’a pas le même format que les fichiers .edmx utilisés par Entity Framework. Vous pouvez consulter ce fichier de métadonnées à l'aide de l'éditeur XML ou d'un éditeur de texte. Pour plus d’informations, consultez la spécification [\[MC-EDMX\]: Entity Data Model pour le format d’Empaquetage Data Services](https://go.microsoft.com/fwlink/?LinkID=178833)  
+    > Les métadonnées retournées sont stockées dans le projet client sous forme de fichier .edmx. Ce fichier .edmx ne peut pas s’ouvrir à l’aide d’Entity Data Model Designer parce qu’il n’a pas le même format que les fichiers .edmx utilisés par Entity Framework. Vous pouvez consulter ce fichier de métadonnées à l'aide de l'éditeur XML ou d'un éditeur de texte. Pour plus d’informations, consultez [\[MC-EDMX\]: Entity Data Model pour le format d’Empaquetage Data Services](https://docs.microsoft.com/openspecs/windows_protocols/mc-edmx/5dff5e25-56a1-408b-9d44-bff6634c7d16).
   
 - Génère une représentation du service comme une classe de conteneur d'entités qui hérite de <xref:System.Data.Services.Client.DataServiceContext>. Cette classe de conteneur d'entités générée ressemble au conteneur d'entités que génèrent les outils Entity Data Model. Pour plus d’informations, consultez [Vue d’ensemble d’Object Services (Entity Framework)](https://docs.microsoft.com/previous-versions/bb386871(v=vs.100)).  
   
@@ -50,7 +50,7 @@ Un service de données qui implémente le Open Data Protocol (OData) peut retour
 |`Edm.Single`|<xref:System.Single>|  
 |`Edm.String`|<xref:System.String>|  
   
- Pour plus d’informations, consultez [OData : types de données primitifs](https://go.microsoft.com/fwlink/?LinkId=186072).  
+ Pour plus d’informations, consultez la section types de données primitifs de l’article [OData : vue d’ensemble](https://www.odata.org/documentation/odata-version-2-0/overview/) .
   
 ## <a name="see-also"></a>Voir aussi
 

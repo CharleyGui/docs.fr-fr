@@ -6,15 +6,15 @@ helpviewer_keywords:
 - generic types [LINQ]
 - generics [LINQ]
 ms.assetid: 660e3799-25ca-462c-8c4a-8bce04fbb031
-ms.openlocfilehash: 8ec2a599a6762d62d101f7660892a6d85a100794
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 9a2d1ac72f70e7cd314d349e81ab2bc815a5bf13
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591941"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635572"
 ---
 # <a name="linq-and-generic-types-c"></a>LINQ et types génériques (C#)
-Les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sont basées sur des types génériques, qui ont été introduits dans la version 2.0 du .NET Framework. Vous ne devez pas avoir une connaissance approfondie des génériques avant de commencer à écrire des requêtes. Il peut cependant être important de comprendre deux concepts de base :  
+Les requêtes LINQ sont basées sur des types génériques, qui ont été introduits dans la version 2,0 du .NET Framework. Vous ne devez pas avoir une connaissance approfondie des génériques avant de commencer à écrire des requêtes. Il peut cependant être important de comprendre deux concepts de base :  
   
 1. Quand vous créez une instance d’une classe de collection générique comme <xref:System.Collections.Generic.List%601>, vous remplacez le « T » par le type des objets contenus dans la liste. Par exemple, une liste de chaînes est exprimée sous la forme `List<string>`, et une liste d’objets `Customer` est exprimée sous la forme `List<Customer>`. Une liste générique est fortement typée et offre de nombreux avantages par rapport aux collections qui stockent leurs éléments en tant que <xref:System.Object>. Si vous essayez d’ajouter un `Customer` à un `List<string>`, vous obtenez une erreur à la compilation. Il est facile d’utiliser des collections génériques, car vous ne devez pas effectuer un cast de type à l’exécution.  
   
@@ -23,7 +23,7 @@ Les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sont basées sur
  Pour plus d’informations sur les génériques, consultez [Génériques](../../generics/index.md).  
   
 ## <a name="ienumerablet-variables-in-linq-queries"></a>Variables IEnumerable<T\> dans les requêtes LINQ  
- Les variables de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sont de type <xref:System.Collections.Generic.IEnumerable%601> ou d’un type dérivé tel que <xref:System.Linq.IQueryable%601>. Quand vous voyez une variable de requête typée en `IEnumerable<Customer>`, cela signifie simplement que la requête génère à l’exécution une séquence de zéro ou plusieurs objets `Customer`.  
+ Les variables de requête LINQ sont typées en tant que <xref:System.Collections.Generic.IEnumerable%601> ou un type dérivé comme <xref:System.Linq.IQueryable%601>. Quand vous voyez une variable de requête typée en `IEnumerable<Customer>`, cela signifie simplement que la requête génère à l’exécution une séquence de zéro ou plusieurs objets `Customer`.  
   
  [!code-csharp[csLINQGettingStarted#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#34)]  
   
@@ -34,7 +34,7 @@ Les requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sont basées sur
   
  [!code-csharp[csLINQGettingStarted#35](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#35)]  
   
- Le mot clé `var` est utile quand le type de la variable est évident ou quand il n'est pas particulièrement important de spécifier explicitement des types génériques imbriqués, comme ceux qui sont produits par des requêtes de groupe. D’une façon générale, si vous utilisez `var`, sachez qu’il peut rendre votre code plus difficile à lire par d’autres développeurs. Pour plus d’informations, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).  
+ Le mot clé `var` est utile quand le type de la variable est évident ou quand il est particulièrement important de spécifier explicitement des types génériques imbriqués, comme ceux qui sont produits par des requêtes de groupe. D’une façon générale, si vous utilisez `var`, sachez qu’il peut rendre votre code plus difficile à lire par d’autres développeurs. Pour plus d’informations, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

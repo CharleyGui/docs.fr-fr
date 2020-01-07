@@ -1,13 +1,13 @@
 ---
-title: 'Comment : exécuter des arborescences d’expression'
+title: "Comment : exécuter des arborescences d'expression"
 ms.date: 07/20/2015
 ms.assetid: 9dfb5ab3-f48f-417e-975f-f8f6f1cdc18d
-ms.openlocfilehash: 82801728596449869e5124c3fc92c9c0673f5dd9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2a2749eaed5279d04b72eb77b066c83de9722fa9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332983"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346006"
 ---
 # <a name="how-to-execute-expression-trees-visual-basic"></a>Comment : exécuter des arborescences d’expressions (Visual Basic)
 Cette rubrique montre comment exécuter une arborescence d’expressions. L’exécution d’une arborescence d’expressions peut retourner une valeur, ou elle peut simplement effectuer une action telle que l’appel d’une méthode.  
@@ -42,7 +42,7 @@ MsgBox(result)
 ' 8  
 ```  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
   
 - Incluez l’espace de noms System.Linq.Expressions.  
   

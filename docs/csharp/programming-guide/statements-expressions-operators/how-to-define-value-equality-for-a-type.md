@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour définir une égalité de valeurs pour un type - Guide de programmation C#
+title: Comment définir l’égalité des valeurs pour un guide C# de programmation de type
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 0e1c736c7a2826c1218cb078a6e9f874b3b72c3c
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ebcdda2661c8e4c7f3424f280247f0f771d9cb02
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64755008"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635143"
 ---
-# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Guide pratique pour définir une égalité de valeurs pour un type (Guide de programmation C#)
+# <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Comment définir l’égalité des valeurs pour un typeC# (Guide de programmation)
 
 Quand vous définissez une classe ou un struct, vous décidez s’il est judicieux de créer une définition personnalisée de l’égalité des valeurs (ou équivalence) pour le type. En général, vous implémentez l’égalité des valeurs quand des objets du type sont supposés être ajoutés à une collection quelconque, ou quand leur objectif principal est de stocker un ensemble de champs ou propriétés. Vous pouvez baser votre définition de l’égalité des valeurs sur une comparaison de tous les champs et propriétés du type, ou vous pouvez la baser sur un sous-ensemble. Dans les deux cas, et dans les classes et les structs, votre implémentation doit respecter les cinq garanties d’équivalence :  
   
@@ -34,11 +34,11 @@ Quand vous définissez une classe ou un struct, vous décidez s’il est judicie
   
  Les détails d’implémentation pour l’égalité des valeurs sont différents pour les classes et les structs. Toutefois, les classes et les structs nécessitent tous deux les mêmes étapes de base pour l’implémentation de l’égalité :  
   
-1. Substituez la méthode [virtual](../../language-reference/keywords/virtual.md) <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>. Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=nameWithType>. (Voir l’étape 2.)  
+1. Substituez la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> [virtuelle](../../language-reference/keywords/virtual.md) . Dans la plupart des cas, votre implémentation de `bool Equals( object obj )` doit simplement appeler la méthode `Equals` propre au type qui est l’implémentation de l’interface <xref:System.IEquatable%601?displayProperty=nameWithType>. (Voir l’étape 2.)  
   
-2. Implémentez l’interface <xref:System.IEquatable%601?displayProperty=nameWithType> en fournissant une méthode `Equals` propre au type. C’est ici qu’est effectuée la comparaison d’équivalence. Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type. Ne levez pas d'exceptions à partir de la méthode `Equals`. Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe. Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base. (Ne faites pas cela si le type hérite directement d’<xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> effectue une vérification de l’égalité de référence.)  
+2. Implémentez l’interface <xref:System.IEquatable%601?displayProperty=nameWithType> en fournissant une méthode `Equals` propre au type. C’est ici qu’est effectuée la comparaison d’équivalence. Par exemple, vous pouvez décider de définir l’égalité en comparant seulement un ou deux champs de votre type. Ne levez pas d'exceptions à partir de la méthode `Equals`. Pour les classes uniquement : cette méthode doit examiner uniquement les champs qui sont déclarés dans la classe. Elle doit appeler `base.Equals` pour examiner les champs qui sont dans la classe de base. (Ne faites pas cela si le type hérite directement d’<xref:System.Object>, car l’implémentation <xref:System.Object> de <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType> effectue une vérification de l’égalité de référence.)  
   
-3. Facultatif, mais recommandé : Surcharger les opérateurs [==](../../language-reference/operators/equality-operators.md#equality-operator-) et [!=](../../language-reference/operators/equality-operators.md#inequality-operator-).  
+3. Facultatif, mais recommandé : Surchargez les opérateurs [==](../../language-reference/operators/equality-operators.md#equality-operator-) et [! =](../../language-reference/operators/equality-operators.md#inequality-operator-).  
   
 4. Substituez <xref:System.Object.GetHashCode%2A?displayProperty=nameWithType> pour que deux objets ayant une égalité des valeurs produisent le même code de hachage.  
   

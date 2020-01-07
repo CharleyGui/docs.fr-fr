@@ -6,12 +6,12 @@ helpviewer_keywords:
 - buttons [WPF]
 - animation [WPF], buttons [WPF]
 ms.assetid: e9532c72-460f-4898-9332-613fa21d746a
-ms.openlocfilehash: a3990a7dc446c264e0865e15dadcdaf3ba0a0ff6
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0f881c19516eb42a71e6cd91d612caf8f5cf7b5e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460063"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636183"
 ---
 # <a name="walkthroughs-create-a-custom-animated-button"></a>Procédures pas à pas : création d'un bouton animé personnalisé
 Comme son nom l’indique, Windows Presentation Foundation (WPF) est idéal pour créer des expériences de présentation enrichies pour les clients. Ces procédures pas à pas vous montrent comment personnaliser l’apparence et le comportement d’un bouton (y compris les animations). Cette personnalisation s’effectue à l’aide d’un style et d’un modèle, ce qui vous permet d’appliquer facilement ce bouton personnalisé à tous les boutons de votre application. L’illustration suivante montre le bouton personnalisé que vous allez créer.
@@ -28,8 +28,8 @@ Comme son nom l’indique, Windows Presentation Foundation (WPF) est idéal pour
 ## <a name="related-sections"></a>Rubriques connexes
  [Stylisation et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md) Décrit comment les styles et les modèles peuvent être utilisés pour déterminer l’apparence et le comportement des contrôles.
 
- [Vue d’ensemble](../graphics-multimedia/animation-overview.md) de l’animation Décrit comment les objets peuvent être animés à l’aide du système d’animation et de minutage de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+ [Vue d’ensemble](../graphics-multimedia/animation-overview.md) de l’animation Décrit comment les objets peuvent être animés à l’aide du système d’animation et de minutage de WPF.
 
  [Vue d’ensemble de la peinture avec des couleurs unies et des dégradés](../graphics-multimedia/painting-with-solid-colors-and-gradients-overview.md) Décrit comment utiliser des objets Brush pour peindre avec des couleurs unies, des dégradés linéaires et des dégradés radiaux.
 
- [Vue d’ensemble des effets bitmap](../graphics-multimedia/bitmap-effects-overview.md) Décrit les effets bitmap pris en charge par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et explique comment les appliquer.
+ [Vue d’ensemble des effets bitmap](../graphics-multimedia/bitmap-effects-overview.md) Décrit les effets bitmap pris en charge par WPF et explique comment les appliquer.

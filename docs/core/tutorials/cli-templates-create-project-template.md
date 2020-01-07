@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 1f4e73287fca650b20ed5617c8dfd80e0bd8363c
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 64b029f87135c3424d01a6833619f0aec3833883
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318280"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340367"
 ---
 # <a name="tutorial-create-a-project-template"></a>Didacticiel : créer un modèle de projet
 
@@ -29,13 +29,13 @@ Dans cette partie de la série, vous découvrirez comment :
 ## <a name="prerequisites"></a>Configuration requise
 
 * Complétez la [première partie](cli-templates-create-item-template.md) de cette série de tutoriels.
-* Ouvrez un terminal et accédez au dossier _working\templates\\_ .
+* Ouvrez un terminal et accédez au dossier _working\templates_ .
 
 ## <a name="create-a-project-template"></a>Créer un modèle de projet
 
 Les modèles de projet produisent des projets prêts à être exécutés, qui permettent aux utilisateurs de démarrer facilement avec un jeu de code fonctionnel. .NET Core comprend quelques modèles de projet, tels qu’une application console ou une bibliothèque de classes. Dans cet exemple, vous allez créer un nouveau projet console qui active C# 8.0 et génère un point d’entrée `async main`.
 
-Dans votre terminal, accédez au dossier _working\templates\\_ et créez un sous-dossier nommé _consoleasync_. Entrez dans le sous-dossier et exécutez `dotnet new console` pour générer l’application console standard. Vous allez modifier les fichiers générés par ce modèle pour créer un nouveau modèle.
+Dans votre terminal, accédez au dossier _working\templates_ et créez un sous-dossier nommé _consoleasync_. Entrez dans le sous-dossier et exécutez `dotnet new console` pour générer l’application console standard. Vous allez modifier les fichiers générés par ce modèle pour créer un nouveau modèle.
 
 ```console
 working
@@ -98,7 +98,7 @@ Maintenant que le contenu du modèle est créé, vous devez créer la configurat
 
 ## <a name="create-the-template-config"></a>Créer la configuration du modèle
 
-Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce tutoriel, votre dossier de modèle se trouve dans _working\templates\consoleasync\\_ .
+Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce didacticiel, votre dossier de modèles se trouve dans _working\templates\consoleasync_.
 
 Lorsque vous créez un modèle, tous les fichiers et dossiers du dossier de modèle sont inclus dans le modèle, à l’exception du dossier de configuration spécial. Ce dossier de configuration est nommé _.template.config_.
 
@@ -210,7 +210,7 @@ Currently installed items:
 C:\working> dotnet new -u C:\working\templates\consoleasync
 ```
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce tutoriel, vous avez créé un modèle de projet. Pour savoir comment empaqueter les modèles d’élément et de projet dans un fichier facile à utiliser, poursuivez cette série de tutoriels.
 

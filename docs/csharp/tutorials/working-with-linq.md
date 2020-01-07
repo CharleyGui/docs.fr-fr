@@ -4,34 +4,34 @@ description: Ce didacticiel vous apprend à générer des séquences avec LINQ, 
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: b25cd1763511f460537bccaf6011a3d23390ea72
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 8984fdf0ff26726b6d05e8bee8a9e8ae1c350ea7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039173"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345608"
 ---
-# <a name="working-with-linq"></a>Utilisation de LINQ
+# <a name="work-with-language-integrated-query-linq"></a>Utiliser LINQ (Language-Integrated Query)
 
 ## <a name="introduction"></a>Introduction
 
-Ce tutoriel vous présente les fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
+Ce tutoriel vous présente les fonctionnalités de .NET Core et du langage C#. Voici ce que vous allez apprendre :
 
 - Générer des séquences avec LINQ.
-- écrire des méthodes utilisables dans des requêtes LINQ ;
-- faire la distinction entre l’évaluation stricte et l’évaluation paresseuse.
+- Méthodes d’écriture qui peuvent être facilement utilisées dans les requêtes LINQ.
+- Distinguer les évaluations hâtif et tardive.
 
 Vous apprendrez ces techniques en créant une application qui illustre l’une des compétences de base de tout magicien : le [mélange faro](https://en.wikipedia.org/wiki/Faro_shuffle). En quelques mots, le mélange faro est une technique qui consiste à diviser un paquet de cartes en deux moitiés exactes, puis à intercaler une carte sur deux de chacune des deux moitiés de façon à reconstruire le jeu d’origine.
 
 Les magiciens utilisent cette technique parce que chaque carte se trouve à un emplacement connu après chaque mélange, suivant un motif répétitif.
 
-Dans notre cas, c’est une façon plaisante d’envisager la manipulation de séquences de données. L’application que vous allez créer construira un jeu de cartes, puis effectuera une suite de mélanges, en affichant la séquence à chaque fois. Vous comparerez également le nouvel ordre à l’ordre d’origine.
+Dans notre cas, c’est une façon plaisante d’envisager la manipulation de séquences de données. L’application que vous allez générer construit un jeu de cartes, puis effectue une séquence de mélange, en écrivant chaque séquence à chaque fois. Vous comparerez également le nouvel ordre à l’ordre d’origine.
 
 Ce didacticiel comporte plusieurs étapes. Après chaque étape, vous pourrez exécuter l’application et voir la progression. Vous pouvez également voir l’[exemple terminé](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) dans le dépôt GitHub dotnet/samples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
 ## <a name="prerequisites"></a>Configuration requise
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation sur la page de [téléchargement de .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sous Windows, Ubuntu Linux, OS X ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
+Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation sur la page de [téléchargement de .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Ubuntu Linux ou OS X, ou dans un conteneur d’ancrage. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio code](https://code.visualstudio.com/) qui est un éditeur multiplateforme Open source. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
 ## <a name="create-the-application"></a>Création de l’application
 
@@ -39,7 +39,7 @@ La première étape consiste à créer une nouvelle application. Ouvrez une invi
 
 Si vous n’avez jamais utilisé C#, [ce didacticiel](console-teleprompter.md) explique la structure d’un programme C#. Vous pouvez le lire, puis revenir ici pour en savoir plus sur LINQ.
 
-## <a name="creating-the-data-set"></a>Création du jeu de données
+## <a name="create-the-data-set"></a>Créer le jeu de données
 
 Avant de commencer, vérifiez que les lignes suivantes figurent en haut du fichier `Program.cs` généré par `dotnet new console` :
 
@@ -118,7 +118,7 @@ Ensuite, exécutez l’exemple que vous avez commencé à élaborer. Il affiche 
 
 ![Fenêtre console montrant l’application produisant 52 cartes.](./media/working-with-linq/console-52-card-application.png)
 
-## <a name="manipulating-the-order"></a>Manipulation de l’ordre
+## <a name="manipulate-the-order"></a>Manipuler la commande
 
 Maintenant, réfléchissons à la façon dont nous allons battre les cartes du jeu. Pour bien faire, la première étape consiste à couper le jeu en deux. Les méthodes <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A>, qui font partie des API LINQ, offrent cette fonctionnalité. Placez-les sous la boucle `foreach` :
 
@@ -351,8 +351,8 @@ En dehors de LINQ, vous avez appris une technique de tour de cartes utilisée pa
 Pour plus d’informations sur LINQ, voir :
 
 - [LINQ (Language Integrated Query)](../programming-guide/concepts/linq/index.md)
-  - [Introduction à LINQ](../programming-guide/concepts/linq/index.md)
-  - [Opérations de requête LINQ de base (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
-  - [Transformations de données avec LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
-  - [Syntaxe de requête et syntaxe de méthode dans LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
-  - [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)
+- [Introduction à LINQ](../programming-guide/concepts/linq/index.md)
+- [Opérations de requête LINQ de base (C#)](../programming-guide/concepts/linq/basic-linq-query-operations.md)
+- [Transformations de données avec LINQ (C#)](../programming-guide/concepts/linq/data-transformations-with-linq.md)
+- [Syntaxe de requête et syntaxe de méthode dans LINQ (C#)](../programming-guide/concepts/linq/query-syntax-and-method-syntax-in-linq.md)
+- [Fonctionnalités C# qui prennent en charge LINQ](../programming-guide/concepts/linq/features-that-support-linq.md)

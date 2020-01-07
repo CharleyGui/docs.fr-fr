@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ba6e178f-128b-4e47-a13c-b4be73eb106c
 topic_type:
 - apiref
-ms.openlocfilehash: 4c819bff50e6644a733374e9863d670d3323ee68
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ef7057ad19fd34750bd15d358e9c1ebb1289cd44
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449522"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338062"
 ---
 # <a name="imetadataimportenuminterfaceimpls-method"></a>IMetaDataImport::EnumInterfaceImpls, méthode
 Énumère toutes les interfaces implémentées par le `TypeDef`spécifié. 
@@ -37,7 +37,7 @@ HRESULT EnumInterfaceImpls (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `phEnum`  
  [in, out] Pointeur vers l’énumérateur.  
   
@@ -48,7 +48,7 @@ HRESULT EnumInterfaceImpls (
  à Tableau utilisé pour stocker les jetons MethodDef.  
   
  `cMax`  
- [in] Taille maximale du tableau `rImpls`.  
+ dans Longueur maximale du tableau de `rImpls`.  
   
  `pcImpls`  
  à Nombre réel de jetons retournés dans `rImpls`.  
@@ -64,7 +64,7 @@ HRESULT EnumInterfaceImpls (
 
 L’énumération retourne une collection de `mdInterfaceImpl` jetons pour chaque interface implémentée par le `TypeDef`spécifié. Les jetons d’interface sont retournés dans l’ordre dans lequel les interfaces ont été spécifiées (par `DefineTypeDef` ou `SetTypeDefProps`). Les propriétés des jetons de `mdInterfaceImpl` retournés peuvent être interrogées à l’aide de [GetInterfaceImplProps,](imetadataimport-getinterfaceimplprops-method.md).
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Cor. h  

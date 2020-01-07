@@ -1,22 +1,22 @@
 ---
-title: 'Procédure : Créer une clé dans le Registre (Visual C#)'
+title: Comment créer une clé dans le Guide de C# programmation du Registre
 ms.date: 07/20/2015
 helpviewer_keywords:
 - registry, adding keys and values [C#]
 - registry keys, creating [C#]
 - keys, creating in registry
 ms.assetid: 8fa475b0-e01f-483a-9327-fd03488fdf5d
-ms.openlocfilehash: e67a80fa8f9a088f0eefe2dd2eeaa983e0a5a2c3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 16974db950a3a460416cfb917147439707e1d007
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590040"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635442"
 ---
-# <a name="how-to-create-a-key-in-the-registry-visual-c"></a>Procédure : Créer une clé dans le Registre (Visual C#)
+# <a name="how-to-create-a-key-in-the-registry-c-programming-guide"></a>Comment créer une clé dans le registre (C# Guide de programmation)
 Cet exemple ajoute la paire de valeurs « Name » et « Isabella » dans le Registre de l’utilisateur actuel, sous la clé « Names ».  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 Microsoft.Win32.RegistryKey key;  

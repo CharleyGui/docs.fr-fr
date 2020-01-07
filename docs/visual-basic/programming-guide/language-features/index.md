@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Visual Basic code, elements of
 - Visual Basic code
 ms.assetid: b0b21730-298c-47e6-9a2f-cc81f628067b
-ms.openlocfilehash: 8cb0b017410e991628bad59a6986ba37426c913f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0c8496d4e452da92e0ae994f0b246cc16723c06e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345064"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636573"
 ---
 # <a name="visual-basic-language-features"></a>Fonctionnalités du langage Visual Basic
 Les rubriques suivantes présentent et présentent les composants essentiels de Visual Basic, un langage de programmation orienté objet. Après avoir créé l’interface utilisateur de votre application à l’aide des formulaires et des contrôles, vous avez besoin d’écrire le code qui définit le comportement de l’application. Comme pour n’importe quel langage de programmation moderne, Visual Basic prend en charge un certain nombre d’éléments de langage et de constructions de programmation courants.  
@@ -54,7 +54,7 @@ Les rubriques suivantes présentent et présentent les composants essentiels de 
  Décrit les interfaces et la façon dont on peut les utiliser dans des applications.  
   
  [LINQ](../../../visual-basic/programming-guide/language-features/linq/index.md)  
- Fournit des liens vers des rubriques qui présentent les fonctionnalités et la programmation [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
+ Fournit des liens vers des rubriques qui présentent les fonctionnalités et la programmation LINQ (Language-Integrated Query).  
   
  [Objets et classes](../../../visual-basic/programming-guide/language-features/objects-and-classes/index.md)  
  Fournit une vue d’ensemble des objets et des classes, de leur utilisation, des relations qu’ils entretiennent et des propriétés, méthodes et événements qu’ils exposent.  
@@ -77,7 +77,7 @@ Les rubriques suivantes présentent et présentent les composants essentiels de 
  [XML](../../../visual-basic/programming-guide/language-features/xml/index.md)  
  Fournit des liens vers des rubriques qui expliquent comment utiliser XML en Visual Basic.  
   
-## <a name="related-sections"></a>Sections connexes
+## <a name="related-sections"></a>Rubriques connexes
 
  [Regroupements](../../../visual-basic/programming-guide/concepts/collections.md)  
  Décrit quelques-uns des types de collections fournis par .NET Framework. Montre comment utiliser des collections simples et des collections de paires clé/valeur.  

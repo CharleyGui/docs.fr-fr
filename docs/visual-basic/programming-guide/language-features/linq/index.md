@@ -4,19 +4,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - what's new [Visual Basic]
 ms.assetid: ddba5545-ff6e-46c3-8967-5c4280db5aca
-ms.openlocfilehash: ea6754d9d93a7d400ac3494b01b850374e9ec02d
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 50d6c9ffb484dfbc6d33ed1a3e9a1f03f240990b
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74354183"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636534"
 ---
 # <a name="linq-in-visual-basic"></a>LINQ en Visual Basic
-Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser Visual Basic et [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)].  
+Cette section contient des vues d’ensemble, des exemples et des informations générales qui vous aideront à comprendre et à utiliser les Visual Basic et LINQ (Language-Integrated Query).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
- Fournit une introduction aux fournisseurs, aux opérateurs, à la structure des requêtes et aux fonctionnalités du langage [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
+ Fournit une introduction aux fournisseurs LINQ, aux opérateurs, à la structure des requêtes et aux fonctionnalités du langage.  
   
  [Guide pratique : interroger une base de données](../../../../visual-basic/programming-guide/language-features/linq/how-to-query-a-database-by-using-linq.md)  
  Fournit un exemple de connexion à une base de données SQL Server et d’exécution d’une requête avec LINQ.  

@@ -1,15 +1,15 @@
 ---
-title: Concevoir avec des types référence Nullable
-description: Ce tutoriel avancé présente les types référence Nullable. Il explique comment exprimer une intention de conception lorsque les valeurs de référence peuvent être Null et comment, dans le cas contraire, indiquer au compilateur qu’elles ne peuvent pas être Null.
+title: Mettre à niveau vers des types de référence Nullable
+description: Ce didacticiel avancé montre comment migrer du code existant avec des types de référence Nullable.
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: d0faea19ac1c7c7f28d9775fc3b69c71a752fbcb
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 75bc8d278efb66363212e3e000154ffc70f373bf
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73969345"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634909"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
 
@@ -83,7 +83,7 @@ Ces deux propriétés provoquent `CS8618`, « Propriété non-nullable initiali
 
 [!code-csharp[StarterCreateNewsItem](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
-Il se passe beaucoup de choses dans le bloc de code précédent. Cette application utilise le package NuGet [AutoMapper](https://automapper.org/) pour construire un élément d’article de presse à partir d’un `ISyndicationItem`. Vous avez découvert que les éléments d’articles de presse sont construits et que les propriétés sont définies dans cette seule instruction. Cela signifie que la conception de `NewsStoryViewModel` indique que ces propriétés ne doivent jamais avoir la valeur `null`. Ces propriétés doivent être des **types de référence non nullable**. C’est ce qui correspond le mieux à l’intention de conception d’origine. En fait, n’importe quel `NewsStoryViewModel` *est* correctement instancié avec des valeurs non null. Ce qui fait du code d’initialisation suivant un correctif valide :
+Il se passe beaucoup de choses dans le bloc de code précédent. Cette application utilise le package NuGet [AutoMapper](https://automapper.org/) pour construire un élément d’article de presse à partir d’un `ISyndicationItem`. Vous avez découvert que les éléments d’articles de presse sont construits et que les propriétés sont définies dans cette seule instruction. Cela signifie que la conception de `NewsStoryViewModel` indique que ces propriétés ne doivent jamais avoir la valeur `null`. Ces propriétés doivent être des **types de référence non nullable**. C’est ce qui correspond le mieux à l’intention de conception d’origine. En fait, tout `NewsStoryViewModel` *est* correctement instancié avec des valeurs non null. Ce qui fait du code d’initialisation suivant un correctif valide :
 
 ```csharp
 public class NewsStoryViewModel

@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)'
+title: Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)C#()
 ms.date: 07/20/2015
 ms.assetid: 20c8a917-0552-4514-b489-0b8b6a4c3b4c
-ms.openlocfilehash: 966138795dca53db99a0752b9bb7b85cc4601ee3
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: dee501dc8d0cabd718307b45c99ca049ae4250aa
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69592757"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344564"
 ---
-# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Procédure : Rechercher les fichiers les plus volumineux dans une arborescence de répertoires (LINQ) (C#)
+# <a name="how-to-query-for-the-largest-file-or-files-in-a-directory-tree-linq-c"></a>Comment interroger les fichiers les plus volumineux dans une arborescence de répertoires (LINQ)C#()
 Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :  
   
 - Comment récupérer la taille en octets du plus grand fichier.  
@@ -22,7 +22,7 @@ Cet exemple montre cinq requêtes liées à la taille des fichiers en octets :
   
 - Comment regrouper des fichiers selon leur taille en octets, en ignorant les fichiers qui sont inférieurs à une taille spécifiée.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant contient cinq requêtes distinctes qui montrent comment interroger et regrouper des fichiers selon leur taille en octets. Vous pouvez facilement modifier ces exemples pour baser la requête sur une autre propriété de l’objet <xref:System.IO.FileInfo>.  
   
 ```csharp  

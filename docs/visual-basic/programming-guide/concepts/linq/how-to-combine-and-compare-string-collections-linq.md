@@ -2,18 +2,18 @@
 title: 'Comment : combiner et comparer des collections de chaînes (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: 243cfafc-9eaa-4354-a9df-d329f1d39913
-ms.openlocfilehash: e9bc8a5f88585bd8625633c54796a1c658c7a7af
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2df5db16e51e8f9de8a8e3506eb1f7b737065a14
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348436"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337570"
 ---
 # <a name="how-to-combine-and-compare-string-collections-linq-visual-basic"></a>Comment : combiner et comparer des collections de chaînes (LINQ) (Visual Basic)
 
 Cet exemple montre comment fusionner des fichiers qui contiennent des lignes de texte, puis comment trier les résultats. Il montre plus précisément comment effectuer une concaténation simple, une union et une intersection avec les deux ensembles de lignes de texte.
 
-### <a name="to-set-up-the-project-and-the-text-files"></a>Pour configurer le projet et les fichiers texte
+## <a name="set-up-the-project-and-the-text-files"></a>Configurer le projet et les fichiers texte
 
 1. Copiez ces noms dans un fichier texte nommé names1.txt, puis enregistrez-le dans votre dossier de projet :
 
@@ -163,9 +163,9 @@ End Class
 ' 2 total names in list
 ```
 
-## <a name="compiling-the-code"></a>Compilation du code
+## <a name="compile-the-code"></a>Compiler le code
 
-Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application console Visual Basic. Ajoutez une instruction `Imports` pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 

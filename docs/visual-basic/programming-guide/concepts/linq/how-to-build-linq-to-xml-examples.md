@@ -1,13 +1,13 @@
 ---
-title: 'Comment : générer des exemples de LINQ to XML-Visual Basic'
+title: 'Comment : générer des exemples de LINQ to XML'
 ms.date: 07/20/2015
 ms.assetid: 565bca7a-ac8b-497f-8d8d-3323b3d7799e
-ms.openlocfilehash: f9c681280a512d7663c5d05c0251f411449379cb
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: a86e2dbe2eef40125dfc9b7c5c09a6676ea62333
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696813"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337300"
 ---
 # <a name="how-to-build-linq-to-xml-examples---visual-basic"></a>Comment : générer des exemples de LINQ to XML-Visual Basic
 

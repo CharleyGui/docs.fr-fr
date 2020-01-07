@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Remplir une arborescence XML à partir du système de fichiers (C#)'
+title: Comment remplir une arborescence XML à partir du système de fichiersC#()
 ms.date: 07/20/2015
 ms.assetid: 2aa2ccac-4a22-47ae-9107-3bb8df232576
-ms.openlocfilehash: dc3850c943ebac8980abbff0933413538823d21d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: beb44be1a787fa09b091aa48022dbb5b10c4632b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66485175"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345781"
 ---
-# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Procédure : Remplir une arborescence XML à partir du système de fichiers (C#)
+# <a name="how-to-populate-an-xml-tree-from-the-file-system-c"></a>Comment remplir une arborescence XML à partir du système de fichiersC#()
 Une application courante et utile des arborescences XML consiste à les utiliser en tant que banque de données nom/valeur hiérarchique. Vous pouvez remplir une arborescence XML avec des données hiérarchiques, puis les interroger, les transformer et, si nécessaire, les sérialiser. Dans ce scénario, une grande partie de la sémantique spécifique au langage XML, telle que les espaces de noms et le comportement d'espace blanc, n'est pas importante. Au lieu de cela, vous utilisez l’arborescence XML en tant que petite base de données hiérarchique en mémoire et à utilisateur unique.  
   
 ## <a name="example"></a>Exemple  
