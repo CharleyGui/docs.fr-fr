@@ -2,17 +2,17 @@
 title: Interrogation de DataSets (LINQ to DataSet)
 ms.date: 03/30/2017
 ms.assetid: bb68d2e4-623d-4d60-85e3-965254f6fee7
-ms.openlocfilehash: 79a9b320fbdbfecc3f7d531d992b1529873871a5
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: bb64abcffdbbcd46dfb11b2564619c565e461436
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783050"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634779"
 ---
 # <a name="querying-datasets-linq-to-dataset"></a>Interrogation de DataSets (LINQ to DataSet)
-Une fois qu'un objet <xref:System.Data.DataSet> a été rempli avec des données, vous pouvez commencer de l'interroger. La formulation de requêtes avec LINQ to DataSet est semblable [!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)] à l' [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]utilisation de sur d’autres sources de données compatibles. Toutefois, n’oubliez pas que lorsque vous [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] utilisez des requêtes <xref:System.Data.DataSet> sur un objet, vous interrogez une <xref:System.Data.DataRow> énumération d’objets, au lieu d’une énumération d’un type personnalisé. Cela signifie que vous pouvez utiliser n’importe quel membre de la <xref:System.Data.DataRow> classe dans vos [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] requêtes. Vous pouvez ainsi créer des requêtes riches et complexes.  
+Une fois qu'un objet <xref:System.Data.DataSet> a été rempli avec des données, vous pouvez commencer de l'interroger. La formulation de requêtes avec LINQ to DataSet est semblable à l’utilisation de LINQ (Language-Integrated Query) sur d’autres sources de données compatibles LINQ. Toutefois, n’oubliez pas que lorsque vous utilisez des requêtes LINQ sur un objet <xref:System.Data.DataSet>, vous interrogez une énumération d’objets <xref:System.Data.DataRow> au lieu d’une énumération d’un type personnalisé. Cela signifie que vous pouvez utiliser n’importe quel membre de la classe <xref:System.Data.DataRow> dans vos requêtes LINQ. Cela vous permet de créer des requêtes riches et complexes.  
   
- Comme pour les autres implémentations [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)]de, vous pouvez créer des requêtes LINQ to DataSet dans deux formes différentes : la syntaxe d’expression de requête et la syntaxe de requête fondée sur une méthode. Vous pouvez utiliser une syntaxe d'expression de requête ou une syntaxe de requête fondée sur une méthode sur des tables uniques d'un <xref:System.Data.DataSet>, sur plusieurs tables sur un <xref:System.Data.DataSet>, ou sur les tables d'un <xref:System.Data.DataSet> typé.  
+ Comme pour les autres implémentations de LINQ, vous pouvez créer des requêtes LINQ to DataSet dans deux formes différentes : la syntaxe d’expression de requête et la syntaxe de requête fondée sur une méthode. Vous pouvez utiliser une syntaxe d'expression de requête ou une syntaxe de requête fondée sur une méthode sur des tables uniques d'un <xref:System.Data.DataSet>, sur plusieurs tables sur un <xref:System.Data.DataSet>, ou sur les tables d'un <xref:System.Data.DataSet> typé.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Requêtes de table unique](single-table-queries-linq-to-dataset.md)  

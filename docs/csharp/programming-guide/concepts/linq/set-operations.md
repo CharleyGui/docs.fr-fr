@@ -2,12 +2,12 @@
 title: Opérations ensemblistes (C#)
 ms.date: 07/20/2015
 ms.assetid: 7c589367-ef8f-4161-9050-642c47e6bf63
-ms.openlocfilehash: 22079b1d41533803f694af210f98bc9fb8a5b322
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 170316b36705eaed51a9a17f8f79333a29e8c315
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711866"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346511"
 ---
 # <a name="set-operations-c"></a>Opérations ensemblistes (C#)
 Les opérations ensemblistes dans LINQ font référence à des opérations de requête qui génèrent un jeu de résultats basé sur la présence ou l’absence d’éléments équivalents dans la même collection (ou le même ensemble) ou dans une collection distincte (ou un ensemble distinct).  
@@ -42,14 +42,14 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
 ### <a name="intersect"></a>Définir une intersection  
  L’exemple suivant illustre le comportement de <xref:System.Linq.Enumerable.Intersect%2A?displayProperty=nameWithType>. La séquence retournée contient les éléments qui sont communs aux deux séquences d’entrée.  
   
- ![Graphique illustrant l'intersection de deux séquences.](./media/set-operations/intersection-two-sequences.png)  
+ ![Graphique illustrant l’intersection de deux séquences.](./media/set-operations/intersection-two-sequences.png)  
  
 [!code-csharp-interactive[Intersect](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#3)]
 
 ### <a name="union"></a>Union  
  L’exemple suivant illustre une opération d’Union sur deux séquences de caractères. La séquence retournée contient les éléments uniques des deux séquences d’entrée.  
   
- ![Graphique illustrant l'union de deux séquences.](./media/set-operations/union-operation-two-sequences.png)  
+ ![Graphique illustrant l’union de deux séquences.](./media/set-operations/union-operation-two-sequences.png)  
 
 [!code-csharp-interactive[Union](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQSetOperation/CS/SetOperation.cs#4)]
  
@@ -58,4 +58,4 @@ Les opérations ensemblistes dans LINQ font référence à des opérations de re
 - <xref:System.Linq>
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [Comment combiner et comparer des collections de chaînes (LINQ)C#()](./how-to-combine-and-compare-string-collections-linq.md)
-- [Guide pratique pour rechercher la différence ensembliste entre deux listes (LINQ) (C#)](./how-to-find-the-set-difference-between-two-lists-linq.md)
+- [Comment rechercher la différence définie entre deux listes (LINQ) (C#)](./how-to-find-the-set-difference-between-two-lists-linq.md)

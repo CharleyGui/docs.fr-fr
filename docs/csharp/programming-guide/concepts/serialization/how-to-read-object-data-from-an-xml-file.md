@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Lire des données d’objet à partir d’un fichier XML (C#)'
+title: Comment lire des données d’objet à partir d’unC#fichier XML ()
 ms.date: 07/20/2015
 ms.assetid: 6ad60d96-a4d9-48e6-a8b0-d7f6f803cafa
-ms.openlocfilehash: 1d6ec71b9e408e1536063fc3d8f1badc0f38551e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 2da5919c11ed2d6e43f4f9fc406f43e3ed48060f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590741"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346435"
 ---
-# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Procédure : Lire des données d’objet à partir d’un fichier XML (C#)
+# <a name="how-to-read-object-data-from-an-xml-file-c"></a>Comment lire des données d’objet à partir d’unC#fichier XML ()
 Cet exemple lit des données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp  
 public class Book  
@@ -43,7 +43,7 @@ public void ReadXML()
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, consultez [Guide pratique pour écrire des données d’objet dans un fichier XML (C#)](./how-to-write-object-data-to-an-xml-file.md).  
+Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, consultez [Comment écrire des données d’objet dans unC#fichier XML ()](./how-to-write-object-data-to-an-xml-file.md).
   
  La classe doit disposer d’un constructeur public sans paramètres.  
   
@@ -64,6 +64,6 @@ public void ReadXML()
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.StreamWriter>
-- [Guide pratique pour écrire des données d’objet dans un fichier XML (C#)](./how-to-write-object-data-to-an-xml-file.md)
+- [Comment écrire des données d’objet dans un fichier XMLC#()](./how-to-write-object-data-to-an-xml-file.md)
 - [Sérialisation (C#)](./index.md)
 - [Guide de programmation C#](../../index.md)

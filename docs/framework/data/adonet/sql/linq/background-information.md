@@ -2,12 +2,12 @@
 title: Informations générales
 ms.date: 03/30/2017
 ms.assetid: 724888f2-d3f1-4bea-b9a1-a0adb8a00f3b
-ms.openlocfilehash: d4466085419830e8fd91a3421271fde4e7e3a174
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: deb4d59dc2fb40b63e0362a9a4ee4b84c08dce49
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70248089"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634727"
 ---
 # <a name="background-information"></a>Informations générales
 Les rubriques de cette section présentent des concepts et des procédures plus approfondis sur l'utilisation de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
@@ -18,7 +18,7 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
   
 - Participez au [Forum LINQ](https://go.microsoft.com/fwlink/?LinkId=76488), où vous pouvez aborder des sujets plus complexes avec des experts.  
   
-- Étudiez le livre blanc [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui détaille la technologie, C# avec Visual Basic et des exemples de code. Pour plus d’informations, consultez [LINQ to SQL : requête intégrée au langage .net pour les données relationnelles](https://go.microsoft.com/fwlink/?LinkId=93205).  
+- Étudiez le livre blanc qui décrit en détail la technologie [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] C# , avec Visual Basic et des exemples de code. Pour plus d’informations, consultez [LINQ to SQL : requête intégrée au langage .net pour les données relationnelles](https://go.microsoft.com/fwlink/?LinkId=93205).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [ADO.NET et LINQ to SQL](ado-net-and-linq-to-sql.md)  
@@ -51,11 +51,11 @@ Les rubriques de cette section présentent des concepts et des procédures plus 
  [États des objets et suivi des modifications](object-states-and-change-tracking.md)  
  Fournit des informations détaillées à propos du suivi des modifications de [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)].  
   
- [Accès concurrentiel optimiste : Vue d’ensemble](optimistic-concurrency-overview.md)  
+ [Accès concurrentiel optimiste : vue d’ensemble](optimistic-concurrency-overview.md)  
  Décrit l'accès concurrentiel optimiste et définit des termes.  
   
  [Concepts relatifs aux requêtes](query-concepts.md)  
- Décrit les aspects des requêtes dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui diffèrent des requêtes dans [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)].  
+ Décrit les aspects des requêtes dans [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] qui diffèrent des requêtes dans LINQ.  
   
  [Récupération d’objets du cache d’identité](retrieving-objects-from-the-identity-cache.md)  
  Décrit les types de requêtes qui récupèrent des objets à partir du cache d'identité.  

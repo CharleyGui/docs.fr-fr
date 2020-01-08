@@ -1,26 +1,26 @@
 ---
-title: Sécurité de transport avec un client anonyme - WCF
+title: Sécurité de transport avec un client anonyme
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 056653a5-384e-4a02-ae3c-1b0157d2ccb4
-ms.openlocfilehash: aac3b2ac6cfcca137bddaefafd290e744ee991eb
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: c3e44c87dfa70ac3a7acc5a83ac596efc22b6155
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65637439"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344756"
 ---
 # <a name="transport-security-with-an-anonymous-client"></a>Sécurité de transport avec un client anonyme
 
-Ce scénario de Windows Communication Foundation (WCF) utilise la sécurité du transport (HTTPS) pour garantir la confidentialité et l’intégrité. Le serveur doit être authentifié à l'aide d'un certificat SSL (Secure Sockets Layer). Les clients doivent ensuite faire confiance à ce certificat. Aucun mécanisme n'authentifie les clients, ceux-ci restent donc anonymes.
+Ce scénario de Windows Communication Foundation (WCF) utilise la sécurité de transport (HTTPs) pour garantir la confidentialité et l’intégrité. Le serveur doit être authentifié à l'aide d'un certificat SSL (Secure Sockets Layer). Les clients doivent ensuite faire confiance à ce certificat. Aucun mécanisme n'authentifie les clients, ceux-ci restent donc anonymes.
 
-Pour un exemple d’application, consultez [sécurité du Transport WS](../samples/ws-transport-security.md). Pour plus d’informations sur la sécurité de transport, consultez [vue d’ensemble de sécurité de Transport](transport-security-overview.md).
+Pour obtenir un exemple d’application, consultez la page relative à la [sécurité du transport WS](../samples/ws-transport-security.md). Pour plus d’informations sur la sécurité du transport, consultez [vue d’ensemble de la sécurité du transport](transport-security-overview.md).
 
-Pour plus d’informations sur l’utilisation d’un certificat avec un service, consultez [Working with Certificates](working-with-certificates.md) et [Comment : Configurer un Port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
+Pour plus d’informations sur l’utilisation d’un certificat avec un service, consultez [utilisation des certificats](working-with-certificates.md) et [procédure : configurer un port avec un certificat SSL](how-to-configure-a-port-with-an-ssl-certificate.md).
 
-![Utilisation de la sécurité de transport avec un client anonyme](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
+![Sécurité des transports avec un client anonyme](./media/8fa2e931-0cfb-4aaa-9272-91d652b85d8d.gif)
 
 |Caractéristique|Description|
 |--------------------|-----------------|
@@ -34,7 +34,7 @@ Pour plus d’informations sur l’utilisation d’un certificat avec un service
 
 ## <a name="service"></a>Service
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
 
 - Créez un service autonome à l'aide du code sans configuration.
 
@@ -80,11 +80,11 @@ Le code ci-dessous configure le même point de terminaison en utilisant la confi
 
 ## <a name="client"></a>Client
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
 
 - Créez un client autonome à l'aide du code (et du code client).
 
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :
 
      [!code-csharp[C_SecurityScenarios#0](~/samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](~/samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -126,4 +126,4 @@ La configuration suivante peut être utilisée à la place du code pour paramét
 - [Vue d’ensemble de la sécurité](security-overview.md)
 - [Sécurité de transport WS](../samples/ws-transport-security.md)
 - [Vue d’ensemble de la sécurité de transport](transport-security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Récupérer une collection d’éléments (LINQ to XML) (C#)'
+title: Comment récupérer une collection d’éléments (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: b849668c-7976-4974-b8e1-1cd587d34258
-ms.openlocfilehash: fef12745bd608622f071f72049f242405d17ed7d
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 89799b17115fb56a93bda5fbc144b21b334a6974
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253417"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345021"
 ---
-# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-c"></a>Procédure : Récupérer une collection d’éléments (LINQ to XML) (C#)
+# <a name="how-to-retrieve-a-collection-of-elements-linq-to-xml-c"></a>Comment récupérer une collection d’éléments (LINQ to XML) (C#)
 Cette rubrique illustre la méthode <xref:System.Xml.Linq.XContainer.Elements%2A>. Cette méthode récupère une collection d’éléments enfants d’un élément.  
   
 ## <a name="example"></a>Exemple  
  Cet exemple itère au sein des éléments enfants de l'élément `purchaseOrder`.  
   
- Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Commande fournisseur standard (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
+ Cet exemple utilise le document XML suivant : [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](./sample-xml-file-typical-purchase-order-linq-to-xml-1.md).  
   
 ```csharp  
 XElement po = XElement.Load("PurchaseOrder.xml");  

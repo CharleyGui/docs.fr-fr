@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: 22530e861f6a13a6930b2fb35c91b4f7a95a17c7
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ed153e817746a88277c191dfb14c465ff2d8bfa1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74801946"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344906"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -36,9 +36,9 @@ Cette intégration est fournie, en partie, par les contributeurs des projets [Om
 
 .NET Core expose des API pour de nombreux scénarios, en voici quelques-uns :
 
-- types primitifs, tels que <xref:System.Boolean?displayProperty=nameWithType> et <xref:System.Int32?displayProperty=nameWithType> ;
+- Types primitifs, tels que <xref:System.Boolean?displayProperty=nameWithType> et <xref:System.Int32?displayProperty=nameWithType>.
 - Collections, comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.
-- Types d’utilitaires, comme <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> et <xref:System.IO.FileStream?displayProperty=nameWithType>.
+- Types d’utilitaire, comme <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> et <xref:System.IO.FileStream?displayProperty=nameWithType>.
 - Types de données, comme <xref:System.Data.DataSet?displayProperty=nameWithType> et [DbSet](https://www.nuget.org/packages/Microsoft.EntityFrameworkCore/).
 - Types haute performance, tels que les <xref:System.Numerics.Vector?displayProperty=nameWithType> et les [pipelines](../standard/io/pipelines.md).
 
@@ -58,7 +58,7 @@ Plusieurs frameworks ont été construits à partir de .NET Core :
 
 - Le [Runtime .net Core](https://github.com/dotnet/runtime/tree/master/src/coreclr), qui fournit un système de type, un chargement d’assembly, un récupérateur de mémoire, une interopérabilité native et d’autres services de base. Les [bibliothèques .net Core Framework](https://github.com/dotnet/runtime/tree/master/src/libraries) fournissent des types de données primitifs, des types de composition d’applications et des utilitaires fondamentaux.
 - Le [runtime ASP.net](https://github.com/aspnet/home), qui fournit une infrastructure pour créer des applications modernes connectées à Internet, telles que des applications Web, des applications IOT et des backends mobiles.
-- Les [outils .NET Core CLI](https://github.com/dotnet/cli) et les compilateurs de langage ([Roslyn](https://github.com/dotnet/roslyn) et [F#](https://github.com/microsoft/visualfsharp)) qui permettent d’assurer une expérience de développement .NET Core.
+- Les [outils .NET Core CLI](https://github.com/dotnet/sdk) et les compilateurs de langage ([Roslyn](https://github.com/dotnet/roslyn) et [F#](https://github.com/microsoft/visualfsharp)) qui permettent d’assurer une expérience de développement .NET Core.
 - [L’outil dotnet](https://github.com/dotnet/core-setup), utilisé pour lancer les applications .NET Core et les outils CLI. Il sélectionne le runtime et héberge le runtime, fournit une stratégie de chargement d’assembly et lance des applications et des outils.
 
 Ces composants sont distribués de la façon suivante :

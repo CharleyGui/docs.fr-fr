@@ -6,12 +6,12 @@ ms.date: 05/01/2019
 ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
-ms.openlocfilehash: 263004e67bf88af4182788e8c74cb410460e9201
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 251ca50f062f415ac4dfeda243eb746e9744b6f4
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971401"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345186"
 ---
 # <a name="automated-machine-learning-with-mlnet"></a>Machine learning automatisé avec ML.NET
 

@@ -4,12 +4,12 @@ description: Les améliorations récentes apportées au langage C# vous permette
 ms.date: 10/23/2018
 ms.technology: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: 3dc3213cf24f4cdd8f0f1b7752263b4a609b2fa2
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f590a338d35966e2cd3a507164057a49b8a5f6f8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039629"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346707"
 ---
 # <a name="write-safe-and-efficient-c-code"></a>Écrire du code C# sécurisé et efficace
 
@@ -26,7 +26,7 @@ Cet article met l’accent sur les techniques de gestion des ressources suivante
 - Utilisez un retour de [`ref readonly`](language-reference/keywords/ref.md#reference-return-values) quand la valeur de retour est un `struct` plus grand que <xref:System.IntPtr.Size?displayProperty=nameWithType> et que la durée de vie du stockage est supérieure à celle de la méthode retournant la valeur.
 - Quand la taille d’une `readonly struct` plus grande que <xref:System.IntPtr.Size?displayProperty=nameWithType>, vous devez la passer comme paramètre `in` pour des raisons de performances.
 - Ne transmettez jamais un `struct` en tant que paramètre `in`, sauf s’il est déclaré avec le modificateur `readonly` ou si la méthode appelle uniquement `readonly` membres du struct. La violation de ce guide peut avoir un impact négatif sur les performances et peut entraîner un comportement obscur.
-- Utilisez un [ `ref struct` ](language-reference/keywords/ref.md#ref-struct-types), ou un `readonly ref struct` comme <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601> pour utiliser la mémoire comme une séquence d’octets.
+- Utilisez un [`ref struct`](language-reference/keywords/ref.md#ref-struct-types), ou un `readonly ref struct` comme <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601> pour utiliser la mémoire comme une séquence d’octets.
 
 Ces techniques vous forcent à trouver un équilibre entre deux objectifs concurrents concernant les **références** et les **valeurs**. Les variables qui sont des [types référence](programming-guide/types/index.md#reference-types) contiennent une référence à l’emplacement en mémoire. Les variables qui sont des [types valeur](programming-guide/types/index.md#value-types) contiennent directement leur valeur. Ces différences mettent en évidence les différences importantes pour la gestion des ressources mémoire. Les **types valeur** sont généralement copiés quand ils sont passés à une méthode ou retournés depuis une méthode. Ce comportement comprend la copie de la valeur de `this` lors de l’appel de membres d’un type valeur. Le coût de la copie est lié à la taille du type. Les **types référence** sont alloués sur le tas managé. Chaque nouvel objet nécessite une nouvelle allocation et doit par conséquent être récupéré par la suite. Ces deux opérations prennent du temps. La référence est copiée quand un type référence est passé comme argument à une méthode ou retourné depuis une méthode.
 
@@ -72,42 +72,42 @@ Suivez cette recommandation quand l’intention de votre conception est de crée
 
 ## <a name="declare-readonly-members-when-a-struct-cant-be-immutable"></a>Déclarer des membres ReadOnly lorsqu’un struct ne peut pas être immuable
 
-Dans C# 8,0 et versions ultérieures, quand un type struct est mutable, vous devez déclarer les membres qui n’entraînent pas la`readonly`de la mutation. Par exemple, voici une variation mutable de la structure de points 3D :
+Dans C# 8,0 et versions ultérieures, quand un type struct est mutable, vous devez déclarer les membres qui n’entraînent pas la `readonly`de la mutation. Par exemple, voici une variation mutable de la structure de points 3D :
 
 ```csharp
 public struct Point3D
 {
     public Point3D(double x, double y, double z)
     {
-        this.X = x;
-        this.Y = y;
-        this.Z = z;
+        _x = x;
+        _y = y;
+        _z = z;
     }
 
     private double _x;
-    public double X 
-    { 
-        readonly get { return _x;}; 
-        set { _x = value; }
+    public double X
+    {
+        readonly get => _x;
+        set => _x = value;
     }
-    
+
     private double _y;
-    public double Y 
-    { 
-        readonly get { return _y;}; 
-        set { _y = value; }
+    public double Y
+    {
+        readonly get => _y;
+        set => _y = value;
     }
 
     private double _z;
-    public double Z 
-    { 
-        readonly get { return _z;}; 
-        set { _z = value; }
+    public double Z
+    {
+        readonly get => _z;
+        set => _z = value;
     }
 
     public readonly double Distance => Math.Sqrt(X * X + Y * Y + Z * Z);
 
-    public readonly override string ToString() => $"{X, Y, Z }";
+    public readonly override string ToString() => $"{X}, {Y}, {Z}";
 }
 ```
 
@@ -137,7 +137,7 @@ public struct Point3D
 }
 ```
 
-Vous ne voulez pas que les appelants modifient la valeur l’origine : vous devez donc retourner la valeur par `readonly ref` :
+Vous ne voulez pas que les appelants modifient la valeur l’origine : vous devez donc retourner la valeur par `ref readonly` :
 
 ```csharp
 public struct Point3D
@@ -152,7 +152,7 @@ public struct Point3D
 
 Retourner `ref readonly` vous permet d’éviter de copier des structures plus grandes et de préserver l’immuabilité de vos membres de données internes.
 
-À l’endroit de l’appel, les appelants font le choix d’utiliser la propriété `Origin` comme `readonly ref` ou comme valeur :
+À l’endroit de l’appel, les appelants font le choix d’utiliser la propriété `Origin` comme `ref readonly` ou comme valeur :
 
 [!code-csharp[AssignRefReadonly](../../samples/csharp/safe-efficient-code/ref-readonly-struct/Program.cs#AssignRefReadonly "Assigning a ref readonly")]
 

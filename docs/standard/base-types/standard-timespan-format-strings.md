@@ -1,5 +1,5 @@
 ---
-title: Chaînes de format TimeSpan standard.
+title: Chaînes de format TimeSpan standard
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,16 +17,16 @@ helpviewer_keywords:
 - standard TimeSpan format strings
 - formatting [.NET Framework], time intervals
 ms.assetid: 9f6c95eb-63ae-4dcc-9c32-f81985c75794
-ms.openlocfilehash: c699ed68606293b1a49a540e00636cf7f56bdf2f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ec06edc16829c6d4caf8c760922aac1471e365c2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972091"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346626"
 ---
-# <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard.
+# <a name="standard-timespan-format-strings"></a>Chaînes de format TimeSpan standard
 
-Une chaîne de format <xref:System.TimeSpan> standard utilise un spécificateur de format pour définir la représentation textuelle d'une valeur <xref:System.TimeSpan> qui résulte d'une opération de mise en forme. Toute chaîne de format contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée. Pour plus d’informations, consultez [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md).  
+Une chaîne de format de <xref:System.TimeSpan> standard utilise un spécificateur de format unique pour définir la représentation textuelle d’une valeur <xref:System.TimeSpan> qui résulte d’une opération de mise en forme. Toute chaîne de format contenant plusieurs caractères alphabétiques, y compris un espace blanc, est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée. Pour plus d’informations, consultez [chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md) .  
   
  Les représentations sous forme de chaîne de valeurs <xref:System.TimeSpan> sont produites par des appels aux surcharges de la méthode <xref:System.TimeSpan.ToString%2A?displayProperty=nameWithType>, ainsi que par les méthodes qui prennent en charge la mise en forme composite, telles que <xref:System.String.Format%2A?displayProperty=nameWithType>. Pour plus d’informations, consultez [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md) et [Mise en forme composite](../../../docs/standard/base-types/composite-formatting.md). L'exemple suivant illustre l'utilisation de chaînes de format standard dans des opérations de mise en forme.  
   
@@ -124,4 +124,4 @@ Le tableau suivant répertorie les spécificateurs de format d'intervalle de tem
 
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
 - [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Analyse de chaînes](../../../docs/standard/base-types/parsing-strings.md)
+- [Parsing Strings](../../../docs/standard/base-types/parsing-strings.md)

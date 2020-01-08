@@ -6,12 +6,12 @@ helpviewer_keywords:
 - functions [Visual Basic], function expressions
 - lambda expressions [Visual Basic], function expression
 ms.assetid: e8a47a45-4b8a-4f45-a623-7653625dffbc
-ms.openlocfilehash: d14d7c9bc701b5e06c51202c07c3b79832aba7cc
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 454c4e3d926640934a8edc4fcb16e4308a89dd50
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74331084"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632335"
 ---
 # <a name="function-expression-visual-basic"></a>Expression de fonction (Visual Basic)
 Déclare les paramètres et le code qui définissent une expression lambda de fonction.  
@@ -26,11 +26,11 @@ Function ( [ parameterlist ] )
 End Function  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Parties  
   
 |Terme|Définition|  
 |---|---|  
-|`parameterlist`|Ce paramètre est facultatif. Liste des noms de variables locales qui représentent les paramètres de cette procédure. Les parenthèses doivent être présentes même lorsque la liste est vide. Consultez la [liste des paramètres](../../../visual-basic/language-reference/statements/parameter-list.md).|  
+|`parameterlist`|Option facultative. Liste des noms de variables locales qui représentent les paramètres de cette procédure. Les parenthèses doivent être présentes même lorsque la liste est vide. Consultez la [liste des paramètres](../../../visual-basic/language-reference/statements/parameter-list.md).|  
 |`expression`|Requis. Expression unique. Le type de l’expression est le type de retour de la fonction.|  
 |`statements`|Requis. Liste d’instructions qui retourne une valeur à l’aide de l’instruction `Return`. (Consultez [instruction return](../../../visual-basic/language-reference/statements/return-statement.md).) Le type de la valeur retournée est le type de retour de la fonction.|  
   
@@ -72,7 +72,7 @@ End Function
  [!code-vb[VbVbalrLambdas#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrLambdas/VB/Class1.vb#14)]  
   
 ## <a name="example"></a>Exemple  
- Les expressions lambda sont sous-jacentes de nombreux opérateurs de requête dans [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]et peuvent être utilisées explicitement dans les requêtes basées sur une méthode. L’exemple suivant montre une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] classique, suivie de la traduction de la requête en format de méthode.  
+ Les expressions lambda sont sous-jacentes de nombreux opérateurs de requête dans LINQ (Language-Integrated Query) et peuvent être utilisées explicitement dans les requêtes basées sur une méthode. L’exemple suivant montre une requête LINQ classique, suivie de la traduction de la requête en format de méthode.  
   
 ```vb  
 Dim londonCusts = From cust In db.Customers  

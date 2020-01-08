@@ -5,18 +5,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 061d98b2-baa7-4336-8ad2-c14de8134d91
-ms.openlocfilehash: 8baf361ba66ba33927121ae20edcc6c12964c21c
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: e84047843aff4044c75ba1b971a9e2f061e2e8d6
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70792101"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75633999"
 ---
 # <a name="what-you-can-do-with-linq-to-sql"></a>Que faire avec LINQ to SQL
 [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] prend en charge toutes les fonctions clés que recherchent les développeurs SQL. Vous pouvez demander des informations et insérer, mettre à jour et supprimer des informations dans des tables.  
   
 ## <a name="selecting"></a>Sélection  
- Pour effectuer une sélection (*projection*) il vous suffit d'écrire une requête [!INCLUDE[vbteclinq](../../../../../../includes/vbteclinq-md.md)] dans votre propre langage de programmation, puis d'exécuter cette requête pour récupérer les résultats. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit lui-même toutes les opérations requises dans les opérations SQL nécessaires que vous connaissez. Pour plus d'informations, consultez [LINQ to SQL](index.md).  
+ Pour cela, il suffit d’écrire une requête LINQ dans votre propre langage de programmation, puis d’exécuter cette requête pour récupérer les résultats. [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] traduit lui-même toutes les opérations requises dans les opérations SQL nécessaires que vous connaissez. Pour plus d’informations, consultez [LINQ to SQL](index.md).  
   
  Dans l'exemple suivant, les noms de société des clients de Londres sont récupérés et affichés dans la fenêtre de console.  
   
@@ -43,7 +43,7 @@ ms.locfileid: "70792101"
  Pour `Delete` un élément, supprimez-le de la collection à laquelle il appartient, puis appelez <xref:System.Data.Linq.DataContext.SubmitChanges%2A> sur le <xref:System.Data.Linq.DataContext> pour valider la modification.  
   
 > [!NOTE]
-> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne reconnaît les opérations de suppression en cascade. Si vous souhaitez supprimer une ligne d’une table qui contient des contraintes, consultez [procédure : Supprimer des lignes de la](how-to-delete-rows-from-the-database.md)base de données.  
+> [!INCLUDE[vbtecdlinq](../../../../../../includes/vbtecdlinq-md.md)] ne reconnaît les opérations de suppression en cascade. Si vous souhaitez supprimer une ligne d’une table qui contient des contraintes, consultez [procédure : supprimer des lignes de la base de données](how-to-delete-rows-from-the-database.md).  
   
  Dans l'exemple suivant, le client dont le `CustomerID` est `98128` est extrait de la base de données. Ensuite, après confirmation de la récupération de la ligne client, <xref:System.Data.Linq.Table%601.DeleteOnSubmit%2A> est appelé pour supprimer cet objet de la collection. Enfin, <xref:System.Data.Linq.DataContext.SubmitChanges%2A> est appelé pour envoyer la suppression à la base de données.  
   
@@ -54,4 +54,4 @@ ms.locfileid: "70792101"
 
 - [Guide de programmation](programming-guide.md)
 - [Modèle objet LINQ to SQL](the-linq-to-sql-object-model.md)
-- [Prise en main](getting-started.md)
+- [Bien démarrer](getting-started.md)

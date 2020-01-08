@@ -3,12 +3,12 @@ title: Variables et types C# - Visite guidée du langage C#
 description: En savoir plus sur la définition des types et la déclaration de variables en C#
 ms.date: 08/10/2016
 ms.assetid: f8a8051e-0049-43f1-b594-9c84cc7b1224
-ms.openlocfilehash: 863f37714da06ca55c8c9092f06c445995d47ce3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 02840169730e53875baccfa012ae9653e32a35c9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739151"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346849"
 ---
 # <a name="types-and-variables"></a>Types et variables
 
@@ -46,7 +46,7 @@ Ce qui suit offre une vue d'ensemble du système de types de C#.
 
 [ValueTypes]: ../language-reference/keywords/value-types-table.md
 [SimpleTypes]: ../language-reference/keywords/value-types.md#simple-types
-[EnumTypes]: ../language-reference/keywords/enum.md
+[EnumTypes]: ../language-reference/builtin-types/enum.md
 [StructTypes]: ../language-reference/keywords/struct.md
 [NullableTypes]: ../language-reference/builtin-types/nullable-value-types.md
 [ReferenceTypes]: ../language-reference/keywords/reference-types.md
@@ -93,7 +93,7 @@ Il existe plusieurs types de *variables* en C#, y compris les champs, les élém
   - Une valeur de ce type exact
 - Types valeur Nullable
   - Une valeur `null` ou une valeur de ce type exact
-- objet
+- Objet
   - Une référence `null`, une référence à un objet de tout type référence ou une référence à une valeur boxed de n’importe quel type valeur
 - Type de classe
   - Une référence `null`, une référence à une instance de ce type de classe ou une référence à une instance d’une classe dérivée de ce type de classe

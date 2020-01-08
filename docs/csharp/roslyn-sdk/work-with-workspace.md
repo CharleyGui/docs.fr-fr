@@ -3,12 +3,12 @@ title: Utiliser le modèle d’espace de travail du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur le type que vous utilisez pour interroger et manipuler l’espace de travail et les projets dans votre code.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: 7d450b31cbf2c83c79552d1ace3a1ae692bfdd88
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: a2e69129a869707eaec3516310a72f1fc918ca26
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33354801"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346907"
 ---
 # <a name="work-with-a-workspace"></a>Utiliser un espace de travail
 
@@ -40,4 +40,4 @@ Le diagramme suivant illustre les relations entre l’espace de travail et l’e
 
 ## <a name="summary"></a>Récapitulatif
 
-Roslyn expose un ensemble d’API de compilateur et d’API d’espaces de travail. Ces API fournissent des informations détaillées sur votre code source et offrent une haute fidélité avec les langages Visual Basic et C#.  Le SDK .NET Compiler Platform réduit considérablement les difficultés inhérentes à la création d’applications et d’outils axés sur le code. Il offre de nombreuses possibilités d’innovation dans différents champs, notamment la métaprogrammation, la génération et la transformation de code, l’utilisation interactive des langages C# et VB et l’incorporation de C# et de VB dans des langages propres au domaine.  
+Roslyn expose un ensemble d’API de compilateur et d’API d’espaces de travail. Ces API fournissent des informations détaillées sur votre code source et offrent une haute fidélité avec les langages Visual Basic et C#.  Le SDK .NET Compiler Platform réduit considérablement les difficultés inhérentes à la création d’applications et d’outils axés sur le code. Il crée de nombreuses opportunités d’innovation dans des domaines tels que la méta-programmation, la génération et la transformation de C# code, l’utilisation interactive du et des C# langages de Visual Basic, et l’incorporation de et Visual Basic dans des langages spécifiques à un domaine.  

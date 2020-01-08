@@ -3,15 +3,15 @@ title: 'Didacticiel : détecter des objets à l’aide de l’apprentissage pro
 description: Ce tutoriel montre comment utiliser un modèle de deep learning ONNX préentraîné dans ML.NET pour détecter des objets dans des images.
 author: luisquintanilla
 ms.author: luquinta
-ms.date: 08/27/2019
+ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 1364b6a1cf6d424975828185a50175b2763c6516
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 04d7dedf9f882d9f0e0396949c71e4941c207fe3
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420066"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345045"
 ---
 # <a name="tutorial-detect-objects-using-onnx-in-mlnet"></a>Didacticiel : détecter des objets à l’aide de ONNX dans ML.NET
 
@@ -64,7 +64,7 @@ Il existe différents types de réseaux neuronaux, les plus courants étant les 
 
 ### <a name="understand-the-model"></a>Comprendre le modèle
 
-La détection d’objets est une tâche de traitement d’images. C’est pourquoi la plupart des modèles de deep learning préentraînés pour résoudre ce problème sont des réseaux CNN. Le modèle utilisé dans ce didacticiel est le petit modèle YOLOv2, une version plus compacte du modèle YOLOv2 décrit dans le document : [« YOLO9000 : meilleur, plus rapide et plus puissant » par RedMon et Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Tiny YOLOv2 est entraîné sur le jeu de données Pascal COV et est constitué de 15 couches qui peuvent prédire 20 classes différentes d’objets. Étant donné que Tiny YOLOv2 est une version condensée du modèle YOLOv2 d’origine, un compromis est établi entre la vitesse et la précision. Les différentes couches qui composent le modèle peuvent être visualisées à l’aide d’outils comme Netron. L’inspection du modèle produit un mappage des connexions entre toutes les couches qui composent le réseau neuronal, où chaque couche contient le nom de la couche ainsi que les dimensions des entrée/sortie respectives. Les structures de données utilisées pour décrire les entrées et les sorties du modèle sont appelées des tenseurs. Les tenseurs peuvent être considérés comme des conteneurs qui stockent des données dans N dimensions. Dans le cas de Tiny YOLOv2, le nom de la couche d’entrée est `image` et il attend un tenseur de dimensions `3 x 416 x 416`. Le nom de la couche de sortie est `grid` et génère un tenseur de sortie de dimensions `125 x 13 x 13`.
+La détection d’objets est une tâche de traitement d’image. C’est pourquoi la plupart des modèles de deep learning préentraînés pour résoudre ce problème sont des réseaux CNN. Le modèle utilisé dans ce didacticiel est le petit modèle YOLOv2, une version plus compacte du modèle YOLOv2 décrit dans le document : [« YOLO9000 : meilleur, plus rapide et plus puissant » par RedMon et Fadhari](https://arxiv.org/pdf/1612.08242.pdf). Tiny YOLOv2 est entraîné sur le jeu de données Pascal COV et est constitué de 15 couches qui peuvent prédire 20 classes différentes d’objets. Étant donné que Tiny YOLOv2 est une version condensée du modèle YOLOv2 d’origine, un compromis est établi entre la vitesse et la précision. Les différentes couches qui composent le modèle peuvent être visualisées à l’aide d’outils comme Netron. L’inspection du modèle produit un mappage des connexions entre toutes les couches qui composent le réseau neuronal, où chaque couche contient le nom de la couche ainsi que les dimensions des entrée/sortie respectives. Les structures de données utilisées pour décrire les entrées et les sorties du modèle sont appelées des tenseurs. Les tenseurs peuvent être considérés comme des conteneurs qui stockent des données dans N dimensions. Dans le cas de Tiny YOLOv2, le nom de la couche d’entrée est `image` et il attend un tenseur de dimensions `3 x 416 x 416`. Le nom de la couche de sortie est `grid` et génère un tenseur de sortie de dimensions `125 x 13 x 13`.
 
 ![Couche d’entrée fractionnée en couches masquées, puis couche de sortie](./media/object-detection-onnx/netron-model-map-layers.png)
 
@@ -74,7 +74,7 @@ Le modèle YOLO prend une image `3(RGB) x 416px x 416px`. Le modèle prend cette
 
 ONNX (Open Neural Network Exchange) est un format open source pour les modèles IA. ONNX prend en charge l’interopérabilité entre les frameworks. Cela signifie que vous pouvez entraîner un modèle dans l’un des nombreux frameworks de machine learning connus tels que PyTorch, le convertir au format ONNX et consommer le modèle ONNX dans un autre framework comme ML.NET. Pour en savoir plus, consultez le [site web ONNX](https://onnx.ai/).
 
-![Diagramme des formats pris en charge par ONNX.](./media/object-detection-onnx/onyx-supported-formats.png)
+![Diagramme des formats pris en charge par ONNX.](./media/object-detection-onnx/onnx-supported-formats.png)
 
 Le modèle Tiny YOLOv2 préentraîné est stocké au format ONNX, représentation sérialisée des couches et des motifs appris de ces couches. Dans ML.NET, l’interopérabilité avec ONNX s’obtient avec les packages NuGet [`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) et [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer). Le package[`ImageAnalytics`](xref:Microsoft.ML.Transforms.Image) contient une série de transformations qui prennent une image et l’encodent en valeurs numériques pouvant être utilisées comme entrée dans un pipeline de prédiction ou d’entraînement. Le package [`OnnxTransformer`](xref:Microsoft.ML.Transforms.Onnx.OnnxTransformer) tire profit du runtime ONNX afin de charger un modèle ONNX et de l’utiliser pour faire des prédictions en fonction de l’entrée fournie.
 
@@ -152,7 +152,7 @@ Créez votre classe de données d’entrée dans le répertoire *DataStructures*
     - `ImagePath` contient le chemin où l’image est stockée.
     - `Label` contient le nom du fichier.
 
-    De plus, `ImageNetData` contient une méthode `ReadFromFile` qui charge un grand nombre de fichiers image stockés dans le chemin `imageFolder` spécifié et les retourne sous forme de collection d’objets `ImageNetData`.
+    En outre, `ImageNetData` contient une méthode `ReadFromFile` qui charge plusieurs fichiers image stockés dans le chemin d’accès `imageFolder` spécifié et les retourne sous la forme d’une collection d’objets `ImageNetData`.
 
 Créez votre classe de prédiction dans le répertoire *DataStructures*.
 
@@ -169,7 +169,7 @@ Créez votre classe de prédiction dans le répertoire *DataStructures*.
 
     `ImageNetPrediction` est la classe de données de prédiction et présente le champ `float[]` suivant :
 
-    - `PredictedLabel` contient les dimensions, le score d’objets et les probabilités de classe pour chacun des rectangles englobants détectés dans une image.
+    - `PredictedLabel` contient les dimensions, le score d’objet et les probabilités de classe pour chacune des zones englobantes détectées dans une image.
 
 ### <a name="initialize-variables-in-main"></a>Initialiser les variables dans Principal
 
@@ -229,7 +229,7 @@ Ensuite, créez une classe pour vos rectangles englobants.
 
     [!code-csharp [YoloBoundingBoxUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloBoundingBox.cs#L1)]
 
-    Juste au-dessus de la définition de classe existante, ajoutez une nouvelle définition de classe nommée `BoundingBoxDimensions` qui hérite de la classe `DimensionsBase` pour contenir les dimensions du rectangle englobant respectif.
+    Juste au-dessus de la définition de classe existante, ajoutez une nouvelle définition de classe appelée `BoundingBoxDimensions` qui hérite de la classe `DimensionsBase` pour contenir les dimensions de la zone englobante respective.
 
     [!code-csharp [BoundingBoxDimClass](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloBoundingBox.cs#L5)]
 
@@ -256,7 +256,7 @@ Maintenant que les classes pour les dimensions et les rectangles englobants sont
 
     [!code-csharp [YoloParserUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L1-L4)]
 
-    Dans la définition de la classe `YoloOutputParser` existante, ajoutez une classe imbriquée qui contient les dimensions de chacune des cellules de l’image. Ajoutez le code suivant pour la classe `CellDimensions` qui hérite de la classe `DimensionsBase` en haut de la définition de la classe `YoloOutputParser`.
+    Dans la définition de la classe `YoloOutputParser` existante, ajoutez une classe imbriquée qui contient les dimensions de chacune des cellules de l’image. Ajoutez le code suivant pour la classe `CellDimensions` qui hérite de la classe `DimensionsBase` en haut de la définition de classe `YoloOutputParser`.
 
     [!code-csharp [YoloParserUsings](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L10)]
 
@@ -274,7 +274,7 @@ Maintenant que les classes pour les dimensions et les rectangles englobants sont
     - `CELL_HEIGHT` est la hauteur d’une cellule dans la grille de l’image.
     - `channelStride` est la position de départ de la cellule active dans la grille.
 
-    Quand le modèle fait une prédiction (ou « scoring »), il divise l’image d’entrée `416px x 416px` sous forme de grille de cellules d’une taille de `13 x 13`. Chaque cellule contient `32px x 32px`. Dans chaque cellule, il y a 5 rectangles englobants contenant chacun 5 caractéristiques (x, y, largeur, hauteur, confiance). Chaque rectangle englobant contient aussi la probabilité de chacune des classes qui, dans le cas présent, est de 20. Par conséquent, chaque cellule contient 125 informations différentes (5 caractéristiques + 20 probabilités de classe).
+    Quand le modèle fait une prédiction (ou « scoring »), il divise l’image d’entrée `416px x 416px` sous forme de grille de cellules d’une taille de `13 x 13`. Chaque cellule contient `32px x 32px`. Dans chaque cellule, il y a 5 rectangles englobants contenant chacun 5 caractéristiques (x, y, largeur, hauteur, confiance). En outre, chaque cadre englobant contient la probabilité de chacune des classes, soit 20 dans le cas présent. Par conséquent, chaque cellule contient 125 informations différentes (5 caractéristiques + 20 probabilités de classe).
 
 Créez une liste d’ancres sous `channelStride` pour les 5 rectangles englobants :
 
@@ -282,7 +282,7 @@ Créez une liste d’ancres sous `channelStride` pour les 5 rectangles engloban
 
 Les ancres sont des ratios de hauteur et de largeur prédéfinis pour les rectangles englobants. La plupart des objets ou classes détectés par un modèle ont des ratios similaires. C’est utile lorsqu’il s’agit de créer des rectangles englobants. Au lieu de prédire les rectangles englobants, le décalage par rapport aux dimensions prédéfinies est calculé, réduisant ainsi le calcul nécessaire pour prédire le rectangle englobant. En général, ces ratios d’ancre sont calculés en fonction du jeu de données utilisé. Dans ce cas, étant donné que le jeu de données est connu et que les valeurs ont été précalculées, les ancres peuvent être codées en dur.
 
-Ensuite, définissez les étiquettes ou les classes que le modèle va prédire. Ce modèle prédit 20 classes, qui est un sous-ensemble du nombre total de classes prédites par le modèle YOLOv2 d’origine.
+Ensuite, définissez les étiquettes ou les classes que le modèle va prédire. Ce modèle prédit 20 classes, qui est un sous-ensemble du nombre total de classes prédites par le modèle YOLOv2 d’origine.
 
 Ajoutez votre liste d’étiquettes sous les `anchors`.
 
@@ -302,7 +302,7 @@ Les méthodes d’assistance utilisées par l’analyseur sont :
 - `Softmax` normalise un vecteur d’entrée dans une distribution de probabilité.
 - `GetOffset` mappe les éléments de la sortie du modèle unidimensionnelle à la position correspondante dans un tenseur `125 x 13 x 13`.
 - `ExtractBoundingBoxes` extrait les dimensions du rectangle englobant en utilisant la méthode `GetOffset` de la sortie du modèle.
-- `GetConfidence` extrait la valeur de confiance qui indique le degré de probabilité que le modèle a détecté un objet et utilise la fonction `Sigmoid` pour la convertir en pourcentage.
+- `GetConfidence` extrait la valeur de confiance qui indique comment s’assurer que le modèle a détecté un objet et utilise la fonction `Sigmoid` pour le convertir en pourcentage.
 - `MapBoundingBoxToCell` utilise les dimensions du rectangle englobant et les mappe à sa cellule respective dans l’image.
 - `ExtractClasses` extrait les prédictions de classe pour le rectangle englobant de la sortie du modèle en utilisant la méthode `GetOffset` et les transforme en distribution de probabilité en utilisant la méthode `Softmax`.
 - `GetTopResult` sélectionne la classe dans la liste des classes prédites avec la probabilité la plus forte.
@@ -423,7 +423,7 @@ if (isActiveBoxes[i])
 }
 ```
 
-Dans ce cas, ajoutez le rectangle englobant à la liste des résultats. Si les résultats dépassent la limite spécifiée des rectangles à extraire, rompez la boucle. Ajoutez le code suivant dans l’instruction if.
+Dans ce cas, ajoutez le rectangle englobant à la liste des résultats. Si les résultats dépassent la limite de cases spécifiée à extraire, arrêtez la boucle. Ajoutez le code suivant dans l’instruction if.
 
 [!code-csharp [AddFirstBBoxToResults](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L219-L223)]
 
@@ -436,7 +436,7 @@ for (var j = i + 1; j < boxes.Count; j++)
 }
 ```
 
-Comme pour le premier rectangle, si le rectangle adjacent est actif ou prêt à être traité, utilisez la méthode `IntersectionOverUnion` pour vérifier si le premier rectangle et le deuxième rectangle dépassent le seuil spécifié. Ajoutez le code suivant à votre boucle for la plus interne.
+Comme pour le premier rectangle, si le rectangle adjacent est actif ou prêt à être traité, utilisez la méthode `IntersectionOverUnion` pour vérifier si le premier rectangle et le deuxième rectangle dépassent le seuil spécifié. Ajoutez le code suivant à votre boucle for la plus profonde.
 
 [!code-csharp [IOUBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L227-L239)]
 
@@ -448,7 +448,7 @@ Enfin, en dehors de la boucle for initiale de la méthode `FilterBoundingBoxes`,
 
 [!code-csharp [ReturnFilteredBBox](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ObjectDetection_Onnx/ObjectDetectionConsoleApp/YoloParser/YoloOutputParser.cs#L246)]
 
-Idéaux! Il est maintenant temps d’utiliser ce code avec le modèle de scoring.
+Parfait ! Il est maintenant temps d’utiliser ce code avec le modèle de scoring.
 
 ## <a name="use-the-model-for-scoring"></a>Utiliser le modèle pour le scoring
 
@@ -703,7 +703,7 @@ person and its Confidence score: 0.5551759
 
 Pour voir les images avec les rectangles englobants, accédez au répertoire `assets/images/output/`. Voici un exemple de l’une des images traitées.
 
-![Exemple d’image traitée d’une salle de Dinning](./media/object-detection-onnx/dinning-room-table-chairs.png)
+![Exemple d’image traitée d’une salle de repas](./media/object-detection-onnx/dinning-room-table-chairs.png)
 
 Félicitations ! Vous avez créé un modèle Machine Learning pour la détection d’objets en réutilisant un modèle `ONNX` préentraîné dans ML.NET.
 

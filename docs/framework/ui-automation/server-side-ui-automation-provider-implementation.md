@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 35754d49bf223e7afcdec32e8b24cfb749f48aa6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 25f22d5e8caacc69643f6d79e109ebaa94159d80
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74446849"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75632309"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
@@ -20,11 +20,11 @@ ms.locfileid: "74446849"
 
 Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.
 
-L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] (tels que ceux conçus pour [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) est fondamentalement différente. Les éléments[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] prennent en charge [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] via une classe dérivée d' <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournissent une prise en charge via l'implémentation d'interfaces de fournisseurs.
+L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non WPF (tels que ceux conçus pour [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) est fondamentalement différente. Les éléments WPF assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] par le biais d’une classe dérivée de <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-WPF assurent la prise en charge via des implémentations d’interfaces de fournisseur.
 
 <a name="Security_Considerations"></a>
 
-## <a name="security-considerations"></a>Considérations relatives à la sécurité
+## <a name="security-considerations"></a>Considérations sur la sécurité
 
 Les fournisseurs doivent être écrits de manière à pouvoir travailler dans un environnement de confiance partielle. Étant donné qu'UIAutomationClient.dll n'est pas configuré pour s'exécuter avec un niveau de confiance partielle, le code de votre fournisseur ne doit pas référencer cet assembly. S'il le fait, le code risque de s'exécuter dans un environnement de confiance totale mais d'échouer dans un environnement de confiance partielle.
 
@@ -40,7 +40,7 @@ Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle p
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>Implémentation de fournisseur par des éléments non-WPF
 
-Les contrôles personnalisés qui ne font pas partie de l'infrastructure [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] , mais qui sont rédigés en code managé (le plus souvent, ce sont des contrôles [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] ), fournissent une prise en charge pour [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l’élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l’interface appropriée pour chaque modèle de contrôle.
+Les contrôles personnalisés qui ne font pas partie de l’infrastructure WPF, mais qui sont écrits en code managé (le plus souvent, il s’agit de contrôles [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l'élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l'interface appropriée pour chaque modèle de contrôle.
 
 Le projet de votre fournisseur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] doit référencer les assemblys suivants :
 

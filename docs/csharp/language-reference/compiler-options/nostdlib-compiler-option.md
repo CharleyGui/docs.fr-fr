@@ -1,6 +1,6 @@
 ---
 title: -nostdlib (Options du compilateur C#)
-ms.date: 07/20/2015
+ms.date: 12/20/2019
 f1_keywords:
 - /nostdlib
 helpviewer_keywords:
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -nostdlib compiler option [C#]
 - /nostdlib compiler option [C#]
 ms.assetid: ec197989-fa49-4725-a455-e06b551eb65f
-ms.openlocfilehash: 486539d7abdc3e65847a0bc0e228b1b20a2b2c37
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: ad8a2b5fc87dd7beee86d96331cf3961315be533
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602689"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345077"
 ---
 # <a name="-nostdlib-c-compiler-options"></a>-nostdlib (Options du compilateur C#)
 
@@ -25,7 +25,7 @@ ms.locfileid: "69602689"
 -nostdlib[+ | -]
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Utilisez cette option si vous souhaitez définir ou créer vos propres objets et espace de noms System.
 
@@ -34,7 +34,7 @@ Si vous ne spécifiez pas **-nostdlib**, mscorlib.dll est importé dans votre pr
 ### <a name="to-set-this-compiler-option-in-visual-studio"></a>Pour définir cette option de compilateur dans Visual Studio
 
 > [!NOTE]
-> Les instructions suivantes s’appliquent uniquement à Visual Studio 2015 (et versions antérieures). La propriété de build **Ne pas référencer mscorlib.dll** n’existe pas dans Visual Studio 2017.
+> Les instructions suivantes s’appliquent uniquement à Visual Studio 2015 (et versions antérieures). La propriété de build **mscorlib. dll n’existe pas** dans les versions plus récentes de Visual Studio.
 
 1. Ouvrez la page **Propriétés** du projet.
 
@@ -46,7 +46,7 @@ Si vous ne spécifiez pas **-nostdlib**, mscorlib.dll est importé dans votre pr
 
 ### <a name="to-set-this-compiler-option-programmatically"></a>Pour définir cette option du compilateur par programmation
 
-Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A>.
+Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.NoStdLib%2A>.
 
 ## <a name="see-also"></a>Voir aussi
 

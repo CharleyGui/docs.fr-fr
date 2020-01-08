@@ -2,18 +2,18 @@
 title: Installation de Message Queuing (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: 118143f2d434e9f4399c3e9141743fc0254b61ab
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: e6d6a3a2e1bc0a0c936e4b8594eab836b559e5a7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70039623"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344748"
 ---
 # <a name="installing-message-queuing-msmq"></a>Installation de Message Queuing (MSMQ)
 Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Message Queuing 3.0.  
   
 > [!NOTE]
-> Message Queuing 4.0 n'est pas disponible dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+> Message Queuing 4,0 n’est pas disponible dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et Windows Server 2003.  
   
 #### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>Pour installer Message Queuing 4.0 sur Windows Server 2008 ou Windows Server 2008 R2  
   
@@ -35,7 +35,7 @@ Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Me
   
 2. Cliquez sur **programmes** puis, sous **programmes et fonctionnalités**, cliquez sur **activer et désactiver des fonctionnalités Windows**.  
   
-3. Développez Microsoft Message Queue Server (MSMQ), développez le noyau du serveur MSMQ (Microsoft Message Queue), puis cochez les cases des fonctionnalités Message Queuing à installer :  
+3. Développez Microsoft Message Queue Server (MSMQ), développez Noyau du serveur MSMQ (Microsoft Message Queue), puis cochez les cases des fonctionnalités Message Queuing à installer :  
   
     - Intégration des services de domaine Active Directory MSMQ (pour les ordinateurs liés à un domaine).  
   
@@ -54,7 +54,7 @@ Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Me
 3. Sélectionnez Message Queuing, puis cliquez sur **Détails**.  
   
     > [!NOTE]
-    > Si vous exécutez [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], sélectionnez Serveur d'applications pour accéder à Message Queuing.  
+    > Si vous exécutez Windows Server 2003, sélectionnez serveur d’applications pour accéder à Message Queuing.  
   
 4. Vérifiez que l'option Prise en charge HTTP MSMQ est activée dans la page de détails.  
   

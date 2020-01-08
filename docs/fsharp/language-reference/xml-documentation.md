@@ -1,13 +1,13 @@
 ---
-title: Documentation XML (F#)
+title: Documentation XML
 description: En savoir plus sur F# la prise en charge dans pour la génération de documentation à partir de commentaires.
 ms.date: 05/16/2016
-ms.openlocfilehash: b89ab4117f4dd71126f8e203f4a5271ab3c30021
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
+ms.openlocfilehash: 0a87915c361fc88f0c05264e1c17278fd656a167
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68630819"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344691"
 ---
 # <a name="xml-documentation"></a>Documentation XML
 
@@ -27,13 +27,13 @@ Il existe deux façons d’écrire des commentaires de documentation XML. L’un
 |----------|-----------|
 |**\<c\>** _text_ **\</c\>**|Spécifie que le *texte* est du code. Cette balise peut être utilisée par les générateurs de documentation pour afficher du texte dans une police appropriée pour le code.|
 |**\<summary\>** _text_ **\</summary\>**|Spécifie que le *texte* est une brève description de l’élément de programme. La description correspond généralement à une ou deux phrases.|
-|texte des notes/Remarks  **\<\>** **\<\>**|Spécifie que le *texte* contient des informations supplémentaires sur l’élément de programme.|
-|**\>**  **param\<Name = "** nom"**description/paramReturns\<\>**|Spécifie le nom et la description d’un paramètre de fonction ou de méthode.|
-|**\>**  **typeparam\<Name = "** nom"**description/typeparam\<\>**|Spécifie le nom et la description d’un paramètre de type.|
+|**\<notes\>** _texte_ **\</Remarks\>**|Spécifie que le *texte* contient des informations supplémentaires sur l’élément de programme.|
+|**\<param Name = "** _Name_ **"\>** _Description_ **\</param Returns\>**|Spécifie le nom et la description d’un paramètre de fonction ou de méthode.|
+|**\<typeparam Name = "** _Name_ **"\>** _Description_ **\</typeparam\>**|Spécifie le nom et la description d’un paramètre de type.|
 |**\<returns\>** _text_ **\</returns\>**|Spécifie que le *texte* décrit la valeur de retour d’une fonction ou d’une méthode.|
-|**\>**  **exception\<CREF = "** type"**description/exception\<\>**|Spécifie le type d’exception qui peut être généré et les circonstances dans lesquelles il est levé.|
-|**\>**  **consultez\<CREF = "** référence"**Text/See\<\>**|Spécifie un lien Inline vers un autre élément de programme. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Le *texte* est le texte affiché dans le lien.|
-|**\>** seealso CREF = "référence"/  **\<**|Spécifie un lien Voir également vers la documentation d’un autre type. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Consultez également les liens qui apparaissent généralement en bas d’une page de documentation.|
+|**\<exception CREF = "** _type_ **"\>** _Description_ **\</exception\>**|Spécifie le type d’exception qui peut être généré et les circonstances dans lesquelles il est levé.|
+|**\<consultez CREF = "** _référence_ **"\>** _Text_ **\</See\>**|Spécifie un lien Inline vers un autre élément de programme. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Le *texte* est le texte affiché dans le lien.|
+|**\<seealso CREF = "** _référence_ **"/\>**|Spécifie un lien Voir également vers la documentation d’un autre type. La *référence* est le nom tel qu’il apparaît dans le fichier de documentation XML. Consultez également les liens qui apparaissent généralement en bas d’une page de documentation.|
 |**\<para\>** _text_ **\</para\>**|Spécifie un paragraphe de texte. Il est utilisé pour séparer le texte dans la balise **Notes** .|
 
 ## <a name="example"></a>Exemple
@@ -50,7 +50,7 @@ Voici un commentaire de documentation XML standard dans un fichier de signature.
 
 ### <a name="description"></a>Description
 
-L’exemple suivant illustre la méthode alternative, sans balises XML. Dans cet exemple, le texte entier du commentaire est considéré comme un résumé. Notez que si vous ne spécifiez pas explicitement une balise de résumé, vous ne devez pas spécifier d’autres balises, telles que **param** ou return Tags.
+L’exemple suivant illustre la méthode alternative, sans balises XML. Dans cet exemple, le texte entier du commentaire est considéré comme un résumé. Notez que si vous ne spécifiez pas explicitement une balise de résumé, vous ne devez pas spécifier d’autres balises, telles que **param** ou **Return** Tags.
 
 ### <a name="code"></a>Code
 

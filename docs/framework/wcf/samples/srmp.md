@@ -2,12 +2,12 @@
 title: SRMP
 ms.date: 03/30/2017
 ms.assetid: cf37078c-dcb4-45e0-acaf-2f196521b226
-ms.openlocfilehash: 0ee11b67dcd9c7251df17dc7523dc20765e157c5
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 1e0290a4df688d39f84086dc4c1b41712f81076a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716690"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345144"
 ---
 # <a name="srmp"></a>SRMP
 Cet exemple illustre comment établir une communication en file d'attente avec transaction à l'aide de MSMQ (Message Queuing) sur HTTP.  
@@ -28,7 +28,7 @@ Cet exemple illustre comment établir une communication en file d'attente avec t
   
 5. Si vous souhaitez vous assurer que le transport HTTP est bien utilisé pour la communication, configurez MSMQ de sorte à ce qu'il s'exécute en mode renforcé. Cela garantit qu'aucun message ne peut être transmis à une file d'attente hébergée sur l'ordinateur, quelle qu'elle soit, à l'aide d'un transport autre que HTTP.  
   
-6. Après avoir choisi d'exécuter MSMQ en mode renforcé, vous devez redémarrer l'ordinateur sur [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)].  
+6. Une fois que vous avez sélectionné MSMQ pour s’exécuter en mode renforcé, l’ordinateur doit être redémarré sur Windows Server 2003.  
   
 7. Exécutez le service.  
   

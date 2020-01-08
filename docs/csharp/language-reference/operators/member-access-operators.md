@@ -32,12 +32,12 @@ helpviewer_keywords:
 - hat operator [C#]
 - .. operator [C#]
 - range operator [C#]
-ms.openlocfilehash: ba2a8cd4995b9baab2071d3fb3c7980e45565692
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: e69cc5a9634f0b5232562782557645894f94ce2e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038995"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345301"
 ---
 # <a name="member-access-operators-c-reference"></a>Opérateurs d’accès aux membres (référence C#)
 
@@ -109,7 +109,13 @@ void TraceMethod() {}
 
 ## <a name="null-conditional-operators--and-"></a>Opérateurs conditionnels Null ?. et ?[]
 
-Disponible dans C# 6 et versions ultérieures, un opérateur conditionnel Null applique une opération d’accès aux membres, `?.`, ou d’accès aux éléments, `?[]`, à son opérande uniquement si ce dernier a une valeur non Null. Si l’opérande a la valeur `null`, le résultat de l’application de l’opérateur est `null`. L’opérateur d’accès aux membres conditionnels null `?.` est également appelé l’opérateur Elvis.
+Disponible dans C# 6 et versions ultérieures, un opérateur conditionnel null applique un accès au [membre](#member-access-operator-), `?.`ou un accès à l' [élément](#indexer-operator-), `?[]`, à son opérande uniquement si cet opérande a la valeur non null ; Sinon, elle retourne `null`. C'est
+
+- Si `a` prend la valeur `null`, le résultat de `a?.x` ou `a?[x]` est `null`.
+- Si `a` prend la valeur non null, le résultat de `a?.x` ou `a?[x]` est le même que le résultat de `a.x` ou de `a[x]`, respectivement.
+
+  > [!NOTE]
+  > Si `a.x` ou `a[x]` lève une exception, `a?.x` ou `a?[x]` lèvera la même exception pour les `a`non null. Par exemple, si `a` est une instance de tableau non null et que `x` se trouve en dehors des limites de `a`, `a?[x]` lèvera une <xref:System.IndexOutOfRangeException>.
 
 Les opérateurs conditionnels Null ont un effet de court-circuit. Autrement dit, si une opération dans une chaîne d’opérations d’accès au membre ou à l’élément conditionnelles retourne une valeur `null`, le reste de la chaîne ne s’exécute pas. Dans l’exemple suivant, `B` n’est pas évalué si `A` prend la valeur `null` et `C` n’est pas évalué si `A` ou `B` prend la valeur `null` :
 
@@ -123,6 +129,8 @@ L’exemple suivant illustre l’utilisation des opérateurs `?.` et `?[]` :
 [!code-csharp-interactive[null-conditional operators](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#NullConditional)]
 
 L’exemple précédent utilise également l' [opérateur de fusion null `??`](null-coalescing-operator.md) pour spécifier une autre expression à évaluer si le résultat d’une opération conditionnelle null est `null`.
+
+L’opérateur d’accès aux membres conditionnels null `?.` est également appelé l’opérateur Elvis.
 
 ### <a name="thread-safe-delegate-invocation"></a>Appel de délégué thread-safe
 
@@ -160,7 +168,7 @@ Vous utilisez également des parenthèses pour ajuster l’ordre dans lequel év
 
 ## <a name="index-from-end-operator-"></a>Index de fin d’opérateur ^
 
-Disponible dans C# 8,0 et versions ultérieures, l’opérateur`^`indique la position de l’élément à partir de la fin d’une séquence. Pour une séquence de longueur `length`, `^n` pointe sur l’élément avec des `length - n` de décalage à partir du début d’une séquence. Par exemple, `^1` pointe vers le dernier élément d’une séquence et `^length` pointe vers le premier élément d’une séquence.
+Disponible dans C# 8,0 et versions ultérieures, l’opérateur `^` indique la position de l’élément à partir de la fin d’une séquence. Pour une séquence de longueur `length`, `^n` pointe sur l’élément avec des `length - n` de décalage à partir du début d’une séquence. Par exemple, `^1` pointe vers le dernier élément d’une séquence et `^length` pointe vers le premier élément d’une séquence.
 
 [!code-csharp[index from end](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#IndexFromEnd)]
 
@@ -170,7 +178,7 @@ Vous pouvez également utiliser l’opérateur `^` avec l' [opérateur Range](#r
 
 ## <a name="range-operator-"></a>Opérateur de plage..
 
-Disponible dans C# 8,0 et versions ultérieures, l’opérateur`..`spécifie le début et la fin d’une plage d’index comme opérandes. L’opérande de gauche est un début *inclusif* d’une plage. L’opérande de droite est une extrémité *exclusive* d’une plage. L’un ou l’autre des opérandes peut être un index à partir du début ou de la fin d’une séquence, comme le montre l’exemple suivant :
+Disponible dans C# 8,0 et versions ultérieures, l’opérateur `..` spécifie le début et la fin d’une plage d’index comme opérandes. L’opérande de gauche est un début *inclusif* d’une plage. L’opérande de droite est une extrémité *exclusive* d’une plage. L’un ou l’autre des opérandes peut être un index à partir du début ou de la fin d’une séquence, comme le montre l’exemple suivant :
 
 [!code-csharp[range examples](~/samples/csharp/language-reference/operators/MemberAccessOperators.cs#Ranges)]
 

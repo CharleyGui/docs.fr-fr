@@ -7,17 +7,17 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], XML literals
 - literals [Visual Basic], XML
 ms.assetid: 37987c15-4ab8-471b-bd45-399816bfb57f
-ms.openlocfilehash: e5d2465d145f4059600121c6cef30bb2c74a8c1c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 4eaa9399ca0038e3142886abf2161266f8c77782
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346199"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636079"
 ---
 # <a name="xml-literals-overview-visual-basic"></a>Vue d'ensemble des littéraux XML (Visual Basic)
 Un *littéral XML* vous permet d’incorporer du code XML directement dans votre code Visual Basic. La syntaxe de littéral XML représente [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] objets et est similaire à la syntaxe XML 1,0. Il est ainsi plus facile de créer des éléments et des documents XML par programmation, car votre code a la même structure que le XML final.  
   
- Visual Basic compile des littéraux XML en objets [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit un modèle d’objet simple pour la création et la manipulation de XML, et ce modèle s’intègre parfaitement à [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Pour plus d'informations, consultez <xref:System.Xml.Linq.XElement>.  
+ Visual Basic compile des littéraux XML en objets [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit un modèle d’objet simple pour la création et la manipulation de XML, et ce modèle s’intègre parfaitement à LINQ (Language-Integrated Query). Pour plus d'informations, consultez <xref:System.Xml.Linq.XElement>.  
   
  Vous pouvez incorporer une expression Visual Basic dans un littéral XML. Au moment de l’exécution, votre application crée un objet [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour chaque littéral, en incorporant les valeurs des expressions incorporées. Cela vous permet de spécifier un contenu dynamique dans un littéral XML. Pour plus d’informations, consultez [expressions incorporées en XML](../../../../visual-basic/programming-guide/language-features/xml/embedded-expressions-in-xml.md).  
   

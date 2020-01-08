@@ -9,12 +9,12 @@ helpviewer_keywords:
 - multicast event delegates
 - Windows Forms controls, events
 ms.assetid: 814a6a43-a312-4791-88d8-f75f9a4f8c4c
-ms.openlocfilehash: 92942066b5f08ada0154781ae54b5d8494944ca1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4abcf20b851f349a2b5df78c1fe1d15f729a5462
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963474"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345001"
 ---
 # <a name="events-overview-windows-forms"></a>Vue d'ensemble des événements (Windows Forms)
 Un événement est une action à laquelle vous pouvez répondre ou que vous pouvez « gérer » dans le code. Les événements peuvent être déclenchés par une action de l'utilisateur (quand il clique sur un bouton de la souris ou appuie sur une touche), par le code d'un programme ou par le système.
@@ -33,7 +33,7 @@ Un événement est une action à laquelle vous pouvez répondre ou que vous pouv
 
  Ce modèle d’événement utilise des *délégués* pour lier des événements aux méthodes utilisées pour les gérer. Le délégué permet aux autres classes de s'inscrire pour la notification d'événement en spécifiant une méthode de gestionnaire. Quand l'événement se produit, le délégué appelle la méthode liée. Pour plus d’informations sur la façon de définir des délégués, consultez [événements](../../standard/events/index.md).
 
- Les délégués peuvent être liés à une ou plusieurs méthodes (ou multidiffusion). Lorsque vous créez un délégué pour un événement, vous (ou les fenêtres) créez généralement un événement de multidiffusion. Il existe cependant une exception à cette règle : quand un événement déclenche une procédure particulière (par exemple, l'affichage d'une boîte de dialogue) qui logiquement ne se répéterait pas plusieurs fois par événement. Pour plus d’informations sur la création d’un délégué multicast [, consultez Procédure: Combiner des délégués (délégués multicast](../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md)).
+Les délégués peuvent être liés à une ou plusieurs méthodes (ou multidiffusion). Lorsque vous créez un délégué pour un événement, vous (ou les fenêtres) créez généralement un événement de multidiffusion. Il existe cependant une exception à cette règle : quand un événement déclenche une procédure particulière (par exemple, l'affichage d'une boîte de dialogue) qui logiquement ne se répéterait pas plusieurs fois par événement. Pour plus d’informations sur la création d’un délégué multicast, consultez [Comment combiner des délégués (délégués multicast)](../../csharp/programming-guide/delegates/how-to-combine-delegates-multicast-delegates.md).
 
  Un délégué multidiffusion tient à jour une liste d'appel des méthodes auxquelles il est lié. Celui-ci prend en charge une méthode <xref:System.Delegate.Combine%2A> pour ajouter une méthode à la liste d'appel et une méthode <xref:System.Delegate.Remove%2A> pour la supprimer.
 

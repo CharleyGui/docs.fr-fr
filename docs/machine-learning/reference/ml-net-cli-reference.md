@@ -1,89 +1,65 @@
 ---
-title: Commande auto-train dans l’outil CLI ML.NET
+title: Informations de référence sur les commandes CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
-ms.date: 04/16/2019
-ms.custom: ''
-ms.openlocfilehash: 8363a16ab5e793e715131ac37283106517850439
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.date: 12/18/2019
+ms.openlocfilehash: 5e59eba91721b26622360818a73adb07a654dc28
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929201"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636118"
 ---
-# <a name="the-auto-train-command-in-mlnet-cli"></a>Commande « auto-train » dans l’outil CLI ML.NET
+# <a name="the-mlnet-cli-command-reference"></a>Informations de référence sur la commande CLI ML.NET
+
+La commande `auto-train` est la commande principale fournie par l’outil CLI ML.NET. La commande vous permet de générer un modèle de bonne qualité ML.NET à l’aide de Machine Learning automatisée (AutoML), C# ainsi que l’exemple de code pour exécuter/noter ce modèle. En outre, le C# code permettant d’effectuer l’apprentissage du modèle est généré pour vous afin de Rechercher l’algorithme et les paramètres du modèle.
 
 > [!NOTE]
 > Cette rubrique fait référence à l’interface CLI ML.NET et au moteur AutoML ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être changées.
 
-La commande `auto-train` est la commande principale fournie par l’outil CLI ML.NET. Cette commande vous permet de générer un modèle ML.NET de bonne qualité (fichier .zip de modèle sérialisé) ainsi que l’exemple de code C# nécessaire pour exécuter et évaluer ce modèle. Le code C# utilisé pour créer et entraîner ce modèle est également généré. Vous pouvez alors effectuer des recherches sur l’algorithme et les paramètres qu’il utilise pour ce « meilleur modèle » généré.
+## <a name="overview"></a>Vue d'ensemble de
 
-Vous pouvez générer ces ressources à partir de vos propres jeux de données sans avoir à coder quoi que ce soit. Vous gagnez ainsi en productivité, même si vous connaissez déjà ML.NET.
-
-La CLI ML.NET prend en charge les tâches de ML suivantes :
-
-- `binary-classification`
-- `multiclass-classification`
-- `regression`
-
-- À l’avenir, elle prendra d’autres tâches de machine learning comme
-  - `recommendation`
-  - `anomaly-detection`
-  - `clustering`
-
-Exemple d’utilisation depuis l’invite de commandes :
+Exemple d'utilisation :
 
 ```console
-> mlnet auto-train --task regression --dataset "cars.csv" --label-column-name price
+mlnet auto-train --task regression --dataset "cars.csv" --label-column-name price
 ```
 
 La commande `mlnet auto-train` génère les ressources suivantes :
 
 - Un fichier .zip de modèle sérialisé (le « meilleur modèle »), prêt à être utilisé.
-- Le code C# nécessaire pour exécuter/évaluer ce modèle généré (et pour effectuer des prédictions dans vos applications utilisateur avec ce modèle).
-- Le code C# comportant le code d’entraînement utilisé pour générer ce modèle (à des fins d’apprentissage).
+- C#code pour exécuter/noter le modèle généré.
+- C#Code avec le code d’apprentissage utilisé pour générer ce modèle.
 
-Les deux premières ressources peuvent être utilisées directement dans vos applications utilisateur (application web ASP.NET Core, services, application de bureau, etc.) pour effectuer des prédictions à l’aide de ce modèle ML généré.
+Les deux premières ressources peuvent être utilisées directement dans vos applications d’utilisateur final (ASP.NET Core application Web, services, application de bureau, etc.) pour faire des prédictions avec le modèle.
 
-La troisième ressource, le code d’entraînement, montre quel code de l’API ML.NET a été utilisé par l’interface CLI pour entraîner le modèle généré. Vous pouvez ainsi savoir quel entraîneur/algorithme et quels hyperparamètres spécifiques ont été sélectionnés par l’interface CLI et le moteur AutoML ML.NET.
-
-## <a name="the-auto-train-command-uses-the-automl-engine"></a>La commande « auto-train » utilise le moteur AutoML
-
-L’interface CLI utilise le moteur AutoML ML.NET (package NuGet) pour rechercher intelligemment les meilleurs modèles, comme le montre le diagramme suivant :
-
-![image](./media/ml-net-automl-working-diagram.png "Fonctionnement du moteur AutoML dans la CLI ML.NET")
-
-Quand vous exécutez l’outil CLI ML.NET avec la commande « auto-train », il essaie de nombreuses itérations avec différents algorithmes et combinaisons de configuration.
-
-## <a name="reference-for-auto-train-command"></a>Informations de référence sur la commande « auto-train »
+La troisième ressource, le code de formation, vous montre le code de l’API ML.NET utilisé par l’interface CLI pour former le modèle généré, ce qui vous permet d’examiner l’algorithme et les paramètres spécifiques du modèle.
 
 ## <a name="examples"></a>Exemples
 
-Commande CLI la plus simple pour un problème de classification binaire (le moteur AutoML doit déduire la majeure partie de la configuration des données fournies) :
+La commande CLI la plus simple pour un problème de classification binaire (AutoML déduit la majeure partie de la configuration à partir des données fournies) :
 
 ```console
-> mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
+mlnet auto-train --task binary-classification --dataset "customer-feedback.tsv" --label-column-name Sentiment
 ```
 
 Autre commande CLI simple pour un problème de régression :
 
 ``` console
-> mlnet auto-train --task regression --dataset "cars.csv" --label-column-name Price
+mlnet auto-train --task regression --dataset "cars.csv" --label-column-name Price
 ```
 
 Créer et entraîner un modèle de classification binaire avec un jeu de données d’entraînement, un jeu de données de test et des arguments explicites de personnalisation supplémentaire :
 
 ```console
-> mlnet auto-train --task binary-classification --dataset "/MyDataSets/Population-Training.csv" --test-dataset "/MyDataSets/Population-Test.csv" --label-column-name "InsuranceRisk" --cache on --max-exploration-time 600
+mlnet auto-train --task binary-classification --dataset "/MyDataSets/Population-Training.csv" --test-dataset "/MyDataSets/Population-Test.csv" --label-column-name "InsuranceRisk" --cache on --max-exploration-time 600
 ```
 
-## <a name="name"></a>Nom
+## <a name="command-options"></a>Options de commande
 
-`mlnet auto-train` : entraîne plusieurs modèles (« n » itérations) en fonction du jeu de données fourni, puis sélectionne le meilleur modèle, l’enregistre dans un fichier .zip sérialisé et génère le code C# associé pour l’évaluation et l’entraînement.
-
-## <a name="synopsis"></a>Résumé
+`mlnet auto-train` effectue l’apprentissage de plusieurs modèles en fonction du jeu de données fourni et sélectionne enfin le meilleur modèle, l’enregistre sous la forme d’un C# fichier. zip sérialisé et génère du code associé pour la notation et l’apprentissage.
 
 ```console
-> mlnet auto-train
+mlnet auto-train
 
 --task | --mltask | -T <value>
 
@@ -116,11 +92,9 @@ Créer et entraîner un modèle de classification binaire avec un jeu de donnée
 
 ```
 
-Les options d’entrée non valides doivent amener l’outil CLI à émettre une liste d’entrées valides et un message d’erreur expliquant quel argument est éventuellement manquant.
+Les options d’entrée non valides entraînent l’émission par l’outil CLI d’une liste d’entrées valides et d’un message d’erreur.
 
-## <a name="options"></a>Options
-
- ----------------------------------------------------------
+## <a name="task"></a>Tâche
 
 `--task | --mltask | -T` (chaîne)
 
@@ -130,21 +104,19 @@ Simple chaîne fournissant le problème de ML à résoudre. Par exemple, toutes 
 - `binary-classification` : choisissez cette tâche si le résultat du modèle ML a deux valeurs booléennes de catégorie possibles (0 ou 1).
 - `multiclass-classification` : choisissez cette tâche si le résultat du modèle ML a plusieurs valeurs de catégorie possibles.
 
-Dans les versions futures, des tâches et scénarios de ML supplémentaires tels que `recommendations`, `clustering` et `ranking` seront pris en charge.
+Une seule tâche de ML doit être fournie dans cet argument.
 
- Une seule tâche de ML doit être fournie dans cet argument.
-
- ----------------------------------------------------------
+## <a name="dataset"></a>Groupe de données
 
 `--dataset | -d` (chaîne)
 
 Cet argument fournit le chemin de l’une des options suivantes :
 
-- *A : le fichier de jeu de données entier :* si vous utilisez cette option et que l’utilisateur ne fournit pas `--test-dataset` et `--validation-dataset`, des approches de validation croisée (k sous-échantillon, etc.) ou de fractionnement automatisé des données sont utilisées en interne pour la validation du modèle. Dans ce cas, l’utilisateur doit simplement fournir le chemin du jeu de données.
+- *R : l’intégralité du fichier de jeu de données :* Si vous utilisez cette option et que l’utilisateur ne fournit pas `--test-dataset` et `--validation-dataset`, la validation croisée (RepList, etc.) ou les approches de fractionnement automatique des données sont utilisées en interne pour valider le modèle. Dans ce cas, l’utilisateur doit simplement fournir le chemin du jeu de données.
 
-- *B : le fichier de jeu de données d’entraînement :* si l’utilisateur fournit également des jeux de données pour la validation du modèle (à l’aide de `--test-dataset` et éventuellement de `--validation-dataset`), l’argument `--dataset` revient à avoir uniquement le jeu de données d’entraînement. Par exemple, quand vous utilisez une approche 80 %-20 % pour valider la qualité du modèle et pour obtenir des métriques de précision, le « jeu de données d’entraînement » a 80 % des données, tandis que le « jeu de données de test » a 20 % des données.
+- *B : fichier de jeu de données d’apprentissage :* Si l’utilisateur fournit également des jeux de données pour la validation de modèle (à l’aide de `--test-dataset` et éventuellement `--validation-dataset`), l’argument `--dataset` signifie uniquement que « jeu de données d’apprentissage ». Par exemple, quand vous utilisez une approche 80 %-20 % pour valider la qualité du modèle et pour obtenir des métriques de précision, le « jeu de données d’entraînement » a 80 % des données, tandis que le « jeu de données de test » a 20 % des données.
 
-----------------------------------------------------------
+## <a name="test-dataset"></a>Jeu de données de test
 
 `--test-dataset | -t` (chaîne)
 
@@ -154,7 +126,7 @@ Si vous utilisez `--test-dataset`, `--dataset` est également requis.
 
 L’argument `--test-dataset` est facultatif, sauf si l’option --validation-dataset est utilisée. Dans ce cas, l’utilisateur doit recourir aux trois arguments.
 
-----------------------------------------------------------
+## <a name="validation-dataset"></a>Jeu de données de validation
 
 `--validation-dataset | -v` (chaîne)
 
@@ -181,7 +153,7 @@ Ainsi, la séparation des données peut être 80/10/10 ou 75/15/10. Par exemple�
 
 Dans tous les cas, ces pourcentages sont déterminés par l’utilisateur à l’aide de l’interface CLI, qui fournit les fichiers déjà fractionnés.
 
-----------------------------------------------------------
+## <a name="label-column-name"></a>Nom de la colonne d’étiquette
 
 `--label-column-name | -n` (chaîne)
 
@@ -189,17 +161,17 @@ Avec cet argument, vous pouvez spécifier une colonne cible/objectif (la variabl
 
 Cet argument est utilisé uniquement pour les tâches de ML supervisées telles qu’un *problème de classification*. Il ne peut pas être utilisé pour les tâches de ML non supervisées comme le *clustering*.
 
-----------------------------------------------------------
+## <a name="label-column-index"></a>Index de colonne d’étiquette
 
 `--label-column-index | -i` (entier)
 
 Avec cet argument, vous pouvez spécifier une colonne cible/objectif (la variable que vous souhaitez prédire) en utilisant l’index numérique de la colonne dans le fichier du jeu de données (les valeurs d’index de colonne commencent à 1).
 
-*Remarque :* Si l’utilisateur recourt également à l’argument `--label-column-name`, c’est celui-ci qui est utilisé.
+*Remarque :* Si l’utilisateur utilise également la `--label-column-name`, la `--label-column-name` est celle qui est utilisée.
 
 Cet argument est utilisé uniquement pour une tâche de ML supervisée telle qu’un *problème de classification*. Il ne peut pas être utilisé pour les tâches de ML non supervisées comme le *clustering*.
 
-----------------------------------------------------------
+## <a name="ignore-columns"></a>Ignorer les colonnes
 
 `--ignore-columns | -I` (chaîne)
 
@@ -211,12 +183,12 @@ Exemple :
 
 `--ignore-columns email, address, id, logged_in`
 
-----------------------------------------------------------
+## <a name="has-header"></a>A un en-tête
 
 `--has-header | -h` (booléen)
 
 Spécifiez si le ou les fichiers de jeu de données ont une ligne d’en-tête.
-Les valeurs possibles sont les suivantes :
+Les valeurs possibles sont :
 
 - `true`
 - `false`
@@ -225,7 +197,7 @@ La valeur par défaut est `true` si cet argument n’est pas spécifié par l’
 
 Pour que l’argument `--label-column-name` puisse être utilisé, le fichier de jeu de données doit avoir un en-tête et `--has-header` doit être défini sur `true` (paramétrage par défaut).
 
-----------------------------------------------------------
+## <a name="max-exploration-time"></a>Durée maximale d’exploration
 
 `--max-exploration-time | -x` (chaîne)
 
@@ -235,7 +207,7 @@ Cet argument définit la durée maximale (en secondes) dont dispose le processus
 
 La durée nécessaire pour les itérations peut varier selon la taille du jeu de données.
 
-----------------------------------------------------------
+## <a name="cache"></a>d'instance/de clé
 
 `--cache | -c` (chaîne)
 
@@ -245,15 +217,15 @@ Pour les jeux de données petits et moyens, l’utilisation du cache peut consid
 
 Toutefois, pour les grands jeux de données, le chargement de toutes les données en mémoire peut avoir un impact négatif dans la mesure où vous risquez de manquer de mémoire. Si vous effectuez un entraînement avec de grands fichiers de jeu de données sans utiliser de cache, ML.NET récupère des blocs de données du lecteur sous forme de flux s’il doit charger davantage de données.
 
-Vous pouvez indiquer les valeurs suivantes :
+Vous pouvez spécifier les valeurs suivantes :
 
-`on`: impose l’utilisation du cache lors de l’entraînement.
-`off`: impose la non-utilisation du cache lors de l’entraînement.
-`auto`: selon l’heuristique du moteur AutoML, le cache est utilisé ou non. En règle générale, si vous utilisez le choix `auto`, les jeux de données petits et moyens utilisent le cache, tandis que les grands jeux de données ne l’utilisent pas.
+`on`: force l’utilisation du cache lors de l’apprentissage.
+`off`: force le cache à ne pas être utilisé lors de l’apprentissage.
+`auto`: en fonction de l’heuristique AutoML, le cache est utilisé ou non. En règle générale, si vous utilisez le choix `auto`, les jeux de données petits et moyens utilisent le cache, tandis que les grands jeux de données ne l’utilisent pas.
 
 Si vous ne spécifiez pas le paramètre `--cache`, la configuration `auto` du cache est utilisée par défaut.
 
-----------------------------------------------------------
+## <a name="name"></a>Name
 
 `--name | -N` (chaîne)
 
@@ -261,13 +233,13 @@ Nom de la solution ou du projet de sortie créé. Si aucun nom n’est spécifi�
 
 Le fichier de modèle ML.NET (fichier .ZIP) reçoit également le même nom.
 
-----------------------------------------------------------
+## <a name="output-path"></a>Chemin de sortie
 
 `--output-path | -o` (chaîne)
 
 Emplacement/dossier racine où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
 
-----------------------------------------------------------
+## <a name="verbosity"></a>Commentaires
 
 `--verbosity | -V` (chaîne)
 
@@ -281,17 +253,15 @@ Les valeurs autorisées sont :
 
 Par défaut, l’outil CLI doit afficher un minimum de commentaires quand il fonctionne ; il doit par exemple indiquer qu’il fonctionne et, si possible, le temps restant ou le pourcentage de temps écoulé.
 
-----------------------------------------------------------
+## <a name="help"></a>Aide
 
 `-h|--help`
 
 Affiche l’aide de la commande avec une description de chacun de ses paramètres.
 
-----------------------------------------------------------
-
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour installer l’outil CLI ML.NET](../how-to-guides/install-ml-net-cli.md)
-- [Automatiser l’entraînement du modèle avec la CLI ML.NET](../automate-training-with-cli.md)
-- [Tutoriel : Générer automatiquement un classifieur binaire à l’aide de la CLI ML.NET](../tutorials/mlnet-cli.md)
+- [Vue d’ensemble de l’interface CLI ML.NET](../automate-training-with-cli.md)
+- [Didacticiel : analyser le sentiment à l’aide de l’interface CLI ML.NET](../tutorials/sentiment-analysis-cli.md)
 - [Télémétrie dans la CLI ML.NET](../resources/ml-net-cli-telemetry.md)

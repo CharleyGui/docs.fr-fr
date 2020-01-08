@@ -5,22 +5,22 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0b74bcf8-3f87-449f-bff7-6bcb0d69d212
-ms.openlocfilehash: 8807125bd61c71217ca96f3b5a38148ed100073b
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 1f4462f617eb81d30f893b52bdc674e1eee8961c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70794363"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634766"
 ---
 # <a name="single-table-queries-linq-to-dataset"></a>Requêtes d'analyse unique (LINQ to DataSet)
-[!INCLUDE[vbteclinqext](../../../../includes/vbteclinqext-md.md)]les requêtes fonctionnent sur les sources de données <xref:System.Collections.Generic.IEnumerable%601> qui implémentent <xref:System.Linq.IQueryable%601> l’interface ou l’interface. La <xref:System.Data.DataTable> classe n’implémentant aucune interface, vous devez appeler la <xref:System.Data.DataTableExtensions.AsEnumerable%2A> méthode si <xref:System.Data.DataTable> vous souhaitez utiliser en tant que source dans la `From` clause d’une [!INCLUDE[vbteclinq](../../../../includes/vbteclinq-md.md)] requête.  
+Les requêtes LINQ (Language-Integrated Query) fonctionnent sur les sources de données qui implémentent l’interface <xref:System.Collections.Generic.IEnumerable%601> ou l’interface <xref:System.Linq.IQueryable%601>. La classe <xref:System.Data.DataTable> n’implémentant aucune interface, vous devez appeler la méthode <xref:System.Data.DataTableExtensions.AsEnumerable%2A> si vous souhaitez utiliser le <xref:System.Data.DataTable> comme source dans la clause `From` d’une requête LINQ.  
   
  L'exemple ci-dessous obtient toutes les commandes en ligne de la table SalesOrderHeader et affiche l'ID de commande, la date de commande et le numéro de commande sur la console.  
   
  [!code-csharp[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/csharp/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/CS/Program.cs#where1)]  
  [!code-vb[DP LINQ to DataSet Examples#Where1](../../../../samples/snippets/visualbasic/VS_Snippets_ADO.NET/DP LINQ to DataSet Examples/VB/Module1.vb#where1)] 
   
- La requête de variable locale est initialisée avec une expression de requête qui s’exécute sur une ou plusieurs sources d’informations en appliquant un ou plusieurs opérateurs de requête à partir des opérateurs de requête standard ou, dans le cas de LINQ to DataSet, des opérateurs spécifiques à <xref:System.Data.DataSet>classe. L'expression de requête de l'exemple précédent utilise deux des opérateurs de requête standard : `Where` et `Select`.  
+ La requête de variable locale est initialisée avec une expression de requête qui s’exécute sur une ou plusieurs sources d’informations en appliquant un ou plusieurs opérateurs de requête à partir des opérateurs de requête standard ou, dans le cas de LINQ to DataSet, des opérateurs spécifiques à la classe <xref:System.Data.DataSet>. L'expression de requête de l'exemple précédent utilise deux des opérateurs de requête standard : `Where` et `Select`.  
   
  La clause `Where` filtre la séquence en fonction d'une condition : dans ce cas, que l'indicateur `OnlineOrderFlag` soit défini sur `true`. L'opérateur `Select` alloue et retourne un objet énumérable qui capture les arguments transmis à l'opérateur. Dans l'exemple ci-dessus, un type anonyme est créé avec trois propriétés : `SalesOrderID`, `OrderDate` et `SalesOrderNumber`. Les valeurs de ces trois propriétés sont définies selon les valeurs des colonnes `SalesOrderID`, `OrderDate` et `SalesOrderNumber` de la table `SalesOrderHeader`.  
   

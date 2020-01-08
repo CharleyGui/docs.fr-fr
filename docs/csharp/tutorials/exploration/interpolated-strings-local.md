@@ -2,12 +2,12 @@
 title: Interpolation de chaîne - Tutoriel C#
 description: Ce tutoriel montre comment utiliser la fonctionnalité d’interpolation de chaîne en C# pour insérer les résultats d’expressions mises en forme dans une chaîne plus grande.
 ms.date: 10/23/2018
-ms.openlocfilehash: 53b9afa4c5ccdcb1f18d2947981aee6571b73134
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 593f3a77370da73dfd5f090be98112327b86b1f7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120121"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346780"
 ---
 # <a name="use-string-interpolation-to-construct-formatted-strings"></a>Utiliser l’interpolation de chaîne pour construire des chaînes mises en forme
 
@@ -32,7 +32,7 @@ var name = "<name>";
 Console.WriteLine($"Hello, {name}. It's a pleasure to meet you!");
 ```
 
-Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, il affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *expression de chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
+Essayez ce code en tapant `dotnet run` dans la fenêtre de console. Quand vous exécutez le programme, celui-ci affiche une chaîne unique qui inclut votre nom dans le message d’accueil. La chaîne qui se trouve dans l’appel de méthode <xref:System.Console.WriteLine%2A> est une *expression de chaîne interpolée*. C’est un genre de modèle qui vous permet de construire une chaîne unique (appelée *chaîne de résultat*) à partir d’une chaîne qui comprend du code incorporé. Les chaînes interpolées sont particulièrement utiles pour insérer des valeurs dans une chaîne ou pour concaténer (joindre) des chaînes.
 
 Cet exemple simple contient les deux éléments que chaque chaîne interpolée doit avoir :
 
@@ -46,7 +46,7 @@ Essayons quelques autres exemples d’interpolation de chaîne avec d’autres t
 
 Dans la section précédente, vous avez utilisé l’interpolation de chaîne pour insérer une chaîne à l’intérieur d’une autre. Le résultat d’une expression d’interpolation peut toutefois être de n’importe quel type de données. Nous allons insérer des valeurs de différents types de données dans une chaîne interpolée.
 
-Dans l’exemple suivant, nous commençons par définir une [classe](../../programming-guide/classes-and-structs/classes.md) comme type de données `Vegetable` avec la [propriété](../../properties.md) `Name` et la [méthode](../../methods.md) `ToString`, qui [remplace](../../language-reference/keywords/override.md) le comportement de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le [modificateur d’accès `public`](../../language-reference/keywords/public.md) permet à n’importe quel code client d’obtenir la représentation sous forme de chaîne d’une instance de `Vegetable`. Dans l’exemple, la méthode `Vegetable.ToString` retourne la valeur de la propriété `Name` qui est initialisée au niveau du [constructeur](../../programming-guide/classes-and-structs/constructors.md) `Vegetable` :
+Dans l’exemple suivant, nous commençons par définir un type de données de [classe](../../programming-guide/classes-and-structs/classes.md) `Vegetable` qui a une [propriété](../../properties.md) `Name` et une [méthode](../../methods.md)`ToString`, qui [remplace](../../language-reference/keywords/override.md) le comportement de la méthode <xref:System.Object.ToString?displayProperty=nameWithType>. Le [modificateur d’accès `public`](../../language-reference/keywords/public.md) permet à n’importe quel code client d’obtenir la représentation sous forme de chaîne d’une instance de `Vegetable`. Dans l’exemple, la méthode `Vegetable.ToString` retourne la valeur de la propriété `Name` qui est initialisée au [constructeur](../../programming-guide/classes-and-structs/constructors.md)`Vegetable` :
 
 ```csharp
 public Vegetable(string name) => Name = name;
@@ -58,7 +58,7 @@ Ensuite, nous créons une instance de la classe `Vegetable` nommée `item` en ut
 var item = new Vegetable("eggplant");
 ```
 
-Enfin, nous incluons la variable `item` dans une chaîne interpolée qui contient également une valeur <xref:System.DateTime>, une valeur <xref:System.Decimal> et une valeur d’[énumération](../../programming-guide/enumeration-types.md) `Unit`. Remplacez tout le code C# dans votre éditeur par le code suivant, puis utilisez la commande `dotnet run` pour l’exécuter :
+Enfin, nous incluons la variable `item` dans une chaîne interpolée qui contient également une valeur <xref:System.DateTime>, une valeur <xref:System.Decimal> et une valeur d' [énumération](../../language-reference/builtin-types/enum.md) `Unit`. Remplacez tout le code C# dans votre éditeur par le code suivant, puis utilisez la commande `dotnet run` pour l’exécuter :
 
 ```csharp
 using System;

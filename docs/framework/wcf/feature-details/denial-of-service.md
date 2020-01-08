@@ -1,23 +1,23 @@
 ---
-title: Déni de service
+title: Refus de service
 ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: f67a8b2977e84e24654b4b65c0cdd03bcbcb1b20
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4a9f3a3b7e69d33a8707a4bed5b9bc369c75f601
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968833"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346692"
 ---
-# <a name="denial-of-service"></a>Déni de service
+# <a name="denial-of-service"></a>Refus de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
   
 ## <a name="excess-memory-consumption"></a>Consommation de mémoire excessive  
  La lecture d'un document XML contenant un grand nombre de noms locaux uniques, d'espaces de noms ou de préfixes peut poser problème. Si vous utilisez une classe dérivée de <xref:System.Xml.XmlReader> et que vous appelez la propriété <xref:System.Xml.XmlReader.LocalName%2A>, <xref:System.Xml.XmlReader.Prefix%2A> ou <xref:System.Xml.XmlReader.NamespaceURI%2A> pour chaque élément, la chaîne retournée est ajoutée à <xref:System.Xml.NameTable>. La collection détenue par <xref:System.Xml.NameTable> ne diminue jamais en taille et crée une « fuite de mémoire » virtuelle des handles de chaîne.  
   
- Les solutions d’atténuation sont les suivantes :  
+ Pour limiter les risques, vous pouvez :  
   
 - Dérivez de la classe <xref:System.Xml.NameTable> et appliquez un quota de taille maximale. (Vous ne pouvez pas empêcher l'utilisation d'un <xref:System.Xml.NameTable> ou basculer <xref:System.Xml.NameTable> lorsqu'il est plein.)  
   
@@ -26,7 +26,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
 ## <a name="malicious-client-sends-excessive-license-requests-to-service"></a>Envoi d'un nombre excessif de demandes de licence à un service par un client malveillant  
  Si un client malveillant bombarde un service de demandes de licence, il peut induire une utilisation excessive de la mémoire par le serveur.  
   
- Atténuation : Utilisez les propriétés suivantes de la <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> classe:  
+ Atténuation : utilisez les propriétés suivantes de la classe <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings> :  
   
 - <xref:System.ServiceModel.Channels.LocalServiceSecuritySettings.MaxCachedCookies%2A> : contrôle le nombre maximal de `SecurityContextToken`s limités par le temps que le serveur met en cache après une négociation `SPNego` ou `SSL`.  
   
@@ -47,19 +47,19 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
  Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://go.microsoft.com/fwlink/?LinkId=186123). Pour plus d’informations, consultez [audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Les implémentations non valides de IAuthorizationPolicy peuvent provoquer le blocage du service  
- L’appel <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> de la méthode sur une implémentation défaillante <xref:System.IdentityModel.Policy.IAuthorizationPolicy> de l’interface peut provoquer le blocage du service.  
+ L’appel de la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> sur une implémentation défaillante de l’interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy> peut empêcher le service de répondre.  
   
- Atténuation : Utilisez uniquement du code de confiance. Autrement dit, utilisez uniquement un code que vous avez vous-même écrit et testé, ou qui provient d'un fournisseur approuvé. N’autorisez pas les extensions non fiables de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> à s’intégrer à votre code sans prendre toutes les précautions requises. Cela s'applique à toutes les extensions utilisées dans une implémentation de service. WCF ne fait aucune distinction entre le code d’application et le code étranger qui est connecté à l’aide de points d’extensibilité.  
+ Atténuation : utilisez uniquement un code de confiance. Autrement dit, utilisez uniquement un code que vous avez vous-même écrit et testé, ou qui provient d'un fournisseur approuvé. N’autorisez pas les extensions non fiables de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> à s’intégrer à votre code sans prendre toutes les précautions requises. Cela s'applique à toutes les extensions utilisées dans une implémentation de service. WCF ne fait aucune distinction entre le code d’application et le code étranger qui est connecté à l’aide de points d’extensibilité.  
   
 ## <a name="kerberos-maximum-token-size-may-need-resizing"></a>La taille maximale de jeton Kerberos peut devoir être redimensionnée  
  Si un client appartient à un grand nombre de groupes (approximativement 900, bien que le nombre réel varie selon les groupes), un problème peut se produire lorsque le bloc d'un en-tête de message dépasse 64 kilo-octets. Dans ce cas, vous pouvez augmenter la taille maximale du jeton Kerberos, comme décrit dans l’article Support Microsoft «[l’authentification Kerberos d’Internet Explorer ne fonctionne pas en raison d’une mémoire tampon insuffisante se connectant à IIS](https://go.microsoft.com/fwlink/?LinkId=89176)». Vous devrez peut-être également augmenter la taille maximale du message WCF pour prendre en charge le plus grand jeton Kerberos.  
   
 ## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>L'inscription automatique provoque la création de plusieurs certificats avec le même nom de sujet pour l'ordinateur  
- L' *inscription* automatique est la capacité de [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] à inscrire automatiquement des utilisateurs et des ordinateurs pour les certificats. Lorsqu’un ordinateur se trouve sur un domaine dans lequel cette fonctionnalité est activée, un certificat X.509, dont le rôle prévu est d’authentifier les clients, est créé automatiquement et inséré dans le magasin de certificats personnels de l’ordinateur local à chaque fois qu’un nouvel ordinateur est joint au réseau. Toutefois, l'inscription automatique utilise le même nom de sujet pour tous les certificats qu'il crée dans le cache.  
+ L' *inscription* automatique est la capacité de Windows Server 2003 à inscrire automatiquement les utilisateurs et les ordinateurs pour les certificats. Lorsqu’un ordinateur se trouve sur un domaine dans lequel cette fonctionnalité est activée, un certificat X.509, dont le rôle prévu est d’authentifier les clients, est créé automatiquement et inséré dans le magasin de certificats personnels de l’ordinateur local à chaque fois qu’un nouvel ordinateur est joint au réseau. Toutefois, l'inscription automatique utilise le même nom de sujet pour tous les certificats qu'il crée dans le cache.  
   
  L’impact est que les services WCF peuvent ne pas s’ouvrir sur des domaines avec inscription automatique. Cela est dû au fait que les critères de recherche d'informations d'identification X.509 du service par défaut peuvent être ambigus car il existe plusieurs certificats portant le nom DNS (Domain Name System) complet de l'ordinateur. Un certificat peut provenir de l'inscription automatique tandis qu'un autre peut être un certificat auto-publié.  
   
- Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [ \<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
+ Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [\<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
   
  Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=95166).  
   
@@ -69,13 +69,13 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
 ## <a name="protect-configuration-files-with-acls"></a>Protection des fichiers de configuration avec des listes ACL  
  Vous pouvez spécifier des revendications obligatoires et facultatives dans le code et les fichiers de configuration pour les jetons émis par CardSpace. Cette procédure entraîne l'émission d'éléments correspondants dans les messages `RequestSecurityToken` envoyés au service de jeton de sécurité. Un intrus peut modifier un code ou une configuration pour supprimer des revendications requises ou facultatives et éventuellement faire en sorte que le service de jeton de sécurité publie un jeton qui n'autorise pas l'accès au service cible.  
   
- Pour atténuer les risques: Exigez l’accès à l’ordinateur pour modifier le fichier de configuration. Utilisez les listes de contrôle d'accès au fichier (ACL) pour sécuriser les fichiers de configuration. WCF exige que le code se trouve dans le répertoire de l’application ou dans le Global Assembly Cache avant de pouvoir charger ce code à partir de la configuration. Utilisez des listes ACL de répertoire pour sécuriser des répertoires.  
+ Pour atténuer ce risque : imposez l'obligation d'accéder à l'ordinateur pour pouvoir modifier le fichier de configuration. Utilisez les listes de contrôle d'accès au fichier (ACL) pour sécuriser les fichiers de configuration. WCF exige que le code se trouve dans le répertoire de l’application ou dans le Global Assembly Cache avant de pouvoir charger ce code à partir de la configuration. Utilisez des listes ACL de répertoire pour sécuriser des répertoires.  
   
 ## <a name="maximum-number-of-secure-sessions-for-a-service-is-reached"></a>Atteinte du nombre maximal de sessions sécurisées pour un service  
  Lorsqu'un client est correctement authentifié par un service et qu'une session sécurisée est établie avec ce dernier, le service effectue le suivi de la session jusqu'à ce qu'elle soit annulée par le client ou qu'elle expire. Chaque session établie est décomptée du nombre maximal de sessions simultanées actives pour un service. Lorsque cette limite est atteinte, les clients qui essaient de créer une session avec ce service sont rejetés jusqu'à ce qu'une ou plusieurs sessions actives expirent ou soient annulées par un client. Un client peut ouvrir plusieurs sessions sur un service, chacune de ces sessions étant décomptée du nombre limite.  
   
 > [!NOTE]
-> Lorsque vous utilisez des sessions avec état, le paragraphe précédent ne s’applique pas. Pour plus d’informations sur les sessions avec état [, consultez Procédure: Créez un jeton de contexte de sécurité pour une](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md)session sécurisée.  
+> Lorsque vous utilisez des sessions avec état, le paragraphe précédent ne s’applique pas. Pour plus d’informations sur les sessions avec état, consultez [Comment : créer un jeton de contexte de sécurité pour une session sécurisée](../../../../docs/framework/wcf/feature-details/how-to-create-a-security-context-token-for-a-secure-session.md).  
   
  Pour atténuer ce risque, paramétrez le nombre maximal de sessions actives et la durée de vie maximale d'une session en définissant la propriété <xref:System.ServiceModel.Channels.SecurityBindingElement> de la classe <xref:System.ServiceModel.Channels.SecurityBindingElement>.  
   

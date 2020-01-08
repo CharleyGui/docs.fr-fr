@@ -3,12 +3,12 @@ title: Utiliser le modèle syntaxique du SDK .NET Compiler Platform
 description: Cette présentation fournit des informations sur les types que vous utilisez pour comprendre et manipuler les nœuds de syntaxe.
 ms.date: 10/15/2017
 ms.custom: mvc
-ms.openlocfilehash: 940d2756ef7735ee96d38d0286f99fadf7b81dc6
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 2cfd3c8bc8f47421c7992f7fea28c7b156450147
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774101"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346932"
 ---
 # <a name="work-with-syntax"></a>Utiliser la syntaxe
 
@@ -71,7 +71,7 @@ La propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.Span*> définit l’éten
 
 La propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.FullSpan*> définit l’étendue de texte qui inclut l’étendue du nœud, plus l’étendue des trivia de début ou de fin.
 
-Par exemple :
+Par exemple :
 
 ``` csharp
       if (x > 3)
@@ -85,13 +85,13 @@ L’étendue du nœud de l’instruction dans le bloc est délimitée par deux b
 
 ## <a name="kinds"></a>Genres
 
-Chaque nœud, jeton ou trivia a une propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> de type <xref:System.Int32?displayProperty=nameWithType>, qui identifie précisément l’élément de syntaxe représenté. Cette valeur peut être castée en une énumération spécifique au langage. Les langages C# et VB ont chacun une énumération `SyntaxKind` unique (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> et <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, respectivement) qui répertorie tous les nœuds, jetons et trivia acceptés dans leur grammaire. Cette conversion peut être effectuée automatiquement en accédant aux méthodes d’extension <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
+Chaque nœud, jeton ou trivia a une propriété <xref:Microsoft.CodeAnalysis.SyntaxNode.RawKind?displayProperty=nameWithType> de type <xref:System.Int32?displayProperty=nameWithType>, qui identifie précisément l’élément de syntaxe représenté. Cette valeur peut être convertie en une énumération spécifique au langage. Chaque langage, C# ou Visual Basic, a une seule énumération `SyntaxKind` (<xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind?displayProperty=nameWithType> et <xref:Microsoft.CodeAnalysis.VisualBasic.SyntaxKind?displayProperty=nameWithType>, respectivement) qui répertorie tous les nœuds, jetons et éléments de anecdotes possibles dans la grammaire. Cette conversion peut être effectuée automatiquement en accédant aux méthodes d’extension <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*?displayProperty=nameWithType> ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicExtensions.Kind*?displayProperty=nameWithType>.
 
 La propriété <xref:Microsoft.CodeAnalysis.SyntaxToken.RawKind> permet de lever facilement toute ambiguïté sur les types de nœud de syntaxe qui utilisent la même classe de nœud. Pour les jetons et les trivia, cette propriété est le seul moyen de différencier les types d’élément entre eux.
 
 Prenons l’exemple d’une classe <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax>, qui a les enfants <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Left>, <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.OperatorToken> et <xref:Microsoft.CodeAnalysis.CSharp.Syntax.BinaryExpressionSyntax.Right>. La propriété <xref:Microsoft.CodeAnalysis.CSharp.CSharpExtensions.Kind*> détermine si le nœud de syntaxe est du genre <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.AddExpression>, <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.SubtractExpression> ou <xref:Microsoft.CodeAnalysis.CSharp.SyntaxKind.MultiplyExpression>.
 
-## <a name="errors"></a>Erreurs
+## <a name="errors"></a>Erreurs du
 
 Même si le texte source contient des erreurs de syntaxe, une arborescence de syntaxe complète avec aller-retour au code source est exposée. Quand l’analyseur rencontre du code qui n’est pas conforme à la syntaxe définie pour le langage, il crée une arborescence de syntaxe à l’aide d’une des deux techniques suivantes.
 

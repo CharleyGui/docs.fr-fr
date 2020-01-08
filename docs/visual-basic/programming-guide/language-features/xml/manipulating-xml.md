@@ -6,15 +6,15 @@ helpviewer_keywords:
 - Visual Basic code, XML
 - XML [Visual Basic], manipulating
 ms.assetid: da32cffb-198d-41b1-9af3-260fe32e3b7d
-ms.openlocfilehash: 2565f43c1014bf0fa9fab1618fedfd1bd6bdb7ca
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: bb5aed5099d81f8c8898cd61523b90a43f27db78
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74330445"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636157"
 ---
 # <a name="manipulating-xml-in-visual-basic"></a>Manipulation de code XML dans Visual Basic
-Vous pouvez utiliser des *littéraux XML* pour charger du code XML à partir d’une source externe, telle qu’une chaîne, un fichier ou un flux. Vous pouvez ensuite utiliser [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour manipuler le XML et utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] pour interroger le XML.  
+Vous pouvez utiliser des *littéraux XML* pour charger du code XML à partir d’une source externe, telle qu’une chaîne, un fichier ou un flux. Vous pouvez ensuite utiliser [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour manipuler le XML et utiliser LINQ (Language-Integrated Query) pour interroger le XML.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Guide pratique : charger du code XML à partir d’un fichier, d’une chaîne ou d’un flux](../../../../visual-basic/programming-guide/language-features/xml/how-to-load-xml-from-a-file-string-or-stream.md)  
@@ -26,7 +26,7 @@ Vous pouvez utiliser des *littéraux XML* pour charger du code XML à partir d�
  [Guide pratique : modifier des littéraux XML](../../../../visual-basic/programming-guide/language-features/xml/how-to-modify-xml-literals.md)  
  Montre comment modifier les éléments, les attributs et les valeurs dans un littéral XML.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Propriétés d’axe XML](../../../../visual-basic/language-reference/xml-axis/index.md)  
  Fournit des liens vers des sections qui décrivent les différentes propriétés d’accès XML.  
   

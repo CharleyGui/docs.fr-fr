@@ -6,12 +6,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.author: nakersha
 author: natke
-ms.openlocfilehash: 5d8093c77799a55f4bc13e82c06c856dbb8d85cd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7d15c49ade4cd32389f7c86440b3a66aec8e4ea8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976738"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345196"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
@@ -21,7 +21,7 @@ Central vers ML.NET est un **modèle**machine learning. Le modèle spécifie les
 
 Une fois que vous disposez d’un modèle, vous pouvez l’ajouter à votre application pour effectuer les prédictions.
 
-ML.NET s’exécute sur Windows, Linux et macOS à l’aide de .NET Core ou de Windows à l’aide de .NET Framework. 64 bits est pris en charge sur toutes les plateformes. 32 bits est pris en charge sur Windows, à l’exception des fonctionnalités liées à TensorFlow, LightGBM et ONNX.
+ML.NET s’exécute sur Windows, Linux et macOS à l’aide de .NET Core ou de Windows à l’aide de .NET Framework. 64 bits est pris en charge sur toutes les plateformes. 32 bits est pris en charge sur Windows, à l’exception des fonctionnalités TensorFlow, LightGBM et ONNX.
 
 Exemples du type de prédictions que vous pouvez effectuer avec ML.NET :
 
@@ -32,7 +32,7 @@ Exemples du type de prédictions que vous pouvez effectuer avec ML.NET :
 |Détection d’anomalie|Détecter les transactions bancaires frauduleuses |
 |Recommandations|Suggérer d’autres produits aux acheteurs en ligne en fonction de leurs achats précédents|
 |Séries chronologiques/données séquentielles|Prévoir les ventes météo/produit|
-|Classification des images|Classer les pathologies dans des images médicales|
+|Classification d’images|Classer les pathologies dans des images médicales|
 
 ## <a name="hello-mlnet-world"></a>Hello ML.NET World
 
@@ -127,11 +127,11 @@ Le modèle de prix des maisons et le modèle de classification de texte sont tou
 
 ## <a name="data-preparation"></a>Préparation des données
 
-Dans la plupart des cas, les données dont vous disposez ne peuvent pas être utilisées directement pour entraîner un modèle Machine Learning. Les données brutes doivent être préparées ou prétraitées afin de pouvoir ensuite être utilisées pour rechercher les paramètres de votre modèle. Par exemple, vous devrez peut-être convertir vos données de valeurs de chaîne en une représentation numérique, supprimer des informations redondantes dans vos données d’entrée, réduire ou développer les dimensions de vos données d’entrée, ou encore normaliser ou redimensionner vos données.
+Dans la plupart des cas, les données dont vous disposez ne peuvent pas être utilisées directement pour entraîner un modèle Machine Learning. Les données brutes doivent être préparées ou prétraitées avant de pouvoir être utilisées pour rechercher les paramètres de votre modèle. Par exemple, vous devrez peut-être convertir vos données de valeurs de chaîne en une représentation numérique, supprimer des informations redondantes dans vos données d’entrée, réduire ou développer les dimensions de vos données d’entrée, ou encore normaliser ou redimensionner vos données.
 
 Les [tutoriels ML.NET](./tutorials/index.md) vous montrent différents pipelines de traitement des données (pour les données texte, d’image, numériques et de série chronologique) qui sont utilisés dans le cadre de tâches de machine learning spécifiques.
 
-La rubrique [Préparer vos données](./how-to-guides/prepare-data-ml-net.md) explique comment préparer des données de manière plus générale.
+[La préparation de vos données](./how-to-guides/prepare-data-ml-net.md) vous montre comment appliquer la préparation des données plus généralement.
 
 Vous trouverez toutes les [transformations disponibles](./resources/transforms.md) en annexe, dans la section des ressources.
 
@@ -212,7 +212,7 @@ Une fois que les objets dans le pipeline ont été créés, les données peuvent
     var model = pipeline.Fit(trainingData);
 ```
 
-L’appel de `Fit()` déclenche l’utilisation des données d’entraînement d’entrée pour estimer les paramètres du modèle. Ce processus est l’entraînement du modèle. Souvenez-vous, le modèle de régression linéaire vu plus haut avait deux paramètres de modèle : le **biais** et le **poids**. Après l’appel de `Fit()`, les valeurs des paramètres sont connues. La plupart des modèles ont beaucoup plus de paramètres que cela.
+L’appel de `Fit()` déclenche l’utilisation des données d’entraînement d’entrée pour estimer les paramètres du modèle. C'est ce que l'on appelle l'apprentissage du modèle. Souvenez-vous, le modèle de régression linéaire vu plus haut avait deux paramètres de modèle : le **biais** et le **poids**. Après l’appel de `Fit()`, les valeurs des paramètres sont connues. La plupart des modèles ont beaucoup plus de paramètres que cela.
 
 Pour plus d’informations sur l’entraînement du modèle, consultez [Entraîner votre modèle](./how-to-guides/train-machine-learning-model-ml-net.md)
 
@@ -242,7 +242,7 @@ Chaque transformation dans le pipeline a deux schémas : un schéma d’entrée
 
 Si le schéma de sortie d’une transformation dans le pipeline ne correspond pas au schéma d’entrée de la transformation suivante, ML.NET lève une exception.
 
-Un objet vue de données contient des colonnes et des lignes. Chaque colonne a un nom, un type et une longueur. Par exemple, les colonnes d’entrée dans l’exemple des prix de maisons sont **Size** et **Price**. Elles ont toutes deux un type et représentent des quantités scalaires plutôt que des quantités de vecteur.
+Un objet vue de données contient des colonnes et des lignes. Chaque colonne a un nom, un type et une longueur. Par exemple, les colonnes d’entrée dans l’exemple de prix de la maison sont la **taille** et le **prix**. Ils sont tous deux de type et sont des quantités scalaires plutôt que des vecteurs.
 
    ![Exemple d’objet vue de données dans ML.NET avec les données de prédiction des prix de maisons](./media/ml-net-dataview.png)
 
@@ -280,7 +280,7 @@ Dans les applications réelles, votre code d’entraînement et d’évaluation 
    mlContext.Model.Save(model, trainingData.Schema,"model.zip");
 ```
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 * Découvrez comment créer des applications à l’aide de différentes tâches de Machine Learning avec des jeux de données plus réalistes dans les [didacticiels](./tutorials/index.md).
 
