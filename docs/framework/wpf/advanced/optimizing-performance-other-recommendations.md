@@ -11,17 +11,17 @@ helpviewer_keywords:
 - ScrollBarVisibility enumeration [WPF]
 - brushes [WPF], performance
 ms.assetid: d028cc65-7e97-4a4f-9859-929734eaf40d
-ms.openlocfilehash: 6b4a5379145ebdffde0d5b76d8c7b9ab57261007
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b6d99d90a3da232e1873ebe8433e01ceb2977de6
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975790"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636430"
 ---
 # <a name="optimizing-performance-other-recommendations"></a>Optimisation des performances : autres recommandations
 <a name="introduction"></a> Cette rubrique fournit des recommandations pour améliorer les performances en plus de celles abordées dans les rubriques de la section [Optimisation des performances des applications WPF](optimizing-wpf-application-performance.md).  
   
- Cette rubrique contient les sections suivantes :  
+ Cette rubrique contient les sections suivantes :  
   
 - [Opacité au niveau des pinceaux et opacité au niveau des éléments](#Opacity)  
   
@@ -64,13 +64,13 @@ ms.locfileid: "73975790"
   
 <a name="Avoid_Using_ScrollBarVisibility"></a>   
 ## <a name="avoid-using-scrollbarvisibilityauto"></a>Éviter l’utilisation de ScrollBarVisibility=Auto  
- Dans la mesure du possible, évitez d’utiliser la valeur <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> pour les propriétés `HorizontalScrollBarVisibility` et `VerticalScrollBarVisibility`. Ces propriétés sont définies pour les objets <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer> et <xref:System.Windows.Controls.TextBox>, et en tant que propriété jointe pour l’objet <xref:System.Windows.Controls.ListBox>. Au lieu de cela, définissez <xref:System.Windows.Controls.ScrollBarVisibility> sur <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden> ou <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
+ Dans la mesure du possible, évitez d’utiliser la valeur <xref:System.Windows.Controls.ScrollBarVisibility.Auto?displayProperty=nameWithType> pour les propriétés `HorizontalScrollBarVisibility` et `VerticalScrollBarVisibility`. Ces propriétés sont définies pour les objets <xref:System.Windows.Controls.RichTextBox>, <xref:System.Windows.Controls.ScrollViewer>et <xref:System.Windows.Controls.TextBox>, et en tant que propriété jointe pour l’objet <xref:System.Windows.Controls.ListBox>. Au lieu de cela, définissez <xref:System.Windows.Controls.ScrollBarVisibility> sur <xref:System.Windows.Controls.ScrollBarVisibility.Disabled>, <xref:System.Windows.Controls.ScrollBarVisibility.Hidden>ou <xref:System.Windows.Controls.ScrollBarVisibility.Visible>.  
   
  La valeur <xref:System.Windows.Controls.ScrollBarVisibility.Auto> est prévue dans le cas où l’espace est limité et que les barres de défilement doivent être affichées uniquement si nécessaire. Par exemple, il peut être utile d’utiliser cette valeur <xref:System.Windows.Controls.ScrollBarVisibility> avec un <xref:System.Windows.Controls.ListBox> de 30 éléments, par opposition à un <xref:System.Windows.Controls.TextBox> contenant des centaines de lignes de texte.  
   
 <a name="FontCache"></a>   
 ## <a name="configure-font-cache-service-to-reduce-start-up-time"></a>Configurer le service de mise en cache de polices pour réduire le temps de démarrage  
- Le service de mise en cache de polices [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] partage les données de police entre les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. La première application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] que vous exécutez démarre ce service s’il n’est pas déjà en cours d’exécution. Si vous utilisez Windows Vista, vous pouvez définir le service « Windows Presentation Foundation (WPF) de cache de police 3.0.0.0 » à partir de « manuel » (par défaut) sur « automatique (début différé) » pour réduire le temps de démarrage initial des applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+ Le service de cache de police WPF partage les données de police entre les applications WPF. La première application WPF que vous exécutez démarre ce service si le service n’est pas déjà en cours d’exécution. Si vous utilisez Windows Vista, vous pouvez définir le service Windows Presentation Foundation « 3.0.0.0 (WPF) de cache des polices » à partir du « manuel » (par défaut) sur « automatique (début différé) » pour réduire le temps de démarrage initial des applications WPF.  
   
 ## <a name="see-also"></a>Voir aussi
 

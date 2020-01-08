@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: e1894d57a613531fecba6786529a735431d01423
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
-ms.translationtype: MT
+ms.openlocfilehash: 21b2b0fb606333ace05b6525c9f461e6ee1709d1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929080"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338532"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -118,7 +118,7 @@ Une implémentation de .NET inclut les composants suivants :
 
 - Un ou plusieurs runtimes. Exemples : CLR, CoreCLR, CoreRT.
 - Une bibliothèque de classes qui implémente une version de .NET Standard et qui peut inclure des API supplémentaires. Exemples : bibliothèque de classes de base .NET Framework, bibliothèque de classes de base .NET Core.
-- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : ASP.NET, Windows Forms et WPF sont inclus dans le .NET Framework.
+- Le cas échéant, un ou plusieurs frameworks d’application. Exemples : ASP.NET, Windows Forms et WPF) sont inclus dans .NET Framework.
 - Le cas échéant, des outils de développement. Certains outils de développement sont partagés entre plusieurs implémentations.
 
 Exemples d’implémentations de .NET :
@@ -211,7 +211,7 @@ Un package NuGet &mdash; ou simplement un package &mdash; est un fichier *.zip* 
 
 Le fichier *.zip* porte l’extension *.nupkg* et peut contenir des composants, tels que des fichiers *.dll* et des fichiers *.xml*, à utiliser avec plusieurs frameworks et versions cibles. Quand ils sont installés dans une application ou une bibliothèque, les composants appropriés sont sélectionnés en fonction du framework cible spécifié par l’application ou la bibliothèque. Les composants qui définissent l’interface se trouvent dans le dossier *ref*, tandis que les ressources qui définissent l’implémentation se trouvent dans le dossier *lib*.
 
-## <a name="platform"></a>plateforme
+## <a name="platform"></a>Plate-forme
 
 Système d’exploitation et le matériel sur lequel il s’exécute, tel que Windows, macOS, Linux, iOS et Android.
 
@@ -222,7 +222,7 @@ Voici quelques exemples d’utilisation dans des phrases :
 
 La documentation .NET utilise fréquemment « plateforme .NET » pour désigner soit une implémentation de .NET, soit la pile .NET y compris toutes les implémentations. Ces deux utilisations ayant tendance à être confondues avec la signification principale (système d’exploitation/matériel), nous envisageons de les supprimer de la documentation.
 
-## <a name="runtime"></a>runtime
+## <a name="runtime"></a>Runtime
 
 Environnement d’exécution d’un programme managé.
 
@@ -269,12 +269,12 @@ Consultez [Versions cibles de .NET Framework](frameworks.md).
 
 Plateforme Windows universelle.
 
-Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C++, C#, VB.NET et JavaScript. Quand vous utilisez C# et VB.NET, les API .NET sont fournies par .NET Core.
+Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites C++en C#,, Visual Basic et JavaScript. Lorsque vous C# utilisez et Visual Basic, les API .net sont fournies par .net core.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de .NET](index.md)
-- [Guide du .NET Framework](../framework/index.md)
+- [.NET Framework Guide](../framework/index.md) (Guide du .NET Framework)
 - [.NET Core](../core/index.md)
 - [ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)
 - [ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)

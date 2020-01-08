@@ -7,22 +7,22 @@ helpviewer_keywords:
 - .NET application deployment [WPF], deploying with Firefox add-ons
 - .NET Framework Assistant for Firefox
 ms.assetid: 2403403b-9b14-48e9-b70d-fa288a3c9081
-ms.openlocfilehash: 6e8a333fc84eb85b7a312cb87207ebc235fbfe9f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 687f61bd3ec7d10c6aa66c20cd5eb58fcc56f18a
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424559"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636365"
 ---
 # <a name="firefox-add-ons-to-support-net-application-deployment"></a>Modules complémentaires de Firefox pour la prise en charge du déploiement d'applications .NET
 Le plug-in Windows Presentation Foundation (WPF) pour Firefox et l’Assistant .NET Framework pour Firefox autorisent les applications de navigateur XAML (XBAP), les [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]libres et les applications ClickOnce à fonctionner avec le navigateur Mozilla Firefox.  
   
 ## <a name="wpf-plug-in-for-firefox"></a>Plug-in WPF pour Firefox  
- Le plug-in WPF pour Firefox permet d’accéder aux applications XBAP et aux fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libres, et de les exécuter au niveau supérieur ou dans un IFRAME HTML dans le navigateur Firefox. Une application XBAP est une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] qui peut être publiée sur un serveur Web et lancée dans des navigateurs pris en charge. Le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libre est un fichier XAML qui peut être parcouru et affiché dans les navigateurs pris en charge, de manière similaire à un fichier XML.  
+ Le plug-in WPF pour Firefox permet d’accéder aux applications XBAP et aux fichiers [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libres, et de les exécuter au niveau supérieur ou dans un IFRAME HTML dans le navigateur Firefox. Une application XBAP est une application WPF qui peut être publiée sur un serveur Web et lancée dans des navigateurs pris en charge. Le [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] libre est un fichier XAML qui peut être parcouru et affiché dans les navigateurs pris en charge, de manière similaire à un fichier XML.  
   
- Le plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour Firefox est installé avec le .NET Framework 3,5. La fenêtre 7 inclut le .NET Framework 3,5, mais n’inclut pas le plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour Firefox. Vous ne pouvez pas installer le plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour Firefox sur Windows 7.  
+ Le plug-in WPF de Firefox est installé avec le .NET Framework 3,5. La fenêtre 7 inclut le .NET Framework 3,5, mais n’inclut pas le plug-in WPF pour Firefox. Vous ne pouvez pas installer le plug-in WPF pour Firefox sur Windows 7.  
   
- Le .NET Framework 4 n’inclut pas le plug-in [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] pour Firefox. Toutefois, si les .NET Framework 3,5 et .NET Framework 4 sont installés, le plug-in WPF de Firefox est installé avec le .NET Framework 3,5. Par conséquent, .NET Framework 4 applications continueront à s’exécuter, car l’hôte WPF chargera la version appropriée du Framework. Pour plus d’informations, consultez [hôte WPF (PresentationHost. exe)](wpf-host-presentationhost-exe.md).  
+ Le .NET Framework 4 n’inclut pas le plug-in WPF pour Firefox. Toutefois, si les .NET Framework 3,5 et .NET Framework 4 sont installés, le plug-in WPF de Firefox est installé avec le .NET Framework 3,5. Par conséquent, .NET Framework 4 applications continueront à s’exécuter, car l’hôte WPF chargera la version appropriée du Framework. Pour plus d’informations, consultez [hôte WPF (PresentationHost. exe)](wpf-host-presentationhost-exe.md).  
   
 ## <a name="net-framework-assistant-for-firefox"></a>assistant .NET Framework pour Firefox  
  L’Assistant .NET Framework pour Firefox permet aux applications ClickOnce autonomes de s’exécuter à partir du navigateur Firefox. L’Assistant .NET Framework pour Firefox fonctionne de manière identique lorsqu’il est installé avant et après le navigateur Firefox. Lorsque le navigateur Firefox est lancé et que la .NET Framework 3,5 SP1 est installée, Firefox recherche et installe l’Assistant .NET Framework pour Firefox. Les utilisateurs peuvent configurer l’Assistant .NET Framework pour Firefox pour effectuer les opérations suivantes :  

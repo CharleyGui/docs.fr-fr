@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Office programming [C#]
 - Office programming [Visual Basic]
 ms.assetid: 519cff31-f80b-4f0e-a56b-26358d0f8c51
-ms.openlocfilehash: d4a2562324259bda0bab523849449d584736b2ae
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6c27442cb5c0c4172f503c945849e47560c2b33d
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423198"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635351"
 ---
 # <a name="walkthrough-office-programming-c-and-visual-basic"></a>Procédure pas à pas : programmation Office (C# et Visual Basic)
 
@@ -106,7 +106,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
          Vous ne pouvez pas créer vos propres propriétés indexées. La fonctionnalité prend uniquement en charge la consommation de propriétés indexées existantes.
 
-         Pour plus d’informations, consultez [Guide pratique pour utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
+         Pour plus d’informations, consultez Guide pratique [pour utiliser des propriétés indexées dans la programmation de COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md).
 
 2. À la fin de `DisplayInExcel`, ajoutez le code suivant pour ajuster les largeurs de colonne au contenu.
 
@@ -114,7 +114,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      [!code-vb[csOfficeWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/csofficewalkthrough/vb/thisaddin.vb#7)]
 
-     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/builtin-types/reference-types.md). Cela se produit automatiquement lorsque l’option **incorporer les types d’interopérabilité** est définie sur sa valeur par défaut, `True` ou, de manière équivalente, lorsque l’assembly est référencé par l’option du compilateur [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
+     Ces ajouts illustrent une autre fonctionnalité de C# : le traitement des valeurs `Object` retournées par les hôtes COM tels qu’Office comme si leur type était [dynamic](../../language-reference/builtin-types/reference-types.md). Cela se produit automatiquement lorsque l’option **incorporer les types d’interopérabilité** est définie sur sa valeur par défaut, `True`ou, de manière équivalente, lorsque l’assembly est référencé par l’option du compilateur [-Link](../../language-reference/compiler-options/link-compiler-option.md) . Le type `dynamic` permet la liaison tardive, déjà disponible dans Visual Basic et évite le cast explicite requis dans C# 3.0 et versions antérieures du langage.
 
      Par exemple, `excelApp.Columns[1]` retourne un `Object` et `AutoFit` est une méthode [Range](<xref:Microsoft.Office.Interop.Excel.Range>) Excel. Sans `dynamic`, vous devez effectuer un cast de l'objet retourné par `excelApp.Columns[1]` sous la forme d'une instance de `Range` avant d'appeler la méthode `AutoFit`.
 
@@ -124,7 +124,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
 ### <a name="to-invoke-displayinexcel"></a>Pour appeler DisplayInExcel
 
-1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, voir [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
+1. Ajoutez le code suivant à la fin de la méthode `ThisAddIn_StartUp`. L'appel à `DisplayInExcel` contient deux arguments. Le premier argument est le nom de la liste des comptes à traiter. Le deuxième argument est une expression lambda multiligne qui définit comment les données doivent être traitées. Les valeurs `ID` et `balance` de chaque compte s'affichent dans des cellules adjacentes et la ligne s'affiche en rouge si le solde est inférieur à zéro. Pour plus d’informations, consultez [Expressions lambda](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).
 
      [!code-csharp[csOfficeWalkthrough#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csofficewalkthrough/cs/thisaddin.cs#9)]
 
@@ -142,7 +142,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 
      Ce code illustre plusieurs fonctionnalités nouvelles en C# : la possibilité d'omettre le mot clé `ref` dans la programmation COM, les arguments nommés et les arguments facultatifs. Ces fonctionnalités existent déjà en Visual Basic. La méthode [PasteSpecial](<xref:Microsoft.Office.Interop.Word.Selection.PasteSpecial%2A>) comporte sept paramètres, tous définis en tant que paramètres de référence facultatifs. Les arguments nommés et les arguments facultatifs vous permettent de désigner les paramètres auxquels vous souhaitez accéder par leur nom et d’envoyer des arguments à ces seuls paramètres. Dans cet exemple, les arguments sont envoyés pour indiquer qu’un lien vers le classeur dans le Presse-papiers doit être créé (paramètre `Link`) et que ce lien doit être affiché dans le document Word sous forme d’une icône (paramètre `DisplayAsIcon`). Visual C# vous permet également d’omettre le mot clé `ref` pour ces arguments.
 
-### <a name="to-run-the-application"></a>Pour exécuter l’application
+### <a name="to-run-the-application"></a>Pour exécuter l'application
 
 1. Appuyez sur F5 pour exécuter l'application. Excel démarre et affiche un tableau qui contient les informations des deux comptes de `bankAccounts`. Puis, un document Word apparaît qui contient un lien vers le tableau Excel.
 
@@ -203,7 +203,7 @@ Pour effectuer cette procédure pas à pas, Microsoft Office Excel et Microsoft 
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Expressions lambda (Visual Basic)](../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md)
 - [Expressions lambda (C#)](../statements-expressions-operators/lambda-expressions.md)
-- [Comment : utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
+- [Utilisation des propriétés indexées dans la programmation de COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)
 - [Procédure pas à pas : incorporation d’informations de type provenant d’assemblys Microsoft Office dans Visual Studio](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/ee317478(v%3dvs.120))
 - [Procédure pas à pas : incorporation de types provenant d’assemblys managés](../../../standard/assembly/embed-types-visual-studio.md)
 - [Procédure pas à pas : création de votre premier complément VSTO pour Excel](/visualstudio/vsto/walkthrough-creating-your-first-vsto-add-in-for-excel)

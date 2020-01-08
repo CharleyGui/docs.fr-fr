@@ -5,17 +5,17 @@ helpviewer_keywords:
 - LINQ to XML [Visual Basic], about LINQ to XML
 - LINQ [Visual Basic], LINQ to XML
 ms.assetid: 01c62a79-6d58-468e-84fb-039c05947701
-ms.openlocfilehash: 80d94ecb7dcc196ad831be7418bfecc785015cf9
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0d804a00eca1910a5415859b1ed3a18ad2f8e9d2
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346235"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636222"
 ---
 # <a name="overview-of-linq-to-xml-in-visual-basic"></a>Vue d'ensemble de LINQ to XML dans Visual Basic
 Visual Basic assure la prise en charge des [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] par le biais des littéraux XML et des propriétés d’axe XML. Cela vous permet d’utiliser une syntaxe familière et pratique pour travailler avec du code XML dans votre code Visual Basic. Les *littéraux XML* vous permettent d’inclure du code XML directement dans votre code. Les *propriétés d’axe XML* vous permettent d’accéder à des nœuds enfants, des nœuds descendants et des attributs d’un littéral XML. Pour plus d’informations, consultez [vue d’ensemble des littéraux XML](../../../../visual-basic/programming-guide/language-features/xml/xml-literals-overview.md) et [accès à XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/accessing-xml.md).  
   
- [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une API de programmation XML en mémoire conçue spécifiquement pour tirer parti de [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Bien que vous puissiez appeler directement les API [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], seul Visual Basic vous permet de déclarer des littéraux XML et d’accéder directement aux propriétés de l’axe XML.  
+ [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une API de programmation XML en mémoire conçue spécifiquement pour tirer parti de LINQ (Language-Integrated Query). Bien que vous puissiez appeler les API LINQ directement, seul Visual Basic vous permet de déclarer des littéraux XML et d’accéder directement aux propriétés de l’axe XML.  
   
 > [!NOTE]
 > Les littéraux XML et les propriétés d’axe XML ne sont pas pris en charge dans le code déclaratif d’une page ASP.NET. Pour utiliser Visual Basic fonctionnalités XML, placez votre code dans une page code-behind de votre application ASP.NET.  
@@ -23,14 +23,14 @@ Visual Basic assure la prise en charge des [!INCLUDE[sqltecxlinq](~/includes/sql
  [Bouton de lecture](./media/overview-of-linq-to-xml/play-video-icon-example.gif) Pour des démonstrations vidéo connexes, consultez [Comment prendre en main LINQ to XML ?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-get-started-with-linq-to-xml) et [comment créer des feuilles de calcul Excel à l’aide de LINQ to XML ?](/aspnet/web-forms/videos/data-access/linq-videos-from-the-vb-team/how-do-i-create-excel-spreadsheets-using-linq-to-xml).   
   
 ## <a name="creating-xml"></a>Création de code XML  
- Il existe deux façons de créer des arborescences XML dans Visual Basic. Vous pouvez déclarer un littéral XML directement dans le code, ou vous pouvez utiliser les API [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour créer l’arborescence. Les deux processus permettent au code de refléter la structure finale de l’arborescence XML. Par exemple, l’exemple de code suivant crée un élément XML :  
+ Il existe deux façons de créer des arborescences XML dans Visual Basic. Vous pouvez déclarer un littéral XML directement dans le code, ou vous pouvez utiliser les API LINQ pour créer l’arborescence. Les deux processus permettent au code de refléter la structure finale de l’arborescence XML. Par exemple, l’exemple de code suivant crée un élément XML :  
   
  [!code-vb[VbXmlSamples#5](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples2.vb#5)]  
   
  Pour plus d’informations, consultez [création de code XML dans Visual Basic](../../../../visual-basic/programming-guide/language-features/xml/creating-xml.md).  
   
 ## <a name="accessing-and-navigating-xml"></a>Accès et navigation dans XML  
- Visual Basic fournit des propriétés d’axe XML pour accéder aux structures XML et les parcourir. Ces propriétés vous permettent d’accéder aux éléments et attributs XML en spécifiant les noms d’éléments enfants XML. Vous pouvez également appeler explicitement les méthodes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour naviguer et localiser les éléments et les attributs. Par exemple, l’exemple de code suivant utilise des propriétés d’axe XML pour faire référence aux attributs et aux éléments enfants d’un élément XML. L’exemple de code utilise une requête de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour récupérer des éléments enfants et les sortir en tant qu’éléments XML, en effectuant une transformation de manière efficace.  
+ Visual Basic fournit des propriétés d’axe XML pour accéder aux structures XML et les parcourir. Ces propriétés vous permettent d’accéder aux éléments et attributs XML en spécifiant les noms d’éléments enfants XML. Vous pouvez également appeler explicitement les méthodes LINQ pour naviguer et localiser les éléments et les attributs. Par exemple, l’exemple de code suivant utilise des propriétés d’axe XML pour faire référence aux attributs et aux éléments enfants d’un élément XML. L’exemple de code utilise une requête LINQ pour récupérer les éléments enfants et les générer en tant qu’éléments XML, en effectuant une transformation de manière efficace.  
   
  [!code-vb[VbXmlSamples#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbXMLSamples/VB/XMLSamples3.vb#8)]  
   
