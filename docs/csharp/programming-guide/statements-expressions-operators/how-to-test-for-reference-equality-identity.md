@@ -1,19 +1,19 @@
 ---
-title: "Procédure : Tester l'égalité des références (Identité) - Guide de programmation C#"
+title: Comment tester l’égalité des références (identité)- C# Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - object identity [C#]
 - reference equality [C#]
 ms.assetid: 91307fda-267b-4fd2-a338-2aada39ee791
-ms.openlocfilehash: 2b4b7b7bdd03077a78aa2a6375764fa86a885ef5
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: d41182d3042f7165fe9a55a275ab0f7e6204a295
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588639"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635130"
 ---
-# <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Procédure : Tester l'égalité des références (Identité) (Guide de programmation C#)
+# <a name="how-to-test-for-reference-equality-identity-c-programming-guide"></a>Comment tester l’égalité des références (identité) (C# Guide de programmation)
 Il n’est pas utile d’implémenter une logique personnalisée pour prendre en charge les comparaisons d’égalité de références dans vos types. Cette fonctionnalité est fournie pour tous les types par la méthode <xref:System.Object.ReferenceEquals%2A?displayProperty=nameWithType> statique.  
   
  L’exemple suivant montre comment déterminer si deux variables affichent une *égalité de références*, à savoir qu’elles font référence à un même objet en mémoire.  

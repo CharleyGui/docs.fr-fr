@@ -17,21 +17,21 @@ helpviewer_keywords:
 - application development [WPF], files
 - application management [WPF]
 ms.assetid: 7ad2943b-3961-41d3-8fc6-1582d43f5d99
-ms.openlocfilehash: a31dc2c5431c8201607462e8bdef4b8bae0fb41d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d966116db09c2baef7deabf5d01138e8445098be
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460916"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636261"
 ---
 # <a name="wpf-application-resource-content-and-data-files"></a>Fichiers de ressources, de contenu et de données d'une application WPF
 Les applications Microsoft Windows dépendent souvent de fichiers qui contiennent des données non exécutables, telles que des [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)], des images, des vidéos et de l’audio. Windows Presentation Foundation (WPF) offre une prise en charge spéciale pour la configuration, l’identification et l’utilisation de ces types de fichiers de données, appelés fichiers de données d’application. Cette prise en charge repose sur un ensemble spécifique de types de fichier de données d’application, notamment :  
   
-- **Fichiers de ressources**: fichiers de données compilés dans un fichier exécutable ou un assembly [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].  
+- **Fichiers de ressources**: fichiers de données compilés dans un assembly WPF exécutable ou bibliothèque.  
   
-- **Fichiers de contenu**: fichiers de données autonomes qui ont une association explicite avec un exécutable [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly.  
+- **Fichiers de contenu**: fichiers de données autonomes qui ont une association explicite avec un assembly WPF exécutable.  
   
-- **Fichiers de site d’origine**: fichiers de données autonomes qui n’ont aucune association avec un exécutable [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] assembly.  
+- **Fichiers du site d’origine**: fichiers de données autonomes qui n’ont aucune association avec un assembly WPF exécutable.  
   
  Il existe une distinction importante entre ces trois types de fichier : les fichiers de ressources et les fichiers de contenu sont connus au moment de la génération. En effet, un assembly les connaît explicitement. Toutefois, pour les fichiers de site d’origine, un assembly n’a peut-être aucune connaissance du tout ou une connaissance implicite par le biais d’une référence URI (Uniform Resource Identifier) de Pack ; dans ce dernier cas, il n’y a aucune garantie que le fichier de site d’origine référencé existe réellement.  
   
@@ -55,7 +55,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
 > Les fichiers de ressources décrits dans cette section sont différents des fichiers de ressources décrits dans les [ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md) et différents des ressources incorporées ou liées décrites dans [gérer les ressources d’application (.net)](/visualstudio/ide/managing-application-resources-dotnet).  
   
 ### <a name="configuring-resource-files"></a>Configuration des fichiers de ressources  
- Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], un fichier de ressources est un fichier inclus dans un projet Microsoft Build Engine (MSBuild) sous la forme d’un élément `Resource`.  
+ Dans WPF, un fichier de ressources est un fichier inclus dans un projet Microsoft Build Engine (MSBuild) en tant qu’élément de `Resource`.  
   
 ```xml  
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ... >  
@@ -80,7 +80,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.cs#loadapageresourcefilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageResourceFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml.vb#loadapageresourcefilemanuallycode)]  
   
- Quand vous appelez <xref:System.Windows.Application.GetResourceStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
+ Quand vous appelez <xref:System.Windows.Application.GetResourceStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser WPF s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
  L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans une <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   
@@ -92,7 +92,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
  [!code-xaml[WPFAssemblyResourcesSnippets#LoadPageResourceFileFromXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetResourceStreamSnippetWindow.xaml#loadpageresourcefilefromxaml)]  
   
 ### <a name="application-code-files-as-resource-files"></a>Fichiers de code d’application en tant que fichiers de ressources  
- Un ensemble spécial de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] fichiers de code d’application peut être référencé à l’aide d’URI à en-tête pack, y compris les fenêtres, les pages, les documents dynamiques et les dictionnaires de ressources. Par exemple, vous pouvez définir la propriété <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> avec un URI à en-tête pack qui référence la fenêtre ou la page que vous souhaitez charger au démarrage d’une application.  
+ Un ensemble spécial de fichiers de code d’application WPF peut être référencé à l’aide d’URI à en-tête pack, y compris les fenêtres, les pages, les documents dynamiques et les dictionnaires de ressources. Par exemple, vous pouvez définir la propriété <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType> avec un URI à en-tête pack qui référence la fenêtre ou la page que vous souhaitez charger au démarrage d’une application.  
   
  [!code-xaml[WPFAssemblyResourcesSnippets#SetApplicationStartupURI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/App.xaml#setapplicationstartupuri)]  
   
@@ -160,7 +160,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.cs#loadapagecontentfilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageContentFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/ApplicationGetContentStreamSnippetWindow.xaml.vb#loadapagecontentfilemanuallycode)]  
   
- Quand vous appelez <xref:System.Windows.Application.GetContentStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
+ Quand vous appelez <xref:System.Windows.Application.GetContentStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser WPF s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
  L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans une <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   
@@ -195,7 +195,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
 > Les fichiers de site d’origine ne sont pas mis en cache avec une application de navigateur XAML (XBAP) sur un ordinateur client, tandis que les fichiers de contenu sont. Ils sont donc téléchargés à la demande. Si une application de navigateur XAML (XBAP) contient des fichiers multimédias volumineux, leur configuration en tant que fichiers de site d’origine signifie que le lancement de l’application initiale est beaucoup plus rapide et que les fichiers ne sont téléchargés qu’à la demande.  
   
 ### <a name="configuring-site-of-origin-files"></a>Configuration des fichiers du site d’origine  
- Si vos fichiers de site d’origine sont inexistants ou inconnus au moment de la compilation, vous devez utiliser des mécanismes de déploiement traditionnels pour vous assurer que les fichiers requis sont disponibles au moment de l’exécution, y compris en utilisant le programme de ligne de commande `XCopy` ou Microsoft Windows D'.  
+ Si vos fichiers de site d’origine sont inexistants ou inconnus au moment de la compilation, vous devez utiliser des mécanismes de déploiement traditionnels pour vous assurer que les fichiers requis sont disponibles au moment de l’exécution, y compris en utilisant le programme de ligne de commande `XCopy` ou le Microsoft Windows Installer.  
   
  Si vous savez au moment de la compilation les fichiers que vous souhaitez placer sur le site d’origine, mais que vous souhaitez toujours éviter une dépendance explicite, vous pouvez ajouter ces fichiers à un projet MSBuild en tant qu’élément `None`. Comme pour les fichiers de contenu, vous devez définir l’attribut `CopyToOutputDirectory` MSBuild pour spécifier que le fichier du site d’origine est copié vers un emplacement relatif à l’assembly généré, en spécifiant la valeur `Always` ou la valeur `PreserveNewest`.  
   
@@ -222,7 +222,7 @@ Les applications Microsoft Windows dépendent souvent de fichiers qui contiennen
  [!code-csharp[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/CSharp/ResourcesSample/SOOPage.xaml.cs#loadapagesoofilemanuallycode)]
  [!code-vb[WPFAssemblyResourcesSnippets#LoadAPageSOOFileManuallyCODE](~/samples/snippets/visualbasic/VS_Snippets_Wpf/WPFAssemblyResourcesSnippets/VisualBasic/ResourcesSample/SOOPage.xaml.vb#loadapagesoofilemanuallycode)]  
   
- Quand vous appelez <xref:System.Windows.Application.GetRemoteStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
+ Quand vous appelez <xref:System.Windows.Application.GetRemoteStream%2A> vous donne accès au <xref:System.IO.Stream>, vous devez effectuer la tâche supplémentaire de la convertir au type de la propriété avec laquelle vous allez le définir. Au lieu de cela, vous pouvez laisser WPF s’occuper de l’ouverture et de la conversion du <xref:System.IO.Stream> en chargeant un fichier de ressources directement dans la propriété d’un type à l’aide du code.  
   
  L’exemple suivant montre comment charger un <xref:System.Windows.Controls.Page> directement dans une <xref:System.Windows.Controls.Frame> (`pageFrame`) à l’aide du code.  
   

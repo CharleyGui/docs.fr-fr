@@ -1,5 +1,5 @@
 ---
-title: 'Comment : convertir une chaîne en un guide de C# programmation de nombres'
+title: Comment convertir une chaîne en un guide de C# programmation de nombres
 ms.custom: seodec18
 ms.date: 02/11/2019
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - converting strings to int [C#]
 - strings [C#], converting to int
 ms.assetid: 467b9979-86ee-4afd-b734-30299cda91e3
-ms.openlocfilehash: 8cd5a54bead2790d8e6e4c8e4a5649352f12869d
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: a22b3af659630e947490858915e638e601b5f18f
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552413"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635039"
 ---
-# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Guide pratique pour convertir une chaîne en nombre (Guide de programmation C#)
+# <a name="how-to-convert-a-string-to-a-number-c-programming-guide"></a>Comment convertir une chaîne en nombre (C# Guide de programmation)
 
 Vous pouvez convertir une [chaîne](../../language-reference/builtin-types/reference-types.md) en nombre en appelant la méthode `Parse` ou `TryParse` des différents types numériques (`int`, `long`, `double`, etc.), ou bien en utilisant des méthodes dans la classe <xref:System.Convert?displayProperty=nameWithType>.  
   
@@ -58,5 +58,5 @@ Le tableau suivant répertorie quelques unes des méthodes de la classe <xref:Sy
 ## <a name="see-also"></a>Voir aussi
 
 - [Types](./index.md)
-- [Comment : déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Comment déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
 - [Exemple : utilitaire de mise en forme .NET Core WinForms (C#)](https://docs.microsoft.com/samples/dotnet/samples/winforms-formatting-utility-cs)

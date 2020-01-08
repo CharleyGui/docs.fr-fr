@@ -6,12 +6,12 @@ helpviewer_keywords:
 - walkthroughs [Visual Studio], Visual C#
 - Visual C#, walkthroughs
 ms.assetid: 2d07b972-ef69-4676-9aef-e1784728e1ff
-ms.openlocfilehash: a997cc62b03a0d92d5ef76173981f5a9e287b13a
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 11a58ddf246c77cf4372e940b184413054b10778
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204591"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634922"
 ---
 # <a name="c-walkthroughs"></a>procédures pas à pas C#
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants, ce qui en fait un bon point de départ pour apprendre à utiliser le produit ou une fonctionnalité particulière.  
@@ -48,7 +48,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  Présente quelques tâches couramment exécutées, notamment l'ajout ou la suppression d'un onglet sur un `TabControl`, l'ancrage d'un contrôle à son parent et la modification de l'orientation d'un contrôle `SplitContainer`.  
   
  [Écriture de requêtes en C# (LINQ)](./programming-guide/concepts/linq/walkthrough-writing-queries-linq.md)  
- Illustre les fonctionnalités du langage C# utilisées pour écrire les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].  
+ Montre les C# fonctionnalités de langage utilisées pour écrire des expressions de requête LINQ.  
   
  [Manipulation de données (C#) (LINQ to SQL)](../framework/data/adonet/sql/linq/walkthrough-manipulating-data-csharp.md)  
  Décrit un scénario [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)] pour l'ajout, la modification et la suppression des données dans une base de données.  
@@ -65,7 +65,7 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
  [Écriture d’un visualiseur en C#](/visualstudio/debugger/walkthrough-writing-a-visualizer-in-csharp)  
  Montre comment écrire un visualiseur simple à l'aide de C#.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Exemples et procédures pas à pas relatifs au déploiement](/visualstudio/deployment/clickonce-deployment-samples-and-walkthroughs)  
  Fournit des exemples pas à pas de scénarios de déploiement courants.  
   

@@ -2,12 +2,12 @@
 title: "Comment : diffuser des fragments XML en continu à partir d'un XmlReader"
 ms.date: 07/20/2015
 ms.assetid: f67ce598-4a12-4dcb-9a07-24deca02a111
-ms.openlocfilehash: abefc8c6e75ae41c47135a2e89cdb3be6a8e5cd6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 42d3edb390035d20f506388974000aa204312109
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346224"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636794"
 ---
 # <a name="how-to-stream-xml-fragments-from-an-xmlreader-visual-basic"></a>Comment : diffuser des fragments XML en continu à partir d’un XmlReader (Visual Basic)
 Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments en continu à l'aide d'un objet <xref:System.Xml.XmlReader>.  
@@ -23,7 +23,7 @@ Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de c
  La rubrique [procédure : effectuer une transformation de diffusion en continu de documents XML volumineux (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en conservant un faible encombrement mémoire.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l'interroger à l'aide d'une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
+ Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l’interroger à l’aide d’une requête LINQ. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
   
 ```vb  
 Module Module1  

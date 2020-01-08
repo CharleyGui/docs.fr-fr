@@ -1,5 +1,5 @@
 ---
-title: 'Comment : utiliser l’appel de code non managé pour lire un C# fichier Wave-Guide de programmation'
+title: Guide pratique pour utiliser l’appel de code non managé pour C# lire un fichier WAV-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,16 +8,16 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 6c2313f7b600bc1670c944f6a93868c1bc4c7c16
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 082bd4b51e06332b0fecc633cc0501cafa8e7ff8
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039324"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635286"
 ---
-# <a name="how-to-use-platform-invoke-to-play-a-wave-file-c-programming-guide"></a>Comment : utiliser l'appel de code non managé pour lire un fichier audio (Guide de programmation C#)
+# <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>Comment utiliser l’appel de code non managé pour lire unC# fichier WAV (Guide de programmation)
 
-L’exemple de code C# suivant explique comment utiliser des services d’appel de code non managé pour lire un fichier audio sur le système d’exploitation Windows.
+L’exemple C# de code suivant montre comment utiliser les services d’appel de code non managé pour lire un fichier audio WAV sur le système d’exploitation Windows.
 
 ## <a name="example"></a>Exemple
 

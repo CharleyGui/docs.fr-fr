@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: efaf55220a41526b8952f01b8225f8336a4e8657
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: e20053c451d12c6a8493d5d7fcfc72fe3d3d764e
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459667"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636378"
 ---
 # <a name="pack-uris-in-wpf"></a>URI à en-tête pack dans WPF
 
@@ -38,7 +38,7 @@ En outre, les URI peuvent être utilisés pour identifier et charger des fichier
 
 - Le site d’origine de l’application
 
-Pour fournir un mécanisme cohérent pour identifier et charger ces types de fichiers à partir de ces emplacements, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] tire parti de l’extensibilité du schéma d’URI à en- *tête pack*. Cette rubrique fournit une vue d’ensemble du schéma, explique comment construire des URI à en-tête pack pour divers scénarios, traite des URI absolus et relatifs et la résolution d’URI, avant d’illustrer l’utilisation des URI à en-tête pack à partir du balisage et du code.
+Pour fournir un mécanisme cohérent pour identifier et charger ces types de fichiers à partir de ces emplacements, WPF tire parti de l’extensibilité du schéma d’URI à en- *tête pack*. Cette rubrique fournit une vue d’ensemble du schéma, explique comment construire des URI à en-tête pack pour divers scénarios, traite des URI absolus et relatifs et la résolution d’URI, avant d’illustrer l’utilisation des URI à en-tête pack à partir du balisage et du code.
 
 <a name="The_Pack_URI_Scheme"></a>
 
@@ -52,7 +52,7 @@ Pour identifier les parties, la spécification OPC tire parti de l’extensibili
 
 Le schéma spécifié par un URI est défini par son préfixe ; http, FTP et file sont des exemples connus. Le modèle d’URI à en-tête pack utilise « Pack » comme modèle et contient deux composants : autorité et chemin d’accès. Voici le format d’un URI à en-tête pack.
 
-*chemin d’accès* / de l'*autorité* Pack://
+*chemin d’accès*/de l'*autorité* Pack://
 
 L' *autorité* spécifie le type de package qui contient un composant, tandis que le *chemin d’accès* spécifie l’emplacement d’une partie au sein d’un package.
 
@@ -72,7 +72,7 @@ Les packages et les parties s’apparentent à des applications et des fichiers,
 
 - Des fichiers de site d’origine
 
-Pour accéder à ces types de fichiers, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] prend en charge deux autorités : application:///et siteoforigin:///. L’autorité application:/// identifie les fichiers de données d’application qui sont connus au moment de la compilation, notamment les fichiers de ressources et de contenu. L’autorité siteoforigin:/// identifie les fichiers de site d’origine. La portée de chaque autorité est indiquée dans la figure suivante.
+Pour accéder à ces types de fichiers, WPF prend en charge deux autorités : application:///et siteoforigin:///. L’autorité application:/// identifie les fichiers de données d’application qui sont connus au moment de la compilation, notamment les fichiers de ressources et de contenu. L’autorité siteoforigin:/// identifie les fichiers de site d’origine. La portée de chaque autorité est indiquée dans la figure suivante.
 
 ![Diagramme URI à en-tête pack](./media/pack-uris-in-wpf/wpf-pack-uri-scheme.png)
 
@@ -115,7 +115,7 @@ L’URI à en-tête pack pour un fichier de ressources compilé dans un assembly
 
 - **Chemin** : nom d’un fichier de ressources compilé dans un assembly référencé. Le chemin doit respecter le format suivant :
 
-  *NomCourtAssembly*{ *; Version*] { *; PublicKey*]; composant/*chemin d’accès*
+  *AssemblyShortName*{ *;Version*]{ *;PublicKey*];component/*Path*
 
   - **NomCourtAssembly** : nom court de l’assembly référencé.
 
@@ -139,7 +139,7 @@ L’exemple suivant montre l’URI à en-tête pack pour un fichier de ressource
 
 `pack://application:,,,/ReferencedAssembly;v1.0.0.1;component/ResourceFile.xaml`
 
-Notez que la syntaxe d’URI à en-tête pack pour les fichiers de ressources d’assembly référencés peut être utilisée uniquement avec l’autorité application:///. Par exemple, les éléments suivants ne sont pas pris en charge dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+Notez que la syntaxe d’URI à en-tête pack pour les fichiers de ressources d’assembly référencés peut être utilisée uniquement avec l’autorité application:///. Par exemple, le code suivant n’est pas pris en charge dans WPF.
 
 `pack://siteoforigin:,,,/SomeAssembly;component/ResourceFile.xaml`
 
@@ -251,7 +251,7 @@ Cet URI à en-tête pack absolu peut faire référence à un fichier de ressourc
 
 `/ResourceOrContentFile.xaml`
 
-Pour déterminer le type de fichier auquel se réfère un URI à en-tête pack, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] résout les URI des fichiers de ressources dans des assemblys locaux et des fichiers de contenu à l’aide de l’heuristique suivante :
+Pour déterminer le type de fichier auquel un URI à en-tête pack fait référence, WPF résout les URI des fichiers de ressources dans les assemblys locaux et les fichiers de contenu à l’aide de l’heuristique suivante :
 
 1. Sondez les métadonnées de l’assembly pour un attribut <xref:System.Windows.Resources.AssemblyAssociatedContentFileAttribute> qui correspond à l’URI à en-tête pack.
 
@@ -265,7 +265,7 @@ Pour déterminer le type de fichier auquel se réfère un URI à en-tête pack, 
 
 La résolution d’URI ne s’applique pas aux URI qui font référence aux éléments suivants :
 
-- Fichiers de contenu dans les assemblys référencés : ces types de fichiers ne sont pas pris en charge par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)].
+- Fichiers de contenu dans les assemblys référencés : ces types de fichiers ne sont pas pris en charge par WPF.
 
 - Fichiers incorporés dans les assemblys référencés : les URI qui les identifient sont uniques, car ils incluent à la fois le nom de l’assembly référencé et le suffixe `;component`.
 
@@ -277,7 +277,7 @@ Une simplification de la résolution des URI à en-tête pack permet au code d�
 
 ## <a name="programming-with-pack-uris"></a>Programmation avec des URI à en-tête pack
 
-De nombreuses classes [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] implémentent des propriétés qui peuvent être définies avec des URI à en-tête pack, notamment :
+De nombreuses classes WPF implémentent des propriétés qui peuvent être définies avec des URI à en-tête pack, notamment :
 
 - <xref:System.Windows.Application.StartupUri%2A?displayProperty=nameWithType>
 
@@ -297,7 +297,7 @@ Ces propriétés peuvent être définies à partir du balisage et du code. Cette
 
 ### <a name="using-pack-uris-in-markup"></a>Utilisation d’URI à en-tête pack dans le balisage
 
-Un URI à en-tête pack est spécifié dans le balisage en définissant l’élément d’un attribut avec l’URI à en-tête pack. Exemple :
+Un URI à en-tête pack est spécifié dans le balisage en définissant l’élément d’un attribut avec l’URI à en-tête pack. Par exemple :
 
 `<element attribute="pack://application:,,,/File.xaml" />`
 
@@ -305,7 +305,7 @@ Le tableau 1 illustre les différents URI à en-tête pack absolus que vous pouv
 
 Tableau 1 : URI à en-tête pack absolus dans le balisage
 
-|Fichier|URI à en-tête pack absolu|
+|File|URI à en-tête pack absolu|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`"pack://application:,,,/ResourceFile.xaml"`|
 |Fichier de ressources dans un sous-dossier - assembly local|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
@@ -321,7 +321,7 @@ Le tableau 2 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 2 : URI à en-tête pack relatifs dans le balisage
 
-|Fichier|URI à en-tête pack relatif|
+|File|URI à en-tête pack relatif|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources dans un assembly local|`"/ResourceFile.xaml"`|
 |Fichier de ressources dans un sous-dossier de l’assembly local|`"/Subfolder/ResourceFile.xaml"`|
@@ -368,7 +368,7 @@ Le tableau 3 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 3 : URI à en-tête pack absolus dans le code
 
-|Fichier|URI à en-tête pack absolu|
+|File|URI à en-tête pack absolu|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
 |Fichier de ressources dans un sous-dossier - assembly local|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
@@ -384,7 +384,7 @@ Le tableau 4 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 4 : URI à en-tête pack relatifs dans le code
 
-|Fichier|URI à en-tête pack relatif|
+|File|URI à en-tête pack relatif|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
 |Fichier de ressources dans un sous-dossier - assembly local|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|
@@ -397,13 +397,13 @@ Tableau 4 : URI à en-tête pack relatifs dans le code
 
 ### <a name="common-pack-uri-scenarios"></a>Scénarios courants d’URI à en-tête pack
 
-Les sections précédentes ont expliqué comment construire des URI à en-tête pack pour identifier les fichiers de ressources, de contenu et de site d’origine. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], ces constructions sont utilisées de différentes façons, et les sections suivantes couvrent plusieurs utilisations courantes.
+Les sections précédentes ont expliqué comment construire des URI à en-tête pack pour identifier les fichiers de ressources, de contenu et de site d’origine. Dans WPF, ces constructions sont utilisées de différentes façons, et les sections suivantes couvrent plusieurs utilisations courantes.
 
 <a name="Specifying_the_UI_to_Show_when_an_Application_Starts"></a>
 
 #### <a name="specifying-the-ui-to-show-when-an-application-starts"></a>Spécification de l’interface utilisateur à afficher au démarrage d’une application
 
-<xref:System.Windows.Application.StartupUri%2A> spécifie le premier [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] à afficher lorsqu’une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] est lancée. Pour les applications autonomes, la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] peut être une fenêtre, comme illustré dans l’exemple suivant.
+<xref:System.Windows.Application.StartupUri%2A> spécifie le premier [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] à afficher lorsqu’une application WPF est lancée. Pour les applications autonomes, la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] peut être une fenêtre, comme illustré dans l’exemple suivant.
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriWindow](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/Copy of App.xaml#startupuriwindow)]
 
@@ -411,7 +411,7 @@ Les applications autonomes et les applications de navigateur XAML (XBAP) peuvent
 
 [!code-xaml[PackURIOverviewSnippets#StartupUriPage](~/samples/snippets/csharp/VS_Snippets_Wpf/PackURIOverviewSnippets/CS/App.xaml#startupuripage)]
 
-Si l’application est une application autonome et qu’une page est spécifiée avec <xref:System.Windows.Application.StartupUri%2A>, [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] ouvre un <xref:System.Windows.Navigation.NavigationWindow> pour héberger la page. Pour les applications XBAP, la page est affichée dans le navigateur hôte.
+Si l’application est une application autonome et qu’une page est spécifiée avec <xref:System.Windows.Application.StartupUri%2A>, WPF ouvre un <xref:System.Windows.Navigation.NavigationWindow> pour héberger la page. Pour les applications XBAP, la page est affichée dans le navigateur hôte.
 
 <a name="Navigating_to_a_Page"></a>
 
@@ -423,7 +423,7 @@ L’exemple suivant montre comment naviguer vers une page.
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML2](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml2)]
 [!code-xaml[NavigationOverviewSnippets#HyperlinkXAML3](~/samples/snippets/csharp/VS_Snippets_Wpf/NavigationOverviewSnippets/CSharp/PageWithHyperlink.xaml#hyperlinkxaml3)]
 
-Pour plus d’informations sur les différentes façons de naviguer dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], consultez [vue d’ensemble](navigation-overview.md)de la navigation.
+Pour plus d’informations sur les différentes façons de naviguer dans WPF, consultez [vue d’ensemble](navigation-overview.md)de la navigation.
 
 <a name="Specifying_a_Window_Icon"></a>
 
@@ -439,7 +439,7 @@ Pour plus d'informations, consultez <xref:System.Windows.Window.Icon%2A>.
 
 #### <a name="loading-image-audio-and-video-files"></a>Chargement de fichiers vidéo, audio et image
 
-[!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] permet aux applications d’utiliser un large éventail de types de médias, qui peuvent tous être identifiés et chargés avec des URI à en-tête pack, comme indiqué dans les exemples suivants.
+WPF permet aux applications d’utiliser un large éventail de types de médias, qui peuvent tous être identifiés et chargés avec des URI à en-tête pack, comme illustré dans les exemples suivants.
 
 [!code-xaml[MediaPlayerVideoSample#VideoPackURIAtSOO](~/samples/snippets/csharp/VS_Snippets_Wpf/MediaPlayerVideoSample/CS/HomePage.xaml#videopackuriatsoo)]
 
@@ -457,7 +457,7 @@ Les dictionnaires de ressources (<xref:System.Windows.ResourceDictionary>) peuve
 
 [!code-xaml[ResourceDictionarySnippets#ResourceDictionaryPackURI](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceDictionarySnippets/CS/App.xaml#resourcedictionarypackuri)]
 
-Pour obtenir une vue d’ensemble des thèmes dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], consultez [styles et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
+Pour obtenir une vue d’ensemble des thèmes dans WPF, consultez [styles et création de modèles](../../../desktop-wpf/fundamentals/styles-templates-overview.md).
 
 ## <a name="see-also"></a>Voir aussi
 

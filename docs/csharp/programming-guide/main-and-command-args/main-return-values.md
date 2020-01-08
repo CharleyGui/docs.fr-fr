@@ -5,12 +5,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 13d1eda178a4c2580af67ef5a7198e7f0884a7d6
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
-ms.translationtype: MT
+ms.openlocfilehash: aa3d3032f083682f94c75c400710640b9408e973
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884395"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635364"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 
@@ -34,7 +34,7 @@ Modifiez la méthode `Main` dans *program.cs* comme suit :
 
 Quand un programme est exécuté dans Windows, toute valeur retournée par la fonction `Main` est stockée dans une variable d’environnement. Cette variable d’environnement peut être récupérée à l’aide de `ERRORLEVEL` dans un fichier de commandes ou de `$LastExitCode` dans PowerShell.
 
-Vous pouvez générer l’application à l’aide de la commande [dotnet CLI](../../../core/tools/dotnet.md) `dotnet build`.
+Vous pouvez générer l’application à l’aide de la commande `dotnet build` de l' [interface CLI dotnet](../../../core/tools/dotnet.md) .
 
 Ensuite, créez un script PowerShell pour exécuter l’application et afficher le résultat. Collez le code suivant dans un fichier texte et enregistrez-le sous `test.ps1` dans le dossier qui contient le projet. Exécutez le script PowerShell en tapant `test.ps1` à l’invite de PowerShell.
 
@@ -96,6 +96,6 @@ Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Comment : afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)
+- [Comment afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)

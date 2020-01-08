@@ -2,12 +2,12 @@
 title: Opérations de jointure (C#)
 ms.date: 07/20/2015
 ms.assetid: 5105e0da-1267-4c00-837a-f0e9602279b8
-ms.openlocfilehash: 456894dd07f512d7e694ad0056b1e861dc3012c5
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 86d85c7de16887fbe3001dc548d940d9c114e634
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423392"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635598"
 ---
 # <a name="join-operations-c"></a>Opérations de jointure (C#)
 Une *jointure* de deux sources de données est l’association des objets d’une source de données aux objets qui partagent un attribut commun dans une autre source de données.  
@@ -22,7 +22,7 @@ Une *jointure* de deux sources de données est l’association des objets d’un
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
+|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Plus d’informations|  
 |-----------------|-----------------|---------------------------------|----------------------|  
 |Join|Joint deux séquences selon les fonctions de sélection de clé et extrait des paires de valeurs.|`join … in … on … equals …`|<xref:System.Linq.Enumerable.Join%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Join%2A?displayProperty=nameWithType>|  
 |GroupJoin|Joint deux séquences selon les fonctions de sélection de clé et regroupe les résultats correspondants pour chaque élément.|`join … in … on … equals … into …`|<xref:System.Linq.Enumerable.GroupJoin%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupJoin%2A?displayProperty=nameWithType>|  
@@ -34,11 +34,11 @@ Une *jointure* de deux sources de données est l’association des objets d’un
 - [Types anonymes](../../classes-and-structs/anonymous-types.md)
 - [Formuler des jointures et des requêtes de produit croisé](../../../../framework/data/adonet/sql/linq/formulate-joins-and-cross-product-queries.md)
 - [join, clause](../../../language-reference/keywords/join-clause.md)
-- [Comment : effectuer des opérations de jointure à l’aide de clés composites](../../../linq/join-by-using-composite-keys.md)
-- [Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
-- [Comment : classer les résultats d’une clause Join](../../../linq/order-the-results-of-a-join-clause.md)
-- [Comment : effectuer des opérations de jointure personnalisées](../../../linq/perform-custom-join-operations.md)
-- [Comment : effectuer des jointures groupées](../../../linq/perform-grouped-joins.md)
-- [Comment : effectuer des jointures internes](../../../linq/perform-inner-joins.md)
-- [Comment : effectuer des jointures externes gauches](../../../linq/perform-left-outer-joins.md)
-- [Guide pratique pour remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)](./how-to-populate-object-collections-from-multiple-sources-linq.md)
+- [Effectuer des opérations de jointure à l’aide de clés composites](../../../linq/join-by-using-composite-keys.md)
+- [Comment joindre du contenu provenant de fichiers différents (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md)
+- [Classer les résultats d’une clause Join](../../../linq/order-the-results-of-a-join-clause.md)
+- [Effectuer des opérations de jointure personnalisées](../../../linq/perform-custom-join-operations.md)
+- [Effectuer des jointures groupées](../../../linq/perform-grouped-joins.md)
+- [Effectuer des jointures internes](../../../linq/perform-inner-joins.md)
+- [Effectuer des jointures externes gauches](../../../linq/perform-left-outer-joins.md)
+- [Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()](./how-to-populate-object-collections-from-multiple-sources-linq.md)

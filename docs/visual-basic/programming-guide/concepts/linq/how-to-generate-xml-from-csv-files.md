@@ -2,18 +2,18 @@
 title: 'Comment : générer du code XML à partir de fichiers CSV'
 ms.date: 07/20/2015
 ms.assetid: fe4dbc87-7b0d-40bf-88c3-5d706ee89a4d
-ms.openlocfilehash: 2e2d76fdae8473e47e397f2559f3051c47a180fd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 79b609c3a706db4c8b4c082fbeaf143632a75033
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344591"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636820"
 ---
 # <a name="how-to-generate-xml-from-csv-files-visual-basic"></a>Procédure : générer du code XML à partir de fichiers CSV (Visual Basic)
-Cet exemple montre comment utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d'un fichier de valeurs séparées par des virgules (CSV).  
+Cet exemple montre comment utiliser LINQ (Language-Integrated Query) et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d’un fichier de valeurs séparées par des virgules (CSV).  
   
 ## <a name="example"></a>Exemple  
- Le code suivant exécute une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur un tableau de chaînes.  
+ Le code suivant exécute une requête LINQ sur un tableau de chaînes.  
   
 ```vb  
       ' Create the text file.  

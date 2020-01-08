@@ -10,12 +10,12 @@ helpviewer_keywords:
 - language reference, Visual Basic
 - Visual Basic, language reference
 ms.assetid: 5c6bd31a-9542-4f3e-bfd5-e951af58f0f2
-ms.openlocfilehash: ba611be8e63380f2bff958e37b72ffe8e0f90d9a
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 90cd1984ceb3bdb9de62450e86184f493e7417f0
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837088"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636716"
 ---
 # <a name="visual-basic-language-reference"></a>Informations de référence sur le langage Visual Basic
 
@@ -66,7 +66,7 @@ Cette section fournit des informations de référence pour différents aspects d
  Documente les propriétés disponibles dans Visual Basic.  
   
  [Requêtes](../../visual-basic/language-reference/queries/index.md)  
- Fournit des informations de référence sur l’utilisation d’expressions [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] dans votre code.  
+ Fournit des informations de référence sur l’utilisation d’expressions LINQ (Language-Integrated Query) dans votre code.  
   
  [Instructions](../../visual-basic/language-reference/statements/index.md)  
  Documente la déclaration et les instructions exécutables disponibles dans Visual Basic.  
@@ -83,7 +83,7 @@ Cette section fournit des informations de référence pour différents aspects d
  [Messages d’erreur](../../visual-basic/language-reference/error-messages/index.md)  
  Fournit une liste de Visual Basic des messages d’erreur du compilateur et de l’exécution, et vous aide à les gérer.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
 
  [Compilateur de ligne de commande de Visual Basic](../../visual-basic/reference/command-line-compiler/index.md)  
  Décrit comment utiliser le compilateur de ligne de commande comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio.

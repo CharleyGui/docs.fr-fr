@@ -2,18 +2,22 @@
 title: Tâches d’apprentissage automatique
 description: Explorez les différentes tâches Machine Learning ainsi que les tâches associées prises en charge dans ML.NET.
 ms.custom: seodec18
-ms.date: 04/23/2019
+ms.date: 12/23/2019
 author: natke
-ms.openlocfilehash: d0634ce8a0559ab3cdb5bf27fc5406ab02af8df6
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: cde4af720fe1ede80cb1bdc6b70f6586293920a4
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977254"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636443"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
-Lorsque vous créez un modèle d’apprentissage automatique, vous devez tout d’abord définir ce que vous souhaitez obtenir avec vos données. Ceci vous permet de choisir la tâche Machine Learning adaptée à votre situation. La liste suivante décrit les différentes tâches d’apprentissage automatique disponibles et présente certains cas d’usage courants. Pour plus d’informations sur le choix de la tâche adaptée à votre scénario, consultez [algorithmes](../how-to-choose-an-ml-net-algorithm.md).
+Une tâche de Machine Learning est le type de prédiction ou d’inférence qui est effectué, en fonction du problème ou de la question demandée, et des données disponibles. Par exemple, la tâche de classification assigne des données à des catégories, et la tâche de clustering regroupe les données en fonction de la similarité.
+
+Les tâches machine learning s’appuient sur des modèles dans les données plutôt que sur des séquences explicitement programmées.
+
+Cet article décrit les différentes tâches de Machine Learning que vous pouvez choisir dans ML.NET et certains cas d’usage courants.
 
 Une fois que vous avez décidé de tâche qui fonctionne pour votre scénario, vous devez choisir le meilleur algorithme pour entraîner le modèle. Les algorithmes disponibles sont listés dans la section pour chaque tâche.
 
@@ -91,7 +95,7 @@ La colonne des caractéristiques doit être un vecteur de taille fixe de <xref:S
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Tapez | Description|
+| Nom de la sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Les scores de toutes les classes. Une valeur supérieure signifie une plus forte probabilité d’appartenir à la classe associée. Si l’i-ème élément a la plus grande valeur, l’index de l’étiquette prédite est i. Notez que i est l’index de base zéro. |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index de l’étiquette prédite. Si sa valeur est i, l’étiquette réelle est la i-ème catégorie dans le type d’étiquette d’entrée avec une valeur de clé. |
@@ -124,7 +128,7 @@ Les données de la colonne d’étiquettes d’entrée doivent être <xref:Syste
 
 Les entraîneurs pour cette tâche génèrent le résultat suivant :
 
-| Nom de la sortie | Tapez | Description|
+| Nom de la sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score brut prédit par le modèle |
 
@@ -148,7 +152,7 @@ Les données de caractéristiques d’entrée doivent être <xref:System.Single>
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Tapez | Description|
+| Nom de la sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Distances entre le point de données spécifique et les centroïdes de tous les clusters |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index du cluster le plus proche prédit par le modèle. |
@@ -180,9 +184,10 @@ Les caractéristiques d’entrée doivent être un vecteur de taille fixe de <xr
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Tapez | Description|
+| Nom de la sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score non négatif sans borne calculé par le modèle de détection d’anomalie |
+| `PredictedLabel` | <xref:System.Boolean> | Valeur true/false indiquant si l’entrée est une anomalie (PredictedLabel = true) ou non (PredictedLabel = false) |
 
 ## <a name="ranking"></a>Classement
 
@@ -203,7 +208,7 @@ Les données de caractéristique doivent être un vecteur de taille fixe de <xre
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Tapez | Description|
+| Nom de la sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score sans borne calculé par le modèle pour déterminer la prédiction |
 

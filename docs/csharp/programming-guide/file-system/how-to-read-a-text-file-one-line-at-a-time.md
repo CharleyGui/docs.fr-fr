@@ -1,22 +1,22 @@
 ---
-title: 'Procédure : Lire un fichier texte ligne par ligne (Visual C#)'
+title: Comment lire un fichier texte sur une ligne à la fois- C# Guide de programmation
 ms.date: 07/20/2015
 helpviewer_keywords:
 - ReadLine method [C#]
 - reading text files, line by line
 - text files [C#]
 ms.assetid: d62e22c5-a13c-48db-af9b-f10c801b0cb1
-ms.openlocfilehash: 75274d93ee29feb5f79dfc29c24109f25fd98a5c
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: a6af48cdacd836465d776a3fd4e1d17aa0298b77
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589959"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635338"
 ---
-# <a name="how-to-read-a-text-file-one-line-at-a-time-visual-c"></a>Procédure : Lire un fichier texte ligne par ligne (Visual C#)
+# <a name="how-to-read-a-text-file-one-line-at-a-time-c-programming-guide"></a>Guide pratique pour lire un fichier texte ligne par ligne (C# Guide de programmation)
 Cet exemple lit le contenu d’une chaîne d’un fichier texte, ligne par ligne, à l’aide de la méthode `ReadLine` de la classe `StreamReader`. Chaque ligne de texte est stockée dans la chaîne `line` et s’affiche à l’écran.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp
 int counter = 0;  

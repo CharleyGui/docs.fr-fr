@@ -2,12 +2,12 @@
 title: Projections et transformations (LINQ to XML)
 ms.date: 07/20/2015
 ms.assetid: 297de224-b625-44cf-8c00-186b6189aa0e
-ms.openlocfilehash: 3bcef46b690ab57b8d718773c34c2d70f4f14929
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c912ba8bb908016ae32d171208e8224f60152254
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346613"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636780"
 ---
 # <a name="projections-and-transformations-linq-to-xml-visual-basic"></a>Projections et transformations (LINQ to XML) (Visual Basic)
 Cette section fournit des exemples de projections et de transformations [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].  
@@ -23,7 +23,7 @@ Cette section fournit des exemples de projections et de transformations [!INCLUD
 |[Comment : projeter un graphique d’objet (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-object-graph.md)|Montre comment projeter un graphique d'objet plus complexe à partir d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
 |[Comment : projeter un type anonyme (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-project-an-anonymous-type.md)|Montre comment projeter une collection d'objets anonymes à partir d'une requête [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].|  
 |[Comment : générer des fichiers texte à partir de XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-text-files-from-xml.md)|Montre comment transformer un fichier XML en un fichier texte non XML.|  
-|[Procédure : générer du code XML à partir de fichiers CSV (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)|Montre comment utiliser [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour analyser un fichier CSV et générer du code XML à partir de celui-ci.|  
+|[Procédure : générer du code XML à partir de fichiers CSV (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/how-to-generate-xml-from-csv-files.md)|Montre comment utiliser LINQ pour analyser un fichier CSV et générer du code XML à partir de celui-ci.|  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -2,12 +2,12 @@
 title: Vue d’ensemble de LINQ to XML (C#)
 ms.date: 10/30/2018
 ms.assetid: 716b94d3-0091-4de1-8e05-41bc069fa9dd
-ms.openlocfilehash: 313abae6e8a82414ead90d5a4fdab7406492784f
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: d8b606e1d3287f13a2112b75d5239fd1ac7dd7dc
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785238"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635507"
 ---
 # <a name="linq-to-xml-overview-c"></a>Vue d’ensemble de LINQ to XML (C#)
 
@@ -15,7 +15,7 @@ LINQ to XML fournit une interface de programmation XML en mémoire qui exploite 
  
 Le langage XML a été largement adopté comme méthode pour mettre en forme des données dans de nombreux contextes. Par exemple, on trouve du code XML sur le Web, dans les fichiers de configuration, dans les fichiers Microsoft Office Word et dans les bases de données.
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une approche à jour et repensée de la programmation avec XML. Elle propose les fonctionnalités de modification des documents en mémoire du modèle DOM (Document Objet Model) et prend en charge les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Bien que ces expressions de requête soient syntaxiquement différentes de XPath, elles procurent la même fonctionnalité.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une approche à jour et repensée de la programmation avec XML. Il fournit les fonctionnalités de modification de document en mémoire du Document Object Model (DOM) et prend en charge les expressions de requête LINQ. Bien que ces expressions de requête soient syntaxiquement différentes de XPath, elles procurent la même fonctionnalité.
 
 ## <a name="linq-to-xml-developers"></a>Développeurs LINQ to XML
 
@@ -27,13 +27,13 @@ Les développeurs professionnels peuvent utiliser [!INCLUDE[sqltecxlinq](~/inclu
 
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est une interface de programmation XML prenant en charge LINQ qui vous permet de travailler avec du code XML dans les langages de programmation .NET Framework.
 
-[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s’apparente au modèle DOM en ce sens qu’il place le document XML en mémoire. Vous pouvez interroger et modifier le document, et après l'avoir modifié, vous pouvez l'enregistrer dans un fichier ou le sérialiser et l'envoyer via Internet. Cependant, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] diffère du modèle DOM : il fournit un nouveau modèle objet qui est plus léger et plus facile à manipuler, et qui tire parti des fonctionnalités du langage C#.
+[!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] s’apparente au modèle DOM en ce sens qu’il place le document XML en mémoire. Vous pouvez interroger et modifier le document, et après l'avoir modifié, vous pouvez l'enregistrer dans un fichier ou le sérialiser et l'envoyer via Internet. Cependant, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] diffère du modèle DOM : il procure un nouveau modèle objet qui est plus léger et plus facile à manipuler, et qui tire parti des fonctionnalités du langage dans C#.
 
-Le principal avantage de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est son intégration avec [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. Cette intégration vous permet d'écrire des requêtes sur le document XML en mémoire afin de récupérer des collections d'éléments et d'attributs. La capacité de requête de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est comparable en terme de fonctionnalités (mais pas en termes de syntaxe) à XQuery et XPath. L’intégration de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] dans C# fournit un typage plus fort, la vérification au moment de la compilation et une prise en charge améliorée du débogueur.
+L’avantage le plus important de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est son intégration à LINQ (Language-Integrated Query). Cette intégration vous permet d'écrire des requêtes sur le document XML en mémoire afin de récupérer des collections d'éléments et d'attributs. La capacité de requête de [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est comparable en terme de fonctionnalités (mais pas en termes de syntaxe) à XQuery et XPath. L’intégration de LINQ dans C# fournit un typage plus fort, une vérification au moment de la compilation et une prise en charge améliorée du débogueur.
 
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] présente également l'avantage de pouvoir utiliser des résultats de requête en tant que paramètres de constructeurs d'objets <xref:System.Xml.Linq.XElement> et <xref:System.Xml.Linq.XAttribute>, ce qui constitue une approche puissante pour la création d'arborescences XML. Cette approche, appelée *construction fonctionnelle*, permet aux développeurs de transformer facilement des arborescences XML d’une forme en une autre.
 
-Par exemple, vous pouvez avoir un bon de commande XML standard comme décrit dans [Exemple de fichier XML : Commande fournisseur standard (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml-1.md). En utilisant [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pourriez exécuter la requête suivante afin d'obtenir la valeur d'attribut de numéro de référence pour chaque élément de la commande fournisseur :
+Par exemple, vous pouvez avoir un bon de commande XML classique comme décrit dans [Exemple de fichier XML : commande fournisseur typique (LINQ to XML)](sample-xml-file-typical-purchase-order-linq-to-xml-1.md). En utilisant [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pourriez exécuter la requête suivante afin d'obtenir la valeur d'attribut de numéro de référence pour chaque élément de la commande fournisseur :
 
 ```csharp
 // Load the XML file from our project directory containing the purchase orders
@@ -77,7 +77,7 @@ IEnumerable<XElement> pricesByPartNos = purchaseOrder.Descendants("Item")
                                         .OrderBy(order => order.Element("PartNumber"));
 ```
 
-Outre ces fonctionnalités [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit une interface de programmation XML améliorée. Grâce à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], vous pouvez :
+Outre ces fonctionnalités LINQ, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] fournit une interface de programmation XML améliorée. [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] vous permet de réaliser les opérations suivantes :
 
 - charger du code XML à partir de [fichiers](how-to-load-xml-from-a-file.md) ou de [flux](how-to-stream-xml-fragments-from-an-xmlreader.md) ;
 
@@ -85,7 +85,7 @@ Outre ces fonctionnalités [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], [!
 
 - créer du code XML à partir de zéro à l'aide de la construction fonctionnelle ;
 
-- interroger du code XML à l'aide d'axes de type XPath ;
+- interroger du code XML à l’aide d’axes de type XPath ;
 
 - manipuler l'arborescence XML en mémoire à l'aide de méthodes telles que <xref:System.Xml.Linq.XContainer.Add%2A>, <xref:System.Xml.Linq.XNode.Remove%2A>, <xref:System.Xml.Linq.XNode.ReplaceWith%2A> et <xref:System.Xml.Linq.XElement.SetValue%2A> ;
 
@@ -121,6 +121,6 @@ Pour plus d’informations, consultez [Création d’arborescences XML (C#)](./c
 ## <a name="see-also"></a>Voir aussi
 
 - [Référence (LINQ to XML)](./reference-linq-to-xml.md)
-- [LINQ to XML, différences par rapport à DOM (C#)](./linq-to-xml-vs-dom.md)
-- [LINQ to XML, différences par rapport à d’autres technologies XML](./linq-to-xml-vs-other-xml-technologies.md)
+- [LINQ to XML et DOM (C#)](./linq-to-xml-vs-dom.md)
+- [LINQ to XML différences par rapport à d’autres technologies XML](./linq-to-xml-vs-other-xml-technologies.md)
 - <xref:System.Xml.Linq>

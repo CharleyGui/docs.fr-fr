@@ -7,18 +7,18 @@ helpviewer_keywords:
 - LINQ [Visual Basic], writing queries
 - writing LINQ queries [Visual Basic]
 ms.assetid: f0045808-b9fe-4d31-88d1-473d9957211e
-ms.openlocfilehash: 6a9f229697ce3d6328c6fb09d18d4cc2627eab10
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6d2e472cc996c42aa091ed95c6954d0879c98372
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351014"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636755"
 ---
 # <a name="walkthrough-writing-queries-in-visual-basic"></a>Procédure pas à pas : écriture de requêtes dans Visual Basic
 
-Cette procédure pas à pas montre comment vous pouvez utiliser des fonctionnalités de langage Visual Basic pour écrire des expressions de requête [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)]. La procédure pas à pas montre comment créer des requêtes sur une liste d’objets Student, comment exécuter les requêtes et comment les modifier. Les requêtes incorporent plusieurs fonctionnalités, notamment les initialiseurs d’objets, l’inférence de type local et les types anonymes.
+Cette procédure pas à pas montre comment vous pouvez utiliser des fonctionnalités de langage Visual Basic pour écrire des expressions de requête LINQ (Language-Integrated Query). La procédure pas à pas montre comment créer des requêtes sur une liste d’objets Student, comment exécuter les requêtes et comment les modifier. Les requêtes incorporent plusieurs fonctionnalités, notamment les initialiseurs d’objets, l’inférence de type local et les types anonymes.
 
-À l’issue de cette procédure pas à pas, vous serez prêt à passer aux exemples et à la documentation du fournisseur [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] spécifique qui vous intéresse. les fournisseurs de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] incluent [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], LINQ to DataSet et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].
+À l’issue de cette procédure pas à pas, vous serez prêt à passer aux exemples et à la documentation du fournisseur LINQ spécifique qui vous intéresse. Les fournisseurs LINQ incluent [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], LINQ to DataSet et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)].
 
 ## <a name="create-a-project"></a>Créer un projet
 
@@ -131,15 +131,15 @@ Il est plus facile d’analyser les résultats de la requête s’ils sont dans 
 
 2. Générez et exécutez l’application en appuyant sur CTRL + F5. Notez les résultats dans la fenêtre de console.
 
-## <a name="additional-examples"></a>Exemples supplémentaires
+## <a name="additional-examples"></a>Autres exemples
 
-Maintenant que vous comprenez les notions de base, voici une liste d’exemples supplémentaires pour illustrer la flexibilité et la puissance des requêtes de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Chaque exemple est précédé d’une brève description de ce qu’il fait. Placez le pointeur de la souris sur la variable de résultat de la requête pour chaque requête pour voir le type inféré. Utilisez une boucle `For Each` pour produire les résultats.
+Maintenant que vous comprenez les notions de base, voici une liste d’exemples supplémentaires pour illustrer la flexibilité et la puissance des requêtes LINQ. Chaque exemple est précédé d’une brève description de ce qu’il fait. Placez le pointeur de la souris sur la variable de résultat de la requête pour chaque requête pour voir le type inféré. Utilisez une boucle `For Each` pour produire les résultats.
 
 [!code-vb[VbLINQWalkthrough#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQWalkthrough/VB/Class1.vb#7)]
 
 ## <a name="additional-information"></a>Informations supplémentaires
 
-Une fois que vous êtes familiarisé avec les concepts de base de l’utilisation des requêtes, vous êtes prêt à lire la documentation et les exemples pour le type spécifique de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] fournisseur qui vous intéresse :
+Une fois que vous êtes familiarisé avec les concepts de base de l’utilisation des requêtes, vous êtes prêt à lire la documentation et les exemples pour le type spécifique de fournisseur LINQ qui vous intéresse :
 
 - [LINQ to Objects](../../../../visual-basic/programming-guide/concepts/linq/linq-to-objects.md)
 

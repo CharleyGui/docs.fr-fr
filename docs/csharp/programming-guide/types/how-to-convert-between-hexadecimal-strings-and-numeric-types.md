@@ -1,5 +1,5 @@
 ---
-title: Guide pratique pour effectuer une conversion entre des chaînes hexadécimales C# et des types numériques-Guide de programmation
+title: Comment effectuer une conversion entre des chaînes hexadécimales et C# des types numériques-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -8,14 +8,14 @@ helpviewer_keywords:
 - strings [C#], converting hexadecimal strings
 - hexadecimal strings [C#]
 ms.assetid: 7115c49f-7d1d-40c3-8bd9-aae0cc1d46b6
-ms.openlocfilehash: 8b72734f9b617fed2ff65977c9a0e60f46424ae8
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 26c2aa12c9c67c59d1ba6fbd20bf675b947b3967
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74429441"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635026"
 ---
-# <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Guide pratique pour effectuer une conversion entre des chaînes hexadécimales et des types numériques (Guide de programmation C#)
+# <a name="how-to-convert-between-hexadecimal-strings-and-numeric-types-c-programming-guide"></a>Comment effectuer une conversion entre des chaînes hexadécimales etC# des types numériques (Guide de programmation)
 Ces exemples montrent comment effectuer les tâches suivantes :  
   
 - Obtenir la valeur hexadécimale de chaque caractère dans une chaîne ([string](../../language-reference/builtin-types/reference-types.md)).  
@@ -34,7 +34,7 @@ Ces exemples montrent comment effectuer les tâches suivantes :
  [!code-csharp[csProgGuideTypes#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#30)]  
   
 ## <a name="example"></a>Exemple  
- Cet exemple analyse une `string` de valeurs hexadécimales et génère le caractère correspondant à chacune d’elles. Il appelle d’abord la méthode [Split(Char\[\])](xref:System.String.Split(System.Char[])) pour obtenir chaque valeur hexadécimale sous la forme d’une `string` individuelle dans un tableau. Il appelle ensuite <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> pour convertir la valeur hexadécimale en valeur décimale représentée comme [int](../../language-reference/builtin-types/integral-numeric-types.md). Il montre deux façons différentes d’obtenir le caractère correspondant à ce code de caractère. La première technique utilise <xref:System.Char.ConvertFromUtf32%28System.Int32%29>, qui retourne le caractère correspondant à l’argument entier sous forme de `string`. La deuxième technique effectue un cast explicite de l’`int` en [char](../../language-reference/builtin-types/char.md).  
+ Cet exemple analyse une `string` de valeurs hexadécimales et génère le caractère correspondant à chacune d’elles. Il appelle d’abord la méthode [Split(Char\[\])](xref:System.String.Split(System.Char[])) pour obtenir chaque valeur hexadécimale sous la forme d’une `string` individuelle dans un tableau. Il appelle ensuite <xref:System.Convert.ToInt32%28System.String%2CSystem.Int32%29> pour convertir la valeur hexadécimale en valeur décimale représentée comme [int](../../language-reference/builtin-types/integral-numeric-types.md). Il montre deux façons différentes d’obtenir le caractère correspondant à ce code de caractère. La première technique utilise `string`, qui retourne le caractère correspondant à l’argument entier sous forme de <xref:System.Char.ConvertFromUtf32%28System.Int32%29>. La deuxième technique effectue un cast explicite de l’`int` en [char](../../language-reference/builtin-types/char.md).  
   
  [!code-csharp[csProgGuideTypes#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsProgGuideTypes/CS/Class1.cs#31)]  
   
@@ -55,6 +55,6 @@ Ces exemples montrent comment effectuer les tâches suivantes :
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
+- [Standard Numeric Format Strings](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Types](./index.md)
-- [Comment : déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)
+- [Comment déterminer si une chaîne représente une valeur numérique](../strings/how-to-determine-whether-a-string-represents-a-numeric-value.md)

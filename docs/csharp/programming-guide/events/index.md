@@ -7,17 +7,17 @@ helpviewer_keywords:
 - C# language, events
 - events [C#]
 ms.assetid: a8e51b22-d294-44fb-9539-0072f06c4cb3
-ms.openlocfilehash: d70ec5784d56bad60fbc33ae0b992de1bebfce38
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 84a7eba7bf71f5ef5a0f46eb5863952e1af37c86
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417957"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635429"
 ---
 # <a name="events-c-programming-guide"></a>Événements (Guide de programmation C#)
 Les événements permettent à une [classe](../../language-reference/keywords/class.md) ou à un objet de notifier d’autres classes ou objets quand quelque chose de significatif se produit. La classe qui envoie (ou *déclenche*) l’événement est appelée *publieur* et les classes qui reçoivent (ou *gèrent*) l’événement sont appelées *abonnés*.  
   
- Dans une application C# Windows Forms ou web classique, vous vous abonnez à des événements déclenchés par des contrôles, comme des boutons et des zones de liste. Vous pouvez utiliser l’IDE Visual C# pour parcourir les événements publiés par un contrôle et sélectionner ceux que vous voulez gérer. L’IDE permet d’ajouter automatiquement une méthode de gestionnaire d’événements vide et le code pour vous abonner à l’événement. Pour plus d’informations, consultez [Guide pratique pour s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md).  
+Dans une application C# Windows Forms ou web classique, vous vous abonnez à des événements déclenchés par des contrôles, comme des boutons et des zones de liste. Vous pouvez utiliser l’IDE Visual C# pour parcourir les événements publiés par un contrôle et sélectionner ceux que vous voulez gérer. L’IDE permet d’ajouter automatiquement une méthode de gestionnaire d’événements vide et le code pour vous abonner à l’événement. Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md).
   
 ## <a name="events-overview"></a>Vue d'ensemble des événements  
  Les événements ont les propriétés suivantes :  
@@ -35,18 +35,18 @@ Les événements permettent à une [classe](../../language-reference/keywords/cl
 - Dans la bibliothèque de classes .NET Framework, les événements sont basés sur le délégué <xref:System.EventHandler> et la classe de base <xref:System.EventArgs>.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- Pour plus d'informations, voir :  
+ Pour plus d'informations, consultez .  
   
-- [Comment : s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md)  
-  
-- [Comment : publier des événements conformes aux indications du .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)  
-  
-- [Comment : déclencher les événements de la classe de base dans les classes dérivées](./how-to-raise-base-class-events-in-derived-classes.md)  
-  
-- [Guide pratique d’implémentation d’événements d’interface](./how-to-implement-interface-events.md)  
-  
-- [Comment : implémenter des accesseurs d’événement personnalisés](./how-to-implement-custom-event-accessors.md)  
-  
+- [Comment s’abonner et annuler l’abonnement à des événements](./how-to-subscribe-to-and-unsubscribe-from-events.md)
+
+- [Comment publier des événements conformes aux instructions .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+
+- [Comment déclencher des événements de classe de base dans des classes dérivées](./how-to-raise-base-class-events-in-derived-classes.md)
+
+- [Comment implémenter des événements d’interface](./how-to-implement-interface-events.md)
+
+- [Comment implémenter des accesseurs d’événement personnalisés](./how-to-implement-custom-event-accessors.md)
+
 ## <a name="c-language-specification"></a>Spécification du langage C#  
 
 Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.md#events) dans la [Spécification du langage C#](/dotnet/csharp/language-reference/language-specification/introduction). La spécification du langage est la source de référence pour la syntaxe C# et son utilisation.
@@ -61,4 +61,4 @@ Pour plus d’informations, consultez [Événements](~/_csharplang/spec/classes.
 - <xref:System.EventHandler>
 - [Guide de programmation C#](../index.md)
 - [Délégués](../delegates/index.md)
-- [Création de gestionnaires d’événements dans Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d’événements dans les Windows Forms](../../../framework/winforms/creating-event-handlers-in-windows-forms.md)

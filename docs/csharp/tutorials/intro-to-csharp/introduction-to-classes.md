@@ -3,12 +3,12 @@ title: Classes et objets – Présentation du tutoriel C#
 description: Créez votre premier programme C# et explorez les concepts orientés objet
 ms.date: 10/11/2017
 ms.custom: mvc
-ms.openlocfilehash: e4cf7912de69946289c0594944b8ac3a8c252ac2
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 06d1a30abc0d031badcba4ec60f7deb3c670a3ae
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736831"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75634948"
 ---
 # <a name="explore-object-oriented-programming-with-classes-and-objects"></a>Explorez la programmation orientée objet avec des classes et des objets
 
@@ -73,7 +73,7 @@ namespace classes
 
 Avant de poursuivre, examinons ce que vous venez de créer.  La déclaration `namespace` permet d’organiser logiquement votre code. Ce tutoriel étant relativement petit, vous allez placer tout le code dans un même espace de noms. 
 
-`public class BankAccount` définit la classe ou le type que vous créez. Tout ce qui est situé entre `{` et `}` après la déclaration de classe définit le comportement de la classe. La classe `BankAccount` a cinq ***membres***. Les trois premiers sont des ***propriétés***. Les propriétés sont des éléments de données qui peuvent avoir un code qui applique la validation ou d’autres règles. Les deux derniers sont des ***méthodes***. Les méthodes sont des blocs de code qui effectuent une fonction unique. La lecture des noms de chacun des membres doit fournir suffisamment d’informations pour vous permettre (ou à tout autre développeur) de comprendre ce que fait la classe.
+`public class BankAccount` définit la classe ou le type que vous créez. Tout ce qui se trouve à l’intérieur du `{` et `}` qui suit la déclaration de classe définit l’État et le comportement de la classe. La classe `BankAccount` a cinq ***membres***. Les trois premiers sont des ***propriétés***. Les propriétés sont des éléments de données qui peuvent avoir un code qui applique la validation ou d’autres règles. Les deux derniers sont des ***méthodes***. Les méthodes sont des blocs de code qui effectuent une fonction unique. La lecture des noms de chacun des membres doit fournir suffisamment d’informations pour vous permettre (ou à tout autre développeur) de comprendre ce que fait la classe.
 
 ## <a name="open-a-new-account"></a>Ouvrir un nouveau compte
 
@@ -89,7 +89,7 @@ public BankAccount(string name, decimal initialBalance)
 }
 ```
 
-Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`](../../language-reference/operators/new-operator.md). Remplacez la ligne `Console.WriteLine("Hello World!");` dans *Program.cs* par la ligne suivante (remplacez `<name>` par votre nom) :
+Les constructeurs sont appelés quand vous créez un objet à l’aide de [`new`](../../language-reference/operators/new-operator.md). Remplacez la ligne `Console.WriteLine("Hello World!");` dans *Program.cs* par le code suivant (remplacez `<name>` par votre nom) :
 
 ```csharp
 var account = new BankAccount("<name>", 1000);
@@ -106,7 +106,7 @@ Ajoutez la déclaration de membre suivante à la classe `BankAccount` :
 private static int accountNumberSeed = 1234567890;
 ```
 
-Il s’agit d’un membre de données. Celui-ci est `private`, ce qui signifie qu’il est uniquement accessible par code dans la classe `BankAccount`. C’est un moyen de séparer les responsabilités publiques (comme la présence d’un numéro de compte) de l’implémentation privée (comment les numéros de compte sont générés). Il est également `static`, ce qui signifie qu’il est partagé par tous les objets `BankAccount`. La valeur d’une variable non statique est unique pour chaque instance de l’objet `BankAccount`. Ajoutez les deux lignes suivantes au constructeur pour assigner le numéro de compte :
+Il s’agit d’un membre de données. Celui-ci est `private`, ce qui signifie qu’il est uniquement accessible par code dans la classe `BankAccount`. C’est un moyen de séparer les responsabilités publiques (comme la présence d’un numéro de compte) de l’implémentation privée (comment les numéros de compte sont générés). Il est également `static`, ce qui signifie qu’il est partagé par toutes les objets `BankAccount`. La valeur d’une variable non statique est unique pour chaque instance de l’objet `BankAccount`. Ajoutez les deux lignes suivantes au constructeur pour assigner le numéro de compte :
 
 ```csharp
 this.Number = accountNumberSeed.ToString();
@@ -145,7 +145,7 @@ Cela introduit le concept d’***exceptions***. Le moyen typique d’indiquer qu
 
 [!code-csharp[DepositAndWithdrawal](~/samples/csharp/classes-quickstart/BankAccount.cs#DepositAndWithdrawal)]
 
-L’instruction [`throw`](../../language-reference/keywords/throw.md) **lève** une exception. L’exécution du bloc actuel se termine et le contrôle est transféré au premier bloc correspondant `catch` trouvé dans la pile des appels. Vous ajouterez un bloc `catch` pour tester ce code un peu plus tard.
+L’instruction [`throw`](../../language-reference/keywords/throw.md)**lève** une exception. L’exécution du bloc actuel se termine et le contrôle est transféré au premier bloc correspondant `catch` trouvé dans la pile des appels. Vous ajouterez un bloc `catch` pour tester ce code un peu plus tard.
 
 Le constructeur devrait obtenir une modification lui permettant d’ajouter une transaction initiale au lieu de mettre directement le solde à jour. Étant donné que vous avez déjà écrit la méthode `MakeDeposit`, appelez-la à partir de votre constructeur. Le constructeur terminé doit être semblable à ce qui suit :
 
@@ -208,7 +208,7 @@ Console.WriteLine(account.GetAccountHistory());
 
 Tapez `dotnet run` pour afficher les résultats.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Si vous vous êtes bloqué, vous pouvez voir la source de ce didacticiel [dans notre référentiel GitHub](https://github.com/dotnet/samples/tree/master/csharp/classes-quickstart/).
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], listed by category
 ms.assetid: f8a1f78e-d9fa-4367-9ec6-f084577e83bb
-ms.openlocfilehash: 41cbe57f1e3711bb4e18b2b4da28c26ebbd2bc60
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 5958793015d409678b67cdc7eedcb4289f5e885c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005693"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636209"
 ---
 # <a name="controls-by-category"></a>Contrôles par catégorie
 Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés logiquement en plusieurs catégories. Ces catégories peuvent vous aider à identifier les contrôles ayant des modèles d’utilisation ou une fonctionnalité similaires pour sélectionner le contrôle adapté à votre scénario.  
@@ -122,7 +122,7 @@ Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés lo
   
 - <xref:Microsoft.Win32.SaveFileDialog>  
   
-## <a name="user-information"></a>Informations d'utilisateur  
+## <a name="user-information"></a>Informations sur l’utilisateur  
  Les contrôles d’informations utilisateur fournissent des commentaires contextuels ou clarifient l’interface utilisateur d’une application. L’utilisateur ne peut généralement pas interagir avec ces contrôles.  
   
 - <xref:System.Windows.Controls.AccessText>  
@@ -140,7 +140,7 @@ Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés lo
 - <xref:System.Windows.Controls.ToolTip>  
   
 ## <a name="documents"></a>Documents  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] inclut des contrôles spécialisés pour consulter des documents. Ces contrôles optimisent l’environnement de lecture selon le scénario utilisateur ciblé.  
+ WPF comprend plusieurs contrôles spécialisés pour l’affichage des documents. Ces contrôles optimisent l’environnement de lecture selon le scénario utilisateur ciblé.  
   
 - <xref:System.Windows.Controls.DocumentViewer>  
   
@@ -152,7 +152,7 @@ Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés lo
   
 - <xref:System.Windows.Controls.StickyNoteControl>  
   
-## <a name="input"></a>Entrée  
+## <a name="input"></a>Input  
  Les contrôles d’entrée permettent à l’utilisateur d’entrer du texte et d’autres contenus.  
   
 - <xref:System.Windows.Controls.TextBox>  
@@ -161,8 +161,8 @@ Les contrôles Windows Presentation Foundation (WPF) peuvent être regroupés lo
   
 - <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="media"></a>Médias  
- [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] intègre la prise en charge de l’hébergement du contenu audio et vidéo, ainsi que des codecs pour la plupart des formats d’image courants.  
+## <a name="media"></a>Support  
+ WPF offre une prise en charge intégrée de l’hébergement du contenu audio et vidéo, ainsi que des [codecs] pour les formats d’image les plus populaires.  
   
 - <xref:System.Windows.Controls.Image>  
   
