@@ -1,34 +1,32 @@
 - name: Windows Presentation Foundation pour .NET Core
+  href: overview/index.md
+- name: Prise en main
   items:
-    - name: Vue d'ensemble
+    - name: Créer une application WPF
+      href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
+- name: Migration
+  items:
+    - name: "Différences par rapport au\_.NET Framework"
+      href: migration/differences-from-net-framework.md
+    - name: Migrer de Framework vers Core
+      href: migration/convert-project-from-net-framework.md
+- name: Notions de base
+  items:
+    - name: XAML
+      href: fundamentals/xaml.md
+    - name: Définir des ressources
+      href: fundamentals/xaml-resources-define.md
+    - name: Styles et modèles
       items:
-        - name: Qu’est-ce que WPF ?
-          href: overview/index.md
-    - name: Bien démarrer
-      items:
-        - name: Créer une application WPF
-          href: 'https://docs.microsoft.com/visualstudio/get-started/csharp/tutorial-wpf?toc=/dotnet/desktop-wpf/toc.json&bc=/dotnet/breadcrumb/toc.json'
-    - name: Migration
-      items:
-        - name: "Différences par rapport au\_.NET Framework"
-          href: migration/differences-from-net-framework.md
-        - name: Migrer de Framework vers Core
-          href: migration/convert-project-from-net-framework.md
-    - name: Notions de base
-      items:
-        - name: XAML
-          href: fundamentals/xaml.md
-        - name: Définir les ressources
-          href: fundamentals/xaml-resources-define.md
-        - name: Styles et modèles
-          items:
-            - name: Vue d'ensemble
-              href: fundamentals/styles-templates-overview.md
-            - name: Créer et appliquer un style
-              href: fundamentals/styles-templates-create-apply-style.md
-            - name: Créer et appliquer un modèle
-              href: themes/how-to-create-apply-template.md
-    - name: Utilisation de données
-      items:
-        - name: Vue d’ensemble de la liaison de données
-          href: data/data-binding-overview.md
+        - name: Vue d'ensemble
+          href: fundamentals/styles-templates-overview.md
+        - name: Créer et appliquer un style
+          href: fundamentals/styles-templates-create-apply-style.md
+        - name: Créer et appliquer un modèle
+          href: themes/how-to-create-apply-template.md
+    - name: Informations de référence du langage XAML
+      href: xaml-services/
+- name: Utiliser les données
+  items:
+    - name: Vue d’ensemble de la liaison de données
+      href: data/data-binding-overview.md
