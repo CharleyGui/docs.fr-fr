@@ -1,0 +1,13 @@
+- name: Nouveautés
+  href: index.yml
+  expanded: true
+  items:
+    - name: 2019
+      expanded: true
+      items:
+        - name: Novembre
+          href: 2019-11.md
+        - name: Octobre
+          href: 2019-10.md
+        - name: Septembre
+          href: 2019-09.md
