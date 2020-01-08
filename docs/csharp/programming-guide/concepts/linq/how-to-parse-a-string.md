@@ -1,15 +1,15 @@
 ---
-title: Guide pratique pour analyser une chaîne (C#)
+title: Comment analyser une chaîne (C#)
 ms.date: 07/20/2015
 ms.assetid: 81e5686c-9658-42d8-a7e3-b11be0a2c98b
-ms.openlocfilehash: 086a4baecee9ee927b08d6da53d16324ef32e8a8
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 79821eb9e5cd7187ac3c2a93f85eaae45c5c48ac
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140980"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345809"
 ---
-# <a name="how-to-parse-a-string-c"></a>Guide pratique pour analyser une chaîne (C#)
+# <a name="how-to-parse-a-string-c"></a>Comment analyser une chaîne (C#)
 
 Cette rubrique montre comment analyser une chaîne pour créer une arborescence XML en C#.
 

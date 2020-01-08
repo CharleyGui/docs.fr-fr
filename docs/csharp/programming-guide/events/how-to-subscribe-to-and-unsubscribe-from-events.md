@@ -1,5 +1,5 @@
 ---
-title: "Procédure : S'abonner et se désabonner d’événements - Guide de programmation C#"
+title: Guide pratique pour s’abonner et se désabonner d’événements- C# Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: 523045e990532f1475e1c4816c98d1af76daa92b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: e194501d7619d4bc04dec6a10d34fb2b01be2c7a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590399"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346315"
 ---
-# <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Procédure : S'abonner et se désabonner d’événements (Guide de programmation C#)
+# <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Comment s’abonner et annuler l’abonnement à desC# événements (Guide de programmation)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  
   
 ### <a name="to-subscribe-to-events-by-using-the-visual-studio-ide"></a>Pour s’abonner aux événements à l’aide de l’IDE de Visual Studio  
@@ -102,6 +102,6 @@ Vous vous abonnez à un événement publié par une autre classe lorsque vous vo
 
 - [Événements](./index.md)
 - [event](../../language-reference/keywords/event.md)
-- [Guide pratique pour publier des événements conformes aux indications du .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
+- [Comment publier des événements conformes aux instructions .NET Framework](./how-to-publish-events-that-conform-to-net-framework-guidelines.md)
 - [- et -=, opérateurs](../../language-reference/operators/subtraction-operator.md)
 - [+ et +=, opérateurs](../../language-reference/operators/addition-operator.md)

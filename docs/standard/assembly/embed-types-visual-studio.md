@@ -5,12 +5,12 @@ ms.assetid: 55ed13c9-c5bb-4bc2-bcd8-0587eb568864
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: 47a339de60301e01b52a4b8a3a85945624daf940
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: f11fbedad766753ee462c5f597b823493cdaf7cf
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733200"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338554"
 ---
 # <a name="walkthrough-embed-types-from-managed-assemblies-in-visual-studio"></a>Procédure pas à pas : incorporation de types provenant d’assemblys managés dans Visual Studio
 
@@ -22,7 +22,7 @@ Une fois que vous avez spécifié les interfaces publiques qui peuvent être inc
 
 Si vous créez une nouvelle version de votre assembly de Runtime avec nom fort, le programme client n’a pas besoin d’être recompilé. Le programme client continue à utiliser la version de l’assembly de Runtime qui lui est accessible, à l’aide des informations de type incorporées pour les interfaces publiques.
 
-Dans cette procédure pas à pas, vous allez :
+Lors de cette procédure pas à pas, vous allez effectuer les opérations suivantes :
 
 1. Créez un assembly avec nom fort avec une interface publique contenant les informations de type qui peuvent être incorporées.
 1. Créez un assembly de Runtime avec nom fort qui implémente l’interface publique.
@@ -53,7 +53,7 @@ La première étape consiste à créer l’assembly de l’interface d’équiva
 
 1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle Bibliothèque de **classes VB ou (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **bibliothèque de classes (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
 
 1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceInterface*, puis sélectionnez **créer**. Le nouveau projet est créé.
 
@@ -110,7 +110,7 @@ La première étape consiste à créer l’assembly de l’interface d’équiva
    <Assembly: ImportedFromTypeLib("")>
    ```
 
-1. Sélectionnez **fichier**  > **enregistrer tout** ou appuyez sur **CTRL** +**MAJ** +**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** , puis sélectionnez **générer**. Le fichier DLL de la bibliothèque de classes est compilé et enregistré dans le chemin de sortie de la génération spécifié, par exemple *C:\TypeEquivalenceSample*.
 
@@ -120,7 +120,7 @@ Ensuite, créez la classe d’exécution d’équivalence de type.
 
 1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle Bibliothèque de **classes VB ou (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *bibliothèque de classes* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **bibliothèque de classes (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
 
 1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceRuntime*, puis sélectionnez **créer**. Le nouveau projet est créé.
 
@@ -134,7 +134,7 @@ Ensuite, créez la classe d’exécution d’équivalence de type.
 
 1. Dans la boîte de dialogue **créer une clé de nom fort** , sous **nom du fichier de clé**, tapez *Key. snk*. Désactivez la case à cocher **protéger le fichier de clé avec un mot de passe** , puis sélectionnez **OK**.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** , puis sélectionnez **Ajouter** une**référence**de  > .
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** , puis sélectionnez **Ajouter** une **référence**de > .
 
 1. Dans la boîte de dialogue **Gestionnaire de références** , sélectionnez **Parcourir** et accédez au dossier du chemin de sortie. Sélectionnez le fichier *TypeEquivalenceInterface. dll* , sélectionnez **Ajouter**, puis sélectionnez **OK**.
 
@@ -182,7 +182,7 @@ Ensuite, créez la classe d’exécution d’équivalence de type.
    End Class
    ```
 
-1. Sélectionnez **fichier**  > **enregistrer tout** ou appuyez sur **CTRL** +**MAJ** +**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **générer**. Le fichier DLL de la bibliothèque de classes est compilé et enregistré dans le chemin de sortie de la génération spécifié.
 
@@ -192,7 +192,7 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
 
 1. Dans Visual Studio, sélectionnez **Fichier** > **Nouveau** > **Projet**.
 
-1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *console* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle application de **console ou vb (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
+1. Dans la boîte de dialogue **créer un nouveau projet** , tapez *console* dans la zone **Rechercher des modèles** . Sélectionnez le C# modèle ou Visual Basic **application console (.NET Framework)** dans la liste, puis sélectionnez **suivant**.
 
 1. Dans la boîte de dialogue **configurer votre nouveau projet** , sous **nom du projet**, tapez *TypeEquivalenceClient,* , puis sélectionnez **créer**. Le nouveau projet est créé.
 
@@ -200,7 +200,7 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
 
 1. Sélectionnez **Build** dans le volet gauche de l’écran **Propriétés** , puis définissez le **chemin de sortie** sur le même emplacement que celui que vous avez utilisé pour le projet TypeEquivalenceInterface, par exemple *C:\TypeEquivalenceSample*.
 
-1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceClient,** et sélectionnez **Ajouter** une**référence**de  > .
+1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceClient,** et sélectionnez **Ajouter** une **référence**de > .
 
 1. Dans la boîte de dialogue **Gestionnaire de références** , si le fichier **TypeEquivalenceInterface. dll** est déjà listé, sélectionnez-le. Si ce n’est pas le cas, sélectionnez **Parcourir**, accédez au dossier du chemin de sortie, sélectionnez le fichier *TypeEquivalenceInterface. dll* (pas le fichier *TypeEquivalenceRuntime. dll*), puis sélectionnez **Ajouter**. Sélectionnez **OK**.
 
@@ -250,15 +250,15 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
    End Module
    ```
 
-1. Sélectionnez **fichier**  > **enregistrer tout** ou appuyez sur **CTRL** +**MAJ** +**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
 
-1. Appuyez sur **Ctrl** +**F5** pour générer et exécuter le programme. Notez que la sortie de la console retourne la version de l’assembly **1.0.0.0**.
+1. Appuyez sur **Ctrl**+**F5** pour générer et exécuter le programme. Notez que la sortie de la console retourne la version de l’assembly **1.0.0.0**.
 
 ## <a name="modify-the-interface"></a>Modifier l’interface
 
 À présent, modifiez l’assembly d’interface et modifiez sa version.
 
-1. Dans Visual Studio, sélectionnez **fichier**  > **ouvrir**  > **projet/solution**, puis ouvrez le projet **TypeEquivalenceInterface** .
+1. Dans Visual Studio, sélectionnez **fichier** > **ouvrir** > **projet/solution**, puis ouvrez le projet **TypeEquivalenceInterface** .
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** et sélectionnez **Propriétés**.
 
@@ -276,7 +276,7 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
    Function GetDate() As Date
    ```
 
-1. Sélectionnez **fichier**  > **enregistrer tout** ou appuyez sur **CTRL** +**MAJ** +**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceInterface** , puis sélectionnez **générer**. Une nouvelle version du fichier DLL de la bibliothèque de classes est compilée et enregistrée dans le chemin de sortie de la génération.
 
@@ -284,7 +284,7 @@ Enfin, créez un programme client d’équivalence de type qui référence l’a
 
 Modifiez également la classe Runtime et mettez à jour sa version.
 
-1. Dans Visual Studio, sélectionnez **fichier**  > **ouvrir**  > **projet/solution**, puis ouvrez le projet **TypeEquivalenceRuntime** .
+1. Dans Visual Studio, sélectionnez **fichier** > **ouvrir** > **projet/solution**, puis ouvrez le projet **TypeEquivalenceRuntime** .
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **Propriétés**.
 
@@ -307,7 +307,7 @@ Modifiez également la classe Runtime et mettez à jour sa version.
    End Function
    ```
 
-1. Sélectionnez **fichier**  > **enregistrer tout** ou appuyez sur **CTRL** +**MAJ** +**S** pour enregistrer les fichiers et le projet.
+1. Sélectionnez **fichier** > **enregistrer tout** ou appuyez sur **CTRL**+**MAJ**+**S** pour enregistrer les fichiers et le projet.
 
 1. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet **TypeEquivalenceRuntime** et sélectionnez **générer**. Une nouvelle version du fichier DLL de la bibliothèque de classes est compilée et enregistrée dans le chemin de sortie de la génération.
 

@@ -14,12 +14,12 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-ms.openlocfilehash: 9957c38ad625a27395a3bcc3ddd9ce0b4797b93d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 16daa0ef3133b6cd04dc48b7f79fd365098e4bdf
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127614"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348071"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analyse des chaînes de date et d’heure dans .NET
 
@@ -56,7 +56,7 @@ L’exemple suivant illustre l’utilisation de la méthode <xref:System.DateTim
 > Tous les exemples c# de cet article s’exécutent dans votre navigateur. Appuyez sur le bouton **Exécuter** pour afficher la sortie. Vous pouvez également les modifier pour vous entrainer.
 
 > [!NOTE]
-> Ces exemples sont disponibles dans le référentiel de documents GitHub pour [c#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) et [VB](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Vous pouvez également télécharger le projet sous la forme d’un fichier ZIP pour [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) ou [VB](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
+> Ces exemples sont disponibles dans GitHub docs référentiel pour [C#](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/conversions) et [Visual Basic](https://github.com/dotnet/samples/tree/master/snippets/visualbasic/how-to/conversions). Vous pouvez aussi télécharger le projet en tant que fichier zip pour [C#](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/conversions.zip) ou [Visual Basic](https://github.com/dotnet/samples/raw/master/snippets/visualbasic/how-to/conversions.zip).
 
 [!code-csharp-interactive[Parsing.DateAndTime#1](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#1)]
 [!code-vb[Parsing.DateAndTime#1](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#1)]
@@ -86,8 +86,8 @@ Chaque surcharge des méthodes <xref:System.DateTime.Parse%2A> et <xref:System.D
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Analyse de chaînes](parsing-strings.md)
+- [Parsing Strings](parsing-strings.md)
 - [Mise en forme des types](formatting-types.md)
 - [Conversion de type dans .NET](type-conversion.md)
 - [Formats de date et d’heure standard](standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)

@@ -4,12 +4,12 @@ description: Ce tutoriel avancé vous apprend à explorer les données à l’ai
 ms.date: 09/20/2019
 ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: bbf3f257db9079c4f69f25c9ea08e7711b5ea04b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 3d4c022ff8d6e7f260632e34d6f28277014c85c8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039670"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345630"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
@@ -78,9 +78,11 @@ L’exemple suivant montre un grand nombre des raisons de ces choix. Modifiez `x
 
 ## <a name="type-support-for-indices-and-ranges"></a>Prise en charge des types d’index et de plages
 
-Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages, respectivement.
+Les index et les plages fournissent une syntaxe claire et concise permettant d’accéder à un élément unique ou à une sous-plage d’éléments dans une séquence. Une expression d’index retourne généralement le type des éléments d’une séquence. Une expression de plage retourne généralement le même type de séquence que la séquence source.
 
-Un type est **compté** s’il a une propriété nommée `Length` ou `Count` avec un accesseur Get accessible et un type de retour `int`. Un type pouvant être compté qui ne prend pas explicitement en charge les index ou les plages peut fournir une prise en charge implicite pour eux. Pour plus d’informations, consultez les sections prise en charge d' [index implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et [prise en charge de plage implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la [proposition](~/_csharplang/proposals/csharp-8.0/ranges.md).
+Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages, respectivement. Lorsque le type fournit un indexeur qui accepte un seul paramètre <xref:System.Range>, il peut choisir de retourner un autre type de séquence, tel que <xref:System.Span%601?displayProperty=nameWithType>.
+
+Un type est **compté** s’il a une propriété nommée `Length` ou `Count` avec un accesseur Get accessible et un type de retour `int`. Un type pouvant être compté qui ne prend pas explicitement en charge les index ou les plages peut fournir une prise en charge implicite pour eux. Pour plus d’informations, consultez les sections prise en charge d' [index implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et [prise en charge de plage implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la [proposition](~/_csharplang/proposals/csharp-8.0/ranges.md). Les plages utilisant la prise en charge de plage implicite retournent le même type de séquence que la séquence source.
 
 Par exemple, les types .NET suivants prennent en charge les index et les plages : <xref:System.Array>, <xref:System.String>, <xref:System.Span%601>et <xref:System.ReadOnlySpan%601>. Le <xref:System.Collections.Generic.List%601> prend en charge les index mais ne prend pas en charge les plages.
 

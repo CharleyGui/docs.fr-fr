@@ -2,24 +2,24 @@
 title: ADO.NET
 ms.date: 03/30/2017
 ms.assetid: 5b96ed06-9759-4966-a797-a1d5f6ee50ca
-ms.openlocfilehash: 130265070e82245de4bdd49599df9fa9f435f5ed
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 5b7246350478bbc8907bb9f52e425821402f8806
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569420"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346225"
 ---
 # <a name="adonet"></a>ADO.NET
 ADO.NET est un ensemble de classes qui exposent les services d'accès aux données pour les programmeurs .NET Framework. ADO.NET propose un large ensemble de composants pour la création d'applications distribuées avec partage de données. Partie intégrante du .NET Framework, il permet d'accéder à des données relationnelles, XML et d'application. ADO.NET répond à divers besoins en matière de développement, en permettant notamment de créer des clients de bases de données frontaux et des objets métier de couche intermédiaire utilisés par des applications, outils, langages ou navigateurs Internet.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Nouveautés d’ADO.NET](whats-new.md)  
+ [Nouveautés dans ADO.NET](whats-new.md)  
  Introduit des fonctionnalités nouvelles dans ADO.NET.  
   
  [Vue d’ensemble d’ADO.NET](ado-net-overview.md)  
  Propose une introduction à la conception et aux composants de la technologie ADO.NET.  
   
- [Entity Framework](https://go.microsoft.com/fwlink/?LinkID=213876)  
+ [Entity Framework](/ef/ef6/index)  
  Décrit comment créer des applications à l'aide d'Entity Framework.  
   
  [Sécurisation des applications ADO.NET](securing-ado-net-applications.md)  
@@ -43,7 +43,7 @@ ADO.NET est un ensemble de classes qui exposent les services d'accès aux donné
  [Oracle et ADO.NET](oracle-and-adonet.md)  
  Décrit des fonctions et des comportements spécifiques au fournisseur de données .NET Framework pour Oracle.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [LINQ (Language-Integrated Query) - C#](../../../csharp/programming-guide/concepts/linq/index.md)  
  Fournit des liens vers des rubriques et des C#exemples LINQ à l’aide de.  
   

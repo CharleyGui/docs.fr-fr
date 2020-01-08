@@ -1,5 +1,5 @@
 ---
-title: "Procédure : Exécuter le code de nettoyage à l'aide de finally - Guide de programmation C#"
+title: Comment exécuter le code de nettoyage à l' C# aide de finally-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
@@ -7,19 +7,19 @@ helpviewer_keywords:
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: e6adbb864b0450cdd1dbfcc56abdbad2034c5c7a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: 00cc7e40220397f4154de5be1e78a894e37374e8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590250"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346261"
 ---
-# <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Procédure : Exécuter le code de nettoyage à l'aide de finally (Guide de programmation C#)
+# <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Comment exécuter le code de nettoyage à l'C# aide de finally (Guide de programmation)
 L’objectif d’une instruction `finally` est de vérifier que le nettoyage nécessaire des objets, généralement ceux contenant des ressources externes, se produit immédiatement, même si une exception est levée. Un exemple de nettoyage de ce type est l’appel à <xref:System.IO.Stream.Close%2A> sur un <xref:System.IO.FileStream> immédiatement après son utilisation au lieu d’attendre que l’objet soit récupéré par garbage collection par le Common Language Runtime, comme suit :  
   
  [!code-csharp[csProgGuideExceptions#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#16)]  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Pour transformer le code précédent en instruction `try-catch-finally`, le code de nettoyage est séparé du code actif comme suit.  
   
  [!code-csharp[csProgGuideExceptions#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideExceptions/CS/Exceptions.cs#17)]  

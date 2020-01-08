@@ -1,13 +1,13 @@
 ---
-title: 'Comment : lire des données d’objet à partir d’un fichier XML'
+title: "Comment : lire des données d'objet à partir d'un fichier XML"
 ms.date: 07/20/2015
 ms.assetid: 1e1423bf-74a4-4dde-a3bb-ae1bfc0a68ed
-ms.openlocfilehash: c997af4729a24a6b5bd5b22d0153860cff3282d7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: efd5fb72487c92bcccf1fc797106f93c0d2a39fc
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346434"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345995"
 ---
 # <a name="how-to-read-object-data-from-an-xml-file-visual-basic"></a>Procédure : lire des données d’objet à partir d’un fichier XML (Visual Basic)
 Cet exemple lit des données d’objet écrites précédemment dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
@@ -29,7 +29,7 @@ Public Sub ReadXML()
 End Sub  
 ```  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Remplacez le nom du fichier « c:\temp\SerializationOverview.xml » par le nom du fichier qui contient les données sérialisées. Pour plus d’informations sur la sérialisation des données, consultez [Comment : écrire des données d’objet dans un fichier XML (Visual Basic)](../../../../visual-basic/programming-guide/concepts/serialization/how-to-write-object-data-to-an-xml-file.md).  
   
  La classe doit disposer d’un constructeur public sans paramètres.  
