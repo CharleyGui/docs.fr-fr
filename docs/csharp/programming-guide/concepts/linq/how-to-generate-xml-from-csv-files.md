@@ -1,21 +1,21 @@
 ---
-title: 'Procédure : Générer du code XML à partir de fichiers CSV (C#)'
+title: Génération de code XML à partir de fichiersC#CSV ()
 ms.date: 07/20/2015
 ms.assetid: 57b9ccde-f983-4a21-ae61-70ecede30307
-ms.openlocfilehash: bcae061bd5899f4ae5cbb89f8e05079bc9222312
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 643c05cb440165c4461c3e9c80e69701241ab8d1
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486784"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635806"
 ---
-# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="54f03-102">Procédure : Générer du code XML à partir de fichiers CSV (C#)</span><span class="sxs-lookup"><span data-stu-id="54f03-102">How to: Generate XML from CSV Files (C#)</span></span>
-<span data-ttu-id="54f03-103">Cet exemple montre comment utiliser [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d'un fichier de valeurs séparées par des virgules (CSV).</span><span class="sxs-lookup"><span data-stu-id="54f03-103">This example shows how to use [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
+# <a name="how-to-generate-xml-from-csv-files-c"></a><span data-ttu-id="299b9-102">Génération de code XML à partir de fichiersC#CSV ()</span><span class="sxs-lookup"><span data-stu-id="299b9-102">How to generate XML from CSV files (C#)</span></span>
+<span data-ttu-id="299b9-103">Cet exemple montre comment utiliser LINQ (Language-Integrated Query) et [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] pour générer un fichier XML à partir d’un fichier de valeurs séparées par des virgules (CSV).</span><span class="sxs-lookup"><span data-stu-id="299b9-103">This example shows how to use Language-Integrated Query (LINQ) and [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] to generate an XML file from a comma-separated value (CSV) file.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="54f03-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="54f03-104">Example</span></span>  
- <span data-ttu-id="54f03-105">Le code suivant exécute une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] sur un tableau de chaînes.</span><span class="sxs-lookup"><span data-stu-id="54f03-105">The following code performs a [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] query on an array of strings.</span></span>  
+## <a name="example"></a><span data-ttu-id="299b9-104">Exemple</span><span class="sxs-lookup"><span data-stu-id="299b9-104">Example</span></span>  
+ <span data-ttu-id="299b9-105">Le code suivant exécute une requête LINQ sur un tableau de chaînes.</span><span class="sxs-lookup"><span data-stu-id="299b9-105">The following code performs a LINQ query on an array of strings.</span></span>  
   
- <span data-ttu-id="54f03-106">La requête utilise la clause `let` pour fractionner chaque chaîne en un tableau de champs.</span><span class="sxs-lookup"><span data-stu-id="54f03-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
+ <span data-ttu-id="299b9-106">La requête utilise la clause `let` pour fractionner chaque chaîne en un tableau de champs.</span><span class="sxs-lookup"><span data-stu-id="299b9-106">The query uses the `let` clause to split each string into an array of fields.</span></span>  
   
 ```csharp  
 // Create the text file.  
@@ -48,7 +48,7 @@ XElement cust = new XElement("Root",
 Console.WriteLine(cust);  
 ```  
   
- <span data-ttu-id="54f03-107">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="54f03-107">This code produces the following output:</span></span>  
+ <span data-ttu-id="299b9-107">Ce code génère la sortie suivante :</span><span class="sxs-lookup"><span data-stu-id="299b9-107">This code produces the following output:</span></span>  
   
 ```xml  
 <Root>  
