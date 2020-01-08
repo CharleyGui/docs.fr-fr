@@ -6,16 +6,16 @@ helpviewer_keywords:
 - converting [WPF], shape to button
 - Expression Blend [WPF Designer]
 ms.assetid: ff5037c2-bba7-4cae-8abb-6475b686c48e
-ms.openlocfilehash: e1fdc3ef51e8658e07bc555238229bed9116e165
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 10d049288cf560dadedf7bc5e624deb7c42aae81
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460097"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636170"
 ---
 # <a name="walkthrough-create-a-button-by-using-microsoft-expression-blend"></a>Procédure pas à pas : création d'un bouton à l'aide de Microsoft Expression Blend
 
-Cette procédure pas à pas vous guide tout au long du processus de création d’un [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] bouton personnalisé à l’aide de Microsoft Expression Blend.
+Cette procédure pas à pas vous guide tout au long du processus de création d’un bouton personnalisé WPF à l’aide de Microsoft Expression Blend.
 
 > [!IMPORTANT]
 > Microsoft Expression Blend fonctionne en générant [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] qui est ensuite compilé pour créer le programme exécutable. Si vous préférez travailler directement avec XAML, il existe une autre procédure pas à pas qui crée la même application que celle-ci à l’aide de XAML avec Visual Studio au lieu de Blend. Pour plus d’informations, consultez [créer un bouton à l’aide de XAML](walkthrough-create-a-button-by-using-xaml.md) .
@@ -40,7 +40,7 @@ Dans la première partie de cette procédure pas à pas, vous allez créer l’a
 
 5. Nommez le projet `CustomButton`, puis cliquez sur **OK**.
 
-À ce stade, vous avez un projet de [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] vide. Vous pouvez appuyer sur F5 pour exécuter l’application. Comme vous pouvez vous y attendre, l’application se compose uniquement d’une fenêtre vide. Vous allez ensuite créer un rectangle arrondi et le convertir en bouton.
+À ce stade, vous avez un projet WPF vide. Vous pouvez appuyer sur F5 pour exécuter l’application. Comme vous pouvez vous y attendre, l’application se compose uniquement d’une fenêtre vide. Vous allez ensuite créer un rectangle arrondi et le convertir en bouton.
 
 ### <a name="to-convert-a-rectangle-to-a-button"></a>Pour convertir un rectangle en bouton
 
@@ -224,7 +224,7 @@ Comme dernière étape de cette procédure pas à pas, nous allons ajouter des a
 
         ![Comment créer une transformation de rotation](./media/custom-button-blend-rotatetransform.gif)
 
-    5. Appuyez sur F5 pour exécuter l'application. Cliquez sur le bouton. Notez que la couche de verre tourne autour.
+    5. Appuyez sur F5 pour exécuter l'application. Cliquez sur le bouton . Notez que la couche de verre tourne autour.
 
 ## <a name="conclusion"></a>Conclusion
 
