@@ -1,5 +1,7 @@
 - name: Bienvenue
   href: welcome.md
+- name: Nouveautés de la documentation .NET
+  href: whats-new/index.yml
 - name: Guide .NET
   href: standard/
 - name: Guide .NET Core
