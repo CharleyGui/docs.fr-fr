@@ -10,12 +10,12 @@ helpviewer_keywords:
 - extending glass frames into applications [WPF]
 - glass frames [WPF], extending into applications
 ms.assetid: 74388a3a-4b69-4a9d-ba1f-e107636bd660
-ms.openlocfilehash: ae4d7f23729f5bd39558902a58d33c6c45572d85
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a702456895cfdbd44a58059befefb69deee5afa3
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977022"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636196"
 ---
 # <a name="extend-glass-frame-into-a-wpf-application"></a>Étendre le cadre de transparence dans une application WPF
 
@@ -30,7 +30,7 @@ L’illustration suivante montre le cadre de transparence étendu dans la barre 
 
 ![Capture d’écran montrant le cadre de transparence étendu en arrière-plan de la barre d’adresses IE7.](./media/extend-glass-frame-into-a-wpf-application/internet-explorer-glass-frame-extended-address-bar.png)
 
-Pour étendre le cadre de transparence sur une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], l’accès à l’API non managée est nécessaire. L’exemple de code suivant effectue un appel de code non managé (PInvoke) pour les deux API nécessaires à l’extension du frame dans la zone cliente. Chacune de ces API est déclarée dans une classe appelée **NonClientRegionAPI**.
+Pour étendre le cadre de transparence sur une application WPF, l’accès à l’API non managée est nécessaire. L’exemple de code suivant effectue un appel de code non managé (PInvoke) pour les deux API nécessaires à l’extension du frame dans la zone cliente. Chacune de ces API est déclarée dans une classe appelée **NonClientRegionAPI**.
 
 ```csharp
 [StructLayout(LayoutKind.Sequential)]
@@ -66,7 +66,7 @@ End Function
 
 ## <a name="example"></a>Exemple
 
-Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], le handle de fenêtre peut être obtenu à partir de la propriété <xref:System.Windows.Interop.HwndSource.Handle%2A> d’un <xref:System.Windows.Interop.HwndSource>. Dans l’exemple suivant, le frame est étendu dans la zone cliente de l’événement <xref:System.Windows.FrameworkElement.Loaded> de la fenêtre.
+Pour utiliser la fonction [DwmExtendFrameIntoClientArea](/windows/desktop/api/dwmapi/nf-dwmapi-dwmextendframeintoclientarea), un handle de fenêtre doit être obtenu. Dans WPF, le handle de fenêtre peut être obtenu à partir de la propriété <xref:System.Windows.Interop.HwndSource.Handle%2A> d’un <xref:System.Windows.Interop.HwndSource>. Dans l’exemple suivant, le frame est étendu dans la zone cliente de l’événement <xref:System.Windows.FrameworkElement.Loaded> de la fenêtre.
 
 ```csharp
 void OnLoaded(object sender, RoutedEventArgs e)
@@ -145,7 +145,7 @@ L’exemple suivant montre une simple fenêtre dans laquelle le cadre est étend
 </Window>
 ```
 
-L’illustration suivante montre le cadre de transparence étendu dans une application [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] :
+L’illustration suivante montre le cadre de transparence étendu dans une application WPF :
 
 ![Capture d’écran montrant un cadre de transparence étendu dans une application WPF.](./media/extend-glass-frame-into-a-wpf-application/glass-frame-extended-wpf-application.png)
 

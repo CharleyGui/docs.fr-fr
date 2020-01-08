@@ -8,12 +8,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 0c4fc9645e43f23e340804b46bbe8a5faa19525d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 61f15550482e8499e57197e35970e7ec8a096947
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922389"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345503"
 ---
 # <a name="class-c-reference"></a>class (référence C#)
 
@@ -27,13 +27,13 @@ class TestClass
 }
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut uniquement hériter de l’implémentation d’une seule classe de base. Toutefois, une classe peut implémenter plusieurs interfaces. Le tableau suivant répertorie des exemples d’héritage de classe et d’implémentation d’interface :
 
-|Héritage|Exemples|
+|Héritage|Exemple|
 |-----------------|-------------|
-|Aucun.|`class ClassA { }`|
+|Aucun|`class ClassA { }`|
 |Single|`class DerivedClass: BaseClass { }`|
 |Aucun, implémente deux interfaces|`class ImplClass: IFace1, IFace2 { }`|
 |Unique, implémente une seule interface|`class ImplDerivedClass: BaseClass, IFace1 { }`|
@@ -42,7 +42,7 @@ Les classes que vous déclarez directement dans un espace de noms, non imbriqué
 
 Les membres de classe, notamment les classes imbriquées, peuvent être [public](public.md), [protected internal](protected-internal.md), [protected](protected.md), [internal](internal.md), [private](private.md) ou [private protected](private-protected.md). Par défaut, ils sont `private`.
 
-Pour plus d’informations, consultez la page [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
+Pour plus d’informations, consultez [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
 
 Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../programming-guide/generics/generic-classes.md).
 
@@ -72,17 +72,17 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Interfaces](../../programming-guide/interfaces/index.md)
 
-- [Structs](../../programming-guide/classes-and-structs/structs.md)
+- [Structures](../../programming-guide/classes-and-structs/structs.md)
 
-- [Énumérations](../../programming-guide/enumeration-types.md)
+- [Énumérations](../builtin-types/enum.md)
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant explique comment déclarer des champs, des constructeurs et des méthodes de classe. Il illustre également l’instanciation d’un objet et l’impression des données d’une instance. Dans cet exemple, deux classes sont déclarées. La première, `Child`, contient deux champs privés (`name` et `age`), deux constructeurs publics et une méthode publique. La deuxième, `StringTest`, contient `Main`.
 
 [!code-csharp[csrefKeywordsTypes#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#5)]
 
-## <a name="comments"></a>Commentaires
+## <a name="comments"></a>Comments
 
 Notez que, dans l’exemple précédant, les champs privés (`name` et `age`) ne sont accessibles que par le biais de la méthode publique de la classe `Child`. Par exemple, vous ne pouvez pas imprimer le nom de l’enfant à partir de la méthode `Main` en utilisant une instruction comme celle-ci :
 

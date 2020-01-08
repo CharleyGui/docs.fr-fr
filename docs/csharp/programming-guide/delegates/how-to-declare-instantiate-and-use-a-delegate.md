@@ -1,18 +1,18 @@
 ---
-title: 'Comment : déclarer, instancier et utiliser un guide de C# programmation de délégués'
+title: Comment déclarer, instancier et utiliser un guide de C# programmation de délégués
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - delegates [C#], declaring and instantiating
 ms.assetid: 61c4895f-f785-48f8-8bfe-db73b411c4ae
-ms.openlocfilehash: bd3d80023f6cb382f057e976dba01daf5e28db50
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 02c3087d27e5018b77079a2dd6f260a0e7232d3a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423324"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346384"
 ---
-# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Guide pratique pour déclarer, instancier et utiliser un délégué (Guide de programmation C#)
+# <a name="how-to-declare-instantiate-and-use-a-delegate-c-programming-guide"></a>Comment déclarer, instancier et utiliser un délégué (guideC# de programmation)
 Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués comme illustré dans l’exemple suivant.  
   
  [!code-csharp[csProgGuideDelegates#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#13)]  
@@ -31,7 +31,7 @@ Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués com
   
  [!code-csharp[csProgGuideDelegates#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#31)]  
   
- Pour plus d’informations, voir [Expressions lambda](../statements-expressions-operators/lambda-expressions.md).  
+ Pour plus d’informations, consultez [Expressions lambda](../statements-expressions-operators/lambda-expressions.md).  
   
  L’exemple suivant illustre la déclaration, l’instanciation et l’utilisation d’un délégué. La classe `BookDB` encapsule une base de données de librairie qui tient à jour un inventaire des livres. Elle expose une méthode, `ProcessPaperbackBooks`, qui recherche tous les livres de poche dans la base de données et appelle un délégué pour chacun d’entre eux. Le type `delegate` qui est utilisé se nomme `ProcessBookDelegate`. La classe `Test` utilise cette classe pour imprimer les titres et le prix moyen des livres de poche.  
   
@@ -56,7 +56,7 @@ Dans C# 1.0 et versions ultérieures, vous pouvez déclarer des délégués com
   
      [!code-csharp[csProgGuideDelegates#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#17)]  
   
-     Cela crée un nouvel objet délégué associé à la méthode [statique](../../language-reference/keywords/static.md) `Test.PrintTitle`. De même, la méthode non statique `AddBookToTotal` sur l’objet `totaller` est passée comme dans l’exemple suivant :  
+     Cela crée un nouvel objet délégué associé à la méthode [statique](../../language-reference/keywords/static.md)`Test.PrintTitle`. De même, la méthode non statique `AddBookToTotal` sur l’objet `totaller` est passée comme dans l’exemple suivant :  
   
      [!code-csharp[csProgGuideDelegates#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDelegates/CS/Delegates.cs#18)]  
   

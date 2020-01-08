@@ -5,19 +5,19 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - pointers [C#], conversions
 ms.assetid: f0e87502-477a-4ede-a31f-7a3e262e46fb
-ms.openlocfilehash: b0a517eacc505376c9502e9d095c7aac0cd54555
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 663599ab9ba6755388603d5d3cc5a9ee522f3c9f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417534"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345651"
 ---
 # <a name="pointer-conversions-c-programming-guide"></a>Conversions de pointeur (Guide de programmation C#)
 Le tableau suivant présente les conversions de pointeur implicites prédéfinies. Les conversions implicites peuvent se produire dans de nombreuses situations, comme les appels de méthode et les instructions d’assignation.  
   
 ## <a name="implicit-pointer-conversions"></a>Conversions de pointeur implicites  
   
-|De|Vers|  
+|À partir de|Vers|  
 |----------|--------|  
 |Tout type pointeur|void*|  
 |null|Tout type pointeur|  
@@ -26,7 +26,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="explicit-pointer-conversions"></a>Conversions de pointeur explicites  
   
-|De|Vers|  
+|À partir de|Vers|  
 |----------|--------|  
 |Tout type pointeur|Tout autre type pointeur|  
 |sbyte, byte, short, ushort, int, uint, long ou ulong|Tout type pointeur|  
@@ -42,8 +42,9 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Types de pointeur](./pointer-types.md)
-- [Types](/dotnet/csharp/language-reference/keywords)
+- [Types de pointeur](pointer-types.md)
+- [Types référence](../../language-reference/keywords/reference-types.md)
+- [Types valeur](../../language-reference/keywords/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)
 - [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
 - [stackalloc](../../language-reference/operators/stackalloc.md)

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: 2cba5e704787ae6368b2543c985babf2fde3b4dd
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 853faf481e546f2980d799d5daf50a14c608c052
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422752"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345470"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tableau des formats des résultats numériques (référence C#)
 
@@ -21,7 +21,7 @@ Le tableau suivant montre les spécificateurs de format pris en charge pour la m
 
 |Spécificateur de format|Description|Exemples|Résultat|  
 |----------------------|-----------------|--------------|------------|  
-|C ou c|Devise|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|$2.50<br /><br /> ($2.50)|  
+|C ou c|Devise|`string s = $"{2.5:C}";`<br /><br /> `string s = $"{-2.5:C}";`|\\$2,50<br /><br /> (\\$2,50)|  
 |D ou d|Decimal|`string s = $"{25:D5}";`|00025|  
 |E ou e|Exponentiel|`string s = $"{250000:E2}";`|2.50E+005|  
 |F ou f|Virgule fixe|`string s = $"{2.5:F2}";`<br /><br /> `string s = $"{2.5:F0}";`|2.50<br /><br /> 3|  
@@ -52,7 +52,7 @@ Pour plus d’informations, consultez [Chaînes de format numériques standard](
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mise en forme des types](../../../standard/base-types/formatting-types.md)
 - [Mise en forme composite](../../../standard/base-types/composite-formatting.md)

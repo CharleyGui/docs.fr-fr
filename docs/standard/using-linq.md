@@ -1,6 +1,6 @@
 ---
 title: LINQ (Language Integrated Query)
-description: Découvrez comment LINQ fournit des fonctionnalités de requête au niveau du langage, ainsi qu’une API pour C# et VB qui permet d’écrire du code déclaratif expressif.
+description: Découvrez comment LINQ fournit des fonctionnalités d’interrogation au niveau du langage et C# une API à et Visual Basic comme moyen d’écrire du code déclaratif expressif.
 author: cartermp
 ms.author: wiwagn
 ms.date: 06/20/2016
@@ -9,18 +9,18 @@ dev_langs:
 - vb
 ms.technology: dotnet-standard
 ms.assetid: c00939e1-59e3-4e61-8fe9-08ad6b3f1295
-ms.openlocfilehash: 2e4b23b7bf197c9984c53b2f4cc2acaa61731d38
-ms.sourcegitcommit: 4d8efe00f2e5ab42e598aff298d13b8c052d9593
-ms.translationtype: HT
+ms.openlocfilehash: 6ec86b7e728eef2cb4937662fd013d7fe951904d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/16/2019
-ms.locfileid: "68238630"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347272"
 ---
 # <a name="linq-language-integrated-query"></a>LINQ (Language Integrated Query)
 
 ## <a name="what-is-it"></a>Qu’est-ce que c’est ?
 
-LINQ fournit des fonctionnalités d’interrogation au niveau du langage et une API de [fonction d’ordre supérieur](https://en.wikipedia.org/wiki/Higher-order_function) pour C# et VB pour pouvoir écrire du code déclaratif, expressif.
+LINQ fournit des fonctionnalités d’interrogation au niveau du langage et une API de fonction C# d' [ordre supérieur](https://en.wikipedia.org/wiki/Higher-order_function) à et Visual Basic comme un moyen d’écrire du code déclaratif expressif.
 
 Syntaxe de requête au niveau du langage :
 
@@ -143,7 +143,7 @@ Dim filteredItems = From item In myItems
 
 La syntaxe d’API n’est-elle pas simplement un moyen plus concis d’effectuer la syntaxe de requête ?
 
-Non. La syntaxe de requête permet d’utiliser la clause **let**, ce qui vous permet d’introduire et de lier une variable dans la portée de l’expression, en l’utilisant dans les parties suivantes de l’expression. Vous pouvez reproduire le même code avec la seule syntaxe d’API, mais vous obtiendrez très probablement du code difficile à lire.
+No. La syntaxe de requête permet d’utiliser la clause **let**, ce qui vous permet d’introduire et de lier une variable dans la portée de l’expression, en l’utilisant dans les parties suivantes de l’expression. Vous pouvez reproduire le même code avec la seule syntaxe d’API, mais vous obtiendrez très probablement du code difficile à lire.
 
 Ce qui nous amène à la question suivante : **devez-vous vous contenter d’utiliser la syntaxe de requête ?**
 
@@ -354,7 +354,7 @@ End Function
 
 PLINQ, ou Parallel LINQ, est un moteur d’exécution parallèle pour les expressions LINQ. En d’autres termes, une expression régulière LINQ peut être parallélisée de manière simple sur n’importe quel nombre de threads. Cela s’effectue par un appel à `AsParallel()` avant l’expression.
 
-Considérez ce qui suit :
+Considérons ce qui suit :
 
 ```csharp
 public static string GetAllFacebookUserLikesMessage(IEnumerable<FacebookUser> facebookUsers)
@@ -395,5 +395,5 @@ Les tâches parallèles utilisant le processeur qui peuvent être facilement exp
 ## <a name="further-resources"></a>Ressources supplémentaires :
 
 * [101 exemples LINQ](https://code.msdn.microsoft.com/101-LINQ-Samples-3fb9811b)
-* [Linqpad](https://www.linqpad.net/), environnement de laboratoire et moteur d’interrogation de base de données pour C#/F#/VB
+* [LINQPad](https://www.linqpad.net/), environnement de laboratoire et moteur d’interrogation de C#baseF#de données pour//Visual Basic
 * [EduLinq](https://codeblog.jonskeet.uk/2011/02/23/reimplementing-linq-to-objects-part-45-conclusion-and-list-of-posts/), livre électronique pour apprendre comment LINQ-to-objects est implémenté

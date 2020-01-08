@@ -5,12 +5,12 @@ ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: b9b9f145f8f2d945fa06d53efa89f5754766963f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 1f394d3fe5a2cb03c39cb0416e4ae44d6e340a4e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423129"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345638"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 
@@ -25,7 +25,7 @@ Le type spécifié avant `*` dans un type de pointeur est appelé **type référ
 
 Les types pointeur n’héritent pas de [object](../../language-reference/builtin-types/reference-types.md), et aucune conversion n’est possible entre les types pointeur et `object`. Par ailleurs, le boxing et l'unboxing ne prennent pas en charge les pointeurs. Cependant, vous pouvez effectuer des conversions entre différents types pointeur ainsi qu'entre des types pointeur et des types intégraux.
 
-Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque (*) est écrit conjointement au type sous-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur. Exemple :
+Lorsque vous déclarez plusieurs pointeurs dans la même déclaration, l'astérisque (*) est écrit conjointement au type sous-jacent uniquement, il n'est pas utilisé en tant que préfixe de chaque nom de pointeur. Par exemple :
 
 ```csharp
 int* p1, p2, p3;   // Ok
@@ -64,7 +64,7 @@ Le passage de pointeurs entre méthodes peut engendrer un comportement non défi
 
 Le tableau suivant répertorie les opérateurs et les instructions qui peuvent fonctionner sur des pointeurs dans un contexte unsafe :
 
-|Opérateur/Instruction|Utilisez|
+|Opérateur/Instruction|Utiliser|
 |-------------------------|---------|
 |`*`|Exécute l'indirection de pointeur.|
 |`->`|Accède à un membre d'un struct via un pointeur.|
@@ -87,5 +87,6 @@ Pour plus d’informations, consultez la section [Types de pointeur](~/_csharpla
 - [Guide de programmation C#](../index.md)
 - [Pointeurs et code unsafe](index.md)
 - [Conversions de pointeurs](pointer-conversions.md)
-- [Types](/dotnet/csharp/language-reference/keywords)
+- [Types référence](../../language-reference/keywords/reference-types.md)
+- [Types valeur](../../language-reference/keywords/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)

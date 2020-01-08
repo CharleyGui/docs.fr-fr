@@ -7,12 +7,12 @@ helpviewer_keywords:
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 3506406a441cb2028c00d5b8ed87b57cc6dff38b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
-ms.translationtype: MT
+ms.openlocfilehash: 9229c1524a400112a1b48bc40866d6dd1b7cf21b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423252"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346235"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
 
@@ -47,9 +47,9 @@ Pour plus d’informations sur les exceptions et la gestion des exceptions, cons
 - [Gestion des exceptions](exception-handling.md)
 - [Création et levée d’exceptions](creating-and-throwing-exceptions.md)
 - [Exceptions générées par le compilateur](compiler-generated-exceptions.md)
-- [Guide pratique : gérer une exception à l’aide de try/catch (Guide de programmation C#)](how-to-handle-an-exception-using-try-catch.md)
-- [Comment : exécuter le code de nettoyage à l’aide de finally](how-to-execute-cleanup-code-using-finally.md)
-- [Comment : intercepter une exception non-CLS](how-to-catch-a-non-cls-exception.md)
+- [Comment gérer une exception à l’aide de try/C# catch (Guide de programmation)](how-to-handle-an-exception-using-try-catch.md)
+- [Comment exécuter le code de nettoyage à l’aide de finally](how-to-execute-cleanup-code-using-finally.md)
+- [Comment intercepter une exception non-CLS](how-to-catch-a-non-cls-exception.md)
 
 ## <a name="c-language-specification"></a>Spécification du langage C#
 

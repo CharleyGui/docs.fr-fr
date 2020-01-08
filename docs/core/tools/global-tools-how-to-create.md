@@ -4,12 +4,12 @@ description: Décrit comment créer un Outil global. Un Outil global est une app
 author: Thraka
 ms.author: adegeo
 ms.date: 08/22/2018
-ms.openlocfilehash: 5c2b1e459f0308f5f96eb041c10f4d7a7ae0ca20
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 1daecf7234f02a5fe0dcf25cf7edbb0af327b8c1
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117444"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343523"
 ---
 # <a name="create-a-net-core-global-tool-using-the-net-core-cli"></a>Créer un Outil global .NET Core avec la CLI .NET Core
 
@@ -115,7 +115,7 @@ static void ShowBot(string message)
 
 ### <a name="test-the-tool"></a>Tester l’outil
 
-Exécutez le projet et observez le résultat. Essayez ces variations de la ligne de commande pour obtenir des résultats différents :
+Exécutez le projet et observez le résultat. Essayez ces variations sur la ligne de commande pour afficher des résultats différents :
 
 ```dotnetcli
 dotnet run
@@ -125,7 +125,7 @@ dotnet run -- hello from the bot
 
 Tous les arguments après le délimiteur `--` sont passés à votre application.
 
-## <a name="setup-the-global-tool"></a>Configurer l’outil global
+## <a name="set-up-the-global-tool"></a>Configurer l’outil Global
 
 Avant de pouvoir compresser et distribuer l’application en tant qu’outil global, vous devez modifier le fichier projet. Ouvrez le fichier `botsay.csproj`, puis ajoutez trois nouveaux nœuds XML au nœud `<Project><PropertyGroup>` :
 
@@ -162,7 +162,7 @@ Ensuite, créez un package NuGet pour votre application.
 dotnet pack
 ```
 
-Le fichier `botsay.1.0.0.nupkg` est créé dans le dossier identifié par la valeur XML `<PackageOutputPath>` à partir du fichier `botsay.csproj`, qui dans cet exemple est le dossier `./nupkg`. Cela facilite l’installation et le test. Quand vous voulez distribuer un outil publiquement, chargez-le sur <https://www.nuget.org>. Une fois l’outil disponible sur NuGet, les développeurs peuvent l’installer à l’échelle de l’utilisateur en utilisant l’option `--global` de la commande [dotnet tool install](dotnet-tool-install.md).
+Le fichier `botsay.1.0.0.nupkg` est créé dans le dossier identifié par la valeur XML `<PackageOutputPath>` à partir du fichier `botsay.csproj`, qui dans cet exemple est le dossier `./nupkg`. Cela facilite l’installation et le test. Quand vous voulez distribuer un outil publiquement, chargez-le sur <https://www.nuget.org>. Une fois que l’outil est disponible sur NuGet, les développeurs peuvent effectuer une installation de l’outil à l’écran à l’aide de l’option `--global` de la commande d’installation de l' [outil dotnet](dotnet-tool-install.md) .
 
 Maintenant que vous avez un package, installez l’outil à partir de ce package :
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 70055c4b-1173-47a3-be80-b5bce6f59e9a
-ms.openlocfilehash: 542440d6bf9d6809abee1ec37c85c44ce72fd132
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 081dce85946fab85cff474508c46770c762b9e76
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715156"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338722"
 ---
 # <a name="custom-composite-designers---workflow-items-presenter"></a>Concepteurs composites personnalisés - Présentateur d'éléments de workflow
 
@@ -24,11 +24,13 @@ Cet exemple illustre les opérations suivantes :
 
 - Substitution d'un concepteur par défaut dans une application réhébergée.
 
-### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple
+## <a name="set-up-build-and-run-the-sample"></a>Configurer, générer et exécuter l’exemple
 
-1. Ouvrez l’exemple de solution **UsingWorkflowItemsPresenter. sln** pour C# ou pour VB dans Visual Studio 2010.
+1. Ouvrez l’exemple de solution **UsingWorkflowItemsPresenter. sln** pour C# ou pour Visual Basic dans Visual Studio 2010.
 
-2. Générez et exécutez la solution. Une application de concepteur de workflow réhébergée doit s'ouvrir, et vous pouvez faire glisser des activités sur la zone de dessin.
+2. Générez et exécutez la solution.
+
+   Une application de concepteur de workflow réhébergée s’ouvre et vous pouvez faire glisser des activités sur le canevas.
 
 ## <a name="sample-highlights"></a>Points clés de l'exemple
 

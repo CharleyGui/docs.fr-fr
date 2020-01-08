@@ -9,12 +9,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: c797b1e9a80030ce6a97fccb14da2c51d753a1dc
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: 31563eccd50e6acd27a8e5a4ee96046fd2728695
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552333"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345357"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -22,7 +22,7 @@ Il existe deux sortes de types valeur :
 
 - [Structures](struct.md)
 
-- [Énumérations](enum.md)
+- [Énumérations](../builtin-types/enum.md)
 
 ## <a name="main-features-of-value-types"></a>Principales caractéristiques des types valeur
 

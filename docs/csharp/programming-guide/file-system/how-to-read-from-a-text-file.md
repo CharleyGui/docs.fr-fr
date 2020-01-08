@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Lire un fichier texte - Guide de programmation C#'
+title: Comment lire un fichier texte- C# Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
@@ -10,28 +10,28 @@ helpviewer_keywords:
 - reading data, text files
 - text files, reading
 ms.assetid: 92246c5b-e819-4eea-9370-1a9460e12de3
-ms.openlocfilehash: 2b98f24da7f13ae752f248eb8f26c75c1d47a824
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 4e15d82a303c1a92739c72a2ddffd411debf99d4
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69923949"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635325"
 ---
-# <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Procédure : Lire un fichier texte (Guide de programmation C#)
+# <a name="how-to-read-from-a-text-file-c-programming-guide"></a>Comment lire un fichier texte (C# Guide de programmation)
 Cet exemple lit le contenu d’un fichier texte à l’aide des méthodes statiques <xref:System.IO.File.ReadAllText%2A> et <xref:System.IO.File.ReadAllLines%2A> de la classe <xref:System.IO.File?displayProperty=nameWithType>.  
   
- Pour obtenir un exemple utilisant <xref:System.IO.StreamReader>, consultez [Guide pratique pour lire un fichier texte ligne par ligne](./how-to-read-a-text-file-one-line-at-a-time.md).  
+Pour obtenir un exemple qui utilise <xref:System.IO.StreamReader>, consultez [Comment lire un fichier texte ligne par ligne](./how-to-read-a-text-file-one-line-at-a-time.md).
   
 > [!NOTE]
-> Les fichiers qui sont utilisés dans cet exemple sont créés dans la rubrique [Guide pratique pour écrire dans un fichier texte](./how-to-write-to-a-text-file.md).  
+> Les fichiers utilisés dans cet exemple sont créés dans la rubrique [Comment écrire dans un fichier texte](./how-to-write-to-a-text-file.md).
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csFilesandFolders#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#4)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
  Copiez le code et collez-le dans une application console C#.  
   
- Si vous n’utilisez pas les fichiers texte à partir de [Guide pratique pour écrire dans un fichier texte](./how-to-write-to-a-text-file.md), remplacez l’argument par `ReadAllText` et `ReadAllLines`, en fournissant le chemin et le nom correspondants sur votre ordinateur.  
+Si vous n’utilisez pas les fichiers texte à partir de la [procédure d’écriture dans un fichier texte](./how-to-write-to-a-text-file.md), remplacez l’argument par `ReadAllText` et `ReadAllLines` par le chemin d’accès et le nom de fichier appropriés sur votre ordinateur.
   
 ## <a name="robust-programming"></a>Programmation fiable  
  Les conditions ci-dessous peuvent générer une exception.  

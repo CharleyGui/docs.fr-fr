@@ -1,15 +1,15 @@
 ---
-title: Utilisation du SDK et des outils .NET Core avec l’intégration continue
-description: Informations sur l’utilisation du SDK .NET Core et de ses outils sur le serveur de builds.
+title: Intégration continue (CI) avec des kit SDK .NET Core et des outils
+description: Découvrez comment utiliser la kit SDK .NET Core et ses outils sur le serveur de builds avec intégration continue.
 author: mairaw
 ms.date: 05/18/2017
 ms.custom: seodec18
-ms.openlocfilehash: 481d54904192ee82da1f9d34bbf62fa8ffe1cd3b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 0f6049d1f2868ff330fd59c4f40e6c02231c6f71
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428595"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343539"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 

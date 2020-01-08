@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)'
+title: Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()
 ms.date: 06/12/2018
 ms.assetid: 8ad7d480-b46c-4ccc-8c57-76f2d04ccc6d
-ms.openlocfilehash: c00257db7f3c06cab55cd48f7472f07dd7b2a664
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 3d841e5ca25afde94674af0fedc9a824c382be5b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593052"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345757"
 ---
-# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Procédure : Remplir des collections d’objets issues de plusieurs sources (LINQ) (C#)
+# <a name="how-to-populate-object-collections-from-multiple-sources-linq-c"></a>Comment remplir des collections d’objets à partir de plusieurs sources (C#Linq) ()
 
 Cet exemple montre comment fusionner des données de différentes sources en une séquence de nouveaux types.
 
@@ -18,9 +18,9 @@ Cet exemple montre comment fusionner des données de différentes sources en une
 
 ## <a name="to-create-the-data-file"></a>Pour créer le fichier de données
 
-Copiez les fichiers names.csv et scores.csv dans votre dossier de projet, comme décrit dans le [Guide pratique pour joindre du contenu issu de fichiers non similaires (LINQ) (C#)](./how-to-join-content-from-dissimilar-files-linq.md).
+Copiez les fichiers Names. csv et scores. csv dans le dossier de votre projet, comme décrit dans Guide pratique [pour joindre du contenu provenantC#de fichiers différents (LINQ) ()](./how-to-join-content-from-dissimilar-files-linq.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre comment utiliser un type nommé `Student` pour stocker des données fusionnées de deux collections en mémoire de chaînes qui simulent des données de feuille de calcul au format .csv. La première collection de chaînes représente les noms et les ID des étudiants, et la deuxième collection représente l’ID d’étudiant (dans la première colonne) et quatre notes d’examen. L’ID est utilisé comme clé étrangère.
 
@@ -41,8 +41,8 @@ class PopulateCollection
 {
     static void Main()
     {
-        // These data files are defined in How to: Join Content from
-        // Dissimilar Files (LINQ).
+        // These data files are defined in How to join content from
+        // dissimilar files (LINQ).
 
         // Each line of names.csv consists of a last name, a first name, and an
         // ID number, separated by commas. For example, Omelchenko,Svetlana,111

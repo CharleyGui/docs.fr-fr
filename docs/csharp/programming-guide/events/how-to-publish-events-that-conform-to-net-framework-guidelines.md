@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Publier des événements conformes aux indications du .NET Framework - Guide de programmation C#'
+title: Comment publier des événements conformes aux instructions de .NET Framework- C# Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - events [C#], implementation guidelines
 ms.assetid: 9310ae16-8627-44a2-b08c-05e5976202b1
-ms.openlocfilehash: 8cf0f57caad41da0a29b935029731260154a2dc7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: fe8334d4a6aadc8e2d1f1f5d60c96d4e8689b67f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924023"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346332"
 ---
-# <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Procédure : Publier des événements conformes aux indications du .NET Framework (Guide de programmation C#)
+# <a name="how-to-publish-events-that-conform-to-net-framework-guidelines-c-programming-guide"></a>Comment publier des événements conformes aux instructions .NET Framework (C# Guide de programmation)
 La procédure suivante montre comment ajouter à vos classes et structs des événements qui respectent le modèle .NET Framework standard. Tous les événements de la bibliothèque de classes .NET Framework sont basés sur le délégué <xref:System.EventHandler>, qui est défini comme suit :  
   
 ```csharp  
@@ -26,7 +26,7 @@ public delegate void EventHandler(object sender, EventArgs e);
   
 ### <a name="to-publish-events-based-on-the-eventhandler-pattern"></a>Pour publier des événements basés sur le modèle EventHandler  
   
-1. (Ignorez cette étape et passez à l’étape 3a si vous n’avez pas à envoyer de données personnalisées avec votre événement.) Déclarez la classe pour vos données personnalisées avec une étendue visible par vos classes de serveur de publication et d’abonné. Ajoutez ensuite les membres nécessaires pour contenir vos données d’événement personnalisées. Dans cet exemple, une simple chaîne est retournée.  
+1. (Ignorez cette étape et passez à l’étape 3A si vous n’avez pas besoin d’envoyer des données personnalisées avec votre événement.) Déclarez la classe pour vos données personnalisées au niveau d’une étendue qui est visible à la fois pour vos classes de serveur de publication et d’abonné. Ajoutez ensuite les membres nécessaires pour contenir vos données d’événement personnalisées. Dans cet exemple, une simple chaîne est retournée.  
   
     ```csharp  
     public class CustomEventArgs : EventArgs  
@@ -69,7 +69,7 @@ public delegate void EventHandler(object sender, EventArgs e);
         public event EventHandler<CustomEventArgs> RaiseCustomEvent;  
         ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant est une illustration des étapes précédentes avec l’utilisation d’une classe EventArgs personnalisée et de <xref:System.EventHandler%601> comme type d’événement.  
   
  [!code-csharp[csProgGuideEvents#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideEvents/CS/Events.cs#2)]  

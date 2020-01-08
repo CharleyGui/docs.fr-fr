@@ -9,15 +9,15 @@ helpviewer_keywords:
 - WPF [WPF], getting started
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
-ms.custom: vs-dotnet
+ms.custom: mvc,vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 0d45932f6a8822ec2aaa40cd52431d9981ab8fa1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 7b5f74448ffce448740937c06a476a29c8659879
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73453749"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75336809"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Didacticiel : créer votre première application WPF dans Visual Studio 2019
 
@@ -83,7 +83,7 @@ La première étape consiste à créer l’infrastructure d’application, qui c
 
     [!code-xaml[ExpenseIt#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/App.xaml#1)]
 
-3. Ouvrez *MainWindow. Xaml*.
+3. Ouvrez *MainWindow.xaml*.
 
     Ce fichier XAML est la fenêtre principale de votre application et affiche le contenu créé dans les pages. La classe <xref:System.Windows.Window> définit les propriétés d’une fenêtre, telles que son titre, sa taille ou son icône, et gère les événements, tels que la fermeture ou le masquage.
 
@@ -151,7 +151,7 @@ Dans cette section, vous allez ajouter deux pages et une image à l’applicatio
 
     [!code-xaml[ExpenseIt#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml#6)]
 
-1. Ouvrez *MainWindow. Xaml*.
+1. Ouvrez *MainWindow.xaml*.
 
 1. Ajoutez une propriété <xref:System.Windows.Navigation.NavigationWindow.Source%2A> à l’élément <xref:System.Windows.Navigation.NavigationWindow> et affectez-lui la valeur «`ExpenseItHome.xaml`».
 
@@ -161,7 +161,7 @@ Dans cette section, vous allez ajouter deux pages et une image à l’applicatio
 
     [!code-xaml[ExpenseIt#7_A](~/samples/snippets/visualbasic/VS_Snippets_Wpf/ExpenseIt/VB/ExpenseIt1_A/MainWindow.xaml#7_a)]
 
-    Et dans C#:
+    Et en c# :
 
     [!code-xaml[ExpenseIt#7](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/MainWindow.xaml#7)]
 
@@ -477,7 +477,7 @@ L’illustration suivante montre les deux pages de l’application `ExpenseIt` a
 > - [Globalisation et localisation pour WPF](../advanced/wpf-globalization-and-localization-overview.md)
 > - [Performances WPF](../advanced/optimizing-wpf-application-performance.md)
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans cette procédure pas à pas, vous avez appris un certain nombre de techniques pour la création d’une interface utilisateur à l’aide d’Windows Presentation Foundation (WPF). Vous devez maintenant avoir une compréhension de base des blocs de construction d’une application .NET liée aux données. Pour plus d’informations sur les modèles d’architecture et de programmation WPF, consultez les rubriques suivantes :
 

@@ -2,12 +2,12 @@
 title: Catégories de changements cassants - .NET Core
 description: Découvrez comment les changements cassants sont catégorisés dans .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 4569c1ab19cb9bfa3e16aa8d5f941705eb926fa7
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 32cf55dc3ba0b16bae8cfe6179211150b2c90e2c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567925"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343599"
 ---
 # <a name="breaking-change-categories"></a>Catégories de changements cassants
 
@@ -18,8 +18,7 @@ ms.locfileid: "74567925"
 - [compatibilité source](#source-compatibility)
 - [compatibilité au moment du design](#design-time-compatibility)
 - [compatibilité descendante](#backwards-compatibility)
-
-La [compatibilité ascendante](#forward-compatibility) n’est pas un objectif de .net core.
+- [compatibilité ascendante](#forward-compatibility) (pas un objectif de .net Core)
 
 ## <a name="behavioral-change"></a>Changements de comportement
 
@@ -43,7 +42,7 @@ La compatibilité au moment du design fait référence à la préservation de l�
 
 La compatibilité descendante fait référence à la capacité d’un consommateur existant d’une API à s’exécuter avec une nouvelle version tout en se comportant de la même façon. Les changements de comportement et les changements de compatibilité binaire affectent la compatibilité descendante. Si un consommateur ne peut pas s’exécuter ou se comporte différemment lors de l’exécution avec une version plus récente de l’API, l’API est *incompatible au niveau descendant*.
 
-Les changements qui affectent la compatibilité descendante sont fortement déconseillés, car les développeurs attendent par défaut une compatibilité descendante dans les versions plus récentes d’une API.
+Les modifications qui affectent la compatibilité descendante sont déconseillées, car les développeurs s’attendent à une compatibilité descendante dans les versions plus récentes d’une API.
 
 ## <a name="forward-compatibility"></a>Compatibilité ascendante
 

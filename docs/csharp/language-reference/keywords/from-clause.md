@@ -9,12 +9,12 @@ helpviewer_keywords:
 - from clause [C#]
 - from keyword [C#]
 ms.assetid: 1aefd18c-1314-47f8-99ec-9bcefb09e699
-ms.openlocfilehash: d44c0b7a2f6617a01416ccc5bd1eb857b1f782da
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
+ms.openlocfilehash: 688ac5150a575d83fcefec64bdc05dca5dfb4c09
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54607892"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345455"
 ---
 # <a name="from-clause-c-reference"></a>from, clause (Référence C#)
 
@@ -32,7 +32,7 @@ Dans l’exemple suivant, `numbers` est la source de données tandis que `num` e
 
 ## <a name="the-range-variable"></a>Variable de portée
 
-Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`. Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>. Pour plus d'informations, voir [Procédure : Interroger un ArrayList avec LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
+Le compilateur déduit le type de la variable de portée quand la source de données implémente <xref:System.Collections.Generic.IEnumerable%601>. Par exemple, si la source a un type `IEnumerable<Customer>`, la variable de portée est déduite comme étant `Customer`. Vous devez spécifier le type de façon explicite uniquement quand la source est un type `IEnumerable` non générique comme <xref:System.Collections.ArrayList>. Pour plus d’informations, consultez [Comment interroger une ArrayList avec LINQ](../../programming-guide/concepts/linq/how-to-query-an-arraylist-with-linq.md).
 
 Dans l’exemple précédent, `num` est déduit comme étant de type `int`. Comme la variable de portée est fortement typée, vous pouvez appeler des méthodes sur celle-ci ou l’utiliser dans d’autres opérations. Par exemple, au lieu d’écrire `select num`, vous pouvez écrire `select num.ToString()` pour que l’expression de requête retourne une séquence de chaînes à la place d’entiers. Vous pouvez également écrire `select num + 10` pour que l’expression retourne la séquence 14, 11, 13, 12, 10. Pour plus d’informations, consultez [select, clause](select-clause.md).
 

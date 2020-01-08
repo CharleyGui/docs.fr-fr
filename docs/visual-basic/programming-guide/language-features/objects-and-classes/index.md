@@ -5,12 +5,12 @@ helpviewer_keywords:
 - classes [Visual Basic]
 - objects [Visual Basic]
 ms.assetid: c68c5752-1006-46e1-975a-6717b62a42fc
-ms.openlocfilehash: d45aca8b137f56cf058b63b9286504259c0005eb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 589b0b362cc25fd10e2780fd541cf9f7cfb546a9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346703"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344641"
 ---
 # <a name="objects-and-classes-in-visual-basic"></a>Objets et classes dans Visual Basic
 
@@ -108,7 +108,7 @@ Utilisez les champs quand :
 
 ### <a name="methods"></a>Méthodes
 
-Une *méthode* correspond à une action qu’un objet peut effectuer. Par exemple, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A> est une méthode de l’objet <xref:System.Windows.Forms.ComboBox> qui ajoute une nouvelle entrée à une zone de liste modifiable.
+Une *méthode* est une action que peut effectuer un objet. Par exemple, <xref:System.Windows.Forms.ComboBox.ObjectCollection.Add%2A> est une méthode de l’objet <xref:System.Windows.Forms.ComboBox> qui ajoute une nouvelle entrée à une zone de liste modifiable.
 
 L'exemple suivant montre la méthode <xref:System.Windows.Forms.Timer.Start%2A> d’un objet <xref:System.Windows.Forms.Timer>.
 
@@ -121,11 +121,11 @@ Notez qu’une méthode est simplement une *procédure* qui est exposée par un 
 
 Pour plus d’informations, consultez [Procédures](../../../../visual-basic/programming-guide/language-features/procedures/index.md).
 
-### <a name="events"></a>Événements
+### <a name="events"></a>Events
 
 Un événement est une action reconnue par un objet, par exemple le fait de cliquer sur la souris ou d’appuyer sur une touche, et pour laquelle vous pouvez écrire du code en réponse. Les événements peuvent se produire à la suite d’une action de l’utilisateur ou du code de programme, ou ils peuvent être provoqués par le système. On dit que le code qui signale un événement le *déclenche* et le code qui y répond le *gère*.
 
-Vous pouvez également développer vos propres événements personnalisés pour qu’ils soient déclenchés par vos objets et gérés par d’autres objets. Pour plus d'informations, consultez [Events](../../../../visual-basic/programming-guide/language-features/events/index.md).
+Vous pouvez également développer vos propres événements personnalisés pour qu’ils soient déclenchés par vos objets et gérés par d’autres objets. Pour plus d'informations, consultez [Événements](../../../../visual-basic/programming-guide/language-features/events/index.md).
 
 ### <a name="instance-members-and-shared-members"></a>Membres d’instance et membres partagés
 
@@ -239,7 +239,7 @@ Dans l’exemple suivant, supposons que vous souhaitez définir un type spécial
 
 Les classes dérivées héritent des membres de la classe que dont ils dépendent, ce qui vous permet d’ajouter de la complexité au fur et à mesure que vous progressez dans la hiérarchie. Pour plus d’informations, consultez [Concepts de base de l’héritage](../../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md).
 
-### <a name="compiling-the-code"></a>Compilation du code
+### <a name="compile-the-code"></a>Compiler le code
 
 Assurez-vous que le compilateur peut accéder à la classe à partir de laquelle vous souhaitez dériver votre nouvelle classe. Cela peut signifier qualifier complètement son nom, comme dans l’exemple précédent ou identifier son espace de noms dans une [instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md). Si la classe se trouve dans un autre projet, vous devrez peut-être ajouter une référence à ce projet. Pour plus d’informations, consultez [Gestion des références dans un projet](/visualstudio/ide/managing-references-in-a-project).
 

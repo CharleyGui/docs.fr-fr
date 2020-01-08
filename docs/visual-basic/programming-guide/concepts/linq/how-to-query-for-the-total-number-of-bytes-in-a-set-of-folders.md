@@ -1,13 +1,13 @@
 ---
-title: 'Comment : rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ)'
+title: "Comment : rechercher le nombre total d'octets dans un ensemble de dossiers (LINQ)"
 ms.date: 07/20/2015
 ms.assetid: bfe85ed2-44dc-4ef1-aac7-241622b80a69
-ms.openlocfilehash: b926a3e0ed973f449718ca5883aeabc0bfcf7b91
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c32985d7b1d87a45107159726d6ee24aea0b59b7
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347635"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346024"
 ---
 # <a name="how-to-query-for-the-total-number-of-bytes-in-a-set-of-folders-linq-visual-basic"></a>Comment : Rechercher le nombre total d’octets dans un ensemble de dossiers (LINQ) (Visual Basic)
 Cet exemple montre comment récupérer le nombre total d’octets utilisés par tous les fichiers d’un dossier spécifié, ainsi que par tous ses sous-dossiers.  
@@ -71,8 +71,8 @@ End Module
   
  La requête appelle une méthode distincte pour obtenir la longueur du fichier. Elle procède ainsi pour utiliser l’exception qui sera éventuellement levée si le fichier a été supprimé sur un autre thread après la création de l’objet <xref:System.IO.FileInfo> dans l’appel à `GetFiles`. Même si l’objet <xref:System.IO.FileInfo> a déjà été créé, l’exception peut être levée, car un objet <xref:System.IO.FileInfo> essaiera d’actualiser sa propriété <xref:System.IO.FileInfo.Length%2A> avec la longueur la plus récente lors du premier accès à la propriété. En plaçant cette opération dans un bloc try-catch en dehors de la requête, le code respecte la règle qui consiste à éviter les opérations dans les requêtes qui peuvent avoir des effets secondaires. En règle générale, il faut faire très attention lors de l’utilisation d’exceptions et s’assurer que l’application ne reste pas dans un état inconnu.  
   
-## <a name="compiling-the-code"></a>Compilation du code  
-Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
+## <a name="compile-the-code"></a>Compiler le code  
+Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
   
 ## <a name="see-also"></a>Voir aussi
 

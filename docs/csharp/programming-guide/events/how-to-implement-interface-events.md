@@ -1,19 +1,19 @@
 ---
-title: "Procédure : Implémenter des événements d'interface - Guide de programmation C#"
+title: Comment implémenter des événements d' C# interface-Guide de programmation
 ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - interfaces [C#], event implementation in classes
 - events [C#], in interfaces
 ms.assetid: 63527447-9535-4880-8e95-35e2075827df
-ms.openlocfilehash: 574ea9927a22c24c356d84652fd29692c519247b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
+ms.openlocfilehash: cd2192d6146a431559f5cd9dd1a80da577695d66
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590506"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346338"
 ---
-# <a name="how-to-implement-interface-events-c-programming-guide"></a>Procédure : Implémenter des événements d'interface (Guide de programmation C#)
+# <a name="how-to-implement-interface-events-c-programming-guide"></a>Comment implémenter des événements d'C# interface (Guide de programmation)
 Une [interface](../../language-reference/keywords/interface.md) peut déclarer un [événement](../../language-reference/keywords/event.md). L’exemple suivant montre comment implémenter des événements d’interface dans une classe. En gros, les règles sont les mêmes que quand vous implémentez une propriété ou une méthode d’interface.  
   
 ## <a name="to-implement-interface-events-in-a-class"></a>Pour implémenter des événements d’interface dans une classe  
@@ -51,7 +51,7 @@ namespace ImplementInterfaceEvents
 }  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
 L’exemple suivant montre comment gérer la situation peu courante dans laquelle votre classe hérite de plusieurs interfaces et chaque interface a un événement ayant le même nom. Dans ce cas, vous devez fournir une implémentation d’interface explicite pour au moins l’un des événements. Quand vous écrivez une implémentation d’interface explicite pour un événement, vous devez également écrire les accesseurs d’événement `add` et `remove`. Normalement, ces éléments sont fournis par le compilateur, mais dans le cas en question le compilateur ne peut pas les fournir.  
   
 En fournissant vos propres accesseurs, vous pouvez spécifier si les deux événements sont représentés par le même événement dans votre classe ou par des événements différents. Par exemple, si les événements doivent être déclenchés à des moments différents en fonction des spécifications de l’interface, vous pouvez associer chaque événement à une implémentation distincte dans votre classe. Dans l’exemple suivant, les abonnés déterminent l’événement `OnDraw` qu’il recevront en effectuant un cast de la référence de la forme en `IShape` ou `IDrawingObject`.  
@@ -64,4 +64,4 @@ En fournissant vos propres accesseurs, vous pouvez spécifier si les deux évén
 - [Événements](./index.md)
 - [Délégués](../delegates/index.md)
 - [Implémentation d’interface explicite](../interfaces/explicit-interface-implementation.md)
-- [Guide pratique pour déclencher les événements de la classe de base dans les classes dérivées](./how-to-raise-base-class-events-in-derived-classes.md)
+- [Comment déclencher des événements de classe de base dans des classes dérivées](./how-to-raise-base-class-events-in-derived-classes.md)

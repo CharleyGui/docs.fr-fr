@@ -1,15 +1,15 @@
 ---
-title: Guide pratique pour interroger des caractères dans une chaîne (LINQ) (C#)
+title: Comment interroger des caractères dans une chaîne (LINQ) (C#)
 ms.date: 07/20/2015
 ms.assetid: 727a1be7-dbec-4ab8-b414-bc2d56feb6ff
-ms.openlocfilehash: bc72c4370ff408a60f48aa020a16dae7f48f702a
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: d85e488a38a6167505732103b4c540cade6ea9bc
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140959"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345677"
 ---
-# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Guide pratique pour interroger des caractères dans une chaîne (LINQ) (C#)
+# <a name="how-to-query-for-characters-in-a-string-linq-c"></a>Comment interroger des caractères dans une chaîne (LINQ) (C#)
 La classe <xref:System.String> implémente l’interface <xref:System.Collections.Generic.IEnumerable%601> générique. De ce fait, il est possible d’interroger n’importe quelle chaîne comme une séquence de caractères. Toutefois, ceci n’est pas une utilisation courante de LINQ. Pour les opérations de critères spéciaux complexes, utilisez la classe <xref:System.Text.RegularExpressions.Regex>.  
   
 ## <a name="example"></a>Exemple  

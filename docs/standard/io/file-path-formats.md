@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 808c92e906a0bf6f8fdc368396d6d240573de501
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 258cf59fb8383fe131f4a0e78dac6189e1d9c91e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120778"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337672"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -26,11 +26,11 @@ Un chemin DOS standard peut être constitué de trois composants :
 
 - Une lettre de volume ou de lecteur suivie du séparateur de volumes (`:`).
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
-- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin de fichier et le nom de fichier.
+- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
 
 Si les trois composants sont présents, le chemin est absolu. Si aucune lettre de lecteur ou de volume n’est spécifiée et que le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) précède les noms de répertoires, le chemin est relatif à la racine du lecteur actif. Sinon, le chemin est relatif au répertoire actif. Le tableau suivant présente certains chemins de répertoire et de fichier.
 
-|Chemin d’accès  |Description  |
+|Path  |Description  |
 | -- | -- |
 | `C:\Documents\Newsletters\Summer2018.pdf` | Chemin de fichier absolu à partir de la racine du lecteur C:. |
 | `\Program Files\Custom Utilities\StringFinder.exe` | Chemin absolu à partir de la racine du lecteur actif. |
@@ -44,7 +44,7 @@ Si les trois composants sont présents, le chemin est absolu. Si aucune lettre d
 
 Pour déterminer si un chemin de fichier est complet (autrement dit, si le chemin est indépendant du répertoire actif et qu’il reste inchangé quand le répertoire actif change), appelez la méthode <xref:System.IO.Path.IsPathFullyQualified%2A?displayProperty=nameWthType>. Notez qu’un tel chemin peut inclure des segments de répertoire relatifs (`.` et `..`) et toujours être complet si le chemin résolu pointe toujours vers le même emplacement.
 
-L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il suppose que le répertoire D:\FY2018\ existe et que vous n’avez défini aucun répertoire actif pour D:\ à l’invite de commandes avant d’exécuter l’exemple.
+L’exemple suivant illustre la différence entre les chemins absolus et relatifs. Il part du principe que le répertoire D:\FY2018\ existe et que vous n’avez défini aucun répertoire actif pour D:\ à partir de l’invite de commandes avant d’exécuter l’exemple.
 
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
@@ -56,11 +56,11 @@ Les chemins respectant la convention d’affectation de noms (UNC), qui sont uti
 - Un nom de serveur ou d’hôte, précédé de \\\\. Le nom du serveur peut être un nom d’ordinateur NetBIOS ou une adresse IP/FQDN (IPv4 et IPv6 sont pris en charge).
 - Un nom de partage, séparé du nom d’hôte par \\. Ensemble, le serveur et le partage forment le volume.
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
-- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin de fichier et le nom de fichier.
+- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
 
 Voici quelques exemples de chemins UNC :
 
-|Chemin d’accès  |Description  |
+|Path  |Description  |
 | -- | -- |
 | `\\system07\C$\` | Répertoire racine du lecteur C: sur `system07`. |
 | `\\Server2\Share\Test\Foo.txt` | Fichier Foo.txt dans le répertoire Test du volume \\\\Server2\\Share.|
@@ -71,7 +71,7 @@ Les chemins UNC doivent toujours être complets. Ils peuvent inclure des segment
 
 Le système d’exploitation Windows a un modèle objet unifié qui pointe vers toutes les ressources, notamment les fichiers. Ces chemins d’objet sont accessibles à partir de la fenêtre de console et sont exposés à la couche Win32 par le biais d’un dossier spécial de liens symboliques mappés aux chemins DOS et UNC hérités. Ce dossier spécial est accessible par le biais d’un chemin de périphérique DOS, dont la syntaxe est l’une des suivantes :
 
-`\\.\C:\Test\Foo.txt`  
+`\\.\C:\Test\Foo.txt`
 `\\?\C:\Test\Foo.txt`
 
 En plus d’identifier un lecteur par sa lettre de lecteur, vous pouvez identifier un volume à l’aide de son GUID de volume. Cela prend la forme :
@@ -93,12 +93,12 @@ Le chemin de périphérique DOS comprend les composants suivants :
 
    Le premier segment du chemin de périphérique DOS après le spécificateur de chemin de périphérique identifie le volume ou le lecteur. (Par exemple, `\\?\C:\` et `\\.\BootPartition\`.)
 
-   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Exemple :
+   Il existe un lien spécifique pour les chemins UNC. Celui-ci s’appelle, sans surprise, `UNC`. Par exemple :
 
-  `\\.\UNC\Server\Share\Test\Foo.txt`  
+  `\\.\UNC\Server\Share\Test\Foo.txt`
   `\\?\UNC\Server\Share\Test\Foo.txt`
 
-    Pour les chemins UNC de périphérique, la partie serveur/partage forme le volume. Par exemple, dans `\\?\server1\e:\utilities\\filecomparer\`, la partie serveur/partage est server1\utilities. Ceci est important quand vous appelez une méthode comme <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> avec des segments de répertoire relatifs ; il est impossible de naviguer au-delà du volume. 
+    Pour les chemins UNC de périphérique, la partie serveur/partage forme le volume. Par exemple, dans `\\?\server1\e:\utilities\\filecomparer\`, la partie serveur/partage est server1\utilities. Ceci est important quand vous appelez une méthode comme <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> avec des segments de répertoire relatifs ; il est impossible de naviguer au-delà du volume.
 
 Par définition, les chemins de périphérique DOS sont complets. Les segments de répertoire relatifs (`.` et `..`) ne sont pas autorisés. Les répertoires actifs ne font jamais partie de ce type de chemin.
 
@@ -126,7 +126,7 @@ Cette normalisation se produit implicitement, mais vous pouvez l’effectuer exp
 La première étape de normalisation d’un chemin consiste à identifier le type du chemin. Les chemins appartiennent à l’une des catégories suivantes :
 
 - Chemins de périphérique : commencent par deux séparateurs et un point d’interrogation ou un point (`\\?` ou `\\.`).
-- Chemins UNC : commencent par deux séparateurs sans point d’interrogation ou point. 
+- Chemins UNC : commencent par deux séparateurs sans point d’interrogation ou point.
 - Chemins DOS complets : commencent par une lettre de lecteur, un séparateur de volumes et un séparateur de composants (`C:\`).
 - Chemins désignant un périphérique hérité (`CON`, `LPT1`).
 - Chemins relatifs à la racine du lecteur actif : commencent par un séparateur de composants unique (`\`).
@@ -137,7 +137,7 @@ Le type du chemin détermine si un répertoire actif est appliqué ou non d’un
 
 ### <a name="handling-legacy-devices"></a>Gestion des périphériques hérités
 
-Si le chemin est un périphérique DOS hérité comme `CON`, `COM1` ou `LPT1`, il est converti en chemin de périphérique (préfixe `\\.\` ajouté) et retourné. 
+Si le chemin est un périphérique DOS hérité comme `CON`, `COM1` ou `LPT1`, il est converti en chemin de périphérique (préfixe `\\.\` ajouté) et retourné.
 
 Un chemin qui commence par un nom de périphérique hérité est toujours interprété comme périphérique hérité par la méthode <xref:System.IO.Path.GetFullPath(System.String)?displayProperty=nameWithType>. Par exemple, le chemin de périphérique DOS pour `CON.TXT` est `\\.\CON`, et celui pour `COM1.TXT\file1.txt` est `\\.\COM1`.
 
@@ -152,7 +152,7 @@ Si le chemin commence par une lettre de lecteur, comprend un séparateur de volu
 Si le chemin commence par un élément autre qu’un séparateur, le lecteur et le répertoire actifs sont appliqués. Par exemple, si le chemin est `filecompare` et le répertoire actif `C:\utilities\`, le résultat est `C:\utilities\filecompare\`.
 
 > [!IMPORTANT]
-> Les chemins relatifs sont dangereux dans les applications multithreads (c’est-à-dire dans la plupart des applications), car le répertoire actif est un paramètre par processus. N’importe quel thread peut changer le répertoire actif à tout moment. À compter de .NET Core 2.1, vous pouvez appeler la méthode <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> pour obtenir un chemin absolu à partir d’un chemin relatif et le chemin de base (répertoire actif) par rapport auquel vous souhaitez le résoudre. 
+> Les chemins relatifs sont dangereux dans les applications multithreads (c’est-à-dire dans la plupart des applications), car le répertoire actif est un paramètre par processus. N’importe quel thread peut changer le répertoire actif à tout moment. À compter de .NET Core 2.1, vous pouvez appeler la méthode <xref:System.IO.Path.GetFullPath(System.String,System.String)?displayProperty=nameWithType> pour obtenir un chemin absolu à partir d’un chemin relatif et le chemin de base (répertoire actif) par rapport auquel vous souhaitez le résoudre.
 
 ### <a name="canonicalizing-separators"></a>Mise en forme canonique des séparateurs
 
@@ -160,7 +160,7 @@ Toute barre oblique (`/`) est convertie en séparateur Windows standard, à savo
 
 ### <a name="evaluating-relative-components"></a>Évaluation des composants relatifs
 
-À mesure que le chemin est traité, tout composant ou segment constitué d’un point unique ou double (`.` ou `..`) est évalué : 
+À mesure que le chemin est traité, tout composant ou segment constitué d’un point unique ou double (`.` ou `..`) est évalué :
 
 - Pour un point unique, le segment actif est supprimé, car il fait référence au répertoire actif.
 
@@ -174,9 +174,9 @@ Outre les séries de séparateurs et de segments relatifs supprimés précédemm
 
 - Si un segment se termine par un point unique, celui-ci est supprimé. (Un segment constitué d’un point unique ou double est normalisé à l’étape précédente. Un segment constitué de trois ou quatre points n’est pas normalisé, car il s’agit d’un nom de fichier/répertoire valide.)
 
-- Si le chemin ne se termine pas par un séparateur, tous les points et espaces (U+0020) de fin sont supprimés. Si le dernier segment est simplement un point simple ou double, il relève de la règle des composants relatifs ci-dessus. 
+- Si le chemin ne se termine pas par un séparateur, tous les points et espaces (U+0020) de fin sont supprimés. Si le dernier segment est simplement un point simple ou double, il relève de la règle des composants relatifs ci-dessus.
 
-   Cette règle signifie que vous pouvez créer un nom de répertoire avec un espace de fin en ajoutant un séparateur de fin après l’espace.  
+   Cette règle signifie que vous pouvez créer un nom de répertoire avec un espace de fin en ajoutant un séparateur de fin après l’espace.
 
    > [!IMPORTANT]
    > **Ne créez jamais** un répertoire ou un nom de fichier avec un espace de fin. Les espaces de fin peuvent rendre l’accès à un répertoire difficile voire impossible, et il arrive fréquemment que des applications échouent quand vous tentez de gérer des répertoires ou des fichiers dont les noms comprennent des espaces de fin.
@@ -187,7 +187,7 @@ En règle générale, tout chemin passé à une API Windows est (effectivement) 
 
 Pourquoi ignorer la normalisation ? Voici les trois raisons principales :
 
-1. Accéder aux chemins normalement indisponibles, mais autorisés. Par exemple, il est impossible d’accéder à un fichier ou à un répertoire appelé `hidden.` d’une autre manière. 
+1. Accéder aux chemins normalement indisponibles, mais autorisés. Par exemple, il est impossible d’accéder à un fichier ou à un répertoire appelé `hidden.` d’une autre manière.
 
 1. Améliorer le niveau de performance en ignorant la normalisation précédemment effectuée.
 
@@ -200,7 +200,7 @@ La seule différence entre les deux syntaxes de chemin de périphérique tient a
 
 Les chemins qui commencent par `\\?\` sont toujours normalisés si vous les passez explicitement à la [fonction GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea).
 
-Notez que vous pouvez passer les chemins de plus de `MAX_PATH` caractères à la fonction [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) sans `\\?\`. Elle prend en charge les chemins de longueur arbitraire jusqu’à la taille de chaîne maximale gérée par Windows.
+Vous pouvez passer des chemins de plus de `MAX_PATH` caractères à [GetFullPathName](/windows/desktop/api/fileapi/nf-fileapi-getfullpathnamea) sans `\\?\`. Elle prend en charge les chemins de longueur arbitraire jusqu’à la taille de chaîne maximale gérée par Windows.
 
 ## <a name="case-and-the-windows-file-system"></a>Casse et système de fichiers Windows
 

@@ -26,7 +26,7 @@
           href: how-to-hook-up-a-delegate-using-reflection.md
         - name: Réflexion dans le .NET Framework pour les applications Windows Store
           href: reflection-for-windows-store-apps.md
-    - name: Émission d'assemblys et de méthodes dynamiques
+    - name: Envoyer des assemblys et des méthodes dynamiques
       href: emitting-dynamic-methods-and-assemblies.md
       items:
         - name: Problèmes de sécurité dans l'émission de réflexion
@@ -41,16 +41,17 @@
           href: how-to-define-a-generic-method-with-reflection-emit.md
         - name: Assemblys pouvant être collectés pour la génération de type dynamique
           href: collectible-assemblies.md
-    - name: Vue d'ensemble du Dynamic Language Runtime
+    - name: Vue d’ensemble du Dynamic Language Runtime
       href: dynamic-language-runtime-overview.md
     - name: Génération et compilation de code source dynamique
-      href: dynamic-source-code-generation-and-compilation.md
       items:
-        - name: Utilisation du CodeDOM
+        - name: Vue d'ensemble
+          href: dynamic-source-code-generation-and-compilation.md
+        - name: Utiliser le CodeDOM
           href: using-the-codedom.md
-        - name: Génération et compilation du code source à partir d’un graphique CodeDOM
+        - name: Générer et compiler du code source à partir d’un graphe CodeDOM
           href: generating-and-compiling-source-code-from-a-codedom-graph.md
-        - name: "Procédure\_: créer un fichier de documentation XML à l’aide de CodeDOM"
+        - name: Créer un fichier de documentation XML à l’aide de CodeDOM
           href: how-to-create-an-xml-documentation-file-using-codedom.md
-        - name: "Procédure\_: créer une classe à l’aide de CodeDOM"
+        - name: Créer une classe à l’aide de CodeDOM
           href: how-to-create-a-class-using-codedom.md

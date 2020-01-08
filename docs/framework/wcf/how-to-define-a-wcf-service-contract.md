@@ -1,5 +1,5 @@
 ---
-title: 'Tutoriel : Définir un contrat de service Windows Communication Foundation'
+title: 'Didacticiel : définir un contrat de service Windows Communication Foundation'
 ms.date: 03/19/2019
 helpviewer_keywords:
 - service contracts [WCF], defining
@@ -7,24 +7,24 @@ dev_langs:
 - CSharp
 - VB
 ms.assetid: 67bf05b7-1d08-4911-83b7-a45d0b036fc3
-ms.openlocfilehash: ba88fc6ba4cba8d46ed1b43080d471b1b7c4bd75
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 49526808a65b68c6df734bd7f3e76eff1e4a6bc5
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70928873"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75338299"
 ---
-# <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Tutoriel : Définir un contrat de service Windows Communication Foundation
+# <a name="tutorial-define-a-windows-communication-foundation-service-contract"></a>Didacticiel : définir un contrat de service Windows Communication Foundation
 
-Ce didacticiel décrit la première des cinq tâches requises pour créer une application de base Windows Communication Foundation (WCF). Pour obtenir une vue d’ensemble des didacticiels, consultez [didacticiel : Prise en main des applications](getting-started-tutorial.md)Windows Communication Foundation.
+Ce didacticiel décrit la première des cinq tâches requises pour créer une application de base Windows Communication Foundation (WCF). Pour obtenir une vue d’ensemble des didacticiels, consultez [Didacticiel : prise en main des applications Windows Communication Foundation](getting-started-tutorial.md).
 
-Lorsque vous créez un service WCF, votre première tâche consiste à définir un contrat de service. Le contrat de service spécifie les opérations prises en charge par le service. Une opération peut être considérée comme une méthode de service Web. Vous créez des contrats de service en définissant une interface Visual C# ou Visual Basic (VB). Une interface possède les caractéristiques suivantes :
+Lorsque vous créez un service WCF, votre première tâche consiste à définir un contrat de service. Le contrat de service spécifie les opérations prises en charge par le service. Une opération peut être considérée comme une méthode de service Web. Vous créez des contrats de service en C# définissant une interface ou Visual Basic. Une interface possède les caractéristiques suivantes :
 
 - Chaque méthode dans l'interface correspond à une opération de service spécifique. 
-- Pour chaque interface, vous devez appliquer l' <xref:System.ServiceModel.ServiceContractAttribute> attribut.
-- Pour chaque opération/méthode, vous devez appliquer l' <xref:System.ServiceModel.OperationContractAttribute> attribut. 
+- Pour chaque interface, vous devez appliquer l’attribut <xref:System.ServiceModel.ServiceContractAttribute>.
+- Pour chaque opération/méthode, vous devez appliquer l’attribut <xref:System.ServiceModel.OperationContractAttribute>. 
 
-Ce tutoriel vous montre comment effectuer les opérations suivantes :
+Dans ce didacticiel, vous apprendrez à :
 > [!div class="checklist"]
 >
 > - Créez un projet de **bibliothèque de service WCF** .
@@ -98,11 +98,11 @@ Ce tutoriel vous montre comment effectuer les opérations suivantes :
     End Namespace
     ```
 
-     Ce contrat définit une calculatrice en ligne. Notez que `ICalculator` l’interface est marquée avec <xref:System.ServiceModel.ServiceContractAttribute> l’attribut (simplifiée en tant que `ServiceContract`). Cet attribut définit un espace de noms pour lever toute ambiguïté sur le nom du contrat. Le code marque chaque opération de calculatrice avec <xref:System.ServiceModel.OperationContractAttribute> l’attribut (simplifié `OperationContract`comme).
+     Ce contrat définit une calculatrice en ligne. Notez que l’interface `ICalculator` est marquée avec l’attribut <xref:System.ServiceModel.ServiceContractAttribute> (simplifiée comme `ServiceContract`). Cet attribut définit un espace de noms pour lever toute ambiguïté sur le nom du contrat. Le code marque chaque opération de calculatrice avec l’attribut <xref:System.ServiceModel.OperationContractAttribute> (simplifié comme `OperationContract`).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
-Dans ce tutoriel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > - Créez un projet de bibliothèque de service WCF.
@@ -111,4 +111,4 @@ Dans ce tutoriel, vous avez appris à :
 Passez au didacticiel suivant pour découvrir comment implémenter le contrat de service WCF.
 
 > [!div class="nextstepaction"]
-> [Tutoriel : Implémenter un contrat de service WCF](how-to-implement-a-wcf-contract.md)
+> [Didacticiel : implémenter un contrat de service WCF](how-to-implement-a-wcf-contract.md)

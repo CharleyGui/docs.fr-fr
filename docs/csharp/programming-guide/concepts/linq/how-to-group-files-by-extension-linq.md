@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : Regrouper des fichiers par extension (LINQ) (C#)'
+title: Comment regrouper des fichiers par extension (LINQC#) ()
 ms.date: 07/20/2015
 ms.assetid: 21a98320-a5a1-4981-82d8-6a637e7d9018
-ms.openlocfilehash: aa3e428a4655bfcc0707e111da3ca6206a2b9596
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: d12b40c7dba7bd3e10f30ddfd394b25c36794428
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69593256"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345900"
 ---
-# <a name="how-to-group-files-by-extension-linq-c"></a>Procédure : Regrouper des fichiers par extension (LINQ) (C#)
+# <a name="how-to-group-files-by-extension-linq-c"></a>Comment regrouper des fichiers par extension (LINQC#) ()
 Cet exemple montre comment utiliser LINQ pour effectuer des opérations de regroupement et de tri avancées sur des listes de fichiers ou de dossiers. Il montre également comment parcourir les résultats dans la fenêtre de console à l’aide des méthodes <xref:System.Linq.Enumerable.Skip%2A> et <xref:System.Linq.Enumerable.Take%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  La requête suivante montre comment regrouper le contenu d’une arborescence de répertoires spécifiée en fonction de l’extension de nom de fichier.  
   
 ```csharp  

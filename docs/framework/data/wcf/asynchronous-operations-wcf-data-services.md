@@ -6,12 +6,12 @@ helpviewer_keywords:
 - asynchronous operations [WCF Data Services]
 - WCF Data Services, client library
 ms.assetid: 679644c7-e3fc-422c-b14a-b44b683900d0
-ms.openlocfilehash: 3e8d3ec46362751ea8bbfe5120e35a050d0e7a6c
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 5191f3d03facaafc64f6df494ff90cd0ce1c1988
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569359"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346184"
 ---
 # <a name="asynchronous-operations-wcf-data-services"></a>Opérations asynchrones (services de données WCF)
 Les applications Web doivent gérer une latence plus élevée entre le client et le serveur, comparé aux applications qui s'exécutent sur des réseaux internes. Pour optimiser les performances et l’expérience utilisateur de votre application, nous vous recommandons d’utiliser les méthodes asynchrones des <xref:System.Data.Services.Client.DataServiceContext> et des classes <xref:System.Data.Services.Client.DataServiceQuery%601> lors de l’accès aux serveurs de WCF Data Services sur le Web.  
@@ -21,7 +21,7 @@ Les applications Web doivent gérer une latence plus élevée entre le client et
  Vous pouvez effectuer des opérations asynchrones à l’aide d’une paire de méthodes sur les <xref:System.Data.Services.Client.DataServiceContext> et <xref:System.Data.Services.Client.DataServiceQuery%601> les classes qui commencent respectivement par *Begin* et *end* . Les méthodes *Begin* inscrivent un délégué appelé par le service lorsque l’opération est terminée. Les méthodes *end* doivent être appelées dans le délégué inscrit pour gérer le rappel des opérations terminées. Quand vous appelez la méthode *end* pour terminer une opération asynchrone, vous devez le faire à partir du même <xref:System.Data.Services.Client.DataServiceQuery%601> ou <xref:System.Data.Services.Client.DataServiceContext> instance que vous avez utilisé pour commencer l’opération. Chaque méthode *Begin* prend un paramètre `state` qui peut passer un objet d’État au rappel. Cet objet d’État est récupéré à partir de l' <xref:System.IAsyncResult> fourni avec le rappel et permet d’appeler la méthode *end* correspondante pour terminer l’opération asynchrone. Par exemple, lorsque vous fournissez l'instance <xref:System.Data.Services.Client.DataServiceQuery%601> comme paramètre `state` lorsque vous appelez la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> sur l'instance, la même instance <xref:System.Data.Services.Client.DataServiceQuery%601> est retournée par <xref:System.IAsyncResult>. Puis cette instance de <xref:System.Data.Services.Client.DataServiceQuery%601> est utilisée pour appeler la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> pour terminer l'opération de requête. Pour plus d’informations, consultez [Comment : exécuter des requêtes de service de données asynchrones](how-to-execute-asynchronous-data-service-queries-wcf-data-services.md).  
   
 > [!NOTE]
-> Seules les opérations asynchrones sont prises en charge par les bibliothèques clientes fournies dans le .NET Framework pour Silverlight. Pour plus d’informations, consultez [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149).  
+> Seules les opérations asynchrones sont prises en charge par les bibliothèques clientes fournies dans le .NET Framework pour Silverlight. Pour plus d’informations, consultez [WCF Data Services (Silverlight)](https://docs.microsoft.com/previous-versions/windows/silverlight/dotnet-windows-silverlight/cc838234(v=vs.95)).  
   
  Les bibliothèques clientes .NET Framework prennent en charge les opérations asynchrones suivantes :  
   

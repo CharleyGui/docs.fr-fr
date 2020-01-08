@@ -17,7 +17,9 @@
       href: tutorials/amazon-emr-spark-deployment.md
     - name: Déployer sur Databricks
       href: tutorials/databricks-deployment.md
-    - name: Structured Streaming
+    - name: Traitement par lots
+      href: tutorials/batch-processing.md
+    - name: Streaming structuré
       href: tutorials/streaming.md
 - name: Guides pratiques
   items:

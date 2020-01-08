@@ -11,29 +11,29 @@ helpviewer_keywords:
 - inferring type information [LINQ in Visual Basic]
 - relationships [LINQ in Visual Basic]
 ms.assetid: b5ff4da5-f3fd-4a8e-aaac-1cbf52fa16f6
-ms.openlocfilehash: 8c201abef924766d52b1adb084970a24ebea2b50
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: e839271ac254a5e96f8c99f59397016fb99540aa
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350568"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636911"
 ---
 # <a name="type-relationships-in-query-operations-visual-basic"></a>Relations des types dans des opérations de requête (Visual Basic)
 
-Les variables utilisées dans [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] opérations de requête sont fortement typées et doivent être compatibles entre elles. Le typage fort est utilisé dans la source de données, dans la requête elle-même et dans l’exécution de la requête. L’illustration suivante identifie les termes utilisés pour décrire une requête de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations sur les parties d’une requête, consultez [opérations de requête de base (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
+Les variables utilisées dans les opérations de requête LINQ (Language-Integrated Query) sont fortement typées et doivent être compatibles les unes avec les autres. Le typage fort est utilisé dans la source de données, dans la requête elle-même et dans l’exécution de la requête. L’illustration suivante identifie les termes utilisés pour décrire une requête LINQ. Pour plus d’informations sur les parties d’une requête, consultez [opérations de requête de base (Visual Basic)](../../../../visual-basic/programming-guide/concepts/linq/basic-query-operations.md).
 
 ![Capture d’écran montrant une requête de pseudocode avec les éléments mis en surbrillance.](./media/type-relationships-in-query-operations/linq-query-description-terms.png)
 
 Le type de la variable de portée dans la requête doit être compatible avec le type des éléments dans la source de données. Le type de la variable de requête doit être compatible avec l’élément séquence défini dans la clause `Select`. Enfin, le type des éléments de séquence doit également être compatible avec le type de la variable de contrôle de boucle utilisé dans l’instruction `For Each` qui exécute la requête. Ce typage fort facilite l’identification des erreurs de type au moment de la compilation.
 
-Visual Basic rend le typage fort commode en implémentant l’inférence de type local, également appelée *typage implicite*. Cette fonctionnalité est utilisée dans l’exemple précédent et vous verrez qu’elle est utilisée dans les exemples et la documentation de [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Dans Visual Basic, l’inférence de type local est effectuée simplement à l’aide d’une instruction `Dim` sans clause `As`. Dans l’exemple suivant, `city` est fortement typé en tant que chaîne.
+Visual Basic rend le typage fort commode en implémentant l’inférence de type local, également appelée *typage implicite*. Cette fonctionnalité est utilisée dans l’exemple précédent, et vous verrez qu’elle est utilisée dans les exemples et la documentation LINQ. Dans Visual Basic, l’inférence de type local est effectuée simplement à l’aide d’une instruction `Dim` sans clause `As`. Dans l’exemple suivant, `city` est fortement typé en tant que chaîne.
 
 [!code-vb[VbLINQTypeRels#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#1)]
 
 > [!NOTE]
 > L’inférence de type local fonctionne uniquement lorsque `Option Infer` a la valeur `On`. Pour plus d’informations, consultez [instruction Option Infer](../../../../visual-basic/language-reference/statements/option-infer-statement.md).
 
-Toutefois, même si vous utilisez l’inférence de type local dans une requête, les mêmes relations de type sont présentes parmi les variables dans la source de données, la variable de requête et la boucle d’exécution de la requête. Il est utile d’avoir une compréhension de base de ces relations de type lorsque vous écrivez des requêtes [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], ou que vous utilisez les exemples et des exemples de code dans la documentation.
+Toutefois, même si vous utilisez l’inférence de type local dans une requête, les mêmes relations de type sont présentes parmi les variables dans la source de données, la variable de requête et la boucle d’exécution de la requête. Il est utile d’avoir une compréhension de base de ces relations de types lorsque vous écrivez des requêtes LINQ, ou d’utiliser les exemples et des exemples de code dans la documentation.
 
 Vous devrez peut-être spécifier un type explicite pour une variable de portée qui ne correspond pas au type retourné par la source de données. Vous pouvez spécifier le type de la variable de portée à l’aide d’une clause `As`. Toutefois, cela génère une erreur si la conversion est une [conversion restrictive](../../../../visual-basic/programming-guide/language-features/data-types/widening-and-narrowing-conversions.md) et que `Option Strict` a la valeur `On`. Par conséquent, nous vous recommandons d’effectuer la conversion sur les valeurs récupérées à partir de la source de données. Vous pouvez convertir les valeurs de la source de données en type de variable de portée explicite à l’aide de la méthode <xref:System.Linq.Enumerable.Cast%2A>. Vous pouvez également effectuer un cast des valeurs sélectionnées dans la clause `Select` en un type explicite différent du type de la variable de portée. Ces points sont illustrés dans le code suivant.
 
@@ -41,7 +41,7 @@ Vous devrez peut-être spécifier un type explicite pour une variable de portée
 
 ## <a name="queries-that-return-entire-elements-of-the-source-data"></a>Requêtes qui retournent des éléments entiers des données sources
 
-L’exemple suivant montre une opération de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] qui retourne une séquence d’éléments sélectionnés à partir des données sources. La source, `names`, contient un tableau de chaînes et le résultat de la requête est une séquence contenant des chaînes qui commencent par la lettre M.
+L’exemple suivant montre une opération de requête LINQ qui retourne une séquence d’éléments sélectionnés à partir des données sources. La source, `names`, contient un tableau de chaînes et le résultat de la requête est une séquence contenant des chaînes qui commencent par la lettre M.
 
 [!code-vb[VbLINQTypeRels#2](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQTypeRels/VB/Class1.vb#2)]
 

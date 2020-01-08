@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: a91a648f4b3d3fd36c43b22ad81f00b2ad55f3c4
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 8ce2710d71c56f182e936f898e25539bc50d3827
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836982"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341355"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Comment vérifier que .NET Core est déjà installé
 
@@ -141,7 +141,7 @@ Microsoft.NETCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 ::: zone pivot="os-macos"
 
 ```bash
-dotnet --list-sdks
+dotnet --list-runtimes
 
 Microsoft.AspNetCore.All 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -166,7 +166,7 @@ Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ::: zone-end
 
-## <a name="more-information"></a>Plus d'informations
+## <a name="more-information"></a>En savoir plus
 
 Vous pouvez voir les versions du kit de développement logiciel (SDK) et les versions du runtime à l’aide de la commande `dotnet --info`. Vous obtiendrez également d’autres informations relatives à l’environnement, telles que la version du système d’exploitation et l’identificateur de Runtime (RID).
 

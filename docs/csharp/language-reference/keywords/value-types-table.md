@@ -6,25 +6,25 @@ helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 2f2d81d90f6d68f1bada40c81f0f28febd51bd1f
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: 5619f163dc3050a37a23d824bd17ee1f67e4bebe
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552362"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345379"
 ---
 # <a name="value-types-table-c-reference"></a>Table des types valeurC# (référence)
 
 Le tableau suivant présente les types valeur dans C# :
 
-|Type de valeur|Category|
+|Type de valeur|Catégorie|
 |----------------|--------------|
 |[bool](../builtin-types/bool.md)|Boolean|
 |`byte`|Non signé, numérique, [intégral](../builtin-types/integral-numeric-types.md)|
 |[char](../builtin-types/char.md)|Non signé, numérique, [intégral](../builtin-types/integral-numeric-types.md)|
 |`decimal`|Numérique, [virgule flottante](../builtin-types/floating-point-numeric-types.md)|
 |`double`|Numérique, [virgule flottante](../builtin-types/floating-point-numeric-types.md)|
-|[enum](enum.md)|Énumération|
+|[enum](../builtin-types/enum.md)|Énumération|
 |`float`|Numérique, [virgule flottante](../builtin-types/floating-point-numeric-types.md)|
 |`int`|Signé, numérique, [intégral](../builtin-types/integral-numeric-types.md)|
 |`long`|Signé, numérique, [intégral](../builtin-types/integral-numeric-types.md)|

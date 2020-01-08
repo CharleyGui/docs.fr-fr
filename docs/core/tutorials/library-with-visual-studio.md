@@ -1,51 +1,58 @@
 ---
-title: Générer une bibliothèque .NET Standard C# avec Visual Studio 2017
-description: Découvrez comment créer une bibliothèque de classes .NET Standard écrite en C# à l’aide de Visual Studio 2017.
-author: BillWagner
-ms.author: wiwagn
-ms.date: 08/07/2017
+title: Créer une bibliothèque de classes .NET Standard dans Visual Studio
+description: Découvrez comment créer une bibliothèque de classes .NET Standard écrite dans C# ou Visual Basic à l’aide de Visual Studio
+ms.date: 12/09/2019
 ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 440ef2ed398b22262923422efd7f1259e3ee9b74
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 160993a4dd40356cde541616a1f15f87712e8ae2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633692"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343100"
 ---
-# <a name="build-a-net-standard-library-with-c-and-the-net-core-sdk-in-visual-studio-2017"></a>Générer une bibliothèque .NET Standard avec C# et le kit SDK .NET Core dans Visual Studio 2017
+# <a name="build-a-net-standard-library-in-visual-studio"></a>Créer une bibliothèque de .NET Standard dans Visual Studio
 
-Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2.0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard. Quand vous avez terminé votre bibliothèque de classes, vous pouvez décider de la distribuer ou non comme un composant tiers, ou de l’inclure ou non dans un composant groupé avec une ou plusieurs applications.
+Une *bibliothèque de classes* définit des types et des méthodes qui peuvent être appelés par une application. Une bibliothèque de classes qui cible .NET Standard 2,0 permet à votre bibliothèque d’être appelée par n’importe quelle implémentation .NET qui prend en charge cette version de .NET Standard. Quand vous avez terminé votre bibliothèque de classes, vous pouvez décider de la distribuer ou non comme un composant tiers, ou de l’inclure ou non dans un composant groupé avec une ou plusieurs applications.
 
 > [!NOTE]
-> Pour obtenir la liste des versions de .NET Standard et des plateformes prises en charge, consultez [.NET Standard](../../standard/net-standard.md).
+> Pour obtenir la liste des versions de .NET Standard et les plateformes qu’elles prennent en charge, consultez [.NET standard](../../standard/net-standard.md).
 
 Dans cette rubrique, vous créez une bibliothèque d’utilitaire simple qui contient une seule méthode de gestion de chaîne. Vous l’implémentez en tant que [méthode d’extension](../../csharp/programming-guide/classes-and-structs/extension-methods.md), pour pouvoir l’appeler comme s’il s’agissait d’un membre de la classe <xref:System.String>.
 
-## <a name="creating-a-class-library-solution"></a>Création d'une solution de bibliothèque de classes
+## <a name="create-a-visual-studio-solution"></a>Créer une solution Visual Studio
 
-Commencez par créer une solution pour votre projet de bibliothèque de classes et ses projets connexes. Une solution Visual Studio sert simplement de conteneur pour un ou plusieurs projets. Pour créer la solution :
+Commencez par créer une solution vide dans laquelle placer le projet de bibliothèque de classes. Une solution Visual Studio sert de conteneur pour un ou plusieurs projets. Vous ajouterez des projets connexes supplémentaires à la même solution si vous continuez avec la série de didacticiels.
 
-1. Dans la barre de menus de Visual Studio, choisissez **Fichier** > **Nouveau** > **Projet**.
+Pour créer la solution vide :
 
-1. Dans la boîte de dialogue **Nouveau projet**, développez le nœud **Autres types de projets** et sélectionnez **Solutions Visual Studio**. Nommez la solution « ClassLibraryProjects » puis sélectionnez le bouton **OK**.
+1. Ouvrez Visual Studio.
 
-   ![Boîte de dialogue Nouveau projet avec nouvelle solution vide mise en surbrillance](./media/library-with-visual-studio/new-project-dialog.png)
+2. Dans la fenêtre de démarrage, choisissez **Créer un projet**.
 
-## <a name="creating-the-class-library-project"></a>Création du projet de bibliothèque de classes
+3. Dans la page **créer un nouveau projet** , entrez **solution** dans la zone de recherche. Choisissez le modèle de **solution vide** , puis cliquez sur **suivant**.
 
-Créez votre projet de bibliothèque de classes :
+   ![Modèle Solution vide dans Visual Studio](media/library-with-visual-studio/blank-solution.png)
 
-1. Dans **l’Explorateur de solutions**, cliquez avec le bouton droit sur la solution **ClassLibraryProjects** et, dans le menu contextuel, sélectionnez **Ajouter** > **Nouveau projet**.
+4. Dans la page **configurer votre nouveau projet** , entrez **ClassLibraryProjects** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
 
-1. Dans la boîte de dialogue **Ajouter un nouveau projet**, développez le nœud **Visual C#**, puis sélectionnez le nœud **.NET Standard** et choisissez le modèle de projet **Bibliothèque de classes (.NET Standard)**. Dans la zone de texte **Nom**, entrez « StringLibrary » comme nom de projet. Sélectionnez **OK** pour créer le projet de bibliothèque de classes.
+> [!TIP]
+> Vous pouvez également ignorer cette étape et laisser Visual Studio créer la solution pour vous quand vous créez le projet à l’étape suivante. Recherchez les options de la solution dans la page **configurer votre nouveau projet** .
 
-   ![Boîte de dialogue Ajouter un nouveau projet bibliothèque](./media/library-with-visual-studio/add-new-library-project.png)
+## <a name="create-a-class-library-project"></a>Créer un projet de bibliothèque de classes
 
-   Ensuite, la fenêtre de code s’ouvre dans l’environnement de développement Visual Studio.
+<!-- markdownlint-disable MD025 -->
 
-   ![Fenêtre d’application Visual Studio montrant le code du modèle de bibliothèque de classes par défaut](./media/library-with-visual-studio/string-library-project.png)
+# <a name="ctabcsharp"></a>[C#](#tab/csharp)
 
-1. Vérifiez que notre bibliothèque cible la version appropriée de .NET Standard. Dans la fenêtre **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de bibliothèque, puis sélectionnez **Propriétés**. La zone de texte **framework cible** indique que nous ciblons .NET Standard 2.0.
+1. Ajoutez un nouveau C# projet de bibliothèque de classes .NET standard nommé « StringLibrary » à la solution.
+
+   1. Cliquez avec le bouton droit sur la solution dans **Explorateur de solutions** , puis sélectionnez **Ajouter** > **nouveau projet**.
+
+   1. Dans la page **Ajouter un nouveau projet** , entrez **bibliothèque** dans la zone de recherche. Choisissez **C#** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **bibliothèque de classes (.NET standard)** , puis choisissez **suivant**.
+
+   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibrary** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
+
+1. Assurez-vous que la bibliothèque cible la version correcte de .NET Standard. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de bibliothèque, puis sélectionnez **Propriétés**. La zone de texte de la version **cible du .NET Framework** indique que le projet cible .NET standard 2,0.
 
    ![Propriétés de projet pour la bibliothèque de classes](./media/library-with-visual-studio/library-project-properties.png)
 
@@ -53,12 +60,41 @@ Créez votre projet de bibliothèque de classes :
 
    [!CODE-csharp[ClassLib#1](../../../samples/snippets/csharp/getting_started/with_visual_studio_2017/classlib.cs)]
 
-   La bibliothèque de classes, `UtilityLibraries.StringLibrary`, contient une méthode nommée `StartsWithUpper`, qui retourne une valeur <xref:System.Boolean> qui indique si l’instance actuelle de la chaîne commence par une majuscule. La norme Unicode distingue les caractères minuscules des caractères majuscules. La méthode <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> retourne `true` si un caractère est en majuscule.
+   La bibliothèque de classes, `UtilityLibraries.StringLibrary`, contient une méthode nommée `StartsWithUpper`. Cette méthode retourne une valeur <xref:System.Boolean> qui indique si l’instance de chaîne en cours commence par un caractère majuscule. La norme Unicode distingue les caractères minuscules des caractères majuscules. La méthode <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> retourne `true` si un caractère est en majuscule.
 
-1. Dans la barre de menus, sélectionnez **Générer** > **Générer la solution**. Le projet devrait être compilé sans erreur.
+1. Dans la barre de menus, sélectionnez **Générer** > **Générer la solution**.
 
-   ![Volet de sortie indiquant que la génération a réussi](./media/library-with-visual-studio/output-pane-successful-build.png)
+# <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 
-## <a name="next-step"></a>Étape suivante
+1. Ajoutez un nouveau Visual Basic .NET Standard projet de bibliothèque de classes nommé « StringLibrary » à la solution.
 
-Vous avez créé la bibliothèque correctement. Comme vous n’avez appelé aucune de ses méthodes, vous ne savez pas si elle fonctionne comme prévu. L’étape suivante du développement de votre bibliothèque consiste à la tester en utilisant un [Projet de test unitaire](testing-library-with-visual-studio.md).
+   1. Cliquez avec le bouton droit sur la solution dans **Explorateur de solutions** , puis sélectionnez **Ajouter** > **nouveau projet**.
+
+   1. Dans la page **Ajouter un nouveau projet** , entrez **bibliothèque** dans la zone de recherche. Choisissez **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **bibliothèque de classes (.NET standard)** , puis choisissez **suivant**.
+
+   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibrary** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
+
+1. Assurez-vous que la bibliothèque cible la version correcte de .NET Standard. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur le projet de bibliothèque, puis sélectionnez **Propriétés**. La zone de texte de la version **cible du .NET Framework** indique que le projet cible .NET standard 2,0.
+
+   ![Propriétés de projet pour la bibliothèque de classes](./media/library-with-visual-studio/vb/library-project-properties.png)
+
+1. Dans la boîte de dialogue **Propriétés** , effacez le texte de la zone de texte **espace de noms racine** . Pour chaque projet, Visual Basic crée automatiquement un espace de noms qui correspond au nom du projet. Dans ce didacticiel, vous définissez un espace de noms de niveau supérieur à l’aide du mot clé [`namespace`](../../visual-basic/language-reference/statements/namespace-statement.md) dans le fichier de code.
+
+1. Remplacez le code de la fenêtre de code par le code suivant et enregistrez le fichier :
+
+   [!CODE-vb[ClassLib#1](../../../samples/snippets/core/tutorials/vb-library-with-visual-studio/stringlibrary.vb)]
+
+   La bibliothèque de classes, `UtilityLibraries.StringLibrary`, contient une méthode nommée `StartsWithUpper`. Cette méthode retourne une valeur <xref:System.Boolean> qui indique si l’instance de chaîne en cours commence par un caractère majuscule. La norme Unicode distingue les caractères minuscules des caractères majuscules. La méthode <xref:System.Char.IsUpper(System.Char)?displayProperty=nameWithType> retourne `true` si un caractère est en majuscule.
+
+1. Dans la barre de menus, sélectionnez **Générer** > **Générer la solution**.
+
+---
+
+   Le projet devrait être compilé sans erreur.
+
+## <a name="next-steps"></a>Étapes suivantes :
+
+Vous avez créé la bibliothèque correctement. Comme vous n’avez appelé aucune de ses méthodes, vous ne savez pas si elle fonctionne comme prévu. L’étape suivante du développement de votre bibliothèque consiste à la tester.
+
+> [!div class="nextstepaction"]
+> [Créer un projet de test unitaire](testing-library-with-visual-studio.md)

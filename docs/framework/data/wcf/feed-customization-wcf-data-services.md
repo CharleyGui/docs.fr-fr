@@ -10,15 +10,15 @@ helpviewer_keywords:
 - Atom Publishing Protocol [WCF Data Services]
 - WCF Data Services, customizing feeds
 ms.assetid: 0d1a39bc-6462-4683-bd7d-e74e0fd28a85
-ms.openlocfilehash: 08df16be9df6d55ab9f1426e205e56d9609ce72e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: f34ee198ba49a168ed8b56785bea68beee2eb214
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569224"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348120"
 ---
 # <a name="feed-customization-wcf-data-services"></a>Personnalisation des flux (services de données WCF)
-WCF Data Services utilise le Open Data Protocol (OData) pour exposer des données sous forme de flux. OData prend en charge les formats Atom et JavaScript Object Notation (JSON) pour les flux de données. Lorsque vous utilisez un flux Atom, OData fournit une méthode standard pour sérialiser les données, telles que les entités et les relations, dans un format XML qui peut être inclus dans le corps du message HTTP. OData définit un mappage de propriété d’entité par défaut entre les données contenues dans les entités et les éléments Atom. Pour plus d’informations, consultez [OData : format Atom](https://go.microsoft.com/fwlink/?LinkID=185794).  
+WCF Data Services utilise le Open Data Protocol (OData) pour exposer des données sous forme de flux. OData prend en charge les formats Atom et JavaScript Object Notation (JSON) pour les flux de données. Lorsque vous utilisez un flux Atom, OData fournit une méthode standard pour sérialiser les données, telles que les entités et les relations, dans un format XML qui peut être inclus dans le corps du message HTTP. OData définit un mappage de propriété d’entité par défaut entre les données contenues dans les entités et les éléments Atom. Pour plus d’informations, consultez [OData : format Atom](https://www.odata.org/documentation/odata-version-2-0/atom-format/).  
   
  Vous pouvez avoir un scénario d'application qui requiert que les données de propriété retournées par le service des données soient sérialisées de façon personnalisée plutôt qu'au format de flux standard. Avec OData, vous pouvez personnaliser la sérialisation dans un flux de données afin que les propriétés d’une entité puissent être mappées aux éléments inutilisés et aux attributs d’une entrée ou à des éléments personnalisés d’une entrée dans le flux.  
   
@@ -31,7 +31,7 @@ WCF Data Services utilise le Open Data Protocol (OData) pour exposer des donnée
 > Lorsque vous définissez des flux personnalisés, vous devez vérifier que toutes les propriétés de l'entité qui ont des mappages personnalisés définis sont incluses dans la projection. Lorsqu'une propriété d'entité mappée n'est pas incluse dans la projection, une perte de données peut se produire. Pour plus d’informations, consultez [projections de requête](query-projections-wcf-data-services.md).  
   
 ## <a name="customizing-feeds-with-the-entity-framework-provider"></a>Personnalisation de flux avec le fournisseur Entity Framework  
- Le modèle de données utilisé avec le fournisseur Entity Framework est représenté sous la forme de code XML dans le fichier .edmx. Dans ce cas, les attributs qui définissent des flux personnalisés sont ajoutés aux éléments `EntityType` et `Property` qui représentent des types et des propriétés d'entité dans le modèle de données. Ces attributs de personnalisation de flux ne sont pas définis dans [\[MC-CSDL\]:](https://go.microsoft.com/fwlink/?LinkId=159072)le format de fichier de définition de schéma conceptuel, qui est le format que le fournisseur de Entity Framework utilise pour définir le modèle de données. Par conséquent, vous devez déclarer les attributs de personnalisation de flux dans un espace de noms de schéma spécifique défini sous la forme `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Le fragment XML suivant affiche des attributs de personnalisation de flux appliqués aux éléments `Property` du type d'entité `Products` qui définissent les propriétés `ProductName`, `ReorderLevel` et `UnitsInStock`.  
+ Le modèle de données utilisé avec le fournisseur Entity Framework est représenté sous la forme de code XML dans le fichier .edmx. Dans ce cas, les attributs qui définissent des flux personnalisés sont ajoutés aux éléments `EntityType` et `Property` qui représentent des types et des propriétés d'entité dans le modèle de données. Ces attributs de personnalisation de flux ne sont pas définis dans [\[MC-CSDL\]:](https://docs.microsoft.com/openspecs/windows_protocols/mc-csdl/c03ad8c3-e8b7-4306-af96-a9e52bb3df12)le format de fichier de définition de schéma conceptuel, qui est le format que le fournisseur de Entity Framework utilise pour définir le modèle de données. Par conséquent, vous devez déclarer les attributs de personnalisation de flux dans un espace de noms de schéma spécifique défini sous la forme `m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"`. Le fragment XML suivant affiche des attributs de personnalisation de flux appliqués aux éléments `Property` du type d'entité `Products` qui définissent les propriétés `ProductName`, `ReorderLevel` et `UnitsInStock`.  
   
  [!code-xml[Astoria Custom Feeds#EdmFeedAttributes](../../../../samples/snippets/xml/VS_Snippets_Misc/astoria_custom_feeds/xml/northwind.csdl#edmfeedattributes)]  
   

@@ -5,14 +5,14 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: 5183781d6a131aa395cf7c1fd8a09e05ed0bd71d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: fa0ae18221c33d196960239411f8860a561b20ee
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926152"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75340368"
 ---
-# <a name="tutorial-create-an-item-template"></a>Tutoriel : Créer un modèle d’élément
+# <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
 
 Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le premier d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
 
@@ -26,14 +26,14 @@ Dans cette partie de la série, vous découvrirez comment :
 > * Tester un modèle d’élément
 > * Désinstaller un modèle d'élément
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 * [SDK .NET Core 2.2](https://dotnet.microsoft.com/download) ou versions ultérieures.
 * Lisez l’article de référence [Modèles personnalisés pour dotnet new](../tools/custom-templates.md).
 
   L’article de référence explique les notions de base sur les modèles et la façon dont ils sont créés. Certaines de ces informations seront répétées ici.
 
-* Ouvrez un terminal et accédez au dossier _working\templates\\_ .
+* Ouvrez un terminal et accédez au dossier _working\templates_ .
 
 ## <a name="create-the-required-folders"></a>Créer les dossiers requis
 
@@ -54,7 +54,7 @@ parent_folder
 
 Un modèle d’élément est un type spécifique de modèle qui contient un ou plusieurs fichiers. Ces types de modèles sont utiles lorsque vous souhaitez générer un fichier de configuration, de code ou de solution. Dans cet exemple, vous allez créer une classe qui ajoute une méthode d’extension au type de chaîne.
 
-Dans votre terminal, accédez au dossier _working\templates\\_ et créez un sous-dossier nommé _extensions_. Entrez dans le dossier.
+Dans votre terminal, accédez au dossier _working\templates_ et créez un sous-dossier nommé _Extensions_. Entrez dans le dossier.
 
 ```console
 working
@@ -85,7 +85,7 @@ Maintenant que le contenu du modèle est créé, vous devez créer la configurat
 
 ## <a name="create-the-template-config"></a>Créer la configuration du modèle
 
-Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce tutoriel, votre dossier de modèle se trouve dans _working\templates\extensions\\_ .
+Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce didacticiel, votre dossier de modèles se trouve dans _working\templates\extensions_.
 
 Lorsque vous créez un modèle, tous les fichiers et dossiers du dossier de modèle sont inclus dans le modèle, à l’exception du dossier de configuration spécial. Ce dossier de configuration est nommé _.template.config_.
 
@@ -226,7 +226,7 @@ Currently installed items:
 C:\working> dotnet new -u C:\working\templates\extensions
 ```
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce tutoriel, vous avez créé un modèle d’élément. Pour savoir comment créer un modèle de projet, poursuivez cette série de tutoriels.
 

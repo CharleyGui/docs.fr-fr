@@ -3,17 +3,17 @@ title: Publier des applications .NET Core avec l’interface CLI
 description: Découvrez comment publier une application .NET Core avec les outils de l’interface de ligne de commande (CLI) du kit SDK .NET Core.
 author: thraka
 ms.author: adegeo
-ms.date: 01/16/2019
+ms.date: 12/12/2019
 dev_langs:
 - csharp
 - vb
 ms.custom: seodec18
-ms.openlocfilehash: 41af1c708a264833f1f7217529b5c0206d405449
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
-ms.translationtype: MT
+ms.openlocfilehash: 0c175d8ba8e4011213265a6cfa2e5e8fea0303b2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428913"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343577"
 ---
 # <a name="publish-net-core-apps-with-the-cli"></a>Publier des applications .NET Core avec l’interface CLI
 
@@ -23,15 +23,15 @@ Pour obtenir une vue d’ensemble de ces modes de publication, consultez [Déplo
 
 Vous recherchez une aide rapide sur l’utilisation de l’interface CLI ? Le tableau suivant présente quelques exemples illustrant comment publier votre application. Vous pouvez spécifier le framework cible avec le paramètre `-f <TFM>` ou en modifiant le fichier projet. Pour plus d’informations, consultez [Principes de base de la publication](#publishing-basics).
 
-| Mode de publication | Version du kit SDK | Commande |
+| Mode de publication | Version du kit SDK | Command |
 | ------------ | ----------- | ------- |
 | Déploiement dépendant du framework | 2.x | `dotnet publish -c Release` |
 | Exécutable dépendant du framework | 2.2 | `dotnet publish -c Release -r <RID> --self-contained false` |
-|                                | 3,0 | `dotnet publish -c Release -r <RID> --self-contained false` |
+|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained false` |
 |                                | 3.0* | `dotnet publish -c Release` |
 | Déploiement autonome      | 2.1 | `dotnet publish -c Release -r <RID> --self-contained true` |
 |                                | 2.2 | `dotnet publish -c Release -r <RID> --self-contained true` |
-|                                | 3,0 | `dotnet publish -c Release -r <RID> --self-contained true` |
+|                                | 3.0 | `dotnet publish -c Release -r <RID> --self-contained true` |
 
 \*Quand vous utilisez un déploiement dépendant du framework avec la version 3.0 du SDK, il s’agit du mode de publication par défaut lors de l’exécution de la commande `dotnet publish` de base. Cela s’applique uniquement à un projet qui cible **.NET Core 2.1** ou **.NET Core 3.0**.
 
@@ -43,9 +43,9 @@ Si vous souhaitez cibler plusieurs frameworks, vous pouvez affecter au paramètr
 
 Le répertoire de sortie de la commande [`dotnet publish`](../tools/dotnet-publish.md) est `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`, sauf s’il est défini autrement. Le mode **BUILD-CONFIGURATION** par défaut est **Debug**, sauf si vous le modifiez avec le paramètre `-c`. Par exemple, `dotnet publish -c Release -f netcoreapp2.1` publie dans `myfolder/bin/Release/netcoreapp2.1/publish/`.
 
-Si vous utilisez le kit SDK .NET Core 3.0, le mode de publication par défaut pour les applications qui ciblent .NET Core version 2.1, 2.2 ou 3.0 est « Exécutable dépendant du framework ».
+Si vous utilisez kit SDK .NET Core 3,0 ou une version ultérieure, le mode de publication par défaut pour les applications qui ciblent les versions .NET Core 2,1, 2,2, 3,0 ou une version ultérieure, est un exécutable dépendant du Framework.
 
-Si vous utilisez le kit SDK .NET Core 2.1, le mode de publication par défaut pour les applications qui ciblent .NET Core version 2.1 ou 2.2 est « Déploiement dépendant du framework ».
+Si vous utilisez kit SDK .NET Core 2,1, le mode de publication par défaut pour les applications qui ciblent les versions .NET Core 2,1 et 2,2 est un déploiement dépendant du Framework.
 
 ### <a name="native-dependencies"></a>Dépendances natives
 
@@ -110,21 +110,21 @@ Pour l’interface CLI du kit SDK .NET Core 2.x, le déploiement dépendant du 
 
 Quand vous publiez votre application en tant que déploiement dépendant du framework, un fichier `<PROJECT-NAME>.dll` est créé dans le dossier `./bin/<BUILD-CONFIGURATION>/<TFM>/publish/`. Pour exécuter votre application, accédez au dossier de sortie et utilisez la commande `dotnet <PROJECT-NAME>.dll`.
 
-Votre application est configurée pour cibler une version spécifique de .NET Core. Ce runtime .NET Core cible doit se trouver sur l’ordinateur où vous souhaitez exécuter votre application. Par exemple, si votre application cible .NET Core 2.2, le runtime .NET Core 2.2 doit être installé sur tout ordinateur sur lequel votre application s’exécute. Comme indiqué dans la section [Principes de base de la publication](#publishing-basics), vous pouvez modifier votre fichier projet afin de changer le framework cible par défaut ou de cibler plusieurs frameworks.
+Votre application est configurée pour cibler une version spécifique de .NET Core. Ce Runtime .NET Core ciblé doit être sur tout ordinateur sur lequel votre application s’exécute. Par exemple, si votre application cible .NET Core 2.2, le runtime .NET Core 2.2 doit être installé sur tout ordinateur sur lequel votre application s’exécute. Comme indiqué dans la section [Principes de base de la publication](#publishing-basics), vous pouvez modifier votre fichier projet afin de changer le framework cible par défaut ou de cibler plusieurs frameworks.
 
 La publication d’un déploiement dépendant du framework crée une application qui extrapole automatiquement vers le dernier correctif de sécurité .NET Core disponible sur le système qui exécute l’application. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#framework-dependent-apps-roll-forward).
 
 ## <a name="framework-dependent-executable"></a>Exécutable dépendant du framework
 
-Pour le kit SDK .NET Core 3. x CLI, l’exécutable dépendant du Framework (FDE) est le mode par défaut pour la commande de `dotnet publish` de base. Vous n’avez pas besoin de spécifier d’autres paramètres tant que vous souhaitez cibler le système d’exploitation actuel.
+Pour le kit SDK .NET Core 3. x CLI, l’exécutable dépendant du Framework (FDE) est le mode par défaut pour la commande de `dotnet publish` de base. Vous n’avez pas besoin de spécifier d’autres paramètres, tant que vous souhaitez cibler le système d’exploitation actuel.
 
-Dans ce mode, un hôte d’exécutable propre à la plateforme est créé pour héberger votre application multiplateforme. Ce mode est semblable au déploiement dépendant du framework, étant donné que celui-ci nécessite un ordinateur hôte sous la forme de la commande `dotnet`. Le nom de fichier de l’exécutable hôte varie en fonction de la plateforme, et ressemble à `<PROJECT-FILE>.exe`. Vous pouvez exécuter cet exécutable directement au lieu d’appeler `dotnet <PROJECT-FILE>.dll`, qui constitue tout de même une manière acceptable d’exécuter l’application.
+Dans ce mode, un hôte d’exécutable propre à la plateforme est créé pour héberger votre application multiplateforme. Ce mode est similaire à FDD, car FDD requiert un ordinateur hôte sous la forme de la commande `dotnet`. Le nom de fichier de l’exécutable hôte varie en fonction de la plateforme et porte un nom similaire à `<PROJECT-FILE>.exe`. Vous pouvez exécuter cet exécutable directement au lieu d’appeler `dotnet <PROJECT-FILE>.dll`, ce qui est toujours un moyen acceptable d’exécuter l’application.
 
-Votre application est configurée pour cibler une version spécifique de .NET Core. Ce runtime .NET Core cible doit se trouver sur l’ordinateur où vous souhaitez exécuter votre application. Par exemple, si votre application cible .NET Core 2.2, le runtime .NET Core 2.2 doit être installé sur tout ordinateur sur lequel votre application s’exécute. Comme indiqué dans la section [Principes de base de la publication](#publishing-basics), vous pouvez modifier votre fichier projet afin de changer le framework cible par défaut ou de cibler plusieurs frameworks.
+Votre application est configurée pour cibler une version spécifique de .NET Core. Ce Runtime .NET Core ciblé doit être sur tout ordinateur sur lequel votre application s’exécute. Par exemple, si votre application cible .NET Core 2.2, le runtime .NET Core 2.2 doit être installé sur tout ordinateur sur lequel votre application s’exécute. Comme indiqué dans la section [Principes de base de la publication](#publishing-basics), vous pouvez modifier votre fichier projet afin de changer le framework cible par défaut ou de cibler plusieurs frameworks.
 
 La publication d’un exécutable dépendant du framework crée une application qui extrapole automatiquement vers le dernier correctif de sécurité .NET Core disponible sur le système qui exécute l’application. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#framework-dependent-apps-roll-forward).
 
-Vous devez utiliser les commutateurs suivants avec la commande `dotnet publish` pour publier un exécutable dépendant du framework (sauf pour .NET Core 3.x quand vous ciblez la plateforme actuelle) :
+Pour .NET Core 2,2 et versions antérieures, vous devez utiliser les commutateurs suivants avec la commande `dotnet publish` pour publier un FDE :
 
 - `-r <RID>` Ce commutateur utilise un identificateur (RID) pour spécifier la plateforme cible. Pour obtenir une liste des identificateurs de runtime, consultez [Catalogue d’identificateurs de runtime (RID)](../rid-catalog.md).
 
@@ -141,7 +141,7 @@ Si vous utilisez l’[exemple d’application](#sample-app), exécutez `dotnet p
 
 Quand vous publiez un déploiement autonome, le kit SDK .NET Core crée un exécutable propre à la plateforme. La publication d’une SCD inclut tous les fichiers .NET Core requis pour exécuter votre application, mais elle n’inclut pas les [dépendances natives de .net Core](https://github.com/dotnet/core/blob/master/Documentation/prereqs.md). Ces dépendances doivent être présentes sur le système avant l’exécution de l’application.
 
-La publication d’un déploiement autonome crée une application qui n’extrapole pas vers la dernière version de correctif de sécurité .NET Core disponible. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
+La publication d’une SCD crée une application qui n’est pas reportée vers le dernier correctif de sécurité .NET Core disponible. Pour plus d’informations sur la liaison de version au moment de la compilation, consultez [Sélectionner la version .NET Core à utiliser](../versions/selection.md#self-contained-deployments-include-the-selected-runtime).
 
 Vous devez utiliser les commutateurs suivants avec la commande `dotnet publish` pour publier un déploiement autonome :
 

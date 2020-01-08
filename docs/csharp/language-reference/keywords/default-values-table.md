@@ -2,16 +2,16 @@
 title: Tableau des valeurs par défaut - Référence C#
 ms.custom: seodec18
 description: Découvrez quelles sont les valeurs par défaut des types C#.
-ms.date: 07/29/2019
+ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 48aa294fa9e37e2e138444e493faa5474011097e
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
-ms.translationtype: MT
+ms.openlocfilehash: 3604316b75bb3a6a4de39991899a837f64e547d2
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74551824"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345499"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 
@@ -24,7 +24,7 @@ Le tableau suivant présente les valeurs par défaut des types C# :
 |Tout [type numérique à virgule flottante intégré](../builtin-types/floating-point-numeric-types.md)|0 (zéro)|
 |[bool](../builtin-types/bool.md)|`false`|
 |[char](../builtin-types/char.md)|`'\0'` (U+0000)|
-|[enum](enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
+|[enum](../builtin-types/enum.md)|Valeur produite par l’expression `(E)0`, où `E` est l’identificateur de l’enum.|
 |[struct](struct.md)|Valeur produite en affectant à tous les champs de type valeur leur valeur par défaut et à tous les champs de type référence la valeur `null`.|
 |Tout [type valeur Nullable](../builtin-types/nullable-value-types.md)|Instance pour laquelle la propriété <xref:System.Nullable%601.HasValue%2A> a la valeur `false` et la propriété <xref:System.Nullable%601.Value%2A> n’est pas définie. Cette valeur par défaut est également connue sous le nom de valeur *null* d’un type valeur Nullable.|
 
@@ -46,6 +46,8 @@ Pour un type valeur, le constructeur sans paramètre implicite produit égalemen
 var n = new System.Numerics.Complex();
 Console.WriteLine(n);  // output: (0, 0)
 ```
+
+Au moment de l’exécution, si l’instance <xref:System.Type?displayProperty=nameWithType> représente un type valeur, vous pouvez utiliser la méthode <xref:System.Activator.CreateInstance(System.Type)?displayProperty=nameWithType> pour appeler le constructeur sans paramètre afin d’obtenir la valeur par défaut du type.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

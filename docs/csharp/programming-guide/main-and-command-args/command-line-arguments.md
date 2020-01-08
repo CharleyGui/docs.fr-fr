@@ -5,12 +5,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: f74f374f13aef5135b81d59f94bc2c6913766763
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
-ms.translationtype: MT
+ms.openlocfilehash: 88f30376f9c7684e64dd593becfa0ff8711a08ec
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039314"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635260"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
 
@@ -45,7 +45,7 @@ Vous pouvez également utiliser la méthode `ToInt64` de la classe `Convert` pou
 long num = Convert.ToInt64(s);
 ```
 
-Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.
+Pour plus d'informations, consultez les rubriques <xref:System.Int64.Parse%2A> et <xref:System.Convert>.
 
 ## <a name="example"></a>Exemple
 
@@ -79,6 +79,6 @@ Pour compiler et exécuter l’application à partir d’une invite de commandes
 - <xref:System.Environment?displayProperty=nameWithType>
 - [Guide de programmation C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Comment : afficher les arguments de ligne de commande](how-to-display-command-line-arguments.md)
+- [Comment Dsplay des arguments de ligne de commande](how-to-display-command-line-arguments.md)
 - [Valeurs de retour Main()](main-return-values.md)
 - [Classes](../classes-and-structs/classes.md)

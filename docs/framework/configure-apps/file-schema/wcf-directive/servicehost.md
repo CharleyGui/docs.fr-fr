@@ -2,12 +2,12 @@
 title: '@ServiceHost'
 ms.date: 03/30/2017
 ms.assetid: 96ba6967-00f2-422f-9aa7-15de4d33ebf3
-ms.openlocfilehash: dd3dd026749ccc299cd922b79dcae8ccbcc722d8
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3c7da8d5a473b801da8c48d1cb1504b95cc6c769
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968829"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342129"
 ---
 # <a name="servicehost"></a>\@ServiceHost
 Associe la fabrique utilisée pour générer l'hôte de service au service à héberger ainsi qu'à d'autres aspects de programmation requis pour compiler le code d'hébergement fourni dans le fichier .svc ou pour y accéder.  
@@ -32,11 +32,11 @@ CodeBehind = "CodeBehind"
 #### <a name="factory"></a>Fabrique  
  Nom de type CLR correspondant à la fabrique de l'hôte de service utilisée pour instancier l'hôte de service. Cet attribut est facultatif. S'il n'est pas spécifié, le <xref:System.ServiceModel.Activation.ServiceHostFactory> par défaut est utilisé et renvoie une instance de <xref:System.ServiceModel.ServiceHost>.  
   
-#### <a name="debug"></a>Débogage  
+#### <a name="debug"></a>Déboguer  
  Indique si le service Windows Communication Foundation (WCF) doit être compilé avec des symboles de débogage. `true` si le service WCF doit être compilé avec des symboles de débogage ; Sinon, `false`.  
   
-#### <a name="language"></a>Langue  
- Spécifie le langage utilisé lors de la compilation de l'intégralité du code incorporé dans le fichier (.svc). Ces valeurs peuvent représenter tout langage pris en charge par .NET, notamment C#, VB et JS, qui font respectivement référence à C#, Visual Basic .NET et JScript .NET. Cet attribut est facultatif.  
+#### <a name="language"></a>Language  
+ Spécifie le langage utilisé lors de la compilation de l'intégralité du code incorporé dans le fichier (.svc). Les valeurs peuvent représenter any. Langage NET-pris en charge, y compris `C#`, `VB`et `JS`, qui C#font respectivement référence à, Visual Basic et JScript .net. Cet attribut est facultatif.  
   
 #### <a name="codebehind"></a>CodeBehind  
  Spécifie le fichier source qui implémente le service web XML, lorsque la classe implémentant le service web XML ne réside pas dans le même fichier et n’a pas été compilée dans un assembly et placée dans le répertoire \Bin.  

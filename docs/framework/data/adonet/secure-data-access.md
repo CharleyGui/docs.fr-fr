@@ -2,12 +2,12 @@
 title: Sécuriser l'accès aux données
 ms.date: 03/30/2017
 ms.assetid: 473ebd69-21a3-4627-b95e-4e04d035c56f
-ms.openlocfilehash: c08f41be67f5d87635021e86ba5a5b33af9304cd
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ede8b1a2e840b56d6e7f45e6d26e09fa5e8bcc25
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73735277"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337521"
 ---
 # <a name="secure-data-access"></a>Sécuriser l'accès aux données
 Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes de sécurité disponibles dans la base de données ou le magasin de données sous-jacent. Vous devez également prendre en compte les implications relatives à la sécurité des autres fonctionnalités ou composants que votre application peut contenir.  
@@ -65,9 +65,8 @@ Pour écrire un code ADO.NET sécurisé, vous devez comprendre les mécanismes d
   
 |Ressource|Description|  
 |--------------|-----------------|  
-|[Considérations et conseils de sécurité pour Access 2007](https://go.microsoft.com/fwlink/?LinkId=98354)|Décrit des techniques de sécurité pour Access 2007, telles que le chiffrement des fichiers, l'administration des mots de passe, la conversion des bases de données vers les nouveaux formats ACCDB et ACCDE, ainsi que l'utilisation d'autres options de sécurité.|  
-|[Comprendre le rôle des fichiers d’informations de groupe de travail dans la sécurité d’accès](https://support.microsoft.com/kb/305542)|Explique le rôle et la relation du fichier d'informations de groupe de travail dans la sécurité Access 2003.|  
-|[Forum aux questions sur la sécurité Microsoft Access pour les versions 2,0 à 2000 de Microsoft Access](https://go.microsoft.com/fwlink/?LinkId=47698)|Version téléchargeable du Forum aux questions sur la sécurité de Microsoft Access.|  
+|[Considérations et conseils de sécurité pour Access 2007](https://docs.microsoft.com/previous-versions/office/developer/office-2007/bb421308(v=office.12))|Décrit des techniques de sécurité pour Access 2007, telles que le chiffrement des fichiers, l'administration des mots de passe, la conversion des bases de données vers les nouveaux formats ACCDB et ACCDE, ainsi que l'utilisation d'autres options de sécurité.|  
+|[Présentation de l’accès à la sécurité 2010](https://support.office.com/article/Introduction-to-Access-2010-security-CAE6D764-0318-4622-955F-68D9F186D6CA)|Fournit une vue d’ensemble des fonctionnalités de sécurité offertes par Access 2010.|  
 ## <a name="enterprise-services"></a>Enterprise Services  
  COM + contient son propre modèle de sécurité qui s'appuie sur les comptes Windows NT et l'emprunt d'identité de processus/thread. L'espace de noms <xref:System.EnterpriseServices> fournit des wrappers qui permettent aux applications .NET d'intégrer du code managé avec des services de sécurité COM+ à l'aide de la classe <xref:System.EnterpriseServices.ServicedComponent>.  
   

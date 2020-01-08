@@ -7,12 +7,12 @@ helpviewer_keywords:
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: d05307735506db0f0e4abab067334e4f0466ee6a
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
-ms.translationtype: MT
+ms.openlocfilehash: 19bf511ee7252bc305dbb4b6f32636955eba0ab8
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204641"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75337270"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 
@@ -25,8 +25,8 @@ Les contraintes informent le compilateur sur les fonctionnalités que doit avoir
 |`where T : notnull`|L’argument de type doit être un type non Nullable. L’argument peut être un type référence non Nullable dans C# 8,0 ou version ultérieure, ou un type valeur Not Nullable. Cette contrainte s’applique également à tous les types de classe, d’interface, de délégué ou de tableau.|
 |`where T : unmanaged`|L’argument de type doit être un type non [managé](../../language-reference/builtin-types/unmanaged-types.md)qui n’accepte pas les valeurs NULL. La contrainte de `unmanaged` implique la contrainte de `struct` et ne peut pas être combinée avec les contraintes `struct` ou `new()`.|
 |`where T : new()`|L’argument de type doit avoir un constructeur sans paramètre public. Quand vous utilisez la contrainte `new()` avec d’autres contraintes, elle doit être spécifiée en dernier. La contrainte de `new()` ne peut pas être combinée avec les contraintes de `struct` et de `unmanaged`.|
-|`where T :` *\<nom_classe_de_base>*|L’argument de type doit être la classe de base spécifiée ou en dériver.|
-|`where T :` *\<nom_interface>*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique.|
+|`where T :` *\<nom de la classe de base >*|L’argument de type doit être la classe de base spécifiée ou en dériver.|
+|`where T :` *\<nom de l’interface >*|L’argument de type doit être ou implémenter l’interface spécifiée. Plusieurs contraintes d’interface peuvent être spécifiées. L’interface qui impose les contraintes peut également être générique.|
 |`where T : U`|L’argument de type fourni pour T doit être l’argument fourni pour U ou en dériver.|
 
 ## <a name="why-use-constraints"></a>Pourquoi utiliser des contraintes
@@ -107,15 +107,15 @@ Si vous supprimez les commentaires de la dernière ligne, il ne sera pas compil�
 
 À compter de C# 7.3, vous pouvez également spécifier le type <xref:System.Enum?displayProperty=nameWithType> comme contrainte de classe de base. Le CLR a toujours autorisé cette contrainte, contrairement au langage C#. Les génériques utilisant `System.Enum` fournissent une programmation de type sécurisé aux résultats de cache issus de l’utilisation de méthodes statiques dans `System.Enum`. L’exemple suivant recherche toutes les valeurs valides d’un type enum, puis génère un dictionnaire qui mappe ces valeurs à sa représentation sous forme de chaîne.
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
+[!code-csharp[using the enum constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#18)]
 
-Les méthodes utilisées font appel à la réflexion, ce qui a des implications en termes de performances. Vous pouvez appeler cette méthode pour générer une collection qui est mise en cache et réutilisée, plutôt que de répéter les appels qui nécessitent la réflexion.
+Les méthodes utilisées pour faire appel à la réflexion, ce qui a des implications en termes de performances. Vous pouvez appeler cette méthode pour générer une collection qui est mise en cache et réutilisée, plutôt que de répéter les appels qui nécessitent la réflexion.
 
 Vous pouvez l’utiliser comme montré dans l’exemple suivant pour créer un enum et générer un dictionnaire de ses valeurs et de ses noms :
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
+[!code-csharp[enum definition](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#19)]
 
-[!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#20)]
+[!code-csharp[using the enum constrained method](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#20)]
 
 ## <a name="see-also"></a>Voir aussi
 

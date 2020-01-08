@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Sérialiser à l’aide de XmlSerializer (C#)'
+title: Comment sérialiser à l’aide deC#XmlSerializer ()
 ms.date: 07/20/2015
 ms.assetid: 2e0a0bbc-c548-4fe2-8741-be5a9ccd0cbb
-ms.openlocfilehash: a3b9976dc4aaf132e8c3c8f03c678724db2b6989
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 0ec19e964471382c6f10f07d6d4bb25f88fd532f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253332"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347394"
 ---
-# <a name="how-to-serialize-using-xmlserializer-c"></a>Procédure : Sérialiser à l’aide de XmlSerializer (C#)
+# <a name="how-to-serialize-using-xmlserializer-c"></a>Comment sérialiser à l’aide deC#XmlSerializer ()
 Cette rubrique présente un exemple qui sérialise et désérialise à l'aide de <xref:System.Xml.Serialization.XmlSerializer>.  
   
 ## <a name="example"></a>Exemple  

@@ -2,14 +2,15 @@
 title: Windows Communication Foundation to Message Queuing
 ms.date: 03/30/2017
 ms.assetid: 78d0d0c9-648e-4d4a-8f0a-14d9cafeead9
-ms.openlocfilehash: 1cbc1251a8e4eaaaf4b47357851dd681ae326f25
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 2e37a6efac6b979645b2dbb338b64f698b3b97e0
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715062"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344611"
 ---
 # <a name="windows-communication-foundation-to-message-queuing"></a>Windows Communication Foundation to Message Queuing
+
 Cet exemple montre comment une application Windows Communication Foundation (WCF) peut envoyer un message à une application Message Queuing (MSMQ). Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente. Il n'est pas nécessaire que le service et le client s'exécutent simultanément.
 
  Le service reçoit des messages de la file d'attente et traite les commandes. Le service crée une file d'attente transactionnelle et définit un gestionnaire de messages reçus, tel qu'indiqué dans l'exemple de code suivant.
@@ -130,49 +131,49 @@ public partial class OrderProcessorClient : System.ServiceModel.ClientBase<IOrde
  Lorsque vous exécutez l'exemple, les activités du client et du service s'affichent dans leurs fenêtres de console respectives. Vous pouvez voir le service recevoir des messages du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client. Notez qu'en raison de l'utilisation de la mise en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément. Par exemple, vous pouvez exécuter le client, l'arrêtez, puis démarrer le service et il recevra toujours ses messages.
 
 > [!NOTE]
-> Cet exemple requiert l'installation de Message Queuing (page pouvant être en anglais). Consultez les instructions d’installation dans [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968).  
-  
-### <a name="to-setup-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
-  
-1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).  
-  
-2. Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :  
-  
-    1. Ouvrez Gestionnaire de serveur dans Visual Studio 2012.  
-  
-    2. Développez l’onglet **fonctionnalités** .  
-  
-    3. Cliquez avec le bouton droit sur **files d’attente de messages privées**, puis sélectionnez **nouveau**, **file d’attente privée**.  
-  
-    4. Activez la case à cocher **transactionnelle** .  
-  
-    5. Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.  
-  
-3. Pour générer l’édition C# ou Visual Basic .NET de la solution, conformez-vous aux instructions figurant dans [Building the Windows Communication Foundation Samples](../../../../docs/framework/wcf/samples/building-the-samples.md).  
-  
-4. Pour exécuter l’exemple dans une configuration à un seul ordinateur, suivez les instructions de la procédure d' [exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).  
-  
-### <a name="to-run-the-sample-across-computers"></a>Pour exécuter l'exemple sur plusieurs ordinateurs  
-  
-1. Copiez les fichiers programme du service figurant dans le dossier \service\bin\ (situé dans le dossier correspondant à votre langue) sur l’ordinateur de service.  
-  
-2. Copiez les fichiers programme du client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l’ordinateur client.  
-  
-3. Dans le fichier Client.exe.config, modifiez l'adresse de point de terminaison client afin de remplacer « . » par le nom de l'ordinateur de service.  
-  
-4. Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.  
-  
-5. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.  
-  
+> Cet exemple requiert l'installation de Message Queuing (page pouvant être en anglais). Consultez les instructions d’installation dans [Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94968).
+
+## <a name="set-up-build-and-run-the-sample"></a>Configurer, générer et exécuter l’exemple
+
+1. Assurez-vous d’avoir effectué la [procédure d’installation unique pour les exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/one-time-setup-procedure-for-the-wcf-samples.md).
+
+2. Si le service est exécuté en premier, il vérifie que la file d'attente existe. Si la file d'attente n'existe pas, le service en crée une. Vous pouvez exécuter le service en premier pour créer la file d'attente, ou en créer une à l'aide du Gestionnaire de files d'attente MSMQ. Procédez comme suit pour créer une file d'attente dans Windows 2008 :
+
+    1. Ouvrez Gestionnaire de serveur dans Visual Studio 2012.
+
+    2. Développez l’onglet **fonctionnalités** .
+
+    3. Cliquez avec le bouton droit sur **files d’attente de messages privées**, puis sélectionnez **nouvelle** > la **file d’attente privée**.
+
+    4. Activez la case à cocher **transactionnelle** .
+
+    5. Entrez `ServiceModelSamplesTransacted` comme nom de la nouvelle file d’attente.
+
+3. Pour générer l' C# édition Visual Basic de la solution, suivez les instructions de la [création des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/building-the-samples.md).
+
+4. Pour exécuter l’exemple dans une configuration à un seul ordinateur, suivez les instructions de la procédure d' [exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md).
+
+## <a name="run-the-sample-across-computers"></a>Exécuter l’exemple sur plusieurs ordinateurs
+
+1. Copiez les fichiers programme du service figurant dans le dossier \service\bin\ (situé dans le dossier correspondant à votre langue) sur l’ordinateur de service.
+
+2. Copiez les fichiers programme du client du dossier \client\bin\ (situé dans le dossier correspondant à votre langue) sur l’ordinateur client.
+
+3. Dans le fichier Client.exe.config, modifiez l'adresse de point de terminaison client afin de remplacer « . » par le nom de l'ordinateur de service.
+
+4. Sur l'ordinateur de service, lancez Service.exe à partir d'une invite de commandes.
+
+5. Sur l'ordinateur client, lancez Client.exe à partir d'une invite de commandes.
+
 > [!IMPORTANT]
-> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
->   
-> `<InstallDrive>:\WF_WCF_Samples`  
->   
-> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.  
->   
-> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`  
-  
+> Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
+>
+> `<InstallDrive>:\WF_WCF_Samples`
+>
+> Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples Windows Communication Foundation (WCF) et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
+>
+> `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Binding\MSMQIntegration\WcfToMsmq`
+
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide pratique pour échanger des messages avec des points de terminaison WCF et des applications Message Queuing](../../../../docs/framework/wcf/feature-details/how-to-exchange-messages-with-wcf-endpoints-and-message-queuing-applications.md)

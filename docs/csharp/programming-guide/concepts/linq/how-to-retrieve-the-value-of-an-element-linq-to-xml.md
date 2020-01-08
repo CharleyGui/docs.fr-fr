@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Récupérer la valeur d’un élément (LINQ to XML) (C#)'
+title: Comment récupérer la valeur d’un élément (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 4228c007-07c9-4cf2-a45b-e7074c109581
-ms.openlocfilehash: a7b36ea7bb602c241593da356b87d35baee8163f
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 775e7282408910cc06b7d660d84cb6f80ef47949
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253352"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347414"
 ---
-# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Procédure : Récupérer la valeur d’un élément (LINQ to XML) (C#)
+# <a name="how-to-retrieve-the-value-of-an-element-linq-to-xml-c"></a>Comment récupérer la valeur d’un élément (LINQ to XML) (C#)
 Cette rubrique montre comment obtenir la valeur d'éléments. Il existe deux façons de procéder. L'un des moyens consiste à convertir un objet <xref:System.Xml.Linq.XElement> ou <xref:System.Xml.Linq.XAttribute> vers le type souhaité. L'opérateur de conversion explicite convertit alors le contenu de l'élément ou attribut vers le type spécifié et l'affecte à votre variable. En guise d'alternative, vous pouvez utiliser la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType> ou <xref:System.Xml.Linq.XAttribute.Value%2A?displayProperty=nameWithType>.  
   
  Avec C#, toutefois, la conversion est généralement la meilleure approche. Si vous convertissez l'élément ou attributs vers un type Nullable, le code est plus simple à écrire lors de la récupération de la valeur d'un élément (attribut) qui peut exister ou ne pas exister. Ceci est illustré dans le dernier exemple de cette rubrique. Toutefois, vous ne pouvez pas définir le contenu d'un élément par le biais de la conversion, comme vous le pouvez par le biais de la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>.  
@@ -30,7 +30,7 @@ Console.WriteLine("Value of e:" + (string)e);
 Value of e:abcde  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Vous pouvez également convertir des éléments vers des types autres que des chaînes. Par exemple, si vous avez un élément qui contient un entier, vous pouvez le convertir en `int`, comme illustré dans le code suivant :  
   
 ```csharp  

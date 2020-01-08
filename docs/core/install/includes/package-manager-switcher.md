@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: cadb17d9d273d4b204efc93ef527857f30c28cf7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 42c97278b1a1f488396b158f84c169d050d33e0a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74450869"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75341196"
 ---
 
 > [!div class="op_single_selector"]
@@ -22,3 +22,5 @@ ms.locfileid: "74450869"
 > - [OpenSUSE 15-x64](../linux-package-manager-opensuse15.md)
 > - [SLES 12-x64](../linux-package-manager-sles12.md)
 > - [SLES 15-x64](../linux-package-manager-sles15.md)
+
+_Les installations du gestionnaire de package sont uniquement prises en charge sur l’architecture **x64**_ . D’autres architectures, telles que **ARM**, doivent [installer manuellement le kit SDK .net Core](../sdk.md?pivots=os-linux#download-and-manually-install) ou [installer manuellement le Runtime .net Core](../runtime.md?pivots=os-linux#download-and-manually-install). Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../dependencies.md).

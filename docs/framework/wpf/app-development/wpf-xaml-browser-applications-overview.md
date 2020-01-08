@@ -10,17 +10,17 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: fb7ad54f61d9dcfe94379aef14930a0395da5291
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a4d3b808aee14d5d2f29053b0c60798f9f626e8c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424594"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636326"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>Les applications de navigateur XAML (XBAP) associent les fonctionnalités des applications Web et des applications clientes riches. À l’instar des applications Web, les applications XBAP peuvent être déployées sur un serveur web et démarrées à partir d’Internet Explorer ou de Firefox. Comme les applications clientes riches, les XBAP peuvent tirer parti des fonctionnalités de WPF. Le développement d’applications XBAP est également semblable au développement d’applications clientes complètes. Cette rubrique fournit une présentation simple et détaillée du développement XBAP et décrit les différences de développement entre les applications XBAP et les applications clientes complètes standard.
 
- Cette rubrique contient les sections suivantes :
+ Cette rubrique contient les sections suivantes :
 
 - [Création d’une nouvelle application de navigateur XAML (XBAP)](#creating_a_new_xaml_browser_application_xbap)
 
@@ -34,7 +34,7 @@ ms.locfileid: "73424594"
 
 <a name="creating_a_new_xaml_browser_application_xbap"></a>
 ## <a name="creating-a-new-xaml-browser-application-xbap"></a>Création d’une nouvelle application de navigateur XAML (XBAP)
- La façon la plus simple de créer un nouveau projet XBAP est avec Visual Studio. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d’informations, consultez l’article [Comment : créer un projet d’application de navigateur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)).
+ La façon la plus simple de créer un nouveau projet XBAP est avec Visual Studio. Lorsque vous créez un nouveau projet, sélectionnez **Application de navigateur WPF** dans la liste des modèles. Pour plus d’informations, consultez [Guide pratique pour créer un projet d’application de navigateur WPF](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/bb628663(v=vs.100)).
 
  Lorsque vous exécutez le projet XBAP, celui-ci s’ouvre dans une fenêtre de navigateur et non dans une fenêtre indépendante. Quand vous déboguez l’application XBAP à partir de Visual Studio, l’application s’exécute avec l’autorisation de zone Internet et lèvera donc des exceptions de sécurité si ces autorisations sont dépassées. Pour plus d’informations, voir [Sécurité](../security-wpf.md) et [Sécurité de confiance partielle de WPF](../wpf-partial-trust-security.md).
 
@@ -45,13 +45,13 @@ ms.locfileid: "73424594"
 ## <a name="deploying-an-xbap"></a>Déploiement d’une application XBAP
  Lorsque vous générez une application XBAP, la sortie inclut les trois fichiers suivants :
 
-|Fichier|Description|
+|File|Description|
 |----------|-----------------|
 |Fichier exécutable (.exe)|Ce fichier contient le code compilé et porte l’extension .exe.|
 |Fichier manifeste d’application (.manifest)|Ce fichier contient les métadonnées associées à l’application et porte l’extension .manifest.|
 |Fichier manifeste de déploiement (.xbap)|Ce fichier contient les informations utilisées par ClickOnce pour déployer l’application et l’extension. xbap.|
 
- Vous déployez des applications XBAP sur un serveur Web, par exemple Microsoft Internet Information Services (IIS) 5,0 ou versions ultérieures. Vous n’avez pas besoin d’installer le .NET Framework sur le serveur Web, mais vous devez enregistrer les types MIME (Multipurpose Internet Mail Extensions) et les extensions de nom de fichier [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)]. Pour plus d’informations, consultez l’article [Configurer IIS 5.0 et IIS 6.0 pour déployer des applications WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).
+ Vous déployez des applications XBAP sur un serveur Web, par exemple Microsoft Internet Information Services (IIS) 5,0 ou versions ultérieures. Vous n’avez pas besoin d’installer le .NET Framework sur le serveur Web, mais vous devez enregistrer les types MIME (Multipurpose Internet Mail Extensions) WPF et les extensions de nom de fichier. Pour plus d’informations, consultez l’article [Configurer IIS 5.0 et IIS 6.0 pour déployer des applications WPF](how-to-configure-iis-5-0-and-iis-6-0-to-deploy-wpf-applications.md).
 
  Pour préparer votre application XBAP au déploiement, copiez le fichier .exe et les manifestes associés sur le serveur web. Créez une page HTML qui contient un lien hypertexte pour ouvrir le manifeste de déploiement, c’est-à-dire le fichier qui porte l’extension .xbap. Quand l’utilisateur clique sur le lien vers le fichier. XBAP, ClickOnce gère automatiquement les mécanismes de téléchargement et de démarrage de l’application. L’exemple de code suivant montre une page HTML qui contient un lien hypertexte vers une application XBAP.
 
@@ -168,7 +168,7 @@ ms.locfileid: "73424594"
 
 |Zone de sécurité|Comportement|Obtention de la confiance totale|
 |-------------------|--------------|------------------------|
-|Ordinateur local|Confiance totale automatique|Aucune action n’est nécessaire.|
+|Ordinateur local|Confiance totale automatique|Aucune action n’est requise.|
 |Intranet et sites de confiance|Invite pour la confiance totale|Signez l’application XBAP avec un certificat afin que l’utilisateur consulte la source dans l’invite.|
 |Internet|Échec avec "Confiance non accordée"|Signez l’application XBAP avec un certificat.|
 

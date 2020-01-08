@@ -2,12 +2,12 @@
 title: Modifications avec rupture .NET Core
 description: En savoir plus sur les modifications avec rupture dans chaque version de .NET Core.
 ms.date: 11/27/2019
-ms.openlocfilehash: 30459ca1178c0d62427138b22dd42f11cd2c2475
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 3e1b2a7d0edea1c06af340711182e533aa007c61
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568028"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75343728"
 ---
 # <a name="breaking-change-selectors"></a>Sélecteurs de modification avec rupture
 
@@ -15,11 +15,14 @@ Les sélecteurs de version et de zone suivants fournissent une liste filtrée de
 
 ## <a name="by-version"></a>Par version
 
-Sélectionnez la version de .NET Core que vous ciblez actuellement, puis la version de .NET Core vers laquelle vous souhaitez effectuer la migration :
+Sélectionnez la version .NET que vous ciblez actuellement, puis la version de .NET Core vers laquelle vous souhaitez effectuer la migration :
 
 [!INCLUDE[versionselector](~/includes/core-changes/versionselector.md)]
 
-## <a name="by-area"></a>Par zone
+> [!TIP]
+> Si vous effectuez la migration d’une application Windows Forms à partir de .NET Framework vers .NET Core, consultez [modifications avec rupture dans Windows Forms (.NET Framework à .net Core)](../porting/winforms-breaking-changes.md) au lieu d’utiliser le sélecteur de version.
+
+## <a name="by-area"></a>Par domaine
 
 Sélectionnez le domaine de la technologie .NET Core qui vous intéresse. Les modifications individuelles sont classées par version de .NET Core.
 

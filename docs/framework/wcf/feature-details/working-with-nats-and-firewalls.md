@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: 7e907f234afd0fc5e81d586ed456279f684c29de
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: bfbff63c8c2cdb76d5f6d84424a9b03233744dae
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837946"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347105"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Utilisation des NAT et des pare-feu
 Il arrive fréquemment que les client et serveur d'une connexion réseau ne disposent pas d'une voie de communication directe et ouverte. Les paquets sont filtrés, acheminés, analysés et transformés par les ordinateurs de point de terminaison ainsi que par les ordinateurs intermédiaires sur le réseau. Ces ordinateurs intermédiaires, qui participent à la communication, sont notamment les applications de traduction d'adresses réseau (Network address translation, NAT) et les pare-feu.  
@@ -32,7 +32,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
  Les pare-feu des ordinateurs personnels sont le plus souvent configurés de manière à interdire les connexions entrantes lorsqu'une connexion sortante n'a pas été établie au préalable vers ces ordinateurs. Dans le cadre professionnel, la configuration standard des pare-feu est celle consistant à interdire les connexions entrantes sur tous les ports sauf sur un groupe de ports spécifié. Par exemple, un pare-feu peut empêcher les connexions sur tous les ports sauf sur les ports 80 et 443 afin d'assurer les services HTTP et HTTPS. Les pare-feu managés sont utilisés à la fois par les professionnels et les particuliers. Ils permettent à un utilisateur ou à un processus approuvé de modifier leur configuration. Ce type de pare-feu se rencontre le plus fréquemment chez les particuliers puisque l'utilisation de leur réseau n'est régie par aucune politique d'entreprise.  
   
 ## <a name="using-teredo"></a>Utilisation de Teredo  
- Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et les systèmes d'exploitation ultérieurs prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] et [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)] nécessitent à la fois l'activation du protocole IPv6 et de Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=87571).  
+ Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et les systèmes d'exploitation ultérieurs prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=87571).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Sélection d’un transport et d’un modèle d’échange de messages  
  La sélection d'un transport et d'un MEP s'effectue en trois étapes :  

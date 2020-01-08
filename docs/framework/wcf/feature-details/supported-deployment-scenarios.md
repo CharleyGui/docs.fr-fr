@@ -1,51 +1,51 @@
 ---
-title: Scénarios de déploiement pris en charge - WCF
+title: Scénarios de déploiement pris en charge
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 2da55176cbfe618b332f2df210e3e1c0516b17ae
-ms.sourcegitcommit: a8d3504f0eae1a40bda2b06bd441ba01f1631ef0
+ms.openlocfilehash: 6898ec33564a526d0e444502ebb6ed7f142f1856
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/18/2019
-ms.locfileid: "67170051"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347982"
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 
-Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans les applications de confiance partielle est conçu pour répondre aux exigences de certains, mais pas tous, scénarios pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences de l’échelle d’Internet, les fournisseurs d’hébergement partagés qui exécutent des applications tierces dans l’autorisation ASP.NET 2.0 Medium Trust définies pour des raisons de sécurité. Sur le client, prise en charge de la confiance partielle WCF est conçu pour répondre aux exigences de technologies de déploiement telles que [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou une technologie d’Application de navigateur XAML de WPF, qui autorise un déploiement transparent et sécurisé de applications de bureau à partir de sites non approuvés.
+Le sous-ensemble de fonctionnalités de Windows Communication Foundation (WCF) prises en charge pour une utilisation dans des applications de confiance partielle est conçu pour répondre aux exigences de certains scénarios, mais pas tous, pour l’utilisation de WCF. Sur le serveur, WCF répond aux exigences des fournisseurs d’hébergement partagé à l’échelle d’Internet qui exécutent des applications tierces dans le jeu d’autorisations de confiance moyenne ASP.NET 2,0 pour des raisons de sécurité. Sur le client, la prise en charge de la confiance partielle de WCF est conçue pour répondre aux exigences des technologies de déploiement telles que le [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou la technologie d’application du navigateur XAML de WPF, qui permet un déploiement transparent et sécurisé d’applications de bureau à partir de sites non approuvés.
 
-## <a name="minimum-permission-requirements"></a>Autorisations minimales requises
+## <a name="minimum-permission-requirements"></a>Conditions minimales requises pour les autorisations
 
-WCF prend en charge un sous-ensemble de fonctionnalités dans les applications qui s’exécutent sous des ensembles d’autorisations nommés standard suivants :
+WCF prend en charge un sous-ensemble de fonctionnalités dans les applications qui s’exécutent sous l’un des jeux d’autorisations nommés standard suivants :
 
 - Autorisations de confiance moyenne
 
 - Autorisations de la zone Internet
 
-Tentative d’utilisation de WCF dans les applications de confiance partielle avec des autorisations plus restrictives peut entraîner des exceptions de sécurité lors de l’exécution.
+Toute tentative d’utilisation de WCF dans des applications de confiance partielle avec des autorisations plus restrictives peut entraîner des exceptions de sécurité au moment de l’exécution.
 
 Pour plus d’informations sur les fonctionnalités prises en charge dans ces jeux d’autorisations, consultez [Partial Trust Feature Compatibility](partial-trust-feature-compatibility.md).
 
 ## <a name="partial-trust-on-the-server"></a>Confiance partielle sur le serveur
 
-Nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET imposent que les applications en cours d’exécution sur leurs serveurs s’exécutent dans le jeu d’autorisations ASP.NET 2.0 Medium Trust. WCF services peuvent s’exécuter dans ces environnements fournis s’ils utilisent le <xref:System.ServiceModel.BasicHttpBinding>, le <xref:System.ServiceModel.WebHttpBinding>, ou le <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
+De nombreux fournisseurs commerciaux de services d’hébergement d’applications Web ASP.NET obligent les applications qui s’exécutent sur leurs serveurs à s’exécuter dans le jeu d’autorisations ASP.NET 2,0 moyenne Trust. Les services WCF peuvent s’exécuter dans ces environnements, à condition qu’ils utilisent le <xref:System.ServiceModel.BasicHttpBinding>, le <xref:System.ServiceModel.WebHttpBinding>ou le <xref:System.ServiceModel.WSHttpBinding> avec la sécurité au niveau du transport.
 
-Les services WCF en cours d’exécution dans les environnements d’hébergement de confiance moyenne peuvent également agir en tant que services de niveau intermédiaire en envoyant des messages vers d’autres serveurs en réponse aux demandes des clients. Les scénarios de couche intermédiaire sur le serveur sont pris en charge si l'environnement d'hébergement a accordé le <xref:System.Net.WebPermission> approprié à l'application pour effectuer des demandes sortantes vers le serveur souhaité.
+Les services WCF s’exécutant dans des environnements d’hébergement de confiance moyenne peuvent également servir de services de couche intermédiaire en envoyant des messages à d’autres serveurs en réponse aux demandes des clients. Les scénarios de couche intermédiaire sur le serveur sont pris en charge si l'environnement d'hébergement a accordé le <xref:System.Net.WebPermission> approprié à l'application pour effectuer des demandes sortantes vers le serveur souhaité.
 
-Outre la messagerie SOAP à l’aide d’une des liaisons SOAP prises en charge, WCF prend en charge la <xref:System.ServiceModel.WebHttpBinding> pour la création de services de style Web dans les applications partiellement fiables. Le [modèle de programmation WCF Web HTTP](wcf-web-http-programming-model.md), [Syndication WCF](wcf-syndication.md), et [intégration d’AJAX et prise en charge JSON](ajax-integration-and-json-support.md) fonctionnalités de WCF sont toutes prises en charge en mode de confiance partielle.
+En plus de la messagerie SOAP utilisant l’une des liaisons SOAP prises en charge, WCF prend en charge les <xref:System.ServiceModel.WebHttpBinding> pour la création de services de style Web dans des applications de confiance partielle. Le [modèle de programmation http Web WCF](wcf-web-http-programming-model.md), la [syndication WCF](wcf-syndication.md)et l' [intégration Ajax et les fonctionnalités de prise en charge JSON](ajax-integration-and-json-support.md) de WCF sont toutes prises en charge en mode de confiance partielle.
 
 Les services de workflow requièrent des autorisations de confiance totale et ne peuvent pas être utilisés dans les applications de confiance partielle.
 
-Pour plus d'informations, voir [Procédure : Utiliser la confiance moyenne dans ASP.NET 2.0](https://go.microsoft.com/fwlink/?LinkId=84603).
+Pour plus d’informations, consultez [procédure : utiliser la confiance moyenne dans ASP.NET 2,0](https://go.microsoft.com/fwlink/?LinkId=84603).
 
 ## <a name="partial-trust-on-the-client"></a>Confiance partielle sur le client
 
-Certaines précautions de sécurité doivent être prises lors du téléchargement et de l'exécution du code à partir de sites Internet non fiables. Les deux [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) et WPF de XAML navigateur Application (XBAP) technologie utiliser de confiance partielle pour accorder des autorisations limitées (Zone Internet) au code non fiable.
+Certaines précautions de sécurité doivent être prises lors du téléchargement et de l'exécution du code à partir de sites Internet non fiables. Le [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) et la technologie d’application du navigateur XAML de WPF utilisent la confiance partielle pour accorder des autorisations limitées (zone Internet) à du code non fiable.
 
-WCF peut être utilisé pour communiquer avec des serveurs distants à partir d’applications de confiance partiel déployées par soit [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou XBAP. Le jeu d’autorisations de Zone Internet inclut <xref:System.Net.WebPermission> pour l’hôte d’origine, ce qui autorise ces applications à communiquer avec leur serveur d’origine en utilisant l’une des liaisons WCF pris en charge décrites dans [Partial Trust Feature Compatibility ](partial-trust-feature-compatibility.md).
+WCF peut être utilisé pour communiquer avec des serveurs distants à partir d’applications de confiance partielle déployées par un [déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ou une application XBAP. Le jeu d’autorisations de la zone Internet comprend <xref:System.Net.WebPermission> pour l’hôte d’origine, ce qui permet à ces applications de communiquer avec leur serveur d’origine à l’aide de l’une des liaisons WCF prises en charge décrites dans [compatibilité de fonctionnalités de confiance partielle](partial-trust-feature-compatibility.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité d’accès du code](../../misc/code-access-security.md)
-- [Vue d’ensemble de Windows Presentation Foundation Applications hébergées par un navigateur](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)
+- [Vue d’ensemble des applications hébergées par un navigateur Windows Presentation Foundation](../../wpf/app-development/wpf-xaml-browser-applications-overview.md)
 - [Confiance partielle](partial-trust.md)
-- [ASP.NET Trust Levels and Policy Files](https://docs.microsoft.com/previous-versions/wyts434y(v=vs.140))
+- [Niveaux de confiance ASP.NET et fichiers de stratégie](https://docs.microsoft.com/previous-versions/wyts434y(v=vs.140))

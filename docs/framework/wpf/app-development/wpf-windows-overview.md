@@ -28,18 +28,18 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 87d5ff67a9e95c5ec5385802d09d667ee8b6e0f9
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 3bc31391d30b0724a480152aa7f1d0dc93380b8c
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740679"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636404"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
-Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] autonomes fournissent leur propre Windows en utilisant la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  
+Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications WPF autonomes fournissent leurs propres fenêtres à l’aide de la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  
   
 > [!NOTE]
-> Les applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] hébergées par un navigateur, y compris les applications de navigateur XAML (XBAP) et les pages de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] faible, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
+> Les applications WPF hébergées par le navigateur, y compris les applications de navigateur XAML (XBAP) et les pages de [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] faible, ne fournissent pas leurs propres fenêtres. Au lieu de cela, ils sont hébergés dans Windows fourni par Windows Internet Explorer. Consultez [vue d’ensemble des applications de navigateur XAML WPF](wpf-xaml-browser-applications-overview.md).  
 
 <a name="TheWindowClass"></a>   
 ## <a name="the-window-class"></a>Window, classe  
@@ -49,7 +49,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  Une fenêtre est divisée en deux zones : la zone non cliente et la zone cliente.  
   
- La *zone non cliente* d’une fenêtre est implémentée par [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)] et inclut les parties d’une fenêtre qui sont communes à la plupart des fenêtres, y compris les éléments suivants :  
+ La *zone non cliente* d’une fenêtre est implémentée par WPF et inclut les parties d’une fenêtre qui sont communes à la plupart des fenêtres, y compris les éléments suivants :  
   
 - bordure ;  
   
@@ -65,7 +65,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  La *zone cliente* d’une fenêtre est la zone dans la zone non cliente d’une fenêtre et est utilisée par les développeurs pour ajouter du contenu spécifique à l’application, comme des barres de menus, des barres d’outils et des contrôles.  
   
- Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], une fenêtre est encapsulée par la classe <xref:System.Windows.Window> que vous utilisez pour effectuer les opérations suivantes :  
+ Dans WPF, une fenêtre est encapsulée par la classe <xref:System.Windows.Window> que vous utilisez pour effectuer les opérations suivantes :  
   
 - afficher une fenêtre ;  
   
@@ -77,7 +77,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 <a name="DefiningAWindow"></a>   
 ## <a name="implementing-a-window"></a>Implémentation d’une fenêtre  
- L’implémentation d’une fenêtre classique comprend à la fois l’apparence et le comportement, où l' *apparence* définit la façon dont une fenêtre se présente aux utilisateurs et le *comportement* définit la façon dont une fenêtre fonctionne comme les utilisateurs interagissent avec elle. Dans [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], vous pouvez implémenter l’apparence et le comportement d’une fenêtre à l’aide d’un code ou d’un balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
+ L’implémentation d’une fenêtre classique comprend à la fois l’apparence et le comportement, où l' *apparence* définit la façon dont une fenêtre se présente aux utilisateurs et le *comportement* définit la façon dont une fenêtre fonctionne comme les utilisateurs interagissent avec elle. Dans WPF, vous pouvez implémenter l’apparence et le comportement d’une fenêtre à l’aide d’un code ou d’un balisage [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].  
   
  En général, toutefois, l’apparence d’une fenêtre est implémentée à l’aide d' [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] balisage, et son comportement est implémenté à l’aide de code-behind, comme indiqué dans l’exemple suivant.  
   
@@ -124,7 +124,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
 </Project>  
 ```  
   
- Pour plus d’informations sur la génération d’applications [!INCLUDE[TLA2#tla_wpf](../../../../includes/tla2sharptla-wpf-md.md)], consultez [génération d’une application WPF](building-a-wpf-application-wpf.md).  
+ Pour plus d’informations sur la création d’applications WPF, consultez [génération d’une application WPF](building-a-wpf-application-wpf.md).  
   
 <a name="WindowLifetime"></a>   
 ## <a name="window-lifetime"></a>Durée de vie d'une fenêtre  
@@ -325,13 +325,13 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  Si vous souhaitez que la largeur et la hauteur de votre fenêtre aient une taille adaptée à la taille du contenu de la fenêtre, vous pouvez utiliser la propriété <xref:System.Windows.Window.SizeToContent%2A>, qui a les valeurs suivantes :  
   
-- <xref:System.Windows.SizeToContent.Manual>., Aucun effet (par défaut).  
+- <xref:System.Windows.SizeToContent.Manual>. Aucun effet (par défaut).  
   
-- <xref:System.Windows.SizeToContent.Width>., Ajuster à la largeur du contenu, ce qui a le même effet que la définition des <xref:System.Windows.FrameworkElement.MinWidth%2A> et des <xref:System.Windows.FrameworkElement.MaxWidth%2A> à la largeur du contenu.  
+- <xref:System.Windows.SizeToContent.Width>. Ajuster à la largeur du contenu, ce qui a le même effet que la définition des <xref:System.Windows.FrameworkElement.MinWidth%2A> et des <xref:System.Windows.FrameworkElement.MaxWidth%2A> à la largeur du contenu.  
   
-- <xref:System.Windows.SizeToContent.Height>., Ajuster à la hauteur du contenu, qui a le même effet que la définition des <xref:System.Windows.FrameworkElement.MinHeight%2A> et des <xref:System.Windows.FrameworkElement.MaxHeight%2A> à la hauteur du contenu.  
+- <xref:System.Windows.SizeToContent.Height>. Ajuster à la hauteur du contenu, qui a le même effet que la définition des <xref:System.Windows.FrameworkElement.MinHeight%2A> et des <xref:System.Windows.FrameworkElement.MaxHeight%2A> à la hauteur du contenu.  
   
-- <xref:System.Windows.SizeToContent.WidthAndHeight>., Ajuster à la largeur et à la hauteur du contenu, ce qui équivaut à définir les <xref:System.Windows.FrameworkElement.MinHeight%2A> et à <xref:System.Windows.FrameworkElement.MaxHeight%2A> à la hauteur du contenu, et à définir à la fois <xref:System.Windows.FrameworkElement.MinWidth%2A> et <xref:System.Windows.FrameworkElement.MaxWidth%2A> sur la largeur du contenu.  
+- <xref:System.Windows.SizeToContent.WidthAndHeight>. Ajuster à la largeur et à la hauteur du contenu, ce qui équivaut à définir les <xref:System.Windows.FrameworkElement.MinHeight%2A> et à <xref:System.Windows.FrameworkElement.MaxHeight%2A> à la hauteur du contenu, et à définir à la fois <xref:System.Windows.FrameworkElement.MinWidth%2A> et <xref:System.Windows.FrameworkElement.MaxWidth%2A> sur la largeur du contenu.  
   
  L’exemple suivant montre une fenêtre qui s’ajuste automatiquement en fonction de son contenu, verticalement et horizontalement, au moment où elle s’affiche pour la première fois.  
   
@@ -401,7 +401,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
 
 <a name="Resize_Mode"></a>   
 ### <a name="resize-mode"></a>Mode de redimensionnement  
- En fonction de la propriété <xref:System.Windows.Window.WindowStyle%2A>, vous pouvez contrôler la façon dont les utilisateurs peuvent redimensionner la fenêtre. Le choix du style de fenêtre détermine si un utilisateur peut redimensionner la fenêtre en faisant glisser sa bordure avec la souris, que les boutons **réduire**, **agrandir**et **Redimensionner** apparaissent sur la zone non cliente et, le cas échéant, s’ils sont désactivé.  
+ En fonction de la propriété <xref:System.Windows.Window.WindowStyle%2A>, vous pouvez contrôler la façon dont les utilisateurs peuvent redimensionner la fenêtre. Le choix du style de fenêtre affecte si un utilisateur peut redimensionner la fenêtre en faisant glisser sa bordure avec la souris, que les boutons **réduire**, **agrandir**et **Redimensionner** apparaissent sur la zone non cliente et, s’ils apparaissent, s’ils sont activés.  
   
  Vous pouvez configurer le mode de redimensionnement d’une fenêtre en définissant sa propriété <xref:System.Windows.Window.ResizeMode%2A>, qui peut être l’une des <xref:System.Windows.ResizeMode> valeurs d’énumération suivantes :  
   
@@ -466,7 +466,7 @@ L’apparence par défaut d’une fenêtre comprend un bouton de barre des tâch
  [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
   
 <a name="SecurityConsiderations"></a>   
-## <a name="security-considerations"></a>Considérations relatives à la sécurité  
+## <a name="security-considerations"></a>Considérations sur la sécurité  
  <xref:System.Windows.Window> nécessite l’instanciation d' `UnmanagedCode` autorisation de sécurité. Pour les applications installées sur la machine locale et lancées à partir de celle-ci, cette autorisation fait partie du jeu d’autorisations accordé à l’application.  
   
  Toutefois, cela se situe en dehors de l’ensemble des autorisations accordées aux applications qui sont lancées à partir de la zone Internet ou Intranet local à l’aide de ClickOnce. Par conséquent, les utilisateurs recevront un avertissement de sécurité ClickOnce et devront élever le jeu d’autorisations pour l’application à confiance totale.  

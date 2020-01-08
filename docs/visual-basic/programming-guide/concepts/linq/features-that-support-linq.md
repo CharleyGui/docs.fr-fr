@@ -5,15 +5,15 @@ helpviewer_keywords:
 - Visual Basic, LINQ features
 - LINQ [Visual Basic], features supporting LINQ
 ms.assetid: c821bb50-b6f6-4cf9-8aba-2717e465bd3a
-ms.openlocfilehash: e81d0434aa60e0c7b316b72fb78ebfe2a3782cbb
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 57c0566f9a76715e48b20f2e6493aa1a506c64be
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353517"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636859"
 ---
 # <a name="visual-basic-features-that-support-linq"></a>Fonctionnalités Visual Basic prenant en charge LINQ
-Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence à la technologie dans Visual Basic qui prend en charge la syntaxe de requête et d’autres constructions de langage directement dans le langage. Avec [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], vous n’avez pas besoin d’apprendre un nouveau langage pour effectuer des requêtes sur une source de données externe. Vous pouvez interroger des données dans des bases de données relationnelles, des magasins XML ou des objets à l’aide de Visual Basic. Cette intégration des fonctionnalités de requête dans le langage permet la vérification au moment de la compilation des erreurs de syntaxe et de la cohérence des types. Cette intégration garantit également que vous connaissez déjà la plupart des éléments que vous devez savoir pour écrire des requêtes riches et variées dans Visual Basic.  
+LINQ (Language-Integrated Query) fait référence à la technologie de Visual Basic qui prend en charge la syntaxe de requête et d’autres constructions de langage directement dans le langage. Avec LINQ, vous n’avez pas besoin d’apprendre un nouveau langage pour effectuer des requêtes sur une source de données externe. Vous pouvez interroger des données dans des bases de données relationnelles, des magasins XML ou des objets à l’aide de Visual Basic. Cette intégration des fonctionnalités de requête dans le langage permet la vérification au moment de la compilation des erreurs de syntaxe et de la cohérence des types. Cette intégration garantit également que vous connaissez déjà la plupart des éléments que vous devez savoir pour écrire des requêtes riches et variées dans Visual Basic.  
   
  Les sections suivantes décrivent les constructions de langage qui prennent en charge LINQ avec suffisamment de détails pour vous permettre de commencer à lire la documentation de présentation, des exemples de code et des exemples d’applications. Vous pouvez également cliquer sur les liens pour obtenir des explications plus détaillées sur la façon dont les fonctionnalités de langage sont réunies pour activer la fonctionnalité de requête intégrée. Un bon point de départ est la [procédure pas à pas : écriture de requêtes dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md).  
   
@@ -56,7 +56,7 @@ Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence 
  Pour plus d’informations, consultez [Types anonymes](../../../../visual-basic/programming-guide/language-features/objects-and-classes/anonymous-types.md).  
   
 ## <a name="extension-methods"></a>Méthodes d'extension  
- Les méthodes d’extension vous permettent d’ajouter des méthodes à un type de données ou à une interface à partir de l’extérieur de la définition. Cette fonctionnalité vous permet, en effet, d’ajouter de nouvelles méthodes à un type existant sans réellement modifier le type. Les opérateurs de requête standard sont eux-mêmes un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601>. Les autres extensions à <xref:System.Collections.Generic.IEnumerable%601> incluent <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>et <xref:System.Linq.Enumerable.Intersect%2A>.  
+ Les méthodes d’extension vous permettent d’ajouter des méthodes à un type de données ou à une interface à partir de l’extérieur de la définition. Cette fonctionnalité vous permet, en effet, d’ajouter de nouvelles méthodes à un type existant sans réellement modifier le type. Les opérateurs de requête standard sont eux-mêmes un ensemble de méthodes d’extension qui fournissent des fonctionnalités de requête LINQ pour tout type qui implémente <xref:System.Collections.Generic.IEnumerable%601>. Les autres extensions à <xref:System.Collections.Generic.IEnumerable%601> incluent <xref:System.Linq.Enumerable.Count%2A>, <xref:System.Linq.Enumerable.Union%2A>et <xref:System.Linq.Enumerable.Intersect%2A>.  
   
  La méthode d’extension suivante ajoute une méthode Print à la classe <xref:System.String>.  
   
@@ -66,7 +66,7 @@ Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence 
   
  [!code-vb[VbLINQVbFeatures#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#7)]  
   
- Pour plus d’informations, consultez la page [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
+ Pour plus d’informations, consultez [Méthodes d’extension](../../../../visual-basic/programming-guide/language-features/procedures/extension-methods.md).  
   
 ## <a name="lambda-expressions"></a>Expressions lambda  
  Une expression lambda est une fonction sans nom qui calcule et retourne une valeur unique. Contrairement aux fonctions nommées, une expression lambda peut être définie et exécutée en même temps. L’exemple suivant affiche 4.  
@@ -77,7 +77,7 @@ Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence 
   
  [!code-vb[VbLINQVbFeatures#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#12)]  
   
- Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], les expressions lambda sont sous-jacentes de nombreux opérateurs de requête standard. Le compilateur crée des expressions lambda pour capturer les calculs définis dans les méthodes de requête fondamentales, telles que `Where`, `Select`, `Order By`, `Take While`et autres.  
+ Dans LINQ, les expressions lambda sont sous-jacentes de nombreux opérateurs de requête standard. Le compilateur crée des expressions lambda pour capturer les calculs définis dans les méthodes de requête fondamentales, telles que `Where`, `Select`, `Order By`, `Take While`et autres.  
   
  Par exemple, le code suivant définit une requête qui retourne tous les étudiants d’une liste d’étudiants.  
   
@@ -91,7 +91,7 @@ Le nom [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] fait référence 
   
  [!code-vb[VbLINQVbFeatures#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQVbFeatures/VB/Class1.vb#11)]  
   
- Pour plus d’informations, voir [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
+ Pour plus d’informations, consultez [Expressions lambda](../../../../visual-basic/programming-guide/language-features/procedures/lambda-expressions.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

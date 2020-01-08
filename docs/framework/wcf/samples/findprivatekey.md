@@ -1,15 +1,15 @@
 ---
-title: Exemple FindPrivateKey-WCF
+title: Exemple FindPrivateKey
 ms.date: 12/04/2017
 helpviewer_keywords:
 - FindPrivateKey
 ms.assetid: 16b54116-0ceb-4413-af0c-753bb2a785a6
-ms.openlocfilehash: 4ba4316489c1494da9421bea5c513e44c6eb50a7
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 0ed1e5e81a5d2f7f3586e5dce306e8244b5ebd48
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70989883"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346014"
 ---
 # <a name="findprivatekey-sample"></a>Exemple FindPrivateKey
 
@@ -46,13 +46,13 @@ cacls.exe "C:\Documents and Settings\All Users\Application Data\Microsoft\Crypto
 
 Pour télécharger le projet, visitez les [exemples Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459).
 
-1. Ouvrez l’Explorateur de fichiers et accédez au dossier *WF_WCF_Samples\WCF\Setup\FindPrivateKey\CS* sous l’emplacement du répertoire où vous avez installé l’exemple.
+1. Ouvrez l’Explorateur de fichiers et accédez au dossier *WF_WCF_Samples \wcf\setup\findprivatekey\cs* sous l’emplacement du répertoire où vous avez installé l’exemple.
 
 2. Double-cliquez sur l'icône du fichier .sln pour ouvrir ce dernier dans Visual Studio.
 
 3. Dans le menu **générer** , sélectionnez **régénérer la solution**.
 
-4. La génération de la solution génère le fichier : FindPrivateKey. exe.
+4. La génération de la solution génère le fichier : FindPrivateKey.exe.
 
 ## <a name="conventionscommand-line-entries"></a>Conventions-entrées de ligne de commande
 
@@ -64,13 +64,13 @@ Pour télécharger le projet, visitez les [exemples Windows Communication Founda
 
  «\<*value*> » représente une valeur de paramètre à entrer.
 
-## <a name="usage"></a>Usage
+## <a name="usage"></a>Contrôle
 
 ```console
 FindPrivateKey <storeName> <storeLocation> [{ {-n <subjectName>} | {-t <thumbprint>} } [-f | -d | -a]]
 ```
 
-Où :
+Où :
 
 | Paramètre         | Description                                                                       |
 |-----------------|-----------------------------------------------------------------------------------|

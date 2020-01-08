@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Récupérer un seul attribut (LINQ to XML) (C#)'
+title: Récupération d’un seul attribut (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 1b6b07b9-933f-47e9-874e-e790cab49dc5
-ms.openlocfilehash: d8c8d0e3a99f94c4404f0ab23a5edf082be77952
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 31b34bddc9e748b473641235402847991d444c39
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253412"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347504"
 ---
-# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Procédure : Récupérer un seul attribut (LINQ to XML) (C#)
+# <a name="how-to-retrieve-a-single-attribute-linq-to-xml-c"></a>Récupération d’un seul attribut (LINQ to XML) (C#)
 Cette rubrique explique comment récupérer un seul attribut d'un élément, étant donné le nom de l'attribut. Ceci est utile pour écrire des expressions de requête où vous souhaitez rechercher un élément qui possède un attribut particulier.  
   
  La méthode <xref:System.Xml.Linq.XElement.Attribute%2A> de la classe <xref:System.Xml.Linq.XElement> retourne l'objet <xref:System.Xml.Linq.XAttribute> avec le nom spécifié.  
@@ -42,7 +42,7 @@ home
 work  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Si vous souhaitez récupérer la valeur de l'attribut vous pouvez le convertir, comme vous le feriez avec des objets <xref:System.Xml.Linq.XElement>. Cela est illustré par l'exemple suivant.  
   
 ```csharp  

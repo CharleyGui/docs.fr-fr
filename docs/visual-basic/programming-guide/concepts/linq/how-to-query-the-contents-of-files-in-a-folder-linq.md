@@ -1,13 +1,13 @@
 ---
-title: Comment interroger le contenu de fichiers dans un dossier (LINQ)
+title: Guide pratique pour interroger le contenu de fichiers dans un dossier (LINQ)
 ms.date: 07/20/2015
 ms.assetid: edacbcd3-f3e4-4429-a8be-28a58dc0dd70
-ms.openlocfilehash: 02ffa398c495ca5af77685d62299c59cfc3b9d9c
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3ad5fd6c893d590d46be67e6320ac5b915829f4b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347614"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346044"
 ---
 # <a name="how-to-query-the-contents-of-files-in-a-folder-linq-visual-basic"></a>Comment interroger le contenu de fichiers dans un dossier (LINQ) (Visual Basic)
 
@@ -73,9 +73,9 @@ Module Module1
 End Module
 ```
 
-## <a name="compiling-the-code"></a>Compilation du code
+## <a name="compile-the-code"></a>Compiler le code
 
-Créez un projet d’application console VB.NET, copiez et collez l’exemple de code, puis ajustez la valeur de l’objet Startup dans les propriétés du projet.
+Créez un projet d’application console Visual Basic, copiez et collez l’exemple de code, puis ajustez la valeur de l’objet Startup dans les propriétés du projet.
 
 ## <a name="see-also"></a>Voir aussi
 

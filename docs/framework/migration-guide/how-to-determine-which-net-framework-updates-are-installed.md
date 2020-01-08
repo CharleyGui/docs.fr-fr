@@ -1,5 +1,5 @@
 ---
-title: Lequel .NET Framework mises à jour de sécurité et les correctifs logiciels sont installés
+title: Consultez Installation des mises à jour et des correctifs logiciels de sécurité .NET Framework
 description: Découvrez comment déterminer les correctifs logiciels et mises à jour de sécurité .NET Framework installés sur un ordinateur.
 ms.date: 11/27/2017
 dev_langs:
@@ -11,12 +11,12 @@ helpviewer_keywords:
 ms.assetid: 53c7b5f7-d47a-402a-b194-7244a696a88b
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: aad202e7c9df01c2893e74a39744f2c32783f1f0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
-ms.translationtype: MT
+ms.openlocfilehash: 498462b2dc5f0e63562cb52699460e0d37fd4a60
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73735198"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75342283"
 ---
 # <a name="how-to-determine-which-net-framework-security-updates-and-hotfixes-are-installed"></a>Comment déterminer les .NET Framework mises à jour de sécurité et les correctifs logiciels installés
 
@@ -33,7 +33,7 @@ Les correctifs logiciels et mises à jour de sécurité installés pour chaque v
 
 2. Dans l'Éditeur du Registre, ouvrez la sous-clé suivante :
 
-     **HKEY_LOCAL_MACHINE\SOFTWARE\Wow6432Node\Microsoft\Updates**
+     **HKEY_LOCAL_MACHINE \SOFTWARE\Wow6432Node\Microsoft\Updates**
 
      Les mises à jour installées sont répertoriées sous les sous-clés qui identifient la version du .NET Framework auquel elles s'appliquent. Chaque mise à jour est identifiée par un numéro de Base de connaissances (KB).
 

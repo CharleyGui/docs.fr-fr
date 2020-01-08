@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : Joindre du contenu issu de fichiers non similaires (LINQ) (C#)'
+title: Comment joindre du contenu provenant de fichiers différents (LINQ) (C#)
 ms.date: 06/27/2018
 ms.assetid: aa2d12a6-70a9-492f-a6db-b2b850d46811
-ms.openlocfilehash: eb2e5d8e598b7b671afe9271e6e591c5ce0ada2b
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 49b70c15b3be2efea5cf6a9e7d85df944a67c730
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253548"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75345887"
 ---
-# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Procédure : Joindre du contenu issu de fichiers non similaires (LINQ) (C#)
+# <a name="how-to-join-content-from-dissimilar-files-linq-c"></a>Comment joindre du contenu provenant de fichiers différents (LINQ) (C#)
 
 Cet exemple montre comment joindre des données de deux fichiers CSV qui partagent une valeur commune utilisée comme clé correspondante. Cette technique peut être utile si vous devez combiner les données de deux feuilles de calcul, ou d’une feuille de calcul et d’un fichier qui a un autre format, dans un nouveau fichier. Vous pouvez modifier l’exemple pour qu’il fonctionne avec tout type de texte structuré.  
   
-## <a name="to-create-the-data-files"></a>Pour créer les fichiers de données
+## <a name="to-create-the-data-files"></a>Pour créer le fichier de données
   
 1. Copiez les lignes suivantes dans un fichier nommé *scores.csv*, puis enregistrez-le dans votre dossier de projet. Le fichier représente les données de feuille de calcul. La colonne 1 est l’ID de l’étudiant et les colonnes 2 à 5 correspondent à des résultats d’examens.  
   
