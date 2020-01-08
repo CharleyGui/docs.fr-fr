@@ -66,6 +66,9 @@
             - name: Développer pour plusieurs plateformes avec .NET
               tocHref: /dotnet/standard/cross-platform/
               topicHref: /dotnet/standard/cross-platform/index
+            - name: Microsoft.Data.Sqlite
+              tocHref: /dotnet/standard/data/sqlite/
+              topicHref: /dotnet/standard/data/sqlite/index
             - name: Documents et données XML
               tocHref: /dotnet/standard/data/xml/
               topicHref: /dotnet/standard/data/xml/index
@@ -223,7 +226,7 @@
                     - name: Section de configuration Windows Forms
                       tocHref: /dotnet/framework/configure-apps/file-schema/winforms/
                       topicHref: /dotnet/framework/configure-apps/file-schema/winforms/index
-            - name: Données et modélisation dans le .NET Framework
+            - name: Données et modélisation
               tocHref: /dotnet/framework/data/
               topicHref: /dotnet/framework/data/index
               items:
@@ -248,7 +251,7 @@
                         - name: LINQ to SQL
                           tocHref: /dotnet/framework/data/adonet/sql/linq/
                           topicHref: /dotnet/framework/data/adonet/sql/linq/index
-                - name: Traitement des transactions
+                - name: Traitement transactionnel
                   tocHref: /dotnet/framework/data/transactions/
                   topicHref: /dotnet/framework/data/transactions/index
                 - name: Services de données WCF
@@ -281,13 +284,13 @@
             - name: Compiler des applications avec .NET Native
               tocHref: /dotnet/framework/net-native/
               topicHref: /dotnet/framework/net-native/index
-            - name: Programmation réseau dans le .NET Framework
+            - name: Programmation réseau
               tocHref: /dotnet/framework/network-programming/
               topicHref: /dotnet/framework/network-programming/index
             - name: Performances .NET Framework
               tocHref: /dotnet/framework/performance/
               topicHref: /dotnet/framework/performance/index
-            - name: Programmation dynamique dans le .NET Framework
+            - name: Programmation dynamique
               tocHref: /dotnet/framework/reflection-and-codedom/
               topicHref: /dotnet/framework/reflection-and-codedom/index
             - name: Ressources dans des applications de bureau
@@ -398,7 +401,7 @@
                 - name: Avancé
                   tocHref: /dotnet/framework/wpf/advanced/
                   topicHref: /dotnet/framework/wpf/advanced/index
-                - name: Développement d’applications
+                - name: Développement d’application
                   tocHref: /dotnet/framework/wpf/app-development/
                   topicHref: /dotnet/framework/wpf/app-development/index
                 - name: Contrôles
