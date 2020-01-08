@@ -1,16 +1,16 @@
 ---
-title: 'Procédure : Récupérer la valeur superficielle d’un élément (C#)'
+title: Comment récupérer la valeur superficielle d’un élément (C#)
 ms.date: 07/20/2015
 ms.assetid: 924a2699-72f6-4be1-aaa6-de62f8ec73b9
-ms.openlocfilehash: 662c20cf2b17b9f93e00f0fd3c5cf925b5274de5
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: b9b69b5a18106f82d13cb54208c2362f8239711e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253367"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347446"
 ---
-# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Procédure : Récupérer la valeur superficielle d’un élément (C#)
-Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l'élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
+# <a name="how-to-retrieve-the-shallow-value-of-an-element-c"></a>Comment récupérer la valeur superficielle d’un élément (C#)
+Cette rubrique montre comment obtenir la valeur superficielle d'un élément. La valeur superficielle est la valeur de l’élément spécifique uniquement, par opposition à la valeur profonde, qui inclut les valeurs de tous les éléments descendants concaténés dans une chaîne unique.  
   
  Lorsque vous extrayez la valeur d'un élément par le biais d'une conversion ou en utilisant la propriété <xref:System.Xml.Linq.XElement.Value%2A?displayProperty=nameWithType>, vous extrayez une valeur profonde. Pour extraire la valeur superficielle, vous pouvez utiliser la méthode d'extension `ShallowValue`, comme dans l'exemple suivant. L'extraction de la valeur superficielle est utile lorsque vous voulez sélectionner des éléments en fonction de leur contenu.  
   
