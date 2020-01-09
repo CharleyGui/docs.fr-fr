@@ -5,12 +5,12 @@ helpviewer_keywords:
 - merged resource dictionaries [WPF]
 - dictionaries [WPF], merged resources
 ms.assetid: d159531f-05d4-49fd-b951-c332de51e5bc
-ms.openlocfilehash: 6647e52ef8477221dd5849a19809a34fb06189a6
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 899955a9f3302e67de4efa0ce0cb6baf6bf0ec5d
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455423"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559779"
 ---
 # <a name="merged-resource-dictionaries"></a>Dictionnaires de ressources fusionnés
 Les ressources [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] prennent en charge une fonctionnalité de dictionnaire de ressources fusionné. Cette fonctionnalité offre un moyen de définir la partie ressources d’une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] en dehors de l’application [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] compilée. Les ressources peuvent ensuite être partagées entre les applications et sont aussi isolées plus facilement pour la localisation.  
@@ -20,7 +20,7 @@ Les ressources [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-win
   
  [!code-xaml[ResourceMergeDictionary#MergedXAML](~/samples/snippets/csharp/VS_Snippets_Wpf/ResourceMergeDictionary/CS/default.xaml#mergedxaml)]  
   
- Notez que l’élément <xref:System.Windows.ResourceDictionary> n’a pas de [directive x :Key](../../xaml-services/x-key-directive.md), qui est généralement requise pour tous les éléments d’une collection de ressources. Toutefois, une autre <xref:System.Windows.ResourceDictionary> référence dans la collection de <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> est un cas spécial, réservé à ce scénario de dictionnaire de ressources fusionné. La <xref:System.Windows.ResourceDictionary> qui introduit un dictionnaire de ressources fusionné ne peut pas avoir de [directive x :Key](../../xaml-services/x-key-directive.md). En règle générale, chaque <xref:System.Windows.ResourceDictionary> dans la collection de <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> spécifie un attribut <xref:System.Windows.ResourceDictionary.Source%2A>. La valeur de <xref:System.Windows.ResourceDictionary.Source%2A> doit être un URI (Uniform Resource Identifier) qui correspond à l’emplacement du fichier de ressources à fusionner. La destination de cet URI doit être un autre fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], avec <xref:System.Windows.ResourceDictionary> comme élément racine.  
+ Notez que l’élément <xref:System.Windows.ResourceDictionary> n’a pas de [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md), qui est généralement requise pour tous les éléments d’une collection de ressources. Toutefois, une autre <xref:System.Windows.ResourceDictionary> référence dans la collection de <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> est un cas spécial, réservé à ce scénario de dictionnaire de ressources fusionné. La <xref:System.Windows.ResourceDictionary> qui introduit un dictionnaire de ressources fusionné ne peut pas avoir de [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md). En règle générale, chaque <xref:System.Windows.ResourceDictionary> dans la collection de <xref:System.Windows.ResourceDictionary.MergedDictionaries%2A> spécifie un attribut <xref:System.Windows.ResourceDictionary.Source%2A>. La valeur de <xref:System.Windows.ResourceDictionary.Source%2A> doit être un URI (Uniform Resource Identifier) qui correspond à l’emplacement du fichier de ressources à fusionner. La destination de cet URI doit être un autre fichier de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], avec <xref:System.Windows.ResourceDictionary> comme élément racine.  
   
 > [!NOTE]
 > Il est légal de définir des ressources au sein d’un <xref:System.Windows.ResourceDictionary> qui est spécifié comme dictionnaire fusionné, soit comme alternative à spécifier <xref:System.Windows.ResourceDictionary.Source%2A>, soit en plus des ressources incluses dans la source spécifiée. Cependant, il ne s’agit pas d’un scénario courant ; le scénario principal pour les dictionnaires fusionnés consiste à fusionner des ressources à partir d’emplacements de fichiers externes. Si vous souhaitez spécifier des ressources dans le balisage d’une page, vous devez généralement les définir dans le <xref:System.Windows.ResourceDictionary> principal et non dans les dictionnaires fusionnés.  

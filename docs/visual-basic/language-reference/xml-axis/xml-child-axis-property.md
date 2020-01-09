@@ -10,12 +10,12 @@ helpviewer_keywords:
 - XML child axis property [Visual Basic]
 - XML [Visual Basic], accessing
 ms.assetid: 89a59d00-985e-4f5c-b59f-29b47bad11cb
-ms.openlocfilehash: 968154908bc6cb62bb221d42a1f71b329aa7096f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 728c17cd2ed8661e0a5f1f2b8e929059713a1edf
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74349454"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545116"
 ---
 # <a name="xml-child-axis-property-visual-basic"></a>Propriété d'axe enfant XML (Visual Basic)
 Fournit un accès aux enfants de l'un des éléments suivants : un objet <xref:System.Xml.Linq.XElement>, un objet <xref:System.Xml.Linq.XDocument>, une collection d'objets <xref:System.Xml.Linq.XElement> ou une collection d'objets <xref:System.Xml.Linq.XDocument>.  
@@ -26,13 +26,13 @@ Fournit un accès aux enfants de l'un des éléments suivants : un objet <xref:
 object.<child>  
 ```  
   
-## <a name="parts"></a>Composants  
+## <a name="parts"></a>Parties  
   
 |Terme|Définition|  
 |---|---|  
 |`object`|Requis. Un objet <xref:System.Xml.Linq.XElement>, un objet <xref:System.Xml.Linq.XDocument>, une collection d’objets <xref:System.Xml.Linq.XElement> ou une collection d’objets <xref:System.Xml.Linq.XDocument>.|  
 |.<|Requis. Indique le début d'une propriété d'axe enfant.|  
-|`child`|Requis. Nom des nœuds enfants auxquels accéder, sous la forme [`prefix:]name`.<br /><br /> -   `Prefix`-facultatif. Préfixe d'espace de noms XML pour le nœud enfant. Doit être un espace de noms XML global défini avec une instruction `Imports`.<br />-   `Name`-requis. Nom de nœud enfant local. Consultez [les noms des éléments et attributs XML déclarés](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
+|`child`|Requis. Nom des nœuds enfants auxquels accéder, sous la forme `[prefix:]name`.<br /><br /> -   `Prefix`-facultatif. Préfixe d'espace de noms XML pour le nœud enfant. Doit être un espace de noms XML global défini avec une instruction `Imports`.<br />-   `Name`-requis. Nom de nœud enfant local. Consultez [les noms des éléments et attributs XML déclarés](../../../visual-basic/programming-guide/language-features/xml/names-of-declared-xml-elements-and-attributes.md).|  
 |>|Requis. Indique la fin d'une propriété d'axe enfant.|  
   
 ## <a name="return-value"></a>Valeur de retour  

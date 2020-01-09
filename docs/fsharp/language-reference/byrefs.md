@@ -2,12 +2,12 @@
 title: Byrefs
 description: En savoir plus sur les types ByRef et de F#type ByRef dans, qui sont utilisés pour la programmation de bas niveau.
 ms.date: 11/04/2019
-ms.openlocfilehash: 2c46cea2329b6817dd753e67c6702fb163ce2193
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: a6d3d69c4a163be9ecef7e33c284c4a73e800405
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976828"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545133"
 ---
 # <a name="byrefs"></a>Byrefs
 
@@ -104,7 +104,7 @@ Toutes ces règles signifient que le détenteur d’un pointeur de `inref` peut 
 
 ### <a name="outref-semantics"></a>Sémantique Outref
 
-L’objectif de `outref<'T>` est d’indiquer que le pointeur doit uniquement être lu à partir de. De manière inattendue, `outref<'T>` permet de lire la valeur sous-jacente en dépit de son nom. À des fins de compatibilité. Sémantiquement, `outref<'T>` n’est pas différent de `byref<'T>`.
+L’objectif de `outref<'T>` est d’indiquer que le pointeur doit uniquement être écrit dans. De manière inattendue, `outref<'T>` permet de lire la valeur sous-jacente en dépit de son nom. À des fins de compatibilité. Sémantiquement, `outref<'T>` n’est pas différent de `byref<'T>`.
 
 ### <a name="interop-with-c"></a>Interopérabilité avec C\#
 
@@ -114,17 +114,17 @@ C#prend en charge les mots clés `in ref` et `out ref`, en plus de `ref` retourn
 |------------|---------|
 |`ref` valeur de retour|`outref<'T>`|
 |`ref readonly` valeur de retour|`inref<'T>`|
-|paramètre `in ref`|`inref<'T>`|
-|paramètre `out ref`|`outref<'T>`|
+|Paramètre `in ref`|`inref<'T>`|
+|Paramètre `out ref`|`outref<'T>`|
 
 Le tableau suivant répertorie F# les émissions :
 
 |F#composer|Construction émise|
 |------------|-----------------|
-|argument `inref<'T>`|attribut `[In]` sur l’argument|
+|Argument `inref<'T>`|attribut `[In]` sur l’argument|
 |`inref<'T>` retourner|`modreq` attribut sur la valeur|
 |`inref<'T>` dans l’emplacement ou l’implémentation abstraits|`modreq` de l’argument ou du retour|
-|argument `outref<'T>`|attribut `[Out]` sur l’argument|
+|Argument `outref<'T>`|attribut `[Out]` sur l’argument|
 
 ### <a name="type-inference-and-overloading-rules"></a>Inférence de type et règles de surcharge
 
@@ -134,7 +134,7 @@ Un type de `inref<'T>` est déduit par le F# compilateur dans les cas suivants 
 2. Pointeur `this` sur un type struct qui n’a aucun champ mutable.
 3. Adresse d’un emplacement de mémoire dérivé d’un autre pointeur de `inref<_>`.
 
-Quand une adresse implicite d’un `inref` est prise, une surcharge avec un argument de type `SomeType` est préférable à une surcharge avec un argument de type `inref<SomeType>`. Exemple :
+Quand une adresse implicite d’un `inref` est prise, une surcharge avec un argument de type `SomeType` est préférable à une surcharge avec un argument de type `inref<SomeType>`. Par exemple :
 
 ```fsharp
 type C() =
@@ -166,7 +166,7 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 `IsByRefLike` n’implique pas `Struct`. Les deux doivent être présents sur le type.
 
-Un struct «`byref`-like » dans F# est un type valeur lié à la pile. Elle n’est jamais allouée sur le tas managé. Un struct de type `byref`est utile pour la programmation hautes performances, car il est appliqué avec un ensemble de vérifications fortes sur la durée de vie et la non-capture. Les règles sont les suivantes :
+Un struct «`byref`-like » dans F# est un type valeur lié à la pile. Elle n’est jamais allouée sur le tas managé. Un struct de type `byref`est utile pour la programmation hautes performances, car il est appliqué avec un ensemble de vérifications fortes sur la durée de vie et la non-capture. Les règles applicables sont les suivantes :
 
 * Elles peuvent être utilisées en tant que paramètres de fonction, paramètres de méthode, variables locales, retours de méthode.
 * Ils ne peuvent pas être des membres statiques ou d’instance d’une classe ou d’un struct normal.
@@ -179,7 +179,7 @@ Bien que ces règles restreignent fortement l’utilisation, elles le font pour 
 
 ## <a name="byref-returns"></a>ByRef retourne
 
-Les retours F# ByRef des fonctions ou des membres peuvent être générés et consommés. Lors de l’utilisation d’une méthode retournant un `byref`, la valeur est déréférencée implicitement. Exemple :
+Les retours F# ByRef des fonctions ou des membres peuvent être générés et consommés. Lors de l’utilisation d’une méthode retournant un `byref`, la valeur est déréférencée implicitement. Par exemple :
 
 ```fsharp
 let safeSum(bytes: Span<byte>) =

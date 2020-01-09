@@ -8,23 +8,23 @@ helpviewer_keywords:
 - XAML [WPF], StaticResource markup extension
 - StaticResource markup extensions [WPF]
 ms.assetid: 97af044c-71f1-4617-9a94-9064b68185d2
-ms.openlocfilehash: b15e2c0bac5610c6f1b10a640254236987c0bcf5
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: aa7f69e8871295006c3c5a9c7d0a70d0ecbd6d7e
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458734"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559818"
 ---
 # <a name="staticresource-markup-extension"></a>StaticResource, extension de balisage
-Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en recherchant une référence à une ressource déjà définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment du chargement, qui recherche les ressources qui ont été chargées précédemment à partir du balisage de la page de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] actuelle, ainsi que d’autres sources d’application, et qui génère cette valeur de ressource en tant que propriété. valeur dans les objets au moment de l’exécution.  
+Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] attribut de propriété en recherchant une référence à une ressource déjà définie. Le comportement de recherche pour cette ressource est analogue à la recherche au moment du chargement, qui recherche les ressources qui ont été chargées précédemment à partir du balisage de la page de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] actuelle, ainsi que d’autres sources d’application, et génère cette valeur de ressource en tant que valeur de propriété dans les objets d’exécution.  
   
-## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML  
+## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML  
   
 ```xml  
 <object property="{StaticResource key}" .../>  
 ```  
   
-## <a name="xaml-object-element-usage"></a>Utilisation d'éléments objet XAML  
+## <a name="xaml-object-element-usage"></a>Utilisation des éléments objets XAML  
   
 ```xml  
 <object>  
@@ -38,16 +38,16 @@ Fournit une valeur pour tout [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2s
   
 |||  
 |-|-|  
-|`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x :Key](../../xaml-services/x-key-directive.md) si une ressource a été créée dans le balisage ou si elle a été fournie en tant que paramètre `key` lors de l’appel de <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
+|`key`|Clé pour la ressource demandée. Cette clé a été initialement assignée par la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) si une ressource a été créée dans le balisage ou si elle a été fournie en tant que paramètre `key` lors de l’appel de <xref:System.Windows.ResourceDictionary.Add%2A?displayProperty=nameWithType> si la ressource a été créée dans le code.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
 > Un `StaticResource` ne doit pas essayer de créer une référence anticipée à une ressource qui est définie de manière lexicale dans le fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]. Toute tentative de ce type n’est pas prise en charge, et même si une telle référence n’échoue pas, toute tentative de référence anticipée entraîne une altération des performances du temps de chargement lorsque les tables de hachage internes représentant un <xref:System.Windows.ResourceDictionary> sont recherchées. Pour de meilleurs résultats, ajustez la composition de vos dictionnaires de ressources de sorte que les références anticipées puissent être évitées. Si vous ne pouvez pas éviter une référence avant, utilisez l' [extension de balisage DynamicResource](dynamicresource-markup-extension.md) à la place.  
   
- Le <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> spécifié doit correspondre à une ressource existante, identifiée par une [directive x :Key](../../xaml-services/x-key-directive.md) à un certain niveau de votre page, application, les thèmes de contrôle disponibles et les ressources externes, ou les ressources système. La recherche de ressources se produit dans cet ordre. Pour plus d’informations sur le comportement de recherche de ressources pour les ressources statiques et dynamiques, consultez [ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
+ Le <xref:System.Windows.StaticResourceExtension.ResourceKey%2A> spécifié doit correspondre à une ressource existante, identifiée par une [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) à un certain niveau de votre page, application, les thèmes de contrôle disponibles et les ressources externes, ou les ressources système. La recherche de ressources se produit dans cet ordre. Pour plus d’informations sur le comportement de recherche de ressources pour les ressources statiques et dynamiques, consultez [ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md).  
   
- Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../xaml-services/xamlname-grammar.md). Une clé de ressource peut également être d’autres types d’objets, tels qu’un <xref:System.Type>. Une clé de <xref:System.Type> est fondamentale pour la façon dont les contrôles peuvent être mis en forme par les thèmes, à l’aide d’une clé de style implicite. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
+ Une clé de ressource peut être n’importe quelle chaîne définie dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md). Une clé de ressource peut également être d’autres types d’objets, tels qu’un <xref:System.Type>. Une clé de <xref:System.Type> est fondamentale pour la façon dont les contrôles peuvent être mis en forme par les thèmes, à l’aide d’une clé de style implicite. Pour plus d’informations, consultez [Vue d’ensemble de la création de contrôles](../controls/control-authoring-overview.md).  
   
  Les autres méthodes déclaratives de référencement d’une ressource sont en tant qu' [extension de balisage DynamicResource](dynamicresource-markup-extension.md).  
   

@@ -2,12 +2,12 @@
 title: Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 description: Découvrez comment effectuer un lift-and-shift et moderniser les applications existantes avec le cloud Azure et des conteneurs dans ce livre électronique.
 ms.date: 04/28/2018
-ms.openlocfilehash: 67b1c7743697832684e96225e3d365da625ce6a3
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: fa20e606c9a1364fbdf8c9a58c8703420d9e65a9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "73089770"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714570"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 
@@ -25,7 +25,7 @@ Tous droits réservés. Aucune partie du contenu de ce document ne peut être re
 
 Cet ouvrage est disponible gratuitement sous forme de livre électronique via plusieurs canaux Microsoft, comme <https://dot.net/architecture>.
 
-Si vous avez des questions liées à cet ouvrage, envoyez un e-mail à [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book)
+Si vous avez des questions liées à ce livre, envoyez un e-mail à [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans cet ouvrage, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
@@ -81,7 +81,7 @@ Voici la définition et une petite explication de chaque niveau de maturité de 
 **Niveau 1 : applications prêtes pour l’infrastructure cloud** : dans cette approche de migration, vous migrez ou réhébergez simplement vos applications locales actuelles sur une plateforme infrastructure as a service ([IaaS](https://azure.microsoft.com/overview/what-is-iaas/)). Vos applications ont pratiquement la même composition qu’avant, mais vous les déployez désormais sur des machines virtuelles dans le cloud.
 Ce type de migration simple est généralement connu sous le nom de « Lift & Shift » dans le secteur.
 
-**Niveau 2 : applications optimisées** pour le Cloud : à ce niveau et toujours sans remaniement ou modification du code significatif, vous pouvez tirer des avantages supplémentaires de l’exécution de votre application dans le Cloud avec des technologies modernes telles que des conteneurs et des services gérés par le Cloud. Vous améliorez l’agilité de vos applications pour les livrer plus rapidement, en affinant les processus de fonctionnement du développement (DevOps) dans votre entreprise. C’est possible en utilisant des technologies comme les conteneurs Windows, qui se basent sur le moteur Docker. Les conteneurs suppriment les conflits causés par les dépendances des applications quand vous déployez en plusieurs étapes. Dans ce modèle de maturité, vous pouvez déployer des conteneurs sur IaaS ou PaaS tout en utilisant d’autres services managés par le cloud associés aux bases de données, au cache en tant que service, à la supervision et aux pipelines d’intégration continue/de déploiement continu (CI/CD).
+**Niveau 2 : applications optimisées** pour le Cloud : à ce niveau et toujours sans remaniement ou modification du code significatif, vous pouvez tirer des avantages supplémentaires de l’exécution de votre application dans le Cloud avec des technologies modernes telles que des conteneurs et des services gérés par le Cloud supplémentaires. Vous améliorez l’agilité de vos applications pour les livrer plus rapidement, en affinant les processus de fonctionnement du développement (DevOps) dans votre entreprise. C’est possible en utilisant des technologies comme les conteneurs Windows, qui se basent sur le moteur Docker. Les conteneurs suppriment les conflits causés par les dépendances des applications quand vous déployez en plusieurs étapes. Dans ce modèle de maturité, vous pouvez déployer des conteneurs sur IaaS ou PaaS tout en utilisant d’autres services managés par le cloud associés aux bases de données, au cache en tant que service, à la supervision et aux pipelines d’intégration continue/de déploiement continu (CI/CD).
 
 Le troisième niveau de maturité est l’objectif ultime dans le cloud, mais il est facultatif pour de nombreuses applications et ne constitue pas l’objet principal de ce guide :
 
@@ -124,7 +124,7 @@ Ensuite, en passant en production, vous pouvez déployer vos conteneurs Windows 
 
 Au cours de cette première modernisation, vous pouvez également ajouter des ressources provenant du cloud, comme la supervision avec des outils comme [Azure Application Insights](https://docs.microsoft.com/azure/application-insights/app-insights-overview), des pipelines CI/CD pour les cycles de vie de votre application avec [Azure DevOps Services](https://azure.microsoft.com/services/devops/),et de nombreux autres services de ressources de données qui sont disponibles dans Azure. Par exemple, vous pouvez modifier une application web monolithique qui a été développée à l’origine avec les composants classiques [ASP.NET Web Forms](https://www.asp.net/web-forms) ou [ASP.NET MVC](https://www.asp.net/mvc), mais vous la déployez maintenant en utilisant des conteneurs Windows. Quand vous utilisez des conteneurs Windows, vous devez également migrer vos données vers une base de données qui se trouve dans [Azure SQL Database Managed Instance](https://docs.microsoft.com/azure/sql-database/), le tout sans modifier l’architecture principale de votre application.
 
-- **Cloud-Native**: comme nous l’avons vu, vous devez envisager de concevoir des applications [Cloud natives](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) lorsque vous ciblez des applications volumineuses et complexes avec plusieurs équipes de développement indépendantes qui travaillent sur différents microservices pouvant être développé et déployé de manière autonome. Aussi, en raison d’une scalabilité affinée et indépendante par microservice. Ces approches architecturales font face à des difficultés et des complexités très importantes, mais peuvent être considérablement simplifiées à l’aide d’un PaaS cloud et d’orchestrateurs comme [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/) (Kubernetes managé) et [Azure Functions](https://azure.microsoft.com/services/functions/) pour une approche serverless. Toutes ces approches (comme les microservices et serverless) vous demandent de créer une architecture pour le cloud et d’écrire un nouveau code—du code adapté à des plateformes PaaS spécifiques ou du code qui s’aligne sur des architectures spécifiques, comme les microservices.
+- **Cloud-Native**: comme introduit, vous devez envisager de concevoir des applications [Cloud natives](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications) lorsque vous ciblez des applications volumineuses et complexes avec plusieurs équipes de développement indépendantes qui travaillent sur différents microservices qui peuvent être développés et déployés de manière autonome. Aussi, en raison d’une scalabilité affinée et indépendante par microservice. Ces approches architecturales font face à des difficultés et des complexités très importantes, mais peuvent être considérablement simplifiées à l’aide d’un PaaS cloud et d’orchestrateurs comme [Azure Kubernetes Service (AKS/ACS)](https://azure.microsoft.com/services/container-service/) (Kubernetes managé) et [Azure Functions](https://azure.microsoft.com/services/functions/) pour une approche serverless. Toutes ces approches (comme les microservices et serverless) vous demandent de créer une architecture pour le cloud et d’écrire un nouveau code—du code adapté à des plateformes PaaS spécifiques ou du code qui s’aligne sur des architectures spécifiques, comme les microservices.
 
 La figure 1-3 montre les technologies internes que vous pouvez utiliser pour chaque niveau de maturité :
 
@@ -150,9 +150,9 @@ Pour les scénarios de modernisation, vous avez probablement une application opt
 
 Ensuite, comme scénario idéal pour de nombreuses applications .NET Framework existantes à migrer, vous pouvez migrer vers une application optimisée pour le cloud pour obtenir des avantages significatifs avec peu de travail. Cette approche vous permet aussi d’être prêt pour Cloud natif comme éventuelle évolution future. La figure 1-6 en montre un exemple.
 
-![Exemple de scénario d’applications optimisées pour le cloud, avec des conteneurs Windows et des services managés](./media/image1-6.png)
+![Exemple de scénario d’applications Optimisées pour le cloud, avec des conteneurs Windows et des services managés](./media/image1-6.png)
 
-**Figure 1-6.** Exemple de scénario d’applications optimisées pour le cloud, avec des conteneurs Windows et des services managés
+**Figure 1-6.** Exemple de scénario d’applications Optimisées pour le cloud, avec des conteneurs Windows et des services managés
 
 Pour aller encore plus loin, vous pouvez étendre votre application Optimisée pour le cloud en ajoutant quelques microservices pour des scénarios spécifiques. Ainsi, vous accéderiez partiellement au niveau du modèle Cloud natif, qui n’est pas le sujet central du présent guide.
 
@@ -179,7 +179,7 @@ Ce guide ne vous montre pas comment créer des applications cloud natives, par e
 - **Architecture des applications web modernes avec ASP.NET Core et Azure** (livre électronique téléchargeable) \
   <https://aka.ms/webappebook>
 
-## <a name="who-should-use-this-guide"></a>Public visé par ce guide
+## <a name="who-should-use-this-guide"></a>À qui s'adresse ce guide ?
 
 Ce guide a été écrit pour les développeurs et les architectes de solutions qui veulent moderniser des applications web ASP.NET ou des services WCF existants basés sur le .NET Framework, de façon à obtenir une meilleure agilité dans la livraison des applications.
 
@@ -199,7 +199,7 @@ Ces exemples d’applications ont une seconde version, avec le code modernisé, 
 
 ## <a name="send-your-feedback"></a>Envoyez votre feedback
 
-Ce guide a été écrit pour vous aider à comprendre les options dont vous disposez pour améliorer et moderniser des applications web .NET existantes. Le guide et les exemples d’applications associés sont en constante évolution. Vos commentaires sont les bienvenus ! Si vous avez des commentaires à formuler sur la façon dont ce guide peut être amélioré, envoyez-les à l’adresse : [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
+Ce guide a été écrit pour vous aider à comprendre les options dont vous disposez pour améliorer et moderniser des applications web .NET existantes. Le guide et les exemples d’applications associés sont en constante évolution. Vos commentaires sont les bienvenus. Si vous avez des commentaires à formuler sur la façon dont ce guide peut être amélioré, envoyez-les à l’adresse : [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 >[!div class="step-by-step"]
 >[Suivant](lift-and-shift-existing-apps-azure-iaas.md) <!-- Next Chapter -->

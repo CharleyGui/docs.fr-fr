@@ -4,12 +4,12 @@ description: Découvrez comment créer des composants d’interface utilisateur 
 author: danroth27
 ms.author: daroth
 ms.date: 09/18/2019
-ms.openlocfilehash: 5e5ca128bea2e77d795cede17df73963d9b49a48
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b34bdf61a425807030cf7648df245cc7a01c95de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337399"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705728"
 ---
 # <a name="build-reusable-ui-components-with-blazor"></a>Créer des composants d’interface utilisateur réutilisables avec éblouissant
 
@@ -269,7 +269,7 @@ Les gestionnaires d’événements peuvent s’exécuter de façon synchrone ou 
 Une fois qu’un événement est géré, le composant est rendu pour tenir compte des modifications d’état des composants. Avec les gestionnaires d’événements asynchrones, le composant est rendu immédiatement après la fin de l’exécution du gestionnaire. Le composant est *à nouveau* rendu une fois l' `Task` asynchrone terminée. Ce mode d’exécution asynchrone offre la possibilité d’afficher une interface utilisateur appropriée pendant que l' `Task` asynchrone est toujours en cours.
 
 ```razor
-<button @onclick="Get message">Get message</button>
+<button @onclick="ShowMessage">Get message</button>
 
 @if (showMessage)
 {

@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: adb4848e844ff091c45ec9a8a2e6d36f01c3cf91
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 53f25be3bc38d88aa7723f6a0858317ee5ce6143
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960152"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559649"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -24,7 +24,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Que sont XPDM et WDDM ?  
- Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le modèle de pilote d’affichage de Microsoft Windows XP et WDDM est le modèle de pilote d’affichage Windows. WDDM est disponible sur les ordinateurs exécutant Windows Vista et Windows 7. XPDM est disponible sur les ordinateurs exécutant Windows Vista, Microsoft Windows XP et [!INCLUDE[TLA#tla_winnetsvrfam](../../../../includes/tlasharptla-winnetsvrfam-md.md)]. Pour plus d'informations sur le modèle WDDM, consultez [Guide de conception Windows Vista Display Driver Model](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le modèle de pilote d’affichage de Microsoft Windows XP et WDDM est le modèle de pilote d’affichage Windows. WDDM est disponible sur les ordinateurs exécutant Windows Vista et Windows 7. XPDM est disponible sur les ordinateurs exécutant Windows Vista, Microsoft Windows XP et Microsoft Windows Server 2003. Pour plus d'informations sur le modèle WDDM, consultez [Guide de conception Windows Vista Display Driver Model](https://go.microsoft.com/fwlink/?LinkId=178394).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Paramètres du Registre  
@@ -68,7 +68,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 |Clé du Registre|Type de valeur|  
 |------------------|----------------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|Chaîne|  
   
  En novembre 2004, Microsoft a publié une nouvelle version des instructions de test des pilotes. les pilotes écrits après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
   
@@ -78,7 +78,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 | |  
 |-|  
-|*AAAA* `/` *MM* `/` *JJ*|  
+|*Aaaa* `/` *mm* `/` *DD*|  
   
  Où *AAAA* correspond l’année à quatre chiffres, *MM* correspond au mois à deux chiffres et *JJ* correspond au jour à deux chiffres. Lorsque cette valeur n’est pas définie, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise novembre 2004 comme date du pilote vidéo requis.  
   

@@ -5,12 +5,12 @@ helpviewer_keywords:
 - PropertyPath object [WPF]
 - XAML [WPF], PropertyPath object
 ms.assetid: 0e3cdf07-abe6-460a-a9af-3764b4fd707f
-ms.openlocfilehash: f9176e61915b6c5cc05f120eade69a6d19cc4e6a
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 17c8982a66960626a5d049fa2da90f5f2d995d14
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740780"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559766"
 ---
 # <a name="propertypath-xaml-syntax"></a>PropertyPath, syntaxe XAML
 
@@ -113,7 +113,7 @@ Pour référencer le pointeur d’enregistrement actuel dans un scénario de vue
 <object Path="[index1,index2...]" .../>
 ```
 
-or
+ou
 
 ```xaml
 <object Path="propertyName[index,index2...]" .../>
@@ -137,9 +137,9 @@ Chacune des syntaxes ci-dessus peut être parsemée. Par exemple, voici un exemp
 
 Pour certains objets métiers, la chaîne de chemin de propriété peut nécessiter une séquence d’échappement pour effectuer correctement l’analyse. La nécessité d’une séquence d’échappement doit être rare, car la plupart de ces caractères ont des problèmes d’interactions de noms similaires dans les langages qui doivent normalement être utilisés pour définir l’objet métier.
 
-- À l’intérieur des indexeurs ([ ]), le signe ^ échappe le caractère suivant.
+- À l’intérieur des indexeurs ([]), l’accent circonflexe (^) échappe le caractère suivant.
 
-- Vous devez échapper (à l’aide d’entités XML) certains caractères qui sont spécifiques de la définition de langage XML. Utilisez `&` pour échapper le caractère « & ». Utilisez `>` pour échapper la balise de fin « > ».
+- Vous devez échapper (à l’aide d’entités XML) certains caractères qui sont spécifiques de la définition de langage XML. Utilisez `&` pour échapper le caractère « & ». Utilisez `>` pour échapper la balise de fin « > ».
 
 - Vous devez échapper (à l’aide de la barre oblique inverse `\`) les caractères spécifiques du comportement de l’analyseur XAML WPF pour le traitement d’une extension de balisage.
 
@@ -192,7 +192,7 @@ Pour prendre en charge le clonage afin d’animer une <xref:System.Windows.Freez
 
 `propertyName2` doit être le nom d’une propriété de dépendance qui existe sur l’objet qui est la valeur de `propertyName`. En d’autres termes, `propertyName2` doit exister en tant que propriété de dépendance sur le type qui est le <xref:System.Windows.DependencyProperty.PropertyType%2A>`propertyName`.
 
-Le ciblage indirect d’animations est nécessaire en raison des styles et modèles appliqués. Pour cibler une animation, vous avez besoin d’un <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> sur un objet cible, et ce nom est établi par [x :Name](../../xaml-services/x-name-directive.md) ou <xref:System.Windows.FrameworkElement.Name%2A>. Bien que les éléments de modèle et de style peuvent également avoir des noms, ces noms sont uniquement valides au sein de la portée de nom du style et du modèle. (Si les styles et les modèles partagent des portées de nom avec un balisage d’application, les noms ne peuvent pas être uniques. Les styles et les modèles sont littéralement partagés entre les instances et perpétuer des noms dupliqués.) Ainsi, si les propriétés individuelles d’un élément que vous souhaitez animer proviennent d’un style ou d’un modèle, vous devez commencer par une instance d’élément nommé qui ne provient pas d’un modèle de style, puis cibler dans l’arborescence d’éléments visuels de style ou de modèle pour arriver à la propriété. vous souhaitez animer.
+Le ciblage indirect d’animations est nécessaire en raison des styles et modèles appliqués. Pour cibler une animation, vous avez besoin d’un <xref:System.Windows.Media.Animation.Storyboard.TargetName%2A> sur un objet cible, et ce nom est établi par [x :Name](../../../desktop-wpf/xaml-services/xname-directive.md) ou <xref:System.Windows.FrameworkElement.Name%2A>. Bien que les éléments de modèle et de style peuvent également avoir des noms, ces noms sont uniquement valides au sein de la portée de nom du style et du modèle. (Si les styles et les modèles partagent des portées de nom avec un balisage d’application, les noms ne peuvent pas être uniques. Les styles et les modèles sont littéralement partagés entre les instances et perpétuer des noms dupliqués.) Ainsi, si les propriétés individuelles d’un élément que vous souhaitez animer proviennent d’un style ou d’un modèle, vous devez commencer par une instance d’élément nommé qui ne provient pas d’un modèle de style, puis cibler dans l’arborescence d’éléments visuels de style ou de modèle pour arriver à la propriété. vous souhaitez animer.
 
 Par exemple, la propriété <xref:System.Windows.Controls.Panel.Background%2A> d’un <xref:System.Windows.Controls.Panel> est une <xref:System.Windows.Media.Brush> complète (en fait une <xref:System.Windows.Media.SolidColorBrush>) qui provient d’un modèle de thème. Pour animer complètement un <xref:System.Windows.Media.Brush>, il doit exister un BrushAnimation (probablement un pour chaque type de <xref:System.Windows.Media.Brush>) et il n’existe pas de type de ce type. Pour animer un pinceau, vous animez à la place les propriétés d’un type de <xref:System.Windows.Media.Brush> particulier. Vous devez passer d' <xref:System.Windows.Media.SolidColorBrush> à son <xref:System.Windows.Media.SolidColorBrush.Color%2A> pour y appliquer un <xref:System.Windows.Media.Animation.ColorAnimation>. Le chemin de propriété pour cet exemple est `Background.Color`.
 

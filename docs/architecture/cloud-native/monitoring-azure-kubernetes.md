@@ -2,12 +2,12 @@
 title: Supervision dans Azure Kubernetes Services
 description: Supervision dans Azure Kubernetes Services
 ms.date: 09/23/2019
-ms.openlocfilehash: 71192601eac2169db188b25da3dc91b71b860903
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: fc9d84fd738ff1c40d25860680e14313c9323517
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184987"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711647"
 ---
 # <a name="monitoring-in-azure-kubernetes-services"></a>Supervision dans Azure Kubernetes Services
 

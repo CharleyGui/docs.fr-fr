@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: b8777e1402bef1708136a5f81a641beb8c761905
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: c2b78b990969fb5bc9814ebda8ffcf38efa458b1
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740712"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559922"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 
@@ -42,7 +42,7 @@ Lorsque vous concevez une [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharpt
 
 - Activez <xref:System.Windows.Controls.TextBlock.TextWrapping%2A> sur <xref:System.Windows.Controls.TextBlock> pour éviter le découpage.
 
-- Définissez l’attribut `xml:lang` . Cet attribut décrit la culture d’un élément spécifique et de ses éléments enfants. La valeur de cette propriété modifie le comportement de plusieurs fonctionnalités dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Par exemple, elle change le comportement de la coupure des mots, la vérification orthographique, la substitution des nombres, la mise en forme des scripts complexes et la police de substitution. Pour plus d’informations sur la définition de la [gestion XML : lang en XAML,](../../xaml-services/xml-lang-handling-in-xaml.md)consultez [globalisation pour WPF](globalization-for-wpf.md) .
+- Définissez l’attribut `xml:lang` . Cet attribut décrit la culture d’un élément spécifique et de ses éléments enfants. La valeur de cette propriété modifie le comportement de plusieurs fonctionnalités dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Par exemple, elle change le comportement de la coupure des mots, la vérification orthographique, la substitution des nombres, la mise en forme des scripts complexes et la police de substitution. Pour plus d’informations sur la définition de la [gestion XML : lang en XAML,](../../../desktop-wpf/xaml-services/xml-language-handling.md)consultez [globalisation pour WPF](globalization-for-wpf.md) .
 
 - Créez une police composite personnalisée pour obtenir un meilleur contrôle des polices utilisées dans différentes langues. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise la police GlobalUserInterface. composite dans votre répertoire Windows/Fonts.
 
@@ -148,7 +148,7 @@ Notez que l’exemple utilise la fonctionnalité de dimensionnement partagé de 
 
 `xml:lang="en-US"`
 
-Notez la [gestion de XML : lang en XAML](../../xaml-services/xml-lang-handling-in-xaml.md) placée à l’élément racine du [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Cette propriété décrit la culture d’un élément donné et de ses enfants. Cette valeur est utilisée par plusieurs fonctionnalités de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et doit être modifiée de manière appropriée lors de la localisation. Cette valeur change le dictionnaire de langue utilisé pour la coupure et la vérification de l’orthographe des mots. Elle affecte également l’affichage des chiffres et la façon dont le système de police de base sélectionne la police à utiliser. Enfin, la propriété affecte la façon dont les nombres sont affichés et celle dont les textes écrits dans des écritures complexes sont mis en forme. La valeur par défaut est « en-US ».
+Notez la [gestion de XML : lang en XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md) placée à l’élément racine du [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Cette propriété décrit la culture d’un élément donné et de ses enfants. Cette valeur est utilisée par plusieurs fonctionnalités de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et doit être modifiée de manière appropriée lors de la localisation. Cette valeur change le dictionnaire de langue utilisé pour la coupure et la vérification de l’orthographe des mots. Elle affecte également l’affichage des chiffres et la façon dont le système de police de base sélectionne la police à utiliser. Enfin, la propriété affecte la façon dont les nombres sont affichés et celle dont les textes écrits dans des écritures complexes sont mis en forme. La valeur par défaut est « en-US ».
 
 **Génération d’un assembly de ressources satellite**
 
@@ -178,27 +178,27 @@ Après avoir généré l’application, la première étape de la localisation e
 
 Utilisez votre éditeur CSV préféré prenant en charge Unicode pour éditer ce fichier. Filtrez toutes les entrées avec la catégorie de localisation « None ». Vous devez voir les entrées suivantes :
 
-|Clé de la ressource|Catégorie de localisation|valeur|
+|Clé de la ressource|Catégorie de localisation|Value|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Button|OK|
-|Button_2:System.Windows.Controls.Button.$Content|Button|Annuler|
+|Button_2:System.Windows.Controls.Button.$Content|Button|Cancel|
 |Button_3:System.Windows.Controls.Button.$Content|Button|Parcourir...|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Ouvrir :|
-|Window_1:System.Windows.Window.Title|Titre|Exécuter|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Ouvrir :|
+|Window_1:System.Windows.Window.Title|Titre|Exécutez.|
 
 La Localisation de l’application en allemand nécessiterait les traductions suivantes :
 
-|Clé de la ressource|Catégorie de localisation|valeur|
+|Clé de la ressource|Catégorie de localisation|Value|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Button|OK|
 |Button_2:System.Windows.Controls.Button.$Content|Button|Abbrechen|
 |Button_3:System.Windows.Controls.Button.$Content|Button|Durchsuchen…|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Öffnen:|
-|Window_1:System.Windows.Window.Title|Titre|Exécuter|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Ouvrir :|
+|Window_1:System.Windows.Window.Title|Titre|Exécutez.|
 
 **Générer**
 
@@ -265,11 +265,11 @@ Dans de nombreux cas, le contenu peut être ambigu et difficile à traduire. Le 
 
 [!code-xaml[GlobalizationHomepage#LocalizationComment](~/samples/snippets/csharp/VS_Snippets_Wpf/GlobalizationHomepage/CS/Homepage.xaml#localizationcomment)]
 
-Ce commentaire est associé au contenu TextBlock_1's et, dans le cas de l’outil LocBaml (voir [localiser une application](how-to-localize-an-application.md)), il peut être consulté dans la 6ème colonne de la ligne TextBlock_1 dans le fichier output. csv :
+Ce commentaire est associé au contenu de TextBlock_1 et, dans le cas de l’outil LocBaml, (voir [localiser une application](how-to-localize-an-application.md)), il peut être consulté dans la 6ème colonne de la ligne TextBlock_1 dans le fichier output. csv :
 
-|Clé de la ressource|Category|Lisible|Modifiable|Commentaire|valeur|
+|Clé de la ressource|Catégorie|Lisible|Modifiable|Commentaire|Value|
 |-|-|-|-|-|-|
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|true|true|Ce caractère est utilisé comme règle de décoration.|&#124;|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|true|true|Ce caractère est utilisé comme règle de décoration.|&#124;|
 
 Les commentaires peuvent être placés sur le contenu ou la propriété de n’importe quel élément en utilisant la syntaxe suivante :
 
@@ -285,7 +285,7 @@ En plus des attributs de lisibilité et de modifiabilité, [!INCLUDE[TLA2#tla_wi
 
 [!code-xaml[LocalizationComAtt#LocalizationAttributesOverridden](~/samples/snippets/csharp/VS_Snippets_Wpf/LocalizationComAtt/CSharp/Attributes.xaml#localizationattributesoverridden)]
 
-Les attributs de localisation par défaut que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peuvent également être remplacés par le biais du code, de sorte que vous pouvez définir correctement les valeurs par défaut appropriées pour les contrôles personnalisés. Exemple :
+Les attributs de localisation par défaut que [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit peuvent également être remplacés par le biais du code, de sorte que vous pouvez définir correctement les valeurs par défaut appropriées pour les contrôles personnalisés. Par exemple :
 
 ```csharp
 [Localizability(Readability = Readability.Readable, Modifiability=Modifiability.Unmodifiable, LocalizationCategory.None)]
