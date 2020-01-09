@@ -7,12 +7,12 @@ helpviewer_keywords:
 - localization [WPF], features
 - globalization [WPF], features
 ms.assetid: c4b484fb-bc90-4186-a08d-f081e7109cad
-ms.openlocfilehash: a2ab04f40a3299bc0cd5a17c0f31e4f4ee0433ad
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 98368a54fad095337038236d7bfdc2123edb6be2
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010291"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559407"
 ---
 # <a name="globalization-and-localization-how-to-topics"></a>Rubriques "Comment" relatives à la globalisation et à la localisation
 Les rubriques de cette section décrivent comment développer des applications mondialisables.  
@@ -24,13 +24,13 @@ Les rubriques de cette section décrivent comment développer des applications m
  [Utiliser un ResourceDictionary pour gérer des ressources de type chaîne localisables](how-to-use-a-resourcedictionary-to-manage-localizable-string-resources.md)  
  [Utiliser des ressources dans des applications localisables](how-to-use-resources-in-localizable-applications.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Globalization>  
   
  <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [Gestion de xml:lang en XAML](../../xaml-services/xml-lang-handling-in-xaml.md)  
+ [Gestion de xml:lang en XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes

@@ -11,15 +11,15 @@ helpviewer_keywords:
 - WPF [WPF], localization
 - Windows Presentation Foundation [WPF], localization
 ms.assetid: e96f9764-4e3f-4d1c-bf20-3fb890118aae
-ms.openlocfilehash: 0d01f7536c120f51372961d944804cfe0063fb9f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 80e0bf641c46eb1461769f5a85950982258c78f5
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62010278"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559420"
 ---
 # <a name="globalization-and-localization"></a>Globalisation et localisation
-[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] Fournit la prise en charge complète pour le développement d’applications mondialisables.  
+[!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit une prise en charge complète du développement d’applications mondialisables.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble de la globalisation et de la localisation WPF](wpf-globalization-and-localization-overview.md)  
@@ -27,15 +27,15 @@ ms.locfileid: "62010278"
  [Vue d’ensemble de l’utilisation de la disposition automatique](use-automatic-layout-overview.md)  
  [Attributs et commentaires de localisation](localization-attributes-and-comments.md)  
  [Vue d'ensemble des fonctionnalités bidirectionnelles dans WPF](bidirectional-features-in-wpf-overview.md)  
- [Rubriques de guide pratique](globalization-and-localization-how-to-topics.md)  
+ [Guides pratiques](globalization-and-localization-how-to-topics.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Globalization>  
   
  <xref:System.Windows.FrameworkElement.FlowDirection%2A>  
   
  <xref:System.Resources.NeutralResourcesLanguageAttribute>  
   
- [Gestion de xml:lang en XAML](../../xaml-services/xml-lang-handling-in-xaml.md)  
+ [Gestion de xml:lang en XAML](../../../desktop-wpf/xaml-services/xml-language-handling.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes

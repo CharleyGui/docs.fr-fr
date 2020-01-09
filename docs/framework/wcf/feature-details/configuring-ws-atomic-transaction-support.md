@@ -4,18 +4,18 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 04e9cc831ae520e0929818e6dc16c57b03a1d0f0
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 804e22c79c328a2ae96d8f1cb817d0aea2b0c25d
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045995"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544726"
 ---
-# <a name="configuring-ws-atomic-transaction-support"></a>Configuration de la prise en charge WS-Atomic Transaction
+# <a name="configure-ws-atomic-transaction-support"></a>Configurer la prise en charge des transactions WS-Atomic
 
 Cette rubrique décrit comment configurer la prise en charge WS-AtomicTransaction (WS-AT) à l'aide de l'utilitaire de configuration WS-AT.
 
-## <a name="using-the-ws-at-configuration-utility"></a>Utilisation de l'utilitaire de configuration WS-AT
+## <a name="use-the-ws-at-configuration-utility"></a>Utiliser l’utilitaire de configuration WS-AT
 
 L'utilitaire de configuration WS-AT (wsatConfig.exe) permet de configurer les paramètres WS-AT. Pour activer le service de protocole WS-AT, vous devez utiliser l'utilitaire de configuration pour configurer le port HTTPS pour WS-AT, lier un certificat X.509 au port HTTPS et configurer des certificats de partenaire autorisés en spécifiant des noms de sujet de certificat ou des empreintes numériques. L’utilitaire de configuration vous permet également de sélectionner le mode de suivi et de définir les délais d’attente de transaction sortants et entrants maximaux par défaut.
 
@@ -25,7 +25,7 @@ La fenêtre de ligne de commande est accessible à l'emplacement d'installation 
 
 Pour plus d’informations sur l’outil en ligne de commande, consultez [utilitaire de configuration WS-AtomicTransaction (WsatConfig. exe)](../../../../docs/framework/wcf/ws-atomictransaction-configuration-utility-wsatconfig-exe.md).
 
-Si [!INCLUDE[wxp](../../../../includes/wxp-md.md)] vous exécutez ou [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)], vous pouvez accéder au composant logiciel enfichable MMC en accédant à **panneau de configuration/outils d’administration/Services de composants**, en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. Il s'agit du même emplacement que celui où vous pouvez configurer Microsoft Distributed Transaction Coordinator (MSDTC). Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** . Si vous exécutez Windows Vista [!INCLUDE[lserver](../../../../includes/lserver-md.md)]ou, le composant logiciel enfichable MMC est accessible en cliquant sur le bouton **Démarrer** et en entrant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .
+Si vous exécutez [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ou Windows Server 2003, vous pouvez accéder au composant logiciel enfichable MMC en accédant à **panneau de configuration/outils d’administration/Services de composants**, en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. Il s'agit du même emplacement que celui où vous pouvez configurer Microsoft Distributed Transaction Coordinator (MSDTC). Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** . Si vous exécutez Windows Vista ou Windows Server 2008, vous pouvez trouver le composant logiciel enfichable MMC en cliquant sur le bouton **Démarrer** et en entrant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .
 
 Pour plus d’informations sur le composant logiciel enfichable, consultez le [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md).
 
@@ -37,7 +37,7 @@ Pour inscrire le produit, exécutez la commande suivante depuis une fenêtre d'i
 
 `regasm.exe /codebase WsatUI.dll`
 
-## <a name="enabling-ws-at"></a>Activation de WS-AT
+## <a name="enable-ws-at"></a>Activer WS-AT
 
 Pour activer le service de protocole WS-AT à l'intérieur de MSDTC à l'aide du port 443 et d'un certificat X.509 avec une clé privée installée dans le magasin de l'ordinateur local, utilisez l'outil wsatConfig.exe avec la commande suivante.
 
@@ -49,17 +49,17 @@ Pour désactiver le service de protocole WS-AT à l'intérieur de MSDTC, utilise
 
 `WsatConfig.exe –network:disable -restart`
 
-## <a name="configuring-trust-between-two-machines"></a>Configuration de la confiance entre deux ordinateurs
+## <a name="configure-trust-between-two-machines"></a>Configurer l’approbation entre deux ordinateurs
 
 Le service de protocole WS-AT requiert que l’administrateur autorise explicitement les différents comptes à participer aux transactions distribuées. Si vous êtes administrateur de deux ordinateurs, vous pouvez configurer les deux ordinateurs de façon à établir une relation de confiance mutuelle en échangeant l'ensemble correct de certificats entre les ordinateurs, en les installant dans les magasins de certificats appropriés et en utilisant l'outil wsatConfig.exe pour ajouter le certificat de chaque ordinateur à la liste de certificats de participants autorisés de l'autre ordinateur. Cette étape est nécessaire pour exécuter des transactions distribuées entre deux ordinateurs à l'aide de WS-AT.
 
 L'exemple suivant illustre les étapes requises pour établir la confiance entre deux ordinateurs, A et B.
 
-### <a name="creating-and-exporting-certificates"></a>Création et exportation de certificats
+### <a name="create-and-export-certificates"></a>Créer et exporter des certificats
 
 Cette procédure requiert le composant logiciel enfichable MMC Certificats. Ce composant logiciel enfichable est accessible en ouvrant le menu Démarrer/Exécuter, en tapant « mmc » dans la zone d'entrée et en appuyant sur OK. Ensuite, dans la fenêtre **Console1** , accédez au composant logiciel enfichable **fichier/ajouter-supprimer** , cliquez sur Ajouter, puis choisissez **certificats** dans la liste **composants logiciels enfichables autonome disponible** . Enfin, sélectionnez le **compte d’ordinateur** à gérer, puis cliquez sur **OK**. Le nœud **certificats** apparaît dans la console du composant logiciel enfichable.
 
-Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure: Créer et installer des certificats clients temporaires dans WCF pendant](https://go.microsoft.com/fwlink/?LinkId=158925)le développement.
+Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure : créer et installer des certificats clients temporaires dans WCF pendant le développement](https://go.microsoft.com/fwlink/?LinkId=158925).
 
 1. Sur l'ordinateur A, à l'aide du composant logiciel enfichable MMC Certificats, importez le certificat existant (certA) dans les magasins LocalMachine\MY (Nœud personnel) et LocalMachine\ROOT (nœud de l'Autorité de certification racine de confiance). Pour importer un certificat vers un nœud spécifique, cliquez avec le bouton droit sur le nœud et choisissez **toutes les tâches/importer**.
 
@@ -69,7 +69,7 @@ Vous devez déjà posséder les certificats requis pour établir la confiance. P
 
 4. Exportez la clé publique de certB dans un fichier si cela n'a pas déjà été fait.
 
-### <a name="establishing-mutual-trust-between-machines"></a>Établissement de la confiance mutuelle entre des ordinateurs
+### <a name="establish-mutual-trust-between-machines"></a>Établir une approbation mutuelle entre les machines
 
 1. Sur l'ordinateur A, importez la représentation de fichier de certB dans les magasins LocalMachine\MY et LocalMachine\ROOT. Cela déclare que l'ordinateur A approuve certB pour toute communication.
 
@@ -77,15 +77,15 @@ Vous devez déjà posséder les certificats requis pour établir la confiance. P
 
 Après avoir effectué ces étapes, la confiance est établie entre les deux ordinateurs et ils peuvent être configurés pour communiquer l'un avec l'autre à l'aide de WS-AT.
 
-### <a name="configuring-msdtc-to-use-certificates"></a>Configuration de MSDTC pour utiliser des certificats
+### <a name="configure-msdtc-to-use-certificates"></a>Configurer MSDTC pour utiliser des certificats
 
 Le service de protocole WS-AT agissant à la fois comme client et comme serveur, il doit à la fois écouter les connexions entrantes et initier les connexions sortantes. Par conséquent, vous devez configurer MSDTC de sorte qu'il sache quel certificat utiliser lors des communications avec les correspondants externes, et quels certificats autoriser lors de l'acceptation des communications entrantes.
 
 Vous pouvez configurer cela à l'aide du composant logiciel enfichable MMC WS-AT. Pour plus d’informations sur cet outil, consultez la rubrique [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) . Les étapes suivantes décrivent comment établir la confiance entre deux ordinateurs qui exécutent MSDTC.
 
-1. Configurez les paramètres de l'ordinateur A. Pour «certificat de point de terminaison», sélectionnez certa. Pour «certificats autorisés», sélectionnez certB.
+1. Configurez les paramètres de l'ordinateur A. Pour « certificat de point de terminaison », sélectionnez certa. Pour « certificats autorisés », sélectionnez certB.
 
-2. Configurez les paramètres de l'ordinateur B. Pour «certificat de point de terminaison», sélectionnez certB. Pour «certificats autorisés», sélectionnez le certificat certa.
+2. Configurez les paramètres de l'ordinateur B. Pour « certificat de point de terminaison », sélectionnez certB. Pour « certificats autorisés », sélectionnez le certificat certa.
 
 > [!NOTE]
 > Lorsqu'un ordinateur envoie un message à l'autre ordinateur, l'expéditeur essaie de vérifier que le nom du sujet du certificat du destinataire et le nom d'ordinateur du destinataire correspondent. S'ils ne correspondent pas, la vérification de certificat échoue et les deux ordinateurs ne peuvent pas communiquer.
@@ -102,15 +102,15 @@ Lors du déploiement de MSDTC, l'administrateur doit s'assurer que tout échange
 
 ## <a name="tracing"></a>Traçage
 
-Le service de protocole WS-AT prend en charge le suivi intégré des transactions, qui peut être activé et géré par le biais de l’outil de [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) .  Les suivis peuvent inclure des données qui indiquent l'heure d'une inscription pour une transaction spécifique, l'heure à laquelle une transaction atteint son état terminal, le résultat que chaque inscription de transaction a reçu. Toutes les traces peuvent être affichées à l’aide de l’outil [Service Trace Viewer Tool (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) .
+Le service de protocole WS-AT prend en charge le suivi intégré, spécifique aux transactions, qui peut être activé et géré par le biais de l’outil de [composant logiciel enfichable MMC configuration de WS-AtomicTransaction](../../../../docs/framework/wcf/ws-atomictransaction-configuration-mmc-snap-in.md) . Les suivis peuvent inclure des données qui indiquent l'heure d'une inscription pour une transaction spécifique, l'heure à laquelle une transaction atteint son état terminal, le résultat que chaque inscription de transaction a reçu. Toutes les traces peuvent être affichées à l’aide de l’outil [Service Trace Viewer Tool (SvcTraceViewer. exe)](../../../../docs/framework/wcf/service-trace-viewer-tool-svctraceviewer-exe.md) .
 
 Le service de protocole WS-AT prend en charge également le suivi ServiceModel intégré sur l'ensemble de la session de suivi ETW. Cela procure des suivis plus détaillés et spécifiques à la communication, en plus des suivis de transaction existants.  Pour activer ces suivis supplémentaires, procédez comme suit
 
-1. Ouvrez le menu **Démarrer/Exécuter** , tapez «regedit» dans la zone d’entrée, puis sélectionnez **OK**.
+1. Ouvrez le menu **Démarrer/Exécuter** , tapez « regedit » dans la zone d’entrée, puis sélectionnez **OK**.
 
-2. Dans l' **éditeur du Registre**, accédez au dossier suivant dans le volet gauche, Hkey_Local_Machine\SOFTWARE\Microsoft\WSAT\3.0\
+2. Dans l' **éditeur du Registre**, accédez au dossier suivant dans le volet gauche, HKEY_LOCAL_MACHINE \software\microsoft\wsat\3.0\
 
-3. Cliquez avec le `ServiceModelDiagnosticTracing` bouton droit sur la valeur dans le volet droit, puis sélectionnez **modifier**.
+3. Cliquez avec le bouton droit sur la valeur `ServiceModelDiagnosticTracing` dans le volet droit, puis sélectionnez **modifier**.
 
 4. Dans la zone entrée de données de la **valeur** , entrez l’une des valeurs valides suivantes pour spécifier le niveau de suivi que vous souhaitez activer.
 

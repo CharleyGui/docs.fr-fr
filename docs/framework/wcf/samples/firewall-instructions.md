@@ -2,12 +2,12 @@
 title: Instructions sur les pare-feu
 ms.date: 03/30/2017
 ms.assetid: a7dc429f-65ac-4faf-974a-77d5fb977fe1
-ms.openlocfilehash: 3c94f0edbb244b6c378cc32f05c34fd029d253ff
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: e2c4dd8e784599a5e110e7454d9d0e709cbc5776
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837842"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544780"
 ---
 # <a name="firewall-instructions"></a>Instructions sur les pare-feu
 Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les exemples Windows Communication Foundation (WCF) puissent fonctionner. Un grand nombre d'exemples communique en utilisant des ports contenus dans la plage 8000-8003, ainsi que le port 9000. Le pare-feu est activé par défaut et empêche l'accès à ces ports. Pour activer le pare-feu pour les exemples, exécutez l’une des procédures suivantes, selon vos besoins et votre environnement de sécurité :  
@@ -36,7 +36,7 @@ Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les e
   
     - Sur Windows 7 ou Windows Server 2008 R2, cliquez sur **autoriser un programme ou une fonctionnalité via le pare-feu Windows**. Cliquez sur **modifier les paramètres**, autoriser **un autre programme...** .  
   
-    - Sous Windows Vista ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], cliquez sur **autoriser un programme via le pare-feu Windows**.  
+    - Sur Windows Vista ou Windows Server 2008, cliquez sur **autoriser un programme via le pare-feu Windows**.  
   
 4. Sous l’onglet **exceptions** , cliquez sur **Ajouter un programme**.  
   
@@ -72,7 +72,7 @@ Vous devez activer plusieurs ports ou programmes dans le pare-feu pour que les e
   
     10. Cliquez sur **règles de trafic sortant** et répétez les étapes c à h.  
   
-3. Sur Windows Vista ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], procédez comme suit.  
+3. Sur Windows Vista ou Windows Server 2008, procédez comme suit.  
   
     1. Cliquez sur **Autoriser un programme via le Pare-feu Windows**.  
   

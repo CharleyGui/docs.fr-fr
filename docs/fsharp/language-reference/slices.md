@@ -1,17 +1,17 @@
 ---
-title: Tranches (F#)
-description: Découvrez comment utiliser des tranches pour les types F# de données existants et comment définir vos propres tranches pour d’autres types de données.
-ms.date: 01/22/2019
-ms.openlocfilehash: 2f7b87cda87aad1fdac05b4e14b16f454f8c0461
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+title: Sections
+description: Découvrez comment utiliser des tranches pour les F# types de données existants et comment définir vos propres tranches pour d’autres types de données.
+ms.date: 12/23/2019
+ms.openlocfilehash: 3911139c7ce656043817eb23d30f3686555b6efe
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733374"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75545100"
 ---
 # <a name="slices"></a>Sections
 
-Dans F#, une tranche est un sous-ensemble d’un type de données. Pour pouvoir prendre une tranche d’un type de données, le type de données doit définir une méthode `GetSlice` ou dans une [extension de type](type-extensions.md) qui se trouve dans l’étendue. Cet article explique comment prendre des tranches de types F# existants et comment définir les vôtres.
+Dans F#, une tranche est un sous-ensemble de tout type de données qui a une méthode `GetSlice` dans sa définition ou dans une [extension de type](type-extensions.md)dans la portée. Il est le plus souvent utilisé F# avec des tableaux et des listes. Cet article explique comment prendre des tranches de types F# existants et comment définir vos propres tranches.
 
 Les tranches sont similaires aux [indexeurs](./members/indexed-properties.md), mais au lieu de produire une valeur unique à partir de la structure de données sous-jacente, elles produisent plusieurs valeurs.
 
@@ -89,7 +89,7 @@ let twoByTwo = A.[0..1,0..1]
 printfn "%A" twoByTwo
 ```
 
-La F# bibliothèque principale ne définit pas`GetSlice`pour les tableaux 3D. Si vous souhaitez découper ces tableaux ou d’autres dimensions, vous devez définir le `GetSlice` membre vous-même.
+La F# bibliothèque principale ne définit pas actuellement `GetSlice` pour les tableaux 3D. Si vous souhaitez découper des tableaux 3D ou d’autres tableaux de dimensions supplémentaires, définissez le `GetSlice` membre vous-même.
 
 ## <a name="defining-slices-for-other-data-structures"></a>Définition de tranches pour d’autres structures de données
 
@@ -140,6 +140,17 @@ printSpan sp.[0..] // [|1; 2; 3; 4; 5|]
 printSpan sp.[..5] // [|1; 2; 3; 4; 5|]
 printSpan sp.[0..3] // [|1; 2; 3|]
 printSpan sp.[1..2] // |2; 3|]
+```
+
+## <a name="built-in-f-slices-are-end-inclusive"></a>Les F# tranches intégrées sont fin
+
+Toutes les tranches intrinsèques dans F# sont bout de bout ; autrement dit, la limite supérieure est incluse dans la tranche. Pour une tranche donnée avec l’index de départ `x` et la `y`d’index de fin, la tranche résultante inclut la valeur *YTH* .
+
+```fsharp
+// Define a new list
+let xs = [1 .. 10]
+
+printfn "%A" xs.[2..5] // Includes the 5th index
 ```
 
 ## <a name="see-also"></a>Voir aussi

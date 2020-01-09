@@ -4,19 +4,19 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - analytic tracing [WCF], overview
 ms.assetid: ae55e9cc-0809-442f-921f-d644290ebf15
-ms.openlocfilehash: f6ffed3d9f0bf5e3dc5698d51276eb1db276993c
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: f1a24e34375e98d4bfb48c1e2fd84290e08f6eea
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837491"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544751"
 ---
 # <a name="analytic-tracing-overview"></a>Vue d'ensemble du traçage analytique
 Le traçage analytique dans [!INCLUDE[netfx_current_long](../../../../../includes/netfx-current-long-md.md)] est une fonctionnalité de suivi très performante et à faible niveau de commentaires, définie au-dessus du suivi d'événements Windows (ETW). ETW s'exécute au niveau du noyau pour diminuer considérablement les surcharges des opérations de suivi. Il met efficacement en mémoire tampon les événements en mode utilisateur et noyau, et permet l'activation dynamique de la journalisation, sans que le service ait besoin de redémarrer. Les données de suivi sont disponibles dans les journaux des événements, une fois qu'elles ont été émises et reçues.  
   
  Pour plus d’informations sur ETW, consultez [améliorer le débogage et le réglage des performances avec ETW](https://go.microsoft.com/fwlink/?LinkId=164781).  
   
- Outre l’utilisation des journaux des événements système, de sécurité et d’application Windows pour analyser l’application, Windows Vista et [!INCLUDE[lserver](../../../../../includes/lserver-md.md)] ont introduit des journaux supplémentaires sous le nœud de niveau supérieur des journaux des applications et des services. L'objectif de ces nouveaux journaux est de stocker les événements d'une application particulière ou d'un composant spécifique, au lieu d'événements globaux qui ont un impact sur l'ensemble du système (tels le type d'événements enregistrés par le journal des événements de sécurité). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] unifie et met en corrélation la journalisation des événements de trace WCF, des journaux de messages WCF et des enregistrements de suivi [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] dans les journaux des applications et des services.  
+ Outre l’utilisation des journaux des événements système, de sécurité et d’application Windows pour analyser l’application, Windows Vista et Windows Server 2008 ont introduit des journaux supplémentaires sous le nœud de niveau supérieur des journaux des applications et des services. L'objectif de ces nouveaux journaux est de stocker les événements d'une application particulière ou d'un composant spécifique, au lieu d'événements globaux qui ont un impact sur l'ensemble du système (tels le type d'événements enregistrés par le journal des événements de sécurité). [!INCLUDE[netfx_current_short](../../../../../includes/netfx-current-short-md.md)] unifie et met en corrélation la journalisation des événements de trace WCF, des journaux de messages WCF et des enregistrements de suivi [!INCLUDE[wf1](../../../../../includes/wf1-md.md)] dans les journaux des applications et des services.  
   
 ## <a name="concepts-and-capabilities"></a>Concepts et fonctions  
  Les concepts et les fonctionnalités suivants s’appliquent au traçage analytique WCF.  

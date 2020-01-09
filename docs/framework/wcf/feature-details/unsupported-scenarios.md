@@ -2,12 +2,12 @@
 title: Scénarios non pris en charge
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: 67a4e64208e00f9124b3cdc53d743c060274dac2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 87c0d9984fe823eae0e3cc281ebda55bc33a541e
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837972"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544794"
 ---
 # <a name="unsupported-scenarios"></a>Scénarios non pris en charge
 Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas en charge certains scénarios de sécurité spécifiques. Par exemple, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] édition personnelle n’implémente pas les protocoles d’authentification SSPI ou Kerberos, et par conséquent, WCF ne prend pas en charge l’exécution d’un service avec l’authentification Windows sur cette plateforme. D’autres mécanismes d’authentification, tels que le nom d’utilisateur/mot de passe et l’authentification intégrée HTTP/HTTPs, sont pris en charge lors de l’exécution de WCF sous Windows XP Édition personnelle.  
@@ -62,7 +62,7 @@ Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas e
  Le chiffrement AES conforme FIPS n'est pas compatible avec les rappels duplex dans le cadre des emprunts d'identité de niveau identification.  
   
 ### <a name="cngksp-certificates"></a>Certificats CNG/KSP  
- *API de chiffrement : Next Generation (CNG)* est le remplacement à long terme de l’interface CryptoAPI. Cette API est disponible dans du code non géré sous Windows Vista, [!INCLUDE[lserver](../../../../includes/lserver-md.md)] et versions ultérieures de Windows.  
+ *API de chiffrement : Next Generation (CNG)* est le remplacement à long terme de l’interface CryptoAPI. Cette API est disponible dans du code non géré sur Windows Vista, Windows Server 2008 et versions ultérieures de Windows.  
   
  .NET Framework 4.6.1 et les versions antérieures ne prennent pas en charge ces certificats, car ils utilisent le CryptoAPI hérité pour gérer les certificats CNG/KSP. L’utilisation de ces certificats avec .NET Framework 4.6.1 et les versions antérieures lève une exception.  
   

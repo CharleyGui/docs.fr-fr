@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ComponentResourceKey markup extension [WPF]
 - XAML [WPF], ComponentResourceKey markup extension
 ms.assetid: d6bcdbe6-61b3-40a7-b381-4e02185b5a85
-ms.openlocfilehash: 85e6862d59284df1b51bf5ea7fbba786fe0492d7
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 2ccc4f3154996a4e442a4092833f5c9ed9c8938a
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458970"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559459"
 ---
 # <a name="componentresourcekey-markup-extension"></a>ComponentResourceKey, extension de balisage
 Définit et référence des clés pour les ressources qui sont chargées à partir d’assemblys externes. Cela permet à une recherche de ressource de spécifier un type de cible dans un assembly, plutôt qu’un dictionnaire de ressources explicite dans un assembly ou une classe.  
@@ -47,7 +47,7 @@ Définit et référence des clés pour les ressources qui sont chargées à part
 |||  
 |-|-|  
 |`targetTypeName`|Nom du type de common language runtime public (CLR) défini dans l’assembly de ressource.|  
-|`targetID`|Clé pour la ressource. Lorsque les ressources sont recherchées, `targetID` est analogue à la [directive x :Key](../../xaml-services/x-key-directive.md) de la ressource.|  
+|`targetID`|Clé pour la ressource. Lorsque les ressources sont recherchées, `targetID` est analogue à la [directive x :Key](../../../desktop-wpf/xaml-services/xkey-directive.md) de la ressource.|  
   
 ## <a name="remarks"></a>Notes  
  Comme indiqué dans les utilisations ci-dessus, une utilisation d’extension de balisage {`ComponentResourceKey`} se trouve à deux emplacements :  
@@ -66,7 +66,7 @@ Définit et référence des clés pour les ressources qui sont chargées à part
   
  La syntaxe compact indiquée s’appuie sur la signature du constructeur <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> et l’utilisation des paramètres positionnels d’une extension de balisage. L’ordre dans lequel les `targetTypeName` et les `targetID` sont fournis est important. La syntaxe détaillée s’appuie sur le <xref:System.Windows.ComponentResourceKey.%23ctor%2A?displayProperty=nameWithType> constructeur sans paramètre, puis définit le <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> et le <xref:System.Windows.ComponentResourceKey.ResourceId%2A> d’une manière analogue à une syntaxe d’attribut vraie sur un élément objet. Dans la syntaxe détaillée, l’ordre dans lequel les propriétés sont définies n’est pas important. La relation et les mécanismes de ces deux solutions (compact et détaillé) sont décrits plus en détail dans la rubrique [extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md).  
   
- Techniquement, la valeur de `targetID` peut être n’importe quel objet, il n’est pas nécessaire qu’il s’agit d’une chaîne. Toutefois, l’utilisation la plus courante dans WPF consiste à aligner la valeur `targetID` avec les formulaires qui sont des chaînes et où ces chaînes sont valides dans la [grammaire XamlName](../../xaml-services/xamlname-grammar.md).  
+ Techniquement, la valeur de `targetID` peut être n’importe quel objet, il n’est pas nécessaire qu’il s’agit d’une chaîne. Toutefois, l’utilisation la plus courante dans WPF consiste à aligner la valeur `targetID` avec les formulaires qui sont des chaînes et où ces chaînes sont valides dans la [grammaire XamlName](../../../desktop-wpf/xaml-services/xamlname-grammar.md).  
   
  `ComponentResourceKey` peut être utilisé dans la syntaxe d’élément objet. Dans ce cas, il est nécessaire de spécifier la valeur des propriétés <xref:System.Windows.ComponentResourceKey.TypeInTargetAssembly%2A> et <xref:System.Windows.ComponentResourceKey.ResourceId%2A> pour initialiser correctement l’extension.  
   
