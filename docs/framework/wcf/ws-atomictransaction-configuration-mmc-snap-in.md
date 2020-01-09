@@ -2,22 +2,22 @@
 title: Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 ms.date: 03/30/2017
 ms.assetid: 23592973-1d51-44cc-b887-bf8b0d801e9e
-ms.openlocfilehash: 04380a2a30aba85efb98ee8f9e24d0a6223a18a3
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 04f9a014c3cb3ffd127ccc82fdda731e20136c52
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72320330"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544636"
 ---
 # <a name="ws-atomictransaction-configuration-mmc-snap-in"></a>Composant logiciel enfichable MMC Configuration WS-AtomicTransaction
 Le composant logiciel enfichable MMC Configuration WS-AtomicTransaction est utilisé pour configurer une partie des paramètres WS-AtomicTransaction sur les ordinateurs locaux et distants.  
   
 ## <a name="remarks"></a>Notes  
- Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], le composant logiciel enfichable MMC est accessible en accédant à **panneau de configuration/outils d’administration/Services de composants/** , en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
+ Si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou Windows Server 2003, vous pouvez trouver le composant logiciel enfichable MMC en accédant à **panneau de configuration/outils d’administration/Services de composants/** , en cliquant avec le bouton droit sur **poste de travail**, puis en sélectionnant **Propriétés**. C'est le même emplacement que celui dans lequel vous pouvez configurer le MSDTC. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
   
- Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], vous pouvez trouver le composant logiciel enfichable MMC en cliquant sur le bouton **Démarrer** et en tapant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
+ Si vous exécutez Windows Vista ou Windows Server 2008, vous pouvez trouver le composant logiciel enfichable MMC en cliquant sur le bouton **Démarrer** et en tapant `dcomcnfg.exe` dans la zone de **recherche** . À l’ouverture de la console MMC, accédez au nœud **My Travail\distributed transaction COORDINATOR\LOCAL DTC** , cliquez avec le bouton droit et sélectionnez **Propriétés**. Les options disponibles pour la configuration sont regroupées sous l’onglet **WS-AT** .  
   
- Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local. Si vous souhaitez configurer un ordinateur distant, vous devez rechercher le nom de l’ordinateur distant dans **panneau de configuration/outils d’administration/Services de composants/** , et effectuer les mêmes étapes si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou [!INCLUDE[ws2003](../../../includes/ws2003-md.md)]. Si vous exécutez Windows Vista ou [!INCLUDE[lserver](../../../includes/lserver-md.md)], suivez les étapes précédentes pour Vista et [!INCLUDE[lserver](../../../includes/lserver-md.md)], mais utilisez le nœud **DTC Coordinator\Local Distributed Transaction** sous le nœud de l’ordinateur distant.  
+ Les étapes précédentes sont utilisées pour lancer le composant logiciel enfichable afin de configurer un ordinateur local. Si vous souhaitez configurer un ordinateur distant, vous devez rechercher le nom de l’ordinateur distant dans **panneau de configuration/outils d’administration/Services de composants/** , et effectuer les mêmes étapes si vous exécutez [!INCLUDE[wxp](../../../includes/wxp-md.md)] ou Windows Server 2003. Si vous exécutez Windows Vista ou Windows Server 2008, suivez les étapes précédentes pour Vista et Windows Server 2008, mais utilisez le nœud **DTC Coordinator\Local Distributed Transaction** sous le nœud de l’ordinateur distant.  
   
  Pour utiliser l'interface utilisateur fournie par l'outil, vous devez enregistrer le fichier WsatUI.dll, situé à l'emplacement suivant :  
   
@@ -63,7 +63,7 @@ regasm.exe /codebase WsatUI.dll
   
  **Comptes autorisés**  
   
- Le fait de cliquer sur le bouton **Sélectionner** appelle l’éditeur de liste de Access Control Windows, où vous pouvez spécifier l’utilisateur ou le groupe qui peut participer à des transactions WS-Atomic en activant la case à cocher **autoriser** ou **refuser** dans le champ **participer** Groupe d’autorisations.  
+ Le fait de cliquer sur le bouton **Sélectionner** appelle l’éditeur de liste de Access Control Windows, où vous pouvez spécifier l’utilisateur ou le groupe qui peut participer à des transactions WS-Atomic en activant la case à cocher **autoriser** ou **refuser** dans le groupe d’autorisations **participer** .  
   
  **Certificats autorisés**  
   

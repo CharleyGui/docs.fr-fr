@@ -3,12 +3,12 @@ title: Kit SDK .NET Compiler Platform (API Roslyn)
 description: Apprenez à utiliser le Kit de développement logiciel (SDK) .NET Compiler Platform (également appelé API Roslyn) pour comprendre le code .NET, identifier les erreurs et les corriger.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: ea733d4c5c54c18e510a028f3a724f89490db9dd
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: HT
+ms.openlocfilehash: 3a202d977237ce716e3f8c0cf906894efd02196d
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61706544"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346957"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kit SDK .NET Compiler Platform
 
@@ -17,7 +17,7 @@ Au lieu de rester d’opaques traducteurs de code source en code objet, les comp
 
 ## <a name="net-compiler-platform-sdk-concepts"></a>Concepts du Kit SDK .NET Compiler Platform
 
-Le Kit SDK .NET Compiler Platform réduit considérablement la barrière à l’entrée pour la création d’applications et d’outils axés sur le code. Il offre de nombreuses possibilités d’innovation dans différents champs, notamment la métaprogrammation, la génération et la transformation de code, l’utilisation interactive des langages C# et VB et l’incorporation de C# et de VB dans des langages propres au domaine.
+Le Kit SDK .NET Compiler Platform réduit considérablement la barrière à l’entrée pour la création d’applications et d’outils axés sur le code. Il crée de nombreuses opportunités d’innovation dans des domaines tels que la méta-programmation, la génération et la transformation de C# code, l’utilisation interactive du et des C# langages de Visual Basic, et l’incorporation de et Visual Basic dans des langages spécifiques à un domaine.
 
 Le Kit SDK .NET Compiler Platform permet de générer des ***analyseurs*** et des ***correctifs de code*** qui recherchent et corrigent les erreurs de codage. Les ***analyseurs*** comprennent la syntaxe et la structure du code, et détectent les pratiques à corriger. Les ***correctifs de code*** représentent des propositions de correction des erreurs de codage trouvées par les analyseurs. En règle générale, un analyseur et les correctifs de code associés sont regroupés dans un seul projet.
 
@@ -56,7 +56,7 @@ La communauté de développeurs .NET a découvert, par l’expérience, des mod�
 
 Ces analyseurs peuvent être chargés sur [Visual Studio Marketplace](https://marketplace.visualstudio.com/vs) et téléchargés par les développeurs avec Visual Studio. Ceux qui débutent avec le langage et la plateforme apprennent rapidement les pratiques acceptées et deviennent plus vite productifs, dès le début de leur parcours d’apprentissage de .NET. Comme ils sont de plus en plus utilisés, la communauté adopte ces pratiques.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Le Kit SDK .NET Compiler Platform inclut les derniers modèles objet du langage pour la génération, l’analyse et la refactorisation de code. Cette section offre une vue d’ensemble conceptuelle du Kit SDK .NET Compiler Platform. Vous trouverez plus de détails dans les sections des didacticiels, des exemples et des démarrages rapides.
 

@@ -2,12 +2,12 @@
 title: Using the WCF Moniker with COM Clients
 ms.date: 03/30/2017
 ms.assetid: e2799bfe-88bd-49d7-9d6d-ac16a9b16b04
-ms.openlocfilehash: bcac9e344e2d981f9f165480cb84ac37c99fa5b0
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 281921bf42910086b874194cb2d8b56fbf71e671
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837777"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544707"
 ---
 # <a name="using-the-wcf-moniker-with-com-clients"></a>Using the WCF Moniker with COM Clients
 Cet exemple montre comment utiliser le moniker de service Windows Communication Foundation (WCF) pour intégrer des services Web dans des environnements de développement COM, tels que Microsoft Office Visual Basic pour Applications (Office VBA) ou Visual Basic 6,0. Il se compose d'un client Windows Script Host (.vbs), d'une bibliothèque de client assurant la prise en charge (.dll) et d'une bibliothèque de service (.dll) hébergée par les services IIS (Internet Information Services). Le service correspond à un service de calculatrice et le client COM appelle les opérations mathématiques suivantes sur le service : addition, soustraction, multiplication et division. L'activité du client s'affiche dans les fenêtres de message.  
@@ -191,7 +191,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
 3. À partir d’un Invite de commandes développeur pour Visual Studio, ouvrez le dossier \client\bin, sous le dossier propre à la langue.  
   
     > [!NOTE]
-    > Si vous utilisez Windows Vista, [!INCLUDE[lserver](../../../../includes/lserver-md.md)], Windows 7 ou Windows Server 2008 R2, assurez-vous d’exécuter l’invite de commandes avec des privilèges d’administrateur.  
+    > Si vous utilisez Windows Vista, Windows Server 2008, Windows 7 ou Windows Server 2008 R2, assurez-vous d’exécuter l’invite de commandes avec des privilèges d’administrateur.  
   
 4. Tapez `tlbexp.exe client.dll /out:CalcProxy.tlb` pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
   
@@ -221,7 +221,7 @@ WScript.Echo "MEX service moniker: 9 * 81.25 = " & mexServiceMoniker.Multiply(9,
   
 6. Copiez la bibliothèque Client.dll depuis le dossier \client\bin figurant dans le dossier correspondant à votre langue dans un répertoire de l’ordinateur client.  
   
-7. À partir d'une invite de commandes, naviguez jusqu'à ce répertoire de destination. Si vous utilisez Windows Vista ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)], veillez à exécuter l’invite de commandes en tant qu’administrateur.  
+7. À partir d'une invite de commandes, naviguez jusqu'à ce répertoire de destination. Si vous utilisez Windows Vista ou Windows Server 2008, veillez à exécuter l’invite de commandes en tant qu’administrateur.  
   
 8. Tapez `tlbexp.exe client.dll /out:CalcProxy.tlb` pour exporter la dll dans un fichier TLB. Un avertissement d'exportateur de bibliothèques de types est escompté mais ceci ne présente pas de problème dans la mesure où le type générique n'est pas requis.  
   

@@ -3,12 +3,12 @@ title: Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 description: Le visualiseur de syntaxe offre un outil visuel qui permet d’explorer les modèles que le SDK .NET Compiler Platform génère pour le code.
 ms.date: 03/07/2018
 ms.custom: mvc, vs-dotnet
-ms.openlocfilehash: fa3b4fdbb8d573805119e13e8aa93f156c4111f9
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: c4b4414dabcb6c9749a23d726e4a69334376d988
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972012"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346967"
 ---
 # <a name="explore-code-with-the-roslyn-syntax-visualizer-in-visual-studio"></a>Explorer le code avec le visualiseur de syntaxe Roslyn dans Visual Studio
 
@@ -20,7 +20,7 @@ Familiarisez-vous avec les concepts utilisés dans le SDK .NET Compiler Platform
 
 ## <a name="syntax-visualizer"></a>Visualiseur de syntaxe
 
-Le **visualiseur de syntaxe** permet d’inspecter l’arborescence de syntaxe du fichier de code C# ou VB dans la fenêtre actuelle de l’éditeur actif au sein de l’environnement de développement intégré Visual Studio. Pour lancer le visualiseur, vous pouvez cliquer sur **Affichage** > **Autres fenêtres** > **Visualiseur de syntaxe**.  Vous pouvez également utiliser la barre d’outils **Lancement rapide** dans le coin supérieur droit. Tapez « syntaxe » pour faire apparaître la commande permettant d’ouvrir le **visualiseur de syntaxe**.
+Le **Syntax Visualizer** permet l’inspection de l’arborescence de syntaxe C# pour le fichier de code ou Visual Basic dans la fenêtre active de l’éditeur à l’intérieur de l’IDE de Visual Studio. Pour lancer le visualiseur, vous pouvez cliquer sur **Affichage** > **Autres fenêtres** > **Visualiseur de syntaxe**.  Vous pouvez également utiliser la barre d’outils **Lancement rapide** dans le coin supérieur droit. Tapez « syntaxe » pour faire apparaître la commande permettant d’ouvrir le **visualiseur de syntaxe**.
 
 Cette commande ouvre ce dernier dans une fenêtre Outil flottante. Si aucune fenêtre d’éditeur de code n’est ouverte, l’affichage est vide, comme l’illustre la figure suivante. 
 
@@ -28,14 +28,15 @@ Cette commande ouvre ce dernier dans une fenêtre Outil flottante. Si aucune fen
 
 Ancrez cette fenêtre Outil à un emplacement pratique dans Visual Studio, comme le côté gauche. Le visualiseur indique des informations sur le fichier de code actuel.
 
-Créez un projet à l’aide de la commande **Fichier** > **Nouveau projet**. Vous pouvez créer un projet VB ou C#. Quand Visual Studio ouvre le fichier de code principal de ce projet, le visualiseur en présente l’arborescence de syntaxe. Vous pouvez ouvrir n’importe quel fichier C#/VB existant dans cette instance Visual Studio pour que le visualiseur en présente l’arborescence de syntaxe. Si plusieurs fichiers de code sont ouverts dans Visual Studio, le visualiseur présente l’arborescence de syntaxe du fichier de code actif (celui qui a le focus clavier.)
+Créez un projet à l’aide de la commande **Fichier** > **Nouveau projet**. Vous pouvez créer un Visual Basic ou C# un projet. Quand Visual Studio ouvre le fichier de code principal de ce projet, le visualiseur en présente l’arborescence de syntaxe. Vous pouvez ouvrir n’importe C# quel fichier/Visual Basic existant dans cette instance de Visual Studio, et le visualiseur affiche l’arborescence de syntaxe de ce fichier. Si plusieurs fichiers de code sont ouverts dans Visual Studio, le visualiseur présente l’arborescence de syntaxe du fichier de code actif (celui qui a le focus clavier.)
 
 <!-- markdownlint-disable MD025 -->
 
 # <a name="ctabcsharp"></a>[C#](#tab/csharp)
 ![Visualisation d’une arborescence de syntaxe C#](media/syntax-visualizer/visualize-csharp.png)
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
-![Visualisation d’une arborescence de syntaxe VB](media/syntax-visualizer/visualize-visual-basic.png)
+![Visualisation d’une arborescence de syntaxe Visual Basic](media/syntax-visualizer/visualize-visual-basic.png)
 
 ---
 
@@ -48,7 +49,7 @@ Chaque élément de l’arborescence présente également sa propre **étendue**
 Il existe deux façons de naviguer dans l’arborescence :
 
 * Développez des éléments dans l’arborescence ou cliquez dessus. Le visualiseur sélectionne automatiquement le texte correspondant à l’étendue de cet élément dans l’éditeur de code.
-* Cliquez sur le texte ou sélectionnez-le dans l’éditeur de code. Dans le précédent exemple VB, si vous sélectionnez la ligne contenant « Module Module1 » dans l’éditeur de code, le visualiseur accède automatiquement au nœud ModuleStatement correspondant dans l’arborescence. 
+* Cliquez sur le texte ou sélectionnez-le dans l’éditeur de code. Dans l’exemple précédent Visual Basic, si vous sélectionnez la ligne contenant « module Module1 » dans l’éditeur de code, le visualiseur accède automatiquement au nœud ModuleStatement correspondant dans l’arborescence. 
 
 Le visualiseur met en surbrillance l’élément dans l’arborescence dont l’étendue correspond le mieux à celle du texte sélectionné dans l’éditeur.
 
@@ -65,11 +66,12 @@ Cliquez avec le bouton droit sur un élément dans l’arborescence, puis clique
 Le visualiseur affiche une représentation graphique de la sous-arborescence dont la racine est l’élément sélectionné. Essayez ces étapes pour le nœud **MethodDeclaration** correspondant à la méthode `Main()` dans l’exemple C#. Le visualiseur affiche un graphique de syntaxe qui ressemble à celui-ci :
 
 ![Affichage d’un graphique de syntaxe C#](media/syntax-visualizer/csharp-syntax-graph.png)
+
 # <a name="visual-basictabvb"></a>[Visual Basic](#tab/vb)
 
-Essayez la même chose pour le nœud **SubBlock** correspondant à la méthode `Main()` dans le précédent exemple VB. Le visualiseur affiche un graphique de syntaxe qui ressemble à celui-ci :
+Essayez le même pour le nœud de sous- **bloc** correspondant à la méthode `Main()` dans l’exemple de Visual Basic précédent. Le visualiseur affiche un graphique de syntaxe qui ressemble à celui-ci :
 
-![Affichage d’un graphique de syntaxe VB](media/syntax-visualizer/visual-basic-syntax-graph.png)
+![Affichage d’un graphique de syntaxe Visual Basic](media/syntax-visualizer/visual-basic-syntax-graph.png)
 
 ---
 
@@ -87,7 +89,7 @@ Une autre option consiste à placer la fenêtre de graphique de syntaxe sur un d
 
 Le visualiseur de syntaxe permet une inspection rudimentaire des symboles et des informations sémantiques. Tapez `double x = 1 + 1;` au sein de Main() dans l’exemple C#. Ensuite, sélectionnez l’expression `1 + 1` dans la fenêtre de l’éditeur de code. Le visualiseur met en surbrillance le nœud **AddExpression** dans le visualiseur. Cliquez avec le bouton droit sur ce nœud **AddExpression**, puis cliquez sur **Afficher le symbole (le cas échéant)** . Notez que la plupart des éléments de menu présentent le qualificateur « le cas échéant ». Le visualiseur de syntaxe inspecte les propriétés d’un nœud, notamment celles qui ne sont éventuellement pas présentes pour tous les nœuds. 
 
-La grille des propriétés dans le visualiseur est mise à jour comme indiqué dans la figure suivante : Le symbole de l’expression est un **SynthesizedIntrinsicOperatorSymbol** avec **Kind = Method**.
+La grille des propriétés se met à jour dans le visualiseur comme l’illustre la figure suivante : le symbole de l’expression est un **SynthesizedIntrinsicOperatorSymbol** avec **Kind = Method**.
 
 ![Propriétés des symboles](media/syntax-visualizer/symbol-properties.png)
 
@@ -101,11 +103,11 @@ Essayez **Afficher un TypeSymbol converti (le cas échéant)** pour le même nœ
 
 Enfin, essayez **Afficher la valeur constante (le cas échéant)** pour le même nœud **AddExpression**. La grille des propriétés montre que la valeur de l’expression est une constante au moment de la compilation de valeur `2`.
 
-![Valeur de constante](media/syntax-visualizer/constant-value.png)
+![une valeur constante.](media/syntax-visualizer/constant-value.png)
 
-L’exemple précédent peut également être répliqué dans VB. Tapez `Dim x As Double = 1 + 1` dans un fichier VB. Sélectionnez l’expression `1 + 1` dans la fenêtre de l’éditeur de code. Le visualiseur met en surbrillance le nœud **AddExpression** correspondant dans le visualiseur. Répétez les étapes précédentes pour ce nœud **AddExpression** et vous obtiendrez normalement des résultats identiques.
+L’exemple précédent peut également être répliqué dans Visual Basic. Tapez `Dim x As Double = 1 + 1` dans un fichier Visual Basic. Sélectionnez l’expression `1 + 1` dans la fenêtre de l’éditeur de code. Le visualiseur met en surbrillance le nœud **AddExpression** correspondant dans le visualiseur. Répétez les étapes précédentes pour ce nœud **AddExpression** et vous obtiendrez normalement des résultats identiques.
 
-Examinez d’autre code dans VB. Mettez à jour votre fichier VB principal avec le code suivant :
+Examinez davantage de code dans Visual Basic. Mettez à jour votre fichier de Visual Basic principal à l’aide du code suivant :
 
 ```vb
 Imports C = System.Console
@@ -129,7 +131,7 @@ Examinez le symbole correspondant à un type, une méthode, une propriété qui 
 
 ![Affichage du symbole d’une déclaration de méthode](media/syntax-visualizer/method-symbol.png)
 
-Les exemples VB ci-dessus sont facilement réplicables en C#. Tapez `using C = System.Console;` à la place de `Imports C = System.Console` pour l’alias. Les étapes précédentes en C# produisent des résultats identiques dans la fenêtre du visualiseur.
+Les exemples de Visual Basic ci-dessus peuvent être facilement C#répliqués dans. Tapez `using C = System.Console;` à la place de `Imports C = System.Console` pour l’alias. Les étapes précédentes en C# produisent des résultats identiques dans la fenêtre du visualiseur.
 
 Les opérations d’inspection sémantique sont uniquement disponibles sur des nœuds. Elles ne le sont pas sur des jetons ni des trivia. Tous les nœuds ont des informations sémantiques intéressantes à inspecter. Quand un nœud n’a pas d’informations sémantiques intéressantes, le fait de cliquer sur **Afficher le symbole \* (s’il existe)** fait apparaître une grille de propriétés vide.
 

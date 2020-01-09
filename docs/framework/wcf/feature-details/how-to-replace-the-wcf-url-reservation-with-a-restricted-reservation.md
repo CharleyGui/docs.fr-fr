@@ -2,19 +2,19 @@
 title: "Procédure : remplacer la réservation d'URL WCF par une réservation restreinte"
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 900b258a1119b069e5ef0a6ff66078281bb06f1b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3d14d76334b15bdb490184a48da11ba48b84deea
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837387"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544651"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d'URL WCF par une réservation restreinte
 Une réservation d'URL vous permet de limiter les personnes qui reçoivent les messages d'une URL ou d'un jeu d'URL. Une réservation se compose d'un modèle d'URL, d'une liste de contrôle d'accès (ACL) et d'un jeu d'indicateurs. Le modèle d'URL définit les URL affectées par la réservation. Pour plus d’informations sur le traitement des modèles d’URL, consultez [routage des demandes entrantes](https://go.microsoft.com/fwlink/?LinkId=136764). L'ACL contrôle quel utilisateur ou groupe d'utilisateurs est autorisé à recevoir des messages en provenance des URL spécifiées. Les indicateurs spécifient si la réservation consiste à donner directement à un utilisateur ou à un groupe l'autorisation d'écouter l'URL ou à déléguer l'autorisation d'écouter à d'autres processus.  
   
  Dans le cadre de la configuration du système d’exploitation par défaut, Windows Communication Foundation (WCF) crée une réservation accessible globalement pour le port 80 afin de permettre à tous les utilisateurs d’exécuter des applications qui utilisent une liaison HTTP double pour la communication duplex. Étant donné que l'ACL sur cette réservation concerne tous les utilisateurs, les administrateurs ne peuvent pas explicitement accorder ou refuser l'autorisation d'écouter une URL ou un jeu d'URL. Cette rubrique explique comment supprimer cette réservation et comment la recréer avec une ACL restreinte.  
   
- Sur Windows Vista ou [!INCLUDE[lserver](../../../../includes/lserver-md.md)] vous pouvez afficher toutes les réservations d’URL HTTP à partir d’une invite de commandes avec élévation de privilèges en tapant `netsh http show urlacl`.  L’exemple suivant montre à quoi doit ressembler une réservation d’URL WCF.  
+Sur Windows Vista ou Windows Server 2008, vous pouvez afficher toutes les réservations d’URL HTTP à partir d’une invite de commandes avec élévation de privilèges en entrant `netsh http show urlacl`. L’exemple suivant montre à quoi doit ressembler une réservation d’URL WCF :
 
 ```
 Reserved URL : http://+:80/Temporary_Listen_Addresses/  

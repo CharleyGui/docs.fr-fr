@@ -13,23 +13,23 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 75e6c7b4886bd490c462e9128eca7ec13f233824
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 612b99354310c18030cefce4e6f02fab8ed20f83
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837296"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636768"
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
-<a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] applications autonomes s’exécutent avec des autorisations illimitées (jeu d’autorisations**FULLTRUST** cas), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un <xref:System.AppDomain> de confiance partielle à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
+<a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. Les applications autonomes WPF s’exécutent avec des autorisations illimitées (jeu d’autorisations**FullTrust** de l’autorité de certification), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un <xref:System.AppDomain> de confiance partielle à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] les applications hébergées par le navigateur sont hébergées par Windows Internet Explorer ou Firefox et peuvent être des applications de navigateur XAML (XBAP) ou des documents de [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] libre pour plus d’informations, consultez [vue d’ensemble des applications de navigateur XAML WPF](./app-development/wpf-xaml-browser-applications-overview.md).  
+ Les applications hébergées par le navigateur WPF sont hébergées par Windows Internet Explorer ou Firefox et peuvent être des applications de navigateur XAML (XBAP) ou des documents [!INCLUDE[TLA#tla_xaml](../../../includes/tlasharptla-xaml-md.md)] libres. pour plus d’informations, consultez [vue d’ensemble des applications de navigateur XAML WPF](./app-development/wpf-xaml-browser-applications-overview.md).  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] applications hébergées par un navigateur s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle, qui est limité au jeu d’autorisations de la zone**Internet** de l’autorité de certification par défaut. Cela isole efficacement [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] applications hébergées par le navigateur de l’ordinateur client de la même façon que les applications Web typiques sont isolées. Une application XBAP peut élever des privilèges jusqu’à la confiance totale, selon la zone de sécurité de l’URL de déploiement et la configuration de sécurité du client. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md).  
+ Les applications hébergées par le navigateur WPF s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle, qui est limité au jeu d’autorisations de la zone**Internet** de l’autorité de certification par défaut. Cela isole efficacement les applications hébergées par le navigateur WPF de l’ordinateur client de la même façon que les applications Web typiques sont isolées. Une application XBAP peut élever des privilèges jusqu’à la confiance totale, selon la zone de sécurité de l’URL de déploiement et la configuration de sécurité du client. Pour plus d’informations, consultez [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md).  
   
  Cette rubrique décrit le modèle de sécurité pour les applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF).  
   
- Cette rubrique contient les sections suivantes :  
+ Cette rubrique contient les sections suivantes :  
   
 - [Sécurité de la navigation](#SafeTopLevelNavigation)  
   
@@ -45,7 +45,7 @@ ms.locfileid: "74837296"
   
 <a name="SafeTopLevelNavigation"></a>   
 ## <a name="safe-navigation"></a>Sécurité de la navigation  
- Pour les applications XBAP, [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] distingue deux types de navigation : application et navigateur.  
+ Pour les applications XBAP, WPF distingue deux types de navigation : application et navigateur.  
   
  La *navigation dans une application* est la navigation entre les éléments de contenu dans une application hébergée par un navigateur. La *navigation dans un navigateur* est la navigation qui modifie l’URL de contenu et d’emplacement d’un navigateur lui-même. La relation entre la navigation dans l’application (en général XAML) et la navigation dans le navigateur (en général HTML) est indiquée dans l’illustration suivante :
   
@@ -220,7 +220,7 @@ ms.locfileid: "74837296"
   
  Toutefois, il est possible pour un assembly APTCA d’exposer une faille de sécurité après son installation dans le GAC. Lorsqu’une faille de sécurité est découverte, les éditeurs d’assembly peuvent produire une mise à jour de sécurité pour résoudre le problème sur les installations existantes et pour assurer une protection vis-à-vis des installations effectuées après la détection du problème. Pour la mise à jour, une option consiste à désinstaller l’assembly, bien que cela risque de bloquer d’autres applications clientes entièrement fiables qui utilisent l’assembly.  
   
- [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] fournit un mécanisme par lequel un assembly APTCA peut être désactivé pour les applications XBAP partiellement fiables sans désinstaller l’assembly APTCA.  
+ WPF fournit un mécanisme par lequel un assembly APTCA peut être désactivé pour les applications XBAP partiellement fiables sans désinstaller l’assembly APTCA.  
   
  Pour désactiver un assembly APTCA, vous devez créer une clé de Registre spéciale :  
   
@@ -262,14 +262,14 @@ ms.locfileid: "74837296"
   
 <a name="BestPractices"></a>   
 ## <a name="resources-for-developing-wpf-applications-that-promote-security"></a>Ressources pour le développement d’applications WPF promouvant la sécurité  
- Voici quelques ressources supplémentaires qui vous aideront à développer des applications [!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)] qui favorisent la sécurité :  
+ Voici quelques ressources supplémentaires qui vous aideront à développer des applications WPF qui favorisent la sécurité :  
   
 |Zone|Ressource|  
 |----------|--------------|  
 |Code managé|[Index des directives, conseils et procédures de sécurité pour les applications](https://docs.microsoft.com/previous-versions/msp-n-p/ff650760(v=pandp.10))|  
 |CAS|[Sécurité d’accès du code](../misc/code-access-security.md)|  
 |ClickOnce|[Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)|  
-|[!INCLUDE[TLA2#tla_wpf](../../../includes/tla2sharptla-wpf-md.md)]|[Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)|  
+|WPF|[Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)|  
   
 ## <a name="see-also"></a>Voir aussi
 

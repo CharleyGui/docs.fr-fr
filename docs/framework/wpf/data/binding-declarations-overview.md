@@ -12,12 +12,12 @@ helpviewer_keywords:
 - syntax [WPF], object elements
 - binding declarations [WPF]
 ms.assetid: b97fd626-4c0d-4761-872a-2bca5820da2c
-ms.openlocfilehash: bc3a139db80066c9cad5199c7734fe66a8639400
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 8fea61c463928ee69ef5dd0dfbf107f89c5384ff
+ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460032"
+ms.lasthandoff: 12/29/2019
+ms.locfileid: "75544467"
 ---
 # <a name="binding-declarations-overview"></a>Vue d'ensemble des déclarations de liaison
 
@@ -106,13 +106,13 @@ Utilisez la propriété <xref:System.Windows.Data.Binding.Path%2A> pour spécifi
 
 ### <a name="escaping-mechanism"></a>Mécanisme d’échappement
 
-- À l’intérieur des indexeurs ([ ]), le signe ^ échappe le caractère suivant.
+- À l’intérieur des indexeurs ([]), l’accent circonflexe (^) échappe le caractère suivant.
 
 - Si vous définissez <xref:System.Windows.Data.Binding.Path%2A> en XAML, vous devez également échapper (à l’aide d’entités XML) certains caractères qui sont spécifiques à la définition de langage XML :
 
-  - Utilisez `&` pour échapper le caractère « & ».
+  - Utilisez `&amp;` pour échapper le caractère « & ».
 
-  - Utilisez `>` pour échapper la balise de fin « > ».
+  - Utilisez `&gt;` pour échapper la balise de fin « > ».
 
 - En outre, si vous décrivez la liaison entière dans un attribut à l’aide de la syntaxe d’extension de balisage, vous devrez échapper (avec la barre oblique inverse \\) les caractères qui sont spécifiques à l’analyseur d’extension de balisage [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] :
 
@@ -143,6 +143,6 @@ Le comportement par défaut est le suivant s’il n’est pas spécifié dans la
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
-- [Rubriques de guide pratique](data-binding-how-to-topics.md)
+- [Guides pratiques](data-binding-how-to-topics.md)
 - [Liaison de données](../advanced/optimizing-performance-data-binding.md)
 - [Syntaxe XAML PropertyPath](../advanced/propertypath-xaml-syntax.md)

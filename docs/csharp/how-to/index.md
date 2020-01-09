@@ -2,26 +2,26 @@
 title: Articles de guide pratique (Guide C#)
 description: Série de petits conseils et d’exemples de code spécifiques courts
 ms.date: 12/20/2017
-ms.openlocfilehash: 855ea90d22174c2b7c0b53a526c47a5edbe5496d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e6cb657726b82a1710bbcd596fe48037b5c26352
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736886"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75339218"
 ---
 # <a name="how-to-c"></a>Guides pratiques (C#)
 
-Dans la section Guides pratiques du guide C#, vous trouverez rapidement des réponses à des questions courantes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche.
+Dans la section procédure du C# guide, vous trouverez des réponses rapides aux questions les plus fréquentes. Dans certains cas, les articles peuvent figurer dans plusieurs sections. Nous avons souhaité les rendre plus faciles à trouver via plusieurs voies de recherche.
 
 ## <a name="general-c-concepts"></a>Concepts C# généraux
 
-Plusieurs conseils et astuces sont des pratiques courantes des développeurs en C#.
+Il existe plusieurs trucs et astuces qui sont des C# pratiques courantes pour les développeurs :
 
 - [Initialiser des objets à l’aide d’un initialiseur d’objet](../programming-guide/classes-and-structs/how-to-initialize-objects-by-using-an-object-initializer.md).
 - [Découvrir les différences entre le passage d’un struct et d’une classe à une méthode](../programming-guide/classes-and-structs/how-to-know-the-difference-passing-a-struct-and-passing-a-class-to-a-method.md).
 - [Utiliser la surcharge d’opérateur](../language-reference/operators/operator-overloading.md).
 - [Implémenter et appeler une méthode d’extension personnalisée](../programming-guide/classes-and-structs/how-to-implement-and-call-a-custom-extension-method.md).
-- Même les programmeurs en C# pourraient vouloir [utiliser l’espace de noms `My` de VB](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
+- Même C# les programmeurs peuvent souhaiter [utiliser l’espace de noms `My` à partir de Visual Basic](../programming-guide/namespaces/how-to-use-the-my-namespace.md).
 - [Créer une méthode pour un type `enum` à l’aide des méthodes d’extension](../programming-guide/classes-and-structs/how-to-create-a-new-method-for-an-enumeration.md).
 
 ### <a name="class-and-struct-members"></a>Membres de classe et de struct
@@ -121,7 +121,7 @@ LINQ vous permet d’écrire du code pour interroger une source de données qui 
 
 Les programmes récents utilisent souvent des opérations asynchrones. Les articles suivants vous apprennent à utiliser ces techniques.
 
-- [Améliorer les performances asynchrones avec `System.Threading.Tasks.Task.WhenAll` ](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
+- [Améliorer les performances asynchrones avec `System.Threading.Tasks.Task.WhenAll`](../programming-guide/concepts/async/how-to-extend-the-async-walkthrough-by-using-task-whenall.md).
 - [Effectuer plusieurs requêtes web en parallèle en utilisant `async` et `await`](../programming-guide/concepts/async/how-to-make-multiple-web-requests-in-parallel-by-using-async-and-await.md).
 - [Utiliser un pool de threads](../../standard/threading/the-managed-thread-pool.md#using-the-thread-pool).
 
