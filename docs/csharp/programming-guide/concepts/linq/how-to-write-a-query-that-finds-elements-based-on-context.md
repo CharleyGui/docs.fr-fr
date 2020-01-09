@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Écrire une requête qui recherche des éléments en fonction du contexte (C#)'
+title: Comment écrire une requête qui recherche des éléments en fonction du contexteC#()
 ms.date: 07/20/2015
 ms.assetid: 3ff79ef0-fc8b-42fe-8cc0-10dc32b06b4e
-ms.openlocfilehash: e3ac8fc965132521b85cce6391908634cdb17127
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 3fc131fdeb8dbf8871bfa455bc54eab0eeca7022
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70253215"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348365"
 ---
-# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Procédure : Écrire une requête qui recherche des éléments en fonction du contexte (C#)
+# <a name="how-to-write-a-query-that-finds-elements-based-on-context-c"></a>Comment écrire une requête qui recherche des éléments en fonction du contexteC#()
 Parfois, vous devez écrire une requête qui sélectionne des éléments en fonction de leur contexte. Vous souhaiterez peut-être filtrer en fonction des éléments frères qui précèdent ou qui suivent. Vous souhaiterez peut-être filtrer en fonction des éléments enfants ou ancêtres.  
   
  Vous pouvez pour cela écrire une requête et utiliser ses résultats dans la clause `where`. Si vous devez tout d'abord tester par rapport à la valeur Null, puis tester la valeur, il est plus pratique de créer la requête dans une clause `let`, puis d'utiliser les résultats dans la clause `where`.  

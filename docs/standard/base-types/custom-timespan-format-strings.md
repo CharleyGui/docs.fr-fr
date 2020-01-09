@@ -1,5 +1,5 @@
 ---
-title: Chaînes de format TimeSpan personnalisées – .NET
+title: Chaînes de format TimeSpan personnalisées
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,16 +13,16 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - custom TimeSpan format strings
 ms.assetid: a63ebf55-7269-416b-b4f5-286f6c03bf0e
-ms.openlocfilehash: f38ea3a1e2d687044f862e5d6c0a78c6c12965d6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5963f9afe422206627a1baea47339ecb81becf0
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126553"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348317"
 ---
 # <a name="custom-timespan-format-strings"></a>Chaînes de format TimeSpan personnalisées
 
-Une chaîne de format <xref:System.TimeSpan> définit la représentation sous forme de chaîne d’une valeur <xref:System.TimeSpan> qui résulte d’une opération de mise en forme. Une chaîne de format personnalisée se compose d’un ou de plusieurs spécificateurs de format <xref:System.TimeSpan> personnalisé et d’un nombre quelconque de caractères littéraux. Toute chaîne autre qu’une [chaîne de format TimeSpan standard](standard-timespan-format-strings.md) est interprétée comme une chaîne de format <xref:System.TimeSpan> personnalisée.
+Une chaîne de format <xref:System.TimeSpan> définit la représentation sous forme de chaîne d’une valeur <xref:System.TimeSpan> qui résulte d’une opération de mise en forme. Une chaîne de format personnalisée se compose d’un ou de plusieurs spécificateurs de format <xref:System.TimeSpan> personnalisé et d’un nombre quelconque de caractères littéraux. Toute chaîne qui n’est pas une [chaîne de format TimeSpan standard](standard-timespan-format-strings.md) est interprétée comme une chaîne de format de <xref:System.TimeSpan> personnalisée.
 
 > [!IMPORTANT]
 > Les spécificateurs de format <xref:System.TimeSpan> personnalisés ne comportent pas de symboles de séparation de type espace réservé, comme ceux qui séparent les jours des heures, les heures des minutes ou les secondes des fractions de seconde. Au lieu de cela, ces symboles doivent figurer dans la chaîne de format personnalisée comme littéraux de chaîne. Par exemple, `"dd\.hh\:mm"` définit un point (.) comme séparateur entre les jours et les heures et un signe deux-points (:) comme séparateur entre les heures et les minutes.
@@ -60,7 +60,7 @@ Les chaînes de format <xref:System.TimeSpan> standard sont également utilisée
 |"fffffff"|Dix millionièmes de seconde (ou nombre fractionnaire de graduations) dans un intervalle de temps.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "fffffff"](#f7Specifier).|`TimeSpan.Parse("0:0:6.8954321")`:<br /><br /> `fffffff` --> 8954321<br /><br /> `ss\.fffffff` --> 06.8954321|
 |"F", "%F"|Dixièmes de seconde dans un intervalle de temps. Rien ne s'affiche si le chiffre est zéro.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "F"](#F_Specifier).|`TimeSpan.Parse("00:00:06.32")`:<br /><br /> `%F`: 3<br /><br /> `TimeSpan.Parse("0:0:3.091")`:<br /><br /> `ss\.F`: 03.|
 |"FF"|Centièmes de seconde dans un intervalle de temps. Les éventuels zéros de fin fractionnaires et doubles zéros ne sont pas affichés.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "FF"](#FF_Specifier).|`TimeSpan.Parse("00:00:06.329")`:<br /><br /> `FF`: 32<br /><br /> `TimeSpan.Parse("0:0:3.101")`:<br /><br /> `ss\.FF`: 03.1|
-|"FFF"|Millisecondes dans un intervalle de temps. Les éventuels zéros de fin fractionnaires ne sont pas affichés.<br /><br /> Informations complémentaires :|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03.1|
+|"FFF"|Millisecondes dans un intervalle de temps. Les éventuels zéros de fin fractionnaires ne sont pas affichés.<br /><br /> Plus d'informations :|`TimeSpan.Parse("00:00:06.3291")`:<br /><br /> `FFF`: 329<br /><br /> `TimeSpan.Parse("0:0:3.1009")`:<br /><br /> `ss\.FFF`: 03.1|
 |"FFFF"|Dix millièmes de seconde dans un intervalle de temps. Les éventuels zéros de fin fractionnaires ne sont pas affichés.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "FFFF"](#F4_Specifier).|`TimeSpan.Parse("00:00:06.32917")`:<br /><br /> `FFFFF`: 3291<br /><br /> `TimeSpan.Parse("0:0:3.10009")`:<br /><br /> `ss\.FFFF`: 03.1|
 |"FFFFF"|Cent millièmes de seconde dans un intervalle de temps. Les éventuels zéros de fin fractionnaires ne sont pas affichés.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "fffff"](#F5_Specifier).|`TimeSpan.Parse("00:00:06.329179")`:<br /><br /> `FFFFF`: 32917<br /><br /> `TimeSpan.Parse("0:0:3.100009")`:<br /><br /> `ss\.FFFFF`: 03.1|
 |"FFFFFF"|Millionièmes de seconde dans un intervalle de temps. Les éventuels zéros de fin fractionnaires ne sont pas affichés.<br /><br /> Informations supplémentaires : [spécificateur de format personnalisé "FFFFFF"](#F6_Specifier).|`TimeSpan.Parse("00:00:06.3291791")`:<br /><br /> `FFFFFF`: 329179<br /><br /> `TimeSpan.Parse("0:0:3.1000009")`:<br /><br /> `ss\.FFFFFF`: 03.1|
@@ -233,7 +233,7 @@ L’exemple suivant utilise le spécificateur de format personnalisé "ff" pour 
 
 [Retour au tableau](#table)
 
-## <a name="f3Specifier"></a> Le spécificateur de format personnalisé « fff »
+## <a name="f3Specifier"></a> Le spécificateur de format personnalisé « fff »
 
 Le spécificateur de format personnalisé "fff" (trois caractères « f ») affiche les millisecondes dans un intervalle de temps. Dans une opération de mise en forme, tous les chiffres fractionnaires restants sont tronqués. Dans une opération d’analyse qui appelle la méthode <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> ou <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType>, la chaîne d’entrée doit contenir exactement trois chiffres fractionnaires.
 
@@ -255,7 +255,7 @@ L’exemple suivant utilise le spécificateur de format personnalisé "ffff" pou
 
 [Retour au tableau](#table)
 
-## <a name="f5Specifier"></a> Le spécificateur de format personnalisé « fffff »
+## <a name="f5Specifier"></a> Le spécificateur de format personnalisé « ffff »
 
 Le spécificateur de format personnalisé "fffff" (cinq caractères « f ») affiche les cent millièmes de seconde dans un intervalle de temps. Dans une opération de mise en forme, tous les chiffres fractionnaires restants sont tronqués. Dans une opération d’analyse qui appelle la méthode <xref:System.TimeSpan.ParseExact%2A?displayProperty=nameWithType> ou <xref:System.TimeSpan.TryParseExact%2A?displayProperty=nameWithType>, la chaîne d’entrée doit contenir exactement cinq chiffres fractionnaires.
 

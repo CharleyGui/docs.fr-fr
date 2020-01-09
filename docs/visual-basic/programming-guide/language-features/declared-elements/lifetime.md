@@ -10,12 +10,12 @@ helpviewer_keywords:
 - lifetime [Visual Basic], Visual Basic
 - lifetime [Visual Basic]
 ms.assetid: bd91e390-690a-469a-9946-8dca70bc14e7
-ms.openlocfilehash: 05a39388e8aa9681af60cf86a3df8346d744b69e
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 293537ad33c8e751d49d820fc57ea525e68bc203
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345313"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347775"
 ---
 # <a name="lifetime-in-visual-basic"></a>Durée de vie dans Visual Basic
 La durée de *vie* d’un élément déclaré est la période pendant laquelle il peut être utilisé. Les variables sont les seuls éléments qui ont une durée de vie. À cet effet, le compilateur traite les paramètres de procédure et les retours de fonction comme des cas spéciaux de variables. La durée de vie d’une variable représente la durée pendant laquelle elle peut contenir une valeur. Sa valeur peut changer pendant sa durée de vie, mais elle contient toujours une valeur.  
@@ -60,12 +60,12 @@ La durée de *vie* d’un élément déclaré est la période pendant laquelle i
 ### <a name="code"></a>Code  
  [!code-vb[VbVbalrKeywords#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrKeywords/VB/class7.vb#13)]  
   
-### <a name="comments"></a>Commentaires  
+### <a name="comments"></a>Comments  
  Dans l’exemple précédent, la variable `applesSold` continue d’exister après que la procédure `runningTotal` retournée au code appelant. La prochaine fois que `runningTotal` est appelée, `applesSold` conserve sa valeur précédemment calculée.  
   
  Si `applesSold` avait été déclaré sans utiliser `Static`, les valeurs accumulées précédentes ne seront pas conservées entre les appels à `runningTotal`. Lors du prochain appel de `runningTotal`, `applesSold` aurait été recréé et initialisé à 0, et `runningTotal` aurait simplement retourné la même valeur que celle avec laquelle il a été appelé.  
   
-### <a name="compiling-the-code"></a>Compilation du code  
+### <a name="compile-the-code"></a>Compiler le code  
  Vous pouvez initialiser la valeur d’une variable locale statique dans le cadre de sa déclaration. Si vous déclarez un tableau à `Static`, vous pouvez initialiser son rang (nombre de dimensions), la longueur de chaque dimension et les valeurs des éléments individuels.  
   
 ### <a name="security"></a>Sécurité  

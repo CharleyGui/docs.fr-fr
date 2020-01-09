@@ -1,15 +1,15 @@
 ---
-title: Référence du langage F#
+title: Référence du langage
 description: Recherchez F# des informations sur les fonctionnalités de langage à partir de cette référence à des jetons de langage, des concepts, des types, des expressions et des rubriques de construction prises en charge par le compilateur.
 ms.date: 05/16/2016
-ms.openlocfilehash: bd9894176fa736b9eed939d72972e676e2bd2671
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: d557cc71b34eb7c005eaeb904b01a38b506639fe
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552903"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348196"
 ---
-# <a name="f-language-reference"></a>Référence du langage F#
+# <a name="f-language-reference"></a>Informations de référence sur le langage F#
 
 Cette section est une référence au F# langage, un langage de programmation à plusieurs paradigmes ciblant .net. Le langage F# prend en charge les modèles de programmation fonctionnelle, orientée objet et impérative.
 
@@ -19,7 +19,7 @@ Le tableau suivant liste les rubriques de référence contenant des tableaux de 
 
 |Titre|Description|
 |-----|-----------|
-|[Informations de référence des mots clés](keyword-reference.md)|Contient des liens vers des informations sur tous les mots clés du langage F#.|
+|[Informations de référence sur les mots clés](keyword-reference.md)|Contient des liens vers des informations sur tous les mots clés du langage F#.|
 |[Informations de référence des symboles et opérateurs](./symbol-and-operator-reference/index.md)|Contient un tableau des symboles et des opérateurs utilisés en langage F#.|
 |[Littéraux](literals.md)|Décrit la syntaxe des valeurs littérales en F# et comment spécifier des informations de type pour les littéraux F#.|
 

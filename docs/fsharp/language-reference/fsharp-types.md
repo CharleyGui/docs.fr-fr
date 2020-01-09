@@ -1,13 +1,13 @@
 ---
-title: Types F#
+title: Types
 description: En savoir plus sur les types utilisés dans F# et sur F# la manière dont les types sont nommés et décrits.
 ms.date: 05/16/2016
-ms.openlocfilehash: 8f2526dce46d53a92c01c9347e1ed97681a45ecc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 70d79525318c8d2eb0711d6a1b50be1ac0cf0226
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425304"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348215"
 ---
 # <a name="f-types"></a>Types F#
 
@@ -33,23 +33,23 @@ Dans F# le code, vous devez souvent écrire les noms des types. Chaque type a un
 
 Le tableau suivant indique les aspects de la syntaxe de F# type pour les types.
 
-|Tapez|Syntaxe de type|Exemples|
+|Type|Syntaxe de type|Exemples|
 |----|-----------|--------|
-|type primitif|*nom du type*|`int`<br /><br />`float`<br /><br />`string`|
-|type d’agrégat (Class, structure, Union, record, enum, etc.)|*nom du type*|`System.DateTime`<br /><br />`Color`|
-|abréviation de type|*type-abréviation-Name*|`bigint`|
-|type qualifié complet|*Namespaces. type-name*<br /><br />or<br /><br />*modules. type-nom*<br /><br />or<br /><br />*Namespaces. modules. type-name*|`System.IO.StreamWriter`|
-|array|*nom-type*[] ou<br /><br />tableau *de noms de types*|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
-|tableau à deux dimensions|*nom-type*[,]|`int[,]`<br /><br />`float[,]`|
-|tableau à trois dimensions|*nom-type*[,,]|`float[,,]`|
-|tuple|*type-nom1* &#42; *type-name2* ...|Par exemple, `(1,'b',3)` a le type `int * char * int`|
-|type générique|*type-* *type-generic-type-name*<br /><br />or<br /><br />*generic-type-name*&lt;*de type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
-|type construit (type générique qui a un argument de type spécifique fourni)|*type-argument* *générique-type-nom*<br /><br />or<br /><br />*generic-type-name*&lt;*type-argument-List*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
-|type de fonction qui a un seul paramètre|*Parameter-type1* -&gt; *Return-type*|Une fonction qui prend un `int` et retourne un `string` a le type `int -> string`|
+|type primitif|*type-name*|`int`<br /><br />`float`<br /><br />`string`|
+|type d’agrégat (Class, structure, Union, record, enum, etc.)|*type-name*|`System.DateTime`<br /><br />`Color`|
+|abréviation de type|*type-abbreviation-name*|`bigint`|
+|type qualifié complet|*namespaces.type-name*<br /><br />ou<br /><br />*modules.type-name*<br /><br />ou<br /><br />*namespaces.modules.type-name*|`System.IO.StreamWriter`|
+|Tableau .|*nom-type*[] ou<br /><br />tableau *de noms de types*|`int[]`<br /><br />`array<int>`<br /><br />`int array`|
+|tableau à deux dimensions|*type-name*[,]|`int[,]`<br /><br />`float[,]`|
+|tableau à trois dimensions|*type-name*[,,]|`float[,,]`|
+|tuple|*type-name1* &#42; *type-name2* ...|Par exemple, `(1,'b',3)` a le type `int * char * int`|
+|type générique|*type-* *type-generic-type-name*<br /><br />ou<br /><br />*generic-type-name*&lt;*de type-parameter-list*&gt;|`'a list`<br /><br />`list<'a>`<br /><br />`Dictionary<'key, 'value>`|
+|type construit (type générique qui a un argument de type spécifique fourni)|*type-argument* *générique-type-nom*<br /><br />ou<br /><br />*generic-type-name*&lt;*type-argument-List*&gt;|`int option`<br /><br />`string list`<br /><br />`int ref`<br /><br />`option<int>`<br /><br />`list<string>`<br /><br />`ref<int>`<br /><br />`Dictionary<int, string>`|
+|type de fonction qui a un seul paramètre|*parameter-type1* -&gt; *return-type*|Une fonction qui prend un `int` et retourne un `string` a le type `int -> string`|
 |type de fonction qui a plusieurs paramètres|*Parameter-type1* -&gt; *paramètre-type2* -&gt;...-&gt; *Return-type*|Une fonction qui prend un `int` et un `float` et retourne un `string` a le type `int -> float -> string`|
 |fonction d’ordre supérieur en tant que paramètre|(*fonction-type*)|`List.map` est de type `('a -> 'b) -> 'a list -> 'b list`|
 |délégué|délégué de *type fonction*|`delegate of unit -> int`|
-|type flexible|*nom du type de* #|`#System.Windows.Forms.Control`<br /><br />`#seq<int>`|
+|type flexible|#*type-name*|`#System.Windows.Forms.Control`<br /><br />`#seq<int>`|
 
 ## <a name="related-topics"></a>Rubriques connexes
 

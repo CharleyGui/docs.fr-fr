@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - queues [WCF]
 ms.assetid: 43008409-1bb4-4bd4-85d7-862c8f10ae20
-ms.openlocfilehash: e921084ed28cb4e846cb269e57e58a194e9437a5
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: fbe3a546fd431beb5ddf1d71153d38580a19ecc9
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837335"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348338"
 ---
 # <a name="queues-in-windows-communication-foundation"></a>Files d'attente dans Windows Communication Foundation
 Les rubriques de cette section traitent de la prise en charge de Windows Communication Foundation (WCF) pour les files d’attente. WCF prend en charge la mise en file d’attente en tirant parti de Microsoft Message Queuing (précédemment appelé MSMQ) comme un transport et active les scénarios suivants :  
@@ -50,7 +50,7 @@ Les rubriques de cette section traitent de la prise en charge de Windows Communi
  Explique comment gérer les messages incohérents (messages qui ont dépassé le nombre maximal de tentatives de livraison à l'application réceptrice).  
   
  [Différences entre les fonctionnalités de mise en file d’attente dans Windows Vista, Windows Server 2003 et Windows XP](../../../../docs/framework/wcf/feature-details/diff-in-queue-in-vista-server-2003-windows-xp.md)  
- Résume les différences de la fonctionnalité de files d’attente WCF entre Windows Vista, [!INCLUDE[ws2003](../../../../includes/ws2003-md.md)]et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+ Résume les différences de la fonctionnalité de files d’attente WCF entre Windows Vista, Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
   
  [Sécurisation des messages à l’aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)  
  Décrit comment utiliser la sécurité de transport pour sécuriser des messages mis en file d'attente.  

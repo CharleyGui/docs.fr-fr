@@ -9,12 +9,12 @@ helpviewer_keywords:
 - fonts [WPF], system fonts
 - classes [WPF], SystemFonts
 ms.assetid: 3f46a4ec-2225-408a-8123-8838a8f7057a
-ms.openlocfilehash: 63ba7a6fb1c8776cc35c0e6f07a6b78f5b3d93d0
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 157565ceb9057049aef8b2bf274847d58c6b8dc8
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459510"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559961"
 ---
 # <a name="how-to-use-systemfonts"></a>Guide pratique pour utiliser des SystemFonts
 Cet exemple montre comment utiliser les ressources statiques de la classe <xref:System.Windows.SystemFonts> pour appliquer un style ou personnaliser un bouton.  
@@ -42,7 +42,7 @@ Cet exemple montre comment utiliser les ressources statiques de la classe <xref:
 - [Peindre une zone avec un pinceau système](../graphics-multimedia/how-to-paint-an-area-with-a-system-brush.md)
 - [Utiliser SystemParameters](how-to-use-systemparameters.md)
 - [Utiliser des clés de polices système](how-to-use-system-fonts-keys.md)
-- [Rubriques de guide pratique](resources-how-to-topics.md)
-- [x:Static, extension de balisage](../../xaml-services/x-static-markup-extension.md)
+- [Guides pratiques](resources-how-to-topics.md)
+- [x:Static, extension de balisage](../../../desktop-wpf/xaml-services/xstatic-markup-extension.md)
 - [Ressources XAML](../../../desktop-wpf/fundamentals/xaml-resources-define.md)
 - [Extension de balisage DynamicResource](dynamicresource-markup-extension.md)

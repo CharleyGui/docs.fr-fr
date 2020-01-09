@@ -1,5 +1,5 @@
 ---
-title: Chaînes de format d’énumération - .NET
+title: Chaînes de format d’énumération
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: 316c042b05e505b3e3e857ea41ae808a2a0282f5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c32fd9d59f61b6befe94ff9eb85b0c39ce926adb
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73126420"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348265"
 ---
 # <a name="enumeration-format-strings"></a>Chaînes de format d’énumération
 

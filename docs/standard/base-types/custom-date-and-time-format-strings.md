@@ -1,5 +1,5 @@
 ---
-title: Chaînes de format de date et d’heure personnalisées – .NET
+title: Chaînes de format de date et d’heure personnalisées
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,12 +14,12 @@ helpviewer_keywords:
 - formatting [.NET Framework], time
 - date and time strings
 ms.assetid: 98b374e3-0cc2-4c78-ab44-efb671d71984
-ms.openlocfilehash: ce4aeda8c9fb3c73d133316f985d99e7271411c9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 87436b7d9e2041afb14b146ae0c16201c8593154
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73103769"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348291"
 ---
 # <a name="custom-date-and-time-format-strings"></a>Chaînes de format de date et d’heure personnalisées
 
@@ -169,7 +169,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "ff" dans un
 
 [Retour au tableau](#table)
 
-## <a name="fffSpecifier"></a> Le spécificateur de format personnalisé « fff »
+## <a name="fffSpecifier"></a> Le spécificateur de format personnalisé « fff »
 
 Le spécificateur de format personnalisé "fff" représente les trois chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millisecondes dans une valeur de date et d'heure.
 
@@ -184,15 +184,15 @@ L'exemple suivant inclut le spécificateur de format personnalisé "fff" dans u
 
 Le spécificateur de format personnalisé "ffff" représente les quatre chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millièmes de seconde dans une valeur de date et d'heure.
 
-Bien qu’il soit possible d’afficher les dix millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT version 3.5 (et ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les dix millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT version 3.5 (et ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
-## <a name="fffffSpecifier"></a> Le spécificateur de format personnalisé « fffff »
+## <a name="fffffSpecifier"></a> Le spécificateur de format personnalisé « ffff »
 
 Le spécificateur de format personnalisé "fffff" représente les cinq chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les cent millièmes de seconde dans une valeur de date et d'heure.
 
-Bien qu’il soit possible d’afficher les cent millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les cent millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -200,7 +200,7 @@ Bien qu’il soit possible d’afficher les cent millièmes du composant « seco
 
 Le spécificateur de format personnalisé "ffffff" représente les six chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millionièmes de seconde dans une valeur de date et d'heure.
 
-Bien qu’il soit possible d’afficher les millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -208,7 +208,7 @@ Bien qu’il soit possible d’afficher les millionièmes du composant « second
 
 Le spécificateur de format personnalisé "fffffff" représente les sept chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millionièmes de seconde dans une valeur de date et d'heure.
 
-Bien qu’il soit possible d’afficher les dix millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les dix millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -253,7 +253,7 @@ L'exemple suivant inclut le spécificateur de format personnalisé "FFF" dans u
 
 Le spécificateur de format personnalisé "FFFF" représente les quatre chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et quadruples zéros ne sont pas affichés.
 
-Bien qu’il soit possible d’afficher les dix millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les dix millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -261,7 +261,7 @@ Bien qu’il soit possible d’afficher les dix millièmes du composant « secon
 
 Le spécificateur de format personnalisé "FFFFF" représente les cinq chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les cent millièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et quintuples zéros ne sont pas affichés.
 
-Bien qu’il soit possible d’afficher les cent millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les cent millièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -269,7 +269,7 @@ Bien qu’il soit possible d’afficher les cent millièmes du composant « seco
 
 Le spécificateur de format personnalisé "FFFFFF" représente les six chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les millionièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et sextuples zéros ne sont pas affichés.
 
-Bien qu’il soit possible d’afficher les millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -277,7 +277,7 @@ Bien qu’il soit possible d’afficher les millionièmes du composant « second
 
 Le spécificateur de format personnalisé "FFFFFFF" représente les sept chiffres les plus significatifs de la fraction de seconde ; autrement dit, il représente les dix millionièmes de seconde dans une valeur de date et d'heure. Toutefois, les zéros de fin et septuples zéros ne sont pas affichés.
 
-Bien qu’il soit possible d’afficher les dix millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d'heure dépend de la résolution de l'horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
+Bien qu’il soit possible d’afficher les dix millionièmes du composant « secondes » d’une valeur d’heure, cette valeur n’est pas forcément significative. La précision des valeurs de date et d’heure dépend de la résolution de l’horloge système. Sur les systèmes d’exploitation Windows NT 3.5 (et versions ultérieures) et Windows Vista, la résolution de l’horloge est d’environ 10-15 millisecondes.
 
 [Retour au tableau](#table)
 
@@ -627,7 +627,7 @@ Les caractères suivants dans une chaîne de format de date et d’heure standar
 
 ||||||
 |-|-|-|-|-|
-|F|h|K|M|d|
+|F|H|K|M|d|
 |f|g|h|m|s|
 |t|o|e|%|:|
 |/|"|'|&#92;||
@@ -653,11 +653,11 @@ L’exemple suivant inclut les caractères littéraux « pst » (pour Pacific 
 [!code-csharp[Formatting.DateAndTime.Custom#22](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.DateAndTime.Custom/cs/LiteralsEx3.cs#22)]
 [!code-vb[Formatting.DateAndTime.Custom#22](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.DateAndTime.Custom/vb/LiteralsEx3.vb#22)]
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
 ### <a name="UsingSingleSpecifiers"></a> Utiliser des spécificateurs de format personnalisés uniques
 
-Une chaîne de format de date et d'heure personnalisée se compose d'au moins deux caractères. Les méthodes de mise en forme de la date et de l'heure interprètent toute chaîne à un caractère comme une chaîne de format de date et d'heure standard. Si elles ne reconnaissent pas le caractère comme un spécificateur de format valide, elles lèvent une <xref:System.FormatException>. Par exemple, une chaîne de format qui se compose uniquement du spécificateur "h" est interprétée comme une chaîne de format de date et d'heure standard. Cependant, dans ce cas particulier, une exception est levée, car il n'existe pas spécificateur de format de date et d'heure "h" standard.
+Une chaîne de format de date et d'heure personnalisée se compose d'au moins deux caractères. Les méthodes de mise en forme de la date et de l'heure interprètent toute chaîne à un caractère comme une chaîne de format de date et d'heure standard. Si elles ne reconnaissent pas le caractère comme un spécificateur de format valide, elles lèvent une <xref:System.FormatException>. Par exemple, une chaîne de format qui se compose uniquement du spécificateur "h" est interprétée comme une chaîne de format de date et d'heure standard. Cependant, dans ce cas particulier, une exception est levée, car il n'existe pas spécificateur de formatde date et d'heure "h" standard.
 
 Pour utiliser tout spécificateur de format de date et d'heure personnalisé comme seul spécificateur dans une chaîne de format (autrement dit, utiliser le spécificateur de format personnalisé "d", "f", "F", "g", "h", "H", "K", "m", "M", "s", "t", "y", "z", ":" ou "/" tout seul), incluez un espace avant ou après le spécificateur, ou incluez un spécificateur de format pourcentage ("%") avant le spécificateur de date et d'heure personnalisé unique.
 
@@ -673,7 +673,7 @@ Les caractères "d", "f", "F", "g", "h", "H", "K", "m", "M", "s", "t", "y", "z"
 Pour inclure une barre oblique inverse dans une chaîne de résultat, vous devez la placer dans une séquence d'échappement avec une autre barre oblique inverse (`\\`).
 
 > [!NOTE]
-> Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.
+> Certains compilateurs, tels que les compilateurs C++ et C#, peuvent également interpréter une barre oblique inverse unique comme un caractère d'échappement. Pour garantir l'interprétation correcte d'une chaîne lors de la mise en forme, vous pouvez utiliser le caractère littéral de chaîne textuel(le caractère @) avant la chaîne en C#, ou ajouter une autre barre oblique inverse avant chaque barre oblique inverse en C# et C++. L'exemple C# suivant illustre ces deux approches.
 
 L'exemple suivant utilise le caractère d'échappement pour empêcher l'opération de mise en forme d'interpréter les caractères "h" et "m" comme des spécificateurs de format.
 
@@ -684,7 +684,7 @@ L'exemple suivant utilise le caractère d'échappement pour empêcher l'opérati
 
 Les paramètres **Options régionales et linguistiques** du Panneau de configuration influencent la chaîne de résultat produite par une opération de mise en forme qui inclut une grande partie des spécificateurs de format de date et d’heure personnalisés. Ces paramètres sont utilisés pour initialiser l'objet <xref:System.Globalization.DateTimeFormatInfo> associé à la culture du thread en cours qui fournit des valeurs utilisées pour indiquer la mise en forme. Les ordinateurs qui utilisent des paramètres différents génèrent des chaînes de résultat différentes.
 
-De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo>. Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d’un système.
+De plus, si vous utilisez le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%29?displayProperty=nameWithType> pour instancier un nouvel objet <xref:System.Globalization.CultureInfo> qui représente la même culture que la culture système en cours, toutes les personnalisations établies par l'élément **Options régionales et linguistiques** du Panneau de configuration seront appliquées au nouvel objet <xref:System.Globalization.CultureInfo> . Vous pouvez utiliser le constructeur <xref:System.Globalization.CultureInfo.%23ctor%28System.String%2CSystem.Boolean%29?displayProperty=nameWithType> pour créer un objet <xref:System.Globalization.CultureInfo> qui ne reflète pas les personnalisations d’un système.
 
 ### <a name="datetimeformatinfo-properties"></a>Propriétés DateTimeFormatInfo
 

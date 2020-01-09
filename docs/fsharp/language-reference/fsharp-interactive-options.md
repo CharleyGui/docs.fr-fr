@@ -1,13 +1,13 @@
 ---
-title: Options F# Interactive
+title: Options interactives
 description: En savoir plus sur les options de ligne de F# commande prises en charge par Interactive, FSI. exe.
 ms.date: 05/16/2016
-ms.openlocfilehash: e4ce0f3f76a7be803942e4b403e5fa6543a09e54
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: cceb8fb50434f3525ebb2ede16e84720d10d320c
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425317"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75348220"
 ---
 # <a name="f-interactive-options"></a>Options F# Interactive
 
@@ -39,24 +39,24 @@ Quand des listes apparaissent F# dans des arguments d’option interactive, les 
 |**--CodePage :&lt;int&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--consolecolors**[ **+** &#124; **-** ]|Génère des messages d’avertissement et d’erreur en couleur.|
 |**--crossoptimize**[ **+** &#124; **-** ]|Activez ou désactivez les optimisations entre modules.|
-|**--Debug**[ **+** &#124; **-** ]<br /><br />**--Debug :** [**Full**&#124;**pdbonly**&#124;**portable**&#124;**Embedded**]<br /><br />**-g**[ **+** &#124; **-** ]<br /><br />**-g :** [**Full**&#124;**pdbonly**&#124;**portable**&#124;**Embedded**]|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
+|**--debug**[ **+** &#124; **-** ]<br /><br />**--debug:** [**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]<br /><br />**-g**[ **+** &#124; **-** ]<br /><br />**-g:** [**full**&#124;**pdbonly**&#124;**portable**&#124;**embedded**]|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--définir :&lt;chaîne&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--déterministe**[ **+** &#124; **-** ]|Produit un assembly déterministe (y compris le GUID de la version du module et l’horodateur).|
+|**--deterministic**[ **+** &#124; **-** ]|Produit un assembly déterministe (y compris le GUID de la version du module et l’horodateur).|
 |**--exec**|Indique à F# interactive de quitter après le chargement des fichiers ou d’exécuter le fichier de script spécifié sur la ligne de commande.|
 |**--fullpaths**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--GUI**[ **+** &#124; **-** ]|Active ou désactive la boucle d’événements Windows Forms. Les styles sont activés par défaut.|
-|**--aide**<br /><br />**-?**|Utilisé pour afficher la syntaxe de la ligne de commande et une brève description de chaque option.|
+|**--gui**[ **+** &#124; **-** ]|Active ou désactive la boucle d’événements Windows Forms. Les styles sont activés par défaut.|
+|**--help**<br /><br />**-?**|Utilisé pour afficher la syntaxe de la ligne de commande et une brève description de chaque option.|
 |**--lib :&lt;dossier-liste&gt;**<br /><br />**-I :&lt;dossier-liste&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--Load :&lt;nom de fichier&gt;**|Compile le code source donné au démarrage et charge les constructions compilées F# dans la session. Si la source cible contient des directives de script telles que **#use** ou **#load**, vous devez utiliser **--use** ou **#use** à la place de **--Load** ou **#load**.|
 |**--mlcompatibility**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--noframework**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez [Options du compilateur](compiler-options.md)|
 |**--nologo**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--nowarn :&lt;liste d’avertissements&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
+|**--nowarn:&lt;warning-list&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--optimize**[ **+** &#124; **-** ]|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--preferreduilang :&lt;lang&gt;**| Spécifie le nom de culture de la langue de sortie par défaut (par exemple, es-ES, ja-JP). |
+|**--preferreduilang:&lt;lang&gt;**| Spécifie le nom de culture de la langue de sortie par défaut (par exemple, es-ES, ja-JP). |
 |**--quiet**|Supprime F# la sortie interactive du flux **stdout** .|
-|**--Quotations-débogage**|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de F# quotation et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d' F# un nœud d’arborescence d’expression. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
-|**--ReadLine**[ **+** &#124; **-** ]|Activez ou désactivez la saisie semi-automatique par tabulation en mode interactif.|
+|**--quotations-debug**|Spécifie que des informations de débogage supplémentaires doivent être émises pour les expressions dérivées des littéraux de F# quotation et des définitions réfléchies. Les informations de débogage sont ajoutées aux attributs personnalisés d' F# un nœud d’arborescence d’expression. Consultez [Quotations de code](code-quotations.md) et [expr. CustomAttributes](https://msdn.microsoft.com/library/eb89943f-5f5b-474e-b125-030ca412edb3).|
+|**--readline**[ **+** &#124; **-** ]|Activez ou désactivez la saisie semi-automatique par tabulation en mode interactif.|
 |**--Reference :&lt;nom de fichier&gt;**<br /><br />**-r :&lt;nom de fichier&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--shadowcopyreferences**[ **+** &#124; **-** ]|Empêche le verrouillage des références par le F# processus interactif.|
 |**--simpleresolution**|Résout les références d’assembly à l’aide de règles basées sur le répertoire plutôt que sur la résolution MSBuild.|
@@ -66,7 +66,7 @@ Quand des listes apparaissent F# dans des arguments d’option interactive, les 
 |**--utf8output**|Identique à l’option de compilateur FSC. exe. Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--Warn :&lt;&gt; au niveau de l’avertissement**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 |**--warnaserror**[ **+** &#124; **-** ]|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
-|**--warnaserror**[ **+** &#124; **-** ] : **&lt;int-list&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
+|**--warnaserror**[ **+** &#124; **-** ]: **&lt;int-list&gt;**|Identique à l’option de compilateur **FSC. exe** . Pour plus d’informations, consultez l’article [Options du compilateur](compiler-options.md).|
 
 ## <a name="related-topics"></a>Rubriques connexes
 

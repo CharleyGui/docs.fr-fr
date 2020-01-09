@@ -3,12 +3,12 @@ title: Bien démarrer avec l’analyse de la syntaxe (API Roslyn)
 description: Une introduction à la façon de parcourir et d’interroger les arborescences de syntaxe.
 ms.date: 02/05/2018
 ms.custom: mvc
-ms.openlocfilehash: e377fe10e094e958627c3503fc39b7e2d02b3d7a
-ms.sourcegitcommit: e614e0f3b031293e4107f37f752be43652f3f253
-ms.translationtype: HT
+ms.openlocfilehash: d4163e8aadf577a5a5cbed225b26a0ec8390277e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/26/2018
-ms.locfileid: "42931757"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347000"
 ---
 # <a name="get-started-with-syntax-analysis"></a>Bien démarrer avec l’analyse de la syntaxe
 
@@ -51,7 +51,7 @@ Une arborescence de syntaxe est une structure de données utilisée par les comp
 
 Les quatre principaux blocs de construction des arborescences de syntaxe sont :
 
-* La classe <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, une instance de celle-ci représentant une arborescence d’analyse entière. <xref:Microsoft.CodeAnalysis.SyntaxTree> est une classe abstraite avec des dérivés spécifiques à un langage. Vous utilisez les méthodes d’analyse de la classe <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> (ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>) pour analyser du texte dans C# ou VB.
+* La classe <xref:Microsoft.CodeAnalysis.SyntaxTree?displayProperty=nameWithType>, une instance de celle-ci représentant une arborescence d’analyse entière. <xref:Microsoft.CodeAnalysis.SyntaxTree> est une classe abstraite avec des dérivés spécifiques à un langage. Vous utilisez les méthodes parse de la classe <xref:Microsoft.CodeAnalysis.CSharp.CSharpSyntaxTree?displayProperty=nameWithType> (ou <xref:Microsoft.CodeAnalysis.VisualBasic.VisualBasicSyntaxTree?displayProperty=nameWithType>) pour analyser le texte C# dans ou Visual Basic.
 * La classe <xref:Microsoft.CodeAnalysis.SyntaxNode?displayProperty=nameWithType>, dont les instances représentent des constructions syntaxiques, comme des déclarations, des instructions, des clauses et des expressions.
 * La structure <xref:Microsoft.CodeAnalysis.SyntaxToken?displayProperty=nameWithType>, qui représente un mot clé, un identificateur, un opérateur ou un signe de ponctuation individuel.
 * Enfin, la structure <xref:Microsoft.CodeAnalysis.SyntaxTrivia?displayProperty=nameWithType>, qui représente les éléments d’information non significatifs du point de vue syntaxique, comme l’espace entre des jetons, des directives de prétraitement et des commentaires.
@@ -78,7 +78,7 @@ Vous pouvez trouver le code complet de cet exemple dans [notre dépôt GitHub](h
 Créez un projet C# **Outil d’analyse du code autonome** :
 
 * Dans Visual Studio, choisissez **Fichier** > **Nouveau** > **Projet** pour afficher la boîte de dialogue Nouveau projet.
-* Sous **Visual C#** > **Extensibilité**, choisissez **Outil d’analyse du code autonome**.
+* Sous **Visual C#**  > **Extensibilité**, choisissez **Outil d’analyse du code autonome**.
 * Nommez votre projet « **SyntaxTreeManualTraversal** » et cliquez sur OK.
 
 Vous allez analyser le programme simple « Hello World! » montré précédemment.
