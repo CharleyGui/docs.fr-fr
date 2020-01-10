@@ -3,13 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.custom: seodec18
-ms.openlocfilehash: 6ac63f18bd42193e964aaeae3c54c887c9c63163
-ms.sourcegitcommit: 8f95d3a37e591963ebbb9af6e90686fd5f3b8707
-ms.translationtype: HT
+ms.openlocfilehash: c31590cf34990867b81af4d073846c2952928798
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/23/2019
-ms.locfileid: "56747409"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714132"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -31,7 +30,7 @@ Le nouveau format, \*.csproj, est un format basé sur XML. L’exemple suivant m
 
 ## <a name="common-top-level-properties"></a>Propriétés communes de niveau supérieur
 
-### <a name="name"></a>name
+### <a name="name"></a>nom
 
 ```json
 {
@@ -53,7 +52,7 @@ Par défaut, le nom de fichier du projet spécifie également la valeur des prop
 `<AssemblyName>` a une valeur différente de `<PackageId>` si la propriété `buildOptions\outputName` est définie dans project.json.
 Pour plus d’informations, consultez [Autres options communes de génération](#other-common-build-options).
 
-### <a name="version"></a>version
+### <a name="version"></a>Version de
 
 ```json
 {
@@ -562,7 +561,7 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 </PropertyGroup>
 ```
 
-## <a name="shared"></a>partagés
+## <a name="shared"></a>partagées
 
 ```json
 {
@@ -573,7 +572,7 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 Non pris en charge dans csproj. Vous devez inclure à la place des fichiers de contenu dans votre fichier *.nuspec*.
 Pour plus d’informations, consultez [Inclusion de fichiers de contenu](/nuget/schema/nuspec#including-content-files).
 
-## <a name="files"></a>fichiers 
+## <a name="files"></a>fichiers
 
 Dans *project.json*, la build et le pack peuvent être étendus pour effectuer la compilation et l’incorporation à partir de dossiers différents.
 Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbuild/common-msbuild-project-items). L’exemple suivant illustre une conversion courante :

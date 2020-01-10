@@ -1,16 +1,15 @@
 ---
 title: Membres expression-bodied - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 02/06/2019
 helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
-ms.openlocfilehash: 45dcc58b252963e80798ba86ca5c4f461d493fac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f212bb707d3dd2d4a7cc917d335a83cff01ed0cf
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120148"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711985"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Membres expression-bodied (Guide de programmation C#)
 
@@ -24,7 +23,7 @@ où *expression* est une expression valide.
 
 La prise en charge des définitions de corps d’expression a été introduite pour les méthodes et les propriétés en lecture seule dans C# 6 et a été étendue dans C# 7.0. Vous pouvez utiliser des définitions de corps d’expression avec les membres de type listés dans le tableau suivant :
 
-|Membre  |Prise en charge à compter de |
+|Member  |Prise en charge à compter de |
 |---------|---------|
 |[Méthode](#methods)  |C# 6 |
 |[Propriété en lecture seule](#read-only-properties)   |C# 6  |

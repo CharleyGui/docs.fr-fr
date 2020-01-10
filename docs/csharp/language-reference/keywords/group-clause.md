@@ -1,6 +1,5 @@
 ---
 title: group, clause - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - group
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - group keyword [C#]
 - group clause [C#]
 ms.assetid: c817242e-b12c-4baa-a57e-73ee138f34d1
-ms.openlocfilehash: dd14a4baf9967f41690e7978b8b6cf57c9275e36
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 75a366ec24e4e48af7e87d3372950aad8d76435b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428503"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713471"
 ---
 # <a name="group-clause-c-reference"></a>group, clause (Référence C#)
 
@@ -54,7 +53,7 @@ L’exemple suivant illustre l’utilisation d’une valeur booléenne pour une 
 
 ### <a name="grouping-by-numeric-range"></a>Regroupement par plage numérique
 
-L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles. Notez l’utilisation de [let](let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`. Pour plus d’informations sur la façon d’utiliser en toute sécurité des méthodes dans des expressions de requête, consultez [Guide pratique pour gérer des exceptions dans des expressions de requête](../../linq/handle-exceptions-in-query-expressions.md).
+L’exemple suivant utilise une expression pour créer des clés de groupes numériques qui représentent une plage de centiles. Notez l’utilisation de [let](let-clause.md) comme emplacement pratique pour stocker un résultat d’appel de méthode, qui vous évite d’avoir à appeler deux fois la méthode dans la clause `group`. Pour plus d’informations sur la façon d’utiliser des méthodes en toute sécurité dans les expressions de requête, consultez [gérer les exceptions dans les expressions de requête](../../linq/handle-exceptions-in-query-expressions.md).
 
 [!code-csharp[cscsrefQueryKeywords#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Group.cs#15)]
 
@@ -66,7 +65,7 @@ Utilisez une clé composite quand vous souhaitez regrouper des éléments en fon
 group person by new {name = person.surname, city = person.city};
 ```
 
-Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Comment : interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
+Utilisez un type nommé si vous devez passer la variable de requête à une autre méthode. Créez une classe spéciale à l’aide de propriétés implémentées automatiquement pour les clés, puis substituez les méthodes <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A>. Vous pouvez également utiliser un struct, auquel cas vous n’êtes pas obligé de substituer ces méthodes. Pour plus d’informations, consultez [comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement](../../programming-guide/classes-and-structs/how-to-implement-a-lightweight-class-with-auto-implemented-properties.md) et [Comment interroger des fichiers dupliqués dans une arborescence de répertoires](../../programming-guide/concepts/linq/how-to-query-for-duplicate-files-in-a-directory-tree-linq.md). Ce dernier article contient un exemple de code qui montre comment utiliser une clé composite avec un type nommé.
 
 ## <a name="example"></a>Exemple
 

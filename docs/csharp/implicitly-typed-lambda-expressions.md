@@ -4,12 +4,12 @@ description: Découvrez pourquoi vous ne pouvez pas utiliser une déclaration de
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: a3851da9-e018-4389-9922-233db7d0f841
-ms.openlocfilehash: c6b0f2666a5c67ce8c89222da5959304ecb8fb93
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: cf16bb4d9ed27f536ae163284f36a0f305877139
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039127"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713885"
 ---
 # <a name="implicitly-typed-lambda-expressions"></a>Expressions lambda implicitement typées
 
@@ -18,4 +18,4 @@ car cela crée un problème de logique circulaire pour le compilateur. La décla
 
 Les deux côtés de l’assignation ne peuvent pas indiquer au compilateur d’examiner l’objet situé de l’autre côté de l’opérateur d’assignation et de vérifier si le type correspond.
 
-Pour plus d’informations sur ce comportement du langage C#, lisez [cet article](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/type-inference.pdf) (téléchargement PDF)
+Vous pouvez obtenir plus de détails sur la raison C# pour laquelle le langage spécifie ce comportement en lisant [cet article](https://download.microsoft.com/download/5/4/B/54B83DFE-D7AA-4155-9687-B0CF58FF65D7/type-inference.pdf) (téléchargement PDF).

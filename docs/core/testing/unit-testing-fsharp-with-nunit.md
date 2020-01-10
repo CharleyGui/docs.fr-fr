@@ -5,13 +5,12 @@ author: rprouse
 ms.date: 10/04/2018
 dev_langs:
 - fsharp
-ms.custom: seodec18
-ms.openlocfilehash: 1a5320f47b880c2d84132d70e1d0be19d6de486b
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 3347e5b90c31589e9a0f99ac0d9298927a717f56
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71116225"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715445"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-nunit"></a>Effectuer des tests unitaires des bibliothèques F# dans .NET Core à l’aide de dotnet test et de NUnit
 
@@ -19,7 +18,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 
 [!INCLUDE [testing an ASP.NET Core project from .NET Core](../../../includes/core-testing-note-aspnet.md)]
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 - [Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure).
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -44,7 +43,7 @@ Ensuite, créez un répertoire *MathService*. La structure de répertoire et de 
 Faites de *MathService* le répertoire actif et exécutez la commande suivante pour créer le projet source :
 
 ```dotnetcli
-dotnet new classlib -lang F#
+dotnet new classlib -lang "F#"
 ```
 
 Créez une implémentation défaillante du service Math :
@@ -76,7 +75,7 @@ Ensuite, créez le répertoire *MathService.Tests*. La structure du répertoire 
 Faites de *MathService.Tests* le répertoire actif et créez un projet avec la commande suivante :
 
 ```dotnetcli
-dotnet new nunit -lang F#
+dotnet new nunit -lang "F#"
 ```
 
 Vous obtenez un projet de test qui utilise NUnit comme framework de test. Le modèle généré configure le Test Runner dans *MathServiceTests.fsproj* :
@@ -89,7 +88,7 @@ Vous obtenez un projet de test qui utilise NUnit comme framework de test. Le mod
 </ItemGroup>
 ```
 
-Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` dans l’étape précédente a ajouté NUnit et l’adaptateur de test NUnit. Maintenant, ajoutez la bibliothèque de classes `MathService` en tant qu’une autre dépendance au projet. Utilisez la commande [`dotnet add reference`](../tools/dotnet-add-reference.md) :
+Le projet de test a besoin d’autres packages pour créer et exécuter des tests unitaires. `dotnet new` dans l’étape précédente a ajouté NUnit et l’adaptateur de test NUnit. Maintenant, ajoutez la bibliothèque de classes `MathService` en tant qu’une autre dépendance au projet. Utiliser la commande `dotnet add reference` :
 
 ```dotnetcli
 dotnet add reference ../MathService/MathService.fsproj
@@ -138,7 +137,7 @@ type TestClass () =
      member this.FailEveryTime() = Assert.True(false)
 ```
 
-L’attribut `[<TestFixture>]` désigne une classe qui contient des tests. L’attribut `[<Test>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *unit-testing-with-fsharp*, exécutez [`dotnet test`](../tools/dotnet-test.md) pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+L’attribut `[<TestFixture>]` désigne une classe qui contient des tests. L’attribut `[<Test>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *Unit-Testing-with-FSharp* , exécutez `dotnet test` pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner NUnit contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
 
 Ces deux tests illustrent les tests de réussite et d’échec les plus basiques. `My test` réussit et `Fail every time` échoue. À présent, créez un test pour la méthode `squaresOfOdds`. La méthode `squaresOfOdds` retourne une séquence des carrés de toutes les valeurs de nombre entier impair qui font partie de la séquence d’entrée. Au lieu d’essayer d’écrire toutes ces fonctions simultanément, vous pouvez créer de manière itérative des tests qui valident les fonctionnalités. La réussite de chaque test correspond à la création de la fonctionnalité nécessaire pour la méthode.
 
@@ -210,3 +209,8 @@ let squaresOfOdds xs =
 ```
 
 Vous avez créé une petite bibliothèque et un ensemble de tests unitaires pour cette bibliothèque. Vous avez structuré la solution afin que l’ajout de nouveaux packages et tests fasse partie du flux de travail normal. Vous avez concentré la plupart de votre temps et de vos efforts sur la résolution des objectifs de l’application.
+
+## <a name="see-also"></a>Voir aussi
+
+- [dotnet add reference](../tools/dotnet-add-reference.md)
+- [dotnet test](../tools/dotnet-test.md)

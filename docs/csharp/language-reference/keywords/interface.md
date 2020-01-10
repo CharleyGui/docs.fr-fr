@@ -1,18 +1,17 @@
 ---
 title: interface - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - interface_CSharpKeyword
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 058d6b96e96a3237ebac2ca079807fd154715d68
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 19ca4b8a490dc85de0d0e2be6d3ca8fa7982fc14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608653"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713440"
 ---
 # <a name="interface-c-reference"></a>interface (référence C#)
 
@@ -20,7 +19,7 @@ Une interface contient uniquement des signatures de [méthodes](../../programmin
 
 Pour plus d’informations et d’exemples, consultez [Interfaces](../../programming-guide/interfaces/index.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 [!code-csharp[csrefKeywordsTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#14)]
 
@@ -42,7 +41,7 @@ Une classe qui implémente une interface peut implémenter explicitement les mem
 
 Pour plus d’informations et plus d’exemples sur l’implémentation explicite des interfaces, consultez [Implémentation d’interface explicite](../../programming-guide/interfaces/explicit-interface-implementation.md).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant montre une implémentation d’interface. Dans cet exemple, l’interface contient la déclaration de propriété, et la classe contient l’implémentation. Toutes les instances d’une classe qui implémentent `IPoint` ont les propriétés entières `x` et `y`.
 
@@ -61,6 +60,6 @@ L’exemple suivant montre une implémentation d’interface. Dans cet exemple, 
 - [Interfaces](../../programming-guide/interfaces/index.md)
 - [Utilisation de propriétés](../../programming-guide/classes-and-structs/using-properties.md)
 - [Utilisation d’indexeurs](../../programming-guide/indexers/using-indexers.md)
-- [class](class.md)
+- [classe](class.md)
 - [struct](struct.md)
 - [Interfaces](../../programming-guide/interfaces/index.md)

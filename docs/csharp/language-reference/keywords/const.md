@@ -1,6 +1,5 @@
 ---
 title: const, mot clé - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - const_CSharpKeyword
@@ -8,16 +7,16 @@ f1_keywords:
 helpviewer_keywords:
 - const keyword [C#]
 ms.assetid: 79eb447c-117b-4418-933f-97c50aa472db
-ms.openlocfilehash: 81660e6a56efe5737600122d4ff7e182654f9a9f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 812aeb331b6dd333075d19076a896246ecc5b374
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422894"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713674"
 ---
 # <a name="const-c-reference"></a>const (référence C#)
 
-Vous utilisez le mot clé `const` pour déclarer un champ constant ou un élément local constant. Les champs et les éléments locaux constants ne sont pas des variables et ne peuvent pas être modifiés. Les constantes peuvent être des chiffres, des valeurs booléennes, des chaînes ou une référence null. Ne créez pas une constante pour représenter des informations qui doivent être modifiées. Par exemple, n'utilisez pas un champ constant pour stocker le prix d'un service, le numéro de version du produit ou le nom de la marque d'une société. Ces valeurs peuvent changer dans le temps, et dans la mesure où les compilateurs propagent les constantes, le code compilé avec vos bibliothèques devra être recompilé pour refléter ces modifications. Consultez également le mot clé [readonly](./readonly.md). Exemple :
+Vous utilisez le mot clé `const` pour déclarer un champ constant ou un élément local constant. Les champs et les éléments locaux constants ne sont pas des variables et ne peuvent pas être modifiés. Les constantes peuvent être des chiffres, des valeurs booléennes, des chaînes ou une référence null. Ne créez pas une constante pour représenter des informations qui doivent être modifiées. Par exemple, n'utilisez pas un champ constant pour stocker le prix d'un service, le numéro de version du produit ou le nom de la marque d'une société. Ces valeurs peuvent changer dans le temps, et dans la mesure où les compilateurs propagent les constantes, le code compilé avec vos bibliothèques devra être recompilé pour refléter ces modifications. Consultez également le mot clé [readonly](./readonly.md). Par exemple :
 
 ```csharp
 const int X = 0;
@@ -65,7 +64,7 @@ Cet exemple montre comment utiliser des constantes en tant que variables locales
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Modificateurs](index.md)

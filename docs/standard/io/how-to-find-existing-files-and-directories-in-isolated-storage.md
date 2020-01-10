@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé'
+title: 'Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -17,16 +17,14 @@ helpviewer_keywords:
 - locating directories in isolated storage file
 - storing data using isolated storage, finding files and directories
 ms.assetid: eb28458a-6161-4e7a-9ada-30ef93761b5c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 277f7d562d5e345556a9047f6e4bf2b60eaef462
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: dfebcc9acf0b699f898c106921d15ce0294bc5d2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646709"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707131"
 ---
-# <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>Procédure : rechercher des fichiers et des répertoires existants dans un stockage isolé
+# <a name="how-to-find-existing-files-and-directories-in-isolated-storage"></a>Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé
 
 Pour rechercher un répertoire dans un stockage isolé, utilisez la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetDirectoryNames%2A?displayProperty=nameWithType>. Cette méthode prend une chaîne qui représente un modèle de recherche. Vous pouvez utiliser des caractères génériques à caractère unique (?) et à caractères multiples (\*) dans le modèle de recherche, mais les caractères génériques doivent apparaître dans la partie finale du nom. Par exemple, `directory1/*ect*` est une chaîne de recherche valide, mais `*ect*/directory2` ne l’est pas.  
   

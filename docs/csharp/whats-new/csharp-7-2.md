@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.2
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.2.
 ms.date: 08/16/2017
-ms.openlocfilehash: d559f07c501b2a79472d01e2815b50cd8f0f57a5
-ms.sourcegitcommit: 8b8dd14dde727026fd0b6ead1ec1df2e9d747a48
+ms.openlocfilehash: 7febefb81bbea6f24690adb05488ad6a18bbf552
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71332319"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694593"
 ---
 # <a name="whats-new-in-c-72"></a>Nouveautés de C# 7.2
 
@@ -57,7 +57,7 @@ Les appels de méthode peuvent désormais utiliser des arguments nommés qui pr�
 
 L’implémentation de la prise en charge des séparateurs numériques dans C# 7.0 n’autorisait pas `_` comme premier caractère de la valeur littérale. Les littéraux numériques binaires et hexadécimaux peuvent maintenant commencer par un caractère `_`.
 
-Exemple :
+Par exemple :
 
 ```csharp
 int binaryValue = 0b_0101_0101;

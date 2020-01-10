@@ -5,14 +5,12 @@ helpviewer_keywords:
 - strong-named assemblies, about strong-named assemblies
 - assemblies [.NET Framework], strong-named
 ms.assetid: d4a80263-f3e0-4d81-9b61-f0cbeae3797b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 67beeba6ce33fb1a8c3d02337d98282ccf30341a
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 12b8df3195b2708e4556d4f8065227054db9eb14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991295"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711569"
 ---
 # <a name="strong-named-assemblies"></a>Assemblys avec nom fort
 
@@ -22,7 +20,7 @@ Attribuer un nom fort à un assembly permet de lui créer une identité unique p
 
 Un assembly avec nom fort est généré à l'aide de la clé privée qui correspond à la clé publique distribuée avec l'assembly et de l'assembly lui-même. L'assembly inclut le manifeste d'assembly, qui contient les noms et les hachages de tous les fichiers qui le composent. Les assemblys portant le même nom fort doivent être identiques.
 
-Pour attribuer un nom fort à un assembly, vous pouvez utiliser Visual Studio ou un outil en ligne de commande. Pour plus d’informations, consultez [Guide pratique pour Signer un assembly avec un nom](sign-strong-name.md) fort ou [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md).
+Pour attribuer un nom fort à un assembly, vous pouvez utiliser Visual Studio ou un outil en ligne de commande. Pour plus d’informations, consultez [Comment : signer un assembly avec un nom fort](sign-strong-name.md) ou [sn. exe (Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md).
 
 Quand vous créez un assembly avec nom fort, il contient son nom de texte simple, son numéro de version, d'éventuelles informations sur sa culture, une signature numérique et la clé publique qui correspond à la clé privée utilisée pour la signature.
 
@@ -48,6 +46,6 @@ Si vous êtes un développeur Open source et que vous souhaitez obtenir les avan
 ## <a name="see-also"></a>Voir aussi
 
 - [Global assembly cache](../../framework/app-domains/gac.md)
-- [Guide pratique pour signer un assembly avec un nom fort](sign-strong-name.md)
+- [Comment : signer un assembly avec un nom fort](sign-strong-name.md)
 - [SN. exe (outil Strong Name Tool)](../../framework/tools/sn-exe-strong-name-tool.md)
 - [Créer et utiliser des assemblys avec nom fort](create-use-strong-named.md)

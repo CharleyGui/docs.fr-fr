@@ -1,17 +1,16 @@
 ---
 title: Types anonymes - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#]
 - C# Language, anonymous types
 ms.assetid: 59c9d7a4-3b0e-475e-b620-0ab86c088e9b
-ms.openlocfilehash: c6eff1cae79e7b555c5a41d10712b4f3022ff793
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 81d97748383aa0585185176a366e6325f51688d2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419488"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714990"
 ---
 # <a name="anonymous-types-c-programming-guide"></a>Types anonymes (Guide de programmation C#)
 
@@ -60,5 +59,5 @@ var anonArray = new[] { new { name = "apple", diam = 4 }, new { name = "grape", 
 
 - [Guide de programmation C#](../index.md)
 - [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md)
-- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)
+- [Bien démarrer avec LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)
 - [LINQ en C#](../../linq/index.md)

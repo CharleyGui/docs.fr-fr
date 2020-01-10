@@ -2,13 +2,13 @@
 title: Créer une bibliothèque de classes .NET Standard dans Visual Studio
 description: Découvrez comment créer une bibliothèque de classes .NET Standard écrite dans C# ou Visual Basic à l’aide de Visual Studio
 ms.date: 12/09/2019
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 160993a4dd40356cde541616a1f15f87712e8ae2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: 748a1499e0c3a4a41613a69b715dbcfbd585bfe3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343100"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714018"
 ---
 # <a name="build-a-net-standard-library-in-visual-studio"></a>Créer une bibliothèque de .NET Standard dans Visual Studio
 

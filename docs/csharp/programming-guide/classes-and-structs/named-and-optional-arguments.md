@@ -1,6 +1,5 @@
 ---
 title: Arguments nommés et facultatifs - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - namedParameter_CSharpKeyword
@@ -14,12 +13,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 30475b637202d3b614ac968897e467956bc78646
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 6afa8a2bd2dfee8d7c36b58342036d18241317a8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970506"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714800"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Arguments nommés et facultatifs (Guide de programmation C#)
 C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vous permettent de spécifier un argument pour un paramètre particulier en associant l’argument avec le nom du paramètre plutôt qu’avec la position du paramètre dans la liste de paramètres. Les *arguments facultatifs* vous permettent d’omettre des arguments pour certains paramètres. Les deux techniques peuvent être utilisées avec les méthodes, les indexeurs, les constructeurs et les délégués.  
@@ -70,7 +69,7 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
   
 - une expression constante ;  
   
-- une expression de la forme `new ValType()`, où `ValType` est un type valeur (par exemple, [enum](../../language-reference/keywords/enum.md) ou [struct](./structs.md)) ;  
+- une expression de la forme `new ValType()`, où `ValType` est un type valeur (par exemple, [enum](../../language-reference/builtin-types/enum.md) ou [struct](structs.md)) ;  
   
 - une expression de la forme [default(ValType)](../../language-reference/operators/default.md), où `ValType` est un type valeur.  
   
@@ -113,7 +112,7 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Pour plus d’informations et d’exemples, consultez [comment utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) et [Comment : accéder aux objets Office C# Interop à l’aide des fonctionnalités visuelles](../interop/how-to-access-office-onterop-objects.md).  
+ Pour plus d’informations et d’exemples, consultez [comment utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) et [Comment accéder aux objets C# Office Interop à l’aide des fonctionnalités](../interop/how-to-access-office-onterop-objects.md)de.  
   
 ## <a name="overload-resolution"></a>Overload Resolution  
  L’utilisation d’arguments nommés et facultatifs affecte la résolution de surcharge des manières suivantes :  
@@ -129,7 +128,7 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Comment utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Utilisation de constructeurs](./using-constructors.md)
 - [Utilisation d’indexeurs](../indexers/using-indexers.md)

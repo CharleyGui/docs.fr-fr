@@ -1,17 +1,16 @@
 ---
 title: Expressions - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 05/11/2017
 helpviewer_keywords:
 - expressions [C#]
 - C# language, expressions
 ms.assetid: c7d8feb0-0e58-4f94-8bf6-4d070550a832
-ms.openlocfilehash: e08220362c0acec6060ade75131e34a6b3fb7390
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4bbee8f15c2591e8b172df9a6759449d48697804
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417696"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75699091"
 ---
 # <a name="expressions-c-programming-guide"></a>Expressions (Guide de programmation C#)
 
@@ -61,7 +60,7 @@ System.Convert.ToInt32("35");
 DoWork();  
 ```  
   
- Un appel de méthode nécessite le nom de la méthode, soit comme nom (comme dans l’exemple précédent), soit comme le résultat d’une autre expression, suivi de parenthèses et des éventuels paramètres de méthode. Pour plus d’informations, consultez [Méthodes](../classes-and-structs/methods.md). Un appel de délégué utilise le nom d’un délégué et des paramètres de méthode entre parenthèses. Pour plus d’informations, consultez [Délégués](../delegates/index.md). Les appels de méthode et les appels de délégué sont évalués à la valeur de retour de la méthode, si celle-ci retourne une valeur. Les méthodes qui retournent void ne peuvent pas être utilisées à la place d’une valeur dans une expression.  
+ Un appel de méthode nécessite le nom de la méthode, soit comme nom (comme dans l’exemple précédent), soit comme le résultat d’une autre expression, suivi de parenthèses et des éventuels paramètres de méthode. Pour plus d’informations, consultez [Méthodes](../classes-and-structs/methods.md). Un appel de délégué utilise le nom d’un délégué et des paramètres de méthode entre parenthèses. Pour plus d'informations, consultez [Délégués](../delegates/index.md). Les appels de méthode et les appels de délégué sont évalués à la valeur de retour de la méthode, si celle-ci retourne une valeur. Les méthodes qui retournent void ne peuvent pas être utilisées à la place d’une valeur dans une expression.  
 
 ## <a name="query-expressions"></a>Expressions de requête
 
@@ -69,7 +68,7 @@ DoWork();
   
 ## <a name="lambda-expressions"></a>Expressions lambda
 
- Les expressions lambda représentent des « méthodes inline » qui n’ont aucun nom mais qui peuvent avoir des paramètres d’entrée et plusieurs instructions. Elles sont largement utilisées dans LINQ pour passer des arguments aux méthodes. Les expressions lambda sont compilées en délégués ou en arborescences de l’expression en fonction du contexte dans lequel elles sont utilisées. Pour plus d’informations, voir [Expressions lambda](lambda-expressions.md).  
+ Les expressions lambda représentent des « méthodes inline » qui n’ont aucun nom mais qui peuvent avoir des paramètres d’entrée et plusieurs instructions. Elles sont largement utilisées dans LINQ pour passer des arguments aux méthodes. Les expressions lambda sont compilées en délégués ou en arborescences de l’expression en fonction du contexte dans lequel elles sont utilisées. Pour plus d’informations, consultez [Expressions lambda](lambda-expressions.md).  
   
 ## <a name="expression-trees"></a>Arborescences de l’expression
 

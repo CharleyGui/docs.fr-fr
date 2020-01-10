@@ -1,15 +1,13 @@
 ---
 title: Interopérabilité native - .NET
 description: Découvrez comment interagir avec les composants natifs dans .NET.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 3ca213bc7228d2e4337607df2d47b334c5bea14f
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 330466d74cc268214f74c4f575e6a2961f678972
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106804"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706333"
 ---
 # <a name="native-interoperability"></a>Interopérabilité native
 

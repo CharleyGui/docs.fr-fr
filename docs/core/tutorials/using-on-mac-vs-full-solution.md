@@ -3,13 +3,12 @@ title: Créer une solution .NET Core complète à l’aide de Visual Studio pour
 description: Cet article vous guide tout au long de la création d’une solution .NET Core qui comprend une bibliothèque réutilisable et des tests unitaires.
 author: mairaw
 ms.date: 12/19/2019
-ms.custom: seodec18
-ms.openlocfilehash: 361df77a45f22ae72e50a818cf0e2a5b24c4b67d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: f4284cd4c3c8b358b87c31c0fd5c067b1e7fb8a2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340354"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715353"
 ---
 # <a name="build-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Créez une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac
 

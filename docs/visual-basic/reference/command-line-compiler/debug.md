@@ -1,5 +1,5 @@
 ---
-title: /debug
+title: -debug
 ms.date: 03/10/2018
 helpviewer_keywords:
 - debug compiler switches
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - -debug compiler option [Visual Basic]
 - debug compiler option [Visual Basic]
 ms.assetid: c2b0bea5-1d5e-499f-9bd5-4f6c6b715ea2
-ms.openlocfilehash: 3beb9ad3829c2f55120a9136e6e54185551bd20b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: df65d1c095f5a22d562d78e15baf750a20ec2556
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344780"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716772"
 ---
 # <a name="-debug-visual-basic"></a>-Debug (Visual Basic)
 
@@ -24,7 +24,7 @@ Fait en sorte que le compilateur génère des informations de débogage et les p
 -debug[+ | -]
 ```
 
-or
+ou
 
 ```console
 -debug:[full | pdbonly]
@@ -34,14 +34,14 @@ or
 
 |Terme|Définition|
 |---|---|
-|`+` &#124; `-`|Ce paramètre est facultatif. Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `/debug`.|
-|`full` &#124; `pdbonly`|Ce paramètre est facultatif. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `/debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
+|`+` &#124; `-`|Option facultative. Si vous spécifiez `+` ou `-debug`, le compilateur génère des informations de débogage et les place dans un fichier. pdb. La spécification de `-` a le même effet que de ne pas spécifier `-debug`.|
+|`full` &#124; `pdbonly`|Option facultative. Indique le type d'informations de débogage générées par le compilateur. Si vous ne spécifiez pas `-debug:pdbonly`, la valeur par défaut est `full`, ce qui vous permet d’attacher un débogueur au programme en cours d’exécution. L’argument `pdbonly` autorise le débogage du code source lorsque le programme est démarré dans le débogueur, mais il affiche le code en langage assembleur uniquement lorsque le programme en cours d’exécution est attaché au débogueur.|
 
 ## <a name="remarks"></a>Notes
 
-Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `/debug`, `/debug+`ou `/debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.
+Utilisez cette option pour créer des versions Debug. Si vous ne spécifiez pas `-debug`, `-debug+`ou `-debug:full`, vous ne pourrez pas déboguer le fichier de sortie de votre programme.
 
-Par défaut, les informations de débogage ne sont pas émises (`/debug-`). Pour émettre des informations de débogage, spécifiez `/debug` ou `/debug+`.
+Par défaut, les informations de débogage ne sont pas émises (`-debug-`). Pour émettre des informations de débogage, spécifiez `-debug` ou `-debug+`.
 
 Pour plus d’informations sur la configuration des performances de débogage d’une application, consultez [Simplification du débogage d’une image](../../../framework/debug-trace-profile/making-an-image-easier-to-debug.md).
 

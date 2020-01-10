@@ -3,13 +3,12 @@ title: Packages, métapackages et frameworks - .NET Core
 description: Découvrez la terminologie des packages, des métapackages et des infrastructures.
 author: richlander
 ms.date: 06/20/2016
-ms.custom: seodec18
-ms.openlocfilehash: 7b019686df195a8cebdce126f7a0b2d22548dc0e
-ms.sourcegitcommit: 992f80328b51b165051c42ff5330788627abe973
+ms.openlocfilehash: bd40ca603aaa9685fca9934368895bf7e945d962
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/11/2019
-ms.locfileid: "72275765"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715506"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Packages, métapackages et frameworks
 
@@ -76,7 +75,7 @@ Les principaux métapackages .NET Core sont les suivants :
 - [Microsoft.AspNetCore.All](https://www.nuget.org/packages/Microsoft.AspNetCore.All) : contient tous les packages pris en charge d’ASP.NET Core, d’Entity Framework Core, et des dépendances internes et tierces utilisées par ASP.NET Core et Entity Framework Core. Pour plus d’informations, consultez [Métapackage Microsoft.AspNetCore.All pour ASP.NET Core 2.x](/aspnet/core/fundamentals/metapackage).
 - [Microsoft.NETCore.Portable.Compatibility](https://www.nuget.org/packages/Microsoft.NETCore.Portable.Compatibility) : ensemble de façades de compatibilité qui permettent aux bibliothèques de classes portables (PCL) basées sur mscorlib de s’exécuter sur .NET Core.
 
-## <a name="frameworks"></a>Frameworks
+## <a name="frameworks"></a>Infrastructures
 
 Chaque package .NET Core prend en charge un ensemble de frameworks de runtime. Les frameworks décrivent un ensemble d’API disponibles (et éventuellement d’autres caractéristiques) sur lesquelles vous pouvez vous appuyer quand vous ciblez un framework donné. Leur version change à mesure que de nouvelles API sont ajoutés.
 

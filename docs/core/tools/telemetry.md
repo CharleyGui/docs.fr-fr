@@ -3,13 +3,12 @@ title: Télémétrie du kit SDK .NET Core
 description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Core, qui collecte des informations d’utilisation à des fins d’analyse, les types de données collectées et comment désactiver la télémétrie.
 author: KathleenDollard
 ms.date: 08/27/2019
-ms.custom: seodec18
-ms.openlocfilehash: ecb8dbed036a04726867d004dbadf6205c1fa09f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8bde344ee393e113502a0895ee55c241cbf24c57
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281776"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714104"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
 
@@ -57,13 +56,13 @@ La fonctionnalité de télémétrie collecte les données suivantes :
 
 | Versions du SDK | Données |
 |--------------|------|
-| Tout          | Horodatage de l’appel. |
-| Tout          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
-| Tout          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
-| Tout          | Système d’exploitation et version. |
-| Tout          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
-| Tout          | Version du kit SDK .NET Core. |
-| Tout          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
+| Toutes les          | Horodatage de l’appel. |
+| Toutes les          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
+| Toutes les          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
+| Toutes les          | Système d’exploitation et version. |
+| Toutes les          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
+| Toutes les          | Version du kit SDK .NET Core. |
+| Toutes les          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
 | >=2.0        | Arguments et options de commande : plusieurs arguments et options sont collectés (pas de chaînes arbitraires). Consultez [options collectées](#collected-options). Hachage après la version 2.1.300. |
 | >=2.0         | Si le SDK est en cours d’exécution dans un conteneur. |
 | >=2.0         | Frameworks cibles (tirés de l’événement `TargetFramework`), hachés à partir de la version 2.1. |
@@ -79,7 +78,7 @@ La fonctionnalité de télémétrie collecte les données suivantes :
 
 Certaines commandes envoient des données supplémentaires. Un sous-ensemble de commandes envoie le premier argument :
 
-| Commande               | Données du premier argument envoyées                |
+| Command               | Données du premier argument envoyées                |
 |-----------------------|-----------------------------------------|
 | `dotnet help <arg>`   | La commande help fait l’objet d’une requête.  |
 | `dotnet new <arg>`    | Nom du modèle (haché).             |

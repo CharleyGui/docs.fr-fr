@@ -8,14 +8,12 @@ helpviewer_keywords:
 - Aximp.exe
 - Windows Forms ActiveX Control Importer
 ms.assetid: 482c0d83-7144-4497-b626-87d2351b78d0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c879375a4b0622311c8731acc276ec79fe0217d5
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: a1b061b480b3e22b136a6373ddb87cf9d2233457
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044888"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715783"
 ---
 # <a name="aximpexe-windows-forms-activex-control-importer"></a>Aximp.exe (Windows Forms ActiveX Control Importer)
 L'importateur de contrôles ActiveX convertit les définitions de types d'une bibliothèque de types COM associées à un contrôle ActiveX en un contrôle Windows Forms.  
@@ -26,7 +24,7 @@ L'importateur de contrôles ActiveX convertit les définitions de types d'une bi
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez le texte suivant :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -44,12 +42,12 @@ aximp [options]{file.dll | file.ocx}
 |------------|-----------------|  
 |`/delaysign`|Spécifie à Aximp.exe que le contrôle résultant doit être signé à l'aide du processus de signature différée. Vous devez spécifier cette option avec l’option `/keycontainer:`, `/keyfile:` ou `/publickey:`. Pour plus d’informations sur le processus de signature différée, consultez [Temporisation de signature d’un assembly](../../standard/assembly/delay-sign.md).|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
-|`/keycontainer:`*nom_conteneur*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
-|`/keyfile:` *nom_fichier*|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
+|`/keycontainer:` *containerName*|Signe le contrôle obtenu avec un nom fort en utilisant la paire de clés publique/privée présente dans le conteneur de clé spécifié par *nom_conteneur*.|  
+|*nom de fichier* `/keyfile:`|Signe le contrôle résultant avec un nom fort en utilisant la paire de clés publique/privée officielle de l’éditeur présente dans *nom_fichier*.|  
 |`/nologo`|Supprime l'affichage de la bannière de démarrage Microsoft.|  
-|`/out:` *nom_fichier*|Spécifie le nom de l'assembly à créer.|  
-|`/publickey:` *nom_fichier*|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
-|`/rcw:` *nom_fichier*|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
+|*nom de fichier* `/out:`|Spécifie le nom de l'assembly à créer.|  
+|*nom de fichier* `/publickey:`|Signe le contrôle résultant avec un nom fort en utilisant la clé publique présente dans le fichier spécifié par *nom_fichier*.|  
+|*nom de fichier* `/rcw:`|Utilise le wrapper RCW spécifié plutôt que d'en générer un nouveau. Vous pouvez spécifier plusieurs instances. Le répertoire actif est utilisé pour les chemins d’accès relatifs. Pour plus d’informations, consultez [Wrapper pouvant être appelé par le runtime](../../standard/native-interop/runtime-callable-wrapper.md).|  
 |`/silent`|Supprime l'affichage des messages indiquant la réussite des opérations.|  
 |`/source`|Génère le code source C# pour le wrapper Windows Forms.|  
 |`/verbose`|Spécifie le mode Commentaires ; affiche des informations supplémentaires sur la progression de l'opération.|  

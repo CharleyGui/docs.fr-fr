@@ -6,12 +6,12 @@ helpviewer_keywords:
 - bugreport compiler option [Visual Basic]
 - /bugreport compiler option [Visual Basic]
 ms.assetid: e4325406-8dbd-4b48-b311-9ee0799e48bb
-ms.openlocfilehash: 46d726332806f7d1f6e80dd7df31867051276b45
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 829c19d2bce40a850d98f4973b1a4e4de31d8ce1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002351"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716818"
 ---
 # <a name="-bugreport"></a>-bugreport
 Crée un fichier que vous pouvez utiliser lorsque vous consignez un rapport de bogue.  
@@ -26,10 +26,10 @@ Crée un fichier que vous pouvez utiliser lorsque vous consignez un rapport de b
   
 |Terme|Définition|  
 |---|---|  
-|`file`|Obligatoire. Nom du fichier qui doit contenir votre rapport de bogue. Placez le nom de fichier entre guillemets ("") si le nom contient un espace.|  
+|`file`|Requis. Nom du fichier qui doit contenir votre rapport de bogue. Placez le nom de fichier entre guillemets ("") si le nom contient un espace.|  
   
 ## <a name="remarks"></a>Notes  
- Les informations suivantes sont ajoutées à `file` :  
+ Les informations suivantes sont ajoutées à `file`:  
   
 - Copie de tous les fichiers de code source dans la compilation.  
   
@@ -48,13 +48,13 @@ Crée un fichier que vous pouvez utiliser lorsque vous consignez un rapport de b
 > [!IMPORTANT]
 > L’option `-bugreport` produit un fichier qui contient des informations potentiellement sensibles. Cela comprend l’heure actuelle, la version du compilateur, la version .NET Framework, la version du système d’exploitation, le nom d’utilisateur, les arguments de ligne de commande avec lesquels le compilateur a été exécuté, tout le code source et la forme binaire de tout assembly référencé. Cette option est accessible en spécifiant des options de ligne de commande dans le fichier Web. config pour une compilation côté serveur d’une application ASP.NET. Pour éviter cela, modifiez le fichier machine. config pour empêcher les utilisateurs de compiler sur le serveur.  
   
- Si cette option est utilisée avec `-errorreport:prompt`, `-errorreport:queue` ou `-errorreport:send`, et si votre application rencontre une erreur interne du compilateur, les informations contenues dans `file` sont envoyées à Microsoft Corporation. Ces informations permettront aux ingénieurs Microsoft d’identifier la cause de l’erreur et peuvent contribuer à améliorer la prochaine version de Visual Basic. Par défaut, aucune information n’est envoyée à Microsoft. Toutefois, lorsque vous compilez une application à l’aide de `-errorreport:queue`, qui est activée par défaut, l’application collecte ses rapports d’erreurs. Ensuite, lorsque l’administrateur de l’ordinateur se connecte, le système de création de rapports d’erreurs affiche une fenêtre indépendante qui permet à l’administrateur de transmettre à Microsoft tous les rapports d’erreurs qui se sont produits depuis l’ouverture de session.  
+ Si cette option est utilisée avec `-errorreport:prompt`, `-errorreport:queue`ou `-errorreport:send`, et que votre application rencontre une erreur interne du compilateur, les informations contenues dans `file` sont envoyées à Microsoft Corporation. Ces informations permettront aux ingénieurs Microsoft d’identifier la cause de l’erreur et peuvent contribuer à améliorer la prochaine version de Visual Basic. Par défaut, aucune information n’est envoyée à Microsoft. Toutefois, lorsque vous compilez une application à l’aide de `-errorreport:queue`, qui est activée par défaut, l’application collecte ses rapports d’erreurs. Ensuite, lorsque l’administrateur de l’ordinateur se connecte, le système de création de rapports d’erreurs affiche une fenêtre indépendante qui permet à l’administrateur de transmettre à Microsoft tous les rapports d’erreurs qui se sont produits depuis l’ouverture de session.  
   
 > [!NOTE]
-> L’option `/bugreport` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir de la ligne de commande.  
+> L’option `-bugreport` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lorsque vous compilez à partir de la ligne de commande.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant compile `T2.vb` et place toutes les informations relatives aux rapports de bogues dans le fichier `Problem.txt`.  
+ L’exemple suivant compile `T2.vb` et place toutes les informations de rapport de bogues dans le fichier `Problem.txt`.  
   
 ```console  
 vbc -bugreport:problem.txt t2.vb  

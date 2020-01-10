@@ -1,17 +1,16 @@
 ---
 title: Paramètres de type générique - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], type parameters
 - type parameters [C#]
 ms.assetid: a03b0ab2-0606-4b41-b7bf-e64d5bb4d18f
-ms.openlocfilehash: 992b71fa2afa6b511d09c69ade26e3b5bc13acd2
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8412980d35989c445d2e0a44c0b9f35e6087bb8d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73195474"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712180"
 ---
 # <a name="generic-type-parameters-c-programming-guide"></a>Paramètres de type générique (Guide de programmation C#)
 

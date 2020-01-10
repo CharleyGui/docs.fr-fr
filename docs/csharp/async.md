@@ -5,13 +5,12 @@ author: cartermp
 ms.date: 06/20/2016
 ms.technology: csharp-async
 ms.assetid: b878c34c-a78f-419e-a594-a2b44fa521a4
-ms.custom: seodec18
-ms.openlocfilehash: 86145e8971d9a59fba17368d9530f40d86bf2858
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 38d7c856e9a536db9ef26349175ad440a49f5fe2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037683"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713951"
 ---
 # <a name="asynchronous-programming"></a>Programmation asynchrone
 
@@ -107,9 +106,9 @@ Voici deux questions à vous poser avant d’écrire du code :
 
     Si la réponse est « oui », le travail **utilise le processeur de manière intensive**.
 
-Si le travail à faire **utilise les E/S de manière intensive**, utilisez `async` et `await` *sans* `Task.Run`.  Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.  La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).
+Si le travail que vous avez est **lié aux e/s**, utilisez `async` et `await` *sans* `Task.Run`.  Vous *ne devez pas* utiliser la bibliothèque parallèle de tâches.  La raison à cela est expliquée dans l’article [Async en détail](../standard/async-in-depth.md).
 
-Si le travail à faire **utilise le processeur de manière intensive** et que la réactivité est une exigence, utilisez `async` et `await`, mais transférez le travail sur un autre thread *avec* `Task.Run`.  S’il accepte la concurrence et le parallélisme, vous pouvez également utiliser la [bibliothèque parallèle de tâches](../standard/parallel-programming/task-parallel-library-tpl.md).
+Si le travail que vous avez est lié à l' **UC** et que vous vous souciez de la réactivité, utilisez `async` et `await`, mais générez le travail sur un autre thread *avec* `Task.Run`.  S’il accepte la concurrence et le parallélisme, vous pouvez également utiliser la [bibliothèque parallèle de tâches](../standard/parallel-programming/task-parallel-library-tpl.md).
 
 De plus, vous devez toujours mesurer les performances d’exécution de votre code.  Par exemple, vous constaterez peut-être que le coût d’un travail utilisant le processeur de manière intensive n’est pas si élevé que cela par rapport à la surcharge des changements de contexte induits par le multithreading.  Chaque solution ayant ses compromis, choisissez le meilleur compromis pour votre scénario.
 
@@ -219,7 +218,7 @@ Si vous choisissez de combiner LINQ avec du code asynchrone, pour réduire la qu
 
 La programmation asynchrone est relativement simple, mais il y a quelques points à garder à l’esprit pour éviter un comportement inattendu du code.
 
-* **Les méthodes `async` doivent contenir un mot clé** `await` **dans leur corps pour pouvoir être suspendues.**
+* les **méthodes de `async` doivent avoir un** **mot clé `await` dans leur corps ou elles ne seront jamais en cours.**
 
 Il ne faut pas oublier ce point.  Si `await` n’est pas utilisé dans le corps d’une méthode `async`, le compilateur C# génère un avertissement, mais le code est compilé et exécuté comme s’il s’agissait d’une méthode standard.  Notez également que cela n’aurait aucune utilité, car la machine à états générée par le compilateur C# pour la méthode async n’accomplirait aucune opération dans ce cas.
 

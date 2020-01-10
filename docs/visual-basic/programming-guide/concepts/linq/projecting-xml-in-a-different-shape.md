@@ -2,12 +2,12 @@
 title: Projection de code XML en une autre forme
 ms.date: 07/20/2015
 ms.assetid: 2da7ec97-34f7-443d-9a48-b162ac58236b
-ms.openlocfilehash: dd8b95ca442c9f2f17940423dde22f627669cd0b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 400ceafe8ca219efbbb921d573126e0ca80bbb5e
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347142"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344494"
 ---
 # <a name="projecting-xml-in-a-different-shape-visual-basic"></a>Projection de code XML dans une autre forme (Visual Basic)
 Cette rubrique illustre un exemple de projection de code XML dont la forme est différente du code XML source.  
@@ -69,7 +69,7 @@ Module Module1
         Return (e.<w:r>.<w:t>).StringConcatenate(Function(element) CStr(element))  
     End Function  
   
-    ' Following function is required because VB does not support short circuit evaluation  
+    ' Following function is required because Visual Basic does not support short circuit evaluation  
     Private Function GetStyleOfParagraph(ByVal styleNode As XElement, _  
                                          ByVal defaultStyle As String) As String  
         If (styleNode Is Nothing) Then  

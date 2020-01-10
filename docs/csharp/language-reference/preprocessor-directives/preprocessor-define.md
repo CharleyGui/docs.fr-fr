@@ -1,18 +1,17 @@
 ---
 title: '#define - Référence C#'
-ms.custom: seodec18
 ms.date: 06/30/2018
 f1_keywords:
 - '#define'
 helpviewer_keywords:
 - '#define directive [C#]'
 ms.assetid: 23638b8f-779c-450e-b600-d55682de7d01
-ms.openlocfilehash: d207c96621564acd8070c9d5f618f43a6d8f15a4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 7457b05ae827675969398792bcb02f025f3028fb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924599"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712583"
 ---
 # <a name="define-c-reference"></a>#define (référence C#)
 Vous utilisez `#define` pour définir un symbole. Quand vous utilisez le symbole sous forme d’expression passée à la directive [#if](./preprocessor-if.md), l’expression donne la valeur `true`, comme illustré dans l’exemple suivant :  
@@ -21,7 +20,7 @@ Vous utilisez `#define` pour définir un symbole. Quand vous utilisez le symbole
  #define DEBUG
  ```
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > La directive `#define` ne peut pas être utilisée pour déclarer des valeurs constantes comme c’est le cas en général en C et C++. Les constantes en C# sont définies plutôt comme des membres statiques d’une classe ou d’un struct. Si vous avez plusieurs constantes de ce type, créez une classe « Constantes » distincte pour les stocker.  

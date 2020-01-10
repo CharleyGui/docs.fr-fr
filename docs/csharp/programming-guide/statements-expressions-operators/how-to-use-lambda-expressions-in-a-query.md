@@ -1,16 +1,15 @@
 ---
 title: Guide pratique pour utiliser des expressions lambda dans un C# Guide de programmation de requêtes
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - lambda expressions [C#], in LINQ
 ms.assetid: 3cac4d25-d11f-4abd-9e7c-0f02e97ae06d
-ms.openlocfilehash: e66239174d5598d7cf532d21426a9e15d5075085
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 92bdbf842c5c30b2f32e06f622f3e08f3c7a878f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635117"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711959"
 ---
 # <a name="how-to-use-lambda-expressions-in-a-query-c-programming-guide"></a>Guide pratique pour utiliser des expressions lambda dans uneC# requête (Guide de programmation)
 Vous n’utilisez pas d’expressions lambda directement dans la syntaxe de requête, mais vous les utilisez dans les appels de méthode qui peuvent être contenus dans des expressions de requête. En effet, certaines opérations de requête ne peuvent être exprimées que dans une syntaxe de méthode. Pour plus d’informations sur la différence entre la syntaxe de requête et la syntaxe de méthode, consultez [Syntaxe de requête et syntaxe de méthode dans LINQ](../concepts/linq/query-syntax-and-method-syntax-in-linq.md).  

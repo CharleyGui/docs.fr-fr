@@ -8,21 +8,19 @@ helpviewer_keywords:
 - stores, current user
 - removing stores
 ms.assetid: b81202b8-d91d-4b23-9c53-4a112f74a44a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1ca9b10623e4a8a1a977c926262c63f3f2ab076e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 46e846eaf92835fb2a9130b85ed20749934ca5a1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71044133"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715713"
 ---
 # <a name="storeadmexe-isolated-storage-tool"></a>Storeadm.exe (outil Isolated Storage)
 L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les magasins existants de l'utilisateur en cours.  
   
  Cet outil est installé automatiquement avec Visual Studio. Pour exécuter l’outil, utilisez l’invite de commandes développeur pour Visual Studio (ou l’invite de commandes Visual Studio dans Windows 7). Pour plus d'informations, consultez [Invites de commandes](developer-command-prompt-for-vs.md).  
   
- À l'invite de commandes, tapez le texte suivant :  
+ À l'invite de commandes, tapez le texte suivant :  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -30,7 +28,7 @@ L'outil Isolated Storage (Stockage isolé) répertorie ou supprime tous les maga
 storeadm [/list][/machine][/remove][/roaming][/quiet]  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
   
 |Option|Description|  
 |------------|-----------------|  

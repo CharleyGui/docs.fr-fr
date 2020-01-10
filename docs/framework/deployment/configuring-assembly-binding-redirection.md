@@ -1,20 +1,18 @@
 ---
-title: Configuration de la liaison d’assembly
+title: Configuration de la liaison d'assembly
 ms.date: 03/30/2017
 helpviewer_keywords:
 - side-by-side execution, assembly binding redirection
 - assemblies [.NET Framework], binding redirection
 ms.assetid: d266cbd8-bf91-41d1-baf0-afbc481a741f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7e2add2756106234227c7b2dd62ae107adc58854
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c7b9dcb99e08a1ef2844c5811897aa87ff86f866
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052179"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716552"
 ---
-# <a name="configuring-assembly-binding-redirection"></a>Configuration de la liaison d’assembly
+# <a name="configuring-assembly-binding-redirection"></a>Configuration de la liaison d'assembly
 Par défaut, les applications utilisent le jeu d'assemblys .NET Framework qui est fourni avec la version du runtime utilisée pour compiler l'application. Vous pouvez utiliser l’attribut **appliesTo** sur l’élément [\<assemblyBinding>](../configure-apps/file-schema/runtime/assemblybinding-element-for-runtime.md) dans un fichier de configuration d’application pour rediriger les références de liaison d’assembly vers une version spécifique des assemblys du .NET Framework. Cet attribut facultatif utilise un numéro de version .NET Framework pour indiquer la version à laquelle il s'applique. Si l’attribut **appliesTo** n’est pas spécifié, l’élément **\<assemblyBinding>** s’applique à toutes les versions du .NET Framework.  
   
  L’attribut **appliesTo** a été introduit dans le .NET Framework 1.1. Il est ignoré dans le .NET Framework 1.0. Cela signifie que tous les éléments **\<assemblyBinding>** sont appliqués lors de l’utilisation du .NET Framework 1.0, même si un attribut **appliesTo** est spécifié.  
@@ -59,4 +57,4 @@ Par défaut, les applications utilisent le jeu d'assemblys .NET Framework qui es
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)
+- [Comment : activer et désactiver la redirection de liaison automatique](../configure-apps/how-to-enable-and-disable-automatic-binding-redirection.md)

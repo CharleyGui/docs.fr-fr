@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: dd6dc920-b011-418a-b3db-f1580a7d9251
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e9445f16b6470b1d2066fcae749b1623ec5e11ac
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 79a3390933256ed862d35c90db0aab2177cdfc41
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138947"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711010"
 ---
 # <a name="creating-new-attributes-for-elements-in-the-dom"></a>Création de nouveaux attributs pour des éléments du DOM
 

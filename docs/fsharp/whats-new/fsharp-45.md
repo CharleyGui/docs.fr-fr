@@ -2,12 +2,12 @@
 title: Nouveautés de F# 4,5- F# Guide
 description: Bénéficiez d’une vue d’ensemble des nouvelles F# fonctionnalités disponibles dans 4,5.
 ms.date: 11/27/2019
-ms.openlocfilehash: 780b33a564432aae5ec99c70ff8620988b553fd1
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: b699165125d345ad783b24da8a0a994cba72d4ba
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74644109"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715686"
 ---
 # <a name="whats-new-in-f-45"></a>Nouveautés de F# 4,5
 
@@ -77,7 +77,7 @@ type S(count1: int, count2: int) =
     member x.Count2 = count2
 ```
 
-Cela vous interdit de déclarer un membre mutable dans le struct et émet des métadonnées qui autorisent F# et C# le traitent comme ReadOnly lorsqu’il est consommé à partir d’un assembly. Pour plus d’informations, consultez [ReadOnly, structs](../language-reference/structures.md#readonly-structs)
+Cela vous interdit de déclarer un membre mutable dans le struct et émet des métadonnées qui autorisent F# et C# le traitent comme ReadOnly lorsqu’il est consommé à partir d’un assembly. Pour plus d’informations, consultez [ReadOnly, structs](../language-reference/structures.md#readonly-structs).
 
 ## <a name="void-pointers"></a>Pointeurs void
 
@@ -88,7 +88,7 @@ Le type de `voidptr` est ajouté F# à 4,5, comme les fonctions suivantes :
 
 Cela est utile lors de l’interopérabilité avec un composant natif qui utilise des pointeurs void.
 
-## <a name="the-match-keyword"></a>Mot clé `match!`
+## <a name="the-match-keyword"></a>Le mot clé `match!`
 
 Le mot clé `match!` améliore les critères spéciaux quand il se trouve à l’intérieur d’une expression de calcul :
 

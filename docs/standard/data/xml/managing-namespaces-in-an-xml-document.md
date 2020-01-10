@@ -3,14 +3,12 @@ title: Gestion d'espaces de noms dans un document XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3befdd0ec96856a62e5c3c603935303498758710
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 64ef9fd4ca3a9a83b9cd3eba9cb952b0f668e9f0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423926"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710698"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Gestion d'espaces de noms dans un document XML
 Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés. Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML. Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  
@@ -67,7 +65,7 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
   
  Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>. Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
   
-|Vers|Utilisez|  
+|Vers|Utiliser|  
 |--------|---------|  
 |Ajouter un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
 |Supprimer un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  

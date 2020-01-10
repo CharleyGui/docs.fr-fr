@@ -9,44 +9,43 @@ helpviewer_keywords:
 - Equals method
 - == operator (equality) [.NET Framework]
 ms.assetid: bc496a91-fefb-4ce0-ab4c-61f09964119a
-author: KrzysztofCwalina
-ms.openlocfilehash: ef1a0aff1ac59434d9d9a6f0371bf236f637050e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 31a5ce18f4526b5e3b8411365dff812601de87ad
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960329"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709437"
 ---
 # <a name="equality-operators"></a>Opérateurs d'égalité
-Cette section traite de surcharge les opérateurs d’égalité et fait référence à `operator==` et `operator!=` en tant que les opérateurs d’égalité.  
+Cette section traite de la surcharge des opérateurs d’égalité et fait référence à `operator==` et `operator!=` en tant qu’opérateurs d’égalité.  
   
  **X DO NOT** un des opérateurs d’égalité et pas dans l’autre surcharge.  
   
  **✓ DO** vous assurer que <xref:System.Object.Equals%2A?displayProperty=nameWithType> et les opérateurs d’égalité ont exactement la même sémantique et des caractéristiques similaires.  
   
- Cela signifie souvent que `Object.Equals` doit être remplacée lorsque les opérateurs d’égalité sont surchargés.  
+ Cela signifie souvent que `Object.Equals` doit être substitué lorsque les opérateurs d’égalité sont surchargés.  
   
  **X AVOID** lever des exceptions à partir des opérateurs d’égalité.  
   
- Par exemple, retourner false si l’un des arguments est null au lieu de lever `NullReferenceException`.  
+ Par exemple, retourne false si l’un des arguments a la valeur null au lieu de lever `NullReferenceException`.  
   
-## <a name="equality-operators-on-value-types"></a>Opérateurs d’égalité sur les Types valeur  
+## <a name="equality-operators-on-value-types"></a>Opérateurs d’égalité sur les types valeur  
  **✓ DO** surcharger les opérateurs d’égalité sur les types valeur, si l’égalité est explicite.  
   
- Dans la plupart des langages de programmation, il n’existe aucune implémentation par défaut de `operator==` pour les types valeur.  
+ Dans la plupart des langages de programmation, il n’y a pas d’implémentation par défaut de `operator==` pour les types valeur.  
   
-## <a name="equality-operators-on-reference-types"></a>Opérateurs d’égalité sur les Types référence  
+## <a name="equality-operators-on-reference-types"></a>Opérateurs d’égalité sur les types référence  
  **X AVOID** la surcharge des opérateurs d’égalité sur les types référence mutables.  
   
- De nombreux langages ont des opérateurs d’égalité intégrés pour les types référence. Les opérateurs intégrés implémentent généralement l’égalité de référence et de nombreux développeurs sont surpris lorsque le comportement par défaut est modifié à l’égalité de valeur.  
+ De nombreux langages ont des opérateurs d’égalité intégrés pour les types référence. Les opérateurs intégrés implémentent généralement l’égalité des références, et de nombreux développeurs sont surpris lorsque le comportement par défaut est remplacé par l’égalité de la valeur.  
   
- Ce problème est atténué pour les types référence immuable, car l’immuabilité rend beaucoup plus difficile à remarquer la différence entre une égalité de référence et l’égalité des valeurs.  
+ Ce problème est atténué pour les types référence immuables, car l’immuabilité rend beaucoup plus difficile la différence entre l’égalité des références et l’égalité des valeurs.  
   
  **X AVOID** surcharge des opérateurs d’égalité sur les types référence si l’implémentation est beaucoup plus lente que celui de l’égalité des références.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

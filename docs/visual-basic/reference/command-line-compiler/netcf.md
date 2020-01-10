@@ -9,12 +9,12 @@ helpviewer_keywords:
 - netcf compiler option [Visual Basic]
 - /netcf compiler option [Visual Basic]
 ms.assetid: db7cfa59-c315-401c-a59b-0daf355343d6
-ms.openlocfilehash: 3df7e622f97a5a1291736180e3964b1b3deaea2f
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 7f14ce07a2928f4dbffd3aa57f8cdd514b75694c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005452"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716715"
 ---
 # <a name="-netcf"></a>-netcf
 
@@ -28,24 +28,24 @@ Définit le compilateur pour cibler le .NET Compact Framework.
 
 ## <a name="remarks"></a>Notes
 
-L’option `-netcf` force le compilateur Visual Basic à cibler le .NET Compact Framework plutôt que le .NET Framework complet. La fonctionnalité de langage qui est présente uniquement dans le .NET Framework complet est désactivée.
+L’option `-netcf` oblige le compilateur Visual Basic à cibler le .NET Compact Framework plutôt que le .NET Framework complet. La fonctionnalité de langage qui est présente uniquement dans le .NET Framework complet est désactivée.
 
-L’option `-netcf` est conçue pour être utilisée avec [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Les fonctionnalités de langage désactivées par `-netcf` sont les mêmes fonctionnalités de langage qui ne sont pas présentes dans les fichiers ciblés avec `-sdkpath`.
+L’option `-netcf` est conçue pour être utilisée avec [-sdkpath](../../../visual-basic/reference/command-line-compiler/sdkpath.md). Les fonctionnalités de langage désactivées par `-netcf` sont les mêmes fonctionnalités de langage que celles qui ne sont pas présentes dans les fichiers ciblés par `-sdkpath`.
 
 > [!NOTE]
 > L’option `-netcf` n’est pas disponible dans l’environnement de développement Visual Studio. elle est disponible uniquement lors de la compilation à partir de la ligne de commande. L’option `-netcf` est définie lors du chargement d’un projet d’appareil Visual Basic.
 
 L’option `-netcf` modifie les fonctionnalités de langage suivantes :
 
-- L' [instruction End \<keyword >](../../../visual-basic/language-reference/statements/end-keyword-statement.md) mot clé, qui termine l’exécution d’un programme, est désactivée. Le programme suivant compile et s’exécute sans `-netcf`, mais échoue au moment de la compilation avec `-netcf`.
+- Le mot clé [End \<> instruction](../../../visual-basic/language-reference/statements/end-keyword-statement.md) , qui termine l’exécution d’un programme, est désactivé. Le programme suivant compile et s’exécute sans `-netcf` mais échoue au moment de la compilation avec `-netcf`.
 
   [!code-vb[VbVbalrCompiler#34](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/netcf.vb#34)]
 
-- La liaison tardive, dans tous les formulaires, est désactivée. Des erreurs de compilation sont générées lorsque des scénarios de liaison tardive reconnus sont rencontrés. Le programme suivant compile et s’exécute sans `-netcf`, mais échoue au moment de la compilation avec `-netcf`.
+- La liaison tardive, dans tous les formulaires, est désactivée. Des erreurs de compilation sont générées lorsque des scénarios de liaison tardive reconnus sont rencontrés. Le programme suivant compile et s’exécute sans `-netcf` mais échoue au moment de la compilation avec `-netcf`.
 
   [!code-vb[VbVbalrCompiler#35](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#35)]
 
-- Les modificateurs [auto](../../../visual-basic/language-reference/modifiers/auto.md), [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)et [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md) sont désactivés. La syntaxe de l’instruction [Declare Statement](../../../visual-basic/language-reference/statements/declare-statement.md) est également modifiée en `Declare Sub|Function name Lib "library" [Alias "alias"] [([arglist])]`. Le code suivant illustre l’effet de `-netcf` sur une compilation.
+- Les modificateurs [auto](../../../visual-basic/language-reference/modifiers/auto.md), [ANSI](../../../visual-basic/language-reference/modifiers/ansi.md)et [Unicode](../../../visual-basic/language-reference/modifiers/unicode.md) sont désactivés. La syntaxe de l' [instruction DECLARE](../../../visual-basic/language-reference/statements/declare-statement.md) est également modifiée pour `Declare Sub|Function name Lib "library" [Alias "alias"] [([arglist])]`. Le code suivant illustre l’effet de `-netcf` sur une compilation.
 
   [!code-vb[VbVbalrCompiler#36](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrCompiler/VB/OptionStrictOff.vb#36)]
 

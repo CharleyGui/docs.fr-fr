@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 21b2b0fb606333ace05b6525c9f461e6ee1709d1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 9bca68753a93721e48d1ff90aa7baf3a147da0ee
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338532"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708202"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -58,7 +58,7 @@ Ce CLR repose sur la même base de code que le CLR. À l’origine, CoreCLR éta
 
 Bibliothèque de classes de base .NET Core
 
-Ensemble de bibliothèques qui comprend les espaces de noms System.* (et, dans une certaine mesure, Microsoft.*). La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source de la bibliothèque de classes de base .NET Core se trouve dans le [dépôt CoreFX](https://github.com/dotnet/corefx). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
+Ensemble de bibliothèques qui composent le système.\* (et à des espaces de noms Microsoft.\*) limités. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source de la bibliothèque de classes de base .NET Core se trouve dans le [référentiel du Runtime .net Core](https://github.com/dotnet/runtime). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
 
 ## <a name="corert"></a>CoreRT
 
@@ -66,7 +66,7 @@ Runtime .NET Core.
 
 Contrairement à CLR/CoreCLR, CoreRT n’est pas une machine virtuelle, ce qui signifie qu’il n’inclut pas les fonctionnalités de génération et d’exécution de code à la volée en raison de l’absence d’un compilateur [JIT](#jit). Toutefois, il inclut le [GC](#gc) et les fonctionnalités RTTI (identification du type au moment de l’exécution) et de réflexion. Toutefois, son système de type est conçu pour que les métadonnées de réflexion ne soient pas nécessaires. Cela permet d’avoir une chaîne d’outils [AOT](#aot) qui peut écarter les métadonnées superflues et (surtout) identifier le code que l’application n’utilise pas. CoreRT est en cours de développement.
 
-Consultez [Présentation de .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
+Consultez [Introduction à .net native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
 
 ## <a name="cross-platform"></a>interplateformes
 

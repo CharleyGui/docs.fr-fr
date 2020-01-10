@@ -12,19 +12,17 @@ helpviewer_keywords:
 - Equals method
 - collections [.NET Framework], comparisons
 ms.assetid: 5e4d3b45-97f0-423c-a65f-c492ed40e73b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2d9124c90d09e2fa94a0eaa2ff8cd4e4ab15206f
-ms.sourcegitcommit: ced0cccf15adfd492f8196cb739f01dde52c9252
-ms.translationtype: HT
+ms.openlocfilehash: fc6972061994e17c2176d3ab278b8d2b37c725ee
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/14/2019
-ms.locfileid: "67135672"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711387"
 ---
 # <a name="comparisons-and-sorts-within-collections"></a>Comparaisons et tris dans les collections
 Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment tous les processus impliqués dans la gestion des collections, que ce soit pendant la recherche d'un élément à supprimer ou le renvoi d'une valeur d'une paire clé-valeur.  
   
- Les collections utilisent généralement un comparateur d'égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons.  
+ Les collections utilisent généralement un comparateur d’égalité et/ou un comparateur de classement. Deux constructions sont utilisées pour les comparaisons.  
   
 <a name="BKMK_Checkingforequality"></a>   
 ## <a name="checking-for-equality"></a>Vérification de l'égalité  
@@ -40,13 +38,13 @@ Les classes <xref:System.Collections> effectuent des comparaisons dans quasiment
 ## <a name="determining-sort-order"></a>Détermination de l'ordre de tri  
  Les méthodes telles que `BinarySearch` et `Sort` utilisent un comparateur de classement pour les éléments de collection. Les comparaisons peuvent être effectuées entre les éléments d'une collection, ou entre un élément et une valeur spécifiée. Pour comparer des objets, il existe le `default comparer` et le `explicit comparer`.  
   
- Le comparateur par défaut repose sur au moins l'un des objets comparés pour implémenter l'interface **IComparable** . Il est recommandé d'implémenter **IComparable** sur toutes les classes utilisées en tant que valeurs dans une collection de listes ou en tant que clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d’égalité est déterminée selon ce qui suit :  
+ Le comparateur par défaut repose sur au moins l'un des objets comparés pour implémenter l'interface **IComparable** . Il est recommandé d'implémenter **IComparable** sur toutes les classes utilisées en tant que valeurs dans une collection de listes ou en tant que clés dans une collection de dictionnaires. Pour une collection générique, la comparaison d'égalité est déterminée selon ce qui suit :  
   
 - Si le type T implémente l'interface générique <xref:System.IComparable%601?displayProperty=nameWithType> , le comparateur par défaut est la méthode <xref:System.IComparable%601.CompareTo%28%600%29?displayProperty=nameWithType> de cette interface.  
   
 - Si le type T implémente l'interface non générique <xref:System.IComparable?displayProperty=nameWithType> , le comparateur par défaut est la méthode <xref:System.IComparable.CompareTo%28System.Object%29?displayProperty=nameWithType> de cette interface.  
   
-- Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.  
+- Si le type T n'implémente aucune interface, il n'existe aucun comparateur par défaut. Un comparateur ou un délégué de comparaison doit donc être fourni explicitement.  
   
  Pour fournir des comparaisons explicites, certaines méthodes acceptent une implémentation **IComparer** en tant que paramètre. Par exemple, la méthode <xref:System.Collections.Generic.List%601.Sort%2A?displayProperty=nameWithType> accepte une implémentation <xref:System.Collections.Generic.IComparer%601?displayProperty=nameWithType> .  
   

@@ -1,17 +1,16 @@
 ---
 title: Variables locales implicitement typées - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#]
 - var [C#]
 ms.assetid: b9218fb2-ef5d-4814-8a8e-2bc29b0bbc9b
-ms.openlocfilehash: dab708bfbc33458bc2664c0d04757f0badcc2575
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 692a0f8ad933f3ba4bef50681cb3487fa0a7eea9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141600"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714837"
 ---
 # <a name="implicitly-typed-local-variables-c-programming-guide"></a>Variables locales implicitement typées (Guide de programmation C#)
 
@@ -49,7 +48,7 @@ Pour plus d’informations, consultez [comment utiliser des variables locales et
 
 ## <a name="var-and-anonymous-types"></a>Types var et anonymes
 
-Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant avec les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Pour plus d’informations, consultez la page [Types anonymes](anonymous-types.md).
+Dans de nombreux cas, l’utilisation de `var` est facultative et sert uniquement à simplifier la syntaxe. Toutefois, lorsqu’une variable est initialisée avec un type anonyme, vous devez déclarer la variable en tant que `var` si vous savez déjà que vous aurez besoin d’accéder aux propriétés de l’objet. Il s’agit d’un scénario courant dans les expressions de requête LINQ. Pour plus d’informations, consultez [Types anonymes](anonymous-types.md).
 
 Du point de vue de votre code source, un type anonyme n’a pas de nom. Par conséquent, si une variable de requête a été initialisée avec `var`, la seule façon d’accéder aux propriétés de la séquence d’objets retournée consiste à utiliser `var` comme type pour la variable d’itération de l’instruction `foreach`.
 
@@ -93,7 +92,7 @@ Toutefois, l’utilisation de `var` risque de rendre votre code plus difficile �
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../../language-reference/index.md)
+- [Référence C#](../../language-reference/index.md)
 - [Tableaux implicitement typés](../arrays/implicitly-typed-arrays.md)
 - [Comment utiliser des variables locales et des tableaux implicitement typés dans une expression de requête](how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression.md)
 - [Types anonymes](anonymous-types.md)

@@ -1,24 +1,23 @@
 ---
 title: Polymorphisme - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, polymorphism
 - polymorphism [C#]
 ms.assetid: 086af969-29a5-4ce8-a993-0b7d53839dab
-ms.openlocfilehash: be075c358d9ca2c36b6d173fca983c16f6b0d78c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4f65082ad5094eb0aab28edeb06790a9af4019c6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970339"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714727"
 ---
 # <a name="polymorphism-c-programming-guide"></a>Polymorphisme (Guide de programmation C#)
 Le polymorphisme est souvent considéré comme le troisième pilier d'une programmation orientée objet, après l'encapsulation et l'héritage. Le polymorphisme est le mot grec qui signifie « plusieurs formes » et il prend deux aspects distincts :  
   
 - Au moment de l’exécution, les objets d’une classe dérivée peuvent être traités comme des objets d’une classe de base dans les paramètres de méthode et les collections ou les tableaux. Lorsque cela se passe, le type déclaré de l'objet n'est plus identique à son type au moment de l'exécution.  
   
-- Les classes de base peuvent définir et implémenter des *méthodes* [virtuelles](../../language-reference/keywords/virtual.md), et les classes dérivées peuvent les [substituer](../../language-reference/keywords/override.md), ce qui signifie qu’elles fournissent leur propre définition et implémentation. Au moment de l'exécution, quand le code client appelle la méthode, le CLR recherche le type au moment de l'exécution et appelle cette substitution de la méthode virtuelle. C'est pourquoi, dans le code source vous pouvez appeler une méthode dans une classe de base, et provoquer l'exécution d'une version de la classe dérivée de la méthode.  
+- Les classes de base peuvent définir et implémenter des *méthodes* [virtuelles](../../language-reference/keywords/virtual.md) , et les classes dérivées peuvent les [substituer](../../language-reference/keywords/override.md) , ce qui signifie qu’elles fournissent leur propre définition et implémentation. Au moment de l'exécution, quand le code client appelle la méthode, le CLR recherche le type au moment de l'exécution et appelle cette substitution de la méthode virtuelle. C'est pourquoi, dans le code source vous pouvez appeler une méthode dans une classe de base, et provoquer l'exécution d'une version de la classe dérivée de la méthode.  
   
  Les méthodes virtuelles vous permettent d'utiliser des groupes d'objets liés de façon uniforme. Par exemple, si vous avez une application de dessin qui permet à un utilisateur de créer différents types de formes sur une surface de dessin. Vous ne savez pas au moment de la compilation les types de formes spécifiques que l'utilisateur va créer. Cependant, l'application doit conserver une trace des différents types de formes créés et les mettre à jour en réponse aux actions de la souris. Vous pouvez utiliser le polymorphisme pour résoudre ce problème en deux étapes :  
   
@@ -51,14 +50,14 @@ Le polymorphisme est souvent considéré comme le troisième pilier d'une progra
   
  [!code-csharp[csProgGuideInheritance#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#21)]  
   
- Les méthodes et propriétés virtuelles permettent aux classes dérivées d'étendre une classe de base sans avoir besoin d'utiliser l'implémentation de classe de base d'une méthode. Pour plus d’informations, consultez [Versioning avec les mots clés override et new](./versioning-with-the-override-and-new-keywords.md). Une interface fournit un autre moyen pour définir une méthode ou un ensemble de méthodes dont l'implémentation est confiée aux classes dérivées. Pour plus d’informations, consultez [Interfaces](../interfaces/index.md).  
+ Les méthodes et propriétés virtuelles permettent aux classes dérivées d'étendre une classe de base sans avoir besoin d'utiliser l'implémentation de classe de base d'une méthode. Pour plus d’informations, consultez [Versioning avec les mots clés override et new](./versioning-with-the-override-and-new-keywords.md). Une interface fournit un autre moyen pour définir une méthode ou un ensemble de méthodes dont l'implémentation est confiée aux classes dérivées. Pour plus d'informations, consultez [Interfaces](../interfaces/index.md).  
   
 ### <a name="hiding-base-class-members-with-new-members"></a>Masquage des membres de classe de base par de nouveaux membres  
  Si vous voulez que votre membre dérivé ait le même nom qu’un membre d’une classe de base, mais que vous ne voulez pas qu’il participe à l’appel virtuel, vous pouvez utiliser le mot clé [new](../../language-reference/keywords/new-modifier.md). Le mot clé `new` est placé avec le type de retour d'un membre de classe qui est remplacé. Le code suivant est fourni à titre d'exemple :  
   
  [!code-csharp[csProgGuideInheritance#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#18)]  
   
- Les membres de classe de base masqués sont toujours accessibles à partir du code client en effectuant un cast de l'instance de la classe dérivée vers une instance de la classe de base. Exemple :  
+ Les membres de classe de base masqués sont toujours accessibles à partir du code client en effectuant un cast de l'instance de la classe dérivée vers une instance de la classe de base. Par exemple :  
   
  [!code-csharp[csProgGuideInheritance#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#19)]  
   

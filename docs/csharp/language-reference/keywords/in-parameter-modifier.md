@@ -1,16 +1,15 @@
 ---
 title: in, modificateur de paramètre - Référence C#
-ms.custom: seodec18
 ms.date: 03/26/2019
 helpviewer_keywords:
 - parameters [C#], in
 - in parameters [C#]
-ms.openlocfilehash: e39d470308ed5a2b2ed82ade0faf8ba925228c2c
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 10e7b91f9a6bf280c5f0654b243492bac8cde1e0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59112643"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715250"
 ---
 # <a name="in-parameter-modifier-c-reference"></a>in, modificateur de paramètre (référence C#)
 
@@ -57,7 +56,7 @@ La spécification de `in` pour des arguments au niveau de l’appel de site est 
 
 Tout d’abord, la spécification de `in` sur le site d’appel force le compilateur à sélectionner une méthode définie avec un paramètre `in` correspondant. Sinon, quand deux méthodes diffèrent uniquement par la présence de `in`, la surcharge par valeur convient mieux.
 
-Ensuite, la spécification de `in` déclare votre intention de passer un argument par référence. L’argument utilisé avec `in` doit représenter un emplacement directement référençable. Les mêmes règles générales pour les arguments `out` et `ref` s’appliquent : vous ne pouvez pas utiliser de constantes, de propriétés ordinaires ou d’autres expressions qui produisent des valeurs. Sinon, l’omission de `in` sur le site d’appel informe le compilateur que vous l’autorisez à créer une variable temporaire à passer par référence en lecture seule à la méthode. Le compilateur crée une variable temporaire pour surmonter plusieurs restrictions avec les arguments `in` :
+Ensuite, la spécification de `in` déclare votre intention de passer un argument par référence. L’argument utilisé avec `in` doit représenter un emplacement directement référençable. Les mêmes règles générales pour les arguments `out` et `ref` s’appliquent : vous ne pouvez pas utiliser de constantes, de propriétés ordinaires ou d’autres expressions qui produisent des valeurs. Sinon, l’omission de `in` sur le site d’appel informe le compilateur que vous l’autorisez à créer une variable temporaire à passer par référence en lecture seule à la méthode. Le compilateur crée une variable temporaire pour surmonter plusieurs restrictions avec les arguments `in` :
 
 - Une variable temporaire autorise des constantes au moment de la compilation comme paramètres `in`.
 - Une variable temporaire autorise des propriétés ou d’autres expressions pour les paramètres `in`.

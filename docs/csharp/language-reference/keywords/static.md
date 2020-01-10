@@ -1,6 +1,5 @@
 ---
 title: static, modificateur - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - static
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - static keyword [C#]
 ms.assetid: 5509e215-2183-4da3-bab4-6b7e607a4fdf
-ms.openlocfilehash: cbd0f6b4ef7976ccc2da2a735ccbba2bf23177e4
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: f4ca3fcf809e723d2144654f1da949eb4d6de1b4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422333"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713064"
 ---
 # <a name="static-c-reference"></a>static (référence C#)
 
@@ -68,7 +67,7 @@ Cet exemple montre que bien que vous puissiez initialiser un champ statique à l
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)

@@ -6,21 +6,19 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 4772f20e-1e7f-496e-93c2-1484473be555
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c2ce474dac44de1ac72811ecd3bc294ba57ce40a
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 7040c2ccf6e3bfc6efcbec3505c633c6c3c6508f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570462"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710061"
 ---
 # <a name="user-defined-functions-and-variables"></a>Fonctions et variables définies par l'utilisateur
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes utilisées pour interagir avec les données <xref:System.Xml.XPath.XPathDocument>. Vous pouvez compléter les fonctions XPath standard en implémentant des fonctions et variables d’extension qui seront utilisées par les expressions de requête XPath. La méthode <xref:System.Xml.XPath.XPathExpression.SetContext%2A> peut accepter un contexte défini par l'utilisateur dérivé de <xref:System.Xml.Xsl.XsltContext>. Les fonctions définies par l'utilisateur sont résolues par le contexte personnalisé.  
   
- Les fonctions et variables d’extension peuvent s’avérer utiles en prévention des attaques par injection de code XML. Dans ces scénarios, l’entrée utilisateur est affectée aux variables personnalisées et traitées par les fonctions d’extension, et non pas comme entrée brute concaténée avec les instructions de traitement. Les fonctions et variables d’extension contiennent l’entrée utilisateur afin qu’elle agisse uniquement sur les données XML comme prévu par le concepteur.  
+ Les fonctions et variables d’extension peuvent s’avérer utiles en prévention des attaques par injection de code XML. Dans ces scénarios, l’entrée utilisateur est affectée aux variables personnalisées et traitées par les fonctions d’extension, et non pas comme entrée brute concaténée avec les instructions de traitement. Les fonctions et variables d'extension contiennent l'entrée utilisateur afin qu'elle agisse uniquement sur les données XML comme prévu par le concepteur.  
   
- Pour utiliser les extensions, implémentez une classe <xref:System.Xml.Xsl.XsltContext> personnalisée avec les interfaces <xref:System.Xml.Xsl.IXsltContextFunction> et <xref:System.Xml.Xsl.IXsltContextVariable> qui prennent en charge les fonctions et variables d'extension. <xref:System.Xml.XPath.XPathExpression> ajoute une entrée utilisateur avec sa <xref:System.Xml.Xsl.XsltArgumentList> au <xref:System.Xml.Xsl.XsltContext> personnalisé.  
+ Pour utiliser les extensions, implémentez une classe <xref:System.Xml.Xsl.XsltContext> personnalisée avec les interfaces <xref:System.Xml.Xsl.IXsltContextFunction> et <xref:System.Xml.Xsl.IXsltContextVariable> qui prennent en charge les fonctions et variables d’extension. <xref:System.Xml.XPath.XPathExpression> ajoute une entrée utilisateur avec sa <xref:System.Xml.Xsl.XsltArgumentList> au <xref:System.Xml.Xsl.XsltContext> personnalisé.  
   
  <xref:System.Xml.XPath.XPathExpression> représente une requête compilée utilisée par <xref:System.Xml.XPath.XPathNavigator> pour rechercher et traiter les nœuds identifiés par l'expression.  
   
@@ -36,7 +34,7 @@ La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthode
  [!code-csharp[XPathExtensionFunctions#3](../../../../samples/snippets/csharp/VS_Snippets_Data/xpathextensionfunctions/cs/xpathextensionfunctions.cs#3)]
  [!code-vb[XPathExtensionFunctions#3](../../../../samples/snippets/visualbasic/VS_Snippets_Data/xpathextensionfunctions/vb/xpathextensionfunctions.vb#3)]  
   
- Le code suivant implémente <xref:System.Xml.Xsl.IXsltContextVariable>. Cette classe résout les références aux variables définies par l'utilisateur dans les expressions de requête XPath au moment de l'exécution. Une instance de cette classe est créée et retournée par la méthode <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> substituée de la classe <xref:System.Xml.Xsl.XsltContext> personnalisée.  
+ Le code suivant implémente <xref:System.Xml.Xsl.IXsltContextVariable>. Cette classe résout les références aux variables définies par l’utilisateur dans les expressions de requête XPath au moment de l’exécution. Une instance de cette classe est créée et retournée par la méthode <xref:System.Xml.Xsl.XsltContext.ResolveVariable%2A> substituée de la classe <xref:System.Xml.Xsl.XsltContext> personnalisée.  
   
  Les commentaires de code décrivent les membres de la classe.  
   

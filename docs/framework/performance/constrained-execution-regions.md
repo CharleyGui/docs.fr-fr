@@ -5,14 +5,12 @@ helpviewer_keywords:
 - constrained execution regions
 - CERs
 ms.assetid: 99354547-39c1-4b0b-8553-938e8f8d1808
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a0561ff5212fd6bc4e9015bea8da1d1082dd027e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: fde2bab99f156ddffec678022a58e7b14e0af01e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046692"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716173"
 ---
 # <a name="constrained-execution-regions"></a>régions d'exécution limitée
 Une région d’exécution limitée (CER, Constrained Execution Region) fait partie d’un mécanisme pour la création de code managé fiable. Elle définit une zone dans laquelle le Common Language Runtime (CLR) ne peut pas lever d’exceptions hors-bande qui empêcheraient le code dans la zone de s’exécuter dans son intégralité. Dans cette région, le code utilisateur ne peut pas exécuter de code qui entraînerait la levée d’exceptions hors-bande. La méthode <xref:System.Runtime.CompilerServices.RuntimeHelpers.PrepareConstrainedRegions%2A> doit précéder immédiatement un bloc `try`, et marque les blocs `catch`, `finally` et `fault` en tant que régions d’exécution limitée. Une fois marqué comme région limitée, le code doit appeler uniquement du code avec des contrats de fiabilité forts, et il ne doit pas allouer ou effectuer des appels virtuels à des méthodes non préparées ou non fiables, sauf s’il est prêt à gérer les échecs. Le CLR retarde les abandons de thread pour le code qui s’exécute dans une région CER.  

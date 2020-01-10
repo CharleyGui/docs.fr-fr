@@ -10,14 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: bb231df9ed33b89fa15cde998379b2964cf32ff9
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 9b868bd5ed77788cd9b44c11623ae38eba58153c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204769"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711361"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 Des données similaires peuvent souvent être gérées plus efficacement quand elles sont stockées et manipulées en tant que collection. Vous pouvez utiliser la classe <xref:System.Array?displayProperty=nameWithType>, ou les classes qui se trouvent dans les espaces de noms <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent> et System.Collections.Immutable, pour ajouter, supprimer et modifier des éléments individuels ou une série d’éléments dans une collection.  
@@ -77,7 +75,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |Titre|Description|  
 |-----------|-----------------|  
 |[Sélection d’une classe de collection](../../../docs/standard/collections/selecting-a-collection-class.md)|Décrit les différentes collections et permet d'en sélectionner une pour votre scénario.|  
-|[Types de collection couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Décrit les types de collection génériques et non génériques fréquemment utilisés, tels que <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
+|[Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Décrit les types de collection génériques et non génériques fréquemment utilisés, tels que <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
 |[Quand utiliser les collections génériques](../../../docs/standard/collections/when-to-use-generic-collections.md)|Traite de l'utilisation des types de collections génériques.|  
 |[Comparaisons et tris dans les collections](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Aborde l'utilisation des comparaisons d'égalité et de tri dans les collections.|  
 |[Types de collections triées](../../../docs/standard/collections/sorted-collection-types.md)|Aborde les caractéristiques et les performances des collections triées.|  
@@ -86,7 +84,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|  
   
 <a name="BKMK_Reference"></a>   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

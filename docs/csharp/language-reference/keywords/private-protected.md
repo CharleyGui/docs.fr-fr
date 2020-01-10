@@ -1,14 +1,13 @@
 ---
 title: private protected - Référence C#
-ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: dfb2e754d81116012b9fc3f8fd4f6fe1ad0daef1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a73d61712075cf24d2b94c505104df1fade629e9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422624"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713207"
 ---
 # <a name="private-protected-c-reference"></a>private protected (Référence C#)
 
@@ -71,7 +70,7 @@ Les membres de struct ne peuvent pas être `private protected`, car le struct ne
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)

@@ -2,13 +2,13 @@
 title: Présentation de Docker
 description: Cet article présente Docker et en brosse une vue d’ensemble dans le contexte d’une application .NET Core.
 ms.date: 03/20/2019
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 22c8fa4cda5cfd6564695d3b86072c64f22fa335
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.custom: mvc
+ms.openlocfilehash: 278c921de83282d61b25f4d44e91535981285e83
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74087389"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715548"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
@@ -70,7 +70,7 @@ Tirez, déplacez et modernisez des applications .NET aux microservices à l’ai
 - [Azure Container Registry](https://azure.microsoft.com/services/container-registry/)\
 Stockez et gérez des images conteneurs pour tous types de déploiements Azure.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Apprenez à conteneuriser une application .NET Core.](build-container.md)
 - [Apprenez à conteneuriser une application ASP.NET Core.](/aspnet/core/host-and-deploy/docker/building-net-docker-images)

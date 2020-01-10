@@ -2,17 +2,18 @@
 title: Visite guidée du langage C# - Guide du langage C#
 description: Vous débutez en C# ? Découvrez les principes de base du langage.
 ms.date: 04/05/2019
-ms.custom: seoapril2019
-ms.openlocfilehash: b497ff05b29ce349fe2be3f8b9bc1a8697d6b30b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: e2d7af3a35dc9d4fdeddf9eb742d155ab33094b4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774072"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711660"
 ---
-# <a name="a-tour-of-the-c-language"></a>Présentation rapide du langage C#
+# <a name="a-tour-of-the-c-language"></a>Visite guidée du C# langage
 
-C# (prononcé « C Sharp ») est un langage de programmation simple, moderne, orienté objet et de type sécurisé. C# prend sa source dans la famille de langages C et sera immédiatement reconnaissable aux programmeurs en C, C++, Java et JavaScript. Cette présentation fournit une vue d’ensemble des principaux composants du langage. Si vous voulez explorer le langage à travers des exemples interactifs, essayez nos tutoriels de [présentation de C# ](../tutorials/intro-to-csharp/index.md).
+C# (prononcé « C Sharp ») est un langage de programmation simple, moderne, orienté objet et de type sécurisé. C# prend sa source dans la famille de langages C et sera immédiatement reconnaissable aux programmeurs en C, C++, Java et JavaScript.
+
+Cette visite guidée fournit une vue d’ensemble des principaux composants du langage C# dans 7 et versions ultérieures. Si vous souhaitez explorer le langage par le biais d’exemples interactifs, consultez la [présentation C# ](../tutorials/intro-to-csharp/index.md) des didacticiels.
 
 C# est un langage orienté objet, mais C# inclut de plus la prise en charge de la programmation ***orientée composant***. La conception logicielle moderne s’appuie de plus en plus sur les composants logiciels sous la forme de packages de fonctionnalités autonomes et autodescriptifs. Point important, ces composants présentent un modèle de programmation avec propriétés, méthodes et événements ; ils ont des attributs qui fournissent des informations déclaratives sur le composant ; et ils intègrent leur propre documentation. C# fournit des constructions de langage qui prennent directement en charge ces concepts, ce qui fait de C# un langage très naturel pour créer et utiliser des composants logiciels.
 
@@ -49,7 +50,9 @@ La classe `Hello` déclarée par le programme « Hello, World » a un membre u
 
 La sortie du programme est générée par la méthode `WriteLine` de la classe `Console` dans l’espace de noms `System`. Cette classe est fournie par les bibliothèques de classes standard, qui, par défaut, sont référencées automatiquement par le compilateur.
 
-Il y a beaucoup d’autres choses à apprendre sur C#. Les rubriques suivantes fournissent une vue d’ensemble des éléments du langage C#. Ces vues d’ensemble fournissent des informations de base sur l’ensemble des éléments du langage et vous donnent les informations nécessaires pour explorer plus en détails les éléments du langage C# :
+## <a name="elements-of-the-c-language"></a>Éléments du C# langage
+
+Il y a beaucoup d’autres choses à apprendre sur C#. Les rubriques suivantes fournissent une vue d’ensemble des éléments du langage C#. Ces vues d’ensemble fournissent des informations de base sur tous les éléments de la langue et vous donnent les informations nécessaires pour approfondir les tâches :
 
 - [Structure du programme](program-structure.md)
   - Découvrez les concepts clés d’organisation du langage C# : ***programmes***, ***espaces de noms***, ***types***, ***membres*** et ***assemblys***.
@@ -66,13 +69,14 @@ Il y a beaucoup d’autres choses à apprendre sur C#. Les rubriques suivantes f
 - [Tableaux](arrays.md)
   - Un ***tableau*** est une structure de données qui contient un certain nombre de variables qui sont accessibles par des indices calculés.
 - [Interfaces](interfaces.md)
-  - Une ***interface*** définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas d’implémentations des membres qu’elle définit ; elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
-- [Énumérations](enums.md)
-  - Un ***type enum*** est un type valeur distinct avec un ensemble de constantes nommées.
+  - Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas les implémentations des membres qu’elle définit, elle indique simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
 - [Délégués](delegates.md)
   - Un ***type délégué*** représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 - [Attributs](attributes.md)
   - Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
+  
+> [!NOTE]
+> Ces articles s’appliquent à C# 7,0 et versions ultérieures. Certaines fonctionnalités ne sont peut-être pas disponibles dans les versions antérieures.
 
 > [!div class="step-by-step"]
 > [Suivant](program-structure.md)

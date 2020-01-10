@@ -6,12 +6,12 @@ helpviewer_keywords:
 - imports compiler option [Visual Basic]
 - -imports compiler option [Visual Basic]
 ms.assetid: 9a93fb53-c080-497b-bf9b-441022dbbc39
-ms.openlocfilehash: 380e71e462f736d4564a37b83567007fa9461b05
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2a1dd19189ff65413255b9bc137e1a7f0227bbe1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74332965"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716649"
 ---
 # <a name="-imports-visual-basic"></a>-Imports (Visual Basic)
 Importe des espaces de noms à partir d’un assembly spécifié.  
@@ -33,12 +33,12 @@ Importe des espaces de noms à partir d’un assembly spécifié.
   
  Les membres d’un espace de noms spécifié avec `-imports` sont disponibles pour tous les fichiers de code source de la compilation. Utilisez l' [instruction Imports (espace de noms et type .net)](../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md) pour utiliser un espace de noms dans un fichier de code source unique.  
   
-|Pour définir/Imports dans l’environnement de développement intégré Visual Studio|  
+|Pour définir-Imports dans l’environnement de développement intégré Visual Studio|  
 |---|  
 |1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **références** .<br />3. Entrez le nom de l’espace de noms dans la zone en regard du bouton **Ajouter une importation utilisateur** .<br />4. cliquez sur le bouton **Ajouter une importation d’utilisateur** .|  
   
 ## <a name="example"></a>Exemple  
- Le code suivant compile lorsque `/imports:system.globalization` est spécifié. Sans cela, la réussite de la compilation requiert qu’une instruction `Imports System.Globalization` soit incluse au début du fichier de code source, ou que la propriété soit qualifiée complète comme `System.Globalization.CultureInfo.CurrentCulture.Name`.
+ Le code suivant compile lorsque `-imports:system.globalization` est spécifié. Sans cela, la réussite de la compilation requiert qu’une instruction `Imports System.Globalization` soit incluse au début du fichier de code source, ou que la propriété soit qualifiée complète comme `System.Globalization.CultureInfo.CurrentCulture.Name`.
 
 ```vb
 Module Example

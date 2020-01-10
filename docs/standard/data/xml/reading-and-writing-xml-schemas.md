@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: b5757c4a-ea59-467e-ac62-be2bfe24eb77
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f80157ddf394fdd058793830bfe3052b41ad1e40
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 889c5f85a2ea3fc08dadefda5509de0fcfab76ec
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54576484"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710412"
 ---
 # <a name="reading-and-writing-xml-schemas"></a>Lecture et écriture de schémas XML
 L’API Modèle Objet du schéma (SOM) peut permettre de lire et écrire des schémas de langage XSD (XML Schema Definition) dans des fichiers ou d’autres sources et de générer un cache de schéma XML à l’aide des classes de l’espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondant aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML.  

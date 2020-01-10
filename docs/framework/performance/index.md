@@ -5,14 +5,12 @@ helpviewer_keywords:
 - performance [.NET Framework]
 - reliability [.NET Framework]
 ms.assetid: c1676cca-3f1a-41ec-b469-9029566074fc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b3f3d035ebf6472788e2c7d6e11cb1a39708367b
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ccff2318355ae2d5b606ee283d45d05afd35310d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800330"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716042"
 ---
 # <a name="net-framework-performance"></a>Performances .NET Framework
 Si vous voulez créer des applications dotées de hautes performances, vous devez concevoir et planifier les performances comme vous concevez n'importe quelle autre fonctionnalité de votre application. Vous pouvez utiliser les outils fournis par Microsoft pour mesurer les performances de votre application et, si nécessaire, apporter des améliorations à l'utilisation de la mémoire, au débit de code et à la réactivité. Cette rubrique répertorie les outils d'analyse de performance fournis par Microsoft et fournit des liens vers d'autres rubriques qui couvrent les performances dans des domaines spécifiques du développement d'applications.  

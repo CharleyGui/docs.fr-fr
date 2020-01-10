@@ -5,13 +5,13 @@ ms.date: 12/20/2019
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 9fcfb2e0c664186feda24c2a12daacb38769a68e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: ec9c6f992bcd4a76e2f70018f3facca42b7b660c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340002"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714070"
 ---
 # <a name="consume-a-net-standard-library-in-visual-studio"></a>Consommer une bibliothèque .NET Standard dans Visual Studio
 

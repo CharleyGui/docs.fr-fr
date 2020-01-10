@@ -3,14 +3,12 @@ title: Options de traitement XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 33ced8ee-1745-4e71-8dee-ebe70ec067c7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3fc7def48bff71935fce7c6ed914ad20c66e5182
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1707ed10d944a518872132dded40751026a4c8e7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73425177"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709918"
 ---
 # <a name="xml-processing-options"></a>Options de traitement XML
 Reportez-vous aux tableaux suivants pour obtenir une liste des technologies Microsoft que vous pouvez utiliser pour traiter des données XML.  

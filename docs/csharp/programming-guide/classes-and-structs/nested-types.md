@@ -1,19 +1,18 @@
 ---
 title: Types imbriqués - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/10/2017
 helpviewer_keywords:
 - nested types [C#]
 ms.assetid: f2e1b315-e3d1-48ce-977f-7bae0960ba99
-ms.openlocfilehash: de2e369702c48047835bc49b98df8f48fbd13480
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 982eeceb2088dd6e1e57fe796b38e46c0f2d4de8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596524"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705494"
 ---
 # <a name="nested-types-c-programming-guide"></a>Types imbriqués (guide de programmation C#)
-Un type défini dans une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/keywords/struct.md) s’appelle un type imbriqué. Par exemple :  
+Un type défini dans une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/keywords/struct.md) s’appelle un type imbriqué. Par exemple :  
   
  [!code-csharp[csProgGuideObjects#68](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#68)]  
   
@@ -31,7 +30,7 @@ L’exemple suivant fait passer le type de la classe `Nested` à public :
   
  [!code-csharp[csProgGuideObjects#69](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#69)]  
   
- Le type imbriqué (ou interne) peut accéder au type conteneur (ou externe). Pour accéder au type conteneur, passez-le en tant qu’argument au constructeur du type imbriqué. Par exemple :  
+ Le type imbriqué (ou interne) peut accéder au type conteneur (ou externe). Pour accéder au type conteneur, passez-le en tant qu’argument au constructeur du type imbriqué. Par exemple :  
   
  [!code-csharp[csProgGuideObjects#70](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#70)]  
   

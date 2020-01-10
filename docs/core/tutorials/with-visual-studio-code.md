@@ -3,19 +3,18 @@ title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.custom: seodec18
-ms.openlocfilehash: 4e283f631f463953185a37bf196a1a9b706eee2b
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: fdf26d67ca06ffb5ae9f8c12aa29819280770d5c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72002323"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715320"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 1. Installez [Visual Studio Code](https://code.visualstudio.com/).
 2. Installez le [SDK .NET Core](https://dotnet.microsoft.com/download).
@@ -57,7 +56,7 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 Vous pouvez également regarder un court didacticiel vidéo pour plus d’informations sur la configuration sur [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) ou [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Débogage
+## <a name="debug"></a>Déboguer
 
 1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier C# dans Visual Studio Code, [OmniSharp](https://www.omnisharp.net/) se charge dans l’éditeur.
 
@@ -135,7 +134,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     Hello World! Happy coding!
     ```
 
-## <a name="faq"></a>Questions fréquentes (FAQ)
+## <a name="faq"></a>Forum aux questions
 
 ### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Je n’ai pas les ressources nécessaires pour générer et déboguer du code C# dans Visual Studio Code. Mon débogueur indique « Aucune configuration ».
 

@@ -1,16 +1,15 @@
 ---
 title: Valeurs de retour de Main() - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: aa3d3032f083682f94c75c400710640b9408e973
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 21e780470f455ac133fd4d11ae43c63a4b18c582
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635364"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712037"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 

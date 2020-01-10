@@ -1,16 +1,15 @@
 ---
 title: new, modificateur - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - new modifier keyword [C#]
 ms.assetid: a2e20856-33b9-4620-b535-a60dbce8349b
-ms.openlocfilehash: 082cd37eca6b5de1251d73a5483665f8a98b0132
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6c4fedd469efb79f91780dff26da89b586de2d1c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422666"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713344"
 ---
 # <a name="new-modifier-c-reference"></a>new, modificateur (référence C#)
 
@@ -18,7 +17,7 @@ En cas d'utilisation comme un modificateur de déclaration, le mot clé `new` ma
 
 Vous pouvez également utiliser le mot clé `new` pour [créer une instance d’un type](../operators/new-operator.md) ou l’utiliser comme une [contrainte de type générique](./new-constraint.md).
 
-Pour masquer un membre hérité, déclarez-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez-le à l'aide du mot-clé `new`. Exemple :
+Pour masquer un membre hérité, déclarez-le dans la classe dérivée en utilisant le même nom de membre, puis modifiez-le à l'aide du mot-clé `new`. Par exemple :
 
 [!code-csharp[csrefKeywordsOperator#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsOperator/CS/csrefKeywordsOperators.cs#8)]
 
@@ -60,7 +59,7 @@ Pour plus d’informations, consultez la section [Modificateur new](~/_csharplan
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../../language-reference/index.md)
+- [Référence C#](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)

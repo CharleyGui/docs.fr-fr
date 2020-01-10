@@ -5,14 +5,12 @@ helpviewer_keywords:
 - .NET Framework ETW events
 - ETW events in the .NET Framework
 ms.assetid: d186276f-6afb-4dfd-bf3c-4251edc2c299
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f810b4424574f016f13dc5fa46f785d866dda53e
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 93add45f0684b69a66f643499da61f9054ec7b37
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046580"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716088"
 ---
 # <a name="etw-events-in-the-net-framework"></a>Événements ETW dans le .NET Framework
 Le suivi d’événements pour Windows (ETW) est un système de suivi hautes performances, à faible charge et scalable fourni par les systèmes d’exploitation Windows. Il complète la prise en charge du profilage et du débogage fournie par le .NET Framework et peut être utilisé pour dépanner un certain nombre de situations.  

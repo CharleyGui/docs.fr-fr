@@ -3,14 +3,12 @@ title: Résolution des ressources externes
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ad3fa320-4b8f-4e5c-b549-01157591007a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b4ba0cbb25e2c83a33ffba99ccbb29d5b414b3c1
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 05cc41cef7da07581d4f0ec8e584858b913d1a80
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69918204"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710269"
 ---
 # <a name="resolving-external-resources"></a>Résolution des ressources externes
 La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **XmlDocument** pour localiser des ressources qui ne sont pas incluses dans les données XML, comme des définitions de type de document (DTD), des entités et des schémas externes. Ces éléments peuvent être localisés sur un réseau ou un lecteur local et sont identifiables par un URI (Uniform Resource Identifier). **XmlDocument** peut ainsi résoudre les nœuds **EntityReference** présents dans le document et valider le document en fonction de la DTD ou du schéma externe.  
@@ -18,7 +16,7 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
 ## <a name="fully-trusted-xmldocument"></a>XmlDocument d'une confiance suffisante  
  La propriété **XmlResolver** affecte la fonctionnalité de la méthode **XmlDocument.Load**. Le tableau suivant montre comment la propriété **XmlDocument.XmlResolver** fonctionne lorsque l'objet **XmlDocument** est entièrement fiable. Le tableau suivant illustre les méthodes **XmlDocument.Load** lorsque l'entrée de Load est **TextReader**, **String**, **Stream** ou **URI**. Ce tableau ne s'applique pas à la méthode **Load** si **XmlDocument** est chargé depuis un **XmlReader**.  
   
-|XmlResolver, propriété|Fonction|Notes|  
+|XmlResolver, propriété|Fonction|Remarques|  
 |--------------------------|--------------|-----------|  
 |La propriété est définie sur une classe **XmlResolver** créée précédemment et possède des propriétés déjà définies par l'utilisateur.|Le **XmlDocument** utilise le **XmlResolver** donné pour résoudre des noms de fichiers ainsi que des références aux ressources externes comme par exemple des DTD, des entités et des schémas.<br /><br /> **XmlResolver** est également utilisé pour la résolution des ressources externes nécessaires lors de l'addition ou de la modification de nœuds dans **XmlDocument**.|Le **XmlResolver** donné à **XmlDocument** est le programme de résolution utilisé à chaque fois que des ressources externes doivent être localisées et résolues.|  
 |La propriété a la valeur **null** (**Nothing** dans Microsoft Visual Basic .NET).|Les fonctionnalités qui nécessitent une ressource externe ne sont pas prises en charge comme la localisation d’un schéma ou DTD externe. Les entités externes ne seront pas non plus résolues et les fonctions de modification, comme l’insertion de nœuds d’entité qui demandent une résolution, ne sont pas prises en charge.|**XmlDocument** charge des fichiers de manière anonyme et ne cherche pas à résoudre d'autres ressources.|  
@@ -26,14 +24,14 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
   
  Le tableau suivant illustre la méthode **XmlDocument.Load** lorsque l'entrée de **Load** est **XmlReader** et que **XmlDocument** est entièrement fiable.  
   
-|XmlResolver, propriété|Fonction|Notes|  
+|XmlResolver, propriété|Fonction|Remarques|  
 |--------------------------|--------------|-----------|  
 |La classe **XmlResolver** utilisée par **XmlDocument** correspond à la même classe utilisée par **XmlReader**.|Le **XmlDocument** utilise le **XmlResolver** assigné à **XmlReader**.<br /><br /> La propriété **XmlDocument.Resolver** ne peut pas être définie, quel que soit le niveau de confiance de **XmlDocument**, car elle reçoit un **XmlResolver** de **XmlReader**. Vous ne pouvez pas essayer de substituer les paramètres **XmlResolver** de **XmlReader** en définissant la propriété **XmlResolver** du **XmlDocument**.|Le **XmlReader** peut être le **XmlTextReader**, **XmlValidatingReader** ou un lecteur à l'écriture personnalisée. Si le lecteur utilisé prend en charge la résolution d’entité, les entités externes sont résolues. Si le lecteur passé ne prend pas en charge les références d'entité, dans ce cas celles-ci ne sont pas résolues.|  
   
 ## <a name="semi-trusted-xmldocument"></a>XmlDocument d'une confiance partielle  
  Le tableau suivant montre comment la propriété **XmlDocument.XmlResolver** fonctionne lorsque l'objet est d'un niveau de confiance partiel. Ce tableau s'applique aux méthodes**XmlDocument.Load** lorsque l'entrée de Load est **TextReader**, **String**, **Stream** ou **URI**. Ce tableau ne s'applique pas à la méthode **Load** si **XmlDocument** est chargé depuis un **XmlReader**.  
   
-|XmlResolver, propriété|Fonction|Notes|  
+|XmlResolver, propriété|Fonction|Remarques|  
 |--------------------------|--------------|-----------|  
 |Dans le scénario d'un niveau de confiance partiel, la propriété **XmlResolver** ne peut pas être définie d'une autre manière que null.|Un **XmlUrlResolver** avec des informations d'identification **null** sera instancié et utilisé par **XmlDocument** lors de la résolution de noms de fichiers, la localisation des DTD, des entités et des schémas externes ; des informations d'identification **null** sont également utilisées lors de l'édition des nœuds.|Ce comportement est identique au comportement où la propriété **XmlResolver** n'est pas définie, mais laissée dans son état par défaut.<br /><br /> **XmlDocument** utilise des autorisations anonymes pour toutes les actions.|  
 |La propriété a la valeur **null** (**Nothing** dans Microsoft Visual Basic .NET).|Aucune fonctionnalité qui nécessite une ressource externe n'est prise en charge comme la localisation d'un schéma ou DTD externe. Les entités externes ne seront pas non plus résolues et les fonctions de modification, comme l’insertion de nœuds d’entité qui demandent une résolution, ne sont pas prises en charge.|Lorsque la propriété est **null**, le comportement est le même, que **XmlDocument** soit d'un niveau de confiance parfait ou suffisant.|  
@@ -41,9 +39,9 @@ La propriété **XmlResolver** de **XmlDocument** est utilisée par la classe **
   
  Ce tableau s'applique à la méthode **XmlDocument.Load** lorsque l'entrée de **Load** est **XmlReader** et que **XmlDocument** est d'un niveau de confiance partiel.  
   
-|XmlResolver, propriété|Fonction|Notes|  
+|XmlResolver, propriété|Fonction|Remarques|  
 |--------------------------|--------------|-----------|  
-|La classe **XmlResolver** utilisée par **XmlDocument** correspond à la même classe utilisée par **XmlReader**.|Le **XmlDocument** utilise le **XmlResolver** assigné à **XmlReader**.<br /><br /> La propriété **XmlDocument.Resolver** ne peut pas être définie, quel que soit le niveau de confiance de **XmlDocument**, car elle reçoit un **XmlResolver** de **XmlReader**. Vous ne pouvez pas essayer de substituer les paramètres **XmlResolver** de **XmlReader** en définissant la propriété **XmlResolver** du **XmlDocument**.|Le **XmlReader** peut être le **XmlTextReader**, l'objet de validation <xref:System.Xml.XmlReader> ou un lecteur à l'écriture personnalisée. Si le lecteur utilisé prend en charge la résolution d’entité, les entités externes sont résolues. Si le lecteur passé ne prend pas en charge de références d'entité, dans ce cas celles-ci ne sont pas résolues.|  
+|La classe **XmlResolver** utilisée par **XmlDocument** correspond à la même classe utilisée par **XmlReader**.|Le **XmlDocument** utilise le **XmlResolver** assigné à **XmlReader**.<br /><br /> La propriété **XmlDocument.Resolver** ne peut pas être définie, quel que soit le niveau de confiance de **XmlDocument**, car elle reçoit un **XmlResolver** de **XmlReader**. Vous ne pouvez pas essayer de substituer les paramètres **XmlResolver** de XmlReader en définissant la propriété **XmlResolver** de **XmlDocument**.|Le **XmlReader** peut être le **XmlTextReader**, l'objet de validation <xref:System.Xml.XmlReader> ou un lecteur à l'écriture personnalisée. Si le lecteur utilisé prend en charge la résolution d’entité, les entités externes sont résolues. Si le lecteur passé ne prend pas en charge de références d'entité, dans ce cas celles-ci ne sont pas résolues.|  
   
  Le paramétrage de XmlResolver pour contenir les informations d'identification correctes permet d'accéder à des ressources externes.  
   

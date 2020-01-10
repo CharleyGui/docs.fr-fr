@@ -1,28 +1,33 @@
 ---
-title: Autres outils d’interface CLI .NET Core
+title: Outils CLI supplémentaires
 description: Vue d’ensemble des outils supplémentaires que vous pouvez installer, prenant en charge et étendant les fonctionnalités de .NET Core.
 author: mlacouture
-ms.date: 11/27/2018
-ms.custom: mvc, seodec18
-ms.openlocfilehash: c885d6f6b0417a80dd6e26afe9572766738c5b4b
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.date: 12/02/2019
+ms.custom: mvc
+ms.openlocfilehash: 1f066523a24d4e1fd7aaaa5a19e8d6c9d72d35af
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771966"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714534"
 ---
 # <a name="net-core-additional-tools-overview"></a>Vue d’ensemble des outils .NET Core supplémentaires
 
 Cette section dresse une liste des outils qui prennent en charge et étendent les fonctionnalités de .NET Core, en plus des outils d’[interface de ligne de commande (CLI) .NET Core](../tools/index.md).
 
+## <a name="net-core-uninstall-tooluninstall-toolmd"></a>[Outil de désinstallation de .NET Core](uninstall-tool.md)
+
+L' [outil de désinstallation de .net Core](https://dotnet.microsoft.com/download/dotnet-core/uninstall-tool) (`dotnet-core-uninstall`) vous permet de nettoyer les kits de développement logiciel (SDK) .net Core et les runtimes sur un système de sorte que seules les versions spécifiées soient conservées. Une collection d’options est disponible pour spécifier les versions qui sont désinstallées.
+
 ## <a name="wcf-web-service-reference-toolwcf-web-service-reference-guidemd"></a>[Outil WCF Web Service Reference](wcf-web-service-reference-guide.md)
 
-WCF (Windows Communication Foundation) Web Service Reference est un fournisseur de services connectés Visual Studio qui a fait son apparition dans [Visual Studio 2017 version 15.5](/visualstudio/releasenotes/vs2017-relnotes-v15.5#WCFTools). Cet outil récupère les métadonnées d’un service web dans la solution actuelle sur un emplacement réseau ou dans un fichier WSDL, puis génère un fichier source compatible avec .NET Core, en définissant une classe proxy WCF avec des méthodes que vous pouvez utiliser pour accéder aux opérations du service web.
+WCF (Windows Communication Foundation) Web Service Reference est un fournisseur de services connectés Visual Studio qui a fait son apparition dans [Visual Studio 2017 version 15.5](/visualstudio/releasenotes/vs2017-relnotes-v15.5#WCFTools). Cet outil récupère les métadonnées d’un service Web dans la solution actuelle, sur un emplacement réseau ou à partir d’un fichier WSDL. Il génère un fichier source compatible avec .NET Core, définissant une classe proxy WCF avec des méthodes que vous pouvez utiliser pour accéder aux opérations de service Web.
 
 ## <a name="wcf-dotnet-svcutil-tooldotnet-svcutil-guidemd"></a>[Outil dotnet-svcutil WCF](dotnet-svcutil-guide.md)
 
-L’outil dotnet-svcutil WCF (Windows Communication Foundation) est un outil CLI .NET Core qui récupère les métadonnées d’un service web sur un emplacement réseau ou dans un fichier WSDL, puis génère un fichier source compatible avec .NET Core, en définissant une classe proxy WCF avec des méthodes que vous pouvez utiliser pour accéder aux opérations du service web.
-L’outil **dotnet-Svcutil** est une autre option pour la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio, qui a été livré avec visual studio 2017 version 15,5. L’outil **dotnet-svcutil**, en tant qu’outil CLI .NET Core, est disponible sur les plateformes Linux, macOS et Windows.
+L’outil WCF (Windows Communication Foundation) dotnet-Svcutil est un outil CLI .NET Core qui récupère les métadonnées d’un service Web sur un emplacement réseau ou à partir d’un fichier WSDL. Il génère un fichier source compatible avec .NET Core, définissant une classe proxy WCF avec des méthodes que vous pouvez utiliser pour accéder aux opérations de service Web.
+
+L’outil **dotnet-Svcutil** est une autre option pour la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio, qui a été livré avec visual studio 2017 version 15,5. L’outil **dotnet-Svcutil** , en tant qu’outil de CLI .net Core, est disponible sur plusieurs plateformes sur Linux, MacOS et Windows.
 
 ## <a name="wcf-dotnet-svcutilxmlserializer-tooldotnet-svcutilxmlserializer-guidemd"></a>[Outil dotnet-svcutil.xmlserializer WCF](dotnet-svcutil.xmlserializer-guide.md)
 

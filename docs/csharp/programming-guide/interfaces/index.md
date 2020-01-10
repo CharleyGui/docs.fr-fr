@@ -1,17 +1,16 @@
 ---
 title: Interfaces - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 08/21/2018
 helpviewer_keywords:
 - interfaces [C#]
 - C# language, interfaces
 ms.assetid: 2feda177-ce11-432d-81b4-d50f5f35fd37
-ms.openlocfilehash: d03917353a9e6879ccb3b368d7d190aeeacb702c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 3187b8b94c6e46ec13312fc31ac1ed9852199d6b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635234"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714608"
 ---
 # <a name="interfaces-c-programming-guide"></a>Interfaces (Guide de programmation C#)
 
@@ -54,7 +53,7 @@ Une interface possède les propriétés suivantes :
 - Une interface est comme une classe de base abstraite avec uniquement des membres abstraits. Toute classe ou tout struct qui implémentent l'interface doivent implémenter tous ses membres.
 - Une interface ne peut pas être instanciée directement. Ses membres sont implémentées par une classe ou un struct qui implémentent l'interface.
 - Les interfaces peuvent contenir des événements, des indexeurs, des méthodes et des propriétés.
-- Les interfaces ne contiennent aucune implémentation de méthodes.
+- Les interfaces ne contiennent aucune implémentation de méthodes C# (dans 8,0, les interfaces peuvent avoir une [implémentation par défaut pour les méthodes](../../whats-new/csharp-8.md#default-interface-methods)).
 - Une classe ou un struct peuvent implémenter plusieurs interfaces. Une classe peut hériter d'une classe de base et également implémenter une ou plusieurs interfaces.
 
 ## <a name="in-this-section"></a>Dans cette section

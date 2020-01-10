@@ -2,17 +2,16 @@
 title: Migration de DNX vers l’interface CLI .NET Core
 description: Migrez des outils DNX vers les outils de l’interface CLI .NET Core.
 ms.date: 06/20/2016
-ms.custom: seodec18
-ms.openlocfilehash: 0f00ee6c05a47d976028c3cd4eade2b2b399260b
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: 91a43ffda31b34332d2e545a90c857221aa162c4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59160834"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715521"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migration de DNX vers l’interface CLI .NET Core (project.json)
 
-## <a name="overview"></a>Vue d'ensemble
+## <a name="overview"></a>Vue d'ensemble de
 Avec la version RC1 de .NET Core et ASP.NET Core 1.0, nous avons introduit les outils DNX. Avec la version RC2 de .NET Core et ASP.NET Core 1.0, nous sommes passés de DNX à l’interface CLI .NET Core.
 
 Pour rappel, revenons sur ce qu’était DNX. DNX était un runtime et un ensemble d’outils qui servait à générer des applications .NET Core et, plus précisément, des applications ASP.NET Core 1.0. Il était constitué de 3 composants principaux :

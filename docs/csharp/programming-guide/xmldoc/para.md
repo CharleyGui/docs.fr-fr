@@ -1,6 +1,5 @@
 ---
 title: <para> - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <para>
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - <para> C# XML tag
 - para C# XML tag
 ms.assetid: c74b8705-29df-40b1-bff5-237492b0e978
-ms.openlocfilehash: 136906de855f559c8eeb27a4ae7ec481dfec3435
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 3ebadf43f0627cea98b456de8b4c9a0e2bf84af9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523446"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711738"
 ---
 # <a name="para-c-programming-guide"></a>\<para> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -23,12 +22,12 @@ ms.locfileid: "72523446"
 <para>content</para>  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `content`  
  Texte du paragraphe.  
   
 ## <a name="remarks"></a>Notes  
- La balise \<para> est prévue pour une utilisation à l’intérieur d’une balise, telle que [ \<summary>](./summary.md), [\<remarks>](./remarks.md) ou [ \<returns>](./returns.md), et vous permet d’ajouter une structure au texte.  
+ La balise \<para> est prévue pour une utilisation à l’intérieur d’une balise, telle que [\<summary>](./summary.md), [\<remarks>](./remarks.md) ou [\<returns>](./returns.md), et vous permet d’ajouter une structure au texte.  
   
  Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-option.md) pour placer les commentaires de documentation dans un fichier en vue de les traiter.  
   

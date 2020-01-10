@@ -1,6 +1,5 @@
 ---
 title: try-catch - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - try
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - catch keyword [C#]
 - try-catch statement [C#]
 ms.assetid: cb5503c7-bfa1-4610-8fc2-ddcd2e84c438
-ms.openlocfilehash: 8f901bd8ab5dcdcf4f5674e3f235267c9f535725
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.openlocfilehash: 5289dbe3aff0a9e1f1024a293ff469df44d34a3b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
-ms.locfileid: "70168718"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713025"
 ---
 # <a name="try-catch-c-reference"></a>try-catch (référence C#)
 
@@ -140,7 +139,7 @@ Pour intercepter l'exception, attendez la tâche dans un bloc `try`, puis interc
 
 Une tâche peut être dans un état d'erreur car plusieurs exceptions se sont produites dans la méthode async attendue. Par exemple, la tâche peut être le résultat d'un appel à <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Quand vous attendez une telle tâche, une seule des exceptions est interceptée et vous ne pouvez pas prévoir laquelle. Pour obtenir un exemple, consultez la section [Exemple Task.WhenAll](#taskwhenall-example).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 Dans l'exemple suivant, le bloc `try` contient un appel à la méthode `ProcessString` qui risque de provoquer une exception. La clause `catch` clause contient le gestionnaire d'exceptions qui affiche simplement un message à l'écran. Quand l'instruction `throw` est appelée depuis `MyMethod`, le système recherche l'instruction `catch` et affiche le message `Exception caught`.
 

@@ -6,19 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 5711b225-6aa2-4e4f-9898-19f2d518ad1a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 68d19784bab8a5d5a1994ea139b5631f56c7c680
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 87ae96944f9a9f2bbcefb54c343f429c75c3022d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54580419"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710386"
 ---
 # <a name="reading-xml-data-using-xpathdocument-and-xmldocument"></a>Lecture de données XML à l’aide de XPathDocument et XmlDocument
 Il existe deux manières de lire un document XML dans l'espace de noms <xref:System.Xml.XPath?displayProperty=nameWithType>. La première consiste à lire un document XML à l'aide de la classe <xref:System.Xml.XPath.XPathDocument> en lecture seule et la seconde à lire un document XML à l'aide de la classe <xref:System.Xml.XmlDocument> modifiable dans l'espace de noms <xref:System.Xml?displayProperty=nameWithType>.  
   
-## <a name="reading-xml-documents-using-the-xpathdocument-class"></a>Lecture de documents XML à l'aide de la classe XPathDocument  
+## <a name="reading-xml-documents-using-the-xpathdocument-class"></a>Lecture de documents XML à l’aide de la classe XPathDocument  
  La classe <xref:System.Xml.XPath.XPathDocument> fournit une représentation rapide, en lecture seule et en mémoire d'un document XML à l'aide du modèle de données XPath. Des instances de la classe <xref:System.Xml.XPath.XPathDocument> sont créées à l'aide de l'un de ses six constructeurs. Ces constructeurs permettent de lire un document XML à l’aide d’un objet <xref:System.IO.Stream>, <xref:System.IO.TextReader> ou <xref:System.Xml.XmlReader>, ainsi que le chemin d’accès `string` à un fichier XML.  
   
  L'exemple suivant illustre l'utilisation du constructeur <xref:System.Xml.XPath.XPathDocument> de la classe `string` en vue de la lecture d'un document XML.  

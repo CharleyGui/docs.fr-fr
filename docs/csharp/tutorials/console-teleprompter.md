@@ -4,16 +4,16 @@ description: Ce didacticiel vous présente un certain nombre de fonctionnalités
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 2b9948ce22eb221d9d757fcec4c556d365469fdf
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 921c8fc7824bdb48f08e4d9f5a276bf2284f8a17
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039266"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714604"
 ---
-# <a name="console-application"></a>Application console
+# <a name="console-app"></a>Application console
 
-Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
+Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez :
 
 - Principes de base de l’interface de ligne de commande (CLI) de .NET Core
 - La structure d’une application de console C#
@@ -21,27 +21,27 @@ Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core
 - Les principes fondamentaux des API d’E/S de fichier dans .NET
 - Les principes fondamentaux de la programmation asynchrone basée sur des tâches dans .NET
 
-Vous allez générer une application qui lit un fichier texte et retourne le contenu du fichier texte dans la console. La sortie sur la console se fait à un rythme permettant de la lire à haute voix. Vous pouvez accélérer ou ralentir la vitesse en appuyant sur les touches '<’ (inférieur à) ou ’>' (supérieur à).
+Vous allez générer une application qui lit un fichier texte et renvoie le contenu de ce fichier texte sur la console. La sortie sur la console se fait à un rythme permettant de la lire à haute voix. Vous pouvez accélérer ou ralentir le rythme en appuyant sur les clés « < » (inférieure à) ou « > » (supérieur à).
 
-Il existe un grand nombre de fonctionnalités dans ce didacticiel. Nous allons les construire une par une.
+Il existe un grand nombre de fonctionnalités dans ce didacticiel. Créons-les un par un.
 
 ## <a name="prerequisites"></a>Configuration requise
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker.
-Vous devez installer l’éditeur de code de votre choix.
+- Configurez votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, macOS ou dans un conteneur d’ancrage.
 
-## <a name="create-the-application"></a>Création de l’application
+- Installez votre éditeur de code favori.
+
+## <a name="create-the-app"></a>Créer l’application
 
 La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Elle crée les fichiers de démarrage d’une application « Hello World » de base.
 
-Avant d’apporter des modifications, examinons les étapes nécessaires pour exécuter l’application simple Hello World. Après avoir créé l’application, saisissez `dotnet restore` à l’invite de commandes. Cette commande exécute le processus de restauration de package NuGet. NuGet est un gestionnaire de packages .NET. Cette commande télécharge les dépendances manquantes pour votre projet. Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place, donc la première exécution téléchargera le framework .NET Core. Après cette étape initiale, vous devrez exécuter `dotnet restore` lorsque vous ajoutez de nouveaux packages dépendants ou mettez à jour les versions de vos dépendances.
+Avant de commencer à apporter des modifications, suivez les étapes pour exécuter l’application simple Hello World. Après avoir créé l’application, saisissez `dotnet restore` à l’invite de commandes. Cette commande exécute le processus de restauration de package NuGet. NuGet est un gestionnaire de packages .NET. Cette commande télécharge les dépendances manquantes pour votre projet. Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place, donc la première exécution téléchargera le framework .NET Core. Après cette étape initiale, vous devrez exécuter `dotnet restore` lorsque vous ajoutez de nouveaux packages dépendants ou mettez à jour les versions de vos dépendances.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
 Après la restauration des packages, vous exécutez `dotnet build`. Cela exécute le moteur de génération et crée l’exécutable de votre application. Enfin, vous exécutez `dotnet run` pour lancer votre application.
 
-Le code d’application Hello World simple se trouve intégralement dans le fichier Program.cs. Ouvrez ce fichier avec votre éditeur de texte préféré. Nous allons apporter nos premières modifications.
-En haut du fichier, remarquez l’instruction using :
+Le code d’application Hello World simple se trouve intégralement dans le fichier Program.cs. Ouvrez ce fichier avec votre éditeur de texte préféré. Nous allons apporter nos premières modifications. En haut du fichier, remarquez l’instruction using :
 
 ```csharp
 using System;
@@ -73,7 +73,7 @@ static IEnumerable<string> ReadFrom(string file)
 }
 ```
 
-Cette méthode utilise les types de deux nouveaux espaces de noms. Pour que cela compile, vous devez ajouter les deux lignes suivantes au début du fichier :
+Cette méthode utilise les types de deux nouveaux espaces de noms. Pour compiler, vous devez ajouter les deux lignes suivantes au début du fichier :
 
 ```csharp
 using System.Collections.Generic;
@@ -88,7 +88,7 @@ Il existe deux autres éléments de syntaxe de C# qui peuvent être nouveaux pou
 
 La variable `reader` est définie à l’aide du mot-clé `var`. [`var`](../language-reference/keywords/var.md) définit une *variable locale implicitement typée*. Cela signifie que le type de la variable est déterminé par le type au moment de la compilation de l’objet assigné à la variable. Ici, c’est la valeur retournée par la méthode <xref:System.IO.File.OpenText(System.String)>, qui est un objet <xref:System.IO.StreamReader>.
 
-À présent, nous allons remplir le code pour lire le fichier dans la méthode `Main` :
+À présent, nous allons renseigner le code pour lire le fichier dans la méthode `Main` :
 
 ```csharp
 var lines = ReadFrom("sampleQuotes.txt");
@@ -102,9 +102,9 @@ Exécutez le programme (à l’aide de `dotnet run`). Chaque ligne est envoyée 
 
 ## <a name="adding-delays-and-formatting-output"></a>Ajout de délais et de mise en forme à la sortie
 
-Ce que vous avez s’affiche beaucoup trop rapidement pour le lire à haute voix. Vous devez maintenant ajouter des délais à la sortie. Lorsque vous commencez, vous créez une partie du code principal qui permet le traitement asynchrone. Toutefois, ces premières étapes suivront quelques anti-modèles. Les anti-modèles sont signalés dans les commentaires lorsque vous ajoutez le code, et le code sera actualisé ultérieurement.
+Ce que vous avez s’affiche beaucoup trop rapidement pour le lire à haute voix. Vous devez maintenant ajouter des délais à la sortie. Au démarrage, vous allez générer un code de base qui permet un traitement asynchrone. Toutefois, ces premières étapes suivront quelques anti-modèles. Les anti-modèles sont signalés dans les commentaires lorsque vous ajoutez le code, et le code sera actualisé ultérieurement.
 
-Il existe deux étapes dans cette section. Tout d’abord, vous allez mettre à jour la méthode d’itérateur pour retourner des mots uniques au lieu de lignes entières. Vous le faites avec ces modifications. Remplacez l’instruction `yield return line;` par le code suivant :
+Il existe deux étapes dans cette section. Tout d’abord, vous allez mettre à jour la méthode Iterator pour retourner des mots uniques au lieu de lignes entières. Cela se fait avec ces modifications. Remplacez l’instruction `yield return line;` par le code suivant :
 
 ```csharp
 var words = line.Split(' ');
@@ -135,7 +135,7 @@ La classe <xref:System.Threading.Tasks.Task> se trouve dans l’espace de noms <
 using System.Threading.Tasks;
 ```
 
-Exécutez l’exemple et vérifiez le résultat. À présent, chaque mot unique est affiché séparément, suivi d’un délai de 200 ms. Toutefois, la sortie affichée présente certains problèmes, car le fichier texte source possède plusieurs lignes qui ont plus de 80 caractères sans saut de ligne. Ce qui peut être difficile à lire lors du défilement. Ce problème est facile à résoudre. Vous allez simplement effectuer le suivi de la longueur de chaque ligne et générer une nouvelle ligne chaque fois que la longueur de ligne atteint un certain seuil. Déclarez une variable locale après la déclaration de `words` dans la méthode `ReadFrom` qui contient la longueur de ligne :
+Exécutez l’exemple et vérifiez le résultat. À présent, chaque mot unique est affiché séparément, suivi d’un délai de 200 ms. Toutefois, la sortie affichée présente certains problèmes, car le fichier texte source possède plusieurs lignes qui ont plus de 80 caractères sans saut de ligne. Ce qui peut être difficile à lire lors du défilement. C’est facile à corriger. Il vous suffit d’effectuer le suivi de la longueur de chaque ligne et de générer une nouvelle ligne chaque fois que la longueur de la ligne atteint un certain seuil. Déclarez une variable locale après la déclaration de `words` dans la méthode `ReadFrom` qui contient la longueur de ligne :
 
 ```csharp
 var lineLength = 0;
@@ -152,12 +152,11 @@ if (lineLength > 70)
 }
 ```
 
-Exécutez l’exemple et vous serez en mesure de lire à haute voix au rythme préconfiguré.
+Exécutez l’exemple et vous serez en mesure de lire à haute voix à son rythme préconfiguré.
 
 ## <a name="async-tasks"></a>Tâches asynchrones
 
-Dans cette étape, vous allez ajouter le code pour écrire la sortie de façon asynchrone dans une tâche, lorsque vous exécutez également une autre tâche pour lire d’entrée de l’utilisateur s’il souhaite accélérer ou ralentir l’affichage du texte, ou l’arrêter. Cela représente plusieurs étapes et à la fin, vous aurez toutes les mises à jour dont vous avez besoin.
-La première étape consiste à créer une méthode de retour <xref:System.Threading.Tasks.Task> asynchrone qui représente le code que vous avez créé jusqu'à présent pour lire et afficher le fichier.
+Dans cette étape finale, vous allez ajouter le code pour écrire la sortie de façon asynchrone dans une tâche, tout en exécutant également une autre tâche pour lire l’entrée de l’utilisateur s’il souhaite accélérer ou ralentir l’affichage du texte, ou arrêter complètement l’affichage du texte. Il y a quelques étapes dans l’informatique et, à la fin, vous disposerez de toutes les mises à jour dont vous avez besoin. La première étape consiste à créer une méthode de retour <xref:System.Threading.Tasks.Task> asynchrone qui représente le code que vous avez créé jusqu’à présent pour lire et afficher le fichier.
 
 Ajoutez cette méthode à votre classe `Program` (elle est extraite du corps de votre méthode `Main`) :
 
@@ -176,8 +175,7 @@ private static async Task ShowTeleprompter()
 }
 ```
 
-Vous remarquerez deux modifications. Tout d’abord, dans le corps de la méthode, au lieu d’appeler <xref:System.Threading.Tasks.Task.Wait> pour attendre de manière synchrone qu’une tâche se termine, cette version utilise le mot-clé `await`. Pour ce faire, vous devez ajouter le modificateur `async` pour la signature de méthode. Cette méthode renvoie une `Task`. Notez qu’il n’y a aucune instruction de retour renvoyant un objet `Task`. Au lieu de cela, cet objet `Task` est créé par le code que le compilateur génère lorsque vous utilisez l’opérateur `await`. Vous pouvez imaginer que cette méthode renvoie une valeur lorsqu’elle atteint un `await`. La `Task` renvoyée indique que la tâche n’a pas été effectuée.
-La méthode reprend lorsque la tâche attendue se termine. Lorsqu’elle a terminé son exécution, la `Task` renvoyée indique qu’elle est terminée.
+Vous remarquerez deux modifications. Tout d’abord, dans le corps de la méthode, au lieu d’appeler <xref:System.Threading.Tasks.Task.Wait> pour attendre de manière synchrone qu’une tâche se termine, cette version utilise le mot-clé `await`. Pour ce faire, vous devez ajouter le modificateur `async` pour la signature de méthode. Cette méthode renvoie une `Task`. Notez qu’il n’y a aucune instruction de retour renvoyant un objet `Task`. Au lieu de cela, cet objet `Task` est créé par le code que le compilateur génère lorsque vous utilisez l’opérateur `await`. Vous pouvez imaginer que cette méthode renvoie une valeur lorsqu’elle atteint un `await`. La `Task` renvoyée indique que la tâche n’a pas été effectuée. La méthode reprend lorsque la tâche attendue se termine. Lorsqu’elle a terminé son exécution, la `Task` renvoyée indique qu’elle est terminée.
 Le code appelant peut surveiller cette `Task` renvoyée pour déterminer si elle est terminée.
 
 Vous pouvez appeler cette nouvelle méthode dans votre méthode `Main` :
@@ -186,12 +184,12 @@ Vous pouvez appeler cette nouvelle méthode dans votre méthode `Main` :
 ShowTeleprompter().Wait();
 ```
 
-Ici, dans `Main`, le code attend de façon synchrone. Vous devez utiliser l’opérateur `await` au lieu d’attendre de manière synchrone lorsque cela est possible. Mais, dans une méthode `Main` d’application de console, vous ne pouvez pas utiliser l’opérateur `await`. Cela entraînerait la fermeture de l’application avant la fin de toutes les tâches.
+Ici, dans `Main`, le code attend de façon synchrone. Vous devez utiliser l’opérateur `await` au lieu d’attendre de manière synchrone lorsque cela est possible. Toutefois, dans la méthode `Main` d’une application console, vous ne pouvez pas utiliser l’opérateur `await`. Cela entraînerait la fermeture de l’application avant la fin de toutes les tâches.
 
 > [!NOTE]
-> Si vous utilisez C# 7.1 ou une version ultérieure, vous pouvez créer des applications de console à l’aide de la [méthode `async` `Main`](../whats-new/csharp-7-1.md#async-main).
+> Si vous utilisez C# 7,1 ou une version ultérieure, vous pouvez créer des applications console avec [`async` méthode `Main`](../whats-new/csharp-7-1.md#async-main).
 
-Ensuite, vous devez écrire la seconde méthode asynchrone pour lire à partir de la console et chercher les touches '<’ (inférieur à), ’>' (supérieur à) et ‘X’ ou ‘x’. Voici la méthode que vous ajoutez pour cette tâche :
+Ensuite, vous devez écrire la deuxième méthode asynchrone pour lire à partir de la console et surveiller les clés « < » (inférieur à), « > » (supérieur à) et « X » ou « x ». Voici la méthode que vous ajoutez pour cette tâche :
 
 ```csharp
 private static async Task GetInput()
@@ -219,12 +217,11 @@ private static async Task GetInput()
 }
 ```
 
-Cela crée une expression lambda pour représenter un délégué <xref:System.Action> qui lit une touche de la console et modifie une variable locale représentant le délai lorsque l’utilisateur appuie sur les touches '<’ (inférieur à) et ’>' (supérieur à). La méthode déléguée se termine lorsque l’utilisateur appuie sur les touches ‘X’ ou ‘x’, ce qui autorise l’utilisateur à arrêter l’affichage du texte à tout moment.
-Cette méthode utilise <xref:System.Console.ReadKey> pour bloquer et attendre que l’utilisateur appuie sur une touche.
+Cela crée une expression lambda pour représenter un délégué <xref:System.Action> qui lit une clé à partir de la console et modifie une variable locale représentant le délai quand l’utilisateur appuie sur les touches « < » (inférieur à) ou « > » (supérieur à). La méthode déléguée se termine lorsque l’utilisateur appuie sur les touches « X » ou « x », ce qui permet à l’utilisateur d’arrêter l’affichage du texte à tout moment. Cette méthode utilise <xref:System.Console.ReadKey> pour bloquer et attendre que l’utilisateur appuie sur une touche.
 
 Pour terminer cette fonctionnalité, vous devez créer une nouvelle méthode de retour `async Task` qui démarre ces deux tâches (`GetInput` et `ShowTeleprompter`) et gère également les données partagées entre ces deux tâches.
 
-Il est temps de créer une classe qui peut gérer les données partagées entre ces deux tâches. Cette classe contient deux propriétés publiques : le délai et un indicateur `Done` pour indiquer que le fichier a été entièrement lu :
+Il est temps de créer une classe capable de gérer les données partagées entre ces deux tâches. Cette classe contient deux propriétés publiques : le délai et un indicateur `Done` pour indiquer que le fichier a été entièrement lu :
 
 ```csharp
 namespace TeleprompterConsole
@@ -250,7 +247,7 @@ namespace TeleprompterConsole
 }
 ```
 
-Placez cette classe dans un nouveau fichier et ajoutez-la à l’espace de noms `TeleprompterConsole`, comme indiqué ci-dessus. Vous devrez également ajouter une instruction `using static` pour pouvoir référencer les méthodes `Min` et `Max` sans les noms de la classe ou de l’espace de noms qui les contient. Une instruction [`using static`](../language-reference/keywords/using-static.md) importe les méthodes d’une classe. Cela est en opposition avec les instructions `using` utilisées jusqu'à présent, et qui avaient importé toutes les classes à partir d’un espace de noms.
+Placez cette classe dans un nouveau fichier et ajoutez-la à l’espace de noms `TeleprompterConsole`, comme indiqué ci-dessus. Vous devez également ajouter une instruction `using static` pour pouvoir référencer les méthodes `Min` et `Max` sans les noms de classe ou d’espace de noms englobants. Une instruction [`using static`](../language-reference/keywords/using-static.md) importe les méthodes d’une classe. Cela est en opposition avec les instructions `using` utilisées jusqu'à présent, et qui avaient importé toutes les classes à partir d’un espace de noms.
 
 ```csharp
 using static System.Math;
@@ -314,7 +311,6 @@ RunTeleprompter().Wait();
 
 ## <a name="conclusion"></a>Conclusion
 
-Ce didacticiel vous a montré certaines des fonctionnalités du langage C# et les bibliothèques .NET Core liées au travail dans les applications console.
-Vous pouvez utiliser ces connaissances pour explorer davantage le langage ainsi que les classes présentées ici. Vous avez vu les principes de base des E/S de fichier et de console, l’utilisation bloquante et non bloquante de la programmation asynchrone basée sur des tâches, une présentation du langage C# et de la façon dont les programmes C# sont organisés, et l’interface de ligne de commande et les outils de programmation .NET Core.
+Ce didacticiel vous a montré certaines des fonctionnalités du langage C# et les bibliothèques .NET Core liées au travail dans les applications console. Vous pouvez utiliser ces connaissances pour explorer davantage le langage ainsi que les classes présentées ici. Vous avez vu les principes de base des e/s de fichier et de console, l’utilisation de blocage et de non-blocage de la programmation asynchrone basée C# sur des tâches C# , une présentation du langage et de l’Organisation des programmes, ainsi que l’interface de ligne de commande et les outils .net core.
 
 Pour plus d’informations sur les E/S de fichier, consultez la rubrique [E/S de fichier et de flux](../../standard/io/index.md). Pour plus d’informations sur le modèle de programmation asynchrone utilisé dans ce tutoriel, consultez la rubrique [Programmation asynchrone basée sur les tâches](../..//standard/parallel-programming/task-based-asynchronous-programming.md) et la rubrique [Programmation asynchrone](../async.md).

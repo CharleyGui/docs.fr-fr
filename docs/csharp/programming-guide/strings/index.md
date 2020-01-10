@@ -1,17 +1,16 @@
 ---
 title: Chaînes - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 06/27/2019
 helpviewer_keywords:
 - C# language, strings
 - strings [C#]
 ms.assetid: 21580405-cb25-4541-89d5-037846a38b07
-ms.openlocfilehash: 46820fe4137f5080b956cd1345d3e95c2e06f9ca
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: dd76450c2a6a1726d630285f652d252c5f66183f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635078"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711907"
 ---
 # <a name="strings-c-programming-guide"></a>Chaînes (Guide de programmation C#)
 Une chaîne est un objet de type <xref:System.String> dont la valeur est du texte. En interne, le texte est stocké sous la forme d’une collection séquentielle en lecture seule d’objets <xref:System.Char>. Il n’existe aucun caractère de fin Null à la fin d’une chaîne C# ; par conséquent, une chaîne C# peut contenir n’importe quel nombre de caractères Null incorporés ('\0'). La propriété <xref:System.String.Length%2A> d’une chaîne représente le nombre d’objets `Char` qu’elle contient, et non pas le nombre de caractères Unicode. Pour accéder à des points de code Unicode individuels dans une chaîne, utilisez l’objet <xref:System.Globalization.StringInfo>.  

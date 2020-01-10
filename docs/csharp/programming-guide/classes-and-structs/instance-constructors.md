@@ -1,17 +1,16 @@
 ---
 title: Constructeurs d'instances - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: 198f9db1430226343fd3709c66d16b68e975ab3a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ee3cc30334154ef8aae6d7d26286463c537ff3dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922169"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714811"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Constructeurs d'instances (Guide de programmation C#)
 
@@ -40,19 +39,19 @@ Les constructeurs d’instances sont utilisés pour créer et initialiser toutes
   
  Dans cet exemple, la classe `Circle` passe des valeurs représentant le rayon et la hauteur au constructeur fourni par `Shape` duquel `Circle` est dérivé. Un exemple complet d’utilisation de `Shape` et `Circle` s’affiche dans cette rubrique en tant qu’exemple 3.  
   
-## <a name="example-1"></a>Exemple 1  
+## <a name="example-1"></a>Exemple 1  
  L’exemple suivant illustre une classe avec deux constructeurs de classe, l’un sans argument et l’autre avec deux arguments.  
   
  [!code-csharp[csProgGuideObjects#4](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#4)]  
   
-## <a name="example-2"></a>Exemple 2  
+## <a name="example-2"></a>Exemple 2  
  Dans cet exemple, la classe `Person` n’a aucun constructeur, auquel cas un constructeur sans paramètre est fourni automatiquement, et les champs sont initialisés à leurs valeurs par défaut.  
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
   
  Notez que la valeur par défaut d’`age` est `0` et que celle de `name` est `null`. Pour plus d’informations sur les valeurs par défaut, consultez [Tableau des valeurs par défaut](../../language-reference/keywords/default-values-table.md).  
   
-## <a name="example-3"></a>Exemple 3  
+## <a name="example-3"></a>Exemple 3  
  L’exemple suivant illustre l’utilisation de l’initialiseur de classe de base. La classe `Circle` est dérivée de la classe générale `Shape` et la classe `Cylinder` est dérivée de la classe `Circle`. Le constructeur de chaque classe dérivée utilise son initialiseur de classe de base.  
   
  [!code-csharp[csProgGuideObjects#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#9)]  

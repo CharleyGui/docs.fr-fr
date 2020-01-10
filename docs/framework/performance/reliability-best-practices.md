@@ -38,14 +38,12 @@ helpviewer_keywords:
 - STA-dependent features
 - fibers
 ms.assetid: cf624c1f-c160-46a1-bb2b-213587688da7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40c1b98f82fe53819edc437bbac575c1df206496
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.openlocfilehash: bd51ea1b79ac1dbd89a862f3961cc8508a87f301
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
-ms.locfileid: "71834540"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715982"
 ---
 # <a name="reliability-best-practices"></a>Meilleures pratiques pour la fiabilité
 
@@ -241,7 +239,7 @@ Pour SQL Server, toutes les méthodes utilisées pour introduire la synchronisat
 
 ### <a name="do-not-block-indefinitely-in-unmanaged-code"></a>Ne pas bloquer indéfiniment dans du code non managé
 
-Le blocage d’un thread dans du code non managé au lieu du code managé peut provoquer une attaque par déni de service, car le CLR n’est pas en mesure d’interrompre le thread.  Un thread bloqué empêche le CLR de décharger le <xref:System.AppDomain>, ou alors en exécutant des opérations très peu sécurisées.  Le blocage de l’utilisation d’une primitive de synchronisation Windows est un exemple clair d’un point que nous ne pouvons pas autoriser.  Le blocage dans un appel `ReadFile` à sur un socket doit être évité si possible. dans l’idéal, l’API Windows doit fournir un mécanisme pour qu’une opération comme celle-ci expire.
+Le blocage d’un thread dans du code non managé au lieu du code managé peut provoquer une attaque par déni de service, car le CLR n’est pas en mesure d’interrompre le thread.  Un thread bloqué empêche le CLR de décharger le <xref:System.AppDomain>, ou alors en exécutant des opérations très peu sécurisées.  Le blocage de l’utilisation d’une primitive de synchronisation Windows est un exemple clair d’un point que nous ne pouvons pas autoriser.  Le blocage dans un appel à `ReadFile` sur un socket doit être évité si possible. dans l’idéal, l’API Windows doit fournir un mécanisme pour qu’une opération comme celle-ci expire.
 
 Toute méthode qui effectue des appels dans du code natif doit de préférence utiliser un appel Win32 avec un délai d’attente raisonnable et limité.  Si l’utilisateur est autorisé à spécifier le délai d’attente, il ne doit pas être autorisé à spécifier un délai d’attente infini sans une autorisation de sécurité spécifique.  À titre indicatif, si une méthode se bloque pendant plus de 10 secondes, vous devez utiliser une version qui prend en charge des délais d’attente ou vous avez besoin d’une assistance CLR supplémentaire.
 
@@ -277,7 +275,7 @@ Envisagez de changer tous les emplacements qui interceptent toutes les exception
 
 #### <a name="code-analysis-rule"></a>Règle d’analyse du code
 
-Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela signifie marquer à `catch` la `catch(Exception)` fois {} et {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
+Examinez tous les blocs catch dans le code managé qui interceptent tous les objets ou toutes les exceptions.  Dans C#, cela implique le marquage des `catch` {} et `catch(Exception)` {}.  Envisagez de définir un type d’exception très spécifique ou effectuez une revue du code pour garantir qu’il ne se comporte pas de façon incorrecte s’il intercepte un type d’exception inattendu.
 
 ### <a name="do-not-assume-a-managed-thread-is-a-win32-thread--it-is-a-fiber"></a>Ne partez pas du principe qu’un thread managé est un thread Win32, car il s’agit d’une fibre
 
