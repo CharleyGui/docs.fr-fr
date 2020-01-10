@@ -1,15 +1,14 @@
 ---
 title: Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 description: Comment utiliser Model Builder ML.NET pour entraîner automatiquement un modèle Machine Learning
-author: natke
-ms.date: 08/07/2019
+ms.date: 01/07/2020
 ms.custom: overview
-ms.openlocfilehash: 77fe56dba3532617ad9fb0c89bfaac7c8e031ce7
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ac704b7961a8442a9174cdef5a4cd2a619236a4e
+ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971527"
+ms.lasthandoff: 01/09/2020
+ms.locfileid: "75777397"
 ---
 # <a name="what-is-model-builder-and-how-does-it-work"></a>Qu’est-ce que Model Builder et comment fonctionne-t-il ?
 
@@ -28,25 +27,16 @@ Vous n’avez pas besoin d’une expertise en machine learning pour utiliser Mod
 
 Vous pouvez soumettre de nombreux scénarios différents à Model Builder pour générer un modèle Machine Learning pour votre application.
 
-Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Exemple :
+Un scénario est une description du type de prédiction que vous voulez faire avec vos données. Par exemple :
 
 - prédire le volume futur des ventes d’un produit en fonction de l’historique des données des ventes
 - classer des sentiments en positif ou en négatif en fonction d’avis émis par les utilisateurs
 - détecter si une transaction bancaire est frauduleuse
 - rediriger les problèmes indiqués dans les commentaires des clients vers l’équipe appropriée dans votre entreprise
 
-## <a name="choose-a-model-type"></a>Choisir un type de modèle
+### <a name="which-machine-learning-scenario-is-right-for-me"></a>Quel est le bon scénario Machine Learning pour moi ?
 
-Dans Model Builder, vous devez sélectionner un type de modèle Machine Learning. Le type de modèle dépend du type de prédiction que vous essayez de faire.
-
-Pour les scénarios qui prédisent un nombre, le type de modèle Machine Learning est appelé `regression`.
-
-Pour les scénarios qui prédisent une catégorie, le type de modèle est `classification`. Il existe deux types de classification :
-
-- où il n’y a que 2 catégories : `binary classification`.
-- où il y a 3 catégories ou plus : `multiclass classification`.
-
-### <a name="which-model-type-is-right-for-me"></a>Quel est le type de modèle qui me convient ?
+Dans le générateur de modèles, vous devez sélectionner un scénario. Le type de scénario dépend du type de prédiction que vous essayez d’effectuer.
 
 #### <a name="predict-a-category-when-there-are-only-two-categories"></a>Prédire une catégorie (quand il n’y a que deux catégories)
 
@@ -54,7 +44,7 @@ La classification binaire est utilisée pour catégoriser des données en deux c
 
 ![Diagramme montrant des exemples de classification binaire incluant la détection des fraudes, l’atténuation des risques et le filtrage d’applications](media/binary-classification-examples.png)
 
-L’analyse des sentiments peut être utilisée pour prédire le sentiment positif ou négatif des commentaires des clients. C’est un exemple de type de modèle de classification binaire.
+L’analyse des sentiments peut être utilisée pour prédire le sentiment positif ou négatif des commentaires des clients. Il s’agit d’un exemple de la classification binaire Machine Learning tâche.
 
 Si votre scénario nécessite une classification en deux catégories, vous pouvez utiliser ce modèle avec votre propre jeu de données.
 
@@ -64,7 +54,7 @@ La classification multiclasse peut être utilisée pour catégoriser des donnée
 
 ![Exemples de classification multiclasse incluant la classification de documents et de produits, le routage de tickets de support et la hiérarchisation des problèmes des clients](media/multiclass-classification-examples.png)
 
-La classification des problèmes peut être utilisée pour catégoriser des problèmes indiqués dans les commentaires de clients (par exemple sur GitHub) en utilisant le titre du problème et sa description. C’est un exemple de type de modèle de classification multiclasse.
+La classification des problèmes peut être utilisée pour catégoriser des problèmes indiqués dans les commentaires de clients (par exemple sur GitHub) en utilisant le titre du problème et sa description. C’est un exemple de la classification multiclasse Machine Learning tâche.
 
 Vous pouvez utiliser le modèle de classification de problèmes pour votre scénario si vous voulez catégoriser des données en trois catégories ou plus.
 
@@ -74,19 +64,33 @@ La régression est utilisée pour prédire des nombres.
 
 ![Diagramme montrant des exemples de régression, comme la prédiction de prix, les prévisions de ventes et la maintenance prédictive](media/regression-examples.png)
 
-La prédiction des prix peut être utilisée pour prédire le prix d’une maison en fonction de son emplacement, de sa taille et d’autres caractéristiques. C’est un exemple de type de modèle de régression.
+La prédiction des prix peut être utilisée pour prédire le prix d’une maison en fonction de son emplacement, de sa taille et d’autres caractéristiques. Il s’agit d’un exemple de la tâche de régression Machine Learning.
 
 Vous pouvez utiliser le modèle de prédiction des prix pour votre scénario si vous voulez prédire une valeur numérique avec votre propre jeu de données.
 
-#### <a name="custom-scenario-choose-your-model-type"></a>Scénario personnalisé (choisir votre type de modèle)
+#### <a name="classify-images-into-categories"></a>Classer les images en catégories
 
-Le scénario personnalisé vous permet de choisir manuellement votre type de modèle.
+Ce scénario est un cas particulier de classification multiclasse, où les données d’entrée à classer sont un ensemble d’images.
+
+La classification d’images peut être utilisée pour identifier les images de différentes catégories. Par exemple, différents types de terrain ou d’animaux ou de défauts de fabrication.
+
+Vous pouvez utiliser le modèle de classification d’image pour votre scénario si vous avez un ensemble d’images et que vous souhaitez classer les images en différentes catégories.
+
+#### <a name="custom-scenario"></a>Scénario personnalisé
+
+Le scénario personnalisé vous permet de choisir manuellement votre scénario.
 
 ## <a name="data"></a>Données
 
-Une fois que vous avez choisi votre type de modèle, Model Builder vous demande de fournir un jeu de données. Les données sont utilisées pour entraîner, évaluer et choisir le meilleur modèle pour votre scénario.
+Une fois que vous avez choisi votre scénario, le générateur de modèles vous demande de fournir un jeu de données. Les données sont utilisées pour entraîner, évaluer et choisir le meilleur modèle pour votre scénario.
 
 ![Diagramme montrant les étapes de Model Builder](media/model-builder-steps.png)
+
+Le générateur de modèles prend en charge les jeux de données aux formats. tsv,. csv,. txt, ainsi que le format de base de données SQL. Si vous avez un fichier. txt, les colonnes doivent être séparées par des `,`, `;` ou `/t` et le fichier doit avoir une ligne d’en-tête.
+
+Si le jeu de données est constitué d’images, les types de fichiers pris en charge sont `.jpg` et `.png`.
+
+Pour plus d’informations, consultez [charger des données d’apprentissage dans le générateur de modèles](how-to-guides/load-data-model-builder.md).
 
 ### <a name="choose-the-output-to-predict-label"></a>Choisir le résultat à prédire (étiquette)
 
@@ -109,15 +113,16 @@ L’étiquette est l’historique des prix des maisons pour cette ligne de valeu
 
 Si vous n’avez pas encore vos propres données, essayez un de ces jeux de données :
 
-|Scénario|Type de modèle|Données|Etiquette|Fonctionnalités|
+|Scénario|Tâche ML|Données|Ajouter des contrôles|Fonctionnalités|
 |-|-|-|-|-|
 |Prédiction des prix|régression|[Données de courses de taxi](https://github.com/dotnet/machinelearning-samples/blob/master/datasets/taxi-fare-train.csv)|Tarifs|Heure, distance du trajet|
-|Détection d’anomalie|classification binaire|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Mois|
-|Analyse des sentiments|classification binaire|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
-|Détection des fraudes|classification binaire|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
-|Classification de texte|classification multiclasse|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Zone|Titre, Description|
+|Détection d’anomalie|classification binaire ;|[Données de ventes de produits](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/AnomalyDetection_Sales/SpikeDetection/Data/product-sales.csv)|Ventes de produits|Mois|
+|Analyse d'opinions|classification binaire ;|[Données de commentaires de site web](https://raw.githubusercontent.com/dotnet/machinelearning/master/test/data/wikipedia-detox-250-line-data.tsv)|Étiquette (0 quand le sentiment est négatif, 1 quand il est positif)|Commentaire, Année|
+|Détection des fraudes|classification binaire ;|[Données de carte de crédit](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/getting-started/BinaryClassification_CreditCardFraudDetection/CreditCardFraudDetection.Trainer/assets/input/creditcardfraud-dataset.zip)|Classe (1 en cas de fraude, sinon 0)|Quantité, V1-V28 (caractéristiques anonymisées)|
+|Classification de texte|classification multiclasse.|[Données de problèmes GitHub](https://github.com/dotnet/machinelearning-samples/blob/master/samples/csharp/end-to-end-apps/MulticlassClassification-GitHubLabeler/GitHubLabeler/Data/corefx-issues-train.tsv)|Zone|Titre, Description|
+|Classification d’images|classification multiclasse.|[Images de fleurs](http://download.tensorflow.org/example_images/flower_photos.tgz)|Type de fleur : marguerites, dandelion, roses, tournesols, tulipes|Données d’image elles-mêmes|
 
-## <a name="train"></a>Recyclage
+## <a name="train"></a>Former
 
 Une fois que vous avez sélectionné votre scénario, vos données et votre étiquette, Model Builder entraîne le modèle.
 
@@ -127,11 +132,65 @@ L’entraînement est un processus automatique par lequel Model Builder apprend 
 
 Comme Model Builder utilise le Machine Learning automatisé (AutoML), il ne nécessite aucune entrée ou optimisation de votre part pendant l’entraînement.
 
+### <a name="how-long-should-i-train-for"></a>Combien de temps doit durer l’entraînement ?
+
+Le générateur de modèles utilise AutoML pour explorer plusieurs modèles afin de trouver le meilleur modèle d’exécution.
+
+Des périodes de formation plus longues permettent à AutoML d’explorer plus de modèles avec un plus grand nombre de paramètres.
+
+Le tableau ci-dessous résume la durée moyenne nécessaire pour obtenir de bonnes performances pour une suite d’exemples de jeux de données, sur un ordinateur local.
+
+|Taille du jeu de données|Temps moyen de formation|
+|------------|---------------------|
+|0-10 MO|10 s|
+|10-100 MO|10 min|
+|100-500 MO|30 min|
+|500-1 GO|60 min|
+|1 GO +|plus de 3 heures|
+
+Ces chiffres sont un guide uniquement. La longueur exacte de l’apprentissage dépend des éléments suivants :
+
+- nombre de fonctionnalités (colonnes) utilisées comme entrée pour le modèle
+- type de colonne
+- tâche ML
+- performances du processeur, du disque et de la mémoire de l’ordinateur utilisé pour l’apprentissage
+
 ## <a name="evaluate"></a>Évaluer
 
-L’évaluation est le processus consistant à utiliser le modèle entraîné pour faire des prédictions avec de nouvelles données de test, puis à mesurer la qualité des prédictions.
+L’évaluation est le processus qui consiste à mesurer la qualité de votre modèle. Le générateur de modèles utilise le modèle formé pour faire des prédictions avec de nouvelles données de test, puis mesure la qualité des prédictions.
 
-Model Builder divise les données d’entraînement en un jeu d’entraînement et un jeu de test. Les données d’entraînement (80 %) sont utilisées pour entraîner votre modèle et les données de test (20 %) sont conservées à part pour évaluer votre modèle. Model Builder utilise des métriques pour mesurer la qualité du modèle. Les métriques spécifiques utilisées dépendent du type de modèle. Pour plus d’informations, consultez [Métriques d’évaluation des modèles](resources/metrics.md).
+Model Builder divise les données d’entraînement en un jeu d’entraînement et un jeu de test. Les données d’entraînement (80 %) sont utilisées pour entraîner votre modèle et les données de test (20 %) sont conservées à part pour évaluer votre modèle. 
+
+### <a name="how-do-i-understand-my-model-performance"></a>Comment faire comprenez les performances de mon modèle ?
+
+Un scénario est mappé à une tâche de Machine Learning. Chaque tâche ML possède son propre ensemble de mesures d’évaluation.
+
+#### <a name="regression-for-example-price-prediction"></a>Régression (par exemple, prédiction de prix)
+
+La mesure par défaut pour les problèmes de régression est RSquared, la valeur de RSquared est comprise entre 0 et 1. 1 est la meilleure valeur possible, ou en d’autres termes, plus la valeur de RSquared est proche de 1, plus votre modèle est performant.
+
+D’autres métriques signalées telles que la perte absolue, la perte au carré et la perte RMS sont des métriques supplémentaires, qui peuvent être utilisées pour comprendre comment votre modèle s’exécute et le comparer à d’autres modèles de régression.
+
+#### <a name="binary-classification-for-example-sentiment-analysis"></a>Classification binaire (par exemple, Analyse des sentiments)
+
+La mesure par défaut pour les problèmes de classification est la précision. La précision définit la proportion de prédictions correctes que votre modèle effectue sur le jeu de données de test. Plus la valeur est proche de 100% ou 1,0, mieux c’est.
+
+D’autres mesures signalées telles que AUC (zone sous la courbe), qui mesurent le taux réel positif par rapport au taux de faux positifs, doivent être supérieures à 0,50 pour que les modèles soient acceptables.
+
+Des métriques supplémentaires comme le score F1 peuvent être utilisées pour contrôler l’équilibre entre précision et rappel.
+
+#### <a name="multi-class-classification-for-example-issue-classification-image-classification"></a>Classification multiclasse (par exemple, classification des problèmes, classification des images)
+
+La mesure par défaut de la classification multiclasse est micro-précision. Plus la micro-précision est proche de 100% ou 1,0, mieux c’est.
+
+Une autre mesure importante pour la classification multiclasse est la précision des macros, similaire à la microprécision, plus proche de 1,0. Un bon moyen de réfléchir à ces deux types de précision est :
+
+- Microprécision : à quelle fréquence un ticket entrant est-il classé à l’équipe appropriée ?
+- Précision des macros : pour une équipe moyenne, à quelle fréquence un ticket entrant est-il correct pour son équipe ?
+
+### <a name="more-information-on-evaluation-metrics"></a>Plus d’informations sur les métriques d’évaluation
+
+Pour plus d’informations, consultez [Métriques d’évaluation des modèles](resources/metrics.md).
 
 ## <a name="improve"></a>Améliorer
 
