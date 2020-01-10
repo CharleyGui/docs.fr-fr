@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer des fichiers et des répertoires dans un stockage isolé'
+title: 'Comment : créer des fichiers et des répertoires dans un stockage isolé'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,32 +14,30 @@ helpviewer_keywords:
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 92f4b686a5a2bdc74ff3f0f68de4c6b2048da5a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 83e8c800dc74d9689f1bfdb506a6b454e87b36ca
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709011"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707868"
 ---
-# <a name="how-to-create-files-and-directories-in-isolated-storage"></a><span data-ttu-id="25cd2-102">Procédure : créer des fichiers et des répertoires dans un stockage isolé</span><span class="sxs-lookup"><span data-stu-id="25cd2-102">How to: Create Files and Directories in Isolated Storage</span></span>
-<span data-ttu-id="25cd2-103">Après avoir obtenu un magasin isolé, vous pouvez créer des répertoires et des fichiers pour le stockage des données.</span><span class="sxs-lookup"><span data-stu-id="25cd2-103">After you have obtained an isolated store, you can create directories and files for storing data.</span></span> <span data-ttu-id="25cd2-104">Dans un magasin, les noms de répertoires et de fichiers sont spécifiées par rapport à la racine du système de fichiers virtuel.</span><span class="sxs-lookup"><span data-stu-id="25cd2-104">Within a store, file and directory names are specified with respect to the root of the virtual file system.</span></span>  
+# <a name="how-to-create-files-and-directories-in-isolated-storage"></a><span data-ttu-id="5ddb1-102">Comment : créer des fichiers et des répertoires dans un stockage isolé</span><span class="sxs-lookup"><span data-stu-id="5ddb1-102">How to: Create Files and Directories in Isolated Storage</span></span>
+<span data-ttu-id="5ddb1-103">Après avoir obtenu un magasin isolé, vous pouvez créer des répertoires et des fichiers pour le stockage des données.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-103">After you have obtained an isolated store, you can create directories and files for storing data.</span></span> <span data-ttu-id="5ddb1-104">Dans un magasin, les noms de répertoires et de fichiers sont spécifiées par rapport à la racine du système de fichiers virtuel.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-104">Within a store, file and directory names are specified with respect to the root of the virtual file system.</span></span>  
   
- <span data-ttu-id="25cd2-105">Pour créer un répertoire, utilisez la méthode d’instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="25cd2-105">To create a directory, use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType> instance method.</span></span> <span data-ttu-id="25cd2-106">Si vous spécifiez un sous-répertoire d’un répertoire qui n’existe pas, les deux répertoires sont créés.</span><span class="sxs-lookup"><span data-stu-id="25cd2-106">If you specify a subdirectory of an directory that doesn't exist, both directories are created.</span></span> <span data-ttu-id="25cd2-107">Si vous spécifiez un répertoire qui existe déjà, la méthode retourne sans créer de répertoire et aucune exception n’est levée.</span><span class="sxs-lookup"><span data-stu-id="25cd2-107">If you specify a directory that already exists, the method returns without creating a directory, and no exception is thrown.</span></span> <span data-ttu-id="25cd2-108">Toutefois, si vous spécifiez un nom de répertoire qui contient des caractères non valides, une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException> est levée.</span><span class="sxs-lookup"><span data-stu-id="25cd2-108">However, if you specify a directory name that contains invalid characters, an <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception is thrown.</span></span>  
+ <span data-ttu-id="5ddb1-105">Pour créer un répertoire, utilisez la méthode d’instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType>.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-105">To create a directory, use the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType> instance method.</span></span> <span data-ttu-id="5ddb1-106">Si vous spécifiez un sous-répertoire d’un répertoire qui n’existe pas, les deux répertoires sont créés.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-106">If you specify a subdirectory of an directory that doesn't exist, both directories are created.</span></span> <span data-ttu-id="5ddb1-107">Si vous spécifiez un répertoire qui existe déjà, la méthode retourne sans créer de répertoire et aucune exception n’est levée.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-107">If you specify a directory that already exists, the method returns without creating a directory, and no exception is thrown.</span></span> <span data-ttu-id="5ddb1-108">Toutefois, si vous spécifiez un nom de répertoire qui contient des caractères non valides, une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException> est levée.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-108">However, if you specify a directory name that contains invalid characters, an <xref:System.IO.IsolatedStorage.IsolatedStorageException> exception is thrown.</span></span>  
   
- <span data-ttu-id="25cd2-109">Utilisez la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> pour créer un fichier.</span><span class="sxs-lookup"><span data-stu-id="25cd2-109">To create a file, use  the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> method.</span></span>  
+ <span data-ttu-id="5ddb1-109">Utilisez la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> pour créer un fichier.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-109">To create a file, use  the <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateFile%2A?displayProperty=nameWithType> method.</span></span>  
   
- <span data-ttu-id="25cd2-110">Dans le système d’exploitation Windows, les noms de fichiers et de répertoires du stockage isolé ne sont pas sensibles à la casse.</span><span class="sxs-lookup"><span data-stu-id="25cd2-110">In the Windows operating system, isolated storage file and directory names are case-insensitive.</span></span> <span data-ttu-id="25cd2-111">Autrement dit, si vous créez un fichier nommé `ThisFile.txt`, puis créez un autre fichier nommé `THISFILE.TXT`, un seul fichier est créé.</span><span class="sxs-lookup"><span data-stu-id="25cd2-111">That is, if you create a file named `ThisFile.txt`, and then create another file named `THISFILE.TXT`, only one file is created.</span></span> <span data-ttu-id="25cd2-112">Le nom de fichier conserve sa casse d’origine pour l’affichage.</span><span class="sxs-lookup"><span data-stu-id="25cd2-112">The file name keeps its original casing for display purposes.</span></span>  
+ <span data-ttu-id="5ddb1-110">Dans le système d’exploitation Windows, les noms de fichiers et de répertoires du stockage isolé ne sont pas sensibles à la casse.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-110">In the Windows operating system, isolated storage file and directory names are case-insensitive.</span></span> <span data-ttu-id="5ddb1-111">Autrement dit, si vous créez un fichier nommé `ThisFile.txt`, puis créez un autre fichier nommé `THISFILE.TXT`, un seul fichier est créé.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-111">That is, if you create a file named `ThisFile.txt`, and then create another file named `THISFILE.TXT`, only one file is created.</span></span> <span data-ttu-id="5ddb1-112">Le nom de fichier conserve sa casse d’origine pour l’affichage.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-112">The file name keeps its original casing for display purposes.</span></span>  
   
-## <a name="example"></a><span data-ttu-id="25cd2-113">Exemple</span><span class="sxs-lookup"><span data-stu-id="25cd2-113">Example</span></span>  
- <span data-ttu-id="25cd2-114">L’exemple de code suivant illustre comment créer des fichiers et des répertoires dans un magasin isolé.</span><span class="sxs-lookup"><span data-stu-id="25cd2-114">The following code example illustrates how to create files and directories in an isolated store.</span></span>  
+## <a name="example"></a><span data-ttu-id="5ddb1-113">Exemple</span><span class="sxs-lookup"><span data-stu-id="5ddb1-113">Example</span></span>  
+ <span data-ttu-id="5ddb1-114">L’exemple de code suivant illustre comment créer des fichiers et des répertoires dans un magasin isolé.</span><span class="sxs-lookup"><span data-stu-id="5ddb1-114">The following code example illustrates how to create files and directories in an isolated store.</span></span>  
   
  [!code-csharp[Conceptual.IsolatedStorage#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.isolatedstorage/cs/source.cs#1)]
  [!code-vb[Conceptual.IsolatedStorage#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.isolatedstorage/vb/source.vb#1)]  
   
-## <a name="see-also"></a><span data-ttu-id="25cd2-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="25cd2-115">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="5ddb1-115">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="5ddb1-115">See also</span></span>
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFileStream>
-- [<span data-ttu-id="25cd2-116">Stockage isolé</span><span class="sxs-lookup"><span data-stu-id="25cd2-116">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)
+- [<span data-ttu-id="5ddb1-116">Stockage isolé</span><span class="sxs-lookup"><span data-stu-id="5ddb1-116">Isolated Storage</span></span>](../../../docs/standard/io/isolated-storage.md)

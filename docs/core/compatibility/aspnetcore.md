@@ -1,25 +1,25 @@
 ---
 title: ASP.NET Core modifications avec rupture-.NET Core
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 11/25/2019
+ms.date: 12/20/2019
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 130a89f45c3f80975c56ea3a4845ee560921286e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 3eff2e1d292daf9f709b28da0db9d089aeebd464
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568378"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344271"
 ---
-# <a name="aspnet-core-breaking-changes"></a><span data-ttu-id="188ab-103">Modifications avec rupture ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="188ab-103">ASP.NET Core breaking changes</span></span>
+# <a name="aspnet-core-breaking-changes"></a><span data-ttu-id="50859-103">Modifications avec rupture ASP.NET Core</span><span class="sxs-lookup"><span data-stu-id="50859-103">ASP.NET Core breaking changes</span></span>
 
-<span data-ttu-id="188ab-104">La liste suivante répertorie les modifications avec rupture de ASP.NET Core par ASP.NET Core version.</span><span class="sxs-lookup"><span data-stu-id="188ab-104">The following is a list of ASP.NET Core breaking changes by ASP.NET Core version.</span></span> <span data-ttu-id="188ab-105">ASP.NET Core fournit les fonctionnalités de développement d’applications Web utilisées par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="188ab-105">ASP.NET Core provides the web app development features used by .NET Core.</span></span>
+<span data-ttu-id="50859-104">La liste suivante répertorie les modifications avec rupture de ASP.NET Core par ASP.NET Core version.</span><span class="sxs-lookup"><span data-stu-id="50859-104">The following is a list of ASP.NET Core breaking changes by ASP.NET Core version.</span></span> <span data-ttu-id="50859-105">ASP.NET Core fournit les fonctionnalités de développement d’applications Web utilisées par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="50859-105">ASP.NET Core provides the web app development features used by .NET Core.</span></span>
 
-## <a name="aspnet-core-31"></a><span data-ttu-id="188ab-106">ASP.NET Core 3,1</span><span class="sxs-lookup"><span data-stu-id="188ab-106">ASP.NET Core 3.1</span></span>
+## <a name="aspnet-core-31"></a><span data-ttu-id="50859-106">ASP.NET Core 3,1</span><span class="sxs-lookup"><span data-stu-id="50859-106">ASP.NET Core 3.1</span></span>
 
 [!INCLUDE[HTTP: Browser SameSite changes impact authentication](~/includes/core-changes/aspnetcore/3.1/http-cookie-samesite-authn-impacts.md)]
 
-## <a name="aspnet-core-30"></a><span data-ttu-id="188ab-107">ASP.NET Core 3,0</span><span class="sxs-lookup"><span data-stu-id="188ab-107">ASP.NET Core 3.0</span></span>
+## <a name="aspnet-core-30"></a><span data-ttu-id="50859-107">ASP.NET Core 3,0</span><span class="sxs-lookup"><span data-stu-id="50859-107">ASP.NET Core 3.0</span></span>
 
 [!INCLUDE[obsolete Antiforgery, CORS, Diagnostics, MVC, and Routing APIs removed](~/includes/core-changes/aspnetcore/3.0/obsolete-apis-removed.md)]
 
@@ -42,6 +42,10 @@ ms.locfileid: "74568378"
 ***
 
 [!INCLUDE[Authorization: AddAuthorization overload assembly change](~/includes/core-changes/aspnetcore/3.0/authz-assembly-change.md)]
+
+***
+
+[!INCLUDE[Authorization: IAllowAnonymous removed from AuthorizationFilterContext.Filters](~/includes/core-changes/aspnetcore/3.0/authz-iallowanonymous-removed-from-collection.md)]
 
 ***
 
@@ -146,6 +150,10 @@ ms.locfileid: "74568378"
 ***
 
 [!INCLUDE[MVC: Controller action Async suffix removed](~/includes/core-changes/aspnetcore/3.0/mvc-action-async-suffix-trimmed.md)]
+
+***
+
+[!INCLUDE[MVC: JsonResult moved to Microsoft.AspNetCore.Mvc.Core](~/includes/core-changes/aspnetcore/3.0/mvc-jsonresult-moved.md)]
 
 ***
 
