@@ -1,15 +1,15 @@
 ---
-title: 'Procédure : Rechercher les fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)'
+title: Comment interroger des fichiers dupliqués dans une arborescence de répertoires (C#Linq) ()
 ms.date: 07/20/2015
 ms.assetid: 1ff5562b-0d30-46d1-b426-a04e8f78c840
-ms.openlocfilehash: 3e7d1ee779f6e584bfc636963e038e31332bfca8
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 7c84dba3e87077077f28bc2e665ea3774cf44d3b
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216607"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347880"
 ---
-# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Procédure : Rechercher les fichiers dupliqués dans une arborescence de répertoires (LINQ) (C#)
+# <a name="how-to-query-for-duplicate-files-in-a-directory-tree-linq-c"></a>Comment interroger des fichiers dupliqués dans une arborescence de répertoires (C#Linq) ()
 Parfois, plusieurs dossiers peuvent contenir des fichiers ayant le même nom. Par exemple, sous le dossier d’installation de Visual Studio, plusieurs dossiers ont un fichier readme.htm. Cet exemple montre comment rechercher ces noms de fichiers dupliqués sous un dossier racine spécifié. Le deuxième exemple montre comment interroger les fichiers dont la taille et les durées de dernière écriture correspondent également.  
   
 ## <a name="example"></a>Exemple  

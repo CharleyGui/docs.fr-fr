@@ -11,12 +11,12 @@ helpviewer_keywords:
 - return values [Visual Basic], Operator procedures
 - operator overloading
 ms.assetid: 7ccce94a-6ca0-47d1-9f3f-13385d34f5d5
-ms.openlocfilehash: 9ec4b4c07910100dd02cc86e882b44aa7dbd2ced
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 455c839702b90738ec5aea37c1b09d72eba42ff4
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74346039"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347890"
 ---
 # <a name="how-to-use-a-class-that-defines-operators-visual-basic"></a>Comment : utiliser une classe qui définit des opérateurs (Visual Basic)
 Si vous utilisez une classe ou une structure qui définit ses propres opérateurs, vous pouvez accéder à ces opérateurs à partir de Visual Basic.  
@@ -32,7 +32,7 @@ Si vous utilisez une classe ou une structure qui définit ses propres opérateur
   
  La structure <xref:System.Data.SqlTypes.SqlString> définit un opérateur de conversion ([fonction CType](../../../../visual-basic/language-reference/functions/ctype-function.md)) de `String` à <xref:System.Data.SqlTypes.SqlString> et une autre <xref:System.Data.SqlTypes.SqlString> à `String`. L’instruction qui assigne `title` à `jobTitle` utilise le premier opérateur, et l’appel de fonction <xref:Microsoft.VisualBasic.Interaction.MsgBox%2A> utilise la seconde.  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Assurez-vous que la classe ou la structure que vous utilisez définit l’opérateur que vous souhaitez utiliser. Ne partez pas du principe que la classe ou la structure a défini chaque opérateur disponible pour la surcharge. Pour obtenir la liste des opérateurs disponibles, consultez [instruction Operator](../../../../visual-basic/language-reference/statements/operator-statement.md).  
   
  Incluez l’instruction de `Imports` appropriée pour la chaîne SQL au début de votre fichier source (dans ce cas <xref:System.Data.SqlTypes>).  

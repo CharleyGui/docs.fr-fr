@@ -2,12 +2,12 @@
 title: Outil WorkFlow Service Registration (WFServicesReg.exe)
 ms.date: 03/30/2017
 ms.assetid: 9e92c87b-99c5-4e8d-9d53-7944cc2b47d3
-ms.openlocfilehash: cf5ea345c900dec0e4859d81fcb272c1ba3d3df6
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 182bef75bff1785905d77d3bc497e0701e297912
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837751"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75346591"
 ---
 # <a name="workflow-service-registration-tool-wfservicesregexe"></a>Outil WorkFlow Service Registration (WFServicesReg.exe)
 Workflow Services Registration (WFServicesReg.exe) est un outil autonome qui peut être utilisé pour ajouter, supprimer ou réparer les éléments de configuration correspondant aux services Windows Workflow Foundation (WF).  
@@ -56,7 +56,7 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
   
  L'outil enregistre également des mappages de scripts .xoml et .rules ainsi que des gestionnaires dans la métabase IIS.  
   
- Sur les ordinateurs [!INCLUDE[ws2003](../../../includes/ws2003-md.md)] et [!INCLUDE[wxp](../../../includes/wxp-md.md)] (IIS 5,1 et IIS 6,0), un ensemble de scriptmaps. xoml et. Rules est inscrit.  
+ Sur les ordinateurs Windows Server 2003 et [!INCLUDE[wxp](../../../includes/wxp-md.md)] (IIS 5,1 et IIS 6,0), un ensemble de scriptmaps. xoml et. Rules est inscrit.  
   
  Sur les ordinateurs 64 bits, l'outil enregistre les mappages de scripts en mode WOW si le commutateur `Enable32BitAppOnWin64` est activé, ou les mappages de scripts 64 bits natifs si le commutateur `Enable32BitAppOnWin64` est désactivé.  
   
@@ -70,17 +70,17 @@ WFServicesReg.exe [-c | -r | -v | -m | -i]
 ## <a name="usage-scenarios"></a>Scénarios d’utilisation  
   
 ### <a name="installing-iis-after-net-framework-35-is-installed"></a>Installation des services IIS après l'installation de .NET Framework 3.5  
- Sur un ordinateur [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], .NET Framework 3,5 est installé avant l’installation d’IIS. En raison de l’indisponibilité de la métabase IIS, l’installation de .NET Framework 3,5 s’effectue correctement sans installer les scriptmaps. xoml et. Rules.  
+ Sur un ordinateur Windows Server 2003, .NET Framework 3,5 est installé avant l’installation d’IIS. En raison de l’indisponibilité de la métabase IIS, l’installation de .NET Framework 3,5 s’effectue correctement sans installer les scriptmaps. xoml et. Rules.  
   
  Après avoir installé les services IIS, vous pouvez utiliser l'outil WFServicesReg.exe avec le commutateur `/c` pour installer ces mappages de scripts spécifiques.  
   
 ### <a name="repairing-the-scriptmaps"></a>Réparation des mappages de scripts  
   
 #### <a name="scriptmap-deleted-under-web-sites-node"></a>Mappage de scripts supprimé sous le nœud Sites Web  
- Sous [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], le mappage de scripts .xoml ou .rules est supprimé par erreur du nœud Sites Web. Ce problème peut être résolu en exécutant l'outil WFServicesReg.exe avec le commutateur `/c`.  
+ Sur un ordinateur Windows Server 2003, les règles. xoml ou. Rules sont accidentellement supprimées du nœud sites Web. Ce problème peut être résolu en exécutant l'outil WFServicesReg.exe avec le commutateur `/c`.  
   
 #### <a name="scriptmap-deleted-under-a-particular-web-site"></a>Mappage de scripts supprimé sous un site web particulier  
- Sous [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un mappage de scripts .xoml ou .rules est supprimé par erreur d’un site web particulier (celui par défaut, par exemple) et non du nœud Sites Web.  
+ Sur un ordinateur Windows Server 2003, les règles. xoml ou. Rules sont accidentellement supprimées d’un site Web particulier (par exemple, le site Web par défaut) plutôt que du nœud sites Web.  
   
  Pour réparer des gestionnaires supprimés pour un site Web particulier, exécutez « WFServicesReg. exe/r » pour supprimer les gestionnaires de tous les sites Web, puis exécutez « WFServicesReg. exe/c » pour créer les gestionnaires appropriés pour tous les sites Web.  
   
