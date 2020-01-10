@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 004ef2a768f4a5415942d405e4a8292928c89f94
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4a6c8b27812e9f60e52132169dda0464c24abcc2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340655"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740566"
 ---
 # <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
 
@@ -96,7 +96,7 @@ Visual Studio peut installer les kit SDK .NET Core et Runtime les plus récents.
 
 ### <a name="select-a-workload"></a>Sélectionner une charge de travail
 
-Lors de l’installation ou de la modification de Visual Studio, sélectionnez l’une des charges de travail suivantes, selon le type d’application que vous créez :
+Lors de l’installation ou de la modification de Visual Studio, sélectionnez une ou plusieurs des charges de travail suivantes, en fonction du type d’application que vous créez :
 
 - La charge de travail **développement multiplateforme .net Core** dans la section **autres ensembles d’outils** .
 - La charge de travail **ASP.net et développement Web** dans la section **Web & Cloud** .
@@ -133,7 +133,7 @@ Même si Visual Studio Code n’est pas fourni avec un programme d’installatio
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation et les installations non administratives du kit de développement logiciel (SDK). Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 2,1. Pour installer la version actuelle de .NET Core, exécutez le script avec le commutateur suivant.
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Pour installer la version actuelle de .NET Core, exécutez le script avec le commutateur suivant.
 
 ```powershell
 dotnet-install.ps1 -Channel Current
@@ -147,7 +147,7 @@ dotnet-install.ps1 -Channel Current
 
 Les [scripts dotnet-install](../tools/dotnet-install-script.md) sont utilisés pour l’automatisation et les installations non administratives du kit de développement logiciel (SDK). Vous pouvez télécharger le script à partir de la [page de référence du script dotnet-install](../tools/dotnet-install-script.md).
 
-Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 2,1. Pour installer la version actuelle de .NET Core, exécutez le script avec le commutateur suivant.
+Par défaut, le script installe la dernière version de [support à long terme (LTS)](https://dotnet.microsoft.com/platform/support/policy/dotnet-core) , qui est .net Core 3,1. Pour installer la version actuelle de .NET Core, exécutez le script avec le commutateur suivant.
 
 ```bash
 ./dotnet-install.sh -c Current

@@ -5,13 +5,13 @@ ms.date: 09/03/2018
 dev_langs:
 - csharp
 - vb
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: f80b483fedc600a1e1a48d36ce9b7b95c6de9f27
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.custom: vs-dotnet
+ms.openlocfilehash: 6116b2322ed2071b78bcd77de7c38ad07c327aa6
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428891"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740841"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -36,7 +36,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. Ajoutez le code source de l’application.
 
-   Ouvrez le fichier *Program.cs* ou *Program.vb* dans l’éditeur, puis remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte et affiche les différents mots entrés. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
+   Ouvrez le fichier *Program.cs* ou *Program. vb* dans l’éditeur et remplacez le code généré automatiquement par le code suivant. Il invite l’utilisateur à entrer du texte et affiche les différents mots entrés. Il utilise l’expression régulière `\w+` pour séparer les mots dans le texte d’entrée.
 
    [!code-csharp[deployment#1](~/samples/snippets/core/deploying/cs/deployment-example.cs)]
    [!code-vb[deployment#1](~/samples/snippets/core/deploying/vb/deployment-example.vb)]
@@ -75,7 +75,7 @@ Pour exécuter un déploiement dépendant du framework avec une ou plusieurs dé
 
 1. Si `Newtonsoft.Json` est déjà installé sur votre système, ajoutez-le à votre projet en sélectionnant votre projet dans le volet droit de l’onglet **Gérer les packages de la solution**.
 
-Notez qu’un déploiement dépendant du framework avec des dépendances tierces n’est portable que dans la mesure de la portabilité de ses dépendances tierces. Par exemple, si une bibliothèque tierce prend uniquement en charge macOS, l’application n’est pas portable sur des systèmes Windows. Cela se produit si la dépendance tierce elle-même dépend du code natif. Un [serveur Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) constitue un bon exemple, car il nécessite une dépendance native à [libuv](https://github.com/libuv/libuv). Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md) pris en charge par la dépendance native (et qui existe dans le package NuGet).
+Un déploiement dépendant du Framework avec des dépendances tierces n’est que portable comme ses dépendances tierces. Par exemple, si une bibliothèque tierce prend uniquement en charge macOS, l’application n’est pas portable sur des systèmes Windows. Cela se produit si la dépendance tierce elle-même dépend du code natif. Un [serveur Kestrel](https://docs.microsoft.com/aspnet/core/fundamentals/servers/kestrel) constitue un bon exemple, car il nécessite une dépendance native à [libuv](https://github.com/libuv/libuv). Quand un déploiement dépendant du framework est créé pour une application avec ce type de dépendance tierce, le résultat publié contient un dossier pour chaque [identificateur de runtime](../rid-catalog.md) pris en charge par la dépendance native (et qui existe dans le package NuGet).
 
 ## <a name="simpleSelf"></a> Déploiement autonome sans dépendances tierces
 
@@ -94,7 +94,7 @@ L’exécution d’un déploiement autonome sans aucune dépendance tierce impli
 
 1. Déterminez si vous souhaitez utiliser le mode invariant de globalisation.
 
-   En particulier, si votre application cible Linux, vous pouvez réduire la taille totale de votre déploiement en tirant parti du [mode invariant de globalisation](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md). Le mode invariant de globalisation est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture).
+   En particulier, si votre application cible Linux, vous pouvez réduire la taille totale de votre déploiement en tirant parti du [mode invariant de globalisation](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md). Le mode invariant de globalisation est utile pour les applications qui ne sont pas globalement compatibles et qui peuvent utiliser les conventions de mise en forme, les conventions de casse et la comparaison de chaînes, ainsi que l’ordre de tri de la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture).
 
    Pour activer le mode invariant, cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Modifier SCD.csproj** ou **Modifier SCD.vbproj**. Ajoutez ensuite les lignes en surbrillance suivantes au fichier :
 
@@ -120,7 +120,7 @@ Pour publier votre application à partir de Visual Studio, effectuez les étapes
 
    1. Cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Modifier SCD.csproj**.
 
-   1. Créez une balise `<RuntimeIdentifiers>` dans la section `<PropertyGroup>` de votre fichier *csproj* qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme ciblée. Notez que vous devez également ajouter un point-virgule pour séparer les identificateurs de runtime. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime.
+   1. Créez une balise `<RuntimeIdentifiers>` dans la section `<PropertyGroup>` de votre fichier *csproj* qui définit les plateformes ciblées par votre application, et spécifiez l’identificateur de runtime de chaque plateforme ciblée. Vous devez également ajouter un point-virgule pour séparer les RID. Consultez [Catalogue des identificateurs de runtime](../rid-catalog.md) pour obtenir une liste des identificateurs de runtime.
 
    Dans l’exemple suivant, l’application s’exécute sur les systèmes d’exploitation Windows 10 64 bits et sur le système d’exploitation OS X 64 bits version 10.11.
 
@@ -130,7 +130,7 @@ Pour publier votre application à partir de Visual Studio, effectuez les étapes
    </PropertyGroup>
    ```
 
-   Notez que l’élément `<RuntimeIdentifiers>` peut être placé dans n’importe quelle section `<PropertyGroup>` de votre fichier *csproj*. Un exemple complet de fichier *csproj* figure plus loin dans cette section.
+   L’élément `<RuntimeIdentifiers>` peut accéder à n’importe quel `<PropertyGroup>` que vous avez dans votre fichier *csproj* . Un exemple complet de fichier *csproj* figure plus loin dans cette section.
 
 1. Publiez votre application.
 
@@ -158,7 +158,7 @@ Pour publier votre application à partir de Visual Studio, effectuez les étapes
 
          1. Suivez les étapes précédentes pour créer un profil pour la plateforme `osx.10.11-x64`. L’**Emplacement cible** est *bin\Release\PublishOutput\osx.10.11-x64* et le **Runtime cible** est `osx.10.11-x64`. Le nom attribué par Visual Studio à ce profil est **FolderProfile2**.
 
-      Notez que chaque emplacement cible contient l’ensemble complet des fichiers nécessaires pour lancer votre application, à savoir les fichiers de votre application et tous les fichiers .NET Core.
+      Chaque emplacement cible contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .NET Core) nécessaires pour lancer votre application.
 
 En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est surtout utile pour le débogage d’exceptions. Vous pouvez choisir de ne pas l’empaqueter avec les fichiers de votre application. Vous devez toutefois l’enregistrer au cas où vous souhaiteriez déboguer la build Release de votre application.
 
@@ -192,9 +192,9 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
   
 1. Sélectionnez l’emplacement où Visual Studio publie votre application.
 
-   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant de l’infrastructure de votre application dans le\<répertoire du *projet > Répertoire \bin\Release\netcoreapp2.1\publish* .
+   Si vous publiez uniquement sur une seule plateforme, vous pouvez accepter la valeur par défaut dans la zone de texte **choisir un dossier** . Cela permet de publier le déploiement dépendant du Framework de votre application dans le répertoire de *projet\<> Répertoire \bin\Release\netcoreapp2.1\publish* .
 
-   Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « linux » au chemin de fichier, Visual Studio publie le déploiement dépendant du framework de votre application sur *\<répertoire-projet>\bin\Release\netcoreapp2.1\publish\linux*.
+   Si vous publiez sur plusieurs plateformes, ajoutez une chaîne identifiant la plateforme cible. Par exemple, si vous ajoutez la chaîne « Linux » au chemin d’accès du fichier, Visual Studio publie le déploiement dépendant du Framework de votre application dans le\<répertoire du *projet > Répertoire \bin\Release\netcoreapp2.1\publish\linux* .
 
 1. Pour créer le profil, sélectionnez l’icône de liste déroulante en regard du bouton **Publier**, puis sélectionnez **Créer un profil**. Sélectionnez ensuite le bouton **Créer un profil** pour créer le profil.
 
@@ -222,7 +222,7 @@ Vous avez configuré vos profils et êtes maintenant prêt à publier votre appl
 
    2. Sélectionnez le profil à publier, puis sélectionnez **Publier**. Procédez ainsi pour chaque profil à publier.
 
-   Notez que chaque emplacement cible (dans notre exemple, bin\release\netcoreapp2.1\publish\\*nom-profil* contient l’ensemble complet des fichiers (vos fichiers d’application et tous les fichiers .NET Core).) nécessaires au lancement de votre application.
+   Chaque emplacement cible (dans le cas de notre exemple, bin\release\netcoreapp2.1\publish\\*profile-name* contient l’ensemble complet des fichiers (les fichiers de votre application et tous les fichiers .net Core) nécessaires pour lancer votre application.
 
 En même temps que les fichiers de votre application, le processus de publication produit un fichier de base de données du programme (.pdb) qui contient des informations de débogage sur votre application. Le fichier est surtout utile pour le débogage d’exceptions. Vous pouvez choisir de ne pas l’empaqueter avec les fichiers de votre application. Vous devez toutefois l’enregistrer au cas où vous souhaiteriez déboguer la build Release de votre application.
 
@@ -307,7 +307,7 @@ Voici le fichier *csproj* complet pour ce projet :
 
 Quand vous déployez votre application, toutes les dépendances tierces utilisées dans votre application sont également incluses avec vos fichiers d’application. Il n’est pas nécessaire que les bibliothèques tierces soient déjà présentes sur le système sur lequel l’application s’exécute.
 
-Notez que vous pouvez déployer un déploiement autonome avec une bibliothèque tierce seulement sur des plateformes prises en charge par cette bibliothèque. Cela revient à avoir des dépendances tierces avec des dépendances natives dans votre déploiement dépendant du framework, où les dépendances natives n’existent pas sur la plateforme cible, sauf si elles y ont été installées précédemment.
+Vous pouvez uniquement déployer un déploiement autonome avec une bibliothèque tierce sur les plateformes prises en charge par cette bibliothèque. Cela revient à avoir des dépendances tierces avec des dépendances natives dans votre déploiement dépendant du framework, où les dépendances natives n’existent pas sur la plateforme cible, sauf si elles y ont été installées précédemment.
 
 ## <a name="see-also"></a>Voir aussi
 

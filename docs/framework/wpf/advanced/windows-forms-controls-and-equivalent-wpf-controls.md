@@ -6,21 +6,21 @@ helpviewer_keywords:
 - Windows Forms [WPF], WPF interoperation
 - interoperability [WPF], Windows Forms
 ms.assetid: 8a157e6b-8054-46db-a5cf-a78966acc7a1
-ms.openlocfilehash: acb8095b32364f1e22330f22df60085016bdc664
-ms.sourcegitcommit: 34593b4d0be779699d38a9949d6aec11561657ec
+ms.openlocfilehash: e80379700b43ed5d0e74ea890c2a0eafe67159e6
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/11/2019
-ms.locfileid: "66834037"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740226"
 ---
 # <a name="windows-forms-controls-and-equivalent-wpf-controls"></a>Contrôles Windows Forms et contrôles WPF équivalents
-Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles ont équivalent [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôles, mais certains [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles n’ont pas d’équivalents dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette rubrique compare les types de contrôle fournis par les deux technologies.  
+De nombreux contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ont des contrôles équivalents [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], mais certains contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] n’ont pas d’équivalents dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette rubrique compare les types de contrôle fournis par les deux technologies.  
   
- Vous pouvez toujours utiliser l’interopérabilité à l’hôte [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles qui n’ont pas d’équivalents dans votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]-en fonction des applications.  
+ Vous pouvez toujours utiliser l’interopérabilité pour héberger des [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] des contrôles qui n’ont pas d’équivalents dans vos applications basées sur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
   
- Le tableau suivant montre quelles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] contrôles et composants ont équivalent [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contrôlent les fonctionnalités.  
+ Le tableau suivant indique les contrôles et composants de [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] qui ont des fonctionnalités équivalentes [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] de contrôle.  
   
-|contrôle Windows Forms|Contrôle WPF équivalent|Notes|  
+|contrôle Windows Forms|Contrôle équivalent WPF|Notes|  
 |---------------------------|----------------------------|-------------|  
 |<xref:System.Windows.Forms.BindingNavigator>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.BindingSource>|<xref:System.Windows.Data.CollectionViewSource>||  
@@ -32,26 +32,26 @@ Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-m
 |<xref:System.Windows.Forms.ContextMenuStrip>|<xref:System.Windows.Controls.ContextMenu>||  
 |<xref:System.Windows.Forms.DataGridView>|<xref:System.Windows.Controls.DataGrid>||  
 |<xref:System.Windows.Forms.DateTimePicker>|<xref:System.Windows.Controls.DatePicker>||  
-|<xref:System.Windows.Forms.DomainUpDown>|<xref:System.Windows.Controls.TextBox> et deux <xref:System.Windows.Controls.Primitives.RepeatButton> contrôles.||  
+|<xref:System.Windows.Forms.DomainUpDown>|<xref:System.Windows.Controls.TextBox> et deux contrôles <xref:System.Windows.Controls.Primitives.RepeatButton>.||  
 |<xref:System.Windows.Forms.ErrorProvider>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.FlowLayoutPanel>|<xref:System.Windows.Controls.WrapPanel> ou <xref:System.Windows.Controls.StackPanel>||  
 |<xref:System.Windows.Forms.FolderBrowserDialog>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.FontDialog>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.Form>|<xref:System.Windows.Window>|<xref:System.Windows.Window> ne prend pas en charge les fenêtres enfants.|  
 |<xref:System.Windows.Forms.GroupBox>|<xref:System.Windows.Controls.GroupBox>||  
-|<xref:System.Windows.Forms.HelpProvider>|Aucun contrôle équivalent.|Aucune aide F1. « Qu’est-ce » aide est remplacée par l’info-bulles.|  
-|<xref:System.Windows.Forms.HScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le défilement est intégré aux contrôles de conteneur.|  
+|<xref:System.Windows.Forms.HelpProvider>|Aucun contrôle équivalent.|Aucune aide (F1). L’aide « qu’est-ce que c’est » est remplacée par des info-bulles.|  
+|<xref:System.Windows.Forms.HScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le défilement est intégré aux contrôles conteneurs.|  
 |<xref:System.Windows.Forms.ImageList>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.Label>|<xref:System.Windows.Controls.Label>||  
-|<xref:System.Windows.Forms.LinkLabel>|Aucun contrôle équivalent.|Vous pouvez utiliser la <xref:System.Windows.Documents.Hyperlink> classe pour héberger des liens hypertexte dans le contenu dynamique.|  
+|<xref:System.Windows.Forms.LinkLabel>|Aucun contrôle équivalent.|Vous pouvez utiliser la classe <xref:System.Windows.Documents.Hyperlink> pour héberger des liens hypertexte dans le contenu dynamique.|  
 |<xref:System.Windows.Forms.ListBox>|<xref:System.Windows.Controls.ListBox>||  
-|<xref:System.Windows.Forms.ListView>|<xref:System.Windows.Controls.ListView>|Le <xref:System.Windows.Controls.ListView> contrôle fournit une vue de détails en lecture seule.|  
+|<xref:System.Windows.Forms.ListView>|<xref:System.Windows.Controls.ListView>|Le contrôle <xref:System.Windows.Controls.ListView> fournit un affichage des détails en lecture seule.|  
 |<xref:System.Windows.Forms.MaskedTextBox>|Aucun contrôle équivalent.||  
-|<xref:System.Windows.Forms.MenuStrip>|<xref:System.Windows.Controls.Menu>|<xref:System.Windows.Controls.Menu> style de contrôle peut se rapprocher le comportement et l’apparence de la <xref:System.Windows.Forms.ToolStripProfessionalRenderer?displayProperty=nameWithType> classe.|  
+|<xref:System.Windows.Forms.MenuStrip>|<xref:System.Windows.Controls.Menu>|<xref:System.Windows.Controls.Menu> le style de contrôle peut se rapprocher du comportement et de l’apparence de la classe <xref:System.Windows.Forms.ToolStripProfessionalRenderer?displayProperty=nameWithType>.|  
 |<xref:System.Windows.Forms.MonthCalendar>|<xref:System.Windows.Controls.Calendar>||  
 |<xref:System.Windows.Forms.NotifyIcon>|Aucun contrôle équivalent.||  
-|<xref:System.Windows.Forms.NumericUpDown>|<xref:System.Windows.Controls.TextBox> et deux <xref:System.Windows.Controls.Primitives.RepeatButton> contrôles.||  
-|<xref:System.Windows.Forms.OpenFileDialog>|<xref:Microsoft.Win32.OpenFileDialog>|Le <xref:Microsoft.Win32.OpenFileDialog> classe est un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] wrapper autour de le [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] contrôle.|  
+|<xref:System.Windows.Forms.NumericUpDown>|<xref:System.Windows.Controls.TextBox> et deux contrôles <xref:System.Windows.Controls.Primitives.RepeatButton>.||  
+|<xref:System.Windows.Forms.OpenFileDialog>|<xref:Microsoft.Win32.OpenFileDialog>|La classe <xref:Microsoft.Win32.OpenFileDialog> est un wrapper [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] autour du contrôle Win32.|  
 |<xref:System.Windows.Forms.PageSetupDialog>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.Panel>|<xref:System.Windows.Controls.Canvas>||  
 |<xref:System.Windows.Forms.PictureBox>|<xref:System.Windows.Controls.Image>||  
@@ -63,7 +63,7 @@ Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-m
 |<xref:System.Windows.Forms.PropertyGrid>|Aucun contrôle équivalent.||  
 |<xref:System.Windows.Forms.RadioButton>|<xref:System.Windows.Controls.RadioButton>||  
 |<xref:System.Windows.Forms.RichTextBox>|<xref:System.Windows.Controls.RichTextBox>||  
-|<xref:System.Windows.Forms.SaveFileDialog>|<xref:Microsoft.Win32.SaveFileDialog>|Le <xref:Microsoft.Win32.SaveFileDialog> classe est un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] wrapper autour de le [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] contrôle.|  
+|<xref:System.Windows.Forms.SaveFileDialog>|<xref:Microsoft.Win32.SaveFileDialog>|La classe <xref:Microsoft.Win32.SaveFileDialog> est un wrapper [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] autour du contrôle Win32.|  
 |<xref:System.Windows.Forms.ScrollableControl>|<xref:System.Windows.Controls.ScrollViewer>||  
 |<xref:System.Media.SoundPlayer>|<xref:System.Windows.Media.MediaPlayer>||  
 |<xref:System.Windows.Forms.SplitContainer>|<xref:System.Windows.Controls.GridSplitter>||  
@@ -81,14 +81,14 @@ Nombreux [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-m
 |<xref:System.Windows.Forms.TrackBar>|<xref:System.Windows.Controls.Slider>||  
 |<xref:System.Windows.Forms.TreeView>|<xref:System.Windows.Controls.TreeView>||  
 |<xref:System.Windows.Forms.UserControl>|<xref:System.Windows.Controls.UserControl>||  
-|<xref:System.Windows.Forms.VScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le défilement est intégré aux contrôles de conteneur.|  
-|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|Le <xref:System.Windows.Controls.Frame> contrôle peut héberger des pages HTML.<br /><br /> À compter de .NET Framework 3.5 SP1, le <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> contrôle peut héberger des pages HTML et stocker également le <xref:System.Windows.Controls.Frame> contrôle.|  
+|<xref:System.Windows.Forms.VScrollBar>|<xref:System.Windows.Controls.Primitives.ScrollBar>|Le défilement est intégré aux contrôles conteneurs.|  
+|<xref:System.Windows.Forms.WebBrowser>|<xref:System.Windows.Controls.Frame>, <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType>|Le contrôle <xref:System.Windows.Controls.Frame> peut héberger des pages HTML.<br /><br /> À partir de la .NET Framework 3,5 SP1, le contrôle <xref:System.Windows.Controls.WebBrowser?displayProperty=nameWithType> peut héberger des pages HTML et également sauvegarder le contrôle <xref:System.Windows.Controls.Frame>.|  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
-- [Concepteur WPF pour les Windows Forms aux développeurs](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/cc165605(v=vs.100))
-- [Procédure pas à pas : Hébergement d’un contrôle de formulaires Windows dans WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
-- [Procédure pas à pas : Hébergement d’un contrôle Composite WPF dans les Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
+- [Concepteur WPF pour les développeurs Windows Forms](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/cc165605(v=vs.100))
+- [Procédure pas à pas : hébergement d’un contrôle Windows Forms dans WPF](walkthrough-hosting-a-windows-forms-control-in-wpf.md)
+- [Procédure pas à pas : Hébergement d'un contrôle composite WPF dans Windows Forms](walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)
 - [Migration et interopérabilité](migration-and-interoperability.md)

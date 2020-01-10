@@ -5,12 +5,12 @@ helpviewer_keywords:
 - automation tree
 - UI Automation, tree
 ms.assetid: 03b98058-bdb3-47a0-8ff7-45e6cdf67166
-ms.openlocfilehash: d1edbb82e0d5d6a6275c09646fbf8e54b4ff90df
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f541aab7ed5aae48b943ba5699366fe6a3f21a4c
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800296"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741389"
 ---
 # <a name="ui-automation-tree-overview"></a>Vue d’ensemble de l’arborescence UI Automation
 > [!NOTE]
@@ -36,7 +36,7 @@ ms.locfileid: "74800296"
   
 <a name="uiautomation_raw_view"></a>   
 ### <a name="raw-view"></a>Affichage brut  
- L’affichage brut de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] est l’arborescence complète des objets <xref:System.Windows.Automation.AutomationElement> dont le bureau est la racine. L’affichage brut suit étroitement la structure de programmation native d’une application et est de ce fait l’affichage le plus détaillé. C’est aussi la base sur laquelle reposent les autres affichages de l’arborescence. Comme cet affichage dépend de l’infrastructure d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] sous-jacente, l’affichage brut d’un bouton [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] aura un affichage brut différent de celui d’un bouton [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)].  
+ L’affichage brut de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] est l’arborescence complète des objets <xref:System.Windows.Automation.AutomationElement> dont le bureau est la racine. L’affichage brut suit étroitement la structure de programmation native d’une application et est de ce fait l’affichage le plus détaillé. C’est aussi la base sur laquelle reposent les autres affichages de l’arborescence. Étant donné que cette vue dépend de l’infrastructure de [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] sous-jacente, l’affichage brut d’un bouton de [!INCLUDE[TLA2#tla_winclient](../../../includes/tla2sharptla-winclient-md.md)] aura une vue brute différente de celle d’un bouton Win32.  
   
  L’affichage brut s’obtient en recherchant des éléments sans spécifier de propriétés ou en utilisant <xref:System.Windows.Automation.TreeWalker.RawViewWalker> pour parcourir l’arborescence.  
   
@@ -49,7 +49,7 @@ ms.locfileid: "74800296"
  L’affichage de contrôle s’obtient en recherchant des éléments dont la propriété <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsControlElement%2A> a la valeur `true` ou en utilisant <xref:System.Windows.Automation.TreeWalker.ControlViewWalker> pour parcourir l’arborescence.  
   
 <a name="uiautomation_content_view"></a>   
-### <a name="content-view"></a>Vue de contenu  
+### <a name="content-view"></a>Affichage de contenu  
  L’affichage du contenu de l’arborescence [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] est un sous-ensemble de l’affichage de contrôle. Il contient des éléments d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] qui communiquent les véritables informations d’une interface utilisateur, notamment les éléments d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] qui peuvent recevoir le focus clavier et du texte autre qu’une étiquette d’élément d’[!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)]. Par exemple, les valeurs contenues dans une zone de liste déroulante s’affichent dans l’affichage de contenu, car elles représentent les informations utilisées par un utilisateur final. Dans l’affichage de contenu, une zone de liste déroulante et une zone de liste sont toutes deux représentées sous forme de collection d’éléments [!INCLUDE[TLA2#tla_ui](../../../includes/tla2sharptla-ui-md.md)] dans laquelle un ou éventuellement plusieurs éléments peuvent être sélectionnés. Le fait qu’il y en a un toujours d’ouvert et un qui peut être développé et réduit est sans importance dans l’affichage de contenu, car il est conçu pour afficher les données (ou le contenu) présentées à l’utilisateur.  
   
  L’affichage de contenu s’obtient en recherchant des éléments dont la propriété <xref:System.Windows.Automation.AutomationElement.AutomationElementInformation.IsContentElement%2A> a la valeur `true` ou en utilisant <xref:System.Windows.Automation.TreeWalker.ContentViewWalker> pour parcourir l’arborescence.  

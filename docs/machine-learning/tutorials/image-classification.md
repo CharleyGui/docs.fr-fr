@@ -4,14 +4,12 @@ description: Découvrez comment transférer les connaissances d’un modèle Ten
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-author: natke
-ms.author: nakersha
-ms.openlocfilehash: 952ce5c52bcd09b8c4e4e40d5ddf85835a26478d
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 5fe47c42d0cf24ebfdc33a937e1afbd11a976680
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204985"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738953"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé
 
@@ -137,7 +135,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Téléchargez le [modèle Inception](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip) et décompressez-le.
 
-1. Copiez le contenu décompressé du répertoire `inception5h` dans le répertoire *de votre projet*TransferLearningTF`assets/inception`. Ce répertoire contient le modèle et les fichiers d’aide supplémentaires nécessaires à ce tutoriel, comme le montre l’image suivante :
+1. Copiez le contenu décompressé du répertoire `inception5h` dans le répertoire `assets/inception` de votre projet *TransferLearningTF*. Ce répertoire contient le modèle et les fichiers d’aide supplémentaires nécessaires à ce tutoriel, comme le montre l’image suivante :
 
    ![Contenu du répertoire Inception](./media/image-classification/inception-files.png)
 
@@ -336,13 +334,13 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
     Les indicateurs suivants sont évalués pour la classification d’images :
 
     * `Log-loss` (voir [Perte logarithmique](../resources/glossary.md#log-loss)). Vous voulez que la perte logarithmique soit aussi proche de zéro que possible.
-    * `Per class Log-loss` La perte logarithmique doit être aussi proche de zéro que possible.
+    * `Per class Log-loss`. La perte logarithmique doit être aussi proche de zéro que possible.
 
 1. Ajoutez le code suivant pour retourner le modèle entraîné à la ligne suivante :
 
     [!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReturnModel)]
 
-## <a name="run-the-application"></a>Exécutez l’application !
+## <a name="run-the-application"></a>Exécutez l’application !
 
 1. Ajoutez l’appel à `GenerateModel` dans la méthode `Main` après la création de la classe MLContext :
 

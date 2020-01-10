@@ -3,13 +3,12 @@ title: Restauration par progression du runtime pour les déploiements d’applic
 description: Découvrez-en plus sur les modifications apportées à la commande dotnet publish pour les déploiements autonomes.
 author: KathleenDollard
 ms.date: 05/31/2018
-ms.custom: seodec18
-ms.openlocfilehash: 6a0cdfb34973822c2f40cdb37d4038d3b7ad8e2a
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 22385c7b5d2bf87755fd51cd6268d21fe3431c74
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522090"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740783"
 ---
 # <a name="self-contained-deployment-runtime-roll-forward"></a>Restauration par progression du runtime de déploiement autonome
 

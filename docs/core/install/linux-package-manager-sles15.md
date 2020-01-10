@@ -4,12 +4,12 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 5551ce8cffa92d4efb6bbe9db2a4887f4b26cd6e
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 18a0068e5494d6a25e9cd278ce88f5915e2000b8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836912"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740645"
 ---
 # <a name="sles-15-package-manager---install-net-core"></a>SLES 15 Package Manager-installer .NET Core
 
@@ -17,13 +17,13 @@ ms.locfileid: "74836912"
 
 Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur SLES 15. Si vous installez le runtime, nous vous suggérons d’installer le [runtime ASP.net Core](#install-the-aspnet-core-runtime), car il comprend des runtimes .net Core et ASP.net core.
 
-## <a name="register-microsoft-key-and-feed"></a>Inscrire le flux et la clé Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 
 Avant d’installer .NET, vous devez :
 
-- Inscrire la clé Microsoft
-- inscrire le dépôt du produit
-- Installer les dépendances requises
+- Enregistrez la clé Microsoft.
+- Enregistrez le dépôt du produit.
+- Installez les dépendances requises.
 
 Vous ne devez faire ces opérations qu’une seule fois par machine.
 

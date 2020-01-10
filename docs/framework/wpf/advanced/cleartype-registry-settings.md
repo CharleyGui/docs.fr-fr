@@ -5,19 +5,19 @@ helpviewer_keywords:
 - ClearType [WPF], registry settings
 - typography [WPF], ClearType registry settings
 ms.assetid: 56f314bb-b30b-4f67-8492-8b8a9fa432ae
-ms.openlocfilehash: ab6ff2ba6e0f3f1ea9e34de80b67276a990bc83b
-ms.sourcegitcommit: 3ac05b2c386c8cc5e73f4c7665f6c0a7ed3da1bd
+ms.openlocfilehash: 6143cf835cc44a6c6cc50372b2ac1a4d24d65311
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/20/2019
-ms.locfileid: "71151844"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740385"
 ---
 # <a name="cleartype-registry-settings"></a>Paramètres du Registre ClearType
 Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsoft ClearType qui sont utilisés par les applications WPF.  
 
 <a name="overview"></a>   
 ## <a name="technology-overview"></a>Vue d’ensemble de la technologie  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les applications qui restituent du texte sur un périphérique d’affichage utilisent des fonctionnalités ClearType pour offrir une expérience de lecture améliorée. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType fonctionne en accédant aux éléments individuels de la bande de couleur verticale dans chaque pixel d’un écran LCD. Pour plus d’informations sur ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications qui affichent du texte sur un périphérique d’affichage utilisent des fonctionnalités ClearType pour offrir une expérience de lecture améliorée. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType fonctionne en accédant aux éléments individuels de la bande de couleur verticale dans chaque pixel d’un écran LCD. Pour plus d’informations sur ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
   
  Le texte rendu avec ClearType peut apparaître considérablement différent quand il est affiché sur différents périphériques d’affichage. Par exemple, un petit nombre d’analyses implémentent les éléments de la bande de couleur dans l’ordre bleu, vert et rouge plutôt que dans l’ordre rouge, vert, bleu (RVB) le plus courant.  
   
@@ -27,7 +27,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Paramètres du Registre  
- [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]spécifie quatre paramètres de Registre pour le contrôle des fonctionnalités ClearType :  
+ [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] spécifie quatre paramètres de Registre pour le contrôle des fonctionnalités ClearType :  
   
 |Paramètre|Description|  
 |-------------|-----------------|  
@@ -36,12 +36,12 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 |Structure des pixels|Décrit la disposition des pixels d’un écran d’affichage.|  
 |Niveau de contraste du texte|Décrit le niveau de contraste du texte affiché.|  
   
- Ces paramètres sont accessibles par un utilitaire de configuration externe qui sait comment référencer les paramètres [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]du Registre ClearType identifiés. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’éditeur du Registre Windows.  
+ Ces paramètres sont accessibles par un utilitaire de configuration externe qui sait comment référencer les paramètres de Registre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ClearType identifiés. Ces paramètres peuvent également être créés ou modifiés en accédant directement aux valeurs à l’aide de l’éditeur du Registre Windows.  
   
- Si les [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]paramètres du Registre ClearType ne sont pas définis (ce qui correspond à l’état [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] par défaut), l’application interroge les informations de paramètres système Windows pour les paramètres de lissage des polices.  
+ Si les paramètres du Registre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]ClearType ne sont pas définis (ce qui correspond à l’État par défaut), l’application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] interroge les informations de paramètres système Windows pour les paramètres de lissage des polices.  
   
 > [!NOTE]
-> Pour plus d’informations sur l’énumération des noms d' `SystemParametersInfo` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
+> Pour plus d’informations sur l’énumération des noms des appareils d’affichage, consultez la `SystemParametersInfo`fonction Win32.  
   
 <a name="ClearType_level"></a>   
 ## <a name="cleartype-level"></a>Niveau ClearType  
@@ -49,17 +49,17 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
   
  Le niveau ClearType est une valeur entière comprise entre 0 et 100. Le niveau par défaut est 100, ce qui signifie que ClearType utilise la capacité maximale des éléments de la bande de couleur du périphérique d’affichage. Toutefois, un niveau ClearType de 0 rend le texte sous forme de nuances de gris. En affectant au niveau ClearType une valeur comprise entre 0 et 100, vous pouvez créer un niveau intermédiaire adapté à la sensibilité des couleurs d’un individu.  
   
-### <a name="registry-setting"></a>Paramètre du Registre  
+### <a name="registry-setting"></a>Paramètres du Registre  
  L’emplacement du paramètre de Registre pour le niveau ClearType est un paramètre utilisateur individuel qui correspond à un nom d’écran d’affichage spécifique :  
   
  `HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pour chaque nom de périphérique d’affichage d’un utilisateur `ClearTypeLevel` , une valeur DWORD est définie. La capture d’écran suivante montre le paramètre de l’éditeur du Registre pour le niveau ClearType.  
+ Pour chaque nom de périphérique d’affichage d’un utilisateur, une valeur DWORD `ClearTypeLevel` est définie. La capture d’écran suivante montre le paramètre de l’éditeur du Registre pour le niveau ClearType.  
   
  ![Paramètres ClearType dans l’éditeur du Registre.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   
 > [!NOTE]
-> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]les applications restituent le texte dans l’un des deux modes, avec et sans ClearType. Quand le texte est rendu sans ClearType, il est appelé rendu en nuances de gris.  
+> [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] applications affichent du texte dans l’un des deux modes, avec et sans ClearType. Quand le texte est rendu sans ClearType, il est appelé rendu en nuances de gris.  
   
 <a name="gamma_level"></a>   
 ## <a name="gamma-level"></a>Niveau gamma  
@@ -67,12 +67,12 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
   
  Le niveau gamma est une valeur entière comprise entre 1 000 et 2 200. Le niveau par défaut est 1 900.  
   
-### <a name="registry-setting"></a>Paramètre du Registre  
+### <a name="registry-setting"></a>Paramètres du Registre  
  Le paramètre du Registre du niveau gamma se trouve dans un paramètre d’ordinateur local correspondant à un nom d’écran d’affichage spécifique :  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pour chaque nom de périphérique d’affichage d’un utilisateur `GammaLevel` , une valeur DWORD est définie. La capture d’écran suivante indique le paramètre du niveau gamma dans l’Éditeur du Registre.  
+ Pour chaque nom de périphérique d’affichage d’un utilisateur, une valeur DWORD `GammaLevel` est définie. La capture d’écran suivante indique le paramètre du niveau gamma dans l’Éditeur du Registre.  
   
  ![Paramètres du niveau gamma ClearType dans l’éditeur du Registre](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
@@ -89,14 +89,14 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
  La structure du pixel correspond à une valeur entière comprise entre 0 et 2. Le niveau par défaut est 0, qui représente une structure de pixel plate.  
   
 > [!NOTE]
-> Pour plus d’informations sur l’énumération des noms d' `EnumDisplayDevices` appareils d’affichage, consultez la [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] fonction.  
+> Pour plus d’informations sur l’énumération des noms des appareils d’affichage, consultez la `EnumDisplayDevices`fonction Win32.  
   
-### <a name="registry-setting"></a>Paramètre du Registre  
+### <a name="registry-setting"></a>Paramètres du Registre  
  Le paramètre du Registre de la structure des pixels se trouve dans un paramètre d’ordinateur local correspondant à un nom d’écran d’affichage spécifique :  
   
  `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pour chaque nom de périphérique d’affichage d’un utilisateur `PixelStructure` , une valeur DWORD est définie. La capture d’écran suivante indique le paramètre de la structure des pixels dans l’Éditeur du Registre.  
+ Pour chaque nom de périphérique d’affichage d’un utilisateur, une valeur DWORD `PixelStructure` est définie. La capture d’écran suivante indique le paramètre de la structure des pixels dans l’Éditeur du Registre.  
   
  ![Paramètres du niveau gamma ClearType dans l’éditeur du Registre](./media/cleartype-registry-settings/cleartype-gamma-level-settings-registry-editor.png)  
   
@@ -104,12 +104,12 @@ Cette rubrique fournit une vue d’ensemble des paramètres de Registre Microsof
 ## <a name="text-contrast-level"></a>Niveau de contraste du texte  
  Le niveau de contraste du texte vous permet d’ajuster le rendu du texte en fonction de la largeur de trait des glyphes. Le niveau de contraste du texte est une valeur entière comprise entre 0 et 6 ; plus cette valeur est élevée, plus le trait est épais. Le niveau par défaut est 1.  
   
-### <a name="registry-setting"></a>Paramètre du Registre  
+### <a name="registry-setting"></a>Paramètres du Registre  
  Le paramètre du Registre du niveau de contraste du texte se trouve dans un paramètre utilisateur individuel correspondant à un nom d’écran d’affichage spécifique :  
   
  `HKEY_CURRENT_USER\Software\Microsoft\Avalon.Graphics\<displayName>`  
   
- Pour chaque nom de périphérique d’affichage d’un utilisateur `TextContrastLevel` , une valeur DWORD est définie. La capture d’écran suivante indique le paramètre du niveau de contraste du texte dans l’Éditeur du Registre.  
+ Pour chaque nom de périphérique d’affichage d’un utilisateur, une valeur DWORD `TextContrastLevel` est définie. La capture d’écran suivante indique le paramètre du niveau de contraste du texte dans l’Éditeur du Registre.  
   
  ![Paramètres ClearType dans l’éditeur du Registre.](./media/cleartype-registry-settings/cleartype-settings-registry-editor.png)  
   

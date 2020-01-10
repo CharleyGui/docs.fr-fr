@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: 04e6c6fb5dd903e0f52a29bb2c0739d899ce2bb1
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 382facef15e79c4ce49fdedaeb1a072b7591e4a0
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636352"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740215"
 ---
 # <a name="wpf-architecture"></a>Architecture de WPF
 Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows Presentation Foundation (WPF). Il couvre la plupart des principaux sous-systèmes de WPF et décrit comment ils interagissent. Il détaille également certains des choix effectués par les architectes de WPF.  
@@ -38,7 +38,7 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
 <a name="System_Threading_DispatcherObject"></a>   
 ## <a name="systemthreadingdispatcherobject"></a>System.Threading.DispatcherObject  
- La plupart des objets dans WPF dérivent de <xref:System.Windows.Threading.DispatcherObject>, qui fournit les constructions de base pour gérer l’accès concurrentiel et le Threading. WPF est basé sur un système de messagerie implémenté par le répartiteur. Cela fonctionne de façon très similaire à la pompe de messages [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)] familière. en fait, le répartiteur WPF utilise des messages User32 pour effectuer des appels inter-threads.  
+ La plupart des objets dans WPF dérivent de <xref:System.Windows.Threading.DispatcherObject>, qui fournit les constructions de base pour gérer l’accès concurrentiel et le Threading. WPF est basé sur un système de messagerie implémenté par le répartiteur. Cela fonctionne très bien comme la pompe de messages Win32 familière. en fait, le répartiteur WPF utilise des messages User32 pour effectuer des appels inter-threads.  
   
  Il existe en fait deux concepts fondamentaux à comprendre lors de la présentation de l’accès concurrentiel dans WPF : le répartiteur et l’affinité de thread.  
   

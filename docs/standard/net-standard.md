@@ -7,16 +7,16 @@ ms.date: 09/23/2019
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 4fa0153cfa9dd52f4d80301d228dde3f16225bfd
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 6a4406775056b76dfa789911b8bb14e84dbc8eea
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72582038"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738654"
 ---
 # <a name="net-standard"></a>.NET Standard
 
-[.NET Standard](https://github.com/dotnet/standard) est une spécification officielle des API .NET qui sont destinées à être disponibles sur toutes les implémentations de .NET. L’objectif de .NET Standard est d’établir une meilleure uniformité dans l’écosystème .NET. [ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) continue d’établir l’uniformité du comportement des implémentations de .NET, mais il n’existe pas de spécification similaire pour les bibliothèques de classes de base .NET pour les implémentations des bibliothèques .NET.
+[.NET standard](https://github.com/dotnet/standard) est une spécification formelle des API .net qui sont destinées à être disponibles sur toutes les implémentations de .net. La motivation derrière .NET Standard consiste à établir une meilleure uniformité dans l’écosystème .NET. [ECMA 335](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) continue d’établir l’uniformité du comportement des implémentations de .NET, mais il n’existe pas de spécification similaire pour les bibliothèques de classes de base .NET pour les implémentations des bibliothèques .NET.
 
 .NET Standard permet les scénarios clés suivants :
 
@@ -24,7 +24,7 @@ ms.locfileid: "72582038"
 - Permet aux développeurs de générer des bibliothèques portables utilisables sur toutes les implémentations de .NET, à l’aide de ce même ensemble d’API.
 - Réduit ou même élimine une compilation conditionnelle de source partagée résultant des API .NET, uniquement pour les API de système d’exploitation.
 
-Les différentes implémentations de .NET ciblent des versions spécifiques de .NET Standard. Chaque version de l’implémentation de .NET publie la version la plus récente de .NET Standard qu’elle prend en charge, une instruction qui signifie qu’elle prend également en charge les versions précédentes. Par exemple, le .NET Framework 4.6 implémente .NET Standard 1.3, ce qui signifie qu’il expose toutes les API définies dans les versions 1.0 à 1.3 de .NET Standard. De même, .NET Framework 4.6.1 implémente .NET Standard 1.4, tandis que .NET Core 1.0 implémente .NET Standard 1.6.
+Les différentes implémentations de .NET ciblent des versions spécifiques de .NET Standard. Chaque version de l’implémentation de .NET publie la version la plus récente de .NET Standard qu’elle prend en charge, une instruction qui signifie qu’elle prend également en charge les versions précédentes. Par exemple, .NET Framework 4,6 implémente .NET Standard 1,3, ce qui signifie qu’il expose toutes les API définies dans les versions de .NET Standard 1,0 à 1,3. De même, .NET Framework 4.6.1 implémente .NET Standard 1,4, tandis que .NET Core 1,0 implémente .NET Standard 1,6.
 
 ## <a name="net-implementation-support"></a>Prise en charge des implémentations de .NET
 
@@ -84,7 +84,7 @@ Des artefacts dérivés sont fournis pour une lecture plus pratique et pour acti
 
 Les assemblys de référence de .NET Standard sont distribués principalement via les [packages NuGet](../core/packages.md). Les implémentations sont fournies de façons différentes, en fonction de l’implémentation de .NET.
 
-Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les packages .NET Standard ciblent le framework «.NET Standard ». Vous pouvez cibler le .NET Framework Standard avec le [Moniker de framework cible compact](frameworks.md) `netstandard` (par exemple `netstandard1.4`). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Pour l’ensemble d’API le plus large, ciblez `netstandard2.0`, car le nombre d’API disponibles a plus que doublé entre .NET Standard 1.6 et 2.0.
+Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les packages .NET Standard ciblent le framework «.NET Standard ». Vous pouvez cibler le .NET Standard Framework à l’aide de la `netstandard` [compact TFM](frameworks.md) (par exemple, `netstandard1.4`). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Pour l’ensemble d’API le plus large, ciblez `netstandard2.0`, car le nombre d’API disponibles a plus que doublé entre .NET Standard 1.6 et 2.0.
 
 Le métapackage [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) référence l’ensemble complet des packages NuGet qui définissent .NET Standard.  La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et les API associées qui définissent .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 

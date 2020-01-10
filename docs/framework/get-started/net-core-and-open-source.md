@@ -1,18 +1,17 @@
 ---
-title: .NET Core et Open-Source
+title: .NET Core et open source
 ms.date: 03/30/2017
 ms.assetid: e6bd4655-ce37-4003-8462-468a6fe2c40f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2ad74a70fff9916dc66bb4d2eacbdaf40cb241c3
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 4032ba771d917d25473c8de350cc752bd052f94d
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70853950"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75752549"
 ---
-# <a name="net-core-and-open-source"></a>.NET Core et Open-Source
-Cette rubrique fournit une vue d’ensemble de .NET Core et vous montre comment trouver plus d’informations. Pour connaître la liste complète des rubriques de .NET Core, consultez le [Guide .NET Core](../../core/index.md).
+# <a name="net-core-and-open-source"></a>.NET Core et open source
+
+Cet article fournit une brève présentation de .NET Core et montre comment trouver plus d’informations. Pour obtenir la liste complète de la documentation de .NET Core, consultez le [Guide .net Core](../../core/index.md).
   
 <a name="BKMK_WhatisNETCore"></a>   
 ## <a name="what-is-net-core"></a>Qu'est-ce que le .NET Core ?  
@@ -20,9 +19,9 @@ Cette rubrique fournit une vue d’ensemble de .NET Core et vous montre comment
   
  Pour vous familiariser avec .NET Core, consultez le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro).  
   
- Les principales caractéristiques de .NET Core sont les suivantes :  
+Les principales caractéristiques de .NET Core sont les suivantes :
   
-- **Multiplateforme.** .NET Core fournit des fonctionnalités clés permettant d’implémenter les composants d’application dont vous avez besoin et de réutiliser le code, quelle que soit votre plateforme cible. Il prend actuellement en charge les trois principaux systèmes d’exploitation : Windows, Linux et macOS. Vous pouvez écrire des applications et des bibliothèques qui s’exécutent telles quelles sur les systèmes d’exploitation pris en charge. Pour afficher la liste des systèmes d’exploitation pris en charge, consultez la [feuille de route .NET Core](https://github.com/dotnet/core/blob/master/roadmap.md).
+- **Multiplateforme.** .NET Core fournit des fonctionnalités clés permettant d’implémenter les composants d’application dont vous avez besoin et de réutiliser le code, quelle que soit votre plateforme cible. Il prend actuellement en charge les trois principaux systèmes d’exploitation : Windows, Linux et Mac OS. Vous pouvez écrire des applications et des bibliothèques qui s’exécutent telles quelles sur les systèmes d’exploitation pris en charge. Pour afficher la liste des systèmes d’exploitation pris en charge, consultez la [feuille de route .NET Core](https://github.com/dotnet/core/blob/master/roadmap.md).
   
 - **Open source.** .NET Core est l’un des nombreux projets placés sous l’intendance de [.NET Foundation](https://www.dotnetfoundation.org/) et disponible sur [GitHub](https://github.com/).  .NET Core, en tant que projet open source, encourage un processus de développement plus transparent et soutient une communauté active et engagée.  
   
@@ -30,23 +29,22 @@ Cette rubrique fournit une vue d’ensemble de .NET Core et vous montre comment
 
 - **Modulaire :** .NET Core est modulaire, car il est publié via NuGet dans des packages d’assembly plus petits. Au lieu d’un assembly volumineux contenant la plupart des fonctionnalités principales, le .NET Core est disponible sous forme de petits packages axés sur les fonctionnalités. Cela nous permet d’avoir un modèle de développement plus agile et vous permet d’optimiser votre application en choisissant seulement les packages NuGet dont vous avez besoin. Les avantages d’une petite zone de surface d’application offrent une sécurité accrue, une maintenance réduite, des performances améliorées et une réduction des coûts dans un modèle de paiement basé uniquement sur votre utilisation.  
   
-## <a name="the-net-core-platform"></a>La plateforme .NET Core  
- La plateforme .NET Core est constituée de plusieurs composants, dont les compilateurs managés, le runtime, les bibliothèques de classes de base et de nombreux modèles d’application comme ASP.NET Core. Vous pouvez en savoir plus sur les différents composants et approfondir en consultant les dépôts [GitHub](https://github.com/) suivants :  
+## <a name="the-net-core-platform"></a>La plateforme .NET Core
   
-- [.NET Core](https://github.com/dotnet/core)  
+La plateforme .NET Core est constituée de plusieurs composants, y compris les compilateurs managés, le runtime, les bibliothèques de classes de base et de nombreux modèles d’application, tels que ASP.NET Core. Vous pouvez en savoir plus sur les différents composants et vous familiariser en visitant les [GitHub](https://github.com/) suivantes :  
   
-- [CoreFX – Les bibliothèques fondamentales de .NET Core](https://github.com/dotnet/corefx)  
+- [Page d’hébergement de .NET Core](https://github.com/dotnet/core)  
   
-- [CoreCLR – Le runtime .NET Core](https://github.com/dotnet/coreclr)  
+- [Runtime-plateforme .NET Core et Runtime](https://github.com/dotnet/runtime)  
   
 - [CLI – Les outils en ligne de commande de .NET Core](https://github.com/dotnet/cli)  
   
 - [Roslyn – .NET Compiler Platform](https://github.com/dotnet/roslyn)  
   
-- [ASP.NET Core](https://github.com/aspnet/home)  
+- [ASP.NET Core](https://github.com/dotnet/aspnetcore)  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Didacticiel .NET-Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro)
 - [Guide .NET Core](../../core/index.md)
-- [Documentation ASP.NET Core](/aspnet/core/)
+- [Documentation ASP.NET Core](/aspnet/core/)

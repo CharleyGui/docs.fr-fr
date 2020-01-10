@@ -9,12 +9,12 @@ helpviewer_keywords:
 - elements, moving
 - UI Automation, moving elements
 ms.assetid: 4042cb44-e27e-4a03-ac36-9be1eed65b47
-ms.openlocfilehash: a23280c38da55b8d5f0bd8011f9c172b0e173744
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 72454e355fb9b673a4adafb39ad60c8414573d0e
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438547"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741315"
 ---
 # <a name="move-a-ui-automation-element"></a>Déplacer un élément UI Automation
 > [!NOTE]
@@ -23,7 +23,7 @@ ms.locfileid: "74438547"
  Cet exemple montre comment déplacer un élément [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] vers un emplacement spécifique à l’écran.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant utilise les modèles de contrôle <xref:System.Windows.Automation.WindowPattern> et <xref:System.Windows.Automation.TransformPattern> pour déplacer par programmation une application cible [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] target application to discrete screen locations et track the <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent>.  
+ L’exemple suivant utilise les modèles de contrôle <xref:System.Windows.Automation.WindowPattern> et <xref:System.Windows.Automation.TransformPattern> pour déplacer par programmation une application cible Win32 vers des emplacements discrets à l’écran et effectuer le suivi de la <xref:System.Windows.Automation.AutomationElement.BoundingRectangleProperty> <xref:System.Windows.Automation.AutomationElement.AutomationPropertyChangedEvent>.  
   
  [!code-csharp[WindowMove#1301](../../../samples/snippets/csharp/VS_Snippets_Wpf/WindowMove/CSharp/WindowMove.cs#1301)]
  [!code-vb[WindowMove#1301](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/WindowMove/VisualBasic/windowmove.vb#1301)]  

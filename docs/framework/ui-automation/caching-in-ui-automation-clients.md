@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation caching in clients
 - caching, UI Automation clients
 ms.assetid: 94c15031-4975-43cc-bcd5-c9439ed21c9c
-ms.openlocfilehash: 8de96aa3877b2ca414c87958dad480503f57ccb7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5c0c92f40ae60785f780cb573bb7faa77a31f273
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433940"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741775"
 ---
 # <a name="caching-in-ui-automation-clients"></a>Mise en cache dans les clients UI Automation
 > [!NOTE]
@@ -20,7 +20,7 @@ ms.locfileid: "74433940"
   
  Dans [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], la mise en cache correspond à la prérécupération des données. Les données sont ensuite accessibles sans communication interprocessus supplémentaire. La mise en cache est généralement utilisée par les applications clientes UI Automation pour récupérer des propriétés et des modèles de contrôle en bloc. Les informations sont ensuite récupérées à partir du cache selon les besoins. L’application met à jour le cache périodiquement, habituellement en réponse aux événements signifiant que quelque chose a changé dans l’ [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] .  
   
- Les avantages de la mise en cache sont plus perceptibles avec les contrôles Windows Presentation Foundation (WPF) et les contrôles personnalisés qui ont des fournisseurs UI Automation côté serveur. L’accès aux fournisseurs côté client, tels que les fournisseurs par défaut pour les contrôles [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)] , présente moins d’avantages.  
+ Les avantages de la mise en cache sont plus perceptibles avec les contrôles Windows Presentation Foundation (WPF) et les contrôles personnalisés qui ont des fournisseurs UI Automation côté serveur. L’accès aux fournisseurs côté client, tels que les fournisseurs par défaut pour les contrôles Win32, présente moins d’avantages.  
   
  La mise en cache se produit lorsque l’application active un <xref:System.Windows.Automation.CacheRequest> puis utilise une méthode ou une propriété qui retourne un <xref:System.Windows.Automation.AutomationElement>. Par exemple, <xref:System.Windows.Automation.AutomationElement.FindFirst%2A>, <xref:System.Windows.Automation.AutomationElement.FindAll%2A>. Les méthodes de la classe <xref:System.Windows.Automation.TreeWalker> font exception à cette règle. La mise en cache s’effectue uniquement si un <xref:System.Windows.Automation.CacheRequest> est spécifié comme paramètre (par exemple, <xref:System.Windows.Automation.TreeWalker.GetFirstChild%28System.Windows.Automation.AutomationElement%2CSystem.Windows.Automation.CacheRequest%29?displayProperty=nameWithType>.  
   
@@ -103,6 +103,6 @@ ms.locfileid: "74433940"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [UI Automation Events for Clients](ui-automation-events-for-clients.md)
+- [Événements UI Automation pour les clients](ui-automation-events-for-clients.md)
 - [Utiliser la mise en cache dans UI Automation](use-caching-in-ui-automation.md)
 - [Exemple FetchTimer](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms771456(v=vs.90))

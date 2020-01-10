@@ -2,12 +2,12 @@
 title: Types de modifications avec rupture-.NET Core
 description: Découvrez comment .NET Core tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
 ms.date: 06/10/2019
-ms.openlocfilehash: 5624a35a0d71224faf9adc5df2b02a529e650314
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: a84468c0c0e04f367dc7e89ce806ac01b2b49b48
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74567718"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740896"
 ---
 # <a name="changes-that-affect-compatibility"></a>Modifications qui affectent la compatibilité
 
@@ -19,7 +19,7 @@ Tout au long de son histoire, .NET a tenté de maintenir un niveau élevé de co
 
 En plus de la compatibilité entre les implémentations de .NET, les développeurs s’attendent à un haut niveau de compatibilité entre les versions de .NET Core. En particulier, le code écrit pour une version antérieure de .NET Core doit s’exécuter sans problème sur une version ultérieure de .NET Core. En fait, de nombreux développeurs s’attendent à ce que les nouvelles API dans les dernières versions de .NET Core soient également compatibles avec les versions préliminaires dans lesquelles ces API ont été introduites.
 
-Cet article décrit les catégories de modifications de compatibilité (ou changements cassants) et la manière dont l’équipe .NET évalue les modifications dans chacune de ces catégories. Comprendre comment l’équipe .NET approche des modifications avec rupture possibles est particulièrement utile pour les développeurs qui ouvrent des requêtes de tirage dans le référentiel GitHub [dotnet/corefx](https://github.com/dotnet/corefx) qui modifient le comportement des API existantes.
+Cet article décrit les catégories de modifications de compatibilité (ou changements cassants) et la manière dont l’équipe .NET évalue les modifications dans chacune de ces catégories. Comprendre comment l’équipe .NET approche des modifications avec rupture possibles est particulièrement utile pour les développeurs qui ouvrent des requêtes de tirage dans le référentiel GitHub [dotnet/Runtime](https://github.com/dotnet/runtime) qui modifient le comportement des API existantes.
 
 > [!NOTE]
 > Pour une définition des catégories de compatibilité, comme la compatibilité binaire et la compatibilité descendante, consultez [Catégories de changements cassants](categories.md).
@@ -87,7 +87,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
    Toutefois, l’augmentation de la visibilité d’un type est autorisée.
 
-### <a name="members"></a>Membres
+### <a name="members"></a>Members
 
 - **✔️ Développement de la visibilité d’un membre qui n’est pas [virtual](../../csharp/language-reference/keywords/sealed.md)**
 
@@ -178,7 +178,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
 - **❌ réduire la visibilité d’un membre**
 
-   Cela inclut la réduction de la visibilité d’un membre [protected](../../csharp/language-reference/keywords/protected.md) lorsqu’il y a des constructeurs *accessibles* (publics ou protégés) et que le type n’est *pas* [sealed](../../csharp/language-reference/keywords/sealed.md). Si ce n’est pas le cas, la réduction de la visibilité d’un membre protégé est autorisée.
+   Cela inclut la réduction de la visibilité d’un membre [protégé](../../csharp/language-reference/keywords/protected.md) lorsqu’il y a des constructeurs *accessibles* (publics ou protégés) et que le type n’est *pas* [sealed](../../csharp/language-reference/keywords/sealed.md). Si ce n’est pas le cas, la réduction de la visibilité d’un membre protégé est autorisée.
 
    Notez que l’augmentation de la visibilité d’un membre est autorisée.
 
@@ -270,7 +270,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Dans la plupart des cas, la suppression d’un attribut (comme <xref:System.NonSerializedAttribute>) est un changement cassant.
 
-## <a name="platform-support"></a>Plateforme prise en charge
+## <a name="platform-support"></a>Prise en charge de plateforme
 
 - **✔️ Prise en charge d’une opération sur une plateforme qui n’était précédemment pas prise en charge**
 

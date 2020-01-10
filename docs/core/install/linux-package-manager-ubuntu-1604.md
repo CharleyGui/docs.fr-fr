@@ -4,12 +4,12 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 77033e327349e7543148dab27f7229c69de4aa1c
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: eae847232f5f89e81acfb90027c555d8ccd1a0b8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74959738"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740633"
 ---
 # <a name="ubuntu-1604-package-manager---install-net-core"></a>Gestionnaire de package Ubuntu 16,04-installer .NET Core
 
@@ -17,13 +17,13 @@ ms.locfileid: "74959738"
 
 Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur Ubuntu 16,04. Si vous installez le runtime, nous vous suggérons d’installer le [runtime ASP.net Core](#install-the-aspnet-core-runtime), car il comprend des runtimes .net Core et ASP.net core.
 
-## <a name="register-microsoft-key-and-feed"></a>Inscrire le flux et la clé Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 
 Avant d’installer .NET, vous devez :
 
-- Inscrire la clé Microsoft
-- inscrire le dépôt du produit
-- Installer les dépendances requises
+- Enregistrez la clé Microsoft.
+- Enregistrez le dépôt du produit.
+- Installez les dépendances requises.
 
 Vous ne devez faire ces opérations qu’une seule fois par machine.
 

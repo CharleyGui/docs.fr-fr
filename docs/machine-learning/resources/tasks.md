@@ -1,15 +1,13 @@
 ---
 title: Tâches d’apprentissage automatique
 description: Explorez les différentes tâches Machine Learning ainsi que les tâches associées prises en charge dans ML.NET.
-ms.custom: seodec18
 ms.date: 12/23/2019
-author: natke
-ms.openlocfilehash: cde4af720fe1ede80cb1bdc6b70f6586293920a4
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: badb096ab3e7fbd575d8594b4fbd0e2ebaf63820
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636443"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739625"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 

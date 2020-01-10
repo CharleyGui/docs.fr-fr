@@ -4,13 +4,12 @@ description: Découvrez comment créer un package NuGet avec la commande « dot
 author: cartermp
 ms.date: 06/20/2016
 ms.technology: dotnet-cli
-ms.custom: seodec18
-ms.openlocfilehash: 4927e3796be42d70d25a1947d4519312aef7e289
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: ddc19faa7547637036686146f8600f40713541a8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343614"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740867"
 ---
 # <a name="how-to-create-a-nuget-package-with-net-core-command-line-interface-cli-tools"></a>Guide pratique pour créer un package NuGet avec des outils de l’interface de ligne de commande (CLI) de .NET Core
 
@@ -19,9 +18,9 @@ ms.locfileid: "75343614"
 
 Les bibliothèques .NET Standard et .NET Core devraient être distribuées sous forme de packages NuGet. Il s’agit en fait de la façon dont toutes les bibliothèques .NET Standard sont distribuées et consommées. Cette opération est plus facile avec la commande `dotnet pack`.
 
-Imaginez que vous venez d’écrire une nouvelle bibliothèque que vous voulez distribuer via NuGet. Pour cela, vous pouvez créer un package NuGet avec les outils multiplateformes. L’exemple suivant suppose une bibliothèque nommée **SuperAwesomeLibrary** ciblant `netstandard1.0`.
+Imaginez que vous venez d’écrire une nouvelle bibliothèque que vous voulez distribuer via NuGet. Vous pouvez créer un package NuGet avec des outils multiplateformes pour effectuer cette opération. L’exemple suivant suppose une bibliothèque appelée **superawesomelibrary ciblant** qui cible `netstandard1.0`.
 
-Si vous avez des dépendances transitives (c’est-à-dire un projet qui dépend d’un autre package), veillez à restaurer les packages de l’ensemble de votre solution avec la commande `dotnet restore` avant de créer un package NuGet. Si vous ne le faites pas, la commande `dotnet pack` ne fonctionne pas correctement.
+Si vous avez des dépendances transitives, c’est-à-dire un projet qui dépend d’un autre package, assurez-vous de restaurer les packages pour l’ensemble de la solution avec la commande `dotnet restore` avant de créer un package NuGet. Si vous ne le faites pas, la commande `dotnet pack` ne fonctionnera pas correctement.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -46,7 +45,7 @@ SuperAwesomeLibrary.1.0.0.nupkg
 SuperAwesomeLibrary.1.0.0.symbols.nupkg
 ```
 
-Notez que ceci génère un package qui peut être débogué. Pour générer un package NuGet avec des fichiers binaires compilés, il suffit d’ajouter le commutateur `--configuration` (ou `-c`) et d’utiliser `release` comme argument.
+Cela produit un package pouvant être débogué. Pour générer un package NuGet avec des fichiers binaires compilés, il suffit d’ajouter le commutateur `--configuration` (ou `-c`) et d’utiliser `release` comme argument.
 
 ```dotnetcli
 dotnet pack --configuration release

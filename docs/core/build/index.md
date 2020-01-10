@@ -3,13 +3,12 @@ title: Générer .NET Core à partir de la source
 description: Découvrez comment générer .NET Core et le .NET Core CLI à partir du code source.
 author: bleroy
 ms.date: 06/28/2017
-ms.custom: seodec18
-ms.openlocfilehash: dcd7c909325eec5a79db74098d7ac880000eafa1
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: fe5431667d861d830c2ec56252e6e3e2ca08a866
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105385"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740917"
 ---
 # <a name="build-net-core-from-source"></a>Générer .NET Core à partir de la source
 
@@ -18,7 +17,7 @@ Cet article fournit de l’aide aux développeurs qui veulent créer et distribu
 
 ## <a name="build-the-clr-from-source"></a>Générer le CLR à partir de la source
 
-Vous trouverez le code source de .NET CoreCLR dans le référentiel [dotnet/coreclr](https://github.com/dotnet/coreclr/) sur GitHub.
+Le code source du CoreCLR .NET est disponible dans le référentiel [dotnet/Runtime](https://github.com/dotnet/runtime/) sur GitHub.
 
 La génération dépend actuellement des prérequis suivants :
 
@@ -27,7 +26,7 @@ La génération dépend actuellement des prérequis suivants :
 - [Python](https://www.python.org/)
 - Un compilateur C++.
 
-Une fois ces composants requis installés, vous pouvez générer le CLR en appelant le script de génération (`build.cmd` sur Windows ou `build.sh` sur Linux et macOS) à la base du dépôt [dotnet/coreclr](https://github.com/dotnet/coreclr/).
+Après avoir installé ces composants requis, vous pouvez générer le CLR en appelant le script de génération (`build.cmd` sur Windows, ou `build.sh` sur Linux et macOS) à la base du référentiel [dotnet/Runtime](https://github.com/dotnet/runtime/) .
 
 L’installation des composants diffère selon le système d’exploitation. Consultez les instructions de génération pour votre système d’exploitation spécifique :
 
@@ -43,7 +42,7 @@ Vous devez être sur la plateforme spécifique pour générer cette plateforme.
 La build a deux `buildTypes` principaux :
 
 - Debug (par défaut) : compile le runtime avec des optimisations minimales et des vérifications (assertions) supplémentaires à l’exécution. Cette réduction du niveau d’optimisation et les vérifications supplémentaires ralentissent l’exécution du runtime, mais sont utiles pour le débogage. Il s’agit du paramètre recommandé pour les environnements de développement et de test.
-- Release : compile le runtime avec des optimisations complètes et sans les vérifications supplémentaires à l’exécution. Vous obtenez des performances d’exécution plus rapides, mais la génération peut prendre plus de temps et être difficile à déboguer. Passez `release` au script de compilation pour sélectionner ce type de build.
+- Release : compile le runtime avec des optimisations complètes et sans les vérifications supplémentaires à l’exécution. Cela permet d’obtenir des performances d’exécution beaucoup plus rapides, mais cela peut prendre un peu plus de temps pour la génération et peut être difficile à déboguer. Passez `release` au script de compilation pour sélectionner ce type de build.
 
 Par défaut, la génération crée non seulement les exécutables du runtime, mais elle produit également tous les tests.
 Il existe un bon nombre de tests qui prennent un temps considérable alors qu’ils ne sont pas nécessaires si vous voulez faire des essais avec des modifications.
@@ -72,13 +71,13 @@ Si la sortie « brute » de la build est parfois utile, vous n’êtes normale
 Vous pouvez utiliser votre nouveau runtime selon deux techniques de base :
 
  1. **Utiliser dotnet.exe et NuGet pour composer une application**.
-    Consultez [Utilisation de votre build](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingYourBuild.md) pour obtenir des instructions sur la création d’un programme qui utilise votre nouveau runtime avec les packages NuGet que vous venez de créer et l’interface de ligne de commande (CLI) « dotnet ». Cette technique est celle que les développeurs « non-runtime » vont probablement utiliser pour consommer votre nouveau runtime.
+    Consultez [Utilisation de votre build](https://github.com/dotnet/runtime/blob/master/docs/workflow/testing/using-your-build.md) pour obtenir des instructions sur la création d’un programme qui utilise votre nouveau runtime avec les packages NuGet que vous venez de créer et l’interface de ligne de commande (CLI) « dotnet ». Cette technique est celle que les développeurs « non-runtime » vont probablement utiliser pour consommer votre nouveau runtime.
 
  2. **Utiliser corerun.exe pour exécuter une application avec des DLL non packagées**.
     Ce dépôt définit également un hôte simple appelé corerun.exe, qui n’accepte AUCUNE dépendance de NuGet.
     Vous devez indiquer à l’hôte où obtenir les DLL nécessaires que vous utilisez, puis vous devez les rassembler manuellement.
-    Cette technique, utilisée par tous les tests du référentiel [dotnet/coreclr](https://github.com/dotnet/coreclr), est utile pour la boucle locale rapide « Édition-Compilation-Débogage », comme les tests unitaires préliminaires.
-    Pour plus d’informations sur l’utilisation de cette technique, consultez [Exécution d’applications .NET Core avec CoreRun.exe](https://github.com/dotnet/coreclr/blob/master/Documentation/workflow/UsingCoreRun.md).
+    Cette technique est utilisée par tous les tests de la référentiel [dotnet/Runtime](https://github.com/dotnet/runtime) , et est utile pour la boucle « Edit-compile-Debug » locale rapide, comme les tests unitaires préliminaires.
+    Pour plus d’informations sur l’utilisation de cette technique, consultez [Exécution d’applications .NET Core avec CoreRun.exe](https://github.com/dotnet/runtime/blob/master/docs/workflow/testing/using-corerun.md).
 
 ## <a name="build-the-cli-from-source"></a>Générer l’interface CLI à partir de la source
 
@@ -101,6 +100,6 @@ Utilisez l’exécutable `dotnet` à partir de *artifacts/{os}-{arch}/stage2* po
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Common Language Runtime .NET Core (CoreCLR)](https://github.com/dotnet/coreclr/blob/master/README.md)
+- [Runtime .NET](https://github.com/dotnet/runtime/blob/master/README.md)
 - [Guide du développeur de l’interface CLI .NET Core](https://github.com/dotnet/cli/blob/master/Documentation/project-docs/developer-guide.md)
 - [Empaquetage de la distribution de .NET Core](./distribution-packaging.md)

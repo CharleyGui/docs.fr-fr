@@ -1,16 +1,16 @@
 ---
-title: 'Guide pratique : Améliorer la précision du modèle'
+title: 'Comment : améliorer la précision du modèle'
 description: Découvrez comment améliorer la précision du modèle
 ms.date: 04/29/2019
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc
-ms.openlocfilehash: 8bb47102ede8e135090b1381eb815dccd512e03d
-ms.sourcegitcommit: 682c64df0322c7bda016f8bfea8954e9b31f1990
-ms.translationtype: HT
+ms.openlocfilehash: 8f3b283de378a37bfe429688207ea9fb52f9ca7f
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/13/2019
-ms.locfileid: "65557808"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739575"
 ---
 # <a name="improve-mlnet-model-accuracy"></a>Améliorer la précision du modèle ML.NET
 
@@ -32,7 +32,7 @@ La signification d’un seul point de données peut être difficile à interpré
 
 Bien que l’ajout d’échantillons de données et de caractéristiques puisse aider à améliorer la précision du modèle, cela peut également introduire du bruit, dans la mesure où toutes les données et caractéristiques ne sont pas significatives. Ainsi, il est important de comprendre quelles sont les caractéristiques qui impactent le plus les décisions prises par l’algorithme. L’utilisation de techniques telles que PFI (Permutation Feature Importance) peut aider à identifier ces caractéristiques déterminantes, à expliquer le modèle, mais aussi à utiliser la sortie comme méthode de sélection de caractéristiques pour réduire la quantité de caractéristiques bruyantes introduites dans le processus d’entraînement.
 
-Apprenez à utiliser la technique PFI en visitant ce [lien](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
+Pour plus d’informations sur l’utilisation de PFI, consultez [explication des prédictions de modèle à l’aide de la fonctionnalité de permutation](../how-to-guides/explain-machine-learning-model-permutation-feature-importance-ml-net.md).
 
 ## <a name="cross-validation"></a>Validation croisée
 

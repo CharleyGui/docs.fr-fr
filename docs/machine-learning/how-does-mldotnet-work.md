@@ -4,14 +4,12 @@ description: ML.NET vous donne la possibilité d’ajouter le Machine Learning a
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.author: nakersha
-author: natke
-ms.openlocfilehash: 7d15c49ade4cd32389f7c86440b3a66aec8e4ea8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 98251c39a4bdaba8203c26c6a781a86efc46efa4
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345196"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740083"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
@@ -214,7 +212,7 @@ Une fois que les objets dans le pipeline ont été créés, les données peuvent
 
 L’appel de `Fit()` déclenche l’utilisation des données d’entraînement d’entrée pour estimer les paramètres du modèle. C'est ce que l'on appelle l'apprentissage du modèle. Souvenez-vous, le modèle de régression linéaire vu plus haut avait deux paramètres de modèle : le **biais** et le **poids**. Après l’appel de `Fit()`, les valeurs des paramètres sont connues. La plupart des modèles ont beaucoup plus de paramètres que cela.
 
-Pour plus d’informations sur l’entraînement du modèle, consultez [Entraîner votre modèle](./how-to-guides/train-machine-learning-model-ml-net.md)
+Vous pouvez en savoir plus sur l’apprentissage du modèle dans [la manière d’effectuer l’apprentissage de votre modèle](./how-to-guides/train-machine-learning-model-ml-net.md).
 
 L’objet modèle obtenu implémente l’interface <xref:Microsoft.ML.ITransformer>. Autrement dit, le modèle transforme les données d’entrée en prédictions.
 

@@ -1,23 +1,21 @@
 ---
 title: dotnet-Counters-.NET Core
 description: Découvrez comment installer et utiliser l’outil en ligne de commande dotnet-Counter.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: b2fab239713d9d19c580580496e73a91ceafcc52
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 10af451a8b1b4d8b27da1490b99b19a4359c860f
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72321588"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740803"
 ---
-# <a name="dotnet-counters"></a>dotnet-compteurs
+# <a name="dotnet-counters"></a>dotnet-counters
 
 **Cet article s’applique à : ✓** .net Core 3,0 SDK et versions ultérieures
 
 ## <a name="install-dotnet-counters"></a>Installer dotnet-Counters
 
-Pour installer la dernière version Release du [package NuGet](https://www.nuget.org/packages/dotnet-counters)`dotnet-counters`, utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Pour installer la dernière version de la `dotnet-counters` [package NuGet](https://www.nuget.org/packages/dotnet-counters), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
 dotnet tool install --global dotnet-counters
@@ -31,7 +29,7 @@ dotnet-counters [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Description
 
-`dotnet-counters` est un outil d’analyse des performances pour la surveillance de l’intégrité ad hoc et l’enquête sur les performances de premier niveau. Il peut observer les valeurs des compteurs de performance publiées via l’API <xref:System.Diagnostics.Tracing.EventCounter>. Par exemple, vous pouvez rapidement surveiller des éléments tels que l’utilisation de l’UC ou le taux d’exceptions levées dans votre application .NET Core pour voir s’il y a quelque chose de suspect avant de vous plonger dans une investigation de performances plus sérieuse à l’aide de `PerfView` ou `dotnet-trace`.
+`dotnet-counters` est un outil d’analyse des performances pour la surveillance de l’intégrité ad hoc et l’enquête sur les performances de premier niveau. Il peut observer les valeurs des compteurs de performance publiées via l’API <xref:System.Diagnostics.Tracing.EventCounter>. Par exemple, vous pouvez rapidement surveiller des éléments tels que l’utilisation de l’UC ou le taux d’exceptions levées dans votre application .NET Core pour voir s’il y a quelque chose de suspect avant de vous plonger dans une investigation des performances plus sérieuse à l’aide de `PerfView` ou `dotnet-trace`.
 
 ## <a name="options"></a>Options
 
@@ -43,9 +41,9 @@ dotnet-counters [-h|--help] [--version] <command>
 
   Affiche l’aide de la ligne de commande.
 
-## <a name="commands"></a>Commandes
+## <a name="commands"></a>Commands
 
-| Commande                                             |
+| Command                                             |
 | --------------------------------------------------- |
 | [liste dotnet-Counters](#dotnet-counters-list)       |
 | [analyse dotnet-Counters](#dotnet-counters-monitor) |
@@ -98,7 +96,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
 
 - **`counter_list <COUNTERS>`**
 
-  Liste séparée par des espaces des compteurs. Les compteurs peuvent être spécifiés `provider_name[:counter_name]`. Si le `provider_name` est utilisé sans `counter_name` éligible, tous les compteurs sont affichés. Pour découvrir les noms de fournisseur et de compteur, utilisez la commande [dotnet-Counters List](#dotnet-counters-list) .
+  Liste séparée par des espaces des compteurs. Les compteurs peuvent être spécifiés `provider_name[:counter_name]`. Si le `provider_name` est utilisé sans `counter_name`éligible, tous les compteurs sont affichés. Pour découvrir les noms de fournisseur et de compteur, utilisez la commande [dotnet-Counters List](#dotnet-counters-list) .
 
 ### <a name="examples"></a>Exemples
 
@@ -118,7 +116,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       Number of Exceptions / sec                     4
   ```
 
-- Surveiller uniquement l’utilisation de l’UC et la taille du tas GC à partir de `System.Runtime` :
+- Surveiller uniquement l’utilisation de l’UC et la taille du tas GC à partir `System.Runtime`:
 
   ```console
   > dotnet-counters monitor --process-id 1902 System.Runtime[cpu-usage,gc-heap-size]
@@ -129,7 +127,7 @@ dotnet-counters monitor [-h|--help] [-p|--process-id] [--refreshInterval] [count
       GC Heap Size (MB)                            811
   ```
 
-- Analyser les valeurs `EventCounter` à partir des `EventSource` définies par l’utilisateur. Pour plus d’informations, consultez [Didacticiel : Comment mesurer les performances pour les événements très fréquents à l’aide de EventCounters](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
+- Surveillez les valeurs de `EventCounter` à partir de `EventSource`définies par l’utilisateur. Pour plus d’informations, consultez [Didacticiel : Comment mesurer les performances pour les événements très fréquents à l’aide de EventCounters](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
 
   ```console
   > dotnet-counters monitor --process-id 1902 Samples-EventCounterDemos-Minimal

@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet migrate
 description: La commande dotnet migrate permet de migrer un projet et l’ensemble de ses dépendances.
-ms.date: 08/08/2019
-ms.openlocfilehash: afc16161761d151e743e53a8572a6564add43517
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.date: 01/07/2020
+ms.openlocfilehash: d746069b897a7458e0262663e96cc8743a586aa9
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117693"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740514"
 ---
 # <a name="dotnet-migrate"></a>dotnet migrate
 
@@ -26,7 +26,7 @@ dotnet migrate [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet migrate` migre un projet *project.json* Preview 2 valide vers un projet *csproj* de style SDK .NET Core valide.
+Cette commande est déconseillée. La commande `dotnet migrate` n’est plus disponible à partir du kit de développement logiciel (SDK) .NET Core 3,0. Il ne peut migrer qu’un projet .NET Core Preview 2 vers un projet .NET Core 1. x, ce qui n’est pas pris en charge.
 
 Par défaut, la commande migre le projet racine et toutes les références de projet qu’il contient. Ce comportement peut être désactivé à l’aide de l’option `--skip-project-references` au moment de l’exécution.
 
@@ -42,8 +42,6 @@ La commande `dotnet migrate` conserve le fichier *project.json* migré dans un r
 Par défaut, l’opération de migration affiche l’état du processus de migration dans la sortie standard (STDOUT). Si vous utilisez l’option `--report-file <REPORT_FILE>`, la sortie est enregistrée dans le fichier spécifié.
 
 La commande `dotnet migrate` prend en charge uniquement les projets *project.json* Preview 2 valides. Cela signifie que vous ne pouvez pas l’utiliser pour migrer des projets *project.json* DNX ou Preview 1 directement vers des projets MSBuild/csproj. Vous devez tout d’abord migrer manuellement le projet vers un projet *project.json* Preview 2, puis utiliser la commande `dotnet migrate` pour migrer le projet.
-
-La `dotnet migrate` commande n’est plus disponible à partir du kit de développement logiciel (SDK) .net Core 3,0.
 
 ## <a name="arguments"></a>Arguments
 

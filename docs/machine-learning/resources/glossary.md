@@ -1,15 +1,14 @@
 ---
 title: Glossaire de l’apprentissage automatique
 description: La liste suivante est une compilation des principaux termes Machine Learning, utiles lorsque vous générez vos modèles personnalisés.
-ms.custom: seodec18
 ms.topic: reference
 ms.date: 07/31/2019
-ms.openlocfilehash: bd4f2db701f537d5c87529115a6bd44035432534
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 32ccb6df1cb08db45ebd25a0d1c0ea4396a6c50b
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977288"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75739876"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -57,7 +56,7 @@ Les données sont essentielles à toute application de machine learning. Dans ML
 
 Classe dans ML.NET qui implémente l’interface <xref:Microsoft.ML.IEstimator%601>.
 
-Un estimateur est une spécification d’une transformation (transformation de préparation des données et transformation d’entraînement de modèle Machine Learning). Les estimateurs peuvent être chaînés dans un pipeline des transformations. Les paramètres d’un estimateur ou d’un pipeline d’estimateurs sont appris quand <xref:Microsoft.ML.IEstimator`1.Fit*> est appelé. Le résultat de <xref:Microsoft.ML.IEstimator`1.Fit*> est un [transformer](#transformer).
+Un estimateur est une spécification d’une transformation (transformation de préparation des données et transformation d’entraînement de modèle Machine Learning). Les estimateurs peuvent être chaînés dans un pipeline des transformations. Les paramètres d’un estimateur ou d’un pipeline d’estimateurs sont appris quand <xref:Microsoft.ML.IEstimator%601.Fit%2A> est appelé. Le résultat de <xref:Microsoft.ML.IEstimator%601.Fit%2A> est un [transformer](#transformer).
 
 ## <a name="extension-method"></a>Méthode d’extension
 
@@ -65,7 +64,7 @@ Méthode .NET qui fait partie d’une classe, mais qui est définie en dehors de
 
 Les méthodes d’extension sont largement utilisées dans ML.NET pour construire des instances d’[estimateurs](#estimator).
 
-## <a name="feature"></a>Fonction
+## <a name="feature"></a>Composant
 
 Propriété mesurable du phénomène mesuré, en général, une valeur (double) numérique. Plusieurs fonctionnalités sont appelées **vecteur de fonctionnalité** et sont généralement stockées en tant que `double[]`. Les fonctionnalités définissent les principales caractéristiques du phénomène mesuré. Pour plus d’informations, consultez l’article Wikipédia [Fonctionnalité](https://en.wikipedia.org/wiki/Feature_(machine_learning)).
 
@@ -81,7 +80,7 @@ Dans une [classification](#classification), une métrique d’évaluation qui é
 
 Un paramètre d’un algorithme d’apprentissage automatique. Par exemple, le nombre d’arbres à assimiler dans une forêt décisionnelle ou la taille d’étape dans un algorithme de jambage descendant dégradé. Les valeurs des *hyperparamètres* sont définies avant l’apprentissage du modèle et régissent le processus de recherche des paramètres de la fonction de prédiction, par exemple, les points de comparaison dans un arbre de décision ou les pondérations dans un modèle de régression linéaire. Pour plus d’informations, consultez l’article Wikipédia [Hyperparamètre](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)).
 
-## <a name="label"></a>Etiquette
+## <a name="label"></a>Ajouter des contrôles
 
 L’élément à prédire avec le modèle d’apprentissage automatique. Par exemple, la race d’un chien ou le futur cours d’une action.
 
@@ -95,7 +94,7 @@ Une fonction de perte est la différence entre les valeurs d’étiquette d’en
 
 Différents entraîneurs peuvent être configurés avec différentes fonctions de perte.
 
-## <a name="mean-absolute-error-mae"></a>Erreur d'absolue moyenne
+## <a name="mean-absolute-error-mae"></a>Erreur absolue moyenne (MAE)
 
 Dans une [régression](#regression), une métrique d’évaluation qui représente la moyenne de toutes les erreurs du modèle, où l’erreur de modèle est la distance entre la valeur d’[étiquette](#label) prédite et la valeur d’étiquette correcte.
 
@@ -142,7 +141,7 @@ Dans une [classification](#classification), le rappel d’une classe correspond 
 
 Une tâche [Apprentissage automatique supervisé](#supervised-machine-learning) où la sortie est une valeur réelle, par exemple, double. Exemple : prédiction de cours d’actions. Pour plus d’informations, consultez la section [Régression](tasks.md#regression) de la rubrique [Tâches d’apprentissage automatique](tasks.md).
 
-## <a name="relative-absolute-error"></a>Erreur absolue relative
+## <a name="relative-absolute-error"></a>Erreur d'absolue relative
 
 Dans une [régression](#regression), une métrique d’évaluation correspondant à la somme de toutes les erreurs absolues, divisée par la somme des distances entre les valeurs d’[étiquette](#label) correctes et la moyenne de toutes les valeurs d’étiquette correctes.
 
@@ -154,7 +153,7 @@ Dans une [régression](#regression), une métrique d’évaluation correspondant
 
 Dans une [régression](#regression), une métrique d’évaluation correspondant à la racine carrée de la moyenne des carrés des erreurs.
 
-## <a name="scoring"></a>Soulign
+## <a name="scoring"></a>Notation
 
 Le score est le processus qui consiste à appliquer de nouvelles données à un modèle d’apprentissage automatique entraîné et à générer des prédictions. Le calcul des scores est également appelé « inférence ». Selon le type de modèle, le score peut être une valeur brute, une probabilité ou une catégorie.
 

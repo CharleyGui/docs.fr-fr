@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: ae120311e7e58b34437de987e9f9a18e917043c0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72fa95bde0c41e913bdaa35da7fdcd34f81b3057
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974075"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740265"
 ---
 # <a name="threading-model"></a>Modèle de thread
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est conçu pour épargner aux développeurs les difficultés d’utilisation des threads. Par conséquent, la majorité des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] développeurs n’auront pas à écrire une interface qui utilise plusieurs threads. Comme les programmes multithreads sont complexes et difficiles à déboguer, il est préférable de les éviter quand des solutions à thread unique existent.
@@ -58,7 +58,7 @@ ms.locfileid: "73974075"
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Une application à thread unique avec un calcul de longue durée
  La plupart des interfaces utilisateur graphiques (GUI) passent une grande partie de leur temps d’inactivité lors de l’attente des événements qui sont générés en réponse aux interactions de l’utilisateur. Avec une programmation minutieuse, cette durée d’inactivité peut être utilisée de façon constructive, sans affecter la réactivité de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Le modèle de thread [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne permet pas à l’entrée d’interrompre une opération qui se produit dans le thread [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Cela signifie que vous devez vous assurer de retourner régulièrement à la <xref:System.Windows.Threading.Dispatcher> pour traiter les événements d’entrée en attente avant qu’ils ne soient obsolètes.
 
- Prenons l'exemple suivant :
+ Prenons l'exemple suivant :
 
  ![Capture d’écran montrant le Threading des nombres premiers.](./media/threading-model/threading-prime-numbers.png)
 
@@ -203,7 +203,7 @@ ms.locfileid: "73974075"
  Il est possible que `handler2` prend beaucoup de temps pour traiter cet événement. `handler2` pouvez utiliser <xref:System.Windows.Threading.Dispatcher.PushFrame%2A> pour commencer une boucle de messages imbriquée qui ne retourne pas pendant des heures. Si `handler2` ne marque pas l’événement comme géré lorsque cette boucle de messages est terminée, l’événement est passé en haut de l’arborescence même s’il est très ancien.
 
 ### <a name="reentrancy-and-locking"></a>Réentrance et verrouillage
- Le mécanisme de verrouillage du common language runtime (CLR) ne se comporte pas exactement comme vous pourriez l’imaginer. On peut s’attendre à ce qu’un thread arrête complètement l’opération lors de la demande d’un verrou. En fait, le thread continue à recevoir et à traiter les messages de priorité élevée. Ceci permet d’éviter les blocages et de rendre les interfaces un minimum réactives, mais introduit la possibilité de bogues subtils.  La grande majorité du temps, vous n’avez pas besoin d’en savoir plus sur ce sujet, mais dans de rares circonstances (impliquant généralement des messages de fenêtre [!INCLUDE[TLA2#tla_win32](../../../../includes/tla2sharptla-win32-md.md)] ou des composants COM STA), cela peut être utile.
+ Le mécanisme de verrouillage du common language runtime (CLR) ne se comporte pas exactement comme vous pourriez l’imaginer. On peut s’attendre à ce qu’un thread arrête complètement l’opération lors de la demande d’un verrou. En fait, le thread continue à recevoir et à traiter les messages de priorité élevée. Ceci permet d’éviter les blocages et de rendre les interfaces un minimum réactives, mais introduit la possibilité de bogues subtils.  La grande majorité du temps, vous n’avez pas besoin de connaître quoi que ce soit à ce sujet, mais dans de rares circonstances (impliquant généralement des messages de fenêtre Win32 ou des composants COM STA), cela peut être utile.
 
  La plupart des interfaces ne sont pas générées avec la sécurité des threads à l’esprit, car les développeurs travaillent en partant du principe qu’un [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] n’est jamais accessible par plus d’un thread. Dans ce cas, ce thread unique peut apporter des modifications environnementales à des moments inattendus, ce qui entraîne des effets négatifs que le <xref:System.Windows.Threading.DispatcherObject> mécanisme d’exclusion mutuelle est supposé résoudre. Considérez le pseudocode suivant :
 

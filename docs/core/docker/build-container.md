@@ -3,13 +3,13 @@ title: Tutoriel Conteneuriser une application avec Docker
 description: Ce tutoriel explique comment conteneuriser une application .NET Core avec Docker.
 ms.date: 06/26/2019
 ms.topic: tutorial
-ms.custom: mvc, seodec18
-ms.openlocfilehash: b344731c7d356f3705d9909b6901234f91ec7d6d
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.custom: mvc
+ms.openlocfilehash: e012fcf78c88e7f64f6ee205cd69b69683bed9c3
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72521889"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740760"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Didacticiel : conteneur d’une application .NET Core
 
@@ -124,7 +124,7 @@ namespace myapp
 }
 ```
 
-Enregistrez le fichier et effectuez un nouveau avec `dotnet run`. N’oubliez pas que cette application s’exécute indéfiniment. Utilisez la commande Annuler <kbd>CTRL</kbd> +<kbd>C</kbd> pour l’arrêter. Le résultat suivant s’affiche :
+Enregistrez le fichier et effectuez un nouveau avec `dotnet run`. N’oubliez pas que cette application s’exécute indéfiniment. Utilisez la commande Annuler <kbd>CTRL</kbd>+<kbd>C</kbd> pour l’arrêter. Le résultat suivant s’affiche :
 
 ```console
 > dotnet run
@@ -369,9 +369,9 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 La commande `docker run` vous permet également de modifier la commande `ENTRYPOINT` depuis le *Dockerfile* , puis d’exécuter un autre élément, mais uniquement pour ce conteneur. Par exemple, utilisez la commande suivante pour exécuter `bash` ou `cmd.exe`. Modifiez la commande selon vos besoins.
 
-#### <a name="windows"></a>Windows
+#### <a name="windows"></a>Portail
 
-Dans cet exemple, `ENTRYPOINT` est remplacé par `cmd.exe`. Appuyez sur <kbd>CTRL</kbd> +<kbd>C</kbd> pour terminer le processus et arrêter le conteneur.
+Dans cet exemple, `ENTRYPOINT` est remplacé par `cmd.exe`. Appuyez sur <kbd>CTRL</kbd>+<kbd>C</kbd> pour terminer le processus et arrêter le conteneur.
 
 ```console
 > docker run -it --rm --entrypoint "cmd.exe" myimage
@@ -422,7 +422,7 @@ Docker propose différentes commandes qui couvrent vos besoins en matière de co
 
 ## <a name="clean-up-resources"></a>Nettoyer les ressources
 
-Au cours de ce tutoriel, vous avez créé des conteneurs et des images. Si vous le souhaitez, supprimez ces ressources. Utilisez les commandes suivantes pour
+Au cours de ce didacticiel, vous avez créé des conteneurs et des images. Si vous le souhaitez, supprimez ces ressources. Utilisez les commandes suivantes pour
 
 01. Lister tous les conteneurs
 
@@ -454,7 +454,7 @@ Utilisez la commande `docker images` pour afficher la liste des images installé
 > [!NOTE]
 > Les fichiers image peuvent être volumineux. En règle générale, vous supprimez les conteneurs temporaires que vous avez créés lors des tests et du développement de votre app. Vous conservez normalement les images de base avec le runtime installé si vous envisagez de créer d’autres images basées sur ce runtime.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Essayez le tutoriel sur le microservice ASP.NET Core.](https://dotnet.microsoft.com/learn/web/aspnet-microservice-tutorial/intro)
 - [Passez en revue les services Azure qui prennent en charge des conteneurs.](https://azure.microsoft.com/overview/containers/)

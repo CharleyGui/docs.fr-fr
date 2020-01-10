@@ -4,14 +4,12 @@ description: Ce didacticiel vous montre comment utiliser un modèle TensorFlow p
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.author: nakersha
-author: natke
-ms.openlocfilehash: 8c3544b60b1fba1d419ca091b0a1d85fbbdbe2d6
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 0e80cdc6bb7dcc62a57466e909451da972c92db8
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204924"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738698"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Didacticiel : analyser le sentiment des revues de films à l’aide d’un modèle TensorFlow pré-formé dans ML.NET
 
@@ -81,16 +79,16 @@ Les revues de film sont du texte en forme libre. Votre application convertit le 
 
 La première consiste à fractionner le texte en mots séparés et à utiliser le fichier de mappage fourni pour mapper chaque mot sur un encodage entier. Le résultat de cette transformation est un tableau d’entiers de longueur variable dont la longueur correspond au nombre de mots de la phrase.
 
-|Propriété| Valeur|Type|
+|Les| Value|Type|
 |-------------|-----------------------|------|
-|ReviewText|ce film est vraiment parfait|chaîne|
+|ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Le tableau de fonctionnalités de longueur variable est ensuite redimensionné à une longueur fixe de 600. Il s’agit de la longueur attendue par le modèle TensorFlow.
 
-|Propriété| Valeur|Type|
+|Les| Value|Type|
 |-------------|-----------------------|------|
-|ReviewText|ce film est vraiment parfait|chaîne|
+|ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 |Fonctionnalités|14, 22, 9, 66, 78,... |int [600]|
 
@@ -135,7 +133,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
     |Word     |Index    |
     |---------|---------|
     |fête     |  362    |
-    |préférable     |  181    |
+    |pas     |  181    |
     |Flex    |  355    |
     |effets  |  302    |
     |sensation  |  547    |
@@ -226,7 +224,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 1. La fonction [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) effectue une prédiction sur une seule ligne de données :
 
-    |Propriété| Valeur|Type|
+    |Les| Value|Type|
     |-------------|-----------------------|------|
     |Prédiction|[0,5459937, 0,454006255]|float []|
 

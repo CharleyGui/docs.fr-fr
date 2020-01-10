@@ -9,14 +9,12 @@ helpviewer_keywords:
 - locating assemblies
 - assemblies [.NET Framework], location
 ms.assetid: 772ac6f4-64d2-4cfb-92fd-58096dcd6c34
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 01cef9646ca9c4f49ab8376364648f66b9651e4a
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: c462a6df2d5221907a6b574c33bb8fa1c52abac5
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052126"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741341"
 ---
 # <a name="how-the-runtime-locates-assemblies"></a>Méthode de localisation des assemblys par le runtime
 
@@ -33,9 +31,9 @@ Le processus de localisation et de liaison d'un assembly débute quand le runtim
 
 La meilleure façon de référencer un assembly est d'utiliser une référence complète, comprenant le nom de l'assembly, sa version, sa culture et son jeton de clé publique (le cas échéant). Le runtime se sert de ces informations pour localiser l'assembly, en suivant les étapes décrites plus loin dans cette section. Il utilise le même processus de résolution pour les références d'assemblys statiques et dynamiques.
 
-Vous pouvez aussi créer une référence dynamique à un assembly en fournissant à la méthode d'appel seulement une partie des informations relatives à l'assembly, par exemple en spécifiant le nom de l'assembly uniquement. Dans ce cas, l'assembly n'est recherché que dans le répertoire de l'application et aucune autre vérification n'est effectuée. Il est possible de créer une référence partielle à l’aide d’une des méthodes de chargement des assemblys, telle que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>.
+Vous pouvez aussi créer une référence dynamique à un assembly en fournissant à la méthode d'appel seulement une partie des informations relatives à l'assembly, par exemple en spécifiant le nom de l'assembly uniquement. Dans ce cas, l'assembly n'est recherché que dans le répertoire de l'application et aucune autre vérification n'est effectuée. Vous pouvez créer une référence partielle à l’aide de l’une des méthodes de chargement des assemblys, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.AppDomain.Load%2A?displayProperty=nameWithType>.
 
-Pour finir, vous pouvez créer une référence dynamique en utilisant une méthode comme <xref:System.Reflection.Assembly.Load*?displayProperty=nameWithType> à laquelle vous fournissez seulement des informations partielles. Vous qualifiez ensuite la référence en définissant l’élément [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) dans le fichier de configuration de l’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.
+Pour finir, vous pouvez créer une référence dynamique en utilisant une méthode comme <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> à laquelle vous fournissez seulement des informations partielles. Vous qualifiez ensuite la référence en définissant l’élément [\<qualifyAssembly>](../configure-apps/file-schema/runtime/qualifyassembly-element.md) dans le fichier de configuration de l’application. Cet élément vous permet de fournir les informations de la référence complète (nom, version, culture et, le cas échéant, jeton de clé publique) dans le fichier de configuration de votre application plutôt que dans votre code. Utilisez cette technique si vous souhaitez créer une référence complète à un assembly en dehors du répertoire de l'application, ou si vous souhaitez référencer un assembly dans le Global Assembly Cache en gardant la possibilité de spécifier la référence complète dans le fichier de configuration plutôt que dans votre code.
 
 > [!NOTE]
 > Ce type de référence partielle ne doit pas être utilisé avec des assemblys partagés par plusieurs applications. Les paramètres de configuration sont appliqués au niveau de l'application, et non de chaque assembly. Par conséquent, un assembly partagé utilisant ce type de référence partielle nécessite que chaque application liée à l'assembly partagé possède les informations de qualification dans son fichier de configuration.
@@ -64,7 +62,7 @@ Le runtime effectue les étapes suivantes pour résoudre une référence d'assem
 
 <a name="step1"></a>
 
-## <a name="step-1-examining-the-configuration-files"></a>Étape 1 : examen des fichiers de configuration
+## <a name="step-1-examining-the-configuration-files"></a>Étape 1 : examen des fichiers de configuration
 
 Le comportement de la liaison d'assembly peut être configuré à différents niveaux à l'aide de ces trois fichiers XML :
 
@@ -83,7 +81,7 @@ Ces fichiers utilisent la même syntaxe. Ils fournissent plusieurs informations,
 
 Le common language runtime vérifie tout d'abord le fichier de configuration de l'application à la recherche d'informations qui substituent les informations de version stockées dans le manifeste de l'assembly appelant. Le fichier de configuration de l'application peut être déployé avec une application, mais il n'est pas nécessaire à l'exécution de celle-ci. En règle générale, la récupération de ce fichier est quasi instantanée mais, si la base de l'application se trouve sur un ordinateur distant (dans le cas d'une application web basée sur Internet Explorer, par exemple), le fichier de configuration doit être téléchargé.
 
-Pour les fichiers exécutables client, le fichier de configuration de l'application réside dans le même répertoire que le fichier exécutable de l'application et possède le même nom que le fichier exécutable avec une extension .config. Par exemple, le fichier de configuration pour C:\Program Files\Myapp\Myapp.exe est C:\Program Files\Myapp\Myapp.exe.config. S’il s’agit d’une application basée sur un navigateur, le fichier HTML doit utiliser l’élément **\<link>** pour pointer explicitement vers le fichier de configuration.
+Pour les fichiers exécutables client, le fichier de configuration de l'application réside dans le même répertoire que le fichier exécutable de l'application et possède le même nom que le fichier exécutable avec une extension .config. Par exemple, le fichier de configuration pour C:\Program Files\Myapp\Myapp.exe est C:\Program Files\Myapp\Myapp.exe.config. Dans un scénario basé sur un navigateur, le fichier HTML doit utiliser l’élément **\<link >** pour pointer explicitement vers le fichier de configuration.
 
 Le code suivant fournit un exemple simple de fichier de configuration de l'application. Cet exemple ajoute un élément <xref:System.Diagnostics.TextWriterTraceListener> à la collection <xref:System.Diagnostics.Debug.Listeners%2A> pour activer l'enregistrement des informations de débogage dans un fichier.
 
@@ -145,7 +143,7 @@ Finalement, le runtime examine le fichier de configuration de l'ordinateur. Ce f
 
 <a name="step2"></a> 
 
-## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Étape 2 : rechercher les assemblys précédemment référencés
+## <a name="step-2-checking-for-previously-referenced-assemblies"></a>Étape 2 : recherche des assemblys précédemment référencés
 
 Si l'assembly demandé a aussi été demandé lors d'appels précédents, le common language runtime utilise l'assembly qui est déjà chargé. Ceci peut avoir des implications au moment de l'attribution des noms des assemblys qui composent une application. Pour plus d'informations sur l'attribution des noms des assemblys, voir [Noms d'assemblys](../../standard/assembly/names.md).
 
@@ -156,13 +154,13 @@ Si une précédente demande de chargement de l'assembly avait échoué, toute no
 
 <a name="step3"></a>
 
-## <a name="step-3-checking-the-global-assembly-cache"></a>Étape 3 : vérifier le Global Assembly Cache
+## <a name="step-3-checking-the-global-assembly-cache"></a>Étape 3 : vérification du Global Assembly Cache
 
 Pour les assemblys avec un nom fort, le processus de liaison examine ensuite le Global Assembly Cache. Le Global Assembly Cache stocke des assemblys qui peuvent être utilisés par plusieurs applications sur un ordinateur. Tous les assemblys figurant dans le Global Assembly Cache doivent avoir un nom fort.
 
 <a name="step4"></a>
 
-## <a name="step-4-locating-the-assembly-through-codebases-or-probing"></a>Étape 4 : localisation de l’assembly par le biais des bases de code ou de la détection
+## <a name="step-4-locating-the-assembly-through-codebases-or-probing"></a>Étape 4 : localisation de l'assembly par le biais des bases de code ou de la détection
 
 Une fois que la version correcte de l'assembly a été déterminée d'après les informations contenues dans la référence de l'assembly appelant et dans les fichiers de configuration, et après la vérification du Global Assembly Cache (uniquement pour les assemblys avec un nom fort), le common language runtime tente de trouver l'assembly. Le processus de localisation d'un assembly implique les étapes suivantes :
 
@@ -268,5 +266,5 @@ Par exemple, si Assembly1 référence Assembly2 et qu’Assembly1 a été charg�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Meilleures pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)
+- [Bonnes pratiques pour le chargement d'assemblys](best-practices-for-assembly-loading.md)
 - [Déploiement](index.md)

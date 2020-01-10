@@ -11,17 +11,17 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: c9ddbcf8f7b6307ab2d89b819aee4809f753a0fe
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 64f3a51b29a7116c736fea0e76465a4a73c640c2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138614"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738768"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
 
 > [!NOTE]
-> Bien que .NET Core prenne en charge les assemblys avec nom fort et que tous les assemblys de la bibliothèque .NET Core soient signés, la majorité des assemblys tiers n’ont pas besoin de noms forts. Pour plus d’informations, consultez [signature avec nom fort](https://github.com/dotnet/corefx/blob/master/Documentation/project-docs/strong-name-signing.md) sur GitHub.
+> Bien que .NET Core prenne en charge les assemblys avec nom fort et que tous les assemblys de la bibliothèque .NET Core soient signés, la majorité des assemblys tiers n’ont pas besoin de noms forts. Pour plus d’informations, consultez [signature avec nom fort](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) sur GitHub.
 
 Il existe plusieurs façons de signer un assembly avec un nom fort :  
   
@@ -41,7 +41,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 2. Choisissez l'onglet **Signature** .  
   
-3. Sélectionnez la zone **Signer l’assembly**.  
+3. Sélectionnez la zone **Signer l'assembly** .  
   
 4. Dans la zone **choisir un fichier de clé de nom fort** , choisissez **Parcourir**, puis naviguez jusqu’au fichier de clé. Pour créer un nouveau fichier de clé, choisissez **nouveau** et entrez son nom dans la boîte de dialogue **créer une clé de nom fort** .  
   
@@ -52,9 +52,9 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 À l' [invite de commandes développeur pour Visual Studio](../../framework/tools/developer-command-prompt-for-vs.md), entrez la commande suivante :  
 
-**al** **/out:** \<*assemblyName*>  *\<moduleName>* **/keyfile:** \<*keyfileName*>  
+**al** **/out :** \<*AssemblyName*>  *\<moduleName >* **/keyfile :** \<*keyfilename*>  
 
-Où :  
+Où :  
 
 - *AssemblyName* est le nom de l’assembly fortement signé (un fichier *. dll* ou *. exe* ) que l’éditeur de liens d’assembly enverra.  
   

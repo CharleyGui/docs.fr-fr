@@ -1,17 +1,15 @@
 ---
 title: Machine learning automatisé avec ML.NET
 description: Vue d’ensemble de la sélection et de l’entraînement automatiques d’un modèle
-author: natke
 ms.date: 05/01/2019
 ms.topic: overview
 ms.custom: mvc
-ms.author: nakersha
-ms.openlocfilehash: 251ca50f062f415ac4dfeda243eb746e9744b6f4
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: c6c369dc0b0375f180d33d85ef320ddb24102f3e
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345186"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740098"
 ---
 # <a name="automated-machine-learning-with-mlnet"></a>Machine learning automatisé avec ML.NET
 

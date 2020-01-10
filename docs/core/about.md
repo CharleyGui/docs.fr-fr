@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: ed153e817746a88277c191dfb14c465ff2d8bfa1
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: c6d120445bc6625b37c461c1bf2686b10833dc13
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344906"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740940"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -113,7 +113,7 @@ Bien que .NET Core soit unique et présente des différences significatives au .
 
 ### <a name="comparison-with-mono"></a>Comparaison avec Mono
 
-[Mono](https://www.mono-project.com/) est l’implémentation multiplateforme d’origine de .net. Il a commencé comme une alternative [Open source](https://github.com/mono/mono) à .NET Framework et a migré vers le ciblage des appareils mobiles, car les appareils iOS et Android sont devenus populaires. Elle peut être considérée comme un clone communautaire du .NET Framework. L’équipe de projet mono s’est appuyée sur les [normes .net](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) ouvertes (notamment ECMA 335) publiées par Microsoft pour fournir une implémentation compatible.
+[Mono](https://www.mono-project.com/) est l’implémentation multiplateforme d’origine de .net. Il a commencé comme une alternative [Open source](https://github.com/mono/mono) à .NET Framework et a migré vers le ciblage des appareils mobiles, car les appareils iOS et Android sont devenus populaires. Elle peut être considérée comme un clone communautaire du .NET Framework. L’équipe de projet mono s’est appuyée sur les [normes .net](https://github.com/dotnet/runtime/blob/master/docs/project/dotnet-standards.md) ouvertes (notamment ECMA 335) publiées par Microsoft pour fournir une implémentation compatible.
 
 Les principales différences entre .NET Core et Mono sont les suivantes :
 

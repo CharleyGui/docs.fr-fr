@@ -1,15 +1,13 @@
 ---
 title: Changements cassants et bibliothèques .NET
 description: Recommandations relatives aux bonnes pratiques pour parcourir les changements cassants lors de la création de bibliothèques .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 6881b8737d9dd3fa7fa71f099fa1dc97b747033d
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 8536662ae1cd9733efbcc0c6526bd69d34a13177
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70104657"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740985"
 ---
 # <a name="breaking-changes"></a>Modifications avec rupture
 
@@ -66,9 +64,9 @@ Un changement cassant binaire se produit quand vous modifiez l’API publique de
 
 Un changement cassant binaire peut également casser un **assembly entier**. Le renommage d’un assembly avec `AssemblyName` change l’identité de l’assembly, de même que l’ajout, la suppression ou le changement de la clé d’affectation de noms forts de l’assembly. Un changement de l’identité d’un assembly va casser tout le code compilé qui l’utilise.
 
-**❌ À NE PAS FAIRE** : Changer le nom d’un assembly.
+**❌ ne modifiez pas** un nom d’assembly.
 
-**❌ VOUS NE DEVEZ PAS** ajouter, supprimer ou modifier la clé d’affectation de noms forts.
+**❌ n’ajoutez pas, ne** supprimez pas ou ne modifiez pas la clé de nom fort.
 
 **✔️ À ENVISAGER** : Utiliser des classes de base abstraites plutôt que des interfaces.
 
@@ -102,7 +100,7 @@ public class Document
 
 - [Considérations relatives à la version et la mise à jour pour les développeurs C#](../../csharp/whats-new/version-update-considerations.md)
 - [A definitive guide to API-breaking changes in .NET](https://stackoverflow.com/questions/1456785/a-definitive-guide-to-api-breaking-changes-in-net)
-- [Règles sur les changements cassants CoreFX](https://github.com/dotnet/corefx/blob/master/Documentation/coding-guidelines/breaking-change-rules.md)
+- [Règles de modification avec rupture .NET](https://github.com/dotnet/runtime/blob/master/docs/coding-guidelines/breaking-change-rules.md)
 
 >[!div class="step-by-step"]
 >[Précédent](versioning.md)

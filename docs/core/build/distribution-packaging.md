@@ -3,13 +3,12 @@ title: Empaquetage de la distribution de .NET Core
 description: Découvrez comment empaqueter, nommer et versionner .NET Core pour la distribution.
 author: tmds
 ms.date: 10/09/2019
-ms.custom: seodec18
-ms.openlocfilehash: 715eb944c3e7626696f64e63b874e2f77595cf46
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: cfd6003cfac5c00fc06ebc6195eccd55a0d7afe7
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393579"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740935"
 ---
 # <a name="net-core-distribution-packaging"></a>Empaquetage de la distribution de .NET Core
 
@@ -84,7 +83,7 @@ Le dossier **shared** contient des frameworks. Un framework partagé fournit un 
 
 - (8) **LICENSE.txt,ThirdPartyNotices.txt** sont la licence .NET Core et les licences des bibliothèques de tiers utilisées dans .NET Core, respectivement.
 
-- (9, 10) **dotnet.1.gz, dotnet** `dotnet.1.gz` est la page du manuel de dotnet. `dotnet` est un lien symbolique vers l’hôte dotnet (1). Ces fichiers sont installés aux emplacements habituels pour l’intégration du système.
+- (9, 10) **dotnet. 1. gz, dotnet** `dotnet.1.gz` est la page manuelle dotnet. `dotnet` est un lien symbolique vers l’hôte dotnet (1). Ces fichiers sont installés à des emplacements bien connus pour l’intégration du système.
 
 - (11, 12) **Microsoft. Netcore. app. ref, Microsoft. AspNetCore. app. Ref** décrivent l’API d’une `x.y` version de .net Core et ASP.net Core respectivement. Ces packs sont utilisés lors de la compilation de ces versions cibles.
 
@@ -126,7 +125,7 @@ La liste suivante répertorie les packages recommandés :
 - `dotnet-runtime-deps-[major].[minor]` _(facultatif)_ -installe les dépendances pour l’exécution des applications autonomes
   - **Version :** \<version du runtime >
   - **Exemple :** dotnet-Runtime-deps-2,1
-  - **Dépendances :** _dépendances spécifiques à distribution_
+  - **Dépendances :** _dépendances spécifiques à la distribution_
 
 - `dotnet-runtime-[major].[minor]`-installe un Runtime spécifique
   - **Version :** \<version du runtime >

@@ -10,12 +10,12 @@ helpviewer_keywords:
 - UI (user interface), automation
 - UI Automation
 ms.assetid: 4380cad7-e509-448f-b9a5-6de042605fd4
-ms.openlocfilehash: ceab7db1f9eeb47ec020e220ec702af8181855e2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 645c44998812453008fc91d5cf4b8463c51bef9a
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74442480"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741726"
 ---
 # <a name="ui-automation-and-screen-scaling"></a>Mise à l'échelle de l'écran et UI Automation
 > [!NOTE]
@@ -58,14 +58,14 @@ ms.locfileid: "74442480"
   
  La solution comporte deux parties.  
   
-1. Tout d’abord, assurez-vous que l’application cliente prend en charge dpi. Pour cela, appelez la fonction [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `SetProcessDPIAware` au démarrage. En code managé, la déclaration suivante rend cette fonction disponible.  
+1. Tout d’abord, assurez-vous que l’application cliente prend en charge dpi. Pour ce faire, appelez la fonction Win32 `SetProcessDPIAware` au démarrage. En code managé, la déclaration suivante rend cette fonction disponible.  
   
      [!code-csharp[Highlighter#101](../../../samples/snippets/csharp/VS_Snippets_Wpf/Highlighter/CSharp/NativeMethods.cs#101)]
      [!code-vb[Highlighter#101](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/Highlighter/VisualBasic/NativeMethods.vb#101)]  
   
      Cette fonction rend la prise en charge DPI du processus entier, ce qui signifie que toutes les fenêtres qui appartiennent au processus ne sont pas mises à l’échelle. Dans l' [exemple de surligneur](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/Highlighter), par exemple, les quatre fenêtres qui composent le rectangle de surbrillance sont situées aux coordonnées physiques obtenues à partir d’UI Automation, et non aux coordonnées logiques. Si l’exemple n’a pas de prise en charge dpi, la mise en surbrillance serait dessinée aux coordonnées logiques sur le bureau, ce qui entraînerait un positionnement incorrect dans un environnement non-96 ppp.  
   
-2. Pour obtenir les coordonnées du curseur, appelez la fonction [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `GetPhysicalCursorPos`. L’exemple suivant montre comment déclarer et utiliser cette fonction.  
+2. Pour connaître les coordonnées du curseur, appelez la fonction Win32 `GetPhysicalCursorPos`. L’exemple suivant montre comment déclarer et utiliser cette fonction.  
   
      [!code-csharp[UIAClient_snip#185](../../../samples/snippets/csharp/VS_Snippets_Wpf/UIAClient_snip/CSharp/ClientForm.cs#185)]
      [!code-vb[UIAClient_snip#185](../../../samples/snippets/visualbasic/VS_Snippets_Wpf/UIAClient_snip/VisualBasic/ClientForm.vb#185)]  
@@ -73,7 +73,7 @@ ms.locfileid: "74442480"
 > [!CAUTION]
 > N’utilisez pas <xref:System.Windows.Forms.Cursor.Position%2A?displayProperty=nameWithType>. Le comportement de cette propriété en dehors des fenêtres clientes dans un environnement à l’échelle n’est pas défini.  
   
- Si votre application effectue une communication interprocessus directe avec des applications qui ne prennent pas en charge dpi, vous pouvez effectuer une conversion entre les coordonnées logiques et physiques à l’aide des fonctions [!INCLUDE[TLA#tla_win32](../../../includes/tlasharptla-win32-md.md)] `PhysicalToLogicalPoint` et `LogicalToPhysicalPoint`.  
+ Si votre application effectue une communication interprocessus directe avec des applications qui ne prennent pas en charge dpi, vous pouvez effectuer une conversion entre les coordonnées logiques et physiques à l’aide des fonctions Win32 `PhysicalToLogicalPoint` et `LogicalToPhysicalPoint`.  
   
 ## <a name="see-also"></a>Voir aussi
 

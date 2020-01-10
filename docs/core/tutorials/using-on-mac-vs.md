@@ -1,15 +1,13 @@
 ---
 title: Bien démarrer avec .NET Core à l’aide de Visual Studio pour Mac
 description: Cette rubrique vous guide lors de la création d’une application console simple à l’aide de Visual Studio pour Mac et de .NET Core.
-author: mairaw
 ms.date: 12/19/2019
-ms.custom: seodec18
-ms.openlocfilehash: f6faf5519109202a2865b0f316251bd2c85a5606
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 4cd7e311411bce62698e291e763227496877ea39
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342959"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740494"
 ---
 # <a name="get-started-with-net-core-on-macos-using-visual-studio-for-mac"></a>Bien démarrer avec .NET Core sur macOS à l’aide de Visual Studio pour Mac
 

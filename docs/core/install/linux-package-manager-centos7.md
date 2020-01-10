@@ -4,12 +4,12 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: cb65811d5cae5c747c2660b4b10486f3162b9f33
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: a7b4a76d780714850fe0792f51f1fa1282f6525d
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74836940"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740732"
 ---
 # <a name="centos-7-package-manager---install-net-core"></a>Gestionnaire de package CentOS 7-installer .NET Core
 
@@ -17,13 +17,13 @@ ms.locfileid: "74836940"
 
 Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur CentOS 7. Si vous installez le runtime, nous vous suggérons d’installer le [runtime ASP.net Core](#install-the-aspnet-core-runtime), car il comprend des runtimes .net Core et ASP.net core.
 
-## <a name="register-microsoft-key-and-feed"></a>Inscrire le flux et la clé Microsoft
+## <a name="register-microsoft-key-and-feed"></a>Inscrire la clé et le flux Microsoft
 
 Avant d’installer .NET, vous devez :
 
-- Inscrire la clé Microsoft
-- inscrire le dépôt du produit
-- Installer les dépendances requises
+- Enregistrez la clé Microsoft.
+- Enregistrez le dépôt du produit.
+- Installez les dépendances requises.
 
 Vous ne devez faire ces opérations qu’une seule fois par machine.
 

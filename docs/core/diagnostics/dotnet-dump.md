@@ -1,15 +1,13 @@
 ---
 title: dotnet-dump-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-dump.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 10/14/2019
-ms.openlocfilehash: bb4f7827f898431c55603b070f5b7a23fe44cba5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: dcd5dd42620010c1a9b6dffd3365fc1b777c0eeb
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973454"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740775"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (`dotnet-dump`)
 
@@ -18,9 +16,9 @@ ms.locfileid: "73973454"
 > [!NOTE]
 > `dotnet-dump` n’est pas pris en charge sur macOS.
 
-## <a name="installing-dotnet-dump"></a>Installation de `dotnet-dump`
+## <a name="installing-dotnet-dump"></a>Installation de `dotnet-dump`.
 
-Pour installer la dernière version Release du [package NuGet](https://www.nuget.org/packages/dotnet-dump)`dotnet-dump`, utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
+Pour installer la dernière version de la `dotnet-dump` [package NuGet](https://www.nuget.org/packages/dotnet-dump), utilisez la commande d’installation de l' [outil dotnet](../tools/dotnet-tool-install.md) :
 
 ```dotnetcli
 dotnet tool install -g dotnet-dump
@@ -34,7 +32,7 @@ dotnet-dump [-h|--help] [--version] <command>
 
 ## <a name="description"></a>Description
 
-L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vidages Windows et Linux sans qu’un débogueur natif ne soit impliqué comme `lldb` sur Linux. Cet outil est important sur les plateformes telles que Alpine Linux où un `lldb` entièrement opérationnel n’est pas disponible. L’outil `dotnet-dump` vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.
+L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vidages Windows et Linux sans que le débogueur natif ne soit impliqué comme `lldb` sur Linux. Cet outil est important sur les plateformes telles que Alpine Linux où un `lldb` entièrement opérationnel n’est pas disponible. L’outil `dotnet-dump` vous permet d’exécuter des commandes SOS pour analyser les incidents et le garbage collector (GC), mais il ne s’agit pas d’un débogueur natif, de sorte que l’affichage des frames de pile natifs n’est pas pris en charge.
 
 ## <a name="options"></a>Options
 
@@ -46,9 +44,9 @@ L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vid
 
   Affiche l’aide de la ligne de commande.
 
-## <a name="commands"></a>Commandes
+## <a name="commands"></a>Commands
 
-| Commande                                     |
+| Command                                     |
 | ------------------------------------------- |
 | [dotnet-vider la collecte](#dotnet-dump-collect) |
 | [dotnet-vider l’analyse](#dotnet-dump-analyze) |
@@ -75,10 +73,10 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`--type <Heap|Mini>`**
 
-  Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus. Il existe deux types :
+  Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus. Il en existe deux types :
 
-  - `Heap`-un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.
-  - `Mini`-un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.
+  - `Heap` : un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.
+  - `Mini` : un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.
 
   S’il n’est pas spécifié, `Heap` est la valeur par défaut.
 
@@ -121,7 +119,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 
 ### <a name="analyze-sos-commands"></a>Analyser les commandes SOS
 
-| Commande                             | Fonction                                                                                      |
+| Command                             | Fonction                                                                                      |
 | ----------------------------------- | --------------------------------------------------------------------------------------------- |
 | `soshelp`                           | Affiche toutes les commandes disponibles                                                               |
 | `soshelp|help <command>`            | Affiche la commande spécifiée.                                                               |
@@ -148,7 +146,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 | `ip2md <arguments>`                 | Affiche la structure MethodDesc à l’adresse spécifiée dans le code JIT.                       |
 | `histclear <arguments>`             | Libère toutes les ressources utilisées par la famille de commandes `hist*`.                                |
 | `histinit <arguments>`              | Initialise les structures SOS du journal de contrainte enregistré dans l’élément débogué.                     |
-| `histobj <arguments>`               | Affiche les réadressages du journal de stress garbage collection en rapport avec `<arguments>`.              |
+| `histobj <arguments>`               | Affiche les réadressages du journal de stress garbage collection liés à `<arguments>`.              |
 | `histobjfind <arguments>`           | Affiche toutes les entrées de journal qui référencent un objet à l'adresse spécifiée.               |
 | `histroot <arguments>`              | Affiche les informations liées aux promotions et aux réadressages de la racine spécifiée.        |
 | `lm|modules`                        | Affiche les modules natifs dans le processus.                                                   |
@@ -160,7 +158,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 
 ## <a name="using-dotnet-dump"></a>Utilisation de `dotnet-dump`
 
-La première étape consiste à collecter un vidage. Cette étape peut être ignorée si un vidage de base a déjà été généré. Le système d’exploitation ou la fonctionnalité intégrée de création de [dump](https://github.com/dotnet/coreclr/blob/master/Documentation/botr/xplat-minidump-generation.md#configurationpolicy) de .net Core Runtime peuvent créer des vidages de noyau.
+La première étape consiste à collecter un vidage. Cette étape peut être ignorée si un vidage de base a déjà été généré. Le système d’exploitation ou la fonctionnalité intégrée de création de [dump](https://github.com/dotnet/runtime/blob/master/docs/design/coreclr/botr/xplat-minidump-generation.md) de .net Core Runtime peuvent créer des vidages de noyau.
 
 ```console
 $ dotnet-dump collect --process-id 1902

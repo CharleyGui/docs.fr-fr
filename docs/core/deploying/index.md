@@ -2,13 +2,12 @@
 title: Déploiement d’applications .NET Core
 description: Découvrez les différentes façons de déployer une application .NET Core.
 ms.date: 12/03/2018
-ms.custom: seodec18
-ms.openlocfilehash: fd15d41065b0a6ecb1a0bf04a0f0ab292a0a5fb7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 41c5285f2a9ddf38e4be7326bd5cba1c58370fe7
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089193"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740812"
 ---
 # <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
 
@@ -64,7 +63,7 @@ Elle a également plusieurs inconvénients :
 
 - La taille de votre package de déploiement est relativement importante car vous devez inclure .NET Core ainsi que votre application et ses dépendances tierces.
 
-  À compter de .NET Core 2.0, vous pouvez réduire la taille de votre déploiement sur les systèmes Linux d’environ 28 Mo à l’aide du [*mode de globalisation invariant*](https://github.com/dotnet/corefx/blob/master/Documentation/architecture/globalization-invariant-mode.md) de .NET Core. En règle générale, .NET Core sur Linux s’appuie sur les [bibliothèques ICU](http://icu-project.org) pour la prise en charge de la globalisation. En mode invariant, les bibliothèques ne sont pas incluses dans votre déploiement, et toutes les cultures se comportent comme la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
+  À compter de .NET Core 2.0, vous pouvez réduire la taille de votre déploiement sur les systèmes Linux d’environ 28 Mo à l’aide du [*mode de globalisation invariant*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md) de .NET Core. En règle générale, .NET Core sur Linux s’appuie sur les [bibliothèques ICU](http://icu-project.org) pour la prise en charge de la globalisation. En mode invariant, les bibliothèques ne sont pas incluses dans votre déploiement, et toutes les cultures se comportent comme la [culture invariante](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - Le déploiement de nombreuses applications .NET Core autonomes sur un système peut consommer une quantité significative d’espace disque car chaque application duplique les fichiers de .NET Core.
 

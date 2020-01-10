@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: cc063eccfafa915908e66815b5b7535c66636716
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: caf12296b208b3d2e57c3a74300cced225e4db66
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636936"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738760"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -115,7 +115,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
     Toutefois, dans certains cas, faire une évaluation seulement avec la métrique de précision ne suffit pas, en particulier quand l’étiquette (0 et 1 dans ce cas) n’est pas équilibrée dans le jeu de données de test.
 
-    Pour connaître les autres métriques et avoir **plus d’informations détaillées sur les métriques** telles que la précision (Accuracy), l’aire sous la courbe (AUC), l’aire sous la courbe précision/rappel (AUCPR), le score F1 utilisées pour évaluer les différents modèles, consultez [Présentation des métriques ML.NET](../resources/metrics.md)
+    Pour obtenir des métriques supplémentaires et des **informations plus détaillées sur les métriques** telles que la précision, AUC, AUCPR et le score F1 utilisé pour évaluer les différents modèles, consultez [présentation des mesures ml.net](../resources/metrics.md).
 
     > [!NOTE]
     > Vous pouvez essayer ce jeu de données très semblable et définir une durée de quelques minutes pour `--max-exploration-time` (par exemple, spécifiez 180 secondes pour une durée de trois minutes). Cela permet de vous trouver un modèle encore « meilleur », avec une configuration de pipeline d’entraînement différente pour ce jeu de données (qui est très petit, avec 1 000 lignes).

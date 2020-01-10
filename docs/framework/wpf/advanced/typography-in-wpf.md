@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - typography [WPF], about typography
 ms.assetid: 06cbf17b-6eff-4fe5-949d-2dd533e4e1f4
-ms.openlocfilehash: 0ba4e8ff639cdfbbec596da45a6e950fff921974
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 0c98d0e7363e7732f44f2edf238b9cb6d2bf11fb
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740720"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740276"
 ---
 # <a name="typography-in-wpf"></a>Typographie dans WPF
 Cette rubrique présente les principales fonctionnalités typographiques de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Ces fonctionnalités incluent une amélioration de la qualité et des performances du rendu du texte, de la prise en charge de typographie OpenType, du texte international amélioré, de la prise en charge améliorée des polices et des nouvelles interfaces de programmation d’applications (API) de texte.  
@@ -19,7 +19,7 @@ Cette rubrique présente les principales fonctionnalités typographiques de [!IN
  Le texte de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est affiché à l’aide de Microsoft ClearType, ce qui améliore la clarté et la lisibilité du texte. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType utilise le rendu de sous-pixel qui autorise l’affichage du texte avec une plus grande fidélité à sa forme réelle en alignant les caractères sur une partie fractionnaire d’un pixel. Cette résolution accrue augmente la netteté des détails dans l’affichage textuel, ce qui facilite grandement la lecture pendant des périodes prolongées. Une autre amélioration de ClearType dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est l’anticrénelage de direction y, qui lisse le haut et le bas des courbes superficielles dans les caractères de texte. Pour plus d’informations sur les fonctionnalités ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
   
  ![Texte avec anticrénelage ClearType dans la direction y](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
-Texte avec anticrénelage ClearType dans la direction y  
+Texte avec anticrénelage ClearType dans la direction y  
   
  L’ensemble du pipeline de rendu de texte peut être accéléré par matériel dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], sous réserve que votre ordinateur respecte le niveau matériel minimum exigé. Un rendu ne pouvant pas être exécuté à l’aide de matériel repasse à un rendu logiciel. L’accélération matérielle affecte toutes les phases du pipeline de rendu de texte, du stockage des glyphes individuels, la composition des glyphes en séries de glyphes, l’application des effets, à l’application de l’algorithme de fusion ClearType à la sortie finale affichée. Pour plus d’informations sur l’accélération matérielle, consultez [Couches de rendu graphiques](graphics-rendering-tiers.md).  
   
@@ -59,7 +59,7 @@ Texte avec anticrénelage ClearType dans la direction y
   
 - Comportement de police indépendant des paramètres globaux, tels que les paramètres régionaux du système.  
   
-- Séparer les types <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>et <xref:System.Windows.FontStyle> pour la définition d’un <xref:System.Windows.Media.FontFamily>. Cette fonctionnalité offre une souplesse plus importante que dans la programmation [!INCLUDE[TLA#tla_win32](../../../../includes/tlasharptla-win32-md.md)], dans laquelle des combinaisons Boolean de caractères italiques et gras sont utilisées pour définir une famille de polices.  
+- Séparer les types <xref:System.Windows.FontWeight>, <xref:System.Windows.FontStretch>et <xref:System.Windows.FontStyle> pour la définition d’un <xref:System.Windows.Media.FontFamily>. Cela offre une plus grande souplesse que dans la programmation Win32, dans laquelle les combinaisons booléennes d’italique et de gras sont utilisées pour définir une famille de polices.  
   
 - Sens d’écriture (horizontal ou vertical) géré indépendamment du nom de police.  
   
