@@ -6,24 +6,24 @@ helpviewer_keywords:
 - TextPattern class
 - classes, TextPattern
 ms.assetid: 41787927-df1f-4f4a-aba3-641662854fc4
-ms.openlocfilehash: b7e378d79109d33859a38ea398cffd2193044abd
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 22966c8ed80be99497e7d05b56455c3057fdd81a
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800198"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75741417"
 ---
 # <a name="ui-automation-textpattern-overview"></a>Vue d'ensemble de TextPattern d'UI Automation
 
 > [!NOTE]
 > Cette documentation s'adresse aux développeurs .NET Framework qui souhaitent utiliser les classes [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] managées définies dans l'espace de noms <xref:System.Windows.Automation>. Pour obtenir les dernières informations sur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], consultez [API Windows Automation : UI Automation](/windows/win32/winauto/entry-uiauto-win32).
 
-Cette présentation décrit comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour exposer le contenu textuel, y compris les attributs de mise en forme et de style, des contrôles de texte dans les plateformes prises en charge par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Ces contrôles incluent, sans s’y limiter, le Microsoft .NET Framework <xref:System.Windows.Controls.TextBox> et <xref:System.Windows.Controls.RichTextBox>, ainsi que leurs équivalents [!INCLUDE[TLA2#tla_win32](../../../includes/tla2sharptla-win32-md.md)].
+Cette présentation décrit comment utiliser [!INCLUDE[TLA#tla_uiautomation](../../../includes/tlasharptla-uiautomation-md.md)] pour exposer le contenu textuel, y compris les attributs de mise en forme et de style, des contrôles de texte dans les plateformes prises en charge par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Ces contrôles incluent, sans s’y limiter, le Microsoft .NET Framework <xref:System.Windows.Controls.TextBox> et <xref:System.Windows.Controls.RichTextBox>, ainsi que leurs équivalents Win32.
 
 L’exposition du contenu textuel d’un contrôle s’effectue via l’utilisation du modèle de contrôle <xref:System.Windows.Automation.TextPattern> , qui représente le contenu d’un conteneur de texte sous forme d’un flux de texte. En retour, <xref:System.Windows.Automation.TextPattern> requiert la prise en charge de la classe <xref:System.Windows.Automation.Text.TextPatternRange> pour exposer les attributs de mise en forme et de style. <xref:System.Windows.Automation.Text.TextPatternRange> prend en charge <xref:System.Windows.Automation.TextPattern> en représentant les étendues de texte disjointes contiguës ou multiples dans un conteneur de texte par une collection de points de terminaison <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.Start> et <xref:System.Windows.Automation.Text.TextPatternRangeEndpoint.End> . <xref:System.Windows.Automation.Text.TextPatternRange> prend en charge des fonctionnalités telles que la sélection, la comparaison, la récupération et la traversée.
 
 > [!NOTE]
-> Les classes <xref:System.Windows.Automation.TextPattern> ne permettent pas d'insérer ou de modifier du texte. Toutefois, selon le contrôle, ces opérations peuvent être effectuées par la classe [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.ValuePattern> ou via une entrée directe au clavier directe. Pour obtenir un exemple, consultez [TextPattern Insert Text Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText) .
+> Les classes <xref:System.Windows.Automation.TextPattern> ne permettent pas d'insérer ou de modifier du texte. Toutefois, selon le contrôle, cette opération peut être effectuée par le [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] <xref:System.Windows.Automation.ValuePattern> ou via une entrée directe au clavier. Pour obtenir un exemple, consultez [TextPattern Insert Text Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Accessibility/InsertText) .
 
 Les fonctionnalités décrites dans cette vue d'ensemble sont indispensables aux fournisseurs de technologie d'assistance et à leurs utilisateurs finaux. Les technologies d'assistance peuvent utiliser [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] afin de collecter des informations complètes sur la mise en forme du texte pour l'utilisateur et offrir une navigation par programmation et une sélection de texte par <xref:System.Windows.Automation.Text.TextUnit> (caractère, mot, ligne ou paragraphe).
 
@@ -81,7 +81,7 @@ Un fournisseur <xref:System.Windows.Automation.TextPattern> n'a pas à prendre e
 
 Un fournisseur <xref:System.Windows.Automation.TextPattern> doit prendre en charge les fonctions <xref:System.Windows.Automation.TextPattern.GetSelection%2A> et <xref:System.Windows.Automation.Text.TextPatternRange.Select%2A> si le contrôle prend en charge la sélection de texte ou le positionnement du curseur de texte (ou signe insertion) dans la zone de texte. Si le contrôle ne prend pas en charge ces fonctionnalités, il n'a pas besoin de prendre en charge ces méthodes. Par contre, le contrôle doit exposer le type de sélection de texte qu'il prend en charge en implémentant la propriété <xref:System.Windows.Automation.Provider.ITextProvider.SupportedTextSelection%2A> .
 
-Un fournisseur <xref:System.Windows.Automation.TextPattern> doit toujours prendre en charge les constantes <xref:System.Windows.Automation.Text.TextUnit> <xref:System.Windows.Automation.Text.TextUnit.Character> et <xref:System.Windows.Automation.Text.TextUnit.Document> , ainsi que toutes les autres constantes <xref:System.Windows.Automation.Text.TextUnit> dans la mesure du possible.
+Un fournisseur <xref:System.Windows.Automation.TextPattern> doit toujours prendre en charge les constantes <xref:System.Windows.Automation.Text.TextUnit><xref:System.Windows.Automation.Text.TextUnit.Character> et <xref:System.Windows.Automation.Text.TextUnit.Document> , ainsi que toutes les autres constantes <xref:System.Windows.Automation.Text.TextUnit> dans la mesure du possible.
 
 > [!NOTE]
 > Le fournisseur peut ignorer la prise en charge d'un <xref:System.Windows.Automation.Text.TextUnit> spécifique en passant au deuxième <xref:System.Windows.Automation.Text.TextUnit> le plus long pris en charge dans l'ordre suivant : <xref:System.Windows.Automation.Text.TextUnit.Character>, <xref:System.Windows.Automation.Text.TextUnit.Format>, <xref:System.Windows.Automation.Text.TextUnit.Word>, <xref:System.Windows.Automation.Text.TextUnit.Line>, <xref:System.Windows.Automation.Text.TextUnit.Paragraph>, <xref:System.Windows.Automation.Text.TextUnit.Page>et <xref:System.Windows.Automation.Text.TextUnit.Document>.

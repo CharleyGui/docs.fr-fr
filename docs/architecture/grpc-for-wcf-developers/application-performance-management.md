@@ -2,12 +2,12 @@
 title: Gestion des performances des applications-gRPC pour les développeurs WCF
 description: La journalisation, les métriques et le suivi des applications ASP.NET Core gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: e8ec701af69e8ced674183ce0afa25547713c647
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 98da6c5391f021011e281a57e8f775709fa128ef
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711564"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75740975"
 ---
 # <a name="application-performance-management"></a>Gestion des performances des applications
 
@@ -51,7 +51,7 @@ Pour plus d’informations sur l’écriture de messages de journal et sur les r
 
 ## <a name="metrics-in-aspnet-core-grpc"></a>Mesures dans ASP.NET Core gRPC
 
-Le Runtime .NET Core fournit un ensemble de composants pour émettre et observer les métriques. Celles-ci incluent des API telles que les classes <xref:System.Diagnostics.Tracing.EventSource> et <xref:System.Diagnostics.Tracing.EventCounter>. Ces API peuvent émettre des données numériques de base qui peuvent être consommées par des processus externes, par exemple l' [outil Global dotnet-Counters](../../core/diagnostics/dotnet-counters.md), ou suivi d’v nements pour Windows. Pour plus d’informations sur l’utilisation de `EventCounter` dans votre propre code, consultez [Introduction à EventCounter](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
+Le Runtime .NET Core fournit un ensemble de composants pour émettre et observer les métriques. Celles-ci incluent des API telles que les classes <xref:System.Diagnostics.Tracing.EventSource> et <xref:System.Diagnostics.Tracing.EventCounter>. Ces API peuvent émettre des données numériques de base qui peuvent être consommées par des processus externes, par exemple l' [outil Global dotnet-Counters](../../core/diagnostics/dotnet-counters.md), ou suivi d’v nements pour Windows. Pour plus d’informations sur l’utilisation de `EventCounter` dans votre propre code, consultez [Introduction à EventCounter](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.Tracing/documentation/EventCounterTutorial.md).
 
 Pour obtenir des métriques plus avancées et pour écrire des données de métriques dans un plus grand nombre de magasins de données, vous pouvez essayer un projet open source appelé [métriques](https://www.app-metrics.io)de l’application. Cette suite de bibliothèques fournit un ensemble complet de types pour instrumenter votre code. Il offre également des packages pour écrire des métriques sur différents types de cibles qui incluent des bases de données de séries chronologiques, telles que Prometheus et InfluxDB, et [application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). Le package NuGet [app. Metrics. AspNetCore. Mvc](https://www.nuget.org/packages/App.Metrics.AspNetCore.Mvc/) ajoute même un ensemble complet de métriques de base qui sont générées automatiquement par le biais de l’intégration avec l’infrastructure ASP.net core. Le site Web du projet fournit des [modèles](https://www.app-metrics.io/samples/grafana/) pour l’affichage de ces métriques avec la plateforme de visualisation [Grafana](https://grafana.com/) .
 
@@ -62,10 +62,10 @@ La plupart des plateformes de métriques prennent en charge les types suivants 
 | Type de métrique | Description |
 | ----------- | ----------- |
 | Counter     | Effectue le suivi du nombre de fois où un événement se produit, par exemple les demandes et les erreurs. |
-| Gabarit       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
+| Jauge       | Enregistre une valeur unique qui change au fil du temps, par exemple des connexions actives. |
 | Histogramme   | Mesure une distribution de valeurs à travers des limites arbitraires. Par exemple, un histogramme peut suivre la taille d’un jeu de données, compter le nombre d’enregistrements contenus < 10, le nombre d’enregistrements 11-100, le nombre d’enregistrements 101-1000 contenus et le nombre d’enregistrements contenus > 1 000. |
 | Compteur       | Mesure le taux auquel un événement se produit dans différents intervalles de temps. |
-| Minuterie       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
+| Minuteur       | Effectue le suivi de la durée des événements et de la vitesse à laquelle ils se produisent, stockés sous la forme d’un histogramme. |
 
 En utilisant les *métriques d’application*, une interface de `IMetrics` peut être obtenue via l’injection de dépendances et utilisée pour enregistrer l’une de ces métriques pour un service gRPC. L’exemple suivant montre comment compter le nombre de demandes de `Get` effectuées dans le temps :
 
@@ -120,7 +120,7 @@ Le traçage distribué est basé sur le concept d' *étendues*: les opérations 
 
 ### <a name="distributed-tracing-with-diagnosticsource"></a>Traçage distribué avec `DiagnosticSource`
 
-.NET Core possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le module `DiagnosticSource` a le concept d’une *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du type de `Activity`, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
+.NET Core possède un module interne qui s’adapte bien aux traces et aux étendues distribuées : [DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#diagnosticsource-users-guide). En plus de fournir un moyen simple de produire et de consommer les Diagnostics au sein d’un processus, le module `DiagnosticSource` a le concept d’une *activité*. Une activité est effectivement une implémentation d’une trace distribuée ou d’une étendue dans une trace. Les éléments internes du module prennent en charge les activités parent/enfant, y compris l’allocation des identificateurs. Pour plus d’informations sur l’utilisation du type de `Activity`, consultez le [Guide de l’utilisateur de l’activité sur GitHub](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-user-guide).
 
 Étant donné que `DiagnosticSource` fait partie de l’infrastructure de base, il est pris en charge par plusieurs composants principaux. Celles-ci incluent <xref:System.Net.Http.HttpClient>, Entity Framework Core et ASP.NET Core, y compris la prise en charge explicite dans l’infrastructure gRPC. Lorsque ASP.NET Core reçoit une demande, il recherche une paire d’en-têtes HTTP correspondant à la norme du [contexte de trace W3C](https://www.w3.org/TR/trace-context) . Si les en-têtes sont trouvés, une activité est démarrée à l’aide des valeurs d’identité et du contexte des en-têtes. Si aucun en-tête n’est trouvé, une activité est démarrée avec des valeurs d’identité générées qui correspondent au format standard. Les diagnostics générés par l’infrastructure ou par le code d’application pendant la durée de vie de cette activité peuvent être marqués avec les identificateurs de trace et d’étendue. La prise en charge de la `HttpClient` étend ce délai en vérifiant une activité en cours à chaque demande et en ajoutant automatiquement les en-têtes de trace à la demande sortante.
 
@@ -131,7 +131,7 @@ Les bibliothèques clientes et serveur ASP.NET Core gRPC incluent une prise en c
 
 ### <a name="add-your-own-diagnosticsource-and-activity"></a>Ajoutez vos propres `DiagnosticSource` et `Activity`
 
-Pour ajouter vos propres Diagnostics ou créer des étendues explicites dans le code de votre application, consultez le Guide de l' [utilisateur DiagnosticSource](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#instrumenting-with-diagnosticsourcediagnosticlistener) et le Guide de l’utilisateur de l' [activité](https://github.com/dotnet/corefx/blob/master/src/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-usage).
+Pour ajouter vos propres Diagnostics ou créer des étendues explicites dans le code de votre application, consultez le Guide de l' [utilisateur DiagnosticSource](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/DiagnosticSourceUsersGuide.md#instrumenting-with-diagnosticsourcediagnosticlistener) et le Guide de l’utilisateur de l' [activité](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Diagnostics.DiagnosticSource/src/ActivityUserGuide.md#activity-usage).
 
 ### <a name="store-distributed-trace-data"></a>Stocker les données de trace distribuées
 

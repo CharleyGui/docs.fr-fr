@@ -4,12 +4,12 @@ description: Guide sur l’implémentation de .NET à envisager pour générer u
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: e5df362231b0786a58a4c3c9ae8f5a167930a12e
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: b2b9e15cfdfd63d070ae94c29a9f2d1a5b5c87b2
+ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70799256"
+ms.lasthandoff: 01/08/2020
+ms.locfileid: "75738667"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
@@ -46,9 +46,9 @@ Une architecture en microservices permet une combinaison de technologies au-del�
 
 Il existe de nombreuses plateformes d’infrastructure. [Azure Service Fabric](https://azure.microsoft.com/services/service-fabric/) est conçu pour les systèmes de microservice volumineux et complexes. [Azure App Service](https://azure.microsoft.com/services/app-service/) est un bon choix pour les microservices sans état. Les alternatives aux microservices basées sur Docker s’intègrent à tout type d’approche des microservices, comme expliqué dans la section [Conteneurs](#containers). Toutes ces plateformes prennent en charge .NET Core et s’avèrent idéales pour l’hébergement de vos microservices.
 
-Pour plus d’informations sur l’architecture en microservices, consultez [Microservices .NET. Architecture pour les applications .NET en conteneurs](../architecture/microservices/index.md).
+Pour plus d’informations sur l’architecture de microservices, consultez [microservices .net. Architecture pour les applications .NET en conteneur](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Containers
+### <a name="containers"></a>Conteneurs
 
 Les conteneurs sont couramment utilisés conjointement avec une architecture en microservices. Les conteneurs peuvent également servir à mettre en conteneur des applications ou services web qui suivent un modèle d’architecture. Le .NET Framework peut être utilisé pour les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est un meilleur choix pour les conteneurs. Quand vous créez et déployez un conteneur, la taille de son image est beaucoup plus petite avec .NET Core qu’avec le .NET Framework. Grâce à sa nature multiplateforme, vous pouvez déployer des applications serveur sur des conteneurs Docker Linux, par exemple.
 
@@ -91,11 +91,11 @@ Certaines technologies du .NET Framework ne sont pas disponibles dans .NET Core.
 
 - Implémentation des services WCF. Même s’il existe une [bibliothèque cliente WCF](https://github.com/dotnet/wcf) pour utiliser des services WCF à partir de .NET Core, l’implémentation serveur WCF est disponible uniquement sur le .NET Framework. Ce scénario ne fait pas partie du plan actuel pour .NET Core, mais il est envisagé pour l’avenir.
 
-- Services liés aux workflows : Windows Workflow Foundation (WF), les services de workflow (WCF + WF dans un seul service) et WCF Data Services (anciennement « ADO.NET Data Services ») sont disponibles uniquement dans le .NET Framework.  Il n’est pas prévu d’intégrer WF/WCF+WF/WCF Data Services à .NET Core.
+- Services liés aux flux de travail : Windows Workflow Foundation (WF), les services de flux de travail (WCF + WF dans un seul service) et les Services de données WCF (anciennement « ADO.NET Data Services ») sont disponibles uniquement dans le .NET Framework.  Il n’est pas prévu d’intégrer WF/WCF+WF/WCF Data Services à .NET Core.
 
 - Prise en charge des langages : Visual Basic et F# sont pris en charge dans .NET Core, mais pas pour tous les types de projet. Pour obtenir la liste des modèles de projet pris en charge, consultez [Options de modèle pour dotnet new](../core/tools/dotnet-new.md#arguments).
 
-En plus de la feuille de route officielle, il existe d’autres frameworks à porter vers .NET Core. Pour obtenir la liste complète, consultez les problèmes CoreFX portant l’étiquette [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Cette liste ne représente pas un engagement de Microsoft à intégrer les composants concernés à .NET Core. Elle reflète simplement le souhait de la communauté de les intégrer. Si un des composants portant l’étiquette `port-to-core` vous intéresse, participez aux discussions sur GitHub. Et si vous pensez que quelque chose fait défaut, [enregistrez un nouveau problème dans le dépôt CoreFX](https://github.com/dotnet/corefx/issues/new).
+En plus de la feuille de route officielle, il existe d’autres frameworks à porter vers .NET Core. Pour obtenir la liste complète, consultez les problèmes CoreFX portant l’étiquette [port-to-core](https://github.com/dotnet/corefx/issues?q=is%3Aopen+is%3Aissue+label%3Aport-to-core). Cette liste ne représente pas un engagement de Microsoft à intégrer les composants concernés à .NET Core. Elle reflète simplement le souhait de la communauté de les intégrer. Si un des composants portant l’étiquette `port-to-core` vous intéresse, participez aux discussions sur GitHub. Et si vous pensez que quelque chose manque, envoyez un nouveau problème dans le [référentiel .net](https://github.com/dotnet/runtime/issues/new).
 
 ### <a name="a-need-to-use-a-platform-that-doesnt-support-net-core"></a>Besoin d’utiliser une plateforme qui ne prend pas en charge .NET Core
 
@@ -110,4 +110,4 @@ Certaines plateformes Microsoft ou tierces ne prennent pas en charge .NET Core. 
 - [Portage depuis .NET Framework vers .NET Core](../core/porting/index.md)
 - [Introduction à .NET et à Docker](../core/docker/introduction.md)
 - [Vue d’ensemble des composants .NET](components.md)
-- [Microservices .NET. Architecture pour les applications .NET en conteneurs](../architecture/microservices/index.md)
+- [Microservices .NET. Architecture pour les applications .NET en conteneur](../architecture/microservices/index.md)
