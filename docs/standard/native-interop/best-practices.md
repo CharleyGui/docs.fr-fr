@@ -1,15 +1,13 @@
 ---
 title: Meilleures pratiques pour l’interopérabilité native – .NET
 description: Découvrez les meilleures pratiques pour interagir avec des composants natifs en .NET.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: 0405fd5aef9d89fc1f47123ed358e6358656d95b
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 7fe0dd0545f8ba800174f8be18bb2f11f39463f9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70923766"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706398"
 ---
 # <a name="native-interoperability-best-practices"></a>Meilleures pratiques pour l’interopérabilité native
 
@@ -29,7 +27,7 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
 
-| Paramètre | Default | Recommandation | Détails |
+| Paramètre | Valeur par défaut | Recommandation | Détails |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Conserver la valeur par défaut  | S’il est défini explicitement sur false, les valeurs de retour HRESULT en échec sont converties en exceptions (et la valeur de retour de la définition devient ainsi Null).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | Dépend de l'API  | Définissez-le sur true si l’API utilise GetLastError et Marshal.GetLastWin32Error pour obtenir la valeur. Si l’API définit une condition indiquant une erreur, récupérez l’erreur avant d’effectuer d’autres appels, de façon à éviter de la remplacer par inadvertance.|
@@ -38,26 +36,26 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="string-parameters"></a>Paramètres de chaînes
 
-Lorsque le charset est Unicode ou que l’argument est explicitement marqué comme `[MarshalAs(UnmanagedType.LPWSTR)]` _et_ que la chaîne est passée en valeur (pas `ref` ou `out`), la chaîne est épinglée et utilisée directement par le code natif (et non copiée).
+Lorsque le jeu de caractères est Unicode ou que l’argument est explicitement marqué comme `[MarshalAs(UnmanagedType.LPWSTR)]` _et_ que la chaîne est passée par valeur (non `ref` ou `out`), la chaîne est épinglée et utilisée directement par le code natif (au lieu d’être copiée).
 
 N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous souhaitez explicitement un traitement ANSI de vos chaînes.
 
-**❌ À NE PAS FAIRE :** utiliser des paramètres `[Out] string`. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+**❌ n’utilisez pas** de paramètres de `[Out] string`. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-**❌ À ÉVITER :** utiliser des paramètres `StringBuilder`. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
+**❌ éviter** les paramètres de `StringBuilder`. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
 
 1. Crée un SB de la capacité souhaitée (alloue la capacité gérée) **{1}**
-2. Appeler
+2. Invoquer
    1. Alloue une mémoire tampon native **{2}**  
-   2. Copie le contenu si `[In]` _(valeur par défaut d’un paramètre `StringBuilder`)_  
-   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(valeur par défaut de `StringBuilder` également)_  
+   2. Copie le contenu si `[In]` _(valeur par défaut pour un paramètre `StringBuilder`)_  
+   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(également la valeur par défaut pour `StringBuilder`)_ .  
 3. `ToString()` alloue encore un autre tableau managé **{4}**
 
 Soit *{4}* allocations pour extraire une chaîne du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
 
 L’autre problème de `StringBuilder` est qu’il copie toujours la sauvegarde de la mémoire tampon de retour sur la première valeur Null. Si la chaîne de retour transmise n’est pas terminée ou se termine par un double Null, P/Invoke est au mieux incorrect.
 
-Si vous *utilisez* `StringBuilder`, le dernier piège est que la capacité n’inclut **pas** de valeur Null masquée, qui est toujours prise en compte dans l’interopérabilité. Il est courant de se tromper de ce point de vue, car la plupart des API demandent la taille de la mémoire tampon valeur Null *incluse*. Il en résulte parfois des allocations gaspillées/inutiles. En outre, cet écueil empêche le runtime d’optimiser le marshaling `StringBuilder` afin de réduire les copies.
+Si vous *utilisez*`StringBuilder`, le dernier piège est que la capacité n’inclut **pas** de valeur Null masquée, qui est toujours prise en compte dans l’interopérabilité. Il est courant de se tromper de ce point de vue, car la plupart des API demandent la taille de la mémoire tampon valeur Null *incluse*. Il en résulte parfois des allocations gaspillées/inutiles. En outre, cet écueil empêche le runtime d’optimiser le marshaling `StringBuilder` afin de réduire les copies.
 
 **✔️ À ENVISAGER :** utiliser des `char[]` à partir d’un `ArrayPool`.
 
@@ -68,8 +66,8 @@ Pour plus d’informations sur le marshaling des chaînes, consultez [Marshaling
 **Pour la plupart des API avec mémoire tampon de chaîne de sortie :**  
 > Le nombre de caractères transmis doit inclure la valeur Null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.  
 >
-> - Nombre transmis = 5, valeur de retour = 4 : la chaîne comporte 4 caractères avec une valeur Null de fin.
-> - Nombre transmis = 5, valeur de retour = 6 : la chaîne comporte 5 caractères et a besoin d’une mémoire tampon de 6 caractères pour inclure la valeur Null.  
+> - Pass in 5, obtenir 4 : la chaîne comporte 4 caractères avec une valeur null de fin.
+> - Pass in 5, obtenir 6 : la chaîne comporte 5 caractères, nécessite une mémoire tampon de 6 caractères pour contenir la valeur null.  
 > [Types de données Windows pour les chaînes](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>Paramètres et champs booléens
@@ -84,7 +82,7 @@ Les GUID sont directement utilisables dans les signatures. De nombreuses API Win
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-**❌ À NE PAS FAIRE :** utiliser `[MarshalAs(UnmanagedType.LPStruct)]` pour autre chose que des paramètres GUID `ref`.
+**❌ ne pas** Utilisez `[MarshalAs(UnmanagedType.LPStruct)]` pour toute autre valeur que `ref` paramètres GUID.
 
 ## <a name="blittable-types"></a>Types blittables
 
@@ -124,7 +122,7 @@ Pour savoir si un type est blittable, essayez de créer un `GCHandle` épinglé.
 
 **✔️ À FAIRE :** rendez vos structures blittables dans la mesure du possible.
 
-Pour plus d'informations, voir :
+Pour plus d'informations, consultez .
 
 - [Types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)  
 - [Marshaling de types](type-marshaling.md)
@@ -165,7 +163,7 @@ Voici la liste des types de données courants dans les API Windows et des types 
 
 Malgré leur nom, les types suivants ont la même taille sur Windows 32 bits et 64 bits.
 
-| Largeur | Windows          | C (Windows)          | C#       | Alternative                          |
+| Largeur | Portail          | C (Windows)          | C#       | Alternative                          |
 |:------|:-----------------|:---------------------|:---------|:-------------------------------------|
 | 32    | `BOOL`           | `int`                | `int`    | `bool`                               |
 | 8     | `BOOLEAN`        | `unsigned char`      | `byte`   | `[MarshalAs(UnmanagedType.U1)] bool` |
@@ -207,7 +205,7 @@ Un `PVOID` Windows, qui correspond à un `void*` C, peut être marshalé comme `
 
 [Plages de types de données](/cpp/cpp/data-type-ranges)
 
-## <a name="structs"></a>Structs
+## <a name="structs"></a>Structures
 
 Les structs managés sont créés sur la pile et ne sont pas supprimés tant que la méthode n’a pas retourné de valeur. Ils sont donc par définition « épinglés » (ils ne sont pas déplacés par le récupérateur de mémoire). Vous pouvez aussi prendre simplement l’adresse dans des blocs de code unsafe si le code natif n’utilise pas le pointeur après la fin de la méthode actuelle.
 

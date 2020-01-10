@@ -1,16 +1,15 @@
 ---
 title: Utiliser des indexeurs - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 10/03/2018
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: 4411fe0ffe7dc136b4e74adeba3e5596af3aa1db
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: bf290681395460bec10be45c4eaa1f165e453caf
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589430"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75702894"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Utiliser des indexeurs (Guide de programmation C#)
 
@@ -25,7 +24,7 @@ public int this[int index]    // Indexer declaration
 }  
 ```
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Le type d’un indexeur et le type de ses paramètres doivent être au moins aussi accessibles que l’indexeur lui-même. Pour plus d’informations sur les niveaux d’accessibilité, consultez [Modificateurs d’accès](../../language-reference/keywords/access-modifiers.md).  
   
@@ -47,7 +46,7 @@ public int this[int index]   // Indexer declaration
 
 Cet indexeur portera le nom `TheItem`. Si vous ne précisez pas le nom de l’attribut, `Item` est utilisé comme nom par défaut.  
   
-## <a name="example-1"></a>Exemple 1  
+## <a name="example-1"></a>Exemple 1  
   
 L’exemple suivant montre comment déclarer un champ de tableau privé `temps`, et un indexeur. L’indexeur permet d’accéder directement à l’instance `tempRecord[i]`. Comme alternative à l’utilisation de l’indexeur, vous pouvez déclarer le tableau comme membre [public](../../language-reference/keywords/public.md) et accéder directement à ses membres, `tempRecord.temps[i]`.  
   
@@ -59,7 +58,7 @@ L’exemple suivant montre comment déclarer un champ de tableau privé `temps`,
 
 C# ne limite pas le type de paramètre d’indexeur au type entier. Par exemple, il peut être utile d’utiliser une chaîne avec un indexeur. Il est possible d’implémenter un tel indexeur en recherchant la chaîne dans la collection et en retournant la valeur appropriée. Comme les accesseurs peuvent être surchargés, les versions chaîne et entier peuvent coexister.  
   
-## <a name="example-2"></a>Exemple 2  
+## <a name="example-2"></a>Exemple 2  
   
 L’exemple suivant déclare une classe qui stocke les jours de la semaine. Un accesseur `get` prend une chaîne, le nom d’un jour, et retourne l’entier correspondant. Par exemple, « Sunday » retourne 0, « Monday » retourne 1 et ainsi de suite.  
   

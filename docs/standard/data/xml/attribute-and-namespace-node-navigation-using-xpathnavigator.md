@@ -3,14 +3,12 @@ title: Navigation entre les nœuds d'attribut et d'espace de noms à l'aide de X
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 23975f88-e0af-4b88-93de-9e20e11880ad
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4188896fb36d8535f86b245c3b1942f5a058da9b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 6809a2a47a9ca25a16a9be75a0a8a8b03f98a21d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69936831"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711153"
 ---
 # <a name="attribute-and-namespace-node-navigation-using-xpathnavigator"></a>Navigation entre les nœuds d'attribut et d'espace de noms à l'aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit deux ensembles de méthodes de navigation. Le premier, trouvé dans la rubrique [Navigation dans la collection de nœuds à l’aide de XPathNavigator](../../../../docs/standard/data/xml/node-set-navigation-using-xpathnavigator.md), permet de naviguer entre les *collections de nœuds* d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>. Le second, décrit dans cette rubrique, permet de naviguer entre les *nœuds d'attribut et d'espace de noms* d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>.  

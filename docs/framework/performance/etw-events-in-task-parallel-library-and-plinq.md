@@ -4,14 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - tasks, ETW events
 ms.assetid: 87a9cff5-d86f-4e44-a06e-d12764d0dce2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f1926d2699357163dbb8685b7ea875e369ca29b7
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 93fcd3215bdcbb30960f19e23ae15f32bb9ddd84
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046660"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716096"
 ---
 # <a name="etw-events-in-task-parallel-library-and-plinq"></a>Événements ETW dans la bibliothèque parallèle de tâches et PLINQ
 

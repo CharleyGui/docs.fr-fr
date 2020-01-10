@@ -3,18 +3,18 @@ title: Nombres en C# – Tutoriel d’introduction à C#
 description: Découvrez C# en explorant les types numériques, leurs propriétés et méthodes.
 ms.date: 10/31/2017
 ms.custom: mvc
-ms.openlocfilehash: a06bc57e5c979b62e19407747cb2c8a2447ca114
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 7537bb597665461021946a792e342149f29c0e95
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739142"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694658"
 ---
 # <a name="manipulate-integral-and-floating-point-numbers-in-c"></a>Manipuler les nombres intégraux et à virgule flottante en C\#
 
 Ce tutoriel permet de découvrir de manière interactive les types numériques en C#. Vous allez écrire de petites quantités de code, puis vous compilerez et exécuterez ce code. Ce tutoriel comporte une série de leçons visant à explorer les nombres et les opérations mathématiques en C#. Ces leçons présentent les concepts de base du langage C#.
 
-Ce tutoriel suppose que vous disposez d’un ordinateur que vous pouvez utiliser pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
+Ce tutoriel suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur Windows, Linux ou MacOS. Vous trouverez une brève vue d’ensemble des commandes utilisées dans [Se familiariser avec les outils de développement](local-environment.md), avec des liens vers des informations complémentaires.
 
 ## <a name="explore-integer-math"></a>Explorer les mathématiques avec des entiers
 
@@ -66,7 +66,7 @@ Vous pouvez également, si vous le souhaitez, effectuer des essais en réalisant
 > Durant votre exploration de C# (ou de tout autre langage de programmation), vous commettrez des erreurs d’écriture du code. Le **compilateur** détectera ces erreurs et vous les signalera. Si la sortie contient des messages d’erreur, vérifiez attentivement l’exemple de code ainsi que le code dans votre fenêtre pour identifier les corrections à apporter.
 > Cet exercice vous aidera à mieux comprendre la structure du code C#.
 
-Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main` `WorkingWithIntegers` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithIntegers`. Lorsque vous avez terminé, votre code doit ressembler à ceci :
+Vous avez terminé la première étape. Avant de passer à la section suivante, déplaçons le code actuel dans une méthode distincte. Cela nous permettra de travailler plus facilement avec un nouvel exemple. Renommez votre méthode `Main``WorkingWithIntegers` et écrivez une nouvelle méthode `Main` qui appelle `WorkingWithIntegers`. Lorsque vous avez terminé, votre code doit ressembler à ceci :
 
 ```csharp
 using System;
@@ -338,7 +338,7 @@ Notez que le calcul utilisant le type décimal a plus de chiffres à droite de l
 Maintenant que vous avez vu les différents types numériques, écrivez du code qui calcule la surface d’un cercle avec un rayon de 2,5 centimètres. Rappelez-vous que la surface d’un cercle est le rayon au carré multiplié par PI. Conseil : .NET contient une constante pour PI, à savoir <xref:System.Math.PI?displayProperty=nameWithType>, que vous pouvez utiliser pour cette valeur.
 
 Vous devriez obtenir une réponse comprise entre 19 et 20.
-Vous pouvez vérifier votre réponse en [consultant l’exemple de code terminé sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106)
+Vous pouvez vérifier votre réponse en [examinant l’exemple de code terminé sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/numbers-quickstart/Program.cs#L104-L106).
 
 Si vous le voulez, essayez d’autres formules.
 

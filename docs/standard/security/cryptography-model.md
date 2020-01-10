@@ -6,14 +6,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 42e5c7018f83f3849f46f33e09e09ea1749e7c70
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f0c00e4cc866c537fe26dd1ad466d6cde95bc608
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64753288"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706225"
 ---
 # <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
 
@@ -55,7 +53,7 @@ Le Common Language Runtime utilise une conception orientée flux pour implément
 
 ## <a name="cryptographic-configuration"></a>Configuration du chiffrement
 
-La configuration du chiffrement vous permet de résoudre une implémentation d'un algorithme en un nom d'algorithme. De cette façon, les classes de chiffrement .NET Framework peuvent être étendues. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés. Pour plus d’informations sur la configuration du chiffrement, consultez [configuration des Classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md).
+La configuration du chiffrement vous permet de résoudre une implémentation d'un algorithme en un nom d'algorithme. De cette façon, les classes de chiffrement .NET Framework peuvent être étendues. Vous pouvez ajouter votre propre implémentation logicielle ou matérielle d'un algorithme, puis la mapper vers le nom d'algorithme de votre choix. Si un algorithme n'est pas spécifié dans le fichier de configuration, les paramètres par défaut sont utilisés. Pour plus d’informations sur la configuration de chiffrement, consultez [Configuration des classes de chiffrement](../../../docs/framework/configure-apps/configure-cryptography-classes.md).
 
 ## <a name="choosing-an-algorithm"></a>Choix d'un algorithme
 

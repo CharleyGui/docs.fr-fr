@@ -1,6 +1,5 @@
 ---
 title: event - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - event
@@ -10,12 +9,12 @@ f1_keywords:
 helpviewer_keywords:
 - event keyword [C#]
 ms.assetid: 7858fd85-153b-4259-85d0-6aa13c35f174
-ms.openlocfilehash: ced6fa9134182e63b430ce7ad6b64339b25d18ee
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: eb1805ed55921497fea88e6b39989c876ef003d1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345479"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713557"
 ---
 # <a name="event-c-reference"></a>événement (C# référence)
 

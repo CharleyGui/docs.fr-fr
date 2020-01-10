@@ -8,14 +8,12 @@ helpviewer_keywords:
 - secure coding, state data
 - state data security
 ms.assetid: 12671309-2877-43fe-a3df-6863507e712d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 85a12fb52efe32083d21b9aad50f2d9c1d6f0785
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c30bd2fe9e1ed371be2db60739d3b329fea788c7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602505"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705897"
 ---
 # <a name="securing-state-data"></a>Sécurisation des données d'état
 Les applications qui gèrent des données sensibles ou participent aux processus décisionnels de sécurité doivent conserver le contrôle des données. Elles doivent absolument empêcher tout code potentiellement malveillant d’accéder directement aux données. La meilleure façon de protéger les données en mémoire est de les déclarer en tant que variables privées ou internes (avec une portée limitée au même assembly). Toutefois, même ces données sont soumises à un accès dont vous devez avoir conscience :  

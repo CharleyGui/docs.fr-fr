@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 60e2541b-0cea-4b2e-a4fa-85f4c50f1bef
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d3d1658b47d2cda344e2ec1fe7b48c929005563b
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 01e11ed62b0855b9027dfd7999f8b787c075028a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69912051"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709671"
 ---
 # <a name="xslt-stylesheet-scripting-using-msxslscript"></a>Écriture de feuilles de style XSLT avec \<msxsl:script>
 La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorporés en utilisant l'élément `script`.  
@@ -31,7 +29,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  où `msxsl` est un préfixe lié à l'espace de noms `urn:schemas-microsoft-com:xslt`.  
   
- L’attribut `language` n’est pas obligatoire mais, s’il est spécifié, sa valeur doit être l’une des suivantes : C#, VB, JScript, JavaScript, VisualBasic ou CSharp. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
+ L’attribut `language` n’est pas obligatoire, mais s’il est spécifié, sa valeur doit être l’une des suivantes : `C#`, `VB`, `JScript`, `JavaScript`, `VisualBasic`ou `CSharp`. Lorsqu'il n'est pas spécifié, le langage par défaut est JScript. Le `language-name` ne respecte pas la casse : les termes « JavaScript » et « javascript » sont équivalents.  
   
  L'attribut `implements-prefix` est obligatoire. Cet attribut est utilisé pour déclarer un espace de noms et l'associer au bloc de script. La valeur de cet attribut est le préfixe qui représente l'espace de noms. Cet espace de noms peut être défini à un endroit d'une feuille de style.  
   
@@ -51,7 +49,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
 |Espaces de noms par défaut|Description|  
 |------------------------|-----------------|  
-|Système|Classe système.|  
+|System|Classe système.|  
 |System.Collection|Classes de collection.|  
 |System.Text|Classes de texte.|  
 |System.Text.RegularExpressions|Classes d'expressions régulières.|  
@@ -67,12 +65,12 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
 |Type|Classe .NET Framework équivalente (Type)|Type XPath ou type XSLT|  
 |----------|----------------------------------------------|-----------------------------|  
 |Chaîne|System.String|XPath|  
-|Booléen|System.Boolean|XPath|  
-|nombre|System.Double|XPath|  
+|Boolean|System.Boolean|XPath|  
+|Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
   
- Si la fonction de script utilise l’un des types numériques suivants : Int16, UInt16, Int32, UInt32, Int64, UInt64, Single ou Decimal, ils deviennent Double, ce qui effectue un mappage sur le nombre de type XPath W3C. Tous les autres types deviennent une chaîne à l'aide de la méthode `ToString`.  
+ Si la fonction de script utilise l’un des types numériques suivants : Int16, UInt16, Int32, UInt32, Int64, UInt64, Single ou Decimal, ils deviennent Double, ce qui effectue un mappage sur le nombre de type XPath W3C. Tous les autres types deviennent une chaîne à l'aide de la méthode `ToString`.  
   
  Si la fonction de script utilise un type différent de ceux mentionnés ci-avant ou si la fonction ne se compile pas lorsque la feuille de style est chargée dans l'objet <xref:System.Xml.Xsl.XslTransform>, une exception est levée.  
   
@@ -100,7 +98,7 @@ La classe <xref:System.Xml.Xsl.XslTransform> prend en charge les scripts incorpo
   
  Cela lève une exception car les signes &amp; ne font pas l'objet d'un échappement. Le document est chargé en tant que XML et aucun traitement spécial n’est appliqué au texte qui se trouve entre les étiquettes d’élément `msxsl:script`.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -167,7 +165,7 @@ public class Sample
 }  
 ```  
   
-## <a name="input"></a>Entrée  
+## <a name="input"></a>Input  
  number.xml  
   
 ```xml  
@@ -216,7 +214,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  

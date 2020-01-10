@@ -8,12 +8,12 @@ helpviewer_keywords:
 - resources [WPF]
 - reusing commonly defined objects [WPF]
 ms.assetid: 12ae4b67-cd0c-4c4d-a188-2c3de173bbb9
-ms.openlocfilehash: 8f3ab7a11757ba1936aae6e63ace28c4b336292b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 50e21f2d23054e58079f97466aea5d2d7d9f659e
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458712"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559727"
 ---
 # <a name="resources-wpf"></a>Ressources (WPF)
 Une ressource est un objet pouvant être réutilisé à plusieurs endroits de votre application. WPF prend en charge différents types de ressources. Ces ressources sont principalement deux types de ressources : les ressources XAML et les fichiers de données de ressources. Les pinceaux et les styles sont des exemples de ressources XAML. Les fichiers de données de ressources sont des fichiers de données non exécutables dont une application a besoin.  
@@ -30,7 +30,7 @@ Une ressource est un objet pouvant être réutilisé à plusieurs endroits de vo
   
  [Extension de balisage DynamicResource](dynamicresource-markup-extension.md)  
   
- [x:Key, directive](../../xaml-services/x-key-directive.md)  
+ [x:Key, directive](../../../desktop-wpf/xaml-services/xkey-directive.md)  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Intégration du format XAML au format WPF](xaml-in-wpf.md)

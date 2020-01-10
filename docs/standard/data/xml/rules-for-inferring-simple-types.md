@@ -3,14 +3,12 @@ title: Règles relatives à l'inférence de types simples
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 394624d6-4da0-430a-8a88-46efe40f14de
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 15e7692abfe06ec9e9f91a3b229bf99971eaecc1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 17429e77f7764873e607a8feaa62da1cc6e014a4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54550498"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710230"
 ---
 # <a name="rules-for-inferring-simple-types"></a>Règles relatives à l'inférence de types simples
 Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le type de données pour les attributs et les éléments.  
@@ -35,16 +33,16 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 |unsignedInt|Nombres entiers dans la plage comprise entre 0 et 4294967295.|  
 |long|Nombres entiers dans la plage comprise entre -9223372036854775808 et 9223372036854775807.|  
 |unsignedLong|Nombres entiers dans la plage comprise entre 0 et 18446744073709551615.|  
-|entiers|Nombre de chiffres fini éventuellement précédé du préfixe « - ».|  
+|integer|Nombre de chiffres fini éventuellement précédé du préfixe « - ».|  
 |decimal|Valeurs numériques avec une précision de 0 à 28 chiffres.|  
 |float|Décimales éventuellement suivies de « E » ou « e » et d'une valeur entière représentant l'exposant. Les valeurs décimales peuvent s'inscrire dans la plage comprise entre -16777216 et 16777216. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –149 et 104.<br /><br /> Float permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques. Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.|  
 |double|Comme pour float, sinon que les valeurs décimales peuvent s'inscrire dans la plage comprise entre -9007199254740992 et 9007199254740992. Les valeurs d'exposant peuvent s'inscrire dans la plage comprise entre –1075 et 970.<br /><br /> Double permet d'utiliser des valeurs spéciales pour représenter des valeurs d'infinité et non numériques. Les valeurs spéciales pour float sont : 0, -0, INF, -INF, NaN.|  
 |duration|Format de durée de W3C.|  
 |dateTime|Le format de date et d'heure de W3C.|  
-|heure|Le format d'heure de W3C.|  
+|time|Le format d'heure de W3C.|  
 |date|Les valeurs d'année doivent être comprises entre 0001 et 9999.|  
 |gYearMonth|Format d'année et de mois du calendrier grégorien de W3C.|  
-|chaîne|Un ou plusieurs caractères Unicode.|  
+|string|Un ou plusieurs caractères Unicode.|  
   
 ## <a name="type-promotion"></a>Promotion de type  
  La classe <xref:System.Xml.Schema.XmlSchemaInference> examine les valeurs d'attributs et d'éléments l'une après l'autre. Au fur et à mesure que des valeurs sont rencontrées, le type non signé le plus restrictif est déduit. Si un type a été déduit pour un attribut ou un élément et si une nouvelle valeur est rencontrée, qui ne correspond pas au type actuellement déduit, le type déduit est promu au rang de nouveau type qui s'applique au type actuellement déduit et à la nouvelle valeur. La classe <xref:System.Xml.Schema.XmlSchemaInference> ne considère pas les valeurs précédentes lors de la promotion du type déduit.  
@@ -69,7 +67,7 @@ Décrit comment la classe <xref:System.Xml.Schema.XmlSchemaInference> déduit le
 
 Vous trouverez ci-après les attributs de définition du schéma qui sont ignorés durant l'inférence de schéma.  
   
-|Attribut|Description|  
+|Attribute|Description|  
 |---------------|-----------------|  
 |`xsi:type`|Si un élément est rencontré avec un `xsi:type` spécifié, le `xsi:type` est ignoré.|  
 |`xsi:nil`|Si un élément avec un attribut `xsi:nil` est rencontré, sa déclaration d'élément dans le schéma déduit a la valeur `nillable="true"`. Un élément dont un attribut `xsi:nil` a la valeur `true` ne peut pas avoir d'éléments enfants.|  

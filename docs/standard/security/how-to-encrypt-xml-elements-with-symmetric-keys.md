@@ -16,14 +16,12 @@ helpviewer_keywords:
 - Advanced Encryption Standard algorithm
 - Rijndael
 ms.assetid: d8461a44-aa2c-4ef4-b3e4-ab7cbaaee1b5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b792fd6eea0a33b0143fafa03641a78947d7e127
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: cda5a32e9a7421cd65b2046b403fde9e05230493
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458072"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706082"
 ---
 # <a name="how-to-encrypt-xml-elements-with-symmetric-keys"></a>Comment : chiffrer des éléments XML avec des clés symétriques
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML vous permet de stocker et de transporter du code XML sensible, en empêchant qu'il soit facilement lu.  Cette procédure chiffre un élément XML à l’aide de l’algorithme Advanced Encryption Standard (AES), également appelé Rijndael.  

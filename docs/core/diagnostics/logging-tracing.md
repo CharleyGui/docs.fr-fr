@@ -1,15 +1,13 @@
 ---
 title: Journalisation et suivi-.NET Core
 description: Présentation de la journalisation et du suivi de .NET Core.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 08/05/2019
-ms.openlocfilehash: 46e64a7f60b88c26ceef9ac817be885bfa180c8e
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 392b88c9ea3c31c919a605ac0a5c886f7d63f79a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926354"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714424"
 ---
 # <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
 
@@ -29,9 +27,9 @@ Cette technique simple est étonnamment puissante. Il peut être utilisé dans l
 
 ### <a name="print-style-apis"></a>API de style d’impression
 
-Les <xref:System.Console?displayProperty=nameWithType>classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, et<xref:System.Diagnostics.Debug?displayProperty=nameWithType> fournissent chacune des API de style d’impression similaires pratiques pour la journalisation.
+Les classes <xref:System.Console?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace?displayProperty=nameWithType>et <xref:System.Diagnostics.Debug?displayProperty=nameWithType> fournissent chacune des API de style d’impression similaires pratiques pour la journalisation.
 
-Vous avez le choix de l’API de style d’impression à utiliser. Les principales différences sont les suivantes :
+Vous avez le choix de l’API de style d’impression à utiliser. :
 
 - <xref:System.Console?displayProperty=nameWithType>
   - Toujours activé et écrit toujours sur la console.
@@ -39,15 +37,15 @@ Vous avez le choix de l’API de style d’impression à utiliser. Les principal
   - Étant donné qu’il s’agit de l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Ce code de débogage n’est souvent jamais archivé dans le contrôle de code source.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
   - Activé uniquement lorsque `TRACE` est défini.
-  - Écrit dans attaché <xref:System.Diagnostics.Trace.Listeners>, par <xref:System.Diagnostics.DefaultTraceListener>défaut.
+  - Écrit dans les <xref:System.Diagnostics.Trace.Listeners>attachés, par défaut, le <xref:System.Diagnostics.DefaultTraceListener>.
   - Utilisez cette API lors de la création de journaux qui seront activés dans la plupart des builds.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
   - Activé uniquement lorsque `DEBUG` est défini.
   - Écrit dans un débogueur attaché.
-  - Lors `*nix` de l’écriture dans `COMPlus_DebugWriteToStdErr` stderr si est défini.
+  - Sur `*nix` écrit dans stderr si `COMPlus_DebugWriteToStdErr` est défini.
   - Utilisez cette API lors de la création de journaux qui seront activés uniquement dans les versions Debug.
 
-### <a name="logging-events"></a>Journalisation des événements
+### <a name="logging-events"></a>Événements de journalisation
 
 Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des chaînes simples, elles consignent des objets d’événement.
 
@@ -64,7 +62,7 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
 - <xref:System.Diagnostics.DiagnosticSource?displayProperty=nameWithType>
   - Inclus dans .NET Core et en tant que [package NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource) pour .NET Framework.
   - Permet le suivi en cours des objets non sérialisables.
-  - Comprend un pont pour permettre l’écriture de champs sélectionnés d’objets journalisés dans <xref:System.Diagnostics.Tracing.EventSource>un.
+  - Comprend un pont pour permettre l’écriture de champs sélectionnés d’objets journalisés dans une <xref:System.Diagnostics.Tracing.EventSource>.
 
 - <xref:System.Diagnostics.Activity?displayProperty=nameWithType>
   - Fournit un moyen définitif d’identifier les messages du journal qui résultent d’une activité ou d’une transaction spécifique. Cet objet peut être utilisé pour mettre en corrélation les journaux entre différents services.
@@ -78,28 +76,28 @@ Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des 
 
 Les API de bas niveau ne sont peut-être pas le bon choix pour vos besoins de journalisation. Vous pouvez envisager d’utiliser un Framework de journalisation.
 
-L' <xref:Microsoft.Extensions.Logging.ILogger> interface a été utilisée pour créer une interface de journalisation commune dans laquelle les enregistreurs d’événements peuvent être insérés via l’injection de dépendances.
+L’interface de <xref:Microsoft.Extensions.Logging.ILogger> a été utilisée pour créer une interface de journalisation commune dans laquelle les enregistreurs d’événements peuvent être insérés via l’injection de dépendances.
 
-Par exemple, pour vous permettre de choisir le meilleur choix pour votre application `ASP.NET` , vous pouvez prendre en charge une sélection de frameworks intégrés et tiers :
+Par exemple, pour vous permettre de choisir le meilleur choix pour votre application `ASP.NET` offre la prise en charge d’une sélection de frameworks intégrés et tiers :
 
 - [ASP.NET intégrés aux fournisseurs de journalisation](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
 - [ASP.NET fournisseurs de journalisation tiers](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
 
 ## <a name="logging-related-references"></a>Références associées à la journalisation
 
-- [Guide pratique : effectuer une compilation conditionnelle avec Trace et Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 
-- [Guide pratique pour Ajouter des instructions de suivi au code d’application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour ajouter des instructions de suivi au code d’application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 
 - La [journalisation ASP.net](/aspnet/core/fundamentals/logging) fournit une vue d’ensemble des techniques de journalisation qu’elle prend en charge.
 
 - L’interpolation de chaîne peut simplifier l’écriture du code de journalisation. [ C# ](../../csharp/language-reference/tokens/interpolated.md)
 
-- La <xref:System.Exception.Message?displayProperty=nameWithType> propriété est utile pour la journalisation des exceptions.
+- La propriété <xref:System.Exception.Message?displayProperty=nameWithType> est utile pour la journalisation des exceptions.
 
-- La <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> classe peut être utile pour fournir des informations de pile dans vos journaux.
+- La classe <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> peut être utile pour fournir des informations de pile dans vos journaux.
 
-## <a name="performance-considerations"></a>Considérations relatives aux performances
+## <a name="performance-considerations"></a>Considérations sur les performances
 
 La mise en forme des chaînes peut prendre un temps de traitement de l’UC notable.
 

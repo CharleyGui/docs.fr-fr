@@ -1,5 +1,5 @@
 ---
-title: 'Comment : modifier la valeur d’un argument de la procédure'
+title: "Comment : modifier la valeur d'un argument de la procédure"
 ms.date: 07/20/2015
 helpviewer_keywords:
 - procedures [Visual Basic], arguments
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - arguments [Visual Basic], ByRef
 - arguments [Visual Basic], changing value
 ms.assetid: 6fad2368-5da7-4c07-8bf8-0f4e65a1be67
-ms.openlocfilehash: e562c0f5ec01380c792b4dc064554171cfb007e7
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: deac87ca4690990a4d00f63d0ea9b843c3f9a9c4
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74339954"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344488"
 ---
 # <a name="how-to-change-the-value-of-a-procedure-argument-visual-basic"></a>Comment : modifier la valeur d'un argument de la procédure (Visual Basic)
 Lorsque vous appelez une procédure, chaque argument que vous fournissez correspond à l’un des paramètres définis dans la procédure. Dans certains cas, le code de la procédure peut modifier la valeur sous-jacente d’un argument dans le code appelant. Dans d’autres cas, la procédure ne peut modifier que la copie locale d’un argument.  
@@ -48,7 +48,7 @@ Lorsque vous appelez une procédure, chaque argument que vous fournissez corresp
   
 1. Dans la déclaration de procédure, spécifiez [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) pour le paramètre correspondant à l’argument.  
   
-     -ou-  
+     \- ou -  
   
      Dans le code appelant, mettez l’argument entre parenthèses dans la liste d’arguments. Cela oblige Visual Basic à passer l’argument par valeur, même si le paramètre correspondant spécifie `ByRef`.  
   
@@ -69,7 +69,7 @@ Lorsque vous appelez une procédure, chaque argument que vous fournissez corresp
   
  Vous pouvez empêcher la procédure de modifier la variable elle-même dans le code appelant. Consultez [Comment : protéger un argument de procédure contre les modifications de valeur](./how-to-protect-a-procedure-argument-against-value-changes.md).  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Lorsque vous transmettez une variable par référence, vous devez utiliser le mot clé `ByRef` pour spécifier ce mécanisme.  
   
  La valeur par défaut de Visual Basic consiste à passer des arguments par valeur. Toutefois, il est recommandé d’inclure le mot clé [ByVal](../../../../visual-basic/language-reference/modifiers/byval.md) ou [ByRef](../../../../visual-basic/language-reference/modifiers/byref.md) avec chaque paramètre déclaré. Cela rend votre code plus facile à lire.  

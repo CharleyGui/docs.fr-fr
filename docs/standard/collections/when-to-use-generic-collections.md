@@ -6,14 +6,12 @@ helpviewer_keywords:
 - collections [.NET Framework], generic
 - generic collections [.NET Framework]
 ms.assetid: e7b868b1-11fe-4ac5-bed3-de68aca47739
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b553ec62cf493b94b87079cddd3ec3d1d60daf9d
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 7d59259c1cab6842ef62888bf5326225394d8d44
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66491010"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711205"
 ---
 # <a name="when-to-use-generic-collections"></a>Quand utiliser les collections génériques
 L'utilisation de collections génériques est généralement recommandée, car elle permet de bénéficier immédiatement de la cohérence des types sans avoir à dériver d'un type de collection de base et à implémenter des membres spécifiques au type. Les types de collections génériques sont généralement plus performants que leurs équivalents non génériques (et mieux que les types dérivés de types de collections de base non génériques) quand les éléments de collection sont des types valeur, car grâce aux génériques, aucun boxing d'éléments n'est nécessaire.  
@@ -33,7 +31,7 @@ L'utilisation de collections génériques est généralement recommandée, car e
 - Les classes génériques <xref:System.Collections.Generic.Queue%601>, <xref:System.Collections.Concurrent.ConcurrentQueue%601>, <xref:System.Collections.Generic.Stack%601>, <xref:System.Collections.Concurrent.ConcurrentStack%601>et <xref:System.Collections.Generic.SortedList%602> correspondent aux classes non génériques qui portent le même nom.  
   
 ## <a name="additional-types"></a>Autres types  
- Plusieurs types de collections génériques n'ont pas d'équivalents non génériques. Il s'agit notamment des types suivants :  
+ Plusieurs types de collections génériques n'ont pas d'équivalents non génériques. Il s'agit des dossiers suivants :  
   
 - <xref:System.Collections.Generic.LinkedList%601> est une liste liée à usage général qui fournit des opérations d'insertion et de suppression O(1).  
   

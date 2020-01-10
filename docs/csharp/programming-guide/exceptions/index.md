@@ -1,18 +1,17 @@
 ---
 title: Exceptions et gestion des exceptions - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#]
 - exceptions [C#]
 - C# language, exceptions
 ms.assetid: 0001887f-4fa2-47e2-8034-2819477e2344
-ms.openlocfilehash: 9229c1524a400112a1b48bc40866d6dd1b7cf21b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: f5d709a35e160a8b03ac59e52f7bcb46196a3ce4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346235"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705286"
 ---
 # <a name="exceptions-and-exception-handling-c-programming-guide"></a>Exceptions et gestion des exceptions (Guide de programmation C#)
 

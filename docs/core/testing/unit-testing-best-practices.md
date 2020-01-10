@@ -4,13 +4,12 @@ description: Découvrez les bonnes pratiques pour écrire des tests unitaires qu
 author: jpreese
 ms.author: wiwagn
 ms.date: 07/28/2018
-ms.custom: seodec18
-ms.openlocfilehash: afd6e7e25573cbb571b225c263b9bcfccfca5647
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 387d66bfeaf48359a27a532247a799c319f38caa
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926383"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714283"
 ---
 # <a name="unit-testing-best-practices-with-net-core-and-net-standard"></a>Meilleures pratiques pour les tests unitaires avec .NET Core et .NET Standard
 

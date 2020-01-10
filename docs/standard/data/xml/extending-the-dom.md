@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3224250b08a780b87b9b7f96547830b0563daadf
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 41b6959843e866b89da46a9cedfb54a2f5ed001a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351939"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710880"
 ---
 # <a name="extending-the-dom"></a>Extension du DOM
 
@@ -222,7 +220,7 @@ public class Test {
 }
 ```
 
-#### <a name="input"></a>Entrée
+#### <a name="input"></a>Input
 
 book.xml
 
@@ -234,7 +232,7 @@ book.xml
 </book>
 ```
 
-#### <a name="output"></a>Sortie
+#### <a name="output"></a>Output
 
 ```console
 Number of elements in book.xml: 3

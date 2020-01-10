@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 8a5ea56c-0140-4b51-8997-875ae6a8e0cb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e8c8e1b0d9a79ff22f3194e86cd580f3a7e199b2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c921331b00fe137d4ad52d62951e8c161768dfae
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962029"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711140"
 ---
 # <a name="building-xml-schemas"></a>Création de schémas XML
 Les classes de l'espace de noms <xref:System.Xml.Schema?displayProperty=nameWithType> correspondent aux structures définies dans la recommandation du W3C (World Wide Web Consortium) sur les schémas XML et peuvent permettre de créer des schémas XML en mémoire.  

@@ -1,15 +1,15 @@
 ---
 title: ASP.NET Core modifications avec rupture-.NET Core
 description: Répertorie les dernières modifications apportées à ASP.NET Core.
-ms.date: 11/25/2019
+ms.date: 12/20/2019
 author: scottaddie
 ms.author: scaddie
-ms.openlocfilehash: 130a89f45c3f80975c56ea3a4845ee560921286e
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 3eff2e1d292daf9f709b28da0db9d089aeebd464
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568378"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344271"
 ---
 # <a name="aspnet-core-breaking-changes"></a>Modifications avec rupture ASP.NET Core
 
@@ -42,6 +42,10 @@ La liste suivante répertorie les modifications avec rupture de ASP.NET Core par
 ***
 
 [!INCLUDE[Authorization: AddAuthorization overload assembly change](~/includes/core-changes/aspnetcore/3.0/authz-assembly-change.md)]
+
+***
+
+[!INCLUDE[Authorization: IAllowAnonymous removed from AuthorizationFilterContext.Filters](~/includes/core-changes/aspnetcore/3.0/authz-iallowanonymous-removed-from-collection.md)]
 
 ***
 
@@ -146,6 +150,10 @@ La liste suivante répertorie les modifications avec rupture de ASP.NET Core par
 ***
 
 [!INCLUDE[MVC: Controller action Async suffix removed](~/includes/core-changes/aspnetcore/3.0/mvc-action-async-suffix-trimmed.md)]
+
+***
+
+[!INCLUDE[MVC: JsonResult moved to Microsoft.AspNetCore.Mvc.Core](~/includes/core-changes/aspnetcore/3.0/mvc-jsonresult-moved.md)]
 
 ***
 

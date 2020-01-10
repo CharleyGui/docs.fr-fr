@@ -3,17 +3,15 @@ title: Sélection, évaluation et mise en correspondance de données XML à l’
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 46e059f8-4dc8-4185-9236-784be95228ed
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 03c7d3f777aa903bf75a62830b3f337ae37ce437
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 1a76edf22483c0df8871badcb5e162dd3e66001f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54669228"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710139"
 ---
 # <a name="selecting-evaluating-and-matching-xml-data-using-xpathnavigator"></a>Sélection, évaluation et mise en correspondance de données XML à l’aide de XPathNavigator
-La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes de sélection de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l’aide d’une requête XPath, d’évaluation et d’examen des résultats d’une expression XPath et détermine si un nœud d’un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> correspond à une expression XPath donnée. Ces concepts relatifs, entre autres, à la sélection, l'évaluation et la mise en correspondance de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> sont décrits dans les rubriques suivantes.  
+La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes de sélection de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> à l'aide d'une requête XPath, d'évaluation et d'examen des résultats d'une expression XPath et détermine si un nœud d'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> correspond à une expression XPath donnée. Ces concepts relatifs, entre autres, à la sélection, l'évaluation et la mise en correspondance de nœuds dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> sont décrits dans les rubriques suivantes.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Sélection de données XML à l’aide de XPathNavigator](../../../../docs/standard/data/xml/select-xml-data-using-xpathnavigator.md)  

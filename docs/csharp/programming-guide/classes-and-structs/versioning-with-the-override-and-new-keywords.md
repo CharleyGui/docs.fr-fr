@@ -1,17 +1,16 @@
 ---
 title: Versioning avec les mots clés override et new - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, versioning
 - C# language, override and new
 ms.assetid: 88247d07-bd0d-49e9-a619-45ccbbfdf0c5
-ms.openlocfilehash: c85f5b6b4552dc4a10c7ad66b8f93331f97a8621
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 089d5d7c7a95e2de4629f53255d9d9790fd5508a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196201"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705390"
 ---
 # <a name="versioning-with-the-override-and-new-keywords-c-programming-guide"></a>Versioning avec les mots clés override et new (Guide de programmation C#)
 Le langage C# est conçu de telle sorte que la gestion de version entre les classes de [base](../../language-reference/keywords/base.md) et les classes dérivées dans différentes bibliothèques puisse évoluer et préserver une compatibilité descendante. Cela signifie, par exemple, que l’introduction dans une [classe](../../language-reference/keywords/class.md) de base d’un nouveau membre portant le même nom qu’un membre dans une classe dérivée est totalement prise en charge par C# et n’engendre pas de comportement imprévisible. Cela signifie également qu'une classe doit indiquer de façon explicite si une méthode est conçue pour se substituer à une méthode héritée ou s'il s'agit d'une nouvelle méthode qui masque une méthode héritée portant un nom similaire.  
@@ -69,11 +68,11 @@ Le langage C# est conçu de telle sorte que la gestion de version entre les cla
   
  [!code-csharp[csProgGuideInheritance#32](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#32)]  
   
- Quand `DoWork` est appelée sur une instance de `Derived`, le compilateur C# essaie d’abord de rendre l’appel compatible avec les versions de `DoWork` déclarées à l’origine sur `Derived`. Les méthodes override ne sont pas considérées comme déclarées sur une classe ; il s’agit de nouvelles implémentations d’une méthode déclarée sur une classe de base. Le compilateur C# essaiera de faire correspondre l’appel à une méthode substituée portant le même nom et avec des paramètres compatibles uniquement s’il ne parvient pas à faire correspondre l’appel de méthode à une méthode d’origine sur `Derived`. Exemple :  
+ Quand `DoWork` est appelée sur une instance de `Derived`, le compilateur C# essaie d’abord de rendre l’appel compatible avec les versions de `DoWork` déclarées à l’origine sur `Derived`. Les méthodes override ne sont pas considérées comme déclarées sur une classe ; il s’agit de nouvelles implémentations d’une méthode déclarée sur une classe de base. Le compilateur C# essaiera de faire correspondre l’appel à une méthode substituée portant le même nom et avec des paramètres compatibles uniquement s’il ne parvient pas à faire correspondre l’appel de méthode à une méthode d’origine sur `Derived`. Par exemple :  
   
  [!code-csharp[csProgGuideInheritance#33](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#33)]  
   
- Étant donné que la variable `val` peut être convertie implicitement en un double, le compilateur C# appelle `DoWork(double)` au lieu de `DoWork(int)`. Il existe deux façons d’éviter ceci. Premièrement, évitez de déclarer de nouvelles méthodes portant le même nom que des méthodes virtuelles. Deuxièmement, vous pouvez indiquer au compilateur C# d’appeler la méthode virtuelle en le faisant chercher dans la liste de méthodes de la classe de base par casting de l’instance `Derived` en `Base`. Étant donné que la méthode est virtuelle, l’implémentation de `DoWork(int)` sur `Derived` sera appelée. Exemple :  
+ Étant donné que la variable `val` peut être convertie implicitement en un double, le compilateur C# appelle `DoWork(double)` au lieu de `DoWork(int)`. Il existe deux façons d’éviter ceci. Premièrement, évitez de déclarer de nouvelles méthodes portant le même nom que des méthodes virtuelles. Deuxièmement, vous pouvez indiquer au compilateur C# d’appeler la méthode virtuelle en le faisant chercher dans la liste de méthodes de la classe de base par casting de l’instance `Derived` en `Base`. Étant donné que la méthode est virtuelle, l’implémentation de `DoWork(int)` sur `Derived` sera appelée. Par exemple :  
   
  [!code-csharp[csProgGuideInheritance#34](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#34)]  
   

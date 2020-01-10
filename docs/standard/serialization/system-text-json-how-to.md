@@ -1,19 +1,17 @@
 ---
 title: Comment sérialiser et désérialiser JSON à l' C# aide de-.net
-author: tdykstra
-ms.author: tdykstra
 ms.date: 09/16/2019
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 3d3dc0011562e25854938aff857f2832a5978b49
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: a9c690e736a08c729a4099d5e7a519ed17ec282c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283337"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705793"
 ---
 # <a name="how-to-serialize-and-deserialize-json-in-net"></a>Comment sérialiser et désérialiser JSON dans .NET
 
@@ -23,7 +21,7 @@ Les instructions et l’exemple de code utilisent directement la bibliothèque, 
 
 La majeure partie de l’exemple de code de sérialisation définit <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> de façon à ce qu’il `true` « plutôt imprimer » le JSON (avec mise en retrait et espace blanc pour la lisibilité humaine). Pour une utilisation en production, vous acceptez généralement la valeur par défaut de `false` pour ce paramètre.
 
-## <a name="namespaces"></a>Espaces de noms
+## <a name="namespaces"></a>Espaces de noms des
 
 L’espace de noms <xref:System.Text.Json> contient tous les points d’entrée et les principaux types. L’espace de noms <xref:System.Text.Json.Serialization> contient des attributs et des API pour les scénarios avancés et la personnalisation propres à la sérialisation et à la désérialisation. Les exemples de code présentés dans cet article requièrent des directives `using` pour l’un de ces espaces de noms ou les deux :
 
@@ -184,7 +182,7 @@ Voici un exemple de type à sérialiser et à imprimer une sortie JSON :
 
 ## <a name="customize-json-names-and-values"></a>Personnaliser les noms et les valeurs JSON
 
-Par défaut, les noms de propriété et les clés de dictionnaire sont inchangés dans la sortie JSON, y compris la casse. Les valeurs enum sont représentées sous forme de nombres. Cette section explique comment effectuer les opérations suivantes :
+Par défaut, les noms de propriété et les clés de dictionnaire sont inchangés dans la sortie JSON, y compris la casse. Les valeurs enum sont représentées sous forme de nombres. Cette section explique comment :
 
 * [Personnaliser les noms de propriété individuels](#customize-individual-property-names)
 * [Convertir tous les noms de propriété en casse mixte](#use-camel-case-for-all-json-property-names)
@@ -377,11 +375,11 @@ Pour exclure toutes les propriétés de valeur null, affectez la valeur `true`à
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Propriété |Valeur  |
+|Les |Value  |
 |---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00|
 | TemperatureCelsius| 25 |
-| Résumé| null|
+| Récapitulatif| null|
 
 ```json
 {
@@ -460,7 +458,7 @@ Pour réduire l’échappement, vous pouvez utiliser <xref:System.Text.Encodings
 
 ## <a name="serialize-properties-of-derived-classes"></a>Sérialiser les propriétés des classes dérivées
 
-La sérialisation polymorphe n’est pas prise en charge lorsque vous spécifiez au moment de la compilation le type à sérialiser. Par exemple, supposons que vous ayez une classe `WeatherForecast` et une classe dérivée `WeatherForecastWithWind`:
+La sérialisation polymorphe n’est pas prise en charge lorsque vous spécifiez au moment de la compilation le type à sérialiser. Par exemple, supposons que vous ayez une classe `WeatherForecast` et une classe dérivée `WeatherForecastDerived`:
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWF)]
 
@@ -470,7 +468,7 @@ Et supposons que l’argument de type de la méthode `Serialize` au moment de la
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/SerializePolymorphic.cs?name=SnippetSerializeDefault)]
 
-Dans ce scénario, la propriété `WindSpeed` n’est pas sérialisée, même si l’objet `weatherForecast` est en fait un objet `WeatherForecastWithWind`. Seules les propriétés de la classe de base sont sérialisées :
+Dans ce scénario, la propriété `WindSpeed` n’est pas sérialisée, même si l’objet `weatherForecast` est en fait un objet `WeatherForecastDerived`. Seules les propriétés de la classe de base sont sérialisées :
 
 ```json
 {
@@ -571,11 +569,11 @@ Si vous désérialisez le JSON indiqué dans le type indiqué, les propriétés 
 
 Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple, les données supplémentaires deviennent des paires clé-valeur de la propriété `ExtensionData` :
 
-|Propriété |Valeur  |Remarques  |
+|Les |Value  |Remarques  |
 |---------|---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00||
 | TemperatureCelsius| 0 | Incompatibilité sensible à la casse (`temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. |
-| Résumé | Très chargé ||
+| Récapitulatif | Très chargé ||
 | ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
 || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 | |SummaryWords:<br>Cool<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|

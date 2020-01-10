@@ -3,14 +3,12 @@ title: Lecture de déclarations d'entité et de références d'entité vers le D
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 86dba977-5cc4-4567-964f-027ffabc47b2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e30b52b8cdfb4d185687d58c80f4475730031c86
-ms.sourcegitcommit: 5bbfe34a9a14e4ccb22367e57b57585c208cf757
-ms.translationtype: HT
+ms.openlocfilehash: fa650e75d7661eeafea74146f5cbb61878978575
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2018
-ms.locfileid: "45748679"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710399"
 ---
 # <a name="reading-entity-declarations-and-entity-references-into-the-dom"></a>Lecture de déclarations d'entité et de références d'entité vers le DOM
 Une entité est une déclaration établissant qu'un certain nom doit être utilisé dans les données XML en lieu et place d'un contenu ou d'un balisage donné. Une entité présente deux aspects. D'une part, vous devez associer un nom au contenu de remplacement, au moyen d'une déclaration d'entité. Une déclaration d'entité est créée au moyen de la syntaxe `<!ENTITY name "value">` dans une DTD ou un schéma XML. D'autre part, le nom défini dans la déclaration d'entité est utilisé par la suite dans les données XML. Ce nom, une fois employé dans le code XML, est appelé référence d'entité. Par exemple, la déclaration d'entité suivante déclare une entité portant le nom `publisher` associé au contenu de « Microsoft Press ».  
@@ -26,14 +24,14 @@ Une entité est une déclaration établissant qu'un certain nom doit être utili
 <pubinfo>Published by &publisher;</pubinfo>  
 ```  
   
- Certains analyseurs développent automatiquement des entités lors du chargement d'un document en mémoire. Dès lors, lorsque le code XML est lu et chargé en mémoire, les déclarations d'entité sont mémorisées et enregistrées. Ensuite, quand l'analyseur rencontre des caractères `&;` qui identifient une référence d'entité générale, il recherche ce nom dans une table de déclaration d'entité. La référence, `&publisher;`, est remplacée par le contenu qu'elle représente. À l'aide du code XML suivant,  
+ Certains analyseurs développent automatiquement des entités lors du chargement d’un document en mémoire. Dès lors, lorsque le code XML est lu et chargé en mémoire, les déclarations d'entité sont mémorisées et enregistrées. Ensuite, quand l'analyseur rencontre des caractères `&;` qui identifient une référence d'entité générale, il recherche ce nom dans une table de déclaration d'entité. La référence, `&publisher;`, est remplacée par le contenu qu'elle représente. À l'aide du code XML suivant,  
   
 ```xml  
 <author>Fred</author>  
 <pubinfo>Published by &publisher;</pubinfo>  
 ```  
   
- le développement de la référence d'entité et le remplacement de `&publisher;` par le contenu Microsoft Press produit les données XML développées suivantes :  
+ le développement de la référence d’entité et le remplacement de `&publisher;` par le contenu Microsoft Press produit les données XML développées suivantes :  
   
  **Sortie**  
   
@@ -44,7 +42,7 @@ Une entité est une déclaration établissant qu'un certain nom doit être utili
   
  Il existe diverses sortes d'entités. Le diagramme suivant montre la répartition des types d'entité et leur terminologie.  
   
- ![organigramme de la hiérarchie des types d'entités](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
+ ![Organigramme de la hiérarchie des types d’entités](../../../../docs/standard/data/xml/media/entity-hierarchy.gif "Entity_hierarchy")  
   
  Par défaut, l’implémentation par Microsoft .NET Framework de DOM (Document Object Model) XML préserve les références d’entités et ne développe pas les entités lors du chargement du XML. Cela a pour effet de créer, lorsqu'un document est chargé dans le DOM, un nœud **XmlEntityReference** contenant la variable de référence `&publisher;`, avec des nœuds enfants représentant le contenu de l'entité déclarée dans la DTD.  
   
@@ -52,7 +50,7 @@ Une entité est une déclaration établissant qu'un certain nom doit être utili
   
  ![nœuds créés à partir de la déclaration d’entité](../../../../docs/standard/data/xml/media/xml-entitydeclaration-node2.png "xml_entitydeclaration_node2")  
   
- Les différences qu’il existe entre les références d’entité développées et non développées concernent les nœuds qui sont générés dans l’arborescence DOM en mémoire. La différence dans les nœuds générés est expliquée dans les rubriques [Conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-preserved.md) et [Développement sans conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
+ Les différences qu'il existe entre les références d'entité développées et non développées concernent les nœuds qui sont générés dans l'arborescence DOM en mémoire. La différence dans les nœuds générés est expliquée dans les rubriques [Conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-preserved.md) et [Développement sans conservation des références d’entité](../../../../docs/standard/data/xml/entity-references-are-expanded-and-not-preserved.md).  
   
 ## <a name="see-also"></a>Voir aussi
 

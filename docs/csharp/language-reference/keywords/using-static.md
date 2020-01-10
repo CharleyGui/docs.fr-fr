@@ -1,20 +1,19 @@
 ---
 title: using static, directive - Référence C#
-ms.custom: seodec18
 ms.date: 03/10/2017
 helpviewer_keywords:
 - using static directive [C#]
 ms.assetid: 8b8f9e34-c75e-469b-ba85-6f2eb4090314
-ms.openlocfilehash: 1a0e26d8b0a14e0c77b724fc492588e08762e47f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55847aceb9fdf032ba533b82ee59be53761fa2c2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73099997"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712947"
 ---
 # <a name="using-static-directive-c-reference"></a>using static, directive (référence C#)
 
-La directive `using static` désigne un type dont vous pouvez accéder aux membres statiques et aux types imbriqués sans spécifier de nom de type. Sa syntaxe est la suivante :
+La directive `using static` désigne un type dont vous pouvez accéder aux membres statiques et aux types imbriqués sans spécifier de nom de type. Sa syntaxe est la suivante :
 
 ```csharp
 using static <fully-qualified-type-name>;
@@ -53,7 +52,7 @@ Dans cet exemple, la directive `using static` aurait également pu être appliqu
 ## <a name="see-also"></a>Voir aussi
 
 - [Directive using](using-directive.md)
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Mots clés C#](index.md)
 - [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : utiliser la protection des données'
+title: 'Comment : utiliser la protection des données'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -16,16 +16,14 @@ helpviewer_keywords:
 - decryption
 - data [.NET Framework], encryption
 ms.assetid: 606698b0-cb1a-42ca-beeb-0bea34205d20
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1dc8c75d3c8c91d974388779528deff16453d852
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0efd677f11189b28b8efc184c04b30a047ab942b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64602540"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706030"
 ---
-# <a name="how-to-use-data-protection"></a>Procédure : utiliser la protection des données
+# <a name="how-to-use-data-protection"></a>Comment : utiliser la protection des données
 .NET Framework fournit l'accès à l'API de protection des données (DPAPI), qui permet de chiffrer des données à l'aide des informations de compte de l'utilisateur ou de l'ordinateur actuel.  Quand vous utilisez l'API de protection des données, vous simplifiez le processus de génération et de stockage explicites de la clé de chiffrement.  
   
  Utilisez la classe <xref:System.Security.Cryptography.ProtectedMemory> pour chiffrer un tableau d'octets en mémoire.  Cette fonctionnalité est disponible dans Microsoft Windows XP et les systèmes d’exploitation ultérieurs.  Vous pouvez spécifier que la mémoire chiffrée par le processus actuel peut être déchiffrée par le processus actuel uniquement, par tous les processus ou dans le même contexte utilisateur.  Reportez-vous à l'énumération <xref:System.Security.Cryptography.MemoryProtectionScope> pour obtenir une description détaillée des options <xref:System.Security.Cryptography.ProtectedMemory>.  

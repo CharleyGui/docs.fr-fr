@@ -1,6 +1,5 @@
 ---
 title: unchecked, mot clé - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - unchecked_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - unchecked keyword [C#]
 ms.assetid: 0c021f7c-923f-4b3d-a58f-55336f5ac27e
-ms.openlocfilehash: c31f1243b1394bfe826b02c14c73faf402640849
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 6dad0dfd508fb390dd0a52d1b48d70b4c5725513
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69608417"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712999"
 ---
 # <a name="unchecked-c-reference"></a>unchecked (référence C#)
 
@@ -29,7 +28,7 @@ Les expressions qui contiennent des termes non constants sont non vérifiées pa
 
 Étant donné que la vérification de dépassement de capacité prend du temps, l’utilisation de code non vérifié dans les situations où il n’existe aucun danger de dépassement de capacité peut améliorer les performances. Toutefois, si un dépassement de capacité est possible, il convient d’utiliser un environnement vérifié (checked).
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple de code suivant montre comment utiliser le mot clé `unchecked`.
 

@@ -1,6 +1,5 @@
 ---
 title: extern, modificateur - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - extern_CSharpKeyword
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - DllImport attribute
 - extern keyword [C#]
 ms.assetid: 9c3f02c4-51b8-4d80-9cb2-f2b6e1ae15c7
-ms.openlocfilehash: 5f4a4b143578603a3285b1a3bc0b1efa11840e77
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c121d810e64b5fa27f105f814253c0752e028a95
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422813"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713539"
 ---
 # <a name="extern-c-reference"></a>extern (référence C#)
 
@@ -31,13 +30,13 @@ C’est une erreur d’utiliser conjointement les modificateurs [abstract](abstr
 
 L'utilisation du mot clé extern est plus restreinte dans C# que dans C++. Pour comparer son utilisation dans C# et C++, consultez : Utilisation d'extern pour spécifier la liaison dans le Guide de référence du langage C++.
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 Dans cet exemple, le programme reçoit une chaîne provenant de l’utilisateur et l’affiche dans une boîte de message. Le programme utilise la méthode `MessageBox` importée de la bibliothèque User32.dll.
 
 [!code-csharp[csrefKeywordsModifiers#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#8)]
 
-## <a name="example-2"></a>Exemple 2
+## <a name="example-2"></a>Exemple 2
 
 Cet exemple illustre un programme C# qui fait appel à une bibliothèque C (une DLL native).
 
@@ -91,7 +90,7 @@ Cet exemple illustre un programme C# qui fait appel à une bibliothèque C (une 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Runtime.InteropServices.DllImportAttribute?displayProperty=nameWithType>
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)

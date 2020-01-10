@@ -14,14 +14,12 @@ helpviewer_keywords:
 - X.509 certificates
 - certificates, X.509 certificates
 ms.assetid: 761f1c66-631c-47af-aa86-ad9c50cfa453
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d569d3c020e7329d987e957f181b34c8cfbf941a
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: 7f74e4e46ba760b7a943b2e2728e487ee87ae204
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353859"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706069"
 ---
 # <a name="how-to-encrypt-xml-elements-with-x509-certificates"></a>Comment : chiffrer des éléments XML avec les certificats X.509
 Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Cryptography.Xml> pour chiffrer un élément d'un document XML.  Le chiffrement XML est une méthode normalisée qui permet d'échanger et de stocker des données XML chiffrées sans que celles-ci ne puissent être lues facilement.  Pour plus d’informations sur la norme de chiffrement XML, consultez la spécification World Wide Web Consortium (W3C) pour le chiffrement XML situé sur <https://www.w3.org/TR/xmldsig-core/>.  
@@ -36,7 +34,7 @@ Vous pouvez utiliser les classes de l'espace de noms <xref:System.Security.Crypt
   
 ### <a name="to-encrypt-an-xml-element-with-an-x509-certificate"></a>Pour chiffrer un élément XML avec un certificat X.509  
   
-1. Utilisez l’[outil de création de certificats (Makecert.exe)](/windows/desktop/SecCrypto/makecert) pour générer un certificat de test X.509, puis placez-le dans le magasin de l’utilisateur local. Vous devez générer une clé d'échange et rendre cette clé exportable. Exécutez la commande suivante :  
+1. Utilisez l’[outil de création de certificats (Makecert.exe)](/windows/desktop/SecCrypto/makecert) pour générer un certificat de test X.509, puis placez-le dans le magasin de l’utilisateur local. Vous devez générer une clé d'échange et rendre cette clé exportable. Exécutez la commande suivante : .  
   
     ```console  
     makecert -r -pe -n "CN=XML_ENC_TEST_CERT" -b 01/01/2005 -e 01/01/2010 -sky exchange -ss my  

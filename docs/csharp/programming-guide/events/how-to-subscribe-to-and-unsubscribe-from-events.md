@@ -1,18 +1,17 @@
 ---
 title: Guide pratique pour s’abonner et se désabonner d’événements- C# Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - event handlers [C#], creating
 - Code Editor, event handlers
 - events [C#], creating using the IDE
 ms.assetid: 6319f39f-282c-4173-8a62-6c4657cf51cd
-ms.openlocfilehash: e194501d7619d4bc04dec6a10d34fb2b01be2c7a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 3df357cb15f7f77cefbf360dd9615ce246afe2ea
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346315"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705325"
 ---
 # <a name="how-to-subscribe-to-and-unsubscribe-from-events-c-programming-guide"></a>Comment s’abonner et annuler l’abonnement à desC# événements (Guide de programmation)
 Vous vous abonnez à un événement publié par une autre classe lorsque vous voulez écrire du code personnalisé qui doit être appelé quand cet événement est déclenché. Par exemple, vous pouvez vous abonner à l’événement `click` d’un bouton pour permettre à votre application de réagir lorsque l’utilisateur clique sur le bouton.  

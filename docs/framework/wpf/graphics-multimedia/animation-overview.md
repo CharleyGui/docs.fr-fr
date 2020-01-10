@@ -8,12 +8,12 @@ helpviewer_keywords:
 - Storyboards [WPF], animations
 - animations [WPF], overview
 ms.assetid: bd9ce563-725d-4385-87c9-d7ee38cf79ea
-ms.openlocfilehash: 870fc1d1f02dca7d4488a27385fcfeaec8098ced
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: f0f55c948d10c61ebab57f47e3461531ccf5f610
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039189"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559714"
 ---
 # <a name="animation-overview"></a>Vue d'ensemble de l'animation
 
@@ -248,7 +248,7 @@ Trois propriétés de minutage fréquemment utilisées sont <xref:System.Windows
 
 #### <a name="the-duration-property"></a>La propriété Duration
 
-Comme mentionné plus haut, une chronologie représente un segment de temps. La longueur de ce segment est déterminée par la <xref:System.Windows.Media.Animation.Timeline.Duration%2A> de la chronologie, qui est généralement spécifiée à l’aide d’une valeur de <xref:System.Windows.Duration.TimeSpan%2A>. Lorsqu’une chronologie atteint la fin de sa durée, elle a terminé une itération.
+Comme indiqué plus haut, une chronologie représente un segment de temps. La longueur de ce segment est déterminée par la <xref:System.Windows.Media.Animation.Timeline.Duration%2A> de la chronologie, qui est généralement spécifiée à l’aide d’une valeur de <xref:System.Windows.Duration.TimeSpan%2A>. Lorsqu’une chronologie atteint la fin de sa durée, elle a terminé une itération.
 
 Une animation utilise sa propriété <xref:System.Windows.Media.Animation.Timeline.Duration%2A> pour déterminer sa valeur actuelle. Si vous ne spécifiez pas de valeur <xref:System.Windows.Media.Animation.Timeline.Duration%2A> pour une animation, elle utilise 1 seconde, qui est la valeur par défaut.
 
@@ -292,7 +292,7 @@ L’attribution d’un nom à un <xref:System.Windows.FrameworkElement> diffère
 
 - Pour créer un <xref:System.Windows.FrameworkElement> une cible d’animation, vous lui donnez un nom en définissant sa propriété <xref:System.Windows.FrameworkElement.Name%2A>. Dans le code, vous devez également utiliser la méthode <xref:System.Windows.FrameworkElement.RegisterName%2A> pour inscrire le nom de l’élément avec la page à laquelle il appartient.
 
-- Pour faire d’un objet <xref:System.Windows.Freezable> une cible d’animation dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous utilisez la [directive x :Name](../../xaml-services/x-name-directive.md) pour lui assigner un nom. Dans le code, vous utilisez simplement la méthode <xref:System.Windows.FrameworkElement.RegisterName%2A> pour inscrire l’objet avec la page à laquelle il appartient.
+- Pour faire d’un objet <xref:System.Windows.Freezable> une cible d’animation dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)], vous utilisez la [directive x :Name](../../../desktop-wpf/xaml-services/xname-directive.md) pour lui assigner un nom. Dans le code, vous utilisez simplement la méthode <xref:System.Windows.FrameworkElement.RegisterName%2A> pour inscrire l’objet avec la page à laquelle il appartient.
 
 Les sections suivantes fournissent un exemple de dénomination d’un élément dans [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] et du code. Pour plus d’informations sur l’affectation de noms et le ciblage, consultez [vue d’ensemble des storyboards](storyboards-overview.md).
 
@@ -355,7 +355,7 @@ Les exemples de cette vue d’ensemble montrent comment animer à l’aide de st
 
 Les exemples suivants peuvent vous aider à commencer à ajouter animation à vos applications.
 
-- [Exemple de valeurs cibles d’animation From, To, and By Animation Target Values Sample](https://go.microsoft.com/fwlink/?LinkID=159988)
+- [Exemple de valeurs cibles d’animation From, To et By](https://go.microsoft.com/fwlink/?LinkID=159988)
 
   Présente les différents paramètres From/To/By.
 
@@ -376,18 +376,18 @@ Les exemples suivants peuvent vous aider à commencer à ajouter animation à vo
 |[Vue d'ensemble des animations d'image clé](key-frame-animations-overview.md)|Décrit comment créer une animation avec plusieurs valeurs cibles, notamment la possibilité de contrôler la méthode d’interpolation.|
 |[Fonctions d'accélération](easing-functions.md)|Explique comment appliquer des formules mathématiques à vos animations pour obtenir un comportement réaliste, tel que rebondissement.|
 |[Vue d'ensemble des animations de tracés](path-animations-overview.md)|Décrit comment déplacer ou faire pivoter un objet sur un tracé complexe.|
-|[Vue d'ensemble des techniques d'animation de propriétés](property-animation-techniques-overview.md)|Décrit des animations de propriété à l’aide de storyboards, animations locales, horloges et des animations image par image.|
-|[Vue d'ensemble des storyboards](storyboards-overview.md)|Décrit comment utiliser les storyboards avec plusieurs chronologies pour créer des animations complexes.|
+|[Vue d’ensemble des techniques d’animation de propriétés](property-animation-techniques-overview.md)|Décrit des animations de propriété à l’aide de storyboards, animations locales, horloges et des animations image par image.|
+|[Vue d'ensemble des plans conceptuels](storyboards-overview.md)|Décrit comment utiliser les storyboards avec plusieurs chronologies pour créer des animations complexes.|
 |[Vue d'ensemble des comportements de minuterie](timing-behaviors-overview.md)|Décrit les types de <xref:System.Windows.Media.Animation.Timeline> et les propriétés utilisés dans les animations.|
 |[Vue d'ensemble des événements de minuterie](timing-events-overview.md)|Décrit les événements disponibles sur les objets <xref:System.Windows.Media.Animation.Timeline> et <xref:System.Windows.Media.Animation.Clock> pour exécuter du code à des points de la chronologie, tels que Begin, pause, Resume, Skip ou stop.|
-|[Rubriques pratiques](animation-and-timing-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations et des chronologies dans votre application.|
+|[Guides pratiques](animation-and-timing-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations et des chronologies dans votre application.|
 |[Guides pratiques relatifs aux objets Clock](clocks-how-to-topics.md)|Contient des exemples de code pour l’utilisation de l’objet <xref:System.Windows.Media.Animation.Clock> dans votre application.|
 |[Guides pratiques relatifs aux images clés](key-frame-animation-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations d’image clé dans votre application.|
 |[Guides pratiques relatifs aux animations de tracés](path-animation-how-to-topics.md)|Contient des exemples de code pour l’utilisation des animations de tracés dans votre application.|
 
 <a name="reference"></a>
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Reference
 
 - <xref:System.Windows.Media.Animation.Timeline>
 

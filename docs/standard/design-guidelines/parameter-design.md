@@ -9,15 +9,15 @@ helpviewer_keywords:
 - parameters, design guidelines
 - reserved parameters
 ms.assetid: 3f33bf46-4a7b-43b3-bb78-1ffebe0dcfa6
-author: KrzysztofCwalina
-ms.openlocfilehash: 28b00f5911bb47536ec44b96f284e47b6c671149
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: e3725cd11e170c64b6cbf7d77a7a6526603dfd95
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353744"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709112"
 ---
 # <a name="parameter-design"></a>Conception de paramètres
+
 Cette section fournit des instructions générales sur la conception des paramètres, y compris des sections avec des indications pour la vérification des arguments. En outre, vous devez vous reporter aux instructions décrites dans [Naming Parameters](../../../docs/standard/design-guidelines/naming-parameters.md).  
   
  **✓ DO** utiliser le type de paramètre moins dérivé qui fournit les fonctionnalités requises par le membre.  
@@ -40,7 +40,7 @@ Cette section fournit des instructions générales sur la conception des paramè
   
  Cela communique mieux la relation entre les méthodes.  
   
-### <a name="choosing-between-enum-and-boolean-parameters"></a>Choix entre les paramètres enum et Boolean  
+### <a name="choose-between-enum-and-boolean-parameters"></a>Choisir entre les paramètres enum et Boolean  
  **✓ DO** utiliser les énumérations si un membre possède deux ou plusieurs paramètres booléens.  
   
  **X DO NOT** utiliser des valeurs booléennes, sauf si vous êtes absolument sûr, il y aura jamais besoin de plus de deux valeurs.  
@@ -49,7 +49,7 @@ Cette section fournit des instructions générales sur la conception des paramè
   
  **✓ CONSIDER** à l’aide de valeurs booléennes pour les paramètres du constructeur qui sont des valeurs de deux États réellement et sont uniquement utilisées pour initialiser les propriétés booléennes.  
   
-### <a name="validating-arguments"></a>Validation des arguments  
+### <a name="validate-arguments"></a>Valider les arguments  
  **✓ DO** valider les arguments passés aux membres publics, protégés ou implémentées explicitement. Lève <xref:System.ArgumentException?displayProperty=nameWithType>, ou l’une de ses sous-classes, en cas d’échec de la validation.  
   
  Notez que la validation réelle ne doit pas nécessairement se produire dans le membre public ou protégé lui-même. Cela peut se produire à un niveau inférieur dans une routine privée ou interne. Le point principal est que la surface d’exposition entière exposée aux utilisateurs finaux vérifie les arguments.  
@@ -66,10 +66,10 @@ Cette section fournit des instructions générales sur la conception des paramè
   
  Si le membre est sensible à la sécurité, il est recommandé d’effectuer une copie, puis de valider et de traiter l’argument.  
   
-### <a name="parameter-passing"></a>Passage de paramètres  
+### <a name="pass-parameters"></a>Transmettre des paramètres  
  Du point de vue d’un concepteur d’infrastructure, il existe trois groupes principaux de paramètres : les paramètres par valeur, les paramètres de `ref` et les paramètres de `out`.  
   
- Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires C#, tels que, C++VB.net et, transmettent par défaut des paramètres par valeur.  
+ Quand un argument est passé via un paramètre par valeur, le membre reçoit une copie de l’argument réel passé. Si l’argument est un type valeur, une copie de l’argument est placée sur la pile. Si l’argument est un type référence, une copie de la référence est placée sur la pile. La plupart des langages CLR populaires C#, tels que, C++Visual Basic et, par défaut, transmettent des paramètres par valeur.  
   
  Quand un argument est passé via un paramètre `ref`, le membre reçoit une référence à l’argument réel passé. Si l’argument est un type valeur, une référence à l’argument est placée sur la pile. Si l’argument est un type référence, une référence à la référence est placée sur la pile. `Ref` paramètres peuvent être utilisés pour permettre au membre de modifier les arguments passés par l’appelant.  
   

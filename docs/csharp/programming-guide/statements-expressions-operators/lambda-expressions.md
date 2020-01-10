@@ -1,6 +1,5 @@
 ---
 title: Expressions lambda - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/29/2019
 helpviewer_keywords:
 - lambda expressions [C#]
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - expression lambda [C#]
 - expressions [C#], lambda
 ms.assetid: 57e3ba27-9a82-4067-aca7-5ca446b7bf93
-ms.openlocfilehash: d401c832dd3b29de609e9eaab69ea3334d6591b9
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 668bb08526a6eeb1cf640c9ecdac3b8f2c850a99
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73417682"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711946"
 ---
 # <a name="lambda-expressions-c-programming-guide"></a>Expressions lambda (Guide de programmation C#)
 
@@ -90,7 +89,7 @@ Les instructions lambda ne peuvent pas être utilisées pour créer des arboresc
   
 ## <a name="async-lambdas"></a>Lambdas asynchrones
 
-Vous pouvez facilement créer des expressions et des instructions lambda qui incorporent un traitement asynchrone en utilisant les mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md). Par exemple, l'exemple Windows Forms suivant contient un gestionnaire d'événements qui appelle et attend une méthode async `ExampleMethodAsync`.
+Vous pouvez facilement créer des expressions et des instructions lambda qui incorporent le traitement asynchrone à l'aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) . Par exemple, l'exemple Windows Forms suivant contient un gestionnaire d'événements qui appelle et attend une méthode async `ExampleMethodAsync`.
 
 ```csharp
 public partial class Form1 : Form
@@ -156,7 +155,7 @@ Pour plus d’informations sur les tuples C#, voir [Types tuples C#](../../tuple
 
 ## <a name="lambdas-with-the-standard-query-operators"></a>Lambdas avec les opérateurs de requête standard
 
-LINQ to Objects, parmi d’autres implémentations, a un paramètre d’entrée dont le type fait partie de la famille <xref:System.Func%601> de délégués génériques. Ces délégués utilisent des paramètres de type pour définir le nombre et le type des paramètres d’entrée, ainsi que le type de retour du délégué. Les délégués `Func` sont très utiles pour l'encapsulation des expressions définies par l'utilisateur appliquées à chaque élément dans un jeu de données sources. Prenons par exemple le type délégué <xref:System.Func%602> :  
+LINQ to Objects, parmi d’autres implémentations, a un paramètre d’entrée dont le type fait partie de la famille <xref:System.Func%601> de délégués génériques. Ces délégués utilisent des paramètres de type pour définir le nombre et le type des paramètres d’entrée, ainsi que le type de retour du délégué. Les délégués`Func` sont très utiles pour l'encapsulation des expressions définies par l'utilisateur appliquées à chaque élément dans un jeu de données sources. Prenons par exemple le type délégué <xref:System.Func%602> :  
 
 ```csharp
 public delegate TResult Func<in T, out TResult>(T arg)
@@ -230,7 +229,7 @@ Pour plus d’informations, consultez la section [Expressions de fonction anonym
 
 - [Guide de programmation C#](../index.md)
 - [LINQ (Language Integrated Query)](../concepts/linq/index.md)
-- [Arborescences d’expression](../concepts/expression-trees/index.md)
+- [Arborescences d’expressions](../concepts/expression-trees/index.md)
 - [Comparaison entre les fonctions locales et les expressions lambda](../../local-functions-vs-lambdas.md)
 - [Expressions lambda implicitement typées](../../implicitly-typed-lambda-expressions.md)
 - [Exemples Visual Studio 2008 C# (voir les fichiers d’exemples de requêtes LINQ et le programme XQuery)](https://code.msdn.microsoft.com/Visual-Studio-2008-C-d295cdba)

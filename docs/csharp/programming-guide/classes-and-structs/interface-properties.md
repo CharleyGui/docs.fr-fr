@@ -1,17 +1,16 @@
 ---
 title: Propriétés d'interface - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: fad674c6d56011afcccbe9ce2a88e7af411fe0a2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: ff892a35f4be6600c00bc0c72c2f789ef6eb4408
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72579151"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705533"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Propriétés d'interface (Guide de programmation C#)
 
@@ -25,7 +24,7 @@ L’accesseur d’une propriété d’interface n’a pas de corps. Par conséqu
 
 Dans cet exemple, l’interface `IEmployee` a une propriété en lecture-écriture, `Name`, et une propriété en lecture seule, `Counter`. La classe `Employee` implémente l’interface `IEmployee` et utilise ces deux propriétés. Le programme lit le nom d’un nouvel employé et le nombre actuel d’employés et affiche le nom de l’employé et le nombre d’employés calculé.
 
-Vous pouvez utiliser le nom qualifié complet de la propriété, qui fait référence à l’interface dans laquelle le membre est déclaré. Exemple :
+Vous pouvez utiliser le nom qualifié complet de la propriété, qui fait référence à l’interface dans laquelle le membre est déclaré. Par exemple :
 
 [!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
 

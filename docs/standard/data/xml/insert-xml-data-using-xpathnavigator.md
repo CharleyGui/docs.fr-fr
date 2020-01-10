@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2ed8c28b-b88d-4be7-9c87-92df01f0821f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4ff9232272124c8706e64162d096eced8640c806
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 68c003467d837fe79d5e275968e47fa5dc3490cc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966953"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710724"
 ---
 # <a name="insert-xml-data-using-xpathnavigator"></a>Insertion de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant d'insérer des nœuds frères, enfants et d'attribut dans un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  

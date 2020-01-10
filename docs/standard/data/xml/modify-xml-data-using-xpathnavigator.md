@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 03a7c5a1-b296-4af4-b209-043c958dc0a5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ba6393d19909d8be762ee38b4c925987528d6304
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 906de1ded4961b7c67d48a010555d139df97cded
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967352"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710633"
 ---
 # <a name="modify-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit un ensemble de méthodes permettant de modifier les nœuds et les valeurs d'un document XML. Pour pouvoir utiliser ces méthodes, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être `true`.  

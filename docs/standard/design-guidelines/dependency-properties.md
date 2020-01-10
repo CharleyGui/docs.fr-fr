@@ -3,18 +3,17 @@ title: Propriétés de dépendance
 ms.date: 10/22/2008
 ms.technology: dotnet-standard
 ms.assetid: 212cfb1e-cec4-4047-94a6-47209b387f6f
-author: KrzysztofCwalina
-ms.openlocfilehash: 52d7a69a3f52c67ebff3f3db1daf0790e995913a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: bd12d05dbba133503778e6df3cd0e6c3e5689d5b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778766"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709489"
 ---
 # <a name="dependency-properties"></a>Propriétés de dépendance
-Une propriété de dépendance (DP) est une propriété normale qui stocke sa valeur dans une banque de propriétés au lieu de stockage dans une variable de type (champ), par exemple.  
+Une propriété de dépendance (DP) est une propriété normale qui stocke sa valeur dans un magasin de propriétés au lieu de la stocker dans une variable de type (champ), par exemple.  
   
- Une propriété de dépendance attachée est un type de propriété de dépendance modélisée comme des méthodes Get et Set statiques qui représente « propriétés », description des relations entre les objets et leurs conteneurs (par exemple, la position d’un `Button` de l’objet sur un `Panel` conteneur).  
+ Une propriété de dépendance attachée est un genre de propriété de dépendance modélisée en tant que méthodes d’extraction et de définition statiques représentant des « propriétés » qui décrivent les relations entre les objets et leurs conteneurs (par exemple, la position d’un objet `Button` sur un `Panel` conteneur).  
   
  **✓ DO** fournissent les propriétés de dépendance, si vous avez besoin des propriétés pour prendre en charge des fonctionnalités WPF telles que les styles, les déclencheurs, liaison de données, des animations, ressources dynamiques et d’héritage.  
   
@@ -29,18 +28,18 @@ Une propriété de dépendance (DP) est une propriété normale qui stocke sa va
   
  **X DO NOT** définir explicitement les valeurs par défaut des propriétés de dépendance dans le code ; les définir dans les métadonnées.  
   
- Si vous définissez explicitement une valeur par défaut de la propriété, vous pouvez empêcher cette propriété d’être définie par certains moyens implicites, par exemple, un style.  
+ Si vous définissez une propriété par défaut explicitement, vous pouvez empêcher la définition de cette propriété par certains moyens implicites, tels qu’un style.  
   
  **X DO NOT** placez le code dans les accesseurs de propriété autre que le code standard pour accéder au champ statique.  
   
- Que code ne sont pas s’exécuter si la propriété est définie par des moyens implicites, par exemple, un style, étant donné que les styles d’utilise directement le champ statique.  
+ Ce code ne s’exécute pas si la propriété est définie par des moyens implicites, tels qu’un style, car le style utilise directement le champ statique.  
   
- **X DO NOT** utilise les propriétés de dépendance pour stocker des données sécurisées. Propriétés de dépendance même privés sont accessibles publiquement.  
+ **X DO NOT** utilise les propriétés de dépendance pour stocker des données sécurisées. Même les propriétés de dépendance privées sont accessibles publiquement.  
   
-## <a name="attached-dependency-property-design"></a>Conception des propriétés de dépendance attachée  
- Les propriétés de dépendance décrites dans la section précédente représentent les propriétés intrinsèques du type déclarant ; par exemple, le `Text` propriété est une propriété de `TextButton`, qui le déclare. Un type spécial de propriété de dépendance est la propriété de dépendance attachée.  
+## <a name="attached-dependency-property-design"></a>Conception de propriété de dépendance attachée  
+ Les propriétés de dépendance décrites dans la section précédente représentent des propriétés intrinsèques du type déclarant. par exemple, la propriété `Text` est une propriété de `TextButton`, qui la déclare. La propriété de dépendance attachée est un type spécial de propriété de dépendance.  
   
- Un exemple classique d’une propriété jointe est le <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> propriété. La propriété représente la position de colonne (pas de la grille) du bouton, mais cela s’applique uniquement si le bouton est contenu dans une grille, et donc il est « attaché » aux boutons par grilles.  
+ La propriété <xref:System.Windows.Controls.Grid.Column%2A?displayProperty=nameWithType> est un exemple classique d’une propriété jointe. La propriété représente la position de la colonne du bouton (et non de la grille), mais elle ne s’applique que si le bouton est contenu dans une grille et est donc « attaché » aux boutons par grilles.  
   
 ```xaml
 <Grid>  
@@ -54,7 +53,7 @@ Une propriété de dépendance (DP) est une propriété normale qui stocke sa va
 </Grid>  
 ```  
   
- La définition d’une propriété jointe ressemble principalement que d’une propriété de dépendance standard, à ceci près que les accesseurs sont représentés par les méthodes Get et Set statiques :  
+ La définition d’une propriété jointe ressemble principalement à celle d’une propriété de dépendance normale, sauf que les accesseurs sont représentés par des méthodes d’extraction et de définition statiques :  
   
 ```csharp
 public class Grid {  
@@ -76,26 +75,26 @@ public class Grid {
 }  
 ```  
   
-## <a name="dependency-property-validation"></a>Validation de propriété de dépendance  
- Propriétés implémentent souvent ce que l'on appelle la validation. La logique de validation s’exécute lorsqu’une tentative est effectuée pour modifier la valeur d’une propriété.  
+## <a name="dependency-property-validation"></a>Validation de la propriété de dépendance  
+ Les propriétés implémentent souvent ce que l’on appelle la validation. La logique de validation s’exécute lorsqu’une tentative est faite pour modifier la valeur d’une propriété.  
   
- Malheureusement les accesseurs de propriété de dépendance ne peut pas contenir de code de validation arbitraire. Au lieu de cela, logique de validation de propriété de dépendance doit être spécifié lors de l’inscription de propriété.  
+ Malheureusement, les accesseurs de propriété de dépendance ne peuvent pas contenir de code de validation arbitraire. Au lieu de cela, la logique de validation de la propriété de dépendance doit être spécifiée lors de l’inscription de la propriété.  
   
- **X DO NOT** placer la logique de validation de propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passez un rappel de validation à `DependencyProperty.Register` (méthode).  
+ **X DO NOT** placer la logique de validation de propriété de dépendance dans les accesseurs de la propriété. Au lieu de cela, passer un rappel de validation à `DependencyProperty.Register` méthode.  
   
 ## <a name="dependency-property-change-notifications"></a>Notifications de modification de propriété de dépendance  
- **X DO NOT** implémenter la logique de notification de modification dans les accesseurs de propriété de dépendance. Propriétés de dépendance ont une fonctionnalité de notifications de modifications intégré qui doit être utilisée en fournissant un rappel de notification de modification pour le <xref:System.Windows.PropertyMetadata>.  
+ **X DO NOT** implémenter la logique de notification de modification dans les accesseurs de propriété de dépendance. Les propriétés de dépendance possèdent une fonctionnalité de notifications de modifications intégrée qui doit être utilisée en fournissant un rappel de notification de modification au <xref:System.Windows.PropertyMetadata>.  
   
-## <a name="dependency-property-value-coercion"></a>Forçage de valeur de propriété de dépendance  
- Contrainte de propriété a lieu lorsque la valeur donnée à un accesseur Set de propriété est modifiée par la méthode setter avant que la banque de propriétés est en fait modifiée.  
+## <a name="dependency-property-value-coercion"></a>Contrainte de valeur de propriété de dépendance  
+ La contrainte de propriété a lieu lorsque la valeur donnée à un accesseur Set de propriété est modifiée par l’accesseur Set avant la modification réelle de la Banque de propriétés.  
   
  **X DO NOT** implémenter la logique de la contrainte dans les accesseurs de propriété de dépendance.  
   
- Propriétés de dépendance ont une fonctionnalité de forçage intégré, et il peut être utilisé en fournissant un rappel de forçage de type pour le `PropertyMetadata`.  
+ Les propriétés de dépendance ont une fonctionnalité de contrainte intégrée, et elles peuvent être utilisées en fournissant un rappel de contrainte au `PropertyMetadata`.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

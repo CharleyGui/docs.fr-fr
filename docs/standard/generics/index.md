@@ -26,14 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0eb88b8f46d425ae840c2bf8ed8eb479971d1cbc
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f04b6fcd1641a53efe75d38ab7122967bff6a58d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974667"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708369"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -86,7 +84,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
   
 - Sécurité de type. Grâce aux génériques, le compilateur se charge de la cohérence des types à votre place. Il est inutile d'écrire du code pour tester le type de données nécessaire, car il est appliqué au moment de la compilation. Ainsi, le besoin d'un cast de type et le risque d'erreurs au moment de l'exécution sont réduits.  
   
-- Moins de code est nécessaire et il est plus facile de le réutiliser. Il n'est pas nécessaire d'hériter d'un type de base et de substituer des membres. Par exemple, <xref:System.Collections.Generic.LinkedList%601> peut être utilisé immédiatement. Vous pouvez créer une liste liée de chaînes à l'aide de la déclaration de variable suivante :  
+- Moins de code est nécessaire et il est plus facile de le réutiliser. Il n'est pas nécessaire d'hériter d'un type de base et de substituer des membres. Par exemple, <xref:System.Collections.Generic.LinkedList%601> peut être utilisé immédiatement. Vous pouvez créer une liste liée de chaînes à l'aide de la déclaration de variable suivante :  
   
      [!code-cpp[HowToGeneric#24](../../../samples/snippets/cpp/VS_Snippets_CLR/HowToGeneric/cpp/source2.cpp#24)]
      [!code-csharp[HowToGeneric#24](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/source2.cs#24)]
@@ -98,7 +96,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
   
 - Les génériques simplifient le code généré dynamiquement. Quand vous utilisez des génériques avec du code généré dynamiquement, vous n'avez pas besoin de générer le type. Cela permet d'augmenter le nombre de scénarios dans lesquels vous pouvez utiliser des méthodes dynamiques légères au lieu de générer des assemblys entiers. Pour plus d'informations, consultez [Guide pratique pour définir et exécuter des méthodes dynamiques](../../../docs/framework/reflection-and-codedom/how-to-define-and-execute-dynamic-methods.md) et <xref:System.Reflection.Emit.DynamicMethod>.  
   
- Voici quelques-unes des limitations des génériques :  
+ Voici quelques-unes des limitations des génériques :  
   
 - Les types génériques peuvent être dérivés de la plupart des classes de base, telles que <xref:System.MarshalByRefObject> (et les contraintes peuvent être utilisées pour exiger que les paramètres de type générique dérivent de classes de base comme <xref:System.MarshalByRefObject>). Cependant, le .NET Framework ne prend pas en charge les types génériques liés au contexte. Un type générique peut être dérivé de <xref:System.ContextBoundObject>. Toutefois, si vous tentez de créer une instance de ce type, une exception <xref:System.TypeLoadException>sera levée.  
   

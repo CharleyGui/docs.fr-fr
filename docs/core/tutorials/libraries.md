@@ -3,15 +3,14 @@ title: Développement de bibliothèques avec des outils multiplateformes
 description: Découvrez comment créer des bibliothèques .NET Core à l’aide des outils de l’interface de ligne de commande .NET Core. Vous allez créer une bibliothèque prenant en charge plusieurs frameworks.
 author: cartermp
 ms.date: 05/01/2017
-ms.custom: seodec18
-ms.openlocfilehash: dcd454f0bd1739597fc27dccf2849fc259767292
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 4132113037e6c5ec555d2d1859b8217a1a53d07f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420461"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714029"
 ---
-# <a name="developing-libraries-with-cross-platform-tools"></a>Développement de bibliothèques avec des outils multiplateformes
+# <a name="develop-libraries-with-cross-platform-tools"></a>Développer des bibliothèques avec des outils multiplateformes
 
 Cet article explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](library-with-visual-studio.md).
 
@@ -21,7 +20,7 @@ Cet article explique comment écrire des bibliothèques pour .NET à l’aide de
 
 Pour accéder aux sections de ce document concernant les versions du .NET Framework, vous devez installer le [.NET Framework](https://dotnet.microsoft.com) sur un ordinateur Windows.
 
-Par ailleurs, si vous voulez prendre en charge des versions cibles de .NET Framework antérieures, installez les Targeting Packs/Developer Packs des versions correspondantes sur la page [Archives de téléchargement .NET](https://dotnet.microsoft.com/download/archives). Reportez-vous au tableau suivant :
+En outre, si vous souhaitez prendre en charge des cibles de .NET Framework plus anciennes, vous devez installer des packs de ciblage ou des packs de développement à partir de la [page des Archives de téléchargement .net](https://dotnet.microsoft.com/download/archives). Reportez-vous au tableau suivant :
 
 | Version du .NET Framework | À télécharger                                       |
 | ---------------------- | ------------------------------------------------------ |
@@ -35,19 +34,19 @@ Par ailleurs, si vous voulez prendre en charge des versions cibles de .NET Frame
 
 ## <a name="how-to-target-the-net-standard"></a>Comment cibler .NET Standard
 
-Si vous ne connaissez pas très bien .NET Standard, référez-vous à la page [.NET Standard](../../standard/net-standard.md) pour en savoir plus.
+Si vous n’êtes pas familiarisé avec .NET Standard, reportez-vous à [.NET standard](../../standard/net-standard.md) pour en savoir plus.
 
-Voici un tableau qui associe les versions .NET Standard à diverses implémentations :
+Dans cet article, il existe un tableau qui mappe .NET Standard versions à différentes implémentations :
 
 [!INCLUDE [net-standard-table](../../../includes/net-standard-table.md)]
 
 Voici ce que signifie ce tableau dans le processus de création d’une bibliothèque :
 
-La version de .NET Standard que vous choisissez est un compromis entre l’accès aux API les plus récentes et la possibilité de cibler plus d’implémentations .NET et de versions .NET Standard. Vous contrôlez la plage de versions et de plateformes pouvant être ciblées en sélectionnant une version de `netstandardX.X` (où `X.X` est un numéro de version), puis en l’ajoutant à votre fichier projet (`.csproj` ou `.fsproj`).
+La version de .NET Standard que vous choisissez est un compromis entre l’accès aux API les plus récentes et la possibilité de cibler davantage d’implémentations .NET et de versions de .NET Standard. Vous contrôlez la plage de versions et de plateformes ciblables en choisissant une version de `netstandardX.X` (où `X.X` est un numéro de version) et en l’ajoutant à votre fichier projet (`.csproj` ou `.fsproj`).
 
-Vous disposez de trois options principales quand vous ciblez .NET Standard, en fonction de vos besoins.
+Vous avez trois options principales pour cibler .NET Standard, en fonction de vos besoins.
 
-1. Vous pouvez utiliser la version par défaut de .NET Standard fournie par les modèles (`netstandard1.4`). Celle-ci vous donne accès à la plupart des API sur .NET Standard tout en étant compatible avec UWP, le .NET Framework  4.6.1 et le prochain .NET Standard 2.0.
+1. Vous pouvez utiliser la version par défaut de .NET Standard fournie par les modèles, `netstandard1.4`, qui vous donne accès à la plupart des API sur .NET Standard tout en étant toujours compatibles avec UWP, .NET Framework 4.6.1 et .NET Standard 2,0.
 
     ```xml
     <Project Sdk="Microsoft.NET.Sdk">
@@ -59,18 +58,18 @@ Vous disposez de trois options principales quand vous ciblez .NET Standard, en f
 
 2. Vous pouvez utiliser une version inférieure ou supérieure de .NET Standard en modifiant la valeur dans le nœud `TargetFramework` de votre fichier projet.
 
-    Les versions .NET standard sont à compatibilité descendante. Cela signifie que les bibliothèques `netstandard1.0` s’exécutent sur les plateformes `netstandard1.1` et versions ultérieures. Toutefois, il n’existe pas de compatibilité ascendante : les plateformes .NET Standard antérieures ne peuvent pas référencer les plateformes ultérieures. Cela signifie que les bibliothèques `netstandard1.0` ne peuvent pas cibler des bibliothèques de référence ciblant `netstandard1.1` ou une version ultérieure. Sélectionnez la version Standard qui offre une bonne combinaison entre les API et la prise en charge de plateformes pour vos besoins. Nous vous recommandons d’utiliser `netstandard1.4` pour l’instant.
+    Les versions .NET standard sont à compatibilité descendante. Cela signifie que les bibliothèques `netstandard1.0` s’exécutent sur les plateformes `netstandard1.1` et versions ultérieures. Toutefois, il n’existe pas de compatibilité ascendante. Les plateformes de .NET Standard inférieures ne peuvent pas faire référence à des plateformes supérieures. Cela signifie que les bibliothèques `netstandard1.0` ne peuvent pas cibler des bibliothèques de référence ciblant `netstandard1.1` ou une version ultérieure. Sélectionnez la version Standard qui offre une bonne combinaison entre les API et la prise en charge de plateformes pour vos besoins. Nous vous recommandons d’utiliser `netstandard1.4` pour l’instant.
 
-3. Si vous voulez cibler les versions .NET Framework 4.0 ou antérieures, ou que vous voulez utiliser une API disponible dans le .NET Framework, mais pas dans .NET Standard (par exemple, `System.Drawing`), lisez les sections suivantes et découvrez comment réaliser un multiciblage.
+3. Si vous souhaitez cibler .NET Framework versions 4,0 ou antérieures, ou si vous souhaitez utiliser une API disponible dans .NET Framework mais pas dans .NET Standard (par exemple, `System.Drawing`), lisez les sections suivantes et découvrez comment effectuer une MULTICIBLAGE.
 
-## <a name="how-to-target-the-net-framework"></a>Comment cibler le .NET Framework
+## <a name="how-to-target-net-framework"></a>Comment cibler .NET Framework
 
 > [!NOTE]
-> Les instructions suivantes supposent que le .NET Framework est installé sur votre ordinateur. Reportez-vous aux [Prérequis](#prerequisites) pour installer les dépendances.
+> Ces instructions supposent que vous avez .NET Framework installé sur votre ordinateur. Reportez-vous aux [Prérequis](#prerequisites) pour installer les dépendances.
 
-N’oubliez pas que certaines des versions du .NET Framework utilisées ici ne sont plus prises en charge. Reportez-vous au [Forum aux questions sur la politique de support de Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq/en-us) concernant les versions non prises en charge.
+N’oubliez pas que certaines des versions de .NET Framework utilisées ici ne sont plus prises en charge. Reportez-vous au [Forum aux questions sur la politique de support de Microsoft .NET Framework](https://support.microsoft.com/gp/framework_faq/en-us) concernant les versions non prises en charge.
 
-Si vous voulez atteindre le nombre maximal de développeurs et de projets, utilisez le .NET Framework 4.0 comme cible de base de référence. Pour cibler le .NET Framework, vous devez commencer par utiliser le Moniker du Framework cible approprié qui correspond à la version du .NET Framework que vous voulez prendre en charge.
+Si vous voulez atteindre le nombre maximal de développeurs et de projets, utilisez .NET Framework 4,0 comme cible de référence. Pour cibler .NET Framework, commencez par utiliser le moniker du Framework cible (TFM) approprié qui correspond à la version .NET Framework que vous souhaitez prendre en charge.
 
 | Version du .NET Framework | TFM      |
 | ---------------------- | -------- |
@@ -79,7 +78,7 @@ Si vous voulez atteindre le nombre maximal de développeurs et de projets, utili
 | .NET Framework 3.5     | `net35`  |
 | .NET Framework 4.0     | `net40`  |
 | .NET Framework 4.5     | `net45`  |
-| .NET Framework 4.5.1   | `net451` |
+| .NET Framework 4.5.1   | `net451` |
 | .NET Framework 4.5.2   | `net452` |
 | .NET Framework 4.6     | `net46`  |
 | .NET Framework 4.6.1   | `net461` |
@@ -87,7 +86,7 @@ Si vous voulez atteindre le nombre maximal de développeurs et de projets, utili
 | .NET Framework 4.7     | `net47`  |
 | .NET Framework 4.8     | `net48`  |
 
-Insérez ensuite ce Moniker du Framework cible dans la section `TargetFramework` de votre fichier projet. Par exemple, voici comment écrire une bibliothèque qui cible le .NET Framework 4.0 :
+Insérez ensuite ce Moniker du Framework cible dans la section `TargetFramework` de votre fichier projet. Par exemple, voici comment écrire une bibliothèque qui cible .NET Framework 4,0 :
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -97,7 +96,7 @@ Insérez ensuite ce Moniker du Framework cible dans la section `TargetFramework`
 </Project>
 ```
 
-Et voilà ! Bien que ce code se compilait uniquement pour .NET Framework 4, vous pouvez utiliser la bibliothèque sur des versions plus récentes du .NET Framework.
+Et voilà ! Bien que cela soit compilé uniquement pour .NET Framework 4, vous pouvez utiliser la bibliothèque sur des versions plus récentes de .NET Framework.
 
 ## <a name="how-to-multitarget"></a>Comment multicibler
 
@@ -258,7 +257,7 @@ Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous 
 
 1. Exécutez la commande `dotnet test` pour vérifier que xUnit s’exécute. Si vous avez choisi d’utiliser MSTest, le Test Runner de console MSTest doit s’exécuter à la place.
 
-Et voilà ! Vous pouvez maintenant tester votre bibliothèque sur toutes les plateformes à l’aide des outils en ligne de commande. Maintenant que vous avez tout configuré, le test de votre bibliothèque est très simple :
+Et voilà ! Vous pouvez maintenant tester votre bibliothèque sur toutes les plateformes à l’aide d’outils en ligne de commande. Maintenant que vous avez tout configuré, le test de votre bibliothèque est très simple :
 
 1. Apportez des modifications à votre bibliothèque.
 1. Exécutez les tests à partir de la ligne de commande, dans votre répertoire de test, avec la commande `dotnet test`.
@@ -269,7 +268,7 @@ Votre code est automatiquement régénéré quand vous appelez la commande `dotn
 
 Les bibliothèques plus volumineuses ont souvent besoin de placer des fonctionnalités dans différents projets.
 
-Imaginez que vous vouliez créer une bibliothèque pouvant être utilisée en langage C# et F#. Cela signifierait que les consommateurs de votre bibliothèque les utilisent dans des formes qui sont naturelles en C# ou F#. Par exemple, en C#, vous pouvez utiliser la bibliothèque de la façon suivante :
+Imaginez que vous vouliez créer une bibliothèque pouvant être utilisée dans idiomatique C# et F#. Cela signifierait que les consommateurs de votre bibliothèque le consomment de manière naturelle C# à F#ou. Par exemple, en C#, vous pouvez utiliser la bibliothèque de la façon suivante :
 
 ```csharp
 using AwesomeLibrary.CSharp;
@@ -295,7 +294,7 @@ let doWork data = async {
 
 Les scénarios de consommation tels que celui-ci signifient que les API auxquelles vous accédez ont une structure différente en C# et F#.  Pour réaliser ceci, il est courant de factoriser toute la logique d’une bibliothèque dans un projet principal et d’avoir des projets C# et F# définissant les couches API qui effectuent des appels à ce projet principal.  Le reste de la section utilise les noms suivants :
 
-* **AwesomeLibrary.Core** : projet principal qui contient toute la logique de la bibliothèque
+* **AwesomeLibrary. Core** : projet principal qui contient toute la logique de la bibliothèque
 * **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en C#
 * **AwesomeLibrary.CSharp** : projet avec des API publiques destinées à être consommées en F#
 
@@ -308,14 +307,14 @@ mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib
 cd ..
 mkdir AwesomeLibrary.CSharp && cd AwesomeLibrary.CSharp && dotnet new classlib
 cd ..
-mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang F#
+mkdir AwesomeLibrary.FSharp && cd AwesomeLibrary.FSharp && dotnet new classlib -lang "F#"
 cd ..
 dotnet sln add AwesomeLibrary.Core/AwesomeLibrary.Core.csproj
 dotnet sln add AwesomeLibrary.CSharp/AwesomeLibrary.CSharp.csproj
 dotnet sln add AwesomeLibrary.FSharp/AwesomeLibrary.FSharp.fsproj
 ```
 
-Cette opération ajoute les trois projets ci-dessus et un fichier solution qui les relie. Le fait de créer le fichier solution et de lier des projets vous permet de restaurer et de générer des projets à partir d’un niveau supérieur.
+Cela permet d’ajouter les trois projets ci-dessus et un fichier solution qui les lie. La création du fichier solution et la liaison de projets vous permettent de restaurer et de générer des projets à partir d’un niveau supérieur.
 
 ### <a name="project-to-project-referencing"></a>Références entre projets
 

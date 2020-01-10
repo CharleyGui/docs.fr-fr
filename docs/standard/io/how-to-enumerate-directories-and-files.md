@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : énumérer des répertoires et des fichiers'
+title: 'Comment : énumérer des répertoires et des fichiers'
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - I/O [.NET Framework], enumerating directories and files
 ms.assetid: 86b69a08-3bfa-4e5f-b4e1-3b7cb8478215
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 863335cf080dbccd76b38c7222b74637b99ae2f0
-ms.sourcegitcommit: 01ea420eaa4bf76d5fc47673294c8881379b3369
-ms.translationtype: HT
+ms.openlocfilehash: 6a26d0ef529b81976c4d2caafed34bb5f08d8d46
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/06/2019
-ms.locfileid: "55758662"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707743"
 ---
-# <a name="how-to-enumerate-directories-and-files"></a>Procédure : énumérer des répertoires et des fichiers
+# <a name="how-to-enumerate-directories-and-files"></a>Comment : énumérer des répertoires et des fichiers
 Les collections énumérables offrent de meilleures performances que les tableaux lorsque vous travaillez avec collections volumineuses de fichiers et de répertoires. Pour énumérer des répertoires et des fichiers, utilisez des méthodes qui retournent une collection énumérable de noms de répertoire ou de fichier ou leurs objets <xref:System.IO.DirectoryInfo>, <xref:System.IO.FileInfo> ou <xref:System.IO.FileSystemInfo>.  
   
 Si vous souhaitez parcourir et retourner uniquement les noms des répertoires ou des fichiers, utilisez les méthodes d’énumération de la classe <xref:System.IO.Directory>. Si vous souhaitez parcourir et retourner d’autres propriétés des répertoires ou des fichiers, utilisez les classes <xref:System.IO.DirectoryInfo> et <xref:System.IO.FileSystemInfo>.  
@@ -65,4 +63,4 @@ L’exemple suivant utilise la méthode <xref:System.IO.DirectoryInfo.EnumerateF
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Fichier et flux de données E/S](../../../docs/standard/io/index.md)
+- [E/S de fichier et de flux](../../../docs/standard/io/index.md)

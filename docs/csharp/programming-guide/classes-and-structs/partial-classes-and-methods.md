@@ -1,18 +1,17 @@
 ---
 title: Classes et méthodes partielles - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - partial methods [C#]
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 2df3492274c2abceebf1d37b87be9cc9bb455b5f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ea8d95c41df236897761ace1062ec325a069d52b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419179"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714743"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
@@ -61,7 +60,7 @@ Les éléments suivants sont fusionnés à partir de toutes les définitions de 
 
 - attributs de classe
 
-- membres
+- Membres
 
 Observez, par exemple, les déclarations suivantes :
 
@@ -111,7 +110,7 @@ Il y a plusieurs règles à respecter quand vous utilisez des définitions de cl
 
 Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../generics/constraints-on-type-parameters.md).
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 ### <a name="description"></a>Description
 
@@ -121,7 +120,7 @@ Dans l’exemple suivant, les champs et le constructeur de la classe `Coords` so
 
 [!code-csharp[csProgGuideObjects#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#17)]
 
-## <a name="example-2"></a>Exemple 2
+## <a name="example-2"></a>Exemple 2
 
 ### <a name="description"></a>Description
 

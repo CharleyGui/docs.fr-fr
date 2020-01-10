@@ -8,18 +8,17 @@ helpviewer_keywords:
 - member design guidelines, operators
 - overloaded operators
 ms.assetid: 37585bf2-4c27-4dee-849a-af70e3338cc1
-author: KrzysztofCwalina
-ms.openlocfilehash: 441dc2777cd8d221300c526b6b31a647af60ca71
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4cea3c17de40a873d977223f36b6dcef4f2c2d78
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61756856"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709138"
 ---
 # <a name="operator-overloads"></a>Surcharges d'opérateurs
-Surcharges d’opérateur autorisent les types de framework apparaisse comme si elles étaient des primitives de langage intégrées.  
+Les surcharges d’opérateur permettent d’afficher les types de Framework comme s’ils étaient des primitives de langage intégrées.  
   
- Bien qu’autorisées et utile dans certaines situations, les surcharges d’opérateur doivent être utilisés avec précaution. Il existe de nombreux cas dans l’opérateur qui surcharge ont été abusée, telles que lorsque les concepteurs de framework comment à utiliser des opérateurs pour les opérations qui doivent être des méthodes simples. Les instructions suivantes vous permettent de choisir quand et comment utiliser la surcharge d’opérateur.  
+ Bien qu’elles soient autorisées et utiles dans certains cas, les surcharges d’opérateur doivent être utilisées avec prudence. Il existe de nombreux cas dans lesquels la surcharge d’opérateur a été abusée, par exemple quand les concepteurs de Framework ont commencé à utiliser des opérateurs pour les opérations qui doivent être des méthodes simples. Les instructions suivantes doivent vous aider à déterminer quand et comment utiliser la surcharge d’opérateur.  
   
  **X AVOID** définissant les surcharges d’opérateur, sauf dans les types qui vous devraient vous sentir comme des types primitifs (intégrés).  
   
@@ -31,21 +30,21 @@ Surcharges d’opérateur autorisent les types de framework apparaisse comme si 
   
  **X DO NOT** être jolies lors de la définition de surcharges d’opérateur.  
   
- Surcharge d’opérateur est utile dans les cas dans lesquels il est immédiatement évident quel sera le résultat de l’opération. Par exemple, il est judicieux de pouvoir soustraire une <xref:System.DateTime> à partir d’un autre `DateTime` et obtenir un <xref:System.TimeSpan>. Toutefois, il n’est pas appropriée à utiliser l’opérateur d’union logique pour des requêtes union de deux bases de données ou à utiliser l’opérateur de décalage pour écrire dans un flux.  
+ La surcharge d’opérateur est utile dans les cas où il est immédiatement évident de savoir ce que sera le résultat de l’opération. Par exemple, il est logique de pouvoir soustraire un <xref:System.DateTime> d’un autre `DateTime` et d’obtenir un <xref:System.TimeSpan>. Toutefois, il n’est pas approprié d’utiliser l’opérateur d’Union logique pour unir deux requêtes de base de données, ou pour utiliser l’opérateur Shift pour écrire dans un flux.  
   
  **X DO NOT** fournissent des surcharges, sauf si au moins un des opérandes est du type définissant la surcharge d’opérateur.  
   
  **✓ DO** surchargez les opérateurs de manière symétrique.  
   
- Par exemple, si vous surchargez la `operator==`, vous devez également surcharger le `operator!=`. De même, si vous surchargez la `operator<`, vous devez également surcharger le `operator>`, et ainsi de suite.  
+ Par exemple, si vous surchargez le `operator==`, vous devez également surcharger l' `operator!=`. De même, si vous surchargez le `operator<`, vous devez également surcharger l' `operator>`, et ainsi de suite.  
   
  **✓ CONSIDER** fournissant des méthodes avec des noms conviviaux qui correspondent à chaque opérateur surchargé.  
   
- De nombreux langages ne gèrent pas la surcharge d’opérateur. Pour cette raison, il est recommandé que les types qui surchargent des opérateurs incluent une méthode secondaire avec un nom spécifique à un domaine approprié qui fournit des fonctionnalités équivalentes.  
+ De nombreux langages ne prennent pas en charge la surcharge d’opérateur. Pour cette raison, il est recommandé que les types qui surchargent les opérateurs incluent une méthode secondaire avec un nom spécifique au domaine approprié qui fournit des fonctionnalités équivalentes.  
   
- Le tableau suivant contient une liste d’opérateurs et les noms de méthode convivial correspondants.  
+ Le tableau suivant contient une liste d’opérateurs et les noms de méthode conviviaux correspondants.  
   
-|Symbole d’opérateur c#|Nom des métadonnées|Nom convivial|  
+|C#Symbole d’opérateur|Nom des métadonnées|Nom convivial|  
 |-------------------------|-------------------|-------------------|  
 |`N/A`|`op_Implicit`|`To<TypeName>/From<TypeName>`|  
 |`N/A`|`op_Explicit`|`To<TypeName>/From<TypeName>`|  
@@ -86,31 +85,31 @@ Surcharges d’opérateur autorisent les types de framework apparaisse comme si 
 |`+ (unary)`|`op_UnaryPlus`|`Plus`|  
 |`~`|`op_OnesComplement`|`OnesComplement`|  
   
-### <a name="overloading-operator-"></a>Surcharge d’opérateur ==  
- La surcharge `operator ==` est beaucoup plus compliqué. La sémantique de l’opérateur doivent être compatibles avec plusieurs autres membres, tels que <xref:System.Object.Equals%2A?displayProperty=nameWithType>.  
+### <a name="overloading-operator-"></a>Surcharge de l’opérateur = =  
+ La surcharge de `operator ==` est très compliquée. La sémantique de l’opérateur doit être compatible avec plusieurs autres membres, tels que <xref:System.Object.Equals%2A?displayProperty=nameWithType>.  
   
-### <a name="conversion-operators"></a>Conversion, opérateurs  
- Opérateurs de conversion sont les opérateurs unaires qui permettent la conversion d’un type vers un autre. Les opérateurs doivent être définis en tant que membres statiques sur l’opérande ou le type de retour. Il existe deux types d’opérateurs de conversion : implicites et explicites.  
+### <a name="conversion-operators"></a>Opérateurs de conversion  
+ Les opérateurs de conversion sont des opérateurs unaires qui autorisent la conversion d’un type en un autre. Les opérateurs doivent être définis en tant que membres statiques sur l’opérande ou le type de retour. Il existe deux types d’opérateurs de conversion : implicites et explicites.  
   
  **X DO NOT** fournissent un opérateur de conversion si cette conversion n’est pas clairement attendue par les utilisateurs finaux.  
   
  **X DO NOT** définir des opérateurs de conversion en dehors du domaine d’un type.  
   
- Par exemple, <xref:System.Int32>, <xref:System.Double>, et <xref:System.Decimal> sont tous les types numériques, tandis que <xref:System.DateTime> n’est pas. Par conséquent, il ne doit y avoir aucun opérateur de conversion pour convertir un `Double(long)` à un `DateTime`. Un constructeur est recommandé dans ce cas.  
+ Par exemple, <xref:System.Int32>, <xref:System.Double>et <xref:System.Decimal> sont tous des types numériques, tandis que <xref:System.DateTime> n’est pas. Par conséquent, il ne doit pas y avoir d’opérateur de conversion pour convertir un `Double(long)` en `DateTime`. Un constructeur est préféré dans ce cas.  
   
  **X DO NOT** fournissent un opérateur de conversion implicite si la conversion est potentiellement avec perte de données.  
   
- Par exemple, il ne doit pas y avoir une conversion implicite de `Double` à `Int32` car `Double` a une plage plus large que `Int32`. Un opérateur de conversion explicite peut être fourni même si la conversion est potentiellement avec perte de données.  
+ Par exemple, il ne doit pas y avoir de conversion implicite de `Double` en `Int32`, car `Double` a une plage plus large que `Int32`. Un opérateur de conversion explicite peut être fourni même si la conversion est potentiellement perdue.  
   
  **X DO NOT** lever des exceptions de casts implicites.  
   
- Il est très difficile pour les utilisateurs finaux à comprendre ce qui se passe, car ils ne peuvent pas être prenant en charge qu’une conversion a lieu.  
+ Il est très difficile pour les utilisateurs finaux de comprendre ce qui se passe, car ils n’ont peut-être pas conscience qu’une conversion a lieu.  
   
  **✓ DO** lever <xref:System.InvalidCastException?displayProperty=nameWithType> si un appel à un opérateur de cast entraîne une conversion avec perte de données et le contrat de l’opérateur n’autorise pas les conversions avec perte de données.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

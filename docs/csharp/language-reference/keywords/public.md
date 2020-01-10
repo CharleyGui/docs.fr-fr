@@ -1,6 +1,5 @@
 ---
 title: public, mot clé - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - public
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - public keyword [C#]
 ms.assetid: 0ae45d16-a551-4b74-9845-57208de1328e
-ms.openlocfilehash: dfb6e341ea0740225d7600f07af2813d39141b45
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 19906d7fd0f7d41ef9e4cdaf951c77825e0bbead
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422556"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713168"
 ---
 # <a name="public-c-reference"></a>public (référence C#)
 
@@ -44,7 +43,7 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md)
 - [Mots clés C#](index.md)

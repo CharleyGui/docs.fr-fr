@@ -1,18 +1,17 @@
 ---
 title: Comment exécuter le code de nettoyage à l' C# aide de finally-Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - try/finally blocks [C#]
 - exceptions [C#], try/finally block
 - exception handling [C#], try/finally block
 ms.assetid: 1b1e5aef-3f32-4a88-9d39-b5fffb33bdaf
-ms.openlocfilehash: 00cc7e40220397f4154de5be1e78a894e37374e8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: d1ba761e64053d656ad4cd004133fc455a57c6f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346261"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705273"
 ---
 # <a name="how-to-execute-cleanup-code-using-finally-c-programming-guide"></a>Comment exécuter le code de nettoyage à l'C# aide de finally (Guide de programmation)
 L’objectif d’une instruction `finally` est de vérifier que le nettoyage nécessaire des objets, généralement ceux contenant des ressources externes, se produit immédiatement, même si une exception est levée. Un exemple de nettoyage de ce type est l’appel à <xref:System.IO.Stream.Close%2A> sur un <xref:System.IO.FileStream> immédiatement après son utilisation au lieu d’attendre que l’objet soit récupéré par garbage collection par le Common Language Runtime, comme suit :  

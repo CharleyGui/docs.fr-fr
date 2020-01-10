@@ -1,6 +1,5 @@
 ---
 title: Guide pratique pour utiliser l’appel de code non managé pour C# lire un fichier WAV-Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - platform invoke, sound files
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - wav files
 - .wav files
 ms.assetid: f7f62f53-e026-4c40-b221-3a26adb0c2c5
-ms.openlocfilehash: 082bd4b51e06332b0fecc633cc0501cafa8e7ff8
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 3ea90f0739ad45c31e4f25836c9de8e708dff2cc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635286"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75700820"
 ---
 # <a name="how-to-use-platform-invoke-to-play-a-wav-file-c-programming-guide"></a>Comment utiliser l’appel de code non managé pour lire unC# fichier WAV (Guide de programmation)
 

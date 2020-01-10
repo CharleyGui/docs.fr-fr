@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9404d758-679f-4ffb-995d-3d07d817659e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2b0536607faa629e6113db0012056622d1adb541
-ms.sourcegitcommit: 58fc0e6564a37fa1b9b1b140a637e864c4cf696e
-ms.translationtype: HT
+ms.openlocfilehash: 95e71e1fdd0ded145025316a5d6597b27a6cc970
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/08/2019
-ms.locfileid: "57674599"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710646"
 ---
 # <a name="migrating-from-the-xsltransform-class"></a>Migration depuis la classe XslTransform
 
@@ -28,7 +26,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> comporte de nombreuses amé
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> inclut aussi d'autres optimisations qui la rendent beaucoup plus rapide que la classe <xref:System.Xml.Xsl.XslTransform>.
 
 > [!NOTE]
-> Bien que les performances globales de la classe <xref:System.Xml.Xsl.XslCompiledTransform> soient meilleures que celles de la classe <xref:System.Xml.Xsl.XslTransform>, la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslCompiledTransform> peut s'exécuter plus lentement que la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslTransform> la première fois qu'elle est appelée pour une transformation. C'est parce que le fichier XSLT doit être compilé avant d'être chargé. Pour plus d’informations, consultez le billet de blog suivant : [XslCompiledTransform plus lent que XslTransform ?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/)
+> Bien que les performances globales de la classe <xref:System.Xml.Xsl.XslCompiledTransform> soient meilleures que celles de la classe <xref:System.Xml.Xsl.XslTransform>, la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslCompiledTransform> peut s'exécuter plus lentement que la méthode <xref:System.Xml.Xsl.XslTransform.Load%2A> de la classe <xref:System.Xml.Xsl.XslTransform> la première fois qu'elle est appelée pour une transformation. C'est parce que le fichier XSLT doit être compilé avant d'être chargé. Pour plus d'informations, consultez le billet de blog suivant : [XslCompiledTransform plus lent que XslTransform ?](https://blogs.msdn.microsoft.com/antosha/2006/07/16/xslcompiledtransform-slower-than-xsltransform/).
 
 ## <a name="security"></a>Sécurité
 
@@ -121,11 +119,11 @@ La prise en charge de fonctions MSXML supplémentaires a été ajoutée à la cl
 
 - msxsl:node-set: <xref:System.Xml.Xsl.XslTransform> avait besoin que l'argument de la fonction [node-set Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256197(v=vs.100)) soit un fragment de l'arborescence de résultats. La classe <xref:System.Xml.Xsl.XslCompiledTransform> n’impose pas cette exigence.
 
-- msxsl:version: cette fonction est prise en charge dans <xref:System.Xml.Xsl.XslCompiledTransform>.
+- msxsl:version : cette fonction est prise en charge dans <xref:System.Xml.Xsl.XslCompiledTransform>.
 
 - Fonctions d’extension XPath : les fonctions [ms:string-compare Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256114(v=vs.100)), [ms:utc Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256474(v=vs.100)), [ms:namespace-uri Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256231(v=vs.100)), [ms:local-name Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256055(v=vs.100)), [ms:number Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256155(v=vs.100)), [ms:format-date Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256099(v=vs.100)) et [ms:format-time Function](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/ms256467(v=vs.100)) sont maintenant prises en charge.
 
-- Fonctions d’extension XPath liées au schéma : ces fonctions ne sont pas prises en charge en mode natif par <xref:System.Xml.Xsl.XslCompiledTransform>. Toutefois, elles peuvent être implémentées en tant que fonctions d’extension.
+- Fonctions d’extension Xpath liées au schéma : ces fonctions ne sont pas prises en charge en natif par <xref:System.Xml.Xsl.XslCompiledTransform>. Toutefois, elles peuvent être implémentées en tant que fonctions d’extension.
 
 ## <a name="see-also"></a>Voir aussi
 

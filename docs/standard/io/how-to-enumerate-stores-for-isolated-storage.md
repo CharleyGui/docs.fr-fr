@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : énumérer des magasins pour le stockage isolé'
+title: 'Comment : énumérer des magasins pour le stockage isolé'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,16 +13,14 @@ helpviewer_keywords:
 - isolated storage, enumerating stores
 - data stores, enumerating
 ms.assetid: 0fcf279a-f241-48f0-8034-2e3d331f1fcb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f14259afe4ee296d930b042d9e9ef069a81e65f9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 3ba38093e9e978c89cdb2bb7a584ed9e04c1096d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54591758"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707526"
 ---
-# <a name="how-to-enumerate-stores-for-isolated-storage"></a>Procédure : énumérer des magasins pour le stockage isolé
+# <a name="how-to-enumerate-stores-for-isolated-storage"></a>Comment : énumérer des magasins pour le stockage isolé
 Vous pouvez énumérer tous les magasins isolés pour l’utilisateur actif à l’aide de la méthode statique <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A?displayProperty=nameWithType>. Cette méthode prend une valeur <xref:System.IO.IsolatedStorage.IsolatedStorageScope> et retourne un énumérateur <xref:System.IO.IsolatedStorage.IsolatedStorageFile>. Pour énumérer les magasins, vous devez avoir l’autorisation <xref:System.Security.Permissions.IsolatedStorageFilePermission> qui spécifie la valeur <xref:System.Security.Permissions.IsolatedStorageContainment.AdministerIsolatedStorageByUser>. Si vous appelez la méthode <xref:System.IO.IsolatedStorage.IsolatedStorageFile.GetEnumerator%2A> avec la valeur <xref:System.IO.IsolatedStorage.IsolatedStorageScope.User>, elle retourne un tableau d’objets <xref:System.IO.IsolatedStorage.IsolatedStorageFile> qui sont définis pour l’utilisateur actif.  
   
 ## <a name="example"></a>Exemple  

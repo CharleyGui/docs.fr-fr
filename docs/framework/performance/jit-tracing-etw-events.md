@@ -5,14 +5,12 @@ helpviewer_keywords:
 - JIT tracing events [.NET Framework]
 - ETW, JIT tracing events (CLR)
 ms.assetid: 926adde2-c123-452e-bf4f-4b977bf06ffb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4daa0fc0d689815e3a2c65df09c6c046d06a25c4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 37bfd09516589f3422ee005233e576b110ef1288
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975495"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716005"
 ---
 # <a name="jit-tracing-etw-events"></a>Événements ETW de traçage JIT
 Ces événements collectent des informations sur la réussite ou l'échec de l'incorporation (inlining) juste-à-temps (JIT) et des appels tail JIT.
@@ -22,19 +20,19 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 ### <a name="methodjitinliningfailed-event"></a>Événement MethodJitInliningFailed
  Le tableau suivant montre les mots clés et les niveaux. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Level|  
+|Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Moment du déclenchement|  
+|Event|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitInliningFailed`|186|L’incorporation JIT a échoué.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
 |MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
@@ -52,19 +50,19 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 ### <a name="methodjitinliningsucceeded-event"></a>Événement MethodJitInliningSucceeded  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Level|  
+|Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Moment du déclenchement|  
+|Event|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitInliningSucceeded`|185|L'incorporation de méthode a réussi.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
 |MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
@@ -82,19 +80,19 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 ### <a name="methodjittailcallfailed-event"></a>Événement MethodJITTailCallFailed  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Level|  
+|Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Moment du déclenchement|  
+|Event|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitTailCallFailed`|189|L'appel tail de méthode a échoué.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
 |MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  
@@ -112,19 +110,19 @@ Ces événements collectent des informations sur la réussite ou l'échec de l'i
 ### <a name="methodjittailcallsucceeded-event"></a>Événement MethodJITTailCallSucceeded  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Level|  
+|Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`JITTracingKeyword` (0x10)|Détaillé (5)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Moment du déclenchement|  
+|Event|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`MethodJitTailCallSucceeded`|188|L'appel tail de méthode a réussi.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |MethodBeingCompiledNameSpace|win:UnicodeString|Espace de noms de la méthode en cours de compilation.|  
 |MethodBeingCompiledName|win:UnicodeString|Nom de la méthode en cours de compilation.|  

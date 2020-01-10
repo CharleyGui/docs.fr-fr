@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: e25dd95f-b64c-4d8b-a3a4-379e1aa0ad55
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fb6e3677d79f3131432c3daebeee4d166b5450b2
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: b4675765849299050eb6cddeaaa497bc6cdc620a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916659"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711101"
 ---
 # <a name="compiled-xpath-expressions"></a>Expressions XPath compilées
 Un objet <xref:System.Xml.XPath.XPathExpression> représente une requête XPath compilée retournée depuis la méthode statique <xref:System.Xml.XPath.XPathExpression.Compile%2A> de la classe <xref:System.Xml.XPath.XPathExpression> ou depuis la méthode <xref:System.Xml.XPath.XPathNavigator.Compile%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  

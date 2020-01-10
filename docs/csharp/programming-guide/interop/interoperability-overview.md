@@ -1,6 +1,5 @@
 ---
 title: Vue d'ensemble de l'interopérabilité - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - COM interop
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - interoperability, about interoperability
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
-ms.openlocfilehash: 1342711ca17b0d2bf5122f4c749514e3b96c9ad7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 2c9eb2a8e6c2db8dc06ebe48ca6eb37d5cf638e7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69921818"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75700729"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Vue d'ensemble de l'interopérabilité (Guide de programmation C#)
 Cette rubrique décrit les méthodes qui permettent une interopérabilité entre le code managé C# et le code non managé.  
@@ -22,7 +21,7 @@ Cette rubrique décrit les méthodes qui permettent une interopérabilité entre
 ## <a name="platform-invoke"></a>Appel de plateforme  
  L’*appel de code non managé* est un service qui permet au code managé d’appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l’API Windows Microsoft. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins.  
   
- Pour plus d’informations, consultez [Consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md) et [Guide pratique pour utiliser l’appel de code non managé pour lire un fichier audio](./how-to-use-platform-invoke-to-play-a-wave-file.md).  
+Pour plus d’informations, consultez [consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md) et [utilisation de l’appel de code non managé pour lire un fichier WAV](./how-to-use-platform-invoke-to-play-a-wave-file.md).
   
 > [!NOTE]
 > Le [common language runtime](../../../standard/clr.md) (CLR) gère l’accès aux ressources système. Le fait d’appeler du code non managé extérieur au CLR contourne ce mécanisme, ce qui présente un risque de sécurité. Par exemple, du code non managé peut appeler directement des ressources dans du code non managé en contournant les mécanismes de sécurité CLR. Pour plus d’informations, consultez [Sécurité dans .NET](../../../standard/security/index.md).  

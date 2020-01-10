@@ -5,14 +5,12 @@ helpviewer_keywords:
 - ETW, CLR providers
 - CLR ETW providers
 ms.assetid: 0beafad4-b2c8-47f4-b342-83411d57a51f
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 93a0271c521de6e390e323d92e93a5e7bf94444f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: dbdd4ad862ae300c330dc56a82fcd65b866855b6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046734"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716183"
 ---
 # <a name="clr-etw-providers"></a>Fournisseurs ETW du CLR
 Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtime et le fournisseur d’arrêt.  
@@ -37,7 +35,7 @@ Le Common Language Runtime (CLR) a deux fournisseurs : le fournisseur de runtim
   
  Normalement, la journalisation ETW est activée avant le lancement d’un processus et désactivée une fois ce processus arrêté. Toutefois, si la journalisation ETW est activée pendant l’exécution du processus, des informations supplémentaires sur celui-ci sont demandées. Par exemple, pour la résolution des symboles, vous devez journaliser les événements de méthode pour les méthodes qui ont été chargées avant l’activation de la journalisation.  
   
- Les événements `DCStart` et `DCEnd` capturent l’état du processus au moment où la collecte de données a commencé et où elle s’est arrêtée. (L’état fait référence aux informations de haut niveau, notamment les méthodes qui étaient déjà compilées juste-à-temps (JIT) et les assemblys déjà chargés.) Ces deux événements peuvent fournir des informations sur ce qui s’est déjà produit dans le processus, par exemple quelles méthodes ont été compilées juste-à-temps (JIT).  
+ Les événements `DCStart` et `DCEnd` capturent l’état du processus au moment où la collecte de données a commencé et où elle s’est arrêtée. (L’État fait référence à des informations à un niveau élevé, y compris les méthodes qui étaient déjà compilées juste-à-temps (JIT) et les assemblys qui ont été chargés.) Ces deux événements peuvent fournir des informations sur ce qui s’est déjà produit dans le processus. par exemple, les méthodes qui ont été compilées juste-à-temps, et ainsi de suite.  
   
  Seuls les événements dont le nom contient `DC`, `DCStart`, `DCEnd` ou `DCInit` sont déclenchés sous le fournisseur d’arrêt. Par ailleurs, ces événements sont déclenchés uniquement sous ce fournisseur.  
   

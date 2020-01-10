@@ -10,18 +10,16 @@ helpviewer_keywords:
 - Collections classes
 - grouping data in collections, selecting collection class
 ms.assetid: ba049f9a-ce87-4cc4-b319-3f75c8ddac8a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 21c708f63faaedb9fbce60d7e4aef314f7a41ef8
-ms.sourcegitcommit: 462dc41a13942e467984e48f4018d1f79ae67346
-ms.translationtype: HT
+ms.openlocfilehash: fb03200c810290c970f7aa56a0e15d385aca7ca8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/19/2019
-ms.locfileid: "58185556"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711348"
 ---
 # <a name="selecting-a-collection-class"></a>Sélection d’une classe de collection
 
-Veillez à choisir votre classe de collection avec soin. L'utilisation d'un type incorrect peut limiter votre utilisation de la collection.  
+Veillez à choisir votre classe de collection avec soin. L’utilisation d’un type incorrect peut limiter votre utilisation de la collection.  
 
 > [!IMPORTANT]
 > Éviter d’utiliser les types dans l’espace de noms <xref:System.Collections>. Les versions génériques et simultanées des collections sont recommandées en raison de la sécurité supérieure des types et d'autres améliorations.  
@@ -52,9 +50,9 @@ Veillez à choisir votre classe de collection avec soin. L'utilisation d'un type
   
 - Chaque élément contiendra-t-il une valeur, une combinaison d'une clé et d'une valeur, ou une combinaison d'une clé et de plusieurs valeurs ?  
   
-  - Une valeur : utilisez une des collections basées sur l’interface <xref:System.Collections.IList> ou l’interface générique <xref:System.Collections.Generic.IList%601>.  
+  - Une valeur : utilisez une des collections basées sur l'interface <xref:System.Collections.IList> ou l'interface générique  <xref:System.Collections.Generic.IList%601>.  
   
-  - Une clé et une valeur : utilisez une des collections basées sur l’interface <xref:System.Collections.IDictionary> ou l’interface générique <xref:System.Collections.Generic.IDictionary%602>.  
+  - Une clé et une valeur : utilisez une des collections basées sur l'interface <xref:System.Collections.IDictionary> ou l'interface générique  <xref:System.Collections.Generic.IDictionary%602>.  
   
   - Une valeur avec une clé incorporée : utilisez la classe générique <xref:System.Collections.ObjectModel.KeyedCollection%602>.  
   

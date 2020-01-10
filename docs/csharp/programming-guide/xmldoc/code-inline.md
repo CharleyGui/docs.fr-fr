@@ -1,6 +1,5 @@
 ---
 title: <c> - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - c
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - c C# XML tag
 - <c> C# XML tag
 ms.assetid: aad5b16e-a29e-445e-bd0d-eea0b138d7b2
-ms.openlocfilehash: 9454ef8cc4b72d1d6bdcac26faf76eb17080328c
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 97d5949a1a1528befeffdc27a3e727ac510e8da2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523536"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75697232"
 ---
 # <a name="c-c-programming-guide"></a>\<c> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -25,7 +24,7 @@ ms.locfileid: "72523536"
 <c>text</c>  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `text`  
  Texte que vous souhaitez indiquer comme étant du code.  
   

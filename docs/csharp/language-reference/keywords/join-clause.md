@@ -1,6 +1,5 @@
 ---
 title: join, clause - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - join
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - join clause [C#]
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
-ms.openlocfilehash: 21d4d1f9878fb7df4692fdeacd23b042680c14f1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 8e52e9db241392b67818b7316767dd97bd38432a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65633625"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713402"
 ---
 # <a name="join-clause-c-reference"></a>join, clause (référence C#)
 
@@ -56,7 +55,7 @@ Pour plus d’informations, consultez [Effectuer des jointures groupées](../../
 
 ## <a name="left-outer-join"></a>Jointure externe gauche
 
-Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure externe gauche dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], utilisez la méthode `DefaultIfEmpty` en combinaison avec une jointure groupée pour spécifier un élément du côté droit par défaut à créer si un élément de gauche n’a pas de correspondance. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :
+Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure externe gauche dans LINQ, utilisez la méthode `DefaultIfEmpty` en association avec une jointure groupée pour spécifier un élément côté droit par défaut à produire si un élément côté gauche n’a pas de correspondance. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :
 
 [!code-csharp[cscsrefQueryKeywords#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#27)]
 
@@ -72,9 +71,9 @@ Vous pouvez effectuer des non-équijointures, des jointures croisées et d’aut
 
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>Jointures sur des collections d’objets et sur des tables relationnelles
 
-Dans une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], les opérations de jointure sont effectuées sur des collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], les clauses `join` explicites sont nécessaires seulement quand deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.
+Dans une expression de requête LINQ, les opérations de jointure sont effectuées sur les collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans LINQ, les clauses de `join` explicites sont uniquement requises lorsque deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.
 
-Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], consultez [Guide pratique pour mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
+Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], consultez [Procédure : mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
 
 ## <a name="composite-keys"></a>Clés composites
 
@@ -86,7 +85,7 @@ L’exemple suivant compare les résultats d’une jointure interne, d’une joi
 
 [!code-csharp[cscsrefQueryKeywords#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#23)]
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.Join%2A>. Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.GroupJoin%2A>.
 

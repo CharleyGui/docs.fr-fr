@@ -1,17 +1,16 @@
 ---
 title: Modificateurs d’accès - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, access modifiers
 - access modifiers [C#], about
 ms.assetid: 6e81ee82-224f-4a12-9baf-a0dca2656c5b
-ms.openlocfilehash: b415bf143e7da46b3ecd2c0828a3f8151878435a
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 0d8e536902317c1e5b00dadde069dd6242189088
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70971682"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705663"
 ---
 # <a name="access-modifiers-c-programming-guide"></a>Modificateurs d’accès (Guide de programmation C#)
 Tous les types et membres de type ont un niveau d’accessibilité, qui détermine s’ils peuvent être utilisés à partir d’un autre code de votre assembly ou d’autres assemblys. Utilisez les modificateurs d’accès suivants pour spécifier l’accessibilité d’un type ou d’un membre au moment où vous le déclarez :  
@@ -85,6 +84,6 @@ Tous les types et membres de type ont un niveau d’accessibilité, qui détermi
 - [protected](../../language-reference/keywords/protected.md)
 - [protected internal](../../language-reference/keywords/protected-internal.md)
 - [private protected](../../language-reference/keywords/private-protected.md)
-- [class](../../language-reference/keywords/class.md)
+- [classe](../../language-reference/keywords/class.md)
 - [struct](../../language-reference/keywords/struct.md)
 - [interface](../../language-reference/keywords/interface.md)

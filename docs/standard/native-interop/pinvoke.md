@@ -1,15 +1,13 @@
 ---
 title: Appel de code non managé (P/Invoke)
 description: Découvrez comment appeler des fonctions natives via P/Invoke dans .NET.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: cda738a173cbe61cf49f79ceef78c533a5a879d9
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: fa8b43edfba50fbc620f257c4e7caf1673f83235
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70106797"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706303"
 ---
 # <a name="platform-invoke-pinvoke"></a>Appel de code non managé (P/Invoke)
 

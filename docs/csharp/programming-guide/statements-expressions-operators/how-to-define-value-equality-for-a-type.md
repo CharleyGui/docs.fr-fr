@@ -1,6 +1,5 @@
 ---
 title: Comment définir l’égalité des valeurs pour un guide C# de programmation de type
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - overriding Equals method [C#]
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: ebcdda2661c8e4c7f3424f280247f0f771d9cb02
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 5eb1aaf96097d2c00cb04e24e65e01464f5f00c6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635143"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711972"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Comment définir l’égalité des valeurs pour un typeC# (Guide de programmation)
 

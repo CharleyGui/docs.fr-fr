@@ -6,12 +6,12 @@ helpviewer_keywords:
 - /libpath compiler option [Visual Basic]
 - -libpath compiler option [Visual Basic]
 ms.assetid: 5f1c26c9-3455-4e89-bdf3-b12d6c2e655b
-ms.openlocfilehash: 8f4e415576562885c9edbd3d2dddbe2a271e9923
-ms.sourcegitcommit: eff6adb61852369ab690f3f047818c90580e7eb1
+ms.openlocfilehash: 9a5822a097828f818da020735c3822e86eb3236b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/07/2019
-ms.locfileid: "72005470"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716637"
 ---
 # <a name="-libpath"></a>-libpath
 Spécifie l’emplacement des assemblys référencés.  
@@ -26,7 +26,7 @@ Spécifie l’emplacement des assemblys référencés.
   
 |Terme|Définition|  
 |---|---|  
-|`dirList`|Obligatoire. Liste de répertoires délimités par des points-virgules pour le compilateur à examiner si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire système de l’common language runtime. Si le nom du répertoire contient un espace, mettez-le entre guillemets ("").|  
+|`dirList`|Requis. Liste de répertoires délimités par des points-virgules pour le compilateur à examiner si un assembly référencé est introuvable dans le répertoire de travail actuel (le répertoire à partir duquel vous appelez le compilateur) ou le répertoire système de l’common language runtime. Si le nom du répertoire contient un espace, mettez-le entre guillemets ("").|  
   
 ## <a name="remarks"></a>Notes  
  L’option `-libpath` spécifie l’emplacement des assemblys référencés par l’option [-Reference](../../../visual-basic/reference/command-line-compiler/reference.md) .  
@@ -37,7 +37,7 @@ Spécifie l’emplacement des assemblys référencés.
   
 2. Répertoire système du common language runtime.  
   
-3. Répertoires spécifiés par `/libpath`.  
+3. Répertoires spécifiés par `-libpath`.  
   
 4. Répertoires spécifiés par la variable d’environnement LIB.  
   
@@ -45,9 +45,9 @@ Spécifie l’emplacement des assemblys référencés.
   
  Utilisez `-reference` pour spécifier une référence d’assembly.  
   
-|Pour définir/LIBPATH dans l’environnement de développement intégré Visual Studio|  
+|Pour définir-LIBPATH dans l’environnement de développement intégré Visual Studio|  
 |---|  
-|1.  Sélectionnez un projet dans l' **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2.  Cliquez sur l’onglet **Références**.<br />3.  Cliquez sur le bouton **chemins d’accès des références..** ..<br />4.  Dans la boîte de dialogue **chemins d’accès des références** , entrez le nom du répertoire dans la zone **dossier :** .<br />5.  Cliquez sur **Ajouter un dossier**.|  
+|1. Sélectionnez un projet dans **Explorateur de solutions**. Dans le menu **Projet**, cliquez sur **Propriétés**. <br />2. cliquez sur l’onglet **références** .<br />3. cliquez sur le bouton **chemins d’accès des références..** ..<br />4. dans la boîte de dialogue **chemins d’accès des références** , entrez le nom du répertoire dans la zone **dossier :** .<br />5. cliquez sur **Ajouter un dossier**.|  
   
 ## <a name="example"></a>Exemple  
  Le code suivant compile `T2.vb` pour créer un fichier. exe. Le compilateur recherche les références d’assembly dans le répertoire de travail, dans le répertoire racine du lecteur C : et dans le nouveau répertoire des assemblys du lecteur C :.  

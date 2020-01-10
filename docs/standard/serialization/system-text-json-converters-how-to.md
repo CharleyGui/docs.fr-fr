@@ -1,7 +1,5 @@
 ---
 title: Comment écrire des convertisseurs personnalisés pour la sérialisation JSON-.NET
-author: tdykstra
-ms.author: tdykstra
 ms.date: 10/16/2019
 helpviewer_keywords:
 - JSON serialization
@@ -9,12 +7,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: 33d1cd7764e71d9e2fa382c9f3c5feb77e8defb4
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: efbaf852f07b2b59111f0e330cf52470e3eca4c3
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283345"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705806"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON dans .NET
 

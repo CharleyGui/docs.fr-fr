@@ -11,20 +11,18 @@ helpviewer_keywords:
 - secure coding, race conditions
 - code security, race conditions
 ms.assetid: ea3edb80-b2e8-4e85-bfed-311b20cb59b6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 57ceaedc7c38ae70a0db5a7fd584a765a7474aff
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8980122acdd069bc840aa09129483a1cb9a379fd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61933807"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705871"
 ---
 # <a name="security-and-race-conditions"></a>Sécurité et conditions de concurrence
-Un autre problème concerne le risque de failles de sécurité exploité par les conditions de concurrence. Il existe plusieurs façons dans lequel cela peut se produire. Les sous-rubriques qui suivent décrivent certains des principaux pièges que le développeur doit éviter.  
+Une autre zone de préoccupation est le potentiel pour les brèches de sécurité exploitées par des conditions de concurrence. Cela peut se produire de plusieurs façons. Les sous-rubriques qui suivent décrivent certains des pièges majeurs que le développeur doit éviter.  
   
-## <a name="race-conditions-in-the-dispose-method"></a>Conditions de concurrence dans la méthode Dispose  
- Si d’une classe **Dispose** (méthode) (pour plus d’informations, consultez [Garbage Collection](../../../docs/standard/garbage-collection/index.md)) est non synchronisé, il est possible que le code de nettoyage à l’intérieur de **Dispose** peut être exécuté plus de une fois, comme illustré dans l’exemple suivant.  
+## <a name="race-conditions-in-the-dispose-method"></a>Conditions de concurrence dans la méthode dispose  
+ Si la méthode **dispose** d’une classe (pour plus d’informations, consultez [garbage collection](../../../docs/standard/garbage-collection/index.md)) n’est pas synchronisée, il est possible que le code de nettoyage à l’intérieur de **dispose** puisse être exécuté plusieurs fois, comme indiqué dans l’exemple suivant.  
   
 ```vb  
 Sub Dispose()  
@@ -46,13 +44,13 @@ void Dispose()
 }  
 ```  
   
- Étant donné que cela **Dispose** implémentation n’est pas synchronisée, il est possible pour `Cleanup` doit être appelée par tout d’abord un thread, puis un deuxième thread avant `_myObj` a la valeur **null**. S’il s’agit d’un problème de sécurité varie selon que se passe-t-il lorsque le `Cleanup` code s’exécute. Un problème majeur avec non synchronisés **Dispose** implémentations implique l’utilisation des descripteurs de ressources tels que les fichiers. Suppression inappropriée peut entraîner le handle incorrect à utiliser, ce qui entraîne souvent des failles de sécurité.  
+ Étant donné que cette implémentation de **dispose** n’est pas synchronisée, il est possible que `Cleanup` soit appelée par un premier thread, puis un deuxième thread avant que `_myObj` ait la valeur **null**. Le fait qu’il s’agisse d’un problème de sécurité dépend de ce qui se passe lorsque le code `Cleanup` s’exécute. Un problème majeur avec les implémentations de **suppression** non synchronisées implique l’utilisation de handles de ressources tels que des fichiers. Une suppression incorrecte peut entraîner l’utilisation d’un mauvais descripteur, ce qui entraîne souvent des failles de sécurité.  
   
 ## <a name="race-conditions-in-constructors"></a>Conditions de concurrence dans les constructeurs  
- Dans certaines applications, il est parfois possible d’autres threads peuvent accéder aux membres de classe avant l’exécution complète de leurs constructeurs de classe. Vous devez examiner tous les constructeurs de classe pour vous assurer qu’il n’y a aucun problème de sécurité si cela doit se produire ou synchroniser des threads si nécessaire.  
+ Dans certaines applications, il est possible que d’autres threads accèdent à des membres de classe avant l’exécution complète de leurs constructeurs de classe. Vous devez examiner tous les constructeurs de classe pour vous assurer qu’il n’existe aucun problème de sécurité si cela se produit, ou synchroniser les threads si nécessaire.  
   
-## <a name="race-conditions-with-cached-objects"></a>Conditions de concurrence avec les objets mis en cache  
- Le code qui met en cache les informations de sécurité ou utilise la sécurité d’accès du code [Assert](../../../docs/framework/misc/using-the-assert-method.md) opération peut également être vulnérable aux conditions de concurrence critique si d’autres parties de la classe ne sont pas correctement synchronisées, comme illustré dans l’exemple suivant.  
+## <a name="race-conditions-with-cached-objects"></a>Conditions de concurrence critique avec des objets mis en cache  
+ Le code qui met en cache des informations de sécurité ou utilise l’opération d' [assertion](../../../docs/framework/misc/using-the-assert-method.md) de sécurité d’accès du code peut également être vulnérable aux conditions de concurrence critique si d’autres parties de la classe ne sont pas correctement synchronisées, comme illustré dans l’exemple suivant.  
   
 ```vb  
 Sub SomeSecureFunction()  
@@ -97,12 +95,12 @@ void DoOtherWork()
 }  
 ```  
   
- S’il existe des autres chemins d’accès aux `DoOtherWork` qui peut être appelée à partir d’un autre thread avec le même objet, un appelant non fiable peut ignorer une demande.  
+ S’il existe d’autres chemins d’accès à `DoOtherWork` qui peuvent être appelés à partir d’un autre thread avec le même objet, un appelant non fiable peut ignorer une demande.  
   
- Si votre code met en cache les informations de sécurité, veillez à consulter pour cette vulnérabilité.  
+ Si votre code met en cache les informations de sécurité, assurez-vous que vous l’avez révisée pour cette vulnérabilité.  
   
-## <a name="race-conditions-in-finalizers"></a>Conditions de concurrence critique dans des finaliseurs  
- Conditions de concurrence peuvent également se produire dans un objet qui fait référence à une ressource statique ou non managée qu’il libère ensuite dans son finaliseur. Si plusieurs objets partagent une ressource qui est manipulée dans un finaliseur de classe, les objets doivent synchroniser tous les accès à cette ressource.  
+## <a name="race-conditions-in-finalizers"></a>Conditions de concurrence dans les finaliseurs  
+ Des conditions de concurrence critique peuvent également se produire dans un objet qui fait référence à une ressource statique ou non managée qu’il libère ensuite dans son finaliseur. Si plusieurs objets partagent une ressource qui est manipulée dans le finaliseur d’une classe, les objets doivent synchroniser tous les accès à cette ressource.  
   
 ## <a name="see-also"></a>Voir aussi
 

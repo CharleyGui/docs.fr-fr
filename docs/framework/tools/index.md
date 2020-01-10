@@ -1,5 +1,5 @@
 ---
-title: Outils du .NET Framework
+title: Outils .NET Framework
 ms.date: 03/30/2017
 helpviewer_keywords:
 - command line, .NET Framework tools
@@ -7,16 +7,14 @@ helpviewer_keywords:
 - tools [.NET Framework]
 - running .NET Framework tools
 ms.assetid: a2ca532d-91f7-426a-9303-417c2ee1247c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2fd602901955be218379386d8ed1b7c14b30078c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4503e2cff18f4aa901d20c76cfe4076a7fed3600
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974522"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715767"
 ---
-# <a name="net-framework-tools"></a>Outils du .NET Framework
+# <a name="net-framework-tools"></a>Outils .NET Framework
 
 Les outils du .NET Framework facilitent la création, le déploiement et la gestion d'applications et de composants qui ciblent le .NET Framework.
 

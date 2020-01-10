@@ -1,6 +1,5 @@
 ---
 title: async - Référence C#
-ms.custom: seodec18
 ms.date: 05/22/2017
 f1_keywords:
 - async_CSharpKeyword
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - async method [C#]
 - async [C#]
 ms.assetid: 16f14f09-b2ce-42c7-a875-e4eca5d50674
-ms.openlocfilehash: ab9c1be484d9cc77324e3105124a1b1f2257251d
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 3d3f045eed3bad3624ed4994aebb862c52a4e196
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70925363"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713781"
 ---
 # <a name="async-c-reference"></a>async (référence C#)
 
@@ -65,7 +64,7 @@ Pour exécuter le code comme une application du Windows Store :
 [!code-csharp[wpf-async](../../../../samples/snippets/csharp/language-reference/keywords/async/wpf/mainwindow.xaml.cs#1)]
   
 > [!IMPORTANT]
-> Pour plus d’informations sur les tâches et sur le code qui s’exécute en attendant une tâche, consultez [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md). Pour obtenir un exemple WPF complet qui utilise des éléments semblables, consultez [Procédure pas à pas : Accès au web avec Async et Await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
+> Pour plus d’informations sur les tâches et sur le code qui s’exécute en attendant une tâche, consultez [Programmation asynchrone avec async et await](../../programming-guide/concepts/async/index.md). Pour obtenir un exemple WPF complet qui utilise des éléments similaires, consultez [Procédure pas à pas : accès au web avec Async et Await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md).  
   
 ## <a name="return-types"></a>Types de retours  
 Une méthode async peut avoir les types de retour suivants :
@@ -89,5 +88,5 @@ Pour obtenir plus d’informations et des exemples, consultez [Types de retour A
 
 - <xref:System.Runtime.CompilerServices.AsyncStateMachineAttribute>
 - [await](../operators/await.md)
-- [Procédure pas à pas : Accès au web avec Async et Await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Procédure pas à pas : accès au web avec Async et Await](../../programming-guide/concepts/async/walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Programmation asynchrone avec Async et Await](../../programming-guide/concepts/async/index.md)

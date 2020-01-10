@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : copier des répertoires'
+title: 'Comment : copier des répertoires'
 ms.date: 12/27/2018
 ms.technology: dotnet-standard
 dev_langs:
@@ -12,16 +12,14 @@ helpviewer_keywords:
 - copying directories
 - directories [.NET Framework], copying
 ms.assetid: 5a969765-e5f8-4b4e-977e-90e2b0a1fe3c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2a7fa901d887701e0fa41a0887b363adec07dba2
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 223e83a5ff6a73825985ec4e3b6b601fb196fe5e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644685"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707898"
 ---
-# <a name="how-to-copy-directories"></a>Procédure : copier des répertoires
+# <a name="how-to-copy-directories"></a>Comment : copier des répertoires
 Cette rubrique montre comment utiliser les classes d’E/S pour copier de manière synchrone le contenu d’un répertoire vers un autre emplacement. 
 
 Pour obtenir un exemple de copie de fichier asynchrone, consultez [E/S sur fichier asynchrones](../../../docs/standard/io/asynchronous-file-i-o.md). 
@@ -37,6 +35,6 @@ Cet exemple copie des sous-répertoires en définissant la propriété `copySubD
 - <xref:System.IO.FileInfo>
 - <xref:System.IO.DirectoryInfo>
 - <xref:System.IO.FileStream>
-- [Fichier et flux de données E/S](../../../docs/standard/io/index.md)
+- [E/S de fichier et de flux](../../../docs/standard/io/index.md)
 - [Tâches d’E/S courantes](../../../docs/standard/io/common-i-o-tasks.md)
 - [E/S sur fichier asynchrones](../../../docs/standard/io/asynchronous-file-i-o.md)

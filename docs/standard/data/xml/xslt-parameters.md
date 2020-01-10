@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fe60aaa0-ae43-4b1c-9be1-426af66ba757
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e76e0f35dd95c34d3a6fc81c2f6f3504591387cf
-ms.sourcegitcommit: 0be8a279af6d8a43e03141e349d3efd5d35f8767
-ms.translationtype: HT
+ms.openlocfilehash: cc412042e69a43bbecec9dbe68618e2d307ca793
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/18/2019
-ms.locfileid: "59306304"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709697"
 ---
 # <a name="xslt-parameters"></a>Paramètres XSLT
 Des paramètres XSLT sont ajoutés à l'objet <xref:System.Xml.Xsl.XsltArgumentList> en utilisant la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A>. Un nom qualifié et un URI d'espace de noms sont associés à l'objet de paramètre à ce stade.  
@@ -50,7 +48,7 @@ Des paramètres XSLT sont ajoutés à l'objet <xref:System.Xml.Xsl.XsltArgumentL
  [!code-csharp[XSLT_Param#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Param/CS/xsltparam.cs#1)]
  [!code-vb[XSLT_Param#1](../../../../samples/snippets/visualbasic/VS_Snippets_Data/XSLT_Param/VB/xsltparam.vb#1)]  
   
-### <a name="input"></a>Entrée  
+### <a name="input"></a>Input  
   
 ##### <a name="orderxml"></a>order.xml  
  [!code-xml[XSLT_Param#2](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Param/XML/order.xml#2)]  
@@ -58,7 +56,7 @@ Des paramètres XSLT sont ajoutés à l'objet <xref:System.Xml.Xsl.XsltArgumentL
 ##### <a name="discountxsl"></a>discount.xsl  
  [!code-xml[XSLT_Param#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Param/XML/discount.xsl#3)]  
   
-### <a name="output"></a>Sortie  
+### <a name="output"></a>Output  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  

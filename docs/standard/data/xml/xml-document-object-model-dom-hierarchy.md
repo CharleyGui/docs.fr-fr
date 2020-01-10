@@ -3,19 +3,17 @@ title: Hiérarchie du DOM XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 9d187d4f-c76e-4223-a670-cc290783ce47
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 79078b16f0d56c40a3dcfeabaaed9b5cbb7753a0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 1193d7631816fe9fbf7aa1984d79ef8e61d5da80
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64589840"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709970"
 ---
 # <a name="xml-document-object-model-dom-hierarchy"></a>Hiérarchie du DOM XML
 L’illustration suivante montre la hiérarchie de classes du DOM (Document Object Model) XML et fournit le nom World Wide Web Consortium (W3C) entre parenthèses en même temps que le nom de la classe lorsque cela est pertinent.  
   
- ![Hiérarchie du modèle DOM (Document Object Model) XML](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
+ ![Hiérarchie DOM &#40;&#41; XML Document Object Model](../../../../docs/standard/data/xml/media/dom-class-hierarchy.gif "Dom_class_hierarchy")  
 Hiérarchie du modèle DOM (Document Object Model) XML  
   
  Les classes suivantes n'héritent pas de **XmlNode** :  

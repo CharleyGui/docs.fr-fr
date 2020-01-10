@@ -1,6 +1,5 @@
 ---
 title: where, clause - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - whereclause_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - where keyword [C#]
 - where clause [C#]
 ms.assetid: 7f9bf952-7744-4f91-b676-cddb55d107c3
-ms.openlocfilehash: 15df6339cec9eabadf5aa4c184d7504c4e065032
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 42932809d58c739afc165676c0b90c5a23f568de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421931"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712817"
 ---
 # <a name="where-clause-c-reference"></a>where, clause (Référence C#)
 
@@ -41,7 +40,7 @@ Une clause `where` peut contenir une ou plusieurs méthodes qui retournent des v
 
 La clause `where` est un mécanisme de filtrage. Elle peut être placée à presque n’importe quel endroit d’une expression de requête, sauf qu’elle ne peut pas être la première ni la dernière clause. Une clause `where` peut apparaître avant ou après une clause [group](group-clause.md) selon que vous devez filtrer les éléments sources avant ou après leur regroupement.
 
-Si un prédicat spécifié n’est pas valide pour les éléments de la source de données, une erreur de compilation est générée. C’est l’un des avantages de la vérification de type fort fourni par [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)].
+Si un prédicat spécifié n’est pas valide pour les éléments de la source de données, une erreur de compilation est générée. C’est l’un des avantages du contrôle de type fort fourni par LINQ.
 
 Au moment de la compilation, le mot clé `where` est converti en appel à la méthode d’opérateur de requête standard <xref:System.Linq.Enumerable.Where%2A>.
 
@@ -52,4 +51,4 @@ Au moment de la compilation, le mot clé `where` est converti en appel à la mé
 - [select, clause](select-clause.md)
 - [Filtrage des données](../../programming-guide/concepts/linq/filtering-data.md)
 - [LINQ en C#](../../linq/index.md)
-- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)
+- [Bien démarrer avec LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)

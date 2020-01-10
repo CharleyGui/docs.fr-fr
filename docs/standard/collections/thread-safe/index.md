@@ -5,14 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - thread-safe collections, overview
 ms.assetid: 2e7ca21f-786c-4367-96be-0cf3f3dcc6bd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4c7ffa98aec115db2d8c9a40e977f8cb7d33441a
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 30660c2fb89fd3738abb05122a5daf175677265c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962990"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711244"
 ---
 # <a name="thread-safe-collections"></a>Collections thread-safe
 .NET Framework 4 introduit l’espace de noms <xref:System.Collections.Concurrent?displayProperty=nameWithType>, qui contient plusieurs classes de collection qui sont à la fois thread-safe et scalables. Plusieurs threads peuvent, sans risque et de façon efficace, ajouter ou supprimer des éléments dans ces collections, sans nécessiter une synchronisation supplémentaire dans le code utilisateur. Quand vous écrivez du code, utilisez des classes de collections simultanées si plusieurs threads écrivent en même temps dans la collection. Si vous lisez seulement dans une collection partagée, vous pouvez utiliser les classes de l’espace de noms <xref:System.Collections.Generic?displayProperty=nameWithType>. Nous vous recommandons de ne pas utiliser les classes de collections 1.0, à moins que vous ne deviez cibler le runtime .NET Framework 1.1 ou une version antérieure.  
@@ -55,5 +53,5 @@ ms.locfileid: "69962990"
 |[Guide pratique pour utiliser des tableaux de collections de blocage dans un pipeline](../../../../docs/standard/collections/thread-safe/how-to-use-arrays-of-blockingcollections.md)|Décrit comment utiliser simultanément plusieurs collections de blocage pour implémenter un pipeline.|  
 |[Guide pratique pour créer un pool d'objets à l'aide d'un ConcurrentBag](../../../../docs/standard/collections/thread-safe/how-to-create-an-object-pool.md)|Montre comment utiliser un conteneur simultané pour améliorer les performances dans les scénarios où vous pouvez réutiliser des objets au lieu d’en créer continuellement de nouveaux.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>

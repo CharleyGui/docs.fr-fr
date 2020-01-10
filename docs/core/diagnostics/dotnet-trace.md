@@ -1,15 +1,13 @@
 ---
 title: outil dotnet-trace-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-trace.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 11/21/2019
-ms.openlocfilehash: 07eaec843e27f5d291b6d18fab53c43051794626
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 64c931db5a18659707e832aaca910cfbbd6823c0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428882"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714437"
 ---
 # <a name="dotnet-trace-performance-analysis-utility"></a>utilitaire d’analyse des performances dotnet-trace
 
@@ -50,7 +48,7 @@ Outil `dotnet-trace` :
 
 ## <a name="commands"></a>Commands
 
-| Commande                                                     |
+| Command                                                     |
 | ----------------------------------------------------------- |
 | [dotnet-collecte des traces](#dotnet-trace-collect)               |
 | [conversion dotnet-trace](#dotnet-trace-convert)               |
@@ -98,7 +96,7 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 
 - **`--format {NetTrace|Speedscope}`**
 
-  Définit le format de sortie pour la conversion du fichier de trace. La valeur par défaut est `NetTrace`.
+  Définit le format de sortie pour la conversion du fichier de trace. La valeur par défaut est `NetTrace`,
 
 ## <a name="dotnet-trace-convert"></a>conversion dotnet-trace
 
@@ -156,7 +154,7 @@ Pour collecter des traces à l’aide de `dotnet-trace`:
   - Sur Linux, par exemple, la commande `ps`.
   - [dotnet-trace PS](#dotnet-trace-ps)
 
-- Exécutez la commande suivante :
+- Exécutez la commande suivante : .
 
   ```console
   dotnet-trace collect --process-id <PID>
@@ -210,7 +208,7 @@ La commande précédente désactive les événements d’exécution et le profil
 
 Le Runtime .NET Core prend en charge les fournisseurs .NET suivants. .NET Core utilise les mêmes mots clés pour activer les suivis `Event Tracing for Windows (ETW)` et `EventPipe`.
 
-| Nom du fournisseur                            | Information |
+| Nom du fournisseur                            | Informations |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Fournisseur du Runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Mots clés du runtime CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Fournisseur d’arrêt](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Mots clés d’arrêt du CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 3a59d31c-0ec5-4de6-a2a9-558531c8116e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0bcd45a97ab0f0b0ac462d50c18fb68f9d7bd386
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 58407d5f0c6e602af15f5b19b9a19cc6379b9af7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590025"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710282"
 ---
 # <a name="resolving-external-resources-during-xslt-processing"></a>Résolution de ressources externes lors du traitement XSLT
 Lors d'une transformation XSLT, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.  
@@ -23,8 +21,8 @@ Lors d'une transformation XSLT, il peut s'avérer nécessaire de résoudre des r
   
 |Tâche XSLT|Utilité de XmlResolver|  
 |---------------|--------------------------------------|  
-|Compilation de la feuille de style|Résolution de l'URI de la feuille de style<br /><br /> -et-<br /><br /> Résolution des références URI dans tout élément `xsl:import` ou `xsl:include`|  
-|Exécution de la feuille de style|Résolution de l'URI dans le document de contexte<br /><br /> -et-<br /><br /> Résolution des références URI dans toute fonction XSLT `document()`|  
+|Compilation de la feuille de style|Résolution de l'URI de la feuille de style<br /><br /> et<br /><br /> Résolution des références URI dans tout élément `xsl:import` ou `xsl:include`|  
+|Exécution de la feuille de style|Résolution de l'URI dans le document de contexte<br /><br /> et<br /><br /> Résolution des références URI dans toute fonction XSLT `document()`|  
   
  Les méthodes <xref:System.Xml.Xsl.XslCompiledTransform.Load%2A> et <xref:System.Xml.Xsl.XslCompiledTransform.Transform%2A> comprennent des surcharges qui prennent un objet <xref:System.Xml.XmlResolver> comme l'un de leurs arguments. Si aucun <xref:System.Xml.XmlResolver> n'est spécifié, un <xref:System.Xml.XmlUrlResolver> par défaut sans informations d'identification est utilisé.  
   

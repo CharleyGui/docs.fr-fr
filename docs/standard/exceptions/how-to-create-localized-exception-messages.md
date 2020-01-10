@@ -1,16 +1,19 @@
 ---
-title: 'Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés'
+title: Comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 description: Découvrez comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 author: Youssef1313
+dev_langs:
+- csharp
+- vb
 ms.date: 09/13/2019
-ms.openlocfilehash: 453e332541628770932da2a6802fdcaee5211a84
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9360fccf27a0900d8380461e03baa5806ce1e0da
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141525"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708916"
 ---
-# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Guide pratique : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
+# <a name="how-to-create-user-defined-exceptions-with-localized-exception-messages"></a>Comment créer des exceptions définies par l’utilisateur avec des messages d’exception localisés
 
 Dans cet article, vous allez apprendre à créer des exceptions définies par l’utilisateur qui sont héritées de la classe de <xref:System.Exception> de base avec des messages d’exception localisés à l’aide d’assemblys satellites.
 
@@ -27,6 +30,13 @@ Pour créer une exception personnalisée, procédez comme suit :
     [Serializable]
     public class StudentNotFoundException : Exception { }
     ```
+    
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+    End Class
+    ```
 
 1. Ajoutez les constructeurs par défaut :
 
@@ -42,6 +52,24 @@ Pour créer une exception personnalisée, procédez comme suit :
         public StudentNotFoundException(string message, Exception inner)
             : base(message, inner) { }
     }
+    ```
+    
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+
+        Public Sub New()
+        End Sub
+
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+
+        Public Sub New(message As String, inner As Exception)
+            MyBase.New(message, inner)
+        End Sub
+    End Class
     ```
 
 1. Définissez les propriétés et constructeurs supplémentaires suivants :
@@ -68,12 +96,41 @@ Pour créer une exception personnalisée, procédez comme suit :
     }
     ```
 
+    ```vb
+    <Serializable>
+    Public Class StudentNotFoundException
+        Inherits Exception
+
+        Public ReadOnly Property StudentName As String
+
+        Public Sub New()
+        End Sub
+
+        Public Sub New(message As String)
+            MyBase.New(message)
+        End Sub
+
+        Public Sub New(message As String, inner As Exception)
+            MyBase.New(message, inner)
+        End Sub
+
+        Public Sub New(message As String, studentName As String)
+            Me.New(message)
+            StudentName = studentName
+        End Sub
+    End Class
+    ```
+
 ## <a name="create-localized-exception-messages"></a>Créer des messages d’exception localisés
 
 Vous avez créé une exception personnalisée et vous pouvez la lever n’importe où avec du code similaire à ce qui suit :
 
 ```csharp
 throw new StudentNotFoundException("The student cannot be found.", "John");
+```
+
+```vb
+Throw New StudentNotFoundException("The student cannot be found.", "John")
 ```
 
 Le problème avec la ligne précédente est que `"The student cannot be found."` est simplement une chaîne constante. Dans une application localisée, vous souhaitez avoir des messages différents en fonction de la culture de l’utilisateur.
@@ -100,8 +157,8 @@ Pour créer les messages d’exception localisés :
     throw new StudentNotFoundException(resourceManager.GetString("StudentNotFound"), "John");
     ```
 
-  > [!NOTE]
-  > Si le nom du projet est `TestProject` et que le fichier de ressources *ExceptionMessages. resx* se trouve dans le dossier *ressources* du projet, le nom complet du fichier de ressources est `TestProject.Resources.ExceptionMessages`.
+    > [!NOTE]
+    > Si le nom du projet est `TestProject` et que le fichier de ressources *ExceptionMessages. resx* se trouve dans le dossier *ressources* du projet, le nom complet du fichier de ressources est `TestProject.Resources.ExceptionMessages`.
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -12,13 +12,12 @@ helpviewer_keywords:
 - names [.NET Framework], type members
 - members [.NET Framework], type
 ms.assetid: af5a0903-36af-4c2a-b848-cf959affeaa5
-author: KrzysztofCwalina
-ms.openlocfilehash: b4da14575d29582814d32a3050087b7acc0da802
-ms.sourcegitcommit: da2dd2772fcf32b44eb18b1cbe8affd17b1753c9
+ms.openlocfilehash: a9cd531100057fbad4884a20e6e7db6ef94e7956
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2019
-ms.locfileid: "71353709"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709216"
 ---
 # <a name="names-of-type-members"></a>Noms de membres de type
 Les types se composent de membres, de méthodes, de propriétés, d’événements, de constructeurs et de champs. Les sections suivantes décrivent les règles de nommage des membres de type.  
@@ -48,9 +47,9 @@ public class String {
   
  Ce modèle indique typiquement que la propriété doit vraiment être une méthode.  
   
- **✓ DO** Nommer les propriétés de collection avec une expression au pluriel décrivant les éléments de la collection au lieu d’utiliser une expression au singulier suivie de « Liste » ou « Collection ».  
+ **✓** Nommez les propriétés de collection avec une expression pluriel décrivant les éléments de la collection au lieu d’utiliser une expression singulière suivie de « List » ou « collection ».  
   
- **✓ DO** Nommer des propriétés booléennes avec une expression affirmative (`CanSeek` au lieu de `CantSeek`). Si vous le souhaitez, vous pouvez aussi préfixer les propriétés booléennes avec « Is », « Can » ou « Has », mais uniquement si cela apporte une valeur ajoutée.  
+ **✓ DO** Nommer des propriétés booléennes avec une expression affirmative (`CanSeek` au lieu de `CantSeek`). Si vous le souhaitez, vous pouvez également préfixer les propriétés booléennes avec « is », « CAN » ou « has », mais uniquement à l’endroit où elle ajoute value.  
   
  **✓ CONSIDER** Donner à une propriété le même nom que son type.  
   

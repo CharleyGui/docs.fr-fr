@@ -1,18 +1,17 @@
 ---
 title: in - Référence C#
-ms.custom: seodec18
 ms.date: 02/06/2018
 f1_keywords:
 - in
 - in_CSharpKeyword
 helpviewer_keywords:
 - in keyword [C#]
-ms.openlocfilehash: 812390554b460579305815147cf0aec14c07ecd9
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 251a330ec327366ce458dd8066061365ab0e1dad
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54646735"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713459"
 ---
 # <a name="in-c-reference"></a>in (Référence C#)
 

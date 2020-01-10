@@ -10,14 +10,12 @@ helpviewer_keywords:
 - security [.NET Framework], replacing principal objects
 - security [.NET Framework], principals
 ms.assetid: c323687e-b196-487b-beba-f38f9b3f961b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5f33be207dd6166b16a04844f3d92b6e017d1c7a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 89b7036215cb7998222e280ceef02073d455a1b2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018786"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705936"
 ---
 # <a name="replacing-a-principal-object"></a>Remplacement d'un objet Principal
 Les applications qui fournissent des services d’authentification doivent pouvoir remplacer l’objet **Principal** (<xref:System.Security.Principal.IPrincipal>) d’un thread donné. En outre, le système de sécurité doit permettre de protéger la possibilité de remplacer les objets **Principal** si un **Principal** malveillant et incorrect attaché compromet la sécurité de votre application en simulant une fausse identité ou un faux rôle. Par conséquent, les applications ayant besoin de pouvoir remplacer les objets **Principal** doivent se voir attribuer l’objet <xref:System.Security.Permissions.SecurityPermission?displayProperty=nameWithType> pour le contrôle du principal. (Notez que cette autorisation n’est pas obligatoire pour effectuer des vérifications de sécurité basée sur les rôles ou créer des objets **Principal** .)  

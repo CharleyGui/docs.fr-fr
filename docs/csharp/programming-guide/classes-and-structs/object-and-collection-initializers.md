@@ -1,17 +1,16 @@
 ---
 title: Initialiseurs d’objet et de collection - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 12/19/2018
 helpviewer_keywords:
 - object initializers [C#]
 - collection initializers [C#]
 ms.assetid: c58f3db5-d7d4-4651-bd2d-5a3a97357f61
-ms.openlocfilehash: 837be04208d438f15b4cc7c7124a47ef6c038cb2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5565f37c9cfd8cb84c07f9ecc6f6c2edf8c66c61
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73455444"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714754"
 ---
 # <a name="object-and-collection-initializers-c-programming-guide"></a>Initialiseurs d’objet et de collection (Guide de programmation C#)
 
@@ -58,13 +57,13 @@ public string this[char c, int i] {  set { ... }; }
 
 ## <a name="object-initializers-with-anonymous-types"></a>Initialiseurs d'objet avec des types anonymes
 
-Les initialiseurs d’objet peuvent être utilisés dans tous les contextes, mais ils sont particulièrement utiles dans les expressions de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)]. Les expressions de requête utilisent souvent des [types anonymes](./anonymous-types.md), qui peuvent uniquement être initialisés à l’aide d’un initialiseur d’objet, comme indiqué dans la déclaration suivante.  
+Bien que les initialiseurs d’objets puissent être utilisés dans n’importe quel contexte, ils sont particulièrement utiles dans les expressions de requête LINQ. Les expressions de requête utilisent souvent des [types anonymes](./anonymous-types.md), qui peuvent uniquement être initialisés à l’aide d’un initialiseur d’objet, comme indiqué dans la déclaration suivante.  
 
 ```csharp
 var pet = new { Age = 10, Name = "Fluffy" };  
 ```
 
-Les types anonymes permettent à la clause `select` d’une expression de requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)] de transformer les objets de la séquence d’origine en objets dont la valeur et la forme peuvent différer de l’original. Cela s'avère utile si vous souhaitez stocker uniquement une partie des informations de chaque objet d'une séquence. Dans l'exemple suivant, supposons qu'un objet de produit (`p`) contient de nombreux champs et méthodes et que vous souhaitez uniquement créer une séquence d'objets qui contiennent le nom de produit et le prix unitaire.  
+Les types anonymes activent la clause `select` dans une expression de requête LINQ pour transformer les objets de la séquence d’origine en objets dont la valeur et la forme peuvent différer de l’original. Cela s'avère utile si vous souhaitez stocker uniquement une partie des informations de chaque objet d'une séquence. Dans l'exemple suivant, supposons qu'un objet de produit (`p`) contient de nombreux champs et méthodes et que vous souhaitez uniquement créer une séquence d'objets qui contiennent le nom de produit et le prix unitaire.  
   
 [!code-csharp[ObjectInitializer3](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/object-collection-initializers/BasicObjectInitializers.cs#AnonymousUse)]  
 

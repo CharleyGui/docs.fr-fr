@@ -5,31 +5,29 @@ helpviewer_keywords:
 - ExceptionThrown_V1 event [.NET Framework]
 - ETW, ExceptionThrown_V1 event (CLR)
 ms.assetid: 0d3da389-6b7b-40f6-a877-fac546d6019c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3f0e968053c87319bf90bf3de0f21d750ec899ab
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 80faf6e607755ee79c7ec17f2d7d3d5bdce822b7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447630"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716050"
 ---
 # <a name="exception-thrown_v1-etw-event"></a>Événement ETW d'exception Thrown_V1
 Cet événement capture des informations sur les exceptions levées.  
   
  Le tableau suivant affiche le mot clé sous lequel l’événement est déclenché, ainsi que le niveau de l’événement. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Level|  
+|Mot clé pour déclencher l'événement|Niveau|  
 |-----------------------------------|-----------|  
 |`ExceptionKeyword` (0x8000)|Avertissement (2)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Événement|ID de l'événement|Moment du déclenchement|  
+|Event|ID de l'événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`ExceptionThrown_V1`|80|Une exception managée est levée.|  
   
- Le tableau ci-dessous montre les données liées aux événements.  
+ Le tableau suivant affiche des données liées aux événements.  
   
 |Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  

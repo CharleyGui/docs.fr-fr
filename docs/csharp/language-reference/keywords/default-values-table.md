@@ -1,17 +1,16 @@
 ---
 title: Tableau des valeurs par défaut - Référence C#
-ms.custom: seodec18
 description: Découvrez quelles sont les valeurs par défaut des types C#.
 ms.date: 12/18/2019
 helpviewer_keywords:
 - default [C#]
 - parameterless constructor [C#]
-ms.openlocfilehash: 3604316b75bb3a6a4de39991899a837f64e547d2
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: b15da080c34e2c24ff2a0ecda639f7fe68fb7573
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345499"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713639"
 ---
 # <a name="default-values-table-c-reference"></a>Tableau des valeurs par défaut (référence C#)
 

@@ -1,18 +1,17 @@
 ---
 title: where (contrainte de type générique) - Référence C#
-ms.custom: seodec18
 ms.date: 04/12/2018
 f1_keywords:
 - whereconstraint
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 24ae6e285b8b4270188462b05f39c6142c6901ae
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 19bf7682916336173ed93619fb6f0ff1242a1b30
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972727"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712804"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 
@@ -44,7 +43,7 @@ La clause `where` peut aussi inclure une contrainte `unmanaged`. La contrainte `
 
 [!code-csharp[using the unmanaged constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#4)]
 
-La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte New ()](new-constraint.md) permet au compilateur de savoir que tout argument de type fourni doit avoir un constructeur sans paramètre accessible. Exemple :
+La clause `where` peut également inclure une contrainte de constructeur, `new()`. Cette contrainte permet de créer une instance d’un paramètre de type à l’aide de l’opérateur `new`. La [contrainte New ()](new-constraint.md) permet au compilateur de savoir que tout argument de type fourni doit avoir un constructeur sans paramètre accessible. Par exemple :
 
 [!code-csharp[using the new constraint](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#5)]
 
@@ -72,7 +71,7 @@ Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, con
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Introduction aux génériques](../../programming-guide/generics/index.md)
 - [new, contrainte](./new-constraint.md)

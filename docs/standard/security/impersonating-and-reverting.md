@@ -10,14 +10,12 @@ helpviewer_keywords:
 - security [.NET Framework], impersonating Windows accounts
 - impersonating Windows accounts
 ms.assetid: b93d402c-6c28-4f50-b2bc-d9607dc3e470
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 97b15ea2202ca410dd517db63a7145d27f62bb48
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 14b01ec3ac800abd795e87b641a442df100f102b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62018591"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706017"
 ---
 # <a name="impersonating-and-reverting"></a>Emprunt et restauration d'identité
 Parfois, vous devez obtenir un jeton de compte Windows pour emprunter l’identité d’un compte Windows. Par exemple, votre application ASP.NET peut devoir agir pour le compte de plusieurs utilisateurs à des moments différents. Votre application peut accepter un jeton représentant un administrateur à partir d’Internet Information Services (IIS), emprunter l’identité de cet utilisateur, effectuer une opération et revenir à l’identité précédente. Ensuite, elle peut accepter un jeton d’IIS représentant un utilisateur disposant de droits inférieurs, effectuer une opération et revenir à nouveau à l’identité précédente.  
@@ -56,9 +54,9 @@ Parfois, vous devez obtenir un jeton de compte Windows pour emprunter l’identi
     myImpersonation.Undo()  
     ```  
   
- Si le code approuvé a déjà attaché un <xref:System.Security.Principal.WindowsPrincipal> de l’objet au thread, vous pouvez appeler la méthode d’instance **Impersonate**, qui n’accepte pas de jeton de compte. Notez que cela est utile uniquement lorsque l’objet **WindowsPrincipal** sur le thread représente un utilisateur autre que celui sous lequel le processus est exécuté. Par exemple, vous pouvez rencontrer cette situation quand vous utilisez ASP.NET avec l’authentification Windows activée et l’emprunt d’identité désactivé. Dans ce cas, le processus s’exécute sous un compte configuré dans Internet Information Services (IIS), tandis que le principal actuel représente l’utilisateur Windows qui accède à la page.  
+ Si du code approuvé a déjà attaché un objet <xref:System.Security.Principal.WindowsPrincipal> au thread, vous pouvez appeler la méthode d’instance **Impersonate**, qui ne prend pas de jeton de compte. Notez que cela est utile uniquement lorsque l’objet **WindowsPrincipal** sur le thread représente un utilisateur autre que celui sous lequel le processus est exécuté. Par exemple, vous pouvez rencontrer cette situation quand vous utilisez ASP.NET avec l’authentification Windows activée et l’emprunt d’identité désactivé. Dans ce cas, le processus s’exécute sous un compte configuré dans Internet Information Services (IIS), tandis que le principal actuel représente l’utilisateur Windows qui accède à la page.  
   
- Notez que ni **Impersonate** ni **Annuler** modifications le **Principal** objet (<xref:System.Security.Principal.IPrincipal>) associé au contexte d’appel en cours. Au lieu de cela, l’emprunt d’identité et le rétablissement modifient le jeton associé au processus de système d’exploitation actuel.  
+ Notez que ni **Impersonate** ni **Undo** ne modifie l’objet **principal** (<xref:System.Security.Principal.IPrincipal>) associé au contexte d’appel actuel. Au lieu de cela, l’emprunt d’identité et le rétablissement modifient le jeton associé au processus de système d’exploitation actuel.  
   
 ## <a name="see-also"></a>Voir aussi
 

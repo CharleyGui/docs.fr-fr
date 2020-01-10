@@ -1,5 +1,5 @@
 ---
-title: services de chiffrement
+title: Services de chiffrement
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
@@ -24,16 +24,14 @@ helpviewer_keywords:
 - cryptography [.NET Framework], about
 - random number generation
 ms.assetid: f96284bc-7b73-44b5-ac59-fac613ad09f8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6f0e268995449bc27b93c92ac8654c09fca9cd14
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 66af8126ab61d37065b9a328d5e088ed7bf4cbef
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975827"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709203"
 ---
-# <a name="cryptographic-services"></a>services de chiffrement
+# <a name="cryptographic-services"></a>Services de chiffrement
 
 Les réseaux publics, tels qu'Internet, n'offrent aucun moyen de sécuriser les communications entre les entités. Les communications qui transitent par ces réseaux sont susceptibles d'être lues voire modifiées par des tiers non autorisés. Le chiffrement permet de prévenir la consultation des données, offre des moyens de détecter si les données ont été modifiées et fournit un mode de communication sécurisé via des canaux qui autrement ne sont pas sécurisés. Par exemple, les données peuvent être chiffrées à l'aide d'un algorithme de chiffrement, transmises dans un état chiffré et par la suite déchiffrées par le destinataire prévu. Si un tiers intercepte les données chiffrées, il lui sera difficile de les déchiffrer.
 
@@ -59,7 +57,7 @@ Le chiffrement vise à atteindre les objectifs suivants :
 
 Pour atteindre ces objectifs, vous pouvez utiliser une combinaison d'algorithmes et de pratiques appelés primitives de chiffrement pour créer un modèle de chiffrement. Le tableau suivant répertorie les primitives de chiffrement et leurs fonctions.
 
-|Primitive de chiffrement|Utilisez|
+|Primitive de chiffrement|Utiliser|
 |-----------------------------|---------|
 |Chiffrement à clé secrète (chiffrement symétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une clé partagée, secrète et unique pour chiffrer et déchiffrer des données.|
 |Chiffrement à clé publique (chiffrement asymétrique)|Transforme les données pour empêcher des tiers de les lire. Ce type de chiffrement fait appel à une paire de clés publique/privée pour chiffrer et déchiffrer les données.|
@@ -90,15 +88,15 @@ Le .NET Framework fournit les classes suivantes qui implémentent des algorithme
 
 - <xref:System.Security.Cryptography.AesManaged> (introduite dans le .NET Framework 3,5).
 
-- <xref:System.Security.Cryptography.DESCryptoServiceProvider>.,
+- <xref:System.Security.Cryptography.DESCryptoServiceProvider>.
 
 - <xref:System.Security.Cryptography.HMACSHA1> (Techniquement, il s'agit d'un algorithme de clé secrète dans la mesure où il représente un code d'authentification de message calculé à l'aide d'une fonction de hachage de chiffrement combinée à une une clé secrète. Consultez la section [Valeurs de hachage](#hash-values), plus loin dans cette rubrique.)
 
-- <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.,
+- <xref:System.Security.Cryptography.RC2CryptoServiceProvider>.
 
-- <xref:System.Security.Cryptography.RijndaelManaged>.,
+- <xref:System.Security.Cryptography.RijndaelManaged>.
 
-- <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.,
+- <xref:System.Security.Cryptography.TripleDESCryptoServiceProvider>.
 
 ## <a name="public-key-encryption"></a>Chiffrement à clé publique
 
@@ -187,21 +185,21 @@ Aucune des méthodes précédentes n'empêchera quiconque de lire les messages d
 
 Le .NET Framework fournit les classes suivantes qui implémentent des algorithmes de hachage :
 
-- <xref:System.Security.Cryptography.HMACSHA1>.,
+- <xref:System.Security.Cryptography.HMACSHA1>.
 
-- <xref:System.Security.Cryptography.MACTripleDES>.,
+- <xref:System.Security.Cryptography.MACTripleDES>.
 
-- <xref:System.Security.Cryptography.MD5CryptoServiceProvider>.,
+- <xref:System.Security.Cryptography.MD5CryptoServiceProvider>.
 
-- <xref:System.Security.Cryptography.RIPEMD160>.,
+- <xref:System.Security.Cryptography.RIPEMD160>.
 
-- <xref:System.Security.Cryptography.SHA1Managed>.,
+- <xref:System.Security.Cryptography.SHA1Managed>.
 
-- <xref:System.Security.Cryptography.SHA256Managed>.,
+- <xref:System.Security.Cryptography.SHA256Managed>.
 
-- <xref:System.Security.Cryptography.SHA384Managed>.,
+- <xref:System.Security.Cryptography.SHA384Managed>.
 
-- <xref:System.Security.Cryptography.SHA512Managed>.,
+- <xref:System.Security.Cryptography.SHA512Managed>.
 
 - Variantes HMAC de tous les algorithmes SHA (Secure Hash Algorithm), MD5 (Message Digest 5) et RIPEMD-160.
 

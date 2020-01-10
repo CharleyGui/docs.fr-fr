@@ -3,14 +3,12 @@ title: Sorties à partir de XslTransform
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 8e149d32-4b2f-493f-9e4b-d0d93475acde
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0a6c2ea2fe2f02dc1897cb1348f4c2585b730036
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 178b1e949868d3af893cbcb6df63590053341a3e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69924966"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710490"
 ---
 # <a name="outputs-from-an-xsltransform"></a>Sorties à partir de XslTransform
 Dans la mesure où les feuilles de style peuvent déterminer le format de sortie à l'aide d'une instruction `<xsl:output>` avec l'attribut `method`, le tableau suivant décrit le format de sortie lors de l'utilisation de la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> pour écrire la sortie, et le format de sortie est déclaré en tant qu'objet <xref:System.IO.Stream> ou <xref:System.IO.TextWriter>.  
@@ -24,10 +22,10 @@ Dans la mesure où les feuilles de style peuvent déterminer le format de sortie
 |-----------------------------------------|-------------------|  
 |method="xml"|XML|  
 |method="html"|HTML|  
-|method="text"|Texte|  
+|method="text"|Text|  
   
 > [!NOTE]
-> Remarque : L’instruction `<xsl:output>` est ignorée quand la sortie de la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> est un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.  
+> Remarque : l'instruction `<xsl:output>` est ignorée lorsque la sortie de la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> est un objet <xref:System.Xml.XmlReader> ou <xref:System.Xml.XmlWriter>.  
   
  Les attributs suivants sont pris en charge lorsque la sortie de la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A> est un objet <xref:System.IO.Stream> ou <xref:System.IO.TextWriter> :  
   
@@ -35,7 +33,7 @@ Dans la mesure où les feuilles de style peuvent déterminer le format de sortie
   
 - omit-xml-declaration  
   
-- autonomes  
+- standalone  
   
 - doctype-public  
   

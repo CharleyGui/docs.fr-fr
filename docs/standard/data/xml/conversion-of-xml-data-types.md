@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: a2aa99ba-8239-4818-9281-f1d72ee40bde
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 56b5b51848858b7f1240059ca30eb48474650b73
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: b0cdab8861ca50b40ce2b422fcc1acf16e2f2273
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54555126"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711088"
 ---
 # <a name="conversion-of-xml-data-types"></a>Conversion des types de données XML
 La majorité des méthodes présentes dans la classe **XmlConvert** sont utilisées pour la conversion de données entre le format de chaînes et le format fortement typé. Ces méthodes sont indépendantes des paramètres régionaux. Cela signifie qu'elles ne prennent pas en compte les paramètres régionaux éventuels lors de la conversion.  

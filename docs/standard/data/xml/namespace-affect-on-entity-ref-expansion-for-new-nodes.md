@@ -3,14 +3,12 @@ title: Effet des espaces de noms sur le développement des références d'entit�
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 64359aee-aab0-4042-9a32-d19789af6ca7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1a92f1b08719c926e6384c220e3695de26dbb4fd
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 4772e3f7365069c537c4ec3bc8571f2f710bc9fc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69967326"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710620"
 ---
 # <a name="namespace-affect-on-entity-reference-expansion-for-new-nodes-containing-elements-and-attributes"></a>Effet des espaces de noms sur le développement des références d'entité avec les nouveaux nœuds contenant des éléments et attributs
 Le contenu d’une déclaration d’entité peut contenir pratiquement n’importe quel élément, c’est pourquoi il est possible qu’il comporte un élément tel que `<!ENTITY aname "<elem>test</elem>">`.  

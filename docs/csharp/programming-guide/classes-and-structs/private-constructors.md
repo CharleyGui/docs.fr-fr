@@ -1,20 +1,19 @@
 ---
 title: Constructeurs privés - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, private constructors
 - private constructors [C#]
 ms.assetid: 29eeaa7d-8d81-453c-94b9-0e2800172621
-ms.openlocfilehash: 918d39b8aed25395106942524baa3b51221933dc
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 2f8b93fbeb7c2996f3e2683fe86f159fbfa61a92
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418871"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705442"
 ---
 # <a name="private-constructors-c-programming-guide"></a>Constructeurs privés (Guide de programmation C#)
-Un constructeur privé est un constructeur d’instance spécial. Il est généralement utilisé dans les classes qui contiennent uniquement des membres statiques. Si une classe a un ou plusieurs constructeurs privés, mais n’a aucun constructeur public, les autres classes (à l’exception des classes imbriquées) ne peuvent pas créer d’instances de cette classe. Exemple :  
+Un constructeur privé est un constructeur d’instance spécial. Il est généralement utilisé dans les classes qui contiennent uniquement des membres statiques. Si une classe a un ou plusieurs constructeurs privés, mais n’a aucun constructeur public, les autres classes (à l’exception des classes imbriquées) ne peuvent pas créer d’instances de cette classe. Par exemple :  
   
  [!code-csharp[csProgGuideObjects#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#11)]  
   

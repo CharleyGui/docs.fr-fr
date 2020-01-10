@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 97115892-410a-4657-ab47-1e14dfba73f8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 60b9b66ea9b1c74dc34e2e99dcf651f9dac1725e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: c7819c3cb6b1430dcdb8a78c43f7138f64e691a8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69915968"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709840"
 ---
 # <a name="xmldocument-input-to-xsltransform"></a>Entrée XmlDocument dans XslTransform
 La classe <xref:System.Xml.XmlDocument> permet de modifier un document XML. Si le document XML doit être modifié ou édité avant d'être envoyé à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, chargez le XML dans un objet <xref:System.Xml.XmlDocument>, éditez-le, puis envoyez-le à l'objet <xref:System.Xml.Xsl.XslTransform>.  
@@ -25,7 +23,7 @@ La classe <xref:System.Xml.XmlDocument> permet de modifier un document XML. Si 
   
  En raison de la capacité d'édition de l'objet <xref:System.Xml.XmlDocument>, l'utilisation de la classe <xref:System.Xml.XmlDocument> comme entrée pour une transformation est plus lente que l'utilisation d'un objet <xref:System.Xml.XPath.XPathDocument> pour les transformations XSLT (Extensible Stylesheet Language for Transformations) car l'objet <xref:System.Xml.XPath.XPathDocument> est optimisé pour les requêtes XPath (XML Path Language) dues au stockage interne.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple de code suivant montre comment un objet <xref:System.Xml.XmlDocument> peut être fourni à l'objet <xref:System.Xml.Xsl.XslTransform>, dont la sortie est envoyée à un objet <xref:System.Xml.XmlReader>.  
   
 ```vb  

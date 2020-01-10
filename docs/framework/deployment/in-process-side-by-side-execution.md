@@ -5,19 +5,17 @@ helpviewer_keywords:
 - in-process side-by-side execution
 - side-by-side execution, in-process
 ms.assetid: 18019342-a810-4986-8ec2-b933a17c2267
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2a33d3c4216ed8c5d79aef4017c6b9256fc1ad7c
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 0c699f90143a87b7e7bee24c892efe2936a9399e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052103"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716478"
 ---
 # <a name="in-process-side-by-side-execution"></a>Exécution côte à côte in-process
 À compter de .NET Framework 4, vous pouvez utiliser l’hébergement côte à côte in-process pour exécuter plusieurs versions du CLR (Common Language Runtime) dans un processus unique. Par défaut, les composants COM managés s’exécutent avec la version du .NET Framework avec laquelle ils ont été générés, indépendamment de la version du .NET Framework chargée pour le processus.  
   
-## <a name="background"></a>Présentation  
+## <a name="background"></a>Informations générales sur la  
  Le .NET Framework a toujours fourni un hébergement côte à côte pour les applications de code managé, mais avant .NET Framework 4, il ne fournissait pas cette fonctionnalité pour les composants COM managés. Dans le passé, les composants COM managés chargés dans un processus étaient exécutés avec la version du runtime déjà chargée ou avec la version installée la plus récente du .NET Framework. Si cette version n’était pas compatible avec le composant COM, le composant échouait.  
   
  .NET Framework 4 fournit une nouvelle approche de l’hébergement côte à côte qui s’assure des éléments suivants :  
@@ -50,15 +48,15 @@ ms.locfileid: "71052103"
 <a name="scenarios"></a>   
 ## <a name="common-side-by-side-hosting-scenarios"></a>Scénarios d’hébergement côte à côte courants  
   
-- **Scénario 1 :** application native qui utilise des composants COM créés avec des versions antérieures du .NET Framework.  
+- **Scénario 1 :** application native qui utilise des composants COM créés avec des versions antérieures du .NET Framework.  
   
-     Versions du .NET Framework installées : .NET Framework 4 et toutes les autres versions du .NET Framework utilisées par les composants COM.  
+     Versions de .NET Framework installées : le .NET Framework 4 et toutes les autres versions du .NET Framework utilisées par les composants COM.  
   
      Que faire : dans ce scénario, ne faites rien. Les composants COM s’exécuteront avec la version du .NET Framework avec laquelle ils ont été inscrits.  
   
-- **Scénario 2** : application managée créée avec .NET Framework 2.0 SP1 que vous préféreriez exécuter avec .NET Framework 2.0, mais que vous voulez bien exécuter sur .NET Framework 2.0 si la version 4 est absente.  
+- **Scénario 2**: application managée générée avec la .NET Framework 2,0 SP1 que vous préférez exécuter avec le .NET Framework 2,0, mais qui sont prêtes à s’exécuter sur le .NET Framework 4 si la version 2,0 n’est pas présente.  
   
-     Versions du .NET Framework installées : une version antérieure du .NET Framework et .NET Framework 4.  
+     Versions .NET Framework installées : une version antérieure du .NET Framework et le .NET Framework 4.  
   
      Que faire : dans le [fichier de configuration de l’application](../configure-apps/index.md) dans le répertoire de l’application, utilisez l’[élément \<startup>](../configure-apps/file-schema/startup/startup-element.md) et l’[élément \<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) défini comme suit :  
   
@@ -71,9 +69,9 @@ ms.locfileid: "71052103"
     </configuration>  
     ```  
   
-- **Scénario 3 :** application native qui utilise des composants COM créés avec des versions antérieures du .NET Framework que vous souhaitez exécuter avec .NET Framework 4.  
+- **Scénario 3 :** Application native qui utilise des composants COM créés avec des versions antérieures du .NET Framework que vous souhaitez exécuter avec le .NET Framework 4.  
   
-     Versions du .NET Framework installées : .NET Framework 4.  
+     Versions de .NET Framework installées : .NET Framework 4.  
   
      Que faire : dans le fichier de configuration de l’application dans le répertoire de l’application, utilisez l’élément `<startup>` avec l’attribut `useLegacyV2RuntimeActivationPolicy` défini sur `true` et l’élément `<supportedRuntime>` défini comme suit :  
   
@@ -85,7 +83,7 @@ ms.locfileid: "71052103"
     </configuration>  
     ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre un hôte COM non managé qui exécute un composant COM managé à l’aide de la version du .NET Framework dans laquelle le composant a été compilé.  
   
  Pour exécuter l’exemple suivant, compilez et inscrivez le composant COM managé suivant avec .NET Framework 3.5. Pour inscrire le composant, dans le menu **Projet**, cliquez sur **Propriétés**, sur l’onglet **Générer**, puis cochez la case **Inscrire pour COM Interop**.  

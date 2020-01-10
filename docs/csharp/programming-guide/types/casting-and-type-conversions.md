@@ -1,6 +1,5 @@
 ---
 title: Cast et conversions de types - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - type conversion [C#]
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - casting [C#]
 - converting types [C#]
 ms.assetid: 568df58a-d292-4b55-93ba-601578722878
-ms.openlocfilehash: 7285b69ea34be087705c1163a94310d43b2f6f02
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 252d509617ab5dbc53b282bac52e356396d82fab
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635065"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711894"
 ---
 # <a name="casting-and-type-conversions-c-programming-guide"></a>Cast et conversions de types (guide de programmation C#)
 

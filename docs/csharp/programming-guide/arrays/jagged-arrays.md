@@ -1,21 +1,20 @@
 ---
 title: Tableaux en escalier - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - jagged arrays [C#]
 - arrays [C#], jagged
 ms.assetid: 537c65a6-0e0a-4a00-a2b8-086f38519c70
-ms.openlocfilehash: 8d1be351e3aabea44138323d04c922dd1cccb78a
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 56013f0143d5efcb31a476909cb6e92504ff0dbc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597331"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705702"
 ---
 # <a name="jagged-arrays-c-programming-guide"></a>Tableaux en escalier (Guide de programmation C#)
 
-Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les éléments d’un tableau en escalier peuvent être de dimensions et de tailles différentes. Un tableau en escalier est parfois appelé « tableau de tableaux ». Les exemples suivants montrent comment déclarer, initialiser et accéder aux tableaux en escalier.  
+Un tableau en escalier est composé de plusieurs tableaux (appelés éléments). Les éléments d’un tableau en escalier peuvent être de dimensions et de tailles différentes. Un tableau en escalier est parfois appelé « tableau de tableaux ». Les exemples suivants montrent comment déclarer, initialiser et accéder aux tableaux en escalier.  
   
  Voici une déclaration d’un tableau unidimensionnel qui comporte trois éléments, chacun d’eux étant un tableau unidimensionnel d’entiers :  
   
@@ -27,7 +26,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
   
  Chacun des éléments est un tableau unidimensionnel d’entiers. Le premier élément est un tableau de 5 entiers, le deuxième est un tableau de 4 entiers et le troisième est un tableau de 2 entiers.  
   
- Il est aussi possible d’utiliser des initialiseurs pour remplir les éléments de tableau de valeurs, auquel cas vous n’avez pas besoin de la taille du tableau. Par exemple :  
+ Il est aussi possible d’utiliser des initialiseurs pour remplir les éléments de tableau de valeurs, auquel cas vous n’avez pas besoin de la taille du tableau. Par exemple :  
   
  [!code-csharp[csProgGuideArrays#21](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#21)]  
   
@@ -59,7 +58,7 @@ Un tableau en escalier est un tableau dont les éléments sont des tableaux. Les
   
  retourne la valeur 3.  
   
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
  Cet exemple génère un tableau dont les éléments sont eux-mêmes des tableaux. Chacun des éléments de tableau ont une taille différente.  
   

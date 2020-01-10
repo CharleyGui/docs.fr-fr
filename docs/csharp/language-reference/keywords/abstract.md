@@ -1,6 +1,5 @@
 ---
 title: abstract - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - abstract
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - abstract keyword [C#]
 ms.assetid: b0797770-c1f3-4b4d-9441-b9122602a6bb
-ms.openlocfilehash: a6c0ac86689c5d095fc077beb39d6281f77aab24
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 96e8bbce2e67c316d5cd1cd78e3e2506dabead25
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422940"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713864"
 ---
 # <a name="abstract-c-reference"></a>abstract (référence C#)
 Le modificateur `abstract` indique que l’élément en cours de modification a une implémentation manquante ou incomplète. Le modificateur abstract peut être utilisé avec des classes, des méthodes, des propriétés, des indexeurs et des événements. Dans une déclaration de classe, utilisez le modificateur `abstract` pour indiquer qu’une classe doit uniquement servir de classe de base pour d’autres classes, et ne pas être instanciée toute seule. Les membres définis comme abstraits doivent être implémentés par des classes non abstraites dérivées de la classe abstraite.
@@ -41,7 +40,7 @@ Le modificateur `abstract` indique que l’élément en cours de modification a 
   
 - Les déclarations de méthodes abstraites sont autorisées uniquement dans les classes abstraites.  
   
-- Comme une déclaration de méthode abstraite ne fournit pas d’implémentation réelle, il n’y a pas de corps de méthode ; la déclaration de méthode se termine simplement par un point-virgule, et la signature n’est pas suivie d’accolades ({ }). Exemple :  
+- Comme une déclaration de méthode abstraite ne fournit pas d’implémentation réelle, il n’y a pas de corps de méthode ; la déclaration de méthode se termine simplement par un point-virgule, et la signature n’est pas suivie d’accolades ({ }). Par exemple :  
   
     ```csharp  
     public abstract void MyMethod();  
@@ -53,7 +52,7 @@ Le modificateur `abstract` indique que l’élément en cours de modification a 
   
  Les propriétés abstraites se comportent comme les méthodes abstraites, à l’exception des différences dans la syntaxe de déclaration et d’appel.  
   
-- L’utilisation du modificateur `abstract` sur une propriété statique est une erreur.  
+- L’utilisation du modificateur `abstract` sur une propriété statique serait une erreur.  
   
 - Une propriété abstraite héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur [override](./override.md).  
   
@@ -61,7 +60,7 @@ Le modificateur `abstract` indique que l’élément en cours de modification a 
   
  Une classe abstraite doit fournir une implémentation pour tous les membres d’interface.  
   
- Une classe abstraite qui implémente une interface peut mapper les méthodes d’interface à des méthodes abstraites. Exemple :  
+ Une classe abstraite qui implémente une interface peut mapper les méthodes d’interface à des méthodes abstraites. Par exemple :  
   
 [!code-csharp[csrefKeywordsModifiers#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#2)]
   
@@ -83,7 +82,7 @@ Vous obtenez une erreur indiquant que le compilateur ne peut pas créer une inst
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Modificateurs](index.md)
 - [virtual](./virtual.md)

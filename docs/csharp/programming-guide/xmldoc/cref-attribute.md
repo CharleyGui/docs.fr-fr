@@ -1,21 +1,20 @@
 ---
 title: cref, attribut - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - cref [C#]
 ms.assetid: 66a6b0e5-b961-4504-a461-3a4cf481fc8b
-ms.openlocfilehash: d088e1fcd0a1d1910b1284909dccf7b7d7b1d479
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 13bdfefaaa6f8daff0e7d9e30a6353af34654ba2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588167"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75697245"
 ---
 # <a name="cref-attribute-c-programming-guide"></a>cref, attribut (Guide de programmation C#)
 L’attribut `cref` dans une balise de documentation XML signifie « référence de code ». Il indique que le texte interne de la balise est un élément de code tel qu’un type, une méthode ou une propriété. Les outils de documentation comme [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) utilisent les attributs `cref` pour générer automatiquement des liens hypertexte vers la page où le type ou le membre est documenté.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L’exemple suivant montre les attributs `cref` utilisés dans des balises [\<see>](./see.md).  
   
  [!code-csharp[csProgGuideDocComments#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#3)]  

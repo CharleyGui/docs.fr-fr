@@ -1,6 +1,5 @@
 ---
 title: interpolation de C# chaîne $-Reference
-ms.custom: seodec18
 description: L’interpolation de chaîne fournit une syntaxe plus lisible et plus pratique pour mettre en forme la sortie de chaîne que la traditionnelle mise en forme composite de chaîne.
 ms.date: 09/02/2019
 f1_keywords:
@@ -11,12 +10,12 @@ helpviewer_keywords:
 - string interpolation [C#]
 - interpolated string [C#]
 author: pkulikov
-ms.openlocfilehash: cda8582da9ca8262ec2ce6bcfbb76e2e2f5f6006
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b32bbbb0bd99878822d7ca5abdba80b46539846a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421858"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715081"
 ---
 # <a name="---string-interpolation-c-reference"></a>$-interpolation de chaîne (C# référence)
 
@@ -61,7 +60,7 @@ L’exemple suivant montre comment ajouter une accolade dans une chaîne de rés
 Une chaîne textuelle interpolée commence par le caractère `$` suivi du caractère `@`. Pour plus d’informations sur les chaînes textuelles, consultez les rubriques [string](../builtin-types/reference-types.md) et [Identificateur textuel](verbatim.md).
 
 > [!NOTE]
-> À C# partir de 8,0, vous pouvez utiliser les jetons`$`et`@`dans n’importe quel ordre : `$@"..."`et`@$"..."`sont des chaînes textuelles interpolées valides. Dans les C# versions antérieures, le jeton `$` doit apparaître avant le jeton `@`.
+> À C# partir de 8,0, vous pouvez utiliser les jetons `$` et `@` dans n’importe quel ordre : `$@"..."` et `@$"..."` sont des chaînes textuelles interpolées valides. Dans les versions de C# antérieures, l'unité lexicale `$` doit apparaître avant `@`.
 
 ## <a name="implicit-conversions-and-how-to-specify-iformatprovider-implementation"></a>Conversions implicites et comment spécifier `IFormatProvider` implémentation
 

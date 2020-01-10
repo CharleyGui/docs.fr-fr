@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : utiliser des canaux anonymes pour la communication entre processus en local'
+title: 'Comment : utiliser des canaux anonymes pour la communication entre processus en local'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,16 +13,14 @@ helpviewer_keywords:
 - one-way communication [.NET Framework]
 - local computer communication [.NET Framework], pipes
 ms.assetid: e7773c77-c646-4a01-8a96-a003d59fc4c9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 810b29b4abde174e3634a03d5c7b5e0e43de11b8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 16018be820951a2739d602edb99845eb89495d5e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54637766"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706645"
 ---
-# <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>Procédure : utiliser des canaux anonymes pour la communication entre processus en local
+# <a name="how-to-use-anonymous-pipes-for-local-interprocess-communication"></a>Comment : utiliser des canaux anonymes pour la communication entre processus en local
 Les canaux anonymes fournissent une communication entre processus sur un ordinateur local. Ils offrent moins de fonctionnalités que les canaux nommés, mais nécessitent également moins de surcharge. Vous pouvez utiliser les canaux anonymes pour établir plus facilement une communication entre processus sur un ordinateur local. Vous ne pouvez pas utiliser les canaux anonymes pour la communication sur un réseau.  
   
  Pour implémenter des canaux anonymes, utilisez les classes <xref:System.IO.Pipes.AnonymousPipeServerStream> et <xref:System.IO.Pipes.AnonymousPipeClientStream>.  

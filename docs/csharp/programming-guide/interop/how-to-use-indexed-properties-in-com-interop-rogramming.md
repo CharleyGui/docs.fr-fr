@@ -1,18 +1,17 @@
 ---
 title: Guide pratique pour utiliser des propriétés indexées dans COM Interop C# Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - indexed properties [C#]
 - Office programming [C#], indexed properties
 - properties [C#], indexed
 ms.assetid: 756bfc1e-7c28-4d4d-b114-ac9288c73882
-ms.openlocfilehash: aa4dc6da520fc58a99a9691aa39e412468aa02b5
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 864e2274f0e0e79b4843e0bb67b5c4384eac8588
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635312"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712063"
 ---
 # <a name="how-to-use-indexed-properties-in-com-interop-programming-c-programming-guide"></a>Guide pratique pour utiliser des propriétés indexées dans laC# programmation COM Interop (Guide de programmation)
 Les *propriétés indexées* améliorent la façon dont les propriétés COM avec des paramètres sont consommées dans la programmation C#. Les propriétés indexées fonctionnent avec d’autres fonctionnalités dans Visual C#, comme les [arguments nommés et facultatifs](../classes-and-structs/named-and-optional-arguments.md), un nouveau type ([dynamique](../../language-reference/builtin-types/reference-types.md)) et [les informations de type incorporées](../../../standard/assembly/embed-types-visual-studio.md), pour améliorer la programmation Microsoft Office.  

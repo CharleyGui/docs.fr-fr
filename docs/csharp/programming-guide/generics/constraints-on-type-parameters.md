@@ -1,18 +1,17 @@
 ---
 title: Contraintes sur les paramètres de type - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 04/12/2018
 helpviewer_keywords:
 - generics [C#], type constraints
 - type constraints [C#]
 - type parameters [C#], constraints
 - unbound type parameter [C#]
-ms.openlocfilehash: 19bf511ee7252bc305dbb4b6f32636955eba0ab8
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 3ce68ecc1f0740fdb43ccf22b636dcd4bc05ea0a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337270"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712232"
 ---
 # <a name="constraints-on-type-parameters-c-programming-guide"></a>Contraintes sur les paramètres de type (Guide de programmation C#)
 

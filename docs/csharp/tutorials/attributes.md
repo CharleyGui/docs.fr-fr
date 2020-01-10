@@ -5,14 +5,14 @@ author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 54eb3038594e1d4becf8a1bddd58b1e0e6464d68
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 9f08e362ada032e7193d83a73fbbf05259bd2259
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039288"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694554"
 ---
-# <a name="using-attributes-in-c"></a>Utiliser des attributs en C\#
+# <a name="use-attributes-in-c"></a>Utiliser des attributs en C\#
 
 Les attributs fournissent un moyen permettant d’associer des informations au code de manière déclarative. Ils peuvent également fournir un élément réutilisable qui peut être appliqué à diverses cibles.
 
@@ -21,8 +21,9 @@ Considérez l’attribut `[Obsolete]`. Vous pouvez l’appliquer aux classes, st
 Dans ce didacticiel, vous allez voir comment ajouter des attributs à votre code, comment créer et utiliser vos propres attributs et comment utiliser des attributs qui sont intégrés à .NET Core.
 
 ## <a name="prerequisites"></a>Configuration requise
-Vous devez configurer votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) .
-Vous pouvez exécuter cette application sur Windows, Ubuntu Linux, Mac OS ou dans un conteneur Docker. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
+Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) .
+Vous pouvez exécuter cette application sur Windows, Ubuntu Linux, Mac OS ou dans un conteneur Docker.
+Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
 ## <a name="create-the-application"></a>Création de l’application
 
@@ -30,7 +31,7 @@ Maintenant que vous avez installé tous les outils, créez une nouvelle applicat
 
 `dotnet new console`
 
-Cette commande créera des fichiers de projet .NET Core bruts. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
+Cette commande permet de créer des fichiers de projet .NET Core. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -41,7 +42,7 @@ Pour exécuter le programme, utilisez `dotnet run`. Vous devriez voir le résult
 En C#, les attributs sont des classes qui héritent de la classe de base `Attribute`. Toute classe qui hérite de `Attribute` peut être utilisée comme une sorte de « balise » sur les autres éléments de code.
 Par exemple, il existe un attribut appelé `ObsoleteAttribute`. Il sert à signaler que le code est obsolète et ne doit pas être plus utilisé. Vous pouvez placer cet attribut sur une classe, par exemple en utilisant des crochets.
 
-[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]  
+[!code-csharp[Obsolete attribute example](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ObsoleteExample1)]
 
 Notez que si la classe est nommée `ObsoleteAttribute`, il est seulement nécessaire d’utiliser `[Obsolete]` dans le code. Il s’agit d’une convention que C# respecte.
 Vous pouvez utiliser le nom complet `[ObsoleteAttribute]` si vous le souhaitez.
@@ -82,18 +83,18 @@ L’exemple ci-dessus entraîne une erreur du compilateur, comme `Attribute cons
 Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples ci-dessus les illustrent sur des classes, mais ils peuvent également être utilisés sur :
 
 * Assembly
-* Class
+* Classe
 * Constructeur
 * délégué
 * Enum
-* événement
+* Event
 * Champ
 * GenericParameter
 * Interface
 * Méthode
-* Module
+* Module, mot clé
 * Paramètre
-* Property
+* Les
 * ReturnValue
 * Struct
 
@@ -111,7 +112,7 @@ Les attributs agissent comme métadonnées. Sans une certaine force extérieure,
 
 Pour rechercher et agir sur des attributs, la [Réflexion](../programming-guide/concepts/reflection.md) est généralement nécessaire. Je n’aborderai pas la réflexion de façon approfondie dans ce didacticiel, mais l’idée fondamentale est que la réflexion vous permet d’écrire du code en C# qui examine un autre code.
 
-Par exemple, vous pouvez utiliser la réflexion pour obtenir des informations sur une classe (ajoutez `using System.Reflection;` au début de votre code) : 
+Par exemple, vous pouvez utiliser la réflexion pour obtenir des informations sur une classe (ajoutez `using System.Reflection;` au début de votre code) :
 
 [!code-csharp[Getting type information with Reflection](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#ReflectionExample1)]
 
@@ -135,12 +136,12 @@ Les attributs sont utilisés par de nombreux outils et frameworks. NUnit utilise
 
 Voici quelques attributs importants générés dans les bibliothèques de classe de base de .NET Core :
 
-* `[Obsolete]`., Celui-ci a été utilisé dans les exemples ci-dessus, et il se trouve dans l’espace de noms `System`. Il est utile de fournir des informations déclaratives sur une base de code changeante. Un message peut être fourni sous la forme d’une chaîne et un autre paramètre booléen peut servir à passer d’un avertissement du compilateur à une erreur du compilateur.
+* `[Obsolete]`. Celui-ci a été utilisé dans les exemples ci-dessus, et il se trouve dans l’espace de noms `System`. Il est utile de fournir des informations déclaratives sur une base de code changeante. Un message peut être fourni sous la forme d’une chaîne et un autre paramètre booléen peut servir à passer d’un avertissement du compilateur à une erreur du compilateur.
 
-* `[Conditional]`., Cet attribut se trouve dans l'espace de noms `System.Diagnostics`. Cet attribut peut être appliqué aux méthodes (ou classes d’attributs). Vous devez transmettre une chaîne au constructeur.
+* `[Conditional]`. Cet attribut se trouve dans l'espace de noms `System.Diagnostics`. Cet attribut peut être appliqué aux méthodes (ou classes d’attributs). Vous devez transmettre une chaîne au constructeur.
 Si cette chaîne ne correspond pas à une directive `#define`, les appels à cette méthode (mais pas la méthode proprement dite) sont supprimés par le compilateur C#. Cela est généralement utilisé pour le débogage (diagnostic).
 
-* `[CallerMemberName]`., Cet attribut peut être utilisé sur les paramètres et se trouve dans l’espace de noms `System.Runtime.CompilerServices`. Il s’agit d’un attribut utilisé pour injecter le nom de la méthode qui appelle une autre méthode. Cela est généralement utilisé comme moyen d’éliminer les « chaînes magiques » lors de l’implémentation de INotifyPropertyChanged dans divers frameworks d’interface utilisateur. En tant qu’exemple :
+* `[CallerMemberName]`. Cet attribut peut être utilisé sur les paramètres et se trouve dans l’espace de noms `System.Runtime.CompilerServices`. Il s’agit d’un attribut utilisé pour injecter le nom de la méthode qui appelle une autre méthode. Cela est généralement utilisé comme moyen d’éliminer les « chaînes magiques » lors de l’implémentation de INotifyPropertyChanged dans divers frameworks d’interface utilisateur. En tant qu’exemple :
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 

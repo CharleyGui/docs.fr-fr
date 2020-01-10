@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 55c4b175-3170-4071-9d60-dd5a42f79b54
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f0e05b09d5ce788b9a3da262d5890a0694b49375
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 55347de81c65b7390584415dd29044f4ca4ba02a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969028"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709814"
 ---
 # <a name="xmlschemaset-for-schema-compilation"></a>XmlSchemaSet pour la compilation de schémas
 Décrit l'objet <xref:System.Xml.Schema.XmlSchemaSet>, un cache où les schémas de langage XSD (XML Schema Definition) peuvent être stockés et validés.  

@@ -2,13 +2,13 @@
 title: Déboguer votre application Hello World .NET Core avec Visual Studio
 description: Découvrez comment déboguer une application Hello World écrite C# dans ou Visual Basic avec Visual Studio.
 ms.date: 12/05/2019
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 016b677639543c749a9940856f01b86e9a70859c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: bc2736165ec827c1f2670605f23f549ceed4e83a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340051"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714054"
 ---
 # <a name="debug-your-c-or-visual-basic-net-core-hello-world-application-using-visual-studio"></a>Déboguer votre application ou Visual Basic .NET Core Hello World à l’aide de C# Visual Studio
 

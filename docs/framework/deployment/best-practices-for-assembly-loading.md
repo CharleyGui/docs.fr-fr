@@ -12,14 +12,12 @@ helpviewer_keywords:
 - LoadWithPartialName method
 - load-from context
 ms.assetid: 68d1c539-6a47-4614-ab59-4b071c9d4b4c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a95679f659f13956fd230f07e9401af9097a043c
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: d1b6c2cd9f96a4acf48cbced48a86bc3e3409562
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71182471"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716586"
 ---
 # <a name="best-practices-for-assembly-loading"></a>Meilleures pratiques pour le chargement d'assembly
 Cet article explique les moyens d’éviter les problèmes d’identités de type qui peuvent générer des exceptions <xref:System.InvalidCastException> et <xref:System.MissingMethodException>, et d’autres erreurs. L’article aborde les recommandations suivantes :  
@@ -44,7 +42,7 @@ Cet article explique les moyens d’éviter les problèmes d’identités de typ
   
 - Le contexte de chargement source contient des assemblys chargés à partir d’emplacements où le chargeur ne fait pas de recherche. Par exemple, des compléments peuvent être installés dans un répertoire qui n’est pas sous le chemin de l’application. <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>, <xref:System.AppDomain.CreateInstanceFrom%2A?displayProperty=nameWithType> et <xref:System.AppDomain.ExecuteAssembly%2A?displayProperty=nameWithType> sont des exemples de méthodes qui sont chargées via un chemin.  
   
-- Le contexte de réflexion uniquement contient des assemblys chargés avec les méthodes <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> et <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A>. Le code de ce contexte ne peut pas être exécuté et il n’est donc pas abordé ici. Pour plus d'informations, voir [Procédure : charger des assemblys dans le contexte de réflexion uniquement](../reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
+- Le contexte de réflexion uniquement contient des assemblys chargés avec les méthodes <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A> et <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom%2A>. Le code de ce contexte ne peut pas être exécuté et il n’est donc pas abordé ici. Pour plus d’informations, consultez [Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](../reflection-and-codedom/how-to-load-assemblies-into-the-reflection-only-context.md).  
   
 - Si vous avez généré un assembly dynamique transitoire en utilisant l’émission par réflexion, l’assembly ne se trouve dans aucun contexte. En outre, la plupart des assemblys chargés à l’aide de la méthode <xref:System.Reflection.Assembly.LoadFile%2A> sont chargés sans contexte, et les assemblys qui sont chargés à partir de tableaux d’octets sont chargés sans contexte, à moins que leur identité (une fois que la stratégie est appliquée) établisse qu’ils se trouvent dans le Global Assembly Cache.  
   

@@ -2,12 +2,12 @@
 title: 'Comment : rechercher des phrases qui contiennent un groupe de mots spécifié (LINQ)'
 ms.date: 07/20/2015
 ms.assetid: a5ae8ced-61fe-4c10-bb8a-95630e50f603
-ms.openlocfilehash: 4a068f4f5500da5fd26e3dea753ec9591b6c7f5f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 6595932fae9737a0ac482c952b29bfde429de76f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74347674"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344160"
 ---
 # <a name="how-to-query-for-sentences-that-contain-a-specified-set-of-words-linq-visual-basic"></a>Comment : rechercher des phrases qui contiennent un groupe de mots spécifié (LINQ) (Visual Basic)
 
@@ -63,9 +63,9 @@ La requête fractionne d’abord le texte en phrases, puis fractionne les phrase
 
 Dans l’appel à <xref:System.String.Split%2A>, les signes de ponctuation sont utilisés comme séparateurs pour être supprimés de la chaîne. Si vous ne l’avez pas fait, vous pourriez avoir, par exemple, la chaîne « Historically, », qui ne correspondrait pas au mot « Historically » du tableau `wordsToMatch`. Vous devrez peut-être utiliser des séparateurs supplémentaires, selon le type des signes de ponctuation qui se trouvent dans le texte source.
 
-## <a name="compiling-the-code"></a>Compilation du code
+## <a name="compile-the-code"></a>Compiler le code
 
-Créez un projet d’application console VB.NET, avec une instruction `Imports` pour l’espace de noms System. Linq.
+Créez un projet d’application console Visual Basic, avec une instruction `Imports` pour l’espace de noms System. Linq.
 
 ## <a name="see-also"></a>Voir aussi
 

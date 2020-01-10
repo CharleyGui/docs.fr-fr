@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: fde6f43f-c594-486f-abcb-2211197fae20
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1488fb6b7671acd86286bcac6fbfce8bee9429ad
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: a63452df16e452a90eff3977ac8726cc0a5ac439
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939591"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710191"
 ---
 # <a name="script-blocks-using-msxslscript"></a>Blocs de scripts utilisant msxsl:script
 La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts incorporés en utilisant l'élément `msxsl:script`. Lorsque la feuille de style est chargée, toute fonction définie est compilée en langage MSIL (Microsoft Intermediate Language) par le CodeDOM (Code Document Object Model) et exécutée au cours de l’exécution. L' assembly généré à partir du bloc de script incorporé est distinct de l'assembly généré pour la feuille de style.  
@@ -68,7 +66,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 ### <a name="importing-namespaces-and-assemblies"></a>Importation d'espaces de noms et d'assemblys  
  La classe <xref:System.Xml.Xsl.XslCompiledTransform> prédéfinit un ensemble d'assemblys et d'espaces de noms qui sont pris en charge par défaut par l'élément `msxsl:script`. Cependant, vous pouvez utiliser des classes et des membres appartenant à un espace de noms qui ne figure pas sur la liste prédéfinie en important l'assembly et l'espace de noms dans un bloc `msxsl:script`.  
   
-#### <a name="assemblies"></a>Assemblys  
+#### <a name="assemblies"></a>Assemblies  
  Les deux assemblys suivants sont référencés par défaut :  
   
 - System.dll  
@@ -91,10 +89,10 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
   
  L'attribut `name` contient le nom de l'assembly et l'attribut `href` contient le chemin de l'assembly. Le nom de l'assembly peut être un nom complet, comme « System.Data, Version=2.0.3600.0, Culture=neutral, PublicKeyToken=b77a5c561934e089 », ou un nom court, comme « System.Web ».  
   
-#### <a name="namespaces"></a>Espaces de noms  
+#### <a name="namespaces"></a>Espaces de noms des  
  Les espaces de noms suivants sont inclus par défaut :  
   
-- Système  
+- System  
   
 - System.Collection  
   
@@ -121,7 +119,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 </msxsl:script>  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'exemple suivant utilise un script incorporé pour calculer la circonférence d'un cercle en fonction de son rayon.  
   
  [!code-csharp[XSLT_Script#1](../../../../samples/snippets/csharp/VS_Snippets_Data/XSLT_Script/CS/xslt_script.cs#1)]
@@ -133,7 +131,7 @@ La classe <xref:System.Xml.Xsl.XslCompiledTransform> prend en charge les scripts
 #### <a name="calcxsl"></a>calc.xsl  
  [!code-xml[XSLT_Script#3](../../../../samples/snippets/xml/VS_Snippets_Data/XSLT_Script/XML/calc.xsl#3)]  
   
-### <a name="output"></a>Sortie  
+### <a name="output"></a>Output  
   
 ```xml  
 <circles xmlns:msxsl="urn:schemas-microsoft-com:xslt" xmlns:user="urn:my-scripts">  

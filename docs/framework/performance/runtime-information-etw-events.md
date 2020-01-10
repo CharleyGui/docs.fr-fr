@@ -5,28 +5,26 @@ helpviewer_keywords:
 - runtime information events [.NET Framework]
 - ETW, runtime information events
 ms.assetid: 68b4edbc-7f3b-45f6-ab75-4fd066d6af9a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6ab3844b293d09cec02236fb9befd836aa4113ea
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2927ed088ba6c9e46b9676d55d0046575e23cfb1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71046228"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715952"
 ---
 # <a name="runtime-information-etw-events"></a>Événements ETW d'information du runtime
 Ces événements ETW journalise des informations sur l’exécution, notamment la référence SKU, le numéro de version, le mode d’activation du runtime, les paramètres de ligne de commande avec lesquels il a été démarré, le GUID (le cas échéant) et d’autres informations pertinentes. Si plusieurs runtimes sont exécutés dans un processus, les informations fournies par ces événements (le ClrInstanceID) permettent de lever l’ambiguïté sur les runtimes.  
   
  Le tableau ci-dessous montre les deux événements d’informations liés au runtime. Les événements peuvent être déclenchés sous n’importe quel mot clé ou masque. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Événement|ID d'événement|Fournisseur|Description|  
+|Event|ID de l'événement|Fournisseur|Description|  
 |-----------|--------------|--------------|-----------------|  
 |`RuntimeInformationEvent`|187|CLRRuntime|Déclenché lorsqu’un runtime est chargé.|  
 |`RuntimeInformationDCStart`|187|CLRRundown|Énumère les runtimes chargés.|  
   
  Le tableau suivant affiche des données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
 |Sku|win:UInt16|1 – Desktop CLR.<br /><br /> 2 – CoreCLR.|  

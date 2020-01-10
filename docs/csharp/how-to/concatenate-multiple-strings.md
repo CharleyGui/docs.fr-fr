@@ -7,12 +7,12 @@ helpviewer_keywords:
 - concatenating strings [C#]
 - strings [C#], concatenation
 ms.assetid: 8e16736f-4096-4f3f-be0f-9d4c3ff63520
-ms.openlocfilehash: 2e443030445d2817c8f53a044a261edd22eeb26e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9a0640a7ce73fa8454442cd301157bf5c265f9de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973272"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713897"
 ---
 # <a name="how-to-concatenate-multiple-strings-c-guide"></a>Comment concaténer plusieurs chaînes (C# Guide)
 
@@ -41,7 +41,7 @@ Dans d’autres cas, vous pouvez combiner des chaînes dans une boucle quand vou
   
 [!code-csharp-interactive[string concatenation using string builder](../../../samples/snippets/csharp/how-to/strings/Concatenate.cs#4)]  
 
-Vous pouvez en savoir plus sur les [raisons de choisir la concaténation de chaînes ou la classe `StringBuilder`](xref:System.Text.StringBuilder#StringAndSB)
+Vous pouvez en savoir plus sur les [raisons pour choisir la concaténation de chaînes ou la classe `StringBuilder`](xref:System.Text.StringBuilder#StringAndSB).
 
 Une autre option permettant de joindre les chaînes d’une collection consiste à utiliser la méthode <xref:System.String.Concat%2A?displayProperty=nameWithType>. Utilisez la méthode <xref:System.String.Join%2A?displayProperty=nameWithType> si les chaînes sources doivent être séparées par un délimiteur. Le code suivant combine un tableau de mots en utilisant ces deux méthodes :
 

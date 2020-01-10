@@ -1,17 +1,16 @@
 ---
 title: Guide pratique pour écrire un constructeur de C# copie-Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# Language, copy constructor
 - copy constructor [C#]
 ms.assetid: fba899b5-fc41-428e-a745-3ebdbf37990a
-ms.openlocfilehash: 4ac7ccb55775019eb86d5345797d2fd74d3b9527
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: aa6feb1b07f491a90a78684e254910d387b9bccd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970388"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714850"
 ---
 # <a name="how-to-write-a-copy-constructor-c-programming-guide"></a>Comment écrire un constructeur de copie (C# Guide de programmation)
 C# ne fournit pas de constructeur de copie pour les objets, mais vous pouvez en écrire un vous-même.  

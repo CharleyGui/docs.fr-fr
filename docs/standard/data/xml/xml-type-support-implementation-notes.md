@@ -3,14 +3,12 @@ title: Remarques pour l'implémentation de la prise en charge du type XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 26b071f3-1261-47ef-8690-0717f5cd93c1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 817d48e15f3a1d370e1953ca9c9aa8e10baa7f29
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 40ab0f746ef82ccd195fc6b873f5c8edb255f868
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69916035"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709866"
 ---
 # <a name="xml-type-support-implementation-notes"></a>Remarques pour l'implémentation de la prise en charge du type XML
 Cette rubrique décrit certains détails de l'implémentation que vous souhaitez connaître.  
@@ -34,7 +32,7 @@ Cette rubrique décrit certains détails de l'implémentation que vous souhaitez
   
  La classe <xref:System.TimeSpan> ne prend pas en charge ce tri partiel. Par contre, elle détermine un nombre spécifique de jours pour un an et pour un mois, respectivement 365 jours et 30 jours.  
   
- Pour plus d’informations sur le type `xs:duration`, consultez le document du W3C [XML Schema Part 2: Datatypes Recommendation](https://www.w3.org/TR/xmlschema-2/).
+ Pour plus d’informations sur le type `xs:duration`, consultez les [recommandations du W3C sur les schémas XML (« XML Schema Part 2: Datatypes »)](https://www.w3.org/TR/xmlschema-2/).
   
 ### <a name="xstime-gregorian-date-types-and-systemdatetime"></a>xs:time, types de dates grégoriennes et System.DateTime  
  Lorsqu'une valeur `xs:time` est mappée à un objet <xref:System.DateTime>, le champ <xref:System.DateTime.MinValue> permet d'initialiser les propriétés de date de l'objet <xref:System.DateTime> (telles que <xref:System.DateTime.Year%2A>, <xref:System.DateTime.Month%2A> et <xref:System.DateTime.Day%2A>) à la valeur <xref:System.DateTime> la plus petite possible.  

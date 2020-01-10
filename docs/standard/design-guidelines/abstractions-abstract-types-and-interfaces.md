@@ -8,34 +8,33 @@ helpviewer_keywords:
 - abstract types [.NET Framework]
 - types [.NET Framework], abstract
 ms.assetid: 0a632bc7-9b03-44ee-8842-c82f88672a45
-author: KrzysztofCwalina
-ms.openlocfilehash: fcf566c24677630fdbb1fcd0eb7628f830b3be2b
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 014144764609c8a7faa87f3d080900824f9189eb
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61789218"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709580"
 ---
 # <a name="abstractions-abstract-types-and-interfaces"></a>Abstractions (Types et interfaces abstraits)
-Une abstraction est un type qui décrit un contrat, mais ne fournit pas une implémentation complète du contrat. Abstractions sont généralement implémentées comme des classes abstraites ou des interfaces, et ils sont livrés avec un ensemble bien défini de documentation de référence décrivant la sémantique requise des types qui implémente le contrat. Voici quelques-uns des abstractions plus importantes dans le .NET Framework <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>, et <xref:System.Object>.  
+Une abstraction est un type qui décrit un contrat, mais qui ne fournit pas une implémentation complète du contrat. Les abstractions sont généralement implémentées en tant que classes abstraites ou interfaces, et elles sont fournies avec un ensemble bien défini de documentation de référence décrivant la sémantique requise des types qui implémentent le contrat. Voici quelques-unes des abstractions les plus importantes du .NET Framework : <xref:System.IO.Stream>, <xref:System.Collections.Generic.IEnumerable%601>et <xref:System.Object>.  
   
- Vous pouvez étendre des infrastructures en implémentant un type concret qui prend en charge le contrat d’une abstraction et de l’utilisation de ce type concret avec framework API consommateur (d’exploitation sur) l’abstraction.  
+ Vous pouvez étendre des frameworks en implémentant un type concret qui prend en charge le contrat d’une abstraction et à l’aide de ce type concret avec les API d’infrastructure consommant (fonctionnant sur) l’abstraction.  
   
- Une abstraction significative et utile qui est en mesure de résister à l’épreuve du temps est très difficile de concevoir. La principale difficulté consiste à obtenir l’ensemble approprié de membres, pas plus et moins ne. Si une abstraction comporte trop de membres, il devient difficile, voire même d’implémenter. S’il a trop peu de membres pour la fonctionnalité Promise, il devient inutile dans de nombreux scénarios intéressants.  
+ Une abstraction significative et utile qui peut résister au test de temps est très difficile à concevoir. La difficulté principale est l’obtention du jeu de membres approprié, et pas plus ou moins. Si une abstraction a trop de membres, elle devient difficile, voire impossible à implémenter. S’il a trop peu de membres pour la fonctionnalité promis, il devient inutile dans de nombreux scénarios intéressants.  
   
- Trop d’abstractions dans une infrastructure également nuire facilité d’utilisation de l’infrastructure. Il est souvent très difficile de comprendre une abstraction sans avoir à comprendre comment elle s’adapte à l’image la plus grande des implémentations concrètes et les API d’exploitation sur l’abstraction. En outre, les noms des abstractions et leurs membres sont nécessairement abstraites, qui les rend difficiles à déchiffrer et difficiles à réaliser sans premier comprendre le contexte plus large de leur utilisation.  
+ Un trop grand nombre d’abstractions dans une infrastructure affecte également la convivialité de l’infrastructure. Il est souvent assez difficile de comprendre une abstraction sans comprendre comment elle s’intègre à la plus grande image des implémentations concrètes et aux API opérant sur l’abstraction. En outre, les noms des abstractions et de leurs membres sont nécessairement abstraits, ce qui les rend souvent énigmatiques et incompréhensibles sans avoir d’abord à comprendre le contexte plus large de leur utilisation.  
   
- Toutefois, les abstractions fournissent extrêmement puissante d’extensibilité que les autres mécanismes d’extensibilité ne peut pas correspondre souvent. Ils sont au cœur de nombreux modèles architectures, tels que des plug-ins, inversion de contrôle (IoC), pipelines et ainsi de suite. Elles sont également extrêmement importants pour la testabilité de frameworks. Bonne abstractions permettent d’épargner des dépendances lourdes à des fins de tests unitaires. En résumé, les abstractions sont responsables de la richesse histoire des infrastructures et orienté objet modernes.  
+ Toutefois, les abstractions offrent une extensibilité extrêmement puissante que les autres mécanismes d’extensibilité ne correspondent pas souvent. Ils sont au cœur de nombreux modèles architecturaux, tels que les plug-ins, l’inversion de contrôle (IoC), les pipelines, etc. Ils sont également extrêmement importants pour la testabilité des frameworks. De bonnes abstractions permettent de remplacer les dépendances lourdes dans le cadre des tests unitaires. En résumé, les abstractions sont responsables de la richesse recherchée des frameworks orientés objet modernes.  
   
  **X DO NOT** fournissent des abstractions, sauf si elles sont testées par le développement de plusieurs implémentations concrètes et consomme les abstractions des API.  
   
  **✓ DO** choisir entre une classe abstraite et une interface avec soin lors de la conception d’une abstraction.  
   
- **✓ CONSIDER** fournissant des tests de référence pour les implémentations concrètes d’abstractions. Ces tests doivent autoriser les utilisateurs à déterminer si leurs implémentations implémentent correctement le contrat.  
+ **✓ CONSIDER** fournissant des tests de référence pour les implémentations concrètes d’abstractions. Ces tests doivent permettre aux utilisateurs de tester si leurs implémentations implémentent correctement le contrat.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

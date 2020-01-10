@@ -1,17 +1,16 @@
 ---
 title: Gestion des exceptions - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - exception handling [C#], about exception handling
 - exceptions [C#], handling
 ms.assetid: b4e4ecf2-b907-4e58-891f-2563762258e9
-ms.openlocfilehash: 895f561c15941d851980ea9b392d2e86db2462f3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ee1e5bd15183dad9ffe97824f9b194668e9d3b17
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423284"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705299"
 ---
 # <a name="exception-handling-c-programming-guide"></a>Gestion des exceptions (Guide de programmation C#)
 Un bloc [try](../../language-reference/keywords/try-catch.md) est utilisé par les programmeurs C# pour partitionner du code susceptible d’être affecté par une exception. Des blocs [catch](../../language-reference/keywords/try-catch.md) associés sont utilisés pour gérer les exceptions générées. Un bloc [finally](../../language-reference/keywords/try-finally.md) contient du code qui s’exécute dans tous les cas, qu’une exception soit levée ou non dans le bloc `try` (il peut s’agir par exemple de la libération des ressources allouées dans le bloc `try`). Un bloc `try` doit être associé à un ou plusieurs blocs `catch`, à un bloc `finally`, ou aux deux.  
@@ -46,7 +45,7 @@ Un bloc [try](../../language-reference/keywords/try-catch.md) est utilisé par l
 ## <a name="finally-blocks"></a>Blocs Finally  
  Un bloc `finally` vous permet de nettoyer les actions qui sont exécutées dans un bloc `try`. S’il est présent, le bloc `finally` s’exécute en dernier, après le bloc `try` et tout bloc `catch` mis en correspondance. Un bloc `finally` s’exécute toujours, qu’une exception soit levée ou non, et même si aucun bloc `catch` correspondant au type d’exception n’est trouvé.  
   
- Le bloc `finally` peut être utilisé pour libérer des ressources telles que des flux de fichiers, des connexions de base de données et des handles graphiques, sans attendre que le récupérateur de mémoire dans le runtime finalise les objets. Pour plus d’informations, consultez [Instruction using](../../language-reference/keywords/using-statement.md).  
+ Le bloc `finally` peut être utilisé pour libérer des ressources telles que des flux de fichiers, des connexions de base de données et des handles graphiques, sans attendre que le récupérateur de mémoire dans le runtime finalise les objets. Pour plus d’informations, consultez [using, instruction](../../language-reference/keywords/using-statement.md).  
   
  Dans l’exemple suivant, le bloc `finally` est utilisé pour fermer un fichier ouvert dans le bloc `try`. Notez que l’état du handle de fichier est vérifié avant la fermeture du fichier. Si le bloc `try` ne peut pas ouvrir le fichier, le handle de fichier a encore la valeur `null` et le bloc `finally` n’essaie pas de le fermer. En guise d’alternative, si le fichier est ouvert avec succès dans le bloc `try`, le bloc `finally` ferme le fichier ouvert.  
   
@@ -58,7 +57,7 @@ Pour plus d’informations, consultez [Exceptions](~/_csharplang/spec/exceptions
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../../language-reference/index.md)
+- [Référence C#](../../language-reference/index.md)
 - [Guide de programmation C#](../index.md)
 - [Exceptions et gestion des exceptions](./index.md)
 - [try-catch](../../language-reference/keywords/try-catch.md)

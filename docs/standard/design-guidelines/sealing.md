@@ -8,44 +8,43 @@ helpviewer_keywords:
 - preventing customization
 - sealed classes
 ms.assetid: cc42267f-bb7a-427a-845e-df97408528d4
-author: KrzysztofCwalina
-ms.openlocfilehash: f25573c0fef29ef54dc04c5287757903429d89d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 0920ea26b94d86b41f8ba9338f3ec19f9bc099e9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64615198"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709086"
 ---
 # <a name="sealing"></a>Sceller
-L’une des fonctionnalités d’infrastructures et orienté objet est que les développeurs peuvent étendre et personnaliser les manières imprévus par les concepteurs de framework. Il s’agit la puissance et le risque de conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement pour l’extensibilité lorsqu’il est nécessaire et pour limiter l’extensibilité lorsqu’il est dangereux.  
+L’une des fonctionnalités des frameworks orientés objet est que les développeurs peuvent les étendre et les personnaliser de manière inattendue par les concepteurs de Framework. Il s’agit de la puissance et du danger de la conception extensible. Lorsque vous concevez votre infrastructure, il est donc très important de concevoir soigneusement l’extensibilité quand vous le souhaitez, et de limiter l’extensibilité quand elle est dangereuse.  
   
- Scellement d’un mécanisme puissant qui empêche d’extensibilité. Vous pouvez sceller la classe ou des membres individuels. Sceller une classe empêche les utilisateurs d’en hériter de la classe. Le fait de sceller un membre empêche les utilisateurs de remplacer un membre particulier.  
+ Mécanisme puissant qui empêche la fermeture de l’extensibilité. Vous pouvez sceller la classe ou des membres individuels. La fermeture d’une classe empêche les utilisateurs d’hériter de la classe. La fermeture d’un membre empêche les utilisateurs de se substituer à un membre particulier.  
   
  **X DO NOT** sceller des classes sans avoir une bonne raison de le faire.  
   
- Le fait de sceller une classe, car vous ne pouvez pas considérer un scénario d’extensibilité n’est pas une bonne raison. Framework d’utilisateurs apprécient de hériter de classes pour diverses raisons identifiable, comme l’ajout de membres de commodité. Consultez [Classes Unsealed](../../../docs/standard/design-guidelines/unsealed-classes.md) pour obtenir des exemples de raisons identifiable les utilisateurs souhaitent hériter d’un type.  
+ Sceller une classe parce que vous ne pouvez pas considérer un scénario d’extensibilité n’est pas une bonne raison. Les utilisateurs de l’infrastructure aiment hériter des classes pour différentes raisons qui ne sont pas évidentes, comme l’ajout de membres de commodité. Consultez [classes non scellées](../../../docs/standard/design-guidelines/unsealed-classes.md) pour obtenir des exemples de raisons non évidentes que les utilisateurs souhaitent hériter d’un type.  
   
- Bonnes raisons pour sceller une classe sont les suivantes :  
+ Les bonnes raisons pour sceller une classe sont les suivantes :  
   
 - La classe est une classe statique. Consultez [conception de classes statiques](../../../docs/standard/design-guidelines/static-class.md).  
   
-- La classe stocke les clés secrètes sensibles à la sécurité dans les membres protégés hérités.  
+- La classe stocke des secrets sensibles à la sécurité dans les membres protégés hérités.  
   
-- La classe hérite de nombreux membres virtuels et le coût de leur scellement individuellement serait dépassent les avantages de la classe non scellés.  
+- La classe hérite de nombreux membres virtuels et le coût de leur scellement individuellement compenserait les avantages de laisser la classe non scellée.  
   
-- La classe est un attribut qui nécessite la recherche d’exécution très rapide. Attributs sealed ont des niveaux de performances légèrement plus élevés que ceux non scellé. consultez [attributs](../../../docs/standard/design-guidelines/attributes.md).  
+- La classe est un attribut qui nécessite une recherche très rapide au moment de l’exécution. Les attributs scellés ont des niveaux de performances légèrement supérieurs à ceux des attributs non scellés. Consultez [attributs](../../../docs/standard/design-guidelines/attributes.md).  
   
  **X DO NOT** déclarer les membres virtuels ou protégés sur les types sealed.  
   
- Par définition, les types sealed ne peut pas être héritées. Cela signifie que les membres protégés sur les types sealed ne peut pas être appelées, et les méthodes virtuelles sur les types sealed ne peut pas être substituées.  
+ Par définition, les types sealed ne peuvent pas être hérités de. Cela signifie que les membres protégés sur les types sealed ne peuvent pas être appelés, et les méthodes virtuelles sur les types sealed ne peuvent pas être substituées.  
   
  **✓ CONSIDER** sceller les membres que vous substituez.  
   
- Les problèmes qui peuvent résulter de présentation de membres virtuels (abordées dans [membres virtuels](../../../docs/standard/design-guidelines/virtual-members.md)) s’appliquent aux remplacements de même, bien qu’à un degré légèrement moindre. Le fait de sceller un remplacement vous protège ces problèmes à partir de ce point dans la hiérarchie d’héritage.  
+ Les problèmes qui peuvent résulter de l’introduction de membres virtuels (décrits dans [membres virtuels](../../../docs/standard/design-guidelines/virtual-members.md)) s’appliquent également aux remplacements, bien qu’à un degré légèrement moindre. Le scellage d’un remplacement vous protège de ces problèmes à partir de ce point dans la hiérarchie d’héritage.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

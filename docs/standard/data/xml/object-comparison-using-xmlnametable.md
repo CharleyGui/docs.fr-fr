@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 8d94e041-d340-4ddf-9a2c-d7319e3f4f86
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 814f5434dd0473b3b1dd613a2eba14a828c464d9
-ms.sourcegitcommit: a885cc8c3e444ca6471348893d5373c6e9e49a47
-ms.translationtype: HT
+ms.openlocfilehash: 63278f1aa1fe47377d2dae322a9d12338bbe45dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/06/2018
-ms.locfileid: "43862778"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710529"
 ---
 # <a name="object-comparison-using-xmlnametable"></a>Comparaison d'objets à l'aide de XmlNameTable
 Durant la création d'un objet **XmlDocument**, une table de noms est spécialement créée à l'intention de ce document. Quand les données XML sont chargées dans le document ou que de nouveaux éléments ou attributs sont créés, les noms d'attributs et d'éléments sont placés dans **XmlNameTable**. Vous pouvez également créer un **XmlDocument** en utilisant un **NameTable** existant issu d'un autre document. Quand des **XmlDocument** sont créés avec le constructeur qui prend un paramètre **XmlNameTable**, le document a accès aux préfixes, aux espaces de noms et aux noms de nœud déjà stockés dans **XmlNameTable**. Quelle que soit la manière dont les noms sont chargés dans la table de noms, une fois les noms stockés dans la table, ils peuvent être comparés rapidement par la comparaison d'objets et non au moyen de la comparaison de chaînes. Des chaînes peuvent également être ajoutées à la table de noms à l'aide de la <xref:System.Xml.NameTable.Add%2A>. L'exemple de code suivant illustre la création d'une table de noms et l'ajout de la chaîne **MyString** à cette table. Un **XmlDocument** est ensuite créé au moyen de cette table, et les noms d'éléments et d'attributs de **Myfile.xml** sont ajoutés à la table de noms existante.  

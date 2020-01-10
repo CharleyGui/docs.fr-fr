@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 2bc33d27d48267f5b74f1baf67a49bdf0b55c839
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: ec08b668bf54c5460e078bbb27bfbc370aff4e4a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647975"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711179"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Accès à des données XML fortement typées à l'aide de XPathNavigator
 En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.Xml.XPath.XPathNavigator> peut contenir des données fortement typées correspondant aux types CLR (Common Language Runtime) courants. Conformément au modèle de données XPath 2.0, seuls les éléments et les attributs peuvent contenir des données fortement typées. La classe <xref:System.Xml.XPath.XPathNavigator> offre des mécanismes d'accès aux données dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> sous la forme de données fortement typées et des mécanismes de conversion d'un type de données en un autre.  
@@ -27,14 +25,14 @@ En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.
   
 - Valeur typée : élément ou attribut validé par rapport à un schéma avec un type simple qui présente une valeur typée. Cette valeur est un type primitif tel qu'un type numérique, de chaîne ou de date. Tous les types intégrés simples de XSD peuvent être mappés à des types CLR fournissant un accès à la valeur d'un nœud en tant que type le plus approprié, au lieu d'un simple objet <xref:System.String>. Un élément avec des attributs ou des éléments enfants est considéré comme un type complexe. La valeur typée d'un type complexe avec un contenu simple (uniquement des nœuds de texte comme enfants) est identique à celui du type simple de son contenu. La valeur typée d'un type complexe avec un contenu complexe (un ou plusieurs éléments enfants) est la valeur de chaîne de la concaténation de tous ses nœuds de texte enfant retournée sous la forme d'un objet <xref:System.String>. Pour plus d'informations sur le mappage de types de schéma intégrés à des types CLR, consultez [Prise en charge du type dans les classes System.Xml](../../../../docs/standard/data/xml/type-support-in-the-system-xml-classes.md).  
   
-- Nom du type spécifique au langage du schéma : dans la plupart des cas, les types CLR, définis comme l’effet secondaire de l’application d’un schéma externe, permettent de fournir un accès à la valeur d’un nœud. Toutefois, dans certaines situations, il se peut que vous souhaitiez examiner le type associé à un schéma particulier appliqué à un document XML. Par exemple, il se peut que vous souhaitiez effectuer une recherche dans un document XML et extraire tous les éléments identifiés comme ayant un contenu de type « OrdreAchat » conformément à un schéma associé. Ces informations sur le type ne peuvent être définies que suite à une validation de schéma et sont accessibles via les propriétés <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> et <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>. Pour plus d'informations, consultez la section ci-dessous sur le jeu d'informations de post-validation de schéma (PSVI).  
+- Nom du type spécifique au langage du schéma : dans la plupart des cas, les types CLR, définis comme l'effet secondaire de l'application d'un schéma externe, permettent de fournir un accès à la valeur d'un nœud. Toutefois, dans certaines situations, il se peut que vous souhaitiez examiner le type associé à un schéma particulier appliqué à un document XML. Par exemple, il se peut que vous souhaitiez effectuer une recherche dans un document XML et extraire tous les éléments identifiés comme ayant un contenu de type « OrdreAchat » conformément à un schéma associé. Ces informations sur le type ne peuvent être définies que suite à une validation de schéma et sont accessibles via les propriétés <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> et <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>. Pour plus d'informations, consultez la section ci-dessous sur le jeu d'informations de post-validation de schéma (PSVI).  
   
-- Réflexion du type spécifique au langage du schéma : dans d’autres cas, il se peut que vous souhaitiez obtenir d’autres détails sur le type spécifique au schéma appliqué à un document XML. Par exemple, lors de la lecture d'un fichier XML; il se peut que vous souhaitiez extraire l'attribut `maxOccurs` pour chaque nœud valide du document XML pour effectuer certains calculs personnalisés. Étant donné que ces informations ne sont définies que via la validation de schéma, elles sont accessibles par le biais de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>. Pour plus d'informations, consultez la section ci-dessous sur le jeu d'informations de post-validation de schéma (PSVI).  
+- Réflexion du type spécifique au langage du schéma : dans d'autres cas, il se peut que vous souhaitiez obtenir d'autres détails sur le type spécifique au schéma appliqué à un document XML. Par exemple, lors de la lecture d'un fichier XML; il se peut que vous souhaitiez extraire l'attribut `maxOccurs` pour chaque nœud valide du document XML pour effectuer certains calculs personnalisés. Étant donné que ces informations ne sont définies que via la validation de schéma, elles sont accessibles par le biais de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>. Pour plus d'informations, consultez la section ci-dessous sur le jeu d'informations de post-validation de schéma (PSVI).  
   
 ## <a name="xpathnavigator-typed-accessors"></a>Accesseurs typés XPathNavigator  
  Le tableau suivant illustre les différentes propriétés et méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> pouvant être utilisées pour accéder aux informations sur le type à propos d'un nœud.  
   
-|Property|Description|  
+|Les|Description|  
 |--------------|-----------------|  
 |<xref:System.Xml.XPath.XPathNavigator.XmlType%2A>|Contient les informations sur le type de schéma XML pour le nœud s'il est valide.|  
 |<xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A>|Contient le jeu d’informations de post-validation de schéma du nœud ajouté après validation, notamment les informations sur le type de schéma XML et sur la validité.|  
@@ -54,9 +52,9 @@ En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.
   
 1. Résultats de validation : informations indiquant si un élément ou un attribut a été correctement validé ou non. Ces informations sont exposées par la propriété <xref:System.Xml.Schema.IXmlSchemaInfo.Validity%2A> de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
-2. Informations par défaut : indiquent si la valeur de l’élément ou de l’attribut a été obtenue via des valeurs par défaut spécifiées dans le schéma ou non. Ces informations sont exposées par la propriété <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
+2. Informations par défaut : indiquent si la valeur de l'élément ou de l'attribut a été obtenue via des valeurs par défaut spécifiées dans le schéma ou non. Ces informations sont exposées par la propriété <xref:System.Xml.Schema.IXmlSchemaInfo.IsDefault%2A> de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
-3. Annotations de type : références aux composants de schéma pouvant être des définitions de types ou des déclarations d’élément et d’attribut. La propriété <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> de l'objet <xref:System.Xml.XPath.XPathNavigator> contient les informations spécifiques sur le type du nœud s'il est valide. Si la validité d'un nœud est inconnue, par exemple s'il a été validé, puis modifié, la propriété <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> est définie sur `null`, mais les informations sur le type sont toujours disponibles à partir des différentes propriétés de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
+3. Annotations de type : références aux composants de schéma pouvant être des définitions de types ou des déclarations d'élément et d'attribut. La propriété <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> de l'objet <xref:System.Xml.XPath.XPathNavigator> contient les informations spécifiques sur le type du nœud s'il est valide. Si la validité d'un nœud est inconnue, par exemple s'il a été validé, puis modifié, la propriété <xref:System.Xml.XPath.XPathNavigator.XmlType%2A> est définie sur `null`, mais les informations sur le type sont toujours disponibles à partir des différentes propriétés de la propriété <xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A> de la classe <xref:System.Xml.XPath.XPathNavigator>.  
   
  L’exemple suivant illustre l’utilisation des informations dans le jeu d’informations de post-validation de schéma exposé par l’objet <xref:System.Xml.XPath.XPathNavigator>.  
   

@@ -1,21 +1,20 @@
 ---
 title: Méthodes - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 318f51afefd780ed7be0ab8c2a72acb5fcf9db15
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 5955228d51d2f6845a363bcaf32581b6598273f6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699970"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714769"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
-Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La méthode `Main` est le point d’entrée de C# chaque application et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.
+Une méthode est un bloc de code qui contient une série d'instructions. Un programme provoque l'exécution des instructions en appelant la méthode et en spécifiant les éventuels arguments de méthode requis. En C#, chaque instruction exécutée est effectuée dans le contexte d'une méthode. La méthode `Main` est le point d’entrée pour C# chaque application et elle est appelée par le Common Language Runtime (CLR) au démarrage du programme.
 
 > [!NOTE]
 > Cet article décrit les méthodes nommées. Pour plus d’informations sur les fonctions anonymes, consultez [Fonctions anonymes](../statements-expressions-operators/anonymous-functions.md).
@@ -39,7 +38,7 @@ L'appel d'une méthode sur un objet revient à accéder à un champ. Après le n
 
 ## <a name="method-parameters-vs-arguments"></a>Paramètres de méthode et arguments
 
-La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom d’argument (le cas échéant) utilisé dans le code appelant ne doit pas nécessairement être le même que le paramètre nommé défini dans la méthode. Exemple :
+La définition de la méthode spécifie les noms et types des paramètres requis. Quand le code appelant appelle la méthode, il fournit des valeurs concrètes appelées arguments pour chaque paramètre. Les arguments doivent être compatibles avec le type de paramètre, mais le nom d’argument (le cas échéant) utilisé dans le code appelant ne doit pas nécessairement être le même que le paramètre nommé défini dans la méthode. Par exemple :
 
 [!code-csharp[csProgGuideObjects#74](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#74)]
 
@@ -53,7 +52,7 @@ Vous créez un type référence à l’aide du mot clé `class`, comme le montre
 
 [!code-csharp[csProgGuideObjects#42](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#42)]
 
-Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L’exemple suivant passe un objet de type `SampleRefType` à la méthode `ModifyObject` :
+Maintenant, si vous passez un objet basé sur ce type à une méthode, une référence à l'objet est passée. L’exemple suivant passe un objet de type `SampleRefType` à la méthode `ModifyObject`:
 
 [!code-csharp[csProgGuideObjects#75](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#75)]
 
@@ -92,7 +91,7 @@ Pour utiliser une valeur retournée par référence à partir d’une méthode, 
 ref int distance = plant
 ```
 
-Le retour d’un tableau multidimensionnel à partir d’une méthode, `M`, qui modifie le contenu du tableau n’est pas nécessaire si la fonction appelante a passé le tableau à `M`.  Vous pouvez retourner le tableau obtenu à partir de `M` pour bénéficier d’un style approprié ou d’un flux fonctionnel de valeurs, mais cela n’est pas nécessaire, car C# passe tous les types de référence par valeur, et la valeur d’une référence de tableau est le pointeur qui désigne le tableau. Dans la méthode `M`, toute modification apportée au contenu du tableau est observable par tout code qui possède une référence au tableau, comme illustré dans l’exemple suivant :
+Le retour d’un tableau multidimensionnel à partir d’une méthode, `M`, qui modifie le contenu du tableau n’est pas nécessaire si la fonction appelante a passé le tableau à `M`.  Vous pouvez retourner le tableau obtenu à partir de `M` pour bénéficier d’un style approprié ou d’un flux fonctionnel de valeurs, mais cela n’est pas nécessaire, car C# passe tous les types de référence par valeur, et la valeur d’une référence de tableau est le pointeur qui désigne le tableau. Dans la `M`de la méthode, toute modification apportée au contenu du tableau est observable par tout code qui possède une référence au tableau, comme illustré dans l’exemple suivant :
 
 ```csharp
 static void Main(string[] args)
@@ -120,7 +119,7 @@ Pour plus d'informations, consultez [return](../../language-reference/keywords/r
 
 La fonctionnalité async vous permet d'appeler des méthodes asynchrones sans utiliser de rappels explicites ni fractionner manuellement votre code entre plusieurs méthodes ou expressions lambda.
 
-Si vous marquez une méthode avec le modificateur [async](../../language-reference/keywords/async.md) , vous pouvez utiliser l'opérateur [await](../../language-reference/operators/await.md) dans la méthode. Quand le contrôle atteint une expression await dans la méthode async, il retourne à l'appelant, et la progression dans la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
+Si vous marquez une méthode avec le modificateur [async](../../language-reference/keywords/async.md), vous pouvez utiliser l’opérateur [await](../../language-reference/operators/await.md) dans la méthode. Quand le contrôle atteint une expression await dans la méthode async, il retourne à l'appelant, et la progression dans la méthode est interrompue jusqu'à ce que la tâche attendue se termine. Quand la tâche est terminée, l'exécution peut reprendre dans la méthode.
 
 > [!NOTE]
 > Une méthode async retourne à l'appelant quand elle rencontre le premier objet await qui n'est pas encore terminé ou quand elle atteint la fin de la méthode async, selon la première éventualité.
@@ -156,11 +155,11 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 
 Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l'instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction [yield return](../../language-reference/keywords/yield.md) est atteinte, l'emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.
 
-Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md) .
+Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md).
 
 Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-Pour plus d'informations, consultez [Itérateurs](../concepts/iterators.md).
+Pour plus d’informations, consultez [Itérateurs](../concepts/iterators.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

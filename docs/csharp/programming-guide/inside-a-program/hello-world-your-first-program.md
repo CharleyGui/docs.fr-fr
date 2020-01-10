@@ -1,6 +1,5 @@
 ---
 title: Hello World--votre premier programme à l’aide de Visual Studio sur Windows C# ou Mac-Guide de programmation
-ms.custom: seodec18
 ms.date: 09/12/2019
 f1_keywords:
 - cs.program
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - examples [C#], Hello World
 - Hello World example [C#]
 ms.assetid: 6493182a-b0b6-4539-a719-518a168cb730
-ms.openlocfilehash: edab64bf02a2b60cce21af536d2da98193dea9a1
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 910fa4af1b4e45ce627b589a06910dc168490047
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196219"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712141"
 ---
 # <a name="hello-world----your-first-program"></a>Hello World--votre premier programme
 
@@ -105,7 +104,7 @@ La méthode `Main` est une méthode [static](../../language-reference/keywords/s
 
 [!code-csharp[csProgGuideMain#19](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#19)]
 
-ou
+\- ou -
 
 [!code-csharp[csProgGuideMain#18](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#18)]
 

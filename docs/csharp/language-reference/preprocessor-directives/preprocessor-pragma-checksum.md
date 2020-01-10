@@ -1,18 +1,17 @@
 ---
 title: '##pragma checksum - Référence C#'
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - '#pragma checksum'
 helpviewer_keywords:
 - '#pragma checksum [C#]'
 ms.assetid: 3673e4ca-6098-4ec1-890f-8fceb2a794a2
-ms.openlocfilehash: 4103b6262fc5085c1204f423a36c9c5c2053b497
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 1bbb404e1183daa5e68e512e7439b6ae52abd605
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69605647"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712479"
 ---
 # <a name="pragma-checksum-c-reference"></a>#pragma checksum (Référence C#)
 Génère des sommes de contrôle pour les fichiers sources afin de faciliter le débogage des pages ASP.NET.  
@@ -23,7 +22,7 @@ Génère des sommes de contrôle pour les fichiers sources afin de faciliter le 
 #pragma checksum "filename" "{guid}" "checksum bytes"  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `"filename"`  
  Nom du fichier dont les modifications ou les mises à jour doivent faire l’objet d’une surveillance.  
   
@@ -33,7 +32,7 @@ Génère des sommes de contrôle pour les fichiers sources afin de faciliter le 
  `"checksum_bytes"`  
  Chaîne de chiffres hexadécimaux représentant les octets de la somme de contrôle. Doit être un nombre pair de chiffres hexadécimaux. S’il y a un nombre impair de chiffres, un avertissement est généré au moment de la compilation et la directive est ignorée.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes  
  Le débogueur Visual Studio utilise une somme de contrôle pour s’assurer de toujours trouver la bonne source. Le compilateur calcule la somme de contrôle pour un fichier source, puis envoie la sortie vers le fichier de base de données du programme (PDB). Le débogueur utilise ensuite le fichier PDB à comparer avec la somme de contrôle qu’il calcule pour le fichier source.  
   
  Cette solution ne fonctionne pas pour les projets ASP.NET, car la somme de contrôle est calculée pour le fichier source généré, au lieu du fichier .aspx. Pour résoudre ce problème, `#pragma checksum` fournit une prise en charge de la somme de contrôle pour les pages ASP.NET.  
@@ -42,7 +41,7 @@ Génère des sommes de contrôle pour les fichiers sources afin de faciliter le 
   
  Si le compilateur ne rencontre aucune directive `#pragma checksum` dans le fichier, il calcule la somme de contrôle et écrit la valeur dans le fichier PDB.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ```csharp
 class TestClass  

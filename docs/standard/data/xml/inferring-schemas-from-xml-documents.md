@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: f3d97d53-614d-4a04-a174-87965b7405f6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0b4727ead8abb9b3618f8b9dda8f7a9eb4b2321f
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 5c2d997d9006a3f1eb971eac20982b9dd5677ebf
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54742472"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710750"
 ---
 # <a name="inferring-schemas-from-xml-documents"></a>Inférence de schémas à partir de documents XML
 Cette rubrique décrit comment utiliser la classe <xref:System.Xml.Schema.XmlSchemaInference> pour déduire un schéma en langage XSD (XML Schema Definition) à partir de la structure d'un document XML.  

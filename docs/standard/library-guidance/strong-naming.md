@@ -1,15 +1,13 @@
 ---
 title: Affectation de noms forts et bibliothèques .NET
 description: Meilleures pratiques recommandées pour l’affectation de noms forts aux bibliothèques .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/16/2018
-ms.openlocfilehash: 3e7cc9a3a1be05d8fcb02b34f7027126697d15d0
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 0c2dba06413bc6435e3350bf6cc48f1b5882a261
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196969"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706424"
 ---
 # <a name="strong-naming"></a>Affectation de noms forts
 

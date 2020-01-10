@@ -2,13 +2,13 @@
 title: Vue d’ensemble de global.json
 description: Découvrez comment utiliser le fichier global.json pour définir la version du kit SDK .NET Core pendant l’exécution de commandes CLI .NET Core.
 ms.date: 12/03/2018
-ms.custom: updateeachrelease, seodec18
-ms.openlocfilehash: 2c1fec102993b61e1eb699e8d3508b773302f569
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.custom: updateeachrelease
+ms.openlocfilehash: 4da703266e98b209cdd031f4ea856b4d7c83930c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117431"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714177"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
@@ -24,13 +24,13 @@ Le kit SDK .NET Core recherche un fichier *global.json* dans le répertoire de t
 
 ### <a name="sdk"></a>sdk
 
-Type : Object
+Type : object
 
 Spécifie des informations sur le kit SDK .NET Core à sélectionner.
 
-#### <a name="version"></a>version
+#### <a name="version"></a>Version de
 
-Type : Chaîne
+Type : chaîne
 
 Version du kit SDK .NET Core à utiliser.
 

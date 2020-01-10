@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - String data type [Visual Basic], validation
 ms.assetid: 5d9a918f-6c1f-41a3-a019-b5c2b8ce0381
-ms.openlocfilehash: 6e8697379a6fbb5cc15b60291e5b822897c2c013
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 49e6f79c13c94a3f2f6891b259c4bb2bec54ae6f
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74348328"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75344519"
 ---
 # <a name="walkthrough-validating-that-passwords-are-complex-visual-basic"></a>Procédure pas à pas : validation de la complexité des mots de passe (Visual Basic)
 Cette méthode vérifie certaines caractéristiques de mot de passe fort et met à jour un paramètre de chaîne avec des informations sur la vérification de l’échec du mot de passe.  
@@ -23,10 +23,10 @@ Cette méthode vérifie certaines caractéristiques de mot de passe fort et met 
 ### <a name="code"></a>Code  
  [!code-vb[VbVbcnRegEx#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbcnRegEx/VB/Class1.vb#1)]  
   
-## <a name="compiling-the-code"></a>Compilation du code  
+## <a name="compile-the-code"></a>Compiler le code  
  Appelez cette méthode en passant la chaîne qui contient ce mot de passe.  
   
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un accès aux membres de l’espace de noms <xref:System.Text.RegularExpressions>. Ajoutez une instruction `Imports` si vous n’utilisez pas de noms de membres qualifiés complets dans votre code. Pour plus d’informations, consultez [Instruction Imports (espace de noms et type .NET)](../../../../visual-basic/language-reference/statements/imports-statement-net-namespace-and-type.md).  
   

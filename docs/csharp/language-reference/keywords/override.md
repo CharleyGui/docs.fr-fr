@@ -1,6 +1,5 @@
 ---
 title: override, modificateur - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - override
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
-ms.openlocfilehash: 699887d635ab074fc9ffa4cd7fa354372eb82f25
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: acad3aa3b196c184132ad1acdf52b18a799b0896
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422633"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713246"
 ---
 # <a name="override-c-reference"></a>override (référence C#)
 
@@ -49,7 +48,7 @@ Cet exemple définit une classe de base nommée `Employee` et une classe dériv�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Héritage](../../programming-guide/classes-and-structs/inheritance.md)
 - [Mots clés C#](index.md)

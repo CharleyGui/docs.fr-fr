@@ -4,13 +4,12 @@ description: Apprenez les concepts des tests unitaires dans .NET Core de manièr
 author: billwagner
 ms.author: wiwagn
 ms.date: 09/01/2017
-ms.custom: seodec18
-ms.openlocfilehash: 1738aa805947fbe0c1b7c2c770947ce650692b5f
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c587aaa5c4c50ec66ac6cd8cd7aefd7b0ca1a80c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117050"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715420"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de xUnit
 

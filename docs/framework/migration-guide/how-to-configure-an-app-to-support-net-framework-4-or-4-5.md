@@ -1,20 +1,18 @@
 ---
-title: 'Procédure : configurer une application pour prendre en charge .NET Framework 4 ou ultérieur'
+title: 'Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - configuring apps to support .NET Framework
 - .NET Framework, configuring apps
 ms.assetid: 63c6b9a8-0088-4077-9aa3-521ab7290f79
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cd267de1e632fdc40dc50e8acdeba7d16bf8e61a
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 586f39fc9b50dcd45bb959ebd0063e3c38d9c3ed
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70779481"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716248"
 ---
-# <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Procédure : configurer une application pour prendre en charge .NET Framework 4 ou ultérieur
+# <a name="how-to-configure-an-app-to-support-net-framework-4-or-later-versions"></a>Comment : configurer une application pour prendre en charge .NET Framework 4 ou versions ultérieures
 
 Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent démarrer, ou *activer*, le CLR afin d'exécuter le code managé. En général, une application .NET Framework s'exécute sur la version du CLR pour laquelle elle a été générée, mais vous pouvez modifier ce comportement pour les applications de bureau en utilisant un fichier de configuration d'application (parfois appelé fichier app.config). Toutefois, vous ne pouvez pas modifier le comportement d'activation par défaut des applications Windows Store ou des applications Windows Phone en utilisant un fichier de configuration d'application. Cet article explique comment permettre à votre application de bureau de s’exécuter sur une autre version du .NET Framework et fournit un exemple de la façon de cibler les versions 4 ou ultérieures.
 
@@ -45,7 +43,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 
 1. Ajoutez ou recherchez le fichier de configuration pour le projet .NET Framework. Le fichier de configuration d'une application se trouve dans le même répertoire et porte le même nom que l'application, mais il possède une extension .config. Par exemple, à une application nommée MyExecutable.exe correspond le fichier de configuration de l'application nommé MyExecutable.exe.config.
 
-     Pour ajouter un fichier de configuration, dans la barre de menus de Visual Studio, choisissez **Projet**, **Ajouter un nouvel élément**. Choisissez **Général** dans le volet gauche, puis choisissez **Fichier de configuration**. Nommez le fichier de configuration *Nom_app*.exe.config. Ces options de menu ne sont pas disponibles pour les projets d'application Windows Store ou d'application Windows Phone, car vous ne pouvez pas modifier la stratégie d'activation sur ces plateformes.
+     Pour ajouter un fichier de configuration, dans la barre de menus de Visual Studio, choisissez **Projet**, **Ajouter un nouvel élément**. Choisissez **Général** dans le volet gauche, puis choisissez **Fichier de configuration**. Nommez le fichier de configuration *appname*. exe. config. Ces options de menu ne sont pas disponibles pour les projets d’application Windows Store ou d’application Windows Phone, car vous ne pouvez pas modifier la stratégie d’activation sur ces plateformes.
 
 2. Ajoutez l'élément [\<supportedRuntime>](../configure-apps/file-schema/startup/supportedruntime-element.md) dans le fichier de configuration de l'application, comme suit :
 
@@ -79,7 +77,7 @@ Toutes les applications qui hébergent le Common Langage Runtime (CLR) doivent d
 |`<supportedRuntime version="v4.0"/>` <br /> `<supportedRuntime version="v2.0.50727"/>`|S'exécute sur 3.5|S’exécute sur la version 4 ou ultérieur|S’exécute sur la version 4 ou ultérieur|
 |`<supportedRuntime version="v4.0"/>`|Affiche un message d'erreur qui invite l'utilisateur à installer la version correcte*|S’exécute sur la version 4 ou ultérieur|S’exécute sur la version 4 ou ultérieur|
 
- \* Pour plus d’informations sur ce message d’erreur et les moyens de l’éviter, consultez [Erreurs d’initialisation de .NET Framework : gestion de l’expérience utilisateur](../deployment/initialization-errors-managing-the-user-experience.md).
+ \*Pour plus d'informations sur ce message d'erreur et les moyens de l'éviter, consultez [Erreurs d'initialisation de .NET Framework : gérer l'expérience utilisateur](../deployment/initialization-errors-managing-the-user-experience.md).
 
 ## <a name="see-also"></a>Voir aussi
 

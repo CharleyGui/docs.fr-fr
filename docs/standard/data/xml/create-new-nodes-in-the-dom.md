@@ -3,14 +3,12 @@ title: Création de nouveaux nœuds dans le DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 6c2b9789-b61a-49f9-b33f-db01a945edf2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 59ac88b2e7c6b3ecd4d06c0183a2f8a7f4a9e2d4
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: f48990286405baee347becef87d0511cd42e9e77
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590248"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710997"
 ---
 # <a name="create-new-nodes-in-the-dom"></a>Création de nouveaux nœuds dans le DOM
 L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous les types de nœuds. À l'invite, donnez un nom à la méthode, au contenu ou autres paramètres pour les nœuds dotés de contenu (par exemple, un nœud de texte) et le nœud est créé. Les méthodes suivantes sont celles qui nécessitent un nom ainsi que quelques autres paramètres pour créer un nœud correct.  
@@ -46,7 +44,7 @@ L'objet <xref:System.Xml.XmlDocument> possède une méthode de création de tous
 |Méthode|Position du nœud|  
 |------------|--------------------|  
 |<xref:System.Xml.XmlNode.InsertBefore%2A>|Inséré avant le nœud de référence. Par exemple, pour insérer le nouveau nœud en position 5 :<br /><br /> `Dim refChild As XmlNode = node.ChildNodes(4) 'The reference is zero-based.node.InsertBefore(newChild, refChild);`<br /><br /> `XmlNode refChild = node.ChildNodes[4]; //The reference is zero-based. node.InsertBefore(newChild, refChild);`<br /><br /> Pour plus d'informations, voir la méthode <xref:System.Xml.XmlNode.InsertBefore%2A>.|  
-|<xref:System.Xml.XmlNode.InsertAfter%2A>|Inséré après le nœud de référence. Par exemple :<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Pour plus d'informations, voir la méthode <xref:System.Xml.XmlNode.InsertAfter%2A>.|  
+|<xref:System.Xml.XmlNode.InsertAfter%2A>|Inséré après le nœud de référence. Par exemple :<br /><br /> `node.InsertAfter(newChild, refChild)`<br /><br /> `node.InsertAfter(newChild, refChild);`<br /><br /> Pour plus d'informations, voir la méthode <xref:System.Xml.XmlNode.InsertAfter%2A>.|  
 |<xref:System.Xml.XmlNode.AppendChild%2A>|Ajoute le nœud à la fin de la liste des nœuds enfants du nœud donné. Si le nœud ajouté est un objet <xref:System.Xml.XmlDocumentFragment>, l'ensemble du contenu du fragment de document est déplacé dans la liste des enfants de ce nœud. Pour plus d'informations, voir la méthode <xref:System.Xml.XmlNode.AppendChild%2A>.|  
 |<xref:System.Xml.XmlNode.PrependChild%2A>|Ajoute le nœud au début de la liste des nœuds enfants du nœud donné. Si le nœud ajouté est un objet <xref:System.Xml.XmlDocumentFragment>, l'ensemble du contenu du fragment de document est déplacé dans la liste des enfants de ce nœud. Pour plus d'informations, voir la méthode <xref:System.Xml.XmlNode.PrependChild%2A>.|  
 |<xref:System.Xml.XmlAttributeCollection.Append%2A>|Ajoute un nœud <xref:System.Xml.XmlAttribute> à la fin de la collection d’attributs associée à un élément. Pour plus d'informations, voir la méthode <xref:System.Xml.XmlAttributeCollection.Append%2A>.|  

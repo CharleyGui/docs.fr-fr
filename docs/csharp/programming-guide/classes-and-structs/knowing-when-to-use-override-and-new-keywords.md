@@ -1,22 +1,21 @@
 ---
 title: Savoir quand utiliser les mots clés override et new - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - override keyword [C#]
 - new keyword [C#]
 - polymorphism [C#], using override and new [C#]
 ms.assetid: 323db184-b136-46fc-8839-007886e7e8b0
-ms.openlocfilehash: 00751cd8eac7979fe94d890ddeb7d13edb233f9e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 0a209b9522202649765654013fdc3a468913c6b1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69596471"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714780"
 ---
 # <a name="knowing-when-to-use-override-and-new-keywords-c-programming-guide"></a>Savoir quand utiliser les mots clés override et new (Guide de programmation C#)
 
-En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../language-reference/keywords/new-modifier.md) et [override](../../language-reference/keywords/override.md). Le modificateur `override` *étend* la méthode `virtual` de la classe de base, tandis que le modificateur `new` *masque* une méthode de classe de base accessible. La différence est illustrée dans les exemples de cette rubrique.  
+En C#, une méthode dans une classe dérivée peut avoir le même nom qu’une méthode dans la classe de base. Vous pouvez spécifier le mode d’interaction des méthodes avec les mots clés [new](../../language-reference/keywords/new-modifier.md) et [override](../../language-reference/keywords/override.md). Le modificateur `override`*étend* la méthode `virtual` de la classe de base, tandis que le modificateur `new`*masque* une méthode de classe de base accessible. La différence est illustrée dans les exemples de cette rubrique.  
   
  Dans une application console, déclarez les deux classes suivantes, `BaseClass` et `DerivedClass`. `DerivedClass` hérite de `BaseClass`.  
   
@@ -79,7 +78,7 @@ public void Method2()
 }  
 ```  
   
- Comme `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d’appel peut être ajoutée pour les variables `BaseClass` `bc` et `bcdc`, comme illustré dans le code suivant.  
+ Comme `BaseClass` a maintenant une méthode `Method2`, une deuxième instruction d’appel peut être ajoutée pour les variables `BaseClass``bc` et `bcdc`, comme illustré dans le code suivant.  
   
 ```csharp  
 bc.Method1();  

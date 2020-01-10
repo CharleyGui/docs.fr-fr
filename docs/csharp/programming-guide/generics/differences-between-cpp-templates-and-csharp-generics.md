@@ -1,16 +1,15 @@
 ---
 title: Différences entre les modèles C++ et les génériques C# - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - generics [C#], vs. C++ templates
 ms.assetid: 1da6beeb-d4a4-4da0-87b7-0cfbe04920b7
-ms.openlocfilehash: b794666501fb27d2f73a6050f85df3725050982e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e44f67353410c58c406620109270972df17f9f86
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589853"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75703531"
 ---
 # <a name="differences-between-c-templates-and-c-generics-c-programming-guide"></a>Différences entre les modèles C++ et les génériques C# (Guide de programmation C#)
 Les génériques C# et les modèles C++ sont des fonctionnalités linguistiques qui prennent en charge les types paramétrables. Toutefois, il existe de nombreuses différences entre les deux. Au niveau de la syntaxe, les génériques C# constituent une approche plus simple des types paramétrables, sans la complexité des modèles C++. De plus, C# n’essaie pas de fournir toutes les fonctionnalités fournies par les modèles C++. Au niveau de l’implémentation, la principale différence est que les substitutions de type générique C# sont effectuées au moment de l’exécution. Ainsi, les informations de type générique sont conservées pour les objets instanciés. Pour plus d’informations, consultez [Génériques dans le runtime](./generics-in-the-run-time.md).  

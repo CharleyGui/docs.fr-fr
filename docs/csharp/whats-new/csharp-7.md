@@ -3,12 +3,12 @@ title: Nouveautés de C# 7.0 | Guide C#
 description: Découvrez les nouvelles fonctionnalités disponibles dans la version 7.0 du langage C#.
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
-ms.openlocfilehash: 0f26a9647503ebb667d961fefaa05a25a71ec6f5
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 73563a04dea04c942a6326d6a04ddd54bb80b0ed
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926574"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75694580"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
@@ -211,7 +211,7 @@ Il est possible d’utiliser la même technique avec les méthodes `async` pour 
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Certaines des conceptions prises en charge par les fonctions locales peuvent également être effectuées à l’aide d’*expressions lambda*. Si cela vous intéresse, [reportez-vous aux informations supplémentaires décrivant ce qui différencie ces deux processus](../local-functions-vs-lambdas.md).
+> Certaines des conceptions prises en charge par les fonctions locales peuvent également être effectuées à l’aide d’*expressions lambda*. Pour plus d’informations, consultez [fonctions locales et expressions lambda](../local-functions-vs-lambdas.md).
 
 ## <a name="more-expression-bodied-members"></a>Autres membres expression-bodied
 
@@ -222,7 +222,7 @@ C# 6 a introduit les [membres expression-bodied](csharp-6.md#expression-bodied-
 > [!NOTE]
 > Cet exemple n’a pas besoin de finaliseur, mais il est présenté pour illustrer la syntaxe. Vous ne devez implémenter un finaliseur dans votre classe que si cela est nécessaire pour libérer des ressources non managées. Vous devez également envisager d’utiliser la classe <xref:System.Runtime.InteropServices.SafeHandle> au lieu de gérer directement les ressources non managées.
 
-Ces nouveaux emplacements pour les membres expression-bodied représentent un jalon important pour le langage C# : ces fonctionnalités ont été implémentées par les membres de la communauté travaillant sur le projet open source [Roslyn](https://github.com/dotnet/Roslyn).
+Ces nouveaux emplacements pour les membres expression-bodied représentent une étape importante pour le langage C# : ces fonctionnalités ont été implémentées par des membres de la communauté travaillant sur le projet open source [Roslyn](https://github.com/dotnet/Roslyn).
 
 La modification d’une méthode en un membre expression-bodied est une [modification compatible binaire](version-update-considerations.md#binary-compatible-changes).
 

@@ -1,6 +1,5 @@
 ---
 title: Comment accéder aux objets Office Interop- C# Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - optional parameters [C#], Office programming
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - named arguments [C#], Office programming
 - Office programming [C#]
 ms.assetid: 041b25c2-3512-4e0f-a4ea-ceb2999e4d5e
-ms.openlocfilehash: 63a3bf422e19bbfb644b809aa9f4573bfdbd42bd
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: b5d2da011ec6318c8b07f1eb4d383a4d56488239
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635221"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75700833"
 ---
 # <a name="how-to-access-office-interop-objects-c-programming-guide"></a>Comment accéder aux objets Office Interop (C# Guide de programmation)
 

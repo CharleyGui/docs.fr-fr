@@ -1,15 +1,13 @@
 ---
 title: Bien démarrer la création de bibliothèques .NET de haute qualité
 description: Bien démarrer la création de bibliothèques .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 980f0edcee07688935f6d08f3ce1ed812159695e
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: 10576219d8470a171ad0f1f347196999b2a2ee03
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65640746"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706489"
 ---
 # <a name="get-started"></a>Prise en main
 

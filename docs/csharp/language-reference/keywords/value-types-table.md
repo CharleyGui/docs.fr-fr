@@ -1,17 +1,16 @@
 ---
 title: Table des types valeur C# -référence
-ms.custom: seodec18
 ms.date: 11/06/2019
 helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: 5619f163dc3050a37a23d824bd17ee1f67e4bebe
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: c0db75cc502426490d82c369a919079e8f53284c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345379"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712921"
 ---
 # <a name="value-types-table-c-reference"></a>Table des types valeurC# (référence)
 

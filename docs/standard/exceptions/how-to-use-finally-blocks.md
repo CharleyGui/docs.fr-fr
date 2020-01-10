@@ -13,14 +13,12 @@ helpviewer_keywords:
 - finally blocks
 - ArgumentOutOfRangeException class
 ms.assetid: 4b9c0137-04af-4468-91d1-b9014df8ddd2
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 213ab53c68a37ac0ba5f337a1d6fc32bfe6f8989
-ms.sourcegitcommit: 6eac9a01ff5d70c6d18460324c016a3612c5e268
-ms.translationtype: HT
+ms.openlocfilehash: 44fbb53437c4c8f19a424227a167e2e268b77057
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/16/2018
-ms.locfileid: "45618215"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708830"
 ---
 # <a name="how-to-use-finally-blocks"></a>Guide pratique pour utiliser des blocs finally
 

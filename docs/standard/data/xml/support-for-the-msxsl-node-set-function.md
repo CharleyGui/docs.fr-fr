@@ -3,14 +3,12 @@ title: Prise en charge de la fonction msxsl:node-set()
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: d0cbf517-d9f6-4097-9851-4fa62903decd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 3670803ff20351fd9ff6892a0cef48b9caa70199
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: b9603f6c910e8e29309618c8e01e283c28ae2bff
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69939523"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710126"
 ---
 # <a name="support-for-the-msxslnode-set-function"></a>Prise en charge de la fonction msxsl:node-set()
 La fonction `msxsl:node-set` vous permet de convertir un fragment d’arborescence résultat en une collection de nœuds. La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.  
@@ -20,7 +18,7 @@ La fonction `msxsl:node-set` vous permet de convertir un fragment d’arborescen
   
  La fonction `msxsl:node-set` vous permet de convertir un fragment d’arborescence résultat en une collection de nœuds. La collection de nœuds obtenue contient toujours un seul nœud et représente le nœud racine de l'arborescence.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  Dans l'exemple suivant, `$var` est une variable qui est une arborescence de nœuds dans la feuille de style. L'instruction for-each associée à la fonction `node-set` permet à l'utilisateur d'itérer sur cette arborescence de nœuds comme une collection de nœuds.  
   
 ## <a name="nodesetxsl"></a>nodeset.xsl  
@@ -45,7 +43,7 @@ La fonction `msxsl:node-set` vous permet de convertir un fragment d’arborescen
 </xsl:stylesheet>  
 ```  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  La sortie de la transformation est :  
   
 ```xml  

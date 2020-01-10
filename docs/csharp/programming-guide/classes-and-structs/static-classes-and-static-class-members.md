@@ -1,6 +1,5 @@
 ---
 title: Classes statiques et membres de classe statique - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - C# language, static members
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - C# language, static classes
 - static class members [C#]
 ms.assetid: 235614b5-1371-4dbd-9abd-b406a8b0298b
-ms.openlocfilehash: 2eda5a44d4c2dfd9a745871bdc345b7c50e6af49
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 7add512b262afbabe996f752c083566a2c394dfd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73418795"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705429"
 ---
 # <a name="static-classes-and-static-class-members-c-programming-guide"></a>Classes statiques et membres de classe statique (Guide de programmation C#)
 
@@ -94,6 +93,6 @@ Pour plus d’informations, voir [Classes statiques](~/_csharplang/spec/classes.
 - [Guide de programmation C#](../index.md)
 - [static](../../language-reference/keywords/static.md)
 - [Classes](./classes.md)
-- [class](../../language-reference/keywords/class.md)
+- [classe](../../language-reference/keywords/class.md)
 - [Constructeurs statiques](./static-constructors.md)
 - [Constructeurs d’instances](./instance-constructors.md)

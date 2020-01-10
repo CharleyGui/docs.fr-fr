@@ -11,14 +11,12 @@ helpviewer_keywords:
 - asymmetric decryption
 - decryption
 ms.assetid: 9b266b6c-a9b2-4d20-afd8-b3a0d8fd48a0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e287d3c73df247febf99967a9dc4b0413f01def0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 37194380d9f08d328f836bcb8648772348958768
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353848"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706238"
 ---
 # <a name="decrypting-data"></a>Déchiffrement de données
 
@@ -208,4 +206,4 @@ symmetricIV = rsa.Decrypt(encryptedSymmetricIV , false);
 
 - [Génération de clés pour le chiffrement et le déchiffrement](../../../docs/standard/security/generating-keys-for-encryption-and-decryption.md)
 - [Chiffrement de données](../../../docs/standard/security/encrypting-data.md)
-- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
+- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)

@@ -6,20 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2913ccf3-f932-4363-8028-9e2d22ce6093
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b8666aa9cb9f0512c600a77891b16f439c46995a
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 1a17aea66be7f9d35336434408c49bae8046b7e7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54517407"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710906"
 ---
 # <a name="evaluate-xpath-expressions-using-xpathnavigator"></a>Évaluation d’expressions XPath à l’aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit la méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> permettant d’évaluer une expression XPath. La méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> prend une expression XPath, l’évalue et retourne le type XPath W3C booléen, nombre, chaîne ou collection de nœuds selon le résultat de l’expression XPath.  
   
 ## <a name="the-evaluate-method"></a>Méthode d'évaluation  
- La méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> prend une expression XPath, l'évalue et retourne un résultat typé tel que booléen (<xref:System.Boolean>), nombre (<xref:System.Double>), chaîne (<xref:System.String>) ou collection de nœuds (<xref:System.Xml.XPath.XPathNodeIterator>). Par exemple, la méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> peut être utilisée dans une méthode mathématique. L'exemple de code suivant calcule le prix total de tous les livres du fichier `books.xml`.  
+ La méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> prend une expression XPath, l’évalue et retourne un résultat typé tel que booléen (<xref:System.Boolean>), nombre (<xref:System.Double>), chaîne (<xref:System.String>) ou collection de nœuds (<xref:System.Xml.XPath.XPathNodeIterator>). Par exemple, la méthode <xref:System.Xml.XPath.XPathNavigator.Evaluate%2A> peut être utilisée dans une méthode mathématique. L'exemple de code suivant calcule le prix total de tous les livres du fichier `books.xml`.  
   
 ```vb  
 Dim document As XPathDocument = New XPathDocument("books.xml")  

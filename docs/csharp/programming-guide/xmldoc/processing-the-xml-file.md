@@ -1,17 +1,16 @@
 ---
 title: Traitement du fichier XML - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: b2b19a2b2c46df5b78b6ebba48955cae55d32121
-ms.sourcegitcommit: 337bdc5a463875daf2cc6883e5a2da97d56f5000
+ms.openlocfilehash: 2c3ba0e12d0d7e6a568c4c3741d99b901fca2722
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/24/2019
-ms.locfileid: "72846936"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75696517"
 ---
 # <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (Guide de programmation C#)
 
@@ -27,7 +26,7 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
     |Caractère|Description|
     |---------------|-----------------|
-    |N|namespace<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
+    |N|Espace de noms<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
     |T|type : classe, interface, struct, enum, délégué|
     |F|champ|
     |P|propriété (notamment des indexeurs ou autres propriétés indexées)|
@@ -71,7 +70,7 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
 
 - Pour les opérateurs de conversion uniquement (op_Implicit et op_Explicit), la valeur de retour de la méthode est encodée en tant que « ~ » suivi du type de retour, conformément à l’encodage ci-dessus.
 
-- Pour les types génériques, le nom du type est suivi d’un accent grave, puis d’un chiffre qui indique le nombre de paramètres de type générique. Exemple :
+- Pour les types génériques, le nom du type est suivi d’un accent grave, puis d’un chiffre qui indique le nombre de paramètres de type générique. Par exemple :
 
      ``<member name="T:SampleClass`2">`` est l’étiquette pour un type qui est défini en tant que `public class SampleClass<T, U>`.
 

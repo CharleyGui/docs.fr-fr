@@ -7,14 +7,12 @@ dev_langs:
 - vb
 - cpp
 ms.assetid: 2c61c920-d0f8-4c72-bfcc-6524570f3060
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b25bf81a17b14da558fb002b4740e31d6cda7a82
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
-ms.translationtype: HT
+ms.openlocfilehash: 93686ddf1afff76926e77acdbf5aa58e93d6cb77
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70040452"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710035"
 ---
 # <a name="validating-an-xml-document-in-the-dom"></a>Validation d'un document XML dans le DOM
 
@@ -42,7 +40,7 @@ Pour créer un objet <xref:System.Xml.XmlReader> de validation de schéma XML, p
 
 5. Transférez enfin l'objet <xref:System.Xml.XmlReaderSettings> à la méthode <xref:System.Xml.XmlReader.Create%2A> de la classe <xref:System.Xml.XmlReader> avec le document XML, créant ainsi un objet <xref:System.Xml.XmlReader> de validation de schéma.
 
-### <a name="example"></a>Exemples
+### <a name="example"></a>Exemple
 
 Dans l'exemple de code suivant, un objet <xref:System.Xml.XmlReader> de validation de schéma valide les données XML chargées dans le DOM. Des modifications non valides sont apportées au document XML, puis le document est revalidé, entraînant des erreurs de validation de schéma. Une des erreurs est finalement corrigée et une partie du document XML est ensuite partiellement validée.
 

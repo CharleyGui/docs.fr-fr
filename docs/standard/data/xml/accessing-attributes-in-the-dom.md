@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: ce2df341-a1a4-4e97-8e1b-cd45b8e3e71e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9b456dc407f634e7f40f69bbac9b6d932f1f4420
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: dd3292620cafc4e5d2494b3b5e18e04691910dc4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74350709"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711192"
 ---
 # <a name="accessing-attributes-in-the-dom"></a>Accès aux attributs dans le DOM
 
@@ -133,7 +131,7 @@ Les informations d’une collection d’attributs peuvent être extraites par le
 
 Comme **XmlAttributeCollection** est une collection et peut faire l’objet d’itération par nom ou index, cet exemple illustre l’extraction du premier attribut dans la collection à l’aide d’un index de base zéro et l’utilisation du fichier suivant, **baseuri.xml** comme entrée.
 
-### <a name="input"></a>Entrée
+### <a name="input"></a>Input
 
 ```xml
 <!-- XML fragment -->

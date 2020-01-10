@@ -1,6 +1,5 @@
 ---
 title: is - Référence C#
-ms.custom: seodec18
 ms.date: 06/21/2019
 f1_keywords:
 - is_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: a04105137fad7cd3a25b869c3aa7fcbe91ed20ab
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: 1a1f539e80f8d843f40640fa798cf6122f316a9f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566310"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715241"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
@@ -71,13 +70,13 @@ Le code équivalent sans critères spéciaux nécessite une attribution distinct
 
 ### <a name="constant-pattern"></a>Modèle de constante
 
-Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée. Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md). À compter de C# 7.0, il est également pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
+Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée. Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md). À compter de C# 7.0, il est également pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
 
 ```csharp
    expr is constant
 ```
 
-où *expr* est l’expression à évaluer, et où *constant* est la valeur à tester. *constant* peut correspondre à l’une des expressions constantes suivantes :
+où *expr* est l’expression à évaluer, et où *constant* est la valeur à tester. *constant* peut être l’une quelconque des expressions constantes suivantes :
 
 - Une valeur littérale
 
@@ -95,7 +94,7 @@ L’exemple suivant combine le modèle de type et le modèle de constante pour t
 
 [!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
 
-La vérification de `null` peut être effectuée à l’aide du modèle de constante. Le mot clé `null` est pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
+La vérification de `null` peut être effectuée à l’aide du modèle de constante. Le mot clé `null` est pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
 
 ```csharp
    expr is null
@@ -107,7 +106,7 @@ L’exemple suivant illustre une comparaison des vérifications de `null` :
 
 ### <a name="var-pattern"></a>Modèle de variable
 
-Le modèle `var` est de type « catch-all », c’est-à-dire qu’il peut prendre tous les types et valeurs. La valeur de *expr* est toujours affectée à une variable locale de même type que le type de *expr* au moment de la compilation. Le résultat de l’expression `is` est toujours `true`. Sa syntaxe est la suivante :
+Le modèle `var` est de type « catch-all », c’est-à-dire qu’il peut prendre tous les types et valeurs. La valeur de *expr* est toujours affectée à une variable locale de même type que le type de *expr* au moment de la compilation. Le résultat de l’expression `is` est toujours `true`. Sa syntaxe est la suivante :
 
 ```csharp
    expr is var varname

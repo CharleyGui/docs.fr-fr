@@ -4,13 +4,13 @@ description: La publication crée l’ensemble des fichiers qui sont nécessaire
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 44e799ad76848278e3731b26b14a18e7fade760f
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: 485d62ce67f284fe1bbe931dcaa00671be154f35
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343206"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715368"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publier votre application de Hello World .NET Core avec Visual Studio
 

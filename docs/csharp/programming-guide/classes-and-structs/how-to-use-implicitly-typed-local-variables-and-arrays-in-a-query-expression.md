@@ -1,16 +1,15 @@
 ---
 title: Comment utiliser des variables locales et des tableaux implicitement typés dans un guide de C# programmation d’expression de requête
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - implicitly-typed local variables [C#], how to use
 ms.assetid: 6b7354d2-af79-427a-b6a8-f74eb8fd0b91
-ms.openlocfilehash: c6022aaa4c37bc0c11c09375d3637d8287fce61a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f4ff71fc4dc1a0b2affa1f032ab1d3d6bb04d297
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970438"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705559"
 ---
 # <a name="how-to-use-implicitly-typed-local-variables-and-arrays-in-a-query-expression-c-programming-guide"></a>Comment utiliser des variables locales et des tableaux implicitement typés dans une expression deC# requête (Guide de programmation)
 Vous pouvez utiliser des variables locales implicitement typées chaque fois que vous voulez que le compilateur détermine le type d’une variable locale. Vous devez utiliser des variables locales implicitement typées pour stocker des types anonymes, qui sont souvent utilisés dans les expressions de requête. Les exemples suivants illustrent des utilisations facultatives et obligatoires de variables locales implicitement typées dans des requêtes.  

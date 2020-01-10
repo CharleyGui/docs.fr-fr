@@ -1,18 +1,17 @@
 ---
 title: Conventions de codage C# - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - coding conventions, C#
 - Visual C#, coding conventions
 - C# language, coding conventions
 ms.assetid: f4f60de9-d49b-4fb6-bab1-20e19ea24710
-ms.openlocfilehash: 42e1814af38fa442255f6da79fb4862ce3d0f361
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: c56d673de958f49a9ace60350442e89039e1d69f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423205"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712102"
 ---
 # <a name="c-coding-conventions-c-programming-guide"></a>Conventions de codage C# (Guide de programmation C#)
  Les conventions de codage répondent aux objectifs suivants :  
@@ -27,7 +26,7 @@ ms.locfileid: "73423205"
 
  Les instructions de cette rubrique sont utilisées par Microsoft pour développer les exemples et la documentation.  
   
-## <a name="naming-conventions"></a>Conventions d'affectation de noms  
+## <a name="naming-conventions"></a>Conventions d'affectation des noms  
   
 - Dans les exemples courts qui ne comprennent pas de [directives](../../language-reference/keywords/using-directive.md), utilisez les qualifications d’espace de noms. Si vous savez qu'un espace de noms est importé par défaut dans un projet, vous n'êtes pas obligé de qualifier entièrement les noms à partir de cet espace de noms. Les noms qualifiés peuvent être interrompus après un point (.) s'ils sont trop longs pour contenir sur une ligne unique, comme indiqué dans l'exemple suivant.  
   

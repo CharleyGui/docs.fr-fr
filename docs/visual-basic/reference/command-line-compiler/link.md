@@ -11,12 +11,12 @@ helpviewer_keywords:
 - -l compiler option [Visual Basic]
 - /l compiler option [Visual Basic]
 ms.assetid: 1885f24a-86f5-486c-a064-9fb7e455ccec
-ms.openlocfilehash: ecb7b0448b8ee9c1c1fc1eb9542b693d60a38ffd
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: c15f55f3a3c2b4e404767ddf96e258bc1e9771d7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74335851"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716756"
 ---
 # <a name="-link-visual-basic"></a>-Link (Visual Basic)
 Fait que le compilateur rend disponible pour le projet en cours de compilation les informations de type COM des assemblys spécifiés.  
@@ -27,7 +27,7 @@ Fait que le compilateur rend disponible pour le projet en cours de compilation l
 -link:fileList  
 ```
 
-or  
+ou  
 
 ```console
 -l:fileList  
@@ -86,7 +86,7 @@ or
  La ligne de commande suivante compile le fichier source `OfficeApp.vb` et les assemblys de référence à partir de `COMData1.dll` et `COMData2.dll` pour produire des `OfficeApp.exe`.  
   
 ```console  
-vbc -link:COMData1.dll,COMData2.dll /out:OfficeApp.exe OfficeApp.vb  
+vbc -link:COMData1.dll,COMData2.dll -out:OfficeApp.exe OfficeApp.vb  
 ```  
   
 ## <a name="see-also"></a>Voir aussi

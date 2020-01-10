@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 88373fe2-4a6b-44f9-8a62-8a3e348e3a46
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8cc3eb3e3f147d8ed15587946af743c96739a9b1
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 73a432db9a3fcb6587184e27e6dfe9ba49010e92
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956864"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709606"
 ---
 # <a name="xsltransform-class-implements-the-xslt-processor"></a>Implémentation du processeur XSLT par la classe XslTransform
 

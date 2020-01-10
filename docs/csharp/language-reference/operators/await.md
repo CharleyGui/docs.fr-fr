@@ -1,6 +1,5 @@
 ---
 title: Opérateur await – Informations de référence sur C#
-ms.custom: seodec18
 ms.date: 11/08/2019
 f1_keywords:
 - await_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 36cb4a5def6b75281edbe878d89af0c18ab226ec
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 6dc058f3850e30d8c424d4372c47b127c7d361b6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140659"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712739"
 ---
 # <a name="await-operator-c-reference"></a>Opérateur await (informations de référence sur C#)
 
@@ -40,7 +39,7 @@ Les mots clés `async` et `await` sont disponibles C# dans 5 et versions ultéri
 
 ## <a name="await-operator-in-the-main-method"></a>Opérateur await dans la méthode Main
 
-À partir C# de 7,1, la [méthode`Main`](../../programming-guide/main-and-command-args/index.md), qui est le point d’entrée de l’application, peut retourner`Task`ou`Task<int>`, ce qui lui permet d’être asynchrone afin que vous puissiez utiliser l’opérateur`await`dans son corps. Dans les versions antérieures de C#, pour être certain que la méthode `Main` attend la fin d’une opération asynchrone, vous pouvez récupérer la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> de l’instance <xref:System.Threading.Tasks.Task%601> retournée par la méthode asyn correspondante. Pour les opérations asynchrones qui ne produisent pas de valeur, vous pouvez appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Pour plus d’informations sur la façon de sélectionner la version linguistique, consultez [ C# Language Versioning](../configure-language-version.md).
+À partir C# de 7,1, la [méthode`Main`](../../programming-guide/main-and-command-args/index.md), qui est le point d’entrée de l’application, peut retourner `Task` ou `Task<int>`, ce qui lui permet d’être asynchrone afin que vous puissiez utiliser l’opérateur `await` dans son corps. Dans les versions antérieures de C#, pour être certain que la méthode `Main` attend la fin d’une opération asynchrone, vous pouvez récupérer la valeur de la propriété <xref:System.Threading.Tasks.Task%601.Result?displayProperty=nameWithType> de l’instance <xref:System.Threading.Tasks.Task%601> retournée par la méthode asyn correspondante. Pour les opérations asynchrones qui ne produisent pas de valeur, vous pouvez appeler la méthode <xref:System.Threading.Tasks.Task.Wait%2A?displayProperty=nameWithType>. Pour plus d’informations sur la façon de sélectionner la version linguistique, consultez [ C# Language Versioning](../configure-language-version.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 

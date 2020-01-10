@@ -1,15 +1,13 @@
 ---
 title: Dépendances et bibliothèques .NET
 description: Meilleures pratiques suggérées pour la gestion des dépendances NuGet dans les bibliothèques .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 10/02/2018
-ms.openlocfilehash: 0cd00ff36ad52bc46769ca1793b9efd02db14da1
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: b5742bf4724c4aff4beb4ca40a543bd096528a00
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65644270"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706502"
 ---
 # <a name="dependencies"></a>Dépendances
 
@@ -19,7 +17,7 @@ Le principal moyen d’ajouter des dépendances à une bibliothèque .NET est de
 
 Il est courant qu’un projet .NET ait plusieurs versions d’un package dans son arborescence des dépendances. Par exemple, une application dépend de deux packages NuGet dont chacun dépend de différentes versions du même package. Il y a désormais une dépendance en losange dans le graphique de dépendance de l’application.
 
-![Dépendance en losange](./media/dependencies/diamond-dependency.png "Dépendance en losange")
+![Dépendance Diamond](./media/dependencies/diamond-dependency.png "Dépendance Diamond")
 
 Lors du build, NuGet analyse tous les packages dont dépend un projet, y compris les dépendances de dépendances. Lorsque plusieurs versions d’un package sont détectées, les règles sont évaluées pour en choisir une. L’unification des packages est nécessaire, car l’exécution côte à côte des versions d’un assembly dans la même application est problématique dans .NET.
 
@@ -56,13 +54,13 @@ En raison de la règle de la version la plus ancienne applicable de NuGet, il n�
 
 Des limites de versions supérieures entraîneront l’échec de NuGet en cas de conflit. Par exemple, une bibliothèque accepte exactement 1.0, tandis qu’une autre bibliothèque requiert 2.0 ou une version ultérieure. Alors que les modifications importantes peuvent avoir été introduites dans la version 2.0, une dépendance de version stricte ou supérieure d’une limite garantit une erreur.
 
-![Conflit de dépendance en losange](./media/dependencies/diamond-dependency-conflict.png "Conflit de dépendance en losange")
+![Conflit de dépendances Diamond](./media/dependencies/diamond-dependency-conflict.png "Conflit de dépendances Diamond")
 
-**❌ PAS** de références de packages NuGet sans version minimale.
+**❌ n’avez pas** de références de package NuGet sans version minimale.
 
-**❌ ÉVITER** les références de package NuGet qui exigent une version précise.
+**❌ éviter** Références de package NuGet qui demandent une version exacte.
 
-**❌ ÉVITER** LES références de package NuGet avec une limite supérieure de version.
+**❌ éviter** Références de package NuGet avec une limite supérieure de version.
 
 ## <a name="nuget-shared-source-packages"></a>Packages NuGet à code source partagé
 
@@ -70,13 +68,13 @@ Une manière de réduire les dépendances externes de packages NuGet externes co
 
 Les packages à code source partagée sont l’idéal pour inclure de petits éléments de fonctionnalité. Par exemple, un package à source partagée de méthodes d’assistance pour les appels HTTP.
 
-![Package à code source partagé](./media/dependencies/shared-source-package.png "Package à code source partagé")
+![Package source partagé](./media/dependencies/shared-source-package.png "Package source partagé")
 
 ```xml
 <PackageReference Include="Microsoft.Extensions.Buffers.Testing.Sources" PrivateAssets="All" Version="1.0" />
 ```
 
-![Projet à code source partagé](./media/dependencies/shared-source-project.png "Projet à code source partagé")
+![Projet source partagé](./media/dependencies/shared-source-project.png "Projet source partagé")
 
 Les packages à code source partagé ont certaines limitations. Ils ne peuvent être référencés que par `PackageReference`, ce qui exclut les projets `packages.config` plus anciens. Par ailleurs, les packages à code source partagé ne peuvent être utilisés que par des projets ayant le même type de langage. En raison de ces limitations, les packages à code source partagé sont très bien adaptés au partage d’une fonctionnalité au sein d’un projet open source.
 
@@ -88,11 +86,11 @@ Les packages à code source partagé ont certaines limitations. Ils ne peuvent �
 
 > Ce paramètre indique à NuGet que le package ne doit être utilisée que lors du développement et ne doit pas être exposé en tant que dépendance publique.
 
-**❌ PAS** de packages de type à code source partagé dans votre API publique.
+**❌ n’avez pas** de types de packages sources partagés dans votre API publique.
 
 > Les types à code source partagé sont compilés dans l’assembly de référencement et ne peuvent pas être échangés au-delà des limites de l’assembly. Par exemple, un type de `IRepository` à code source partagé dans un projet est un type distinct du même `IRepository` à code source partagé dans un autre projet. Les types de packages à code source partagé doivent avoir une visibilité `internal`.
 
-**❌ À NE PAS FAIRE** : Publier des packages à code source partagé sur NuGet.org.
+**❌ ne** publiez pas de packages source partagés sur NuGet.org.
 
 > Les packages à code source partagé contiennent du code source et ne peuvent être utilisés que par des projets ayant le même type de langage. Par exemple, un package à code source partagé C# ne peut pas être utilisé par une application F#.
 >

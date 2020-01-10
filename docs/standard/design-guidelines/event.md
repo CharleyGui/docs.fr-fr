@@ -10,18 +10,17 @@ helpviewer_keywords:
 - post-events
 - signatures, event handling
 ms.assetid: 67b3c6e2-6a8f-480d-a78f-ebeeaca1b95a
-author: KrzysztofCwalina
-ms.openlocfilehash: 530c68ea5342263acd07f8dc8a8c8ce889652503
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 78d765a7af77b1e6a6ecd483677cea2d4c6b0d5b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026443"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709424"
 ---
 # <a name="event-design"></a>Conception d'événements
-Les événements sont le plus couramment utilisé formulaire des rappels (constructions qui permettent l’infrastructure d’appeler dans le code utilisateur). Autres mécanismes de rappel incluent les membres en prenant les délégués, les membres virtuels et basée sur l’interface de plug-ins. Données à partir des études de convivialité indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’ils sont à l’aide des autres méthodes de rappel. Les événements sont bien intégrées à Visual Studio et de nombreux langages.  
+Les événements sont la forme de rappels la plus couramment utilisée (les constructions qui permettent à l’infrastructure d’appeler le code utilisateur). Parmi les autres mécanismes de rappel, citons les membres qui prennent des délégués, des membres virtuels et des plug-ins basés sur des interfaces. les données des études d’utilisation indiquent que la majorité des développeurs sont plus à l’aise avec les événements qu’avec les autres mécanismes de rappel. . Les événements sont parfaitement intégrés à Visual Studio et de nombreux langages.  
   
- Il est important de noter qu’il existe deux groupes d’événements : événements déclenchés avant un état des modifications système, appelé pré-événements et les événements déclenchés après un état change, appelés post événements. Voici un exemple d’un événement pre `Form.Closing`, qui est déclenché avant la fermeture d’un formulaire. Voici un exemple d’un post-événement `Form.Closed`, qui est déclenché après qu’un formulaire est fermé.  
+ Il est important de noter qu’il existe deux groupes d’événements : les événements déclenchés avant un état des modifications du système, appelés pré-événements et les événements déclenchés après la modification d’un État, appelés événements postérieurs à. Un exemple d’un pré-événement serait `Form.Closing`, qui est déclenché avant la fermeture d’un formulaire. Un exemple d’événement de publication serait `Form.Closed`, qui est déclenché après la fermeture d’un formulaire.  
   
  **✓ DO** utiliser le terme « r » pour les événements plutôt que « fire » ou « déclenche ».  
   
@@ -29,17 +28,17 @@ Les événements sont le plus couramment utilisé formulaire des rappels (constr
   
  **✓ CONSIDER** à l’aide d’une sous-classe de <xref:System.EventArgs> comme argument d’événement, sauf si vous êtes absolument que l’événement n’est jamais nécessaire de transporter des données à l’événement de gestion de la méthode, auquel cas vous pouvez utiliser la `EventArgs` taper directement.  
   
- Si vous envoyez un à l’aide de l’API `EventArgs` directement, vous ne serez jamais en mesure d’ajouter des données à effectuer avec l’événement sans perdre la compatibilité. Si vous utilisez une sous-classe, même si initialement vide, vous serez en mesure d’ajouter des propriétés à la sous-classe lorsque nécessaire.  
+ Si vous livrez une API à l’aide de `EventArgs` directement, vous ne serez jamais en mesure d’ajouter des données à exécuter avec l’événement sans interrompre la compatibilité. Si vous utilisez une sous-classe, même si elle est initialement vide, vous pouvez ajouter des propriétés à la sous-classe si nécessaire.  
   
- **✓ DO** utiliser une méthode virtuelle protégée pour déclencher chaque événement. Cela s’applique uniquement aux événements non statiques sur des classes unsealed, pas pour les structs, les classes sealed ou des événements statiques.  
+ **✓ DO** utiliser une méthode virtuelle protégée pour déclencher chaque événement. Cela s’applique uniquement aux événements non statiques sur les classes non scellées, pas aux structs, aux classes scellées ou aux événements statiques.  
   
- L’objectif de la méthode est de fournir un moyen d’une classe dérivée gérer l’événement à l’aide d’un remplacement. Substitution est un moyen plus flexible, plus rapide et plus naturel pour gérer les événements de classe de base dans les classes dérivées. Par convention, le nom de la méthode doit commencer par « On » et être suivi par le nom de l’événement.  
+ L’objectif de la méthode est de fournir un moyen pour une classe dérivée de gérer l’événement à l’aide d’un remplacement. La substitution est un moyen plus flexible, plus rapide et plus naturel de gérer les événements de classe de base dans les classes dérivées. Par Convention, le nom de la méthode doit commencer par « on » et être suivi du nom de l’événement.  
   
- La classe dérivée peut choisissez de ne pas appeler l’implémentation de base de la méthode dans son remplacement. Face à cette situation en n’incluant ne pas de traitement dans la méthode qui est requise pour la classe de base fonctionne correctement.  
+ La classe dérivée peut choisir de ne pas appeler l’implémentation de base de la méthode dans sa substitution. Soyez prêt à le faire en n’incluant aucun traitement dans la méthode qui est requis pour que la classe de base fonctionne correctement.  
   
  **✓ DO** doit accepter un paramètre à la méthode protégée qui déclenche un événement.  
   
- Le paramètre doit être nommé `e` et doit être tapé sous forme de la classe d’argument d’événement.  
+ Le paramètre doit être nommé `e` et doit être typé en tant que classe d’argument d’événement.  
   
  **X DO NOT** passez la valeur null en tant que l’expéditeur lors du déclenchement d’un événement non statique.  
   
@@ -47,18 +46,18 @@ Les événements sont le plus couramment utilisé formulaire des rappels (constr
   
  **X DO NOT** passez la valeur null en tant que le paramètre de données d’événement lors du déclenchement d’un événement.  
   
- Vous devez passer `EventArgs.Empty` si vous ne souhaitez pas passer des données à la méthode de gestion d’événements. Les développeurs s’attendent à ce paramètre ne pas pour avoir la valeur null.  
+ Vous devez passer `EventArgs.Empty` si vous ne souhaitez pas transmettre de données à la méthode de gestion des événements. Les développeurs s’attendent à ce que ce paramètre ne soit pas null.  
   
  **✓ CONSIDER** le déclenchement d’événements de l’utilisateur final peut annuler. Cela s’applique uniquement aux pré-événements.  
   
- Utilisez <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> ou sa sous-classe comme argument d’événement pour autoriser l’utilisateur final d’annuler des événements.  
+ Utilisez <xref:System.ComponentModel.CancelEventArgs?displayProperty=nameWithType> ou sa sous-classe comme argument d’événement pour permettre à l’utilisateur final d’annuler des événements.  
   
-### <a name="custom-event-handler-design"></a>Conception de gestionnaire d’événements personnalisés  
- Il existe des cas dans lesquels `EventHandler<T>` ne peut pas être utilisées, comme lorsque le framework doit fonctionner avec les versions antérieures du CLR, qui ne prenait pas en charge des génériques. Dans ce cas, vous devez concevoir et développer un délégué de gestionnaire d’événements personnalisé.  
+### <a name="custom-event-handler-design"></a>Conception du gestionnaire d’événements personnalisé  
+ Dans certains cas, `EventHandler<T>` ne peut pas être utilisé, par exemple quand le Framework doit fonctionner avec des versions antérieures du CLR, qui ne prenait pas en charge les génériques. Dans ce cas, vous devrez peut-être concevoir et développer un délégué de gestionnaire d’événements personnalisé.  
   
  **✓ DO** utiliser un type de retour void pour les gestionnaires d’événements.  
   
- Un gestionnaire d’événements peut appeler plusieurs méthodes, éventuellement sur plusieurs objets de gestion d’événement. Si les méthodes de gestion des événements ont été autorisées pour retourner une valeur, il y aura plusieurs valeurs de retour pour chaque appel de l’événement.  
+ Un gestionnaire d’événements peut appeler plusieurs méthodes de gestion des événements, éventuellement sur plusieurs objets. Si les méthodes de gestion des événements étaient autorisées à retourner une valeur, il y aurait plusieurs valeurs de retour pour chaque appel d’événement.  
   
  **✓ DO** utiliser `object` en tant que le type du premier paramètre du Gestionnaire d’événements et l’appeler `sender`.  
   
@@ -66,9 +65,9 @@ Les événements sont le plus couramment utilisé formulaire des rappels (constr
   
  **X DO NOT** avoir plus de deux paramètres sur les gestionnaires d’événements.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

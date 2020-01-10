@@ -1,27 +1,24 @@
 ---
 title: Opérateur stackalloc - Référence C#
-ms.custom: seodec18
 ms.date: 09/20/2019
 f1_keywords:
 - stackalloc_CSharpKeyword
 helpviewer_keywords:
 - stackalloc operator [C#]
-ms.openlocfilehash: 82fc1649bac66c0e934db13c50390b977432c34c
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 5654cae622cd94c8dad7e58fbc8a99fcf48391a9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036146"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712622"
 ---
 # <a name="stackalloc-operator-c-reference"></a>Opérateur stackalloc (Référence C#)
 
 L’opérateur `stackalloc` alloue un bloc de mémoire dans la pile. Un bloc de mémoire alloué dans la pile pendant l’exécution de la méthode est automatiquement supprimé lorsque cette méthode retourne un résultat. Vous ne pouvez pas libérer explicitement la mémoire allouée avec l’opérateur `stackalloc`. Un bloc de mémoire alloué à la pile n’est pas soumis à [garbage collection](../../../standard/garbage-collection/index.md) et n’a pas besoin d’être épinglé avec une [instruction`fixed`](../keywords/fixed-statement.md).
 
-Dans l’expression `stackalloc T[E]`, `T` doit être un [type non managé](../builtin-types/unmanaged-types.md) et `E` doit être une expression de type `int`.
-
 Vous pouvez attribuer le résultat de l’opérateur `stackalloc` à une variable d’un des types suivants :
 
-- À partir C# de 7,2, <xref:System.Span%601?displayProperty=nameWithType>ou<xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, comme le montre l’exemple suivant :
+- À partir C# de 7,2, <xref:System.Span%601?displayProperty=nameWithType> ou <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>, comme le montre l’exemple suivant :
 
   [!code-csharp[stackalloc span](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AssignToSpan)]
 
@@ -31,7 +28,7 @@ Vous pouvez attribuer le résultat de l’opérateur `stackalloc` à une variabl
 
   [!code-csharp[stackalloc expression](~/samples/csharp/language-reference/operators/StackallocOperator.cs#AsExpression)]
 
-  À partir C# de 8,0, vous pouvez utiliser une expression`stackalloc`dans d’autres expressions chaque fois qu’une variable<xref:System.Span%601>ou<xref:System.ReadOnlySpan%601>est autorisée, comme le montre l’exemple suivant :
+  À partir C# de 8,0, vous pouvez utiliser une expression `stackalloc` dans d’autres expressions chaque fois qu’une variable <xref:System.Span%601> ou <xref:System.ReadOnlySpan%601> est autorisée, comme le montre l’exemple suivant :
 
   [!code-csharp[stackalloc in nested expressions](~/samples/csharp/language-reference/operators/StackallocOperator.cs#Nested)]
 
@@ -50,13 +47,15 @@ Le contenu de la mémoire nouvellement allouée n’est pas défini. À partir C
 
 [!code-csharp[stackalloc initialization](~/samples/csharp/language-reference/operators/StackallocOperator.cs#StackallocInit)]
 
+Dans expression `stackalloc T[E]`, `T` doit être un [type non managé](../builtin-types/unmanaged-types.md) et `E` doit être une expression de type [int](../builtin-types/integral-numeric-types.md).
+
 ## <a name="security"></a>Sécurité
 
 L’utilisation de `stackalloc` active automatiquement les fonctionnalités de détection des dépassements de mémoire tampon dans le Common Language Runtime (CLR). Si un dépassement de mémoire tampon est détecté, le processus est terminé aussi rapidement que possible pour réduire les risques d’exécution de code malveillant.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-Pour plus d’informations, voir la section [Allocation de piles](~/_csharplang/spec/unsafe-code.md#stack-allocation) de la [spécification du langage C#](~/_csharplang/spec/introduction.md).
+Pour plus d’informations, consultez la section [allocation de pile](~/_csharplang/spec/unsafe-code.md#stack-allocation) de la [ C# spécification de langage](~/_csharplang/spec/introduction.md) et la fonctionnalité [autoriser `stackalloc` dans les contextes imbriqués](~/_csharplang/proposals/csharp-8.0/nested-stackalloc.md) .
 
 ## <a name="see-also"></a>Voir aussi
 

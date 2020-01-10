@@ -1,18 +1,17 @@
 ---
 title: Opérateurs d’assignation C# -référence
-ms.custom: seodec18
 ms.date: 09/10/2019
 f1_keywords:
 - =_CSharpKeyword
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 103bc823ab6a56d53a3f2ec05b8de9295f1de400
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 19f74e6835ae555a3a38aa6ca8679948c7f290dd
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039081"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712752"
 ---
 # <a name="assignment-operators-c-reference"></a>Opérateurs d’assignationC# (référence)
 
@@ -24,7 +23,7 @@ L’opérateur d’assignation `=` est associatif à droite, autrement dit, une 
 a = b = c
 ```
 
-est évaluée comme
+est évaluée comme étant
 
 ```csharp
 a = (b = c)
@@ -62,7 +61,7 @@ L’assignation composée est prise en charge par les opérateurs [arithmétique
 
 ## <a name="null-coalescing-assignment"></a>Assignation de fusion Null
 
-À partir C# de 8,0, vous pouvez utiliser l’opérateur d’assignation de fusion Null`??=`pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend la valeur`null`. Pour plus d’informations, consultez [les = l’article Operators](null-coalescing-operator.md) .
+À partir C# de 8,0, vous pouvez utiliser l’opérateur d’assignation de fusion Null `??=` pour assigner la valeur de son opérande droit à son opérande gauche uniquement si l’opérande de gauche prend la valeur `null`. Pour plus d’informations, consultez [les = l’article Operators](null-coalescing-operator.md) .
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

@@ -1,15 +1,13 @@
 ---
 title: Bibliothèques NuGet et .NET
 description: Meilleures pratiques recommandées pour l’empaquetage avec des bibliothèques NuGet pour .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 01/15/2019
-ms.openlocfilehash: 9288bf440692302c3a0b1954236540af6363f367
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 71c380f6062c09a8951769009b29b567fddfddfc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72775310"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706476"
 ---
 # <a name="nuget"></a>NuGet
 

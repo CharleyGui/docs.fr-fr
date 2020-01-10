@@ -4,13 +4,12 @@ description: Découvrez comment .NET Core recherche et choisit automatiquement l
 author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
-ms.custom: seodec18
-ms.openlocfilehash: 043b9b85633e81670783e7870f1be7726ab07e81
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 546725db907937dea6fe0739656fb585a8855644
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454621"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713971"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -92,7 +91,7 @@ Voici quelques exemples d’utilisation pour illustrer le comportement, si vous 
 - 2.0 est spécifié. Aucune version 2.0.* n’est installée. La version 2.2.2 correspond à la version de runtime 2.x installée la plus élevée. La version 2.2.2 est utilisée.
 - 2.0 est spécifié. Aucune version 2.x n’est installée. La version 3.0.0 est installée. Un message d’erreur s’affiche.
 
-La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Penchons-nous sur le scénario suivant :
+La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Considérez le scénario suivant :
 
 1. L’application spécifie que 2.0 est obligatoire.
 2. En cas d’exécution, la version 2.0.* n’est pas installée, mais la version 2.2.2 l’est. La version 2.2.2 sera utilisée.

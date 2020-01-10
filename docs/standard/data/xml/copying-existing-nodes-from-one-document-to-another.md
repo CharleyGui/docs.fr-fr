@@ -3,14 +3,12 @@ title: Copie de nœuds existants d'un document à un autre
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 3caa78c1-3448-4b7b-b83c-228ee857635e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e08c86ebdd71746520085844de5743692e84640e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 4ee3f8d280b8bf0f2de067e7529d777e62bff406
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965933"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711023"
 ---
 # <a name="copying-existing-nodes-from-one-document-to-another"></a>Copie de nœuds existants d'un document à un autre
 La méthode **ImportNode** est le mécanisme par lequel un nœud ou un sous-arbre de nœuds entier est copié d'un **XmlDocument** à un autre. Le nœud retourné par l'appel est une copie du nœud issu du document source, y compris sur le plan des valeurs d'attribut, du nom du nœud, du type de nœud et de tous les attributs associés à l'espace de noms tels que le préfixe, le nom local et l'URI (Uniform Resource Identifier) d'espace de noms. Le document source n'est pas modifié. À l'issue de l'importation du nœud, il vous reste encore à l'ajouter à l'arborescence à l'aide d'une des méthodes d'insertion de nœuds.  
@@ -28,7 +26,7 @@ La méthode **ImportNode** est le mécanisme par lequel un nœud ou un sous-arbr
 |XmlComment|Copie le nœud avec ses données.|Copie le nœud avec ses données.|  
 |XmlDocumentFragment|Les descendants du nœud source sont importés de manière récursive et les nœuds obtenus sont réassemblés pour former le sous-arbre correspondant.|Un **XmlDocumentFragment** vide est créé.|  
 |XmlDocumentType|Copie le nœud avec ses données.*|Copie le nœud avec ses données.*|  
-|XmlElement|Les descendants de l'élément source sont importés de façon récursive et les nœuds résultants sont assemblés à nouveau pour former le sous-arbre correspondant. **Remarque :**  Les attributs par défaut ne sont pas copiés. Si le document destinataire de l'importation définit des attributs par défaut pour ce nom d'élément, ces attributs sont assignés.|Les nœuds d'attribut spécifiés de l'élément source sont importés et les nœuds **XmlAttribute** générés sont joints au nouvel élément. Les nœuds descendants ne sont pas copiés. **Remarque :**  Les attributs par défaut ne sont pas copiés. Si le document destinataire de l'importation définit des attributs par défaut pour ce nom d'élément, ces attributs sont assignés.|  
+|XmlElement|Les descendants de l'élément source sont importés de façon récursive et les nœuds résultants sont assemblés à nouveau pour former le sous-arbre correspondant. **Remarque :** les attributs par défaut ne sont pas copiés. Si le document destinataire de l'importation définit des attributs par défaut pour ce nom d'élément, ces attributs sont assignés.|Les nœuds d'attribut spécifiés de l'élément source sont importés et les nœuds **XmlAttribute** générés sont joints au nouvel élément. Les nœuds descendants ne sont pas copiés. **Remarque :** les attributs par défaut ne sont pas copiés. Si le document destinataire de l'importation définit des attributs par défaut pour ce nom d'élément, ces attributs sont assignés.|  
 |XmlEntityReference|Étant donné que les documents source et de destination peuvent comporter des définitions différentes des entités, cette méthode ne copie que le nœud **XmlEntityReference**. Le texte de remplacement n'est pas inclus. Si l'entité est définie dans le document de destination, sa valeur est assignée.|Étant donné que les documents source et de destination peuvent comporter des définitions différentes des entités, cette méthode ne copie que le nœud **XmlEntityReference**. Le texte de remplacement n'est pas inclus. Si l'entité est définie dans le document de destination, sa valeur est assignée.|  
 |XmlProcessingInstruction|Copie la cible et la valeur de données à partir du nœud importé.|Copie la cible et la valeur de données à partir du nœud importé.|  
 |XmlText|Copie le nœud avec ses données.|Copie le nœud avec ses données.|  

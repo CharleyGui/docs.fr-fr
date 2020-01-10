@@ -1,18 +1,17 @@
 ---
 title: Finaliseurs - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 10/08/2018
 helpviewer_keywords:
 - ~ [C#], in finalizers
 - C# language, finalizers
 - finalizers [C#]
 ms.assetid: 1ae6e46d-a4b1-4a49-abe5-b97f53d9e049
-ms.openlocfilehash: f7cb9bd05d08a33be53abad58b78b39e36c6dffe
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9c00f14da9d79418e4fb204bac30e539b234197f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419358"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715014"
 ---
 # <a name="finalizers-c-programming-guide"></a>Finaliseurs (Guide de programmation C#)
 Les finaliseurs (également appelés **destructeurs**) servent à effectuer les derniers nettoyages nécessaires lorsqu’une instance de classe est collectée par le récupérateur de mémoire.  
@@ -74,7 +73,7 @@ protected override void Finalize()
   
 - [Nettoyage de ressources non managées](../../../standard/garbage-collection/unmanaged.md)  
   
-- [Implémentation d’une méthode Dispose](../../../standard/garbage-collection/implementing-dispose.md)  
+- [Implémentation d’une méthode dispose](../../../standard/garbage-collection/implementing-dispose.md)  
   
 - [using, instruction](../../language-reference/keywords/using-statement.md)  
   

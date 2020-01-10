@@ -1,6 +1,5 @@
 ---
 title: struct - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - struct_CSharpKeyword
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: a78488ad902b0a96a30ad197b0ece043543c3d69
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 9363cff913027d491f7df0e0d0dac61638d6f802
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422315"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715139"
 ---
 # <a name="struct-c-reference"></a>struct (Référence C#)
 
@@ -48,13 +47,13 @@ Pour obtenir des exemples, consultez [Utilisation de structs](../../programming-
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Tableau des valeurs par défaut](default-values-table.md)
 - [Tableau des types intégrés](built-in-types-table.md)
 - [Types](/dotnet/csharp/language-reference/keywords)
 - [Types valeur](value-types.md)
-- [class](class.md)
+- [classe](class.md)
 - [interface](interface.md)
 - [Classes et structs](../../programming-guide/classes-and-structs/index.md)

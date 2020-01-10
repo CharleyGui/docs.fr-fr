@@ -1,17 +1,16 @@
 ---
 title: Comment implémenter une classe Lightweight avec des propriétés implémentées automatiquement C# -Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - auto-implemented properties [C#]
 - properties [C#], auto-implemented
 ms.assetid: 1dc5a8ad-a4f7-4f32-8506-3fc6d8c8bfed
-ms.openlocfilehash: b5bf2e84ffe47cd1eaf17e877a20a700e98339ff
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 170a36e2a10896d9e4d29af602694700fa122e69
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970913"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714910"
 ---
 # <a name="how-to-implement-a-lightweight-class-with-auto-implemented-properties-c-programming-guide"></a>Comment implémenter une classe Lightweight avec des propriétés implémentées automatiquementC# (Guide de programmation)
 

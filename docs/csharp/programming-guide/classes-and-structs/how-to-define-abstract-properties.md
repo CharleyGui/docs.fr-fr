@@ -1,17 +1,16 @@
 ---
 title: Comment définir des propriétés abstraites C# -Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - properties [C#], abstract
 - abstract properties [C#]
 ms.assetid: 672a90eb-47b9-4ae0-9914-af53852fddcb
-ms.openlocfilehash: 1b6dc1dfe932ffff161b0eef667bd35a75b66cf9
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c46f36133b68a550a17cf882844fd2481eee8851
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971005"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705611"
 ---
 # <a name="how-to-define-abstract-properties-c-programming-guide"></a>Comment définir des propriétés abstraitesC# (Guide de programmation)
 L’exemple suivant montre comment définir des propriétés [abstract](../../language-reference/keywords/abstract.md). Une déclaration de propriété abstraite ne fournit pas une implémentation des accesseurs de propriété ; elle déclare que la classe prend en charge des propriétés, mais laisse l’implémentation de l’accesseur aux classes dérivées. L’exemple suivant montre comment implémenter les propriétés abstraites héritées d’une classe de base.  
@@ -35,7 +34,7 @@ L’exemple suivant montre comment définir des propriétés [abstract](../../la
   
  [!code-csharp[csProgGuideInheritance#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideInheritance/CS/Inheritance.cs#1)]  
   
-- Les modificateurs sur la propriété sont placés sur la déclaration de propriété proprement dite. Exemple :  
+- Les modificateurs sur la propriété sont placés sur la déclaration de propriété proprement dite. Par exemple :  
   
     ```csharp  
     public abstract double Area  

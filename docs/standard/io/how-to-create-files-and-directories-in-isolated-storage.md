@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer des fichiers et des répertoires dans un stockage isolé'
+title: 'Comment : créer des fichiers et des répertoires dans un stockage isolé'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -14,16 +14,14 @@ helpviewer_keywords:
 - stores, creating files and directories
 - storing data using isolated storage, creating files and directories
 ms.assetid: 2ca4d2a4-809b-4f00-bc08-bf4a64d3a5c3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 92f4b686a5a2bdc74ff3f0f68de4c6b2048da5a1
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 83e8c800dc74d9689f1bfdb506a6b454e87b36ca
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709011"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75707868"
 ---
-# <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Procédure : créer des fichiers et des répertoires dans un stockage isolé
+# <a name="how-to-create-files-and-directories-in-isolated-storage"></a>Comment : créer des fichiers et des répertoires dans un stockage isolé
 Après avoir obtenu un magasin isolé, vous pouvez créer des répertoires et des fichiers pour le stockage des données. Dans un magasin, les noms de répertoires et de fichiers sont spécifiées par rapport à la racine du système de fichiers virtuel.  
   
  Pour créer un répertoire, utilisez la méthode d’instance <xref:System.IO.IsolatedStorage.IsolatedStorageFile.CreateDirectory%2A?displayProperty=nameWithType>. Si vous spécifiez un sous-répertoire d’un répertoire qui n’existe pas, les deux répertoires sont créés. Si vous spécifiez un répertoire qui existe déjà, la méthode retourne sans créer de répertoire et aucune exception n’est levée. Toutefois, si vous spécifiez un nom de répertoire qui contient des caractères non valides, une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException> est levée.  

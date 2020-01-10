@@ -6,12 +6,12 @@ helpviewer_keywords:
 - -target compiler options [Visual Basic]
 - /target compiler options [Visual Basic]
 ms.assetid: e0954147-548b-461f-9c4b-a8f88845616c
-ms.openlocfilehash: bd79d95a18fb1935d97fff2d1b2c7767752b9765
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: d186670489ada51fced67ff9adeb73b14909b664
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74351720"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716689"
 ---
 # <a name="-target-visual-basic"></a>-cible (Visual Basic)
 
@@ -29,7 +29,7 @@ Le tableau suivant résume l’effet de l’option `-target`.
 
 |**Option**|**Behavior**|
 |----------------|------------------|
-|`-target:exe`|Provoque la création d’une application console exécutable par le compilateur.<br /><br /> Il s’agit de l’option par défaut quand aucune option de `-target` n’est spécifiée. Le fichier exécutable est créé avec une extension. exe.<br /><br /> Sauf spécification contraire avec l’option `/out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure de `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`.|
+|`-target:exe`|Provoque la création d’une application console exécutable par le compilateur.<br /><br /> Il s’agit de l’option par défaut quand aucune option de `-target` n’est spécifiée. Le fichier exécutable est créé avec une extension. exe.<br /><br /> Sauf spécification contraire avec l’option `-out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure de `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`.|
 |`-target:library`|Fait en sorte que le compilateur crée une bibliothèque de liens dynamiques (DLL).<br /><br /> Le fichier de bibliothèque de liens dynamiques est créé avec une extension. dll.<br /><br /> Sauf spécification contraire avec l’option `-out`, le nom du fichier de sortie prend le nom du premier fichier d’entrée.<br /><br /> Lors de la génération d’une DLL, une procédure `Sub Main` n’est pas obligatoire.|
 |`-target:module`|Force le compilateur à générer un module qui peut être ajouté à un assembly.<br /><br /> Le fichier de sortie est créé avec une extension. netmodule.<br /><br /> Le common language runtime .NET ne peut pas charger un fichier qui n’a pas d’assembly. Toutefois, vous pouvez incorporer ce type de fichier dans le manifeste d’assembly d’un assembly à l’aide de `-reference`.<br /><br /> Lorsque le code d’un module référence des types internes dans un autre module, les deux modules doivent être incorporés dans un manifeste d’assembly à l’aide de `-reference`.<br /><br /> L’option [-addmodule](../../../visual-basic/reference/command-line-compiler/addmodule.md) importe les métadonnées d’un module.|
 |`-target:winexe`|Provoque la création d’une application Windows exécutable par le compilateur.<br /><br /> Le fichier exécutable est créé avec une extension. exe. Une application basée sur Windows est une application qui fournit une interface utilisateur à partir de la bibliothèque de classes .NET Framework ou avec les API Windows.<br /><br /> Sauf spécification contraire avec l’option `-out`, le nom du fichier de sortie prend le nom du fichier d’entrée qui contient la procédure `Sub Main`.<br /><br /> Une seule procédure de `Sub Main` est requise dans les fichiers de code source qui sont compilés dans un fichier. exe. Dans les cas où votre code possède plusieurs classes qui ont une procédure `Sub Main`, utilisez l’option du compilateur `-main` pour spécifier la classe qui contient la procédure `Sub Main`|

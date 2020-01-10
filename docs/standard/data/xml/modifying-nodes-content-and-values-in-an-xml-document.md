@@ -3,17 +3,15 @@ title: Modification de nœuds, de contenu et de valeurs dans un document XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 761773e0-db72-4986-b9f5-a522213d8397
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 976c34d72f9fcc89193658e50727a0ad365f2dd8
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 4a53ba4fe16a3653b1be380da49e6b75cb347a28
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647885"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710672"
 ---
 # <a name="modifying-nodes-content-and-values-in-an-xml-document"></a>Modification de nœuds, de contenu et de valeurs dans un document XML
-Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. Vous pouvez :  
+Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. Vous pouvez effectuer les tâches suivantes :  
   
 - Modifier la valeur des nœuds à l'aide de la propriété <xref:System.Xml.XmlNode.Value%2A>.  
   
@@ -29,11 +27,11 @@ Il existe plusieurs façons de modifier les nœuds et le contenu d'un document. 
   
 |Type de nœud|Données modifiées|  
 |---------------|------------------|  
-|Attribut|Valeur de l'attribut.|  
+|Attribute|Valeur de l'attribut.|  
 |CDATASection.|Contenu de CDATASection.|  
 |Commentaire|Contenu du commentaire.|  
-|ProcessingInstruction ;|Contenu, cible exclue.|  
-|Texte|Contenu du texte.|  
+|ProcessingInstruction|Contenu, cible exclue.|  
+|Text|Contenu du texte.|  
 |XmlDeclaration|Contenu de la déclaration, balisage `<?xml` et `?>` exclu.|  
 |Whitespace|Valeur de l'espace blanc. Vous pouvez définir la valeur de l'un des quatre caractères d'espace blanc XML reconnus : espace, tabulation, CR ou LF.|  
 |SignificantWhitespace|Valeur de l'espace blanc significatif. Vous pouvez définir la valeur de l'un des quatre caractères d'espace blanc XML reconnus : espace, tabulation, CR ou LF.|  

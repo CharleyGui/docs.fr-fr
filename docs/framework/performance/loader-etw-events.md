@@ -5,14 +5,12 @@ helpviewer_keywords:
 - loader events [.NET Framework]
 - ETW, loader events (CLR)
 ms.assetid: cb403cc6-56f8-4609-b467-cdfa09f07909
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a6928b5ac41a6af36dc7d5e7f5bb02074ba742e5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 73665915a70225c2b1da47c7b60347b089564884
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974591"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716033"
 ---
 # <a name="loader-etw-events"></a>Événements ETW de chargeur
 Ces événements collectent des informations relatives au chargement et déchargement des domaines d'application, des assemblys et des modules.  
@@ -22,7 +20,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="application-domain-events"></a>Événements de domaine d'application
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|événement|Level|  
+|Mot clé pour déclencher l'événement|Event|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AppDomainLoad_V1` et `AppDomainUnLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AppDomainDCStart_V1`|Informatif (4)|  
@@ -30,7 +28,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Description|  
+|Event|ID de l'événement|Description|  
 |-----------|--------------|-----------------|  
 |`AppDomainLoad_V1` (journalisé pour tous les domaines d'application)|156|Déclenché chaque fois qu'un domaine d'application est créé pendant la durée de vie d'un processus.|  
 |`AppDomainUnLoad_V1`|157|Déclenché chaque fois qu'un domaine d'application est détruit pendant la durée de vie d'un processus.|  
@@ -39,7 +37,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AppDomainID|win:UInt64|Identificateur unique d’un domaine d'application.|  
 |AppDomainFlags|win:UInt32|0x1 : domaine par défaut.<br /><br /> 0x2 : exécutable.<br /><br /> 0x4 : domaine d'application, bit 28-31 : partage de la stratégie de ce domaine.<br /><br /> 0 : domaine partagé.|  
@@ -50,7 +48,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="clr-loader-assembly-events"></a>Événements d'assembly de chargeur du CLR  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|événement|Level|  
+|Mot clé pour déclencher l'événement|Event|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`AssemblyLoad` et `AssemblyUnload`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`AssemblyDCStart`|Informatif (4)|  
@@ -58,7 +56,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Description|  
+|Event|ID de l'événement|Description|  
 |-----------|--------------|-----------------|  
 |`AssemblyLoad_V1`|154|Déclenché quand un assembly est chargé.|  
 |`AssemblyUnload_V1`|155|Déclenché quand un assembly est déchargé.|  
@@ -67,7 +65,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |AssemblyID|win:UInt64|ID unique de l'assembly.|  
 |AppDomainID|win:UInt64|ID du domaine de cet assembly.|  
@@ -79,7 +77,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="module-events"></a>Événements de module
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|événement|Level|  
+|Mot clé pour déclencher l'événement|Event|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`ModuleLoad_V2` et `ModuleUnload_V2`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`ModuleDCStart_V2`|Informatif (4)|  
@@ -88,7 +86,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Description|  
+|Event|ID de l'événement|Description|  
 |-----------|--------------|-----------------|  
 |`ModuleLoad_V2`|152|Déclenché quand un module est chargé pendant la durée de vie d'un processus.|  
 |`ModuleUnload_V2`|153|Déclenché quand un module est déchargé pendant la durée de vie d'un processus.|  
@@ -97,7 +95,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|ID unique du module.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
@@ -124,7 +122,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="clr-domain-module-events"></a>Événements de module de domaine du CLR
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|événement|Level|  
+|Mot clé pour déclencher l'événement|Event|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`LoaderKeyword` (0x8)|`DomainModuleLoad_V1`|Informatif (4)|  
 |`LoaderRundownKeyword` (0x8) +<br /><br /> `StartRundownKeyword`|`DomainModuleDCStart_V1`|Informatif (4)|  
@@ -132,7 +130,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Description|  
+|Event|ID de l'événement|Description|  
 |-----------|--------------|-----------------|  
 |`DomainModuleLoad_V1`|151|Déclenché quand un module est chargé pour un domaine d'application.|  
 |`DomainModuleDCStart_V1`|151|Énumère les modules chargés pour un domaine d'application pendant un arrêt de début, et est consigné pour tous les domaines d'application.|  
@@ -140,7 +138,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ModuleID|win:UInt64|Identifie l'assembly auquel ce module appartient.|  
 |AssemblyID|win:UInt64|ID de l'assembly dans lequel ce module réside.|  
@@ -154,7 +152,7 @@ Ces événements collectent des informations relatives au chargement et décharg
 ## <a name="module-range-events"></a>Événements de plage de module
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|événement|Level|  
+|Mot clé pour déclencher l'événement|Event|Niveau|  
 |-----------------------------------|-----------|-----------|  
 |`PerfTrackKeyWord`)|`ModuleRange`|Informatif (4)|  
 |`PerfTrackKeyWord`|`ModuleRangeDCStart`|Informatif (4)|  
@@ -162,7 +160,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|événement|ID d'événement|Description|  
+|Event|ID de l'événement|Description|  
 |-----------|--------------|-----------------|  
 |`ModuleRange`|158|Cet événement est présent si une image Native Image Generator (NGen) chargée a été optimisée à l’aide d’IBC et contient des informations sur les sections à chaud de l'image NGen.|  
 |`ModuleRangeDCStart`|160|Événement `ModuleRange` déclenché au début d'un arrêt.|  
@@ -170,7 +168,7 @@ Ces événements collectent des informations relatives au chargement et décharg
   
  Le tableau ci-dessous montre les données liées aux événements.  
   
-|Nom du champ|Type de données|Description|  
+|Nom de champ|Type de données|Description|  
 |----------------|---------------|-----------------|  
 |ClrInstanceID|win:UInt16|Identifie de façon unique une instance spécifique du CLR dans un processus si plusieurs instances du CLR sont chargées.|  
 |ModuleID|win:UInt64|Identifie l'assembly auquel ce module appartient.|  

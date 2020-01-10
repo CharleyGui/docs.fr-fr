@@ -1,17 +1,16 @@
 ---
 title: Niveaux d’accessibilité - Référence C#
-ms.custom: seodec18
 ms.date: 12/06/2017
 helpviewer_keywords:
 - access modifiers [C#], accessibility levels
 - accessibility levels
 ms.assetid: dc083921-0073-413e-8936-a613e8bb7df4
-ms.openlocfilehash: 2d6605a305e5003e19f4fe1dd260746302691215
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 26fbc2a6d86aead537465c304146630f8bcd3ad4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69602389"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713817"
 ---
 # <a name="accessibility-levels-c-reference"></a>Niveaux d’accessibilité (référence C#)
 
@@ -38,9 +37,9 @@ Utilisez les modificateurs d’accès `public`, `protected`, `internal` ou `priv
   
 |Membres de|Accessibilité par défaut du membre|Accessibilité déclarée du membre autorisée|  
 |----------------|----------------------------------|--------------------------------------------------|  
-|`enum`|`public`|Aucun.|  
+|`enum`|`public`|Aucun|  
 |`class`|`private`|`public`<br /><br /> `protected`<br /><br /> `internal`<br /><br /> `private`<br /><br /> `protected internal` <br /><br />`private protected`|  
-|`interface`|`public`|Aucun.|  
+|`interface`|`public`|Aucun|  
 |`struct`|`private`|`public`<br /><br /> `internal`<br /><br /> `private`|  
   
  L’accessibilité d’un type imbriqué dépend de son [domaine d’accessibilité](./accessibility-domain.md), qui est déterminé à la fois par l’accessibilité déclarée du membre et par le domaine d’accessibilité du type conteneur immédiat. Toutefois, le domaine d'accessibilité d'un type imbriqué ne peut pas dépasser celui du type conteneur.  

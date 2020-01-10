@@ -4,13 +4,12 @@ description: Cet article offre une courte vue d’ensemble des tests unitaires p
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.custom: seodec18
-ms.openlocfilehash: 63bbe2981f70093c94dde47510fd7786a1cc950b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 776a430868c7a4829e11a2958fb998c11315c43d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74835458"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714296"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
 

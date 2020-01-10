@@ -11,14 +11,12 @@ helpviewer_keywords:
 - Creating GenericPrincipal Objects
 - GenericIdentity Objects
 ms.assetid: 465694cf-258b-4747-9dae-35b01a5bcdbb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 37f5543ceaca83a024132c5d010b6d969876454f
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 546b4d20f7b6b7a8c448f704fefd9a39b3ebd1d7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353830"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706147"
 ---
 # <a name="how-to-create-genericprincipal-and-genericidentity-objects"></a>Comment : créer des objets GenericPrincipal et GenericIdentity
 

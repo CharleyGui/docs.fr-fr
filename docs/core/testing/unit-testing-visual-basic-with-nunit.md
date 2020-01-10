@@ -3,13 +3,12 @@ title: Effectuer des tests unitaires sur Visual Basic dans .NET Core avec dotnet
 description: Apprenez les concepts des tests unitaires dans .NET Core de manière interactive en créant un exemple de solution Visual Basic pas à pas à l’aide de NUnit.
 author: rprouse
 ms.date: 10/04/2018
-ms.custom: seodec18
-ms.openlocfilehash: 4776916c316e18de954c8ccaa985075dc2ea0fc5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8f05d25a0add76f5c552f5b9ac1eb310c3d6407a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428730"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715406"
 ---
 # <a name="unit-testing-visual-basic-net-core-libraries-using-dotnet-test-and-nunit"></a>Effectuer des tests unitaires sur les bibliothèques .NET Core Visual Basic à l’aide de dotnet test et de NUnit
 

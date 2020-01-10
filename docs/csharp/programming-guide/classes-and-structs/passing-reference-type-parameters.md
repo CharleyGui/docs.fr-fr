@@ -1,17 +1,16 @@
 ---
 title: Passage de paramètres de type référence - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - method parameters [C#], reference types
 - parameters [C#], reference
 ms.assetid: 9e6eb65c-942e-48ab-920a-b7ba9df4ea20
-ms.openlocfilehash: 6489d31ac1e466fdbf2b47ce1aae7e1139af0960
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 6fa0e60fafabaa9fb04cdc5d5bf3f9e29490e84f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419043"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714718"
 ---
 # <a name="passing-reference-type-parameters-c-programming-guide"></a>Passage de paramètres de type référence (Guide de programmation C#)
 Une variable d’un [type référence](../../language-reference/keywords/reference-types.md) ne contient pas directement ses données ; il contient une référence à ses données. Quand vous passez un paramètre de type référence par valeur, il est possible de changer les données appartenant à l’objet référencé, comme la valeur d’un membre de classe. En revanche, vous ne pouvez pas changer la valeur de la référence elle-même ; par exemple, vous ne pouvez pas utiliser la même référence pour allouer de la mémoire à un nouvel objet et la faire persister en dehors de la méthode. Pour cela, passez le paramètre en utilisant le mot clé [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md). Pour des raisons de simplicité, les exemples suivants utilisent `ref`.  

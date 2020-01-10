@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter et supprimer des éléments d’un ConcurrentDictionary'
+title: "Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,16 +8,14 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, concurrent dictionary
 ms.assetid: 81b64b95-13f7-4532-9249-ab532f629598
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d8b1c63f10d1d79c3fec6cad87c9a82f03716c8
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: dc4d13e09a91633fac1fcf5bd8ab5b043473bd7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54543420"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711309"
 ---
-# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Procédure : ajouter et supprimer des éléments d’un ConcurrentDictionary
+# <a name="how-to-add-and-remove-items-from-a-concurrentdictionary"></a>Guide pratique : ajouter et supprimer des éléments d'un ConcurrentDictionary
 Cet exemple montre comment ajouter, extraire, mettre à jour et supprimer des éléments dans un <xref:System.Collections.Concurrent.ConcurrentDictionary%602?displayProperty=nameWithType>. Cette classe de collection est une implémentation thread-safe. Nous vous recommandons de l’utiliser chaque fois que plusieurs threads tentent d’accéder aux éléments de façon simultanée.  
   
  <xref:System.Collections.Concurrent.ConcurrentDictionary%602> fournit plusieurs méthodes pratiques qui permettent au code de ne plus avoir à vérifier au préalable si une clé existe avant d’essayer d’ajouter ou de supprimer des données. Le tableau suivant répertorie ces méthodes pratiques et indique quand les utiliser.  

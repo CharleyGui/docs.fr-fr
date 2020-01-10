@@ -4,13 +4,13 @@ description: Vue d’ensemble de Microsoft XML Serializer Generator. Utilisez XM
 author: mlacouture
 ms.date: 01/19/2017
 ms.topic: tutorial
-ms.custom: mvc, seodec18
-ms.openlocfilehash: 403651978667c8cf531c3f87f1156f67206fb490
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.custom: mvc
+ms.openlocfilehash: 094dd1227033e167050ad73121b3005a592a0ae4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72522818"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714526"
 ---
 # <a name="using-microsoft-xml-serializer-generator-on-net-core"></a>Utilisation de Microsoft XML Serializer Generator sur .NET Core
 
@@ -52,7 +52,7 @@ dotnet new console
 
 Utilisez la commande [`dotnet add package`](../tools//dotnet-add-package.md) pour ajouter la référence dans votre projet.
 
-Type :
+Type :
 
 ```dotnetcli
 dotnet add package Microsoft.XmlSerializer.Generator -v 1.0.0
@@ -131,5 +131,5 @@ Félicitations ! Vous venez de :
 ## <a name="related-resources"></a>Ressources connexes
 
 - [Introduction à la sérialisation XML](../../standard/serialization/introducing-xml-serialization.md)
-- [Guide pratique pour sérialiser à l’aide de XmlSerializer (C#)](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
+- [Comment sérialiser à l’aide deC#XmlSerializer ()](../../csharp/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)
 - [Guide pratique pour sérialiser à l’aide de XmlSerializer (Visual Basic)](../../visual-basic/programming-guide/concepts/linq/how-to-serialize-using-xmlserializer.md)

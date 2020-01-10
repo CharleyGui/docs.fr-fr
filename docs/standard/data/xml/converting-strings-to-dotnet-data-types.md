@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 31f277d11cba8191c326d56f017b8acc6503c6b7
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ac7e1b68f3f43a0c84c7330666825207e5b90004
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968711"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711049"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Conversion de chaînes en types de données .NET Framework
 Si vous souhaitez convertir une chaîne en un type de données .NET Framework, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert**, consultez <xref:System.Xml.XmlConvert>.  
@@ -24,7 +22,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
   
 |Type .NET Framework|Chaîne retournée|  
 |-------------------------|---------------------|  
-|Booléen|"true", "false"|  
+|Boolean|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
 |Single.NegativeInfinity|"-INF"|  
 |Double.PositiveInfinity|"INF"|  
@@ -35,7 +33,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
 > [!NOTE]
 > Durant la conversion de l'un des types .NET Framework répertoriés dans ce tableau vers une chaîne à l'aide de la méthode **ToString**, la chaîne retournée n'est pas le type de base, mais le type de chaîne XSD (XML Schema Definition).  
   
- Le type des valeurs **DateTime** et **Timespan** diffère en ce sens que **DateTime** représente un moment donné dans le temps, alors que **TimeSpan** représente un intervalle de temps. Les formats **DateTime** et **Timespan** sont spécifiés dans la spécification des types de données XSD (XML Schema Definition). Par exemple :  
+ Le type des valeurs **DateTime** et **Timespan** diffère en ce sens que **DateTime** représente un moment donné dans le temps, alors que **TimeSpan** représente un intervalle de temps. Les formats **DateTime** et **Timespan** sont spécifiés dans la spécification des types de données XSD (XML Schema Definition). Par exemple :  
   
 ```vb  
 Dim writer As New XmlTextWriter("myfile.xml", Nothing)  
@@ -78,9 +76,9 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
 |Paramètre d'entrée de chaîne valide|Type de sortie .NET Framework|  
 |----------------------------------|--------------------------------|  
-|"true"|Boolean.True|  
+|« true »|Boolean.True|  
 |"1"|Boolean.True|  
-|"false"|Boolean.False|  
+|« false »|Boolean.False|  
 |"0"|Boolean.False|  
   
  Examinons, par exemple, le code XML suivant :  

@@ -1,17 +1,16 @@
 ---
 title: Objets - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 1b3ceb2671a4c21f1df89599c9b8c0bc107a7435
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 95735d5032a8896570918b991f12b853af88fb68
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73419268"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705481"
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
 Une définition de classe ou de struct s’apparente à un plan qui spécifie ce que le type peut faire. Un objet est fondamentalement un bloc de mémoire qui a été alloué et configuré selon le plan. Un programme peut créer de nombreux objets de la même classe. Les objets sont également appelés instances. Ils peuvent être stockés dans une variable nommée, dans un tableau ou dans une collection. Le code client est le code qui utilise ces variables pour appeler les méthodes et accéder aux propriétés publiques de l’objet. Dans un langage orienté objet tel que C#, un programme classique se compose de plusieurs objets qui interagissent de façon dynamique.  
@@ -46,10 +45,10 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
   
  L’implémentation <xref:System.ValueType?displayProperty=nameWithType> de `Equals` utilise la réflexion, car elle doit être en mesure de déterminer la nature des champs dans chaque struct. Quand vous créez vos propres structs, substituez la méthode `Equals` pour fournir un algorithme d’égalité efficace qui est propre à votre type.  
   
-- Pour déterminer si les valeurs des champs dans deux instances de classe sont égales, vous pouvez utiliser la méthode <xref:System.Object.Equals%2A> ou l’[opérateur ==](../../language-reference/operators/equality-operators.md#equality-operator-). Toutefois, utilisez-les uniquement si la classe les a substitués ou surchargés pour fournir une définition personnalisée de ce que signifie « égalité » pour les objets de ce type. La classe peut également implémenter l’interface <xref:System.IEquatable%601> ou <xref:System.Collections.Generic.IEqualityComparer%601>. Les deux interfaces fournissent des méthodes qui peuvent être utilisées pour tester l’égalité des valeurs. Quand vous concevez vos propres classes qui substituent `Equals`, suivez les instructions indiquées dans [Guide pratique pour définir l’égalité de valeurs pour un type](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) et <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.  
+- Pour déterminer si les valeurs des champs dans deux instances de classe sont égales, vous pouvez utiliser la méthode <xref:System.Object.Equals%2A> ou l’[opérateur ==](../../language-reference/operators/equality-operators.md#equality-operator-). Toutefois, utilisez-les uniquement si la classe les a substitués ou surchargés pour fournir une définition personnalisée de ce que signifie « égalité » pour les objets de ce type. La classe peut également implémenter l’interface <xref:System.IEquatable%601> ou <xref:System.Collections.Generic.IEqualityComparer%601>. Les deux interfaces fournissent des méthodes qui peuvent être utilisées pour tester l’égalité des valeurs. Quand vous concevez vos propres classes qui substituent `Equals`, veillez à suivre les instructions indiquées dans [comment définir l’égalité des valeurs pour un type](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) et <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.
   
 ## <a name="related-sections"></a>Rubriques connexes  
- Pour plus d'informations :  
+ Pour plus d'informations, consultez .  
   
 - [Classes](./classes.md)  
   
@@ -66,7 +65,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 - [Guide de programmation C#](../index.md)
 - [object](../../language-reference/builtin-types/reference-types.md)
 - [Héritage](./inheritance.md)
-- [class](../../language-reference/keywords/class.md)
+- [classe](../../language-reference/keywords/class.md)
 - [struct](../../language-reference/keywords/struct.md)
 - [new, opérateur](../../language-reference/operators/new-operator.md)
 - [Système de type commun](../../../standard/base-types/common-type-system.md)

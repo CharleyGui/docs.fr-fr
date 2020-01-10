@@ -4,14 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 924d209cd1177ffc1702ebe958c58bfc29c22c38
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 180cce516a1209711430429a46cb5b718b29f1d9
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447679"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75716106"
 ---
 # <a name="controlling-net-framework-logging"></a>Contrôle de l'enregistrement .NET Framework
 
@@ -55,9 +53,9 @@ Pour activer la journalisation, un utilisateur doit spécifier trois éléments�
 
     - Le paramètre `-p` identifie le GUID du fournisseur.
 
-    - `0x1CCBD` spécifie les catégories d’événements qui seront déclenchés.
+    - `0x1CCBD` spécifie les catégories d'événements qui seront déclenchés.
 
-    - `0x5` définit le niveau de journalisation (dans ce cas, verbose (5)).
+    - `0x5` définit le niveau de la journalisation (dans ce cas, détaillé (5)).
 
     - Le paramètre `-ets` indique à Logman d'envoyer des commandes aux sessions de suivi d'événements.
 
@@ -113,5 +111,5 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Kit de performances Windows](/windows-hardware/test/wpt/)
+- [Windows Performance Toolkit](/windows-hardware/test/wpt/)
 - [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md)

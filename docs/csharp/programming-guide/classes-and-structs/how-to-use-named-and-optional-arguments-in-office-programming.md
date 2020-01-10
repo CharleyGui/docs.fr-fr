@@ -1,18 +1,17 @@
 ---
 title: Comment utiliser des arguments nommés et facultatifs dans la programmation C# Office-Guide de programmation
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - named and optional arguments [C#], Office programming
 - optional arguments [C#], Office programming
 - named arguments [C#], Office programming
 ms.assetid: 65b8a222-bcd8-454c-845f-84adff5a356f
-ms.openlocfilehash: d7efd13f26912f8cd944bcbc5568e9bbca92c3a0
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 36b5c8b49404606c8240d24953c3677d5612d30e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73970494"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714877"
 ---
 # <a name="how-to-use-named-and-optional-arguments-in-office-programming-c-programming-guide"></a>Comment utiliser des arguments nommés et facultatifs dans la programmationC# Office (Guide de programmation)
 
@@ -68,7 +67,7 @@ Pour que vous puissiez effectuer ces procédures, Microsoft Office Word doit êt
 
      [!code-csharp[csProgGuideNamedAndOptional#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/wordprogram.cs#7)]
 
-## <a name="to-run-the-application"></a>Pour exécuter l’application
+## <a name="to-run-the-application"></a>Pour exécuter l'application
 
 1. Ajoutez l’instruction suivante à main :
 

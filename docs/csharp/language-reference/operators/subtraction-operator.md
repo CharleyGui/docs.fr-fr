@@ -1,6 +1,5 @@
 ---
 title: '- et -=, opérateurs - Référence C#'
-ms.custom: seodec18
 ms.date: 05/27/2019
 f1_keywords:
 - -_CSharpKeyword
@@ -13,12 +12,12 @@ helpviewer_keywords:
 - event unsubscription [C#]
 - -= operator [C#]
 ms.assetid: 4de7a4fa-c69d-48e6-aff1-3130af970b2d
-ms.openlocfilehash: cf642fcac7233d27f2ed9052829c145038e93419
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 775f06b05d75078e53ab777d09713d69467ace14
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73038876"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712609"
 ---
 # <a name="--and---operators-c-reference"></a>Opérateurs - et -=, opérateurs - (référence C#)
 
@@ -68,7 +67,7 @@ L’exemple suivant illustre l’utilisation de l’opérateur `-=` :
 
 [!code-csharp-interactive[-= examples](~/samples/csharp/language-reference/operators/SubtractionOperator.cs#SubtractAndAssign)]
 
-Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, consultez [Guide pratique pour s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
+Vous utilisez également l’opérateur `-=` pour spécifier une méthode de gestionnaire d’événements à supprimer quand vous vous désabonnez d’un [événement](../keywords/event.md). Pour plus d’informations, consultez [Comment s’abonner et annuler l’abonnement à des événements](../../programming-guide/events/how-to-subscribe-to-and-unsubscribe-from-events.md).
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

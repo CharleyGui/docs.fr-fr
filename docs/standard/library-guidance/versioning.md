@@ -1,17 +1,15 @@
 ---
 title: Gestion de version et bibliothèques .NET
 description: Meilleures pratiques recommandées pour la gestion de version des bibliothèques .NET.
-author: jamesnk
-ms.author: mairaw
 ms.date: 12/10/2018
-ms.openlocfilehash: 9250e48707c0ea72cdf8bef9663f5a3516309b86
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 8ed3217e39b1fe0f330a650ec72cda224866e207
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70969010"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706411"
 ---
-# <a name="versioning"></a>Versioning
+# <a name="versioning"></a>Gestion de version
 
 Une bibliothèque de logiciels est rarement terminée dans la version 1.0. Les bonnes bibliothèques évoluent au fil du temps, avec l’ajout de fonctionnalités, la résolution de bogues et l’amélioration des performances. Il est important de publier de nouvelles versions d’une bibliothèque .NET, fournissant une valeur supplémentaire à chaque version, sans interrompre les utilisateurs existants.
 
@@ -43,7 +41,7 @@ L’identificateur de package NuGet combiné avec la version du package NuGet se
 
 > Comme les utilisateurs doivent s’abonner pour obtenir les packages de préversion, ils constateront que le package n’est pas terminé.
 
-### <a name="assembly-version"></a>Version de l’assembly
+### <a name="assembly-version"></a>Version de l'assembly
 
 La version d’assembly correspond à ce que le CLR utilise lors de l’exécution pour sélectionner la version d’un assembly à charger. La sélection d’un assembly à l’aide du contrôle de version s’applique uniquement aux assemblys avec un nom fort.
 
@@ -63,7 +61,7 @@ Les noms forts combinés avec la version de l’assembly permet un [chargement s
 
 > La valeur AssemblyVersion est incluse dans certains messages d’information affichées à l’utilisateur, par exemple, le nom de l’assembly et les noms du type d’assembly qualifié dans les messages d’exception. Maintenir une relation entre les versions fournit des informations supplémentaires aux développeurs sur la version qu’ils utilisent.
 
-**❌ À ÉVITER** : Utiliser une version AssemblyVersion fixe.
+les **❌ n’ont pas** de AssemblyVersion fixe.
 
 > Bien qu'une valeur AssemblyVersion immuable évite d'avoir à lier des redirections, cela signifie qu'une seule version de l'assembly peut être installée dans le Global Assembly Cache (GAC). En outre, les applications qui font référence à l’assembly dans le GAC s’arrêtent si une autre application met à jour l’assembly GAC avec les dernières modifications.
 
@@ -96,7 +94,7 @@ La version des informations sur l’assembly est utilisée pour enregistrer des 
 > [!NOTE]
 > Les versions antérieures de Visual Studio déclenchent un avertissement de build si cette version n’utilise pas le format `Major.Minor.Build.Revision`. Vous pouvez ignorer cet avertissement sans risque.
 
-**❌ À ÉVITER** : Définir vous-même la version des informations sur l’assembly.
+**❌ éviter** de définir vous-même la version d’informations de l’assembly.
 
 > Autorisez SourceLink à générer automatiquement la version qui contient les métadonnées de contrôle source et NuGet.
 

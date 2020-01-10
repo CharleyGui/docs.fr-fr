@@ -6,19 +6,17 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 0fe844e3-5b6f-4fe7-ad15-22459501738b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d26872fb97551e5392eb3f6a1a0825728046553
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: ecbed7e57628b4e140e0f4dbcd600643617b075a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69965892"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710893"
 ---
 # <a name="event-handling-in-an-xml-document-using-the-xmlnodechangedeventargs"></a>Gestion d'événements dans un document XML à l'aide de XmlNodeChangedEventArgs
 **XmlNodeChangedEventArgs** encapsule les arguments passés aux gestionnaires d’événements inscrits dans l’objet **XmlDocument** pour la gestion d’événements. Le tableau suivant répertorie ces événements et fournit une description des circonstances dans lesquelles ils sont déclenchés :  
   
-|événement|Est déclenché|  
+|Event|Est déclenché|  
 |-----------|-----------|  
 |<xref:System.Xml.XmlDocument.NodeInserting>|Quand un nœud faisant partie du document actif est sur le point d'être inséré dans un autre nœud.|  
 |<xref:System.Xml.XmlDocument.NodeInserted>|Quand un nœud faisant partie du document actif a été inséré dans un autre nœud.|  
@@ -206,7 +204,7 @@ public class Sample
 } // End class   
 ```  
   
- Pour plus d’informations, consultez <xref:System.Xml.XmlNodeChangedEventArgs> et <xref:System.Xml.XmlNodeChangedEventHandler>.  
+ Pour plus d'informations, consultez les rubriques <xref:System.Xml.XmlNodeChangedEventArgs> et <xref:System.Xml.XmlNodeChangedEventHandler>.  
   
 ## <a name="see-also"></a>Voir aussi
 

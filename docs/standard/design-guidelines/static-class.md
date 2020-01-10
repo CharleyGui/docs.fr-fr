@@ -10,22 +10,21 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d67c14d8-c4dd-443f-affb-4ccae677c9b6
-author: KrzysztofCwalina
-ms.openlocfilehash: d0a2f11b53f50f2ec2f301f7b88df65e1cd7b811
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 35bcf1d403c78cdfcbb476b2eb5de2251a564b9a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61762044"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709060"
 ---
 # <a name="static-class-design"></a>Conception de classes statiques
-Une classe statique est définie comme une classe qui contient uniquement des membres statiques (bien entendu, outre les membres d’instance hérités de <xref:System.Object?displayProperty=nameWithType> et éventuellement un constructeur privé). Certains langages fournissent la prise en charge intégrée pour les classes static. Dans c# 2.0 et versions ultérieures, quand une classe est déclarée comme statique, il est scellé, abstract, et aucun membre d’instance peut être remplacée ou déclaré.  
+Une classe statique est définie en tant que classe qui contient uniquement des membres statiques (bien entendu, outre les membres d’instance hérités de <xref:System.Object?displayProperty=nameWithType> et éventuellement un constructeur privé). Certains langages fournissent une prise en charge intégrée des classes statiques. Dans C# 2,0 et versions ultérieures, lorsqu’une classe est déclarée comme étant statique, elle est sealed, abstract, et aucun membre d’instance ne peut être substitué ou déclaré.  
   
- Les classes statiques sont un compromis entre la conception orientée objet et la simplicité. Ils sont couramment utilisés pour fournir des raccourcis vers les autres opérations (telles que <xref:System.IO.File?displayProperty=nameWithType>), les détenteurs de méthodes d’extension ou de fonctionnalités pour lequel un wrapper orienté objet est injustifié (tel que <xref:System.Environment?displayProperty=nameWithType>).  
+ Les classes statiques sont un compromis entre une conception pure orientée objet et une simplicité. Elles sont généralement utilisées pour fournir des raccourcis vers d’autres opérations (telles que <xref:System.IO.File?displayProperty=nameWithType>), des détenteurs de méthodes d’extension ou des fonctionnalités pour lesquelles un wrapper orienté objet complet n’est pas justifié (comme <xref:System.Environment?displayProperty=nameWithType>).  
   
  **✓ DO** utilisent des classes statiques avec parcimonie.  
   
- Classes static doivent être utilisées uniquement comme prenant en charge de classes pour la core orientée objet du framework.  
+ Les classes statiques doivent être utilisées uniquement comme classes de prise en charge pour le noyau orienté objet de l’infrastructure.  
   
  **X DO NOT** traiter des classes statiques comme un compartiment divers.  
   
@@ -33,9 +32,9 @@ Une classe statique est définie comme une classe qui contient uniquement des me
   
  **✓ DO** déclarer des classes statiques comme sealed, abstract, et ajoutez un constructeur d’instance privée si votre langage de programmation ne dispose pas de prise en charge intégrée pour les classes static.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

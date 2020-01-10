@@ -10,14 +10,12 @@ helpviewer_keywords:
 - lists [.NET Framework], generic delegates
 - generics [.NET Framework], delegates
 ms.assetid: 416be383-cc61-4102-9b1b-88b51adb963e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f37f55f5af70a232952bdb94f0c111a27fcbab1d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: baf8497289ee71c2dbdc544607212de90928289c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69948781"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708382"
 ---
 # <a name="generic-delegates-for-manipulating-arrays-and-lists"></a>Délégués génériques pour la manipulation de tableaux et de listes
 Cette rubrique donne une vue d’ensemble des délégués génériques pour les conversions, des prédicats de recherche et des actions à effectuer sur les éléments d’un tableau ou d’une collection.  

@@ -3,14 +3,12 @@ title: Modèle Objet du schéma (SOM) XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: a897a599-ffd1-43f9-8807-e58c8a7194cd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 40a792f91ecd343684ff4c7921d6b21d25abecf7
-ms.sourcegitcommit: 3d5d33f384eeba41b2dff79d096f47ccc8d8f03d
-ms.translationtype: HT
+ms.openlocfilehash: 45bfba7bdab31b3edda59a350788e50182123ce0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/04/2018
-ms.locfileid: "33570123"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709905"
 ---
 # <a name="xml-schema-object-model-som"></a>Modèle Objet du schéma (SOM) XML
 Un schéma XML est un outil puissant et complexe permettant de créer et valider une structure dans des documents XML conformes. De même que la modélisation de données dans une base de données relationnelles, un schéma permet de définir la structure de documents XML en spécifiant les éléments qui peuvent y figurer, ainsi que la structure et les types que ces éléments doivent suivre pour être valides pour le schéma en question.  
@@ -19,7 +17,7 @@ Un schéma XML est un outil puissant et complexe permettant de créer et valider
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du modèle d’objet de schéma XML](../../../../docs/standard/data/xml/xml-schema-object-model-overview.md)  
- Décrit le modèle Objet du schéma (SOM) ainsi que les fonctionnalités et classes qu’il fournit.  
+ Décrit le modèle Objet du schéma (SOM) ainsi que les fonctions et classes qu'il fournit.  
   
  [Lecture et écriture de schémas XML](../../../../docs/standard/data/xml/reading-and-writing-xml-schemas.md)  
  Explique comment lire et écrire des schémas XML dans des fichiers ou d'autres sources.  

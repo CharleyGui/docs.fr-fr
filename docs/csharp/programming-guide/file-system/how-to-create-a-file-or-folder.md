@@ -1,6 +1,5 @@
 ---
-title: 'Procédure : Créer un fichier ou un dossier - Guide de programmation C#'
-ms.custom: seodec18
+title: Comment créer un fichier ou un dossier- C# Guide de programmation
 ms.date: 07/20/2015
 helpviewer_keywords:
 - folders [C#]
@@ -8,17 +7,17 @@ helpviewer_keywords:
 - files [C#]
 - creating folders [C#]
 ms.assetid: 4582ee2d-d72d-4687-bcb9-08d336c62c25
-ms.openlocfilehash: c29d0638e2429119020fee5317d40a95b00e40ef
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: e0d0a7fbbc7e6a5c9a0bd00dec1188c5cfdcf896
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69590105"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705247"
 ---
-# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Procédure : Créer un fichier ou un dossier (Guide de programmation C#)
-Vous pouvez par programmation créer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
+# <a name="how-to-create-a-file-or-folder-c-programming-guide"></a>Comment créer un fichier ou un dossier (C# Guide de programmation)
+Vous pouvez par programmationcréer un dossier sur votre ordinateur, créer un sous-dossier, créer un fichier dans le sous-dossier et écrire des données dans le fichier.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  [!code-csharp[csFilesandFolders#10](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csFilesAndFolders/CS/FileIteration.cs#10)]  
   
  Si le dossier existe déjà, <xref:System.IO.Directory.CreateDirectory%2A> est sans effet et aucune exception n’est levée. Toutefois, <xref:System.IO.File.Create%2A?displayProperty=nameWithType> remplace un fichier existant par un nouveau fichier. L’exemple utilise une instruction `if`-`else` pour éviter qu’un fichier existant soit pas remplacé.  

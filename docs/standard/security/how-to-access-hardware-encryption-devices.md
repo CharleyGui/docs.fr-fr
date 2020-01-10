@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : accéder aux appareils de chiffrement matériel'
+title: 'Comment : accéder aux périphériques de chiffrement du matériel'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -13,19 +13,17 @@ helpviewer_keywords:
 - hardware encryption
 - CspParameters
 ms.assetid: b0e734df-6eb4-4b16-b48c-6f0fe82d5f17
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9c16c994e3976fb3ee569799461db1d1789a6186
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: d6ee22fd9fb0c11e22ac01ff83b3269e37e37763
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64654382"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706173"
 ---
-# <a name="how-to-access-hardware-encryption-devices"></a>Procédure : accéder aux appareils de chiffrement matériel
+# <a name="how-to-access-hardware-encryption-devices"></a>Comment : accéder aux périphériques de chiffrement du matériel
 Vous pouvez utiliser la classe <xref:System.Security.Cryptography.CspParameters> pour accéder aux périphériques de chiffrement matériel. Par exemple, vous pouvez utiliser cette classe pour intégrer votre application à une carte à puce, à un générateur matériel de nombres aléatoires ou à une implémentation matérielle d'un algorithme de chiffrement.  
   
- La classe <xref:System.Security.Cryptography.CspParameters> crée un fournisseur de services de chiffrement (CSP) qui accède à un périphérique de chiffrement matériel correctement installé.  Vous pouvez vérifier la disponibilité d’un CSP en inspectant la clé de Registre suivante à l’aide de l’Éditeur du Registre (Regedit.exe) :  HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Defaults\Provider.  
+ La classe <xref:System.Security.Cryptography.CspParameters> crée un fournisseur de services de chiffrement (CSP) qui accède à un périphérique de chiffrement matériel correctement installé.  Vous pouvez vérifier la disponibilité d'un fournisseur de services de chiffrement en inspectant la clé de Registre suivante à l'aide de l'Éditeur du Registre (Regedit.exe) : HKEY_LOCAL_MACHINE\Software\Microsoft\Cryptography\Defaults\Provider.  
   
 ### <a name="to-sign-data-using-a-key-card"></a>Pour signer des données à l'aide d'une carte de clé  
   

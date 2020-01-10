@@ -3,13 +3,12 @@ title: Présentation de l’outil WCF svcutil
 description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, de manière similaire à l’outil svcutil WCF pour les projets .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.custom: seodec18
-ms.openlocfilehash: 89fe72c8116498ff60d439ce17ef2e857edf621e
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: d204576f27227ce6e65d61471f19cdf3ec4df37a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771979"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714560"
 ---
 # <a name="wcf-dotnet-svcutil-tool-for-net-core"></a>Outil WCF dotnet-svcutil pour .NET Core
 
@@ -22,7 +21,7 @@ L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du 
 > [!IMPORTANT]
 > Vous devez référencer des services uniquement à partir d’une source approuvée. L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.
 
-## <a name="prerequisites"></a>Conditions préalables
+## <a name="prerequisites"></a>Configuration requise
 
 <!-- markdownlint-disable MD025 -->
 
@@ -179,6 +178,6 @@ Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub]
 
 - Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md).
 
-## <a name="information"></a>Information
+## <a name="information"></a>Informations
 
 - [Package NuGet dotnet-svcutil](https://nuget.org/packages/dotnet-svcutil)

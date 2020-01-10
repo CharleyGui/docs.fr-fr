@@ -3,14 +3,12 @@ title: Collections de nœuds dans les transformations
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: ad034f0e-ff8b-4a71-9a4c-528c754263c4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: fbcd9b93f63d48229c174b0f6518fd0150e98e18
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 2828b95f6a4050dd05b38e7ab6ef740ee4eb16b4
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957033"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710555"
 ---
 # <a name="node-sets-in-transformations"></a>Collections de nœuds dans les transformations
 Les collections de nœuds correspondent à l'un des quatre types de données de base qui sont retournés à partir des expressions XPath (XML Path Language). Une collection de nœuds, qui est une collection non triée de nœuds sans doublons, créée dans l'ordre du document, peut être attribué à une variable dans une feuille de style.  
@@ -40,7 +38,7 @@ Les collections de nœuds correspondent à l'un des quatre types de données de 
 </xsl:stylesheet>  
 ```  
   
-## <a name="input"></a>Entrée  
+## <a name="input"></a>Input  
   
 ```xml  
 <bookstore>  
@@ -58,7 +56,7 @@ Les collections de nœuds correspondent à l'un des quatre types de données de 
 </bookstore>  
 ```  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
   
 ```output  
 ******  

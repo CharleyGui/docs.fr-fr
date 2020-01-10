@@ -4,13 +4,13 @@ description: Découvrez comment créer votre première application de console .N
 author: BillWagner
 ms.author: wiwagn
 ms.date: 12/09/2019
-ms.custom: vs-dotnet, seodec18
-ms.openlocfilehash: 427c4bddc8a3e5c05e6d25cfd72a5a93bfc09a9b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.custom: vs-dotnet
+ms.openlocfilehash: ba996e4add1cfe44681154b00a6530b1f3e70b37
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75339434"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713997"
 ---
 # <a name="tutorial-create-your-first-net-core-console-application-in-visual-studio-2019"></a>Didacticiel : créer votre première application de console .NET Core dans Visual Studio 2019
 

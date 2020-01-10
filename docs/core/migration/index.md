@@ -2,13 +2,12 @@
 title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
-ms.custom: seodec18
-ms.openlocfilehash: 2912262d1191114d2314fed89e31c91c114f1935
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: f81d01c052c3632c48a5f961be86eab686c2074e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72773902"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714354"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
@@ -79,8 +78,8 @@ Le format csproj .NET Core est modifié et évolue avec chaque nouvelle version 
 - Supprimez l’espace de noms XML (`xmlns`) de l’élément `<Project>`.
 - S’il n’existe pas, ajoutez l’attribut `Sdk` à l’élément `<Project>` et affectez-lui la valeur `Microsoft.NET.Sdk` ou `Microsoft.NET.Sdk.Web`. Cet attribut spécifie que le projet utilise le SDK à utiliser. `Microsoft.NET.Sdk.Web` est utilisé pour les applications web.
 - Supprimez les instructions `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` et `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` en haut et en bas du projet. Ces instructions d’importation étant indiquées implicitement par le SDK, il est inutile qu’elles figurent dans le projet.
-- Si des éléments `<PackageReference>` `Microsoft.NETCore.App` ou `NETStandard.Library` figurent dans votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](https://aka.ms/sdkimplicitrefs).
-- Supprimez l’élément `<PackageReference>` `Microsoft.NET.Sdk`, s’il existe. La référence SDK est fournie par l’attribut `Sdk` sur l’élément `<Project>`.
+- Si vous avez `Microsoft.NETCore.App` ou `NETStandard.Library` `<PackageReference>` éléments de votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](https://aka.ms/sdkimplicitrefs).
+- Supprimez le `Microsoft.NET.Sdk` `<PackageReference>` élément, s’il existe. La référence SDK est fournie par l’attribut `Sdk` sur l’élément `<Project>`.
 - Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../tools/csproj.md#default-compilation-includes-in-net-core-projects). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
 
 Une fois ces étapes effectuées, votre projet doit être entièrement compatible avec le format csproj .NET Core final.

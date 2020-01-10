@@ -1,15 +1,13 @@
 ---
 title: Ciblage multiplateforme pour les bibliothèques .NET
 description: Meilleures pratiques recommandées pour la création de bibliothèques .NET multiplateformes.
-author: jamesnk
-ms.author: mairaw
-ms.date: 10/02/2018
-ms.openlocfilehash: 6bd310f2e4b7a9bd7bb550ed9c7da9ebabdf64ba
-ms.sourcegitcommit: ccd8c36b0d74d99291d41aceb14cf98d74dc9d2b
-ms.translationtype: HT
+ms.date: 08/12/2019
+ms.openlocfilehash: 45eb67837c924558ec51381dd924abf9fd0fa315
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2018
-ms.locfileid: "53129712"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706515"
 ---
 # <a name="cross-platform-targeting"></a>Ciblage multiplateforme
 
@@ -33,7 +31,7 @@ Le ciblage .NET Standard et la compilation avec succès de votre projet ne garan
 
 > La plupart des bibliothèques à usage général ne devraient pas avoir besoin d’API en dehors de .NET Standard 2.0. .NET Standard 2.0 est pris en charge par toutes les plateformes modernes et constitue la méthode recommandée pour prendre en charge plusieurs plateformes avec une cible.
 
-**❌ À ÉVITER** : Inclure une cible `netstandard1.x`.
+**❌ éviter** d’inclure une cible de `netstandard1.x`.
 
 > .NET Standard 1.x est distribué sous la forme d’un ensemble précis de packages NuGet, qui crée un grand graphique des dépendances de package et amène les développeurs à télécharger un grand nombre de packages lors de la génération. Les plateformes .NET modernes, y compris .NET Framework 4.6.1, UWP et Xamarin, prennent toutes en charge .NET Standard 2.0. Vous devez uniquement cibler .NET Standard 1.x si vous avez besoin de cibler une plateforme plus ancienne.
 
@@ -41,7 +39,7 @@ Le ciblage .NET Standard et la compilation avec succès de votre projet ne garan
 
 > Toutes les plateformes prenant en charge .NET Standard 2.0 utiliseront la cible `netstandard2.0` et bénéficieront d’un graphique de packages plus petit, tandis que les anciennes plateformes continueront de fonctionner et utiliseront la cible `netstandard1.x`.
 
-**❌ À NE PAS FAIRE** : Inclure une cible .NET Standard si la bibliothèque s’appuie sur un modèle d’application spécifique à la plateforme.
+**❌ n'** incluez pas de cible .NET standard si la bibliothèque s’appuie sur un modèle d’application spécifique à la plateforme.
 
 > Par exemple, une bibliothèque de boîte à outils de contrôle UWP dépend d’un modèle d’application uniquement disponible sur UWP. Les API spécifiques à un modèle d’application ne seront pas disponibles dans .NET Standard.
 
@@ -59,11 +57,42 @@ Pour éviter à vos consommateurs d’avoir à créer pour chaque infrastructure
 >
 > Ne supprimez pas la prise en charge de .NET Standard lorsque vous effectuez cette opération. Au lieu de cela, levez une exception à partir de l’implémentation et offrez la fonctionnalité API. De cette façon, votre bibliothèque peut être utilisée partout et prend en charge le runtime des fonctionnalités.
 
-**❌ À ÉVITER** : Utiliser le multi-ciblage ainsi que le ciblage de .NET Standard si votre code source est identique pour toutes les cibles.
+```csharp
+public static class GpsLocation
+{
+    // This project uses multi-targeting to expose device-specific APIs to .NET Standard.
+    public static async Task<(double latitude, double longitude)> GetCoordinatesAsync()
+    {
+#if NET461
+        return CallDotNetFramworkApi();
+#elif WINDOWS_UWP
+        return CallUwpApi();
+#else
+        throw new PlatformNotSupportedException();
+#endif
+    }
+
+    // Allows callers to check without having to catch PlatformNotSupportedException
+    // or replicating the OS check.
+    public static bool IsSupported
+    {
+        get
+        {
+#if NET461 || WINDOWS_UWP
+            return true;
+#else
+            return false;
+#endif
+        }
+    }
+}
+```
+
+**❌ éviter** le multi-ciblage et le ciblage .NET standard, si votre code source est le même pour toutes les cibles.
 
 > L’assembly .NET Standard sera automatiquement utilisé par NuGet. Le ciblage d’implémentations .NET individuelles augmente la taille `*.nupkg` sans apporter d’avantage.
 
-**✔️ À ENVISAGER** : Ajouter une cible pour `net461` lorsque que vous proposez une cible `netstandard2.0`. 
+**✔️ À ENVISAGER** : Ajouter une cible pour `net461` lorsque que vous proposez une cible `netstandard2.0`.
 
 > L’utilisation de .NET Standard 2.0 dans .NET Framework entraîne certains problèmes qui ont été résolus dans .NET Framework 4.7.2. Vous pouvez améliorer l’expérience des développeurs qui utilisent toujours .NET Framework 4.6.1 - 4.7.1 en leur offrant un fichier binaire conçu pour .NET Framework 4.6.1.
 
@@ -88,11 +117,11 @@ Pour éviter à vos consommateurs d’avoir à créer pour chaque infrastructure
 
 .NET prend en charge le ciblage de versions .NET Framework qui ne sont plus prises en charge depuis longtemps, ainsi que les plateformes qui ne sont plus couramment utilisées. Bien qu'il soit utile de faire fonctionner votre bibliothèque sur autant de cibles que possible, le fait de devoir contourner des API manquantes peut entraîner d’importants frais généraux. Nous estimons que certaines infrastructures ne valent plus la peine d'être ciblées, compte tenu de leur portée et de leurs limites.
 
-**❌ À NE PAS FAIRE** : Inclure une cible Portable Class Library (PCL). Par exemple, `portable-net45+win8+wpa81+wp8`.
+**❌ n'** incluez pas une cible de bibliothèque de classes portable (PCL). Par exemple, `portable-net45+win8+wpa81+wp8`.
 
 > .NET standard est la méthode moderne de prendre en charge les bibliothèques .NET multiplateformes et remplace les PCL.
 
-**❌ À NE PAS FAIRE** : Inclure des cibles pour les plateformes .NET qui ne sont plus prises en charge. Par exemple, `SL4`, `WP`.
+**❌ n'** incluez pas de cibles pour les plateformes .net qui ne sont plus prises en charge. Par exemple, `SL4`, `WP`.
 
 >[!div class="step-by-step"]
 >[Précédent](get-started.md)

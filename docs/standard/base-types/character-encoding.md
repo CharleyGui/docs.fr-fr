@@ -11,13 +11,12 @@ helpviewer_keywords:
 - encoding, choosing
 - encoding, fallback strategy
 ms.assetid: bf6d9823-4c2d-48af-b280-919c5af66ae9
-ms.custom: seodec18
-ms.openlocfilehash: 3ac5602c32ce0dcfe21e913868faa7ab356e4194
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3cd461d8c56c3f31bf3ffe04acf239ecd32fe328
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120603"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711439"
 ---
 # <a name="character-encoding-in-net"></a>Encodage de caractères dans .NET
 
@@ -67,12 +66,12 @@ Toutes les classes d'encodage de caractères de .NET héritent de la classe <xre
 
 Vous pouvez récupérer des informations sur les encodages disponibles dans .NET en appelant la méthode <xref:System.Text.Encoding.GetEncodings%2A?displayProperty=nameWithType>. .NET prend en charge les systèmes d’encodage de caractères répertoriés dans le tableau suivant.
 
-|Encodage|Class|Description|Avantages et inconvénients|
+|Encoding|Classe|Description|Avantages et inconvénients|
 |--------------|-----------|-----------------|-------------------------------|
 |non|<xref:System.Text.ASCIIEncoding>|Encode une plage de caractères limitée en utilisant les sept bits de poids le plus faible d'un octet.|Étant donné que cet encodage prend en charge seulement des valeurs de caractère de U+0000 à U+007F, dans la plupart des cas, il ne convient pas aux applications internationalisées.|
-|UTF-7|<xref:System.Text.UTF7Encoding>|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII.|UTF-7 prend en charge les protocoles de messagerie et les protocoles de groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
+|UTF-7|<xref:System.Text.UTF7Encoding>|Représente les caractères sous forme de séquences de caractères ASCII sur 7 bits. Les caractères Unicode non-ASCII sont représentés par une séquence d'échappement de caractères ASCII.|UTF-7 prend en charge les protocoles de messagerie et les protocoles de groupe de discussion. UTF-7 n'est cependant pas particulièrement sécurisé ou robuste. Dans certains cas, la modification d'un seul bit peut changer radicalement l'interprétation de toute une chaîne UTF-7. Dans d'autres cas, des chaînes UTF-7 différentes peuvent correspondre à l'encodage d'un même texte. Pour les séquences incluant des caractères non-ASCII, UTF-7 nécessite davantage d'espace qu'UTF-8, et l'encodage/décodage est plus lent. Par conséquent, il est préférable d'utiliser UTF-8 au lieu d'UTF-7 si c'est possible.|
 |UTF-8|<xref:System.Text.UTF8Encoding>|Représente chaque point de code Unicode sous la forme d'une séquence de un à quatre octets.|UTF-8 prend en charge des tailles de données de 8 bits et fonctionne bien avec de nombreux systèmes d'exploitation. Pour la plage de caractères ASCII, UTF-8 est identique à l'encodage ASCII et permet un ensemble de caractères plus large. Cependant, pour les jeux de caractères Chinois-Japonais-Coréen (CJC), UTF-8 peut nécessiter trois octets pour chaque caractère et aboutir potentiellement à des tailles de données supérieures à celles d'UTF-16. Notez que parfois, la quantité de données ASCII, comme des balises HTML, justifie l'augmentation de la taille pour les jeux de caractères CJC.|
-|UTF-16|<xref:System.Text.UnicodeEncoding>|Représente chaque point de code Unicode sous la forme d'une séquence de un ou deux entiers sur 16 bits. La plupart des caractères Unicode courants ne nécessitent qu'un seul point de code UTF-16, tandis que les caractères Unicode additionnels (U+10000 et supérieurs) nécessitent deux points de code de substitution UTF-16. Les ordres des octets Little Endian et Big Endian sont pris en charge.|L'encodage UTF-16 est utilisé par le common language runtime pour représenter les valeurs <xref:System.Char> et <xref:System.String> , et il est utilisé par le système d'exploitation Windows pour représenter les `WCHAR` .|
+|UTF-16|<xref:System.Text.UnicodeEncoding>|Représente chaque point de code Unicode sous la forme d'une séquence de un ou deux entiers sur 16 bits. La plupart des caractères Unicode courants ne nécessitent qu'un seul point de code UTF-16, tandis que les caractères Unicode additionnels (U+10000 et supérieurs) nécessitent deux points de code de substitution UTF-16. Les ordres des octets Little Endian et Big Endian sont pris en charge.|L'encodage UTF-16 est utilisé par le common language runtime pour représenter les valeurs <xref:System.Char> et <xref:System.String> , et il est utilisé par le système d'exploitation Windows pour représenter les `WCHAR` .|
 |UTF-32|<xref:System.Text.UTF32Encoding>|Représente chaque point de code Unicode sous la forme d'un entier 32 bits. Les ordres des octets Little Endian et Big Endian sont pris en charge.|L'encodage UTF-32 est utilisé quand les applications ne doivent pas avoir le comportement du point de code de substitution de l'encodage UTF-16 sur les systèmes d'exploitation pour lesquels l'espace encodé est trop important. Les glyphes uniques restitués à l'affichage peuvent néanmoins encore être encodés avec plusieurs caractères UTF-32.|
 |Encodages ANSI/ISO||Prend en charge différentes pages de codes. Sur les systèmes d'exploitation Windows, les pages de codes sont utilisées pour prendre en charge une langue spécifique ou un groupe de langues spécifique. Pour un tableau répertoriant les pages de codes prises en charge par .NET, consultez la classe <xref:System.Text.Encoding>. Vous pouvez récupérer un objet d'encodage pour une page de codes spécifique en appelant la méthode <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> .|Une page de codes contient 256 points de code et commence à zéro. Dans la plupart des pages de codes, les points de code de 0 à 127 représentent le jeu de caractères ASCII, et les points de code de 128 à 255 diffèrent considérablement entre les pages de code. Par exemple, la page de codes 1252 fournit les caractères pour les systèmes d'écriture latins, y compris l'anglais, l'allemand et le français. Les derniers 128 points de code de la page de codes 1252 contiennent les caractères accentués. La page de codes 1253 fournit les codes des caractères qui sont requis dans le système d'écriture grec. Les derniers 128 points de code de la page de codes 1253 contiennent les caractères grecs. Par conséquent, une application qui s'appuie sur les pages de codes ANSI ne peut pas stocker le grec et l'allemand dans le même flux de texte, sauf si elle inclut un identificateur indiquant la page de codes référencée.|
 |Encodages DBCS (Double-Byte Character Set, Jeu de caractères codés sur deux octets)||Prend en charge des langues comme le chinois, le japonais et le coréen, qui contiennent plus de 256 caractères. Dans un jeu de caractères DBCS, une paire de points de code (un double octet) représente chaque caractère. La propriété <xref:System.Text.Encoding.IsSingleByte%2A?displayProperty=nameWithType> retourne `false` pour les encodages DBCS. Vous pouvez récupérer un objet d'encodage pour un jeu de caractères DBCS spécifique en appelant la méthode <xref:System.Text.Encoding.GetEncoding%28System.Int32%29?displayProperty=nameWithType> .|Dans un jeu de caractères DBCS, une paire de points de code (un double octet) représente chaque caractère. Quand une application traite des données DBCS, le premier octet d'un caractère DBCS (l'octet de tête) est traité en combinaison avec l'octet de fin qui le suit immédiatement. Comme une seule paire de points de code sur un double octet peut représenter des caractères différents en fonction de la page de codes, ce schéma ne permet pas non plus la combinaison de deux langues, comme le japonais et le chinois, dans le même flux de données.|
@@ -217,7 +216,7 @@ Bien que les objets <xref:System.Text.EncoderFallbackException> et <xref:System.
 
 <a name="Custom"></a>
 
-## <a name="implementing-a-custom-fallback-strategy"></a>Implementing a Custom Fallback Strategy
+## <a name="implementing-a-custom-fallback-strategy"></a>Implémentation d'une stratégie de secours personnalisée
 
 En plus du mappage le mieux adapté implémenté en interne par les pages de codes, .NET comprend les classes suivantes pour l’implémentation d’une stratégie de secours :
 
@@ -229,7 +228,7 @@ En plus du mappage le mieux adapté implémenté en interne par les pages de cod
 
 - Utilisez <xref:System.Text.DecoderExceptionFallback> et <xref:System.Text.DecoderExceptionFallbackBuffer> pour lever une <xref:System.Text.DecoderFallbackException> quand un caractère ne peut pas être décodé.
 
-En outre, vous pouvez implémenter une solution personnalisée qui utilise une stratégie de secours la mieux adaptée, une stratégie de secours pour les remplacements ou une stratégie de secours pour les exceptions, en procédant comme suit :
+En outre, vous pouvez implémenter une solution personnalisée qui utilise une stratégie de secours la mieux adaptée, une stratégie de secours pour les remplacements ou une stratégie de secours pour les exceptions, en procédant comme suit :
 
 1. Dérivez une classe de <xref:System.Text.EncoderFallback> pour les opérations d'encodage, et de <xref:System.Text.DecoderFallback> pour les opérations de décodage.
 

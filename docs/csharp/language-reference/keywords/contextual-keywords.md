@@ -1,16 +1,15 @@
 ---
 title: Mots clés contextuels - Référence C#
-ms.custom: seodec18
 ms.date: 03/07/2017
 helpviewer_keywords:
 - contextual keywords [C#]
 ms.assetid: 7c76bc29-a754-4389-b0ab-f6b441018298
-ms.openlocfilehash: 9197ebb1fa48011c60a6d224497e57a604870fc3
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1de8fbccfa9485a546689233ea8a601a8bd697a5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422867"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713653"
 ---
 # <a name="contextual-keywords-c-reference"></a>Mots clés contextuels (référence C#)
 
@@ -37,6 +36,6 @@ Un mot clé contextuel sert à donner une signification spécifique dans le code
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)

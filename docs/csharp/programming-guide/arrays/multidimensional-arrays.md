@@ -1,17 +1,16 @@
 ---
 title: Tableaux multidimensionnels - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - arrays [C#], multidimensional
 - multidimensional arrays [C#]
 ms.assetid: 020ce02e-7dff-4273-8e53-bf0b33747232
-ms.openlocfilehash: 63b8729a14e4c309e85a588c5cddc692fb6a6fad
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: eb49f4386b6106328f1613b5ec70794ac26fc9b7
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69597407"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715040"
 ---
 # <a name="multidimensional-arrays-c-programming-guide"></a>Tableaux multidimensionnels (Guide de programmation C#)
 

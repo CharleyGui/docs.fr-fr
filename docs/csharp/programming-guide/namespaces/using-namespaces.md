@@ -1,6 +1,5 @@
 ---
 title: Utilisation d'espaces de noms - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - cs.names
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - fully qualified names [C#]
 - namespaces [C#], how to use
 ms.assetid: 1fe8bf39-addc-438a-bd9e-86410e32381d
-ms.openlocfilehash: b27a2fa42fc8e0d9ff0d1524c5d1bc19acbfbdb0
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 5193fc7aaae83cbc0c75e81835244eaaaece69a5
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69588855"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75700196"
 ---
 # <a name="using-namespaces-c-programming-guide"></a>Utilisation d'espaces de noms (Guide de programmation C#)
 
@@ -35,7 +34,7 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
  [!code-csharp[csProgGuide#30](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuide/CS/progGuide.cs#30)]  
   
-## <a name="namespace-aliases"></a>Alias d’espace de noms
+## <a name="namespace-aliases"></a>Alias d'espaces de noms
 
  Vous pouvez aussi utiliser la [directive`using`](../../language-reference/keywords/using-directive.md) afin de créer un alias pour un espace de noms. Utilisez le [qualificateur d'alias d’espace de noms`::`](../../language-reference/operators/namespace-alias-qualifier.md) pour accéder aux membres de l'espace de noms avec alias. L'exemple suivant montre comment créer et utiliser un alias d’espace de noms :
   
@@ -71,7 +70,7 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
   
  En règle générale, utilisez le [qualificateur d’alias d’espace de noms `::`](../../language-reference/operators/namespace-alias-qualifier.md) pour référencer un alias d’espace de noms ou `global::` pour référencer l’espace de noms global, et `.` pour qualifier les types ou les membres.  
   
- C’est une erreur d’utiliser `::` avec un alias qui fait référence à un type plutôt qu’à un espace de noms. Par exemple :  
+ C’est une erreur d’utiliser `::` avec un alias qui fait référence à un type plutôt qu’à un espace de noms. Par exemple :  
   
  [!code-csharp[csProgGuideNamespaces#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideNamespaces/CS/Namespaces2.cs#11)]  
   
@@ -97,4 +96,4 @@ Les espaces de noms sont largement utilisés dans les programmes C#, et ce de de
 - [Espaces de noms](./index.md)
 - [., opérateur](../../language-reference/operators/member-access-operators.md#member-access-operator-)
 - [:: opérateur](../../language-reference/operators/namespace-alias-qualifier.md)
-- [extern alias](../../language-reference/keywords/extern-alias.md)
+- [alias extern](../../language-reference/keywords/extern-alias.md)

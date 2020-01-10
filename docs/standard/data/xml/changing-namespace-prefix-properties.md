@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: d5c87cbe-4d69-429f-aad5-3103c2ca2770
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4a6597a3a57cd68c4dd17c4fbae882590f373709
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
-ms.translationtype: HT
+ms.openlocfilehash: e6b811d58ef9d98c51e9a45a46a1965c4fa12b55
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2018
-ms.locfileid: "46525689"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711114"
 ---
 # <a name="changing-namespace-prefix-properties"></a>Modification des propriétés de préfixe d'espace de noms
 La classe **XmlNode** vous permet de modifier le préfixe d'espace de noms associé à un nœud précis. Par exemple, le code suivant montre la modification du préfixe d'un élément.  
@@ -40,7 +38,7 @@ Console.WriteLine(doc.InnerXml);
 <b:test xmlns:a="123" xmlns:b="456" />  
 ```  
   
- La modification du préfixe d'un nœud n'entraîne pas la modification de son espace de noms. Ce dernier peut être défini uniquement au moment de la création du nœud. Lorsque vous rendez persistante l'arborescence, de nouveaux attributs d'espace de noms peuvent ne plus être persistants pour satisfaire le préfixe défini. Si le nouvel espace de noms ne peut pas être créé, le préfixe est modifié de telle sorte que le nœud préserve son nom local et son espace de noms. L'exemple suivant illustre l'ajout d'un attribut d'espace de noms.  
+ La modification du préfixe d'un nœud n'entraîne pas la modification de son espace de noms. Ce dernier peut être défini uniquement au moment de la création du nœud. Lorsque vous rendez persistante l’arborescence, de nouveaux attributs d’espace de noms peuvent ne plus être persistants pour satisfaire le préfixe défini. Si le nouvel espace de noms ne peut pas être créé, le préfixe est modifié de telle sorte que le nœud préserve son nom local et son espace de noms. L'exemple suivant illustre l'ajout d'un attribut d'espace de noms.  
   
 ```vb  
 Dim doc as XmlDocument = new XmlDocument()  

@@ -2,12 +2,12 @@
 title: Nouveautés de C# 7.1
 description: Vue d’ensemble des nouvelles fonctionnalités de C# 7.1.
 ms.date: 04/09/2019
-ms.openlocfilehash: ee68cbf129d02fc58155a603d6a3f63cfb182cd0
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: 5d2d6f51b6422f5b4db5c6bd275b5ffce1f695f8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105551"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714591"
 ---
 # <a name="whats-new-in-c-71"></a>Nouveautés de C# 7.1
 
@@ -17,7 +17,7 @@ C# 7.1 ajoute l’élément de configuration de [sélection de la version du lan
 
 Les nouvelles fonctionnalités de langage de cette version sont :
 
-- [Méthode `async` `Main`](#async-main)
+- [méthode `async` `Main`](#async-main)
   - Le point d’entrée pour une application peut avoir le modificateur `async`.
 - [Expressions littérales `default`](#default-literal-expressions)
   - Vous pouvez utiliser des expressions littérales default dans les expressions de valeur par défaut quand le type cible peut être inféré.

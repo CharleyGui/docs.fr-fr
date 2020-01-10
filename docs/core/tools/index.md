@@ -2,19 +2,18 @@
 title: Outils de l’interface de ligne de commande (CLI) de .NET Core
 description: Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI) de .NET Core.
 ms.date: 08/14/2017
-ms.custom: seodec18
-ms.openlocfilehash: 4ff5cfd6c5a70c92387911ab87ddea5cee80275e
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: b3bffb47ff973bd0da90e3f943e817756e563138
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117392"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714149"
 ---
 # <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
 
 L’interface de ligne de commande (CLI) de .NET Core est une nouvelle chaîne d’outils multiplateforme pour le développement d’applications .NET. CLI est une fondation sur laquelle les autres outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de builds, peuvent se baser.
 
-## <a name="installation"></a>Installation
+## <a name="installation"></a>Installation de
 
 Utilisez les programmes d’installation natifs ou les scripts shell d’installation :
 
@@ -128,7 +127,7 @@ Le pilote s’intitule [dotnet](dotnet.md) et gère deux tâches : l’exécutio
 
 Pour exécuter une application dépendant du framework, spécifiez l’application après le pilote, par exemple `dotnet /path/to/my_app.dll`. Lors de l’exécution de la commande à partir du dossier où se trouve la DLL de l’application, vous devez simplement exécuter `dotnet my_app.dll`. Si vous souhaitez utiliser une version spécifique de .NET Core Runtime, choisissez l’option `--fx-version <VERSION>` (voir la référence [dotnet command](dotnet.md)).
 
-Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. Par exemple :
+Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le processus d’exécution de la commande CLI. Par exemple :
 
 ```dotnetcli
 dotnet build
@@ -136,7 +135,7 @@ dotnet build
 
 D’abord, le pilote détermine la version du kit SDK à utiliser. S’il n’existe pas de ['global.json'](global-json.md), la dernière version du SDK disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
 
-### <a name="command"></a>Commande
+### <a name="command"></a>Command
 
 La commande exécute une action. Par exemple, `dotnet build` génère le code. `dotnet publish` publie le code. Les commandes sont implémentées comme une application console à l’aide d’une convention `dotnet {command}`.
 

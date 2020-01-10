@@ -1,18 +1,17 @@
 ---
 title: '#Directive de préprocesseur if - Référence C#'
-ms.custom: seodec18
 ms.date: 10/27/2019
 f1_keywords:
 - '#if'
 helpviewer_keywords:
 - '#if directive [C#]'
 ms.assetid: 48cabbff-ca82-491f-a56a-eeccd528c7c2
-ms.openlocfilehash: e467a890e971e6c6f2c681ee503d7c7ead19a1e4
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 656b8d9eb2bda2d01f001748c992958e95387744
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552441"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712505"
 ---
 # <a name="if-c-reference"></a>#if (référence C#)
 
@@ -92,7 +91,7 @@ public class MyClass
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Directives de préprocesseur C#](index.md)
 - [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)

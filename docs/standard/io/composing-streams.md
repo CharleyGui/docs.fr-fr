@@ -13,14 +13,12 @@ helpviewer_keywords:
 - base streams
 - streams, backing stores
 ms.assetid: da761658-a535-4f26-a452-b30df47f73d5
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 452071e9726a95b4b3d9bb9cefe720d39bbc3e0c
-ms.sourcegitcommit: b8ace47d839f943f785b89e2fff8092b0bf8f565
-ms.translationtype: HT
+ms.openlocfilehash: 689cc9537cd7a5fe6a677d42e5790bbcf1b3aefa
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/03/2019
-ms.locfileid: "55674345"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708146"
 ---
 # <a name="compose-streams"></a>Composer des flux
 Un *magasin de stockage* est un support de stockage, au même titre qu’un disque ou qu’une mémoire. Chaque magasin de stockage implémente son propre flux en tant qu’implémentation de la classe <xref:System.IO.Stream>. 
@@ -34,13 +32,13 @@ L’exemple de code suivant crée un **FileStream** autour du fichier *MyFile.tx
 >[!IMPORTANT]
 >L’exemple suppose qu’un fichier nommé *MyFile.txt* existe déjà dans le dossier où se trouve l’application.  
 
-## <a name="example-use-streamreader"></a>Exemple : Utiliser StreamReader
+## <a name="example-use-streamreader"></a>Exemple : utilisation de StreamReader
 L’exemple suivant crée un <xref:System.IO.StreamReader> pour lire les caractères à partir du **FileStream**, qui est passé à **StreamReader** en tant qu’argument de son constructeur. Ensuite, <xref:System.IO.StreamReader.ReadLine%2A?displayProperty=nameWithType> lit jusqu’à ce que <xref:System.IO.StreamReader.Peek%2A?displayProperty=nameWithType> ne détecte plus aucun caractère.  
   
  [!code-csharp[System.IO.StreamReader#20](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/source2.cs#20)]
  [!code-vb[System.IO.StreamReader#20](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.IO.StreamReader/VB/source2.vb#20)]  
   
-## <a name="example-use-binaryreader"></a>Exemple : Utiliser BinaryReader
+## <a name="example-use-binaryreader"></a>Exemple : utilisation de BinaryReader
 L’exemple suivant crée un <xref:System.IO.BinaryReader> pour lire les octets à partir du **FileStream**, qui est passé à **BinaryReader** en tant qu’argument de son constructeur. Ensuite, <xref:System.IO.BinaryReader.ReadByte%2A> lit jusqu’à ce que <xref:System.IO.BinaryReader.PeekChar%2A> ne détecte plus aucun octet.  
   
  [!code-csharp[System.IO.StreamReader#21](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.IO.StreamReader/CS/source3.cs#21)]

@@ -1,23 +1,22 @@
 ---
 title: Mots clés d’instruction - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - keywords [C#], statements
 - statements [C#]
 ms.assetid: fad0c004-e282-4ec8-a127-bca7fd7a0b6f
-ms.openlocfilehash: 52eef49341922810772d257d4f50417a5f776fd4
-ms.sourcegitcommit: 10986410e59ff29f2ec55c6759bde3eb4d1a00cb
-ms.translationtype: HT
+ms.openlocfilehash: c829414cc197b18ad0dbd9c2cf401a05f6f2fbc6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/31/2019
-ms.locfileid: "66422354"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715142"
 ---
 # <a name="statement-keywords-c-reference"></a>Mots clés d'instruction (Référence C#)
 
 Les instructions sont des instructions de programme. Sauf mention contraire dans les rubriques référencées dans le tableau suivant, les instructions sont exécutées en séquence. Le tableau suivant répertorie les mots clés d’instructions C#. Pour plus d’informations sur les instructions exprimées sans mots clés, consultez [Instructions](../../programming-guide/statements-expressions-operators/statements.md).
 
-|Category|Mots clés C#|
+|Catégorie|Mots clés C#|
 |--------------|------------------|
 |Instructions de sélection|[if](if-else.md), [else](if-else.md), [switch](switch.md), [case](switch.md)|
 |Instructions d’itération|[do](do.md), [for](for.md), [foreach](foreach-in.md), [in](foreach-in.md), [while](while.md)|

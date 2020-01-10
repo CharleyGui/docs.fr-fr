@@ -5,13 +5,12 @@ ms.technology: dotnet-standard
 helpviewer_keywords:
 - class library design guidelines [.NET Framework], usage guidelines
 ms.assetid: 42215ffa-a099-4a26-b14e-fb2bdb6f95b7
-author: KrzysztofCwalina
-ms.openlocfilehash: 23b1520a864d41e5ef59377cc9cca34cbdf22b64
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 57f6600f60e99c72b72c9f82856dc9eb631a9d4b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423052"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708995"
 ---
 # <a name="usage-guidelines"></a>Indications relatives à l'utilisation
 

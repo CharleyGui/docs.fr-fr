@@ -10,32 +10,31 @@ helpviewer_keywords:
 - classes [.NET Framework], design guidelines
 - type design guidelines, classes
 ms.assetid: d3646e6d-5c1f-4922-8fb0-ec5effb30d60
-author: KrzysztofCwalina
-ms.openlocfilehash: 6eec3bb4575b89c6476e6c3410050c705141777f
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 19482199648a8fb9c4b2c796fb1ab5d62c896abc
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61785552"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709593"
 ---
 # <a name="abstract-class-design"></a>Conception de classes abstraites
 **X DO NOT** définir des constructeurs internes publiques ou protégées dans les types abstraits.  
   
- Les constructeurs doivent être publics uniquement si les utilisateurs devront créer des instances du type. Étant donné que vous ne pouvez pas créer des instances d’un type abstrait, un type abstrait avec un constructeur public est correctement conçu et trompeur aux utilisateurs.  
+ Les constructeurs doivent être publics uniquement si les utilisateurs doivent créer des instances du type. Étant donné que vous ne pouvez pas créer d’instances d’un type abstrait, un type abstrait avec un constructeur public n’est pas correctement conçu et trompe les utilisateurs.  
   
  **✓ DO** définir un document protégé ou un constructeur interne dans les classes abstraites.  
   
- Un constructeur protégé est plus courant et il permet simplement de la classe de base pour son propre initialisation lorsque des sous-types sont créés.  
+ Un constructeur protégé est plus courant et permet simplement à la classe de base d’effectuer sa propre initialisation lors de la création de sous-types.  
   
- Un constructeur interne peut être utilisé pour limiter les implémentations concrètes de la classe abstraite pour l’assembly qui définit la classe.  
+ Un constructeur interne peut être utilisé pour limiter les implémentations concrètes de la classe abstraite à l’assembly qui définit la classe.  
   
  **✓ DO** fournir au moins un type concret qui hérite de chaque classe abstraite qui vous sont fournis.  
   
- Ceci permet de valider la conception de la classe abstraite. Par exemple, <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la <xref:System.IO.Stream?displayProperty=nameWithType> classe abstraite.  
+ Cela permet de valider la conception de la classe abstraite. Par exemple, <xref:System.IO.FileStream?displayProperty=nameWithType> est une implémentation de la classe abstraite <xref:System.IO.Stream?displayProperty=nameWithType>.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -11,14 +11,12 @@ helpviewer_keywords:
 - resx files
 - .resx files
 ms.assetid: cb8bc835-9221-4888-af53-1a4f5fad6c48
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: df7ce0795daabdf34f46e20460bef23e7c486467
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2cfb2d9874b34eef78fe462e0270fd70307a9f61
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71043904"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715705"
 ---
 # <a name="winresexe-windows-resource-localization-editor"></a>Winres.exe (Windows Resource Localization Editor)
 
@@ -110,7 +108,7 @@ Vous devez utiliser la version de Winres.exe publiée avec le .NET Framework que
 
 2. Pour ouvrir les ressources par défaut d’un formulaire à localiser, cliquez sur la commande **Ouvrir** dans le menu **Fichier** et accédez au fichier pour l’ouvrir.
 
-     ou
+     \- ou -
 
      Spécifiez le fichier à ouvrir dans la ligne de commande lorsque vous démarrez Winres.exe.
 

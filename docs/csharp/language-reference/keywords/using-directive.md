@@ -1,16 +1,15 @@
 ---
 title: using, directive - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
-ms.openlocfilehash: 413d3ee6323aa601df84c0f402aaea7567a61e76
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: a2028ccce47de54b59323194a0ffab3a643d878c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422285"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712973"
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
 
@@ -36,7 +35,7 @@ La directive `using` a trois utilisations :
     using Project = PC.MyCompany.Project;
     ```
 
-Le mot clé `using` est également utilisé pour créer des *instructions using<xref:System.IDisposable>, qui garantissent que les objets*  tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [Instruction using](using-statement.md).
+Le mot clé `using` est également utilisé pour créer des *instructions using<xref:System.IDisposable>, qui garantissent que les objets*  tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [using, instruction](using-statement.md).
 
 ## <a name="using-static-type"></a>Utilisation du type statique
 
@@ -76,7 +75,7 @@ Créez une directive `using` pour utiliser les types dans un espace de noms sans
 
 Les espaces de noms sont organisés en deux catégories : définis par l'utilisateur et définis par le système. Les espaces de noms définis par l'utilisateur sont des espaces de noms définis dans votre code. Pour obtenir la liste des espaces de noms définis par le système, consultez [Navigateur d’API .NET](../../../../api/index.md).
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 L'exemple suivant montre comment définir et utiliser un alias `using` pour un espace de noms :
 
@@ -84,7 +83,7 @@ L'exemple suivant montre comment définir et utiliser un alias `using` pour un e
 
 Une directive d'alias using ne peut pas avoir un type générique ouvert sur le côté droit. Par exemple, vous ne pouvez pas créer un alias using pour un `List<T>`, mais vous pouvez en créer un pour un `List<int>`.
 
-## <a name="example-2"></a>Exemple 2
+## <a name="example-2"></a>Exemple 2
 
 L'exemple suivant montre comment définir une directive `using` et un alias `using` pour une classe :
 
@@ -96,7 +95,7 @@ Pour plus d’informations, consultez [Directives using](~/_csharplang/spec/name
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
 - [Mots clés C#](index.md)

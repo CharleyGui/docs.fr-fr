@@ -15,15 +15,15 @@ helpviewer_keywords:
 - grouping data [LINQ in Visual Basic]
 - Select clause [LINQ in Visual Basic]
 ms.assetid: 1146f6d0-fcb8-4f4d-8223-c9db52620d21
-ms.openlocfilehash: e9a646d60bb22507f4c6bcbcdf9222fd0ed18f02
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: b9216dba23f49e4d9fd99687e38f5c13addde8fb
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74345751"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75636872"
 ---
 # <a name="basic-query-operations-visual-basic"></a>Opérations de requête de base (Visual Basic)
-Cette rubrique fournit une brève introduction à [!INCLUDE[vbteclinqext](~/includes/vbteclinqext-md.md)] expressions dans Visual Basic, et à certains types d’opérations classiques que vous effectuez dans une requête. Pour plus d’informations, consultez les rubriques suivantes :  
+Cette rubrique fournit une brève introduction aux expressions LINQ (Language-Integrated Query) dans Visual Basic, ainsi qu’à certains types d’opérations classiques que vous effectuez dans une requête. Pour plus d’informations, consultez les rubriques suivantes :  
   
  [Introduction à LINQ en Visual Basic](../../../../visual-basic/programming-guide/language-features/linq/introduction-to-linq.md)  
   
@@ -32,7 +32,7 @@ Cette rubrique fournit une brève introduction à [!INCLUDE[vbteclinqext](~/incl
  [Procédure pas à pas : écriture de requêtes dans Visual Basic](../../../../visual-basic/programming-guide/concepts/linq/walkthrough-writing-queries.md)  
   
 ## <a name="specifying-the-data-source-from"></a>Spécification de la source de données (à partir de)  
- Dans une requête [!INCLUDE[vbteclinq](~/includes/vbteclinq-md.md)], la première étape consiste à spécifier la source de données que vous souhaitez interroger. Par conséquent, la clause `From` dans une requête est toujours la première. Les opérateurs de requête sélectionnent et déforment le résultat en fonction du type de la source.  
+ Dans une requête LINQ, la première étape consiste à spécifier la source de données que vous souhaitez interroger. Par conséquent, la clause `From` dans une requête est toujours la première. Les opérateurs de requête sélectionnent et déforment le résultat en fonction du type de la source.  
   
  [!code-vb[VbLINQBasicOps#1](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#1)]  
   
@@ -87,7 +87,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
      [!code-vb[VbLINQBasicOps#6](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbLINQBasicOps/VB/Class1.vb#6)]  
   
-     -ou-  
+     \- ou -  
   
 - Définissez un type nommé qui contient les champs particuliers que vous souhaitez inclure dans le résultat, et créez et initialisez des instances du type dans la clause `Select`. Utilisez cette option uniquement si vous devez utiliser des résultats individuels en dehors de la collection dans laquelle ils sont retournés, ou si vous devez les passer en tant que paramètres dans les appels de méthode. Le type de `londonCusts5` dans l’exemple suivant est IEnumerable (of NamePhone).  
   
@@ -124,7 +124,7 @@ Where cust.City = "London" Or cust.City = "Paris"
   
  Garcia, Hugo  
   
- Garcia, Marie  
+ Garcia, Debra  
   
  Tucker, lance  
   

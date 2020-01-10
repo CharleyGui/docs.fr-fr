@@ -1,6 +1,5 @@
 ---
 title: Checked et Unchecked - Référence C#
-ms.custom: seodec18
 ms.date: 05/15/2018
 helpviewer_keywords:
 - operators [C#], checked and unchecked
@@ -10,12 +9,12 @@ helpviewer_keywords:
 - unchecked statement [C#]
 - statements [C#], checked and unchecked
 ms.assetid: a84bc877-2c7f-4396-8735-1ce97c42f35e
-ms.openlocfilehash: 7abc19e0657330752e7798d060516c48aa402297
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: a3b1ef8e6d8e496eda74ab25b3fe17f8174bac11
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771773"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713716"
 ---
 # <a name="checked-and-unchecked-c-reference"></a>Checked et Unchecked (référence C#)
 Les instructions C# peuvent s'exécuter dans un contexte vérifié (checked) ou non vérifié (unchecked). Dans un contexte vérifié, un dépassement de capacité arithmétique lève une exception. Dans un contexte non vérifié (unchecked), ce dépassement de capacité arithmétique est ignoré et le résultat est tronqué en supprimant tous les bits de poids fort qui ne tiennent pas dans le type destinataire.  
@@ -38,7 +37,7 @@ Les instructions C# peuvent s'exécuter dans un contexte vérifié (checked) ou 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Mots clés d’instructions](statement-keywords.md)

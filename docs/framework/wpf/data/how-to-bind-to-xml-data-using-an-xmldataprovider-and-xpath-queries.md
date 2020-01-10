@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data binding [WPF], binding to XML data using XmlDataProvider queries
 - binding [WPF], to XML data using XmlDataProvider queries
 ms.assetid: 7dcd018f-16aa-4870-8e47-c1b4ea31e574
-ms.openlocfilehash: f075d646539de5d68e1c9c75d9664451125e9919
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: a5ad7d8bce9bc0a760868e483278d1836f9472af
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73733554"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559699"
 ---
 # <a name="how-to-bind-to-xml-data-using-an-xmldataprovider-and-xpath-queries"></a>Comment : effectuer une liaison à des données XML à l'aide d'un XMLDataProvider et de requêtes XPath
 Cet exemple montre comment effectuer une liaison à des données XML à l’aide d’un <xref:System.Windows.Data.XmlDataProvider>.  
@@ -26,7 +26,7 @@ Cet exemple montre comment effectuer une liaison à des données XML à l’aide
   
  [!code-xaml[XMLDataSource#1](~/samples/snippets/csharp/VS_Snippets_Wpf/XmlDataSource/CS/Window1.xaml#1)]  
   
- Comme indiqué dans cet exemple, pour créer la même déclaration de liaison dans la syntaxe d’attribut, vous devez échapper les caractères spéciaux correctement. Pour plus d’informations, consultez [Entités de caractères XML et XAML](../../xaml-services/xml-character-entities-and-xaml.md).  
+ Comme indiqué dans cet exemple, pour créer la même déclaration de liaison dans la syntaxe d’attribut, vous devez échapper les caractères spéciaux correctement. Pour plus d’informations, consultez [Entités de caractères XML et XAML](../../../desktop-wpf/xaml-services/xml-character-entities.md).  
   
  Le <xref:System.Windows.Controls.ListBox> affiche les éléments suivants lorsque cet exemple est exécuté. Il s’agit de tous les objets *Title*s de tous les éléments sous *Books* ayant une valeur *Stock* de *« out »* ou une valeur *Number* de 3 ou supérieure ou égale à 8. Notez qu’aucun élément *CD* n’est retourné, car la valeur <xref:System.Windows.Data.XmlDataProvider.XPath%2A> définie sur la <xref:System.Windows.Data.XmlDataProvider> indique que seuls les éléments *books* doivent être exposés (en définissant un filtre de façon générale).  
   
@@ -65,4 +65,4 @@ Cet exemple montre comment effectuer une liaison à des données XML à l’aide
 - [Utiliser le modèle maître/détail avec des données XML hiérarchiques](how-to-use-the-master-detail-pattern-with-hierarchical-xml-data.md)
 - [Vue d'ensemble des sources de liaison](binding-sources-overview.md)
 - [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
-- [Rubriques de guide pratique](data-binding-how-to-topics.md)
+- [Guides pratiques](data-binding-how-to-topics.md)

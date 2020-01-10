@@ -20,13 +20,12 @@ helpviewer_keywords:
 - Visual Basic code, handling errors while running
 - structured exception handling, Try...Catch...Finally statements
 ms.assetid: d6488026-ccb3-42b8-a810-0d97b9d6472b
-ms.custom: seodec18
-ms.openlocfilehash: eb04b6cff0847009407e38a3696e9be7c700356c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: bb6f17f7ce88caea0b9d30ec880194f2bb71c6a6
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337332"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705767"
 ---
 # <a name="trycatchfinally-statement-visual-basic"></a>Try...Catch...Finally, instruction (Visual Basic)
 

@@ -1,16 +1,14 @@
 ---
 title: Vue d’ensemble des outils de diagnostics - .NET Core
 description: Une vue d’ensemble des outils et techniques disponibles pour diagnostiquer les applications .NET Core.
-author: sdmaclea
-ms.author: stmaclea
 ms.date: 12/17/2019
 ms.topic: overview
-ms.openlocfilehash: 20374c53769bf19901b042e0909175718665b523
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: 0a78ec6c88f5323104277cddea4480a5e13b4e41
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341477"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715578"
 ---
 # <a name="what-diagnostic-tools-are-available-in-net-core"></a>Quels sont les outils de diagnostic disponibles dans .NET Core ?
 
@@ -44,7 +42,7 @@ L’outil [dotnet-dump](dotnet-dump.md) est un moyen de collecter et d’analyse
 
 .NET Core comprend ce qui est appelé le `EventPipe` par le biais duquel les données de diagnostic sont exposées. L’outil [dotnet-trace](dotnet-trace.md) vous permet de consommer des données de profilage intéressantes à partir de votre application, ce qui peut aider dans les scénarios où vous devez provoquer une exécution lente des applications.
 
-## <a name="net-core-diagnostics-tutorials"></a>Didacticiels de Diagnostics .NET Core
+## <a name="net-core-diagnostics-tutorials"></a>Tutoriels de diagnostics .NET Core
 
 ### <a name="debug-a-memory-leak"></a>Déboguer une fuite de mémoire
 

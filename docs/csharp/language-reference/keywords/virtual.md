@@ -1,6 +1,5 @@
 ---
 title: virtual - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - virtual_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - virtual keyword [C#]
 ms.assetid: 5da9abae-bc1e-434f-8bea-3601b8dcb3b2
-ms.openlocfilehash: d5e087647adced0b41cc6e42fcf534b274c70592
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 47b77792fd3a2b2700ec0734851fdec534361596
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395149"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712869"
 ---
 # <a name="virtual-c-reference"></a>virtual (référence C#)
 
@@ -40,7 +39,7 @@ Vous ne pouvez pas utiliser le modificateur `virtual` avec les modificateurs `st
 
 Les propriétés virtuelles se comportent comme des méthodes virtuelles, à l’exception des différences dans la syntaxe de déclaration et d’appel.
 
-- L’utilisation du modificateur `virtual` sur une propriété statique est une erreur.
+- L’utilisation du modificateur `virtual` sur une propriété statique serait une erreur.
 
 - Une propriété virtuelle héritée peut être substituée dans une classe dérivée en incluant une déclaration de propriété qui utilise le modificateur `override`.
 

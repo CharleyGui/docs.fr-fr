@@ -4,14 +4,14 @@ description: Découvrez comment documenter votre code avec des commentaires de d
 ms.date: 02/14/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 92a64a8f7a652f8b957013fc05f426e6b983655d
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 6aa52030e20f61b26311347a57629658ebe0e609
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710988"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713939"
 ---
-# <a name="documenting-your-code-with-xml-comments"></a>Documentation de votre code avec des commentaires XML
+# <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
 Les commentaires de documentation XML sont un genre particulier de commentaire, ajouté au-dessus de la définition d’un type ou d’un membre défini par l’utilisateur.
 Ils sont spéciaux, car ils peuvent être traités par le compilateur pour générer un fichier de documentation XML au moment de la compilation.
@@ -137,7 +137,7 @@ Il peut s’agir de tout type défini dans le projet ou dans un assembly référ
 
 ## <a name="param"></a>\<param>
 
-La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple sur la méthode `Add` double : le paramètre décrit par la balise est spécifié dans l’attribut `name` **obligatoire**.
+La balise `<param>` permet de décrire les paramètres d’une méthode. Voici un exemple de la méthode double `Add` : le paramètre que la balise décrit est spécifié dans l’attribut `name` **requis** .
 
 [!code-csharp[Param Tag](~/samples/snippets/csharp/concepts/codedoc/param-tag.cs)]
 
@@ -150,7 +150,7 @@ Ajoutez une méthode générique rapide à votre classe `Math` pour vérifier si
 
 ## <a name="paramref"></a>\<paramref>
 
-Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. Comme pour la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **obligatoire**.
+Alors que vous décrivez ce que fait une méthode dans ce qui pourrait être une balise `<summary>`, vous souhaiterez peut-être créer une référence à un paramètre. La balise `<paramref>` est idéale pour cette tâche précise. Mettons à jour le récapitulatif de notre méthode `Add` double. À l’instar de la balise `<param>`, le nom du paramètre est spécifié dans l’attribut `name` **requis** .
 
 [!code-csharp[Paramref Tag](~/samples/snippets/csharp/concepts/codedoc/paramref-tag.cs)]
 
@@ -170,7 +170,7 @@ Créez une liste non triée de toutes les opérations mathématiques prises en c
 
 Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `type` par `number` ou `table`, respectivement.
 
-### <a name="putting-it-all-together"></a>En résumé
+### <a name="put-it-all-together"></a>Assemblage
 
 Si vous avez suivi ce didacticiel et appliqué les balises à votre code au besoin, votre code doit maintenant ressembler à ce qui suit :
 
@@ -206,7 +206,7 @@ L’attribut `id` qui peut être utilisé à la place de `name` représente l’
 ### <a name="user-defined-tags"></a>Balises définies par l’utilisateur
 
 Toutes les balises décrites ci-dessus représentent celles qui sont reconnues par le compilateur C#. Toutefois, un utilisateur est libre de définir ses propres balises.
-Des outils tels que Sandcastle permettent de prendre en charge des balises supplémentaires telles que [`<event>`](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm), [`<note>`](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm) et prennent même en charge la [documentation des espaces de noms](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
+Les outils tels que Sandcastle apportent la prise en charge de balises supplémentaires telles que [\<événement >](https://ewsoftware.github.io/XMLCommentsGuide/html/81bf7ad3-45dc-452f-90d5-87ce2494a182.htm) et [\<note >](https://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm), et même prendre en charge la [documentation des espaces de noms](https://ewsoftware.github.io/XMLCommentsGuide/html/BD91FAD4-188D-4697-A654-7C07FD47EF31.htm).
 Des outils de génération de documentation personnalisés ou internes peuvent également être utilisés avec les balises standard, et plusieurs formats de sortie, du format HTML au format PDF, peuvent être pris en charge.
 
 ## <a name="recommendations"></a>Recommandations
@@ -218,7 +218,7 @@ La documentation du code est recommandée pour de nombreuses raisons. Voici quel
 - Au minimum, les types et leurs membres doivent avoir une balise `<summary>`, car son contenu est nécessaire pour IntelliSense.
 - Le texte de la documentation doit être écrit à l’aide de phrases complètes se terminant par un point.
 - Les classes partielles sont entièrement prises en charge, et les informations de documentation seront concaténées dans une seule entrée pour ce type.
-- Le compilateur vérifie la syntaxe des balises `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>` et `<typeparam>`.
+- Le compilateur vérifie la syntaxe des balises `<exception>`, `<include>`, `<param>`, `<see>`, `<seealso>`et `<typeparam>`.
 - Le compilateur valide les paramètres qui contiennent des chemins de fichiers et des références à d’autres parties du code.
 
 ## <a name="see-also"></a>Voir aussi

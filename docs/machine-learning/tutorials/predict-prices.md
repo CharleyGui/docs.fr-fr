@@ -1,15 +1,15 @@
 ---
 title: 'Didacticiel : prédire les prix à l’aide de la régression'
-description: Ce tutoriel montre comment créer un modèle de régression avec ML.NET pour prédire des prix, plus précisément, des courses de taxi à New York.
+description: Ce tutoriel montre comment générer un modèle de régression avec ML.NET pour prédire des prix, plus précisément, des courses de taxi à New York.
 ms.date: 09/30/2019
 ms.topic: tutorial
-ms.custom: mvc, seodec18, title-hack-0516
-ms.openlocfilehash: a7a7a246f3153889343589a7b32c183ca30df5a3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.custom: mvc, title-hack-0516
+ms.openlocfilehash: e4014dbdfb81af65c35d2f7693ef2c57885303ff
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459160"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711621"
 ---
 # <a name="tutorial-predict-prices-using-regression-with-mlnet"></a>Didacticiel : prédire les prix à l’aide de la régression avec ML.NET
 
@@ -54,7 +54,7 @@ Le jeu de données fourni contient les colonnes suivantes :
 * **vendor_id :** l’ID du taxi est une fonctionnalité.
 * **rate_code :** le type de tarif de la course de taxi est une fonctionnalité.
 * **passenger_count :** le nombre de passagers embarqués est une fonctionnalité.
-* **trip_time_in_secs :** durée totale de la course. Vous voulez prédire le prix de la course avant de l’effectuer. À ce stade vous ne connaissez pas la durée de la course. Par conséquent, la durée de la course n’est pas une fonctionnalité et vous devez exclure cette colonne du modèle.
+* **trip_time_in_secs :** durée totale de la course. Vous voulez prédire le prix de la course avant de l’effectuer. À ce moment-là, vous ne savez pas combien de temps le trajet prendra. Par conséquent, la durée de la course n’est pas une fonctionnalité et vous devez exclure cette colonne du modèle.
 * **trip_distance :** la distance de la course est une fonctionnalité.
 * **payment_type :** le mode de paiement (espèces ou carte de crédit) est une fonctionnalité.
 * **fare_amount :** le prix total payé pour la course est l’étiquette.
@@ -75,7 +75,7 @@ Supprimez la définition de classe existante et ajoutez le code suivant, qui con
 
 `TaxiTrip` est la classe des données d’entrée et a des définitions pour chacune des colonnes du jeu de données. Utilisez l’attribut <xref:Microsoft.ML.Data.LoadColumnAttribute> pour spécifier les index des colonnes sources dans le jeu de données.
 
-La classe `TaxiTripFarePrediction` représente les résultats prédits. Elle comporte un seul champ float, `FareAmount`, avec un attribut `Score` <xref:Microsoft.ML.Data.ColumnNameAttribute> appliqué. Dans le cas de la tâche de régression, la colonne **Score** contient les valeurs d’étiquette prédites.
+La classe `TaxiTripFarePrediction` représente les résultats prédits. Il possède un seul champ flottant, `FareAmount`, avec un attribut `Score` <xref:Microsoft.ML.Data.ColumnNameAttribute> appliqué. Dans le cas de la tâche de régression, la colonne **score** contient des valeurs d’étiquette prédites.
 
 > [!NOTE]
 > Utilisez le type `float` pour représenter les valeurs à virgule flottante dans les classes de données d’entrée et de prédiction.
@@ -130,7 +130,7 @@ ML.NET utilise la [classe IDataView](xref:Microsoft.ML.IDataView) comme un moyen
 
 [!code-csharp[LoadTrainData](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#6 "loading training dataset")]
 
-Comme vous voulez prédire le prix de la course de taxi, la colonne `FareAmount` est la valeur `Label` que vous devez prédire (la sortie du modèle). Pour cela, utilisez la classe de transformation `CopyColumnsEstimator` pour copier `FareAmount`, puis ajoutez le code suivant :
+Au fur et à mesure que vous souhaitez prédire le tarif de la taxi, le `FareAmount` colonne est le `Label` que vous prédisez (la sortie du modèle). Utilisez la classe de transformation `CopyColumnsEstimator` pour copier `FareAmount`et ajoutez le code suivant :
 
 [!code-csharp[CopyColumnsEstimator](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#7 "Use the CopyColumnsEstimator")]
 
@@ -215,7 +215,7 @@ Console.WriteLine($"*------------------------------------------------");
 
 [!code-csharp[DisplayRSquared](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#18 "Display the RSquared metric.")]
 
-[RMS](../resources/glossary.md##root-of-mean-squared-error-rmse) est une des métriques d’évaluation du modèle de régression. Plus sa valeur est faible, plus le modèle est bon. Ajoutez le code suivant dans la méthode `Evaluate` pour afficher la valeur RMS :
+[RMS](../resources/glossary.md#root-of-mean-squared-error-rmse) est une des métriques d’évaluation du modèle de régression. Plus sa valeur est faible, plus le modèle est bon. Ajoutez le code suivant dans la méthode `Evaluate` pour afficher la valeur RMS :
 
 [!code-csharp[DisplayRMS](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#19 "Display the RMS metric.")]
 
@@ -245,7 +245,7 @@ Utilisez `PredictionEngine` pour prédire le prix de la course en ajoutant le co
 
 [!code-csharp[MakePredictionEngine](~/samples/machine-learning/tutorials/TaxiFarePrediction/Program.cs#22 "Create the PredictionFunction")]
 
-Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée un [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) d’objets [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) pour une utilisation dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
+Le [PredictionEngine](xref:Microsoft.ML.PredictionEngine%602) est une API pratique, qui vous permet d’effectuer une prédiction sur une seule instance de données. [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) n’est pas thread‑safe. Il est acceptable d’utiliser dans des environnements à thread unique ou prototype. Pour améliorer les performances et la sécurité des threads dans les environnements de production, utilisez le service `PredictionEnginePool`, qui crée une [`ObjectPool`](xref:Microsoft.Extensions.ObjectPool.ObjectPool%601) de [`PredictionEngine`](xref:Microsoft.ML.PredictionEngine%602) objets à utiliser dans votre application. Consultez ce guide sur l' [utilisation de `PredictionEnginePool` dans une API Web ASP.net Core](../how-to-guides/serve-model-web-api-ml-net.md#register-predictionenginepool-for-use-in-the-application).
 
 > [!NOTE]
 > L’extension de service `PredictionEnginePool` est disponible en préversion.
@@ -268,7 +268,7 @@ Exécutez le programme afin d’afficher le prix prédit de la course pour votre
 
 Félicitations ! Vous avez créé un modèle Machine Learning pour prédire le prix des courses de taxi, avez évalué sa précision et l’avez utilisé pour faire des prédictions. Vous trouverez le code source de ce tutoriel dans le dépôt GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TaxiFarePrediction).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce didacticiel, vous avez appris à :
 

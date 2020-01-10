@@ -7,26 +7,25 @@ helpviewer_keywords:
 - unsealed classes
 - inheritance, classes
 ms.assetid: 9a3bd505-90f5-4053-9f0d-3cf5fa3d3ebf
-author: KrzysztofCwalina
-ms.openlocfilehash: d7174de7ddf062b829672e04952c1010fcb74058
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 8a5f1142674f83b5ef77f9f7e7e3518afd475e7d
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61778792"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709008"
 ---
 # <a name="unsealed-classes"></a>Classes unsealed
-Les classes sealed ne peut pas être héritées, et ils empêchent d’extensibilité. En revanche, les classes qui peuvent être héritées sont appelées des classes non scellés.  
+Les classes sealed ne peuvent pas être héritées de, et elles empêchent l’extensibilité. En revanche, les classes qui peuvent être héritées de sont appelées « classes non scellées ».  
   
  **✓ CONSIDER** à l’aide des classes unsealed sans aucune ajouté des membres virtuels ou protégés comme un excellent moyen de fournir un peu coûteux encore apprécié extensibilité à une infrastructure.  
   
- Les développeurs souhaitent souvent hériter de classes unsealed afin d’ajouter des membres de commodité telles que les constructeurs personnalisés, les nouvelles méthodes ou les surcharges de méthode. Par exemple, `System.Messaging.MessageQueue` est non scellé et permet ainsi aux utilisateurs de créer des files d’attente personnalisées de cette valeur par défaut pour un chemin d’accès de la file d’attente particulière ou pour ajouter des méthodes personnalisées qui simplifient l’API pour des scénarios spécifiques.  
+ Les développeurs souhaitent souvent hériter de classes non scellées afin d’ajouter des membres de commodité tels que des constructeurs personnalisés, de nouvelles méthodes ou des surcharges de méthode. Par exemple, `System.Messaging.MessageQueue` est déscellée et permet ainsi aux utilisateurs de créer des files d’attente personnalisées qui se trouvent par défaut dans un chemin d’accès de file d’attente particulier ou d’ajouter des méthodes personnalisées qui simplifient l’API pour des scénarios spécifiques.  
   
- Les classes sont non scellés par défaut dans les langages de programmation de plus, et c’est aussi la valeur par défaut recommandée pour la plupart des classes dans les infrastructures. L’extensibilité offerte par les types unsealed est très appréciés par les utilisateurs du framework et relativement peu coûteux fournir en raison des coûts de test relativement peu associées aux types non scellés.  
+ Les classes sont déscellées par défaut dans la plupart des langages de programmation, et il s’agit également de la valeur par défaut recommandée pour la plupart des classes dans les infrastructures. L’extensibilité offerte par les types non scellés est grandement appréciée par les utilisateurs du Framework et très peu coûteuse à fournir en raison des coûts de test relativement faibles associés aux types non scellés.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

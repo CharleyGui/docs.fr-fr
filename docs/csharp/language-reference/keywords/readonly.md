@@ -1,6 +1,5 @@
 ---
 title: readonly, mot clé - Référence C#
-ms.custom: seodec18
 ms.date: 06/21/2018
 f1_keywords:
 - readonly_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: 30419200cfce785d7fcbbf59650241580a1f0ce4
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f9fa6f893e7f999564c4dcb43d40755547d3c793
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454964"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713116"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -103,7 +102,7 @@ Vous bénéficiez de deux avantages en appliquant le modificateur `readonly` aux
 
 Le modificateur de `readonly` est valide sur la plupart des membres d’un `struct`, y compris les méthodes qui substituent les méthodes déclarées dans <xref:System.Object?displayProperty=nameWithType>. Certaines restrictions s’appliquent :
 
-- Vous ne pouvez pas déclarer des membres `readonly` statiques.
+- Vous ne pouvez pas déclarer `readonly` des méthodes ou des propriétés statiques.
 - Vous ne pouvez pas déclarer des constructeurs `readonly`.
 
 Vous pouvez ajouter le modificateur `readonly` à une déclaration de propriété ou d’indexeur :
@@ -158,7 +157,7 @@ Vous pouvez également consulter les propositions de spécification de langage 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)

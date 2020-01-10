@@ -12,13 +12,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, backreference constructs
 - regular expressions, backreference constructs
 ms.assetid: 567a4b8d-0e79-49dc-8df9-f4b1aa376a2a
-ms.custom: seodec18
-ms.openlocfilehash: e41c333dc088c8f712866cb7a130c4f8e1c9722f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 905578d763ebe5d5b8eb96a9056fbe11fbfab137
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140538"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711530"
 ---
 # <a name="backreference-constructs-in-regular-expressions"></a>Constructions de backreference dans les expressions régulières
 
@@ -33,7 +32,7 @@ Les références arrière offrent un moyen pratique d’identifier un caractère
 
 Une référence arrière numérotée utilise la syntaxe suivante :
 
-`\` *nombre*
+*numéro* de `\`
 
 où *numéro* est la position ordinale du groupe de capture dans l’expression régulière. Par exemple, `\4` correspond au contenu du quatrième groupe de capture. Si *numéro* n’est pas défini dans le modèle d’expression régulière, une erreur d’analyse se produit et le moteur d’expression régulière lève une exception <xref:System.ArgumentException>. Par exemple, l’expression régulière `\b(\w+)\s\1` est valide, car `(\w+)` est le premier et unique groupe de capture dans l’expression. D’un autre côté, `\b(\w+)\s\2` n’est pas valide et lève une exception d’argument, car il n’existe aucun groupe de capture numéroté `\2`. En outre, si *nombre* identifie un groupe de capture dans une position ordinale particulière, mais qu’un nom numérique différent de sa position ordinale a été affecté au groupe de capture, l’analyseur d’expression régulière lève également une <xref:System.ArgumentException>.
 
@@ -63,11 +62,11 @@ L’exemple suivant recherche des caractères de mot doubles dans une chaîne. I
 
 Une référence arrière nommée est définie avec la syntaxe suivante :
 
-`\k<` *nom* `>`
+*nom* de l' `\k<` `>`
 
 ou :
 
-`\k'` *nom* `'`
+*nom* de l' `\k'` `'`
 
 où *nom* est le nom d’un groupe de capture défini dans le modèle d’expression régulière. Si *nom* n’est pas défini dans le modèle d’expression régulière, une erreur d’analyse se produit et le moteur d’expression régulière lève une exception <xref:System.ArgumentException>.
 
@@ -88,7 +87,7 @@ Dans une référence arrière nommée avec `\k`, *nom* peut également être la 
 [!code-csharp[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference3.cs#3)]
 [!code-vb[RegularExpressions.Language.Backreferences#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference3.vb#3)]
 
-Si *nom* est la représentation d’un nombre sous forme de chaîne et qu’aucun groupe de capture n’a ce nom, `\k<`*nom* `>` est identique au `\` *nombre* de la référence arrière, où *nombre* est la position ordinale de la capture. Dans l’exemple suivant, il existe un seul groupe de capture nommé `char`. La construction de la référence arrière la référence en tant que `\k<1>`. Comme la sortie de l’exemple le montre, l’appel à <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> réussit, car `char` est le premier groupe de capture.
+Si *nom* est la représentation d’un nombre sous forme de chaîne et qu’aucun groupe de capture n’a ce nom, `\k<`*nom*`>` est identique au `\` *nombre* de la référence arrière, où *nombre* est la position ordinale de la capture. Dans l’exemple suivant, il existe un seul groupe de capture nommé `char`. La construction de la référence arrière la référence en tant que `\k<1>`. Comme la sortie de l’exemple le montre, l’appel à <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> réussit, car `char` est le premier groupe de capture.
 
 [!code-csharp[Ordinal.Backreference](../../../samples/snippets/csharp/VS_Snippets_CLR/regularexpressions.language.backreferences/cs/backreference6.cs)]
 [!code-vb[Ordinal.BackReference](../../../samples/snippets/visualbasic/VS_Snippets_CLR/regularexpressions.language.backreferences/vb/backreference6.vb)]

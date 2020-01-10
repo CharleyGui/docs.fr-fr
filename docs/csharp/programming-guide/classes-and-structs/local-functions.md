@@ -1,15 +1,14 @@
 ---
 title: Fonctions locales - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 06/14/2017
 helpviewer_keywords:
 - local functions [C#]
-ms.openlocfilehash: 24b7d6f98e331110ddcd971d0d0b21003dbe023d
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 2036e576a44aa3e1e7829e2091e5a9243d6b6010
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736851"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75705520"
 ---
 # <a name="local-functions-c-programming-guide"></a>Fonctions locales (Guide de programmation C#)
 

@@ -8,16 +8,15 @@ helpviewer_keywords:
 - exceptions, catching
 - exceptions, throwing
 ms.assetid: ab22ce03-78f9-4dca-8824-c7ed3bdccc27
-author: KrzysztofCwalina
-ms.openlocfilehash: b947c7cce057c060b1ab5054d1227f5703ccbf89
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6b202d618d9d2216c8998181303250081de6781c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62026334"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708982"
 ---
 # <a name="using-standard-exception-types"></a>Utilisation de types d'exceptions standard
-Cette section décrit les exceptions standard fournies par le Framework et les détails de leur utilisation. La liste n’est en aucun cas exhaustive. Reportez-vous à la documentation de référence du .NET Framework pour l’utilisation d’autres types d’exception de Framework.  
+Cette section décrit les exceptions standard fournies par l’infrastructure et les détails de leur utilisation. La liste n’est pas exhaustive. Pour plus d’informations sur l’utilisation d’autres types d’exception d’infrastructure, consultez la documentation de référence .NET Framework.  
   
 ## <a name="exception-and-systemexception"></a>Exception et SystemException  
  **X DO NOT** lever <xref:System.Exception?displayProperty=nameWithType> ou <xref:System.SystemException?displayProperty=nameWithType>.  
@@ -33,35 +32,35 @@ Cette section décrit les exceptions standard fournies par le Framework et les d
  **✓ DO** lever un <xref:System.InvalidOperationException> si l’objet est dans un état inapproprié.  
   
 ## <a name="argumentexception-argumentnullexception-and-argumentoutofrangeexception"></a>ArgumentException, ArgumentNullException et ArgumentOutOfRangeException  
- **✓ DO** lever <xref:System.ArgumentException> ou l’un de ses sous-types si des arguments incorrects sont passés à un membre. Préférer le type plus dérivé d’exception, le cas échéant.  
+ **✓ DO** lever <xref:System.ArgumentException> ou l’un de ses sous-types si des arguments incorrects sont passés à un membre. Préférer le type d’exception le plus dérivé, le cas échéant.  
   
  **✓ DO** définir le `ParamName` propriété lors de la levée d’une des sous-classes de `ArgumentException`.  
   
- Cette propriété représente le nom du paramètre ayant provoqué l’exception levée. Notez que la propriété peut être définie à l’aide d’une des surcharges de constructeur.  
+ Cette propriété représente le nom du paramètre qui a provoqué la levée de l’exception. Notez que la propriété peut être définie à l’aide de l’une des surcharges de constructeur.  
   
  **✓ DO** utiliser `value` pour le nom du paramètre de valeur implicite d’accesseurs Set de propriété.  
   
-## <a name="nullreferenceexception-indexoutofrangeexception-and-accessviolationexception"></a>NullReferenceException, IndexOutOfRangeException, and AccessViolationException  
- **X DO NOT** autoriser API pouvant être appelées publiquement à lever explicitement ou implicitement <xref:System.NullReferenceException>, <xref:System.AccessViolationException>, ou <xref:System.IndexOutOfRangeException>. Ces exceptions sont réservées et levée par le moteur d’exécution et, dans que la plupart des cas indiquent un bogue.  
+## <a name="nullreferenceexception-indexoutofrangeexception-and-accessviolationexception"></a>NullReferenceException, IndexOutOfRangeException et AccessViolationException  
+ **X DO NOT** autoriser API pouvant être appelées publiquement à lever explicitement ou implicitement <xref:System.NullReferenceException>, <xref:System.AccessViolationException>, ou <xref:System.IndexOutOfRangeException>. Ces exceptions sont réservées et levées par le moteur d’exécution et, dans la plupart des cas, indiquent un bogue.  
   
- Effectuer la vérification d’arguments pour éviter de lever ces exceptions. Lever ces exceptions expose des détails d’implémentation de votre méthode peut changer au fil du temps.  
+ Procédez à la vérification des arguments pour éviter de lever ces exceptions. La levée de ces exceptions expose les détails d’implémentation de votre méthode qui peuvent changer au fil du temps.  
   
 ## <a name="stackoverflowexception"></a>StackOverflowException  
  **X DO NOT** lever explicitement <xref:System.StackOverflowException>. L’exception doit être levée explicitement uniquement par le CLR.  
   
  **X DO NOT** catch `StackOverflowException`.  
   
- Il est quasiment impossible d’écrire du code managé qui reste cohérent en présence de débordements de pile arbitraire. Les parties non managés du CLR restent cohérentes à l’aide de sondes pour déplacer les débordements de pile à des endroits bien définis, plutôt que par sauvegarde à partir de débordements de pile arbitraire.  
+ Il est presque impossible d’écrire du code managé qui reste cohérent en présence de dépassements de pile arbitraires. Les parties non managées du CLR restent cohérentes en utilisant des sondes pour déplacer les débordements de pile vers des emplacements bien définis plutôt que en sauvegardant des débordements de pile arbitraires.  
   
 ## <a name="outofmemoryexception"></a>OutOfMemoryException  
- **X DO NOT** lever explicitement <xref:System.OutOfMemoryException>. Cette exception est levée uniquement par l’infrastructure CLR.  
+ **X DO NOT** lever explicitement <xref:System.OutOfMemoryException>. Cette exception doit être levée uniquement par l’infrastructure CLR.  
   
-## <a name="comexception-sehexception-and-executionengineexception"></a>ComException et SEHException ExecutionEngineException  
- **X DO NOT** lever explicitement <xref:System.Runtime.InteropServices.COMException>, <xref:System.ExecutionEngineException>, et <xref:System.Runtime.InteropServices.SEHException>. Ces exceptions doivent être levée uniquement par l’infrastructure CLR.  
+## <a name="comexception-sehexception-and-executionengineexception"></a>COMException, SEHException et ExecutionEngineException  
+ **X DO NOT** lever explicitement <xref:System.Runtime.InteropServices.COMException>, <xref:System.ExecutionEngineException>, et <xref:System.Runtime.InteropServices.SEHException>. Ces exceptions doivent être levées uniquement par l’infrastructure CLR.  
   
- *Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*  
   
- *Réimprimé avec l’autorisation de Pearson éducation, Inc. à partir de [instructions de conception Framework : Conventions, les idiomes et les modèles pour les bibliothèques .NET réutilisable, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série de développement de Microsoft Windows.*  
+ *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*  
   
 ## <a name="see-also"></a>Voir aussi
 

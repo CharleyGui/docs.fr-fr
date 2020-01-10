@@ -3,14 +3,12 @@ title: Suppression de nœuds du DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 0a98e0ca-0555-45c1-ab69-0d8d20ca1abd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: be592466627e6ee7b23c608e0defe786548907ad
-ms.sourcegitcommit: ad99773e5e45068ce03b99518008397e1299e0d1
-ms.translationtype: HT
+ms.openlocfilehash: a34b92abc59215c3cb2b94afd88e2e30405b4e9a
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/22/2018
-ms.locfileid: "46576559"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710308"
 ---
 # <a name="removing-nodes-from-the-dom"></a>Suppression de nœuds du DOM
 Pour supprimer un nœud du DOM (Document Object Model) XML, utilisez la méthode <xref:System.Xml.XmlNode.RemoveChild%2A>. La méthode supprime le sous-arbre appartenant au nœud en cours de suppression, du moins s'il ne s'agit pas d'un nœud sans descendant.  

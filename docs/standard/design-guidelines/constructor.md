@@ -12,17 +12,16 @@ helpviewer_keywords:
 - parameterless constructors
 - static constructors
 ms.assetid: b4496afe-5fa7-4bb0-85ca-70b0ef21e6fc
-author: KrzysztofCwalina
-ms.openlocfilehash: a43ec815275e58f4bc6462fb4f5cb4733267de31
-ms.sourcegitcommit: a97ecb94437362b21fffc5eb3c38b6c0b4368999
+ms.openlocfilehash: 823bc893c9384bb687e5f9a196abe497db14f4db
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/13/2019
-ms.locfileid: "68972114"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709476"
 ---
 # <a name="constructor-design"></a>Conception de constructeurs
 
-Il existe deux genres de constructeurs: des constructeurs de type et des constructeurs d’instance.
+Il existe deux genres de constructeurs : des constructeurs de type et des constructeurs d’instance.
 
 Les constructeurs de type sont statiques et sont exécutés par le CLR avant l’utilisation du type. Les constructeurs d’instance s’exécutent lors de la création d’une instance d’un type.
 
@@ -76,9 +75,9 @@ Si une exception est levée à partir d’un constructeur de type, le type n’e
 
 **✓ CONSIDER** initialiser les champs statiques inline au lieu d’utiliser explicitement des constructeurs statiques, car le runtime peut optimiser les performances des types qui n’ont pas un constructeur statique explicitement défini.
 
-*Portions © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
+*Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
-*Réimprimé par l’autorisation de Pearson Education, Inc. à [partir des instructions de conception d’infrastructure: Conventions, idiomes et modèles pour les bibliothèques .net réutilisables, 2nd](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) Edition de Krzysztof Cwalina et Brad Abrams, publié le 22 octobre, 2008 de Addison-Wesley Professional dans le cadre de la série de développement Microsoft Windows.*
+*Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -3,14 +3,12 @@ title: Résolution de feuilles de style XSLT externes et de documents
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 920cfe3b-d525-4bb2-abf6-9431651f9cf9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 381b7c1eb091bafbcdc8ea842597c539c6be3a57
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 504519532d9a6988209cf04fd6b6196796f929f8
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69945631"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710295"
 ---
 # <a name="resolving-external-xslt-style-sheets-and-documents"></a>Résolution de feuilles de style XSLT externes et de documents
 Lors d'une transformation, il peut s'avérer nécessaire de résoudre des ressources externes à plusieurs moments.  

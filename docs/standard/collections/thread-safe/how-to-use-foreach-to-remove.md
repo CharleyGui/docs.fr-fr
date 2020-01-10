@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : utiliser la boucle ForEach pour supprimer les éléments d’un BlockingCollection'
+title: "Comment : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection"
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -8,20 +8,18 @@ dev_langs:
 helpviewer_keywords:
 - thread-safe collections, how to enumerate blocking collection
 ms.assetid: 2096103c-22f7-420d-b631-f102bc33a6dd
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 10fa77f6948a10959db5f79c37692eba67d47ecd
-ms.sourcegitcommit: cdf67135a98a5a51913dacddb58e004a3c867802
-ms.translationtype: HT
+ms.openlocfilehash: f9a858dea74be63634f887c4204aefa8ac338ad0
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/21/2019
-ms.locfileid: "69666537"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711231"
 ---
-# <a name="how-to-use-foreach-to-remove-items-in-a-blockingcollection"></a>Procédure : utiliser la boucle ForEach pour supprimer les éléments d’un BlockingCollection
+# <a name="how-to-use-foreach-to-remove-items-in-a-blockingcollection"></a>Comment : utiliser la boucle ForEach pour supprimer les éléments d'un BlockingCollection
 
 Outre l’extraction d’éléments à partir d’un <xref:System.Collections.Concurrent.BlockingCollection%601> à l’aide des méthodes <xref:System.Collections.Concurrent.BlockingCollection%601.Take%2A> et <xref:System.Collections.Concurrent.BlockingCollection%601.TryTake%2A>, vous pouvez également utiliser une boucle [foreach](../../../csharp/language-reference/keywords/foreach-in.md) ([For Each](../../../visual-basic/language-reference/statements/for-each-next-statement.md) en Visual Basic) pour supprimer des éléments jusqu’à ce que l’ajout soit terminé et que la collection soit vide. Cela s’appelle une *énumération de mutation* ou *énumération de consommation* car, contrairement à une boucle `foreach` (`For Each`) typique, cet énumérateur modifie la collection source en supprimant ses éléments.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant indique comment supprimer tous les éléments d’un <xref:System.Collections.Concurrent.BlockingCollection%601> à l’aide d’une boucle `foreach` (`For Each`).
 

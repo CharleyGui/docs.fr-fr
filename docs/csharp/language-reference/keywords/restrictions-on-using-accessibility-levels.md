@@ -1,16 +1,15 @@
 ---
 title: Limitations sur l’utilisation des niveaux d’accessibilité - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 helpviewer_keywords:
 - access modifiers [C#], accessibility level restrictions
 ms.assetid: 987e2f22-46bf-4fea-80ee-270b9cd01045
-ms.openlocfilehash: 13adfbb96cea2c192b84931b529bf92fd2b50116
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 90c76e68ca526106f3a8be6e3db2640edbb2bc80
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69922327"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715161"
 ---
 # <a name="restrictions-on-using-accessibility-levels-c-reference"></a>Limitations sur l’utilisation des niveaux d’accessibilité (informations de référence sur C#)
 
@@ -23,7 +22,7 @@ public class MyClass: BaseClass {...} // Error
 
 Le tableau suivant résume les limitations sur les niveaux d’accessibilité déclarés.
 
-|Contexte|Remarques|
+|Contexte|Notes|
 |-------------|-------------|
 |[Classes](../../programming-guide/classes-and-structs/classes.md)|La classe de base directe d’un type de classe doit être au moins aussi accessible que le type de classe lui-même.|
 |[Interfaces](../../programming-guide/interfaces/index.md)|Les interfaces de base explicites d’un type d’interface doivent être au moins aussi accessibles que le type d’interface lui-même.|
@@ -37,7 +36,7 @@ Le tableau suivant résume les limitations sur les niveaux d’accessibilité d�
 |[Opérateurs](../operators/index.md)|Le type de retour et les types de paramètres d’un opérateur doivent être au moins aussi accessibles que l’opérateur lui-même.|
 |[Constructeurs](../../programming-guide/classes-and-structs/constructors.md)|Les types de paramètres d’un constructeur doivent être au moins aussi accessibles que le constructeur lui-même.|
 
-## <a name="example"></a>Exemples
+## <a name="example"></a>Exemple
 
 L’exemple suivant contient des déclarations erronées de différents types. Le commentaire qui suit chaque déclaration indique l’erreur du compilateur à attendre.
 

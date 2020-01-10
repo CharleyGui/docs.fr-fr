@@ -1,6 +1,5 @@
 ---
 title: extern alias - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - alias_CSharpKeyword
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - aliases [C#], extern keyword
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
-ms.openlocfilehash: 09d1247c51f0e600973840cfef2d3b396d9bf0d0
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 86202333484933d7449b0c4d8c5a3f1a63cd7775
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72520294"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713549"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
 Il se peut que vous deviez référencer deux versions d’assemblys qui ont le même nom de type qualifié complet. Par exemple, vous pourriez avoir à utiliser plusieurs versions d’un assembly dans la même application. En utilisant un alias d’assembly externe, vous pouvez encapsuler les espaces de noms de chaque assembly dans des espaces de noms racines nommés par l’alias, ce qui permet de les utiliser dans le même fichier.  
@@ -28,7 +27,7 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
   
  `/r:GridV2=grid20.dll`  
   
- Cela crée les alias externes `GridV1` et `GridV2`. Pour utiliser ces alias à partir d’un programme, référencez-les en utilisant le mot clé `extern`. Exemple :  
+ Cela crée les alias externes `GridV1` et `GridV2`. Pour utiliser ces alias à partir d’un programme, référencez-les en utilisant le mot clé `extern`. Par exemple :  
   
  `extern alias GridV1;`  
   
@@ -43,7 +42,7 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [::, opérateur](../operators/namespace-alias-qualifier.md)

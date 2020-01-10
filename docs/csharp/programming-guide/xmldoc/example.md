@@ -1,6 +1,5 @@
 ---
 title: <example> - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - <example>
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - <example> C# XML tag
 - example C# XML tag
 ms.assetid: 32d6e73b-2554-4abb-83ee-a1e321334fd2
-ms.openlocfilehash: 17956838c20a4342873478869c07c6382f037fcb
-ms.sourcegitcommit: 4f4a32a5c16a75724920fa9627c59985c41e173c
+ms.openlocfilehash: 13f4a2bb9dcef5bd0359f7e5bd9cab60acde3719
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/17/2019
-ms.locfileid: "72523513"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75697011"
 ---
 # <a name="example-c-programming-guide"></a>\<example> (Guide de programmation C#)
 ## <a name="syntax"></a>Syntaxe  
@@ -23,7 +22,7 @@ ms.locfileid: "72523513"
 <example>description</example>  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `description`  
  Description de l’exemple de code.  
   

@@ -1,16 +1,15 @@
 ---
 title: Types pointeur - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - unsafe code [C#], pointers
 - pointers [C#]
-ms.openlocfilehash: 1f394d3fe5a2cb03c39cb0416e4ae44d6e340a4e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: fe0eacbd67917826c88c5ef68bb8d8aeab9ba251
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345638"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711816"
 ---
 # <a name="pointer-types-c-programming-guide"></a>Types pointeur (Guide de programmation C#)
 

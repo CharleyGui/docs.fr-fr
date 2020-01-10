@@ -3,14 +3,12 @@ title: Documents et données XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: e695047f-3c0f-4045-8708-5baea91cc380
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 60614a95e4091b4d7bd9ae3a71e2ddeca53e29ba
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: e0c3f3e99b06b65caf79d87a7831369f6fb33b08
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424864"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710789"
 ---
 # <a name="xml-documents-and-data"></a>Documents et données XML
 
@@ -28,7 +26,7 @@ Le .NET Framework fournit un jeu de classes complet et intégré qui vous perme
 
 Pour obtenir la liste complète, recherchez « System.Xml » sur le [navigateur de l’API .NET](https://docs.microsoft.com/dotnet/api/?term=system.xml).
 
-Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Exemple :
+Les classes dans ces espaces de noms prennent en charge les recommandations World Wide Web Consortium (W3C). Par exemple :
 
 - La classe <xref:System.Xml.XmlDocument?displayProperty=nameWithType> implémente les recommandations du [W3C relatives aux modèles objet de documents (DOM) de niveau 1](https://www.w3.org/TR/REC-DOM-Level-1/) et [2 (standard)](https://www.w3.org/TR/DOM-Level-2-Core/).
 
@@ -42,11 +40,11 @@ Les classes XML du .NET Framework offrent les avantages suivants :
 
 - **Productivité** : [LINQ to XML (C#)](../../../csharp/programming-guide/concepts/linq/linq-to-xml-overview.md) et [LINQ to XML (Visual Basic)](../../../visual-basic/programming-guide/concepts/linq/linq-to-xml.md) facilitent la programmation avec XML et offrent une expérience de requête similaire à SQL.
 
-- **Extensibilité** : Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.
+- **Extensibilité** : Les classes XML du .NET Framework sont extensibles grâce à l'utilisation de classes de base abstraites et de méthodes virtuelles. Par exemple, vous pouvez créer une classe dérivée de la classe <xref:System.Xml.XmlUrlResolver> qui stocke le flux mis en cache sur le disque local.
 
-- **Architecture enfichable** : Le .NET Framework propose une architecture dans laquelle les composants peuvent s'utiliser réciproquement et où les données peuvent être transmises en continu entre les composants. Par exemple, un magasin de données, tel qu'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>, peut être transformé à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>, et la sortie peut ensuite être soit transmise sous la forme de flux à un autre magasin, soit retournée sous la forme d'un flux à partir d'un service web.
+- **Architecture enfichable** : Le .NET Framework propose une architecture dans laquelle les composants peuvent s'utiliser réciproquement et où les données peuvent être diffusées en continu entre les composants. Par exemple, un magasin de données, tel qu'un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument>, peut être transformé à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>, et la sortie peut ensuite être soit transmise sous la forme de flux à un autre magasin, soit retournée sous la forme d'un flux à partir d'un service web.
 
-- **Performances** Pour améliorer les performances des applications, certaines des classes XML du .NET Framework prennent en charge un modèle basé sur les flux de données ayant les caractéristiques suivantes :
+- **Performances** Pour améliorer les performances des applications, certaines des classes XML du .NET Framework prennent en charge un modèle basé sur les diffusion en continu ayant les caractéristiques suivantes :
 
   - Mise en cache minimale pour une analyse avant uniquement et de tirage (<xref:System.Xml.XmlReader>).
 

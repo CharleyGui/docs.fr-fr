@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9d08399933f37c4110639bf1f4a81f222dd597b4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
-ms.translationtype: HT
+ms.openlocfilehash: 5cd733d557dabe66145fdbb848c473411d63c62b
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69910318"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709619"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pour les paramètres de feuille de style et les objets d'extension
 La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (Extensible Stylesheet Language for Transformations) et des objets d'extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
@@ -41,8 +39,8 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
 |Type W3C|Classe .NET Framework équivalente (type)|Type XPath ou type XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
 |Chaîne|System.String|XPath|  
-|Booléen|System.Boolean|XPath|  
-|nombre|System.Double|XPath|  
+|Boolean|System.Boolean|XPath|  
+|Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
 |Collection de nœuds|System.Xml.XPath.XPathNodeIterator|XPath|  
   
@@ -56,7 +54,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
   
 3. Transmettez l'objet <xref:System.Xml.Xsl.XsltArgumentList> à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>.  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  L'exemple suivant utilise la méthode <xref:System.Xml.Xsl.XsltArgumentList.AddParam%2A> pour créer un paramètre destiné à contenir une date de remise calculée. La date de la remise correspond à 20 jours à partir de la date de la commande.  
   
 ```vb  
@@ -139,7 +137,7 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a>Entrée  
+### <a name="input"></a>Input  
  order.xml  
   
 ```xml  
@@ -171,7 +169,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Sortie  
+### <a name="output"></a>Output  
   
 ```xml  
 <order>  
@@ -197,7 +195,7 @@ public class Sample
   
 3. Transmettez l'objet <xref:System.Xml.Xsl.XsltArgumentList> à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>.  
   
-### <a name="example"></a>Exemples  
+### <a name="example"></a>Exemple  
  L'exemple suivant calcule la circonférence d'un cercle en fonction de son rayon.  
   
 ```vb  
@@ -307,7 +305,7 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a>Entrée  
+### <a name="input"></a>Input  
  number.xml  
   
 ```xml  
@@ -343,7 +341,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Sortie  
+### <a name="output"></a>Output  
  `<circles xmlns:myObj="urn:myObj">`  
   
  `<circle>`  

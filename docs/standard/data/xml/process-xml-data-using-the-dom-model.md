@@ -3,14 +3,12 @@ title: Traitement de données XML à l'aide du modèle DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 56b6e9c7-ed82-4a65-a647-7be32c83bcc8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d34d22d8329f0bc26c1e29653137211bf300d324
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: 01ef4bef57b8a2e3e13f28a98adb21b111f3f4ed
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64647819"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710451"
 ---
 # <a name="process-xml-data-using-the-dom-model"></a>Traitement de données XML à l'aide du modèle DOM
 Le DOM (Document Object Model) XML traite les données XML comme un ensemble standard d'objets et permet de traiter les données XML en mémoire. L'espace de noms `System.Xml` offre une représentation par programme de documents XML, de fragments, de nœuds ou de collections de nœuds. Il se base sur les recommandations du W3C (World Wide Web Consortium) sur les modèles objet de document (DOM), niveaux 1 et 2 (noyau).  

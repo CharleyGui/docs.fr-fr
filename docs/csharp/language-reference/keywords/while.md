@@ -1,6 +1,5 @@
 ---
 title: while - Référence C#
-ms.custom: seodec18
 ms.date: 05/28/2018
 f1_keywords:
 - while_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - while keyword [C#]
 ms.assetid: 72a0765c-6852-4aca-b327-4a11cb7f5c59
-ms.openlocfilehash: fad0ceae9cf1080e7f4b553e0808fd531fd28c57
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: eb9aa2ea8d6b1c96e0be7d377f7c047194b598de
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552378"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75712791"
 ---
 # <a name="while-c-reference"></a>while (référence C#)
 
@@ -37,7 +36,7 @@ Pour plus d’informations, voir la section [Instruction while](~/_csharplang/sp
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Instruction do](do.md)

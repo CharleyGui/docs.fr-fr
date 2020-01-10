@@ -12,14 +12,12 @@ helpviewer_keywords:
 - Collections classes
 - generic collections
 ms.assetid: f5d4c6a4-0d7b-4944-a9fb-3b12d9ebfd55
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c21a1303cd67f5f5de42241f4d5ada929e68bf2c
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
-ms.translationtype: HT
+ms.openlocfilehash: 1004a2f9a0594d9150d147dec1e16b56205e0d13
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65589891"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711400"
 ---
 # <a name="commonly-used-collection-types"></a>Types de collections couramment utilisés
 Les types de collections sont des variations courantes des collections de données, telles que les tables de hachage, les files d’attente, les piles, les conteneurs, les dictionnaires et les listes.  
@@ -41,7 +39,7 @@ Les types de collections sont des variations courantes des collections de donné
 |[Types de collections triées](../../../docs/standard/collections/sorted-collection-types.md)|Décrit les classes qui fournissent une fonctionnalité de tri pour les listes et les ensembles.|  
 |[Génériques](../../../docs/standard/generics/index.md)|Décrit la fonctionnalité génériques, notamment les collections, délégués et interfaces génériques fournis par le .NET Framework. Fournit des liens vers de la documentation sur les fonctionnalités pour C#, Visual Basic et Visual C++, ainsi que vers des technologies de prise en charge comme la réflexion.|  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Collections?displayProperty=nameWithType>  
   
  <xref:System.Collections.Generic?displayProperty=nameWithType>  

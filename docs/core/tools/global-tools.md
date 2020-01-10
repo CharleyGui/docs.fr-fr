@@ -3,13 +3,12 @@ title: Outils globaux .NET Core
 description: Vue d’ensemble des outils globaux .NET Core et des commandes CLI .NET Core disponibles pour eux.
 author: KathleenDollard
 ms.date: 05/29/2018
-ms.custom: seodec18
-ms.openlocfilehash: 116739f80d5157632a8e44a19cbef6ba7971d339
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 665cee64cb92efd16f5528feb656b377f9f3283c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72318303"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714159"
 ---
 # <a name="net-core-global-tools-overview"></a>Vue d’ensemble des outils globaux .NET Core
 
@@ -69,10 +68,10 @@ Tool 'dotnetsay' (version '2.0.0') was successfully installed.
 
 Il est possible d’installer des outils globaux dans le répertoire par défaut ou à un emplacement spécifique. Les répertoires par défaut sont :
 
-| Système d’exploitation          | Chemin d’accès                          |
+| Système d’exploitation          | Path                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
-| Windows     | `%USERPROFILE%\.dotnet\tools` |
+| Portail     | `%USERPROFILE%\.dotnet\tools` |
 
 Ces emplacements sont ajoutés au chemin de l’utilisateur lors de la première exécution du SDK, si bien que les outils globaux qui y sont installés peuvent être appelées directement.
 

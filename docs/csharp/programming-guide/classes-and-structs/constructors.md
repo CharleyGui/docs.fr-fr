@@ -1,18 +1,17 @@
 ---
 title: Constructeurs - Guide de programmation C#
-ms.custom: seodec18
 ms.date: 05/05/2017
 helpviewer_keywords:
 - constructors [C#]
 - classes [C#], constructors
 - C# language, constructors
 ms.assetid: df2e2e9d-7998-418b-8e7d-890c17ff6c95
-ms.openlocfilehash: 13597275460c075309b7457485a17655cf93f251
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 9c57ff6dd9acd8a8bcff6de4fce7d898f1135703
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971095"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75714964"
 ---
 # <a name="constructors-c-programming-guide"></a>Constructeurs (guide de programmation C#)
 

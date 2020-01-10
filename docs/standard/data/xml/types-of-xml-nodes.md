@@ -3,19 +3,17 @@ title: Types de nœuds XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 71d03b78-6898-4ce7-b0fc-1282573f31f7
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 623583f16c23b55c16f648fedcd039ca36f73b1f
-ms.sourcegitcommit: fb78d8abbdb87144a3872cf154930157090dd933
-ms.translationtype: HT
+ms.openlocfilehash: 83b8c09323e73a9b3ba7dea8d272d7d41d03add1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/27/2018
-ms.locfileid: "47396888"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710087"
 ---
 # <a name="types-of-xml-nodes"></a>Types de nœuds XML
 Quand un document XML est lu et chargé en mémoire sous la forme d’une arborescence de nœuds, le type de nœud des nœuds est déterminé lors de la création de ces derniers. Le DOM (Document Object Model) XML propose plusieurs catégories de types de nœuds, déterminés par le World Wide Web Consortium (W3C) et répertoriés dans la section 1.1.1 The DOM Structure Model. Le tableau suivant répertorie les types de nœuds et fournit, pour chaque type, l'objet qui lui est assigné ainsi qu'une brève description.  
   
-|Type de nœud DOM|Object|Description|  
+|Type de nœud DOM|Objet|Description|  
 |-------------------|------------|-----------------|  
 |Document|<xref:System.Xml.XmlDocument>|Conteneur de tous les nœuds de l’arborescence. Également connu comme la racine du document, qui ne correspond pas toujours à l'élément racine.|  
 |DocumentFragment|<xref:System.Xml.XmlDocumentFragment>|Sac temporaire contenant un ou plusieurs nœuds sans structure d’arborescence.|  
@@ -23,9 +21,9 @@ Quand un document XML est lu et chargé en mémoire sous la forme d’une arbore
 |EntityReference|<xref:System.Xml.XmlEntityReference>|Représente le texte de référence d’entité non développé.|  
 |Élément|<xref:System.Xml.XmlElement>|Représente un nœud d'élément.|  
 |Attr|<xref:System.Xml.XmlAttribute>|Attribut d'un élément.|  
-|ProcessingInstruction ;|<xref:System.Xml.XmlProcessingInstruction>|Nœud d'instruction de traitement.|  
+|ProcessingInstruction|<xref:System.Xml.XmlProcessingInstruction>|Nœud d'instruction de traitement.|  
 |Commentaire|<xref:System.Xml.XmlComment>|Nœud de commentaire.|  
-|Texte|<xref:System.Xml.XmlText>|Texte appartenant à un élément ou attribut.|  
+|Text|<xref:System.Xml.XmlText>|Texte appartenant à un élément ou attribut.|  
 |CDATASection.|<xref:System.Xml.XmlCDataSection>|Représente CDATA.|  
 |Entité|<xref:System.Xml.XmlEntity>|Représente les déclarations `<!ENTITY…>` dans un document XML, soit à partir d'un sous-ensemble de définitions de type de document (DTD) internes, soit à partir de DTD externes et d'entités de paramètre.|  
 |Notation|<xref:System.Xml.XmlNotation>|Représente une notation déclarée dans la DTD.|  

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : anticiper des conditions d’espace insuffisant avec le stockage isolé'
+title: 'Comment : anticiper des conditions d‘espace insuffisant avec le stockage isolé'
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 dev_langs:
@@ -22,16 +22,14 @@ helpviewer_keywords:
 - isolated storage, out of space conditions
 - data storage using isolated storage, out of space conditions
 ms.assetid: e35d4535-3732-421e-b1a3-37412e036145
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: cf5144cb1abd3a916d2b5afc361c8c96a221d47e
-ms.sourcegitcommit: 0c48191d6d641ce88d7510e319cf38c0e35697d0
-ms.translationtype: HT
+ms.openlocfilehash: 5666019e1a65880221261ef5ad704f82c37263b2
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/05/2019
-ms.locfileid: "57372293"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708113"
 ---
-# <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Procédure : anticiper des conditions d’espace insuffisant avec le stockage isolé
+# <a name="how-to-anticipate-out-of-space-conditions-with-isolated-storage"></a>Comment : anticiper des conditions d‘espace insuffisant avec le stockage isolé
 
 Le code qui utilise le stockage isolé est limité par un [quota](../../../docs/standard/io/isolated-storage.md#quotas) qui spécifie la taille maximale du compartiment de données dans lequel des fichiers et répertoires de stockage isolé existent. Le quota est défini par la stratégie de sécurité et peut être configuré par les administrateurs. Si la taille maximale autorisée est dépassée lorsque vous tenez d’écrire des données, une exception <xref:System.IO.IsolatedStorage.IsolatedStorageException> est levée et l’opération échoue. Cela permet d’éviter des attaques malveillantes par déni de service, qui pourraient amener l’application à refuser des requêtes parce que le stockage des données est rempli.
 
@@ -51,4 +49,4 @@ L’exemple de code suivant obtient un magasin isolé, crée quelques fichiers e
 
 - <xref:System.IO.IsolatedStorage.IsolatedStorageFile>
 - [Stockage isolé](../../../docs/standard/io/isolated-storage.md)
-- [Guide pratique pour obtenir des magasins pour le stockage isolé](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)
+- [Obtention de magasins](../../../docs/standard/io/how-to-obtain-stores-for-isolated-storage.md)

@@ -3,14 +3,12 @@ title: Suppression d'attributs d'un nœud d'élément dans le DOM
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 7ede6f9e-a3ac-49a4-8488-ab8360a44aa4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7031d34916c520f52550d215a1a8e62880209c87
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
-ms.translationtype: HT
+ms.openlocfilehash: bb18e712d5ed2cd06c7ae0e867b19ca8a9ad2513
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590034"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710347"
 ---
 # <a name="removing-attributes-from-an-element-node-in-the-dom"></a>Suppression d'attributs d'un nœud d'élément dans le DOM
 Il existe plusieurs manières de supprimer des attributs. L’une des techniques consiste à les supprimer de la collection d’attributs. Pour ce faire, procédez comme suit :  

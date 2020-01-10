@@ -11,14 +11,12 @@ helpviewer_keywords:
 - covariance and contravariance in generics
 - generic type parameters
 ms.assetid: 2678dc63-c7f9-4590-9ddc-0a4df684d42e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ee8cc1b677ad6f6c2718c155edbba632df38dbd3
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 909b03588d2a41f667bfa117a5cecb420b125088
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974694"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75708395"
 ---
 # <a name="covariance-and-contravariance-in-generics"></a>Covariance et contravariance dans les génériques
 La covariance et la contravariance sont des termes qui font référence à la possibilité d’utiliser un type plus dérivé (plus spécifique) ou un type moins dérivé (moins spécifique) que celui spécifié à l’origine. Les paramètres de type générique prennent en charge la covariance et la contravariance afin de fournir une meilleure flexibilité dans l'assignation et l'utilisation des types génériques. Lorsque vous faites référence à un système de type, la covariance, la contravariance et l'invariance ont les définitions suivantes. Les exemples supposent qu'une classe de base est nommée `Base` et qu'une classe dérivée est nommée `Derived`.  
@@ -57,7 +55,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
   
  En général, un paramètre de type covariant peut être utilisé comme type de retour d'un délégué et les paramètres de type contravariant peuvent être utilisés comme types de paramètres. Pour une interface, les paramètres de type covariant peuvent être utilisés comme types de retour des méthodes de l'interface et les paramètres de type contravariant peuvent être utilisés comme types de paramètres des méthodes de l'interface.  
   
- La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Un paramètre de type générique qui n’est marqué ni comme étant covariant, ni comme étant contravariant, est appelé *indifférent*. Récapitulatif des informations relatives à la variance dans le common language runtime :  
+ La covariance et la contravariance sont désignées collectivement sous le nom de *variation*. Un paramètre de type générique qui n'est marqué ni comme étant covariant, ni comme étant contravariant, est appelé *indifférent*. Récapitulatif des informations relatives à la variance dans le common language runtime :  
   
 - Dans .NET Framework 4, les paramètres de type variant sont limités aux types d’interfaces génériques et aux types délégués génériques.  
   
@@ -146,7 +144,7 @@ La covariance et la contravariance sont des termes qui font référence à la po
 ## <a name="list-of-variant-generic-interface-and-delegate-types"></a>Liste des types d'interfaces et des types délégués génériques variants
  Dans .NET Framework 4, les types d’interfaces et les types délégués suivants ont des paramètres de type covariant et/ou contravariant.  
   
-|Tapez|Paramètres de type covariant|Paramètres de type contravariant|  
+|Type|Paramètres de type covariant|Paramètres de type contravariant|  
 |----------|-------------------------------|-----------------------------------|  
 |<xref:System.Action%601> à <xref:System.Action%6016>||Oui|  
 |<xref:System.Comparison%601>||Oui|  

@@ -1,6 +1,5 @@
 ---
 title: ref, mot clé - Référence C#
-ms.custom: seodec18
 ms.date: 03/26/2019
 f1_keywords:
 - ref_CSharpKeyword
@@ -8,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - parameters [C#], ref
 - ref keyword [C#]
-ms.openlocfilehash: f11137b3c13bb9e8670c4df25fedf3251724a088
-ms.sourcegitcommit: 29a9b29d8b7d07b9c59d46628da754a8bff57fa4
-ms.translationtype: HT
+ms.openlocfilehash: 25c74317ce9033ef10735ee0087f275632b6bd17
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/17/2019
-ms.locfileid: "69566901"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75715186"
 ---
 # <a name="ref-c-reference"></a>ref (référence C#)
 
@@ -62,7 +61,7 @@ Toutefois, les méthodes peuvent être surchargées quand une méthode a un para
 - Méthodes async, que vous définissez à l’aide du modificateur [async](async.md).  
 - Les méthodes Iterator, qui incluent une instruction [yield return](yield.md) ou `yield break`.  
 
-## <a name="passing-an-argument-by-reference-an-example"></a>Passage d’un argument par référence : Exemple
+## <a name="passing-an-argument-by-reference-an-example"></a>Passage d’un argument par référence : exemple
 
 Les exemples précédents passent les types valeur par référence. Vous pouvez également utiliser le mot clé `ref` pour passer les types référence par référence. Le passage d’un type référence par référence permet à la méthode appelée de remplacer l’objet auquel fait référence le paramètre de référence dans l’appelant. L'emplacement de stockage de l'objet est passé à la méthode comme valeur du paramètre de référence. Si vous modifiez la valeur de l'emplacement de stockage du paramètre (pour pointer vers un nouvel objet), vous modifiez également l'emplacement de stockage auquel fait référence l'appelant. L'exemple suivant passe une instance d'un type référence en tant que paramètre `ref`.
   
@@ -82,7 +81,7 @@ Une valeur de retour de référence est définie à l’aide du mot clé `ref`�
 public ref decimal GetCurrentPrice()
 ```
 
-- Entre le jeton `return` et la variable retournée dans une instruction `return` dans la méthode. Par exemple :
+- Entre le jeton `return` et la variable retournée dans une instruction `return` dans la méthode. Par exemple :
 
 ```csharp
 return ref DecimalArray[0];

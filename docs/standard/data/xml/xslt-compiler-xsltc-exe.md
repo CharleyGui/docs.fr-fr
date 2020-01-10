@@ -3,14 +3,12 @@ title: XSLT Compiler (xsltc.exe)
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 672a5ac8-8305-4d28-ba10-11089c2c0924
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 729e6caa36ed8c2f6e77153f8d8ae356513b0603
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 83d880da65c2fc0730819f0a51c4e8b29deb4c8f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956994"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709723"
 ---
 # <a name="xslt-compiler-xsltcexe"></a>XSLT Compiler (xsltc.exe)
 Le compilateur XSLT (xsltc.exe) compile des feuilles de style XSLT et génère un assembly. La feuille de style compilée peut être passée directement dans la méthode <xref:System.Xml.Xsl.XslCompiledTransform.Load%28System.Type%29?displayProperty=nameWithType>. Vous ne pouvez pas générer d'assemblys signés avec xsltc.exe.  
@@ -34,7 +32,7 @@ xsltc [options] [/class:<name>] <sourceFile> [[/class:<name>] <sourceFile>...]
 |Option|Description|  
 |------------|-----------------|  
 |`/c[lass]:` `name`|Définit le nom de la classe pour la feuille de style suivante. Le nom de la classe peut être un nom qualifié complet.<br /><br /> Le nom de la classe est par défaut celui de la feuille de style. Par exemple, si la feuille de style customers.xsl est compilée, le nom de la classe par défaut est customers.|  
-|`/debug[`+&#124;-`]`|Spécifie s'il faut générer des informations de débogage.<br /><br /> Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier (PDB) de la base de données du programme. Le nom du fichier PDB généré est `assemblyName`.pdb.<br /><br /> Si vous spécifiez `-`, qui est en vigueur si vous ne spécifiez pas `/debug`, aucune information de débogage n'est créée. Un assembly retail est généré. **Remarque :**  La compilation en mode débogage peut affecter considérablement les performances de XSLT.|  
+|`/debug[`+&#124;-`]`|Spécifie s'il faut générer des informations de débogage.<br /><br /> Si vous spécifiez `+` ou `/debug`, le compilateur génère des informations de débogage et les place dans un fichier (PDB) de la base de données du programme. Le nom du fichier PDB généré est `assemblyName`.pdb.<br /><br /> Si vous spécifiez `-`, qui est en vigueur si vous ne spécifiez pas `/debug`, aucune information de débogage n'est créée. Un assembly retail est généré. **Remarque :** la compilation en mode débogage peut affecter considérablement les performances de XSLT.|  
 |`/help`|Affiche la syntaxe et les options de commande de l'outil.|  
 |`/nologo`|Supprime l'affichage du message de copyright du compilateur.|  
 |`/platform:` `string`|Spécifie les plateformes sur lesquelles l'assembly peut s'exécuter. Les valeurs de plateforme valides sont décrites ci-dessous :<br /><br /> `x86` compile votre assembly pour qu'il soit exécuté par le CLR 32 bits x86.<br /><br /> `x64` compile votre assembly pour qu'il soit exécuté par le CLR 64 bits sur un ordinateur qui prend en charge le jeu d'instructions AMD64 ou EM64T.<br /><br /> Itanium compile votre assembly pour que celui-ci soit exécuté par le CLR 64 bits sur un ordinateur doté d’un processeur Itanium.<br /><br /> `anycpu` compile votre assembly pour qu'il s'exécute sur n'importe quelle plateforme. Il s'agit de la valeur par défaut.|  

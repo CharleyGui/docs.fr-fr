@@ -1,18 +1,16 @@
 ---
-title: Modification de données XML à l’aide de XPathNavigator
+title: Modification de données XML à l'aide de XPathNavigator
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: b1f91616-3115-4264-9821-c66589d11d11
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ef68511e425e047fa853e47bd4d463d9662c740c
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 3b9225f1efcca0f4874a98f2b83d1964aacef735
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54495670"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75710958"
 ---
-# <a name="editing-xml-data-using-xpathnavigator"></a>Modification de données XML à l’aide de XPathNavigator
+# <a name="editing-xml-data-using-xpathnavigator"></a>Modification de données XML à l'aide de XPathNavigator
 La classe <xref:System.Xml.XPath.XPathNavigator> fournit des méthodes permettant d'insérer, de modifier et de supprimer des nœuds et des valeurs d'un document XML contenu dans un objet <xref:System.Xml.XmlDocument>. Pour pouvoir utiliser ces méthodes afin d'insérer, de modifier et de supprimer des nœuds et des valeurs, vous devez pouvoir modifier l'objet <xref:System.Xml.XPath.XPathNavigator>, ce qui signifie que sa propriété <xref:System.Xml.XPath.XPathNavigator.CanEdit%2A> doit être définie sur true.  
   
 ## <a name="in-this-section"></a>Dans cette section  

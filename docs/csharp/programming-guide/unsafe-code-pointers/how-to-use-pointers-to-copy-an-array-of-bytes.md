@@ -1,17 +1,16 @@
 ---
 title: Guide pratique pour utiliser des pointeurs pour copier un tableau d' C# octets-Guide de programmation
-ms.custom: seodec18
 ms.date: 04/20/2018
 helpviewer_keywords:
 - byte arrays [C#]
 - arrays [C#], byte
 - pointers [C#], to copy bytes
-ms.openlocfilehash: 2673b5a7b87e90618c3a8e579e34e7c7e80efa81
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
-ms.translationtype: HT
+ms.openlocfilehash: 4929699c2d1e07b16d4694cff79f9b1394b1de38
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75635000"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75698454"
 ---
 # <a name="how-to-use-pointers-to-copy-an-array-of-bytes-c-programming-guide"></a>Comment utiliser des pointeurs pour copier un tableau d’octets (C# Guide de programmation)
 

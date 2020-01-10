@@ -7,18 +7,18 @@ helpviewer_keywords:
 - RelativeSource markup extensions [WPF]
 - XAML [WPF], RelativeSource markup extension
 ms.assetid: 26be4721-49b5-4717-a92e-7d54ad0d3a81
-ms.openlocfilehash: 28f3aa500014b768bd07723511613a42df8689aa
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 15fdc9d093bb3efb4ea4cef5d4cdfa8474042f12
+ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458775"
+ms.lasthandoff: 12/31/2019
+ms.locfileid: "75559744"
 ---
 # <a name="relativesource-markupextension"></a>RelativeSource, extension de balisage
 
 Spécifie les propriétés d’une source de liaison <xref:System.Windows.Data.RelativeSource>, à utiliser dans une [extension de balisage de liaison](binding-markup-extension.md), ou lors de la définition de la propriété <xref:System.Windows.Data.Binding.RelativeSource%2A> d’un élément <xref:System.Windows.Data.Binding> établi en XAML.
 
-## <a name="xaml-attribute-usage"></a>Utilisation d'attributs XAML
+## <a name="xaml-attribute-usage"></a>Utilisation des attributs XAML
 
 ```xml
 <Binding RelativeSource="{RelativeSource modeEnumValue}" .../>
@@ -30,7 +30,7 @@ Spécifie les propriétés d’une source de liaison <xref:System.Windows.Data.R
 <object property="{Binding RelativeSource={RelativeSource modeEnumValue} ...}" .../>
 ```
 
-## <a name="xaml-object-element-usage"></a>Utilisation d'éléments objet XAML
+## <a name="xaml-object-element-usage"></a>Utilisation des éléments objets XAML
 
 ```xml
 <Binding>
@@ -40,7 +40,7 @@ Spécifie les propriétés d’une source de liaison <xref:System.Windows.Data.R
 </Binding>
 ```
 
-ou
+\- ou -
 
 ```xml
 <Binding>
@@ -58,7 +58,7 @@ ou
 
 |||
 |-|-|
-|`modeEnumValue`|Une des valeurs suivantes :<br /><br /> -Le jeton de chaîne `Self`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.Self>.<br />-Le jeton de chaîne `TemplatedParent`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>.<br />-Le jeton de chaîne `PreviousData`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.PreviousData>.<br />-Voir ci-dessous pour plus d’informations sur le mode de `FindAncestor`.|
+|`modeEnumValue`|Une des causes suivantes :<br /><br /> -Le jeton de chaîne `Self`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.Self>.<br />-Le jeton de chaîne `TemplatedParent`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.TemplatedParent>.<br />-Le jeton de chaîne `PreviousData`; correspond à un <xref:System.Windows.Data.RelativeSource> tel qu’il a été créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie sur <xref:System.Windows.Data.RelativeSourceMode.PreviousData>.<br />-Voir ci-dessous pour plus d’informations sur le mode de `FindAncestor`.|
 |`FindAncestor`|Le jeton de chaîne `FindAncestor`. L'utilisation de ce jeton accède à un mode dans lequel un `RelativeSource` spécifie un type d'ancêtre et, en option, un niveau d'ancêtre. Ce correspond à un <xref:System.Windows.Data.RelativeSource> comme créé avec sa propriété <xref:System.Windows.Data.RelativeSource.Mode%2A> définie à <xref:System.Windows.Data.RelativeSourceMode.FindAncestor>.|
 |`typeName`|Nécessaire pour le mode `FindAncestor`. Le nom d'un type, qui remplit la propriété <xref:System.Windows.Data.RelativeSource.AncestorType%2A>.|
 |`intLevel`|Facultatif pour le mode `FindAncestor`. Un niveau d'ancêtre (évalué vers la direction du parent dans l'arborescence logique).|
@@ -69,13 +69,13 @@ ou
 
 `{RelativeSource FindAncestor}` est principalement utilisé dans les modèles de contrôle ou les compositions d’interface utilisateur autonomes prévisibles, pour les cas où un contrôle est toujours supposé être dans une arborescence d’éléments visuels d’un certain type d’ancêtre. Par exemple, les éléments d'un contrôle d'éléments peuvent utiliser des utilisations de `FindAncestor` pour les lier aux propriétés de leur ancêtre parent du contrôle d'éléments. Ou les éléments qui font partie de la composition de contrôle dans un modèle peuvent utiliser des liaisons de `FindAncestor` aux éléments parents dans cette même structure de composition.
 
-Dans la syntaxe d'élément objet du mode `FindAncestor` indiqué dans les sections de syntaxe XAML, la deuxième syntaxe d'élément objet est utilisée spécifiquement pour le mode `FindAncestor`. Le mode `FindAncestor` requiert une valeur <xref:System.Windows.Data.RelativeSource.AncestorType%2A>. Vous devez définir <xref:System.Windows.Data.RelativeSource.AncestorType%2A> en tant qu’attribut à l’aide d’une référence d' [extension de balisage x :type](../../xaml-services/x-type-markup-extension.md) au type d’ancêtre à rechercher. La valeur <xref:System.Windows.Data.RelativeSource.AncestorType%2A> est utilisée lorsque la demande de liaison est traitée lors de l'exécution.
+Dans la syntaxe d'élément objet du mode `FindAncestor` indiqué dans les sections de syntaxe XAML, la deuxième syntaxe d'élément objet est utilisée spécifiquement pour le mode `FindAncestor`. Le mode `FindAncestor` requiert une valeur <xref:System.Windows.Data.RelativeSource.AncestorType%2A>. Vous devez définir <xref:System.Windows.Data.RelativeSource.AncestorType%2A> en tant qu’attribut à l’aide d’une référence d' [extension de balisage x :type](../../../desktop-wpf/xaml-services/xtype-markup-extension.md) au type d’ancêtre à rechercher. La valeur <xref:System.Windows.Data.RelativeSource.AncestorType%2A> est utilisée lorsque la demande de liaison est traitée lors de l'exécution.
 
 Pour le mode `FindAncestor`, la propriété <xref:System.Windows.Data.RelativeSource.AncestorLevel%2A> facultative peut contribuer à désambiguïser la recherche d'ancêtre dans les cas où il existe peut-être plusieurs ancêtres de ce type présents dans l'arborescence d'éléments.
 
 Pour plus d'informations sur l'utilisation du mode `FindAncestor`, consultez <xref:System.Windows.Data.RelativeSource>.
 
-`{RelativeSource Self}` est utile dans les scénarios où une propriété d’une instance doit dépendre de la valeur d’une autre propriété de la même instance, et qu’aucune relation de propriété de dépendance générale (telle que la contrainte) n’existe déjà entre ces deux propriétés. Bien qu’il soit rare que deux propriétés existent sur un objet de telle sorte que les valeurs soient littéralement identiques (et sont de type identique), vous pouvez également appliquer un paramètre `Converter` à une liaison qui a `{RelativeSource Self}`et utiliser le convertisseur pour effectuer une conversion entre la source et la cible modes. Un autre scénario pour `{RelativeSource Self}` fait partie d’une <xref:System.Windows.MultiDataTrigger>.
+`{RelativeSource Self}` est utile dans les scénarios où une propriété d’une instance doit dépendre de la valeur d’une autre propriété de la même instance, et qu’aucune relation de propriété de dépendance générale (telle que la contrainte) n’existe déjà entre ces deux propriétés. Bien qu’il soit rare que deux propriétés existent sur un objet de telle sorte que les valeurs soient littéralement identiques (et sont de type identique), vous pouvez également appliquer un paramètre `Converter` à une liaison qui a `{RelativeSource Self}`et utiliser le convertisseur pour effectuer une conversion entre des types source et cible. Un autre scénario pour `{RelativeSource Self}` fait partie d’une <xref:System.Windows.MultiDataTrigger>.
 
 Par exemple, le code XAML suivant définit un élément <xref:System.Windows.Shapes.Rectangle> tels que tout ce que la valeur est entrée pour <xref:System.Windows.FrameworkElement.Width%2A>, <xref:System.Windows.Shapes.Rectangle> est toujours angle droit : `<Rectangle Width="200" Height="{Binding RelativeSource={RelativeSource Self}, Path=Width}" .../>`
 
@@ -117,4 +117,4 @@ Dans l’implémentation du processeur XAML [!INCLUDE[TLA2#tla_winclient](../../
 - [Extensions de balisage et XAML WPF](markup-extensions-and-wpf-xaml.md)
 - [Vue d’ensemble de la liaison de données](../../../desktop-wpf/data/data-binding-overview.md)
 - [Vue d'ensemble des déclarations de liaison](../data/binding-declarations-overview.md)
-- [x:Type, extension de balisage](../../xaml-services/x-type-markup-extension.md)
+- [x:Type, extension de balisage](../../../desktop-wpf/xaml-services/xtype-markup-extension.md)

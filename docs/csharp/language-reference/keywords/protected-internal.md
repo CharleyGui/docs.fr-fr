@@ -1,14 +1,13 @@
 ---
 title: protected internal - Référence C#
-ms.custom: seodec18
 ms.date: 11/15/2017
 author: sputier
-ms.openlocfilehash: 6e5a4c6e63c2c05df54df6bed542eab3f43f9272
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 877df74b51fb859043171619f5687ecddb8409d1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422584"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713194"
 ---
 # <a name="protected-internal-c-reference"></a>protected internal (Référence C#)
 
@@ -68,7 +67,7 @@ Les membres de struct ne peuvent pas être `protected internal`, car le struct n
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)

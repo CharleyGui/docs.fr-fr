@@ -1,6 +1,5 @@
 ---
 title: orderby, clause - Référence C#
-ms.custom: seodec18
 ms.date: 07/20/2015
 f1_keywords:
 - orderby
@@ -9,12 +8,12 @@ helpviewer_keywords:
 - orderby clause [C#]
 - orderby keyword [C#]
 ms.assetid: 21f87f48-d69d-4e95-9a52-6fec47b37e1f
-ms.openlocfilehash: 09a745fe3da3a5acb71972b9cf56391774c7016a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: d88b2b40f63f0616cfd54e8abb62f1bc2183f776
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422641"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713298"
 ---
 # <a name="orderby-clause-c-reference"></a>orderby, clause (Référence C#)
 
@@ -38,8 +37,8 @@ Au moment de la compilation, la clause `orderby` est traduite en appel à la mé
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Mots clés de requête (LINQ)](query-keywords.md)
 - [LINQ (Language Integrated Query)](../../linq/index.md)
 - [group, clause](group-clause.md)
-- [Mise en route de LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)
+- [Bien démarrer avec LINQ en C#](/dotnet/csharp/programming-guide/concepts/linq/)

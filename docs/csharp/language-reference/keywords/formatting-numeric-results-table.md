@@ -1,6 +1,5 @@
 ---
 title: Tableau des formats des résultats numériques - Référence C#
-ms.custom: seodec18
 description: En savoir plus sur les chaînes de format numériques standard C#
 ms.date: 09/20/2018
 helpviewer_keywords:
@@ -8,12 +7,12 @@ helpviewer_keywords:
 - numeric formatting [C#]
 - String.Format method
 ms.assetid: 120ba537-4448-4c62-8676-7a8fdd98f496
-ms.openlocfilehash: 853faf481e546f2980d799d5daf50a14c608c052
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
-ms.translationtype: HT
+ms.openlocfilehash: eb93f0a4f3c66e9f7b295366a77b9fb099fc3a1e
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345470"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75713506"
 ---
 # <a name="formatting-numeric-results-table-c-reference"></a>Tableau des formats des résultats numériques (référence C#)
 

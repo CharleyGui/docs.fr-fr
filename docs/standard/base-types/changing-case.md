@@ -14,18 +14,17 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.custom: seodec18
-ms.openlocfilehash: a8eb45e45a905f0b366642050f4845460e14aaf8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 91fc0022eae3f036e0ec046ea12446871926ab27
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132906"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711465"
 ---
 # <a name="changing-case-in-net"></a>Changement de casse dans .NET
 Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne pouvez jamais être sûr de la casse qu'il utilisera pour entrer les données. Souvent, vous voulez que les chaînes aient une casse cohérente, en particulier si vous les affichez dans l'interface utilisateur. Le tableau suivant décrit trois méthodes de changement de la casse : Les deux premières méthodes fournissent une surcharge qui accepte une culture.  
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utiliser|  
 |-----------------|---------|  
 |<xref:System.String.ToUpper%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en majuscules.|  
 |<xref:System.String.ToLower%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en minuscules.|  
