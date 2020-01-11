@@ -5,16 +5,16 @@ helpviewer_keywords:
 - Astoria
 - WCF Data Services, getting started
 ms.assetid: 73d2bec3-7c92-4110-b905-11bb0462357a
-ms.openlocfilehash: 1ce152b84f17a35982a75f54b5418623ba39210f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 890f0ba25d8320008228c73660753b9899269fd7
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975231"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900998"
 ---
 # <a name="wcf-data-services-45"></a>WCF Data Services 4.5
 
-WCF Data Services (autrefois appelé « ADO.NET Data Services ») est un composant de la .NET Framework qui vous permet de créer des services qui utilisent le Open Data Protocol (OData) pour exposer et consommer des données sur le Web ou l’intranet à l’aide de la sémantique de [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919). OData expose les données sous forme de ressources adressables par des URI. Les données sont accessibles et modifiables à l'aide des verbes HTTP standard GET, PUT, POST et DELETE. OData utilise les conventions de relation d’entité de la [Entity Data Model](../adonet/entity-data-model.md) pour exposer des ressources sous la forme d’ensembles d’entités liés par des associations.
+WCF Data Services (autrefois appelé « ADO.NET Data Services ») est un composant de la .NET Framework qui vous permet de créer des services qui utilisent le Open Data Protocol (OData) pour exposer et consommer des données sur le Web ou l’intranet à l’aide de la sémantique de [Representational State Transfer (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm). OData expose des données en tant que ressources qui sont adressables à l'aide d'URI. Les données sont accessibles et modifiées en utilisant des mots HTTP standard (GET, PUT, POST et DELETE). OData utilise les conventions de relation d’entité de la [Entity Data Model](../adonet/entity-data-model.md) pour exposer des ressources sous la forme d’ensembles d’entités liés par des associations.
 
 WCF Data Services utilise le protocole OData pour l’adressage et la mise à jour des ressources. De cette façon, vous pouvez accéder à ces services à partir de n’importe quel client qui prend en charge OData. OData vous permet de demander et d’écrire des données dans les ressources à l’aide de formats de transfert connus : Atom, un ensemble de normes pour l’échange et la mise à jour de données au format XML, et le format JSON (JavaScript Object Notation), un format d’échange de données textuel utilisé largement dans AJAX applications.
 
@@ -32,10 +32,6 @@ Je veux rentrer dans le vif du sujet...
 
 - [Bien démarrer](getting-started-with-wcf-data-services.md)
 
-- [Démarrage rapide avec Silverlight](https://go.microsoft.com/fwlink/?LinkID=192782)
-
-- [Démarrage rapide avec Silverlight pour le développement de Windows Phone](https://go.microsoft.com/fwlink/?LinkID=214535)
-
 Montrez-moi un peu de code...
 
 - [Démarrage rapide](quickstart-wcf-data-services.md)
@@ -46,29 +42,14 @@ Montrez-moi un peu de code...
 
 Je souhaite en savoir plus sur OData...
 
-- [Livre blanc : présentation d’OData](https://go.microsoft.com/fwlink/?LinkId=220867)
-
-- [Site web Open Data Protocol](https://go.microsoft.com/fwlink/?LinkID=184554)
-
-- [Kit de développement logiciel (SDK) OData](https://go.microsoft.com/fwlink/?LinkID=185248)
-
-- [OData : forum aux questions](https://go.microsoft.com/fwlink/?LinkId=185867)
-
-Je souhaite regarder des vidéos...
-
-- [Guide du débutant sur WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220864)
-
-- [Vidéos du développeur WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220861)
-
-- [OData : site web développeurs](https://go.microsoft.com/fwlink/?LinkId=185866)
+- [Livre blanc : présentation d’OData](https://download.microsoft.com/download/E/5/A/E5A59052-EE48-4D64-897B-5F7C608165B8/IntroducingOData.pdf)
+- [Site web Open Data Protocol](https://www.odata.org/)
+- [Kit de développement logiciel (SDK) OData](https://www.odata.org/ecosystem/)
 
 Je souhaite voir des exemples de bout en bout...
 
-- [Exemples de documentation WCF Data Services dans la galerie d’exemples MSDN](https://go.microsoft.com/fwlink/?LinkID=220865)
-
-- [Autres exemples WCF Data Services dans la galerie d’exemples MSDN](https://go.microsoft.com/fwlink/?LinkId=220866)
-
-- [Kit de développement logiciel (SDK) OData](https://go.microsoft.com/fwlink/?LinkID=185248)
+- [Démarrage rapide WCF Data Services](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/WCF%20Data%20Services%20Quickstart%20(OData%20Service%20and%20WPF%20Client))
+- [OData SDK-exemple de code](https://www.odata.org/ecosystem/#sdk)
 
 Qu'en est-il de l'intégration avec Visual Studio ?
 
@@ -82,17 +63,7 @@ Comment puis-je l'utiliser ?
 
 - [Vue d’ensemble](wcf-data-services-overview.md)
 
-- [Livre blanc : présentation d’OData](https://go.microsoft.com/fwlink/?LinkId=220867)
-
 - [Scénarios d’application](application-scenarios-wcf-data-services.md)
-
-Je souhaite utiliser Silverlight...
-
-- [Démarrage rapide avec Silverlight](https://go.microsoft.com/fwlink/?LinkID=192782)
-
-- [WCF Data Services (Silverlight)](https://go.microsoft.com/fwlink/?LinkID=143149)
-
-- [Prise en main de Silverlight](https://go.microsoft.com/fwlink/?LinkId=148366)
 
 Je souhaite utiliser LINQ...
 
@@ -104,13 +75,9 @@ Je souhaite utiliser LINQ...
 
 J’ai encore besoin d’informations supplémentaires...
 
-- [Blog de l’équipe WCF Data Services](https://go.microsoft.com/fwlink/?LinkID=150511)
+- [Blog de l’équipe WCF Data Services](https://docs.microsoft.com/archive/blogs/astoriateam/)
 
 - [Ressources](wcf-data-services-resources.md)
-
-- [Centre de développement WCF Data Services](https://go.microsoft.com/fwlink/?LinkId=220868)
-
-- [Site web Open Data Protocol](https://go.microsoft.com/fwlink/?LinkID=184554)
 
 ## <a name="in-this-section"></a>Dans cette section
 
@@ -136,4 +103,4 @@ Décrit comment utiliser des bibliothèques clientes pour consommer des flux ODa
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Representational State Transfer (REST)](https://go.microsoft.com/fwlink/?LinkId=113919)
+- [Representational State Transfer (REST)](https://www.ics.uci.edu/~fielding/pubs/dissertation/rest_arch_style.htm)

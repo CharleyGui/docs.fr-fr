@@ -2,12 +2,12 @@
 title: Limitations de dapper
 ms.date: 12/13/2019
 description: Décrit certaines des limitations que vous pouvez rencontrer lors de l’utilisation de dapper.
-ms.openlocfilehash: 90c7fb24f068d663081390bdba9b1b222b4be56e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 396507f25f591a9ab5c3bb07c0af6fd8d175e4ea
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75447278"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901209"
 ---
 # <a name="dapper-limitations"></a>Limitations de dapper
 
@@ -15,7 +15,7 @@ Il existe quelques limitations que vous devez connaître lors de l’utilisation
 
 ## <a name="parameters"></a>Parameters
 
-Les noms de paramètres SQLite sont sensibles à la casse. Assurez-vous que les noms de paramètres utilisés dans SQL correspondent à la casse des propriétés de l’objet anonyme. Le problème [#18861](https://github.com/aspnet/EntityFrameworkCore/issues/18861) améliorer cette expérience.
+Les noms de paramètres SQLite sont sensibles à la casse. Assurez-vous que les noms de paramètres utilisés dans SQL correspondent à la casse des propriétés de l’objet anonyme. Le problème [#18861](https://github.com/dotnet/efcore/issues/18861) améliorer cette expérience.
 
 Dapper s’attend également à ce que les paramètres utilisent le préfixe `@`. Les autres préfixes ne fonctionneront pas.
 

@@ -1,24 +1,24 @@
 ---
-ms.openlocfilehash: 2945465bb6a3a362dc640641056712dffd73d559
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: 60ebcd9fc9ca18c33d31b82ba5020426d22a7d5a
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394262"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901640"
 ---
 ### <a name="authentication-httpcontextauthentication-property-removed"></a>Authentification : propriété HttpContext. Authentication supprimée
 
-La propriété déconseillée `Authentication` sur `HttpContext` a été supprimée.
+La propriété `Authentication` déconseillée sur `HttpContext` a été supprimée.
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description des modifications
 
-Dans le cadre de [ASPNET/AspNetCore # 6504](https://github.com/aspnet/AspNetCore/pull/6504), la propriété déconseillée `Authentication` sur `HttpContext` a été supprimée. La propriété `Authentication` est dépréciée depuis 2,0. Un [Guide de migration](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) a été publié pour migrer le code à l’aide de cette propriété déconseillée vers les nouvelles API de remplacement. Les autres classes/API inutilisées associées à l’ancienne pile d’authentification ASP.NET Core 1. x ont été supprimées dans la validation [aspnet/AspNetCore@d7a7c65](https://github.com/aspnet/AspNetCore/commit/d7a7c65).
+Dans le cadre de [dotnet/aspnetcore # 6504](https://github.com/dotnet/aspnetcore/pull/6504), la propriété déconseillée `Authentication` sur `HttpContext` a été supprimée. La propriété `Authentication` est dépréciée depuis 2,0. Un [Guide de migration](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions) a été publié pour migrer le code à l’aide de cette propriété déconseillée vers les nouvelles API de remplacement. Les autres classes/API inutilisées associées à l’ancienne pile d’authentification ASP.NET Core 1. x ont été supprimées dans la [dotnet/aspnetcore@d7a7c65](https://github.com/dotnet/aspnetcore/commit/d7a7c65)de validation.
 
-Pour plus d’informations, consultez [ASPNET/AspNetCore # 6533](https://github.com/aspnet/AspNetCore/issues/6533).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 6533](https://github.com/dotnet/aspnetcore/issues/6533).
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="reason-for-change"></a>Motif de modification
 
@@ -28,7 +28,7 @@ Les API ASP.NET Core 1,0 ont été remplacées par des méthodes d’extension d
 
 Consultez le [Guide de migration](/aspnet/core/migration/1x-to-2x/identity-2x?view=aspnetcore-2.2#use-httpcontext-authentication-extensions).
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 

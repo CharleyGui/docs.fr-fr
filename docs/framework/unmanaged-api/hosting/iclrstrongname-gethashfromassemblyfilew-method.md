@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5d0b44a2-5a14-44a2-9a0e-e8682fd4e106
 topic_type:
 - apiref
-ms.openlocfilehash: 43a5cd57a8eeaba70f1bb1ffb9cab5bb1a067914
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d98181e0d43206bfbf96182d7e4acf33da486348
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130950"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901174"
 ---
 # <a name="iclrstrongnamegethashfromassemblyfilew-method"></a>Méthode ICLRStrongName::GetHashFromAssemblyFileW
 Génère un hachage sur le contenu du fichier spécifié par une chaîne Unicode.  
@@ -37,7 +37,7 @@ HRESULT GetHashFromAssemblyFileW (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `wszFilePath`  
  dans Chemin d’accès au fichier à hacher. Ce paramètre doit être une chaîne Unicode.  
   
@@ -54,9 +54,9 @@ HRESULT GetHashFromAssemblyFileW (
  à Taille retournée, en octets, de `pbHash`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  

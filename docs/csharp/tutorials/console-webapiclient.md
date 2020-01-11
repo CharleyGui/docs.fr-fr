@@ -1,14 +1,14 @@
 ---
 title: Crée un client REST à l’aide de .NET Core
 description: Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#.
-ms.date: 03/06/2017
+ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 001a9cbaae1cdb57b6451bc42ce326864f8dcf7b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 776d0ca65944e943c1c5114f95801c20d31a2b74
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70850978"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900735"
 ---
 # <a name="rest-client"></a>Client REST
 
@@ -29,39 +29,33 @@ Il existe un grand nombre de fonctionnalités dans ce didacticiel. Nous allons l
 
 Si vous préférez utiliser l’[exemple final](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pour cette rubrique, vous pouvez le télécharger. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Configuration requise
 
 Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker.
 Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), qui est un éditeur de plateforme open source, multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
 ## <a name="create-the-application"></a>Création de l’application
 
-La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Saisissez la commande `dotnet new console` à l’invite. Elle crée les fichiers de démarrage d’une application « Hello World » de base. Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place ; ainsi, la première exécution télécharge le .NET Core Framework, installe un certificat de développement et exécute le gestionnaire de package NuGet pour restaurer les dépendances manquantes.
+La première étape consiste à créer une nouvelle application. Ouvrez une invite de commandes et créez un nouveau répertoire pour votre application. Réglez-le comme répertoire actuel. Entrez la commande suivante dans une fenêtre de console :
+
+```console
+dotnet new console --name WebApiClient
+```
+
+Elle crée les fichiers de démarrage d’une application « Hello World » de base. Le nom du projet est « WebApiClient ». Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place ; ainsi, la première exécution télécharge le .NET Core Framework, installe un certificat de développement et exécute le gestionnaire de package NuGet pour restaurer les dépendances manquantes.
 
 Avant de commencer à apporter des modifications, tapez `dotnet run` ([voir la remarque](#dotnet-restore-note)) à l’invite de commandes pour exécuter votre application. `dotnet run` effectue automatiquement `dotnet restore` s’il manque des dépendances dans votre environnement. Il effectue également `dotnet build` si votre application doit être regénérée.
 Après la configuration initiale, vous devez uniquement exécuter `dotnet restore` ou `dotnet build` quand cela est pertinent pour votre projet.
 
 ## <a name="adding-new-dependencies"></a>Ajout de nouvelles dépendances
 
-L’un des objectifs de conception clés de .NET Core consiste à réduire la taille de l’installation .NET. Si une application a besoin de bibliothèques supplémentaires pour certaines de ses fonctionnalités, vous ajoutez ces dépendances dans votre fichier projet (\*.csproj) en C#. Dans notre exemple, vous devez ajouter le package `System.Runtime.Serialization.Json` pour que votre application puisse traiter les réponses JSON.
+L’un des objectifs de conception clés de .NET Core consiste à réduire la taille de l’installation .NET. Si une application a besoin de bibliothèques supplémentaires pour certaines de ses fonctionnalités, vous ajoutez ces dépendances dans votre fichier projet (\*.csproj) en C#. Pour notre exemple, vous devez ajouter le package `System.Runtime.Serialization.Json`, afin que votre application puisse traiter les réponses JSON.
 
-Ouvrez votre fichier projet `csproj`. La première ligne du fichier devrait s’afficher comme :
+Vous aurez besoin du package `System.Runtime.Serialization.Json` pour cette application. Ajoutez-le à votre projet en exécutant la commande [CLI .net](../../core/tools/dotnet-add-package.md) suivante :
 
-```xml
-<Project Sdk="Microsoft.NET.Sdk">
+```console
+dotnet add package System.Text.Json
 ```
-
-Ajoutez ce qui suit immédiatement après cette ligne :
-
-```xml
-   <ItemGroup>
-      <PackageReference Include="System.Runtime.Serialization.Json" Version="4.3.0" />
-   </ItemGroup>
-```
-
-La plupart des éditeurs de code fournissent la saisie semi-automatique pour différentes versions de ces bibliothèques. Vous souhaiterez généralement utiliser la dernière version d’un package que vous ajoutez. Toutefois, il est important de vous assurer que les versions de tous les packages correspondent et qu’ils correspondent également la version du framework d’application .NET Core.
-
-Une fois que vous avez apporté ces modifications, exécutez `dotnet restore` ([voir la remarque](#dotnet-restore-note)) afin que le package soit installé sur votre système.
 
 ## <a name="making-web-requests"></a>Effectuer des requêtes web
 
@@ -87,12 +81,12 @@ Si vous générez votre projet à ce stade, vous obtiendrez un avertissement gé
 
 Ensuite, renommez l’espace de noms défini dans l’instruction `namespace` de sa valeur par défaut de `ConsoleApp` en `WebAPIClient`. Plus tard, nous allons définir une classe `repo` dans cet espace de noms.
 
-Ensuite, mettez à jour la méthode `Main` pour appeler cette méthode. La méthode `ProcessRepositories` retourne une tâche, et vous ne devez pas quitter le programme avant la fin de cette tâche. Par conséquent, vous devez utiliser la méthode `Wait` pour bloquer et attendre la fin de la tâche :
+Ensuite, mettez à jour la méthode `Main` pour appeler cette méthode. La méthode `ProcessRepositories` retourne une tâche, et vous ne devez pas quitter le programme avant la fin de cette tâche. Par conséquent, vous devez modifier la signature de `Main`. Ajoutez le modificateur `async`, puis modifiez le type de retour en `Task`. Ensuite, dans le corps de la méthode, ajoutez un appel à `ProcessRepositories`. Ajoutez le mot clé `await` pour cet appel de méthode :
 
 ```csharp
-static void Main(string[] args)
+static Task Main(string[] args)
 {
-    ProcessRepositories().Wait();
+    await ProcessRepositories();
 }
 ```
 
@@ -107,7 +101,7 @@ namespace WebAPIClient
     {
         private static readonly HttpClient client = new HttpClient();
 
-        static void Main(string[] args)
+        static Task Main(string[] args)
         {
             //...
         }
@@ -151,48 +145,41 @@ Générez l'application et exécutez-la. L’avertissement de génération a dis
 
 À ce stade, vous avez écrit le code pour récupérer une réponse à partir d’un serveur web et afficher le texte contenu dans cette réponse. Ensuite, nous allons convertir cette réponse JSON en objets C#.
 
-Le sérialiseur JSON convertit des données JSON en objets C#. Votre première tâche consiste à définir un type de classe C# pour contenir les informations à utiliser à partir de cette réponse. Nous allons prendre notre temps pour étudier cela, commençons donc par un type C# simple qui contient le nom du dépôt :
+La classe <xref:System.Text.Json.JsonSerializer?displayProperty=nameWithType> sérialise les objets au format JSON et désérialise JSON en objets. Commencez par définir une classe pour représenter l' `repo` objet JSON retourné à partir de l’API GitHub :
 
 ```csharp
 using System;
 
 namespace WebAPIClient
 {
-    public class repo
+    public class Repository
     {
-        public string name;
+        public string name { get; set; };
     }
 }
 ```
 
-Placez le code ci-dessus dans un fichier nommé « repo.cs ». Cette version de la classe représente le chemin d’accès le plus simple pour traiter les données JSON. Le nom de classe et le nom du membre correspondent aux noms utilisés dans le paquet JSON, au lieu des conventions C# suivantes. Vous allez corriger cela en fournissant des attributs de configuration ultérieurement. Cette classe décrit une autre fonctionnalité importante de la sérialisation et de la désérialisation JSON : tous les champs du paquet JSON ne font pas partie de cette classe.
+Placez le code ci-dessus dans un fichier nommé « repo.cs ». Cette version de la classe représente le chemin d’accès le plus simple pour traiter les données JSON. Le nom de classe et le nom du membre correspondent aux noms utilisés dans le paquet JSON, au lieu des conventions C# suivantes. Vous allez corriger cela en fournissant des attributs de configuration ultérieurement. Cette classe décrit une autre fonctionnalité importante de la sérialisation et de désérialisation JSON : tous les champs dans le paquet JSON font partie de cette classe.
 Le sérialiseur JSON ignore les informations qui ne sont pas incluses dans le type de classe utilisé.
 Cette fonctionnalité facilite la création de types qui fonctionnent avec uniquement un sous-ensemble des champs dans le paquet JSON.
 
-Maintenant que vous avez créé le type, nous allons le désérialiser. Vous devez créer un objet <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer>. Cet objet doit connaître le type CLR attendu pour le paquet JSON qu’il récupère. Le paquet de GitHub contient une séquence de dépôts, c’est pourquoi `List<repo>` est du bon type. Ajoutez la ligne suivante à votre méthode `ProcessRepositories` :
+Maintenant que vous avez créé le type, nous allons le désérialiser. 
 
-```csharp
-var serializer = new DataContractJsonSerializer(typeof(List<repo>));
-```
-
-Vous utilisez deux nouveaux espaces de noms, vous devez donc les ajouter aussi :
-
-```csharp
-using System.Collections.Generic;
-using System.Runtime.Serialization.Json;
-```
-
-Ensuite, vous utiliserez le sérialiseur pour convertir le JSON en objets C#. Remplacez l’appel à <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> dans votre méthode `ProcessRepositories` avec les deux lignes suivantes :
+Ensuite, vous utiliserez le sérialiseur pour convertir le JSON en objets C#. Remplacez l’appel à <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)> dans votre méthode `ProcessRepositories` par les trois lignes suivantes :
 
 ```csharp
 var streamTask = client.GetStreamAsync("https://api.github.com/orgs/dotnet/repos");
-var repositories = serializer.ReadObject(await streamTask) as List<repo>;
+var repositories = await JsonSerializer.DeserializeAsync<List<Repository>>(await streamTask);
+return repositories;
 ```
 
-Notez que vous utilisez maintenant <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> au lieu de <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>. Le sérialiseur utilise un flux plutôt qu’une chaîne comme source. Nous allons expliquer quelques fonctionnalités du langage C# qui sont utilisées dans la deuxième ligne ci-dessus. L’argument <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> est une expression `await`. Les expressions await peuvent apparaître quasiment n’importe où dans votre code, bien que jusqu'à présent, vous les avez uniquement vues dans le cadre d’une instruction d’assignation.
+Si vous utilisez un nouvel espace de noms, vous devez également l’ajouter en haut du fichier :
 
-Deuxièmement, l’opérateur `as` convertit le type au moment de la compilation `object` en `List<repo>`.
-La déclaration de <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> déclare qu’un objet de type <xref:System.Object?displayProperty=nameWithType> est retourné. <xref:System.Runtime.Serialization.Json.DataContractJsonSerializer.ReadObject(System.IO.Stream)> retourne le type que vous avez spécifié une fois que vous l’avez construit (`List<repo>` dans ce didacticiel). Si la conversion échoue, l’opérateur `as` a la valeur `null`, au lieu de lever une exception.
+```csharp
+using System.Text.Json;
+```
+
+Notez que vous utilisez maintenant <xref:System.Net.Http.HttpClient.GetStreamAsync(System.String)> au lieu de <xref:System.Net.Http.HttpClient.GetStringAsync(System.String)>. Le sérialiseur utilise un flux plutôt qu’une chaîne comme source. Nous allons expliquer quelques-unes des fonctionnalités C# du langage qui sont utilisées dans la deuxième ligne de l’extrait de code précédent. Le premier argument de <xref:System.Text.Json.JsonSerializer.DeserializeAsync%60%601(System.IO.Stream,System.Text.Json.JsonSerializerOptions,System.Threading.CancellationToken)?displayProperty=nameWithType> est une expression `await`. (Les deux autres paramètres sont facultatifs et sont omis dans l’extrait de code.) Les expressions await peuvent apparaître presque n’importe où dans votre code, même si vous ne les avez vu que dans le cadre d’une instruction d’assignation. La méthode `Deserialize` est *générique*, ce qui signifie que vous devez fournir des arguments de type pour les types d’objets qui doivent être créés à partir du texte JSON. Dans cet exemple, vous désérialisez vers un `List<Repository>`, qui est un autre objet générique, le <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. La classe `List<>` stocke une collection d’objets. L’argument de type déclare le type des objets stockés dans le `List<>`. Le texte JSON représente une collection d’objets référentiel. l’argument de type est donc `Repository`.
 
 Nous en avons presque terminé avec cette section. Maintenant que vous avez converti le JSON en objets C#, nous allons afficher le nom de chaque dépôt. Remplacez les lignes :
 
@@ -212,44 +199,11 @@ Compilez et exécutez l'application. Cela affichera les noms des espaces de stoc
 
 ## <a name="controlling-serialization"></a>Contrôle de la sérialisation
 
-Avant d’ajouter plus de fonctionnalités, nous allons traiter le type `repo` et lui faire suivre les conventions standard C#. Vous verrez comment procéder en annotant le type `repo` avec des *attributs* qui contrôlent la manière dont fonctionne le sérialiseur JSON. Dans votre cas, vous utiliserez ces attributs pour définir un mappage entre les noms de clé JSON et la classe C# et les noms des membres. Les deux attributs utilisés sont les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute>. Par convention, toutes les classes d’attributs se terminent par le suffixe `Attribute`. Toutefois, il est inutile d’utiliser ce suffixe lorsque vous appliquez un attribut.
-
-Les attributs <xref:System.Runtime.Serialization.DataContractAttribute> et <xref:System.Runtime.Serialization.DataMemberAttribute> se trouvent dans une autre bibliothèque, vous devez donc ajouter cette bibliothèque à votre fichier de projet C# en tant que dépendance. Ajoutez la ligne suivante à la section `<ItemGroup>` de votre fichier projet :
-
-```xml
-<PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.3.0" />
-```
-
-Après avoir enregistré le fichier, exécutez `dotnet restore` ([voir note](#dotnet-restore-note)) pour récupérer ce package.
-
-Ensuite, ouvrez le fichier `repo.cs`. Nous allons modifier le nom pour adopter la casse Pascal, et entièrement épeler le nom `Repository`. Nous souhaitons toujours mapper des nœuds de « repo » JSON sur ce type, vous devez donc ajouter l’attribut <xref:System.Runtime.Serialization.DataContractAttribute> à la déclaration de classe. Vous devez définir la propriété `Name` de l’attribut sur le nom des nœuds JSON qui correspondent à ce type :
+Avant d’ajouter d’autres fonctionnalités, nous allons traiter la propriété `name` à l’aide de l’attribut `[JsonPropertyName]`. Apportez les modifications suivantes à la déclaration du champ `name` dans repo.cs :
 
 ```csharp
-[DataContract(Name="repo")]
-public class Repository
-```
-
-L’attribut <xref:System.Runtime.Serialization.DataContractAttribute> est un membre de l’espace de noms <xref:System.Runtime.Serialization>, vous devez donc l’instruction `using` appropriée au début du fichier :
-
-```csharp
-using System.Runtime.Serialization;
-```
-
-Vous avez modifié le nom de la classe `repo` en `Repository`, de sorte que vous devrez effectuer le même changement de nom dans le fichier Program.cs (certains éditeurs peuvent prendre en charge une refactorisation de changement de nom qui fera automatiquement cette modification :)
-
-```csharp
-var serializer = new DataContractJsonSerializer(typeof(List<Repository>));
-
-// ...
-
-var repositories = serializer.ReadObject(await streamTask) as List<Repository>;
-```
-
-Ensuite, nous allons apporter la même modification avec le champ `name` à l’aide de la classe <xref:System.Runtime.Serialization.DataMemberAttribute>. Apportez les modifications suivantes à la déclaration du champ `name` dans repo.cs :
-
-```csharp
-[DataMember(Name="name")]
-public string Name;
+[JsonPropertyName("name")]
+public string Name { get; set; }
 ```
 
 Cette modification signifie que vous devez modifier le code qui écrit le nom de chaque dépôt dans program.cs :
@@ -258,24 +212,7 @@ Cette modification signifie que vous devez modifier le code qui écrit le nom de
 Console.WriteLine(repo.Name);
 ```
 
-Effectuez un `dotnet build` suivi d’un `dotnet run` pour vous assurer que vous disposez des bons mappages. Vous devriez voir la même sortie que précédemment. Avant de traiter d’autres propriétés à partir du serveur web, apportons une dernière modification à la classe `Repository`. Le membre `Name` est un champ accessible publiquement. Cela n’est pas une bonne pratique pour les langages orientés objet, nous allons donc le changer en propriété. Pour ce que nous cherchons à faire, nous n’avons pas besoin de code spécifique à exécuter lors de l’obtention ou la définition de la propriété, mais la modification en propriété permettra d’apporter ces modifications plus facilement par la suite sans casser le code qui utilise la classe `Repository`.
-
-Supprimez la définition de champ et remplacez-la par une [propriété implémentée automatiquement](../programming-guide/classes-and-structs/auto-implemented-properties.md) :
-
-```csharp
-public string Name { get; set; }
-```
-
-Le compilateur génère le corps des accesseurs `get` et `set`, mais aussi un champ privé pour stocker le nom. Cela est similaire au code suivant que vous pourriez taper manuellement :
-
-```csharp
-public string Name
-{
-    get { return this._name; }
-    set { this._name = value; }
-}
-private string _name;
-```
+Exécutez `dotnet run` pour vérifier que les mappages sont corrects. Vous devriez voir la même sortie que précédemment.
 
 Nous allons apporter une modification de plus avant d’ajouter de nouvelles fonctionnalités. La méthode `ProcessRepositories` peut faire le travail de façon asynchrone et renvoyer une collection des espaces de stockage. Nous allons renvoyer `List<Repository>` à partir de cette méthode et déplacer le code qui écrit les informations dans la méthode `Main`.
 
@@ -296,16 +233,14 @@ Le compilateur génère l’objet `Task<T>` pour la valeur de retour, car vous a
 Ensuite, nous allons modifier la méthode `Main` afin qu’elle capture les résultats et écrive le nom de chaque dépôt dans la console. Votre méthode `Main` se présente maintenant comme suit :
 
 ```csharp
-public static void Main(string[] args)
+public static Task Main(string[] args)
 {
-    var repositories = ProcessRepositories().Result;
+    var repositories = await ProcessRepositories();
 
     foreach (var repo in repositories)
         Console.WriteLine(repo.Name);
 }
 ```
-
-L’accès à la propriété `Result` d’une tâche est bloqué jusqu'à la fin de la tâche. En règle générale, il serait préférable d’utiliser `await` pour attendre l’achèvement de la tâche, comme dans la méthode `ProcessRepositories`, mais cela n’est pas autorisé dans la méthode `Main`.
 
 ## <a name="reading-more-information"></a>Lire plus d'informations
 
@@ -314,16 +249,16 @@ Terminons par le traitement d’un certain nombre de propriétés dans le paquet
 Commençons par ajouter quelques autres types simples à la définition de classe `Repository`. Ajoutez ces propriétés à cette classe :
 
 ```csharp
-[DataMember(Name="description")]
+[JsonPropertyName(Name="description")]
 public string Description { get; set; }
 
-[DataMember(Name="html_url")]
+[JsonPropertyName(Name="html_url")]
 public Uri GitHubHomeUrl { get; set; }
 
-[DataMember(Name="homepage")]
+[JsonPropertyName(Name="homepage")]
 public Uri Homepage { get; set; }
 
-[DataMember(Name="watchers")]
+[JsonPropertyName(Name="watchers")]
 public int Watchers { get; set; }
 ```
 
@@ -349,27 +284,17 @@ Dans la dernière étape, nous allons ajouter les informations de la dernière o
 2016-02-08T21:27:00Z
 ```
 
-Ce format ne suit pas les formats .NET <xref:System.DateTime> standard. Par conséquent, vous devez écrire une méthode de conversion personnalisée. En outre, vous ne souhaiterez probablement pas que la chaîne brute soit exposée aux utilisateurs de la classe `Repository`. Les attributs permettent aussi de contrôler cela. D’abord, définissez une propriété `private` qui contient la représentation sous forme de chaîne de date et d’heure dans votre classe `Repository` :
+Ce format ne suit pas les formats .NET <xref:System.DateTime> standard. Par conséquent, vous devez écrire une méthode de conversion personnalisée. En outre, vous ne souhaiterez probablement pas que la chaîne brute soit exposée aux utilisateurs de la classe `Repository`. Les attributs permettent aussi de contrôler cela. Tout d’abord, définissez une propriété `public` qui contiendra la représentation sous forme de chaîne de la date et de l’heure dans votre classe `Repository` et une propriété `readonly` `LastPush` qui retourne une chaîne mise en forme qui représente la date retournée :
 
 ```csharp
-[DataMember(Name="pushed_at")]
-private string JsonDate { get; set; }
+[JsonPropertyName(Name="pushed_at")]
+public string JsonDate { get; set; }
+
+public DateTime LastPush =>
+    DateTime.ParseExact(JsonDate, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
 ```
 
-L’attribut <xref:System.Runtime.Serialization.DataMemberAttribute> informe le sérialiseur qu’elle doit être traitée, même si elle n’est pas un membre public. Ensuite, vous devez écrire une propriété publique en lecture seule qui convertit la chaîne en un objet <xref:System.DateTime> valide et retourne cette <xref:System.DateTime> :
-
-```csharp
-[IgnoreDataMember]
-public DateTime LastPush
-{
-    get
-    {
-        return DateTime.ParseExact(JsonDate, "yyyy-MM-ddTHH:mm:ssZ", CultureInfo.InvariantCulture);
-    }
-}
-```
-
-Examinons les nouvelles constructions ci-dessus. L’attribut `IgnoreDataMember` indique au sérialiseur que ce type ne doit pas être lu ou écrit à partir de n’importe quel objet JSON. Cette propriété contient uniquement un accesseur `get`. Il n'existe aucun accesseur `set`. C’est la façon dont vous définissez une propriété *en lecture seule* en C#. (Oui, vous pouvez créer des propriétés *en écriture seule* en C#, mais leur intérêt est limité.) La méthode <xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)> analyse une chaîne et crée un objet <xref:System.DateTime> sous un format de date fourni, puis ajoute des métadonnées supplémentaires à `DateTime` en utilisant un objet `CultureInfo`. Si l’opération d’analyse échoue, l’accesseur de propriété lève une exception.
+Passons en revue les nouvelles constructions que nous venons de définir. La propriété `LastPush` est définie à l’aide d’un *membre expression-corporel* pour l’accesseur `get`. Il n'existe aucun accesseur `set`. L’omission de l’accesseur `set` est la façon dont vous définissez une propriété C# *en lecture seule* dans. (Oui, vous pouvez créer des propriétés en *écriture seule* dans C#, mais leur valeur est limitée.) La méthode <xref:System.DateTime.ParseExact(System.String,System.String,System.IFormatProvider)> analyse une chaîne et crée un objet <xref:System.DateTime> à l’aide d’un format de date fourni, et ajoute des métadonnées supplémentaires au `DateTime` à l’aide d’un objet `CultureInfo`. Si l’opération d’analyse échoue, l’accesseur de propriété lève une exception.
 
 Pour utiliser <xref:System.Globalization.CultureInfo.InvariantCulture>, vous devez ajouter l’espace de noms <xref:System.Globalization> aux instructions `using` dans `repo.cs` :
 

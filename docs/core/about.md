@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: c6d120445bc6625b37c461c1bf2686b10833dc13
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 12611c2cd0b872a683d070ff17dcf9f111578627
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740940"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900618"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -57,7 +57,7 @@ Plusieurs frameworks ont été construits à partir de .NET Core :
 .NET Core est constitué des composants suivants :
 
 - Le [Runtime .net Core](https://github.com/dotnet/runtime/tree/master/src/coreclr), qui fournit un système de type, un chargement d’assembly, un récupérateur de mémoire, une interopérabilité native et d’autres services de base. Les [bibliothèques .net Core Framework](https://github.com/dotnet/runtime/tree/master/src/libraries) fournissent des types de données primitifs, des types de composition d’applications et des utilitaires fondamentaux.
-- Le [runtime ASP.net](https://github.com/aspnet/home), qui fournit une infrastructure pour créer des applications modernes connectées à Internet, telles que des applications Web, des applications IOT et des backends mobiles.
+- Le [Runtime d’ASP.net Core](https://github.com/dotnet/aspnetcore), qui fournit une infrastructure pour la création d’applications modernes connectées à Internet Cloud, telles que les applications Web, les applications IOT et les backends mobiles.
 - Les [outils .NET Core CLI](https://github.com/dotnet/sdk) et les compilateurs de langage ([Roslyn](https://github.com/dotnet/roslyn) et [F#](https://github.com/microsoft/visualfsharp)) qui permettent d’assurer une expérience de développement .NET Core.
 - [L’outil dotnet](https://github.com/dotnet/core-setup), utilisé pour lancer les applications .NET Core et les outils CLI. Il sélectionne le runtime et héberge le runtime, fournit une stratégie de chargement d’assembly et lance des applications et des outils.
 

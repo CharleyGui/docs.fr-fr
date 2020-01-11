@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 4ce9227839a610308071c36185b63db8b1ee86ed
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 4a05709da63c4f6a200039ba5dd59358c700130e
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739298"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899884"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -41,7 +41,7 @@ Comme les métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` sont im
 
 ## <a name="implicit-version-for-some-package-references"></a>Version implicite pour certaines références de packages
 
-La plupart des utilisations de [ `<PackageReference>` ](#packagereference) nécessitent de définir l’attribut `Version` pour spécifier la version du package NuGet à utiliser. Cependant, lorsque vous utilisez .NET Core 2.1 ou 2.2 et référencez [Microsoft.AspNetCore.App](/aspnet/core/fundamentals/metapackage-app) ou [Microsoft.AspNetCore.All](/aspnet/core/fundamentals/metapackage), cet attribut n’est pas nécessaire. Le Kit SDK .NET Core peut sélectionner automatiquement la version des packages à utiliser.
+La plupart des utilisations de [`<PackageReference>`](#packagereference) nécessitent de définir l’attribut `Version` pour spécifier la version du package NuGet à utiliser. Cependant, lorsque vous utilisez .NET Core 2.1 ou 2.2 et référencez [Microsoft.AspNetCore.App](/aspnet/core/fundamentals/metapackage-app) ou [Microsoft.AspNetCore.All](/aspnet/core/fundamentals/metapackage), cet attribut n’est pas nécessaire. Le Kit SDK .NET Core peut sélectionner automatiquement la version des packages à utiliser.
 
 ### <a name="recommendation"></a>Recommandation
 
@@ -72,9 +72,9 @@ Le tableau suivant montre les éléments et les modèles [Glob](https://en.wikip
 
 | Élément           | Inclure Glob                              | Exclure Glob                                                  | Supprimer Glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Compile           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
-| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
-| aucune.              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
+| Compile           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | Non applicable                      |
+| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | Non applicable                      |
+| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
 
 > [!NOTE]
 > **Exclure Glob** exclut toujours les dossiers `./bin` et `./obj`, respectivement représentés par les propriétés MSBuild `$(BaseOutputPath)` et `$(BaseIntermediateOutputPath)`. Dans l’ensemble, toutes les exclusions sont représentées par `$(DefaultItemExcludes)`.
@@ -156,7 +156,7 @@ L’attribut `ExcludeAssets` spécifie quelles ressources appartenant au package
 L’attribut `PrivateAssets` spécifie quelles ressources appartenant au package spécifié par `<PackageReference>` doivent être utilisées, mais sans être reprises dans le projet suivant. Les ressources `Analyzers`, `Build` et `ContentFiles` sont par défaut privées en l’absence de cet attribut.
 
 > [!NOTE]
-> `PrivateAssets` est équivalent à l’élément *project.json*/*xproj* `SuppressParent`.
+> `PrivateAssets` est équivalente à l’élément *Project. json*/*xproj* `SuppressParent`.
 
 Ces attributs peuvent contenir un ou plusieurs éléments de la liste suivante, séparés par le caractère point-virgule `;` le cas échéant :
 
@@ -179,6 +179,8 @@ Un élément `<DotNetCliToolReference>` spécifie l’outil CLI que l’utilisat
 ```xml
 <DotNetCliToolReference Include="<package-id>" Version="" />
 ```
+
+Notez que `DotNetCliToolReference` est [désormais déconseillé](https://github.com/dotnet/announcements/issues/107) en faveur des [Outils locaux .net Core](https://aka.ms/local-tools).
 
 #### <a name="version"></a>Version
 
@@ -427,7 +429,7 @@ Les [attributs d’assembly](../../standard/assembly/set-attributes.md) qui figu
 
 Chaque attribut a une propriété qui contrôle son contenu et une autre pour désactiver sa génération, comme indiqué dans le tableau suivant :
 
-| Attribut                                                      | Property               | Propriété permettant de désactiver                             |
+| Attribute                                                      | Les               | Propriété permettant de désactiver                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|
 | <xref:System.Reflection.AssemblyCompanyAttribute>              | `Company`              | `GenerateAssemblyCompanyAttribute`              |
 | <xref:System.Reflection.AssemblyConfigurationAttribute>        | `Configuration`        | `GenerateAssemblyConfigurationAttribute`        |
@@ -440,7 +442,7 @@ Chaque attribut a une propriété qui contrôle son contenu et une autre pour d�
 | <xref:System.Reflection.AssemblyVersionAttribute>              | `AssemblyVersion`      | `GenerateAssemblyVersionAttribute`              |
 | <xref:System.Resources.NeutralResourcesLanguageAttribute>      | `NeutralLanguage`      | `GenerateNeutralResourcesLanguageAttribute`     |
 
-Remarques :
+Remarques :
 
 - Le comportement par défaut de `AssemblyVersion` et `FileVersion` consiste à prendre la valeur de `$(Version)` sans suffixe. Par exemple, si `$(Version)` est `1.2.3-beta.4`, alors la valeur serait `1.2.3`.
 - `InformationalVersion` utilise par défaut la valeur de `$(Version)`.

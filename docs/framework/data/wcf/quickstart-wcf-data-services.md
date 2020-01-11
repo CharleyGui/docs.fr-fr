@@ -5,18 +5,18 @@ helpviewer_keywords:
 - WCF Data Services, quick-start example
 - WCF Data Services, Entity Data Model (EDM) service
 ms.assetid: 7b18ca1e-d4d6-4c7a-afb9-ce3cebb98a8d
-ms.openlocfilehash: df3151dfd3628231d84d2d128c61d1c0b6b0d48e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 43cd34ad02f1e2d212ff5e2ff4694591fbed52e5
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74800355"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900961"
 ---
 # <a name="quickstart-wcf-data-services"></a>Démarrage rapide (services de données WCF)
 
 Ce guide de démarrage rapide vous permet de vous familiariser avec WCF Data Services et le Open Data Protocol (OData) par le biais d’une série de tâches qui prennent en charge les rubriques dans [prise en main](getting-started-with-wcf-data-services.md).
 
-## <a name="what-youll-learn"></a>Contenu du didacticiel
+## <a name="what-youll-learn"></a>Ce que vous allez apprendre
 
 La première tâche de ce guide de démarrage rapide montre comment créer un service de données pour exposer un flux OData à partir de l’exemple de base de données Northwind. Dans les rubriques ultérieures, vous accéderez au flux OData à l’aide d’un navigateur Web et vous créerez également une application cliente Windows Presentation Foundation (WPF) qui consomme le flux OData à l’aide des bibliothèques clientes.
 
@@ -45,7 +45,7 @@ Pour effectuer ce démarrage rapide, vous devez installer les composants suivant
  Créer une application WPF pour consommer le flux OData, lier des données aux contrôles Windows, modifier les données dans les contrôles liés, puis renvoyer les modifications au service de données.
 
 > [!NOTE]
-> Les fichiers projet d’une version terminée du démarrage rapide peuvent être téléchargés à partir de la page [WCF Data Services Quickstart (OData Service and WPF Client)](https://go.microsoft.com/fwlink/?LinkId=179994) .
+> Les fichiers projet d’une version terminée du démarrage rapide peuvent être téléchargés à partir de [GitHub](https://github.com/microsoftarchive/msdn-code-gallery-community-s-z/tree/master/WCF%20Data%20Services%20Quickstart%20(OData%20Service%20and%20WPF%20Client)).
 
 ## <a name="next-steps"></a>Étapes suivantes :
 

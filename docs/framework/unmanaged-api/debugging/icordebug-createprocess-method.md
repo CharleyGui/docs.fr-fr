@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b6128694-11ed-46e7-bd4e-49ea1914c46a
 topic_type:
 - apiref
-ms.openlocfilehash: 8812a98b0f28dd1336903dc34682f638a291f53b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a69fb861f7c2671a5c26245aa544ee99bcbdb56b
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110997"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901009"
 ---
 # <a name="icordebugcreateprocess-method"></a>ICorDebug::CreateProcess, méthode
 Lance un processus et son thread principal sous le contrôle du débogueur.  
@@ -44,7 +44,7 @@ HRESULT CreateProcess (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `lpApplicationName`  
  dans Pointeur vers une chaîne se terminant par un caractère null qui spécifie le module à exécuter par le processus lancé. Le module est exécuté dans le contexte de sécurité du processus appelant.  
   
@@ -61,7 +61,7 @@ HRESULT CreateProcess (
  dans Affectez la valeur `true` pour indiquer que chaque handle pouvant être hérité dans le processus appelant est hérité par le processus lancé, ou `false` pour indiquer que les handles ne sont pas hérités. Les handles hérités ont la même valeur et les mêmes droits d’accès que les handles d’origine.  
   
  `dwCreationFlags`  
- dans Combinaison d’opérations de bits des [indicateurs de création de processus Win32](https://go.microsoft.com/fwlink/?linkid=69981) qui contrôlent la classe de priorité et le comportement du processus lancé.  
+ dans Combinaison d’opérations de bits des [indicateurs de création de processus Win32](/windows/win32/procthread/process-creation-flags) qui contrôlent la classe de priorité et le comportement du processus lancé.  
   
  `lpEnvironment`  
  dans Pointeur vers un bloc d’environnement pour le nouveau processus.  
@@ -90,7 +90,7 @@ HRESULT CreateProcess (
   
  Le débogage d’interopérabilité n’est pas pris en charge sur les plateformes Win9x et non-x86, telles que les plateformes basées sur IA-64 et AMD64.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

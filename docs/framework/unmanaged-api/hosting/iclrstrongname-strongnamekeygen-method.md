@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ac5c1245-9acf-4271-9c08-3d9b7c670df3
 topic_type:
 - apiref
-ms.openlocfilehash: 4f3574e282d24fa11ffa2f85463f682c42098ae7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e437ee2ab04d3b1126ec2911553e87586e74e54e
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73135052"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899613"
 ---
 # <a name="iclrstrongnamestrongnamekeygen-method"></a>Méthode ICLRStrongName::StrongNameKeyGen
 Crée une nouvelle paire de clés publique/privée pour une utilisation de nom fort.  
@@ -36,12 +36,12 @@ HRESULT StrongNameKeyGen (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `wszKeyContainer`  
  dans Nom du conteneur de clé demandé. `wszKeyContainer` doit être une chaîne non vide ou null pour générer un nom temporaire.  
   
  `dwFlags`  
- dans Valeur qui spécifie s’il faut conserver la clé inscrite. Les valeurs suivantes sont prises en charge :  
+ dans Valeur qui spécifie s’il faut conserver la clé inscrite. Les valeurs suivantes sont admises :  
   
 - 0x00000000-utilisé lorsque `wszKeyContainer` a la valeur null pour générer un nom de conteneur de clé temporaire.  
   
@@ -54,12 +54,12 @@ HRESULT StrongNameKeyGen (
  à Taille, en octets, de `ppbKeyBlob`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
 ## <a name="remarks"></a>Notes  
  La méthode [ICLRStrongName :: StrongNameKeyGen (](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamekeygen-method.md) crée une clé de 1024 bits. Une fois la clé Récupérée, vous devez appeler la méthode [ICLRStrongName :: StrongNameFreeBuffer](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-strongnamefreebuffer-method.md) pour libérer la mémoire allouée.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  

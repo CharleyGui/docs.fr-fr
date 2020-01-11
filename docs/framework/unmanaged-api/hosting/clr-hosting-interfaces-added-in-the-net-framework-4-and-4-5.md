@@ -6,12 +6,12 @@ helpviewer_keywords:
 - .NET Framework 4, hosting interfaces
 - interfaces [.NET Framework hosting], version 4
 ms.assetid: f6af6116-f5b0-4bda-a276-fffdba70893d
-ms.openlocfilehash: aea88430d8f83234a1568bcaf433c2a75492e23a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8484b47549f83795778420048d610e2d1626d87b
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73195924"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899717"
 ---
 # <a name="clr-hosting-interfaces-added-in-the-net-framework-4-and-45"></a>Interfaces d'hébergement du CLR ajoutées dans .NET Framework 4 et 4.5
 Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser pour intégrer le common language runtime (CLR) des .NET Framework 4, .NET Framework 4,5 et versions ultérieures dans leurs applications. Ces interfaces fournissent des méthodes permettant à un hôte de configurer et de charger le runtime dans un processus.  
@@ -22,7 +22,7 @@ Cette section décrit les interfaces que les hôtes non gérés peuvent utiliser
   
 - Ils n’utilisent pas les types COM tels que `BSTR`, `SAFEARRAY`ou `VARIANT`.  
   
-- Il n’existe pas de modèles cloisonnés, d’agrégation ou d’activation du Registre qui utilisent la [fonction CoCreateInstance](https://go.microsoft.com/fwlink/?LinkId=142894).  
+- Il n’existe pas de modèles cloisonnés, d’agrégation ou d’activation du Registre qui utilisent la [fonction CoCreateInstance](/windows/win32/api/combaseapi/nf-combaseapi-cocreateinstance).  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [ICLRAppDomainResourceMonitor, interface](../../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md)  

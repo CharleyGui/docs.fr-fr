@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: f103c96588bae167216d09a82973a4a7abfb5cc3
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: db70596552ffd699156e1b7a55cb1e944596f077
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72394138"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75902019"
 ---
 ### <a name="data-protection-dataprotectionazurestorage-uses-new-azure-storage-apis"></a>Protection des données : DataProtection. AzureStorage utilise les nouvelles API de stockage Azure
 
 <xref:Microsoft.AspNetCore.DataProtection.AzureStorage?displayProperty=fullName> dépend des [bibliothèques de stockage Azure](https://github.com/Azure/azure-storage-net). Ces bibliothèques ont renommé leurs assemblys, leurs packages et leurs espaces de noms. À compter de ASP.NET Core 3,0, `Microsoft.AspNetCore.DataProtection.AzureStorage` utilise les nouvelles API et packages de préfixe de `Microsoft.Azure.Storage.`.
 
-Pour toute question sur les API de stockage Azure, utilisez <https://github.com/Azure/azure-storage-net>. Pour plus d’informations sur ce problème, consultez [ASPNET/AspNetCore # 8472](https://github.com/aspnet/AspNetCore/issues/8472).
+Pour toute question sur les API de stockage Azure, utilisez <https://github.com/Azure/azure-storage-net>. Pour plus d’informations sur ce problème, consultez [dotnet/aspnetcore # 8472](https://github.com/dotnet/aspnetcore/issues/8472).
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 

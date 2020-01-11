@@ -2,12 +2,12 @@
 title: Byrefs
 description: En savoir plus sur les types ByRef et de F#type ByRef dans, qui sont utilisés pour la programmation de bas niveau.
 ms.date: 11/04/2019
-ms.openlocfilehash: a6d3d69c4a163be9ecef7e33c284c4a73e800405
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 5aaee1e4eac9ce0d7e9ba89a2ab5f745d31367a0
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75545133"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901309"
 ---
 # <a name="byrefs"></a>Byrefs
 

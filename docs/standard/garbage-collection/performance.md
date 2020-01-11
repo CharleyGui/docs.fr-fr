@@ -1,19 +1,19 @@
 ---
-title: Garbage Collection et niveau de performance
+title: Garbage collection et niveau de performance
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 helpviewer_keywords:
 - garbage collection, troubleshooting
 - garbage collection, performance
 ms.assetid: c203467b-e95c-4ccf-b30b-953eb3463134
-ms.openlocfilehash: 8d40091420c29c86f2ebb25f14c17ae4f7a1c44a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 72cf742aae26f9441229b355dc6e70da7a5fc9cd
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974765"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900580"
 ---
-# <a name="garbage-collection-and-performance"></a>Garbage Collection et niveau de performance
+# <a name="garbage-collection-and-performance"></a>Garbage collection et niveau de performance
 
 Cette rubrique décrit les problèmes liés au garbage collection et à l'utilisation de la mémoire. Elle apporte des solutions aux problèmes concernant les tas managés et explique comment réduire l’effet du garbage collection sur vos applications. Chaque problème contient des liens vers des procédures à suivre pour résoudre le problème.
 
@@ -133,7 +133,7 @@ La fragmentation se produit toujours dans le tas des objets volumineux, car il n
 
 La fragmentation peut devenir un problème avec la génération 1 et la génération 2. Si ces générations disposent d'une grande quantité d'espace libre après un garbage collection, l'utilisation des objets d'une application peut nécessiter des modifications et vous devrez envisager de réévaluer la durée de vie des objets à long terme.
 
-L'épinglage excessif d'objets peut augmenter la fragmentation. Si la fragmentation est élevée, il est possible que trop d'objets soient épinglés.
+L'épinglage excessif d'objets peut augmenter la fragmentation. Si la fragmentation est élevée, un trop grand nombre d’objets a pu être épinglé.
 
 Si la fragmentation de la mémoire virtuelle empêche le garbage collector d'ajouter des segments, la cause peut se trouver dans la liste ci-dessous :
 
@@ -209,7 +209,7 @@ Sauf si vous utilisez un profileur, vous devrez établir un modèle cohérent de
 
 - Si vous effectuez la mesure immédiatement avant un garbage collection, vous mesurerez autant de l'allocation que possible avant le démarrage du garbage collection.
 
-- Effectuer une mesure pendant un garbage collection pose problème, car l'état des structures de données du garbage collector n'est pas valide pour la traversée et les résultats obtenus peuvent ne pas être complets. Ceci est normal.
+- Effectuer une mesure pendant un garbage collection pose problème, car l'état des structures de données du garbage collector n'est pas valide pour la traversée et les résultats obtenus peuvent ne pas être complets. cela est lié à la conception.
 
 - Quand utilisez le garbage collection pour station de travail avec le garbage collection simultané, les objets récupérés ne sont pas compactés, donc la taille du tas peut être identique voire supérieure (la fragmentation peut le faire apparaître plus volumineux).
 
@@ -327,7 +327,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Dans cet exemple, la taille de la région libre la plus grande est d'environ 24 000 Ko (3A980 en hexadécimal). Cette région est beaucoup plus petite que ce dont le garbage collector a besoin pour un segment.
 
-  ou
+  \- ou -
 
 - Utilisez la commande **vmstat** :
 
@@ -423,7 +423,7 @@ Cette section décrit les procédures suivantes permettant d'isoler la cause des
 
   Si le tas managé est volumineux, l’exécution de **dumpheap** peut prendre un certain temps.
 
-  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Exemple :
+  Vous pouvez commencer l'analyse des dernières lignes de la sortie, car elles contiennent les objets qui utilisent le plus d'espace. Par exemple :
 
   ```console
   2c6108d4   173712     14591808 DevExpress.XtraGrid.Views.Grid.ViewInfo.GridCellInfo

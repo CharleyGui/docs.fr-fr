@@ -10,16 +10,16 @@ helpviewer_keywords:
 - query projection [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: a09f4985-9f0d-48c8-b183-83d67a3dfe5f
-ms.openlocfilehash: 03fa40a895d322a8b5ad543f75424ef5b379672b
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 764ea6a77ba267e691d48bc72d17c02f6b3c18ca
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568899"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900969"
 ---
 # <a name="query-projections-wcf-data-services"></a>Projections de requête (services de données WCF)
 
-La projection fournit un mécanisme dans le Open Data Protocol (OData) pour réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, consultez [OData : option de requête système ($Select)](https://go.microsoft.com/fwlink/?LinkId=186076).
+La projection fournit un mécanisme dans le Open Data Protocol (OData) pour réduire la quantité de données dans le flux retourné par une requête en spécifiant que seules certaines propriétés d’une entité sont retournées dans la réponse. Pour plus d’informations, consultez la section 4,8. Sélectionnez l’option de requête système ($select) dans [conventions d’URI (OData Version 2,0)](https://www.odata.org/documentation/odata-version-2-0/uri-conventions/).
 
 Cette rubrique décrit comment définir une projection de requête, quelles sont les exigences pour les types d’entité et de non-entité, la mise à jour des résultats projetés, la création des types projetés et répertorie des considérations relatives à la projection.
 

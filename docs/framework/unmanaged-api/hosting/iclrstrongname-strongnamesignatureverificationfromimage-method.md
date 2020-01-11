@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: da91c138-ee30-4fd4-a040-464d97d7e41a
 topic_type:
 - apiref
-ms.openlocfilehash: adb3b4e33edafe6d25c8259e316a9b62e339f896
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1bfc41fdad35a7e0560d251179ea035c96aecab7
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092667"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899531"
 ---
 # <a name="iclrstrongnamestrongnamesignatureverificationfromimage-method"></a>Méthode ICLRStrongName::StrongNameSignatureVerificationFromImage
 Vérifie qu’un assembly qui a déjà été mappé en mémoire est valide pour la clé publique associée.  
@@ -36,7 +36,7 @@ HRESULT StrongNameSignatureVerificationFromImage (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pbBase`  
  dans Adresse virtuelle relative du manifeste de l’assembly mappé.  
   
@@ -44,7 +44,7 @@ HRESULT StrongNameSignatureVerificationFromImage (
  dans Taille, en octets, de l’image mappée.  
   
  `dwInFlags`  
- dans Indicateurs qui influencent le comportement de la vérification. Les valeurs suivantes sont prises en charge :  
+ dans Indicateurs qui influencent le comportement de la vérification. Les valeurs suivantes sont admises :  
   
 - `SN_INFLAG_FORCE_VER` (0x00000001) : force la vérification même s’il est nécessaire de remplacer les paramètres du Registre.  
   
@@ -64,9 +64,9 @@ HRESULT StrongNameSignatureVerificationFromImage (
 - `SN_OUTFLAG_WAS_VERIFIED` (0x00000001)-cette valeur est définie sur `false` pour spécifier que la vérification a réussi en raison des paramètres du Registre.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  

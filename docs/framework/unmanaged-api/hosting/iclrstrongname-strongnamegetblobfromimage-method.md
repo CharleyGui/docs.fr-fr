@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0f5a2ec8-e776-4fd8-bda6-937b6834575a
 topic_type:
 - apiref
-ms.openlocfilehash: ad3b151165eb233bd3a4a78d8f4d612a696b7e93
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a0bcc62a1715fb455f0affee64a351cabe0ba3f6
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73135094"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901121"
 ---
 # <a name="iclrstrongnamestrongnamegetblobfromimage-method"></a>Méthode ICLRStrongName::StrongNameGetBlobFromImage
 Obtient une représentation binaire de l’image de l’assembly à l’adresse mémoire spécifiée.  
@@ -36,7 +36,7 @@ HRESULT StrongNameGetBlobFromImage (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pbBase`  
  dans Adresse mémoire du manifeste de l’assembly mappé.  
   
@@ -50,9 +50,9 @@ HRESULT StrongNameGetBlobFromImage (
  [in, out] Taille maximale demandée, en octets, de `pbBlob`. Lors du retour, taille réelle, en octets, de `pbBlob`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  

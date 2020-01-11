@@ -1,20 +1,20 @@
 ---
-ms.openlocfilehash: 74b989a2413d2192f7cf5208e400eaed879ea096
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 58dbb73902c0226fa81acf1a70de2160f406f6c6
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198419"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901884"
 ---
 ### <a name="authorization-iauthorizationpolicyprovider-implementations-require-new-method"></a>Autorisation : les implémentations de IAuthorizationPolicyProvider nécessitent une nouvelle méthode
 
-Dans ASP.NET Core 3,0, une nouvelle méthode `GetFallbackPolicyAsync` a été ajoutée à `IAuthorizationPolicyProvider`. Cette stratégie de secours est utilisée par l’intergiciel (middleware) d’autorisation quand aucune stratégie n’est spécifiée.
+Dans ASP.NET Core 3,0, une nouvelle méthode de `GetFallbackPolicyAsync` a été ajoutée à `IAuthorizationPolicyProvider`. Cette stratégie de secours est utilisée par l’intergiciel (middleware) d’autorisation quand aucune stratégie n’est spécifiée.
 
-Pour plus d’informations, consultez [ASPNET/AspNetCore # 9759](https://github.com/aspnet/AspNetCore/pull/9759).
+Pour plus d’informations, consultez [dotnet/aspnetcore # 9759](https://github.com/dotnet/aspnetcore/pull/9759).
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
@@ -26,13 +26,13 @@ Les implémentations de `IAuthorizationPolicyProvider` requièrent une méthode 
 
 #### <a name="reason-for-change"></a>Motif de modification
 
-Une nouvelle méthode était nécessaire pour la nouvelle `AuthorizationMiddleware` à utiliser quand aucune stratégie n’est spécifiée.
+Une nouvelle méthode était nécessaire pour que la nouvelle `AuthorizationMiddleware` utilise quand aucune stratégie n’est spécifiée.
 
 #### <a name="recommended-action"></a>Action recommandée
 
 Ajoutez la méthode `GetFallbackPolicyAsync` à vos implémentations de `IAuthorizationPolicyProvider`.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 

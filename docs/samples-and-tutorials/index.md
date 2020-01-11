@@ -4,12 +4,12 @@ description: Informations sur les exemples et les didacticiels pour .NET Core, A
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: 5132415a6be03787111aaed8d027d436bb6820fe
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.openlocfilehash: e64d0fdd02b28a1c9f21f06305f5ef278fb2827b
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884434"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901041"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
@@ -107,7 +107,7 @@ De nombreuses rubriques montrent le code source et les exemples qu’il est poss
 
 1. Téléchargez le référentiel contenant l’exemple de code en suivant l’une des procédures suivantes :
    * Téléchargez un fichier ZIP du référentiel sur votre système local. Décompressez l’archive compressée.
-   * [Répliquez](https://help.github.com/articles/fork-a-repo/) le référentiel et [clonez](https://help.github.com/articles/cloning-a-repository/) le fork sur votre système local. La réplication et le clonage permettent d’apporter des contributions à la documentation en validant les modifications apportées au fork, puis en créant une requête d’extraction pour le référentiel de documents officiel. Pour plus d’informations, consultez le [Guide de contribution à la documentation .NET](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) et le [Guide de contribution aux documents ASP.NET](https://github.com/aspnet/Docs/blob/master/CONTRIBUTING.md).
+   * [Répliquez](https://help.github.com/articles/fork-a-repo/) le référentiel et [clonez](https://help.github.com/articles/cloning-a-repository/) le fork sur votre système local. La réplication et le clonage permettent d’apporter des contributions à la documentation en validant les modifications apportées au fork, puis en créant une requête d’extraction pour le référentiel de documents officiel. Pour plus d’informations, consultez le Guide de contribution à la [documentation .net](https://github.com/dotnet/docs/blob/master/CONTRIBUTING.md) et le [Guide de contribution aux documents ASP.net Core](https://github.com/aspnet/AspNetCore.Docs/blob/master/CONTRIBUTING.md).
    * Clonez le référentiel localement. Si vous clonez un référentiel de documents directement sur votre système local, vous ne pourrez pas effectuer de validations directement sur le référentiel officiel ; par conséquent, vous ne pourrez pas apporter de contributions à la documentation par la suite. Utilisez la procédure de réplication et de clonage décrite précédemment si vous souhaitez conserver la possibilité de contribuer ultérieurement à la documentation.
 1. Naviguez dans les dossiers du référentiel jusqu’à l’emplacement de l’exemple. Le chemin d’accès relatif de l’emplacement de l’exemple s’affiche dans la barre d’adresse de votre navigateur lorsque vous suivez le lien de l’exemple.
 1. Pour exécuter un exemple, vous avez plusieurs possibilités :

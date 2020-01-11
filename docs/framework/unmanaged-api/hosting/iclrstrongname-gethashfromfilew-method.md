@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c6ff45fc-905d-4c6e-b00c-97c6c7c55d99
 topic_type:
 - apiref
-ms.openlocfilehash: 553acc178bc5805b5afef5931fefc8ad74cbac39
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e5821abed4d6c7f7595bad3240ab86d5a128d794
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73135172"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901150"
 ---
 # <a name="iclrstrongnamegethashfromfilew-method"></a>Méthode ICLRStrongName::GetHashFromFileW
 Génère un hachage sur le contenu du fichier spécifié par une chaîne Unicode.  
@@ -37,7 +37,7 @@ HRESULT GetHashFromFileW (
 );   
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `wszFilePath`  
  dans Nom Unicode du fichier à hacher.  
   
@@ -54,12 +54,12 @@ HRESULT GetHashFromFileW (
  à Taille, en octets, de `pbHash`.  
   
 ## <a name="return-value"></a>Valeur de retour  
- `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](https://go.microsoft.com/fwlink/?LinkId=213878) pour une liste).  
+ `S_OK` si la méthode s’est terminée avec succès ; Sinon, valeur HRESULT qui indique un échec (consultez les [valeurs HRESULT communes](/windows/win32/seccrypto/common-hresult-values) pour une liste).  
   
 ## <a name="remarks"></a>Notes  
  Cette méthode est la même que la méthode [ICLRStrongName :: GetHashFromFile (](../../../../docs/framework/unmanaged-api/hosting/iclrstrongname-gethashfromfile-method.md) , à ceci près que la spécification de nom de fichier est au format Unicode au lieu de ANSI.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** Metahost. h  

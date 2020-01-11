@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 3f702febc78488b9413ec9303ded211493650f02
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 1e081c9f37fbd7ab754ce44ba89d7aa5cabfc219
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73198427"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75901689"
 ---
 ### <a name="mvc-precompilation-tool-deprecated"></a>MVC : outil de précompilation déconseillé
 
@@ -14,7 +14,7 @@ Dans ASP.NET Core 3,0, l’outil de précompilation MVC ASP.NET Core 1,1-Era a �
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
@@ -30,15 +30,15 @@ Le kit de développement logiciel (SDK) Razor offre plus de fonctionnalités et 
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Pour les utilisateurs de ASP.NET Core 2,1 ou version ultérieure, mettez à jour pour utiliser la prise en charge native pour la précompilation dans le [Kit de développement logiciel (SDK) Razor](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0). Si des bogues ou des fonctionnalités manquantes empêchent la migration vers le kit de développement logiciel (SDK) Razor, ouvrez un problème dans [ASPNET/AspNetCore](https://github.com/aspnet/AspNetCore/issues).
+Pour les utilisateurs de ASP.NET Core 2,1 ou version ultérieure, mettez à jour pour utiliser la prise en charge native pour la précompilation dans le [Kit de développement logiciel (SDK) Razor](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0). Si des bogues ou des fonctionnalités manquantes empêchent la migration vers le kit de développement logiciel (SDK) Razor, ouvrez un problème dans [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues).
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-aucune.
+Aucun
 
 <!-- 
 

@@ -2,16 +2,16 @@
 title: Détails relatifs à l'implémentation du protocole WCF Data Services
 ms.date: 03/30/2017
 ms.assetid: 712d689b-fada-4cbb-bcdb-d65a3ef83b4c
-ms.openlocfilehash: 5cd73caf848badc058c1f6df75973e1bb0a4fad4
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 2302b5577bec3fc4221bc6e5161c87905c38bec3
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74568773"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75900867"
 ---
 # <a name="wcf-data-services-protocol-implementation-details"></a>Détails relatifs à l'implémentation du protocole WCF Data Services
 ## <a name="odata-protocol-implementation-details"></a>Détails de l'implémentation du protocole OData  
- Le Open Data Protocol (OData) requiert qu’un service de données qui implémente le protocole fournisse un ensemble minimal de fonctionnalités. Ces fonctionnalités sont décrites dans les documents de protocole en termes de « doit » et « doit ». D’autres fonctionnalités facultatives sont décrites en termes de « mai ». Cette rubrique décrit ces fonctionnalités facultatives qui ne sont pas implémentées actuellement par WCF Data Services. Pour plus d’informations, consultez [la documentation sur le protocole OData](https://go.microsoft.com/fwlink/?LinkID=184554).  
+Le Open Data Protocol (OData) requiert qu’un service de données qui implémente le protocole fournisse un ensemble minimal de fonctionnalités. Ces fonctionnalités sont décrites dans les documents de protocole en termes de « doit » et « doit ». D’autres fonctionnalités facultatives sont décrites en termes de « mai ». Cet article décrit ces fonctionnalités facultatives qui ne sont pas implémentées actuellement par WCF Data Services.
   
 ### <a name="support-for-the-format-query-option"></a>Prise en charge de l'option de requête $format  
  Le protocole OData prend en charge les flux de notation JavaScript (JSON) et Atom, et OData fournit l’option de requête système `$format` pour permettre à un client de demander le format du flux de réponse. Cette option de requête du système (si prise en charge par le service de données) doit substituer la valeur de l'en-tête Accept de la requête. WCF Data Services prend en charge le retour des flux JSON et Atom. Toutefois, l'implémentation par défaut ne prend pas en charge l'option de requête `$format` et utilise uniquement la valeur de l'en-tête Accept pour déterminer le format de la réponse. Il y a des cas où votre service de données doit prendre en charge l'option de requête `$format`, par exemple lorsque les clients ne peuvent pas définir l'en-tête Accept. Pour prendre en charge ces scénarios, vous devez étendre votre service de données pour gérer cette option dans l'URI. Vous pouvez ajouter cette fonctionnalité à votre service de données en [téléchargeant la prise en charge de JSONP et de format contrôlé par URL pour ADO.NET Data Services](https://go.microsoft.com/fwlink/?LinkId=208228) exemple de projet à partir du site Web MSDN Code Gallery et en l’ajoutant à votre projet de service de données. Cet exemple supprime l'option de requête `$format` et remplace l'en-tête Accept par `application/json`. Lorsque vous incluez l'exemple de projet et ajoutez `JSONPSupportBehaviorAttribute` à votre classe de service de données, le service peut gérer l'option de requête `$format``$format=json`. Une personnalisation plus poussée de cet exemple de projet est requise pour gérer également `$format=atom` ou d'autres formats personnalisés.  
