@@ -2,12 +2,12 @@
 title: Conception de validations dans la couche de modèle de domaine
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés des validations de modèle de domaine.
 ms.date: 10/08/2018
-ms.openlocfilehash: 1d3196d2130df33969ed231bccfe0fc6f0af2ad8
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.openlocfilehash: 98ccc5df84c9f6f402ecbee83b077c806d6a76fc
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68674246"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899665"
 ---
 # <a name="design-validations-in-the-domain-model-layer"></a>Concevoir des validations dans la couche du modèle de domaine
 
@@ -53,7 +53,7 @@ Une approche similaire peut être utilisée dans le constructeur de l’entité,
 
 ### <a name="use-validation-attributes-in-the-model-based-on-data-annotations"></a>Utiliser des attributs de validation dans le modèle basé sur des annotations de données
 
-Les annotations de données, comme les attributs Required ou MaxLength, peuvent être utilisées pour configurer des propriétés de champ de base de données EF Core, comme expliqué en détail dans la section [Mappage de table](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping), mais [elles ne fonctionnent plus pour la validation des entités dans EF Core](https://github.com/aspnet/EntityFrameworkCore/issues/3680) (tout comme la méthode <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), comme c’était le cas depuis EF 4.x dans .NET Framework.
+Les annotations de données, comme les attributs Required ou MaxLength, peuvent être utilisées pour configurer des propriétés de champ de base de données EF Core, comme expliqué en détail dans la section [Mappage de table](infrastructure-persistence-layer-implemenation-entity-framework-core.md#table-mapping), mais [elles ne fonctionnent plus pour la validation des entités dans EF Core](https://github.com/dotnet/efcore/issues/3680) (tout comme la méthode <xref:System.ComponentModel.DataAnnotations.IValidatableObject.Validate%2A?displayProperty=nameWithType>), comme c’était le cas depuis EF 4.x dans .NET Framework.
 
 Les annotations de données et l’interface <xref:System.ComponentModel.DataAnnotations.IValidatableObject> peut toujours être utilisées pour la validation de modèle lors de la liaison de modèle, comme d’habitude avant l’appel des actions du contrôleur, mais ce modèle est destiné à être un ViewModel ou un objet DTO : il s’agit d’une préoccupation relevant de MVC ou de l’API, mais pas d’un modèle de domaine.
 
@@ -61,7 +61,7 @@ La différence conceptuelle étant claire, vous pouvez toujours utiliser des ann
 
 Vous pouvez néanmoins toujours implémenter une validation personnalisée dans la classe d’entité avec des annotations de données et la méthode `IValidatableObject.Validate`, en remplaçant la méthode SaveChanges de DbContext.
 
-Vous pouvez voir un exemple d’implémentation pour la validation d’entités `IValidatableObject` dans [ce commentaire sur GitHub](https://github.com/aspnet/EntityFrameworkCore/issues/3680#issuecomment-155502539). Cet exemple ne fait pas de validations basées sur des attributs, mais elles sont normalement faciles à implémenter en utilisant la réflexion dans le même remplacement.
+Vous pouvez voir un exemple d’implémentation pour la validation d’entités `IValidatableObject` dans [ce commentaire sur GitHub](https://github.com/dotnet/efcore/issues/3680#issuecomment-155502539). Cet exemple n’effectue pas de validations basées sur les attributs, mais il doit être facile à implémenter à l’aide de la réflexion dans le même remplacement.
 
 Toutefois, du point de vue DDD, il est préférable de conserver le modèle de domaine épuré en utilisant des exceptions dans les méthodes de comportement de votre entité, ou en implémentant les modèles Spécification et Notification pour appliquer des règles de validation.
 
@@ -85,25 +85,25 @@ En utilisant la validation de champ avec des annotations de données, par exempl
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Rachel Appel. Introduction to model validation in ASP.NET Core MVC** \
+- **Rachel appel. Présentation de la validation de modèle dans ASP.NET Core MVC** \
   <https://docs.microsoft.com/aspnet/core/mvc/models/validation>
 
-- **Rick Anderson. Adding validation** \
+- **Rick Anderson. Ajout** de \ de validation
   <https://docs.microsoft.com/aspnet/core/tutorials/first-mvc-app/validation>
 
-- **Martin Fowler. Replacing Throwing Exceptions with Notification in Validations** \
+- **Martin Fowler. Remplacement des exceptions levées par la notification dans les validations** \
   <https://martinfowler.com/articles/replaceThrowWithNotification.html>
 
 - **Specification and Notification Patterns** \
   <https://www.codeproject.com/Tips/790758/Specification-and-Notification-Patterns>
 
-- **Lev Gorodinski. Validation in Domain-Driven Design (DDD)**  \
+- **Lev Gorodinski. Validation dans la conception pilotée par domaine (DDD)**  \
   <http://gorodinski.com/blog/2012/05/19/validation-in-domain-driven-design-ddd/>
 
-- **Colin Jack. Domain Model Validation** \
+- Le **Jack Colin.**  \ de validation du modèle de domaine
   <https://colinjack.blogspot.com/2008/03/domain-model-validation.html>
 
-- **Jimmy Bogard. Validation in a DDD world** \
+- **Jimmy bogard. Validation dans un monde DDD** \
   <https://lostechies.com/jimmybogard/2009/02/15/validation-in-a-ddd-world/>
 
 > [!div class="step-by-step"]

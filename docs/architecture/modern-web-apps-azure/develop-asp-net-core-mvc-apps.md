@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: b57741ed68b3481ad2c85b1c3d62717f09c7570e
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: efb57b4290825be9f21c61c8dee5af073d264d3a
+ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971585"
+ms.lasthandoff: 01/11/2020
+ms.locfileid: "75899693"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -315,11 +315,11 @@ Pour découvrir plus en détail les filtres d’implémentation et télécharger
 
 > ### <a name="references--structuring-applications"></a>Références – Structuration des applications
 >
-> - **Zones**  
+> - **Les zones (areas)**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/areas>
 > - **MSDN Magazine – Feature Slices for ASP.NET Core MVC**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/september/asp-net-core-feature-slices-for-asp-net-core-mvc>
-> - **Filtres**  
+> - **Les filtres**  
 >   <https://docs.microsoft.com/aspnet/core/mvc/controllers/filters>
 > - **MSDN – Real World ASP.NET Core MVC Filters**  
 >   <https://docs.microsoft.com/archive/msdn-magazine/2016/august/asp-net-core-real-world-asp-net-core-mvc-filters>
@@ -447,7 +447,7 @@ Outre le fait de prendre en charge les pages et de répondre aux requêtes de do
 
 ASP.NET Core SignalR est disponible dans ASP.NET Core depuis la version 2.1.
 
-Qu’elle utilise WebSocket directement ou d’autres techniques, la communication en temps réel avec les clients est utile dans divers scénarios d’application. Voici quelques exemples :
+Qu’elle utilise WebSocket directement ou d’autres techniques, la communication en temps réel avec les clients est utile dans divers scénarios d’application. Quelques exemples :
 
 - Applications de conversation en direct
 
@@ -500,7 +500,7 @@ Réfléchissez à la manière dont vos applications communiquent directement ave
 > ### <a name="references--client-communication"></a>Références – Communication avec les clients
 >
 > - **ASP.NET Core SignalR**  
->   <https://github.com/aspnet/SignalR>
+>   <https://github.com/dotnet/aspnetcore/tree/master/src/SignalR>
 > - **WebSocket Manager**  
 >   https://github.com/radu-matei/websocket-manager
 
