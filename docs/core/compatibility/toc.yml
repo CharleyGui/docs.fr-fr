@@ -16,7 +16,11 @@
     - name: 2.0 à 2.1
       href: 2.0-2.1.md
     - name: .NET Framework à .NET Core
-      href: fx-core.md
+      items:
+        - name: Modifications avec rupture
+          href: fx-core.md
+        - name: API qui lèvent des exceptions
+          href: unsupported-apis.md
 - name: Par domaine
   expanded: true
   items:
