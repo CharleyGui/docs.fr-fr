@@ -3,12 +3,12 @@ title: Concepts de base des expressions de requête (LINQ en C#)
 description: Présente les concepts liés aux expressions de requête
 ms.date: 11/30/2016
 ms.assetid: 027db1f8-346f-44d2-a16e-043fcea3a4e0
-ms.openlocfilehash: 96ef75fe702e60eaa38acef77a73a5ea7f2076f4
-ms.sourcegitcommit: 6b308cf6d627d78ee36dbbae8972a310ac7fd6c8
-ms.translationtype: HT
+ms.openlocfilehash: 5ebe2163df47c60c677d7ac911ce0f65529835eb
+ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/23/2019
-ms.locfileid: "54709115"
+ms.lasthandoff: 01/03/2020
+ms.locfileid: "75635858"
 ---
 # <a name="query-expression-basics"></a>Concepts de base des expressions de requête
 
@@ -114,7 +114,7 @@ Utilisez la clause `select` pour générer tous les autres types de séquences. 
 
 [!code-csharp[csrefQueryExpBasics#56](~/samples/snippets/csharp/concepts/linq/query-expression-basics_12.cs)]
 
-La clause `select` peut être utilisée pour transformer des données sources en séquences de nouveaux types. Cette transformation est également appelée *projection*. Dans l’exemple suivant, la clause `select` *projette* une séquence de types anonymes qui contient uniquement un sous-ensemble des champs dans l’élément d’origine. Notez que les nouveaux objets sont initialisés à l’aide d’un initialiseur d’objet.
+La clause `select` peut être utilisée pour transformer des données sources en séquences de nouveaux types. Cette transformation est également appelée *projection*. Dans l’exemple suivant, la clause `select`*projette* une séquence de types anonymes qui contient uniquement un sous-ensemble des champs dans l’élément d’origine. Notez que les nouveaux objets sont initialisés à l’aide d’un initialiseur d’objet.
 
 [!code-csharp[csrefQueryExpBasics#57](~/samples/snippets/csharp/concepts/linq/query-expression-basics_13.cs)]
 
@@ -150,7 +150,7 @@ Le mot clé `ascending` est facultatif ; il s’agit de l’ordre de tri par d�
 
 #### <a name="join-clause"></a>join, clause
 
-Utilisez la clause `join` pour associer et/ou combiner des éléments d’une source de données avec des éléments d’une autre source de données en fonction d’une comparaison d’égalité entre des clés spécifiées dans chaque élément. Dans LINQ, les opérations de jointure sont effectuées sur les séquences des objets dont les éléments sont des types différents. Après avoir joint deux séquences, vous devez utiliser une instruction `select` ou `group` pour spécifier quel élément stocker dans la séquence de sortie. Vous pouvez également utiliser un type anonyme pour combiner des propriétés de chaque jeu d’éléments associés dans un nouveau type pour la séquence de sortie. L’exemple suivant associe des objets `prod` dont la propriété `Category` correspond à l’une des catégories dans le tableau de chaînes `categories`. Les produits dont la propriété `Category` ne correspond pas à une chaîne quelconque dans `categories` sont éliminés par filtrage. L’instruction `select` projette un nouveau type dont les propriétés sont extraites de `cat` et de `prod`.
+Utilisez la clause `join` pour associer et/ou combiner des éléments d’une source de données avec des éléments d’une autre source de données en fonction d’une comparaison d’égalité entre des clés spécifiées dans chaque élément. Dans LINQ, les opérations de jointure sont effectuées sur les séquences des objets dont les éléments sont des types différents. Après avoir joint deux séquences, vous devez utiliser une instruction `select` ou `group` pour spécifier quel élément stocker dans la séquence de sortie. Vous pouvez également utiliser un type anonyme pour combiner des propriétés de chaque jeu d’éléments associés dans un nouveau type pour la séquence de sortie. L’exemple suivant associe des objets `prod` dont la propriété `Category` correspond à l’une des catégories dans le tableau de chaînes `categories`. Les produits dont la `Category` ne correspond à aucune chaîne dans `categories` sont filtrés. L’instruction `select` projette un nouveau type dont les propriétés sont extraites de `cat` et `prod`.
 
 [!code-csharp[csrefQueryExpBasics#61](~/samples/snippets/csharp/concepts/linq/query-expression-basics_17.cs)]
 
@@ -170,7 +170,7 @@ Une clause de requête peut elle-même contenir une expression de requête, qui 
 
 [!code-csharp[csrefQueryExpBasics#63](~/samples/snippets/csharp/concepts/linq/query-expression-basics_19.cs)]
 
-Pour plus d’informations, consultez [Guide pratique pour effectuer une sous-requête sur une opération de regroupement](perform-a-subquery-on-a-grouping-operation.md).
+Pour plus d’informations, consultez [effectuer une sous-requête sur une opération de regroupement](perform-a-subquery-on-a-grouping-operation.md).
 
 ## <a name="see-also"></a>Voir aussi
 
