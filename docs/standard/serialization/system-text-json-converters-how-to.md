@@ -1,20 +1,20 @@
 ---
 title: Comment écrire des convertisseurs personnalisés pour la sérialisation JSON-.NET
-ms.date: 10/16/2019
+ms.date: 01/10/2020
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: efbaf852f07b2b59111f0e330cf52470e3eca4c3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8a2af76ca64359c12fafce6678def14d11d9f029
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705806"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904565"
 ---
-# <a name="how-to-write-custom-converters-for-json-serialization-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON dans .NET
+# <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
 Cet article explique comment créer des convertisseurs personnalisés pour les classes de sérialisation JSON fournies dans l’espace de noms <xref:System.Text.Json>. Pour une présentation de `System.Text.Json`, consultez [sérialisation et désérialisation de JSON dans .net](system-text-json-how-to.md).
 
@@ -23,7 +23,7 @@ Un *convertisseur* est une classe qui convertit un objet ou une valeur vers et �
 * Pour remplacer le comportement par défaut d’un convertisseur intégré. Par exemple, vous pouvez souhaiter que `DateTime` valeurs soient représentées par le format mm/jj/aaaa au lieu du format ISO 8601-1:2019 par défaut.
 * Pour prendre en charge un type valeur personnalisé. Par exemple, un struct `PhoneNumber`.
 
-Vous pouvez également écrire des convertisseurs personnalisés pour étendre les `System.Text.Json` avec des fonctionnalités qui ne sont pas incluses dans la version actuelle. Les scénarios suivants sont abordés plus loin dans cet article :
+Vous pouvez également écrire des convertisseurs personnalisés pour personnaliser ou étendre `System.Text.Json` avec une fonctionnalité non incluse dans la version actuelle. Les scénarios suivants sont abordés plus loin dans cet article :
 
 * [Désérialiser les types inférés en propriétés d’objet](#deserialize-inferred-types-to-object-properties).
 * [Dictionnaire de prise en charge avec clé non-chaîne](#support-dictionary-with-non-string-key).
@@ -68,9 +68,9 @@ Les étapes suivantes expliquent comment créer un convertisseur en suivant le m
 * Créez une classe qui dérive de <xref:System.Text.Json.Serialization.JsonConverter%601> où `T` est le type à sérialiser et à désérialiser.
 * Substituez la méthode `Read` pour désérialiser le JSON entrant et le convertir en type `T`. Utilisez la <xref:System.Text.Json.Utf8JsonReader> transmise à la méthode pour lire le JSON.
 * Substituez la méthode `Write` pour sérialiser l’objet entrant de type `T`. Utilisez le <xref:System.Text.Json.Utf8JsonWriter> qui est passé à la méthode pour écrire le JSON.
-* Substituez la méthode `CanConvert` uniquement si nécessaire. L’implémentation par défaut retourne `true` lorsque le type à convertir est `T`de type. Par conséquent, les convertisseurs qui prennent uniquement en charge le type `T` n’ont pas besoin de substituer cette méthode. Pour obtenir un exemple de convertisseur qui doit substituer cette méthode, consultez la section sur la [désérialisation polymorphe](#support-polymorphic-deserialization) plus loin dans cet article.
+* Substituez la méthode `CanConvert` uniquement si nécessaire. L’implémentation par défaut retourne `true` lorsque le type à convertir est de type `T`. Par conséquent, les convertisseurs qui prennent uniquement en charge le type `T` n’ont pas besoin de substituer cette méthode. Pour obtenir un exemple de convertisseur qui doit substituer cette méthode, consultez la section sur la [désérialisation polymorphe](#support-polymorphic-deserialization) plus loin dans cet article.
 
-Vous pouvez faire référence au [code source des convertisseurs intégrés](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json/src/System/Text/Json/Serialization/Converters/) en tant qu’implémentations de référence pour l’écriture de convertisseurs personnalisés.
+Vous pouvez faire référence au [code source des convertisseurs intégrés](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters/) en tant qu’implémentations de référence pour l’écriture de convertisseurs personnalisés.
 
 ## <a name="steps-to-follow-the-factory-pattern"></a>Étapes pour suivre le modèle de fabrique
 
@@ -179,14 +179,15 @@ Les sections suivantes fournissent des exemples de convertisseurs qui traitent d
 
 ### <a name="deserialize-inferred-types-to-object-properties"></a>Désérialiser les types inférés en propriétés d’objet
 
-Lors de la désérialisation vers une propriété de type `Object`, un objet `JsonElement` est créé. Cela est dû au fait que le désérialiseur ne sait pas quel type CLR créer, et qu’il ne tente pas de deviner. Par exemple, si une propriété JSON a la valeur « true », le désérialiseur ne déduit pas que la valeur est un `Boolean`, et si un élément a « 01/01/2019 », le désérialiseur ne déduit pas qu’il s’agit d’un `DateTime`.
+Lors de la désérialisation vers une propriété de type `object`, un objet `JsonElement` est créé. Cela est dû au fait que le désérialiseur ne sait pas quel type CLR créer, et qu’il ne tente pas de deviner. Par exemple, si une propriété JSON a la valeur « true », le désérialiseur ne déduit pas que la valeur est un `Boolean`, et si un élément a « 01/01/2019 », le désérialiseur ne déduit pas qu’il s’agit d’un `DateTime`.
 
 L’inférence de type peut être inexacte. Si le désérialiseur analyse un nombre JSON qui n’a pas de virgule décimale comme `long`, cela peut entraîner des problèmes hors limites si la valeur a été sérialisée à l’origine en tant que `ulong` ou `BigInteger`. L’analyse d’un nombre qui a une virgule décimale comme `double` peut perdre la précision si le nombre a été initialement sérialisé en tant que `decimal`.
 
-Pour les scénarios qui requièrent l’inférence de type, le code suivant montre un convertisseur personnalisé pour les propriétés de `Object`. Le code convertit :
+Pour les scénarios qui requièrent l’inférence de type, le code suivant montre un convertisseur personnalisé pour les propriétés de `object`. Le code convertit :
 
 * `true` et `false` à `Boolean`
-* Nombres à `long` ou `double`
+* Nombres sans décimal pour `long`
+* Nombres avec un nombre décimal à `double`
 * Dates à `DateTime`
 * Chaînes à `string`
 * Tout le reste à `JsonElement`
@@ -195,9 +196,9 @@ Pour les scénarios qui requièrent l’inférence de type, le code suivant mont
 
 Le code suivant inscrit le convertisseur :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertInferredTypesToObject.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DeserializeInferredTypesToObject.cs?name=SnippetRegister)]
 
-Voici un exemple de type avec des propriétés de `Object` :
+Voici un exemple de type avec des propriétés de `object` :
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithObjectProperties)]
 
@@ -213,7 +214,7 @@ L’exemple suivant de JSON à désérialiser contient des valeurs qui seront d�
 
 Sans le convertisseur personnalisé, la désérialisation place un `JsonElement` dans chaque propriété.
 
-Le [dossier tests unitaires](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) de l’espace de noms `System.Text.Json.Serialization` contient plus d’exemples de convertisseurs personnalisés qui gèrent la désérialisation vers les propriétés de l’objet.
+Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) de l’espace de noms `System.Text.Json.Serialization` contient plus d’exemples de convertisseurs personnalisés qui gèrent la désérialisation pour `object` propriétés.
 
 ### <a name="support-dictionary-with-non-string-key"></a>Dictionnaire de prise en charge avec clé non-chaîne
 
@@ -225,7 +226,7 @@ Le code suivant illustre un convertisseur personnalisé qui fonctionne avec `Dic
 
 Le code suivant inscrit le convertisseur :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertDictionaryTkeyEnumTValue.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripDictionaryTkeyEnumTValue.cs?name=SnippetRegister)]
 
 Le convertisseur peut sérialiser et désérialiser la propriété `TemperatureRanges` de la classe suivante qui utilise le `Enum`suivant :
 
@@ -245,11 +246,11 @@ La sortie JSON de la sérialisation ressemble à l’exemple suivant :
 }
 ```
 
-Le [dossier tests unitaires](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) de l’espace de noms `System.Text.Json.Serialization` contient des exemples de convertisseurs personnalisés qui gèrent des dictionnaires non-clés.
+Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) de l’espace de noms `System.Text.Json.Serialization` contient des exemples de convertisseurs personnalisés qui gèrent des dictionnaires non-clés.
 
 ### <a name="support-polymorphic-deserialization"></a>Prendre en charge la désérialisation polymorphe
 
-[La sérialisation polymorphe](system-text-json-how-to.md#serialize-properties-of-derived-classes) ne nécessite pas de convertisseur personnalisé, mais la désérialisation requiert un convertisseur personnalisé.
+Les fonctionnalités intégrées offrent une plage limitée de [sérialisation polymorphe](system-text-json-how-to.md#serialize-properties-of-derived-classes) , mais aucune prise en charge de la désérialisation. La désérialisation requiert un convertisseur personnalisé.
 
 Supposons, par exemple, que vous avez une classe de base abstraite `Person`, avec `Employee` et `Customer` classes dérivées. La désérialisation polymorphe signifie qu’au moment du design vous pouvez spécifier `Person` comme cible de désérialisation, et les objets `Customer` et `Employee` dans le JSON sont correctement désérialisés au moment de l’exécution. Pendant la désérialisation, vous devez trouver des indices qui identifient le type requis dans le JSON. Les types d’indices disponibles varient en fonction de chaque scénario. Par exemple, une propriété de discriminateur peut être disponible ou vous devrez peut-être vous appuyer sur la présence ou l’absence d’une propriété particulière. La version actuelle de `System.Text.Json` ne fournit pas d’attributs pour spécifier comment gérer les scénarios de désérialisation polymorphe, donc les convertisseurs personnalisés sont requis.
 
@@ -261,7 +262,7 @@ Le code suivant illustre une classe de base, deux classes dérivées et un conve
 
 Le code suivant inscrit le convertisseur :
 
-[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/ConvertPolymorphic.cs?name=SnippetRegister)]
+[!code-csharp[](~/samples/snippets/core/system-text-json/csharp/RoundtripPolymorphic.cs?name=SnippetRegister)]
 
 Le convertisseur peut désérialiser JSON qui a été créé à l’aide du même convertisseur pour sérialiser, par exemple :
 
@@ -282,22 +283,25 @@ Le convertisseur peut désérialiser JSON qui a été créé à l’aide du mêm
 
 ## <a name="other-custom-converter-samples"></a>Autres exemples de convertisseurs personnalisés
 
-Le [dossier tests unitaires](https://github.com/dotnet/corefx/blob/master/src/System.Text.Json/tests/Serialization/) dans le code source `System.Text.Json.Serialization` comprend d’autres exemples de convertisseurs personnalisés, tels que :
+L’article [migrer à partir de Newtonsoft. JSON vers System. Text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md) contient des exemples supplémentaires de convertisseurs personnalisés.
 
-* convertisseur de `Int32` qui convertit la valeur null en valeur 0 lors de la désérialisation
-* `Int32` convertisseur qui autorise les valeurs de chaîne et de nombre lors de la désérialisation
-* convertisseur de `Enum`
-* convertisseur de `List<T>` qui accepte les données externes
-* convertisseur de `Long[]` qui fonctionne avec une liste de nombres délimités par des virgules 
+Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/) dans le code source `System.Text.Json.Serialization` comprend d’autres exemples de convertisseurs personnalisés, tels que :
+
+* [Convertisseur Int32 qui convertit la valeur null en valeur 0 lors de la désérialisation](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.NullValueType.cs)
+* [Convertisseur Int32 qui autorise les valeurs de chaîne et de nombre lors de la désérialisation](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
+* [Convertisseur enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
+* [Répertorier\<le convertisseur T > qui accepte les données externes](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
+* [Long [] convertisseur qui fonctionne avec une liste de nombres délimités par des virgules](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs) 
+
+Si vous devez créer un convertisseur qui modifie le comportement d’un convertisseur intégré existant, vous pouvez faire en sorte que [le code source du convertisseur existant](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) serve de point de départ pour la personnalisation.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
+* [Code source pour les convertisseurs intégrés](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters)
+* [Prise en charge des valeurs DateTime et DateTimeOffset dans System. Text. JSON](../datetime/system-text-json-support.md)
 * [Vue d’ensemble de System. Text. JSON](system-text-json-overview.md)
-* [Informations de référence sur l’API System. Text. JSON](xref:System.Text.Json)
 * [Utilisation de System. Text. JSON](system-text-json-how-to.md)
-* [Code source pour les convertisseurs intégrés](https://github.com/dotnet/corefx/tree/master/src/System.Text.Json/src/System/Text/Json/Serialization/Converters/)
-* GitHub problèmes liés aux convertisseurs personnalisés pour `System.Text.Json`
-  * [36639 présentation des convertisseurs personnalisés](https://github.com/dotnet/corefx/issues/36639)
-  * [38713 à propos de la désérialisation vers l’objet](https://github.com/dotnet/corefx/issues/38713)
-  * [40120 à propos des dictionnaires non-clés-chaîne](https://github.com/dotnet/corefx/issues/40120)
-  * [37787 à propos de la désérialisation polymorphe](https://github.com/dotnet/corefx/issues/37787)
+* [Migration à partir de Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Informations de référence sur l’API System. Text. JSON](xref:System.Text.Json)
+* [Informations de référence sur l’API System. Text. JSON. Serialization](xref:System.Text.Json.Serialization)
+<!-- * [System.Text.Json roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->

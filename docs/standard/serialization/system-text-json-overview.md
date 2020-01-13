@@ -1,19 +1,19 @@
 ---
 title: Sérialiser et désérialiser JSON à C# l’aide de-.net
-ms.date: 09/16/2019
+ms.date: 01/10/2020
 helpviewer_keywords:
 - JSON serialization
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: 6561d5e1580e1170369622ebc7bb330ff4e0964f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c05783963ba521109fb542f247ec9e62fdb5c2d9
+ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705780"
+ms.lasthandoff: 01/12/2020
+ms.locfileid: "75904641"
 ---
-# <a name="json-serialization-in-net---overview"></a>Sérialisation JSON dans .NET-vue d’ensemble
+# <a name="json-serialization-and-deserialization-marshalling-and-unmarshalling-in-net---overview"></a>Sérialisation et désérialisation JSON (marshaling et démarshaling) dans .NET-vue d’ensemble
 
 L’espace de noms `System.Text.Json` fournit des fonctionnalités pour sérialiser vers et désérialiser à partir de JavaScript Object Notation (JSON).
 
@@ -26,16 +26,15 @@ La bibliothèque fournit également des classes pour l’utilisation d’un mod�
 * La bibliothèque est intégrée dans le cadre de l’infrastructure partagée [.net Core 3,0](https://aka.ms/netcore3download) .
 * Pour les autres frameworks cibles, installez le package NuGet [System. Text. JSON](https://www.nuget.org/packages/System.Text.Json) . Le package prend en charge :
   * .NET Standard 2,0 et versions ultérieures
-  * .NET Framework 4.6.1 et versions ultérieures
+  * .NET Framework 4.7.2 et versions ultérieures
   * .NET Core 2,0, 2,1 et 2,2
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
 * [Comment utiliser la bibliothèque](system-text-json-how-to.md)
-* [Code source](https://github.com/dotnet/runtime/tree/master/src/libraries/System.Text.Json)
-* [Informations de référence sur les API](xref:System.Text.Json)
-* [Feuille de route](https://github.com/dotnet/runtime/blob/master/src/libraries/System.Text.Json/roadmap/README.md)
-* GitHub problèmes dans le référentiel dotnet/corefx
-  * [Discussion sur le développement de System. Text. JSON](https://github.com/dotnet/corefx/issues/33115) <!-- TODO: Issues are still not moved to the new repo-->
-  * [Tous les problèmes liés à System. Text. JSON](https://github.com/dotnet/runtime/issues?q=is%3Aopen+is%3Aissue+label%3Aarea-System.Text.Json)
-  * [Problèmes relatifs à System. Text. JSON étiquetés JSON-fonctionnalité-doc](https://github.com/dotnet/runtime/labels/json-functionality-doc)
+* [Migration à partir de Newtonsoft. JSON](system-text-json-migrate-from-newtonsoft-how-to.md)
+* [Comment écrire des convertisseurs](system-text-json-converters-how-to.md)
+* [Code source System. Text. JSON](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json)
+* [Informations de référence sur l’API System. Text. JSON](xref:System.Text.Json)
+* [Informations de référence sur l’API System. Text. JSON. Serialization](xref:System.Text.Json.Serialization)
+<!-- * [Roadmap](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/roadmap/README.md)-->
