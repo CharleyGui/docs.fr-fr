@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 30931874-4d0e-4df1-b3d1-e425b50655d1
 topic_type:
 - apiref
-ms.openlocfilehash: 1759ee2ecf08322b745a4f80a62b24596c4504cb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 11bb220068e978dc130701e3b28ab3f421be7337
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123249"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937650"
 ---
 # <a name="loadlibraryshim-function"></a>LoadLibraryShim, fonction
 Charge une version spécifiée d’une DLL qui est incluse dans le package redistribuable .NET Framework.  
@@ -38,12 +38,12 @@ HRESULT LoadLibraryShim (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `szDllName`  
  dans Chaîne se terminant par zéro qui représente le nom de la DLL à charger à partir de la bibliothèque de .NET Framework.  
   
  `szVersion`  
- dans Chaîne se terminant par zéro qui représente la version de la DLL à charger. Si `szVersion` a la valeur null, la version sélectionnée pour le chargement est la version la plus récente de la DLL spécifiée inférieure à la version 4. Autrement dit, toutes les versions égales ou supérieures à la version 4 sont ignorées si `szVersion` a la valeur null, et si aucune version antérieure à la version 4 n’est installée, le chargement de la DLL échoue. Cela permet de s’assurer que l’installation du .NET Framework 4 n’affecte pas les applications ou les composants préexistants. Consultez l’entrée [in-proc SxS and Migration démarrage rapide](https://go.microsoft.com/fwlink/?LinkId=200329) dans le blog de l’équipe CLR.  
+ dans Chaîne se terminant par zéro qui représente la version de la DLL à charger. Si `szVersion` a la valeur null, la version sélectionnée pour le chargement est la version la plus récente de la DLL spécifiée inférieure à la version 4. Autrement dit, toutes les versions égales ou supérieures à la version 4 sont ignorées si `szVersion` a la valeur null, et si aucune version antérieure à la version 4 n’est installée, le chargement de la DLL échoue. Cela permet de s’assurer que l’installation du .NET Framework 4 n’affecte pas les applications ou les composants préexistants. Consultez l’entrée [in-proc SxS and Migration démarrage rapide](https://devblogs.microsoft.com/dotnet/in-proc-sxs-and-migration-quick-start/) dans le blog de l’équipe CLR.  
   
  `pvReserved`  
  Réservé à un usage ultérieur.  
@@ -56,7 +56,7 @@ HRESULT LoadLibraryShim (
   
 |Code de retour|Description|  
 |-----------------|-----------------|  
-|S_OK|La commande s'est correctement terminée.|  
+|S_OK|La méthode s'est correctement terminée.|  
 |CLR_E_SHIM_RUNTIMELOAD|Le chargement de `szDllName` nécessite le chargement du common language runtime (CLR) et la version nécessaire du CLR ne peut pas être chargée.|  
   
 ## <a name="remarks"></a>Notes  
@@ -65,7 +65,7 @@ HRESULT LoadLibraryShim (
 > [!NOTE]
 > À partir de la version 2,0 de .NET Framework, le chargement de fusion. dll entraîne le chargement du CLR. Cela est dû au fait que les fonctions de fusion. dll sont désormais des wrappers dont les implémentations sont fournies par le Runtime.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** MSCorEE. h  

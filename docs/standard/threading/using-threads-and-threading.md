@@ -6,12 +6,12 @@ helpviewer_keywords:
 - threading [.NET Framework], about threading
 - managed threading
 ms.assetid: 9b5ec2cd-121b-4d49-b075-222cf26f2344
-ms.openlocfilehash: 863fa565f7c107214273912a6d110b7664bffe6b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d487edff2cdc2e63f81963bfaa1f68a06e5b36e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131498"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936843"
 ---
 # <a name="using-threads-and-threading"></a>Utilisation des threads et du threading
 
@@ -28,11 +28,13 @@ Pour créer un thread, vous devez créer une instance de la classe <xref:System.
 
 ## <a name="how-to-stop-a-thread"></a>Comment arrêter un thread
 
-Pour mettre fin à l’exécution d’un thread, utilisez la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md).
+Pour mettre fin à l’exécution d’un thread, utilisez l' <xref:System.Threading.CancellationToken?displayProperty=nameWithType>. Il offre un moyen unifié d’arrêter les threads de manière coopérative. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
 
-À compter de .NET Framework 4, vous pouvez utiliser <xref:System.Threading.CancellationToken?displayProperty=nameWithType> pour annuler un thread de manière coopérative. Pour plus d’informations, consultez [Annulation dans les threads managés](cancellation-in-managed-threads.md).
+Parfois, il n’est pas possible d’arrêter un thread de manière coopérative, car il exécute du code tiers non conçu pour l’annulation coopérative. Dans ce cas, vous souhaiterez peut-être mettre fin à l’exécution de force. Pour mettre fin à l’exécution d’un thread de force, dans .NET Framework vous pouvez utiliser la méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType>. Cette méthode lève une <xref:System.Threading.ThreadAbortException> sur le thread sur lequel elle est appelée. Pour plus d’informations, consultez [Destruction de threads](destroying-threads.md). La méthode <xref:System.Threading.Thread.Abort%2A?displayProperty=nameWithType> n’est pas prise en charge dans .NET Core. Si vous devez mettre fin à l’exécution de code tiers de force dans .NET Core, exécutez-le dans le processus distinct et utilisez <xref:System.Diagnostics.Process.Kill%2A?displayProperty=nameWithType>.
 
-Utilisez la méthode <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pour faire en sorte que le thread appelant attende l’arrêt du thread sur lequel la méthode est appelée.
+Le <xref:System.Threading.CancellationToken?displayProperty=nameWithType> n’est pas disponible avant .NET Framework 4. Pour arrêter un thread dans les anciennes versions de .NET Framework, vous devez implémenter l’annulation coopérative manuellement à l’aide des techniques de synchronisation de threads. Par exemple, vous pouvez créer le champ booléen volatile `shouldStop` et l’utiliser pour demander l’arrêt du code exécuté par le thread. Pour plus d’informations, consultez [volatile](../../csharp/language-reference/keywords/volatile.md) in C# Reference et <xref:System.Threading.Volatile?displayProperty=nameWithType>.
+
+Utilisez la méthode <xref:System.Threading.Thread.Join%2A?displayProperty=nameWithType> pour que le thread appelant attende la fin du thread en cours d’arrêt.
 
 ## <a name="how-to-pause-or-interrupt-a-thread"></a>Comment suspendre ou interrompre un thread
 
@@ -42,7 +44,7 @@ Vous utilisez la méthode <xref:System.Threading.Thread.Sleep%2A?displayProperty
 
 Le tableau suivant présente certaines des propriétés de <xref:System.Threading.Thread> :  
   
-|Property|Description|  
+|Les|Description|  
 |--------------|-----------|  
 |<xref:System.Threading.Thread.IsAlive%2A>|Retourne `true` si un thread a été démarré et ne s’est pas encore arrêté normalement ou n’a pas été abandonné.|  
 |<xref:System.Threading.Thread.IsBackground%2A>|Obtient ou définit une valeur booléenne qui indique si un thread est un thread d’arrière-plan. Les threads d’arrière-plan ressemblent aux threads de premier plan, mais un thread d’arrière-plan n’empêche pas un processus de s’arrêter. Une fois que tous les threads de premier plan appartenant à un processus sont arrêtés, le common language runtime met fin au processus en appelant la méthode <xref:System.Threading.Thread.Abort%2A> sur les threads d’arrière-plan encore actifs. Pour plus d’informations, consultez [Threads de premier plan et d’arrière-plan](foreground-and-background-threads.md).|  

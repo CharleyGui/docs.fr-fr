@@ -7,18 +7,18 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 65990c699bafa8eec1ba7dcbce624c88316cbb72
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 0764ca29fc959092e77629ff3888e65f0d68d70c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283284"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75938050"
 ---
 # <a name="working-with-certificates"></a>Utilisation des certificats
 
 Pour programmer la sécurité relative à WCF (Windows Communication Foundation), les certificats numériques X.509 sont couramment utilisés pour authentifier les clients et les serveurs, ainsi que pour chiffrer et signer numériquement les messages. Cette rubrique décrit brièvement les fonctionnalités des certificats numériques X.509 et leur utilisation dans WCF. Elle inclut également des liens vers les rubriques qui présentent ces concepts de manière plus détaillée, ou qui montrent comment effectuer les tâches courantes à l’aide de WCF et des certificats.
 
-En bref, un certificat numérique fait partie d’une infrastructure *PKI* (infrastructure à clé publique). Il s’agit d’un système composé de certificats numériques, d’autorités de certification et d’autorités d’inscription qui permettent de vérifier et d’authentifier la validité de chaque partie impliquée dans une transaction électronique grâce à l’utilisation d’un chiffrement à clé publique. Une autorité de certification émet des certificats qui comportent un ensemble de champs contenant des données telles que le *sujet* (entité pour laquelle le certificat est émis), les dates de validité (période de validité du certificat), l’émetteur (entité qui a émis le certificat) et la clé publique. Dans WCF, chacune de ces propriétés est traitée en tant que <xref:System.IdentityModel.Claims.Claim>, et chaque revendication est divisée en deux types : identité et droit. Pour plus d’informations sur les certificats X.509, consultez [Certificats de clé publique X.509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Pour plus d’informations sur les revendications et la notion d’autorisation dans WCF, consultez [Gestion des revendications et autorisation avec le modèle d’identité](managing-claims-and-authorization-with-the-identity-model.md). Pour plus d’informations sur l’implémentation d’une infrastructure à clé publique, consultez [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services](https://blogs.technet.microsoft.com/yungchou/2013/10/21/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2/).
+En bref, un certificat numérique fait partie d’une infrastructure *PKI* (infrastructure à clé publique). Il s’agit d’un système composé de certificats numériques, d’autorités de certification et d’autorités d’inscription qui permettent de vérifier et d’authentifier la validité de chaque partie impliquée dans une transaction électronique grâce à l’utilisation d’un chiffrement à clé publique. Une autorité de certification émet des certificats qui comportent un ensemble de champs contenant des données telles que le *sujet* (entité pour laquelle le certificat est émis), les dates de validité (période de validité du certificat), l’émetteur (entité qui a émis le certificat) et la clé publique. Dans WCF, chacune de ces propriétés est traitée en tant que <xref:System.IdentityModel.Claims.Claim>, et chaque revendication est divisée en deux types : identité et droit. Pour plus d’informations sur les certificats X.509, consultez [Certificats de clé publique X.509](/windows/desktop/SecCertEnroll/about-x-509-public-key-certificates). Pour plus d’informations sur les revendications et la notion d’autorisation dans WCF, consultez [Gestion des revendications et autorisation avec le modèle d’identité](managing-claims-and-authorization-with-the-identity-model.md). Pour plus d’informations sur l’implémentation d’une infrastructure à clé publique, consultez [Enterprise PKI with Windows Server 2012 R2 Active Directory Certificate Services](https://docs.microsoft.com/archive/blogs/yungchou/enterprise-pki-with-windows-server-2012-r2-active-directory-certificate-services-part-1-of-2).
 
 La principale fonction d’un certificat est d’authentifier l’identité du propriétaire du certificat auprès des autres parties. Un certificat contient la *clé publique* du propriétaire, alors que le propriétaire conserve la clé privée. Les clés publiques peuvent être utilisées pour chiffrer les messages envoyés au propriétaire du certificat. Cependant, seul le propriétaire de la clé privée pourra déchiffrer ces messages.
 
@@ -72,7 +72,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Class|Propriété|
+|Classe|Les|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -141,7 +141,7 @@ Vous pouvez également définir le mode dans la configuration à l’aide de l�
 
 Dans WCF, vous devez souvent spécifier un certificat ou un ensemble de certificats qu’un service ou un client doit utiliser pour authentifier, chiffrer ou signer numériquement un message. Pour ce faire, il vous suffit de rédiger un programme à l'aide de la méthode `SetCertificate` des diverses classes représentant les certificats X.509. Les classes suivantes utilisent la méthode `SetCertificate` pour spécifier un certificat.
 
-|Class|Méthode|
+|Classe|Méthode|
 |-----------|------------|
 |<xref:System.ServiceModel.Security.PeerCredential>|<xref:System.ServiceModel.Security.PeerCredential.SetCertificate%2A>|
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>|<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>|

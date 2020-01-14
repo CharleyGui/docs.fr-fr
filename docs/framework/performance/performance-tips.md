@@ -9,18 +9,18 @@ helpviewer_keywords:
 ms.assetid: ae275793-857d-4102-9095-b4c2a02d57f4
 author: BillWagner
 ms.author: wiwagn
-ms.openlocfilehash: 48b62990abf85eac4d4ab30c9a4b891de0875cd7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 12e8d9398a1cf76267f4e8441845007da17949cd
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444534"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937896"
 ---
 # <a name="net-performance-tips"></a>Conseils relatifs aux performances .NET
 Le terme *performances* désigne généralement la vitesse d’exécution d’un programme. Vous pouvez parfois augmenter la vitesse d’exécution en suivant certaines règles de base dans votre code source. Dans certains programmes, il est important d’examiner attentivement le code et d’utiliser des profileurs pour garantir que le programme s’exécute aussi rapidement que possible. Dans d’autres programmes, vous n’avez pas à effectuer une telle optimisation, car le code, tel qu’il est écrit, est suffisamment rapide. Cet article répertorie les zones dont les performances sont fréquemment impactées, et fournit des conseils d’amélioration, ainsi que des liens vers d’autres rubriques relatives aux performances. Pour plus d’informations sur la planification et la mesure des performances, consultez [Performances](index.md)  
   
 ## <a name="boxing-and-unboxing"></a>Conversion boxing et unboxing  
- Il est préférable de ne pas utiliser de types valeur lorsque ceux-ci doivent être convertis (boxed) de nombreuses fois, par exemple, dans les classes de collections non génériques comme <xref:System.Collections.ArrayList?displayProperty=nameWithType>. Vous pouvez éviter le boxing des types valeur en utilisant des collections génériques comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Le boxing et l’unboxing sont des processus qui coûtent cher en calcul. Lorsqu’un type valeur est converti (boxed), un tout nouvel objet doit être créé. Cela peut être 20 fois plus long qu’une simple assignation de référence. Lors d’une conversion unboxing, le processus de cast peut être quatre fois plus long que celui d’une assignation. Pour plus d’informations, consultez [Boxing et unboxing](../../csharp/programming-guide/types/boxing-and-unboxing.md).  
+ Il est préférable de ne pas utiliser de types valeur lorsque ceux-ci doivent être convertis (boxed) de nombreuses fois, par exemple, dans les classes de collections non génériques comme <xref:System.Collections.ArrayList?displayProperty=nameWithType>. Vous pouvez éviter le boxing des types valeur en utilisant des collections génériques comme <xref:System.Collections.Generic.List%601?displayProperty=nameWithType>. Le boxing et l’unboxing sont des processus qui coûtent cher en calcul. Lorsqu’un type valeur est converti (boxed), un tout nouvel objet doit être créé. Cela peut être 20 fois plus long qu’une simple assignation de référence. Lors d’une conversion unboxing, le processus de cast peut être quatre fois plus long que celui d’une assignation. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../csharp/programming-guide/types/boxing-and-unboxing.md).  
   
 ## <a name="strings"></a>Chaînes  
  Lorsque vous concaténez un grand nombre de variables de chaîne, par exemple, dans une boucle serrée, utilisez <xref:System.Text.StringBuilder?displayProperty=nameWithType> au lieu de [l’opérateur +](../../csharp/language-reference/operators/addition-operator.md) C# ou des [opérateurs de concaténation](../../visual-basic/language-reference/operators/concatenation-operators.md) Visual Basic. Pour plus d’informations, consultez [Comment concaténer plusieurs chaînes](../../csharp/how-to/concatenate-multiple-strings.md) et [opérateurs de concaténation dans Visual Basic](../../visual-basic/programming-guide/language-features/operators-and-expressions/concatenation-operators.md).  
@@ -38,9 +38,9 @@ Le terme *performances* désigne généralement la vitesse d’exécution d’un
   
 - [Performance Tips and Tricks in .NET Applications](https://docs.microsoft.com/previous-versions/dotnet/articles/ms973839(v=msdn.10))  
 
-- [Rico Mariani’s Performance Tidbits](https://blogs.msdn.microsoft.com/ricom/) (Blog de Rico Mariani sur les performances)  
+- [Rico Mariani’s Performance Tidbits](https://docs.microsoft.com/archive/blogs/ricom/) (Blog de Rico Mariani sur les performances)  
 
-- [Blog de Vance Morrison](https://blogs.msdn.microsoft.com/vancem/)
+- [Blog de Vance Morrison](https://docs.microsoft.com/archive/blogs/vancem/)
   
 ## <a name="see-also"></a>Voir aussi
 

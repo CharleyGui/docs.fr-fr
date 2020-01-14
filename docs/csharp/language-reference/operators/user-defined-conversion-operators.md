@@ -10,12 +10,12 @@ helpviewer_keywords:
 - implicit keyword [C#]
 - conversion operator [C#]
 - user-defined conversion [C#]
-ms.openlocfilehash: 25f042dec5fd5594b7e166cc064394e90db01c27
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2f4858d729093d3520e97610e0eac8600093187a
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036117"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936878"
 ---
 # <a name="user-defined-conversion-operators-c-reference"></a>Opérateurs de conversion définie par l’utilisateur (Référence C#)
 
@@ -49,4 +49,4 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Surcharge d’opérateur](operator-overloading.md)
 - [Opérateurs de test et de cast de type](type-testing-and-cast.md)
 - [Cast et conversion de types](../../programming-guide/types/casting-and-type-conversions.md)
-- [Conversions explicites définies par l’utilisateur chaînées en C#](https://blogs.msdn.microsoft.com/ericlippert/2007/04/16/chained-user-defined-explicit-conversions-in-c/)
+- [Conversions explicites définies par l’utilisateur chaînées en C#](https://docs.microsoft.com/archive/blogs/ericlippert/chained-user-defined-explicit-conversions-in-c)

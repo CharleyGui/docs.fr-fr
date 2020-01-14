@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7123a89b-eb9b-463a-a552-a081e33b0a3a
 topic_type:
 - apiref
-ms.openlocfilehash: 82fa0903474ee04b767fd9c68812efe7f0cc4fa0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adbb5eca3b7ffa36d0c963d0dacc3b2afdb664d4
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124162"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935561"
 ---
 # <a name="loadtypelibwithresolver-function"></a>LoadTypeLibWithResolver, fonction
 Charge une bibliothèque de types et utilise l' [interface ITypeLibResolver](itypelibresolver-interface.md) fournie pour résoudre toutes les bibliothèques de types référencées en interne.  
@@ -34,12 +34,12 @@ HRESULT LoadTypeLibWithResolver(
     [out] ITypeLib          **pptlib);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `szFile`  
  dans Chemin d’accès de fichier de la bibliothèque de types.  
   
  `regkind`  
- dans Indicateur d' [énumération REGKIND](https://docs.microsoft.com/windows/win32/api/oleauto/ne-oleauto-regkind) qui contrôle la façon dont la bibliothèque de types est inscrite. Les valeurs possibles sont les suivantes :  
+ dans Indicateur d' [énumération REGKIND](/windows/win32/api/oleauto/ne-oleauto-regkind) qui contrôle la façon dont la bibliothèque de types est inscrite. Les valeurs possibles sont les suivantes :  
   
 - `REGKIND_DEFAULT`: utilisez le comportement d’inscription par défaut.  
   
@@ -59,7 +59,7 @@ HRESULT LoadTypeLibWithResolver(
 |Valeur de retour|Signification|  
 |------------------|-------------|  
 |`S_OK`|Opération réussie.|  
-|`E_OUTOFMEMORY`|Mémoire insuffisante.|  
+|`E_OUTOFMEMORY`|Mémoire saturée.|  
 |`E_POINTER`|Un ou plusieurs pointeurs ne sont pas valides.|  
 |`E_INVALIDARG`|Un ou plusieurs arguments ne sont pas valides.|  
 |`TYPE_E_IOERROR`|La fonction n’a pas pu écrire dans le fichier.|  
@@ -82,7 +82,7 @@ HRESULT LoadTypeLibWithResolver(
   
  Si vous appelez `LoadTypeLibWithResolver` directement, vous devez fournir votre propre implémentation de l' [interface ITypeLibResolver](itypelibresolver-interface.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../get-started/system-requirements.md).  
   
  **En-tête :** TlbRef. h  

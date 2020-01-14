@@ -2,12 +2,12 @@
 title: Nouveautés de Windows Workflow Foundation dans .NET 4.5
 ms.date: 03/30/2017
 ms.assetid: 195c43a8-e0a8-43d9-aead-d65a9e6751ec
-ms.openlocfilehash: 80919dd7a726cbac5fa13680e0c79292745a7bca
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: b14f18dce64bc5738f3d3c6af11d6d6224764486
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837582"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937888"
 ---
 # <a name="whats-new-in-windows-workflow-foundation-in-net-45"></a>Nouveautés de Windows Workflow Foundation dans .NET 4.5
 
@@ -220,7 +220,7 @@ Outre les modèles de développement d’organigramme et workflow séquentiel, c
 
 ### <a name="BKMK_StateMachine"></a>Workflows d’ordinateur d’État
 
-Les workflows de machine à États ont été introduits dans le cadre de l' .NET Framework 4, version 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](https://blogs.msdn.microsoft.com/endpoint/2011/04/18/microsoft-net-framework-4-platform-update-1/). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :
+Les workflows de machine à États ont été introduits dans le cadre de l' .NET Framework 4, version 4.0.1 dans la [mise à jour 1 de la plateforme Microsoft .NET Framework 4](https://docs.microsoft.com/archive/blogs/endpoint/microsoft-net-framework-4-platform-update-1). Cette mise à jour inclut plusieurs nouvelles classes et activités qui permettent aux développeurs de créer des workflow de machine à états. Ces classes et activités ont été mises à jour pour .NET Framework 4,5. Les mises à jour comprennent :
 
 1. Possibilité de définir des points d'arrêt sur des états
 

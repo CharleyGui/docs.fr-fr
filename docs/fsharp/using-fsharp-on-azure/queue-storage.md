@@ -1,18 +1,18 @@
 ---
 title: Bien démarrer avec le stockage File d’attente Azure en F#
-description: Les files d’attente Azure fournissent une messagerie fiable et asynchrone entre les composants de l’application. La messagerie Cloud permet à vos composants d’application d’évoluer indépendamment.
+description: Les files d’attente Azure fournissent une messagerie asynchrone fiable entre les composants d’application. La messagerie cloud permet de mettre à l’échelle vos composants d’application indépendamment.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: a09cbdd4b995e34177c110ce91b02162bb19dfa8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 841068ac91aecc53811359e27d984907569a2c6d
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423844"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935495"
 ---
 # <a name="get-started-with-azure-queue-storage-using-f"></a>Prise en main du stockage de files d’attente Azure à l’aide de F\#
 
-Le stockage de files d’attente Azure fournit une messagerie Cloud entre les composants d’application. Dans la conception d’applications à des fins de mise à l’échelle, les composants d’application sont souvent découplés, afin qu’ils puissent être mis à l’échelle indépendamment. Le stockage file d’attente offre une messagerie asynchrone pour la communication entre les composants de l’application, qu’ils s’exécutent dans le Cloud, sur le bureau, sur un serveur local ou sur un appareil mobile. Le stockage de files d’attente prend également en charge la gestion des tâches asynchrones et la création de flux de travail.
+Le Stockage File d’attente Azure fournit une messagerie cloud entre les composants d’application. Lors de la conception d'applications pour la mise à l'échelle, des composants d'application sont souvent découplés, de sorte qu'ils peuvent être mis à l'échelle indépendamment. Le Stockage File d’attente offre une messagerie asynchrone pour la communication entre les composants d’application, qu’ils soient exécutés dans le cloud, sur le bureau, sur un serveur local ou sur un appareil mobile. Le stockage de files d’attente prend également en charge la gestion des tâches asynchrones et la création des flux de travail de processus.
 
 ### <a name="about-this-tutorial"></a>À propos de ce didacticiel
 
@@ -29,15 +29,15 @@ Vous aurez également besoin de votre clé d’accès de stockage pour ce compte
 
 Les exemples de cet article peuvent être utilisés dans une F# application ou un F# script. Pour créer un F# script, créez un fichier avec l’extension `.fsx`, par exemple `queues.fsx`, dans votre F# environnement de développement.
 
-Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer le package `WindowsAzure.Storage` et référencez `WindowsAzure.Storage.dll` dans votre script à l’aide d’une directive `#r`.
+Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer le package `WindowsAzure.Storage` et les `WindowsAzure.Storage.dll` de référence dans votre script à l’aide d’une directive `#r`.
 
 ### <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
 
-Ajoutez les instructions `open` suivantes en haut du fichier `queues.fsx` :
+Ajoutez les instructions `open` suivantes au début du fichier `queues.fsx` :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L1-L3)]
 
-### <a name="get-your-connection-string"></a>Obtient votre chaîne de connexion
+### <a name="get-your-connection-string"></a>Obtention de votre chaîne de connexion
 
 Vous aurez besoin d’une chaîne de connexion de stockage Azure pour ce didacticiel. Pour plus d’informations sur les chaînes de connexion, consultez [configurer des chaînes de connexion de stockage](/azure/storage/storage-configure-connection-string).
 
@@ -45,15 +45,15 @@ Pour le didacticiel, vous allez entrer votre chaîne de connexion dans votre scr
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L9-L9)]
 
-Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine de votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la distribuer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres utilisateurs. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
+Toutefois, cela n’est **pas recommandé** pour les projets réels. Votre clé de compte de stockage est similaire au mot de passe racine pour votre compte de stockage. Veillez toujours à protéger votre clé de compte de stockage. Évitez de la communiquer à d’autres utilisateurs, de la coder en dur ou de l’enregistrer dans un fichier texte brut accessible à d’autres personnes. Vous pouvez régénérer votre clé à l’aide du portail Azure si vous pensez qu’elle a peut-être été compromise.
 
 Pour les applications réelles, la meilleure façon de gérer votre chaîne de connexion de stockage se trouve dans un fichier de configuration. Pour extraire la chaîne de connexion d’un fichier de configuration, procédez comme suit :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L11-L13)]
 
-L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type `ConfigurationManager` de .NET Framework.
+L’utilisation d’Azure Configuration Manager est facultative. Vous pouvez également utiliser une API telle que le type de `ConfigurationManager` du .NET Framework.
 
-### <a name="parse-the-connection-string"></a>Analyser la chaîne de connexion
+### <a name="parse-the-connection-string"></a>Analyse de la chaîne de connexion
 
 Pour analyser la chaîne de connexion, utilisez :
 
@@ -61,27 +61,27 @@ Pour analyser la chaîne de connexion, utilisez :
 
 Une `CloudStorageAccount`est alors retournée.
 
-### <a name="create-the-queue-service-client"></a>Créer le client service de File d’attente
+### <a name="create-the-queue-service-client"></a>Création du client du service Queue
 
-La classe `CloudQueueClient` vous permet de récupérer des files d’attente stockées dans le stockage de files d’attente. Voici un moyen de créer le client de service :
+La classe `CloudQueueClient` vous permet de récupérer des files d’attente stockées dans le stockage de files d’attente. Voici un moyen de créer le client du service :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L26-L26)]
 
-Vous êtes maintenant prêt à écrire du code qui lit et écrit des données dans le stockage de files d’attente.
+Vous êtes maintenant prêt à écrire du code qui lit et écrit des données dans le Queue Storage.
 
-## <a name="create-a-queue"></a>Créer une file d’attente
+## <a name="create-a-queue"></a>Créer une file d'attente
 
 Cet exemple montre comment créer une file d’attente si elle n’existe pas déjà :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L32-L36)]
 
-## <a name="insert-a-message-into-a-queue"></a>Insérer un message dans une file d’attente
+## <a name="insert-a-message-into-a-queue"></a>Insertion d'un message dans une file d'attente
 
 Pour insérer un message dans une file d’attente existante, commencez par créer un `CloudQueueMessage`. Ensuite, appelez la méthode `AddMessage`. Un `CloudQueueMessage` peut être créé à partir d’une chaîne (au format UTF-8) ou d’un tableau de `byte`, comme suit :
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L42-L44)]
 
-## <a name="peek-at-the-next-message"></a>Lire le message suivant
+## <a name="peek-at-the-next-message"></a>Lecture furtive du message suivant
 
 Vous pouvez lire le message au début de la file d’attente, sans le supprimer de la file d’attente, en appelant la méthode `PeekMessage`.
 
@@ -95,15 +95,15 @@ Vous pouvez récupérer le message au début de la file d’attente à des fins 
 
 Vous indiquez par la suite le traitement réussi du message à l’aide de `DeleteMessage`.
 
-## <a name="change-the-contents-of-a-queued-message"></a>Modifier le contenu d’un message en file d’attente
+## <a name="change-the-contents-of-a-queued-message"></a>Modification du contenu d'un message en file d'attente
 
-Vous pouvez modifier le contenu d’un message récupéré sur place dans la file d’attente. Si le message représente une tâche de travail, vous pouvez utiliser cette fonctionnalité pour mettre à jour l’état de la tâche de travail. Le code suivant met à jour le message de file d’attente avec le nouveau contenu et définit le délai d’expiration de la visibilité pour étendre une autre 60 secondes. Cela permet d’enregistrer l’état du travail associé au message et de donner au client une autre minute pour continuer à travailler sur le message. Vous pouvez utiliser cette technique pour effectuer le suivi des flux de travail à plusieurs étapes sur les messages de la file d’attente, sans devoir recommencer depuis le début si une étape de traitement échoue en raison d’une défaillance matérielle ou logicielle. En règle générale, vous conservez également un nombre de nouvelles tentatives, et si le message est retenté plus d’un certain nombre de fois, vous le supprimez. Cela protège contre un message qui déclenche une erreur d’application à chaque fois qu’il est traité.
+Vous pouvez modifier le contenu d’un message récupéré sur place dans la file d’attente. Si le message représente une tâche, vous pouvez utiliser cette fonctionnalité pour mettre à jour l'état de la tâche. Le code suivant met à jour le message de la file d'attente avec un nouveau contenu et ajoute 60 secondes au délai d'expiration de la visibilité. Cette opération enregistre l'état de la tâche associée au message et accorde une minute supplémentaire au client pour traiter le message. Vous pouvez utiliser cette technique pour suivre des flux de travail à plusieurs étapes sur les messages de file d'attente, sans devoir reprendre du début si une étape du traitement échoue à cause d'une défaillance matérielle ou logicielle. En règle générale, vous conservez également un nombre de nouvelles tentatives, et si le message est retenté plus d’un certain nombre de fois, vous le supprimez. Cela protège du déclenchement d'une erreur d'application par un message chaque fois qu'il est traité.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L65-L69)]
 
-## <a name="de-queue-the-next-message"></a>Retirer le message suivant de la file d’attente
+## <a name="de-queue-the-next-message"></a>Enlèvement du message suivant de la file d'attente
 
-Votre code met en file d’attente un message de la file d’attente en deux étapes. Lorsque vous appelez `GetMessage`, vous recevez le message suivant dans une file d’attente. Un message renvoyé par `GetMessage` devient invisible pour tout autre code lisant les messages de cette file d’attente. Par défaut, ce message reste invisible pendant 30 secondes. Pour terminer la suppression du message de la file d’attente, vous devez également appeler `DeleteMessage`. Ce processus de suppression d’un message en deux étapes garantit que, si votre code ne parvient pas à traiter un message en raison d’une défaillance matérielle ou logicielle, une autre instance de votre code peut obtenir le même message et réessayer. Votre code appelle `DeleteMessage` juste après le traitement du message.
+Votre code enlève un message d'une file d'attente en deux étapes. Lorsque vous appelez `GetMessage`, vous recevez le message suivant dans une file d’attente. Un message renvoyé par `GetMessage` devient invisible par les autres codes lisant les messages de cette file d'attente. Par défaut, ce message reste invisible pendant 30 secondes. Pour terminer la suppression du message de la file d’attente, vous devez également appeler `DeleteMessage`. Ce processus de suppression d'un message en deux étapes garantit que, si votre code ne parvient pas à traiter un message à cause d'une défaillance matérielle ou logicielle, une autre instance de votre code peut obtenir le même message et réessayer. Votre code appelle `DeleteMessage` juste après le traitement du message.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L75-L76)]
 
@@ -113,31 +113,31 @@ Cet exemple montre comment utiliser un flux de travail asynchrone avec les API d
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L82-L91)]
 
-## <a name="additional-options-for-de-queuing-messages"></a>Options supplémentaires pour la suppression de la mise en file d’attente des messages
+## <a name="additional-options-for-de-queuing-messages"></a>Options supplémentaires pour l'extraction de messages
 
-Il existe deux façons de personnaliser la récupération des messages à partir d’une file d’attente.
-Tout d’abord, vous pouvez obtenir un lot de messages (jusqu’à 32). Deuxièmement, vous pouvez définir un délai d’invisibilité plus long ou plus faible, ce qui permet de traiter votre code plus ou moins rapidement pour traiter complètement chaque message. L’exemple de code suivant utilise `GetMessages` pour recevoir 20 messages dans un appel, puis traite chaque message. Il définit également le délai d’expiration de l’invisibilité sur cinq minutes pour chaque message. Notez que les 5 minutes commencent pour tous les messages en même temps. par conséquent, après 5 minutes écoulées depuis l’appel à `GetMessages`, tous les messages qui n’ont pas été supprimés sont à nouveau visibles.
+Il existe deux façons de personnaliser la récupération des messages à partir d'une file d'attente.
+Premièrement, vous pouvez obtenir un lot de messages (jusqu'à 32). Deuxièmement, vous pouvez définir un délai d'expiration de l'invisibilité plus long ou plus court afin d'accorder à votre code plus ou moins de temps pour traiter complètement chaque message. L’exemple de code suivant utilise `GetMessages` pour recevoir 20 messages dans un appel, puis traite chaque message. Il définit également le délai d'expiration de l'invisibilité sur cinq minutes pour chaque message. Notez que les 5 minutes commencent pour tous les messages en même temps. par conséquent, après 5 minutes écoulées depuis l’appel à `GetMessages`, tous les messages qui n’ont pas été supprimés sont à nouveau visibles.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L97-L99)]
 
-## <a name="get-the-queue-length"></a>Obtient la longueur de la file d’attente
+## <a name="get-the-queue-length"></a>Obtention de la longueur de la file d'attente
 
-Vous pouvez obtenir une estimation du nombre de messages dans une file d’attente. La méthode `FetchAttributes` demande à l’service de File d’attente de récupérer les attributs de la file d’attente, y compris le nombre de messages. La propriété `ApproximateMessageCount` retourne la dernière valeur extraite par la méthode `FetchAttributes`, sans appeler le service de File d’attente.
+Vous pouvez obtenir une estimation du nombre de messages dans une file d'attente. La méthode `FetchAttributes` demande à l’service de File d’attente de récupérer les attributs de la file d’attente, y compris le nombre de messages. La propriété `ApproximateMessageCount` retourne la dernière valeur extraite par la méthode `FetchAttributes`, sans appeler le service de File d’attente.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L105-L106)]
 
-## <a name="delete-a-queue"></a>Supprimer une file d’attente
+## <a name="delete-a-queue"></a>Supprimer une file d'attente
 
 Pour supprimer une file d’attente et tous les messages qu’elle contient, appelez la méthode `Delete` sur l’objet file d’attente.
 
 [!code-fsharp[QueueStorage](~/samples/snippets/fsharp/azure/queue-storage.fsx#L112-L113)]
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
-Maintenant que vous avez appris les bases du stockage de files d’attente, suivez ces liens pour en savoir plus sur les tâches de stockage plus complexes.
+Maintenant que vous connaissez les bases du stockage des files d'attente, consultez les liens suivants pour apprendre à exécuter les tâches de stockage plus complexes.
 
 - [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
 - [Fournisseur de type de stockage Azure](https://github.com/fsprojects/AzureStorageTypeProvider)
-- [Blog de l’équipe stockage Azure](https://blogs.msdn.microsoft.com/windowsazurestorage/)
-- [Configurer des chaînes de connexion de stockage Azure](/azure/storage/common/storage-configure-connection-string)
-- [Informations de référence sur l’API REST des services de stockage Azure](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
+- [Blog de l'équipe Azure Storage](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
+- [Configuration des chaînes de connexion du Stockage Azure](/azure/storage/common/storage-configure-connection-string)
+- [Référence de l'API REST des services de Stockage Azure](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)

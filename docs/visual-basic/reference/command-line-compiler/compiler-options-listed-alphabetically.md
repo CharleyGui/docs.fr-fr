@@ -4,12 +4,12 @@ ms.date: 04/12/2018
 helpviewer_keywords:
 - Visual Basic compiler, options
 ms.assetid: e67febba-bacf-4e1f-a143-c141e063f90e
-ms.openlocfilehash: c529c03fd3856bbd3d3b26371415907c94ca8d30
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 85fb07f46c2d885491db7358f24b3b50836c2ca8
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74343515"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937759"
 ---
 # <a name="visual-basic-compiler-options-listed-alphabetically"></a>Visual Basic options du compilateur classées par ordre alphabétique
 Le compilateur de ligne de commande Visual Basic est fourni comme alternative à la compilation de programmes à partir de l’environnement de développement intégré (IDE) de Visual Studio. La liste suivante répertorie les Visual Basic options du compilateur de ligne de commande triées par ordre alphabétique.  
@@ -57,7 +57,7 @@ Le compilateur de ligne de commande Visual Basic est fourni comme alternative à
 |[-optioninfer](../../../visual-basic/reference/command-line-compiler/optioninfer.md)|Permet l'utilisation de l'inférence de type de variable locale dans les déclarations de variable.|  
 |[-optionstrict](../../../visual-basic/reference/command-line-compiler/optionstrict.md)|Applique une sémantique de langage stricte.|  
 |[-out](../../../visual-basic/reference/command-line-compiler/out.md)|Spécifie un fichier de sortie.|  
-|`-parallel[+&#124;-]`|Indique s'il faut utiliser la build simultanée (+).|  
+|<code>-parallel[+&#124;-]</code>|Indique s'il faut utiliser la build simultanée (+).|  
 |[-platform](../../../visual-basic/reference/command-line-compiler/platform.md)|Spécifie la plateforme de processeur ciblée par le compilateur pour le fichier de sortie.|  
 |`-preferreduilang`|Spécifiez le nom de la langue de sortie préférée.|  
 |[-quiet](../../../visual-basic/reference/command-line-compiler/quiet.md)|Empêche le compilateur d'afficher le code pour les erreurs et les avertissements liés à la syntaxe.|  

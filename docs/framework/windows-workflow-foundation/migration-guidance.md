@@ -2,12 +2,12 @@
 title: Conseils relatifs à la migration
 ms.date: 03/30/2017
 ms.assetid: cb65c132-58c9-4028-b3d4-1efc71d5e60e
-ms.openlocfilehash: 672ed1a93b4409f491d76ffeeaaac5f67a1c4b6e
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: f0c21d32b745a51bada9133230dd0c87be9c915e
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802607"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937961"
 ---
 # <a name="migration-guidance"></a>Conseils relatifs à la migration
 
@@ -21,7 +21,8 @@ Dans le .NET Framework 4, Microsoft publie la deuxième version principale de Wi
   
  Par conséquent, la décision d’adopter le .NET Framework 4 est dissociée de votre décision de passer à WF4 (System. Activities.\*) à partir de WF3 (System. Workflow.\*). Cette rubrique fournit des liens vers des conseils de migration WF qui fournissent des informations sur l'utilisation de WF3 et WF4.  
   
-## <a name="wf-migration-whitepapers-and-cookbooks"></a>Livres blancs et livres de recettes sur la migration WF (en anglais)  
+## <a name="wf-migration-white-papers-and-cookbooks"></a>Livres blancs et livres blancs sur la migration WF
+
  La rubrique [vue d’ensemble de la migration WF](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10)) fournit une vue d’ensemble de la relation entre WF3 et WF4 et les stratégies de migration. Les rubriques d'accompagnement traitent de sujets spécifiques.  
   
  [Vue d’ensemble de la migration WF](https://docs.microsoft.com/previous-versions/appfabric/ff383417(v=azure.10))  

@@ -2,12 +2,12 @@
 title: Problèmes de sécurité relatifs à la journalisation des messages
 ms.date: 03/30/2017
 ms.assetid: 21f513f2-815b-47f3-85a6-03c008510038
-ms.openlocfilehash: c5efd2990a00045e920c005f6658d5fdfb858481
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 679975be44244f10232b805a6cc2776b48ed6058
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70795945"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75935768"
 ---
 # <a name="security-concerns-for-message-logging"></a>Problèmes de sécurité relatifs à la journalisation des messages
 Cette rubrique contient des instructions permettant de protéger des données sensibles afin d'éviter qu'elles ne soient visibles dans les journaux des messages et de protéger les événements générés par l'enregistrement des messages.  
@@ -88,7 +88,7 @@ Cette rubrique contient des instructions permettant de protéger des données se
   
  Les modifications ne sont effectives qu'au démarrage ou redémarrage de l'application. Un événement est enregistré au démarrage lorsque les deux attributs ont la valeur `true`. Un événement est également enregistré si `logKnownPii` a la valeur `true` mais que `enableLoggingKnownPii` a la valeur `false`.  
   
- L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus approfondie sur la confidentialité et la protection des informations d’identification personnelle, consultez [confidentialité des utilisateurs](https://go.microsoft.com/fwlink/?LinkID=94647).  
+ L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent observer la plus grande prudence lorsqu'ils utilisent ces deux commutateurs. Si la journalisation PII est activée, les clés de sécurité et les informations personnelles sont enregistrées. Si elle est désactivée, les données sensibles et spécifiques aux applications sont toujours enregistrées dans les corps et en-têtes des messages. Pour une discussion plus approfondie sur la confidentialité et la protection des informations d’identification personnelle, consultez [confidentialité des utilisateurs](https://docs.microsoft.com/previous-versions/dotnet/articles/aa480490(v=msdn.10)).  
   
 > [!CAUTION]
 > Les informations personnelles ne sont pas masquées dans les messages malformés. Les messages de ce type sont consignés en l'état sans aucune modification. Les attributs précédemment mentionnés n'ont aucun effet sur cela.  
@@ -99,13 +99,13 @@ Cette rubrique contient des instructions permettant de protéger des données se
 ## <a name="events-triggered-by-message-logging"></a>Événements déclenchés par la journalisation des messages  
  La section suivante répertorie tous les événements émis par la journalisation des messages.  
   
-- Journalisation des messages activée : Cet événement est émis lorsque la journalisation des messages est activée dans la configuration ou via WMI. Le contenu de l'événement est "La journalisation des messages a été activée. Des informations sensibles peuvent être enregistrées en clair, même si elles ont été chiffrées sur le câble, par exemple, corps de message."  
+- Journalisation des messages activée : cet événement est émis lorsque la journalisation des messages est activée dans la configuration ou via WMI. Le contenu de l'événement est "La journalisation des messages a été activée. Des informations sensibles peuvent être enregistrées en clair, même si elles ont été chiffrées sur le câble, par exemple, corps de message."  
   
-- Désactivation de la journalisation des messages : Cet événement est émis lorsque la journalisation des messages est désactivée via WMI. Le contenu de l'événement est "La journalisation des messages a été activée."  
+- Journalisation des messages désactivée : cet événement est émis lorsque la journalisation des messages est désactivée via WMI. Le contenu de l'événement est "La journalisation des messages a été activée."  
   
-- Consigner les informations d’identification connues sur : Cet événement est émis lorsque la journalisation des PII connues est activée. Cela se produit lorsque `enableLoggingKnownPii` l’attribut dans `machineSettings` l’élément du fichier machine. `true`config a la valeur et que l' `logKnownPii` attribut de l' `source` élément dans le fichier app. config ou Web. config a la valeur `true`.  
+- Enregistrement des informations personnelles connues activé : cet événement est émis lorsque l'enregistrement des données personnelles connues est activé. Cela se produit lorsque l’attribut `enableLoggingKnownPii` dans l’élément `machineSettings` du fichier machine. config a la valeur `true`et que l’attribut `logKnownPii` de l’élément `source` dans le fichier app. config ou Web. config a la valeur `true`.  
   
-- Consigner les informations d’identification connues non autorisées : Cet événement est émis lorsque la journalisation des PII connues n’est pas autorisée. Cela se produit lorsque `logKnownPii` l’attribut de `source` l’élément dans le fichier app. config ou Web. `true`config a la valeur, mais que `enableLoggingKnownPii` l’attribut dans `machineSettings` l’élément du fichier machine. config a la valeur `false`. Aucune exception n'est levée.  
+- Enregistrement des informations personnelles connues activé non autorisé : cet événement est émis lorsque l'enregistrement des informations personnelles connues n'est pas autorisé. Cela se produit lorsque l’attribut `logKnownPii` de l’élément `source` dans le fichier app. config ou Web. config a la valeur `true`, mais que l’attribut `enableLoggingKnownPii` dans l’élément `machineSettings` du fichier machine. config a la valeur `false`. Aucune exception n'est levée.  
   
  Ces événements peuvent être affichés dans l'outil Observateur d'événements fourni avec Windows. Pour plus d’informations, consultez [journalisation des événements](./event-logging/index.md).  
   

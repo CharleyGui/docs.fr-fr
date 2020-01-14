@@ -2,12 +2,12 @@
 title: Gestion des exceptions et des erreurs
 ms.date: 03/30/2017
 ms.assetid: a64d01c6-f221-4f58-93e5-da4e87a5682e
-ms.openlocfilehash: c28b4420be82562a30873b65113811da06cee761
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 2886463510a2237834529e1ec61c73ec7251e621
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975475"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937716"
 ---
 # <a name="handling-exceptions-and-faults"></a>Gestion des exceptions et des erreurs
 Les exceptions sont utilisées pour communiquer localement des erreurs au sein du service ou de l'implémentation cliente. Les erreurs, en revanche, sont utilisées pour communiquer des erreurs au-delà des limites du service, notamment du serveur au client ou vice versa. En plus des erreurs, les canaux de transport utilisent souvent des mécanismes propres au transport pour communiquer des erreurs de niveau transport. Par exemple, le transport HTTP utilise des codes d'état tels que 404 pour communiquer une URL de point de terminaison inexistante (il n'existe aucun point de terminaison pour renvoyer une erreur). Ce document se compose de trois sections qui fournissent des indications aux auteurs de canaux personnalisés. La première section indique quand et comment définir et lever des exceptions. La deuxième section fournir des indications sur la génération et la consommation des erreurs. La troisième section explique comment fournir des informations de suivi afin d'aider l'utilisateur de votre canal personnalisé à résoudre les problèmes des applications en cours d'exécution.  
@@ -68,11 +68,11 @@ public abstract class MessageFault
 }  
 ```  
   
- La propriété `Code` correspond à `env:Code` (ou `faultCode` dans SOAP 1.1) et identifie le type de l'erreur. SOAP 1.2 définit cinq valeurs autorisées pour `faultCode` (par exemple, Expéditeur et Destinataire) et définit un élément `Subcode` qui peut contenir une valeur de sous-code. (Consultez la [spécification SOAP 1,2](https://go.microsoft.com/fwlink/?LinkId=95176) pour obtenir la liste des codes d’erreur autorisés et leur signification.) SOAP 1,1 a un mécanisme légèrement différent : il définit quatre valeurs `faultCode` (par exemple, client et serveur) qui peuvent être étendues soit en définissant de nouveaux éléments, soit en utilisant la notation par points pour créer des `faultCodes`plus spécifiques, par exemple client. Authentication.  
+ La propriété `Code` correspond à `env:Code` (ou `faultCode` dans SOAP 1.1) et identifie le type de l'erreur. SOAP 1.2 définit cinq valeurs autorisées pour `faultCode` (par exemple, Expéditeur et Destinataire) et définit un élément `Subcode` qui peut contenir une valeur de sous-code. (Consultez la [spécification SOAP 1,2](https://www.w3.org/TR/soap12-part1/#tabsoapfaultcodes) pour obtenir la liste des codes d’erreur autorisés et leur signification.) SOAP 1,1 a un mécanisme légèrement différent : il définit quatre valeurs `faultCode` (par exemple, client et serveur) qui peuvent être étendues soit en définissant de nouveaux éléments, soit en utilisant la notation par points pour créer des `faultCodes`plus spécifiques, par exemple client. Authentication.  
   
  Lorsque vous utilisez MessageFault pour programmer les erreurs, FaultCode.Name et FaultCode.Namespace correspondent au nom et à l'espace de noms de SOAP 1.2 `env:Code` ou de SOAP 1.1 `faultCode`. FaultCode.SubCode correspond à `env:Subcode` pour SOAP 1.2 et à null pour SOAP 1.1.  
   
- Vous devez créer des sous-codes d'erreur (ou de nouveaux codes d'erreur si vous utilisez SOAP 1.1) s'il s'avère intéressant de distinguer une erreur par programme. Cela revient à créer un type d'exception. Vous devez éviter d'utiliser la notation par point avec les codes d'erreur SOAP 1.1. (Le [profil de base WS-I](https://go.microsoft.com/fwlink/?LinkId=95177) déconseille également l’utilisation de la notation par points de code d’erreur.)  
+ Vous devez créer des sous-codes d'erreur (ou de nouveaux codes d'erreur si vous utilisez SOAP 1.1) s'il s'avère intéressant de distinguer une erreur par programme. Cela revient à créer un type d'exception. Vous devez éviter d'utiliser la notation par point avec les codes d'erreur SOAP 1.1. (Le [profil de base WS-I](http://www.ws-i.org/Profiles/BasicProfile-1.1-2004-08-24.html#SOAP_Custom_Fault_Codes) déconseille également l’utilisation de la notation par points de code d’erreur.)  
   
 ```csharp
 public class FaultCode  

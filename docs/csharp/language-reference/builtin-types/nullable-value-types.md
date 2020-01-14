@@ -4,12 +4,12 @@ description: En savoir C# plus sur les types valeur Nullable et leur utilisation
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: b9400cd76eb0430dbe9c278e835a3cec7f9f131e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 661b5e8502cba42588a07d757f056c715c1c82e8
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73741164"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936896"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types valeur Nullable (C# référence)
 
@@ -24,7 +24,7 @@ En général, vous utilisez un type valeur Nullable lorsque vous devez représen
 
 ## <a name="declaration-and-assignment"></a>Déclaration et affectation
 
-Comme un type valeur est implicitement convertible en type valeur Nullable correspondant, vous pouvez assigner une valeur à une variable d’un type valeur Nullable comme vous le feriez pour son type valeur sous-jacent. Vous pouvez également affecter la valeur `null`. Exemple :
+Comme un type valeur est implicitement convertible en type valeur Nullable correspondant, vous pouvez assigner une valeur à une variable d’un type valeur Nullable comme vous le feriez pour son type valeur sous-jacent. Vous pouvez également affecter la valeur `null`. Par exemple :
 
 [!code-csharp[declare and assign](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#Declaration)]
 
@@ -68,7 +68,7 @@ Un type valeur n’acceptant pas les valeurs NULL `T` est implicitement converti
 
 ## <a name="lifted-operators"></a>Opérateurs levés
 
-Les opérateurs unaires et binaires prédéfinis ou tous les opérateurs surchargés pris en charge par un type valeur `T` sont également pris en charge par le type valeur Nullable correspondant `T?`. Ces opérateurs, également appelés *opérateurs levés*, produisent `null` si l’un des opérandes ou les deux sont `null`; dans le cas contraire, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Exemple :
+Les opérateurs unaires et binaires prédéfinis ou tous les opérateurs surchargés pris en charge par un type valeur `T` sont également pris en charge par le type valeur Nullable correspondant `T?`. Ces opérateurs, également appelés *opérateurs levés*, produisent `null` si l’un des opérandes ou les deux sont `null`; dans le cas contraire, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Par exemple :
 
 [!code-csharp[lifted operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
 
@@ -133,7 +133,7 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Que signifie réellement « Lifted » ?](https://blogs.msdn.microsoft.com/ericlippert/2007/06/27/what-exactly-does-lifted-mean/)
+- [Que signifie réellement « Lifted » ?](https://docs.microsoft.com/archive/blogs/ericlippert/what-exactly-does-lifted-mean)
 - <xref:System.Nullable%601?displayProperty=nameWithType>
 - <xref:System.Nullable?displayProperty=nameWithType>
 - <xref:System.Nullable.GetUnderlyingType%2A?displayProperty=nameWithType>

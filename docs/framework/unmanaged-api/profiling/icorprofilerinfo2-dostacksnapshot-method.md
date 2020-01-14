@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 287b11e9-7c52-4a13-ba97-751203fa97f4
 topic_type:
 - apiref
-ms.openlocfilehash: 64bcf6ee58d743a26e31c49a425f36cc808b5080
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5d90f414a945d346ca7721745ea7d86cb24a085c
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74426828"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936858"
 ---
 # <a name="icorprofilerinfo2dostacksnapshot-method"></a>ICorProfilerInfo2::DoStackSnapshot, méthode
 Parcourt les frames managés sur la pile pour le thread spécifié et envoie des informations au profileur par le biais d’un rappel.  
@@ -37,7 +37,7 @@ HRESULT DoStackSnapshot(
     [in] ULONG32 contextSize);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `thread`  
  dans ID du thread cible.  
   
@@ -71,7 +71,7 @@ HRESULT DoStackSnapshot(
   
  L’ordre dans lequel la pile est parcourue est l’inverse de la façon dont les frames ont fait l’objet d’un push sur la pile : Frame (dernier push) frame en premier, Frame principal (premier-push) en dernier.  
   
- Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](https://go.microsoft.com/fwlink/?LinkId=73638).  
+ Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10)).  
   
  Un parcours de pile peut être synchrone ou asynchrone, comme expliqué dans les sections suivantes.  
   
@@ -93,11 +93,11 @@ HRESULT DoStackSnapshot(
   
 - Bloquez toujours dans votre rappel [ICorProfilerCallback :: ThreadDestroyed](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-threaddestroyed-method.md) jusqu’à ce que le parcours de la pile de ce thread soit terminé.  
   
-- Ne conservez pas de verrou pendant que votre profileur appelle dans une fonction CLR qui peut déclencher un garbage collection. Autrement dit, ne pas conserver de verrou si le thread propriétaire peut effectuer un appel qui déclenche un garbage collection.  
+- Ne détenez pas un verrou pendant que votre générateur de profils appelle une fonction CLR pouvant déclencher un nettoyage de la mémoire. Autrement dit, ne pas conserver de verrou si le thread propriétaire peut effectuer un appel qui déclenche un garbage collection.  
   
  Il y a également un risque d’interblocage si vous appelez `DoStackSnapshot` à partir d’un thread que votre profileur a créé afin que vous puissiez parcourir la pile d’un thread cible séparé. La première fois que le thread que vous avez créé entre dans certaines méthodes `ICorProfilerInfo*` (y compris `DoStackSnapshot`), le CLR effectue une initialisation par thread et spécifique au CLR sur ce thread. Si votre profileur a suspendu le thread cible dont vous tentez de parcourir la pile, et si ce thread cible est devenu propriétaire d’un verrou nécessaire pour effectuer cette initialisation par thread, un interblocage se produit. Pour éviter ce blocage, effectuez un appel initial dans `DoStackSnapshot` à partir de votre thread créé par le profileur pour parcourir un thread cible séparé, mais n’interrompez pas d’abord le thread cible. Cet appel initial garantit que l’initialisation par thread peut se terminer sans interblocage. Si `DoStackSnapshot` effectue une opération et signale au moins un frame, après ce point, il est possible pour ce thread créé par le profileur d’interrompre n’importe quel thread cible et d’appeler `DoStackSnapshot` pour parcourir la pile de ce thread cible.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  

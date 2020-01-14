@@ -2,16 +2,16 @@
 title: API non prises en charge sur .NET Core
 description: Découvrez les API de la .NET Framework qui lèvent toujours une exception sur .NET Core.
 ms.date: 12/23/2019
-ms.openlocfilehash: 0cb533f10d53fd3d287265032e3de13c242a8ae0
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: f27aeca31226a95dacf100813762eedb56876fbd
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901494"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936973"
 ---
 # <a name="apis-that-always-throw-exceptions-on-net-core"></a>API qui lèvent toujours des exceptions sur .NET Core
 
-Les API suivantes passent toujours par un <xref:System.PlatformNotSupportedException> lorsqu’elles sont exécutées sur .NET Core sur la plateforme spécifiée.
+Les API suivantes lèvent toujours une <xref:System.PlatformNotSupportedException> sur .NET Core sur tout ou partie des plateformes.
 
 Cet article organise les membres d’API affectés par espace de noms.
 
@@ -22,7 +22,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="system"></a>System
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.AppDomain.CreateDomain%2A?displayProperty=nameWithType> | Toutes les |
 | <xref:System.AppDomain.ExecuteAssembly(System.String,System.String[],System.Byte[],System.Configuration.Assemblies.AssemblyHashAlgorithm)?displayProperty=nameWithType> | Toutes les |
@@ -37,7 +37,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemcodedomcompiler"></a>System.CodeDom.Compiler
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromDom%2A?displayProperty=nameWithType> | Toutes les |
 | <xref:System.CodeDom.Compiler.CodeDomProvider.CompileAssemblyFromFile%2A?displayProperty=nameWithType> | Toutes les |
@@ -45,7 +45,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemcollectionsspecialized"></a>System.Collections.Specialized
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Collections.Specialized.NameObjectCollectionBase.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
@@ -53,13 +53,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemconfiguration"></a>System.Configuration
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Configuration.RsaProtectedConfigurationProvider?displayProperty=nameWithType> (tous les membres) | Toutes les |
 
 ## <a name="systemconsole"></a>System.Console
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Console.Beep?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.Console.BufferHeight?displayProperty=nameWithType> (définir uniquement) | Linux et macOS |
@@ -77,13 +77,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemdatacommon"></a>System.Data.Common
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Data.Common.DbDataReader.GetSchemaTable%2A?displayProperty=nameWithType> (lève <xref:System.NotSupportedException>) | Toutes les |
 
 ## <a name="systemdiagnosticsprocess"></a>System.Diagnostics.Process
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Diagnostics.Process.MaxWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
 | <xref:System.Diagnostics.Process.MinWorkingSet?displayProperty=nameWithType> (définir uniquement) | Linux |
@@ -100,14 +100,14 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemio"></a>System.IO
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.IO.FileSystemInfo.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.IO.FileSystemInfo.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemiopipes"></a>System.IO.Pipes
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.IO.Pipes.NamedPipeClientStream.NumberOfServerInstances?displayProperty=nameWithType> | Linux et macOS |
 | <xref:System.IO.Pipes.NamedPipeServerStream.GetImpersonationUserName?displayProperty=nameWithType> | Linux et macOS |
@@ -118,13 +118,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemmedia"></a>System. Media
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Media.SoundPlayer.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemnet"></a>System.Net
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Net.AuthenticationManager.Authenticate(System.String,System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Net.AuthenticationManager.PreAuthenticate(System.Net.WebRequest,System.Net.ICredentials)?displayProperty=nameWithType> | Toutes les |
@@ -146,25 +146,25 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemnetnetworkinformation"></a>System.Net.NetworkInformation
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Net.NetworkInformation.Ping.Send%2A?displayProperty=nameWithType> | Windows (UWP) |
 
 ## <a name="systemnetsockets"></a>System.Net.Sockets
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Net.Sockets.Socket.DuplicateAndClose(System.Int32)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemnetwebsockets"></a>System.Net.WebSockets
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Net.WebSockets.WebSocket.RegisterPrefixes?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemreflection"></a>System.Reflection
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoad%2A?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Reflection.Assembly.ReflectionOnlyLoadFrom(System.String)?displayProperty=nameWithType> | Toutes les |
@@ -176,13 +176,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemruntimecompilerservices"></a>System.Runtime.CompilerServices
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Runtime.CompilerServices.DebugInfoGenerator.CreatePdbGenerator?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemruntimeinteropservices"></a>System.Runtime.InteropServices
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Runtime.InteropServices.Marshal.GetIDispatchForObject(System.Object)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Runtime.InteropServices.RuntimeEnvironment.SystemConfigurationFile?displayProperty=nameWithType> | Toutes les |
@@ -194,13 +194,13 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemruntimeserialization"></a>System.Runtime.Serialization
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Runtime.Serialization.XsdDataContractExporter.Schemas?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemsecurity"></a>System.Security
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.CodeAccessPermission.Deny?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Security.CodeAccessPermission.PermitOnly?displayProperty=nameWithType> | Toutes les |
@@ -219,7 +219,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecurityclaims"></a>System.Security.Claims
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Claims.ClaimsPrincipal.%23ctor?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Security.Claims.ClaimsPrincipal.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
@@ -229,7 +229,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptography"></a>System.Security.Cryptography
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Cryptography.AsymmetricAlgorithm.Create(System.String)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Security.Cryptography.CspKeyContainerInfo.%23ctor%2A?displayProperty=nameWithType> | Linux et macOS |
@@ -263,7 +263,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptographypkcs"></a>System.Security.Cryptography.Pkcs
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Cryptography.Pkcs.CmsSigner.%23ctor(System.Security.Cryptography.CspParameters)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Security.Cryptography.Pkcs.SignedCms.ComputeSignature(System.Security.Cryptography.Pkcs.CmsSigner,System.Boolean)?displayProperty=nameWithType> | Toutes les |
@@ -271,7 +271,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecuritycryptographyx509certificates"></a>System.Security.Cryptography.X509Certificates
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Security.Cryptography.X509Certificates.X509Certificate.Import%2A?displayProperty=nameWithType> | Toutes les |
@@ -280,31 +280,31 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemsecurityauthenticationextendedprotection"></a>System.Security.Authentication.ExtendedProtection
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Authentication.ExtendedProtection.ExtendedProtectionPolicy.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemsecuritypolicy"></a>System. Security. Policy
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Security.Policy.Hash.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemserviceprocessservicecontroller"></a>System.ServiceProcess.ServiceController
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.ServiceProcess.TimeoutException.%23ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemtextregularexpressions"></a>System.Text.RegularExpressions
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Text.RegularExpressions.Regex.CompileToAssembly%2A?displayProperty=nameWithType> | Toutes les |
 
 ## <a name="systemthreading"></a>System.Threading
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Threading.CompressedStack.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Threading.ExecutionContext.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)?displayProperty=nameWithType> | Toutes les |
@@ -315,7 +315,7 @@ Cet article organise les membres d’API affectés par espace de noms.
 
 ## <a name="systemxml"></a>System.Xml
 
-| Member | Platform |
+| Member | Plateformes qui lèvent |
 | - | - |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.Byte[],System.Int32,System.Int32,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Toutes les |
 | <xref:System.Xml.XmlDictionaryReader.CreateMtomReader(System.IO.Stream,System.Text.Encoding[],System.String,System.Xml.XmlDictionaryReaderQuotas,System.Int32,System.Xml.OnXmlDictionaryReaderClose)?displayProperty=nameWithType> | Toutes les |

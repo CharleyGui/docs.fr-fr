@@ -1,16 +1,16 @@
 ---
-title: Attributs - C#
+title: 'Didacticiel : utiliser les attributs-C#'
 description: Découvrez comment les attributs fonctionnent en C#.
 author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
-ms.openlocfilehash: 9f08e362ada032e7193d83a73fbbf05259bd2259
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 24cb7d35a89fda78511dc4ba725b69c5d601a008
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75694554"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937471"
 ---
 # <a name="use-attributes-in-c"></a>Utiliser des attributs en C\#
 

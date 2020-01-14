@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: a9f47c2909375251460b45792822e491d56fb242
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: eba3d21cfc787c5d388de31f988b835522118151
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342861"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936923"
 ---
 # <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
@@ -72,4 +72,4 @@ Pour ajouter la prise C++en charge de/CLI dans Visual Studio 2019 16,4, installe
 ## <a name="next-steps"></a>Étapes suivantes :
 
 - [Passez en revue les modifications avec rupture entre .NET Core 3,0 et 3,1.](../compatibility/3.0-3.1.md)
-- [Passez en revue les modifications avec rupture entre .NET Framework et .NET Core 3,0 pour les applications Windows Forms.](../porting/winforms-breaking-changes.md)
+- [Passez en revue les modifications avec rupture entre dans .NET Core 3,1 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-31)

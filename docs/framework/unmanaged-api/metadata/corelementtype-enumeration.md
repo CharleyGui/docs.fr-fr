@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: c3809c8f-1737-4f0f-9442-0c01ee689871
 topic_type:
 - apiref
-ms.openlocfilehash: 0ce84e1545523302cd47e60b9f047bc470e6bf0f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a4e9268d292004f447b30c82f1db4d0fe58404fe
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74443632"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937946"
 ---
 # <a name="corelementtype-enumeration"></a>CorElementType, énumération
 
@@ -75,9 +75,9 @@ typedef enum CorElementType {
 } CorElementType;
 ```
 
-## <a name="members"></a>Membres
+## <a name="members"></a>Members
 
-|Membre|Description|
+|Member|Description|
 |------------|-----------------|
 |`ELEMENT_TYPE_END`|Utilisé en interne.|
 |`ELEMENT_TYPE_VOID`|Type void.|
@@ -121,7 +121,7 @@ typedef enum CorElementType {
 Les modificateurs de type forment la base pour représenter des types plus complexes. Une valeur de modificateur de type `CorElementType` est appliquée à la valeur qui le suit immédiatement dans la signature de type. La valeur qui suit la valeur du modificateur de type `CorElementType` peut être une valeur de type simple `CorElementType`, un jeton de métadonnées ou une autre valeur, comme indiqué dans le tableau suivant.
 
 > [!NOTE]
-> Tous les nombres (*nombre*, nombre d' *arguments*, *jeton de métadonnées*, *rang*, *nombre*et *limite*) sont stockés sous forme d’entiers compressés. Pour plus d’informations, consultez [Standard ECMA-335-Common Language Infrastructure (CLI)](https://go.microsoft.com/fwlink/?LinkID=116487) sur le site Web ECMA.
+> Tous les nombres (*nombre*, nombre d' *arguments*, *jeton de métadonnées*, *rang*, *nombre*et *limite*) sont stockés sous forme d’entiers compressés. Pour plus d’informations, consultez [Standard ECMA-335-Common Language Infrastructure (CLI)](http://www.ecma-international.org/publications/standards/Ecma-335.htm) sur le site Web ECMA.
 
 |Modificateur de type|Format|
 |-------------------|------------|
@@ -138,7 +138,7 @@ Les modificateurs de type forment la base pour représenter des types plus compl
 |`ELEMENT_TYPE_CMOD_REQD`|ELEMENT_TYPE_\<un jeton de métadonnées `mdTypeRef` ou `mdTypeDef` >|
 |`ELEMENT_TYPE_CMOD_OPT`|E_T_CMOD_OPT \<un jeton de métadonnées `mdTypeRef` ou `mdTypeDef` >|
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 

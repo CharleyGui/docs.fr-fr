@@ -3,18 +3,18 @@ title: Technologies .NET Framework non disponibles sur .NET Core
 description: Découvrir les technologies .NET Framework non disponibles sur .NET Core
 author: cartermp
 ms.date: 04/30/2019
-ms.openlocfilehash: d474b694b80b2f0e74dd2916106016802f7e0c68
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.openlocfilehash: 89871753fef92a30bf2151a618207a73b40bb402
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777311"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75936945"
 ---
 # <a name="net-framework-technologies-unavailable-on-net-core"></a>Technologies .NET Framework non disponibles sur .NET Core
 
 Plusieurs technologies disponibles pour .NET Framework bibliothèques ne peuvent pas être utilisées avec .NET Core, telles que les AppDomains, la communication à distance, la sécurité d’accès du code (CAS), la transparence de la sécurité et System. EnterpriseServices. Si vos bibliothèques reposent sur une ou plusieurs de ces technologies, envisagez les autres approches décrites ci-dessous. Pour plus d’informations sur la compatibilité des API, consultez [modifications importantes de .net Core](../compatibility/breaking-changes.md).
 
-Le fait qu’une technologie ou une API ne soit pas implémentée pour le moment ne signifie pas que l’absence de prise en charge soit intentionnelle. Recherchez les référentiels GitHub pour .NET Core pour voir si un problème particulier que vous rencontrez est lié à la conception. Si vous ne trouvez pas un tel indicateur, veuillez envoyer un problème dans le [référentiel dotnet/Runtime](https://github.com/dotnet/runtime/issues) pour demander des API et des technologies spécifiques. Les problèmes de portage des demandes sont marqués avec l’étiquette de [port à cœur](https://github.com/dotnet/runtime/labels/port-to-core) .
+Le fait qu’une technologie ou une API ne soit pas implémentée pour le moment ne signifie pas que l’absence de prise en charge soit intentionnelle. Recherchez les référentiels GitHub pour .NET Core pour voir si un problème particulier que vous rencontrez est lié à la conception. Si vous ne trouvez pas un tel indicateur, signalez un problème dans le [référentiel dotnet/Runtime](https://github.com/dotnet/runtime/issues) pour demander des API et des technologies spécifiques. Les problèmes de portage des demandes sont marqués avec l’étiquette de [port à cœur](https://github.com/dotnet/runtime/labels/port-to-core) .
 
 ## <a name="appdomains"></a>AppDomains
 
@@ -46,7 +46,6 @@ Utilisez les limites de sécurité fournies par le système d’exploitation, te
 
 System.EnterpriseServices (COM+) n’est pas pris en charge par .NET Core.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="see-also"></a>Voir aussi
 
->[!div class="nextstepaction"]
->[Analyser les dépendances](third-party-deps.md)
+- [Vue d’ensemble du Portage à partir de .NET Framework vers .NET Core](../porting/index.md)

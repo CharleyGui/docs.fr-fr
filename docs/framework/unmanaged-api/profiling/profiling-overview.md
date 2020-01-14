@@ -27,12 +27,12 @@ helpviewer_keywords:
 - security, profiling API considerations
 - stack depth [.NET Framework profiling]
 ms.assetid: 864c2344-71dc-46f9-96b2-ed59fb6427a8
-ms.openlocfilehash: 08015e2e5918ca64f601ec912a906cfb6319ed6c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a13470b970b35a2f6f088fd305ba455167c8e107
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427105"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937816"
 ---
 # <a name="profiling-overview"></a>Vue d'ensemble du profilage
 
@@ -175,7 +175,7 @@ L'API de profilage fournit deux méthodes pour obtenir des piles des appels : u
 
 Un instantané de pile est une trace de la pile d'un thread à un instant précis. L'API de profilage prend en charge le traçage des fonctions managées sur la pile, mais elle laisse le traçage des fonctions non managées au propre analyseur de pile du profileur.
 
-Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez la méthode [ICorProfilerInfo2 ::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) dans cet ensemble de documentation et [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](https://go.microsoft.com/fwlink/?LinkId=73638).
+Pour plus d’informations sur la façon de programmer le profileur pour parcourir les piles managées, consultez la méthode [ICorProfilerInfo2 ::D ostacksnapshot](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-dostacksnapshot-method.md) dans cet ensemble de documentation et [parcours de la pile du profileur dans le .NET Framework 2,0 : notions de base et au-delà](https://docs.microsoft.com/previous-versions/dotnet/articles/bb264782(v=msdn.10)).
 
 ### <a name="shadow-stack"></a>Pile cachée
 

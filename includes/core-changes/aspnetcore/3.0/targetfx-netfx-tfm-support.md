@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: 4c676a185ff4a7a825acb059bf0a5842ca3922fc
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: b60f74947a537c602c7bd1a89587b76bd847c82a
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72393893"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937284"
 ---
 ### <a name="target-framework-net-framework-support-dropped"></a>Framework cible : la prise en charge de .NET Framework a été supprimée
 
 À compter de ASP.NET Core 3,0, .NET Framework est un Framework cible non pris en charge.
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description des modifications
 
 .NET Framework 4,8 est la dernière version principale de .NET Framework. Les nouvelles applications de ASP.NET Core doivent être basées sur .NET Core. À compter de la version 3,0 de .NET Core, vous pouvez considérer ASP.NET Core 3,0 comme faisant partie de .NET Core.
 
@@ -18,13 +18,13 @@ Les clients qui utilisent ASP.NET Core avec .NET Framework peuvent continuer de 
 
 Pour plus d’informations sur le portage à partir de .NET Framework vers .NET Core, consultez [portage vers .net Core](~/docs/core/porting/index.md).
 
-les packages `Microsoft.Extensions` (tels que la journalisation, l’injection de dépendances et la configuration) et les Entity Framework Core ne sont pas affectés. Ils continueront de prendre en charge .NET Standard.
+les packages de `Microsoft.Extensions` (tels que la journalisation, l’injection de dépendances et la configuration) et les Entity Framework Core ne sont pas affectés. Ils continueront de prendre en charge .NET Standard.
 
-Pour plus d’informations sur la motivation de cette modification, consultez le billet de [blog d’origine](https://blogs.msdn.microsoft.com/webdev/2018/10/29/a-first-look-at-changes-coming-in-asp-net-core-3-0).
+Pour plus d’informations sur la motivation de cette modification, consultez le billet de [blog d’origine](https://devblogs.microsoft.com/aspnet/a-first-look-at-changes-coming-in-asp-net-core-3-0/).
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
@@ -41,13 +41,13 @@ Effectuez l’une des actions suivantes :
 - Conservez votre application sur ASP.NET Core 2,1.
 - Migrez votre application et les dépendances vers .NET Core.
 
-#### <a name="category"></a>Category
+#### <a name="category"></a>Catégorie
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-aucune.
+Aucun
 
 <!-- 
 
