@@ -12,13 +12,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.custom: seodec18
-ms.openlocfilehash: dbfa61077cbfdd7da104dc12f304a4096b3c032d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cd9d3f69f8135b608ced91c34f747600352bafe1
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120614"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711452"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -88,7 +87,7 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
 |Motif|Description|  
 |-------------|-----------------|  
 |`gr`|Mettre en correspondance les caractères littéraux « gr ».|  
-|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
+|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
 |`y\s`|Mettre en correspondance le caractère littéral « y » suivi d'un espace blanc.|  
 |`\S+?`|Mettre en correspondance un ou plusieurs caractères autres que des espaces blancs, mais le moins possible.|  
 |`[\s\p{P}]`|Mettre en correspondance un espace blanc ou un signe de ponctuation.|  
@@ -131,7 +130,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
  Le premier caractère (`^`) d'un groupe de caractères négatif est obligatoire et indique que le groupe de caractères est un groupe de caractères négatif et non positif.  
   
 > [!IMPORTANT]
-> Un groupe de caractères négatifs d’un plus grand modèle d’expressions régulières n’est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
+> Un groupe de caractères négatifs d'un plus grand modèle d'expressions régulières n'est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
   
  Quelques modèles d'expressions régulières courants qui contiennent des groupes de caractères négatifs apparaissent dans le tableau suivant.  
   
@@ -183,7 +182,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  La construction d'expression régulière  
   
- `\p{` *nom* `}`  
+ *nom* de l' `\p{` `}`  
   
  correspond à n’importe quel caractère qui appartient à une catégorie Unicode générale ou à un bloc nommé, où *nom* est l’abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [Catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [Blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
   
@@ -212,7 +211,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  La construction d'expression régulière  
   
- `\P{` *nom* `}`  
+ *nom* de l' `\P{` `}`  
   
  correspond à n'importe quel caractère qui n'appartient pas à une catégorie générale Unicode ou à un bloc nommé, où *nom* est l'abréviation de la catégorie ou le nom du bloc nommé. Pour obtenir la liste des abréviations des catégories, consultez la section [Catégories générales Unicode prises en charge](#SupportedUnicodeGeneralCategories) plus loin dans cette rubrique. Pour obtenir la liste des blocs nommés, consultez la section [Blocs nommés pris en charge](#SupportedNamedBlocks) plus loin dans cette rubrique.  
   
@@ -227,12 +226,12 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="word-character-w"></a>Caractère de mot : \w  
  `\w` correspond à n'importe quel caractère alphabétique. Un caractère de mot est un membre d'une des catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
 |Lt|Letter, Titlecase|  
-|Lo|Letter, Other|  
+|Em|Letter, Other|  
 |Lm|Letter, Modifier|  
 |Mn|Mark, Nonspacing|  
 |Nd|Number, Decimal Digit|  
@@ -261,12 +260,12 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  En d’autres termes, il correspond à n’importe quel caractère à l’exception de ceux inclus dans les catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
 |Lt|Letter, Titlecase|  
-|Lo|Letter, Other|  
+|Em|Letter, Other|  
 |Lm|Letter, Modifier|  
 |Mn|Mark, Nonspacing|  
 |Nd|Number, Decimal Digit|  
@@ -294,7 +293,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="whitespace-character-s"></a>Espace : \s  
  `\s` correspond à n'importe quel espace. Il est équivalent aux séquences d'échappement et catégories Unicode répertoriées dans le tableau suivant.  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |`\f`|Saut de page, \u000C.|  
 |`\n`|Saut de ligne, \u000A.|  
@@ -381,7 +380,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="supported-unicode-general-categories"></a>Catégories générales Unicode prises en charge  
  La norme Unicode définit les catégories générales répertoriées dans le tableau suivant. Pour plus d’informations, consultez les sous-rubriques « Format de fichier UCD » et « Valeurs des catégories générales » dans la [Base de données de caractères Unicode](https://www.unicode.org/reports/tr44/).  
   
-|Category|Description|  
+|Catégorie|Description|  
 |--------------|-----------------|  
 |`Lu`|Letter, Uppercase|  
 |`Ll`|Letter, Lowercase|  
@@ -440,7 +439,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |0250 - 02AF|`IsIPAExtensions`|  
 |02B0 - 02FF|`IsSpacingModifierLetters`|  
 |0300 - 036F|`IsCombiningDiacriticalMarks`|  
-|0370 - 03FF|`IsGreek`<br /><br /> ou<br /><br /> `IsGreekandCoptic`|  
+|0370 - 03FF|`IsGreek`<br /><br /> \- ou -<br /><br /> `IsGreekandCoptic`|  
 |0400 - 04FF|`IsCyrillic`|  
 |0500 - 052F|`IsCyrillicSupplement`|  
 |0530 - 058F|`IsArmenian`|  
@@ -484,7 +483,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |2000 - 206F|`IsGeneralPunctuation`|  
 |2070 - 209F|`IsSuperscriptsandSubscripts`|  
 |20A0 - 20CF|`IsCurrencySymbols`|  
-|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> ou<br /><br /> `IsCombiningMarksforSymbols`|  
+|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> \- ou -<br /><br /> `IsCombiningMarksforSymbols`|  
 |2100 - 214F|`IsLetterlikeSymbols`|  
 |2150 - 218F|`IsNumberForms`|  
 |2190 - 21FF|`IsArrows`|  
