@@ -10,13 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.custom: seodec18
-ms.openlocfilehash: 56014469f14280deae5f220da6d786f4363ea98f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 158964d1e04091faaa9b3acf82bf4ce2b5aba797
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73105722"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75711491"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -205,9 +204,9 @@ L'exemple suivant illustre l'utilisation de cette expression régulière pour fa
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack4.cs#11)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack4.vb#11)]
 
-Le langage d’expression régulière dans .NET comprend les éléments de langage suivants, que vous pouvez utiliser pour éliminer les quantificateurs imbriqués. Pour plus d'informations, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+Le langage d’expression régulière dans .NET comprend les éléments de langage suivants, que vous pouvez utiliser pour éliminer les quantificateurs imbriqués. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-|Élément du langage|Description|
+|élément Language|Description|
 |----------------------|-----------------|
 |`(?=` `subexpression` `)`|Préanalyse positive de largeur nulle. Effectuer une préanalyse de la position actuelle pour déterminer si `subexpression` correspond à la chaîne d'entrée.|
 |`(?!` `subexpression` `)`|Préanalyse négative de largeur nulle. Effectuer une préanalyse de la position actuelle pour déterminer si `subexpression` ne correspond pas à la chaîne d'entrée.|
