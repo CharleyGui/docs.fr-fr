@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: 158964d1e04091faaa9b3acf82bf4ce2b5aba797
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cb1764d1a6f363f3011268eae5fbcb2c76d9cc89
+ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711491"
+ms.lasthandoff: 01/14/2020
+ms.locfileid: "75937997"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -62,7 +62,7 @@ Pour résoudre ce problème, vous pouvez effectuer les opérations suivantes :
 La classe <xref:System.Text.RegularExpressions.Regex?displayProperty=nameWithType> est au cœur du modèle d'objet d'expression régulière de .NET. Elle représente le moteur d’expressions régulières. Souvent, la façon dont le moteur <xref:System.Text.RegularExpressions.Regex> est utilisé est le facteur principal ayant un impact sur les performances des expressions régulières. La définition d’une expression régulière implique une association étroite entre le moteur des expressions régulières et un modèle d’expression régulière. Ce processus est forcément onéreux, qu’il implique l’instanciation d’un objet <xref:System.Text.RegularExpressions.Regex> en passant à son constructeur un modèle d’expression régulière ou l’appel d’une méthode statique en lui passant le modèle d’expression régulière avec la chaîne à analyser.
 
 > [!NOTE]
-> Vous trouverez une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l'équipe BCL.
+> Vous trouverez une présentation plus détaillée des répercussions sur les performances des expressions régulières interprétées et compilées sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) du blog de l'équipe BCL.
 
 Vous pouvez associer le moteur des expressions régulières à un modèle d’expression régulière spécifique, puis utiliser le moteur pour faire correspondre du texte de plusieurs façons :
 
@@ -161,7 +161,7 @@ Lorsque l'exemple est compilé dans un exécutable et qu'il est exécuté, il cr
 Normalement, le moteur des expressions régulières utilise une progression linéaire pour se déplacer dans une chaîne d’entrée et pour la comparer à un modèle d’expression régulière. Toutefois, lorsque les quantificateurs indéterminés, `*`, `+` et `?`, par exemple, sont utilisés dans un modèle d’expression régulière, le moteur des expressions régulières peut abandonner une partie des correspondances partielles trouvées et revenir à un état précédemment enregistré pour trouver une correspondance pour le modèle entier. Ce processus est appelé « rétroaction ».
 
 > [!NOTE]
-> Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://blogs.msdn.microsoft.com/bclteam/2010/08/03/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha/) du blog de l'équipe BCL.
+> Pour plus d'informations sur le retour arrière, consultez les pages [Informations sur le comportement des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md) et [Retour arrière](../../../docs/standard/base-types/backtracking-in-regular-expressions.md). Vous trouverez une présentation détaillée du retour arrière sur la page [Optimiser les performances des expressions régulières, deuxième partie : prendre en charge le retour arrière](https://docs.microsoft.com/archive/blogs/bclteam/optimizing-regular-expression-performance-part-ii-taking-charge-of-backtracking-ron-petrusha) du blog de l'équipe BCL.
 
 La prise en charge de la rétroaction confère aux expressions régulières leur puissance et leur flexibilité. La responsabilité de contrôle du fonctionnement du moteur des expressions régulières est alors confiée aux développeurs d'expressions régulières. Souvent, les développeurs ne sont pas conscients de cette responsabilité. Leur utilisation incorrecte de la rétroaction ou leur dépendance vis-à-vis d'une rétroaction excessive a souvent un impact négatif très important sur les performances des expressions régulières. Dans le pire des scénarios, la durée d'exécution peut doubler pour chaque caractère supplémentaire de la chaîne d'entrée. En réalité, lorsque la rétroaction est utilisée de manière excessive, il est facile de créer l'équivalent de programmation d'une boucle sans fin si l'entrée correspond presque au modèle d'expression régulière. Le moteur des expressions régulières peut alors traiter une chaîne d'entrée relativement courte en plusieurs heures, voire en plusieurs jours.
 

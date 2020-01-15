@@ -6,14 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 00833027-1428-4586-83c1-42f5de3323d1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ce0777ba71e5433b42b51ef1530e7a1a46905b25
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: c1383dbb5419eadbfb7c07f288ee46b1ca11cf5c
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71957016"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75709996"
 ---
 # <a name="xdr-validation-with-xmlschemacollection"></a>Validation par rapport à un schéma XDR à l'aide de XmlSchemaCollection
 
@@ -22,7 +20,7 @@ Si le schéma XDR (XML-Data Reduced) par rapport auquel doit s’effectuer la va
 > [!IMPORTANT]
 > La classe <xref:System.Xml.Schema.XmlSchemaCollection> est désormais obsolète et a été remplacée par la classe <xref:System.Xml.Schema.XmlSchemaSet>. Pour plus d’informations sur la classe <xref:System.Xml.Schema.XmlSchemaSet>, consultez [XmlSchemaSet pour la compilation de schémas](xmlschemaset-for-schema-compilation.md).
 
-Par exemple, si l'élément racine du document XML est `<bookstore xmlns="urn:newbooks-schema">`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :
+Par exemple, si l'élément racine du document XML est `<bookstore>`, lorsque le schéma est ajouté à **XmlSchemaCollection**, il référence le même espace de noms comme suit :
 
 ```vb
 xsc.Add("urn:newbooks-schema", "newbooks.xdr")

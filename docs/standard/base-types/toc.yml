@@ -38,10 +38,6 @@
               href: how-to-define-and-use-custom-numeric-format-providers.md
             - name: "Procédure\_: effectuer un aller-retour de valeurs de date et d’heure"
               href: how-to-round-trip-date-and-time-values.md
-            - name: "Procédure\_: convertir des entrées d’utilisateur numériques figurant dans des contrôles web en nombres"
-              href: how-to-convert-numeric-user-input-in-web-controls-to-numbers.md
-            - name: "Procédure\_: afficher des informations de date et d’heure localisées pour les utilisateurs du web"
-              href: how-to-display-localized-date-and-time-information-to-web-users.md
             - name: "Procédure\_: afficher les millisecondes dans les valeurs de date et d’heure"
               href: how-to-display-milliseconds-in-date-and-time-values.md
             - name: "Procédure\_: afficher des dates dans des calendriers non grégoriens"

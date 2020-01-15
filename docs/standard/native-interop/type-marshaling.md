@@ -1,21 +1,19 @@
 ---
 title: Marshaling de types - .NET
 description: Découvrez comment .NET marshale vos types en une représentation native.
-author: jkoritzinsky
-ms.author: jekoritz
 ms.date: 01/18/2019
-ms.openlocfilehash: bc44a2c63dfa3fde3e3c4197e5d1fe79857ea717
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: 91b8f3d6cb53fd7a0adea7ea9669e7459e81445f
+ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70929062"
+ms.lasthandoff: 01/07/2020
+ms.locfileid: "75706264"
 ---
 # <a name="type-marshaling"></a>Marshaling de types
 
 Le **marshaling** est le processus qui consiste à transformer les types quand ils doivent naviguer entre du code managé et du code natif.
 
-La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez un élément `String`, tandis que dans le monde non managé, les chaînes peuvent être Unicode (« larges »), non-Unicode, terminées par Null, ASCII, etc. Par défaut, le sous-système P/Invoke tente de prendre la bonne décision en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
+La raison pour laquelle le marshaling est nécessaire est que les types diffèrent entre le code managé et le code non managé. Dans le code managé, par exemple, vous avez un `String`, alors que dans les chaînes universelles non managées peuvent être Unicode (« larges »), non-Unicode, terminées par null, ASCII, etc. Par défaut, le sous-système P/Invoke tente d’effectuer la bonne chose en fonction du comportement par défaut, décrit dans cet article. Toutefois, dans les cas où vous avez besoin de plus de contrôle, vous pouvez employer l’attribut [MarshalAs](xref:System.Runtime.InteropServices.MarshalAsAttribute) pour spécifier le type attendu du côté du code non managé. Par exemple, pour que la chaîne soit envoyée sous forme de chaîne ANSI terminée par Null, vous pouvez procéder ainsi :
 
 ```csharp
 [DllImport("somenativelibrary.dll")]
@@ -67,7 +65,7 @@ Le tableau suivant présente les règles de marshaling par défaut propres à Wi
 | `System.ArgIterator` | `va_list` | Non autorisé |
 | `System.Collections.IEnumerator` | `IEnumVARIANT*` | Non autorisé |
 | `System.Collections.IEnumerable` | `IDispatch*` | Non autorisé |
-| `System.DateTimeOffset` | `int64_t` représentant le nombre de cycles depuis le 1er janvier 1601 à minuit || `int64_t` représentant le nombre de cycles depuis le 1er janvier 1601 à minuit |
+| `System.DateTimeOffset` | `int64_t` représentant le nombre de cycles depuis le 1 er janvier 1601 à minuit || `int64_t` représentant le nombre de cycles depuis le 1 er janvier 1601 à minuit |
 
 Certains types ne peuvent être marshalés que comme paramètres, et non comme champs. :
 
