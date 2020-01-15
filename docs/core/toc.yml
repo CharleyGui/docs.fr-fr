@@ -358,6 +358,8 @@
       href: porting/winforms.md
     - name: Porter des projets WPF
       href: porting/wpf.md
+    - name: Porter des projets C++/CLI
+      href: porting/cpp-cli.md
 - name: Chargement des dépendances
   items:
     - name: Vue d'ensemble
