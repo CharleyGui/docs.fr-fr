@@ -342,24 +342,20 @@
   items:
     - name: Vue d'ensemble
       href: porting/index.md
-    - name: Technologies .NET Framework non disponibles pour .NET Core
-      href: porting/net-framework-tech-unavailable.md
     - name: Analyser les dépendances tierces
       href: porting/third-party-deps.md
     - name: Bibliothèques de portage
       href: porting/libraries.md
     - name: Organiser les projets pour .NET Core
       href: porting/project-structure.md
+    - name: Technologies non disponibles
+      href: porting/net-framework-tech-unavailable.md
     - name: Outils
       href: porting/tools.md
     - name: Utiliser le pack de compatibilité Windows
       href: porting/windows-compat-pack.md
     - name: Porter des projets Windows Forms
-      items:
-        - name: Comment porter un projet
-          href: porting/winforms.md
-        - name: Modifications avec rupture
-          href: porting/winforms-breaking-changes.md
+      href: porting/winforms.md
     - name: Porter des projets WPF
       href: porting/wpf.md
 - name: Chargement des dépendances
