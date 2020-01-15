@@ -1,19 +1,19 @@
 ---
-title: 'Procédure : créer des informations d’identification de prise en charge'
+title: "Comment : créer une information d'identification de prise en charge"
 ms.date: 03/30/2017
 ms.assetid: d0952919-8bb4-4978-926c-9cc108f89806
-ms.openlocfilehash: 1f95748235aa5238193b8869f8330f0a7fc650d9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 3f33bf5a78c575237ee4bc609a482a81fd30fc53
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968900"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964558"
 ---
-# <a name="how-to-create-a-supporting-credential"></a>Procédure : créer des informations d’identification de prise en charge
+# <a name="how-to-create-a-supporting-credential"></a>Comment : créer une information d'identification de prise en charge
 Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plusieurs informations d'identification. Par exemple, un service peut exiger du client non seulement un nom d'utilisateur et un mot de passe, mais également une information d'identification qui prouve que le client a plus de 18 ans. La deuxième information d’identification est une *information d’identification de prise en charge*. Cette rubrique explique comment implémenter ces informations d’identification dans un client Windows Communication Foundation (WCF).  
   
 > [!NOTE]
-> La spécification pour la prise en charge d'informations d'identification fait partie de la spécification WS-SecurityPolicy. Pour plus d’informations, consultez [spécifications de Web Services Security](https://go.microsoft.com/fwlink/?LinkId=88537).  
+> La spécification pour la prise en charge d'informations d'identification fait partie de la spécification WS-SecurityPolicy. Pour plus d’informations, consultez [spécifications de Web Services Security](https://docs.microsoft.com/previous-versions/dotnet/articles/ms951273(v=msdn.10)).  
   
 ## <a name="supporting-tokens"></a>Supporting Tokens  
  En résumé, lorsque vous utilisez la sécurité de message, les *informations d’identification principales* sont toujours utilisées pour sécuriser le message (par exemple, un certificat X. 509 ou un ticket Kerberos).  
@@ -27,15 +27,15 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
 ## <a name="endorsing-signing-and-encrypting"></a>Endossement, signature et chiffrement  
  Les informations d’identification de prise en charge entraînent la transmission d’un *jeton de prise en charge* dans le message. La spécification WS-SecurityPolicy définit quatre façons de joindre un jeton de prise en charge au message, comme décrit dans le tableau suivant.  
   
-|Objectif|Description|  
+|Fonction|Description|  
 |-------------|-----------------|  
 |Signé|Le jeton de prise en charge est inclus dans l'en-tête de sécurité et est signé par la signature de message.|  
-|Endossement|Un *jeton* d’endossement signe la signature du message.|  
+|Endossement|Un *jeton d’endossement* signe la signature du message.|  
 |Signé et endossement|Les jetons d'endossement signés signent l'élément `ds:Signature` entier produit à partir de la signature de message et sont eux-mêmes signés par cette signature de message ; autrement dit, les deux jetons (le jeton utilisé pour la signature de message et le jeton d'endossement signé) se signent l'un l'autre.|  
 |Signé et chiffrement|Les jetons de prise en charge chiffrés et signés sont des jetons de prise en charge signés qui sont également chiffrés lorsqu'ils apparaissent dans le `wsse:SecurityHeader`.|  
   
 ## <a name="programming-supporting-credentials"></a>Programmation d'informations d'identification de prise en charge  
- Pour créer un service qui utilise des jetons de prise en charge, vous devez créer une [ \<> CustomBinding](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Pour plus d’informations, [consultez Procédure: Créez une liaison personnalisée à l’aide](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)de SecurityBindingElement.)  
+ Pour créer un service qui utilise des jetons de prise en charge, vous devez créer un [\<customBinding >](../../../../docs/framework/configure-apps/file-schema/wcf/custombinding.md). (Pour plus d’informations, consultez [Comment : créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md).)  
   
  La première étape de création d’une liaison personnalisée consiste à créer un élément de liaison de sécurité, qui peut être l’un des trois types suivants :  
   
@@ -72,7 +72,7 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 2. Ajoutez le paramètre de prise en charge à la collection de types retournée par la propriété appropriée (`Endorsing`, `Signed`, `SignedEncrypted` ou `SignedEndorsed`). Les types dans l'espace de noms <xref:System.ServiceModel.Security.Tokens> incluent des types couramment utilisés, tels que <xref:System.ServiceModel.Security.Tokens.X509SecurityTokenParameters>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
   
 ### <a name="description"></a>Description  
  L’exemple suivant crée une instance du <xref:System.ServiceModel.Channels.SymmetricSecurityBindingElement> et ajoute une instance de la classe <xref:System.ServiceModel.Security.Tokens.KerberosSecurityTokenParameters> à la collection retournée par la propriété Endorsing.  
@@ -82,4 +82,4 @@ Il est possible d'avoir un modèle de sécurité personnalisé qui requiert plus
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique : Créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)
+- [Guide pratique pour créer une liaison personnalisée à l’aide de SecurityBindingElement](../../../../docs/framework/wcf/feature-details/how-to-create-a-custom-binding-using-the-securitybindingelement.md)

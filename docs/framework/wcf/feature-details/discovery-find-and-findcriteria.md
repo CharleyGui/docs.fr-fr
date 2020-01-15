@@ -2,16 +2,16 @@
 title: Recherche de découverte et FindCriteria
 ms.date: 03/30/2017
 ms.assetid: 99016fa4-1778-495b-b4cc-0e22fbec42c6
-ms.openlocfilehash: 477edabb5d6fe263db43debc2f1d4f29df862609
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
+ms.openlocfilehash: da4c3c4a1d765e4f91b03f4f8fc1a73c3fea1535
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
-ms.locfileid: "67663359"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964833"
 ---
 # <a name="discovery-find-and-findcriteria"></a>Recherche de découverte et FindCriteria
 
-Une opération de recherche de découverte est lancée par un client pour découvrir un ou plusieurs services ; il s'agit de l'une des principales actions de la découverte. Effectuer une recherche envoie un message Probe WS-Discovery sur le réseau. Les services qui correspondent aux critères spécifiés répondent avec des messages WS-Discovery ProbeMatch. Pour plus d’informations sur les messages de découverte, consultez la [spécification WS-Discovery](https://go.microsoft.com/fwlink/?LinkID=122347).
+Une opération de recherche de découverte est lancée par un client pour découvrir un ou plusieurs services ; il s'agit de l'une des principales actions de la découverte. Effectuer une recherche envoie un message Probe WS-Discovery sur le réseau. Les services qui correspondent aux critères spécifiés répondent avec des messages WS-Discovery ProbeMatch. Pour plus d’informations sur les messages de découverte, consultez la [spécification WS-Discovery](http://schemas.xmlsoap.org/ws/2004/10/discovery/ws-discovery.pdf).
 
 ## <a name="discoveryclient"></a>DiscoveryClient
 
@@ -23,7 +23,7 @@ La classe <xref:System.ServiceModel.Discovery.DiscoveryClient> fournit le mécan
 
 Les critères de recherche incluent :
 
-- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> : facultatif. Nom de contrat du service recherché et critères habituellement utilisés lors de la recherche d'un service. Si plusieurs noms de contrat sont spécifiés, seuls les points de terminaison de service correspondant à TOUS les contrats répondent. Notez que dans WCF un point de terminaison peut uniquement prendre en charge un seul contrat.
+- <xref:System.ServiceModel.Discovery.Configuration.ContractTypeNameElement> : facultatif. Nom de contrat du service recherché et critères habituellement utilisés lors de la recherche d'un service. Si plusieurs noms de contrat sont spécifiés, seuls les points de terminaison de service correspondant à TOUS les contrats répondent. Notez que dans WCF, un point de terminaison ne peut prendre en charge qu’un seul contrat.
 
 - <xref:System.ServiceModel.Discovery.Configuration.ScopeElement> : facultatif. Les étendues sont des URI absolus utilisés pour définir les catégories de points de terminaison de service individuels. Vous pouvez les utiliser dans des scénarios où plusieurs points de terminaison exposent le même contrat, lorsque vous souhaitez rechercher un sous-ensemble des points de terminaison. Si plusieurs étendues sont spécifiées, seuls les points de terminaison de service correspondant à TOUTES les étendues répondent.
 
@@ -31,7 +31,7 @@ Les critères de recherche incluent :
 
   - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByExact?displayProperty=nameWithType> fait une comparaison de chaînes de base sensible à la casse.
 
-  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> correspond par segments séparés par « / ». Une recherche de `http://contoso/building1` correspond à un service avec une étendue `http://contoso/building/floor1`. Notez qu’il ne correspond pas à `http://contoso/building100` car les deux derniers segments ne correspondent pas.
+  - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByPrefix?displayProperty=nameWithType> correspond à des segments séparés par « / ». Une recherche de `http://contoso/building1` correspond à un service avec une étendue `http://contoso/building/floor1`. Notez qu’il ne correspond pas `http://contoso/building100` car les deux derniers segments ne correspondent pas.
 
   - <xref:System.ServiceModel.Discovery.FindCriteria.ScopeMatchByLdap?displayProperty=nameWithType> établit une correspondance des étendues par segments à l'aide d'une URL LDAP.
 

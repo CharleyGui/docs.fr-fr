@@ -8,12 +8,12 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 0ab9b6e089f5add9963ffae73e196643ad999763
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: cfa92923ff5c7d5e7e4e2a9a965dc1562c183b74
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712908"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964648"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (référence C#)
 
@@ -33,7 +33,7 @@ Contrairement aux types référence, vous ne pouvez pas faire dériver un nouvea
 
 Les variables de type valeur ne peut pas être `null` par défaut. Toutefois, les variables des [types valeur Nullable](../builtin-types/nullable-value-types.md) correspondants peuvent être `null`.
 
-Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, voir [Tableau des valeurs par défaut](default-values-table.md).
+Chaque type valeur a un constructeur implicite sans paramètre qui initialise la valeur par défaut de ce type. Pour plus d’informations sur les valeurs par défaut des types valeur, consultez [valeurs par défaut C# des types](../builtin-types/default-values.md).
 
 ## <a name="simple-types"></a>Types simples
 
@@ -87,7 +87,7 @@ int myInt = new int();
 int myInt = 0;
 ```
 
-L’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs affectées en appelant les constructeurs sans paramètre, voir [Tableau des valeurs par défaut](default-values-table.md).
+L’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre du type spécifique et d’affecter la valeur par défaut à la variable. Dans l’exemple précédent, le constructeur sans paramètre a affecté la valeur `0` à `myInt`. Pour plus d’informations sur les valeurs assignées par l’appel de constructeurs sans paramètre, consultez [valeurs par défaut C# des types](../builtin-types/default-values.md).
 
 Avec les types définis par l’utilisateur, l’opérateur [new](../operators/new-operator.md) permet d’appeler le constructeur sans paramètre. Par exemple, l’instruction suivante appelle le constructeur sans paramètre du struct `Point` :
 

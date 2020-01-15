@@ -4,12 +4,12 @@ description: En savoir C# plus sur les types valeur Nullable et leur utilisation
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 661b5e8502cba42588a07d757f056c715c1c82e8
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 3b9a29e75fe894f7d8a0751feefa9eb0a39baa2c
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936896"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964323"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types valeur Nullable (C# référence)
 
@@ -56,7 +56,7 @@ Si vous souhaitez assigner une valeur d’un type valeur Nullable à une variabl
 
 [!code-csharp-interactive[?? operator](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#NullCoalescing)]
 
-Si vous souhaitez utiliser la valeur [par défaut](../keywords/default-values-table.md) du type de valeur sous-jacent à la place de `null`, utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
+Si vous souhaitez utiliser la valeur [par défaut](default-values.md) du type de valeur sous-jacent à la place de `null`, utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
 
 Vous pouvez également effectuer un cast explicite d’un type valeur Nullable vers un type non Nullable, comme le montre l’exemple suivant :
 

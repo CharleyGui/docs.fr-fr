@@ -2,19 +2,19 @@
 title: 'Procédure : configurer la persistance avec WorkflowServiceHost'
 ms.date: 03/30/2017
 ms.assetid: e31cd4df-13a3-4a9a-9be8-5243e0055356
-ms.openlocfilehash: 2cae73bd503afec6ddd1faf435645ebc21f4fc76
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 7b65b89db674a624f7dfbf8ca816e0f0c2d2ff80
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69968483"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75963477"
 ---
 # <a name="how-to-configure-persistence-with-workflowservicehost"></a>Procédure : configurer la persistance avec WorkflowServiceHost
-Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instances de workflow SQL pour activer la persistance des workflows hébergés dans <xref:System.ServiceModel.Activities.WorkflowServiceHost> à l'aide d'un fichier de configuration. Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, vous devez créer une base de données SQL utilisée pour rendre des instances de workflow persistantes. Pour plus d’informations, consultez [Guide pratique pour Activez la persistance SQL pour les workflows et](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)les services de Workflow.  
+Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instances de workflow SQL pour activer la persistance des workflows hébergés dans <xref:System.ServiceModel.Activities.WorkflowServiceHost> à l'aide d'un fichier de configuration. Avant d’utiliser la fonctionnalité de magasin d’instances de workflow SQL, vous devez créer une base de données SQL utilisée pour rendre des instances de workflow persistantes. Pour plus d’informations, consultez [Comment : activer la persistance SQL pour les workflows et les services de workflow](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md).  
   
 ### <a name="to-configure-the-sql-workflow-instance-store-in-configuration"></a>Pour configurer le magasin d'instances de workflow SQL en mode Configuration  
   
-1. Les propriétés du magasin d'instances de workflow de SQL peuvent être configurées via le <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, un comportement de service qui vous permet de modifier les paramètres par configuration XML. L’exemple de configuration suivant montre comment configurer le magasin d’instances de workflow SQL à l'`sqlWorkflowInstanceStore`aide de l’élément de comportement < > dans un fichier de configuration.  
+1. Les propriétés du magasin d'instances de workflow de SQL peuvent être configurées via le <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, un comportement de service qui vous permet de modifier les paramètres par configuration XML. L’exemple de configuration suivant montre comment configurer le magasin d’instances de workflow SQL à l’aide de l' <`sqlWorkflowInstanceStore`> élément de comportement dans un fichier de configuration.  
   
     ```xml  
     <serviceBehaviors>  
@@ -31,7 +31,7 @@ Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instan
     </serviceBehaviors>  
     ```  
   
-     Pour plus d’informations sur la configuration du magasin d’instances de workflow SQL [, consultez Procédure: Activez la persistance SQL pour les workflows et](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)les services de Workflow. Pour plus d’informations sur les différents paramètres de l'`sqlWorkflowInstanceStore`< > élément de comportement, consultez [magasin d’instances de workflow SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric fournit son propre magasin de persistance. Pour plus d’informations, consultez persistance de [Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121).  
+     Pour plus d’informations sur la configuration du magasin d’instances de workflow SQL, consultez [Comment : activer la persistance SQL pour les workflows et les services de workflow](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md). Pour plus d’informations sur les différents paramètres de l' <`sqlWorkflowInstanceStore`> élément de comportement, consultez [magasin d’instances de workflow SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric fournit son propre magasin de persistance. Pour plus d’informations, consultez [persistance de Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10)).  
   
     > [!NOTE]
     > L'exemple de configuration précédent utilise une configuration simplifiée. Pour plus d’informations, consultez [configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md)  
@@ -52,15 +52,15 @@ Cette rubrique décrit comment configurer la fonctionnalité de magasin d'instan
     });  
     ```  
   
-     Pour plus d’informations sur la configuration du magasin d’instances de workflow SQL [, consultez Procédure: Activez la persistance SQL pour les workflows et](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md)les services de Workflow. Pour plus d’informations sur les différents paramètres de <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior> l’élément de comportement, consultez [magasin d’instances de workflow SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric fournit son propre magasin de persistance. Pour plus d’informations, consultez persistance de [Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121).  
+     Pour plus d’informations sur la configuration du magasin d’instances de workflow SQL, consultez [Comment : activer la persistance SQL pour les workflows et les services de workflow](../../../../docs/framework/windows-workflow-foundation/how-to-enable-sql-persistence-for-workflows-and-workflow-services.md). Pour plus d’informations sur les différents paramètres de l’élément de comportement <xref:System.ServiceModel.Activities.Description.SqlWorkflowInstanceStoreBehavior>, consultez [magasin d’instances de workflow SQL](../../../../docs/framework/windows-workflow-foundation/sql-workflow-instance-store.md). Windows Server App Fabric fournit son propre magasin de persistance. Pour plus d’informations, consultez [persistance de Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10)).  
   
     > [!NOTE]
     > L'exemple de configuration précédent utilise une configuration simplifiée. Pour plus d’informations, consultez [configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md)  
   
-     Pour obtenir un exemple de configuration de la persistance par programme, [consultez Comment: Activez la persistance pour les workflows et](../../../../docs/framework/windows-workflow-foundation/how-to-enable-persistence-for-workflows-and-workflow-services.md)les services de Workflow.  
+     Pour obtenir un exemple de configuration de la persistance par programmation [, consultez Comment : activer la persistance pour les workflows et les services de workflow](../../../../docs/framework/windows-workflow-foundation/how-to-enable-persistence-for-workflows-and-workflow-services.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
 - [Services de workflow](../../../../docs/framework/wcf/feature-details/workflow-services.md)
 - [Persistance du workflow](../../../../docs/framework/windows-workflow-foundation/workflow-persistence.md)
-- [Persistance de Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkId=193121)
+- [Persistance de Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677272(v=azure.10))

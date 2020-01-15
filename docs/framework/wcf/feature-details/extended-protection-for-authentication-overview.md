@@ -2,12 +2,12 @@
 title: Vue d'ensemble de la protection étendue de l'authentification
 ms.date: 03/30/2017
 ms.assetid: 3d2ceffe-a7bf-4bd9-a5a2-9406423bd7f8
-ms.openlocfilehash: 2c166ae4795a64983c0df81629669c9cbf5b0d97
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 400bf7987b5fcd4ec75628d19a30739dd5f23b08
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64665949"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964601"
 ---
 # <a name="extended-protection-for-authentication-overview"></a>Vue d'ensemble de la protection étendue de l'authentification
 La protection étendue de l'authentification contribue à la protection contre les attaques de l'intercepteur (« man-in-the-middle ») au cours desquelles un intrus intercepte les informations d'identification d'un client et les transmet à un serveur.  
@@ -34,4 +34,4 @@ La protection étendue de l'authentification contribue à la protection contre l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Modèle de sécurité pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

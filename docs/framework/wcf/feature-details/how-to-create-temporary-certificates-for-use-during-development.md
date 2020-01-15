@@ -1,18 +1,18 @@
 ---
-title: 'Procédure : créer des certificats temporaires à utiliser pendant le développement'
+title: 'Comment : créer des certificats temporaires à utiliser au cours du développement'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - certificates [WCF], creating temporary certificates
 - temporary certificates [WCF]
 ms.assetid: bc5f6637-5513-4d27-99bb-51aad7741e4a
-ms.openlocfilehash: e2df35959f9821c65d694079aefa0ae6ba01897f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 9e01ccb29ad017a2657ab08b54d7f01ef4564481
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71053296"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964536"
 ---
-# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Procédure : créer des certificats temporaires à utiliser pendant le développement
+# <a name="how-to-create-temporary-certificates-for-use-during-development"></a>Comment : créer des certificats temporaires à utiliser au cours du développement
 
 Lors du développement d’un service ou d’un client sécurisé à l’aide de Windows Communication Foundation (WCF), il est souvent nécessaire de fournir un certificat X. 509 à utiliser comme informations d’identification. Le certificat fait en général partie d'une chaîne de certificats dont l'autorité racine est présente dans le magasin d'Autorités de certification racines de confiance de l'ordinateur. Une chaîne de certificats vous permet de définir la portée d'un jeu de certificats où en général l'autorité racine provient de votre organisation ou votre division. Pour émuler ce scénario au moment du développement, vous pouvez créer deux certificats pour satisfaire les conditions de sécurité. Le premier est un certificat auto-signé placé dans le magasin d'Autorités de certification racines de confiance. Le deuxième certificat est créé à partir du premier et placé dans le magasin personnel de l'emplacement de l'ordinateur local ou dans le magasin personnel de l'emplacement de l'utilisateur actif. Cette rubrique décrit les étapes permettant de créer ces deux certificats à l’aide de l’applet de commande PowerShell [New-SelfSignedCertificate)](/powershell/module/pkiclient/new-selfsignedcertificate) .
 
@@ -21,7 +21,7 @@ Lors du développement d’un service ou d’un client sécurisé à l’aide de
 >
 > Par défaut, l’applet [de commande New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) crée des certificats auto-signés et ces certificats ne sont pas sécurisés. Le fait de placer les certificats auto-signés dans le magasin autorités de certification racines de confiance vous permet de créer un environnement de développement qui simule plus fidèlement votre environnement de déploiement.
 
- Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat en tant qu’informations d’identification, consultez [sécurisation des services et des clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](https://go.microsoft.com/fwlink/?LinkId=88919)(Vues d’ensemble et didacticiels relatifs à Authenticode).
+ Pour plus d’informations sur la création et l’utilisation de certificats, consultez [utilisation des certificats](working-with-certificates.md). Pour plus d’informations sur l’utilisation d’un certificat en tant qu’informations d’identification, consultez [sécurisation des services et des clients](securing-services-and-clients.md). Pour obtenir un didacticiel à propos de l’utilisation de la technologie Authenticode de Microsoft, consultez [Authenticode Overviews and Tutorials](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537360(v=vs.85))(Vues d’ensemble et didacticiels relatifs à Authenticode).
 
 ## <a name="to-create-a-self-signed-root-authority-certificate-and-export-the-private-key"></a>Pour créer un certificat d'autorité racine auto-signé et exporter la clé privée
 
@@ -31,7 +31,7 @@ La commande suivante crée un certificat auto-signé avec le nom de sujet « Ro
 $rootcert = New-SelfSignedCertificate -CertStoreLocation Cert:\CurrentUser\My -DnsName "RootCA" -TextExtension @("2.5.29.19={text}CA=true") -KeyUsage CertSign,CrlSign,DigitalSignature
 ```
 
-Nous devons exporter le certificat vers un fichier PFX afin qu’il puisse être importé dans où il est nécessaire dans une étape ultérieure. Lors de l’exportation d’un certificat avec la clé privée, un mot de passe est nécessaire pour le protéger. Nous enregistrons le mot de `SecureString` passe dans un et utilisons l’applet de commande [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) pour exporter le certificat avec la clé privée associée dans un fichier PFX. Nous enregistrons également simplement le certificat public dans un fichier CRT à l’aide de l’applet de commande [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
+Nous devons exporter le certificat vers un fichier PFX afin qu’il puisse être importé dans où il est nécessaire dans une étape ultérieure. Lors de l’exportation d’un certificat avec la clé privée, un mot de passe est nécessaire pour le protéger. Nous enregistrons le mot de passe dans un `SecureString` et utilisons l’applet de commande [Export-PfxCertificate](/powershell/module/pkiclient/export-pfxcertificate) pour exporter le certificat avec la clé privée associée dans un fichier PFX. Nous enregistrons également simplement le certificat public dans un fichier CRT à l’aide de l’applet de commande [Export-Certificate](/powershell/module/pkiclient/export-certificate) .
 
 ```powershell
 [System.Security.SecureString]$rootcertPassword = ConvertTo-SecureString -String "password" -Force -AsPlainText
@@ -62,7 +62,7 @@ Une fois qu'un certificat auto-signé est créé, vous pouvez l'installer dans l
 
 ### <a name="to-install-a-self-signed-certificate-in-the-trusted-root-certification-authorities"></a>Pour installer un certificat auto-signé dans les Autorités de certification racines de confiance
 
-1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d’informations, consultez [Guide pratique pour Affichez les certificats avec le composant logiciel](how-to-view-certificates-with-the-mmc-snap-in.md)enfichable MMC.
+1. Ouvrez le composant logiciel enfichable Certificat. Pour plus d’informations, consultez [Guide pratique pour afficher des certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md).
 
 2. Ouvrez le dossier pour stocker le certificat, soit **Ordinateur local** , soit **Utilisateur actuel**.
 
@@ -115,5 +115,5 @@ Veillez à supprimer tous les certificats d'autorité racines temporaires des do
 ## <a name="see-also"></a>Voir aussi
 
 - [Utilisation des certificats](working-with-certificates.md)
-- [Guide pratique : Afficher les certificats avec le composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
-- [Sécurisation des services et des clients](securing-services-and-clients.md)
+- [Guide pratique pour afficher des certificats à l’aide du composant logiciel enfichable MMC](how-to-view-certificates-with-the-mmc-snap-in.md)
+- [Securing Services and Clients](securing-services-and-clients.md)

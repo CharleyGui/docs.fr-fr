@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - structs [C#], using
 ms.assetid: cea4a459-9eb9-442b-8d08-490e0797ba38
-ms.openlocfilehash: d85b11204eb1f1de3a95efc67054cdffc4c219e8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 22d63465c534090a8918348ea5f050739c0cf01c
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714661"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964742"
 ---
 # <a name="using-structs-c-programming-guide"></a>Utilisation de structsC# (Guide de programmation)
 
@@ -21,7 +21,7 @@ La définition d’un constructeur sans paramètre pour un struct constitue une 
 
 Quand vous créez un objet struct avec l’opérateur [new](../../language-reference/operators/new-operator.md), cet objet est créé et le constructeur approprié est appelé conformément à la [signature du constructeur](constructors.md#constructor-syntax). Contrairement aux classes, les structs peuvent être instanciés sans avoir recours à l’opérateur `new` . Dans un tel cas, il n’y a pas d’appel au constructeur, ce qui rend l’allocation plus efficace. Toutefois, les champs ne sont pas assignés et l’objet ne peut pas être utilisé tant que tous les champs ne sont pas initialisés. Ceci inclut l’incapacité à récupérer ou à définir des valeurs au moyen de propriétés.
 
-Si vous instanciez un objet struct à l’aide du constructeur sans paramètre, tous les membres sont assignés en fonction de leurs [valeurs par défaut](../../language-reference/keywords/default-values-table.md).
+Si vous instanciez un objet struct à l’aide du constructeur sans paramètre, tous les membres sont assignés en fonction de leurs [valeurs par défaut](../../language-reference/builtin-types/default-values.md).
 
 Lors de l’écriture d’un constructeur avec des paramètres pour un struct, vous devez initialiser explicitement tous les membres ; dans le cas contraire, un ou plusieurs membres ne sont pas assignés et le struct ne peut pas être utilisé, ce qui génère une erreur du compilateur [CS0171](../../misc/cs0171.md).
 

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: 62b218a7259d824930a2eb2c7f810b480034e2b6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 6505cc027b2983fd61ae53ca7ae43319024c74f7
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338017"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964712"
 ---
 # <a name="auditing-security-events"></a>Audit des événements de sécurité
 Les applications créées avec Windows Communication Foundation (WCF) peuvent consigner les événements de sécurité (réussite, échec, ou les deux) avec la fonctionnalité d’audit. Les événements sont écrits dans le journal des événements système Windows et peuvent être examinés à l'aide de l'Observateur d'événements.  
@@ -76,7 +76,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
  Si l'audit est activé et que `auditLogLocation` n'est pas spécifié, le nom de journal par défaut est "Security" pour la plateforme qui prend en charge l'écriture dans le journal Security, sinon il s'agit de "Application". Seuls les systèmes d’exploitation Windows Server 2003 et Windows Vista prennent en charge l’écriture dans le journal de sécurité. Pour plus d’informations, consultez la section « système d’exploitation » plus loin dans cette rubrique.  
   
 ## <a name="security-considerations"></a>Considérations sur la sécurité  
- Si un utilisateur malveillant sait que l'audit est activé, cet intrus peut envoyer des messages non valides pour provoquer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue. Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations, reportez-vous à l’article Support Microsoft sur l’affichage et la gestion des journaux des événements à l’aide de la observateur d’événements dans Windows XP disponible à la page [comment afficher et gérer les journaux des événements dans observateur d’événements sous Windows XP](https://go.microsoft.com/fwlink/?LinkId=89150).  
+ Si un utilisateur malveillant sait que l'audit est activé, cet intrus peut envoyer des messages non valides pour provoquer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue. Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit.  
   
  Les événements d'audit écrits dans le journal Application sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] sont accessibles aux utilisateurs authentifiés.  
   
@@ -107,4 +107,4 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
 - [Guide pratique pour auditer des événements de sécurité](../../../../docs/framework/wcf/feature-details/how-to-audit-wcf-security-events.md)
 - [\<serviceSecurityAudit>](../../../../docs/framework/configure-apps/file-schema/wcf/servicesecurityaudit.md)
 - [\<behaviors>](../../../../docs/framework/configure-apps/file-schema/wcf/behaviors.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

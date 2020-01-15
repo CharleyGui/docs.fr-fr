@@ -5,12 +5,12 @@ helpviewer_keywords:
 - constructors [C#], instance constructors
 - instance constructors [C#]
 ms.assetid: 24663779-c1e5-4af4-a942-ca554e4c542d
-ms.openlocfilehash: ee3cc30334154ef8aae6d7d26286463c537ff3dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 621b8ca7510b0b9916c9c46f201ff77402c3c655
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714811"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964733"
 ---
 # <a name="instance-constructors-c-programming-guide"></a>Constructeurs d'instances (Guide de programmation C#)
 
@@ -31,7 +31,7 @@ Les constructeurs d’instances sont utilisés pour créer et initialiser toutes
   
  [!code-csharp[csProgGuideObjects#77](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#77)]  
   
- Si une classe n’a pas de constructeur, un constructeur sans paramètre est généré automatiquement, et les valeurs par défaut sont utilisées pour initialiser les champs objet. Par exemple, [int](../../language-reference/builtin-types/integral-numeric-types.md) est initialisé à 0. Pour plus d’informations sur les valeurs par défaut, consultez [Tableau des valeurs par défaut](../../language-reference/keywords/default-values-table.md). Par conséquent, comme le constructeur sans paramètre de la classe `Coords` initialise toutes les données membres à zéro, il peut être supprimé entièrement sans modification du fonctionnement de la classe. Un exemple complet d’utilisation de plusieurs constructeurs est fourni dans l’exemple 1, plus loin dans cette rubrique, et un exemple d’un constructeur généré automatiquement est fourni dans l’exemple 2.  
+ Si une classe n’a pas de constructeur, un constructeur sans paramètre est généré automatiquement, et les valeurs par défaut sont utilisées pour initialiser les champs objet. Par exemple, [int](../../language-reference/builtin-types/integral-numeric-types.md) est initialisé à 0. Pour plus d’informations sur les valeurs par défaut [de type, C# consultez valeurs par défaut des types](../../language-reference/builtin-types/default-values.md). Par conséquent, comme le constructeur sans paramètre de la classe `Coords` initialise toutes les données membres à zéro, il peut être supprimé entièrement sans modification du fonctionnement de la classe. Un exemple complet d’utilisation de plusieurs constructeurs est fourni dans l’exemple 1, plus loin dans cette rubrique, et un exemple d’un constructeur généré automatiquement est fourni dans l’exemple 2.  
   
  Les constructeurs d’instances peuvent également servir à appeler les constructeurs d’instances des classes de base. Le constructeur de classe peut appeler le constructeur de la classe de base via l’initialiseur, comme suit :  
   
@@ -49,7 +49,7 @@ Les constructeurs d’instances sont utilisés pour créer et initialiser toutes
   
  [!code-csharp[csProgGuideObjects#8](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#8)]  
   
- Notez que la valeur par défaut d’`age` est `0` et que celle de `name` est `null`. Pour plus d’informations sur les valeurs par défaut, consultez [Tableau des valeurs par défaut](../../language-reference/keywords/default-values-table.md).  
+ Notez que la valeur par défaut d’`age` est `0` et que celle de `name` est `null`.
   
 ## <a name="example-3"></a>Exemple 3  
  L’exemple suivant illustre l’utilisation de l’initialiseur de classe de base. La classe `Circle` est dérivée de la classe générale `Shape` et la classe `Cylinder` est dérivée de la classe `Circle`. Le constructeur de chaque classe dérivée utilise son initialiseur de classe de base.  

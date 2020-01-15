@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - choosing transports [WCF]
 ms.assetid: b169462b-f7b6-4cf4-9fca-d306909ee8bf
-ms.openlocfilehash: 69f2724182f83d507f749a150a8d006a4e0f2192
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: bf1bda5f1a2e1f0dfa0cc034c293f448cca2bd32
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838063"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964469"
 ---
 # <a name="choosing-a-transport"></a>Choix d'un transport
 Cette rubrique traite des critères permettant de choisir parmi les trois principaux transports inclus dans Windows Communication Foundation (WCF) : HTTP, TCP et canaux nommés. WCF comprend également un transport Message Queuing (également appelé MSMQ), mais ce document n’aborde pas la mise en file d’attente des messages.  
@@ -26,7 +26,7 @@ Cette rubrique traite des critères permettant de choisir parmi les trois princi
  Cette section décrit les raisons principales motivant le choix d'un des trois principaux transports, ainsi qu'un tableau de prise de décision détaillé pour effectuer ce choix.  
   
 ### <a name="when-to-use-http-transport"></a>Quand utiliser le transport HTTP  
- HTTP est un protocole de demande/réponse entre clients et serveurs. L'application la plus courante se compose de clients de navigateur Web qui communiquent avec un serveur Web. Le client envoie une demande à un serveur qui écoute les messages de demande du client. Lorsque le serveur reçoit une demande, il renvoie une réponse qui contient l'état de la demande. Si cette demande aboutit, des données facultatives, telles qu’une page web, un message d’erreur ou autres informations, sont retournées. Pour plus d’informations sur le protocole HTTP, consultez [protocole HTTP-Hypertext Transfer](https://go.microsoft.com/fwlink/?LinkId=94858).  
+ HTTP est un protocole de demande/réponse entre clients et serveurs. L'application la plus courante se compose de clients de navigateur Web qui communiquent avec un serveur Web. Le client envoie une demande à un serveur qui écoute les messages de demande du client. Lorsque le serveur reçoit une demande, il renvoie une réponse qui contient l'état de la demande. Si cette demande aboutit, des données facultatives, telles qu’une page web, un message d’erreur ou autres informations, sont retournées. Pour plus d’informations sur le protocole HTTP, consultez [protocole HTTP-Hypertext Transfer](https://www.w3.org/Protocols/).  
   
  Le protocole HTTP n'est pas basé sur une connexion ; une fois la réponse envoyée, aucun état n'est maintenu. Pour gérer des transactions de plusieurs pages, l’application doit rendre persistant tout état nécessaire.  
   
@@ -50,7 +50,7 @@ Cette rubrique traite des critères permettant de choisir parmi les trois princi
 ## <a name="decision-points-for-choosing-a-transport"></a>Points de décision permettant de choisir un transport  
  Le tableau suivant décrit les points de décision courants permettant de choisir un transport. Vous devez considérer tous les attributs et les transports supplémentaires qui s'appliquent à votre application. Identifiez les attributs qui sont importants pour votre application, les transports qui s'associent le mieux à chacun de vos attributs, puis sélectionnez les transports qui fonctionnent le mieux avec votre jeu d'attributs.  
   
-|Attribut|Description|Transports préconisés|  
+|Attribute|Description|Transports préconisés|  
 |---------------|-----------------|------------------------|  
 |Diagnostics|Les diagnostics vous permettent de détecter automatiquement les problèmes de connectivité de transport. Tous les transports prennent en charge la possibilité de renvoyer des informations de panne qui décrivent la connectivité. Toutefois, WCF n’inclut pas les outils de diagnostic permettant d’examiner les problèmes réseau.|Aucun|  
 |Hébergement|Tous les points de terminaison WCF doivent être hébergés dans une application. IIS 6,0 et les versions antérieures prennent uniquement en charge l’hébergement d’applications qui utilisent le transport HTTP. Sur Windows Vista, la prise en charge est ajoutée pour héberger tous les transports WCF, y compris TCP et les canaux nommés. Pour plus d’informations, consultez [hébergement dans Internet Information Services](../../../../docs/framework/wcf/feature-details/hosting-in-internet-information-services.md) et [hébergement dans le service d’activation des processus Windows](../../../../docs/framework/wcf/feature-details/hosting-in-windows-process-activation-service.md).|HTTP|  

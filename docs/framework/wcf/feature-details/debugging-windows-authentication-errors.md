@@ -8,17 +8,17 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 52e968706ef4ca703a26e613e681cff3c30ba181
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 45e4926905bbf3b5a24af15de153afc7bd2a4823
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838024"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964569"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Débogage d'erreurs d'authentification Windows.
 Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurité, l'interface SSPI (Security Support Provider Interface) gère les processus de sécurité. Lorsque des erreurs de sécurité se produisent au niveau de la couche SSPI, elles sont signalées par Windows Communication Foundation (WCF). Cette rubrique fournit une infrastructure et un ensemble de questions permettant de diagnostiquer les erreurs.  
   
- Pour obtenir une vue d’ensemble du protocole Kerberos, consultez [explication de Kerberos](https://go.microsoft.com/fwlink/?LinkID=86946). pour obtenir une vue d’ensemble de SSPI, consultez [SSPI](https://go.microsoft.com/fwlink/?LinkId=88941).  
+ Pour obtenir une vue d’ensemble du protocole Kerberos, consultez [explication de Kerberos](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-2000-server/bb742516(v=technet.10)). pour obtenir une vue d’ensemble de SSPI, consultez [SSPI](/windows/win32/secauthn/sspi).  
   
  Pour l’authentification Windows, WCF utilise généralement le fournisseur SSP (Security Support Provider) *Negotiate* , qui effectue une authentification mutuelle Kerberos entre le client et le service. Si le protocole Kerberos n’est pas disponible, WCF revient par défaut à NT LAN Manager (NTLM). Toutefois, vous pouvez configurer WCF pour utiliser uniquement le protocole Kerberos (et pour lever une exception si Kerberos n’est pas disponible). Vous pouvez également configurer WCF pour utiliser des formes restreintes du protocole Kerberos.  
   
@@ -66,7 +66,7 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
   
  Dans les scénarios d'équilibrage de charge, tels que les batteries de serveurs Web ou les jardins Web, une pratique courante consiste à définir un compte unique pour chaque application, assigner un SPN à ce compte et veiller à ce que tous les services de l'application s'exécutent sous ce compte.  
   
- Pour obtenir un SPN pour le compte de votre service, vous devez être administrateur de domaine Active Directory. Pour plus d’informations, consultez [supplément technique Kerberos pour Windows](https://go.microsoft.com/fwlink/?LinkID=88330).  
+ Pour obtenir un SPN pour le compte de votre service, vous devez être administrateur de domaine Active Directory. Pour plus d’informations, consultez [supplément technique Kerberos pour Windows](https://docs.microsoft.com/previous-versions/msp-n-p/ff649429(v=pandp.10)).  
   
 #### <a name="kerberos-protocol-direct-requires-the-service-to-run-under-a-domain-machine-account"></a>Le protocole Kerberos direct requiert l'exécution du service sous un compte d'ordinateur de domaine  
  Cela se produit lorsque la propriété `ClientCredentialType` a la valeur `Windows` et que la propriété <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> a la valeur `false`, tel qu'indiqué dans le code suivant.  

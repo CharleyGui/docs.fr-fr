@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - denial of service [WCF]
 ms.assetid: dfb150f3-d598-4697-a5e6-6779e4f9b600
-ms.openlocfilehash: 4a9f3a3b7e69d33a8707a4bed5b9bc369c75f601
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 55120430a9aaafe7d8bbf2b26f07806e4f1aa44a
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346692"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964423"
 ---
 # <a name="denial-of-service"></a>Refus de service
 Un déni de service se produit lorsqu'un système est saturé au point que le traitement des messages est impossible ou extrêmement lent.  
@@ -44,7 +44,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
 ## <a name="auditing-event-log-can-be-filled"></a>Risque de saturation du journal des événements d'audit  
  Si un utilisateur malveillant se rend compte que l'audit est activé, l'intrus peut envoyer des messages non valides pour forcer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue.  
   
- Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://go.microsoft.com/fwlink/?LinkId=186123). Pour plus d’informations, consultez [audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
+ Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit. Pour plus d’informations sur l’utilisation de l’observateur d’événements pour afficher et gérer les journaux des événements, consultez [Observateur d’événements](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc766042(v=ws.11)). Pour plus d’informations, consultez [audit](../../../../docs/framework/wcf/feature-details/auditing-security-events.md).  
   
 ## <a name="invalid-implementations-of-iauthorizationpolicy-can-cause-service-to-become-unresponsive"></a>Les implémentations non valides de IAuthorizationPolicy peuvent provoquer le blocage du service  
  L’appel de la méthode <xref:System.IdentityModel.Policy.IAuthorizationPolicy.Evaluate%2A> sur une implémentation défaillante de l’interface <xref:System.IdentityModel.Policy.IAuthorizationPolicy> peut empêcher le service de répondre.  
@@ -52,7 +52,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
  Atténuation : utilisez uniquement un code de confiance. Autrement dit, utilisez uniquement un code que vous avez vous-même écrit et testé, ou qui provient d'un fournisseur approuvé. N’autorisez pas les extensions non fiables de <xref:System.IdentityModel.Policy.IAuthorizationPolicy> à s’intégrer à votre code sans prendre toutes les précautions requises. Cela s'applique à toutes les extensions utilisées dans une implémentation de service. WCF ne fait aucune distinction entre le code d’application et le code étranger qui est connecté à l’aide de points d’extensibilité.  
   
 ## <a name="kerberos-maximum-token-size-may-need-resizing"></a>La taille maximale de jeton Kerberos peut devoir être redimensionnée  
- Si un client appartient à un grand nombre de groupes (approximativement 900, bien que le nombre réel varie selon les groupes), un problème peut se produire lorsque le bloc d'un en-tête de message dépasse 64 kilo-octets. Dans ce cas, vous pouvez augmenter la taille maximale du jeton Kerberos, comme décrit dans l’article Support Microsoft «[l’authentification Kerberos d’Internet Explorer ne fonctionne pas en raison d’une mémoire tampon insuffisante se connectant à IIS](https://go.microsoft.com/fwlink/?LinkId=89176)». Vous devrez peut-être également augmenter la taille maximale du message WCF pour prendre en charge le plus grand jeton Kerberos.  
+ Si un client appartient à un grand nombre de groupes (approximativement 900, bien que le nombre réel varie selon les groupes), un problème peut se produire lorsque le bloc d'un en-tête de message dépasse 64 kilo-octets. Dans ce cas, vous pouvez augmenter la taille maximale du jeton Kerberos. Vous devrez peut-être également augmenter la taille maximale du message WCF pour prendre en charge le plus grand jeton Kerberos.  
   
 ## <a name="autoenrollment-results-in-multiple-certificates-with-same-subject-name-for-machine"></a>L'inscription automatique provoque la création de plusieurs certificats avec le même nom de sujet pour l'ordinateur  
  L' *inscription* automatique est la capacité de Windows Server 2003 à inscrire automatiquement les utilisateurs et les ordinateurs pour les certificats. Lorsqu’un ordinateur se trouve sur un domaine dans lequel cette fonctionnalité est activée, un certificat X.509, dont le rôle prévu est d’authentifier les clients, est créé automatiquement et inséré dans le magasin de certificats personnels de l’ordinateur local à chaque fois qu’un nouvel ordinateur est joint au réseau. Toutefois, l'inscription automatique utilise le même nom de sujet pour tous les certificats qu'il crée dans le cache.  
@@ -61,7 +61,7 @@ Un déni de service se produit lorsqu'un système est saturé au point que le tr
   
  Pour atténuer ce risque, référencez le certificat exact à utiliser à l’aide d’un critère de recherche plus précis sur le [\<> ServiceCredentials](../../../../docs/framework/configure-apps/file-schema/wcf/servicecredentials.md). Par exemple, utilisez l'option <xref:System.Security.Cryptography.X509Certificates.X509FindType.FindByThumbprint> et spécifiez le certificat par son empreinte numérique unique (hachage).  
   
- Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=95166).  
+ Pour plus d’informations sur la fonctionnalité d’inscription automatique, consultez [inscription automatique des certificats dans Windows Server 2003](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc778954(v%3dws.10)).  
   
 ## <a name="last-of-multiple-alternative-subject-names-used-for-authorization"></a>Dernier des noms de sujet de remplacement utilisés pour l'autorisation  
  Dans les rares cas où un certificat X.509 contient plusieurs noms de sujet de remplacement, et que vous autorisez l'utilisation du nom de sujet de remplacement, l'autorisation peut échouer.  

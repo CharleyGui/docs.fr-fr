@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - WS-AT protocol [WCF], configuring WS-Atomic Transaction
 ms.assetid: cb9f1c9c-1439-4172-b9bc-b01c3e09ac48
-ms.openlocfilehash: 804e22c79c328a2ae96d8f1cb817d0aea2b0c25d
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 068ddcab5cfb7bfb5f37a1858820195a5a05269f
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75544726"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964579"
 ---
 # <a name="configure-ws-atomic-transaction-support"></a>Configurer la prise en charge des transactions WS-Atomic
 
@@ -59,7 +59,7 @@ L'exemple suivant illustre les étapes requises pour établir la confiance entre
 
 Cette procédure requiert le composant logiciel enfichable MMC Certificats. Ce composant logiciel enfichable est accessible en ouvrant le menu Démarrer/Exécuter, en tapant « mmc » dans la zone d'entrée et en appuyant sur OK. Ensuite, dans la fenêtre **Console1** , accédez au composant logiciel enfichable **fichier/ajouter-supprimer** , cliquez sur Ajouter, puis choisissez **certificats** dans la liste **composants logiciels enfichables autonome disponible** . Enfin, sélectionnez le **compte d’ordinateur** à gérer, puis cliquez sur **OK**. Le nœud **certificats** apparaît dans la console du composant logiciel enfichable.
 
-Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure : créer et installer des certificats clients temporaires dans WCF pendant le développement](https://go.microsoft.com/fwlink/?LinkId=158925).
+Vous devez déjà posséder les certificats requis pour établir la confiance. Pour savoir comment créer et installer de nouveaux certificats avant les étapes suivantes, consultez [procédure : créer et installer des certificats clients temporaires dans WCF pendant le développement](https://docs.microsoft.com/previous-versions/msp-n-p/ff650751(v=pandp.10)).
 
 1. Sur l'ordinateur A, à l'aide du composant logiciel enfichable MMC Certificats, importez le certificat existant (certA) dans les magasins LocalMachine\MY (Nœud personnel) et LocalMachine\ROOT (nœud de l'Autorité de certification racine de confiance). Pour importer un certificat vers un nœud spécifique, cliquez avec le bouton droit sur le nœud et choisissez **toutes les tâches/importer**.
 

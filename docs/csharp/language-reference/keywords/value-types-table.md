@@ -5,12 +5,12 @@ helpviewer_keywords:
 - value types [C#], table
 - types [C#], value types
 ms.assetid: 67d8f631-b6e3-4d83-9910-5ec497f8c5f3
-ms.openlocfilehash: c0db75cc502426490d82c369a919079e8f53284c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6e6f14635f47a3bf016ca5aca72ada643ea29f08
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712921"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964449"
 ---
 # <a name="value-types-table-c-reference"></a>Table des types valeurC# (référence)
 
@@ -37,6 +37,6 @@ Le tableau suivant présente les types valeur dans C# :
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Tableau des valeurs par défaut](default-values-table.md)
+- [Valeurs par défaut C# des types](../builtin-types/default-values.md)
 - [Types valeur](value-types.md)
 - [Tableau des formats des résultats numériques](formatting-numeric-results-table.md)

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Await operator [Visual Basic]
 - Await [Visual Basic]
 ms.assetid: 6b1ce283-e92b-4ba7-b081-7be7b3d37af9
-ms.openlocfilehash: e0c617ce32f80bdde1bcfda31da40ae610e07452
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: b5943e509bb850abc6c74e1b97ccd5fb0038f1e0
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74712349"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964331"
 ---
 # <a name="await-operator-visual-basic"></a>Await, opérateur (Visual Basic)
 
@@ -58,7 +58,7 @@ Await AsyncMethodThatReturnsTask()
 
 Une expression ou une instruction `Await` ne bloque pas le thread sur lequel elle s’exécute. Au lieu de cela, il force le compilateur à inscrire le reste de la méthode Async, après l’expression `Await`, en tant que continuation sur la tâche attendue. Le contrôle revient alors à l'appelant de la méthode async. Quand la tâche est terminée, elle appelle sa continuation et l'exécution de la méthode async reprend là où elle s'était arrêtée.
 
-Une expression `Await` peut se produire uniquement dans le corps d’une méthode immédiatement englobante ou d’une expression lambda qui est marquée par un modificateur de `Async`. Le terme *await* sert de mot clé uniquement dans ce contexte. Partout ailleurs, il est interprété en tant qu'identificateur. Dans une méthode Async ou une expression lambda, une expression `Await` ne peut pas se produire dans une expression de requête, dans le bloc `catch` ou `finally` d’un bloc [try... Catch... Finally](../../../visual-basic/language-reference/statements/try-catch-finally-statement.md) , dans l’expression de variable de contrôle de boucle d’une boucle `For` ou `For Each`, ou dans le corps d’une instruction [SyncLock](../../../visual-basic/language-reference/statements/synclock-statement.md) .
+Une expression `Await` peut se produire uniquement dans le corps d’une méthode immédiatement englobante ou d’une expression lambda qui est marquée par un modificateur de `Async`. Le terme *await* sert de mot clé uniquement dans ce contexte. Partout ailleurs, il est interprété en tant qu'identificateur. Au sein de la méthode `Async` ou de l’expression lambda, une expression `Await` ne peut pas se produire dans une expression de requête, dans le bloc `Catch` ou `Finally` d’une méthode [try... Catch... Finally](../statements/try-catch-finally-statement.md), dans l’expression de variable de contrôle de boucle d’une boucle `For` ou `For Each`, ou dans le corps d’une instruction [SyncLock](../statements/synclock-statement.md) .
 
 ## <a name="exceptions"></a>Exceptions
 

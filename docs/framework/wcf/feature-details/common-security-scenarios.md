@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - security [WCF], scenarios
 ms.assetid: 201923b5-5162-4a8a-8d4c-e7bd242748d5
-ms.openlocfilehash: af58d6b529fba32380bedb9a892a2b1fd4807d96
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 578ec2d7d5abe1285007ad22d8bacd69e695b1d3
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61857569"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964282"
 ---
 # <a name="common-security-scenarios"></a>Scénarios de sécurité courants
 Les rubriques de cette section présentent un certain nombre de configurations de sécurité de service et client possibles. Les configurations varient selon un certain nombre de facteurs. Par exemple, si un service ou un client est sur un intranet, ou si la sécurité est fournie par Windows ou un transport (tel que HTTPS).  
@@ -19,7 +19,7 @@ Les rubriques de cette section présentent un certain nombre de configurations d
  Exemple de client/service public non sécurisé.  
   
  [Service et client intranet non sécurisés](../../../../docs/framework/wcf/feature-details/intranet-unsecured-client-and-service.md)  
- Un service Windows Communication Foundation (WCF) de base développé pour fournir des informations sur un réseau privé sécurisé à une application WCF.  
+ Service de base Windows Communication Foundation (WCF) développé pour fournir des informations sur un réseau privé sécurisé à une application WCF.  
   
  [Sécurité de transport avec authentification de base](../../../../docs/framework/wcf/feature-details/transport-security-with-basic-authentication.md)  
  L'application autorise les clients à se connecter à l'aide de l'authentification personnalisée.  
@@ -34,7 +34,7 @@ Les rubriques de cette section présentent un certain nombre de configurations d
  Présente un client/service sécurisé par un certificat.  
   
  [Sécurité de message avec un client anonyme](../../../../docs/framework/wcf/feature-details/message-security-with-an-anonymous-client.md)  
- Montre un client / service sécurisé par la sécurité de message WCF.  
+ Affiche un client et un service sécurisés par la sécurité des messages WCF.  
   
  [Sécurité de message avec un client de type Nom d’utilisateur](../../../../docs/framework/wcf/feature-details/message-security-with-a-user-name-client.md)  
  Le client est une application Windows Forms qui autorise les clients à se connecter à l'aide d'un mot de passe et d'un nom d'utilisateur de domaine.  
@@ -57,7 +57,7 @@ Les rubriques de cette section présentent un certain nombre de configurations d
  [Sous-système approuvé](../../../../docs/framework/wcf/feature-details/trusted-subsystem.md)  
  Un client accède à un ou plusieurs services Web distribués sur un réseau. Les services Web accèdent aux ressources supplémentaires (telles que les bases de données ou autres services Web) qui doivent être sécurisées.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.ServiceModel>  
   
 ## <a name="related-sections"></a>Rubriques connexes  
@@ -65,11 +65,11 @@ Les rubriques de cette section présentent un certain nombre de configurations d
   
  [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)  
   
- [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)  
+ [Security](../../../../docs/framework/wcf/feature-details/security.md)  
   
  [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
   
- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
   
  [Authentification](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
   
@@ -82,4 +82,4 @@ Les rubriques de cette section présentent un certain nombre de configurations d
 ## <a name="see-also"></a>Voir aussi
 
 - [Aide sur la sécurité et bonnes pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

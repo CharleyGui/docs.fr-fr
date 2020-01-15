@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: f14b92aba270eab845ca50e5407da3502b5c4087
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 4e4dbe085b11751416f69c9fa7f790f18a68f5d7
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345343"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964377"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
@@ -60,7 +60,7 @@ Vous pouvez également utiliser le symbole `~` pour déclarer des finaliseurs. P
 
 ## <a name="left-shift-operator-"></a>Opérateur de décalage gauche \<\<
 
-L’opérateur `<<` décale son opérande de partie gauche vers le nombre de bits spécifié par son opérande de partie droite.
+L’opérateur `<<` décale son opérande de gauche vers la gauche du [nombre de bits défini par son opérande de droite](#shift-count-of-the-shift-operators).
 
 L’opération de décalage gauche supprime les bits d’ordre supérieur qui sont en dehors de la plage du type de résultat, et définit les positions de bits vides d’ordre inférieur sur zéro, comme le montre l’exemple suivant :
 
@@ -74,7 +74,7 @@ Pour plus d’informations sur la façon dont l’opérande de partie droite de 
 
 ## <a name="right-shift-operator-"></a>Opérateur de décalage vers la droite >>
 
-L’opérateur `>>` décale son opérande de partie gauche vers le nombre de bits défini par son opérande de partie droite.
+L’opérateur `>>` décale son opérande de gauche vers la droite du [nombre de bits défini par son opérande de droite](#shift-count-of-the-shift-operators).
 
 L’opération de décalage vers la droite ignore les bits d’ordre inférieur, comme le montre l’exemple suivant :
 
@@ -169,6 +169,9 @@ Pour les expressions `x << count` et `x >> count`, la valeur réelle du décalag
 L’exemple suivant illustre ce comportement :
 
 [!code-csharp-interactive[shift count example](~/samples/csharp/language-reference/operators/BitwiseAndShiftOperators.cs#ShiftCount)]
+
+> [!NOTE]
+> Comme le montre l’exemple précédent, le résultat d’une opération de décalage peut être différent de zéro même si la valeur de l’opérande de droite est supérieure au nombre de bits dans l’opérande de gauche.
 
 ## <a name="enumeration-logical-operators"></a>Opérateurs logiques d’énumération
 
