@@ -2,15 +2,16 @@
 title: Prise en charge de la mise en cache pour les services HTTP Web WCF
 ms.date: 03/30/2017
 ms.assetid: 7f8078e0-00d9-415c-b8ba-c1b6d5c31799
-ms.openlocfilehash: 7c60deab635c29785398a1b50f9cf14c0f688420
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: 5964c58ce28f67815774741815bba0fcbe3b2de7
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141790"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964234"
 ---
 # <a name="caching-support-for-wcf-web-http-services"></a>Prise en charge de la mise en cache pour les services HTTP Web WCF
-[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] vous permet d’utiliser le mécanisme de mise en cache déclaratif déjà disponible dans ASP.NET dans vos services HTTP Web WCF. Il vous permet de mettre en cache les réponses provenant de vos opérations de service HTTP Web WCF. Lorsqu'un utilisateur envoie un HTTP GET à votre service qui est configuré pour la mise en cache, ASP.NET renvoie la réponse mise en cache et la méthode de service n'est pas appelée. Lorsque le cache expire, au prochain envoi d'un HTTP GET par un utilisateur, votre méthode de service est appelée et la réponse est encore une fois mise en cache. Pour plus d’informations sur la mise en cache ASP.NET, consultez [vue d’ensemble de la mise en cache ASP.net](https://go.microsoft.com/fwlink/?LinkId=152534)  
+
+[!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)] vous permet d’utiliser le mécanisme de mise en cache déclaratif déjà disponible dans ASP.NET dans vos services HTTP Web WCF. Il vous permet de mettre en cache les réponses provenant de vos opérations de service HTTP Web WCF. Lorsqu'un utilisateur envoie un HTTP GET à votre service qui est configuré pour la mise en cache, ASP.NET renvoie la réponse mise en cache et la méthode de service n'est pas appelée. Lorsque le cache expire, au prochain envoi d'un HTTP GET par un utilisateur, votre méthode de service est appelée et la réponse est encore une fois mise en cache. Pour plus d’informations sur la mise en cache ASP.NET, consultez [vue d’ensemble de la mise en cache ASP.net](https://docs.microsoft.com/previous-versions/aspnet/ms178597(v=vs.100)).  
   
 ## <a name="basic-web-http-service-caching"></a>Mise en cache du service HTTP Web de base  
  Pour activer la mise en cache du service HTTP WEB, vous devez d'abord activer la compatibilité ASP.NET en appliquant au service l'objet <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute> et en attribuant à la propriété <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsAttribute.RequirementsMode%2A> la valeur <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Allowed> ou <xref:System.ServiceModel.Activation.AspNetCompatibilityRequirementsMode.Required>.  
@@ -122,10 +123,10 @@ public class Service
  Ici, la durée de mise en cache est définie à 60 secondes, `varyByParam` est défini sur aucun et `sqlDependency` est défini sur une liste délimitée par des points-virgules de paires de nom de base de données/table séparés par le signe deux-points. Lorsque les données dans `MyTable` sont modifiées, la réponse mise en cache pour l'opération de service est supprimée, et lorsque l'opération est appelée, une nouvelle réponse est générée (en appelant l'opération de service), mise en cache et retournée au client.  
   
 > [!IMPORTANT]
-> Pour que ASP.NET accède à une base de données SQL, vous devez utiliser l' [outil d’inscription ASP.NET SQL Server](https://go.microsoft.com/fwlink/?LinkId=152536). De plus, vous devez autoriser le compte d'utilisateur approprié à accéder à la base de données et à la table. Pour plus d’informations, consultez [accès à SQL Server à partir d’une application Web](https://go.microsoft.com/fwlink/?LinkId=178988).  
+> Pour que ASP.NET accède à une base de données SQL, vous devez utiliser l' [outil d’inscription ASP.NET SQL Server](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms229862(v=vs.90)). De plus, vous devez autoriser le compte d'utilisateur approprié à accéder à la base de données et à la table. Pour plus d’informations, consultez [accès à SQL Server à partir d’une application Web](https://docs.microsoft.com/previous-versions/aspnet/ht43wsex(v=vs.100)).  
   
 ## <a name="conditional-http-get-based-caching"></a>Mise en cache basée sur HTTP GET conditionnel  
- Dans les scénarios HTTP Web, un accès HTTPs conditionnel est souvent utilisé par les services pour implémenter la mise en cache HTTP intelligente, comme décrit dans la [spécification http](https://go.microsoft.com/fwlink/?LinkId=165800). Pour ce faire, le service doit définir la valeur de l'en-tête ETag dans la réponse HTTP. Il doit également activer l'en-tête If-None-Match dans la requête HTTP pour vérifier si l'un des ETag spécifiés correspond à l'ETag actuel.  
+ Dans les scénarios HTTP Web, un accès HTTPs conditionnel est souvent utilisé par les services pour implémenter la mise en cache HTTP intelligente, comme décrit dans la [spécification http](https://www.w3.org/Protocols/rfc2616/rfc2616.html). Pour ce faire, le service doit définir la valeur de l'en-tête ETag dans la réponse HTTP. Il doit également activer l'en-tête If-None-Match dans la requête HTTP pour vérifier si l'un des ETag spécifiés correspond à l'ETag actuel.  
   
  Pour les demandes GET et HEAD, la méthode <xref:System.ServiceModel.Web.IncomingWebRequestContext.CheckConditionalRetrieve%2A> prend une valeur ETag et la compare à l'en-tête If-None-Match de la demande. Si l'en-tête est présent et qu'il correspond, une exception <xref:System.ServiceModel.Web.WebFaultException> avec un code d'état HTTP 304 (non modifié) est levée et un en-tête ETag est ajouté à la réponse avec l'ETag correspondant.  
   
@@ -162,5 +163,5 @@ public Customer GetCustomer(string id)
 }
 ```  
   
-## <a name="security-considerations"></a>Considérations relatives à la sécurité  
+## <a name="security-considerations"></a>Considérations sur la sécurité  
  Les réponses aux demandes qui requièrent une autorisation ne doivent pas être mises en cache, car l'autorisation n'est pas effectuée lorsque la réponse est traitée à partir du cache.  La mise en cache de telles réponses introduirait une faille de sécurité grave.  En règle générale, les demandes qui requièrent une autorisation fournissent des données spécifiques à l'utilisateur, de sorte que la mise en cache côté serveur ne présente aucun avantage.  Dans des situations de ce genre, il est plus approprié d'effectuer une mise en cache côté client, voire aucune mise en cache.

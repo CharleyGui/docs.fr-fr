@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - null keyword [C#]
 ms.assetid: fecb1c60-6232-4efe-87f7-9a86ba2e9119
-ms.openlocfilehash: ef64972a476ce348495565e09c06d0122c5ee628
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d3387bdcb5140a6c738b243606326ec451d74870
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713327"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964202"
 ---
 # <a name="null-c-reference"></a>null (référence C#)
 
@@ -30,5 +30,5 @@ L’exemple suivant illustre certains comportements du mot clé null :
 
 - [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
-- [Tableau des valeurs par défaut](default-values-table.md)
+- [Valeurs par défaut C# des types](../builtin-types/default-values.md)
 - [Rien (Visual Basic)](../../../visual-basic/language-reference/nothing.md)
