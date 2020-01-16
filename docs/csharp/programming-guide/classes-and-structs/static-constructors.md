@@ -5,12 +5,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 0956c174f4d5742780baf00a6f2785a9efd1d93f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
-ms.translationtype: MT
+ms.openlocfilehash: 27a7cbb1490f42811c79778382063980f3828395
+ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714674"
+ms.lasthandoff: 01/15/2020
+ms.locfileid: "75964086"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Constructeurs statiques (Guide de programmation C#)
 Un constructeur statique est utilisé pour initialiser des données [statiques](../../language-reference/keywords/static.md) ou pour effectuer une action particulière qui ne doit être effectuée qu’une seule fois. Il est automatiquement appelé avant la création de la première instance ou le référencement d’un membre statique.  
@@ -32,7 +32,7 @@ Les constructeurs statiques ont les propriétés suivantes :
   
 - Un constructeur statique est automatiquement appelé pour initialiser la [classe](../../language-reference/keywords/class.md) avant la création de la première instance ou le référencement d’un membre statique. Un constructeur statique s’exécute avant le constructeur d’instance. Notez que le constructeur statique d’un type est appelé quand une méthode statique assignée à un événement ou un délégué est appelée, et non pas quand elle est assignée. Si des initialiseurs de variable de champ statique sont présents dans la classe du constructeur statique, ils seront exécutés dans l’ordre textuel dans lequel ils apparaissent dans la déclaration de classe, immédiatement avant l’exécution du constructeur statique.
 
-- Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, tous les champs statiques sont initialisés à leur valeur par défaut, conformément au [Tableau des valeurs par défaut](../../language-reference/keywords/default-values-table.md). 
+- Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, tous les champs statiques sont initialisés à leur valeur par défaut, comme indiqué dans [valeurs par défaut C# des types](../../language-reference/builtin-types/default-values.md).
   
 - Si un constructeur statique lève une exception, le runtime ne l’appelle pas une deuxième fois et le type reste non initialisé pour la durée de vie du domaine d’application dans lequel votre programme s’exécute. En règle générale, une exception <xref:System.TypeInitializationException> est levée lorsqu’un constructeur statique ne parvient pas à instancier un type ou quand une exception non gérée se produit dans un constructeur statique. Pour les constructeurs statiques implicites qui ne sont pas définis explicitement dans le code source, la résolution des problèmes peut nécessiter l’inspection du code en langage intermédiaire (IL).
 
