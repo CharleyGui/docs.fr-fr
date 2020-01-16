@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: c5500b8fd8b35081e83e2e9279dc4f236ef3c7b0
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 7bd56d44eeb6af70b94cdde77d48e917ef8afb9a
+ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837933"
+ms.lasthandoff: 12/25/2019
+ms.locfileid: "75347778"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
 Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
@@ -44,7 +44,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'authentification peut entraîner l'établissement d'une session sécurisée entre les points de terminaison communicants. La session est identifiée par un GUID valide pendant toute la durée de vie de la session de sécurité. Le tableau suivant indique ce qui est conservé, et à quel emplacement.  
   
-|Données|Storage|  
+|Données|Stockage|  
 |----------|-------------|  
 |Informations d'identification de présentation, telles que nom d'utilisateur, certificats X.509, jetons Kerberos et références aux informations d'identification.|Mécanismes de gestion des informations d'identification Windows standard tels que le magasin de certificats Windows.|  
 |Informations d'appartenance utilisateur, telles que noms d'utilisateur et mots de passe.|Fournisseurs d’appartenances ASP.NET.|  
@@ -54,9 +54,9 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="auditing"></a>Audit  
  L'audit permet d'enregistrer le succès et l'échec des événements d'authentification et d'autorisation. Les enregistrements d'audit contiennent les données suivantes : URI de service, URI d'action et identification de l'appelant.  
   
- L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour Windows Vista et [!INCLUDE[ws2003](../../../includes/ws2003-md.md)], un enregistrement est consigné dans le journal des événements de sécurité.  
+ L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour Windows Vista et Windows Server 2003, un enregistrement est enregistré dans le journal des événements de sécurité.  
   
-## <a name="transactions"></a>transactions  
+## <a name="transactions"></a>Transactions  
  La fonctionnalité transactions fournit des services transactionnels à une application WCF.  
   
  Les en-têtes de transaction utilisés dans la propagation de transaction peuvent contenir des ID de transaction ou des ID d'inscription, qui sont des GUID.  
@@ -95,7 +95,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ### <a name="tracing"></a>Traçage  
  La fonctionnalité de diagnostic de l’infrastructure WCF journalise les messages qui passent par les couches de modèle de transport et de service, ainsi que les activités et événements associés à ces messages. Cette fonctionnalité est désactivée par défaut. Il est activé à l’aide du fichier de configuration de l’application et le comportement de suivi peut être modifié à l’aide du fournisseur WMI WCF au moment de l’exécution. Lorsque cette fonctionnalité est activée, l'infrastructure de suivi émet un suivi de diagnostic qui contient des messages, des activités et des événements de traitement aux écouteurs configurés. Le format et l'emplacement de la sortie sont déterminés par les choix de configuration d'écouteur de l'administrateur, mais il s'agit en général d'un fichier au format XML. L'administrateur est chargé de définir la liste de contrôle d'accès (ACL) sur les fichiers de suivi. En particulier, en cas d'hébergement par le système WAS (Windows Activation System), l'administrateur doit s'assurer que les fichiers ne sont pas servis depuis le répertoire racine virtuel public si cela n'est pas souhaité.  
   
- Il existe deux types de suivi : l'enregistrement des messages et le suivi du diagnostic de modèle de service, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
+ Il existe deux types de suivi : La journalisation des messages et le suivi de diagnostic du modèle de service, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
   
 ### <a name="message-logging"></a>Journalisation des messages  
  La source de suivi d'enregistrement des messages (<xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>) permet à un administrateur d'enregistrer les messages qui sont transmis sur le système. Par le biais de la configuration, l'utilisateur peut décider d'enregistrer uniquement des messages entiers ou des en-têtes de message, s'il faut enregistrer les couches de modèle de transport et/ou de service et s'il faut inclure les messages malformés. En outre, l'utilisateur peut configurer le filtrage de façon à limiter les messages enregistrés.  
@@ -404,4 +404,4 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="see-also"></a>Voir aussi
 
 - [Windows Communication Foundation](index.md)
-- [Security](./feature-details/security.md)
+- [Sécurité](./feature-details/security.md)
