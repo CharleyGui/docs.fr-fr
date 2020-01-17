@@ -4,14 +4,14 @@ description: Découvrez comment visiter chaque nœud dans une arborescence d’e
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: b453c591-acc6-4e08-8175-97e5bc65958e
-ms.openlocfilehash: a4cb40e439726e5fff60fe697da70d61bb24cb68
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: f60c447d5c89aa83f85073e642e621608131ed8d
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937217"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115774"
 ---
-# <a name="translating-expression-trees"></a>Traduction d’arborescences d’expressions
+# <a name="translate-expression-trees"></a>Traduire les arborescences d’expressions
 
 [Précédent -- Génération d’expressions](expression-trees-building.md)
 
@@ -61,7 +61,7 @@ Console.WriteLine(answer);
 Pour générer une nouvelle arborescence, il faut visiter les nœuds dans l’arborescence existante, créer de nouveaux nœuds et les insérer dans l’arborescence.
 
 Cet exemple montre l’importance du caractère immuable des arborescences d’expressions. Notez que la nouvelle arborescence créée ci-dessus contient une combinaison de nœuds nouvellement créés et de nœuds de l’arborescence existante. Cela ne présente aucun risque, car les nœuds de l’arborescence existante ne peuvent pas être modifiés. Ceci est susceptible d’accroître l’efficacité de la mémoire.
-Les mêmes nœuds sont utilisables dans toute une arborescence, ou dans plusieurs arborescences d’expressions. Les nœuds ne pouvant pas être modifiés, le même nœud peut être réutilisé chaque fois qu’il est nécessaire.
+Les mêmes nœuds sont utilisables dans toute une arborescence, ou dans plusieurs arborescences d’expressions. Étant donné que les nœuds ne peuvent pas être modifiés, le même nœud peut être réutilisé chaque fois qu’il est nécessaire.
 
 ## <a name="traversing-and-executing-an-addition"></a>Parcours et exécution d’une addition
 
@@ -91,7 +91,7 @@ Console.WriteLine(theSum);
 ```
 
 Il y a pas mal de code ici, mais les concepts sont très abordables.
-Ce code visite les enfants avec une recherche en profondeur. Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante. Une fois que le visiteur a visité les deux enfants, ceux-ci ont calculé la somme calculée pour cette sous-arborescence. Le nœud d’addition peut maintenant calculer sa somme.
+Ce code visite les enfants avec une recherche en profondeur. Quand il rencontre un nœud de constante, le visiteur retourne la valeur de la constante. Une fois que le visiteur a visité les deux enfants, ces enfants auront calculé la somme calculée pour cette sous-arborescence. Le nœud d’addition peut maintenant calculer sa somme.
 Une fois que tous les nœuds dans l’arborescence d’expressions ont été visités, la somme a été calculée. Vous pouvez suivre l’exécution en exécutant l’exemple dans le débogueur.
 
 Nous allons simplifier le suivi de l’analyse des nœuds et du calcul de la somme en parcourant l’arborescence. Voici une version mise à jour de la méthode Aggregate qui comprend des informations de suivi :

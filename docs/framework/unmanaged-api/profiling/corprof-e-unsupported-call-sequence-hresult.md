@@ -6,32 +6,34 @@ f1_keywords:
 helpviewer_keywords:
 - CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT [.NET Framework profiling]
 ms.assetid: f2fc441f-d62e-4f72-a011-354ea13c8c59
-ms.openlocfilehash: a0b117949190bcaffc334c208fff6e04a6a2c5bf
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 0cf3e05a0353a17541ee890f0871d694acac09fd
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964501"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116555"
 ---
 # <a name="corprof_e_unsupported_call_sequence-hresult"></a>CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT
-La CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT a été introduite dans la version .NET Framework 2,0. Le .NET Framework 4 retourne ce HRESULT dans deux scénarios :  
+
+La CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT a été introduite dans .NET Framework version 2,0. .NET Framework 4 retourne ce HRESULT dans deux scénarios :  
   
 - Lorsqu’un profileur de piratage réinitialise de force le contexte de registre d’un thread à un moment arbitraire afin que le thread tente d’accéder à des structures qui sont dans un état incohérent.  
   
 - Lorsqu’un profileur essaie d’appeler une méthode d’information qui déclenche des garbage collection à partir d’une méthode de rappel qui interdit garbage collection.  
   
- Ces deux scénarios sont présentés dans les sections suivantes.  
+Ces deux scénarios sont présentés dans les sections suivantes.  
   
 ## <a name="hijacking-profilers"></a>Profileurs de détournement  
- (Ce scénario constitue principalement un problème avec les profileurs de piratage, bien que dans certains cas, les profileurs non détournés puissent voir ce HRESULT).  
+
+  (Ce scénario est principalement un problème avec les profileurs de détournement, bien que dans certains cas, les profileurs non détournés puissent voir ce HRESULT).  
   
  Dans ce scénario, un profileur de piratage réinitialise de force le contexte de registre d’un thread à un moment arbitraire afin que le thread puisse entrer le code du profileur ou entrer à nouveau le common language runtime (CLR) par le biais d’une méthode [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) .  
   
- La plupart des ID que l’API de profilage fournit pointent vers des structures de données dans le CLR. De nombreux `ICorProfilerInfo` appels lisent simplement les informations de ces structures de données et les transmettent. Toutefois, le CLR peut modifier des éléments dans ces structures à mesure qu’il s’exécute, et il peut utiliser des verrous pour le faire. Supposons que le CLR détient déjà (ou tente d’acquérir) un verrou au moment où le profileur a détourné le thread. Si le thread entre à nouveau dans le CLR et tente de prendre plus de verrous ou d’inspecter les structures qui étaient en cours de modification, ces structures peuvent être dans un état incohérent. Les interblocages et les violations d’accès peuvent facilement se produire dans de telles situations.  
+ La plupart des ID que l’API de profilage fournit pointent vers des structures de données dans le CLR. De nombreux `ICorProfilerInfo` appels lisent simplement les informations de ces structures de données et les transmettent. Toutefois, le CLR peut modifier des éléments dans ces structures à mesure qu’il s’exécute, et il peut utiliser des verrous pour le faire. Supposons que le CLR détient déjà (ou tente d’acquérir) un verrou au moment où le profileur a détourné le thread. Si le thread réintroduit le CLR et tente de prendre plus de verrous ou d’inspecter les structures qui étaient en cours de modification, ces structures peuvent être dans un état incohérent. Les interblocages et les violations d’accès peuvent facilement se produire dans de telles situations.  
   
- En général, lorsqu’un profileur de non-piratage exécute du code à l’intérieur d’une méthode [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) et appelle une méthode `ICorProfilerInfo` avec des paramètres valides, il ne doit pas se bloquer ou recevoir une violation d’accès. Par exemple, le code du profileur qui s’exécute à l’intérieur de la méthode [ICorProfilerCallback :: ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) peut demander des informations sur la classe en appelant la méthode [ICorProfilerInfo2 :: GetClassIDInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) . Le code peut recevoir un CORPROF_E_DATAINCOMPLETE HRESULT pour indiquer que les informations ne sont pas disponibles ; Toutefois, il ne peut pas se bloquer ou recevoir une violation d’accès. Cette classe d’appels dans `ICorProfilerInfo` sont appelées synchrones, car elles sont effectuées à partir d’une méthode `ICorProfilerCallback`.  
+ En général, lorsqu’un profileur de non-piratage exécute du code à l’intérieur d’une méthode [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) et appelle une méthode `ICorProfilerInfo` avec des paramètres valides, il ne doit pas se bloquer ou recevoir une violation d’accès. Par exemple, le code du profileur qui s’exécute à l’intérieur de la méthode [ICorProfilerCallback :: ClassLoadFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadfinished-method.md) peut demander des informations sur la classe en appelant la méthode [ICorProfilerInfo2 :: GetClassIDInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) . Le code peut recevoir un CORPROF_E_DATAINCOMPLETE HRESULT pour indiquer que les informations ne sont pas disponibles. Toutefois, il ne peut pas se bloquer ou recevoir une violation d’accès. Ces appels dans `ICorProfilerInfo` sont considérés comme synchrones, car ils sont effectués à partir d’une méthode `ICorProfilerCallback`.  
   
- Toutefois, un thread managé qui exécute du code qui ne se trouve pas dans une méthode `ICorProfilerCallback` est considéré comme effectuant un appel asynchrone. Dans la .NET Framework version 1, il était difficile de déterminer ce qui peut se produire dans un appel asynchrone. L’appel peut se bloquer, se bloquer ou fournir une réponse non valide. La version 2,0 de .NET Framework introduit quelques vérifications simples pour vous aider à éviter ce problème. Dans la .NET Framework 2,0, si vous appelez une fonction de `ICorProfilerInfo` potentiellement dangereuse de manière asynchrone, elle échoue avec un CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
+ Toutefois, un thread managé qui exécute du code qui ne se trouve pas dans une méthode `ICorProfilerCallback` est considéré comme effectuant un appel asynchrone. Dans .NET Framework version 1, il était difficile de déterminer ce qui peut se produire dans un appel asynchrone. L’appel peut se bloquer, se bloquer ou fournir une réponse non valide. .NET Framework version 2,0 a introduit quelques vérifications simples pour vous aider à éviter ce problème. Dans .NET Framework 2,0, si vous appelez une fonction de `ICorProfilerInfo` potentiellement dangereuse de manière asynchrone, elle échoue avec un CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT.  
   
  En général, les appels asynchrones ne sont pas sécurisés. Toutefois, les méthodes suivantes sont sûres et prennent en charge spécifiquement les appels asynchrones :  
   

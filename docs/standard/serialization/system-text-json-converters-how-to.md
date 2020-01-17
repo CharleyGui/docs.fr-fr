@@ -7,12 +7,12 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: 8a2af76ca64359c12fafce6678def14d11d9f029
-ms.sourcegitcommit: dfad244ba549702b649bfef3bb057e33f24a8fb2
+ms.openlocfilehash: 0f8b89ec7d7b1677de085631958b888e154aa4fa
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/12/2020
-ms.locfileid: "75904565"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116709"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
@@ -280,6 +280,8 @@ Le convertisseur peut désérialiser JSON qui a été créé à l’aide du mêm
   }
 ]
 ```
+
+Dans l’exemple précédent, le code de convertisseur lit et écrit chaque propriété manuellement. Une alternative consiste à appeler `Deserialize` ou `Serialize` pour effectuer une partie du travail. Pour obtenir un exemple, consultez [cette publication StackOverflow](https://stackoverflow.com/a/59744873/12509023).
 
 ## <a name="other-custom-converter-samples"></a>Autres exemples de convertisseurs personnalisés
 

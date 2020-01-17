@@ -1,14 +1,14 @@
 ---
-title: Packages, métapackages et frameworks - .NET Core
+title: Packages, reconditionnements et frameworks-.NET Core
 description: Découvrez la terminologie des packages, des métapackages et des infrastructures.
 author: richlander
 ms.date: 06/20/2016
-ms.openlocfilehash: bd40ca603aaa9685fca9934368895bf7e945d962
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6a8e257ebf493365518dd9663fbd2a9cadc83875
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715506"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116067"
 ---
 # <a name="packages-metapackages-and-frameworks"></a>Packages, métapackages et frameworks
 
@@ -18,7 +18,7 @@ Chaque package .NET Core peut être exécuté sur plusieurs implémentations de 
 
 ## <a name="packages"></a>Packages
 
-.NET Core se divise en un ensemble de packages qui fournissent des primitives, des types de données généraux, des types de composition d’applications et des utilitaires communs. Chacun de ces packages représente un assembly unique de même nom. Par exemple, [System.Runtime](https://www.nuget.org/packages/System.Runtime) contient System.Runtime.dll. 
+.NET Core est divisé en un ensemble de packages qui fournissent des primitives, des types de données de niveau supérieur, des types de composition d’application et des utilitaires courants. Chacun de ces packages représente un assembly unique du même nom. Par exemple, le [package System. Runtime](https://www.nuget.org/packages/System.Runtime) contient System. Runtime. dll. 
 
 Il y a des avantages à définir les packages avec précision :
 
@@ -108,7 +108,7 @@ Les deux principaux frameworks basés sur des packages utilisés avec .NET Core 
 
 ### <a name="net-standard"></a>.NET Standard
 
-Le framework .NET Standard ([moniker de framework cible](../standard/frameworks.md) : `netstandard`) représente les API définies par et créées sur le framework [.NET Standard](../standard/net-standard.md). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Elles sont prises en charge sur n’importe quel runtime compatible .NET Standard, tels que .NET Core, .NET Framework et Mono/Xamarin. Chacun de ces runtimes prend en charge un ensemble de versions .NET Standard, selon les API qu’ils implémentent.
+Le framework .NET Standard ([moniker de framework cible](../standard/frameworks.md) : `netstandard`) représente les API définies par et créées sur le framework [.NET Standard](../standard/net-standard.md). Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. Ils seront pris en charge sur tout Runtime conforme .NET Standard, tel que .NET Core, .NET Framework et mono/Xamarin. Chacun de ces runtimes prend en charge un ensemble de versions .NET Standard, selon les API qu’ils implémentent.
 
 L’infrastructure `netstandard` référence implicitement le métapackage [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library). Par exemple, le fichier projet MSBuild suivant indique que le projet cible `netstandard1.6`, qui référence le métapackage [`NETStandard.Library` version 1.6](https://www.nuget.org/packages/NETStandard.Library/1.6.0).
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - querying the data service [WCF Data Services]
 - WCF Data Services, querying
 ms.assetid: cc4ec9e9-348f-42a6-a78e-1cd40e370656
-ms.openlocfilehash: f6ff9cf732e11bbf61eeb7e5cff3f1cba2b744e6
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: f8ec53323abec7077c69f50fe522338228ceddbb
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900984"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116638"
 ---
 # <a name="linq-considerations-wcf-data-services"></a>Considérations sur LINQ (WCF Data Services)
 Cette rubrique fournit des informations sur la façon dont les requêtes LINQ sont composées et exécutées lorsque vous utilisez le client WCF Data Services et les limitations de l’utilisation de LINQ pour interroger un service de données qui implémente le Open Data Protocol (OData). Pour plus d’informations sur la composition et l’exécution de requêtes sur un service de données basé sur OData, consultez [interrogation du service de données](querying-the-data-service-wcf-data-services.md).  
@@ -163,8 +163,8 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |Opérateurs de projection et de filtrage|Les opérateurs de projection et de filtrage suivants, qui acceptent un argument de position, ne sont pas pris en charge sur <xref:System.Data.Services.Client.DataServiceQuery%601> :<br /><br /> -   <xref:System.Linq.Enumerable.Join%60%604%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%2CSystem.Func%7B%60%600%2C%60%602%7D%2CSystem.Func%7B%60%601%2C%60%602%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%603%7D%2CSystem.Collections.Generic.IEqualityComparer%7B%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Select%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2C%60%601%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%602%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.SelectMany%60%603%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Collections.Generic.IEnumerable%7B%60%601%7D%7D%2CSystem.Func%7B%60%600%2C%60%601%2C%60%602%7D%29><br />-   <xref:System.Linq.Enumerable.Where%60%601%28System.Collections.Generic.IEnumerable%7B%60%600%7D%2CSystem.Func%7B%60%600%2CSystem.Int32%2CSystem.Boolean%7D%29>|  
 |Opérateurs de regroupement|Aucun opérateur de groupement n'est pris en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601>, impliquant ce qui suit :<br /><br /> -   <xref:System.Linq.Enumerable.GroupBy%2A><br />-   <xref:System.Linq.Enumerable.GroupJoin%2A><br /><br /> Les opérations de groupement doivent être exécutées sur le client.|  
 |Opérateurs d'agrégation|Aucune opération d'agrégation n'est prise en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601>, impliquant ce qui suit :<br /><br /> -   <xref:System.Linq.Enumerable.Aggregate%2A><br />-   <xref:System.Linq.Enumerable.Average%2A><br />-   <xref:System.Linq.Enumerable.Count%2A><br />-   <xref:System.Linq.Enumerable.LongCount%2A><br />-   <xref:System.Linq.Enumerable.Max%2A><br />-   <xref:System.Linq.Enumerable.Min%2A><br />-   <xref:System.Linq.Enumerable.Sum%2A><br /><br /> Les opérations d'agrégation doivent soit être exécutées sur le client, soit être encapsulées par une opération de service.|  
-|Opérateurs de pagination|Les opérateur de pagination suivants ne sont pas pris en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601> :<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A> **Remarque :** les opérateurs de pagination qui sont exécutés sur une séquence vide retournent la valeur null.|  
-|Autres opérateurs|Les autres opérateur suivants ne sont pas pris en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601> :<br /><br /> 1.  <xref:System.Linq.Enumerable.Empty%2A><br />2.  <xref:System.Linq.Enumerable.Range%2A><br />3.  <xref:System.Linq.Enumerable.Repeat%2A><br />4.  <xref:System.Linq.Enumerable.ToDictionary%2A><br />5.  <xref:System.Linq.Enumerable.ToLookup%2A>|  
+|Opérateurs de pagination|Les opérateur de pagination suivants ne sont pas pris en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601> :<br /><br /> -   <xref:System.Linq.Enumerable.ElementAt%2A><br />-   <xref:System.Linq.Enumerable.Last%2A><br />-   <xref:System.Linq.Enumerable.LastOrDefault%2A><br />-   <xref:System.Linq.Enumerable.SkipWhile%2A><br />-   <xref:System.Linq.Enumerable.TakeWhile%2A><br/><br/>**Remarque :**  Les opérateurs de pagination qui sont exécutés sur une séquence vide retournent la valeur null.|  
+|Autres opérateurs|Les opérateurs suivants ne sont pas non plus pris en charge sur un <xref:System.Data.Services.Client.DataServiceQuery%601>:<br /><br /> - <xref:System.Linq.Enumerable.Empty%2A><br />- <xref:System.Linq.Enumerable.Range%2A><br />- <xref:System.Linq.Enumerable.Repeat%2A><br />- <xref:System.Linq.Enumerable.ToDictionary%2A><br />- <xref:System.Linq.Enumerable.ToLookup%2A>|  
   
 <a name="supportedExpressions"></a>   
 ## <a name="supported-expression-functions"></a>Fonctions d'expression prises en charge  
@@ -193,7 +193,7 @@ http://localhost:12345/Northwind.svc/Orders?Orderby=ShippedDate&?filter=Freight 
 |<xref:System.DateTime.Second>|`int second(DateTime p0)`|  
 |<xref:System.DateTime.Year>|`int year(DateTime p0)`|  
   
- <sup>1</sup> Les propriétés de date et d’heure équivalentes de <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType>, ainsi que la méthode <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> dans Visual Basic sont également prises en charge.  
+ <sup>1</sup> Les propriétés de date et d’heure équivalentes de <xref:Microsoft.VisualBasic.DateAndTime?displayProperty=nameWithType> et la méthode <xref:Microsoft.VisualBasic.DateAndTime.DatePart%2A> dans Visual Basic sont également prises en charge.  
   
 |Membre <xref:System.Math>|Fonction OData prise en charge|  
 |---------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------|  

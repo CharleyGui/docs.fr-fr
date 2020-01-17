@@ -2,16 +2,34 @@
 title: Modifications importantes de la bibliothèque de classes de base-.NET Core
 description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: 1b578a6e3ae986a4c12c36fdf558b1fa5d8a3d66
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: eb416a0b061bfe50db330627c0ea68e0ba0c9079
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344883"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116504"
 ---
 # <a name="corefx-breaking-changes"></a>Modifications avec rupture CoreFx
 
-La liste suivante répertorie les modifications avec rupture CoreFx par version de .NET Core. CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.
+CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.
+
+Les modifications avec rupture suivantes sont documentées sur cette page :
+
+- [API qui signalent la version du produit et non de la version du fichier](#apis-that-report-version-now-report-product-and-not-file-version)
+- [Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively)
+- [Modifications du comportement de l’analyse et de la mise en forme à virgule flottante](#floating-point-formatting-and-parsing-behavior-changed)
+- [Les opérations d’analyse de virgule flottante n’échouent plus ou lèvent une exception OverflowException](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception)
+- [InvalidAsynchronousStateException déplacé vers un autre assembly](#invalidasynchronousstateexception-moved-to-another-assembly)
+- [NET Core 3,0 suit les meilleures pratiques Unicode lors du remplacement de séquences d’octets UTF-8 incorrectes](#net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences)
+- [TypeDescriptionProviderAttribute déplacé vers un autre assembly](#typedescriptionproviderattribute-moved-to-another-assembly)
+- [ZipArchiveEntry ne gère plus les archives avec des tailles d’entrée incohérentes](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes)
+- [Le type d’exception du sérialiseur JSON est passé de JsonException à NotSupportedException](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception)
+- [Modification de la sémantique de (String) NULL dans Utf8JsonWriter](#change-in-semantics-of-stringnull-in-utf8jsonwriter)
+- [Les méthodes JsonEncodedText. Encode ont un argument JavaScriptEncoder supplémentaire](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument)
+- [Signature de JsonFactoryConverter. CreateConverter modifiée](#jsonfactoryconvertercreateconverter-signature-changed)
+- [Modifications de l’API JsonElement](#jsonelement-api-changes)
+- [Champs privés ajoutés aux types struct intégrés](#private-fields-added-to-built-in-struct-types)
+- [Modification de la valeur par défaut de UseShellExecute](#change-in-default-value-of-useshellexecute)
 
 ## <a name="net-core-30"></a>.NET Core 3.0
 
@@ -45,9 +63,13 @@ La liste suivante répertorie les modifications avec rupture CoreFx par version 
 
 [!INCLUDE[ZipArchiveEntry no longer handles archives with inconsistent entry sizes](~/includes/core-changes/corefx/3.0/ziparchiveentry-and-inconsistent-entry-sizes.md)]
 
+***
+
 ## <a name="net-core-30-preview-9"></a>.NET Core 3,0 Preview 9
 
-[!INCLUDE[Json serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
+[!INCLUDE[JSON serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
+
+***
 
 ## <a name="net-core-30-preview-8"></a>.NET Core 3,0 Preview 8
 
@@ -61,14 +83,20 @@ La liste suivante répertorie les modifications avec rupture CoreFx par version 
 
 [!INCLUDE[JsonFactoryConverter.CreateConverter signature changed](~/includes/core-changes/corefx/3.0/jsonfactoryconverter-createconverter.md)]
 
+***
+
 ## <a name="net-core-30-preview-7"></a>.NET Core 3,0 Preview 7
 
 [!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/3.0/jsonelement-api-changes.md)]
 
+***
+
 ## <a name="net-core-21"></a>.NET Core 2.1
 
-[!INCLUDE[Instantiate struct](~/includes/core-changes/corefx/2.1/instantiate-struct.md)]
+[!INCLUDE[Private fields added to built-in struct types](~/includes/core-changes/corefx/2.1/instantiate-struct.md)]
 
 ***
 
-[!INCLUDE[Process.Start changes](~/includes/core-changes/corefx/2.1/process-start-changes.md)]
+[!INCLUDE[Change in default value of UseShellExecute](~/includes/core-changes/corefx/2.1/process-start-changes.md)]
+
+***

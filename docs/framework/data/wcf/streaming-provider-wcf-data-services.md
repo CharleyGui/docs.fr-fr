@@ -10,18 +10,18 @@ helpviewer_keywords:
 - streaming data provider [WCF Data Services]
 - WCF Data Services, streams
 ms.assetid: f0978fe4-5f9f-42aa-a5c2-df395d7c9495
-ms.openlocfilehash: 1eb1267ae0b08d558d5afc41d03270917473a669
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 83f28c50c53281692e1c3c6d55cc55e8d9304ad9
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900922"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116600"
 ---
 # <a name="streaming-provider-wcf-data-services"></a>Fournisseurs de diffusion en continu (WCF Data Services)
 
 Un service de données peut exposer des données Large Object Binary. Ces données binaires peuvent représenter des flux vidéo et audio, des images, des fichiers de document ou d'autres types de supports binaires. Lorsqu'une entité du modèle de données inclut une ou plusieurs propriétés binaires, le service de données retourne ces données binaires encodées en Base 64 au sein de l'entrée dans le flux de réponse. Étant donné que le chargement et la sérialisation de données binaires volumineuses de cette manière peuvent affecter les performances, le Open Data Protocol (OData) définit un mécanisme de récupération des données binaires indépendantes de l’entité à laquelle elles appartiennent. Cela s'effectue en séparant l'entité et les données binaires de l'entité dans un ou plusieurs flux de données
 
-- Ressource multimédia : données binaires qui appartiennent à une entité, telle qu'une vidéo, du son, une image ou d'autres types de flux de ressources multimédias.
+- Ressource multimédia : données binaires qui appartiennent à une entité, telle qu’une vidéo, un son, une image ou tout autre type de flux de ressources multimédia.
 
 - Entrée de lien média : une entité ayant une référence à un flux de ressources multimédias associé.
 
@@ -88,14 +88,14 @@ Pour obtenir des informations générales sur la création d’un service de don
 
 ## <a name="enabling-large-binary-streams-in-the-hosting-environment"></a>Activation de flux binaires volumineux dans l'environnement d'hébergement
 
-Lorsque vous créez un service de données dans une application Web ASP.NET, Windows Communication Foundation (WCF) est utilisé pour fournir l’implémentation du protocole HTTP. Par défaut, WCF limite la taille des messages HTTP à 65 kilo-octets. Pour pouvoir transmettre en continu des données binaires volumineuses depuis et vers le service de données, vous devez également configurer l'application Web pour autoriser les fichiers binaires volumineux et utiliser des flux de données pour le transfert. Pour cela, ajoutez les éléments suivants dans l'élément `<configuration />` du fichier Web.config de l'application :
+Lorsque vous créez un service de données dans une application Web ASP.NET, Windows Communication Foundation (WCF) est utilisé pour fournir l’implémentation du protocole HTTP. Par défaut, WCF limite la taille des messages HTTP à 65 ko uniquement. Pour pouvoir transmettre en continu des données binaires volumineuses depuis et vers le service de données, vous devez également configurer l'application Web pour autoriser les fichiers binaires volumineux et utiliser des flux de données pour le transfert. Pour cela, ajoutez les éléments suivants dans l'élément `<configuration />` du fichier Web.config de l'application :
 
 > [!NOTE]
 > Vous devez utiliser un mode de transfert <xref:System.ServiceModel.TransferMode.Streamed?displayProperty=nameWithType> pour vous assurer que les données binaires dans les messages de demande et de réponse sont diffusées en continu et ne sont pas mises en mémoire tampon par WCF.
 
 Pour plus d’informations, consultez [transfert de messages en continu](../../wcf/feature-details/streaming-message-transfer.md) et quotas de [transport](../../wcf/feature-details/transport-quotas.md).
 
-Par défaut, Internet Information Services (IIS) limite également la taille des demandes à 4 Mo. Pour permettre à votre service de données de recevoir des flux d’une taille supérieure à 4 Mo lorsqu’ils s’exécutent sur IIS, vous devez également définir l’attribut `maxRequestLength` de l' [élément httpRuntime (schéma des paramètres ASP.net)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) dans la section de configuration `<system.web />`, comme indiqué dans l’exemple suivant :
+Par défaut, Internet Information Services (IIS) limite également la taille des demandes à 4 Mo. Pour permettre à votre service de données de recevoir des flux d’une taille supérieure à 4 Mo lorsqu’ils s’exécutent sur IIS, vous devez également définir l’attribut `maxRequestLength` de l' [élément httpRuntime (schéma des paramètres ASP.net)](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/e1f13641(v=vs.100)) dans la section de configuration `<system.web />`, comme indiqué dans l’exemple suivant :
 
 ## <a name="using-data-streams-in-a-client-application"></a>Utilisation de flux de données en continu dans une application cliente
 
@@ -117,7 +117,7 @@ Les éléments suivants sont à prendre en compte lorsque vous implémentez un f
 
   - Une propriété binaire qui est une ressource multimédia ne doit pas être incluse dans le modèle de données. Toutes les propriétés exposées dans un modèle de données sont retournées dans l'entrée dans un flux de réponse.
 
-  - Pour améliorer les performances avec des flux binaires volumineux, nous vous conseillons de créer une classe de flux de données personnalisée pour stocker les données binaires dans la base de données. Cette classe est retournée par votre implémentation de <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> et transmet les données binaires à la base de données par segments. Pour une base de données SQL Server, nous vous recommandons d’utiliser un FILESTREAM pour diffuser en continu des données dans la base de données lorsque la taille des données binaires est supérieure à 1 Mo.
+  - Pour améliorer les performances avec des flux binaires volumineux, nous vous conseillons de créer une classe de flux de données personnalisée pour stocker les données binaires dans la base de données. Cette classe est retournée par votre implémentation de <xref:System.Data.Services.Providers.IDataServiceStreamProvider.GetWriteStream%2A> et transmet les données binaires à la base de données par segments. Pour une base de données SQL Server, nous vous recommandons d’utiliser un FILESTREAM pour diffuser des données dans la base de données lorsque la taille des données binaires est supérieure à 1 Mo.
 
   - Vérifiez que votre base de données est conçue pour stocker les flux de données binaires volumineux qui seront reçus par votre service de données.
 

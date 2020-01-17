@@ -4,12 +4,12 @@ description: Explique comment porter un .NET Framework Windows Forms application
 author: Thraka
 ms.author: adegeo
 ms.date: 03/01/2019
-ms.openlocfilehash: b1048c2d725a2bcf8398af1d2d53f40efc36c82e
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: dbd522851faa0a4fe435199914a034ee230d3455
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936969"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116025"
 ---
 # <a name="how-to-port-a-windows-forms-desktop-app-to-net-core"></a>Comment porter une application de bureau Windows Forms sur .NET Core
 
@@ -24,7 +24,7 @@ Dans cet article, différents noms sont utilisés pour identifier les types de f
 | **MyFormsCore.csproj** | Nom du nouveau projet .NET Core en création. |
 | **MyAppCore.exe** | Exécutable de l’application Windows Forms .NET Core. |
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) pour tout le travail de conception.
 
@@ -261,7 +261,7 @@ Voici un exemple de fichier de projet de bibliothèque de contrôles Windows For
 
 Comme on peut le voir, le nœud `<OutputType>` a été supprimé, ce qui conduit le compilateur à générer par défaut une bibliothèque au lieu d’un exécutable. `<AssemblyName>` et `<RootNamespace>` ont été modifiés. En particulier, `<RootNamespace>` doit correspondre à l’espace de noms de la bibliothèque de contrôles Windows Forms portée. Enfin, les nœuds `<Compile>` et `<EmbeddedResource>` ont été ajustés pour pointer vers le dossier de la bibliothèque en question.
 
-Maintenant, dans le projet **MyFormsCore.csproj** .NET Core principal, ajoutez une référence à la nouvelle bibliothèque de contrôles Windows Forms .NET Core avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
+Ensuite, dans le projet .NET Core **MyFormsCore. csproj** principal, ajoutez une référence à la nouvelle bibliothèque de contrôles de Windows Forms .net core. avec Visual Studio ou l’interface CLI .NET Core à partir du répertoire **SolutionFolder** :
 
 ```dotnetcli
 dotnet add .\MyFormsAppCore\MyFormsCore.csproj reference .\MyFormsControlsCore\MyControlsCore.csproj

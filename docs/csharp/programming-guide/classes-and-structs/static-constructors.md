@@ -5,12 +5,12 @@ helpviewer_keywords:
 - static constructors [C#]
 - constructors [C#], static
 ms.assetid: 151ec95e-3c4d-4ed7-885d-95b7a3be2e7d
-ms.openlocfilehash: 27a7cbb1490f42811c79778382063980f3828395
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
-ms.translationtype: HT
+ms.openlocfilehash: 7b8171e75bbd27a1079f2c6cc1b7aef6400d7419
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964086"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115760"
 ---
 # <a name="static-constructors-c-programming-guide"></a>Constructeurs statiques (Guide de programmation C#)
 Un constructeur statique est utilisé pour initialiser des données [statiques](../../language-reference/keywords/static.md) ou pour effectuer une action particulière qui ne doit être effectuée qu’une seule fois. Il est automatiquement appelé avant la création de la première instance ou le référencement d’un membre statique.  
@@ -30,7 +30,7 @@ Les constructeurs statiques ont les propriétés suivantes :
 
 - L’utilisateur n’a aucun contrôle sur le moment d’exécution du constructeur statique dans le programme.
   
-- Un constructeur statique est automatiquement appelé pour initialiser la [classe](../../language-reference/keywords/class.md) avant la création de la première instance ou le référencement d’un membre statique. Un constructeur statique s’exécute avant le constructeur d’instance. Notez que le constructeur statique d’un type est appelé quand une méthode statique assignée à un événement ou un délégué est appelée, et non pas quand elle est assignée. Si des initialiseurs de variable de champ statique sont présents dans la classe du constructeur statique, ils seront exécutés dans l’ordre textuel dans lequel ils apparaissent dans la déclaration de classe, immédiatement avant l’exécution du constructeur statique.
+- Un constructeur statique est automatiquement appelé pour initialiser la [classe](../../language-reference/keywords/class.md) avant la création de la première instance ou le référencement d’un membre statique. Un constructeur statique s’exécute avant le constructeur d’instance. Le constructeur statique d’un type est appelé lorsqu’une méthode statique assignée à un événement ou à un délégué est appelée, et non quand elle est assignée. Si des initialiseurs de variable de champ statique sont présents dans la classe du constructeur statique, ils seront exécutés dans l’ordre textuel dans lequel ils apparaissent dans la déclaration de classe, immédiatement avant l’exécution du constructeur statique.
 
 - Si vous ne fournissez pas de constructeur statique pour initialiser les champs statiques, tous les champs statiques sont initialisés à leur valeur par défaut, comme indiqué dans [valeurs par défaut C# des types](../../language-reference/builtin-types/default-values.md).
   
@@ -48,7 +48,7 @@ Les constructeurs statiques ont les propriétés suivantes :
 - Généralement, on utilise des constructeurs statiques quand la classe utilise un fichier journal et que le constructeur sert à écrire des entrées dans ce fichier.  
 - Les constructeurs statiques sont également utiles pour la création de classes wrapper pour du code non managé, quand le constructeur peut appeler la méthode `LoadLibrary`.  
 
-- Les constructeurs statiques sont également pratiques pour appliquer les contrôles d’exécution sur le paramètre de type qui ne peuvent pas être effectués au moment de la compilation par le biais de contraintes (contraintes de paramètre de type).
+- Les constructeurs statiques sont également un emplacement pratique pour appliquer des contrôles au moment de l’exécution sur le paramètre de type qui ne peuvent pas être vérifiés au moment de la compilation via des contraintes (contraintes de paramètre de type).
 
 ## <a name="example"></a>Exemple
  Dans cet exemple, la classe `Bus` possède un constructeur statique. Quand la première instance de `Bus` est créée (`bus1`), le constructeur statique est appelé pour initialiser la classe. L’exemple de sortie vérifie que le constructeur statique s’exécute une seule fois, même si deux instances de `Bus` sont créées, et qu’il s’exécute avant le constructeur d’instance.  

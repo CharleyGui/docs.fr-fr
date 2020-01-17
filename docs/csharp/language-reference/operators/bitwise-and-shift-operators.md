@@ -29,12 +29,12 @@ helpviewer_keywords:
 - ^ operator [C#]
 - bitwise logical OR operator [C#]
 - '| operator [C#]'
-ms.openlocfilehash: 4e4dbe085b11751416f69c9fa7f790f18a68f5d7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: a9f507ecdfced5b044b9d6338f723f53b1b4c4b7
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964377"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115830"
 ---
 # <a name="bitwise-and-shift-operators-c-reference"></a>Opérateurs au niveau du bit et opérateurs de décalage (référence C#)
 
@@ -177,7 +177,7 @@ L’exemple suivant illustre ce comportement :
 
 Les opérateurs `~`, `&`, `|`et `^` sont également pris en charge par n’importe quel type [énumération](../builtin-types/enum.md) . Pour les opérandes du même type d’énumération, une opération logique est effectuée sur les valeurs correspondantes du type intégral sous-jacent. Par exemple, pour tout `x` et `y` d’un type énumération `T` avec un type sous-jacent `U`, l’expression `x & y` produit le même résultat que l’expression `(T)((U)x & (U)y)`.
 
-Vous utilisez généralement des opérateurs logiques au niveau du bit avec un type énumération qui est défini à l’aide de l’attribut [Flags](xref:System.FlagsAttribute). Pour plus d’informations, consultez la section [Types énumération comme indicateurs binaires](../builtin-types/enum.md#enumeration-types-as-bit-flags) de l’article[Types énumération](../builtin-types/enum.md).
+En général, vous utilisez des opérateurs logiques au niveau du bit avec un type d’énumération défini avec l’attribut [Flags](xref:System.FlagsAttribute) . Pour plus d’informations, consultez la section [Types énumération comme indicateurs binaires](../builtin-types/enum.md#enumeration-types-as-bit-flags) de l’article[Types énumération](../builtin-types/enum.md).
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

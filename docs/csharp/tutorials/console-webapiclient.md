@@ -3,12 +3,12 @@ title: Crée un client REST à l’aide de .NET Core
 description: Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 9478966598a9aaa1e9f592b72afce8f878a38abf
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 85a3c8e17e14db86786950380ba745ae286dccca
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964404"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115874"
 ---
 # <a name="rest-client"></a>Client REST
 
@@ -25,11 +25,11 @@ Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core
 
 Vous allez générer une application qui émet des requêtes HTTP vers un service REST sur GitHub. Vous lirez des informations au format JSON et convertirez ce paquet JSON en objets C#. Enfin, vous verrez comment travailler avec les objets C#.
 
-Il existe un grand nombre de fonctionnalités dans ce didacticiel. Nous allons les construire une par une.
+Ce didacticiel présente de nombreuses fonctionnalités. Nous allons les construire une par une.
 
 Si vous préférez utiliser l’[exemple final](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pour cette rubrique, vous pouvez le télécharger. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker.
 Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), qui est un éditeur de plateforme open source, multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
@@ -42,7 +42,7 @@ La première étape consiste à créer une nouvelle application. Ouvrez une invi
 dotnet new console --name WebApiClient
 ```
 
-Elle crée les fichiers de démarrage d’une application « Hello World » de base. Le nom du projet est « WebApiClient ». Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place ; ainsi, la première exécution télécharge le .NET Core Framework, installe un certificat de développement et exécute le gestionnaire de package NuGet pour restaurer les dépendances manquantes.
+Elle crée les fichiers de démarrage d’une application « Hello World » de base. Le nom du projet est « WebApiClient ». Comme il s’agit d’un nouveau projet, aucune des dépendances n’est en place. La première exécution télécharge l’infrastructure .NET Core, installe un certificat de développement et exécute le gestionnaire de package NuGet pour restaurer les dépendances manquantes.
 
 Avant de commencer à apporter des modifications, tapez `dotnet run` ([voir la remarque](#dotnet-restore-note)) à l’invite de commandes pour exécuter votre application. `dotnet run` effectue automatiquement `dotnet restore` s’il manque des dépendances dans votre environnement. Il effectue également `dotnet build` si votre application doit être regénérée.
 Après la configuration initiale, vous devez uniquement exécuter `dotnet restore` ou `dotnet build` quand cela est pertinent pour votre projet.

@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 4a05709da63c4f6a200039ba5dd59358c700130e
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: da066625b445eca9186acedf06a941564921a6dd
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899884"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115840"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -15,7 +15,7 @@ Ce document décrit les modifications qui ont été ajoutées aux fichiers proje
 
 ## <a name="implicit-package-references"></a>Références de package implicites
 
-Les métapackages sont référencés implicitement en fonction du ou des frameworks cibles spécifiés dans la propriété `<TargetFramework>` ou `<TargetFrameworks>` de votre fichier projet. `<TargetFrameworks>` est ignoré si `<TargetFramework>` est spécifié, indépendamment de l’ordre. Pour plus d’informations, consultez [Packages, métapackages et frameworks](../packages.md). 
+Les métapackages sont référencés implicitement en fonction du ou des frameworks cibles spécifiés dans la propriété `<TargetFramework>` ou `<TargetFrameworks>` de votre fichier projet. `<TargetFrameworks>` est ignoré si `<TargetFramework>` est spécifié, indépendamment de l’ordre. Pour plus d’informations, consultez [packages, reconditionnements et frameworks](../packages.md). 
 
 ```xml
  <PropertyGroup>
@@ -336,7 +336,7 @@ Vérifiez que le fichier de licence est empaqueté en l’ajoutant explicitement
 
 ### <a name="packagelicenseurl"></a>PackageLicenseUrl
 
-URL vers la licence applicable au package. (_Déconseillé depuis Visual Studio 15.9.4, le kit SDK .NET 2.1.502 et 2.2.101_)
+URL de la licence applicable au package. (_Déconseillé depuis Visual Studio 15.9.4, le kit SDK .NET 2.1.502 et 2.2.101_)
 
 ### <a name="packageiconurl"></a>PackageIconUrl
 
@@ -366,7 +366,7 @@ Cette valeur booléenne indique si le processus de compression doit créer un pa
 
 ### <a name="istool"></a>IsTool
 
-Spécifie si tous les fichiers de sortie sont copiés dans le dossier *tools* au lieu du dossier *lib*. Notez que cela est différent d’un `DotNetCliTool` qui est spécifié en définissant `PackageType` dans le fichier *.csproj*.
+Spécifie si tous les fichiers de sortie sont copiés dans le dossier *tools* au lieu du dossier *lib*. Cela est différent d’un `DotNetCliTool`, qui est spécifié en définissant l' `PackageType` dans le fichier *. csproj* .
 
 ### <a name="repositoryurl"></a>RepositoryUrl
 
@@ -392,7 +392,7 @@ Spécifie la version minimale du client NuGet qui peut installer ce package, app
 
 ### <a name="includebuildoutput"></a>IncludeBuildOutput
 
-Ces valeurs booléennes spécifient si les assemblys de sortie de génération doivent être compressés dans le fichier *.nupkg* ou non.
+Cette valeur booléenne spécifie si les assemblys de sortie de la génération doivent être empaquetés dans le fichier *. nupkg* ou non.
 
 ### <a name="includecontentinpack"></a>IncludeContentInPack
 

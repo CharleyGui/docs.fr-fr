@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 94284a196030d784909c41aae7fef9a5ad3cb52a
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: eb1815f965e86a6f8f709b32f84f879eb03de447
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937234"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76115803"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -497,9 +497,13 @@ System.Console.WriteLine($"RuntimeInformation.FrameworkDescription: {System.Runt
 
 ### <a name="fast-built-in-json-support"></a>Prise en charge JSON intégrée rapide
 
-Les utilisateurs de .NET se sont largement appuyés sur [**Json.NET**](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui restent de bons choix. **Json.NET** utilise des chaînes .NET comme type de données de base, au format UTF-16.
+Les utilisateurs .NET ont largement utilisé [Newtonsoft. JSON](https://www.newtonsoft.com/json) et d’autres bibliothèques JSON populaires, qui continuent d’être de bons choix. `Newtonsoft.Json` utilise des chaînes .NET comme type de données de base, UTF-16 en coulisse.
 
-La nouvelle prise en charge JSON intégrée offre des hautes performances et une allocation faible, et elle est basée sur `Span<byte>`. Pour plus d’informations sur l’espace de noms et les types <xref:System.Text.Json>, consultez [sérialisation JSON dans .net-vue d’ensemble](../../standard/serialization/system-text-json-overview.md). Pour obtenir des didacticiels sur les scénarios de sérialisation JSON courants, consultez [sérialisation et désérialisation de JSON dans .net](../../standard/serialization/system-text-json-how-to.md).
+La nouvelle prise en charge de JSON intégrée est la haute performance, une faible allocation et fonctionne avec du texte JSON encodé en UTF-8. Pour plus d’informations sur l’espace de noms et les types de <xref:System.Text.Json>, consultez les articles suivants :
+
+* [Sérialisation JSON dans .NET-vue d’ensemble](../../standard/serialization/system-text-json-overview.md)
+* [Comment sérialiser et désérialiser JSON dans .net](../../standard/serialization/system-text-json-how-to.md).
+* [Comment migrer de Newtonsoft. JSON vers System. Text. JSON](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
 ### <a name="http2-support"></a>Prise en charge de HTTP/2
 
