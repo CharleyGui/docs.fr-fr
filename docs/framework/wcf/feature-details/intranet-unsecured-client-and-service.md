@@ -5,30 +5,30 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: f450f5d4-3547-47ec-9320-2809e6a12634
-ms.openlocfilehash: 65b8597727da256e832351792b9d5d9bd016eb28
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 1ffd0421195b0339ad966b661c229e5a5ebb94ec
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64587008"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212097"
 ---
 # <a name="intranet-unsecured-client-and-service"></a>Service et client intranet non sécurisés
-L’illustration suivante représente un service Windows Communication Foundation (WCF) simple développé pour fournir des informations sur un réseau privé sécurisé à une application WCF. Sécurité n’est pas nécessaire, car les données sont d’importance basse, le réseau doit être sécurisé par nature, ou sécurité est fournie par une couche ci-dessous l’infrastructure WCF.  
+L’illustration suivante représente un service simple Windows Communication Foundation (WCF) développé pour fournir des informations sur un réseau privé sécurisé à une application WCF. La sécurité n’est pas nécessaire, car les données sont de faible importance, le réseau est supposé être sécurisé par nature, ou la sécurité est fournie par une couche sous l’infrastructure WCF.  
   
- ![Scénario de service et client intranet non sécurisés.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
+ ![Scénario de client et de service intranet non sécurisé.](./media/intranet-unsecured-client-and-service/unsecured-web-client-service.gif)  
   
 |Caractéristique|Description|  
 |--------------------|-----------------|  
-|Mode de sécurité|None|  
+|Mode de sécurité|Aucun|  
 |Transport|TCP|  
 |Liaison|<xref:System.ServiceModel.NetTcpBinding>|  
 |Interopérabilité|WCF uniquement|  
-|Authentification|None|  
-|Intégrité|None|  
-|Confidentialité|None|  
+|Authentification|Aucun|  
+|Intégrité|Aucun|  
+|Confidentialité|Aucun|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -71,17 +71,17 @@ L’illustration suivante représente un service Windows Communication Foundatio
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :  
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :  
   
      [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
      [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]  
   
 ### <a name="code"></a>Code  
- Le code suivant montre un client WCF de base qui accède à un point de terminaison non sécurisé à l’aide du protocole TCP.  
+ Le code suivant illustre un client WCF de base qui accède à un point de terminaison non sécurisé à l’aide du protocole TCP.  
   
  [!code-csharp[C_UnsecuredClient#2](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_unsecuredclient/cs/source.cs#2)]
  [!code-vb[C_UnsecuredClient#2](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_unsecuredclient/vb/source.vb#2)]  
@@ -116,4 +116,4 @@ L’illustration suivante représente un service Windows Communication Foundatio
 
 - <xref:System.ServiceModel.NetTcpBinding>
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

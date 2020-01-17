@@ -2,12 +2,12 @@
 title: Formats de métadonnées
 ms.date: 03/30/2017
 ms.assetid: baad1e68-28fc-4a6a-8a43-75e47e7fa871
-ms.openlocfilehash: 55f68f4b56e50b19da19ecc941e9ec537b846006
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: e7208a8d5fd6d100ac2a2c4fb1369a571c63e7fc
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038569"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212170"
 ---
 # <a name="metadata-formats"></a>Formats de métadonnées
 Windows Communication Foundation (WCF) prend en charge les formats de métadonnées dans le tableau suivant.  
@@ -16,12 +16,12 @@ Windows Communication Foundation (WCF) prend en charge les formats de métadonn�
   
 |Protocole|Spécification et utilisation|  
 |--------------|-----------------------------|  
-|WSDL 1.1|[Web Services Description Language (WSDL) 1.1](https://go.microsoft.com/fwlink/?LinkId=94859)<br /><br /> WCF utilise les Web Services Description Language (WSDL) pour décrire des services.|  
-|Schéma XML|[XML Schema Part 2 : Types de données deuxième édition](https://go.microsoft.com/fwlink/?LinkId=94861) et [XML Schema Part 1 : Structures deuxième édition](https://go.microsoft.com/fwlink/?LinkId=94862)<br /><br /> WCF utilise le schéma XML pour décrire les types de données utilisés dans les messages.|  
-|WS-Policy|[Web Services Policy 1.2 - infrastructure (WS-Policy)](https://go.microsoft.com/fwlink/?LinkId=94864)<br /><br /> [Web Services Policy 1.5 - infrastructure](https://go.microsoft.com/fwlink/?LinkId=94865)<br /><br /> WCF utilise le WS-Policy 1.2 ou 1.5 spécifications avec des assertions spécifiques au domaine pour décrire les fonctionnalités et exigences de service.|  
-|Pièces jointes WS-Policy|[Web Services Policy 1.2 - pièce jointe (WS-PolicyAttachment)](https://go.microsoft.com/fwlink/?LinkId=94866)<br /><br /> WCF implémente les pièces jointes WS-Policy pour joindre des expressions de stratégie à différentes portées dans WSDL.|  
-|Échange de métadonnées WS|[Web Services Metadata Exchange (WS-MetadataExchange) version 1.1](https://go.microsoft.com/fwlink/?LinkId=94868)<br /><br /> WCF implémente WS-MetadataExchange pour récupérer le schéma XML, WSDL et WS-Policy.|  
-|WS-Addressing Binding pour WSDL|[Web Services Addressing 1.0 - liaison WSDL](https://go.microsoft.com/fwlink/?LinkId=94869)<br /><br /> WCF implémente WS-Addressing Binding pour WSDL pour joindre des informations d’adressage dans WSDL.|  
+|WSDL 1.1|[Web Services Description Language (WSDL) 1,1](https://www.w3.org/TR/wsdl/)<br /><br /> WCF utilise Web Services Description Language (WSDL) pour décrire les services.|  
+|Schéma XML|[XML Schema Part 2 : Datatypes Second Edition](https://www.w3.org/TR/2004/REC-xmlschema-2-20041028/) et [XML Schema Part 1 : structures Second Edition](https://www.w3.org/TR/2004/REC-xmlschema-1-20041028/)<br /><br /> WCF utilise le schéma XML pour décrire les types de données utilisés dans les messages.|  
+|WS-Policy|[Stratégie de services Web 1,2-Framework (WS-Policy)](https://www.w3.org/Submission/WS-Policy/)<br /><br /> [Stratégie de services Web 1,5-Framework](https://www.w3.org/TR/ws-policy/)<br /><br /> WCF utilise les spécifications WS-Policy 1,2 ou 1,5 avec des assertions spécifiques au domaine pour décrire les exigences et les fonctionnalités du service.|  
+|Pièces jointes WS-Policy|[Stratégie de services Web 1,2-Attachment (WS-PolicyAttachment)](https://www.w3.org/Submission/WS-PolicyAttachment/)<br /><br /> WCF implémente les pièces jointes WS-Policy pour joindre des expressions de stratégie à différentes étendues dans WSDL.|  
+|Échange de métadonnées WS|[Web services Metadata Exchange (WS-MetadataExchange) version 1,1](https://specs.xmlsoap.org/ws/2004/09/mex/WS-MetadataExchange.pdf)<br /><br /> WCF implémente WS-MetadataExchange pour récupérer le schéma XML, WSDL et WS-Policy.|  
+|WS-Addressing Binding pour WSDL|[Adressage de services Web 1,0-liaison WSDL](https://www.w3.org/TR/ws-addr-wsdl/)<br /><br /> WCF implémente la liaison WS-Addressing pour WSDL pour joindre les informations d’adressage dans WSDL.|  
   
 ## <a name="see-also"></a>Voir aussi
 

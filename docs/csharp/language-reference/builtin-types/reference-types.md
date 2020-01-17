@@ -20,12 +20,12 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: d8858acb2743b26cc3a5172edf4765976d81adf4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d5ca0593d802d331d980cf35c701e0a79d54abee
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973015"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163096"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Types référence intégrés (Référence C#)
 
@@ -33,13 +33,13 @@ C# a un nombre de types référence intégrés. Ils ont des mots clés ou des op
 
 ## <a name="the-object-type"></a>Type d’objet
 
-Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type objet est convertie en type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md). 
+Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type `object` est convertie en un type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md). 
 
 ## <a name="the-string-type"></a>Type de chaîne
 
 Le type `string` représente une séquence de zéro, un ou plusieurs caractères Unicode. `string` est un alias de <xref:System.String?displayProperty=nameWithType> dans .NET.
 
-Bien que `string` soit un type référence, les [opérateurs d’égalité`==` (`!=` et ](../operators/equality-operators.md#string-equality)) sont définis pour comparer les valeurs des objets `string`, pas les références. Cela permet de tester l’égalité de chaînes de façon plus intuitive. Exemple :
+Bien que `string` soit un type référence, les [opérateurs d’égalité`==` (`!=` et ](../operators/equality-operators.md#string-equality)) sont définis pour comparer les valeurs des objets `string`, pas les références. Cela permet de tester l’égalité de chaînes de façon plus intuitive. Par exemple :
 
 ```csharp-interactive
 string a = "hello";
@@ -67,14 +67,14 @@ string b = "h";
 b += "ello";
 ```
 
-L’[opérateur](../operators/member-access-operators.md#indexer-operator-) `[]` peut être utilisé pour un accès en lecture seule aux différents caractères d’une `string` : Les valeurs valides commencent à `0` et doivent être inférieures à la longueur de la `string` :
+L' [opérateur](../operators/member-access-operators.md#indexer-operator-) `[]` peut être utilisé pour l’accès en lecture seule aux caractères individuels d’une chaîne. Les valeurs d’index valides commencent à `0` et doivent être inférieures à la longueur de la chaîne :
 
 ```csharp
 string str = "test";
 char x = str[2];  // x = 's';
 ```
 
-De la même façon, l’opérateur `[]` permet également d’itérer sur chaque caractère dans une `string` :
+De la même façon, l’opérateur `[]` peut également être utilisé pour itérer au sein de chaque caractère dans une chaîne :
 
 ```csharp-interactive
 string str = "test";
@@ -105,7 +105,7 @@ Console.WriteLine(a);
 > [!NOTE]
 > Le code d’échappement `\udddd` (où `dddd` est un nombre à quatre chiffres) représente le caractère Unicode U+`dddd`. Les codes d’échappement Unicode à huit chiffres sont également reconnus : `\Udddddddd`.
 
-Les [littéraux de chaîne textuelle](../tokens/verbatim.md) commencent par `@` et sont placés entre guillemets doubles. Exemple :
+Les [littéraux de chaîne textuelle](../tokens/verbatim.md) commencent par `@` et sont placés entre guillemets doubles. Par exemple :
 
 ```csharp
 @"good morning"  // a string literal
@@ -170,7 +170,7 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - [Mots clés C#](../keywords/index.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)

@@ -2,15 +2,16 @@
 title: "Procédure : remplacer la réservation d'URL WCF par une réservation restreinte"
 ms.date: 03/30/2017
 ms.assetid: 2754d223-79fc-4e2b-a6ce-989889f2abfa
-ms.openlocfilehash: 3d14d76334b15bdb490184a48da11ba48b84deea
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: fc50a0e31a0c323b695ada6565743fa19c1d4c2a
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75544651"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212191"
 ---
 # <a name="how-to-replace-the-wcf-url-reservation-with-a-restricted-reservation"></a>Procédure : remplacer la réservation d'URL WCF par une réservation restreinte
-Une réservation d'URL vous permet de limiter les personnes qui reçoivent les messages d'une URL ou d'un jeu d'URL. Une réservation se compose d'un modèle d'URL, d'une liste de contrôle d'accès (ACL) et d'un jeu d'indicateurs. Le modèle d'URL définit les URL affectées par la réservation. Pour plus d’informations sur le traitement des modèles d’URL, consultez [routage des demandes entrantes](https://go.microsoft.com/fwlink/?LinkId=136764). L'ACL contrôle quel utilisateur ou groupe d'utilisateurs est autorisé à recevoir des messages en provenance des URL spécifiées. Les indicateurs spécifient si la réservation consiste à donner directement à un utilisateur ou à un groupe l'autorisation d'écouter l'URL ou à déléguer l'autorisation d'écouter à d'autres processus.  
+
+Une réservation d'URL vous permet de limiter les personnes qui reçoivent les messages d'une URL ou d'un jeu d'URL. Une réservation se compose d'un modèle d'URL, d'une liste de contrôle d'accès (ACL) et d'un jeu d'indicateurs. Le modèle d'URL définit les URL affectées par la réservation. Pour plus d’informations sur le traitement des modèles d’URL, consultez [routage des demandes entrantes](/windows/win32/http/routing-incoming-requests). L'ACL contrôle quel utilisateur ou groupe d'utilisateurs est autorisé à recevoir des messages en provenance des URL spécifiées. Les indicateurs spécifient si la réservation consiste à donner directement à un utilisateur ou à un groupe l'autorisation d'écouter l'URL ou à déléguer l'autorisation d'écouter à d'autres processus.  
   
  Dans le cadre de la configuration du système d’exploitation par défaut, Windows Communication Foundation (WCF) crée une réservation accessible globalement pour le port 80 afin de permettre à tous les utilisateurs d’exécuter des applications qui utilisent une liaison HTTP double pour la communication duplex. Étant donné que l'ACL sur cette réservation concerne tous les utilisateurs, les administrateurs ne peuvent pas explicitement accorder ou refuser l'autorisation d'écouter une URL ou un jeu d'URL. Cette rubrique explique comment supprimer cette réservation et comment la recréer avec une ACL restreinte.  
   
@@ -24,7 +25,7 @@ Reserved URL : http://+:80/Temporary_Listen_Addresses/
             SDDL: D:(A;;GX;;;WD)  
 ```
 
- La réservation se compose d’un modèle d’URL utilisé lorsqu’une application WCF utilise une liaison HTTP double pour la communication duplex. Les URL de ce formulaire sont utilisées pour qu’un service WCF renvoie des messages au client WCF lors de la communication sur une liaison double HTTP. Tous les utilisateurs sont autorisés à écouter l'URL, mais pas à déléguer l'écoute à un autre processus. Enfin, l'ACL est décrite en langage SDDL (Security Descriptor Definition Language). Pour plus d’informations sur SSDL, consultez [SSDL](https://go.microsoft.com/fwlink/?LinkId=136789) .  
+ La réservation se compose d’un modèle d’URL utilisé lorsqu’une application WCF utilise une liaison HTTP double pour la communication duplex. Les URL de ce formulaire sont utilisées pour qu’un service WCF renvoie des messages au client WCF lors de la communication sur une liaison double HTTP. Tous les utilisateurs sont autorisés à écouter l'URL, mais pas à déléguer l'écoute à un autre processus. Enfin, l'ACL est décrite en langage SDDL (Security Descriptor Definition Language). Pour plus d’informations sur SSDL, consultez [SSDL](/windows/win32/secauthz/security-descriptor-definition-language) .  
   
 ## <a name="to-delete-the-wcf-url-reservation"></a>Pour supprimer la réservation d'URL WCF  
   

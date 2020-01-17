@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 99d7a528-7ae4-4d39-a0f9-3066ea237de0
-ms.openlocfilehash: bd64531116b1588683c2f5c8964e78e41e371ecf
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: e784e254fb9314e69457d81a70400f7be30d9c13
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69955343"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76211997"
 ---
 # <a name="message-security-with-mutual-certificates"></a>Sécurité de message avec certificats mutuels
 Le scénario suivant montre un service Windows Communication Foundation (WCF) et un client sécurisé à l’aide du mode de sécurité message. Le client et le service sont authentifiés à l'aide de certificats.  
@@ -26,14 +26,14 @@ Le scénario suivant montre un service Windows Communication Foundation (WCF) et
 |--------------------|-----------------|  
 |Mode de sécurité|Message|  
 |Interopérabilité|Oui, avec WS-Security et des clients et des services compatibles avec le profil de jeton de certificat X.509.|  
-|Authentication|Authentification mutuelle du serveur et du client.|  
+|Authentification|Authentification mutuelle du serveur et du client.|  
 |Intégrité|Oui|  
 |Confidentialité|Oui|  
 |Transport|HTTP|  
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
-## <a name="service"></a>de diffusion en continu  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+## <a name="service"></a>Service  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -91,7 +91,7 @@ Le scénario suivant montre un service Windows Communication Foundation (WCF) et
 ```  
   
 ## <a name="client"></a>Client  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
   
 - Créez un client autonome à l'aide du code (et du code client).  
   
@@ -107,7 +107,7 @@ Le scénario suivant montre un service Windows Communication Foundation (WCF) et
  [!code-vb[C_SecurityScenarios#20](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#20)]  
   
 ### <a name="configuration"></a>Configuration  
- Les éléments ci-dessous configurent le client. Un certificat client doit être spécifié à l’aide de l' [ \<> ClientCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). En outre, le certificat de service est spécifié à l’aide de l' [ \<> DefaultCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
+ Les éléments ci-dessous configurent le client. Un certificat client doit être spécifié à l’aide de la [\<ClientCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/clientcertificate-of-clientcredentials-element.md). En outre, le certificat de service est spécifié à l’aide de la [\<DefaultCertificate](../../../../docs/framework/configure-apps/file-schema/wcf/defaultcertificate-element.md).  
   
 ```xml  
 <?xml version="1.0" encoding="utf-8"?>  
@@ -161,5 +161,5 @@ Le scénario suivant montre un service Windows Communication Foundation (WCF) et
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
-- [Guide pratique pour Créer et installer des certificats temporaires dans WCF pour la sécurité du transport pendant le développement](https://go.microsoft.com/fwlink/?LinkId=244264)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))
+- [Comment : créer et installer des certificats temporaires dans WCF pour la sécurité du transport pendant le développement](https://docs.microsoft.com/previous-versions/msp-n-p/ff648498(v=pandp.10))

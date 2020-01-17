@@ -5,34 +5,34 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: cad53e1a-b7c9-4064-bc87-508c3d1dce49
-ms.openlocfilehash: 613b85e18109faa2a4386090e91aaddcfd8e0b68
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: fccdd021e392e6c37615a9091ce13f0e94167246
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62038582"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76212003"
 ---
 # <a name="message-security-with-an-anonymous-client"></a>Sécurité de message avec un client anonyme
 
-Le scénario suivant montre un client / service sécurisé par la sécurité de message Windows Communication Foundation (WCF). L'un des objectifs de conception consiste à utiliser la sécurité de message plutôt que la sécurité de transport, afin qu'à l'avenir il puisse prendre en charge un modèle plus riche basé sur les revendications. Pour plus d’informations sur l’utilisation de revendications riches pour l’autorisation, consultez [la gestion des revendications et autorisation avec le modèle d’identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
+Le scénario suivant montre un client et un service sécurisés par Windows Communication Foundation (WCF) la sécurité des messages. L'un des objectifs de conception consiste à utiliser la sécurité de message plutôt que la sécurité de transport, afin qu'à l'avenir il puisse prendre en charge un modèle plus riche basé sur les revendications. Pour plus d’informations sur l’utilisation de revendications riches pour l’autorisation, consultez [gestion des revendications et autorisation avec le modèle d’identité](../../../../docs/framework/wcf/feature-details/managing-claims-and-authorization-with-the-identity-model.md).
 
-Pour un exemple d’application, consultez [Message Security Anonymous](../../../../docs/framework/wcf/samples/message-security-anonymous.md).
+Pour obtenir un exemple d’application, consultez [sécurité de message anonyme](../../../../docs/framework/wcf/samples/message-security-anonymous.md).
 
-![Message de sécurité avec un client anonyme](../../../../docs/framework/wcf/feature-details/media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
+![Sécurité des messages avec un client anonyme](../../../../docs/framework/wcf/feature-details/media/b361a565-831c-4c10-90d7-66d8eeece0a1.gif "b361a565-831c-4c10-90d7-66d8eeece0a1")
 
 |Caractéristique|Description|
 |--------------------|-----------------|
 |Mode de sécurité|Message|
 |Interopérabilité|WCF uniquement|
 |Authentification (serveur)|La négociation initiale requiert l'authentification du serveur, mais pas l'authentification du client|
-|Authentification (client)|Aucun.|
+|Authentification (client)|Aucun|
 |Intégrité|Oui, à l'aide du contexte de sécurité partagé|
 |Confidentialité|Oui, à l'aide du contexte de sécurité partagé|
 |Transport|HTTP|
 
 ## <a name="service"></a>Service
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
 
 - Créez un service autonome à l'aide du code sans configuration.
 
@@ -90,11 +90,11 @@ La configuration ci-dessous peut être utilisée à la place du code. L'élémen
 
 ## <a name="client"></a>Client
 
-La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l’une des opérations suivantes :
+La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :
 
 - Créez un client autonome à l'aide du code (et du code client).
 
-- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Exemple :
+- Créez un client qui ne définit pas d'adresse de point de terminaison. Au lieu de cela, utilisez le constructeur client qui accepte le nom de configuration comme argument. Par exemple :
 
     [!code-csharp[C_SecurityScenarios#0](../../../../samples/snippets/csharp/VS_Snippets_CFX/c_securityscenarios/cs/source.cs#0)]
     [!code-vb[C_SecurityScenarios#0](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_securityscenarios/vb/source.vb#0)]
@@ -144,4 +144,4 @@ Le code ci-dessous configure le client.
 - [Sécurité des applications distribuées](../../../../docs/framework/wcf/feature-details/distributed-application-security.md)
 - [Sécurité de message anonyme](../../../../docs/framework/wcf/samples/message-security-anonymous.md)
 - [Identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

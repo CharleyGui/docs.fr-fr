@@ -2,12 +2,12 @@
 title: Divulgation d'informations
 ms.date: 03/30/2017
 ms.assetid: 4064c89f-afa6-444a-aa7e-807ef072131c
-ms.openlocfilehash: 0e45a71855ecb172f36aae8139f89d4b8c8ffd0d
-ms.sourcegitcommit: 9b1ac36b6c80176fd4e20eb5bfcbd9d56c3264cf
+ms.openlocfilehash: 0bcf1aa04d7ba7477a6c3f1559a77bbda1f974af
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/28/2019
-ms.locfileid: "67425306"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76211957"
 ---
 # <a name="information-disclosure"></a>Divulgation d'informations
 
@@ -19,11 +19,11 @@ Si vous utilisez la sécurité au niveau du message sur une couche transport HTT
 
 ## <a name="policy-information"></a>Informations de stratégie
 
-Il est important de sécuriser la stratégie, surtout dans les scénarios de fédération dans lesquels les spécifications sensibles des jetons émis ou les informations de l'émetteur de jetons sont exposées dans la stratégie. Dans ces cas, il est recommandé de sécuriser le point de terminaison de stratégie du service fédéré pour empêcher les intrus d'obtenir des informations à propos du service, tel que le type de revendications à placer dans le jeton émis, ou de rediriger les clients vers des émetteurs de jetons malveillants. Par exemple, un intrus pourrait découvrir des paires de nom d'utilisateur/mot de passe en reconfigurant la chaîne de confiance fédérée afin qu'elle se termine dans un émetteur qui exécute une attaque de « l'homme du milieu » (« man-in-the-middle »). Il est également recommandé que les clients fédérés qui obtiennent leurs liaisons grâce à la récupération de la stratégie vérifient qu’ils approuvent les émetteurs de la chaîne de confiance fédérée obtenue. Pour plus d’informations sur les scénarios de fédération, consultez [fédération](../../../../docs/framework/wcf/feature-details/federation.md).
+Il est important de sécuriser la stratégie, surtout dans les scénarios de fédération dans lesquels les spécifications sensibles des jetons émis ou les informations de l'émetteur de jetons sont exposées dans la stratégie. Dans ces cas, il est recommandé de sécuriser le point de terminaison de stratégie du service fédéré pour empêcher les intrus d'obtenir des informations à propos du service, tel que le type de revendications à placer dans le jeton émis, ou de rediriger les clients vers des émetteurs de jetons malveillants. Par exemple, un intrus pourrait découvrir des paires de nom d'utilisateur/mot de passe en reconfigurant la chaîne de confiance fédérée afin qu'elle se termine dans un émetteur qui exécute une attaque de « l'homme du milieu » (« man-in-the-middle »). Il est également recommandé que les clients fédérés qui obtiennent leurs liaisons grâce à la récupération de la stratégie vérifient qu'ils approuvent les émetteurs de la chaîne de confiance fédérée obtenue. Pour plus d’informations sur les scénarios de Fédération, consultez [Federation](../../../../docs/framework/wcf/feature-details/federation.md).
 
 ## <a name="memory-dumps-can-reveal-claim-information"></a>Les images mémoire peuvent révéler des informations de revendication
 
-Lorsqu'une application échoue, des fichiers journaux, tels que ceux générés par Dr. Watson, peut contenir des informations de revendication. Ces informations ne doivent pas être exportées à d’autres entités, telles que les équipes de support ; sinon, les informations de revendication qui contiennent des données privées sont également exportées. Vous pouvez atténuer cet aspect en n'envoyant pas les fichiers journaux à des entités inconnues. Pour plus d’informations, consultez [Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=89160).
+Lorsqu'une application échoue, les fichiers journaux, tels que ceux produits par Dr. Watson, peuvent contenir les informations de revendication. Ces informations ne doivent pas être exportées à d'autres entités, telles que les équipes de support ; sinon, les informations de revendication qui contiennent des données privées sont également exportées. Vous pouvez atténuer cet aspect en n'envoyant pas les fichiers journaux à des entités inconnues.
 
 ## <a name="endpoint-addresses"></a>Adresses de point de terminaison
 
@@ -35,7 +35,7 @@ Lorsque vous utilisez un certificat X.509 pour authentifier un client, le certif
 
 ## <a name="service-references"></a>Références de service
 
-Une référence de service est une référence à un autre service. Par exemple, un service peut passer une référence de service à un client au cours d'une opération. La référence de service est également utilisée avec un *vérificateur d’identité de confiance*, un composant interne qui garantit l’identité du principal cible avant de divulguer des informations telles que les données d’application ou les informations d’identification à la cible. Si l'identité de la confiance distante ne peut pas être vérifiée ou est incorrecte, l'expéditeur doit s'assurer qu'aucune donnée n'a été divulguée qui pourrait le compromettre, compromettre l'application ou l'utilisateur.
+Une référence de service est une référence à un autre service. Par exemple, un service peut passer une référence de service à un client au cours d'une opération. La référence de service est également utilisée avec un *vérificateur d’identité de confiance*, un composant interne qui garantit l’identité de l’entité de sécurité cible avant de divulguer des informations telles que les données d’application ou les informations d’identification à la cible. Si l'identité de la confiance distante ne peut pas être vérifiée ou est incorrecte, l'expéditeur doit s'assurer qu'aucune donnée n'a été divulguée qui pourrait le compromettre, compromettre l'application ou l'utilisateur.
 
 Les mesures d'atténuation des risques sont les suivantes :
 
@@ -47,7 +47,7 @@ Les mesures d'atténuation des risques sont les suivantes :
 
 Par défaut, dans l'environnement de domaine Windows, l'authentification Windows utilise le protocole Kerberos pour authentifier et autoriser des utilisateurs. Si le protocole Kerberos ne peut pas être utilisé pour quelque raison que ce soit, l'authentification NTLM (NT LAN Manager) est utilisée en guise de secours. Vous pouvez désactiver ce comportement en attribuant à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false`. Sachez que l'activation de NTLM entraîne les problèmes suivants :
 
-- NTLM expose le nom d'utilisateur du client. Si le nom d’utilisateur doit rester confidentiel, affectez `AllowNTLM` à la propriété `false` sur la liaison.
+- NTLM expose le nom d'utilisateur du client. Si le nom d'utilisateur doit rester confidentiel, affectez `AllowNTLM` à la propriété `false` sur la liaison.
 
 - NTLM n'assure pas l'authentification du serveur. Par conséquent, le client ne peut pas vérifier qu'il communique avec le bon service lorsque vous utilisez le protocole d'authentification NTLM.
 
@@ -55,7 +55,7 @@ Par défaut, dans l'environnement de domaine Windows, l'authentification Windows
 
 Lorsque vous créez un client, le fait de spécifier des informations d'identification du client sans un nom de domaine ou de spécifier une identité de serveur non valide provoque l'utilisation de NTLM au lieu du protocole Kerberos (si la propriété `AllowNtlm` a la valeur `true`). Vu que NTLM ne procède pas à l'authentification du serveur, les informations peuvent potentiellement être divulguées.
 
-Par exemple, il est possible de spécifier des informations d’identification du client Windows sans un nom de domaine, comme indiqué dans le code Visual c# suivant.
+Par exemple, il est possible de spécifier les informations d’identification du client Windows sans un nom de domaine, comme illustré C# dans le code visuel suivant.
 
 ```csharp
 MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCredential("username", "password");
@@ -63,7 +63,7 @@ MyChannelFactory.Credentials.Windows.ClientCredential = new System.Net.NetworkCr
 
 Le code ne spécifie pas de nom de domaine, et par conséquent, NTLM sera utilisé.
 
-Si le domaine est spécifié, mais qu’un nom de principal du service non valide est spécifié à l’aide de la fonctionnalité d’identité du point de terminaison, alors NTLM est utilisé. Pour plus d’informations sur la façon dont l’identité du point de terminaison est spécifiée, consultez [identité de Service et d’authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).
+Si le domaine est spécifié, mais qu’un nom de principal du service non valide est spécifié à l’aide de la fonctionnalité d’identité du point de terminaison, alors NTLM est utilisé. Pour plus d’informations sur la spécification de l’identité du point de terminaison, consultez [identité du service et authentification](../../../../docs/framework/wcf/feature-details/service-identity-and-authentication.md).
 
 ## <a name="see-also"></a>Voir aussi
 

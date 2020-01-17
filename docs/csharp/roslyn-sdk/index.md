@@ -3,12 +3,12 @@ title: Kit SDK .NET Compiler Platform (API Roslyn)
 description: Apprenez à utiliser le Kit de développement logiciel (SDK) .NET Compiler Platform (également appelé API Roslyn) pour comprendre le code .NET, identifier les erreurs et les corriger.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 3a202d977237ce716e3f8c0cf906894efd02196d
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 98984edad3a25daa8b0ea13b903c4e6447b8a22a
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346957"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163135"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kit SDK .NET Compiler Platform
 
@@ -21,7 +21,7 @@ Le Kit SDK .NET Compiler Platform réduit considérablement la barrière à l’
 
 Le Kit SDK .NET Compiler Platform permet de générer des ***analyseurs*** et des ***correctifs de code*** qui recherchent et corrigent les erreurs de codage. Les ***analyseurs*** comprennent la syntaxe et la structure du code, et détectent les pratiques à corriger. Les ***correctifs de code*** représentent des propositions de correction des erreurs de codage trouvées par les analyseurs. En règle générale, un analyseur et les correctifs de code associés sont regroupés dans un seul projet.
 
-Les analyseurs et les correctifs de code utilisent l’analyse statique pour comprendre le code. Ils n’exécutent pas le code, et n’offrent aucun autre avantage en matière de tests. Ils peuvent, toutefois, signaler des pratiques qui aboutissent souvent à des bogues, à du code empêchant toute mise à jour ou à la violation des recommandations standard.
+Les analyseurs et les correctifs de code utilisent l’analyse statique pour comprendre le code. Ils n’exécutent pas le code, et n’offrent aucun autre avantage en matière de tests. Toutefois, ils peuvent signaler des pratiques qui mènent souvent à des bogues, à un code non gérable ou à une violation des indications standard.
 
 Le Kit SDK .NET Compiler Platform se compose d’un unique ensemble d’API permettant d’examiner et de comprendre un codebase C# ou Visual Basic. Grâce à ce codebase unique, il est plus facile d’écrire des analyseurs et des correctifs de code en utilisant les API d’analyse syntaxique et sémantique fournies par le Kit SDK .NET Compiler Platform. Une fois libéré de la tâche chronophage qui consiste à répliquer l’analyse effectuée par le compilateur, vous pouvez vous concentrer sur la tâche, plus ciblée, de recherche et de résolution des erreurs de codage courantes de votre projet ou de votre bibliothèque.
 

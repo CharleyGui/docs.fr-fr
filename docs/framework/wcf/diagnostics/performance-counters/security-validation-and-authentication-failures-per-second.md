@@ -2,15 +2,15 @@
 title: Nombre d'échecs de validation de la sécurité et d'authentification par seconde
 ms.date: 03/30/2017
 ms.assetid: 266c3bd3-2ffc-4471-94b7-3675443be1ac
-ms.openlocfilehash: 5db8b656b626ea16f89ce432bf4cf1030b87a0b0
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 546d81b73e912915d265fb194de4ad9e45d55cea
+ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64664991"
+ms.lasthandoff: 01/17/2020
+ms.locfileid: "76163915"
 ---
 # <a name="security-validation-and-authentication-failures-per-second"></a>Nombre d'échecs de validation de la sécurité et d'authentification par seconde
-Nom du compteur : Validation de la sécurité et les échecs d’authentification par seconde.  
+Nom du compteur : nombre d’échecs de la validation de la sécurité et de l’authentification par seconde.  
   
 ## <a name="description"></a>Description  
  Ce compteur est incrémenté chaque fois qu'un message est rejeté en raison d'un problème de sécurité non couvert par le compteur « Appels de sécurité non autorisés ». Ces problèmes sont les suivants :  
@@ -29,6 +29,6 @@ Nom du compteur : Validation de la sécurité et les échecs d’authentificati
   
 - Erreurs lors de la négociation TLSNEGO/SPNEGO.  
   
- Ce compteur est de type de compteur de performances [PERF_COUNTER_COUNTER](https://go.microsoft.com/fwlink/?LinkID=94649), dont la valeur est calculée à l’aide de la formule suivante :  
+ Ce compteur est de type de compteur de performance [PERF_COUNTER_COUNTER](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc740048(v=ws.10)), dont la valeur est calculée à l’aide de la formule suivante :  
   
  (N1-N0)/((D1-D0)/F)
