@@ -2,12 +2,12 @@
 title: Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 description: Comment spécifier la composition des microservices pour une application multiconteneur avec docker-compose.yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: fa863495c785d89a0b244162e58948ff622e139a
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: f9cab35ac8e11ca89a83f646c29bf72f84e66ef4
+ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937163"
+ms.lasthandoff: 01/16/2020
+ms.locfileid: "76116542"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 
@@ -82,7 +82,7 @@ services:
     image: redis
 ```
 
-La clé racine de ce fichier est services. Sous cette clé, vous définissez les services que vous souhaitez déployer et exécuter quand vous exécutez la commande `docker-compose up` ou quand vous effectuez un déploiement à partir de Visual Studio à l’aide du fichier docker-compose.yml. Dans le cas présent, plusieurs services sont définis pour le fichier docker-compose.yml, comme indiqué dans le tableau suivant.
+La clé racine de ce fichier est services. Sous cette clé, vous définissez les services que vous souhaitez déployer et exécutez quand vous exécutez la commande `docker-compose up` ou lorsque vous déployez à partir de Visual Studio à l’aide de ce fichier docker-compose. yml. Dans le cas présent, plusieurs services sont définis pour le fichier docker-compose.yml, comme indiqué dans le tableau suivant.
 
 | Nom du service | Description |
 |--------------|-------------|
@@ -129,7 +129,7 @@ Dans la mesure où la chaîne de connexion est définie par une variable d’env
 
 - Il lie le service web au service sql.data (instance SQL Server pour la base de données Linux s’exécutant dans un conteneur). Quand vous spécifiez cette dépendance, le conteneur catalog.api ne démarre pas tant que le conteneur sql.data n’a pas démarré. Cela est important, car catalog.api a besoin que la base de données SQL Server soit d’abord opérationnelle. Toutefois, ce genre de dépendance de conteneur ne suffit pas dans la plupart des cas, car Docker effectue uniquement une vérification au niveau du conteneur. Parfois, le service (dans le cas présent, SQL Server) n’est peut-être pas encore prêt. Il est donc conseillé d’implémenter une logique de réexécution avec interruption exponentielle dans vos microservices clients. Ainsi, si un conteneur de dépendances n’est pas prêt pendant une courte période, l’application reste résiliente.
 
-- Il est configuré pour autoriser l’accès aux serveurs externes : le paramètre extra\_hosts vous permet d’accéder à des serveurs ou machines externes à l’hôte Docker (c’est-à-dire, situées en dehors de la machine virtuelle Linux par défaut qui est un hôte Docker de développement), par exemple une instance SQL Server locale sur votre PC de développement.
+- Il est configuré pour autoriser l’accès aux serveurs externes : le paramètre hôtes de\_supplémentaires vous permet d’accéder à des serveurs ou des ordinateurs externes en dehors de l’hôte de l’ordinateur d’amarrage (autrement dit, en dehors de la machine virtuelle Linux par défaut, qui est un hôte d’ancrage de développement), tel qu’une instance de SQL Server locale sur votre PC de développement.
 
 Il existe également d’autres paramètres docker-compose.yml plus avancés que nous aborderons dans les sections suivantes.
 
@@ -141,7 +141,7 @@ Ainsi, à l’aide de la commande docker-compose, vous pouvez cibler les princip
 
 #### <a name="development-environments"></a>Environnements de développement
 
-Quand vous développez des applications, il est important de pouvoir les exécuter dans un environnement de développement isolé. Vous pouvez vous servir de la commande CLI docker-compose pour créer cet environnement, ou utiliser Visual Studio qui exécute docker-compose de manière interne.
+Quand vous développez des applications, il est important de pouvoir les exécuter dans un environnement de développement isolé. Vous pouvez utiliser la commande de l’interface de commande de l’ILC-composer pour créer cet environnement ou Visual Studio, qui utilise l’option dockr-compose sous les couvertures.
 
 Le fichier docker-compose.yml vous permet de configurer et de documenter toutes les dépendances de service de votre application (autres services, mises en cache, bases de données, files d’attente, etc.). À l’aide de la commande CLI docker-compose, vous pouvez créer et démarrer un ou plusieurs conteneurs pour chaque dépendance avec une seule commande (docker-compose up).
 
@@ -151,7 +151,7 @@ Les fichiers docker-compose.yml sont des fichiers config interprétés par le mo
 
 Les tests unitaires et les tests d’intégration sont une partie importante d’un processus de déploiement continu ou d’intégration continue (CI). Ces tests automatisés nécessitent un environnement isolé pour ne pas être impactés par les utilisateurs ou par tout autre changement dans les données de l’application.
 
-Avec Docker Compose, vous pouvez créer et détruire très facilement cet environnement isolé en quelques commandes, à partir de votre invite de commandes ou de vos scripts, à l’image des commandes suivantes :
+Avec Docker Compose, vous pouvez créer et détruire très facilement cet environnement isolé dans quelques commandes à partir de votre invite de commandes ou de vos scripts, comme les commandes suivantes :
 
 ```console
 docker-compose -f docker-compose.yml -f docker-compose-test.override.yml up -d
@@ -201,7 +201,7 @@ Il est courant de définir plusieurs fichiers Compose pour cibler plusieurs envi
 
 **Figure 6-12.** Plusieurs fichiers docker-compose remplaçant des valeurs du fichier docker-compose.yml de base
 
-Vous pouvez combiner plusieurs fichiers docker-compose*. yml pour gérer différents environnements. Vous commencez avec le fichier docker-compose.yml de base. Ce fichier de base doit contenir les paramètres de configuration de base ou statiques qui ne changent pas en fonction de l’environnement. Par exemple, eShopOnContainers a le fichier de base docker-compose.yml suivant (simplifié avec moins de services) comme fichier de base.
+Vous pouvez combiner plusieurs fichiers docker-compose*. yml pour gérer différents environnements. Vous commencez avec le fichier docker-compose.yml de base. Ce fichier de base doit contenir les paramètres de configuration de base ou statiques qui ne changent pas en fonction de l’environnement. Par exemple, le eShopOnContainers contient le fichier docker-compose. yml suivant (simplifié avec moins de services) que le fichier de base.
 
 ```yml
 #docker-compose.yml (Base)
@@ -390,7 +390,7 @@ Dans cet exemple, la configuration de substitution de l’environnement de déve
 
 Quand vous exécutez `docker-compose up`, ou quand vous lancez cette commande à partir de Visual Studio, elle lit automatiquement les remplacements comme si elle fusionnait les deux fichiers.
 
-Supposons que vous souhaitiez un autre fichier Compose pour l’environnement de production, avec d’autres valeurs de configuration, ports ou chaînes de connexion. Vous pouvez créer un autre fichier de substitution, par exemple le fichier nommé `docker-compose.prod.yml`, avec d’autres paramètres et variables d’environnement. Ce fichier peut être stocké dans un autre dépôt Git, ou être géré et sécurisé par une autre équipe.
+Supposons que vous souhaitiez un autre fichier compose pour l’environnement de production, avec des valeurs de configuration, des ports ou des chaînes de connexion différents. Vous pouvez créer un autre fichier de substitution, par exemple le fichier nommé `docker-compose.prod.yml`, avec d’autres paramètres et variables d’environnement. Ce fichier peut être stocké dans un autre dépôt Git, ou être géré et sécurisé par une autre équipe.
 
 #### <a name="how-to-deploy-with-a-specific-override-file"></a>Comment effectuer un déploiement avec un fichier de substitution spécifique
 
@@ -422,7 +422,7 @@ ESHOP_PROD_EXTERNAL_DNS_NAME_OR_IP=10.121.122.92
 
 Docker-compose s’attend à ce que chaque ligne d’un fichier .env soit au format \<variable\>=\<valeurs\>.
 
-Notez que les valeurs définies dans l’environnement d’exécution remplacent toujours les valeurs définies dans le fichier .env. De même, les valeurs passées via les arguments de ligne de commande remplacent également les valeurs par défaut définies dans le fichier .env.
+Les valeurs définies dans l’environnement d’exécution remplacent toujours les valeurs définies dans le fichier. env. De la même façon, les valeurs transmises par le biais d’arguments de ligne de commande remplacent également les valeurs par défaut définies dans le fichier. env.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
