@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: 8d02633b652157afe4d5c6dc2d122781b895587b
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: c378efa105f4611aca7a57ad354fb8854d103ed7
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70988556"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76508576"
 ---
-<span data-ttu-id="8793b-101">**Cet article s’applique à : ✓** .net Core 1. x SDK **✓** .net Core 2. x SDK</span><span class="sxs-lookup"><span data-stu-id="8793b-101">**This article applies to: ✓** .NET Core 1.x SDK **✓** .NET Core 2.x SDK</span></span>
+<span data-ttu-id="49bc8-101">**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x ✔️ SDK .net Core 2. x</span><span class="sxs-lookup"><span data-stu-id="49bc8-101">**This article applies to:** ✔️ .NET Core 1.x SDK ✔️ .NET Core 2.x SDK</span></span>
