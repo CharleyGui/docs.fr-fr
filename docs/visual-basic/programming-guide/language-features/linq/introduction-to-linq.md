@@ -12,12 +12,12 @@ helpviewer_keywords:
 - deferred execution
 - iteration variables [Visual Basic]
 ms.assetid: 3047d86e-0d49-40e2-928b-dc02e46c7984
-ms.openlocfilehash: 610f2a1020cc15f855b3ddfc0917e14aae34fb82
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 3f58edf326ab9415d78d7065d74d8c1954fbbf37
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74344936"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76315861"
 ---
 # <a name="introduction-to-linq-in-visual-basic"></a>Introduction à LINQ dans Visual Basic
 LINQ (Language-Integrated Query) ajoute des fonctionnalités de requête à Visual Basic et fournit des fonctionnalités simples et puissantes quand vous travaillez avec tous les types de données. Plutôt que d’envoyer une requête à une base de données à traiter, ou d’utiliser une syntaxe de requête différente pour chaque type de données que vous recherchez, LINQ introduit des requêtes dans le cadre du langage de Visual Basic. Il utilise une syntaxe unifiée indépendamment du type de données.  
@@ -76,13 +76,13 @@ Les classes de l'espace de noms <xref:System.Linq> et des autres espaces de noms
 
 ### <a name="from-clause"></a>Clause From
 
-Une clause [`From`](../../../../visual-basic/language-reference/queries/from-clause.md) ou une clause `Aggregate` est nécessaire pour commencer une requête. Une clause `From` spécifie une collection de sources et une variable d'itération pour une requête. Exemple :
+Une clause [`From`](../../../../visual-basic/language-reference/queries/from-clause.md) ou une clause `Aggregate` est nécessaire pour commencer une requête. Une clause `From` spécifie une collection de sources et une variable d'itération pour une requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#7](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#7)]
 
 ### <a name="select-clause"></a>Select (clause)
 
-Ce paramètre est facultatif. Une [clause`Select`](../../../../visual-basic/language-reference/queries/select-clause.md) déclare un ensemble de variables d’itération pour une requête. Exemple :
+Option facultative. Une [clause`Select`](../../../../visual-basic/language-reference/queries/select-clause.md) déclare un ensemble de variables d’itération pour une requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#8](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#8)]
 
@@ -90,31 +90,31 @@ Si une clause `Select` n'est pas spécifiée, les variables d'itération de la r
 
 ### <a name="where-clause"></a>Where (clause)
 
-Ce paramètre est facultatif. Une [clause`Where`](../../../../visual-basic/language-reference/queries/where-clause.md) spécifie une condition de filtrage pour une requête. Exemple :
+Option facultative. Une [clause`Where`](../../../../visual-basic/language-reference/queries/where-clause.md) spécifie une condition de filtrage pour une requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#9](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#9)]
 
-### <a name="order-by-clause"></a>Clause ORDER BY]
+### <a name="order-by-clause"></a>Order By (clause)
 
-| Facultatif. Une [clause`Order By`](../../../../visual-basic/language-reference/queries/order-by-clause.md) spécifie l’ordre de tri des colonnes dans une requête. Exemple :
+Option facultative. Une [clause`Order By`](../../../../visual-basic/language-reference/queries/order-by-clause.md) spécifie l’ordre de tri des colonnes dans une requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#10](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#10)]
 
 ### <a name="join-clause"></a>Join (clause)
 
-Ce paramètre est facultatif. Une [clause`Join`](../../../../visual-basic/language-reference/queries/join-clause.md) combine deux collections en une collection unique. Exemple :
+Option facultative. Une [clause`Join`](../../../../visual-basic/language-reference/queries/join-clause.md) combine deux collections en une collection unique. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#11](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#11)]
 
 ### <a name="group-by-clause"></a>Group By (clause)
 
-Ce paramètre est facultatif. Une [clause`Group By`](../../../../visual-basic/language-reference/queries/group-by-clause.md) regroupe les éléments d’un résultat de requête. Elle peut être utilisée pour appliquer des fonctions d’agrégation à chaque groupe. Exemple :
+Option facultative. Une [clause`Group By`](../../../../visual-basic/language-reference/queries/group-by-clause.md) regroupe les éléments d’un résultat de requête. Elle peut être utilisée pour appliquer des fonctions d’agrégation à chaque groupe. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#12](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#12)]
 
 ### <a name="group-join-clause"></a>Group Join (clause)
 
-Ce paramètre est facultatif. Une [clause`Group Join`](../../../../visual-basic/language-reference/queries/group-join-clause.md) combine deux collections en une collection hiérarchique unique. Exemple :
+Option facultative. Une [clause`Group Join`](../../../../visual-basic/language-reference/queries/group-join-clause.md) combine deux collections en une collection hiérarchique unique. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#13](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#13)]
 
@@ -124,43 +124,43 @@ Une clause [`Aggregate`](../../../../visual-basic/language-reference/queries/agg
 
  [!code-vb[VbVbalrIntroToLINQ#14](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#14)]
 
-Vous pouvez également utiliser la clause `Aggregate` pour modifier une requête. Par exemple, vous pouvez utiliser la clause `Aggregate` pour effectuer un calcul sur une collection de requêtes connexe. Exemple :
+Vous pouvez également utiliser la clause `Aggregate` pour modifier une requête. Par exemple, vous pouvez utiliser la clause `Aggregate` pour effectuer un calcul sur une collection de requêtes connexe. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#15](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#15)]
 
 ### <a name="let-clause"></a>Let (clause)
 
-Ce paramètre est facultatif. Une [clause`Let`](../../../../visual-basic/language-reference/queries/let-clause.md) calcule une valeur et l’assigne à une nouvelle variable dans la requête. Exemple :
+Option facultative. Une [clause`Let`](../../../../visual-basic/language-reference/queries/let-clause.md) calcule une valeur et l’assigne à une nouvelle variable dans la requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#16](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#16)]
 
 ### <a name="distinct-clause"></a>Distinct (clause)
 
-Ce paramètre est facultatif. Une clause `Distinct` restreint les valeurs de la variable d’itération actuelle pour éliminer les valeurs en double dans les résultats de la requête. Exemple :
+Option facultative. Une clause `Distinct` restreint les valeurs de la variable d’itération actuelle pour éliminer les valeurs en double dans les résultats de la requête. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#17](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#17)]
 
 ### <a name="skip-clause"></a>Skip (clause)
 
-Ce paramètre est facultatif. Une [clause`Skip`](../../../../visual-basic/language-reference/queries/skip-clause.md) ignore un nombre spécifié d’éléments dans une collection, puis retourne les éléments restants. Exemple :
+Option facultative. Une [clause`Skip`](../../../../visual-basic/language-reference/queries/skip-clause.md) ignore un nombre spécifié d’éléments dans une collection, puis retourne les éléments restants. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#18](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#18)]
 
 ### <a name="skip-while-clause"></a>SkipWhile (clause)
 
-Ce paramètre est facultatif. Une [clause`Skip While`](../../../../visual-basic/language-reference/queries/skip-while-clause.md) ignore les éléments d’une collection tant qu’une condition spécifiée est `true` puis retourne les éléments restants. Exemple :
+Option facultative. Une [clause`Skip While`](../../../../visual-basic/language-reference/queries/skip-while-clause.md) ignore les éléments d’une collection tant qu’une condition spécifiée est `true` puis retourne les éléments restants. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#19](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#19)]
 
 ### <a name="take-clause"></a>Take (clause)
 
-Ce paramètre est facultatif. Une [clause`Take`](../../../../visual-basic/language-reference/queries/take-clause.md) retourne un nombre spécifié d’éléments contigus à partir du début d’une collection. Exemple :
+Option facultative. Une [clause`Take`](../../../../visual-basic/language-reference/queries/take-clause.md) retourne un nombre spécifié d’éléments contigus à partir du début d’une collection. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#20](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#20)]
 
 ### <a name="take-while-clause"></a>Take While (clause)
 
-Ce paramètre est facultatif. Une [clause`Take While`](../../../../visual-basic/language-reference/queries/take-while-clause.md) comprend des éléments dans une collection tant qu’une condition spécifiée est `true` et ignore les éléments restants. Exemple :
+Option facultative. Une [clause`Take While`](../../../../visual-basic/language-reference/queries/take-while-clause.md) comprend des éléments dans une collection tant qu’une condition spécifiée est `true` et ignore les éléments restants. Par exemple :
 
  [!code-vb[VbVbalrIntroToLINQ#21](~/samples/snippets/visualbasic/VS_Snippets_VBCSharp/VbVbalrIntroToLINQ/VB/Class1.vb#21)]
   

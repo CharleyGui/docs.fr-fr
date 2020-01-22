@@ -1,9 +1,9 @@
 ---
-ms.openlocfilehash: c07c40b96ac9435f54f75a06d2d42a517a804583
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: d7ff6717f03b7a5f5a4efddee6ea46df0c4887e3
+ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70997600"
+ms.lasthandoff: 01/22/2020
+ms.locfileid: "76508660"
 ---
-**Cet article s’applique à : ✓** .net Core 2. x SDK
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x
