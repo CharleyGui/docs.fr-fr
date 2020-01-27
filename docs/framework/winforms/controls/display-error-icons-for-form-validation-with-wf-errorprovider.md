@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : afficher des icônes d’erreur pour la validation de formulaire à l’aide du composant ErrorProvider Windows Forms'
+title: Afficher les icônes d’erreur pour la validation de formulaire avec le composant ErrorProvider
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,25 +11,25 @@ helpviewer_keywords:
 - ErrorProvider component [Windows Forms], displaying error icons
 - error messages [Windows Forms], displaying icons
 ms.assetid: 3b681a32-9db4-497b-a34b-34980eabee46
-ms.openlocfilehash: 2af8d3b9ea97b678c493de8a58d439b62f448387
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: a1e346e332db489351f59c9a0c03ae731baf3dc3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053713"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745912"
 ---
-# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a><span data-ttu-id="7b503-102">Procédure : afficher des icônes d’erreur pour la validation de formulaire à l’aide du composant ErrorProvider Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7b503-102">How to: Display Error Icons for Form Validation with the Windows Forms ErrorProvider Component</span></span>
-<span data-ttu-id="7b503-103">Vous pouvez utiliser un formulaire Windows <xref:System.Windows.Forms.ErrorProvider> composant pour afficher une icône d’erreur lorsque l’utilisateur entre des données non valides.</span><span class="sxs-lookup"><span data-stu-id="7b503-103">You can use a Windows Forms <xref:System.Windows.Forms.ErrorProvider> component to display an error icon when the user enters invalid data.</span></span> <span data-ttu-id="7b503-104">Vous devez disposer d’au moins deux contrôles du formulaire afin d’onglet entre eux et ainsi appeler le code de validation.</span><span class="sxs-lookup"><span data-stu-id="7b503-104">You must have at least two controls on the form in order to tab between them and thereby invoke the validation code.</span></span>  
+# <a name="how-to-display-error-icons-for-form-validation-with-the-windows-forms-errorprovider-component"></a><span data-ttu-id="f5135-102">Comment : afficher des icônes d'erreur pour la validation de formulaire à l'aide du composant ErrorProvider Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f5135-102">How to: Display Error Icons for Form Validation with the Windows Forms ErrorProvider Component</span></span>
+<span data-ttu-id="f5135-103">Vous pouvez utiliser un composant Windows Forms <xref:System.Windows.Forms.ErrorProvider> pour afficher une icône d’erreur lorsque l’utilisateur entre des données non valides.</span><span class="sxs-lookup"><span data-stu-id="f5135-103">You can use a Windows Forms <xref:System.Windows.Forms.ErrorProvider> component to display an error icon when the user enters invalid data.</span></span> <span data-ttu-id="f5135-104">Vous devez disposer d’au moins deux contrôles sur le formulaire pour pouvoir les faire passer de l’un à l’autre et, par conséquent, appeler le code de validation.</span><span class="sxs-lookup"><span data-stu-id="f5135-104">You must have at least two controls on the form in order to tab between them and thereby invoke the validation code.</span></span>  
   
-### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a><span data-ttu-id="7b503-105">Pour afficher une icône d’erreur lors de la valeur d’un contrôle n’est pas valide</span><span class="sxs-lookup"><span data-stu-id="7b503-105">To display an error icon when a control's value is invalid</span></span>  
+### <a name="to-display-an-error-icon-when-a-controls-value-is-invalid"></a><span data-ttu-id="f5135-105">Pour afficher une icône d’erreur quand la valeur d’un contrôle n’est pas valide</span><span class="sxs-lookup"><span data-stu-id="f5135-105">To display an error icon when a control's value is invalid</span></span>  
   
-1. <span data-ttu-id="7b503-106">Ajoutez deux contrôles, par exemple, les zones de texte, à un formulaire Windows.</span><span class="sxs-lookup"><span data-stu-id="7b503-106">Add two controls — for example, text boxes — to a Windows Form.</span></span>  
+1. <span data-ttu-id="f5135-106">Ajoutez deux contrôles, par exemple des zones de texte, à un Windows Form.</span><span class="sxs-lookup"><span data-stu-id="f5135-106">Add two controls — for example, text boxes — to a Windows Form.</span></span>  
   
-2. <span data-ttu-id="7b503-107">Ajouter un <xref:System.Windows.Forms.ErrorProvider> composant au formulaire.</span><span class="sxs-lookup"><span data-stu-id="7b503-107">Add an <xref:System.Windows.Forms.ErrorProvider> component to the form.</span></span>  
+2. <span data-ttu-id="f5135-107">Ajoutez un composant <xref:System.Windows.Forms.ErrorProvider> au formulaire.</span><span class="sxs-lookup"><span data-stu-id="f5135-107">Add an <xref:System.Windows.Forms.ErrorProvider> component to the form.</span></span>  
   
-3. <span data-ttu-id="7b503-108">Sélectionnez le premier contrôle et ajoutez du code à son <xref:System.Windows.Forms.Control.Validating> Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="7b503-108">Select the first control and add code to its <xref:System.Windows.Forms.Control.Validating> event handler.</span></span> <span data-ttu-id="7b503-109">Dans l’ordre pour que ce code s’exécute correctement, la procédure doit être connectée à l’événement.</span><span class="sxs-lookup"><span data-stu-id="7b503-109">In order for this code to run properly, the procedure must be connected to the event.</span></span> <span data-ttu-id="7b503-110">Pour plus d'informations, voir [Procédure : Créer des gestionnaires d’événements en cours d’exécution pour les Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="7b503-110">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
+3. <span data-ttu-id="f5135-108">Sélectionnez le premier contrôle et ajoutez du code à son gestionnaire d’événements <xref:System.Windows.Forms.Control.Validating>.</span><span class="sxs-lookup"><span data-stu-id="f5135-108">Select the first control and add code to its <xref:System.Windows.Forms.Control.Validating> event handler.</span></span> <span data-ttu-id="f5135-109">Pour que ce code s’exécute correctement, la procédure doit être connectée à l’événement.</span><span class="sxs-lookup"><span data-stu-id="f5135-109">In order for this code to run properly, the procedure must be connected to the event.</span></span> <span data-ttu-id="f5135-110">Pour plus d’informations, consultez [Comment : créer des gestionnaires d’événements au moment de l’exécution pour Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span><span class="sxs-lookup"><span data-stu-id="f5135-110">For more information, see [How to: Create Event Handlers at Run Time for Windows Forms](../how-to-create-event-handlers-at-run-time-for-windows-forms.md).</span></span>  
   
-     <span data-ttu-id="7b503-111">Le code suivant teste la validité des données entrées par l’utilisateur ; Si les données ne sont pas valides, le <xref:System.Windows.Forms.ErrorProvider.SetError%2A> méthode est appelée.</span><span class="sxs-lookup"><span data-stu-id="7b503-111">The following code tests the validity of the data the user has entered; if the data is invalid, the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method is called.</span></span> <span data-ttu-id="7b503-112">Le premier argument de la <xref:System.Windows.Forms.ErrorProvider.SetError%2A> méthode spécifie le contrôle à afficher à côté de l’icône.</span><span class="sxs-lookup"><span data-stu-id="7b503-112">The first argument of the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method specifies which control to display the icon next to.</span></span> <span data-ttu-id="7b503-113">Le deuxième argument est le texte d’erreur à afficher.</span><span class="sxs-lookup"><span data-stu-id="7b503-113">The second argument is the error text to display.</span></span>  
+     <span data-ttu-id="f5135-111">Le code suivant teste la validité des données que l’utilisateur a entrées ; Si les données ne sont pas valides, la méthode <xref:System.Windows.Forms.ErrorProvider.SetError%2A> est appelée.</span><span class="sxs-lookup"><span data-stu-id="f5135-111">The following code tests the validity of the data the user has entered; if the data is invalid, the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method is called.</span></span> <span data-ttu-id="f5135-112">Le premier argument de la méthode <xref:System.Windows.Forms.ErrorProvider.SetError%2A> spécifie le contrôle qui doit afficher l’icône à côté de.</span><span class="sxs-lookup"><span data-stu-id="f5135-112">The first argument of the <xref:System.Windows.Forms.ErrorProvider.SetError%2A> method specifies which control to display the icon next to.</span></span> <span data-ttu-id="f5135-113">Le deuxième argument est le texte d’erreur à afficher.</span><span class="sxs-lookup"><span data-stu-id="f5135-113">The second argument is the error text to display.</span></span>  
   
     ```vb  
     Private Sub TextBox1_Validating(ByVal Sender As Object, _  
@@ -77,7 +77,7 @@ ms.locfileid: "66053713"
        }  
     ```  
   
-     <span data-ttu-id="7b503-114">(Visual C#, Visual C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="7b503-114">(Visual C#, Visual C++) Place the following code in the form's constructor to register the event handler.</span></span>  
+     <span data-ttu-id="f5135-114">(Visuel C#, visuel C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.</span><span class="sxs-lookup"><span data-stu-id="f5135-114">(Visual C#, Visual C++) Place the following code in the form's constructor to register the event handler.</span></span>  
   
     ```csharp  
     this.textBox1.Validating += new  
@@ -90,10 +90,10 @@ ms.locfileid: "66053713"
        (this, &Form1::textBox1_Validating);  
     ```  
   
-4. <span data-ttu-id="7b503-115">Exécuter le projet.</span><span class="sxs-lookup"><span data-stu-id="7b503-115">Run the project.</span></span> <span data-ttu-id="7b503-116">Tapez les données non valides (dans cet exemple, non numérique) dans le premier contrôle, puis onglet à la seconde.</span><span class="sxs-lookup"><span data-stu-id="7b503-116">Type invalid (in this example, non-numeric) data into the first control, and then tab to the second.</span></span> <span data-ttu-id="7b503-117">Lorsque l’icône d’erreur s’affiche, placez le pointeur de la souris pour afficher le texte d’erreur.</span><span class="sxs-lookup"><span data-stu-id="7b503-117">When the error icon is displayed, point at it with the mouse pointer to see the error text.</span></span>  
+4. <span data-ttu-id="f5135-115">Exécuter le projet.</span><span class="sxs-lookup"><span data-stu-id="f5135-115">Run the project.</span></span> <span data-ttu-id="f5135-116">Tapez des données non valides (dans cet exemple, non numériques) dans le premier contrôle, puis appuyez sur la touche Tab pour la deuxième.</span><span class="sxs-lookup"><span data-stu-id="f5135-116">Type invalid (in this example, non-numeric) data into the first control, and then tab to the second.</span></span> <span data-ttu-id="f5135-117">Lorsque l’icône d’erreur s’affiche, pointez dessus à l’aide du pointeur de la souris pour afficher le texte de l’erreur.</span><span class="sxs-lookup"><span data-stu-id="f5135-117">When the error icon is displayed, point at it with the mouse pointer to see the error text.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="7b503-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="7b503-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="f5135-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="f5135-118">See also</span></span>
 
 - <xref:System.Windows.Forms.ErrorProvider.SetError%2A>
-- [<span data-ttu-id="7b503-119">Vue d’ensemble du composant ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="7b503-119">ErrorProvider Component Overview</span></span>](errorprovider-component-overview-windows-forms.md)
-- [<span data-ttu-id="7b503-120">Guide pratique pour Afficher les erreurs au sein d’un jeu de données avec l’aide du composant ErrorProvider Windows Forms</span><span class="sxs-lookup"><span data-stu-id="7b503-120">How to: View Errors Within a DataSet with the Windows Forms ErrorProvider Component</span></span>](view-errors-within-a-dataset-with-wf-errorprovider-component.md)
+- [<span data-ttu-id="f5135-119">Vue d’ensemble du composant ErrorProvider</span><span class="sxs-lookup"><span data-stu-id="f5135-119">ErrorProvider Component Overview</span></span>](errorprovider-component-overview-windows-forms.md)
+- [<span data-ttu-id="f5135-120">Guide pratique pour afficher des erreurs d'un groupe de données à l'aide du composant ErrorProvider Windows Forms</span><span class="sxs-lookup"><span data-stu-id="f5135-120">How to: View Errors Within a DataSet with the Windows Forms ErrorProvider Component</span></span>](view-errors-within-a-dataset-with-wf-errorprovider-component.md)
