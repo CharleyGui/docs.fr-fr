@@ -1,5 +1,5 @@
 ---
-title: ListView, contrôle (Windows Forms)
+title: Contrôle ListView
 ms.date: 03/30/2017
 helpviewer_keywords:
 - lists
@@ -11,12 +11,12 @@ helpviewer_keywords:
 - ListView control [Windows Forms]
 - list controls [Windows Forms], List view
 ms.assetid: 9f71cf5c-82da-488a-a04e-ef52c0817187
-ms.openlocfilehash: a5f20ec34a1b4b41ec1aee667b5d4bfb0c3eebb1
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 009739f78f334d09a9f7e4f0e9f171669014b909
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960359"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745146"
 ---
 # <a name="listview-control-windows-forms"></a>ListView, contrôle (Windows Forms)
 Le contrôle `ListView` Windows Forms affiche une liste d'éléments avec des icônes. Vous pouvez utiliser un affichage de liste pour créer une interface utilisateur comme le volet droit de l'Explorateur Windows.  
@@ -66,7 +66,7 @@ Le contrôle `ListView` Windows Forms affiche une liste d'éléments avec des ic
  Classe <xref:System.Windows.Forms.ListView>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Sections connexes  
+## <a name="related-sections"></a>Rubriques connexes  
  [Guide pratique pour ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)  
  Décrit comment hériter d’un élément dans un affichage de liste ou d’un nœud dans une arborescence pour ajouter des champs, des méthodes ou des constructeurs dont vous avez besoin.  
   

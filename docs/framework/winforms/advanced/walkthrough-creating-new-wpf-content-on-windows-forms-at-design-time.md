@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : création de contenu WPF sur les Windows Forms au moment du design'
+title: Créer un contenu WPF sur Windows Forms
+titleSuffix: ''
 ms.date: 08/18/2018
 helpviewer_keywords:
 - interoperability [Windows Forms], WPF and Windows Forms
@@ -11,18 +12,18 @@ ms.assetid: 2e92d8e8-f0e4-4df7-9f07-2acf35cd798c
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 395543a3141af66038cabef9a3c9fed40a36b47e
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 69a0598b05d1b2bff84b203317d6d5a166ce109d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460653"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746390"
 ---
 # <a name="walkthrough-create-new-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : création d’un contenu WPF sur Windows Forms au moment du design
 
 Cet article vous montre comment créer un contrôle Windows Presentation Foundation (WPF) à utiliser dans vos applications basées sur Windows Forms.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -65,7 +66,7 @@ Pour créer un contrôle WPF :
    > [!NOTE]
    > En général, vous devez héberger du contenu WPF plus sophistiqué. Le contrôle <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> est utilisé ici uniquement à titre d'illustration.
 
-6. Générez le projet.
+6. créer le projet ;
 
 ## <a name="add-a-wpf-control-to-a-windows-form"></a>Ajouter un contrôle WPF à un Windows Form
 
@@ -91,7 +92,7 @@ Pour ajouter un contrôle WPF à un Windows Form :
 
 5. Appuyez sur **F5** pour générer et exécuter l’application.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Windows Forms et WPF sont des technologies différentes, mais elles sont conçues pour interagir étroitement. Pour fournir une apparence et un comportement plus riches dans vos applications, essayez ce qui suit :
 

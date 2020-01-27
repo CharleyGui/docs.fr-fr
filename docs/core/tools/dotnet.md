@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet
-description: Découvrez la commande dotnet (le pilote générique des outils .NET Core CLI) et comment l’utiliser.
+description: En savoir plus sur la commande dotnet (le pilote générique des outils .NET Core CLI) et sur son utilisation.
 ms.date: 06/04/2018
-ms.openlocfilehash: a22340c26ca2e483e43857e2ecb31f2ab53b60f4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: fe90968560b58471c279fcd2097741ea476cef0b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117506"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734065"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -67,7 +67,7 @@ Chemin d’accès contenant la stratégie de sondage et les assemblys à sonder.
 
 Chemin d’un fichier *deps.json*.
 
-Un fichier *deps.json* contient une liste de dépendances, des dépendances de compilation et des informations de version utilisées pour tenter de résoudre les conflits d’assemblys. Pour plus d’informations sur ce fichier, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
+Un fichier *DEPS. JSON* contient une liste de dépendances, de dépendances de compilation et d’informations de version utilisées pour traiter les conflits d’assembly. Pour plus d’informations sur ce fichier, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
 
 `-d|--diagnostics`
 
@@ -107,7 +107,7 @@ Définit le comportement quand le framework partagé requis n’est pas disponib
 
 Chemin d’un fichier *runtimeconfig.json*.
 
-Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md) sur GitHub.
+Un fichier *runtimeconfig. JSON* est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
@@ -157,7 +157,7 @@ Affiche des informations détaillées sur une installation .NET Core et l’envi
 
 Chemin d’un fichier *runtimeconfig.json*.
 
-Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+Un fichier *runtimeconfig. JSON* est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
@@ -199,7 +199,7 @@ Affiche des informations détaillées sur une installation .NET Core et l’envi
 
 Chemin d’un fichier *runtimeconfig.json*.
 
-Un fichier *runtimeconfig.json* est un fichier de configuration contenant des paramètres de configuration de runtime. Pour plus d’informations, consultez [Runtime Configuration Files sur GitHub](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md).
+Un fichier *runtimeconfig. JSON* est un fichier de configuration qui contient des paramètres d’exécution. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 `-v|--verbosity <LEVEL>`
 
@@ -217,7 +217,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
-| Commande                                       | Fonction                                                            |
+| Command                                       | Fonction                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)               | Génère une application .NET Core.                                     |
 | [dotnet build-server](dotnet-build-server.md) | Interagit avec les serveurs démarrés par une build.                          |
@@ -236,7 +236,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 # <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
 
-| Commande                             | Fonction                                                            |
+| Command                             | Fonction                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)     | Génère une application .NET Core.                                     |
 | [dotnet clean](dotnet-clean.md)     | Nettoie les sorties de build.                                              |
@@ -254,7 +254,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-| Commande                             | Fonction                                                            |
+| Command                             | Fonction                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)     | Génère une application .NET Core.                                     |
 | [dotnet clean](dotnet-clean.md)     | Nettoie les sorties de build.                                              |
@@ -272,7 +272,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 ### <a name="project-references"></a>Références de projets
 
-Commande | Fonction
+Command | Fonction
 --- | ---
 [dotnet add reference](dotnet-add-reference.md) | Ajoute une référence au projet.
 [dotnet list reference](dotnet-list-reference.md) | Liste les références du projet.
@@ -280,14 +280,14 @@ Commande | Fonction
 
 ### <a name="nuget-packages"></a>Packages NuGet
 
-Commande | Fonction
+Command | Fonction
 --- | ---
 [dotnet add package](dotnet-add-package.md) | Ajoute un package NuGet.
 [dotnet remove package](dotnet-remove-package.md) | Supprime un package NuGet.
 
 ### <a name="nuget-commands"></a>Commandes NuGet
 
-Commande | Fonction
+Command | Fonction
 --- | ---
 [dotnet nuget delete](dotnet-nuget-delete.md) | Supprime ou retire un package du serveur.
 [dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
@@ -297,7 +297,7 @@ Commande | Fonction
 
 Les [outils globaux .NET Core](global-tools.md) sont disponibles à partir de .NET Core SDK 2.1.300 :
 
-Commande | Fonction
+Command | Fonction
 --- | ---
 [dotnet tool install](dotnet-tool-install.md) | Installe un outil global sur votre ordinateur.
 [dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux actuellement installés dans le répertoire par défaut de votre machine ou à l’emplacement du chemin spécifié.
@@ -338,7 +338,7 @@ Exécutez une DLL d’application, par exemple `myapp.dll` :
 
 `dotnet myapp.dll`
 
-## <a name="environment-variables"></a>Variables d’environnement
+## <a name="environment-variables"></a>Variables d'environnement
 
 # <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
 
@@ -399,3 +399,4 @@ Spécifie si les données concernant l’utilisation des outils .NET Core doiven
 ## <a name="see-also"></a>Voir aussi
 
 - [Runtime Configuration Files](https://github.com/dotnet/cli/blob/master/Documentation/specs/runtime-configuration-file.md)
+- [Paramètres de configuration du Runtime .NET Core](../run-time-config/index.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : activer les opérations glisser-déplacer avec le contrôle RichTextBox Windows Forms'
+title: Activer les opérations de glisser-déplacer avec le contrôle RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,14 +11,14 @@ helpviewer_keywords:
 - text boxes [Windows Forms], drag-and-drop operations
 - RichTextBox control [Windows Forms], drag-and-drop operations
 ms.assetid: ca167d1c-2014-4cf0-96a0-20598470be3b
-ms.openlocfilehash: d1b8f3e1d0ef7d0f83db4a742ab76a05e42f761b
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 3c17560dee012912aea2938654f1dc4dc56e0725
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053676"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745823"
 ---
-# <a name="how-to-enable-drag-and-drop-operations-with-the-windows-forms-richtextbox-control"></a>Procédure : activer les opérations glisser-déplacer avec le contrôle RichTextBox Windows Forms
+# <a name="how-to-enable-drag-and-drop-operations-with-the-windows-forms-richtextbox-control"></a>Comment : activer les opérations glisser-déplacer avec le contrôle RichTextBox Windows Forms
 Les opérations glisser-déplacer avec le contrôle Windows Forms <xref:System.Windows.Forms.RichTextBox> s’effectuent en gérant les événements <xref:System.Windows.Forms.RichTextBox.DragEnter> et <xref:System.Windows.Forms.RichTextBox.DragDrop> . De ce fait, ces opérations sont extrêmement simples avec le contrôle <xref:System.Windows.Forms.RichTextBox> .  
   
 ### <a name="to-enable-drag-operations-in-a-richtextbox-control"></a>Pour permettre les opérations glisser dans un contrôle RichTextBox  
@@ -62,7 +62,7 @@ Les opérations glisser-déplacer avec le contrôle Windows Forms <xref:System.W
        }  
     ```  
   
-     (Visual C# et Visual C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
+     (Visuel C# et visuel C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.  
   
     ```csharp  
     this.richTextBox1.DragEnter += new  
@@ -138,7 +138,7 @@ Les opérations glisser-déplacer avec le contrôle Windows Forms <xref:System.W
        }  
     ```  
   
-     (Visual C# et Visual C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
+     (Visuel C# et visuel C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.  
   
     ```csharp  
     this.richTextBox1.DragDrop += new  
@@ -167,6 +167,6 @@ Les opérations glisser-déplacer avec le contrôle Windows Forms <xref:System.W
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.RichTextBox>
-- [Guide pratique pour Effectuer des opérations de glisser-déplacer entre les Applications](../advanced/how-to-perform-drag-and-drop-operations-between-applications.md)
+- [Guide pratique pour exécuter des opérations de glisser-déposer entre des applications](../advanced/how-to-perform-drag-and-drop-operations-between-applications.md)
 - [RichTextBox, contrôle](richtextbox-control-windows-forms.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)

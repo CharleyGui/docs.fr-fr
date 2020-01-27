@@ -1,5 +1,6 @@
 ---
-title: 'Procédure : afficher l’aperçu avant impression dans des applications Windows Forms'
+title: Afficher l’aperçu avant impression dans les applications Windows Forms
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,30 +11,30 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview
 - examples [Windows Forms], print preview
 ms.assetid: e394134c-0886-4517-bd8d-edc4a3749eb5
-ms.openlocfilehash: 8252906de9a574f49617609a4cb08a1e8aa6a992
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ac02339ad86e491cd047dcd4b0c8841374b3bb2e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929009"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745570"
 ---
-# <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Procédure : afficher l’aperçu avant impression dans des applications Windows Forms
-Vous pouvez utiliser le <xref:System.Windows.Forms.PrintPreviewDialog> contrôle pour permettre aux utilisateurs d’afficher un document, souvent avant qu’il ne soit imprimé.  
+# <a name="how-to-display-print-preview-in-windows-forms-applications"></a>Comment : afficher l'aperçu avant impression dans les applications Windows Forms
+Vous pouvez utiliser le contrôle <xref:System.Windows.Forms.PrintPreviewDialog> pour permettre aux utilisateurs d’afficher un document, souvent avant qu’il ne soit imprimé.  
   
- Pour ce faire, vous devez spécifier une instance de la <xref:System.Drawing.Printing.PrintDocument> classe; il s’agit du document à imprimer. Pour plus d’informations sur l’utilisation de l' <xref:System.Drawing.Printing.PrintDocument> aperçu avant impression [avec le composant, consultez Procédure: Imprimer en Windows Forms à l’aide](../advanced/how-to-print-in-windows-forms-using-print-preview.md)de l’aperçu avant impression.  
+ Pour ce faire, vous devez spécifier une instance de la classe <xref:System.Drawing.Printing.PrintDocument> ; Il s’agit du document à imprimer. Pour plus d’informations sur l’utilisation de l’aperçu avant impression avec le composant <xref:System.Drawing.Printing.PrintDocument>, consultez [Comment : imprimer dans Windows Forms à l’aide de l’aperçu avant impression](../advanced/how-to-print-in-windows-forms-using-print-preview.md).  
   
 > [!NOTE]
-> Pour utiliser le <xref:System.Windows.Forms.PrintPreviewDialog> contrôle au moment de l’exécution, les utilisateurs doivent disposer d’une imprimante installée sur leur ordinateur, localement ou via un réseau, car il s' <xref:System.Windows.Forms.PrintPreviewDialog> agit en fait de la façon dont le composant détermine la façon dont un document doit être imprimé.  
+> Pour utiliser le contrôle <xref:System.Windows.Forms.PrintPreviewDialog> au moment de l’exécution, les utilisateurs doivent disposer d’une imprimante installée sur leur ordinateur, localement ou par le biais d’un réseau, car il s’agit en partie de la façon dont le composant <xref:System.Windows.Forms.PrintPreviewDialog> détermine la façon dont un document doit être imprimé.  
   
- Le <xref:System.Windows.Forms.PrintPreviewDialog> contrôle utilise la <xref:System.Drawing.Printing.PrinterSettings> classe. En outre, le <xref:System.Windows.Forms.PrintPreviewDialog> contrôle utilise la <xref:System.Drawing.Printing.PageSettings> classe, tout comme le <xref:System.Windows.Forms.PrintPreviewDialog> fait le composant. Le document d’impression spécifié dans <xref:System.Windows.Forms.PrintPreviewDialog> la propriété <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> du contrôle fait référence <xref:System.Drawing.Printing.PrinterSettings> aux instances des classes <xref:System.Drawing.Printing.PageSettings> et, et celles-ci sont utilisées pour restituer le document dans la fenêtre d’aperçu.  
+ Le contrôle <xref:System.Windows.Forms.PrintPreviewDialog> utilise la classe <xref:System.Drawing.Printing.PrinterSettings>. En outre, le contrôle <xref:System.Windows.Forms.PrintPreviewDialog> utilise la classe <xref:System.Drawing.Printing.PageSettings>, tout comme le fait le composant <xref:System.Windows.Forms.PrintPreviewDialog>. Le document d’impression spécifié dans la propriété <xref:System.Windows.Forms.PrintPreviewControl.Document%2A> du contrôle <xref:System.Windows.Forms.PrintPreviewDialog> fait référence aux instances des classes <xref:System.Drawing.Printing.PrinterSettings> et <xref:System.Drawing.Printing.PageSettings>, et celles-ci sont utilisées pour afficher le document dans la fenêtre d’aperçu.  
   
 ### <a name="to-view-pages-using-the-printpreviewdialog-control"></a>Pour afficher les pages à l’aide du contrôle PrintPreviewDialog  
   
 - Utilisez la méthode <xref:System.Windows.Forms.CommonDialog.ShowDialog%2A> pour afficher la boîte de dialogue, en spécifiant le <xref:System.Drawing.Printing.PrintDocument> à utiliser.  
   
-     Dans l’exemple de code suivant, <xref:System.Windows.Forms.Button> le gestionnaire <xref:System.Windows.Forms.Control.Click> d’événements du contrôle <xref:System.Windows.Forms.PrintPreviewDialog> ouvre une instance du contrôle. Le document d’impression est spécifié dans <xref:System.Windows.Forms.PrintDialog.Document%2A> la propriété. Dans l’exemple ci-dessous, aucun document d’impression n’est spécifié.  
+     Dans l’exemple de code suivant, le gestionnaire d’événements <xref:System.Windows.Forms.Control.Click> du contrôle <xref:System.Windows.Forms.Button> ouvre une instance du contrôle <xref:System.Windows.Forms.PrintPreviewDialog>. Le document d’impression est spécifié dans la propriété <xref:System.Windows.Forms.PrintDialog.Document%2A>. Dans l’exemple ci-dessous, aucun document d’impression n’est spécifié.  
   
-     L’exemple requiert que votre formulaire ait un <xref:System.Windows.Forms.Button> contrôle, un <xref:System.Drawing.Printing.PrintDocument> composant nommé `myDocument`et un <xref:System.Windows.Forms.PrintPreviewDialog> contrôle.  
+     L’exemple requiert que votre formulaire ait un contrôle <xref:System.Windows.Forms.Button>, un <xref:System.Drawing.Printing.PrintDocument> composant nommé `myDocument`et un contrôle <xref:System.Windows.Forms.PrintPreviewDialog>.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, _  

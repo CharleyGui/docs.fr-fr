@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir des attributs de police pour le contrôle RichTextBox Windows Forms'
+title: Définir les attributs de police du contrôle RichTextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,25 +14,25 @@ helpviewer_keywords:
 - text boxes [Windows Forms], formatting text
 - formatting [Windows Forms]
 ms.assetid: 2bc23ddb-0529-4489-a1a2-ad253cb43f9a
-ms.openlocfilehash: 4919e94c23b1a67680ea0f360304ee0f75c7f425
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: f27256c155223df576ee3c42e6bf65270c870b0f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963221"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744854"
 ---
-# <a name="how-to-set-font-attributes-for-the-windows-forms-richtextbox-control"></a>Procédure : définir des attributs de police pour le contrôle RichTextBox Windows Forms
-Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms possède de nombreuses options de mise en forme du texte qu’il affiche. Vous pouvez mettre les caractères sélectionnés en gras, soulignés ou en italiques à l' <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> aide de la propriété. Vous pouvez également utiliser cette propriété pour changer la taille et la police des caractères sélectionnés. La <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> propriété vous permet de modifier la couleur des caractères sélectionnés.  
+# <a name="how-to-set-font-attributes-for-the-windows-forms-richtextbox-control"></a>Guide pratique pour définir les attributs de police du contrôle RichTextBox Windows Forms
+Le contrôle Windows Forms <xref:System.Windows.Forms.RichTextBox> propose de nombreuses options de mise en forme du texte qu’il affiche. Vous pouvez mettre les caractères sélectionnés en gras, soulignés ou en italiques à l’aide de la propriété <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A>. Vous pouvez également utiliser cette propriété pour changer la taille et la police des caractères sélectionnés. La propriété <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> vous permet de modifier la couleur des caractères sélectionnés.  
   
 ### <a name="to-change-the-appearance-of-characters"></a>Pour changer l’apparence de caractères  
   
-1. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> à la propriété une police appropriée.  
+1. Affectez à la propriété <xref:System.Windows.Forms.RichTextBox.SelectionFont%2A> une police appropriée.  
   
-     Pour permettre aux utilisateurs de définir la famille de polices, la taille et la police d’une application, vous devez <xref:System.Windows.Forms.FontDialog> généralement utiliser le composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant FontDialog](fontdialog-component-overview-windows-forms.md).  
+     Pour permettre aux utilisateurs de définir la famille de polices, la taille et la police d’une application, vous devez généralement utiliser le composant <xref:System.Windows.Forms.FontDialog>. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant FontDialog](fontdialog-component-overview-windows-forms.md).  
   
-2. Affectez <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> à la propriété une couleur appropriée.  
+2. Définissez la propriété <xref:System.Windows.Forms.RichTextBox.SelectionColor%2A> sur une couleur appropriée.  
   
-     Pour permettre aux utilisateurs de définir la couleur dans une application, vous devez généralement utiliser <xref:System.Windows.Forms.ColorDialog> le composant. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant ColorDialog](colordialog-component-overview-windows-forms.md).  
+     Pour permettre aux utilisateurs de définir la couleur dans une application, vous devez généralement utiliser le composant <xref:System.Windows.Forms.ColorDialog>. Pour une vue d’ensemble, consultez [Vue d’ensemble du composant ColorDialog](colordialog-component-overview-windows-forms.md).  
   
     ```vb  
     RichTextBox1.SelectionFont = New Font("Tahoma", 12, FontStyle.Bold)  
@@ -51,7 +51,7 @@ Le contrôle <xref:System.Windows.Forms.RichTextBox> Windows Forms possède de n
     ```  
   
     > [!NOTE]
-    > Ces propriétés affectent uniquement le texte sélectionné ou, si aucun texte n’est sélectionné, le texte tapé à l’emplacement actif du point d’insertion. Pour plus d’informations sur la sélection de texte par <xref:System.Windows.Forms.TextBoxBase.Select%2A>programmation, consultez.  
+    > Ces propriétés affectent uniquement le texte sélectionné ou, si aucun texte n’est sélectionné, le texte tapé à l’emplacement actif du point d’insertion. Pour plus d’informations sur la sélection de texte par programmation, consultez <xref:System.Windows.Forms.TextBoxBase.Select%2A>.  
   
 ## <a name="see-also"></a>Voir aussi
 

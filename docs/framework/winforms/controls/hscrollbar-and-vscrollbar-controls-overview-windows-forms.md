@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble des contrôles HScrollBar et VScrollBar (Windows Forms)
+title: Vue d'ensemble des contrôles HScrollBar et VScrollBar
 ms.date: 03/30/2017
 f1_keywords:
 - HScrollBar
@@ -11,29 +11,29 @@ helpviewer_keywords:
 - ScrollBar control [Windows Forms], about ScrollBar control
 - scroll bars [Windows Forms], about scroll bars
 ms.assetid: 8b307679-1cae-41d8-99aa-3d1efd207cd6
-ms.openlocfilehash: d4a7912a5781fc583357affa728f7d81059b5cf9
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: abe0c8da9723f17cb80715454f6ab7297724a21f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61928570"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728159"
 ---
 # <a name="hscrollbar-and-vscrollbar-controls-overview-windows-forms"></a>Vue d'ensemble des contrôles HScrollBar et VScrollBar (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.ScrollBar> contrôles sont utilisés pour fournir une navigation facile dans une longue liste d’éléments ou d’une grande quantité d’informations en faisant défiler horizontalement ou verticalement dans une application ou un contrôle. Barres de défilement sont un élément courant de l’interface Windows, afin que la <xref:System.Windows.Forms.ScrollBar> contrôle est souvent utilisé avec les contrôles qui ne dérivent pas de la <xref:System.Windows.Forms.ScrollableControl> classe. De même, de nombreux développeurs choisissent d’incorporer le <xref:System.Windows.Forms.ScrollBar> contrôler lors de la création de leurs propres contrôles utilisateur.  
+Les contrôles de <xref:System.Windows.Forms.ScrollBar> Windows Forms sont utilisés pour faciliter la navigation dans une longue liste d’éléments ou une grande quantité d’informations en faisant défiler horizontalement ou verticalement l’application ou le contrôle. Les barres de défilement étant un élément courant de l’interface Windows, le contrôle <xref:System.Windows.Forms.ScrollBar> est souvent utilisé avec les contrôles qui ne dérivent pas de la classe <xref:System.Windows.Forms.ScrollableControl>. De même, de nombreux développeurs choisissent d’incorporer le contrôle de <xref:System.Windows.Forms.ScrollBar> lors de la création de leurs propres contrôles utilisateur.  
   
- Le <xref:System.Windows.Forms.HScrollBar> (horizontal) et <xref:System.Windows.Forms.VScrollBar> (verticales) contrôles fonctionnent indépendamment des autres contrôles et ont leur propre jeu d’événements, propriétés et méthodes. <xref:System.Windows.Forms.ScrollBar> contrôles ne sont pas les mêmes que les barres de défilement intégrées qui sont attachés à des zones de texte, zones de liste, zones de liste déroulante ou des formulaires MDI (le <xref:System.Windows.Forms.TextBox> contrôle a un <xref:System.Windows.Forms.TextBox.ScrollBars%2A> propriété pour afficher ou masquer les barres de défilement qui sont attachés au contrôle).  
+ Les contrôles <xref:System.Windows.Forms.HScrollBar> (horizontal) et <xref:System.Windows.Forms.VScrollBar> (vertical) fonctionnent indépendamment des autres contrôles et ont leur propre ensemble d’événements, de propriétés et de méthodes. les contrôles <xref:System.Windows.Forms.ScrollBar> ne sont pas les mêmes que les barres de défilement intégrées attachées à des zones de texte, des zones de liste, des zones de liste modifiable ou des formulaires MDI (le contrôle <xref:System.Windows.Forms.TextBox> a une propriété <xref:System.Windows.Forms.TextBox.ScrollBars%2A> pour afficher ou masquer les barres de défilement attachées au contrôle).  
   
- Le <xref:System.Windows.Forms.ScrollBar> contrôles utilisent la <xref:System.Windows.Forms.ScrollBar.Scroll> événement pour surveiller le mouvement de la case de défilement (parfois appelé curseur de défilement) le long de la barre de défilement. À l’aide de la <xref:System.Windows.Forms.ScrollBar.Scroll> événement fournit l’accès à la valeur de barre de défilement pendant qu’il est glissé.  
+ Les contrôles <xref:System.Windows.Forms.ScrollBar> utilisent l’événement <xref:System.Windows.Forms.ScrollBar.Scroll> pour surveiller le mouvement de la case de défilement (parfois appelée curseur de défilement) le long de la barre de défilement. L’utilisation de l’événement <xref:System.Windows.Forms.ScrollBar.Scroll> permet d’accéder à la valeur de la barre de défilement au fur et à mesure de son déplacement.  
   
 ## <a name="value-property"></a>Propriété Value  
- Le <xref:System.Windows.Forms.ScrollBar.Value%2A> propriété (c'est-à-dire, par défaut, 0) est un `integer` valeur correspondant à la position de la case de défilement dans la barre de défilement. Lorsque la position de la zone de défilement est à la valeur minimale, il déplace vers la position la plus à gauche (pour les barres de défilement horizontale) ou la position supérieure (pour les barres de défilement verticale). Lorsque la case de défilement est à la valeur maximale, le défilement se place à la plus à droite ou la position inférieure. De même, une valeur à mi-chemin entre le bas et haut de gamme place la pointe de la case de défilement au milieu de la barre de défilement.  
+ La propriété <xref:System.Windows.Forms.ScrollBar.Value%2A> (qui, par défaut, est 0) est une `integer` valeur correspondant à la position de la case de défilement dans la barre de défilement. Lorsque la position de la case de défilement est à la valeur minimale, elle passe à la position la plus à gauche (pour les barres de défilement horizontales) ou à la position supérieure (pour les barres de défilement verticales). Lorsque la case de défilement est à la valeur maximale, la case de défilement se déplace vers la position la plus à droite ou la plus basse. De même, une valeur à mi-chemin entre le bas et le haut de la plage place le bord de tête de la case de défilement au milieu de la barre de défilement.  
   
- Outre l’utilisation des clics de souris pour modifier la valeur de barre de défilement, un utilisateur peut également faire glisser la case de défilement à n’importe quel point le long de la barre. La valeur obtenue dépend de la position de la case de défilement, mais elle se trouve toujours dans la plage de la <xref:System.Windows.Forms.ScrollBar.Minimum%2A> à <xref:System.Windows.Forms.ScrollBar.Maximum%2A> propriétés définies par l’utilisateur.  
+ En plus d’utiliser des clics de souris pour modifier la valeur de la barre de défilement, un utilisateur peut également faire glisser la case de défilement jusqu’à n’importe quel point le long de la barre. La valeur résultante dépend de la position de la case de défilement, mais elle est toujours comprise dans la plage des <xref:System.Windows.Forms.ScrollBar.Minimum%2A> à <xref:System.Windows.Forms.ScrollBar.Maximum%2A> propriétés définies par l’utilisateur.  
   
 ## <a name="largechange-and-smallchange-properties"></a>Propriétés LargeChange et SmallChange  
- Lorsque l’utilisateur appuie sur la touche Pg préc ou Pg suiv ou clique dans le rail de barre de défilement de chaque côté de la case de défilement, le <xref:System.Windows.Forms.ScrollBar.Value%2A> des modifications de propriété en fonction de la valeur définie dans le <xref:System.Windows.Forms.ScrollBar.LargeChange%2A> propriété.  
+ Quand l’utilisateur appuie sur la touche PG. suiv ou PG. suiv. ou clique sur le rail de la barre de défilement de chaque côté de la case de défilement, la propriété <xref:System.Windows.Forms.ScrollBar.Value%2A> change en fonction de la valeur définie dans la propriété <xref:System.Windows.Forms.ScrollBar.LargeChange%2A>.  
   
- Lorsque l’utilisateur appuie sur l’une de la flèche de touches ou clique sur un des boutons de la barre de défilement, le <xref:System.Windows.Forms.ScrollBar.Value%2A> des modifications de propriété en fonction de la valeur définie dans le <xref:System.Windows.Forms.ScrollBar.SmallChange%2A> propriété.  
+ Quand l’utilisateur appuie sur l’une des touches de direction ou clique sur l’un des boutons de la barre de défilement, la propriété <xref:System.Windows.Forms.ScrollBar.Value%2A> change en fonction de la valeur définie dans la propriété <xref:System.Windows.Forms.ScrollBar.SmallChange%2A>.  
   
 ## <a name="see-also"></a>Voir aussi
 

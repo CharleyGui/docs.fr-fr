@@ -1,25 +1,25 @@
 ---
-title: Accessibilité des Windows Forms
+title: Accessibilité
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls, accessibility
 - accessibility [Windows Forms], Windows Forms controls
 ms.assetid: 23a3f168-ebc0-4f23-9efc-799109aa4a2d
-ms.openlocfilehash: 0a01a0456dfef6e89f0cf1b3608a07cb359d4497
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ab497976b67bea4418b92706c7d74a69fb33f58f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61748055"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746373"
 ---
 # <a name="windows-forms-accessibility"></a>Accessibilité des Windows Forms
 Les fonctionnalités d’accessibilité de Windows Forms vous permet de rendre votre application disponible pour un large éventail d’utilisateurs.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Procédure pas à pas : Création d’une Application Windows Accessible](walkthrough-creating-an-accessible-windows-based-application.md)  
+ [Procédure pas à pas : création d'une application Windows accessible](walkthrough-creating-an-accessible-windows-based-application.md)  
  Décrit toutes les fonctionnalités à prendre en charge pour une meilleure accessibilité.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:Accessibility>  
  Un espace de noms contenant plusieurs classes liées à l’accessibilité.  
   

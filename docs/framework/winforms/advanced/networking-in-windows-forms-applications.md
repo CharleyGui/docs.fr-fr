@@ -1,36 +1,36 @@
 ---
-title: Mise en réseau dans les applications Windows Forms
+title: Mise en réseau
 ms.date: 03/30/2017
 helpviewer_keywords:
 - networking [Windows Forms], Windows Forms
 - Windows Forms, networking
 ms.assetid: babf8af3-8000-46e2-8c68-a42127efabba
-ms.openlocfilehash: 2432fbd0a2c769efb126e4b9c1dc19e35fbe4c31
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a339792e716e9c23a0c178dc08410aa66988d7c6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61641500"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745009"
 ---
 # <a name="networking-in-windows-forms-applications"></a>Mise en réseau dans les applications Windows Forms
-Le .NET Framework fournit des classes pour afficher des pages Web, téléchargement de contenu Web, interagir avec les sites de protocole (FTP) de transfert de fichiers et utilisation de Services Web, ce qui vous permet d’intégrer des fonctionnalités de réseau dans votre application. Les ressources suivantes vous aideront à comprendre les technologies de mise en réseau de .NET Framework et comment vous pouvez les intégrer à Windows Forms.  
+Le .NET Framework fournit des classes permettant d’afficher des pages Web, de télécharger du contenu Web, d’interagir avec des sites FTP (File Transfer Protocol) et de consommer des services Web, ce qui facilite la création de fonctionnalités réseau dans votre application. Les ressources suivantes vous aideront à comprendre les technologies de mise en réseau de la .NET Framework et la manière dont vous pouvez les intégrer dans Windows Forms.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Net>  
- L’espace de noms racine pour les classes dans le .NET Framework gère la connectivité réseau.  
+ Espace de noms racine pour les classes du .NET Framework qui gèrent la connectivité réseau.  
   
  <xref:System.Net.WebClient>  
- Une classe pratique pour la récupération de contenu Web ou basée sur HTTP par programme.  
+ Classe pratique pour récupérer par programme le contenu Web ou HTTP.  
   
  <xref:System.Net.FtpWebRequest>  
- Une classe pour extraire et envoyer des fichiers avec FTP.  
+ Classe pour la récupération et l’envoi de fichiers avec FTP.  
   
  <xref:System.Windows.Forms.WebBrowser>  
- Une classe wrapper managé pour le `WebBrowser` contrôle qui est inclus avec Windows.  
+ Classe wrapper managée pour le contrôle `WebBrowser` inclus avec Windows.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
  [Programmation réseau dans le .NET Framework](../../network-programming/index.md)  
- Introduction à la mise en réseau dans le .NET Framework.  
+ Présentation de la mise en réseau dans le .NET Framework.  
   
  [Liaison de données Windows Forms](../windows-forms-data-binding.md)  
- Décrit comment afficher le contenu de la base de données dans votre application, à partir d’une banque de données locale ou une base de données située sur un réseau.
+ Décrit comment afficher le contenu d’une base de données dans votre application, soit à partir d’une banque de données locale, soit à partir d’une base de données située sur un réseau.

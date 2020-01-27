@@ -1,5 +1,5 @@
 ---
-title: Prise en charge bidirectionnelle pour les applications Windows Forms
+title: Support bidirectionnel
 ms.date: 09/30/2017
 helpviewer_keywords:
 - globalization [Windows Forms], bi-directional support in Windows
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - localization [Windows Forms], bi-directional support in Windows
 - bi-directional language support [Windows Forms], Windows applications
 - Windows Forms, bi-directional support
-ms.openlocfilehash: 0b99dcdb9549a2319efe8a78eb4bca33f40f2cb0
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 8b2e842fc08be78b74cede85927352fafca7bc8f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197494"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742080"
 ---
 # <a name="bi-directional-support-for-windows-forms-applications"></a>Prise en charge bidirectionnelle pour les applications Windows Forms
 Vous pouvez utiliser Visual Studio pour créer des applications Windows qui prennent en charge les langues bidirectionnelles (de droite à gauche), telles que l’arabe et l’hébreu. Cela comprend les formulaires standard, les boîtes de dialogue, les formulaires MDI et tous les contrôles que vous pouvez utiliser dans ces formulaires, c'est-à-dire tous les objets de l'espace de noms <xref:System.Windows.Forms.Control>.
@@ -76,7 +76,7 @@ Vous pouvez utiliser Visual Studio pour créer des applications Windows qui pren
 |<xref:System.Windows.Forms.UserControl>|La barre de défilement verticale est affichée à gauche ; la barre de défilement horizontale possède un curseur à droite|Aucune prise en charge directe ; utilisez un <xref:System.Windows.Forms.TableLayoutPanel>|Non|
 |<xref:System.Windows.Forms.VScrollBar>|Affiché sur le côté gauche plutôt que sur le côté droit des contrôles à défilement|Aucun effet|Non|
 
-## <a name="encoding"></a>Encodage
+## <a name="encoding"></a>Encoding
  Les Windows Forms prennent en charge Unicode. Vous pouvez donc inclure n'importe quel jeu de caractères quand vous créez des applications bidirectionnelles. Toutefois, les contrôles Windows Forms ne prennent pas tous en charge Unicode sur toutes les plateformes.
 
 ## <a name="gdi"></a>GDI+

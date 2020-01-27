@@ -1,5 +1,6 @@
 ---
-title: 'Didacticiel : créer votre première application WPF dans Visual Studio 2019-.NET Framework'
+title: Créer votre première application WPF dans Visual Studio 2019-.NET Framework
+titleSuffix: ''
 ms.date: 09/06/2019
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
 author: mairaw
 ms.author: mairaw
-ms.openlocfilehash: 7b5f74448ffce448740937c06a476a29c8659879
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 232605850c65aebd9aafdc9b76c90af42f2c901c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75336809"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746978"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Didacticiel : créer votre première application WPF dans Visual Studio 2019
 
@@ -41,7 +42,7 @@ Dans ce didacticiel, vous apprendrez à :
 >
 > Vous pouvez basculer le langage de code de l’exemple de C# code entre et Visual Basic à l’aide du sélecteur de langue en haut de cette page.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement .net Desktop** installée.
 
@@ -83,7 +84,7 @@ La première étape consiste à créer l’infrastructure d’application, qui c
 
     [!code-xaml[ExpenseIt#1](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt/App.xaml#1)]
 
-3. Ouvrez *MainWindow.xaml*.
+3. Ouvrez *MainWindow. Xaml*.
 
     Ce fichier XAML est la fenêtre principale de votre application et affiche le contenu créé dans les pages. La classe <xref:System.Windows.Window> définit les propriétés d’une fenêtre, telles que son titre, sa taille ou son icône, et gère les événements, tels que la fermeture ou le masquage.
 
@@ -151,7 +152,7 @@ Dans cette section, vous allez ajouter deux pages et une image à l’applicatio
 
     [!code-xaml[ExpenseIt#6](~/samples/snippets/csharp/VS_Snippets_Wpf/ExpenseIt/CSharp/ExpenseIt2/ExpenseItHome.xaml#6)]
 
-1. Ouvrez *MainWindow.xaml*.
+1. Ouvrez *MainWindow. Xaml*.
 
 1. Ajoutez une propriété <xref:System.Windows.Navigation.NavigationWindow.Source%2A> à l’élément <xref:System.Windows.Navigation.NavigationWindow> et affectez-lui la valeur «`ExpenseItHome.xaml`».
 

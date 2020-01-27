@@ -1,5 +1,5 @@
 ---
-title: ContextMenu, composant (Windows Forms)
+title: ContextMenu, composant
 ms.date: 03/30/2017
 helpviewer_keywords:
 - menus [Windows Forms], shortcut menus
@@ -10,27 +10,27 @@ helpviewer_keywords:
 - context menus [Windows Forms], for Windows Forms
 - shortcut menus [Windows Forms], ContextMenu component
 ms.assetid: 9b93ccbc-c0fe-44a2-968e-faac25971831
-ms.openlocfilehash: 760a800e7e7fe0ef13a333525aa45088bea736d3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 859a2c3c95691adadf1feadfc138b8c8ea692928
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69962173"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746171"
 ---
 # <a name="contextmenu-component-windows-forms"></a>ContextMenu, composant (Windows Forms)
 > [!NOTE]
-> Bien `MenuStrip` que `ContextMenuStrip` et remplacent et ajoutent des <xref:System.Windows.Forms.ContextMenu> fonctionnalités aux contrôles et des <xref:System.Windows.Forms.MainMenu> versions <xref:System.Windows.Forms.ContextMenu> antérieures, et sont conservés pour la <xref:System.Windows.Forms.MainMenu> compatibilité descendante et l’utilisation future si tel est votre choix.  
+> Bien que `MenuStrip` et `ContextMenuStrip` remplacent et ajoutent des fonctionnalités aux contrôles <xref:System.Windows.Forms.MainMenu> et <xref:System.Windows.Forms.ContextMenu> des versions précédentes, <xref:System.Windows.Forms.MainMenu> et les <xref:System.Windows.Forms.ContextMenu> sont conservés pour la compatibilité descendante et l’utilisation future si vous le souhaitez.  
   
  Le composant `ContextMenu` Windows Forms est utilisé pour fournir aux utilisateurs un menu contextuel facilement accessible des commandes fréquemment utilisées qui sont associées à l’objet sélectionné. Les éléments d’un menu contextuel sont souvent un sous-ensemble des éléments des menus principaux qui apparaissent ailleurs dans l’application. Les menus contextuels sont généralement disponibles en cliquant avec le bouton droit de la souris. Sur Windows Forms elles sont associées à d’autres contrôles.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble du composant ContextMenu](contextmenu-component-overview-windows-forms.md)  
- Présente les concepts généraux du `ContextMenu` composant, qui permet aux utilisateurs de créer des menus de commandes fréquemment utilisées associées à un objet sélectionné.  
+ Présente les concepts généraux du composant `ContextMenu`, qui permet aux utilisateurs de créer des menus de commandes fréquemment utilisées associées à un objet sélectionné.  
   
- [Guide pratique : Ajouter et supprimer des éléments de menu avec le composant Windows Forms ContextMenu](add-and-remove-menu-items-with-wf-contextmenu-component.md)  
+ [Guide pratique pour ajouter et supprimer des éléments de menu avec le composant ContextMenu Windows Forms](add-and-remove-menu-items-with-wf-contextmenu-component.md)  
  Explique comment ajouter et supprimer des éléments de menu contextuel dans Windows Forms.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.ContextMenu>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.ContextMenu> et ses membres.  
   

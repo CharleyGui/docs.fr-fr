@@ -1,20 +1,20 @@
 ---
-title: Splitter, contrôle (Windows Forms)
+title: Splitter, contrôle
 ms.date: 03/30/2017
 helpviewer_keywords:
 - multiple views
 - Splitter control [Windows Forms]
 - views [Windows Forms], multiple per frame
 ms.assetid: 6f287407-e895-4b07-a46a-a5bff8388d46
-ms.openlocfilehash: ac4ba64bc4bbec94171cee73625d18330728b66d
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 42c28d8dd53c29be5ac149da44adc0a9482fd60d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69964451"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742880"
 ---
 # <a name="splitter-control-windows-forms"></a>Splitter, contrôle (Windows Forms)
-Les `Splitter` contrôles Windows Forms sont utilisés pour redimensionner les contrôles ancrés au moment de l’exécution. Le `Splitter` contrôle est souvent utilisé sur les formulaires avec des contrôles qui ont des longueurs variables de données à présenter, comme l’Explorateur Windows, dont les volets de données contiennent des informations de largeurs différentes à différents moments.  
+Les contrôles de `Splitter` Windows Forms sont utilisés pour redimensionner les contrôles ancrés au moment de l’exécution. Le contrôle `Splitter` est souvent utilisé sur les formulaires avec des contrôles qui ont des longueurs différentes de données à présenter, comme l’Explorateur Windows, dont les volets de données contiennent des informations de largeurs différentes à différents moments.  
   
 > [!NOTE]
 > Bien que <xref:System.Windows.Forms.SplitContainer> remplace et ajoute des fonctionnalités au contrôle `Splitter` des versions antérieures, `Splitter` est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
@@ -23,7 +23,7 @@ Les `Splitter` contrôles Windows Forms sont utilisés pour redimensionner les c
  [Vue d’ensemble du contrôle Splitter](splitter-control-overview-windows-forms.md)  
  Décrit un contrôle et ses principales fonctionnalités et propriétés.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  Classe <xref:System.Windows.Forms.Splitter>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   

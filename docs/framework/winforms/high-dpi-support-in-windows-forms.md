@@ -1,5 +1,5 @@
 ---
-title: Prise en charge des résolutions élevées en Windows Forms
+title: Prise en charge de la haute résolution
 ms.date: 05/16/2017
 helpviewer_keywords:
 - High DPI in Windows Forms
@@ -7,16 +7,16 @@ helpviewer_keywords:
 - Windows Forms layout
 - Windows Forms dynamic resizing
 ms.assetid: 075ea4c3-900c-4f8a-9dd2-13ea6804346b
-ms.openlocfilehash: f9183b15da24f70b6fceaa90f718c5af93a3cdda
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a5c3125475c2de2cf83a3d97e356b26c0acdde99
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139077"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741896"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Prise en charge des résolutions élevées en Windows Forms
 
-À partir de la .NET Framework 4,7, Windows Forms comprend des améliorations pour les scénarios haute résolution et PPP dynamique courants. Elles incluent notamment les suivantes :
+À partir de la .NET Framework 4,7, Windows Forms comprend des améliorations pour les scénarios haute résolution et PPP dynamique courants. Elles incluent notamment :
 
 - Améliorations de la mise à l’échelle et de la disposition d’un certain nombre de contrôles Windows Forms, tels que le contrôle <xref:System.Windows.Forms.MonthCalendar> et le contrôle <xref:System.Windows.Forms.CheckedListBox>.
 
@@ -60,7 +60,7 @@ En outre, pour configurer la prise en charge des résolutions élevées dans vot
 
 - Appelez la méthode statique <xref:System.Windows.Forms.Application.EnableVisualStyles%2A>.
 
-  Il doit s’agir du premier appel de méthode dans le point d’entrée de votre application. Exemple :
+  Il doit s’agir du premier appel de méthode dans le point d’entrée de votre application. Par exemple :
 
   ```csharp
   static void Main()
@@ -94,7 +94,7 @@ Pour obtenir la liste des clés individuelles et leurs valeurs, consultez [Windo
 
 ## <a name="new-helper-methods-and-properties"></a>Nouvelles méthodes et propriétés d’assistance
 
-La .NET Framework 4,7 ajoute également un certain nombre de nouvelles méthodes et propriétés d’assistance qui fournissent des informations sur la mise à l’échelle DPI et vous permettent d’effectuer une mise à l’échelle PPP. Elles incluent notamment les suivantes :
+La .NET Framework 4,7 ajoute également un certain nombre de nouvelles méthodes et propriétés d’assistance qui fournissent des informations sur la mise à l’échelle DPI et vous permettent d’effectuer une mise à l’échelle PPP. Elles incluent notamment :
 
 - <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>, qui convertit une valeur logique en pixels de périphérique.
 

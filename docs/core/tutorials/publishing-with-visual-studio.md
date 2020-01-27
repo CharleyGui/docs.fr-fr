@@ -5,12 +5,12 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: 485d62ce67f284fe1bbe931dcaa00671be154f35
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a82934fd2ea9568681a3bec82c3b15513decc926
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715368"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741567"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publier votre application de Hello World .NET Core avec Visual Studio
 
@@ -30,7 +30,7 @@ Dans [créer une application Hello World avec .net core dans Visual Studio](with
 
    ![Choisir une cible de publication dans Visual Studio](media/publishing-with-visual-studio/pick-publish-target.png)
    
-1. Dans la page de **publication**, sélectionnez **Publier**.
+1. Sur la page **publier** , sélectionnez **publier**.
 
    ![Fenêtre Publier de Visual Studio](media/publishing-with-visual-studio/publish-page.png)
    
@@ -68,7 +68,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
 
       * *HelloWorld.runtimeconfig.json*
 
-         Il s’agit du fichier de configuration du runtime de l’application. Il identifie la version de .NET Core sur laquelle votre application doit être exécutée. Pour plus d’informations, consultez [fichiers de configuration](https://github.com/dotnet/cli/blob/85ca206d84633d658d7363894c4ea9d59e515c1a/Documentation/specs/runtime-configuration-file.md)de l’exécution.
+         Il s’agit du fichier de configuration au moment de l’exécution de l’application. Il identifie la version de .NET Core sur laquelle votre application doit être exécutée. Vous pouvez également y ajouter des options de configuration. Pour plus d’informations, consultez [paramètres de configuration du Runtime .net Core](../run-time-config/index.md#runtimeconfigjson).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

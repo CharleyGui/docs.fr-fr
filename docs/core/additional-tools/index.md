@@ -4,12 +4,12 @@ description: Vue d’ensemble des outils supplémentaires que vous pouvez instal
 author: mlacouture
 ms.date: 12/02/2019
 ms.custom: mvc
-ms.openlocfilehash: 1f066523a24d4e1fd7aaaa5a19e8d6c9d72d35af
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 853633f5ef159eee39ed1a8682372d4291a752f5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714534"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740709"
 ---
 # <a name="net-core-additional-tools-overview"></a>Vue d’ensemble des outils .NET Core supplémentaires
 
@@ -17,7 +17,7 @@ Cette section dresse une liste des outils qui prennent en charge et étendent le
 
 ## <a name="net-core-uninstall-tooluninstall-toolmd"></a>[Outil de désinstallation de .NET Core](uninstall-tool.md)
 
-L' [outil de désinstallation de .net Core](https://dotnet.microsoft.com/download/dotnet-core/uninstall-tool) (`dotnet-core-uninstall`) vous permet de nettoyer les kits de développement logiciel (SDK) .net Core et les runtimes sur un système de sorte que seules les versions spécifiées soient conservées. Une collection d’options est disponible pour spécifier les versions qui sont désinstallées.
+L' [outil de désinstallation de .net Core](https://github.com/dotnet/cli-lab/releases) (`dotnet-core-uninstall`) vous permet de nettoyer les kits de développement logiciel (SDK) .net Core et les runtimes sur un système de sorte que seules les versions spécifiées soient conservées. Une collection d’options est disponible pour spécifier les versions qui sont désinstallées.
 
 ## <a name="wcf-web-service-reference-toolwcf-web-service-reference-guidemd"></a>[Outil WCF Web Service Reference](wcf-web-service-reference-guide.md)
 

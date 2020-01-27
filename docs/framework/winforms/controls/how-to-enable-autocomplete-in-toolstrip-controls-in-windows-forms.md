@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Activer la saisie semi-automatique dans les contrôles ToolStrip dans Windows Forms'
+title: 'Comment : activer la saisie semi-automatique dans les contrôles ToolStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,22 +12,22 @@ helpviewer_keywords:
 - ToolStripComboBox class [Windows Forms], examples
 - ToolStrip control [Windows Forms], AutoComplete
 ms.assetid: fd66d085-1af1-45d4-930a-cde944da2e16
-ms.openlocfilehash: 301f1b156bbaee5c5f7be95e972ee1ebaa83777f
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: db411023ad624e4c3d60b09bdbd588c85f8e22d1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69963614"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745508"
 ---
-# <a name="how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms"></a>Procédure : Activer la saisie semi-automatique dans les contrôles ToolStrip dans Windows Forms
-La procédure suivante combine un <xref:System.Windows.Forms.ToolStripLabel> avec un <xref:System.Windows.Forms.ToolStripComboBox> qui peut être supprimé pour afficher une liste d’éléments, tels que les sites Web récemment visités. Si l’utilisateur tape un caractère qui correspond au premier caractère de l’un des éléments de la liste, l’élément est immédiatement affiché.  
+# <a name="how-to-enable-autocomplete-in-toolstrip-controls-in-windows-forms"></a>Comment : activer la saisie semi-automatique dans les contrôles ToolStrip dans les Windows Forms
+La procédure suivante combine une <xref:System.Windows.Forms.ToolStripLabel> avec une <xref:System.Windows.Forms.ToolStripComboBox> qui peut être déplacée pour afficher une liste d’éléments, tels que les sites Web récemment visités. Si l’utilisateur tape un caractère qui correspond au premier caractère de l’un des éléments de la liste, l’élément est immédiatement affiché.  
   
 > [!NOTE]
-> La saisie semi- `ToolStrip` automatique fonctionne avec les contrôles de la même façon qu’avec les contrôles <xref:System.Windows.Forms.ComboBox> traditionnels <xref:System.Windows.Forms.TextBox>, tels que et.  
+> La saisie semi-automatique fonctionne avec les contrôles `ToolStrip` de la même manière qu’avec les contrôles traditionnels, tels que <xref:System.Windows.Forms.ComboBox> et <xref:System.Windows.Forms.TextBox>.  
   
 ### <a name="to-enable-autocomplete-in-a-toolstrip-control"></a>Pour activer la saisie semi-automatique dans un contrôle ToolStrip  
   
-1. Créer un <xref:System.Windows.Forms.ToolStrip> contrôle et y ajouter des éléments.  
+1. Créer un contrôle de <xref:System.Windows.Forms.ToolStrip> et y ajouter des éléments.  
   
     ```vb  
     ToolStrip1 = New System.Windows.Forms.ToolStrip  
@@ -41,7 +41,7 @@ La procédure suivante combine un <xref:System.Windows.Forms.ToolStripLabel> ave
         {toolStripLabel1, toolStripComboBox1});  
     ```  
   
-2. Affectez à la <xref:System.Windows.Forms.ToolStripItemOverflow.Never> propriétédel’étiquetteetàlazonedelistedéroulantelavaleurafinquelalistesoittoujoursdisponible,quellequesoitlatailleduformulaire.<xref:System.Windows.Forms.ToolStripItem.Overflow%2A>  
+2. Affectez à la propriété <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> de l’étiquette et à la zone de liste modifiable la valeur <xref:System.Windows.Forms.ToolStripItemOverflow.Never> afin que la liste soit toujours disponible, quelle que soit la taille du formulaire.  
   
     ```vb  
     ToolStripLabel1.Overflow = _  
@@ -56,7 +56,7 @@ La procédure suivante combine un <xref:System.Windows.Forms.ToolStripLabel> ave
     toolStripComboBox1.Overflow = System.Windows.Forms.ToolStripItemOverflow.Never  
     ```  
   
-3. Ajoutez des mots à la collection d’éléments <xref:System.Windows.Forms.ToolStripComboBox> du contrôle.  
+3. Ajoutez des mots à la collection Items du contrôle <xref:System.Windows.Forms.ToolStripComboBox>.  
   
     ```vb  
     ToolStripComboBox1.Items.AddRange(New Object() {"First Item", _  
@@ -67,7 +67,7 @@ La procédure suivante combine un <xref:System.Windows.Forms.ToolStripLabel> ave
     toolStripComboBox1.Items.AddRange(new object[] {"First item", "Second item", "Third item"});  
     ```  
   
-4. Affectez <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A> à <xref:System.Windows.Forms.AutoCompleteMode.Append>la propriété de la zone de liste déroulante la valeur.  
+4. Affectez la valeur <xref:System.Windows.Forms.AutoCompleteMode.Append>à la propriété <xref:System.Windows.Forms.ComboBox.AutoCompleteMode%2A> de la zone de liste déroulante.  
   
     ```vb  
     ToolStripComboBox1.AutoCompleteMode = _  
@@ -78,7 +78,7 @@ La procédure suivante combine un <xref:System.Windows.Forms.ToolStripLabel> ave
     toolStripComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;  
     ```  
   
-5. Affectez <xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A> à <xref:System.Windows.Forms.AutoCompleteSource.ListItems>la propriété de la zone de liste déroulante la valeur.  
+5. Affectez la valeur <xref:System.Windows.Forms.AutoCompleteSource.ListItems>à la propriété <xref:System.Windows.Forms.ComboBox.AutoCompleteSource%2A> de la zone de liste déroulante.  
   
     ```vb  
     ToolStripComboBox1.AutoCompleteSource = _  

@@ -2,12 +2,12 @@
 title: MSMQ Activation
 ms.date: 03/30/2017
 ms.assetid: e3834149-7b8c-4a54-806b-b4296720f31d
-ms.openlocfilehash: 2afcfbee69f8257e4ed0b1c352ef29e4af9ddb84
-ms.sourcegitcommit: 8c99457955fc31785b36b3330c4ab6ce7984a7ba
+ms.openlocfilehash: 805ab78908b4d1146cce94cac5357bafbb35c832
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/29/2019
-ms.locfileid: "75544720"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744792"
 ---
 # <a name="msmq-activation"></a>MSMQ Activation
 
@@ -269,7 +269,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
         Cette commande permet d’accéder à l’application/servicemodelsamples à l’aide de `http://localhost/servicemodelsamples` et `net.msmq://localhost/servicemodelsamples`.
 
-7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc`. Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Effectuez un clic droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
+7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc`. Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Cliquez avec le bouton droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
 
 8. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon. Utilisez le code suivant :
 
@@ -349,4 +349,4 @@ Avec le transport de liaison `netMsmqBinding`, la sécurité est activée par d�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Hébergement AppFabric et exemples de persistance](https://go.microsoft.com/fwlink/?LinkId=193961)
+- [Hébergement AppFabric et exemples de persistance](https://docs.microsoft.com/previous-versions/appfabric/ff383418(v=azure.10))

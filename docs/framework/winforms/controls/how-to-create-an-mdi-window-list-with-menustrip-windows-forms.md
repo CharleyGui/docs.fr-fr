@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer une liste des fenêtres MDI avec MenuStrip (Windows Forms)'
+title: 'Comment : créer une liste des fenêtres MDI avec MenuStrip'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,17 +8,17 @@ helpviewer_keywords:
 - MDI [Windows Forms], creating window lists
 - MenuStrip control [Windows Forms], creating window lists
 ms.assetid: 04fb414b-811f-4a83-aab6-b4a24646dec5
-ms.openlocfilehash: 229afc879be6407340e2fca6c3b2474475bcb5a6
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: f013c3df2ab5783a22fe2c34402dc53a328cafa2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64611966"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731006"
 ---
-# <a name="how-to-create-an-mdi-window-list-with-menustrip-windows-forms"></a>Procédure : Créer une liste des fenêtres MDI avec MenuStrip (Windows Forms)
-Utilisez l’interface multidocument (MDI) pour créer des applications qui peuvent ouvrir plusieurs documents simultanément le même temps et copiez et collez le contenu d’un document à l’autre.  
+# <a name="how-to-create-an-mdi-window-list-with-menustrip-windows-forms"></a>Comment : créer une liste des fenêtres MDI avec MenuStrip (Windows Forms)
+Utilisez l’interface multidocument (MDI) pour créer des applications qui peuvent ouvrir plusieurs documents en même temps et copier et coller du contenu d’un document à l’autre.  
   
- Cette procédure vous montre comment créer une liste de tous les formulaires enfants actifs dans le menu de fenêtre du parent.  
+ Cette procédure vous montre comment créer une liste de tous les formulaires enfants actifs dans le menu fenêtre du parent.  
   
 ### <a name="to-create-an-mdi-window-list-on-a-menustrip"></a>Pour créer une liste de fenêtres MDI sur un MenuStrip  
   
@@ -26,17 +26,17 @@ Utilisez l’interface multidocument (MDI) pour créer des applications qui peuv
   
 2. Ajoutez un <xref:System.Windows.Forms.MenuStrip> au formulaire.  
   
-3. Ajoutez deux éléments de menu de niveau supérieur à la <xref:System.Windows.Forms.MenuStrip> et définissez leurs <xref:System.Windows.Forms.Control.Text%2A> propriétés à `&File` et `&Window`.  
+3. Ajoutez deux éléments de menu de niveau supérieur au <xref:System.Windows.Forms.MenuStrip> et définissez leurs propriétés <xref:System.Windows.Forms.Control.Text%2A> sur `&File` et `&Window`.  
   
 4. Ajoutez un élément de sous-menu à l'élément de menu `&File` et affectez la valeur `&Open` à la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A>.  
   
-5. Définir le <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> propriété de la <xref:System.Windows.Forms.MenuStrip> à la `&Window` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+5. Définissez la propriété <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> du <xref:System.Windows.Forms.MenuStrip> sur le <xref:System.Windows.Forms.ToolStripMenuItem>`&Window`.  
   
-6. Ajoutez un formulaire au projet et ajouter le contrôle souhaité, un autre <xref:System.Windows.Forms.MenuStrip>.  
+6. Ajoutez un formulaire au projet et ajoutez le contrôle de votre choix, tel qu’un autre <xref:System.Windows.Forms.MenuStrip>.  
   
 7. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.Control.Click> du <xref:System.Windows.Forms.ToolStripMenuItem> de `&New`.  
   
-8. Dans le Gestionnaire d’événements, insérez du code semblable à ce qui suit pour créer et afficher les nouvelles instances de `Form2` en tant qu’enfants MDI de `Form1`.  
+8. Dans le gestionnaire d’événements, insérez du code semblable au suivant pour créer et afficher les nouvelles instances de `Form2` en tant qu’enfants MDI de `Form1`.  
   
     ```vb  
     Private Sub openToolStripMenuItem_Click(ByVal sender As _  
@@ -61,7 +61,7 @@ Utilisez l’interface multidocument (MDI) pour créer des applications qui peuv
     }  
     ```  
   
-9. Placez le code comme suit dans le `&New` <xref:System.Windows.Forms.ToolStripMenuItem> pour inscrire le Gestionnaire d’événements.  
+9. Placez le code comme suit dans le <xref:System.Windows.Forms.ToolStripMenuItem> `&New`pour inscrire le gestionnaire d’événements.  
   
     ```vb  
     Private Sub newToolStripMenuItem_Click(sender As Object, e As _  
@@ -83,6 +83,6 @@ Utilisez l’interface multidocument (MDI) pour créer des applications qui peuv
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide pratique pour Créer des formulaires MDI parents](../advanced/how-to-create-mdi-parent-forms.md)
-- [Guide pratique pour Créer des formulaires MDI enfants](../advanced/how-to-create-mdi-child-forms.md)
+- [Guide pratique pour créer des formulaires MDI parents](../advanced/how-to-create-mdi-parent-forms.md)
+- [Guide pratique pour créer des formulaires MDI enfants](../advanced/how-to-create-mdi-child-forms.md)
 - [MenuStrip, contrôle](menustrip-control-windows-forms.md)

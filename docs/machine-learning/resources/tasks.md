@@ -2,12 +2,12 @@
 title: Tâches d’apprentissage automatique
 description: Explorez les différentes tâches Machine Learning ainsi que les tâches associées prises en charge dans ML.NET.
 ms.date: 12/23/2019
-ms.openlocfilehash: badb096ab3e7fbd575d8594b4fbd0e2ebaf63820
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 6cd41065e668375537b9816ef7a208a65e0a523b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75739625"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745099"
 ---
 # <a name="machine-learning-tasks-in-mlnet"></a>Tâches Machine Learning dans ML.NET
 
@@ -85,6 +85,7 @@ Vous pouvez entraîner un modèle de classification multiclasse en utilisant les
 * <xref:Microsoft.ML.Trainers.NaiveBayesMulticlassTrainer>
 * <xref:Microsoft.ML.Trainers.OneVersusAllTrainer>
 * <xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer>
+* <xref:Microsoft.ML.Vision.ImageClassificationTrainer>
 
 ### <a name="multiclass-classification-inputs-and-outputs"></a>Entrées et sorties de classification multiclasse
 
@@ -219,3 +220,13 @@ Une tâche de recommandation permet de dresser la liste des produits ou services
 Vous pouvez entraîner un modèle de recommandation en utilisant les algorithmes suivants :
 
 * <xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer>
+
+## <a name="forecasting"></a>Prévision
+
+La tâche de prévision utilise les données de série chronologique antérieures pour faire des prédictions concernant le comportement futur. Les scénarios applicables aux prévisions sont les prévisions météorologiques, les prédictions de ventes saisonnières et la maintenance prédictive.
+
+### <a name="forecasting-trainers"></a>Prédictions de formateurs
+
+Vous pouvez effectuer l’apprentissage d’un modèle de prévision avec l’algorithme suivant :
+
+<xref:Microsoft.ML.TimeSeriesCatalog.ForecastBySsa*>

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF'
+title: Créer du contenu Direct3D9 pour l’hébergement
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -7,17 +7,17 @@ helpviewer_keywords:
 - WPF [WPF], creating Direct3D9 content
 - Direct3D9 [WPF interoperability], creating Direct3D9 content
 ms.assetid: 286e98bc-1eaa-4b5e-923d-3490a9cca5fc
-ms.openlocfilehash: 462220b526db90d3acfa90a28f9bfd56dbe813e2
-ms.sourcegitcommit: 005980b14629dfc193ff6cdc040800bc75e0a5a5
+ms.openlocfilehash: 847ee74da5b295c2c9d3824b3df74f94bc98a4db
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/14/2019
-ms.locfileid: "70991395"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76727917"
 ---
 # <a name="walkthrough-creating-direct3d9-content-for-hosting-in-wpf"></a>Procédure pas à pas : création de contenu Direct3D9 à héberger dans WPF
 Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convient à l’hébergement dans une application Windows Presentation Foundation (WPF). Pour plus d’informations sur l’hébergement de contenu Direct3D9 dans des applications WPF, consultez [interopérabilité WPF et Direct3D9](wpf-and-direct3d9-interoperation.md).
 
- Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :
+ Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes :
 
 - Créez un projet Direct3D9.
 
@@ -25,7 +25,7 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
  Quand vous aurez terminé, vous disposerez d’une DLL qui contient le contenu Direct3D9 à utiliser dans une application WPF.
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Prerequisites
  Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
 
 - Visual Studio 2010.
@@ -37,17 +37,17 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
 #### <a name="to-create-the-direct3d9-project"></a>Pour créer le projet Direct3D9
 
-1. Créez un projet Win32 dans C++ nommé. `D3DContent`
+1. Créez un projet Win32 dans C++ `D3DContent`nommé.
 
      L’Assistant application Win32 s’ouvre et affiche l’écran d’accueil.
 
-2. Cliquez sur **Suivant**.
+2. Cliquez sur **Next**.
 
      L’écran Paramètres de l’application s’affiche.
 
 3. Dans la section **type d’application :** , sélectionnez l’option **dll** .
 
-4. Cliquez sur **Terminer**.
+4. Cliquez sur **Finish**.
 
      Le projet D3DContent est généré.
 
@@ -65,9 +65,9 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
 10. Sélectionnez le nœud **d’entrée** .
 
-11. Dans le champ **dépendances supplémentaires** , ajoutez `d3d9.lib` les `d3dx9.lib` fichiers et.
+11. Dans le champ **dépendances supplémentaires** , ajoutez les fichiers `d3d9.lib` et `d3dx9.lib`.
 
-12. Dans Explorateur de solutions, ajoutez un nouveau fichier de définition de module (. def `D3DContent.def` ) nommé au projet.
+12. Dans Explorateur de solutions, ajoutez un nouveau fichier de définition de module (. def) nommé `D3DContent.def` au projet.
 
 ## <a name="creating-the-direct3d9-content"></a>Création du contenu Direct3D9
  Pour obtenir des performances optimales, votre contenu Direct3D9 doit utiliser des paramètres particuliers. Le code suivant montre comment créer une surface Direct3D9 qui a les meilleures caractéristiques de performances. Pour plus d’informations, consultez [Considérations sur les performances pour l’interopérabilité entre Direct3D9 et WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md).
@@ -76,7 +76,7 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
 1. À l’aide de Explorateur de solutions C++ , ajoutez trois classes au projet, nommées ci-dessous.
 
-     `CRenderer`(avec destructeur virtuel)
+     `CRenderer` (avec destructeur virtuel)
 
      `CRendererManager`
 
@@ -133,14 +133,14 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
     Destroy
     ```
 
-12. Générez le projet.
+12. créer le projet ;
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-- Hébergez le contenu Direct3D9 dans une application WPF. Pour plus d’informations, consultez [Procédure pas à pas : Hébergement de contenu Direct3D9 dans](walkthrough-hosting-direct3d9-content-in-wpf.md)WPF.
+- Hébergez le contenu Direct3D9 dans une application WPF. Pour plus d’informations, consultez [procédure pas à pas : Hébergement de contenu Direct3D9 dans WPF](walkthrough-hosting-direct3d9-content-in-wpf.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Interop.D3DImage>
 - [Considérations sur les performances de l'interopérabilité entre Direct3D9 et WPF](performance-considerations-for-direct3d9-and-wpf-interoperability.md)
-- [Procédure pas à pas : Hébergement de contenu Direct3D9 dans WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)
+- [Procédure pas à pas : hébergement de contenu Direct3D9 dans WPF](walkthrough-hosting-direct3d9-content-in-wpf.md)

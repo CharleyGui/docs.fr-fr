@@ -1,17 +1,17 @@
 ---
-title: contrôles Windows Forms
+title: Contrôles
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls
 - controls [Windows Forms]
 - Windows Forms controls, about Windows Forms controls
 ms.assetid: f050de8f-4ebd-4042-94b8-edf9a1dbd52a
-ms.openlocfilehash: 1088781a7780df71773b01a3816f024562abfcaf
-ms.sourcegitcommit: 37616676fde89153f563a485fc6159fc57326fc2
+ms.openlocfilehash: e36efb8b653f528be6f68f77ced26de262cbc6ad
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/23/2019
-ms.locfileid: "69986985"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745299"
 ---
 # <a name="windows-forms-controls"></a>Contrôles Windows Forms
 
@@ -25,7 +25,7 @@ Fournit des liens relatifs au placement de contrôles dans les formulaires.
 [Réorganisation des contrôles sur Windows Forms](how-to-align-multiple-controls-on-windows-forms.md)\
 Articles relatifs à la réorganisation des contrôles sur les formulaires.
 
-[Étiquetage des contrôles Windows Forms individuels et leur fournissant des raccourcis](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)\
+[Étiquetage des contrôles de Windows Forms individuels et leur fournissant des raccourcis](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)\
 Décrit les utilisations des raccourcis clavier, des étiquettes de texte sur les contrôles et des touches de modification.
 
 [Contrôles à utiliser sur Windows Forms](controls-to-use-on-windows-forms.md)\

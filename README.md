@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: d384aa2daea17581402dc45dc3104a0d97f77f3a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fe99a2ac81b54ae6aa3cb64af9b5995a548c0c2b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73035451"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76727874"
 ---
 # <a name="net-docs"></a>Documentation de .NET
 
@@ -20,9 +20,7 @@ Nous accueillons les contributions pour nous aider à améliorer et à compléte
 
 Pour contribuer, consultez les [Projets pour les contributeurs de la communauté .NET](https://github.com/dotnet/docs/projects/35) et partagez vos idées. Le [Guide de contribution](CONTRIBUTING.md) contient des instructions sur les procédures que nous utilisons. 
 
-Si vous souhaitez aider à migrer le code existant qui cible le .NET Framework à partir de la [Galerie de code](https://code.msdn.microsoft.com) vers les applications .NET Core stockées dans notre [dépôt d’exemples](https://github.com/dotnet/samples) et les éléments téléchargeables à partir du [navigateur d’exemples](https://docs.microsoft.com/samples/browse), consultez le projet [Code Gallery migration](https://github.com/dotnet/docs/projects/88). 
-
-Nous prévoyons que [Xamarin](https://docs.microsoft.com/xamarin), [Mono](http://docs.go-mono.com/?link=root%3a%2fclasslib) et [Unity](https://docs.unity3d.com/Manual/index.html) feront également partie de cette documentation.
+Si vous souhaitez aider à migrer le code existant qui cible le .NET Framework à partir du site de la [Galerie de code mis hors](https://docs.microsoft.com/teamblog/msdn-code-gallery-retired) service vers des applications .net Core stockées dans notre référentiel d' [exemples](https://github.com/dotnet/samples) et téléchargeable à partir du [navigateur d’exemples](https://docs.microsoft.com/samples/browse), consultez le projet de migration de la Galerie de [code](https://github.com/dotnet/docs/projects/88) . Les exemples de la Galerie de code ont été déplacés vers l’organisation d' [Archive Microsoft](https://github.com/microsoftarchive?q=msdn-code-gallery) .
 
 Ce projet a adopté le code de conduite défini dans la charte des contributeurs afin que le comportement à observer dans notre communauté soit clair.
 Pour plus d’informations, consultez le [code de conduite de .NET Foundation](https://dotnetfoundation.org/code-of-conduct).

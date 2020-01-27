@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: 0b7c9fc0e9dd0f559c52f692c405a3f9e68814d0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: be2af77f9680ab3285720525638bba8ef2041999
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711881"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745378"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -113,7 +113,7 @@ Vous utilisez le mot clé [struct](../../language-reference/keywords/struct.md) 
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
-Pour plus d’informations sur les structs, consultez [Structs](../classes-and-structs/structs.md). Pour plus d’informations sur les types valeur dans .NET, consultez [Types valeur](../../language-reference/keywords/value-types.md).
+Pour plus d’informations sur les structs, consultez [Structs](../classes-and-structs/structs.md). Pour plus d’informations sur les types valeur, consultez [types valeur](../../language-reference/builtin-types/value-types.md).
 
 L’autre catégorie de types valeur est [enum](../../language-reference/builtin-types/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=nameWithType> dans la bibliothèque de classes du .NET contient un ensemble d’entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :
 
@@ -148,7 +148,7 @@ Les types référence prennent en charge l’héritage. Quand vous créez une cl
 
 ## <a name="types-of-literal-values"></a>Types de valeurs littérales
 
-Dans C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit un type pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec une lettre en suffixe, consultez les pages de référence des différents types dans [Types valeur](../../language-reference/keywords/value-types.md).
+Dans C#, les valeurs littérales reçoivent un type du compilateur. Vous pouvez spécifier la façon dont un littéral numérique doit être typé en ajoutant une lettre à la fin du nombre. Par exemple, pour spécifier que la valeur 4,56 doit être traitée comme une valeur float, ajoutez « f » ou « F » après le nombre : `4.56f`. Si aucune lettre n’est ajoutée, le compilateur déduit un type pour le littéral. Pour plus d’informations sur les types qui peuvent être spécifiés avec des suffixes de lettres, consultez [types numériques intégraux](../../language-reference/builtin-types/integral-numeric-types.md) et [types numériques à virgule flottante](../../language-reference/builtin-types/floating-point-numeric-types.md).
 
 Comme les littéraux sont typés et que tous les types dérivent en fin de compte de <xref:System.Object?displayProperty=nameWithType>, vous pouvez écrire et compiler du code, tel que le suivant :
 
@@ -169,7 +169,7 @@ L’utilisation du paramètre de type rend possible la réutilisation de la mêm
 
 ## <a name="implicit-types-anonymous-types-and-nullable-value-types"></a>Types implicites, types anonymes et types valeur Nullable
 
-Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](../../language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, consultez [Variables locales implicitement typées](../classes-and-structs/implicitly-typed-local-variables.md).
+Comme indiqué précédemment, vous pouvez attribuer implicitement un type à une variable locale (mais pas les membres de la classe) à l’aide du mot clé [var](../../language-reference/keywords/var.md). La variable reçoit toujours un type au moment de la compilation, mais le type est fourni par le compilateur. Pour plus d’informations, consultez la page [Variables locales implicitement typées](../classes-and-structs/implicitly-typed-local-variables.md).
 
 Dans certains cas, il est difficile de créer un type nommé pour des ensembles simples de valeurs associées que vous ne souhaitez pas stocker ou transférer en dehors des limites de la méthode. Vous pouvez alors créer des *types anonymes*. Pour plus d’informations, consultez [Types anonymes](../classes-and-structs/anonymous-types.md).
 
@@ -177,7 +177,7 @@ Les types valeur ordinaires ne peuvent pas avoir la valeur [Null](../../language
 
 ## <a name="related-sections"></a>Rubriques connexes
 
-Pour plus d’informations, consultez les rubriques suivantes :
+Pour plus d'informations, consultez les rubriques suivantes :
 
 - [Cast et conversions de types](./casting-and-type-conversions.md)
 
@@ -185,7 +185,7 @@ Pour plus d’informations, consultez les rubriques suivantes :
 
 - [Utilisation du type dynamic](./using-type-dynamic.md)
 
-- [Types valeur](../../language-reference/keywords/value-types.md)
+- [Types valeur](../../language-reference/builtin-types/value-types.md)
 
 - [Types référence](../../language-reference/keywords/reference-types.md)
 

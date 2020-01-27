@@ -1,16 +1,16 @@
 ---
-title: Procédures pas à pas WPF
+title: Procédures pas à pas
 ms.date: 03/30/2017
 helpviewer_keywords:
 - walkthroughs [WPF]
 - WPF walkthroughs [WPF]
 ms.assetid: c29bde96-0389-4aff-a9fb-cd678f66b7f7
-ms.openlocfilehash: fbd5006611a0a8e0d90b589df7b2cb6a34101457
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: d7853019b109fa7be97f83134be223b1c65375ac
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73977029"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746909"
 ---
 # <a name="wpf-walkthroughs"></a>Procédures pas à pas WPF
 Les procédures pas à pas fournissent des instructions détaillées pour les scénarios courants. Elles constituent donc un bon point de départ pour vous familiariser avec le produit ou un ensemble de fonctionnalités particulier.

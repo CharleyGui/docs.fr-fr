@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble des compléments WPF
+title: Vue d’ensemble des compléments
 ms.date: 03/30/2017
 helpviewer_keywords:
 - add-ins and XAML browser applications [WPF]
@@ -12,12 +12,12 @@ helpviewer_keywords:
 - add-ins [WPF], architecture
 - add-ins [WPF], limitations
 ms.assetid: 00b4c776-29a8-4dba-b603-280a0cdc2ade
-ms.openlocfilehash: 319f8b8c0225c7730112b1db073884b391945ac8
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 93904e308932ea41c736ca849ce0efb200502a7e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73421098"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738945"
 ---
 # <a name="wpf-add-ins-overview"></a>Vue d'ensemble des compléments WPF
 
@@ -25,7 +25,7 @@ ms.locfileid: "73421098"
 
 <a name="Requirements"></a>
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Vous devez être familiarisé avec le modèle de complément .NET Framework. Pour plus d’informations, consultez [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
@@ -252,7 +252,7 @@ Par nature, <xref:System.Windows.Interop.HwndHost> présente certaines limitatio
 
 ## <a name="wpf-add-in-benefits"></a>Avantages des compléments WPF
 
-Étant donné que les interfaces utilisateur du complément WPF sont affichées à partir d’applications hôtes à l’aide d’une classe interne qui dérive de <xref:System.Windows.Interop.HwndHost>, ces interfaces utilisateur sont restreintes par les fonctionnalités de <xref:System.Windows.Interop.HwndHost> en ce qui concerne les services d’interface utilisateur WPF tels que la disposition, le rendu, les données liaison, styles, modèles et ressources. Toutefois, WPF augmente sa sous-classe interne <xref:System.Windows.Interop.HwndHost> avec des fonctionnalités supplémentaires qui incluent les éléments suivants :
+Étant donné que les interfaces utilisateur du complément WPF sont affichées à partir d’applications hôtes à l’aide d’une classe interne qui dérive de <xref:System.Windows.Interop.HwndHost>, ces interfaces utilisateur sont restreintes par les fonctionnalités de <xref:System.Windows.Interop.HwndHost> en ce qui concerne les services d’interface utilisateur WPF tels que la disposition, le rendu, la liaison de données, les styles, les modèles et les ressources. Toutefois, WPF augmente sa sous-classe interne <xref:System.Windows.Interop.HwndHost> avec des fonctionnalités supplémentaires qui incluent les éléments suivants :
 
 - Tabulation entre l’interface utilisateur d’une application hôte et l’interface utilisateur d’un complément. Notez que le modèle de programmation « le complément est une interface utilisateur » requiert que l’adaptateur côté complément remplace <xref:System.AddIn.Pipeline.ContractBase.QueryContract%2A> pour permettre la tabulation, que le complément soit d’un niveau de confiance totale ou partiel.
 
@@ -315,4 +315,4 @@ Par défaut, lorsque plusieurs domaines d’application sont utilisés, les diff
 - [Domaines d’application](../../app-domains/application-domains.md)
 - [Vue d’ensemble de la communication à distance .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Rendre les objets accessibles à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Rubriques de guide pratique](how-to-topics.md)
+- [Rubriques pratiques](how-to-topics.md)

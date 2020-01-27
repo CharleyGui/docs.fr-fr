@@ -1,5 +1,5 @@
 ---
-title: PrintPreviewDialog, contrôle (Windows Forms)
+title: PrintPreviewDialog, contrôle
 ms.date: 03/30/2017
 helpviewer_keywords:
 - PrintPreviewDialog control (using designer)
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - printing [Windows Forms], print preview (using designer)
 - print preview [Windows Forms], default interface (using designer)
 ms.assetid: bfb5a3d7-021e-44f4-90f3-d435467f51d6
-ms.openlocfilehash: 6d763b51e1ac0ba0e07b986be701e86f5bd60df2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 459ff62c5645704d5cbf688af37302500f47e54a
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62012579"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741357"
 ---
 # <a name="printpreviewdialog-control-windows-forms"></a>PrintPreviewDialog, contrôle (Windows Forms)
 Le contrôle Windows Forms `PrintPreviewDialog` est une boîte de dialogue préconfigurée qui permet de voir à quoi ressemblera un document lors de l'impression. Vous pouvez l'utiliser dans votre application Windows comme alternative à la configuration de votre propre boîte de dialogue. Le contrôle contient des boutons pour l'impression, le zoom avant, l'affichage d'une ou plusieurs pages et la fermeture de la boîte de dialogue.  
@@ -21,10 +21,10 @@ Le contrôle Windows Forms `PrintPreviewDialog` est une boîte de dialogue préc
  [Vue d’ensemble du contrôle PrintPreviewDialog](printpreviewdialog-control-overview-windows-forms.md)  
  Présente les concepts généraux du contrôle `PrintPreviewDialog`, qui vous permet d'afficher une boîte de dialogue préconfigurée permettant aux utilisateurs d'afficher un aperçu avant impression de leur document.  
   
- [Guide pratique pour Afficher l’aperçu avant impression dans Windows Forms Applications](how-to-display-print-preview-in-windows-forms-applications.md)  
+ [Guide pratique pour afficher l’aperçu avant impression dans les applications Windows Forms](how-to-display-print-preview-in-windows-forms-applications.md)  
  Explique comment afficher une page qui doit être imprimée à l'aide d'une instance du contrôle `PrintPreviewDialog` au moment de l'exécution.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.PrintPreviewDialog>  
  Fournit des informations de référence sur la classe et ses membres.  
   

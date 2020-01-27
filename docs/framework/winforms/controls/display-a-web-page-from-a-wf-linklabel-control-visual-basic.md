@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : afficher une page web à partir d’un contrôle LinkLabel Windows Forms (Visual Basic)'
+title: Afficher une page Web à partir du contrôle LinkLabel (Visual Basic)
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -12,15 +12,15 @@ helpviewer_keywords:
 - Windows Forms, linking to Web pages
 - LinkLabel control [Windows Forms], examples
 ms.assetid: 477a7398-5971-4de3-b24c-f49f32bdb28a
-ms.openlocfilehash: f36f5bbaaf28963fc95440a4f3a174b8b48f6276
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: 75373d55b7bc5ef11e39d5b9546996cb1c4f6f7c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64651798"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745928"
 ---
-# <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>Procédure : afficher une page web à partir d’un contrôle LinkLabel Windows Forms (Visual Basic)
-Cet exemple affiche une page Web dans le navigateur par défaut lorsqu’un utilisateur clique sur un formulaire Windows <xref:System.Windows.Forms.LinkLabel> contrôle.  
+# <a name="how-to-display-a-web-page-from-a-windows-forms-linklabel-control-visual-basic"></a>Comment : afficher une page web à partir d’un contrôle LinkLabel Windows Forms (Visual Basic)
+Cet exemple affiche une page Web dans le navigateur par défaut lorsqu’un utilisateur clique sur un contrôle Windows Forms <xref:System.Windows.Forms.LinkLabel>.  
   
 ## <a name="example"></a>Exemple  
   
@@ -40,14 +40,14 @@ End Sub
 ## <a name="compiling-the-code"></a>Compilation du code  
  Cet exemple nécessite :  
   
-- Un formulaire Windows nommé `Form1`.  
+- Un Windows Form nommé `Form1`.  
   
 - un contrôle <xref:System.Windows.Forms.LinkLabel> nommé `LinkLabel1` ;  
   
 - Une connexion Internet active.  
   
 ## <a name="net-framework-security"></a>Sécurité .NET Framework  
- L’appel à la <xref:System.Diagnostics.Process.Start%2A> méthode requiert une confiance totale. Pour plus d'informations, consultez <xref:System.Security.SecurityException>.  
+ L’appel à la méthode <xref:System.Diagnostics.Process.Start%2A> requiert une confiance totale. Pour plus d'informations, consultez <xref:System.Security.SecurityException>.  
   
 ## <a name="see-also"></a>Voir aussi
 

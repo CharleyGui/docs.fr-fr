@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : débogage des contrôles Windows Forms personnalisés au moment du design'
+title: Déboguer des contrôles personnalisés au moment du design
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -18,12 +18,12 @@ ms.assetid: 1fd83ccd-3798-42fc-85a3-6cba99467387
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: a8572c1e70e36faf3a179de7a69e88e9cf1e781b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d9e292a1219c24571bcb35db2fe357b0197c8812
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460612"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740185"
 ---
 # <a name="walkthrough-debug-custom-windows-forms-controls-at-design-time"></a>Procédure pas à pas : déboguer des contrôles Windows Forms personnalisés au moment du design
 
@@ -139,7 +139,7 @@ Vous êtes maintenant prêt à déboguer votre contrôle personnalisé lorsqu’
 
 6. Pour arrêter le débogage, quittez l’instance hébergée de Visual Studio ou sélectionnez le bouton **arrêter le débogage** dans l’instance de débogage.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Maintenant que vous pouvez déboguer vos contrôles personnalisés au moment de la conception, il existe de nombreuses possibilités pour étendre l’interaction de votre contrôle avec l’IDE de Visual Studio.
 

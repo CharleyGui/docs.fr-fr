@@ -4,15 +4,16 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - secure applications [WCF]
 ms.assetid: 79e4e6f7-0c00-4045-b0f0-e6a7c37c7788
-ms.openlocfilehash: dbe460888400735e0950e7a34372d8540e236303
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: db637b2e44b17e2c36843ffc3ec396fd70862757
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61749538"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76728922"
 ---
 # <a name="security-guidance-and-best-practices"></a>Aide sur la sécurité et meilleures pratiques
-Les rubriques de cette section présentent une assistance et des éléments à prendre en compte lors de la création d’applications sécurisées de Windows Communication Foundation (WCF). Pour plus d’informations sur Windows Server AppFabric et de sécurité, consultez [sécurité modèle pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)  
+
+Les Articles de cette section présentent des conseils et des éléments à prendre en compte lors de la création d’applications de Windows Communication Foundation sécurisées (WCF). Pour plus d’informations sur Windows Server AppFabric et la sécurité, consultez [modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Bonnes pratiques pour la sécurité](../../../../docs/framework/wcf/feature-details/best-practices-for-security-in-wcf.md)  
@@ -27,4 +28,4 @@ Les rubriques de cette section présentent une assistance et des éléments à p
 ## <a name="see-also"></a>Voir aussi
 
 - [Programmation WCF de base](../../../../docs/framework/wcf/basic-wcf-programming.md)
-- [Modèle de sécurité pour Windows Server AppFabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

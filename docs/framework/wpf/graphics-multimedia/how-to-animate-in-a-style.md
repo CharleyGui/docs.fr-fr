@@ -1,16 +1,16 @@
 ---
-title: Comment animer dans un style (WPF)
+title: Comment animer dans un style
 ms.date: 03/30/2017
 helpviewer_keywords:
 - animation [WPF], properties [WPF], within styles
 - styles [WPF], animating properties within
 ms.assetid: 6a791f3d-6b1f-4972-a2f9-35880bcfd954
-ms.openlocfilehash: 617d41ca1c97463bf1c61c0d1e2728756fd8f1fb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 0b29648bf15f0046adcdee610f9565f7deb24972
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459239"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744877"
 ---
 # <a name="how-to-animate-in-a-style"></a>Comment animer dans un style
 

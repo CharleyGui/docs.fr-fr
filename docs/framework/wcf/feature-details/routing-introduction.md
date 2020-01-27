@@ -2,12 +2,12 @@
 title: Introduction au routage
 ms.date: 03/30/2017
 ms.assetid: bf6ceb38-6622-433b-9ee7-f79bc93497a1
-ms.openlocfilehash: bb021f9f90f3dd54106abf12d8274d192dea1076
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 8ce98aab2ed14401fa7c2cbf43eb92a633fa96b0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70045260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746467"
 ---
 # <a name="routing-introduction"></a>Introduction au routage
 
@@ -17,9 +17,9 @@ Cette rubrique est destinée aux nouveaux utilisateurs du service de routage ; 
 
 ## <a name="configuration"></a>Configuration
 
-Le service de routage est implémenté en tant que service WCF qui expose un ou plusieurs points de terminaison de service ; ceux-ci reçoivent les messages provenant d'applications clientes et les acheminent vers un ou plusieurs points de terminaison de destination. Le service fournit une classe <xref:System.ServiceModel.Routing.RoutingBehavior>, appliquée aux points de terminaison de service exposés par le service. Ce comportement permet de configurer différents aspects du fonctionnement du service. Pour faciliter la configuration lors de l’utilisation d’un fichier de configuration, les paramètres sont spécifiés sur le **RoutingBehavior**. Dans les scénarios basés sur du code, ces paramètres sont spécifiés dans le <xref:System.ServiceModel.Routing.RoutingConfiguration> cadre d’un objet, qui peut ensuite être transmis à un **RoutingBehavior**.
+Le service de routage est implémenté en tant que service WCF qui expose un ou plusieurs points de terminaison de service ; ceux-ci reçoivent les messages provenant d'applications clientes et les acheminent vers un ou plusieurs points de terminaison de destination. Le service fournit une classe <xref:System.ServiceModel.Routing.RoutingBehavior>, appliquée aux points de terminaison de service exposés par le service. Ce comportement permet de configurer différents aspects du fonctionnement du service. Pour faciliter la configuration lors de l’utilisation d’un fichier de configuration, les paramètres sont spécifiés sur le **RoutingBehavior**. Dans les scénarios basés sur du code, ces paramètres sont spécifiés dans le cadre d’un objet <xref:System.ServiceModel.Routing.RoutingConfiguration>, qui peut ensuite être transmis à un **RoutingBehavior**.
 
-Au moment du démarrage, ce comportement ajoute aux points de terminaison clients la classe <xref:System.ServiceModel.Routing.SoapProcessingBehavior>, utilisée pour exécuter le traitement SOAP des messages. Cela permet au service de routage de transmettre des messages aux points de terminaison qui nécessitent une **MessageVersion** différente de celle du point de terminaison sur lequel le message a été reçu. Le **RoutingBehavior** inscrit également une extension de service, <xref:System.ServiceModel.Routing.RoutingExtension>qui fournit un point d’accessibilité pour la modification de la configuration du service de routage au moment de l’exécution.
+Au moment du démarrage, ce comportement ajoute aux points de terminaison clients la classe <xref:System.ServiceModel.Routing.SoapProcessingBehavior>, utilisée pour exécuter le traitement SOAP des messages. Cela permet au service de routage de transmettre des messages aux points de terminaison qui nécessitent une **MessageVersion** différente de celle du point de terminaison sur lequel le message a été reçu. **RoutingBehavior** enregistre également une extension de service, la <xref:System.ServiceModel.Routing.RoutingExtension>, qui fournit un point d’accessibilité pour modifier la configuration du service de routage au moment de l’exécution.
 
 La classe **RoutingConfiguration** fournit un moyen cohérent de configurer et de mettre à jour la configuration du service de routage.  Il contient des paramètres qui jouent le rôle de paramètres pour le service de routage et qui est utilisé pour configurer le **RoutingBehavior** lorsque le service démarre, ou est passé à **RoutingExtension** pour modifier la configuration de routage au moment de l’exécution.
 
@@ -113,7 +113,7 @@ Plusieurs filtres de messages sont organisés en tables de filtres, qui associen
 
 Par défaut, tous les filtres de message d'une table de filtres sont évalués simultanément ; toutefois, vous pouvez spécifier une propriété <xref:System.ServiceModel.Routing.Configuration.FilterTableEntryElement.Priority%2A> qui fait évaluer les filtres de messages dans un ordre spécifique. Les entrées de priorité plus élevée sont évaluées en premier et les filtres de message de priorité plus faible ne sont pas évalués si un résultat est trouvé à un niveau de priorité supérieur. Pour plus d’informations sur les tables de filtres, consultez [filtres de messages](message-filters.md).
 
-Les exemples suivants utilisent l'objet <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter>, qui prend tous les messages qui ont la valeur `true`. Ce **MessageFilter** est ajouté à la table de filtres «routingTable1», qui associe le **MessageFilter** au point de terminaison client nommé «CalculatorService». Le **RoutingBehavior** spécifie ensuite que cette table doit être utilisée pour acheminer les messages traités par le point de terminaison de service.
+Les exemples suivants utilisent l'objet <xref:System.ServiceModel.Dispatcher.MatchAllMessageFilter>, qui prend tous les messages qui ont la valeur `true`. Ce **MessageFilter** est ajouté à la table de filtres « routingTable1 », qui associe le **MessageFilter** au point de terminaison client nommé « CalculatorService ». Le **RoutingBehavior** spécifie ensuite que cette table doit être utilisée pour acheminer les messages traités par le point de terminaison de service.
 
 ```xml
 <behaviors>
@@ -164,7 +164,7 @@ Alors que de nombreuses configurations de service de routage utilisent une logiq
 
 - Plusieurs filtres doivent retourner une valeur `true` lors de l'évaluation du message.
 
-Si ces conditions sont remplies, le message est routé vers tous les points de terminaison de tous les filtres qui doivent avoir la valeur `true`. L’exemple suivant définit une configuration de routage qui entraîne le routage des messages vers les deux points de terminaison si l’adresse du point de `http://localhost:8000/routingservice/router/rounding`terminaison dans le message est.
+Si ces conditions sont remplies, le message est routé vers tous les points de terminaison de tous les filtres qui doivent avoir la valeur `true`. L’exemple suivant définit une configuration de routage qui entraîne le routage des messages vers les deux points de terminaison si l’adresse du point de terminaison dans le message est `http://localhost:8000/routingservice/router/rounding`.
 
 ```xml
 <!--ROUTING SECTION -->
@@ -194,9 +194,9 @@ rc.FilterTable.Add(new EndpointAddressMessageFilter(new EndpointAddress(
 
 ### <a name="soap-processing"></a>Traitement SOAP
 
-Pour prendre en charge le routage de messages entre des protocoles différents, le **RoutingBehavior** ajoute par <xref:System.ServiceModel.Routing.SoapProcessingBehavior> défaut le à tous les points de terminaison clients vers lesquels les messages sont routés. Ce comportement crée automatiquement un nouveau **MessageVersion** avant de router le message vers le point de terminaison, ainsi que la création d’un **MessageVersion** compatible pour tout document de réponse avant de le retourner à l’application cliente à l’origine de la demande.
+Pour prendre en charge le routage de messages entre des protocoles différents, le **RoutingBehavior** ajoute par défaut le <xref:System.ServiceModel.Routing.SoapProcessingBehavior> à tous les points de terminaison clients vers lesquels les messages sont routés. Ce comportement crée automatiquement un nouveau **MessageVersion** avant de router le message vers le point de terminaison, ainsi que la création d’un **MessageVersion** compatible pour tout document de réponse avant de le retourner à l’application cliente à l’origine de la demande.
 
-Les étapes nécessaires pour créer un nouveau **MessageVersion** pour le message sortant sont les suivantes:
+Les étapes nécessaires pour créer un nouveau **MessageVersion** pour le message sortant sont les suivantes :
 
 **Traitement des demandes**
 
@@ -206,7 +206,7 @@ Les étapes nécessaires pour créer un nouveau **MessageVersion** pour le messa
 
 - Créez un nouveau message avec la même action, le même lecteur de corps et un nouveau **MessageVersion**.
 
-- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.
+- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.
 
 - Copiez toutes les propriétés du message dans le nouveau message.
 
@@ -222,13 +222,13 @@ Les étapes nécessaires pour créer un nouveau **MessageVersion** pour le messa
 
 - Créez un nouveau message de réponse avec la même action, le même lecteur de corps et le **MessageVersion** du message de demande d’origine.
 
-- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.
+- Si <xref:System.ServiceModel.Channels.MessageVersion.Addressing%2A> ! = **Addressing. None**, copiez les en-têtes vers, from, FaultTo et latesto dans le nouveau message.
 
 - Copiez les propriétés du message dans le nouveau message.
 
 - Retournez le nouveau message de réponse.
 
-Par défaut, le **SoapProcessingBehavior** est automatiquement ajouté aux points de terminaison du client par <xref:System.ServiceModel.Routing.RoutingBehavior> le lorsque le service démarre; Toutefois, vous pouvez contrôler si le traitement SOAP est ajouté à tous les points de terminaison <xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A> clients à l’aide de la propriété. . Vous pouvez également ajouter directement le comportement à un point de terminaison spécifique, au niveau duquel vous pouvez l'activer ou le désactiver, si un contrôle plus précis du traitement SOAP est nécessaire.
+Par défaut, le **SoapProcessingBehavior** est automatiquement ajouté aux points de terminaison du client par le <xref:System.ServiceModel.Routing.RoutingBehavior> au démarrage du service ; Toutefois, vous pouvez contrôler si le traitement SOAP est ajouté à tous les points de terminaison clients à l’aide de la propriété <xref:System.ServiceModel.Routing.RoutingConfiguration.SoapProcessingEnabled%2A>. Vous pouvez également ajouter directement le comportement à un point de terminaison spécifique, au niveau duquel vous pouvez l'activer ou le désactiver, si un contrôle plus précis du traitement SOAP est nécessaire.
 
 > [!NOTE]
 > Si le traitement SOAP est désactivé pour un point de terminaison qui requiert une version MessageVersion différente de celle du message de demande d'origine, vous devez fournir un mécanisme personnalisé pour effectuer les modifications SOAP nécessaires avant d'envoyer le message au point de terminaison de destination.
@@ -252,11 +252,11 @@ RoutingConfiguration rc = new RoutingConfiguration();
 rc.SoapProcessingEnabled = false;
 ```
 
-### <a name="dynamic-configuration"></a>Configuration Dynamique
+### <a name="dynamic-configuration"></a>Configuration dynamique
 
 Lorsque vous ajoutez des points de terminaison clients supplémentaires, ou que vous devez modifier les filtres utilisés pour router les messages, vous devez pouvoir mettre la configuration à jour dynamiquement au moment de l'exécution afin d'éviter une interruption de service aux points de terminaison qui reçoivent actuellement des messages via le service de routage. Modifier un fichier de configuration ou le code de l'application hôte n'est pas toujours suffisant, car l'une ou l'autre méthode requiert le recyclage de l'application, ce qui signifierait la perte potentielle de tous les messages actuellement en transit et le risque d'un temps mort en attendant le redémarrage du service.
 
-Vous pouvez uniquement modifier **RoutingConfiguration** par programme. Bien que vous puissiez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en construisant un nouveau **RoutingConfiguration** et en <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> le transmettant en tant que paramètre à la méthode exposée par le <xref:System.ServiceModel.Routing.RoutingExtension>extension de service. Tous les messages actuellement en transit continuent à être routés à l’aide de la configuration précédente, tandis que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.
+Vous pouvez uniquement modifier **RoutingConfiguration** par programme. Bien que vous puissiez initialement configurer le service à l’aide d’un fichier de configuration, vous pouvez uniquement modifier la configuration au moment de l’exécution en construisant un nouveau **RoutingConfiguration** et en le transmettant en tant que paramètre à la méthode <xref:System.ServiceModel.Routing.RoutingExtension.ApplyConfiguration%2A> exposée par l’extension de service <xref:System.ServiceModel.Routing.RoutingExtension>. Tous les messages actuellement en transit continuent à être routés à l’aide de la configuration précédente, tandis que les messages reçus après l’appel à **ApplyConfiguration** utilisent la nouvelle configuration. L'exemple suivant montre la création d'une instance du service de routage, suivie d'une modification de la configuration.
 
 ```csharp
 RoutingConfiguration routingConfig = new RoutingConfiguration();
@@ -287,12 +287,12 @@ routerHost.routerHost.Extensions.Find<RoutingExtension>().ApplyConfiguration(rc2
 
 ## <a name="error-handling"></a>Gestion des erreurs
 
-Si un objet <xref:System.ServiceModel.CommunicationException> est rencontré lors de la tentative d'envoi d'un message, une gestion des erreurs intervient. Ces exceptions indiquent en général qu'un problème s'est produit lors de la tentative de communication avec le point de terminaison client défini ; il peut s'agir d'une exception <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException> ou <xref:System.ServiceModel.CommunicationObjectFaultedException>. Le code de gestion des erreurs intercepte également et tente de réessayer l' <xref:System.TimeoutException> envoi quand un événement se produit, qui est une autre exception courante qui n’est pas dérivée de **CommunicationException**.
+Si un objet <xref:System.ServiceModel.CommunicationException> est rencontré lors de la tentative d'envoi d'un message, une gestion des erreurs intervient. Ces exceptions indiquent en général qu'un problème s'est produit lors de la tentative de communication avec le point de terminaison client défini ; il peut s'agir d'une exception <xref:System.ServiceModel.EndpointNotFoundException>, <xref:System.ServiceModel.ServerTooBusyException> ou <xref:System.ServiceModel.CommunicationObjectFaultedException>. Le code de gestion des erreurs intercepte également et tente de réessayer l’envoi lorsqu’un <xref:System.TimeoutException> se produit, ce qui constitue une autre exception courante qui n’est pas dérivée de **CommunicationException**.
 
 Lorsque l'une des exceptions précédentes se produit, le service de routage bascule sur une liste de points de terminaison de sauvegarde. Si tous les points de terminaison de sauvegarde échouent avec un échec de communication, ou si un point de terminaison retourne une exception indiquant une défaillance dans le service de destination, le service de routage retourne une erreur à l'application cliente.
 
 > [!NOTE]
-> Les fonctionnalités de gestion des erreurs capturent et gèrent des exceptions qui se produisent lors des tentatives d'envoi d'un message et de fermeture d'un canal. Le code de gestion des erreurs n’est pas destiné à détecter ou gérer les exceptions créées par les points de terminaison d’application avec lesquels il communique. une <xref:System.ServiceModel.FaultException> exception levée par un service s’affiche au niveau du service de routage en tant que **FaultMessage** et est renvoyée au client.
+> Les fonctionnalités de gestion des erreurs capturent et gèrent des exceptions qui se produisent lors des tentatives d'envoi d'un message et de fermeture d'un canal. Le code de gestion des erreurs n’est pas destiné à détecter ou gérer les exceptions créées par les points de terminaison d’application avec lesquels il communique. une <xref:System.ServiceModel.FaultException> levée par un service s’affiche sur le service de routage en tant que **FaultMessage** et est renvoyée au client.
 >
 > Si une erreur se produit lorsque le service de routage tente de relayer un message, vous pouvez obtenir un <xref:System.ServiceModel.FaultException> côté client, au lieu du <xref:System.ServiceModel.EndpointNotFoundException> que vous obtiendriez normalement en l'absence du service de routage. Un service de routage peut par conséquent masquer les exceptions et ne pas fournir une transparence complète, sauf si vous analysez les exceptions imbriquées.
 
@@ -364,22 +364,22 @@ rc.FilterTable.Add(new MatchAllMessageFilter(), backupList);
 
 Le tableau suivant décrit les modèles compatibles avec l’utilisation des listes de point de terminaison de sauvegarde, avec une description des détails de gestion des erreurs pour chaque modèle spécifique.
 
-|Motif|Session|Transaction|Contexte de réception|Liste de sauvegarde prise en charge|Notes|
+|Motif|Session|Transaction|Contexte de réception|Liste de sauvegarde prise en charge|Remarques|
 |-------------|-------------|-----------------|---------------------|---------------------------|-----------|
 |One-Way||||Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Si ce message est en mode multidiffusion, seul le message sur le canal en échec est déplacé vers sa destination de sauvegarde.|
-|One-Way||✓||Non|Une exception est levée et la transaction est restaurée.|
-|One-Way|||✓|Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Une fois le message correctement reçu, effectuez tous les contextes de réception. Si le message n'a pas été correctement reçu par un point de terminaison, n'effectuez pas le contexte de réception.<br /><br /> Lorsque ce message est envoyé en mode multidiffusion, le contexte de réception n'est effectué que si le message a été correctement reçu par au moins un point de terminaison (primaire ou de sauvegarde). Si aucun des points de terminaison situés sur les chemins d’accès de multidiffusion ne reçoit correctement le message, n’effectuez pas le contexte de réception.|
-|One-Way||✓|✓|Oui|Abandonnez la transaction précédente, créez une nouvelle transaction et renvoyez tous les messages. Les messages qui ont rencontré une erreur sont transmis à une destination de sauvegarde.<br /><br /> Une fois créée une transaction dont toutes les transmissions ont réussi, effectuez les contextes de réception et validez la transaction.|
-|One-Way|✓|||Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Dans un scénario de multidiffusion, seuls les messages qui se trouvent dans une session ayant rencontré une erreur ou dont la fin de session a échoué sont renvoyés aux destinations de sauvegarde.|
-|One-Way|✓|✓||Non|Une exception est levée et la transaction est restaurée.|
-|One-Way|✓||✓|Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Une fois tous les messages envoyés sans erreur, la session indique qu'il n'y a plus de messages, le service de routage ferme correctement tous les canaux de session sortante, tous les contextes de réception sont effectués et le canal de session entrante est fermé.|
-|One-Way|✓|✓|✓|Oui|Abandonnez la transaction actuelle et créez en une nouvelle. Renvoyez tous les messages précédents de la session. Une fois créée une transaction dont tous les messages ont été correctement envoyés et lorsque la session indique qu'il n'y a plus de messages, tous les canaux de session sortante sont fermés, les contextes de réception sont tous effectués avec la transaction, le canal de session entrante est fermé et la transaction est validée.<br /><br /> Lorsque les sessions sont en mode multidiffusion, les messages qui n'ont eu aucune erreur sont renvoyés à la même destination qu'avant, et les messages qui ont rencontré une erreur sont envoyés aux destinations de sauvegarde.|
+|One-Way||✔️||Non|Une exception est levée et la transaction est restaurée.|
+|One-Way|||✔️|Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Une fois le message correctement reçu, effectuez tous les contextes de réception. Si le message n'a pas été correctement reçu par un point de terminaison, n'effectuez pas le contexte de réception.<br /><br /> Lorsque ce message est envoyé en mode multidiffusion, le contexte de réception n'est effectué que si le message a été correctement reçu par au moins un point de terminaison (primaire ou de sauvegarde). Si aucun des points de terminaison situés sur les chemins d’accès de multidiffusion ne reçoit correctement le message, n’effectuez pas le contexte de réception.|
+|One-Way||✔️|✔️|Oui|Abandonnez la transaction précédente, créez une nouvelle transaction et renvoyez tous les messages. Les messages qui ont rencontré une erreur sont transmis à une destination de sauvegarde.<br /><br /> Une fois créée une transaction dont toutes les transmissions ont réussi, effectuez les contextes de réception et validez la transaction.|
+|One-Way|✔️|||Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Dans un scénario de multidiffusion, seuls les messages qui se trouvent dans une session ayant rencontré une erreur ou dont la fin de session a échoué sont renvoyés aux destinations de sauvegarde.|
+|One-Way|✔️|✔️||Non|Une exception est levée et la transaction est restaurée.|
+|One-Way|✔️||✔️|Oui|Tente de renvoyer le message sur un point de terminaison de sauvegarde. Une fois tous les messages envoyés sans erreur, la session indique qu'il n'y a plus de messages, le service de routage ferme correctement tous les canaux de session sortante, tous les contextes de réception sont effectués et le canal de session entrante est fermé.|
+|One-Way|✔️|✔️|✔️|Oui|Abandonnez la transaction actuelle et créez en une nouvelle. Renvoyez tous les messages précédents de la session. Une fois créée une transaction dont tous les messages ont été correctement envoyés et lorsque la session indique qu'il n'y a plus de messages, tous les canaux de session sortante sont fermés, les contextes de réception sont tous effectués avec la transaction, le canal de session entrante est fermé et la transaction est validée.<br /><br /> Lorsque les sessions sont en mode multidiffusion, les messages qui n'ont eu aucune erreur sont renvoyés à la même destination qu'avant, et les messages qui ont rencontré une erreur sont envoyés aux destinations de sauvegarde.|
 |Bidirectionnel||||Oui|Envoyez à une destination de sauvegarde.  Après qu'un canal a retourné un message de réponse, retournez la réponse au client d'origine.|
-|Bidirectionnel|✓|||Oui|Envoyez tous les messages sur le canal à une destination de sauvegarde.  Après qu'un canal a retourné un message de réponse, retournez la réponse au client d'origine.|
-|Bidirectionnel||✓||Non|Une exception est levée et la transaction est restaurée.|
-|Bidirectionnel|✓|✓||Non|Une exception est levée et la transaction est restaurée.|
+|Bidirectionnel|✔️|||Oui|Envoyez tous les messages sur le canal à une destination de sauvegarde.  Après qu'un canal a retourné un message de réponse, retournez la réponse au client d'origine.|
+|Bidirectionnel||✔️||Non|Une exception est levée et la transaction est restaurée.|
+|Bidirectionnel|✔️|✔️||Non|Une exception est levée et la transaction est restaurée.|
 |Duplex||||Non|La communication duplex sans session n'est pas prise en charge actuellement.|
-|Duplex|✓|||Oui|Envoyez à une destination de sauvegarde.|
+|Duplex|✔️|||Oui|Envoyez à une destination de sauvegarde.|
 
 ## <a name="hosting"></a>Hébergement
 

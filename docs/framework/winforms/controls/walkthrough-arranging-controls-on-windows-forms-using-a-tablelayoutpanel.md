@@ -1,17 +1,17 @@
 ---
-title: "Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel"
+title: Organisation des contrôles à l’aide d’un TableLayoutPanel
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], arranging with TableLayoutPanel
 - TableLayoutPanel control [Windows Forms], walkthroughs
 - Windows Forms controls, arranging
 ms.assetid: d474885e-12cc-4ab7-b997-2a23a643049b
-ms.openlocfilehash: 7b7380690d8668f46b98272e1d42640f23679b19
-ms.sourcegitcommit: 9bd1c09128e012b6e34bdcbdf3576379f58f3137
+ms.openlocfilehash: 803a56f6416cf3b718890e96cf9f36ae6c4ee471
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/23/2019
-ms.locfileid: "72799111"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740319"
 ---
 # <a name="walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel"></a>Procédure pas à pas : organisation des contrôles dans les Windows Forms à l'aide d'un TableLayoutPanel
 
@@ -27,7 +27,7 @@ Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> fournit également une
 
 En général, vous ne devez pas utiliser de contrôle de <xref:System.Windows.Forms.TableLayoutPanel> comme conteneur pour toute la disposition. Utilisez des contrôles <xref:System.Windows.Forms.TableLayoutPanel> pour fournir des fonctionnalités de redimensionnement proportionnels aux parties de la disposition.
 
-Cette procédure pas à pas décrit notamment les tâches suivantes :
+Cette procédure pas à pas décrit notamment les tâches suivantes :
 
 - Création d’un projet Windows Forms
 
@@ -151,7 +151,7 @@ Vous pouvez insérer un contrôle dans un contrôle <xref:System.Windows.Forms.T
 
 1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.
 
-2. Dans la **Boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
+2. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
 
 3. Placez le pointeur de la souris sur le contrôle <xref:System.Windows.Forms.TableLayoutPanel> . Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.Button> .
 

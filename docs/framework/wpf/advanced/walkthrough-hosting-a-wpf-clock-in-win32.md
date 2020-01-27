@@ -1,23 +1,24 @@
 ---
-title: "Procédure pas à pas : hébergement d'un WPF Clock dans Win32"
+title: 'Procédure pas à pas : héberger une horloge WPF dans Win32'
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - interoperability [WPF], tutorials
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 8d1f376a2c5b3f31407af0100d9a4417f7cff34e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 79f79e42652ca51c409fabb12a572485ad734b35
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740238"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744900"
 ---
-# <a name="walkthrough-hosting-a-wpf-clock-in-win32"></a>Procédure pas à pas : hébergement d'un WPF Clock dans Win32
+# <a name="walkthrough-host-a-wpf-clock-in-win32"></a>Procédure pas à pas : héberger une horloge WPF dans Win32
 
 Pour placer des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans des applications Win32, utilisez <xref:System.Windows.Interop.HwndSource>, qui fournit le HWND qui contient le contenu de votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tout d’abord, vous créez le <xref:System.Windows.Interop.HwndSource>, en lui attribuant des paramètres similaires à CreateWindow. Ensuite, vous indiquez à la <xref:System.Windows.Interop.HwndSource> à propos du contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] souhaité. Enfin, vous récupérez le HWND à partir du <xref:System.Windows.Interop.HwndSource>. Cette procédure pas à pas montre comment créer un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mixte dans une application Win32 qui réimplémente la boîte de dialogue **des propriétés de date et d’heure** du système d’exploitation.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Consultez [interopérabilité WPF et Win32](wpf-and-win32-interoperation.md).
 

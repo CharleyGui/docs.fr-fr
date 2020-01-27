@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: eb1815f965e86a6f8f709b32f84f879eb03de447
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 4bf1c4826273535bfe824828f0fad96998b29483
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115803"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742590"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -112,20 +112,20 @@ Pour plus d’informations sur l’outil d’éditeur de liens de langage interm
 
 ### <a name="tiered-compilation"></a>Compilation hiérarchisée
 
-La [compilation hiérarchisée](https://devblogs.microsoft.com/dotnet/tiered-compilation-preview-in-net-core-2-1/) est activée par défaut avec .NET Core 3.0. Cette fonctionnalité permet au runtime d’utiliser de manière plus adaptative le compilateur juste-à-temps (Just-In-Time ou JIT) pour obtenir de meilleures performances.
+La [compilation hiérarchisée](https://github.com/dotnet/runtime/blob/master/docs/design/features/tiered-compilation-guide.md) est activée par défaut avec .NET Core 3.0. Cette fonctionnalité permet au runtime d’utiliser plus de manière adaptative le compilateur juste-à-temps (JIT) pour obtenir de meilleures performances.
 
-Le principal avantage de la compilation hiérarchisée est d’autoriser les méthode (re-) JIT avec un niveau de moins bonne qualité mais plus rapide, ou avec un niveau de meilleure qualité mais plus lent. Cela permet d’améliorer les performances d’une application quand elle passe par les différents stades de l’exécution, du démarrage à l’état stable. Ceci contraste avec l’approche de la compilation non hiérarchisée, où chaque méthode est compilée d’une seule manière (la même que le niveau de qualité supérieure), qui privilégie la stabilité de l’état au détriment des performances au démarrage.
+Le principal avantage de la compilation à plusieurs niveaux est de fournir deux méthodes de jitting : dans un niveau de qualité inférieure mais plus rapide ou un niveau de qualité supérieure, mais plus faible. La qualité fait référence à la manière dont la méthode est optimisée. TC permet d’améliorer les performances d’une application à mesure qu’elle passe par différentes étapes d’exécution, du démarrage à l’état stable. Lorsque la compilation à plusieurs niveaux est désactivée, chaque méthode est compilée d’une manière unique, avec des performances d’état stable sur les performances de démarrage.
 
-Lorsque TC est activé, au démarrage d’une méthode appelée :
+Lorsque TC est activé, le comportement suivant s’applique à la compilation de méthode au démarrage d’une application :
 
-- Si la méthode a du code compilé par l’AOA (ReadyToRun), le code prégénéré est utilisé.
-- Dans le cas contraire, la méthode sera traités avec JIT. En général, ces méthodes sont actuellement des génériques sur les types valeur.
-  - Le JIT rapide produit un code de qualité inférieure plus rapidement. Le JIT rapide est activé par défaut dans .NET Core 3,0 pour les méthodes qui ne contiennent pas de boucles et est préférable au démarrage.
-  - Le JIT entièrement optimisé produit un code de qualité supérieure plus lentement. Pour les méthodes où le JIT rapide ne doit pas être utilisé (par exemple, si la méthode est attribuée avec `[MethodImpl(MethodImplOptions.AggressiveOptimization)]`), le JIT entièrement optimisé est utilisé.
+- Si la méthode a un code compilé à l’avance, ou [ReadyToRun](#readytorun-images), le code prégénéré est utilisé.
+- Sinon, la méthode est avec JIT. En règle générale, ces méthodes sont des génériques sur les types valeur.
+  - Le *JIT rapide* génère plus rapidement du code de qualité inférieure (ou moins optimisée). Dans .NET Core 3,0, le JIT rapide est activé par défaut pour les méthodes qui ne contiennent pas de boucles et est préférable au démarrage.
+  - Le JIT entièrement optimisé génère plus lentement un code de qualité supérieure (ou optimisée). Pour les méthodes où le JIT rapide ne doit pas être utilisé (par exemple, si la méthode est attribuée avec <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), le JIT entièrement optimisé est utilisé.
 
-Enfin, une fois que les méthodes sont appelées plusieurs fois, elles sont réexécutées avec JIT avec l’optimisation complète de JIT en arrière-plan.
+Pour les méthodes fréquemment appelées, le compilateur juste-à-temps finit par créer un code entièrement optimisé en arrière-plan. Le code optimisé remplace ensuite le code précompilé pour cette méthode.
 
-Le code généré par JIT rapide peut s’exécuter plus lentement, allouer davantage de mémoire ou utiliser plus d’espace de pile. En cas de problème, le JIT rapide peut être désactivé à l’aide de ce paramètre dans votre fichier projet :
+Le code généré par JIT rapide peut s’exécuter plus lentement, allouer davantage de mémoire ou utiliser plus d’espace de pile. En cas de problème, vous pouvez désactiver le JIT rapide à l’aide de cette propriété MSBuild dans le fichier projet :
 
 ```xml
 <PropertyGroup>
@@ -133,7 +133,7 @@ Le code généré par JIT rapide peut s’exécuter plus lentement, allouer dava
 </PropertyGroup>
 ```
 
-Pour désactiver complètement la compilation hiérarchisée, utilisez ce paramétrage dans votre fichier projet :
+Pour désactiver complètement TC, utilisez cette propriété MSBuild dans votre fichier projet :
 
 ```xml
 <PropertyGroup>
@@ -141,7 +141,10 @@ Pour désactiver complètement la compilation hiérarchisée, utilisez ce param�
 </PropertyGroup>
 ```
 
-Toutes les modifications apportées aux paramètres ci-dessus dans le fichier projet peuvent nécessiter qu’une build propre soit reflétée (supprimer les répertoires `obj` et `bin` et reconstruire).
+> [!TIP]
+> Si vous modifiez ces paramètres dans le fichier projet, vous devrez peut-être effectuer une génération propre pour que les nouveaux paramètres soient reflétés (supprimez le `obj` et `bin` répertoires et Rebuild).
+
+Pour plus d’informations sur la configuration de la compilation au moment de l’exécution, consultez [options de configuration au moment de l’exécution pour la compilation](../run-time-config/compilation.md).
 
 ### <a name="readytorun-images"></a>Images ReadyToRun
 
@@ -182,7 +185,7 @@ Exceptions au ciblage croisé :
 .NET Core 3.0 introduit une fonctionnalité que vous pouvez choisir d’utiliser et qui permet de restaurer par progression votre application vers la dernière version majeure de .NET Core. En outre, un nouveau paramètre a été ajouté pour contrôler la façon dont la restauration par progression est appliquée à votre application. Ce paramètre peut être configuré des façons suivantes :
 
 - Propriété du fichier projet : `RollForward`
-- Propriété du fichier config du runtime : `rollForward`
+- Propriété du fichier de configuration au moment de l’exécution : `rollForward`
 - Variable d’environnement : `DOTNET_ROLL_FORWARD`
 - Argument de ligne de commande : `--roll-forward`
 

@@ -1,5 +1,5 @@
 ---
-title: 'Comment : lier des données au contrôle DataGridView Windows Forms'
+title: Lier des données au contrôle DataGridView
 ms.date: 02/08/2019
 dev_langs:
 - csharp
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - data binding [Windows Forms], DataGridView control
 - DataGridView control [Windows Forms], data binding
 ms.assetid: 1660f69c-5711-45d2-abc1-e25bc6779124
-ms.openlocfilehash: bdba8af04cd9473b17d1a28f07ead7cd5bf43698
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e2762bf363a469abf8c1e57b851d351c1cb41b62
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139091"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745079"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control"></a>Comment : lier des données au contrôle DataGridView Windows Forms
 

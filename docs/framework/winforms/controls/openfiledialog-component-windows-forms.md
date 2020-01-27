@@ -1,28 +1,28 @@
 ---
-title: OpenFileDialog, composant (Windows Forms)
+title: OpenFileDialog, composant
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Open File dialog box
 - OpenFileDialog component
 ms.assetid: d2efa832-a272-42ff-aa26-c4ac13ff59ba
-ms.openlocfilehash: 0e13417e43e9cda79e9e253135e564990361dcf6
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: ef6b69a90a048caf7924b00ddd0b79a0a7efaeb9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61936342"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744363"
 ---
 # <a name="openfiledialog-component-windows-forms"></a>OpenFileDialog, composant (Windows Forms)
-Le composant Windows Forms <xref:System.Windows.Forms.OpenFileDialog>  est une boîte de dialogue préconfigurée. Il est identique à **ouvrir un fichier** boîte de dialogue exposée par le système d’exploitation Windows. Il hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  
+Le composant Windows Forms <xref:System.Windows.Forms.OpenFileDialog>  est une boîte de dialogue préconfigurée. Il s’agit de la même boîte de dialogue **ouvrir le fichier** que celle exposée par le système d’exploitation Windows. Il hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du composant OpenFileDialog](openfiledialog-component-overview-windows-forms.md)  
  Présente les concepts généraux du composant <xref:System.Windows.Forms.OpenFileDialog>, qui vous permet d'afficher une boîte de dialogue préconfigurée que les utilisateurs peuvent utiliser pour ouvrir des fichiers.  
   
- [Guide pratique pour Fichiers ouverts à l’aide du composant OpenFileDialog](how-to-open-files-using-the-openfiledialog-component.md)  
+ [Guide pratique pour ouvrir des fichiers à l'aide du composant OpenFileDialog](how-to-open-files-using-the-openfiledialog-component.md)  
  Explique comment ouvrir un fichier au moment de l'exécution via une instance du composant <xref:System.Windows.Forms.OpenFileDialog>.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.OpenFileDialog>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.OpenFileDialog> et ses membres.  
   

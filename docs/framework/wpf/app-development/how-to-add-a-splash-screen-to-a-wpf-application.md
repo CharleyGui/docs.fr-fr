@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Ajouter un écran de démarrage dans une application WPF'
+title: Comment ajouter un écran de démarrage
 ms.date: 08/18/2018
 helpviewer_keywords:
 - WPF [WPF], splash screen
@@ -7,44 +7,44 @@ helpviewer_keywords:
 - SplashScreen class [WPF]
 - splash screen [WPF]
 ms.assetid: d70a25c4-5fb9-4c27-b01d-b1b8ef39b3fd
-ms.openlocfilehash: 3120ee64d65822d323800a89466c6b707169aaaa
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 39f53e21c40f036c65894b4f275cd5fb414999be
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947899"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740451"
 ---
-# <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>Procédure : Ajouter un écran de démarrage dans une application WPF
+# <a name="how-to-add-a-splash-screen-to-a-wpf-application"></a>Comment : ajouter un écran de démarrage dans une application WPF
 
-Cette rubrique montre comment ajouter une fenêtre de démarrage, ou *écran de démarrage*, à une application Windows Presentation Foundation (WPF).
+Cette rubrique montre comment ajouter une fenêtre de démarrage ou un *écran*de démarrage à une application Windows Presentation Foundation (WPF).
 
-## <a name="to-add-an-existing-image-as-a-splash-screen"></a>Pour ajouter une image existante en tant qu’un écran de démarrage
+## <a name="to-add-an-existing-image-as-a-splash-screen"></a>Pour ajouter une image existante sous la forme d’un écran de démarrage
 
-1. Créer ou rechercher une image que vous souhaitez utiliser pour l’écran de démarrage. Vous pouvez utiliser n’importe quel format d’image pris en charge par le composant WIC (Windows Imaging Component). Par exemple, vous pouvez utiliser le format BMP, GIF, JPEG, PNG ou TIFF.
+1. Créez ou recherchez une image que vous souhaitez utiliser pour l’écran de démarrage. Vous pouvez utiliser n’importe quel format d’image pris en charge par le composant WIC (Windows Imaging Component). Par exemple, vous pouvez utiliser le format BMP, GIF, JPEG, PNG ou TIFF.
 
-2. Ajoutez le fichier image au projet d’Application WPF.
+2. Ajoutez le fichier image au projet d’application WPF.
 
-3. Dans **l’Explorateur de solutions**, sélectionnez l’image.
+3. Dans **Explorateur de solutions**, sélectionnez l’image.
 
-4. Dans la fenêtre Propriétés, cliquez sur la flèche déroulante pour le **Action de génération** propriété.
+4. Dans la Fenêtre Propriétés, cliquez sur la flèche déroulante de la propriété **action de génération** .
 
 5. Sélectionnez **SplashScreen** dans la liste déroulante.
 
 6. Appuyez sur **F5** pour générer et exécuter l’application.
 
-     L’image d’écran de démarrage s’affiche dans le centre de l’écran, puis disparaît lorsque la fenêtre principale de l’application s’affiche.
+     L’image de l’écran de démarrage s’affiche au centre de l’écran, puis disparaît lorsque la fenêtre principale de l’application s’affiche.
 
-## <a name="to-exclude-the-splash-screen-from-build"></a>Pour exclure de l’écran de démarrage à partir de la build
+## <a name="to-exclude-the-splash-screen-from-build"></a>Pour exclure l’écran de démarrage de la Build
 
-1. Dans **l’Explorateur de solutions**, sélectionnez l’image d’écran de démarrage.
+1. Dans **Explorateur de solutions**, sélectionnez l’image de l’écran de démarrage.
 
-2. Dans le **propriétés** fenêtre, définissez la **Action de génération** à **aucun**.
+2. Dans la fenêtre **Propriétés** , affectez à **action de génération** la valeur **aucun**.
 
-## <a name="to-remove-the-splash-screen-from-an-application"></a>Pour supprimer l’écran de démarrage à partir d’une application
+## <a name="to-remove-the-splash-screen-from-an-application"></a>Pour supprimer l’écran de démarrage d’une application
 
-Dans **l’Explorateur de solutions**, supprimez l’image d’écran de démarrage.
+Dans **Explorateur de solutions**, supprimez l’image de l’écran de démarrage.
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.SplashScreen>
-- [Guide pratique pour Ajouter des éléments existants à un projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))
+- [Comment : ajouter des éléments existants à un projet](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/9f4t9t92(v=vs.100))

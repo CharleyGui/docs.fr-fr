@@ -1,29 +1,29 @@
 ---
-title: GroupBox, contrôle (Windows Forms)
+title: GroupBox, contrôle
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], grouping
 - GroupBox control [Windows Forms]
 - grouping controls [Windows Forms]
 ms.assetid: ee7fb3ed-2fae-4df3-bdeb-15d42e5d7d75
-ms.openlocfilehash: b808a76f4aa9d2c28c838d0c6cfd7bc28d589061
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 2f243b6d0a54c283a4649b7e75fcf9e5af999ae0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61971260"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745618"
 ---
 # <a name="groupbox-control-windows-forms"></a>GroupBox, contrôle (Windows Forms)
-Windows Forms <xref:System.Windows.Forms.GroupBox> contrôles sont utilisés pour fournir un regroupement identifiable pour d’autres contrôles. En règle générale, vous utilisez des zones de groupe pour diviser un formulaire en fonction. Par exemple, peut avoir un bon de commande qui spécifie des options de courrier de quels le lendemain à utiliser. Regroupement de toutes les options dans une zone de groupe donne à l’utilisateur un indice visuel logique. Le <xref:System.Windows.Forms.GroupBox> contrôle est similaire à la <xref:System.Windows.Forms.Panel> contrôler ; Toutefois, uniquement le <xref:System.Windows.Forms.GroupBox> contrôle affiche une légende et uniquement le <xref:System.Windows.Forms.Panel> contrôle peut avoir des barres de défilement.  
+Les contrôles de <xref:System.Windows.Forms.GroupBox> Windows Forms sont utilisés pour fournir un regroupement identifiable pour d’autres contrôles. En général, vous utilisez des zones de groupe pour subdiviser un formulaire par fonction. Par exemple, vous pouvez avoir un formulaire de commande qui spécifie des options de publipostage, telles que le transporteur de nuit à utiliser. Le regroupement de toutes les options dans une zone de groupe donne à l’utilisateur un indice visuel logique. Le contrôle <xref:System.Windows.Forms.GroupBox> est semblable au contrôle <xref:System.Windows.Forms.Panel> ; Toutefois, seul le contrôle <xref:System.Windows.Forms.GroupBox> affiche une légende, et seul le contrôle <xref:System.Windows.Forms.Panel> peut avoir des barres de défilement.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du contrôle GroupBox](groupbox-control-overview-windows-forms.md)  
  Décrit un contrôle et ses principales fonctionnalités et propriétés.  
   
- [Guide pratique pour Contrôles de groupe avec le contrôle de GroupBox Windows Forms](how-to-group-controls-with-the-windows-forms-groupbox-control.md)  
- Décrit comment utiliser ce contrôle pour les contrôles de groupe.  
+ [Guide pratique pour regrouper des contrôles au moyen du contrôle GroupBox Windows Forms](how-to-group-controls-with-the-windows-forms-groupbox-control.md)  
+ Décrit comment utiliser ce contrôle pour regrouper des contrôles.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.GroupBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   

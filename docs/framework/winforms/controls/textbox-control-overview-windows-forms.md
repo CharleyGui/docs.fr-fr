@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble du contrôle TextBox (Windows Forms)
+title: Vue d'ensemble du contrôle TextBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,20 +11,20 @@ helpviewer_keywords:
 - TextBox control [Windows Forms], about TextBox controls
 - text boxes [Windows Forms], adding
 ms.assetid: d1a9c7f5-fa53-480a-a75c-158f8649ea2f
-ms.openlocfilehash: a91b67df1071c79707bb20a68efb4d5e6f083ae0
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 06ab460d720d17331881b5ba653263160eaf3cb3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61932546"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742809"
 ---
 # <a name="textbox-control-overview-windows-forms"></a>Vue d'ensemble du contrôle TextBox (Windows Forms)
-Les zones de texte Windows Forms sont utilisés pour obtenir des données à partir de l’utilisateur ou pour afficher le texte. Le <xref:System.Windows.Forms.TextBox> contrôle est généralement utilisé pour le texte modifiable, bien qu’il peut également être en lecture seule. Zones de texte peuvent afficher plusieurs lignes, habiller le texte à la taille du contrôle et ajouter une mise en forme. Le <xref:System.Windows.Forms.TextBox> contrôle fournit un style de format unique pour le texte affiché ou entré dans le contrôle. Pour afficher plusieurs types de texte mis en forme, utilisez la <xref:System.Windows.Forms.RichTextBox> contrôle. Pour plus d’informations, consultez [vue d’ensemble du contrôle RichTextBox](richtextbox-control-overview-windows-forms.md).  
+Les zones de texte Windows Forms sont utilisées pour obtenir l’entrée de l’utilisateur ou pour afficher du texte. Le contrôle <xref:System.Windows.Forms.TextBox> est généralement utilisé pour le texte modifiable, bien qu’il puisse également être mis en lecture seule. Les zones de texte peuvent afficher plusieurs lignes, ajuster le texte à la taille du contrôle et ajouter une mise en forme de base. Le contrôle <xref:System.Windows.Forms.TextBox> fournit un style de mise en forme unique pour le texte affiché ou entré dans le contrôle. Pour afficher plusieurs types de texte mis en forme, utilisez le contrôle <xref:System.Windows.Forms.RichTextBox>. Pour plus d’informations, consultez [vue d’ensemble du contrôle RichTextBox](richtextbox-control-overview-windows-forms.md).  
   
-## <a name="working-with-the-textbox-control"></a>Utilisation du contrôle de zone de texte  
- Le texte affiché par le contrôle est contenu dans le <xref:System.Windows.Forms.TextBox.Text%2A> propriété. Par défaut, vous pouvez entrer jusqu'à 2 048 caractères dans une zone de texte. Si vous définissez la <xref:System.Windows.Forms.TextBox.Multiline%2A> propriété `true`, vous pouvez entrer jusqu'à 32 Ko de texte. Le <xref:System.Windows.Forms.TextBox.Text%2A> propriété peut être définie au moment du design avec la fenêtre Propriétés, au moment de l’exécution dans le code ou par l’utilisateur au moment de l’exécution. Le contenu actuel d’une zone de texte peut être récupéré au moment de l’exécution en lisant le <xref:System.Windows.Forms.TextBox.Text%2A> propriété.  
+## <a name="working-with-the-textbox-control"></a>Utilisation du contrôle TextBox  
+ Le texte affiché par le contrôle est contenu dans la propriété <xref:System.Windows.Forms.TextBox.Text%2A>. Par défaut, vous pouvez entrer jusqu’à 2048 caractères dans une zone de texte. Si vous affectez à la propriété <xref:System.Windows.Forms.TextBox.Multiline%2A> la valeur `true`, vous pouvez entrer jusqu’à 32 Ko de texte. La propriété <xref:System.Windows.Forms.TextBox.Text%2A> peut être définie au moment du design à l’aide de la fenêtre Propriétés, au moment de l’exécution dans le code ou par l’entrée d’utilisateur au moment de l’exécution. Le contenu actuel d’une zone de texte peut être récupéré au moment de l’exécution en lisant la propriété <xref:System.Windows.Forms.TextBox.Text%2A>.  
   
- L’exemple de code suivant définit le texte dans le contrôle au moment de l’exécution. Le `InitializeMyControl` procédure s’exécutera pas automatiquement ; il doit être appelé.  
+ L’exemple de code suivant définit le texte dans le contrôle au moment de l’exécution. La procédure `InitializeMyControl` ne s’exécute pas automatiquement ; elle doit être appelée.  
   
 ```vb  
 Private Sub InitializeMyControl()  
@@ -52,10 +52,10 @@ private:
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.TextBox>
-- [Guide pratique pour Contrôler le Point d’Insertion dans un contrôle de zone de texte Windows Forms](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
-- [Guide pratique pour Créer une zone de texte mot de passe avec le contrôle de zone de texte Windows Forms](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
-- [Guide pratique pour Créer une zone de texte en lecture seule](how-to-create-a-read-only-text-box-windows-forms.md)
-- [Guide pratique pour Placez des guillemets doubles dans une chaîne](how-to-put-quotation-marks-in-a-string-windows-forms.md)
-- [Guide pratique pour Sélectionner du texte dans le contrôle de zone de texte Windows Forms](how-to-select-text-in-the-windows-forms-textbox-control.md)
-- [Guide pratique pour Afficher plusieurs lignes dans le contrôle de zone de texte Windows Forms](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
+- [Guide pratique pour contrôler le point d’insertion dans un contrôle TextBox Windows Forms](how-to-control-the-insertion-point-in-a-windows-forms-textbox-control.md)
+- [Guide pratique pour créer une zone de texte pour mot de passe avec le contrôle TextBox Windows Forms](how-to-create-a-password-text-box-with-the-windows-forms-textbox-control.md)
+- [Guide pratique pour créer une zone de texte en lecture seule](how-to-create-a-read-only-text-box-windows-forms.md)
+- [Guide pratique pour insérer des guillemets dans une chaîne](how-to-put-quotation-marks-in-a-string-windows-forms.md)
+- [Guide pratique pour sélectionner du texte dans le contrôle TextBox Windows Forms](how-to-select-text-in-the-windows-forms-textbox-control.md)
+- [Guide pratique pour afficher des lignes multiples dans le contrôle TextBox Windows Forms](how-to-view-multiple-lines-in-the-windows-forms-textbox-control.md)
 - [TextBox, contrôle](textbox-control-windows-forms.md)

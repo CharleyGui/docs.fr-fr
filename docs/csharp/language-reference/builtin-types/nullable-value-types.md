@@ -4,16 +4,16 @@ description: En savoir C# plus sur les types valeur Nullable et leur utilisation
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 3b9a29e75fe894f7d8a0751feefa9eb0a39baa2c
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 42673d16ac68bbf119e57e4c357b1b2b2a0b5c51
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964323"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740946"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types valeur Nullable (C# référence)
 
-Un type valeur Nullable `T?` représente toutes les valeurs de son [type valeur](../keywords/value-types.md) sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Par exemple, vous pouvez assigner l’une des trois valeurs suivantes à une variable `bool?` : `true`, `false`ou `null`. Un type valeur sous-jacent `T` ne peut pas être un type valeur Nullable lui-même.
+Un type valeur Nullable `T?` représente toutes les valeurs de son [type valeur](value-types.md) sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Par exemple, vous pouvez assigner l’une des trois valeurs suivantes à une variable `bool?` : `true`, `false`ou `null`. Un type valeur sous-jacent `T` ne peut pas être un type valeur Nullable lui-même.
 
 > [!NOTE]
 > C#8,0 introduit la fonctionnalité de types référence Nullable. Pour plus d’informations, consultez [types de référence Nullable](../../nullable-references.md). Les types valeur Nullable sont disponibles à partir C# de 2.

@@ -1,5 +1,5 @@
 ---
-title: Optimisation des performances des applications WPF
+title: Optimiser les performances de l’application
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application rendering [WPF], performance
@@ -7,12 +7,12 @@ helpviewer_keywords:
 - applications [WPF], optimizing
 - WPF application [WPF], optimizing
 ms.assetid: ac8c6aa3-3c68-4a24-9827-3b6c829c1ebf
-ms.openlocfilehash: 98c7022eab9153808d47d7da69c23349032165c3
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: cc6ea051401199a87965565c920068fd55cb05d0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460850"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743948"
 ---
 # <a name="optimizing-wpf-application-performance"></a>Optimisation des performances des applications WPF
 Cette section est destinée à servir de référence pour les développeurs d’applications [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] qui cherchent des moyens d’améliorer les performances de leurs applications. Si vous êtes un développeur qui est nouveau dans l’infrastructure Microsoft .NET et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], vous devez d’abord vous familiariser avec les deux plateformes. Cette section part du principe que vous connaissez les deux et que les programmeurs ont déjà suffisamment de connaissances pour faire fonctionner leurs applications.  

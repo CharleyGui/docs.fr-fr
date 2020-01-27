@@ -1,5 +1,5 @@
 ---
-title: NotifyIcon, composant (Windows Forms)
+title: NotifyIcon, composant
 ms.date: 03/30/2017
 helpviewer_keywords:
 - application icons [Windows Forms], background processes
@@ -11,27 +11,27 @@ helpviewer_keywords:
 - NotifyIcon component
 - SysTray icons
 ms.assetid: 20312268-1d67-494a-8601-5c43b7f1b513
-ms.openlocfilehash: b1237a1280142cf65002ca307179b054a8fb7dd2
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 61fc4a53a16c3e7df8e0141cecb497a6a85fc5cb
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61627809"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744949"
 ---
 # <a name="notifyicon-component-windows-forms"></a>NotifyIcon, composant (Windows Forms)
-Les formulaires Windows `NotifyIcon` composant affiche des icônes dans la zone de notification d’état de la barre des tâches pour les processus qui s’exécutent en arrière-plan et ne seraient pas sinon ont des interfaces utilisateur. En guise d’exemple, on pourrait citer un programme antivirus accessible en cliquant sur une icône dans la zone de notification d’état de la barre des tâches.  
+Le composant Windows Forms `NotifyIcon` affiche des icônes dans la zone de notification d’état de la barre des tâches pour les processus qui s’exécutent en arrière-plan et qui n’auraient pas d’autres interfaces utilisateur. En guise d’exemple, on pourrait citer un programme antivirus accessible en cliquant sur une icône dans la zone de notification d’état de la barre des tâches.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du composant NotifyIcon](notifyicon-component-overview-windows-forms.md)  
- Présente les concepts généraux de le `NotifyIcon` composant, qui permet aux utilisateurs d’afficher des icônes pour les processus en cours d’exécution en arrière-plan qui n’ont pas d’une interface utilisateur.  
+ Présente les concepts généraux du composant `NotifyIcon`, qui permet aux utilisateurs de voir des icônes pour les processus qui s’exécutent en arrière-plan et qui n’ont pas d’interface utilisateur.  
   
- [Guide pratique pour Ajouter des icônes d’Application à la barre des tâches avec le composant NotifyIcon Windows Forms](app-icons-to-the-taskbar-with-wf-notifyicon.md)  
- Explique comment définir l’icône affichée par le `NotifyIcon` composant.  
+ [Guide pratique pour ajouter des icônes d’application à la barre des tâches à l’aide du composant NotifyIcon Windows Forms](app-icons-to-the-taskbar-with-wf-notifyicon.md)  
+ Fournit la procédure de définition de l’icône affichée par le composant `NotifyIcon`.  
   
- [Guide pratique pour Associer un Menu contextuel à du composant NotifyIcon Windows Forms](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
- Fournit la procédure d’ajout d’un menu contextuel pour un `NotifyIcon` composant.  
+ [Guide pratique pour associer un menu contextuel à un composant NotifyIcon Windows Forms](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
+ Fournit la procédure d’ajout d’un menu contextuel à un composant `NotifyIcon`.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.NotifyIcon>  
  Fournit des informations de référence sur la classe et ses membres.  
   
