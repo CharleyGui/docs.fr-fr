@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : personnaliser des cellules et des colonnes dans le contrôle DataGridView Windows Forms en développant leur comportement et leur aspect'
+title: Personnaliser les cellules et les colonnes dans le contrôle DataGridView en étendant leur comportement et leur apparence
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - columns [Windows Forms], customizing in DataGridView control
 - cells [Windows Forms], customizing in DataGridView control
 ms.assetid: 9b7dc7b6-5ce6-4566-9949-902f74f17a81
-ms.openlocfilehash: 0976a0e07aead1bbaf951c6db8266c5de1a31cd8
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: be01e085d4fa74c0c49f0a0494183482875c6a09
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69929699"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744058"
 ---
-# <a name="how-to-customize-cells-and-columns-in-the-windows-forms-datagridview-control-by-extending-their-behavior-and-appearance"></a>Procédure : personnaliser des cellules et des colonnes dans le contrôle DataGridView Windows Forms en développant leur comportement et leur aspect
+# <a name="how-to-customize-cells-and-columns-in-the-windows-forms-datagridview-control-by-extending-their-behavior-and-appearance"></a>Comment : personnaliser les cellules et les colonnes du contrôle DataGridView Windows Forms en étendant leur comportement et leur apparence
 Le contrôle <xref:System.Windows.Forms.DataGridView> offre plusieurs manières de personnaliser son apparence et son comportement à l'aide de propriétés, d'événements et de classes auxiliaires. Parfois, vous pouvez avoir des exigences pour vos cellules qui vont au-delà de ce que peuvent fournir ces fonctionnalités. Vous pouvez créer vos propres classes <xref:System.Windows.Forms.DataGridViewCell> pour fournir des fonctionnalités étendues.  
   
  Vous pouvez créer une classe <xref:System.Windows.Forms.DataGridViewCell> personnalisée en dérivant de la classe de base <xref:System.Windows.Forms.DataGridViewCell> ou de l'une de ses classes dérivées. Bien que vous puissiez afficher tout type de cellule dans tout type de colonne, vous créerez en général aussi une classe <xref:System.Windows.Forms.DataGridViewColumn> personnalisée spécialisée pour l'affichage de votre type de cellule. Les classes de colonne dérivent de <xref:System.Windows.Forms.DataGridViewColumn> ou de l'un de ses types dérivés.  

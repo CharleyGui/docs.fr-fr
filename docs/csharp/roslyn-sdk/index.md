@@ -3,12 +3,12 @@ title: Kit SDK .NET Compiler Platform (API Roslyn)
 description: Apprenez à utiliser le Kit de développement logiciel (SDK) .NET Compiler Platform (également appelé API Roslyn) pour comprendre le code .NET, identifier les erreurs et les corriger.
 ms.date: 10/10/2017
 ms.custom: mvc
-ms.openlocfilehash: 98984edad3a25daa8b0ea13b903c4e6447b8a22a
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: a1ceb1d11cf846e67be2c6558978e01133e591da
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163135"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742739"
 ---
 # <a name="the-net-compiler-platform-sdk"></a>Kit SDK .NET Compiler Platform
 
@@ -43,7 +43,7 @@ Les équipes peuvent créer des analyseurs et des correctifs de code permettant 
 
 ## <a name="provide-guidance-with-library-packages"></a>Offrir de l’aide sur les packages de bibliothèque
 
-Il existe une multitude de bibliothèques accessibles aux développeurs .NET sur NuGet.
+De nombreuses bibliothèques sont disponibles pour les développeurs .NET sur NuGet.
 Certaines proviennent de Microsoft ou de sociétés tierces, d’autres sont proposées par des membres de la communauté et des bénévoles. Ces bibliothèques sont plus souvent utilisées et sont mieux notées lorsque les développeurs réussissent à les exploiter.
 
 En plus de la documentation, vous pouvez proposer des analyseurs et des correctifs de code qui recherchent et corrigent les mauvais emplois courants de votre bibliothèque. Ces corrections immédiates aident les développeurs à en tirer parti plus rapidement.
@@ -58,7 +58,7 @@ Ces analyseurs peuvent être chargés sur [Visual Studio Marketplace](https://ma
 
 ## <a name="next-steps"></a>Étapes suivantes :
 
-Le Kit SDK .NET Compiler Platform inclut les derniers modèles objet du langage pour la génération, l’analyse et la refactorisation de code. Cette section offre une vue d’ensemble conceptuelle du Kit SDK .NET Compiler Platform. Vous trouverez plus de détails dans les sections des didacticiels, des exemples et des démarrages rapides.
+Le Kit SDK .NET Compiler Platform inclut les derniers modèles objet du langage pour la génération, l’analyse et la refactorisation de code. Cette section offre une vue d’ensemble conceptuelle du Kit SDK .NET Compiler Platform. Vous trouverez plus de détails dans les sections Démarrages rapides, exemples et didacticiels.
 
 Pour en savoir plus sur les concepts du Kit SDK .NET Compiler Platform, consultez ces cinq rubriques :
 

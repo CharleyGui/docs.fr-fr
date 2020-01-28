@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms à l’aide du concepteur'
+title: Ajouter et supprimer des nœuds avec le contrôle TreeView à l’aide du concepteur
 ms.date: 03/30/2017
 helpviewer_keywords:
 - examples [Windows Forms], TreeView control
@@ -7,24 +7,24 @@ helpviewer_keywords:
 - tree nodes in TreeView control
 - TreeView control [Windows Forms], adding nodes
 ms.assetid: 35bf1750-045e-4ec5-97cb-b47b0dbdaa2c
-ms.openlocfilehash: ef3a963b5621f0b972b02a007681f600fbdb1050
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 7edf09539719ec76fa3f650254c5c84ff0bc3af7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/25/2019
-ms.locfileid: "69040073"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732241"
 ---
-# <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control-using-the-designer"></a>Procédure : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms à l’aide du concepteur
+# <a name="how-to-add-and-remove-nodes-with-the-windows-forms-treeview-control-using-the-designer"></a>Comment : ajouter et supprimer des nœuds avec le contrôle TreeView Windows Forms à l’aide du concepteur
 
-Étant donné que <xref:System.Windows.Forms.TreeView> le contrôle Windows Forms affiche des nœuds de façon hiérarchique, lorsque vous ajoutez un nœud, vous devez prêter attention à ce qu’est son nœud parent.
+Étant donné que le contrôle Windows Forms <xref:System.Windows.Forms.TreeView> affiche des nœuds de façon hiérarchique, lorsque vous ajoutez un nœud, vous devez prêter attention à ce qu’est son nœud parent.
 
-La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant <xref:System.Windows.Forms.TreeView> un contrôle. Pour plus d’informations sur la configuration d’un tel [projet, consultez Procédure : Créez un projet](/visualstudio/ide/step-1-create-a-windows-forms-application-project) d’application Windows Forms [et procédez comme suit : Ajoutez des contrôles à](how-to-add-controls-to-windows-forms.md)Windows Forms.
+La procédure suivante requiert un projet d' **application Windows** avec un formulaire contenant un contrôle de <xref:System.Windows.Forms.TreeView>. Pour plus d’informations sur la configuration d’un tel projet, consultez [Comment : créer un projet d’application Windows Forms](/visualstudio/ide/step-1-create-a-windows-forms-application-project) et [Comment : ajouter des contrôles à des Windows Forms](how-to-add-controls-to-windows-forms.md).
 
 ### <a name="to-add-or-remove-nodes-in-the-designer"></a>Pour ajouter ou supprimer des nœuds dans le concepteur
 
 1. Sélectionnez le contrôle <xref:System.Windows.Forms.TreeView>.
 
-2. Dans la fenêtre **Propriétés** , cliquez sur **le bouton de sélection (** ![...) dans le bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) en regard de la <xref:System.Windows.Forms.TreeView.Nodes%2A> propriété.
+2. Dans la fenêtre **Propriétés** , cliquez sur les **points de suspension** (![le bouton de sélection (...) du bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) en regard de la propriété <xref:System.Windows.Forms.TreeView.Nodes%2A>.
 
      L' **éditeur TreeNode** s’affiche.
 
@@ -36,7 +36,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 - [TreeView, contrôle](treeview-control-windows-forms.md)
 - [Vue d’ensemble du contrôle TreeView](treeview-control-overview-windows-forms.md)
-- [Guide pratique pour Définir des icônes pour le contrôle TreeView Windows Forms](how-to-set-icons-for-the-windows-forms-treeview-control.md)
-- [Guide pratique pour Itérer au sein de tous les nœuds d’un contrôle TreeView Windows Forms](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
-- [Guide pratique pour Déterminer le nœud de TreeView sur lequel l’utilisateur a cliqué](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
-- [Guide pratique pour Ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)
+- [Guide pratique pour définir des icônes pour le contrôle TreeView Windows Forms](how-to-set-icons-for-the-windows-forms-treeview-control.md)
+- [Guide pratique pour itérer au sein de tous les nœuds d’un contrôle TreeView Windows Forms](how-to-iterate-through-all-nodes-of-a-windows-forms-treeview-control.md)
+- [Guide pratique pour identifier le nœud de TreeView sur lequel un clic est effectué](how-to-determine-which-treeview-node-was-clicked-windows-forms.md)
+- [Guide pratique pour ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)

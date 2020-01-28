@@ -9,16 +9,16 @@ helpviewer_keywords:
 - unboxing [C#]
 - boxing [C#]
 ms.assetid: 8da9bbf4-bce9-4b08-b2e5-f64c11c56514
-ms.openlocfilehash: 32156ad0fe4b3dce4371fe757d15f5b8040aaf19
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 62df08bf4ae3580e9b8d5b3aab0697d396674ca1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115854"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745412"
 ---
 # <a name="boxing-and-unboxing-c-programming-guide"></a>Boxing et unboxing (Guide de programmation C#)
 
-Le boxing est la conversion d’un [type valeur](../../language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Lorsque le common language runtime (CLR) convertit un type valeur, il encapsule la valeur à l’intérieur d’une instance <xref:System.Object?displayProperty=nameWithType> et la stocke sur le tas managé. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.
+Le boxing est la conversion d’un [type valeur](../../language-reference/builtin-types/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Lorsque le common language runtime (CLR) convertit un type valeur, il encapsule la valeur à l’intérieur d’une instance <xref:System.Object?displayProperty=nameWithType> et la stocke sur le tas managé. L'unboxing extrait le type valeur de l'objet. La conversion boxing est implicite ; la conversion unboxing est explicite. Le concept de boxing et de unboxing repose sur la vue unifiée par C# du système de type, dans lequel une valeur de n'importe quel type peut être traitée en tant qu'objet.
 
 Dans l’exemple suivant, la variable de type entier `i` est convertie (*boxed*) et assignée à l’objet `o`.
 
@@ -38,7 +38,7 @@ Par rapport aux assignations simples, le boxing et l'unboxing sont des processus
 
 ## <a name="boxing"></a>Boxing
 
-Le boxing est utilisé pour stocker des types valeur dans le tas rassemblé par garbage collection. Le boxing est une conversion implicite d’un [type valeur](../../language-reference/keywords/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Le boxing d'un type valeur alloue une instance d'objet sur le tas et copie la valeur dans le nouvel objet.
+Le boxing est utilisé pour stocker des types valeur dans le tas rassemblé par garbage collection. Le boxing est une conversion implicite d’un [type valeur](../../language-reference/builtin-types/value-types.md) en type `object` ou en un type interface implémenté par ce type valeur. Le boxing d'un type valeur alloue une instance d'objet sur le tas et copie la valeur dans le nouvel objet.
 
 Dans l'exemple suivant, une variable de type valeur est déclarée :
 
@@ -66,7 +66,7 @@ Cet exemple utilise le boxing pour convertir une variable `i` (entier) en un ob
 
 ## <a name="unboxing"></a>Unboxing
 
-L’unboxing est une conversion explicite du type `object` en un [type valeur](../../language-reference/keywords/value-types.md), ou d’un type interface en un type valeur qui implémente l’interface. Une opération d'unboxing comprend les étapes suivantes :
+L’unboxing est une conversion explicite du type `object` en un [type valeur](../../language-reference/builtin-types/value-types.md), ou d’un type interface en un type valeur qui implémente l’interface. Une opération d'unboxing comprend les étapes suivantes :
 
 - Vérification de l'instance de l'objet pour s'assurer qu'il s'agit bien d'une valeur boxed du type valeur spécifié.
 
@@ -112,14 +112,8 @@ la conversion sera réalisée, avec le résultat suivant :
 
 [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
 
-## <a name="related-sections"></a>Rubriques connexes
-
-Pour plus d'informations, consultez .
-
-- [Types référence](../../language-reference/keywords/reference-types.md)
-
-- [Types valeur](../../language-reference/keywords/value-types.md)
-
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)
+- [Types référence](../../language-reference/keywords/reference-types.md)
+- [Types valeur](../../language-reference/builtin-types/value-types.md)

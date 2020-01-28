@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : assignation du contenu WPF sur les Windows Forms au moment du design'
+title: Sélectionner des contrôles WPF pour Windows Forms
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF content [Windows Forms], assigning at design time
@@ -11,18 +12,18 @@ ms.assetid: b3e9ef93-7e0f-4a2f-8f1e-3437609a1eb7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 0c1e0c91b7ab8bded677a86b597b02b9cb442d98
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 19f1dfec282b025f5a1fa367ec5fa9a52472c691
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460674"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746808"
 ---
 # <a name="walkthrough-assign-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : assigner du contenu WPF sur Windows Forms au moment du design
 
-Cet article vous montre comment sélectionner les types de contrôle Windows Presentation Foundation (WPF) que vous souhaitez afficher dans votre formulaire. Vous pouvez sélectionner tout type de contrôle WPF inclus dans votre projet.
+Cet article vous montre comment sélectionner les types de contrôle Windows Presentation Foundation (WPF) que vous souhaitez afficher dans votre formulaire. Vous pouvez sélectionner n’importe quel type de contrôle WPF inclus dans votre projet.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -54,7 +55,7 @@ Après avoir ajouté des types de contrôles WPF au projet, vous pouvez les héb
    > [!NOTE]
    > En général, vous devez héberger du contenu WPF plus sophistiqué. Le contrôle <xref:System.Windows.Controls.TextBox?displayProperty=nameWithType> est utilisé ici uniquement à titre d'illustration.
 
-8. Générez le projet.
+8. créer le projet ;
 
 ## <a name="select-wpf-controls"></a>Sélectionner des contrôles WPF
 

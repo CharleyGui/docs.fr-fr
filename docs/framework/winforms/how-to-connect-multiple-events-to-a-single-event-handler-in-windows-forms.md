@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : connecter plusieurs événements à un seul gestionnaire d’événements dans Windows Forms'
+title: 'Comment : connecter plusieurs événements à un même gestionnaire d’événements'
 ms.date: 03/30/2017
 dev_langs:
 - vb
@@ -10,25 +10,25 @@ helpviewer_keywords:
 - Windows Forms controls, events
 - menu items [Windows Forms], multicasting event-handling methods
 ms.assetid: 5a20749a-41b5-4acc-8eb1-9e5040b0a2c4
-ms.openlocfilehash: eec6a754b885cd169e5542221caefb3233c4c8af
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0591291522ab1da04fef90bf1c0a73cf33ba0518
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61967028"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739609"
 ---
-# <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Procédure : connecter plusieurs événements à un seul gestionnaire d’événements dans Windows Forms
-Conception de votre application, vous pouvez s’avérer nécessaire pour utiliser un seul gestionnaire d’événements pour plusieurs événements ou d’avoir plusieurs événements à effectuer la même procédure. Par exemple, il est souvent un temps précieux pour avoir une commande de menu à déclencher l’événement de même qu’un bouton sur votre formulaire peut si elles exposent les mêmes fonctionnalités. Vous pouvez faire à l’aide de l’affichage des événements de la fenêtre Propriétés dans C# ou à l’aide de la `Handles` mot clé et le **nom de la classe** et **nom de la méthode** listes déroulantes dans l’éditeur de Code Visual Basic.  
+# <a name="how-to-connect-multiple-events-to-a-single-event-handler-in-windows-forms"></a>Comment : connecter plusieurs événements à un même gestionnaire d'événements dans les Windows Forms
+Dans la conception de votre application, il peut s’avérer nécessaire d’utiliser un seul gestionnaire d’événements pour plusieurs événements ou de faire en sorte que plusieurs événements effectuent la même procédure. Par exemple, il est souvent plus efficace de faire en sorte qu’une commande de menu génère le même événement qu’un bouton de votre formulaire si elle expose la même fonctionnalité. Pour ce faire, vous pouvez utiliser la vue événements de la Fenêtre Propriétés C# dans ou à l’aide du mot clé `Handles` et des zones de liste déroulante nom de la **classe** et nom de la **méthode** dans l’éditeur de code Visual Basic.  
   
-### <a name="to-connect-multiple-events-to-a-single-event-handler-in-visual-basic"></a>Pour connecter plusieurs événements à un seul gestionnaire d’événements en Visual Basic  
+### <a name="to-connect-multiple-events-to-a-single-event-handler-in-visual-basic"></a>Pour connecter plusieurs événements à un même gestionnaire d’événements dans Visual Basic  
   
-1. Avec le bouton droit de la forme et choisissez **afficher le Code**.  
+1. Cliquez avec le bouton droit sur le formulaire, puis choisissez **afficher le code**.  
   
-2. À partir de la **nom de la classe** zone de liste déroulante, sélectionnez un des contrôles que vous souhaitez associer le Gestionnaire d’événements.  
+2. Dans la zone de liste déroulante nom de la **classe** , sélectionnez l’un des contrôles dont vous souhaitez obtenir le handle de gestionnaire d’événements.  
   
-3. À partir de la **nom de la méthode** zone de liste déroulante, sélectionnez un des événements que vous souhaitez que le Gestionnaire d’événements.  
+3. Dans la zone de liste déroulante nom de la **méthode** , sélectionnez l’un des événements que vous souhaitez que le gestionnaire d’événements gère.  
   
-4. L’éditeur de Code insère le Gestionnaire d’événements approprié et place le point d’insertion dans la méthode. Dans l’exemple ci-dessous, il est le <xref:System.Windows.Forms.Control.Click> événement pour le <xref:System.Windows.Forms.Button> contrôle.  
+4. L’éditeur de code insère le gestionnaire d’événements approprié et positionne le point d’insertion dans la méthode. Dans l’exemple ci-dessous, il s’agit de l’événement <xref:System.Windows.Forms.Control.Click> pour le contrôle <xref:System.Windows.Forms.Button>.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -36,7 +36,7 @@ Conception de votre application, vous pouvez s’avérer nécessaire pour utilis
     End Sub  
     ```  
   
-5. Ajoutez éventuellement les autres événements que vous souhaitez que gérées à le `Handles` clause.  
+5. Ajoutez les autres événements que vous souhaitez gérer à la clause `Handles`.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click, Button2.Click  
@@ -46,19 +46,19 @@ Conception de votre application, vous pouvez s’avérer nécessaire pour utilis
   
 6. Ajoutez le code approprié au gestionnaire d’événements.  
   
-### <a name="to-connect-multiple-events-to-a-single-event-handler-in-c"></a>Pour connecter plusieurs événements à un seul gestionnaire d’événements en C\#
+### <a name="to-connect-multiple-events-to-a-single-event-handler-in-c"></a>Pour connecter plusieurs événements à un même gestionnaire d’événements en C\#
   
-1. Sélectionnez le contrôle auquel vous souhaitez vous connecter à un gestionnaire d’événements.  
+1. Sélectionnez le contrôle auquel vous souhaitez connecter un gestionnaire d’événements.  
   
-2. Dans la fenêtre Propriétés, cliquez sur le **événements** bouton (![bouton événements](./media/vxeventsbutton-propertieswindow.png "vxEventsButton_PropertiesWindow")).  
+2. Dans le Fenêtre Propriétés, cliquez sur le bouton **événements** (![bouton événements](./media/vxeventsbutton-propertieswindow.png "vxEventsButton_PropertiesWindow")).  
   
 3. Cliquez sur le nom de l’événement que vous souhaitez gérer.  
   
-4. Dans la section valeur en regard du nom de l’événement, cliquez sur le bouton de liste déroulante pour afficher une liste des gestionnaires d’événements qui correspondent à la signature de méthode de l’événement que vous souhaitez gérer.  
+4. Dans la section valeur en regard du nom de l’événement, cliquez sur le bouton déroulant pour afficher la liste des gestionnaires d’événements existants qui correspondent à la signature de la méthode de l’événement que vous souhaitez gérer.  
   
-5. Sélectionnez le Gestionnaire d’événements appropriée dans la liste.  
+5. Sélectionnez le gestionnaire d’événements approprié dans la liste.  
   
-     Code sera ajouté au formulaire pour lier l’événement au gestionnaire d’événements existant.  
+     Du code sera ajouté au formulaire pour lier l’événement au gestionnaire d’événements existant.  
   
 ## <a name="see-also"></a>Voir aussi
 

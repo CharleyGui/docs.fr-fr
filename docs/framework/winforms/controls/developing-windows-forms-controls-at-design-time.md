@@ -1,5 +1,5 @@
 ---
-title: Développement de contrôles Windows Forms au moment du design
+title: Développer des contrôles au moment du design
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms controls [Windows Forms]
@@ -12,12 +12,12 @@ ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: f6afb13a01075d3aa2d101100a0c3bfe31c6ee29
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: dac049ea6a51037daa0e23dc93476e4410b2df06
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460084"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745982"
 ---
 # <a name="develop-windows-forms-controls-at-design-time"></a>Développer des contrôles Windows Forms au moment du design
 

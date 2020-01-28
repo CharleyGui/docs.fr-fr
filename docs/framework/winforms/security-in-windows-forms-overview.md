@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble de la sécurité dans les Windows Forms
+title: Vue d’ensemble de la sécurité
 ms.date: 03/30/2017
 helpviewer_keywords:
 - code access security [Windows Forms], Windows Forms
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - security [Windows Forms], about security
 - access control [Windows Forms], Windows Forms
 ms.assetid: 4810dc9f-ea23-4ce1-8ea1-657f0ff1d820
-ms.openlocfilehash: 08c80eccee395d9141978a7d4594205af1a51ed9
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.openlocfilehash: 9010b45383f856079661359fdf82180526d96dde
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
-ms.locfileid: "70972129"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734844"
 ---
 # <a name="security-in-windows-forms-overview"></a>Vue d'ensemble de la sécurité dans les Windows Forms
 
@@ -77,13 +77,13 @@ Le tableau suivant décrit ces technologies.
 
 La technologie adoptée dépendra de votre environnement de déploiement. Pour plus d’informations, consultez [Choix d’une stratégie de déploiement ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy).
 
-Par défaut, les applications ClickOnce déployées à l’aide de Visual Studio ou des outils du kit de développement logiciel (SDK) .NET Framework (Mage. exe et MageUI. exe) sont configurées pour s’exécuter sur un ordinateur client qui dispose de la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Pour ce faire, vous pouvez utiliser Visual Studio ou l’outil .NET Framework SDK MageUI. exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI. exe, [consultez Procédure pas à pas : Déploiement manuel d’une application](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application)ClickOnce.  Voir également [Guide pratique pour Définir des autorisations personnalisées pour une](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) application [ClickOnce ou comment : Définir des autorisations personnalisées pour une](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application)application ClickOnce.
+Par défaut, les applications ClickOnce déployées à l’aide de Visual Studio ou des outils du kit de développement logiciel (SDK) .NET Framework (Mage. exe et MageUI. exe) sont configurées pour s’exécuter sur un ordinateur client qui dispose de la confiance totale. Si vous déployez votre application avec une confiance partielle ou en utilisant uniquement certaines autorisations supplémentaires, vous devez modifier ce comportement par défaut. Pour ce faire, vous pouvez utiliser Visual Studio ou l’outil .NET Framework SDK MageUI. exe lorsque vous configurez votre déploiement. Pour plus d’informations sur l’utilisation de MageUI. exe, consultez [procédure pas à pas : déploiement manuel d’une application ClickOnce](/visualstudio/deployment/walkthrough-manually-deploying-a-clickonce-application).  Consultez également [Comment : définir des autorisations personnalisées pour une application ClickOnce](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2012/hafybdaa(v=vs.110)) ou [Comment : définir des autorisations personnalisées pour une application ClickOnce](/visualstudio/deployment/how-to-set-custom-permissions-for-a-clickonce-application).
 
 Pour plus d’informations sur les aspects de sécurité de ClickOnce et de l’élévation d’autorisations, consultez [sécurisation des applications ClickOnce](/visualstudio/deployment/securing-clickonce-applications). Pour plus d’informations sur le déploiement d’applications approuvées, consultez [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview).
 
 ### <a name="testing-the-application"></a>Test de l'application
 
-Si vous avez déployé votre application Windows Forms à l’aide de Visual Studio, vous pouvez activer le débogage avec un niveau de confiance partielle ou un jeu d’autorisations restreint à partir de l’environnement de développement.  Voir également [Guide pratique pour Déboguer une application ClickOnce avec des autorisations restreintes](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions).
+Si vous avez déployé votre application Windows Forms à l’aide de Visual Studio, vous pouvez activer le débogage avec un niveau de confiance partielle ou un jeu d’autorisations restreint à partir de l’environnement de développement.  Consultez également [Comment : déboguer une application ClickOnce avec des autorisations restreintes](/visualstudio/deployment/how-to-debug-a-clickonce-application-with-restricted-permissions).
 
 ## <a name="see-also"></a>Voir aussi
 

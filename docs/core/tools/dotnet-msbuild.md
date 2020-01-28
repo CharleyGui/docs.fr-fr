@@ -2,12 +2,12 @@
 title: Commande dotnet msbuild
 description: La commande dotnet msbuild fournit l’accès à la ligne de commande MSbuild.
 ms.date: 12/03/2018
-ms.openlocfilehash: b83f1272cdd4c5fcdb6b1e34aef7692e9acc01cd
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: dae1e9f0ca355166d41c11fbafb80c7c9fb29748
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117704"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733200"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
@@ -25,9 +25,9 @@ ms.locfileid: "71117704"
 
 La commande `dotnet msbuild` permet d’accéder à un outil MSBuild entièrement fonctionnel.
 
-La commande a les mêmes fonctionnalités que le client de ligne de commande MSBuild existant pour un projet de type SDK uniquement. Les options sont identiques. Pour plus d’informations sur les options disponibles, consultez [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
+La commande a exactement les mêmes fonctionnalités que le client de ligne de commande MSBuild existant pour les projets de style SDK uniquement. Les options sont identiques. Pour plus d’informations sur les options disponibles, consultez la page de référence de la [ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference).
 
-La commande [dotnet build](dotnet-build.md) est équivalente à `dotnet msbuild -restore -target:Build`. `dotnet build` est généralement utilisée pour générer les projets, mais `dotnet msbuild` vous donne davantage de contrôle. Par exemple, si vous avez une cible spécifique que vous souhaitez exécuter (sans exécuter la cible build ), utilisez plutôt `dotnet msbuild`.
+La commande [dotnet build](dotnet-build.md) est équivalente à `dotnet msbuild -restore -target:Build`. la [génération dotnet](dotnet-build.md) est plus couramment utilisée pour générer des projets, mais parce qu’elle exécute toujours la cible Build, vous pouvez utiliser `dotnet msbuild` lorsque vous ne voulez pas générer le projet. Par exemple, si vous avez une cible spécifique que vous souhaitez exécuter sans générer le projet, utilisez `dotnet msbuild` et spécifiez la cible.
 
 ## <a name="examples"></a>Exemples
 
@@ -40,17 +40,17 @@ La commande [dotnet build](dotnet-build.md) est équivalente à `dotnet msbuild 
 * Générer un projet et ses dépendances à l’aide de la configuration Release :
 
   ```dotnetcli
-  dotnet msbuild -p:Configuration=Release
+  dotnet msbuild -property:Configuration=Release
   ```
 
 * Exécuter la cible de publication et effectuer une publication pour le RID `osx.10.11-x64` :
 
   ```dotnetcli
-  dotnet msbuild -t:Publish -p:RuntimeIdentifiers=osx.10.11-x64
+  dotnet msbuild -target:Publish -property:RuntimeIdentifiers=osx.10.11-x64
   ```
 
 * Consultez la totalité du projet avec toutes les cibles incluses par le kit SDK :
 
   ```dotnetcli
-  dotnet msbuild -pp
+  dotnet msbuild -preprocess
   ```

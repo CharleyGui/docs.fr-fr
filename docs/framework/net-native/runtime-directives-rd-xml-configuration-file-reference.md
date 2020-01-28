@@ -2,12 +2,12 @@
 title: Guide de référence du fichier de configuration des directives runtime (rd.xml)
 ms.date: 03/30/2017
 ms.assetid: 8241523f-d8e1-4fb6-bf6a-b29bfe07b38a
-ms.openlocfilehash: f4c51dc269775d14d395cb464b3787cc987e086d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e74d34693446cca645003a9f93bc1777849e3182
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128125"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738409"
 ---
 # <a name="runtime-directives-rdxml-configuration-file-reference"></a>Guide de référence du fichier de configuration des directives runtime (rd.xml)
 
@@ -39,27 +39,69 @@ L’élément racine est l’élément [Directives](directives-element-net-nativ
 
 Pour obtenir des informations de référence, choisissez les éléments dans la structure suivante ou consultez [Éléments de directive runtime](runtime-directive-elements.md). Dans la hiérarchie suivante, les points de suspension marquent une structure récursive. Les informations entre crochets indiquent si l'élément concerné est facultatif ou obligatoire, et, s'il est utilisé, le nombre d'instances autorisées (une ou plusieurs).
 
-[Directives](directives-element-net-native.md) [1:1] [application](application-element-net-native.md) [0:1] [assembly](assembly-element-net-native.md) [0 : m] [espace de noms](namespace-element-net-native.md) [0 : m]. . .
-[Tapez](type-element-net-native.md) [0 : M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Espace de noms [0](namespace-element-net-native.md) : m] [espace de noms](namespace-element-net-native.md) [0 : m]. . .
-[Tapez](type-element-net-native.md) [0 : M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Type](type-element-net-native.md) [0 : M] sous- [types](subtypes-element-net-native.md) (sous-classes du type conteneur) [O :1] [type](type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) [O :1 [] GenericParameter](genericparameter-element-net-native.md) [0 : m] [méthode](method-element-net-native.md) [0 : M] [paramètre](parameter-element-net-native.md) [0 : m] [TypeParameter](typeparameter-element-net-native.md) [0 : m] [GenericParameter](genericparameter-element-net-native.md) [0 : m] [MethodInstantiation](methodinstantiation-element-net-native.md) ( méthode générique construite) [0 : M] [propriété](property-element-net-native.md) [0 : m] [champ](field-element-net-native.md) [0 : m] [événement](event-element-net-native.md) [0 : m] [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : m] [type](type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Méthode](method-element-net-native.md) [0 : m] [paramètre](parameter-element-net-native.md) [0 : m] [TypeParameter](typeparameter-element-net-native.md) [0 : M] [GenericParameter](genericparameter-element-net-native.md) [0 : m] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : m] [propriété](property-element-net-native.md) [0 : M] [champ](field-element-net-native.md) [0 : m] [événement](event-element-net-native.md) [0 : m] [ Bibliothèque](library-element-net-native.md) [0 : m] [assembly](assembly-element-net-native.md) [0 : m] [espace de noms](namespace-element-net-native.md) [0 : m]. . .
-[Tapez](type-element-net-native.md) [0 : M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Espace de noms [0](namespace-element-net-native.md) : m] [espace de noms](namespace-element-net-native.md) [0 : m]. . .
-[Tapez](type-element-net-native.md) [0 : M]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Type](type-element-net-native.md) [0 : M] sous- [types](subtypes-element-net-native.md) (sous-classes du type conteneur) [O :1] [type](type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) [O :1 [] GenericParameter](genericparameter-element-net-native.md) [0 : m [] méthode](method-element-net-native.md) [0 : m] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : m] [propriété](property-element-net-native.md) [0 : m] [champ](field-element-net-native.md) [0 : m] [événement](event-element-net-native.md) [0 : M] [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : m] [type](type-element-net-native.md) [0 : m]. . .
-[TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
-[Méthode](method-element-net-native.md) [0 : m] [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0 : m] [propriété](property-element-net-native.md) [0 : M] [champ](field-element-net-native.md) [0 : m] [événement](event-element-net-native.md) [0 : m]
+- [Directives](directives-element-net-native.md) [1:1]
+  - [Application](application-element-net-native.md) [0:1]
+    - [Assembly](assembly-element-net-native.md) [0:M]
+      - [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+    - [Namespace](namespace-element-net-native.md) [0:M]
+      - [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+    - [Type](type-element-net-native.md) [0:M]
+      - [Subtypes](subtypes-element-net-native.md) (sous-classes du type conteneur) [O:1]
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+      - [AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) [O:1]
+      - [GenericParameter](genericparameter-element-net-native.md) [0:M]
+      - [Method](method-element-net-native.md) [0:M]
+        - [Parameter](parameter-element-net-native.md) [0:M]
+        - [TypeParameter](typeparameter-element-net-native.md) [0:M]
+        - [GenericParameter](genericparameter-element-net-native.md) [0:M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0:M]
+      - [Property](property-element-net-native.md) [0:M]
+      - [Field](field-element-net-native.md) [0:M]
+      - [Event](event-element-net-native.md) [0:M]
+    - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0:M]
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+      - [Method](method-element-net-native.md) [0:M]
+        - [Parameter](parameter-element-net-native.md) [0:M]
+        - [TypeParameter](typeparameter-element-net-native.md) [0:M]
+        - [GenericParameter](genericparameter-element-net-native.md) [0:M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0:M]
+      - [Property](property-element-net-native.md) [0:M]
+      - [Field](field-element-net-native.md) [0:M]
+      - [Event](event-element-net-native.md) [0:M]
+  - [Library](library-element-net-native.md) [0:M]
+    - [Assembly](assembly-element-net-native.md) [0:M]
+      - [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+    - [Namespace](namespace-element-net-native.md) [0:M]
+      - [Espace de noms](namespace-element-net-native.md) [0 : M]. . .
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+    - [Type](type-element-net-native.md) [0:M]
+      - [Subtypes](subtypes-element-net-native.md) (sous-classes du type conteneur) [O:1]
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+      - [AttributeImplies](attributeimplies-element-net-native.md) (le type conteneur est un attribut) [O:1]
+      - [GenericParameter](genericparameter-element-net-native.md) [0:M]
+      - [Method](method-element-net-native.md) [0:M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0:M]
+      - [Property](property-element-net-native.md) [0:M]
+      - [Field](field-element-net-native.md) [0:M]
+      - [Event](event-element-net-native.md) [0:M]
+    - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0:M]
+      - [Tapez](type-element-net-native.md) [0 : M]. . .
+      - [TypeInstantiation](typeinstantiation-element-net-native.md) (type générique construit) [0 : M]. . .
+      - [Method](method-element-net-native.md) [0:M]
+      - [MethodInstantiation](methodinstantiation-element-net-native.md) (méthode générique construite) [0:M]
+      - [Property](property-element-net-native.md) [0:M]
+      - [Field](field-element-net-native.md) [0:M]
+      - [Event](event-element-net-native.md) [0:M]
 
 L’élément [Application](application-element-net-native.md) peut n’avoir aucun attribut, ou peut avoir les attributs de stratégie présentés dans la section [Stratégie et directives runtime](#Directives).
 
@@ -108,7 +150,7 @@ Les éléments [Application](application-element-net-native.md), [Assembly](asse
 
 - `MarshalDelegate`. Contrôle la stratégie pour le marshaling des types de délégués comme pointeurs de fonction vers du code natif.
 
-- `MarshalStructure`. Stratégie de contrôles pour le marshaling de structures en code natif.
+- `MarshalStructure` . Stratégie de contrôles pour le marshaling de structures en code natif.
 
 Les paramètres associés à ces types de stratégie sont les suivants :
 

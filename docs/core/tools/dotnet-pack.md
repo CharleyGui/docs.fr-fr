@@ -2,16 +2,16 @@
 title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
 ms.date: 08/08/2019
-ms.openlocfilehash: 99dd8e35601f82adf2a3101121028f191a4c3da4
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 057d1029e5c933912c43c178b6db8a8498f2ed57
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117645"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76734123"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
@@ -24,20 +24,20 @@ ms.locfileid: "71117645"
 ## <a name="synopsis"></a>Résumé
 
 ```dotnetcli
-dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive] 
-    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable] 
+dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive]
+    [--no-build] [--no-dependencies] [--no-restore] [--nologo] [-o|--output] [--runtime] [-s|--serviceable]
     [-v|--verbosity] [--version-suffix]
 dotnet pack [-h|--help]
 ```
 
 ## <a name="description"></a>Description
 
-La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet (autrement dit, un fichier *. nupkg* ). 
+La commande `dotnet pack` génère le projet et crée les packages NuGet. Le résultat de cette commande est un package NuGet (autrement dit, un fichier *. nupkg* ).
 
 Si vous souhaitez générer un package qui contient les symboles de débogage, deux options sont disponibles :
 
-- `--include-symbols`-Il crée le package de symboles.
-- `--include-source`-Il crée le package de symboles avec `src` un dossier contenant les fichiers sources.
+- `--include-symbols` : crée le package de symboles.
+- `--include-source`-elle crée le package de symboles avec un dossier `src` dans contenant les fichiers sources.
 
 Les dépendances NuGet du projet empaqueté sont ajoutées dans le fichier  *.nuspec*, pour pouvoir être correctement résolues lors de l’installation du package. Les références entre projets ne sont pas empaquetées à l’intérieur du projet. Actuellement, vous devez disposer d’un package par projet si vous avez des dépendances entre projets.
 
@@ -77,7 +77,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--include-source`**
 
-  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie. Les fichiers sources sont inclus dans le `src` dossier du package de symboles.
+  Comprend les packages NuGet de symboles de débogage en plus des packages NuGet standard dans le répertoire de sortie. Les fichiers sources sont inclus dans le dossier `src` au sein du package de symboles.
 
 - **`--include-symbols`**
 

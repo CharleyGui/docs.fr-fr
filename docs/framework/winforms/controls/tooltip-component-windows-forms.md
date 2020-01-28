@@ -1,31 +1,31 @@
 ---
-title: ToolTip, composant (Windows Forms)
+title: ToolTip, composant
 ms.date: 03/30/2017
 helpviewer_keywords:
 - tooltips [Windows Forms]
 - ToolTip component [Windows Forms]
 ms.assetid: 82e71dc3-0159-4f91-9f22-499224f004a0
-ms.openlocfilehash: eb68b614046fc10c4af9d58354125f76e119c782
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c905fe493d3f49bef414853814fef174140e3120
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "62009277"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747249"
 ---
 # <a name="tooltip-component-windows-forms"></a>ToolTip, composant (Windows Forms)
-Le composant Windows Forms <xref:System.Windows.Forms.ToolTip> affiche du texte quand l'utilisateur pointe sur des contrôles. Une info-bulle peut être associée à n'importe quel contrôle. Un exemple d’utilisation de ce contrôle : Pour économiser l’espace sur un formulaire, vous pouvez afficher une petite icône sur un bouton et utiliser une info-bulle pour expliquer la fonction du bouton.  
+Le composant Windows Forms <xref:System.Windows.Forms.ToolTip> affiche du texte quand l'utilisateur pointe sur des contrôles. Une info-bulle peut être associée à n'importe quel contrôle. Exemple d'utilisation de ce contrôle : pour économiser de l'espace sur un formulaire, vous pouvez afficher une petite icône sur un bouton et utiliser une info-bulle pour expliquer la fonction du bouton.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d’ensemble du composant ToolTip](tooltip-component-overview-windows-forms.md)  
  Présente les concepts généraux du composant <xref:System.Windows.Forms.ToolTip>, qui permet de présenter du texte aux utilisateurs quand ils pointent avec la souris sur un contrôle.  
   
- [Guide pratique pour Définir des info-bulles pour les contrôles sur un formulaire Windows au moment du Design](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)  
+ [Guide pratique pour définir des info-bulles pour les contrôles d'un Windows Form au moment du design](how-to-set-tooltips-for-controls-on-a-windows-form-at-design-time.md)  
  Explique comment définir des info-bulles dans le code ou dans le concepteur.  
   
- [Guide pratique pour Modifier la durée avant affichage du composant ToolTip Windows Forms](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)  
+ [Guide pratique pour modifier la durée avant affichage du composant ToolTip Windows Forms](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)  
  Explique comment définir les valeurs qui contrôlent la durée avant apparition d'une info-bulle et la durée d'affichage de l'info-bulle.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  Classe <xref:System.Windows.Forms.ToolTip>  
  Fournit des informations de référence sur la classe et ses membres.  
   

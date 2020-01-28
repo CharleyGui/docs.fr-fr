@@ -1,5 +1,6 @@
 ---
-title: Fonction ForwardTranslateAccelerator (référence des API non managées WPF)
+title: Fonction ForwardTranslateAccelerator-informations de référence sur les API non managées WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - cpp
@@ -8,17 +9,17 @@ api_name:
 api_location:
 - PresentationHost_v0400.dll
 ms.assetid: fff47a86-9d9f-4176-9530-10e1876e393f
-ms.openlocfilehash: 4bb7e665bb836dc5f95b14f39179f1d4b9f8173d
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: f6e8208ffe2c186234f30f31e346ca6b1d0be4c0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61960912"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747036"
 ---
-# <a name="forwardtranslateaccelerator-function-wpf-unmanaged-api-reference"></a>Fonction ForwardTranslateAccelerator (référence des API non managées WPF)
-Cette API prend en charge l’infrastructure Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement depuis votre code.  
+# <a name="forwardtranslateaccelerator-function-wpf-unmanaged-api-reference"></a>ForwardTranslateAccelerator, fonction (référence des API non managées WPF)
+Cette API prend en charge l’infrastructure Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement à partir de votre code.  
   
- Utilisé par l’infrastructure Windows Presentation Foundation (WPF) pour la gestion de windows.  
+ Utilisé par l’infrastructure Windows Presentation Foundation (WPF) pour la gestion de Windows.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -29,23 +30,23 @@ HRESULT ForwardTranslateAccelerator(
 )  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  pMsg  
  Pointeur vers un message.  
   
  appUnhandled  
- `true` Lorsque l’application a déjà reçue une chance de traiter le message d’entrée, mais n’a pas gérée Sinon, `false`.  
+ `true` lorsque l’application a déjà eu la possibilité de gérer le message d’entrée, mais ne l’a pas gérée ; Sinon, `false`.  
   
-## <a name="requirements"></a>Configuration requise  
- **Plateformes :** Consultez [requise du .NET Framework](../../get-started/system-requirements.md).  
+## <a name="requirements"></a>Configuration requise pour  
+ **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
- **DLL :**  
+ **DLL**  
   
- Dans le .NET Framework 3.0 et 3.5 : PresentationHostDLL.dll  
+ Dans les .NET Framework 3,0 et 3,5 : PresentationHostDLL. dll  
   
- Dans le .NET Framework 4 et versions ultérieur : PresentationHost_v0400.dll  
+ Dans le .NET Framework 4 et versions ultérieures : PresentationHost_v0400. dll  
   
- **Version du .NET framework :** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
+ **Version de .NET Framework :** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 

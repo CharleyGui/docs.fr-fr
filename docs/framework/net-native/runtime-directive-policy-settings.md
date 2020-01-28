@@ -2,12 +2,12 @@
 title: Paramètres de stratégie de directive runtime
 ms.date: 03/30/2017
 ms.assetid: cb52b1ef-47fd-4609-b69d-0586c818ac9e
-ms.openlocfilehash: 6001e3855610e7da5262c46413b775da3bea305c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7a8933decaec45e8000f3f3d1717847f333deddd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128163"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76738495"
 ---
 # <a name="runtime-directive-policy-settings"></a>Paramètres de stratégie de directive runtime
 
@@ -32,24 +32,24 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de réflexion et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Activate|Parcourir|dynamique|
+  |Élément|Activate|Parcourir|Dynamic|
   |-------------|--------------|------------|-------------|
-  |[\<Application>](application-element-net-native.md)|✓|✓|✓|
-  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|
-  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|
-  |[\<Event>](event-element-net-native.md)||✓|✓|
-  |[\<Field>](field-element-net-native.md)||✓|✓|
-  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|
-  |[\<Method>](method-element-net-native.md)||✓|✓|
-  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||✓|✓|
-  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|
-  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|
-  |[\<Property>](property-element-net-native.md)||✓|✓|
-  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|
-  |[\<Type>](type-element-net-native.md)|✓|✓|✓|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|
-  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Event>](event-element-net-native.md)||✔️|✔️|
+  |[\<Field>](field-element-net-native.md)||✔️|✔️|
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✔️|✔️|✔️|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Method>](method-element-net-native.md)||✔️|✔️|
+  |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||✔️|✔️|
+  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Parameter>](parameter-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Property>](property-element-net-native.md)||✔️|✔️|
+  |[\<Subtypes>](subtypes-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Type>](type-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✔️|✔️|✔️|
 
 - Les types de stratégie de sérialisation déterminent les métadonnées mises à disposition au moment de l’exécution pour la sérialisation et la désérialisation :
 
@@ -63,24 +63,24 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de sérialisation et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Sérialisation|DataContractSerializer|DataContractJsonSerializer|XmlSerializer|
+  |Élément|Sérialiser|DataContractSerializer|DataContractJsonSerializer|XmlSerializer|
   |-------------|---------------|----------------------------|--------------------------------|-------------------|
-  |[\<Application>](application-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|✓|
-  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✔️|✔️|✔️|✔️|
   |[\<Event>](event-element-net-native.md)|||||
-  |[\<Field>](field-element-net-native.md)|✓||||
-  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|✓|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Field>](field-element-net-native.md)|✔️||||
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|✔️|
   |[\<Method>](method-element-net-native.md)|||||
   |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)|||||
-  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Property>](property-element-net-native.md)|✓||||
-  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|✓|
-  |[\<Type>](type-element-net-native.md)|✓|✓|✓|✓|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|✓|
-  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|✓|
+  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<Parameter>](parameter-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<Property>](property-element-net-native.md)|✔️||||
+  |[\<Subtypes>](subtypes-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<Type>](type-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|✔️|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✔️|✔️|✔️|✔️|
 
 - Les types de stratégie d'interopérabilité déterminent les métadonnées mises à disposition au moment de l'exécution pour passer des types de référence, des types de valeur et des pointeurs de fonction à COM et Windows Runtime :
 
@@ -94,22 +94,22 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   |Élément|MarshalObject|MarshalDelegate|MarshalStructure|
   |-------------|-------------------|---------------------|----------------------|
-  |[\<Application>](application-element-net-native.md)|✓|✓|✓|
-  |[\<Assembly>](assembly-element-net-native.md)|✓|✓|✓|
-  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✓|✓|✓|
+  |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|
+  |[\<AttributeImplies>](attributeimplies-element-net-native.md)|✔️|✔️|✔️|
   |[\<Event>](event-element-net-native.md)||||
   |[\<Field>](field-element-net-native.md)||||
-  |[\<GenericParameter>](genericparameter-element-net-native.md)|✓|✓|✓|
-  |[\<ImpliesType>](impliestype-element-net-native.md)|✓|✓|✓|
+  |[\<GenericParameter>](genericparameter-element-net-native.md)|✔️|✔️|✔️|
+  |[\<ImpliesType>](impliestype-element-net-native.md)|✔️|✔️|✔️|
   |[\<Method>](method-element-net-native.md)||||
   |[\<MethodInstantiation>](methodinstantiation-element-net-native.md)||||
-  |[\<Namespace>](namespace-element-net-native.md)|✓|✓|✓|
-  |[\<Parameter>](parameter-element-net-native.md)|✓|✓|✓|
+  |[\<Namespace>](namespace-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Parameter>](parameter-element-net-native.md)|✔️|✔️|✔️|
   |[\<Property>](property-element-net-native.md)||||
-  |[\<Subtypes>](subtypes-element-net-native.md)|✓|✓|✓|
-  |[\<Type>](type-element-net-native.md)|✓|✓|✓|
-  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✓|✓|✓|
-  |[\<TypeParameter>](typeparameter-element-net-native.md)|✓|✓|✓|
+  |[\<Subtypes>](subtypes-element-net-native.md)|✔️|✔️|✔️|
+  |[\<Type>](type-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeInstantiation>](typeinstantiation-element-net-native.md)|✔️|✔️|✔️|
+  |[\<TypeParameter>](typeparameter-element-net-native.md)|✔️|✔️|✔️|
 
 ## <a name="policy-settings"></a>Paramètres de stratégie
 
@@ -117,16 +117,16 @@ Chaque type de stratégie peut être défini sur l'une des valeurs répertoriée
 
 |Paramètre de stratégie|Description|Éléments `Assembly`, `Namespace`, `Type` et `TypeInstantiation`|Éléments `Event`, `Field`, `Method`, `MethodInstantiation` et `Property`|
 |--------------------|-----------------|-----------------------------------------------------------------------|--------------------------------------------------------------------------------|
-|`All`|Active la stratégie pour tous les types et membres non supprimés par la chaîne d'outils .NET Native.|✓||
-|`Auto`|Spécifie que la stratégie par défaut doit être utilisée pour le type de stratégie pour cet élément de programme. Cela revient à omettre une stratégie pour ce type de stratégie. `Auto` sert généralement à indiquer que la stratégie est héritée d'un élément parent.|✓|✓|
-|`Excluded`|Spécifie que la stratégie est désactivée pour un élément de programme particulier. Par exemple, la directive runtime :<br /><br /> `<Type Name="BusinessClasses.Person" Browse="Excluded" Dynamic="Excluded" />`<br /><br /> indique que les métadonnées pour la classe `BusinessClasses.Person` ne sont pas disponibles soit pour parcourir des objets `Person`, soit pour les instancier et modifier dynamiquement.|✓|✓|
-|`Included`|Active une stratégie si les métadonnées pour le type parent sont disponibles.||✓|
-|`Public`|Active la stratégie pour les types ou membres publics, sauf si la chaîne d'outils détermine que le type ou membre n'est pas nécessaire et donc le supprime. Ce paramètre est différent de `Required Public`, qui garantit que les métadonnées pour les membres et types publics sont toujours disponibles, même si la chaîne d'outils détermine qu'elles sont superflues.|✓||
-|`PublicAndInternal`|Active la stratégie pour les types ou membres publics et internes, sauf si la chaîne d'outils détermine que le type ou membre n'est pas nécessaire et donc le supprime. Ce paramètre est différent de `Required PublicAndInternal`, qui garantit que les métadonnées pour les membres et types publics et internes sont toujours disponibles, même si la chaîne d'outils détermine qu'elles sont superflues.|✓||
-|`Required`|Spécifie que la stratégie pour un membre est activée et que les métadonnées seront disponibles même si le membre semble utilisé.||✓|
-|`Required Public`|Active la stratégie pour les types ou membres publics et garantit que les métadonnées pour les types et membres publics sont toujours disponibles. Ce paramètre est différent de `Public`, qui ne garantit la disponibilité des métadonnées pour les types et membres publics que si la chaîne d'outils détermine qu'elles sont nécessaires.|✓||
-|`Required PublicAndInternal`|Active la stratégie pour les types ou membres publics et internes et garantit que les métadonnées pour les types et membres publics et internes sont toujours disponibles. Ce paramètre est différent de `PublicAndInternal`, qui ne garantit la disponibilité des métadonnées pour les types et membres publics et internes que si la chaîne d'outils détermine qu'elles sont nécessaires.|✓||
-|`Required All`|Oblige la chaîne d'outils à conserver tous les types et membres, qu'ils soient utilisés ou non, et active la stratégie pour eux.|✓||
+|`All`|Active la stratégie pour tous les types et membres non supprimés par la chaîne d'outils .NET Native.|✔️||
+|`Auto`|Spécifie que la stratégie par défaut doit être utilisée pour le type de stratégie pour cet élément de programme. Cela revient à omettre une stratégie pour ce type de stratégie. `Auto` sert généralement à indiquer que la stratégie est héritée d'un élément parent.|✔️|✔️|
+|`Excluded`|Spécifie que la stratégie est désactivée pour un élément de programme particulier. Par exemple, la directive runtime :<br /><br /> `<Type Name="BusinessClasses.Person" Browse="Excluded" Dynamic="Excluded" />`<br /><br /> indique que les métadonnées pour la classe `BusinessClasses.Person` ne sont pas disponibles soit pour parcourir des objets `Person`, soit pour les instancier et modifier dynamiquement.|✔️|✔️|
+|`Included`|Active une stratégie si les métadonnées pour le type parent sont disponibles.||✔️|
+|`Public`|Active la stratégie pour les types ou membres publics, sauf si la chaîne d'outils détermine que le type ou membre n'est pas nécessaire et donc le supprime. Ce paramètre est différent de `Required Public`, qui garantit que les métadonnées pour les membres et types publics sont toujours disponibles, même si la chaîne d'outils détermine qu'elles sont superflues.|✔️||
+|`PublicAndInternal`|Active la stratégie pour les types ou membres publics et internes, sauf si la chaîne d'outils détermine que le type ou membre n'est pas nécessaire et donc le supprime. Ce paramètre est différent de `Required PublicAndInternal`, qui garantit que les métadonnées pour les membres et types publics et internes sont toujours disponibles, même si la chaîne d'outils détermine qu'elles sont superflues.|✔️||
+|`Required`|Spécifie que la stratégie pour un membre est activée et que les métadonnées seront disponibles même si le membre semble utilisé.||✔️|
+|`Required Public`|Active la stratégie pour les types ou membres publics et garantit que les métadonnées pour les types et membres publics sont toujours disponibles. Ce paramètre est différent de `Public`, qui ne garantit la disponibilité des métadonnées pour les types et membres publics que si la chaîne d'outils détermine qu'elles sont nécessaires.|✔️||
+|`Required PublicAndInternal`|Active la stratégie pour les types ou membres publics et internes et garantit que les métadonnées pour les types et membres publics et internes sont toujours disponibles. Ce paramètre est différent de `PublicAndInternal`, qui ne garantit la disponibilité des métadonnées pour les types et membres publics et internes que si la chaîne d'outils détermine qu'elles sont nécessaires.|✔️||
+|`Required All`|Oblige la chaîne d'outils à conserver tous les types et membres, qu'ils soient utilisés ou non, et active la stratégie pour eux.|✔️||
 
 ## <a name="see-also"></a>Voir aussi
 

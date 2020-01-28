@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : réorganisation du contenu WPF sur les Windows Forms au moment du design'
+title: Organiser le contenu WPF sur Windows Forms au moment du design
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF user control [Windows Forms], hosting in a layout panel
@@ -12,18 +13,18 @@ ms.assetid: 5efb1c53-1484-43d6-aa8a-f4861b99bb8a
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: c9db49ae299870479a5cfa6372c25d793a92ff8f
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5a6b12def45052e117fb149555946ea42d6cd3c2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460683"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746819"
 ---
 # <a name="walkthrough-arrange-wpf-content-on-windows-forms-at-design-time"></a>Procédure pas à pas : organisation du contenu WPF sur Windows Forms au moment du design
 
 Cet article explique comment utiliser les fonctionnalités de disposition Windows Forms, telles que l’ancrage et les lignes d’alignement, pour réorganiser les contrôles Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -46,7 +47,7 @@ Après avoir ajouté un contrôle WPF au projet, vous pouvez le disposer sur le 
 
 4. Affectez à la propriété <xref:System.Windows.Controls.Control.Background%2A> la valeur **Blue**.
 
-5. Générez le projet.
+5. créer le projet ;
 
 ## <a name="host-wpf-controls-in-a-layout-panel"></a>Héberger des contrôles WPF dans un panneau de disposition
 

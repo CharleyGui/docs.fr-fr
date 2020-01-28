@@ -1,19 +1,19 @@
 ---
-title: Fonctionnalité de glisser-déplacer dans les Windows Forms
+title: Fonctionnalité de glisser-déplacer
 ms.date: 03/30/2017
 helpviewer_keywords:
 - drag and drop [Windows Forms], Windows Forms
 - Windows Forms, drag and drop
 ms.assetid: 65cd2c03-8782-474e-b958-cbe43eeb902c
-ms.openlocfilehash: 437b632706b27cd487d60c2ad23db3f9a3c96c09
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 603dc158719c0b11def4386eb24a33f235cf3a42
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61966855"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732755"
 ---
 # <a name="drag-and-drop-functionality-in-windows-forms"></a>Fonctionnalité de glisser-déplacer dans les Windows Forms
-Windows Forms comprend un ensemble de méthodes, événements et classes qui implémentent le comportement de glisser-déposer. Cette rubrique offre une vue d’ensemble de la prise en charge du glisser-déposer dans Windows Forms.  Consultez également [les opérations de glisser-déplacer et prise en charge du Presse-papiers](./advanced/drag-and-drop-operations-and-clipboard-support.md).  
+Windows Forms comprend un ensemble de méthodes, événements et classes qui implémentent le comportement de glisser-déposer. Cette rubrique offre une vue d’ensemble de la prise en charge du glisser-déposer dans Windows Forms.  Consultez également [opérations de glisser-déplacer et prise en charge du presse-papiers](./advanced/drag-and-drop-operations-and-clipboard-support.md).  
   
 ## <a name="performing-drag-and-drop-operations"></a>Exécution d’opérations de glisser-déposer  
  Pour effectuer une opération de glisser-déposer, utilisez la méthode <xref:System.Windows.Forms.Control.DoDragDrop%2A> de la classe <xref:System.Windows.Forms.Control>. Pour plus d'informations sur la façon d'exécuter une opération de glisser-déplacer, consultez <xref:System.Windows.Forms.Control.DoDragDrop%2A>. Pour obtenir le rectangle sur lequel le pointeur de la souris doit être déplacé pour qu'une opération de glisser-déplacer commence, utilisez la propriété <xref:System.Windows.Forms.SystemInformation.DragSize%2A> de la classe <xref:System.Windows.Forms.SystemInformation>.  

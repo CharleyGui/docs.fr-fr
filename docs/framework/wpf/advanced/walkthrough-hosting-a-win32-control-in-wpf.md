@@ -1,5 +1,6 @@
 ---
-title: "Procédure pas à pas : hébergement d'un contrôle Win32 dans WPF"
+title: Héberger un contrôle Win32 dans WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,20 +9,20 @@ helpviewer_keywords:
 - hosting Win32 control in WPF [WPF]
 - Win32 code [WPF], WPF interoperation
 ms.assetid: a676b1eb-fc55-4355-93ab-df840c41cea0
-ms.openlocfilehash: 56f096dd7ba4feb677394cd26be9858a33842018
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: eb497a88c119dece85d61d6a32e7b86fb03b44b5
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040820"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744934"
 ---
-# <a name="walkthrough-hosting-a-win32-control-in-wpf"></a>Procédure pas à pas : hébergement d'un contrôle Win32 dans WPF
+# <a name="walkthrough-host-a-win32-control-in-wpf"></a>Procédure pas à pas : Hébergement d’un contrôle Win32 dans WPF
 Windows Presentation Foundation (WPF) fournit un environnement riche pour la création d’applications. Toutefois, lorsque vous avez un investissement important dans du code Win32, il peut être plus efficace de réutiliser au moins une partie de ce code dans votre application WPF au lieu de le réécrire complètement. WPF fournit un mécanisme simple pour héberger une fenêtre Win32, sur une page WPF.  
   
  Cette rubrique vous guide à travers une application, qui [héberge un contrôle ListBox Win32 dans WPF Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control), qui héberge un contrôle de zone de liste Win32. Cette procédure générale peut être étendue à l’hébergement d’une fenêtre Win32.  
 
 <a name="requirements"></a>   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  Cette rubrique suppose une connaissance de base de la programmation des API WPF et Windows. Pour une présentation de base de la programmation WPF, consultez [prise en main](../getting-started/index.md). Pour une introduction à la programmation des API Windows, consultez l’un des nombreux ouvrages sur le sujet, en particulier *Programming Windows* de Charles Petzold.  
   
  Étant donné que l’exemple qui accompagne cette rubrique est implémenté C#dans, il utilise les services d’appel de code non managé (PInvoke) pour accéder à l’API Windows. Une certaine connaissance de PInvoke est utile, mais pas essentielle.  
@@ -45,7 +46,7 @@ Windows Presentation Foundation (WPF) fournit un environnement riche pour la cr�
   
 5. Une fois que vous avez créé la fenêtre hôte, retournez le HWND de la fenêtre hébergée. Si vous souhaitez héberger un ou plusieurs contrôles Win32, vous créez généralement une fenêtre hôte en tant qu’enfant du HWND et définissez les enfants des contrôles de cette fenêtre hôte. L’encapsulation des contrôles dans une fenêtre hôte offre un moyen simple pour votre page WPF de recevoir des notifications des contrôles, ce qui gère certains problèmes Win32 particuliers avec les notifications à travers la limite HWND.  
   
-6. Gérez les messages sélectionnés envoyés à la fenêtre hôte, comme les notifications des contrôles enfants. Il existe deux manières de procéder.  
+6. Gérez les messages sélectionnés envoyés à la fenêtre hôte, comme les notifications des contrôles enfants. Vous pouvez le faire de deux manières :  
   
     - Si vous préférez gérer des messages dans votre classe d’hébergement, substituez la méthode <xref:System.Windows.Interop.HwndHost.WndProc%2A> de la classe <xref:System.Windows.Interop.HwndHost>.  
   
@@ -61,7 +62,7 @@ Windows Presentation Foundation (WPF) fournit un environnement riche pour la cr�
 ## <a name="implement-the-page-layout"></a>Implémenter la disposition de la page  
  La disposition de la page WPF qui héberge le contrôle ListBox se compose de deux régions. Le côté gauche de la page héberge plusieurs contrôles WPF qui fournissent une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] qui vous permet de manipuler le contrôle Win32. Le coin en haut à droite de la page contient une zone carrée pour le contrôle ListBox hébergé.  
   
- Le code permettant d’implémenter cette disposition est assez simple. L’élément racine est un <xref:System.Windows.Controls.DockPanel> qui a deux éléments enfants. La première est un élément <xref:System.Windows.Controls.Border> qui héberge le contrôle ListBox. Il occupe un carré de 200 x 200 en haut à droite de la page. Le deuxième est un élément <xref:System.Windows.Controls.StackPanel> qui contient un jeu de contrôles WPF qui affichent des informations et vous permettent de manipuler le contrôle ListBox en définissant les propriétés d’interopérabilité exposées. Pour chacun des éléments qui sont des enfants de la <xref:System.Windows.Controls.StackPanel>, consultez la documentation de référence pour les différents éléments utilisés pour plus d’informations sur ce que ces éléments sont ou ce qu’ils font, ceux-ci sont répertoriés dans l’exemple de code ci-dessous, mais ils ne seront pas expliqués ici (de base le modèle d’interopérabilité ne requiert pas l’un d’eux, ils sont fournis pour ajouter de l’interactivité à l’exemple).  
+ Le code permettant d’implémenter cette disposition est assez simple. L’élément racine est un <xref:System.Windows.Controls.DockPanel> qui a deux éléments enfants. La première est un élément <xref:System.Windows.Controls.Border> qui héberge le contrôle ListBox. Il occupe un carré de 200 x 200 en haut à droite de la page. Le deuxième est un élément <xref:System.Windows.Controls.StackPanel> qui contient un jeu de contrôles WPF qui affichent des informations et vous permettent de manipuler le contrôle ListBox en définissant les propriétés d’interopérabilité exposées. Pour chacun des éléments qui sont des enfants de la <xref:System.Windows.Controls.StackPanel>, consultez la documentation de référence pour les différents éléments utilisés pour plus d’informations sur ce que sont ces éléments ou sur ce qu’ils font, ceux-ci sont répertoriés dans l’exemple de code ci-dessous, mais ils ne seront pas expliqués ici (le modèle d’interopérabilité de base ne nécessite pas l’une d’entre elles)  
   
  [!code-xaml[WPFHostingWin32Control#WPFUI](~/samples/snippets/csharp/VS_Snippets_Wpf/WPFHostingWin32Control/CSharp/Page1.xaml#wpfui)]  
   

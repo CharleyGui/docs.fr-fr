@@ -1,17 +1,17 @@
 ---
-title: 'Optimisation des performances : contrôles-WPF'
+title: Optimiser les performances des contrôles
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [WPF], improving performance
 - container recycling [WPF]
 - user interface virtualization [WPF]
 ms.assetid: 45a31c43-ea8a-4546-96c8-0631b9934179
-ms.openlocfilehash: 595a4865e1d422f460aab18fc541326a4557476b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: d02fde7076cd6a24fdfb171ed54161b20f3d465e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458543"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746731"
 ---
 # <a name="optimizing-performance-controls"></a>Optimisation des performances : contrôles
 

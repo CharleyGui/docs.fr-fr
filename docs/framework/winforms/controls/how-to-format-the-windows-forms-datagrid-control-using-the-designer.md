@@ -1,5 +1,5 @@
 ---
-title: "Comment : mettre en forme le contrôle DataGrid Windows Forms à l'aide du concepteur"
+title: Mettre en forme le contrôle DataGrid à l’aide du concepteur
 ms.date: 03/30/2017
 helpviewer_keywords:
 - columns [Windows Forms], DataGrid controls
@@ -9,12 +9,12 @@ helpviewer_keywords:
 - tables [Windows Forms], formatting in DataGrid control
 - formatting [Windows Forms]
 ms.assetid: 533b9814-6124-49dc-9fda-085f1502609f
-ms.openlocfilehash: b3a85f5f9e51dae50a40058b8f07f92976da66f2
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: 548acac0fc7724490bfe89927ec0662b3488c230
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "69666160"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736798"
 ---
 # <a name="how-to-format-the-windows-forms-datagrid-control-using-the-designer"></a>Comment : mettre en forme le contrôle DataGrid Windows Forms à l'aide du concepteur
 
@@ -41,11 +41,11 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 2. Dans la fenêtre **Propriétés** , définissez les propriétés suivantes, selon le cas.
 
-    |Property|Description|
+    |Les|Description|
     |--------------|-----------------|
     |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|La propriété `BackColor` définit la couleur des lignes paires de la grille. Lorsque vous définissez la propriété <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> sur une couleur différente, chaque autre ligne est définie sur cette nouvelle couleur (lignes 1, 3, 5, etc.).|
     |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|Couleur d’arrière-plan des lignes numérotées de la grille (lignes 0, 2, 4, 6, etc.).|
-    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Tandis que les propriétés <xref:System.Windows.Forms.DataGrid.BackColor%2A> et <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> déterminent la couleur des lignes dans la grille, la propriété <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> détermine la couleur de la zone en dehors de la zone de ligne, qui est visible uniquement lorsque la grille fait défiler vers le bas, ou si seules quelques lignes sont contenues dans le boutons.|
+    |<xref:System.Windows.Forms.DataGrid.BackgroundColor%2A>|Tandis que les propriétés <xref:System.Windows.Forms.DataGrid.BackColor%2A> et <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> déterminent la couleur des lignes dans la grille, la propriété <xref:System.Windows.Forms.DataGrid.BackgroundColor%2A> détermine la couleur de la zone en dehors de la zone de ligne, qui est visible uniquement lorsque la grille fait défiler vers le bas, ou si seules quelques lignes sont contenues dans la grille.|
     |<xref:System.Windows.Forms.DataGrid.BorderStyle%2A>|Le style de bordure de la grille, l’une des <xref:System.Windows.Forms.BorderStyle> valeurs d’énumération.|
     |<xref:System.Windows.Forms.DataGrid.CaptionBackColor%2A>|Couleur d’arrière-plan du titre de fenêtre de la grille qui s’affiche immédiatement au-dessus de la grille.|
     |<xref:System.Windows.Forms.DataGrid.CaptionFont%2A>|Police de la légende en haut de la grille.|
@@ -76,7 +76,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 1. Sélectionnez le contrôle <xref:System.Windows.Forms.DataGrid> sur votre formulaire.
 
-2. Dans la fenêtre **Propriétés** , sélectionnez la propriété <xref:System.Windows.Forms.DataGrid.TableStyles%2A>, puis cliquez sur les **points** de suspension (![The bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio. ](./media/visual-studio-ellipsis-button.png)).
+2. Dans la fenêtre **Propriétés** , sélectionnez la propriété <xref:System.Windows.Forms.DataGrid.TableStyles%2A> et cliquez sur les **points** de suspension (![le bouton de sélection (...) dans le bouton fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)).
 
 3. Dans la boîte de dialogue **éditeur de collections DataGridTableStyle** , cliquez sur **Ajouter** pour ajouter un style de table à la collection.
 
@@ -86,7 +86,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
      Le nom de mappage est utilisé pour spécifier le style de table à utiliser avec la table.
 
-5. Dans l **'éditeur de collections DataGridTableStyle**, sélectionnez la propriété <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>, puis cliquez sur le bouton de sélection (![The bouton de sélection (...) dans le fenêtre Propriétés de Visual Studio. ](./media/visual-studio-ellipsis-button.png)).
+5. Dans l **'éditeur de collections DataGridTableStyle**, sélectionnez la propriété <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A>, puis cliquez sur le bouton de sélection (![le bouton de sélection (...) dans le fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)).
 
 6. Dans la boîte de dialogue **éditeur de collections DataGridColumnStyle** , ajoutez des styles de colonne au style de table que vous avez créé.
 

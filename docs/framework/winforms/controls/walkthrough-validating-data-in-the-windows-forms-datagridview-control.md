@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : validation des données dans le contrôle DataGridView Windows Forms'
+title: 'Procédure pas à pas : valider des données dans le contrôle DataGridView'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,22 +12,22 @@ helpviewer_keywords:
 - data validation [Windows Forms], Windows Forms
 - walkthroughs [Windows Forms], DataGridView control
 ms.assetid: a4f1d015-2969-430c-8ea2-b612d179c290
-ms.openlocfilehash: 89569feb0cb741f56d09f4e58154b4eecb5a89d4
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 45753fb206ad58616c9a727bd81bd2458db6053e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046380"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740100"
 ---
 # <a name="walkthrough-validating-data-in-the-windows-forms-datagridview-control"></a>Procédure pas à pas : validation des données dans le contrôle DataGridView Windows Forms
 
-Lorsque vous affichez la fonctionnalité de saisie de données pour les utilisateurs, vous devez souvent valider les données entrées dans votre formulaire. La <xref:System.Windows.Forms.DataGridView> classe offre un moyen pratique d’effectuer la validation avant que les données ne soient validées dans le magasin de données. Vous pouvez valider les données en gérant <xref:System.Windows.Forms.DataGridView.CellValidating> l’événement, qui est déclenché <xref:System.Windows.Forms.DataGridView> par lorsque la cellule active est modifiée.
+Lorsque vous affichez la fonctionnalité de saisie de données pour les utilisateurs, vous devez souvent valider les données entrées dans votre formulaire. La classe <xref:System.Windows.Forms.DataGridView> offre un moyen pratique d’effectuer la validation avant que les données ne soient validées dans le magasin de données. Vous pouvez valider les données en gérant l’événement <xref:System.Windows.Forms.DataGridView.CellValidating>, déclenché par l' <xref:System.Windows.Forms.DataGridView> lorsque la cellule active est modifiée.
 
-Dans cette procédure pas à pas, vous allez extraire `Customers` des lignes de la table dans l’exemple de base de <xref:System.Windows.Forms.DataGridView> données Northwind et les afficher dans un contrôle. Lorsqu’un utilisateur modifie une cellule dans la `CompanyName` colonne et tente de la conserver, le <xref:System.Windows.Forms.DataGridView.CellValidating> gestionnaire d’événements examine la nouvelle chaîne de nom de société pour s’assurer qu’elle n’est pas vide. Si la nouvelle valeur est une chaîne <xref:System.Windows.Forms.DataGridView> vide, le empêche le curseur de l’utilisateur. de quitter la cellule jusqu’à ce qu’une chaîne non vide soit entrée.
+Dans cette procédure pas à pas, vous allez extraire des lignes de la table `Customers` de l’exemple de base de données Northwind et les afficher dans un contrôle <xref:System.Windows.Forms.DataGridView>. Lorsqu’un utilisateur modifie une cellule dans la colonne `CompanyName` et tente de conserver la cellule, le gestionnaire d’événements <xref:System.Windows.Forms.DataGridView.CellValidating> examine la nouvelle chaîne de nom de société pour s’assurer qu’elle n’est pas vide. Si la nouvelle valeur est une chaîne vide, le <xref:System.Windows.Forms.DataGridView> empêchera le curseur de l’utilisateur de quitter la cellule jusqu’à ce qu’une chaîne non vide soit entrée.
 
-Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Guide pratique pour Validez les données dans le contrôle](how-to-validate-data-in-the-windows-forms-datagridview-control.md)DataGridView Windows Forms.
+Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : valider des données dans le contrôle DataGridView Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md).
 
-## <a name="prerequisites"></a>Prérequis
+## <a name="prerequisites"></a>Prerequisites
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 
@@ -37,9 +37,9 @@ Pour exécuter cette procédure pas à pas, vous avez besoin des éléments su
 
 #### <a name="to-validate-data-entered-in-a-datagridview"></a>Pour valider les données entrées dans un DataGridView
 
-1. Créer une classe qui dérive de <xref:System.Windows.Forms.Form> et contient un <xref:System.Windows.Forms.DataGridView> contrôle et un <xref:System.Windows.Forms.BindingSource> composant.
+1. Créez une classe qui dérive de <xref:System.Windows.Forms.Form> et contient un contrôle <xref:System.Windows.Forms.DataGridView> et un composant <xref:System.Windows.Forms.BindingSource>.
 
-    L’exemple de code suivant fournit l’initialisation de base et `Main` inclut une méthode.
+    L’exemple de code suivant fournit l’initialisation de base et inclut une méthode `Main`.
 
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#01)]
     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#01](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#01)]
@@ -48,7 +48,7 @@ Pour exécuter cette procédure pas à pas, vous avez besoin des éléments su
 
 2. Implémentez une méthode dans la définition de classe de votre formulaire pour gérer les détails de la connexion à la base de données.
 
-    Cet exemple de code utilise `GetData` une méthode qui retourne un <xref:System.Data.DataTable> objet rempli. Veillez à affecter à la `connectionString` variable une valeur appropriée pour votre base de données.
+    Cet exemple de code utilise une méthode `GetData` qui retourne un objet <xref:System.Data.DataTable> rempli. Veillez à définir la variable `connectionString` sur une valeur appropriée pour votre base de données.
 
     > [!IMPORTANT]
     > Le stockage d'informations sensibles (telles qu'un mot de passe) dans la chaîne de connexion peut affecter la sécurité de votre application. L’utilisation de l’authentification Windows, également appelée sécurité intégrée, est un moyen plus sûr de contrôler l’accès à une base de données. Pour plus d’informations, consultez [Protection des informations de connexion](../../data/adonet/protecting-connection-information.md).
@@ -56,14 +56,14 @@ Pour exécuter cette procédure pas à pas, vous avez besoin des éléments su
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#30)]
     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#30)]
 
-3. Implémentez un gestionnaire pour l’événement <xref:System.Windows.Forms.Form.Load> de votre formulaire qui initialise <xref:System.Windows.Forms.DataGridView> et <xref:System.Windows.Forms.BindingSource> et définit la liaison de données.
+3. Implémentez un gestionnaire pour l’événement <xref:System.Windows.Forms.Form.Load> de votre formulaire qui initialise l' <xref:System.Windows.Forms.DataGridView> et <xref:System.Windows.Forms.BindingSource> et configure la liaison de données.
 
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#10)]
     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#10)]
 
-4. Implémentez des gestionnaires pour <xref:System.Windows.Forms.DataGridView> les événements <xref:System.Windows.Forms.DataGridView.CellValidating> et <xref:System.Windows.Forms.DataGridView.CellEndEdit> du contrôle.
+4. Implémentez des gestionnaires pour les événements <xref:System.Windows.Forms.DataGridView.CellValidating> et <xref:System.Windows.Forms.DataGridView.CellEndEdit> du contrôle de <xref:System.Windows.Forms.DataGridView>.
 
-    Le <xref:System.Windows.Forms.DataGridView.CellValidating> gestionnaire d’événements permet de déterminer si la valeur d’une cellule de la `CompanyName` colonne est vide. Si la validation de la valeur de la cellule <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> échoue, affectez la `true`valeur à la propriété de la <xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType> classe. Cela amène le <xref:System.Windows.Forms.DataGridView> contrôle à empêcher le curseur de quitter la cellule. Affectez <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> à la propriété de la ligne une chaîne explicative. Une icône d’erreur s’affiche avec une info-bulle contenant le texte de l’erreur. Dans le <xref:System.Windows.Forms.DataGridView.CellEndEdit> gestionnaire d’événements, définissez <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> la propriété sur la ligne sur la chaîne vide. L' <xref:System.Windows.Forms.DataGridView.CellEndEdit> événement se produit uniquement lorsque la cellule quitte le mode édition, ce qu’elle ne peut pas faire en cas d’échec de la validation.
+    Le gestionnaire d’événements <xref:System.Windows.Forms.DataGridView.CellValidating> vous permet de déterminer si la valeur d’une cellule dans la colonne `CompanyName` est vide. Si la validation de la valeur de la cellule échoue, définissez la propriété <xref:System.ComponentModel.CancelEventArgs.Cancel%2A> de la classe <xref:System.Windows.Forms.DataGridViewCellValidatingEventArgs?displayProperty=nameWithType> sur `true`. Ainsi, le contrôle <xref:System.Windows.Forms.DataGridView> empêche le curseur de quitter la cellule. Affectez à la propriété <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> sur la ligne une chaîne explicative. Une icône d’erreur s’affiche avec une info-bulle contenant le texte de l’erreur. Dans le gestionnaire d’événements <xref:System.Windows.Forms.DataGridView.CellEndEdit>, définissez la propriété <xref:System.Windows.Forms.DataGridViewRow.ErrorText%2A> sur la ligne sur la chaîne vide. L’événement <xref:System.Windows.Forms.DataGridView.CellEndEdit> se produit uniquement lorsque la cellule quitte le mode édition, ce qu’elle ne peut pas faire en cas d’échec de la validation.
 
     [!code-csharp[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/CS/datavalidation.cs#20)]
     [!code-vb[System.Windows.Forms.DataGridViewDataValidation#20](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#20)]
@@ -76,27 +76,27 @@ Vous pouvez maintenant tester le formulaire pour vous assurer qu’il se comport
 
 - Compilez et exécutez l'application.
 
-  Vous verrez <xref:System.Windows.Forms.DataGridView> des données remplies à partir de `Customers` la table. Lorsque vous double-cliquez sur une cellule dans `CompanyName` la colonne, vous pouvez modifier la valeur. Si vous supprimez tous les caractères et appuyez sur la touche Tab pour quitter la cellule <xref:System.Windows.Forms.DataGridView> , le vous empêche de quitter. Quand vous tapez une chaîne non vide dans la cellule, le <xref:System.Windows.Forms.DataGridView> contrôle vous permet de quitter la cellule.
+  Vous verrez un <xref:System.Windows.Forms.DataGridView> rempli avec les données de la table `Customers`. Lorsque vous double-cliquez sur une cellule dans la colonne `CompanyName`, vous pouvez modifier la valeur. Si vous supprimez tous les caractères et appuyez sur la touche TAB pour quitter la cellule, la <xref:System.Windows.Forms.DataGridView> vous empêche de quitter. Quand vous tapez une chaîne non vide dans la cellule, le contrôle <xref:System.Windows.Forms.DataGridView> vous permet de quitter la cellule.
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Cette application vous offre une compréhension de base des <xref:System.Windows.Forms.DataGridView> fonctionnalités du contrôle. Vous pouvez personnaliser l’apparence et le comportement du <xref:System.Windows.Forms.DataGridView> contrôle de plusieurs façons:
+Cette application vous offre une compréhension de base des fonctionnalités du contrôle <xref:System.Windows.Forms.DataGridView>. Vous pouvez personnaliser l’apparence et le comportement du contrôle <xref:System.Windows.Forms.DataGridView> de plusieurs façons :
 
-- Modifiez les styles de bordure et d’en-tête. Pour plus d’informations, consultez [Guide pratique pour Modifiez les styles de bordure et de quadrillage dans le contrôle](change-the-border-and-gridline-styles-in-the-datagrid.md)DataGridView Windows Forms.
+- Modifiez les styles de bordure et d’en-tête. Pour plus d’informations, consultez [Comment : modifier les styles de bordure et de quadrillage dans le contrôle DataGridView Windows Forms](change-the-border-and-gridline-styles-in-the-datagrid.md).
 
-- Active ou restreint l' <xref:System.Windows.Forms.DataGridView> entrée utilisateur au contrôle. Pour plus d’informations, consultez [Guide pratique pour Empêcher l’ajout et la suppression de lignes dans le](prevent-row-addition-and-deletion-datagridview.md)contrôle DataGridView [Windows Forms, et comment: Définissez les colonnes en lecture seule dans le contrôle](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md)DataGridView Windows Forms.
+- Activez ou restreignez l’entrée utilisateur dans le contrôle <xref:System.Windows.Forms.DataGridView>. Pour plus d’informations, consultez [Comment : empêcher l’ajout et la suppression de lignes dans le contrôle datagridview Windows Forms](prevent-row-addition-and-deletion-datagridview.md), et [Comment : créer des colonnes en lecture seule dans le contrôle DataGridView Windows Forms](how-to-make-columns-read-only-in-the-windows-forms-datagridview-control.md).
 
-- Vérifiez les entrées d’utilisateur pour les erreurs liées aux bases de données. Pour plus d’informations, consultez [Procédure pas à pas : Gestion des erreurs qui se produisent lors de l’entrée de données](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)dans le contrôle DataGridView Windows Forms.
+- Vérifiez les entrées d’utilisateur pour les erreurs liées aux bases de données. Pour plus d’informations, consultez [procédure pas à pas : gestion des erreurs qui se produisent lors de l’entrée de données dans le contrôle DataGridView Windows Forms](handling-errors-that-occur-during-data-entry-in-the-datagrid.md).
 
-- Gérer des jeux de données très volumineux en mode virtuel. Pour plus d’informations, consultez [Procédure pas à pas : Implémentation du mode virtuel dans le contrôle](implementing-virtual-mode-wf-datagridview-control.md)DataGridView Windows Forms.
+- Gérer des jeux de données très volumineux en mode virtuel. Pour plus d’informations, consultez [procédure pas à pas : implémentation du mode virtuel dans le Windows Forms contrôle DataGridView](implementing-virtual-mode-wf-datagridview-control.md).
 
-- Personnaliser l’apparence des cellules. Pour plus d’informations, consultez [Guide pratique pour Personnalisez l’apparence des cellules dans le contrôle](customize-the-appearance-of-cells-in-the-datagrid.md) DataGridView Windows Forms et [Comment: Définissez les styles de police et de couleur dans le](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md)contrôle DataGridView Windows Forms.
+- Personnaliser l’apparence des cellules. Pour plus d’informations, consultez [Comment : personnaliser l’apparence des cellules dans le Windows Forms contrôle DataGridView](customize-the-appearance-of-cells-in-the-datagrid.md) et [Comment : définir des styles de police et de couleur dans le contrôle DataGridView Windows Forms](how-to-set-font-and-color-styles-in-the-windows-forms-datagridview-control.md).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.DataGridView>
 - <xref:System.Windows.Forms.BindingSource>
 - [Saisie de données dans le contrôle DataGridView Windows Forms](data-entry-in-the-windows-forms-datagridview-control.md)
-- [Guide pratique pour Valider les données dans le contrôle DataGridView Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md)
-- [Procédure pas à pas : Gestion des erreurs qui se produisent lors de l’entrée de données dans le contrôle DataGridView Windows Forms](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
+- [Guide pratique pour valider des données dans le contrôle DataGridView Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md)
+- [Procédure pas à pas : gestion des erreurs qui se produisent lors de la saisie de données dans le contrôle DataGridView Windows Forms](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)
 - [Protection des informations de connexion](../../data/adonet/protecting-connection-information.md)

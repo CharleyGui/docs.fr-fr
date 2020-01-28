@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : regrouper des contrôles RadioButton Windows Forms dans un ensemble'
+title: Grouper des contrôles RadioButton pour qu’ils fonctionnent comme un ensemble
 ms.date: 03/30/2017
 helpviewer_keywords:
 - radio buttons [Windows Forms], grouping
@@ -7,23 +7,23 @@ helpviewer_keywords:
 - Windows Forms controls, grouping
 - RadioButton control [Windows Forms], grouping
 ms.assetid: 58f8fe34-50b7-49d8-a2be-c271be3c6b32
-ms.openlocfilehash: 857e61bc89e072aebcf34793d7e8504ece3318c7
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c4b37c84bf0f93837b91c743c7681d39fd83a659
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61941308"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732952"
 ---
-# <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>Procédure : regrouper des contrôles RadioButton Windows Forms dans un ensemble
-Windows Forms <xref:System.Windows.Forms.RadioButton> contrôles sont conçus pour donner aux utilisateurs un choix parmi deux ou plusieurs paramètres, dont une seule peut être assignée à une procédure ou un objet. Par exemple, un groupe de <xref:System.Windows.Forms.RadioButton> contrôles peuvent afficher une liste d’opérateurs de package pour une commande, mais uniquement des transporteurs sera utilisé. Par conséquent seul <xref:System.Windows.Forms.RadioButton> à la fois peut être sélectionné, même s’il fait partie d’un groupe fonctionnel.  
+# <a name="how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set"></a>Comment : grouper des contrôles RadioButton Windows Forms en un ensemble fonctionnant indépendamment
+Les contrôles Windows Forms <xref:System.Windows.Forms.RadioButton> sont conçus pour permettre aux utilisateurs de choisir entre plusieurs paramètres, dont un seul peut être assigné à une procédure ou à un objet. Par exemple, un groupe de <xref:System.Windows.Forms.RadioButton> contrôles peut afficher un choix de porte-packages pour une commande, mais un seul de ces opérateurs sera utilisé. Par conséquent, vous ne pouvez sélectionner qu’un seul <xref:System.Windows.Forms.RadioButton> à la fois, même s’il fait partie d’un groupe fonctionnel.  
   
- Groupe de cases d’option en dessinant comme à l’intérieur d’un conteneur un <xref:System.Windows.Forms.Panel> contrôle, un <xref:System.Windows.Forms.GroupBox> contrôle ou un formulaire. Toutes les cases d’option qui sont ajoutés directement à un formulaire devient un groupe. Pour ajouter des groupes distincts, vous devez les placer à l’intérieur de panneaux ou zones de groupe. Pour plus d’informations sur les panneaux ou zones de groupe, consultez [vue d’ensemble du contrôle de panneau](panel-control-overview-windows-forms.md) ou [vue d’ensemble du contrôle GroupBox](groupbox-control-overview-windows-forms.md).  
+ Vous regroupez des cases d’option en les dessinant à l’intérieur d’un conteneur tel qu’un contrôle <xref:System.Windows.Forms.Panel>, un contrôle <xref:System.Windows.Forms.GroupBox> ou un formulaire. Toutes les cases d’option ajoutées directement à un formulaire deviennent un groupe. Pour ajouter des groupes distincts, vous devez les placer à l’intérieur de panneaux ou de zones de groupe. Pour plus d’informations sur les panneaux ou les zones de groupe, consultez [vue d’ensemble du contrôle Panel](panel-control-overview-windows-forms.md) ou [vue d’ensemble du contrôle GroupBox](groupbox-control-overview-windows-forms.md).  
   
-### <a name="to-group-radiobutton-controls-as-a-set-to-function-independently-of-other-sets"></a>Pour regrouper des contrôles RadioButton en tant qu’ensemble de la fonction indépendamment des autres jeux  
+### <a name="to-group-radiobutton-controls-as-a-set-to-function-independently-of-other-sets"></a>Pour regrouper des contrôles RadioButton comme un jeu pour fonctionner indépendamment d’autres jeux  
   
-1. Faites glisser un <xref:System.Windows.Forms.GroupBox> ou <xref:System.Windows.Forms.Panel> contrôler à partir de la **Windows Forms** onglet sur le **boîte à outils** vers le formulaire.  
+1. Faites glisser un contrôle <xref:System.Windows.Forms.GroupBox> ou <xref:System.Windows.Forms.Panel> de l’onglet **Windows Forms** de la **boîte à outils** vers le formulaire.  
   
-2. Dessiner <xref:System.Windows.Forms.RadioButton> contrôle sur le <xref:System.Windows.Forms.GroupBox> ou <xref:System.Windows.Forms.Panel> contrôle.  
+2. Dessinez <xref:System.Windows.Forms.RadioButton> contrôles sur le contrôle <xref:System.Windows.Forms.GroupBox> ou <xref:System.Windows.Forms.Panel>.  
   
 ## <a name="see-also"></a>Voir aussi
 

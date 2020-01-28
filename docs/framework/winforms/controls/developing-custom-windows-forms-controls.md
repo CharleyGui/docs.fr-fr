@@ -1,16 +1,16 @@
 ---
-title: Développement de contrôles Windows Forms personnalisés avec le .NET Framework
+title: Développer des contrôles personnalisés
 ms.date: 03/30/2017
 helpviewer_keywords:
 - custom controls [Windows Forms], developing using code
 - Control class [Windows Forms], Windows Forms
 ms.assetid: 236cebc0-bd71-4f18-9fd6-5d0e592375df
-ms.openlocfilehash: 3d628d75b75c311c266648886b3b971c4833d172
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 9dbc1c4530b3a0f4e579ca67c7ae88c1685222ea
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61972248"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745996"
 ---
 # <a name="developing-custom-windows-forms-controls-with-the-net-framework"></a>Développement de contrôles Windows Forms personnalisés avec le .NET Framework
 Les contrôles Windows Forms sont des composants réutilisables qui encapsulent des fonctionnalités d'interface utilisateur et sont utilisés dans des applications Windows côté client. Windows Forms fournit non seulement de nombreux contrôles prêts à l'emploi, mais également l'infrastructure pour le développement de vos propres contrôles. Vous pouvez combiner ou étendre des contrôles existants, ou encore créer vos propres contrôles personnalisés. Cette section fournit des informations générales et des exemples pour vous aider à développer des contrôles Windows Forms.  
@@ -43,7 +43,7 @@ Les contrôles Windows Forms sont des composants réutilisables qui encapsulent 
  [Multithreading dans les contrôles Windows Forms](multithreading-in-windows-forms-controls.md)  
  Montre comment implémenter des contrôles multithread.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
@@ -57,7 +57,7 @@ Les contrôles Windows Forms sont des composants réutilisables qui encapsulent 
  [Extension de la prise en charge au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/37899azc(v=vs.120))  
  Décrit comment implémenter des classes telles que les éditeurs et concepteurs qui fournissent la prise en charge au moment du design.  
   
- [Guide pratique pour Contrôles et composants de la licence](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
+ [Guide pratique : accorder la licence d’utilisation de composants et de contrôles](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/fe8b1eh9(v=vs.120))  
  Décrit comment implémenter la gestion des licences dans votre contrôle ou composant.  
   
  Voir aussi [Développement de contrôles Windows Forms au moment du design](developing-windows-forms-controls-at-design-time.md).

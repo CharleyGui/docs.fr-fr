@@ -2,12 +2,12 @@
 title: Gérer les dépendances dans les outils .NET Core
 description: Explique comment gérer les dépendances avec les outils .NET Core.
 ms.date: 03/06/2017
-ms.openlocfilehash: 9c088829ce3d5197198b7ff22a1331b8baba41d7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
-ms.translationtype: MT
+ms.openlocfilehash: e14fa42534d807e2a0fcce1dabe747c18c5166b7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714209"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733377"
 ---
 # <a name="managing-dependencies-with-net-core-sdk-10"></a>Gestion des dépendances avec le SDK .NET Core 1.0
 
@@ -33,7 +33,7 @@ L’ajout d’une dépendance qui n’est disponible que dans une cible spécifi
 <PackageReference Include="PACKAGE_ID" Version="PACKAGE_VERSION" Condition="'$(TargetFramework)' == 'netcoreapp2.1'" />
 ```
 
-D’après le code ci-dessus, la dépendance n’est valide que si la génération se produit pour la cible donnée. Dans la condition, `$(TargetFramework)` est une propriété MSBuild définie dans le projet. Pour la plupart des applications .NET Core courantes, cela n’est pas nécessaire. 
+D’après le code ci-dessus, la dépendance n’est valide que si la génération se produit pour la cible donnée. La `$(TargetFramework)` dans la condition est une propriété MSBuild qui est définie dans le projet. Pour la plupart des applications .NET Core courantes, cela n’est pas nécessaire. 
 
 ## <a name="adding-a-dependency-to-your-project"></a>Ajout d’une dépendance à votre projet
 Ajouter une dépendance à votre projet est une opération simple. Voici un exemple montrant comment ajouter la version `9.0.1` de Json.NET à votre projet. Bien entendu, cela vaut également pour toute autre dépendance NuGet. 

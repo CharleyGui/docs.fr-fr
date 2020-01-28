@@ -2,12 +2,12 @@
 title: Sécurisation des messages à l'aide de la sécurité de message
 ms.date: 03/30/2017
 ms.assetid: a17ebe67-836b-4c52-9a81-2c3d58e225ee
-ms.openlocfilehash: 1098057042c0842161258fd081d3ee63e82b4c5f
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: a6b062d0d6a74ce2a2ff9afa7e8a0a18853dbd22
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72395717"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746446"
 ---
 # <a name="securing-messages-using-message-security"></a>Sécurisation des messages à l'aide de la sécurité de message
 Cette section traite de la sécurité des messages WCF lors de l’utilisation de <xref:System.ServiceModel.NetMsmqBinding>.  
@@ -34,16 +34,16 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
   
  Cette section présente les différents types d'informations d'identification et explique comment les utiliser avec les files d'attente.  
   
-### <a name="certificate"></a>Certificat  
+### <a name="certificate"></a>Certificate  
  Le type d'informations d'identification de certificat utilise un certificat X.509 pour identifier le service et le client.  
   
  Dans un scénario classique, un certificat valide est émis pour le client et le service par une autorité de certification de confiance. Lorsque la connexion est établie, le client authentifie la validité du service à l'aide du certificat du service pour décider s'il peut faire confiance au service. De la même façon, le service utilise le certificat du client pour valider l'approbation du client.  
   
  Étant donné la nature déconnectée des files d'attente, le client et le service peuvent ne pas être en ligne au même moment. Par conséquent, le client et le service doivent échanger des certificats hors bande. En particulier, le client, du fait qu'il détient le certificat du service (lequel peut être chaîné à une autorité de certification) dans son magasin approuvé, doit croire qu'il communique avec le service correct. Pour authentifier le client, le service utilise le certificat X.509 joint au message pour le mettre en correspondance avec le certificat dans son magasin afin de vérifier l'authenticité du client. De nouveau, le certificat doit être chaîné à une autorité de certification.  
   
- Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](https://go.microsoft.com/fwlink/?LinkId=87787).  
+ Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
-### <a name="windows"></a>Windows  
+### <a name="windows"></a>Portail  
  Le type d'informations d'identification de message Windows utilise le protocole Kerberos.  
   
  Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.  
@@ -68,4 +68,4 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
 - [Sécurisation des messages à l’aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
 - [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
 - [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

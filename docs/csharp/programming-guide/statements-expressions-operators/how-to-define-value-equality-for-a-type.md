@@ -8,16 +8,18 @@ helpviewer_keywords:
 - value equality [C#]
 - equivalence [C#]
 ms.assetid: 4084581e-b931-498b-9534-cf7ef5b68690
-ms.openlocfilehash: 5eb1aaf96097d2c00cb04e24e65e01464f5f00c6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c911dc1d0aa36ab8e57fb8a77a52d9cec20743c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711972"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76745394"
 ---
 # <a name="how-to-define-value-equality-for-a-type-c-programming-guide"></a>Comment définir l’égalité des valeurs pour un typeC# (Guide de programmation)
 
-Quand vous définissez une classe ou un struct, vous décidez s’il est judicieux de créer une définition personnalisée de l’égalité des valeurs (ou équivalence) pour le type. En général, vous implémentez l’égalité des valeurs quand des objets du type sont supposés être ajoutés à une collection quelconque, ou quand leur objectif principal est de stocker un ensemble de champs ou propriétés. Vous pouvez baser votre définition de l’égalité des valeurs sur une comparaison de tous les champs et propriétés du type, ou vous pouvez la baser sur un sous-ensemble. Dans les deux cas, et dans les classes et les structs, votre implémentation doit respecter les cinq garanties d’équivalence :  
+Quand vous définissez une classe ou un struct, vous décidez s’il est judicieux de créer une définition personnalisée de l’égalité des valeurs (ou équivalence) pour le type. En général, vous implémentez l’égalité des valeurs quand des objets du type sont supposés être ajoutés à une collection quelconque, ou quand leur objectif principal est de stocker un ensemble de champs ou propriétés. Vous pouvez baser votre définition de l’égalité des valeurs sur une comparaison de tous les champs et propriétés du type, ou vous pouvez la baser sur un sous-ensemble. 
+
+Dans les deux cas, et dans les classes et les structs, votre implémentation doit suivre les cinq garanties d’équivalence (pour les règles suivantes, supposez que `x`, `y` et `z` n’ont pas la valeur null) :  
   
 1. `x.Equals(x)` retourne `true`. Il s’agit de la propriété réflexive.  
   
@@ -27,8 +29,8 @@ Quand vous définissez une classe ou un struct, vous décidez s’il est judicie
   
 4. Les appels successifs de `x.Equals(y)` retournent la même valeur tant que les objets référencés par x et y ne sont pas modifiés.  
   
-5. `x.Equals(null)` retourne `false`. Toutefois, `null.Equals(null)` lève une exception. Il ne respecte pas la règle numéro deux ci-dessus.  
-  
+5. Toute valeur non NULL n’est pas égale à null. Toutefois, le CLR vérifie la valeur NULL sur tous les appels de méthode et lève une `NullReferenceException` si la référence de `this` est null. Par conséquent, `x.Equals(y)` lève une exception lorsque `x` a la valeur null. Cela arrête les règles 1 ou 2, en fonction de l’argument à `Equals`.
+ 
  Tout struct que vous définissez a déjà une implémentation par défaut de l’égalité des valeurs dont il hérite de la substitution <xref:System.ValueType?displayProperty=nameWithType> de la méthode <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>. Cette implémentation utilise la réflexion pour examiner tous les champs et propriétés du type. Bien que cette implémentation produise des résultats corrects, elle est relativement lente par rapport à une implémentation personnalisée que vous écrivez spécifiquement pour le type.  
   
  Les détails d’implémentation pour l’égalité des valeurs sont différents pour les classes et les structs. Toutefois, les classes et les structs nécessitent tous deux les mêmes étapes de base pour l’implémentation de l’égalité :  
@@ -68,4 +70,4 @@ Quand vous définissez une classe ou un struct, vous décidez s’il est judicie
 ## <a name="see-also"></a>Voir aussi
 
 - [Comparaisons d’égalité](equality-comparisons.md)
-- [Guide de programmation C#](../index.md)
+- [Guide de programmation C#](../index.md)

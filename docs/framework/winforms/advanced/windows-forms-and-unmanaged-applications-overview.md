@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble des applications Windows Forms et non managées
+title: Vue d’ensemble des applications non gérées
 ms.date: 03/30/2017
 helpviewer_keywords:
 - COM [Windows Forms]
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - ActiveX controls [Windows Forms], about ActiveX controls
 - Windows Forms, interop
 ms.assetid: 0a26d99d-8135-4895-8760-c9a2b5f67f14
-ms.openlocfilehash: 02f3224a8069fd091833bb09744389592c769818
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0b4c3e738848be1ead2adeb1945e168c9db60071
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592499"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732537"
 ---
 # <a name="windows-forms-and-unmanaged-applications-overview"></a>Vue d'ensemble des applications Windows Forms et non managées
 Les contrôles et les applications Windows Forms peuvent interagir avec des applications non managées, avec certaines restrictions. Les sections suivantes décrivent les scénarios et les configurations pris en charge et non pris en charge par les applications et les contrôles Windows Forms.  
@@ -27,7 +27,7 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
   
  Le tableau suivant indique la prise en charge de l'hébergement ActiveX disponible pour les contrôles Windows Forms.  
   
-|Version de Windows Forms|Assistance|  
+|Version de Windows Forms|Prise en charge de|  
 |---------------------------|-------------|  
 |.NET Framework version 1.0|Internet Explorer 5.01 et versions ultérieures|  
 |.NET Framework version 1.1 et ultérieures|Internet Explorer 5.01 et versions ultérieures<br /><br /> Bibliothèque MFC (Microsoft Foundation Class) 7.0 et versions ultérieures|  
@@ -47,13 +47,13 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
  La boucle de message d'une application est une boucle de programme interne qui récupère les messages à partir de la file d'attente de messages d'un thread, les traduit, puis les envoie à l'application pour qu'ils soient gérés. La boucle de message pour un Windows Form n'a pas la même architecture que les boucles de messages fournies par les applications antérieures, telles que les applications Visual Basic 6.0 et les applications MFC. Les messages de fenêtre publiés dans la boucle de message peuvent être traités différemment de ce à quoi s'attend le Windows Form. Ainsi, un comportement inattendu peut se produire. Certaines combinaisons de touches peuvent ne pas fonctionner, certaines activités de la souris peuvent ne pas fonctionne ou certains événements peuvent ne pas être déclenchés comme prévu.  
   
 ## <a name="resolving-interoperability-issues"></a>Résolution des problèmes d'interopérabilité  
- Vous pouvez résoudre ces problèmes en affichant le formulaire sur une boucle de message de .NET Framework, qui est créée à l’aide de la <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType> (méthode).  
+ Vous pouvez résoudre ces problèmes en affichant le formulaire sur une boucle de messages .NET Framework, créée à l’aide de la méthode <xref:System.Windows.Forms.Application.Run%2A?displayProperty=nameWithType>.  
   
  Pour qu'un Windows Form fonctionne correctement à partir d'une application cliente COM, vous devez l'exécuter sur une boucle de message Windows Forms. Pour cela, utilisez l'une des approches suivantes :  
   
-- Utilisez la méthode <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> pour afficher le Windows Form. Pour plus d'informations, voir [Procédure : Prise en charge COM Interop en affichant un formulaire Windows avec la méthode ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
+- Utilisez la méthode <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType> pour afficher le Windows Form. Pour plus d’informations, consultez [Comment : prendre en charge COM Interop en affichant un Windows Form avec la méthode ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md).  
   
-- Affichez chaque Windows Form sur un nouveau thread. Pour plus d'informations, voir [Procédure : Prise en charge COM Interop en affichant chaque formulaire Windows sur son propre Thread](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
+- Affichez chaque Windows Form sur un nouveau thread. Pour plus d’informations, consultez [Comment : prendre en charge l’interopérabilité COM en affichant chaque Windows Form sur son propre thread](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -65,5 +65,5 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
 - [Exposition de composants .NET Framework à COM](../../interop/exposing-dotnet-components-to-com.md)
 - [Empaquetage d'un assembly pour COM](../../interop/packaging-an-assembly-for-com.md)
 - [Inscription d’assemblys dans COM](../../interop/registering-assemblies-with-com.md)
-- [Guide pratique pour Prennent en charge COM Interop en affichant un formulaire Windows avec la méthode ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md)
-- [Guide pratique pour Prennent en charge COM Interop en affichant chaque formulaire Windows sur son propre Thread](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)
+- [Guide pratique pour prendre en charge COM Interop en affichant un Windows Form avec la méthode ShowDialog](com-interop-by-displaying-a-windows-form-shadow.md)
+- [How to: Support COM Interop by Displaying Each Windows Form on Its Own Thread](how-to-support-com-interop-by-displaying-each-windows-form-on-its-own-thread.md)

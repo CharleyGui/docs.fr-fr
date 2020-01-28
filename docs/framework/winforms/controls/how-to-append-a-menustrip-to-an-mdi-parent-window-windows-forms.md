@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Ajouter un MenuStrip à une fenêtre du Parent MDI (Windows Forms)'
+title: 'Comment : ajouter un MenuStrip à une fenêtre parente MDI'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,19 +9,19 @@ helpviewer_keywords:
 - MenuStrip control [Windows Forms], appending
 - MDI [Windows Forms], merging menu items
 ms.assetid: ab70c936-b452-4653-b417-17be57bb795b
-ms.openlocfilehash: fdd5a24d444e494caedeed56402658399e97b90a
-ms.sourcegitcommit: 518e7634b86d3980ec7da5f8c308cc1054daedb7
+ms.openlocfilehash: 06e5c9daab8b7eb72024fff27d661c0eb3bf84c6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/01/2019
-ms.locfileid: "66457501"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747157"
 ---
-# <a name="how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms"></a>Procédure : Ajouter un MenuStrip à une fenêtre du Parent MDI (Windows Forms)
+# <a name="how-to-append-a-menustrip-to-an-mdi-parent-window-windows-forms"></a>Comment : ajouter un MenuStrip à une fenêtre parente MDI (Windows Forms)
 Dans certaines applications, le type d'une fenêtre enfant d'interface multidocument (MDI) peut être différent de celui de la fenêtre parente MDI. Par exemple, le parent MDI peut être une feuille de calcul et l'enfant MDI un graphique. Dans ce cas, vous souhaitez mettre à jour le contenu du menu du parent MDI avec le contenu du menu de l'enfant MDI à mesure que des fenêtres enfants MDI de types différents sont activées.  
   
  La procédure suivante utilise les propriétés <xref:System.Windows.Forms.Form.IsMdiContainer%2A>, <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A>, <xref:System.Windows.Forms.MergeAction> et <xref:System.Windows.Forms.ToolStripItem.MergeIndex%2A> pour ajouter le menu MDI enfant au menu MDI parent. La fermeture de la fenêtre MDI enfant supprime le menu ajouté du MDI parent.  
   
- Consultez également [Applications d’Interface multidocument (MDI)](../advanced/multiple-document-interface-mdi-applications.md).  
+ Consultez également [les applications d’interface multidocument (MDI, multiple-document interface)](../advanced/multiple-document-interface-mdi-applications.md).  
   
 ### <a name="to-append-a-menu-item-to-an-mdi-parent"></a>Pour ajouter un élément à un menu MDI parent  
   
@@ -43,7 +43,7 @@ Dans certaines applications, le type d'une fenêtre enfant d'interface multidocu
   
 9. Affectez la valeur <xref:System.Windows.Forms.MergeAction.Append> à la propriété <xref:System.Windows.Forms.MergeAction> des éléments de menu `&Special`, `Command&1` et `Command&2`.  
   
-10. Créer un gestionnaire d’événements pour le <xref:System.Windows.Forms.Control.Click> événements de la `&Open` <xref:System.Windows.Forms.ToolStripMenuItem>.  
+10. Créez un gestionnaire d’événements pour l’événement <xref:System.Windows.Forms.Control.Click> de l' <xref:System.Windows.Forms.ToolStripMenuItem>`&Open`.  
   
 11. Dans le gestionnaire d'événements, insérez du code semblable à l'exemple de code suivant pour créer et afficher de nouvelles instances de `Form2` en tant qu'enfants MDI de `Form1`.  
   

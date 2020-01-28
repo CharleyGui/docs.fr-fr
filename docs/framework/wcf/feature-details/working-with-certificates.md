@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - certificates [WCF]
 ms.assetid: 6ffb8682-8f07-4a45-afbb-8d2487e9dbc3
-ms.openlocfilehash: 0764ca29fc959092e77629ff3888e65f0d68d70c
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: e38ead0d378092af086218277fd2e85b4a6396c3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938050"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746886"
 ---
 # <a name="working-with-certificates"></a>Utilisation des certificats
 
@@ -164,9 +164,9 @@ Vous pouvez également définir des certificats à l'aide de la configuration. S
 
 ## <a name="mapping-a-certificate-to-a-user-account"></a>Mappage d'un certificat à un compte utilisateur
 
-Les services IIS et Active Directory proposent une fonctionnalité qui permet de mapper un certificat à un compte utilisateur Windows. Pour plus d’informations sur la fonctionnalité, consultez [Mapper des certificats aux comptes d’utilisateurs](https://go.microsoft.com/fwlink/?LinkId=88917).
+Les services IIS et Active Directory proposent une fonctionnalité qui permet de mapper un certificat à un compte utilisateur Windows. Pour plus d’informations sur la fonctionnalité, consultez [Mapper des certificats aux comptes d’utilisateurs](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc736706(v=ws.10)).
 
-Pour plus d’informations sur l’utilisation du mappage Active Directory, consultez [Mappage des certificats clients à l’aide du mappage du service d’annuaire](https://go.microsoft.com/fwlink/?LinkId=88918).
+Pour plus d’informations sur l’utilisation du mappage Active Directory, consultez [Mappage des certificats clients à l’aide du mappage du service d’annuaire](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc758484(v=ws.10)).
 
 Lorsque cette fonctionnalité est activée, vous pouvez affecter à la propriété <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.MapClientCertificateToWindowsAccount%2A> de la classe <xref:System.ServiceModel.Security.X509ClientCertificateAuthentication> la valeur `true`. Dans la configuration, vous pouvez affecter à l’attribut `mapClientCertificateToWindowsAccount` de l’élément [\<authentication>](../../../../docs/framework/configure-apps/file-schema/wcf/authentication-of-servicecertificate-element.md) la valeur `true`, comme indiqué dans le code suivant.
 

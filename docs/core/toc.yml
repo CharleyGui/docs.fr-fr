@@ -386,10 +386,7 @@
           href: tutorials/creating-app-with-plugin-support.md
         - name: Comment utiliser et déboguer la non-chargeabilité d’assembly dans .NET Core
           href: ../standard/assembly/unloadability-howto.md
-- name: Générer .NET Core à partir de la source
-  href: build/index.md
+- name: Empaquetage de la distribution de .NET Core
   items:
-    - name: Empaquetage de la distribution de .NET Core
-      href: build/distribution-packaging.md
-- name: "Documentation VS\_2015/project.json"
-  href: ../project-json.md
+    - name: Vue d'ensemble
+      href: distribution-packaging.md

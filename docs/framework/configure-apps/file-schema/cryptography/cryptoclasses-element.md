@@ -8,12 +8,12 @@ helpviewer_keywords:
 - <cryptoClasses> element
 - cryptoClasses element
 ms.assetid: 290d5f96-946d-4f02-babb-1d31ec0b8295
-ms.openlocfilehash: 89f1d89ea397794e366b53205ac23b94d7892869
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 6601417f0b80f623b7698c4b072c35eca44343b7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71699755"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732878"
 ---
 # <a name="cryptoclasses-element"></a>\<élément cryptoClasses >
 Contient la liste des classes de chiffrement qui ont un mappage à un nom convivial dans l’élément [\<nameEntry>](nameentry-element.md).  
@@ -34,8 +34,8 @@ Contient la liste des classes de chiffrement qui ont un mappage à un nom conviv
 ## <a name="attributes-and-elements"></a>Attributs et éléments  
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
-### <a name="attributes"></a>Attributes  
- Aucune.  
+### <a name="attributes"></a>Attributs  
+ Aucun.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
@@ -81,6 +81,6 @@ Contient la liste des classes de chiffrement qui ont un mappage à un nom conviv
 - <xref:System.Security.Cryptography>
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
-- [System.Security.Cryptography.CryptoConfig.CreateFromName](Overload:System.Security.Cryptography.CryptoConfig.CreateFromName)
+- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
+- [System.Security.Cryptography.CryptoConfig.CreateFromName](xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A)
 - [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

@@ -1,5 +1,5 @@
 ---
-title: "Comment : définir l'ordre de tabulation dans les Windows Forms"
+title: Définir l’ordre de tabulation des contrôles
 ms.date: 03/30/2017
 f1_keywords:
 - TabStop
@@ -13,12 +13,12 @@ ms.assetid: 71fa8e76-0472-414b-ad3c-0f90166e0ad7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 026cff06a8d662cb40107fa76cf6d7989fe30cf1
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 5d53e411bda0279271e4f73e1842c52fd6d9b3a9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458527"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746830"
 ---
 # <a name="how-to-set-the-tab-order-on-windows-forms"></a>Comment : définir l’ordre de tabulation sur Windows Forms
 
@@ -57,6 +57,6 @@ Un contrôle dont la propriété <xref:System.Windows.Forms.Control.TabStop%2A> 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)
 - [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)

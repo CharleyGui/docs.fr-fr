@@ -3,12 +3,12 @@ title: Paramètres de configuration de la globalisation
 description: En savoir plus sur les paramètres d’exécution qui configurent les aspects de la globalisation d’une application .NET Core, par exemple la façon dont elle analyse les dates japonaises.
 ms.date: 11/27/2019
 ms.topic: reference
-ms.openlocfilehash: 76cd4a0a0f93f4df3ff243c6024b952576e8e6cb
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 3764d0eb714c094b44ae843a1e626073ff8d82e4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740539"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733454"
 ---
 # <a name="run-time-configuration-options-for-globalization"></a>Options de configuration au moment de l’exécution pour la globalisation
 
@@ -21,7 +21,34 @@ ms.locfileid: "75740539"
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Globalization.Invariant` | `false`-accès aux données culturelles<br/>`true`-s’exécuter en mode invariant |
-| **Variable d'environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`-accès aux données culturelles<br/>`1`-s’exécuter en mode invariant |
+| **MSBuild, propriété** | `InvariantGlobalization` | `false`-accès aux données culturelles<br/>`true`-s’exécuter en mode invariant |
+| **Variable d’environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`-accès aux données culturelles<br/>`1`-s’exécuter en mode invariant |
+
+### <a name="examples"></a>Exemples
+
+fichier *runtimeconfig. JSON* :
+
+```json
+{
+   "runtimeOptions": {
+      "configProperties": {
+         "System.Globalization.Invariant": true
+      }
+   }
+}
+```
+
+Fichier projet :
+
+```xml
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+
+</Project>
+```
 
 ## <a name="era-year-ranges"></a>Plages d’années d’ère
 
@@ -32,7 +59,7 @@ ms.locfileid: "75740539"
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false`-contrôles de plage souples<br/>les dépassements de `true` provoquent une exception |
-| **Variable d'environnement** | Non applicable | Non applicable |
+| **Variable d’environnement** | Non applicable | Non applicable |
 
 ## <a name="japanese-date-parsing"></a>Analyse de date japonaise
 
@@ -43,7 +70,7 @@ ms.locfileid: "75740539"
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false`-« gannen » ou « 1 » est pris en charge<br/>`true` seule « 1 » est pris en charge |
-| **Variable d'environnement** | Non applicable | Non applicable |
+| **Variable d’environnement** | Non applicable | Non applicable |
 
 ## <a name="japanese-year-format"></a>Format d’année japonaise
 
@@ -54,4 +81,4 @@ ms.locfileid: "75740539"
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | format d' `false` en tant que « gannen »<br/>`true` sous forme de nombre |
-| **Variable d'environnement** | Non applicable | Non applicable |
+| **Variable d’environnement** | Non applicable | Non applicable |

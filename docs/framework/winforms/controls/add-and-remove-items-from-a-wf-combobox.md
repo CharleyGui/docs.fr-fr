@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter et supprimer des éléments dans un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms'
+title: Ajouter et supprimer des éléments d’un contrôle ComboBox, ListBox ou CheckedListBox
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,19 +14,19 @@ helpviewer_keywords:
 - combo boxes [Windows Forms], removing items
 - CheckedListBox control [Windows Forms], adding and removing items
 ms.assetid: 7224c8d2-4118-443e-ae1e-d7c17d1e69ee
-ms.openlocfilehash: bd6614c76c63a44a7367ac7c7113c4db260c9a02
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 3a83d98af42386b566b4af7bc11ff383dea8fd6b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640441"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746306"
 ---
-# <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Procédure : ajouter et supprimer des éléments dans un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms
-Les éléments peuvent être ajoutés à une zone de liste déroulante Windows Forms, zone de liste, ou vérifié la zone de liste de plusieurs façons, étant donné que ces contrôles peuvent être liés à une variété de sources de données. Toutefois, cette rubrique illustre la méthode la plus simple et ne nécessite aucune liaison de données. Les éléments affichés sont généralement des chaînes ; Toutefois, n’importe quel objet peut être utilisé. Le texte qui s’affiche dans le contrôle est la valeur retournée par l’objet `ToString` (méthode).  
+# <a name="how-to-add-and-remove-items-from-a-windows-forms-combobox-listbox-or-checkedlistbox-control"></a>Comment : ajouter et supprimer des éléments d'un contrôle ComboBox, ListBox ou CheckedListBox Windows Forms
+Les éléments peuvent être ajoutés à une zone de liste déroulante, Windows Forms une zone de liste ou une zone de liste de cases à cocher de plusieurs façons, car ces contrôles peuvent être liés à une variété de sources de données. Toutefois, cette rubrique illustre la méthode la plus simple et ne nécessite aucune liaison de données. Les éléments affichés sont généralement des chaînes ; Toutefois, n’importe quel objet peut être utilisé. Le texte affiché dans le contrôle correspond à la valeur retournée par la méthode `ToString` de l’objet.  
   
 ### <a name="to-add-items"></a>Pour ajouter des éléments  
   
-1. Ajouter la chaîne ou l’objet à la liste à l’aide de la `Add` méthode de la `ObjectCollection` classe. La collection est référencée à l’aide de la `Items` propriété :  
+1. Ajoutez la chaîne ou l’objet à la liste à l’aide de la méthode `Add` de la classe `ObjectCollection`. La collection est référencée à l’aide de la propriété `Items` :  
   
     ```vb  
     ComboBox1.Items.Add("Tokyo")  
@@ -42,7 +42,7 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante Windows F
   
      - ou  
   
-2. Insérer la chaîne ou l’objet à l’endroit souhaité dans la liste avec la `Insert` méthode :  
+2. Insérez la chaîne ou l’objet au point souhaité dans la liste à l’aide de la méthode `Insert` :  
   
     ```vb  
     CheckedListBox1.Items.Insert(0, "Copenhagen")  
@@ -58,7 +58,7 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante Windows F
   
      - ou  
   
-3. Assignez tout un tableau à la `Items` collection :  
+3. Assigner un tableau entier à la collection `Items` :  
   
     ```vb  
     Dim ItemObject(9) As System.Object  
@@ -89,9 +89,9 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante Windows F
   
 ### <a name="to-remove-an-item"></a>Pour supprimer un élément  
   
-1. Appelez le `Remove` ou `RemoveAt` méthode pour supprimer des éléments.  
+1. Appelez la méthode `Remove` ou `RemoveAt` pour supprimer des éléments.  
   
-     `Remove` possède un argument qui spécifie l’élément à supprimer.`RemoveAt` Supprime l’élément avec le numéro d’index spécifié.  
+     `Remove` possède un argument qui spécifie l’élément à supprimer.`RemoveAt` supprime l’élément avec le numéro d’index spécifié.  
   
     ```vb  
     ' To remove item with index 0:  
@@ -122,7 +122,7 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante Windows F
   
 ### <a name="to-remove-all-items"></a>Pour supprimer tous les éléments  
   
-1. Appelez le `Clear` méthode pour supprimer tous les éléments de la collection :  
+1. Appelez la méthode `Clear` pour supprimer tous les éléments de la collection :  
   
     ```vb  
     ListBox1.Items.Clear()  
@@ -141,6 +141,6 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante Windows F
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>
 - <xref:System.Windows.Forms.CheckedListBox>
-- [Guide pratique pour Trier le contenu d’un Windows Forms ComboBox, ListBox ou CheckedListBox, contrôle](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
+- [Guide pratique pour trier le contenu d'un contrôle ComboBox, CheckedListBox ou ListBox Windows Forms](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)
 - [Utilisation d'un contrôle ComboBox Windows Forms à la place d'un contrôle ListBox](when-to-use-a-windows-forms-combobox-instead-of-a-listbox.md)
 - [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](windows-forms-controls-used-to-list-options.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : lier des contrôles Windows Forms à des valeurs de base de données DBNull'
+title: Lier des contrôles à des valeurs de base de données DBNull
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - examples [Windows Forms], BindingSource component
 - controls [Windows Forms], binding to DBNull values
 ms.assetid: 96494e6f-5f40-4f83-af97-bbd7192c2af8
-ms.openlocfilehash: 8abce5d69a7cece6528e0c9d8728de0e0acd9305
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 175d7f5aee2540916480e2c55a485af1f9d16653
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65591428"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746664"
 ---
-# <a name="how-to-bind-windows-forms-controls-to-dbnull-database-values"></a>Procédure : lier des contrôles Windows Forms à des valeurs de base de données DBNull
+# <a name="how-to-bind-windows-forms-controls-to-dbnull-database-values"></a>Comment : lier des contrôles Windows Forms à des valeurs de base de données DBNull
 Quand vous liez des contrôles Windows Forms à une source de données et que celle-ci retourne une valeur <xref:System.DBNull>, vous pouvez substituer une valeur appropriée sans gérer, mettre en forme ou analyser des événements. La propriété <xref:System.Windows.Forms.Binding.NullValue%2A> convertira <xref:System.DBNull> en un objet spécifié lors de la mise en forme ou de l'analyse des valeurs de la source de données.  
   
 ## <a name="example"></a>Exemple  
@@ -35,5 +35,5 @@ Quand vous liez des contrôles Windows Forms à une source de données et que ce
 ## <a name="see-also"></a>Voir aussi
 
 - [BindingSource, composant](bindingsource-component.md)
-- [Guide pratique pour Gérer les erreurs et Exceptions qui se produisent avec Databinding](how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)
-- [Guide pratique pour Lier un contrôle de formulaires Windows à un Type](how-to-bind-a-windows-forms-control-to-a-type.md)
+- [Comment : gérer des erreurs et des exceptions qui se produisent avec Databinding](how-to-handle-errors-and-exceptions-that-occur-with-databinding.md)
+- [Comment : lier un contrôle Windows Forms à un type](how-to-bind-a-windows-forms-control-to-a-type.md)

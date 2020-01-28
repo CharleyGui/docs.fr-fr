@@ -2,23 +2,23 @@
 title: Sélection d'un type d'informations d'identification
 ms.date: 03/30/2017
 ms.assetid: bf707063-3f30-4304-ab53-0e63413728a8
-ms.openlocfilehash: b5dd757328fc04ccbbce7eaed2bd1a28b3e1282e
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6737f7daeb37e2e296ca0429d73b963743c409a2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949225"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746138"
 ---
 # <a name="selecting-a-credential-type"></a>Sélection d'un type d'informations d'identification
 Les *informations d’identification* sont utilisées par le Windows Communication Foundation de données (WCF) pour établir une identité ou des fonctionnalités demandées. Par exemple, un passeport est une information d'identification émise par un gouvernement pour établir la citoyenneté dans un pays ou une région. Dans WCF, les informations d’identification peuvent prendre plusieurs formes, telles que les jetons de nom d’utilisateur et les certificats X. 509. Cette rubrique décrit les informations d’identification, comment elles sont utilisées dans WCF et comment sélectionner les informations d’identification appropriées pour votre application.  
   
  Dans de nombreux pays et régions, un permis de conduire est un exemple d'informations d'identification. Un permis contient des données qui représentent l'identité d'une personne et ses fonctions. Elle contient la preuve de propriété sous la forme de la photographie du propriétaire. Le permis est délivré par une autorité approuvée, habituellement un service public chargé d'accorder des permis. Le permis est scellé et peut contenir un hologramme qui indique qu'il n'a pas été falsifié.  
   
- La présentation d'informations d'identification implique la présentation à la fois des données et la preuve de la propriété de ces données. WCF prend en charge divers types d’informations d’identification au niveau du transport et de la sécurité des messages. Par exemple, considérez deux types d’informations d’identification pris en charge dans WCF: nom d’utilisateur et informations d’identification de certificat (X. 509).  
+ La présentation d'informations d'identification implique la présentation à la fois des données et la preuve de la propriété de ces données. WCF prend en charge divers types d’informations d’identification au niveau du transport et de la sécurité des messages. Par exemple, considérez deux types d’informations d’identification pris en charge dans WCF : nom d’utilisateur et informations d’identification de certificat (X. 509).  
   
  Pour les informations d'identification de nom d'utilisateur, le nom d'utilisateur représente l'identité déclarée et le mot de passe fournit la preuve de la propriété. L'autorité approuvée dans ce cas est le système qui valide le nom d'utilisateur et le mot de passe.  
   
- Avec les informations d’identification de certificat X. 509, le nom d’objet, l’autre nom de l’objet ou des champs spécifiques dans le certificat peuvent être utilisés comme revendications d’identité `Valid From` , `Valid To` tandis que d’autres champs, tels que les champs et, spécifient la validité de l’objet certificat.  
+ Avec les informations d’identification de certificat X. 509, le nom d’objet, l’autre nom de l’objet ou des champs spécifiques dans le certificat peuvent être utilisés comme revendications d’identité, tandis que d’autres champs, tels que les champs `Valid From` et `Valid To`, spécifient la validité du certificat.  
   
 ## <a name="transport-credential-types"></a>Types d'informations d'identification  
  Le tableau suivant affiche les types possibles d’informations d’identification du client qui peuvent être utilisés par une liaison en mode de sécurité de transport. Lorsque vous créez un service, affectez à la propriété `ClientCredentialType` une de ces valeurs pour spécifier le type d'information d'identification que le client doit fournir pour communiquer avec votre service. Vous pouvez définir les types dans les fichiers de code ou de configuration.  
@@ -26,12 +26,12 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
 |Paramètre|Description|  
 |-------------|-----------------|  
 |Aucun|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
-|De base|Spécifie l'authentification de base pour le client. Pour plus d’informations, consultez RFC2617[: authentification http: Authentification de base et authentification Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|Digest|Spécifie l’authentification Digest pour le client. Pour plus d’informations, consultez RFC2617[: authentification http: Authentification de base et authentification Digest](https://go.microsoft.com/fwlink/?LinkID=88313).|  
-|Ntlm|Spécifie l'authentification NTLM (NT LAN Manager). S'utilise si pour une raison quelconque vous ne pouvez pas utiliser l'authentification Kerberos. Vous pouvez également désactiver son utilisation comme une solution de secours en <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> affectant `false`à la propriété la valeur, ce qui amène WCF à faire le meilleur effort pour lever une exception si NTLM est utilisé. Notez que l'affectation de la valeur `false` à cette propriété peut ne pas empêcher la transmission des informations d'identification NTLM.|  
-|Windows|Spécifie l'authentification Windows. Pour spécifier uniquement le protocole Kerberos sur un domaine Windows, affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false` (la valeur par défaut est `true`).|  
-|Certificat|Effectue l'authentification du client à l'aide d'un certificat X.509.|  
-|Mot de passe|L'utilisateur doit fournir un nom d'utilisateur et un mot de passe. Validez la paire nom d'utilisateur/mot de passe à l'aide de l'authentification Windows ou d'une autre solution personnalisée.|  
+|Basic|Spécifie l'authentification de base pour le client. Pour plus d’informations, consultez RFC2617 :[authentification http : authentification de base et Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
+|Digest|Spécifie l’authentification Digest pour le client. Pour plus d’informations, consultez RFC2617 :[authentification http : authentification de base et Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
+|Ntlm|Spécifie l'authentification NTLM (NT LAN Manager). S'utilise si pour une raison quelconque vous ne pouvez pas utiliser l'authentification Kerberos. Vous pouvez également désactiver son utilisation comme solution de secours en affectant à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false`, ce qui amène WCF à faire un meilleur effort pour lever une exception si NTLM est utilisé. Notez que l'affectation de la valeur `false` à cette propriété peut ne pas empêcher la transmission des informations d'identification NTLM.|  
+|Portail|Spécifie l'authentification Windows. Pour spécifier uniquement le protocole Kerberos sur un domaine Windows, affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false` (la valeur par défaut est `true`).|  
+|Certificate|Effectue l'authentification du client à l'aide d'un certificat X.509.|  
+|Password|L'utilisateur doit fournir un nom d'utilisateur et un mot de passe. Validez la paire nom d'utilisateur/mot de passe à l'aide de l'authentification Windows ou d'une autre solution personnalisée.|  
   
 ### <a name="message-client-credential-types"></a>Types d'informations d'identification du client de message  
  Le tableau suivant illustre les types d'informations d'identification possibles que vous pouvez utiliser lors de la création d'une application qui utilise la sécurité de message. Vous pouvez utiliser ces valeurs dans les fichiers de code ou de configuration.  
@@ -39,15 +39,15 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
 |Paramètre|Description|  
 |-------------|-----------------|  
 |Aucun|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
-|Windows|Permet les échanges de messages SOAP dans le contexte de sécurité établi avec des informations d'identification Windows.|  
-|Nom d’utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que WCF n’autorise pas les opérations de chiffrement avec les noms d’utilisateur, comme la génération d’une signature ou le chiffrement de données. WCF s’assure que le transport est sécurisé lors de l’utilisation des informations d’identification de nom d’utilisateur.|  
-|Certificat|Autorise le service à exiger que le client soit authentifié à l'aide d'un certificat X.509.|  
+|Portail|Permet les échanges de messages SOAP dans le contexte de sécurité établi avec des informations d'identification Windows.|  
+|Utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que WCF n’autorise pas les opérations de chiffrement avec les noms d’utilisateur, comme la génération d’une signature ou le chiffrement de données. WCF s’assure que le transport est sécurisé lors de l’utilisation des informations d’identification de nom d’utilisateur.|  
+|Certificate|Autorise le service à exiger que le client soit authentifié à l'aide d'un certificat X.509.|  
 |Jeton émis|Type de jeton personnalisé configuré en fonction d'une stratégie de sécurité. Le type de jeton par défaut est le jeton SAML (Security Assertions Markup Language). Le jeton est émis par un service de jetons sécurisé. Pour plus d’informations, consultez [Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>Modèle de négociation des informations d'identification du service  
  La *négociation* est le processus qui consiste à établir une relation de confiance entre un client et un service en échangeant des informations d’identification. Le processus est exécuté de manière itérative entre le client et le service afin de divulguer uniquement les informations nécessaires pour l'étape suivante dans le processus de négociation. En pratique, le résultat final consiste à remettre les informations d'identification d'un service au client pour qu'elles soient utilisées dans des opérations ultérieures.  
   
- À une exception près, par défaut, les liaisons fournies par le système dans WCF négocient automatiquement les informations d’identification du service lors de l’utilisation de la sécurité au niveau du message. (L'exception est <xref:System.ServiceModel.BasicHttpBinding> qui n'active pas la sécurité par défaut). Pour désactiver ce comportement, consultez les propriétés <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> et <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A>.  
+ À une exception près, par défaut, les liaisons fournies par le système dans WCF négocient automatiquement les informations d’identification du service lors de l’utilisation de la sécurité au niveau du message. (L’exception est la <xref:System.ServiceModel.BasicHttpBinding>, qui n’active pas la sécurité par défaut.) Pour désactiver ce comportement, consultez les propriétés <xref:System.ServiceModel.MessageSecurityOverHttp.NegotiateServiceCredential%2A> et <xref:System.ServiceModel.FederatedMessageSecurityOverHttp.NegotiateServiceCredential%2A>.  
   
 > [!NOTE]
 > Lorsque la sécurité SSL est utilisée avec .NET Framework 3,5 et versions ultérieures, un client WCF utilise à la fois les certificats intermédiaires dans son magasin de certificats et les certificats intermédiaires reçus pendant la négociation SSL pour effectuer la validation de la chaîne de certificats sur le service certificat. .NET Framework 3.0 n'utilise que les certificats intermédiaires installés dans le magasin de certificats local.  
@@ -111,6 +111,6 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>
 - [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
 - [Programmation de la sécurité dans WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
 - [Sécurité de transport HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

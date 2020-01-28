@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : modifier l’aspect du composant ColorDialog Windows Forms'
+title: Modifier l’apparence du composant ColorDialog
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,23 +10,23 @@ helpviewer_keywords:
 - ColorDialog component [Windows Forms], formatting appearance
 - color dialog box [Windows Forms], configuring appearance
 ms.assetid: bba4e262-1cd7-4f63-89cf-330a36f7b539
-ms.openlocfilehash: d2bb9e06d9d84a9b61c67510e9c012066f69d55e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 0402d7f3c03a0771512a03ac54e1b093c9fe6e9b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61595450"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746635"
 ---
-# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Procédure : modifier l’aspect du composant ColorDialog Windows Forms
-Vous pouvez configurer l’apparence des formulaires Windows <xref:System.Windows.Forms.ColorDialog> composant avec un nombre de ses propriétés. La boîte de dialogue comporte deux sections, qui affiche les couleurs de base et un type qui autorise l’utilisateur de définir des couleurs personnalisées.  
+# <a name="how-to-change-the-appearance-of-the-windows-forms-colordialog-component"></a>Comment : modifier l'apparence du composant ColorDialog Windows Forms
+Vous pouvez configurer l’apparence du composant Windows Forms <xref:System.Windows.Forms.ColorDialog> avec un nombre de ses propriétés. La boîte de dialogue comporte deux sections : une qui affiche les couleurs de base et une qui permet à l’utilisateur de définir des couleurs personnalisées.  
   
- La plupart des propriétés de restreindre les couleurs de l’utilisateur peut sélectionner à partir de la boîte de dialogue. Si le <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> propriété est définie sur `true`, l’utilisateur est autorisé à définir des couleurs personnalisées. Le <xref:System.Windows.Forms.ColorDialog.FullOpen%2A> est propriété `true` si la boîte de dialogue est développée pour définir des couleurs personnalisées ; sinon, l’utilisateur doit cliquer un bouton « Définir les couleurs personnalisées ». Lorsque le <xref:System.Windows.Forms.ColorDialog.AnyColor%2A> propriété est définie sur `true`, la boîte de dialogue affiche toutes les couleurs disponibles dans le jeu de couleurs de base. Si le <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> propriété est définie sur `true`, l’utilisateur ne peut pas sélectionner de couleurs tramées ; uniquement des couleurs unies sont disponibles pour la sélectionner.  
+ La plupart des propriétés limitent les couleurs que l’utilisateur peut sélectionner dans la boîte de dialogue. Si la propriété <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A> est définie sur `true`, l’utilisateur est autorisé à définir des couleurs personnalisées. La propriété <xref:System.Windows.Forms.ColorDialog.FullOpen%2A> est `true` si la boîte de dialogue est développée pour définir des couleurs personnalisées ; dans le cas contraire, l’utilisateur doit cliquer sur le bouton « définir des couleurs personnalisées ». Lorsque la propriété <xref:System.Windows.Forms.ColorDialog.AnyColor%2A> est définie sur `true`, la boîte de dialogue affiche toutes les couleurs disponibles dans le jeu de couleurs de base. Si la propriété <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A> est définie sur `true`, l’utilisateur ne peut pas sélectionner les couleurs désélectionnées. seules les couleurs unies peuvent être sélectionnées.  
   
- Si le <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> propriété est définie sur `true`, un bouton aide s’affiche dans la boîte de dialogue. Lorsque l’utilisateur clique sur le bouton aide, le <xref:System.Windows.Forms.ColorDialog> du composant <xref:System.Windows.Forms.CommonDialog.HelpRequest> événement est déclenché.  
+ Si la propriété <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> est définie sur `true`, un bouton aide s’affiche dans la boîte de dialogue. Quand l’utilisateur clique sur le bouton aide, l’événement <xref:System.Windows.Forms.CommonDialog.HelpRequest> du composant <xref:System.Windows.Forms.ColorDialog> est déclenché.  
   
 ### <a name="to-configure-the-appearance-of-the-color-dialog-box"></a>Pour configurer l’apparence de la boîte de dialogue couleur  
   
-1. Définir le <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>, <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>, <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>, et <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> propriétés aux valeurs souhaitées.  
+1. Définissez les propriétés <xref:System.Windows.Forms.ColorDialog.AllowFullOpen%2A>, <xref:System.Windows.Forms.ColorDialog.AnyColor%2A>, <xref:System.Windows.Forms.ColorDialog.SolidColorOnly%2A>et <xref:System.Windows.Forms.ColorDialog.ShowHelp%2A> sur les valeurs souhaitées.  
   
     ```vb  
     ColorDialog1.AllowFullOpen = True  

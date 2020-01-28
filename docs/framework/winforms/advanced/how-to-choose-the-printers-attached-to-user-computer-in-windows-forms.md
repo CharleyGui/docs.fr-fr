@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : choisir les imprimantes connectées à l’ordinateur d’un utilisateur dans Windows Forms'
+title: 'Comment : choisir les imprimantes connectées à l’ordinateur d’un utilisateur'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,25 +9,25 @@ helpviewer_keywords:
 - printing [Windows Forms], choosing printers
 - printers [Windows Forms], choosing
 ms.assetid: 63c1172b-2931-4ac0-953f-37f629494bbf
-ms.openlocfilehash: e81ef8b563afff6dd57a9fbb7674d17c0eb80916
-ms.sourcegitcommit: 7e129d879ddb42a8b4334eee35727afe3d437952
+ms.openlocfilehash: 7fc2427468540ac0a1480f6140cbb34c3a0f1ab3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/23/2019
-ms.locfileid: "66053071"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746509"
 ---
-# <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Procédure : choisir les imprimantes connectées à l’ordinateur d’un utilisateur dans Windows Forms
+# <a name="how-to-choose-the-printers-attached-to-a-users-computer-in-windows-forms"></a>Comment : choisir les imprimantes connectées à l'ordinateur d'un utilisateur dans Windows Forms
 Souvent, les utilisateurs souhaitent choisir une imprimante autre que l’imprimante par défaut. Vous pouvez permettre aux utilisateurs de choisir une imprimante parmi celles installées actuellement à l’aide du composant <xref:System.Windows.Forms.PrintDialog> . Par le biais du composant <xref:System.Windows.Forms.PrintDialog> , le <xref:System.Windows.Forms.DialogResult> du composant <xref:System.Windows.Forms.PrintDialog> est capturé et utilisé pour sélectionner l’imprimante.  
   
  Dans la procédure suivante, un fichier texte est sélectionné pour impression vers l’imprimante par défaut. La classe <xref:System.Windows.Forms.PrintDialog> est ensuite instanciée.  
   
 ### <a name="to-choose-a-printer-and-then-print-a-file"></a>Pour choisir une imprimante, puis imprimer un fichier  
   
-1. Sélectionnez l’imprimante à utiliser à l’aide de la <xref:System.Windows.Forms.PrintDialog> composant.  
+1. Sélectionnez l’imprimante à utiliser à l’aide du composant <xref:System.Windows.Forms.PrintDialog>.  
   
-     Dans l’exemple de code suivant, deux événements sont gérés. Dans le premier, un <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Click> événement, le <xref:System.Windows.Forms.PrintDialog> classe est instanciée et l’imprimante sélectionnée par l’utilisateur est capturée dans le <xref:System.Windows.Forms.DialogResult> propriété.  
+     Dans l’exemple de code suivant, deux événements sont gérés. Dans le premier cas, l’événement <xref:System.Windows.Forms.Control.Click> d’un contrôle <xref:System.Windows.Forms.Button>, la classe <xref:System.Windows.Forms.PrintDialog> est instanciée et l’imprimante sélectionnée par l’utilisateur est capturée dans la propriété <xref:System.Windows.Forms.DialogResult>.  
   
-     Dans le second événement, le <xref:System.Drawing.Printing.PrintDocument.PrintPage> événements de la <xref:System.Drawing.Printing.PrintDocument> composant, un exemple de document est imprimé sur l’imprimante spécifiée.  
+     Dans le deuxième événement, l' <xref:System.Drawing.Printing.PrintDocument.PrintPage> événement du composant <xref:System.Drawing.Printing.PrintDocument>, un exemple de document est imprimé sur l’imprimante spécifiée.  
   
     ```vb  
     Private Sub Button1_Click(ByVal sender As Object, ByVal e As System.EventArgs) Handles Button1.Click  
@@ -89,7 +89,7 @@ Souvent, les utilisateurs souhaitent choisir une imprimante autre que l’imprim
        }  
     ```  
   
-     (Visual C# et Visual C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le Gestionnaire d’événements.  
+     (Visuel C# et visuel C++) Placez le code suivant dans le constructeur du formulaire pour inscrire le gestionnaire d’événements.  
   
     ```csharp  
     this.printDocument1.PrintPage += new  

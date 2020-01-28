@@ -1,5 +1,6 @@
 ---
-title: "Procédure pas à pas : hébergement d'un contrôle Windows Forms dans WPF"
+title: Héberger un contrôle de Windows Forms dans WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - hosting Windows Forms control in WPF [WPF]
 ms.assetid: 9cb88415-39b0-4c46-80c4-ff325b674286
-ms.openlocfilehash: e353c35e9989e5887e038371672adbb6c2d3598d
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
-ms.translationtype: MT
+ms.openlocfilehash: f7e925529f1bf194664c4f776bcc0322314f8857
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976528"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744905"
 ---
 # <a name="walkthrough-hosting-a-windows-forms-control-in-wpf"></a>Procédure pas à pas : hébergement d'un contrôle Windows Forms dans WPF
 
@@ -22,7 +23,7 @@ Cette procédure pas à pas vous montre comment héberger un contrôle [!INCLUDE
 
 Pour obtenir le code complet des tâches illustrées dans cette procédure pas à pas, consultez [hébergement d’un contrôle de Windows Forms dans l’exemple WPF](https://go.microsoft.com/fwlink/?LinkID=160057).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 

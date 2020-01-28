@@ -1,5 +1,5 @@
 ---
-title: 'Comment : redimensionner des contrôles sur des Windows Forms'
+title: redimensionner des contrôles
 ms.date: 03/30/2017
 f1_keywords:
 - Size.Height
@@ -12,12 +12,12 @@ ms.assetid: d2dba441-a8c0-4705-b8e8-2e5d86d6e7ec
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 3aacc9434199eb7881e362a67e1fe0c08784c4a7
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 13eec4fd3777da832b3c54c64eaa9663df881228
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459554"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735731"
 ---
 # <a name="how-to-resize-controls-on-windows-forms"></a>Comment : redimensionner des contrôles sur Windows Forms
 
@@ -38,7 +38,7 @@ Dans Visual Studio, sélectionnez le contrôle à redimensionner et faites gliss
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Création d'étiquettes et de raccourcis pour les contrôles Windows Forms](labeling-individual-windows-forms-controls-and-providing-shortcuts-to-them.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)
 - [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : ajouter des icônes d’application à la barre des tâches avec le composant NotifyIcon Windows Forms'
+title: Ajouter des icônes d’application à la barre des tâches avec le composant NotifyIcon
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,29 +13,29 @@ helpviewer_keywords:
 - NotifyIcon component
 - taskbar [Windows Forms], adding icons
 ms.assetid: d28c0fe6-aaf2-4df7-ad74-928d861a8510
-ms.openlocfilehash: 05b6f300afea4671c1a847b116b378514ecb8b56
-ms.sourcegitcommit: ffd7dd79468a81bbb0d6449f6d65513e050c04c4
+ms.openlocfilehash: 46b50ecaabe75dba08fea922d7b5639031692269
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/21/2019
-ms.locfileid: "65959504"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746248"
 ---
-# <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Procédure : ajouter des icônes d’application à la barre des tâches avec le composant NotifyIcon Windows Forms
+# <a name="how-to-add-application-icons-to-the-taskbar-with-the-windows-forms-notifyicon-component"></a>Comment : ajouter des icônes d’application à la barre des tâches à l’aide du composant NotifyIcon Windows Forms
 
-Les formulaires Windows <xref:System.Windows.Forms.NotifyIcon> composant affiche une icône dans la zone de notification d’état de la barre des tâches. Pour afficher plusieurs icônes dans la zone d’état, vous devez disposer de plusieurs <xref:System.Windows.Forms.NotifyIcon> composants sur votre formulaire. Pour définir l’icône affichée pour un contrôle, utilisez le <xref:System.Windows.Forms.NotifyIcon.Icon%2A> propriété. Vous pouvez également écrire du code le <xref:System.Windows.Forms.NotifyIcon.DoubleClick> Gestionnaire d’événements afin que quelque chose se produit lorsque l’utilisateur double-clique sur l’icône. Par exemple, vous pouvez créer une boîte de dialogue s’affichent pour l’utilisateur de configurer le processus d’arrière-plan représenté par l’icône.
+Le composant Windows Forms <xref:System.Windows.Forms.NotifyIcon> affiche une icône unique dans la zone de notification d’état de la barre des tâches. Pour afficher plusieurs icônes dans la zone d’État, vous devez avoir plusieurs composants de <xref:System.Windows.Forms.NotifyIcon> dans votre formulaire. Pour définir l’icône affichée pour un contrôle, utilisez la propriété <xref:System.Windows.Forms.NotifyIcon.Icon%2A>. Vous pouvez également écrire du code dans le gestionnaire d’événements <xref:System.Windows.Forms.NotifyIcon.DoubleClick> pour qu’un événement se produise lorsque l’utilisateur double-clique sur l’icône. Par exemple, vous pouvez faire en sorte qu’une boîte de dialogue s’affiche pour permettre à l’utilisateur de configurer le processus en arrière-plan représenté par l’icône.
 
 > [!NOTE]
-> Le <xref:System.Windows.Forms.NotifyIcon> composant est utilisé pour la notification uniquement, pour informer les utilisateurs qu’une action ou un événement s’est produite ou il y a eu un changement d’état quelconque. Vous devez utiliser les menus, barres d’outils et autres éléments d’interface utilisateur pour l’interaction avec les applications standard.
+> Le composant <xref:System.Windows.Forms.NotifyIcon> est utilisé à des fins de notification uniquement, pour avertir les utilisateurs qu’une action ou un événement s’est produit ou qu’une modification a été apportée à l’état d’un tri. Vous devez utiliser des menus, des barres d’outils et d’autres éléments d’interface utilisateur pour l’interaction standard avec les applications.
 
 ### <a name="to-set-the-icon"></a>Pour définir l’icône
 
-1. Affecter une valeur à la <xref:System.Windows.Forms.NotifyIcon.Icon%2A> propriété. La valeur doit être de type `System.Drawing.Icon` et peut être chargée à partir d’un fichier .ico. Vous pouvez spécifier le fichier d’icône dans le code ou en cliquant sur le bouton de sélection (![bouton les points de suspension (...) dans la fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) à côté du <xref:System.Windows.Forms.NotifyIcon.Icon%2A> propriété dans le **propriétés** fenêtre, puis en sélectionnant le fichier dans le **Open** boîte de dialogue qui s’affiche.
+1. Assignez une valeur à la propriété <xref:System.Windows.Forms.NotifyIcon.Icon%2A>. La valeur doit être de type `System.Drawing.Icon` et peut être chargée à partir d’un fichier. ico. Vous pouvez spécifier le fichier d’icône dans le code ou en cliquant sur le bouton de sélection (![le bouton de sélection (...) dans la Fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) en regard de la propriété <xref:System.Windows.Forms.NotifyIcon.Icon%2A> dans la fenêtre **Propriétés** , puis en sélectionnant le fichier dans la boîte de dialogue **ouvrir** qui s’affiche.
 
 2. Affectez à la propriété <xref:System.Windows.Forms.NotifyIcon.Visible%2A> la valeur `true`.
 
-3. Définir le <xref:System.Windows.Forms.NotifyIcon.Text%2A> propriété à une chaîne d’info-bulle appropriée.
+3. Affectez à la propriété <xref:System.Windows.Forms.NotifyIcon.Text%2A> une chaîne d’info-bulle appropriée.
 
-     Dans l’exemple de code suivant, le chemin d’accès défini pour l’emplacement de l’icône est la **Mes Documents** dossier. Cet emplacement est utilisé, car vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce dossier. Choix de cet emplacement permet également aux utilisateurs avec des niveaux d’accès système minimal en toute sécurité exécuter l’application. L’exemple suivant nécessite un formulaire avec un <xref:System.Windows.Forms.NotifyIcon> contrôle déjà ajouté. Il requiert également un fichier icône nommé `Icon.ico`.
+     Dans l’exemple de code suivant, le chemin d’accès défini pour l’emplacement de l’icône est le dossier **Mes documents** . Cet emplacement est utilisé, car vous pouvez supposer que la plupart des ordinateurs exécutant le système d’exploitation Windows incluent ce dossier. Le choix de cet emplacement permet également aux utilisateurs disposant d’un niveau d’accès minimal au système d’exécuter l’application en toute sécurité. L’exemple suivant requiert un formulaire avec un contrôle <xref:System.Windows.Forms.NotifyIcon> déjà ajouté. Elle nécessite également un fichier d’icône nommé `Icon.ico`.
 
     ```vb
     ' You should replace the bold icon in the sample below
@@ -76,6 +76,6 @@ Les formulaires Windows <xref:System.Windows.Forms.NotifyIcon> composant affiche
 
 - <xref:System.Windows.Forms.NotifyIcon>
 - <xref:System.Windows.Forms.NotifyIcon.Icon%2A>
-- [Guide pratique pour Associer un Menu contextuel à du composant NotifyIcon Windows Forms](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)
+- [Guide pratique pour associer un menu contextuel à un composant NotifyIcon Windows Forms](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)
 - [NotifyIcon, composant](notifyicon-component-windows-forms.md)
 - [Vue d’ensemble du composant NotifyIcon](notifyicon-component-overview-windows-forms.md)

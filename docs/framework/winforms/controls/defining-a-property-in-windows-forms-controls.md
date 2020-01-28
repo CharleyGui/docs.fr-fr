@@ -1,5 +1,5 @@
 ---
-title: Définition d'une propriété dans les contrôles Windows Forms
+title: Définir les propriétés du contrôle
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,19 +8,19 @@ helpviewer_keywords:
 - properties [Windows Forms], defining in code
 - custom controls [Windows Forms], defining properties in code
 ms.assetid: c2eb8277-a842-4d99-89a9-647b901a0434
-ms.openlocfilehash: a641b1e7565842a1edf6aeec88bdc37ee0786ab4
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 0fec817226a7da4b44ec992f9e384a2ad5449001
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69969116"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746108"
 ---
 # <a name="defining-a-property-in-windows-forms-controls"></a>Définition d'une propriété dans les contrôles Windows Forms
 Vous trouverez une vue d’ensemble de propriétés sur la page [Vue d’ensemble des propriétés](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/65zdfbdt(v=vs.120)). Il est important de prendre en compte plusieurs points avant de définir une propriété :  
   
 - Vous devez appliquer des attributs aux propriétés que vous définissez. Les attributs spécifient la manière dont le concepteur doit afficher une propriété. Pour plus d’informations, consultez la page [Attributs au moment du design des composants](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120)).  
   
-- Si la modification de la propriété affecte l’affichage visuel du contrôle, appelez <xref:System.Windows.Forms.Control.Invalidate%2A> la méthode (que votre contrôle hérite <xref:System.Windows.Forms.Control>de) de `set` l’accesseur. <xref:System.Windows.Forms.Control.Invalidate%2A>appelle à son tour <xref:System.Windows.Forms.Control.OnPaint%2A> la méthode, qui redessine le contrôle. Plusieurs appels à <xref:System.Windows.Forms.Control.Invalidate%2A> entraînent un seul appel à <xref:System.Windows.Forms.Control.OnPaint%2A> pour des performances optimales.  
+- Si la modification de la propriété affecte l’affichage visuel du contrôle, appelez la méthode <xref:System.Windows.Forms.Control.Invalidate%2A> (que votre contrôle hérite de <xref:System.Windows.Forms.Control>) de l’accesseur `set`. <xref:System.Windows.Forms.Control.Invalidate%2A> appelle à son tour la méthode <xref:System.Windows.Forms.Control.OnPaint%2A>, qui redessine le contrôle. Plusieurs appels à <xref:System.Windows.Forms.Control.Invalidate%2A> aboutissent à un appel unique à <xref:System.Windows.Forms.Control.OnPaint%2A> pour des performances optimales.  
   
 - La bibliothèque de classes .NET Framework fournit des convertisseurs de type pour les types de données courants : entiers, nombres décimaux, valeurs booléennes, etc. L’objectif d’un convertisseur de type consiste généralement à fournir une conversion de chaînes en valeurs (des données de chaîne vers d’autres types de données). Les types de données courants sont associés à des convertisseurs de type par défaut qui convertissent les valeurs en chaînes et les chaînes vers les types de données adéquats. Si vous définissez une propriété d’un type de donnée personnalisé (autrement dit, non standard), il vous faudra appliquer un attribut qui spécifie le convertisseur de type à associer à cette propriété. Vous pouvez également utiliser un attribut pour associer un éditeur de type avec interface utilisateur personnalisé à une propriété. Un éditeur de type avec interface utilisateur fournit une interface utilisateur permettant de modifier un type de données ou une propriété. Par exemple, un sélecteur de couleurs est un éditeur de type avec interface utilisateur. Des exemples d’attributs sont donnés à la fin de cette rubrique.  
   
@@ -95,7 +95,7 @@ public class FlashTrackBar : Control {
 }  
 ```  
   
- Le fragment de code suivant associe un convertisseur de type et un éditeur de type avec interface utilisateur à la propriété `Value`. Dans ce cas `Value` , il s’agit d’un entier et d’un convertisseur de <xref:System.ComponentModel.TypeConverterAttribute> type par défaut, mais l’attribut`FlashTrackBarValueConverter`applique un convertisseur de type personnalisé () qui permet au concepteur de l’afficher sous forme de pourcentage. L’éditeur de type avec interface utilisateur, `FlashTrackBarValueEditor`, permet d’afficher visuellement le pourcentage. Cet exemple montre également que le convertisseur de type ou l’éditeur spécifié <xref:System.ComponentModel.TypeConverterAttribute> par <xref:System.ComponentModel.EditorAttribute> l’attribut ou remplace le convertisseur par défaut.  
+ Le fragment de code suivant associe un convertisseur de type et un éditeur de type avec interface utilisateur à la propriété `Value`. Dans ce cas, `Value` est un entier et possède un convertisseur de type par défaut, mais l’attribut <xref:System.ComponentModel.TypeConverterAttribute> applique un convertisseur de type personnalisé (`FlashTrackBarValueConverter`) qui permet au concepteur de l’afficher sous forme de pourcentage. L’éditeur de type avec interface utilisateur, `FlashTrackBarValueEditor`, permet d’afficher visuellement le pourcentage. Cet exemple montre également que le convertisseur de type ou l’éditeur spécifié par l’attribut <xref:System.ComponentModel.TypeConverterAttribute> ou <xref:System.ComponentModel.EditorAttribute> substitue le convertisseur par défaut.  
   
 ```vb  
 <Category("Flash"), _  
