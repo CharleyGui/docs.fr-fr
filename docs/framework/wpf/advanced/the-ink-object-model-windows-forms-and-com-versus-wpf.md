@@ -1,5 +1,6 @@
 ---
-title: 'Modèle objet encre : Windows Forms et COM ou WPF'
+title: Encre numérique-Windows Forms et COM ou WPF
+titleSuffix: ''
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -12,12 +13,12 @@ helpviewer_keywords:
 - ink [WPF], enabling
 - events [WPF], tablet pen
 ms.assetid: 577835be-b145-4226-8570-1d309e9b3901
-ms.openlocfilehash: 2c0d155d320bab2f0114280e962c8f2f0b559681
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 4a183bba2c5cfb2d12a9cf435ae1f92b4cf63948
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636417"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737285"
 ---
 # <a name="the-ink-object-model-windows-forms-and-com-versus-wpf"></a>Modèle objet encre : Windows Forms et COM ou WPF
 
@@ -30,7 +31,7 @@ Il existe essentiellement trois plateformes qui prennent en charge l’encre num
   
  Le tableau suivant répertorie les emplacements où vous pouvez en savoir plus sur l’activation de l’encre dans une application :  
   
-|Pour…|Sur la plateforme WPF...|Sur les plateformes Windows Forms/COM...|  
+|Pour effectuer cette opération...|Sur la plateforme WPF...|Sur les plateformes Windows Forms/COM...|  
 |-----------------|--------------------------|------------------------------------------|  
 |Ajouter un contrôle avec accès manuscrit à une application|Consultez [prise en main avec de l’encre](getting-started-with-ink.md).|Voir [exemple de formulaire de déclaration automatique](/windows/desktop/tablet/auto-claims-form-sample)|  
 |Activer l’encre sur un contrôle personnalisé|Consultez [création d’un contrôle d’entrée d’encre](creating-an-ink-input-control.md).|Consultez [exemple de presse-papiers manuscrit](/windows/desktop/tablet/ink-clipboard-sample).|  

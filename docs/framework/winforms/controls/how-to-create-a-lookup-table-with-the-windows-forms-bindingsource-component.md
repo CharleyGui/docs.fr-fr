@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer une table de choix avec le composant BindingSource de Windows Forms'
+title: Créer une table de correspondance avec le composant BindingSource
 ms.date: 03/30/2017
 helpviewer_keywords:
 - lookup tables
@@ -7,14 +7,14 @@ helpviewer_keywords:
 - BindingSource component [Windows Forms], creating a lookup table
 - BindingSource component [Windows Forms], examples
 ms.assetid: 622fce80-879d-44be-abbf-8350ec22ca2b
-ms.openlocfilehash: 33b9e4e98a8a3f8c0d5dd6433ebbf15c049b608e
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: ccf2bfa6cf3f56a38b55f8c87004c42a46172891
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64643062"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736815"
 ---
-# <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Procédure : créer une table de choix avec le composant BindingSource de Windows Forms
+# <a name="how-to-create-a-lookup-table-with-the-windows-forms-bindingsource-component"></a>Comment : créer une table de correspondance avec le composant BindingSource Windows Forms
 Une table de choix est une table de données ayant une colonne qui affiche les données des enregistrements situés dans une table liée. Dans les procédures suivantes, un contrôle <xref:System.Windows.Forms.ComboBox> permet d'afficher le champ avec la relation de clé étrangère entre la table parent et la table enfant.  
   
  Pour mieux visualiser ces deux tables et cette relation, voici un exemple de table parent et de table enfant :  
@@ -49,7 +49,7 @@ Une table de choix est une table de données ayant une colonne qui affiche les d
   
 ### <a name="to-create-the-user-interface"></a>Pour créer l'interface utilisateur  
   
-1. À partir de la **boîte à outils**, faites glisser un <xref:System.Windows.Forms.ComboBox> contrôle vers le formulaire.  
+1. À partir de la **boîte à outils**, faites glisser un contrôle <xref:System.Windows.Forms.ComboBox> sur le formulaire.  
   
      Ce contrôle affiche la colonne de la table parent.  
   
@@ -79,7 +79,7 @@ Une table de choix est une table de données ayant une colonne qui affiche les d
   
     7. Remplacez le nom du jeu de données par défaut, si vous le souhaitez.  
   
-    8. Cliquez sur **Terminer**.  
+    8. Cliquez sur **Finish**.  
   
 4. Dans la zone de liste déroulante **Afficher le membre**, sélectionnez le nom de la colonne (par exemple ContactName) à afficher dans la zone de liste modifiable.  
   

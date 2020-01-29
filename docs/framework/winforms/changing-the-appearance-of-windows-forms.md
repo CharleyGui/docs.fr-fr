@@ -1,24 +1,24 @@
 ---
-title: Modification de l'apparence des Windows Forms
+title: Personnaliser l’apparence
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, changing the appearance of
 ms.assetid: 12f35d5b-1587-49cc-ada3-47eec1ff1738
-ms.openlocfilehash: 0582ad4c8e18d0f0419f0463ba260226839f7f42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c75fb1849ab9f9a07fcbbe5dd915b965f5aea05d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640415"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732361"
 ---
 # <a name="changing-the-appearance-of-windows-forms"></a>Modification de l'apparence des Windows Forms
 Vous pouvez personnaliser l’apparence de vos applications Windows Forms de nombreuses manières, par exemple en modifiant la bordure, l’opacité, la forme ou le style ou en définissant une image d’arrière-plan.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Guide pratique pour Modifier les bordures des Windows Forms](how-to-change-the-borders-of-windows-forms.md)  
+ [Guide pratique pour modifier les bordures des Windows Forms](how-to-change-the-borders-of-windows-forms.md)  
  Montre comment modifier le style de bordure d'un formulaire.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Windows.Forms.Form>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   

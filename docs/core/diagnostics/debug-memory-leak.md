@@ -3,16 +3,16 @@ title: Didacticiel de débogage d’une fuite de mémoire
 description: Découvrez comment déboguer une fuite de mémoire dans .NET Core.
 ms.topic: tutorial
 ms.date: 12/17/2019
-ms.openlocfilehash: cb137503cbc81f5ab9438dadcf1dc1c6750a1ca8
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 014945394f87edd02c94f7c3b28043bd07470d8b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715605"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737731"
 ---
 # <a name="tutorial-debug-a-memory-leak-in-net-core"></a>Didacticiel : déboguer une fuite de mémoire dans .NET Core
 
-**Cet article s’applique à : ✓** .net Core 3,0 SDK et versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
 Ce didacticiel présente les outils permettant d’analyser une fuite de mémoire .NET Core.
 
@@ -26,9 +26,9 @@ Dans ce didacticiel, vous allez effectuer les actions suivantes :
 > - Générez un fichier dump.
 > - Analyser l’utilisation de la mémoire à l’aide du fichier dump.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
-Le didacticiel utilise :
+Le didacticiel utilise les éléments suivants :
 
 - [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 - [dotnet-trace](dotnet-trace.md) pour répertorier les processus.
@@ -54,7 +54,7 @@ dotnet run
 dotnet-trace ps
 ```
 
-La sortie doit ressembler à ce qui suit :
+La sortie doit ressembler à ce qui suit :
 
 ```console
 4807 DiagnosticScena /home/user/git/samples/core/diagnostics/DiagnosticScenarios/bin/Debug/netcoreapp3.0/DiagnosticScenarios

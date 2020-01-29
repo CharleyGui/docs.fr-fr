@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : application de styles au contenu WPF'
+title: 'Procédure pas à pas : style de contenu WPF'
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF Designer [Windows Forms], styling WPF content
@@ -9,18 +9,18 @@ ms.assetid: e574aac7-7ea4-4cdb-8034-bab541f000df
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: d0aa2c54f05cea658c95dc2c23b7ba4bb78835c9
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: e52297f51c74fc3dba93c987fd5b9bd5b6801777
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74138931"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732544"
 ---
 # <a name="walkthrough-style-wpf-content"></a>Procédure pas à pas : style de contenu WPF
 
 Cet article vous explique comment appliquer un style à un contrôle Windows Presentation Foundation (WPF) hébergé sur un Windows Form.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -45,7 +45,7 @@ Une fois que vous avez ajouté un type de contrôle WPF au projet, vous pouvez l
 
 5. Ajoutez un deuxième contrôle de <xref:System.Windows.Controls.Button?displayProperty=nameWithType> au <xref:System.Windows.Controls.UserControl> et définissez la valeur de la propriété <xref:System.Windows.Controls.ContentControl.Content%2A> sur **OK**.
 
-6. Générez le projet.
+6. créer le projet ;
 
 ## <a name="apply-a-style-to-a-wpf-control"></a>Appliquer un style à un contrôle WPF
 
@@ -124,7 +124,7 @@ Vous pouvez appliquer différents styles à un contrôle WPF pour modifier son a
                 Style="{StaticResource SimpleButton}">Cancel</Button>
    ```
 
-1. Générez le projet.
+1. créer le projet ;
 
 1. Ouvrez `Form1` dans le Concepteur Windows Forms.
 

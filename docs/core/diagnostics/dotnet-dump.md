@@ -2,16 +2,16 @@
 title: dotnet-dump-.NET Core
 description: Installation et utilisation de l’outil en ligne de commande dotnet-dump.
 ms.date: 10/14/2019
-ms.openlocfilehash: dcd5dd42620010c1a9b6dffd3365fc1b777c0eeb
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 3c0e28d4efc96ae53ec7dfae243725ab400e6b8f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740775"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737671"
 ---
 # <a name="dump-collection-and-analysis-utility-dotnet-dump"></a>Utilitaire de collecte et d’analyse des vidages (`dotnet-dump`)
 
-**Cet article s’applique à : ✓** .net Core 3,0 SDK et versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 3,0 et versions ultérieures
 
 > [!NOTE]
 > `dotnet-dump` n’est pas pris en charge sur macOS.
@@ -73,7 +73,7 @@ dotnet-dump collect [-h|--help] [-p|--process-id] [--type] [-o|--output] [--diag
 
 - **`--type <Heap|Mini>`**
 
-  Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus. Il en existe deux types :
+  Spécifie le type de vidage, qui détermine les types d’informations collectées à partir du processus. Il existe deux types :
 
   - `Heap` : un vidage volumineux et relativement complet contenant des listes de modules, des listes de threads, toutes les piles, des informations sur les exceptions, des informations de gestion et toute la mémoire sauf pour les images mappées.
   - `Mini` : un petit dump contenant des listes de modules, des listes de threads, des informations sur les exceptions et toutes les piles.

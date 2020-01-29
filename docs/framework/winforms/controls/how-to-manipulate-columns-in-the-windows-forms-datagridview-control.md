@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : manipuler des colonnes dans le contrôle DataGridView Windows Forms'
+title: Manipuler des colonnes dans le contrôle DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - columns [Windows Forms], manipulating
 - data grids [Windows Forms], manipulating columns
 ms.assetid: d8cfe6b3-bbab-4182-bec2-0517d9f1eaf6
-ms.openlocfilehash: 1f964314b9fe2f4b1ca235f9e74ca80391a58105
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 485df2594b8f07df784ebbefd9011ca562556eb8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65592331"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76736094"
 ---
-# <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a>Procédure : manipuler des colonnes dans le contrôle DataGridView Windows Forms
+# <a name="how-to-manipulate-columns-in-the-windows-forms-datagridview-control"></a>Comment : manipuler les colonnes du contrôle DataGridView Windows Forms
 
 L'exemple de code suivant illustre les différentes façons de manipuler des colonnes de <xref:System.Windows.Forms.DataGridView> à l'aide des propriétés de la classe <xref:System.Windows.Forms.DataGridViewColumn>.
 
@@ -29,7 +29,7 @@ L'exemple de code suivant illustre les différentes façons de manipuler des col
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Cet exemple nécessite :
+Cet exemple nécessite :
 
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.
 

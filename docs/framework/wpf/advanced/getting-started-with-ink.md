@@ -1,5 +1,5 @@
 ---
-title: Créer un InkCanvas dans une application WPF dans Visual Studio
+title: Créer InkCanvas dans Visual Studio
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -9,22 +9,22 @@ helpviewer_keywords:
 - XAML [WPF], procedural code in lieu of
 - InkCanvas (WPF)
 ms.assetid: 760332dd-594a-475d-865b-01659db8cab7
-ms.openlocfilehash: ebbf25037921e7802b2bfcb6ffa562d16a849ffa
-ms.sourcegitcommit: 82f94a44ad5c64a399df2a03fa842db308185a76
+ms.openlocfilehash: b8087d6db04f7024b9ee48f28002bee04045a14b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/25/2019
-ms.locfileid: "72920250"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737886"
 ---
 # <a name="get-started-with-ink-in-wpf"></a>Prise en main de l’encre dans WPF
 
 Windows Presentation Foundation (WPF) dispose d’une fonctionnalité d’encre qui facilite l’incorporation de l’encre numérique dans votre application.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour utiliser les exemples suivants, commencez par installer [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Il permet également de savoir comment écrire des applications WPF de base. Pour obtenir de l’aide sur la prise en main de WPF, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="quick-start"></a>Démarrage rapide
+## <a name="quick-start"></a>Démarrage rapide de la
 
 Cette section vous aide à écrire une application WPF simple qui collecte de l’encre.
 

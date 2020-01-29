@@ -1,14 +1,13 @@
 ---
 title: Magasin de packages de runtime
 description: Découvrez comment utiliser le magasin de packages de runtime et les manifestes cibles utilisés par .NET Core.
-author: bleroy
 ms.date: 08/12/2017
-ms.openlocfilehash: aa0fd3a0895bc79ddb80aeb599d3e3820b3be6db
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c58ccdb90e5ae9830313f52c19f58629ea5b0a2
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714460"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737787"
 ---
 # <a name="runtime-package-store"></a>Magasin de packages de runtime
 

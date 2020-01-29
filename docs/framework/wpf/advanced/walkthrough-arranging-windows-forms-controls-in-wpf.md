@@ -1,5 +1,6 @@
 ---
-title: 'Procédure pas à pas : organisation des contrôles Windows Forms dans WPF'
+title: Organiser les contrôles Windows Forms dans WPF
+titleSuffix: ''
 ms.date: 04/03/2018
 dev_langs:
 - csharp
@@ -8,20 +9,20 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - arranging controls [WPF]
 ms.assetid: a1db8049-15c7-45d6-ae3d-36a6735cb848
-ms.openlocfilehash: 484895db539b288bf388ff6c2ce3c29db55080b1
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
-ms.translationtype: MT
+ms.openlocfilehash: 5e7544dfdbee234bb968c9a7f39814e8749ece15
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197845"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76735284"
 ---
 # <a name="walkthrough-arranging-windows-forms-controls-in-wpf"></a>Procédure pas à pas : organisation des contrôles Windows Forms dans WPF
 
 Cette procédure pas à pas vous montre comment utiliser [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fonctionnalités de disposition pour organiser des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dans une application hybride.
 
-Cette procédure pas à pas décrit notamment les tâches suivantes :
+Cette procédure pas à pas décrit notamment les tâches suivantes :
 
-- Création du projet
+- Création du projet.
 - Utilisation des paramètres de disposition par défaut
 - Dimensionnement en fonction du contenu
 - Utilisation du positionnement absolu
@@ -31,7 +32,7 @@ Cette procédure pas à pas décrit notamment les tâches suivantes :
 - Ancrage
 - Définition de la visibilité
 - Hébergement d’un contrôle qui ne s’étire pas
-- Mise à l’échelle
+- Scaling (mise à l'échelle).
 - Rotation
 - Définition d’une marge intérieure et de marges
 - Utilisation de conteneurs de présentation dynamiques
@@ -40,7 +41,7 @@ Pour obtenir le code complet des tâches illustrées dans cette procédure pas �
 
 Lorsque vous aurez terminé, vous aurez une compréhension des fonctionnalités de disposition [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] dans les applications basées sur [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette procédure pas à pas nécessite Visual Studio.
 
@@ -149,7 +150,7 @@ Les éléments <xref:System.Windows.Forms.Integration.WindowsFormsHost> visibles
 
 2. Appuyez sur <kbd>F5</kbd> pour générer et exécuter l’application. L’élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> est peint sur l’élément label.
 
-## <a name="docking"></a>Ancrage
+## <a name="docking"></a>Docking
 
 <xref:System.Windows.Forms.Integration.WindowsFormsHost> élément prend en charge [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ancrage. Définissez la <xref:System.Windows.Controls.DockPanel.Dock%2A> propriété jointe pour ancrer le contrôle hébergé dans un élément <xref:System.Windows.Controls.DockPanel>.
 

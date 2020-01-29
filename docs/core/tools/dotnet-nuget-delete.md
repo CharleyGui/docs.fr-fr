@@ -3,16 +3,16 @@ title: Commande dotnet nuget delete
 description: La commande nuget-dotnet-delete supprime ou retire un package du serveur.
 author: karann-msft
 ms.date: 06/26/2019
-ms.openlocfilehash: 79634baa9d6d7ff1f388f6a794ffd816687be105
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 0950f03c0986bde17ae3e2e7170d402ea8222853
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117634"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733124"
 ---
 # <a name="dotnet-nuget-delete"></a>dotnet nuget delete
 
-**Cette rubrique s’applique à : ✓** SDK .NET Core 1.x et ultérieur
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
 
 <!-- todo: uncomment when all CLI commands are reviewed
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]

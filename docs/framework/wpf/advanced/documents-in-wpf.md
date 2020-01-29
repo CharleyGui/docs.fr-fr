@@ -1,5 +1,5 @@
 ---
-title: Documents dans WPF
+title: Documents
 ms.date: 03/30/2017
 helpviewer_keywords:
 - documents [WPF], packaging
@@ -10,12 +10,12 @@ helpviewer_keywords:
 - documents [WPF], types of
 - documents [WPF], browser-viewable
 ms.assetid: 6e8db7bc-050a-4070-aa72-bb8c46e87ff8
-ms.openlocfilehash: 36704d56b66de977ac7f63fd7e766c925ef9023b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: eccb333b8e9a71ea30454f8bdf9fd2bf6dc90b9b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974683"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76737971"
 ---
 # <a name="documents-in-wpf"></a>Documents dans WPF
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] offre un large éventail de fonctionnalités de document qui permettent de créer du contenu haute fidélité conçu pour être plus facilement accessible et lu que dans les générations précédentes de Windows. En plus d’une amélioration des capacités et de la qualité, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit également des services intégrés pour l’affichage, le packaging et la sécurité des documents. Cette rubrique fournit une introduction aux types et au packaging des documents [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -46,7 +46,7 @@ ms.locfileid: "73974683"
  L’affichage du contenu d’un document dynamique est pris en charge par trois contrôles : <xref:System.Windows.Controls.FlowDocumentReader>, <xref:System.Windows.Controls.FlowDocumentPageViewer>et <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
 #### <a name="flowdocumentreader"></a>FlowDocumentReader  
- <xref:System.Windows.Controls.FlowDocumentReader> inclut des fonctionnalités qui permettent à l’utilisateur de choisir dynamiquement entre différents modes d’affichage, y compris un mode d’affichage page unique (page par page), un mode d’affichage à deux pages à un moment donné (format de livre) et un défilement continu (sans bas). mode d’affichage.  Pour plus d’informations sur ces modes d’affichage, consultez <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Si vous n’avez pas besoin de basculer dynamiquement entre les différents modes d’affichage, <xref:System.Windows.Controls.FlowDocumentPageViewer> et <xref:System.Windows.Controls.FlowDocumentScrollViewer> fournir des visionneuses de contenu de fluide plus légères qui sont fixes dans un mode d’affichage particulier.  
+ <xref:System.Windows.Controls.FlowDocumentReader> inclut des fonctionnalités qui permettent à l’utilisateur de choisir dynamiquement entre différents modes d’affichage, y compris un mode d’affichage page unique (page par page), un mode d’affichage à deux pages à un moment donné (format de livre) et un mode d’affichage de défilement continu (sans fin).  Pour plus d’informations sur ces modes d’affichage, consultez <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>.  Si vous n’avez pas besoin de basculer dynamiquement entre les différents modes d’affichage, <xref:System.Windows.Controls.FlowDocumentPageViewer> et <xref:System.Windows.Controls.FlowDocumentScrollViewer> fournir des visionneuses de contenu de fluide plus légères qui sont fixes dans un mode d’affichage particulier.  
   
 #### <a name="flowdocumentpageviewer-and-flowdocumentscrollviewer"></a>FlowDocumentPageViewer et FlowDocumentScrollViewer  
  <xref:System.Windows.Controls.FlowDocumentPageViewer> affiche le contenu en mode d’affichage page par page, tandis que <xref:System.Windows.Controls.FlowDocumentScrollViewer> affiche le contenu en mode de défilement continu.  Les <xref:System.Windows.Controls.FlowDocumentPageViewer> et les <xref:System.Windows.Controls.FlowDocumentScrollViewer> sont fixés à un mode d’affichage particulier. Comparer à <xref:System.Windows.Controls.FlowDocumentReader>, qui comprend des fonctionnalités qui permettent à l’utilisateur de choisir dynamiquement entre différents modes d’affichage (comme fourni par l’énumération <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>), au détriment d’une plus grande consommation de ressources que <xref:System.Windows.Controls.FlowDocumentPageViewer> ou <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
@@ -55,7 +55,7 @@ ms.locfileid: "73974683"
   
 <a name="text_in_the_user_interface"></a>   
 ### <a name="text-in-the-user-interface"></a>Texte dans l’interface utilisateur  
- En plus d’ajouter du texte à des documents, vous pouvez bien évidemment utiliser du texte dans l’interface utilisateur de l’application, notamment dans des formulaires. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut plusieurs contrôles pour dessiner le texte à l’écran. Chaque contrôle cible un scénario différent et dispose de sa propre liste de fonctionnalités et limitations. En général, l’élément <xref:System.Windows.Controls.TextBlock> doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une courte phrase dans une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> peut être utilisé quand une prise en charge minimale du texte est requise. Pour plus d’informations, consultez [Vue d’ensemble de TextBlock](../controls/textblock-overview.md).  
+ En plus d’ajouter du texte à des documents, vous pouvez bien évidemment utiliser du texte dans l’interface utilisateur de l’application, notamment dans des formulaires. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut plusieurs contrôles pour dessiner le texte à l’écran. Chaque contrôle est ciblé sur un scénario différent et dispose de sa propre liste de fonctionnalités et limitations. En général, l’élément <xref:System.Windows.Controls.TextBlock> doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une courte phrase dans une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> peut être utilisé quand une prise en charge minimale du texte est requise. Pour plus d’informations, consultez [Vue d’ensemble de TextBlock](../controls/textblock-overview.md).  
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Packaging de documents  

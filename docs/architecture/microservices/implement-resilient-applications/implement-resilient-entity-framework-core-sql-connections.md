@@ -2,12 +2,12 @@
 title: Implémenter des connexions SQL à Entity Framework Core résilientes
 description: Découvrez comment implémenter des connexions SQL à Entity Framework Core résilientes. Cette technique est particulièrement importante lors de l’utilisation d’Azure SQL Database dans le cloud.
 ms.date: 10/16/2018
-ms.openlocfilehash: 3128cf1be7f2dc8804a002556db232f4e0fc8c33
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
-ms.translationtype: MT
+ms.openlocfilehash: 7899fc263ab3cde6ac2410ca614a7e5fa285576b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73094049"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732729"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implémenter des connexions SQL à Entity Framework Core résilientes
 
@@ -88,7 +88,7 @@ public async Task<IActionResult> UpdateProduct(
 }
 ```
 
-Le premier <xref:Microsoft.EntityFrameworkCore.DbContext> est `_catalogContext` et le second `DbContext` se trouve dans l’objet `_integrationEventLogService`. L’action de validation est effectuée sur tous les objets `DbContext` utilisant une stratégie d’exécution EF.
+Le premier <xref:Microsoft.EntityFrameworkCore.DbContext> est `_catalogContext` et le second `DbContext` se trouve dans l’objet `_catalogIntegrationEventService`. L’action de validation est effectuée sur tous les objets `DbContext` utilisant une stratégie d’exécution EF.
 
 Pour obtenir cette validation `DbContext` multiple, `SaveEventAndCatalogContextChangesAsync` utilise une classe `ResilientTransaction`, comme indiqué dans le code suivant :
 

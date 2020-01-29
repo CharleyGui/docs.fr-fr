@@ -3,18 +3,18 @@ title: Vue d’ensemble de global.json
 description: Découvrez comment utiliser le fichier global.json pour définir la version du kit SDK .NET Core pendant l’exécution de commandes CLI .NET Core.
 ms.date: 01/14/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: fedfe168e2c1a0555c2d4499ba02d270033e0d1a
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: f02c9129a707ddddb2c5e1975b75cc35abc5cd55
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76115794"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733977"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
-**Cet article s’applique à : ✓** .net Core 2,0 SDK et versions ultérieures
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-Le fichier *global.json* vous permet de définir la version du kit SDK .NET Core utilisée pendant l’exécution des commandes de l’interface CLI .NET Core. La sélection du kit SDK .NET Core est indépendante de la spécification du runtime ciblé par votre projet. La version du kit SDK .NET Core détermine les versions des outils CLI .NET Core qui sont utilisées. 
+Le fichier *global.json* vous permet de définir la version du kit SDK .NET Core utilisée pendant l’exécution des commandes de l’interface CLI .NET Core. La sélection du kit SDK .NET Core est indépendante de la spécification du runtime ciblé par votre projet. La version du kit SDK .NET Core détermine les versions des outils CLI .NET Core qui sont utilisées.
 
 En général, vous souhaitez utiliser la version la plus récente des outils du kit de développement logiciel (SDK). aucun fichier *global. JSON* n’est donc nécessaire. Dans certains scénarios avancés, vous souhaiterez peut-être contrôler la version des outils du kit de développement logiciel (SDK), et cet article explique comment procéder.
 
@@ -62,7 +62,7 @@ Si vous ne définissez pas cette valeur explicitement, la valeur par défaut var
 
 - Disponible depuis : .NET Core 3,0 SDK.
 
-Stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK) en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente. Une [version](#version) doit être spécifiée avec une valeur `rollForward`, sauf si vous la définissez sur `latestMajor`. 
+Stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK) en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente. Une [version](#version) doit être spécifiée avec une valeur `rollForward`, sauf si vous la définissez sur `latestMajor`.
 
 Pour comprendre les stratégies disponibles et leur comportement, prenez en compte les définitions suivantes pour une version du kit de développement logiciel (SDK) au format `x.y.znn`:
 
@@ -147,7 +147,7 @@ dotnet new globaljson --sdk-version 3.0.100
 > [!NOTE]
 > Les règles de correspondance sont régies par le point d’entrée `dotnet.exe`, qui est courant pour tous les runtimes installés .NET Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte.
 
-## <a name="net-core-3xtabnetcore3x"></a>[.NET Core 3.x](#tab/netcore3x)
+## <a name="net-core-3xtabnetcore3x"></a>[.NET Core 3. x](#tab/netcore3x)
 
 À compter de .NET Core 3,0, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 

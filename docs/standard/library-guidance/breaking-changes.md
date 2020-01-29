@@ -2,12 +2,12 @@
 title: Changements cassants et bibliothèques .NET
 description: Recommandations relatives aux bonnes pratiques pour parcourir les changements cassants lors de la création de bibliothèques .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: 8536662ae1cd9733efbcc0c6526bd69d34a13177
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 2cbd9e0a818b52aede6c9b1f60fdf52dcbd7b96f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740985"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731468"
 ---
 # <a name="breaking-changes"></a>Modifications avec rupture
 
@@ -25,11 +25,11 @@ La façon dont une bibliothèque est utilisée par la communauté .NET modifie l
 
   Les bibliothèques de haut niveau sont directement référencées dans une application pour l’utilisateur final. En cas de changements cassants, le développeur peut choisir de procéder à la mise à jour vers la dernière version ou modifier son application pour les utiliser.
 
-**✔️ À FAIRE** : Réfléchir à la façon dont votre bibliothèque sera utilisée. Quel sera l’effet des changements cassants sur les applications et les bibliothèques qui l’utilisent ?
+✔️ Pensez à la façon dont votre bibliothèque sera utilisée. Quel sera l’effet des changements cassants sur les applications et les bibliothèques qui l’utilisent ?
 
-**✔️ À FAIRE** : Réduire les changements cassants lors du développement d’une bibliothèque .NET de bas niveau.
+✔️ réduire les modifications avec rupture lors du développement d’une bibliothèque .NET de bas niveau.
 
-**✔️ À ENVISAGER** : Publier un remaniement majeur d’une bibliothèque en tant que nouveau package NuGet.
+✔️ envisagez de publier une réécriture majeure d’une bibliothèque en tant que nouveau package NuGet.
 
 ## <a name="types-of-breaking-changes"></a>Types de changements cassants
 
@@ -56,7 +56,7 @@ L’ajout de fonctionnalités et l’amélioration des comportements médiocres 
 
 Par exemple, ASP.NET Core MVC présente le concept d’une [version de compatibilité](/aspnet/core/mvc/compatibility-version) qui modifie les fonctionnalités activées et désactivées sur `MvcOptions`.
 
-**✔️ À ENVISAGER** : Omettre de nouvelles fonctionnalités par défaut si elles affectent les utilisateurs existants et permettre aux développeurs d’adhérer à la fonctionnalité avec un paramètre.
+✔️ envisagez de laisser les nouvelles fonctionnalités désactivées par défaut, si elles affectent les utilisateurs existants, et laissez les développeurs s’abonner à la fonctionnalité avec un paramètre.
 
 ### <a name="binary-breaking-change"></a>Changement cassant binaire
 
@@ -64,15 +64,15 @@ Un changement cassant binaire se produit quand vous modifiez l’API publique de
 
 Un changement cassant binaire peut également casser un **assembly entier**. Le renommage d’un assembly avec `AssemblyName` change l’identité de l’assembly, de même que l’ajout, la suppression ou le changement de la clé d’affectation de noms forts de l’assembly. Un changement de l’identité d’un assembly va casser tout le code compilé qui l’utilise.
 
-**❌ ne modifiez pas** un nom d’assembly.
+❌ ne modifiez pas un nom d’assembly.
 
-**❌ n’ajoutez pas, ne** supprimez pas ou ne modifiez pas la clé de nom fort.
+❌ n’ajoutez pas, ne supprimez pas ou ne modifiez pas la clé de nom fort.
 
-**✔️ À ENVISAGER** : Utiliser des classes de base abstraites plutôt que des interfaces.
+✔️ envisagez d’utiliser des classes de base abstraites au lieu d’interfaces.
 
 > L’ajout de n’importe quel élément à une interface entraîne l’échec des types existants qui l’implémentent. Une classe de base abstraite vous permet d’ajouter une implémentation virtuelle par défaut.
 
-**✔️ À ENVISAGER** : Placer le <xref:System.ObsoleteAttribute> sur les types et membres que vous envisagez de supprimer. L’attribut doit comporter des instructions pour la mise à jour du code afin de ne plus utiliser l’API obsolète.
+✔️ envisagez de placer le <xref:System.ObsoleteAttribute> sur les types et les membres que vous souhaitez supprimer. L’attribut doit comporter des instructions pour la mise à jour du code afin de ne plus utiliser l’API obsolète.
 
 > Le code qui appelle des types et méthodes avec le <xref:System.ObsoleteAttribute> génère un avertissement de génération avec le message fourni à l’attribut. Les avertissements donnent aux personnes qui utilisent la surface d’API obsolète le temps de migrer afin que la plupart ne l’utilisent plus quand elle est supprimée.
 
@@ -92,7 +92,7 @@ public class Document
 }
 ```
 
-**✔️ À ENVISAGER** : Conserver les types et méthodes avec le <xref:System.ObsoleteAttribute> indéfiniment dans les bibliothèques de bas niveau et de niveau intermédiaire.
+✔️ envisagez de conserver indéfiniment les types et les méthodes avec le <xref:System.ObsoleteAttribute> dans les bibliothèques de niveau faible et intermédiaire.
 
 > La suppression des API est un changement cassant binaire. Envisagez de conserver les méthodes et types obsolètes si leur mise à jour présente un faible coût et n’ajoute pas beaucoup de dette technique à votre bibliothèque. Le fait de ne pas supprimer les types et méthodes peut permettre d’éviter les pires scénarios mentionnés ci-dessus.
 

@@ -1,13 +1,13 @@
 ---
-title: Liaison de données WPF avec LINQ to XML
+title: Liaison de données avec LINQ to XML
 ms.date: 10/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: 53aba3295b98ae4a476b321cb585e1bbbdd45dad
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 3c5567c81d2097a1524f5bbbf9010836ca8c0646
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197388"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76733821"
 ---
 # <a name="overview-of-wpf-data-binding-with-linq-to-xml"></a>Vue d’ensemble de la liaison de données WPF avec LINQ to XML
 
@@ -27,14 +27,14 @@ Cette documentation décrit le deuxième scénario.
 
 ## <a name="data-binding-in-the-windows-presentation-foundation"></a>Liaison de données dans le Windows Presentation Foundation
 
-La liaison de données WPF permet à un élément d'interface utilisateur d'associer l'une de ses propriétés à une source de données. Un exemple simple est un objet <xref:System.Windows.Controls.Label> dont le texte présente la valeur d'une propriété publique dans un objet défini par l'utilisateur. La liaison de données WPF s'appuie sur les composants suivants :
+La liaison de données WPF permet à un élément d’interface utilisateur d’associer l’une de ses propriétés à une source de données. Un exemple simple est un objet <xref:System.Windows.Controls.Label> dont le texte présente la valeur d'une propriété publique dans un objet défini par l'utilisateur. La liaison de données WPF s’appuie sur les composants suivants :
 
 |Composant|Description|
 |---------------|-----------------|
 |Cible de liaison|Élément d'interface utilisateur à associer à la source de données. Les éléments visuels dans WPF sont dérivés de la classe <xref:System.Windows.UIElement>.|
 |Propriété cible|*Propriété de dépendance* de la cible de liaison qui reflète la valeur de la source de liaison de données. Les propriétés de dépendance sont directement prises en charge par la classe <xref:System.Windows.DependencyObject>, de laquelle <xref:System.Windows.UIElement> dérive.|
 |Source de liaison|Objet source pour une ou plusieurs valeurs qui sont fournies à l'élément d'interface utilisateur pour la présentation. WPF prend automatiquement en charge les types suivants comme sources de liaison : objets CLR, objets de données ADO.NET, données XML (à partir de requêtes XPath ou LINQ to XML) ou un autre objet <xref:System.Windows.DependencyObject>.|
-|Chemin d'accès à la source|Propriété de la source de liaison qui est résolue à la valeur ou à l'ensemble de valeurs qui doit être lié(e).|
+|Chemin d’accès à la source|Propriété de la source de liaison qui est résolue à la valeur ou à l'ensemble de valeurs qui doit être lié(e).|
 
 Une propriété de dépendance est un concept spécifique à WPF qui représente une propriété calculée de manière dynamique d'un élément d'interface utilisateur. Par exemple, les propriétés de dépendance ont souvent des valeurs par défaut ou des valeurs fournies par un élément parent. Ces propriétés spéciales sont secondées par des instances de la classe <xref:System.Windows.DependencyProperty> (et non par des champs, comme avec les propriétés standard). Pour plus d’informations, consultez [Vue d’ensemble des propriétés de dépendance](../advanced/dependency-properties-overview.md).
 

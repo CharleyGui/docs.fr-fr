@@ -2,12 +2,12 @@
 title: Conseils sur la bibliothèque .NET open source
 description: Recommandations de bonne pratique à l’attention des développeurs qui créent des bibliothèques .NET de qualité.
 ms.date: 10/17/2018
-ms.openlocfilehash: c1e1c302eede86fd5555a8e84630e216e96f1ce7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4c76dfae6ffc39df7f15381be64e33657067d79d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706450"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731423"
 ---
 # <a name="open-source-library-guidance"></a>Conseils sur la bibliothèque open source
 
@@ -32,19 +32,19 @@ Chaque article présente quatre types de suggestions : **À faire**, **Envisager
 
 Vous devez presque toujours suivre une suggestion **À faire**. Par exemple :
 
-**✔️ À FAIRE** : Distribuer votre bibliothèque à l’aide d’un package NuGet.
+✔️ distribuer votre bibliothèque à l’aide d’un package NuGet.
 
 En revanche, les recommandations **Envisager** doivent généralement être appliquées, mais il existe des exceptions à la règle qui sont fondées, c’est pourquoi vous ne devez pas vous inquiéter si vous ne les suivez pas :
 
-**✔️ ENVISAGER** d’utiliser [SemVer 2.0.0](https://semver.org/) pour versionner votre package NuGet.
+✔️ envisagez d’utiliser [SemVer 2.0.0](https://semver.org/) pour la version de votre package NuGet.
 
 Les suggestions **Éviter** indiquent quelque chose qui n’est généralement pas une bonne idée, mais enfreindre les règles peut parfois avoir du sens :
 
-**❌ éviter** Références de package NuGet qui demandent une version exacte.
+❌ éviter les références de package NuGet qui demandent une version exacte.
 
 Et enfin, les suggestions **À ne pas faire** désignent quelque chose que vous ne devez presque jamais faire :
 
-**❌ ne** publiez pas de versions avec nom fort et non avec nom fort de votre bibliothèque. Par exemple : `Contoso.Api` et `Contoso.Api.StrongNamed`.
+❌ ne publiez pas de versions avec nom fort et non avec nom fort de votre bibliothèque. Par exemple : `Contoso.Api` et `Contoso.Api.StrongNamed`.
 
 >[!div class="step-by-step"]
 >[Suivant](get-started.md)

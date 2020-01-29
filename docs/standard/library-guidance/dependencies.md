@@ -2,12 +2,12 @@
 title: Dépendances et bibliothèques .NET
 description: Meilleures pratiques suggérées pour la gestion des dépendances NuGet dans les bibliothèques .NET.
 ms.date: 10/02/2018
-ms.openlocfilehash: b5742bf4724c4aff4beb4ca40a543bd096528a00
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6a260b54c45a0cd231059ab3bc6f2707ef7fb20e
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706502"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76731478"
 ---
 # <a name="dependencies"></a>Dépendances
 
@@ -29,7 +29,7 @@ La plupart des dépendances en losange sont facilement résolues ; toutefois, e
 
 Il n’est pas possible de savoir quels packages seront utilisées en même temps que le vôtre. Un bon moyen de réduire la probabilité d’une dépendance en losange avec arrêt de votre bibliothèque consiste à limiter le nombre de packages dont vous dépendez.
 
-**PASSEZ ✔️** en revue votre bibliothèque .NET pour détecter les dépendances inutiles.
+✔️ Examinez votre bibliothèque .NET pour rechercher les dépendances inutiles.
 
 ## <a name="nuget-dependency-version-ranges"></a>Plages de versions de dépendances de NuGet
 
@@ -56,11 +56,11 @@ Des limites de versions supérieures entraîneront l’échec de NuGet en cas de
 
 ![Conflit de dépendances Diamond](./media/dependencies/diamond-dependency-conflict.png "Conflit de dépendances Diamond")
 
-**❌ n’avez pas** de références de package NuGet sans version minimale.
+❌ n’avez pas de références de package NuGet sans version minimale.
 
-**❌ éviter** Références de package NuGet qui demandent une version exacte.
+❌ éviter les références de package NuGet qui demandent une version exacte.
 
-**❌ éviter** Références de package NuGet avec une limite supérieure de version.
+❌ éviter les références de package NuGet avec une limite supérieure de version.
 
 ## <a name="nuget-shared-source-packages"></a>Packages NuGet à code source partagé
 
@@ -78,19 +78,19 @@ Les packages à code source partagée sont l’idéal pour inclure de petits él
 
 Les packages à code source partagé ont certaines limitations. Ils ne peuvent être référencés que par `PackageReference`, ce qui exclut les projets `packages.config` plus anciens. Par ailleurs, les packages à code source partagé ne peuvent être utilisés que par des projets ayant le même type de langage. En raison de ces limitations, les packages à code source partagé sont très bien adaptés au partage d’une fonctionnalité au sein d’un projet open source.
 
-**✔️ ENVISAGER** de référencer des packages à code source partagé pour de petits éléments internes de fonctionnalité.
+✔️ envisagez de faire référence à des packages source partagés pour de petites parties de fonctionnalités internes.
 
-**✔️ ENVISAGER** de faire de votre package un package à code source partagé pour de petits éléments internes de fonctionnalité.
+✔️ envisagez de faire de votre package un package source partagé s’il fournit de petits éléments de fonctionnalité internes.
 
-**✔️ RÉFÉRENCER** des packages à code source partagé avec `PrivateAssets="All"`.
+✔️ FAITES référence à des packages source partagés avec `PrivateAssets="All"`.
 
 > Ce paramètre indique à NuGet que le package ne doit être utilisée que lors du développement et ne doit pas être exposé en tant que dépendance publique.
 
-**❌ n’avez pas** de types de packages sources partagés dans votre API publique.
+❌ n’avez pas de types de packages sources partagés dans votre API publique.
 
 > Les types à code source partagé sont compilés dans l’assembly de référencement et ne peuvent pas être échangés au-delà des limites de l’assembly. Par exemple, un type de `IRepository` à code source partagé dans un projet est un type distinct du même `IRepository` à code source partagé dans un autre projet. Les types de packages à code source partagé doivent avoir une visibilité `internal`.
 
-**❌ ne** publiez pas de packages source partagés sur NuGet.org.
+❌ ne publiez pas de packages source partagés sur NuGet.org.
 
 > Les packages à code source partagé contiennent du code source et ne peuvent être utilisés que par des projets ayant le même type de langage. Par exemple, un package à code source partagé C# ne peut pas être utilisé par une application F#.
 >
