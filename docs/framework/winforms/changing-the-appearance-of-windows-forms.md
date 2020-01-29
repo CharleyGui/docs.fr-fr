@@ -1,48 +1,48 @@
 ---
-title: Modification de l'apparence des Windows Forms
+title: Personnaliser l’apparence
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, changing the appearance of
 ms.assetid: 12f35d5b-1587-49cc-ada3-47eec1ff1738
-ms.openlocfilehash: 0582ad4c8e18d0f0419f0463ba260226839f7f42
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: c75fb1849ab9f9a07fcbbe5dd915b965f5aea05d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61640415"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76732361"
 ---
-# <a name="changing-the-appearance-of-windows-forms"></a><span data-ttu-id="3b491-102">Modification de l'apparence des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="3b491-102">Changing the Appearance of Windows Forms</span></span>
-<span data-ttu-id="3b491-103">Vous pouvez personnaliser l’apparence de vos applications Windows Forms de nombreuses manières, par exemple en modifiant la bordure, l’opacité, la forme ou le style ou en définissant une image d’arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="3b491-103">You can customize the look of your Windows Forms applications in many different ways, such as changing the border, opacity, shape, style, or setting a background image for your Windows Forms application.</span></span>  
+# <a name="changing-the-appearance-of-windows-forms"></a><span data-ttu-id="86653-102">Modification de l'apparence des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="86653-102">Changing the Appearance of Windows Forms</span></span>
+<span data-ttu-id="86653-103">Vous pouvez personnaliser l’apparence de vos applications Windows Forms de nombreuses manières, par exemple en modifiant la bordure, l’opacité, la forme ou le style ou en définissant une image d’arrière-plan.</span><span class="sxs-lookup"><span data-stu-id="86653-103">You can customize the look of your Windows Forms applications in many different ways, such as changing the border, opacity, shape, style, or setting a background image for your Windows Forms application.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="3b491-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="3b491-104">In This Section</span></span>  
- [<span data-ttu-id="3b491-105">Guide pratique pour Modifier les bordures des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="3b491-105">How to: Change the Borders of Windows Forms</span></span>](how-to-change-the-borders-of-windows-forms.md)  
- <span data-ttu-id="3b491-106">Montre comment modifier le style de bordure d'un formulaire.</span><span class="sxs-lookup"><span data-stu-id="3b491-106">Shows how to change the border style of a form.</span></span>  
+## <a name="in-this-section"></a><span data-ttu-id="86653-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="86653-104">In This Section</span></span>  
+ [<span data-ttu-id="86653-105">Guide pratique pour modifier les bordures des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="86653-105">How to: Change the Borders of Windows Forms</span></span>](how-to-change-the-borders-of-windows-forms.md)  
+ <span data-ttu-id="86653-106">Montre comment modifier le style de bordure d'un formulaire.</span><span class="sxs-lookup"><span data-stu-id="86653-106">Shows how to change the border style of a form.</span></span>  
   
-## <a name="reference"></a><span data-ttu-id="3b491-107">Référence</span><span class="sxs-lookup"><span data-stu-id="3b491-107">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="86653-107">Reference</span><span class="sxs-lookup"><span data-stu-id="86653-107">Reference</span></span>  
  <xref:System.Windows.Forms.Form>  
- <span data-ttu-id="3b491-108">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-108">Describes this class and has links to all of its members.</span></span>  
+ <span data-ttu-id="86653-108">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-108">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Windows.Forms.FormBorderStyle>  
- <span data-ttu-id="3b491-109">Décrit cette énumération et contient des descriptions de tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-109">Describes this enumeration and contains descriptions of all of its members.</span></span>  
+ <span data-ttu-id="86653-109">Décrit cette énumération et contient des descriptions de tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-109">Describes this enumeration and contains descriptions of all of its members.</span></span>  
   
  <xref:System.Windows.Forms.VisualStyles.VisualStyleRenderer>  
- <span data-ttu-id="3b491-110">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-110">Describes this class and has links to all of its members.</span></span>  
+ <span data-ttu-id="86653-110">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-110">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Image>  
- <span data-ttu-id="3b491-111">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-111">Describes this class and has links to all of its members.</span></span>  
+ <span data-ttu-id="86653-111">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-111">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Region>  
- <span data-ttu-id="3b491-112">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-112">Describes this class and has links to all of its members.</span></span>  
+ <span data-ttu-id="86653-112">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-112">Describes this class and has links to all of its members.</span></span>  
   
  <xref:System.Drawing.Color>  
- <span data-ttu-id="3b491-113">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="3b491-113">Describes this class and has links to all of its members.</span></span>  
+ <span data-ttu-id="86653-113">Décrit cette classe et propose des liens vers tous ses membres.</span><span class="sxs-lookup"><span data-stu-id="86653-113">Describes this class and has links to all of its members.</span></span>  
   
-## <a name="related-sections"></a><span data-ttu-id="3b491-114">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="3b491-114">Related Sections</span></span>  
- [<span data-ttu-id="3b491-115">Réglage de la taille et de l'échelle des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="3b491-115">Adjusting the Size and Scale of Windows Forms</span></span>](adjusting-the-size-and-scale-of-windows-forms.md)  
- <span data-ttu-id="3b491-116">Contient des liens vers des rubriques qui montrent comment modifier la taille et l'échelle d'un formulaire.</span><span class="sxs-lookup"><span data-stu-id="3b491-116">Contains links to topics that show how to change the size and scale of a form.</span></span>  
+## <a name="related-sections"></a><span data-ttu-id="86653-114">Rubriques connexes</span><span class="sxs-lookup"><span data-stu-id="86653-114">Related Sections</span></span>  
+ [<span data-ttu-id="86653-115">Réglage de la taille et de l'échelle des Windows Forms</span><span class="sxs-lookup"><span data-stu-id="86653-115">Adjusting the Size and Scale of Windows Forms</span></span>](adjusting-the-size-and-scale-of-windows-forms.md)  
+ <span data-ttu-id="86653-116">Contient des liens vers des rubriques qui montrent comment modifier la taille et l'échelle d'un formulaire.</span><span class="sxs-lookup"><span data-stu-id="86653-116">Contains links to topics that show how to change the size and scale of a form.</span></span>  
   
- [<span data-ttu-id="3b491-117">Graphiques et dessins dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="3b491-117">Graphics and Drawing in Windows Forms</span></span>](./advanced/graphics-and-drawing-in-windows-forms.md)  
- <span data-ttu-id="3b491-118">Contient des liens vers des rubriques qui décrivent comment effectuer un dessin personnalisé dans des Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="3b491-118">Contains links to topics that describe how to perform custom drawing on Windows Forms.</span></span>  
+ [<span data-ttu-id="86653-117">Graphiques et dessins dans Windows Forms</span><span class="sxs-lookup"><span data-stu-id="86653-117">Graphics and Drawing in Windows Forms</span></span>](./advanced/graphics-and-drawing-in-windows-forms.md)  
+ <span data-ttu-id="86653-118">Contient des liens vers des rubriques qui décrivent comment effectuer un dessin personnalisé dans des Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="86653-118">Contains links to topics that describe how to perform custom drawing on Windows Forms.</span></span>  
   
- [<span data-ttu-id="3b491-119">Contrôles avec prise en charge intégrée du dessin owner-drawn</span><span class="sxs-lookup"><span data-stu-id="3b491-119">Controls with Built-In Owner-Drawing Support</span></span>](./controls/controls-with-built-in-owner-drawing-support.md)  
- <span data-ttu-id="3b491-120">Indique la prise en charge de la fonctionnalité Owner-Draw dans les contrôles Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="3b491-120">List owner-draw support in Windows Forms controls.</span></span>
+ [<span data-ttu-id="86653-119">Contrôles avec prise en charge intégrée du dessin owner-drawn</span><span class="sxs-lookup"><span data-stu-id="86653-119">Controls with Built-In Owner-Drawing Support</span></span>](./controls/controls-with-built-in-owner-drawing-support.md)  
+ <span data-ttu-id="86653-120">Indique la prise en charge de la fonctionnalité Owner-Draw dans les contrôles Windows Forms.</span><span class="sxs-lookup"><span data-stu-id="86653-120">List owner-draw support in Windows Forms controls.</span></span>

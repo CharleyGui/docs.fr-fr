@@ -1317,14 +1317,15 @@
           items:
             - name: Types de valeur
               items:
-                - name: Caractéristiques des types valeur
-                  href: language-reference/keywords/value-types.md
+                - name: Vue d'ensemble
+                  href: language-reference/builtin-types/value-types.md
+                  displayName: 'value types, simple types'
                 - name: Types numériques intégraux
-                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
                   href: language-reference/builtin-types/integral-numeric-types.md
+                  displayName: 'sbyte, byte, short, ushort, int, uint, long, ulong, integer, literal'
                 - name: Types numériques à virgule flottante
-                  displayName: 'float, decimal, double, rational, real, literal'
                   href: language-reference/builtin-types/floating-point-numeric-types.md
+                  displayName: 'float, decimal, double, rational, real, literal'
                 - name: Conversions numériques intégrées
                   href: language-reference/builtin-types/numeric-conversions.md
                 - name: bool
@@ -1364,8 +1365,6 @@
               items:
                 - name: Table des types intégrés
                   href: language-reference/keywords/built-in-types-table.md
-                - name: Table des types valeur
-                  href: language-reference/keywords/value-types-table.md
                 - name: Table des formats des résultats numériques
                   href: language-reference/keywords/formatting-numeric-results-table.md
         - name: Modificateurs
@@ -1399,7 +1398,7 @@
               displayName: await
             - name: const
               href: language-reference/keywords/const.md
-            - name: événement
+            - name: event
               href: language-reference/keywords/event.md
             - name: extern
               href: language-reference/keywords/extern.md
@@ -1415,7 +1414,7 @@
               href: language-reference/keywords/readonly.md
             - name: sealed
               href: language-reference/keywords/sealed.md
-            - name: statique
+            - name: static
               href: language-reference/keywords/static.md
             - name: unsafe
               href: language-reference/keywords/unsafe.md
