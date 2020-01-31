@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: cf7940e9-4558-4319-925c-09f6c98c8fcd
 topic_type:
 - apiref
-ms.openlocfilehash: a64df9f821021547efd08045e9f67fee25173e5a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4f6940f863504a9aedd9539e121c7b3791f746b9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137437"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788307"
 ---
 # <a name="icordebugmanagedcallback2destroyconnection-method"></a>ICorDebugManagedCallback2::DestroyConnection, méthode
 Notifie le débogueur que la connexion spécifiée a été arrêtée.  
@@ -34,7 +34,7 @@ HRESULT DestroyConnection (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pProcess`  
  dans Pointeur vers un objet ICorDebugProcess qui représente le processus contenant la connexion qui a été détruite.  
   
@@ -44,7 +44,7 @@ HRESULT DestroyConnection (
 ## <a name="remarks"></a>Notes  
  Un rappel de `DestroyConnection` est déclenché quand un hôte appelle [ICLRDebugManager :: EndConnection](../../../../docs/framework/unmanaged-api/hosting/iclrdebugmanager-endconnection-method.md) dans l' [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,5 +55,5 @@ HRESULT DestroyConnection (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2, interface](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

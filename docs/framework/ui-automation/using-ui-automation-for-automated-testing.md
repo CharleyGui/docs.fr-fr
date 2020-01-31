@@ -6,12 +6,12 @@ helpviewer_keywords:
 - testing, UI Automation
 - UI Automation, automated testing
 ms.assetid: 3a0435c0-a791-4ad7-ba92-a4c1d1231fde
-ms.openlocfilehash: 59c4076712823faa1602448653680a31b8cd8c69
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 5668e14cd0aed33a29fd43661363131879419e61
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741069"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793922"
 ---
 # <a name="using-ui-automation-for-automated-testing"></a>Utilisation d'UI Automation pour des tests automatisés
 > [!NOTE]
@@ -37,7 +37,7 @@ ms.locfileid: "75741069"
 > Avec d’autres modèles d’accessibilité, les développeurs doivent rassembler les informations directement à partir des boutons, menus ou autres contrôles individuels. Malheureusement, chaque type de contrôle implique des dizaines de variations mineures. En d’autres termes, même si dix variations d’un bouton de commande fonctionnent de la même manière et exécutent la même fonction, elles doivent toutes être traitées comme des contrôles uniques. Il n’existe aucun moyen de savoir si ces contrôles sont équivalents d’un point de vue fonctionnel. Les modèles de contrôle ont été développés pour représenter ces comportements de contrôles communs. Pour plus d'informations, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
   
 ### <a name="implementing-ui-automation"></a>Implémentation d’UI Automation  
- Comme mentionné précédemment, sans le modèle unifié fourni par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les outils de test et les développeurs doivent connaître les informations spécifiques à l’infrastructure pour exposer les propriétés et les comportements des contrôles dans cette infrastructure. Étant donné qu’il peut exister plusieurs infrastructures d’interface utilisateur différentes à tout moment dans les systèmes d’exploitation Windows, notamment Win32, [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]et Windows Presentation Foundation (WPF), il peut s’agir d’une tâche fastidieuse pour tester plusieurs applications avec des contrôles apparemment similaires. Par exemple, le tableau suivant présente les noms de propriétés spécifiques à l’infrastructure, et qui sont nécessaires pour récupérer le nom (ou le texte) associé à un contrôle bouton. En outre, il indique la seule propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] équivalente.  
+ Comme mentionné précédemment, sans le modèle unifié fourni par [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], les outils de test et les développeurs doivent connaître les informations spécifiques à l’infrastructure pour exposer les propriétés et les comportements des contrôles dans cette infrastructure. Étant donné qu’il peut exister plusieurs infrastructures d’interface utilisateur différentes à tout moment dans les systèmes d’exploitation Windows, notamment Win32, Windows Forms et Windows Presentation Foundation (WPF), il peut s’agir d’une tâche fastidieuse pour tester plusieurs applications avec des contrôles qui apparemment similaire. Par exemple, le tableau suivant présente les noms de propriétés spécifiques à l’infrastructure, et qui sont nécessaires pour récupérer le nom (ou le texte) associé à un contrôle bouton. En outre, il indique la seule propriété [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] équivalente.  
   
 |Type de contrôle UI Automation|Infrastructure d’interface utilisateur|Propriété spécifique à l’infrastructure|Propriété UI Automation|  
 |--------------------------------|------------------|---------------------------------|----------------------------|  

@@ -1,16 +1,16 @@
 ---
-title: Amélioration des applications Windows Forms
+title: Améliorer les applications
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, enhancing
 - Windows Forms, adding features
 ms.assetid: 733d1219-d6ad-4256-a55b-9eccf47f5a06
-ms.openlocfilehash: 82847add5b35fe767d42ee88d7754f789174e434
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 6c9287870d0a3852cf8dda21c4bd249eca09c114
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61942907"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744830"
 ---
 # <a name="enhancing-windows-forms-applications"></a>Amélioration des applications Windows Forms
 Windows Forms contient de nombreuses fonctionnalités que vous pouvez utiliser pour améliorer vos applications Windows pour répondre aux besoins spécifiques de vos utilisateurs. Les rubriques suivantes décrivent ces fonctionnalités et comment les utiliser.  
@@ -31,10 +31,10 @@ Windows Forms contient de nombreuses fonctionnalités que vous pouvez utiliser p
  [Mise en réseau dans les applications Windows Forms](networking-in-windows-forms-applications.md)  
  Contient des liens vers des rubriques qui décrivent et illustrent comment utiliser la mise en réseau dans les Windows Forms.  
   
- [Globalisation d’applications Windows Forms](globalizing-windows-forms.md)  
+ [Globalisation des applications Windows Forms](globalizing-windows-forms.md)  
  Contient des liens vers des rubriques qui montrent comment globaliser des applications Windows Forms.  
   
- [Windows Forms and Unmanaged Applications](windows-forms-and-unmanaged-applications.md)  
+ [Applications Windows Forms et non managées](windows-forms-and-unmanaged-applications.md)  
  Contient des liens vers des rubriques qui décrivent et illustrent comment accéder aux composants COM à partir d'applications Windows Form.  
   
  [Informations système et Windows Forms](system-information-and-windows-forms.md)  

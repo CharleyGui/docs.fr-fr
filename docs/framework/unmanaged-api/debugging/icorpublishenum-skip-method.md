@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1680ec06-4ab0-447e-93ad-cdb8693fde5c
 topic_type:
 - apiref
-ms.openlocfilehash: eb9e5bdf85c6d487fd82422522854076c03e2288
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bd62fb38352022f69c45d2a5921973cfbec1c6e4
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140452"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790591"
 ---
 # <a name="icorpublishenumskip-method"></a>ICorPublishEnum::Skip, méthode
 Déplace le curseur vers l’avant dans l’énumération d’après le nombre d’éléments spécifié.  
@@ -33,11 +33,11 @@ HRESULT Skip (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `celt`  
  dans Nombre d’éléments par lequel déplacer le curseur vers l’avant.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
@@ -48,4 +48,4 @@ HRESULT Skip (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorPublishEnum, interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md)
+- [ICorPublishEnum, interface](icorpublishenum-interface.md)

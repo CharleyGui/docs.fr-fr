@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 287f5ecd-863f-4090-a615-077859f0257b
 topic_type:
 - apiref
-ms.openlocfilehash: 1116945ae1a886f1b9491e0baf183e20c4fff177
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dd31bf458dde043a04e24251cedcac585fd385f6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136613"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793038"
 ---
 # <a name="icordebugmetadatalocator-interface"></a>ICorDebugMetaDataLocator, interface
 Fournit des informations de métadonnées au débogueur.  
@@ -28,14 +28,14 @@ Fournit des informations de métadonnées au débogueur.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetMetaData, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmetadatalocator-getmetadata-method.md)|Indique au débogueur de retourner le chemin d’accès complet à un module dont les métadonnées sont nécessaires pour effectuer une opération demandée par le débogueur.|  
+|[GetMetaData, méthode](icordebugmetadatalocator-getmetadata-method.md)|Indique au débogueur de retourner le chemin d’accès complet à un module dont les métadonnées sont nécessaires pour effectuer une opération demandée par le débogueur.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -46,5 +46,5 @@ Fournit des informations de métadonnées au débogueur.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

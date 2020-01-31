@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 250021c9eb475d0cbcb1bd14c8515b969fc9d30b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b6dabefceba038a129148f7ba36d4ffcfc425c80
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449824"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790036"
 ---
 # <a name="icorprofilerinfo10isfrozenobject-method"></a>ICorProfilerInfo10 :: IsFrozenObject, méthode
 
@@ -29,15 +29,17 @@ HRESULT IsFrozenObject( [in]  ObjectID objectId,
                         [out] BOOL *pbFrozen);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`objectId` \
-dans Objet à examiner.
+- `objectId`
 
-`pbFrozen` \
-à `BOOL` indiquant si l’objet se trouve dans un segment en lecture seule.
+  \[dans] objet à examiner.
 
-## <a name="requirements"></a>Configuration requise
+- `pbFrozen`
+
+  \[out] `BOOL` indiquant si l’objet se trouve dans un segment en lecture seule.
+
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
@@ -49,4 +51,4 @@ dans Objet à examiner.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Interface ICorProfilerInfo10](icorprofilerinfo10-interface.md)

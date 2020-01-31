@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b12bfcd9-1e29-48bf-9a3d-44bfae5df5e8
 topic_type:
 - apiref
-ms.openlocfilehash: 70aaf32b9da751b49571ab98a95e432b7f84caa9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 88ef9fd5a0aac19954a247d0215fe698ebe30d40
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130638"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788332"
 ---
 # <a name="icordebugmanagedcallbackunloadmodule-method"></a>ICorDebugManagedCallback::UnloadModule, méthode
 Notifie le débogueur qu’un module de common language runtime (DLL) a été déchargé.  
@@ -34,7 +34,7 @@ HRESULT UnloadModule (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui contenait le module.  
   
@@ -44,7 +44,7 @@ HRESULT UnloadModule (
 ## <a name="remarks"></a>Notes  
  Le module ne doit pas être utilisé après cet appel.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,5 +55,5 @@ HRESULT UnloadModule (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LoadModule, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadmodule-method.md)
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [LoadModule, méthode](icordebugmanagedcallback-loadmodule-method.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

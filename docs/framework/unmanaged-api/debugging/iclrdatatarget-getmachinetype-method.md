@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5f1f9c61-3e3b-48b2-b111-a4395f7623a7
 topic_type:
 - apiref
-ms.openlocfilehash: 941d1b4057ef78a6235a0ba853e48a000f2087e8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 50ea9caf08b2ffb689760da95af4e5c3fdd77301
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122887"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793740"
 ---
 # <a name="iclrdatatargetgetmachinetype-method"></a>ICLRDataTarget::GetMachineType, méthode
 Obtient l’identificateur du type de jeu d’instructions que le processus cible utilise.  
@@ -33,11 +33,11 @@ HRESULT GetMachineType (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `machineType`  
- à Pointeur vers une valeur qui indique le jeu d’instructions que le processus cible utilise. La `machineType` retournée est l’une des constantes IMAGE_FILE_MACHINE, qui sont définies dans le fichier d’en-tête Winnt. h.  
+ à Pointeur vers une valeur qui indique le jeu d’instructions que le processus cible utilise. La `machineType` retournée est l’une des constantes de IMAGE_FILE_MACHINE, qui sont définies dans le fichier d’en-tête Winnt. h.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -48,4 +48,4 @@ HRESULT GetMachineType (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget, interface](iclrdatatarget-interface.md)

@@ -2,12 +2,12 @@
 title: ICorDebugDebugEvent, interface
 ms.date: 03/30/2017
 ms.assetid: a226737a-cb99-4e97-bd94-9a37094ded41
-ms.openlocfilehash: ea42faa4001fa880354690df1551de3be767e683
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bef057bdb3ff0919337dd15f2d930159ddaf1bcf
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137037"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783396"
 ---
 # <a name="icordebugdebugevent-interface"></a>ICorDebugDebugEvent, interface
 Définit l’interface de base de laquelle dérivent tous les événements de débogage `ICorDebug`.  
@@ -16,20 +16,20 @@ Définit l’interface de base de laquelle dérivent tous les événements de d�
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetEventKind, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md)|Indique le type d'événement représenté par cet objet `ICorDebugDebugEvent`.|  
-|[GetThread, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-getthread-method.md)|Obtient le thread sur lequel l'événement s'est produit.|  
+|[GetEventKind, méthode](icordebugdebugevent-geteventkind-method.md)|Indique le type d'événement représenté par cet objet `ICorDebugDebugEvent`.|  
+|[GetThread, méthode](icordebugdebugevent-getthread-method.md)|Obtient le thread sur lequel l'événement s'est produit.|  
   
 ## <a name="remarks"></a>Notes  
  Les interfaces suivantes sont dérivées de l'interface `ICorDebugDebugEvent` :  
   
-- [Icordebugexceptiondebugevent,](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)  
+- [ICorDebugExceptionDebugEvent](icordebugexceptiondebugevent-interface.md)  
   
-- [Icordebugmoduledebugevent,](../../../../docs/framework/unmanaged-api/debugging/icordebugmoduledebugevent-interface.md)  
+- [ICorDebugModuleDebugEvent](icordebugmoduledebugevent-interface.md)  
   
 > [!NOTE]
 > L'interface est uniquement disponible avec .NET Native. Une tentative d'appel à `QueryInterface` pour récupérer un pointeur d'interface retourne `E_NOINTERFACE` pour les scénarios ICorDebug en dehors de .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -40,5 +40,5 @@ Définit l’interface de base de laquelle dérivent tous les événements de d�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

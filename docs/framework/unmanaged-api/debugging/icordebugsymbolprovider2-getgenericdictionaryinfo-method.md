@@ -1,15 +1,15 @@
 ---
-title: 'Icordebugsymbolprovider2, :: GetGenericDictionaryInfo, méthode'
+title: Méthode ICorDebugSymbolProvider2::GetGenericDictionaryInfo
 ms.date: 03/30/2017
 ms.assetid: ba28fe4e-5491-4670-bff7-7fde572d7593
-ms.openlocfilehash: c9f7206cac54d64c28eb50d81fea00a6f3c494d4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 02ecaf56e845680472f42c04f3978e54e7a69272
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133633"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791506"
 ---
-# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>Icordebugsymbolprovider2, :: GetGenericDictionaryInfo, méthode
+# <a name="icordebugsymbolprovider2getgenericdictionaryinfo-method"></a>Méthode ICorDebugSymbolProvider2::GetGenericDictionaryInfo
 
 Récupère un mappage de dictionnaire générique.
 
@@ -21,10 +21,10 @@ HRESULT GetGenericDictionaryInfo(
 );
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `ppMemoryBuffer`\
-à Pointeur vers l’adresse d’un objet [ICorDebugMemoryBuffer](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md) contenant le mappage de dictionnaire générique. Pour plus d'informations, consultez la section Notes.
+à Pointeur vers l’adresse d’un objet [ICorDebugMemoryBuffer](icordebugmemorybuffer-interface.md) contenant le mappage de dictionnaire générique. Pour plus d'informations, consultez la section Notes.
 
 ## <a name="remarks"></a>Notes
 
@@ -75,7 +75,7 @@ Le format de chaque élément d'informations d'instanciation sur le tas est le s
 
 L'inclusion de la longueur de chaque élément de tas permet d'effectuer un tri simple de la section répertoire sans affecter le tas.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -87,5 +87,5 @@ L'inclusion de la longueur de chaque élément de tas permet d'effectuer un tri 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugSymbolProvider2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider2, interface](icordebugsymbolprovider2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

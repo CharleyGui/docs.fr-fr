@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6e47b7e5-0335-4dd3-8c42-d3c07d62b102
 topic_type:
 - apiref
-ms.openlocfilehash: 3abf944df3619256791882bf61dfc4072b642c54
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0a677e33950f178b916a5e9e9cbb7bd918c1349b
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445129"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866609"
 ---
 # <a name="icorprofilercallbackassemblyunloadstarted-method"></a>ICorProfilerCallback::AssemblyUnloadStarted, méthode
 Notifie le profileur qu’un assembly est en cours de déchargement.  
@@ -32,14 +32,16 @@ HRESULT AssemblyUnloadStarted(
     [in] AssemblyID assemblyId);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `assemblyId`  
- dans Identifie l’assembly qui est déchargé.  
-  
+## <a name="parameters"></a>Parameters
+
+- `assemblyId`
+
+  \[in] identifie l’assembly qui est déchargé.
+
 ## <a name="remarks"></a>Notes  
  La valeur de `assemblyId` n’est pas valide pour une demande d’informations après le retour de la méthode `AssemblyUnloadStarted`, il s’agit de la dernière chance du profileur d’obtenir des informations sur cet assembly.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -50,5 +52,5 @@ HRESULT AssemblyUnloadStarted(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [AssemblyUnloadFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyunloadfinished-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [AssemblyUnloadFinished, méthode](icorprofilercallback-assemblyunloadfinished-method.md)

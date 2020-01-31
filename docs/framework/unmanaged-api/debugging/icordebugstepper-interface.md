@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ed8364eb-f01b-46f6-b5e3-5dda9cae2dfe
 topic_type:
 - apiref
-ms.openlocfilehash: 3ca062231fd482c1f0d888935e882513461838ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e9bb69567a247472af42efb08b609d3474c87ed2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137593"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791790"
 ---
 # <a name="icordebugstepper-interface"></a>ICorDebugStepper, interface
 Représente dans l'exécution du code une étape qui est effectuée par un débogueur, et qui sert d'identificateur entre l'émission et l'achèvement d'une commande tout en offrant un moyen d'annuler une étape.  
@@ -28,14 +28,14 @@ Représente dans l'exécution du code une étape qui est effectuée par un débo
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Deactivate, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-deactivate-method.md)|Provoque l’annulation par ce `ICorDebugStepper` de la dernière commande d’étape qu’il a reçue.|  
-|[IsActive, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-isactive-method.md)|Obtient une valeur qui indique si ce `ICorDebugStepper` exécute actuellement une étape.|  
-|[SetInterceptMask, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setinterceptmask-method.md)|Définit une valeur CorDebugIntercept, qui spécifie les types de code qui sont en escalier.|  
-|[SetRangeIL, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setrangeil-method.md)|Définit une valeur qui indique si les appels à [ICorDebugStepper :: StepRange](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md) passent des valeurs d’argument relatives au code natif ou au code MSIL (Microsoft Intermediate Language) de la méthode qui fait l’objet d’un pas à pas.|  
-|[SetUnmappedStopMask, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md)|Définit une valeur CorDebugUnmappedStop, qui spécifie le type de code non mappé dans lequel l’exécution s’arrêtera.|  
-|[Step, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-step-method.md)|Provoque `ICorDebugStepper` l’exécution d’un pas à pas détaillé dans le thread qui le contient et, éventuellement, à la poursuite d’un pas à pas détaillé dans les fonctions appelées dans le thread.|  
-|[StepOut, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-stepout-method.md)|`ICorDebugStepper` provoque l’exécution d’une étape unique dans le thread conteneur et se termine lorsque le frame actuel retourne le contrôle au frame appelant.|  
-|[StepRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-steprange-method.md)|Fait en sorte que ce `ICorDebugStepper` effectue un pas à pas détaillé dans son thread conteneur et retourne lorsqu’il atteint le code au-delà de la dernière des plages spécifiées.|  
+|[Deactivate, méthode](icordebugstepper-deactivate-method.md)|Provoque l’annulation par ce `ICorDebugStepper` de la dernière commande d’étape qu’il a reçue.|  
+|[IsActive, méthode](icordebugstepper-isactive-method.md)|Obtient une valeur qui indique si ce `ICorDebugStepper` exécute actuellement une étape.|  
+|[SetInterceptMask, méthode](icordebugstepper-setinterceptmask-method.md)|Définit une valeur CorDebugIntercept, qui spécifie les types de code qui sont en escalier.|  
+|[SetRangeIL, méthode](icordebugstepper-setrangeil-method.md)|Définit une valeur qui indique si les appels à [ICorDebugStepper :: StepRange](icordebugstepper-steprange-method.md) passent des valeurs d’argument relatives au code natif ou au code MSIL (Microsoft Intermediate Language) de la méthode qui fait l’objet d’un pas à pas.|  
+|[SetUnmappedStopMask, méthode](icordebugstepper-setunmappedstopmask-method.md)|Définit une valeur CorDebugUnmappedStop, qui spécifie le type de code non mappé dans lequel l’exécution s’arrêtera.|  
+|[Step, méthode](icordebugstepper-step-method.md)|Provoque `ICorDebugStepper` l’exécution d’un pas à pas détaillé dans le thread qui le contient et, éventuellement, à la poursuite d’un pas à pas détaillé dans les fonctions appelées dans le thread.|  
+|[StepOut, méthode](icordebugstepper-stepout-method.md)|`ICorDebugStepper` provoque l’exécution d’une étape unique dans le thread conteneur et se termine lorsque le frame actuel retourne le contrôle au frame appelant.|  
+|[StepRange, méthode](icordebugstepper-steprange-method.md)|Fait en sorte que ce `ICorDebugStepper` effectue un pas à pas détaillé dans son thread conteneur et retourne lorsqu’il atteint le code au-delà de la dernière des plages spécifiées.|  
   
 ## <a name="remarks"></a>Notes  
  L’interface `ICorDebugStepper` remplit les fonctions suivantes :  
@@ -53,7 +53,7 @@ Représente dans l'exécution du code une étape qui est effectuée par un débo
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -64,4 +64,4 @@ Représente dans l'exécution du code une étape qui est effectuée par un débo
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

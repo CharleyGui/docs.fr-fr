@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 4781e39a0c8827adb6ab0155d5215645242208a5
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: eb61ad85580310c7becc2a1a2237efe188fbecf0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348143"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794587"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -26,7 +26,7 @@ Dans ce didacticiel, vous apprendrez à :
 > - Utilisation de l’apprentissage de transfert pour l’apprentissage d’un modèle de classification d’image TensorFlow personnalisé
 > - Classer les images avec le modèle personnalisé
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
 
@@ -39,7 +39,7 @@ Cet exemple est une C# application console .net core qui classe les images à l�
 La classification d’images est un problème de vision par ordinateur. La classification d’image prend une image en tant qu’entrée et la classe dans une classe prescrite. Voici quelques scénarios où la classification d’images est utile :
 
 - Reconnaissance faciale
-- Détection d’émotions
+- Détection d’émotion
 - Diagnostic médical
 - Détection du repère géographique
 
@@ -76,7 +76,7 @@ Une fois les valeurs de sortie de la phase de goulot d’étranglement calculée
 
 Le modèle préformé utilisé dans ce didacticiel est la variante de couche 101 du modèle de réseau résiduel (ResNet) v2. Le modèle d’origine est formé pour classer les images en milliers de catégories. Le modèle prend comme entrée une image de taille 224 x 224 et génère les probabilités de la classe pour chacune des classes sur lesquelles il est formé. Une partie de ce modèle est utilisée pour l’apprentissage d’un nouveau modèle à l’aide d’images personnalisées pour effectuer des prédictions entre deux classes.
 
-## <a name="create-console-application"></a>Création d’une application de console
+## <a name="create-console-application"></a>Créer une application console
 
 Maintenant que vous avez une compréhension générale de la formation de transfert et de l’API de classification d’image, il est temps de générer l’application.
 
@@ -140,10 +140,10 @@ Dans ce didacticiel, seules les images de pont de pont sont utilisées.
 
         `ModelInput` contient les propriétés suivantes :
 
-        - `ImagePath` est le chemin d’accès complet où l’image est stockée.
-        - `Label` est la catégorie à laquelle l’image appartient. Il s’agit de la valeur à prédire.
         - `Image` est la représentation `byte[]` de l’image. Le modèle s’attend à ce que les données de l’image soient de ce type pour l’apprentissage.
         - `LabelAsKey` est la représentation numérique du `Label`.
+        - `ImagePath` est le chemin d’accès complet où l’image est stockée.
+        - `Label` est la catégorie à laquelle l’image appartient. Il s’agit de la valeur à prédire.
 
         Seuls les `Image` et les `LabelAsKey` sont utilisés pour l’apprentissage du modèle et la création de prédictions. Les propriétés `ImagePath` et `Label` sont conservées pour plus de commodité afin d’accéder au nom et à la catégorie du fichier image d’origine.
 
@@ -171,7 +171,7 @@ Lorsque les données d’apprentissage et de validation ne changent pas souvent,
 
     [!code-csharp [DefinePaths](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L15-L17)]
 
-1. Ensuite, initialisez la variable `mlContext` avec une nouvelle instance de [MLContext](xref:Microsoft.ML.MLContext).
+1. Initialisez la variable `mlContext` avec une nouvelle instance de [MLContext](xref:Microsoft.ML.MLContext).
 
     [!code-csharp [MLContext](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L19)]
 

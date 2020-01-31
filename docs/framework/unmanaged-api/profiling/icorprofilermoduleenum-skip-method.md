@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 8dc29c6a-e2ba-41d8-a1e0-0fdd21421e0b
 topic_type:
 - apiref
-ms.openlocfilehash: d8c0f69ce407638aed6475c4d84d0e032cc6a8f5
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fb7a2a6d8bac7e9a67a5275694fc07e0f1d469e1
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74435977"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861331"
 ---
 # <a name="icorprofilermoduleenumskip-method"></a>ICorProfilerModuleEnum::Skip, méthode
 Fait avancer le curseur de l'énumérateur depuis sa position actuelle de manière à ignorer le nombre spécifié d'éléments.  
@@ -31,7 +31,7 @@ Fait avancer le curseur de l'énumérateur depuis sa position actuelle de maniè
 HRESULT Skip([in] ULONG celt);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `celt`  
  dans Nombre d’éléments à ignorer.  
   
@@ -46,7 +46,7 @@ HRESULT Skip([in] ULONG celt);
 ## <a name="remarks"></a>Notes  
  La nouvelle position du curseur de cet énumérateur est (position actuelle) + `celt`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -57,5 +57,5 @@ HRESULT Skip([in] ULONG celt);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerModuleEnum, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerModuleEnum, interface](icorprofilermoduleenum-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)

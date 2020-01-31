@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7da621fc-e7d0-4c00-9439-5c93619d7414
 topic_type:
 - apiref
-ms.openlocfilehash: aa76bf511ff1e1710a7ff86ad2ac97665969f2bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4799c1d04e8172c604eeec50f2b841a6db063949
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140438"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790581"
 ---
 # <a name="icorpublishprocessenumappdomains-method"></a>ICorPublishProcess::EnumAppDomains, méthode
-Obtient un énumérateur pour les domaines d’application dans le processus qui est référencé par [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
+Obtient un énumérateur pour les domaines d’application dans le processus qui est référencé par [ICorPublishProcess](icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,16 +33,16 @@ HRESULT EnumAppDomains (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ppEnum`  
- à Pointeur vers l’adresse d’une instance de [ICorPublishAppDomainEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-interface.md) qui autorise l’itération au sein de la collection de domaines d’application dans ce processus.  
+ à Pointeur vers l’adresse d’une instance de [ICorPublishAppDomainEnum](icorpublishappdomainenum-interface.md) qui autorise l’itération au sein de la collection de domaines d’application dans ce processus.  
   
 ## <a name="remarks"></a>Notes  
  La liste des domaines d’application est basée sur un instantané des domaines d’application qui existent quand la méthode `EnumAppDomains` est appelée. Cette méthode peut être appelée plusieurs fois pour créer une liste à jour. Les listes existantes ne seront pas affectées par les appels ultérieurs de cette méthode.  
   
- Si le processus a été arrêté, `EnumAppDomains` échoue avec la valeur HRESULT CORDBG_E_PROCESS_TERMINATED.  
+ Si le processus a été arrêté, `EnumAppDomains` échoue avec une valeur HRESULT de CORDBG_E_PROCESS_TERMINATED.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
@@ -53,4 +53,4 @@ HRESULT EnumAppDomains (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorPublishProcess, interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+- [ICorPublishProcess, interface](icorpublishprocess-interface.md)

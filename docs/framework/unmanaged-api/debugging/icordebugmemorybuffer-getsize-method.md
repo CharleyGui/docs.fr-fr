@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugMemoryBuffer :: deméthode, méthode'
+title: ICorDebugMemoryBuffer::GetSize, méthode
 ms.date: 03/30/2017
 ms.assetid: 9ffd5482-268e-4680-9fd1-bfb0b7d66450
-ms.openlocfilehash: 1693860abe99884ee443be0666dfb6b485a219a0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 51c13b67951c714d1aec602ffea22891328565a0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128007"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793187"
 ---
-# <a name="icordebugmemorybuffergetsize-method"></a>ICorDebugMemoryBuffer :: deméthode, méthode
+# <a name="icordebugmemorybuffergetsize-method"></a>ICorDebugMemoryBuffer::GetSize, méthode
 Obtient la taille de la mémoire tampon en octets.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,7 +20,7 @@ HRESULT GetSize(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pcbBufferLength`  
  [out] Pointeur vers la taille de la mémoire tampon.  
   
@@ -29,7 +29,7 @@ HRESULT GetSize(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -40,5 +40,5 @@ HRESULT GetSize(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugMemoryBuffer, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmemorybuffer-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMemoryBuffer, interface](icordebugmemorybuffer-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

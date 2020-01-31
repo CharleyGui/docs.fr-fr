@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, server-side provider implementation
 - provider implementation, UI Automation
 ms.assetid: 6acc6d08-bd67-4e2e-915c-9c1d34eb86fe
-ms.openlocfilehash: 25f22d5e8caacc69643f6d79e109ebaa94159d80
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 8a52d84f7152b9cb431ad0aa97c88b143463be2d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75632309"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789621"
 ---
 # <a name="server-side-ui-automation-provider-implementation"></a>Implémentation de fournisseur UI Automation côté serveur
 
@@ -20,7 +20,7 @@ ms.locfileid: "75632309"
 
 Cette section explique comment implémenter un fournisseur UI Automation côté serveur pour un contrôle personnalisé.
 
-L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non WPF (tels que ceux conçus pour [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]) est fondamentalement différente. Les éléments WPF assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] par le biais d’une classe dérivée de <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-WPF assurent la prise en charge via des implémentations d’interfaces de fournisseur.
+L’implémentation pour les éléments Windows Presentation Foundation (WPF) et les éléments non WPF (tels que ceux conçus pour Windows Forms) est fondamentalement différente. Les éléments WPF assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] par le biais d’une classe dérivée de <xref:System.Windows.Automation.Peers.AutomationPeer>. Les éléments non-WPF assurent la prise en charge via des implémentations d’interfaces de fournisseur.
 
 <a name="Security_Considerations"></a>
 
@@ -40,7 +40,7 @@ Pour plus d'informations sur ce sujet, consultez [UI Automation d'un contrôle p
 
 ## <a name="provider-implementation-by-non-wpf-elements"></a>Implémentation de fournisseur par des éléments non-WPF
 
-Les contrôles personnalisés qui ne font pas partie de l’infrastructure WPF, mais qui sont écrits en code managé (le plus souvent, il s’agit de contrôles [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]), assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l'élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l'interface appropriée pour chaque modèle de contrôle.
+Les contrôles personnalisés qui ne font pas partie de l’infrastructure WPF, mais qui sont écrits en code managé (le plus souvent, il s’agit de contrôles Windows Forms), assurent la prise en charge de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] en implémentant des interfaces. Chaque élément doit implémenter au moins une des interfaces répertoriées dans le premier tableau de la section suivante. De plus, si l'élément prend en charge un ou plusieurs modèles de contrôle, il doit implémenter l'interface appropriée pour chaque modèle de contrôle.
 
 Le projet de votre fournisseur [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] doit référencer les assemblys suivants :
 
@@ -117,7 +117,7 @@ Habituellement, les fournisseurs de contrôles basés sur HWND n'ont pas besoin 
 > [!NOTE]
 > La <xref:System.Windows.Automation.AutomationElementIdentifiers.RuntimeIdProperty> d'un simple élément ou d'une racine de fragment hébergé dans une fenêtre est obtenue depuis la fenêtre ; toutefois, les éléments fragments sous la racine (tels que des éléments de liste dans une zone de liste) doivent fournir leurs propres identificateurs. Pour plus d'informations, consultez <xref:System.Windows.Automation.Provider.IRawElementProviderFragment.GetRuntimeId%2A>.
 >
-> La <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retournée pour les fournisseurs hébergés dans un contrôle [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] . Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.
+> Le <xref:System.Windows.Automation.AutomationElementIdentifiers.IsKeyboardFocusableProperty> doit être retourné pour les fournisseurs hébergés dans un contrôle Windows Forms. Dans ce cas, le fournisseur de fenêtre par défaut ne pourra peut-être pas récupérer la bonne valeur.
 >
 > La <xref:System.Windows.Automation.AutomationElementIdentifiers.NameProperty> est généralement fournie par le fournisseur hôte. Par exemple, si un contrôle personnalisé est dérivé de <xref:System.Windows.Forms.Control>, le nom est dérivé de la propriété `Text` du contrôle.
 

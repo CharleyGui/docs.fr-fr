@@ -16,12 +16,12 @@ helpviewer_keywords:
 - data templates [WPF]
 - thread [WPF], affinity
 ms.assetid: 8579c10b-76ab-4c52-9691-195ce02333c8
-ms.openlocfilehash: db9938f26f31506737eb0395fa389da01a1ee444
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 6d8dedafd4ffc582b529289d3583f90d81779762
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76735067"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794042"
 ---
 # <a name="wpf-architecture"></a>Architecture de WPF
 Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows Presentation Foundation (WPF). Il couvre la plupart des principaux sous-systèmes de WPF et décrit comment ils interagissent. Il détaille également certains des choix effectués par les architectes de WPF.  
@@ -116,7 +116,7 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
  Les deux éléments les plus importants que <xref:System.Windows.FrameworkElement> introduits sont la liaison de données et les styles.  
   
- Le sous-système de liaison de données dans WPF doit être relativement familier à toute personne qui a utilisé [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ou ASP.NET pour créer une application [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Chaque système offre un moyen simple d’exprimer votre intention de lier une ou plusieurs propriétés d’un élément spécifique à une donnée. WPF prend entièrement en charge la liaison de propriété, la transformation et la liaison de liste.  
+ Le sous-système de liaison de données dans WPF doit être relativement familier à toute personne qui a utilisé Windows Forms ou ASP.NET pour créer une application [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. Chaque système offre un moyen simple d’exprimer votre intention de lier une ou plusieurs propriétés d’un élément spécifique à une donnée. WPF prend entièrement en charge la liaison de propriété, la transformation et la liaison de liste.  
   
  L’une des fonctionnalités les plus intéressantes de la liaison de données dans WPF est l’introduction des modèles de données. Ils permettent de spécifier de manière déclarative comment afficher les données. Au lieu de créer une interface utilisateur personnalisée pouvant être liée à des données, vous pouvez contourner le problème et laisser les données déterminer l’affichage à créer.  
   
@@ -130,7 +130,7 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
  Cette distinction entre le modèle de données (propriétés), le modèle d’interaction (commandes et événements) et le modèle d’affichage (modèles) permet d’effectuer une personnalisation complète de l’apparence et du comportement d’un contrôle.  
   
- Le modèle de contenu est un aspect commun du modèle de données des contrôles. Si vous examinez un contrôle comme <xref:System.Windows.Controls.Button>, vous verrez qu’il a une propriété nommée « contenu » de type <xref:System.Object>. Dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et ASP.NET, cette propriété est généralement une chaîne, mais elle limite le type de contenu que vous pouvez placer dans un bouton. Le contenu d’un bouton peut être une chaîne simple, un objet de données complexe ou une arborescence entière d’éléments. Dans le cas d’un objet de données, le modèle de données sert à créer un affichage.  
+ Le modèle de contenu est un aspect commun du modèle de données des contrôles. Si vous examinez un contrôle comme <xref:System.Windows.Controls.Button>, vous verrez qu’il a une propriété nommée « contenu » de type <xref:System.Object>. Dans Windows Forms et ASP.NET, cette propriété est généralement une chaîne, mais elle limite le type de contenu que vous pouvez placer dans un bouton. Le contenu d’un bouton peut être une chaîne simple, un objet de données complexe ou une arborescence entière d’éléments. Dans le cas d’un objet de données, le modèle de données sert à créer un affichage.  
   
 <a name="Summary"></a>   
 ## <a name="summary"></a>Récapitulatif  
@@ -138,7 +138,7 @@ Cette rubrique fournit une visite guidée de la hiérarchie de classes Windows P
   
  Les applications standard créent un affichage, puis effectuent une liaison avec certaines données. Dans WPF, tout ce qui concerne le contrôle, tous les aspects de l’affichage, est généré par un certain type de liaison de données. Le texte placé dans un bouton est affiché en créant un contrôle composé à l’intérieur du bouton et en liant son affichage à la propriété de contenu du bouton.  
   
- Quand vous commencez à développer des applications basées sur WPF, vous devez vous sentir familier. Vous pouvez définir des propriétés, utiliser des objets et la liaison de données à peu près de la même façon que vous pouvez utiliser [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ou ASP.NET. Grâce à une investigation approfondie de l’architecture de WPF, vous constaterez qu’il existe une possibilité de créer des applications beaucoup plus riches qui traitent fondamentalement les données comme le pilote de base de l’application.  
+ Quand vous commencez à développer des applications basées sur WPF, vous devez vous sentir familier. Vous pouvez définir des propriétés, utiliser des objets et la liaison de données à peu près de la même façon que vous pouvez utiliser Windows Forms ou ASP.NET. Grâce à une investigation approfondie de l’architecture de WPF, vous constaterez qu’il existe une possibilité de créer des applications beaucoup plus riches qui traitent fondamentalement les données comme le pilote de base de l’application.  
   
 ## <a name="see-also"></a>Voir aussi
 

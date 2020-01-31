@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86f06245-9517-49be-8d8c-ca5deaf34c02
 topic_type:
 - apiref
-ms.openlocfilehash: 8fc2abd0728115edbbfae42958d8013029523ed1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d0c283232ff8eca1af9f3ff4448fb7f4c81d554f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111363"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789033"
 ---
 # <a name="iclrdebugginglibraryproviderprovidelibrary-method"></a>ICLRDebuggingLibraryProvider::ProvideLibrary, méthode
 
@@ -36,7 +36,7 @@ HRESULT ProvideLibrary(
      [out] HMODULE* hModule);
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `pwszFilename` \
 dans Nom du module demandé.
@@ -56,13 +56,13 @@ Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs 
 
 |HRESULT|Description|
 |-------------|-----------------|
-|S_OK|La commande s'est correctement terminée.|
+|S_OK|La méthode s'est correctement terminée.|
 
 ## <a name="exceptions"></a>Exceptions
 
 ## <a name="remarks"></a>Notes
 
-`ProvideLibrary` permet au débogueur de fournir des modules nécessaires pour déboguer des fichiers CLR spécifiques tels que mscordbi. dll et mscordacwks. dll. Les handles de module doivent rester valides jusqu’à ce qu’un appel à la méthode [ICLRDebugging :: CanUnloadNow,](../../../../docs/framework/unmanaged-api/debugging/iclrdebugging-canunloadnow-method.md) indique qu’ils peuvent être libérés. à partir de là, il est de la responsabilité de l’appelant de libérer les handles.
+`ProvideLibrary` permet au débogueur de fournir des modules nécessaires pour déboguer des fichiers CLR spécifiques tels que mscordbi. dll et mscordacwks. dll. Les handles de module doivent rester valides jusqu’à ce qu’un appel à la méthode [ICLRDebugging :: CanUnloadNow,](iclrdebugging-canunloadnow-method.md) indique qu’ils peuvent être libérés. à partir de là, il est de la responsabilité de l’appelant de libérer les handles.
 
 Le débogueur peut utiliser n’importe quel moyen disponible pour rechercher ou acquérir le module de débogage.
 
@@ -71,7 +71,7 @@ Le débogueur peut utiliser n’importe quel moyen disponible pour rechercher ou
 >
 > Si un problème de sécurité sérieux est découvert dans une bibliothèque déjà publiée, telle que mscordbi. dll ou mscordacwks. dll, le shim peut être corrigé pour reconnaître les versions erronées des fichiers. Le shim peut ensuite émettre des demandes pour les versions corrigées des fichiers et rejeter les versions erronées Si elles sont fournies en réponse à une demande. Cela peut se produire uniquement si l’utilisateur a appliqué une nouvelle version du shim. Les versions non corrigées resteront vulnérables.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -83,5 +83,5 @@ Le débogueur peut utiliser n’importe quel moyen disponible pour rechercher ou
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

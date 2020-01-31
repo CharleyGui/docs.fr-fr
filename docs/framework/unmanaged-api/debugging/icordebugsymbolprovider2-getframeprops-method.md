@@ -1,15 +1,15 @@
 ---
-title: 'Icordebugsymbolprovider2, :: GetFrameProps, méthode'
+title: Méthode ICorDebugSymbolProvider2::GetFrameProps
 ms.date: 03/30/2017
 ms.assetid: f07b73f3-188d-43a9-8f7d-44dce2f1ddb7
-ms.openlocfilehash: 39bdb93fcb48da6667d982ca2d511ee5e499ae32
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dc64152938c46945978715251286ecb6c6d8983c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133648"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791523"
 ---
-# <a name="icordebugsymbolprovider2getframeprops-method"></a>Icordebugsymbolprovider2, :: GetFrameProps, méthode
+# <a name="icordebugsymbolprovider2getframeprops-method"></a>Méthode ICorDebugSymbolProvider2::GetFrameProps
 Retourne l'adresse virtuelle relative de départ d'une méthode et le frame parent en fonction d'une adresse virtuelle relative de code.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT GetFrameProps(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `codeRva`  
  [in] Adresse virtuelle relative du code.  
   
@@ -37,7 +37,7 @@ HRESULT GetFrameProps(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ HRESULT GetFrameProps(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugSymbolProvider2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider2, interface](icordebugsymbolprovider2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

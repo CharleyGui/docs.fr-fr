@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 16d695e8-975d-431b-8421-e9e6c3e3f476
 topic_type:
 - apiref
-ms.openlocfilehash: 48f1b485b6dfa8fd898f6ea00eee2d7b397deba6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a6283d699263dc9b79e457010f31923f77443129
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131860"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791875"
 ---
 # <a name="icordebugstackwalk-interface"></a>ICorDebugStackWalk, interface
 Fournit des méthodes pour obtenir les méthodes managées, ou frames, sur la pile d'un thread.  
@@ -28,17 +28,17 @@ Fournit des méthodes pour obtenir les méthodes managées, ou frames, sur la pi
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetContext, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getcontext-method.md)|Retourne le contexte du frame actuel dans l’objet `ICorDebugStackWalk`.|  
-|[SetContext, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-setcontext-method.md)|Définit le contexte actuel de l’objet `ICorDebugStackWalk` sur un contexte valide pour le thread.|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-next-method.md)|Déplace l’objet `ICorDebugStackWalk` vers le frame suivant.|  
-|[GetFrame, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-getframe-method.md)|Obtient le frame actuel dans l’objet `ICorDebugStackWalk`.|  
+|[GetContext, méthode](icordebugstackwalk-getcontext-method.md)|Retourne le contexte du frame actuel dans l’objet `ICorDebugStackWalk`.|  
+|[SetContext, méthode](icordebugstackwalk-setcontext-method.md)|Définit le contexte actuel de l’objet `ICorDebugStackWalk` sur un contexte valide pour le thread.|  
+|[Next, méthode](icordebugstackwalk-next-method.md)|Déplace l’objet `ICorDebugStackWalk` vers le frame suivant.|  
+|[GetFrame, méthode](icordebugstackwalk-getframe-method.md)|Obtient le frame actuel dans l’objet `ICorDebugStackWalk`.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -49,5 +49,5 @@ Fournit des méthodes pour obtenir les méthodes managées, ou frames, sur la pi
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

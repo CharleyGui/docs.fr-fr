@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: ac6244b9-54ba-475f-b72a-abed6afc46ec
 topic_type:
 - apiref
-ms.openlocfilehash: 7af3109c822dfe945a60c16d4bd3b764f7550492
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d61d37448930d451b519c93909165e5e16f92765
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131346"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792048"
 ---
 # <a name="icordebugregistersetsetregisters-method"></a>ICorDebugRegisterSet::SetRegisters, méthode
 `SetRegisters` n’est pas implémenté dans la version .NET Framework 2,0. N'appelez pas cette méthode.  
   
 > [!NOTE]
-> Utilisez les opérations de niveau supérieur telles que [ICorDebugILFrame :: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugilframe-setip-method.md) ou [ICorDebugNativeFrame :: SetIP](../../../../docs/framework/unmanaged-api/debugging/icordebugnativeframe-setip-method.md).  
+> Utilisez les opérations de niveau supérieur telles que [ICorDebugILFrame :: SetIP](icordebugilframe-setip-method.md) ou [ICorDebugNativeFrame :: SetIP](icordebugnativeframe-setip-method.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -38,7 +38,7 @@ HRESULT SetRegisters (
 );  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -49,5 +49,5 @@ HRESULT SetRegisters (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugRegisterSet, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet, interface](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2, interface](icordebugregisterset2-interface.md)

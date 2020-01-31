@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: fee56a29-3154-4192-958d-71da2ced3740
 topic_type:
 - apiref
-ms.openlocfilehash: 72a1b6fdc40f3169500d8cf3b3028315106ecc69
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7ae06d825565faff70b0c8be2ccbee5228737e41
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140232"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791101"
 ---
 # <a name="icordebugvalue3getsize64-method"></a>ICorDebugValue3::GetSize64, méthode
-Obtient la taille, en octets, de cet objet [icordebugvalue3,](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) .  
+Obtient la taille, en octets, de cet objet [icordebugvalue3,](icordebugvalue3-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,16 +33,16 @@ HRESULT GetSize64(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  pSize  
  à Pointeur vers la taille, en octets, de cet objet.  
   
 ## <a name="remarks"></a>Notes  
  Si le type de cette valeur est un type référence, cette méthode retourne la taille du pointeur plutôt que la taille de l’objet.  
   
- La méthode `ICorDebugValue3::GetSize` diffère de la méthode [ICorDebugValue ::](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md) Quantity dans le type de son paramètre de sortie. Dans [ICorDebugValue ::](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue-getsize-method.md)defaut, le paramètre de sortie est un `ULONG32`; dans `ICorDebugValue3::GetSize`, il s’agit d’un `ULONG64`. Cela permet à l’interface [icordebugvalue3,](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md) de signaler la taille des tableaux qui dépassent 2 Go.  
+ La méthode `ICorDebugValue3::GetSize` diffère de la méthode [ICorDebugValue ::](icordebugvalue-getsize-method.md) Quantity dans le type de son paramètre de sortie. Dans [ICorDebugValue ::](icordebugvalue-getsize-method.md)defaut, le paramètre de sortie est un `ULONG32`; dans `ICorDebugValue3::GetSize`, il s’agit d’un `ULONG64`. Cela permet à l’interface [icordebugvalue3,](icordebugvalue3-interface.md) de signaler la taille des tableaux qui dépassent 2 Go.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -53,5 +53,5 @@ HRESULT GetSize64(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugValue3, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugValue3, interface](icordebugvalue3-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

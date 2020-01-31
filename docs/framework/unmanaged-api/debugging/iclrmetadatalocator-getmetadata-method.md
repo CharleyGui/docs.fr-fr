@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 704a8893-ac56-43b4-90ea-715f38ccb40e
 topic_type:
 - apiref
-ms.openlocfilehash: 1f28a4b4acd9d6050d33b9824aa49a9b9041b59b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 66b3934d000b4f000c368acb1f57c8fc82a5c453
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111246"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793625"
 ---
 # <a name="iclrmetadatalocatorgetmetadata-method"></a>ICLRMetadataLocator::GetMetadata, méthode
 Appelée par les services d’accès aux données common language runtime (CLR) pour récupérer les métadonnées d’une image.  
@@ -42,7 +42,7 @@ HRESULT GetMetadata(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `imagePath`  
  dans Chaîne qui spécifie le chemin d’accès du fichier image.  
   
@@ -73,7 +73,7 @@ HRESULT GetMetadata(
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -84,4 +84,4 @@ HRESULT GetMetadata(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRMetadataLocator, interface](../../../../docs/framework/unmanaged-api/debugging/iclrmetadatalocator-interface.md)
+- [ICLRMetadataLocator, interface](iclrmetadatalocator-interface.md)

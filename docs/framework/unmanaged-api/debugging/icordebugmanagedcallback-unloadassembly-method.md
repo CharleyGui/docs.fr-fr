@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 6734321c-c8a9-401f-a558-cad715ec4a77
 topic_type:
 - apiref
-ms.openlocfilehash: 4ae4856eca2c1441ea53df0d9ed3648700b39b24
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 06c08499298656c8314d72667d9dac88c8d11e6a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130655"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788340"
 ---
 # <a name="icordebugmanagedcallbackunloadassembly-method"></a>ICorDebugManagedCallback::UnloadAssembly, méthode
 Notifie le débogueur qu’un assembly de common language runtime a été déchargé.  
@@ -34,7 +34,7 @@ HRESULT UnloadAssembly (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui contenait l’assembly.  
   
@@ -44,7 +44,7 @@ HRESULT UnloadAssembly (
 ## <a name="remarks"></a>Notes  
  L’assembly ne doit pas être utilisé après ce rappel.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,5 +55,5 @@ HRESULT UnloadAssembly (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [LoadAssembly, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-loadassembly-method.md)
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [LoadAssembly, méthode](icordebugmanagedcallback-loadassembly-method.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

@@ -4,12 +4,12 @@ description: Découvrez comment créer une application .NET Core qui prend en ch
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 16fc9d3c721ddd0618c980c7dc406b7ad7864ff5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 32205a507bc95b2f8a2f75368aab3fde710249ee
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739702"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787852"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Créer une application .NET Core avec des plug-ins
 
@@ -20,7 +20,7 @@ Ce didacticiel vous montre comment créer un <xref:System.Runtime.Loader.Assembl
 - Utiliser le type <xref:System.Runtime.Loader.AssemblyDependencyResolver?displayProperty=fullName> pour permettre aux plug-ins d’avoir des dépendances.
 - Créer des plug-ins qui peuvent être facilement déployés en copiant simplement les artefacts de build.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
@@ -34,7 +34,7 @@ La première étape consiste à créer l’application :
     dotnet new console -o AppWithPlugin
     ```
 
-2. Pour faciliter la création du projet, créez un fichier solution Visual Studio dans le même dossier. Exécutez la commande suivante :
+2. Pour faciliter la création du projet, créez un fichier solution Visual Studio dans le même dossier. Exécutez la commande suivante : .
 
     ```dotnetcli
     dotnet new sln
@@ -217,7 +217,7 @@ En utilisant une instance `PluginLoadContext` différente pour chaque plug-in, l
 
 De retour dans le dossier racine, effectuez les opérations suivantes :
 
-1. Exécutez la commande suivante pour créer un projet de bibliothèque de classes nommé `HelloPlugin` :
+1. Exécutez la commande suivante pour créer un projet de bibliothèque de classes nommé `HelloPlugin`:
     
     ```dotnetcli
     dotnet new classlib -o HelloPlugin
@@ -250,15 +250,18 @@ Entre les balises `<Project>`, ajoutez les éléments suivants :
 
 ```xml
 <ItemGroup>
-<ProjectReference Include="..\PluginBase\PluginBase.csproj">
-    <Private>false</Private>
-</ProjectReference>
+    <ProjectReference Include="..\PluginBase\PluginBase.csproj">
+        <Private>false</Private>
+        <ExcludeAssets>runtime</ExcludeAssets>
+    </ProjectReference>
 </ItemGroup>
 ```
 
 L’élément `<Private>false</Private>` est important. Il indique à MSBuild de ne pas copier *PluginBase.dll* dans le répertoire de sortie de HelloPlugin. Si l’assembly *PluginBase.dll* est présent dans le répertoire de sortie, `PluginLoadContext` l’y trouvera et le chargera en même temps que l’assembly *HelloPlugin.dll*. À ce stade, le type `HelloPlugin.HelloCommand` implémentera l’interface `ICommand` de l’assembly *PluginBase.dll* situé dans le répertoire de sortie du projet `HelloPlugin`, et non l’interface `ICommand` qui est chargée dans le contexte de chargement par défaut. Étant donné que le runtime voit ces deux types comme des types différents de différents assemblys, la méthode `AppWithPlugin.Program.CreateCommands` ne trouvera pas les commandes. De ce fait, les métadonnées `<Private>false</Private>` ne sont pas nécessaires pour la référence à l’assembly contenant les interfaces de plug-in.
 
-Maintenant que le projet `HelloPlugin` est terminé, nous devons mettre à jour le projet `AppWithPlugin` pour indiquer où se trouve le plug-in `HelloPlugin`. Après le commentaire `// Paths to plugins to load`, ajoutez `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"` comme élément du tableau `pluginPaths`.
+De même, l’élément `<ExcludeAssets>runtime</ExcludeAssets>` est également important si le `PluginBase` fait référence à d’autres packages. Ce paramètre a le même effet que `<Private>false</Private>`, mais fonctionne sur les références de package que le projet `PluginBase` ou l’une de ses dépendances peut inclure.
+
+Maintenant que le projet de `HelloPlugin` est terminé, vous devez mettre à jour le projet `AppWithPlugin` pour savoir où se trouve le plug-in `HelloPlugin`. Après le commentaire `// Paths to plugins to load`, ajoutez `@"HelloPlugin\bin\Debug\netcoreapp3.0\HelloPlugin.dll"` comme élément du tableau `pluginPaths`.
 
 ## <a name="plugin-with-library-dependencies"></a>Plug-in avec dépendances de bibliothèque
 
@@ -268,7 +271,7 @@ Les plug-ins sont presque tous plus complexes qu’un simple « Hello World »
 
 La totalité du code source de ce tutoriel se trouve dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/core/extensions/AppWithPlugin). L’exemple terminé comprend d’autres illustrations du comportement `AssemblyDependencyResolver`. Par exemple, l’objet `AssemblyDependencyResolver` peut aussi résoudre les bibliothèques natives ainsi que les assemblys satellites localisés inclus dans les packages NuGet. Dans le référentiel d’exemples, `UVPlugin` et `FrenchPlugin` illustrent ces scénarios.
 
-## <a name="reference-a-plugin-from-a-nuget-package"></a>Référencer un plug-in à partir d’un package NuGet
+## <a name="reference-a-plugin-interface-from-a-nuget-package"></a>Référencer une interface de plug-in à partir d’un package NuGet
 
 Supposons qu’il existe une application A dont l’interface de plug-in est définie dans le package NuGet nommé `A.PluginBase`. Comment référencer le package dans le projet de plug-in ? Pour les références de projet, l’utilisation des métadonnées `<Private>false</Private>` dans l’élément `ProjectReference` du fichier projet a empêché la copie de la dll dans la sortie.
 

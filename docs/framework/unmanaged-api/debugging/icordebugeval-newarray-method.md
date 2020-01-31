@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: cc79a67d-5368-434d-a943-209db90491b9
 topic_type:
 - apiref
-ms.openlocfilehash: ca0844e4d2b1cad65266d58c6cda74de203d1758
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 13ac5379992f4e768b09a03d31591143ba9bf627
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137660"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788722"
 ---
 # <a name="icordebugevalnewarray-method"></a>ICorDebugEval::NewArray, méthode
 Alloue un nouveau tableau du type d’élément et des dimensions spécifiés.  
   
- Cette méthode est obsolète dans la version 2,0 de .NET Framework. Utilisez [ICorDebugEval2 :: NewParameterizedArray,](../../../../docs/framework/unmanaged-api/debugging/icordebugeval2-newparameterizedarray-method.md) à la place.  
+ Cette méthode est obsolète dans la version 2,0 de .NET Framework. Utilisez [ICorDebugEval2 :: NewParameterizedArray,](icordebugeval2-newparameterizedarray-method.md) à la place.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,7 +39,7 @@ HRESULT NewArray (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `elementType`  
  dans Valeur de l’énumération CorElementType qui spécifie le type d’élément du tableau.  
   
@@ -58,7 +58,7 @@ HRESULT NewArray (
 ## <a name="remarks"></a>Notes  
  Le tableau est toujours créé dans le domaine d’application dans lequel le thread est en cours d’exécution.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

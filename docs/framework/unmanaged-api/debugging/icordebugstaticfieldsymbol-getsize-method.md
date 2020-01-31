@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugStaticFieldSymbol :: deméthode, méthode'
+title: ICorDebugStaticFieldSymbol::GetSize, méthode
 ms.date: 03/30/2017
 ms.assetid: 72389860-7e37-4656-ba46-b6aeee1860f8
-ms.openlocfilehash: 0fa9c519a40624dd8c5471231263d2430738af87
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: deeb887dad38417e3ebb980f5ef2f89392388d65
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131768"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791821"
 ---
-# <a name="icordebugstaticfieldsymbolgetsize-method"></a>ICorDebugStaticFieldSymbol :: deméthode, méthode
+# <a name="icordebugstaticfieldsymbolgetsize-method"></a>ICorDebugStaticFieldSymbol::GetSize, méthode
 Obtient la taille en octets du champ static.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,7 +20,7 @@ HRESULT GetSize(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pcbSize`  
  [out] Pointeur vers la longueur du champ.  
   
@@ -29,7 +29,7 @@ HRESULT GetSize(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -40,5 +40,5 @@ HRESULT GetSize(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugStaticFieldSymbol, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugStaticFieldSymbol, interface](icordebugstaticfieldsymbol-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

@@ -2,12 +2,12 @@
 title: Résilience cloud native
 description: Architecture des applications .NET natives Cloud pour Azure | Résilience native du Cloud
 ms.date: 06/30/2019
-ms.openlocfilehash: 680542abc5d8c43c577321d5ae834f0a13290da3
-ms.sourcegitcommit: 55f438d4d00a34b9aca9eedaac3f85590bb11565
+ms.openlocfilehash: 427405d95534c4467ab519c2188fe88e2f18e2b2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/23/2019
-ms.locfileid: "71184840"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781084"
 ---
 # <a name="cloud-native-resiliency"></a>Résilience cloud native
 
@@ -41,5 +41,5 @@ Dans un système distribué à petite échelle, les défaillances sont moins fr�
 Par conséquent, votre application et votre infrastructure doivent être résilientes. Dans les sections suivantes, nous allons explorer les techniques défensives que vous pouvez ajouter à votre application et les fonctionnalités de Cloud intégrées que vous pouvez exploiter pour aider à vérifier l’expérience de vos utilisateurs.
 
 >[!div class="step-by-step"]
->[Précédent](azure-data-storage.md)
+>[Précédent](elastic-search-in-azure.md)
 >[Suivant](application-resiliency-patterns.md)

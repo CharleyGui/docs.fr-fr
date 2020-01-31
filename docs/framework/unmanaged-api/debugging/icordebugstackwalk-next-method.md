@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 189c36be-028c-4fba-a002-5edfb8fcd07f
 topic_type:
 - apiref
-ms.openlocfilehash: 8cebb66ecf298eaaca0e7af23a9b8c6a2932c23f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b76d17337408653d130ee0cb8594e759bdade37c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131824"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791865"
 ---
 # <a name="icordebugstackwalknext-method"></a>ICorDebugStackWalk::Next, méthode
-Déplace l’objet [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) vers le frame suivant.  
+Déplace l’objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) vers le frame suivant.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -46,7 +46,7 @@ HRESULT Next();
 ## <a name="remarks"></a>Notes  
  La méthode `Next` fait avancer l’objet `ICorDebugStackWalk` au frame appelant uniquement si le runtime peut dérouler le frame actuel. Dans le cas contraire, l’objet passe au frame suivant que le runtime est en mesure de dérouler.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -57,6 +57,6 @@ HRESULT Next();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugStackWalk, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugStackWalk, interface](icordebugstackwalk-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

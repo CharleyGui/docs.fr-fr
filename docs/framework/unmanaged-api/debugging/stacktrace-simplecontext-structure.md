@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d4cef11f-a8ca-49bc-a1b8-6631f9e28f3e
 topic_type:
 - apiref
-ms.openlocfilehash: 1cd3c34fc292e4a050fa8a75078283e34425fc8f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c81a5787eb06971e3d52aff5d1c1154a72564daf
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139127"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790337"
 ---
 # <a name="stacktrace_simplecontext-structure"></a>StackTrace_SimpleContext
 Fournit un contexte simple qui peut être utilisé à la place d'une structure `CONTEXT` complète.  
@@ -36,9 +36,9 @@ struct StackTrace_SimpleContext
 };  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`StackOffset`|Pointeur de pile, ou le pointeur de pile Enter (ESP) sur les plateformes x86.|  
 |`FrameOffset`|Décalage de frame ou registre EBP sur les plateformes x86.|  
@@ -47,7 +47,7 @@ struct StackTrace_SimpleContext
 ## <a name="remarks"></a>Notes  
  Étant donné que les fonctions de trace de pile ne doivent généralement retourner que l’adresse, le décalage de frame et l’adresse de pile, vous pouvez éventuellement utiliser la structure `SimpleContext` au lieu d’une grande structure de `CONTEXT`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** SOS_Stacktrace. h  
@@ -56,5 +56,5 @@ struct StackTrace_SimpleContext
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Structures de débogage](debugging-structures.md)
+- [Débogage](index.md)

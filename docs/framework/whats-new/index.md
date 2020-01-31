@@ -8,12 +8,12 @@ dev_langs:
 helpviewer_keywords:
 - what's new [.NET Framework]
 ms.assetid: 1d971dd7-10fc-4692-8dac-30ca308fc0fa
-ms.openlocfilehash: ab14e6cb7d9bd4c1571040280dc35233e9b89d43
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 538806627a31366d4b8597eb010a4bbe3f8f9202
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937978"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860957"
 ---
 # <a name="whats-new-in-the-net-framework"></a>Nouveautés du .NET Framework
 
@@ -600,7 +600,7 @@ Pour une application Windows Forms, la solution de contournement précédente co
 
 **Prise en charge de .NET Standard 2.0**
 
-[.NET Standard](../../standard/net-standard.md) définit un ensemble d’API qui doivent être disponibles sur chaque implémentation .NET prenant en charge cette version de la norme. .NET Framework 4.7.1 prend entièrement en charge .NET Standard 2.0 et ajoute [200 API environ](https://github.com/dotnet/standard/blob/master/netstandard/src/ApiCompatBaseline.net461.txt) qui sont définies dans .NET Standard 2.0 et qui ne figurent pas dans .NET Framework 4.6.1, 4.6.2 et 4.7. (Notez que ces versions du .NET Framework prennent en charge .NET Standard 2,0 uniquement si des fichiers de prise en charge .NET Standard supplémentaires sont également déployés sur le système cible.) Pour plus d’informations, consultez « BCL-.NET Standard 2,0 support » dans le billet de blog [.NET Framework 4.7.1 Runtime and compiler features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
+[.NET Standard](../../standard/net-standard.md) définit un ensemble d’API qui doivent être disponibles sur chaque implémentation .NET prenant en charge cette version de la norme. .NET Framework 4.7.1 prend entièrement en charge .NET Standard 2.0 et ajoute [200 API environ](https://github.com/dotnet/standard/blob/master/src/netstandard/src/ApiCompatBaseline.net461.txt) qui sont définies dans .NET Standard 2.0 et qui ne figurent pas dans .NET Framework 4.6.1, 4.6.2 et 4.7. (Notez que ces versions du .NET Framework prennent en charge .NET Standard 2,0 uniquement si des fichiers de prise en charge .NET Standard supplémentaires sont également déployés sur le système cible.) Pour plus d’informations, consultez « BCL-.NET Standard 2,0 support » dans le billet de blog [.NET Framework 4.7.1 Runtime and compiler features](https://devblogs.microsoft.com/dotnet/net-framework-4-7-1-runtime-and-compiler-features/) .
 
 **Prise en charge des générateurs de configuration**
 

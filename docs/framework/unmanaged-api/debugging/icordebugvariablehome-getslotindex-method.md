@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 966da50d-5665-4fff-bf7b-1c72bbadd9a4
 topic_type:
 - apiref
-ms.openlocfilehash: dfc2e91599e7f05d90d56af07b71313e9eecaa51
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 542bfa05c55ef224d1b9111f9af6c069e9e23542
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121053"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790969"
 ---
 # <a name="icordebugvariablehomegetslotindex-method"></a>ICorDebugVariableHome :: GetSlotIndex, méthode
 Obtient l’index d’emplacement managé d’une variable locale.  
@@ -33,22 +33,22 @@ HRESULT GetSlotIndex(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pSlotIndex`  
  à Pointeur vers l’index d’emplacement d’une variable locale.  
   
 ## <a name="return-value"></a>Valeur de retour  
  La méthode retourne les valeurs suivantes.  
   
-|valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`S_OK`|L’appel de méthode a retourné une valeur d’index d’emplacement dans `pSlotIndex`.|  
-|`E_FAIL`|L’instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) actuelle représente un argument de fonction.|  
+|`E_FAIL`|L’instance [ICorDebugVariableHome](icordebugvariablehome-interface.md) actuelle représente un argument de fonction.|  
   
 ## <a name="remarks"></a>Notes  
  L’index d’emplacement peut être utilisé pour récupérer les métadonnées de cette variable locale.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -59,4 +59,4 @@ HRESULT GetSlotIndex(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugVariableHome, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHome, interface](icordebugvariablehome-interface.md)

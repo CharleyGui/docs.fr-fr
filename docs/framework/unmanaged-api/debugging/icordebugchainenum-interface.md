@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 6639335c-48e1-4e74-a4f3-70a6a0f54af1
 topic_type:
 - apiref
-ms.openlocfilehash: 63588a3d33577ff58c99e796e8e5453d2a6a9381
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1f94e2e1f6b376a1998ba4fbcc940147eb16272a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123810"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784208"
 ---
 # <a name="icordebugchainenum-interface"></a>ICorDebugChainEnum, interface
 
@@ -29,14 +29,14 @@ Implémente les méthodes ICorDebugEnum et énumère les tableaux ICorDebugChain
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugchainenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorDebugChain` à partir de l’énumération, en commençant à la position actuelle.|  
+|[Next, méthode](icordebugchainenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorDebugChain` à partir de l’énumération, en commençant à la position actuelle.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -47,4 +47,4 @@ Implémente les méthodes ICorDebugEnum et énumère les tableaux ICorDebugChain
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

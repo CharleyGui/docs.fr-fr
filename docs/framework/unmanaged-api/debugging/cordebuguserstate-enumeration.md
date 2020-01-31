@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 5f6c2bcd-8102-4e3b-abc5-86ab0bd62def
 topic_type:
 - apiref
-ms.openlocfilehash: d0394d511197c8d0aaa366ce7b791216a3d226bc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c142b9656af2031b10de239645da76835c435655
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120193"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789223"
 ---
 # <a name="cordebuguserstate-enumeration"></a>CorDebugUserState, énumération
 Indique l'état de l'utilisateur d'un thread.  
@@ -40,9 +40,9 @@ typedef enum CorDebugUserState {
 } CorDebugUserState;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|valeur|Description|  
+|Value|Description|  
 |-----------|-----------------|  
 |`USER_STOP_REQUESTED`|Un arrêt du thread a été demandé.|  
 |`USER_SUSPEND_REQUESTED`|Une suspension du thread a été demandée.|  
@@ -57,9 +57,9 @@ typedef enum CorDebugUserState {
 ## <a name="remarks"></a>Notes  
  L’état utilisateur d’un thread est l’état que le thread a lorsque le débogueur l’examine. Un thread peut avoir une combinaison d’États utilisateur.  
   
- Utilisez la méthode [ICorDebugThread :: GetUserState,](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-getuserstate-method.md) pour récupérer l’état utilisateur d’un thread.  
+ Utilisez la méthode [ICorDebugThread :: GetUserState,](icordebugthread-getuserstate-method.md) pour récupérer l’état utilisateur d’un thread.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -70,4 +70,4 @@ typedef enum CorDebugUserState {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

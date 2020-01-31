@@ -2,12 +2,12 @@
 title: Ajouts au format csproj pour .NET Core
 description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 9d6a7a388cb51bf08996adc654db5722a5ef1303
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 126f5b10999e65d9715e9b52cb54a2bf1dbd3933
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733337"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787878"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -15,7 +15,7 @@ Ce document décrit les modifications qui ont été ajoutées aux fichiers proje
 
 ## <a name="implicit-package-references"></a>Références de package implicites
 
-Les métapackages sont référencés implicitement en fonction du ou des frameworks cibles spécifiés dans la propriété `<TargetFramework>` ou `<TargetFrameworks>` de votre fichier projet. `<TargetFrameworks>` est ignoré si `<TargetFramework>` est spécifié, indépendamment de l’ordre. Pour plus d’informations, consultez [packages, reconditionnements et frameworks](../packages.md). 
+Les métapackages sont référencés implicitement en fonction du ou des frameworks cibles spécifiés dans la propriété `<TargetFramework>` ou `<TargetFrameworks>` de votre fichier projet. `<TargetFrameworks>` est ignoré si `<TargetFramework>` est spécifié, indépendamment de l’ordre. Pour plus d’informations, consultez [packages, reconditionnements et frameworks](../packages.md).
 
 ```xml
  <PropertyGroup>
@@ -248,7 +248,7 @@ Dans les projets de type SDK, utilisez une cible MSBuild nommée `PreBuild` ou `
 ```
 
 > [!NOTE]
->Vous pouvez utiliser n’importe quel nom pour les cibles MSBuild, mais l’IDE de Visual Studio reconnaît les cibles `PreBuild` et `PostBuild`. nous vous recommandons donc d’utiliser ces noms pour pouvoir modifier les commandes dans l’IDE de Visual Studio. 
+>Vous pouvez utiliser n’importe quel nom pour les cibles MSBuild, mais l’IDE de Visual Studio reconnaît les cibles `PreBuild` et `PostBuild`. nous vous recommandons donc d’utiliser ces noms pour pouvoir modifier les commandes dans l’IDE de Visual Studio.
 
 ## <a name="nuget-metadata-properties"></a>Propriétés de métadonnées NuGet
 
@@ -321,7 +321,7 @@ license-expression =  1*1(simple-expression / compound-expression / UNLICENSED)
 
 Chemin d’un fichier de licence du package, si la licence utilisée n’a pas été attribuée à un identificateur SPDX, ou il s’agit d’une licence personnalisée (sinon, `PackageLicenseExpression` est recommandé).
 
-Remplace `PackageLicenseUrl`, n’est pas combinable avec `PackageLicenseExpression` et exige Visual Studio 15.9.4, le kit SDK .NET 2.1.502 ou 2.2.101, ou une version ultérieure.
+Remplace `PackageLicenseUrl`, ne peut pas être combiné avec `PackageLicenseExpression`et nécessite Visual Studio version 15.9.4 et le kit de développement logiciel (SDK) .NET 2.1.502 ou 2.2.101 ou une version ultérieure.
 
 Vérifiez que le fichier de licence est empaqueté en l’ajoutant explicitement au projet ; voici un exemple d’utilisation :
 
@@ -427,7 +427,7 @@ Les [attributs d’assembly](../../standard/assembly/set-attributes.md) qui figu
 
 ### <a name="properties-per-attribute"></a>Propriétés par attribut
 
-Chaque attribut a une propriété qui contrôle son contenu et une autre pour désactiver sa génération, comme indiqué dans le tableau suivant :
+Comme indiqué dans le tableau suivant, chaque attribut a une propriété qui contrôle son contenu et un autre qui désactive sa génération :
 
 | Attribute                                                      | Les               | Propriété permettant de désactiver                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|

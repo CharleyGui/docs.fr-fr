@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7a191c2a-95ea-4d47-83b0-44de2b632d63
 topic_type:
 - apiref
-ms.openlocfilehash: 28ec18864158641a337ebdea189080ba4247a7c4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d154cf10e60935d12653c70875323079f92ae288
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120519"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791743"
 ---
 # <a name="icordebugstepper2-interface"></a>ICorDebugStepper2, interface
 Prend en charge le débogage uniquement mon code (uniquement mon code).  
@@ -28,14 +28,14 @@ Prend en charge le débogage uniquement mon code (uniquement mon code).
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[SetJMC, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper2-setjmc-method.md)|Définit une valeur qui spécifie si cet effectue des étapes uniquement par le biais du code créé par le développeur d’une application.|  
+|[SetJMC, méthode](icordebugstepper2-setjmc-method.md)|Définit une valeur qui spécifie si cet effectue des étapes uniquement par le biais du code créé par le développeur d’une application.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -46,4 +46,4 @@ Prend en charge le débogage uniquement mon code (uniquement mon code).
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)
