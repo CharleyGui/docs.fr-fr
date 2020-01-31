@@ -1190,7 +1190,7 @@
               href: programming-guide/unsafe-code-pointers/pointer-conversions.md
             - name: Comment utiliser des pointeurs pour copier un tableau d’octets
               href: programming-guide/unsafe-code-pointers/how-to-use-pointers-to-copy-an-array-of-bytes.md
-    - name: "Commentaires de documentation\_XML"
+    - name: Commentaires sur la documentation XML
       items:
         - name: Vue d'ensemble
           displayName: xml documentation comments
