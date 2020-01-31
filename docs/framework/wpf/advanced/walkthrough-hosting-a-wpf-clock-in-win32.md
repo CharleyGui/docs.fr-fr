@@ -7,12 +7,12 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 79f79e42652ca51c409fabb12a572485ad734b35
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1fdc0c9ccf1464d7519a4c5935520de1206ca9bb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744900"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794156"
 ---
 # <a name="walkthrough-host-a-wpf-clock-in-win32"></a>Procédure pas à pas : héberger une horloge WPF dans Win32
 
@@ -86,7 +86,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance,
                      int       nCmdShow)
 ```
 
-Cet attribut indique au common language runtime (CLR) que lorsqu’il initialise le modèle COM (Component Object Model), il doit utiliser un modèle STA (Single-Threaded Apartment), qui est nécessaire pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (et [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)]).
+Cet attribut indique au common language runtime (CLR) que lorsqu’il initialise le modèle COM (Component Object Model), il doit utiliser un modèle STA (Single-Threaded Apartment), qui est nécessaire pour [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] (et Windows Forms).
 
 ## <a name="create-a-windows-presentation-framework-page"></a>Créer une page Windows Presentation Framework
 

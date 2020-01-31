@@ -17,15 +17,15 @@ helpviewer_keywords:
 ms.assetid: 47dbaea4-8857-462e-93ba-fff880fc9e50
 topic_type:
 - apiref
-ms.openlocfilehash: 6c159780b9019127d166e8437ea4ed214284011f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9153503fc114b0e4052265fca7c9399510d687ef
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121265"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792319"
 ---
 # <a name="icordebugprocess5gettypeid-method"></a>ICorDebugProcess5::GetTypeID, méthode
-Convertit une adresse d’objet en un identificateur [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) .  
+Convertit une adresse d’objet en un identificateur de [COR_TYPEID](cor-typeid-structure.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,16 +36,16 @@ HRESULT GetTypeID(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `obj`  
  dans Adresse de l’objet.  
   
  `pId`  
- Pointeur vers la valeur [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) qui identifie l’objet.  
+ Pointeur vers la valeur [COR_TYPEID](cor-typeid-structure.md) qui identifie l’objet.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,5 +56,5 @@ HRESULT GetTypeID(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugProcess5, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess5-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess5, interface](icordebugprocess5-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

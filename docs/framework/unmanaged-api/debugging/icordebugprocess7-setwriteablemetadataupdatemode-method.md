@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 8589bba7-7304-45ba-9e31-7bf43dfd5c19
 topic_type:
 - apiref
-ms.openlocfilehash: 453486c9e3d98ffd6f0dcfa08e7a0a9a1c1d3342
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 35767529d9433764b7eed0b3b4acdd806f399962
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123387"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792179"
 ---
 # <a name="icordebugprocess7setwriteablemetadataupdatemode-method"></a>ICorDebugProcess7::SetWriteableMetadataUpdateMode, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -32,14 +32,14 @@ HRESULT SetWriteableMetadataUpdateMode(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `flags`  
- Valeur d’énumération [writeablemetadataupdatemode,](../../../../docs/framework/unmanaged-api/debugging/writeablemetadataupdatemode-enumeration.md) qui spécifie si les mises à jour en mémoire des métadonnées dans le processus cible sont visibles (`WriteableMetadataUpdateMode::AlwaysShowUpdates`) ou non visibles (`WriteableMetadataUpdateMode::LegacyCompatPolicy`) au débogueur.  
+ Valeur d’énumération [writeablemetadataupdatemode,](writeablemetadataupdatemode-enumeration.md) qui spécifie si les mises à jour en mémoire des métadonnées dans le processus cible sont visibles (`WriteableMetadataUpdateMode::AlwaysShowUpdates`) ou non visibles (`WriteableMetadataUpdateMode::LegacyCompatPolicy`) au débogueur.  
   
 ## <a name="remarks"></a>Notes  
  Les mises à jour apportées aux métadonnées du processus cible peuvent provenir de Modifier et continuer, d'un profileur ou de <xref:System.Reflection.Emit?displayProperty=nameWithType>.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -50,5 +50,5 @@ HRESULT SetWriteableMetadataUpdateMode(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugProcess7, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess7-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugProcess7, interface](icordebugprocess7-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

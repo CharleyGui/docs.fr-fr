@@ -1,5 +1,5 @@
 ---
-title: Accès plus sécurisé aux fichiers et aux données dans les Windows Forms
+title: Accès plus sécurisé aux fichiers et aux données
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - file access [Windows Forms]
 - security [Windows Forms], data access
 ms.assetid: 3cd3e55b-2f5e-40dd-835d-f50f7ce08967
-ms.openlocfilehash: 94b165757de636b2570798a21fd7c483264e37c5
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 49ba1919f68f35e9d72b012540b785e05c307c39
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69949950"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743751"
 ---
 # <a name="more-secure-file-and-data-access-in-windows-forms"></a>Accès plus sécurisé aux fichiers et aux données dans les Windows Forms
 Le .NET Framework utilise des autorisations pour protéger les ressources et les données. L'emplacement où votre application peut lire ou écrire des données dépend des autorisations qui lui sont accordées. Quand votre application s'exécute dans un environnement de confiance partielle, vous n'avez peut-être pas accès à vos données ou vous devrez peut-être modifier la manière dont vous accédez aux données.  
@@ -29,7 +29,7 @@ Le .NET Framework utilise des autorisations pour protéger les ressources et les
 > Par défaut, les outils qui génèrent des déploiements ClickOnce ont par défaut ces déploiements qui demandent une confiance totale à partir des ordinateurs sur lesquels ils s’exécutent. Si vous souhaitez bénéficier des avantages de sécurité supplémentaires liés à l’exécution en mode de confiance partielle, vous devez modifier cette valeur par défaut dans Visual Studio ou dans l’un des outils de SDK Windows (Mage. exe ou MageUI. exe). Pour plus d’informations sur la sécurité Windows Forms et sur la façon de déterminer le niveau de confiance approprié pour votre application, consultez [vue d’ensemble de la sécurité dans Windows Forms](security-in-windows-forms-overview.md).  
   
 ## <a name="file-access"></a>Accès aux fichiers  
- La <xref:System.Security.Permissions.FileIOPermission> classe contrôle l’accès aux fichiers et aux dossiers dans le .NET Framework. Par défaut, le système de sécurité n'accorde pas <xref:System.Security.Permissions.FileIOPermission> aux environnements de confiance partielle tels que les zones Intranet local et Internet. Cependant, une application qui nécessite l'accès aux fichiers peut quand même fonctionner dans ces environnements si vous modifiez la conception de votre application ou si vous utilisez des méthodes différentes pour accéder aux fichiers. Par défaut, la zone Intranet local est autorisée à accéder au même site et au même répertoire, à se reconnecter au site de son origine et à lire à partir de son répertoire d'installation. Par défaut, la zone Internet est autorisée uniquement à se reconnecter au site de son origine.  
+ La classe <xref:System.Security.Permissions.FileIOPermission> contrôle l’accès aux fichiers et aux dossiers dans le .NET Framework. Par défaut, le système de sécurité n'accorde pas <xref:System.Security.Permissions.FileIOPermission> aux environnements de confiance partielle tels que les zones Intranet local et Internet. Cependant, une application qui nécessite l'accès aux fichiers peut quand même fonctionner dans ces environnements si vous modifiez la conception de votre application ou si vous utilisez des méthodes différentes pour accéder aux fichiers. Par défaut, la zone Intranet local est autorisée à accéder au même site et au même répertoire, à se reconnecter au site de son origine et à lire à partir de son répertoire d'installation. Par défaut, la zone Internet est autorisée uniquement à se reconnecter au site de son origine.  
   
 ### <a name="user-specified-files"></a>Fichiers spécifiés par l'utilisateur  
  L'une des façons de gérer le fait de ne pas avoir l'autorisation d'accès aux fichiers consiste à inviter l'utilisateur à fournir des informations de fichiers spécifiques à l'aide de la classe <xref:System.Windows.Forms.OpenFileDialog> ou <xref:System.Windows.Forms.SaveFileDialog>. Cette interaction utilisateur permet de fournir une garantie que l'application ne peut pas remplacer des fichiers importants ou charger des fichiers privés à des fins malveillantes. Les méthodes <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> et <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> fournissent un accès en lecture et en écriture aux fichiers en ouvrant le flux de fichier pour le fichier spécifié par l'utilisateur. Ces méthodes aident aussi à protéger les fichiers de l’utilisateur en masquant leur chemin d’accès.  
@@ -138,7 +138,7 @@ private void ButtonOpen_Click(object sender, System.EventArgs e)
 ### <a name="other-files"></a>Autres fichiers  
  Vous devrez parfois lire ou écrire dans des fichiers que l'utilisateur ne spécifie pas, par exemple quand vous devrez conserver les paramètres d'application. Dans les zones Intranet local et Internet, votre application ne sera pas autorisée à stocker des données dans un fichier local. Toutefois, elle pourra stocker des données dans un stockage isolé. Le stockage isolé est un compartiment de données abstrait (et non un emplacement de stockage spécifique) composé d'au moins un fichier de stockage isolé, appelé magasin, contenant les emplacements de répertoire réels où sont stockées les données. Les autorisations d'accès aux fichiers telles que <xref:System.Security.Permissions.FileIOPermission> ne sont pas nécessaires. Au lieu de cela, la classe <xref:System.Security.Permissions.IsolatedStoragePermission> contrôle les autorisations pour le stockage isolé. Par défaut, les applications qui s'exécutent dans les zones Intranet local et Internet peuvent stocker des données à l'aide du stockage isolé. Toutefois, des paramètres tels que les quotas de disque peuvent varier. Pour plus d’informations sur le stockage isolé, consultez [stockage isolé](../../standard/io/isolated-storage.md).  
   
- L'exemple suivant utilise le stockage isolé pour écrire des données dans un fichier situé dans un magasin. Cet exemple nécessite <xref:System.Security.Permissions.IsolatedStorageFilePermission> et la valeur d'énumération <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser>. Il illustre comment lire et écrire certaines valeurs de propriétés du contrôle <xref:System.Windows.Forms.Button> dans un fichier dans du stockage isolé. La fonction `Read` est appelée après le démarrage de l'application et la fonction `Write` est appelée avant la fin de l'application. L’exemple requiert que les `Read` fonctions `Write` et existent en tant que membres <xref:System.Windows.Forms.Form> d’un qui <xref:System.Windows.Forms.Button> contient un `MainButton`contrôle nommé.  
+ L'exemple suivant utilise le stockage isolé pour écrire des données dans un fichier situé dans un magasin. Cet exemple nécessite <xref:System.Security.Permissions.IsolatedStorageFilePermission> et la valeur d'énumération <xref:System.Security.Permissions.IsolatedStorageContainment.DomainIsolationByUser>. Il illustre comment lire et écrire certaines valeurs de propriétés du contrôle <xref:System.Windows.Forms.Button> dans un fichier dans du stockage isolé. La fonction `Read` est appelée après le démarrage de l'application et la fonction `Write` est appelée avant la fin de l'application. L’exemple requiert que les fonctions `Read` et `Write` existent en tant que membres d’un <xref:System.Windows.Forms.Form> qui contient un contrôle <xref:System.Windows.Forms.Button> nommé `MainButton`.  
   
 ```vb  
 ' Reads the button options from the isolated storage. Uses Default values   

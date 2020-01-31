@@ -2,12 +2,12 @@
 title: Consommation de flux OData à partir d’un workflow-WF
 ms.date: 03/30/2017
 ms.assetid: 1b26617c-53e9-476a-81af-675c36d95919
-ms.openlocfilehash: c9780200d9b7c7bc89797b3c16b22bc38440fccc
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: ceac2c2d07351fcb79e2345068f07fa22f356411
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802659"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743793"
 ---
 # <a name="consuming-odata-feeds-from-a-workflow"></a>Consommation de flux OData à partir d’un flux de travail
 
@@ -15,7 +15,7 @@ WCF Data Services est un composant du .NET Framework qui vous permet de créer d
 
 ## <a name="using-the-sample-northwind-odata-service"></a>Utilisation de l’exemple de service OData Northwind
 
-Les exemples de cette rubrique utilisent l’exemple de service de données Northwind situé dans <https://services.odata.org/Northwind/Northwind.svc/>. Ce service fait partie du [SDK OData](https://www.odata.org/wp-content/uploads/sites/21/odatasdkcodesamples.zip) et fournit un accès en lecture seule à l’exemple de base de données Northwind. Si vous souhaitez un accès en écriture ou un service de données WCF local, vous pouvez suivre la procédure de [démarrage rapide WCF Data Services](../data/wcf/quickstart-wcf-data-services.md) pour créer un service OData local qui donne accès à la base de données Northwind. Si vous suivez la procédure de démarrage rapide, remplacez l'URI local par celui fourni dans l'exemple de code de cette rubrique.
+Les exemples de cette rubrique utilisent l’exemple de service de données Northwind situé dans <https://services.odata.org/Northwind/Northwind.svc/>. Ce service fait partie du [SDK OData](https://www.odata.org/ecosystem/#sdk) et fournit un accès en lecture seule à l’exemple de base de données Northwind. Si vous souhaitez un accès en écriture ou un service de données WCF local, vous pouvez suivre la procédure de [démarrage rapide WCF Data Services](../data/wcf/quickstart-wcf-data-services.md) pour créer un service OData local qui donne accès à la base de données Northwind. Si vous suivez la procédure de démarrage rapide, remplacez l'URI local par celui fourni dans l'exemple de code de cette rubrique.
 
 ## <a name="consuming-an-odata-feed-using-the-client-libraries"></a>Consommation d’un flux OData à l’aide des bibliothèques clientes
 
@@ -41,7 +41,7 @@ Pour résoudre les problèmes de latence possibles qui peuvent se produire lors 
 
 ### <a name="using-client-library-asynchronous-methods"></a>Utilisation des méthodes asynchrones de la bibliothèque cliente
 
-La classe <xref:System.Data.Services.Client.DataServiceQuery%601> fournit les méthodes <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> et <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> pour interroger un service OData de façon asynchrone. Ces méthodes peuvent être appelées à partir des substitutions <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> et <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> d'une classe dérivée <xref:System.Activities.AsyncCodeActivity> . Si la substitution <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> retourne, le workflow peut être inactif (mais pas persistant), et si la tâche asynchrone est terminée, la méthode <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> est appelée par le runtime.
+La classe <xref:System.Data.Services.Client.DataServiceQuery%601> fournit les méthodes <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> et <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> pour interroger un service OData de façon asynchrone. Ces méthodes peuvent être appelées à partir des substitutions <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> et <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> d'une classe dérivée <xref:System.Activities.AsyncCodeActivity> . Lorsque le <xref:System.Activities.AsyncCodeActivity> <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> substitution est retourné, le workflow peut devenir inactif (mais pas persistant) et, lorsque le travail asynchrone est terminé, <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> est appelé par le Runtime.
 
 Dans l'exemple suivant, une activité `OrdersByCustomer` est définie et contient deux arguments d'entrée. L'argument `CustomerId` représente le client qui identifie les commandes à retourner, et l'argument `ServiceUri` représente l'URI du service Odata à interroger. Comme l'activité dérive de `AsyncCodeActivity<IEnumerable<Order>>` , il y a aussi un argument de sortie <xref:System.Activities.Activity%601.Result%2A> , utilisé pour retourner le résultat de la requête. La substitution <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> crée une requête LINQ qui sélectionne toutes les commandes du client spécifié. Cette requête est spécifiée comme <xref:System.Activities.AsyncCodeActivityContext.UserState%2A> du <xref:System.Activities.AsyncCodeActivityContext>passé, puis la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> de la requête est appelée. Notez que le rappel et l'état qui sont passés à la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.BeginExecute%2A> de la requête sont ceux qui sont passés à la méthode <xref:System.Activities.AsyncCodeActivity.BeginExecute%2A> de l'activité. Lorsque l'exécution de la requête est terminée, la méthode <xref:System.Activities.AsyncCodeActivity.EndExecute%2A> de l'activité est appelée. La requête est récupérée dans la propriété <xref:System.Activities.AsyncCodeActivityContext.UserState%2A>, puis la méthode <xref:System.Data.Services.Client.DataServiceQuery%601.EndExecute%2A> de la requête est appelée. Cette méthode retourne un <xref:System.Collections.Generic.IEnumerable%601> du type d'entité spécifié, dans ce cas `Order`. `IEnumerable<Order>` étant le type générique de <xref:System.Activities.AsyncCodeActivity%601>, ce <xref:System.Collections.IEnumerable> est défini comme <xref:System.Activities.Activity%601.Result%2A> <xref:System.Activities.OutArgument%601> de l'activité.
 

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 70261da5-5933-4e25-9de0-ddf51cba56cc
 topic_type:
 - apiref
-ms.openlocfilehash: c7ced05692e3030bace10dab9a6793a29fac6c26
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 73d122b1ffa890bfa43f8eef7e24595ac0d26ebe
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444841"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861786"
 ---
 # <a name="icorprofilerinfo4requestrevert-method"></a>ICorProfilerInfo4::RequestRevert, méthode
 Rétablit les versions d'origine de toutes les instances des fonctions spécifiées.  
@@ -35,7 +35,7 @@ HRESULT RequestRevert (
    [out, size_is(cFunctions)]  HRESULT status[]);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cFunctions`  
  [in] Nombre de fonctions à rétablir.  
   
@@ -54,9 +54,9 @@ HRESULT RequestRevert (
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|Une tentative de rétablissement de toutes les demandes a été effectuée ; toutefois, le tableau d'états retourné doit être examiné pour déterminer les fonctions qui ont été correctement rétablies.|  
-|CORPROF_E_CALLBACK4_REQUIRED|Le profileur doit implémenter l’interface [ICorProfilerCallback4](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md) pour que cet appel soit pris en charge.|  
-|CORPROF_E_REJIT_NOT_ENABLED|La recompilation juste-à-temps n'a pas été activée. Vous devez activer la recompilation JIT pendant l’initialisation à l’aide de la méthode [ICorProfilerInfo :: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) pour définir l’indicateur `COR_PRF_ENABLE_REJIT`.|  
-|E_INVALIDARG|`cFunctions` a la valeur 0 ou `moduleIds` ou `methodIds` est `NULL`.|  
+|CORPROF_E_CALLBACK4_REQUIRED|Le profileur doit implémenter l’interface [ICorProfilerCallback4](icorprofilercallback4-interface.md) pour que cet appel soit pris en charge.|  
+|CORPROF_E_REJIT_NOT_ENABLED|La recompilation juste-à-temps n'a pas été activée. Vous devez activer la recompilation JIT pendant l’initialisation à l’aide de la méthode [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md) pour définir l’indicateur `COR_PRF_ENABLE_REJIT`.|  
+|E_INVALIDARG|`cFunctions` est égal à 0, ou `moduleIds` ou `methodIds` a la valeur `NULL`.|  
 |E_OUTOFMEMORY|Le CLR n'a pas pu terminer la demande en raison d'une mémoire insuffisante.|  
   
 ## <a name="status-hresults"></a>HRESULT d'état  
@@ -68,12 +68,12 @@ HRESULT RequestRevert (
 |CORPROF_E_DATAINCOMPLETE|Le module n'est pas encore totalement chargé ou il est en cours de déchargement.|  
 |CORPROF_E_MODULE_IS_DYNAMIC|Le module spécifié a été généré dynamiquement (par exemple, par `Reflection.Emit`). Par conséquent, il n'est pas pris en charge par cette méthode.|  
 |CORPROF_E_ACTIVE_REJIT_REQUEST_NOT_FOUND|Le CLR ne peut pas rétablir la fonction spécifiée, car une demande de recompilation active correspondante est introuvable. La recompilation n'a jamais demandée ou la fonction a déjà été rétablie.|  
-|Autres|Le système d'exploitation a retourné un échec en dehors du contrôle du CLR. Par exemple, en cas d'échec d'un appel système visant à modifier la protection d'accès d'une page de mémoire, l'erreur du système d'exploitation s'affiche.|  
+|Autre|Le système d'exploitation a retourné un échec en dehors du contrôle du CLR. Par exemple, en cas d'échec d'un appel système visant à modifier la protection d'accès d'une page de mémoire, l'erreur du système d'exploitation s'affiche.|  
   
 ## <a name="remarks"></a>Notes  
  Lors du prochain appel des instances de la fonction rétablie, les versions d'origine des fonctions seront exécutées. Si une fonction est déjà en cours d'exécution, il termine l'exécution de la version en cours d'exécution.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -84,6 +84,6 @@ HRESULT RequestRevert (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo4, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo4, interface](icorprofilerinfo4-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

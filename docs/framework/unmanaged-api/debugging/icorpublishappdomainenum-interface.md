@@ -14,26 +14,26 @@ helpviewer_keywords:
 ms.assetid: bb798c56-042e-475d-a245-b6fac36d0c07
 topic_type:
 - apiref
-ms.openlocfilehash: cbe2aa48a8b67b0b6e88f7b5267bc70848fe3cec
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 61cac0922423acabef3d47618d98ddf082d071da
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140329"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790676"
 ---
 # <a name="icorpublishappdomainenum-interface"></a>ICorPublishAppDomainEnum, interface
-Sous-classe de l’interface [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md) qui fournit des méthodes pour parcourir une collection d’objets [ICorPublishAppDomain](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomain-interface.md) qui existent actuellement dans un processus.  
+Sous-classe de l’interface [ICorPublishEnum](icorpublishenum-interface.md) qui fournit des méthodes pour parcourir une collection d’objets [ICorPublishAppDomain](icorpublishappdomain-interface.md) qui existent actuellement dans un processus.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Next, méthode](../../../../docs/framework/unmanaged-api/debugging/icorpublishappdomainenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorPublishAppDomain` de la collection, en commençant à la position actuelle.|  
+|[Next, méthode](icorpublishappdomainenum-next-method.md)|Obtient le nombre spécifié d’instances de `ICorPublishAppDomain` de la collection, en commençant à la position actuelle.|  
   
 ## <a name="remarks"></a>Notes  
- L’interface `ICorPublishAppDomainEnum` implémente les méthodes de l’interface abstraite, [ICorPublishEnum](../../../../docs/framework/unmanaged-api/debugging/icorpublishenum-interface.md).  
+ L’interface `ICorPublishAppDomainEnum` implémente les méthodes de l’interface abstraite, [ICorPublishEnum](icorpublishenum-interface.md).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
@@ -44,5 +44,5 @@ Sous-classe de l’interface [ICorPublishEnum](../../../../docs/framework/unmana
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [CorpubPublish, coclasse](../../../../docs/framework/unmanaged-api/debugging/corpubpublish-coclass.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [CorpubPublish, coclasse](corpubpublish-coclass.md)

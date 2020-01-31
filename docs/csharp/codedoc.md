@@ -1,15 +1,15 @@
 ---
 title: Documentation de votre code avec des commentaires XML
 description: Découvrez comment documenter votre code avec des commentaires de documentation XML et générer un fichier de documentation XML au moment de la compilation.
-ms.date: 02/14/2017
+ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: 6aa52030e20f61b26311347a57629658ebe0e609
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: ef0d22e0ee7faa3ba51da6b44cf1827f19baf4f1
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713939"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787823"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
@@ -170,7 +170,13 @@ Créez une liste non triée de toutes les opérations mathématiques prises en c
 
 Vous pouvez créer une liste triée ou un tableau en remplaçant l’attribut `type` par `number` ou `table`, respectivement.
 
-### <a name="put-it-all-together"></a>Assemblage
+## <a name="inheritdoc"></a>\<inheritdoc >
+
+Vous pouvez utiliser la balise `<inheritdoc>` pour hériter des commentaires XML des classes de base, des interfaces et des méthodes similaires. Cela élimine la copie et le collage indésirables de commentaires XML en double et conserve automatiquement les commentaires XML synchronisés.
+
+[!code-csharp-interactive[InheritDoc Tag](~/samples/snippets/csharp/concepts/codedoc/inheritdoc-tag.cs)]
+
+### <a name="put-it-all-together"></a>Rassemblez tous les éléments
 
 Si vous avez suivi ce didacticiel et appliqué les balises à votre code au besoin, votre code doit maintenant ressembler à ce qui suit :
 

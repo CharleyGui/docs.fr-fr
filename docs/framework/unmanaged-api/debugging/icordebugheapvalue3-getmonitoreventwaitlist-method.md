@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 035a9035-ac66-4953-b48a-99652b42b7fe
 topic_type:
 - apiref
-ms.openlocfilehash: 0fbff178efd4d0dff3593907b3d40e946be2ff6e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 15900fab59d172ada67d8aefeab698e1b44f808e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121302"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794388"
 ---
 # <a name="icordebugheapvalue3getmonitoreventwaitlist-method"></a>ICorDebugHeapValue3::GetMonitorEventWaitList, méthode
 Fournit une liste triée des threads mis en file d’attente sur l’événement associé à un verrou d’analyse.  
@@ -33,7 +33,7 @@ HRESULT GetMonitorEventWaitList (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ppThreadEnum`  
  à Énumérateur ICorDebugThreadEnum qui fournit la liste ordonnée de threads.  
   
@@ -58,7 +58,7 @@ HRESULT GetMonitorEventWaitList (
   
  Si une erreur se produit et qu’il n’est pas possible de déterminer laquelle, le cas échéant, les threads attendent le moniteur, la méthode retourne un HRESULT qui indique un échec.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -69,5 +69,5 @@ HRESULT GetMonitorEventWaitList (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

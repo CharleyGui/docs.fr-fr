@@ -1,5 +1,5 @@
 ---
-title: Sécurité (WPF)
+title: Sécurité
 ms.date: 03/30/2017
 helpviewer_keywords:
 - XAML files [WPF], sandbox behavior
@@ -13,12 +13,12 @@ helpviewer_keywords:
 - XBAP security [WPF]
 - Internet Explorer security settings [WPF]
 ms.assetid: ee1baea0-3611-4e36-9ad6-fcd5205376fb
-ms.openlocfilehash: 612b99354310c18030cefce4e6f02fab8ed20f83
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: a49634fd955b0dc1f4cac5c785d49c24d16bbc60
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636768"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868042"
 ---
 # <a name="security-wpf"></a>Sécurité (WPF)
 <a name="introduction"></a>Lors du développement d’applications autonomes et hébergées par un navigateur Windows Presentation Foundation (WPF), vous devez prendre en compte le modèle de sécurité. Les applications autonomes WPF s’exécutent avec des autorisations illimitées (jeu d’autorisations**FullTrust** de l’autorité de certification), qu’elles soient déployées à l’aide de Windows Installer (. msi), xcopy ou ClickOnce. Le déploiement d’applications WPF autonomes de confiance partielle avec ClickOnce n’est pas pris en charge. Toutefois, une application hôte de confiance totale peut créer un <xref:System.AppDomain> de confiance partielle à l’aide du modèle de complément .NET Framework. Pour plus d’informations, consultez [vue d’ensemble des compléments WPF](./app-development/wpf-add-ins-overview.md).  
@@ -184,7 +184,7 @@ ms.locfileid: "75636768"
  Les contrôles de fonctionnalités sont appliqués par le processus qui instancie l’objet ActiveX WebBrowser. Par conséquent, si vous créez une application autonome qui peut accéder à un contenu non approuvé, vous devez sérieusement envisager d’activer des contrôles de fonctionnalités supplémentaires.  
   
 > [!NOTE]
-> Cette recommandation est basée sur les recommandations générales sur la sécurité des hôtes MSHTML et SHDOCVW. Pour plus d’informations, consultez [le Forum aux questions sur la sécurité de l’hôte MSHTML : partie I sur II](https://msrc-blog.microsoft.com/archive/2009/04/02/the-mshtml-host-security-faq.aspx) et [le faq sur la sécurité de l’hôte MSHTML : partie II de II](https://msrc-blog.microsoft.com/archive/2009/04/03/the-mshtml-host-security-faq-part-ii-of-ii.aspx).  
+> Cette recommandation est basée sur les recommandations générales sur la sécurité des hôtes MSHTML et SHDOCVW. Pour plus d’informations, consultez [le Forum aux questions sur la sécurité de l’hôte MSHTML : partie I sur II](https://msrc-blog.microsoft.com/2009/04/02/the-mshtml-host-security-faq-part-i-of-ii/) et [le faq sur la sécurité de l’hôte MSHTML : partie II de II](https://msrc-blog.microsoft.com/2009/04/03/the-mshtml-host-security-faq-part-ii-of-ii/).  
   
  Pour votre fichier exécutable, envisagez d’activer les contrôles de fonctionnalités suivants en définissant la valeur de Registre sur 1.  
   

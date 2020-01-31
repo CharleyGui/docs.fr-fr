@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 78b0f14f-2fae-4e63-8412-4df119ee8468
 topic_type:
 - apiref
-ms.openlocfilehash: f40030a2034057e83de51a21655a686f30b9ee88
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e7125d923fb1d3757bb4ca53f5a7db806b241dd9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137457"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781524"
 ---
 # <a name="icordebugmanagedcallback2exception-method"></a>ICorDebugManagedCallback2::Exception, méthode
 Notifie le débogueur qu’une recherche d’un gestionnaire d’exceptions a démarré.  
@@ -38,7 +38,7 @@ HRESULT Exception (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread sur lequel l’exception a été levée.  
   
@@ -55,7 +55,7 @@ HRESULT Exception (
  dans Valeur de l’énumération CorDebugExceptionCallbackType, qui spécifie le type de ce rappel d’exception.  
   
  `dwFlags`  
- dans Valeur de l’énumération [CorDebugExceptionFlags,](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionflags-enumeration.md) qui spécifie des informations supplémentaires sur l’exception.  
+ dans Valeur de l’énumération [CorDebugExceptionFlags,](cordebugexceptionflags-enumeration.md) qui spécifie des informations supplémentaires sur l’exception.  
   
 ## <a name="remarks"></a>Notes  
  Le rappel `Exception` est appelé à différents moments pendant la phase de recherche du processus de gestion des exceptions. Autrement dit, il peut être appelé plusieurs fois tout en déroulant une exception.  
@@ -71,7 +71,7 @@ HRESULT Exception (
 |DEBUG_EXCEPTION_CATCH_HANDLER_FOUND|Frame qui contient le gestionnaire catch.|Offset MSIL (Microsoft Intermediate Language) du début du gestionnaire catch.|  
 |DEBUG_EXCEPTION_UNHANDLED|NULL|Non défini.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -82,5 +82,5 @@ HRESULT Exception (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2, interface](icordebugmanagedcallback2-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

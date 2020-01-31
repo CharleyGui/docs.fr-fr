@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1bf00b42-69da-4019-91b3-bf88026e83fb
 topic_type:
 - apiref
-ms.openlocfilehash: 0bb2ba56ed93af7861e53d683a0a777107578a6b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 626ecddae8ba91d1830d98210208f9fbee36f073
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449753"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868584"
 ---
 # <a name="icorprofilerinfo3enummodules-method"></a>ICorProfilerInfo3::EnumModules, méthode
 Retourne un énumérateur qui fournit des méthodes pour itérer séquentiellement au sein d’une collection de modules managés chargés dans l’application.  
@@ -31,13 +31,13 @@ Retourne un énumérateur qui fournit des méthodes pour itérer séquentielleme
 HRESULT EnumModules([out] ICorProfilerModuleEnum** ppEnum);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ppEnum`  
- à Pointeur vers une interface [ICorProfilerModuleEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilermoduleenum-interface.md) .  
+ à Pointeur vers une interface [ICorProfilerModuleEnum](icorprofilermoduleenum-interface.md) .  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -48,7 +48,7 @@ HRESULT EnumModules([out] ICorProfilerModuleEnum** ppEnum);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerFunctionEnum, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md)
-- [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerFunctionEnum, interface](icorprofilerfunctionenum-interface.md)
+- [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

@@ -15,15 +15,15 @@ helpviewer_keywords:
 - XPSDrv-based printers
 - GDI print path [WPF]
 ms.assetid: 0de8ac41-9aa6-413d-a121-7aa6f41539b1
-ms.openlocfilehash: 3f99b0e93e6b16ac66f6869c284c1119ddfc3751
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: de9f4b5c0a817d010c7510395b4e5c09ed0a9865
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740301"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794282"
 ---
 # <a name="printing-overview"></a>Vue d'ensemble de l'impression
-Avec Microsoft .NET Framework, les développeurs d’applications qui utilisent Windows Presentation Foundation (WPF) disposent d’un nouvel ensemble riche d’API de gestion de système d’impression et d’impression. Avec Windows Vista, certaines de ces améliorations du système d’impression sont également disponibles pour les développeurs qui créent des applications de [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et des développeurs utilisant du code non managé. Le nouveau format de fichier XPS (XML Paper Specification) et le chemin d’impression XPS sont au cœur de cette nouvelle fonctionnalité.  
+Avec Microsoft .NET Framework, les développeurs d’applications qui utilisent Windows Presentation Foundation (WPF) disposent d’un nouvel ensemble riche d’API de gestion de système d’impression et d’impression. Avec Windows Vista, certaines de ces améliorations du système d’impression sont également disponibles pour les développeurs qui créent des applications de Windows Forms et des développeurs utilisant du code non managé. Le nouveau format de fichier XPS (XML Paper Specification) et le chemin d’impression XPS sont au cœur de cette nouvelle fonctionnalité.  
   
  Cette rubrique contient les sections suivantes.  
   
@@ -143,7 +143,7 @@ Pour les applications qui ne requièrent pas de fonctionnalité ou de prise en c
 - <xref:System.Printing.PrintCapabilities>
 - <xref:System.Printing.PrintServer>
 - <xref:System.Printing.PrintQueue>
-- [Guides pratiques](printing-how-to-topics.md)
+- [Rubriques pratiques](printing-how-to-topics.md)
 - [Documents dans WPF](documents-in-wpf.md)
 - [Documents XPS](/windows/desktop/printdocs/documents)
 - [Sérialisation et stockage de documents](document-serialization-and-storage.md)

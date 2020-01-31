@@ -1,29 +1,29 @@
 ---
-title: ICorDebugDataTarget3 (interface)
+title: ICorDebugDataTarget3, interface
 ms.date: 03/30/2017
 ms.assetid: f477af85-994f-4df0-ae78-404ed252bf49
-ms.openlocfilehash: 5f91db291396589a916933bdc7c2a2390dd61a5d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 04e7b9a064d4a06a06b8a1518f06092ba79a3561
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136669"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783490"
 ---
-# <a name="icordebugdatatarget3-interface"></a>ICorDebugDataTarget3 (interface)
-Étend logiquement l’interface [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) pour fournir des informations sur les modules chargés.  
+# <a name="icordebugdatatarget3-interface"></a>ICorDebugDataTarget3, interface
+Étend logiquement l’interface [ICorDebugDataTarget](icordebugdatatarget-interface.md) pour fournir des informations sur les modules chargés.  
   
 ## <a name="method"></a>Méthode  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetLoadedModules, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-getloadedmodules-method.md)|Obtient la liste des modules qui ont été chargés jusqu'à présent.|  
+|[GetLoadedModules, méthode](icordebugdatatarget3-getloadedmodules-method.md)|Obtient la liste des modules qui ont été chargés jusqu'à présent.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface est uniquement disponible avec .NET Native. Si vous implémentez cette interface pour des scénarios ICorDebug en dehors de .NET Native, le Common Language Runtime ignore cette interface.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -34,5 +34,5 @@ ms.locfileid: "73136669"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

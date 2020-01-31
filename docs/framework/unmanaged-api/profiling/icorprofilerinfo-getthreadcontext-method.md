@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 79446216-4b8b-484c-8fe3-e87dbf9df2fd
 topic_type:
 - apiref
-ms.openlocfilehash: bc4643f1c90b3ea4d3b561249a4e76ff304737bd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f8eff85392d355ea54980ac6b29e3c4cebb1b240
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438765"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76869593"
 ---
 # <a name="icorprofilerinfogetthreadcontext-method"></a>ICorProfilerInfo::GetThreadContext, méthode
 Obtient l’identité de contexte actuellement associée au thread spécifié.  
@@ -33,14 +33,14 @@ HRESULT GetThreadContext(
     [out] ContextID *pContextId);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadId`  
  dans ID du thread.  
   
  `pContextId`  
  à Pointeur vers l’ID de contexte actuellement associé au thread spécifié. Si aucun contexte n’est actuellement associé au thread, cette fonction retournera CORPROF_E_DATAINCOMPLETE.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -51,4 +51,4 @@ HRESULT GetThreadContext(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

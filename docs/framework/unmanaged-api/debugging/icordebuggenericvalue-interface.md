@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc14f408-b359-4c8c-ade2-888ccdf7261b
 topic_type:
 - apiref
-ms.openlocfilehash: 312b8b005998da44feb5ae24ab4a0a17bb948a3f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e60d4b128bf03ff81863e0c95815b2c204807583
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138568"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794469"
 ---
 # <a name="icordebuggenericvalue-interface"></a>ICorDebugGenericValue, interface
 
@@ -29,8 +29,8 @@ Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Ce
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-getvalue-method.md)|Copie la valeur dans la mémoire tampon spécifiée.|  
-|[SetValue, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuggenericvalue-setvalue-method.md)|Copie une nouvelle valeur à partir de la mémoire tampon spécifiée.|  
+|[GetValue, méthode](icordebuggenericvalue-getvalue-method.md)|Copie la valeur dans la mémoire tampon spécifiée.|  
+|[SetValue, méthode](icordebuggenericvalue-setvalue-method.md)|Copie une nouvelle valeur à partir de la mémoire tampon spécifiée.|  
   
 ## <a name="remarks"></a>Notes  
  `ICorDebugGenericValue` est une sous-interface, car elle n’est pas accessible à distance.  
@@ -42,7 +42,7 @@ Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Ce
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -53,4 +53,4 @@ Sous-classe de « ICorDebugValue » qui s’applique à toutes les valeurs. Ce
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

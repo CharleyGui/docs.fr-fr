@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 249f9892-b5a9-41e1-b329-28a925904df6
 topic_type:
 - apiref
-ms.openlocfilehash: db3c3d38e0200f9849c84d7605a436816d56b813
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2d99c6d8bd2af02456c6a90143b524c337483868
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427421"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866893"
 ---
 # <a name="functiontailcall2-function"></a>FunctionTailcall2 (fonction)
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction et fournit des informations sur le frame de pile.  
@@ -34,20 +34,24 @@ void __stdcall FunctionTailcall2 (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `funcId`  
- dans Identificateur de la fonction en cours d’exécution qui va effectuer un appel tail.  
+## <a name="parameters"></a>Parameters
+
+- `funcId`
+
+  \[in] identificateur de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
+
+- `clientData`
+
+  \[dans] identificateur de fonction remappée, que le profileur a précédemment spécifié via le [FunctionIDMapper](functionidmapper-function.md), de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
   
- `clientData`  
- dans Identificateur de fonction remappée, que le profileur a précédemment spécifié via [FunctionIDMapper](../../../../docs/framework/unmanaged-api/profiling/functionidmapper-function.md), de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.  
-  
- `func`  
- dans Valeur `COR_PRF_FRAME_INFO` qui pointe vers les informations sur le frame de pile.  
-  
- Le profileur doit traiter ceci comme un handle opaque qui peut être retourné au moteur d’exécution dans la méthode [ICorProfilerInfo2 :: GetFunctionInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getfunctioninfo2-method.md) .  
-  
+- `func`
+
+  \[dans] valeur `COR_PRF_FRAME_INFO` qui pointe vers les informations sur le frame de pile.
+
+  Le profileur doit traiter ceci comme un handle opaque qui peut être retourné au moteur d’exécution dans la méthode [ICorProfilerInfo2 :: GetFunctionInfo2,](icorprofilerinfo2-getfunctioninfo2-method.md) .
+
 ## <a name="remarks"></a>Notes  
- La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave2](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
+ La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave2](functionleave2-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
   
  La valeur du paramètre `func` n’est pas valide après le retour de la fonction `FunctionTailcall2`, car la valeur peut changer ou être détruite.  
   
@@ -63,7 +67,7 @@ void __stdcall FunctionTailcall2 (
   
  En outre, la fonction `FunctionTailcall2` ne doit pas appeler dans du code managé ou de quelque manière qu’elle génère une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
@@ -74,7 +78,7 @@ void __stdcall FunctionTailcall2 (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [FunctionEnter2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [SetEnterLeaveFunctionHooks2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2, fonction](functionenter2-function.md)
+- [FunctionLeave2, fonction](functionleave2-function.md)
+- [SetEnterLeaveFunctionHooks2, méthode](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)

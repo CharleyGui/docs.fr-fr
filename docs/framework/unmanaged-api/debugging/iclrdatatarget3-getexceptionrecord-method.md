@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 6643c2af-2ee6-4789-aa25-1d8eaf500c94
 topic_type:
 - apiref
-ms.openlocfilehash: d5e7841844c8fa500935eb9cba06f4e2fe95d2d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 037e216cb93e3aa6fce28966fc724498024abd52
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111997"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789055"
 ---
 # <a name="iclrdatatarget3getexceptionrecord-method"></a>ICLRDataTarget3::GetExceptionRecord, méthode
 Appelé par les services d'accès aux données du Common Langage Runtime (CLR) pour récupérer l'enregistrement d'exception associé au processus cible. Par exemple, pour une cible de vidage, cela équivaut à l’enregistrement d’exception passé via l’argument `ExceptionParam` à la fonction [entrée](/windows/desktop/api/minidumpapiset/nf-minidumpapiset-minidumpwritedump) dans la bibliothèque d’aide au débogage Windows (dbghelp).  
@@ -32,15 +32,15 @@ HRESULT GetExceptionRecord(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `bufferSize`  
- [en entrée] La taille de la mémoire tampon d'entrée, en octets. Cette valeur doit être égale à `sizeof(``)`[MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) .  
+ [en entrée] La taille de la mémoire tampon d'entrée, en octets. Cette valeur doit être égale à `sizeof(`[MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception)`)`.  
   
  `bufferUsed`  
  [en sortie] Un pointeur vers un type `ULONG32` qui reçoit le nombre d'octets réellement écrits dans la mémoire tampon.  
   
  `buffer`  
- [en sortie] Un pointeur vers une mémoire tampon qui reçoit une copie de l'enregistrement de l'exception. L’enregistrement d’exception est retourné en tant que type [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) .  
+ [en sortie] Un pointeur vers une mémoire tampon qui reçoit une copie de l'enregistrement de l'exception. L’enregistrement d’exception est retourné en tant que type de [MINIDUMP_EXCEPTION](/windows/win32/api/minidumpapiset/ns-minidumpapiset-minidump_exception) .  
   
 ## <a name="return-value"></a>Valeur de retour  
  La valeur de retour est `S_OK` en cas de réussite ou un code d'échec `HRESULT` en cas d'échec. Les codes `HRESULT` peuvent comprendre, sans y être limités, ce qui suit :  
@@ -56,7 +56,7 @@ HRESULT GetExceptionRecord(
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -67,6 +67,6 @@ HRESULT GetExceptionRecord(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget3, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)
-- [GetExceptionContextRecord, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)
-- [GetExceptionThreadID, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionthreadid-method.md)
+- [ICLRDataTarget3, interface](iclrdatatarget3-interface.md)
+- [GetExceptionContextRecord, méthode](iclrdatatarget3-getexceptioncontextrecord-method.md)
+- [GetExceptionThreadID, méthode](iclrdatatarget3-getexceptionthreadid-method.md)

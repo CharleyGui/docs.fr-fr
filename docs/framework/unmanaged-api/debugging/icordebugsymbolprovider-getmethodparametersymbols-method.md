@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider :: Getmethodparametersymbols,, méthode'
+title: ICorDebugSymbolProvider::GetMethodParameterSymbols, méthode
 ms.date: 03/30/2017
 ms.assetid: 58b7c0b9-f6ad-4b49-b92d-0e421cfd0ec6
-ms.openlocfilehash: 1f7da156e5a164dc753e2283bc7ab24d18983173
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a940077e50ff251111ca6eedaee49401775644d3
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138841"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791595"
 ---
-# <a name="icordebugsymbolprovidergetmethodparametersymbols-method"></a>ICorDebugSymbolProvider :: Getmethodparametersymbols,, méthode
+# <a name="icordebugsymbolprovidergetmethodparametersymbols-method"></a>ICorDebugSymbolProvider::GetMethodParameterSymbols, méthode
 Obtient les symboles de paramètre d'une méthode en fonction de l'adresse virtuelle relative (RVA) de cette méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,7 +23,7 @@ HRESULT GetMethodParameterSymbols(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `nativeRVA`  
  [in] Adresse virtuelle relative native de la méthode.  
   
@@ -34,14 +34,14 @@ HRESULT GetMethodParameterSymbols(
  [out] Pointeur vers le nombre de symboles récupérés par la méthode.  
   
  `pcFetchedSymbols`  
- à Pointeur vers un tableau [méthode icordebugvariablesymbol](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablesymbol-interface.md) qui contient les symboles locaux de la méthode.  
+ à Pointeur vers un tableau [méthode icordebugvariablesymbol](icordebugvariablesymbol-interface.md) qui contient les symboles locaux de la méthode.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -52,6 +52,6 @@ HRESULT GetMethodParameterSymbols(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetMethodLocalSymbols, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodlocalsymbols-method.md)
-- [ICorDebugSymbolProvider, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [GetMethodLocalSymbols, méthode](icordebugsymbolprovider-getmethodlocalsymbols-method.md)
+- [ICorDebugSymbolProvider, interface](icordebugsymbolprovider-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

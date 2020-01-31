@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9f02e763-73f7-42cb-a41c-f78499d9482c
 topic_type:
 - apiref
-ms.openlocfilehash: de6d46897f3d3266bf708528efd712ca7db8ea4a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b860cf6eb07c3f063e3e51514f8492cf4af9e8ed
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438826"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76869670"
 ---
 # <a name="icorprofilerinfogetobjectsize-method"></a>ICorProfilerInfo::GetObjectSize, méthode
 Obtient la taille d’un objet spécifié.  
@@ -33,7 +33,7 @@ HRESULT GetObjectSize(
     [out] ULONG  *pcSize);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `objectId`  
  dans ID de l’objet.  
   
@@ -43,7 +43,7 @@ HRESULT GetObjectSize(
 ## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
-> Cette méthode est obsolète. Elle retourne COR_E_OVERFLOW pour les objets supérieurs à 4 Go sur les plateformes 64 bits. Utilisez la méthode [ICorProfilerInfo4 :: getobjectsize2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getobjectsize2-method.md) à la place.  
+> Cette méthode est obsolète. Elle retourne COR_E_OVERFLOW pour les objets supérieurs à 4 Go sur les plateformes 64 bits. Utilisez la méthode [ICorProfilerInfo4 :: getobjectsize2,](icorprofilerinfo4-getobjectsize2-method.md) à la place.  
   
  Les différents objets des mêmes types ont souvent la même taille. Toutefois, certains types, tels que les tableaux ou les chaînes, peuvent avoir une taille différente pour chaque objet.  
   
@@ -53,7 +53,7 @@ HRESULT GetObjectSize(
   
 - Sur Windows 64 bits, l’alignement est toujours de 8 octets.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -64,4 +64,4 @@ HRESULT GetObjectSize(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

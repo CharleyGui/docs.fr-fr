@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 050649e5-ffc0-4458-a0a4-d9ee128a219e
 topic_type:
 - apiref
-ms.openlocfilehash: 08fbf49e6944de4934a9fe7a960405ee96a7d8e3
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 661229e5fbd5d106662f0e823a1753bd76c33311
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445941"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866167"
 ---
 # <a name="icorprofilercallbackmoduleloadfinished-method"></a>ICorProfilerCallback::ModuleLoadFinished, méthode
 Notifie le profileur qu’un module a fini de se charger.  
@@ -33,7 +33,7 @@ HRESULT ModuleLoadFinished(
     [in] HRESULT  hrStatus);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `moduleId`  
  dans ID du module dont le chargement est terminé.  
   
@@ -45,7 +45,7 @@ HRESULT ModuleLoadFinished(
   
  Certaines parties du chargement du module peuvent continuer après le rappel `ModuleLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement du module a réussi.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -56,5 +56,5 @@ HRESULT ModuleLoadFinished(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ModuleLoadStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-moduleloadstarted-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ModuleLoadStarted, méthode](icorprofilercallback-moduleloadstarted-method.md)

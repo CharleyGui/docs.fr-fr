@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3dd80fbe-d62d-4d4d-acf8-5b7d0efe607e
 topic_type:
 - apiref
-ms.openlocfilehash: ef2c518f8f3f3069e93f06de89add1385cb4e45e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e0ff90f99c1127b5a4626f47514ba7099b5d48af
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445118"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866596"
 ---
 # <a name="icorprofilercallbackclassloadfinished-method"></a>ICorProfilerCallback::ClassLoadFinished, méthode
 Notifie le profileur qu’une classe a fini de se charger.  
@@ -33,19 +33,22 @@ HRESULT ClassLoadFinished(
     [in] HRESULT hrStatus);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `classId`  
- dans Identifie la classe qui a été chargée.  
-  
- `hrStatus`  
- dans HRESULT qui indique si la classe a été chargée avec succès.  
-  
+## <a name="parameters"></a>Parameters
+
+- `classId`
+
+  \[in] identifie la classe qui a été chargée.
+
+- `hrStatus`
+
+  \[dans] HRESULT qui indique si la classe a été chargée avec succès.
+
 ## <a name="remarks"></a>Notes  
  La valeur de `classId` n’est pas valide pour une demande d’informations jusqu’à ce que la méthode `ClassLoadFinished` soit appelée.  
   
  Certaines parties du chargement de la classe peuvent continuer après le rappel `ClassLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de la classe a réussi.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -56,5 +59,5 @@ HRESULT ClassLoadFinished(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ClassLoadStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classloadstarted-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ClassLoadStarted, méthode](icorprofilercallback-classloadstarted-method.md)

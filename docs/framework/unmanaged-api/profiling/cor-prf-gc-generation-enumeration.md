@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: d6ece160-26ad-4d39-abd7-05acd6f78c48
 topic_type:
 - apiref
-ms.openlocfilehash: d01b864be231e5b0a3fd72dc2f3636a87c8cae83
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4eff8472e353c4e5fd2505b281cc9efc89f013fc
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448630"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867208"
 ---
 # <a name="cor_prf_gc_generation-enumeration"></a>COR_PRF_GC_GENERATION, énumération
 Identifie une génération de garbage collection.  
@@ -35,9 +35,9 @@ typedef enum {
 } COR_PRF_GC_GENERATION;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_GC_GEN_0`|L’objet est stocké en tant que génération 0.|  
 |`COR_PRF_GC_GEN_1`|L’objet est stocké en tant que génération 1.|  
@@ -49,9 +49,9 @@ typedef enum {
   
  L’utilisation de générations signifie que le garbage collector ne doit utiliser qu’un sous-ensemble des objets alloués à un moment donné.  
   
- L’énumération `COR_PRF_GC_GENERATION` est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) .  
+ L’énumération `COR_PRF_GC_GENERATION` est utilisée par la structure [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -62,4 +62,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

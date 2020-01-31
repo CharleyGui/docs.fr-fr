@@ -12,17 +12,17 @@ api_type:
 ms.assetid: f854b68f-009c-4ffb-89cd-ca874d1c0fb7
 topic_type:
 - apiref
-ms.openlocfilehash: 2e814eaba04fd6781d10bbcb67ade9acdefa161d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f3943eef969f777b40dc51c4900b190561f14887
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73114745"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868393"
 ---
 # <a name="icorprofilerinfo5geteventmask2-method"></a>ICorProfilerInfo5::GetEventMask2, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
   
- Obtient les catégories des événements actifs pour lesquelles le profileur veut recevoir des notifications du CLR.  Il fournit des fonctionnalités non fournies par la méthode [ICorProfilerInfo :: GetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md) .  
+ Obtient les catégories des événements actifs pour lesquelles le profileur veut recevoir des notifications du CLR.  Il fournit des fonctionnalités non fournies par la méthode [ICorProfilerInfo :: GetEventMask](icorprofilerinfo-geteventmask-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,19 +33,19 @@ HRESULT GetEventMask2(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pdwEventsLow`  
- [en sortie] Un pointeur vers une valeur de 4 octets qui spécifie les catégories des événements. Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-monitor-enumeration.md) .  
+ [en sortie] Un pointeur vers une valeur de 4 octets qui spécifie les catégories des événements. Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_MONITOR](cor-prf-monitor-enumeration.md) .  
   
  `pdwEventsHigh`  
- [en sortie] Un pointeur vers une valeur de 4 octets qui spécifie les catégories des événements.  Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_HIGH_MONITOR](../../../../docs/framework/unmanaged-api/profiling/cor-prf-high-monitor-enumeration.md) .  
+ [en sortie] Un pointeur vers une valeur de 4 octets qui spécifie les catégories des événements.  Chaque bit contrôle une fonctionnalité, un comportement ou un type d'événement différents. Les bits sont décrits dans l’énumération [COR_PRF_HIGH_MONITOR](cor-prf-high-monitor-enumeration.md) .  
   
 ## <a name="remarks"></a>Notes  
- La méthode `GetEventMask2` est utilisée pour déterminer les rappels auxquels le profileur s'est abonné. En général, vous effectuez un OR logique sur les valeurs `pdwEventsLow` et `pdwEventsHigh` et les nouveaux bits que vous voulez définir, puis vous appelez la méthode [SetEventMask2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md) .  
+ La méthode `GetEventMask2` est utilisée pour déterminer les rappels auxquels le profileur s'est abonné. En général, vous effectuez un OR logique sur les valeurs `pdwEventsLow` et `pdwEventsHigh` et les nouveaux bits que vous voulez définir, puis vous appelez la méthode [SetEventMask2](icorprofilerinfo5-seteventmask2-method.md) .  
   
- Cette méthode est l’alternative recommandée à la méthode [GetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-geteventmask-method.md) .  
+ Cette méthode est l’alternative recommandée à la méthode [GetEventMask](icorprofilerinfo-geteventmask-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -56,5 +56,5 @@ HRESULT GetEventMask2(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo5, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-interface.md)
-- [SetEventMask2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo5-seteventmask2-method.md)
+- [ICorProfilerInfo5, interface](icorprofilerinfo5-interface.md)
+- [SetEventMask2, méthode](icorprofilerinfo5-seteventmask2-method.md)

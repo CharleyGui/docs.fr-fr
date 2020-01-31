@@ -4,16 +4,16 @@ description: ML.NET vous donne la possibilité d’ajouter le Machine Learning a
 ms.date: 11/5/2019
 ms.topic: overview
 ms.custom: mvc
-ms.openlocfilehash: 98251c39a4bdaba8203c26c6a781a86efc46efa4
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: bc157b22201c66bceecf78aaa36b9c653fe6a131
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740083"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794577"
 ---
 # <a name="what-is-mlnet-and-how-does-it-work"></a>Présentation de ML.NET et de son fonctionnement
 
-ML.NET vous donne la possibilité d’ajouter le Machine Learning aux applications .NET, dans des scénarios en ligne ou hors connexion. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application.
+ML.NET vous donne la possibilité d’ajouter le Machine Learning aux applications .NET, dans des scénarios en ligne ou hors connexion. Avec cette fonctionnalité, vous pouvez ensuite effectuer des prédictions automatiques à partir des données disponibles dans votre application. Les applications machine learning utilisent des modèles dans les données pour faire des prédictions plutôt que de devoir être programmées explicitement.
 
 Central vers ML.NET est un **modèle**machine learning. Le modèle spécifie les étapes nécessaires à la transformation des données d’entrée en prédiction. Avec ML.NET, vous pouvez effectuer l’apprentissage d’un modèle personnalisé en spécifiant un algorithme, ou vous pouvez importer des modèles TensorFlow et ONNX préformés.
 
@@ -30,7 +30,7 @@ Exemples du type de prédictions que vous pouvez effectuer avec ML.NET :
 |Détection d’anomalie|Détecter les transactions bancaires frauduleuses |
 |Recommandations|Suggérer d’autres produits aux acheteurs en ligne en fonction de leurs achats précédents|
 |Séries chronologiques/données séquentielles|Prévoir les ventes météo/produit|
-|Classification d’images|Classer les pathologies dans des images médicales|
+|Classification des images|Classer les pathologies dans des images médicales|
 
 ## <a name="hello-mlnet-world"></a>Hello ML.NET World
 

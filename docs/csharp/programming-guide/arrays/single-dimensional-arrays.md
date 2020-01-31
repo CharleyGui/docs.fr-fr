@@ -5,12 +5,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: 07c6061bfc66b1640d0eacca217302feff1a390a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8f093d22da789c6df750475e47a3b4e4685c5651
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715028"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744209"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Tableaux unidimensionnels (Guide de programmation C#)
 
@@ -54,7 +54,7 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
   
  Le résultat de cette instruction varie selon que `SomeType` est un type valeur ou un type référence. S’il s’agit d’un type de valeur, l’instruction crée un tableau de 10 éléments, chacun ayant le type `SomeType`. Si `SomeType` est un type référence, l’instruction crée un tableau de 10 éléments dont chacun est initialisé avec une référence null.  
   
-Pour plus d’informations sur les types valeur et les types référence, consultez types [valeur](../../language-reference/keywords/value-types.md) et [types référence](../../language-reference/keywords/reference-types.md).
+Pour plus d’informations sur les types valeur et les types référence, consultez types [valeur](../../language-reference/builtin-types/value-types.md) et [types référence](../../language-reference/keywords/reference-types.md).
   
 ## <a name="see-also"></a>Voir aussi
 

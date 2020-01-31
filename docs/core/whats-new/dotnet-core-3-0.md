@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 10/22/2019
-ms.openlocfilehash: 4bf1c4826273535bfe824828f0fad96998b29483
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: b8aa19a1d422fe7d6accd2b095f15843446599cd
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742590"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789886"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -121,7 +121,7 @@ Lorsque TC est activé, le comportement suivant s’applique à la compilation d
 - Si la méthode a un code compilé à l’avance, ou [ReadyToRun](#readytorun-images), le code prégénéré est utilisé.
 - Sinon, la méthode est avec JIT. En règle générale, ces méthodes sont des génériques sur les types valeur.
   - Le *JIT rapide* génère plus rapidement du code de qualité inférieure (ou moins optimisée). Dans .NET Core 3,0, le JIT rapide est activé par défaut pour les méthodes qui ne contiennent pas de boucles et est préférable au démarrage.
-  - Le JIT entièrement optimisé génère plus lentement un code de qualité supérieure (ou optimisée). Pour les méthodes où le JIT rapide ne doit pas être utilisé (par exemple, si la méthode est attribuée avec <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), le JIT entièrement optimisé est utilisé.
+  - L’optimisation complète de JIT génère plus lentement un code de qualité supérieure (ou optimisée). Pour les méthodes où le JIT rapide ne doit pas être utilisé (par exemple, si la méthode est attribuée avec <xref:System.Runtime.CompilerServices.MethodImplOptions.AggressiveOptimization?displayProperty=nameWithType>), le JIT entièrement optimisé est utilisé.
 
 Pour les méthodes fréquemment appelées, le compilateur juste-à-temps finit par créer un code entièrement optimisé en arrière-plan. Le code optimisé remplace ensuite le code précompilé pour cette méthode.
 
@@ -458,7 +458,7 @@ Correspond à l’opération IEEE `scaleB` qui prend une valeur intégrale ; el
 Correspond à l’opération IEEE `log2` ; elle retourne le logarithme de base 2. Son erreur d’arrondi est minimale.
 
 - <xref:System.Math.FusedMultiplyAdd(System.Double,System.Double,System.Double)>\
-Correspond à l’opération IEEE `fma` ; elle effectue une multiplication-addition fusionnée. Elle effectue `(x * y) + z` comme une seule opération, avec une erreur d’arrondi minimale. Par exemple, `FusedMultiplyAdd(1e308, 2.0, -1e308)` retourne `1e308`. L’opération régulière `(1e308 * 2.0) - 1e308` retourne `double.PositiveInfinity`.
+Correspond à l’opération IEEE `fma` ; elle effectue une multiplication-addition fusionnée. Elle effectue `(x * y) + z` comme une seule opération, avec une erreur d’arrondi minimale. Un exemple est `FusedMultiplyAdd(1e308, 2.0, -1e308)`, qui retourne `1e308`. L’opération régulière `(1e308 * 2.0) - 1e308` retourne `double.PositiveInfinity`.
 
 - <xref:System.Math.CopySign(System.Double,System.Double)>\
 Correspond à l’opération IEEE `copySign` ; elle retourne la valeur de `x`, mais avec le signe de `y`.

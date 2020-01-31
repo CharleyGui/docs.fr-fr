@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 7a4e3085-8f95-40ef-a4be-7d6146f47ce2
 topic_type:
 - apiref
-ms.openlocfilehash: 7dede4e5af702f1b86b430450db4a669c326c062
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 728a6c83dc321fa28dc4ff84c4e874d886524b36
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131074"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788572"
 ---
 # <a name="icordebugilcode2getinstrumentedilmap-method"></a>ICorDebugILCode2::GetInstrumentedILMap, méthode
 [Pris en charge dans .NET Framework 4.5.2 et ultérieur]  
@@ -34,24 +34,24 @@ HRESULT GetInstrumentedILMap(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  cMap  
  [en entrée] La capacité de stockage du tableau `map`. Pour plus d'informations, consultez la section Notes.  
   
  pcMap  
- à Nombre de valeurs COR_IL_MAP écrites dans le tableau de mappage.  
+ [en sortie] Le nombre de valeurs COR_IL_MAP écrites dans le tableau du mappage.  
   
  map  
- à Tableau de valeurs COR_IL_MAP qui fournissent des informations sur les mappages du langage intermédiaire instrumenté par le profileur au langage intermédiaire de la méthode d’origine.  
+ [en sortie] Un tableau de valeurs COR_IL_MAP qui fournissent des informations sur les mappages du langage intermédiaire instrumenté par le profileur avec le langage intermédiaire de la méthode d'origine.  
   
 ## <a name="remarks"></a>Notes  
- Si le profileur définit le mappage en appelant la méthode [ICorProfilerInfo :: SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md) , le débogueur peut appeler cette méthode pour récupérer le mappage et pour utiliser le mappage en interne lors du calcul des offsets de langage intermédiaire pour les traces de la pile et la variable durées.  
+ Si le profileur définit le mappage en appelant la méthode [ICorProfilerInfo :: SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md) , le débogueur peut appeler cette méthode pour récupérer le mappage et pour utiliser le mappage en interne lors du calcul des offsets de langage intermédiaire pour les traces de la pile et les durées de vie des variables.  
   
- Si `cMap` a la valeur 0 et que `pcMap` est non**null**, `pcMap` est défini sur le nombre de valeurs COR_IL_MAP disponibles. Si `cMap` est différent de zéro, il représente la capacité de stockage du tableau `map`. Lorsque la méthode est retournée, `map` contient au maximum `cMap` éléments et `pcMap` est défini sur le nombre de valeurs COR_IL_MAP effectivement écrites dans le tableau de `map`.  
+ Si `cMap` a la valeur 0 et que `pcMap` est non**null**, `pcMap` est défini sur le nombre de valeurs COR_IL_MAP disponibles. Si `cMap` est différent de zéro, il représente la capacité de stockage du tableau `map`. Lorsque la méthode est retournée, `map` contient au maximum `cMap` éléments, et `pcMap` est défini sur le nombre de valeurs COR_IL_MAP effectivement écrites dans le tableau `map`.  
   
  Si le langage intermédiaire n'a pas été instrumenté ou si le mappage n'a pas été fourni par le profileur, cette méthode retourne `S_OK` et définit `pcMap` à 0.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -62,6 +62,6 @@ HRESULT GetInstrumentedILMap(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo :: SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)
-- [ICorDebugILCode2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugilcode2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorProfilerInfo::SetILInstrumentedCodeMap](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilinstrumentedcodemap-method.md)
+- [ICorDebugILCode2, interface](icordebugilcode2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

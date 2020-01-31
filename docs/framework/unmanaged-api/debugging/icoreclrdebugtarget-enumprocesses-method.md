@@ -17,12 +17,12 @@ helpviewer_keywords:
 ms.assetid: e00fd477-4f49-43d3-bd0e-3094824b1136
 topic_type:
 - apiref
-ms.openlocfilehash: 4d1404e3f7565ee26edd94e059b7f01f8edd4dd6
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 11b1072b3467f7d0a3f223fbc2151ec9ccf461ad
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121842"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790802"
 ---
 # <a name="icoreclrdebugtargetenumprocesses-method"></a>Méthode ICoreClrDebugTarget::EnumProcesses
 Énumère les processus en cours d'exécution sur un ordinateur distant.  
@@ -36,12 +36,12 @@ HRESULT EnumProcesses (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pcProcs`  
  [out] Nombre de processus retournés dans `ppProcs`. Cette valeur peut être égale à 0 (zéro).  
   
  `ppProcs`  
- à Tableau de structures [CoreClrDebugProcInfo](../../../../docs/framework/unmanaged-api/debugging/coreclrdebugprocinfo-structure.md) qui représentent les processus en cours d’exécution sur l’ordinateur distant.  
+ à Tableau de structures [CoreClrDebugProcInfo](coreclrdebugprocinfo-structure.md) qui représentent les processus en cours d’exécution sur l’ordinateur distant.  
   
 ## <a name="return-value"></a>Valeur de retour  
  S_OK  
@@ -54,9 +54,9 @@ HRESULT EnumProcesses (
  Autres échecs.  
   
 ## <a name="remarks"></a>Notes  
- Pour libérer la mémoire allouée par cette méthode, appelez la méthode [ICoreClrDebugTarget :: FreeMemory](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-freememory-method.md) .  
+ Pour libérer la mémoire allouée par cette méthode, appelez la méthode [ICoreClrDebugTarget :: FreeMemory](icoreclrdebugtarget-freememory-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CoreClrRemoteDebuggingInterfaces. h  
@@ -67,4 +67,4 @@ HRESULT EnumProcesses (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICoreClrDebugTarget, interface](../../../../docs/framework/unmanaged-api/debugging/icoreclrdebugtarget-interface.md)
+- [ICoreClrDebugTarget, interface](icoreclrdebugtarget-interface.md)

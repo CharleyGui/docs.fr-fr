@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 86d98f39-52e6-4c61-a625-9760f695ff12
 topic_type:
 - apiref
-ms.openlocfilehash: 33b72c8d089e5b335069fe465987086dfa1243bc
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 15ce195af0c0e8f8777f6e5d02043e17e32308da
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445173"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866646"
 ---
 # <a name="icorprofilercallbackassemblyloadfinished-method"></a>ICorProfilerCallback::AssemblyLoadFinished, méthode
 Notifie le profileur qu’un chargement de l’assembly est terminé.  
@@ -33,19 +33,22 @@ HRESULT AssemblyLoadFinished(
     [in] HRESULT    hrStatus);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `assemblyId`  
- dans Identifie l’assembly qui a été chargé.  
-  
- `hrStatus`  
- dans HRESULT qui indique si le chargement de l’assembly s’est terminé correctement.  
-  
+## <a name="parameters"></a>Parameters
+
+- `assemblyId`
+
+  \[in] identifie l’assembly qui a été chargé.
+
+- `hrStatus`
+
+  \[dans] HRESULT qui indique si le chargement de l’assembly s’est terminé correctement.
+
 ## <a name="remarks"></a>Notes  
  La valeur de `assemblyId` n’est pas valide pour une demande d’informations jusqu’à ce que la méthode `AssemblyLoadFinished` soit appelée.  
   
  Certaines parties du chargement de l’assembly peuvent continuer après le rappel `AssemblyLoadFinished`. Un HRESULT d’échec dans `hrStatus` indique un échec. Toutefois, un HRESULT de réussite dans `hrStatus` indique uniquement que la première partie du chargement de l’assembly a réussi.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -56,4 +59,4 @@ HRESULT AssemblyLoadFinished(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

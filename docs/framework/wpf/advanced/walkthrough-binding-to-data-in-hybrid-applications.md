@@ -8,20 +8,20 @@ helpviewer_keywords:
 - hybrid applications [WPF interoperability]
 - data binding [WPF interoperability]
 ms.assetid: 18997e71-745a-4425-9c69-2cbce1d8669e
-ms.openlocfilehash: 92d267ee9e87e9d204fe76172ca7e0fe33cf1a1b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 1bb38436049e338ab6033ae3b6370732a457d520
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976581"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794222"
 ---
 # <a name="walkthrough-binding-to-data-in-hybrid-applications"></a>Procédure pas à pas : liaison de données dans des applications hybrides
 
-La liaison d’une source de données à un contrôle est essentielle pour permettre aux utilisateurs d’accéder aux données sous-jacentes, que vous utilisiez [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] ou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette procédure pas à pas montre comment vous pouvez utiliser la liaison de données dans des applications hybrides qui incluent à la fois des contrôles [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
+La liaison d’une source de données à un contrôle est essentielle pour permettre aux utilisateurs d’accéder aux données sous-jacentes, que vous utilisiez Windows Forms ou [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Cette procédure pas à pas montre comment vous pouvez utiliser la liaison de données dans des applications hybrides qui incluent à la fois des contrôles Windows Forms et [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].
 
-Cette procédure pas à pas décrit notamment les tâches suivantes :
+Cette procédure pas à pas décrit notamment les tâches suivantes :
 
-- Création du projet
+- Création du projet.
 
 - Définition du modèle de données.
 
@@ -39,7 +39,7 @@ Pour obtenir le code complet des tâches illustrées dans cette procédure pas �
 
 À l’issue de cette procédure, vous aurez une meilleure compréhension des fonctionnalités de liaison de données dans les applications hybrides.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
 
@@ -61,7 +61,7 @@ Pour exécuter cette procédure pas à pas, vous devez disposer des composants s
 
 3. Ouvrez MainWindow. xaml dans le Concepteur WPF.
 
-4. Dans l’élément <xref:System.Windows.Window>, ajoutez le mappage d’espaces de noms [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] suivant.
+4. Dans l’élément <xref:System.Windows.Window>, ajoutez le mappage d’espaces de noms Windows Forms suivant.
 
     ```xaml
     xmlns:wf="clr-namespace:System.Windows.Forms;assembly=System.Windows.Forms"
@@ -113,7 +113,7 @@ Les détails de chaque enregistrement de client s’affichent dans plusieurs con
 
 ## <a name="displaying-data-by-using-interoperation"></a>Affichage des données à l’aide de l’interopérabilité
 
-Les commandes correspondant au client sélectionné s’affichent dans un contrôle de <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> nommé `dataGridView1`. Le contrôle `dataGridView1` est lié à la source de données dans le fichier code-behind. Un contrôle <xref:System.Windows.Forms.Integration.WindowsFormsHost> est le parent de ce contrôle [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)].
+Les commandes correspondant au client sélectionné s’affichent dans un contrôle de <xref:System.Windows.Forms.DataGridView?displayProperty=nameWithType> nommé `dataGridView1`. Le contrôle `dataGridView1` est lié à la source de données dans le fichier code-behind. Un contrôle <xref:System.Windows.Forms.Integration.WindowsFormsHost> est le parent de ce contrôle Windows Forms.
 
 ### <a name="to-display-data-in-the-datagridview-control"></a>Pour afficher des données dans le contrôle DataGridView
 

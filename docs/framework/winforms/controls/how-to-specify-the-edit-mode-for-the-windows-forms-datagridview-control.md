@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : spécifier le mode d’édition pour le contrôle DataGridView Windows Forms'
+title: Spécifier le mode d’édition pour le contrôle DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,31 +8,31 @@ helpviewer_keywords:
 - DataGridView control [Windows Forms], edit mode
 - data grids [Windows Forms], edit mode
 ms.assetid: 93e117e8-94c4-411b-ba31-645e475ed85c
-ms.openlocfilehash: a999582aeb629646fa1843f973b10a039c29e1a3
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: c0318202a80f9a43f1b656201732ef032f430b5b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64630533"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743765"
 ---
-# <a name="how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control"></a>Procédure : spécifier le mode d’édition pour le contrôle DataGridView Windows Forms
-Par défaut, les utilisateurs peuvent modifier le contenu du cours <xref:System.Windows.Forms.DataGridView> cellule de zone de texte en tapant qu’il contient, ou en appuyant sur F2. Cela met la cellule en mode édition si toutes les conditions suivantes sont remplies :  
+# <a name="how-to-specify-the-edit-mode-for-the-windows-forms-datagridview-control"></a>Comment : spécifier le mode édition pour le contrôle DataGridView Windows Forms
+Par défaut, les utilisateurs peuvent modifier le contenu de la cellule de zone de texte <xref:System.Windows.Forms.DataGridView> en cours en le tapant ou en appuyant sur F2. Cette commande met la cellule en mode édition si toutes les conditions suivantes sont remplies :  
   
 - La source de données sous-jacente prend en charge la modification.  
   
-- Le <xref:System.Windows.Forms.DataGridView> contrôle est activé.  
+- Le contrôle <xref:System.Windows.Forms.DataGridView> est activé.  
   
-- Le <xref:System.Windows.Forms.DataGridView.EditMode%2A> valeur de propriété n’est pas <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
+- La valeur de la propriété <xref:System.Windows.Forms.DataGridView.EditMode%2A> n’est pas <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
   
-- Le `ReadOnly` propriétés de la cellule, ligne, colonne et le contrôle sont prêts à `false`.  
+- Les propriétés `ReadOnly` de la cellule, de la ligne, de la colonne et du contrôle ont toutes la valeur `false`.  
   
- En mode édition, l’utilisateur peut modifier la valeur de cellule et appuyez sur ENTRÉE pour valider la modification ou la touche ÉCHAP pour rétablir la cellule à sa valeur d’origine.  
+ En mode édition, l’utilisateur peut modifier la valeur de la cellule et appuyer sur entrée pour valider la modification ou sur ÉCHAP pour rétablir la valeur d’origine de la cellule.  
   
- Vous pouvez configurer un <xref:System.Windows.Forms.DataGridView> contrôler afin qu’une cellule passe en mode édition dès qu’elle devient la cellule active. Le comportement des touches entrée et ÉCHAP est inchangé dans ce cas, mais la cellule reste en mode édition après que la valeur est validée ou annulée. Vous pouvez également configurer le contrôle afin que les cellules entrer en mode Édition uniquement lorsque les utilisateurs tapent dans la cellule ou uniquement lorsque les utilisateurs appuient sur F2. Enfin, vous pouvez empêcher des cellules d’entrée en mode édition, sauf lorsque vous appelez le <xref:System.Windows.Forms.DataGridView.BeginEdit%2A> (méthode).  
+ Vous pouvez configurer un contrôle de <xref:System.Windows.Forms.DataGridView> afin qu’une cellule passe en mode édition dès qu’elle devient la cellule active. Le comportement des touches entrée et Échap est inchangé dans ce cas, mais la cellule reste en mode édition après que la valeur a été validée ou annulée. Vous pouvez également configurer le contrôle afin que les cellules entrent en mode édition uniquement lorsque les utilisateurs tapent dans la cellule ou uniquement quand les utilisateurs appuient sur F2. Enfin, vous pouvez empêcher les cellules d’entrer en mode édition, sauf lorsque vous appelez la méthode <xref:System.Windows.Forms.DataGridView.BeginEdit%2A>.  
   
 ### <a name="to-change-the-edit-mode-of-a-datagridview-control"></a>Pour modifier le mode d’édition d’un contrôle DataGridView  
   
-- Définir le <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType> propriété appropriés <xref:System.Windows.Forms.DataGridViewEditMode> énumération.  
+- Affectez à la propriété <xref:System.Windows.Forms.DataGridView.EditMode%2A?displayProperty=nameWithType> l’énumération <xref:System.Windows.Forms.DataGridViewEditMode> appropriée.  
   
      [!code-csharp[System.Windows.Forms.DataGridViewMisc#067](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/CS/datagridviewmisc.cs#067)]
      [!code-vb[System.Windows.Forms.DataGridViewMisc#067](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#067)]  

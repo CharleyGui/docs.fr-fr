@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7a439d92-348a-44dd-b60f-cad7cba56379
 topic_type:
 - apiref
-ms.openlocfilehash: c7bf8e3ebedb17a4536b604909434c3e004fc828
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6e787de6287dc5b3091d3671d3da2f2154b12e88
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439825"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76869922"
 ---
 # <a name="icorprofilerinfogetmodulemetadata-method"></a>ICorProfilerInfo::GetModuleMetaData, méthode
 Obtient une instance d’interface de métadonnées mappée au module spécifié.  
@@ -35,7 +35,7 @@ HRESULT GetModuleMetaData(
     [out] IUnknown **ppOut);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `moduleId`  
  dans ID du module auquel l’instance d’interface sera mappée.  
   
@@ -53,7 +53,7 @@ HRESULT GetModuleMetaData(
   
  Certains modules (tels que les modules de ressources) n’ont pas de métadonnées. Dans ce cas, `GetModuleMetaData` retourne une valeur HRESULT de S_FALSE et une valeur null dans *`ppOut`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -64,4 +64,4 @@ HRESULT GetModuleMetaData(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

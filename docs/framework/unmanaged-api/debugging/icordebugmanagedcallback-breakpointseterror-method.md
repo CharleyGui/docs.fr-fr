@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f2b773a4-c4d0-429c-9717-51d6e2ed86af
 topic_type:
 - apiref
-ms.openlocfilehash: dae04e1809c1bb3260461086a4953b8b4e5cce52
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 67d4972ee38a54d43b4a096847cc61fa3402b042
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122571"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788438"
 ---
 # <a name="icordebugmanagedcallbackbreakpointseterror-method"></a>ICorDebugManagedCallback::BreakpointSetError, méthode
 Notifie le débogueur que le common language runtime n’a pas pu lier avec précision un point d’arrêt qui a été défini avant qu’une fonction ait été compilée juste-à-temps (JIT).  
@@ -36,7 +36,7 @@ HRESULT BreakpointSetError (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application qui contient le point d’arrêt non lié.  
   
@@ -52,7 +52,7 @@ HRESULT BreakpointSetError (
 ## <a name="remarks"></a>Notes  
  Le point d’arrêt donné ne sera jamais atteint. Le débogueur doit le désactiver et le lier de nouveau.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -63,4 +63,4 @@ HRESULT BreakpointSetError (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

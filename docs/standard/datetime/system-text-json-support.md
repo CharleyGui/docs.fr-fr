@@ -13,12 +13,12 @@ helpviewer_keywords:
 - JSON Serializer, JSON Reader, JSON Writer
 - Converter, JSON Converter, DateTime Converter
 - ISO, ISO 8601, ISO 8601-1:2019
-ms.openlocfilehash: 8198359e2c54c4ed098703fbcc070f7469b3362a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: fb8836d9c556b317c50b6b34a9dde4e42c6486b5
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344651"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867345"
 ---
 # <a name="datetime-and-datetimeoffset-support-in-systemtextjson"></a>Prise en charge de DateTime et DateTimeOffset dans System.Text.Json
 
@@ -199,4 +199,12 @@ Les niveaux de granularité suivants sont définis pour la mise en forme :
 
         Utilisé pour mettre en forme un <xref:System.DateTime> ou <xref:System.DateTimeOffset> avec des fractions de seconde et avec un décalage local.
 
-S’il est présent, un maximum de 7 chiffres fractionnaires sont écrits. Cela s’aligne avec l’implémentation de <xref:System.DateTime>, qui est limitée à cette résolution.
+Si la représentation du [format aller-retour](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) d’une instance de <xref:System.DateTime> ou <xref:System.DateTimeOffset> a des zéros de fin dans ses fractions de seconde, <xref:System.Text.Json.JsonSerializer> et <xref:System.Text.Json.Utf8JsonWriter> mettre en forme une représentation de l’instance sans zéros de fin.
+Par exemple, une instance de <xref:System.DateTime> dont la représentation du [format aller-retour](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) est `2019-04-24T14:50:17.1010000Z`, sera mise en forme comme `2019-04-24T14:50:17.101Z` par <xref:System.Text.Json.JsonSerializer> et <xref:System.Text.Json.Utf8JsonWriter>.
+
+Si la représentation du [format aller-retour](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) d’une instance de <xref:System.DateTime> ou <xref:System.DateTimeOffset> a des zéros dans ses fractions de seconde, <xref:System.Text.Json.JsonSerializer> et <xref:System.Text.Json.Utf8JsonWriter> mettre en forme une représentation de l’instance sans fractions de seconde.
+Par exemple, une instance de <xref:System.DateTime> dont la représentation du [format aller-retour](../base-types/standard-date-and-time-format-strings.md#the-round-trip-o-o-format-specifier) est `2019-04-24T14:50:17.0000000+02:00`, sera mise en forme comme `2019-04-24T14:50:17+02:00` par <xref:System.Text.Json.JsonSerializer> et <xref:System.Text.Json.Utf8JsonWriter>.
+
+La troncation des zéros dans les chiffres de fractions de seconde permet d’écrire la plus petite sortie nécessaire pour conserver les informations sur un aller-retour.
+
+Un maximum de 7 chiffres de fractions de seconde sont écrits. Cela s’aligne avec l’implémentation de <xref:System.DateTime>, qui est limitée à cette résolution.
