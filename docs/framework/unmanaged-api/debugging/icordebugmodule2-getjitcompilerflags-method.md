@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7212d9f4-989b-44e3-b8d4-ffc35922f6a0
 topic_type:
 - apiref
-ms.openlocfilehash: 1216629fc7e1c3e720d5f296b9293b3c4b7f8721
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ab6551ba70ed4cd154b166eeb92138b6550d2cb2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127895"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792978"
 ---
 # <a name="icordebugmodule2getjitcompilerflags-method"></a>ICorDebugModule2::GetJITCompilerFlags, méthode
 Obtient les indicateurs qui contrôlent la compilation juste-à-temps (JIT) de ce ICorDebugModule2.  
@@ -33,11 +33,11 @@ HRESULT GetJITCompilerFlags (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pdwFlags`  
- à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) qui contrôle la compilation JIT.  
+ à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) qui contrôle la compilation JIT.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

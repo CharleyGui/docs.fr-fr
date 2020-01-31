@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : enregistrer des fichiers à l’aide du composant SaveFileDialog'
+title: "Comment : enregistrer des fichiers à l'aide du composant SaveFileDialog"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,34 +11,34 @@ helpviewer_keywords:
 - files [Windows Forms], saving
 - OpenFile method [Windows Forms], saving files with SaveFileDialog component
 ms.assetid: 02e8f409-b83f-4707-babb-e71f6b223d90
-ms.openlocfilehash: 7a3a7d0b12a83b756eb2790a94a95580576a2c32
-ms.sourcegitcommit: 581ab03291e91983459e56e40ea8d97b5189227e
+ms.openlocfilehash: 32de7f7e38195271e179d4fae3884b7a39f37c45
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/27/2019
-ms.locfileid: "70046280"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868081"
 ---
-# <a name="how-to-save-files-using-the-savefiledialog-component"></a>Procédure : enregistrer des fichiers à l’aide du composant SaveFileDialog
+# <a name="how-to-save-files-using-the-savefiledialog-component"></a>Comment : enregistrer des fichiers à l'aide du composant SaveFileDialog
 
-Le <xref:System.Windows.Forms.SaveFileDialog> composant permet aux utilisateurs de parcourir le système de fichiers et de sélectionner les fichiers à enregistrer. La boîte de dialogue retourne le chemin et le nom du fichier que l’utilisateur a sélectionné dans la boîte de dialogue. Cependant, vous devez écrire le code pour écrire réellement les fichiers sur le disque.
+Le composant <xref:System.Windows.Forms.SaveFileDialog> permet aux utilisateurs de parcourir le système de fichiers et de sélectionner les fichiers à enregistrer. La boîte de dialogue retourne le chemin et le nom du fichier que l’utilisateur a sélectionné dans la boîte de dialogue. Cependant, vous devez écrire le code pour écrire réellement les fichiers sur le disque.
 
 ### <a name="to-save-a-file-using-the-savefiledialog-component"></a>Pour enregistrer un fichier à l’aide du composant SaveFileDialog
 
 - Affichez la boîte de dialogue **Enregistrer le fichier** et appelez une méthode pour enregistrer le fichier sélectionné par l’utilisateur.
 
-  Utilisez la <xref:System.Windows.Forms.SaveFileDialog> méthode du <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> composant pour enregistrer le fichier. Cette méthode vous donne un <xref:System.IO.Stream> objet dans lequel vous pouvez écrire.
+  Utilisez la méthode <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> du composant <xref:System.Windows.Forms.SaveFileDialog> pour enregistrer le fichier. Cette méthode vous donne un objet <xref:System.IO.Stream> dans lequel vous pouvez écrire.
 
-  L’exemple ci-dessous <xref:System.Windows.Forms.DialogResult> utilise la propriété pour récupérer le nom du fichier et la <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> méthode pour enregistrer le fichier. La <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> méthode vous donne un flux dans lequel écrire le fichier.
+  L’exemple ci-dessous utilise la propriété <xref:System.Windows.Forms.DialogResult> pour récupérer le nom du fichier et la méthode <xref:System.Windows.Forms.OpenFileDialog.OpenFile%2A> pour enregistrer le fichier. La méthode <xref:System.Windows.Forms.SaveFileDialog.OpenFile%2A> vous donne un flux dans lequel écrire le fichier.
 
-  Dans l’exemple ci-dessous, il <xref:System.Windows.Forms.Button> existe un contrôle avec une image qui lui est assignée. Lorsque vous cliquez sur le bouton, <xref:System.Windows.Forms.SaveFileDialog> un composant est instancié avec un filtre qui autorise les fichiers de type. gif,. jpeg et. bmp. Si un fichier de ce type est sélectionné dans la boîte de dialogue Enregistrer le fichier, l’image du bouton est enregistrée.
+  Dans l’exemple ci-dessous, il existe un contrôle <xref:System.Windows.Forms.Button> avec une image qui lui est assignée. Lorsque vous cliquez sur le bouton, un composant <xref:System.Windows.Forms.SaveFileDialog> est instancié avec un filtre qui autorise les fichiers de type. gif,. jpeg et. bmp. Si un fichier de ce type est sélectionné dans la boîte de dialogue Enregistrer le fichier, l’image du bouton est enregistrée.
 
   > [!IMPORTANT]
-  > Pour obtenir ou définir la <xref:System.Windows.Forms.FileDialog.FileName%2A> propriété, votre assembly nécessite un niveau de privilège accordé <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType> par la classe. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. Pour plus d’informations, consultez [Notions fondamentales de la sécurité d’accès du code](../../misc/code-access-security-basics.md).
+  > Pour obtenir ou définir la propriété <xref:System.Windows.Forms.FileDialog.FileName%2A>, votre assembly nécessite un niveau de privilège accordé par la classe <xref:System.Security.Permissions.FileIOPermission?displayProperty=nameWithType>. Si vous l’exécutez dans un contexte de confiance partielle, le processus peut lever une exception en raison de privilèges insuffisants. Pour plus d'informations, consultez [Code Access Security Basics](../../misc/code-access-security-basics.md).
 
-  L’exemple suppose que votre formulaire contient un <xref:System.Windows.Forms.Button> contrôle dont la <xref:System.Windows.Forms.ButtonBase.Image%2A> propriété a la valeur d’un fichier de type. gif,. jpeg ou. bmp.
+  L’exemple suppose que votre formulaire possède un contrôle <xref:System.Windows.Forms.Button> avec sa propriété <xref:System.Windows.Forms.ButtonBase.Image%2A> définie sur un fichier de type. gif,. jpeg ou. bmp.
 
   > [!NOTE]
-  > La <xref:System.Windows.Forms.FileDialog> propriété de <xref:System.Windows.Forms.FileDialog.FilterIndex%2A> la classe (qui, en raison de l’héritage, fait <xref:System.Windows.Forms.SaveFileDialog> partie de la classe) utilise un index de base un. Ceci est important si vous écrivez du code pour enregistrer les données dans un format spécifique (par exemple pour enregistrer un fichier au format texte brut ou au format binaire). Cette propriété est présentée dans l’exemple ci-dessous.
+  > La propriété <xref:System.Windows.Forms.FileDialog.FilterIndex%2A> de la classe <xref:System.Windows.Forms.FileDialog> (qui, en raison de l’héritage, fait partie de la classe <xref:System.Windows.Forms.SaveFileDialog>) utilise un index de base un. Ceci est important si vous écrivez du code pour enregistrer les données dans un format spécifique (par exemple pour enregistrer un fichier au format texte brut ou au format binaire). Cette propriété est présentée dans l’exemple ci-dessous.
 
   ```vb
   Private Sub Button2_Click(ByVal sender As System.Object, _
@@ -173,10 +173,10 @@ Le <xref:System.Windows.Forms.SaveFileDialog> composant permet aux utilisateurs 
       System::EventHandler(this, &Form1::button2_Click);
   ```
 
-  Pour plus d’informations sur l’écriture de flux <xref:System.IO.FileStream.BeginWrite%2A> de <xref:System.IO.FileStream.Write%2A>fichier, consultez et.
+  Pour plus d’informations sur l’écriture de flux de fichier, consultez <xref:System.IO.FileStream.BeginWrite%2A> et <xref:System.IO.FileStream.Write%2A>.
 
   > [!NOTE]
-  > Certains contrôles, tels que le <xref:System.Windows.Forms.RichTextBox> contrôle, peuvent enregistrer des fichiers. Pour plus d’informations, consultez la section « Composant SaveFileDialog » de l’article technique de MSDN Online Library, [Les principaux codes des boîtes de dialogue de Windows Forms](https://go.microsoft.com/fwlink/?LinkID=102575).
+  > Certains contrôles, tels que le contrôle <xref:System.Windows.Forms.RichTextBox>, peuvent enregistrer des fichiers.
 
 ## <a name="see-also"></a>Voir aussi
 

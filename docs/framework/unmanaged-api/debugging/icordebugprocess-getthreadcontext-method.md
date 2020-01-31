@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5b132ef1-8d4b-4525-89b3-54123596c194
 topic_type:
 - apiref
-ms.openlocfilehash: c6def272ecc7bd2b6e946e2c9623f0b60587d317
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 41c5116d23655730f3586dc656aa69c8ae817b6c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128811"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792622"
 ---
 # <a name="icordebugprocessgetthreadcontext-method"></a>ICorDebugProcess::GetThreadContext, méthode
 Obtient le contexte du thread donné dans ce processus.  
@@ -35,7 +35,7 @@ HRESULT GetThreadContext(
     BYTE context[]);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadID`  
  dans ID du thread pour lequel récupérer le contexte.  
   
@@ -48,11 +48,11 @@ HRESULT GetThreadContext(
  Le contexte spécifie l’architecture du processeur sur lequel le thread s’exécute.  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur doit appeler cette méthode plutôt que la méthode `GetThreadContext` Win32, car le thread peut être dans un État « détourné », dans lequel son contexte a été modifié temporairement. Cette méthode doit être utilisée uniquement quand un thread est en code natif. Utilisez [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) pour les threads dans le code managé.  
+ Le débogueur doit appeler cette méthode plutôt que la méthode `GetThreadContext` Win32, car le thread peut être dans un État « détourné », dans lequel son contexte a été modifié temporairement. Cette méthode doit être utilisée uniquement quand un thread est en code natif. Utilisez [ICorDebugRegisterSet](icordebugregisterset-interface.md) pour les threads dans le code managé.  
   
  Les données retournées sont une structure de contexte pour la plateforme actuelle. À l’instar de la méthode de `GetThreadContext` Win32, l’appelant doit initialiser le paramètre `context` avant d’appeler cette méthode.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

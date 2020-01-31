@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b420433c-5ebe-4986-bba1-97902e6db819
 topic_type:
 - apiref
-ms.openlocfilehash: 5b58b7131d015353c2276b6f422e93e5d6a09109
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0c833416cca965f2655266152c5bdf5f11624d14
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428150"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861136"
 ---
 # <a name="icorprofilerobjectenumnext-method"></a>ICorProfilerObjectEnum::Next, méthode
 Obtient le nombre spécifié d’objets contigus dans une collection séquentielle d’objets, en commençant à la position actuelle de l’énumérateur dans la séquence.  
@@ -36,7 +36,7 @@ HRESULT Next (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `celt`  
  [in] Nombre d'objets à récupérer.  
   
@@ -46,7 +46,7 @@ HRESULT Next (
  `pceltFetched`  
  [out] Pointeur vers le nombre d'éléments réellement retournés dans le tableau `objects`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -57,4 +57,4 @@ HRESULT Next (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerObjectEnum, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerobjectenum-interface.md)
+- [ICorProfilerObjectEnum, interface](icorprofilerobjectenum-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: bc71cbca-7d73-40e5-84dd-2109fade3c2a
 topic_type:
 - apiref
-ms.openlocfilehash: 6de440d10f02f177e62ca3d2bd29fd5e98ea9388
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fdd2fee11e9353c3aa3faee2b137597e4ba47801
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137141"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791179"
 ---
 # <a name="icordebugunmanagedcallback-interface"></a>ICorDebugUnmanagedCallback, interface
 Fournit une notification des événements natifs qui ne sont pas directement liés au common language runtime (CLR).  
@@ -28,14 +28,14 @@ Fournit une notification des événements natifs qui ne sont pas directement li�
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[DebugEvent, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugunmanagedcallback-debugevent-method.md)|Notifie le débogueur qu’un événement natif a été déclenché.|  
+|[DebugEvent, méthode](icordebugunmanagedcallback-debugevent-method.md)|Notifie le débogueur qu’un événement natif a été déclenché.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -46,4 +46,4 @@ Fournit une notification des événements natifs qui ne sont pas directement li�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

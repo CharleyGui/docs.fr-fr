@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0d8a7730-edc9-4728-898f-41b219cf5a28
 topic_type:
 - apiref
-ms.openlocfilehash: 205ad3af81fb6fabda5cbe291536f8858999f831
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d4e7c055480ea611357d5d3e18ac4306acf4d0b0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113703"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785416"
 ---
 # <a name="iclrdatatargetgettlsvalue-method"></a>ICLRDataTarget::GetTLSValue, méthode
 Obtient une valeur à partir du stockage local des threads (TLS) du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime (CLR).  
@@ -35,7 +35,7 @@ HRESULT GetTLSValue (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadID`  
  dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
   
@@ -48,7 +48,7 @@ HRESULT GetTLSValue (
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -59,4 +59,4 @@ HRESULT GetTLSValue (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget, interface](iclrdatatarget-interface.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e8ab7c41-d508-4ed9-8a31-ead072b5a314
 topic_type:
 - apiref
-ms.openlocfilehash: cd43dce995c2bc9a45a0c8134a91b20cb1dec26e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 585b3d605d0df9169c12ca10198846ec0a7fe6d4
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111426"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793608"
 ---
 # <a name="iclrdebuggingopenvirtualprocess-method"></a>ICLRDebugging::OpenVirtualProcess, méthode
 Obtient l’interface ICorDebugProcess qui correspond à un module common language runtime (CLR) chargé dans le processus.  
@@ -39,12 +39,12 @@ HRESULT OpenVirtualProcess(
     [out] CLR_DEBUGGING_PROCESS_FLAGS * pdwFlags);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `moduleBaseAddress`  
  dans Adresse de base d’un module dans le processus cible. COR_E_NOT_CLR est retourné si le module spécifié n’est pas un module CLR.  
   
  `pDataTarget`  
- dans Abstraction de cible de données qui permet au débogueur managé d’inspecter l’état du processus. Le débogueur doit implémenter l’interface [ICorDebugDataTarget](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md) . Vous devez implémenter l’interface [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) pour prendre en charge les scénarios où le CLR qui est débogué n’est pas installé localement sur l’ordinateur.  
+ dans Abstraction de cible de données qui permet au débogueur managé d’inspecter l’état du processus. Le débogueur doit implémenter l’interface [ICorDebugDataTarget](icordebugdatatarget-interface.md) . Vous devez implémenter l’interface [ICLRDebuggingLibraryProvider](iclrdebugginglibraryprovider-interface.md) pour prendre en charge les scénarios où le CLR qui est débogué n’est pas installé localement sur l’ordinateur.  
   
  `pLibraryProvider`  
  dans Interface de rappel de fournisseur de bibliothèque qui permet de localiser et de charger des bibliothèques de débogage spécifiques à la version à la demande. Ce paramètre est obligatoire uniquement si `ppProcess` ou `pFlags` n’est pas `null`.  
@@ -59,21 +59,21 @@ HRESULT OpenVirtualProcess(
  à Pointeur vers l’interface COM qui est identifiée par `riidProcess`.  
   
  `pVersion`  
- [in, out] Version du CLR. En entrée, cette valeur peut être `null`. Il peut également pointer vers une structure [CLR_DEBUGGING_VERSION](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-version-structure.md) , auquel cas le champ `wStructVersion` de la structure doit être initialisé à 0 (zéro).  
+ [in, out] Version du CLR. En entrée, cette valeur peut être `null`. Il peut également pointer vers une structure [CLR_DEBUGGING_VERSION](clr-debugging-version-structure.md) , auquel cas le champ `wStructVersion` de la structure doit être initialisé à 0 (zéro).  
   
  Lors de la sortie, la structure `CLR_DEBUGGING_VERSION` retournée est renseignée avec les informations de version du CLR.  
   
  `pdwFlags`  
- à Indicateurs d’information sur le runtime spécifié. Pour obtenir une description des indicateurs, consultez la rubrique [CLR_DEBUGGING_PROCESS_FLAGS](../../../../docs/framework/unmanaged-api/debugging/clr-debugging-process-flags-enumeration.md) .  
+ à Indicateurs d’information sur le runtime spécifié. Pour obtenir une description des indicateurs, consultez la rubrique [CLR_DEBUGGING_PROCESS_FLAGS](clr-debugging-process-flags-enumeration.md) .  
   
 ## <a name="return-value"></a>Valeur de retour  
  Cette méthode retourne les HRESULT spécifiques suivants ainsi que les erreurs HRESULT indiquant l'échec de la méthode.  
   
 |HRESULT|Description|  
 |-------------|-----------------|  
-|S_OK|La commande s'est correctement terminée.|  
-|E_POINTER|`pDataTarget` a la valeur `null`.|  
-|CORDBG_E_LIBRARY_PROVIDER_ERROR|Le rappel [ICLRDebuggingLibraryProvider](../../../../docs/framework/unmanaged-api/debugging/iclrdebugginglibraryprovider-interface.md) retourne une erreur ou ne fournit pas de handle valide.|  
+|S_OK|La méthode s'est correctement terminée.|  
+|E_POINTER|`pDataTarget` est `null`.|  
+|CORDBG_E_LIBRARY_PROVIDER_ERROR|Le rappel [ICLRDebuggingLibraryProvider](iclrdebugginglibraryprovider-interface.md) retourne une erreur ou ne fournit pas de handle valide.|  
 |CORDBG_E_MISSING_DATA_TARGET_INTERFACE|`pDataTarget` n’implémente pas les interfaces cibles de données requises pour cette version du Runtime.|  
 |CORDBG_E_NOT_CLR|Le module indiqué n’est pas un module CLR. Ce HRESULT est également retourné lorsqu’un module CLR ne peut pas être détecté parce que la mémoire a été endommagée, que le module n’est pas disponible ou que la version du CLR est ultérieure à la version du shim.|  
 |CORDBG_E_UNSUPPORTED_DEBUGGING_MODEL|Cette version du runtime ne prend pas en charge ce modèle de débogage. Actuellement, le modèle de débogage n’est pas pris en charge par les versions CLR antérieures au .NET Framework 4. Le paramètre de sortie `pwszVersion` est toujours défini sur la valeur correcte après cette erreur.|  
@@ -85,7 +85,7 @@ HRESULT OpenVirtualProcess(
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -96,5 +96,5 @@ HRESULT OpenVirtualProcess(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

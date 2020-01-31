@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Pane control type
 - control types, Pane
 ms.assetid: 79761191-4449-4630-899c-9cbdb8867d3f
-ms.openlocfilehash: 0a445d0631fe6a24d8e9b5cb21cd78f260465486
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 91f802da0eca5bac8f4914a0edf8c10df80b95ea
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741593"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76786247"
 ---
 # <a name="ui-automation-support-for-the-pane-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle Pane
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741593"
   
  Le type de contrôle Pane permet de représenter un objet dans un frame ou une fenêtre de document. Les utilisateurs peuvent naviguer entre des contrôles de volet et au sein du contenu du volet actif, mais ils ne peuvent pas naviguer entre des éléments de volets différents. Par conséquent, les contrôles de volet représentent un niveau de regroupement inférieur aux fenêtres et aux documents, mais supérieur aux contrôles individuels. L’utilisateur navigue entre les volets en appuyant sur TAB, F6 ou Ctrl+Tab, en fonction du contexte. Aucune navigation spécifique au clavier n’est requise par le type de contrôle Pane.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Pane. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de liste, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle Pane. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de liste, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  

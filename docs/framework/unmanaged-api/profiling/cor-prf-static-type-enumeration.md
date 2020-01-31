@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 441d7809-5b65-41a5-ba64-2910a8008315
 topic_type:
 - apiref
-ms.openlocfilehash: 40efe81f72a2043503bf521e3e47dad1a7f4530c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 880c9bd186d6cb2acb277e9cc55d3063fb8d51d8
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448452"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867033"
 ---
 # <a name="cor_prf_static_type-enumeration"></a>COR_PRF_STATIC_TYPE, énumération
 Indique si un champ est statique et si oui, la qualité statique qui s'y applique. Ces valeurs peuvent être combinées à l’aide de l’opération or au niveau du bit pour indiquer que le champ a plusieurs qualités statiques différentes.  
@@ -36,9 +36,9 @@ typedef enum {
 } COR_PRF_STATIC_TYPE;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_FIELD_NOT_A_STATIC`|Le champ n’est pas statique.|  
 |`COR_PRF_FIELD_APP_DOMAIN_STATIC`|Le champ est un domaine d’application statique.|  
@@ -46,7 +46,7 @@ typedef enum {
 |`COR_PRF_FIELD_CONTEXT_STATIC`|Le champ est context-static.|  
 |`COR_PRF_FIELD_RVA_STATIC`|Le champ est adresse virtuelle relative (RVA)-static.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -57,4 +57,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

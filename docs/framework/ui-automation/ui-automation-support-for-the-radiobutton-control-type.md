@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Radio Button control type
 - RadioButton control type
 ms.assetid: 87170464-7857-41f1-bcf7-bb41be31cb53
-ms.openlocfilehash: 416d6d6b9d8e7fbd3b3bb5483ddd8dc22380166c
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 037f237537980f1c68855decf468da54e9a22d14
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741561"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76786098"
 ---
 # <a name="ui-automation-support-for-the-radiobutton-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle RadioButton
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741561"
   
  Une case d’option se compose d’un bouton rond et d’un texte défini par l’application (étiquette), d’une icône ou d’une image bitmap qui indique un choix que l’utilisateur peut faire en sélectionnant le bouton. Une application utilise généralement des cases d’option dans une zone de groupe pour permettre à l’utilisateur de choisir parmi un ensemble d’options connexes mais s’excluant mutuellement. Par exemple, l’application peut présenter un groupe de cases d’option parmi lesquelles l’utilisateur peut sélectionner une préférence de format pour le texte sélectionné dans la zone cliente. L’utilisateur peut sélectionner un format aligné à gauche, aligné à droite ou centré en cochant la case d’option correspondante. En règle générale, l’utilisateur peut sélectionner une seule option à la fois parmi un ensemble de cases d’option.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle RadioButton. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de liste, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] requis pour le type de contrôle RadioButton. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de liste, qu’il s’agisse [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  

@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 3e184022-0247-4824-a23d-6b29593d8d01
 topic_type:
 - apiref
-ms.openlocfilehash: c49bdcb9345960bce018cefd4443948f997c7267
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 4dd4e39c9092d018f13e3bd2822e9492d71141ad
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428358"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867293"
 ---
 # <a name="cor_prf_codegen_flags-enumeration"></a>COR_PRF_CODEGEN_FLAGS, énumération
-Définit les indicateurs de génération de code qui peuvent être définis avec la méthode [ICorProfilerFunctionControl :: setcodegenflags,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) .  
+Définit les indicateurs de génération de code qui peuvent être définis avec la méthode [ICorProfilerFunctionControl :: setcodegenflags,](icorprofilerfunctioncontrol-setcodegenflags-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,17 +33,17 @@ typedef enum {
 } COR_PRF_CODEGEN_FLAGS;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_CODEGEN_DISABLE_INLINING`|Aucune fonction n’est insérée dans le corps de cette fonction. Toutefois, la fonction elle-même peut être inline dans ses appelants.|  
 |`COR_PRF_CODEGEN_DISABLE_ALL_OPTIMIZATIONS`|Toutes les optimisations sont désactivées pour le corps de cette fonction. Toutefois, la fonction elle-même peut toujours être inline dans ses appelants.|  
   
 ## <a name="remarks"></a>Notes  
- L’énumération `COR_PRF_CODEGEN_FLAGS` est utilisée par la méthode [ICorProfilerFunctionControl :: setcodegenflags,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctioncontrol-setcodegenflags-method.md) pour permettre au profileur de contrôler la génération de code pour la fonction recompilée juste-à-temps.  
+ L’énumération `COR_PRF_CODEGEN_FLAGS` est utilisée par la méthode [ICorProfilerFunctionControl :: setcodegenflags,](icorprofilerfunctioncontrol-setcodegenflags-method.md) pour permettre au profileur de contrôler la génération de code pour la fonction recompilée juste-à-temps.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -54,4 +54,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

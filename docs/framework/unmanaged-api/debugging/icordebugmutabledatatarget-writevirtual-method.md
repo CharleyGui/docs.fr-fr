@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugMutableDataTarget :: WriteVirtual,, méthode'
+title: ICorDebugMutableDataTarget::WriteVirtual, méthode
 ms.date: 03/30/2017
 ms.assetid: 80833648-58a7-491a-8dc8-9a48e9bb3adc
-ms.openlocfilehash: 5947caa8dfb97574bb4b3c5634d962df153211c7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2b4bd1dc97f37f5a514ab54f9e4d778fe3b91736
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132681"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792830"
 ---
-# <a name="icordebugmutabledatatargetwritevirtual-method"></a>ICorDebugMutableDataTarget :: WriteVirtual,, méthode
+# <a name="icordebugmutabledatatargetwritevirtual-method"></a>ICorDebugMutableDataTarget::WriteVirtual, méthode
 Écrit la mémoire dans l'espace d'adressage du processus cible.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -21,7 +21,7 @@ HRESULT WriteVirtual(
    [in] ULONG32 bytesRequested);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `address`  
  [in] Adresse à laquelle le contenu de `pBuffer` doit être écrit.  
   
@@ -37,7 +37,7 @@ HRESULT WriteVirtual(
 ## <a name="remarks"></a>Notes  
  Si des octets ne peuvent pas être écrits, l'appel de méthode échoue sans aucune modification des octets dans l'espace d'adressage cible. (Sinon, la cible se retrouve dans un état incohérent qui rend toute opération de débogage supplémentaire peu fiable.)  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ HRESULT WriteVirtual(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugMutableDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmutabledatatarget-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMutableDataTarget, interface](icordebugmutabledatatarget-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

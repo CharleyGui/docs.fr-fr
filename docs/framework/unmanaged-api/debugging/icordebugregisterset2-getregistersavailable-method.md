@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f3ed344b-0d3a-44e8-8000-2a97e0805a2c
 topic_type:
 - apiref
-ms.openlocfilehash: d0b6960a24e246c7a538e8ffc59fa380a4b8e2a7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 00c9939b25f395010f6ea5832b405c3e9928a223
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131370"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792023"
 ---
 # <a name="icordebugregisterset2getregistersavailable-method"></a>ICorDebugRegisterSet2::GetRegistersAvailable, méthode
 Obtient un tableau d’octets qui fournit une bitmap des registres disponibles.  
@@ -34,7 +34,7 @@ HRESULT GetRegistersAvailable (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `numChunks`  
  [in] Taille du tableau `availableRegChunks`.  
   
@@ -52,7 +52,7 @@ HRESULT GetRegistersAvailable (
   
      valeur `CorDebugRegister` & 7  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -63,5 +63,5 @@ HRESULT GetRegistersAvailable (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugRegisterSet2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
-- [ICorDebugRegisterSet, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2, interface](icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet, interface](icordebugregisterset-interface.md)

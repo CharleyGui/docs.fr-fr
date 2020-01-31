@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ca7723db-7c07-4cdd-bd92-fba34928b623
 topic_type:
 - apiref
-ms.openlocfilehash: 805f9a5d1f2590a06bfa929c152bdfd13900531a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28b9fb5a25981e5e37a5f1bbb797baeac45e0028
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134283"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793572"
 ---
 # <a name="icordebugcanlaunchorattach-method"></a>ICorDebug::CanLaunchOrAttach, méthode
 Retourne un HRESULT qui indique si le lancement d’un nouveau processus ou l’attachement au processus existant spécifié est possible dans le contexte de la configuration d’ordinateur et d’exécution actuelle.  
@@ -34,7 +34,7 @@ HRESULT CanLaunchOrAttach (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `dwProcessId`  
  dans ID d’un processus existant.  
   
@@ -57,7 +57,7 @@ HRESULT CanLaunchOrAttach (
   
  Si vous envisagez de lancer avec le débogage Win32 activé ou si l’attachement avec le débogage Win32 est activé, transmettez `true` pour `win32DebuggingEnabled`. Le HRESULT retourné par `CanLaunchOrAttach` peut différer si vous utilisez cette option.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -68,4 +68,4 @@ HRESULT CanLaunchOrAttach (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebug, interface](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md)
+- [ICorDebug, interface](icordebug-interface.md)

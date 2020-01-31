@@ -12,12 +12,12 @@ api_type:
 ms.assetid: 307d6ac7-4a86-45f3-999d-6b47004a68f2
 topic_type:
 - apiref
-ms.openlocfilehash: 5e7fd2f277a9c3d8410020a53d348456ef9deffb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 961e74551ae7fc170e443c632ca11598f1494a39
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73111902"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785205"
 ---
 # <a name="iclrdatatarget3getexceptionthreadid-method"></a>ICLRDataTarget3::GetExceptionThreadID, méthode
 Appelée par les services d'accès aux données de CLR (Common Language Runtime) pour obtenir l'ID du thread qui a levé l'exception.  
@@ -30,7 +30,7 @@ HRESULT GetExceptionThreadID(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadID`  
  [en sortie] L'ID du thread qui a levé l'exception.  
   
@@ -45,7 +45,7 @@ HRESULT GetExceptionThreadID(
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -56,6 +56,6 @@ HRESULT GetExceptionThreadID(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget3, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-interface.md)
-- [GetExceptionContextRecord, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptioncontextrecord-method.md)
-- [GetExceptionRecord, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget3-getexceptionrecord-method.md)
+- [ICLRDataTarget3, interface](iclrdatatarget3-interface.md)
+- [GetExceptionContextRecord, méthode](iclrdatatarget3-getexceptioncontextrecord-method.md)
+- [GetExceptionRecord, méthode](iclrdatatarget3-getexceptionrecord-method.md)

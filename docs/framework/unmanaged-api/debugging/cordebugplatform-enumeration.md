@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: c5444816-7378-4521-afd3-bf5e4b5303d5
 topic_type:
 - apiref
-ms.openlocfilehash: 5d66503487e1b997e2b8cc7d3d46e210a4dbbe05
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 2ed32449c4a133e6e72ec44f9cb57f49de22164a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132765"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778242"
 ---
 # <a name="cordebugplatform-enumeration"></a>CorDebugPlatform, énumération
-Fournit les valeurs de plateforme cible utilisées par la méthode [ICorDebugDataTarget :: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) .  
+Fournit les valeurs de plateforme cible utilisées par la méthode [ICorDebugDataTarget :: GetPlatform](icordebugdatatarget-getplatform-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -39,9 +39,9 @@ typedef enum CorDebugPlatform
 } CorDebugPlatform;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |CORDB_PLATFORM_WINDOWS_X86|La plateforme cible est Windows s'exécutant sur du matériel Intel x86.|  
 |CORDB_PLATFORM_WINDOWS_AMD64|La plateforme cible est Windows 64 bits s'exécutant sur du matériel AMD64 ou Intel EM64T.|  
@@ -51,7 +51,7 @@ typedef enum CorDebugPlatform
 |CORDB_PLATFORM_WINDOWS_ARM|La plateforme cible est le système d’exploitation Macintosh s’exécutant sur le matériel ARM Windows.|  
 |CORDB_PLATFORM_MAC_AMD64|La plateforme cible est le système d’exploitation Macintosh s’exécutant sur du matériel AMD64.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -64,4 +64,4 @@ typedef enum CorDebugPlatform
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

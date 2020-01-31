@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider :: Gettypeprops,, méthode'
+title: ICorDebugSymbolProvider::GetTypeProps, méthode
 ms.date: 03/30/2017
 ms.assetid: 35ac4140-91ea-4c77-b1c4-1daf41986ca5
-ms.openlocfilehash: c87d9f6d0a719dae5e532e9c0369a7f9fc03748a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5fa091eaf2cf93b0c645effeec3c959d42665fc9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133668"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791544"
 ---
-# <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider :: Gettypeprops,, méthode
+# <a name="icordebugsymbolprovidergettypeprops-method"></a>ICorDebugSymbolProvider::GetTypeProps, méthode
 Retourne des informations sur les propriétés d'un type, comme le nombre de signature de ses paramètres génériques, en fonction d'une adresse virtuelle relative (RVA) dans une vtable.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -23,7 +23,7 @@ HRESULT GetTypeProps(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `tableRva`  
  [in] Adresse virtuelle relative (RVA) dans une vtable.  
   
@@ -42,7 +42,7 @@ HRESULT GetTypeProps(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -53,6 +53,6 @@ HRESULT GetTypeProps(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetMethodProps, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getmethodprops-method.md)
-- [ICorDebugSymbolProvider, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [GetMethodProps, méthode](icordebugsymbolprovider-getmethodprops-method.md)
+- [ICorDebugSymbolProvider, interface](icordebugsymbolprovider-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

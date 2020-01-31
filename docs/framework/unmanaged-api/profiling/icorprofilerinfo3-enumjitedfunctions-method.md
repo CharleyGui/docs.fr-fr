@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e2847a36-f460-45e2-9b6c-b33b008f40d9
 topic_type:
 - apiref
-ms.openlocfilehash: d21a793a88cd7561da9acb7daab2dc3bfecf0fc7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a22a0de9a20f32ce1c9818bbcf29222a4b331420
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449758"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862423"
 ---
 # <a name="icorprofilerinfo3enumjitedfunctions-method"></a>ICorProfilerInfo3::EnumJITedFunctions, méthode
 Retourne un énumérateur pour toutes les fonctions qui ont été précédemment compilées juste-à-temps.  
@@ -31,17 +31,17 @@ Retourne un énumérateur pour toutes les fonctions qui ont été précédemment
 HRESULT EnumJITedFunctions([out] ICorProfilerFunctionEnum** ppEnum);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ppEnum`  
- à Pointeur vers l’énumérateur [ICorProfilerFunctionEnum](../../../../docs/framework/unmanaged-api/profiling/icorprofilerfunctionenum-interface.md) .  
+ à Pointeur vers l’énumérateur [ICorProfilerFunctionEnum](icorprofilerfunctionenum-interface.md) .  
   
 ## <a name="remarks"></a>Notes  
- Cette méthode peut se chevaucher avec des rappels `JITCompilation` tels que la méthode [ICorProfilerCallback :: JITCompilationStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md) . L’énumérateur retourné par cette méthode n’inclut pas les fonctions qui sont chargées à partir d’images natives générées avec Ngen. exe.  
+ Cette méthode peut se chevaucher avec des rappels `JITCompilation` tels que la méthode [ICorProfilerCallback :: JITCompilationStarted](icorprofilercallback-jitcompilationstarted-method.md) . L’énumérateur retourné par cette méthode n’inclut pas les fonctions qui sont chargées à partir d’images natives générées avec Ngen. exe.  
   
 > [!NOTE]
-> L’énumération retournée comprend uniquement « 0 » pour la valeur du champ `COR_PRF_FUNCTION::reJitId`.  Si vous avez besoin de valeurs `COR_PRF_FUNCTION::reJitId` valides, utilisez la méthode [ICorProfilerInfo4 :: enumjitedfunctions2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-enumjitedfunctions2-method.md) .  
+> L’énumération retournée comprend uniquement « 0 » pour la valeur du champ `COR_PRF_FUNCTION::reJitId`.  Si vous avez besoin de valeurs `COR_PRF_FUNCTION::reJitId` valides, utilisez la méthode [ICorProfilerInfo4 :: enumjitedfunctions2,](icorprofilerinfo4-enumjitedfunctions2-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -52,6 +52,6 @@ HRESULT EnumJITedFunctions([out] ICorProfilerFunctionEnum** ppEnum);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

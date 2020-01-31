@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: c35e2919-42c3-4ba0-ae28-443c35f66f93
 topic_type:
 - apiref
-ms.openlocfilehash: 949d04fe8d9ce492fb320fb4732677ffb35302ef
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ddb5af486ab6fb1c8c4fabf3ccf7b43d037e1eeb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132827"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789317"
 ---
 # <a name="cordebugiltonativemappingtypes-enumeration"></a>CorDebugIlToNativeMappingTypes, énumération
-Indique si une plage particulière d’instructions natives, représentée par une instance de la structure COR_DEBUG_IL_TO_NATIVE_MAP, correspond à une région de code spéciale.  
+Indique si une plage particulière d’instructions natives, représentées par une instance de la structure COR_DEBUG_IL_TO_NATIVE_MAP, correspond à une région de code spéciale.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,15 +34,15 @@ typedef enum CorDebugIlToNativeMappingTypes {
 } CorDebugIlToNativeMappingTypes;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`NO_MAPPING`|La plage d’instructions natives ne correspond à aucune région de code spéciale.|  
 |`PROLOG`|La plage d’instructions natives correspond au prologue.|  
 |`EPILOG`|La plage d’instructions natives correspond à l’épilogue.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -53,5 +53,5 @@ typedef enum CorDebugIlToNativeMappingTypes {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetILToNativeMapping, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-getiltonativemapping-method.md)
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [GetILToNativeMapping, méthode](icordebugcode-getiltonativemapping-method.md)
+- [Énumérations de débogage](debugging-enumerations.md)

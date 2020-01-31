@@ -14,22 +14,22 @@ helpviewer_keywords:
 ms.assetid: d4755569-85b8-4ff4-bf50-0e608e76429f
 topic_type:
 - apiref
-ms.openlocfilehash: 5a451218e0fdc32132a4e79d091ada8355d32fe7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9e333d71505a055cfe27df2c79a102c939bafc9d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122687"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788475"
 ---
 # <a name="icordebuginternalframe2-interface"></a>ICorDebugInternalFrame2, interface
-Fournit des informations sur les frames internes, y compris l’adresse et la position de la pile par rapport aux objets ICorDebugFrame.  
+Fournit des informations sur les frames internes, notamment l'adresse et la position de la pile par rapport aux objets ICorDebugFrame.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetFrameAddress, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-getframeaddress-method.md)|Retourne l’adresse de la pile du frame interne.|  
-|[IsCloserToLeaf, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebuginternalframe2-isclosertoleaf-method.md)|Vérifie si le `this` Frame interne est plus proche de la feuille que l’objet ICorDebugFrame spécifié.|  
+|[GetFrameAddress, méthode](icordebuginternalframe2-getframeaddress-method.md)|Retourne l’adresse de la pile du frame interne.|  
+|[IsCloserToLeaf, méthode](icordebuginternalframe2-isclosertoleaf-method.md)|Vérifie si le `this` Frame interne est plus proche de la feuille que l’objet ICorDebugFrame spécifié.|  
   
 ## <a name="remarks"></a>Notes  
  Cette interface étend l’interface ICorDebugInternalFrame.  
@@ -37,7 +37,7 @@ Fournit des informations sur les frames internes, y compris l’adresse et la po
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ Fournit des informations sur les frames internes, y compris l’adresse et la po
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

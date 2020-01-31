@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 26fb69f8-1467-4711-bd24-cb117c63938f
 topic_type:
 - apiref
-ms.openlocfilehash: c084a3fcbbc02504124a511c6e136be32f408d21
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7eda9bfff6de6b386c16ad0a188931d9d3adcb93
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73112326"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793657"
 ---
 # <a name="iclrdatatarget2freevirtual-method"></a>ICLRDataTarget2::FreeVirtual, méthode
 Appelée par les services d’accès aux données common language runtime (CLR) pour libérer de la mémoire qui a été précédemment allouée dans l’espace d’adressage du processus cible.  
@@ -35,7 +35,7 @@ HRESULT FreeVirtual(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `addr`  
  dans Valeur `CLRDATA_ADDRESS` qui spécifie l’adresse de départ de la mémoire à libérer.  
   
@@ -50,7 +50,7 @@ HRESULT FreeVirtual(
   
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -61,5 +61,5 @@ HRESULT FreeVirtual(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget2, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-interface.md)
-- [AllocVirtual, méthode](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget2-allocvirtual-method.md)
+- [ICLRDataTarget2, interface](iclrdatatarget2-interface.md)
+- [AllocVirtual, méthode](iclrdatatarget2-allocvirtual-method.md)

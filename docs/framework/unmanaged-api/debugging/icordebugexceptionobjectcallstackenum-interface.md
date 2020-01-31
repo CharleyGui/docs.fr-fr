@@ -14,28 +14,28 @@ helpviewer_keywords:
 ms.assetid: 39dffa18-c71b-48c4-b11d-e814631ab1e9
 topic_type:
 - apiref
-ms.openlocfilehash: 99a700270794ca92356cb9d134cb869d456199f9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9d98bccdfb83cec547b185693c28f25017d3225f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084429"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782795"
 ---
 # <a name="icordebugexceptionobjectcallstackenum-interface"></a>ICorDebugExceptionObjectCallStackEnum, interface
-Fournit un énumérateur pour les informations de la pile des appels qui sont incorporées dans un objet exception. Cette interface est une sous-classe de l’interface ICorDebugEnum.  
+Fournit un énumérateur pour les informations de la pile des appels qui sont incorporées dans un objet exception. Cette interface est une sous-classe de l'interface ICorDebugEnum.  
   
 ## <a name="methods"></a>Méthodes  
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Icordebugexceptionobjectcallstackenum, :: suivant](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-next-method.md)|Obtient un nombre spécifié d’objets [cordebugexceptionobjectstackframe,](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionobjectstackframe-structure.md) qui contiennent des informations sur la pile des appels d’un objet exception.|  
+|[ICorDebugExceptionObjectCallStackEnum::Next](icordebugexceptionobjectcallstackenum-next-method.md)|Obtient un nombre spécifié d’objets [cordebugexceptionobjectstackframe,](cordebugexceptionobjectstackframe-structure.md) qui contiennent des informations sur la pile des appels d’un objet exception.|  
   
 ## <a name="remarks"></a>Notes  
  L’interface `ICorDebugExceptionObjectCallStackEnum` implémente l’interface ICorDebugEnum.  
   
- Une instance `ICorDebugExceptionObjectCallStackEnum` est remplie avec des objets [cordebugexceptionobjectstackframe,](../../../../docs/framework/unmanaged-api/debugging/cordebugexceptionobjectstackframe-structure.md) en appelant la méthode [Icordebugexceptionobjectvalue, :: enumerateexceptioncallstack,](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md) . Les éléments de la pile des appels de la collection peuvent être énumérés en appelant la méthode [icordebugexceptionobjectcallstackenum, :: Next](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptionobjectcallstackenum-next-method.md)  
+ Une instance `ICorDebugExceptionObjectCallStackEnum` est remplie avec des objets [cordebugexceptionobjectstackframe,](cordebugexceptionobjectstackframe-structure.md) en appelant la méthode [Icordebugexceptionobjectvalue, :: enumerateexceptioncallstack,](icordebugexceptionobjectvalue-enumerateexceptioncallstack-method.md) . Les éléments de la pile des appels de la collection peuvent être énumérés en appelant la méthode [icordebugexceptionobjectcallstackenum, :: Next](icordebugexceptionobjectcallstackenum-next-method.md)  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -46,5 +46,5 @@ Fournit un énumérateur pour les informations de la pile des appels qui sont in
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

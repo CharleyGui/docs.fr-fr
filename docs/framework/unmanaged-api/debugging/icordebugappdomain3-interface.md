@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 875ef5be-c1e7-4d95-97e9-d3a667aeaba0
 topic_type:
 - apiref
-ms.openlocfilehash: 0b238a953fa5cd57c8b7af9a0643bfc36ee1032e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1aaccb37ec61ed1ba6a7e6e1f508704973117cca
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088861"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784883"
 ---
 # <a name="icordebugappdomain3-interface"></a>ICorDebugAppDomain3, interface
 Fournit des méthodes pour récupérer des informations sur les représentations managées des types de Windows Runtime actuellement chargés dans un domaine d’application. Cette interface est une extension des interfaces ICorDebugAppDomain et ICorDebugAppDomain2.  
@@ -28,8 +28,8 @@ Fournit des méthodes pour récupérer des informations sur les représentations
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[ICorDebugAppDomain3 :: Getcachedwinrttypes,](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypes-method.md)|Obtient un énumérateur pour tous les types de Windows Runtime mis en cache.|  
-|[ICorDebugAppDomain3 :: Getcachedwinrttypesforiids,](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Obtient un énumérateur pour les types de Windows Runtime mis en cache dans un domaine d’application en fonction de leurs identificateurs d’interface.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypes](icordebugappdomain3-getcachedwinrttypes-method.md)|Obtient un énumérateur pour tous les types de Windows Runtime mis en cache.|  
+|[ICorDebugAppDomain3::GetCachedWinRTTypesForIIDs](icordebugappdomain3-getcachedwinrttypesforiids-method.md)|Obtient un énumérateur pour les types de Windows Runtime mis en cache dans un domaine d’application en fonction de leurs identificateurs d’interface.|  
   
 ## <a name="remarks"></a>Notes  
  Cette interface est destinée à être utilisée par un débogueur conjointement à un appel d’évaluation de fonction pour `M:System.Runtime.InteropServices.Marshal.GetInspectableIIDs(System.Object)`. Quand la méthode récupère les identificateurs d’interface pris en charge par un objet Windows Runtime Server, le débogueur peut utiliser les méthodes définies dans cette interface pour les mapper aux types managés qui correspondent à ces interfaces.  
@@ -39,7 +39,7 @@ Fournit des méthodes pour récupérer des informations sur les représentations
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Windows Runtime  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -50,4 +50,4 @@ Fournit des méthodes pour récupérer des informations sur les représentations
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

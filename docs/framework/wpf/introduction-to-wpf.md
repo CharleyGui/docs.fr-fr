@@ -1,17 +1,18 @@
 ---
 title: Présentation de WPF
+titleSuffix: ''
 ms.date: 11/04/2016
 ms.topic: conceptual
 ms.assetid: b8d7cf43-d1f2-4f3d-adb0-4f3a6428edc0
 dev_langs:
 - csharp
 - vb
-ms.openlocfilehash: d8ea49bbe400c5ec478a94ad7c1adb759af28abb
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ecdd3b3c24b71917efb0d982d1f23737673622f9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454197"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744709"
 ---
 # <a name="wpf-overview"></a>Vue d’ensemble de WPF
 
@@ -255,7 +256,7 @@ Le moteur de liaison de données WPF fournit une prise en charge supplémentaire
 
 Pour plus d’informations, consultez [Vue d’ensemble de la liaison de données](../../desktop-wpf/data/data-binding-overview.md).
 
-## <a name="graphics"></a>Graphiques
+## <a name="graphics"></a>Graphismes
 
 WPF présente un ensemble de fonctionnalités graphiques étendu, évolutif et flexible possédant les avantages suivants :
 
@@ -322,7 +323,7 @@ La prise en charge d’animations WPF vous permet d’agrandir, de faire bouger,
 
 Pour plus d’informations, consultez [Vue d’ensemble de l’animation](graphics-multimedia/animation-overview.md).
 
-## <a name="media"></a>Médias
+## <a name="media"></a>Support
 
 L’un des moyens d’acheminer un contenu riche est d’utiliser des médias audiovisuels. WPF fournit une prise en charge spéciale pour les images, les vidéos et l’audio.
 
@@ -503,11 +504,11 @@ L’effet de ce code est illustré dans la figure suivante :
 
 ![Zone de liste utilisant un modèle de données](media/introduction-to-wpf/wpfintrofigure19.png)
 
-Notez que la <xref:System.Windows.Controls.ListBox> a conservé son comportement et son apparence globale ; seule l’apparence du contenu affiché par la zone de liste a été modifiée.
+Notez que la <xref:System.Windows.Controls.ListBox> a conservé son comportement et son apparence globale ; seule l’apparence du contenu affiché par la zone de liste a été modifiée.
 
 Pour plus d’informations, consultez [Vue d’ensemble des modèles de données](data/data-templating-overview.md).
 
-### <a name="styles"></a>Styles
+### <a name="styles"></a>cellule
 
 Les styles permettent aux développeurs et aux concepteurs de standardiser leur produit avec une apparence particulière. WPF fournit un modèle de style fort, dont la fondation est l’élément <xref:System.Windows.Style> . L’exemple suivant crée un style qui définit la couleur d’arrière-plan de chaque <xref:System.Windows.Controls.Button> dans une fenêtre pour `Orange`:
 
@@ -616,7 +617,7 @@ Pour plus d’informations, consultez [Ressources](../../desktop-wpf/fundamental
 
 ### <a name="custom-controls"></a>Contrôles personnalisés
 
-Bien que WPF fournisse un hôte de prise en charge de la personnalisation, vous pouvez rencontrer des situations dans lesquelles des contrôles WPF existants ne satisfont pas les besoins de votre application ou de ses utilisateurs. Cela peut se produire lorsque :
+Bien que WPF fournisse un hôte de prise en charge de la personnalisation, vous pouvez rencontrer des situations dans lesquelles des contrôles WPF existants ne satisfont pas les besoins de votre application ou de ses utilisateurs. Cela peut se produire dans les cas suivants :
 
 - l’interface utilisateur dont vous avez besoin ne peut pas être créée en personnalisant l’apparence des implémentations WPF existantes ;
 
@@ -649,14 +650,14 @@ Pour plus d’informations sur les contrôles personnalisés, consultez [Vue d�
 
 ## <a name="wpf-best-practices"></a>Bonnes pratiques pour WPF
 
-Comme pour toute plateforme de développement, WPF peut être utilisé de différentes manières pour obtenir le résultat souhaité. Afin de garantir que vos applications WPF fournissent l’expérience utilisateur requise et répondent aux demandes du public en général, il existe des meilleures pratiques pour l’accessibilité, la globalisation, la localisation et les performances. Pour plus d'informations, voir :
+Comme pour toute plateforme de développement, WPF peut être utilisé de différentes manières pour obtenir le résultat souhaité. Afin de garantir que vos applications WPF fournissent l’expérience utilisateur requise et répondent aux demandes du public en général, il existe des meilleures pratiques pour l’accessibilité, la globalisation, la localisation et les performances. Pour plus d'informations, consultez .
 
 - [Accessibilité](../ui-automation/accessibility-best-practices.md)
 - [Globalisation et localisation pour WPF](advanced/wpf-globalization-and-localization-overview.md)
 - [Performances des applications WPF](advanced/optimizing-wpf-application-performance.md)
 - [Sécurité de WPF](security-wpf.md)
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Nous avons examiné les fonctionnalités principales de WPF. Il est maintenant temps de créer votre première application WPF.
 

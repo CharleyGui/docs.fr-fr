@@ -3,12 +3,12 @@ title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
 ms.date: 12/04/2019
-ms.openlocfilehash: a483c559dee8b4a82cc2c792f5c2c5e4a8ff3f87
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: a352120efa199b871e67eb8ba2442bd69a9fc4ed
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733111"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789885"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
@@ -98,7 +98,13 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
-* Envoyez (push) *foo.nupkg* à la source de push personnalisée `https://customsource`, en spécifiant une clé API :
+* Appuyez sur *foo. nupkg* sur le serveur NuGet officiel, en spécifiant une clé API :
+
+  ```dotnetcli
+  dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
+  ```
+  
+  * Envoyez (push) *foo.nupkg* à la source de push personnalisée `https://customsource`, en spécifiant une clé API :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/

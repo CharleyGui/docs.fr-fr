@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: b25c88f0-71b9-443b-8eea-1c94db0a44b9
 topic_type:
 - apiref
-ms.openlocfilehash: 5b6c0159b432d2a70f583357bbcf714b27399633
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e0663ff122397ba639a0a219e513be2f3f0cbbef
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447171"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862761"
 ---
 # <a name="icorprofilerinfo2getclassfromtokenandtypeargs-method"></a>ICorProfilerInfo2::GetClassFromTokenAndTypeArgs, méthode
 Obtient le `ClassID` d’un type à l’aide du jeton de métadonnées spécifié et des valeurs de `ClassID` de tous les arguments de type.  
@@ -36,7 +36,7 @@ HRESULT GetClassFromTokenAndTypeArgs(
     [out] ClassID* pClassID);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `moduleID`  
  dans ID du module dans lequel le type réside.  
   
@@ -57,9 +57,9 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
  Si le type n’est pas déjà chargé, l’appel de `GetClassFromTokenAndTypeArgs` déclenchera le chargement, ce qui constitue une opération dangereuse dans de nombreux contextes. Par exemple, l’appel de cette méthode pendant le chargement de modules ou d’autres types peut entraîner une boucle infinie, car le runtime tente de charger circulairement des éléments.  
   
- En général, l’utilisation de `GetClassFromTokenAndTypeArgs` est déconseillée. Si les profileurs sont intéressés par les événements d’un type particulier, ils doivent stocker les `ModuleID` et `mdTypeDef` de ce type, et utiliser [ICorProfilerInfo2 :: GetClassIDInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getclassidinfo2-method.md) pour vérifier si un `ClassID` donné correspond à celui du type souhaité.  
+ En général, l’utilisation de `GetClassFromTokenAndTypeArgs` est déconseillée. Si les profileurs sont intéressés par les événements d’un type particulier, ils doivent stocker les `ModuleID` et `mdTypeDef` de ce type, et utiliser [ICorProfilerInfo2 :: GetClassIDInfo2,](icorprofilerinfo2-getclassidinfo2-method.md) pour vérifier si un `ClassID` donné correspond à celui du type souhaité.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -70,5 +70,5 @@ HRESULT GetClassFromTokenAndTypeArgs(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2, interface](icorprofilerinfo2-interface.md)

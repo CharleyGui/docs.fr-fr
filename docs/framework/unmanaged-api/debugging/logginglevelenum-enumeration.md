@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 09daac08-005a-46b2-beab-408d0820c5e5
 topic_type:
 - apiref
-ms.openlocfilehash: 01e1eafd9955a0876f77e34eb73c2a3fc6d815c2
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1677798abdb8994d34c82a71e97a2c858209c18e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139200"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790388"
 ---
 # <a name="logginglevelenum-enumeration"></a>LoggingLevelEnum, énumération
 Indique le niveau de gravité d'un message de description qui est écrit dans le journal des événements quand un thread managé consigne un événement.  
@@ -44,28 +44,28 @@ typedef enum LoggingLevelEnum {
 } LoggingLevelEnum;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
-|`LTraceLevel0`|The message is a trace level 0.|  
-|`LTraceLevel1`|The message is a trace level 1.|  
-|`LTraceLevel2`|The message is a trace level 2.|  
-|`LTraceLevel3`|The message is a trace level 3.|  
-|`LTraceLevel4`|The message is a trace level 4.|  
-|`LStatusLevel0`|The message is a status level 0.|  
-|`LStatusLevel1`|The message is a status level 1.|  
-|`LStatusLevel2`|The message is a status level 2.|  
-|`LStatusLevel3`|The message is a status level 3.|  
-|`LStatusLevel4`|The message is a status level 4.|  
-|`LWarningLevel`|The message is a warning level.|  
-|`LErrorLevel`|The message is an error level.|  
-|`LPanicLevel`|The message is a panic level.|  
+|`LTraceLevel0`|Le message est un niveau de trace 0.|  
+|`LTraceLevel1`|Le message est un niveau de trace 1.|  
+|`LTraceLevel2`|Le message est un niveau de trace 2.|  
+|`LTraceLevel3`|Le message est un niveau de trace 3.|  
+|`LTraceLevel4`|Le message est un niveau de trace 4.|  
+|`LStatusLevel0`|Le message est un niveau d’État 0.|  
+|`LStatusLevel1`|Le message est un niveau d’État 1.|  
+|`LStatusLevel2`|Le message est un niveau d’État 2.|  
+|`LStatusLevel3`|Le message est au niveau d’État 3.|  
+|`LStatusLevel4`|Le message a le niveau d’État 4.|  
+|`LWarningLevel`|Le message est un niveau d’avertissement.|  
+|`LErrorLevel`|Le message est un niveau d’erreur.|  
+|`LPanicLevel`|Le message est un niveau de panique.|  
   
 ## <a name="remarks"></a>Notes  
- The common language runtime (CLR) calls the [ICorDebugManagedCallback::LogMessage](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-logmessage-method.md) method to notify the debugger that a managed thread has logged an event. The CLR passes a value of the `LoggingLevelEnum` enumeration to indicate the severity level of the message that the managed thread wrote to the event log.  
+ Le common language runtime (CLR) appelle la méthode [ICorDebugManagedCallback :: LogMessage](icordebugmanagedcallback-logmessage-method.md) pour notifier au débogueur qu’un thread managé a consigné un événement. Le CLR passe une valeur de l’énumération `LoggingLevelEnum` pour indiquer le niveau de gravité du message que le thread managé a écrit dans le journal des événements.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -77,4 +77,4 @@ typedef enum LoggingLevelEnum {
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Diagnostics.EventLog>
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

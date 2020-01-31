@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugMergedAssemblyRecord :: getSimpleName,, méthode'
+title: ICorDebugMergedAssemblyRecord::GetSimpleName, méthode
 ms.date: 03/30/2017
 ms.assetid: bc3410f6-ebca-4bca-9b45-fc38c74fa9cb
-ms.openlocfilehash: 565e27b47f2454dec1e4c2b89ee46ac5279b08b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 21e8ebeabd3b082361ca3307240cfca58835b066
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130547"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793094"
 ---
-# <a name="icordebugmergedassemblyrecordgetsimplename-method"></a>ICorDebugMergedAssemblyRecord :: getSimpleName,, méthode
+# <a name="icordebugmergedassemblyrecordgetsimplename-method"></a>ICorDebugMergedAssemblyRecord::GetSimpleName, méthode
 Obtient le nom simple de l'assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT GetSimpleName(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cchName`  
  [in] Nombre de caractères dans la mémoire tampon `szName`.  
   
@@ -38,7 +38,7 @@ HRESULT GetSimpleName(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -49,5 +49,5 @@ HRESULT GetSimpleName(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugMergedAssemblyRecord, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmergedassemblyrecord-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugMergedAssemblyRecord, interface](icordebugmergedassemblyrecord-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

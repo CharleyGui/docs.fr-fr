@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a684f7d7-d0c2-4690-b721-639e613f11f8
 topic_type:
 - apiref
-ms.openlocfilehash: cc02f63808b1929b93777c8bbc67c47000b0b424
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 23e168b0f322a580917c3fcfcb767a7d4d4628f6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132744"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793887"
 ---
 # <a name="cordebugunmappedstop-enumeration"></a>CorDebugUnmappedStop, énumération
 Spécifie le type de code non mappé qui peut déclencher un arrêt dans l'exécution du code par l'exécution pas à pas.  
@@ -38,9 +38,9 @@ typedef enum CorDebugUnmappedStop {
 } CorDebugUnmappedStop;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`STOP_NONE`|Ne pas arrêter dans un type de code non mappé.|  
 |`STOP_PROLOG`|Arrêtez dans le code de prologue.|  
@@ -51,9 +51,9 @@ typedef enum CorDebugUnmappedStop {
 |`STOP_ALL`|Arrêtez dans tous les types de code non mappé.|  
   
 ## <a name="remarks"></a>Notes  
- Utilisez la méthode [ICorDebugStepper :: SetUnmappedStopMask](../../../../docs/framework/unmanaged-api/debugging/icordebugstepper-setunmappedstopmask-method.md) pour définir les indicateurs qui spécifient le code non mappé dans lequel le pas à pas s’arrêtera.  
+ Utilisez la méthode [ICorDebugStepper :: SetUnmappedStopMask](icordebugstepper-setunmappedstopmask-method.md) pour définir les indicateurs qui spécifient le code non mappé dans lequel le pas à pas s’arrêtera.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -64,4 +64,4 @@ typedef enum CorDebugUnmappedStop {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

@@ -8,20 +8,20 @@ helpviewer_keywords:
 - mapping properties [WPF]
 - ElementHost control [WPF], mapping properties
 ms.assetid: bccd6e0d-2272-4924-9107-ff8ed58b88aa
-ms.openlocfilehash: 7d1cf353f7e6c4b87c13598e7e6029960cd0f715
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 7ff4ff607ab70b55cda1e2c4736ff773d4907a22
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73197816"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794115"
 ---
 # <a name="walkthrough-mapping-properties-using-the-elementhost-control"></a>Procédure pas à pas : mappage de propriété à l'aide du contrôle ElementHost
 
-Cette procédure pas à pas vous montre comment utiliser la propriété <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> pour mapper des propriétés [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] à des propriétés correspondantes sur un élément [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hébergé.
+Cette procédure pas à pas vous montre comment utiliser la propriété <xref:System.Windows.Forms.Integration.ElementHost.PropertyMap%2A> pour mapper des propriétés Windows Forms à des propriétés correspondantes sur un élément [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hébergé.
 
-Cette procédure pas à pas décrit notamment les tâches suivantes :
+Cette procédure pas à pas décrit notamment les tâches suivantes :
 
-- Création du projet
+- Création du projet.
 
 - Définition d’un nouveau mappage de propriété.
 
@@ -31,9 +31,9 @@ Cette procédure pas à pas décrit notamment les tâches suivantes :
 
 Pour obtenir le code complet des tâches illustrées dans cette procédure pas à pas, consultez [mappage de propriétés à l’aide de l’exemple de contrôle ElementHost](https://go.microsoft.com/fwlink/?LinkID=160018).
 
-Lorsque vous avez terminé, vous pouvez mapper les propriétés de [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] aux propriétés de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] correspondantes sur un élément hébergé.
+Lorsque vous avez terminé, vous pouvez mapper les propriétés de Windows Forms aux propriétés de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] correspondantes sur un élément hébergé.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
 

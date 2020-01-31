@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 4ba08ffa-55a2-4662-9d6d-4738f1db60c9
 topic_type:
 - apiref
-ms.openlocfilehash: 9d8bd6ab13fa408fd7390aaeb76baee274742f48
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b137b956e06a2b2954918e4024860f9b234e7583
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137702"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792108"
 ---
 # <a name="icordebugregistersetgetregistersavailable-method"></a>ICorDebugRegisterSet::GetRegistersAvailable, méthode
-Obtient un masque de bits indiquant les registres actuellement disponibles dans ce [ICorDebugRegisterSet](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md) .  
+Obtient un masque de bits indiquant les registres actuellement disponibles dans ce [ICorDebugRegisterSet](icordebugregisterset-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ HRESULT GetRegistersAvailable (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAvailable`  
  à Masque de bits qui indique les registres actuellement disponibles.  
   
@@ -42,7 +42,7 @@ HRESULT GetRegistersAvailable (
   
  Le masque retourné contient un bit pour chaque registre (1 < < l’index du registre). La valeur de bit est 1 si le Registre est disponible, ou 0 s’il n’est pas disponible.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -53,5 +53,5 @@ HRESULT GetRegistersAvailable (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugRegisterSet, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset-interface.md)
-- [ICorDebugRegisterSet2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugregisterset2-interface.md)
+- [ICorDebugRegisterSet, interface](icordebugregisterset-interface.md)
+- [ICorDebugRegisterSet2, interface](icordebugregisterset2-interface.md)

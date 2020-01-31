@@ -1,15 +1,15 @@
 ---
-title: 'Icordebuginstancefieldsymbol, :: GetOffset,, méthode'
+title: ICorDebugInstanceFieldSymbol::GetOffset, méthode
 ms.date: 03/30/2017
 ms.assetid: 7e470150-2b92-4425-989c-315f48964fd2
-ms.openlocfilehash: 3886e29a1c2fd44fbe50d1eef722f99da7abdbe5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f7c13d397b39698bdf1a22f14820680e1fd0a25f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139011"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782291"
 ---
-# <a name="icordebuginstancefieldsymbolgetoffset-method"></a>Icordebuginstancefieldsymbol, :: GetOffset,, méthode
+# <a name="icordebuginstancefieldsymbolgetoffset-method"></a>ICorDebugInstanceFieldSymbol::GetOffset, méthode
 Obtient l'offset en octets de ce champ d'instance dans sa classe parente.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,7 +20,7 @@ HRESULT GetOffset(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pcbOffset`  
  Pointeur vers le nombre d'octets correspondant à l'offset de ce champ d'instance dans sa classe parente.  
   
@@ -29,7 +29,7 @@ HRESULT GetOffset(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -40,5 +40,5 @@ HRESULT GetOffset(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugInstanceFieldSymbol, interface](../../../../docs/framework/unmanaged-api/debugging/icordebuginstancefieldsymbol-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugInstanceFieldSymbol, interface](icordebuginstancefieldsymbol-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

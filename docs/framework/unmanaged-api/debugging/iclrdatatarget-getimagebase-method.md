@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 091c5f32-c160-49e3-a75f-4692e084c8e4
 topic_type:
 - apiref
-ms.openlocfilehash: fed643ae52f50b1b8cd134880c644c8941da6f56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fcf0ab73c79a5fa116a89cdfcc2e73b17d9eabfc
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122876"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785490"
 ---
 # <a name="iclrdatatargetgetimagebase-method"></a>ICLRDataTarget::GetImageBase, méthode
 Obtient l’adresse mémoire de base de l’image spécifiée.  
@@ -34,7 +34,7 @@ HRESULT GetImageBase (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `imagePath`  
  dans Nom de fichier de l’image, y compris son chemin d’accès.  
   
@@ -44,7 +44,7 @@ HRESULT GetImageBase (
 ## <a name="remarks"></a>Notes  
  Le nom du fichier image peut ou non avoir un chemin d’accès. Si un chemin d’accès est spécifié, la correspondance est effectuée sur le chemin d’accès entier ; dans le cas contraire, la correspondance est effectuée uniquement sur le nom de fichier.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -55,4 +55,4 @@ HRESULT GetImageBase (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget, interface](iclrdatatarget-interface.md)

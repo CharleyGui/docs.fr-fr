@@ -1,15 +1,15 @@
 ---
-title: ICorDebugDataTarget2::GetImageFromPointer, méthode
+title: Méthode ICorDebugDataTarget2::GetImageFromPointer
 ms.date: 03/30/2017
 ms.assetid: 939cabe1-b647-4090-b662-eeec23c6c58d
-ms.openlocfilehash: 58ad041b1243fabdc1948342730c81c5b8ff0991
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 55c87731399cf1e7a6747720b8bb33de7e01906c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122142"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788842"
 ---
-# <a name="icordebugdatatarget2getimagefrompointer-method"></a>ICorDebugDataTarget2::GetImageFromPointer, méthode
+# <a name="icordebugdatatarget2getimagefrompointer-method"></a>Méthode ICorDebugDataTarget2::GetImageFromPointer
 Retourne l'adresse de base et la taille d'un module à partir d'une adresse présente dans ce module.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT GetImageFromPointer(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `addr`  
  Valeur [CORDB_ADDRESS](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md) qui représente une adresse dans un module.  
   
@@ -37,7 +37,7 @@ HRESULT GetImageFromPointer(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ HRESULT GetImageFromPointer(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugDataTarget2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget2, interface](icordebugdatatarget2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

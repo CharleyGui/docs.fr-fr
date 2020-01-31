@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 55e57640-b3d2-413d-b4f4-fbc27fb8e37c
 topic_type:
 - apiref
-ms.openlocfilehash: 87316b20c5835d9b887355a1f9374fa5f2156e5c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 20cea94961a250c3981d892910da1dcee20a060b
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122169"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783738"
 ---
 # <a name="icordebugdatatargetreadvirtual-method"></a>ICorDebugDataTarget::ReadVirtual, méthode
 Obtient un bloc de mémoire contiguë commençant à l’adresse spécifiée et le retourne dans la mémoire tampon fournie.  
@@ -36,7 +36,7 @@ HRESULT ReadVirtual(
     [out] ULONG32 *  pBytesRead);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `address`  
  dans Adresse de début de la mémoire demandée.  
   
@@ -52,7 +52,7 @@ HRESULT ReadVirtual(
 ## <a name="remarks"></a>Notes  
  Si le premier octet (à l’adresse de début spécifiée) peut être lu, l’appel doit retourner Success (pour prendre en charge la lecture efficace des structures de données avec une longueur autodescriptive, comme les chaînes terminées par le caractère null).  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -63,6 +63,6 @@ HRESULT ReadVirtual(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget, interface](icordebugdatatarget-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

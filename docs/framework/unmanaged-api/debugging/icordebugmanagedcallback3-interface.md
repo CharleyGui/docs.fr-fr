@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a95389d3-cf2e-47a4-9805-61426acc6b65
 topic_type:
 - apiref
-ms.openlocfilehash: 8da04b0c620404e0dad8227c7a627f75507389a7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b97f29b94ed4fad6892697ca1c7ed4a20c99c03e
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128025"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793266"
 ---
 # <a name="icordebugmanagedcallback3-interface"></a>ICorDebugManagedCallback3, interface
 Fournit une méthode de rappel indiquant qu'une notification de débogueur personnalisée active a été déclenchée.  
@@ -28,15 +28,15 @@ Fournit une méthode de rappel indiquant qu'une notification de débogueur perso
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[CustomNotification, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md)|Indique qu’une notification du débogueur personnalisé activé a été déclenchée.|  
+|[CustomNotification, méthode](icordebugmanagedcallback3-customnotification-method.md)|Indique qu’une notification du débogueur personnalisé activé a été déclenchée.|  
   
 ## <a name="remarks"></a>Notes  
- Cette interface est une extension logique des interfaces [ICorDebugManagedCallback](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md) et [ICorDebugManagedCallback2](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md) .  
+ Cette interface est une extension logique des interfaces [ICorDebugManagedCallback](icordebugmanagedcallback-interface.md) et [ICorDebugManagedCallback2](icordebugmanagedcallback2-interface.md) .  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -47,7 +47,7 @@ Fournit une méthode de rappel indiquant qu'une notification de débogueur perso
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
-- [ICorDebugManagedCallback2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback2, interface](icordebugmanagedcallback2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

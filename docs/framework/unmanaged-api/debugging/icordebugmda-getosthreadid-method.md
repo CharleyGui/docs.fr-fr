@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7ca7c364-ade4-4219-b434-9f6ae2359be6
 topic_type:
 - apiref
-ms.openlocfilehash: e9846234f8217b822860c2400a54a91a651a0a56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d9efefb26ee175fa60e7cc4516ff3f8444968f31
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129817"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793222"
 ---
 # <a name="icordebugmdagetosthreadid-method"></a>ICorDebugMDA::GetOSThreadId, méthode
-Obtient l’identificateur de thread du système d’exploitation sur lequel l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md) est en cours d’exécution.  
+Obtient l’identificateur de thread du système d’exploitation sur lequel l’Assistant Débogage managé (MDA) représenté par [ICorDebugMDA](icordebugmda-interface.md) est en cours d’exécution.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,14 +33,14 @@ HRESULT GetOSThreadId (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pOsTid`  
  à Pointeur vers l’identificateur du thread du système d’exploitation.  
   
 ## <a name="remarks"></a>Notes  
  Le thread de système d’exploitation est utilisé à la place d’un ICorDebugThread pour tenir compte des situations dans lesquelles un Assistant Débogage managé est déclenché sur un thread natif ou sur un thread managé qui n’a pas encore entré du code managé.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -51,5 +51,5 @@ HRESULT GetOSThreadId (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugMDA, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmda-interface.md)
+- [ICorDebugMDA, interface](icordebugmda-interface.md)
 - [Diagnostic d’erreurs avec les Assistants Débogage managé](../../../../docs/framework/debug-trace-profile/diagnosing-errors-with-managed-debugging-assistants.md)

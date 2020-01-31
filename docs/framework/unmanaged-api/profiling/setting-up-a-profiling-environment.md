@@ -10,12 +10,12 @@ helpviewer_keywords:
 - COR_ENABLE_PROFILING environment variable
 - profiling API [.NET Framework], enabling
 ms.assetid: fefca07f-7555-4e77-be86-3c542e928312
-ms.openlocfilehash: 86720cb1739e3f193cd1d5081577d69bca1cf0f9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 04b9abd8ffe04a24c08ad89ff48b037c9b003359
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427053"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860977"
 ---
 # <a name="setting-up-a-profiling-environment"></a>Configuration d'un environnement de profilage
 > [!NOTE]
@@ -55,23 +55,23 @@ ms.locfileid: "74427053"
   
 ## <a name="additional-considerations"></a>Considérations supplémentaires  
   
-- La classe de profileur implémente les interfaces [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) et [ICorProfilerCallback2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md) . Dans le .NET Framework version 2.0, un profileur doit implémenter `ICorProfilerCallback2`. Dans ce cas, `ICorProfilerCallback2` ne sera pas chargé.  
+- La classe de profileur implémente les interfaces [ICorProfilerCallback](icorprofilercallback-interface.md) et [ICorProfilerCallback2](icorprofilercallback2-interface.md) . Dans le .NET Framework version 2.0, un profileur doit implémenter `ICorProfilerCallback2`. Dans ce cas, `ICorProfilerCallback2` ne sera pas chargé.  
   
 - Un seul profileur peut profiler un processus à la fois dans un environnement donné. Vous pouvez inscrire deux profileurs différents dans des environnements différents, mais chacun doit profiler des processus distincts. Le profileur doit être implémenté en tant que DLL de serveur COM in-process, mappée dans le même espace d'adressage que le processus en cours de profilage. Cela signifie que le profileur s'exécute in-process. Le .NET Framework ne prend pas en charge un autre type de serveur COM. Par exemple, si un profileur souhaite surveiller des applications à partir d'un ordinateur distant, il doit implémenter des agents collecteurs sur chaque ordinateur. Ces agents traitent les résultats par lots et les communiquent à l’ordinateur de collection de données central.  
   
 - Étant donné que le profileur est un objet COM instancié in-process, chaque application profilée possède sa propre copie du profileur. Par conséquent, une instance de profileur particulière n'a pas à gérer les données de plusieurs applications. Toutefois, vous devrez ajouter une logique au code de journalisation du profileur pour éviter le remplacement du fichier journal d'autres applications profilées.  
   
 ## <a name="initializing-the-profiler"></a>Initialisation du profileur  
- Quand les deux vérifications de variables d'environnement réussissent, le CLR crée une instance du profileur d'une manière similaire à la fonction `CoCreateInstance` COM. Le profileur n'est pas chargé via un appel direct à `CoCreateInstance`. Par conséquent, un appel à `CoInitialize`, qui requiert la définition du modèle de thread, est évité. Le CLR appelle ensuite la méthode [ICorProfilerCallback :: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) dans le profileur. La signature de cette méthode est la suivante.  
+ Quand les deux vérifications de variables d'environnement réussissent, le CLR crée une instance du profileur d'une manière similaire à la fonction `CoCreateInstance` COM. Le profileur n'est pas chargé via un appel direct à `CoCreateInstance`. Par conséquent, un appel à `CoInitialize`, qui requiert la définition du modèle de thread, est évité. Le CLR appelle ensuite la méthode [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) dans le profileur. La signature de cette méthode est la suivante.  
   
 ```cpp  
 HRESULT Initialize(IUnknown *pICorProfilerInfoUnk)  
 ```  
   
- Le profileur doit interroger `pICorProfilerInfoUnk` pour un pointeur d’interface [ICorProfilerInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md) ou [ICorProfilerInfo2](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md) et l’enregistrer afin qu’il puisse demander plus d’informations ultérieurement pendant le profilage.  
+ Le profileur doit interroger `pICorProfilerInfoUnk` pour un pointeur d’interface [ICorProfilerInfo](icorprofilerinfo-interface.md) ou [ICorProfilerInfo2](icorprofilerinfo2-interface.md) et l’enregistrer afin qu’il puisse demander plus d’informations ultérieurement pendant le profilage.  
   
 ## <a name="setting-event-notifications"></a>Définition de notifications d'événements  
- Le profileur appelle ensuite la méthode [ICorProfilerInfo :: SetEventMask](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-seteventmask-method.md) pour spécifier les catégories de notifications qui l’intéressent. Par exemple, si le profileur s’intéresse uniquement aux notifications d’entrée et de sortie de fonction, ainsi qu’aux notifications de garbage collection, il spécifie ce qui suit.  
+ Le profileur appelle ensuite la méthode [ICorProfilerInfo :: SetEventMask](icorprofilerinfo-seteventmask-method.md) pour spécifier les catégories de notifications qui l’intéressent. Par exemple, si le profileur s’intéresse uniquement aux notifications d’entrée et de sortie de fonction, ainsi qu’aux notifications de garbage collection, il spécifie ce qui suit.  
   
 ```cpp  
 ICorProfilerInfo* pInfo;  
@@ -91,8 +91,8 @@ pInfo->SetEventMask(COR_PRF_MONITOR_ENTERLEAVE | COR_PRF_MONITOR_GC)
   
  Notez que ces modifications activent le profilage à l'échelle du système. Pour empêcher le profilage de chaque application managée qui s'exécute par la suite, vous devez supprimer les variables d'environnement système après le redémarrage de l'ordinateur cible.  
   
- Cette technique entraîne également le profilage de chaque processus CLR. Le profileur doit ajouter la logique à son rappel [ICorProfilerCallback :: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) pour détecter si le processus actuel présente un intérêt. Si ce n'est pas le cas, le profileur peut faire échouer le rappel sans exécuter l'initialisation.  
+ Cette technique entraîne également le profilage de chaque processus CLR. Le profileur doit ajouter la logique à son rappel [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) pour détecter si le processus actuel présente un intérêt. Si ce n'est pas le cas, le profileur peut faire échouer le rappel sans exécuter l'initialisation.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble du profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-overview.md)
+- [Vue d’ensemble du profilage](profiling-overview.md)

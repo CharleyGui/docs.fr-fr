@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d6e64534-4d47-4ad0-a340-7590e07e2b4a
 topic_type:
 - apiref
-ms.openlocfilehash: 7f3010cccc584288608b3f6ba95efbeb95f271fb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 25ffbf73fbefbb3c584450283c3080dfc11ee598
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132059"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791238"
 ---
 # <a name="icordebugtypegettype-method"></a>ICorDebugType::GetType, méthode
 Obtient une valeur CorElementType qui décrit le type natif du <xref:System.Type> common language runtime (CLR) représenté par ce ICorDebugType.  
@@ -33,14 +33,14 @@ HRESULT GetType (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ty`  
  à Pointeur vers une valeur de l’énumération `CorElementType` qui indique la <xref:System.Type> CLR que cette `ICorDebugType` représente.  
   
 ## <a name="remarks"></a>Notes  
- Si la valeur de `ty` est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, la méthode [ICorDebugType :: GetClass](../../../../docs/framework/unmanaged-api/debugging/icordebugtype-getclass-method.md) peut être appelée pour obtenir le type non instancié d’un type générique ; Sinon, n’appelez pas `ICorDebugType::GetClass`.  
+ Si la valeur de `ty` est ELEMENT_TYPE_CLASS ou ELEMENT_TYPE_VALUETYPE, la méthode [ICorDebugType :: GetClass](icordebugtype-getclass-method.md) peut être appelée pour obtenir le type non instancié d’un type générique ; Sinon, n’appelez pas `ICorDebugType::GetClass`.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

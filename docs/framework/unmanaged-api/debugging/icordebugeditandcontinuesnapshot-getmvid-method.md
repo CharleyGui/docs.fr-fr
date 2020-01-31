@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: d7e916a6-1c39-4676-972d-da3d8546044b
 topic_type:
 - apiref
-ms.openlocfilehash: 217c0ea3eea6ce7413028b9638dbaae66bd99452
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6ebe07fc7cd963cbe9cae3cd8c3f7c0580dad5fc
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137411"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788808"
 ---
 # <a name="icordebugeditandcontinuesnapshotgetmvid-method"></a>ICorDebugEditAndContinueSnapshot::GetMvid, méthode
 `GetMvid` est obsolète. N'appelez pas cette méthode.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

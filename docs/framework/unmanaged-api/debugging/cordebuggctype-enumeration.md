@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 880ca92a-42d4-42a5-9b9c-c2848eb39c6a
 topic_type:
 - apiref
-ms.openlocfilehash: b954aa0e4db10fd4b3bde951c7f27d18b8634f5a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6f4c96517375df4cd249b72953bf37812a498c0c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132182"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789359"
 ---
 # <a name="cordebuggctype-enumeration"></a>CorDebugGCType, énumération
 Indique si le récupérateur de mémoire s'exécute sur une station de travail ou sur un serveur.  
@@ -33,18 +33,18 @@ typedef enum CorDebugGCType {
 } CorDebugGCType;  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Nom de membre|Description|  
+|Nom du membre|Description|  
 |-----------------|-----------------|  
 |`CorDebugWorkstationGC`|Le garbage collector est en cours d’exécution sur une station de travail.|  
 |`CorDebugServerGC`|Le garbage collector est en cours d’exécution sur un serveur.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,4 +55,4 @@ typedef enum CorDebugGCType {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

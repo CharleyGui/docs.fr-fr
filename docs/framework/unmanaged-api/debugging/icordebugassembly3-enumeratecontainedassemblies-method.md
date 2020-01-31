@@ -1,15 +1,15 @@
 ---
-title: ICorDebugAssembly3::EnumerateContainedAssemblies, méthode
+title: Méthode ICorDebugAssembly3::EnumerateContainedAssemblies
 ms.date: 03/30/2017
 ms.assetid: 98f15b05-afad-4616-9e2a-1a9af31948b6
-ms.openlocfilehash: 032f32a08efa92cea682b0e2fc974dc607a9dca4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 616675f839e562227558ece440bdfdf497747572
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133938"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784558"
 ---
-# <a name="icordebugassembly3enumeratecontainedassemblies-method"></a>ICorDebugAssembly3::EnumerateContainedAssemblies, méthode
+# <a name="icordebugassembly3enumeratecontainedassemblies-method"></a>Méthode ICorDebugAssembly3::EnumerateContainedAssemblies
 Obtient un énumérateur pour les assemblys contenus dans cet assembly.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,9 +20,9 @@ HRESULT EnumerateContainedAssemblies(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `ppAssemblies`  
- à Pointeur vers l’adresse d’un objet d’interface ICorDebugAssemblyEnum qui est l’énumérateur.  
+ [out] Pointeur vers l'adresse d'un objet d'interface ICorDebugAssemblyEnum qui est l'énumérateur.  
   
 ## <a name="return-value"></a>Valeur de retour  
  `S_OK` si cet objet `ICorDebugAssembly3` est un conteneur ; sinon, `S_FALSE`, et l'énumération est vide.  
@@ -33,7 +33,7 @@ HRESULT EnumerateContainedAssemblies(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -44,5 +44,5 @@ HRESULT EnumerateContainedAssemblies(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugAssembly3, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugassembly3-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugAssembly3, interface](icordebugassembly3-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

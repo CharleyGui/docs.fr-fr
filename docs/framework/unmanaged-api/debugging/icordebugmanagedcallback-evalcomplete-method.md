@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f74ab4eb-cd1b-407c-a66d-8ec0d85647f3
 topic_type:
 - apiref
-ms.openlocfilehash: d52c19f8663a776215241ddb16f3aa9ba00c0d36
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d29f4095a1d615285f4c4ff30e36b91404036949
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137350"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76788410"
 ---
 # <a name="icordebugmanagedcallbackevalcomplete-method"></a>ICorDebugManagedCallback::EvalComplete, méthode
 Notifie le débogueur qu’une évaluation est terminée.  
@@ -35,7 +35,7 @@ HRESULT EvalComplete (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application dans lequel l’évaluation a été effectuée.  
   
@@ -45,7 +45,7 @@ HRESULT EvalComplete (
  `pEval`  
  dans Pointeur vers un objet ICorDebugEval qui représente le code qui a effectué l’évaluation.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,4 +56,4 @@ HRESULT EvalComplete (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

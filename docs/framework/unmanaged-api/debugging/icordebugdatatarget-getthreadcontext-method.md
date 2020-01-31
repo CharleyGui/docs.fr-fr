@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: c8954268-1821-4b23-b665-dbb55f2af31b
 topic_type:
 - apiref
-ms.openlocfilehash: 278320391615eddaa8ba878ef87f802f30cddb95
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3eace2d91b3bb6e637a659b8b49a31450ebc2c42
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122026"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783726"
 ---
 # <a name="icordebugdatatargetgetthreadcontext-method"></a>ICorDebugDataTarget::GetThreadContext, méthode
 Retourne le contexte de thread actuel pour le thread spécifié.  
@@ -35,7 +35,7 @@ HRESULT GetThreadContext(
        [out, size_is(contextSize)] BYTE * pContext);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `dwThreadID`  
  dans Identificateur du thread dont le contexte doit être récupéré. L’identificateur est défini par le système d’exploitation.  
   
@@ -49,9 +49,9 @@ HRESULT GetThreadContext(
  à Mémoire tampon dans laquelle le contexte de thread sera stocké.  
   
 ## <a name="remarks"></a>Notes  
- Sur les plateformes Windows, `pContext` doit être une structure de `CONTEXT` (définie dans Winnt. h) qui est appropriée pour le type d’ordinateur spécifié par la méthode [ICorDebugDataTarget :: GetPlatform](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-getplatform-method.md) . `contextFlags` doit avoir les mêmes valeurs que le champ `ContextFlags` de la structure `CONTEXT`. La structure `CONTEXT` est spécifique au processeur ; Pour plus d’informations, consultez le fichier Winnt. h.  
+ Sur les plateformes Windows, `pContext` doit être une structure de `CONTEXT` (définie dans Winnt. h) qui est appropriée pour le type d’ordinateur spécifié par la méthode [ICorDebugDataTarget :: GetPlatform](icordebugdatatarget-getplatform-method.md) . `contextFlags` doit avoir les mêmes valeurs que le champ `ContextFlags` de la structure `CONTEXT`. La structure `CONTEXT` est spécifique au processeur ; Pour plus d’informations, consultez le fichier Winnt. h.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -62,6 +62,6 @@ HRESULT GetThreadContext(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugDataTarget, interface](icordebugdatatarget-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

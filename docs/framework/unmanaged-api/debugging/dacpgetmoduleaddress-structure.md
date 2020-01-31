@@ -1,5 +1,5 @@
 ---
-title: DacpGetModuleAddress Structure
+title: DacpGetModuleAddress, structure
 ms.date: 01/16/2019
 api.name:
 - DacpGetModuleAddress Structure
@@ -15,14 +15,14 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: 145b06f89b45b165b9d6329a4c16ac5739406113
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: 1e3a62de3259c012438c64ece26e696682ec96e6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739185"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789201"
 ---
-# <a name="dacpgetmoduleaddress-structure"></a>DacpGetModuleAddress Structure
+# <a name="dacpgetmoduleaddress-structure"></a>DacpGetModuleAddress, structure
 
 Définit le conteneur pour une demande d’adresse de module.
 
@@ -37,9 +37,9 @@ struct DacpGetModuleAddress
 };
 ```
 
-## <a name="members"></a>Membres
+## <a name="members"></a>Members
 
-| Membre      | Description                |
+| Member      | Description                |
 | ----------- | -------------------------- |
 | `ModulePtr` | Pointeur vers le module. |
 
@@ -47,19 +47,19 @@ struct DacpGetModuleAddress
 
 | Méthode                                                                                               | Description                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------ |
-| [Requête](../../../../docs/framework/unmanaged-api/debugging/dacpgetmoduleaddress-request-method.md) | Exécute une requête pour remplir la structure à partir de la structure de runtime donné. |
+| [Requête](dacpgetmoduleaddress-request-method.md) | Exécute une requête pour remplir la structure à partir de la structure d’exécution donnée. |
 
 ## <a name="remarks"></a>Notes
 
-Cette structure se trouve au sein du runtime et n’est pas exposée par le biais d’en-têtes ou les fichiers de bibliothèque. Pour l’utiliser, définir la structure comme indiqué ci-dessus, où `CLRDATA_ADDRESS` est un entier non signé 64 bits.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus, où `CLRDATA_ADDRESS` est un entier non signé 64 bits.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
+**En-tête :** None  
+**Bibliothèque :** None  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Débogage](index.md)
+- [Structures de débogage](debugging-structures.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 2b936bef-9b75-48bf-859f-42e419c65f1c
 topic_type:
 - apiref
-ms.openlocfilehash: da440b7d2da57511545d3b63700662eb544660fd
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5364e39f7e0a9b6c9cd10cd8f17bab4a03a4b7af
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137778"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794480"
 ---
 # <a name="icordebugfunction2-interface"></a>ICorDebugFunction2, interface
 
@@ -29,17 +29,17 @@ ms.locfileid: "73137778"
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[EnumerateNativeCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-enumeratenativecode-method.md)|(Pas encore implémenté.) Obtient un pointeur d’interface vers un ICorDebugCodeEnum qui contient les instructions de code natif dans la fonction référencée par cet objet ICorDebugFunction2.|  
-|[GetJMCStatus, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getjmcstatus-method.md)|Obtient une valeur qui indique si cette fonction est marquée en tant que code utilisateur.|  
-|[GetVersionNumber, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-getversionnumber-method.md)|Obtient la version modifier & continuer de cette fonction.|  
-|[SetJMCStatus, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugfunction2-setjmcstatus-method.md)|Marque cette fonction pour Uniquement mon code pas à pas.|  
+|[EnumerateNativeCode, méthode](icordebugfunction2-enumeratenativecode-method.md)|(Pas encore implémenté.) Obtient un pointeur d’interface vers un ICorDebugCodeEnum qui contient les instructions de code natif dans la fonction référencée par cet objet ICorDebugFunction2.|  
+|[GetJMCStatus, méthode](icordebugfunction2-getjmcstatus-method.md)|Obtient une valeur qui indique si cette fonction est marquée en tant que code utilisateur.|  
+|[GetVersionNumber, méthode](icordebugfunction2-getversionnumber-method.md)|Obtient la version modifier & continuer de cette fonction.|  
+|[SetJMCStatus, méthode](icordebugfunction2-setjmcstatus-method.md)|Marque cette fonction pour Uniquement mon code pas à pas.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -50,4 +50,4 @@ ms.locfileid: "73137778"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

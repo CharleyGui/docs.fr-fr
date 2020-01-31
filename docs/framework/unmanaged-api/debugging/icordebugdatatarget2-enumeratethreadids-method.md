@@ -1,15 +1,15 @@
 ---
-title: ICorDebugDataTarget2::EnumerateThreadIDs, méthode
+title: Méthode ICorDebugDataTarget2::EnumerateThreadIDs
 ms.date: 03/30/2017
 ms.assetid: af02460f-2a45-496e-bc4e-a1ac4f80fe11
-ms.openlocfilehash: b4510e6858045281a2a663095972b84c40df3a22
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 74d4905f2b386f8e0345e4300dd2c8c6d0c882ea
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122158"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783651"
 ---
-# <a name="icordebugdatatarget2enumeratethreadids-method"></a>ICorDebugDataTarget2::EnumerateThreadIDs, méthode
+# <a name="icordebugdatatarget2enumeratethreadids-method"></a>Méthode ICorDebugDataTarget2::EnumerateThreadIDs
 Retourne une liste des ID de threads actifs.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT EnumerateThreadIDs(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  cThreadIDs  
  [in] Nombre maximal de threads dont les ID peuvent être retournés.  
   
@@ -37,7 +37,7 @@ HRESULT EnumerateThreadIDs(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration système requise](../../../../docs/framework/get-started/system-requirements.md). **En-tête :** CorDebug. idl, CorDebug. h  
   
  **Bibliothèque :** CorGuids.lib  
@@ -46,5 +46,5 @@ HRESULT EnumerateThreadIDs(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugDataTarget2, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget2-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget2, interface](icordebugdatatarget2-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 292f1255-5dfd-427f-844e-781d4b938f9a
 topic_type:
 - apiref
-ms.openlocfilehash: d6a04bdb68149fcc659fa45acc5856c3cebc9a56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d55fd18b55f5387353e014b169633fc44dae3ad7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137014"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783389"
 ---
 # <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a>ICorDebugEditAndContinueErrorInfo::GetModule, méthode
 `GetModule` est obsolète. N'appelez pas cette méthode.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

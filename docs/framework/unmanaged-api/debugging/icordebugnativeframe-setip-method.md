@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 57784a51-c76d-48f8-9392-584d0e1946d9
 topic_type:
 - apiref
-ms.openlocfilehash: 1d978cab0817af68356d95d635f8d2bfa3fd546a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bc33768e4155a0e272d3374d4c586c79ef2ff3fb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73096737"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792777"
 ---
 # <a name="icordebugnativeframesetip-method"></a>ICorDebugNativeFrame::SetIP, méthode
 Définit le pointeur d’instruction à l’emplacement d’offset spécifié en code natif.  
@@ -33,18 +33,18 @@ HRESULT SetIP (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `nOffset`  
  dans Emplacement de décalage dans le code natif.  
   
 ## <a name="remarks"></a>Notes  
  Les appels à `SetIP` invalident immédiatement tous les frames et chaînes pour le thread actuel. Si le débogueur a besoin d’informations de frame après un appel à `SetIP`, il doit effectuer une nouvelle trace de la pile.  
   
- [ICorDebug](../../../../docs/framework/unmanaged-api/debugging/icordebug-interface.md) tente de conserver le frame de pile dans un état valide. Toutefois, même si le frame est dans un état valide, en ce qui concerne le runtime, il existe toujours des problèmes, tels que les variables locales non initialisées, etc. L’appelant est chargé d’assurer la cohérence du programme en cours d’exécution.  
+ [ICorDebug](icordebug-interface.md) tente de conserver le frame de pile dans un état valide. Toutefois, même si le frame est dans un état valide, en ce qui concerne le runtime, il existe toujours des problèmes, tels que les variables locales non initialisées, etc. L’appelant est chargé d’assurer la cohérence du programme en cours d’exécution.  
   
  Sur les plateformes 64 bits, le pointeur d’instruction ne peut pas être déplacé hors d’un bloc `catch` ou `finally`. Si `SetIP` est appelé pour effectuer ce déplacement sur une plateforme 64 bits, un HRESULT indiquant un échec est retourné.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  

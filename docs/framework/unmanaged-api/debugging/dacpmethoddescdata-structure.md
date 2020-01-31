@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: hoyosjs
 ms.author: juhoyosa
-ms.openlocfilehash: 97079b824dbd0e056374af4173e49304babd6c32
-ms.sourcegitcommit: 7f616512044ab7795e32806578e8dc0c6a0e038f
+ms.openlocfilehash: cc54664ea8ad61005de3f3fae7407946d1c861b2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/10/2019
-ms.locfileid: "67739135"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793843"
 ---
 # <a name="dacpmethoddescdata-structure"></a>DacpMethodDescData, structure
 
@@ -52,39 +52,39 @@ struct DacpMethodDescData
 };
 ```
 
-## <a name="members"></a>Membres
+## <a name="members"></a>Members
 
-| Membre                       | Description                                                                                     |
+| Member                       | Description                                                                                     |
 | ---------------------------- | ----------------------------------------------------------------------------------------------- |
-| `bHasNativeCode`             | Indique si le runtime est disponible pour l’instanciation spécifique de la méthode de code natif. |
-| `bIsDynamic`                 | Indique si la méthode générée dynamiquement via la génération de code léger.           |
+| `bHasNativeCode`             | Indique si le runtime a du code natif disponible pour l’instanciation donnée de la méthode. |
+| `bIsDynamic`                 | Indique si la méthode est générée dynamiquement via la génération de code léger.           |
 | `wSlotNumber`                | Numéro d’emplacement de la méthode dans la table de méthodes.                                                   |
-| `NativeCodeAddr`             | Adresse native initiale de la méthode.                                                            |
-| `data`                       | Pointeur vers une mémoire tampon utilisée en interne par le runtime.                                             |
-| `MethodDescPtr`              | Pointeur vers le `MethodDesc` dans le runtime.                                                     |
-| `nativeCodeInfo`             | Pointeur vers une mémoire tampon utilisée en interne par le runtime pour effectuer le suivi de méthodes.                            |
-| `moduleInfo`                 | Pointeur vers une mémoire tampon utilisée en interne par le runtime pour des informations sur le module.                      |
+| `NativeCodeAddr`             | Adresse Native initiale de la méthode.                                                            |
+| `data`                       | Pointeur vers une mémoire tampon utilisée en interne par le Runtime.                                             |
+| `MethodDescPtr`              | Pointeur vers le `MethodDesc` dans le Runtime.                                                     |
+| `nativeCodeInfo`             | Pointeur vers une mémoire tampon utilisée en interne par le runtime pour suivre les méthodes.                            |
+| `moduleInfo`                 | Pointeur vers une mémoire tampon utilisée en interne par le runtime pour les informations de module.                      |
 | `MDToken`                    | Jeton associé à la méthode donnée.                                                         |
-| `payloadGC`                  | Pointeur vers une mémoire tampon de collection de mémoire utilisée en interne par le runtime.                          |
-| `payloadGC2`                 | Pointeur vers une mémoire tampon de collection de mémoire utilisée en interne par le runtime.                          |
-| `managedDynamicMethodObject` | Si la méthode est dynamique, le runtime utilise cette mémoire tampon en interne pour plus d’informations de suivi.     |
-| `requestedIP`                | Utilisé pour remplir la structure par demande en fonction d’une adresse de code natif.                    |
-| `rejitDataCurrent`           | Informations sur la dernière version de la méthode instrumentée.                                   |
-| `rejitDataRequested`         | Informations de ReJIT pour l’adresse native demandée.                                             |
-| `cJittedRejitVersions`       | Nombre de fois que la méthode a été rejitted via l’instrumentation.                           |
+| `payloadGC`                  | Pointeur vers une mémoire tampon de garbage collection utilisée en interne par le Runtime.                          |
+| `payloadGC2`                 | Pointeur vers une mémoire tampon de garbage collection utilisée en interne par le Runtime.                          |
+| `managedDynamicMethodObject` | Si la méthode est dynamique, le runtime utilise cette mémoire tampon en interne pour le suivi des informations.     |
+| `requestedIP`                | Utilisé pour remplir la structure par demande lorsqu’une adresse de code natif est fournie.                    |
+| `rejitDataCurrent`           | Informations sur la dernière version instrumentée de la méthode.                                   |
+| `rejitDataRequested`         | Informations de ReJIT pour l’adresse Native demandée.                                             |
+| `cJittedRejitVersions`       | Nombre de fois que la méthode a été rejitted par l’instrumentation.                           |
 
 ## <a name="remarks"></a>Notes
 
-Cette structure se trouve au sein du runtime et n’est pas exposée par le biais d’en-têtes ou les fichiers de bibliothèque. Pour l’utiliser, définir la structure comme indiqué ci-dessus.
+Cette structure se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Pour l’utiliser, définissez la structure comme indiqué ci-dessus.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun  
-**Bibliothèque :** Aucun  
+**En-tête :** None  
+**Bibliothèque :** None  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]  
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Structures de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-structures.md)
+- [Débogage](index.md)
+- [Structures de débogage](debugging-structures.md)
 - [Types de données communs](../../../../docs/framework/unmanaged-api/common-data-types-unmanaged-api-reference.md)

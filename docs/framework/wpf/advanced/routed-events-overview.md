@@ -15,12 +15,12 @@ helpviewer_keywords:
 - button set [WPF], grouped
 - bubbling [WPF]
 ms.assetid: 1a2189ae-13b4-45b0-b12c-8de2e49c29d2
-ms.openlocfilehash: ecd340d00e7f02655dfdcd8eee548309d424a5ea
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: f47eccac4e960bd6869da0da139803cd4e433393
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458739"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76794300"
 ---
 # <a name="routed-events-overview"></a>Vue d'ensemble des événements routés
 
@@ -28,7 +28,7 @@ Cette rubrique explique le concept d’événements routés dans [!INCLUDE[TLA#t
 
 <a name="prerequisites"></a>
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cette rubrique part du principe que vous avez une connaissance de base du common language runtime (CLR) et de la programmation orientée objet, ainsi que le concept de la manière dont les relations entre les éléments [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] peuvent être conceptuelles comme une arborescence. Pour pouvoir suivre les exemples de cette rubrique, vous devez également connaître le [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] et savoir écrire des applications ou des pages [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] rudimentaires. Pour plus d’informations, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md) et [vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).
 
@@ -64,7 +64,7 @@ Voici un bref résumé des scénarios qui ont motivé le concept d’événement
 
 **Composition et encapsulation des contrôles** : Dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], plusieurs contrôles ont un modèle de contenu riche. Par exemple, vous pouvez placer une image à l’intérieur d’un <xref:System.Windows.Controls.Button>, ce qui étend efficacement l’arborescence d’éléments visuels du bouton. Toutefois, l’image ajoutée ne doit pas interrompre le comportement de test d’atteinte qui amène un bouton à répondre à une <xref:System.Windows.Controls.Primitives.ButtonBase.Click> de son contenu, même si l’utilisateur clique sur des pixels qui font partie techniquement de l’image.
 
-**Points d’attachement d’un même gestionnaire** : Dans [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)], vous devez attacher le même gestionnaire plusieurs fois pour traiter les événements qui peuvent être déclenchés par plusieurs éléments. Les événements routés vous permettent d’attacher ce gestionnaire une seule fois, comme dans l’exemple précédent, et d’utiliser la logique du gestionnaire pour déterminer d’où provient l’événement, si nécessaire. Par exemple, ceci pourrait être le gestionnaire du [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] présenté précédemment :
+**Points d’attachement du gestionnaire singuliers :** Dans Windows Forms, vous devez joindre plusieurs fois le même gestionnaire pour traiter les événements qui peuvent être déclenchés à partir de plusieurs éléments. Les événements routés vous permettent d’attacher ce gestionnaire une seule fois, comme dans l’exemple précédent, et d’utiliser la logique du gestionnaire pour déterminer d’où provient l’événement, si nécessaire. Par exemple, ceci pourrait être le gestionnaire du [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] présenté précédemment :
 
 [!code-csharp[EventOvwSupport#GroupButtonCodeBehind](~/samples/snippets/csharp/VS_Snippets_Wpf/EventOvwSupport/CSharp/default.xaml.cs#groupbuttoncodebehind)]
 [!code-vb[EventOvwSupport#GroupButtonCodeBehind](~/samples/snippets/visualbasic/VS_Snippets_Wpf/EventOvwSupport/visualbasic/default.xaml.vb#groupbuttoncodebehind)]
@@ -98,7 +98,7 @@ Les événements routés utilisent l’une des trois stratégies de routage suiv
 
 - **Propagation** : Les gestionnaires d’événements de la source d’événements sont appelés. L’événement routé est acheminé ensuite vers des éléments parents successifs jusqu’à atteindre la racine de l’arborescence d’éléments. La plupart des événements routés utilisent la stratégie de routage par propagation. Les événements routés par propagation sont généralement utilisés pour signaler des entrées ou des changements d’état à partir de contrôles distincts ou d’autres éléments d’interface utilisateur.
 
-- **Direct** : Seul l’élément source a l’opportunité d’appeler les gestionnaires en réponse. Cela s’apparente au « routage » que [!INCLUDE[TLA#tla_winforms](../../../../includes/tlasharptla-winforms-md.md)] utilise pour les événements. Toutefois, contrairement à un événement CLR standard, les événements routés directs prennent en charge la gestion de classe (la gestion de classe est expliquée dans une section à venir) et peut être utilisée par <xref:System.Windows.EventSetter> et <xref:System.Windows.EventTrigger>.
+- **Direct** : Seul l’élément source a l’opportunité d’appeler les gestionnaires en réponse. Cela est analogue au « routage » utilisé par Windows Forms pour les événements. Toutefois, contrairement à un événement CLR standard, les événements routés directs prennent en charge la gestion de classe (la gestion de classe est expliquée dans une section à venir) et peut être utilisée par <xref:System.Windows.EventSetter> et <xref:System.Windows.EventTrigger>.
 
 - **Tunneling** : Au début, les gestionnaires d’événements situés à la racine de l’arborescence d’éléments sont appelés. L’événement routé passe ensuite par des éléments enfants successifs pour aller vers l’élément de nœud correspondant à la source de l’événement routé (l’élément qui a déclenché l’événement routé). Les événements routés de tunneling sont souvent utilisés ou gérés dans le cadre de la composition d’un contrôle, de telle manière que les événements issus de parties composites peuvent être délibérément supprimés ou remplacés par des événements spécifiques au contrôle complet. Les événements d’entrée fournis dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] sont souvent implémentés comme une paire tunneling/propagation. Les événements de tunneling sont parfois appelés événements Preview en raison d’une convention de nommage utilisée pour les paires.
 
@@ -179,7 +179,7 @@ Outre le comportement que <xref:System.Windows.RoutedEventArgs.Handled%2A> État
 
   - Exécuter du code en réponse à l’événement. Marquer l’événement comme géré dans les données d’événement passées au gestionnaire, car l’action entreprise est jugée suffisamment importante pour garantir le marquage de l’événement comme géré. L’événement est encore routé vers l’écouteur suivant, mais avec <xref:System.Windows.RoutedEventArgs.Handled%2A>=`true` dans ses données d’événement, seuls les écouteurs `handledEventsToo` ont la possibilité d’appeler d’autres gestionnaires.
 
-Cette conception conceptuelle est renforcée par le comportement de routage mentionné précédemment : il est plus difficile (bien que possible dans le code ou les styles) d’attacher des gestionnaires pour les événements routés qui sont appelés même si un gestionnaire précédent le long de l’itinéraire a déjà défini <xref:System.Windows.RoutedEventArgs.Handled%2A> pour `true`.
+Cette conception conceptuelle est renforcée par le comportement de routage mentionné précédemment : il est plus difficile (bien que possible dans le code ou les styles) d’attacher des gestionnaires pour les événements routés qui sont appelés même si un gestionnaire précédent le long de l’itinéraire a déjà défini <xref:System.Windows.RoutedEventArgs.Handled%2A> sur `true`.
 
 Pour plus d’informations sur les <xref:System.Windows.RoutedEventArgs.Handled%2A>, la gestion de classe des événements routés et des recommandations sur le moment où il convient de marquer un événement routé comme <xref:System.Windows.RoutedEventArgs.Handled%2A>, consultez [marquage des événements routés comme gérés et gestion de classe](marking-routed-events-as-handled-and-class-handling.md).
 

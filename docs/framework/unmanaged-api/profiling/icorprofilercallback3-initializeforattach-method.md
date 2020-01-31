@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bed097b3-6d52-46c9-bee7-ac7910b6fc3f
 topic_type:
 - apiref
-ms.openlocfilehash: 047516574595f9ffcd61360f51823da73a2f9733
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: d0219751987b1f2d78ee37a1553b323014c1ccfe
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439522"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865686"
 ---
 # <a name="icorprofilercallback3initializeforattach-method"></a>ICorProfilerCallback3::InitializeForAttach, méthode
 Appelée par le Common Language Runtime (CLR) pour permettre au profileur d’initialiser son état après une opération d’attachement.  
@@ -34,12 +34,12 @@ HRESULT InitializeForAttach(
             [in] UINT cbClientData);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pCorProfilerInfoUnk`  
  [in] Pointeur d'interface pour l'interface `ICorProfilerInfo*`.  
   
  `pvClientData`  
- dans Pointeur vers les données passées à la méthode [ICLRProfiling :: AttachProfiler](../../../../docs/framework/unmanaged-api/profiling/iclrprofiling-attachprofiler-method.md) dans son paramètre `pvClientData`. Si ce paramètre est null, `cbClientData` est égal à 0 (zéro). Le CLR libère cette mémoire au retour de `InitializeForAttach`.  
+ dans Pointeur vers les données passées à la méthode [ICLRProfiling :: AttachProfiler](iclrprofiling-attachprofiler-method.md) dans son paramètre `pvClientData`. Si ce paramètre est null, `cbClientData` est égal à 0 (zéro). Le CLR libère cette mémoire au retour de `InitializeForAttach`.  
   
  `cbClientData`  
  [in] Taille, en octets, des données vers lesquelles `pvClientData` pointe.  
@@ -47,7 +47,7 @@ HRESULT InitializeForAttach(
 ## <a name="remarks"></a>Notes  
  Le CLR appelle `InitializeForAttach` pour permettre au profileur de demander des rappels.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -58,7 +58,7 @@ HRESULT InitializeForAttach(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

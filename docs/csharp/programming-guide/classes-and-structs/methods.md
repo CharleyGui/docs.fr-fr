@@ -5,12 +5,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 5955228d51d2f6845a363bcaf32581b6598273f6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8c90f06bfadc528bd9575ead30e6b01263055fe8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714769"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743907"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
@@ -44,7 +44,7 @@ La définition de la méthode spécifie les noms et types des paramètres requis
 
 ## <a name="passing-by-reference-vs-passing-by-value"></a>Passage par référence et passage par valeur
 
-Par défaut, quand un type valeur est passé à une méthode, une copie est passée au lieu de l'objet lui-même. Ainsi, les modifications apportées à l'argument n'ont aucun effet sur la copie d'origine dans la méthode d'appel. Vous pouvez passer un type valeur par référence en utilisant le mot clé ref. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](./passing-value-type-parameters.md). Pour obtenir la liste des types valeur prédéfinis, consultez [Tableau des types valeur](../../language-reference/keywords/value-types-table.md).
+Par défaut, lorsqu’une instance d’un [type valeur](../../language-reference/builtin-types/value-types.md) est passée à une méthode, sa copie est passée au lieu de l’instance elle-même. Par conséquent, les modifications apportées à l’argument n’ont aucun effet sur l’instance d’origine dans la méthode d’appel. Pour passer une instance de type valeur par référence, utilisez le mot clé `ref`. Pour plus d’informations, consultez [Passage de paramètres de type valeur ](./passing-value-type-parameters.md).
 
 Quand un objet d'un type référence est passé à une méthode, une référence à l'objet est passée. Autrement dit, la méthode ne reçoit pas l'objet lui-même mais un argument qui indique l'emplacement de l'objet. Si vous modifiez un membre de l'objet à l'aide de cette référence, la modification est répercutée dans l'argument de la méthode d'appel, même si vous passez l'objet par valeur.
 
@@ -153,11 +153,11 @@ Si la méthode retourne `void` ou est une méthode async, alors le corps de la m
 
 ## <a name="iterators"></a>Iterators
 
-Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l'instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction [yield return](../../language-reference/keywords/yield.md) est atteinte, l'emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.
+Un itérateur exécute une itération personnalisée sur une collection, comme une liste ou un tableau. Un itérateur utilise l’instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction [yield return](../../language-reference/keywords/yield.md) est atteinte, l'emplacement actuel dans le code est mémorisé. L'exécution redémarre à partir de cet emplacement au prochain appel de l'itérateur.
 
 Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md).
 
-Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.
+Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
 Pour plus d’informations, consultez [Itérateurs](../concepts/iterators.md).
 
