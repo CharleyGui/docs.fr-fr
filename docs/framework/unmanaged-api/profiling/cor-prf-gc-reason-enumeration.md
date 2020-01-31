@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 72822b95-a7fb-485e-9d55-1cb016d9a458
 topic_type:
 - apiref
-ms.openlocfilehash: f10ec279e67b86448298745a488f5b3e833e8c39
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ec33e55f840fe735091364ebc35cb7b7c165c10a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447373"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867181"
 ---
 # <a name="cor_prf_gc_reason-enumeration"></a>COR_PRF_GC_REASON, énumération
 Indique la raison pour laquelle une récupération de mémoire se produit.  
@@ -33,14 +33,14 @@ typedef enum {
 } COR_PRF_GC_REASON;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`COR_PRF_GC_INDUCED`|La garbage collection a été induite par une méthode <xref:System.GC.Collect%2A>.|  
 |`COR_PRF_GC_OTHER`|La raison n’est pas spécifiée.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -51,4 +51,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

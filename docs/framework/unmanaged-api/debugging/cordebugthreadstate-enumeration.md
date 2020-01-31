@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a3ccdf18-4ec6-494d-9024-48e5c8c724f5
 topic_type:
 - apiref
-ms.openlocfilehash: 1ff36e8ef6b7c02eea5b02bc22587bc3889df093
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 69a8aabd1d79bb9bb4248259c99124ce50677600
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73133691"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789248"
 ---
 # <a name="cordebugthreadstate-enumeration"></a>CorDebugThreadState, énumération
 Spécifie l'état d'un thread pour le débogage.  
@@ -33,19 +33,19 @@ typedef enum CorDebugThreadState {
 } CorDebugThreadState;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`THREAD_RUN`|Le thread s’exécute librement, à moins qu’un événement de débogage se produise.|  
 |`THREAD_SUSPEND`|Le thread ne peut pas s’exécuter.|  
   
 ## <a name="remarks"></a>Notes  
- Le débogueur utilise l’énumération `CorDebugThreadState` pour contrôler l’exécution d’un thread. L’état d’un thread peut être défini à l’aide de la méthode [ICorDebugThread :: SetDebugState,](../../../../docs/framework/unmanaged-api/debugging/icordebugthread-setdebugstate-method.md) ou [ICorDebugController :: SetAllThreadsDebugState](../../../../docs/framework/unmanaged-api/debugging/icordebugcontroller-setallthreadsdebugstate-method.md) .  
+ Le débogueur utilise l’énumération `CorDebugThreadState` pour contrôler l’exécution d’un thread. L’état d’un thread peut être défini à l’aide de la méthode [ICorDebugThread :: SetDebugState,](icordebugthread-setdebugstate-method.md) ou [ICorDebugController :: SetAllThreadsDebugState](icordebugcontroller-setallthreadsdebugstate-method.md) .  
   
  Un rappel fourni à l' [API d’hébergement](../../../../docs/framework/unmanaged-api/hosting/index.md) active le pompage de messages, ce qui signifie qu’il n’est pas nécessaire d’interrompre l’État.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,4 +56,4 @@ typedef enum CorDebugThreadState {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

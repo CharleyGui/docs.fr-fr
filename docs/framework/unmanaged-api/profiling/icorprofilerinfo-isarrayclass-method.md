@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 7f230961-23a6-4d56-ad2d-7a876d65705f
 topic_type:
 - apiref
-ms.openlocfilehash: 57515ac4670b9b7e25bb496851347a62e1b246df
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a6e483d820d183afc8ba6a68fc4635730ffd1e51
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74438713"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76869319"
 ---
 # <a name="icorprofilerinfoisarrayclass-method"></a>ICorProfilerInfo::IsArrayClass, méthode
 Détermine si la classe spécifiée est une classe de tableau.  
@@ -35,7 +35,7 @@ HRESULT IsArrayClass(
     [out] ULONG          *pcRank);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `classId`  
  dans ID de la classe à examiner.  
   
@@ -51,7 +51,7 @@ HRESULT IsArrayClass(
 ## <a name="remarks"></a>Notes  
  Si la classe spécifiée est une classe de tableau, la méthode `IsArrayClass` retourne un S_OK HRESULT et des valeurs pour tous les paramètres de sortie non null. Sinon, elle retourne S_FALSE.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -62,4 +62,4 @@ HRESULT IsArrayClass(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

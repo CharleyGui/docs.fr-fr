@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 619bb5de-e309-48b6-a3af-32d935a0ff46
 topic_type:
 - apiref
-ms.openlocfilehash: 8105ba34ca400771fbc4273630f20941a4a9557d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: fe27c0fca6d38b4cff6cac2b9778cf2be68903a3
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74432279"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867124"
 ---
 # <a name="cor_prf_misc-enumeration"></a>COR_PRF_MISC, énumération
 Contient des valeurs de constante qui spécifient des identificateurs spéciaux.  
@@ -34,15 +34,15 @@ typedef enum {
 } COR_PRF_MISC;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
-|`PROFILER_PARENT_UNKNOWN`|Identificateur par défaut utilisé par [ICorProfilerInfo :: GetModuleInfo](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getmoduleinfo-method.md) pour un module qui n’a pas encore été attaché à un assembly.|  
+|`PROFILER_PARENT_UNKNOWN`|Identificateur par défaut utilisé par [ICorProfilerInfo :: GetModuleInfo](icorprofilerinfo-getmoduleinfo-method.md) pour un module qui n’a pas encore été attaché à un assembly.|  
 |`PROFILER_GLOBAL_CLASS`|Identificateur de classe par défaut pour les constantes globales qui n’appartiennent pas à une classe.|  
 |`PROFILER_GLOBAL_MODULE`|Identificateur de module par défaut pour les objets globaux qui n’appartiennent pas à un module.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -53,4 +53,4 @@ typedef enum {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

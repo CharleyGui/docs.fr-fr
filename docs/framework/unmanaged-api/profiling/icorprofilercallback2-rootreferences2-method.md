@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 55a2f907-d216-42eb-8f2f-e5d59c2eebd6
 topic_type:
 - apiref
-ms.openlocfilehash: dffd4365669da61f7b321110ad663c131ce591e6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: a9ce9a7a56847efcadf09924ffc56c41f20a1c58
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439671"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865725"
 ---
 # <a name="icorprofilercallback2rootreferences2-method"></a>ICorProfilerCallback2::RootReferences2, méthode
-Notifie le profileur des références racines après qu’un garbage collection s’est produit. Cette méthode est une extension de la méthode [ICorProfilerCallback :: RootReferences](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-rootreferences-method.md) .  
+Notifie le profileur des références racines après qu’un garbage collection s’est produit. Cette méthode est une extension de la méthode [ICorProfilerCallback :: RootReferences](icorprofilercallback-rootreferences-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ HRESULT RootReferences2(
     [in, size_is(cRootRefs)] UINT_PTR rootIds[]);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cRootRefs`  
  dans Nombre d’éléments dans les tableaux `rootRefIds`, `rootKinds`, `rootFlags`et `rootIds`.  
   
@@ -44,10 +44,10 @@ HRESULT RootReferences2(
  dans Tableau d’ID d’objet, chacun d’entre eux référençant un objet statique ou un objet sur la pile. Les éléments du tableau `rootKinds` fournissent des informations pour classer les éléments correspondants dans le tableau `rootRefIds`.  
   
  `rootKinds`  
- dans Tableau de valeurs [COR_PRF_GC_ROOT_KIND](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-kind-enumeration.md) qui indiquent le type de la racine garbage collection.  
+ dans Tableau de valeurs [COR_PRF_GC_ROOT_KIND](cor-prf-gc-root-kind-enumeration.md) qui indiquent le type de la racine garbage collection.  
   
  `rootFlags`  
- dans Tableau de valeurs [COR_PRF_GC_ROOT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-root-flags-enumeration.md) qui décrivent les propriétés d’une racine garbage collection.  
+ dans Tableau de valeurs [COR_PRF_GC_ROOT_FLAGS](cor-prf-gc-root-flags-enumeration.md) qui décrivent les propriétés d’une racine garbage collection.  
   
  `rootIds`  
  dans Tableau de valeurs UINT_PTR qui pointent vers un entier qui contient des informations supplémentaires sur la racine garbage collection, en fonction de la valeur du paramètre `rootKinds`.  
@@ -61,9 +61,9 @@ HRESULT RootReferences2(
   
  Il est possible que les entrées de `rootRefIds` soient égales à zéro, ce qui signifie que la référence racine correspondante est null et ne fait pas référence à un objet sur le tas managé.  
   
- Les ID d’objet retournés par `RootReferences2` ne sont pas valides pendant le rappel lui-même, car le garbage collection peut être en train de déplacer des objets d’anciennes adresses vers de nouvelles adresses. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `RootReferences2`. Quand [ICorProfilerCallback2 :: GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) est appelé, tous les objets ont été déplacés vers leurs nouveaux emplacements et peuvent être inspectés en toute sécurité.  
+ Les ID d’objet retournés par `RootReferences2` ne sont pas valides pendant le rappel lui-même, car le garbage collection peut être en train de déplacer des objets d’anciennes adresses vers de nouvelles adresses. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `RootReferences2`. Quand [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) est appelé, tous les objets ont été déplacés vers leurs nouveaux emplacements et peuvent être inspectés en toute sécurité.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -74,5 +74,5 @@ HRESULT RootReferences2(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback2, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback2, interface](icorprofilercallback2-interface.md)

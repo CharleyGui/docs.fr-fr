@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 07cf3bab-e193-4991-8205-3f41cf2d67b3
 topic_type:
 - apiref
-ms.openlocfilehash: 2b01acbd617b13a64ef3dca6c8661f1e6bb067ac
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: c92ee580caed9f1fb87a31b676747769ad31a0e2
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447383"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867247"
 ---
 # <a name="cor_prf_function_argument_info-structure"></a>COR_PRF_FUNCTION_ARGUMENT_INFO, structure
 Représente les arguments d’une fonction, selon un ordre de gauche à droite.  
@@ -34,11 +34,11 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
 } COR_PRF_FUNCTION_ARGUMENT_INFO;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
-|`numRanges`|Nombre de blocs d’arguments. Autrement dit, cette valeur est le nombre de structures de [COR_PRF_FUNCTION_ARGUMENT_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-function-argument-range-structure.md) dans le tableau `ranges`.|  
+|`numRanges`|Nombre de blocs d’arguments. Autrement dit, cette valeur est le nombre de structures de [COR_PRF_FUNCTION_ARGUMENT_RANGE](cor-prf-function-argument-range-structure.md) dans le tableau `ranges`.|  
 |`totalArgumentSize`|Taille totale de tous les arguments. En d’autres termes, cette valeur est la somme des longueurs des arguments.|  
 |`ranges`|Tableau de `COR_PRF_FUNCTION_ARGUMENT_RANGE` structures, chacune représentant un bloc d’arguments de fonction.|  
   
@@ -49,7 +49,7 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
  Les arguments stockés dans les registres sont vidés en mémoire pour générer les structures.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
@@ -60,4 +60,4 @@ typedef struct _COR_PRF_FUNCTION_ARGUMENT_INFO {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [Structures de profilage](profiling-structures.md)

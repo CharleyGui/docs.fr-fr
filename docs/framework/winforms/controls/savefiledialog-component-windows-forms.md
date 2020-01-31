@@ -5,12 +5,12 @@ helpviewer_keywords:
 - Save File dialog box
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
-ms.openlocfilehash: 920816c648f5dbdd50f869e58769655e8be8e1a1
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: 8490261068684385678ccb830ee179015a0644f4
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743092"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867397"
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog, composant (Windows Forms)
 Le composant Windows Forms <xref:System.Windows.Forms.SaveFileDialog>  est une boîte de dialogue préconfigurée. Il est identique à la boîte de dialogue Enregistrer le fichier standard utilisée par Windows. Il hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  
@@ -31,7 +31,4 @@ Le composant Windows Forms <xref:System.Windows.Forms.SaveFileDialog>  est une b
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   
  [Contrôles et composants de boîte de dialogue](dialog-box-controls-and-components-windows-forms.md)  
- Décrit un ensemble de contrôles et de composants qui permettent aux utilisateurs d'effectuer des interactions standard avec l'application ou le système.  
-  
- [Code principal des boîtes de dialogue Windows Forms](https://go.microsoft.com/fwlink/?LinkID=102575)  
- Décrit les contrôles et les composants des boîtes de dialogue Windows Forms et le code nécessaire pour exécuter leurs fonctions élémentaires. (Article technique de MSDN Online Library)
+ Décrit un ensemble de contrôles et de composants qui permettent aux utilisateurs d'effectuer des interactions standard avec l'application ou le système.

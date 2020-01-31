@@ -1,15 +1,15 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Databricks
 description: Découvrez comment déployer une application .NET pour Apache Spark sur Databricks.
-ms.date: 05/17/2019
+ms.date: 01/23/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: dfd33e83c04428b7a6a72e4992c40f00982b1958
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: a117d85ab911b380598c93417f6ff95661ab864c
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960463"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868029"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-databricks"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Databricks
 
@@ -24,7 +24,7 @@ Dans ce didacticiel, vous apprendrez à :
 > - Créez un travail Spark et un cluster Spark.
 > - Exécutez votre application sur le cluster Spark.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Avant de commencer, effectuez les tâches suivantes :
 
@@ -35,27 +35,27 @@ Avant de commencer, effectuez les tâches suivantes :
 ## <a name="create-an-azure-databricks-workspace"></a>Créer un espace de travail Azure Databricks
 
 > [!Note]
-> Ce tutoriel ne peut pas être suivi avec un **abonnement d’essai gratuit Azure**.
-> Si vous avez un compte gratuit, accédez à votre profil et modifiez votre abonnement sur **Paiement à l’utilisation**. Pour plus d’informations, consultez la page [Compte Azure gratuit](https://azure.microsoft.com/free/). Ensuite, [supprimez la limite de dépense](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit), et [demandez une augmentation du quota](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) pour les processeurs virtuels dans votre région. Lorsque vous créez votre espace de travail Azure Databricks, vous pouvez sélectionner le tarif **Version d’évaluation (Premium - 14 jours de DBU offerts)** pour donner à l’accès de l’espace de travail un accès gratuit aux DBU d’Azure Databricks pendant 14 jours.
+> Ce didacticiel ne peut pas être exécuté à l’aide **d’un abonnement d’essai gratuit Azure**.
+> Si vous disposez d’un compte gratuit, accédez à votre profil et modifiez votre abonnement en **paiement à l’accès**. Pour plus d’informations, consultez [compte gratuit Azure](https://azure.microsoft.com/free/). Ensuite, [supprimez la limite de dépense](https://docs.microsoft.com/azure/billing/billing-spending-limit#why-you-might-want-to-remove-the-spending-limit)et [demandez une augmentation du quota](https://docs.microsoft.com/azure/azure-supportability/resource-manager-core-quotas-request) pour processeurs virtuels dans votre région. Lorsque vous créez votre espace de travail Azure Databricks, vous pouvez sélectionner le niveau tarifaire **d’essai (version d’évaluation gratuite de 14 jours)** pour permettre à l’espace de travail d’accéder à la version gratuite Premium Azure Databricks DBUs pendant 14 jours.
 
-Dans cette section, vous créez un espace de travail Azure Databricks en utilisant le portail Azure.
+Dans cette section, vous allez créer un espace de travail Azure Databricks à l’aide de l’Portail Azure.
 
-1. Dans le portail Azure, sélectionnez **Créer une ressource** >  **Analytique** > **Azure Databricks**.
+1. Dans le Portail Azure, sélectionnez **créer une ressource** > **analytique** > **Azure Databricks**.
 
    ![Créer une ressource Azure Databricks dans Portail Azure](./media/databricks-deployment/create-databricks-resource.png)
 
-2. Sous **Service Azure Databricks**, renseignez les valeurs pour créer un espace de travail Databricks.
+2. Sous **Azure Databricks service**, fournissez les valeurs pour créer un espace de travail Databricks.
 
-    |Property  |Description  |
+    |Les  |Description  |
     |---------|---------|
-    |**Nom de l’espace de travail**     | Fournissez un nom pour votre espace de travail Databricks.        |
-    |**Abonnement**     | Sélectionnez votre abonnement Azure dans la liste déroulante.        |
-    |**Groupe de ressources**     | Indiquez si vous souhaitez créer un groupe de ressources Azure ou utiliser un groupe existant. Un groupe de ressources est un conteneur qui inclut les ressources associées à une solution Azure. Pour plus d’informations, consultez [Présentation des groupes de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
-    |**Emplacement**     | Sélectionnez votre région préférée. Pour plus d’informations sur les régions disponibles, consultez [services Azure disponibles par région](https://azure.microsoft.com/regions/services/).        |
-    |**Niveau tarifaire**     |  Choisissez **Standard**, **Premium** ou **Essai**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
+    |**Nom de l’espace de travail**     | Donnez un nom à votre espace de travail Databricks.        |
+    |**Abonnement**     | Dans la liste déroulante, sélectionnez votre abonnement Azure.        |
+    |**Groupe de ressources**     | Spécifiez si vous souhaitez créer un nouveau groupe de ressources ou utiliser un groupe existant. Un groupe de ressources est un conteneur qui contient les ressources associées à une solution Azure. Pour plus d’informations, consultez [vue d’ensemble du groupe de ressources Azure](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-overview). |
+    |**Emplacement**     | Sélectionnez la région de votre choix. Pour plus d’informations sur les régions disponibles, consultez [services Azure disponibles par région](https://azure.microsoft.com/regions/services/).        |
+    |**Niveau tarifaire**     |  Choisissez entre **standard**, **Premium**ou **version d’évaluation**. Pour plus d’informations sur ces niveaux, consultez la [page de tarification Databricks](https://azure.microsoft.com/pricing/details/databricks/).       |
     |**Réseau virtuel**     |   Non       |
 
-3. Sélectionnez **Créer**. La création de l’espace de travail prend quelques minutes. Pendant la création de l'espace de travail, vous pouvez consulter l'état du déploiement dans **Notifications**.
+3. Sélectionnez **Créer**. La création de l’espace de travail prend quelques minutes. Pendant la création de l’espace de travail, vous pouvez afficher l’état du déploiement dans les **notifications**.
 
 ## <a name="install-azure-databricks-tools"></a>Installer Azure Databricks Tools
 
@@ -190,7 +190,7 @@ Votre application s’exécute sur Azure Databricks par le biais d’un travail 
 3. Collez les paramètres suivants dans la configuration du travail. Ensuite, sélectionnez **confirmer**.
 
    ```
-   ["--class","org.apache.spark.deploy.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
+   ["--class","org.apache.spark.deploy.dotnet.DotnetRunner","/dbfs/spark-dotnet/microsoft-spark-2.4.x-0.6.0.jar","/dbfs/spark-dotnet/publish.zip","mySparkApp"]
    ```
 
 ## <a name="create-a-cluster"></a>Créer un cluster
@@ -219,7 +219,7 @@ Votre application s’exécute sur Azure Databricks par le biais d’un travail 
 
 ## <a name="clean-up-resources"></a>Nettoyer les ressources
 
-Si vous n’avez plus besoin de l’espace de travail Databricks, vous pouvez supprimer votre ressource Azure Databricks dans le Portail Azure. Vous pouvez également sélectionner le nom du groupe de ressources pour ouvrir la page du groupe de ressources, puis sélectionner **Supprimer le groupe de ressources**.
+Si vous n’avez plus besoin de l’espace de travail Databricks, vous pouvez supprimer votre ressource Azure Databricks dans le Portail Azure. Vous pouvez également sélectionner le nom du groupe de ressources pour ouvrir la page groupe de ressources, puis sélectionner **supprimer le groupe de ressources**.
 
 ## <a name="next-steps"></a>Étapes suivantes :
 

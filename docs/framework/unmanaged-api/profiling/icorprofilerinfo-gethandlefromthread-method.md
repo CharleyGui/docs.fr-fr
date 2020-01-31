@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 36cdc9f5-7579-4cd2-aa36-fc05c741584c
 topic_type:
 - apiref
-ms.openlocfilehash: e508ccd81d25aa3d303456fa88554903ec71d633
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 038f922eaaeb7d660cfbdcc0facb89677bdd154e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439065"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863541"
 ---
 # <a name="icorprofilerinfogethandlefromthread-method"></a>ICorProfilerInfo::GetHandleFromThread, méthode
 Mappe l’ID d’un thread à un handle de thread Win32.  
@@ -33,7 +33,7 @@ HRESULT GetHandleFromThread(
     [out] HANDLE  *phThread);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadId`  
  dans ID de thread à mapper.  
   
@@ -43,7 +43,7 @@ HRESULT GetHandleFromThread(
 ## <a name="remarks"></a>Notes  
  Le profileur doit appeler la fonction de `DuplicateHandle` Win32 sur le handle avant de l’utiliser.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -54,4 +54,4 @@ HRESULT GetHandleFromThread(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

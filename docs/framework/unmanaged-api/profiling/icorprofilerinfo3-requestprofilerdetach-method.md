@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea102e62-0454-4477-bcf3-126773acd184
 topic_type:
 - apiref
-ms.openlocfilehash: 226f24ad8f1636101b283c3cb6662905cbf7eebe
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 8520f5fc0a6ff7e71f40cd7fbb1caf68aab63197
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75938206"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868510"
 ---
 # <a name="icorprofilerinfo3requestprofilerdetach-method"></a>ICorProfilerInfo3::RequestProfilerDetach, méthode
 Indique au runtime de détacher le profileur.  
@@ -42,11 +42,11 @@ HRESULT RequestProfilerDetach(
 |HRESULT|Description|  
 |-------------|-----------------|  
 |S_OK|La demande de détachement est valide, et la procédure de détachement se poursuit maintenant sur un autre thread. Une fois le détachement terminé, un événement `ProfilerDetachSucceeded` est émis.|  
-|E_ CORPROF_E_CALLBACK3_REQUIRED|Le profileur a échoué une tentative [IUnknown :: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pour l’interface [ICorProfilerCallback3](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-interface.md) , qu’il doit implémenter pour prendre en charge l’opération de détachement. La tentative de détachement n'a pas eu lieu.|  
+|E_ CORPROF_E_CALLBACK3_REQUIRED|Le profileur a échoué une tentative [IUnknown :: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pour l’interface [ICorProfilerCallback3](icorprofilercallback3-interface.md) , qu’il doit implémenter pour prendre en charge l’opération de détachement. La tentative de détachement n'a pas eu lieu.|  
 |CORPROF_E_IMMUTABLE_FLAGS_SET|Le détachement est impossible, car le profileur a défini des indicateurs immuables au démarrage. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.|  
-|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Le détachement est impossible, car le profileur a utilisé du code MSIL (Microsoft Intermediate Language) instrumenté ou inséré `enter`/des hooks `leave`. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.<br /><br /> **Remarque** Le code MSIL instrumenté est le code fourni par le profileur à l’aide de la méthode [SetILFunctionBody](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-setilfunctionbody-method.md) .|  
-|CORPROF_E_RUNTIME_UNINITIALIZED|Le runtime n'a pas encore été initialisé dans l'application managée. (Autrement dit, le runtime n’a pas été entièrement chargé.) Ce code d’erreur peut être retourné lorsque le détachement est demandé à l’intérieur de la méthode [ICorProfilerCallback :: Initialize](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-initialize-method.md) du rappel du profileur.|  
-|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` a été appelée à une heure non prise en charge. Cela se produit si la méthode est appelée sur un thread managé, mais pas à partir d’une méthode [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) , ou à partir d’une méthode [ICorProfilerCallback](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md) qui ne peut pas tolérer un garbage collection. Pour plus d’informations, consultez [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](../../../../docs/framework/unmanaged-api/profiling/corprof-e-unsupported-call-sequence-hresult.md).|  
+|CORPROF_E_IRREVERSIBLE_INSTRUMENTATION_PRESENT|Le détachement est impossible, car le profileur a utilisé du code MSIL (Microsoft Intermediate Language) instrumenté ou inséré `enter`/des hooks `leave`. La tentative de détachement n'a pas eu lieu ; le profileur est toujours entièrement attaché.<br /><br /> **Remarque** Le code MSIL instrumenté est le code fourni par le profileur à l’aide de la méthode [SetILFunctionBody](icorprofilerinfo-setilfunctionbody-method.md) .|  
+|CORPROF_E_RUNTIME_UNINITIALIZED|Le runtime n'a pas encore été initialisé dans l'application managée. (Autrement dit, le runtime n’a pas été entièrement chargé.) Ce code d’erreur peut être retourné lorsque le détachement est demandé à l’intérieur de la méthode [ICorProfilerCallback :: Initialize](icorprofilercallback-initialize-method.md) du rappel du profileur.|  
+|CORPROF_E_UNSUPPORTED_CALL_SEQUENCE|`RequestProfilerDetach` a été appelée à une heure non prise en charge. Cela se produit si la méthode est appelée sur un thread managé, mais pas à partir d’une méthode [ICorProfilerCallback](icorprofilercallback-interface.md) , ou à partir d’une méthode [ICorProfilerCallback](icorprofilercallback-interface.md) qui ne peut pas tolérer un garbage collection. Pour plus d’informations, consultez [CORPROF_E_UNSUPPORTED_CALL_SEQUENCE HRESULT](corprof-e-unsupported-call-sequence-hresult.md).|  
   
 ## <a name="remarks"></a>Notes  
  Pendant la procédure de détachement, le thread de détachement (thread créé spécifiquement pour détacher le profileur) vérifie parfois si tous les threads ont quitté le code du profileur. Le profileur doit fournir une estimation de la durée de cette opération via le paramètre `dwExpectedCompletionMilliseconds`. Une valeur appropriée à utiliser est le temps passé par le profileur dans une méthode `ICorProfilerCallback*` donnée ; cette valeur ne doit pas être inférieure à la moitié du temps maximal que le profileur prévoit de passer.  
@@ -66,6 +66,6 @@ HRESULT RequestProfilerDetach(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

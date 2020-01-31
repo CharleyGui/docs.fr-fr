@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d6a5fa8b-09c6-47a5-b60e-6cf2e355df30
 topic_type:
 - apiref
-ms.openlocfilehash: f57a3ed70267de65daed85305ad7d623b4ca0337
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 2b228337a55d50b94da966b45877e2000b3c03e4
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448017"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866310"
 ---
 # <a name="icorprofilercallbackfunctionunloadstarted-method"></a>ICorProfilerCallback::FunctionUnloadStarted, méthode
 Notifie le profileur que le runtime a commencé à décharger une fonction.  
@@ -32,14 +32,16 @@ HRESULT FunctionUnloadStarted(
     [in] FunctionID functionId);   
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `functionId`  
- dans ID de la fonction en cours de déchargement.  
-  
+## <a name="parameters"></a>Parameters
+
+- `functionId`
+
+  \[in] ID de la fonction en cours de déchargement.
+
 ## <a name="remarks"></a>Notes  
  La valeur du paramètre `functionId` n’est plus valide après le retour de cette méthode à l’appelant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -50,4 +52,4 @@ HRESULT FunctionUnloadStarted(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

@@ -6,12 +6,12 @@ helpviewer_keywords:
 - event handlers [WPF], weak event pattern
 - IWeakEventListener interface [WPF]
 ms.assetid: e7c62920-4812-4811-94d8-050a65c856f6
-ms.openlocfilehash: c0bf92c9b6046d531e75771a9205e6dffe0fd367
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 9f61a5a60b2ba1305158d1ab570079fe6aac19ac
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458481"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76870738"
 ---
 # <a name="weak-event-patterns"></a>Modèles d'événement faible
 Dans les applications, il est possible que les gestionnaires qui sont attachés à des sources d’événements ne soient pas détruits avec l’objet d’écouteur qui a attaché le gestionnaire à la source. Cette situation peut entraîner des fuites de mémoire. [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] introduit un modèle de conception qui peut être utilisé pour résoudre ce problème, en fournissant une classe de gestionnaire dédiée pour des événements particuliers et en implémentant une interface sur les écouteurs de cet événement. Ce modèle de conception est connu sous le nom de *modèle d’événement faible*.  
@@ -36,7 +36,7 @@ Dans les applications, il est possible que les gestionnaires qui sont attachés 
 |Utiliser une classe de gestionnaire d’événements faible existante|Si l’événement auquel vous souhaitez vous abonner a une <xref:System.Windows.WeakEventManager>correspondante, utilisez le gestionnaire d’événements faible existant. Pour obtenir la liste des gestionnaires d’événements faibles inclus dans WPF, consultez la hiérarchie d’héritage dans la classe <xref:System.Windows.WeakEventManager>. Étant donné que les gestionnaires d’événements faibles inclus sont limités, vous devrez probablement choisir l’une des autres approches.|  
 |Utiliser une classe de gestionnaire d’événements faible générique|Utilisez une <xref:System.Windows.WeakEventManager%602> générique lorsqu’un <xref:System.Windows.WeakEventManager> existant n’est pas disponible, vous avez besoin d’un moyen simple d’implémenter et vous ne vous inquiétez pas de l’efficacité. Le <xref:System.Windows.WeakEventManager%602> générique est moins efficace qu’un gestionnaire d’événements faible existant ou personnalisé. Par exemple, la classe générique fait plus de réflexion pour découvrir l’événement en fonction du nom de l’événement. En outre, le code permettant d’enregistrer l’événement à l’aide de la <xref:System.Windows.WeakEventManager%602> générique est plus détaillé que l’utilisation d’une <xref:System.Windows.WeakEventManager>existante ou personnalisée.|  
 |Créer une classe de gestionnaire d’événements faibles personnalisée|Créez un <xref:System.Windows.WeakEventManager> personnalisé lorsqu’un <xref:System.Windows.WeakEventManager> existant n’est pas disponible et que vous souhaitez obtenir une efficacité optimale. L’utilisation d’un <xref:System.Windows.WeakEventManager> personnalisé pour s’abonner à un événement est plus efficace, mais vous encourez le coût de l’écriture de code supplémentaire au début.|  
-|Utiliser un gestionnaire d’événements faibles tiers|NuGet possède [plusieurs gestionnaires d’événements faibles](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) et de nombreuses infrastructures WPF prennent également en charge le modèle (par exemple, consultez la [documentation de Prism sur l’abonnement aux événements faiblement couplés](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/Communication.md#subscribing-to-events)).|
+|Utiliser un gestionnaire d’événements faibles tiers|NuGet possède [plusieurs gestionnaires d’événements faibles](https://www.nuget.org/packages?q=weak+event+manager&prerel=false) et de nombreuses infrastructures WPF prennent également en charge le modèle (par exemple, consultez la [documentation de Prism sur l’abonnement aux événements faiblement couplés](https://github.com/PrismLibrary/Prism-Documentation/blob/master/docs/wpf/legacy/Communication.md#subscribing-to-events)).|
 
  Les sections suivantes décrivent comment implémenter le modèle d’événement faible.  Dans le cadre de cette discussion, l’événement auquel s’abonner a les caractéristiques suivantes.  
   

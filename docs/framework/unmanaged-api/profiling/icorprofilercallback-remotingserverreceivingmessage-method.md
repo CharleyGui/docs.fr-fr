@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5604d21f-e6b7-490e-b469-42122a7568e1
 topic_type:
 - apiref
-ms.openlocfilehash: 2c2eb7d0dc04d813b1ce91fb1acf4b171f244592
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6e045a99de9ad30516fd12a7b490e26c860bde7e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445762"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866011"
 ---
 # <a name="icorprofilercallbackremotingserverreceivingmessage-method"></a>ICorProfilerCallback::RemotingServerReceivingMessage, méthode
 Indique au profileur que le processus a reçu une demande d’appel ou d’activation de méthode distante.  
@@ -33,9 +33,9 @@ HRESULT RemotingClientSendingMessage(
     [in] BOOL fIsAsync);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pCookie`  
- dans Valeur qui correspond à la valeur fournie dans [ICorProfilerCallback :: RemotingClientSendingMessage,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md) dans les conditions suivantes :  
+ dans Valeur qui correspond à la valeur fournie dans [ICorProfilerCallback :: RemotingClientSendingMessage,](icorprofilercallback-remotingclientsendingmessage-method.md) dans les conditions suivantes :  
   
 - Les cookies du GUID de communication à distance sont actifs.  
   
@@ -51,7 +51,7 @@ HRESULT RemotingClientSendingMessage(
 ## <a name="remarks"></a>Notes  
  Si la demande de message est asynchrone, la demande peut être desservie par n’importe quel thread arbitraire.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -62,4 +62,4 @@ HRESULT RemotingClientSendingMessage(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

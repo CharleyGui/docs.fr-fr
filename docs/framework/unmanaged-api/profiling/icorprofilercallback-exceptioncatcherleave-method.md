@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 1f3dbdf5-db0c-4b07-bbb7-375de2a63673
 topic_type:
 - apiref
-ms.openlocfilehash: 7d61a6db8f42398a0d6e0d818605592f4fe71cf7
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 6b7aa7c60b5e861787d7a115d90a00d67cc48db0
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444998"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866531"
 ---
 # <a name="icorprofilercallbackexceptioncatcherleave-method"></a>ICorProfilerCallback::ExceptionCatcherLeave, méthode
 Indique au profileur que le contrôle est passé en dehors du bloc de `catch` approprié.  
@@ -36,7 +36,7 @@ HRESULT ExceptionCatcherLeave();
   
  L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -47,5 +47,5 @@ HRESULT ExceptionCatcherLeave();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionCatcherEnter, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptioncatcherenter-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ExceptionCatcherEnter, méthode](icorprofilercallback-exceptioncatcherenter-method.md)

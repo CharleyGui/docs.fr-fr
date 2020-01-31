@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 7593e8873c2714df85146903c0052a9909a95ccd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 8412020fb98fde245b873a2f0c6a355f6436f712
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444715"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868276"
 ---
 # <a name="icorprofilerinfo9getnativecodestartaddresses-method"></a>ICorProfilerInfo9 :: GetNativeCodeStartAddresses, méthode
 
@@ -32,28 +32,33 @@ HRESULT GetNativeCodeStartAddresses( [in]  FunctionID functionID,
                                      [out] UINT_PTR codeStartAddresses[]);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`functionId` \
-dans ID de la fonction dont les adresses de début de code natif doivent être retournées.
+- `functionId`
 
-`reJitId` \
-[in] Identité de la fonction recompilée juste-à-temps.
+  \[in] ID de la fonction dont les adresses de début de code natif doivent être retournées.
 
-`cCodeStartAddresses` \
-[in] Taille maximale du tableau `codeStartAddresses`.
+- `reJitId`
 
-`pcCodeStartAddresses` \
-à Nombre d’adresses disponibles.
+  \[dans] identité de la fonction recompilée juste-à-temps.
 
-`codeStartAddresses` \
-à Tableau d' `UINT_PTR`, chacun d’entre eux étant l’adresse de début d’un corps natif pour la fonction spécifiée.
+- `cCodeStartAddresses`
+
+  \[dans] taille maximale du tableau de `codeStartAddresses`.
+
+- `pcCodeStartAddresses`
+
+  \[out] nombre d’adresses disponibles.
+
+- `codeStartAddresses`
+
+  \[out] tableau de `UINT_PTR`, chacun d’entre eux étant l’adresse de début d’un corps natif pour la fonction spécifiée.
 
 ## <a name="remarks"></a>Notes
 
 Lorsque la compilation à plusieurs niveaux est activée, une fonction peut avoir plusieurs corps de code natif.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
@@ -65,4 +70,4 @@ Lorsque la compilation à plusieurs niveaux est activée, une fonction peut avoi
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo9-interface.md)
+- [Interface ICorProfilerInfo9](icorprofilerinfo9-interface.md)

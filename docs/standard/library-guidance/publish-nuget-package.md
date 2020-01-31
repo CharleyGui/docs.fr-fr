@@ -2,12 +2,12 @@
 title: Publication d’un package NuGet
 description: Meilleures pratiques recommandées pour la publication de bibliothèques .NET dans NuGet.
 ms.date: 10/02/2018
-ms.openlocfilehash: e567fe3f7e00bf322cdd50786e50128961107469
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 089c660bc51252c6295858b1462ae59bde968564
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706463"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744554"
 ---
 # <a name="publishing-a-nuget-package"></a>Publication d’un package NuGet
 
@@ -22,11 +22,11 @@ Les packages NuGet sont publiés et utilisés à partir de référentiels de pac
 > [!NOTE]
 > NuGet.org [n’autorise pas la suppression d’un package](/nuget/policies/deleting-packages) une fois qu’il est chargé. Un package peut être retiré de la liste afin qu’il ne soit pas publiquement visible dans l’interface utilisateur, mais le `*.nupkg` peut toujours être téléchargé lors de la restauration. En outre, nuget.org n’autorise pas les versions de package en double. Pour corriger un package NuGet comportant une erreur, vous devez retirer de la liste le package incorrect, incrémenter le numéro de version, puis publier une nouvelle version du package.
 
-**✔️** [publiez des packages stables et des packages](/nuget/create-packages/publish-a-package) de préversion auxquels vous souhaitez envoyer des commentaires sur NuGet.org.
+✔️ [publiez des packages stables et des packages](/nuget/create-packages/publish-a-package) de préversion auxquels vous souhaitez envoyer des commentaires sur NuGet.org.
 
-**✔️ À ENVISAGER** Publier des packages en préversion pour un flux MyGet à partir d’une build d’intégration continue.
+✔️ envisagez de publier des packages en version préliminaire sur un flux MyGet à partir d’une build d’intégration continue.
 
-**✔️ À ENVISAGER** Tester des packages dans votre environnement de développement à l’aide d’un flux local ou MyGet. Vérifiez le fonctionnement du package, puis publiez-le sur NuGet.org.
+✔️ ENVISAGER de tester des packages dans votre environnement de développement à l’aide d’un flux local ou d’un MyGet. Vérifiez le fonctionnement du package, puis publiez-le sur NuGet.org.
 
 ## <a name="nugetorg-security"></a>Sécurité de NuGet.org
 
@@ -34,11 +34,11 @@ Il est important d’empêcher les personnes mal intentionnées d’accéder à 
 
 ![texte de remplacement](./media/publish-nuget-package/nuget-2fa.png "Sécurité des comptes NuGet")
 
-**✔️ À FAIRE** Utiliser un compte Microsoft pour vous connecter à NuGet.
+✔️ Utilisez une compte Microsoft pour vous connecter à NuGet.
 
-**✔️ À FAIRE** Activer l’authentification à deux facteurs pour accéder à NuGet.
+✔️ activez l’authentification à deux facteurs pour accéder à NuGet.
 
-**✔️ À FAIRE** Activer la notification par e-mail lorsqu’un package est publié.
+✔️ activer la notification par courrier électronique lors de la publication d’un package.
 
 >[!div class="step-by-step"]
 >[Précédent](sourcelink.md)

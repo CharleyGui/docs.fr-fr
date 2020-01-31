@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 1a268496-ee51-4d84-8700-ee56fd0c499d
 topic_type:
 - apiref
-ms.openlocfilehash: 1e3dc4735af68da7f76fc6fce84d2dd4ac3f576e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: f3727343755d7014202f844be28414d31ce55bc1
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449652"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862254"
 ---
 # <a name="icorprofilerinfo3getstringlayout2-method"></a>ICorProfilerInfo3::GetStringLayout2, méthode
-Obtient des informations sur la disposition d'un objet string. Cette méthode remplace la méthode [ICorProfilerInfo2 :: GetStringLayout,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getstringlayout-method.md) .  
+Obtient des informations sur la disposition d'un objet string. Cette méthode remplace la méthode [ICorProfilerInfo2 :: GetStringLayout,](icorprofilerinfo2-getstringlayout-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -33,7 +33,7 @@ HRESULT GetStringLayout2(
     [out] ULONG *pBufferOffset);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pStringLengthOffset`  
  à Pointeur vers le décalage de l’emplacement, relatif au pointeur `ObjectID`, qui stocke la longueur de la chaîne elle-même. La longueur est stockée sous la forme d’un `DWORD`.  
   
@@ -43,7 +43,7 @@ HRESULT GetStringLayout2(
 ## <a name="remarks"></a>Notes  
  Les chaînes peuvent ou non se terminer par un caractère null.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -54,5 +54,5 @@ HRESULT GetStringLayout2(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo3, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerInfo3, interface](icorprofilerinfo3-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)

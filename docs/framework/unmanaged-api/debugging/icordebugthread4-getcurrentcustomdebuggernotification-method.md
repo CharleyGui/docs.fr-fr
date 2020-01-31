@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 57e0f2d2-5f0e-4e2d-99ec-3f26632eb693
 topic_type:
 - apiref
-ms.openlocfilehash: ba4375511fe7f5aaee032c4e132de54808041111
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a8a377074ca1005ad8089dfd8e2a6a464bb86f60
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122447"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791365"
 ---
 # <a name="icordebugthread4getcurrentcustomdebuggernotification-method"></a>ICorDebugThread4::GetCurrentCustomDebuggerNotification, méthode
 
-Obtient l’objet [ICorDebugManagedCallback3 :: CustomNotification,](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback3-customnotification-method.md) actuel sur le thread actuel.
+Obtient l’objet [ICorDebugManagedCallback3 :: CustomNotification,](icordebugmanagedcallback3-customnotification-method.md) actuel sur le thread actuel.
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -34,7 +34,7 @@ HRESULT GetCurrentCustomDebuggerNotification(
     );
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `ppNotificationObject`\
 à Pointeur vers l’objet de `ICorDebugManagedCallback3::CustomNotification` actuel sur le thread actuel.
@@ -43,7 +43,7 @@ HRESULT GetCurrentCustomDebuggerNotification(
 
 La valeur de `ppNotificationObject` est null si la méthode n’est pas appelée à partir d’un rappel `ICorDebugManagedCallback3::CustomNotification`, ou si aucun objet de notification en cours n’existe.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -55,6 +55,6 @@ La valeur de `ppNotificationObject` est null si la méthode n’est pas appelée
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugThread4, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugthread4-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [ICorDebugThread4, interface](icordebugthread4-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

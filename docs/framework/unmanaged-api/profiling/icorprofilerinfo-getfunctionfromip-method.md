@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: f069802a-198f-46dd-9f09-4f77adffc9ba
 topic_type:
 - apiref
-ms.openlocfilehash: 14b152474cd71dc3ff7b59c94b6ec4fa0cd7ce0c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: cd1f3982fe1439135bf96579370a5a798c61dd2e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439210"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863783"
 ---
 # <a name="icorprofilerinfogetfunctionfromip-method"></a>ICorProfilerInfo::GetFunctionFromIP, méthode
 Mappe un pointeur d’instruction de code managé à un `FunctionID`.  
@@ -33,14 +33,17 @@ HRESULT GetFunctionFromIP(
     [out] FunctionID *pFunctionId);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `ip`  
- dans Pointeur d’instruction dans du code managé.  
-  
- `pFunctionId`  
- à ID de la fonction retournée.  
-  
-## <a name="requirements"></a>Configuration requise  
+## <a name="parameters"></a>Parameters
+
+- `ip`
+
+  \[dans] pointeur d’instruction en code managé.
+
+- `pFunctionId`
+
+  \[out] ID de la fonction retournée.
+
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -51,4 +54,4 @@ HRESULT GetFunctionFromIP(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

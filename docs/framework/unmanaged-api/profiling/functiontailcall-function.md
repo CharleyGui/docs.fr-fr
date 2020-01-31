@@ -14,18 +14,18 @@ helpviewer_keywords:
 ms.assetid: 66347e03-9a97-41e8-8f9d-89b80803f7b5
 topic_type:
 - apiref
-ms.openlocfilehash: c83a55a74542d94559b50b89ef784de0bd55d0db
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: bd03eccc923049c4a49062d18bd11659f3316e8a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74427347"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866821"
 ---
 # <a name="functiontailcall-function"></a>FunctionTailcall (fonction)
 Indique au profileur que la fonction en cours d’exécution est sur le paragraphe d’effectuer un appel tail à une autre fonction.  
   
 > [!NOTE]
-> La fonction `FunctionTailcall` est déconseillée dans la version .NET Framework 2,0. Il continuera à fonctionner, mais entraînera une baisse des performances. Utilisez à la place la fonction [FunctionTailcall2](../../../../docs/framework/unmanaged-api/profiling/functiontailcall2-function.md) .  
+> La fonction `FunctionTailcall` est déconseillée dans la version .NET Framework 2,0. Il continuera à fonctionner, mais entraînera une baisse des performances. Utilisez à la place la fonction [FunctionTailcall2](functiontailcall2-function.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,12 +35,14 @@ void __stdcall FunctionTailcall (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `funcID`  
- dans Identificateur de la fonction en cours d’exécution qui va effectuer un appel tail.  
-  
+## <a name="parameters"></a>Parameters
+
+- `funcID`
+
+  \[in] identificateur de la fonction en cours d’exécution qui est sur le paragraphe d’effectuer un appel tail.
+
 ## <a name="remarks"></a>Notes  
- La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave](../../../../docs/framework/unmanaged-api/profiling/functionleave-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
+ La fonction cible de l’appel tail utilise le frame de pile actuel et retourne directement à l’appelant de la fonction qui a effectué l’appel tail. Cela signifie qu’un rappel [FunctionLeave](functionleave-function.md) ne sera pas émis pour une fonction qui est la cible d’un appel tail.  
   
  La fonction `FunctionTailcall` est un rappel ; vous devez l’implémenter. L’implémentation doit utiliser l’attribut de classe de stockage `__declspec`(`naked`).  
   
@@ -54,7 +56,7 @@ void __stdcall FunctionTailcall (
   
  En outre, la fonction `FunctionTailcall` ne doit pas appeler dans du code managé ou de quelque manière qu’elle génère une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
@@ -65,7 +67,7 @@ void __stdcall FunctionTailcall (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [FunctionEnter2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionenter2-function.md)
-- [FunctionLeave2, fonction](../../../../docs/framework/unmanaged-api/profiling/functionleave2-function.md)
-- [SetEnterLeaveFunctionHooks2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
-- [Fonctions statiques globales de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-global-static-functions.md)
+- [FunctionEnter2, fonction](functionenter2-function.md)
+- [FunctionLeave2, fonction](functionleave2-function.md)
+- [SetEnterLeaveFunctionHooks2, méthode](icorprofilerinfo2-setenterleavefunctionhooks2-method.md)
+- [Fonctions statiques globales de profilage](profiling-global-static-functions.md)

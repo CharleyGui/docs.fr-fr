@@ -6,12 +6,12 @@ helpviewer_keywords:
 - colors [Windows Forms], dialog box
 - color dialog box
 ms.assetid: 261793e0-8252-47c5-b76c-621857b8da44
-ms.openlocfilehash: 0b44774fcace82f7e209440bc15705ad632bc223
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 3ac758c353d235183041b6442d4472f863f7ca75
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76736925"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76870802"
 ---
 # <a name="colordialog-component-windows-forms"></a>ColorDialog, composant (Windows Forms)
 Le composant Windows Forms <xref:System.Windows.Forms.ColorDialog> est une boîte de dialogue préconfigurée qui permet à l’utilisateur de sélectionner une couleur dans une palette et d’ajouter des couleurs personnalisées à cette palette. Il s’agit de la même boîte de dialogue que celle que vous voyez dans d’autres applications Windows pour sélectionner des couleurs. Vous pouvez l'utiliser dans votre application Windows comme alternative à la configuration de votre propre boîte de dialogue.  
@@ -32,9 +32,6 @@ Le composant Windows Forms <xref:System.Windows.Forms.ColorDialog> est une boît
   
  <xref:System.Windows.Forms.ColorDialog>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.ColorDialog> et ses membres.  
-  
- [Code principal des boîtes de dialogue Windows Forms](assetId:///VS|dv_vstechart|~\html\vbtchessentialcodeforwindowsformsdialogboxes.htm)  
- Décrit les contrôles et les composants des boîtes de dialogue Windows Forms et le code nécessaire pour exécuter leurs fonctions élémentaires.  
-  
+ 
  [Contrôles et composants de boîte de dialogue](dialog-box-controls-and-components-windows-forms.md)  
  Répertorie un ensemble de contrôles qui permettent aux utilisateurs d’effectuer des interactions standard avec l’application ou le système.

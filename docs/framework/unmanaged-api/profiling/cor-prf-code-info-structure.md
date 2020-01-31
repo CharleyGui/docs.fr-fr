@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: cf30e27c-1f7e-43a2-ba1e-01e4137301db
 topic_type:
 - apiref
-ms.openlocfilehash: 643c9d7104c374d9141a604083f3fdcd540156c4
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: eaab5b7faeac3dd0fb64f0a387f437af44e7bc12
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428388"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867306"
 ---
 # <a name="cor_prf_code_info-structure"></a>COR_PRF_CODE_INFO, structure
 Représente un bloc contigu de code natif stocké en mémoire.  
@@ -33,14 +33,14 @@ typedef struct _COR_PRF_CODE_INFO {
 } COR_PRF_CODE_INFO;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`startAddress`|Adresse de début du bloc de code contigu.|  
 |`size`|Taille du bloc.|  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
@@ -51,4 +51,4 @@ typedef struct _COR_PRF_CODE_INFO {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [Structures de profilage](profiling-structures.md)

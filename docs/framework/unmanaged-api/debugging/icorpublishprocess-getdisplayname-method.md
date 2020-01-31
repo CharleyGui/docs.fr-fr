@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 7c0af9e9-a73f-41aa-a685-b21c439e059d
 topic_type:
 - apiref
-ms.openlocfilehash: df2750f082ddc40bbeee121116c3e877d037da84
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7f2e644340a2ec7fe807830422b927ce811ddcf9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140430"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790566"
 ---
 # <a name="icorpublishprocessgetdisplayname-method"></a>ICorPublishProcess::GetDisplayName, méthode
-Gets the full path of the executable for the process referenced by this [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md).  
+Obtient le chemin d’accès complet de l’exécutable pour le processus référencé par [ICorPublishProcess](icorpublishprocess-interface.md).  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,20 +36,20 @@ HRESULT GetDisplayName (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cchName`  
  [in] Taille du tableau `szName`.  
   
  `pcchName`  
- [out] The number of wide characters returned in the `szName` array.  
+ à Nombre de caractères larges retournés dans le tableau de `szName`.  
   
  `szName`  
- [out] An array to store the name, including the full path, of the executable. The name is null-terminated.  
+ à Tableau pour stocker le nom, y compris le chemin d’accès complet de l’exécutable. Le nom se termine par un caractère null.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
- **Header:** CorPub.idl, CorPub.h  
+ **En-tête :** CorPub. idl, CorPub. h  
   
  **Bibliothèque :** CorGuids.lib  
   
@@ -57,4 +57,4 @@ HRESULT GetDisplayName (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorPublishProcess, interface](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md)
+- [ICorPublishProcess, interface](icorpublishprocess-interface.md)

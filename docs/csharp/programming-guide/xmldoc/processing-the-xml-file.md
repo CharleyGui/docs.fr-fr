@@ -1,18 +1,18 @@
 ---
-title: Traitement du fichier XML - Guide de programmation C#
+title: Traitement du Guide de programmation C# de fichiers XML
 ms.date: 07/20/2015
 helpviewer_keywords:
 - XML processing [C#]
 - XML [C#], processing
 ms.assetid: 60c71193-9dac-4cd3-98c5-100bd0edcc42
-ms.openlocfilehash: 2c3ba0e12d0d7e6a568c4c3741d99b901fca2722
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: bc72cade9ce6edddb88d741a3424405bba0a7ad8
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75696517"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793389"
 ---
-# <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (Guide de programmation C#)
+# <a name="processing-the-xml-file-c-programming-guide"></a>Traitement du fichier XML (C# Guide de programmation)
 
 Le compilateur génère une chaîne d’ID pour chaque construction de votre code qui est marquée pour générer la documentation. (Pour plus d’informations sur la façon de baliser votre code, consultez [Balises recommandées pour les commentaires de documentation](./recommended-tags-for-documentation-comments.md).) La chaîne d’ID identifie de façon unique la construction. Les programmes qui traitent le fichier XML peuvent utiliser la chaîne d’identification pour identifier l’élément de métadonnées/réflexion .NET Framework correspondant auquel s’applique la documentation.
 
@@ -27,7 +27,7 @@ Le compilateur respecte les règles suivantes quand il génère les chaînes d�
     |Caractère|Description|
     |---------------|-----------------|
     |N|Espace de noms<br /><br /> Vous ne pouvez pas ajouter de commentaires de documentation à un espace de noms, mais vous pouvez faire des références cref à des commentaires, si cela est pris en charge.|
-    |T|type : classe, interface, struct, enum, délégué|
+    |T|type : Class, interface, struct, enum ou Delegate|
     |F|champ|
     |P|propriété (notamment des indexeurs ou autres propriétés indexées)|
     |M|méthode (notamment des méthodes spéciales telles que des constructeurs, des opérateurs, etc.)|
@@ -84,6 +84,6 @@ Les exemples suivants montrent comment les chaînes d’ID pour une classe et se
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [-doc (Options du compilateur C#)](../../language-reference/compiler-options/doc-compiler-option.md)
-- [Commentaires sur la documentation XML](./index.md)
+- [Guide de programmation C#](../index.md)
+- [-doc (C# options du compilateur)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Commentaires de documentation XML](./index.md)

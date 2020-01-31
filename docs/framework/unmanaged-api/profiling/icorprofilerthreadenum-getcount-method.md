@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: d6dbdc4a-6115-455d-a3f3-704a81d3646b
 topic_type:
 - apiref
-ms.openlocfilehash: 695b720119854de4645b2f14dd55811f2465504a
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 230b02b71abea48b1c3ad4094ea90812493149d1
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447637"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860993"
 ---
 # <a name="icorprofilerthreadenumgetcount-method"></a>ICorProfilerThreadEnum::GetCount, méthode
 Obtient le nombre de threads utilisés par l'application.  
@@ -32,11 +32,11 @@ HRESULT GetCount (    [out] ULONG * pcelt
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `celt`  
  à Nombre de threads utilisés par l’application.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -47,5 +47,5 @@ HRESULT GetCount (    [out] ULONG * pcelt
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerThreadEnum, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerthreadenum-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
+- [ICorProfilerThreadEnum, interface](icorprofilerthreadenum-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)

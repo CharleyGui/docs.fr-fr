@@ -1,36 +1,36 @@
 ---
-title: 'Procédure : lier des contrôles Windows Forms au composant BindingSource à l’aide du concepteur'
+title: Lier des contrôles au composant BindingSource à l’aide du concepteur
 ms.date: 03/30/2017
 helpviewer_keywords:
 - controls [Windows Forms], binding
 - BindingSource component [Windows Forms], binding controls
 - data binding [Windows Forms], BindingSource component
 ms.assetid: 391ae170-de5c-40f8-8233-91cb2ee4683a
-ms.openlocfilehash: 180fafa9ace5927fd84ec5dc0a1b2a342f771efd
-ms.sourcegitcommit: cf9515122fce716bcfb6618ba366e39b5a2eb81e
+ms.openlocfilehash: 35b3fb7b9884f07dd6e2aef311a01d3090c44227
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/15/2019
-ms.locfileid: "69040015"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744390"
 ---
-# <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Procédure : lier des contrôles Windows Forms au composant BindingSource à l’aide du concepteur
+# <a name="how-to-bind-windows-forms-controls-with-the-bindingsource-component-using-the-designer"></a>Comment : lier des contrôles Windows Forms au composant BindingSource à l'aide du concepteur
 Une fois que vous avez ajouté des contrôles à votre formulaire et déterminé l’interface utilisateur de votre application, vous pouvez lier les contrôles à une source de données, de sorte qu’au moment de l’exécution, les utilisateurs puissent modifier et enregistrer des données relatives à l’application.
 
- La liaison d’un contrôle ou d’une série de contrôles dans Windows Forms est plus <xref:System.Windows.Forms.BindingSource> facile à effectuer à l’aide du contrôle comme un pont entre les contrôles sur le formulaire et la source de données.
+ La liaison d’un contrôle ou d’une série de contrôles dans Windows Forms s’effectue plus facilement à l’aide du contrôle <xref:System.Windows.Forms.BindingSource> en tant que pont entre les contrôles sur le formulaire et la source de données.
 
- Un ou plusieurs contrôles d’un formulaire peuvent être liés à des données; dans la procédure suivante, un <xref:System.Windows.Forms.TextBox> contrôle est lié à une source de données.
+ Un ou plusieurs contrôles d’un formulaire peuvent être liés à des données ; dans la procédure suivante, un contrôle de <xref:System.Windows.Forms.TextBox> est lié à une source de données.
 
  Pour terminer la procédure, il est supposé que vous allez établir une liaison avec une source de données dérivée d’une base de données. Pour plus d’informations sur la création de sources de données à partir d’autres magasins de données, consultez [ajouter de nouvelles sources de données](/visualstudio/data-tools/add-new-data-sources).
 
 ## <a name="to-bind-a-control-at-design-time"></a>Pour lier un contrôle au moment du design
 
-1. Faites glisser <xref:System.Windows.Forms.TextBox> un contrôle sur le formulaire.
+1. Faites glisser un contrôle <xref:System.Windows.Forms.TextBox> sur le formulaire.
 
 2. Dans la fenêtre **Propriétés** :
 
     1. Développez le nœud **(DataBindings)** .
 
-    2. Cliquez sur la flèche en regard <xref:System.Windows.Forms.TextBox.Text%2A> de la propriété.
+    2. Cliquez sur la flèche en regard de la propriété <xref:System.Windows.Forms.TextBox.Text%2A>.
 
          L’éditeur de types de l’interface utilisateur **DataSource** s’ouvre.
 
@@ -46,15 +46,15 @@ Une fois que vous avez ajouté des contrôles à votre formulaire et déterminé
 
 7. Sélectionnez **Oui, enregistrer la connexion** pour enregistrer la chaîne de connexion dans le fichier de configuration de l’application.
 
-8. Sélectionnez les objets de base de données à mettre dans votre application. Dans ce cas, sélectionnez un champ dans une table que vous <xref:System.Windows.Forms.TextBox> souhaitez afficher.
+8. Sélectionnez les objets de base de données à mettre dans votre application. Dans ce cas, sélectionnez un champ dans une table que vous souhaitez afficher à l' <xref:System.Windows.Forms.TextBox>.
 
 9. Remplacez le nom du jeu de données par défaut, si vous le souhaitez.
 
-10. Cliquez sur **Terminer**.
+10. Cliquez sur **Finish**.
 
-11. Dans la fenêtre **Propriétés** , cliquez à nouveau sur la flèche <xref:System.Windows.Forms.TextBox.Text%2A> à côté de la propriété. Dans l’éditeur de types d’interface utilisateur **DataSource** , sélectionnez le nom du champ <xref:System.Windows.Forms.TextBox> auquel vous souhaitez lier.
+11. Dans la fenêtre **Propriétés** , cliquez à nouveau sur la flèche à côté de la propriété <xref:System.Windows.Forms.TextBox.Text%2A>. Dans l’éditeur de types d’interface utilisateur **DataSource** , sélectionnez le nom du champ auquel lier l' <xref:System.Windows.Forms.TextBox>.
 
-     L’éditeur de type d’interface utilisateur **DataSource** se ferme et <xref:System.Windows.Forms.BindingSource> le jeu de données, et l’adaptateur de table propre à cette connexion de données sont ajoutés à votre formulaire.
+     L’éditeur de type d’interface utilisateur **DataSource** se ferme et le jeu de données, <xref:System.Windows.Forms.BindingSource> et l’adaptateur de table propre à cette connexion de données sont ajoutés à votre formulaire.
 
 ## <a name="see-also"></a>Voir aussi
 

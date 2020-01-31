@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 512fdd00-262a-4456-a075-365ef4133c4d
 topic_type:
 - apiref
-ms.openlocfilehash: 074b0b11a822d2b8bcb9588484557e3e5eba69dd
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 81d11c87c9bc970dd5b5c9010023610cea7c0e72
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430197"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865192"
 ---
 # <a name="icorprofilercallback4rejitcompilationstarted-method"></a>ICorProfilerCallback4::ReJITCompilationStarted, méthode
 Notifie le profileur que le compilateur juste-à-temps (JIT) a commencé à recompiler une fonction.  
@@ -34,7 +34,7 @@ HRESULT ReJITCompilationStarted(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `functionId`  
  dans ID de la fonction que le compilateur JIT a commencé à recompiler.  
   
@@ -45,11 +45,11 @@ HRESULT ReJITCompilationStarted(
  [in] `true` pour indiquer que le blocage peut amener le runtime à attendre que le thread appelant retourne à partir de ce rappel ; `false` pour indiquer que le blocage n’affectera pas le fonctionnement du Runtime. Une valeur de `true` n’endommage pas le runtime, mais peut affecter les résultats de profilage.  
   
 ## <a name="remarks"></a>Notes  
- Il est possible de recevoir plus d’une paire de `ReJITCompilationStarted` et d’appels de méthode [rejitcompilationfinished,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) pour chaque fonction en raison de la façon dont le Runtime gère les constructeurs de classe. Par exemple, le runtime commence à recompiler la méthode A, mais le constructeur de classe pour la classe B doit être exécuté. Par conséquent, le runtime RECOMPILE le constructeur pour la classe B et l’exécute. Pendant que le constructeur est en cours d’exécution, il effectue un appel à la méthode A, ce qui entraîne la recompilation de la méthode A. Dans ce scénario, la première recompilation de la méthode A est arrêtée. Toutefois, les deux tentatives de recompilation de la méthode A sont signalées avec les événements de recompilation JIT.  
+ Il est possible de recevoir plus d’une paire de `ReJITCompilationStarted` et d’appels de méthode [rejitcompilationfinished,](icorprofilercallback4-rejitcompilationfinished-method.md) pour chaque fonction en raison de la façon dont le Runtime gère les constructeurs de classe. Par exemple, le runtime commence à recompiler la méthode A, mais le constructeur de classe pour la classe B doit être exécuté. Par conséquent, le runtime RECOMPILE le constructeur pour la classe B et l’exécute. Pendant que le constructeur est en cours d’exécution, il effectue un appel à la méthode A, ce qui entraîne la recompilation de la méthode A. Dans ce scénario, la première recompilation de la méthode A est arrêtée. Toutefois, les deux tentatives de recompilation de la méthode A sont signalées avec les événements de recompilation JIT.  
   
- Les profileurs doivent prendre en charge la séquence de rappels de recompilation JIT dans les cas où deux threads effectuent simultanément des rappels. Par exemple, le thread A appelle `ReJITCompilationStarted`; Toutefois, avant que le thread A appelle [rejitcompilationfinished,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md), thread B appelle [ICorProfilerCallback :: EXCEPTIONSEARCHFUNCTIONENTER,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionsearchfunctionenter-method.md) avec l’ID de fonction du rappel `ReJITCompilationStarted` pour le thread A. Il peut sembler que l’ID de fonction ne soit pas encore valide, car un appel à [rejitcompilationfinished,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md) n’a pas encore été reçu par le profileur. Toutefois, dans ce cas, l’ID de fonction est valide.  
+ Les profileurs doivent prendre en charge la séquence de rappels de recompilation JIT dans les cas où deux threads effectuent simultanément des rappels. Par exemple, le thread A appelle `ReJITCompilationStarted`; Toutefois, avant que le thread A appelle [rejitcompilationfinished,](icorprofilercallback4-rejitcompilationfinished-method.md), thread B appelle [ICorProfilerCallback :: EXCEPTIONSEARCHFUNCTIONENTER,](icorprofilercallback-exceptionsearchfunctionenter-method.md) avec l’ID de fonction du rappel `ReJITCompilationStarted` pour le thread A. Il peut sembler que l’ID de fonction ne soit pas encore valide, car un appel à [rejitcompilationfinished,](icorprofilercallback4-rejitcompilationfinished-method.md) n’a pas encore été reçu par le profileur. Toutefois, dans ce cas, l’ID de fonction est valide.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -60,7 +60,7 @@ HRESULT ReJITCompilationStarted(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback4, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
-- [JITCompilationFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationfinished-method.md)
-- [ReJITCompilationFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationfinished-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback4, interface](icorprofilercallback4-interface.md)
+- [JITCompilationFinished, méthode](icorprofilercallback-jitcompilationfinished-method.md)
+- [ReJITCompilationFinished, méthode](icorprofilercallback4-rejitcompilationfinished-method.md)

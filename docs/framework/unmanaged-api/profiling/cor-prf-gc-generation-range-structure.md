@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: e7e07273-8d10-4a68-807e-59634e3f8c5e
 topic_type:
 - apiref
-ms.openlocfilehash: 0bdb8cd02e0beb69e3ec594b0aadd741a5f0d924
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 682aac9729519e0861ae6e6f60df78a30063c278
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74428339"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867205"
 ---
 # <a name="cor_prf_gc_generation_range-structure"></a>COR_PRF_GC_GENERATION_RANGE, structure
 Décrit une plage (un bloc) de mémoire qui va faire l'objet d'une récupération de mémoire.  
@@ -35,19 +35,19 @@ typedef struct COR_PRF_GC_GENERATION_RANGE {
 } COR_PRF_GC_GENERATION_RANGE;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
-|`generation`|Valeur de l’énumération [COR_PRF_GC_GENERATION](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-enumeration.md) qui spécifie la génération à laquelle appartient le bloc de mémoire.|  
+|`generation`|Valeur de l’énumération [COR_PRF_GC_GENERATION](cor-prf-gc-generation-enumeration.md) qui spécifie la génération à laquelle appartient le bloc de mémoire.|  
 |`rangeStart`|ID d’un objet qui spécifie l’emplacement de départ du bloc de mémoire.|  
 |`rangeLength`|Pointeur vers un entier qui spécifie la taille de la partie utilisée du bloc de mémoire (autrement dit, la quantité de mémoire utilisée dans le bloc).|  
 |`rangeLengthReserved`|Pointeur vers un entier qui spécifie la taille du bloc de mémoire (autrement dit, la quantité de mémoire réservée pour le bloc).|  
   
 ## <a name="remarks"></a>Notes  
- La valeur `rangeLength` est garantie comme étant exacte uniquement si [ICorProfilerInfo2 :: GetGenerationBounds,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getgenerationbounds-method.md) ou [Icorprofilerinfo2 :: GetObjectGeneration,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-getobjectgeneration-method.md), qui utilisent tous les deux la structure `COR_PRF_GC_GENERATION_RANGE`, est appelé à partir de la méthode [ICorProfilerCallback2 :: GarbageCollectionStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionstarted-method.md) ou de la méthode [ICorProfilerCallback2 :: GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) .  
+ La valeur `rangeLength` est garantie comme étant exacte uniquement si [ICorProfilerInfo2 :: GetGenerationBounds,](icorprofilerinfo2-getgenerationbounds-method.md) ou [Icorprofilerinfo2 :: GetObjectGeneration,](icorprofilerinfo2-getobjectgeneration-method.md), qui utilisent tous les deux la structure `COR_PRF_GC_GENERATION_RANGE`, est appelé à partir de la méthode [ICorProfilerCallback2 :: GarbageCollectionStarted](icorprofilercallback2-garbagecollectionstarted-method.md) ou de la méthode [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) .  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf. idl  
@@ -58,4 +58,4 @@ typedef struct COR_PRF_GC_GENERATION_RANGE {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-structures.md)
+- [Structures de profilage](profiling-structures.md)

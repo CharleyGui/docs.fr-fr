@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: c33a868b643cb3e3fd5dfaf436e3078bc590705c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 5822136eb1a7f582bcfae901a99775950e586198
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449817"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76863177"
 ---
 # <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10 :: RequestReJITWithInliners, méthode
 
@@ -31,25 +31,29 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
                                   [in, size_is(cFunctions)]  mdMethodDef methodIds[]);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`dwRejitFlags` \
-dans Masque de [réCOR_PRF_REJIT_FLAGS](../../../../docs/framework/unmanaged-api/profiling/cor-prf-rejit-flags-enumeration.md).
+- `dwRejitFlags`
 
-`cFunctions` \
-[in] Nombre de fonctions à recompiler.
+  \[dans] masque de [réCOR_PRF_REJIT_FLAGS](cor-prf-rejit-flags-enumeration.md).
 
-`moduleIds` \
-[in] Spécifie la partie `moduleId` des paires (`module`, `methodDef`) qui identifient les fonctions à recompiler.
+- `cFunctions`
 
-`methodIds` \
-[in] Spécifie la partie `methodId` des paires (`module`, `methodDef`) qui identifient les fonctions à recompiler.
+  \[in] nombre de fonctions à recompiler.
+
+- `moduleIds`
+
+  \[in] spécifie la partie `moduleId` des paires (`module`, `methodDef`) qui identifient les fonctions à recompiler.
+
+- `methodIds`
+
+  \[in] spécifie la partie `methodId` des paires (`module`, `methodDef`) qui identifient les fonctions à recompiler.
 
 ## <a name="remarks"></a>Notes
 
-[Requestrejit,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-requestrejit-method.md) n’effectue aucun suivi des méthodes Inline. Le profileur devait bloquer l’incorporation ou le suivi des Inlines et appeler `RequestReJIT` pour tous les Inlines afin de s’assurer que chaque instance d’une méthode Inline était ReJITted. Cela pose un problème avec ReJIT lors de l’attachement, car le profileur n’est pas présent pour surveiller l’incorporation. Cette méthode peut être appelée pour garantir que l’ensemble complet des Inlines sera également ReJITted.
+[Requestrejit,](icorprofilerinfo4-requestrejit-method.md) n’effectue aucun suivi des méthodes Inline. Le profileur devait bloquer l’incorporation ou le suivi des Inlines et appeler `RequestReJIT` pour tous les Inlines afin de s’assurer que chaque instance d’une méthode Inline était ReJITted. Cela pose un problème avec ReJIT lors de l’attachement, car le profileur n’est pas présent pour surveiller l’incorporation. Cette méthode peut être appelée pour garantir que l’ensemble complet des Inlines sera également ReJITted.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
@@ -61,4 +65,4 @@ dans Masque de [réCOR_PRF_REJIT_FLAGS](../../../../docs/framework/unmanaged-api
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo10](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo10-interface.md)
+- [Interface ICorProfilerInfo10](icorprofilerinfo10-interface.md)

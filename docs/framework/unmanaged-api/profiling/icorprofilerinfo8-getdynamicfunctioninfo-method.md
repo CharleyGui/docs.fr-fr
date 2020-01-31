@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 45a40d49cea2dd5f881fbd47cc2fb4bd96e8f9ff
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.openlocfilehash: 9b5059d9e4bf9b79dc67664c7a7971041d1cf35b
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
-ms.locfileid: "70243982"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76861682"
 ---
 # <a name="icorprofilerinfo8getdynamicfunctioninfo-method"></a>ICorProfilerInfo8 :: GetDynamicFunctionInfo, méthode
 
@@ -34,28 +34,35 @@ HRESULT GetDynamicFunctionInfo( [in]  FunctionID              functionId,
                                 [out] WCHAR                   wszName[]);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`functionId` \
-dans ID de la fonction pour laquelle des informations doivent être récupérées.
+- `functionId`
 
-`moduleId` \
-dans Pointeur vers le module dans lequel la classe parente de la fonction est définie.
+  \[in] ID de la fonction pour laquelle des informations doivent être récupérées.
 
-`ppvSig` \
-à Pointeur vers la signature de la fonction.
+- `moduleId`
 
-`pbSig` \
-à Pointeur vers le nombre d’octets pour la signature de fonction.
+  \[in] pointeur vers le module dans lequel la classe parente de la fonction est définie.
 
-`cchName` \
-[in] Taille maximale du tableau `wszName`.
+- `ppvSig`
 
-`pcchName` \
-à Nombre de caractères dans le `wszName` tableau.
+  \[out] pointeur vers la signature de la fonction.
 
-`wszName` \
-à Tableau d `WCHAR` 'qui est le nom de la fonction, s’il en existe un.
+- `pbSig`
+
+  \[out] pointeur vers le nombre d’octets pour la signature de la fonction.
+
+- `cchName`
+
+  \[dans] taille maximale du tableau de `wszName`.
+
+- `pcchName`
+
+  \[out] nombre de caractères dans le tableau de `wszName`.
+
+- `wszName`
+
+  \[out] tableau de `WCHAR`, qui est le nom de la fonction, s’il en existe un.
 
 ## <a name="remarks"></a>Notes
 
@@ -63,16 +70,16 @@ Certaines méthodes telles que les stubs IL ou les LCG n’ont pas de métadonn�
 
 Cette API peut être utilisée pour récupérer des informations sur les méthodes dynamiques, y compris un nom convivial, si disponible.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
-**Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo8](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo8-interface.md)
+- [Interface ICorProfilerInfo8](icorprofilerinfo8-interface.md)

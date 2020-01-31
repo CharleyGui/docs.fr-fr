@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: df9ecc9bc355c12f993763820eb5065ba8bcc36b
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.openlocfilehash: 6d50a5d74eccff6fe39aca111f768bac4d8f2e2e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
-ms.locfileid: "70855918"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868328"
 ---
 # <a name="icorprofilerinfo8getfunctionfromip3-method"></a>ICorProfilerInfo8 :: GetFunctionFromIP3, méthode
 
@@ -30,31 +30,34 @@ HRESULT GetFunctionFromIP3([in] LPCBYTE ip,
                            [out] ReJITID * pReJitId);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`ip` \
-dans Pointeur d’instruction dans du code managé.
+- `ip`
 
-`pFunctionId` \
-à ID de la fonction.
+  \[dans] pointeur d’instruction en code managé.
 
-`pReJitId` \
-à Identité de la version recompilée juste-à-temps de la fonction.
+- `pFunctionId`
+
+  \[out] ID de la fonction.
+
+- `pReJitId`
+
+  \[out] identité de la version recompilée juste-à-temps de la fonction.
 
 ## <a name="remarks"></a>Notes
 
 Cette méthode fonctionne pour les méthodes dynamiques et non dynamiques. Il s’agit d’un sur-ensemble de [getfunctionfromip2,](icorprofilerinfo4-getfunctionfromip2-method.md), qui fonctionne uniquement pour les fonctions avec métadonnées.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
-**Plateformes** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
+**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
-**En-tête :** CorProf. idl, CorProf. h
+**En-tête :** CorProf.idl, CorProf.h
 
-**Bibliothèque** CorGuids.lib
+**Bibliothèque :** CorGuids.lib
 
 **Versions du .NET Framework :** [!INCLUDE[net_current_v472plus](../../../../includes/net-current-v472plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo8](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo8-interface.md)
+- [Interface ICorProfilerInfo8](icorprofilerinfo8-interface.md)

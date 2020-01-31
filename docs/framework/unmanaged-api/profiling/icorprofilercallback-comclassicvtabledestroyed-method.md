@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 29da20ca-bf39-4356-8099-d9c3ac3423a9
 topic_type:
 - apiref
-ms.openlocfilehash: 0b0683d43778c4733b476e9feef459207b9d1ee6
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 98d5dcf3b691f16f63390851e207f518bf26ab11
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445030"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866518"
 ---
 # <a name="icorprofilercallbackcomclassicvtabledestroyed-method"></a>ICorProfilerCallback::COMClassicVTableDestroyed, méthode
 Notifie le profileur qu’un COM Interop vtable est en cours de destruction.  
@@ -37,22 +37,26 @@ HRESULT COMClassicVTableDestroyed(
     [in] void    *pVTable);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `wrappedClassId`  
- dans ID de la classe pour laquelle ce vtable a été créé.  
-  
- `implementedIID`  
- dans ID de l’interface implémentée par la classe. Cette valeur peut être NULL si l’interface est interne uniquement.  
-  
- `pVTable`  
- dans Pointeur vers le début de la vtable.  
-  
+## <a name="parameters"></a>Parameters
+
+- `wrappedClassId`
+
+  \[in] ID de la classe pour laquelle ce vtable a été créé.
+
+- `implementedIID`
+
+  \[in] ID de l’interface implémentée par la classe. Cette valeur peut être NULL si l’interface est interne uniquement.
+
+- `pVTable`
+
+  \[in] pointeur vers le début de la vtable.
+
 ## <a name="remarks"></a>Notes  
  Le profileur ne doit pas se bloquer dans son implémentation de cette méthode, car la pile n’est peut-être pas dans un État qui autorise garbage collection, et par conséquent, Preemptive garbage collection ne peut pas être activé. Si le profileur est bloqué ici et que garbage collection est tentée, le runtime se bloque jusqu’à ce que ce rappel soit retourné.  
   
  L’implémentation du profileur de cette méthode ne doit pas appeler dans du code managé ou de quelque manière qu’elle provoque une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -63,5 +67,5 @@ HRESULT COMClassicVTableDestroyed(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [COMClassicVTableCreated, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-comclassicvtablecreated-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [COMClassicVTableCreated, méthode](icorprofilercallback-comclassicvtablecreated-method.md)

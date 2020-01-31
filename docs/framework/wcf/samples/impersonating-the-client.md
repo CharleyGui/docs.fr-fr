@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Impersonating the Client Sample [Windows Communication Foundation]
 - impersonation, Windows Communication Foundation sample
 ms.assetid: 8bd974e1-90db-4152-95a3-1d4b1a7734f8
-ms.openlocfilehash: 0c262d8b5460f236ef0429154ae337c7adf96714
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: e9e85729b10d1c992a22f6c0bea65dfd1e21e7e4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338715"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742555"
 ---
 # <a name="impersonating-the-client"></a>Emprunt de l'identité du client
 Cet exemple montre comment emprunter l'identité de l'application de l'appelant au niveau du service afin que ce dernier puisse accéder aux ressources système pour le compte de l'appelant.  
@@ -102,7 +102,7 @@ client.ClientCredentials.Windows.AllowedImpersonationLevel = TokenImpersonationL
  Lorsque vous exécutez l'exemple, les requêtes et réponses de l'opération s'affichent dans les fenêtres de console du service et du client. Appuyez sur ENTER dans chaque fenêtre de console pour arrêter le service et le client.  
   
 > [!NOTE]
-> Le service doit s’exécuter sous un compte d’administration ou le compte sous lequel il s’exécute doit disposer des droits d’inscription de l’URI de la `http://localhost:8000/ServiceModelSamples` auprès de la couche HTTP. Ces droits peuvent être accordés en configurant une [réservation d’espace de noms](https://go.microsoft.com/fwlink/?LinkId=95012) à l’aide de l' [outil HttpCfg. exe](https://go.microsoft.com/fwlink/?LinkId=95010).  
+> Le service doit s’exécuter sous un compte d’administration ou le compte sous lequel il s’exécute doit disposer des droits d’inscription de l’URI de la `http://localhost:8000/ServiceModelSamples` auprès de la couche HTTP. Ces droits peuvent être accordés en configurant une [réservation d’espace de noms](/windows/win32/http/namespace-reservations-registrations-and-routing) à l’aide de l' [outil HttpCfg. exe](/windows/win32/http/httpcfg-exe).  
   
 > [!NOTE]
 > Sur les ordinateurs exécutant Windows Server 2003, l’emprunt d’identité est pris en charge uniquement si l’application Host. exe dispose du privilège d’emprunt d’identité. (Par défaut, seuls les administrateurs ont cette autorisation.) Pour ajouter ce privilège à un compte sous lequel le service s’exécute, accédez à **Outils d’administration**, ouvrez **stratégie de sécurité locale**, ouvrez **stratégies locales**, cliquez sur **attribution des droits utilisateur**, puis sélectionnez **emprunter l’identité d’un client après l’authentification** et double-cliquez sur **Propriétés** pour ajouter un utilisateur ou un groupe.  

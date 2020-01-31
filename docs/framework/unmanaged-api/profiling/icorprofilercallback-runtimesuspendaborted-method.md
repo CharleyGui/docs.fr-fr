@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 5a8a4277-345b-448b-a028-fc8cff9998aa
 topic_type:
 - apiref
-ms.openlocfilehash: fb09a9422f2aeec239f9aef25fb61c731e0aa2e9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 285bdd3f2a96d3c6cb0039382d9944e48c49971a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74430607"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865907"
 ---
 # <a name="icorprofilercallbackruntimesuspendaborted-method"></a>ICorProfilerCallback::RuntimeSuspendAborted, méthode
 Notifie le profileur que le runtime a abandonné l’interruption d’exécution qui s’est produite.  
@@ -34,11 +34,11 @@ HRESULT RuntimeSuspendAborted();
 ## <a name="remarks"></a>Notes  
  La suspension au moment de l’exécution peut être abandonnée si deux threads essaient simultanément de suspendre le Runtime.  
   
- Soit le rappel [ICorProfilerCallback :: RuntimeSuspendFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendfinished-method.md) , soit le rappel `RuntimeSuspendAborted` se produisent sur un thread unique après un rappel [ICorProfilerCallback :: RuntimeSuspendStarted](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-runtimesuspendstarted-method.md) .  
+ Soit le rappel [ICorProfilerCallback :: RuntimeSuspendFinished](icorprofilercallback-runtimesuspendfinished-method.md) , soit le rappel `RuntimeSuspendAborted` se produisent sur un thread unique après un rappel [ICorProfilerCallback :: RuntimeSuspendStarted](icorprofilercallback-runtimesuspendstarted-method.md) .  
   
  Le rappel de `RuntimeSuspendAborted` est garanti sur le même thread que le rappel `RuntimeSuspendStarted`.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -49,4 +49,4 @@ HRESULT RuntimeSuspendAborted();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7bc3a938-0df1-4739-9ff1-89cff454b704
 topic_type:
 - apiref
-ms.openlocfilehash: bdbf93ba4df50cf26538f0e527fdc3c982bb274e
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 0f6fb469aa9d6d40b762bfd2feec28c28299732f
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74447337"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76867111"
 ---
 # <a name="cor_prf_module_flags-enumeration"></a>COR_PRF_MODULE_FLAGS, énumération
 Spécifie les propriétés d'un module.  
@@ -39,9 +39,9 @@ typedef enum
 }   COR_PRF_MODULE_FLAGS;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |COR_PRF_MODULE_DISK|Le module a été chargé à partir du disque.|  
 |COR_PRF_MODULE_NGEN|Le module a été généré par le générateur d’images natives (Ngen. exe).|  
@@ -52,9 +52,9 @@ typedef enum
 |COR_PRF_MODULE_WINDOWS_RUNTIME|L’indicateur de type de contenu Windows Runtime est défini dans les métadonnées de l’assembly de ce module. C’est le cas pour tous les modules de métadonnées Windows (. winmd).|  
   
 ## <a name="remarks"></a>Notes  
- Les bits de COR_PRF_MODULE_FLAGS sont retournés au profileur dans le paramètre de sortie `pdwModuleFlags` de la méthode [ICorProfilerInfo3 :: GetModuleInfo2,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo3-getmoduleinfo2-method.md) . Certaines combinaisons de deux ou plusieurs indicateurs sont possibles, mais toutes les combinaisons ne sont pas possibles.  
+ Les bits de COR_PRF_MODULE_FLAGS sont retournés au profileur dans le paramètre de sortie `pdwModuleFlags` de la méthode [ICorProfilerInfo3 :: GetModuleInfo2,](icorprofilerinfo3-getmoduleinfo2-method.md) . Certaines combinaisons de deux ou plusieurs indicateurs sont possibles, mais toutes les combinaisons ne sont pas possibles.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -65,4 +65,4 @@ typedef enum
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-enumerations.md)
+- [Énumérations de profilage](profiling-enumerations.md)

@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bc93bead-f3a9-415c-b919-ddd3ca80facc
 topic_type:
 - apiref
-ms.openlocfilehash: 3b729d3be84571a48cc9a770d7f06b99723c0d1f
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 75fb92be078c40f49ddcdc6662535b2a0be7a6ad
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445065"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866557"
 ---
 # <a name="icorprofilercallbackclassunloadstarted-method"></a>ICorProfilerCallback::ClassUnloadStarted, méthode
 Notifie le profileur qu’une classe est en cours de déchargement.  
@@ -32,14 +32,16 @@ HRESULT ClassUnloadStarted(
     [in] ClassID classId);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `classId`  
- dans Identifie la classe qui est déchargée.  
-  
+## <a name="parameters"></a>Parameters
+
+- `classId`
+
+  \[in] identifie la classe qui est déchargée.
+
 ## <a name="remarks"></a>Notes  
  La valeur de `classId` n’est pas valide pour une demande d’informations après le retour de la méthode `ClassUnloadStarted`, c’est la dernière chance du profileur pour obtenir des informations sur cette classe.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -50,5 +52,5 @@ HRESULT ClassUnloadStarted(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ClassUnloadFinished, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-classunloadfinished-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ClassUnloadFinished, méthode](icorprofilercallback-classunloadfinished-method.md)

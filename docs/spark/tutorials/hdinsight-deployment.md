@@ -1,15 +1,15 @@
 ---
 title: Déployer une application .NET pour Apache Spark sur Azure HDInsight
 description: Découvrez comment déployer une application .NET pour Apache Spark sur HDInsight.
-ms.date: 05/17/2019
+ms.date: 01/23/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 3604aff5d1f138071c941ea85546af03185d722d
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 76a150879324640352aa36f753ec3d6e7342bcaf
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460718"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76860776"
 ---
 # <a name="tutorial-deploy-a-net-for-apache-spark-application-to-azure-hdinsight"></a>Didacticiel : déployer une application .NET pour Apache Spark sur Azure HDInsight
 
@@ -25,7 +25,7 @@ Dans ce didacticiel, vous apprendrez à :
 > * Créez et exécutez une action de script HDInsight.
 > * Exécutez un .NET pour Apache Spark application sur un cluster HDInsight.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Avant de commencer, effectuez les tâches suivantes :
 
@@ -57,7 +57,7 @@ Avant de commencer, effectuez les tâches suivantes :
 
 3. Sous **principes de base**, indiquez les valeurs suivantes :
 
-    |Property  |Description  |
+    |Les  |Description  |
     |---------|---------|
     |Abonnement  | Dans la liste déroulante, choisissez l’un de vos abonnements Azure actifs. |
     |Groupe de ressources | Spécifiez si vous souhaitez créer un nouveau groupe de ressources ou utiliser un groupe existant. Un groupe de ressources est un conteneur qui contient les ressources associées à une solution Azure. |
@@ -71,7 +71,7 @@ Avant de commencer, effectuez les tâches suivantes :
 
 4. Sélectionnez **suivant : stockage > >** pour accéder à la page de **stockage** . Sous **stockage**, indiquez les valeurs suivantes :
 
-    |Property  |Description  |
+    |Les  |Description  |
     |---------|---------|
     |Type de stockage principal|Utilisez la valeur par défaut **stockage Azure**.|
     |Méthode de sélection|Utilisez la valeur par défaut **Sélectionner dans la liste**.|
@@ -148,13 +148,13 @@ Une fois que votre cluster est en cours d’exécution et que vous avez téléch
 
 2. Sélectionnez **+ soumettre nouveau** et fournissez les valeurs suivantes :
 
-   |Property  |Description  |
+   |Les  |Description  |
    |---------|---------|
    | Type de script |Personnalisé|
    | Name | Installer Worker|
    | URI de script bash |https://mystorageaccount.blob.core.windows.net/mycontainer/install-worker.sh </br> Pour confirmer cet URI, cliquez avec le bouton droit sur install-worker.sh dans Explorateur Stockage Azure, puis sélectionnez Propriétés. |
-   | Type (s) de nœud| Collabor|
-   | Paramètres | bleu </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
+   | Type (s) de nœud| Travail|
+   | Parameters | Bleu </br> wasbs://mycontainer@myStorageAccount.blob.core.windows.net/Microsoft.Spark.Worker.netcoreapp2.1.linux-x64-0.6.0.tar.gz </br> /usr/local/bin
 
 3. Sélectionnez **créer** pour soumettre votre script.
 
@@ -169,7 +169,7 @@ Une fois que votre cluster est en cours d’exécution et que vous avez téléch
    ```bash
    $SPARK_HOME/bin/spark-submit \
    --master yarn \
-   --class org.apache.spark.deploy.DotnetRunner \
+   --class org.apache.spark.deploy.dotnet.DotnetRunner \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/microsoft-spark-2.3.x-0.6.0.jar \
    wasbs://mycontainer@mystorageaccount.blob.core.windows.net/publish.zip mySparkApp
    ```
@@ -182,7 +182,7 @@ HDInsight enregistre vos données dans le stockage Azure, ce qui vous permet de 
 
 Vous pouvez également sélectionner le nom du groupe de ressources pour ouvrir la page groupe de ressources, puis sélectionner **supprimer le groupe de ressources**. En supprimant le groupe de ressources, vous supprimez le cluster HDInsight Spark et le compte de stockage par défaut.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce tutoriel, vous avez déployé votre application .NET pour Apache Spark sur Azure HDInsight. Pour plus d’informations sur HDInsight, consultez la documentation d’Azure HDInsight.
 

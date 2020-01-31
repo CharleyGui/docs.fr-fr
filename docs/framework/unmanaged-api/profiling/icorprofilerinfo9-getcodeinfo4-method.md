@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: ce29703a181106353695414e8b291b14c697fc56
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3e3e3afc221d153ff3573126ff10014d39af761a
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74444788"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868302"
 ---
 # <a name="icorprofilerinfo9getcodeinfo4-method"></a>ICorProfilerInfo9 :: GetCodeInfo4, méthode
 
@@ -31,34 +31,38 @@ HRESULT GetCodeInfo4( [in]  UINT_PTR pNativeCodeStartAddress,
                       [out] COR_PRF_CODE_INFO codeInfos[]);
 ```
 
-#### <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
-`pNativeCodeStartAddress` \
-dans Pointeur vers le début d’une fonction native.
+- `pNativeCodeStartAddress`
 
-`cCodeInfos` \
-[in] Taille du tableau `codeInfos`.
+  \[dans] pointeur vers le début d’une fonction native.
 
-`pcCodeInfos` \
-à Pointeur vers le nombre total de structures de [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) disponibles.
+- `cCodeInfos`
 
-`codeInfos` \
-[out] Mémoire tampon fournie par l'appelant. Suite au retour de la méthode, celle-ci contient un tableau de structures `COR_PRF_CODE_INFO` qui décrivent chacune un bloc de code natif.
+  \[dans] taille du tableau de `codeInfos`.
+
+- `pcCodeInfos`
+
+  \[out] pointeur vers le nombre total de structures [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) disponibles.
+
+- `codeInfos`
+
+  \[out] une mémoire tampon fournie par l’appelant. Suite au retour de la méthode, celle-ci contient un tableau de structures `COR_PRF_CODE_INFO` qui décrivent chacune un bloc de code natif.
 
 ## <a name="remarks"></a>Notes
 
-La méthode `GetCodeInfo4` est semblable à [getcodeinfo3,](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo4-getcodeinfo3-method.md), à ceci près qu’elle peut rechercher des informations de code pour différentes versions natives d’une méthode.
+La méthode `GetCodeInfo4` est semblable à [getcodeinfo3,](icorprofilerinfo4-getcodeinfo3-method.md), à ceci près qu’elle peut rechercher des informations de code pour différentes versions natives d’une méthode.
 
 > [!NOTE]
 > `GetCodeInfo4` pouvez déclencher une garbage collection.
 
 Les étendues sont triées par ordre croissant des offsets du langage CIL (Common Intermediate Language).
 
-Une fois que `GetCodeInfo4` a retourné, vous devez vérifier que la mémoire tampon de `codeInfos` est suffisamment grande pour contenir toutes les structures de [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) . Pour ce faire, comparez la valeur de `cCodeInfos` à celle du paramètre `cchName`. Si `cCodeInfos` divisée par la taille d’une structure [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) est plus petite que `pcCodeInfos`, allouez une plus grande mémoire tampon d' `codeInfos`, mettez à jour `cCodeInfos` avec la nouvelle taille plus grande, puis appelez à nouveau `GetCodeInfo4`.
+Une fois que `GetCodeInfo4` a retourné, vous devez vérifier que la mémoire tampon de `codeInfos` est suffisamment grande pour contenir toutes les structures de [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) . Pour ce faire, comparez la valeur de `cCodeInfos` à celle du paramètre `cchName`. Si `cCodeInfos` divisée par la taille d’une structure [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md) est plus petite que `pcCodeInfos`, allouez une plus grande mémoire tampon d' `codeInfos`, mettez à jour `cCodeInfos` avec la nouvelle taille plus grande, puis appelez à nouveau `GetCodeInfo4`.
 
-Vous pouvez également commencer par appeler `GetCodeInfo4` avec un tampon `codeInfos` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite définir la taille de la mémoire tampon `codeInfos` sur la valeur retournée dans `pcCodeInfos`, multipliée par la taille d’une structure [COR_PRF_CODE_INFO](../../../../docs/framework/unmanaged-api/profiling/cor-prf-code-info-structure.md) , et appeler de nouveau `GetCodeInfo4`.
+Vous pouvez également commencer par appeler `GetCodeInfo4` avec un tampon `codeInfos` de longueur nulle pour obtenir la taille correcte du tampon. Vous pouvez ensuite affecter à la `codeInfos` taille de la mémoire tampon la valeur retournée dans `pcCodeInfos`, multipliée par la taille d’une structure [COR_PRF_CODE_INFO](cor-prf-code-info-structure.md), puis rappeler `GetCodeInfo4`.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
 
@@ -70,4 +74,4 @@ Vous pouvez également commencer par appeler `GetCodeInfo4` avec un tampon `code
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Interface ICorProfilerInfo9](../../../../docs/framework/unmanaged-api/profiling/ICorProfilerInfo9-interface.md)
+- [Interface ICorProfilerInfo9](ICorProfilerInfo9-interface.md)
