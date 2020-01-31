@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 85e2108b-ff03-4a15-ac5c-1eb5d84f38ca
 topic_type:
 - apiref
-ms.openlocfilehash: 5a6c7d6075a114cc6e621108ce217dfdb0d75dc8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 542b33c82834ccd30c79c78bdcc759cf0c34d36c
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137067"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783334"
 ---
-# <a name="icordebugeditandcontinueerrorinfogetstring-method"></a><span data-ttu-id="92ae9-102">ICorDebugEditAndContinueErrorInfo::GetString, méthode</span><span class="sxs-lookup"><span data-stu-id="92ae9-102">ICorDebugEditAndContinueErrorInfo::GetString Method</span></span>
-<span data-ttu-id="92ae9-103">`GetString` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="92ae9-103">`GetString` is obsolete.</span></span> <span data-ttu-id="92ae9-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="92ae9-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfogetstring-method"></a><span data-ttu-id="b93e0-102">ICorDebugEditAndContinueErrorInfo::GetString, méthode</span><span class="sxs-lookup"><span data-stu-id="b93e0-102">ICorDebugEditAndContinueErrorInfo::GetString Method</span></span>
+<span data-ttu-id="b93e0-103">`GetString` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="b93e0-103">`GetString` is obsolete.</span></span> <span data-ttu-id="b93e0-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="b93e0-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="92ae9-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="92ae9-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b93e0-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b93e0-105">See also</span></span>
 
-- [<span data-ttu-id="92ae9-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="92ae9-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="b93e0-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="b93e0-106">Debugging Interfaces</span></span>](debugging-interfaces.md)

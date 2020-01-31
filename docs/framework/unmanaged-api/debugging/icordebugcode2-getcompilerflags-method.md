@@ -15,18 +15,18 @@ helpviewer_keywords:
 ms.assetid: 532e9dfd-d114-4c75-b952-1accce102643
 topic_type:
 - apiref
-ms.openlocfilehash: d948fda048e724ad11c59bf7d4776ee2ca6c8d58
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4ad1fb1bcb43dda9796b54cbf868f89c001995da
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125557"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777904"
 ---
-# <a name="icordebugcode2getcompilerflags-method"></a><span data-ttu-id="e6975-102">ICorDebugCode2::GetCompilerFlags, méthode</span><span class="sxs-lookup"><span data-stu-id="e6975-102">ICorDebugCode2::GetCompilerFlags Method</span></span>
+# <a name="icordebugcode2getcompilerflags-method"></a><span data-ttu-id="467ee-102">ICorDebugCode2::GetCompilerFlags, méthode</span><span class="sxs-lookup"><span data-stu-id="467ee-102">ICorDebugCode2::GetCompilerFlags Method</span></span>
 
-<span data-ttu-id="e6975-103">Obtient les indicateurs qui spécifient les conditions sous lesquelles cet objet de code a été compilé juste-à-temps (JIT) ou généré à l’aide du générateur d’images natives (Ngen. exe).</span><span class="sxs-lookup"><span data-stu-id="e6975-103">Gets the flags that specify the conditions under which this code object was either just-in-time (JIT) compiled or generated using the native image generator (Ngen.exe).</span></span>
+<span data-ttu-id="467ee-103">Obtient les indicateurs qui spécifient les conditions sous lesquelles cet objet de code a été compilé juste-à-temps (JIT) ou généré à l’aide du générateur d’images natives (Ngen. exe).</span><span class="sxs-lookup"><span data-stu-id="467ee-103">Gets the flags that specify the conditions under which this code object was either just-in-time (JIT) compiled or generated using the native image generator (Ngen.exe).</span></span>
 
-## <a name="syntax"></a><span data-ttu-id="e6975-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="e6975-104">Syntax</span></span>
+## <a name="syntax"></a><span data-ttu-id="467ee-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="467ee-104">Syntax</span></span>
 
 ```cpp
 HRESULT GetCompilerFlags (
@@ -34,17 +34,17 @@ HRESULT GetCompilerFlags (
 );
 ```
 
-## <a name="parameters"></a><span data-ttu-id="e6975-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="e6975-105">Parameters</span></span>
+## <a name="parameters"></a><span data-ttu-id="467ee-105">Parameters</span><span class="sxs-lookup"><span data-stu-id="467ee-105">Parameters</span></span>
 
 `pdwFlags`  
-<span data-ttu-id="e6975-106">à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) qui spécifie le comportement du compilateur JIT ou du générateur d’images natives.</span><span class="sxs-lookup"><span data-stu-id="e6975-106">[out] A pointer to a value of the [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) enumeration that specifies the behavior of the JIT compiler or the native image generator.</span></span>
+<span data-ttu-id="467ee-106">à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) qui spécifie le comportement du compilateur JIT ou du générateur d’images natives.</span><span class="sxs-lookup"><span data-stu-id="467ee-106">[out] A pointer to a value of the [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) enumeration that specifies the behavior of the JIT compiler or the native image generator.</span></span>
 
-## <a name="requirements"></a><span data-ttu-id="e6975-107">spécifications</span><span class="sxs-lookup"><span data-stu-id="e6975-107">Requirements</span></span>
+## <a name="requirements"></a><span data-ttu-id="467ee-107">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="467ee-107">Requirements</span></span>
 
-<span data-ttu-id="e6975-108">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="e6975-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
+<span data-ttu-id="467ee-108">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="467ee-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>
 
-<span data-ttu-id="e6975-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="e6975-109">**Header:** CorDebug.idl, CorDebug.h</span></span>
+<span data-ttu-id="467ee-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="467ee-109">**Header:** CorDebug.idl, CorDebug.h</span></span>
 
-<span data-ttu-id="e6975-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="e6975-110">**Library:** CorGuids.lib</span></span>
+<span data-ttu-id="467ee-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="467ee-110">**Library:** CorGuids.lib</span></span>
 
-<span data-ttu-id="e6975-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="e6975-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+<span data-ttu-id="467ee-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="467ee-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
