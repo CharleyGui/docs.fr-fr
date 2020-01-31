@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 996c71ae-0676-4616-a085-84ebf507649d
 topic_type:
 - apiref
-ms.openlocfilehash: d78e7e863ab953182ea7c1ff342593b4bdf3215d
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 79fcaaba44956d90f9d074ade132dfc0bafd7d9e
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445873"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866115"
 ---
 # <a name="icorprofilercallbackmovedreferences-method"></a>ICorProfilerCallback::MovedReferences, méthode
 Appelée pour signaler la nouvelle disposition d'objets dans le tas suite à un garbage collection de compactage.  
@@ -35,7 +35,7 @@ HRESULT MovedReferences(
     [in, size_is(cMovedObjectIDRanges)] ULONG    cObjectIDRangeLength[] );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cMovedObjectIDRanges`  
  [in] Nombre de blocs d’objets contigus qui ont été déplacés à la suite du garbage collection de compactage. Autrement dit, la valeur de `cMovedObjectIDRanges` est la taille totale des tableaux `oldObjectIDRangeStart`, `newObjectIDRangeStart` et `cObjectIDRangeLength`.  
   
@@ -55,7 +55,7 @@ HRESULT MovedReferences(
 ## <a name="remarks"></a>Notes  
   
 > [!IMPORTANT]
-> Cette méthode signale les tailles en tant que `MAX_ULONG` pour les objets qui sont supérieurs à 4 Go sur les plateformes 64 bits. Pour récupérer la taille des objets qui sont supérieurs à 4 Go, utilisez la méthode [ICorProfilerCallback4 :: MovedReferences2](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md) à la place.  
+> Cette méthode signale les tailles en tant que `MAX_ULONG` pour les objets qui sont supérieurs à 4 Go sur les plateformes 64 bits. Pour récupérer la taille des objets qui sont supérieurs à 4 Go, utilisez la méthode [ICorProfilerCallback4 :: MovedReferences2](icorprofilercallback4-movedreferences2-method.md) à la place.  
   
  Un garbage collection de compactage récupère la mémoire occupée par des objets morts et compacte cet espace libéré. Par conséquent, les objets actifs peuvent être déplacés dans le tas, et les valeurs `ObjectID` distribuées par des notifications précédentes peuvent changer.  
   
@@ -69,15 +69,15 @@ HRESULT MovedReferences(
   
  Pour toute valeur d'`i` se trouvant dans la plage suivante :  
   
- 0 < = `i` < `cMovedObjectIDRanges`  
+ 0 <= `i` < `cMovedObjectIDRanges`  
   
  Vous pouvez calculer le nouvel `ObjectID` comme suit :  
   
  `newObjectID` = `newObjectIDRangeStart[i]` + (`oldObjectID` – `oldObjectIDRangeStart[i]`)  
   
- Aucune des valeurs `ObjectID` passées par `MovedReferences` n'est valide pendant le rappel lui-même, car le garbage collector peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `MovedReferences`. Un rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-garbagecollectionfinished-method.md) indique que tous les objets ont été déplacés vers leurs nouveaux emplacements et que l’inspection peut être effectuée.  
+ Aucune des valeurs `ObjectID` passées par `MovedReferences` n'est valide pendant le rappel lui-même, car le garbage collector peut être occupé à déplacer des objets depuis des anciens emplacements vers des nouveaux. Les profileurs ne doivent donc pas essayer d'inspecter des objets pendant un appel de `MovedReferences`. Un rappel [ICorProfilerCallback2 :: GarbageCollectionFinished](icorprofilercallback2-garbagecollectionfinished-method.md) indique que tous les objets ont été déplacés vers leurs nouveaux emplacements et que l’inspection peut être effectuée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -88,7 +88,7 @@ HRESULT MovedReferences(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [MovedReferences2, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-movedreferences2-method.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [MovedReferences2, méthode](icorprofilercallback4-movedreferences2-method.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

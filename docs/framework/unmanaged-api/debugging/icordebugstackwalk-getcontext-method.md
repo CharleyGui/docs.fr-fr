@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 081d1c95-152b-4797-8552-18453eb7b14b
 topic_type:
 - apiref
-ms.openlocfilehash: 700e0af05828b9fe0a50c1aac114e840adc276b5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9953d0f3e1a4d4cd935918f0e5721e474453ca7d
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73131848"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791910"
 ---
 # <a name="icordebugstackwalkgetcontext-method"></a>ICorDebugStackWalk::GetContext, méthode
-Retourne le contexte du frame actuel dans l’objet [ICorDebugStackWalk](../../../../docs/framework/unmanaged-api/debugging/icordebugstackwalk-interface.md) .  
+Retourne le contexte du frame actuel dans l’objet [ICorDebugStackWalk](icordebugstackwalk-interface.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,7 +34,7 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
                    [out, size_is(contextBufSize)] BYTE contextBuf[]);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `contextFlags`  
  dans Indicateurs qui indiquent le contenu demandé de la mémoire tampon de contexte (définie dans Winnt. h).  
   
@@ -62,7 +62,7 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
 ## <a name="remarks"></a>Notes  
  Étant donné que le déroulement de la restauration restaure uniquement un sous-ensemble des registres, tels que les registres non volatils, le contexte peut ne pas correspondre exactement à l’état du Registre au moment de l’appel.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -73,5 +73,5 @@ HRESULT GetContext([in]  ULONG32 contextFlags,
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

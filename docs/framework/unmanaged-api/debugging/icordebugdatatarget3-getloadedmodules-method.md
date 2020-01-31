@@ -1,15 +1,15 @@
 ---
-title: ICorDebugDataTarget3::GetLoadedModules (méthode)
+title: Méthode ICorDebugDataTarget3::GetLoadedModules
 ms.date: 03/30/2017
 ms.assetid: 9a48c05b-1949-416e-933c-52549b6fcf5e
-ms.openlocfilehash: 6ee2215e2b3e3bd911158b3fc801361fc4e22db1
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d4c22146422085daa4dc9d90ae5b3735a12500c2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73136684"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76793552"
 ---
-# <a name="icordebugdatatarget3getloadedmodules-method"></a>ICorDebugDataTarget3::GetLoadedModules (méthode)
+# <a name="icordebugdatatarget3getloadedmodules-method"></a>Méthode ICorDebugDataTarget3::GetLoadedModules
 Obtient la liste des modules qui ont été chargés jusqu'à présent.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT GetLoadedModules(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cRequestedModules`  
  [in] Nombre de modules pour lesquels des informations sont demandées.  
   
@@ -30,14 +30,14 @@ HRESULT GetLoadedModules(
  [out] Pointeur vers le nombre de modules à propos desquels des informations ont été retournées.  
   
  `pLoadedModules`  
- à Pointeur vers un tableau d’objets [ICorDebugLoadedModule](../../../../docs/framework/unmanaged-api/debugging/icordebugloadedmodule-interface.md) qui fournissent des informations sur les modules chargés.  
+ à Pointeur vers un tableau d’objets [ICorDebugLoadedModule](icordebugloadedmodule-interface.md) qui fournissent des informations sur les modules chargés.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ HRESULT GetLoadedModules(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugDataTarget3, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugdatatarget3-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugDataTarget3, interface](icordebugdatatarget3-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

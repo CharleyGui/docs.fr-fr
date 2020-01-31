@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 7d5385d3-f4a5-47c4-8478-a3513b5e9406
 topic_type:
 - apiref
-ms.openlocfilehash: 1f46866a1b975455acd294221e38ef3b4c358660
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5fa042223e47961dad0a6799ab8ca999ef76e285
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140201"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791090"
 ---
 # <a name="icordebugvalue3-interface"></a>ICorDebugValue3, interface
 Étend les interfaces « ICorDebugValue » et « ICorDebugValue2 » pour assurer la prise en charge des tableaux d’une taille supérieure à 2 Go.  
@@ -28,12 +28,12 @@ ms.locfileid: "73140201"
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetSize64, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de cet objet `ICorDebugValue3`.|  
+|[GetSize64, méthode](icordebugvalue3-getsize64-method.md)|Obtient la taille, en octets, de cet objet `ICorDebugValue3`.|  
   
 ## <a name="remarks"></a>Notes  
- La méthode [ICorDebugValue ::](../../../../docs/framework/unmanaged-api/debugging/icordebugvalue3-getsize64-method.md) Desize retourne une taille d’objet comprise entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4,5, la taille des tableaux peut dépasser 2 Go. L’interface `ICorDebugValue3` vous permet de déterminer la taille de ces tableaux.  
+ La méthode [ICorDebugValue ::](icordebugvalue3-getsize64-method.md) Desize retourne une taille d’objet comprise entre 0 et 2 147 483 647 octets. Dans le .NET Framework 4,5, la taille des tableaux peut dépasser 2 Go. L’interface `ICorDebugValue3` vous permet de déterminer la taille de ces tableaux.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -44,5 +44,5 @@ ms.locfileid: "73140201"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)
