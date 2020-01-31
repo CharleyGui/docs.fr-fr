@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : créer une bordure autour d’un contrôle Windows Forms à l’aide de la marge intérieure'
+title: Créer une bordure autour d’un contrôle à l’aide de la marge intérieure
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -14,15 +14,15 @@ helpviewer_keywords:
 - margins [Windows Forms], Windows Forms
 - Margin property [Windows Forms]
 ms.assetid: bac7ed4d-a163-4259-98bd-155a36345890
-ms.openlocfilehash: e3bbf43dbe45e675df172a6c3e1db16a3ba9caa8
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 114186ab5784cf892cb01e9fe2648ce22cecc4b7
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61746835"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742186"
 ---
-# <a name="how-to-create-a-border-around-a-windows-forms-control-using-padding"></a>Procédure : créer une bordure autour d’un contrôle Windows Forms à l’aide de la marge intérieure
-L’exemple de code suivant montre comment créer une bordure ou un cadre autour un <xref:System.Windows.Forms.RichTextBox> contrôle. L’exemple définit la valeur d’un <xref:System.Windows.Forms.Panel> du contrôle <xref:System.Windows.Forms.Padding> propriété à 5 et affecte le <xref:System.Windows.Forms.Control.Dock%2A> propriété d’un enfant <xref:System.Windows.Forms.RichTextBox> le contrôle à <xref:System.Windows.Forms.DockStyle.Fill>. Le <xref:System.Windows.Forms.Control.BackColor%2A> de la <xref:System.Windows.Forms.Panel> contrôle est défini sur <xref:System.Drawing.Color.Blue%2A>, ce qui crée une bordure bleue autour de le <xref:System.Windows.Forms.RichTextBox> contrôle.  
+# <a name="how-to-create-a-border-around-a-windows-forms-control-using-padding"></a>Comment : créer une bordure autour d'un contrôle Windows Form à l'aide du remplissage
+L’exemple de code suivant montre comment créer une bordure ou un contour autour d’un contrôle <xref:System.Windows.Forms.RichTextBox>. L’exemple définit la valeur de la propriété <xref:System.Windows.Forms.Padding> d’un contrôle <xref:System.Windows.Forms.Panel> sur 5 et définit la propriété <xref:System.Windows.Forms.Control.Dock%2A> d’un contrôle <xref:System.Windows.Forms.RichTextBox> enfant sur <xref:System.Windows.Forms.DockStyle.Fill>. La <xref:System.Windows.Forms.Control.BackColor%2A> du contrôle <xref:System.Windows.Forms.Panel> a la valeur <xref:System.Drawing.Color.Blue%2A>, ce qui crée une bordure bleue autour du contrôle <xref:System.Windows.Forms.RichTextBox>.  
   
 ## <a name="example"></a>Exemple  
  [!code-csharp[System.Windows.Forms.Padding#1](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.Padding/CS/Form1.cs#1)]

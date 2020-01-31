@@ -1,21 +1,23 @@
 ---
 title: interface - Référence C#
-ms.date: 07/20/2015
+ms.date: 01/17/2020
 f1_keywords:
 - interface_CSharpKeyword
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: 19ca4b8a490dc85de0d0e2be6d3ca8fa7982fc14
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b315d1f04c9e74700afba8ee7871b23ab4b2fd28
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713440"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744693"
 ---
-# <a name="interface-c-reference"></a>interface (référence C#)
+# <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (C# référence)
 
-Une interface contient uniquement des signatures de [méthodes](../../programming-guide/classes-and-structs/methods.md), de [propriétés](../../programming-guide/classes-and-structs/properties.md), d’[événements](../../programming-guide/events/index.md) ou d’[indexeurs](../../programming-guide/indexers/index.md). Une classe ou un struct qui implémente l’interface doit implémenter les membres de l’interface qui sont spécifiés dans la définition de l’interface. Dans l’exemple suivant, la classe `ImplementationClass` doit implémenter une méthode nommée `SampleMethod` qui n’a aucun paramètre et qui retourne `void`.
+Une interface définit un contrat. Tout [`class`](class.md) ou [`struct`](struct.md) qui implémente ce contrat doit fournir une implémentation des membres définis dans l’interface. À partir C# de 8,0, une interface peut définir une implémentation par défaut pour les membres. Elle peut également définir des membres de [`static`](static.md) pour fournir une implémentation unique pour les fonctionnalités communes.
+
+Dans l’exemple suivant, la classe `ImplementationClass` doit implémenter une méthode nommée `SampleMethod` qui n’a aucun paramètre et qui retourne `void`.
 
 Pour plus d’informations et d’exemples, consultez [Interfaces](../../programming-guide/interfaces/index.md).
 
@@ -23,23 +25,39 @@ Pour plus d’informations et d’exemples, consultez [Interfaces](../../program
 
 [!code-csharp[csrefKeywordsTypes#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#14)]
 
-Une interface peut être membre d’un espace de noms ou d’une classe, et peut contenir les signatures des membres suivants :
+Une interface peut être membre d’un espace de noms ou d’une classe. Une déclaration d’interface peut contenir des déclarations (signatures sans implémentation) des membres suivants :
 
 - [Méthodes](../../programming-guide/classes-and-structs/methods.md)
-
 - [Propriétés](../../programming-guide/classes-and-structs/using-properties.md)
-
 - [Indexeurs](../../programming-guide/indexers/using-indexers.md)
-
 - [Événements](event.md)
 
-Une interface peut hériter d’une ou de plusieurs interfaces de base.
+Les déclarations de membre précédentes ne contiennent généralement pas de corps. À partir C# de 8,0, un membre d’interface peut déclarer un corps. C’est ce qu’on appelle une *implémentation par défaut*. Les membres avec des corps permettent à l’interface de fournir une implémentation « par défaut » pour les classes et les structs qui ne fournissent pas d’implémentation de substitution. En outre, à partir C# de 8,0, une interface peut inclure :
+
+- [Constantes](const.md)
+- [Opérateurs](../operators/operator-overloading.md)
+- [Constructeur statique](../../programming-guide/classes-and-structs/constructors.md#static-constructors).
+- [Types imbriqués](../../programming-guide/classes-and-structs/nested-types.md)
+- [Champs, méthodes, propriétés, indexeurs et événements statiques](static.md)
+- Déclarations de membre à l’aide de la syntaxe d’implémentation d’interface explicite.
+- Modificateurs d’accès explicites (l’accès par défaut est [`public`](access-modifiers.md)).
+
+Les interfaces ne peuvent pas contenir l’état de l’instance. Alors que les champs statiques sont désormais autorisés, les champs d’instance ne sont pas autorisés dans les interfaces. Les [propriétés auto des instances](../../programming-guide/classes-and-structs/auto-implemented-properties.md) ne sont pas prises en charge dans les interfaces, car elles déclarent implicitement un champ masqué. Cette règle a un effet subtil sur les déclarations de propriété. Dans une déclaration d’interface, le code suivant ne déclare pas une propriété implémentée automatiquement telle qu’elle le fait dans un `class` ou `struct`. Au lieu de cela, elle déclare une propriété qui n’a pas d’implémentation par défaut, mais qui doit être implémentée dans tout type qui implémente l’interface :
+
+```csharp
+public interface INamed
+{
+  public string Name {get; set;}
+}
+```
+
+Une interface peut hériter d’une ou de plusieurs interfaces de base. Quand une interface [se substitue à une méthode](override.md) implémentée dans une interface de base, elle doit utiliser la syntaxe d' [implémentation d’interface explicite](../../programming-guide/interfaces/explicit-interface-implementation.md) .
 
 Lorsqu’une liste de types de base contient une classe de base et des interfaces, la classe de base doit figurer en premier dans la liste.
 
-Une classe qui implémente une interface peut implémenter explicitement les membres de cette interface. Un membre implémenté explicitement n’est pas accessible via une instance de classe, mais uniquement via une instance de l’interface.
+Une classe qui implémente une interface peut implémenter explicitement les membres de cette interface. Un membre implémenté explicitement n’est pas accessible via une instance de classe, mais uniquement via une instance de l’interface. En outre, les membres d’interface par défaut sont accessibles uniquement par le biais d’une instance de l’interface.
 
-Pour plus d’informations et plus d’exemples sur l’implémentation explicite des interfaces, consultez [Implémentation d’interface explicite](../../programming-guide/interfaces/explicit-interface-implementation.md).
+Pour plus d’informations sur l’implémentation d’interface explicite, consultez [implémentation d’interface explicite](../../programming-guide/interfaces/explicit-interface-implementation.md).
 
 ## <a name="example"></a>Exemple
 
@@ -49,7 +67,7 @@ L’exemple suivant montre une implémentation d’interface. Dans cet exemple, 
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
-[!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]
+Pour plus d’informations, consultez la section [interfaces](~/_csharplang/spec/interfaces.md) de la [ C# spécification de langage](~/_csharplang/spec/introduction.md) et la spécification de fonctionnalité pour les membres d' [interface par défaut- C# 8,0](~/_csharplang/proposals/csharp-8.0/default-interface-methods.md)
 
 ## <a name="see-also"></a>Voir aussi
 

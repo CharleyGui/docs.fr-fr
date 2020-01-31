@@ -1,5 +1,5 @@
 ---
-title: "Procédure pas à pas : création d'un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio"
+title: Créer un contrôle qui tire parti des fonctionnalités au moment du design de Visual Studio
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,12 +13,12 @@ ms.assetid: 6f487c59-cb38-4afa-ad2e-95edacb1d626
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 64f637b232cf21701185e7b87d86f63fdece5127
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 7166b4203c54ab31f1d929c85cf1e6481ff120f8
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73459524"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744080"
 ---
 # <a name="walkthrough-create-a-control-that-takes-advantage-of-design-time-features"></a>Procédure pas à pas : création d’un contrôle qui tire parti des fonctionnalités au moment du design
 
@@ -36,7 +36,7 @@ Une fois que vous avez terminé cette procédure pas à pas, votre contrôle per
 
 Pour obtenir la liste complète du code, consultez [Comment : créer un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120)).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour effectuer cette procédure pas à pas, vous avez besoin de Visual Studio.
 
@@ -120,13 +120,13 @@ Vous associez le contrôle à son concepteur à l’aide de la classe <xref:Syst
 
 3. Modifiez la déclaration de `DemoMarqueeControl` pour qu’elle hérite de la classe `MarqueeControl`.
 
-4. Générez le projet.
+4. créer le projet ;
 
 5. Ouvrez Form1 dans le Concepteur Windows Forms.
 
 6. Recherchez l’onglet **Composants MarqueeControlTest** dans la **boîte à outils** et ouvrez-le. Faites glisser un `DemoMarqueeControl` de la **boîte à outils** vers votre formulaire.
 
-7. Générez le projet.
+7. créer le projet ;
 
 ## <a name="set-up-the-project-for-design-time-debugging"></a>Configurer le projet pour le débogage au moment du design
 
@@ -594,7 +594,7 @@ La propriété `MarqueeLightShape` prend en charge deux types de formes d’écl
 
 13. Définissez le projet `MarqueeControlTest` comme projet de démarrage, puis exécutez-le. Le formulaire affichant votre `DemoMarqueeControl`s’affiche. Sélectionnez le bouton **Démarrer** pour démarrer l’animation. Vous devez voir le texte clignotant et les lumières qui se déplacent dans la bordure.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Le `MarqueeControlLibrary` illustre une implémentation simple des contrôles personnalisés et des concepteurs associés. Vous pouvez rendre cet exemple plus sophistiqué de plusieurs façons :
 

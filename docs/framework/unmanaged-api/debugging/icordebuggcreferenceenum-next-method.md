@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 91b1345c-a94f-4ef8-9696-3823d06c6d05
 topic_type:
 - apiref
-ms.openlocfilehash: 43408486fec9cd50222eed08ec2d3397bc11bc18
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 3a8e967a3ecc452ebda08872d8bcd9e9d08c766f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134619"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777691"
 ---
 # <a name="icordebuggcreferenceenumnext-method"></a>ICorDebugGCReferenceEnum::Next, méthode
-Obtient le nombre spécifié d’instances [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui seront récupérés par le garbage collector.  
+Obtient le nombre spécifié d’instances de [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui contiennent des informations sur les objets qui feront l’objet d’un garbage collection.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,19 +34,19 @@ HRESULT Next(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  celt  
  dans Nombre de racines à récupérer.  
   
  digne  
- à Tableau de pointeurs, chacun pointant vers un objet [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) qui représente la racine d’un objet devant faire l’objet d’un garbage collection.  
+ à Tableau de pointeurs, chacun pointant vers un objet [COR_GC_REFERENCE](cor-gc-reference-structure.md) qui représente la racine d’un objet qui doit faire l’objet d’un garbage collection.  
   
  pceltFetched  
- à Pointeur vers le nombre d’objets [COR_GC_REFERENCE](../../../../docs/framework/unmanaged-api/debugging/cor-gc-reference-structure.md) réellement retournés dans `roots`. Cette valeur peut être `null` si `celt` est égal à 1.  
+ à Pointeur vers le nombre d’objets [COR_GC_REFERENCE](cor-gc-reference-structure.md) réellement retournés dans `roots`. Cette valeur peut être `null` si `celt` est égal à 1.  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -57,5 +57,5 @@ HRESULT Next(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugGCReferenceEnum, interface](../../../../docs/framework/unmanaged-api/debugging/icordebuggcreferenceenum-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugGCReferenceEnum, interface](icordebuggcreferenceenum-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

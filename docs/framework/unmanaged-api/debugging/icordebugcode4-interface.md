@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: a3fdf523-274a-449c-920b-9fcb0aed1d97
 topic_type:
 - apiref
-ms.openlocfilehash: 6c74a6c371ababb21bfda9b8dd2910d6a7881e6a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 373df8a47bdcbc833ffaea05bb205a63b5f583ec
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125539"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777772"
 ---
 # <a name="icordebugcode4-interface"></a>ICorDebugCode4, interface
 Fournit une méthode qui permet à un débogueur d’énumérer les variables et les arguments locaux dans une fonction.  
@@ -28,14 +28,14 @@ Fournit une méthode qui permet à un débogueur d’énumérer les variables et
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[EnumerateVariableHomes, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugcode4-enumeratevariablehomes-method.md)|Obtient un énumérateur pour les variables locales et les arguments dans une fonction.|  
+|[EnumerateVariableHomes, méthode](icordebugcode4-enumeratevariablehomes-method.md)|Obtient un énumérateur pour les variables locales et les arguments dans une fonction.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -46,5 +46,5 @@ Fournit une méthode qui permet à un débogueur d’énumérer les variables et
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugCode3, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode3-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugCode3, interface](icordebugcode3-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

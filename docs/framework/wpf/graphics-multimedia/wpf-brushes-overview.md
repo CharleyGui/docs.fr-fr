@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble des pinceaux WPF
+title: Vue d’ensemble des pinceaux
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -7,12 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - brushes [WPF], about brushes
 ms.assetid: ecea1955-420b-45c6-bf43-c1404c072c41
-ms.openlocfilehash: 8a1d05ad48ce75ce67d21d5a4d508015fea879b2
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 18ca9b79a6ee801638a54fcb227c44e9aea21fd0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73458628"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76746211"
 ---
 # <a name="wpf-brushes-overview"></a>Vue d'ensemble des pinceaux WPF
 Tout ce qui est visible sur votre écran est visible, car il a été peint par un pinceau. Par exemple, un pinceau est utilisé pour décrire l’arrière-plan d’un bouton, le premier plan du texte et le remplissage d’une forme. Cette rubrique présente les concepts de peinture avec [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] pinceaux et fournit des exemples. Les pinceaux permettent de peindre des objets de l’[!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] aussi bien avec de simples couleurs unies qu’avec des ensembles complexes de modèles et d’images.  
@@ -26,7 +26,7 @@ Exemples de pinceaux
   
  La plupart des objets visuels vous permettent de spécifier la façon dont ils sont peints. Le tableau suivant répertorie certains objets et propriétés courants avec lesquels vous pouvez utiliser un <xref:System.Windows.Media.Brush>.  
   
-|Class|Propriétés de pinceau|  
+|Classe|Propriétés de pinceau|  
 |-----------|----------------------|  
 |<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
 |<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
@@ -170,5 +170,5 @@ Rectangle peint à l’aide d’un VisualBrush
 - [Pinceaux, exemple](https://go.microsoft.com/fwlink/?LinkID=159973)
 - [ImageBrush, exemple](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [VisualBrush Sample](https://go.microsoft.com/fwlink/?LinkID=160049) (Exemple de VisualBrush)
-- [Rubriques de guide pratique](brushes-how-to-topics.md)
+- [Rubriques pratiques](brushes-how-to-topics.md)
 - [Autres recommandations relatives aux performances](../advanced/optimizing-performance-other-recommendations.md)

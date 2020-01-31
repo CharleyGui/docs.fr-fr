@@ -2,12 +2,12 @@
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
 ms.date: 10/02/2018
-ms.openlocfilehash: 1ade05cc6935ce6a1bc74e6d6e4cdd5ef9fc6873
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
-ms.translationtype: HT
+ms.openlocfilehash: c0bcd240b6bd190dd02266c7faaf9fd668eb23bb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734598"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777308"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
@@ -414,7 +414,7 @@ Toutefois, Ocelot prend également en charge le placement du microservice d’id
 
 **Figure 6-40.** Authentification dans Ocelot
 
-Comme le montre le diagramme précédent, lorsque le microservice d’identité se trouve sous la passerelle d’API (AG) : 1) AG demande un jeton d’authentification à l’identité microservice, 2) le microservice d’identité retourne le jeton aux demandes GA, 3-4) AG des microservices à l’aide du jeton d’authentification. Étant donné que l’application eShopOnContainers a divisé la passerelle d’API en plusieurs passerelles d’API BFF (Backend for Frontend) et de secteurs d’activité, une autre option aurait été de créer une passerelle d’API supplémentaire pour les problèmes transversaux. Ce choix serait juste dans une architecture basée sur des microservices plus complexes avec plusieurs microservices de problèmes transversaux. Étant donné qu’il n’y a qu’un seul problème transversal dans eShopOnContainers, il a été décidé de gérer simplement le service de sécurité en dehors du domaine de la passerelle API, pour des raisons de simplicité.
+Comme le montre le diagramme précédent, lorsque le microservice d’identité se trouve sous la passerelle d’API (AG) : 1) AG demande un jeton d’authentification à l’identité microservice, 2) le microservice d’identité retourne le jeton aux demandes GA, 3-4) AG des microservices à l’aide du jeton d’authentification. Étant donné que l’application eShopOnContainers a divisé la passerelle d’API en plusieurs BFF (backend pour frontend) et des passerelles d’API de secteurs d’activité, une autre option aurait été de créer une passerelle d’API supplémentaire pour les problèmes transversaux. Ce choix serait juste dans une architecture basée sur des microservices plus complexes avec plusieurs microservices de problèmes transversaux. Étant donné qu’il n’y a qu’un seul problème transversal dans eShopOnContainers, il a été décidé de gérer simplement le service de sécurité en dehors du domaine de la passerelle API, pour des raisons de simplicité.
 
 Dans tous les cas, si l’application est sécurisée au niveau des passerelles d’API, le module d’authentification de la passerelle d’API Ocelot est consulté dans un premier temps lorsque vous tentez d’utiliser un microservice sécurisé quelconque. Cela permet de rediriger la requête HTTP pour accéder au microservice d’identité ou d’authentification pour obtenir le jeton d’accès afin que vous puissiez visiter les services protégés avec le access_token.
 

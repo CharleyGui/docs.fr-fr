@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : hériter de Windows Forms'
+title: Héritage de formulaire
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,18 +9,18 @@ helpviewer_keywords:
 - inheritance [Windows Forms], forms
 - Windows Forms, inheritance
 ms.assetid: cb3e1c0f-3d2a-4cdc-b0d1-c92eae567ffb
-ms.openlocfilehash: 402386e16687162e25e16e5c30c787f7e721fbba
-ms.sourcegitcommit: 1e72e2990220b3635cebc39586828af9deb72d8c
+ms.openlocfilehash: cc3a4cc75fd13e8f193a6920ed5b4a9bc8fd5d74
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/26/2019
-ms.locfileid: "71306374"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743324"
 ---
-# <a name="how-to-inherit-windows-forms"></a>Procédure : hériter de Windows Forms
+# <a name="how-to-inherit-windows-forms"></a>Comment : hériter des Windows Forms
 
 Créer des Windows Forms en héritant de formulaires de base est un moyen pratique de dupliquer vos efforts sans avoir à recréer entièrement un formulaire chaque fois que vous en avez besoin.
 
-Pour plus d’informations sur l’héritage de formulaires au moment du design à l’aide de la boîte de dialogue **Sélecteur d’héritage** et sur la façon de faire [la distinction visuelle entre les niveaux de sécurité des contrôles hérités, consultez Procédure : Héritez des formulaires à l’aide de](how-to-inherit-forms-using-the-inheritance-picker-dialog-box.md)la boîte de dialogue Sélecteur d’héritage.
+Pour plus d’informations sur l’héritage des formulaires au moment du design à l’aide de la boîte de dialogue **Sélecteur d’héritage** et sur la façon d’effectuer une distinction visuelle entre les niveaux de sécurité des contrôles hérités, consultez [Comment : hériter de formulaires à l’aide de la boîte de dialogue Sélecteur d’héritage](how-to-inherit-forms-using-the-inheritance-picker-dialog-box.md).
 
 > [!NOTE]
 > Pour hériter d’un formulaire, le fichier ou l’espace de noms contenant ce formulaire doit avoir été intégré à un fichier exécutable ou une DLL. Pour générer le projet, choisissez **Générer** dans le menu **Générer**. De plus, une référence à l'espace de noms doit être ajoutée à la classe héritant du formulaire.

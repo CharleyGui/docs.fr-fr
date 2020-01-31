@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9e983d11-eaf3-4741-b936-29ec456384a3
 topic_type:
 - apiref
-ms.openlocfilehash: c03be2405e1ab0287a2921b6e2e293862c67a193
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9b96c0a2eca543b9e01ccf92b271b1aa7003c5c9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137374"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781949"
 ---
 # <a name="icordebugmanagedcallbackdebuggererror-method"></a>ICorDebugManagedCallback::DebuggerError, méthode
 Notifie le débogueur qu’une erreur s’est produite lors de la tentative de gestion d’un événement à partir du common language runtime (CLR).  
@@ -35,7 +35,7 @@ HRESULT DebuggerError (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pProcess`  
  dans Pointeur vers un objet « ICorDebugProcess » qui représente le processus dans lequel l’événement s’est produit.  
   
@@ -48,9 +48,9 @@ HRESULT DebuggerError (
 ## <a name="remarks"></a>Notes  
  Le processus peut être placé en mode de transfert, en fonction de la nature de l’erreur.  
   
- Le rappel de `DebugError` indique que les services de débogage ont été désactivés en raison d’une erreur. les débogueurs doivent donc mettre le message d’erreur à la disposition de l’utilisateur. [ICorDebugProcess :: GetId](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess-getid-method.md) peut être appelée sans risque, mais toutes les autres méthodes, y compris [ICorDebug :: Terminate](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md), ne doivent pas être appelées. Le débogueur doit utiliser des fonctionnalités de système d’exploitation pour terminer les processus.  
+ Le rappel de `DebugError` indique que les services de débogage ont été désactivés en raison d’une erreur. les débogueurs doivent donc mettre le message d’erreur à la disposition de l’utilisateur. [ICorDebugProcess :: GetId](icordebugprocess-getid-method.md) peut être appelée sans risque, mais toutes les autres méthodes, y compris [ICorDebug :: Terminate](icordebug-terminate-method.md), ne doivent pas être appelées. Le débogueur doit utiliser des fonctionnalités de système d’exploitation pour terminer les processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -61,4 +61,4 @@ HRESULT DebuggerError (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

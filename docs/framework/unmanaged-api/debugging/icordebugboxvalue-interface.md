@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 3d3ae7e2-97d4-46de-a2c3-cb78f3490f9d
 topic_type:
 - apiref
-ms.openlocfilehash: a40e12655106cca01add065c2f95384b0eb1a286
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1ec54f4fe36aaf38d7c0ce0586733729bd2fddea
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122813"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784464"
 ---
 # <a name="icordebugboxvalue-interface"></a>ICorDebugBoxValue, interface
 
@@ -29,14 +29,14 @@ Sous-classe de « ICorDebugHeapValue » qui représente un objet de classe de 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetObject, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugboxvalue-getobject-method.md)|Obtient un pointeur d’interface vers l’instance « ICorDebugObjectValue » boxed.|  
+|[GetObject, méthode](icordebugboxvalue-getobject-method.md)|Obtient un pointeur d’interface vers l’instance « ICorDebugObjectValue » boxed.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -47,4 +47,4 @@ Sous-classe de « ICorDebugHeapValue » qui représente un objet de classe de 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

@@ -1,15 +1,15 @@
 ---
-title: 'Icordebugexceptiondebugevent, :: Getstackpointer,, méthode'
+title: ICorDebugExceptionDebugEvent::GetStackPointer, méthode
 ms.date: 03/30/2017
 ms.assetid: d8f66a1c-16be-4264-afc5-bc2dfbb4a682
-ms.openlocfilehash: 688f5aec457298a43d95a35fdbc6e04e29a306a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 657649b97262a12639117defe7a9c546f08cfef5
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084675"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782851"
 ---
-# <a name="icordebugexceptiondebugeventgetstackpointer-method"></a>Icordebugexceptiondebugevent, :: Getstackpointer,, méthode
+# <a name="icordebugexceptiondebugeventgetstackpointer-method"></a>ICorDebugExceptionDebugEvent::GetStackPointer, méthode
 Obtient le pointeur de pile de cet événement de débogage d'exception.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -20,7 +20,7 @@ HRESULT GetStackPointer(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pStackPointer`  
  [out] Pointeur vers l'adresse du pointeur de pile de cet événement de débogage d'exception. Pour plus d'informations, consultez la section Notes.  
   
@@ -29,17 +29,17 @@ HRESULT GetStackPointer(
   
 |Type d'événement|Signification de la valeur `pStackPointer`|  
 |----------------|--------------------------------------|  
-|[MANAGED_EXCEPTION_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Pointeur de pile du frame ayant levé l'exception.|  
-|[MANAGED_EXCEPTION_USER_FIRST_CHANCE](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Pointeur de pile du frame de code utilisateur le plus proche du point de l'exception levée.|  
-|[MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|Pointeur de pile du frame contenant le gestionnaire catch.|  
-|[MANAGED_EXCEPTION_UNHANDLED](../../../../docs/framework/unmanaged-api/debugging/cordebugrecordformat-enumeration.md)|`pStackPointer` a la valeur **null**.|  
+|[MANAGED_EXCEPTION_FIRST_CHANCE](cordebugrecordformat-enumeration.md)|Pointeur de pile du frame ayant levé l'exception.|  
+|[MANAGED_EXCEPTION_USER_FIRST_CHANCE](cordebugrecordformat-enumeration.md)|Pointeur de pile du frame de code utilisateur le plus proche du point de l'exception levée.|  
+|[MANAGED_EXCEPTION_CATCH_HANDLER_FOUND](cordebugrecordformat-enumeration.md)|Pointeur de pile du frame contenant le gestionnaire catch.|  
+|[MANAGED_EXCEPTION_UNHANDLED](cordebugrecordformat-enumeration.md)|`pStackPointer` a la valeur **null**.|  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
- Le type d’événement est disponible à partir de la méthode [ICorDebugDebugEvent :: GetEventKind](../../../../docs/framework/unmanaged-api/debugging/icordebugdebugevent-geteventkind-method.md) .  
+ Le type d’événement est disponible à partir de la méthode [ICorDebugDebugEvent :: GetEventKind](icordebugdebugevent-geteventkind-method.md) .  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -50,5 +50,5 @@ HRESULT GetStackPointer(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugExceptionDebugEvent, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugexceptiondebugevent-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugExceptionDebugEvent, interface](icordebugexceptiondebugevent-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

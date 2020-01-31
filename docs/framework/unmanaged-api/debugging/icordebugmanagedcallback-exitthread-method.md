@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 62db708b-6cf0-45c5-b897-4b5c75bd2505
 topic_type:
 - apiref
-ms.openlocfilehash: bbe2727e4b93cf6d7b3111b6060d170e497024a4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fa649fd1983a76c71d400ad3e6965ac0794da6ed
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130769"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76781610"
 ---
 # <a name="icordebugmanagedcallbackexitthread-method"></a>ICorDebugManagedCallback::ExitThread, méthode
 Notifie le débogueur qu’un thread qui exécutait du code managé s’est arrêté.  
@@ -34,7 +34,7 @@ HRESULT ExitThread (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread managé.  
   
@@ -44,7 +44,7 @@ HRESULT ExitThread (
 ## <a name="remarks"></a>Notes  
  Une fois le rappel de `ExitThread` déclenché, le thread n’apparaît plus dans les énumérations de thread.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,4 +55,4 @@ HRESULT ExitThread (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

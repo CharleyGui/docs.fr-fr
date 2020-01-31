@@ -6,12 +6,12 @@ helpviewer_keywords:
 - UI Automation, Status Bar control type
 - control types, Status Bar
 ms.assetid: 48dee94a-5119-4939-a4c7-ffeaf794c732
-ms.openlocfilehash: dde84c7550621eed350986b55739106a3ce9e7f4
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 4b2eddfd53b0125737f2fcf45cf1f30ae1ce38b9
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741509"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785903"
 ---
 # <a name="ui-automation-support-for-the-statusbar-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle StatusBar
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741509"
   
  Un contrôle de barre d’état affiche des informations sur un objet affiché dans une fenêtre d’une application, le composant de l’objet ou des informations contextuelles relatives au fonctionnement de cet objet dans votre application.  
   
- Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle SatusBar. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de barre d’État, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Les sections suivantes définissent l’arborescence, les propriétés, les modèles de contrôle et les événements [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] nécessaires au type de contrôle SatusBar. Les exigences de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] s’appliquent à tous les contrôles de barre d’État, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -58,7 +58,7 @@ ms.locfileid: "75741509"
   
 |Modèle de contrôle|Prise en charge de|Remarques|  
 |---------------------|-------------|-----------|  
-|<xref:System.Windows.Automation.Provider.IGridProvider>|Optional|Les contrôles de barre d’état doivent prendre en charge le modèle de contrôle Grid pour que les éléments individuels puissent être surveillés et facilement référencés à titre d’information.|  
+|<xref:System.Windows.Automation.Provider.IGridProvider>|Facultative|Les contrôles de barre d’état doivent prendre en charge le modèle de contrôle Grid pour que les éléments individuels puissent être surveillés et facilement référencés à titre d’information.|  
   
 <a name="Required_UI_Automation_Events"></a>   
 ## <a name="required-ui-automation-events"></a>Événements UI Automation obligatoires  

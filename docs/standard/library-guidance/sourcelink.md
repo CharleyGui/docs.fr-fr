@@ -2,12 +2,12 @@
 title: Bibliothèques Source Link et .NET
 description: Bonnes pratiques relatives à l’utilisation de Source Link pour améliorer le débogage des bibliothèques .NET
 ms.date: 01/15/2019
-ms.openlocfilehash: 0ebc7601f1ad92b0fc6ab4c7599b010cb42feb5d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3d768ae6e79efa23a8402ea37bc34cd58cd52c8c
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706437"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744541"
 ---
 # <a name="source-link"></a>Source Link
 
@@ -25,7 +25,7 @@ Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExp
 
 ![Lien source dans l’Explorateur de package NuGet](./media/sourcelink/nuget-package-explorer-sourcelink.png "Lien source dans l’Explorateur de package NuGet")
 
-**✔️ À ENVISAGER** : Utiliser Source Link pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
+✔️ envisagez d’utiliser le lien source pour ajouter des métadonnées de contrôle de code source à vos assemblys et packages NuGet.
 
 > [!TIP]
 > Vous pouvez améliorer davantage l’expérience de débogage d’un développeur en ajoutant des attributs de débogueur à vos types.
@@ -34,7 +34,7 @@ Vous pouvez utiliser [NuGet Package Explorer](https://github.com/NuGetPackageExp
 > * <xref:System.Diagnostics.DebuggerStepThroughAttribute> demande au débogueur de parcourir le code au lieu d’y effectuer un pas à pas détaillé.
 > * <xref:System.Diagnostics.DebuggerBrowsableAttribute> contrôle si un membre est affiché dans les fenêtres de variables du débogueur.
 
-**✔️ À ENVISAGER** : publication des fichiers de symboles (`*.pdb`).
+✔️ envisagez de publier des fichiers de symboles (`*.pdb`).
 
 > Pour une meilleure expérience de débogage, votre bibliothèque doit publier les fichiers de symboles et utiliser Source Link. Pour plus d’informations sur les fichiers de symboles et les packages de symboles, consultez [Packages de symboles](./nuget.md#symbol-packages).
 

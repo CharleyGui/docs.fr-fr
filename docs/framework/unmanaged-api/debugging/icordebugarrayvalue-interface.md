@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: dc437751-7093-44e2-bfdc-191d9ce3c192
 topic_type:
 - apiref
-ms.openlocfilehash: e41bb5ca0fdd999692395239304f50a6f745a4f3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0944f3379c18cba56ab65fe40a5b94a64d8a8991
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73088265"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778200"
 ---
 # <a name="icordebugarrayvalue-interface"></a>ICorDebugArrayValue, interface
 
@@ -29,14 +29,14 @@ Sous-classe de ICorDebugHeapValue qui représente un tableau unidimensionnel ou 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[GetBaseIndicies, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getbaseindicies-method.md)|Obtient l’index de base de chaque dimension du tableau.|  
-|[GetCount, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getcount-method.md)|Obtient le nombre total d’éléments dans le tableau.|  
-|[GetDimensions, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getdimensions-method.md)|Obtient les dimensions du tableau.|  
-|[GetElement, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelement-method.md)|Obtient une valeur représentant l’élément donné dans le tableau.|  
-|[GetElementAtPosition, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelementatposition-method.md)|Obtient l’élément à la position donnée, en traitant le tableau comme un tableau unidimensionnel de base zéro.|  
-|[GetElementType, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getelementtype-method.md)|Obtient le type simple des éléments dans le tableau.|  
-|[GetRank, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-getrank-method.md)|Obtient le nombre de dimensions dans le tableau.|  
-|[HasBaseIndicies, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugarrayvalue-hasbaseindicies-method.md)|Détermine si le tableau a des index de base.|  
+|[GetBaseIndicies, méthode](icordebugarrayvalue-getbaseindicies-method.md)|Obtient l’index de base de chaque dimension du tableau.|  
+|[GetCount, méthode](icordebugarrayvalue-getcount-method.md)|Obtient le nombre total d’éléments dans le tableau.|  
+|[GetDimensions, méthode](icordebugarrayvalue-getdimensions-method.md)|Obtient les dimensions du tableau.|  
+|[GetElement, méthode](icordebugarrayvalue-getelement-method.md)|Obtient une valeur représentant l’élément donné dans le tableau.|  
+|[GetElementAtPosition, méthode](icordebugarrayvalue-getelementatposition-method.md)|Obtient l’élément à la position donnée, en traitant le tableau comme un tableau unidimensionnel de base zéro.|  
+|[GetElementType, méthode](icordebugarrayvalue-getelementtype-method.md)|Obtient le type simple des éléments dans le tableau.|  
+|[GetRank, méthode](icordebugarrayvalue-getrank-method.md)|Obtient le nombre de dimensions dans le tableau.|  
+|[HasBaseIndicies, méthode](icordebugarrayvalue-hasbaseindicies-method.md)|Détermine si le tableau a des index de base.|  
   
 ## <a name="remarks"></a>Notes  
  `ICorDebugArrayValue` prend en charge les tableaux unidimensionnels et multidimensionnels.  
@@ -44,7 +44,7 @@ Sous-classe de ICorDebugHeapValue qui représente un tableau unidimensionnel ou 
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,4 +55,4 @@ Sous-classe de ICorDebugHeapValue qui représente un tableau unidimensionnel ou 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

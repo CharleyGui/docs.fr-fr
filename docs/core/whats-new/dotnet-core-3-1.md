@@ -6,26 +6,26 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: eba3d21cfc787c5d388de31f988b835522118151
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 0905cbebb2d966570be4ac3aefb40f4377b97061
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75936923"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742580"
 ---
 # <a name="whats-new-in-net-core-31"></a>Nouveautés de .NET Core 3.1
 
 Cet article décrit les nouveautés de .NET Core 3,1. Cette version contient des améliorations mineures apportées à .NET Core 3,0, en se concentrant sur les correctifs les plus petits, mais importants. La fonctionnalité la plus importante de .NET Core 3,1 est qu’il s’agit d’une version de [prise en charge à long terme (LTS)](#long-term-support) .
 
-Si vous utilisez Visual Studio 2019, vous devez effectuer la mise à jour vers [Visual studio 2019 version 16,4](https://visualstudio.microsoft.com/downloads/) pour travailler avec les projets .net Core 3,1. Pour plus d’informations sur les nouveautés de Visual Studio, consultez le [blog Visual Studio](https://devblogs.microsoft.com/visualstudio/tis-the-season-visual-studio-2019/).
+Si vous utilisez Visual Studio 2019, vous devez effectuer la mise à jour vers [Visual studio 2019 version 16,4](https://visualstudio.microsoft.com/downloads/) pour travailler avec les projets .net Core 3,1. Pour plus d’informations sur les nouveautés de Visual Studio, consultez [Nouveautés de Visual studio 2019 version 16,4](/visualstudio/releases/2019/release-notes#whats-new-in-visual-studio-2019-version-164).
 
-Visual Studio pour Mac prend également en charge et comprend .NET Core 3,1, dans le canal Visual Studio pour Mac 8,4 preview. Vous devez choisir le canal de la version préliminaire pour utiliser .NET Core 3,1.
+Visual Studio pour Mac prend également en charge et comprend .NET Core 3,1 dans Visual Studio pour Mac 8,4.
 
 Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,1](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-1/).
 
 - [Téléchargez et commencez à utiliser .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1) sur Windows, MacOS ou Linux.
 
-## <a name="long-term-support"></a>Prise en charge à long terme
+## <a name="long-term-support"></a>Support à long terme
 
 .NET Core 3,1 est une version LTS avec prise en charge de Microsoft au cours des trois prochaines années. Il est fortement recommandé de déplacer vos applications vers .NET Core 3,1. Le cycle de vie actuel des autres versions majeures est le suivant :
 
@@ -64,7 +64,7 @@ Nous vous recommandons de mettre à jour vos applications vers .NET Core 3,1 et 
 
 Une prise en charge a été C++ajoutée pour la création de projets/CLI C++(également appelés projets « gérés »). Les fichiers binaires générés à partir de ces projets sont compatibles avec .NET Core 3,0 et versions ultérieures.
 
-Pour ajouter la prise C++en charge de/CLI dans Visual Studio 2019 16,4, installez le [développement bureautique avec C++ la charge de travail](https://docs.microsoft.com/cpp/build/vscpp-step-0-installation?view=vs-2019#step-4---choose-workloads). Cette charge de travail ajoute deux modèles à Visual Studio :
+Pour ajouter la prise C++en charge de/CLI dans Visual Studio 2019 version 16,4, installez le [développement bureautique avec C++ la charge de travail](/cpp/build/vscpp-step-0-installation?view=vs-2019#step-4---choose-workloads). Cette charge de travail ajoute deux modèles à Visual Studio :
 
 - Bibliothèque de classes CLR (.NET Core)
 - Projet CLR vide (.NET Core)
@@ -72,4 +72,4 @@ Pour ajouter la prise C++en charge de/CLI dans Visual Studio 2019 16,4, installe
 ## <a name="next-steps"></a>Étapes suivantes :
 
 - [Passez en revue les modifications avec rupture entre .NET Core 3,0 et 3,1.](../compatibility/3.0-3.1.md)
-- [Passez en revue les modifications avec rupture entre dans .NET Core 3,1 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-31)
+- [Passez en revue les dernières modifications apportées à .NET Core 3,1 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-31)

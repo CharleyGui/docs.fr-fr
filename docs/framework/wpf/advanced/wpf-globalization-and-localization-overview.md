@@ -1,16 +1,16 @@
 ---
-title: Vue d’ensemble de la globalisation et de la localisation WPF
+title: Présentation de la globalisation et de la localisation
 ms.date: 03/30/2017
 helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: c2b78b990969fb5bc9814ebda8ffcf38efa458b1
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 9be6245d7429466490d9dac93c5b94d70bde30bd
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559922"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744479"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 

@@ -1,5 +1,5 @@
 ---
-title: Collecter l’encre dans les applications WPF
+title: Collecter l’encre numérique
 ms.date: 08/15/2018
 dev_langs:
 - csharp
@@ -13,18 +13,18 @@ helpviewer_keywords:
 - properties [WPF], DefaultDrawingAttributes
 - DefaultDrawingAttributes property [WPF]
 ms.assetid: 66a3129d-9577-43eb-acbd-56c147282016
-ms.openlocfilehash: 8109e0d6a746d6ca23c25643c510014c1a1e656c
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 813a5313a6fbf83c36cdbed1f64ce69a217ad788
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73740874"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76747026"
 ---
 # <a name="collect-ink"></a>Collecter l’encre
 
 La collecte d’encre numérique fait partie des principales fonctionnalités de la plateforme [Windows Presentation Foundation](../index.md). Cette rubrique décrit les méthodes de collecte d’encre dans Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour utiliser les exemples suivants, vous devez d’abord installer Visual Studio et le SDK Windows. Vous devez également comprendre comment écrire des applications pour WPF. Pour plus d’informations sur la prise en main de WPF, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 

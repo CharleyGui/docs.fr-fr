@@ -1,5 +1,5 @@
 ---
-title: 'Procédure pas à pas : disposition des contrôles Windows Forms avec les propriétés Padding, Margins et AutoSize'
+title: Disposer les contrôles avec le remplissage, les marges et la propriété AutoSize
 ms.date: 03/30/2017
 f1_keywords:
 - Margin.Bottom
@@ -18,12 +18,12 @@ ms.assetid: f8ae2a6b-db13-4630-8e25-d104091205c7
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 76c880c208355b01d0fbaf46cf58091ad147846b
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: ca7942c04434592f2541252c47ac3dd17e03dbac
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460602"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742373"
 ---
 # <a name="walkthrough-lay-out-controls-with-padding-margins-and-the-autosize-property"></a>Procédure pas à pas : disposition des contrôles avec le remplissage, les marges et la propriété AutoSize
 
@@ -39,7 +39,7 @@ L'illustration suivante montre les propriétés <xref:System.Windows.Forms.Contr
 
 La propriété <xref:System.Windows.Forms.Control.AutoSize%2A> indique à un contrôle de se redimensionner automatiquement à son contenu. Il ne se redimensionne pas pour être plus petit que la valeur de sa propriété <xref:System.Windows.Forms.Control.Size%2A> d’origine, et il prend en compte la valeur de sa propriété <xref:System.Windows.Forms.Control.Padding%2A>.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Pour effectuer cette procédure pas à pas, vous avez besoin de Visual Studio.
 
@@ -115,7 +115,7 @@ Lorsque la propriété <xref:System.Windows.Forms.Control.AutoSize%2A> est défi
 
 4. Faites glisser un autre contrôle <xref:System.Windows.Forms.Button> de la **boîte à outils** vers votre formulaire.
 
-5. Affectez à la propriété <xref:System.Windows.Forms.Control.Text%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur "**ce bouton a une longue chaîne pour sa propriété Text.** "
+5. Modifier le <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Text%2A> propriété à « **ce bouton a une longue chaîne pour sa propriété Text.** »
 
    Lorsque vous validez la modification, le contrôle <xref:System.Windows.Forms.Button> ne se redimensionne pas et le texte est coupé par le bord droit du contrôle.
 
@@ -133,7 +133,7 @@ Lorsque la propriété <xref:System.Windows.Forms.Control.AutoSize%2A> est défi
 
 10. Affectez à la propriété <xref:System.Windows.Forms.Control.Anchor%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur <xref:System.Windows.Forms.AnchorStyles.Right>, <xref:System.Windows.Forms.AnchorStyles.Bottom>.
 
-11. Affectez à la propriété <xref:System.Windows.Forms.Control.Text%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur "**ce bouton a une longue chaîne pour sa propriété Text.** "
+11. Modifier le <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Text%2A> propriété à « **ce bouton a une longue chaîne pour sa propriété Text.** »
 
    Lorsque vous validez la modification, le contrôle <xref:System.Windows.Forms.Button> se redimensionne vers la gauche. En général, le dimensionnement automatique augmente la taille d’un contrôle dans la direction opposée à son paramètre de propriété <xref:System.Windows.Forms.Control.Anchor%2A>.
 
@@ -164,7 +164,7 @@ Lorsque la propriété <xref:System.Windows.Forms.Control.AutoSize%2A> est défi
 
    Le contrôle <xref:System.Windows.Forms.Panel> est redimensionné en fonction de la nouvelle position du contrôle <xref:System.Windows.Forms.Button>.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Il existe de nombreuses autres fonctionnalités de disposition pour organiser les contrôles dans vos applications Windows Forms. Voici quelques combinaisons que vous pouvez essayer :
 

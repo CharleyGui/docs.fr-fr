@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : accéder à des objets liés à des lignes DataGridView Windows Forms'
+title: accéder à des objets liés à des lignes DataGridView
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -9,14 +9,14 @@ helpviewer_keywords:
 - data grids [Windows Forms], accessing bound objects
 - DataGridView control [Windows Forms], accessing objects bound to rows
 ms.assetid: 0e05748f-4403-4eb8-8b2f-b098108181b5
-ms.openlocfilehash: 244047f27b0eb109aba599bd26881046eb538163
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: 0b9a4becb78ae817141728467c1e9ea5b693476d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65582625"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743166"
 ---
-# <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a>Procédure : accéder à des objets liés à des lignes DataGridView Windows Forms
+# <a name="how-to-access-objects-bound-to-windows-forms-datagridview-rows"></a>Comment : accéder à des objets liés à des lignes DataGridView Windows Forms
 Il est parfois utile d’afficher une table d’informations stockée dans une collection d’objets métier. Quand vous liez un contrôle <xref:System.Windows.Forms.DataGridView> à une telle collection, chaque propriété publique est affichée dans sa propre colonne, à moins que la propriété n'ait été marquée comme non consultable avec un <xref:System.ComponentModel.BrowsableAttribute>. Par exemple, une collection d’objets `Customer` aurait des colonnes telles que **Nom** et **Adresse**.  
   
  Si ces objets contiennent des informations supplémentaires et du code auquel vous souhaitez accéder, vous pouvez l'atteindre via des objets de ligne. Dans l'exemple de code suivant, les utilisateurs peuvent sélectionner plusieurs lignes et cliquer sur un bouton pour envoyer une facture à chacun des clients correspondants.  
@@ -45,4 +45,4 @@ Il est parfois utile d’afficher une table d’informations stockée dans une c
 - <xref:System.Windows.Forms.DataGridViewRow>
 - <xref:System.Windows.Forms.DataGridViewRow.DataBoundItem%2A?displayProperty=nameWithType>
 - [Affichage des données dans le contrôle DataGridView Windows Forms](displaying-data-in-the-windows-forms-datagridview-control.md)
-- [Guide pratique pour Lier des objets aux contrôles DataGridView de Windows Forms](how-to-bind-objects-to-windows-forms-datagridview-controls.md)
+- [Comment : lier des objets aux contrôles DataGridView Windows Forms](how-to-bind-objects-to-windows-forms-datagridview-controls.md)

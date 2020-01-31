@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: a8ecd8c8-9627-4356-9c6f-bd05e24637c0
 topic_type:
 - apiref
-ms.openlocfilehash: 011da6aacbf4c40420329952f47b1fabdfc2c1a3
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 98709c0ce7469db1d0365d71e10d2d021cd3b3f0
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125630"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777887"
 ---
 # <a name="icordebugcodegetiltonativemapping-method"></a>ICorDebugCode::GetILToNativeMapping, méthode
-Obtient un tableau d’instances « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent des mappages de décalages MSIL (Microsoft Intermediate Language) aux offsets natifs.  
+Obtient un tableau d’instances de « COR_DEBUG_IL_TO_NATIVE_MAP » qui représentent des mappages de décalages MSIL (Microsoft Intermediate Language) aux offsets natifs.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -36,7 +36,7 @@ HRESULT GetILToNativeMapping (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cMap`  
  [in] Taille du tableau `map`.  
   
@@ -51,7 +51,7 @@ HRESULT GetILToNativeMapping (
 ## <a name="remarks"></a>Notes  
  La méthode `GetILToNativeMapping` retourne des résultats significatifs uniquement si cette instance « ICorDebugCode » représente du code natif qui était compilé juste-à-temps (JIT) à partir du code MSIL.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -62,4 +62,4 @@ HRESULT GetILToNativeMapping (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugCode, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugcode-interface1.md)
+- [ICorDebugCode, interface](icordebugcode-interface1.md)

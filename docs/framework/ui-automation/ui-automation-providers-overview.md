@@ -5,12 +5,12 @@ helpviewer_keywords:
 - UI Automation, providers
 - providers, UI Automation
 ms.assetid: 859557b8-51e1-4d15-92e8-318d2dcdb2f7
-ms.openlocfilehash: f41fc102dfbe24d47e194da7477791a46f8d712d
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 98208f1e1fa1b540bf3880e33478854128505233
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741740"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778788"
 ---
 # <a name="ui-automation-providers-overview"></a>Vue d'ensemble des fournisseurs UI Automation
 > [!NOTE]
@@ -18,9 +18,9 @@ ms.locfileid: "75741740"
   
  Les fournisseurs UI Automation permettent aux contrôles de communiquer avec les applications clientes UI Automation. En général, chaque contrôle ou autre élément distinct d’une [!INCLUDE[TLA#tla_ui](../../../includes/tlasharptla-ui-md.md)] est représenté par un fournisseur. Le fournisseur expose des informations sur l’élément et peut implémenter des modèles de contrôle pour permettre à l’application cliente d’interagir avec le contrôle.  
   
- Les applications clientes n’ont généralement pas besoin de travailler directement avec des fournisseurs. La plupart des contrôles standard dans les applications qui utilisent les frameworks Win32, [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]ou [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] sont automatiquement exposés au système [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Les applications qui implémentent des contrôles personnalisés peuvent également implémenter des fournisseurs [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour ces contrôles, et les applications clientes n’ont pas à utiliser de procédures spéciales pour y accéder.  
+ Les applications clientes n’ont généralement pas besoin de travailler directement avec des fournisseurs. La plupart des contrôles standard dans les applications qui utilisent les frameworks Win32, Windows Forms ou [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] sont automatiquement exposés au système [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)]. Les applications qui implémentent des contrôles personnalisés peuvent également implémenter des fournisseurs [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] pour ces contrôles, et les applications clientes n’ont pas à utiliser de procédures spéciales pour y accéder.  
   
- Cette rubrique fournit une vue d’ensemble de la façon dont les développeurs de contrôles implémentent les fournisseurs [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], en particulier pour les contrôles dans les fenêtres [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)] et Win32.  
+ Cette rubrique fournit une vue d’ensemble de la façon dont les développeurs de contrôles implémentent les fournisseurs [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)], en particulier pour les contrôles dans les fenêtres Windows Forms et Win32.  
   
 <a name="Types_of_Providers"></a>   
 ## <a name="types-of-providers"></a>Types de fournisseurs  

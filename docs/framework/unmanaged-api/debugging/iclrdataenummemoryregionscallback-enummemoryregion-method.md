@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: 9bb93fab-57e8-4f9a-9ef3-1794504fa896
 topic_type:
 - apiref
-ms.openlocfilehash: 2ebe7ef37fb072e3688cc4dcfa5ed89832e886e9
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c8313b7c97eb5d94424259dc91459f62e13368fb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122935"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785591"
 ---
 # <a name="iclrdataenummemoryregionscallbackenummemoryregion-method"></a>ICLRDataEnumMemoryRegionsCallback::EnumMemoryRegion, méthode
-Appelé par [ICLRDataEnumMemoryRegions :: EnumMemoryRegions](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregions-enummemoryregions-method.md) pour signaler au débogueur le résultat d’une tentative d’énumération d’une région de mémoire spécifiée.  
+Appelé par [ICLRDataEnumMemoryRegions :: EnumMemoryRegions](iclrdataenummemoryregions-enummemoryregions-method.md) pour signaler au débogueur le résultat d’une tentative d’énumération d’une région de mémoire spécifiée.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,7 +34,7 @@ HRESULT EnumMemoryRegion (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `address`  
  dans Adresse de début de la région de mémoire qui doit être énumérée.  
   
@@ -46,7 +46,7 @@ HRESULT EnumMemoryRegion (
   
  Les régions signalées par ce rappel peuvent être des doublons ou des régions qui se chevauchent.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -57,4 +57,4 @@ HRESULT EnumMemoryRegion (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataEnumMemoryRegionsCallback, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdataenummemoryregionscallback-interface.md)
+- [ICLRDataEnumMemoryRegionsCallback, interface](iclrdataenummemoryregionscallback-interface.md)

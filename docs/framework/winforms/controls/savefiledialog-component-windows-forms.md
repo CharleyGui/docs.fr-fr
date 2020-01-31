@@ -1,16 +1,16 @@
 ---
-title: SaveFileDialog, composant (Windows Forms)
+title: SaveFileDialog, composant
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Save File dialog box
 - SaveFileDialog component
 ms.assetid: 6f5d9321-37d7-4448-ac4c-a33c42b2a766
-ms.openlocfilehash: 552e6cae64ab3b30279e04512a87b18c2f2b068a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
-ms.translationtype: MT
+ms.openlocfilehash: 920816c648f5dbdd50f869e58769655e8be8e1a1
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.translationtype: HT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61947977"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743092"
 ---
 # <a name="savefiledialog-component-windows-forms"></a>SaveFileDialog, composant (Windows Forms)
 Le composant Windows Forms <xref:System.Windows.Forms.SaveFileDialog>  est une boîte de dialogue préconfigurée. Il est identique à la boîte de dialogue Enregistrer le fichier standard utilisée par Windows. Il hérite de la classe <xref:System.Windows.Forms.CommonDialog>.  
@@ -19,10 +19,10 @@ Le composant Windows Forms <xref:System.Windows.Forms.SaveFileDialog>  est une b
  [Vue d’ensemble du composant SaveFileDialog](savefiledialog-component-overview-windows-forms.md)  
  Présente les concepts généraux du composant <xref:System.Windows.Forms.SaveFileDialog>, qui vous permet d'afficher une boîte de dialogue préconfigurée que les utilisateurs peuvent utiliser pour enregistrer un fichier à un emplacement spécifié.  
   
- [Guide pratique pour Enregistrer des fichiers à l’aide du composant SaveFileDialog](how-to-save-files-using-the-savefiledialog-component.md)  
+ [Guide pratique pour enregistrer des fichiers à l'aide du composant SaveFileDialog](how-to-save-files-using-the-savefiledialog-component.md)  
  Explique comment enregistrer un fichier via une instance du composant <xref:System.Windows.Forms.SaveFileDialog> au moment de l'exécution.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  Classe <xref:System.Windows.Forms.SaveFileDialog>  
  Fournit des informations de référence sur la classe et ses membres.  
   

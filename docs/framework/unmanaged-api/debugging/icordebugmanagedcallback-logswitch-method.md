@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 0ac59d27-783f-4a87-b7a8-baa3ccc54582
 topic_type:
 - apiref
-ms.openlocfilehash: a72eabb1b405c67f5603164e56a589a237603d2f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 46c8b3fb2c9e7c353f74ef589e21f2a61df618fb
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73130696"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777315"
 ---
 # <a name="icordebugmanagedcallbacklogswitch-method"></a>ICorDebugManagedCallback::LogSwitch, méthode
 Notifie le débogueur qu’un thread managé common language runtime (CLR) a appelé une méthode dans la classe <xref:System.Diagnostics.Switch> pour créer, modifier ou supprimer un commutateur de débogage/traçage.  
@@ -37,7 +37,7 @@ HRESULT LogSwitch (
     [in] WCHAR               *pParentName);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `PAppDomain`  
  dans Pointeur vers un objet ICorDebugAppDomain qui représente le domaine d’application contenant le thread managé qui a créé, modifié ou supprimé un commutateur de débogage/traçage.  
   
@@ -48,7 +48,7 @@ HRESULT LogSwitch (
  dans Valeur qui indique le niveau de gravité du message descriptif qui a été écrit dans le journal des événements.  
   
  `ulReason`  
- dans Valeur de l’énumération [LogSwitchCallReason,](../../../../docs/framework/unmanaged-api/debugging/logswitchcallreason-enumeration.md) qui indique l’opération effectuée sur le commutateur de débogage/traçage.  
+ dans Valeur de l’énumération [LogSwitchCallReason,](logswitchcallreason-enumeration.md) qui indique l’opération effectuée sur le commutateur de débogage/traçage.  
   
  `pLogSwitchName`  
  dans Pointeur vers le nom du commutateur de débogage/traçage.  
@@ -56,7 +56,7 @@ HRESULT LogSwitch (
  `pParentName`  
  dans Pointeur vers le nom du parent du commutateur de débogage/traçage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -67,4 +67,4 @@ HRESULT LogSwitch (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugManagedCallback, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-interface.md)
+- [ICorDebugManagedCallback, interface](icordebugmanagedcallback-interface.md)

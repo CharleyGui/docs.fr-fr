@@ -1,23 +1,23 @@
 ---
-title: Bibliothèque de classes (WPF)
+title: Bibliothèque de classes
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF class library [WPF]
 - Windows Presentation Foundation class library [WPF]
 ms.assetid: dcb35927-00ad-4141-a1ab-a7a524dd3f10
-ms.openlocfilehash: d43b46be2e05561eadcba12c744368db056a3ce5
-ms.sourcegitcommit: 83ecdf731dc1920bca31f017b1556c917aafd7a0
+ms.openlocfilehash: bd099cbbbf96c71749375dab0aadfe84412ca103
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/12/2019
-ms.locfileid: "67859711"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742290"
 ---
 # <a name="class-library-wpf"></a>Bibliothèque de classes (WPF)
-Les liens suivants font référence aux espaces de noms qui contiennent des [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)] API.  
+Les liens suivants font référence aux espaces de noms qui contiennent des API [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)].  
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
   
 - <xref:Microsoft.Build.Tasks.Windows>  
   
@@ -124,7 +124,7 @@ Les liens suivants font référence aux espaces de noms qui contiennent des [!IN
 - <xref:UIAutomationClientsideProviders>  
   
 ## <a name="xaml-support-in-net-4"></a>Prise en charge XAML dans .NET 4  
- Espaces de noms suivants contiennent des types à partir de l’assembly System.Xaml. System.Xaml offre une prise en charge du langage XAML commun pour les infrastructures telles que WPF qui reposent sur .NET Framework 4.  
+ Les espaces de noms suivants contiennent des types de l’assembly System. Xaml. System. XAML fournit une prise en charge du langage XAML commune pour les infrastructures telles que WPF qui sont basées sur .NET Framework 4.  
   
 - <xref:System.Windows.Markup> (partagé)  
   

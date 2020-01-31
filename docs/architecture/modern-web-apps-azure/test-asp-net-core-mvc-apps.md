@@ -4,23 +4,23 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 82c9815abdd5140340f9a8ea39be23496d433889
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0cb5c5c604d4a82798d4af736ff278b096621588
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738377"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76777107"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
 > *« Si vous n’avez pas envie d’effectuer des tests unitaires sur votre produit, il est fort probable que vos clients n’auront pas non plus envie de l’essayer. »*
  > \_ - Anonyme -
 
-Tous les logiciels, quel que soit leur niveau de complexité, peuvent un jour échouer de façon inattendue en réponse à des modifications. C’est pourquoi vous devez obligatoirement tester toutes vos applications, y compris les plus triviales ou les moins stratégiques, après y avoir apporté des modifications. Tester un logiciel manuellement est la méthode de test la plus lente, la moins fiable et la plus coûteuse. Malheureusement, c’est parfois la seule méthode envisageable pour des applications qui n’ont pas été conçues dans l’optique d’être testées. Les applications développées selon les principes d’architecture présentés au [chapitre 4](architectural-principles.md) peuvent normalement faire l’objet de tests unitaires. Par ailleurs, les applications ASP.NET Core prennent en charge les tests fonctionnels et d’intégration automatisés.
+Tous les logiciels, quel que soit leur niveau de complexité, peuvent un jour échouer de façon inattendue en réponse à des modifications. C’est pourquoi vous devez obligatoirement tester toutes vos applications, y compris les plus triviales ou les moins stratégiques, après y avoir apporté des modifications. Tester un logiciel manuellement est la méthode de test la plus lente, la moins fiable et la plus coûteuse. Malheureusement, c’est parfois la seule méthode envisageable pour des applications qui n’ont pas été conçues dans l’optique d’être testées. Les applications écrites pour suivre les principes architecturaux énoncés au [Chapitre 4](architectural-principles.md) doivent être testables unitaires. Les applications ASP.NET Core prennent en charge l’intégration et les tests fonctionnels automatisés.
 
 ## <a name="kinds-of-automated-tests"></a>Types de tests automatisés
 
-Il existe de nombreuses sortes de tests automatisés pour les applications logicielles. Le test de base, le plus simple, est le test unitaire. À un niveau juste au-dessus, on trouve les tests d’intégration et les tests fonctionnels. Les autres sortes de tests, tels que les tests d’interface utilisateur, les tests de charge, les tests de contrainte et les tests de vérification de build (également appelés tests de détection de fumée) ne sont pas présentés dans ce document.
+Il existe de nombreuses sortes de tests automatisés pour les applications logicielles. Le test de base, le plus simple, est le test unitaire. À un niveau légèrement supérieur, il existe des tests d’intégration et des tests fonctionnels. D’autres types de tests, tels que les tests de l’interface utilisateur, les tests de charge, les tests de stress et les tests de fumée, n’entrent pas dans le cadre de ce document.
 
 ### <a name="unit-tests"></a>Tests unitaires
 
@@ -58,7 +58,7 @@ Les différentes couches de la pyramide, et leurs tailles respectives, représen
 
 ### <a name="what-to-test"></a>Éléments à tester
 
-Les développeurs novices dans l’écriture de tests automatisés ont souvent des difficultés à déterminer quels éléments tester. Un bon point de départ est de tester la logique conditionnelle. Partout où vous avez une méthode dont le comportement change en fonction d’une instruction conditionnelle (if-else, switch, etc.), vous devez prévoir quelques tests pour vérifier le comportement approprié avec certaines conditions. Si votre code inclut des conditions d’erreur, il est judicieux d’écrire au moins un test pour le « bon chemin » (sans erreur) à travers le code et au moins un test pour le « mauvais chemin » (avec des erreurs ou des résultats atypiques) pour confirmer que votre application se comporte comme prévu en cas d’erreurs. Enfin, mettez davantage l’accent sur le test d’éléments qui peuvent échouer que sur le test de métriques telles que la couverture du code. En général, mieux vaut avoir une plus grande couverture du code que pas assez. Toutefois, il est souvent plus profitable d’écrire quelques tests supplémentaires pour une méthode très complexe et critique pour l’entreprise que d’écrire des tests pour des propriétés automatiques dans le simple but d’améliorer les métriques de couverture du code de test.
+Les développeurs novices dans l’écriture de tests automatisés ont souvent des difficultés à déterminer quels éléments tester. Un bon point de départ est de tester la logique conditionnelle. Partout où vous disposez d’une méthode dont le comportement change en fonction d’une instruction conditionnelle (if-else, Switch, etc.), vous devez être en mesure de rencontrer au moins quelques tests qui confirment le comportement correct pour certaines conditions. Si votre code inclut des conditions d’erreur, il est judicieux d’écrire au moins un test pour le « bon chemin » (sans erreur) à travers le code et au moins un test pour le « mauvais chemin » (avec des erreurs ou des résultats atypiques) pour confirmer que votre application se comporte comme prévu en cas d’erreurs. Enfin, mettez davantage l’accent sur le test d’éléments qui peuvent échouer que sur le test de métriques telles que la couverture du code. En général, mieux vaut avoir une plus grande couverture du code que pas assez. Toutefois, l’écriture d’un certain nombre de tests d’une méthode complexe et critique est généralement une meilleure utilisation du temps que l’écriture de tests pour les propriétés automatiques uniquement pour améliorer les mesures de couverture du code de test.
 
 ## <a name="organizing-test-projects"></a>Organisation des projets de test
 
@@ -102,7 +102,7 @@ Si vous choisissez une convention de nommage comme celle décrite ci-dessus, qui
 
 **Figure 9-4.** Organisation des classes de test par dossier en fonction de la classe testée.
 
-Bien entendu, si une classe d’application particulière a de nombreuses méthodes testées (et par conséquent, beaucoup de classes de test), il peut être judicieux de les placer dans un dossier distinct, correspondant à la classe d’application. Cette organisation est semblable à la façon dont vous pouvez organiser les fichiers dans des dossiers ailleurs. Quand vous avez plus de trois ou quatre fichiers associés dans un dossier contenant beaucoup d’autres fichiers, il est souvent plus pratique de les déplacer dans leur propre sous-dossier.
+Si de nombreuses méthodes sont testées dans une classe d’application particulière (et donc de nombreuses classes de test), il peut être judicieux de les placer dans un dossier correspondant à la classe d’application. Cette organisation est semblable à la façon dont vous pouvez organiser les fichiers dans des dossiers ailleurs. Quand vous avez plus de trois ou quatre fichiers associés dans un dossier contenant beaucoup d’autres fichiers, il est souvent plus pratique de les déplacer dans leur propre sous-dossier.
 
 ## <a name="unit-testing-aspnet-core-apps"></a>Tests unitaires dans les applications ASP.NET Core
 
