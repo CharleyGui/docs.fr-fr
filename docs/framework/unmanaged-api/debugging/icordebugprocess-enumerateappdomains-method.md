@@ -15,35 +15,35 @@ helpviewer_keywords:
 ms.assetid: d508981f-e2b2-445b-a649-69951c22702d
 topic_type:
 - apiref
-ms.openlocfilehash: e09e25503ad00ab3542f0c4f50221b6014b25561
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 35e3e37b1487b5dda9945402c6a3338384147f9a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128881"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792640"
 ---
-# <a name="icordebugprocessenumerateappdomains-method"></a><span data-ttu-id="cfb05-102">ICorDebugProcess::EnumerateAppDomains, méthode</span><span class="sxs-lookup"><span data-stu-id="cfb05-102">ICorDebugProcess::EnumerateAppDomains Method</span></span>
-<span data-ttu-id="cfb05-103">Énumère tous les domaines d’application dans ce processus.</span><span class="sxs-lookup"><span data-stu-id="cfb05-103">Enumerates all the application domains in this process.</span></span>  
+# <a name="icordebugprocessenumerateappdomains-method"></a><span data-ttu-id="65f21-102">ICorDebugProcess::EnumerateAppDomains, méthode</span><span class="sxs-lookup"><span data-stu-id="65f21-102">ICorDebugProcess::EnumerateAppDomains Method</span></span>
+<span data-ttu-id="65f21-103">Énumère tous les domaines d’application dans ce processus.</span><span class="sxs-lookup"><span data-stu-id="65f21-103">Enumerates all the application domains in this process.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="cfb05-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="cfb05-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="65f21-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="65f21-104">Syntax</span></span>  
   
 ``` cpp 
 HRESULT EnumerateAppDomains(  
     [out] ICorDebugAppDomainEnum **ppAppDomains);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="cfb05-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="cfb05-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="65f21-105">Parameters</span><span class="sxs-lookup"><span data-stu-id="65f21-105">Parameters</span></span>  
  `ppAppDomains`  
- <span data-ttu-id="cfb05-106">à Pointeur vers l’adresse d’un [ICorDebugAppDomainEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-interface.md) qui est un énumérateur pour les domaines d’application dans ce processus.</span><span class="sxs-lookup"><span data-stu-id="cfb05-106">[out] A pointer to the address of an [ICorDebugAppDomainEnum](../../../../docs/framework/unmanaged-api/debugging/icordebugappdomainenum-interface.md) that is an enumerator for the application domains in this process.</span></span>  
+ <span data-ttu-id="65f21-106">à Pointeur vers l’adresse d’un [ICorDebugAppDomainEnum](icordebugappdomainenum-interface.md) qui est un énumérateur pour les domaines d’application dans ce processus.</span><span class="sxs-lookup"><span data-stu-id="65f21-106">[out] A pointer to the address of an [ICorDebugAppDomainEnum](icordebugappdomainenum-interface.md) that is an enumerator for the application domains in this process.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="cfb05-107">Notes</span><span class="sxs-lookup"><span data-stu-id="cfb05-107">Remarks</span></span>  
- <span data-ttu-id="cfb05-108">Cette méthode peut être utilisée avant le rappel [ICorDebugManagedCallback :: CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) .</span><span class="sxs-lookup"><span data-stu-id="cfb05-108">This method can be used before the [ICorDebugManagedCallback::CreateProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-createprocess-method.md) callback.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="65f21-107">Notes</span><span class="sxs-lookup"><span data-stu-id="65f21-107">Remarks</span></span>  
+ <span data-ttu-id="65f21-108">Cette méthode peut être utilisée avant le rappel [ICorDebugManagedCallback :: CreateProcess](icordebugmanagedcallback-createprocess-method.md) .</span><span class="sxs-lookup"><span data-stu-id="65f21-108">This method can be used before the [ICorDebugManagedCallback::CreateProcess](icordebugmanagedcallback-createprocess-method.md) callback.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="cfb05-109">spécifications</span><span class="sxs-lookup"><span data-stu-id="cfb05-109">Requirements</span></span>  
- <span data-ttu-id="cfb05-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="cfb05-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="65f21-109">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="65f21-109">Requirements</span></span>  
+ <span data-ttu-id="65f21-110">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="65f21-110">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="cfb05-111">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="cfb05-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="65f21-111">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="65f21-111">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="cfb05-112">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="cfb05-112">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="65f21-112">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="65f21-112">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="cfb05-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="cfb05-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="65f21-113">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="65f21-113">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
