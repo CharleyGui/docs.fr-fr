@@ -15,16 +15,16 @@ helpviewer_keywords:
 ms.assetid: 292f1255-5dfd-427f-844e-781d4b938f9a
 topic_type:
 - apiref
-ms.openlocfilehash: d6a04bdb68149fcc659fa45acc5856c3cebc9a56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d55fd18b55f5387353e014b169633fc44dae3ad7
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137014"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76783389"
 ---
-# <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a><span data-ttu-id="838ab-102">ICorDebugEditAndContinueErrorInfo::GetModule, méthode</span><span class="sxs-lookup"><span data-stu-id="838ab-102">ICorDebugEditAndContinueErrorInfo::GetModule Method</span></span>
-<span data-ttu-id="838ab-103">`GetModule` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="838ab-103">`GetModule` is obsolete.</span></span> <span data-ttu-id="838ab-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="838ab-104">Do not call this method.</span></span>  
+# <a name="icordebugeditandcontinueerrorinfogetmodule-method"></a><span data-ttu-id="946e4-102">ICorDebugEditAndContinueErrorInfo::GetModule, méthode</span><span class="sxs-lookup"><span data-stu-id="946e4-102">ICorDebugEditAndContinueErrorInfo::GetModule Method</span></span>
+<span data-ttu-id="946e4-103">`GetModule` est obsolète.</span><span class="sxs-lookup"><span data-stu-id="946e4-103">`GetModule` is obsolete.</span></span> <span data-ttu-id="946e4-104">N'appelez pas cette méthode.</span><span class="sxs-lookup"><span data-stu-id="946e4-104">Do not call this method.</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="838ab-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="838ab-105">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="946e4-105">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="946e4-105">See also</span></span>
 
-- [<span data-ttu-id="838ab-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="838ab-106">Debugging Interfaces</span></span>](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [<span data-ttu-id="946e4-106">Interfaces de débogage</span><span class="sxs-lookup"><span data-stu-id="946e4-106">Debugging Interfaces</span></span>](debugging-interfaces.md)

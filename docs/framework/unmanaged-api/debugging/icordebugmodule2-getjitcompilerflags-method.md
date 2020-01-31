@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: 7212d9f4-989b-44e3-b8d4-ffc35922f6a0
 topic_type:
 - apiref
-ms.openlocfilehash: 1216629fc7e1c3e720d5f296b9293b3c4b7f8721
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ab6551ba70ed4cd154b166eeb92138b6550d2cb2
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127895"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792978"
 ---
-# <a name="icordebugmodule2getjitcompilerflags-method"></a><span data-ttu-id="9a010-102">ICorDebugModule2::GetJITCompilerFlags, méthode</span><span class="sxs-lookup"><span data-stu-id="9a010-102">ICorDebugModule2::GetJITCompilerFlags Method</span></span>
-<span data-ttu-id="9a010-103">Obtient les indicateurs qui contrôlent la compilation juste-à-temps (JIT) de ce ICorDebugModule2.</span><span class="sxs-lookup"><span data-stu-id="9a010-103">Gets the flags that control the just-in-time (JIT) compilation of this ICorDebugModule2.</span></span>  
+# <a name="icordebugmodule2getjitcompilerflags-method"></a><span data-ttu-id="731c6-102">ICorDebugModule2::GetJITCompilerFlags, méthode</span><span class="sxs-lookup"><span data-stu-id="731c6-102">ICorDebugModule2::GetJITCompilerFlags Method</span></span>
+<span data-ttu-id="731c6-103">Obtient les indicateurs qui contrôlent la compilation juste-à-temps (JIT) de ce ICorDebugModule2.</span><span class="sxs-lookup"><span data-stu-id="731c6-103">Gets the flags that control the just-in-time (JIT) compilation of this ICorDebugModule2.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="9a010-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="9a010-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="731c6-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="731c6-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetJITCompilerFlags (  
@@ -33,15 +33,15 @@ HRESULT GetJITCompilerFlags (
 );  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="9a010-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="9a010-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="731c6-105">Parameters</span><span class="sxs-lookup"><span data-stu-id="731c6-105">Parameters</span></span>  
  `pdwFlags`  
- <span data-ttu-id="9a010-106">à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) qui contrôle la compilation JIT.</span><span class="sxs-lookup"><span data-stu-id="9a010-106">[out] A pointer to a value of the [CorDebugJITCompilerFlags](../../../../docs/framework/unmanaged-api/debugging/cordebugjitcompilerflags-enumeration.md) enumeration that controls the JIT compilation.</span></span>  
+ <span data-ttu-id="731c6-106">à Pointeur vers une valeur de l’énumération [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) qui contrôle la compilation JIT.</span><span class="sxs-lookup"><span data-stu-id="731c6-106">[out] A pointer to a value of the [CorDebugJITCompilerFlags](cordebugjitcompilerflags-enumeration.md) enumeration that controls the JIT compilation.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="9a010-107">spécifications</span><span class="sxs-lookup"><span data-stu-id="9a010-107">Requirements</span></span>  
- <span data-ttu-id="9a010-108">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="9a010-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="731c6-107">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="731c6-107">Requirements</span></span>  
+ <span data-ttu-id="731c6-108">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="731c6-108">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="9a010-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="9a010-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
+ <span data-ttu-id="731c6-109">**En-tête :** CorDebug.idl, CorDebug.h</span><span class="sxs-lookup"><span data-stu-id="731c6-109">**Header:** CorDebug.idl, CorDebug.h</span></span>  
   
- <span data-ttu-id="9a010-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="9a010-110">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="731c6-110">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="731c6-110">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="9a010-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="9a010-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
+ <span data-ttu-id="731c6-111">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="731c6-111">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>
