@@ -15,17 +15,17 @@ helpviewer_keywords:
 ms.assetid: bda75017-739f-4ce5-9000-f3b526e8473c
 topic_type:
 - apiref
-ms.openlocfilehash: 97b127c9a6aac0a0fefe25faf294791dcd2c8e41
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 839cd574e5352b74b47cd6242d5706bc6405d439
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74436033"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862917"
 ---
-# <a name="icorprofilerinfo2getarrayobjectinfo-method"></a><span data-ttu-id="6463c-102">ICorProfilerInfo2::GetArrayObjectInfo, méthode</span><span class="sxs-lookup"><span data-stu-id="6463c-102">ICorProfilerInfo2::GetArrayObjectInfo Method</span></span>
-<span data-ttu-id="6463c-103">Obtient des informations détaillées sur un objet de tableau.</span><span class="sxs-lookup"><span data-stu-id="6463c-103">Gets detailed information about an array object.</span></span>  
+# <a name="icorprofilerinfo2getarrayobjectinfo-method"></a><span data-ttu-id="4b8e2-102">ICorProfilerInfo2::GetArrayObjectInfo, méthode</span><span class="sxs-lookup"><span data-stu-id="4b8e2-102">ICorProfilerInfo2::GetArrayObjectInfo Method</span></span>
+<span data-ttu-id="4b8e2-103">Obtient des informations détaillées sur un objet de tableau.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-103">Gets detailed information about an array object.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="6463c-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="6463c-104">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="4b8e2-104">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="4b8e2-104">Syntax</span></span>  
   
 ```cpp  
 HRESULT GetArrayObjectInfo(  
@@ -36,35 +36,35 @@ HRESULT GetArrayObjectInfo(
     [out] BYTE **ppData);  
 ```  
   
-## <a name="parameters"></a><span data-ttu-id="6463c-105">Paramètres</span><span class="sxs-lookup"><span data-stu-id="6463c-105">Parameters</span></span>  
+## <a name="parameters"></a><span data-ttu-id="4b8e2-105">Parameters</span><span class="sxs-lookup"><span data-stu-id="4b8e2-105">Parameters</span></span>  
  `objectId`  
- <span data-ttu-id="6463c-106">dans ID d’un objet de tableau valide.</span><span class="sxs-lookup"><span data-stu-id="6463c-106">[in] The ID of a valid array object.</span></span>  
+ <span data-ttu-id="4b8e2-106">dans ID d’un objet de tableau valide.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-106">[in] The ID of a valid array object.</span></span>  
   
  `cDimensions`  
- <span data-ttu-id="6463c-107">dans Rang (nombre de dimensions) du tableau.</span><span class="sxs-lookup"><span data-stu-id="6463c-107">[in] The rank (number of dimensions) of the array.</span></span>  
+ <span data-ttu-id="4b8e2-107">dans Rang (nombre de dimensions) du tableau.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-107">[in] The rank (number of dimensions) of the array.</span></span>  
   
  `pDimensionSizes`  
- <span data-ttu-id="6463c-108">à Tableau qui contient des entiers, chacun représentant la taille d’une dimension du tableau.</span><span class="sxs-lookup"><span data-stu-id="6463c-108">[out] An array that contains integers, each representing the size of a dimension of the array.</span></span>  
+ <span data-ttu-id="4b8e2-108">à Tableau qui contient des entiers, chacun représentant la taille d’une dimension du tableau.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-108">[out] An array that contains integers, each representing the size of a dimension of the array.</span></span>  
   
  `pDimensionLowerBounds`  
- <span data-ttu-id="6463c-109">à Tableau qui contient des entiers, chacun représentant la limite inférieure d’une dimension du tableau.</span><span class="sxs-lookup"><span data-stu-id="6463c-109">[out] An array that contains integers, each representing the lower bound of a dimension of the array.</span></span>  
+ <span data-ttu-id="4b8e2-109">à Tableau qui contient des entiers, chacun représentant la limite inférieure d’une dimension du tableau.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-109">[out] An array that contains integers, each representing the lower bound of a dimension of the array.</span></span>  
   
  `ppData`  
- <span data-ttu-id="6463c-110">à Pointeur vers l’adresse de la mémoire tampon brute pour le tableau, qui est disposé selon la C++ Convention.</span><span class="sxs-lookup"><span data-stu-id="6463c-110">[out] A pointer to the address of the raw buffer for the array, which is laid out according to the C++ convention.</span></span>  
+ <span data-ttu-id="4b8e2-110">à Pointeur vers l’adresse de la mémoire tampon brute pour le tableau, qui est disposé selon la C++ Convention.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-110">[out] A pointer to the address of the raw buffer for the array, which is laid out according to the C++ convention.</span></span>  
   
-## <a name="remarks"></a><span data-ttu-id="6463c-111">Notes</span><span class="sxs-lookup"><span data-stu-id="6463c-111">Remarks</span></span>  
- <span data-ttu-id="6463c-112">Les `pDimensionSizes` et `pDimensionLowerBounds` sont des tableaux parallèles, de sorte que les éléments situés dans le même index dans chaque tableau sont des caractéristiques de la même entité.</span><span class="sxs-lookup"><span data-stu-id="6463c-112">The `pDimensionSizes` and `pDimensionLowerBounds` are parallel arrays, so the elements located at the same index in each array are characteristics of the same entity.</span></span>  
+## <a name="remarks"></a><span data-ttu-id="4b8e2-111">Notes</span><span class="sxs-lookup"><span data-stu-id="4b8e2-111">Remarks</span></span>  
+ <span data-ttu-id="4b8e2-112">Les `pDimensionSizes` et `pDimensionLowerBounds` sont des tableaux parallèles, de sorte que les éléments situés dans le même index dans chaque tableau sont des caractéristiques de la même entité.</span><span class="sxs-lookup"><span data-stu-id="4b8e2-112">The `pDimensionSizes` and `pDimensionLowerBounds` are parallel arrays, so the elements located at the same index in each array are characteristics of the same entity.</span></span>  
   
-## <a name="requirements"></a><span data-ttu-id="6463c-113">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="6463c-113">Requirements</span></span>  
- <span data-ttu-id="6463c-114">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="6463c-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="4b8e2-113">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="4b8e2-113">Requirements</span></span>  
+ <span data-ttu-id="4b8e2-114">**Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="4b8e2-114">**Platforms:** See [System Requirements](../../../../docs/framework/get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="6463c-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="6463c-115">**Header:** CorProf.idl, CorProf.h</span></span>  
+ <span data-ttu-id="4b8e2-115">**En-tête :** CorProf.idl, CorProf.h</span><span class="sxs-lookup"><span data-stu-id="4b8e2-115">**Header:** CorProf.idl, CorProf.h</span></span>  
   
- <span data-ttu-id="6463c-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="6463c-116">**Library:** CorGuids.lib</span></span>  
+ <span data-ttu-id="4b8e2-116">**Bibliothèque :** CorGuids.lib</span><span class="sxs-lookup"><span data-stu-id="4b8e2-116">**Library:** CorGuids.lib</span></span>  
   
- <span data-ttu-id="6463c-117">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="6463c-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
+ <span data-ttu-id="4b8e2-117">**Versions du .NET Framework :** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="4b8e2-117">**.NET Framework Versions:** [!INCLUDE[net_current_v20plus](../../../../includes/net-current-v20plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="6463c-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="6463c-118">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="4b8e2-118">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="4b8e2-118">See also</span></span>
 
-- [<span data-ttu-id="6463c-119">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="6463c-119">ICorProfilerInfo Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [<span data-ttu-id="6463c-120">ICorProfilerInfo2, interface</span><span class="sxs-lookup"><span data-stu-id="6463c-120">ICorProfilerInfo2 Interface</span></span>](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
+- [<span data-ttu-id="4b8e2-119">ICorProfilerInfo, interface</span><span class="sxs-lookup"><span data-stu-id="4b8e2-119">ICorProfilerInfo Interface</span></span>](icorprofilerinfo-interface.md)
+- [<span data-ttu-id="4b8e2-120">ICorProfilerInfo2, interface</span><span class="sxs-lookup"><span data-stu-id="4b8e2-120">ICorProfilerInfo2 Interface</span></span>](icorprofilerinfo2-interface.md)
