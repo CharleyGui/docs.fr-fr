@@ -2,12 +2,12 @@
 title: Vue d'ensemble du modèle de programmation Web HTTP WCF
 ms.date: 03/30/2017
 ms.assetid: 381fdc3a-6e6c-4890-87fe-91cca6f4b476
-ms.openlocfilehash: 4862ae0e5151177e74da0f94d06b5b39205ed4c0
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 8a4b4ff6c0482ed8a09fe30b7d03afc1f84db581
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74283290"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739903"
 ---
 # <a name="wcf-web-http-programming-model-overview"></a>Vue d'ensemble du modèle de programmation Web HTTP WCF
 Le modèle de programmation HTTP WEB Windows Communication Foundation (WCF) fournit les éléments de base nécessaires à la création de services WEB HTTP avec WCF. Les services HTTP WEB WCF sont conçus pour être accessibles par la plus large gamme de clients possibles, y compris les navigateurs Web, et présentent les exigences uniques suivantes :  
@@ -43,15 +43,15 @@ Le modèle de programmation HTTP WEB Windows Communication Foundation (WCF) four
   
  Dans ce modèle, la notation avec accolade ("{segment}") indique un segment variable au lieu d'une valeur littérale.  
   
- Le .NET Framework fournit une API sur l'utilisation des modèles d'URI appelée <xref:System.UriTemplate>. `UriTemplates` vous permettent d’effectuer les opérations suivantes :  
+ Le .NET Framework fournit une API sur l'utilisation des modèles d'URI appelée <xref:System.UriTemplate>. `UriTemplates` vous permet d'effectuer les opérations suivantes :  
   
 - Vous pouvez appeler l’une des méthodes `Bind` avec un ensemble de paramètres pour produire un *URI complètement fermé* qui correspond au modèle. Cela signifie que toutes les variables dans le modèle URI sont remplacées par des valeurs réelles.  
   
 - Vous pouvez appeler `Match`() avec un URI candidat qui utilise un modèle pour décomposer les parties qui constituent un URI candidat et qui retourne un dictionnaire qui contient les différentes parties de l'URI libellé selon les variables du modèle.  
   
-- `Bind`() et `Match`() sont des inversions afin que vous puissiez appeler `Match`(`Bind`(x)) et revenir avec le même environnement que celui avec lequel vous avez commencé.  
+- `Bind`() et `Match`() sont des inverses qui vous permettent d'appeler `Match`( `Bind`(x)) et de revenir dans le même environnement de démarrage.  
   
- Il arrive souvent (surtout sur le serveur où la distribution d'une demande vers une opération de service basée sur l'URI est nécessaire) de vouloir effectuer le suivi d'un jeu d'objets <xref:System.UriTemplate> dans une structure de données qui peut adresser indépendamment chacun des modèles contenus. <xref:System.UriTemplateTable> représente un ensemble de modèles URI et sélectionne la meilleure correspondance en fonction d’un ensemble de modèles et d’un URI candidat. Cela n’est pas affilié à une pile de mise en réseau particulière (WCF incluse). vous pouvez donc l’utiliser partout où cela est nécessaire.  
+ Il arrive souvent (surtout sur le serveur où la distribution d'une demande vers une opération de service basée sur l'URI est nécessaire) de vouloir effectuer le suivi d'un jeu d'objets <xref:System.UriTemplate> dans une structure de données qui peut adresser indépendamment chacun des modèles contenus. <xref:System.UriTemplateTable> représente un ensemble de modèles d'URI et sélectionne la meilleure correspondance en fonction d'un ensemble de modèles et d'un URI candidat. Cela n’est pas affilié à une pile de mise en réseau particulière (WCF incluse). vous pouvez donc l’utiliser partout où cela est nécessaire.  
   
  Le modèle de service WCF utilise <xref:System.UriTemplate> et <xref:System.UriTemplateTable> pour associer des opérations de service à un jeu d'URI décrit par un <xref:System.UriTemplate>. Une opération de service est associée à un <xref:System.UriTemplate> à l'aide de <xref:System.ServiceModel.Web.WebGetAttribute> ou de <xref:System.ServiceModel.Web.WebInvokeAttribute>. Pour plus d’informations sur les <xref:System.UriTemplate> et les <xref:System.UriTemplateTable>, consultez [UriTemplate et UriTemplateTable](../../../../docs/framework/wcf/feature-details/uritemplate-and-uritemplatetable.md)  
   
@@ -80,7 +80,7 @@ interface ICustomer
   
  `POST /UpdateCustomerName`  
   
- <xref:System.ServiceModel.Web.WebInvokeAttribute> la valeur par défaut de la publication, mais vous pouvez également l’utiliser pour d’autres verbes.  
+ <xref:System.ServiceModel.Web.WebInvokeAttribute> prend la valeur POST par défaut mais vous pouvez l'utiliser aussi pour d'autres verbes.  
   
 ```csharp
 [ServiceContract]  
@@ -138,7 +138,8 @@ interface ICustomer
  .NET Framework 3,5 fournit la prise en charge des données JSON (AJAX) ainsi que des flux de syndication (notamment ATOM et RSS). Pour plus d’informations sur ces fonctionnalités, consultez mise en forme de la syndication [http Web WCF](../../../../docs/framework/wcf/feature-details/wcf-web-http-formatting.md)[Présentation de la syndication WCF](../../../../docs/framework/wcf/feature-details/wcf-syndication-overview.md) et [intégration d’Ajax et prise en charge de JSON](../../../../docs/framework/wcf/feature-details/ajax-integration-and-json-support.md).  
   
 ## <a name="wcf-web-http-programming-model-and-security"></a>Modèle de programmation Web HTTP WCF et sécurité  
- Étant donné que le modèle de programmation HTTP WEB WCF ne prend pas en charge les protocoles WS-*, le seul moyen de sécuriser un service HTTP WEB WCF consiste à exposer le service via HTTPs à l’aide de SSL. Pour plus d’informations sur la configuration de SSL avec IIS 7,0, voir [How to implement SSL in IIS (en](https://go.microsoft.com/fwlink/?LinkId=131613) anglais).  
+
+Étant donné que le modèle de programmation HTTP WEB WCF ne prend pas en charge les protocoles WS-*, le seul moyen de sécuriser un service HTTP WEB WCF consiste à exposer le service via HTTPs à l’aide de SSL. Pour plus d’informations sur la configuration de SSL avec IIS 7,0, consultez [comment implémenter SSL dans IIS](https://support.microsoft.com/help/299875/how-to-implement-ssl-in-iis).
   
 ## <a name="troubleshooting-the-wcf-web-http-programming-model"></a>Dépannage du modèle de programmation HTTP Web WCF  
  Lors de l'appel de services Web HTTP WCF à l'aide d'un <xref:System.ServiceModel.Channels.ChannelFactoryBase%601> afin de créer un canal, le <xref:System.ServiceModel.Description.WebHttpBehavior> utilise le <xref:System.ServiceModel.EndpointAddress> défini dans le fichier de configuration même si un <xref:System.ServiceModel.EndpointAddress> différent est passé au <xref:System.ServiceModel.Channels.ChannelFactoryBase%601>.  

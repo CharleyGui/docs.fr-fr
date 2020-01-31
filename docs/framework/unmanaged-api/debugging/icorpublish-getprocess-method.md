@@ -15,15 +15,15 @@ helpviewer_keywords:
 ms.assetid: c5143805-2eb7-45b8-85ed-c8fb34df1084
 topic_type:
 - apiref
-ms.openlocfilehash: a9d28243e9907fcc6320b2e09a49312bf35a70b4
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0368349e6c6a566cb569738bf3bda40eb9f5de96
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73121787"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790732"
 ---
 # <a name="icorpublishgetprocess-method"></a>ICorPublish::GetProcess, méthode
-Obtient une instance de [ICorPublishProcess](../../../../docs/framework/unmanaged-api/debugging/icorpublishprocess-interface.md) qui représente le processus avec l’identificateur spécifié.  
+Obtient une instance de [ICorPublishProcess](icorpublishprocess-interface.md) qui représente le processus avec l’identificateur spécifié.  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -34,7 +34,7 @@ HRESULT GetProcess(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `pid`  
  dans Identificateur du processus.  
   
@@ -44,7 +44,7 @@ HRESULT GetProcess(
 ## <a name="remarks"></a>Notes  
  `GetProcess` échoue si le processus n’existe pas ou s’il ne s’agit pas d’un processus géré pouvant être débogué par l’utilisateur actuel.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorPub. idl, CorPub. h  
@@ -55,4 +55,4 @@ HRESULT GetProcess(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorPublish, interface](../../../../docs/framework/unmanaged-api/debugging/icorpublish-interface.md)
+- [ICorPublish, interface](icorpublish-interface.md)

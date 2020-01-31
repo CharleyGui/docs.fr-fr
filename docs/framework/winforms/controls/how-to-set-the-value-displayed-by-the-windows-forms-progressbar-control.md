@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir la valeur affichée par le contrôle ProgressBar Windows Forms'
+title: Définir la valeur affichée par le contrôle ProgressBar
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,37 +8,37 @@ helpviewer_keywords:
 - ProgressBar control [Windows Forms], setting value displayed
 - progress controls [Windows Forms], setting value displayed
 ms.assetid: 0e5010ad-1e9a-4271-895e-5a3d24d37a26
-ms.openlocfilehash: 2e0134206ba3ebdce35f5374cbad575e34483d58
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 79ce1e576652d00b323d31dfc6551e168ea0a9a0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69956085"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743806"
 ---
-# <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Procédure : définir la valeur affichée par le contrôle ProgressBar Windows Forms
+# <a name="how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control"></a>Comment : définir la valeur affichée par le contrôle ProgressBar Windows Forms
 > [!IMPORTANT]
 > Le contrôle <xref:System.Windows.Forms.ToolStripProgressBar> remplace le contrôle <xref:System.Windows.Forms.ProgressBar> et lui ajoute des fonctionnalités ; toutefois, le contrôle <xref:System.Windows.Forms.ProgressBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
- La .NET Framework vous offre plusieurs façons différentes d’afficher une valeur donnée dans le <xref:System.Windows.Forms.ProgressBar> contrôle. L’approche que vous choisissez dépend de la tâche en cours ou du problème que vous résolvez. Le tableau suivant présente les approches que vous pouvez choisir.  
+ La .NET Framework vous offre plusieurs façons différentes d’afficher une valeur donnée dans le contrôle <xref:System.Windows.Forms.ProgressBar>. L’approche que vous choisissez dépend de la tâche en cours ou du problème que vous résolvez. Le tableau suivant présente les approches que vous pouvez choisir.  
   
 |Approche|Description|  
 |--------------|-----------------|  
-|Définissez directement la valeur du <xref:System.Windows.Forms.ProgressBar> contrôle.|Cette approche est utile pour les tâches où vous connaissez le total de l’élément mesuré qui sera impliqué, par exemple la lecture d’enregistrements à partir d’une source de données. En outre, si vous ne devez définir la valeur qu’une ou deux fois, il s’agit d’un moyen simple de le faire. Enfin, utilisez ce processus si vous devez réduire la valeur affichée par la barre de progression.|  
-|Augmentez <xref:System.Windows.Forms.ProgressBar> l’affichage d’une valeur fixe.|Cette approche est utile lorsque vous affichez un nombre simple compris entre les valeurs minimale et maximale, par exemple le temps écoulé ou le nombre de fichiers qui ont été traités à partir d’un total connu.|  
-|Augmentez <xref:System.Windows.Forms.ProgressBar> l’affichage d’une valeur qui varie.|Cette approche est utile lorsque vous devez modifier la valeur affichée plusieurs fois dans différents volumes. Un exemple est l’indication de la quantité d’espace disque dur consommé lors de l’écriture d’une série de fichiers sur le disque.|  
+|Définissez directement la valeur du contrôle <xref:System.Windows.Forms.ProgressBar>.|Cette approche est utile pour les tâches où vous connaissez le total de l’élément mesuré qui sera impliqué, par exemple la lecture d’enregistrements à partir d’une source de données. En outre, si vous ne devez définir la valeur qu’une ou deux fois, il s’agit d’un moyen simple de le faire. Enfin, utilisez ce processus si vous devez réduire la valeur affichée par la barre de progression.|  
+|Augmentez l’affichage de <xref:System.Windows.Forms.ProgressBar> par une valeur fixe.|Cette approche est utile lorsque vous affichez un nombre simple compris entre les valeurs minimale et maximale, par exemple le temps écoulé ou le nombre de fichiers qui ont été traités à partir d’un total connu.|  
+|Augmentez l’affichage de <xref:System.Windows.Forms.ProgressBar> par une valeur qui varie.|Cette approche est utile lorsque vous devez modifier la valeur affichée plusieurs fois dans différents volumes. Un exemple est l’indication de la quantité d’espace disque dur consommé lors de l’écriture d’une série de fichiers sur le disque.|  
   
- La façon la plus directe de définir la valeur affichée par une barre de progression consiste à <xref:System.Windows.Forms.ProgressBar.Value%2A> définir la propriété. Vous pouvez effectuer cette opération au moment de la conception ou au moment de l’exécution.  
+ La façon la plus directe de définir la valeur affichée par une barre de progression consiste à définir la propriété <xref:System.Windows.Forms.ProgressBar.Value%2A>. Vous pouvez effectuer cette opération au moment de la conception ou au moment de l’exécution.  
   
 ### <a name="to-set-the-progressbar-value-directly"></a>Pour définir la valeur de ProgressBar directement  
   
-1. Définissez les <xref:System.Windows.Forms.ProgressBar> valeurs et <xref:System.Windows.Forms.ProgressBar.Minimum%2A> <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle.  
+1. Définissez les valeurs <xref:System.Windows.Forms.ProgressBar.Minimum%2A> et <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
-2. Dans le code, affectez à <xref:System.Windows.Forms.ProgressBar.Value%2A> la propriété du contrôle une valeur entière comprise entre les valeurs minimale et maximale que vous avez établies.  
+2. Dans le code, affectez à la propriété <xref:System.Windows.Forms.ProgressBar.Value%2A> du contrôle une valeur entière comprise entre les valeurs minimale et maximale que vous avez établies.  
   
     > [!NOTE]
-    > Si vous définissez la <xref:System.Windows.Forms.ProgressBar.Value%2A> propriété en dehors des limites établies par <xref:System.Windows.Forms.ProgressBar.Minimum%2A> les <xref:System.Windows.Forms.ProgressBar.Maximum%2A> propriétés et, le contrôle lève une <xref:System.ArgumentException> exception.  
+    > Si vous définissez la propriété <xref:System.Windows.Forms.ProgressBar.Value%2A> en dehors des limites établies par les propriétés <xref:System.Windows.Forms.ProgressBar.Minimum%2A> et <xref:System.Windows.Forms.ProgressBar.Maximum%2A>, le contrôle lève une exception <xref:System.ArgumentException>.  
   
-     L’exemple de code suivant montre comment définir la <xref:System.Windows.Forms.ProgressBar> valeur directement. Le code lit les enregistrements à partir d’une source de données et met à jour la barre de progression et l’étiquette chaque fois qu’un enregistrement de données est lu. Dans cet exemple, votre formulaire doit avoir <xref:System.Windows.Forms.Label> un contrôle, <xref:System.Windows.Forms.ProgressBar> un contrôle et une table de données avec une ligne `CustomerRow` appelée `FirstName` avec `LastName` les champs et.  
+     L’exemple de code suivant montre comment définir la valeur <xref:System.Windows.Forms.ProgressBar> directement. Le code lit les enregistrements à partir d’une source de données et met à jour la barre de progression et l’étiquette chaque fois qu’un enregistrement de données est lu. Dans cet exemple, votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.Label>, un contrôle <xref:System.Windows.Forms.ProgressBar> et une table de données avec une ligne appelée `CustomerRow` avec les champs `FirstName` et `LastName`.  
   
     ```vb  
     Public Sub CreateNewRecords()  
@@ -83,19 +83,19 @@ ms.locfileid: "69956085"
     }  
     ```  
   
-     Si vous affichez la progression qui se produit d’un intervalle fixe, vous pouvez définir la valeur, puis appeler une méthode qui <xref:System.Windows.Forms.ProgressBar> augmente la valeur du contrôle de cet intervalle. Cela est utile pour les minuteurs et d’autres scénarios où vous ne mesurez pas la progression en tant que pourcentage de l’ensemble.  
+     Si vous affichez la progression d’un intervalle fixe, vous pouvez définir la valeur, puis appeler une méthode qui augmente la valeur du contrôle <xref:System.Windows.Forms.ProgressBar> de cet intervalle. Cela est utile pour les minuteurs et d’autres scénarios où vous ne mesurez pas la progression en tant que pourcentage de l’ensemble.  
   
 ### <a name="to-increase-the-progress-bar-by-a-fixed-value"></a>Pour augmenter la barre de progression d’une valeur fixe  
   
-1. Définissez les <xref:System.Windows.Forms.ProgressBar> valeurs et <xref:System.Windows.Forms.ProgressBar.Minimum%2A> <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle.  
+1. Définissez les valeurs <xref:System.Windows.Forms.ProgressBar.Minimum%2A> et <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
-2. Affectez à la <xref:System.Windows.Forms.ProgressBar.Step%2A> propriété du contrôle un entier représentant la quantité d’augmentation de la valeur affichée de la barre de progression.  
+2. Affectez à la propriété <xref:System.Windows.Forms.ProgressBar.Step%2A> du contrôle un entier représentant la quantité d’augmentation de la valeur affichée de la barre de progression.  
   
-3. Appelez la <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> méthode pour modifier la valeur affichée par la quantité définie dans la <xref:System.Windows.Forms.ProgressBar.Step%2A> propriété.  
+3. Appelez la méthode <xref:System.Windows.Forms.ProgressBar.PerformStep%2A> pour modifier la valeur affichée par la quantité définie dans la propriété <xref:System.Windows.Forms.ProgressBar.Step%2A>.  
   
      L’exemple de code suivant montre comment une barre de progression peut conserver le nombre de fichiers dans une opération de copie.  
   
-     Dans l’exemple suivant, à mesure que chaque fichier est lu dans la mémoire, la barre de progression et l’étiquette sont mises à jour pour refléter le nombre total de fichiers lus. Dans cet exemple, votre formulaire doit avoir <xref:System.Windows.Forms.Label> un contrôle et <xref:System.Windows.Forms.ProgressBar> un contrôle.  
+     Dans l’exemple suivant, à mesure que chaque fichier est lu dans la mémoire, la barre de progression et l’étiquette sont mises à jour pour refléter le nombre total de fichiers lus. Dans cet exemple, votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.Label> et un contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
     ```vb  
     Public Sub LoadFiles()  
@@ -153,13 +153,13 @@ ms.locfileid: "69956085"
   
 ### <a name="to-increase-the-progress-bar-by-a-dynamic-value"></a>Pour augmenter la barre de progression d’une valeur dynamique  
   
-1. Définissez les <xref:System.Windows.Forms.ProgressBar> valeurs et <xref:System.Windows.Forms.ProgressBar.Minimum%2A> <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle.  
+1. Définissez les valeurs <xref:System.Windows.Forms.ProgressBar.Minimum%2A> et <xref:System.Windows.Forms.ProgressBar.Maximum%2A> du contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
-2. Appelez la <xref:System.Windows.Forms.ProgressBar.Increment%2A> méthode pour modifier la valeur affichée par un entier que vous spécifiez.  
+2. Appelez la méthode <xref:System.Windows.Forms.ProgressBar.Increment%2A> pour modifier la valeur affichée par un entier que vous spécifiez.  
   
      L’exemple de code suivant montre comment une barre de progression peut calculer la quantité d’espace disque qui a été utilisée pendant une opération de copie.  
   
-     Dans l’exemple suivant, à mesure que chaque fichier est écrit sur le disque dur, la barre de progression et l’étiquette sont mises à jour pour refléter la quantité d’espace disque disponible. Dans cet exemple, votre formulaire doit avoir <xref:System.Windows.Forms.Label> un contrôle et <xref:System.Windows.Forms.ProgressBar> un contrôle.  
+     Dans l’exemple suivant, à mesure que chaque fichier est écrit sur le disque dur, la barre de progression et l’étiquette sont mises à jour pour refléter la quantité d’espace disque disponible. Dans cet exemple, votre formulaire doit avoir un contrôle <xref:System.Windows.Forms.Label> et un contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
     ```vb  
     Public Sub ReadFiles()  

@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: ed114cc9a37fff549e8bfc874765252fd18893a9
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3d2d48076fafe44687546ca27e4d8670b81ce433
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345592"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742672"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -113,10 +113,6 @@ Pour les problèmes d’hôte Web non liés à la sécurité, reportez-vous à 
 
 **R :** Définissez la saisie semi-automatique =`true` sur l’opération qui correspond au dernier message de la session, puis définissez la saisie semi-automatique =`false` sur toutes les opérations de service restantes.
 
-**Q :** Où puis-je trouver des réponses aux questions courantes sur MSMQ ?
-
-**R :** Pour plus d’informations sur MSMQ, consultez [Microsoft Message Queuing](https://go.microsoft.com/fwlink/?LinkId=87810).
-
 **Q :** Pourquoi mon service lève-t-il une `ProtocolException` lors de la lecture d’une file d’attente contenant à la fois des messages de session en file d’attente et des messages de datagramme en file d’attente ?
 
 **R :** Il existe une différence fondamentale dans la façon dont les messages de session en file d’attente et les messages de datagramme en file d’attente sont composés. De ce fait, un service conçu pour lire un message de session en file d'attente ne peut pas recevoir de message de datagramme en file d'attente et un service conçu pour lire un message de datagramme en file d'attente ne peut pas recevoir de message de session. La tentative de lire les deux types de messages à partir de la même file d'attente lève l'exception suivante :
@@ -174,7 +170,7 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 6. Ensuite, ajoutez un deuxième composant logiciel enfichable certificats à l’aide des étapes précédentes, mais cette fois, sélectionnez **compte d’ordinateur** , puis cliquez sur **suivant**.
 
-7. Sélectionnez **Ordinateur local**, puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
+7. Sélectionnez **ordinateur local** , puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
 
 **Q :** Lorsque mon service lit à partir d’une file d’attente sur un autre ordinateur en mode groupe de travail, j’obtiens une exception « accès refusé ».
 

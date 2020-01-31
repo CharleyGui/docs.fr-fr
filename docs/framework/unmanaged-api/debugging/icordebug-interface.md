@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 33f431d7-ab1a-494d-8af2-20ab15aba194
 topic_type:
 - apiref
-ms.openlocfilehash: ee6bcbc9f3377735ed289d52afddb6efa755b16d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0ca66f001d04bc86b64e0fe2d1cd37559e4fc633
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73134072"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785116"
 ---
 # <a name="icordebug-interface"></a>ICorDebug, interface
 Fournit des méthodes qui permettent aux développeurs de déboguer des applications dans l’environnement du common language runtime (CLR).  
@@ -31,25 +31,25 @@ Fournit des méthodes qui permettent aux développeurs de déboguer des applicat
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[CanLaunchOrAttach, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-canlaunchorattach-method.md)|Détermine si le lancement d’un nouveau processus ou l’attachement au processus donné est possible dans le contexte de la configuration d’ordinateur et d’exécution actuelle.|  
-|[CreateProcess, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-createprocess-method.md)|Lance un processus et son thread principal sous le contrôle du débogueur.|  
-|[DebugActiveProcess, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-debugactiveprocess-method.md)|Joint le débogueur à un processus existant.|  
-|[EnumerateProcesses, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-enumerateprocesses-method.md)|Obtient un énumérateur pour les processus en cours de débogage.|  
-|[GetProcess, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-getprocess-method.md)|Retourne l’objet « ICorDebugProcess » avec l’ID de processus donné.|  
-|[Initialize, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-initialize-method.md)|Initialise l’objet `ICorDebug`.|  
-|[SetManagedHandler, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-setmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements managés.|  
-|[SetUnmanagedHandler, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-setunmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements non managés.|  
-|[Terminate, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebug-terminate-method.md)|Met fin à l’objet `ICorDebug`.|  
+|[CanLaunchOrAttach, méthode](icordebug-canlaunchorattach-method.md)|Détermine si le lancement d’un nouveau processus ou l’attachement au processus donné est possible dans le contexte de la configuration d’ordinateur et d’exécution actuelle.|  
+|[CreateProcess, méthode](icordebug-createprocess-method.md)|Lance un processus et son thread principal sous le contrôle du débogueur.|  
+|[DebugActiveProcess, méthode](icordebug-debugactiveprocess-method.md)|Joint le débogueur à un processus existant.|  
+|[EnumerateProcesses, méthode](icordebug-enumerateprocesses-method.md)|Obtient un énumérateur pour les processus en cours de débogage.|  
+|[GetProcess, méthode](icordebug-getprocess-method.md)|Retourne l’objet « ICorDebugProcess » avec l’ID de processus donné.|  
+|[Initialize, méthode](icordebug-initialize-method.md)|Initialise l’objet `ICorDebug`.|  
+|[SetManagedHandler, méthode](icordebug-setmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements managés.|  
+|[SetUnmanagedHandler, méthode](icordebug-setunmanagedhandler-method.md)|Spécifie l’objet de gestionnaire d’événements pour les événements non managés.|  
+|[Terminate, méthode](icordebug-terminate-method.md)|Met fin à l’objet `ICorDebug`.|  
   
 ## <a name="remarks"></a>Notes  
- `ICorDebug` représente une boucle de traitement des événements pour un processus du débogueur. Le débogueur doit attendre le rappel [ICorDebugManagedCallback :: ExitProcess](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback-exitprocess-method.md) de tous les processus en cours de débogage avant de libérer cette interface.  
+ `ICorDebug` représente une boucle de traitement des événements pour un processus du débogueur. Le débogueur doit attendre le rappel [ICorDebugManagedCallback :: ExitProcess](icordebugmanagedcallback-exitprocess-method.md) de tous les processus en cours de débogage avant de libérer cette interface.  
   
  L’objet `ICorDebug` est l’objet initial pour contrôler tout le débogage managé. Dans les versions 1,0 et 1,1 de .NET Framework, cet objet était un objet `CoClass` créé à partir de COM. Dans la version 2,0 de .NET Framework, cet objet n’est plus un objet `CoClass`. Elle doit être créée par la fonction [CreateDebuggingInterfaceFromVersion](../../../../docs/framework/unmanaged-api/hosting/createdebugginginterfacefromversion-function.md) , qui prend en charge la version. Cette nouvelle fonction de création permet aux clients d’obtenir une implémentation spécifique de `ICorDebug`, qui émule également une version spécifique de l’API de débogage.  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -60,4 +60,4 @@ Fournit des méthodes qui permettent aux développeurs de déboguer des applicat
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

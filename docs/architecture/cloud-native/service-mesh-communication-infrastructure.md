@@ -3,12 +3,12 @@ title: Infrastructure de communication Service Mesh
 description: En savoir plus sur la façon dont les technologies de maillage de service rationalisent la communication des microservices natives Cloud
 author: robvet
 ms.date: 09/10/2019
-ms.openlocfilehash: a9192bf9f5827d05b2453c796c72e11782f9f911
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 66bc69580cc56efe725683c16a047aeb07e7e840
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771028"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76780935"
 ---
 # <a name="service-mesh-communication-infrastructure"></a>Infrastructure de communication Service Mesh
 
@@ -36,7 +36,7 @@ Un maillage de service gère le trafic, la communication et les problèmes de mi
 
 Dans le chapitre 6, nous explorons en profondeur les technologies de maille de service, y compris une discussion sur son architecture et les implémentations Open source disponibles.
 
-## <a name="summary"></a>Résumé
+## <a name="summary"></a>Récapitulatif
 
 Dans ce chapitre, nous avons abordé les modèles de communication natifs dans le Cloud. Nous avons commencé par examiner comment les clients frontaux communiquent avec les microservices back-end. En cours de route, nous avons parlé des plateformes de passerelle d’API et de la communication en temps réel. Nous avons ensuite vu comment les microservices communiquent avec d’autres services principaux. Nous avons examiné la communication HTTP synchrone et la messagerie asynchrone entre les services. Nous avons abordé gRPC, une technologie à venir dans le monde Cloud-native. Enfin, nous avons introduit une nouvelle technologie en constante évolution, intitulée Service Mesh, qui permet de rationaliser la communication des microservices.
 
@@ -74,4 +74,4 @@ Nous allons ensuite passer aux données distribuées dans les systèmes natifs d
 
 >[!div class="step-by-step"]
 >[Précédent](rest-grpc.md)
->[Suivant](distributed-data.md)
+>[Suivant](Database-per-microservice.md)

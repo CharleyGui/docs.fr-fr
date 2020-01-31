@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: e86fcc72-388d-4009-ab21-8f9c3323e9a3
 topic_type:
 - apiref
-ms.openlocfilehash: 86b2815c6f95c674c49bba7455e8497192bd8bac
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 12d4e63480f03bfad613f30362ddaeaf12b57a88
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73125150"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791048"
 ---
 # <a name="icordebugvariablehomegetargumentindex-method"></a>ICorDebugVariableHome :: GetArgumentIndex, méthode
 
@@ -34,7 +34,7 @@ HRESULT GetArgumentIndex(
 );
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `pArgumentIndex`\
 à Pointeur vers l’index de l’argument.
@@ -43,16 +43,16 @@ HRESULT GetArgumentIndex(
 
 La méthode retourne les valeurs suivantes.
 
-|valeur|Description|
+|Value|Description|
 |-----------|-----------------|
 |`S_OK`|L’appel de méthode a retourné un index d’argument valide.|
-|`E_FAIL`|L’instance [ICorDebugVariableHome](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md) actuelle représente une variable locale.|
+|`E_FAIL`|L’instance [ICorDebugVariableHome](icordebugvariablehome-interface.md) actuelle représente une variable locale.|
 
 ## <a name="remarks"></a>Notes
 
 L’index de l’argument peut être utilisé pour récupérer les métadonnées de cet argument.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -64,4 +64,4 @@ L’index de l’argument peut être utilisé pour récupérer les métadonnées
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugVariableHome, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugvariablehome-interface.md)
+- [ICorDebugVariableHome, interface](icordebugvariablehome-interface.md)

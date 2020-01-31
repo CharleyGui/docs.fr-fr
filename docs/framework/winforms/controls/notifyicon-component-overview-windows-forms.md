@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble du composant NotifyIcon (Windows Forms)
+title: Vue d'ensemble du composant NotifyIcon
 ms.date: 03/30/2017
 f1_keywords:
 - NotifyIcon
@@ -8,12 +8,12 @@ helpviewer_keywords:
 - system tray icons [Windows Forms], about system tray icons
 - system tray icons [Windows Forms], using in Windows Forms
 ms.assetid: 5b9189fa-d4ae-41a6-9b97-eb1f44bb1a69
-ms.openlocfilehash: def109799ddfb25b6f56a4f18d52bb19f62842f5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
+ms.openlocfilehash: 587bf514db853f1122ed16abc05a195985c5ce8d
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65645708"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742128"
 ---
 # <a name="notifyicon-component-overview-windows-forms"></a>Vue d'ensemble du composant NotifyIcon (Windows Forms)
 
@@ -27,7 +27,7 @@ Chaque composant <xref:System.Windows.Forms.NotifyIcon> affiche une seule icône
 
 Vous pouvez associer des info-bulles et des menus contextuels à un <xref:System.Windows.Forms.NotifyIcon> pour aider l'utilisateur.
 
-Vous pouvez afficher des info-bulles pour un <xref:System.Windows.Forms.NotifyIcon> en appelant la méthode <xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A> en spécifiant la durée d'affichage souhaitée pour l'info-bulle. Vous pouvez également spécifier le texte, l'icône et le titre de l'info-bulle avec les propriétés <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>, <xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A> et <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>, respectivement. Vous pouvez aussi associer des info-bulles et des menus contextuels à des composants <xref:System.Windows.Forms.NotifyIcon>. Pour plus d’informations, consultez [vue d’ensemble du composant ToolTip](tooltip-component-overview-windows-forms.md) et [vue d’ensemble du composant ContextMenu](contextmenu-component-overview-windows-forms.md).
+Vous pouvez afficher des info-bulles pour un <xref:System.Windows.Forms.NotifyIcon> en appelant la méthode <xref:System.Windows.Forms.NotifyIcon.ShowBalloonTip%2A> en spécifiant la durée d'affichage souhaitée pour l'info-bulle. Vous pouvez également spécifier le texte, l'icône et le titre de l'info-bulle avec les propriétés <xref:System.Windows.Forms.NotifyIcon.BalloonTipText%2A>, <xref:System.Windows.Forms.NotifyIcon.BalloonTipIcon%2A> et <xref:System.Windows.Forms.NotifyIcon.BalloonTipTitle%2A>, respectivement. Vous pouvez aussi associer des info-bulles et des menus contextuels à des composants <xref:System.Windows.Forms.NotifyIcon>. Pour plus d’informations, consultez [vue d’ensemble des composants ToolTip](tooltip-component-overview-windows-forms.md) et [vue d’ensemble du composant ContextMenu](contextmenu-component-overview-windows-forms.md).
 
 ## <a name="see-also"></a>Voir aussi
 

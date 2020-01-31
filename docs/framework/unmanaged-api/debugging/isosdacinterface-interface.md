@@ -15,12 +15,12 @@ topic_type:
 - apiref
 author: cshung
 ms.author: andrewau
-ms.openlocfilehash: ccaf479fc4fb90007b4999e95ee03bdd0529321e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 94349a3f7b18c8ce29bb3a71cb9d10ee4eac8036
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61922146"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76790480"
 ---
 # <a name="isosdacinterface-interface"></a>ISOSDacInterface, interface
 
@@ -32,22 +32,22 @@ Fournit des méthodes d’assistance pour accéder aux données à partir de `SO
 
 | Méthode                                                                                                               | Description                                                                                                                   |
 | -------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| [GetMethodDescData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescdata-method.md) | Obtient les données pour le pointeur MethodDesc donné. |
-| [GetMethodDescPtrFromIP](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmethoddescptrfromip-method.md) | Récupère le pointeur de la MethodDesc correspondant de la méthode contenant l’adresse d’instruction natif donné. |
-| [GetModuleData](../../../../docs/framework/unmanaged-api/debugging/isosdacinterface-getmoduledata-method.md)| Extrait les données correspondant au module chargé à une adresse donnée. |
+| [GetMethodDescData](isosdacinterface-getmethoddescdata-method.md) | Obtient les données pour le pointeur MethodDesc donné. |
+| [GetMethodDescPtrFromIP](isosdacinterface-getmethoddescptrfromip-method.md) | Récupère le pointeur de l’MethodDesc correspondant à la méthode contenant l’adresse d’instruction Native donnée. |
+| [GetModuleData](isosdacinterface-getmoduledata-method.md)| Récupère les données correspondant au module chargé à une adresse donnée. |
 
 ## <a name="remarks"></a>Notes
 
-Cette interface réside dans le runtime et n’est pas exposée par le biais d’en-têtes ou les fichiers de bibliothèque. Toutefois, il est une interface COM qui dérive de `IUnknown` avec le GUID `436f00f2-b42a-4b9f-870c-e73db66ae930` qui peuvent être obtenues via les mécanismes COM habituels.
+Cette interface se trouve à l’intérieur du runtime et n’est pas exposée via des en-têtes ou des fichiers de bibliothèque. Toutefois, il s’agit d’une interface COM qui dérive de `IUnknown` avec GUID `436f00f2-b42a-4b9f-870c-e73db66ae930` qui peuvent être obtenus par le biais des mécanismes COM habituels.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
-**En-tête :** Aucun.  
-**Bibliothèque :** Aucun.  
+**En-tête :** None  
+**Bibliothèque :** None  
 **Versions du .NET Framework :** [!INCLUDE[net_current_v47plus](../../../../includes/net-current-v47plus.md)]
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Débogage](index.md)
+- [Interfaces de débogage](debugging-interfaces.md)

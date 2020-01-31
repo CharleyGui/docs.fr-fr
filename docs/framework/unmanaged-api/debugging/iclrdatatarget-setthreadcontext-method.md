@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 103c8502-81fe-40d7-9c1e-9008d8fb19e1
 topic_type:
 - apiref
-ms.openlocfilehash: cceafc8358ce2b0eafa62a3855c4eb1e96adae11
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: cdf5776e1ac9907e63aba0e0d400e48aff683d51
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73113315"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76785301"
 ---
 # <a name="iclrdatatargetsetthreadcontext-method"></a>ICLRDataTarget::SetThreadContext, méthode
 Définit le contexte actuel du thread spécifié dans le processus cible. Cette méthode est appelée par les services d’accès aux données common language runtime (CLR).  
@@ -36,7 +36,7 @@ HRESULT SetThreadContext (
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `threadID`  
  dans Identificateur de système d’exploitation d’un thread dans le processus cible.  
   
@@ -51,7 +51,7 @@ HRESULT SetThreadContext (
 ## <a name="remarks"></a>Notes  
  Cette méthode est implémentée par le writer de l'application de débogage.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** ClrData. idl, ClrData. h  
@@ -62,4 +62,4 @@ HRESULT SetThreadContext (
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICLRDataTarget, interface](../../../../docs/framework/unmanaged-api/debugging/iclrdatatarget-interface.md)
+- [ICLRDataTarget, interface](iclrdatatarget-interface.md)

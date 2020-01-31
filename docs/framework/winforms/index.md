@@ -1,20 +1,21 @@
 ---
 title: Windows Forms
+titleSuffix: ''
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms
 - user interface
 - user interface [Windows Forms], forms
 ms.assetid: 627df1e9-b254-41af-bbac-9a4f02810c54
-ms.openlocfilehash: 00e359e7c2440b6d88f2c42fd0267fc1f12b7bb7
-ms.sourcegitcommit: c7a7e1468bf0fa7f7065de951d60dfc8d5ba89f5
+ms.openlocfilehash: cdd3a71b406f1f0ae2afa1e1b3982c27f4db21a4
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/14/2019
-ms.locfileid: "65583426"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739183"
 ---
 # <a name="windows-forms"></a>Windows Forms
-Les formulaires étant l'unité de base de votre application, il est essentiel de réfléchir à leur fonction et à leur conception. Si l'on y réfléchit bien, un formulaire est une feuille blanche que vous, en tant que développeur, améliorez avec des contrôles pour créer une interface utilisateur et avec du code pour manipuler des données. À cette fin, Visual Studio vous offre un environnement de développement intégré (IDE) pour vous aider à écrire du code, ainsi que d’un contrôle rich définie écrit avec le .NET Framework. En associant les fonctionnalités de ces contrôles à votre code, vous pouvez facilement et rapidement développer les solutions dont vous avez besoin.  
+Les formulaires étant l'unité de base de votre application, il est essentiel de réfléchir à leur fonction et à leur conception. Si l'on y réfléchit bien, un formulaire est une feuille blanche que vous, en tant que développeur, améliorez avec des contrôles pour créer une interface utilisateur et avec du code pour manipuler des données. À cette fin, Visual Studio vous fournit un environnement de développement intégré (IDE) pour vous aider à écrire du code, ainsi qu’un ensemble de contrôles enrichis écrit avec le .NET Framework. En associant les fonctionnalités de ces contrôles à votre code, vous pouvez facilement et rapidement développer les solutions dont vous avez besoin.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Bien démarrer avec Windows Forms](getting-started-with-windows-forms.md)  
@@ -24,7 +25,7 @@ Les formulaires étant l'unité de base de votre application, il est essentiel d
  Fournit des liens vers des rubriques expliquant comment améliorer vos Windows Forms avec un large éventail de fonctionnalités.  
   
 ## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](./controls/index.md)  
+ [Contrôles Windows Forms](./controls/index.md)  
  Contient des liens vers des rubriques décrivant les contrôles Windows Forms et expliquant comment les implémenter.  
   
  [Liaison de données Windows Forms](windows-forms-data-binding.md)  
@@ -45,7 +46,7 @@ Les formulaires étant l'unité de base de votre application, il est essentiel d
  [Applications Windows Forms](/visualstudio/debugger/debugging-preparation-windows-forms-applications)  
  Présente le processus de débogage des applications créées avec le modèle de projet Application Windows et comment modifier les configurations Debug et Release.  
   
- [Premier aperçu au moment du déploiement dans Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components)  
+ [Premier aperçu du déploiement dans Visual Studio](/visualstudio/deployment/deploying-applications-services-and-components)  
  Décrit le processus par lequel vous distribuez une application ou un composant terminé pour l'installer sur d'autres ordinateurs.  
   
  [Génération d'applications console](../../standard/building-console-apps.md)  

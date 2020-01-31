@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble des fenêtres WPF
+title: Vue d’ensemble de Windows
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -28,12 +28,12 @@ helpviewer_keywords:
 - modal dialog boxes [WPF]
 - displaying XAML pages [WPF]
 ms.assetid: 737d04ec-8861-46c3-8d44-fa11d3528d23
-ms.openlocfilehash: 3bc31391d30b0724a480152aa7f1d0dc93380b8c
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 17582192fabf85777bba250f6f53047a84f264b9
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636404"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742362"
 ---
 # <a name="wpf-windows-overview"></a>Vue d'ensemble des fenêtres WPF
 Les utilisateurs interagissent avec les applications autonomes de Windows Presentation Foundation (WPF) par le biais de Windows. L’objectif principal d’une fenêtre est d’héberger du contenu qui permet aux utilisateurs de visualiser les données et d’interagir avec celles-ci. Les applications WPF autonomes fournissent leurs propres fenêtres à l’aide de la classe <xref:System.Windows.Window>. Cette rubrique présente <xref:System.Windows.Window> avant de couvrir les notions de base de la création et de la gestion de Windows dans des applications autonomes.  

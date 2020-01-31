@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 0c48f764-3c64-4602-b2f4-4ffc60eb2c65
 topic_type:
 - apiref
-ms.openlocfilehash: 5aeea11b7e61869968aafe3425e27d6004f495ea
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: ba138e79e0d6fb6f9c5e9c3efe3466f3c88cccae
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124072"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76782621"
 ---
 # <a name="icordebugframe-interface"></a>ICorDebugFrame, interface
 
@@ -29,21 +29,21 @@ Représente un frame sur la pile en cours.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[CreateStepper, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-createstepper-method.md)|Obtient un ICorDebugStepper pour exécuter des opérations pas à pas relatives à cette `ICorDebugFrame`.|  
-|[GetCallee, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcallee-method.md)|Obtient un pointeur vers le `ICorDebugFrame` dans la chaîne actuelle appelée par ce frame, ou retourne null s’il s’agit du frame le plus profond dans la chaîne.|  
-|[GetCaller, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcaller-method.md)|Obtient un pointeur vers le `ICorDebugFrame` dans la chaîne actuelle qui a appelé ce frame, ou retourne la valeur null s’il s’agit du frame le plus à l’extérieur dans la chaîne.|  
-|[GetChain, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getchain-method.md)|Obtient un pointeur vers l’ICorDebugChain auquel ce `ICorDebugFrame` fait partie.|  
-|[GetCode, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getcode-method.md)|Obtient un pointeur vers le ICorDebugCode associé à ce frame de pile.|  
-|[GetFunction, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getfunction-method.md)|Obtient un pointeur vers le ICorDebugFunction qui contient le code associé à ce frame de pile.|  
-|[GetFunctionToken, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getfunctiontoken-method.md)|Obtient le jeton de métadonnées pour la fonction qui contient le code associé à ce frame de pile.|  
-|[GetStackRange, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugframe-getstackrange-method.md)|Obtient la plage d’adresses absolues du frame de pile représenté par ce `ICorDebugFrame`.|  
+|[CreateStepper, méthode](icordebugframe-createstepper-method.md)|Obtient un ICorDebugStepper pour exécuter des opérations pas à pas relatives à cette `ICorDebugFrame`.|  
+|[GetCallee, méthode](icordebugframe-getcallee-method.md)|Obtient un pointeur vers le `ICorDebugFrame` dans la chaîne actuelle appelée par ce frame, ou retourne null s’il s’agit du frame le plus profond dans la chaîne.|  
+|[GetCaller, méthode](icordebugframe-getcaller-method.md)|Obtient un pointeur vers le `ICorDebugFrame` dans la chaîne actuelle qui a appelé ce frame, ou retourne la valeur null s’il s’agit du frame le plus à l’extérieur dans la chaîne.|  
+|[GetChain, méthode](icordebugframe-getchain-method.md)|Obtient un pointeur vers l’ICorDebugChain auquel ce `ICorDebugFrame` fait partie.|  
+|[GetCode, méthode](icordebugframe-getcode-method.md)|Obtient un pointeur vers le ICorDebugCode associé à ce frame de pile.|  
+|[GetFunction, méthode](icordebugframe-getfunction-method.md)|Obtient un pointeur vers le ICorDebugFunction qui contient le code associé à ce frame de pile.|  
+|[GetFunctionToken, méthode](icordebugframe-getfunctiontoken-method.md)|Obtient le jeton de métadonnées pour la fonction qui contient le code associé à ce frame de pile.|  
+|[GetStackRange, méthode](icordebugframe-getstackrange-method.md)|Obtient la plage d’adresses absolues du frame de pile représenté par ce `ICorDebugFrame`.|  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -54,4 +54,4 @@ Représente un frame sur la pile en cours.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

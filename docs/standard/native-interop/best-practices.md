@@ -2,12 +2,12 @@
 title: Meilleures pratiques pour l’interopérabilité native – .NET
 description: Découvrez les meilleures pratiques pour interagir avec des composants natifs en .NET.
 ms.date: 01/18/2019
-ms.openlocfilehash: 7fe0dd0545f8ba800174f8be18bb2f11f39463f9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9486256b815856c0c283f5fe231be3d35d6e8f00
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706398"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76742753"
 ---
 # <a name="native-interoperability-best-practices"></a>Meilleures pratiques pour l’interopérabilité native
 
@@ -17,12 +17,12 @@ ms.locfileid: "75706398"
 
 Les instructions de cette section s’appliquent à tous les scénarios d’interopérabilité.
 
-- **✔️ À FAIRE :** utilisez les mêmes noms et la même mise en majuscules pour vos méthodes que pour la méthode native que vous souhaitez appeler.
-- **✔️ À ENVISAGER :** utiliser les mêmes noms et la même mise en majuscules pour les valeurs constantes.
-- **✔️ À FAIRE :** utilisez les types .NET les plus proches d’une correspondance avec le type natif. Par exemple, en C#, utilisez `uint` lorsque le type natif est `unsigned int`.
-- **✔️ À FAIRE :** n’utilisez les attributs `[In]` et `[Out]` que si le comportement souhaité diffère du comportement par défaut.
-- **✔️ À ENVISAGER :** utiliser <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pour regrouper les mémoires tampons du tableau natif.
-- **✔️ À ENVISAGER :** encapsuler les déclarations P/Invoke dans une classe portant le même nom et utilisant la même mise en majuscules que votre bibliothèque native.
+- ✔️ Utilisez le même nom et la même mise en majuscules pour vos méthodes et paramètres que la méthode Native que vous souhaitez appeler.
+- ✔️ envisagez d’utiliser le même nom et la même mise en majuscules pour les valeurs constantes.
+- ✔️ Utilisez les types .NET qui se mappent le plus près du type natif. Par exemple, en C#, utilisez `uint` lorsque le type natif est `unsigned int`.
+- ✔️ N’utilisez que des attributs `[In]` et `[Out]` lorsque le comportement que vous recherchez diffère du comportement par défaut.
+- ✔️ envisagez d’utiliser <xref:System.Buffers.ArrayPool%601?displayProperty=nameWithType> pour regrouper vos mémoires tampons de tableau natives.
+- ✔️ Encapsulez vos déclarations P/Invoke dans une classe portant le même nom et en respectant la casse que votre bibliothèque native.
   - Vos attributs `[DllImport]` pourront ainsi utiliser la fonctionnalité `nameof` du langage C# pour transmettre le nom de la bibliothèque native et vérifier qu’il ne comporte pas d’erreur.
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
@@ -40,15 +40,15 @@ Lorsque le jeu de caractères est Unicode ou que l’argument est explicitement 
 
 N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous souhaitez explicitement un traitement ANSI de vos chaînes.
 
-**❌ n’utilisez pas** de paramètres de `[Out] string`. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
+❌ n’utilisez pas de paramètres de `[Out] string`. Les paramètres de chaînes passés en valeur avec l’attribut `[Out]` risquent de déstabiliser le runtime s’il s’agit de chaînes centralisées. Pour plus d’informations sur la centralisation des chaînes, voir la documentation de <xref:System.String.Intern%2A?displayProperty=nameWithType>.
 
-**❌ éviter** les paramètres de `StringBuilder`. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
+❌ éviter les paramètres de `StringBuilder`. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
 
 1. Crée un SB de la capacité souhaitée (alloue la capacité gérée) **{1}**
 2. Invoquer
-   1. Alloue une mémoire tampon native **{2}**  
-   2. Copie le contenu si `[In]` _(valeur par défaut pour un paramètre `StringBuilder`)_  
-   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(également la valeur par défaut pour `StringBuilder`)_ .  
+   1. Alloue une mémoire tampon native **{2}**
+   2. Copie le contenu si `[In]` _(valeur par défaut pour un paramètre `StringBuilder`)_
+   3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(également la valeur par défaut pour `StringBuilder`)_ .
 3. `ToString()` alloue encore un autre tableau managé **{4}**
 
 Soit *{4}* allocations pour extraire une chaîne du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
@@ -57,17 +57,15 @@ L’autre problème de `StringBuilder` est qu’il copie toujours la sauvegarde 
 
 Si vous *utilisez*`StringBuilder`, le dernier piège est que la capacité n’inclut **pas** de valeur Null masquée, qui est toujours prise en compte dans l’interopérabilité. Il est courant de se tromper de ce point de vue, car la plupart des API demandent la taille de la mémoire tampon valeur Null *incluse*. Il en résulte parfois des allocations gaspillées/inutiles. En outre, cet écueil empêche le runtime d’optimiser le marshaling `StringBuilder` afin de réduire les copies.
 
-**✔️ À ENVISAGER :** utiliser des `char[]` à partir d’un `ArrayPool`.
+✔️ envisagez d’utiliser `char[]`s à partir d’un `ArrayPool`.
 
 Pour plus d’informations sur le marshaling des chaînes, consultez [Marshaling par défaut pour les chaînes](../../framework/interop/default-marshaling-for-strings.md) et [Personnaliser le marshaling des chaînes](customize-parameter-marshaling.md#customizing-string-parameters).
 
-> __Pour Windows uniquement__  
-> Pour les chaînes `[Out]`, le CLR utilisera `CoTaskMemFree` par défaut pour libérer les chaînes ou `SysStringFree` pour les chaînes marquées `UnmanagedType.BSTR`.  
-**Pour la plupart des API avec mémoire tampon de chaîne de sortie :**  
-> Le nombre de caractères transmis doit inclure la valeur Null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.  
+> __Spécifique à Windows__ Pour les chaînes de `[Out]`, le CLR utilise `CoTaskMemFree` par défaut pour libérer des chaînes ou `SysStringFree` pour les chaînes marquées comme `UnmanagedType.BSTR`.
+> **Pour la plupart des API avec une mémoire tampon de chaîne de sortie :** Le nombre de caractères transmis doit inclure la valeur null. Si la valeur de retour est inférieure au nombre de caractères transmis, c’est le signe que l’appel a réussi et que la valeur correspond au nombre de caractères *sans* la valeur Null de fin. Sinon, le nombre représente la taille requise de la mémoire tampon caractère Null *inclus*.
 >
 > - Pass in 5, obtenir 4 : la chaîne comporte 4 caractères avec une valeur null de fin.
-> - Pass in 5, obtenir 6 : la chaîne comporte 5 caractères, nécessite une mémoire tampon de 6 caractères pour contenir la valeur null.  
+> - Pass in 5, obtenir 6 : la chaîne comporte 5 caractères, nécessite une mémoire tampon de 6 caractères pour contenir la valeur null.
 > [Types de données Windows pour les chaînes](/windows/desktop/Intl/windows-data-types-for-strings)
 
 ## <a name="boolean-parameters-and-fields"></a>Paramètres et champs booléens
@@ -82,7 +80,7 @@ Les GUID sont directement utilisables dans les signatures. De nombreuses API Win
 |------|-------------|
 | `KNOWNFOLDERID` | `REFKNOWNFOLDERID` |
 
-**❌ ne pas** Utilisez `[MarshalAs(UnmanagedType.LPStruct)]` pour toute autre valeur que `ref` paramètres GUID.
+❌ n’utilisez pas `[MarshalAs(UnmanagedType.LPStruct)]` pour tous les paramètres du GUID `ref`.
 
 ## <a name="blittable-types"></a>Types blittables
 
@@ -120,11 +118,11 @@ Une `string` est blittable si elle n’est pas contenue dans un autre type et qu
 
 Pour savoir si un type est blittable, essayez de créer un `GCHandle` épinglé. Si le type n’est pas une chaîne ou n’est pas considéré comme blittable, `GCHandle.Alloc` lèvera une `ArgumentException`.
 
-**✔️ À FAIRE :** rendez vos structures blittables dans la mesure du possible.
+✔️ faire en sorte que vos structures soient blittables si possible.
 
 Pour plus d'informations, consultez .
 
-- [Types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)  
+- [Types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)
 - [Marshaling de types](type-marshaling.md)
 
 ## <a name="keeping-managed-objects-alive"></a>Maintenir actifs les objets gérés
@@ -133,7 +131,7 @@ Pour plus d'informations, consultez .
 
 [`HandleRef`](xref:System.Runtime.InteropServices.HandleRef) permet au marshaleur de maintenir un objet actif pendant la durée de P/Invoke. Il peut être utilisé à la place de `IntPtr` dans les signatures de méthode. `SafeHandle` remplace cette classe et doit être utilisé à la place.
 
-[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) permet d’épingler un objet géré et d’y associer le pointeur natif. En voici le modèle de base :  
+[`GCHandle`](xref:System.Runtime.InteropServices.GCHandle) permet d’épingler un objet géré et d’y associer le pointeur natif. En voici le modèle de base :
 
 ```csharp
 GCHandle handle = GCHandle.Alloc(obj, GCHandleType.Pinned);
@@ -215,9 +213,9 @@ Les structs blittables sont beaucoup plus performants, car ils sont directement 
 
 Les pointeurs vers des structs dans les définitions doivent être passés en `ref` ou utiliser `unsafe` et `*`.
 
-**✔️ À FAIRE :** faites correspondre le struct managé aussi fidèlement que possible à la forme et aux noms utilisés dans l’en-tête ou dans la documentation officielle de la plateforme.
+✔️ Faites correspondre le struct managé le plus fidèlement possible à la forme et aux noms utilisés dans la documentation ou l’en-tête officiel de la plateforme.
 
-**✔️ À FAIRE :** utilisez le `sizeof()` C# au lieu de `Marshal.SizeOf<MyStruct>()` pour les structures blittables afin d’améliorer les performances.
+✔️ Utilisez le `sizeof()` C# au lieu de `Marshal.SizeOf<MyStruct>()` pour les structures blittable afin d’améliorer les performances.
 
 Un tableau comme `INT_PTR Reserved1[2]` doit être marshalé en deux champs `IntPtr`, `Reserved1a` et `Reserved1b`. Lorsque le tableau natif est un type primitif, il est possible d’utiliser le mot clé `fixed` pour que le code soit un peu plus propre. Par exemple, `SYSTEM_PROCESS_INFORMATION` se présente ainsi dans l’en-tête natif :
 

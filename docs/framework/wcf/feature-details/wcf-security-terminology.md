@@ -6,12 +6,12 @@ helpviewer_keywords:
 - security glossary [WCF]
 - security terms [WCF]
 ms.assetid: 68dde024-8e51-40ba-804f-ec52d85e9ca9
-ms.openlocfilehash: e1194a8e340504ce02c0a5daec7074fc34d962f3
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 6751513b72f732bd7392de11a203467a9ead1bce
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69951634"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743346"
 ---
 # <a name="wcf-security-terminology"></a>Terminologie relative à la sécurité dans WCF
 La terminologie utilisée pour aborder la sécurité peut vous sembler peu familière. Cette rubrique explique rapidement certains des termes relatifs à la sécurité, mais ne fournit pas d'informations complètes pour chaque élément.  
@@ -19,7 +19,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Pour plus d’informations sur les termes utilisés dans la documentation de Windows Communication Foundation (WCF), consultez [concepts fondamentaux du Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md).  
   
  liste de contrôle d'accès (ACL, Access Control List)  
- Liste des protections de sécurité qui s'appliquent à un objet. (Un objet peut être un fichier, un processus, un événement ou tout autre objet doté d'un descripteur de sécurité.) Une entrée dans une liste de contrôle d'accès (ACL) est une entrée de contrôle d'accès (ACE). Il y a deux types de listes ACL : discrétionnaire et système.  
+ Liste des protections de sécurité qui s'appliquent à un objet. (Un objet peut être un fichier, un processus, un événement ou tout autre ayant un descripteur de sécurité.) Une entrée dans une liste de contrôle d’accès (ACL) est une entrée de contrôle d’accès (ACE). Il y a deux types de listes ACL : discrétionnaire et système.  
   
  authentification  
  Processus de vérification qu'un utilisateur, ordinateur, service, ou processus est celui ou ce qu'il prétend être.  
@@ -33,7 +33,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Hiérarchie d'autorités de certification  
  Une hiérarchie d'autorités de certification contient plusieurs CA. Il est organisé de manière à ce que chaque autorité de certification soit certifiée par une autre autorité de certification à un niveau supérieur de la hiérarchie jusqu’à ce que le haut de la hiérarchie, également appelé *autorité racine*, soit atteint.  
   
- certificate  
+ certificat  
  Déclaration signée numériquement qui contient des informations à propos d'une entité et la clé publique de l'entité, et lie donc ces deux renseignements ensemble. Un certificat est publié par une organisation approuvée (ou entité), appelée autorité de certification, après que l'autorité a vérifié que l'entité est qui elle prétend être.  
   
  Les certificats peuvent contenir des types différents de données. Par exemple, un certificat X.509 inclut le format du certificat, le numéro de série du certificat, l'algorithme utilisé pour signer le certificat, le nom de l'autorité de certification qui a publié le certificat, le nom et la clé publique de l'entité qui demande le certificat, et la signature de l'autorité de certification.  
@@ -41,13 +41,13 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  magasin de certificats  
  En général, magasin permanent dans lequel les certificats, les listes de révocation de certificats (CRL) et les listes de certificats de confiance (CTL) sont stockés. Toutefois, il est possible de créer et d'ouvrir un magasin de certificats en mémoire uniquement lors de l'utilisation de certificats qui ne doivent pas nécessairement être stockés de façon permanente.  
   
- claims  
+ revendications  
  Informations passées d'une entité à une autre et utilisées pour établir l'identité de l'expéditeur. Par exemple, un nom d'utilisateur et un jeton de mot de passe, ou un certificat X.509.  
   
  certificat de client  
  Fait référence à un certificat utilisé pour l’authentification du client, telle que l’authentification d’un navigateur Web sur un serveur web. Lorsqu'un client de navigateur Web essaie d'accéder à un serveur Web sécurisé, le client envoie son certificat au serveur pour lui permettre de vérifier son identité.  
   
- informations d'identification  
+ credentials  
  Données d'ouverture de session qu'un principal de sécurité utilise pour établir sa propre identité, telles qu'un mot de passe, ou un ticket de protocole Kerberos. Les informations d'identification sont utilisées pour contrôler l'accès aux ressources.  
   
  données condensées  
@@ -74,10 +74,10 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  autorité de sécurité locale (Local Security Authority ou LSA)  
  Sous-système protégé qui authentifie des utilisateurs et ouvre une session sur le système local. L'autorité de sécurité locale conserve également des informations à propos de tous les aspects de la sécurité locale sur un système, collectivement connus comme la stratégie de sécurité locale du système.  
   
- Par négociation  
+ Negotiate  
  Fournisseur de prise en charge de la sécurité (SSP) qui agit comme une couche d'application entre le SSPI (Security Support Provider Interface) et d'autres SSP. Lorsqu'une application appelle un SSPI à se connecter à un réseau, il peut spécifier un SSP pour traiter la demande. Si l'application spécifie `Negotiate`, `Negotiate` analyse la demande et choisit le meilleur SSP pour gérer la demande selon la stratégie de sécurité configurée par client.  
   
- nonce  
+ valeur à usage unique  
  Valeur générée aléatoirement utilisée pour lutter contre les attaques de « lecture ».  
   
  non répudiation  
@@ -89,16 +89,16 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  PKCS #7  
  Norme de syntaxe de message de chiffrement. Syntaxe générale des données auxquelles le chiffrement peut être appliqué, telles que les signatures numériques et le chiffrement. Elle fournit également la syntaxe pour diffuser au message des certificats ou des listes de révocation de certificats et d'autres attributs de message, tels que les horodatages.  
   
- texte en clair  
+ texte brut  
  Message non chiffré. Les messages en texte clair sont parfois appelés messages en *texte clair* .  
   
- privilège  
+ privilege  
  Droit d'un utilisateur à exécuter différentes opérations relatives au système, telles que l'arrêt du système, le chargement de pilotes de périphériques, ou la modification de l'heure système. Le jeton d'accès d'un utilisateur contient une liste des privilèges détenus par l'utilisateur ou le groupe d'utilisateurs.  
   
  clé privée  
  Moitié secrète d'une paire de clés utilisée dans un algorithme de clé publique. Les clés privées sont utilisées en général pour chiffrer une clé de session symétrique, signer numériquement un message ou déchiffrer un message qui a été chiffré avec la clé publique correspondante. Consultez également « clé publique ».  
   
- processus  
+ SAP  
  Contexte de sécurité dans lequel une application s'exécute. En général, le contexte de sécurité est associé à un utilisateur, donc toutes les applications qui s'exécutent dans un processus donné récupèrent les autorisations et les privilèges de l'utilisateur à qui elles appartiennent.  
   
  paire de clés publique/privée  
@@ -120,13 +120,13 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Autorité de certification en haut d'une hiérarchie d'autorités de certification. L'autorité racine certifie les autorités de certification dans le niveau suivant de la hiérarchie.  
   
  algorithme de hachage sécurisé (Secure Hash Algorithm ou SHA)  
- Algorithme de hachage qui génère un condensat du message. L'algorithme de hachage est utilisé avec l'algorithme de signature numérique (DSA) dans la norme de signature numérique (DSS), entre autres. Il y a quatre variétés d'algorithmes SHA : SHA-1, SHA-256-, SHA-384 et SHA-512. SHA-1, SHA-256, SHA-384 et SHA-512. SHA-1 génère un condensat de message en 160 bits. SHA-256, SHA-384 et SHA-512 génèrent respectivement des condensats du message en 256, 384 et 512 bits. L'algorithme SHA a été développé par le National Institute of Standards and Technology (NIST) et par la National Security Agency (NSA).  
+ Algorithme de hachage qui génère un condensat du message. L'algorithme de hachage est utilisé avec l'algorithme de signature numérique (DSA) dans la norme de signature numérique (DSS), entre autres. Il existe quatre types de SHA : SHA-1, SHA-256, SHA-384 et SHA-512. SHA-1 génère un condensat de message en 160 bits. SHA-256, SHA-384 et SHA-512 génèrent respectivement des condensats du message en 256, 384 et 512 bits. L'algorithme SHA a été développé par le National Institute of Standards and Technology (NIST) et par la National Security Agency (NSA).  
   
  SSL (Secure Sockets Layer)  
  Protocole pour les communications réseau sécurisées à l'aide d'une combinaison de technologies de clés publique et secrète.  
   
  contexte de sécurité  
- Attributs ou règles de sécurité actuellement en vigueur. Par exemple, l'utilisateur actuel connecté à l'ordinateur ou le code confidentiel entré par l'utilisateur d'une carte à puce. Pour le SSPI, un contexte de sécurité est une structure de données opaque qui contient des données de sécurité pertinentes à une connexion, telles qu'une clé de session ou une indication de la durée de la session.  
+ Les attributs ou règles de sécurité qui sont actuellement en vigueur. Par exemple, l'utilisateur actuel connecté à l'ordinateur ou le code confidentiel entré par l'utilisateur d'une carte à puce. Pour le SSPI, un contexte de sécurité est une structure de données opaque qui contient des données de sécurité pertinentes à une connexion, telles qu'une clé de session ou une indication de la durée de la session.  
   
  principal de sécurité  
  Entité reconnue par le système de sécurité. Les entités peuvent inclure des utilisateurs humains ainsi que des processus autonomes.  
@@ -173,7 +173,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  Logiciel qui décide si un fichier donné est approuvé. Cette décision est basée sur le certificat associé au fichier.  
   
  nom d'utilisateur principal (User Principal Name ou UPN)  
- Nom de compte d’utilisateur (parfois appelé *nom d’ouverture de session*de l’utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d’utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le someone@example.com suivant: (comme pour une adresse de messagerie).  
+ Nom de compte d’utilisateur (parfois appelé *nom d’ouverture de session*de l’utilisateur) et nom de domaine identifiant le domaine dans lequel se trouve le compte d’utilisateur. Il s'agit de la méthode de connexion standard à un domaine Windows. Le format est le suivant : someone@example.com (comme pour une adresse de messagerie).  
   
 > [!NOTE]
 > En plus du formulaire UPN standard, WCF accepte les UPN dans un format de niveau supérieur, par exemple cohowinery. com\someone.  
@@ -185,4 +185,4 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
 
 - [Concepts fondamentaux de Windows Communication Foundation](../../../../docs/framework/wcf/fundamental-concepts.md)
 - [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Modèle de sécurité pour Windows Server App Fabric](https://go.microsoft.com/fwlink/?LinkID=201279&clcid=0x409)
+- [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

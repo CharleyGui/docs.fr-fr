@@ -1,19 +1,20 @@
 ---
-title: Déploiement d'une application WPF (WPF)
+title: Déployer une application
 ms.date: 03/30/2017
 helpviewer_keywords:
 - WPF applications [WPF], deployment
 - deployment [WPF], applications
 ms.assetid: 12cadca0-b32c-4064-9a56-e6a306dcc76d
-ms.openlocfilehash: d67919ba38c2e306672966ddc2f62140ef92b638
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 9d4b7dd0464960441410d8ff2a196f0912354e5f
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636300"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741942"
 ---
-# <a name="deploying-a-wpf-application-wpf"></a>Déploiement d'une application WPF (WPF)
-Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. Windows et le .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application WPF dépend du type d’application. Cette rubrique fournit une brève présentation de chaque technologie de déploiement et explique comment elles sont utilisées conjointement avec les exigences de déploiement de chaque type d’application WPF.  
+# <a name="deploy-a-wpf-application"></a>Déployer une application WPF
+
+Une fois les applications Windows Presentation Foundation (WPF) générées, elles doivent être déployées. Windows et le .NET Framework incluent plusieurs technologies de déploiement. La technologie de déploiement utilisée pour déployer une application WPF dépend du type d’application. Cette rubrique fournit une brève présentation de chaque technologie de déploiement et explique comment elles sont utilisées conjointement avec les exigences de déploiement de chaque type d’application WPF.
 
 <a name="Deployment_Technologies"></a>   
 ## <a name="deployment-technologies"></a>Technologies de déploiement  

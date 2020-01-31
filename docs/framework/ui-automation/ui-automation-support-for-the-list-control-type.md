@@ -6,12 +6,12 @@ helpviewer_keywords:
 - List control type
 - UI Automation, List control type
 ms.assetid: 0e959fcb-50f2-413b-948d-7167d279bc11
-ms.openlocfilehash: d870452348f8837ec6773fc066ed52844f7acccd
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 17c0116ba6610ef28e873696bbf3162175bc0601
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741612"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778620"
 ---
 # <a name="ui-automation-support-for-the-list-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle List
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741612"
   
  Le type de contrôle List offre un moyen d’organiser un groupe plat ou des groupes d’éléments et permet à un utilisateur de sélectionner un ou plusieurs de ces éléments. Le type de contrôle List présente une petite restriction quant aux types d’éléments enfants qu’il peut contenir. Les fournisseurs UI Automation peuvent de ce fait prendre en charge un élément bien connu pour les conteneurs de sélection.  
   
- Les spécifications [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dans les sections suivantes s’appliquent à tous les contrôles qui implémentent le type de contrôle List, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)]. Les contrôles de conteneur List constituent un exemple de contrôles qui implémentent le type de contrôle List.  
+ Les spécifications [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dans les sections suivantes s’appliquent à tous les contrôles qui implémentent le type de contrôle List, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms. Les contrôles de conteneur List constituent un exemple de contrôles qui implémentent le type de contrôle List.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  
@@ -71,7 +71,7 @@ Un contrôle list ne doit pas contenir d’éléments ayant une relation hiérar
   
 <a name="Required_UI_Automation_Control_Patterns"></a>   
 ## <a name="required-ui-automation-control-patterns-and-properties"></a>Modèles de contrôle et propriétés UI Automation requis  
- Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles list. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
+ Le tableau suivant répertorie les modèles de contrôle [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] qui doivent être pris en charge par les contrôles de liste. Pour plus d’informations sur les modèles de contrôle, consultez [UI Automation Control Patterns Overview](ui-automation-control-patterns-overview.md).  
   
 |Modèle de contrôle/Propriété de modèle|Prise en charge/valeur|Remarques|  
 |---------------------------------------|--------------------|-----------|  

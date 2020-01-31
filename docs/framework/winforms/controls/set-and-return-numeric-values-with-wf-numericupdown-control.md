@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : définir et retourner des valeurs numériques avec le contrôle NumericUpDown Windows Forms'
+title: Définir et retourner des valeurs numériques avec le contrôle NumericUpDown
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,19 +11,19 @@ helpviewer_keywords:
 - Windows Forms controls, NumericUpDown
 - NumericUpDown control [Windows Forms], setting and returning values
 ms.assetid: 5bd8f8cd-4c12-49ea-9cc3-2a647d064689
-ms.openlocfilehash: 3da2c7b057732e9b2db5e048dec037e4e9910c0a
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: a0b264fec9619b467c293bcb96278c4517775ac3
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64625731"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743025"
 ---
-# <a name="how-to-set-and-return-numeric-values-with-the-windows-forms-numericupdown-control"></a>Procédure : définir et retourner des valeurs numériques avec le contrôle NumericUpDown Windows Forms
-La valeur numérique des formulaires Windows <xref:System.Windows.Forms.NumericUpDown> contrôle est déterminé par son <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété. Vous pouvez écrire des tests conditionnels pour la valeur du contrôle comme avec toute autre propriété. Une fois le <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété est définie, vous pouvez l’ajuster directement en écrivant du code pour effectuer des opérations sur celui-ci, ou vous pouvez appeler la <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> et <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> méthodes.  
+# <a name="how-to-set-and-return-numeric-values-with-the-windows-forms-numericupdown-control"></a>Comment : définir et retourner des valeurs numériques à l'aide du contrôle NumericUpDown Windows Forms
+La valeur numérique du contrôle <xref:System.Windows.Forms.NumericUpDown> Windows Forms est déterminée par sa propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A>. Vous pouvez écrire des tests conditionnels pour la valeur du contrôle comme avec n’importe quelle autre propriété. Une fois la propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A> définie, vous pouvez l’ajuster directement en écrivant du code pour effectuer des opérations sur celle-ci, ou vous pouvez appeler les méthodes <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> et <xref:System.Windows.Forms.NumericUpDown.DownButton%2A>.  
   
 ### <a name="to-set-the-numeric-value"></a>Pour définir la valeur numérique  
   
-1. Affecter une valeur à la <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété dans le code ou dans la fenêtre Propriétés.  
+1. Assignez une valeur à la propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A> dans le code ou dans le Fenêtre Propriétés.  
   
     ```vb  
     NumericUpDown1.Value = 55  
@@ -37,9 +37,9 @@ La valeur numérique des formulaires Windows <xref:System.Windows.Forms.NumericU
     numericUpDown1->Value = 55;  
     ```  
   
-     ou  
+     \- ou -  
   
-2. Appelez le <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> ou <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> méthode pour augmenter ou diminuer la valeur de la quantité spécifiée dans le <xref:System.Windows.Forms.NumericUpDown.Increment%2A> propriété.  
+2. Appelez la méthode <xref:System.Windows.Forms.NumericUpDown.UpButton%2A> ou <xref:System.Windows.Forms.NumericUpDown.DownButton%2A> pour augmenter ou diminuer la valeur de la quantité spécifiée dans la propriété <xref:System.Windows.Forms.NumericUpDown.Increment%2A>.  
   
     ```vb  
     NumericUpDown1.UpButton()  
@@ -55,7 +55,7 @@ La valeur numérique des formulaires Windows <xref:System.Windows.Forms.NumericU
   
 ### <a name="to-return-the-numeric-value"></a>Pour retourner la valeur numérique  
   
-- Accès le <xref:System.Windows.Forms.NumericUpDown.Value%2A> propriété dans le code.  
+- Accédez à la propriété <xref:System.Windows.Forms.NumericUpDown.Value%2A> dans le code.  
   
     ```vb  
     If NumericUpDown1.Value >= 65 Then  

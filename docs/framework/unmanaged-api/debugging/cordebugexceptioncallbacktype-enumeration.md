@@ -14,15 +14,15 @@ helpviewer_keywords:
 ms.assetid: 4d946ad4-3c19-42cb-bec9-8633325ba769
 topic_type:
 - apiref
-ms.openlocfilehash: c927dcde99f5217ee7c160359385e0b953034380
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 977b1608539a302c6a27a1b54cfb2ad687025fe6
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132239"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76789406"
 ---
 # <a name="cordebugexceptioncallbacktype-enumeration"></a>CorDebugExceptionCallbackType, énumération
-Indique le type de rappel effectué à partir d’un événement [ICorDebugManagedCallback2 :: exception](../../../../docs/framework/unmanaged-api/debugging/icordebugmanagedcallback2-exception-method.md) .  
+Indique le type de rappel effectué à partir d’un événement [ICorDebugManagedCallback2 :: exception](icordebugmanagedcallback2-exception-method.md) .  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -35,16 +35,16 @@ typedef enum CorDebugExceptionCallbackType {
 } CorDebugExceptionCallbackType;  
 ```  
   
-## <a name="members"></a>Membres  
+## <a name="members"></a>Members  
   
-|Membre|Description|  
+|Member|Description|  
 |------------|-----------------|  
 |`DEBUG_EXCEPTION_FIRST_CHANCE`|Une exception a été levée.|  
 |`DEBUG_EXCEPTION_USER_FIRST_CHANCE`|L’exception Windup processus a entré le code utilisateur.|  
 |`DEBUG_EXCEPTION_CATCH_HANDLER_FOUND`|Le processus Windup de l’exception a trouvé un bloc `catch` dans le code utilisateur.|  
 |`DEBUG_EXCEPTION_UNHANDLED`|L’exception n’a pas été gérée.|  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -55,4 +55,4 @@ typedef enum CorDebugExceptionCallbackType {
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Énumérations de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-enumerations.md)
+- [Énumérations de débogage](debugging-enumerations.md)

@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: aa5ad3d7-e1bb-42af-99bc-471224e3bcaa
 topic_type:
 - apiref
-ms.openlocfilehash: 29bb84341c2cb4177c43f798d25a1a6d50099aa5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 53d8d219a13f2dade16a338efccf0837f8de0158
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73122800"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76784375"
 ---
 # <a name="icordebugbreakpoint-interface"></a>ICorDebugBreakpoint, interface
 
@@ -29,8 +29,8 @@ Représente un point d’arrêt dans une fonction, ou un point de suivi sur une 
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[Activate, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-activate-method.md)|Définit l’état actif de cette `ICorDebugBreakpoint`.|  
-|[IsActive, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugbreakpoint-isactive-method.md)|Obtient une valeur qui indique si ce `ICorDebugBreakpoint` est actif.|  
+|[Activate, méthode](icordebugbreakpoint-activate-method.md)|Définit l’état actif de cette `ICorDebugBreakpoint`.|  
+|[IsActive, méthode](icordebugbreakpoint-isactive-method.md)|Obtient une valeur qui indique si ce `ICorDebugBreakpoint` est actif.|  
   
 ## <a name="remarks"></a>Notes  
  Les points d’arrêt ne prennent pas directement en charge les expressions conditionnelles. Si de telles fonctionnalités sont souhaitées, un débogueur doit l’implémenter sur `ICorDebugBreakpoint`.  
@@ -40,7 +40,7 @@ Représente un point d’arrêt dans une fonction, ou un point de suivi sur une 
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -51,4 +51,4 @@ Représente un point d’arrêt dans une fonction, ou un point de suivi sur une 
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

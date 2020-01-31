@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : imprimer un fichier texte de plusieurs pages dans Windows Forms'
+title: 'Comment : imprimer un fichier texte de plusieurs pages'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -10,14 +10,14 @@ helpviewer_keywords:
 - Windows Forms, printing text
 - printing [Windows Forms], text
 ms.assetid: 362427f8-03d4-4826-b49f-60ab066ad322
-ms.openlocfilehash: bd858279a4d8a3509a91bcd1c62fb1f61d6d2bb9
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 51e30706bb7693988d611701d013792c82dccd0b
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69931787"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76740662"
 ---
-# <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Procédure : imprimer un fichier texte de plusieurs pages dans Windows Forms
+# <a name="how-to-print-a-multi-page-text-file-in-windows-forms"></a>Comment : imprimer un fichier texte composé de plusieurs pages dans les Windows Forms
 Il est très courant que les applications Windows impriment du texte. La classe <xref:System.Drawing.Graphics> fournit des méthodes pour dessiner des objets (graphismes ou texte) sur un périphérique, tel qu'un écran ou une imprimante.  
   
 > [!NOTE]

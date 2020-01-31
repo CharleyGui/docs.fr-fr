@@ -2,12 +2,12 @@
 title: Points de terminaison de service et adressage de files d'attente
 ms.date: 03/30/2017
 ms.assetid: 7d2d59d7-f08b-44ed-bd31-913908b83d97
-ms.openlocfilehash: 6bdd3b0966f85ff456e0e2ed0b6da773046201dc
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: ec932e83a2b37330f54be545a45358a5ab055423
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837985"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76744619"
 ---
 # <a name="service-endpoints-and-queue-addressing"></a>Points de terminaison de service et adressage de files d'attente
 Cette rubrique discute comment les clients adressent des services qui lisent à partir des files d'attente et comment les points de terminaison de service mappent aux files d'attente. En guise de rappel, l’illustration suivante montre le déploiement d’applications en file d’attente Classic Windows Communication Foundation (WCF).  
@@ -21,7 +21,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  Les noms de chemin d’accès sont mappés à « FormatNames » pour déterminer des aspects supplémentaires de l’adresse, y compris le protocole de routage et le protocole de transfert du gestionnaire de files d’attente. Le Gestionnaire de files d'attente prend en charge deux protocoles de transfert : le protocole MSMQ natif et le protocole SRMP (SOAP Reliable Messaging Protocol).  
   
- Pour plus d’informations sur le chemin d’accès et les noms de format MSMQ, consultez [à propos de Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ Pour plus d’informations sur le chemin d’accès et les noms de format MSMQ, consultez [à propos de Message Queuing](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms706032(v=vs.85)).  
   
 ## <a name="netmsmqbinding-and-service-addressing"></a>NetMsmqBinding et adressage de service  
  Lors de l'adressage d'un message à un service, le schéma dans l'URI est choisi en fonction du transport utilisé pour la communication. Chaque transport dans WCF possède un schéma unique. Le schéma doit refléter la nature du transport utilisé pour la communication. Par exemple, net.tcp, net.pipe, HTTP, et ainsi de suite.  
@@ -96,7 +96,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  MSMQ. FormatName :\<*MSMQ-format-name*>>  
   
- MSMQ-format-name est de la forme spécifiée par MSMQ dans [à propos de Message Queuing](https://go.microsoft.com/fwlink/?LinkId=94837).  
+ MSMQ-format-name est de la forme spécifiée par MSMQ dans [à propos de Message Queuing](https://docs.microsoft.com/previous-versions/windows/desktop/legacy/ms706032(v=vs.85)).  
   
  Notez que vous pouvez utiliser des noms de format directs, et des noms de format publics et privés (requiert l'intégration Active Directory) uniquement lors de la réception de messages à partir d'une file d'attente à l'aide de `MsmqIntegrationBinding`. Il est toutefois recommandé d'utiliser des noms de format directs. Par exemple, sur Windows Vista, l’utilisation d’un autre nom de format provoque une erreur, car le système tente d’ouvrir une sous-file d’attente, qui peut uniquement être ouverte avec des noms de format directs.  
   

@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6c394ad2721bcdd91fb750fe93c03f16ca9f799f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4285ed3c0488ea615ca89b0b771bf09c8c29b318
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714076"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76739128"
 ---
 # <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande
 
@@ -19,7 +19,7 @@ Cet article vous montre comment commencer à développer des applications multip
 
 Si vous n’êtes pas familiarisé avec l’ensemble d’outils CLI .NET Core, consultez [Vue d’ensemble du SDK .NET Core](../tools/index.md).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - [Kit SDK .NET Core 3,1](https://dotnet.microsoft.com/download) ou versions ultérieures.
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -183,7 +183,7 @@ Hello World!
 Comme mentionné au début de cet article, un fichier exécutable spécifique au système d’exploitation a été créé avec l' `Hello.dll`. Sur Windows, ce serait `Hello.exe`; sur Linux ou macOS, ce serait `hello`. Dans l’exemple ci-dessus, le fichier est nommé avec `Hello.exe` ou `Hello`. Vous pouvez exécuter ce fichier exécutable publié directement.
 
 ```console
-.\bin\Debug\netcoreapp3.1\Hello.exe
+.\bin\Debug\netcoreapp3.1\publish\Hello.exe
 
 Hello World!
 ```
