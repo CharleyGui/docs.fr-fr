@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 9c37185f-d1e0-4a6e-8b99-707f7df61d88
 topic_type:
 - apiref
-ms.openlocfilehash: 11157bca2d0f0be2b9b9bc36c382188a43db22a9
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 3cdc185408576f5679daacef4dde438d66e490ff
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74433135"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76862748"
 ---
 # <a name="icorprofilerinfo2getgenerationbounds-method"></a>ICorProfilerInfo2::GetGenerationBounds, méthode
 Obtient les régions de la mémoire, qui sont des segments du tas, composant les différentes générations de garbage collection.  
@@ -34,7 +34,7 @@ HRESULT GetGenerationBounds(
     [out, size_is(cObjectRanges), length_is(*pcObjectRanges)] COR_PRF_GC_GENERATION_RANGE ranges[]);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cObjectRanges`  
  [in] Nombre d'éléments alloués par l'appelant pour le tableau `ranges`.  
   
@@ -42,7 +42,7 @@ HRESULT GetGenerationBounds(
  [out] Pointeur vers un entier qui spécifie le nombre total de plages, dont une partie ou la totalité sera retournée dans le tableau `ranges`.  
   
  `ranges`  
- à Tableau de structures [COR_PRF_GC_GENERATION_RANGE](../../../../docs/framework/unmanaged-api/profiling/cor-prf-gc-generation-range-structure.md) , qui décrivent chacune une plage (autrement dit, un bloc) de mémoire dans la génération qui est en cours d’garbage collection.  
+ à Tableau de structures [COR_PRF_GC_GENERATION_RANGE](cor-prf-gc-generation-range-structure.md) , qui décrivent chacune une plage (autrement dit, un bloc) de mémoire dans la génération qui est en cours d’garbage collection.  
   
 ## <a name="remarks"></a>Notes  
  La méthode `GetGenerationBounds` peut être appelée à partir de tout rappel de profileur, à condition que le garbage collection ne soit pas en cours d'exécution.
@@ -53,7 +53,7 @@ HRESULT GetGenerationBounds(
   
  Cette fonction utilise des mémoires tampons allouées par l'appelant.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -64,7 +64,7 @@ HRESULT GetGenerationBounds(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerInfo2, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo2-interface.md)
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [Profilage](../../../../docs/framework/unmanaged-api/profiling/index.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)
+- [ICorProfilerInfo2, interface](icorprofilerinfo2-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [Profilage](index.md)

@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider :: Getinstancefieldsymbols,, méthode'
+title: ICorDebugSymbolProvider::GetInstanceFieldSymbols, méthode
 ms.date: 03/30/2017
 ms.assetid: a29b9233-ee67-4b53-b8bc-c00b281e7edb
-ms.openlocfilehash: 0ad8ddd78d963681c0b2f69bf0f211ad464dc7b7
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9c55ce4d36681e173047cfb51515a74899c5a9fe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138871"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791632"
 ---
-# <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider :: Getinstancefieldsymbols,, méthode
+# <a name="icordebugsymbolprovidergetinstancefieldsymbols-method"></a>ICorDebugSymbolProvider::GetInstanceFieldSymbols, méthode
 Obtient les symboles de champ d'instance qui correspondent à une signature typespec.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -24,7 +24,7 @@ HRESULT GetInstanceFieldSymbols(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `cbSignature`  
  [in] Nombre d'octets dans le tableau `typeSig`.  
   
@@ -38,14 +38,14 @@ HRESULT GetInstanceFieldSymbols(
  [out] Pointeur vers le nombre de symboles récupérés par la méthode.  
   
  `pSymbols`  
- à Pointeur vers un tableau [ICorDebugStaticFieldSymbol](../../../../docs/framework/unmanaged-api/debugging/icordebugstaticfieldsymbol-interface.md) qui contient les symboles de champ d’instance demandés.  
+ à Pointeur vers un tableau [ICorDebugStaticFieldSymbol](icordebugstaticfieldsymbol-interface.md) qui contient les symboles de champ d’instance demandés.  
   
 ## <a name="remarks"></a>Notes  
   
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -56,6 +56,6 @@ HRESULT GetInstanceFieldSymbols(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [GetStaticFieldSymbols, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-getstaticfieldsymbols-method.md)
-- [ICorDebugSymbolProvider, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [GetStaticFieldSymbols, méthode](icordebugsymbolprovider-getstaticfieldsymbols-method.md)
+- [ICorDebugSymbolProvider, interface](icordebugsymbolprovider-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

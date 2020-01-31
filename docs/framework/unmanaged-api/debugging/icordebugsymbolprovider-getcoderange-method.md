@@ -1,15 +1,15 @@
 ---
-title: 'ICorDebugSymbolProvider :: Getcoderange,, méthode'
+title: ICorDebugSymbolProvider::GetCodeRange, méthode
 ms.date: 03/30/2017
 ms.assetid: 49a2451f-d250-4e73-aa96-9ff49d9f11c6
-ms.openlocfilehash: 84bf545fedf3a6c7915d94fd0c2630268585b6eb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: dbe042641cadae182efac30502a70631be359bbe
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138920"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791650"
 ---
-# <a name="icordebugsymbolprovidergetcoderange-method"></a>ICorDebugSymbolProvider :: Getcoderange,, méthode
+# <a name="icordebugsymbolprovidergetcoderange-method"></a>ICorDebugSymbolProvider::GetCodeRange, méthode
 Obtient l'adresse de début et la taille de la méthode pour une adresse virtuelle relative (RVA) donnée dans une méthode.  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -22,7 +22,7 @@ HRESULT GetCodeRange(
 );  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `codeRva`  
  [in] Adresse virtuelle relative (RVA) dans une méthode.  
   
@@ -37,7 +37,7 @@ HRESULT GetCodeRange(
 > [!NOTE]
 > Cette méthode est uniquement disponible avec .NET Native.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -48,5 +48,5 @@ HRESULT GetCodeRange(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorDebugSymbolProvider, interface](../../../../docs/framework/unmanaged-api/debugging/icordebugsymbolprovider-interface.md)
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [ICorDebugSymbolProvider, interface](icordebugsymbolprovider-interface.md)
+- [Interfaces de débogage](debugging-interfaces.md)

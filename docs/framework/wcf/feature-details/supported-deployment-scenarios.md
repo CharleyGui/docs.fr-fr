@@ -2,12 +2,12 @@
 title: Scénarios de déploiement pris en charge
 ms.date: 03/30/2017
 ms.assetid: 3399f208-3504-4c70-a22e-a7c02a8b94a6
-ms.openlocfilehash: 6898ec33564a526d0e444502ebb6ed7f142f1856
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5be9ab3d300da2095a45846d334512382b4067f6
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347982"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743452"
 ---
 # <a name="supported-deployment-scenarios"></a>Scénarios de déploiement pris en charge
 
@@ -35,7 +35,7 @@ En plus de la messagerie SOAP utilisant l’une des liaisons SOAP prises en char
 
 Les services de workflow requièrent des autorisations de confiance totale et ne peuvent pas être utilisés dans les applications de confiance partielle.
 
-Pour plus d’informations, consultez [procédure : utiliser la confiance moyenne dans ASP.NET 2,0](https://go.microsoft.com/fwlink/?LinkId=84603).
+Pour plus d’informations, consultez [procédure : utiliser la confiance moyenne dans ASP.NET 2,0](https://docs.microsoft.com/previous-versions/msp-n-p/ff648344(v=pandp.10)).
 
 ## <a name="partial-trust-on-the-client"></a>Confiance partielle sur le client
 

@@ -5,16 +5,16 @@ author: thraka
 ms.date: 12/10/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: a4723d6d63c5739123fad774bc75fae7c9fd6703
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3a72f68f5634c9ee5b137baf12a279130861e61a
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340186"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76787835"
 ---
 # <a name="tutorial-create-a-template-pack"></a>Didacticiel : créer un pack de modèles
 
-Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le troisième d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
+Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce didacticiel est la troisième partie d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
 
 Dans cette partie de la série, vous découvrirez comment :
 
@@ -25,7 +25,7 @@ Dans cette partie de la série, vous découvrirez comment :
 > * Installer un modèle à partir d’un fichier NuGet
 > * Désinstaller un modèle par ID de package
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 * Complétez la [première partie](cli-templates-create-item-template.md) et la [deuxième partie](cli-templates-create-project-template.md) de cette série de tutoriels.
 
@@ -49,7 +49,7 @@ Dans votre terminal, accédez au dossier _working_. Créez un nouveau projet et 
 dotnet new console -n templatepack -o .
 ```
 
-Le paramètre `-n` définit le nom de fichier _.csproj_ sur _templatepack.csproj_ et les paramètres `-o` créent les fichiers dans le répertoire actif. Vous devez voir un résultat similaire à la sortie suivante.
+Le paramètre `-n` définit le nom de fichier _. csproj_ sur _templatepack. csproj_. Le paramètre `-o` crée les fichiers dans le répertoire actif. Vous devez voir un résultat similaire à la sortie suivante.
 
 ```console
 C:\working> dotnet new console -n templatepack -o .
@@ -91,7 +91,7 @@ Ensuite, ouvrez le fichier _templatepack.csproj_ dans votre éditeur favori et r
 </Project>
 ```
 
-Les paramètres `<PropertyGroup>` du code XML ci-dessus sont répartis en trois groupes. Le premier groupe traite des propriétés requises pour un package NuGet. Les trois paramètres `<Package` doivent être définis avec les propriétés du package NuGet pour identifier votre package sur un flux NuGet. Plus précisément, la valeur `<PacakgeId>` est utilisée pour désinstaller le pack de modèles avec un nom unique et non un chemin d’accès au répertoire. Elle peut également être utilisée pour installer le pack de modèles à partir d’un flux NuGet. Les autres paramètres, `<Title>` et `<Tags>`, sont associés aux métadonnées affichées sur le flux NuGet. Pour plus d’informations sur les paramètres NuGet, consultez [Propriétés NuGet et MSBuild](/nuget/reference/msbuild-targets).
+Les paramètres `<PropertyGroup>` du code XML ci-dessus sont répartis en trois groupes. Le premier groupe traite des propriétés requises pour un package NuGet. Les trois paramètres `<Package` doivent être définis avec les propriétés du package NuGet pour identifier votre package sur un flux NuGet. Plus précisément, la valeur `<PackageId>` est utilisée pour désinstaller le pack de modèles avec un nom unique et non un chemin d’accès au répertoire. Elle peut également être utilisée pour installer le pack de modèles à partir d’un flux NuGet. Les autres paramètres, `<Title>` et `<PackageTags>`, sont associés aux métadonnées affichées sur le flux NuGet. Pour plus d’informations sur les paramètres NuGet, consultez [Propriétés NuGet et MSBuild](/nuget/reference/msbuild-targets).
 
 Le paramètre `<TargetFramework>` doit être défini de sorte que MSBuild s’exécute correctement quand vous exécutez la commande pack pour compiler et empaqueter le projet.
 
@@ -178,7 +178,7 @@ Currently installed items:
 
 Exécutez `dotnet new -u AdatumCorporation.Utility.Templates` pour désinstaller le modèle. La commande `dotnet new` génère des informations d’aide qui doivent omettre les modèles que vous avez installés précédemment.
 
-Félicitations ! Vous avez installé et désinstallé un pack de modèles. 
+Félicitations ! Vous avez installé et désinstallé un pack de modèles.
 
 ## <a name="next-steps"></a>Étapes suivantes :
 

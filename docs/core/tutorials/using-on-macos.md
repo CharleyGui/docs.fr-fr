@@ -2,12 +2,12 @@
 title: 'Didacticiel : créer une solution .NET Core dans macOS à l’aide de Visual Studio Code'
 description: Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core à l’aide de Visual Studio Code.
 ms.date: 12/19/2019
-ms.openlocfilehash: 4dc44a0aa155dca3c106a7da68cf100ef644b58b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e3c210d4391c0e3c9c3455ecf23dd138abdb4363
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715300"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76741540"
 ---
 # <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Didacticiel : créer une solution .NET Core dans macOS à l’aide de Visual Studio Code
 
@@ -16,7 +16,7 @@ Ce document présente les étapes et les flux de travail permettant de créer un
 > [!NOTE]
 > Cet article utilise [Visual Studio Code](https://code.visualstudio.com) sur macOS.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Installez le [SDK .NET Core](https://dotnet.microsoft.com/download). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
 
@@ -28,7 +28,7 @@ Installez l’extension C# de Visual Studio code en ouvrant Visual Studio code e
 
 Dans ce didacticiel, vous créez trois projets : un projet de bibliothèque, des tests pour ce projet de bibliothèque et une application console qui utilise la bibliothèque. Vous pouvez [afficher ou télécharger la source](https://github.com/dotnet/samples/tree/master/core/getting-started/golden) de cet article dans le référentiel dotnet/Samples sur GitHub. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd>+<kbd>\`</kbd> (caractère de soulignement ou caractère de soulignement) ou sélectionnez **Afficher > Terminal** dans le menu pour ouvrir un terminal incorporé dans Visual Studio code. Vous pouvez également ouvrir un interpréteur de commandes externe à l’aide de la commande **Ouvrir dans l’invite de commandes** de l’Explorateur (**Ouvrir dans Terminal** sur Mac ou Linux) si vous préférez travailler en dehors de Visual Studio Code.
+Démarrez Visual Studio Code. Appuyez sur <kbd>Ctrl</kbd> <kbd>\`</kbd> (caractère de soulignement ou caractère de soulignement) ou sélectionnez **Afficher** > **Terminal** dans le menu pour ouvrir un terminal incorporé dans Visual Studio code. Vous pouvez toujours ouvrir un interpréteur de commandes externe à l’aide de la commande **ouvrir dans l’invite de commandes** de l’Explorateur (**ouvrir dans Terminal** sur MacOS ou Linux) si vous préférez travailler en dehors de Visual Studio code.
 
 Commencez par créer un fichier de solution qui servira de conteneur pour un ou plusieurs projets .NET Core. Dans le terminal, exécutez la commande [`dotnet new`](../tools/dotnet-new.md) pour créer une solution *Golden. sln* à l’intérieur d’un nouveau dossier nommé *Golden*:
 
@@ -142,7 +142,8 @@ namespace TestApp
     public class LibraryTests
     {
         [Fact]
-        public void TestThing() {
+        public void TestThing()
+        {
             Assert.NotEqual(42, new Thing().Get(19, 23));
         }
     }
@@ -211,7 +212,7 @@ dotnet run -p app/app.csproj
 
 Définissez un point d’arrêt au niveau de l’instruction `WriteLine` dans la méthode `Main`. Pour ce faire, appuyez sur la touche <kbd>Fn</kbd>+<kbd>F9</kbd> lorsque le curseur se trouve sur la ligne de `WriteLine` ou en cliquant sur la souris dans la marge de gauche de la ligne où vous souhaitez définir le point d’arrêt. Un cercle rouge apparaît dans la marge à côté de la ligne de code. Quand le point d’arrêt est atteint, l’exécution du code s’arrête *avant* l’exécution de la ligne de point d’arrêt.
 
-Ouvrez l’onglet débogueur en sélectionnant l’icône déboguer dans la barre d’outils Visual Studio Code, en sélectionnant **afficher > déboguer** dans la barre de menus, ou en utilisant la <kbd>commande</kbd> de raccourci clavier+<kbd>Shift</kbd>+<kbd>D</kbd>:
+Ouvrez l’onglet débogueur en sélectionnant l’icône déboguer dans la barre d’outils Visual Studio code, en sélectionnant **Afficher** > **Déboguer** dans <kbd>&#8679;</kbd> <kbd>&#8984;</kbd>la barre de menus, ou en utilisant le raccourci clavier <kbd>D</kbd>:
 
 ![Débogueur Visual Studio Code](./media/using-on-macos/visual-studio-code-debugger.png)
 

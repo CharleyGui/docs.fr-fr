@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: bce1dcf8-b4ec-4e73-a917-f2df1ad49c8a
 topic_type:
 - apiref
-ms.openlocfilehash: 32e63a6d2b6f739025d4c5558c16fe2d74fde73c
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 99e473268fd0d5bb8ce120b97576277949b86508
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74449867"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76868995"
 ---
 # <a name="icorprofilerinfosetilinstrumentedcodemap-method"></a>ICorProfilerInfo::SetILInstrumentedCodeMap, méthode
 
@@ -39,7 +39,7 @@ HRESULT SetILInstrumentedCodeMap(
     [in, size_is(cILMapEntries)] COR_IL_MAP rgILMapEntries[]);
 ```
 
-## <a name="parameters"></a>Paramètres
+## <a name="parameters"></a>Parameters
 
 `functionId`\
 dans ID de la fonction pour laquelle définir la carte de code.
@@ -55,7 +55,7 @@ dans Tableau de COR_IL_MAP structures, chacune spécifiant un décalage MSIL.
 
 ## <a name="remarks"></a>Notes
 
-Un profileur insère souvent des instructions dans le code source d’une méthode afin d’instrumenter cette méthode (par exemple, pour notifier quand une ligne source donnée est atteinte). `SetILInstrumentedCodeMap` permet à un profileur de mapper les instructions MSIL d’origine à leurs nouveaux emplacements. Un profileur peut utiliser la méthode [ICorProfilerInfo :: GetILToNativeMapping](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-getiltonativemapping-method.md) pour obtenir l’offset MSIL d’origine pour un offset natif donné.
+Un profileur insère souvent des instructions dans le code source d’une méthode afin d’instrumenter cette méthode (par exemple, pour notifier quand une ligne source donnée est atteinte). `SetILInstrumentedCodeMap` permet à un profileur de mapper les instructions MSIL d’origine à leurs nouveaux emplacements. Un profileur peut utiliser la méthode [ICorProfilerInfo :: GetILToNativeMapping](icorprofilerinfo-getiltonativemapping-method.md) pour obtenir l’offset MSIL d’origine pour un offset natif donné.
 
 Le débogueur suppose que chaque ancien offset fait référence à un offset MSIL dans le code MSIL non modifié d’origine, et que chaque nouvel offset fait référence à l’offset MSIL dans le nouveau code instrumenté. Le mappage doit être trié par ordre de tri. Pour que l’exécution pas à pas fonctionne correctement, suivez les instructions suivantes :
 
@@ -85,7 +85,7 @@ Le débogueur suppose que chaque ancien offset fait référence à un offset MSI
 
 Dans le .NET Framework 3,5 et les versions antérieures, vous allouez le tableau `rgILMapEntries` en appelant la méthode [CoTaskMemAlloc](/windows/desktop/api/combaseapi/nf-combaseapi-cotaskmemalloc) . Étant donné que le runtime prend possession de cette mémoire, le profileur ne doit pas tenter de le libérer.
 
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Configuration requise pour
 
 **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).
 
@@ -97,4 +97,4 @@ Dans le .NET Framework 3,5 et les versions antérieures, vous allouez le tableau
 
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)

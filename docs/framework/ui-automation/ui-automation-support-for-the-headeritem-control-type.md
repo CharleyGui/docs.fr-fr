@@ -6,12 +6,12 @@ helpviewer_keywords:
 - Header Item control type
 - control types, Header Item
 ms.assetid: 09ce1310-ee31-493c-a71e-010bafc42fcf
-ms.openlocfilehash: c67c357a0447cfa7ff3769fff2f8a67f90171635
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 17b28e17690d5a05440cae6b969617de1528fb41
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75741234"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76778730"
 ---
 # <a name="ui-automation-support-for-the-headeritem-control-type"></a>Prise en charge d'UI Automation pour le type de contrôle HeaderItem
 > [!NOTE]
@@ -21,7 +21,7 @@ ms.locfileid: "75741234"
   
  Le type de contrôle HeaderItem fournit une étiquette visuelle pour une ligne ou une colonne d’informations.  
   
- Les contrôles header item sont des exemples de contrôles qui implémentent le type de contrôle HeaderItem. Les spécifications de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dans les sections suivantes s’appliquent à tous les contrôles Header, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou [!INCLUDE[TLA#tla_winforms](../../../includes/tlasharptla-winforms-md.md)].  
+ Les contrôles header item sont des exemples de contrôles qui implémentent le type de contrôle HeaderItem. Les spécifications de [!INCLUDE[TLA2#tla_uiautomation](../../../includes/tla2sharptla-uiautomation-md.md)] dans les sections suivantes s’appliquent à tous les contrôles Header, qu’il s’agisse de [!INCLUDE[TLA#tla_winclient](../../../includes/tlasharptla-winclient-md.md)], Win32 ou Windows Forms.  
   
 <a name="Required_UI_Automation_Tree_Structure"></a>   
 ## <a name="required-ui-automation-tree-structure"></a>Arborescence UI Automation obligatoire  

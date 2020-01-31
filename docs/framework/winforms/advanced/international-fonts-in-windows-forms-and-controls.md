@@ -1,5 +1,5 @@
 ---
-title: Polices internationales dans les Windows Forms et les contrôles
+title: Polices internationales dans les formulaires et les contrôles
 ms.date: 03/30/2017
 helpviewer_keywords:
 - fonts [Windows Forms], international
@@ -13,12 +13,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2c3066df-9bac-479a-82b2-79e484b346a3
-ms.openlocfilehash: 0ddbd6d7a1b614d588a2572b410957a5ed3b768c
-ms.sourcegitcommit: 7bfe1682d9368cf88d43e895d1e80ba2d88c3a99
+ms.openlocfilehash: 59dde6bb384d644321a8ff5674d735f8e6d36fd0
+ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/04/2019
-ms.locfileid: "71956918"
+ms.lasthandoff: 01/24/2020
+ms.locfileid: "76743522"
 ---
 # <a name="international-fonts-in-windows-forms-and-controls"></a>Polices internationales dans les Windows Forms et les contrôles
 
@@ -74,7 +74,7 @@ private void Form1_FontChanged(object sender, System.EventArgs e)
 }
 ```
 
-Toutefois, lorsque vous localisez votre application, la police en gras peut s’afficher mal pour certaines langues. Si cela pose problème, vous souhaitez que les localisateurs aient la possibilité de basculer la police du gras en texte normal. Étant donné que les localiseurs ne sont généralement pas des développeurs et n’ont pas accès au code source, seuls les fichiers de ressources, cette option doit être définie dans les fichiers de ressources. Pour ce faire, vous devez définir la propriété <xref:System.Drawing.Font.Bold%2A> sur `true`. Cela entraîne l’écriture du paramètre de police dans les fichiers de ressources, où les localiseurs peuvent le modifier. Vous écrivez ensuite le code après la méthode `InitializeComponent` pour réinitialiser la police en fonction de la police du formulaire, mais en utilisant le style de police spécifié dans le fichier de ressources.
+Toutefois, lorsque vous localisez votre application, la police en gras peut s’afficher mal pour certaines langues. Si cela pose problème, vous souhaitez que les localisateurs aient la possibilité de basculer la police du gras en texte normal. Étant donné que les localiseurs ne sont généralement pas des développeurs et n’ont pas accès au code source, seuls les fichiers de ressources, cette option doit être définie dans les fichiers de ressources. Pour ce faire, vous devez affecter à la propriété <xref:System.Drawing.Font.Bold%2A> la valeur `true`. Cela entraîne l’écriture du paramètre de police dans les fichiers de ressources, où les localiseurs peuvent le modifier. Vous écrivez ensuite le code après la méthode `InitializeComponent` pour réinitialiser la police en fonction de la police du formulaire, mais en utilisant le style de police spécifié dans le fichier de ressources.
 
 ```vb
 TextBox1.Font = New System.Drawing.Font(Me.Font, TextBox1.Font.Style)

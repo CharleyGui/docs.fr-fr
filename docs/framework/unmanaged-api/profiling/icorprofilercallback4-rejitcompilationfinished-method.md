@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 3b5cff02-2005-44eb-a2bc-50214c4b0e1d
 topic_type:
 - apiref
-ms.openlocfilehash: 9a42198b1c89dbc47c6659564cf32738b683697b
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: e010a49dabd3b44602136e70b4c5524a68bdd9e2
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439304"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865205"
 ---
 # <a name="icorprofilercallback4rejitcompilationfinished-method"></a>ICorProfilerCallback4::ReJITCompilationFinished, méthode
 Notifie le profileur que le compilateur juste-à-temps (JIT) a terminé la recompilation d’une fonction.  
@@ -34,7 +34,7 @@ HRESULT ReJITCompilationFinished(
     [in] BOOL       fIsSafeToBlock);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
+## <a name="parameters"></a>Parameters  
  `functionId`  
  dans ID de la fonction qui a été recompilée.  
   
@@ -49,7 +49,7 @@ HRESULT ReJITCompilationFinished(
   
  Une valeur de `true` n’endommage pas le runtime, mais peut affecter les résultats de profilage.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -60,7 +60,7 @@ HRESULT ReJITCompilationFinished(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ICorProfilerCallback4, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
-- [JITCompilationStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-jitcompilationstarted-method.md)
-- [ReJITCompilationStarted, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-rejitcompilationstarted-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ICorProfilerCallback4, interface](icorprofilercallback4-interface.md)
+- [JITCompilationStarted, méthode](icorprofilercallback-jitcompilationstarted-method.md)
+- [ReJITCompilationStarted, méthode](icorprofilercallback4-rejitcompilationstarted-method.md)

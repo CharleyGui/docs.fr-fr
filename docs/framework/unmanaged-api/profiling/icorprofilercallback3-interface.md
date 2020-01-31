@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: be83af41-3dec-4c77-8529-9dd6b8042af6
 topic_type:
 - apiref
-ms.openlocfilehash: 25d674a143019ac5d724e36f03f36c79602b1e11
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: ad9c5445cbef0be7919570db64b027556d923752
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74439508"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76865569"
 ---
 # <a name="icorprofilercallback3-interface"></a>ICorProfilerCallback3, interface
 Fournit des méthodes de rappel que le common language runtime (CLR) utilise pour communiquer les informations d’état d’attachement et de détachement au profileur.  
@@ -28,13 +28,13 @@ Fournit des méthodes de rappel que le common language runtime (CLR) utilise pou
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[InitializeForAttach, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-initializeforattach-method.md)|Appelée par le CLR pour permettre au profileur d’initialiser son état après une opération d’attachement.|  
-|[ProfilerAttachComplete, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-profilerattachcomplete-method.md)|Appelée par le CLR pour indiquer que le profileur peut maintenant appeler les méthodes de rattrapage.|  
-|[ProfilerDetachSucceeded, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback3-profilerdetachsucceeded-method.md)|Indique au profileur que le Common Language Runtime (CLR) est sur le point de décharger sa DLL.|  
+|[InitializeForAttach, méthode](icorprofilercallback3-initializeforattach-method.md)|Appelée par le CLR pour permettre au profileur d’initialiser son état après une opération d’attachement.|  
+|[ProfilerAttachComplete, méthode](icorprofilercallback3-profilerattachcomplete-method.md)|Appelée par le CLR pour indiquer que le profileur peut maintenant appeler les méthodes de rattrapage.|  
+|[ProfilerDetachSucceeded, méthode](icorprofilercallback3-profilerdetachsucceeded-method.md)|Indique au profileur que le Common Language Runtime (CLR) est sur le point de décharger sa DLL.|  
   
 ## <a name="remarks"></a>Notes  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -45,7 +45,7 @@ Fournit des méthodes de rappel que le common language runtime (CLR) utilise pou
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de profilage](../../../../docs/framework/unmanaged-api/profiling/profiling-interfaces.md)
-- [ICorProfilerInfo, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilerinfo-interface.md)
-- [ICorProfilerCallback2, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback2-interface.md)
-- [ICorProfilerCallback4, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback4-interface.md)
+- [Interfaces de profilage](profiling-interfaces.md)
+- [ICorProfilerInfo, interface](icorprofilerinfo-interface.md)
+- [ICorProfilerCallback2, interface](icorprofilercallback2-interface.md)
+- [ICorProfilerCallback4, interface](icorprofilercallback4-interface.md)

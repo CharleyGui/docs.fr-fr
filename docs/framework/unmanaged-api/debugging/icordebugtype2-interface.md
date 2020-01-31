@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: 376fb03f-f1ef-4107-baa4-4d9d55884862
 topic_type:
 - apiref
-ms.openlocfilehash: 7b56f0f3ba62efb48ac8d79aad4480b5f22771ba
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e90952a92c408762a98a2bfcb91b6aeb72052df1
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73110212"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76791216"
 ---
 # <a name="icordebugtype2-interface"></a>ICorDebugType2, interface
 Étend l’interface ICorDebugType pour récupérer l’identificateur de type d’un type de base ou un type complexe (défini par l’utilisateur).  
@@ -28,7 +28,7 @@ ms.locfileid: "73110212"
   
 |Méthode||  
 |------------|-|  
-|[GetTypeID, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-gettypeid-method.md)|Obtient un [COR_TYPEID](../../../../docs/framework/unmanaged-api/debugging/cor-typeid-structure.md) pour ce type.|  
+|[GetTypeID, méthode](icordebugtype2-gettypeid-method.md)|Obtient une [COR_TYPEID](cor-typeid-structure.md) pour ce type.|  
   
 ## <a name="remarks"></a>Notes  
  Cette interface est une extension logique de l’interface ICorDebugType.  
@@ -37,7 +37,7 @@ ms.locfileid: "73110212"
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
 ## <a name="example"></a>Exemple  
- Le fragment de code suivant illustre l’utilisation de la méthode [méthode icordebugtype2 :: GetTypeID](../../../../docs/framework/unmanaged-api/debugging/icordebugtype2-gettypeid-method.md) .  
+ Le fragment de code suivant illustre l’utilisation de la méthode [méthode icordebugtype2 :: GetTypeID](icordebugtype2-gettypeid-method.md) .  
   
 ```cpp  
 // (error checking omitted for brevity)  
@@ -52,7 +52,7 @@ pType2->GetTypeID(&id);
 // now we can use existing APIs to get information about this COR_TYPEID  
 ```  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -63,4 +63,4 @@ pType2->GetTypeID(&id);
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
+- [Interfaces de débogage](debugging-interfaces.md)

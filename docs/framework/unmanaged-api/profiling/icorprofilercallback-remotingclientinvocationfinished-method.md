@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ea4b283b-1210-4f41-a7a2-c398b1adde4e
 topic_type:
 - apiref
-ms.openlocfilehash: c9a750b941b29047206c98410d4b4673d1101a01
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 90ddb30c3d27d5f431c355abd3a6f792564e616d
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445835"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866040"
 ---
 # <a name="icorprofilercallbackremotingclientinvocationfinished-method"></a>ICorProfilerCallback::RemotingClientInvocationFinished, méthode
 Notifie le profileur qu’un appel de communication à distance a été exécuté sur le client.  
@@ -32,15 +32,15 @@ HRESULT RemotingClientInvocationFinished();
 ```  
   
 ## <a name="remarks"></a>Notes  
- Si l’appel de communication à distance était synchrone, il s’est également exécuté sur le serveur. Si l’appel de communication à distance était asynchrone, il est possible qu’une réponse soit toujours attendue lorsque l’appel est géré. Si une réponse est attendue, elle se produit comme un appel à [ICorProfilerCallback :: RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) et un appel supplémentaire à `RemotingClientInvocationFinished` pour indiquer le traitement secondaire requis d’un appel asynchrone.  
+ Si l’appel de communication à distance était synchrone, il s’est également exécuté sur le serveur. Si l’appel de communication à distance était asynchrone, il est possible qu’une réponse soit toujours attendue lorsque l’appel est géré. Si une réponse est attendue, elle se produit comme un appel à [ICorProfilerCallback :: RemotingClientReceivingReply](icorprofilercallback-remotingclientreceivingreply-method.md) et un appel supplémentaire à `RemotingClientInvocationFinished` pour indiquer le traitement secondaire requis d’un appel asynchrone.  
   
  Chaque paire de rappels suivante aura lieu sur le même thread :  
   
-- `RemotingClientInvocationStarted` et [ICorProfilerCallback :: RemotingClientSendingMessage,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientsendingmessage-method.md)  
+- `RemotingClientInvocationStarted` et [ICorProfilerCallback :: RemotingClientSendingMessage,](icorprofilercallback-remotingclientsendingmessage-method.md)  
   
-- [ICorProfilerCallback :: RemotingClientReceivingReply](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientreceivingreply-method.md) et [ICorProfilerCallback :: RemotingClientInvocationFinished,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingclientinvocationfinished-method.md)  
+- [ICorProfilerCallback :: RemotingClientReceivingReply](icorprofilercallback-remotingclientreceivingreply-method.md) et [ICorProfilerCallback :: RemotingClientInvocationFinished,](icorprofilercallback-remotingclientinvocationfinished-method.md)  
   
-- [ICorProfilerCallback :: RemotingServerInvocationReturned,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserverinvocationreturned-method.md) et [ICorProfilerCallback :: RemotingServerSendingReply,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-remotingserversendingreply-method.md)  
+- [ICorProfilerCallback :: RemotingServerInvocationReturned,](icorprofilercallback-remotingserverinvocationreturned-method.md) et [ICorProfilerCallback :: RemotingServerSendingReply,](icorprofilercallback-remotingserversendingreply-method.md)  
   
  Vous devez être conscient des problèmes suivants avec les rappels de communication à distance :  
   
@@ -48,7 +48,7 @@ HRESULT RemotingClientInvocationFinished();
   
 - Le profileur ne reçoit pas de notifications exactes pour les événements de communication à distance asynchrones.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -59,4 +59,4 @@ HRESULT RemotingClientInvocationFinished();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

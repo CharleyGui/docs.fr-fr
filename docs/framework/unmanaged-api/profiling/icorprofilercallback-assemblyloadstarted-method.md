@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: 67e8209d-a0ca-4118-a6e6-c1ee0abc2221
 topic_type:
 - apiref
-ms.openlocfilehash: 34744132442440ef160841db5a50bf75355f2410
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: b83be5e79c533e7e5a2468a12a0793d300700428
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74445156"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866636"
 ---
 # <a name="icorprofilercallbackassemblyloadstarted-method"></a>ICorProfilerCallback::AssemblyLoadStarted, méthode
 Notifie le profileur qu’un assembly est en cours de chargement.  
@@ -32,14 +32,16 @@ HRESULT AssemblyLoadStarted(
     [in] AssemblyID assemblyId);  
 ```  
   
-## <a name="parameters"></a>Paramètres  
- `assemblyId`  
- dans Identifie l’assembly en cours de chargement.  
-  
+## <a name="parameters"></a>Parameters
+
+- `assemblyId`
+
+  \[in] identifie l’assembly en cours de chargement.
+
 ## <a name="remarks"></a>Notes  
- La valeur de `assemblyId` n’est pas valide pour une demande d’informations tant que la méthode [ICorProfilerCallback :: AssemblyLoadFinished,](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-assemblyloadfinished-method.md) n’est pas appelée.  
+ La valeur de `assemblyId` n’est pas valide pour une demande d’informations tant que la méthode [ICorProfilerCallback :: AssemblyLoadFinished,](icorprofilercallback-assemblyloadfinished-method.md) n’est pas appelée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -50,4 +52,4 @@ HRESULT AssemblyLoadStarted(
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)

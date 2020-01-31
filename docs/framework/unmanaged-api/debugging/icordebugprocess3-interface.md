@@ -14,12 +14,12 @@ helpviewer_keywords:
 ms.assetid: ced9c82e-d7b0-4806-a151-98b6611d3097
 topic_type:
 - apiref
-ms.openlocfilehash: 5e2d68d1e2dcaa656df4e35b135eeaf522878c6d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 28d1d426276e9654c2122f03fb64735b7e67f44f
+ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73137130"
+ms.lasthandoff: 01/28/2020
+ms.locfileid: "76792474"
 ---
 # <a name="icordebugprocess3-interface"></a>ICorDebugProcess3, interface
 Contrôle les notifications de débogueur personnalisées.  
@@ -28,7 +28,7 @@ Contrôle les notifications de débogueur personnalisées.
   
 |Méthode|Description|  
 |------------|-----------------|  
-|[SetEnableCustomNotification, méthode](../../../../docs/framework/unmanaged-api/debugging/icordebugprocess3-setenablecustomnotification-method.md)|Active et désactive les notifications personnalisées du débogueur du type spécifié.|  
+|[SetEnableCustomNotification, méthode](icordebugprocess3-setenablecustomnotification-method.md)|Active et désactive les notifications personnalisées du débogueur du type spécifié.|  
   
 ## <a name="remarks"></a>Notes  
  Cette interface étend logiquement les interfaces ICorDebugProcess et ICorDebugProcess2.  
@@ -36,7 +36,7 @@ Contrôle les notifications de débogueur personnalisées.
 > [!NOTE]
 > Cette interface ne prend pas en charge l'appel à distance, que ce soit entre ordinateurs ou entre processus.  
   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorDebug.idl, CorDebug.h  
@@ -47,5 +47,5 @@ Contrôle les notifications de débogueur personnalisées.
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Interfaces de débogage](../../../../docs/framework/unmanaged-api/debugging/debugging-interfaces.md)
-- [Débogage](../../../../docs/framework/unmanaged-api/debugging/index.md)
+- [Interfaces de débogage](debugging-interfaces.md)
+- [Débogage](index.md)

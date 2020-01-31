@@ -15,12 +15,12 @@ helpviewer_keywords:
 ms.assetid: ebaad1d5-ee0a-4cb0-96bc-8ba5d371b747
 topic_type:
 - apiref
-ms.openlocfilehash: 645c9dd9319dfdf9cb070366d2c389f879e1b1d2
-ms.sourcegitcommit: 9a39f2a06f110c9c7ca54ba216900d038aa14ef3
+ms.openlocfilehash: 9d3e39cd910240b965896f1b866b0c21de616a57
+ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/23/2019
-ms.locfileid: "74448046"
+ms.lasthandoff: 01/29/2020
+ms.locfileid: "76866336"
 ---
 # <a name="icorprofilercallbackexceptionunwindfunctionleave-method"></a>ICorProfilerCallback::ExceptionUnwindFunctionLeave, méthode
 Notifie le profileur que la phase de déroulement de la gestion des exceptions a terminé le déroulement d’une fonction.  
@@ -38,7 +38,7 @@ HRESULT ExceptionUnwindFunctionLeave();
   
  En outre, pendant cet appel, le profileur ne doit pas appeler dans du code managé ou de quelque manière qu’il soit à l’origine d’une allocation de mémoire managée.  
   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Configuration requise pour  
  **Plateformes :** Consultez [Configuration requise](../../../../docs/framework/get-started/system-requirements.md).  
   
  **En-tête :** CorProf.idl, CorProf.h  
@@ -49,5 +49,5 @@ HRESULT ExceptionUnwindFunctionLeave();
   
 ## <a name="see-also"></a>Voir aussi
 
-- [ICorProfilerCallback, interface](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-interface.md)
-- [ExceptionUnwindFunctionEnter, méthode](../../../../docs/framework/unmanaged-api/profiling/icorprofilercallback-exceptionunwindfunctionenter-method.md)
+- [ICorProfilerCallback, interface](icorprofilercallback-interface.md)
+- [ExceptionUnwindFunctionEnter, méthode](icorprofilercallback-exceptionunwindfunctionenter-method.md)
