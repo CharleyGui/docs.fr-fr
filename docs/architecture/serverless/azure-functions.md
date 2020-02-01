@@ -4,12 +4,12 @@ description: Azure Functions offre des fonctionnalités sans serveur dans plusie
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
-ms.openlocfilehash: 5e8187b3752a0f0d0bcf8e15f2ce440dc5a64e45
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 8764e6a33f3fdd53e60fa767d0fb584a9c07de7e
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72522869"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920967"
 ---
 # <a name="azure-functions"></a>Azure Functions
 
@@ -35,7 +35,7 @@ Pour plus d’informations, consultez [comparer 1. x et 2. x](https://docs.micro
 
 Les langues suivantes sont prises en charge dans General Availability (GA), preview ou expérimental.
 
-|Langue      |1.x         |2.x      |
+|Language      |1.x         |2.x      |
 |--------------|------------|---------|
 |**C#**        |DISPONIBLE          |Aperçu  |
 |**JavaScript**|DISPONIBLE          |Aperçu  |
@@ -61,7 +61,7 @@ Pour plus d’informations, consultez [plans App service](https://docs.microsoft
 Il existe trois méthodes courantes pour créer des applications de fonction.
 
 - Fonctions de script dans le portail.
-- Créez les ressources nécessaires à l’aide de l’interface de ligne de commande (CLI) Azure.
+- Créez les ressources nécessaires à l’aide de l’Azure CLI.
 - Créez des fonctions localement à l’aide de votre IDE favori et publiez-les sur Azure.
 
 Pour plus d’informations sur la création d’une fonction de script dans le portail, consultez [créer votre première fonction dans la portail Azure](https://docs.microsoft.com/azure/azure-functions/functions-create-first-azure-function).

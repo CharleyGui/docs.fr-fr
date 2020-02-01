@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 4dd747293fba4c18c2d10738d36f4d98cfd3f5b9
-ms.sourcegitcommit: 33c8d6f7342a4bb2c577842b7f075b0e20a2fa40
+ms.openlocfilehash: bf346825c7e29831111fc11c836ca6b4a05a18ce
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/12/2019
-ms.locfileid: "70926502"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920997"
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies web courantes côté client
 
@@ -98,7 +98,7 @@ Les composants sont définis à l’aide de la fonction d’élément décoratif
 
 Parce qu’elles utilisent des composants et des modèles, au lieu d’éléments DOM, les applications Angular peuvent fonctionner à un niveau d’abstraction supérieur et avec moins de code global que les applications écrites seulement à l’aide de JavaScript (également appelées « Vanilla JS ») ou avec jQuery. Angular impose également un certain ordre pour l’organisation de vos fichiers de script côté client. Par convention, les applications Angular utilisent une structure de dossiers commune, avec des fichiers de script de module et de composant situés dans un dossier d’application. Les scripts Angular qui permettent de créer, déployer et tester l’application sont généralement placés dans un dossier de niveau supérieur.
 
-Angular tire également profit des outils d’interface de ligne de commande (CLI). Pour commencer à développer localement des applications avec Angular (ce qui suppose que vous avez déjà installé git et npm), vous devez simplement cloner un dépôt à partir de GitHub, puis exécuter `npm install` et `npm start`. À partir de là, Angular fournit son propre outil CLI pour créer des projets, ajouter des fichiers et aider à l’exécution des tâches de test, de regroupement et de déploiement. Cette utilisation des outils CLI rend Angular particulièrement compatible avec ASP.NET Core, qui propose aussi une large prise en charge CLI.
+Vous pouvez développer des applications angulaires à l’aide d’une interface CLI. Pour commencer à développer localement des applications avec Angular (ce qui suppose que vous avez déjà installé git et npm), vous devez simplement cloner un dépôt à partir de GitHub, puis exécuter `npm install` et `npm start`. En outre, angulaire fournit sa propre interface CLI, qui peut créer des projets, ajouter des fichiers et assister aux tâches de test, de regroupement et de déploiement. Cette convivialité de l’interface CLI rend l’angle particulièrement compatible avec ASP.NET Core, qui offre également une excellente prise en charge de l’interface de commande.
 
 Microsoft a développé une application de référence, [eShopOnContainers](https://aka.ms/MicroservicesArchitecture), qui inclut une implémentation d’application SPA Angular. Cette application intègre des modules Angular pour gérer le panier d’achat de la boutique en ligne, charger et afficher des éléments du catalogue et gérer la création de commandes. Vous pouvez afficher et télécharger l’exemple d’application à partir de [GitHub](https://github.com/dotnet-architecture/eShopOnContainers/tree/master/src/Web/WebSPA).
 

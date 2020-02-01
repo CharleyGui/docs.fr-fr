@@ -2,12 +2,12 @@
 title: Présentation de Docker
 description: Approfondissez un peu votre connaissance de Docker ; une analogie simple peut vous y aider.
 ms.date: 02/15/2019
-ms.openlocfilehash: 8636ae3b1ad32158e10ce2aa58423f9c9824d8c0
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e3b3685f2fc6d5a9d33bb176d04ca910f0289344
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738150"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919876"
 ---
 # <a name="what-is-docker"></a>Présentation de Docker
 
@@ -19,7 +19,7 @@ ms.locfileid: "73738150"
 
 Comme indiqué dans le diagramme ci-dessus, les conteneurs de l’arrimeur peuvent s’exécuter n’importe où, localement dans le centre de donnes client, dans un fournisseur de services externes ou dans le Cloud, sur Azure. Les conteneurs d’images d’ancrage peuvent également s’exécuter en mode natif sur Linux et Windows. Toutefois, les images Windows peuvent s’exécuter uniquement sur des hôtes Windows et les images Linux peuvent s’exécuter sur des hôtes Linux et des hôtes Windows (à l’aide d’une machine virtuelle Linux Hyper-V, jusqu’à présent), où le terme « hôte » désigne un serveur ou une machine virtuelle.
 
-Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux et peuvent créer des images seulement pour les conteneurs Linux. (Les développeurs qui travaillent sur le Mac peuvent modifier le code ou exécuter l’interface de ligne de commande (CLI) de l’Ancreur à partir de macOS, mais au cours de cet article, les conteneurs ne s’exécutent pas directement sur macOS). Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
+Les développeurs peuvent utiliser des environnements de développement sur Windows, Linux ou macOS. Sur l’ordinateur de développement, le développeur exécute un hôte Docker sur lequel sont déployées les images Docker, y compris l’application et ses dépendances. Les développeurs qui travaillent sur Linux ou sur Mac utilisent un hôte Docker qui est basé sur Linux et peuvent créer des images seulement pour les conteneurs Linux. (Les développeurs qui travaillent sur le Mac peuvent modifier le code ou exécuter l’interface de commande de l’ancrer à partir de macOS, mais au cours de cet article, les conteneurs ne s’exécutent pas directement sur macOS.) Les développeurs qui travaillent sur Windows peuvent créer des images pour les conteneurs Linux ou Windows.
 
 Pour héberger des conteneurs dans un environnement de développement et fournir des outils de développement supplémentaires, Docker fournit [Docker Community Edition (CE)](https://www.docker.com/community-edition) pour Windows ou macOS. Ces produits installent la machine virtuelle nécessaire (l’hôte Docker) pour héberger les conteneurs. Docker fournit aussi [Docker Enterprise Edition (EE)](https://www.docker.com/enterprise-edition), conçu pour le développement en entreprise et utilisé par les équipes informatiques qui génèrent, livrent et exécutent des applications métier stratégiques volumineuses en production.
 

@@ -2,12 +2,12 @@
 title: Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 description: Les véritables applications de production doivent être déployées et gérées avec des orchestrateurs qui gèrent l’intégrité, la charge de travail et les cycles de vie de tous les conteneurs.
 ms.date: 02/15/2019
-ms.openlocfilehash: eb02a89a58b7df449edc05461e11fbeeec86b4a1
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: e548e6b3816dec1e56c273c53c9fd052443eb09b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72771088"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919541"
 ---
 # <a name="orchestrating-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestration des microservices et des applications à plusieurs conteneurs pour une grande scalabilité et une haute disponibilité
 
@@ -21,7 +21,7 @@ La figure 4-6 illustre un déploiement dans un cluster d’une application comp
 
 Ceci ressemble à une approche logique. Mais comment gérez-vous l’équilibrage de charge, le routage et l’orchestration de ces applications composées ?
 
-Si l’interface de ligne de commande (CLI) Docker répond parfaitement aux besoins de gestion d’un conteneur unique sur un seul hôte, elle ne peut pas faire face quand il s’agit de gérer plusieurs conteneurs déployés sur plusieurs hôtes pour des applications distribuées plus complexes. Dans la plupart des cas, vous avez besoin d’une plateforme de gestion capable de démarrer automatiquement les conteneurs, d’effectuer le scale-out des conteneurs avec plusieurs instances par image, de les suspendre ou les arrêter si nécessaire, et idéalement, de contrôler la façon dont ils accèdent à des ressources comme le réseau et le stockage de données.
+L’interface de commande de l’ancrage répond aux besoins de gestion d’un conteneur sur un seul hôte, mais elle est très brève lorsqu’il s’agit de gérer plusieurs conteneurs déployés sur plusieurs hôtes pour des applications distribuées plus complexes. Dans la plupart des cas, vous avez besoin d’une plateforme de gestion capable de démarrer automatiquement les conteneurs, d’effectuer le scale-out des conteneurs avec plusieurs instances par image, de les suspendre ou les arrêter si nécessaire, et idéalement, de contrôler la façon dont ils accèdent à des ressources comme le réseau et le stockage de données.
 
 Pour aller au-delà de la gestion de conteneurs individuels ou d’applications composées simples et passer à des applications d’entreprise de plus grande envergure avec des microservices, vous devez vous tourner vers des plateformes d’orchestration et de clustering.
 
@@ -35,7 +35,7 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 
 ## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Plateformes logicielles pour le clustering, l’orchestration et la planification de conteneurs
 
-| Platform | Commentaires |
+| Platform | Comments |
 |:---:|:---|
 | **Kubernetes** <br/> ![une image du logo Kubernetes.](./media/orchestrate-high-scalability-availability/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br/> <br/> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br/> <br/> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
 | **Service Azure Kubernetes (AKS)** <br/> ![une image du logo du service Azure Kubernetes.](./media/orchestrate-high-scalability-availability/azure-kubernetes-service-logo.png) | [AKS (Azure Kubernetes Service)](https://azure.microsoft.com/services/kubernetes-service/) est un service managé d’orchestration de conteneur Kubernetes dans Azure, qui simplifie la gestion, le déploiement et les opérations liés au cluster Kubernetes. |
