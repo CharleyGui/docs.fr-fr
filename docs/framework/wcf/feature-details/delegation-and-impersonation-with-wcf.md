@@ -8,12 +8,12 @@ helpviewer_keywords:
 - impersonation [WCF]
 - delegation [WCF]
 ms.assetid: 110e60f7-5b03-4b69-b667-31721b8e3152
-ms.openlocfilehash: 578957888daf7be20ab7418a46c533a011b3d2ac
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 3fd90cde16afdfe32b9bd0533ba04e35928d2706
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964164"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920199"
 ---
 # <a name="delegation-and-impersonation-with-wcf"></a>Délégation et emprunt d'identité avec WCF
 L'*emprunt d'identité* est une technique courante utilisée par les services pour restreindre l'accès du client aux ressources d'un domaine de service. Les ressources de domaine de service peuvent être des ressources d'ordinateur, telles que des fichiers locaux (emprunt d'identité), ou une ressource sur un autre ordinateur, tel qu'un partage de fichiers (délégation). Pour obtenir un exemple d'application, consultez [Impersonating the Client](../../../../docs/framework/wcf/samples/impersonating-the-client.md). Pour obtenir un exemple sur l’utilisation de l’emprunt d’identité, consultez [How to: Impersonate a Client on a Service](../../../../docs/framework/wcf/how-to-impersonate-a-client-on-a-service.md).  
@@ -71,7 +71,7 @@ L'*emprunt d'identité* est une technique courante utilisée par les services po
  L’infrastructure WCF peut emprunter l’identité de l’appelant uniquement si l’appelant est authentifié avec des informations d’identification qui peuvent être mappées à un compte d’utilisateur Windows. Si le service est configuré pour authentifier l'utilisation d'une information d'identification qui ne peut pas être mappée à un compte Windows, la méthode de service n'est pas exécutée.  
   
 > [!NOTE]
-> Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)], l'emprunt d'identité échoue si un jeton de contexte de sécurité avec état est créé, ce qui génère un <xref:System.InvalidOperationException>. Pour plus d’informations, consultez [scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
+> Sur Windows XP, l’emprunt d’identité échoue si un SCT avec état est créé, ce qui génère un <xref:System.InvalidOperationException>. Pour plus d’informations, consultez [scénarios non pris en charge](../../../../docs/framework/wcf/feature-details/unsupported-scenarios.md).  
   
 ## <a name="impersonation-in-a-service-method-imperative-model"></a>Emprunt d'identité dans une méthode de service : modèle impératif  
  Un appelant n'a parfois pas besoin d'emprunter l'identité de l'ensemble de la méthode de service pour fonctionner, mais uniquement une partie de celle-ci. Dans ce cas, obtenez l'identité Windows de l'appelant à l'intérieur de la méthode de service et exécutez l'emprunt d'identité de manière impérative. Pour ce faire, utilisez la propriété <xref:System.ServiceModel.ServiceSecurityContext.WindowsIdentity%2A> de <xref:System.ServiceModel.ServiceSecurityContext> pour retourner une instance de la classe <xref:System.Security.Principal.WindowsIdentity> , et appelez la méthode <xref:System.Security.Principal.WindowsIdentity.Impersonate%2A> avant d'utiliser l'instance.  

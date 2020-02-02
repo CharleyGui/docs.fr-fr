@@ -4,12 +4,12 @@ description: Cet article résume les nouvelles fonctionnalités et amélioration
 ms.custom: updateeachrelease
 ms.date: 04/12/2018
 ms.technology: dotnet-standard
-ms.openlocfilehash: ebf656c4a5499fff54cb5a70a93c4e8cc9c82d0a
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a90df0360211c3b02f4f2d8697890180099c5807
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73101754"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921055"
 ---
 # <a name="whats-new-in-the-net-standard"></a>Nouveautés de .NET Standard
 
@@ -63,7 +63,7 @@ Vous pouvez désormais développer des bibliothèques .NET Standard dans Visual 
 
 ### <a name="tooling-support-for-net-standard-libraries"></a>Prise en charge des outils pour les bibliothèques .NET Standard
 
-Avec les versions .NET Core 2.0 et .NET Standard 2.0, Studio Visual 2017 et l[’interface de ligne de commande (CLI) .NET Core](../../core/tools/index.md) incluent la prise en charge des outils pour la création de bibliothèques .NET Standard.
+Avec la sortie de .NET Core 2,0 et .NET Standard 2,0, Visual Studio 2017 et le [CLI .net Core](../../core/tools/index.md) incluent la prise en charge des outils pour la création de bibliothèques de .NET standard.
 
 Si vous installez Visual Studio avec la charge de travail **Développement multiplateforme .NET Core**, vous pouvez créer un projet de bibliothèque .NET Standard 2.0 avec un modèle de projet, comme le montre l’illustration suivante :
 

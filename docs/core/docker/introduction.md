@@ -3,12 +3,12 @@ title: Présentation de Docker
 description: Cet article présente Docker et en brosse une vue d’ensemble dans le contexte d’une application .NET Core.
 ms.date: 03/20/2019
 ms.custom: mvc
-ms.openlocfilehash: 278c921de83282d61b25f4d44e91535981285e83
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 40c8a3c8d81d23c621ccb83a283f49aa34a58ac1
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715548"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920820"
 ---
 # <a name="introduction-to-net-and-docker"></a>Introduction à .NET et à Docker
 
@@ -18,7 +18,7 @@ Pour plus d’informations sur l’installation de l’ordinateur de la station 
 
 ## <a name="docker-basics"></a>Bases de Docker
 
-Il y a quelques concepts à connaître. Le client Docker comporte un programme d’interface de ligne de commande permettant de gérer les images et les conteneurs. Prenez bien le temps de lire la documentation de [présentation de Docker](https://docs.docker.com/engine/docker-overview/). 
+Il y a quelques concepts à connaître. Le client docker dispose d’une interface CLI que vous pouvez utiliser pour gérer des images et des conteneurs. Prenez bien le temps de lire la documentation de [présentation de Docker](https://docs.docker.com/engine/docker-overview/). 
 
 ### <a name="images"></a>Images
 

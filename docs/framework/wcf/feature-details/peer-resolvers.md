@@ -2,12 +2,12 @@
 title: Programmes de résolution d'homologue
 ms.date: 03/30/2017
 ms.assetid: d86d12a1-7358-450f-9727-b6afb95adb9c
-ms.openlocfilehash: 33afffcbf11d757dfd003d1fd2bc9a17a3047a69
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 3bcdeffac3673c1c464a35d8b6e089efd7394907
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74837374"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919240"
 ---
 # <a name="peer-resolvers"></a>Programmes de résolution d'homologue
 Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d'autres nœuds. Les adresses IP sont obtenues en contactant un service de résolution, qui prend l'ID de la maille et retourne une liste d'adresses correspondant aux nœuds enregistrés sous cet ID de maille particulier. Le programme de résolution conserve une liste des adresses inscrites, qu'il crée en inscrivant chaque nœud de la maille avec le service.  
@@ -20,7 +20,7 @@ Pour se connecter à une maille, un nœud d'homologue requiert les adresses IP d
  Par défaut, le canal homologue utilise le service de résolution de pair PNRP pour la découverte d'homologues et de voisins dans la maille. Pour les situations/plateformes où PNRP n’est pas disponible ou faisable, Windows Communication Foundation (WCF) fournit un autre service de découverte basé sur le serveur, le <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>. Vous pouvez également définir explicitement un service de résolution personnalisé en écrivant une classe qui implémente l'interface <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract>.  
   
 ### <a name="peer-name-resolution-protocol-pnrp"></a>Protocole PNRP (Peer Name Resolution Protocol)  
- PNRP, le programme de résolution par défaut de Windows Vista, est un service de résolution de noms distribué sans serveur. PNRP peut également être utilisé sur [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] en installant le Pack réseau avancé. Deux clients qui exécutent la même version de PNRP peuvent se localiser mutuellement à l'aide de ce protocole, à condition qu'ils remplissent certaines conditions (telles que l'absence d'un pare-feu d'entreprise intermédiaire). Notez que la version de PNRP fournie avec Windows Vista est plus récente que la version incluse dans le Pack Advanced Networking. Reportez-vous au Centre de téléchargement Microsoft pour obtenir des mises à jour de PNRP pour [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)].  
+ PNRP, le programme de résolution par défaut de Windows Vista, est un service de résolution de noms distribué sans serveur. Vous pouvez également utiliser PNRP sur Windows XP SP2 en installant le Pack Advanced Networking. Deux clients qui exécutent la même version de PNRP peuvent se localiser mutuellement à l'aide de ce protocole, à condition qu'ils remplissent certaines conditions (telles que l'absence d'un pare-feu d'entreprise intermédiaire). Notez que la version de PNRP fournie avec Windows Vista est plus récente que la version incluse dans le Pack Advanced Networking. Consultez le centre de téléchargement Microsoft pour obtenir les mises à jour de PNRP pour Windows XP SP2.  
   
 ### <a name="custom-resolver-services"></a>Services de résolution personnalisés  
  Lorsque le service PNRP n'est pas disponible ou que vous souhaitez contrôler entièrement la maille, vous pouvez utiliser un service de résolution serveur personnalisé. Vous pouvez définir explicitement ce service en écrivant une classe de programme de résolution qui implémente l'interface <xref:System.ServiceModel.PeerResolvers.IPeerResolverContract>, ou en utilisant l'implémentation par défaut fournie, <xref:System.ServiceModel.PeerResolvers.CustomPeerResolverService>.  

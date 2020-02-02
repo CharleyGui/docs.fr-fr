@@ -3,18 +3,18 @@ title: Porter des bibliothèques vers .NET Core
 description: Découvrez comment porter des projets de bibliothèque de .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 6ff38647f77bbe1d25dd1d0065c4b32c60f87fcd
-ms.sourcegitcommit: cbdc0f4fd39172b5191a35200c33d5030774463c
+ms.openlocfilehash: 646587120de2e51280c2af4de36bf3a6b0f60c2d
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/09/2020
-ms.locfileid: "75777347"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920607"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
 Découvrez comment porter .NET Framework code de bibliothèque vers .NET Core, où il s’exécute sur plusieurs plateformes et étend la portée des applications qui l’utilisent.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 Cet article suppose que vous :
 
@@ -31,7 +31,7 @@ Cet article décrit la spécification formelle des API .NET qui sont destinées 
 Cet article explique comment .NET Core définit et utilise les packages et comment ceux-ci prennent en charge le code qui s’exécute sur plusieurs implémentations .NET.
 
 [Développer des bibliothèques avec des outils multiplateformes](../tutorials/libraries.md)\
-Cet article explique comment écrire des bibliothèques pour .NET à l’aide d’outils CLI multiplateforme.
+Cet article explique comment écrire des bibliothèques à l’aide de l’CLI .NET Core.
 
 [Ajouts au format *csproj* pour .NET Core](../tools/csproj.md)\
 Cet article décrit les modifications qui ont été apportées au fichier projet dans le cadre du passage à *csproj* et à MSBuild.

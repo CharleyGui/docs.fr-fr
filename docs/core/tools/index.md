@@ -1,26 +1,20 @@
 ---
-title: Outils de l’interface de ligne de commande (CLI) de .NET Core
-description: Présentation des outils et fonctionnalités de l’interface de ligne de commande (CLI) de .NET Core.
+title: CLI .NET Core
+titleSuffix: ''
+description: Vue d’ensemble de la CLI .NET Core et de ses fonctionnalités.
 ms.date: 08/14/2017
-ms.openlocfilehash: f19dcb19fb9d0203b3d3795c3fdc0b026c4c60e3
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: b0a8e0dd8cf77bb6f7567c27e9972f62515ec0f2
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163213"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920476"
 ---
-# <a name="net-core-command-line-interface-cli-tools"></a>Outils de l’interface de ligne de commande (CLI) de .NET Core
+# <a name="net-core-cli-overview"></a>Présentation de CLI .NET Core
 
-L’interface de ligne de commande (CLI) .NET Core est un chaîne d’outils multiplateforme pour le développement d’applications .NET. L’interface CLI est un fondement sur lequel les outils de niveau supérieur, tels que les environnements de développement intégré (IDE), les éditeurs et les orchestrateurs de build, peuvent Rest.
+L’interface de ligne de commande (CLI) .NET Core est un chaîne d’outils multiplateforme pour le développement, la génération, l’exécution et la publication d’applications .NET Core.
 
-## <a name="installation"></a>Installation de
-
-Utilisez les programmes d’installation natifs ou les scripts shell d’installation :
-
-- Les programmes d’installation natifs sont principalement utilisés sur les ordinateurs des développeurs et s’appuient sur le mécanisme d’installation natif de chaque plateforme prise en charge, par exemple des packages DEB sur Ubuntu ou des ensembles MSI sur Windows. Ces programmes d’installation installent et configurent l’environnement pour une utilisation immédiate par le développeur, mais requièrent des privilèges d’administrateur sur l’ordinateur. Vous pouvez consulter les instructions d’installation dans le [guide d’installation de .NET Core](https://aka.ms/dotnetcoregs).
-- Les scripts de shell servent principalement à configurer les serveurs de builds et permettent d’installer les outils sans privilèges d’administration. Les scripts d’installation n’installent pas les composants requis sur l’ordinateur, qui doivent être installés manuellement. Pour plus d’informations, consultez la [rubrique de référence sur les scripts d’installation](dotnet-install-script.md). Pour plus d’informations sur la configuration de l’interface CLI sur votre serveur de builds avec intégration continue (CI), consultez [Utilisation du SDK et des outils .NET Core avec l’intégration continue](using-ci-with-cli.md).
-
-Par défaut, l’interface CLI s’installe en parallèle (SxS) et plusieurs versions des outils CLI peuvent donc coexister sur un même ordinateur. La méthode permettant d’identifier la version utilisée sur un ordinateur sur lequel plusieurs versions sont installées est expliquée plus en détail dans la section [Pilote](#driver).
+Le CLI .NET Core est inclus dans le [Kit SDK .net Core](../sdk.md). Pour savoir comment installer le kit SDK .NET Core, consultez [install the kit SDK .net Core](../install/sdk.md).
 
 ## <a name="cli-commands"></a>Commandes CLI
 
@@ -153,5 +147,5 @@ Si vous avez utilisé les outils Preview 2 pour produire des projets *project.j
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référentiel GitHub dotnet/CLI](https://github.com/dotnet/cli/)
+- [référentiel GitHub dotnet/SDK](https://github.com/dotnet/sdk/)
 - [Guide d’installation de .NET Core](https://aka.ms/dotnetcoregs)

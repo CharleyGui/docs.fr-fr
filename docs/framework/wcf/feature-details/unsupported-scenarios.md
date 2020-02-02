@@ -2,16 +2,16 @@
 title: Scénarios non pris en charge
 ms.date: 03/30/2017
 ms.assetid: 72027d0f-146d-40c5-9d72-e94392c8bb40
-ms.openlocfilehash: a963b46d22f2103cddcc8fd080feefc39070690c
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: b643e6df8a877860ce36fc6ee34c4e4ca08ec748
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901265"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921159"
 ---
 # <a name="unsupported-scenarios"></a>Scénarios non pris en charge
 
-Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas en charge certains scénarios de sécurité spécifiques. Par exemple, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] édition personnelle n’implémente pas les protocoles d’authentification SSPI ou Kerberos, et par conséquent, WCF ne prend pas en charge l’exécution d’un service avec l’authentification Windows sur cette plateforme. D’autres mécanismes d’authentification, tels que le nom d’utilisateur/mot de passe et l’authentification intégrée HTTP/HTTPs, sont pris en charge lors de l’exécution de WCF sous Windows XP Édition personnelle.
+Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas en charge certains scénarios de sécurité spécifiques. Par exemple, Windows XP Édition personnelle n’implémente pas les protocoles d’authentification SSPI ou Kerberos, et par conséquent, WCF ne prend pas en charge l’exécution d’un service avec l’authentification Windows sur cette plateforme. D’autres mécanismes d’authentification, tels que le nom d’utilisateur/mot de passe et l’authentification intégrée HTTP/HTTPs, sont pris en charge lors de l’exécution de WCF sous Windows XP Édition personnelle.
 
 ## <a name="impersonation-scenarios"></a>Scénarios d’emprunt d’identité
 
@@ -22,7 +22,7 @@ Pour différentes raisons, Windows Communication Foundation (WCF) ne prend pas e
 
 WCF ne prend pas en charge l’emprunt d’identité et une <xref:System.InvalidOperationException> est levée lorsque les conditions suivantes sont réunies :
 
-- Le système d'exploitation correspond à [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+- Le système d’exploitation est Windows XP.
 
 - Le mode d'authentification aboutit à un identité Windows.
 
@@ -35,7 +35,7 @@ WCF ne prend pas en charge l’emprunt d’identité et une <xref:System.Invalid
  Sinon, dans la configuration, le jeton est activé en créant un <`customBinding`>, puis en ajoutant un <`security`élément > et en affectant à l’attribut `authenticationMode` la valeur SecureConversation et à l’attribut `requireSecurityContextCancellation` la valeur `true`.
 
 > [!NOTE]
-> Les spécifications précédentes sont spécifiques. Par exemple, l’élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Vous pouvez donc utiliser cet élément avec l'option `Required` de [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Les spécifications précédentes sont spécifiques. Par exemple, l’élément <xref:System.ServiceModel.Channels.SecurityBindingElement.CreateKerberosBindingElement%2A> crée un élément de liaison qui aboutit à une identité Windows, mais cet élément ne définit pas de jeton de contexte de sécurité avec état. Par conséquent, vous pouvez l’utiliser avec l’option `Required` sur Windows XP.
 
 ### <a name="possible-aspnet-conflict"></a>Conflit ASP.NET possible
 

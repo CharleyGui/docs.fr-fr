@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 9e891c6a-d960-45ea-904f-1a00e202d61a
-ms.openlocfilehash: 0be22fa1e81c85d82494bc4b93468a18f05d6423
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 48e3a080097aae2e539c238bfe33c3e107f81bf0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345560"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921147"
 ---
 # <a name="using-dead-letter-queues-to-handle-message-transfer-failures"></a>Utilisation de files d'attente de lettres mortes pour gérer des défaillances de transfert de messages
 La remise de messages en file d'attente peut échouer. Les messages qui ont échoué sont enregistrés dans une file d'attente de lettres mortes. L'échec de la remise peut être dû à des défaillances du réseau, une file d'attente supprimée, une file d'attente saturée, un échec d'authentification ou un retard de remise.  
@@ -23,7 +23,7 @@ La remise de messages en file d'attente peut échouer. Les messages qui ont éch
   
  La file d'attente de lettres mortes personnalisée assure l'isolement entre les clients qui partagent le même service MSMQ pour envoyer des messages.  
   
- Sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)], Windows Communication Foundation (WCF) fournit une file d’attente de lettres mortes à l’ensemble du système pour toutes les applications clientes mises en file d’attente. Sur Windows Vista, WCF fournit une file d’attente de lettres mortes pour chaque application cliente en file d’attente.  
+ Sur Windows Server 2003 et Windows XP, Windows Communication Foundation (WCF) fournit une file d’attente de lettres mortes à l’ensemble du système pour toutes les applications clientes mises en file d’attente. Sur Windows Vista, WCF fournit une file d’attente de lettres mortes pour chaque application cliente en file d’attente.  
   
 ## <a name="specifying-use-of-the-dead-letter-queue"></a>Spécification de l'utilisation de la file d'attente de lettres mortes  
  Une file d'attente de lettres mortes est dans le gestionnaire de files d'attente de l'application émettrice. Elle stocke les messages qui ont expiré ou dont la remise ou le transfert a échoué.  

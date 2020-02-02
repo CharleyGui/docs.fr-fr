@@ -5,13 +5,13 @@ dev_langs:
 - csharp
 author: thraka
 ms.author: adegeo
-ms.date: 10/22/2019
-ms.openlocfilehash: b8aa19a1d422fe7d6accd2b095f15843446599cd
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 01/27/2020
+ms.openlocfilehash: 92d97ca3efe761c879d0940a02342edb5a8180f0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789886"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920377"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -180,7 +180,7 @@ Exceptions au ciblage croisé :
 
 ## <a name="runtimesdk"></a>Runtime/SDK
 
-### <a name="major-version-roll-forward"></a>Restauration par progression d’une version majeure
+### <a name="major-version-runtime-roll-forward"></a>Restauration par progression du runtime de version majeure
 
 .NET Core 3.0 introduit une fonctionnalité que vous pouvez choisir d’utiliser et qui permet de restaurer par progression votre application vers la dernière version majeure de .NET Core. En outre, un nouveau paramètre a été ajouté pour contrôler la façon dont la restauration par progression est appliquée à votre application. Ce paramètre peut être configuré des façons suivantes :
 
@@ -226,6 +226,15 @@ Certaines opérations, par exemple la liaison et la publication d’une page de 
 Les outils locaux s’appuient sur un nom de fichier manifeste `dotnet-tools.json` dans votre répertoire actuel. Ce fichier manifeste définit les outils qui doivent être disponibles dans ce dossier et sous-celui-ci. Vous pouvez distribuer le fichier manifeste avec votre code pour que toute personne qui utilise votre code puisse restaurer et utiliser les mêmes outils.
 
 Pour les outils locaux et globaux, une version compatible du runtime est requise. De nombreux outils actuellement sur NuGet.org ciblent le runtime .NET Core 2.1. Pour installer ces outils de façon locale ou globale, vous devez toujours installer le [runtime NET Core 2.1](https://dotnet.microsoft.com/download/dotnet-core/2.1).
+
+### <a name="new-globaljson-options"></a>Nouvelles options global. JSON
+
+Le fichier *global. JSON* présente de nouvelles options qui offrent plus de flexibilité lorsque vous essayez de définir la version de la kit SDK .net Core utilisée. Les nouvelles options sont les suivantes :
+
+- `allowPrerelease`: indique si le programme de résolution du SDK doit prendre en compte les versions préliminaires lorsque vous sélectionnez la version du kit de développement logiciel (SDK) à utiliser.
+- `rollForward`: indique la stratégie de restauration par progression à utiliser lors de la sélection d’une version du kit de développement logiciel (SDK), en tant que solution de secours quand une version spécifique du kit de développement logiciel est manquante ou en tant que directive pour utiliser une version plus récente.
+
+Pour plus d’informations sur les modifications, y compris les valeurs par défaut, les valeurs prises en charge et les nouvelles règles de correspondance, consultez [vue d’ensemble de Global. JSON](../tools/global-json.md).
 
 ### <a name="smaller-garbage-collection-heap-sizes"></a>Tailles de tas de garbage collection plus petites
 

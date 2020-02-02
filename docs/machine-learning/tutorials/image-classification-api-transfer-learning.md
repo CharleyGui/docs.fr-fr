@@ -6,12 +6,12 @@ ms.author: luquinta
 ms.date: 12/12/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: eb61ad85580310c7becc2a1a2237efe188fbecf0
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 2dfa3cdab9de47b55f7a3f73f0d6e9460390700c
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794587"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920101"
 ---
 # <a name="tutorial-automated-visual-inspection-using-transfer-learning-with-the-mlnet-image-classification-api"></a>Didacticiel : inspection visuelle automatisée à l’aide de l’apprentissage de transfert avec l’API de classification d’image ML.NET
 
@@ -28,7 +28,7 @@ Dans ce didacticiel, vous apprendrez à :
 
 ## <a name="prerequisites"></a>Prerequisites
 
-- [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+- [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
 
 ## <a name="image-classification-transfer-learning-sample-overview"></a>Vue d’ensemble de l’exemple d’apprentissage de transfert de classification d’image
 
@@ -253,7 +253,7 @@ public static IEnumerable<ImageData> LoadImagesFromDirectory(string folder, bool
 
 L’apprentissage du modèle se compose de deux étapes. Tout d’abord, l’API de classification d’image est utilisée pour l’apprentissage du modèle. Ensuite, les étiquettes encodées dans la colonne `PredictedLabel` sont reconverties en leur valeur catégorique d’origine à l’aide de la transformation `MapKeyToValue`.
 
-1. Créez une variable pour stocker un ensemble de paramètres obligatoires et facultatifs pour un `ImageClassificationTrainer`. 
+1. Créez une variable pour stocker un ensemble de paramètres obligatoires et facultatifs pour un `ImageClassificationTrainer`.
 
     [!code-csharp [ClassifierOptions](~/machinelearning-samples/samples/csharp/getting-started/DeepLearning_ImageClassification_Binary/DeepLearning_ImageClassification_Binary/Program.cs#L46-L57)]
 

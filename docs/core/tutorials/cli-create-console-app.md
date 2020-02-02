@@ -1,23 +1,23 @@
 ---
-title: Prise en main de .NET Core à l’aide de l’interface CLI-CLI .NET Core
-description: Didacticiel pas à pas montrant comment démarrer avec .NET Core sur Windows, Linux ou Mac OS à l’aide de l’interface de ligne de commande (CLI) .NET Core.
+title: Bien démarrer avec .NET Core à l’aide de l’interface CLI
+description: Un didacticiel pas à pas expliquant comment prendre en main .NET Core sur Windows, Linux ou macOS à l’aide de l’CLI .NET Core.
 author: thraka
 ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 4285ed3c0488ea615ca89b0b771bf09c8c29b318
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 6e1c7881aa415ea54307d80214001a2f0fe5b4a6
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739128"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920465"
 ---
-# <a name="get-started-with-net-core-on-windowslinuxmacos-using-the-command-line"></a>Bien démarrer avec .NET Core sur Windows/Linux/macOS en ligne de commande
+# <a name="get-started-with-net-core-using-the-net-core-cli"></a>Prise en main de .NET Core à l’aide de l’CLI .NET Core
 
-Cet article vous montre comment commencer à développer des applications multiplateformes sur votre ordinateur à l’aide des outils de CLI .NET Core.
+Cet article vous montre comment commencer à développer des applications .NET Core qui fonctionnent sur Windows, Linux et macOS à l’aide de l’CLI .NET Core.
 
-Si vous n’êtes pas familiarisé avec l’ensemble d’outils CLI .NET Core, consultez [Vue d’ensemble du SDK .NET Core](../tools/index.md).
+Si vous n’êtes pas familiarisé avec le CLI .NET Core, consultez la [vue d’ensemble de CLI .net Core](../tools/index.md).
 
 ## <a name="prerequisites"></a>Prerequisites
 
@@ -194,6 +194,6 @@ Et voilà ! À présent, vous pouvez commencer à utiliser les concepts de base
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Organisation et test de projets avec les outils CLI .NET Core](testing-with-cli.md)
-- [Publier des applications .NET Core avec l’interface CLI](../deploying/deploy-with-cli.md)
-- [Pour en savoir plus sur le déploiement](../deploying/index.md)
+- [Organisation et test de projets avec la CLI .NET Core](testing-with-cli.md)
+- [Publier des applications .NET Core avec le CLI .NET Core](../deploying/deploy-with-cli.md)
+- [Déploiement d’applications .NET Core](../deploying/index.md)

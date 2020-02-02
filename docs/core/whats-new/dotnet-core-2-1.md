@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 603e7ae4ffb9e6a4bb477af9597d6948bd63f55e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 32784f7d4b9e3a93eb7f81b4829b39c1a06ef949
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100750"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920395"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -67,7 +67,7 @@ Un certain nombre d’outils qui étaient disponibles uniquement par projet à l
 
 .NET Core 2.1 prend en charge les *outils globaux*, autrement dit des outils personnalisés disponibles globalement à partir de la ligne de commande. Le modèle d’extensibilité des versions précédentes de .NET Core proposant des outils personnalisés par projet uniquement à l’aide de [`DotnetCliToolReference`](../tools/extensibility.md#consuming-per-project-tools).
 
-Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Exemple :
+Pour installer un outil global, vous utilisez la commande [dotnet tool install](../tools/dotnet-tool-install.md). Par exemple :
 
 ```dotnetcli
 dotnet tool install -g dotnetsay
@@ -96,7 +96,7 @@ Toutes les applications .NET Core depuis .NET Core 2.0 extrapolent automatiquem
 > [!IMPORTANT]
 > Ce comportement de restauration par progression ne s’applique pas aux préversions, Par défaut, il ne s’applique pas non plus aux versions majeures, mais vous pouvez changer ce comportement avec les paramètres ci-dessous.
 
-Vous pouvez modifier ce comportement en changeant le paramètre d’extrapolation en cas d’absence de framework partagé candidat. Les paramètres disponibles sont :
+Vous pouvez modifier ce comportement en changeant le paramètre d’extrapolation en cas d’absence de framework partagé candidat. Paramètres disponibles :
 
 - `0` : désactiver le comportement d’extrapolation de version mineure. Avec ce paramètre, une application conçue pour .NET Core 2.0.0 extrapole vers .NET Core 2.0.1, mais pas vers .NET Core 2.2.0 ou .NET Core 3.0.0.
 - `1` : activer le comportement d’extrapolation de version mineure. Il s’agit de la valeur par défaut pour ce paramètre. Avec ce paramètre, une application conçue pour .NET Core 2.0.0 extrapole vers .NET Core 2.0.1 ou .NET Core 2.2.0 (en fonction de la version installée), mais n’extrapole pas vers .NET Core 3.0.0.
@@ -112,7 +112,7 @@ Vous pouvez modifier ce paramètre de trois manières :
    "rollForwardOnNoCandidateFx" : 0
    ```
 
-- Quand vous utilisez les [outils CLI .NET Core](../tools/index.md), ajoutez l’option suivante avec la valeur souhaitée à une commande .NET Core telle que `run` :
+- Lorsque vous utilisez l' [CLI .net Core](../tools/index.md), ajoutez l’option suivante avec la valeur souhaitée à une commande .net Core, comme `run`:
 
    ```dotnetcli
    dotnet run --rollForwardOnNoCandidateFx=0

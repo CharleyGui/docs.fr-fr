@@ -4,12 +4,12 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 01/16/2020
-ms.openlocfilehash: afba761e2237ed84528157841e538a9b44d9a966
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: b8fec2afa6f03e3dabbf1ff449431759087163ba
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76164083"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920642"
 ---
 # <a name="ubuntu-1910-package-manager---install-net-core"></a>Gestionnaire de package Ubuntu 19,10-installer .NET Core
 
@@ -25,7 +25,7 @@ Avant d’installer .NET, vous devez :
 - Enregistrez le dépôt du produit.
 - Installez les dépendances requises.
 
-Vous ne devez faire ces opérations qu’une seule fois par machine.
+Cette opération ne doit être effectuée qu’une fois par ordinateur.
 
 Ouvrez un terminal et exécutez les commandes suivantes.
 
@@ -82,6 +82,10 @@ sudo apt-get install dotnet-runtime-3.1
 
 ## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
 
+Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+
+### <a name="unable-to-locate"></a>Impossible de localiser
+
 Si vous recevez un message d’erreur semblable à **incapable de localiser le package {le package .net Core}** , exécutez les commandes suivantes.
 
 ```bash
@@ -104,3 +108,7 @@ sudo apt-get install -y apt-transport-https
 sudo apt-get update
 sudo apt-get install {the .NET Core package}
 ```
+
+### <a name="failed-to-fetch"></a>Échec de la récupération
+
+[!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]

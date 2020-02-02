@@ -2,12 +2,12 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 45b710c3b2d1647e1bf7e57b30a96192abb9d788
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7101719f77a03909d9a38dca93100ec90c1add13
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345048"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921384"
 ---
 # <a name="tcptransport"></a>\<tcpTransport>
 Définit un transport TCP qui peut être utilisé par un canal pour transférer des messages pour une liaison personnalisée.  
@@ -62,7 +62,7 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |maxPendingConnections|Obtient ou définit le nombre maximal de connexions en attente de distribution sur le service.|  
 |maxReceivedMessageSize|Obtient et définit la taille de message maximale autorisée qui peut être reçue.|  
 |portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. La valeur par défaut est `false`,<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
-|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. La valeur par défaut est `false`,<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Cette propriété s’applique uniquement à [!INCLUDE[wxpsp2](../../../../../includes/wxpsp2-md.md)] et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service. Pour plus d’informations sur la configuration de Teredo, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Pour plus d’informations, consultez [centres de technologie Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. La valeur par défaut est `false`,<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Cette propriété s’applique uniquement à Windows XP SP2 et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service. Pour plus d’informations sur la configuration de Teredo, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Pour plus d’informations, consultez [centres de technologie Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
 |transferMode|Obtient ou définit une valeur qui indique si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.|  
 |connectionPoolSettings|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   

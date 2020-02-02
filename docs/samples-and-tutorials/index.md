@@ -4,12 +4,12 @@ description: Informations sur les exemples et les didacticiels pour .NET Core, A
 author: BillWagner
 ms.author: wiwagn
 ms.date: 04/11/2017
-ms.openlocfilehash: e64d0fdd02b28a1c9f21f06305f5ef278fb2827b
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 9a161d5325125fba8d4f4e53a0a306c989ed6bc5
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901041"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921391"
 ---
 # <a name="net-samples-and-tutorials"></a>Exemples et tutoriels .NET
 
@@ -25,13 +25,13 @@ Ce guide montre comment créer une application web ASP.NET Core et les tests uni
 
 ### <a name="tutorials"></a>Didacticiels
 
-**[Écriture d’applications console .NET Core à l’aide des outils CLI : Guide pas à pas](../core/tutorials/cli-create-console-app.md)**
+**[Écriture d’applications console .NET Core à l’aide de l’CLI .NET Core : Guide pas à pas](../core/tutorials/cli-create-console-app.md)**
 
 Ce guide indique comment utiliser les outils d’interface de ligne de commande (CLI) .NET Core pour créer des applications console multiplateformes. Il commence avec une application console simple qui s’étend finalement sur plusieurs projets, tests compris. Vous ajoutez des fonctionnalités pas à pas, en renforçant vos connaissances au fur à mesure. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/core/console-apps) est disponible dans le référentiel dotnet/samples sur GitHub.
 
 **[Écriture de bibliothèques avec des outils multiplateformes](../core/tutorials/libraries.md)**
 
-Cet exemple explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. Ces outils offrent une expérience efficace et concrète qui fonctionne sur tous les systèmes d’exploitation pris en charge. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) est disponible dans le référentiel dotnet/samples sur GitHub.
+Cet exemple explique comment écrire des bibliothèques pour .NET à l’aide de l’CLI .NET Core. Ces outils offrent une expérience efficace et concrète qui fonctionne sur tous les systèmes d’exploitation pris en charge. [L’exemple terminé](https://github.com/dotnet/samples/tree/master/framework/libraries/frameworks-library) est disponible dans le référentiel dotnet/samples sur GitHub.
 
 ## <a name="aspnet-core"></a>ASP.NET Core
 
@@ -111,7 +111,7 @@ De nombreuses rubriques montrent le code source et les exemples qu’il est poss
    * Clonez le référentiel localement. Si vous clonez un référentiel de documents directement sur votre système local, vous ne pourrez pas effectuer de validations directement sur le référentiel officiel ; par conséquent, vous ne pourrez pas apporter de contributions à la documentation par la suite. Utilisez la procédure de réplication et de clonage décrite précédemment si vous souhaitez conserver la possibilité de contribuer ultérieurement à la documentation.
 1. Naviguez dans les dossiers du référentiel jusqu’à l’emplacement de l’exemple. Le chemin d’accès relatif de l’emplacement de l’exemple s’affiche dans la barre d’adresse de votre navigateur lorsque vous suivez le lien de l’exemple.
 1. Pour exécuter un exemple, vous avez plusieurs possibilités :
-   * Utiliser les [outils CLI DotNET](../core/tools/index.md) : dans une fenêtre de console, accédez au dossier de l’exemple et utilisez les commandes CLI DotNET.
+   * Utilisez la [CLI .net Core](../core/tools/index.md): dans une fenêtre de console, accédez au dossier de l’exemple et utilisez les commandes CLI dotnet.
    * Utiliser [Visual Studio](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) ou [Visual Studio pour Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link) : ouvrez l’exemple en sélectionnant **Fichier > Ouvrir > Projet / solution** dans la barre de menus, accédez au dossier de l’exemple de projet et sélectionnez le fichier projet ( *.csproj* ou *.fsproj*).
    * Utiliser [Visual Studio Code](https://code.visualstudio.com/) : ouvrez l’exemple en sélectionnant **Fichier > Ouvrir le dossier** dans la barre de menus et en sélectionnant le dossier de l’exemple de projet.
    * Utiliser un autre IDE qui prend en charge les projets .NET Core.

@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - auditing security events [WCF]
 ms.assetid: 5633f61c-a3c9-40dd-8070-1c373b66a716
-ms.openlocfilehash: 6505cc027b2983fd61ae53ca7ae43319024c74f7
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: e1c3e3d7697bf9a85cf0ab7df35a4755939d1df0
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964712"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921412"
 ---
 # <a name="auditing-security-events"></a>Audit des événements de sécurité
 Les applications créées avec Windows Communication Foundation (WCF) peuvent consigner les événements de sécurité (réussite, échec, ou les deux) avec la fonctionnalité d’audit. Les événements sont écrits dans le journal des événements système Windows et peuvent être examinés à l'aide de l'Observateur d'événements.  
@@ -32,7 +32,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
   
  L'écriture dans le journal Security requiert le privilège `SeAuditPrivilege`. Par défaut, seuls les comptes Système local et Service réseau possèdent ce privilège. La gestion des fonctions du journal Security `read` et `delete` requièrent le privilège `SeSecurityPrivilege`. Par défaut, seuls les administrateurs possèdent ce privilège.  
   
- En revanche, les utilisateurs authentifiés peuvent lire et écrire dans le journal des applications. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] écrit par défaut les événements d'audit dans le journal des applications. Le journal peut également contenir des informations personnelles accessibles à tous les utilisateurs authentifiés.  
+ En revanche, les utilisateurs authentifiés peuvent lire et écrire dans le journal des applications. Windows XP écrit les événements d’audit dans le journal des applications par défaut. Le journal peut également contenir des informations personnelles accessibles à tous les utilisateurs authentifiés.  
   
 ## <a name="suppressing-audit-failures"></a>Suppression des échecs d'audit  
  Une autre option pendant l'audit permet de déterminer s'il faut supprimer les échecs d'audit. Par défaut, un échec d'audit n'affecte pas une application. Toutefois, si cela s'avère nécessaire, vous pouvez affecter `false` à l'option, ce qui provoque la levée d'une exception.  
@@ -78,7 +78,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
 ## <a name="security-considerations"></a>Considérations sur la sécurité  
  Si un utilisateur malveillant sait que l'audit est activé, cet intrus peut envoyer des messages non valides pour provoquer l'écriture d'entrées d'audit. Si le journal d'audit se remplit de cette manière, le système d'audit échoue. Pour minimiser ce problème, affectez à la propriété <xref:System.ServiceModel.Description.ServiceSecurityAuditBehavior.SuppressAuditFailure%2A> la valeur `true` et utilisez les propriétés de l'Observateur d'événements pour contrôler le comportement d'audit.  
   
- Les événements d'audit écrits dans le journal Application sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] sont accessibles aux utilisateurs authentifiés.  
+ Les événements d’audit qui sont écrits dans le journal des applications sur Windows XP sont visibles par tous les utilisateurs authentifiés.  
   
 ## <a name="choosing-between-application-and-security-event-logs"></a>Sélection du journal des événements Application ou Security  
  Les tableaux suivants fournissent des informations vous permettant d'identifier si vous devez procéder à l'enregistrement dans le journal des événements Application ou dans le journal des événements Security.  
@@ -87,7 +87,7 @@ Les applications créées avec Windows Communication Foundation (WCF) peuvent co
   
 |System|Journal Application|Journal Security|  
 |------------|---------------------|------------------|  
-|[!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] ou version ultérieure|pris en charge|Non pris en charge|  
+|Windows XP SP2 ou version ultérieure|pris en charge|Non pris en charge|  
 |Windows Server 2003 SP1 et Windows Vista|pris en charge|Le contexte de thread doit posséder `SeAuditPrivilege`|  
   
 #### <a name="other-factors"></a>Autres facteurs  

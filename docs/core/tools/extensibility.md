@@ -1,21 +1,21 @@
 ---
 title: Modèle d’extensibilité des outils CLI .NET Core
-description: Découvrez comment étendre les outils de l’interface de ligne de commande (CLI).
+description: Découvrez comment vous pouvez étendre le CLI .NET Core.
 ms.date: 04/12/2017
-ms.openlocfilehash: 4f49735fa94b2a7ee32e0d80590f9e680edeff16
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 74da895fb3a3f6c77640a2b9a64acdb2894a954b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714178"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920526"
 ---
-# <a name="net-core-cli-tools-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
+# <a name="net-core-cli-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
-Ce document décrit les différentes méthodes permettant d’étendre les outils de l’interface de ligne de commande (CLI) .NET Core et explique les scénarios dans lesquels elles sont utilisées.
+Cet article décrit les différentes façons dont vous pouvez étendre les CLI .NET Core et explique les scénarios qui les pilotent.
 Vous verrez comment utiliser les outils et comment créer les différents types d’outils.
 
-## <a name="how-to-extend-cli-tools"></a>Extension des outils CLI
-Vous pouvez étendre les outils CLI de trois façons :
+## <a name="how-to-extend-the-cli"></a>Comment étendre l’interface CLI
+L’interface CLI peut être étendue de trois manières principales :
 
 1. [Par le biais des packages NuGet, par projet](#per-project-based-extensibility)
 
@@ -79,7 +79,7 @@ Vous pouvez également voir l’[implémentation des outils utilisés](https://g
 
 ## <a name="custom-targets"></a>Cibles personnalisées
 
-NuGet peut [empaqueter des fichiers de cibles et de propriétés MSBuild personnalisées](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Suite à l’adoption de MSBuild dans les outils CLI .NET Core, le même mécanisme d’extensibilité s’applique désormais aux projets .NET Core. Vous utilisez ce type d’extensibilité quand vous souhaitez étendre le processus de génération, accéder à tous les artefacts dans le processus de génération, tels que les fichiers générés, inspecter la configuration sous laquelle la build est appelée, etc.
+NuGet peut [empaqueter des fichiers de cibles et de propriétés MSBuild personnalisées](/nuget/create-packages/creating-a-package#include-msbuild-props-and-targets-in-a-package). Avec le déplacement de .NET Core pour utiliser MSBuild, le même mécanisme d’extensibilité s’applique désormais aux projets .NET Core. Vous utilisez ce type d’extensibilité quand vous souhaitez étendre le processus de génération, accéder à tous les artefacts dans le processus de génération, tels que les fichiers générés, inspecter la configuration sous laquelle la build est appelée, etc.
 
 Dans l’exemple suivant, vous pouvez voir le fichier projet de la cible à l’aide de la syntaxe `csproj`. Celle-ci indique à la commande [`dotnet pack`](dotnet-pack.md) les éléments à empaqueter. Les fichiers de cibles et les assemblys sont placés dans le dossier *build* à l’intérieur du package. Notez l’élément `<ItemGroup>` dont la propriété `Label` a la valeur `dotnet pack instructions`, et la cible définie en dessous.
 

@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: 2482709abfadad0505a40f4c37fd58cee4a2634c
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 026421d7b1b2a0e39118ae712780ca7fc8f6e444
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73978200"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921254"
 ---
 # <a name="tutorial-forecast-bike-rental-service-demand-with-time-series-analysis-and-mlnet"></a>Didacticiel : prévoir la demande du service de location de vélos avec l’analyse de série chronologique et ML.NET
 
@@ -27,9 +27,9 @@ Dans ce didacticiel, vous apprendrez à :
 > * Enregistrer un modèle de prévision
 > * Utiliser un modèle de prévision
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
-- [Visual Studio 2017 15.6 ou version ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017), avec la charge de travail « Développement multiplateforme .Net Core » installée.
+- [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
 
 ## <a name="time-series-forecasting-sample-overview"></a>Vue d’ensemble de l’exemple de prévision de séries chronologiques
 
@@ -284,7 +284,7 @@ Félicitations ! Vous avez maintenant créé avec succès une série chronologi
 
 Vous pouvez trouver le code source de ce didacticiel dans le référentiel [dotnet/machinelearning-Samples](https://github.com/dotnet/machinelearning-samples/tree/master/samples/csharp/getting-started/Forecasting_BikeSharingDemand) .
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Tâches machine learning dans ML.NET](../resources/tasks.md)
 - [Améliorer la précision du modèle](../resources/improve-machine-learning-model-ml-net.md)

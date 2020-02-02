@@ -2,18 +2,18 @@
 title: Installation de Message Queuing (MSMQ)
 ms.date: 03/30/2017
 ms.assetid: 7ddcd497-3e04-427e-bc04-3610ad98b01e
-ms.openlocfilehash: e6d6a3a2e1bc0a0c936e4b8594eab836b559e5a7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 8ecbd07adfb6bfb4e9898f9b8508809480d17e16
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344748"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921102"
 ---
 # <a name="installing-message-queuing-msmq"></a>Installation de Message Queuing (MSMQ)
 Les procédures suivantes indiquent comment installer Message Queuing 4.0 et Message Queuing 3.0.  
   
 > [!NOTE]
-> Message Queuing 4,0 n’est pas disponible dans [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et Windows Server 2003.  
+> Message Queuing 4,0 n’est pas disponible dans Windows XP et Windows Server 2003.  
   
 #### <a name="to-install-message-queuing-40-on-windows-server-2008-or-windows-server-2008-r2"></a>Pour installer Message Queuing 4.0 sur Windows Server 2008 ou Windows Server 2008 R2  
   

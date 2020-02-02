@@ -5,12 +5,12 @@ helpviewer_keywords:
 - firewalls [WCF]
 - NATs [WCF]
 ms.assetid: 74db0632-1bf0-428b-89c8-bd53b64332e7
-ms.openlocfilehash: b8be10740c8e92d3dac7094f07b3372e8d78a3d9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 28360b8b5b07c7c532dd2406ca98604870b8335f
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743873"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921076"
 ---
 # <a name="working-with-nats-and-firewalls"></a>Utilisation des NAT et des pare-feu
 Il arrive fréquemment que les client et serveur d'une connexion réseau ne disposent pas d'une voie de communication directe et ouverte. Les paquets sont filtrés, acheminés, analysés et transformés par les ordinateurs de point de terminaison ainsi que par les ordinateurs intermédiaires sur le réseau. Ces ordinateurs intermédiaires, qui participent à la communication, sont notamment les applications de traduction d'adresses réseau (Network address translation, NAT) et les pare-feu.  
@@ -25,7 +25,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
  Certaines configurations NAT prennent en charge les règles de transfert afin de permettre aux ordinateurs externes de se connecter à certains ordinateurs internes. Les modalités de configuration de cette option varient en fonction des applications NAT. En outre, demander aux utilisateurs finaux de modifier leur configuration NAT est déconseillé pour la plupart des applications. Un grand nombre d'utilisateurs finaux ne peuvent ou ne souhaitent pas modifier leur configuration NAT pour une application particulière.  
   
 ## <a name="how-firewalls-affect-communication"></a>Répercussions des pare-feu sur les communications  
- Un *pare-feu* est un logiciel ou un périphérique matériel qui applique des règles au trafic transitant pour décider s’il faut autoriser ou refuser le passage. Les pare-feu peuvent être configurés de sorte à examiner les flux entrants et/ou sortants du trafic. Ils forment un cordon de sécurité sur le réseau considéré, au niveau des ses extrémités ou au niveau de l'hôte de point de terminaison. Les professionnels utilisent depuis longtemps les pare-feu pour protéger leurs serveurs des attaques malveillantes. Depuis l'arrivée sur le marché du premier pare-feu personnel dans [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)], le nombre d'ordinateurs personnels protégés par un pare-feu a considérablement augmenté. C'est pourquoi, lors d'une connexion, il y a de grandes chances qu'aux deux extrémités un pare-feu examine les paquets.  
+ Un *pare-feu* est un logiciel ou un périphérique matériel qui applique des règles au trafic transitant pour décider s’il faut autoriser ou refuser le passage. Les pare-feu peuvent être configurés de sorte à examiner les flux entrants et/ou sortants du trafic. Ils forment un cordon de sécurité sur le réseau considéré, au niveau des ses extrémités ou au niveau de l'hôte de point de terminaison. Les professionnels utilisent depuis longtemps les pare-feu pour protéger leurs serveurs des attaques malveillantes. Depuis l’introduction du pare-feu personnel dans Windows XP SP2, le nombre d’utilisateurs privés derrière un pare-feu a considérablement augmenté. C'est pourquoi, lors d'une connexion, il y a de grandes chances qu'aux deux extrémités un pare-feu examine les paquets.  
   
  Il existe une grande variété de pare-feu tant sur le plan de leur complexité que sur le plan des fonctionnalités qu'ils utilisent pour examiner les paquets. Les pare-feu de base appuient leur décision d'accorder ou non le droit d'entrée aux paquets en examinant les adresse de destination et de source ainsi que les ports qui y figurent. Les pare-feu plus élaborés examinent également le contenu des paquets pour prendre leur décision. Un grand nombre de configurations différents sont possibles pour ces pare-feu et ils sont souvent utilisés dans le cadre d'applications spécialisées.  
   
@@ -33,7 +33,7 @@ Il arrive fréquemment que les client et serveur d'une connexion réseau ne disp
   
 ## <a name="using-teredo"></a>Utilisation de Teredo  
 
- Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et les systèmes d'exploitation ultérieurs prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. [!INCLUDE[wxpsp2](../../../../includes/wxpsp2-md.md)] et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
+ Teredo est une technologie de transition IPv6 qui permet l'adressabilité directe des ordinateurs se trouvant derrière une application NAT. Cette technologie utilise un serveur pouvant être acheminé publiquement pour rendre publiques les éventuelles connexions afférentes. Le serveur Teredo sert de point de rencontre aux applications client et serveur et leur permet ainsi d'échanger leurs informations de connexion respectives. Les ordinateurs concernés demandent ensuite à obtenir une adresse Teredo temporaire et les paquets sont acheminés via le réseau existant. La prise en charge de Teredo dans WCF nécessite l’activation de la prise en charge D’ipv6 et de Teredo dans le système d’exploitation. Les systèmes d’exploitation Windows XP et versions ultérieures prennent en charge Teredo. Les systèmes d’exploitation Windows Vista et versions ultérieures prennent en charge IPv6 par défaut et demandent uniquement à l’utilisateur d’activer Teredo. Windows XP SP2 et Windows Server 2003 requièrent que l’utilisateur active à la fois IPv6 et Teredo. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v%3dtechnet.10)).  
   
 ## <a name="choosing-a-transport-and-message-exchange-pattern"></a>Sélection d’un transport et d’un modèle d’échange de messages  
  La sélection d'un transport et d'un MEP s'effectue en trois étapes :  

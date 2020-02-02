@@ -8,12 +8,12 @@ helpviewer_keywords:
 - WCF, authentication
 - WCF, Windows authentication
 ms.assetid: 181be4bd-79b1-4a66-aee2-931887a6d7cc
-ms.openlocfilehash: 45e4926905bbf3b5a24af15de153afc7bd2a4823
-ms.sourcegitcommit: c01c18755bb7b0f82c7232314ccf7955ea7834db
+ms.openlocfilehash: 9dbf9eee6e4222f899d77a4457bc78132ec7f092
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/15/2020
-ms.locfileid: "75964569"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920231"
 ---
 # <a name="debugging-windows-authentication-errors"></a>Débogage d'erreurs d'authentification Windows.
 Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurité, l'interface SSPI (Security Support Provider Interface) gère les processus de sécurité. Lorsque des erreurs de sécurité se produisent au niveau de la couche SSPI, elles sont signalées par Windows Communication Foundation (WCF). Cette rubrique fournit une infrastructure et un ensemble de questions permettant de diagnostiquer les erreurs.  
@@ -139,7 +139,7 @@ Lorsque vous utilisez l'authentification Windows comme un mécanisme de sécurit
  [!code-vb[C_DebuggingWindowsAuth#3](../../../../samples/snippets/visualbasic/VS_Snippets_CFX/c_debuggingwindowsauth/vb/source.vb#3)]  
   
 #### <a name="sspi-is-not-available"></a>SSPI n'est pas disponible  
- Les systèmes d’exploitation suivants ne prennent pas en charge l’authentification Windows lorsqu’ils sont utilisés en tant que serveur : [!INCLUDE[wxp](../../../../includes/wxp-md.md)] édition personnelle, [!INCLUDE[wxp](../../../../includes/wxp-md.md)] Édition Media Center et les Éditions familiales de Windows Vista.  
+ Les systèmes d’exploitation suivants ne prennent pas en charge l’authentification Windows lorsqu’ils sont utilisés en tant que serveur : Windows XP Édition personnelle, Windows XP Édition Media Center et les Éditions familiales de Windows Vista.  
   
 #### <a name="developing-and-deploying-with-different-identities"></a>Développement et déploiement avec des identités différentes  
  Si vous développez votre application sur un ordinateur, la déployez sur un autre et utilisez différents types de compte pour vous authentifier sur chaque ordinateur, vous pouvez observer un comportement différent. Par exemple, supposons que vous développiez votre application sur un ordinateur Windows XP Professionnel à l’aide du mode d’authentification `SSPI Negotiated`. Si vous utilisez un compte d'utilisateur local pour vous authentifier, le protocole NTLM sera alors utilisé. Une fois que l'application est développée, vous déployez le service sur un ordinateur Windows Server 2003 où il s'exécute sous un compte de domaine. À ce stade, le client ne sera pas en mesure d'authentifier le service car il utilisera Kerberos et un contrôleur de domaine.  

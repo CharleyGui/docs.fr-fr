@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 3d2d48076fafe44687546ca27e4d8670b81ce433
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 5c039c34983647884561f33645f26e4a89280248
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742672"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921265"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -25,7 +25,7 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** Dois-je mettre à niveau MSMQ pour utiliser les liaisons <xref:System.ServiceModel.NetMsmqBinding> et `MsmqIntegration` ?
 
-**R :** non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
+**R :** non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur Windows XP et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
 
 **Q :** Quelles sont les fonctionnalités des liaisons <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
 

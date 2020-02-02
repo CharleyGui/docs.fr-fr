@@ -2,12 +2,12 @@
 title: Dead Letter Queues
 ms.date: 03/30/2017
 ms.assetid: ff664f33-ad02-422c-9041-bab6d993f9cc
-ms.openlocfilehash: d493aba9a3f7a51824243fe8d06441ab563b2261
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5025aa784817d1189f23918eacfef275abf968e1
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344540"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921436"
 ---
 # <a name="dead-letter-queues"></a>Dead Letter Queues
 Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être remis. Il est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise la liaison `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -16,7 +16,7 @@ Cet exemple montre comment gérer et traiter des messages n'ayant pas pu être r
 > La procédure d'installation ainsi que les instructions de génération relatives à cet exemple figurent à la fin de cette rubrique.
 
 > [!NOTE]
-> Cet exemple illustre la file d’attente de lettres mortes d’une application qui est uniquement disponible sur Windows Vista. L’exemple peut être modifié pour utiliser les files d’attente par défaut à l’ensemble du système pour MSMQ 3,0 sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].
+> Cet exemple illustre la file d’attente de lettres mortes d’une application qui est uniquement disponible sur Windows Vista. L’exemple peut être modifié pour utiliser les files d’attente par défaut à l’ensemble du système pour MSMQ 3,0 sur Windows Server 2003 et Windows XP.
 
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.
 

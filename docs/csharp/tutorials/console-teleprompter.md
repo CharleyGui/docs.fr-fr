@@ -4,18 +4,18 @@ description: Ce didacticiel vous présente un certain nombre de fonctionnalités
 ms.date: 03/06/2017
 ms.technology: csharp-fundamentals
 ms.assetid: 883cd93d-50ce-4144-b7c9-2df28d9c11a0
-ms.openlocfilehash: 921c8fc7824bdb48f08e4d9f5a276bf2284f8a17
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 09ce36e7a61f576dc4449976ce676701dc57c9cd
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714604"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921122"
 ---
 # <a name="console-app"></a>Application console
 
 Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez :
 
-- Principes de base de l’interface de ligne de commande (CLI) de .NET Core
+- Les principes de base du CLI .NET Core
 - La structure d’une application de console C#
 - E/S console
 - Les principes fondamentaux des API d’E/S de fichier dans .NET
@@ -25,7 +25,7 @@ Vous allez générer une application qui lit un fichier texte et renvoie le cont
 
 Il existe un grand nombre de fonctionnalités dans ce didacticiel. Créons-les un par un.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 - Configurez votre ordinateur pour exécuter .NET Core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, macOS ou dans un conteneur d’ancrage.
 
@@ -311,6 +311,6 @@ RunTeleprompter().Wait();
 
 ## <a name="conclusion"></a>Conclusion
 
-Ce didacticiel vous a montré certaines des fonctionnalités du langage C# et les bibliothèques .NET Core liées au travail dans les applications console. Vous pouvez utiliser ces connaissances pour explorer davantage le langage ainsi que les classes présentées ici. Vous avez vu les principes de base des e/s de fichier et de console, l’utilisation de blocage et de non-blocage de la programmation asynchrone basée C# sur des tâches C# , une présentation du langage et de l’Organisation des programmes, ainsi que l’interface de ligne de commande et les outils .net core.
+Ce didacticiel vous a montré certaines des fonctionnalités du langage C# et les bibliothèques .NET Core liées au travail dans les applications console. Vous pouvez utiliser ces connaissances pour explorer davantage le langage ainsi que les classes présentées ici. Vous avez vu les principes de base des e/s de fichier et de console, l’utilisation de blocage et de non-blocage de la programmation asynchrone basée C# sur des tâches C# , une présentation du langage et de l’Organisation des programmes, ainsi que les CLI .net core.
 
 Pour plus d’informations sur les E/S de fichier, consultez la rubrique [E/S de fichier et de flux](../../standard/io/index.md). Pour plus d’informations sur le modèle de programmation asynchrone utilisé dans ce tutoriel, consultez la rubrique [Programmation asynchrone basée sur les tâches](../..//standard/parallel-programming/task-based-asynchronous-programming.md) et la rubrique [Programmation asynchrone](../async.md).

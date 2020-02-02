@@ -3,12 +3,12 @@ title: Empaquetage de la distribution de .NET Core
 description: Découvrez comment empaqueter, nommer et versionner .NET Core pour la distribution.
 author: tmds
 ms.date: 10/09/2019
-ms.openlocfilehash: 1b5adf761a51e006f8309e1f326fc0a9c12aab7a
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a345aeded29b3058c6c56abbff439ea26cbc7afb
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748502"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920872"
 ---
 # <a name="net-core-distribution-packaging"></a>Empaquetage de la distribution de .NET Core
 
@@ -69,7 +69,7 @@ Alors qu’il n’y a qu’un seul hôte, la plupart des autres composants sont 
 
 - (2) **host/fxr/\<version fxr>** contient la logique de résolution du framework utilisé par l’hôte. L’hôte utilise la dernière version de hostfxr qui est installée. hostfxr est chargé de sélectionner le runtime approprié lors de l’exécution d’une application .NET Core. Par exemple, une application générée pour .NET Core 2.0.0 utilise le runtime 2.0.5 quand il est disponible. De même, hostfxr sélectionne le SDK approprié au cours du développement.
 
-- (3) **sdk/\<version sdk>** Le SDK (également appelé « outils ») est un ensemble d’outils gérés servant à écrire et à générer des bibliothèques et des applications .NET Core. Le SDK inclut, entre autres, l’interface de ligne de commande de .NET Core (CLI), les compilateurs de langages managés, MSBuild, les cibles et les tâches de génération associées, NuGet et de nouveaux modèles de projet.
+- (3) **sdk/\<version sdk>** Le SDK (également appelé « outils ») est un ensemble d’outils gérés servant à écrire et à générer des bibliothèques et des applications .NET Core. Le kit de développement logiciel (SDK) comprend les CLI .NET Core, les compilateurs de langage managé, MSBuild, ainsi que les tâches et cibles de build associées, NuGet, les nouveaux modèles de projet, etc.
 
 - (4) **sdk/NuGetFallbackFolder** contient un cache de packages NuGet utilisés par un SDK pendant l’opération de restauration, comme lors de l’exécution de `dotnet restore` ou `dotnet build`. Ce dossier est utilisé uniquement avant .NET Core 3,0. Il ne peut pas être généré à partir de la source, car il contient des éléments binaires prégénérés à partir de `nuget.org`.
 

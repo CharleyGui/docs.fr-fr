@@ -2,12 +2,12 @@
 title: Commande dotnet restore
 description: Découvrez comment restaurer les dépendances et les outils spécifiques du projet avec la commande dotnet restore.
 ms.date: 05/29/2018
-ms.openlocfilehash: 82dd85e340a4cb520f781d977b0798b0f532a088
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: dc73b7b2482d25872be922e68103fb86067146f7
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340434"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920562"
 ---
 # <a name="dotnet-restore"></a>dotnet restore
 
@@ -45,7 +45,7 @@ La commande `dotnet restore` utilise NuGet pour restaurer les dépendances, ains
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
-Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation des outils CLI. Vous pouvez spécifier d’autres flux en créant votre propre fichier *nuget.config* dans le répertoire du projet. Vous pouvez remplacer les flux *NuGet. config* par l’option `-s`.
+Pour restaurer les dépendances, NuGet a besoin des flux où sont situés les packages. Les flux sont généralement fournis via le fichier de configuration *nuget.config*. Un fichier de configuration par défaut est fourni lors de l’installation du kit SDK .NET Core. Vous pouvez spécifier d’autres flux en créant votre propre fichier *nuget.config* dans le répertoire du projet. Vous pouvez remplacer les flux *NuGet. config* par l’option `-s`.
 
 Pour les dépendances, vous pouvez spécifier l’emplacement des packages restaurés pendant l’opération de restauration à l’aide de l’argument `--packages`. Si aucune valeur n’est spécifiée, le cache du package NuGet par défaut est utilisé. Il se trouve dans le répertoire `.nuget/packages`, situé dans le répertoire de base de l’utilisateur, sur tous les systèmes d’exploitation. Par exemple, */home/user1* sur Linux ou *C:\Users\user1* sur Windows.
 
@@ -141,7 +141,7 @@ Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[ui
 
 `--interactive`
 
-Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (par exemple, s’authentifier). Depuis .NET Core 2.1.400.
+Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (par exemple, s’identifier). Depuis .NET Core 2.1.400.
 
 # <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
 

@@ -4,12 +4,12 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/04/2019
-ms.openlocfilehash: 7a9d4524661e1230af7d1d50a4d8a60ad7774a68
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 32b152ff9be5135cf0ca7f8914bc9ee4f78000be
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740704"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920849"
 ---
 # <a name="debian-9-package-manager---install-net-core"></a>Gestionnaire de package Debian 9-installer .NET Core
 
@@ -25,7 +25,7 @@ Avant d’installer .NET, vous devez :
 - Enregistrez le dépôt du produit.
 - Installez les dépendances requises.
 
-Vous ne devez faire ces opérations qu’une seule fois par machine.
+Cette opération ne doit être effectuée qu’une fois par ordinateur.
 
 Ouvrez un terminal et exécutez les commandes suivantes.
 
@@ -74,3 +74,11 @@ sudo apt-get install dotnet-runtime-3.1
 ## <a name="how-to-install-other-versions"></a>Comment installer d’autres versions
 
 [!INCLUDE [package-manager-switcher](./includes/package-manager-heading-hack-pkgname.md)]
+
+## <a name="troubleshoot-the-package-manager"></a>Résoudre les problèmes liés au gestionnaire de package
+
+Cette section fournit des informations sur les erreurs courantes que vous pouvez être amené à effectuer lors de l’utilisation du gestionnaire de package pour installer .NET Core.
+
+### <a name="failed-to-fetch"></a>Échec de la récupération
+
+[!INCLUDE [package-manager-failed-to-fetch-deb](includes/package-manager-failed-to-fetch-deb.md)]

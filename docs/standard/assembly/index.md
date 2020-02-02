@@ -12,12 +12,12 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 9fd0c55294815c191f1e116dd4e16a44693f3565
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 968eaf2befb44eb893699d1114b315a4f5df3097
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900593"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921367"
 ---
 # <a name="assemblies-in-net"></a>Assemblys dans .NET
 
@@ -63,7 +63,7 @@ Les assemblys peuvent être statiques ou dynamiques. Les assemblys statiques son
 
 Pour créer des assemblys, différentes possibilités s'offrent à vous. Vous pouvez utiliser des outils de développement, tels que Visual Studio, qui peuvent créer des fichiers *. dll* ou. *exe* . Vous pouvez utiliser les outils de la SDK Windows pour créer des assemblys avec des modules à partir d’autres environnements de développement. Vous pouvez également utiliser les API du Common Language Runtime, comme <xref:System.Reflection.Emit?displayProperty=nameWithType>, pour créer des assemblys dynamiques.
 
-Compilez les assemblys en les générant dans Visual Studio, en les créant avec des outils d’interface de ligne de commande .NET Core ou en générant des assemblys .NET Framework avec un compilateur de ligne de commande. Pour plus d’informations sur la création d’assemblys à l’aide des outils de l’interface de ligne de commande .NET Core, consultez [outils de l’interface de ligne de commande .net Core](../../core/tools/index.md). Pour générer des assemblys avec les compilateurs de ligne de commande, consultez génération à partir de la [ligne de commande avec CSC. exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pour C#ou [créez à partir de la ligne de commande](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pour Visual Basic.
+Compilez les assemblys en les générant dans Visual Studio, en les créant avec des outils d’interface de ligne de commande .NET Core ou en générant des assemblys .NET Framework avec un compilateur de ligne de commande. Pour plus d’informations sur la génération d’assemblys à l’aide de CLI .NET Core, consultez [CLI .net Core vue d’ensemble](../../core/tools/index.md). Pour générer des assemblys avec les compilateurs de ligne de commande, consultez génération à partir de la [ligne de commande avec CSC. exe](../../csharp/language-reference/compiler-options/command-line-building-with-csc-exe.md) pour C#ou [créez à partir de la ligne de commande](../../visual-basic/reference/command-line-compiler/building-from-the-command-line.md) pour Visual Basic.
 
 > [!NOTE]
 > Pour générer un assembly dans Visual Studio, dans le menu **générer** , sélectionnez **générer**.

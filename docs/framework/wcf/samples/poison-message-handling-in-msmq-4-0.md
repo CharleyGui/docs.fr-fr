@@ -2,12 +2,12 @@
 title: Poison Message Handling in MSMQ 4,0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: 71ce6d3df69164aa0d565539bad5e843a7ed6a47
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: cc4da0deea0de2cd8b3bb8e8f2ba9b8a17e3cc60
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337499"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919397"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Poison Message Handling in MSMQ 4,0
 Cet exemple montre comment assurer la gestion des messages incohérents dans un service. Cet exemple est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
@@ -18,7 +18,7 @@ Cet exemple montre comment assurer la gestion des messages incohérents dans un 
 
  Selon la version de MSMQ, NetMsmqBinding prend en charge la détection limitée ou complète des messages incohérents. Une fois que le message a été détecté comme étant incohérent, il est ensuite traité de plusieurs façons. À nouveau, NetMsmqBinding prend en charge la gestion limitée à la gestion complète de messages incohérents selon la version de MSMQ.
 
- Cet exemple illustre les fonctionnalités d’empoisonnement limitées fournies sur Windows Server 2003 et la plateforme [!INCLUDE[wxp](../../../../includes/wxp-md.md)], ainsi que les fonctionnalités incohérentes complètes fournies sur Windows Vista. Dans les deux exemples, l'objectif est de déplacer le message incohérent de la file d'attente vers une autre file qui peut ensuite être prise en charge par un service de message incohérent.
+ Cet exemple illustre les fonctionnalités d’empoisonnement limitées fournies sur la plateforme Windows Server 2003 et Windows XP, ainsi que les fonctionnalités incohérentes complètes fournies sur Windows Vista. Dans les deux exemples, l'objectif est de déplacer le message incohérent de la file d'attente vers une autre file qui peut ensuite être prise en charge par un service de message incohérent.
 
 ## <a name="msmq-v40-poison-handling-sample"></a>Exemple de gestion de message incohérent dans MSMQ v4.0
  Dans Windows Vista, MSMQ fournit une fonctionnalité de sous-file d’attente de messages incohérents qui peut être utilisée pour stocker les messages incohérents. Cet exemple illustre la meilleure pratique pour gérer les messages incohérents à l’aide de Windows Vista.

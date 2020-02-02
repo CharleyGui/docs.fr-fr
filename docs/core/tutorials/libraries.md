@@ -1,20 +1,20 @@
 ---
-title: Développement de bibliothèques avec des outils multiplateformes
-description: Découvrez comment créer des bibliothèques .NET Core à l’aide des outils de l’interface de ligne de commande .NET Core. Vous allez créer une bibliothèque prenant en charge plusieurs frameworks.
+title: Développer des bibliothèques avec le CLI .NET Core
+description: Découvrez comment créer des bibliothèques .NET Core à l’aide de l’CLI .NET Core. Vous allez créer une bibliothèque prenant en charge plusieurs frameworks.
 author: cartermp
 ms.date: 05/01/2017
-ms.openlocfilehash: 4132113037e6c5ec555d2d1859b8217a1a53d07f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a7c0175d29f483571578b58d698dd790cf66f7f4
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714029"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920443"
 ---
-# <a name="develop-libraries-with-cross-platform-tools"></a>Développer des bibliothèques avec des outils multiplateformes
+# <a name="develop-libraries-with-the-net-core-cli"></a>Développer des bibliothèques avec le CLI .NET Core
 
-Cet article explique comment écrire des bibliothèques pour .NET à l’aide des outils CLI multiplateformes. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](library-with-visual-studio.md).
+Cet article explique comment écrire des bibliothèques pour .NET à l’aide de l’CLI .NET Core. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](library-with-visual-studio.md).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
 [Le SDK .NET Core et l’interface CLI](https://dotnet.microsoft.com/download) doivent être installés sur votre ordinateur.
 
@@ -216,7 +216,7 @@ Chacun d’entre eux contient les fichiers `.dll` pour chaque cible.
 Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous pouvez utiliser [xUnit](https://xunit.github.io/) ou MSTest dans leur version d’origine. Les deux conviennent parfaitement à la réalisation de tests unitaires sur votre bibliothèque sur .NET Core. La façon dont vous configurez votre solution avec des projets de test dépend de la [structure de votre solution](#structuring-a-solution). L’exemple suivant part du principe que les répertoires de test et source résident dans le même répertoire de premier niveau.
 
 > [!NOTE]
-> Cet exemple utilise certaines [commandes CLI .NET Core](../tools/index.md). Pour plus d’informations, consultez [dotnet new](../tools/dotnet-new.md) et [dotnet sln](../tools/dotnet-sln.md).
+> Cela utilise certaines commandes [CLI .net Core](../tools/index.md) . Pour plus d’informations, consultez [dotnet new](../tools/dotnet-new.md) et [dotnet sln](../tools/dotnet-sln.md).
 
 1. Configurez votre solution. Pour cela, utilisez la commande suivante :
 

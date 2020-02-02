@@ -8,12 +8,12 @@ helpviewer_keywords:
 - -langversion compiler option [C#]
 - langversion compiler option [C#]
 ms.assetid: 3fb00b05-a0ff-4782-b313-13a4c0f62d94
-ms.openlocfilehash: 9588ec73250e8745426f6f6020c8d555a174d627
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 007b10f6f27233c43caad4c1910e3d1158682950
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73422958"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920365"
 ---
 # <a name="-langversion-c-compiler-options"></a>-langversion (Options du compilateur C#)
 
@@ -27,8 +27,9 @@ Force le compilateur à accepter uniquement la syntaxe incluse dans la spécific
 
 ## <a name="arguments"></a>Arguments
 
- `option`  
- Les valeurs suivantes sont valides :
+`option`
+
+Les valeurs suivantes sont valides :
 
 |Option|Signification|
 |------------|-------------|
@@ -52,12 +53,12 @@ La version du langage par défaut dépend du framework cible de votre applicatio
 ## <a name="remarks"></a>Notes
 
 Les métadonnées référencées par votre application C# ne sont pas visées par l’option de compilateur **-langversion**.
-  
+
 Sachant que chaque version du compilateur C# contient des extensions de la spécification du langage, **-langversion** ne vous offre pas les fonctionnalités équivalentes d’une version antérieure du compilateur.
 
 De plus, alors que les mises à jour de la version de C# coïncident généralement avec les versions principales du .NET Framework, la nouvelle syntaxe et les nouvelles fonctionnalités ne sont pas nécessairement liées à cette version spécifique du framework. Alors que les nouvelles fonctionnalités nécessitent une nouvelle mise à jour du compilateur, publiée en même temps que la révision de C#, chaque fonctionnalité spécifique a ses propres exigences minimales relatives à l’API .NET ou au Common Language Runtime pour pouvoir s’exécuter sur des frameworks de bas niveau en incluant des packages NuGet ou d’autres bibliothèques.
 
-Quel que soit le paramètre **-langversion** que vous utiliserez, vous vous servirez de la version active du common language runtime pour créer votre fichier .exe ou .dll. Les assemblys friend et [-moduleassemblyname (Option du compilateur C#)](./moduleassemblyname-compiler-option.md), qui fonctionnent sous **-langversion:ISO-1**, représentent la seule exception.  
+Quel que soit le paramètre **-langversion** utilisé, utilisez la version actuelle du Common Language Runtime pour créer votre fichier. exe ou. dll. Les assemblys friend et [-moduleassemblyname (Option du compilateur C#)](./moduleassemblyname-compiler-option.md), qui fonctionnent sous **-langversion:ISO-1**, représentent la seule exception.
 
 Pour d’autres façons de spécifier C# la version linguistique, consultez l’article [Sélectionner la C# version linguistique](../configure-language-version.md) .
 

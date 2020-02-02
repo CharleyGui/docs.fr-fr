@@ -2,12 +2,12 @@
 title: Migration de DNX vers l’interface CLI .NET Core
 description: Migrez des outils DNX vers les outils de l’interface CLI .NET Core.
 ms.date: 06/20/2016
-ms.openlocfilehash: 91a43ffda31b34332d2e545a90c857221aa162c4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e15e7ce10bb7a36deb2acd2abb9a0bd4ec8cd4a9
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715521"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920624"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migration de DNX vers l’interface CLI .NET Core (project.json)
 
@@ -30,9 +30,9 @@ Les outils ont fait l’objet de modifications générales dont il convient tout
 ### <a name="no-more-dnvm"></a>Disparition de DNVM
 DNVM (*DotNet Version Manager*) était un script bash/PowerShell qui servait à installer un DNX sur un ordinateur. Il permettait aux utilisateurs d’obtenir les DNX dont ils avaient à partir du flux qu’ils spécifiaient (ou ceux par défaut), mais aussi de marquer un certain DNX comme étant « actif », ce qui le plaçait sur le $PATH pour la session donnée. Les différents outils pouvaient ainsi être utilisés.
 
-DNVM a été abandonné, car son jeu de fonctionnalités était devenu inutile suite aux modifications introduites dans les outils de l’interface CLI .NET Core.
+DNVM a été supprimé, car son ensemble de fonctionnalités a été rendu redondant par les modifications apportées au CLI .NET Core.
 
-Les outils CLI peuvent être packagés de deux façons :
+L’interface CLI est intégrée de deux manières :
 
 1. Programmes d’installation natifs pour une plateforme donnée
 2. Script d’installation pour les autres cas (comme les serveurs CI)
@@ -69,7 +69,7 @@ DNU reposait sur un concept appelé « commandes globales ». Il s’agissait 
 L’interface CLI ne prend pas en charge ce concept. En revanche, il prend en charge l’ajout de commandes par projet qui peuvent être appelées à l’aide de la syntaxe `dotnet <command>` bien connue.
 
 ### <a name="installing-dependencies"></a>Installation de dépendances
-À compter de la version 1, les outils de l’interface CLI .NET Core proposent une commande `install` pour installer les dépendances. Pour installer un package à partir de NuGet, vous devez l’ajouter en tant que dépendance à votre fichier `project.json`, puis exécuter `dotnet restore` ([voir la remarque](#dotnet-restore-note)).
+À partir de v1, le CLI .NET Core n’a pas de commande `install` pour l’installation des dépendances. Pour installer un package à partir de NuGet, vous devez l’ajouter en tant que dépendance à votre fichier `project.json`, puis exécuter `dotnet restore` ([voir la remarque](#dotnet-restore-note)).
 
 ### <a name="running-your-code"></a>Exécution de votre code
 Il existe deux façons principales d’exécuter du code. La première consiste à partir de la source, avec `dotnet run`. Contrairement à `dnx run`, aucune compilation en mémoire n’est effectuée. En fait, `dotnet build` est appelé pour générer le code, puis le fichier binaire généré est exécuté.
@@ -84,7 +84,7 @@ Outre l’utilisation de nouvelles commandes pendant que vous travaillez sur vot
 3. Migrez les API DNX vers leurs équivalents BCL.
 
 ### <a name="changing-the-globaljson-file"></a>Modification du fichier global.json
-Le fichier `global.json` fait office de fichier de solution pour les projets RC1 et RC2 (ou ultérieurs). Pour permettre aux outils de l’interface CLI (mais aussi à Visual Studio) de faire la différence entre la version RC1 et les versions ultérieures, ils utilisent la propriété `"sdk": { "version" }` pour distinguer un projet RC1 ou de version ultérieure. Si `global.json` ne contient pas ce nœud, il est supposé être de la dernière version.
+Le fichier `global.json` fait office de fichier de solution pour les projets RC1 et RC2 (ou ultérieurs). Pour que les CLI .NET Core (ainsi que Visual Studio) différencient la version RC1 et les versions ultérieures, elles utilisent la propriété `"sdk": { "version" }` pour faire la distinction entre le projet RC1 et les versions ultérieures. Si `global.json` ne contient pas ce nœud, il est supposé être de la dernière version.
 
 Pour mettre à jour le fichier `global.json`, supprimez la propriété ou définissez-la avec la version exacte des outils que vous voulez utiliser, en l’occurrence, **1.0.0-preview2-003121** :
 

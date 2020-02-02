@@ -2,12 +2,12 @@
 title: Déploiement d’applications .NET Core
 description: Découvrez les différentes façons de déployer une application .NET Core.
 ms.date: 12/03/2018
-ms.openlocfilehash: 41c5285f2a9ddf38e4be7326bd5cba1c58370fe7
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 425f0d5bf11fd0572825d2025005aacf65d7d2cd
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740812"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920876"
 ---
 # <a name="net-core-application-deployment"></a>Déploiement d’applications .NET Core
 
@@ -91,11 +91,11 @@ Il existe également quelques inconvénients :
 
 ## <a name="step-by-step-examples"></a>Exemples étape par étape
 
-Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec les outils de l’interface CLI, consultez [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md). Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec Visual Studio, consultez [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md). 
+Pour obtenir des exemples pas à pas de déploiement d’applications .NET Core avec le CLI .NET Core, consultez [publier des applications .net core avec le CLI .net Core](deploy-with-cli.md). Pour obtenir des exemples étape par étape de déploiement d’applications .NET Core avec Visual Studio, consultez [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md). 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Déploiement d’applications .NET Core avec des outils CLI](deploy-with-cli.md)
+- [Publier des applications .NET Core avec le CLI .NET Core](deploy-with-cli.md)
 - [Déploiement d’applications .NET Core avec Visual Studio](deploy-with-vs.md)
 - [Packages, métapackages et frameworks](../packages.md)
 - [Catalogue d’identificateurs de runtime (RID) .NET Core](../rid-catalog.md)

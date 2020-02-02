@@ -2,12 +2,12 @@
 title: Service Identity, exemple
 ms.date: 03/30/2017
 ms.assetid: 79fa8c1c-85bb-4b67-bc67-bfaf721303f8
-ms.openlocfilehash: 375246127b6b39440360f48fc7b24bd0388a35e5
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 868bd6e0ac7429224462c973c1c48132ec3860ba
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347925"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919366"
 ---
 # <a name="service-identity-sample"></a>Service Identity, exemple
 Cet exemple montre comment définir l'identité d'un service. Au moment du design, un client peut récupérer l'identité à l'aide des métadonnées du service, puis au miment de l'exécution, il peut authentifier l'identité du service. Le concept d'identité de service consiste à permettre à un client d'authentifier un service avant d'appeler l'une de ses opérations, ce qui protège le client contre les appels non authentifiés. Sur une connexion sécurisée, le service authentifie également les informations d'identification d'un client avant de lui autoriser l'accès, mais ce n'est pas l'objet traité dans cet exemple. Consultez les exemples du [client](../../../../docs/framework/wcf/samples/client.md) qui affichent l’authentification du serveur.
@@ -115,7 +115,7 @@ class CustomIdentityVerifier : IdentityVerifier
 
 ### <a name="to-run-the-sample-on-the-same-computer"></a>Pour exécuter l'exemple sur le même ordinateur
 
-1. Sur [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ou Windows Vista, importez le fichier de certificat Identity. pfx dans le dossier de solution Identity dans le magasin de certificats LocalMachine/My (Personal) à l’aide de l’outil de composant logiciel enfichable MMC. Ce fichier est protégé par mot de passe. Lors de l'importation, un mot de passe vous est demandé. Tapez `xyz` dans la zone mot de passe. Pour plus d’informations, consultez la rubrique [Comment : afficher des certificats à l’aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) . Une fois cette opération effectuée, exécutez Setup. bat dans un Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur, ce qui a pour effet de copier ce certificat dans le magasin CurrentUser/personnes autorisées pour une utilisation sur le client.
+1. Sur Windows XP ou Windows Vista, importez le fichier de certificat Identity. pfx dans le dossier de solution Identity dans le magasin de certificats LocalMachine/My (Personal) à l’aide de l’outil de composant logiciel enfichable MMC. Ce fichier est protégé par mot de passe. Lors de l'importation, un mot de passe vous est demandé. Tapez `xyz` dans la zone mot de passe. Pour plus d’informations, consultez la rubrique [Comment : afficher des certificats à l’aide du composant logiciel enfichable MMC](../../../../docs/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in.md) . Une fois cette opération effectuée, exécutez Setup. bat dans un Invite de commandes développeur pour Visual Studio avec des privilèges d’administrateur, ce qui a pour effet de copier ce certificat dans le magasin CurrentUser/personnes autorisées pour une utilisation sur le client.
 
 2. Sur Windows Server 2003, exécutez Setup. bat à partir du dossier d’installation de l’exemple à l’intérieur d’une invite de commandes de Visual Studio 2012 avec des privilèges d’administrateur. Tous les certificats requis à l'exécution de l'exemple sont ainsi installés.
 

@@ -2,12 +2,12 @@
 title: Gestion des messages incohérents
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: ff1eaec99308b06250722b290b7005ac21731570
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 389d0651438036cd23d30cf7dd866956ac8e5dae
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337643"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921200"
 ---
 # <a name="poison-message-handling"></a>Gestion des messages incohérents
 Un *message incohérent* est un message qui a dépassé le nombre maximal de tentatives de remise à l’application. Cette situation peut survenir lorsqu'une application basée sur file d'attente ne peut pas traiter un message car des erreurs se sont produites. Pour faire face aux demandes de fiabilité, une application en file d’attente reçoit des messages sous une transaction. L’abandon de la transaction dans laquelle un message en file d’attente a été reçu laisse le message dans la file d’attente afin qu’une nouvelle tentative de remise puisse être effectuée sous une nouvelle transaction. Si le problème qui a provoqué l'abandon de la transaction n'est pas résolu, l'application réceptrice peut être bloquée dans une réception et un abandon en boucle du même message jusqu'à ce que le nombre maximal de tentatives de remise soit dépassé et qu'un message incohérent soit généré.  
@@ -21,7 +21,7 @@ Un *message incohérent* est un message qui a dépassé le nombre maximal de ten
   
 - `ReceiveRetryCount`. Valeur entière qui indique le nombre maximal de nouvelles tentatives de remise d'un message à partir de la file d'attente d'application à l'application. La valeur par défaut est 5. Elle est suffisante dans les cas où une nouvelle tentative immédiate résout le problème (par exemple, en cas d'interblocage temporaire sur une base de données).  
   
-- `MaxRetryCycles`. Valeur entière qui indique le nombre maximal de cycles de nouvelle tentative. Un cycle de nouvelle tentative implique le transfert d'un message de la file d'attente d'application vers la sous-file d'attente de nouvel essai et, après un délai configurable, de la sous-file d'attente de nouvel essai vers la file d'attente d'application afin de retenter la remise. La valeur par défaut est 2. Sur Windows Vista, le message est essayé au maximum (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) fois. `MaxRetryCycles` est ignorée sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- `MaxRetryCycles`. Valeur entière qui indique le nombre maximal de cycles de nouvelle tentative. Un cycle de nouvelle tentative implique le transfert d'un message de la file d'attente d'application vers la sous-file d'attente de nouvel essai et, après un délai configurable, de la sous-file d'attente de nouvel essai vers la file d'attente d'application afin de retenter la remise. La valeur par défaut est 2. Sur Windows Vista, le message est essayé au maximum (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) fois. `MaxRetryCycles` est ignorée sur Windows Server 2003 et Windows XP.  
   
 - `RetryCycleDelay`. Délai entre les cycles de nouvelle tentative. La valeur par défaut est de 30 minutes. `MaxRetryCycles` et `RetryCycleDelay` fournissent ensemble un mécanisme permettant de gérer un problème qui peut être résolu en cas de nouvelle tentative après un délai périodique. Par exemple, cela permet de gérer le verrouillage d’un ensemble de lignes dans la validation de transaction en attente SQL Server.  
   
@@ -39,12 +39,12 @@ Un *message incohérent* est un message qui a dépassé le nombre maximal de ten
   
 - ((ReceiveRetryCount + 1) * (MaxRetryCycles + 1)) sur Windows Vista.  
   
-- (ReceiveRetryCount + 1) sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- (ReceiveRetryCount + 1) sur Windows Server 2003 et Windows XP.  
   
 > [!NOTE]
 > Aucune nouvelle tentative n'est effectuée pour un message remis avec succès.  
   
- Pour effectuer le suivi du nombre de tentatives de lecture d’un message, Windows Vista gère une propriété de message durable qui compte le nombre d’abandons et une propriété de nombre de déplacements qui compte le nombre de déplacements du message entre la file d’attente de l’application et les sous-files d’attente. Le canal WCF les utilise pour calculer le nombre de nouvelles tentatives de réception et le nombre de cycles de nouvelle tentative. Sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)], le nombre d’abandons est conservé en mémoire par le canal WCF et est réinitialisé en cas d’échec de l’application. En outre, le canal WCF peut contenir le nombre d’abandons pour un maximum de 256 messages en mémoire à tout moment. Si un 257ème message est lu, le nombre d'abandons du message le plus ancien est réinitialisé.  
+ Pour effectuer le suivi du nombre de tentatives de lecture d’un message, Windows Vista gère une propriété de message durable qui compte le nombre d’abandons et une propriété de nombre de déplacements qui compte le nombre de déplacements du message entre la file d’attente de l’application et les sous-files d’attente. Le canal WCF les utilise pour calculer le nombre de nouvelles tentatives de réception et le nombre de cycles de nouvelle tentative. Sur Windows Server 2003 et Windows XP, le nombre d’abandons est conservé en mémoire par le canal WCF et est réinitialisé en cas d’échec de l’application. En outre, le canal WCF peut contenir le nombre d’abandons pour un maximum de 256 messages en mémoire à tout moment. Si un 257ème message est lu, le nombre d'abandons du message le plus ancien est réinitialisé.  
   
  Les propriétés de nombre d'abandons et de nombre déplacements sont accessibles à l'opération de service par le biais du contexte d'opération. L'exemple de code suivant montre comment y accéder.  
   
@@ -66,7 +66,7 @@ Un *message incohérent* est un message qui a dépassé le nombre maximal de ten
   
  Il est possible que l'application requière un système de gestion automatisée des messages empoisonnés qui déplace ceux-ci vers une file d'attente de messages empoisonnés afin que le service puisse accéder au reste des messages dans la file d'attente. Le seul scénario dans lequel on utilise le mécanisme de gestionnaire d'erreurs pour écouter les exceptions de message incohérent est lorsque le paramètre <xref:System.ServiceModel.Configuration.MsmqBindingElementBase.ReceiveErrorHandling%2A> a la valeur <xref:System.ServiceModel.ReceiveErrorHandling.Fault>. L'exemple de message empoisonné pour Message Queuing 3.0 illustre ce comportement. La section suivante décrit les étapes à suivre pour gérer des messages incohérents et fournit quelques recommandations :  
   
-1. Assurez-vous que vos paramètres de messages empoisonnés reflètent les besoins de votre application. Lorsque vous utilisez les paramètres, assurez-vous de bien comprendre les différences entre les fonctionnalités de Message Queuing sur Windows Vista, Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+1. Assurez-vous que vos paramètres de messages empoisonnés reflètent les besoins de votre application. Lorsque vous utilisez les paramètres, assurez-vous de bien comprendre les différences entre les fonctionnalités de Message Queuing sur Windows Vista, Windows Server 2003 et Windows XP.  
   
 2. Si nécessaire, implémentez le `IErrorHandler` pour gérer les erreurs de message incohérent. Étant donné que l'affectation de la valeur `ReceiveErrorHandling` à `Fault` nécessite un mécanisme manuel pour déplacer le message empoisonné hors de la file d'attente ou pour corriger un problème dépendant externe, l'utilisation typique consiste à implémenter `IErrorHandler` lorsque `ReceiveErrorHandling` a la valeur `Fault`, comme illustré dans le code suivant.  
   
@@ -95,13 +95,13 @@ Un *message incohérent* est un message qui a dépassé le nombre maximal de ten
  La gestion des messages incohérents ne se termine pas lorsqu'un message est placé dans la file d'attente de messages incohérents. Les messages dans la file d'attente de messages incohérents doivent encore être lus et gérés. Vous pouvez utiliser un sous-ensemble des paramètres de gestion de messages incohérents lors de la lecture des messages à partir de l'ultime sous-file d'attente de messages incohérents. Les paramètres applicables sont `ReceiveRetryCount` et `ReceiveErrorHandling`. Vous pouvez affecter la valeur Drop, Reject ou Fault à `ReceiveErrorHandling`. `MaxRetryCycles` est ignoré et une exception est levée si `ReceiveErrorHandling` a la valeur Move.  
   
 ## <a name="windows-vista-windows-server-2003-and-windows-xp-differences"></a>Différences entre Windows Vista, Windows Server 2003 et Windows XP  
- Comme indiqué précédemment, tous les paramètres de gestion des messages incohérents ne s’appliquent pas à Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Les principales différences entre Message Queuing sur Windows Server 2003, [!INCLUDE[wxp](../../../../includes/wxp-md.md)]et Windows Vista sont relatives à la gestion des messages incohérents :  
+ Comme indiqué précédemment, tous les paramètres de gestion des messages incohérents ne s’appliquent pas à Windows Server 2003 et Windows XP. Les principales différences entre Message Queuing sur Windows Server 2003, Windows XP et Windows Vista sont pertinentes pour la gestion des messages incohérents :  
   
-- Message Queuing dans Windows Vista prend en charge les sous-files d’attente, tandis que Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)] ne prennent pas en charge les sous-files d’attente. Les sous-files d'attente sont utilisées dans la gestion des messages incohérents. Les files d'attente de nouvel essai et la file d'attente de messages incohérents sont des sous-files d'attente de la file d'attente de l'application créée en fonction des paramètres de gestion des messages incohérents. `MaxRetryCycles` définit le nombre de sous-files de nouvel essai à créer. Par conséquent, lors de l’exécution sur Windows Server 2003 ou [!INCLUDE[wxp](../../../../includes/wxp-md.md)], `MaxRetryCycles` sont ignorés et `ReceiveErrorHandling.Move` n’est pas autorisé.  
+- Message Queuing dans Windows Vista prend en charge les sous-files d’attente, tandis que Windows Server 2003 et Windows XP ne prennent pas en charge les sous-files d’attente. Les sous-files d'attente sont utilisées dans la gestion des messages incohérents. Les files d'attente de nouvel essai et la file d'attente de messages incohérents sont des sous-files d'attente de la file d'attente de l'application créée en fonction des paramètres de gestion des messages incohérents. `MaxRetryCycles` définit le nombre de sous-files de nouvel essai à créer. Par conséquent, lors de l’exécution sur Windows Server 2003 ou Windows XP, les `MaxRetryCycles` sont ignorés et `ReceiveErrorHandling.Move` n’est pas autorisé.  
   
-- Message Queuing dans Windows Vista prend en charge l’accusé de réception négatif, contrairement à Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Un accusé de réception négatif provenant du gestionnaire de files d'attente de destination provoque le placement du message rejeté dans la file d'attente de lettres mortes par le gestionnaire de files d'attente source. Par conséquent, `ReceiveErrorHandling.Reject` n’est pas autorisé avec Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)].  
+- Message Queuing dans Windows Vista prend en charge l’accusé de réception négatif, contrairement à Windows Server 2003 et Windows XP. Un accusé de réception négatif provenant du gestionnaire de files d'attente de destination provoque le placement du message rejeté dans la file d'attente de lettres mortes par le gestionnaire de files d'attente source. Par conséquent, `ReceiveErrorHandling.Reject` n’est pas autorisé avec Windows Server 2003 et Windows XP.  
   
-- Message Queuing dans Windows Vista prend en charge une propriété de message qui indique le nombre de tentatives de remise de messages. Cette propriété du nombre d’abandons n’est pas disponible sur Windows Server 2003 et [!INCLUDE[wxp](../../../../includes/wxp-md.md)]. Comme WCF gère le nombre d’abandons en mémoire, il est possible que cette propriété ne contienne pas une valeur exacte lorsque le même message est lu par plusieurs services WCF dans une batterie de serveurs.  
+- Message Queuing dans Windows Vista prend en charge une propriété de message qui indique le nombre de tentatives de remise de messages. Cette propriété du nombre d’abandons n’est pas disponible sur Windows Server 2003 et Windows XP. Comme WCF gère le nombre d’abandons en mémoire, il est possible que cette propriété ne contienne pas une valeur exacte lorsque le même message est lu par plusieurs services WCF dans une batterie de serveurs.  
   
 ## <a name="see-also"></a>Voir aussi
 

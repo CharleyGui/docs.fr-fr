@@ -3,12 +3,12 @@ title: Créer des types mixin à l’aide de méthodes d’interface par défaut
 description: À l’aide des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: fb8fc1f432bdf909bae4f54bb76d10d7619f71a3
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f97410124a4ca5bbb10972ab5e7942fa4af68d72
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74140847"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921447"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : combiner les fonctionnalités dans lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
 
@@ -22,9 +22,9 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Créez des classes qui utilisent les implémentations par défaut.
 > * Créez des classes qui remplacent une partie ou la totalité des implémentations par défaut.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Prerequisites
 
-Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible à partir de [Visual Studio 2019, 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
+Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 
 ## <a name="limitations-of-extension-methods"></a>Limitations des méthodes d’extension
 
@@ -45,7 +45,7 @@ Prenons l’exemple d’une application domotique. Vous disposez probablement de
 
 Certaines de ces fonctionnalités étendues peuvent être émulées sur les appareils qui prennent en charge l’ensemble minimal. Qui indique la fourniture d’une implémentation par défaut. Pour les appareils qui ont plus de fonctionnalités intégrées, le logiciel de l’appareil utilise les fonctionnalités natives. Pour les autres lumières, elles peuvent choisir d’implémenter l’interface et d’utiliser l’implémentation par défaut.
 
-Les membres d’interface par défaut sont une meilleure solution pour ce scénario que les méthodes d’extension. Les auteurs de classe peuvent contrôler les interfaces qu’ils choisissent d’implémenter. Les interfaces qu’ils choisissent sont disponibles en tant que méthodes. En outre, étant donné que les méthodes d’interface par défaut sont virtuelles par défaut, la distribution de méthode choisit toujours l’implémentation dans la classe. 
+Les membres d’interface par défaut sont une meilleure solution pour ce scénario que les méthodes d’extension. Les auteurs de classe peuvent contrôler les interfaces qu’ils choisissent d’implémenter. Les interfaces qu’ils choisissent sont disponibles en tant que méthodes. En outre, étant donné que les méthodes d’interface par défaut sont virtuelles par défaut, la distribution de méthode choisit toujours l’implémentation dans la classe.
 
 Créons le code pour illustrer ces différences.
 
@@ -79,7 +79,7 @@ Un type de lumière différent peut prendre en charge un protocole plus sophisti
 
 [!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
-Contrairement aux méthodes de la classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la classe `HalogenLight` n’utilise pas le mot clé `override`. 
+Contrairement aux méthodes de la classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la classe `HalogenLight` n’utilise pas le mot clé `override`.
 
 ## <a name="mix-and-match-capabilities"></a>Fonctionnalités Mix et match
 

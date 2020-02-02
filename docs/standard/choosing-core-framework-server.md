@@ -4,12 +4,12 @@ description: Guide sur l’implémentation de .NET à envisager pour générer u
 author: cartermp
 ms.author: mairaw
 ms.date: 06/19/2018
-ms.openlocfilehash: b2b9e15cfdfd63d070ae94c29a9f2d1a5b5c87b2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: c280e22341a45260a816a36c1148dc8c4f76db09
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738667"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921417"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
@@ -38,7 +38,7 @@ Les sections suivantes donnent une explication plus détaillée des raisons indi
 
 Si votre application (web/service) doit s’exécuter sur plusieurs plateformes (Windows, Linux et macOS), utilisez .NET Core.
 
-.NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et macOS. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](https://www.omnisharp.net/). Vous pouvez aussi vous affranchir des éditeurs de code et utiliser directement les [outils CLI .NET Core](../core/tools/index.md), disponibles pour toutes les plateformes prises en charge.
+.NET Core prend en charge les systèmes d’exploitation précédemment mentionnés comme station de travail de développement. Visual Studio fournit un environnement de développement intégré (IDE) pour Windows et macOS. Vous pouvez également utiliser Visual Studio Code, qui s’exécute sur macOS, Linux et Windows. Visual Studio Code prend en charge .NET Core, notamment IntelliSense et le débogage. La plupart des éditeurs tiers, tels que Sublime, Emacs et VI, fonctionnent avec .NET Core. Ces éditeurs tiers obtiennent l’éditeur IntelliSense en utilisant [Omnisharp](https://www.omnisharp.net/). Vous pouvez également éviter tout éditeur de code et utiliser directement le [CLI .net Core](../core/tools/index.md), disponible pour toutes les plateformes prises en charge.
 
 ### <a name="microservices-architecture"></a>Architecture en microservices
 

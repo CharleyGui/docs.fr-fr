@@ -3,20 +3,18 @@ title: Crée un client REST à l’aide de .NET Core
 description: Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: 1b85a03919ea057cda4526ac1c873bf058c9a825
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: eb7946d669de60c3469ca8098e40b159082ea270
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76867358"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76921086"
 ---
 # <a name="rest-client"></a>Client REST
 
-## <a name="introduction"></a>Introduction
-
 Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
 
-* Principes de base de l’interface de ligne de commande (CLI) de .NET Core.
+* Notions de base du CLI .NET Core.
 * Une présentation des fonctionnalités du langage C#.
 * Gestion des dépendances avec NuGet
 * Communications HTTP
