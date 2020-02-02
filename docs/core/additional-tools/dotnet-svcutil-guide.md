@@ -3,43 +3,43 @@ title: Présentation de l’outil WCF svcutil
 description: Vue d’ensemble de l’outil dotnet-svcutil Microsoft WCF, qui ajoute des fonctionnalités pour les projets .NET Core et ASP.NET Core, de manière similaire à l’outil svcutil WCF pour les projets .NET Framework.
 author: mlacouture
 ms.date: 02/22/2019
-ms.openlocfilehash: d204576f27227ce6e65d61471f19cdf3ec4df37a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 0607c73935f319f2cc0d8d9f92d96a4c71c54edf
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714560"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76920947"
 ---
-# <a name="wcf-dotnet-svcutil-tool-for-net-core"></a><span data-ttu-id="f2b03-103">Outil WCF dotnet-svcutil pour .NET Core</span><span class="sxs-lookup"><span data-stu-id="f2b03-103">WCF dotnet-svcutil tool for .NET Core</span></span>
+# <a name="wcf-dotnet-svcutil-tool-for-net-core"></a><span data-ttu-id="6b8ee-103">Outil WCF dotnet-svcutil pour .NET Core</span><span class="sxs-lookup"><span data-stu-id="6b8ee-103">WCF dotnet-svcutil tool for .NET Core</span></span>
 
-<span data-ttu-id="f2b03-104">L’outil **dotnet-svcutil** Windows Communication Foundation (WCF) est un outil CLI .NET Core qui récupère les métadonnées d’un service web sur un emplacement réseau ou dans un fichier WSDL, puis génère une classe WCF contenant des méthodes de proxy clientes pour accéder aux opérations du service web.</span><span class="sxs-lookup"><span data-stu-id="f2b03-104">The Windows Communication Foundation (WCF) **dotnet-svcutil** tool is a .NET Core CLI tool that retrieves metadata from a web service on a network location or from a WSDL file, and generates a WCF class containing client proxy methods that access the web service operations.</span></span>
+<span data-ttu-id="6b8ee-104">L’outil **dotnet-svcutil** Windows Communication Foundation (WCF) est un outil .net qui récupère les métadonnées d’un service Web sur un emplacement réseau ou à partir d’un fichier WSDL, et génère une classe WCF contenant les méthodes de proxy client qui accèdent aux opérations de service Web.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-104">The Windows Communication Foundation (WCF) **dotnet-svcutil** tool is a .NET tool that retrieves metadata from a web service on a network location or from a WSDL file, and generates a WCF class containing client proxy methods that access the web service operations.</span></span>
 
-<span data-ttu-id="f2b03-105">Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour les projets .NET Framework, **dotnet-svcutil** est un outil en ligne de commande pour générer une référence de service web compatible avec les projets .NET Core et .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="f2b03-105">Similar to the [**Service Model Metadata - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool for .NET Framework projects, the **dotnet-svcutil** is a command-line tool for generating a web service reference compatible with .NET Core and .NET Standard projects.</span></span>
+<span data-ttu-id="6b8ee-105">Comme l’outil [**Métadonnées de modèle de service - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) pour les projets .NET Framework, **dotnet-svcutil** est un outil en ligne de commande pour générer une référence de service web compatible avec les projets .NET Core et .NET Standard.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-105">Similar to the [**Service Model Metadata - svcutil**](../../framework/wcf/servicemodel-metadata-utility-tool-svcutil-exe.md) tool for .NET Framework projects, the **dotnet-svcutil** is a command-line tool for generating a web service reference compatible with .NET Core and .NET Standard projects.</span></span>
 
-<span data-ttu-id="f2b03-106">L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio qui a été livré avec visual studio 2017 version 15,5.</span><span class="sxs-lookup"><span data-stu-id="f2b03-106">The **dotnet-svcutil** tool is an alternative option to the [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) Visual Studio connected service provider that first shipped with Visual Studio 2017 version 15.5.</span></span> <span data-ttu-id="f2b03-107">L’outil **dotnet-svcutil**, en tant qu’outil CLI .NET Core, est disponible sur les plateformes Linux, macOS et Windows.</span><span class="sxs-lookup"><span data-stu-id="f2b03-107">The **dotnet-svcutil** tool as a .NET Core CLI tool, is available cross-platform on Linux, macOS, and Windows.</span></span>
+<span data-ttu-id="6b8ee-106">L’outil **dotnet-Svcutil** est une option alternative à la [**Référence du service Web WCF**](wcf-web-service-reference-guide.md) du fournisseur de services connectés Visual Studio qui a été livré avec visual studio 2017 version 15,5.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-106">The **dotnet-svcutil** tool is an alternative option to the [**WCF Web Service Reference**](wcf-web-service-reference-guide.md) Visual Studio connected service provider that first shipped with Visual Studio 2017 version 15.5.</span></span> <span data-ttu-id="6b8ee-107">L’outil **dotnet-Svcutil** comme outil .net est disponible sur plusieurs plateformes sur Linux, MacOS et Windows.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-107">The **dotnet-svcutil** tool as a .NET tool, is available cross-platform on Linux, macOS, and Windows.</span></span>
 
 > [!IMPORTANT]
-> <span data-ttu-id="f2b03-108">Vous devez référencer des services uniquement à partir d’une source approuvée.</span><span class="sxs-lookup"><span data-stu-id="f2b03-108">You should only reference services from a trusted source.</span></span> <span data-ttu-id="f2b03-109">L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.</span><span class="sxs-lookup"><span data-stu-id="f2b03-109">Adding references from an untrusted source may compromise security.</span></span>
+> <span data-ttu-id="6b8ee-108">Vous devez référencer des services uniquement à partir d’une source approuvée.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-108">You should only reference services from a trusted source.</span></span> <span data-ttu-id="6b8ee-109">L’ajout de références à partir d’une source non fiable peut compromettre la sécurité.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-109">Adding references from an untrusted source may compromise security.</span></span>
 
-## <a name="prerequisites"></a><span data-ttu-id="f2b03-110">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="f2b03-110">Prerequisites</span></span>
+## <a name="prerequisites"></a><span data-ttu-id="6b8ee-110">Prerequisites</span><span class="sxs-lookup"><span data-stu-id="6b8ee-110">Prerequisites</span></span>
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="f2b03-111">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-111">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
+# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="6b8ee-111">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-111">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
 
-- <span data-ttu-id="f2b03-112">[Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure)</span><span class="sxs-lookup"><span data-stu-id="f2b03-112">[.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) or later versions</span></span>
-- <span data-ttu-id="f2b03-113">Votre éditeur de code favori</span><span class="sxs-lookup"><span data-stu-id="f2b03-113">Your favorite code editor</span></span>
+- <span data-ttu-id="6b8ee-112">[Kit SDK .NET Core 2.1](https://dotnet.microsoft.com/download) (ou version ultérieure)</span><span class="sxs-lookup"><span data-stu-id="6b8ee-112">[.NET Core 2.1 SDK](https://dotnet.microsoft.com/download) or later versions</span></span>
+- <span data-ttu-id="6b8ee-113">Votre éditeur de code favori</span><span class="sxs-lookup"><span data-stu-id="6b8ee-113">Your favorite code editor</span></span>
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="f2b03-114">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-114">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
+# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="6b8ee-114">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-114">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
 
-- <span data-ttu-id="f2b03-115">[Kit SDK .NET Core 1.0.4](https://dotnet.microsoft.com/download) (ou version ultérieure)</span><span class="sxs-lookup"><span data-stu-id="f2b03-115">[.NET Core 1.0.4 SDK](https://dotnet.microsoft.com/download) or later versions</span></span>
-- <span data-ttu-id="f2b03-116">Votre éditeur de code favori</span><span class="sxs-lookup"><span data-stu-id="f2b03-116">Your favorite code editor</span></span>
+- <span data-ttu-id="6b8ee-115">[Kit SDK .NET Core 1.0.4](https://dotnet.microsoft.com/download) (ou version ultérieure)</span><span class="sxs-lookup"><span data-stu-id="6b8ee-115">[.NET Core 1.0.4 SDK](https://dotnet.microsoft.com/download) or later versions</span></span>
+- <span data-ttu-id="6b8ee-116">Votre éditeur de code favori</span><span class="sxs-lookup"><span data-stu-id="6b8ee-116">Your favorite code editor</span></span>
 
 ---
 
-## <a name="getting-started"></a><span data-ttu-id="f2b03-117">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="f2b03-117">Getting started</span></span>
+## <a name="getting-started"></a><span data-ttu-id="6b8ee-117">Bien démarrer</span><span class="sxs-lookup"><span data-stu-id="6b8ee-117">Getting started</span></span>
 
-<span data-ttu-id="f2b03-118">L’exemple suivant explique les étapes à suivre pour ajouter une référence de services web à un projet web .NET Core et appeler le service.</span><span class="sxs-lookup"><span data-stu-id="f2b03-118">The following example walks you through the steps required to add a web service reference to a .NET Core web project and invoke the service.</span></span> <span data-ttu-id="f2b03-119">Vous allez créer une application web .NET Core nommée *HelloSvcutil* et ajouter une référence à un service web qui implémente le contrat suivant :</span><span class="sxs-lookup"><span data-stu-id="f2b03-119">You'll create a .NET Core web application named *HelloSvcutil* and add a reference to a web service that implements the following contract:</span></span>
+<span data-ttu-id="6b8ee-118">L’exemple suivant explique les étapes à suivre pour ajouter une référence de services web à un projet web .NET Core et appeler le service.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-118">The following example walks you through the steps required to add a web service reference to a .NET Core web project and invoke the service.</span></span> <span data-ttu-id="6b8ee-119">Vous allez créer une application web .NET Core nommée *HelloSvcutil* et ajouter une référence à un service web qui implémente le contrat suivant :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-119">You'll create a .NET Core web application named *HelloSvcutil* and add a reference to a web service that implements the following contract:</span></span>
 
 ```csharp
 [ServiceContract]
@@ -50,32 +50,32 @@ public interface ISayHello
 }
 ```
 
-<span data-ttu-id="f2b03-120">Supposons dans cet exemple que le service web sera hébergé à l’adresse suivante : `http://contoso.com/SayHello.svc`.</span><span class="sxs-lookup"><span data-stu-id="f2b03-120">For this example, let's assume the web service will be hosted at the following address: `http://contoso.com/SayHello.svc`</span></span>
+<span data-ttu-id="6b8ee-120">Supposons dans cet exemple que le service web sera hébergé à l’adresse suivante : `http://contoso.com/SayHello.svc`.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-120">For this example, let's assume the web service will be hosted at the following address: `http://contoso.com/SayHello.svc`</span></span>
 
-<span data-ttu-id="f2b03-121">À partir d’une fenêtre de commande Windows, macOS ou Linux, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="f2b03-121">From a Windows, macOS, or Linux command window perform the following steps:</span></span>
+<span data-ttu-id="6b8ee-121">À partir d’une fenêtre de commande Windows, macOS ou Linux, procédez comme suit :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-121">From a Windows, macOS, or Linux command window perform the following steps:</span></span>
 
-1. <span data-ttu-id="f2b03-122">Créez un répertoire nommé _HelloSvcutil_ pour votre projet et faites-en votre répertoire actuel, comme dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="f2b03-122">Create a directory named _HelloSvcutil_ for your project and make it your current directory, as in the following example:</span></span>
+1. <span data-ttu-id="6b8ee-122">Créez un répertoire nommé _HelloSvcutil_ pour votre projet et faites-en votre répertoire actuel, comme dans l’exemple suivant :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-122">Create a directory named _HelloSvcutil_ for your project and make it your current directory, as in the following example:</span></span>
 
     ```console
     mkdir HelloSvcutil
     cd HelloSvcutil
     ```
 
-2. <span data-ttu-id="f2b03-123">Créez un projet web C# dans ce répertoire avec la commande [`dotnet new`](../tools/dotnet-new.md) :</span><span class="sxs-lookup"><span data-stu-id="f2b03-123">Create a new C# web project in that directory using the [`dotnet new`](../tools/dotnet-new.md) command as follows:</span></span>
+2. <span data-ttu-id="6b8ee-123">Créez un projet web C# dans ce répertoire avec la commande [`dotnet new`](../tools/dotnet-new.md) :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-123">Create a new C# web project in that directory using the [`dotnet new`](../tools/dotnet-new.md) command as follows:</span></span>
 
     ```dotnetcli
     dotnet new web
     ```
 
-3. <span data-ttu-id="f2b03-124">Installez le [package NuGet `dotnet-svcutil`](https://nuget.org/packages/dotnet-svcutil) comme un outil CLI :  </span><span class="sxs-lookup"><span data-stu-id="f2b03-124">Install the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool:  </span></span><!-- markdownlint-disable MD023 -->
-    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="f2b03-125">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-125">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
+3. <span data-ttu-id="6b8ee-124">Installez le [package NuGet `dotnet-svcutil`](https://nuget.org/packages/dotnet-svcutil) comme un outil CLI :  </span><span class="sxs-lookup"><span data-stu-id="6b8ee-124">Install the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool:  </span></span><!-- markdownlint-disable MD023 -->
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="6b8ee-125">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-125">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
 
     ```dotnetcli
     dotnet tool install --global dotnet-svcutil
     ```
 
-    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="f2b03-126">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-126">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
-    <span data-ttu-id="f2b03-127">Ouvrez le fichier projet `HelloSvcutil.csproj` dans l’éditeur de votre projet, modifiez l’élément `Project` et ajoutez le [`dotnet-svcutil` package NuGet](https://nuget.org/packages/dotnet-svcutil) comme référence d’outil CLI à l’aide du code suivant :</span><span class="sxs-lookup"><span data-stu-id="f2b03-127">Open the `HelloSvcutil.csproj` project file in your editor, edit the `Project` element, and add the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool reference, using the following code:</span></span>
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="6b8ee-126">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-126">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
+    <span data-ttu-id="6b8ee-127">Ouvrez le fichier projet `HelloSvcutil.csproj` dans l’éditeur de votre projet, modifiez l’élément `Project` et ajoutez le [`dotnet-svcutil` package NuGet](https://nuget.org/packages/dotnet-svcutil) comme référence d’outil CLI à l’aide du code suivant :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-127">Open the `HelloSvcutil.csproj` project file in your editor, edit the `Project` element, and add the [`dotnet-svcutil` NuGet package](https://nuget.org/packages/dotnet-svcutil) as a CLI tool reference, using the following code:</span></span>
 
     ```xml
     <ItemGroup>
@@ -83,7 +83,7 @@ public interface ISayHello
     </ItemGroup>
     ```
 
-    <span data-ttu-id="f2b03-128">Ensuite, restaurez le package _dotnet-svcutil_ avec la commande [`dotnet restore`](../tools/dotnet-restore.md) :</span><span class="sxs-lookup"><span data-stu-id="f2b03-128">Then restore the _dotnet-svcutil_ package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
+    <span data-ttu-id="6b8ee-128">Ensuite, restaurez le package _dotnet-svcutil_ avec la commande [`dotnet restore`](../tools/dotnet-restore.md) :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-128">Then restore the _dotnet-svcutil_ package using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
 
     ```dotnetcli
     dotnet restore
@@ -91,15 +91,15 @@ public interface ISayHello
 
     ---
 
-4. <span data-ttu-id="f2b03-129">Exécutez la commande _dotnet-svcutil_ pour générer le fichier de référence de services web :</span><span class="sxs-lookup"><span data-stu-id="f2b03-129">Run the _dotnet-svcutil_ command to generate the web service reference file as follows:</span></span>
+4. <span data-ttu-id="6b8ee-129">Exécutez la commande _dotnet-svcutil_ pour générer le fichier de référence de services web :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-129">Run the _dotnet-svcutil_ command to generate the web service reference file as follows:</span></span>
 
-    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="f2b03-130">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-130">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
+    # <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="6b8ee-130">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-130">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
 
     ```dotnetcli
     dotnet-svcutil http://contoso.com/SayHello.svc
     ```
 
-    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="f2b03-131">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-131">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
+    # <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="6b8ee-131">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-131">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
 
     ```dotnetcli
     dotnet svcutil http://contoso.com/SayHello.svc
@@ -107,25 +107,25 @@ public interface ISayHello
 
     ---
 
-<span data-ttu-id="f2b03-132">Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Reference.cs_.</span><span class="sxs-lookup"><span data-stu-id="f2b03-132">The generated file is saved as _HelloSvcutil/ServiceReference/Reference.cs_.</span></span> <span data-ttu-id="f2b03-133">L’outil _dotnet-svcutil_ ajoute également au projet les packages WCF requis par le code proxy comme références de package.</span><span class="sxs-lookup"><span data-stu-id="f2b03-133">The _dotnet-svcutil_ tool also adds to the project the appropriate WCF packages required by the proxy code as package references.</span></span>
+<span data-ttu-id="6b8ee-132">Le fichier généré est enregistré sous _HelloSvcutil/ServiceReference/Reference.cs_.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-132">The generated file is saved as _HelloSvcutil/ServiceReference/Reference.cs_.</span></span> <span data-ttu-id="6b8ee-133">L’outil _dotnet-svcutil_ ajoute également au projet les packages WCF requis par le code proxy comme références de package.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-133">The _dotnet-svcutil_ tool also adds to the project the appropriate WCF packages required by the proxy code as package references.</span></span>
 
-## <a name="using-the-service-reference"></a><span data-ttu-id="f2b03-134">Utiliser la référence de services</span><span class="sxs-lookup"><span data-stu-id="f2b03-134">Using the Service Reference</span></span>
+## <a name="using-the-service-reference"></a><span data-ttu-id="6b8ee-134">Utiliser la référence de services</span><span class="sxs-lookup"><span data-stu-id="6b8ee-134">Using the Service Reference</span></span>
 
-1. <span data-ttu-id="f2b03-135">Restaurez les packages WCF à l’aide de la commande [`dotnet restore`](../tools/dotnet-restore.md), comme suit :</span><span class="sxs-lookup"><span data-stu-id="f2b03-135">Restore the WCF packages using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
+1. <span data-ttu-id="6b8ee-135">Restaurez les packages WCF à l’aide de la commande [`dotnet restore`](../tools/dotnet-restore.md), comme suit :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-135">Restore the WCF packages using the [`dotnet restore`](../tools/dotnet-restore.md) command as follows:</span></span>
 
     ```dotnetcli
     dotnet restore
     ```
 
-2. <span data-ttu-id="f2b03-136">Recherchez le nom de la classe cliente et l’opération que vous souhaitez utiliser.</span><span class="sxs-lookup"><span data-stu-id="f2b03-136">Find the name of the client class and operation you want to use.</span></span> <span data-ttu-id="f2b03-137">`Reference.cs` contient une classe qui hérite de `System.ServiceModel.ClientBase`, avec des méthodes permettant d’appeler des opérations sur le service.</span><span class="sxs-lookup"><span data-stu-id="f2b03-137">`Reference.cs` will contain a class that inherits from `System.ServiceModel.ClientBase`, with methods that can be used to call operations on the service.</span></span> <span data-ttu-id="f2b03-138">L’objectif de cet exemple est d’appeler l’opération _Hello_ du service _SayHello_.</span><span class="sxs-lookup"><span data-stu-id="f2b03-138">In this example, you want to call the _SayHello_ service's _Hello_ operation.</span></span> <span data-ttu-id="f2b03-139">`ServiceReference.SayHelloClient` est le nom de la classe cliente et comporte une méthode `HelloAsync` servant à appeler l’opération.</span><span class="sxs-lookup"><span data-stu-id="f2b03-139">`ServiceReference.SayHelloClient` is the name of the client class, and has a method called `HelloAsync` that can be used to call the operation.</span></span>
+2. <span data-ttu-id="6b8ee-136">Recherchez le nom de la classe cliente et l’opération que vous souhaitez utiliser.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-136">Find the name of the client class and operation you want to use.</span></span> <span data-ttu-id="6b8ee-137">`Reference.cs` contient une classe qui hérite de `System.ServiceModel.ClientBase`, avec des méthodes permettant d’appeler des opérations sur le service.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-137">`Reference.cs` will contain a class that inherits from `System.ServiceModel.ClientBase`, with methods that can be used to call operations on the service.</span></span> <span data-ttu-id="6b8ee-138">L’objectif de cet exemple est d’appeler l’opération _Hello_ du service _SayHello_.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-138">In this example, you want to call the _SayHello_ service's _Hello_ operation.</span></span> <span data-ttu-id="6b8ee-139">`ServiceReference.SayHelloClient` est le nom de la classe cliente et comporte une méthode `HelloAsync` servant à appeler l’opération.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-139">`ServiceReference.SayHelloClient` is the name of the client class, and has a method called `HelloAsync` that can be used to call the operation.</span></span>
 
-3. <span data-ttu-id="f2b03-140">Ouvrez le fichier `Startup.cs` dans votre éditeur et ajoutez en haut une instruction using pour l’espace de noms de la référence de services :</span><span class="sxs-lookup"><span data-stu-id="f2b03-140">Open the `Startup.cs` file in your editor, and add a using statement for the service reference namespace at the top:</span></span>
+3. <span data-ttu-id="6b8ee-140">Ouvrez le fichier `Startup.cs` dans votre éditeur et ajoutez en haut une instruction using pour l’espace de noms de la référence de services :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-140">Open the `Startup.cs` file in your editor, and add a using statement for the service reference namespace at the top:</span></span>
 
     ```csharp
     using ServiceReference;
     ```
 
-4. <span data-ttu-id="f2b03-141">Modifiez la méthode `Configure` de façon à appeler le service web.</span><span class="sxs-lookup"><span data-stu-id="f2b03-141">Edit the `Configure` method to invoke the web service.</span></span> <span data-ttu-id="f2b03-142">Pour cela, créez une instance de la classe qui hérite de `ClientBase` et appelez la méthode sur l’objet client :</span><span class="sxs-lookup"><span data-stu-id="f2b03-142">You do this by creating an instance of the class that inherits from `ClientBase` and calling the method on the client object:</span></span>
+4. <span data-ttu-id="6b8ee-141">Modifiez la méthode `Configure` de façon à appeler le service web.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-141">Edit the `Configure` method to invoke the web service.</span></span> <span data-ttu-id="6b8ee-142">Pour cela, créez une instance de la classe qui hérite de `ClientBase` et appelez la méthode sur l’objet client :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-142">You do this by creating an instance of the class that inherits from `ClientBase` and calling the method on the client object:</span></span>
 
     ```csharp
     public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -145,24 +145,24 @@ public interface ISayHello
 
     ```
 
-5. <span data-ttu-id="f2b03-143">Exécutez l’application en utilisant la commande [`dotnet run`](../tools/dotnet-run.md), comme suit :</span><span class="sxs-lookup"><span data-stu-id="f2b03-143">Run the application using the [`dotnet run`](../tools/dotnet-run.md) command as follows:</span></span>
+5. <span data-ttu-id="6b8ee-143">Exécutez l’application en utilisant la commande [`dotnet run`](../tools/dotnet-run.md), comme suit :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-143">Run the application using the [`dotnet run`](../tools/dotnet-run.md) command as follows:</span></span>
 
     ```dotnetcli
     dotnet run
     ```
 
-6. <span data-ttu-id="f2b03-144">Accédez à l’URL figurant dans la console (par exemple, `http://localhost:5000`) dans votre navigateur web.</span><span class="sxs-lookup"><span data-stu-id="f2b03-144">Navigate to the URL listed in the console (for example, `http://localhost:5000`) in your web browser.</span></span>
+6. <span data-ttu-id="6b8ee-144">Accédez à l’URL figurant dans la console (par exemple, `http://localhost:5000`) dans votre navigateur web.</span><span class="sxs-lookup"><span data-stu-id="6b8ee-144">Navigate to the URL listed in the console (for example, `http://localhost:5000`) in your web browser.</span></span>
 
-<span data-ttu-id="f2b03-145">La sortie suivante devrait s'afficher : « Hello dotnet-svcutil! »</span><span class="sxs-lookup"><span data-stu-id="f2b03-145">You should see the following output: "Hello dotnet-svcutil!"</span></span>
+<span data-ttu-id="6b8ee-145">La sortie suivante devrait s'afficher : « Hello dotnet-svcutil! »</span><span class="sxs-lookup"><span data-stu-id="6b8ee-145">You should see the following output: "Hello dotnet-svcutil!"</span></span>
 
-<span data-ttu-id="f2b03-146">Pour obtenir une description détaillée des paramètres de l’outil `dotnet-svcutil`, appelez l’outil en passant le paramètre d’aide comme suit :</span><span class="sxs-lookup"><span data-stu-id="f2b03-146">For a detailed description of the `dotnet-svcutil` tool parameters, invoke the tool passing the help parameter as follows:</span></span>
-# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="f2b03-147">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-147">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
+<span data-ttu-id="6b8ee-146">Pour obtenir une description détaillée des paramètres de l’outil `dotnet-svcutil`, appelez l’outil en passant le paramètre d’aide comme suit :</span><span class="sxs-lookup"><span data-stu-id="6b8ee-146">For a detailed description of the `dotnet-svcutil` tool parameters, invoke the tool passing the help parameter as follows:</span></span>
+# <a name="dotnet-svcutil-2xtabdotnetsvcutil2x"></a>[<span data-ttu-id="6b8ee-147">dotnet-svcutil 2.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-147">dotnet-svcutil 2.x</span></span>](#tab/dotnetsvcutil2x)
 
 ```dotnetcli
 dotnet-svcutil --help
 ```
 
-# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="f2b03-148">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="f2b03-148">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
+# <a name="dotnet-svcutil-1xtabdotnetsvcutil1x"></a>[<span data-ttu-id="6b8ee-148">dotnet-svcutil 1.x</span><span class="sxs-lookup"><span data-stu-id="6b8ee-148">dotnet-svcutil 1.x</span></span>](#tab/dotnetsvcutil1x)
 
 ```dotnetcli
 dotnet svcutil --help
@@ -170,14 +170,14 @@ dotnet svcutil --help
 
 ---
 
-## <a name="feedback--questions"></a><span data-ttu-id="f2b03-149">Commentaires et questions</span><span class="sxs-lookup"><span data-stu-id="f2b03-149">Feedback & questions</span></span>
+## <a name="feedback--questions"></a><span data-ttu-id="6b8ee-149">Commentaires et questions</span><span class="sxs-lookup"><span data-stu-id="6b8ee-149">Feedback & questions</span></span>
 
-<span data-ttu-id="f2b03-150">Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub](https://github.com/dotnet/wcf/issues/new).</span><span class="sxs-lookup"><span data-stu-id="f2b03-150">If you have any questions or feedback, [open an issue on GitHub](https://github.com/dotnet/wcf/issues/new).</span></span> <span data-ttu-id="f2b03-151">Vous pouvez également consulter les questions ou problèmes existants dans le [dépôt WCF sur GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span><span class="sxs-lookup"><span data-stu-id="f2b03-151">You can also review any existing questions or issues [at the WCF repo on GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span></span>
+<span data-ttu-id="6b8ee-150">Si vous avez des questions ou des commentaires, [ouvrez un problème sur GitHub](https://github.com/dotnet/wcf/issues/new).</span><span class="sxs-lookup"><span data-stu-id="6b8ee-150">If you have any questions or feedback, [open an issue on GitHub](https://github.com/dotnet/wcf/issues/new).</span></span> <span data-ttu-id="6b8ee-151">Vous pouvez également consulter les questions ou problèmes existants dans le [dépôt WCF sur GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span><span class="sxs-lookup"><span data-stu-id="6b8ee-151">You can also review any existing questions or issues [at the WCF repo on GitHub](https://github.com/dotnet/wcf/issues?utf8=%E2%9C%93&q=is:issue%20label:tooling).</span></span>
 
-## <a name="release-notes"></a><span data-ttu-id="f2b03-152">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="f2b03-152">Release notes</span></span>
+## <a name="release-notes"></a><span data-ttu-id="6b8ee-152">Notes de publication</span><span class="sxs-lookup"><span data-stu-id="6b8ee-152">Release notes</span></span>
 
-- <span data-ttu-id="f2b03-153">Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md).</span><span class="sxs-lookup"><span data-stu-id="f2b03-153">Refer to the [Release notes](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) for updated release information, including known issues.</span></span>
+- <span data-ttu-id="6b8ee-153">Pour obtenir des informations à jour sur les versions, notamment les problèmes connus, consultez les [Notes de publication](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md).</span><span class="sxs-lookup"><span data-stu-id="6b8ee-153">Refer to the [Release notes](https://github.com/dotnet/wcf/blob/master/release-notes/dotnet-svcutil-notes.md) for updated release information, including known issues.</span></span>
 
-## <a name="information"></a><span data-ttu-id="f2b03-154">Informations</span><span class="sxs-lookup"><span data-stu-id="f2b03-154">Information</span></span>
+## <a name="information"></a><span data-ttu-id="6b8ee-154">Informations</span><span class="sxs-lookup"><span data-stu-id="6b8ee-154">Information</span></span>
 
-- [<span data-ttu-id="f2b03-155">Package NuGet dotnet-svcutil</span><span class="sxs-lookup"><span data-stu-id="f2b03-155">dotnet-svcutil NuGet Package</span></span>](https://nuget.org/packages/dotnet-svcutil)
+- [<span data-ttu-id="6b8ee-155">Package NuGet dotnet-svcutil</span><span class="sxs-lookup"><span data-stu-id="6b8ee-155">dotnet-svcutil NuGet Package</span></span>](https://nuget.org/packages/dotnet-svcutil)
