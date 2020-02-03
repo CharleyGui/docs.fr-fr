@@ -16,28 +16,28 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76737981"
 ---
-# <a name="deactivate-function-wpf-unmanaged-api-reference"></a><span data-ttu-id="8d585-102">Deactivate, fonction (référence des API non managées WPF)</span><span class="sxs-lookup"><span data-stu-id="8d585-102">Deactivate Function (WPF Unmanaged API Reference)</span></span>
-<span data-ttu-id="8d585-103">Cette API prend en charge l’infrastructure Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement à partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="8d585-103">This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.</span></span>  
+# <a name="deactivate-function-wpf-unmanaged-api-reference"></a><span data-ttu-id="b8a93-102">Deactivate, fonction (référence des API non managées WPF)</span><span class="sxs-lookup"><span data-stu-id="b8a93-102">Deactivate Function (WPF Unmanaged API Reference)</span></span>
+<span data-ttu-id="b8a93-103">Cette API prend en charge l’infrastructure Windows Presentation Foundation (WPF) et n’est pas destinée à être utilisée directement à partir de votre code.</span><span class="sxs-lookup"><span data-stu-id="b8a93-103">This API supports the Windows Presentation Foundation (WPF) infrastructure and is not intended to be used directly from your code.</span></span>  
   
- <span data-ttu-id="8d585-104">Utilisé par l’infrastructure Windows Presentation Foundation (WPF) pour la gestion de Windows.</span><span class="sxs-lookup"><span data-stu-id="8d585-104">Used by the Windows Presentation Foundation (WPF) infrastructure for windows management.</span></span>  
+ <span data-ttu-id="b8a93-104">Utilisé par l’infrastructure Windows Presentation Foundation (WPF) pour la gestion de Windows.</span><span class="sxs-lookup"><span data-stu-id="b8a93-104">Used by the Windows Presentation Foundation (WPF) infrastructure for windows management.</span></span>  
   
-## <a name="syntax"></a><span data-ttu-id="8d585-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="8d585-105">Syntax</span></span>  
+## <a name="syntax"></a><span data-ttu-id="b8a93-105">Syntaxe</span><span class="sxs-lookup"><span data-stu-id="b8a93-105">Syntax</span></span>  
   
 ```cpp  
 void Deactivate()  
 ```  
   
-## <a name="requirements"></a><span data-ttu-id="8d585-106">Configuration requise pour</span><span class="sxs-lookup"><span data-stu-id="8d585-106">Requirements</span></span>  
- <span data-ttu-id="8d585-107">**Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="8d585-107">**Platforms:** See [.NET Framework System Requirements](../../get-started/system-requirements.md).</span></span>  
+## <a name="requirements"></a><span data-ttu-id="b8a93-106">Configuration requise</span><span class="sxs-lookup"><span data-stu-id="b8a93-106">Requirements</span></span>  
+ <span data-ttu-id="b8a93-107">**Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).</span><span class="sxs-lookup"><span data-stu-id="b8a93-107">**Platforms:** See [.NET Framework System Requirements](../../get-started/system-requirements.md).</span></span>  
   
- <span data-ttu-id="8d585-108">**DLL**</span><span class="sxs-lookup"><span data-stu-id="8d585-108">**DLL:**</span></span>  
+ <span data-ttu-id="b8a93-108">**DLL**</span><span class="sxs-lookup"><span data-stu-id="b8a93-108">**DLL:**</span></span>  
   
- <span data-ttu-id="8d585-109">Dans les .NET Framework 3,0 et 3,5 : PresentationHostDLL. dll</span><span class="sxs-lookup"><span data-stu-id="8d585-109">In the .NET Framework 3.0 and 3.5: PresentationHostDLL.dll</span></span>  
+ <span data-ttu-id="b8a93-109">Dans les .NET Framework 3,0 et 3,5 : PresentationHostDLL. dll</span><span class="sxs-lookup"><span data-stu-id="b8a93-109">In the .NET Framework 3.0 and 3.5: PresentationHostDLL.dll</span></span>  
   
- <span data-ttu-id="8d585-110">Dans le .NET Framework 4 et versions ultérieures : PresentationHost_v0400. dll</span><span class="sxs-lookup"><span data-stu-id="8d585-110">In the .NET Framework 4 and later: PresentationHost_v0400.dll</span></span>  
+ <span data-ttu-id="b8a93-110">Dans le .NET Framework 4 et versions ultérieures : PresentationHost_v0400. dll</span><span class="sxs-lookup"><span data-stu-id="b8a93-110">In the .NET Framework 4 and later: PresentationHost_v0400.dll</span></span>  
   
- <span data-ttu-id="8d585-111">**Version de .NET Framework :** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="8d585-111">**.NET Framework Version:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span></span>  
+ <span data-ttu-id="b8a93-111">**Version de .NET Framework :** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span><span class="sxs-lookup"><span data-stu-id="b8a93-111">**.NET Framework Version:** [!INCLUDE[net_current_v30plus](../../../../includes/net-current-v30plus-md.md)]</span></span>  
   
-## <a name="see-also"></a><span data-ttu-id="8d585-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="8d585-112">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="b8a93-112">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="b8a93-112">See also</span></span>
 
-- [<span data-ttu-id="8d585-113">Référence des API non managées WPF</span><span class="sxs-lookup"><span data-stu-id="8d585-113">WPF Unmanaged API Reference</span></span>](wpf-unmanaged-api-reference.md)
+- [<span data-ttu-id="b8a93-113">Référence des API non managées WPF</span><span class="sxs-lookup"><span data-stu-id="b8a93-113">WPF Unmanaged API Reference</span></span>](wpf-unmanaged-api-reference.md)
