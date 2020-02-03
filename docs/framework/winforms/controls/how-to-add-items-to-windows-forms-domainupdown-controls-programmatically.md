@@ -16,12 +16,12 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76745582"
 ---
-# <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a><span data-ttu-id="76a28-102">Comment : ajouter par programme des éléments aux contrôles DomainUpDown Windows Forms</span><span class="sxs-lookup"><span data-stu-id="76a28-102">How to: Add Items to Windows Forms DomainUpDown Controls Programmatically</span></span>
-<span data-ttu-id="76a28-103">Vous pouvez ajouter des éléments à la Windows Forms <xref:System.Windows.Forms.DomainUpDown> contrôle dans le code.</span><span class="sxs-lookup"><span data-stu-id="76a28-103">You can add items to the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control in code.</span></span> <span data-ttu-id="76a28-104">Appelez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ou <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> de la classe <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> pour ajouter des éléments à la propriété <xref:System.Windows.Forms.DomainUpDown.Items%2A> du contrôle.</span><span class="sxs-lookup"><span data-stu-id="76a28-104">Call the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to add items to the control's <xref:System.Windows.Forms.DomainUpDown.Items%2A> property.</span></span> <span data-ttu-id="76a28-105">La méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ajoute un élément à la fin d’une collection, tandis que la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> ajoute un élément à une position spécifiée.</span><span class="sxs-lookup"><span data-stu-id="76a28-105">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method adds an item to the end of a collection, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method adds an item at a specified position.</span></span>  
+# <a name="how-to-add-items-to-windows-forms-domainupdown-controls-programmatically"></a><span data-ttu-id="61804-102">Comment : ajouter par programme des éléments aux contrôles DomainUpDown Windows Forms</span><span class="sxs-lookup"><span data-stu-id="61804-102">How to: Add Items to Windows Forms DomainUpDown Controls Programmatically</span></span>
+<span data-ttu-id="61804-103">Vous pouvez ajouter des éléments à la Windows Forms <xref:System.Windows.Forms.DomainUpDown> contrôle dans le code.</span><span class="sxs-lookup"><span data-stu-id="61804-103">You can add items to the Windows Forms <xref:System.Windows.Forms.DomainUpDown> control in code.</span></span> <span data-ttu-id="61804-104">Appelez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ou <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> de la classe <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> pour ajouter des éléments à la propriété <xref:System.Windows.Forms.DomainUpDown.Items%2A> du contrôle.</span><span class="sxs-lookup"><span data-stu-id="61804-104">Call the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> or <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method of the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection> class to add items to the control's <xref:System.Windows.Forms.DomainUpDown.Items%2A> property.</span></span> <span data-ttu-id="61804-105">La méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> ajoute un élément à la fin d’une collection, tandis que la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> ajoute un élément à une position spécifiée.</span><span class="sxs-lookup"><span data-stu-id="61804-105">The <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method adds an item to the end of a collection, while the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method adds an item at a specified position.</span></span>  
   
-### <a name="to-add-a-new-item"></a><span data-ttu-id="76a28-106">Pour ajouter un nouvel élément</span><span class="sxs-lookup"><span data-stu-id="76a28-106">To add a new item</span></span>  
+### <a name="to-add-a-new-item"></a><span data-ttu-id="61804-106">Pour ajouter un nouvel élément</span><span class="sxs-lookup"><span data-stu-id="61804-106">To add a new item</span></span>  
   
-1. <span data-ttu-id="76a28-107">Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> pour ajouter un élément à la fin de la liste d’éléments.</span><span class="sxs-lookup"><span data-stu-id="76a28-107">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.</span></span>  
+1. <span data-ttu-id="61804-107">Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> pour ajouter un élément à la fin de la liste d’éléments.</span><span class="sxs-lookup"><span data-stu-id="61804-107">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A> method to add an item to the end of the list of items.</span></span>  
   
     ```vb  
     DomainUpDown1.Items.Add("noodles")  
@@ -35,9 +35,9 @@ ms.locfileid: "76745582"
     domainUpDown1->Items->Add("noodles");  
     ```  
   
-     <span data-ttu-id="76a28-108">\- ou -</span><span class="sxs-lookup"><span data-stu-id="76a28-108">-or-</span></span>  
+     <span data-ttu-id="61804-108">-ou-</span><span class="sxs-lookup"><span data-stu-id="61804-108">-or-</span></span>  
   
-2. <span data-ttu-id="76a28-109">Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> pour insérer un élément dans la liste à une position spécifiée.</span><span class="sxs-lookup"><span data-stu-id="76a28-109">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.</span></span>  
+2. <span data-ttu-id="61804-109">Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> pour insérer un élément dans la liste à une position spécifiée.</span><span class="sxs-lookup"><span data-stu-id="61804-109">Use the <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> method to insert an item into the list at a specified position.</span></span>  
   
     ```vb  
     ' Inserts an item at the third position in the list  
@@ -54,10 +54,10 @@ ms.locfileid: "76745582"
     domainUpDown1->Items->Insert(2, "rice");  
     ```  
   
-## <a name="see-also"></a><span data-ttu-id="76a28-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="76a28-110">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="61804-110">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="61804-110">See also</span></span>
 
 - <xref:System.Windows.Forms.DomainUpDown>
 - <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Add%2A?displayProperty=nameWithType>
 - <xref:System.Collections.ArrayList.Insert%2A?displayProperty=nameWithType>
-- [<span data-ttu-id="76a28-111">DomainUpDown, contrôle</span><span class="sxs-lookup"><span data-stu-id="76a28-111">DomainUpDown Control</span></span>](domainupdown-control-windows-forms.md)
-- [<span data-ttu-id="76a28-112">Vue d’ensemble du contrôle DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="76a28-112">DomainUpDown Control Overview</span></span>](domainupdown-control-overview-windows-forms.md)
+- [<span data-ttu-id="61804-111">DomainUpDown, contrôle</span><span class="sxs-lookup"><span data-stu-id="61804-111">DomainUpDown Control</span></span>](domainupdown-control-windows-forms.md)
+- [<span data-ttu-id="61804-112">Vue d’ensemble du contrôle DomainUpDown</span><span class="sxs-lookup"><span data-stu-id="61804-112">DomainUpDown Control Overview</span></span>](domainupdown-control-overview-windows-forms.md)
