@@ -27,14 +27,14 @@ Le modèle de build et de déploiement permet de créer et de déployer des appl
 ## <a name="in-this-section"></a>Dans cette section  
  [Génération d’une application WPF](building-a-wpf-application-wpf.md)  
  [Déploiement d’une application WPF](deploying-a-wpf-application-wpf.md)  
- [Rubriques pratiques](build-and-deploy-how-to-topics.md)  
+ [Rubriques Comment](build-and-deploy-how-to-topics.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  MSBuild  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d’ensemble de la gestion d’applications](application-management-overview.md)  
   [Fenêtres dans les applications WPF](windows-in-wpf-applications.md)  
   [Vue d’ensemble de la navigation](navigation-overview.md)  
   [Vue d’ensemble des applications du navigateur XAML WPF](wpf-xaml-browser-applications-overview.md)  
-  [Hébergement](hosting-wpf-applications.md)
+  [Hébergement d’applications WPF](hosting-wpf-applications.md)

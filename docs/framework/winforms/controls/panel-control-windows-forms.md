@@ -29,11 +29,11 @@ Les contrôles de `Panel` Windows Forms sont utilisés pour fournir un regroupem
  [Guide pratique pour définir l'arrière-plan d'un contrôle Panel](how-to-set-the-background-of-a-windows-forms-panel.md)  
  Décrit comment afficher une couleur d’arrière-plan et une image d’arrière-plan dans un panneau.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Panel>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

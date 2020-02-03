@@ -225,7 +225,7 @@ Si deux éléments dans des fichiers de directives runtime différents essaient 
 
 1. Si l'élément `Excluded` est présent, il a la priorité.
 
-2. `Required` est prioritaire sur Not Required`Required`.
+2. `Required` est prioritaire sur `Required`Not Required{3}.
 
 3. `All` est prioritaire sur `PublicAndInternal`, lui-même prioritaire sur `Public`.
 

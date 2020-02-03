@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du composant PrintDialog
+title: Vue d'ensemble du composant PrintDialog
 ms.date: 03/30/2017
 f1_keywords:
 - PrintDialog

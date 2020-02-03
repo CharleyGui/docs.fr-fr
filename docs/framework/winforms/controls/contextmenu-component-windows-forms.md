@@ -30,11 +30,11 @@ ms.locfileid: "76746171"
  [Guide pratique pour ajouter et supprimer des éléments de menu avec le composant ContextMenu Windows Forms](add-and-remove-menu-items-with-wf-contextmenu-component.md)  
  Explique comment ajouter et supprimer des éléments de menu contextuel dans Windows Forms.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ContextMenu>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.ContextMenu> et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

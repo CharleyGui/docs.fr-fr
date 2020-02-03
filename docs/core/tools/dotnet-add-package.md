@@ -17,7 +17,7 @@ ms.locfileid: "76733331"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet add package` : Ajoute une référence de package à un fichier projet.
 

@@ -1,5 +1,5 @@
 ---
-title: Trees
+title: Arborescences
 ms.date: 03/30/2017
 helpviewer_keywords:
 - logical tree [WPF]
@@ -54,7 +54,7 @@ Dans de nombreuses technologies, les éléments et les composants sont organisé
  Les auteurs de contrôles avancés peuvent remplacer l’arborescence logique en remplaçant plusieurs API qui définissent la façon dont un objet général ou un modèle de contenu ajoute ou supprime des objets dans l’arborescence logique. Pour obtenir un exemple montrant comment remplacer l’arborescence logique, consultez [Remplacer l’arborescence logique](how-to-override-the-logical-tree.md).  
   
 <a name="pvi"></a>   
-### <a name="property-value-inheritance"></a>Héritage de la valeur de propriété  
+### <a name="property-value-inheritance"></a>Héritage de valeur de propriété  
  L’héritage des valeurs de propriété fonctionne à travers une arborescence hybride. Les métadonnées réelles qui contiennent la propriété <xref:System.Windows.FrameworkPropertyMetadata.Inherits%2A> qui autorise l’héritage de propriété sont la classe <xref:System.Windows.FrameworkPropertyMetadata> au niveau de l’infrastructure WPF. Par conséquent, le parent qui contient la valeur d’origine et l’objet enfant qui hérite de cette valeur doivent être <xref:System.Windows.FrameworkElement> ou <xref:System.Windows.FrameworkContentElement>, et ils doivent tous deux faire partie d’une arborescence logique. Cependant, pour les propriétés WPF existantes qui prennent en charge l’héritage des propriétés, l’héritage de la valeur des propriétés peut se perpétuer à travers un objet intermédiaire qui ne se trouve pas dans l’arborescence logique. Ceci est principalement approprié pour avoir des éléments de modèle utilisant des valeurs de propriétés héritées définies sur l’instance changée en modèle ou à des niveaux néanmoins plus élevés de la composition de niveau page, et par conséquent plus haut dans l’arborescence logique. Pour que l’héritage des valeurs de propriétés fonctionne de manière cohérente dans cette limite, la propriété qui hérite doit être inscrite comme propriété attachée, et vous devez suivre ce modèle si vous prévoyez de définir une propriété de dépendance personnalisée avec un comportement d’héritage de propriété. L’arborescence exacte utilisée pour l’héritage de propriétés ne peut pas être entièrement anticipée par une méthode d’utilitaire de classe d’assistance, même au moment de l’exécution. Pour plus d’informations, consultez [Héritage de valeur de propriété](property-value-inheritance.md).  
   
 <a name="two_trees"></a>   

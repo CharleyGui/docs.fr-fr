@@ -123,5 +123,5 @@ Cette rubrique introduit le concept d’extensions de balisage pour XAML, notamm
 - [Extensions XAML WPF](wpf-xaml-extensions.md)
 - [StaticResource, extension de balisage](staticresource-markup-extension.md)
 - [Binding, extension de balisage](binding-markup-extension.md)
-- [Extension de balisage DynamicResource](dynamicresource-markup-extension.md)
+- [DynamicResource, extension de balisage](dynamicresource-markup-extension.md)
 - [x:Type, extension de balisage](../../../desktop-wpf/xaml-services/xtype-markup-extension.md)

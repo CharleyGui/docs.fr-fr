@@ -32,7 +32,7 @@ Pour connecter un contrôle DataGridView à des données :
 
 Cet exemple de code complet récupère les données d’une base de données pour remplir un contrôle DataGridView dans un Windows Form. Le formulaire contient également des boutons permettant de recharger les données et de soumettre les modifications à la base de données.  
 
-Cet exemple nécessite : 
+Cet exemple nécessite : 
 
 - Accès à un exemple de base de données Northwind SQL Server. Pour plus d’informations sur l’installation de l’exemple de base de données Northwind, consultez [obtenir les exemples de bases de données pour les exemples de code ADO.net](../../data/adonet/sql/linq/downloading-sample-databases.md). 
 

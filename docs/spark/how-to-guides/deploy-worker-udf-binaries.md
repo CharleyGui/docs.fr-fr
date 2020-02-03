@@ -18,7 +18,7 @@ Cette procédure fournit des instructions générales sur le déploiement de .NE
 ## <a name="configurations"></a>Configurations
 Les configurations affichent les paramètres variables et paramètres généraux de l’environnement afin de déployer .NET pour les fichiers binaires de fonction Apache Spark Worker et définie par l’utilisateur.
 
-### <a name="environment-variables"></a>Variables d'environnement
+### <a name="environment-variables"></a>Variables d’environnement
 Lors du déploiement de Workers et de l’écriture de fonctions définies par l’utilisateur, il existe quelques variables d’environnement couramment utilisées que vous devrez peut-être définir : 
 
 | Variable d’environnement         | Description
@@ -27,10 +27,10 @@ Lors du déploiement de Workers et de l’écriture de fonctions définies par l
 | DOTNET_ASSEMBLY_SEARCH_PATHS | Chemins d’accès séparés par des virgules où <code>Microsoft.Spark.Worker</code> chargera des assemblys.</br>Notez que, si un chemin d’accès commence par « . », le répertoire de travail sera ajouté. En **mode fils**, « . » représente le répertoire de travail du conteneur.</br>_par exemple, « C:\Users\\&lt;nom d’utilisateur&gt;\\&lt;mysparkapp&gt;\bin\Debug\\&lt;dotnet version&gt;»_
 | DOTNET_WORKER_DEBUG          | Si vous souhaitez <a href="https://github.com/dotnet/spark/blob/master/docs/developer-guide.md#debugging-user-defined-function-udf">déboguer une FDU</a>, définissez cette variable d’environnement sur <code>1</code> avant d’exécuter <code>spark-submit</code>.
 
-### <a name="parameter-options"></a>Options des paramètres
+### <a name="parameter-options"></a>Options de paramètre
 Une fois l’application Spark [regroupée](https://spark.apache.org/docs/latest/submitting-applications.html#bundling-your-applications-dependencies), vous pouvez la lancer à l’aide de `spark-submit`. Le tableau suivant présente certaines des options couramment utilisées : 
 
-| nom du paramètre        | Description
+| Nom du paramètre        | Description
 | :---------------------| :---------- 
 | --classe               | Point d’entrée de votre application.</br>_exemple : org. Apache. Spark. deploy. dotnet. DotnetRunner_
 | --maître              | <a href="https://spark.apache.org/docs/latest/submitting-applications.html#master-urls">URL principale</a> du cluster.</br>_par exemple, fils_
@@ -44,8 +44,8 @@ Une fois l’application Spark [regroupée](https://spark.apache.org/docs/latest
 > [!NOTE]
 > Spécifiez tous les `--options` avant `application-jar` lors du lancement d’applications avec `spark-submit`, sinon elles seront ignorées. Pour plus d’informations, consultez [options`spark-submit`](https://spark.apache.org/docs/latest/submitting-applications.html) et [exécution de Spark sur les détails du fil](https://spark.apache.org/docs/latest/running-on-yarn.html).
 
-## <a name="frequently-asked-questions"></a>FAQ
-### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Lorsque j’exécute une application Spark avec des fonctions définies par l’utilisateur, j’obtiens une erreur « FileNotFoundException ». Que faire ?
+## <a name="frequently-asked-questions"></a>Forum aux questions
+### <a name="when-i-run-a-spark-app-with-udfs-i-get-a-filenotfoundexception-error-what-should-i-do"></a>Lorsque j’exécute une application Spark avec des fonctions définies par l’utilisateur, j’obtiens une erreur « FileNotFoundException ». Que dois-je faire ?
 > **Erreur :** [erreur] [TaskRunner] [0] ProcessStream () a échoué avec l’exception : System. IO. FileNotFoundException : assembly’MySparkApp, version = 1.0.0.0, culture = neutral, PublicKeyToken = null’fichier introuvable : 'mySparkApp. dll'
 
 **Réponse :** Vérifiez que la variable d’environnement `DOTNET_ASSEMBLY_SEARCH_PATHS` est correctement définie. Il doit s’agir du chemin d’accès qui contient votre `mySparkApp.dll`.

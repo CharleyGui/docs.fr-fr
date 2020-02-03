@@ -41,7 +41,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  magasin de certificats  
  En général, magasin permanent dans lequel les certificats, les listes de révocation de certificats (CRL) et les listes de certificats de confiance (CTL) sont stockés. Toutefois, il est possible de créer et d'ouvrir un magasin de certificats en mémoire uniquement lors de l'utilisation de certificats qui ne doivent pas nécessairement être stockés de façon permanente.  
   
- revendications  
+ réclamations  
  Informations passées d'une entité à une autre et utilisées pour établir l'identité de l'expéditeur. Par exemple, un nom d'utilisateur et un jeton de mot de passe, ou un certificat X.509.  
   
  certificat de client  
@@ -74,7 +74,7 @@ La terminologie utilisée pour aborder la sécurité peut vous sembler peu famil
  autorité de sécurité locale (Local Security Authority ou LSA)  
  Sous-système protégé qui authentifie des utilisateurs et ouvre une session sur le système local. L'autorité de sécurité locale conserve également des informations à propos de tous les aspects de la sécurité locale sur un système, collectivement connus comme la stratégie de sécurité locale du système.  
   
- Negotiate  
+ Négocier  
  Fournisseur de prise en charge de la sécurité (SSP) qui agit comme une couche d'application entre le SSPI (Security Support Provider Interface) et d'autres SSP. Lorsqu'une application appelle un SSPI à se connecter à un réseau, il peut spécifier un SSP pour traiter la demande. Si l'application spécifie `Negotiate`, `Negotiate` analyse la demande et choisit le meilleur SSP pour gérer la demande selon la stratégie de sécurité configurée par client.  
   
  valeur à usage unique  

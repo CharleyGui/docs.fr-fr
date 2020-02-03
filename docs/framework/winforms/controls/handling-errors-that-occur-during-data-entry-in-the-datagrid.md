@@ -27,7 +27,7 @@ Dans cette procédure pas à pas, vous allez extraire des lignes de la table `Cu
 
 Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : gérer les erreurs qui se produisent lors de l’entrée de données dans le contrôle DataGridView Windows Forms](handle-errors-that-occur-during-data-entry-in-the-datagrid.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 

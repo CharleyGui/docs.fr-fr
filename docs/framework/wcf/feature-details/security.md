@@ -34,7 +34,7 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité de 
  [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)  
  Une vue orientée sécurité des liaisons, y compris des rubriques qui montrent comment créer des liaisons de sécurité personnalisées.  
   
- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
+ [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)  
  Décrit comment sécuriser des messages à l’aide des fonctionnalités de sécurité WCF.  
   
  [Authentification](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)  
@@ -55,17 +55,17 @@ Les rubriques de cette section décrivent les fonctionnalités de sécurité de 
  [Aide sur la sécurité et bonnes pratiques](../../../../docs/framework/wcf/feature-details/security-guidance-and-best-practices.md)  
  Instructions pour la création d’applications WCF sécurisées.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Security>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations détaillées sur les fonctionnalités de WCF](../../../../docs/framework/wcf/feature-details/index.md)  
   
  [Programmation WCF de base](../../../../docs/framework/wcf/basic-wcf-programming.md)  
   
- [Didacticiel Bien démarrer](../../../../docs/framework/wcf/getting-started-tutorial.md)  
+ [Getting Started Tutorial](../../../../docs/framework/wcf/getting-started-tutorial.md)  
   
  [Vue d’ensemble conceptuelle](../../../../docs/framework/wcf/conceptual-overview.md)  
   

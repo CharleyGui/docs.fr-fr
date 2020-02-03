@@ -31,7 +31,7 @@ Le contrôle <xref:System.Windows.Forms.DataGridView> fournit plusieurs types de
 ## <a name="compiling-the-code"></a>Compilation du code  
  L'exemple suivant nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -17,7 +17,7 @@ ms.locfileid: "76733269"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet add reference` : ajoute des références entre projets (P2P).
 
@@ -59,7 +59,7 @@ La commande `dotnet add reference` est une option pratique pour ajouter des réf
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Option disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 3.0.
 
 ## <a name="examples"></a>Exemples
 

@@ -31,10 +31,10 @@ Le composant Windows Forms `NotifyIcon` affiche des icônes dans la zone de noti
  [Guide pratique pour associer un menu contextuel à un composant NotifyIcon Windows Forms](how-to-associate-a-shortcut-menu-with-a-windows-forms-notifyicon-component.md)  
  Fournit la procédure d’ajout d’un menu contextuel à un composant `NotifyIcon`.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.NotifyIcon>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

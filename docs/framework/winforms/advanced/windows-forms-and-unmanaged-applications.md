@@ -30,7 +30,7 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
   
  Consultez également [Procédure pas à pas : prise en charge de COM Interop en affichant chaque Windows Forms sur son propre thread](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233639(v=vs.100)).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Form.ShowDialog%2A?displayProperty=nameWithType>  
  Permet de créer un thread distinct pour un Windows Form.  
   
@@ -40,6 +40,6 @@ Les contrôles et les applications Windows Forms peuvent interagir avec des appl
  <xref:System.Windows.Forms.Control.Invoke%2A>  
  Marshale les appels à partir d’une application non managée vers un formulaire.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Exposition de composants .NET Framework à COM](../../interop/exposing-dotnet-components-to-com.md)  
  Propose des informations générales sur l'utilisation de types .NET Framework dans les applications non managées.

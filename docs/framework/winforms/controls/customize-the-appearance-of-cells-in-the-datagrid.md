@@ -26,7 +26,7 @@ Vous pouvez personnaliser l’apparence d’une cellule en gérant l’événeme
  [!code-vb[System.Windows.Forms.DataGridViewCellPainting#10](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewCellPainting/VB/form1.vb#10)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` avec une colonne `ContactName` telle que celle de la table Customers dans l’exemple de base de données Northwind.  
   

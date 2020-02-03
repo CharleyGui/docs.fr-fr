@@ -20,7 +20,7 @@ Comme pour les autres instructions d’affectation de noms, l’objectif de l’
 
  `<Company>.(<Product>|<Technology>)[.<Feature>][.<Subnamespace>]`
 
- Voici quelques exemples :
+ Voici quelques exemples :
 
  `Fabrikam.Math` `Litware.Security`
 
@@ -34,7 +34,7 @@ Comme pour les autres instructions d’affectation de noms, l’objectif de l’
 
  ✔️ envisagez d’utiliser des noms d’espaces de noms pluriels lorsque cela est approprié.
 
- Par exemple, utilisez `System.Collections` à la place de `System.Collection`. Toutefois, les noms et les acronymes sont des exceptions à cette règle. Par exemple, utilisez `System.IO` à la place de `System.IOs`.
+ Par exemple, utilisez `System.Collections` au lieu de `System.Collection`. Toutefois, les noms et les acronymes sont des exceptions à cette règle. Par exemple, utilisez `System.IO` au lieu de `System.IOs`.
 
  ❌ n’utilisez pas le même nom pour un espace de noms et un type dans cet espace de noms.
 

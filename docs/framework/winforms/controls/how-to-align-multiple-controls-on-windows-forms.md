@@ -31,7 +31,7 @@ Pour normaliser la disposition de l’interface utilisateur (IU) de votre applic
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Comment : ajouter des contrôles à des Windows Forms](how-to-add-controls-to-windows-forms.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)
 - [Classement par fonction des contrôles Windows Forms](windows-forms-controls-by-function.md)

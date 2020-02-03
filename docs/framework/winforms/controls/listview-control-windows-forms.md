@@ -62,11 +62,11 @@ Le contrôle `ListView` Windows Forms affiche une liste d'éléments avec des ic
   
 - [Procédure pas à pas : création d’une interface de style Explorateur avec les contrôles ListView et TreeView à l’aide du concepteur](creating-an-explorer-style-interface-with-the-listview-and-treeview.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.ListView>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Guide pratique pour ajouter des informations personnalisées à un contrôle TreeView ou ListView (Windows Forms)](add-custom-information-to-a-treeview-or-listview-control-wf.md)  
  Décrit comment hériter d’un élément dans un affichage de liste ou d’un nœud dans une arborescence pour ajouter des champs, des méthodes ou des constructeurs dont vous avez besoin.  
   

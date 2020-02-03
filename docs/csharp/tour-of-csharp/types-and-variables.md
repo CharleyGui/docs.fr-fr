@@ -18,7 +18,7 @@ Les types de valeur de C# sont divisés entre *types simples*, *types enum*, *ty
 
 Ce qui suit offre une vue d'ensemble du système de types de C#.
 
-- [Types valeur][ValueTypes]
+- [Types de valeur][ValueTypes]
   - [Types simples][SimpleTypes]
     - Entier signé : `sbyte`, `short`, `int`, `long`
     - Entier non signé : `byte`, `ushort`, `uint`, `ulong`
@@ -93,7 +93,7 @@ Il existe plusieurs types de *variables* en C#, y compris les champs, les élém
   - Une valeur de ce type exact
 - Types valeur Nullable
   - Une valeur `null` ou une valeur de ce type exact
-- Objet
+- objet
   - Une référence `null`, une référence à un objet de tout type référence ou une référence à une valeur boxed de n’importe quel type valeur
 - Type de classe
   - Une référence `null`, une référence à une instance de ce type de classe ou une référence à une instance d’une classe dérivée de ce type de classe

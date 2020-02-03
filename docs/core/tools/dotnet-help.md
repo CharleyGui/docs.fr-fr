@@ -17,7 +17,7 @@ ms.locfileid: "76734231"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-2plus.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet help` : affiche une documentation en ligne plus détaillée pour la commande spécifiée.
 

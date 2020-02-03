@@ -25,13 +25,13 @@ Lorsque vous ajoutez des <xref:System.Windows.Forms.ToolStripItem>qui requièren
 
 ## <a name="to-enable-overflow-on-a-toolstrip-control"></a>Pour activer le dépassement de capacité sur un contrôle ToolStrip
 
-- Assurez-vous que la propriété <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> n’est pas définie sur `false` pour le <xref:System.Windows.Forms.ToolStrip>. La valeur par défaut est `True`,
+- Assurez-vous que la propriété <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> n’est pas définie sur `false` pour le <xref:System.Windows.Forms.ToolStrip>. Par défaut, il s’agit de `True`.
 
      Lorsque <xref:System.Windows.Forms.ToolStrip.CanOverflow%2A> est `True` (valeur par défaut), un <xref:System.Windows.Forms.ToolStripItem> est envoyé au menu déroulant de dépassement de capacité lorsque le contenu du <xref:System.Windows.Forms.ToolStripItem> dépasse la largeur d’un <xref:System.Windows.Forms.ToolStrip> horizontal ou la hauteur d’un <xref:System.Windows.Forms.ToolStrip>vertical.
 
 ## <a name="to-specify-overflow-behavior-of-a-specific-toolstripitem"></a>Pour spécifier le comportement de dépassement de capacité d’un ToolStripItem spécifique
 
-- Affectez la valeur souhaitée à la propriété <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> du <xref:System.Windows.Forms.ToolStripItem>. Les possibilités sont `Always`, `Never`et `AsNeeded`. La valeur par défaut est `AsNeeded`,
+- Affectez la valeur souhaitée à la propriété <xref:System.Windows.Forms.ToolStripItem.Overflow%2A> du <xref:System.Windows.Forms.ToolStripItem>. Les possibilités sont `Always`, `Never`et `AsNeeded`. Par défaut, il s’agit de `AsNeeded`.
 
     ```vb
     toolStripTextBox1.Overflow = _

@@ -19,11 +19,11 @@ Cet exemple illustre comment héberger des applications dans le service d'activa
 > [!NOTE]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
 >
-> \<InstallDrive>:\WF_WCF_Samples
+> \<Lecteurinstall >: \ WF_WCF_Samples
 >
 > Si ce répertoire n’existe pas, accédez à [Windows Communication Foundation (WCF) et Windows Workflow Foundation (WF) exemples pour .NET Framework 4](https://www.microsoft.com/download/details.aspx?id=21459) pour télécharger tous les exemples WCF et [!INCLUDE[wf1](../../../../includes/wf1-md.md)]. Cet exemple se trouve dans le répertoire suivant.
 >
-> \<InstallDrive>:\Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
+> \<Lecteurinstall >: \Samples\WCFWFCardSpace\WCF\Basic\Services\Hosting\WASHost\MsmqActivation.
 
 Le service WAS (Windows Process Activation Service), le nouveau mécanisme d’activation de processus pour Windows Server 2008, fournit des fonctionnalités de type IIS qui étaient auparavant uniquement disponibles pour les applications basées sur HTTP aux applications qui utilisent des protocoles non-HTTP. Windows Communication Foundation (WCF) utilise l’interface d’adaptateur d’écouteur pour communiquer les demandes d’activation reçues sur les protocoles non-HTTP pris en charge par WCF, tels que TCP, les canaux nommés et MSMQ. Les fonctionnalités de réception des demandes sur les protocoles non-HTTP sont hébergées par les services Windows managés qui s'exécutent dans SMSvcHost.exe.
 
@@ -269,7 +269,7 @@ Status of order 70cf9d63-3dfa-4e69-81c2-23aa4478ebed :Pending
 
         Cette commande permet d’accéder à l’application/servicemodelsamples à l’aide de `http://localhost/servicemodelsamples` et `net.msmq://localhost/servicemodelsamples`.
 
-7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc`. Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Cliquez avec le bouton droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
+7. Si vous ne l'avez pas fait précédemment, assurez-vous que le service d'activation MSMQ est activé. Dans le menu **Démarrer** , cliquez sur **exécuter**, puis tapez `Services.msc`. Recherchez l' **adaptateur d’écouteur net. MSMQ**dans la liste des services. Effectuez un clic droit et sélectionnez **Propriétés**. Définissez le **type de démarrage** sur **automatique**, cliquez sur **appliquer** , puis cliquez sur le bouton **Démarrer** . Cette étape doit être effectuée à une seule reprise, avant la première utilisation du service d'adaptateur de l'écouteur Net.Msmq.
 
 8. Pour exécuter l’exemple dans une configuration à un ou plusieurs ordinateurs, suivez les instructions de [la section exécution des exemples de Windows Communication Foundation](../../../../docs/framework/wcf/samples/running-the-samples.md). En outre, modifiez le code du client qui envoie le bon de commande en fonction du nom de l'ordinateur figurant dans l'URI de la file d'attente lors de l'envoi de ce bon. Utilisez le code suivant :
 

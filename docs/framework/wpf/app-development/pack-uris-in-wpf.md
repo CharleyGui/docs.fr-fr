@@ -58,7 +58,7 @@ L' *autorité* spécifie le type de package qui contient un composant, tandis qu
 
 Ce concept est illustré par le figure suivante :
 
-![Relation entre package, autorité et chemin d’accès](./media/pack-uris-in-wpf/wpf-relationship-diagram.png)
+![Relation entre package, autorité et chemin d'accès](./media/pack-uris-in-wpf/wpf-relationship-diagram.png)
 
 Les packages et les parties s’apparentent à des applications et des fichiers, où une application (package) peut inclure un ou plusieurs fichiers (parties), notamment :
 
@@ -115,7 +115,7 @@ L’URI à en-tête pack pour un fichier de ressources compilé dans un assembly
 
 - **Chemin** : nom d’un fichier de ressources compilé dans un assembly référencé. Le chemin doit respecter le format suivant :
 
-  *AssemblyShortName*{ *;Version*]{ *;PublicKey*];component/*Path*
+  *NomCourtAssembly*{ *; Version*] { *; PublicKey*]; composant/*chemin d’accès*
 
   - **NomCourtAssembly** : nom court de l’assembly référencé.
 
@@ -305,7 +305,7 @@ Le tableau 1 illustre les différents URI à en-tête pack absolus que vous pouv
 
 Tableau 1 : URI à en-tête pack absolus dans le balisage
 
-|File|URI à en-tête pack absolu|
+|Fichier|URI à en-tête pack absolu|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`"pack://application:,,,/ResourceFile.xaml"`|
 |Fichier de ressources dans un sous-dossier - assembly local|`"pack://application:,,,/Subfolder/ResourceFile.xaml"`|
@@ -321,7 +321,7 @@ Le tableau 2 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 2 : URI à en-tête pack relatifs dans le balisage
 
-|File|URI à en-tête pack relatif|
+|Fichier|URI à en-tête pack relatif|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources dans un assembly local|`"/ResourceFile.xaml"`|
 |Fichier de ressources dans un sous-dossier de l’assembly local|`"/Subfolder/ResourceFile.xaml"`|
@@ -368,7 +368,7 @@ Le tableau 3 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 3 : URI à en-tête pack absolus dans le code
 
-|File|URI à en-tête pack absolu|
+|Fichier|URI à en-tête pack absolu|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`Uri uri = new Uri("pack://application:,,,/ResourceFile.xaml", UriKind.Absolute);`|
 |Fichier de ressources dans un sous-dossier - assembly local|`Uri uri = new Uri("pack://application:,,,/Subfolder/ResourceFile.xaml", UriKind.Absolute);`|
@@ -384,7 +384,7 @@ Le tableau 4 illustre les différents URI à en-tête pack relatifs que vous pou
 
 Tableau 4 : URI à en-tête pack relatifs dans le code
 
-|File|URI à en-tête pack relatif|
+|Fichier|URI à en-tête pack relatif|
 |----------|-------------------------------------------------------------------------------------------------------------------------|
 |Fichier de ressources - assembly local|`Uri uri = new Uri("/ResourceFile.xaml", UriKind.Relative);`|
 |Fichier de ressources dans un sous-dossier - assembly local|`Uri uri = new Uri("/Subfolder/ResourceFile.xaml", UriKind.Relative);`|

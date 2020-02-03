@@ -58,7 +58,7 @@ Explique comment ajouter et supprimer des éléments de menu contextuel dans Win
     contextMenu1->MenuItems->Remove(mnuItemNew);  
     ```  
   
-     \- ou -  
+     -ou-  
   
 2. Utilisez la méthode `Clear` de la collection `MenuItems` du composant <xref:System.Windows.Forms.ContextMenu> pour supprimer tous les éléments du menu.  
   

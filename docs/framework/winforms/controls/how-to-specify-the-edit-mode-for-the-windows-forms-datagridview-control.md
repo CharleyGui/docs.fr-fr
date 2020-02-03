@@ -22,7 +22,7 @@ Par défaut, les utilisateurs peuvent modifier le contenu de la cellule de zone 
   
 - Le contrôle <xref:System.Windows.Forms.DataGridView> est activé.  
   
-- La valeur de la propriété <xref:System.Windows.Forms.DataGridView.EditMode%2A> n’est pas <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
+- La valeur de propriété <xref:System.Windows.Forms.DataGridView.EditMode%2A> n'est pas <xref:System.Windows.Forms.DataGridViewEditMode.EditProgrammatically>.  
   
 - Les propriétés `ReadOnly` de la cellule, de la ligne, de la colonne et du contrôle ont toutes la valeur `false`.  
   
@@ -38,7 +38,7 @@ Par défaut, les utilisateurs peuvent modifier le contenu de la cellule de zone 
      [!code-vb[System.Windows.Forms.DataGridViewMisc#067](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#067)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ;  
   

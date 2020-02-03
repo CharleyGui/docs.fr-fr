@@ -71,5 +71,5 @@ ms.locfileid: "76744089"
 - [Vue d’ensemble du contrôle DataGrid](datagrid-control-overview-windows-forms.md)
 - [Guide pratique pour ajouter des tables et des colonnes au contrôle DataGrid Windows Forms](how-to-add-tables-and-columns-to-the-windows-forms-datagrid-control.md)
 - [DataGrid, contrôle](datagrid-control-windows-forms.md)
-- [Liaison de données Windows Forms](../windows-forms-data-binding.md)
+- [Liaison de données Windows Forms](../windows-forms-data-binding.md)
 - [Accès aux données dans Visual Studio](/visualstudio/data-tools/accessing-data-in-visual-studio)

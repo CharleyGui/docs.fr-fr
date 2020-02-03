@@ -21,7 +21,7 @@ Il existe deux genres de types en C# : les types référence et les types val
 
  Les mots clés suivants sont utilisés pour déclarer des types référence :
 
-- [classe](class.md)
+- [class](class.md)
 
 - [interface](interface.md)
 
@@ -37,7 +37,7 @@ Il existe deux genres de types en C# : les types référence et les types val
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Types valeur](../builtin-types/value-types.md)
+- [Types de valeur](../builtin-types/value-types.md)

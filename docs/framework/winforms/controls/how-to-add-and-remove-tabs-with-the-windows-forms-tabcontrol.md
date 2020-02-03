@@ -49,7 +49,7 @@ Par défaut, un contrôle <xref:System.Windows.Forms.TabControl> contient deux c
   
 - Pour supprimer les onglets sélectionnés, utilisez la méthode <xref:System.Windows.Forms.TabControl.TabPageCollection.Remove%2A> de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   
-     \- ou -  
+     -ou-  
   
 - Pour supprimer tous les onglets, utilisez la méthode <xref:System.Windows.Forms.TabControl.TabPageCollection.Clear%2A> de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A>.  
   

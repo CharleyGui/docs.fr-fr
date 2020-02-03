@@ -17,7 +17,7 @@ ms.locfileid: "76745976"
 # <a name="dialog-box-controls-and-components-windows-forms"></a>Contrôles et composants de boîte de dialogue (Windows Forms)
 Les contrôles et les composants Windows Forms suivants présentent des boîtes de dialogue standard. Suivez les liens pour obtenir plus d'informations sur les fonctions disponibles dans chaque boîte de dialogue.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ColorDialog>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.ColorDialog> et ses membres.  
   
@@ -39,7 +39,7 @@ Les contrôles et les composants Windows Forms suivants présentent des boîtes 
  <xref:System.Windows.Forms.SaveFileDialog>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.SaveFileDialog> et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Boîtes de dialogue dans les Windows Forms](../dialog-boxes-in-windows-forms.md)  
  Décrit comment créer une boîte de dialogue pour un Windows Form.  
   

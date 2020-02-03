@@ -63,7 +63,7 @@ Le passage de pointeurs entre méthodes peut engendrer un comportement non défi
 
 Le tableau suivant répertorie les opérateurs et les instructions qui peuvent fonctionner sur des pointeurs dans un contexte unsafe :
 
-|Opérateur/Instruction|Utiliser|
+|Opérateur/Instruction|Utilisez|
 |-------------------------|---------|
 |`*`|Exécute l'indirection de pointeur.|
 |`->`|Accède à un membre d'un struct via un pointeur.|
@@ -87,5 +87,5 @@ Pour plus d’informations, consultez la section [Types de pointeur](~/_csharpla
 - [Pointeurs et code unsafe](index.md)
 - [Conversions de pointeurs](pointer-conversions.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
-- [Types valeur](../../language-reference/builtin-types/value-types.md)
+- [Types de valeur](../../language-reference/builtin-types/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)

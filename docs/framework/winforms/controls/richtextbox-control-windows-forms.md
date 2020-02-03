@@ -44,11 +44,11 @@ Le contrôle Windows Forms `RichTextBox` permet d’afficher, d’entrer et de m
  [Guide pratique pour définir les retraits, les retraits négatifs de première ligne et les listes à puces avec le contrôle RichTextBox Windows Forms](set-indents-hanging-indents-bulleted-paragraphs-with-wf-richtextbox.md)  
  Décrit comment mettre en forme des paragraphes dans le contrôle `RichTextBox`.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.RichTextBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

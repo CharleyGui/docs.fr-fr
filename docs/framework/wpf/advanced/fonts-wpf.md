@@ -20,7 +20,7 @@ ms.locfileid: "76737913"
  [Fonctionnalités des polices OpenType](opentype-font-features.md)  
  [Empaquetage de polices avec des applications](packaging-fonts-with-applications.md)  
  [Exemple de pack de polices OpenType](sample-opentype-font-pack.md)  
- [Rubriques pratiques](fonts-how-to-topics.md)  
+ [Rubriques Comment](fonts-how-to-topics.md)  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -21,7 +21,7 @@ Le package principal Microsoft. Data. sqlite apporte par défaut SQLitePCLRaw. b
 
 Pour utiliser un autre Bundle, installez le package `Microsoft.Data.Sqlite.Core` au lieu du package que vous souhaitez utiliser. Les offres groupées sont automatiquement initialisées par Microsoft. Data. sqlite.
 
-| Lots | Description |
+| Bundle | Description |
 | --- | --- |
 | SQLitePCLRaw. bundle_e_sqlite3 | Fournit une version cohérente de SQLite sur toutes les plateformes. Comprend les extensions d’arborescence FTS4, FTS5, JSON1 et R *. Il s'agit de la valeur par défaut. |
 | SQLitePCLRaw. bundle_green | Identique à bundle_e_sqlite3, sauf sur iOS où il utilise la bibliothèque SQLite du système. |

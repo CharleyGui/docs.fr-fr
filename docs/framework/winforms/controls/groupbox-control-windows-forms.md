@@ -23,13 +23,13 @@ Les contrôles de <xref:System.Windows.Forms.GroupBox> Windows Forms sont utilis
  [Guide pratique pour regrouper des contrôles au moyen du contrôle GroupBox Windows Forms](how-to-group-controls-with-the-windows-forms-groupbox-control.md)  
  Décrit comment utiliser ce contrôle pour regrouper des contrôles.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.GroupBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.Panel>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

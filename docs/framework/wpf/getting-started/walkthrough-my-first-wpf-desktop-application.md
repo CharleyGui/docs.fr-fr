@@ -42,7 +42,7 @@ Dans ce didacticiel, vous apprendrez à :
 >
 > Vous pouvez basculer le langage de code de l’exemple de C# code entre et Visual Basic à l’aide du sélecteur de langue en haut de cette page.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement .net Desktop** installée.
 
@@ -474,7 +474,7 @@ L’illustration suivante montre les deux pages de l’application `ExpenseIt` a
 > Cet exemple illustre une fonctionnalité spécifique de WPF et ne suit pas toutes les méthodes recommandées pour la sécurité, la localisation et l’accessibilité. Pour une couverture complète de WPF et des meilleures pratiques en matière de développement d’applications .NET, consultez les rubriques suivantes :
 >
 > - [Accessibilité](../../ui-automation/accessibility-best-practices.md)
-> - [Security](../security-wpf.md)
+> - [Sécurité](../security-wpf.md)
 > - [Globalisation et localisation pour WPF](../advanced/wpf-globalization-and-localization-overview.md)
 > - [Performances WPF](../advanced/optimizing-wpf-application-performance.md)
 

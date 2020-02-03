@@ -2,14 +2,14 @@
 title: Conception d’une application orientée microservices
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les avantages et les inconvénients d’une application orientée microservices pour vous permettre de prendre une décision éclairée.
 ms.date: 10/02/2018
-ms.openlocfilehash: 63c93f237172d80704c00472ef2d4cbf7c787ab0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 619440c02c1a82e05adb2cec9ddba933cd3e0a65
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921019"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965761"
 ---
-# <a name="designing-a-microservice-oriented-application"></a>Conception d’une application orientée microservices
+# <a name="design-a-microservice-oriented-application"></a>Concevoir une application orientée microservices
 
 Cette section porte essentiellement sur le développement d’une application d’entreprise côté serveur hypothétique.
 
@@ -96,7 +96,7 @@ Par conséquent, les unités de déploiement pour les microservices (et même po
 
 ## <a name="benefits-of-a-microservice-based-solution"></a>Avantages d’une solution basée sur des microservices
 
-Une solution basée sur des microservices présente de nombreux avantages :
+Une solution basée sur des microservices, comme celle-ci, présente de nombreux avantages :
 
 **Chaque microservice est relativement réduit en taille, ce qui facilite sa gestion et son évolution**. Plus précisément :
 
@@ -118,7 +118,7 @@ Une solution basée sur des microservices présente de nombreux avantages :
 
 ## <a name="downsides-of-a-microservice-based-solution"></a>Inconvénients d’une solution basée sur des microservices
 
-Une solution basée sur des microservices présente aussi quelques inconvénients :
+Une solution basée sur des microservices, telle que celle-ci présente également quelques inconvénients :
 
 **Application distribuée** : le fait que l’application soit distribuée complique la tâche des développeurs au moment de concevoir et générer les services. Par exemple, les développeurs doivent implémenter la communication entre les services à l’aide de protocoles tels que HTTP ou AMPQ, ce qui ajoute de la complexité pour les tests et la gestion des exceptions. Cela augmente aussi la latence du système.
 
@@ -180,7 +180,7 @@ Le modèle à plusieurs architectures avec microservices polyglottes permet de c
 
 Par exemple, pour une application de gestion CRUD simple, concevoir et implémenter des modèles DDD ne se justifie pas. Mais pour votre domaine de base ou votre cœur de métier, vous devrez peut-être appliquer des modèles plus élaborés pour faire face à la complexité métier avec des règles métier en constante évolution.
 
-Vous devrez éviter d’appliquer une seule architecture de niveau supérieur basée sur un seul modèle d’architecture, surtout si vous avez affaire à des applications étoffées constituées d’un grand nombre de sous-systèmes. Par exemple, il n’est pas judicieux d’appliquer le modèle CQRS en tant qu’architecture de niveau supérieur à l’échelle d’une application entière, mais il peut s’avérer être utile pour un ensemble spécifique de services.
+En particulier lorsque vous travaillez avec des applications volumineuses composées de plusieurs sous-systèmes, vous ne devez pas appliquer une architecture de niveau supérieur unique basée sur un modèle d’architecture unique. Par exemple, il n’est pas judicieux d’appliquer le modèle CQRS en tant qu’architecture de niveau supérieur à l’échelle d’une application entière, mais il peut s’avérer être utile pour un ensemble spécifique de services.
 
 Il n’existe pas de solution miracle, ni de modèle d’architecture universel. Un même modèle d’architecture ne peut pas convenir dans tous les cas. Selon les priorités de chaque microservice, vous devez pour chacun d’eux choisir une approche différente, comme expliqué dans les sections suivantes.
 

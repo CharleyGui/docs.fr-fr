@@ -81,7 +81,7 @@ Les contrôles <xref:System.Windows.Forms.ToolStrip> sont des barres d'outils qu
   
 - [Procédure pas à pas : création d'un formulaire MDI avec la fusion de menus et des contrôles ToolStrip](walkthrough-creating-an-mdi-form-with-menu-merging-and-toolstrip-controls.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.ToolStrip>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
@@ -91,6 +91,6 @@ Les contrôles <xref:System.Windows.Forms.ToolStrip> sont des barres d'outils qu
  <xref:System.Windows.Forms.ToolStripItem>  
  Décrit la classe <xref:System.Windows.Forms.ToolStripItem> et propose des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

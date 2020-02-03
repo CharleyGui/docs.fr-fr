@@ -98,7 +98,7 @@ Si vous modifiez l'instruction :
 int j = (short) o;
 ```
 
-à :
+en :
 
 ```csharp
 int j = (int) o;
@@ -116,4 +116,4 @@ la conversion sera réalisée, avec le résultat suivant :
 
 - [Guide de programmation C#](../index.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
-- [Types valeur](../../language-reference/builtin-types/value-types.md)
+- [Types de valeur](../../language-reference/builtin-types/value-types.md)

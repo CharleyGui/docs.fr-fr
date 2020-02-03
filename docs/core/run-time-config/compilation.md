@@ -25,7 +25,7 @@ ms.locfileid: "76733536"
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Runtime.TieredCompilation` | activé `true`<br/>`false`-désactivé |
 | **MSBuild, propriété** | `TieredCompilation` | activé `true`<br/>`false`-désactivé |
-| **Variable d’environnement** | `COMPlus_TieredCompilation` | activé `1`<br/>`0`-désactivé |
+| **Variable d'environnement** | `COMPlus_TieredCompilation` | activé `1`<br/>`0`-désactivé |
 
 ### <a name="examples"></a>Exemples
 
@@ -65,7 +65,7 @@ Fichier projet :
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJit` | activé `true`<br/>`false`-désactivé |
 | **MSBuild, propriété** | `TieredCompilationQuickJit` | activé `true`<br/>`false`-désactivé |
-| **Variable d’environnement** | `COMPlus_TC_QuickJit` | activé `1`<br/>`0`-désactivé |
+| **Variable d'environnement** | `COMPlus_TC_QuickJit` | activé `1`<br/>`0`-désactivé |
 
 ### <a name="examples"></a>Exemples
 
@@ -104,7 +104,7 @@ Fichier projet :
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Runtime.TieredCompilation.QuickJitForLoops` | `false`-désactivé<br/>activé `true` |
 | **MSBuild, propriété** | `TieredCompilationQuickJitForLoops` | `false`-désactivé<br/>activé `true` |
-| **Variable d’environnement** | `COMPlus_TC_QuickJitForLoops` | `0`-désactivé<br/>activé `1` |
+| **Variable d'environnement** | `COMPlus_TC_QuickJitForLoops` | `0`-désactivé<br/>activé `1` |
 
 ### <a name="examples"></a>Exemples
 

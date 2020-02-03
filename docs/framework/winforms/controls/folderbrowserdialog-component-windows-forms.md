@@ -24,11 +24,11 @@ Le composant Windows Forms `FolderBrowserDialog` affiche une interface avec laqu
  [Guide pratique pour sélectionner des dossiers avec le composant FolderBrowserDialog Windows Forms](how-to-choose-folders-with-the-windows-forms-folderbrowserdialog-component.md)  
  Explique comment extraire par programme le dossier sélectionné de la boîte de dialogue, ainsi que travailler avec d’autres propriétés facultatives du composant.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.FolderBrowserDialog>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Boîtes de dialogue dans les Windows Forms](../dialog-boxes-in-windows-forms.md)  
  Fournit une liste de tâches pour les boîtes de dialogue, qui contiennent souvent des onglets.  
   

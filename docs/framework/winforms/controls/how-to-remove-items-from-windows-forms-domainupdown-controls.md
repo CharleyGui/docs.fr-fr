@@ -35,7 +35,7 @@ Vous pouvez supprimer des éléments du contrôle Windows Forms <xref:System.Win
     domainUpDown1->Items->Remove("noodles");  
     ```  
   
-     \- ou -  
+     -ou-  
   
 - Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.RemoveAt%2A> pour supprimer un élément en fonction de sa position.  
   

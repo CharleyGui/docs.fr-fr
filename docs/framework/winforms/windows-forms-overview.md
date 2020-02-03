@@ -1,5 +1,5 @@
 ---
-title: Vue d'ensemble de
+title: Overview
 ms.date: 03/30/2017
 helpviewer_keywords:
 - smart clients
@@ -48,7 +48,7 @@ Pour obtenir des informations détaillées sur l'utilisation de ces fonctionnali
 |Utilisation de contrôles sur des formulaires|[Comment : ajouter des contrôles à des Windows Forms](./controls/how-to-add-controls-to-windows-forms.md)|
 |Utilisation du contrôle <xref:System.Windows.Forms.ToolStrip>|[Comment : créer un ToolStrip de base avec des éléments standard à l’aide du concepteur](./controls/create-a-basic-wf-toolstrip-with-standard-items-using-the-designer.md)|
 |Création de graphismes avec <xref:System.Drawing>|[Mise en route de la programmation graphique](./advanced/getting-started-with-graphics-programming.md)|
-|Création de contrôles personnalisés|[Guide pratique pour hériter de la classe UserControl](./controls/how-to-inherit-from-the-usercontrol-class.md)|
+|Création de contrôles personnalisés|[Comment : hériter de la classe UserControl](./controls/how-to-inherit-from-the-usercontrol-class.md)|
 
 ### <a name="display-and-manipulate-data"></a>Afficher et manipuler des données
  De nombreuses applications doivent afficher des données provenant d’une base de données, d’un fichier XML, d’un service web XML ou autre source de données. Windows Forms fournit un contrôle flexible, nommé <xref:System.Windows.Forms.DataGridView>, pour afficher ces données tabulaires dans un format classique avec des lignes et des colonnes où chaque élément de données occupe sa propre cellule. Quand vous utilisez <xref:System.Windows.Forms.DataGridView>, vous pouvez personnaliser l'apparence de chaque cellule, verrouiller des lignes et des colonnes arbitraires et afficher des contrôles complexes dans des cellules, entre autres fonctionnalités.

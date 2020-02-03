@@ -38,7 +38,7 @@ End Sub
 ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un Windows Form nommé `Form1`.  
   

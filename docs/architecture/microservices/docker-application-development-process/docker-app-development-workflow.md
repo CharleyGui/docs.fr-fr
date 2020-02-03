@@ -2,12 +2,12 @@
 title: Workflow de développement des applications Docker
 description: Découvrez les détails du workflow de développement des applications Docker. Commencez étape par étape et entrez dans les détails pour optimiser les fichiers Dockerfile, puis terminez par le workflow simplifié disponible avec Visual Studio.
 ms.date: 01/07/2019
-ms.openlocfilehash: 5df646ffaba67a016d2b18959b9873b52c3d5e4c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 53675bf974069e9052d6d03b2743314af6f13cf9
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920337"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965787"
 ---
 # <a name="development-workflow-for-docker-apps"></a>Workflow de développement des applications Docker
 
@@ -442,10 +442,10 @@ Si votre application n’a qu’un seul conteneur, vous pouvez l’exécuter en 
 Vous pouvez exécuter un conteneur Docker à l’aide de la commande `docker run`, comme indiqué dans la figure 5-9 :
 
 ```console
-  docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
+docker run -t -d -p 80:5000 cesardl/netcore-webapi-microservice-docker:first
 ```
 
-La commande ci-dessus crée une instance de conteneur à partir de l’image spécifiée, chaque fois qu’elle est exécutée. Vous pouvez utiliser le paramètre `--name` pour donner un nom au conteneur, puis utiliser `docker start {name}` (ou l’ID de conteneur ou le nom automatique) pour exécuter une instance de conteneur existante.
+La commande ci-dessus crée une instance de conteneur à partir de l’image spécifiée, chaque fois qu’elle est exécutée. Vous pouvez utiliser le paramètre `--name` pour attribuer un nom au conteneur, puis utiliser `docker start {name}` (ou utiliser l’ID de conteneur ou le nom automatique) pour exécuter une instance de conteneur existante.
 
 ![Capture d’écran de l’exécution d’un conteneur Dockr à l’aide de la commande dockr Run.](./media/docker-app-development-workflow/use-docker-run-command.png)
 
@@ -453,7 +453,7 @@ La commande ci-dessus crée une instance de conteneur à partir de l’image sp�
 
 Dans ce cas, la commande lie le port interne 5000 du conteneur au port 80 de la machine hôte. Cela signifie que l’hôte écoute le port 80 et transfère le port sur le port 5000 sur le conteneur.
 
-Le code de hachage indiqué est l’ID de conteneur, auquel est attribué un nom lisible aléatoire si l’option `--name` n’est pas utilisée.
+Le hachage indiqué est l’ID du conteneur et un nom lisible aléatoire est également affecté si l’option `--name` n’est pas utilisée.
 
 #### <a name="using-visual-studio"></a>Utilisation de Visual Studio
 
@@ -500,7 +500,7 @@ Le point important ici est que, comme indiqué dans la figure 5-12, Visual Studi
 
 ### <a name="a-note-about-testing-and-deploying-with-orchestrators"></a>Note sur le test et le déploiement avec des orchestrateurs
 
-Les commandes docker-compose up et docker run (ou l’exécution et le débogage des conteneurs dans Visual Studio) sont une approche appropriée pour tester les conteneurs dans votre environnement de développement. Toutefois, vous ne devez pas utiliser cette approche pour les déploiements de production, où vous devez cibler des orchestrateurs comme [Kubernetes](https://kubernetes.io/) ou [Service Fabric](https://azure.microsoft.com/services/service-fabric/). Si vous utilisez Kubernetes, vous devez utiliser des [pods](https://kubernetes.io/docs/concepts/workloads/pods/pod/) pour organiser les conteneurs et des [services](https://kubernetes.io/docs/concepts/services-networking/service/) pour les mettre en réseau. Vous utilisez également des [déploiements](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) pour organiser la création et la modification des pods.
+Les commandes docker-compose up et docker run (ou l’exécution et le débogage des conteneurs dans Visual Studio) sont une approche appropriée pour tester les conteneurs dans votre environnement de développement. Toutefois, vous ne devez pas utiliser cette approche pour les déploiements de production, où vous devez cibler des orchestrateurs comme [Kubernetes](https://kubernetes.io/) ou [Service Fabric](https://azure.microsoft.com/services/service-fabric/). Si vous utilisez Kubernetes, vous devez utiliser des [gousses](https://kubernetes.io/docs/concepts/workloads/pods/pod/) pour organiser les conteneurs et les [services](https://kubernetes.io/docs/concepts/services-networking/service/) en réseau. Vous utilisez également des [déploiements](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/) pour organiser la création et la modification des pods.
 
 ![Image de l’étape 6.](./media/docker-app-development-workflow/step-6-test-app-microservices.png)
 

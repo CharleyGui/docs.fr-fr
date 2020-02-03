@@ -22,7 +22,7 @@ ms.locfileid: "76731838"
 ## <a name="in-this-section"></a>Dans cette section  
 
 - [Vue d’ensemble des propriétés de dépendance](dependency-properties-overview.md)
-- [Vue d'ensemble des propriétés jointes](attached-properties-overview.md)
+- [Vue d’ensemble des propriétés jointes](attached-properties-overview.md)
 - [Propriétés de dépendance personnalisées](custom-dependency-properties.md)
 - [Métadonnées de propriété de dépendance](dependency-property-metadata.md)
 - [Validation et rappels de propriétés de dépendance](dependency-property-callbacks-and-validation.md)
@@ -34,9 +34,9 @@ ms.locfileid: "76731838"
 - [Modèles de constructeur sécurisé pour DependencyObjects](safe-constructor-patterns-for-dependencyobjects.md)
 - [Propriétés de dépendance de type collection](collection-type-dependency-properties.md)
 - [Propriétés de dépendance et chargement XAML](xaml-loading-and-dependency-properties.md)
-- [Rubriques pratiques](properties-how-to-topics.md)
+- [Rubriques Comment](properties-how-to-topics.md)
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.DependencyProperty>  
   
  <xref:System.Windows.PropertyMetadata>  
@@ -45,13 +45,13 @@ ms.locfileid: "76731838"
   
  <xref:System.Windows.DependencyObject>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Architecture de WPF](wpf-architecture.md)  
   [Intégration du format XAML au format WPF](xaml-in-wpf.md)  
   [Éléments de base](base-elements.md)  
-  [Sérialisation et arborescence d’éléments](element-tree-and-serialization.md)  
+  [Sérialisation et arborescence d'éléments](element-tree-and-serialization.md)  
   [Événements](events-wpf.md)  
   [Entrée](input-wpf.md)  
   [Ressources](resources-wpf.md)  
-  [Modèle de contenu WPF](../controls/wpf-content-model.md)  
+  [Modèle de contenu WPF](../controls/wpf-content-model.md)  
   [Modèle de thread](threading-model.md)

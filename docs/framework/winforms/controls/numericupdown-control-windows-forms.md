@@ -29,11 +29,11 @@ Le contrôle Windows Forms `NumericUpDown` se présente comme la combinaison d�
  [Guide pratique pour définir le format du contrôle NumericUpDown Windows Forms](how-to-set-the-format-for-the-windows-forms-numericupdown-control.md)  
  Décrit comment configurer la façon dont les valeurs sont affichées dans le contrôle.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.NumericUpDown>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.NumericUpDown> et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

@@ -39,7 +39,7 @@ Le .NET Framework utilise des autorisations pour protéger les ressources et les
   
  La classe <xref:System.Security.Permissions.FileDialogPermission> spécifie le type de boîte de dialogue Fichier que votre application peut utiliser. Le tableau suivant indique la valeur que vous devez avoir pour utiliser chaque classe <xref:System.Windows.Forms.FileDialog>.  
   
-|Classe|Valeur d'accès nécessaire|  
+|Class|Valeur d'accès nécessaire|  
 |-----------|---------------------------|  
 |<xref:System.Windows.Forms.OpenFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Open>|  
 |<xref:System.Windows.Forms.SaveFileDialog>|<xref:System.Security.Permissions.FileDialogPermissionAccess.Save>|  

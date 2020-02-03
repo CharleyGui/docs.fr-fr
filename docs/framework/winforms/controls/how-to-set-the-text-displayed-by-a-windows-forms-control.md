@@ -40,7 +40,7 @@ Vous pouvez également définir le texte à l’aide du [Concepteur](#designer).
 
    Pour créer une clé d’accès soulignée, incluez une esperluette (&) avant la lettre qui sera la touche d’accès.
 
-2. Affectez un objet de type <xref:System.Drawing.Font> comme valeur de la propriété <xref:System.Windows.Forms.Control.Font%2A>.
+2. Affectez un objet de type <xref:System.Windows.Forms.Control.Font%2A> comme valeur de la propriété <xref:System.Drawing.Font>.
 
     ```vb
     Button1.Text = "Click here to save changes"

@@ -22,14 +22,14 @@ Le composant Windows Forms `HelpProvider` sert à associer un fichier d'aide HTM
   
  Consultez [systèmes d’aide dans les Applications Windows Forms](../advanced/help-systems-in-windows-forms-applications.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.HelpProvider>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.Help>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

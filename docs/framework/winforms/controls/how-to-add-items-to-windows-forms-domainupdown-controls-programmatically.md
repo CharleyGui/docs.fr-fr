@@ -35,7 +35,7 @@ Vous pouvez ajouter des éléments à la Windows Forms <xref:System.Windows.Form
     domainUpDown1->Items->Add("noodles");  
     ```  
   
-     \- ou -  
+     -ou-  
   
 2. Utilisez la méthode <xref:System.Windows.Forms.DomainUpDown.DomainUpDownItemCollection.Insert%2A> pour insérer un élément dans la liste à une position spécifiée.  
   

@@ -46,7 +46,7 @@ L’outil Global `dotnet-dump` est un moyen de collecter et d’analyser les vid
 
 ## <a name="commands"></a>Commands
 
-| Command                                     |
+| Commande                                     |
 | ------------------------------------------- |
 | [dotnet-vider la collecte](#dotnet-dump-collect) |
 | [dotnet-vider l’analyse](#dotnet-dump-analyze) |
@@ -119,7 +119,7 @@ dotnet-dump analyze <dump_path> [-h|--help] [-c|--command]
 
 ### <a name="analyze-sos-commands"></a>Analyser les commandes SOS
 
-| Command                             | Fonction                                                                                      |
+| Commande                             | Fonction                                                                                      |
 | ----------------------------------- | --------------------------------------------------------------------------------------------- |
 | `soshelp`                           | Affiche toutes les commandes disponibles                                                               |
 | `soshelp|help <command>`            | Affiche la commande spécifiée.                                                               |

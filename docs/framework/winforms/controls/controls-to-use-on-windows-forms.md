@@ -25,7 +25,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [Contrôles avec prise en charge intégrée du dessin owner-drawn](controls-with-built-in-owner-drawing-support.md)  
  Décrit comment modifier des aspects de l’apparence d’un contrôle qui ne sont pas disponibles via des propriétés.  
   
- [Composant BackgroundWorker](backgroundworker-component.md)  
+ [BackgroundWorker (composant)](backgroundworker-component.md)  
  Permet à un formulaire ou un contrôle d’exécuter une opération de façon asynchrone.  
   
  [BindingNavigator, contrôle](bindingnavigator-control-windows-forms.md)  
@@ -105,7 +105,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [ListBox, contrôle](listbox-control-windows-forms.md)  
  Permet à l’utilisateur de sélectionner un ou plusieurs éléments dans une liste prédéfinie.  
   
- [ListView, contrôle](listview-control-windows-forms.md)  
+ [Contrôle ListView](listview-control-windows-forms.md)  
  Affiche une liste d’éléments avec des icônes, à la manière de l’Explorateur Windows.  
   
  [MainMenu, composant](mainmenu-component-windows-forms.md)  
@@ -129,7 +129,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [OpenFileDialog, composant](openfiledialog-component-windows-forms.md)  
  Permet aux utilisateurs d’ouvrir des fichiers à l’aide d’une boîte de dialogue préconfigurée.  
   
- [PageSetupDialog Component](pagesetupdialog-component-windows-forms.md)  
+ [PageSetupDialog, composant](pagesetupdialog-component-windows-forms.md)  
  Définit les informations détaillées pour l’impression via une boîte de dialogue préconfigurée.  
   
  [Panel, contrôle](panel-control-windows-forms.md)  
@@ -141,7 +141,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [PrintDialog, composant](printdialog-component-windows-forms.md)  
  Sélectionne une imprimante, choisit les pages à imprimer et détermine d'autres paramètres d'impression.  
   
- [Composant PrintDocument](printdocument-component-windows-forms.md)  
+ [PrintDocument, composant](printdocument-component-windows-forms.md)  
  Définit les propriétés qui décrivent les éléments à imprimer, et imprime le document dans les applications Windows.  
   
  [PrintPreviewControl, contrôle](printpreviewcontrol-control-windows-forms.md)  
@@ -191,7 +191,7 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [ToolBar, contrôle](toolbar-control-windows-forms.md)  
  Affiche des menus et des boutons bitmap qui activent des commandes. Vous pouvez étendre les fonctionnalités du contrôle, et modifier son apparence et son comportement. Bien que <xref:System.Windows.Forms.ToolStrip> remplace et ajoute des fonctionnalités au contrôle <xref:System.Windows.Forms.ToolBar> des versions antérieures, <xref:System.Windows.Forms.ToolBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
- [ToolStrip, contrôle](toolstrip-control-windows-forms.md)  
+ [Contrôle ToolStrip](toolstrip-control-windows-forms.md)  
  Crée des barres d’outils et des menus personnalisés dans vos applications Windows Forms. Bien que <xref:System.Windows.Forms.ToolStrip> remplace et ajoute des fonctionnalités au contrôle <xref:System.Windows.Forms.ToolBar> des versions antérieures, <xref:System.Windows.Forms.ToolBar> est conservé pour la compatibilité descendante et l'utilisation future si tel est votre choix.  
   
  [ToolStripContainer, contrôle](toolstripcontainer-control.md)  
@@ -221,8 +221,8 @@ Voici une liste alphabétique des contrôles et composants qui peuvent être uti
  [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](windows-forms-controls-used-to-list-options.md)  
  Décrit un ensemble de contrôles utilisés pour fournir aux utilisateurs une liste d’options à sélectionner.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Contrôles Windows Forms](index.md)  
  Explique l’utilisation des contrôles Windows Forms et décrit les concepts importants pour les utiliser.  
   
  [Développement de contrôles Windows Forms au moment du design](developing-windows-forms-controls-at-design-time.md)  

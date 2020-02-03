@@ -36,7 +36,7 @@ L’exemple suivant montre une référence de caractère hexadécimale. Notez qu
 ```
 
 <a name="encoding"></a>
-### <a name="encoding"></a>Encoding
+### <a name="encoding"></a>Encodage
  L’encodage pris en charge par [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] est ASCII, Unicode UTF-16 et UTF-8. L’instruction Encoding se trouve au début de [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)] document. Si aucun attribut d’encodage ni ordre d’octets n’existe, la valeur UTF-8 est affectée par défaut à l’analyseur. UTF-8 et UTF-16 sont les encodages par défaut. UTF-7 n’est pas pris en charge. L’exemple suivant montre comment spécifier un encodage UTF-8 dans un fichier [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)].
 
 ```xaml

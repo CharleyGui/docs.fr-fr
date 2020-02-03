@@ -38,7 +38,7 @@ La réception et le traitement de l’entrée de souris constitue une partie imp
 ## <a name="changing-mouse-input-and-detecting-system-settings"></a>Modification de l’entrée de la souris et détection des paramètres système  
  Vous pouvez détecter et modifier la manière dont un contrôle gère l’entrée de la souris en dérivant du contrôle et à l’aide des méthodes <xref:System.Windows.Forms.Control.GetStyle%2A> et <xref:System.Windows.Forms.Control.SetStyle%2A>. La méthode <xref:System.Windows.Forms.Control.SetStyle%2A> prend une combinaison d’opérations de bits de valeurs <xref:System.Windows.Forms.ControlStyles> pour déterminer si le contrôle aura un comportement de clic ou de double-clic standard ou si le contrôle gère son propre traitement de souris. En outre, la classe <xref:System.Windows.Forms.SystemInformation> comprend des propriétés qui décrivent les fonctionnalités de la souris et spécifient comment la souris interagit avec le système d’exploitation. Le tableau suivant récapitule ces propriétés.  
   
-|Les|Description|  
+|Propriété|Description|  
 |--------------|-----------------|  
 |<xref:System.Windows.Forms.SystemInformation.DoubleClickSize%2A>|Obtient les dimensions, en pixels, de la zone dans laquelle l’utilisateur doit cliquer deux fois pour que le système d’exploitation considère deux clics comme un double-clic.|  
 |<xref:System.Windows.Forms.SystemInformation.DoubleClickTime%2A>|Obtient le nombre maximal de millisecondes qui peuvent s’écouler entre un premier clic et un deuxième clic pour que le système d’exploitation considère l’action de la souris comme un double-clic.|  

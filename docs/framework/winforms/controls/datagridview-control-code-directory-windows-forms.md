@@ -22,7 +22,7 @@ Cette rubrique fournit des liens vers des exemples de code relatifs à <xref:Sys
   
  Des exemples de code supplémentaires sont disponibles dans la documentation de référence de la bibliothèque de classes. Pour obtenir la liste des classes principales et des interfaces associées au contrôle <xref:System.Windows.Forms.DataGridView>, consultez le tableau dans le résumé de la [technologie du contrôle DataGridView](datagridview-control-technology-summary-windows-forms.md).  
   
-## <a name="codelist"></a>Liste de codes  
+## <a name="codelist"></a>CodeList  
   
 ## <a name="unbound-data-examples"></a>Exemples de données indépendantes  
   

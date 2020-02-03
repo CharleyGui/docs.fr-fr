@@ -37,7 +37,7 @@ Le contrôle `DataGridView` permet de définir facilement l’apparence de base 
  [Guide pratique pour utiliser le modèle de ligne pour personnaliser les lignes du contrôle DataGridView Windows Forms](use-the-row-template-to-customize-rows-in-the-datagrid.md)  
  Décrit comment utiliser la propriété `RowTemplate` pour définir les propriétés de ligne qui seront utilisées pour toutes les lignes du contrôle.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
@@ -50,7 +50,7 @@ Le contrôle `DataGridView` permet de définir facilement l’apparence de base 
  <xref:System.Windows.Forms.DataGridView.RowTemplate%2A>  
  Fournit une documentation de référence pour la propriété <xref:System.Windows.Forms.DataGridView.RowTemplate%2A>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Personnalisation du contrôle DataGridView Windows Forms](customizing-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent la peinture personnalisée des cellules et des lignes <xref:System.Windows.Forms.DataGridView> et la création de types de lignes, de colonnes et de cellules dérivés.  
   

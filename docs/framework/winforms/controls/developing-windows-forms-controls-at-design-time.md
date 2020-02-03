@@ -28,7 +28,7 @@ Pour les auteurs de contrôles, le .NET Framework fournit une multitude de techn
 
 Si vous voulez créer des contrôle personnalisés à utiliser sur des Web Forms, consultez [Développement de contrôles serveur ASP.NET personnalisés](https://docs.microsoft.com/previous-versions/aspnet/zt27tfhy(v=vs.100)).
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Procédure pas à pas : création d’un contrôle composite](walkthrough-authoring-a-composite-control-with-visual-csharp.md)\
 Montre comment créer un contrôle composite simple dans C#.
@@ -81,7 +81,7 @@ Explique la signification et l’utilisation de la liste d’erreurs au moment d
 [Dépannage de la création de contrôles et de composants](troubleshooting-control-and-component-authoring.md)\
 Montre comment diagnostiquer et résoudre les problèmes courants qui peuvent se produire quand vous créez un composant ou un contrôle personnalisé.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 - <xref:System.Windows.Forms.Control?displayProperty=nameWithType>
 
@@ -92,7 +92,7 @@ Montre comment diagnostiquer et résoudre les problèmes courants qui peuvent se
 [Développement de contrôles Windows Forms personnalisés avec le .NET Framework](developing-custom-windows-forms-controls.md)\
 Explique comment créer vos propres contrôles personnalisés avec le .NET Framework.
 
-[Language Independence and Language-Independent Components](../../../standard/language-independence-and-language-independent-components.md)\
+[Indépendance du langage et composants indépendants du langage](../../../standard/language-independence-and-language-independent-components.md)\
 Présente le common language runtime, qui est conçu pour simplifier la création et l’utilisation des composants. Un aspect important de cette simplification est l’interopérabilité améliorée entre les composants écrits à l’aide de différents langages de programmation. La Common Language Specification (CLS) permet de créer des outils et composants fonctionnant avec plusieurs langages de programmation.
 
 [Procédure pas à pas : remplissage automatique de la boîte à outils avec des composants personnalisés](walkthrough-automatically-populating-the-toolbox-with-custom-components.md)\

@@ -24,7 +24,7 @@ ms.locfileid: "76733438"
 
 - Le [fichier runtimeconfig. JSON](#runtimeconfigjson)
 
-- [Propriétés MSBuild](#msbuild-properties)
+- [MSBuild, propriétés](#msbuild-properties)
 
 - [Variables d’environnement](#environment-variables)
 
@@ -108,7 +108,7 @@ Voici un exemple de fichier projet de type SDK avec des propriétés MSBuild pou
 
 Les propriétés MSBuild pour la configuration du comportement au moment de l’exécution sont indiquées dans les articles individuels pour chaque zone, par exemple, [garbage collection](garbage-collector.md).
 
-## <a name="environment-variables"></a>Variables d'environnement
+## <a name="environment-variables"></a>Variables d’environnement
 
 Les variables d’environnement peuvent être utilisées pour fournir des informations de configuration au moment de l’exécution. Les boutons de configuration spécifiés en tant que variables d’environnement ont généralement le préfixe **COMPlus_** .
 

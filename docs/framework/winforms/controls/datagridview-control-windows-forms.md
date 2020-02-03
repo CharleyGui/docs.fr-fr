@@ -75,7 +75,7 @@ Le contrôle `DataGridView` offre un moyen puissant et flexible d'afficher des d
   
  Consultez également [utilisation du concepteur avec le contrôle Windows Forms DataGridView](using-the-designer-with-the-windows-forms-datagridview-control.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   

@@ -183,7 +183,7 @@ Les contrôles détectent le plus souvent l’entrée utilisateur et y réponden
 
 Les applications ont souvent des spécifications d’entrée complexes. WPF fournit un [système de commande](advanced/commanding-overview.md) qui sépare les actions d’entrée utilisateur du code qui répond à ces actions.
 
-## <a name="layout"></a>Mise en page
+## <a name="layout"></a>Disposition
 
 Quand vous créez une interface utilisateur, réorganisez vos contrôles par emplacement et par taille pour former une disposition. L’une des spécifications clés de toute disposition est de s’adapter aux modifications de la taille de la fenêtre et des paramètres d’affichage. Plutôt que de vous forcer à écrire le code pour vous adapter à une disposition, WPF vous fournit un système de disposition extensible de première classe.
 
@@ -256,7 +256,7 @@ Le moteur de liaison de données WPF fournit une prise en charge supplémentaire
 
 Pour plus d’informations, consultez [Vue d’ensemble de la liaison de données](../../desktop-wpf/data/data-binding-overview.md).
 
-## <a name="graphics"></a>Graphismes
+## <a name="graphics"></a>Graphiques
 
 WPF présente un ensemble de fonctionnalités graphiques étendu, évolutif et flexible possédant les avantages suivants :
 
@@ -394,7 +394,7 @@ L’illustration suivante montre le résultat :
 
 ![Contrôle TextBox contenant du texte](media/introduction-to-wpf/wpfintrofigure21.png)
 
-Toutefois, d’autres contrôles peuvent contenir plusieurs éléments de différents types de contenu ; le contenu d’un <xref:System.Windows.Controls.Button>, spécifié par la propriété <xref:System.Windows.Controls.ContentControl.Content%2A>, peut contenir différents éléments, y compris des contrôles de disposition, du texte, des images et des formes. L’exemple suivant montre une <xref:System.Windows.Controls.Button> avec du contenu qui comprend un <xref:System.Windows.Controls.DockPanel>, un <xref:System.Windows.Controls.Label>, un <xref:System.Windows.Controls.Border>et un <xref:System.Windows.Controls.MediaElement>:
+Toutefois, d’autres contrôles peuvent contenir plusieurs éléments de différents types de contenu ; le contenu d’un <xref:System.Windows.Controls.Button>, spécifié par la propriété <xref:System.Windows.Controls.ContentControl.Content%2A> , peut contenir différents éléments, y compris des contrôles de disposition, du texte, des images et des formes. L’exemple suivant montre une <xref:System.Windows.Controls.Button> avec du contenu qui comprend un <xref:System.Windows.Controls.DockPanel>, un <xref:System.Windows.Controls.Label>, un <xref:System.Windows.Controls.Border>et un <xref:System.Windows.Controls.MediaElement>:
 
 ```xaml
 <Window
@@ -504,7 +504,7 @@ L’effet de ce code est illustré dans la figure suivante :
 
 ![Zone de liste utilisant un modèle de données](media/introduction-to-wpf/wpfintrofigure19.png)
 
-Notez que la <xref:System.Windows.Controls.ListBox> a conservé son comportement et son apparence globale ; seule l’apparence du contenu affiché par la zone de liste a été modifiée.
+Notez que la <xref:System.Windows.Controls.ListBox> a conservé son comportement et son apparence globale ; seule l’apparence du contenu affiché par la zone de liste a été modifiée.
 
 Pour plus d’informations, consultez [Vue d’ensemble des modèles de données](data/data-templating-overview.md).
 
@@ -650,7 +650,7 @@ Pour plus d’informations sur les contrôles personnalisés, consultez [Vue d�
 
 ## <a name="wpf-best-practices"></a>Bonnes pratiques pour WPF
 
-Comme pour toute plateforme de développement, WPF peut être utilisé de différentes manières pour obtenir le résultat souhaité. Afin de garantir que vos applications WPF fournissent l’expérience utilisateur requise et répondent aux demandes du public en général, il existe des meilleures pratiques pour l’accessibilité, la globalisation, la localisation et les performances. Pour plus d'informations, consultez .
+Comme pour toute plateforme de développement, WPF peut être utilisé de différentes manières pour obtenir le résultat souhaité. Afin de garantir que vos applications WPF fournissent l’expérience utilisateur requise et répondent aux demandes du public en général, il existe des meilleures pratiques pour l’accessibilité, la globalisation, la localisation et les performances. Pour plus d'informations, consultez les pages suivantes :
 
 - [Accessibilité](../ui-automation/accessibility-best-practices.md)
 - [Globalisation et localisation pour WPF](advanced/wpf-globalization-and-localization-overview.md)

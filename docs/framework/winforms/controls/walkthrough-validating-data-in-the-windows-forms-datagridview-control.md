@@ -27,7 +27,7 @@ Dans cette procédure pas à pas, vous allez extraire des lignes de la table `Cu
 
 Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : valider des données dans le contrôle DataGridView Windows Forms](how-to-validate-data-in-the-windows-forms-datagridview-control.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 

@@ -29,5 +29,5 @@ L’exemple suivant montre comment le passage d’un [struct](../../language-ref
 
 - [Guide de programmation C#](../index.md)
 - [Classes](./classes.md)
-- [Structs](./structs.md)
+- [Structures](./structs.md)
 - [Passage de paramètres](./passing-parameters.md)

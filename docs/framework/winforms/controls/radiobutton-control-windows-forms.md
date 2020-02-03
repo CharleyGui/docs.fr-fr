@@ -25,10 +25,10 @@ Windows Forms contrôles de `RadioButton` présentent un ensemble de deux ou de 
  [Guide pratique pour grouper des contrôles RadioButton Windows Forms en un ensemble fonctionnant indépendamment](how-to-group-windows-forms-radiobutton-controls-to-function-as-a-set.md)  
  Explique comment regrouper des cases d’option comme un ensemble, dont une seule peut être sélectionnée.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.RadioButton>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

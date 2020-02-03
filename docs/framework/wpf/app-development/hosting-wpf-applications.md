@@ -24,7 +24,7 @@ Les applications de navigateur XAML WPF (XBAP) sont des applications clientes ri
   [Modules complémentaires de Firefox pour la prise en charge du déploiement d'applications .NET](firefox-add-ons-to-support-net-application-deployment.md)  
   [API de prise en charge de l'hébergement de navigateur WPF natif](native-wpf-browser-hosting-support-apis.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d’ensemble de la gestion d’applications](application-management-overview.md)  
   [Fenêtres dans les applications WPF](windows-in-wpf-applications.md)  
   [Vue d’ensemble de la navigation](navigation-overview.md)  

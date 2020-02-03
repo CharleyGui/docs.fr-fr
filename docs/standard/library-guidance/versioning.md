@@ -9,7 +9,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76745032"
 ---
-# <a name="versioning"></a>Gestion de version
+# <a name="versioning"></a>Contrôle de version
 
 Une bibliothèque de logiciels est rarement terminée dans la version 1.0. Les bonnes bibliothèques évoluent au fil du temps, avec l’ajout de fonctionnalités, la résolution de bogues et l’amélioration des performances. Il est important de publier de nouvelles versions d’une bibliothèque .NET, fournissant une valeur supplémentaire à chaque version, sans interrompre les utilisateurs existants.
 
@@ -29,7 +29,7 @@ La [version du package NuGet](/nuget/reference/package-versioning) s’affiche s
 <PackageVersion>1.0.0-alpha1</PackageVersion>
 ```
 
-L’identificateur de package NuGet combiné avec la version du package NuGet sert à identifier un package dans NuGet. Par exemple, `Newtonsoft.Json` + `11.0.2`. Un package avec un suffixe est un package de préversion et affiche un comportement spécial qui le rend idéal pour les tests. Pour plus d’informations, consultez [Packages de préversion](./nuget.md#pre-release-packages).
+L’identificateur de package NuGet combiné avec la version du package NuGet sert à identifier un package dans NuGet. Par exemple : `Newtonsoft.Json` + `11.0.2`. Un package avec un suffixe est un package de préversion et affiche un comportement spécial qui le rend idéal pour les tests. Pour plus d’informations, consultez [Packages de préversion](./nuget.md#pre-release-packages).
 
 Étant donné que la version du package NuGet est la version la plus visible pour les développeurs, il est judicieux de le mettre à jour à l’aide de l’outil [Gestion sémantique de version (SemVer)](https://semver.org/). SemVer indique l’importance des modifications entre la mise en production et aide les développeurs à prendre une décision informée quant au choix de la version à utiliser. Par exemple, le passage de `1.0` à `2.0` indique qu’il existe potentiellement des modifications avec rupture.
 

@@ -15,7 +15,7 @@ ms.locfileid: "76745009"
 # <a name="networking-in-windows-forms-applications"></a>Mise en réseau dans les applications Windows Forms
 Le .NET Framework fournit des classes permettant d’afficher des pages Web, de télécharger du contenu Web, d’interagir avec des sites FTP (File Transfer Protocol) et de consommer des services Web, ce qui facilite la création de fonctionnalités réseau dans votre application. Les ressources suivantes vous aideront à comprendre les technologies de mise en réseau de la .NET Framework et la manière dont vous pouvez les intégrer dans Windows Forms.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Net>  
  Espace de noms racine pour les classes du .NET Framework qui gèrent la connectivité réseau.  
   
@@ -28,9 +28,9 @@ Le .NET Framework fournit des classes permettant d’afficher des pages Web, de 
  <xref:System.Windows.Forms.WebBrowser>  
  Classe wrapper managée pour le contrôle `WebBrowser` inclus avec Windows.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Programmation réseau dans le .NET Framework](../../network-programming/index.md)  
  Présentation de la mise en réseau dans le .NET Framework.  
   
- [Liaison de données Windows Forms](../windows-forms-data-binding.md)  
+ [Liaison de données Windows Forms](../windows-forms-data-binding.md)  
  Décrit comment afficher le contenu d’une base de données dans votre application, soit à partir d’une banque de données locale, soit à partir d’une base de données située sur un réseau.

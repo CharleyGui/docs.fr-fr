@@ -82,4 +82,4 @@ L'ordre dans lequel les événements sont déclenchés dans les applications Win
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)

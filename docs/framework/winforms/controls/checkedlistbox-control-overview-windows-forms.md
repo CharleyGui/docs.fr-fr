@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du contrôle CheckedListBox
+title: Vue d'ensemble du contrôle CheckedListBox
 ms.date: 03/30/2017
 f1_keywords:
 - CheckedListBox

@@ -61,4 +61,4 @@ Traditionnellement, la liaison de données a été utilisée dans les applicatio
 
 - [Notification de modifications dans la liaison de données Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Liaison de données et Windows Forms](data-binding-and-windows-forms.md)
-- [Liaison de données Windows Forms](windows-forms-data-binding.md)
+- [Liaison de données Windows Forms](windows-forms-data-binding.md)

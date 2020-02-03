@@ -51,11 +51,11 @@ ms.locfileid: "76737971"
 #### <a name="flowdocumentpageviewer-and-flowdocumentscrollviewer"></a>FlowDocumentPageViewer et FlowDocumentScrollViewer  
  <xref:System.Windows.Controls.FlowDocumentPageViewer> affiche le contenu en mode d’affichage page par page, tandis que <xref:System.Windows.Controls.FlowDocumentScrollViewer> affiche le contenu en mode de défilement continu.  Les <xref:System.Windows.Controls.FlowDocumentPageViewer> et les <xref:System.Windows.Controls.FlowDocumentScrollViewer> sont fixés à un mode d’affichage particulier. Comparer à <xref:System.Windows.Controls.FlowDocumentReader>, qui comprend des fonctionnalités qui permettent à l’utilisateur de choisir dynamiquement entre différents modes d’affichage (comme fourni par l’énumération <xref:System.Windows.Controls.FlowDocumentReaderViewingMode>), au détriment d’une plus grande consommation de ressources que <xref:System.Windows.Controls.FlowDocumentPageViewer> ou <xref:System.Windows.Controls.FlowDocumentScrollViewer>.  
   
- Par défaut, une barre de défilement verticale est toujours affichée et une barre de défilement horizontale apparaît si nécessaire. La [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] par défaut pour <xref:System.Windows.Controls.FlowDocumentScrollViewer> n’inclut pas de barre d’outils ; Toutefois, la propriété <xref:System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisible%2A> peut être utilisée pour activer une barre d’outils intégrée.  
+ Par défaut, une barre de défilement verticale est toujours affichée, et une barre de défilement horizontale apparaît si nécessaire. La [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] par défaut pour <xref:System.Windows.Controls.FlowDocumentScrollViewer> n’inclut pas de barre d’outils ; Toutefois, la propriété <xref:System.Windows.Controls.FlowDocumentScrollViewer.IsToolBarVisible%2A> peut être utilisée pour activer une barre d’outils intégrée.  
   
 <a name="text_in_the_user_interface"></a>   
 ### <a name="text-in-the-user-interface"></a>Texte dans l’interface utilisateur  
- En plus d’ajouter du texte à des documents, vous pouvez bien évidemment utiliser du texte dans l’interface utilisateur de l’application, notamment dans des formulaires. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut plusieurs contrôles pour dessiner le texte à l’écran. Chaque contrôle est ciblé sur un scénario différent et dispose de sa propre liste de fonctionnalités et limitations. En général, l’élément <xref:System.Windows.Controls.TextBlock> doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une courte phrase dans une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> peut être utilisé quand une prise en charge minimale du texte est requise. Pour plus d’informations, consultez [Vue d’ensemble de TextBlock](../controls/textblock-overview.md).  
+ En plus d’ajouter du texte à des documents, vous pouvez bien évidemment utiliser du texte dans l’interface utilisateur de l’application, notamment dans des formulaires. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] inclut plusieurs contrôles pour dessiner le texte à l’écran. Chaque contrôle cible un scénario différent et dispose de sa propre liste de fonctionnalités et limitations. En général, l’élément <xref:System.Windows.Controls.TextBlock> doit être utilisé quand une prise en charge de texte limitée est nécessaire, par exemple une courte phrase dans une [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)]. <xref:System.Windows.Controls.Label> peut être utilisé quand une prise en charge minimale du texte est requise. Pour plus d’informations, consultez [Vue d’ensemble de TextBlock](../controls/textblock-overview.md).  
   
 <a name="packaging"></a>   
 ## <a name="document-packaging"></a>Packaging de documents  
@@ -144,7 +144,7 @@ ms.locfileid: "76737971"
 - <xref:System.IO.Packaging.ZipPackagePart>
 - <xref:System.IO.Packaging.PackageRelationship>
 - <xref:System.Windows.Controls.DocumentViewer>
-- [Texte](optimizing-performance-text.md)
+- [Text](optimizing-performance-text.md)
 - [Vue d’ensemble des documents dynamiques](flow-document-overview.md)
 - [Vue d’ensemble de l’impression](printing-overview.md)
 - [Sérialisation et stockage de documents](document-serialization-and-storage.md)

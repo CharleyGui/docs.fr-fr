@@ -22,7 +22,7 @@ L’common language runtime utilise une implémentation avancée de l’Graphics
  Si vous voulez vous lancer et commencer immédiatement, consultez [Bien démarrer avec la programmation graphique](getting-started-with-graphics-programming.md). Elle comporte des rubriques sur l’utilisation de code pour dessiner des lignes, des formes, du texte et d’autres éléments sur les Windows Forms.  
   
 ## <a name="in-this-section"></a>Dans cette section  
- [Vue d’ensemble des graphismes](graphics-overview-windows-forms.md)  
+ [Vue d’ensemble des graphiques](graphics-overview-windows-forms.md)  
  Fournit une introduction aux classes managées graphiques.  
   
  [À propos du code managé GDI+](about-gdi-managed-code.md)  
@@ -31,7 +31,7 @@ L’common language runtime utilise une implémentation avancée de l’Graphics
  [Utilisation de classes graphiques managées](using-managed-graphics-classes.md)  
  Montre comment effectuer diverses tâches à l’aide des classes managées GDI+.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Drawing>  
  Donne accès aux fonctionnalités graphiques de base de GDI+.  
   
@@ -47,6 +47,6 @@ L’common language runtime utilise une implémentation avancée de l’Graphics
  <xref:System.Drawing.Printing>  
  Fournit des fonctionnalités d'impression.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Dessin et rendu personnalisés des contrôles](../controls/custom-control-painting-and-rendering.md)  
  Explique comment fournir du code pour des contrôles de dessin.

@@ -53,14 +53,14 @@ La liaison de données dans les Windows Forms vous permet d'afficher et de modif
   
  Consultez également les [interfaces relatives à la liaison de données](interfaces-related-to-data-binding.md), [Comment : naviguer parmi les données dans Windows Forms](how-to-navigate-data-in-windows-forms.md)et [Comment : créer un contrôle à liaison simple dans un Windows Form](how-to-create-a-simple-bound-control-on-a-windows-form.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Binding?displayProperty=nameWithType>  
  Décrit la classe qui représente la liaison entre un composant pouvant être lié et une source de données.  
   
  <xref:System.Windows.Forms.BindingSource?displayProperty=nameWithType>  
  Décrit la classe qui encapsule une source de données pour la liaison à des contrôles.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [BindingSource, composant](./controls/bindingsource-component.md)  
  Contient une liste de rubriques qui expliquent comment utiliser le composant <xref:System.Windows.Forms.BindingSource>.  
   

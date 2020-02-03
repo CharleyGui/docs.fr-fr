@@ -32,7 +32,7 @@ Les fichiers de directives runtime reconnaissent trois catégories de types de s
 
   Le tableau suivant répertorie les types de stratégie de réflexion et les éléments de programme avec lesquels ils peuvent être utilisés.
 
-  |Élément|Activate|Parcourir|Dynamic|
+  |Élément|Activer|Parcourir|Dynamic|
   |-------------|--------------|------------|-------------|
   |[\<Application>](application-element-net-native.md)|✔️|✔️|✔️|
   |[\<Assembly>](assembly-element-net-native.md)|✔️|✔️|✔️|

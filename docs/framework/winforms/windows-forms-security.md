@@ -32,7 +32,7 @@ Windows Forms propose un modèle de sécurité basé sur du code (les niveaux de
  [Considérations supplémentaires sur la sécurité des Windows Forms](additional-security-considerations-in-windows-forms.md)  
  Décrit comment manipuler des fenêtres, utiliser le presse-papiers et effectuer des appels au code non managé dans un environnement de confiance partielle.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Stratégie de sécurité par défaut](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/03kwzyfc(v=vs.100))  
  Répertorie les autorisations par défaut accordées dans les jeux d’autorisations confiance totale, Intranet local et Internet.  
   

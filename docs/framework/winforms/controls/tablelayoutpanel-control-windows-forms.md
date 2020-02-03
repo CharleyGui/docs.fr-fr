@@ -16,7 +16,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/24/2020
 ms.locfileid: "76735510"
 ---
-# <a name="tablelayoutpanel-control-windows-forms"></a>Contrôle TableLayoutPanel (Windows Forms)
+# <a name="tablelayoutpanel-control-windows-forms"></a>TableLayoutPanel, contrôle (Windows Forms)
 Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> réorganise son contenu dans une grille. La disposition étant effectuée au moment du design et au moment de l'exécution, elle peut changer dynamiquement quand l'environnement d'application change. Cela permet de redimensionner proportionnellement les contrôles du panneau, pour pouvoir répondre à des modifications telles que le redimensionnement du contrôle parent ou le changement de longueur de texte en raison de la localisation.  
   
 ## <a name="in-this-section"></a>Dans cette section  
@@ -46,7 +46,7 @@ Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> réorganise son conten
   
 4. [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.TableLayoutPanel>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.TableLayoutPanel>.  
   
@@ -56,7 +56,7 @@ Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> réorganise son conten
  <xref:System.Windows.Forms.FlowLayoutPanel>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.FlowLayoutPanel>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Localisation](../../../standard/globalization-localization/localization.md)  
  Fournit une vue d'ensemble des rubriques relatives à la localisation.  
   

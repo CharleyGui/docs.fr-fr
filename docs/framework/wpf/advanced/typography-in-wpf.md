@@ -19,7 +19,7 @@ Cette rubrique présente les principales fonctionnalités typographiques de [!IN
  Le texte de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est affiché à l’aide de Microsoft ClearType, ce qui améliore la clarté et la lisibilité du texte. ClearType est une technologie logicielle développée par Microsoft qui améliore la lisibilité du texte sur les écrans LCD existants (affichages à cristaux liquides), tels que les écrans d’ordinateurs portables, les écrans de Pocket PC et les écrans plats. ClearType utilise le rendu de sous-pixel qui autorise l’affichage du texte avec une plus grande fidélité à sa forme réelle en alignant les caractères sur une partie fractionnaire d’un pixel. Cette résolution accrue augmente la netteté des détails dans l’affichage textuel, ce qui facilite grandement la lecture sur de longues périodes. Une autre amélioration de ClearType dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est l’anticrénelage de direction y, qui lisse le haut et le bas des courbes superficielles dans les caractères de texte. Pour plus d’informations sur les fonctionnalités ClearType, consultez [vue d’ensemble de ClearType](cleartype-overview.md).  
   
  ![Texte avec anticrénelage ClearType dans la direction y](./media/typography-in-wpf/text-y-direction-antialiasing.gif)  
-Texte avec anticrénelage ClearType dans la direction y  
+Texte avec anticrénelage ClearType dans la direction y  
   
  L’ensemble du pipeline de rendu de texte peut être accéléré par matériel dans [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], sous réserve que votre ordinateur respecte le niveau matériel minimum exigé. Un rendu ne pouvant pas être exécuté à l’aide de matériel repasse à un rendu logiciel. L’accélération matérielle affecte toutes les phases du pipeline de rendu de texte, du stockage des glyphes individuels, la composition des glyphes en séries de glyphes, l’application des effets, à l’application de l’algorithme de fusion ClearType à la sortie finale affichée. Pour plus d’informations sur l’accélération matérielle, consultez [Couches de rendu graphiques](graphics-rendering-tiers.md).  
   
@@ -156,5 +156,5 @@ Texte avec anticrénelage ClearType dans la direction y
 - [Fonctionnalités des polices OpenType](opentype-font-features.md)
 - [Dessin du texte mis en forme](drawing-formatted-text.md)
 - [Mise en forme de texte avancée](advanced-text-formatting.md)
-- [Texte](optimizing-performance-text.md)
+- [Text](optimizing-performance-text.md)
 - [Typographie Microsoft](https://docs.microsoft.com/typography/)

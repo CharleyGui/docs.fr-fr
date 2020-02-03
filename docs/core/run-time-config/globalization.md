@@ -22,7 +22,7 @@ ms.locfileid: "76733454"
 | - | - | - |
 | **runtimeconfig. JSON** | `System.Globalization.Invariant` | `false`-accès aux données culturelles<br/>`true`-s’exécuter en mode invariant |
 | **MSBuild, propriété** | `InvariantGlobalization` | `false`-accès aux données culturelles<br/>`true`-s’exécuter en mode invariant |
-| **Variable d’environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`-accès aux données culturelles<br/>`1`-s’exécuter en mode invariant |
+| **Variable d'environnement** | `DOTNET_SYSTEM_GLOBALIZATION_INVARIANT` | `0`-accès aux données culturelles<br/>`1`-s’exécuter en mode invariant |
 
 ### <a name="examples"></a>Exemples
 
@@ -59,7 +59,7 @@ Fichier projet :
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceJapaneseEraYearRanges` | `false`-contrôles de plage souples<br/>les dépassements de `true` provoquent une exception |
-| **Variable d’environnement** | Non applicable | Non applicable |
+| **Variable d'environnement** | N/A | N/A |
 
 ## <a name="japanese-date-parsing"></a>Analyse de date japonaise
 
@@ -70,7 +70,7 @@ Fichier projet :
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.EnforceLegacyJapaneseDateParsing` | `false`-« gannen » ou « 1 » est pris en charge<br/>`true` seule « 1 » est pris en charge |
-| **Variable d’environnement** | Non applicable | Non applicable |
+| **Variable d'environnement** | N/A | N/A |
 
 ## <a name="japanese-year-format"></a>Format d’année japonaise
 
@@ -81,4 +81,4 @@ Fichier projet :
 | | Nom du paramètre | Valeurs |
 | - | - | - |
 | **runtimeconfig. JSON** | `Switch.System.Globalization.FormatJapaneseFirstYearAsANumber` | format d' `false` en tant que « gannen »<br/>`true` sous forme de nombre |
-| **Variable d’environnement** | Non applicable | Non applicable |
+| **Variable d'environnement** | N/A | N/A |

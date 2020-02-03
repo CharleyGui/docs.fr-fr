@@ -29,10 +29,10 @@ Le contrôle Windows Forms `PictureBox` permet d’afficher des graphiques au fo
  [Guide pratique pour charger une image à l'aide du concepteur](how-to-load-a-picture-using-the-designer-windows-forms.md)  
  Décrit comment charger et afficher une image sur un formulaire au moment du Design.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.PictureBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

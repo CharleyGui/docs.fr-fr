@@ -27,19 +27,19 @@ Le contrôle <xref:System.Windows.Forms.ListView> Windows Forms affiche une list
   
  Le tableau suivant répertorie quelques-uns des membres <xref:System.Windows.Forms.ListView> et les vues dans lesquelles ils sont valides.  
   
-|Membre ListView|Consultez la rubrique .|  
+|Membre ListView|Affichage|  
 |---------------------|----------|  
-|Propriété<xref:System.Windows.Forms.ListView.Alignment%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
-|Propriété<xref:System.Windows.Forms.ListView.AutoArrange%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
-|Méthode <xref:System.Windows.Forms.ListView.AutoResizeColumn%2A>|<xref:System.Windows.Forms.View.Details>|  
-|Propriété<xref:System.Windows.Forms.ListView.Columns%2A>|<xref:System.Windows.Forms.View.Details> ou <xref:System.Windows.Forms.View.Tile>|  
+|Propriété <xref:System.Windows.Forms.ListView.Alignment%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
+|Propriété <xref:System.Windows.Forms.ListView.AutoArrange%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
+|Méthode<xref:System.Windows.Forms.ListView.AutoResizeColumn%2A>|<xref:System.Windows.Forms.View.Details>|  
+|Propriété <xref:System.Windows.Forms.ListView.Columns%2A>|<xref:System.Windows.Forms.View.Details> ou <xref:System.Windows.Forms.View.Tile>|  
 |Événement<xref:System.Windows.Forms.ListView.DrawSubItem>|<xref:System.Windows.Forms.View.Details>|  
-|Méthode <xref:System.Windows.Forms.ListView.FindItemWithText%2A>|<xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List> ou <xref:System.Windows.Forms.View.Tile>|  
-|Méthode <xref:System.Windows.Forms.ListView.FindNearestItem%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
-|Méthode <xref:System.Windows.Forms.ListView.GetItemAt%2A>|<xref:System.Windows.Forms.View.Details> ou <xref:System.Windows.Forms.View.Tile>|  
-|Propriété<xref:System.Windows.Forms.ListView.Groups%2A>|Toutes les vues sauf <xref:System.Windows.Forms.View.List>|  
-|Propriété<xref:System.Windows.Forms.ListView.HeaderStyle%2A>|<xref:System.Windows.Forms.View.Details>.|  
-|Propriété<xref:System.Windows.Forms.ListView.InsertionMark%2A>|<xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.Tile>|  
+|Méthode<xref:System.Windows.Forms.ListView.FindItemWithText%2A>|<xref:System.Windows.Forms.View.Details>, <xref:System.Windows.Forms.View.List>ou <xref:System.Windows.Forms.View.Tile>|  
+|Méthode<xref:System.Windows.Forms.ListView.FindNearestItem%2A>|<xref:System.Windows.Forms.View.SmallIcon> ou <xref:System.Windows.Forms.View.LargeIcon>|  
+|Méthode<xref:System.Windows.Forms.ListView.GetItemAt%2A>|<xref:System.Windows.Forms.View.Details> ou <xref:System.Windows.Forms.View.Tile>|  
+|Propriété <xref:System.Windows.Forms.ListView.Groups%2A>|Toutes les vues sauf <xref:System.Windows.Forms.View.List>|  
+|Propriété <xref:System.Windows.Forms.ListView.HeaderStyle%2A>|<xref:System.Windows.Forms.View.Details>.|  
+|Propriété <xref:System.Windows.Forms.ListView.InsertionMark%2A>|<xref:System.Windows.Forms.View.LargeIcon>, <xref:System.Windows.Forms.View.SmallIcon>ou <xref:System.Windows.Forms.View.Tile>|  
   
  La propriété de clé du contrôle <xref:System.Windows.Forms.ListView> est <xref:System.Windows.Forms.ListView.Items%2A>, qui contient les éléments affichés par le contrôle. La propriété <xref:System.Windows.Forms.ListView.SelectedItems%2A> contient une collection des éléments actuellement sélectionnés dans le contrôle. L’utilisateur peut sélectionner plusieurs éléments, par exemple pour glisser-déplacer plusieurs éléments à la fois vers un autre contrôle, si la propriété <xref:System.Windows.Forms.ListView.MultiSelect%2A> est définie sur `true`. Le contrôle <xref:System.Windows.Forms.ListView> peut afficher des cases à cocher en regard des éléments, si la propriété <xref:System.Windows.Forms.ListView.CheckBoxes%2A> est définie sur `true`.  
   
@@ -50,7 +50,7 @@ Le contrôle <xref:System.Windows.Forms.ListView> Windows Forms affiche une list
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.ListView>
-- [ListView, contrôle](listview-control-windows-forms.md)
+- [Contrôle ListView](listview-control-windows-forms.md)
 - [Guide pratique pour ajouter et supprimer des éléments avec le contrôle ListView Windows Forms](how-to-add-and-remove-items-with-the-windows-forms-listview-control.md)
 - [Guide pratique pour ajouter des colonnes au contrôle ListView Windows Forms](how-to-add-columns-to-the-windows-forms-listview-control.md)
 - [Guide pratique pour afficher des icônes pour le contrôle ListView Windows Forms](how-to-display-icons-for-the-windows-forms-listview-control.md)

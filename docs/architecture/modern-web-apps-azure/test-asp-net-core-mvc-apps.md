@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 0cb5c5c604d4a82798d4af736ff278b096621588
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 5f63e350e2f1ba8699bb002a54492cbf9501948e
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777107"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965774"
 ---
 # <a name="test-aspnet-core-mvc-apps"></a>Tester des applications ASP.NET Core MVC
 
@@ -78,7 +78,7 @@ Vous pouvez choisir le framework de test que vous préférez. Le framework xUnit
 
 ### <a name="test-naming"></a>Nommage des tests
 
-Nommez vos tests de façon cohérente, en choisissant des noms qui indiquent clairement l’objet de chaque test. Une approche que j’ai expérimentée et qui a fait ses preuves est de nommer les classes de test en fonction de la classe et de la méthode qu’elles testent. Cela crée beaucoup de petites classes de test, mais cela a l’avantage d’indiquer avec précision de quoi chaque test est responsable. Une fois que vous avez défini le nom de la classe de test pour identifier la classe et la méthode à tester, vous pouvez utiliser le nom de la méthode de test pour indiquer le comportement à tester. Il s’agit notamment d’indiquer le comportement attendu ainsi que les entrées ou hypothèses qui doivent interrompre ce comportement. Voici quelques exemples de noms de test :
+Nommez vos tests de manière cohérente, avec des noms qui indiquent ce que fait chaque test. Une approche que j’ai expérimentée et qui a fait ses preuves est de nommer les classes de test en fonction de la classe et de la méthode qu’elles testent. Cela crée beaucoup de petites classes de test, mais cela a l’avantage d’indiquer avec précision de quoi chaque test est responsable. Une fois que vous avez défini le nom de la classe de test pour identifier la classe et la méthode à tester, vous pouvez utiliser le nom de la méthode de test pour indiquer le comportement à tester. Il s’agit notamment d’indiquer le comportement attendu ainsi que les entrées ou hypothèses qui doivent interrompre ce comportement. Voici quelques exemples de noms de test :
 
 - `CatalogControllerGetImage.CallsImageServiceWithId`
 
@@ -143,7 +143,7 @@ public IActionResult GetImage(int id)
 }
 ```
 
-Les valeurs \_logger et \_imageService sont injectées comme dépendances. Vous pouvez maintenant vérifier que le même id qui est passé à la méthode d’action est passé à \_imageService, et que les octets obtenus sont retournés dans FileResult. Vous pouvez également vérifier que la journalisation des erreurs se passe comme prévu, et qu’un résultat NotFound est retourné si l’image est manquante, en supposant qu’il s’agit d’un comportement de l’application important (autrement dit, pas simplement du code temporaire ajouté par le développeur pour diagnostiquer un problème). La logique du fichier réel a été déplacée dans un service d’implémentation distinct et a été augmentée pour retourner une exception d’application liée au fichier manquant. Vous pouvez tester cette implémentation indépendamment, à l’aide d’un test d’intégration.
+les `_logger` et les `_imageService` sont injectés en tant que dépendances. Vous pouvez maintenant vérifier que le même ID qui est passé à la méthode d’action est passé à `_imageService`, et que les octets résultants sont retournés dans le cadre du FileResult. Vous pouvez également vérifier que la journalisation des erreurs se produit comme prévu, et qu’une `NotFound` résultat est retourné si l’image est manquante, en supposant qu’il s’agit d’un comportement d’application important (autrement dit, pas simplement du code temporaire que le développeur a ajouté pour diagnostiquer un problème). La logique du fichier réel a été déplacée dans un service d’implémentation distinct et a été augmentée pour retourner une exception d’application liée au fichier manquant. Vous pouvez tester cette implémentation indépendamment, à l’aide d’un test d’intégration.
 
 Dans la plupart des cas, vous souhaiterez utiliser des gestionnaires d’exceptions globaux dans vos contrôleurs, afin que la quantité de logique impliquée soit minimale et ne justifie probablement pas les tests unitaires. Vous devez effectuer la plupart des tests des actions de contrôleur à l’aide de tests fonctionnels et de la classe `TestServer` décrite ci-dessous.
 
@@ -153,7 +153,7 @@ La plupart des tests d’intégration figurant dans vos applications ASP.NET Cor
 
 ## <a name="functional-testing-aspnet-core-apps"></a>Tests fonctionnels dans les applications ASP.NET Core
 
-Pour les applications ASP.NET Core, la classe `TestServer` facilite grandement l’écriture de tests fonctionnels. Vous configurez un objet `TestServer` en utilisant un objet `WebHostBuilder` directement (comme vous le faites normalement pour votre application), ou avec le type `WebApplicationFactory` (disponible depuis la version 2.1). Vous devez essayer de calquer aussi fidèlement que possible votre hôte de test sur votre hôte de production, de sorte que vos tests affichent un comportement similaire à celui de l’application une fois en production. La classe `WebApplicationFactory` s’avère utile pour configurer la clé ContentRoot de TestServer, dont se sert ASP.NET Core pour localiser les ressources statiques telles que les vues.
+Pour les applications ASP.NET Core, la classe `TestServer` facilite grandement l’écriture de tests fonctionnels. Vous configurez un `TestServer` à l’aide d’un `WebHostBuilder` directement (comme vous le feriez pour votre application) ou avec le type de `WebApplicationFactory` (disponible depuis la version 2,1). Essayez de faire correspondre votre hôte de test à votre hôte de production aussi fidèlement que possible. vos tests feront donc preuve du comportement similaire à ce que l’application fera en production. La classe `WebApplicationFactory` s’avère utile pour configurer la clé ContentRoot de TestServer, dont se sert ASP.NET Core pour localiser les ressources statiques telles que les vues.
 
 Vous pouvez créer des tests fonctionnels simples en créant une classe de test qui implémente IClassFixture\<WebApplicationFactory\<TEntry>>, TEntry étant la classe Startup de votre application web. Une fois tout cela en place, votre fixture de test peut créer un client en utilisant la méthode CreateClient de la fabrique :
 

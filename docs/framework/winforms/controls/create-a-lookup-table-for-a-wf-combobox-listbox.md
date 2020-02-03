@@ -33,7 +33,7 @@ Il est parfois utile d'afficher les données dans un format convivial dans un Wi
   
 ### <a name="itemtable"></a>ItemTable  
   
-|Id|Name|  
+|ID|Nom|  
 |--------|----------|  
 |12|Pomme de terre|  
 |13|Poulet|  
@@ -54,7 +54,7 @@ Il est parfois utile d'afficher les données dans un format convivial dans un Wi
   
 4. Définissez les propriétés ci-dessous. Elles peuvent être définies dans le code ou dans le concepteur.  
   
-    |Les|Paramètre|  
+    |Propriété|Paramètre|  
     |--------------|-------------|  
     |<xref:System.Windows.Forms.ListControl.DataSource%2A>|Table qui contient des informations sur les équivalences entre les numéros d’ID et les articles. Dans le scénario précédent, il s’agit de `ItemTable`.|  
     |<xref:System.Windows.Forms.ListControl.DisplayMember%2A>|Colonne de la table de source de données que vous souhaitez afficher dans le contrôle. Dans le scénario précédent, il s’agit de `"Name"` (à définir dans le code, utilisez des guillemets).|  

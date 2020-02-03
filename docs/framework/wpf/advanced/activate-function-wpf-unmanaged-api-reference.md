@@ -31,7 +31,7 @@ void Activate(
     );
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 `pParameters`\
 Pointeur vers les paramètres d’activation de la fenêtre.
@@ -39,7 +39,7 @@ Pointeur vers les paramètres d’activation de la fenêtre.
 `ppInner`\
 Pointeur vers l’adresse d’une mémoire tampon à un seul élément qui contient un pointeur vers un objet <xref:Microsoft.VisualStudio.OLE.Interop.IOleDocument>.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Configuration requise
 
 **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).
 

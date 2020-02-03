@@ -24,10 +24,10 @@ Le composant Windows Forms `ImageList` sert à stocker des images, qui peuvent e
   
  Consultez également [Comment : ajouter ou supprimer des images ImageList avec le concepteur](how-to-add-or-remove-imagelist-images-with-the-designer.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ImageList>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

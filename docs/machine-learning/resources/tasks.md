@@ -94,12 +94,12 @@ La colonne des caractéristiques doit être un vecteur de taille fixe de <xref:S
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Les scores de toutes les classes. Une valeur supérieure signifie une plus forte probabilité d’appartenir à la classe associée. Si l’i-ème élément a la plus grande valeur, l’index de l’étiquette prédite est i. Notez que i est l’index de base zéro. |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index de l’étiquette prédite. Si sa valeur est i, l’étiquette réelle est la i-ème catégorie dans le type d’étiquette d’entrée avec une valeur de clé. |
 
-## <a name="regression"></a>Régression
+## <a name="regression"></a>régression ;
 
 Une tâche [Apprentissage automatique supervisée](glossary.md#supervised-machine-learning) utilisée pour prédire la valeur de l’étiquette d’un ensemble de fonctionnalités connexes. L’étiquette peut avoir n’importe quelle valeur réelle et ne provient pas d’un ensemble fini de valeurs comme dans les tâches de classification. Les algorithmes de régression modèlent la dépendance de l’étiquette sur ses fonctionnalités connexes pour déterminer la façon dont l’étiquette change avec des valeurs de fonctionnalités différentes. L’entrée d’un algorithme de régression est un ensemble d’exemples avec des étiquettes de valeurs connues. La sortie d’un algorithme de régression est une fonction, que vous pouvez utiliser pour prédire la valeur de l’étiquette pour tout nouvel ensemble de fonctionnalités d’entrée. Voici quelques exemples de scénarios de régression :
 
@@ -127,7 +127,7 @@ Les données de la colonne d’étiquettes d’entrée doivent être <xref:Syste
 
 Les entraîneurs pour cette tâche génèrent le résultat suivant :
 
-| Nom de la sortie | Type | Description|
+| Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score brut prédit par le modèle |
 
@@ -151,7 +151,7 @@ Les données de caractéristiques d’entrée doivent être <xref:System.Single>
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | Vecteur de <xref:System.Single> | Distances entre le point de données spécifique et les centroïdes de tous les clusters |
 | `PredictedLabel` | Type [clé](xref:Microsoft.ML.Data.KeyDataViewType) | Index du cluster le plus proche prédit par le modèle. |
@@ -183,7 +183,7 @@ Les caractéristiques d’entrée doivent être un vecteur de taille fixe de <xr
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score non négatif sans borne calculé par le modèle de détection d’anomalie |
 | `PredictedLabel` | <xref:System.Boolean> | Valeur true/false indiquant si l’entrée est une anomalie (PredictedLabel = true) ou non (PredictedLabel = false) |
@@ -207,7 +207,7 @@ Les données de caractéristique doivent être un vecteur de taille fixe de <xre
 
 Cet entraîneur génère la sortie suivante :
 
-| Nom de la sortie | Type | Description|
+| Nom de sortie | Type | Description|
 | -- | -- | -- |
 | `Score` | <xref:System.Single> | Score sans borne calculé par le modèle pour déterminer la prédiction |
 
@@ -221,7 +221,7 @@ Vous pouvez entraîner un modèle de recommandation en utilisant les algorithmes
 
 * <xref:Microsoft.ML.Trainers.MatrixFactorizationTrainer>
 
-## <a name="forecasting"></a>Prévision
+## <a name="forecasting"></a>Prévisions
 
 La tâche de prévision utilise les données de série chronologique antérieures pour faire des prédictions concernant le comportement futur. Les scénarios applicables aux prévisions sont les prévisions météorologiques, les prédictions de ventes saisonnières et la maintenance prédictive.
 

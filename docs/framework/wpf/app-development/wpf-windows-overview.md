@@ -190,7 +190,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 - La fenêtre déjà activée reste activée.  
   
- Toutefois, la fenêtre est activée dès que l’utilisateur clique sur la zone cliente ou non cliente. Dans ce cas :  
+ Toutefois, la fenêtre est activée dès que l’utilisateur clique sur la zone cliente ou non cliente. Dans ce cas :  
   
 - La fenêtre est activée.  
   
@@ -229,7 +229,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 - Élément de **fermeture** du menu **système** .  
   
-- en appuyant sur Alt+F4 ;  
+- Un appui sur Alt+F4  
   
 - Appuyant sur le bouton **Fermer** .  
   
@@ -293,7 +293,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  Vous pouvez également spécifier l’emplacement initial d’un <xref:System.Windows.Window> lorsqu’il apparaît pour la première fois en affectant à la propriété <xref:System.Windows.Window.WindowStartupLocation%2A> l’une des valeurs d’énumération <xref:System.Windows.WindowStartupLocation> suivantes :  
   
-- <xref:System.Windows.WindowStartupLocation.CenterOwner> (par défaut)  
+- <xref:System.Windows.WindowStartupLocation.CenterOwner> (valeur par défaut)  
   
 - <xref:System.Windows.WindowStartupLocation.CenterScreen>  
   
@@ -381,7 +381,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
  L’état d’une fenêtre peut être configuré en définissant sa propriété <xref:System.Windows.Window.WindowState%2A>, qui peut avoir l’une des valeurs d’énumération <xref:System.Windows.WindowState> suivantes :  
   
-- <xref:System.Windows.WindowState.Normal> (par défaut)  
+- <xref:System.Windows.WindowState.Normal> (valeur par défaut)  
   
 - <xref:System.Windows.WindowState.Maximized>  
   
@@ -409,7 +409,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 - <xref:System.Windows.ResizeMode.CanMinimize>  
   
-- <xref:System.Windows.ResizeMode.CanResize> (par défaut)  
+- <xref:System.Windows.ResizeMode.CanResize> (valeur par défaut)  
   
 - <xref:System.Windows.ResizeMode.CanResizeWithGrip>  
   
@@ -427,7 +427,7 @@ Les utilisateurs interagissent avec les applications autonomes de Windows Presen
   
 - <xref:System.Windows.WindowStyle.None>  
   
-- <xref:System.Windows.WindowStyle.SingleBorderWindow> (par défaut)  
+- <xref:System.Windows.WindowStyle.SingleBorderWindow> (valeur par défaut)  
   
 - <xref:System.Windows.WindowStyle.ThreeDBorderWindow>  
   
@@ -466,7 +466,7 @@ L’apparence par défaut d’une fenêtre comprend un bouton de barre des tâch
  [!code-xaml[WindowsOverviewSnippets#ShowInTaskbarWindowMARKUP1](~/samples/snippets/csharp/VS_Snippets_Wpf/WindowsOverviewSnippets/CSharp/ShowInTaskbarWindow.xaml#showintaskbarwindowmarkup1)]  
   
 <a name="SecurityConsiderations"></a>   
-## <a name="security-considerations"></a>Considérations sur la sécurité  
+## <a name="security-considerations"></a>Considérations relatives à la sécurité  
  <xref:System.Windows.Window> nécessite l’instanciation d' `UnmanagedCode` autorisation de sécurité. Pour les applications installées sur la machine locale et lancées à partir de celle-ci, cette autorisation fait partie du jeu d’autorisations accordé à l’application.  
   
  Toutefois, cela se situe en dehors de l’ensemble des autorisations accordées aux applications qui sont lancées à partir de la zone Internet ou Intranet local à l’aide de ClickOnce. Par conséquent, les utilisateurs recevront un avertissement de sécurité ClickOnce et devront élever le jeu d’autorisations pour l’application à confiance totale.  

@@ -71,13 +71,13 @@ Pour plus d’informations, consultez la section [interfaces](~/_csharplang/spec
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Types référence](reference-types.md)
 - [Interfaces](../../programming-guide/interfaces/index.md)
 - [Utilisation de propriétés](../../programming-guide/classes-and-structs/using-properties.md)
 - [Utilisation d’indexeurs](../../programming-guide/indexers/using-indexers.md)
-- [classe](class.md)
+- [class](class.md)
 - [struct](struct.md)
 - [Interfaces](../../programming-guide/interfaces/index.md)

@@ -25,11 +25,11 @@ Le composant Windows Forms <xref:System.Windows.Forms.ToolTip> affiche du texte 
  [Guide pratique pour modifier la durée avant affichage du composant ToolTip Windows Forms](how-to-change-the-delay-of-the-windows-forms-tooltip-component.md)  
  Explique comment définir les valeurs qui contrôlent la durée avant apparition d'une info-bulle et la durée d'affichage de l'info-bulle.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.ToolTip>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

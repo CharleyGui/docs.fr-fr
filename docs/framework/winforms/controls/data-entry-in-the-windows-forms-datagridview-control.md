@@ -32,7 +32,7 @@ Le contrôle `DataGridView` fournit plusieurs fonctionnalités qui vous permette
  [Procédure pas à pas : gestion des erreurs qui se produisent lors de la saisie de données dans le contrôle DataGridView Windows Forms](handling-errors-that-occur-during-data-entry-in-the-datagrid.md)  
  Décrit comment gérer les erreurs d’entrée de données provenant de la source de données lorsque l’utilisateur tente de valider une nouvelle valeur.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
@@ -48,7 +48,7 @@ Le contrôle `DataGridView` fournit plusieurs fonctionnalités qui vous permette
  <xref:System.Windows.Forms.DataGridView.CellValidating?displayProperty=nameWithType>  
  Fournit une documentation de référence pour l’événement <xref:System.Windows.Forms.DataGridView.CellValidating>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Affichage des données dans le contrôle DataGridView Windows Forms](displaying-data-in-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent comment remplir le contrôle avec des données manuellement ou à partir d’une source de données externe.  
   

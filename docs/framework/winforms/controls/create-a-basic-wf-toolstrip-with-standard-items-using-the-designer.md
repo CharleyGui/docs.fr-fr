@@ -29,6 +29,6 @@ La procédure suivante montre comment créer une <xref:System.Windows.Forms.Tool
 
 - <xref:System.Windows.Forms.ToolStrip>
 - [Vue d’ensemble du contrôle ToolStrip](toolstrip-control-overview-windows-forms.md)
-- [ToolStrip, contrôle](toolstrip-control-windows-forms.md)
+- [Contrôle ToolStrip](toolstrip-control-windows-forms.md)
 - [Architecture du contrôle ToolStrip](toolstrip-control-architecture.md)
 - [Résumé de la technologie ToolStrip](toolstrip-technology-summary.md)

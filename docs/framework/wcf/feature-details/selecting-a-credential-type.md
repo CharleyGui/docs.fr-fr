@@ -25,12 +25,12 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
   
 |Paramètre|Description|  
 |-------------|-----------------|  
-|Aucun|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
-|Basic|Spécifie l'authentification de base pour le client. Pour plus d’informations, consultez RFC2617 :[authentification http : authentification de base et Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
+|Aucune|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
+|Basique|Spécifie l'authentification de base pour le client. Pour plus d’informations, consultez RFC2617 :[authentification http : authentification de base et Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
 |Digest|Spécifie l’authentification Digest pour le client. Pour plus d’informations, consultez RFC2617 :[authentification http : authentification de base et Digest](ftp://ftp.rfc-editor.org/in-notes/rfc2617.txt).|  
 |Ntlm|Spécifie l'authentification NTLM (NT LAN Manager). S'utilise si pour une raison quelconque vous ne pouvez pas utiliser l'authentification Kerberos. Vous pouvez également désactiver son utilisation comme solution de secours en affectant à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false`, ce qui amène WCF à faire un meilleur effort pour lever une exception si NTLM est utilisé. Notez que l'affectation de la valeur `false` à cette propriété peut ne pas empêcher la transmission des informations d'identification NTLM.|  
-|Portail|Spécifie l'authentification Windows. Pour spécifier uniquement le protocole Kerberos sur un domaine Windows, affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false` (la valeur par défaut est `true`).|  
-|Certificate|Effectue l'authentification du client à l'aide d'un certificat X.509.|  
+|Windows|Spécifie l'authentification Windows. Pour spécifier uniquement le protocole Kerberos sur un domaine Windows, affectez à la propriété <xref:System.ServiceModel.Security.WindowsClientCredential.AllowNtlm%2A> la valeur `false` (la valeur par défaut est `true`).|  
+|Certificat|Effectue l'authentification du client à l'aide d'un certificat X.509.|  
 |Password|L'utilisateur doit fournir un nom d'utilisateur et un mot de passe. Validez la paire nom d'utilisateur/mot de passe à l'aide de l'authentification Windows ou d'une autre solution personnalisée.|  
   
 ### <a name="message-client-credential-types"></a>Types d'informations d'identification du client de message  
@@ -38,10 +38,10 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
   
 |Paramètre|Description|  
 |-------------|-----------------|  
-|Aucun|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
-|Portail|Permet les échanges de messages SOAP dans le contexte de sécurité établi avec des informations d'identification Windows.|  
-|Utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que WCF n’autorise pas les opérations de chiffrement avec les noms d’utilisateur, comme la génération d’une signature ou le chiffrement de données. WCF s’assure que le transport est sécurisé lors de l’utilisation des informations d’identification de nom d’utilisateur.|  
-|Certificate|Autorise le service à exiger que le client soit authentifié à l'aide d'un certificat X.509.|  
+|Aucune|Spécifie que le client n'a pas besoin de présenter d'informations d'identification. Cela se traduit en un client anonyme.|  
+|Windows|Permet les échanges de messages SOAP dans le contexte de sécurité établi avec des informations d'identification Windows.|  
+|Nom d’utilisateur|Autorise le service à exiger que le client soit authentifié avec des informations d'identification de nom d'utilisateur. Notez que WCF n’autorise pas les opérations de chiffrement avec les noms d’utilisateur, comme la génération d’une signature ou le chiffrement de données. WCF s’assure que le transport est sécurisé lors de l’utilisation des informations d’identification de nom d’utilisateur.|  
+|Certificat|Autorise le service à exiger que le client soit authentifié à l'aide d'un certificat X.509.|  
 |Jeton émis|Type de jeton personnalisé configuré en fonction d'une stratégie de sécurité. Le type de jeton par défaut est le jeton SAML (Security Assertions Markup Language). Le jeton est émis par un service de jetons sécurisé. Pour plus d’informations, consultez [Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md).|  
   
 ### <a name="negotiation-model-of-service-credentials"></a>Modèle de négociation des informations d'identification du service  
@@ -111,6 +111,6 @@ Les *informations d’identification* sont utilisées par le Windows Communicati
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A?displayProperty=nameWithType>
 - <xref:System.ServiceModel.Security.X509CertificateInitiatorServiceCredential.SetCertificate%2A?displayProperty=nameWithType>
 - [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
 - [Programmation de la sécurité dans WCF](../../../../docs/framework/wcf/feature-details/programming-wcf-security.md)
 - [Sécurité de transport HTTP](../../../../docs/framework/wcf/feature-details/http-transport-security.md)

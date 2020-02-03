@@ -66,7 +66,7 @@ Si vous voulez lier un contrôle Windows Forms aux résultats obtenus à partir 
 ## <a name="compiling-the-code"></a>Compilation du code  
  Il s'agit d'un exemple complet qui inclut une méthode `Main` et une version raccourcie du code du proxy côté client.  
   
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Des références aux assemblys System, System.Drawing, System.Web.Services, System.Windows.Forms et System.Xml.  
   

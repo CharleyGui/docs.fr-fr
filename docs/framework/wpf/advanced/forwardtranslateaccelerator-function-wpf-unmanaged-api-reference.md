@@ -30,14 +30,14 @@ HRESULT ForwardTranslateAccelerator(
 )  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  pMsg  
  Pointeur vers un message.  
   
  appUnhandled  
  `true` lorsque l’application a déjà eu la possibilité de gérer le message d’entrée, mais ne l’a pas gérée ; Sinon, `false`.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

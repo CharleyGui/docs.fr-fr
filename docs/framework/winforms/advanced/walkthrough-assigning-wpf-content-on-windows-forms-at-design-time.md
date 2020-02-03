@@ -23,7 +23,7 @@ ms.locfileid: "76746808"
 
 Cet article vous montre comment sélectionner les types de contrôle Windows Presentation Foundation (WPF) que vous souhaitez afficher dans votre formulaire. Vous pouvez sélectionner n’importe quel type de contrôle WPF inclus dans votre projet.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Cette procédure pas à pas nécessite Visual Studio.
 

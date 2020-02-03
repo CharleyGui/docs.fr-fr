@@ -42,11 +42,11 @@ Les procédures pas à pas fournissent des instructions détaillées pour les sc
 |-----------|-----------------|
 |[Procédure pas à pas : hébergement d’un contrôle Windows Forms dans WPF](../advanced/walkthrough-hosting-a-windows-forms-control-in-wpf.md)|Montre comment héberger un contrôle Windows Forms <xref:System.Windows.Forms.MaskedTextBox?displayProperty=nameWithType> dans une application WPF.|
 |[Procédure pas à pas : hébergement d'un contrôle composite Windows Forms dans WPF](../advanced/walkthrough-hosting-a-windows-forms-composite-control-in-wpf.md)|Montre comment héberger un Windows Forms contrôle composite de saisie de données dans une application [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].|
-|[Procédure pas à pas : Hébergement d'un contrôle composite WPF dans Windows Forms](../advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Montre comment héberger un contrôle composite de saisie de données WPF dans une application Windows Forms.|
+|[Procédure pas à pas : hébergement d’un contrôle composite WPF dans les Windows Forms](../advanced/walkthrough-hosting-a-wpf-composite-control-in-windows-forms.md)|Montre comment héberger un contrôle composite de saisie de données WPF dans une application Windows Forms.|
 |[Procédure pas à pas : organisation des contrôles Windows Forms dans WPF](../advanced/walkthrough-arranging-windows-forms-controls-in-wpf.md)|Montre comment utiliser les fonctionnalités de disposition WPF pour organiser les contrôles Windows Forms dans une application hybride.|
 |[Procédure pas à pas : liaison de données dans des applications hybrides](../advanced/walkthrough-binding-to-data-in-hybrid-applications.md)|Montre comment utiliser la liaison de données dans des applications hybrides qui incluent à la fois des Windows Forms et des contrôles WPF.|
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 |Titre|Description|
 |-----------|-----------------|

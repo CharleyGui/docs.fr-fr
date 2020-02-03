@@ -30,7 +30,7 @@ Avec le contrôle <xref:System.Windows.Forms.WebBrowser>, vous pouvez ajouter de
  [!code-vb[System.Windows.Forms.WebBrowser#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.WebBrowser/VB/form1.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - des références aux assemblys `System`, `System.Drawing` et `System.Windows.Forms`.  
   

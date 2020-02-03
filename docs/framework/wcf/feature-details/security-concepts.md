@@ -22,7 +22,7 @@ Cette section explique brièvement les concepts associés à la sécurité Windo
  [Terminologie relative à la sécurité](../../../../docs/framework/wcf/feature-details/wcf-security-terminology.md)  
  Glossaire des termes utilisés lors de la discussion sur la sécurité WCF.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
@@ -33,11 +33,11 @@ Cette section explique brièvement les concepts associés à la sécurité Windo
   
  <xref:System.Security>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Extension de la sécurité](../../../../docs/framework/wcf/extending/extending-security.md)  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Security](../../../../docs/framework/wcf/feature-details/security.md)
+- [Sécurité](../../../../docs/framework/wcf/feature-details/security.md)
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
 - [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

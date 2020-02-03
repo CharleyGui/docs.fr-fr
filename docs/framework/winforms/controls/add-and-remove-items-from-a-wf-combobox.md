@@ -40,7 +40,7 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante, Windows 
     comboBox1->Items->Add("Tokyo");  
     ```  
   
-     - ou  
+     - ou -  
   
 2. Insérez la chaîne ou l’objet au point souhaité dans la liste à l’aide de la méthode `Insert` :  
   
@@ -56,7 +56,7 @@ Les éléments peuvent être ajoutés à une zone de liste déroulante, Windows 
     checkedListBox1->Items->Insert(0, "Copenhagen");  
     ```  
   
-     - ou  
+     - ou -  
   
 3. Assigner un tableau entier à la collection `Items` :  
   

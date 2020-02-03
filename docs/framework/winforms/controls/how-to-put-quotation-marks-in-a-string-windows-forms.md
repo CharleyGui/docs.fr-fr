@@ -48,7 +48,7 @@ Il se peut que vous souhaitiez placer une chaîne de texte entre guillemets («�
        }  
     ```  
   
-     \- ou -  
+     -ou-  
   
 2. Insérez le caractère ASCII ou Unicode d’un guillemet. Dans Visual Basic, utilisez le caractère ASCII (34). En Visual C#, utilisez le caractère Unicode (\u0022).  
   
@@ -67,7 +67,7 @@ Il se peut que vous souhaitiez placer une chaîne de texte entre guillemets («�
     > [!NOTE]
     > Dans cet exemple, vous ne pouvez pas utiliser \u0022, car vous ne pouvez pas utiliser un nom de caractère universel qui désigne un caractère dans le jeu de caractères de base. Sinon, vous générez l’erreur C3851. Pour plus d’informations, consultez [Erreur du compilateur C3851](/cpp/error-messages/compiler-errors-2/compiler-error-c3851).  
   
-     \- ou -  
+     -ou-  
   
 3. Vous pouvez également définir une constante pour le caractère et l’utiliser lorsque cela est nécessaire.  
   

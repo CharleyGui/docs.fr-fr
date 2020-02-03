@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble des graphismes
+title: Vue d'ensemble des graphismes
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Forms, graphics
@@ -28,7 +28,7 @@ GDI+ est un Graphics Device Interface qui permet aux programmeurs d’écrire de
  [Structure de l'interface graphique](structure-of-the-graphics-interface.md)  
  Décrit l’interface de classes managées de GDI+.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Drawing>  
  Donne accès aux fonctionnalités graphiques de base de GDI+.  
   

@@ -84,7 +84,7 @@ Vous pouvez utiliser le contrôle <xref:System.Windows.Forms.PrintPreviewDialog>
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Composant PrintDocument](printdocument-component-windows-forms.md)
+- [PrintDocument, composant](printdocument-component-windows-forms.md)
 - [PrintPreviewDialog, contrôle](printpreviewdialog-control-windows-forms.md)
 - [Prise en charge de l’impression dans les Windows Forms](../advanced/windows-forms-print-support.md)
 - [Windows Forms](../index.md)

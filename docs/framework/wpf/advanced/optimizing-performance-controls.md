@@ -66,8 +66,8 @@ Le tableau suivant répertorie les contrôles communs d’affichage de données 
 |<xref:System.Windows.Controls.ComboBox>|Peut être activé|Peut être activé|Peut être activé|
 |<xref:System.Windows.Controls.ContextMenu>|Peut être activé|Peut être activé|Peut être activé|
 |<xref:System.Windows.Controls.DocumentViewer>|Non disponible|Non disponible|Peut être activé|
-|<xref:System.Windows.Controls.ListBox>|Valeur par défaut|Peut être activé|Peut être activé|
-|<xref:System.Windows.Controls.ListView>|Valeur par défaut|Peut être activé|Peut être activé|
+|<xref:System.Windows.Controls.ListBox>|Default|Peut être activé|Peut être activé|
+|<xref:System.Windows.Controls.ListView>|Default|Peut être activé|Peut être activé|
 |<xref:System.Windows.Controls.TreeView>|Peut être activé|Peut être activé|Peut être activé|
 |<xref:System.Windows.Controls.ToolBar>|Non disponible|Non disponible|Peut être activé|
 

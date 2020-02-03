@@ -36,7 +36,7 @@ Une fois que vous avez terminé cette procédure pas à pas, votre contrôle per
 
 Pour obtenir la liste complète du code, consultez [Comment : créer un contrôle de Windows Forms qui tire parti des fonctionnalités au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120)).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour effectuer cette procédure pas à pas, vous avez besoin de Visual Studio.
 
@@ -430,7 +430,7 @@ Dans le cas de la classe `MarqueeControlRootDesigner`, vous devez appeler la mé
 
 ## <a name="add-designer-verbs-to-your-custom-designer"></a>Ajouter des verbes de concepteur à votre concepteur personnalisé
 
-Un verbe de concepteur est une commande de menu liée à un gestionnaire d’événements. Les verbes de concepteur sont ajoutés au menu contextuel d’un composant au moment du Design. Pour plus d'informations, consultez <xref:System.ComponentModel.Design.DesignerVerb>.
+Un verbe de concepteur est une commande de menu liée à un gestionnaire d'événements. Les verbes de concepteur sont ajoutés au menu contextuel d’un composant au moment du Design. Pour plus d'informations, consultez <xref:System.ComponentModel.Design.DesignerVerb>.
 
 Vous allez ajouter deux verbes de concepteur à vos concepteurs : **exécuter le test** et **arrêter le test**. Ces verbes vous permettent d’afficher le comportement au moment de l’exécution du `MarqueeControl` au moment de la conception. Ces verbes seront ajoutés à `MarqueeControlRootDesigner`.
 

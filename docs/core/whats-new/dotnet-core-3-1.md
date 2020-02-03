@@ -25,11 +25,11 @@ Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,
 
 - [Téléchargez et commencez à utiliser .net Core 3,1](https://dotnet.microsoft.com/download/dotnet-core/3.1) sur Windows, MacOS ou Linux.
 
-## <a name="long-term-support"></a>Support à long terme
+## <a name="long-term-support"></a>Prise en charge à long terme
 
 .NET Core 3,1 est une version LTS avec prise en charge de Microsoft au cours des trois prochaines années. Il est fortement recommandé de déplacer vos applications vers .NET Core 3,1. Le cycle de vie actuel des autres versions majeures est le suivant :
 
-| Release | Remarque |
+| Version finale | Remarque |
 | ------- | ---- |
 | .NET Core 3.0 | Fin de vie le 3 mars 2020.     |
 | .NET Core 2.2 | Fin de vie le 23 décembre 2019. |

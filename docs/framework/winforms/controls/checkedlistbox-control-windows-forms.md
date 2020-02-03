@@ -30,11 +30,11 @@ Le contrôle Windows Forms `CheckedListBox` affiche une liste d’éléments, co
  [Guide pratique pour déterminer des éléments cochés dans le contrôle CheckedListBox Windows Forms](how-to-determine-checked-items-in-the-windows-forms-checkedlistbox-control.md)  
  Décrit comment parcourir une liste pour déterminer les éléments qui sont activés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.CheckedListBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](windows-forms-controls-used-to-list-options.md)  
  Fournit une liste des opérations que vous pouvez effectuer avec les zones de liste, les zones de liste déroulante et les zones de liste de cases à cocher.  
   

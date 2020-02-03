@@ -36,5 +36,5 @@ Le processus d’ajout d’un élément à un contrôle Windows Forms <xref:Syst
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.ListView>
-- [ListView, contrôle](listview-control-windows-forms.md)
+- [Contrôle ListView](listview-control-windows-forms.md)
 - [Vue d’ensemble du contrôle ListView](listview-control-overview-windows-forms.md)

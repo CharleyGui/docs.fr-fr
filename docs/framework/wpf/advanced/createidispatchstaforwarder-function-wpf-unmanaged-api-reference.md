@@ -30,7 +30,7 @@ HRESULT CreateIDispatchSTAForwarder(
 )  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
   
 ## <a name="property-valuereturn-value"></a>Valeur de propriété/valeur de retour  
  pDispatchDelegate  
@@ -39,7 +39,7 @@ HRESULT CreateIDispatchSTAForwarder(
  ppForwarder  
  Pointeur vers l’adresse d’une interface de `IDispatch`.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

@@ -16,7 +16,7 @@ ms.locfileid: "76744662"
 ---
 # <a name="static-c-reference"></a>static (référence C#)
 
-Utilisez le modificateur `static` pour déclarer un membre statique, qui appartient au type lui-même plutôt qu’à un objet spécifique. Le modificateur `static` peut être utilisé pour déclarer des classes `static`. Dans les classes, les interfaces et les structs, vous pouvez ajouter le modificateur `static` à des champs, des méthodes, des propriétés, des opérateurs, des événements et des constructeurs. Le modificateur `static` ne peut pas être utilisé avec des indexeurs ou des finaliseurs. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
+Utilisez le modificateur `static` pour déclarer un membre statique, qui appartient au type lui-même plutôt qu’à un objet spécifique. Le modificateur `static` peut être utilisé pour déclarer des classes `static`. Dans les classes, les interfaces et les structs, vous pouvez ajouter le modificateur `static` à des champs, des méthodes, des propriétés, des opérateurs, des événements et des constructeurs. Le modificateur `static` ne peut pas être utilisé avec des indexeurs ou des finaliseurs. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](../../programming-guide/classes-and-structs/static-classes-and-static-class-members.md).
 
 ## <a name="example"></a>Exemple
 
@@ -65,7 +65,7 @@ Cet exemple montre que vous pouvez initialiser un champ `static` à l’aide d�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)

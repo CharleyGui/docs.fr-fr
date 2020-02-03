@@ -24,7 +24,7 @@ ms.locfileid: "76746819"
 
 Cet article explique comment utiliser les fonctionnalités de disposition Windows Forms, telles que l’ancrage et les lignes d’alignement, pour réorganiser les contrôles Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Cette procédure pas à pas nécessite Visual Studio.
 

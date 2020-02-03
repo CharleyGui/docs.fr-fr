@@ -31,10 +31,10 @@ Le contrôle Windows Forms `LinkLabel` vous permet d’ajouter des liens de styl
  [Guide pratique pour afficher une page web à partir d’un contrôle LinkLabel Windows Forms (Visual Basic)](display-a-web-page-from-a-wf-linklabel-control-visual-basic.md)  
  Montre comment afficher une page Web dans le navigateur par défaut lorsqu’un utilisateur clique sur un contrôle Windows Forms `LinkLabel`.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.LinkLabel>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit la liste complète des contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

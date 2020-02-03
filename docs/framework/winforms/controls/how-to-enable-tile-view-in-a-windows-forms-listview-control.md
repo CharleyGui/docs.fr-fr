@@ -25,7 +25,7 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
   
  ![Affichage en mosaïque dans un contrôle ListView](./media/how-to-enable-tile-view-in-a-windows-forms-listview-control/tile-view-in-listview-control.gif "Texte et icônes de l'affichage en mosaïque")  
  
- Pour activer l'affichage en mosaïque, affectez la valeur <xref:System.Windows.Forms.View.Tile> à la propriété <xref:System.Windows.Forms.ListView.View%2A>. Vous pouvez ajuster la taille des mosaïques en définissant la propriété <xref:System.Windows.Forms.ListView.TileSize%2A> et le nombre de lignes de texte affichées dans la mosaïque en ajustant la collection <xref:System.Windows.Forms.ListView.Columns%2A>.  
+ Pour activer l'affichage en mosaïque, affectez la valeur <xref:System.Windows.Forms.ListView.View%2A> à la propriété <xref:System.Windows.Forms.View.Tile>. Vous pouvez ajuster la taille des mosaïques en définissant la propriété <xref:System.Windows.Forms.ListView.TileSize%2A> et le nombre de lignes de texte affichées dans la mosaïque en ajustant la collection <xref:System.Windows.Forms.ListView.Columns%2A>.  
   
 ### <a name="to-set-tile-view-programmatically"></a>Pour définir l'affichage en mosaïque par programmation  
   
@@ -47,9 +47,9 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
  [!code-vb[System.Windows.Forms.ListView.Tiling#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Tiling/VB/listviewtilingexample.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 - un fichier d'icône nommé book.ico dans le même répertoire que le fichier exécutable.  
   
@@ -57,5 +57,5 @@ Avec la fonctionnalité d'affichage en mosaïque du contrôle <xref:System.Windo
 
 - <xref:System.Windows.Forms.ListView>
 - <xref:System.Windows.Forms.ListView.TileSize%2A>
-- [ListView, contrôle](listview-control-windows-forms.md)
+- [Contrôle ListView](listview-control-windows-forms.md)
 - [Vue d’ensemble du contrôle ListView](listview-control-overview-windows-forms.md)

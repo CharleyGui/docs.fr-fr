@@ -13,7 +13,7 @@ ms.locfileid: "76734140"
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x ✔️ SDK .net Core 2. x
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet migrate` : migre un projet .NET Core Preview 2 vers un projet de style SDK .NET Core.
 

@@ -24,4 +24,4 @@ Les bibliothèques Windows Presentation Foundation (WPF) exposent un certain nom
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Avancé](index.md)
+- [Avancée](index.md)

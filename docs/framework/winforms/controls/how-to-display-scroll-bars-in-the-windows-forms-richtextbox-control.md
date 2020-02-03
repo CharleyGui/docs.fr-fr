@@ -22,9 +22,9 @@ Par défaut, le contrôle Windows Forms <xref:System.Windows.Forms.RichTextBox> 
   
 2. Affectez à la propriété <xref:System.Windows.Forms.RichTextBox.ScrollBars%2A> la valeur appropriée de l’énumération <xref:System.Windows.Forms.RichTextBoxScrollBars>.  
   
-    |Value|Description|  
+    |Valeur|Description|  
     |-----------|-----------------|  
-    |<xref:System.Windows.Forms.RichTextBoxScrollBars.Both> (par défaut)|Affiche des barres de défilement horizontales ou verticales, ou les deux, uniquement lorsque le texte dépasse la largeur ou la longueur du contrôle.|  
+    |<xref:System.Windows.Forms.RichTextBoxScrollBars.Both> (valeur par défaut)|Affiche des barres de défilement horizontales ou verticales, ou les deux, uniquement lorsque le texte dépasse la largeur ou la longueur du contrôle.|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.None>|N’affiche jamais aucun type de barre de défilement.|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.Horizontal>|Affiche une barre de défilement horizontale uniquement lorsque le texte dépasse la largeur du contrôle. (Pour que cela se produise, la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> doit être définie sur `false`.)|  
     |<xref:System.Windows.Forms.RichTextBoxScrollBars.Vertical>|Affiche une barre de défilement verticale uniquement lorsque le texte dépasse la hauteur du contrôle.|  
@@ -34,10 +34,10 @@ Par défaut, le contrôle Windows Forms <xref:System.Windows.Forms.RichTextBox> 
   
 3. Affectez à la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> une valeur appropriée.  
   
-    |Value|Description|  
+    |Valeur|Description|  
     |-----------|-----------------|  
     |`false`|Le texte dans le contrôle n’est pas automatiquement ajusté pour s’ajuster à la largeur du contrôle, de sorte qu’il fait défiler vers la droite jusqu’à ce qu’un saut de ligne soit atteint. Utilisez cette valeur si vous avez choisi des barres de défilement horizontales ou les deux, ci-dessus.|  
-    |`true` (par défaut)|Le texte dans le contrôle est automatiquement ajusté pour s’ajuster à la largeur du contrôle. La barre de défilement horizontale n’apparaît pas. Utilisez cette valeur si vous avez choisi des barres de défilement verticales ou aucune, ci-dessus, pour afficher un ou plusieurs paragraphes.|  
+    |`true` (valeur par défaut)|Le texte dans le contrôle est automatiquement ajusté pour s’ajuster à la largeur du contrôle. La barre de défilement horizontale n’apparaît pas. Utilisez cette valeur si vous avez choisi des barres de défilement verticales ou aucune, ci-dessus, pour afficher un ou plusieurs paragraphes.|  
   
 ## <a name="see-also"></a>Voir aussi
 

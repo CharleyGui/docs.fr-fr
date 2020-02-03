@@ -27,6 +27,6 @@ Le contrôle `FlowLayoutPanel` réorganise son contenu dans un sens de flux hori
   
  Consultez également [procédure pas à pas : Organisation des contrôles sur Windows Forms à l’aide d’un FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.FlowLayoutPanel>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.FlowLayoutPanel>.

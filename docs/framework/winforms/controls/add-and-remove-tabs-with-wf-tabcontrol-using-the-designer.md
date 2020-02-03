@@ -24,7 +24,7 @@ Quand vous placez un contrôle <xref:System.Windows.Forms.TabControl> sur votre 
 
 - Dans la balise active du contrôle, cliquez sur l' **onglet Ajouter** ou **Supprimer l’onglet** .
 
-     \- ou -
+     -ou-
 
      Dans la fenêtre **Propriétés** , cliquez sur le bouton de **sélection** (![le bouton de sélection (...) dans la fenêtre Propriétés de Visual Studio.](./media/visual-studio-ellipsis-button.png)) en regard de la propriété <xref:System.Windows.Forms.TabControl.TabPages%2A> pour ouvrir l' **éditeur de collections TabPage**. Cliquez sur le bouton **Ajouter** ou **supprimer** .
 

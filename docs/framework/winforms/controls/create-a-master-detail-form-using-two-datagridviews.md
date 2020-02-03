@@ -28,7 +28,7 @@ L'exemple de code suivant crée un formulaire maître/détail avec deux contrôl
  [!code-vb[System.Windows.Forms.DataGridViewMasterDetails#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMasterDetails/VB/masterdetails.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
  des références aux assemblys System, System.Data, System.Windows.Forms et System.XML.  
   

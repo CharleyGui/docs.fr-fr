@@ -41,10 +41,10 @@ Le contrôle Windows Forms `TreeView` affiche une hiérarchie de nœuds, un peu 
 
 Consultez également [Comment : ajouter et supprimer des nœuds avec le contrôle Windows Forms TreeView à l’aide du concepteur](add-and-remove-nodes-with-wf-treeview-control-using-the-designer.md)et [Comment : attacher un menu contextuel à un TreeNode à l’aide du concepteur](how-to-attach-a-shortcut-menu-to-a-treenode-using-the-designer.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.TreeView>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

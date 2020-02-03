@@ -20,7 +20,7 @@ Les boîtes de dialogue servent à interagir avec l'utilisateur et à récupére
  [Guide pratique pour afficher des boîtes de dialogue pour les Windows Forms](how-to-display-dialog-boxes-for-windows-forms.md)  
  Explique comment afficher des boîtes de dialogue.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles et composants de boîte de dialogue](./controls/dialog-box-controls-and-components-windows-forms.md)  
  Répertorie les contrôles de boîtes de dialogue prédéfinis.  
   

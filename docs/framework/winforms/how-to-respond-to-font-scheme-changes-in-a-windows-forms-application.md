@@ -53,7 +53,7 @@ Dans les systèmes d’exploitation Windows, un utilisateur peut modifier les pa
   
 1. Pendant que votre application Windows Forms est en cours d’exécution, cliquez avec le bouton droit sur le bureau Windows, puis choisissez **Propriétés** dans le menu contextuel.  
   
-2. Dans la boîte de dialogue **propriétés d’affichage** , cliquez sur l’onglet **apparence** .  
+2. Dans la boîte de dialogue **Propriétés de Affichage**, cliquez sur l'onglet **Apparence**.  
   
 3. Dans la zone de liste déroulante taille de la **police** , sélectionnez une nouvelle taille de police.  
   

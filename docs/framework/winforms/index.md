@@ -24,14 +24,14 @@ Les formulaires étant l'unité de base de votre application, il est essentiel d
  [Amélioration des applications Windows Forms](./advanced/index.md)  
  Fournit des liens vers des rubriques expliquant comment améliorer vos Windows Forms avec un large éventail de fonctionnalités.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](./controls/index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Contrôles Windows Forms](./controls/index.md)  
  Contient des liens vers des rubriques décrivant les contrôles Windows Forms et expliquant comment les implémenter.  
   
- [Liaison de données Windows Forms](windows-forms-data-binding.md)  
+ [Liaison de données Windows Forms](windows-forms-data-binding.md)  
  Contient des liens vers des rubriques décrivant l’architecture de liaison de données Windows Forms.  
   
- [Vue d’ensemble des graphismes](./advanced/graphics-overview-windows-forms.md)  
+ [Vue d’ensemble des graphiques](./advanced/graphics-overview-windows-forms.md)  
  Explique comment créer des graphismes, dessiner du texte et manipuler des images graphiques comme objets à l'aide de l'implémentation avancée de l'interface de conception graphique Windows.  
   
  [Sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment)  

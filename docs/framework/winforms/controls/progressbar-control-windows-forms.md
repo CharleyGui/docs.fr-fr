@@ -25,10 +25,10 @@ ms.locfileid: "76741216"
  [Guide pratique pour définir la valeur affichée par le contrôle ProgressBar Windows Forms](how-to-set-the-value-displayed-by-the-windows-forms-progressbar-control.md)  
  Présente plusieurs façons différentes d’augmenter la valeur affichée par le contrôle <xref:System.Windows.Forms.ProgressBar>.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ProgressBar>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

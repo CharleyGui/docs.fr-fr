@@ -75,6 +75,6 @@ En plus de créer des événements à l’aide de l’Concepteur Windows Forms d
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Vue d'ensemble des gestionnaires d'événements](event-handlers-overview-windows-forms.md)
 - [Dépannage des gestionnaires d’événements hérités en Visual Basic](../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
