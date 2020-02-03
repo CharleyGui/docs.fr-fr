@@ -40,7 +40,7 @@ Avec le mode virtuel, vous pouvez gérer l’interaction entre le contrôle <xre
   
  Les événements suivants se produisent uniquement lorsque la propriété <xref:System.Windows.Forms.DataGridView.VirtualMode%2A> est définie sur `true`.  
   
-|Event|Description|  
+|Événement|Description|  
 |-----------|-----------------|  
 |<xref:System.Windows.Forms.DataGridView.CellValueNeeded>|Utilisé par le contrôle pour récupérer une valeur de cellule à partir du cache de données pour l’affichage. Cet événement se produit uniquement pour les cellules des colonnes indépendantes.|  
 |<xref:System.Windows.Forms.DataGridView.CellValuePushed>|Utilisé par le contrôle pour valider l’entrée d’utilisateur pour une cellule dans le cache de données. Cet événement se produit uniquement pour les cellules des colonnes indépendantes.<br /><br /> Appelez la méthode <xref:System.Windows.Forms.DataGridView.UpdateCellValue%2A> lors de la modification d’une valeur mise en cache en dehors d’un gestionnaire d’événements <xref:System.Windows.Forms.DataGridView.CellValuePushed> pour vous assurer que la valeur actuelle est affichée dans le contrôle et appliquer tous les modes de dimensionnement automatique actuellement en vigueur.|  
@@ -50,7 +50,7 @@ Avec le mode virtuel, vous pouvez gérer l’interaction entre le contrôle <xre
   
  Les événements suivants sont utiles en mode virtuel, mais peuvent être utilisés indépendamment du paramètre de propriété <xref:System.Windows.Forms.DataGridView.VirtualMode%2A>.  
   
-|Events|Description|  
+|Événements|Description|  
 |------------|-----------------|  
 |<xref:System.Windows.Forms.DataGridView.UserDeletingRow><br /><br /> <xref:System.Windows.Forms.DataGridView.UserDeletedRow><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsRemoved><br /><br /> <xref:System.Windows.Forms.DataGridView.RowsAdded>|Utilisé par le contrôle pour indiquer quand des lignes sont supprimées ou ajoutées, ce qui vous permet de mettre à jour le cache de données en conséquence.|  
 |<xref:System.Windows.Forms.DataGridView.CellFormatting><br /><br /> <xref:System.Windows.Forms.DataGridView.CellParsing><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.CellValidated><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidating><br /><br /> <xref:System.Windows.Forms.DataGridView.RowValidated>|Utilisé par le contrôle pour mettre en forme les valeurs des cellules à afficher et pour analyser et valider les entrées utilisateur.|  

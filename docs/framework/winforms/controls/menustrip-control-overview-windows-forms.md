@@ -34,7 +34,7 @@ Les menus exposent les fonctionnalités à vos utilisateurs en détenant des com
   
  Le tableau suivant présente certaines propriétés particulièrement importantes des <xref:System.Windows.Forms.MenuStrip> et des classes associées.  
   
-|Les|Description|  
+|Propriété|Description|  
 |--------------|-----------------|  
 |<xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A>|Obtient ou définit le <xref:System.Windows.Forms.ToolStripMenuItem> utilisé pour afficher une liste de formulaires enfants MDI.|  
 |<xref:System.Windows.Forms.ToolStripItem.MergeAction%2A?displayProperty=nameWithType>|Obtient ou définit la manière dont les menus enfants sont fusionnés avec les menus parents dans les applications MDI.|  
@@ -47,7 +47,7 @@ Les menus exposent les fonctionnalités à vos utilisateurs en détenant des com
   
  Le tableau suivant présente les principales classes auxiliaires <xref:System.Windows.Forms.MenuStrip>.  
   
-|Classe|Description|  
+|Class|Description|  
 |-----------|-----------------|  
 |<xref:System.Windows.Forms.ToolStripMenuItem>|Représente une option pouvant être sélectionnée, qui est affichée sur un <xref:System.Windows.Forms.MenuStrip> ou un <xref:System.Windows.Forms.ContextMenuStrip>.|  
 |<xref:System.Windows.Forms.ContextMenuStrip>|Représente un menu contextuel.|  

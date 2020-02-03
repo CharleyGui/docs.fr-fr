@@ -620,7 +620,7 @@ type Closure1Table() =
 
 #### <a name="prefer-let-mutable-to-reference-cells"></a>Préférer `let mutable` pour référencer des cellules
 
-Les cellules de référence sont un moyen de représenter la référence à une valeur plutôt que la valeur elle-même. Bien qu’elles puissent être utilisées pour le code critique pour les performances, elles ne sont pas recommandées. Prenons l'exemple suivant :
+Les cellules de référence sont un moyen de représenter la référence à une valeur plutôt que la valeur elle-même. Bien qu’elles puissent être utilisées pour le code critique pour les performances, elles ne sont pas recommandées. Prenons l'exemple suivant :
 
 ```fsharp
 let kernels =
@@ -672,7 +672,7 @@ F#offre une prise en charge complète des objets et des concepts orientés objet
 * Propriétés automatiques
 * Implémentation de `IDisposable` et `IEnumerable`
 * Extensions de type
-* Events
+* Événements
 * Structures
 * Délégués
 * Énumérations

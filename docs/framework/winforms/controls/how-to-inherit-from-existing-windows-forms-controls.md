@@ -28,11 +28,11 @@ Si vous souhaitez étendre les fonctionnalités d’un contrôle existant, vous 
 
 1. Dans le menu **Projet**, sélectionnez **Ajouter un nouvel élément**.
 
-    La boîte de dialogue **Ajouter un nouvel élément** s’affiche.
+    La boîte de dialogue **Ajouter un nouvel élément** s'affiche.
 
 1. Dans la boîte de dialogue **Ajouter un nouvel élément**, double-cliquez sur **Contrôle personnalisé**.
 
-    Un contrôle personnalisé est ajouté à votre projet.
+    Un nouveau contrôle personnalisé est ajouté à votre projet.
 
 1. Si vous utilisez :
 
@@ -89,7 +89,7 @@ Si vous souhaitez étendre les fonctionnalités d’un contrôle existant, vous 
 
 - [Variétés de contrôles personnalisés](varieties-of-custom-controls.md)
 - [Guide pratique pour hériter de la classe du contrôle](how-to-inherit-from-the-control-class.md)
-- [Guide pratique pour hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Comment : hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
 - [Guide pratique pour créer des contrôles pour des Windows Forms](how-to-author-controls-for-windows-forms.md)
 - [Dépannage des gestionnaires d’événements hérités en Visual Basic](~/docs/visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)
 - [Procédure pas à pas : héritage d’un contrôle Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)

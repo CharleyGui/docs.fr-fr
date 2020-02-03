@@ -48,7 +48,7 @@ Chaque cellule dans le contrôle <xref:System.Windows.Forms.DataGridView> peut a
   
  Le tableau suivant répertorie les propriétés principales qui obtiennent ou définissent des objets <xref:System.Windows.Forms.DataGridViewCellStyle>.  
   
-|Les|Classes|Description|  
+|Propriété|Classes|Description|  
 |--------------|-------------|-----------------|  
 |`DefaultCellStyle`|<xref:System.Windows.Forms.DataGridView>, <xref:System.Windows.Forms.DataGridViewColumn>, <xref:System.Windows.Forms.DataGridViewRow>et classes dérivées|Obtient ou définit les styles par défaut utilisés par toutes les cellules du contrôle entier (y compris les cellules d’en-tête), dans une colonne ou dans une ligne.|  
 |<xref:System.Windows.Forms.DataGridView.RowsDefaultCellStyle%2A>|<xref:System.Windows.Forms.DataGridView>|Obtient ou définit les styles de cellules par défaut utilisés par toutes les lignes du contrôle. Cela n’inclut pas les cellules d’en-tête.|  

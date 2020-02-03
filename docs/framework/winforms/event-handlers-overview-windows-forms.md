@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble des gestionnaires d’événements
+title: Vue d'ensemble des gestionnaires d'événements
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -50,5 +50,5 @@ private:
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Vue d'ensemble des événements](events-overview-windows-forms.md)

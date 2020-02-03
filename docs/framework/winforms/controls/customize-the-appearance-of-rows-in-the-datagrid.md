@@ -26,7 +26,7 @@ Vous pouvez contrôler l'apparence des lignes <xref:System.Windows.Forms.DataGri
  [!code-vb[System.Windows.Forms.DataGridViewRowPainting#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewRowPainting/VB/datagridviewrowpainting.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.  
   

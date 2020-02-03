@@ -41,7 +41,7 @@ Le contrôle Windows Forms `WebBrowser` héberge des pages Web et fournit des fo
  [Utilisation du modèle DOM HTML managé](using-the-managed-html-document-object-model.md)  
  Fournit des rubriques qui décrivent comment manipuler ou créer des pages HTML hébergées par le contrôle <xref:System.Windows.Forms.WebBrowser>.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.WebBrowser>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   

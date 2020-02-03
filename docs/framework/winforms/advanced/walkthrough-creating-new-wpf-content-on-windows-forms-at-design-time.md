@@ -23,7 +23,7 @@ ms.locfileid: "76746390"
 
 Cet article vous montre comment créer un contrôle Windows Presentation Foundation (WPF) à utiliser dans vos applications basées sur Windows Forms.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Cette procédure pas à pas nécessite Visual Studio.
 

@@ -28,7 +28,7 @@ L'exemple de code suivant montre comment utiliser le contrôle <xref:System.Wind
  [!code-vb[System.Windows.Forms.DataGridView.DataError#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.DataError/VB/errorhandling.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - des références aux assemblys System, System.Data, System.Windows.Forms et System.XML.  
   

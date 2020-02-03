@@ -33,6 +33,6 @@ Windows Forms inclut divers événements de souris et une prise en charge suppl�
  [Fonctionnalité de glisser-déposer dans les Windows Forms](drag-and-drop-functionality-in-windows-forms.md)  
  Décrit comment implémenter le comportement de glisser-déplacer.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Accès à la souris](../../visual-basic/developing-apps/programming/computer-resources/accessing-the-mouse.md)  
  Répertorie les rubriques permettant d’accéder à la souris à l’aide de Visual Basic.

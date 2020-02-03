@@ -57,6 +57,6 @@ Vous pouvez lier les <xref:System.Windows.Forms.ComboBox> et les <xref:System.Wi
 
 - <xref:System.Windows.Forms.ComboBox>
 - <xref:System.Windows.Forms.ListBox>
-- [Liaison de données Windows Forms](../windows-forms-data-binding.md)
+- [Liaison de données Windows Forms](../windows-forms-data-binding.md)
 - [Liaison de données et Windows Forms](../data-binding-and-windows-forms.md)
 - [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](windows-forms-controls-used-to-list-options.md)

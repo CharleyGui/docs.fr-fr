@@ -75,7 +75,7 @@ Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne so
 |-----------|-----------------|  
 |[Affichage des informations de type](viewing-type-information.md)|Décrit la classe <xref:System.Type> et fournit des exemples de code qui montrent comment utiliser <xref:System.Type> avec plusieurs classes de réflexion pour obtenir des informations sur les constructeurs, les méthodes, les champs, les propriétés et les événements.|  
 |[Réflexion et types génériques](reflection-and-generic-types.md)|Explique comment la réflexion gère les paramètres de types et les arguments de types des types génériques et des méthodes génériques.|  
-|[Considérations sur la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
+|[Considérations relatives à la sécurité de la réflexion](security-considerations-for-reflection.md)|Décrit les règles qui déterminent à quel degré la réflexion peut être utilisée pour découvrir des informations sur les types et accéder aux types.|  
 |[Chargement et utilisation dynamiques des types](dynamically-loading-and-using-types.md)|Décrit l’interface de liaison personnalisée de la réflexion qui prend en charge la liaison tardive.|  
 |[Guide pratique pour charger des assemblys dans le contexte de réflexion uniquement](how-to-load-assemblies-into-the-reflection-only-context.md)|Décrit le contexte de chargement de réflexion seule. Montre comment charger un assembly, tester le contexte et examiner les attributs appliqués à un assembly dans le contexte de réflexion uniquement.|  
 |[Accès aux attributs personnalisés](accessing-custom-attributes.md)|Montre l'utilisation de la réflexion pour déterminer l'existence et les valeurs des attributs.|  
@@ -83,7 +83,7 @@ Ces classes d'exécution sont `internal` (`Friend` en Visual Basic). Elles ne so
 |[Guide pratique pour raccorder un délégué à l’aide de la réflexion](how-to-hook-up-a-delegate-using-reflection.md)|Explique comment créer un délégué pour une méthode et raccorder le délégué à un événement. Explique comment créer une méthode de gestion d'événements à l'exécution à l'aide de <xref:System.Reflection.Emit.DynamicMethod>.|  
 |[Émission d’assemblys et de méthodes dynamiques](emitting-dynamic-methods-and-assemblies.md)|Explique comment générer des assemblys dynamiques et des méthodes dynamiques.|  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
 
 <xref:System.Type?displayProperty=nameWithType>  
   

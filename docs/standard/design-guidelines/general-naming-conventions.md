@@ -57,7 +57,7 @@ Cette section décrit les conventions d’affectation de noms générales relati
 
  Par exemple, une méthode qui est convertie en <xref:System.Int64> doit être nommée `ToInt64`, et non `ToLong` (car <xref:System.Int64> est C#un nom CLR pour l’alias spécifique à, `long`). Le tableau suivant présente plusieurs types de données de base utilisant les noms de type CLR (ainsi que les noms de C#types correspondants pour, C++Visual Basic et).
 
-|C#|Visual Basic|C++|CLR|
+|C#|Visual Basic|C++|CLR|
 |---------|------------------|-----------|---------|
 |**sbyte**|**SByte**|**char**|**SByte**|
 |**byte**|**Byte**|**unsigned char**|**Byte**|

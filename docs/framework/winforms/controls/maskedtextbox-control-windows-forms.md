@@ -26,10 +26,10 @@ Cette rubrique est liée à d’autres utilisateurs sur le contrôle de `MaskedT
  [Guide pratique pour lier des données au contrôle MaskedTextBox](how-to-bind-data-to-the-maskedtextbox-control.md)  
  Montre comment reformater les données lorsque les données de la base de données ne correspondent pas au format attendu par votre définition de masque.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.MaskedTextBox>  
  Classe principale pour l’implémentation du contrôle de zone de texte masquée.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

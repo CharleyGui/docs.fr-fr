@@ -18,7 +18,7 @@ ms.locfileid: "76733124"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet nuget delete` -Supprime ou retire un package du serveur.
 

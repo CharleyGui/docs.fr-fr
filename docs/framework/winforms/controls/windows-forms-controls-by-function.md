@@ -24,7 +24,7 @@ Windows Forms propose des contrôles et des composants qui exécutent un certain
 |Fonction|Contrôle|Description|  
 |--------------|-------------|-----------------|  
 |Affichage des données|Contrôle <xref:System.Windows.Forms.DataGridView>|Le contrôle <xref:System.Windows.Forms.DataGridView> fournit une table personnalisable pour l’affichage des données. La classe <xref:System.Windows.Forms.DataGridView> permet la personnalisation des cellules, des lignes, des colonnes et des bordures. **Remarque :**  Le contrôle <xref:System.Windows.Forms.DataGridView> fournit de nombreuses fonctionnalités de base et avancées qui manquent dans le contrôle <xref:System.Windows.Forms.DataGrid>. Pour plus d’informations, consultez [différences entre les contrôles DataGridView et DataGrid Windows Forms](differences-between-the-windows-forms-datagridview-and-datagrid-controls.md)|  
-|Liaison de données et navigation|<xref:System.Windows.Forms.BindingSource> (composant)|Simplifie la liaison de contrôles sur un formulaire aux données en fournissant une gestion des devises, une notification des modifications et d’autres services.|  
+|Liaison de données et navigation|Composant <xref:System.Windows.Forms.BindingSource>|Simplifie la liaison de contrôles sur un formulaire aux données en fournissant une gestion des devises, une notification des modifications et d’autres services.|  
 ||Contrôle <xref:System.Windows.Forms.BindingNavigator>|Fournit une interface de type barre d’outils pour naviguer et manipuler des données dans un formulaire.|  
 |Modification de texte|Contrôle <xref:System.Windows.Forms.TextBox>|Affiche le texte entré au moment du design et qui peut être modifié par les utilisateurs au moment de l’exécution ou par programme.|  
 ||Contrôle <xref:System.Windows.Forms.RichTextBox>|Permet d’afficher du texte avec une mise en forme en texte brut ou au format RTF (Rich-Text Format).|  
@@ -33,7 +33,7 @@ Windows Forms propose des contrôles et des composants qui exécutent un certain
 ||Contrôle <xref:System.Windows.Forms.LinkLabel>|Affiche le texte sous la forme d’un lien de type Web et déclenche un événement lorsque l’utilisateur clique sur le texte spécial. Généralement, le texte est un lien vers une autre fenêtre ou un site Web.|  
 ||Contrôle <xref:System.Windows.Forms.StatusStrip>|Affiche des informations sur l’état actuel de l’application à l’aide d’une zone encadrée, généralement en bas d’un formulaire parent.|  
 ||Contrôle <xref:System.Windows.Forms.ProgressBar>|Affiche la progression actuelle d’une opération à l’utilisateur.|  
-|Affichage de la page Web|Contrôle <xref:System.Windows.Forms.WebBrowser>|Autorise l'utilisateur à parcourir des pages web dans votre formulaire.|  
+|Affichage de la page Web|Contrôle <xref:System.Windows.Forms.WebBrowser>|Autorise l’utilisateur à parcourir des pages web dans votre formulaire.|  
 |Sélection dans une liste|Contrôle <xref:System.Windows.Forms.CheckedListBox>|Affiche une liste déroulante d’éléments, chacun accompagné d’une case à cocher.|  
 ||Contrôle <xref:System.Windows.Forms.ComboBox>|Affiche une liste déroulante d’éléments.|  
 ||Contrôle <xref:System.Windows.Forms.DomainUpDown>|Affiche la liste des éléments de texte que les utilisateurs peuvent parcourir à l’aide des boutons haut et PG.|  
@@ -62,8 +62,8 @@ Windows Forms propose des contrôles et des composants qui exécutent un certain
 ||Contrôle <xref:System.Windows.Forms.LinkLabel>|Affiche le texte sous la forme d’un lien de type Web et déclenche un événement lorsque l’utilisateur clique sur le texte spécial. Généralement, le texte est un lien vers une autre fenêtre ou un site Web.|  
 ||Contrôle <xref:System.Windows.Forms.NotifyIcon>|Affiche une icône dans la zone de notification d’état de la barre des tâches qui représente une application en cours d’exécution en arrière-plan.|  
 ||Contrôle <xref:System.Windows.Forms.ToolStrip>|Crée des barres d’outils qui peuvent avoir un Microsoft Windows XP, Microsoft Office, Microsoft Internet Explorer ou une apparence personnalisée, avec ou sans thèmes, et avec prise en charge de la réorganisation des éléments de dépassement de capacité et d’exécution. **Remarque :**  Le contrôle <xref:System.Windows.Forms.ToolStrip> est conçu pour remplacer le contrôle <xref:System.Windows.Forms.ToolBar>.|  
-|Aide de l’utilisateur|<xref:System.Windows.Forms.HelpProvider> (composant)|Fournit une aide contextuelle ou en ligne pour les contrôles.|  
-||<xref:System.Windows.Forms.ToolTip> (composant)|Fournit une fenêtre contextuelle qui affiche une brève description de l’objectif d’un contrôle lorsque l’utilisateur place le pointeur sur le contrôle.|  
+|Aide utilisateur|Composant <xref:System.Windows.Forms.HelpProvider>|Fournit une aide contextuelle ou en ligne pour les contrôles.|  
+||Composant <xref:System.Windows.Forms.ToolTip>|Fournit une fenêtre contextuelle qui affiche une brève description de l’objectif d’un contrôle lorsque l’utilisateur place le pointeur sur le contrôle.|  
 |Regroupement d’autres contrôles|Contrôle <xref:System.Windows.Forms.Panel>|Regroupe un ensemble de contrôles sur un frame sans étiquette défilant.|  
 ||Contrôle <xref:System.Windows.Forms.GroupBox>|Regroupe un ensemble de contrôles (tels que les cases d’option) sur un frame étiqueté et ne pouvant pas défiler.|  
 ||Contrôle <xref:System.Windows.Forms.TabControl>|Fournit une page à onglets permettant d’organiser et d’accéder efficacement aux objets groupés.|  

@@ -26,7 +26,7 @@ L'exemple de code suivant montre comment remplir un contrôle <xref:System.Windo
  [!code-vb[System.Windows.Forms.DataGridViewSimpleUnbound#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSimpleUnbound/VB/simpleunbound.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.  
   

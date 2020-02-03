@@ -79,7 +79,7 @@ En outre, les composants peuvent être ajoutés à un formulaire au moment de l�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Comment : ajouter des contrôles à des Windows Forms](how-to-add-controls-to-windows-forms.md)
 - [Guide pratique pour ajouter des contrôles ActiveX aux Windows Forms](how-to-add-activex-controls-to-windows-forms.md)
 - [Placement de contrôles dans les Windows Forms](putting-controls-on-windows-forms.md)

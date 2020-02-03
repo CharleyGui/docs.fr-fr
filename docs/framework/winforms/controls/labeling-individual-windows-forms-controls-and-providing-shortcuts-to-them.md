@@ -18,7 +18,7 @@ ms.locfileid: "76745262"
 
 Les contrôles ajoutés aux Windows Forms ont des propriétés et des méthodes qui permettent de spécialiser davantage l'expérience utilisateur. La personnalisation de l'interface utilisateur en fonction des besoins de l'utilisateur est extrêmement importante pour les applications Windows bien conçues.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 [Comment : définir le texte affiché par un contrôle Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)\
 Décrit comment attribuer une étiquette de texte à un contrôle.

@@ -27,7 +27,7 @@ Vous pouvez rendre l’entrée de données plus pratique lorsque l’application
  [!code-vb[System.Windows.Forms.DataGridViewMisc#120](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#120)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ;  
   

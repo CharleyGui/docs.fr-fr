@@ -79,7 +79,7 @@ L’exemple de code suivant fournit la classe `ToolStripRadioButtonMenuItem` com
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Cet exemple nécessite :
+Cet exemple nécessite :
 
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.
 

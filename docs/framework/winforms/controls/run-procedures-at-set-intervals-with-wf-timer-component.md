@@ -41,7 +41,7 @@ Il peut arriver que vous souhaitiez créer une procédure qui s'exécute à inte
   
 4. Affectez la valeur <xref:System.Windows.Forms.Timer.Enabled%2A> à la propriété `true` pour démarrer le minuteur. L'événement <xref:System.Windows.Forms.Timer.Tick> commencera à se produire et à exécuter votre procédure à l'intervalle indiqué.  
   
-5. Au moment opportun, affectez la valeur `false` à la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> pour empêcher que la procédure soit réexécutée. La définition de l’intervalle sur `0` n’entraîne pas l’arrêt de la minuterie.  
+5. Au moment opportun, affectez la valeur <xref:System.Windows.Forms.Timer.Enabled%2A> à la propriété `false` pour empêcher que la procédure soit réexécutée. La définition de l’intervalle sur `0` n’entraîne pas l’arrêt de la minuterie.  
   
 ## <a name="example"></a>Exemple  
  Ce premier exemple de code effectue le suivi de l'heure par incréments d'une seconde. Il utilise un <xref:System.Windows.Forms.Button>, un <xref:System.Windows.Forms.Label> et un composant <xref:System.Windows.Forms.Timer> sur un formulaire. La propriété <xref:System.Windows.Forms.Timer.Interval%2A> prend la valeur 1 000 (égal à une seconde). Dans l'événement <xref:System.Windows.Forms.Timer.Tick>, la légende de l'étiquette prend comme valeur l'heure actuelle. En cas de clic sur le bouton, la propriété <xref:System.Windows.Forms.Timer.Enabled%2A> prend la valeur `false` et le minuteur cesse de mettre à jour la légende de l'étiquette. L’exemple de code suivant nécessite que vous disposiez d’un formulaire avec un contrôle <xref:System.Windows.Forms.Button> nommé `Button1`, d’un contrôle <xref:System.Windows.Forms.Timer> nommé `Timer1`, et d’un contrôle <xref:System.Windows.Forms.Label> nommé `Label1`.  

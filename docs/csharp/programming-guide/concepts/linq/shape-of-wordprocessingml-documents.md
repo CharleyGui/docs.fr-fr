@@ -96,4 +96,4 @@ using (Package wdPackage = Package.Open("SampleDoc.docx", FileMode.Open, FileAcc
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Didacticiel : Manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)

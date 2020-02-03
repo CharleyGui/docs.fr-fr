@@ -31,5 +31,5 @@ Dans le mode Détails, le contrôle <xref:System.Windows.Forms.ListView> peut af
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.ListView>
-- [ListView, contrôle](listview-control-windows-forms.md)
+- [Contrôle ListView](listview-control-windows-forms.md)
 - [Vue d’ensemble du contrôle ListView](listview-control-overview-windows-forms.md)

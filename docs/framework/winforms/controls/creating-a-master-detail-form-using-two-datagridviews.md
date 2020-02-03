@@ -25,7 +25,7 @@ Il est facile d’implémenter un formulaire maître/détail à l’aide de l’
 
 Pour copier le code dans cette rubrique sous la forme d’une liste unique, consultez [Comment : créer un formulaire maître/détail à l’aide de deux Windows Forms contrôles DataGridView](create-a-master-detail-form-using-two-datagridviews.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 

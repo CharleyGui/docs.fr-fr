@@ -23,14 +23,14 @@ Une ressource est un objet pouvant être réutilisé à plusieurs endroits de vo
  [Fichiers de ressources, de contenu et de données d’une application WPF](../app-development/wpf-application-resource-content-and-data-files.md)  
  [URI à en-tête pack dans WPF](../app-development/pack-uris-in-wpf.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.ResourceDictionary>  
   
  [StaticResource, extension de balisage](staticresource-markup-extension.md)  
   
- [Extension de balisage DynamicResource](dynamicresource-markup-extension.md)  
+ [DynamicResource, extension de balisage](dynamicresource-markup-extension.md)  
   
  [x:Key, directive](../../../desktop-wpf/xaml-services/xkey-directive.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Intégration du format XAML au format WPF](xaml-in-wpf.md)

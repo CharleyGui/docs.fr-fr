@@ -58,7 +58,7 @@ Le contrôle `DataGridView` permet d’afficher des données provenant de divers
  [Guide pratique pour personnaliser la mise en forme des données dans le contrôle DataGridView Windows Forms](how-to-customize-data-formatting-in-the-windows-forms-datagridview-control.md)  
  Décrit comment gérer l’événement <xref:System.Windows.Forms.DataGridView.CellFormatting?displayProperty=nameWithType> pour modifier l’apparence des cellules en fonction de leurs valeurs.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
@@ -68,7 +68,7 @@ Le contrôle `DataGridView` permet d’afficher des données provenant de divers
  <xref:System.Windows.Forms.BindingSource>  
  Fournit la documentation de référence pour le composant <xref:System.Windows.Forms.BindingSource>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Saisie de données dans le contrôle DataGridView Windows Forms](data-entry-in-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent comment modifier la façon dont les utilisateurs ajoutent et modifient des données dans le contrôle.  
   

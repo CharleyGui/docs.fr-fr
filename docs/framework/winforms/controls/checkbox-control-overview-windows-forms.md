@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du contrôle CheckBox
+title: Vue d'ensemble du contrôle CheckBox
 ms.date: 03/30/2017
 f1_keywords:
 - CheckBox

@@ -32,7 +32,7 @@ Vous pouvez configurer le contrôle <xref:System.Windows.Forms.DataGridView> pou
  [!code-vb[System.Windows.Forms.DataGridView.AutoSizing#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.AutoSizing/VB/autosizing.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.  
   

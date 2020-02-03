@@ -24,7 +24,7 @@ ms.locfileid: "76747026"
 
 La collecte d’encre numérique fait partie des principales fonctionnalités de la plateforme [Windows Presentation Foundation](../index.md). Cette rubrique décrit les méthodes de collecte d’encre dans Windows Presentation Foundation (WPF).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour utiliser les exemples suivants, vous devez d’abord installer Visual Studio et le SDK Windows. Vous devez également comprendre comment écrire des applications pour WPF. Pour plus d’informations sur la prise en main de WPF, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 

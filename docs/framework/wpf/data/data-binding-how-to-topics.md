@@ -18,7 +18,7 @@ ms.locfileid: "76733841"
 
 Les rubriques de cette section décrivent comment utiliser la liaison de données pour lier des éléments à des données provenant de diverses sources de données sous la forme d’objets common language runtime (CLR) et XML.
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
 - [Créer une liaison simple](how-to-create-a-simple-binding.md)
 - [Spécifier la source de liaison](how-to-specify-the-binding-source.md)
@@ -56,7 +56,7 @@ Les rubriques de cette section décrivent comment utiliser la liaison de donnée
 - [Rechercher des éléments générés par DataTemplate](how-to-find-datatemplate-generated-elements.md)
 - [Effectuer une liaison à un service Web](how-to-bind-to-a-web-service.md)
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 - <xref:System.Windows.Data>
 - <xref:System.Windows.Data.Binding>

@@ -35,4 +35,4 @@ De nombreux fichiers ont des icônes incorporées qui fournissent une représent
 ## <a name="see-also"></a>Voir aussi
 
 - [Images, bitmaps et métafichiers](images-bitmaps-and-metafiles.md)
-- [ListView, contrôle](../controls/listview-control-windows-forms.md)
+- [Contrôle ListView](../controls/listview-control-windows-forms.md)

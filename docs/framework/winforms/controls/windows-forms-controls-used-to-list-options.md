@@ -34,7 +34,7 @@ Vous pouvez ajouter divers contrôles à un Windows Form si vous souhaitez fourn
  [Guide pratique pour trier le contenu d'un contrôle ComboBox, CheckedListBox ou ListBox Windows Forms](sort-the-contents-of-a-wf-combobox-listbox-or-checkedlistbox-control.md)  
  Explique comment trier les données de liste au niveau de sa source de données.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.CheckedListBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
@@ -44,7 +44,7 @@ Vous pouvez ajouter divers contrôles à un Windows Form si vous souhaitez fourn
  <xref:System.Windows.Forms.ListBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d'ensemble du contrôle CheckedListBox](checkedlistbox-control-overview-windows-forms.md)  
  Décrit un contrôle et ses principales fonctionnalités et propriétés.  
   

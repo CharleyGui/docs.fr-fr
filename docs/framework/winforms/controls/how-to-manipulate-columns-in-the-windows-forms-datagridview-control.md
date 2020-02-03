@@ -29,7 +29,7 @@ L'exemple de code suivant illustre les différentes façons de manipuler des col
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Cet exemple nécessite :
+Cet exemple nécessite :
 
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.
 

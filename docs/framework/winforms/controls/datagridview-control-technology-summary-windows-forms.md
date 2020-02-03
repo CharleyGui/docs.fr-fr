@@ -20,7 +20,7 @@ Cette rubrique rassemble des informations sur le contrôle `DataGridView` et les
 ## <a name="keywords"></a>Mots clés  
  DataGridView, BindingSource, table, cellule, liaison de données, mode virtuel  
   
-## <a name="namespaces"></a>Espaces de noms des  
+## <a name="namespaces"></a>Espaces de noms  
  <xref:System.Windows.Forms?displayProperty=nameWithType>  
   
  <xref:System.Data?displayProperty=nameWithType>  
@@ -28,7 +28,7 @@ Cette rubrique rassemble des informations sur le contrôle `DataGridView` et les
 ## <a name="related-technologies"></a>Technologies connexes  
  `BindingSource`  
   
-## <a name="background"></a>Informations générales sur la  
+## <a name="background"></a>Arrière-plan  
  Les concepteurs de l’interface utilisateur ont souvent besoin d’afficher des données tabulaires pour les utilisateurs. Le .NET Framework permet d’afficher des données dans une table ou une grille de plusieurs façons. Le contrôle `DataGridView` représente l’évolution la plus récente de cette technologie pour les applications Windows Forms.  
   
  Le contrôle `DataGridView` peut afficher des lignes de données à partir d’un magasin de données. De nombreux types de magasins de données sont pris en charge. Le magasin de données peut contenir des données simples et non typées, telles qu’un tableau unidimensionnel, ou peut contenir des données typées, telles qu’un <xref:System.Data.DataSet>. Pour plus d’informations, consultez [Comment : lier des données au contrôle DataGridView Windows Forms](how-to-bind-data-to-the-windows-forms-datagridview-control.md).  

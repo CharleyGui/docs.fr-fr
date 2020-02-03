@@ -38,7 +38,7 @@ Vous pouvez configurer la façon dont les valeurs sont affichées dans le contr�
     numericUpDown1->ThousandsSeparator = true;  
     ```  
   
-     \- ou -  
+     -ou-  
   
 - Affichez une valeur hexadécimale en affectant à la propriété <xref:System.Windows.Forms.NumericUpDown.Hexadecimal%2A> la valeur `true`.  
   

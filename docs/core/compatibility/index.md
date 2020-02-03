@@ -87,7 +87,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
    Toutefois, l’augmentation de la visibilité d’un type est autorisée.
 
-### <a name="members"></a>Members
+### <a name="members"></a>Membres
 
 - ✔️ **autorisé : extension de la visibilité d’un membre qui n’est pas [virtuel](../../csharp/language-reference/keywords/sealed.md)**
 

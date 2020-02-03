@@ -35,13 +35,13 @@ Contient la liste des classes de chiffrement qui ont un mappage à un nom conviv
  Les sections suivantes décrivent des attributs, des éléments enfants et des éléments parents.  
   
 ### <a name="attributes"></a>Attributs  
- Aucun.  
+ None.  
   
 ### <a name="child-elements"></a>Éléments enfants  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<cryptoClass>](cryptoclass-element.md)|Contient une classe de chiffrement qui a un mappage à un nom convivial dans l’élément **\<nameEntry>** .|  
+|[\<cryptoClass >](cryptoclass-element.md)|Contient une classe de chiffrement qui a un mappage à un nom convivial dans l’élément **\<nameEntry>** .|  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -81,6 +81,6 @@ Contient la liste des classes de chiffrement qui ont un mappage à un nom conviv
 - <xref:System.Security.Cryptography>
 - [Schéma des fichiers de configuration](../index.md)
 - [Schéma des paramètres de chiffrement](index.md)
-- [Cryptographic Services](../../../../standard/security/cryptographic-services.md)
-- [System.Security.Cryptography.CryptoConfig.CreateFromName](xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A)
+- [Services de chiffrement](../../../../standard/security/cryptographic-services.md)
+- [System. Security. Cryptography. CryptoConfig. CreateFromName](xref:System.Security.Cryptography.CryptoConfig.CreateFromName%2A)
 - [Configuration des classes de chiffrement](../../configure-cryptography-classes.md)

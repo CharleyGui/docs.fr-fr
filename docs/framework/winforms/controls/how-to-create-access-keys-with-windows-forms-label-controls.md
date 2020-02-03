@@ -31,7 +31,7 @@ Windows Forms contrôles <xref:System.Windows.Forms.Label> peuvent être utilis�
   
 1. Dessinez d’abord l’étiquette, puis dessinez l’autre contrôle.  
   
-     \- ou -  
+     -ou-  
   
      Dessinez les contrôles dans n’importe quel ordre et affectez à la propriété <xref:System.Windows.Forms.Control.TabIndex%2A> de l’étiquette une valeur inférieure à celle de l’autre contrôle.  
   

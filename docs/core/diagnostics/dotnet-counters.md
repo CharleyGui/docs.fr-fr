@@ -43,7 +43,7 @@ dotnet-counters [-h|--help] [--version] <command>
 
 ## <a name="commands"></a>Commands
 
-| Command                                             |
+| Commande                                             |
 | --------------------------------------------------- |
 | [liste dotnet-Counters](#dotnet-counters-list)       |
 | [analyse dotnet-Counters](#dotnet-counters-monitor) |

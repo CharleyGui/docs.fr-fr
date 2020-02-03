@@ -27,7 +27,7 @@ Parfois, vous souhaiterez afficher une <xref:System.Windows.Forms.DataGridView> 
      [!code-vb[System.Windows.Forms.DataGridViewMisc#062](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#062)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ;  
   

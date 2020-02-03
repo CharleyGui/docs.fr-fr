@@ -35,8 +35,8 @@ Il existe un large éventail de contrôles que vous pouvez placer sur Windows Fo
  [Considérations sur l'hébergement d'un contrôle ActiveX dans un Windows Form](considerations-when-hosting-an-activex-control-on-a-windows-form.md)  
  Décrit les éléments à prendre en compte lors de la planification d’une application qui utilise des contrôles ActiveX.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Contrôles Windows Forms](index.md)  
  Fournit des liens vers des rubriques d’introduction sur les contrôles et ce que vous pouvez en faire.  
   
  [Validation des entrées d’utilisateur dans les Windows Forms](../user-input-validation-in-windows-forms.md)  

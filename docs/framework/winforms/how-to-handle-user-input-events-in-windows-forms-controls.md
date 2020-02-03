@@ -25,10 +25,10 @@ Cet exemple montre comment gérer la plupart des événements de clavier, de sou
  [!code-vb[System.Windows.Forms.UserInputWalkthrough#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.UserInputWalkthrough/VB/form1.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - des références aux assemblys System, System.Drawing et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Entrées d’utilisateur dans les Windows Forms](user-input-in-windows-forms.md)
+- [Entrée d’utilisateur dans Windows Forms](user-input-in-windows-forms.md)

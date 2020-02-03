@@ -47,8 +47,8 @@ L’impression dans Windows Forms se compose principalement de l’utilisation d
  [Guide pratique pour imprimer dans les Windows Forms en utilisant l'aperçu avant impression](how-to-print-in-windows-forms-using-print-preview.md)  
  Montre comment utiliser une <xref:System.Windows.Forms.PrintPreviewDialog> pour l’impression d’un document.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Composant PrintDocument](../controls/printdocument-component-windows-forms.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [PrintDocument, composant](../controls/printdocument-component-windows-forms.md)  
  Explique l’utilisation du composant <xref:System.Drawing.Printing.PrintDocument>.  
   
  [PrintDialog, composant](../controls/printdialog-component-windows-forms.md)  
@@ -57,7 +57,7 @@ L’impression dans Windows Forms se compose principalement de l’utilisation d
  [PrintPreviewDialog, contrôle](../controls/printpreviewdialog-control-windows-forms.md)  
  Explique l’utilisation du contrôle <xref:System.Windows.Forms.PrintPreviewDialog>.  
   
- [PageSetupDialog Component](../controls/pagesetupdialog-component-windows-forms.md)  
+ [PageSetupDialog, composant](../controls/pagesetupdialog-component-windows-forms.md)  
  Explique l’utilisation du composant <xref:System.Windows.Forms.PageSetupDialog>.  
   
  <xref:System.Drawing.Printing>  

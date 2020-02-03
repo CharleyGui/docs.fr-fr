@@ -34,7 +34,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
   
  Cette section présente les différents types d'informations d'identification et explique comment les utiliser avec les files d'attente.  
   
-### <a name="certificate"></a>Certificate  
+### <a name="certificate"></a>Certificat  
  Le type d'informations d'identification de certificat utilise un certificat X.509 pour identifier le service et le client.  
   
  Dans un scénario classique, un certificat valide est émis pour le client et le service par une autorité de certification de confiance. Lorsque la connexion est établie, le client authentifie la validité du service à l'aide du certificat du service pour décider s'il peut faire confiance au service. De la même façon, le service utilise le certificat du client pour valider l'approbation du client.  
@@ -43,7 +43,7 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
   
  Sur un ordinateur exécutant Windows, les certificats sont conservés dans plusieurs types de magasins. Pour plus d’informations sur les différents magasins, consultez [magasins de certificats](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-server-2003/cc757138(v=ws.10)).  
   
-### <a name="windows"></a>Portail  
+### <a name="windows"></a>Windows  
  Le type d'informations d'identification de message Windows utilise le protocole Kerberos.  
   
  Le protocole Kerberos est un mécanisme de sécurité qui authentifie les utilisateurs sur un domaine et permet aux utilisateurs authentifiés d'établir des contextes sécurisés avec d'autres entités sur un domaine.  
@@ -68,4 +68,4 @@ Cette section traite de la sécurité des messages WCF lors de l’utilisation d
 - [Sécurisation des messages à l’aide de la sécurité de transport](../../../../docs/framework/wcf/feature-details/securing-messages-using-transport-security.md)
 - [Sécurité du message sur Message Queuing](../../../../docs/framework/wcf/samples/message-security-over-message-queuing.md)
 - [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

@@ -40,7 +40,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
 - Surveillance du chemin d’accès du fichier mis en cache et notification à l’instance du cache des modifications apportées à l’élément analysé.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
  Pour exécuter cette procédure pas à pas, vous avez besoin des éléments suivants :
 
 - Visual Studio 2010.
@@ -60,7 +60,7 @@ La mise en cache vous permet de stocker des données en mémoire pour y accéder
 
 2. Dans le menu **fichier** , cliquez sur **nouveau**, puis sur **nouveau projet**.
 
-     La boîte de dialogue **Nouveau projet** s’affiche.
+     La boîte de dialogue **Nouveau projet** est affichée.
 
 3. Sous **modèles installés**, sélectionnez le langage de programmation que vous souhaitez utiliser (**Visual Basic** ou **C#visuel**).
 

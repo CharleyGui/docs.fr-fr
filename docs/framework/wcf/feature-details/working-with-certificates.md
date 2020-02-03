@@ -72,7 +72,7 @@ Les certificats numériques sont utilisés pour authentifier une entité en s’
 
 Lorsque vous créez un nouveau service, il est possible que vous utilisiez un certificat non émis par un certificat racine approuvé ou que le certificat émetteur lui-même ne figure pas dans le magasin Autorités de certification racine approuvées. Vous pouvez désactiver le mécanisme assurant la vérification de la chaîne d'approbation d'un certificat uniquement à des fins de développement. Pour ce faire, affectez à la propriété `CertificateValidationMode``PeerTrust` ou `PeerOrChainTrust`. L'un et l'autre des modes ci-dessus permettent de spécifier que le certificat doit s'auto-publier (approbation homologue) ou faire partie d'une chaîne d'approbation. Vous pouvez définir la propriété de n'importe laquelle des classes suivantes.
 
-|Classe|Les|
+|Class|Propriété|
 |-----------|--------------|
 |<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication>|<xref:System.ServiceModel.Security.X509ClientCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
 |<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication>|<xref:System.ServiceModel.Security.X509PeerCertificateAuthentication.CertificateValidationMode%2A?displayProperty=nameWithType>|
@@ -141,7 +141,7 @@ Vous pouvez également définir le mode dans la configuration à l’aide de l�
 
 Dans WCF, vous devez souvent spécifier un certificat ou un ensemble de certificats qu’un service ou un client doit utiliser pour authentifier, chiffrer ou signer numériquement un message. Pour ce faire, il vous suffit de rédiger un programme à l'aide de la méthode `SetCertificate` des diverses classes représentant les certificats X.509. Les classes suivantes utilisent la méthode `SetCertificate` pour spécifier un certificat.
 
-|Classe|Méthode|
+|Class|Méthode|
 |-----------|------------|
 |<xref:System.ServiceModel.Security.PeerCredential>|<xref:System.ServiceModel.Security.PeerCredential.SetCertificate%2A>|
 |<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential>|<xref:System.ServiceModel.Security.X509CertificateInitiatorClientCredential.SetCertificate%2A>|
@@ -194,4 +194,4 @@ Dans la première version de WCF, le mappage est effectué sans prise en compte 
 - <xref:System.ServiceModel.Security>
 - <xref:System.ServiceModel>
 - <xref:System.Security.Cryptography.X509Certificates.X509FindType>
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)

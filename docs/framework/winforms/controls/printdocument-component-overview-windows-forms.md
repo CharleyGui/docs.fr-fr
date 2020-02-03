@@ -33,4 +33,4 @@ Lorsqu’il est ajouté à un formulaire, le composant <xref:System.Drawing.Prin
 - <xref:System.Drawing.Graphics>
 - <xref:System.Drawing.Printing.PrintDocument>
 - [Prise en charge de l’impression dans les Windows Forms](../advanced/windows-forms-print-support.md)
-- [Composant PrintDocument](printdocument-component-windows-forms.md)
+- [PrintDocument, composant](printdocument-component-windows-forms.md)

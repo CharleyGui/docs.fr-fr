@@ -16,7 +16,7 @@ Ce document présente les étapes et les flux de travail permettant de créer un
 > [!NOTE]
 > Cet article utilise [Visual Studio Code](https://code.visualstudio.com) sur macOS.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Installez le [SDK .NET Core](https://dotnet.microsoft.com/download). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
 

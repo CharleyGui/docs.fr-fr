@@ -38,7 +38,7 @@ Un gestionnaire d'événements est une procédure de votre code qui détermine l
 
  [Comment : créer des gestionnaires d’événements à l’aide du concepteur](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/zwwsdtbk(v=vs.100)) Décrit comment utiliser l’Concepteur Windows Forms pour créer des gestionnaires d’événements.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
  [Événements](../../standard/events/index.md)\
  Fournit des liens vers des rubriques sur la gestion et le déclenchement d’événements à l’aide de l' .NET Framework.

@@ -27,7 +27,7 @@ L'exemple de code suivant montre comment valider les données entrées par un ut
  [!code-vb[System.Windows.Forms.DataGridViewDataValidation#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewDataValidation/VB/datavalidation.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Data, System.Windows.Forms et System.XML.  
   

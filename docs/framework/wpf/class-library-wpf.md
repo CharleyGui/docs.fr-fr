@@ -17,7 +17,7 @@ Les liens suivants font référence aux espaces de noms qui contiennent des API 
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
   
 - <xref:Microsoft.Build.Tasks.Windows>  
   

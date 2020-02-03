@@ -21,7 +21,7 @@ ms.locfileid: "76747142"
  [Vue d’ensemble du composant MainMenu](mainmenu-component-overview-windows-forms.md)  
  Explique ce qu’est ce composant et ses principales fonctionnalités et propriétés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.MainMenu>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   

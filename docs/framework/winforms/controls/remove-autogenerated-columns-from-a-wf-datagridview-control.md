@@ -37,7 +37,7 @@ Lorsque votre contrôle de <xref:System.Windows.Forms.DataGridView> est configur
  [!code-vb[System.Windows.Forms.DataGridViewMisc#110](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#110)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` lié à une table qui contient des colonnes `Fax` et `CustomerID`, telles que la table `Customers` dans l’exemple de base de données Northwind.  
   

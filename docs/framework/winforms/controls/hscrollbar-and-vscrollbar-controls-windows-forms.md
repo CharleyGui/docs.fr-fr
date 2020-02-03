@@ -22,13 +22,13 @@ Les contrôles de barre de défilement Windows Forms permettent une navigation f
  [Vue d'ensemble des contrôles HScrollBar et VScrollBar](hscrollbar-and-vscrollbar-controls-overview-windows-forms.md)  
  Présente les concepts généraux des contrôles <xref:System.Windows.Forms.HScrollBar> et <xref:System.Windows.Forms.VScrollBar> qui permettent aux utilisateurs de faire défiler horizontalement et verticalement de grandes quantités d'informations.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.HScrollBar>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.VScrollBar>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

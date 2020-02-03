@@ -1,6 +1,6 @@
 ---
 title: Commande dotnet sln
-description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et lister des projets dans un fichier solution.
+description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et répertorier des projets dans un fichier solution.
 ms.date: 10/29/2019
 ms.openlocfilehash: e344deaae0867202a79a3c38df48a2be8d4d7d13
 ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
@@ -17,7 +17,7 @@ ms.locfileid: "76733085"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet sln` : Modifie un fichier solution .NET Core.
 
@@ -80,11 +80,11 @@ dotnet sln add [-h|--help]
 
 - **`--in-root`**
 
-  Place les projets à la racine de la solution, plutôt que de créer un dossier de solution. Option disponible à partir du kit SDK .NET Core 3.0.
+  Place les projets à la racine de la solution, plutôt que de créer un dossier de solution. Disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-s|--solution-folder`**
 
-  Chemin d’accès du dossier de solution de destination auquel ajouter les projets. Option disponible à partir du kit SDK .NET Core 3.0.
+  Chemin d’accès du dossier de solution de destination auquel ajouter les projets. Disponible à partir du kit SDK .NET Core 3.0.
 
 ### `remove`
 

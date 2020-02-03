@@ -25,7 +25,7 @@ Dans de nombreuses applications, vous pouvez rendre votre interface utilisateur 
  [Guide pratique pour utiliser un thread d'arrière-plan pour rechercher des fichiers](how-to-use-a-background-thread-to-search-for-files.md)  
  Montre comment utiliser l’espace de noms <xref:System.Threading> et la méthode <xref:System.Windows.Forms.Control.BeginInvoke%2A> pour rechercher des fichiers de façon asynchrone.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.ComponentModel.BackgroundWorker>  
  Documente un composant qui encapsule un thread de travail pour les opérations asynchrones.  
   
@@ -35,7 +35,7 @@ Dans de nombreuses applications, vous pouvez rendre votre interface utilisateur 
  <xref:System.Windows.Forms.PictureBox.LoadAsync%2A>  
  Décrit comment charger une image de manière asynchrone.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Guide pratique pour exécuter une opération en arrière-plan](how-to-run-an-operation-in-the-background.md)  
  Montre comment effectuer une opération qui prend du temps avec le composant <xref:System.ComponentModel.BackgroundWorker>.  
   

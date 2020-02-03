@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du contrôle SplitContainer
+title: Vue d'ensemble du contrôle SplitContainer
 ms.date: 03/30/2017
 f1_keywords:
 - SplitContainer
@@ -38,14 +38,14 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.SplitContainer> peut être
   
 ## <a name="commonly-used-properties-methods-and-events"></a>Propriétés, méthodes et événements couramment utilisés  
   
-|Name|Description|  
+|Nom|Description|  
 |----------|-----------------|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.FixedPanel%2A>|Détermine le panneau qui conservera la même taille après le redimensionnement du contrôle <xref:System.Windows.Forms.SplitContainer>.|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>|Détermine si le séparateur peut être déplacé à l’aide du clavier ou de la souris.|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.Orientation%2A>|Détermine si le séparateur est organisé verticalement ou horizontalement.|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>|Détermine la distance en pixels entre le bord supérieur gauche et la barre de fractionnement déplaçable.|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>|Détermine la distance minimale, en pixels, que le séparateur peut déplacer par l’utilisateur.|  
-|Propriété<xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A>|Détermine l’épaisseur, en pixels, du séparateur.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.FixedPanel%2A>|Détermine le panneau qui conservera la même taille après le redimensionnement du contrôle <xref:System.Windows.Forms.SplitContainer>.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.IsSplitterFixed%2A>|Détermine si le séparateur peut être déplacé à l’aide du clavier ou de la souris.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.Orientation%2A>|Détermine si le séparateur est organisé verticalement ou horizontalement.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.SplitterDistance%2A>|Détermine la distance en pixels entre le bord supérieur gauche et la barre de fractionnement déplaçable.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.SplitterIncrement%2A>|Détermine la distance minimale, en pixels, que le séparateur peut déplacer par l’utilisateur.|  
+|Propriété <xref:System.Windows.Forms.SplitContainer.SplitterWidth%2A>|Détermine l’épaisseur, en pixels, du séparateur.|  
 |Événement<xref:System.Windows.Forms.SplitContainer.SplitterMoving>|Se produit lorsque le séparateur est déplacé.|  
 |Événement<xref:System.Windows.Forms.SplitContainer.SplitterMoved>|Se produit lorsque le séparateur a été déplacé.|  
   

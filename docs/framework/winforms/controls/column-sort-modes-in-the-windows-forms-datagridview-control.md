@@ -15,7 +15,7 @@ ms.locfileid: "76744193"
 # <a name="column-sort-modes-in-the-windows-forms-datagridview-control"></a>Modes de tri des colonnes du contrôle DataGridView Windows Forms
 les colonnes <xref:System.Windows.Forms.DataGridView> ont trois modes de tri. Le mode de tri de chaque colonne est spécifié par le biais de la propriété <xref:System.Windows.Forms.DataGridViewColumn.SortMode%2A> de la colonne, qui peut être définie sur l’une des <xref:System.Windows.Forms.DataGridViewColumnSortMode> valeurs d’énumération suivantes.  
   
-|Valeur de `DataGridViewColumnSortMode`|Description|  
+|Valeur `DataGridViewColumnSortMode`|Description|  
 |----------------------------------------|-----------------|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.Automatic>|Valeur par défaut pour les colonnes de zone de texte. À moins que les en-têtes de colonne soient utilisés pour la sélection, le simple clic sur l’en-tête de colonne trie automatiquement les <xref:System.Windows.Forms.DataGridView> par cette colonne et affiche un glyphe indiquant l’ordre de tri.|  
 |<xref:System.Windows.Forms.DataGridViewColumnSortMode.NotSortable>|Valeur par défaut pour les colonnes non-zone de texte. Vous pouvez trier cette colonne par programme. Toutefois, il n’est pas destiné au tri, donc aucun espace n’est réservé pour le glyphe de tri.|  

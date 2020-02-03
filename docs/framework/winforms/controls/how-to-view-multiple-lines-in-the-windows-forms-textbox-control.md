@@ -33,7 +33,7 @@ Par défaut, le contrôle de <xref:System.Windows.Forms.TextBox> Windows Forms a
   
 2. Affectez à la propriété <xref:System.Windows.Forms.TextBox.ScrollBars%2A> une valeur appropriée.  
   
-    |Value|Description|  
+    |Valeur|Description|  
     |-----------|-----------------|  
     |<xref:System.Windows.Forms.ScrollBars.None>|Utilisez cette valeur si le texte est un paragraphe qui correspond presque toujours au contrôle. L’utilisateur peut utiliser le pointeur de la souris pour se déplacer dans le contrôle si le texte est trop long pour être affiché en une seule fois.|  
     |<xref:System.Windows.Forms.ScrollBars.Horizontal>|Utilisez cette valeur si vous souhaitez afficher une liste de lignes, dont certaines peuvent être plus longues que la largeur du contrôle <xref:System.Windows.Forms.TextBox>.|  
@@ -41,10 +41,10 @@ Par défaut, le contrôle de <xref:System.Windows.Forms.TextBox> Windows Forms a
   
 3. Affectez à la propriété <xref:System.Windows.Forms.TextBoxBase.WordWrap%2A> une valeur appropriée.  
   
-    |Value|Description|  
+    |Valeur|Description|  
     |-----------|-----------------|  
     |`false`|Le texte dans le contrôle ne sera pas automatiquement renvoyé à la ligne. il défilera vers la droite jusqu’à ce qu’un saut de ligne soit atteint. Utilisez cette valeur si vous avez choisi <xref:System.Windows.Forms.ScrollBars.Horizontal> barres de défilement ou <xref:System.Windows.Forms.ScrollBars.Both>ci-dessus.|  
-    |`true` (par défaut)|La barre de défilement horizontale n’apparaît pas. Utilisez cette valeur si vous avez choisi <xref:System.Windows.Forms.ScrollBars.Vertical> barres de défilement ou <xref:System.Windows.Forms.ScrollBars.None>ci-dessus pour afficher un ou plusieurs paragraphes.|  
+    |`true` (valeur par défaut)|La barre de défilement horizontale n’apparaît pas. Utilisez cette valeur si vous avez choisi <xref:System.Windows.Forms.ScrollBars.Vertical> barres de défilement ou <xref:System.Windows.Forms.ScrollBars.None>ci-dessus pour afficher un ou plusieurs paragraphes.|  
   
 ## <a name="see-also"></a>Voir aussi
 

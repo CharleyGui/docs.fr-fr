@@ -72,9 +72,9 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
 |Adresse de file d'attente basée sur URI WCF|Utiliser la propriété Active Directory|Propriété de protocole de transfert de mise en file d'attente|Noms de format MSMQ résultants|  
 |----------------------------------|-----------------------------------|--------------------------------------|---------------------------------|  
-|Net.msmq://\<machine-name>/private/abc|False (valeur par défaut)|Native (valeur par défaut)|DIRECT=OS:machine-name\private$\abc|  
-|Net.msmq://\<machine-name>/private/abc|False|SRMP|DIRECT =http://machine/msmq/private $/ABC|  
-|Net.msmq://\<machine-name>/private/abc|True|Natif|PUBLIC=un-guid (le GUID de la file d'attente)|  
+|NET. msmq://\<nom-machine >/Private/ABC|False (valeur par défaut)|Native (valeur par défaut)|DIRECT=OS:machine-name\private$\abc|  
+|NET. msmq://\<nom-machine >/Private/ABC|False|SRMP|DIRECT =http://machine/msmq/private$/ABC|  
+|NET. msmq://\<nom-machine >/Private/ABC|True|Natif|PUBLIC=un-guid (le GUID de la file d'attente)|  
   
 ### <a name="reading-messages-from-the-dead-letter-queue-or-the-poison-message-queue"></a>Lecture de messages à partir de la file d'attente de lettres mortes ou de la file d'attente de messages incohérents  
  Pour lire des messages à partir d'une file d'attente de message incohérents qui est une sous-file d'attente de la file d'attente cible, ouvrez le `ServiceHost` avec l'adresse de la sous-file d'attente.  
@@ -100,7 +100,7 @@ Cette rubrique discute comment les clients adressent des services qui lisent à 
   
  Notez que vous pouvez utiliser des noms de format directs, et des noms de format publics et privés (requiert l'intégration Active Directory) uniquement lors de la réception de messages à partir d'une file d'attente à l'aide de `MsmqIntegrationBinding`. Il est toutefois recommandé d'utiliser des noms de format directs. Par exemple, sur Windows Vista, l’utilisation d’un autre nom de format provoque une erreur, car le système tente d’ouvrir une sous-file d’attente, qui peut uniquement être ouverte avec des noms de format directs.  
   
- Lors de l’adressage SRMP à l’aide de `MsmqIntegrationBinding`, il n’est pas obligatoire d’ajouter /msmq/ dans le nom de format direct pour aider les services Internet (IIS) à effectuer la distribution. Par exemple : lors de l’adressage d’une file d’attente ABC à l’aide du protocole SRMP, au lieu de DIRECT =http://adatum.com/msmq/private $/ABC, vous devez utiliser DIRECT =http://adatum.com/private $/ABC.  
+ Lors de l’adressage SRMP à l’aide de `MsmqIntegrationBinding`, il n’est pas obligatoire d’ajouter /msmq/ dans le nom de format direct pour aider les services Internet (IIS) à effectuer la distribution. Par exemple : lors de l’adressage d’une file d’attente ABC à l’aide du protocole SRMP, au lieu de DIRECT =http://adatum.com/msmq/private$/ABC, vous devez utiliser DIRECT =http://adatum.com/private$/ABC.  
   
  Notez que vous ne pouvez pas utiliser l'adressage net.msmq:// avec `MsmqIntegrationBinding`. Étant donné que `MsmqIntegrationBinding` prend en charge l’adressage de nom de format MSMQ de forme libre, vous pouvez utiliser un service WCF qui utilise cette liaison pour utiliser les fonctionnalités de multidiffusion et de liste de distribution dans MSMQ. Une exception concerne la spécification de `CustomDeadLetterQueue` lors de l'utilisation du `MsmqIntegrationBinding`. Il doit être de la forme net.msmq://, semblable à la façon dont il est spécifié à l'aide du `NetMsmqBinding`.  
   

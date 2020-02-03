@@ -47,7 +47,7 @@ L’affichage et la manipulation des données sont des fonctions distinctes : l
 > [!NOTE]
 > Si vous connaissez le contrôle DataGrid dans Visual Basic 6.0, vous constaterez qu'il existe des différences importantes avec le contrôle Windows Forms <xref:System.Windows.Forms.DataGrid>.
 
-Quand la grille est liée à un <xref:System.Data.DataSet>, les colonnes et les lignes sont créées, mises en forme et remplies automatiquement Pour plus d'informations, consultez [Data Binding and Windows Forms](../data-binding-and-windows-forms.md). Une fois le contrôle <xref:System.Windows.Forms.DataGrid> généré, vous pouvez ajouter, supprimer, réorganiser et mettre en forme les colonnes et les lignes en fonction de vos besoins.
+Quand la grille est liée à un <xref:System.Data.DataSet>, les colonnes et les lignes sont créées, mises en forme et remplies automatiquement Pour plus d’informations, consultez [Liaison de données et Windows Forms](../data-binding-and-windows-forms.md). Une fois le contrôle <xref:System.Windows.Forms.DataGrid> généré, vous pouvez ajouter, supprimer, réorganiser et mettre en forme les colonnes et les lignes en fonction de vos besoins.
 
 ## <a name="binding-data-to-the-control"></a>Liaison de données au contrôle
 
@@ -100,9 +100,9 @@ Les relations entre un ensemble de tables sont présentées aux utilisateurs à 
 
 ## <a name="columns-and-rows"></a>Colonnes et lignes
 
-Le <xref:System.Windows.Forms.DataGrid> se compose d’une collection d’objets <xref:System.Windows.Forms.DataGridTableStyle> contenus dans la propriété <xref:System.Windows.Forms.DataGrid.TableStyles%2A> du contrôle <xref:System.Windows.Forms.DataGrid>. Un style de table peut contenir une collection d'objets <xref:System.Windows.Forms.DataGridColumnStyle> contenus dans la propriété <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> du <xref:System.Windows.Forms.DataGridTableStyle>. Vous pouvez modifier les propriétés <xref:System.Windows.Forms.DataGrid.TableStyles%2A> et <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> à l’aide d’éditeurs de collections accessibles via la fenêtre **Propriétés** .
+Le <xref:System.Windows.Forms.DataGrid> se compose d’une collection d’objets <xref:System.Windows.Forms.DataGridTableStyle> contenus dans la propriété <xref:System.Windows.Forms.DataGrid> du contrôle <xref:System.Windows.Forms.DataGrid.TableStyles%2A>. Un style de table peut contenir une collection d'objets <xref:System.Windows.Forms.DataGridColumnStyle> contenus dans la propriété <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> du <xref:System.Windows.Forms.DataGridTableStyle>. Vous pouvez modifier les propriétés <xref:System.Windows.Forms.DataGrid.TableStyles%2A> et <xref:System.Windows.Forms.DataGridTableStyle.GridColumnStyles%2A> à l’aide d’éditeurs de collections accessibles via la fenêtre **Propriétés** .
 
-Tout <xref:System.Windows.Forms.DataGridTableStyle> associé au contrôle <xref:System.Windows.Forms.DataGrid> est accessible via <xref:System.Windows.Forms.GridTableStylesCollection>. <xref:System.Windows.Forms.GridTableStylesCollection> peut être modifié dans le concepteur avec l’éditeur de collection <xref:System.Windows.Forms.DataGridTableStyle> ou par programmation via la propriété <xref:System.Windows.Forms.DataGrid.TableStyles%2A> du contrôle <xref:System.Windows.Forms.DataGrid>.
+Tout <xref:System.Windows.Forms.DataGridTableStyle> associé au contrôle <xref:System.Windows.Forms.DataGrid> est accessible via <xref:System.Windows.Forms.GridTableStylesCollection>. <xref:System.Windows.Forms.GridTableStylesCollection> peut être modifié dans le concepteur avec l’éditeur de collection <xref:System.Windows.Forms.DataGridTableStyle> ou par programmation via la propriété <xref:System.Windows.Forms.DataGrid> du contrôle <xref:System.Windows.Forms.DataGrid.TableStyles%2A>.
 
 L’illustration suivante montre les objets inclus dans le contrôle DataGrid :
 
@@ -142,7 +142,7 @@ Si vous avez créé un style de table sans y ajouter de styles de colonne, Visua
 
 Vous pouvez appliquer une mise en forme au contrôle <xref:System.Windows.Forms.DataGrid>, par exemple des styles de bordure, des styles de quadrillage, des polices, des propriétés de légende, un alignement des données et des couleurs d'arrière-plan en alternance sur les lignes. Pour plus d’informations, consultez [Guide pratique pour mettre en forme le contrôle DataGrid Windows Forms](how-to-format-the-windows-forms-datagrid-control.md).
 
-## <a name="events"></a>Events
+## <a name="events"></a>Événements
 
 Outre les événements de contrôle courants tels que <xref:System.Windows.Forms.Control.MouseDown>, <xref:System.Windows.Forms.Control.Enter> et <xref:System.Windows.Forms.DataGrid.Scroll>, le contrôle <xref:System.Windows.Forms.DataGrid> prend en charge les événements associés à la modification et à la navigation dans la grille. La propriété <xref:System.Windows.Forms.DataGrid.CurrentCell%2A> détermine la cellule sélectionnée. L'événement <xref:System.Windows.Forms.DataGrid.CurrentCellChanged> est déclenché quand l'utilisateur navigue vers une nouvelle cellule. Quand l'utilisateur navigue vers une nouvelle table via des relations parent/enfant, l'événement <xref:System.Windows.Forms.DataGrid.Navigate> est déclenché. L'événement <xref:System.Windows.Forms.DataGrid.BackButtonClick> est déclenché quand l'utilisateur clique sur le bouton Précédent pendant qu'il visualise une table enfant et l'événement <xref:System.Windows.Forms.DataGrid.ShowParentDetailsButtonClick> est déclenché quand l'utilisateur clique sur l'icône Afficher/masquer les lignes parentes.
 

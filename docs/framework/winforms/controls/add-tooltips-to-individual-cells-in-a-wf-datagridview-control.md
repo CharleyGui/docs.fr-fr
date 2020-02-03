@@ -32,7 +32,7 @@ Par défaut, les info-bulles sont utilisées pour afficher les valeurs de <xref:
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
-- Cet exemple nécessite :  
+- Cet exemple nécessite :  
   
 - Un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` qui contient une colonne nommée `Rating` pour afficher les valeurs de chaîne de 1 à 4 symboles d’astérisques (« * »). L’événement <xref:System.Windows.Forms.DataGridView.CellFormatting> du contrôle doit être associé à la méthode de gestionnaire d’événements illustrée dans l’exemple.  
   

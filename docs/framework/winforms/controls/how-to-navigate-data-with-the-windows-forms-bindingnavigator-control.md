@@ -47,7 +47,7 @@ Le contrôle <xref:System.Windows.Forms.BindingNavigator> dans Windows Forms per
  [!code-vb[System.Windows.Forms.BindingNavigatorNavigate#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.BindingNavigatorNavigate/VB/Form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Data, System.Drawing, System.Windows.Forms et System.Xml.  
   
@@ -55,4 +55,4 @@ Le contrôle <xref:System.Windows.Forms.BindingNavigator> dans Windows Forms per
 
 - <xref:System.Windows.Forms.BindingNavigator>
 - [BindingNavigator, contrôle](bindingnavigator-control-windows-forms.md)
-- [ToolStrip, contrôle](toolstrip-control-windows-forms.md)
+- [Contrôle ToolStrip](toolstrip-control-windows-forms.md)

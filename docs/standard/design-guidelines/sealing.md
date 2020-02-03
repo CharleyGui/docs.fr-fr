@@ -32,7 +32,7 @@ L’une des fonctionnalités des frameworks orientés objet est que les dévelop
 
 - La classe hérite de nombreux membres virtuels et le coût de leur scellement individuellement compenserait les avantages de laisser la classe non scellée.
 
-- La classe est un attribut qui nécessite une recherche très rapide au moment de l’exécution. Les attributs scellés ont des niveaux de performances légèrement supérieurs à ceux des attributs non scellés. Consultez [attributs](../../../docs/standard/design-guidelines/attributes.md).
+- La classe est un attribut qui nécessite une recherche très rapide au moment de l’exécution. Les attributs scellés ont des niveaux de performances légèrement supérieurs à ceux des attributs non scellés. consultez [attributs](../../../docs/standard/design-guidelines/attributes.md).
 
  ❌ ne déclarez pas de membres protégés ou virtuels sur les types sealed.
 

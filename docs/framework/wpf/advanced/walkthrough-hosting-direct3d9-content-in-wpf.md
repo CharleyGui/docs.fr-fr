@@ -27,9 +27,9 @@ Lors de cette procédure pas à pas, vous allez exécuter les tâches suivantes 
 
  Quand vous aurez terminé, vous saurez comment héberger le contenu Direct3D9 dans une application WPF.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
-Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
+Vous devez disposer des éléments suivants pour exécuter cette procédure pas à pas :
 
 - Visual Studio.
 

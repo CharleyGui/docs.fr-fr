@@ -22,7 +22,7 @@ Les contrôles <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windo
 
 Le <xref:System.Windows.Forms.TableLayoutPanel> réorganise son contenu dans une grille, en fournissant des fonctionnalités similaires à l’élément de > de tableau HTML \<. Ses cellules sont organisées dans des lignes et des colonnes dont la taille peut varier. Pour plus d'informations, consultez [Walkthrough: Arranging Controls on Windows Forms Using a TableLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-tablelayoutpanel.md).
 
-<xref:System.Windows.Forms.FlowLayoutPanel> organise son contenu dans un sens de flux spécifique : horizontal ou vertical. Vous pouvez encapsuler son contenu d'une ligne à la suivante ou d'une colonne à la suivante. Vous pouvez également découper son contenu au lieu de l'encapsuler. Cette procédure pas à pas décrit notamment les tâches suivantes :
+<xref:System.Windows.Forms.FlowLayoutPanel> organise son contenu dans un sens de flux spécifique : horizontal ou vertical. Vous pouvez encapsuler son contenu d'une ligne à la suivante ou d'une colonne à la suivante. Vous pouvez également découper son contenu au lieu de l'encapsuler. Cette procédure pas à pas décrit notamment les tâches suivantes :
 
 - Création d’un projet Windows Forms
 
@@ -137,7 +137,7 @@ Lorsque vous aurez terminé, vous aurez une compréhension du rôle joué par ce
 
 ### <a name="to-insert-a-control-by-drawing-its-outline"></a>Pour insérer un contrôle en dessinant son contour
 
-1. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
+1. Dans la **Boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
 
 2. Placez le pointeur de la souris sur le contrôle <xref:System.Windows.Forms.FlowLayoutPanel> . Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.Button> .
 
@@ -159,11 +159,11 @@ Lorsque vous aurez terminé, vous aurez une compréhension du rôle joué par ce
 
 ### <a name="to-reparent-existing-controls"></a>Pour attribuer un nouveau parent aux contrôles existants
 
-1. Faites glisser trois contrôles <xref:System.Windows.Forms.Button> de la **Boîte à outils** vers le formulaire. Disposez-les près les uns des autres en les laissant non alignés.
+1. Faites glisser trois contrôles <xref:System.Windows.Forms.Button> de la **boîte à outils** vers le formulaire. Placez-les près les uns des autres, mais laissez-les non alignés.
 
-2. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.FlowLayoutPanel> . Ne la faites pas glisser sur le formulaire.
+2. Dans la **Boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.FlowLayoutPanel> . Ne la faites pas glisser sur le formulaire.
 
-3. Placez le pointeur de la souris près des trois contrôles <xref:System.Windows.Forms.Button> . Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.FlowLayoutPanel> .
+3. Déplacez le pointeur de la souris près des trois contrôles <xref:System.Windows.Forms.Button> . Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.FlowLayoutPanel> .
 
 4. Cliquez et maintenez le bouton de la souris enfoncé.
 
@@ -172,7 +172,7 @@ Lorsque vous aurez terminé, vous aurez une compréhension du rôle joué par ce
 6. Relâchez le bouton de la souris. Notez que les trois contrôles <xref:System.Windows.Forms.Button> sont insérés dans le contrôle <xref:System.Windows.Forms.FlowLayoutPanel> .
 
 ## <a name="next-steps"></a>Étapes suivantes
- Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Voici quelques suggestions à explorer :
+ Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Suggestions pour des recherches approfondies :
 
 - Agrandissez l’un des contrôles <xref:System.Windows.Forms.Button> et observez l’effet du redimensionnement sur la disposition.
 

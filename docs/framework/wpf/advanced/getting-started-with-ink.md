@@ -20,11 +20,11 @@ ms.locfileid: "76737886"
 
 Windows Presentation Foundation (WPF) dispose d’une fonctionnalité d’encre qui facilite l’incorporation de l’encre numérique dans votre application.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour utiliser les exemples suivants, commencez par installer [Visual Studio](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019). Il permet également de savoir comment écrire des applications WPF de base. Pour obtenir de l’aide sur la prise en main de WPF, consultez [procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md).
 
-## <a name="quick-start"></a>Démarrage rapide de la
+## <a name="quick-start"></a>Démarrage rapide
 
 Cette section vous aide à écrire une application WPF simple qui collecte de l’encre.
 

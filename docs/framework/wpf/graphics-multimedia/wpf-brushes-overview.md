@@ -26,7 +26,7 @@ Exemples de pinceaux
   
  La plupart des objets visuels vous permettent de spécifier la façon dont ils sont peints. Le tableau suivant répertorie certains objets et propriétés courants avec lesquels vous pouvez utiliser un <xref:System.Windows.Media.Brush>.  
   
-|Classe|Propriétés de pinceau|  
+|Class|Propriétés de pinceau|  
 |-----------|----------------------|  
 |<xref:System.Windows.Controls.Border>|<xref:System.Windows.Controls.Border.BorderBrush%2A>, <xref:System.Windows.Controls.Border.Background%2A>|  
 |<xref:System.Windows.Controls.Control>|<xref:System.Windows.Controls.Control.Background%2A>, <xref:System.Windows.Controls.Control.Foreground%2A>|  
@@ -165,10 +165,10 @@ Rectangle peint à l’aide d’un VisualBrush
 - <xref:System.Windows.Media.Brush>
 - <xref:System.Windows.Media.Brushes>
 - [Vue d’ensemble de la peinture avec des couleurs unies ou des dégradés](painting-with-solid-colors-and-gradients-overview.md)
-- [Peinture avec des images, des dessins et des objets visuels](painting-with-images-drawings-and-visuals.md)
+- [Peinture avec des objets d'image, de dessin et visuels](painting-with-images-drawings-and-visuals.md)
 - [Vue d’ensemble des objets Freezable](../advanced/freezable-objects-overview.md)
 - [Pinceaux, exemple](https://go.microsoft.com/fwlink/?LinkID=159973)
 - [ImageBrush, exemple](https://go.microsoft.com/fwlink/?LinkID=160005)
 - [VisualBrush Sample](https://go.microsoft.com/fwlink/?LinkID=160049) (Exemple de VisualBrush)
-- [Rubriques pratiques](brushes-how-to-topics.md)
+- [Rubriques Comment](brushes-how-to-topics.md)
 - [Autres recommandations relatives aux performances](../advanced/optimizing-performance-other-recommendations.md)

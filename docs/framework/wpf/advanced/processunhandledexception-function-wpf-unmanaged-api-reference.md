@@ -29,11 +29,11 @@ void __stdcall ProcessUnhandledException(
 )  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  errorMsg  
  Message d'erreur.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

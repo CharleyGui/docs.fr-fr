@@ -79,7 +79,7 @@ Une table de choix est une table de données ayant une colonne qui affiche les d
   
     7. Remplacez le nom du jeu de données par défaut, si vous le souhaitez.  
   
-    8. Cliquez sur **Finish**.  
+    8. Cliquez sur **Terminer**.  
   
 4. Dans la zone de liste déroulante **Afficher le membre**, sélectionnez le nom de la colonne (par exemple ContactName) à afficher dans la zone de liste modifiable.  
   

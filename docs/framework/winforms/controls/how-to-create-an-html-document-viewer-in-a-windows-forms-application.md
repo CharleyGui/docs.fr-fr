@@ -33,7 +33,7 @@ Vous pouvez utiliser le contrôle <xref:System.Windows.Forms.WebBrowser> pour af
      [!code-vb[WebBrowserMisc#21](~/samples/snippets/visualbasic/VS_Snippets_Winforms/WebBrowserMisc/vb/WebBrowserMisc.vb#21)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.WebBrowser> nommé `webBrowser1` ;  
   

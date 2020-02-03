@@ -35,12 +35,12 @@ Le contrôle Windows Forms `SplitContainer` peut être considéré comme un comp
   
  Consultez également [Comment : fractionner une fenêtre horizontalement à l’aide du concepteur](how-to-split-a-window-horizontally-using-the-designer.md), [Comment : créer une interface de style Explorateur Windows sur un Windows Form](how-to-create-a-windows-explorer-style-interface-on-a-windows-form.md), [Comment : créer une interface utilisateur multivolet avec Windows Forms à l’aide du concepteur](create-a-multipane-user-interface-with-wf-using-the-designer.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.SplitContainer>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Contrôles Windows Forms](index.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Contrôles Windows Forms](index.md)  
  Fournit des liens vers des rubriques sur les contrôles conçus spécifiquement pour fonctionner avec Windows Forms.  
   
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  

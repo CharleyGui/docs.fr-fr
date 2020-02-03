@@ -55,4 +55,4 @@ Dans une application Windows, le moyen le plus simple de parcourir les enregistr
 - [Sources de données prises en charge par les Windows Forms](data-sources-supported-by-windows-forms.md)
 - [Notification de modifications dans la liaison de données Windows Forms](change-notification-in-windows-forms-data-binding.md)
 - [Liaison de données et Windows Forms](data-binding-and-windows-forms.md)
-- [Liaison de données Windows Forms](windows-forms-data-binding.md)
+- [Liaison de données Windows Forms](windows-forms-data-binding.md)

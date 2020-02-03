@@ -34,13 +34,13 @@ ms.locfileid: "76742852"
  [Procédure pas à pas : mise à jour des informations de barre d'état au moment de l'exécution](walkthrough-updating-status-bar-information-at-run-time.md)  
  Explique comment contrôler par programmation les données dans les panneaux de la barre d’État.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.StatusBar>  
  Fournit des informations de référence sur la classe et ses membres.  
   
  <xref:System.Windows.Forms.ToolStripStatusLabel>  
  Remplace et ajoute des fonctionnalités au contrôle <xref:System.Windows.Forms.StatusBar>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

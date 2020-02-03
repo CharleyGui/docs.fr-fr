@@ -128,11 +128,11 @@ ms.locfileid: "76743331"
   
  Tableau 3 : Autorisations LocalIntranet et Internet  
   
-|Autorisation|Attribute|LocalIntranet|Internet|  
+|Autorisation|Attribut|LocalIntranet|Internet|  
 |----------------|---------------|-------------------|--------------|  
 |DNS|Serveurs d’accès DNS|Oui|Non|  
-|Environment Variables|Lecture|Oui|Non|  
-|Boîtes de dialogue de fichiers|Open|Oui|Oui|  
+|Variables d’environnement|Lecture|Oui|Non|  
+|Boîtes de dialogue de fichiers|Ouvrir|Oui|Oui|  
 |Boîtes de dialogue de fichiers|Unrestricted|Oui|Non|  
 |Stockage isolé|Isolement de l’assembly par utilisateur|Oui|Non|  
 |Stockage isolé|Isolement inconnu|Oui|Oui|  
@@ -165,6 +165,6 @@ ms.locfileid: "76743331"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Security](security-wpf.md)
+- [Sécurité](security-wpf.md)
 - [Stratégie de sécurité de WPF - sécurité de la plateforme](wpf-security-strategy-platform-security.md)
 - [Stratégie de sécurité de WPF - ingénierie de sécurité](wpf-security-strategy-security-engineering.md)

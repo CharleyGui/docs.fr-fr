@@ -29,7 +29,7 @@ Quand vous activez la réorganisation des colonnes dans le contrôle <xref:Syste
      [!code-vb[System.Windows.Forms.DataGridViewMisc#060](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#060)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ;  
   

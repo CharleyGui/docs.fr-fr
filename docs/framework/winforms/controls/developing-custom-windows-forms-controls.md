@@ -43,14 +43,14 @@ Les contrôles Windows Forms sont des composants réutilisables qui encapsulent 
  [Multithreading dans les contrôles Windows Forms](multithreading-in-windows-forms-controls.md)  
  Montre comment implémenter des contrôles multithread.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Control?displayProperty=nameWithType>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Attributs en mode design pour les composants](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/tk67c2t8(v=vs.120))  
  Répertorie les attributs de métadonnées à appliquer aux composants et aux contrôles pour qu'ils s'affichent correctement au moment du design dans les concepteurs visuels.  
   

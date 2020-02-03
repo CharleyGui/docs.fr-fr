@@ -32,7 +32,7 @@ Quand vous utilisez un composant <xref:System.Windows.Forms.BindingSource> pour 
  [!code-vb[System.Windows.Forms.DataConnector.AddingNew#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.AddingNew/VB/form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Data, System.Drawing et System.Windows.Forms.  
   

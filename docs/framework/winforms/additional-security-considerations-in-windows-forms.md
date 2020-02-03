@@ -74,7 +74,7 @@ ms.locfileid: "76739807"
   
  Certains membres de Windows Forms fournissent un accès non managé qui nécessite l’autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode>. Le tableau suivant répertorie les membres de l’espace de noms <xref:System.Windows.Forms> qui requièrent l’autorisation. Pour plus d’informations sur les autorisations requises pour un membre, consultez la documentation de la bibliothèque de classes .NET Framework.  
   
-|Composant|Member|  
+|Composant|Membre|  
 |---------------|------------|  
 |<xref:System.Windows.Forms.Application>|Méthode -   <xref:System.Windows.Forms.Application.AddMessageFilter%2A><br />-   <xref:System.Windows.Forms.Application.CurrentInputLanguage%2A> propriété<br />Méthode -   `Exit`<br />Méthode -   <xref:System.Windows.Forms.Application.ExitThread%2A><br />événement -   <xref:System.Windows.Forms.Application.ThreadException>|  
 |<xref:System.Windows.Forms.CommonDialog>|Méthode -   <xref:System.Windows.Forms.CommonDialog.HookProc%2A><br />-   <xref:System.Windows.Forms.CommonDialog.OwnerWndProc%2A>\, méthode<br />Méthode -   <xref:System.Windows.Forms.CommonDialog.Reset%2A><br />Méthode -   <xref:System.Windows.Forms.CommonDialog.RunDialog%2A>|  

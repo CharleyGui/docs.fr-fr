@@ -26,9 +26,9 @@ L'exemple de code suivant montre comment utiliser les colonnes d'image <xref:Sys
  [!code-vb[System.Windows.Forms.DataGridView.ImageColumn_TicTacToe#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.ImageColumn_TicTacToe/VB/tictactoe.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 

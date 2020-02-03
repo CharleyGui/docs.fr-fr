@@ -17,7 +17,7 @@ ms.locfileid: "76734310"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet build` : Génère un projet et l’ensemble de ses dépendances.
 
@@ -41,7 +41,7 @@ La commande `dotnet build` génère le projet et ses dépendances dans un ensemb
 - Un fichier *. runtimeconfig. JSON* , qui spécifie le runtime partagé et sa version pour une application.
 - Les autres bibliothèques dont le projet dépend (par le biais de références de projet ou de références de package NuGet).
 
-Pour les projets exécutables ciblant des versions antérieures à .NET Core 3,0, les dépendances de bibliothèque de NuGet ne sont généralement pas copiées dans le dossier de sortie.  Ils sont résolus à partir du dossier des packages globaux NuGet au moment de l’exécution. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Pour créer une version de l’application qui peut être déployée, vous devez la publier (par exemple, à l’aide de la commande [dotnet Publish](dotnet-publish.md) ). Pour plus d’informations, consultez [Déploiement d’applications .NET Core](../deploying/index.md).
+Pour les projets exécutables ciblant des versions antérieures à .NET Core 3,0, les dépendances de bibliothèque de NuGet ne sont généralement pas copiées dans le dossier de sortie.  Ils sont résolus à partir du dossier des packages globaux NuGet au moment de l’exécution. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Pour créer une version de l’application qui peut être déployée, vous devez la publier (par exemple, à l’aide de la commande [dotnet Publish](dotnet-publish.md) ). Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md).
 
 Pour les projets exécutables ciblant .NET Core 3,0 et versions ultérieures, les dépendances de bibliothèque sont copiées dans le dossier de sortie. Cela signifie que s’il n’existe aucune autre logique spécifique à la publication (telle que les projets Web), la sortie de la génération doit être déployée.
 
@@ -93,7 +93,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-dependencies`**
 
@@ -109,7 +109,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -121,7 +121,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `minimal`,
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `minimal`.
 
 - **`--version-suffix <VERSION_SUFFIX>`**
 

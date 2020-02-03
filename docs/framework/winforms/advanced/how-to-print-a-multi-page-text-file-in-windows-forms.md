@@ -52,7 +52,7 @@ Il est très courant que les applications Windows impriment du texte. La classe 
  [!code-vb[System.Drawing.Printing.PrintExamples#0](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Drawing.Printing.PrintExamples/VB/Form1.vb#0)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un fichier texte nommé testPage.txt contenant le texte à imprimer, situé à la racine du lecteur C:\\. Modifiez le code pour imprimer un fichier différent.  
   

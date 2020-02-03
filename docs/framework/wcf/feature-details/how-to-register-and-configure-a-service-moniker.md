@@ -60,7 +60,7 @@ Avant d’utiliser le moniker de service Windows Communication Foundation (WCF) 
     service4:address=http://localhost/MathService, binding=wsHttpBinding, bindingConfiguration=Binding1
     ```
 
-     ou
+     or
 
     ```
     service4:address=http://localhost/MathService, binding=wsHttpBinding, bindingConfiguration=Binding1, contract={36ADAD5A-A944-4d5c-9B7C-967E4F00A090}

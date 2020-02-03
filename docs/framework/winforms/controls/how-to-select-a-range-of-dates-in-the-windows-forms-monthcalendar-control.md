@@ -55,7 +55,7 @@ Une fonctionnalité importante du contrôle Windows Forms <xref:System.Windows.F
        SelectionRange(projectStart, projectEnd);  
     ```  
   
-     – ou –  
+     \- ou -  
   
      Définissez les propriétés <xref:System.Windows.Forms.MonthCalendar.SelectionStart%2A> et <xref:System.Windows.Forms.MonthCalendar.SelectionEnd%2A>.  
   

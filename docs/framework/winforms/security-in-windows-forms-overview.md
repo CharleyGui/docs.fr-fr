@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble de la sécurité
+title: Présentation de la sécurité
 ms.date: 03/30/2017
 helpviewer_keywords:
 - code access security [Windows Forms], Windows Forms

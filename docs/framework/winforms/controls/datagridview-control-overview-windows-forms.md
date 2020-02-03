@@ -65,7 +65,7 @@ ms.locfileid: "76742492"
  [Répertoire du code du contrôle DataGridView](datagridview-control-code-directory-windows-forms.md)  
  Fournit des liens vers des exemples de code dans la documentation pour différentes tâches de <xref:System.Windows.Forms.DataGridView>. Ces exemples sont classés par type de tâche.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Types de colonnes dans le contrôle DataGridView Windows Forms](column-types-in-the-windows-forms-datagridview-control.md)  
  Décrit les types de colonnes dans le contrôle Windows Forms <xref:System.Windows.Forms.DataGridView> utilisé pour afficher des informations et permettre aux utilisateurs de modifier ou d’ajouter des informations.  
   

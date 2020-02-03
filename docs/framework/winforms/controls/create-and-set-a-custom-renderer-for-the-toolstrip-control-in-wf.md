@@ -29,7 +29,7 @@ les contrôles <xref:System.Windows.Forms.ToolStrip> offrent un support facile p
   
 1. Étendez la classe <xref:System.Windows.Forms.ToolStripRenderer>.  
   
-2. Implémentez le rendu personnalisé souhaité en remplaçant *le approprié sur...* Membres  
+2. Implémentez le rendu personnalisé souhaité en remplaçant *le approprié sur...* membres  
   
     ```vb  
     Public Class RedTextRenderer  

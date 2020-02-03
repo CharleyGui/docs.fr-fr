@@ -20,7 +20,7 @@ ms.locfileid: "76732544"
 
 Cet article vous explique comment appliquer un style à un contrôle Windows Presentation Foundation (WPF) hébergé sur un Windows Form.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Cette procédure pas à pas nécessite Visual Studio.
 

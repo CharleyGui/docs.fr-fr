@@ -96,4 +96,4 @@ Lorsque les utilisateurs entrent des données dans votre application, vous pouve
 - <xref:System.Windows.Forms.Form.FormClosing?displayProperty=nameWithType>
 - <xref:System.Windows.Forms.FormClosingEventArgs?displayProperty=nameWithType>
 - [MaskedTextBox, contrôle](./controls/maskedtextbox-control-windows-forms.md)
-- [Exemples d’expressions régulières](../../standard/base-types/regular-expression-examples.md)
+- [Exemples d'expressions régulières](../../standard/base-types/regular-expression-examples.md)

@@ -29,7 +29,7 @@ Lorsque vous travaillez avec de grandes quantités de données, le contrôle `Da
  [Implémentation du mode virtuel avec le chargement immédiat des données dans le contrôle DataGridView Windows Forms](implementing-virtual-mode-jit-data-loading-in-the-datagrid.md)  
  Explique comment charger des données à la demande, ce qui est utile lorsque vous avez plus de données à afficher que la mémoire disponible du client.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   

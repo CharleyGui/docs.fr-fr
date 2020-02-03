@@ -17,7 +17,7 @@ ms.locfileid: "76734103"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet run` - Exécute le code source sans commandes explicites de compilation ou de démarrage.
 

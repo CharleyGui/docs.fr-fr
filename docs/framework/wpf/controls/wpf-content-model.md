@@ -135,7 +135,7 @@ ms.locfileid: "76738282"
   
  L’illustration suivante montre une <xref:System.Windows.Controls.ListBox> qui contient ces types d’éléments :  
   
-- Chaîne.  
+- une chaîne.  
   
 - Objet <xref:System.DateTime>.  
   
@@ -249,4 +249,4 @@ TextBlock avec une bordure
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Avancé](../advanced/index.md)
+- [Avancée](../advanced/index.md)

@@ -29,10 +29,10 @@ ms.locfileid: "76745269"
  [Guide pratique pour dimensionner un contrôle Label Windows Forms en fonction de son contenu](how-to-size-a-windows-forms-label-control-to-fit-its-contents.md)  
  Explique comment ajuster la taille d’un contrôle Label pour sa légende.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Label>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

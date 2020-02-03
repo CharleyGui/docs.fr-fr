@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du composant MainMenu
+title: Vue d'ensemble du composant MainMenu
 ms.date: 03/30/2017
 f1_keywords:
 - MenuItem

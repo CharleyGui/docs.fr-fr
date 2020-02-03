@@ -19,14 +19,14 @@ Les fonctionnalités d’accessibilité de Windows Forms vous permet de rendre v
  [Procédure pas à pas : création d'une application Windows accessible](walkthrough-creating-an-accessible-windows-based-application.md)  
  Décrit toutes les fonctionnalités à prendre en charge pour une meilleure accessibilité.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:Accessibility>  
  Un espace de noms contenant plusieurs classes liées à l’accessibilité.  
   
  <xref:System.Windows.Forms.AccessibleObject>  
  Fournit des informations utilisées par les applications d’accessibilité pour adapter l’interface utilisateur d’une application aux personnes présentant un handicap.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Informations d'accessibilité sur les contrôles d'un Windows Form](../controls/providing-accessibility-information-for-controls-on-a-windows-form.md)  
  Décrit comment fournir des informations que les contrôles Windows Forms peuvent utiliser pour aider les utilisateurs présentant un handicap.  
   

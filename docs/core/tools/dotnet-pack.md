@@ -17,7 +17,7 @@ ms.locfileid: "76734123"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet pack` : Place le code dans un package NuGet.
 
@@ -85,7 +85,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Option disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une saisie ou une action de l’utilisateur (son authentification, par exemple). Disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-build`**
 
@@ -101,7 +101,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 

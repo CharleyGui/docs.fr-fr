@@ -34,7 +34,7 @@ L’exemple de code suivant illustre un contrôle personnalisé appelé `FlashTr
   
  Le tableau suivant présente les propriétés personnalisées définies par `FlashTrackBar`.  
   
-|Les|Description|  
+|Propriété|Description|  
 |--------------|-----------------|  
 |`AllowUserEdit`|Indique si l’utilisateur peut modifier la valeur de la barre de suivi Flash en cliquant dessus et en la faisant glisser.|  
 |`EndColor`|Spécifie la couleur de fin de la barre de suivi.|  
@@ -49,7 +49,7 @@ L’exemple de code suivant illustre un contrôle personnalisé appelé `FlashTr
   
  Le tableau suivant montre d’autres membres définis par `FlashTrackBar:` l’événement modifié par une propriété et la méthode qui déclenche l’événement.  
   
-|Member|Description|  
+|Membre|Description|  
 |------------|-----------------|  
 |`ValueChanged`|Événement déclenché lorsque la propriété `Value` de la barre de suivi change.|  
 |`OnValueChanged`|Méthode qui déclenche l’événement `ValueChanged`.|  

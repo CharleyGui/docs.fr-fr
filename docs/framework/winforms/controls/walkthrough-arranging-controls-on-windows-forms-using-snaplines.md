@@ -90,7 +90,7 @@ Vous pouvez utiliser des lignes d’alignement pour aligner les contrôles group
 
 ## <a name="use-snaplines-to-place-a-control-by-outlining-its-size"></a>Utilisez des lignes d’alignement pour placer un contrôle en soulignant sa taille
 
-1. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
+1. Dans la **Boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
 
 2. Placez le pointeur de la souris sur l’aire de conception du formulaire. Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.Button> . Notez également les lignes d’alignement qui apparaissent pour suggérer des positions alignées pour le contrôle <xref:System.Windows.Forms.Button>.
 
@@ -182,7 +182,7 @@ Aucune lignes d’alignement n’apparaît et le contrôle n’est pas aligné s
 
 ## <a name="next-steps"></a>Étapes suivantes :
 
-Les lignes d’alignement (SnapLines) offrent un moyen intuitif d’aligner les contrôles sur votre formulaire. Voici quelques suggestions à explorer :
+Les lignes d’alignement (SnapLines) offrent un moyen intuitif d’aligner les contrôles sur votre formulaire. Suggestions pour des recherches approfondies :
 
 - Essayez d’imbriquer un contrôle <xref:System.Windows.Forms.GroupBox> dans un autre contrôle <xref:System.Windows.Forms.GroupBox>. Placez un contrôle de <xref:System.Windows.Forms.Button> dans le contrôle de <xref:System.Windows.Forms.GroupBox> enfant et un autre dans le contrôle <xref:System.Windows.Forms.GroupBox> parent. Déplacez les contrôles <xref:System.Windows.Forms.Button> autour pour voir comment les lignes d’alignement croisent les limites des conteneurs.
 

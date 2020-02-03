@@ -38,7 +38,7 @@ Cette rubrique offre une vue d’ensemble de la couche visuelle [!INCLUDE[TLA2#t
   
 - Gestion des événements  
   
-- Mise en page  
+- Disposition  
   
 - cellule  
   
@@ -256,4 +256,4 @@ Graphique et texte avec différents paramètres PPP
 - [Test de positionnement dans la couche visuelle](hit-testing-in-the-visual-layer.md)
 - [Utilisation d’objets DrawingVisual](using-drawingvisual-objects.md)
 - [Didacticiel : hébergement d’objets visuels dans une application Win32](tutorial-hosting-visual-objects-in-a-win32-application.md)
-- [Optimisation des performances des applications WPF](../advanced/optimizing-wpf-application-performance.md)
+- [Optimisation des performances des applications WPF](../advanced/optimizing-wpf-application-performance.md)

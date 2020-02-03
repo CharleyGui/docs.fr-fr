@@ -25,8 +25,8 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
  Quand vous aurez terminé, vous disposerez d’une DLL qui contient le contenu Direct3D9 à utiliser dans une application WPF.
 
-## <a name="prerequisites"></a>Prerequisites
- Pour exécuter cette procédure pas à pas, vous devez disposer des composants suivants :
+## <a name="prerequisites"></a>Composants requis
+ Vous devez disposer des éléments suivants pour exécuter cette procédure pas à pas :
 
 - Visual Studio 2010.
 
@@ -41,13 +41,13 @@ Cette procédure pas à pas montre comment créer du contenu Direct3D9 qui convi
 
      L’Assistant application Win32 s’ouvre et affiche l’écran d’accueil.
 
-2. Cliquez sur **Next**.
+2. Cliquez sur **Suivant**.
 
      L’écran Paramètres de l’application s’affiche.
 
 3. Dans la section **type d’application :** , sélectionnez l’option **dll** .
 
-4. Cliquez sur **Finish**.
+4. Cliquez sur **Terminer**.
 
      Le projet D3DContent est généré.
 

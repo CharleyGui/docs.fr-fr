@@ -109,7 +109,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
 - **Sites non fiables** : applications identifiées par un utilisateur comme étant non fiables (non approuvé).  
   
- Pour chacune de ces zones, les autorités de certification fournissent un jeu d’autorisations prédéfini qui inclut les autorisations correspondant au niveau de confiance associé à chacun. Elles incluent notamment :  
+ Pour chacune de ces zones, les autorités de certification fournissent un jeu d’autorisations prédéfini qui inclut les autorisations correspondant au niveau de confiance associé à chacun. Elles incluent notamment les suivantes :  
   
 - **FullTrust** : Pour les applications lancées à partir de la zone de **poste de travail** . Toutes les autorisations possibles sont accordées.  
   
@@ -153,7 +153,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
  Du point de vue de la plateforme, WPF est responsable de l’utilisation correcte de la méthode **Assert** . une utilisation incorrecte de la méthode **Assert** pourrait permettre à du code malveillant d’élever les privilèges. Par conséquent, il est important d’appeler uniquement une **assertion** quand cela est nécessaire, et de garantir que les restrictions du bac à sable (sandbox) restent intactes. Par exemple, le code en mode sandbox n'est pas autorisé à ouvrir des fichiers aléatoires, mais il est autorisé à utiliser des polices. WPF permet aux applications sandbox d’utiliser la fonctionnalité de police en appelant **Assert**, et à WPF de lire les fichiers connus pour contenir ces polices pour le compte de l’application bac à sable (sandbox).  
   
-### <a name="clickonce-deployment"></a>déploiement ClickOnce  
+### <a name="clickonce-deployment"></a>Déploiement ClickOnce  
  ClickOnce est une technologie de déploiement complète qui est incluse dans .NET Framework et s’intègre à Visual Studio (pour plus d’informations, consultez [sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Les applications WPF autonomes peuvent être déployées à l’aide de ClickOnce, tandis que les applications hébergées par un navigateur doivent être déployées avec ClickOnce.  
   
  Les applications déployées à l’aide de ClickOnce reçoivent une couche de sécurité supplémentaire par rapport à la sécurité d’accès du code (CAS). Fondamentalement, les applications déployées par ClickOnce demandent les autorisations dont elles ont besoin. Seules ces autorisations leur sont accordées si elles ne dépassent pas le jeu d'autorisations pour la zone à partir de laquelle l'application est déployée. En réduisant le jeu d’autorisations à celles qui sont nécessaires, même si elles sont inférieures à celles fournies par le jeu d’autorisations de la zone de lancement, le nombre de ressources auxquelles l’application a accès est réduit au minimum. Par conséquent, si l'application est détournée, les risques de dommages sur l'ordinateur client sont réduits.  
@@ -189,6 +189,6 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité d’accès du code](../misc/code-access-security.md)
-- [Security](security-wpf.md)
+- [Sécurité](security-wpf.md)
 - [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)
 - [Stratégie de sécurité de WPF - ingénierie de sécurité](wpf-security-strategy-security-engineering.md)

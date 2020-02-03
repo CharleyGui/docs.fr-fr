@@ -17,18 +17,18 @@ ms.locfileid: "76738092"
   
  Cette rubrique contient les sections suivantes :  
   
-- [Conditions préalables](#Prerequisites)  
+- [Prérequis](#Prerequisites)  
   
 - [Code-behind et langage XAML](#codebehind_and_the_xaml_language)  
   
 - [Spécifications du code-behind, du gestionnaire d’événements et des classes partielles dans WPF](#Code_behind__Event_Handler__and_Partial_Class)  
   
-- [x:Code](#x_Code)  
+- [x :Code](#x_Code)  
   
 - [Limitations du code inline](#Inline_Code_Limitations)  
   
 <a name="Prerequisites"></a>   
-## <a name="prerequisites"></a>Prerequisites  
+## <a name="prerequisites"></a>Composants requis  
  Cette rubrique part du principe que vous avez lu la [vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md) et que vous avez une connaissance de base du CLR et de la programmation orientée objet.  
   
 <a name="codebehind_and_the_xaml_language"></a>   

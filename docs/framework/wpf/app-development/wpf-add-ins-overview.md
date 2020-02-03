@@ -25,7 +25,7 @@ ms.locfileid: "76738945"
 
 <a name="Requirements"></a>
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez être familiarisé avec le modèle de complément .NET Framework. Pour plus d’informations, consultez [Compléments et extensibilité](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb384200(v%3dvs.100)).
 
@@ -315,4 +315,4 @@ Par défaut, lorsque plusieurs domaines d’application sont utilisés, les diff
 - [Domaines d’application](../../app-domains/application-domains.md)
 - [Vue d’ensemble de la communication à distance .NET Framework](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/kwdt6w2k(v=vs.100))
 - [Rendre les objets accessibles à distance](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/wcf3swha(v=vs.100))
-- [Rubriques pratiques](how-to-topics.md)
+- [Rubriques Comment](how-to-topics.md)

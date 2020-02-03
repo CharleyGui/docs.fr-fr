@@ -33,7 +33,7 @@ Le contrôle `DataGridView` fournit plusieurs propriétés que vous pouvez utili
  [Guide pratique pour héberger des contrôles dans des cellules DataGridView Windows Forms](how-to-host-controls-in-windows-forms-datagridview-cells.md)  
  Décrit comment implémenter l’interface `IDataGridViewEditingControl` et créer des types personnalisés dérivés de `DataGridViewCell` et `DataGridViewColumn` afin d’afficher un contrôle <xref:System.Windows.Forms.DateTimePicker> quand une cellule est en mode édition.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
@@ -49,7 +49,7 @@ Le contrôle `DataGridView` fournit plusieurs propriétés que vous pouvez utili
  <xref:System.Windows.Forms.IDataGridViewEditingControl>  
  Fournit une documentation de référence pour l’interface <xref:System.Windows.Forms.IDataGridViewEditingControl>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Mises en forme et styles de base dans le contrôle DataGridView Windows Forms](basic-formatting-and-styling-in-the-windows-forms-datagridview-control.md)  
  Fournit des rubriques qui décrivent comment modifier l'apparence de base du contrôle et le format d'affichage des données de cellules.  
   

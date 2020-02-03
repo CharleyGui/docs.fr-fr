@@ -34,7 +34,7 @@ Le contrôle <xref:System.Windows.Forms.DataGridView> a un certain nombre d’é
      [!code-vb[System.Windows.Forms.DataGridViewMisc#135](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#135)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - un contrôle <xref:System.Windows.Forms.DataGridView> nommé `dataGridView1` ; Pour C#, les gestionnaires d’événements doivent être connectés aux événements correspondants.  
   

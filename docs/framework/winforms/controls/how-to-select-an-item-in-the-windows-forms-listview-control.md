@@ -25,7 +25,7 @@ Cet exemple montre comment sélectionner par programmation un élément dans un 
  [!code-vb[System.Windows.Forms.ListView.Misc#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.ListView.Misc/VB/form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Un contrôle <xref:System.Windows.Forms.ListView> nommé `listView1` qui contient au moins un élément.  
   

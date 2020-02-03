@@ -50,7 +50,7 @@ Visual Studio fournit la prise en charge du concepteur pour le contrôle `DataGr
  [Guide pratique pour définir des styles de cellules et des formats de données par défaut pour le contrôle DataGridView Windows Forms à l'aide du concepteur](default-cell-styles-datagridview.md)  
  Décrit comment utiliser la boîte de dialogue **Générateur CellStyle** pour configurer l’apparence de base et les formats d’affichage de données pour le contrôle.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   

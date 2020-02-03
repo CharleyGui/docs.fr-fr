@@ -31,7 +31,7 @@ Un aspect essentiel, mais souvent négligé, de la création d’applications Wi
  [Affichage sous forme d’info-bulles de l’aide relative aux contrôles](control-help-using-tooltips.md)  
  Décrit l’utilisation du composant `ToolTip` pour afficher l’aide spécifique au contrôle.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [HelpProvider, composant](../controls/helpprovider-component-windows-forms.md)  
  Explique les principes de base du composant `HelpProvider`.  
   

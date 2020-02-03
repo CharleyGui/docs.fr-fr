@@ -39,7 +39,7 @@ L'illustration suivante montre les propriétés <xref:System.Windows.Forms.Contr
 
 La propriété <xref:System.Windows.Forms.Control.AutoSize%2A> indique à un contrôle de se redimensionner automatiquement à son contenu. Il ne se redimensionne pas pour être plus petit que la valeur de sa propriété <xref:System.Windows.Forms.Control.Size%2A> d’origine, et il prend en compte la valeur de sa propriété <xref:System.Windows.Forms.Control.Padding%2A>.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Pour effectuer cette procédure pas à pas, vous avez besoin de Visual Studio.
 
@@ -115,7 +115,7 @@ Lorsque la propriété <xref:System.Windows.Forms.Control.AutoSize%2A> est défi
 
 4. Faites glisser un autre contrôle <xref:System.Windows.Forms.Button> de la **boîte à outils** vers votre formulaire.
 
-5. Modifier le <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Text%2A> propriété à « **ce bouton a une longue chaîne pour sa propriété Text.** »
+5. Affectez à la propriété <xref:System.Windows.Forms.Control.Text%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur "**ce bouton a une longue chaîne pour sa propriété Text.** "
 
    Lorsque vous validez la modification, le contrôle <xref:System.Windows.Forms.Button> ne se redimensionne pas et le texte est coupé par le bord droit du contrôle.
 
@@ -133,7 +133,7 @@ Lorsque la propriété <xref:System.Windows.Forms.Control.AutoSize%2A> est défi
 
 10. Affectez à la propriété <xref:System.Windows.Forms.Control.Anchor%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur <xref:System.Windows.Forms.AnchorStyles.Right>, <xref:System.Windows.Forms.AnchorStyles.Bottom>.
 
-11. Modifier le <xref:System.Windows.Forms.Button> du contrôle <xref:System.Windows.Forms.Control.Text%2A> propriété à « **ce bouton a une longue chaîne pour sa propriété Text.** »
+11. Affectez à la propriété <xref:System.Windows.Forms.Control.Text%2A> du contrôle <xref:System.Windows.Forms.Button> la valeur "**ce bouton a une longue chaîne pour sa propriété Text.** "
 
    Lorsque vous validez la modification, le contrôle <xref:System.Windows.Forms.Button> se redimensionne vers la gauche. En général, le dimensionnement automatique augmente la taille d’un contrôle dans la direction opposée à son paramètre de propriété <xref:System.Windows.Forms.Control.Anchor%2A>.
 

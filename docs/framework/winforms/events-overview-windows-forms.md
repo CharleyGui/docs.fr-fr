@@ -45,5 +45,5 @@ Les délégués peuvent être liés à une ou plusieurs méthodes (ou multidiffu
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)
+- [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)
 - [Vue d'ensemble des gestionnaires d'événements](event-handlers-overview-windows-forms.md)

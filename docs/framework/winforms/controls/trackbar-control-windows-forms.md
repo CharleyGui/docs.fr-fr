@@ -20,10 +20,10 @@ Le contrôle Windows Forms `TrackBar` (parfois appelé « contrôle Slider »)
  [Vue d’ensemble du contrôle TrackBar](trackbar-control-overview-windows-forms.md)  
  Présente les concepts généraux du contrôle `TrackBar`, qui permet aux utilisateurs de parcourir les informations en ajustant visuellement un paramètre numérique.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.TrackBar>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

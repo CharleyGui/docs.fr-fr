@@ -30,12 +30,12 @@ Le contrôle `BindingNavigator` est l'interface utilisateur de navigation et de 
   
  Consultez également [Comment : ajouter des boutons Charger, Enregistrer et Annuler au contrôle BindingNavigator Windows Forms](load-save-and-cancel-bindingnavigator.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.BindingNavigator>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.BindingNavigator>.  
   
  <xref:System.Windows.Forms.BindingSource>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.BindingSource>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Lier des contrôles à des données dans Visual Studio](/visualstudio/data-tools/bind-controls-to-data-in-visual-studio)

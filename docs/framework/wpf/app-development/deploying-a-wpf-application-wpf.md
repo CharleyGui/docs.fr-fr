@@ -47,7 +47,7 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
  Pour plus d’informations sur la Windows Installer, consultez [Windows Installer le déploiement](/visualstudio/deployment/deploying-applications-services-and-components#create-an-installer-package-windows-desktop).
   
 <a name="ClickOnce_Deployment"></a>   
-### <a name="clickonce-deployment"></a>déploiement ClickOnce  
+### <a name="clickonce-deployment"></a>Déploiement ClickOnce  
  ClickOnce permet le déploiement d’applications de style Web pour les applications non-Web. Les applications sont publiées vers et déployées depuis des serveurs de fichiers ou web. Bien que ClickOnce ne prenne pas en charge la gamme complète des fonctionnalités clientes prises par Windows Installer applications installées, il prend en charge un sous-ensemble qui comprend les éléments suivants :  
   
 - Intégration au menu Démarrer et au Panneau de configuration des programmes.  
@@ -124,4 +124,4 @@ Une fois les applications Windows Presentation Foundation (WPF) générées, ell
 ## <a name="see-also"></a>Voir aussi
 
 - [Génération d’une application WPF](building-a-wpf-application-wpf.md)
-- [Security](../security-wpf.md)
+- [Sécurité](../security-wpf.md)

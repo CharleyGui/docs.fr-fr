@@ -16,7 +16,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="implicit-pointer-conversions"></a>Conversions de pointeur implicites  
   
-|À partir de|Vers|  
+|De|Pour|  
 |----------|--------|  
 |Tout type pointeur|void*|  
 |null|Tout type pointeur|  
@@ -25,7 +25,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
   
 ## <a name="explicit-pointer-conversions"></a>Conversions de pointeur explicites  
   
-|À partir de|Vers|  
+|De|Pour|  
 |----------|--------|  
 |Tout type pointeur|Tout autre type pointeur|  
 |sbyte, byte, short, ushort, int, uint, long ou ulong|Tout type pointeur|  
@@ -43,7 +43,7 @@ Le tableau suivant présente les conversions de pointeur implicites prédéfinie
 - [Guide de programmation C#](../index.md)
 - [Types de pointeur](pointer-types.md)
 - [Types référence](../../language-reference/keywords/reference-types.md)
-- [Types valeur](../../language-reference/builtin-types/value-types.md)
+- [Types de valeur](../../language-reference/builtin-types/value-types.md)
 - [unsafe](../../language-reference/keywords/unsafe.md)
 - [fixed, instruction](../../language-reference/keywords/fixed-statement.md)
 - [stackalloc](../../language-reference/operators/stackalloc.md)

@@ -33,7 +33,7 @@ Cette section est destinée à servir de référence pour les développeurs d’
   
  [Ressources d'application](optimizing-performance-application-resources.md)  
   
- [Texte](optimizing-performance-text.md)  
+ [Text](optimizing-performance-text.md)  
   
  [Liaison de données](optimizing-performance-data-binding.md)  
   

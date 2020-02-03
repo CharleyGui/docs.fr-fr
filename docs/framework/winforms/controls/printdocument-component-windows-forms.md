@@ -19,11 +19,11 @@ Le composant Windows Forms `PrintDocument` sert à définir les propriétés qui
  [Vue d’ensemble du composant PrintDocument](printdocument-component-overview-windows-forms.md)  
  Présente les concepts généraux du composant `PrintDocument`, qui vous permet de définir les propriétés qui décrivent les éléments à imprimer et lance l'impression dans une application Windows.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Drawing.Printing.PrintDocument>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Prise en charge de l’impression dans les Windows Forms](../advanced/windows-forms-print-support.md)  
  Affiche une liste de rubriques relatives à l'impression dans les Windows Forms.  
   

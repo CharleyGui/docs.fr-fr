@@ -17,7 +17,7 @@ ms.locfileid: "76733224"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet list reference` : répertorie des références entre projets.
 

@@ -47,15 +47,15 @@ Déclare et alloue de l’espace de stockage pour une ou plusieurs variables.
 Dim [ WithEvents ] variablelist
 ```
 
-## <a name="parts"></a>Parties
+## <a name="parts"></a>Composants
 
 - `attributelist`
 
-  Option facultative. Consultez la [liste des attributs](attribute-list.md).
+  Ce paramètre est facultatif. Consultez la [liste des attributs](attribute-list.md).
 
 - `accessmodifier`
 
-  Option facultative. Il peut s'agir de l'un des éléments suivants :
+  Ce paramètre est facultatif. Il peut s'agir de l'un des éléments suivants :
 
   - [Public](../modifiers/public.md)
 
@@ -73,27 +73,27 @@ Dim [ WithEvents ] variablelist
 
 - `Shared`
 
-  Option facultative. Consultez [partagé](../modifiers/shared.md).
+  Ce paramètre est facultatif. Consultez [partagé](../modifiers/shared.md).
 
 - `Shadows`
 
-  Option facultative. Consultez [Shadows](../modifiers/shadows.md).
+  Ce paramètre est facultatif. Consultez [Shadows](../modifiers/shadows.md).
 
 - `Static`
 
-  Option facultative. Consultez [static](../modifiers/static.md).
+  Ce paramètre est facultatif. Consultez [static](../modifiers/static.md).
 
 - `ReadOnly`
 
-  Option facultative. Consultez [ReadOnly](../modifiers/readonly.md).
+  Ce paramètre est facultatif. Consultez [ReadOnly](../modifiers/readonly.md).
 
 - `WithEvents`
 
-  Option facultative. Spécifie qu’il s’agit de variables objets qui font référence à des instances d’une classe qui peuvent déclencher des événements. Consultez [WithEvents](../modifiers/withevents.md).
+  Ce paramètre est facultatif. Spécifie qu’il s’agit de variables objets qui font référence à des instances d’une classe qui peuvent déclencher des événements. Consultez [WithEvents](../modifiers/withevents.md).
 
 - `variablelist`
 
-  Requis. Liste des variables déclarées dans cette instruction.
+  Obligatoire. Liste des variables déclarées dans cette instruction.
 
   `variable [ , variable ... ]`
 
@@ -101,14 +101,14 @@ Dim [ WithEvents ] variablelist
 
   `variablename [ ( [ boundslist ] ) ] [ As [ New ] datatype [ With`{`[ .propertyname = propinitializer [ , ... ] ] } ] ] [ = initializer ]`
 
-  |Partie|Description|
+  |Élément|Description|
   |---|---|
-  |`variablename`|Requis. Nom de la variable. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
-  |`boundslist`|Option facultative. Liste des limites de chaque dimension d’une variable de tableau.|
-  |`New`|Option facultative. Crée une nouvelle instance de la classe lors de l’exécution de l’instruction `Dim`.|
-  |`datatype`|Option facultative. Type de données de la variable.|
-  |`With`|Option facultative. Introduit la liste d’initialiseurs d’objets.|
-  |`propertyname`|Option facultative. Nom d’une propriété dans la classe à partir de laquelle vous effectuez une instance.|
+  |`variablename`|Obligatoire. Nom de la variable. Consultez [Declared Element Names](../../programming-guide/language-features/declared-elements/declared-element-names.md).|
+  |`boundslist`|Ce paramètre est facultatif. Liste des limites de chaque dimension d’une variable de tableau.|
+  |`New`|Ce paramètre est facultatif. Crée une nouvelle instance de la classe lors de l’exécution de l’instruction `Dim`.|
+  |`datatype`|Ce paramètre est facultatif. Type de données de la variable.|
+  |`With`|Ce paramètre est facultatif. Introduit la liste d’initialiseurs d’objets.|
+  |`propertyname`|Ce paramètre est facultatif. Nom d’une propriété dans la classe à partir de laquelle vous effectuez une instance.|
   |`propinitializer`|Obligatoire après `propertyname` =. Expression évaluée et assignée au nom de la propriété.|
   |`initializer`|Facultatif si `New` n’est pas spécifié. Expression qui est évaluée et assignée à la variable lors de sa création.|
 
@@ -332,7 +332,7 @@ Dans l’exemple suivant, la variable `speedValue` est déclarée au niveau de l
 - [Option Explicit (instruction)](option-explicit-statement.md)
 - [Option Infer (instruction)](option-infer-statement.md)
 - [Option Strict (instruction)](option-strict-statement.md)
-- [Page Compiler, Concepteur de projets (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
+- [Page Compiler, Concepteur de projet (Visual Basic)](/visualstudio/ide/reference/compile-page-project-designer-visual-basic)
 - [Déclaration de variable](../../programming-guide/language-features/variables/variable-declaration.md)
 - [Tableaux](../../programming-guide/language-features/arrays/index.md)
 - [Initialiseurs d’objets : types nommés et anonymes](../../programming-guide/language-features/objects-and-classes/object-initializers-named-and-anonymous-types.md)

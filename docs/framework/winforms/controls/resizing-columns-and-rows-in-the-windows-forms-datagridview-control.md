@@ -36,7 +36,7 @@ Le contrôle `DataGridView` fournit de nombreuses options permettant de personna
  [Guide pratique pour redimensionner automatiquement des cellules lorsque leur contenu change dans le contrôle DataGridView Windows Forms](automatically-resize-cells-when-content-changes-in-the-datagrid.md)  
  Fournit un code de démonstration que vous pouvez utiliser pour expérimenter les modes de dimensionnement automatique.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   

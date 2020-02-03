@@ -48,7 +48,7 @@ Outil `dotnet-trace` :
 
 ## <a name="commands"></a>Commands
 
-| Command                                                     |
+| Commande                                                     |
 | ----------------------------------------------------------- |
 | [dotnet-collecte des traces](#dotnet-trace-collect)               |
 | [conversion dotnet-trace](#dotnet-trace-convert)               |
@@ -96,7 +96,7 @@ dotnet-trace collect [-h|--help] [-p|--process-id] [--buffersize <size>] [-o|--o
 
 - **`--format {NetTrace|Speedscope}`**
 
-  Définit le format de sortie pour la conversion du fichier de trace. La valeur par défaut est `NetTrace`,
+  Définit le format de sortie pour la conversion du fichier de trace. Par défaut, il s’agit de `NetTrace`.
 
 ## <a name="dotnet-trace-convert"></a>conversion dotnet-trace
 
@@ -154,7 +154,7 @@ Pour collecter des traces à l’aide de `dotnet-trace`:
   - Sur Linux, par exemple, la commande `ps`.
   - [dotnet-trace PS](#dotnet-trace-ps)
 
-- Exécutez la commande suivante : .
+- Exécutez la commande suivante :
 
   ```console
   dotnet-trace collect --process-id <PID>
@@ -208,7 +208,7 @@ La commande précédente désactive les événements d’exécution et le profil
 
 Le Runtime .NET Core prend en charge les fournisseurs .NET suivants. .NET Core utilise les mêmes mots clés pour activer les suivis `Event Tracing for Windows (ETW)` et `EventPipe`.
 
-| Nom du fournisseur                            | Informations |
+| Nom du fournisseur                            | Information |
 |------------------------------------------|-------------|
 | `Microsoft-Windows-DotNETRuntime`        | [Fournisseur du Runtime](../../framework/performance/clr-etw-providers.md#the-runtime-provider)<br>[Mots clés du runtime CLR](../../framework/performance/clr-etw-keywords-and-levels.md#runtime) |
 | `Microsoft-Windows-DotNETRuntimeRundown` | [Fournisseur d’arrêt](../../framework/performance/clr-etw-providers.md#the-rundown-provider)<br>[Mots clés d’arrêt du CLR](../../framework/performance/clr-etw-keywords-and-levels.md#rundown) |

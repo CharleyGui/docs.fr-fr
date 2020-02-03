@@ -27,7 +27,7 @@ Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> fournit également une
 
 En général, vous ne devez pas utiliser de contrôle de <xref:System.Windows.Forms.TableLayoutPanel> comme conteneur pour toute la disposition. Utilisez des contrôles <xref:System.Windows.Forms.TableLayoutPanel> pour fournir des fonctionnalités de redimensionnement proportionnels aux parties de la disposition.
 
-Cette procédure pas à pas décrit notamment les tâches suivantes :
+Cette procédure pas à pas décrit notamment les tâches suivantes :
 
 - Création d’un projet Windows Forms
 
@@ -151,7 +151,7 @@ Vous pouvez insérer un contrôle dans un contrôle <xref:System.Windows.Forms.T
 
 1. Faites glisser un contrôle <xref:System.Windows.Forms.TableLayoutPanel> de la **boîte à outils** vers le formulaire.
 
-2. Dans la **boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
+2. Dans la **Boîte à outils**, cliquez sur l’icône de contrôle <xref:System.Windows.Forms.Button> . Ne la faites pas glisser sur le formulaire.
 
 3. Placez le pointeur de la souris sur le contrôle <xref:System.Windows.Forms.TableLayoutPanel> . Notez que le pointeur devient une croix à laquelle est attachée l’icône de contrôle <xref:System.Windows.Forms.Button> .
 
@@ -177,7 +177,7 @@ Le contrôle <xref:System.Windows.Forms.TableLayoutPanel> vous permet d’échan
 
 ## <a name="next-steps"></a>Étapes suivantes
 
-Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Voici quelques suggestions à explorer :
+Vous pouvez obtenir une disposition complexe en combinant plusieurs contrôles et panneaux de disposition. Suggestions pour des recherches approfondies :
 
 - Essayez de redimensionner l’un des contrôles <xref:System.Windows.Forms.Button> à une plus grande taille et notez l’effet sur la disposition.
 

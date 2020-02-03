@@ -143,5 +143,5 @@ Dans le menu **Générer** , cliquez sur **Générer la solution**. L’opérati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
-- [Procédure pas à pas : création d’un contrôle composite à l’aide de Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Guide pratique pour afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)

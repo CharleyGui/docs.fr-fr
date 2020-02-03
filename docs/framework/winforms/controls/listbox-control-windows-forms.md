@@ -23,10 +23,10 @@ Un contrôle Windows Forms `ListBox` affiche une liste des éléments à partir 
  [Vue d'ensemble du contrôle ListBox](listbox-control-overview-windows-forms.md)  
  Décrit un contrôle et ses principales fonctionnalités et propriétés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.ListBox>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles Windows Forms utilisés pour l’affichage de listes d’options](windows-forms-controls-used-to-list-options.md)  
  Fournit une liste des opérations que vous pouvez effectuer avec les zones de liste, les zones de liste déroulante et les zones de liste de cases à cocher.

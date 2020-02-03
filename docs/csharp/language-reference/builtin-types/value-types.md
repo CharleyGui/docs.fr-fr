@@ -62,7 +62,7 @@ Tous les types simples sont des types structure et diffèrent des autres types d
 
 Pour plus d’informations, consultez les sections suivantes de la [spécification du langage C#](~/_csharplang/spec/introduction.md) :
 
-- [Types valeur](~/_csharplang/spec/types.md#value-types)
+- [Types de valeur](~/_csharplang/spec/types.md#value-types)
 - [Types simples](~/_csharplang/spec/types.md#simple-types)
 - [Variables](~/_csharplang/spec/variables.md)
 

@@ -16,7 +16,7 @@ ms.locfileid: "76733649"
 - Comment installer la version localisée de ces fichiers.
 - Comment modifier l’installation de Visual Studio pour utiliser une autre langue.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 - [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 - [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou une version ultérieure.
@@ -37,7 +37,7 @@ ms.locfileid: "76733649"
    1. Accédez au dossier d’installation de .NET Core. Par défaut, il se trouve sous *%ProgramFiles%\dotnet\packs*.
    1. Choisissez le kit de développement logiciel (SDK) pour lequel vous souhaitez installer IntelliSense et accédez au chemin d’accès associé. Les options suivantes sont disponibles :
 
-      | Type de SDK        | Path                               |
+      | Type de kit de développement logiciel (SDK)        | Chemin d'accès                               |
       | --------------- | ---------------------------------- |
       | .NET Core       | *Microsoft. Netcore. app. Ref*        |
       | Bureau Windows | *Microsoft. WindowsDesktop. app. Ref* |
@@ -51,13 +51,13 @@ ms.locfileid: "76733649"
 
 1. Créez un sous-dossier à l’intérieur du dossier moniker que vous venez d’ouvrir. Le nom du dossier indique la langue que vous souhaitez utiliser. Le tableau suivant spécifie les différentes options :
 
-   | Language              | Nom de dossier |
+   | Langue              | Nom du dossier |
    | --------------------- | ----------- |
    | Portugais (Brésil)  | *PT-BR*     |
    | Chinois (simplifié)  | *zh-Hans*   |
    | Chinois (traditionnel) | *zh-Hant*   |
    | Français                | *fr*        |
-   | Allemand                | *annulation*        |
+   | Allemand                | *de*        |
    | Italien               | *tel*        |
    | Japonais              | *ja*        |
    | Coréen                | *Ko*        |

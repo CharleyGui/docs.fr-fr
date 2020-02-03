@@ -71,7 +71,7 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 - **Prefix/Prefast** : recherche les failles de sécurité et les problèmes de sécurité courants dans le code non managé, tels que les dépassements de mémoire tampon, les problèmes de chaîne de format et la vérification d’erreurs.  
   
-- **API interdites`strcpy` : analyse le code source à la recherche d’une utilisation accidentelle de fonctions connues pour provoquer des problèmes de sécurité, telles que** . Une fois identifiés, ces fonctions sont remplacées par des alternatives plus sécurisées.  
+- **API interdites** : analyse le code source à la recherche d’une utilisation accidentelle de fonctions connues pour provoquer des problèmes de sécurité, telles que `strcpy`. Une fois identifiés, ces fonctions sont remplacées par des alternatives plus sécurisées.  
   
 <a name="techniques"></a>   
 ### <a name="testing-techniques"></a>Techniques de test  
@@ -91,7 +91,7 @@ Trustworthy Computing (informatique de confiance) est une initiative de Microsof
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Security](security-wpf.md)
+- [Sécurité](security-wpf.md)
 - [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)
 - [Stratégie de sécurité de WPF - sécurité de la plateforme](wpf-security-strategy-platform-security.md)
 - [Informatique fiable](https://www.microsoft.com/mscorp/twc/default.mspx)

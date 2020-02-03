@@ -25,7 +25,7 @@ Avec Windows Forms, vous pouvez créer de puissantes applications basées sur Wi
  [Création d’un nouveau Windows Form](creating-a-new-windows-form.md)  
  Contient des liens vers des rubriques qui décrivent les concepts de base pour la création d’applications Windows Forms.  
   
- [Création de gestionnaires d’événements dans les Windows Forms](creating-event-handlers-in-windows-forms.md)  
+ [Création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md)  
  Contient des liens vers des rubriques qui décrivent comment créer des gestionnaires d’événements Windows Forms.  
   
  [Réglage de la taille et de l'échelle des Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)  
@@ -34,16 +34,16 @@ Avec Windows Forms, vous pouvez créer de puissantes applications basées sur Wi
  [Modification de l'apparence des Windows Forms](changing-the-appearance-of-windows-forms.md)  
  Contient des liens vers des rubriques qui montrent comment modifier l'apparence des applications Windows Forms.  
   
- [Contrôles Windows Forms](./controls/index.md)  
+ [Contrôles Windows Forms](./controls/index.md)  
  Contient des liens vers des rubriques qui décrivent et expliquent comment utiliser Windows Forms des contrôles et des composants.  
   
- [Entrées d’utilisateur dans les Windows Forms](user-input-in-windows-forms.md)  
+ [Entrée d’utilisateur dans Windows Forms](user-input-in-windows-forms.md)  
  Contient des liens vers des rubriques qui décrivent et expliquent comment gérer les entrées de l’utilisateur dans les applications de Windows Forms.  
   
  [Boîtes de dialogue dans les Windows Forms](dialog-boxes-in-windows-forms.md)  
  Contient des liens vers des rubriques qui décrivent les différentes boîtes de dialogue à utiliser dans Windows Forms.  
   
- [Liaison de données Windows Forms](windows-forms-data-binding.md)  
+ [Liaison de données Windows Forms](windows-forms-data-binding.md)  
  Contient des liens vers des rubriques qui décrivent l’architecture de liaison de données Windows Forms et comment l’utiliser dans les applications Windows Forms.  
   
  [Sécurité de Windows Forms](windows-forms-security.md)  
@@ -55,6 +55,6 @@ Avec Windows Forms, vous pouvez créer de puissantes applications basées sur Wi
  [Guide pratique pour accéder à des collections à clé dans les Windows Forms](how-to-access-keyed-collections-in-windows-forms.md)  
  Montre comment accéder aux collections avec des clés plutôt que des index.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Amélioration des applications Windows Forms](./advanced/index.md)  
  Contient des liens vers des rubriques qui décrivent des concepts plus avancés pour la création d’applications Windows Forms.

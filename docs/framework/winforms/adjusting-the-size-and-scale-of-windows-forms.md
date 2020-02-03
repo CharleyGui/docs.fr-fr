@@ -26,7 +26,7 @@ Cette rubrique fournit des liens vers des informations sur le redimensionnement 
  [Prise en charge de la haute résolution dans Windows Forms](high-dpi-support-in-windows-forms.md)    
  Traite de la prise en charge de Windows Forms pour la haute résolution et la mise à l’échelle dynamique. 
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Drawing.Size>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   

@@ -33,6 +33,6 @@ Dans Windows Forms, l’entrée utilisateur est envoyée aux applications sous l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Entrées d’utilisateur dans les Windows Forms](user-input-in-windows-forms.md)
+- [Entrée d’utilisateur dans Windows Forms](user-input-in-windows-forms.md)
 - [Entrée au clavier dans une application Windows Forms](keyboard-input-in-a-windows-forms-application.md)
 - [Entrée de la souris dans une application Windows Forms](mouse-input-in-a-windows-forms-application.md)

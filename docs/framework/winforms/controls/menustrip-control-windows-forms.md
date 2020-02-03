@@ -69,7 +69,7 @@ Ce contrôle regroupe des commandes d'application et les rend facilement accessi
   
 - [Tâches MenuStrip, boîte de dialogue](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2010/ms233645(v=vs.100))  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.MenuStrip>  
  Décrit les fonctionnalités de la classe <xref:System.Windows.Forms.MenuStrip>, qui fournit un système de menus pour un formulaire.  
   
@@ -79,6 +79,6 @@ Ce contrôle regroupe des commandes d'application et les rend facilement accessi
  <xref:System.Windows.Forms.ToolStripMenuItem>  
  Décrit les fonctionnalités de la classe <xref:System.Windows.Forms.ToolStripMenuItem>, qui représente une option sélectionnable affichée sur un <xref:System.Windows.Forms.MenuStrip> ou <xref:System.Windows.Forms.ContextMenuStrip>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

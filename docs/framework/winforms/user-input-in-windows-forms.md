@@ -36,5 +36,5 @@ Windows Forms comprend un modèle d'entrée d'utilisateur basé sur les événem
  [Validation des entrées d’utilisateur dans les Windows Forms](user-input-validation-in-windows-forms.md)  
  Décrit les méthodes permettant de valider l’entrée d’utilisateur dans les applications Windows Forms.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  Consultez également [création de gestionnaires d’événements dans Windows Forms](creating-event-handlers-in-windows-forms.md).

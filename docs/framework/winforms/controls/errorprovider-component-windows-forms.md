@@ -26,10 +26,10 @@ Le composant `ErrorProvider` Windows Forms est utilisé pour montrer à l’util
  [Guide pratique pour afficher des erreurs d'un groupe de données à l'aide du composant ErrorProvider Windows Forms](view-errors-within-a-dataset-with-wf-errorprovider-component.md)  
  Explique comment utiliser un composant de fournisseur d’erreurs pour afficher des erreurs de données.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.ErrorProvider>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

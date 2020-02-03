@@ -16,7 +16,7 @@ ms.locfileid: "76741896"
 ---
 # <a name="high-dpi-support-in-windows-forms"></a>Prise en charge des résolutions élevées en Windows Forms
 
-À partir de la .NET Framework 4,7, Windows Forms comprend des améliorations pour les scénarios haute résolution et PPP dynamique courants. Elles incluent notamment :
+À partir de la .NET Framework 4,7, Windows Forms comprend des améliorations pour les scénarios haute résolution et PPP dynamique courants. Elles incluent notamment les suivantes :
 
 - Améliorations de la mise à l’échelle et de la disposition d’un certain nombre de contrôles Windows Forms, tels que le contrôle <xref:System.Windows.Forms.MonthCalendar> et le contrôle <xref:System.Windows.Forms.CheckedListBox>.
 
@@ -94,7 +94,7 @@ Pour obtenir la liste des clés individuelles et leurs valeurs, consultez [Windo
 
 ## <a name="new-helper-methods-and-properties"></a>Nouvelles méthodes et propriétés d’assistance
 
-La .NET Framework 4,7 ajoute également un certain nombre de nouvelles méthodes et propriétés d’assistance qui fournissent des informations sur la mise à l’échelle DPI et vous permettent d’effectuer une mise à l’échelle PPP. Elles incluent notamment :
+La .NET Framework 4,7 ajoute également un certain nombre de nouvelles méthodes et propriétés d’assistance qui fournissent des informations sur la mise à l’échelle DPI et vous permettent d’effectuer une mise à l’échelle PPP. Elles incluent notamment les suivantes :
 
 - <xref:System.Windows.Forms.Control.LogicalToDeviceUnits%2A>, qui convertit une valeur logique en pixels de périphérique.
 

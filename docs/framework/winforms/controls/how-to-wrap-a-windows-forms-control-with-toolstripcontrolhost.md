@@ -59,9 +59,9 @@ ms.locfileid: "76728180"
   
 ## <a name="compiling-the-code"></a>Compilation du code  
   
-Cet exemple nécessite :
+Cet exemple nécessite :
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 

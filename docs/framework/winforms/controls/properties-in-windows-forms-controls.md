@@ -34,7 +34,7 @@ Un contrôle Windows Forms hérite de nombreuses propriétés de la classe de ba
  [Implémentation de méthode dans les contrôles personnalisés](method-implementation-in-custom-controls.md)  
  Décrit comment implémenter des méthodes dans des composants et des contrôles personnalisés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.UserControl>  
  Décrit la classe de base pour l’implémentation des contrôles composites.  
   
@@ -44,7 +44,7 @@ Un contrôle Windows Forms hérite de nombreuses propriétés de la classe de ba
  <xref:System.ComponentModel.EditorAttribute>  
  Documente l’attribut qui spécifie le <xref:System.Drawing.Design.UITypeEditor> à utiliser pour une propriété personnalisée.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Attributs dans les contrôles Windows Forms](attributes-in-windows-forms-controls.md)  
  Décrit les attributs que vous pouvez appliquer aux propriétés ou aux autres membres de vos composants et contrôles personnalisés.  
   

@@ -38,7 +38,7 @@ Vous pouvez héberger le contenu Direct3D9 à l’aide de la classe <xref:System
 > [!NOTE]
 > XDDM est disponible sur Windows XP et Windows Vista. Toutefois, le WDDM est disponible uniquement sur Windows Vista.  
   
-## <a name="general-best-practices"></a>Meilleures pratiques générales  
+## <a name="general-best-practices"></a>Bonnes pratiques générales  
  Lorsque vous créez l’appareil, utilisez l’indicateur de création `D3DCREATE_MULTITHREADED`. Cela réduit les performances, mais le système de rendu WPF appelle les méthodes sur cet appareil à partir d’un autre thread. Veillez à suivre correctement le protocole de verrouillage, afin que deux threads n’accèdent pas à l’appareil en même temps.  
   
  Si votre rendu est effectué sur un thread managé WPF, il est fortement recommandé de créer l’appareil avec l’indicateur de création `D3DCREATE_FPU_PRESERVE`. Sans ce paramètre, le rendu D3D peut réduire la précision des opérations WPF double précision et introduire des problèmes de rendu.  

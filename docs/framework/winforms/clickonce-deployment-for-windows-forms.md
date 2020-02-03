@@ -1,5 +1,5 @@
 ---
-title: déploiement ClickOnce
+title: Déploiement ClickOnce
 ms.date: 03/30/2017
 helpviewer_keywords:
 - ClickOnce deployment [Windows Forms]
@@ -16,7 +16,7 @@ ms.locfileid: "76746337"
 # <a name="clickonce-deployment-for-windows-forms"></a>Déploiement ClickOnce pour les Windows Forms
 Les rubriques suivantes décrivent ClickOnce, une technologie permettant de déployer facilement des applications Windows Forms sur des ordinateurs clients.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Choix d’une stratégie de déploiement ClickOnce](/visualstudio/deployment/choosing-a-clickonce-deployment-strategy)  
  Présente plusieurs options pour le déploiement d’applications ClickOnce.  
   
@@ -59,7 +59,7 @@ Les rubriques suivantes décrivent ClickOnce, une technologie permettant de dép
  [Accès aux données locales et distantes dans les applications ClickOnce](/visualstudio/deployment/accessing-local-and-remote-data-in-clickonce-applications)  
  Décrit comment accéder aux fichiers de données locaux et aux sources de données distantes à partir d’une application ClickOnce.  
   
- [Guide pratique pour inclure un fichier de données dans une application ClickOnce](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
+ [How to: Include a Data File in a ClickOnce Application](/visualstudio/deployment/how-to-include-a-data-file-in-a-clickonce-application)  
  Montre comment marquer un fichier pour qu’il soit disponible dans le répertoire de données ClickOnce.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -64,9 +64,9 @@ ms.locfileid: "76746311"
  [!code-vb[System.Windows.Forms.DataGridViewComboBoxObjectBinding#000](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewComboBoxObjectBinding/vb/form1.vb#000)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 

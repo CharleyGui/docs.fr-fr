@@ -23,11 +23,11 @@ Le composant Windows Forms <xref:System.Windows.Forms.FontDialog>  est une boît
  [Guide pratique pour afficher une liste de polices à l'aide du composant FontDialog](how-to-show-a-font-list-with-the-fontdialog-component.md)  
  Explique comment choisir une police au moment de l’exécution à l’aide d’une instance du composant <xref:System.Windows.Forms.FontDialog>.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.FontDialog>  
  Fournit des informations de référence sur la classe <xref:System.Windows.Forms.FontDialog> et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles et composants de boîte de dialogue](dialog-box-controls-and-components-windows-forms.md)  
  Décrit un ensemble de contrôles et de composants qui permettent aux utilisateurs d’effectuer des interactions standard avec l’application ou le système.  
   

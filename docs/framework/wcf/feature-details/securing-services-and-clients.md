@@ -30,14 +30,14 @@ Les informations contenues dans cette section se concentrent sur la programmatio
  [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)  
  Explication de quelques-unes des tâches courantes requises lors de l’utilisation de certificats X.509.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.ServiceModel>  
   
  <xref:System.ServiceModel.Channels>  
   
  <xref:System.ServiceModel.Security>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Concepts relatifs à la sécurité](../../../../docs/framework/wcf/feature-details/security-concepts.md)  
   
  [Extension de la sécurité](../../../../docs/framework/wcf/extending/extending-security.md)  

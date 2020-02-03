@@ -34,7 +34,7 @@ Windows Forms contient de nombreuses fonctionnalités que vous pouvez utiliser p
  [Globalisation des applications Windows Forms](globalizing-windows-forms.md)  
  Contient des liens vers des rubriques qui montrent comment globaliser des applications Windows Forms.  
   
- [Applications Windows Forms et non managées](windows-forms-and-unmanaged-applications.md)  
+ [Windows Forms and Unmanaged Applications](windows-forms-and-unmanaged-applications.md)  
  Contient des liens vers des rubriques qui décrivent et illustrent comment accéder aux composants COM à partir d'applications Windows Form.  
   
  [Informations système et Windows Forms](system-information-and-windows-forms.md)  
@@ -58,7 +58,7 @@ Windows Forms contient de nombreuses fonctionnalités que vous pouvez utiliser p
  [Utilisation de contrôles WPF](using-wpf-controls.md)  
  Décrit comment utiliser des contrôles WPF dans vos applications Windows Forms.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Systèmes d’aide dans les applications Windows Forms](help-systems-in-windows-forms-applications.md)  
  Contient des liens vers des rubriques qui décrivent et illustrent comment fournir de l’aide aux utilisateur dans des applications Windows Forms.  
   

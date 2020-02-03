@@ -24,7 +24,7 @@ Les contrôles de la boîte à outils standard pour Windows Forms prennent en ch
 |AccessibleName|Nom qui sera signalé aux aides d’accessibilité.|  
 |AccessibleRole|Décrit l’utilisation de l’élément dans l’interface utilisateur.|  
 |TabIndex|Crée un chemin de navigation raisonnable via le formulaire. Il est important que les contrôles sans étiquettes intrinsèques, tels que les zones de texte, soient immédiatement précédés de leur étiquette dans l’ordre de tabulation.|  
-|Text|Utilisez le caractère « & » pour créer des clés d’accès. L’utilisation de clés d’accès fait partie intégrante d’un accès clavier documenté aux fonctionnalités.|  
+|Texte|Utilisez le caractère « & » pour créer des clés d’accès. L’utilisation de clés d’accès fait partie intégrante d’un accès clavier documenté aux fonctionnalités.|  
 |Font Size|Si la taille de la police n’est pas réglable, elle doit être définie sur 10 points ou plus. Une fois que la taille de police du formulaire est définie, tous les contrôles ajoutés au formulaire par la suite auront la même taille.|  
 |ForeColor|Si cette propriété est définie sur la valeur par défaut, les préférences de couleur de l’utilisateur sont utilisées dans le formulaire.|  
 |BackColor|Si cette propriété est définie sur la valeur par défaut, les préférences de couleur de l’utilisateur sont utilisées dans le formulaire.|  

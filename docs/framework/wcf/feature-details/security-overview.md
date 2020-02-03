@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble de la sécurité
+title: Vue d'ensemble de la sécurité
 ms.date: 03/30/2017
 helpviewer_keywords:
 - Windows Communication Foundation, security
@@ -103,7 +103,7 @@ Windows Communication Foundation (WCF) est une plateforme de programmation distr
 - [Sécurisation de services](../../../../docs/framework/wcf/securing-services.md)
 - [Scénarios de sécurité courants](../../../../docs/framework/wcf/feature-details/common-security-scenarios.md)
 - [Liaisons et sécurité](../../../../docs/framework/wcf/feature-details/bindings-and-security.md)
-- [Securing Services and Clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
+- [Sécurisation des services et des clients](../../../../docs/framework/wcf/feature-details/securing-services-and-clients.md)
 - [Authentification](../../../../docs/framework/wcf/feature-details/authentication-in-wcf.md)
 - [Autorisation](../../../../docs/framework/wcf/feature-details/authorization-in-wcf.md)
 - [Fédération et jetons émis](../../../../docs/framework/wcf/feature-details/federation-and-issued-tokens.md)

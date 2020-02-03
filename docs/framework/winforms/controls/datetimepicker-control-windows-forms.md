@@ -30,14 +30,14 @@ Le contrôle Windows Forms `DateTimePicker` permet à l’utilisateur de sélect
  [Guide pratique pour afficher l'heure avec le contrôle DateTimePicker](how-to-display-time-with-the-datetimepicker-control.md)  
  Montre les étapes à suivre pour qu’un `DateTimePicker` affiche uniquement les heures.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DateTimePicker>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.MonthCalendar>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

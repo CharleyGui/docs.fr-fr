@@ -178,27 +178,27 @@ Après avoir généré l’application, la première étape de la localisation e
 
 Utilisez votre éditeur CSV préféré prenant en charge Unicode pour éditer ce fichier. Filtrez toutes les entrées avec la catégorie de localisation « None ». Vous devez voir les entrées suivantes :
 
-|Clé de la ressource|Catégorie de localisation|Value|
+|Clé de la ressource|Catégorie de localisation|Valeur|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Button|OK|
-|Button_2:System.Windows.Controls.Button.$Content|Button|Cancel|
+|Button_2:System.Windows.Controls.Button.$Content|Button|Annuler|
 |Button_3:System.Windows.Controls.Button.$Content|Button|Parcourir...|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Ouvrir :|
-|Window_1:System.Windows.Window.Title|Titre|Exécutez.|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Entrez le nom d’un programme, dossier, document ou ressource Internet, et Windows l’ouvrira pour vous.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Ouvrir :|
+|Window_1:System.Windows.Window.Title|Titre|Exécuter|
 
 La Localisation de l’application en allemand nécessiterait les traductions suivantes :
 
-|Clé de la ressource|Catégorie de localisation|Value|
+|Clé de la ressource|Catégorie de localisation|Valeur|
 |-|-|-|
 |Button_1:System.Windows.Controls.Button.$Content|Button|OK|
 |Button_2:System.Windows.Controls.Button.$Content|Button|Abbrechen|
 |Button_3:System.Windows.Controls.Button.$Content|Button|Durchsuchen…|
 |ComboBox_1:System.Windows.Controls.ComboBox.$Content|ComboBox||
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
-|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Text|Ouvrir :|
-|Window_1:System.Windows.Window.Title|Titre|Exécutez.|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|Geben Sie den Namen eines Programms, Ordners, Dokuments oder einer Internetresource an.|
+|TextBlock_2:System.Windows.Controls.TextBlock.$Content|Texte|Ouvrir :|
+|Window_1:System.Windows.Window.Title|Titre|Exécuter|
 
 **Générer**
 
@@ -267,9 +267,9 @@ Dans de nombreux cas, le contenu peut être ambigu et difficile à traduire. Le 
 
 Ce commentaire est associé au contenu de TextBlock_1 et, dans le cas de l’outil LocBaml, (voir [localiser une application](how-to-localize-an-application.md)), il peut être consulté dans la 6ème colonne de la ligne TextBlock_1 dans le fichier output. csv :
 
-|Clé de la ressource|Catégorie|Lisible|Modifiable|Commentaire|Value|
+|Clé de la ressource|Catégorie|Lisible|Modifiable|Commentaire|Valeur|
 |-|-|-|-|-|-|
-|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Text|true|true|Ce caractère est utilisé comme règle de décoration.|&#124;|
+|TextBlock_1:System.Windows.Controls.TextBlock.$Content|Texte|TRUE|TRUE|Ce caractère est utilisé comme règle de décoration.|&#124;|
 
 Les commentaires peuvent être placés sur le contenu ou la propriété de n’importe quel élément en utilisant la syntaxe suivante :
 

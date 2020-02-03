@@ -51,4 +51,4 @@ Cet exemple montre une caractéristique propre aux structs. Il crée un objet Co
 
 - [Guide de programmation C#](../index.md)
 - [Classes et structs](index.md)
-- [Structs](structs.md)
+- [Structures](structs.md)

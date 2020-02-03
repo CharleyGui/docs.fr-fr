@@ -17,7 +17,7 @@ ms.locfileid: "76734254"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet clean` : Nettoie la sortie d’un projet.
 
@@ -55,11 +55,11 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
 
 * **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
 
 * **`-o|--output <OUTPUT_DIRECTORY>`**
 
@@ -71,7 +71,7 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `normal`,
+  Définit le niveau de détail MSBuild. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. Par défaut, il s’agit de `normal`.
 
 ## <a name="examples"></a>Exemples
 

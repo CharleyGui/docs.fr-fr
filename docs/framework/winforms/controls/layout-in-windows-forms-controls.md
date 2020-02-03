@@ -35,7 +35,7 @@ Montre comment utiliser la propriété <xref:System.Windows.Forms.Control.Paddin
 [Comment : implémenter un moteur de disposition personnalisé](how-to-implement-a-custom-layout-engine.md)\
 Montre comment implémenter une <xref:System.Windows.Forms.Layout.LayoutEngine> pour réorganiser les contrôles Windows Forms.
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 <xref:System.Windows.Forms.TableLayoutPanel>\
 Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.TableLayoutPanel>.

@@ -56,7 +56,7 @@ Les contrôles hérités doivent être `Protected` pour pouvoir être ancrés. P
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Vue d’ensemble de la propriété AutoSize](autosize-property-overview.md)
 - [Guide pratique pour fixer des contrôles sur des Windows Forms](how-to-dock-controls-on-windows-forms.md)
 - [Procédure pas à pas : organisation des contrôles dans les Windows Forms à l’aide d’un FlowLayoutPanel](walkthrough-arranging-controls-on-windows-forms-using-a-flowlayoutpanel.md)

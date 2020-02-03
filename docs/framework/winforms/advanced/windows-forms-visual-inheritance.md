@@ -38,11 +38,11 @@ Parfois, vous pouvez choisir qu’un projet appelle un formulaire semblable à c
  [Comment : utiliser les modificateurs et les propriétés GenerateMember](how-to-use-the-modifiers-and-generatemember-properties.md)  
  Explique comment utiliser les propriétés `GenerateMember` et `Modifiers`, qui sont tout à fait pertinentes lorsque le Concepteur Windows Forms génère une variable membre pour un composant.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Éléments fondamentaux de l’héritage (Visual Basic)](../../../visual-basic/programming-guide/language-features/objects-and-classes/inheritance-basics.md)  
  Décrit comment définir des classes Visual Basic qui servent de base pour les autres classes.  
   
- [classe](../../../csharp/language-reference/keywords/class.md)  
+ [class](../../../csharp/language-reference/keywords/class.md)  
  Décrit l’approche C# des classes, dans laquelle l’héritage unique est autorisé.  
   
  [Dépannage des gestionnaires d’événements hérités en Visual Basic](../../../visual-basic/programming-guide/language-features/events/troubleshooting-inherited-event-handlers.md)  

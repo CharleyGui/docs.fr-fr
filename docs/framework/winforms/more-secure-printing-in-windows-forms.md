@@ -24,7 +24,7 @@ Windows Forms applications incluent souvent des fonctionnalités d’impression.
 |<xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>|Fournit un accès complet à toutes les imprimantes installées.|  
 |<xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>|Active l’impression par programmation sur l’imprimante par défaut et l’impression plus sécurisée via une boîte de dialogue d’impression restrictive. <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting> est un sous-ensemble de <xref:System.Drawing.Printing.PrintingPermissionLevel.AllPrinting>.|  
 |<xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>|Permet d’imprimer uniquement à partir d’une boîte de dialogue plus restreinte. <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting> est un sous-ensemble de <xref:System.Drawing.Printing.PrintingPermissionLevel.DefaultPrinting>.|  
-|<xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting>|Empêche l’accès aux imprimantes. <xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting> est un sous-ensemble de <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.|  
+|<xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting>|Interdit l'accès aux imprimantes. <xref:System.Drawing.Printing.PrintingPermissionLevel.NoPrinting> est un sous-ensemble de <xref:System.Drawing.Printing.PrintingPermissionLevel.SafePrinting>.|  
   
 ## <a name="see-also"></a>Voir aussi
 

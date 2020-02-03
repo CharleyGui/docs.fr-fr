@@ -18,7 +18,7 @@ ms.locfileid: "76734082"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet nuget locals` - Efface ou liste les ressources NuGet locales.
 

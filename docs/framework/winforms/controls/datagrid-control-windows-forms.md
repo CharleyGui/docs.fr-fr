@@ -66,15 +66,15 @@ ms.locfileid: "76742511"
  [Guide pratique pour valider les entrées à l’aide du contrôle DataGrid Windows Forms](how-to-validate-input-with-the-windows-forms-datagrid-control.md)  
  Décrit comment valider des entrées dans le dataset lié au contrôle `DataGrid`.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGrid>  
  Fournit une vue d’ensemble de la classe <xref:System.Windows.Forms.DataGrid>.  
   
  <xref:System.Windows.Forms.DataGrid.DataSource%2A>  
  Fournit des détails sur l’utilisation de cette propriété pour lier le contrôle <xref:System.Windows.Forms.DataGrid> à des données.  
   
-## <a name="related-sections"></a>Rubriques connexes  
- [Liaison de données Windows Forms](../windows-forms-data-binding.md)  
+## <a name="related-sections"></a>Sections connexes  
+ [Liaison de données Windows Forms](../windows-forms-data-binding.md)  
  Fournit des liens vers des rubriques sur la liaison de données dans les Windows Forms.  
   
 ## <a name="see-also"></a>Voir aussi

@@ -53,11 +53,11 @@ Il existe essentiellement trois plateformes qui prennent en charge l’encre num
   
 |Tâche|Windows Presentation Foundation|Windows Forms et COM|  
 |----------|-------------------------------------|---------------------------|  
-|Enregistrer l’encre|<xref:System.Windows.Ink.StrokeCollection.Save%2A>|[Microsoft.Ink.Ink.Save](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571335(v=vs.90))|  
-|Charger l’encre|Créez un <xref:System.Windows.Ink.StrokeCollection> avec le constructeur <xref:System.Windows.Ink.StrokeCollection.%23ctor%2A>.|[Microsoft.Ink.Ink.Load](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms569609(v=vs.90))|  
-|Test de positionnement|<xref:System.Windows.Ink.StrokeCollection.HitTest%2A>|[Microsoft.Ink.Ink.HitTest](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571330(v=vs.90))|  
-|Copier l’encre|<xref:System.Windows.Controls.InkCanvas.CopySelection%2A>|[Microsoft.Ink.Ink.ClipboardCopy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571316(v=vs.90))|  
-|Coller l’encre|<xref:System.Windows.Controls.InkCanvas.Paste%2A>|[Microsoft.Ink.Ink.ClipboardPaste](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571318(v=vs.90))|  
+|Enregistrer l’encre|<xref:System.Windows.Ink.StrokeCollection.Save%2A>|[Microsoft. Ink. Ink. Save](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571335(v=vs.90))|  
+|Charger l’encre|Créez un <xref:System.Windows.Ink.StrokeCollection> avec le constructeur <xref:System.Windows.Ink.StrokeCollection.%23ctor%2A>.|[Microsoft. Ink. Ink. Load](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms569609(v=vs.90))|  
+|Test de positionnement|<xref:System.Windows.Ink.StrokeCollection.HitTest%2A>|[Microsoft. Ink. Ink. HitTest](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571330(v=vs.90))|  
+|Copier l’encre|<xref:System.Windows.Controls.InkCanvas.CopySelection%2A>|[Microsoft. Ink. Ink. ClipboardCopy](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571316(v=vs.90))|  
+|Coller l’encre|<xref:System.Windows.Controls.InkCanvas.Paste%2A>|[Microsoft. Ink. Ink. ClipboardPaste](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms571318(v=vs.90))|  
 |Accéder aux propriétés personnalisées d’une collection de traits|<xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A> (les propriétés sont stockées en interne et accessibles via <xref:System.Windows.Ink.StrokeCollection.AddPropertyData%2A>, <xref:System.Windows.Ink.StrokeCollection.RemovePropertyData%2A>et <xref:System.Windows.Ink.StrokeCollection.ContainsPropertyData%2A>)|Utiliser [Microsoft. Ink. Ink. ExtendedProperties](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms582214(v=vs.90))|  
   
 ### <a name="sharing-ink-between-platforms"></a>Partage d’encre entre plateformes  

@@ -32,7 +32,7 @@ Le contrôle <xref:System.Windows.Forms.DataGridView> peut afficher des données
   
  Le tri par colonnes indépendantes en mode dépendant n’est pas pris en charge. Si vous créez une colonne indépendante en mode dépendant qui contient des valeurs modifiables par l’utilisateur, vous devez implémenter le mode virtuel pour conserver ces valeurs lorsque le contrôle est trié par une colonne liée.  
   
-## <a name="virtual"></a>Virtual  
+## <a name="virtual"></a>Virtuelle  
  Avec le mode virtuel, vous pouvez implémenter vos propres opérations de gestion de données. Cela est nécessaire pour conserver les valeurs des colonnes indépendantes en mode dépendant lorsque le contrôle est trié par colonnes dépendantes. L’utilisation principale du mode virtuel, cependant, consiste à optimiser les performances lors de l’interaction avec de grandes quantités de données.  
   
  Vous attachez le contrôle <xref:System.Windows.Forms.DataGridView> à un cache que vous gérez, et votre code contrôle le moment où les lignes de données font l’objet d’un push et d’une extraction. Pour réduire l’encombrement mémoire, le cache doit être de la même taille que le nombre de lignes actuellement affichées. Lorsque l’utilisateur fait défiler les nouvelles lignes dans la vue, votre code demande de nouvelles données à partir du cache et vide éventuellement les anciennes données de la mémoire.  

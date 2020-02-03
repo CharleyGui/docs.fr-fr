@@ -22,19 +22,19 @@ Utilisez l’interface multidocument (MDI) pour créer des applications qui peuv
   
 ### <a name="to-create-an-mdi-window-list-on-a-menustrip"></a>Pour créer une liste de fenêtres MDI sur un MenuStrip  
   
-1. Créez un formulaire et affectez la valeur `true` à sa propriété <xref:System.Windows.Forms.Form.IsMdiContainer%2A>.  
+1. Créez un formulaire et affectez la valeur <xref:System.Windows.Forms.Form.IsMdiContainer%2A> à sa propriété `true`.  
   
 2. Ajoutez un <xref:System.Windows.Forms.MenuStrip> au formulaire.  
   
 3. Ajoutez deux éléments de menu de niveau supérieur au <xref:System.Windows.Forms.MenuStrip> et définissez leurs propriétés <xref:System.Windows.Forms.Control.Text%2A> sur `&File` et `&Window`.  
   
-4. Ajoutez un élément de sous-menu à l'élément de menu `&File` et affectez la valeur `&Open` à la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A>.  
+4. Ajoutez un élément de sous-menu à l'élément de menu `&File` et affectez la valeur <xref:System.Windows.Forms.ToolStripItem.Text%2A> à la propriété `&Open`.  
   
 5. Définissez la propriété <xref:System.Windows.Forms.MenuStrip.MdiWindowListItem%2A> du <xref:System.Windows.Forms.MenuStrip> sur le <xref:System.Windows.Forms.ToolStripMenuItem>`&Window`.  
   
 6. Ajoutez un formulaire au projet et ajoutez le contrôle de votre choix, tel qu’un autre <xref:System.Windows.Forms.MenuStrip>.  
   
-7. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.Control.Click> du <xref:System.Windows.Forms.ToolStripMenuItem> de `&New`.  
+7. Créez un gestionnaire d'événements pour l'événement <xref:System.Windows.Forms.Control.Click> du `&New` de <xref:System.Windows.Forms.ToolStripMenuItem>.  
   
 8. Dans le gestionnaire d’événements, insérez du code semblable au suivant pour créer et afficher les nouvelles instances de `Form2` en tant qu’enfants MDI de `Form1`.  
   
@@ -73,7 +73,7 @@ Utilisez l’interface multidocument (MDI) pour créer des applications qui peuv
     ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - deux <xref:System.Windows.Forms.Form> contrôles nommés `Form1` et `Form2` ;  
   

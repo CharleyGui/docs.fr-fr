@@ -1,5 +1,5 @@
 ---
-title: Vue d’ensemble du contrôle Splitter
+title: Vue d'ensemble du contrôle Splitter
 ms.date: 03/30/2017
 f1_keywords:
 - Splitter

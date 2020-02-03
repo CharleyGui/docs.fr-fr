@@ -28,7 +28,7 @@ L’illustration suivante montre un service et un client Windows Communication F
 |Liaison|<xref:System.ServiceModel.WSHttpBinding>|  
   
 ## <a name="service"></a>Service  
- La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des actions suivantes :  
+ La configuration et le code ci-dessous sont conçus pour s'exécuter indépendamment. Effectuez l'une des opérations suivantes :  
   
 - Créez un service autonome à l'aide du code sans configuration.  
   
@@ -117,5 +117,5 @@ L’illustration suivante montre un service et un client Windows Communication F
 - [Utilisation des certificats](../../../../docs/framework/wcf/feature-details/working-with-certificates.md)
 - [Guide pratique pour configurer un port avec un certificat SSL](../../../../docs/framework/wcf/feature-details/how-to-configure-a-port-with-an-ssl-certificate.md)
 - [Vue d’ensemble de la sécurité](../../../../docs/framework/wcf/feature-details/security-overview.md)
-- [\<clientCredentials>](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
+- [\<clientCredentials >](../../../../docs/framework/configure-apps/file-schema/wcf/clientcredentials.md)
 - [Modèle de sécurité pour Windows Server App Fabric](https://docs.microsoft.com/previous-versions/appfabric/ee677202(v=azure.10))

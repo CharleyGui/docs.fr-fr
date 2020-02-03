@@ -42,8 +42,8 @@ En mode de remplissage de colonne, le contrôle <xref:System.Windows.Forms.DataG
  [!code-csharp[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/csharp/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/CS/fillcolumns.cs#00)]
  [!code-vb[System.Windows.Forms.DataGridViewFillColumnsDemo#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewFillColumnsDemo/vb/fillcolumns.vb#00)]  
   
-### <a name="comments"></a>Comments  
- Pour utiliser cette application de démonstration  
+### <a name="comments"></a>Commentaires  
+ Pour utiliser cette démonstration d'application :  
   
 - Modifiez la taille du formulaire. Observez comment la largeur des colonnes change tout en conservant les proportions indiquées par les valeurs de propriétés <xref:System.Windows.Forms.DataGridViewColumn.FillWeight%2A>.  
   
@@ -56,7 +56,7 @@ En mode de remplissage de colonne, le contrôle <xref:System.Windows.Forms.DataG
 - Modifiez les valeurs de <xref:System.Windows.Forms.DataGridViewColumn.AutoSizeMode%2A> de certaines colonnes. Observez l'effet quand vous redimensionnez des colonnes ou le formulaire.  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - Références aux assemblys System, System.Drawing et System.Windows.Forms.  
   

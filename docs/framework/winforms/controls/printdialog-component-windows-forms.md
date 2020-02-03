@@ -25,10 +25,10 @@ Le composant `PrintDialog` Windows Forms est une boîte de dialogue préconfigur
  [Guide pratique pour afficher le composant PrintDialog](how-to-display-the-printdialog-component.md)  
  Explique comment afficher la boîte de dialogue et où elle enregistre les propriétés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.PrintDialog>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

@@ -18,7 +18,7 @@ Vous pouvez personnaliser l’apparence de vos applications Windows Forms de nom
  [Guide pratique pour modifier les bordures des Windows Forms](how-to-change-the-borders-of-windows-forms.md)  
  Montre comment modifier le style de bordure d'un formulaire.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.Form>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
@@ -37,7 +37,7 @@ Vous pouvez personnaliser l’apparence de vos applications Windows Forms de nom
  <xref:System.Drawing.Color>  
  Décrit cette classe et propose des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Réglage de la taille et de l'échelle des Windows Forms](adjusting-the-size-and-scale-of-windows-forms.md)  
  Contient des liens vers des rubriques qui montrent comment modifier la taille et l'échelle d'un formulaire.  
   

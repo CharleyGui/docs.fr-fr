@@ -20,13 +20,13 @@ Vous pouvez développer un contrôle Windows Forms composite en combinant d'autr
 
 Le concepteur de Windows Forms dans Visual Studio fournit une prise en charge enrichie au moment du design pour la création de contrôles utilisateur.
 
-- [Comment : afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
+- [Guide pratique pour afficher un contrôle dans la boîte de dialogue Choisir des éléments de boîte à outils](how-to-display-a-control-in-the-choose-toolbox-items-dialog-box.md)
 
 - [Procédure pas à pas : sérialisation des collections de types standard avec DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)
 
-- [Procédure pas à pas : héritage d’un contrôle Windows Forms à l’aide de Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
+- [Procédure pas à pas : héritage d’un contrôle Windows Forms à l’aide de Visual C#](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)
 
-- [Comment : fournir une bitmap pour un contrôle en vue de l'afficher dans la boîte à outils](how-to-provide-a-toolbox-bitmap-for-a-control.md)
+- [Guide pratique pour fournir une bitmap pour un contrôle en vue de l’afficher dans la boîte à outils](how-to-provide-a-toolbox-bitmap-for-a-control.md)
 
 - [Guide pratique pour hériter de contrôles Windows Forms existants](how-to-inherit-from-existing-windows-forms-controls.md)
 
@@ -34,21 +34,21 @@ Le concepteur de Windows Forms dans Visual Studio fournit une prise en charge en
 
 - [Guide pratique pour hériter de la classe du contrôle](how-to-inherit-from-the-control-class.md)
 
-- [Guide pratique pour tester le comportement d’un UserControl au moment de l’exécution](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
+- [Guide pratique pour tester le comportement d'un UserControl au moment de l'exécution](how-to-test-the-run-time-behavior-of-a-usercontrol.md)
 
 - [Guide pratique pour aligner un contrôle sur les bords des formulaires au moment du design](how-to-align-a-control-to-the-edges-of-forms-at-design-time.md)
 
-- [Guide pratique pour hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
+- [Comment : hériter de la classe UserControl](how-to-inherit-from-the-usercontrol-class.md)
 
 - [Guide pratique pour créer des contrôles pour des Windows Forms](how-to-author-controls-for-windows-forms.md)
 
 - [Guide pratique pour créer des contrôles composites](how-to-author-composite-controls.md)
 
-- [Procédure pas à pas : création d’un contrôle composite à l’aide de Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
+- [Procédure pas à pas : création d'un contrôle composite à l'aide de Visual C#](walkthrough-authoring-a-composite-control-with-visual-csharp.md)
 
 - [Procédure pas à pas : création d’un contrôle Windows Forms qui tire parti des fonctionnalités au moment du design de Visual Studio](creating-a-wf-control-design-time-features.md)
 
-- [Comment : créer un contrôle Windows Forms qui bénéficie des fonctionnalités au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
+- [Guide pratique pour créer un contrôle Windows Forms qui bénéficie des fonctionnalités au moment du design](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/307hck25(v=vs.120))
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -29,13 +29,13 @@ HRESULT SaveToHistory(
 )  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  pHistoryStream  
  Pointeur vers le flux d’historique.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

@@ -89,7 +89,7 @@ La plupart des formulaires sont conçus en ajoutant des contrôles à la surface
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Contrôles Windows Forms](index.md)
+- [Contrôles Windows Forms](index.md)
 - [Guide pratique pour redimensionner des contrôles sur des Windows Forms](how-to-resize-controls-on-windows-forms.md)
 - [Guide pratique pour définir le texte affiché par un contrôle Windows Forms](how-to-set-the-text-displayed-by-a-windows-forms-control.md)
 - [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)

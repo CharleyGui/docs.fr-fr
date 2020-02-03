@@ -47,17 +47,17 @@ Les lignes directrices de ce chapitre présentent une méthode simple d'utilisat
 
  Le tableau suivant décrit les règles de mise en majuscules pour les différents types d’identificateurs.
 
-|Identificateur|Rapport|Exemple|
+|Identificateur|Casse|Exemple|
 |----------------|------------|-------------|
 |Espace de noms|Pascal|`namespace System.Security { ... }`|
 |Type|Pascal|`public class StreamReader { ... }`|
 |Interface|Pascal|`public interface IEnumerable { ... }`|
 |Méthode|Pascal|`public class Object {` <br />  `public virtual string ToString();` <br /> `}`|
-|Les|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|
-|Event|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|
+|Propriété|Pascal|`public class String {` <br />  `public int Length { get; }` <br /> `}`|
+|Événement|Pascal|`public class Process {` <br />  `public event EventHandler Exited;` <br /> `}`|
 |Champ|Pascal|`public class MessageQueue {` <br />  `public static readonly TimeSpan` <br /> `InfiniteTimeout;` <br /> `}` <br /> `public struct UInt32 {` <br />  `public const Min = 0;` <br /> `}`|
 |Valeur enum|Pascal|`public enum FileMode {` <br />  `Append,` <br />  `...` <br /> `}`|
-|Paramètre|Camel|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|
+|Paramètre|mixte|`public class Convert {` <br />  `public static int ToInt32(string value);` <br /> `}`|
 
 ## <a name="capitalizing-compound-words-and-common-terms"></a>Mettre en majuscules les mots composés et les termes courants
  La plupart des termes composés sont traités comme des mots simples à des fins de mise en majuscules.
@@ -66,7 +66,7 @@ Les lignes directrices de ce chapitre présentent une méthode simple d'utilisat
 
  Il s’agit de mots composés écrits sous la forme d’un mot unique, tel qu’un point de terminaison. Dans le cadre des instructions de la casse, traitez un mot composé fermé comme un mot unique. Utilisez un dictionnaire actuel pour déterminer si un mot composé est écrit sous forme fermée.
 
-|Pascal|Camel|not|
+|Pascal|mixte|not|
 |------------|-----------|---------|
 |`BitFlag`|`bitFlag`|`Bitflag`|
 |`Callback`|`callback`|`CallBack`|

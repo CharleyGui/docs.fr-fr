@@ -41,7 +41,7 @@ La procédure suivante requiert un projet d' **application Windows** avec un for
 
 2. Dans la fenêtre **Propriétés** , définissez les propriétés suivantes, selon le cas.
 
-    |Les|Description|
+    |Propriété|Description|
     |--------------|-----------------|
     |<xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A>|La propriété `BackColor` définit la couleur des lignes paires de la grille. Lorsque vous définissez la propriété <xref:System.Windows.Forms.DataGrid.AlternatingBackColor%2A> sur une couleur différente, chaque autre ligne est définie sur cette nouvelle couleur (lignes 1, 3, 5, etc.).|
     |<xref:System.Windows.Forms.DataGrid.BackColor%2A>|Couleur d’arrière-plan des lignes numérotées de la grille (lignes 0, 2, 4, 6, etc.).|

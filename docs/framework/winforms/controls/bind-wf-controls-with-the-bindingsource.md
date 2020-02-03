@@ -50,7 +50,7 @@ Une fois que vous avez ajouté des contrôles à votre formulaire et déterminé
 
 9. Remplacez le nom du jeu de données par défaut, si vous le souhaitez.
 
-10. Cliquez sur **Finish**.
+10. Cliquez sur **Terminer**.
 
 11. Dans la fenêtre **Propriétés** , cliquez à nouveau sur la flèche à côté de la propriété <xref:System.Windows.Forms.TextBox.Text%2A>. Dans l’éditeur de types d’interface utilisateur **DataSource** , sélectionnez le nom du champ auquel lier l' <xref:System.Windows.Forms.TextBox>.
 

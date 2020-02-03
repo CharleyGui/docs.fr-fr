@@ -32,7 +32,7 @@ Le contrôle `DataGridView` vous fournit diverses options pour configurer la fa�
  [Guide pratique pour permettre aux utilisateurs de copier plusieurs cellules dans le Presse-papiers à partir du contrôle DataGridView Windows Forms](enable-users-to-copy-multiple-cells-to-the-clipboard-datagridview.md)  
  Décrit comment activer la prise en charge du presse-papiers dans le contrôle.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   

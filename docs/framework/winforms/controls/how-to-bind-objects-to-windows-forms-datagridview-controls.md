@@ -24,9 +24,9 @@ L'exemple de code suivant montre comment lier une collection d'objets à un cont
  [!code-vb[System.Windows.Forms.DataGridView._CollectionBound#00](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView._CollectionBound/VB/collectionbound.vb#00)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 

@@ -23,10 +23,10 @@ Les contrôles de `Splitter` Windows Forms sont utilisés pour redimensionner le
  [Vue d’ensemble du contrôle Splitter](splitter-control-overview-windows-forms.md)  
  Décrit un contrôle et ses principales fonctionnalités et propriétés.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.Splitter>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

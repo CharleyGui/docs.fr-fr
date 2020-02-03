@@ -30,7 +30,7 @@ Quand vous utilisez des contrôles liés aux données, vous devez parfois répon
  [!code-vb[System.Windows.Forms.DataConnector.ResetBindings#1](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataConnector.ResetBindings/VB/form1.vb#1)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - des références aux assemblys System, System.Drawing et System.Windows.Forms.  
   

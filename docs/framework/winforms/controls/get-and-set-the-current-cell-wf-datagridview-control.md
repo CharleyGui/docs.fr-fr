@@ -39,7 +39,7 @@ L’interaction avec le <xref:System.Windows.Forms.DataGridView> nécessite souv
      [!code-vb[System.Windows.Forms.DataGridViewMisc#085](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewMisc/VB/datagridviewmisc.vb#085)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - <xref:System.Windows.Forms.Button> contrôles nommés `getCurrentCellButton` et `setCurrentCellButton`. En Visual C#, vous devez joindre les événements <xref:System.Windows.Forms.Control.Click> pour chaque bouton au gestionnaire d’événements associé dans l’exemple de code.  
   

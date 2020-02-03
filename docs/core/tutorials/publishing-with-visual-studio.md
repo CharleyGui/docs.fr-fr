@@ -30,7 +30,7 @@ Dans [créer une application Hello World avec .net core dans Visual Studio](with
 
    ![Choisir une cible de publication dans Visual Studio](media/publishing-with-visual-studio/pick-publish-target.png)
    
-1. Sur la page **publier** , sélectionnez **publier**.
+1. Dans la page de **publication**, sélectionnez **Publier**.
 
    ![Fenêtre Publier de Visual Studio](media/publishing-with-visual-studio/publish-page.png)
    

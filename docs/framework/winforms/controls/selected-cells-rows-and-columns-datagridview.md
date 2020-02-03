@@ -44,7 +44,7 @@ Vous pouvez obtenir les cellules, lignes ou colonnes sélectionnées à partir d
      [!code-vb[System.Windows.Forms.DataGridViewSelectedCollections#30](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridViewSelectedCollections/VB/DataGridViewSelectedCollections.vb#30)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - <xref:System.Windows.Forms.Button> contrôles nommés `selectedCellsButton`, `selectedRowsButton`et `selectedColumnsButton`, chacun avec des gestionnaires pour l’événement <xref:System.Windows.Forms.Control.Click> attaché.  
   

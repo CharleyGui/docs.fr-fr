@@ -15,7 +15,7 @@ ms.locfileid: "76747012"
 ---
 # <a name="hosting-win32-content-in-wpf"></a>Hébergement de contenu Win32 dans WPF
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Consultez [interopérabilité WPF et Win32](wpf-and-win32-interoperation.md).
 

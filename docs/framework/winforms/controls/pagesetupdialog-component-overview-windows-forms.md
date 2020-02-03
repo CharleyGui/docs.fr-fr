@@ -27,4 +27,4 @@ Lorsqu’il est ajouté à un formulaire, le composant <xref:System.Windows.Form
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.PageSetupDialog>
-- [PageSetupDialog Component](pagesetupdialog-component-windows-forms.md)
+- [PageSetupDialog, composant](pagesetupdialog-component-windows-forms.md)

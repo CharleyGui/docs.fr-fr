@@ -37,7 +37,7 @@ Cette section fournit des rubriques qui illustrent diverses tâches de programma
  [Guide pratique pour utiliser des colonnes de type image dans le contrôle DataGridView Windows Forms](how-to-work-with-image-columns-in-the-windows-forms-datagridview-control.md)  
  Décrit comment programmer avec la classe `DataGridViewImageColumn`.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DataGridView>  
  Fournit une documentation de référence pour le contrôle <xref:System.Windows.Forms.DataGridView>.  
   
@@ -50,7 +50,7 @@ Cette section fournit des rubriques qui illustrent diverses tâches de programma
  <xref:System.Windows.Forms.DataGridViewColumn>  
  Fournit une documentation de référence pour la classe <xref:System.Windows.Forms.DataGridViewColumn>.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Fonctionnalités de base liées aux colonnes, lignes et cellules dans le contrôle DataGridView Windows Forms](basic-column-row-and-cell-features-wf-datagridview-control.md)  
  Fournit des rubriques qui décrivent les propriétés de cellule, de ligne et de colonne couramment utilisées.  
   

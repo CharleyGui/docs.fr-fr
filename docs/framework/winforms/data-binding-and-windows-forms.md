@@ -37,7 +37,7 @@ Dans Windows Forms, vous pouvez créer des liaisons avec des sources de données
   
 |Type de liaison de données|Description|  
 |--------------------------|-----------------|  
-|Liaison de données simple|Capacité d'un contrôle à créer une liaison avec un élément de données, tel qu'une valeur dans une colonne d'une table de dataset. Il s’agit du type de liaison typique des contrôles tels que <xref:System.Windows.Forms.TextBox> ou <xref:System.Windows.Forms.Label>, qui n’affichent généralement qu’une seule valeur. En réalité, n'importe quelle propriété d'un contrôle peut être liée à un champ d'une base de données. Il existe une prise en charge étendue de cette fonctionnalité dans Visual Studio.<br /><br /> Pour plus d'informations, consultez .<br /><br /> [interfaces de -   liées à la liaison de données](interfaces-related-to-data-binding.md)<br />-   [Comment : parcourir des données dans Windows Forms](how-to-navigate-data-in-windows-forms.md)<br />-   [Comment : créer un contrôle à liaison simple dans un Windows Form](how-to-create-a-simple-bound-control-on-a-windows-form.md)|  
+|Liaison de données simple|Capacité d'un contrôle à créer une liaison avec un élément de données, tel qu'une valeur dans une colonne d'une table de dataset. Il s’agit du type de liaison typique des contrôles tels que <xref:System.Windows.Forms.TextBox> ou <xref:System.Windows.Forms.Label>, qui n’affichent généralement qu’une seule valeur. En réalité, n'importe quelle propriété d'un contrôle peut être liée à un champ d'une base de données. Il existe une prise en charge étendue de cette fonctionnalité dans Visual Studio.<br /><br /> Pour plus d'informations, consultez les pages suivantes :<br /><br /> [interfaces de -   liées à la liaison de données](interfaces-related-to-data-binding.md)<br />-   [Comment : parcourir des données dans Windows Forms](how-to-navigate-data-in-windows-forms.md)<br />-   [Comment : créer un contrôle à liaison simple dans un Windows Form](how-to-create-a-simple-bound-control-on-a-windows-form.md)|  
 |Liaison de données complexe|Capacité d'un contrôle à lier plusieurs éléments de données, généralement plusieurs enregistrements d'une base de données. La liaison complexe est également appelée liaison basée sur des listes. Des contrôles qui prennent en charge la liaison complexe sont, par exemple, <xref:System.Windows.Forms.DataGridView>, <xref:System.Windows.Forms.ListBox> et <xref:System.Windows.Forms.ComboBox>. Pour obtenir un exemple de liaison de données complexe, consultez [Comment : lier un contrôle ComboBox ou ListBox Windows Forms à des données](./controls/how-to-bind-a-windows-forms-combobox-or-listbox-control-to-data.md).|  
   
 ## <a name="bindingsource-component"></a>Composant BindingSource  
@@ -56,6 +56,6 @@ Dans Windows Forms, vous pouvez créer des liaisons avec des sources de données
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Forms.Binding>
-- [Liaison de données Windows Forms](windows-forms-data-binding.md)
+- [Liaison de données Windows Forms](windows-forms-data-binding.md)
 - [Guide pratique pour lier le contrôle DataGrid Windows Forms à une source de données](./controls/how-to-bind-the-windows-forms-datagrid-control-to-a-data-source.md)
 - [BindingSource, composant](./controls/bindingsource-component.md)

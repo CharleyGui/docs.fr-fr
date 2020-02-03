@@ -30,14 +30,14 @@ L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’
   
  Cette rubrique décrit les paramètres de ligne de commande qui peuvent être utilisés avec PresentationHost.exe.  
   
-## <a name="usage"></a>Contrôle  
+## <a name="usage"></a>Utilisation  
  `PresentationHost.exe [parameters] uri|filename`  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
   
 |Paramètre|Description|  
 |---------------|-----------------|  
-|Nom de fichier|Chemin du fichier à activer. Peut également être un URI.|  
+|filename|Chemin du fichier à activer. Peut également être un URI.|  
 |-debug|Au moment d’activer une application, n’effectue pas sa validation ou son exécution à partir du magasin. Fonctionne uniquement quand un fichier local est activé.|  
 |-debugSecurityZoneURL \<url>|Utilisé avec une valeur d’URL pour indiquer à PresentationHost. exe qu’une application doit être déboguée comme si elle était déployée à partir de l’URL spécifiée. Cela permet de déterminer à la fois la zone de déploiement et le site d’origine.|  
 |-embedding|Imposé par OLE. Si le paramètre `-event` ou `-debug` est spécifié, il n’est pas nécessaire de spécifier le paramètre `-embedding`, car celui-ci est défini de façon interne.|  
@@ -60,4 +60,4 @@ L’hôte Windows Presentation Foundation (WPF) (PresentationHost. exe) est l’
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Security](../security-wpf.md)
+- [Sécurité](../security-wpf.md)

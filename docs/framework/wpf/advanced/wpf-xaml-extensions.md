@@ -20,7 +20,7 @@ ms.locfileid: "76744397"
  [Binding, extension de balisage](binding-markup-extension.md)  
   [ColorConvertedBitmap, extension de balisage](colorconvertedbitmap-markup-extension.md)  
   [ComponentResourceKey, extension de balisage](componentresourcekey-markup-extension.md)  
-  [Extension de balisage DynamicResource](dynamicresource-markup-extension.md)  
+  [DynamicResource, extension de balisage](dynamicresource-markup-extension.md)  
   [RelativeSource, extension de balisage](relativesource-markupextension.md)  
   [StaticResource, extension de balisage](staticresource-markup-extension.md)  
   [TemplateBinding, extension de balisage](templatebinding-markup-extension.md)  

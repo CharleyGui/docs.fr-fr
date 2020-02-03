@@ -59,7 +59,7 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.MonthCalendar> peut affich
     monthCalendar1->AddBoldedDate(myVacation2);  
     ```  
   
-     – ou –  
+     \- ou -  
   
      Créez un ensemble de dates en gras en créant un tableau d’objets <xref:System.DateTime> et en l’assignant à l’une des propriétés.  
   
@@ -97,7 +97,7 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.MonthCalendar> peut affich
     monthCalendar1->RemoveBoldedDate(myVacation2);  
     ```  
   
-     – ou –  
+     \- ou -  
   
      Supprimez toutes les dates en gras de l’une des trois listes en appelant la méthode <xref:System.Windows.Forms.MonthCalendar.RemoveAllBoldedDates%2A>, <xref:System.Windows.Forms.MonthCalendar.RemoveAllAnnuallyBoldedDates%2A>ou <xref:System.Windows.Forms.MonthCalendar.RemoveAllMonthlyBoldedDates%2A>.  
   

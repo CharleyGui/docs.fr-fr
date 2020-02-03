@@ -17,7 +17,7 @@ ms.lasthandoff: 01/24/2020
 ms.locfileid: "76727841"
 ---
 # <a name="member-overloading"></a>Surcharge de membre
-Member overloading means creating two or more members on the same type that differ only in the number or type of parameters but have the same name. For example, in the following, the `WriteLine` method is overloaded:
+La surcharge de membre consiste à créer deux membres ou plus sur le même type qui diffèrent uniquement par le nombre ou le type de paramètres, mais qui portent le même nom. Par exemple, dans le code suivant, la méthode `WriteLine` est surchargée :
 
 ```csharp
 public static class Console {
@@ -28,31 +28,31 @@ public static class Console {
 }
 ```
 
- Because only methods, constructors, and indexed properties can have parameters, only those members can be overloaded.
+ Étant donné que seules les méthodes, les constructeurs et les propriétés indexées peuvent avoir des paramètres, seuls ces membres peuvent être surchargés.
 
- Overloading is one of the most important techniques for improving usability, productivity, and readability of reusable libraries. Overloading on the number of parameters makes it possible to provide simpler versions of constructors and methods. Overloading on the parameter type makes it possible to use the same member name for members performing identical operations on a selected set of different types.
+ La surcharge est l’une des techniques les plus importantes pour améliorer la convivialité, la productivité et la lisibilité des bibliothèques réutilisables. La surcharge sur le nombre de paramètres permet de fournir des versions plus simples des constructeurs et des méthodes. La surcharge sur le type de paramètre permet d’utiliser le même nom de membre pour les membres effectuant des opérations identiques sur un ensemble sélectionné de types différents.
 
- ✔️ DO try to use descriptive parameter names to indicate the default used by shorter overloads.
+ ✔️ essayez d’utiliser des noms de paramètres descriptifs pour indiquer la valeur par défaut utilisée par les surcharges plus courtes.
 
- ❌ AVOID arbitrarily varying parameter names in overloads. If a parameter in one overload represents the same input as a parameter in another overload, the parameters should have the same name.
+ ❌ éviter de faire varier arbitrairement les noms de paramètres dans les surcharges. Si un paramètre d’une surcharge représente la même entrée qu’un paramètre dans une autre surcharge, les paramètres doivent avoir le même nom.
 
- ❌ AVOID being inconsistent in the ordering of parameters in overloaded members. Parameters with the same name should appear in the same position in all overloads.
+ ❌ éviter d’être incohérent dans l’ordre des paramètres dans les membres surchargés. Les paramètres portant le même nom doivent apparaître à la même position dans toutes les surcharges.
 
- ✔️ DO make only the longest overload virtual (if extensibility is required). Shorter overloads should simply call through to a longer overload.
+ ✔️ Effectuez uniquement la surcharge virtuelle la plus longue (si l’extensibilité est requise). Les surcharges plus courtes doivent simplement appeler une surcharge plus longue.
 
- ❌ DO NOT use `ref` or `out` modifiers to overload members.
+ ❌ n’utilisez pas de modificateurs `ref` ou `out` pour surcharger des membres.
 
- Some languages cannot resolve calls to overloads like this. In addition, such overloads usually have completely different semantics and probably should not be overloads but two separate methods instead.
+ Certains langages ne peuvent pas résoudre les appels aux surcharges de ce type. En outre, ces surcharges ont généralement une sémantique complètement différente et ne doivent probablement pas être des surcharges, mais deux méthodes distinctes à la place.
 
- ❌ DO NOT have overloads with parameters at the same position and similar types yet with different semantics.
+ ❌ n’ont pas de surcharges avec des paramètres à la même position et des types similaires encore avec une sémantique différente.
 
- ✔️ DO  allow `null` to be passed for optional arguments.
+ ✔️ autorisez les `null` à être passés pour des arguments facultatifs.
 
- ✔️ DO use member overloading rather than defining members with default arguments.
+ ✔️ Utilisez la surcharge des membres plutôt que de définir des membres avec des arguments par défaut.
 
- Default arguments are not CLS compliant.
+ Les arguments par défaut ne sont pas conformes CLS.
 
- *Portions © 2005, 2009 Microsoft Corporation. All rights reserved.*
+ *Parties © 2005, 2009 Microsoft Corporation. Tous droits réservés.*
 
  *Réimprimé avec l’autorisation de Pearson Education, Inc. et extrait de [Framework Design Guidelines: Conventions, Idioms, and Patterns for Reusable .NET Libraries, 2nd Edition](https://www.informit.com/store/framework-design-guidelines-conventions-idioms-and-9780321545619) par Krzysztof Cwalina et Brad Abrams, publié le 22 octobre 2008 par Addison-Wesley Professional dans le cadre de la série sur le développement Microsoft Windows.*
 

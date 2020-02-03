@@ -38,11 +38,11 @@ Le `TabControl` Windows Forms affiche plusieurs onglets comparables aux intercal
   
  Consultez également [Comment : ajouter et supprimer des onglets avec l’Windows Forms TabControl à l’aide du concepteur](add-and-remove-tabs-with-wf-tabcontrol-using-the-designer.md), [Comment : ajouter un contrôle à une page d’onglet à l’aide du concepteur](how-to-add-a-control-to-a-tab-page-using-the-designer.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.TabControl>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Boîtes de dialogue dans les Windows Forms](../dialog-boxes-in-windows-forms.md)  
  Fournit une liste de tâches pour les boîtes de dialogue, qui contiennent souvent des onglets.  
   

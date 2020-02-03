@@ -25,23 +25,23 @@ Dans certaines applications, le type d'une fenêtre enfant d'interface multidocu
   
 ### <a name="to-append-a-menu-item-to-an-mdi-parent"></a>Pour ajouter un élément à un menu MDI parent  
   
-1. Créez un formulaire et affectez la valeur `true` à sa propriété <xref:System.Windows.Forms.Form.IsMdiContainer%2A>.  
+1. Créez un formulaire et affectez la valeur <xref:System.Windows.Forms.Form.IsMdiContainer%2A> à sa propriété `true`.  
   
-2. Ajoutez un <xref:System.Windows.Forms.MenuStrip> à `Form1` et affectez la valeur `true` à la propriété <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> du <xref:System.Windows.Forms.MenuStrip>.  
+2. Ajoutez un <xref:System.Windows.Forms.MenuStrip> à `Form1` et affectez la valeur <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> à la propriété <xref:System.Windows.Forms.MenuStrip> du `true`.  
   
-3. Affectez la valeur `false` à la propriété <xref:System.Windows.Forms.ToolStripItem.Visible%2A> du <xref:System.Windows.Forms.MenuStrip> de `Form1`.  
+3. Affectez la valeur <xref:System.Windows.Forms.ToolStripItem.Visible%2A> à la propriété `Form1` du <xref:System.Windows.Forms.MenuStrip> de `false`.  
   
-4. Ajoutez un élément de menu de niveau supérieur au <xref:System.Windows.Forms.MenuStrip> de `Form1` et affectez la valeur `&File` à sa propriété <xref:System.Windows.Forms.Control.Text%2A>.  
+4. Ajoutez un élément de menu de niveau supérieur au `Form1` de <xref:System.Windows.Forms.MenuStrip> et affectez la valeur <xref:System.Windows.Forms.Control.Text%2A> à sa propriété `&File`.  
   
-5. Ajoutez un élément de sous-menu à l'élément de menu `&File` et affectez la valeur `&Open` à la propriété <xref:System.Windows.Forms.Form.Text%2A>.  
+5. Ajoutez un élément de sous-menu à l'élément de menu `&File` et affectez la valeur <xref:System.Windows.Forms.Form.Text%2A> à la propriété `&Open`.  
   
-6. Ajoutez un formulaire au projet, ajoutez un <xref:System.Windows.Forms.MenuStrip> au formulaire et affectez la valeur `true` à la propriété <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> du <xref:System.Windows.Forms.MenuStrip> de `Form2`.  
+6. Ajoutez un formulaire au projet, ajoutez un <xref:System.Windows.Forms.MenuStrip> au formulaire et affectez la valeur <xref:System.Windows.Forms.ToolStrip.AllowMerge%2A> à la propriété `Form2` du <xref:System.Windows.Forms.MenuStrip> de `true`.  
   
-7. Ajoutez un élément de menu de niveau supérieur au <xref:System.Windows.Forms.MenuStrip> de `Form2` et affectez la valeur `&Special` à sa propriété <xref:System.Windows.Forms.Form.Text%2A>.  
+7. Ajoutez un élément de menu de niveau supérieur au `Form2` de <xref:System.Windows.Forms.MenuStrip> et affectez la valeur <xref:System.Windows.Forms.Form.Text%2A> à sa propriété `&Special`.  
   
-8. Ajoutez deux éléments de sous-menu à l'élément de menu `&Special` et affectez respectivement les valeurs `Command&1` et `Command&2` à leur propriété <xref:System.Windows.Forms.Form.Text%2A>.  
+8. Ajoutez deux éléments de sous-menu à l'élément de menu `&Special` et affectez respectivement les valeurs <xref:System.Windows.Forms.Form.Text%2A> et `Command&1` à leur propriété `Command&2`.  
   
-9. Affectez la valeur <xref:System.Windows.Forms.MergeAction.Append> à la propriété <xref:System.Windows.Forms.MergeAction> des éléments de menu `&Special`, `Command&1` et `Command&2`.  
+9. Affectez la valeur <xref:System.Windows.Forms.MergeAction> à la propriété `&Special` des éléments de menu `Command&1`, `Command&2` et <xref:System.Windows.Forms.MergeAction.Append>.  
   
 10. Créez un gestionnaire d’événements pour l’événement <xref:System.Windows.Forms.Control.Click> de l' <xref:System.Windows.Forms.ToolStripMenuItem>`&Open`.  
   
@@ -80,7 +80,7 @@ Dans certaines applications, le type d'une fenêtre enfant d'interface multidocu
     ```  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - deux <xref:System.Windows.Forms.Form> contrôles nommés `Form1` et `Form2` ;  
   

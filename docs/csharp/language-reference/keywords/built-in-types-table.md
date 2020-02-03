@@ -62,9 +62,9 @@ Console.WriteLine(doubleType.FullName);
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
-- [Types valeur](../builtin-types/value-types.md)
+- [Types de valeur](../builtin-types/value-types.md)
 - [Types référence](reference-types.md)
 - [Valeurs par défaut C# des types](../builtin-types/default-values.md)
 - [dynamic](../builtin-types/reference-types.md#the-dynamic-type)

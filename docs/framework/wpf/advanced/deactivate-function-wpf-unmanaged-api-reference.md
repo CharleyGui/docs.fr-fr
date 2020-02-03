@@ -27,7 +27,7 @@ Cette API prend en charge l’infrastructure Windows Presentation Foundation (WP
 void Deactivate()  
 ```  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

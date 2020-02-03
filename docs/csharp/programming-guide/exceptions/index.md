@@ -38,7 +38,7 @@ Les exceptions ont les propriétés suivantes :
 - Le code qui se trouve dans un bloc `finally` est exécuté même si une exception est levée. Utilisez un bloc `finally` pour libérer des ressources, par exemple pour fermer tous les flux ou fichiers qui ont été ouverts dans le bloc `try`.
 - Les exceptions gérées dans .NET Framework sont implémentées au-dessus du mécanisme de gestion structurée des exceptions de Win32. Pour plus d’informations, consultez les pages [Gestion structurée des exceptions (C/C++)](/cpp/cpp/structured-exception-handling-c-cpp) et [Cours intensif sur la gestion structurée des exceptions de Win32](http://bytepointer.com/resources/pietrek_crash_course_depths_of_win32_seh.htm).
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 Pour plus d’informations sur les exceptions et la gestion des exceptions, consultez les articles suivants :
 

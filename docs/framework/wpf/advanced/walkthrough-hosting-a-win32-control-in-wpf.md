@@ -22,7 +22,7 @@ Windows Presentation Foundation (WPF) fournit un environnement riche pour la cr�
  Cette rubrique vous guide à travers une application, qui [héberge un contrôle ListBox Win32 dans WPF Sample](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WPFHostingWin32Control), qui héberge un contrôle de zone de liste Win32. Cette procédure générale peut être étendue à l’hébergement d’une fenêtre Win32.  
 
 <a name="requirements"></a>   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  Cette rubrique suppose une connaissance de base de la programmation des API WPF et Windows. Pour une présentation de base de la programmation WPF, consultez [prise en main](../getting-started/index.md). Pour une introduction à la programmation des API Windows, consultez l’un des nombreux ouvrages sur le sujet, en particulier *Programming Windows* de Charles Petzold.  
   
  Étant donné que l’exemple qui accompagne cette rubrique est implémenté C#dans, il utilise les services d’appel de code non managé (PInvoke) pour accéder à l’API Windows. Une certaine connaissance de PInvoke est utile, mais pas essentielle.  

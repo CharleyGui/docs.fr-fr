@@ -17,7 +17,7 @@ ms.locfileid: "76734378"
 [!INCLUDE [topic-appliesto-net-core-21plus](../../../includes/topic-appliesto-net-core-21plus.md)]
 -->
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet build-server` -Interagit avec les serveurs démarrés par une build.
 

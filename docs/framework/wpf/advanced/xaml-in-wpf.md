@@ -35,11 +35,11 @@ ms.locfileid: "76741882"
 [Extensions XAML WPF](wpf-xaml-extensions.md)  
 [Fonctionnalités de langage pour la compatibilité du balisage (mc:)](markup-compatibility-mc-language-features.md)  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
 
 [Architecture de WPF](wpf-architecture.md)  
 [Éléments de base](base-elements.md)  
-[Sérialisation et arborescence d’éléments](element-tree-and-serialization.md)  
+[Sérialisation et arborescence d'éléments](element-tree-and-serialization.md)  
 [Propriétés](properties-wpf.md)  
 [Événements](events-wpf.md)  
 [Entrée](input-wpf.md)  

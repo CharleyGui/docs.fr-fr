@@ -45,7 +45,7 @@ ms.locfileid: "76742282"
 ## <a name="deploying-an-xbap"></a>Déploiement d’une application XBAP
  Lorsque vous générez une application XBAP, la sortie inclut les trois fichiers suivants :
 
-|File|Description|
+|Fichier|Description|
 |----------|-----------------|
 |Fichier exécutable (.exe)|Ce fichier contient le code compilé et porte l’extension .exe.|
 |Fichier manifeste d’application (.manifest)|Ce fichier contient les métadonnées associées à l’application et porte l’extension .manifest.|
@@ -101,7 +101,7 @@ ms.locfileid: "76742282"
 
 1. Dans Visual Studio, ouvrez les propriétés du projet.
 
-2. Dans l’onglet **Sécurité**, cliquez sur **Avancé**.
+2. Sous l’onglet **Sécurité**, cliquez sur **Avancé**.
 
      La boîte de dialogue Paramètres de sécurité avancés apparaît.
 
@@ -113,7 +113,7 @@ ms.locfileid: "76742282"
 
      La boîte de dialogue Options Internet apparaît.
 
-6. Cliquez sur l’onglet **Avancé**.
+6. Cliquez sur l'onglet **Avancé**.
 
 7. Dans la liste des **paramètres** sous **Sécurité**, cochez la case **Autoriser l’exécution du contenu actif dans les fichiers de mon ordinateur**.
 
@@ -126,11 +126,11 @@ ms.locfileid: "76742282"
 
 <a name="xbap_security_considerations"></a>
 ## <a name="xbap-security-considerations"></a>Considérations relatives à la sécurité des applications XBAP
- Les applications XBAP s’exécutent généralement dans un sandbox de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Par conséquent, votre implémentation doit prendre en charge le sous-ensemble d’éléments WPF pris en charge dans la zone Internet ou vous devez élever les autorisations de votre application. Pour plus d’informations, consultez l’article [Sécurité](../security-wpf.md).
+ Les applications XBAP s’exécutent généralement dans un sandbox de sécurité de confiance partielle qui est limité au jeu d’autorisations de la zone Internet. Par conséquent, votre implémentation doit prendre en charge le sous-ensemble d’éléments WPF pris en charge dans la zone Internet ou vous devez élever les autorisations de votre application. Pour plus d’informations, consultez [Sécurité](../security-wpf.md).
 
  Quand vous utilisez un contrôle de <xref:System.Windows.Controls.WebBrowser> dans votre application, WPF instancie en interne le contrôle ActiveX WebBrowser natif. Lorsque votre application est exécutée en tant qu’application XBAP de confiance partielle dans Internet Explorer, le contrôle ActiveX s’exécute dans un thread dédié du processus Internet Explorer. Cela signifie que les limitations suivantes s’appliquent :
 
-- Le contrôle <xref:System.Windows.Controls.WebBrowser> doit fournir un comportement similaire à celui du navigateur hôte, y compris des restrictions de sécurité. Certaines de ces restrictions de sécurité peuvent être gérées via les paramètres de sécurité d’Internet Explorer. Pour plus d’informations, consultez l’article [Sécurité](../security-wpf.md).
+- Le contrôle <xref:System.Windows.Controls.WebBrowser> doit fournir un comportement similaire à celui du navigateur hôte, y compris des restrictions de sécurité. Certaines de ces restrictions de sécurité peuvent être gérées via les paramètres de sécurité d’Internet Explorer. Pour plus d’informations, consultez [Sécurité](../security-wpf.md).
 
 - Une exception est générée lorsqu’une application XBAP est chargée sur plusieurs domaines dans une page HTML.
 

@@ -26,13 +26,13 @@ ms.locfileid: "76735496"
  [Guide pratique pour exécuter des procédures à intervalles définis à l'aide du composant Timer Windows Forms](run-procedures-at-set-intervals-with-wf-timer-component.md)  
  Explique comment réagir aux intervalles minutés dans vos applications Windows.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.Timer?displayProperty=nameWithType>  
  Fournit des informations de référence sur la classe, utilisée pour les minuteurs Windows Forms, et ses membres.  
   
  Classe <xref:System.Timers.Timer?displayProperty=nameWithType>  
  Fournit des informations de référence sur la classe <xref:System.Timers.Timer?displayProperty=nameWithType> utilisée par les minuteurs serveur.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  

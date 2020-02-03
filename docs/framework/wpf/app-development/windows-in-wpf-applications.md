@@ -21,15 +21,15 @@ Les utilisateurs interagissent avec les applications via Windows. L’objectif f
 ## <a name="in-this-section"></a>Dans cette section  
  [Vue d'ensemble des fenêtres WPF](wpf-windows-overview.md)  
  [Vue d’ensemble des boîtes de dialogue](dialog-boxes-overview.md)  
- [Rubriques pratiques](window-management-how-to-topics.md)  
+ [Rubriques Comment](window-management-how-to-topics.md)  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Window>  
   
  <xref:System.Windows.Navigation.NavigationWindow>  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Vue d’ensemble de la gestion d’applications](application-management-overview.md)  
   [Vue d’ensemble de la navigation](navigation-overview.md)  
-  [Hébergement](hosting-wpf-applications.md)  
+  [Hébergement d’applications WPF](hosting-wpf-applications.md)  
   [Génération et déploiement d’applications WPF](building-and-deploying-wpf-applications.md)

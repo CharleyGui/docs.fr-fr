@@ -23,7 +23,7 @@ Dans ce didacticiel, vous apprendrez à :
 > * Écrire votre première application .NET pour Apache Spark
 > * Générez et exécutez votre application .NET simple pour Apache Spark
 
-## <a name="prepare-your-environment"></a>Préparer votre environnement
+## <a name="prepare-your-environment"></a>Préparation de votre environnement
 
 Avant de commencer à écrire votre application, vous devez configurer certaines dépendances de la configuration requise. Si vous pouvez exécuter `dotnet`, `java`, `mvn`, `spark-shell` à partir de votre environnement de ligne de commande, votre environnement est déjà préparé et vous pouvez passer à la section suivante. Si vous ne pouvez pas exécuter une partie ou l’ensemble des commandes, procédez comme suit.
 
@@ -207,7 +207,7 @@ This .NET app counts words with Apache Spark
 
 3. Lorsque votre application s’exécute, les données de nombre de mots du fichier *Input. txt* sont écrites dans la console.
 
-Félicitations ! Vous avez créé et exécuté une application .NET pour Apache Spark.
+Félicitations ! Vous avez créé et exécuté une application .NET pour Apache Spark.
 
 ## <a name="next-steps"></a>Étapes suivantes :
 

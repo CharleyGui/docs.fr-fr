@@ -20,7 +20,7 @@ ms.locfileid: "76735310"
  Ce didacticiel explique comment écrire un exemple d’application, [hébergeant du contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004), qui héberge [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu dans une fenêtre Win32. Vous pouvez étendre cet exemple pour héberger n’importe quelle fenêtre Win32. Étant donné qu’il implique la combinaison de code managé et non managé, l’application C++est écrite en/cli.  
 
 <a name="requirements"></a>   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  Ce didacticiel suppose une connaissance de base des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et de la programmation Win32. Pour une présentation de base de la programmation de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], consultez [prise en main](../getting-started/index.md). Pour une introduction à la programmation Win32, vous devez référencer l’un des nombreux ouvrages sur le sujet, en particulier *Programming Windows* de Charles Petzold.  
   
  Étant donné que l’exemple qui accompagne ce didacticiel est implémenté C++en/CLI, ce didacticiel suppose que vous êtes familiarisé avec l' C++ utilisation de pour programmer l’API Windows, ainsi qu’une compréhension de la programmation de code managé. La connaissance de C++la fonction/CLI est utile, mais pas essentielle.  
@@ -176,7 +176,7 @@ ms.locfileid: "76735310"
 - [Définition des propriétés WPF](#set_page_properties)
 
 <a name="page_layout"></a>
-### <a name="layout"></a>Mise en page
+### <a name="layout"></a>Disposition
  Les éléments [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] dans le contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] se composent de cinq contrôles <xref:System.Windows.Controls.TextBox>, avec des contrôles <xref:System.Windows.Controls.Label> associés : nom, adresse, ville, État et code postal. Il existe également deux contrôles de <xref:System.Windows.Controls.Button>, **OK** et **Annuler**
 
  Le contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] est implémenté dans la classe `WPFPage`. La disposition est gérée avec un élément de disposition <xref:System.Windows.Controls.Grid>. La classe hérite de <xref:System.Windows.Controls.Grid>, qui en fait effectivement l'élément racine du contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].

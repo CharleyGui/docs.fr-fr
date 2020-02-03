@@ -33,11 +33,11 @@ Le contrôle Windows Forms `Button` permet à l'utilisateur d'effectuer une acti
   
  Consultez également [Comment : désigner un bouton de Windows Forms comme bouton accepter à l’aide du concepteur](designate-a-wf-button-as-the-accept-button-using-the-designer.md) et [Comment : désigner un bouton de Windows Forms comme bouton Annuler à l’aide du concepteur](designate-a-wf-button-as-the-cancel-button-using-the-designer.md).  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  Classe <xref:System.Windows.Forms.Button>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.  
   

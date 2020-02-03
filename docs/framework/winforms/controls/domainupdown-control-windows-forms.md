@@ -32,13 +32,13 @@ Le contrôle Windows Forms <xref:System.Windows.Forms.DomainUpDown> ressemble à
  [Guide pratique pour supprimer des éléments des contrôles DomainUpDown Windows Forms](how-to-remove-items-from-windows-forms-domainupdown-controls.md)  
  Décrit comment supprimer des éléments du contrôle <xref:System.Windows.Forms.DomainUpDown> dans le code.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.DomainUpDown>  
  Décrit cette classe et fournit des liens vers tous ses membres.  
   
  <xref:System.Windows.Forms.NumericUpDown>  
  Décrit cette classe et contient des liens vers tous ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [Contrôles à utiliser dans les Windows Forms](controls-to-use-on-windows-forms.md)  
  Fournit une liste complète de contrôles Windows Forms, avec des liens vers des informations sur leur utilisation.

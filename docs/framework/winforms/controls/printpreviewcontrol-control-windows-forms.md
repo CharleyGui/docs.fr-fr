@@ -21,11 +21,11 @@ Le `PrintPreviewControl` Windows Forms sert à afficher un document tel qu'il ap
  [Vue d’ensemble du contrôle PrintPreviewControl](printpreviewcontrol-control-overview-windows-forms.md)  
  Présente les concepts généraux du contrôle `PrintPreviewControl`, qui vous permet de créer votre propre composant ou boîte de dialogue Aperçu avant impression.  
   
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Windows.Forms.PrintPreviewControl>  
  Fournit des informations de référence sur la classe et ses membres.  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
  [PrintPreviewDialog, contrôle](printpreviewdialog-control-windows-forms.md)  
  Décrit une autre manière de créer une fonctionnalité d'aperçu avant impression.  
   

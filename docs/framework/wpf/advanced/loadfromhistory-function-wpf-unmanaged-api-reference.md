@@ -30,14 +30,14 @@ HRESULT LoadFromHistory_export(
 )  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  pHistoryStream  
  Pointeur vers un flux d’informations d’historique.  
   
  pBindCtx  
  Pointeur vers un contexte de liaison.  
   
-## <a name="requirements"></a>Configuration requise pour  
+## <a name="requirements"></a>Configuration requise  
  **Plateformes :** Consultez [.NET Framework Configuration système requise](../../get-started/system-requirements.md).  
   
  **DLL**  

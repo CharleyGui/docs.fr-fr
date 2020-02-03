@@ -133,4 +133,4 @@ Vous pouvez créer un nœud dérivé dans un contrôle Windows Forms <xref:Syste
 ## <a name="see-also"></a>Voir aussi
 
 - [TreeView, contrôle](treeview-control-windows-forms.md)
-- [ListView, contrôle](listview-control-windows-forms.md)
+- [Contrôle ListView](listview-control-windows-forms.md)

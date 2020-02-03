@@ -27,7 +27,7 @@ L'exemple de code suivant montre comment utiliser le mode virtuel dans le contr�
  [!code-vb[System.Windows.Forms.DataGridView.Virtual_lazyloading#000](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.Virtual_lazyloading/VB/lazyloading.vb#000)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
 - des références aux assemblys System.Data, System.Xml et System.Windows.Forms ;  
   

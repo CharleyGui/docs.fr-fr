@@ -26,9 +26,9 @@ Dans ce didacticiel, vous allez effectuer les actions suivantes :
 > - Générez un fichier dump.
 > - Analyser l’utilisation de la mémoire à l’aide du fichier dump.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
-Le didacticiel utilise les éléments suivants :
+Le didacticiel utilise :
 
 - [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 - [dotnet-trace](dotnet-trace.md) pour répertorier les processus.
@@ -54,7 +54,7 @@ dotnet run
 dotnet-trace ps
 ```
 
-La sortie doit ressembler à ce qui suit :
+La sortie doit ressembler à ce qui suit :
 
 ```console
 4807 DiagnosticScena /home/user/git/samples/core/diagnostics/DiagnosticScenarios/bin/Debug/netcoreapp3.0/DiagnosticScenarios

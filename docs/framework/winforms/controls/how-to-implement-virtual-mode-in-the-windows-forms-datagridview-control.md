@@ -29,9 +29,9 @@ L'exemple de code suivant montre comment gérer de grands ensembles de données 
  [!code-vb[System.Windows.Forms.DataGridView.VirtualMode#000](~/samples/snippets/visualbasic/VS_Snippets_Winforms/System.Windows.Forms.DataGridView.VirtualMode/VB/virtualmode.vb#000)]  
   
 ## <a name="compiling-the-code"></a>Compilation du code  
- Cet exemple nécessite :  
+ Cet exemple nécessite :  
   
-- des références aux assemblys System et System.Windows.Forms ;  
+- des références aux assemblys System et System.Windows.Forms.  
   
 ## <a name="see-also"></a>Voir aussi
 
