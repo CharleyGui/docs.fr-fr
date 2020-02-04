@@ -31,6 +31,10 @@
       href: how-to-guides/databricks-deploy-methods.md
     - name: Déployer des fichiers binaires worker et UDF
       href: how-to-guides/deploy-worker-udf-binaries.md
+    - name: Créer une application sur Ubuntu
+      href: how-to-guides/ubuntu-instructions.md
+    - name: Créer une application sur Windows
+      href: how-to-guides/windows-instructions.md
 - name: Référence
   items:
     - name: Informations de référence sur les API

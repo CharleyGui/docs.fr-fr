@@ -2,12 +2,12 @@
 title: À propos de .NET Core
 description: Découvrez plus en détail .NET Core.
 ms.date: 09/17/2019
-ms.openlocfilehash: e5460fd1d968a49478a1bdc5f18962de2c7cbbe0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
-ms.translationtype: HT
+ms.openlocfilehash: 7908cf70e91dcd68668008c2c3082dc293330ec1
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920957"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965839"
 ---
 # <a name="about-net-core"></a>À propos de .NET Core
 
@@ -73,7 +73,7 @@ Ces composants sont distribués de la façon suivante :
 
 ### <a name="designed-for-adaptability"></a>Conçu pour l’adaptabilité
 
-.NET Core a été créé comme un produit très similaire mais unique par rapport aux autres produits .NET. Il a été conçu pour offrir une adaptabilité étendue aux nouvelles plates-formes et charges de travail, et il dispose de plusieurs ports de système d’exploitation et processeur disponibles (et peut être porté à plusieurs autres).
+.NET Core a été créé comme un produit similaire mais unique par rapport aux autres produits .NET. Il a été conçu pour offrir une adaptabilité étendue aux nouvelles plates-formes et charges de travail, et il dispose de plusieurs ports de système d’exploitation et processeur disponibles (et peut être porté à plusieurs autres).
 
 Le produit est divisé en plusieurs composants, ce qui permet d’adapter les différentes parties à de nouvelles plateformes, à différents moments. Le runtime et les bibliothèques de base spécifiques à la plateforme doivent être portés individuellement. Les bibliothèques indépendantes de la plateforme doivent fonctionner en l’état sur toutes les plateformes, de par leur construction. Il existe un décalage entre le projet et la réduction des implémentations spécifiques à la plateforme pour améliorer l’efficacité des C# développeurs, en préférant le code indépendant de la plateforme chaque fois qu’un algorithme ou une API peut être implémentée en totalité ou en partie de cette façon.
 
