@@ -2,12 +2,12 @@
 title: Byrefs
 description: En savoir plus sur les types ByRef et de F#type ByRef dans, qui sont utilisés pour la programmation de bas niveau.
 ms.date: 11/04/2019
-ms.openlocfilehash: 5aaee1e4eac9ce0d7e9ba89a2ab5f745d31367a0
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 05a40059ad5b72829233b0c4135c76eb1cff4da5
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75901309"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965813"
 ---
 # <a name="byrefs"></a>Byrefs
 
@@ -114,17 +114,17 @@ C#prend en charge les mots clés `in ref` et `out ref`, en plus de `ref` retourn
 |------------|---------|
 |`ref` valeur de retour|`outref<'T>`|
 |`ref readonly` valeur de retour|`inref<'T>`|
-|Paramètre `in ref`|`inref<'T>`|
-|Paramètre `out ref`|`outref<'T>`|
+|paramètre `in ref`|`inref<'T>`|
+|paramètre `out ref`|`outref<'T>`|
 
 Le tableau suivant répertorie F# les émissions :
 
 |F#composer|Construction émise|
 |------------|-----------------|
-|Argument `inref<'T>`|attribut `[In]` sur l’argument|
+|argument `inref<'T>`|attribut `[In]` sur l’argument|
 |`inref<'T>` retourner|`modreq` attribut sur la valeur|
 |`inref<'T>` dans l’emplacement ou l’implémentation abstraits|`modreq` de l’argument ou du retour|
-|Argument `outref<'T>`|attribut `[Out]` sur l’argument|
+|argument `outref<'T>`|attribut `[Out]` sur l’argument|
 
 ### <a name="type-inference-and-overloading-rules"></a>Inférence de type et règles de surcharge
 
@@ -166,7 +166,7 @@ type S(count1: Span<int>, count2: Span<int>) =
 
 `IsByRefLike` n’implique pas `Struct`. Les deux doivent être présents sur le type.
 
-Un struct «`byref`-like » dans F# est un type valeur lié à la pile. Elle n’est jamais allouée sur le tas managé. Un struct de type `byref`est utile pour la programmation hautes performances, car il est appliqué avec un ensemble de vérifications fortes sur la durée de vie et la non-capture. Les règles applicables sont les suivantes :
+Un struct «`byref`-like » dans F# est un type valeur lié à la pile. Elle n’est jamais allouée sur le tas managé. Un struct de type `byref`est utile pour la programmation hautes performances, car il est appliqué avec un ensemble de vérifications fortes sur la durée de vie et la non-capture. Les règles sont les suivantes :
 
 * Elles peuvent être utilisées en tant que paramètres de fonction, paramètres de méthode, variables locales, retours de méthode.
 * Ils ne peuvent pas être des membres statiques ou d’instance d’une classe ou d’un struct normal.
@@ -182,14 +182,20 @@ Bien que ces règles restreignent fortement l’utilisation, elles le font pour 
 Les retours F# ByRef des fonctions ou des membres peuvent être générés et consommés. Lors de l’utilisation d’une méthode retournant un `byref`, la valeur est déréférencée implicitement. Par exemple :
 
 ```fsharp
-let safeSum(bytes: Span<byte>) =
-    let mutable sum = 0
+let squareAndPrint (data : byref<int>) = 
+    let squared = data*data    // data is implicitly dereferenced
+    printfn "%d" squared
+```
+
+Pour retourner une valeur ByRef, la variable qui contient la valeur doit être plus longue que la portée actuelle.
+En outre, pour retourner ByRef, utilisez & valeur (où la valeur est une variable qui dure plus longtemps que la portée actuelle).
+
+```fsharp
+let mutable sum = 0
+let safeSum (bytes: Span<byte>) =
     for i in 0 .. bytes.Length - 1 do
         sum <- sum + int bytes.[i]
-    sum
-
-let sum = safeSum(mySpanOfBytes)
-printfn "%d" sum // 'sum' is of type 'int'
+    &sum  // sum lives longer than the scope of this function.
 ```
 
 Pour éviter la déréférence implicite, par exemple passer une référence par le biais de plusieurs appels chaînés, utilisez `&x` (où `x` est la valeur).

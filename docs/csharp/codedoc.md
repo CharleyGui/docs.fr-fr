@@ -4,18 +4,18 @@ description: Découvrez comment documenter votre code avec des commentaires de d
 ms.date: 01/21/2020
 ms.technology: csharp-fundamentals
 ms.assetid: 8e75e317-4a55-45f2-a866-e76124171838
-ms.openlocfilehash: ef0d22e0ee7faa3ba51da6b44cf1827f19baf4f1
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 1ec088db1de7c953bdb20b1129c5fd40f9e31454
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787823"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965930"
 ---
 # <a name="document-your-code-with-xml-comments"></a>Documenter votre code avec des commentaires XML
 
 Les commentaires de documentation XML sont un genre particulier de commentaire, ajouté au-dessus de la définition d’un type ou d’un membre défini par l’utilisateur.
 Ils sont spéciaux, car ils peuvent être traités par le compilateur pour générer un fichier de documentation XML au moment de la compilation.
-Le fichier XML généré par le compilateur peut être distribué avec votre assembly .NET pour permettre à Visual Studio et à d’autres IDE d’utiliser IntelliSense pour afficher des informations rapides concernant les types ou les membres. De plus, le fichier XML peut être exécuté par l’intermédiaire d’outils tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) pour générer des sites web de références d’API.
+Le fichier XML généré par le compilateur peut être distribué avec votre assembly .NET afin que Visual Studio et d’autres IDE puissent utiliser IntelliSense pour afficher des informations rapides sur les types ou les membres. De plus, le fichier XML peut être exécuté par l’intermédiaire d’outils tels que [DocFX](https://dotnet.github.io/docfx/) et [Sandcastle](https://github.com/EWSoftware/SHFB) pour générer des sites web de références d’API.
 
 Les commentaires de documentation XML, comme tous les autres commentaires, sont ignorés par le compilateur.
 
@@ -49,7 +49,7 @@ Voici le code de la bibliothèque mathématique simple :
 
 [!code-csharp[Sample Library](../../samples/snippets/csharp/concepts/codedoc/sample-library.cs)]
 
-L’exemple de bibliothèque prend en charge quatre opérations arithmétiques principales `add`, `subtract`, `multiply` et `divide` sur des types de données `int` et `double`.
+L’exemple de bibliothèque prend en charge quatre opérations arithmétiques principales (`add`, `subtract`, `multiply`et `divide`) sur les types de données `int` et `double`.
 
 Vous souhaitez maintenant être en mesure de créer un document de référence d’API à partir de votre code pour les développeurs tiers qui utilisent votre bibliothèque, mais n’ont pas accès au code source.
 Comme nous l’avons déjà mentionné, vous pouvez pour cela utiliser les balises de documentation XML. Vous allez maintenant découvrir les balises XML standard prises en charge par le compilateur C#.
@@ -61,7 +61,7 @@ Je vais expliquer son utilisation en l’ajoutant à la définition de la classe
 
 [!code-csharp[Summary Tag](~/samples/snippets/csharp/concepts/codedoc/summary-tag.cs)]
 
-La balise `<summary>` est très importante, et nous vous recommandons de l’inclure, car son contenu est la principale source d’informations sur les types ou les membres dans IntelliSense ou un document de référence des API.
+La balise `<summary>` est importante et nous vous recommandons de l’inclure, car son contenu est la principale source d’informations sur les types ou les membres dans IntelliSense ou un document de référence sur les API.
 
 ## <a name="remarks"></a>\<remarks>
 
@@ -163,8 +163,7 @@ Vous pouvez utiliser la même méthode générique que celle créée précédemm
 
 ## <a name="list"></a>\<list>
 
-La balise `<list>` vous permet de mettre en forme des informations de documentation sous la forme d’une liste triée, d’une liste non triée ou d’un tableau.
-Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
+Vous utilisez la balise `<list>` pour mettre en forme les informations de documentation sous la forme d’une liste triée, d’une liste non triée ou d’une table. Créez une liste non triée de toutes les opérations mathématiques prises en charge par votre bibliothèque `Math`.
 
 [!code-csharp[List Tag](~/samples/snippets/csharp/concepts/codedoc/list-tag.cs)]
 
@@ -207,7 +206,7 @@ L’attribut `path` représente une requête [XPath](../standard/data/xml/xpath-
 
 L’attribut `name` représente le spécificateur de nom dans la balise qui précède les commentaires.
 
-L’attribut `id` qui peut être utilisé à la place de `name` représente l’ID de la balise qui précède les commentaires.
+L’attribut `id`, qui peut être utilisé à la place de `name`, représente l’ID de la balise qui précède les commentaires.
 
 ### <a name="user-defined-tags"></a>Balises définies par l’utilisateur
 

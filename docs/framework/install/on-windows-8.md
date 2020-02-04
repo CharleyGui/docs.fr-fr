@@ -3,12 +3,12 @@ title: Installer le .NET Framework sur Windows 8
 ms.custom: updateeachrelease
 description: Découvrez comment installer le .NET Framework sur Windows 8
 ms.date: 04/18/2019
-ms.openlocfilehash: 0d9afb30088256b6c5c1fd8c0b2c99e3a9760b89
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 1db8ac9837821eb7111b9d0015787509bc27b398
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716731"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965995"
 ---
 # <a name="install-the-net-framework-on-windows-8-and-windows-server-2012"></a>Installer le .NET Framework sur Windows 8 et Windows Server 2012
 
@@ -29,7 +29,7 @@ Ces instructions ont pour but de vous aider à installer les versions du .NET Fr
 
 ## <a name="net-framework-46"></a>.NET Framework 4.6
 
-Le [.NET Framework 4.6](https://www.microsoft.com/download/details.aspx?id=48130) est la dernière version prise en charge du .NET Framework sur Windows 8.
+Le [.NET Framework 4.6](https://dotnet.microsoft.com/download/dotnet-framework/net46) est la dernière version prise en charge du .NET Framework sur Windows 8.
 
 Le .NET Framework 4.6 prend en charge les applications conçues pour le .NET Framework 4.0 à 4.6.
 

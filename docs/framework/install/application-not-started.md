@@ -2,12 +2,12 @@
 title: Résolution des problèmes « cette application n’a pas pu être démarrée »
 description: Découvrez comment faire si la boîte de dialogue « cette application n’a pas pu être démarrée » s’affiche.
 ms.date: 09/05/2019
-ms.openlocfilehash: 2140ab38c29d610634f71305c4337c324e0550d8
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 864c6ea23e9a048f060eee39d904bd4377be5084
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73092048"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965904"
 ---
 # <a name="troubleshooting-a-this-application-could-not-be-started-error-message"></a>Résolution des problèmes liés à un message d’erreur « cette application n’a pas pu être démarrée »
 
@@ -44,11 +44,11 @@ Pour résoudre ce problème afin de pouvoir exécuter votre application, procéd
    |Version Windows|Installation de .NET Framework|
    |---|---|
    |Mise à jour anniversaire Windows 10 et versions ultérieures|[.NET Framework 4,8 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
-   |Windows 10, mise à jour de novembre de Windows 10|[.NET Framework 4.6.2](https://www.microsoft.com/download/details.aspx?id=53345)|
-   |Windows 8.1|[.NET Framework 4,8 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
-   |Windows 8|[.NET Framework 4.6.1](https://www.microsoft.com/download/details.aspx?id=49981)|
+   |Windows 10, mise à jour de novembre de Windows 10|[.NET Framework 4.6.2](https://dotnet.microsoft.com/download/dotnet-framework/net462)|
+   |Windows 8.1|[.NET Framework 4,8 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
+   |Windows 8|[.NET Framework 4.6.1](https://dotnet.microsoft.com/download/dotnet-framework/net461)|
    |Windows 7 SP1|[.NET Framework 4,8 Runtime](https://dotnet.microsoft.com/download/dotnet-framework/net48)|
-   |Windows Vista SP2|[.NET Framework 4,6](https://www.microsoft.com/download/details.aspx?id=48130)|
+   |Windows Vista SP2|[.NET Framework 4,6](https://dotnet.microsoft.com/download/dotnet-framework/net46)|
 
    > [!NOTE]
    > .NET Framework 4,8 est préinstallé sur la mise à jour de Windows 10 mai 2019.

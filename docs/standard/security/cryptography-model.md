@@ -6,12 +6,12 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: f0c00e4cc866c537fe26dd1ad466d6cde95bc608
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 964c63e01a6b09e63e305e9a10dca46e62c18648
+ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706225"
+ms.lasthandoff: 02/02/2020
+ms.locfileid: "76965956"
 ---
 # <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
 
@@ -33,15 +33,11 @@ Le système de sécurité .NET Framework implémente un modèle extensible d’h
 
 Prenez comme exemple d'implémentation les algorithmes symétriques. La base de tous les algorithmes symétriques est <xref:System.Security.Cryptography.SymmetricAlgorithm>, qui est hérité par les algorithmes suivants :
 
-1. <xref:System.Security.Cryptography.Aes>
-
-2. <xref:System.Security.Cryptography.DES>
-
-3. <xref:System.Security.Cryptography.RC2>
-
-4. <xref:System.Security.Cryptography.Rijndael>
-
-5. <xref:System.Security.Cryptography.TripleDES>
+* <xref:System.Security.Cryptography.Aes>
+* <xref:System.Security.Cryptography.DES>
+* <xref:System.Security.Cryptography.RC2>
+* <xref:System.Security.Cryptography.Rijndael>
+* <xref:System.Security.Cryptography.TripleDES>
 
 <xref:System.Security.Cryptography.Aes> est hérité par deux classes : <xref:System.Security.Cryptography.AesCryptoServiceProvider> et <xref:System.Security.Cryptography.AesManaged>. La classe <xref:System.Security.Cryptography.AesCryptoServiceProvider> est un wrapper pour l'implémentation de l'API de chiffrement Windows (CAPI) d'AES. La classe <xref:System.Security.Cryptography.AesManaged> est écrite entièrement en code managé. Il existe également l'implémentation Cryptography Next Generation (CNG), en plus des implémentations CAPI et managées. <xref:System.Security.Cryptography.ECDiffieHellmanCng> est un exemple d'algorithme CNG. Les algorithmes CNG sont disponibles sur Windows Vista et versions ultérieures.
 
@@ -62,35 +58,22 @@ Vous pouvez sélectionner un algorithme pour différentes raisons. Par exemple, 
 Voici une liste des algorithmes recommandés pour chaque application :
 
 - Confidentialité des données :
-
   - <xref:System.Security.Cryptography.Aes>
-
 - Intégrité des données :
-
   - <xref:System.Security.Cryptography.HMACSHA256>
-
   - <xref:System.Security.Cryptography.HMACSHA512>
-
 - Signature numérique :
-
   - <xref:System.Security.Cryptography.ECDsa>
-
   - <xref:System.Security.Cryptography.RSA>
-
 - Échange de clés :
-
   - <xref:System.Security.Cryptography.ECDiffieHellman>
-
   - <xref:System.Security.Cryptography.RSA>
-
 - Génération de nombres aléatoires :
-
   - <xref:System.Security.Cryptography.RNGCryptoServiceProvider>
-
 - Génération d'une clé à partir d'un mot de passe :
-
   - <xref:System.Security.Cryptography.Rfc2898DeriveBytes>
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Appliquer les protocoles de chiffrement, les algorithmes et le code source en C, par Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)
