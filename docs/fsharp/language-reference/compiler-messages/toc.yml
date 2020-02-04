@@ -1,0 +1,15 @@
+- name: Erreurs et avertissements du compilateur
+  href: index.md
+  items:
+    - name: "FS0001\_: erreur lors de l’ajout d’une équation de type"
+      href: ./fs0001.md
+    - name: "FS0002\_: fonction inattendue"
+      href: ./fs0002.md
+    - name: "FS0003\_: cette valeur n'est pas une fonction et ne peut pas être appliquée"
+      href: ./fs0003.md
+    - name: "FS0005\_: le champ n'est pas mutable"
+      href: ./fs0005.md
+    - name: "FS0008\_: forçage de type indéterminé au moment de l’exécution"
+      href: ./fs0008.md
+    - name: "FS0009\_: code non vérifiable possible"
+      href: ./fs0009.md

@@ -1505,17 +1505,17 @@
               href: language-reference/keywords/extern-alias.md
         - name: Mots clés de test de type
           items:
-            - name: est
+            - name: is
               href: language-reference/keywords/is.md
         - name: Mots clés de contrainte de type générique
           items:
             - name: 'new, contrainte'
               href: language-reference/keywords/new-constraint.md
-            - name: où
+            - name: where
               href: language-reference/keywords/where-generic-type-constraint.md
         - name: Mots clés d'accès
           items:
-            - name: de base
+            - name: base
               href: language-reference/keywords/base.md
             - name: this
               href: language-reference/keywords/this.md
@@ -1536,17 +1536,17 @@
               href: language-reference/keywords/add.md
             - name: get
               href: language-reference/keywords/get.md
-            - name: 'partiel, Type'
+            - name: 'partial, Type'
               href: language-reference/keywords/partial-type.md
             - name: partial (méthode)
               href: language-reference/keywords/partial-method.md
             - name: remove
               href: language-reference/keywords/remove.md
-            - name: définir
+            - name: set
               href: language-reference/keywords/set.md
             - name: when (condition de filtre)
               href: language-reference/keywords/when.md
-            - name: par défaut
+            - name: value
               href: language-reference/keywords/value.md
             - name: yield
               href: language-reference/keywords/yield.md
@@ -1575,13 +1575,13 @@
               href: language-reference/keywords/ascending.md
             - name: descending
               href: language-reference/keywords/descending.md
-            - name: sur
+            - name: 'on'
               href: language-reference/keywords/on.md
             - name: equals
               href: language-reference/keywords/equals.md
             - name: by
               href: language-reference/keywords/by.md
-            - name: dans
+            - name: in
               href: language-reference/keywords/in.md
     - name: 'Opérateurs C#'
       items:
@@ -1639,16 +1639,16 @@
         - name: ':: (opérateur)'
           href: language-reference/operators/namespace-alias-qualifier.md
           displayName: 'namespace alias qualifier, global namespace'
-        - name: 'Await, opérateur'
+        - name: Opérateur await
           href: language-reference/operators/await.md
           displayName: async
-        - name: opérateur par défaut
+        - name: Opérateur default
           href: language-reference/operators/default.md
           displayName: 'default value, default literal, type default'
-        - name: opérateur délégué
+        - name: Opérateur delegate
           href: language-reference/operators/delegate-operator.md
           displayName: anonymous
-        - name: opérateur nameof
+        - name: Opérateur nameof
           href: language-reference/operators/nameof.md
         - name: Opérateur new
           href: language-reference/operators/new-operator.md

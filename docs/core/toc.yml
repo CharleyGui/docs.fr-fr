@@ -97,7 +97,7 @@
       href: tutorials/using-on-mac-vs.md
     - name: Générer une solution .NET Core complète sur macOS
       href: tutorials/using-on-mac-vs-full-solution.md
-    - name: Bien démarrer avec .NET Core à l’aide des outils CLI
+    - name: Bien démarrer avec .NET Core à l’aide de l’interface CLI
       href: tutorials/cli-create-console-app.md
     - name: "Organiser et tester des projets avec l’interface\_CLI .NET Core"
       href: tutorials/testing-with-cli.md
@@ -151,11 +151,11 @@
 - name: Déploiement d’applications
   href: deploying/index.md
   items:
-    - name: Déployer des applications avec des outils CLI
+    - name: Publier des applications avec l’interface de ligne de commande
       href: deploying/deploy-with-cli.md
     - name: Déployer des applications avec Visual Studio
       href: deploying/deploy-with-vs.md
-    - name: Créer un package NuGet avec des outils multiplateformes
+    - name: Créer un package NuGet avec l’interface de ligne de commande
       href: deploying/creating-nuget-packages.md
     - name: Restauration par progression du runtime de déploiement autonome
       href: deploying/runtime-patch-selection.md
