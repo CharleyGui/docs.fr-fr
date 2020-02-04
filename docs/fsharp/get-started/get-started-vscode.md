@@ -2,12 +2,12 @@
 title: Bien démarrer avec F# dans Visual Studio Code
 description: Découvrez comment utiliser F# avec Visual Studio code et la suite de plug-in Ionide.
 ms.date: 12/23/2018
-ms.openlocfilehash: 91265303c2954387df0f500940c9af68b3c97dac
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 2aa62bb1afc220348f884865e55c4d7de4359b7f
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559662"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980351"
 ---
 # <a name="get-started-with-f-in-visual-studio-code"></a>Bien démarrer avec F# dans Visual Studio Code
 
@@ -42,7 +42,7 @@ Tout d’abord, assurez-vous que le script .NET Core est votre environnement de 
 
 Cela est actuellement nécessaire en raison de comportements hérités dans les scripts basés sur .NET Framework qui ne fonctionnent pas avec les scripts .NET Core, et Ionide s’efforce actuellement de la compatibilité descendante. À l’avenir, les scripts .NET Core deviendront la valeur par défaut.
 
-### <a name="write-your-first-script"></a>Écrire votre premier script R
+### <a name="write-your-first-script"></a>Écrire votre premier script
 
 Une fois que vous avez configuré Visual Studio Code pour utiliser les scripts .NET Core, accédez à l’affichage de l’Explorateur dans Visual Studio Code et créez un nouveau fichier. Nommez-le *MyFirstScript. FSX*.
 
@@ -68,7 +68,7 @@ Comme ce que vous avez envoyé via était une [fonction](../language-reference/f
 toPigLatin "banana";;
 ```
 
-Le résultat suivant s’affiche :
+Le résultat suivant doit s’afficher :
 
 ```fsharp
 val it : string = "ananabay"
@@ -80,7 +80,7 @@ val it : string = "ananabay"
 toPigLatin "apple";;
 ```
 
-Le résultat suivant s’affiche :
+Le résultat suivant doit s’afficher :
 
 ```fsharp
 val it : string = "appleyay"
@@ -121,7 +121,7 @@ Le déroulement de `toPigLatin` est donc :
 
 Vérifie si le premier caractère du mot d’entrée est une voyelle. Si c’est le cas, attachez « Ouais » à la fin du mot. Dans le cas contraire, déplacez le premier caractère jusqu’à la fin du mot et ajoutez « ay » à celui-ci.
 
-Il y a une dernière chose à noter : il n’existe pas d’instruction explicite à retourner à partir de la fonction, contrairement à de nombreux autres langages. Cela est dû F# au fait que est basé sur une expression et que la dernière expression dans le corps d’une fonction est la valeur de retour. Étant donné que `if..then..else` est lui-même une expression, le corps du bloc `then` ou le corps du bloc `else` sera retourné en fonction de la valeur d’entrée.
+Il y a une dernière chose à noter : dans F#, il n’y a pas d’instruction explicite à retourner à partir de la fonction. Cela est dû F# au fait que est basé sur une expression et que la dernière expression évaluée dans le corps d’une fonction détermine la valeur de retour de cette fonction. Étant donné que `if..then..else` est lui-même une expression, l’évaluation du corps du bloc `then` ou du corps du bloc `else` détermine la valeur retournée par la fonction `toPigLatin`.
 
 ## <a name="turn-the-console-app-into-a-pig-latin-generator"></a>Transformez l’application console en un générateur latin de porc
 

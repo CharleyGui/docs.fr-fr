@@ -2,12 +2,12 @@
 title: Nouveautés de F# 4,6- F# Guide
 description: Bénéficiez d’une vue d’ensemble des nouvelles F# fonctionnalités disponibles dans 4,6.
 ms.date: 11/27/2019
-ms.openlocfilehash: 81d3e988d044cb16f8ec079118fd0ede2dabc587
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 620c1edd8ea212fee306a02d5844b6b322808251
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74644081"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980390"
 ---
 # <a name="whats-new-in-f-46"></a>Nouveautés de F# 4,6
 
@@ -71,14 +71,14 @@ let strOpt = ValueSome "Mirror image"
 let reverse (str: string) =
     match str with
     | null
-    | "" -> None
+    | "" -> ValueNone
     | s ->
         str.ToCharArray()
         |> Array.rev
         |> string
-        |> Some
+        |> ValueSome
 
-let reversedString = strOpt |> Option.bind reverse
+let reversedString = strOpt |> ValueOption.bind reverse
 ```
 
 Cela permet l’utilisation de ValueOption comme option dans les scénarios où un type valeur améliore les performances.

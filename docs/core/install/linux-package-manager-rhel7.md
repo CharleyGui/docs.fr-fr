@@ -4,18 +4,18 @@ description: Utilisez un gestionnaire de package pour installer kit SDK .NET Cor
 author: thraka
 ms.author: adegeo
 ms.date: 12/03/2019
-ms.openlocfilehash: bcc41bfcd7c6d03038952e3faaf07952c3deb69d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4f85ed3da8a434fcd5b6ee88491daf623c3c8b31
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715539"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980182"
 ---
 # <a name="rhel-7-package-manager---install-net-core"></a>RHEL 7 Package Manager-installer .NET Core
 
 [!INCLUDE [package-manager-switcher](includes/package-manager-switcher.md)]
 
-Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 7. .NET Core 3,1 n’est pas encore disponible pour RHEL 7.
+Cet article explique comment utiliser un gestionnaire de package pour installer .NET Core sur RHEL 7.
 
 ## <a name="register-your-red-hat-subscription"></a>Inscrire votre abonnement Red Hat
 
@@ -27,8 +27,8 @@ Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes pr
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="install-the-aspnet-core-runtime"></a>Installer le runtime ASP.NET Core
@@ -37,8 +37,8 @@ Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes pr
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30-aspnetcore-runtime-3.0 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31-aspnetcore-runtime-3.1 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
@@ -47,10 +47,10 @@ Après vous être inscrit auprès du gestionnaire d’abonnements, vous êtes pr
 
 ```bash
 subscription-manager repos --enable=rhel-7-server-dotnet-rpms
-yum install rh-dotnet30-dotnet-runtime-3.0 -y
-scl enable rh-dotnet30 bash
+yum install rh-dotnet31-dotnet-runtime-3.1 -y
+scl enable rh-dotnet31 bash
 ```
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisation de .NET Core 3,0 sur Red Hat Enterprise Linux 7](https://access.redhat.com/documentation/en-us/net_core/3.0/html/getting_started_guide/gs_install_dotnet)
+- [Utilisation de .NET Core 3,1 sur Red Hat Enterprise Linux 7](https://access.redhat.com/documentation/en-us/net_core/3.1/html/getting_started_guide/gs_install_dotnet)

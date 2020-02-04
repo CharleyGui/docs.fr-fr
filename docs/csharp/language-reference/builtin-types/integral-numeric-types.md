@@ -32,12 +32,12 @@ helpviewer_keywords:
 - uint keyword [C#]
 - long keyword [C#]
 - ulong keyword [C#]
-ms.openlocfilehash: 058e75c81c18f0ec73140f6fc13a91f4e0012a61
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 2fb4d7185ac85b29f2cc2d2e7a29e192f91a0868
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73036360"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980143"
 ---
 # <a name="integral-numeric-types--c-reference"></a>Types numériques intégraux (référence C#)
 
@@ -47,14 +47,14 @@ Les **types numériques intégraux** sont un sous-ensemble des **types simples**
 
 C# prend en charge les types intégraux prédéfinis suivants :
 
-|C# type/mot clé|Range|Size|Type .NET|
+|C# type/mot clé|Range|Taille|Type .NET|
 |----------|-----------|----------|-------------|
 |`sbyte`|-128 à 127|Entier 8 bits signé|<xref:System.SByte?displayProperty=nameWithType>|
 |`byte`|0 à 255|Entier 8 bits non signé|<xref:System.Byte?displayProperty=nameWithType>|
 |`short`|de -32 768 à 32 767|Entier 16 bits signé|<xref:System.Int16?displayProperty=nameWithType>|
-|`ushort`|0 à 65 535|Entier 16 bits non signé|<xref:System.UInt16?displayProperty=nameWithType>|
+|`ushort`|0 à 65 535|Entier 16 bits non signé|<xref:System.UInt16?displayProperty=nameWithType>|
 |`int`|-2,147,483,648 en 2,147,483,647|Entier 32 bits signé|<xref:System.Int32?displayProperty=nameWithType>|
-|`uint`|de 0 à 4 294 967 295|Entier 32 bits non signé|<xref:System.UInt32?displayProperty=nameWithType>|
+|`uint`|de 0 à 4 294 967 295|Entier 32 bits non signé|<xref:System.UInt32?displayProperty=nameWithType>|
 |`long`|-9 223 372 036 854 775 808 à 9 223 372 036 854 775 807|Entier 64 bits signé|<xref:System.Int64?displayProperty=nameWithType>|
 |`ulong`|de 0 à 18 446 744 073 709 551 615|Entier 64 bits non signé|<xref:System.UInt64?displayProperty=nameWithType>|
 
@@ -96,7 +96,7 @@ Le type d’un littéral entier est déterminé par son suffixe comme suit :
   > [!NOTE]
   > Vous pouvez utiliser la lettre minuscule `l` comme suffixe. Toutefois, cela génère un avertissement du compilateur, car la lettre `l` peut être confondue avec le chiffre `1`. Utilisez `L` pour plus de clarté.
 
-- Si le littéral est précédé d’un suffixe `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU` ou `lu`, son type est `ulong`.
+- Si le littéral est précédé d’un suffixe `UL`, `Ul`, `uL`, `ul`, `LU`, `Lu`, `lU`ou `lu`, son type est `ulong`.
 
 Si la valeur représentée par un littéral entier dépasse <xref:System.UInt64.MaxValue?displayProperty=nameWithType>, une erreur de compilation [CS1021](../../misc/cs1021.md) se produit.
 
@@ -132,5 +132,5 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Informations de référence sur C#](../index.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Types virgule flottante](floating-point-numeric-types.md)
-- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
+- [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)

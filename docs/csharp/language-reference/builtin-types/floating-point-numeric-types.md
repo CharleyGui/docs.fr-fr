@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 23aa33c6887db48a12f995efc5e1e2220d30216c
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: 9fde2b28288b58d7da3a4d003ec50af7d7e7a965
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552276"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980169"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -33,10 +33,10 @@ Les **types numériques à virgule flottante** sont un sous-ensemble des **types
 
 C# prend en charge les types à virgule flottante prédéfinis suivants :
   
-|C# type/mot clé|Plage approximative|Précision|Size|Type .NET|
+|C# type/mot clé|Plage approximative|Précision|Taille|Type .NET|
 |----------|-----------------------|---------------|--------------|--------------|
 |`float`|±1,5 x 10<sup>−45</sup> à ±3,4 x 10<sup>38</sup>|~6-9 chiffres|4 octets|<xref:System.Single?displayProperty=nameWithType>|
-|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|8 octets|<xref:System.Double?displayProperty=nameWithType>|
+|`double`|De ±5,0 × 10<sup>−324</sup> à ±1,7 × 10<sup>308</sup>|~15-17 chiffres|8 octets|<xref:System.Double?displayProperty=nameWithType>|
 |`decimal`|±1,0 x 10<sup>-28</sup> to ±7,9228 x 10<sup>28</sup>|28 à 29 chiffres|16 octets|<xref:System.Decimal?displayProperty=nameWithType>|
 
 Dans le tableau précédent, chaque mot clé de type C# de la colonne la plus à gauche est un alias pour le type .NET correspondant. Ils sont interchangeables. Par exemple, les déclarations suivantes déclarent des variables du même type :
@@ -120,7 +120,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Informations de référence sur C#](../index.md)
 - [Tableaux des types intégrés](../keywords/built-in-types-table.md)
 - [Types intégraux](integral-numeric-types.md)
-- [Tableau des formats des résultats numériques](../keywords/formatting-numeric-results-table.md)
 - [Chaînes de format numériques standard](../../../standard/base-types/standard-numeric-format-strings.md)
 - [Valeurs numériques dans .NET](../../../standard/numerics.md)
 - <xref:System.Numerics.Complex?displayProperty=nameWithType>

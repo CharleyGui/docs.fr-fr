@@ -2,18 +2,18 @@
 title: Gestion des versions du langage C# - Guide C#
 description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet, et les différentes valeurs que vous pouvez y ajuster manuellement.
 ms.date: 07/10/2019
-ms.openlocfilehash: 90624816a68de694cacd0017c6d3162f6a89431c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3c1035d983660ea0a945e4d4b7b72c69736c90cb
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713871"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980130"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
 Le compilateur C# le plus récent détermine une version du langage par défaut en fonction du ou des frameworks cibles de votre projet. La raison est que le langage C# peut avoir des fonctionnalités qui reposent sur des types ou des composants d’exécution qui ne sont pas disponibles dans chaque implémentation .NET. Cela garantit aussi que quelle que soit la cible sur laquelle votre projet est créé, vous obtenez la version de langage compatible la plus récente par défaut.
 
-Les règles mentionnées dans cet article s’appliquent au compilateur fourni avec Visual Studio 2019 ou le kit SDK .NET Core 3.0. Les compilateurs C# qui sont installés en même temps que Visual Studio 2017 ou les versions antérieures du kit SDK .NET Core ciblent C# 7.0 par défaut. 
+Les règles de cet article s’appliquent au compilateur fourni avec Visual Studio 2019 ou le kit de développement logiciel (SDK) .NET Core 3,0. Les compilateurs C# qui sont installés en même temps que Visual Studio 2017 ou les versions antérieures du kit SDK .NET Core ciblent C# 7.0 par défaut. 
 
 ## <a name="defaults"></a>Valeurs par défaut
 
@@ -21,7 +21,7 @@ Le compilateur détermine une valeur par défaut en fonction de ces règles :
 
 |Version cible de .NET Framework|Version de|Version du langage C# par défaut|
 |----------------|-------|---------------------------|
-|.NET Core|3.x|C# 8.0|
+|.NET Core|3|C# 8.0|
 |.NET Core|2.x|C# 7.3|
 |.NET Standard|2.1|C# 8.0|
 |.NET Standard|2.0|C# 7.3|
@@ -54,7 +54,7 @@ La valeur `preview` utilise la dernière préversion disponible du langage C# qu
 
 ### <a name="configure-multiple-projects"></a>Configurer plusieurs projets
 
-Vous pouvez créer un fichier **Directory.Build.props** contenant l’élément `<LangVersion>` pour configurer plusieurs répertoires. En règle générale, vous faites cela dans votre répertoire de solution. Ajoutez le code suivant à un fichier **Directory.build.props** dans votre répertoire de solution :
+Pour configurer plusieurs projets, vous pouvez créer un fichier **Directory. Build. props** contenant l’élément `<LangVersion>`. En règle générale, vous faites cela dans votre répertoire de solution. Ajoutez le code suivant à un fichier **Directory.build.props** dans votre répertoire de solution :
 
 ```xml
 <Project>
@@ -84,5 +84,5 @@ Le tableau suivant montre toutes les versions actuelles du langage C#. Votre com
 |5|Le compilateur accepte uniquement la syntaxe incluse dans C# 5.0 ou une version antérieure.|
 |4|Le compilateur accepte uniquement la syntaxe incluse dans C# 4.0 ou une version antérieure.|
 |3|Le compilateur accepte uniquement la syntaxe incluse dans C# 3.0 ou une version antérieure.|
-|ISO-2|Le compilateur accepte uniquement la syntaxe incluse dans ISO/IEC 23270:2006 C# (2.0) |
-|ISO-1|Le compilateur accepte uniquement la syntaxe incluse dans ISO/IEC 23270:2003 C# (1.0/1.2) |
+|ISO-2|Le compilateur accepte uniquement la syntaxe qui est incluse dans ISO/IEC C# 23270:2006 (2,0). |
+|ISO-1|Le compilateur accepte uniquement la syntaxe qui est incluse dans la norme ISO C# /IEC 23270:2003 (1.0/1.2). |

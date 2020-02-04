@@ -1,13 +1,13 @@
 ---
-title: Chaînes de connexion dans ADO.NET
+title: Chaînes de connexion
 ms.date: 10/10/2018
 ms.assetid: 745c5f95-2f02-4674-b378-6d51a7ec2490
-ms.openlocfilehash: bf053c7c26435bea5b2368c81c89b73e8949b74a
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: cb0b2831a22f3fe51dd7c5bfbe51e72f266a0003
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040137"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980234"
 ---
 # <a name="connection-strings-in-adonet"></a>Chaînes de connexion dans ADO.NET
 
@@ -23,7 +23,7 @@ keyword1=value; keyword2=value;
 
 Les mots clés ne respectent pas la casse. Toutefois, les valeurs peuvent respecter la casse, en fonction de la source de données. Les mots clés et les valeurs peuvent contenir des [espaces blancs](https://en.wikipedia.org/wiki/Whitespace_character#Unicode). Les espaces blancs de début et de fin sont ignorés dans les mots clés et les valeurs sans guillemets.
 
-Si une valeur contient le point-virgule, les [caractères de contrôle Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters)ou les espaces blancs de début ou de fin, elle doit être placée entre guillemets simples ou doubles. Exemple :
+Si une valeur contient le point-virgule, les [caractères de contrôle Unicode](https://en.wikipedia.org/wiki/Unicode_control_characters)ou les espaces blancs de début ou de fin, elle doit être placée entre guillemets simples ou doubles. Par exemple :
 
 ```csharp
 Keyword=" whitespace  ";

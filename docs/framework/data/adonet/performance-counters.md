@@ -1,16 +1,16 @@
 ---
-title: Compteurs de performance dans ADO.NET
+title: Compteurs de performances
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 0b121b71-78f8-4ae2-9aa1-0b2e15778e57
-ms.openlocfilehash: a529cae724d24b47d856f86744eebe87d68cb158
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 985951180a5c8ee09460b7fe4bf3213b986c3bb6
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70783302"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980065"
 ---
 # <a name="performance-counters-in-adonet"></a>Compteurs de performance dans ADO.NET
 ADO.NET 2.0 a introduit une prise en charge développée des compteurs de performance qui prend en charge à la fois <xref:System.Data.SqlClient> et <xref:System.Data.OracleClient>. Les compteurs de performance <xref:System.Data.SqlClient> disponibles dans les versions antérieures d'ADO.NET sont déconseillés et remplacés par les nouveaux compteurs de performance évoqués dans cette rubrique. Vous pouvez utiliser les compteurs de performance ADO.NET pour surveiller le statut de votre application et les ressources de connexion qu'elle utilise. Vous pouvez surveiller les compteurs de performance à l'aide de l'Analyseur de performances Windows ou accéder à ces derniers par programme à l'aide de la classe <xref:System.Diagnostics.PerformanceCounter> dans l'espace de noms <xref:System.Diagnostics>.  
@@ -24,19 +24,19 @@ ADO.NET 2.0 a introduit une prise en charge développée des compteurs de perfo
 |`HardDisconnectsPerSecond`|Nombre de déconnexions par seconde qui sont effectuées à un serveur de base de données.|  
 |`NumberOfActiveConnectionPoolGroups`|Nombre de groupes du pool de connexion unique qui sont actifs. Ce compteur est contrôlé par le nombre de chaînes de connexion uniques qui se trouvent dans AppDomain.|  
 |`NumberOfActiveConnectionPools`|Nombre total de regroupements de connexions.|  
-|`NumberOfActiveConnections`|Nombre de connexions actives en cours d'utilisation. **Remarque :**  Ce compteur de performance n'est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
-|`NumberOfFreeConnections`|Nombre de connexions disponibles pour une utilisation dans les regroupements de connexions. **Remarque :**  Ce compteur de performance n'est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`NumberOfActiveConnections`|Nombre de connexions actives en cours d'utilisation. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`NumberOfFreeConnections`|Nombre de connexions disponibles pour une utilisation dans les regroupements de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
 |`NumberOfInactiveConnectionPoolGroups`|Nombre de groupes du regroupement de connexions unique qui sont marqués pour le nettoyage. Ce compteur est contrôlé par le nombre de chaînes de connexion uniques qui se trouvent dans AppDomain.|  
 |`NumberOfInactiveConnectionPools`|Nombre de regroupements de connexions inactifs sans activité récente et en attente de suppression.|  
 |`NumberOfNonPooledConnections`|Nombre de connexions actives qui n'ont pas été regroupées.|  
 |`NumberOfPooledConnections`|Nombre de connexions actives qui sont gérées par l'infrastructure de regroupement de connexions.|  
 |`NumberOfReclaimedConnections`|Nombre de connexions ayant été récupérées par le biais du garbage collection dans lequel `Close` ou `Dispose` n'a pas été appelé par l'application. La fermeture ou la suppression non explicites des connexions nuit aux performances.|  
 |`NumberOfStasisConnections`|Nombre de connexions en attente de l'achèvement d'une action et par conséquent non disponibles pour une utilisation par votre application.|  
-|`SoftConnectsPerSecond`|Nombre de connexions actives en cours d'extraction du regroupement de connexions. **Remarque :**  Ce compteur de performance n'est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
-|`SoftDisconnectsPerSecond`|Nombre de connexions actives retournées au regroupement de connexions. **Remarque :**  Ce compteur de performance n'est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`SoftConnectsPerSecond`|Nombre de connexions actives en cours d'extraction du regroupement de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
+|`SoftDisconnectsPerSecond`|Nombre de connexions actives retournées au regroupement de connexions. **Remarque :**  Ce compteur de performance n’est pas activé par défaut. Pour activer ce compteur de performance, consultez [activation des compteurs désactivés par défaut](#ActivatingOffByDefault).|  
   
 ### <a name="connection-pool-groups-and-connection-pools"></a>Groupes du regroupement de connexions et regroupements de connexions  
- Lorsque vous utilisez l'authentification Windows (sécurité intégrée), vous devez surveiller les deux compteurs de performance `NumberOfActiveConnectionPoolGroups` et `NumberOfActiveConnectionPools`. En effet, les groupes du regroupement de connexions sont mappés à des chaînes de connexion uniques. Les regroupements de connexions sont mappés aux chaînes de connexion et créent des regroupements séparés pour des identités Windows individuelles, lors de l'utilisation de la sécurité intégrée. Par exemple, si Fred et Julie, qui appartiennent au même AppDomain, utilisent tous les deux la chaîne de connexion `"Data Source=MySqlServer;Integrated Security=true"`, un groupe de regroupement de connexions est créé pour la chaîne de connexion, et deux autres regroupements sont créés, un pour Fred et un pour Julie. Si John et Martha utilisent une chaîne de connexion avec une connexion SQL Server identique `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`,, un seul pool est créé pour l’identité **lowPrivUser** .  
+ Lorsque vous utilisez l'authentification Windows (sécurité intégrée), vous devez surveiller les deux compteurs de performance `NumberOfActiveConnectionPoolGroups` et `NumberOfActiveConnectionPools`. En effet, les groupes du regroupement de connexions sont mappés à des chaînes de connexion uniques. Les regroupements de connexions sont mappés aux chaînes de connexion et créent des regroupements séparés pour des identités Windows individuelles, lors de l'utilisation de la sécurité intégrée. Par exemple, si Fred et Julie, qui appartiennent au même AppDomain, utilisent tous les deux la chaîne de connexion `"Data Source=MySqlServer;Integrated Security=true"`, un groupe de regroupement de connexions est créé pour la chaîne de connexion, et deux autres regroupements sont créés, un pour Fred et un pour Julie. Si John et Martha utilisent une chaîne de connexion avec une connexion SQL Server identique, `"Data Source=MySqlServer;User Id=lowPrivUser;Password=Strong?Password"`, un seul pool est créé pour l’identité **lowPrivUser** .  
   
 <a name="ActivatingOffByDefault"></a>   
 ### <a name="activating-off-by-default-counters"></a>Activation des compteurs désactivés par défaut  

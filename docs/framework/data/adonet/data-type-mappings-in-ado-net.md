@@ -1,23 +1,23 @@
 ---
-title: Mappages de types de données dans ADO.NET
+title: Mappages de types de données
 ms.date: 03/30/2017
 ms.assetid: d4afab94-ada6-4c77-a73c-41f17bae6b5a
-ms.openlocfilehash: 9c0d19f724c1876f7dac86055bed2ef77ac76a77
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 610cdc1a679b0c51125075076120e12db97da421
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70785592"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980195"
 ---
 # <a name="data-type-mappings-in-adonet"></a>Mappages de types de données dans ADO.NET
-Le .NET Framework est basé sur le système de type commun, qui définit la manière dont les types sont déclarés, utilisés et gérés dans le runtime. Il est constitué de types de valeur et de types de référence, qui dérivent tous du type de base <xref:System.Object>. Lorsque vous travaillez avec une source de données, le type de données est déduit du fournisseur de données s'il n'est pas explicitement spécifié. Par exemple, un objet <xref:System.Data.DataSet> est indépendant de toute source de données spécifique. Les données d'un `DataSet` sont extraites d'une source de données et les modifications y sont répercutées à l'aide d'un `DataAdapter`. Cela signifie que lorsqu’un `DataAdapter` remplit <xref:System.Data.DataTable> un dans un `DataSet` avec les valeurs d’une source de données, les types de données résultants des colonnes `DataTable` dans le sont des types .NET Framework, au lieu de types spécifiques au fournisseur de données .NET Framework qui est utilisé pour se connecter à la source de données.  
+Le .NET Framework est basé sur le système de type commun, qui définit la manière dont les types sont déclarés, utilisés et gérés dans le runtime. Il est constitué de types de valeur et de types de référence, qui dérivent tous du type de base <xref:System.Object>. Lorsque vous travaillez avec une source de données, le type de données est déduit du fournisseur de données s'il n'est pas explicitement spécifié. Par exemple, un objet <xref:System.Data.DataSet> est indépendant de toute source de données spécifique. Les données d'un `DataSet` sont extraites d'une source de données et les modifications y sont répercutées à l'aide d'un `DataAdapter`. Cela signifie que lorsqu’un `DataAdapter` remplit un <xref:System.Data.DataTable> dans un `DataSet` avec les valeurs d’une source de données, les types de données résultants des colonnes de l' `DataTable` sont des types .NET Framework, au lieu de types spécifiques au fournisseur de données .NET Framework utilisé pour se connecter à la source de données.  
   
- De même, lorsqu' `DataReader` un retourne une valeur d’une source de données, la valeur résultante est stockée dans une variable locale qui a un type de .NET Framework. Pour les `Fill` opérations `DataAdapter` `Get` du`DataReader`et des méthodes du, le type de .NET Framework est déduit de la valeur retournée par le fournisseur de données .NET Framework.  
+ De même, lorsqu’un `DataReader` retourne une valeur d’une source de données, la valeur résultante est stockée dans une variable locale qui a un type .NET Framework. Pour les opérations `Fill` du `DataAdapter` et les méthodes `Get` de l' `DataReader`, le type .NET Framework est déduit de la valeur retournée par le fournisseur de données .NET Framework.  
   
  Si vous ne souhaitez pas utiliser le type de données déduit, vous pouvez appeler les méthodes d’accesseur typé du `DataReader`, lorsque vous connaissez le type spécifique de la valeur retournée. Les méthodes d’accesseur typées offrent de meilleures performances en retournant une valeur en tant que type de .NET Framework spécifique, ce qui élimine la nécessité d’une conversion de type supplémentaire.  
   
 > [!NOTE]
-> Les valeurs NULL pour .NET Framework types de données du fournisseur de `DBNull.Value`données sont représentées par.  
+> Les valeurs null des types de données du fournisseur de données .NET Framework sont représentées par des `DBNull.Value`.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Mappages de types de données SQL Server](sql-server-data-type-mappings.md)  

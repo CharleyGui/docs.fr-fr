@@ -1,16 +1,16 @@
 ---
-title: Extraction et modification de données dans ADO.NET
+title: Récupération et modification de données
 ms.date: 03/30/2017
 ms.assetid: 722e7f87-3691-46c6-87e8-7d159722d675
-ms.openlocfilehash: 78012a6a5ecdfac0e4cd7c4939ae3ab0036ab716
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 65c373ecff004e219527754bf2e9cc56837dc305
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782853"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980052"
 ---
 # <a name="retrieving-and-modifying-data-in-adonet"></a>Extraction et modification de données dans ADO.NET
-Une fonction principale de toute application de base de données consiste à se connecter à une source de données et extraire les données qu'elle contient. Les fournisseurs de données de .NET Framework de ADO.NET jouent le rôle de pont entre une application et une source de données, ce qui vous permet d’exécuter des commandes ainsi que de récupérer des données à l’aide d’un **DataReader** ou d’un **DataAdapter**. Une fonction clé de toute application de base de données est la capacité à mettre à jour les données stockées dans la base de données. Dans ADO.net, la mise à jour des données implique l' <xref:System.Data.DataSet>utilisation des objets **DataAdapter** et, et des objets **Command** , et peut également impliquer l’utilisation de transactions.  
+Une fonction principale de toute application de base de données consiste à se connecter à une source de données et extraire les données qu'elle contient. Les fournisseurs de données de .NET Framework de ADO.NET jouent le rôle de pont entre une application et une source de données, ce qui vous permet d’exécuter des commandes ainsi que de récupérer des données à l’aide d’un **DataReader** ou d’un **DataAdapter**. Une fonction clé de toute application de base de données est la capacité à mettre à jour les données stockées dans la base de données. Dans ADO.NET, la mise à jour des données implique l’utilisation des objets **DataAdapter** et <xref:System.Data.DataSet>, ainsi que des objets **Command** . Il peut également impliquer l’utilisation de transactions.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Connexion à une source de données](connecting-to-a-data-source.md)  
@@ -35,7 +35,7 @@ Une fonction principale de toute application de base de données consiste à se 
  Fournit un exemple de mappage des valeurs générées pour une colonne d' **identité** dans une table SQL Server ou pour un champ **AutoNumber** d’une table Microsoft Access, à une colonne d’une ligne insérée dans une table. Traite de la fusion de valeurs d'identité dans un `DataTable`.  
   
  [Récupération de données binaires](retrieving-binary-data.md)  
- Décrit comment récupérer des données binaires ou des structures de `CommandBehavior`données volumineuses à l’aide de.`SequentialAccess` pour modifier le comportement par défaut d' `DataReader`un.  
+ Décrit comment récupérer des données binaires ou des structures de données volumineuses à l’aide de `CommandBehavior`.`SequentialAccess` pour modifier le comportement par défaut d’un `DataReader`.  
   
  [Modification des données avec les procédures stockées](modifying-data-with-stored-procedures.md)  
  Décrit comment utiliser des paramètres d'entrée et sortie de procédure stockée afin d'insérer une ligne dans une base de données et retourner une nouvelle valeur d'identité.  
@@ -49,7 +49,7 @@ Une fonction principale de toute application de base de données consiste à se 
  [Suivi des données dans ADO.NET](data-tracing.md)  
  Décrit la manière dont ADO.NET offre une fonctionnalité intégrée de traçage de données.  
   
- [Compteurs de performance](performance-counters.md)  
+ [Performance Counters](performance-counters.md)  
  Décrit les compteurs de performance disponibles pour `SqlClient` et `OracleClient`.  
   
  [Programmation asynchrone](asynchronous-programming.md)  

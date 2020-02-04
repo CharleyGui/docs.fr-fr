@@ -1,19 +1,19 @@
 ---
-title: Énumération des instances de SQL Server (ADO.NET)
+title: Énumération des instances de SQL Server
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: ddf1c83c-9d40-45e6-b04d-9828c6cbbfdc
-ms.openlocfilehash: c464762e82a24aab399a23ecb26420b5dce61f55
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: c59db5869ed848071611cdbf985b45dc59790d69
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70782389"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76979987"
 ---
 # <a name="enumerating-instances-of-sql-server-adonet"></a>Énumération des instances de SQL Server (ADO.NET)
-SQL Server permet aux applications de trouver des instances de SQL Server dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d'applications, en fournissant un <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste d’instances de serveur disponibles sur le réseau qui correspond à la liste fournie lorsqu’un utilisateur tente de créer une nouvelle connexion, puis développe la liste déroulante contenant tous les serveurs disponibles dans les **Propriétés de connexion.** boîte de dialogue. Les résultats affichés ne sont pas toujours complets.  
+SQL Server permet aux applications de trouver des instances de SQL Server dans le réseau actuel. La classe <xref:System.Data.Sql.SqlDataSourceEnumerator> expose ces informations au développeur d'applications, en fournissant un <xref:System.Data.DataTable> contenant des informations sur tous les serveurs visibles. Cette table retournée contient une liste d’instances de serveurs disponibles sur le réseau qui correspond à la liste fournie lorsqu’un utilisateur tente de créer une nouvelle connexion, puis développe la liste déroulante contenant tous les serveurs disponibles dans la boîte de dialogue **Propriétés de connexion** . Les résultats affichés ne sont pas toujours complets.  
   
 > [!NOTE]
 > Comme avec la plupart des services Windows, il est préférable d'exécuter le service SQL Browser avec le moins possible de privilèges. Pour plus d'informations sur le service SQL Browser et sur la manière de gérer son comportement, voir la documentation en ligne de SQL Server.  
@@ -58,9 +58,9 @@ System.Data.DataTable dataTable = instance.GetDataSources();
 > [!NOTE]
 > L'énumération des serveurs n'est disponible qu'en mode d'exécution avec un niveau de confiance totale. Les assemblys s'exécutant dans un environnement bénéficiant d'un niveau de confiance partielle ne peuvent pas l'utiliser, même s'ils disposent de l'autorisation de sécurité d'accès du code CAS (Code Access Security) <xref:System.Data.SqlClient.SqlClientPermission>.  
   
- SQL Server fournit des informations sur <xref:System.Data.Sql.SqlDataSourceEnumerator> l’utilisation d’un service Windows externe nommé SQL Browser. Ce service est activé par défaut mais les administrateurs peuvent l'arrêter ou le désactiver, ce qui rend l'instance du serveur invisible pour cette classe.  
+ SQL Server fournit des informations sur la <xref:System.Data.Sql.SqlDataSourceEnumerator> par le biais de l’utilisation d’un service Windows externe nommé SQL Browser. Ce service est activé par défaut mais les administrateurs peuvent l'arrêter ou le désactiver, ce qui rend l'instance du serveur invisible pour cette classe.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a>Exemple  
  L'application console suivante extrait des informations sur toutes les instances de SQL Server visibles et affiche les informations dans la fenêtre de console.  
   
 ```vb  

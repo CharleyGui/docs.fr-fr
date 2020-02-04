@@ -1,13 +1,14 @@
 ---
 title: LINQ et ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: bf0c8f93-3ff7-49f3-8aed-f2b7ac938dec
-ms.openlocfilehash: f6b956aa4d19a5bf558681975da3125b45b36c5f
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: e24473f68fe5ccd993c5d205660ea8f397b6f797
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75634844"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980091"
 ---
 # <a name="linq-and-adonet"></a>LINQ et ADO.NET
 Aujourd’hui, de nombreux développeurs professionnels doivent utiliser deux langages de programmation (ou plus) : un langage de haut niveau pour la logique métier et les couches de C# présentation (par exemple, Visual ou Visual Basic) et un langage de requête pour interagir avec la base de données (par exemple, Transact-SQL). Pour être efficace, le développeur doit être expert en plusieurs langages, et cela peut entraîner des incompatibilités dans l'environnement de développement. Par exemple, une application qui utilise une API d'accès aux données pour exécuter une requête sur une base de données spécifie la requête comme un littéral de chaîne en utilisant des guillemets. Cette chaîne de requête est illisible pour le compilateur et elle ne fait l'objet d'aucun contrôle d'erreur pour vérifier sa syntaxe ou l'existence des colonnes ou lignes auxquelles elle fait référence. Il n'y a aucune vérification de type des paramètres de requête et aucune prise en charge `IntelliSense`.  

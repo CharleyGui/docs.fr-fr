@@ -1,16 +1,16 @@
 ---
-title: Sécurité d'accès du code et ADO.NET
+title: Sécurité d'accès du code
 ms.date: 03/30/2017
 dev_langs:
 - csharp
 - vb
 ms.assetid: 93e099eb-daa1-4f1e-b031-c1e10a996f88
-ms.openlocfilehash: e83c10d6d7b66723d8347f98c1f7b118d7a2f963
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: c2b6be79855955887988378b9fcffe1891520d68
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73040163"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76980260"
 ---
 # <a name="code-access-security-and-adonet"></a>Sécurité d'accès du code et ADO.NET
 Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécurité d'accès du code (CAS, Code Access Security) implémentées à l'aide d'une infrastructure commune fournie par le Common Language Runtime (CLR). Dans l'univers du code non managé, la plupart des applications s'exécutent avec les autorisations de l'utilisateur ou d'une principal de sécurité. C'est pourquoi les systèmes informatiques peuvent être endommagés et des données privées compromises lorsqu'un utilisateur bénéficiant de privilèges élevés exécute des logiciels malveillants ou remplis d'erreurs.  
@@ -35,7 +35,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
   
  Pour déterminer si le code est autorisé à accéder à une ressources ou effectuer une opération, le système de sécurité du runtime parcourt la pile des appels, en comparant les autorisations de chaque appelant à l'autorisation faisant l'objet d'une demande. Si un appelant dans la pile des appels ne possède pas l'autorisation demandée, une exception <xref:System.Security.SecurityException> est levée et l'accès est refusé.  
   
-### <a name="requesting-permissions"></a>Demande d'autorisations  
+### <a name="requesting-permissions"></a>Demande d’autorisations  
  Les demandes d'autorisations ont pour but d'indiquer au runtime les autorisations dont votre application a besoin pour s'exécuter et de garantir que seules les autorisations requises lui sont octroyées. Par exemple, si votre application doit écrire des données sur le disque local, elle nécessite <xref:System.Security.Permissions.FileIOPermission>. Si cette autorisation n'a pas été accordée, l'application échoue lorsqu'elle tente d'écrire sur le disque. Cependant, si l'application demande `FileIOPermission` et que cette autorisation lui a été refusée, l'application génère l'exception dès le départ et ne se charge pas.  
   
  Dans un scénario dans lequel l'application a seulement besoin de lire des données du disque, vous pouvez demander à ce qu'aucune autorisation d'accès en écriture ne lui soit jamais octroyée. En cas de bogue ou d'attaque malveillante, votre code ne peut pas altérer les données sur lesquelles il opère. Pour plus d’informations, consultez [demande d’autorisations](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/yd267cce(v=vs.100)).  
@@ -49,7 +49,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
   
  En fonction du type d'application en cours de construction, vous devez également envisager d'implémenter des autorisations basées sur les rôles dans la base de données. Pour plus d’informations sur la sécurité basée sur les rôles dans SQL Server, consultez [SQL Server sécurité](./sql/sql-server-security.md).  
   
-## <a name="assemblies"></a>Assemblys  
+## <a name="assemblies"></a>Assemblies  
  Les assemblys constituent l'unité fondamentale dans le déploiement, le contrôle de version, la portée d'activation et les autorisations de sécurité d'une application .NET Framework. Ils fournissent une collection de types et de ressources qui sont générés pour fonctionner ensemble et former une unité logique de fonctionnalités. Pour le CLR, un type n'existe pas en dehors du contexte d'un assembly. Pour plus d’informations sur la création et le déploiement d’assemblys, consultez [programmation avec des assemblys](../../../standard/assembly/program.md).  
   
 ### <a name="strong-naming-assemblies"></a>Attribution d'un nom fort à des assemblys  
@@ -136,7 +136,7 @@ Le .NET Framework offre une sécurité basée sur les rôles ainsi qu'une sécur
 ```  
   
 ### <a name="enabling-partial-trust-with-a-custom-permission-set"></a>Activation de confiance partielle avec un jeu d'autorisations personnalisé  
- Pour activer l'utilisation d'autorisations <xref:System.Data.SqlClient> pour une zone particulière, un administrateur système doit créer un jeu d'autorisations personnalisé et le définir comme jeu d'autorisations pour une zone particulière. Les jeux d'autorisations par défaut, tels que `LocalIntranet`, ne peuvent pas être modifiés. Par exemple, pour inclure des autorisations de <xref:System.Data.SqlClient> pour du code qui a un <xref:System.Security.Policy.Zone> de `LocalIntranet`, un administrateur système peut copier le jeu d’autorisations pour `LocalIntranet`, le renommer en « CustomLocalIntranet », ajouter les autorisations <xref:System.Data.SqlClient>, importer le CustomLocalIntranet jeu d’autorisations à l’aide de [Caspol. exe (outil stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md)et définir le jeu d’autorisations de `LocalIntranet_Zone` sur CustomLocalIntranet.  
+ Pour activer l'utilisation d'autorisations <xref:System.Data.SqlClient> pour une zone particulière, un administrateur système doit créer un jeu d'autorisations personnalisé et le définir comme jeu d'autorisations pour une zone particulière. Les jeux d'autorisations par défaut, tels que `LocalIntranet`, ne peuvent pas être modifiés. Par exemple, pour inclure <xref:System.Data.SqlClient> autorisations pour du code qui a un <xref:System.Security.Policy.Zone> de `LocalIntranet`, un administrateur système peut copier le jeu d’autorisations pour `LocalIntranet`, le renommer en « CustomLocalIntranet », ajouter les autorisations <xref:System.Data.SqlClient>, importer le jeu d’autorisations CustomLocalIntranet à l’aide de [Caspol. exe (outil de stratégie de sécurité d’accès du code)](../../tools/caspol-exe-code-access-security-policy-tool.md)et définir le jeu d’autorisations de `LocalIntranet_Zone` sur CustomLocalIntranet.  
   
 ### <a name="sample-permission-set"></a>Exemple de jeu d'autorisations  
  Voici un exemple de jeu d'autorisations destiné au fournisseur de données .NET Framework pour SQL Serveur dans un scénario à confiance partielle. Pour plus d’informations sur la création de jeux d’autorisations personnalisés, consultez [Configuration des jeux d’autorisations à l’aide de Caspol. exe](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/4ybs46y6(v=vs.100)).  

@@ -17,12 +17,12 @@ helpviewer_keywords:
 - Windows Presentation Foundation [WPF], about security model
 - security model [WPF], operating system
 ms.assetid: 2a39a054-3e2a-4659-bcb7-8bcea490ba31
-ms.openlocfilehash: 1ef705fcf046af1f4136ddcf1b29f417c0d72c83
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 4fa01922c5c3097adb124d67272b9f449b70ada3
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741854"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76979870"
 ---
 # <a name="wpf-security-strategy---platform-security"></a>Stratégie de sécurité de WPF - sécurité de la plateforme
 Bien que Windows Presentation Foundation (WPF) fournisse divers services de sécurité, il tire également parti des fonctionnalités de sécurité de la plateforme sous-jacente, qui inclut le système d’exploitation, le CLR et Internet Explorer. Ces couches se combinent pour fournir à WPF un modèle de sécurité renforcé et de défense en profondeur qui tente d’éviter tout point de défaillance unique, comme illustré dans la figure suivante :  
@@ -35,14 +35,14 @@ Bien que Windows Presentation Foundation (WPF) fournisse divers services de séc
 Le cœur de Windows fournit plusieurs fonctionnalités de sécurité qui constituent la base de sécurité pour toutes les applications Windows, y compris celles créées avec WPF. Cette rubrique traite de l’ampleur de ces fonctionnalités de sécurité qui sont importantes pour WPF, ainsi que de la façon dont WPF s’y intègre pour fournir une défense en profondeur supplémentaire.  
   
 ### <a name="microsoft-windows-xp-service-pack-2-sp2"></a>Microsoft Windows XP Service Pack 2 (SP2)  
- Outre un examen général et un renforcement de Windows, il existe trois fonctionnalités clés de [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] que nous aborderons dans cette rubrique :  
+ Outre un examen général et un renforcement de Windows, il existe trois fonctionnalités clés de Windows XP SP2 que nous aborderons dans cette rubrique :  
   
 - Compilation /GS  
   
 - Windows Update Microsoft.  
   
 #### <a name="gs-compilation"></a>Compilation /GS  
- [!INCLUDE[TLA2#tla_winxpsp2](../../../includes/tla2sharptla-winxpsp2-md.md)] fournit une protection en recompilant de nombreuses bibliothèques système principales, y compris toutes les dépendances WPF, telles que le CLR, pour aider à atténuer les dépassements de mémoire tampon. Cela est accompli en utilisant le paramètre /GS avec le compilateur de ligne de commande C/C++. Même s'il est clairement préférable d'éviter les dépassements de mémoire, la compilation /GS fournit un exemple de défense en profondeur contre les vulnérabilités potentielles qui sont créées par inadvertance ou par malveillance par ces derniers.  
+ Windows XP SP2 offre une protection en recompilant de nombreuses bibliothèques système principales, y compris toutes les dépendances WPF, telles que le CLR, pour aider à atténuer les dépassements de mémoire tampon. Cela est accompli en utilisant le paramètre /GS avec le compilateur de ligne de commande C/C++. Même s'il est clairement préférable d'éviter les dépassements de mémoire, la compilation /GS fournit un exemple de défense en profondeur contre les vulnérabilités potentielles qui sont créées par inadvertance ou par malveillance par ces derniers.  
   
  Historiquement, les dépassements de mémoire tampon ont été la cause de nombreuses attaques de sécurité à fort impact. Un dépassement de mémoire tampon se produit quand un intrus tire parti d'une vulnérabilité de code qui autorise l'injection de code malveillant qui écrit au-delà des limites d'une mémoire tampon. Cela permet ensuite à un intrus de détourner le processus dans lequel s'exécute le code en remplaçant l'adresse de retour d'une fonction pour provoquer l'exécution du code de l'intrus. Le résultat est un code malveillant qui exécute du code arbitraire avec les mêmes privilèges que le processus détourné.  
   
@@ -109,7 +109,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
 - **Sites non fiables** : applications identifiées par un utilisateur comme étant non fiables (non approuvé).  
   
- Pour chacune de ces zones, les autorités de certification fournissent un jeu d’autorisations prédéfini qui inclut les autorisations correspondant au niveau de confiance associé à chacun. Elles incluent notamment les suivantes :  
+ Pour chacune de ces zones, les autorités de certification fournissent un jeu d’autorisations prédéfini qui inclut les autorisations correspondant au niveau de confiance associé à chacun. Elles incluent notamment :  
   
 - **FullTrust** : Pour les applications lancées à partir de la zone de **poste de travail** . Toutes les autorisations possibles sont accordées.  
   
@@ -153,7 +153,7 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
   
  Du point de vue de la plateforme, WPF est responsable de l’utilisation correcte de la méthode **Assert** . une utilisation incorrecte de la méthode **Assert** pourrait permettre à du code malveillant d’élever les privilèges. Par conséquent, il est important d’appeler uniquement une **assertion** quand cela est nécessaire, et de garantir que les restrictions du bac à sable (sandbox) restent intactes. Par exemple, le code en mode sandbox n'est pas autorisé à ouvrir des fichiers aléatoires, mais il est autorisé à utiliser des polices. WPF permet aux applications sandbox d’utiliser la fonctionnalité de police en appelant **Assert**, et à WPF de lire les fichiers connus pour contenir ces polices pour le compte de l’application bac à sable (sandbox).  
   
-### <a name="clickonce-deployment"></a>Déploiement ClickOnce  
+### <a name="clickonce-deployment"></a>déploiement ClickOnce  
  ClickOnce est une technologie de déploiement complète qui est incluse dans .NET Framework et s’intègre à Visual Studio (pour plus d’informations, consultez [sécurité et déploiement ClickOnce](/visualstudio/deployment/clickonce-security-and-deployment) ). Les applications WPF autonomes peuvent être déployées à l’aide de ClickOnce, tandis que les applications hébergées par un navigateur doivent être déployées avec ClickOnce.  
   
  Les applications déployées à l’aide de ClickOnce reçoivent une couche de sécurité supplémentaire par rapport à la sécurité d’accès du code (CAS). Fondamentalement, les applications déployées par ClickOnce demandent les autorisations dont elles ont besoin. Seules ces autorisations leur sont accordées si elles ne dépassent pas le jeu d'autorisations pour la zone à partir de laquelle l'application est déployée. En réduisant le jeu d’autorisations à celles qui sont nécessaires, même si elles sont inférieures à celles fournies par le jeu d’autorisations de la zone de lancement, le nombre de ressources auxquelles l’application a accès est réduit au minimum. Par conséquent, si l'application est détournée, les risques de dommages sur l'ordinateur client sont réduits.  
@@ -189,6 +189,6 @@ Les utilisateurs de WPF sur Windows Vista bénéficieront des améliorations de 
 ## <a name="see-also"></a>Voir aussi
 
 - [Sécurité d’accès du code](../misc/code-access-security.md)
-- [Sécurité](security-wpf.md)
+- [Security](security-wpf.md)
 - [Sécurité de confiance partielle de WPF](wpf-partial-trust-security.md)
 - [Stratégie de sécurité de WPF - ingénierie de sécurité](wpf-security-strategy-security-engineering.md)

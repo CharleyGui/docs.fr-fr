@@ -1,13 +1,14 @@
 ---
 title: Types de données SQL Server et ADO.NET
+titleSuffix: ''
 ms.date: 03/30/2017
 ms.assetid: 81b43550-23e8-43bb-b460-7eb8ac825c33
-ms.openlocfilehash: 642fe0d541aca01d6ffb2d9279c4d0fa91eadb63
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 9baffc7a439c851ead7ec0e12899adf418174e22
+ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780850"
+ms.lasthandoff: 02/04/2020
+ms.locfileid: "76979857"
 ---
 # <a name="sql-server-data-types-and-adonet"></a>Types de données SQL Server et ADO.NET
 SQL Server et le .NET Framework sont basés sur des systèmes de types différents, ce qui peut entraîner une perte de données potentielle. Afin de protéger l’intégrité des données, le fournisseur de données .NET Framework pour SQL Server (<xref:System.Data.SqlClient>) fournit des méthodes d’accesseur typé pour utiliser les données SQL Server. Vous pouvez également utiliser les énumérations des classes <xref:System.Data.SqlDbType> pour spécifier les types de données <xref:System.Data.SqlClient.SqlParameter>.  
@@ -41,7 +42,7 @@ SQL Server et le .NET Framework sont basés sur des systèmes de types différen
  [Données XML dans SQL Server](xml-data-in-sql-server.md)  
  Décrit comment utiliser des données XML récupérées dans SQL Server.  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Reference  
  <xref:System.Data.DataSet>  
  Décrit la classe `DataSet` et tous ses membres.  
   
