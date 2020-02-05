@@ -6,12 +6,12 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 7bd56d44eeb6af70b94cdde77d48e917ef8afb9a
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 30ea92f09bc655796b6bc268212b6d9e0e05bd9b
+ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347778"
+ms.lasthandoff: 02/01/2020
+ms.locfileid: "76919334"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
 Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
@@ -44,7 +44,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'authentification peut entraîner l'établissement d'une session sécurisée entre les points de terminaison communicants. La session est identifiée par un GUID valide pendant toute la durée de vie de la session de sécurité. Le tableau suivant indique ce qui est conservé, et à quel emplacement.  
   
-|Données|Stockage|  
+|Données|Storage|  
 |----------|-------------|  
 |Informations d'identification de présentation, telles que nom d'utilisateur, certificats X.509, jetons Kerberos et références aux informations d'identification.|Mécanismes de gestion des informations d'identification Windows standard tels que le magasin de certificats Windows.|  
 |Informations d'appartenance utilisateur, telles que noms d'utilisateur et mots de passe.|Fournisseurs d’appartenances ASP.NET.|  
@@ -54,9 +54,9 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="auditing"></a>Audit  
  L'audit permet d'enregistrer le succès et l'échec des événements d'authentification et d'autorisation. Les enregistrements d'audit contiennent les données suivantes : URI de service, URI d'action et identification de l'appelant.  
   
- L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour [!INCLUDE[wxp](../../../includes/wxp-md.md)], un enregistrement est entré dans le journal des événements d'application. Pour Windows Vista et Windows Server 2003, un enregistrement est enregistré dans le journal des événements de sécurité.  
+ L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour Windows XP, un enregistrement est enregistré dans le journal des événements de l’application. Pour Windows Vista et Windows Server 2003, un enregistrement est enregistré dans le journal des événements de sécurité.  
   
-## <a name="transactions"></a>Transactions  
+## <a name="transactions"></a>transactions  
  La fonctionnalité transactions fournit des services transactionnels à une application WCF.  
   
  Les en-têtes de transaction utilisés dans la propagation de transaction peuvent contenir des ID de transaction ou des ID d'inscription, qui sont des GUID.  
@@ -95,7 +95,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ### <a name="tracing"></a>Traçage  
  La fonctionnalité de diagnostic de l’infrastructure WCF journalise les messages qui passent par les couches de modèle de transport et de service, ainsi que les activités et événements associés à ces messages. Cette fonctionnalité est désactivée par défaut. Il est activé à l’aide du fichier de configuration de l’application et le comportement de suivi peut être modifié à l’aide du fournisseur WMI WCF au moment de l’exécution. Lorsque cette fonctionnalité est activée, l'infrastructure de suivi émet un suivi de diagnostic qui contient des messages, des activités et des événements de traitement aux écouteurs configurés. Le format et l'emplacement de la sortie sont déterminés par les choix de configuration d'écouteur de l'administrateur, mais il s'agit en général d'un fichier au format XML. L'administrateur est chargé de définir la liste de contrôle d'accès (ACL) sur les fichiers de suivi. En particulier, en cas d'hébergement par le système WAS (Windows Activation System), l'administrateur doit s'assurer que les fichiers ne sont pas servis depuis le répertoire racine virtuel public si cela n'est pas souhaité.  
   
- Il existe deux types de suivi : La journalisation des messages et le suivi de diagnostic du modèle de service, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
+ Il existe deux types de suivi : l'enregistrement des messages et le suivi du diagnostic de modèle de service, décrits dans la section suivante. Chaque type est configuré par le biais de sa propre source de suivi : <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A> et <xref:System.ServiceModel>. Ces deux sources de suivi d'enregistrement capturent des données qui sont locales à l'application.  
   
 ### <a name="message-logging"></a>Journalisation des messages  
  La source de suivi d'enregistrement des messages (<xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>) permet à un administrateur d'enregistrer les messages qui sont transmis sur le système. Par le biais de la configuration, l'utilisateur peut décider d'enregistrer uniquement des messages entiers ou des en-têtes de message, s'il faut enregistrer les couches de modèle de transport et/ou de service et s'il faut inclure les messages malformés. En outre, l'utilisateur peut configurer le filtrage de façon à limiter les messages enregistrés.  
@@ -127,13 +127,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Clés qui sont supprimées :  
   
- \- Pour xmlns:wst ="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst ="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- Pour xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
  wst:Entropy  
   
- \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Pour xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -141,7 +141,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Informations potentiellement personnelles qui sont supprimées :  
   
- \- Pour xmlns:wsse ="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse ="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- Pour xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
@@ -304,7 +304,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Pour les espaces de noms suivants :  
   
- xmlns:WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
+ xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
   
  Les informations sont supprimées pour ces éléments de corps, qui impliquent l'échange de clé :  
   
@@ -404,4 +404,4 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="see-also"></a>Voir aussi
 
 - [Windows Communication Foundation](index.md)
-- [Sécurité](./feature-details/security.md)
+- [Security](./feature-details/security.md)
