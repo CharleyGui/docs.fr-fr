@@ -13,7 +13,7 @@ ms.locfileid: "76742753"
 
 .NET propose différents moyens de personnaliser du code d’interopérabilité native. Cet article détaille les instructions suivies par les équipes .NET de Microsoft pour l’interopérabilité native.
 
-## <a name="general-guidance"></a>Recommandations générales
+## <a name="general-guidance"></a>Règle générale
 
 Les instructions de cette section s’appliquent à tous les scénarios d’interopérabilité.
 
@@ -27,7 +27,7 @@ Les instructions de cette section s’appliquent à tous les scénarios d’inte
 
 ## <a name="dllimport-attribute-settings"></a>Paramètres des attributs DllImport
 
-| Paramètre | Valeur par défaut | Recommandation | Détails |
+| Paramètre | Default | Recommandation | Détails |
 |---------|---------|----------------|---------|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.PreserveSig>   | `true` |  Conserver la valeur par défaut  | S’il est défini explicitement sur false, les valeurs de retour HRESULT en échec sont converties en exceptions (et la valeur de retour de la définition devient ainsi Null).|
 | <xref:System.Runtime.InteropServices.DllImportAttribute.SetLastError> | `false`  | Dépend de l'API  | Définissez-le sur true si l’API utilise GetLastError et Marshal.GetLastWin32Error pour obtenir la valeur. Si l’API définit une condition indiquant une erreur, récupérez l’erreur avant d’effectuer d’autres appels, de façon à éviter de la remplacer par inadvertance.|
@@ -45,11 +45,11 @@ N’oubliez pas de marquer `[DllImport]` comme `Charset.Unicode` sauf si vous so
 ❌ éviter les paramètres de `StringBuilder`. Le marshaling `StringBuilder` crée *toujours* une copie de la mémoire tampon native. Il peut donc se révéler extrêmement inefficace. Prenons le scénario classique d’appel d’une API Windows qui prend une chaîne :
 
 1. Crée un SB de la capacité souhaitée (alloue la capacité gérée) **{1}**
-2. Invoquer
+2. Appeler
    1. Alloue une mémoire tampon native **{2}**
    2. Copie le contenu si `[In]` _(valeur par défaut pour un paramètre `StringBuilder`)_
    3. Copie la mémoire tampon native dans un tableau managé nouvellement alloué si `[Out]` **{3}** _(également la valeur par défaut pour `StringBuilder`)_ .
-3. `ToString()` alloue encore un autre tableau managé **{4}**
+3. `ToString()` alloue encore un autre tableau managé **** **
 
 Soit *{4}* allocations pour extraire une chaîne du code natif. Le mieux que l’on puisse faire pour réduire ce nombre est de réutiliser `StringBuilder` dans un autre appel, mais cela ne fait gagner que *1* allocation. Il est largement préférable d’utiliser et de mettre en cache une mémoire tampon de caractères à partir de `ArrayPool` : vous pourrez limiter l’allocation à `ToString()` lors des appels suivants.
 
@@ -114,13 +114,13 @@ public struct UnicodeCharStruct
 }
 ```
 
-Une `string` est blittable si elle n’est pas contenue dans un autre type et qu’elle est passé en argument marqué `[MarshalAs(UnmanagedType.LPWStr)]` ou que `CharSet = CharSet.Unicode` est défini pour `[DllImport]`.
+Une `string` est blittable si elle n’est pas contenue dans un autre type et qu’elle est passé en argument marqué `[MarshalAs(UnmanagedType.LPWStr)]` ou que `[DllImport]` est défini pour `CharSet = CharSet.Unicode`.
 
 Pour savoir si un type est blittable, essayez de créer un `GCHandle` épinglé. Si le type n’est pas une chaîne ou n’est pas considéré comme blittable, `GCHandle.Alloc` lèvera une `ArgumentException`.
 
 ✔️ faire en sorte que vos structures soient blittables si possible.
 
-Pour plus d'informations, consultez .
+Pour plus d'informations, consultez les pages suivantes :
 
 - [Types blittable et non blittable](../../framework/interop/blittable-and-non-blittable-types.md)
 - [Marshaling de types](type-marshaling.md)
@@ -161,7 +161,7 @@ Voici la liste des types de données courants dans les API Windows et des types 
 
 Malgré leur nom, les types suivants ont la même taille sur Windows 32 bits et 64 bits.
 
-| Largeur | Portail          | C (Windows)          | C#       | Alternative                          |
+| Largeur | Windows          | C (Windows)          | C#       | Alternative                          |
 |:------|:-----------------|:---------------------|:---------|:-------------------------------------|
 | 32    | `BOOL`           | `int`                | `int`    | `bool`                               |
 | 8     | `BOOLEAN`        | `unsigned char`      | `byte`   | `[MarshalAs(UnmanagedType.U1)] bool` |
@@ -201,9 +201,9 @@ Un `PVOID` Windows, qui correspond à un `void*` C, peut être marshalé comme `
 
 [Types de données Windows](/windows/desktop/WinProg/windows-data-types)
 
-[Plages de types de données](/cpp/cpp/data-type-ranges)
+[plages de types de données](/cpp/cpp/data-type-ranges)
 
-## <a name="structs"></a>Structures
+## <a name="structs"></a>Structs
 
 Les structs managés sont créés sur la pile et ne sont pas supprimés tant que la méthode n’a pas retourné de valeur. Ils sont donc par définition « épinglés » (ils ne sont pas déplacés par le récupérateur de mémoire). Vous pouvez aussi prendre simplement l’adresse dans des blocs de code unsafe si le code natif n’utilise pas le pointeur après la fin de la méthode actuelle.
 
