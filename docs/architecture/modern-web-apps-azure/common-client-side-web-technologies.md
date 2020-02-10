@@ -4,12 +4,12 @@ description: Architecturez des applications Web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 01/30/2019
-ms.openlocfilehash: 0e5f3578edc723e2e2a32b9b3a1d8a7dcabd2909
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 7dd3765b1b71d8c1ef22d714a00be3e171fab523
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965748"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093121"
 ---
 # <a name="common-client-side-web-technologies"></a>Technologies Web courantes côté client
 
@@ -18,7 +18,7 @@ ms.locfileid: "76965748"
 
 Les applications ASP.NET Core sont des applications web qui reposent généralement sur des technologies web côté client de type HTML, CSS et JavaScript. En séparant le contenu de la page (le code HTML) de la mise en page et du style (le code CSS) et du comportement (via JavaScript), les applications web complexes peuvent tirer parti du principe de la séparation des rôles. Quand les rôles ne sont pas interconnectés, toute modification ultérieure de la structure, de la conception ou du comportement de l’application peut être effectuée plus facilement.
 
-Les codes HTML et CSS sont relativement stables, mais JavaScript, en raison des frameworks d’application et des utilitaires que les développeurs utilisent pour créer des applications web, évolue très rapidement. Ce chapitre présente quelques méthodes d’utilisation de JavaScript par les développeurs Web dans le cadre du développement d’applications, tout comme fournit une vue d’ensemble des bibliothèques côté client angulaires et de réaction.
+Les codes HTML et CSS sont relativement stables, mais JavaScript, en raison des frameworks d’application et des utilitaires que les développeurs utilisent pour créer des applications web, évolue très rapidement. Ce chapitre présente quelques façons d’utiliser JavaScript par les développeurs Web et fournit une vue d’ensemble des bibliothèques côté client angulaires et de réaction.
 
 ## <a name="html"></a>HTML
 
@@ -68,14 +68,14 @@ Par exemple, supposons qu’un élément de la page doit être visible si la val
 |--------------------------|------------|-------------|
 | Fait abstraction du DOM | **Oui** | **Oui** |
 | Prise en charge d’Ajax | **Oui** | **Oui** |
-| Liaison de données déclarative | **No** | **Oui** |
-| Routage de style MVC | **No** | **Oui** |
-| Création de modèles | **No** | **Oui** |
-| Routage de lien ciblé | **No** | **Oui** |
+| Liaison de données déclarative | **Non** | **Oui** |
+| Routage de style MVC | **Non** | **Oui** |
+| Création de modèles | **Non** | **Oui** |
+| Routage de lien ciblé | **Non** | **Oui** |
 
 La plupart des fonctionnalités absentes dans jQuery peuvent être ajoutées par le biais d’autres bibliothèques. Toutefois, un framework SPA comme Angular fournit ces fonctionnalités de façon plus intégrée, puisqu’elles sont prises en compte dès sa conception. De plus, jQuery est une bibliothèque impérative, ce qui signifie que vous devez appeler des fonctions jQuery pour faire quoi que ce soit avec jQuery. La plupart des tâches et des fonctionnalités que fournissent les frameworks SPA peuvent être effectuées de façon déclarative, sans avoir réellement à écrire du code.
 
-La liaison de données en est un bon exemple. Dans jQuery, il suffit habituellement d’une ligne de code pour obtenir la valeur d’un élément DOM ou définir la valeur d’un élément. Toutefois, vous devez écrire ce code chaque fois que qu’il faut changer la valeur de l’élément, ce qui se produit parfois dans plusieurs fonctions d’une page. Un autre exemple courant est la visibilité de l’élément. Dans jQuery, vous devez potentiellement écrire du code dans de nombreux endroits différents pour contrôler la visibilité de certains éléments. Dans chacun de ces cas, si vous utilisez la liaison de données, vous n’avez plus besoin d’écrire du code. Vous liez simplement la valeur ou la visibilité des éléments en question à un *viewmodel* dans la page et chaque modification de viewmodel est automatiquement reflétée dans les éléments liés.
+La liaison de données en est un bon exemple. Dans jQuery, il suffit généralement d’une seule ligne de code pour obtenir la valeur d’un élément DOM ou définir la valeur d’un élément. Toutefois, vous devez écrire ce code chaque fois que vous devez modifier la valeur de l’élément, ce qui se produit parfois dans plusieurs fonctions sur une page. Un autre exemple courant est la visibilité de l’élément. Dans jQuery, il peut y avoir de nombreux emplacements différents où vous écrirez du code pour contrôler si certains éléments étaient visibles. Dans chacun de ces cas, si vous utilisez la liaison de données, vous n’avez plus besoin d’écrire du code. Vous devez simplement lier la valeur ou la visibilité des éléments en question à un *ViewModel* sur la page, et les modifications apportées à ce ViewModel seront automatiquement reflétées dans les éléments liés.
 
 ### <a name="angular-spas"></a>SPA Angular
 

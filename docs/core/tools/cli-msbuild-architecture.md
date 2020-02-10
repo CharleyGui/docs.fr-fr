@@ -2,12 +2,12 @@
 title: Architecture des outils en ligne de commande .NET Core
 description: Découvrez les différentes couches des outils .NET Core et les changements apportés aux versions récentes.
 ms.date: 03/06/2017
-ms.openlocfilehash: 0064e7354f073be618bcf6a79962ab495927fadd
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+ms.openlocfilehash: fde1a0acb6af9dd65aa3466b4ea37473b2eab6fb
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980208"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092913"
 ---
 # <a name="high-level-overview-of-changes-in-the-net-core-tools"></a>Vue d’ensemble générale des modifications des outils .NET Core
 
@@ -24,13 +24,13 @@ Dans le cadre de ce passage, le moteur de génération personnalisé qui a été
 
 ## <a name="the-tooling-layers"></a>Les couches des outils
 
-Le fait de quitter le système de projet existant et de changer de moteur de génération suscite naturellement la question de savoir si l’une ou l’autre de ces modifications change l’organisation en couches globale de l’ensemble de l’écosystème des outils .NET Core. Existe-t-il de nouvelles parties et composants ?
+Avec la modification dans le moteur de génération et l’éloignement du système de projet existant, certaines questions suivent naturellement. L’une de ces modifications modifie-t-elle la « superposition » globale de l’écosystème des outils .NET Core ? Existe-t-il de nouvelles parties et composants ?
 
 Commençons par un rappel rapide de l’organisation en couches de Preview 2, comme l’illustre l’image suivante :
 
 ![Architecture générale des outils Preview 2](media/cli-msbuild-architecture/p2-arch.png)
 
-L’organisation en couches des outils est assez simple. En bas, la Fondation est le CLI .NET Core. Tous les autres outils de niveau supérieur, tels que Visual Studio ou Visual Studio Code, dépendent de l’interface CLI pour générer des projets, restaurer des dépendances, etc. Par exemple, si Visual Studio souhaite effectuer une opération de restauration, il appelle la commande `dotnet restore` ([Voir la remarque](#dotnet-restore-note)) dans l’interface CLI.
+La superposition des outils de Preview 2 est simple. En bas, la Fondation est le CLI .NET Core. Tous les autres outils de niveau supérieur, tels que Visual Studio ou Visual Studio Code, dépendent de l’interface CLI pour générer des projets, restaurer des dépendances, etc. Par exemple, si Visual Studio souhaite effectuer une opération de restauration, il appelle la commande `dotnet restore` ([Voir la remarque](#dotnet-restore-note)) dans l’interface CLI.
 
 Avec le passage au nouveau système de projet, le schéma précédent change :
 
@@ -45,7 +45,7 @@ Tous les ensembles d’outils utilisent désormais le composant SDK partagé et 
 
 ### <a name="cli-commands"></a>Commandes CLI
 
-Le composant SDK partagé signifie que la plupart des commandes CLI existantes ont été réimplémentées comme cibles et tâches MSBuild. Que cela signifie-t-il pour les commandes CLI et votre utilisation de l’ensemble d’outils ?
+Le composant SDK partagé signifie que la majorité des commandes CLI existantes ont été réimplémentées en tant que cibles et tâches MSBuild. Que cela signifie-t-il pour les commandes CLI et votre utilisation de l’ensemble d’outils ?
 
 Du point de vue de l’utilisation, il ne modifie pas la façon dont vous utilisez l’interface CLI. L’interface CLI possède toujours les commandes de base qui existaient dans la version préliminaire 2 de .NET Core 1,0 :
 

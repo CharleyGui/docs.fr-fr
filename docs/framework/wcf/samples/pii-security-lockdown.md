@@ -2,12 +2,12 @@
 title: PII Security Lockdown
 ms.date: 03/30/2017
 ms.assetid: c44fb338-9527-4dd0-8607-b8787d15acb4
-ms.openlocfilehash: 63410ecc19e94e57f943e5d7dc13a6098bd91d51
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 56c8acbe53f1e0243f7c679da6ef04f7135bcd3a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74714622"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094967"
 ---
 # <a name="pii-security-lockdown"></a>PII Security Lockdown
 Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la sécurité d’un service Windows Communication Foundation (WCF) en :  
@@ -27,7 +27,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 >   
 > `<InstallDrive>:\WF_WCF_Samples\WCF\Basic\Management\SecurityLockdown`  
   
-## <a name="discussion"></a>Discussion  
+## <a name="discussion"></a>Discussions  
  Chacune de ces fonctionnalités peut être utilisée séparément ou simultanément afin de contrôler les divers aspects relatifs à la sécurité des services. Il ne s’agit pas d’un guide définitif pour la sécurisation d’un service WCF.  
   
  Les fichiers de configuration .NET Framework peuvent contenir des informations sensibles telles que les chaînes de connexion permettant de se connecter aux bases de données. Dans le cadre de services partagés et hébergés par le Web, le chiffrement de ces informations dans le fichier de configuration des services concernés peut s'avérer souhaitable pour assurer leur protection en cas de consultation informelle. .NET Framework 2.0 et ses versions ultérieures permettent de chiffrer certains passages des fichiers de configuration à l'aide de l'interface de programmation d'applications de protection des données Windows (Data Protection Application Programming Interface, DPAPI) ou du fournisseur de services de chiffrement RSA. Le programme aspnet_regiis.exe peut chiffrer les sections choisies d'un fichier de configuration donné à l'aide de l'interface ou du fournisseur ci-dessus.  
@@ -47,7 +47,7 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
   
 3. Chiffrez les paramètres de configuration appSettings du dossier Web.config en publiant la commande suivante : `aspnet_regiis -pe "appSettings" -app "/servicemodelsamples" -prov "DataProtectionConfigurationProvider"`.  
   
- Vous trouverez plus d’informations sur le chiffrement des sections de fichiers de configuration en lisant une procédure sur DPAPI dans la configuration ASP.NET ([création d’Applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://go.microsoft.com/fwlink/?LinkId=95137)) et d’une procédure sur RSA dans Configuration ASP.net ([procédure : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://go.microsoft.com/fwlink/?LinkId=95138)).  
+ Vous trouverez plus d’informations sur le chiffrement des sections de fichiers de configuration en lisant une procédure sur DPAPI dans la configuration ASP.NET ([création d’Applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))) et d’une procédure sur RSA dans Configuration ASP.net ([procédure : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))).  
   
 ## <a name="locking-configuration-file-elements"></a>Verrouillage des éléments de fichier de configuration  
  Dans le cadre de services hébergés par le Web, il est possible de placer ces services dans les sous-répertoires d'autres services. Dans ce genre de situation, les valeurs de configuration des services placés dans ces sous-répertoires sont calculées en examinant les valeurs du fichier Machine.config. Ces valeurs sont ensuite fusionnées avec les valeurs des éventuels fichiers Web.config figurant dans les répertoires parents en descendant la hiérarchie de l’arborescence de répertoires jusqu’au fichier Web.config du répertoire contenant les services concernés. Le comportement par défaut de la plupart des éléments de configuration permet aux fichiers de configuration des sous-répertoires de se substituer aux valeurs définies dans leurs répertoires parents. Dans certains cas, il peut s'avérer préférable d'empêcher une telle substitution.  
@@ -122,11 +122,11 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
 > [!IMPORTANT]
 > Pour exécuter cet exemple, vous devez modifier manuellement le fichier machine. config. Veillez à utiliser la modification de machine. config en tant que valeurs incorrectes ou que la syntaxe peut empêcher l’exécution de toutes les applications .NET Framework.  
   
- Les éléments de fichier de configuration peuvent également être chiffrés à l'aide de DPAPI et RSA. Pour plus d'informations, consultez les liens suivants :  
+ Les éléments de fichier de configuration peuvent également être chiffrés à l'aide de DPAPI et RSA. Pour plus d'informations, consultez les liens suivants :  
   
-- [Création d’applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://go.microsoft.com/fwlink/?LinkId=95137)  
+- [Création d’applications ASP.NET sécurisées : authentification, autorisation et communication sécurisée](https://docs.microsoft.com/previous-versions/msp-n-p/ff649248(v=pandp.10))  
   
-- [Comment : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://go.microsoft.com/fwlink/?LinkId=95138)  
+- [Comment : chiffrer des sections de configuration dans ASP.NET 2,0 à l’aide de RSA](https://docs.microsoft.com/previous-versions/msp-n-p/ff650304(v=pandp.10))  
   
 #### <a name="to-set-up-build-and-run-the-sample"></a>Pour configurer, générer et exécuter l'exemple  
   
@@ -144,4 +144,4 @@ Cet exemple montre comment contrôler plusieurs fonctionnalités liées à la s�
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

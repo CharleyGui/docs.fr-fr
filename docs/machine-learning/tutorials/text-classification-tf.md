@@ -1,15 +1,15 @@
 ---
-title: 'Didacticiel : analyser le sentiment des revues de films à l’aide d’un modèle TensorFlow pré-formé'
+title: 'Didacticiel : analyser le sentiment de révision à l’aide d’un modèle TensorFlow'
 description: Ce didacticiel vous montre comment utiliser un modèle TensorFlow pré-formé pour classer les sentiments dans les commentaires de sites Web. Le classifieur de sentiment binaire C# est une application console développée à l’aide de Visual Studio.
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 0e80cdc6bb7dcc62a57466e909451da972c92db8
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 7a6043f56a2ecaca633ba5545170f27a85a22efc
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738698"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092393"
 ---
 # <a name="tutorial-analyze-sentiment-of-movie-reviews-using-a-pre-trained-tensorflow-model-in-mlnet"></a>Didacticiel : analyser le sentiment des revues de films à l’aide d’un modèle TensorFlow pré-formé dans ML.NET
 
@@ -17,7 +17,7 @@ Ce didacticiel vous montre comment utiliser un modèle TensorFlow pré-formé po
 
 Le modèle TensorFlow utilisé dans ce didacticiel a été formé à l’aide des revues de films à partir de la base de données IMDB. Une fois que vous avez terminé de développer l’application, vous serez en mesure de fournir un texte d’examen de films et l’application vous indiquera si la révision a un sentiment positif ou négatif.
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
 > * Charger un modèle TensorFlow pré-formé
@@ -26,17 +26,17 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TextClassificationTF).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail « développement multiplateforme .net Core » installée.
 
-## <a name="setup"></a>Programme d'installation
+## <a name="setup"></a>Programme d’installation
 
-### <a name="create-the-application"></a>Créer l’application
+### <a name="create-the-application"></a>Création de l'application
 
 1. Créez une **application console .net Core** appelée « TextClassificationTF ».
 
-2. Créez un répertoire nommé *Données* dans votre projet pour y enregistrer les fichiers du jeu de données.
+2. Créez un répertoire nommé *Data* dans votre projet pour enregistrer les fichiers du jeu de données.
 
 3. Installez le **package NuGet Microsoft.ML** :
 
@@ -79,14 +79,14 @@ Les revues de film sont du texte en forme libre. Votre application convertit le 
 
 La première consiste à fractionner le texte en mots séparés et à utiliser le fichier de mappage fourni pour mapper chaque mot sur un encodage entier. Le résultat de cette transformation est un tableau d’entiers de longueur variable dont la longueur correspond au nombre de mots de la phrase.
 
-|Les| Value|Type|
+|Propriété| Valeur|Type|
 |-------------|-----------------------|------|
 |ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
 
 Le tableau de fonctionnalités de longueur variable est ensuite redimensionné à une longueur fixe de 600. Il s’agit de la longueur attendue par le modèle TensorFlow.
 
-|Les| Value|Type|
+|Propriété| Valeur|Type|
 |-------------|-----------------------|------|
 |ReviewText|ce film est vraiment parfait|string|
 |VariableLengthFeatures|14, 22, 9, 66, 78,... |int []|
@@ -133,7 +133,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
     |Word     |Index    |
     |---------|---------|
     |fête     |  362    |
-    |pas     |  181    |
+    |vouloir     |  181    |
     |Flex    |  355    |
     |effets  |  302    |
     |sensation  |  547    |
@@ -224,7 +224,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 1. La fonction [Predict ()](xref:Microsoft.ML.PredictionEngine%602.Predict%2A) effectue une prédiction sur une seule ligne de données :
 
-    |Les| Value|Type|
+    |Propriété| Valeur|Type|
     |-------------|-----------------------|------|
     |Prédiction|[0,5459937, 0,454006255]|float []|
 
@@ -238,7 +238,7 @@ La [classe MLContext](xref:Microsoft.ML.MLContext) constitue un point de départ
 
 ## <a name="results"></a>Résultats
 
-Générez et exécutez votre application.
+Créez et exécutez votre application.
 
 Vos résultats doivent être similaires à ce qui suit. Durant le processus, des messages sont affichés. Vous pouvez voir des avertissements ou des messages de traitement. Ces messages ont été supprimés des résultats suivants par souci de clarté.
 
@@ -247,11 +247,11 @@ Number of classes: 2
 Is sentiment/review positive ? Yes
 ```
 
-Félicitations ! Vous venez de créer avec succès un modèle de Machine Learning pour classer et prédire les sentiments de messages en réutilisant un modèle de `TensorFlow` pré-formé dans ML.NET.
+Félicitations ! Vous venez de créer avec succès un modèle de Machine Learning pour classer et prédire les sentiments de messages en réutilisant un modèle de `TensorFlow` pré-formé dans ML.NET.
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TextClassificationTF).
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > * Charger un modèle TensorFlow pré-formé

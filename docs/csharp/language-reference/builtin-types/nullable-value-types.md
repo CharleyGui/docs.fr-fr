@@ -4,16 +4,16 @@ description: En savoir C# plus sur les types valeur Nullable et leur utilisation
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 42673d16ac68bbf119e57e4c357b1b2b2a0b5c51
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bd90a0b1b77349efe581eb8aae44c58802ba756d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740946"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093186"
 ---
 # <a name="nullable-value-types-c-reference"></a>Types valeur Nullable (C# référence)
 
-Un type valeur Nullable `T?` représente toutes les valeurs de son [type valeur](value-types.md) sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Par exemple, vous pouvez assigner l’une des trois valeurs suivantes à une variable `bool?` : `true`, `false`ou `null`. Un type valeur sous-jacent `T` ne peut pas être un type valeur Nullable lui-même.
+Un *type valeur nullable* `T?` représente toutes les valeurs de son [type valeur](value-types.md) sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Par exemple, vous pouvez assigner l’une des trois valeurs suivantes à une variable `bool?` : `true`, `false`ou `null`. Un type valeur sous-jacent `T` ne peut pas être un type valeur Nullable lui-même.
 
 > [!NOTE]
 > C#8,0 introduit la fonctionnalité de types référence Nullable. Pour plus d’informations, consultez [types de référence Nullable](../../nullable-references.md). Les types valeur Nullable sont disponibles à partir C# de 2.
@@ -68,7 +68,7 @@ Un type valeur n’acceptant pas les valeurs NULL `T` est implicitement converti
 
 ## <a name="lifted-operators"></a>Opérateurs levés
 
-Les opérateurs unaires et binaires prédéfinis ou tous les opérateurs surchargés pris en charge par un type valeur `T` sont également pris en charge par le type valeur Nullable correspondant `T?`. Ces opérateurs, également appelés *opérateurs levés*, produisent `null` si l’un des opérandes ou les deux sont `null`; dans le cas contraire, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Par exemple :
+Les [opérateurs](../operators/index.md) unaires et binaires prédéfinis ou tous les opérateurs surchargés pris en charge par un type valeur `T` sont également pris en charge par le type valeur nullable correspondant `T?`. Ces opérateurs, également appelés *opérateurs levés*, produisent `null` si l’un des opérandes ou les deux sont `null`; dans le cas contraire, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Par exemple :
 
 [!code-csharp[lifted operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
 
@@ -82,7 +82,9 @@ Pour les [opérateurs de comparaison](../operators/comparison-operators.md) `<`,
 
 [!code-csharp-interactive[relational and equality operators](~/samples/csharp/language-reference/builtin-types/NullableValueTypes.cs#ComparisonOperators)]
 
-L’exemple précédent montre également qu’une comparaison d’égalité de deux instances de type valeur Nullable à la fois `null` prend la valeur `true`.
+Pour l' [opérateur d’égalité](../operators/equality-operators.md#equality-operator-) `==`, si les deux opérandes sont `null`, le résultat est `true`, si un seul des opérandes est `null`, le résultat est `false`; dans le cas contraire, les valeurs contenues des opérandes sont comparées.
+
+Pour l' [opérateur d’inégalité](../operators/equality-operators.md#inequality-operator-) `!=`, si les deux opérandes sont `null`, le résultat est `false`, si un seul des opérandes est `null`, le résultat est `true`; dans le cas contraire, les valeurs contenues des opérandes sont comparées.
 
 S’il existe une [conversion définie par l’utilisateur](../operators/user-defined-conversion-operators.md) entre deux types valeur, la même conversion peut également être utilisée entre les types valeur Nullable correspondants.
 

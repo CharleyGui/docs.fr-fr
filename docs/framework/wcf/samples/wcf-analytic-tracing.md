@@ -2,22 +2,22 @@
 title: traçage analytique [WCF]
 ms.date: 03/30/2017
 ms.assetid: 6029c7c7-3515-4d36-9d43-13e8f4971790
-ms.openlocfilehash: 52a6787f6c7d309b1ae3a932780e4dbcb2ec0792
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 3ed9c5f08e89d978f8290dcda5ab1ecfd8b9c56c
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715306"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094824"
 ---
 # <a name="wcf-analytic-tracing"></a>traçage analytique [WCF]
 Cet exemple montre comment ajouter vos propres événements de suivi dans le flux des traces analytiques que Windows Communication Foundation (WCF) écrit dans ETW dans [!INCLUDE[netfx_current_long](../../../../includes/netfx-current-long-md.md)]. Les traces analytiques permettent d'obtenir facilement une visibilité de vos services sans que cela se traduise par une lourde pénalité en termes de performances. Cet exemple montre comment utiliser les API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType> pour écrire des événements qui s’intègrent aux services WCF.  
   
  Pour plus d’informations sur les API <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>, consultez <xref:System.Diagnostics.Eventing?displayProperty=nameWithType>.  
   
- Pour en savoir plus sur le suivi d’événements dans Windows, consultez [améliorer le débogage et le réglage des performances avec ETW](https://go.microsoft.com/fwlink/?LinkId=166488).  
+ Pour en savoir plus sur le suivi d’événements dans Windows, consultez [améliorer le débogage et le réglage des performances avec ETW](https://docs.microsoft.com/archive/msdn-magazine/2007/april/event-tracing-improve-debugging-and-performance-tuning-with-etw).  
   
 ## <a name="disposing-eventprovider"></a>Suppression d'EventProvider  
- Cet exemple utilise la classe <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, qui implémente <xref:System.IDisposable?displayProperty=nameWithType>. Lors de l’implémentation du suivi pour un service WCF, il est probable que vous pouvez utiliser les ressources de <xref:System.Diagnostics.Eventing.EventProvider>pour la durée de vie du service. Pour cette raison, et à des fins de lisibilité, cet exemple ne supprime jamais l'<xref:System.Diagnostics.Eventing.EventProvider> inclus dans un wrapper. Si pour une raison ou une autre, les exigences de votre service diffèrent en matière de suivi et que vous devez supprimer cette ressource, modifiez cet exemple conformément aux meilleures pratiques de suppression de ressources non managées. Pour plus d’informations sur la suppression des ressources non managées, consultez [implémentation d’une méthode dispose](https://go.microsoft.com/fwlink/?LinkId=166436).  
+ Cet exemple utilise la classe <xref:System.Diagnostics.Eventing.EventProvider?displayProperty=nameWithType>, qui implémente <xref:System.IDisposable?displayProperty=nameWithType>. Lors de l’implémentation du suivi pour un service WCF, il est probable que vous pouvez utiliser les ressources de <xref:System.Diagnostics.Eventing.EventProvider>pour la durée de vie du service. Pour cette raison, et à des fins de lisibilité, cet exemple ne supprime jamais l'<xref:System.Diagnostics.Eventing.EventProvider> inclus dans un wrapper. Si pour une raison ou une autre, les exigences de votre service diffèrent en matière de suivi et que vous devez supprimer cette ressource, modifiez cet exemple conformément aux meilleures pratiques de suppression de ressources non managées. Pour plus d’informations sur la suppression des ressources non managées, consultez [implémentation d’une méthode dispose](https://docs.microsoft.com/dotnet/standard/garbage-collection/implementing-dispose).  
   
 ## <a name="self-hosting-vs-web-hosting"></a>Auto-hébergement et hébergement Web  
  Pour les services hébergés sur le Web, les traces analytiques de WCF fournissent un champ, appelé « HostReference », qui est utilisé pour identifier le service qui émet les traces. Les traces utilisateur extensibles peuvent participer à ce modèle et cet exemple en illustre les meilleures pratiques. Le format d’une référence d’hôte Web lorsque le caractère&#124;«» s’affiche réellement dans la chaîne obtenue peut être l’un des éléments suivants :  
@@ -35,7 +35,7 @@ Cet exemple montre comment ajouter vos propres événements de suivi dans le flu
 ## <a name="custom-event-details"></a>Informations sur l'événement personnalisé  
  Le manifeste du fournisseur d’événements ETW de WCF définit trois événements qui sont conçus pour être émis par les auteurs de service WCF à partir du code de service. Le tableau suivant détaille ces trois événements.  
   
-|Event|Description|ID d'événement|  
+|Événement|Description|ID de l’événement|  
 |-----------|-----------------|--------------|  
 |UserDefinedInformationEventOccurred|Émettez cet événement lorsqu'un fait remarquable, qui n'est pas un problème, se produit dans votre service. Par exemple, vous pouvez émettre un événement après qu'un appel à une base de données a abouti.|301|  
 |UserDefinedWarningOccurred|Émettez cet événement lorsqu'un problème susceptible d'aboutir à un échec se produit. Par exemple, vous pouvez émettre un événement d'avertissement lorsqu'un appel à une base de données a échoué, mais que vous avez pu recourir à une banque de données redondante.|302|  
@@ -97,7 +97,7 @@ Cet exemple montre comment ajouter vos propres événements de suivi dans le flu
   
 #### <a name="to-clean-up-optional"></a>Pour nettoyer (facultatif)  
   
-1. Ouvrez **Observateur d’événements**.  
+1. Ouvrez l’ **Observateur d’événements**.  
   
 2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis **application-serveur-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.  
   
@@ -106,7 +106,7 @@ Cet exemple montre comment ajouter vos propres événements de suivi dans le flu
 4. Cliquez sur **Effacer** pour effacer les événements.  
   
 ## <a name="known-issue"></a>Problème connu  
- Il existe un problème connu dans le **Observateur d’événements** où il peut ne pas être en mesure de décoder les événements ETW. Vous pouvez voir un message d’erreur indiquant : «la description de l’ID d’événement \<> à partir de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l’ordinateur local.» Si vous rencontrez cette erreur, sélectionnez **Actualiser** dans le menu **actions** . Le décodage de l'événement doit ensuite s'effectuer correctement.  
+ Il existe un problème connu dans le **Observateur d’événements** où il peut ne pas être en mesure de décoder les événements ETW. Vous pouvez voir un message d’erreur indiquant : «la description de l’ID d’événement \<> à partir de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui déclenche cet événement n’est pas installé sur votre ordinateur local, ou l’installation est endommagée. Vous pouvez installer ou réparer le composant sur l’ordinateur local.» Si vous rencontrez cette erreur, sélectionnez **Actualiser** dans le menu **actions** . Le décodage de l'événement doit ensuite s'effectuer correctement.  
   
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.  
@@ -119,4 +119,4 @@ Cet exemple montre comment ajouter vos propres événements de suivi dans le flu
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

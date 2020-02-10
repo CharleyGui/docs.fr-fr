@@ -7,12 +7,12 @@ helpviewer_keywords:
 - struct keyword [C#]
 - structs [C#], struct keyword
 ms.assetid: ff3dd9b7-dc93-4720-8855-ef5558f65c7c
-ms.openlocfilehash: 8d9a23a0813423571c894758257b284ad67a72e2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 77d5c83dd4c81b96bc62ace6e609db8bc411dc41
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744648"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093160"
 ---
 # <a name="struct-c-reference"></a>struct (Référence C#)
 
@@ -49,7 +49,6 @@ Pour obtenir des exemples, consultez [Utilisation de structs](../../programming-
 
 - [Informations de référence sur C#](../index.md)
 - [Mots clés C#](index.md)
-- [Tableaux des types intégrés](built-in-types-table.md)
 - [Types de valeur](../builtin-types/value-types.md)
 - [class](class.md)
 - [interface](interface.md)

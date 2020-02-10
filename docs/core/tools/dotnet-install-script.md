@@ -2,12 +2,12 @@
 title: Scripts dotnet-install
 description: En savoir plus sur les scripts dotnet-install pour installer les kit SDK .NET Core et le runtime partagé.
 ms.date: 01/23/2020
-ms.openlocfilehash: 76055627c6b2016396209c9594dba36e56eb841c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: bf28f872be3ac2b4115b1d5e5c06e32afec0b49e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920574"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092861"
 ---
 # <a name="dotnet-install-scripts-reference"></a>Documentation sur les scripts dotnet-install
 
@@ -15,9 +15,9 @@ ms.locfileid: "76920574"
 
 `dotnet-install.ps1` | `dotnet-install.sh`-script utilisé pour installer le kit SDK .NET Core et le runtime partagé.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
-Windows :
+Windows :
 
 ```powershell
 dotnet-install.ps1 [-Channel] [-Version] [-JSonFile] [-InstallDir] [-Architecture]
@@ -56,7 +56,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - **`-Channel|--channel <CHANNEL>`**
 
-  Spécifie le canal source pour l’installation. Les valeurs possibles sont :
+  Spécifie le canal source pour l’installation. Les valeurs possibles sont les suivantes :
 
   - `Current` - Version la plus récente.
   - `LTS` - Canal de prise en charge à long terme (dernière version prise en charge).
@@ -67,11 +67,11 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - **`-Version|--version <VERSION>`**
 
-  Représente une version spécifique. Les valeurs possibles sont :
+  Représente une version spécifique. Les valeurs possibles sont les suivantes :
 
   - `latest` : dernière version sur le canal (utilisée avec l’option `-Channel`).
   - `coherent` : dernière version cohérente sur le canal ; utilise la dernière combinaison de packages stable (utilisée avec les options `-Channel` de nom de branche).
-  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
+  - Version en trois parties au format X.Y.Z représentant une version spécifique ; remplace l’option `-Channel`. Par exemple : `2.0.0-preview2-006120`.
 
   Si aucune valeur n’est spécifiée, `-Version` est définie par défaut sur `latest`.
 
@@ -96,7 +96,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - **`-Runtime|--runtime <RUNTIME>`**
 
-  Installe uniquement le runtime partagé et non l’intégralité du SDK. Les valeurs possibles sont :
+  Installe uniquement le runtime partagé et non l’intégralité du SDK. Les valeurs possibles sont les suivantes :
 
   - `dotnet` - le runtime partagé `Microsoft.NETCore.App`.
   - `aspnetcore` - le runtime partagé `Microsoft.AspNetCore.App`.
@@ -154,7 +154,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - Installez la dernière version LTS (Long Term Support) à l’emplacement par défaut :
 
-  Windows :
+  Windows :
 
   ```powershell
   ./dotnet-install.ps1 -Channel LTS
@@ -168,7 +168,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - Installez la version la plus récente à partir du canal 3,1 à l’emplacement spécifié :
 
-  Windows :
+  Windows :
 
   ```powershell
   ./dotnet-install.ps1 -Channel 3.1 -InstallDir C:\cli
@@ -182,7 +182,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - Installez la version 3.0.0 du runtime partagé :
 
-  Windows :
+  Windows :
 
   ```powershell
   ./dotnet-install.ps1 -Runtime dotnet -Version 3.0.0
@@ -203,7 +203,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
 
 - Obtenir le script et installer les exemples unilignes de l’interface CLI .NET Core :
 
-  Windows :
+  Windows :
 
   ```powershell
   # Run a separate PowerShell process because the script calls exit, so it will end the current PowerShell session.
@@ -213,7 +213,7 @@ Vous pouvez installer une version spécifique à l’aide de l’argument `-Vers
   Mac OS/Linux :
 
   ```bash
-  curl -ssl https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>
+  curl -sSL https://dot.net/v1/dotnet-install.sh | bash /dev/stdin <additional install-script args>
   ```
 
 ## <a name="see-also"></a>Voir aussi

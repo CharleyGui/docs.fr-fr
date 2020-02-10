@@ -2,12 +2,12 @@
 title: Résolution des problèmes de messagerie en file d'attente
 ms.date: 03/30/2017
 ms.assetid: a5f2836f-018d-42f5-a571-1e97e64ea5b0
-ms.openlocfilehash: 5c039c34983647884561f33645f26e4a89280248
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 7990d4b9847ee2f35b9fe6269bb211763c4c80b6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921265"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095006"
 ---
 # <a name="troubleshooting-queued-messaging"></a>Résolution des problèmes de messagerie en file d'attente
 
@@ -17,7 +17,7 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** J’ai utilisé la version bêta 1 de WCF et j’ai installé le correctif MSMQ. Est-ce que je dois supprimer le correctif logiciel ?
 
-**R :** Oui. Ce correctif logiciel n'est plus pris en charge. WCF fonctionne désormais sur MSMQ sans nécessiter de correctif logiciel.
+**R :** Oui. Ce correctif logiciel n'est plus pris en charge. WCF fonctionne désormais sur MSMQ sans nécessiter de correctif logiciel.
 
 **Q :** Il existe deux liaisons pour MSMQ : <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding>. Laquelle dois-je utiliser et à quel moment ?
 
@@ -25,7 +25,7 @@ Cette section contient des questions courantes et une aide pour la résolution d
 
 **Q :** Dois-je mettre à niveau MSMQ pour utiliser les liaisons <xref:System.ServiceModel.NetMsmqBinding> et `MsmqIntegration` ?
 
-**R :** non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur Windows XP et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
+**R :** Non. Les deux liaisons fonctionnent avec MSMQ 3,0 sur Windows XP et Windows Server 2003. Certaines fonctionnalités des liaisons deviennent disponibles lorsque vous effectuez une mise à niveau vers MSMQ 4,0 dans Windows Vista.
 
 **Q :** Quelles sont les fonctionnalités des liaisons <xref:System.ServiceModel.NetMsmqBinding> et <xref:System.ServiceModel.MsmqIntegration.MsmqIntegrationBinding> sont disponibles dans MSMQ 4,0, mais pas dans MSMQ 3,0 ?
 
@@ -41,25 +41,25 @@ Pour plus d’informations, consultez différences entre les [fonctionnalités d
 
 **Q :** Puis-je utiliser MSMQ 3,0 sur l’un des côtés d’une communication en file d’attente et MSMQ 4,0 de l’autre côté ?
 
-**R :** Oui.
+**R :** Oui.
 
 **Q :** Je souhaite intégrer des applications MSMQ existantes à de nouveaux clients ou serveurs WCF. Est-ce que je dois mettre à niveau les deux côtés de mon infrastructure MSMQ ?
 
-**R :** non. Vous n'êtes pas obligé d'effectuer la mise à niveau vers MSMQ 4.0 sur l'un ou l'autre des côtés.
+**R :** Non. Vous n'êtes pas obligé d'effectuer la mise à niveau vers MSMQ 4.0 sur l'un ou l'autre des côtés.
 
-## <a name="troubleshooting"></a>Résolution des problèmes
+## <a name="troubleshooting"></a>Dépannage
 
 Cette section contient les solutions aux problèmes les plus courants. Certains problèmes correspondant à des restrictions connues sont également décrits dans les notes de publication.
 
 **Q :** J’essaie d’utiliser une file d’attente privée et j’obtiens l’exception suivante : `System.InvalidOperationException`: l’URL n’est pas valide. L'URL de la file d'attente ne peut pas contenir le caractère « $ ». Utilisez la syntaxe dans net.msmq://machine/private/queueName pour adresser une file d'attente privée.
 
-**R :** Vérifiez la file d’attente Uniform Resource Identifier (URI) dans votre configuration et votre code. N'utilisez pas le caractère « $ » dans l'URI. Par exemple, pour adresser une file d'attente privée nommée OrdersQueue, spécifiez l'URI comme net.msmq://localhost/private/ordersQueue.
+**R :** Vérifiez la file d’attente Uniform Resource Identifier (URI) dans votre configuration et votre code. N'utilisez pas le caractère « $ » dans l'URI. Par exemple, pour adresser une file d’attente privée nommée OrdersQueue, spécifiez l’URI en tant que `net.msmq://localhost/private/ordersQueue`.
 
-**Q :** L’appel de `ServiceHost.Open()` sur mon application en file d’attente lève l’exception suivante : `System.ArgumentException`: une adresse de base ne peut pas contenir une chaîne de requête d’URI. Pourquoi ?
+**Q :** L’appel de `ServiceHost.Open()` sur mon application en file d’attente lève l’exception suivante : `System.ArgumentException`: une adresse de base ne peut pas contenir une chaîne de requête d’URI. Pourquoi ?
 
 **R :** Vérifiez l’URI de la file d’attente dans votre fichier de configuration et dans votre code. Alors que les files d'attente MSMQ prennent en charge l'utilisation du caractère '?', les Uri interprètent ce dernier comme le début d'une requête de chaîne. Pour éviter ce problème, utilisez des noms de file d'attente qui ne comportent pas de caractère '?'.
 
-**Q :** Mon envoi a réussi mais aucune opération de service n’est appelée sur le récepteur. Pourquoi ?
+**Q :** Mon envoi a réussi mais aucune opération de service n’est appelée sur le récepteur. Pourquoi ?
 
 **R :** Pour déterminer la réponse, utilisez la liste de vérification suivante :
 
@@ -77,7 +77,7 @@ Cette section contient les solutions aux problèmes les plus courants. Certains 
 
 - Recherchez dans les files d'attente sortantes d'éventuels problèmes de connectivité ou d'adressage.
 
-**Q :** J’ai spécifié une file d’attente de lettres mortes personnalisée, mais lorsque je démarre l’application expéditeur, j’obtiens une exception indiquant que la file d’attente de lettres mortes est introuvable ou que l’application émettrice n’a pas d’autorisation sur la file d’attente de lettres mortes. Pourquoi ?
+**Q :** J’ai spécifié une file d’attente de lettres mortes personnalisée, mais lorsque je démarre l’application expéditeur, j’obtiens une exception indiquant que la file d’attente de lettres mortes est introuvable ou que l’application émettrice n’a pas d’autorisation sur la file d’attente de lettres mortes. Que se passe-t-il ?
 
 **R :** L’URI de la file d’attente de lettres mortes personnalisée doit inclure un « localhost » ou le nom de l’ordinateur dans le premier segment, par exemple, net. msmq://localhost/private/myAppdead-letter queue.
 
@@ -87,15 +87,15 @@ Cette section contient les solutions aux problèmes les plus courants. Certains 
 
 Si les garanties sont None (<xref:System.ServiceModel.MsmqBindingBase.ExactlyOnce%2A> = `false`), la valeur par défaut est aucune fonctionnalité de file d’attente de lettres mortes.
 
-**Q :** Mon service lève une exception dans SvcHost. Open avec un message « EndpointListener Requirements ne peut pas être respecté par ListenerFactory ». Pourquoi ?
+**Q :** Mon service lève une exception dans SvcHost. Open avec un message « EndpointListener Requirements ne peut pas être respecté par ListenerFactory ». Pourquoi ?
 
-A. Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay =`true`» sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
+R. Consultez votre contrat de service. Vous avez peut-être oublié de placer « IsOneWay =`true`» sur toutes les opérations de service. Les files d'attente prennent uniquement en charge les opérations de service monodirectionnelles.
 
-**Q :** Il y a des messages dans la file d’attente, mais aucune opération de service n’est appelée. Quel est le problème ?
+**Q :** Il y a des messages dans la file d’attente, mais aucune opération de service n’est appelée. Quel est le problème ?
 
 **R :** Déterminez si votre hôte de service a généré une erreur. Vous pouvez le vérifier en examinant le suivi ou en implémentant `IErrorHandler`. L'hôte de service provoque une erreur, par défaut, si un message incohérent est détecté.
 
-**Q :** La file d’attente contient des messages, mais mon service hébergé sur le Web n’est pas activé. Pourquoi ?
+**Q :** La file d’attente contient des messages, mais mon service hébergé sur le Web n’est pas activé. Pourquoi ?
 
 **R :** La raison la plus courante est l’autorisation.
 
@@ -126,15 +126,15 @@ La file d'attente de lettres mortes du système, ainsi que toutes les files d'at
 
 ### <a name="msmq-integration-specific-troubleshooting"></a>Intégration de MSMQ : Dépannage spécifique
 
-**Q :** Lorsque j’envoie un message, ou lorsque j’ouvre l’hôte de service, j’obtiens une erreur indiquant que le schéma est incorrect. Pourquoi ?
+**Q :** Lorsque j’envoie un message, ou lorsque j’ouvre l’hôte de service, j’obtiens une erreur indiquant que le schéma est incorrect. Pourquoi ?
 
 **R :** Lorsque vous utilisez la liaison d’intégration MSMQ, vous devez utiliser le schéma msmq. formatname. Par exemple, msmq.formatname:DIRECT=OS:. \private $ \OrdersQueue. Mais lorsque vous spécifiez la file d'attente de lettres mortes personnalisée, vous devez utiliser le modèle net.msmq.
 
-**Q :** Lorsque j’utilise un nom de format public ou privé et que j’ouvre l’hôte de service sur Windows Vista, j’obtiens une erreur. Pourquoi ?
+**Q :** Lorsque j’utilise un nom de format public ou privé et que j’ouvre l’hôte de service sur Windows Vista, j’obtiens une erreur. Pourquoi ?
 
-**R :** Le canal d’intégration WCF sur Windows Vista vérifie si une sous-file d’attente peut être ouverte pour la file d’attente d’application principale pour la gestion des messages incohérents. Le nom de la sous-file d'attente est dérivé d'un URI msmq.formatname transmis à l'écouteur. Le nom de la sous-file d'attente dans MSMQ peut uniquement être un nom de format direct. Donc vous obtenez l'erreur. Remplacez l'URI de la file d'attente par un nom de format direct.
+**R :** Le canal d’intégration WCF sur Windows Vista vérifie si une sous-file d’attente peut être ouverte pour la file d’attente d’application principale pour la gestion des messages incohérents. Le nom de la sous-file d’attente est dérivé d’un URI MSMQ. FormatName passé à l’écouteur. Le nom de la sous-file d’attente dans MSMQ ne peut être qu’un nom de format direct. Donc vous obtenez l'erreur. Remplacez l'URI de la file d'attente par un nom de format direct.
 
-**Q :** Lors de la réception d’un message à partir d’une application MSMQ, le message se trouve dans la file d’attente et n’est pas lu par l’application WCF de réception. Pourquoi ?
+**Q :** Lors de la réception d’un message à partir d’une application MSMQ, le message se trouve dans la file d’attente et n’est pas lu par l’application WCF de réception. Pourquoi ?
 
 **R :** Vérifiez si le message a un corps. Si le message n'a aucun corps, le canal d'intégration MSMQ l'ignore. Implémentez `IErrorHandler` pour être averti des exceptions et vérifiez les suivis.
 
@@ -150,11 +150,11 @@ Une autre solution consiste à obtenir <xref:System.ServiceModel.MsmqTransportSe
 
 Une autre solution consiste à installer MSMQ avec l'intégration Active Directory.
 
-**Q :** Lorsque j’envoie un message avec la liaison par défaut (sécurité de transport activée) dans Active Directory vers une file d’attente, j’obtiens un message « certificat interne introuvable ». Comment puis-je résoudre ce problème ?
+**Q :** Lorsque j’envoie un message avec la liaison par défaut (sécurité de transport activée) dans Active Directory vers une file d’attente, j’obtiens un message « certificat interne introuvable ». Comment la corriger ?
 
 **R :** Cela signifie que le certificat de Active Directory pour l’expéditeur doit être renouvelé. Pour ce faire, ouvrez le **panneau de configuration**, **Outils d’administration**, gestion de l' **ordinateur**, cliquez avec le bouton droit sur **MSMQ**, puis sélectionnez **Propriétés**. Sélectionnez l’onglet **certificat utilisateur** , puis cliquez sur le bouton **renouveler** .
 
-**Q :** Lorsque j’envoie un message à l’aide de <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> et que vous spécifiez le certificat à utiliser, j’obtiens un message « certificat non valide ». Comment puis-je résoudre ce problème ?
+**Q :** Lorsque j’envoie un message à l’aide de <xref:System.ServiceModel.MsmqAuthenticationMode.Certificate> et que vous spécifiez le certificat à utiliser, j’obtiens un message « certificat non valide ». Comment la corriger ?
 
 **R :** Vous ne pouvez pas utiliser un magasin de certificats de l’ordinateur local avec le mode certificat. Vous devez copier le certificat du magasin de certificats de l'ordinateur vers le magasin de l'utilisateur actuel à l'aide du composant logiciel enfichable Certificat. Pour obtenir le composant logiciel enfichable Certificat :
 
@@ -170,13 +170,13 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 6. Ensuite, ajoutez un deuxième composant logiciel enfichable certificats à l’aide des étapes précédentes, mais cette fois, sélectionnez **compte d’ordinateur** , puis cliquez sur **suivant**.
 
-7. Sélectionnez **ordinateur local** , puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
+7. Sélectionnez **Ordinateur local**, puis cliquez sur **Terminer**. Vous pouvez à présent glisser et déposer des certificats depuis le magasin de certificats de l’ordinateur vers le magasin de l’utilisateur actuel.
 
 **Q :** Lorsque mon service lit à partir d’une file d’attente sur un autre ordinateur en mode groupe de travail, j’obtiens une exception « accès refusé ».
 
 **R :** En mode groupe de travail, pour qu’une application distante ait accès à la file d’attente, elle doit avoir l’autorisation d’accéder à la file d’attente. Ajoutez « connexion anonyme » à la liste de contrôle d’accès (ACL) de la file d’attente et accordez-lui l’autorisation lecture.
 
-**Q :** Lorsqu’un client de service réseau (ou un client qui n’a pas de compte de domaine) envoie un message mis en file d’attente, l’envoi échoue avec un certificat non valide. Comment puis-je résoudre ce problème ?
+**Q :** Lorsqu’un client de service réseau (ou un client qui n’a pas de compte de domaine) envoie un message mis en file d’attente, l’envoi échoue avec un certificat non valide. Comment la corriger ?
 
 **R :** Vérifiez la configuration de la liaison. Pour la liaison par défaut, la sécurité de transport MSMQ est activée afin de signer le message. Désactivez-la.
 
@@ -204,8 +204,8 @@ Une autre solution consiste à installer MSMQ avec l'intégration Active Directo
 
 **Q :** Puis-je utiliser le service d’activation MSMQ pour activer des applications basées sur des messages dans une file d’attente sur un ordinateur distant ?
 
-**R :** Oui. Pour cela, vous devez configurer le service d'activation MSMQ afin qu'il s'exécute comme un service réseau, puis ajouter l'accès au service réseau à la file d'attente sur l'ordinateur distant.
+**R :** Oui. Pour cela, vous devez configurer le service d'activation MSMQ afin qu'il s'exécute comme un service réseau, puis ajouter l'accès au service réseau à la file d'attente sur l'ordinateur distant.
 
 ## <a name="using-custom-msmq-bindings-with-receivecontext-enabled"></a>Utilisation de liaisons MSMQ personnalisées avec ReceiveContext activé
 
-Si vous utilisez une liaison MSMQ personnalisée avec <xref:System.ServiceModel.Channels.ReceiveContext> activé, le traitement d'un message entrant utilisera un thread de pool de threads car le protocole MSMQ natif ne prend pas en charge les ports de terminaison d'E/S pour les réceptions <xref:System.ServiceModel.Channels.ReceiveContext> asynchrones. En effet, le traitement de ce message utilise des transactions internes pour <xref:System.ServiceModel.Channels.ReceiveContext> et  MSMQ ne prend pas en charge le traitement asynchrone. Pour contourner ce problème vous pouvez ajouter un <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> au point de terminaison pour forcer le traitement synchrone ou affecter la valeur 1 à la propriété <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A>.
+Lors de l’utilisation d’une liaison MSMQ personnalisée avec <xref:System.ServiceModel.Channels.ReceiveContext> activé, le traitement d’un message entrant utilise un thread de pool de threads, car le MSMQ natif ne prend pas en charge l’achèvement d’e/s pour les réceptions <xref:System.ServiceModel.Channels.ReceiveContext> asynchrones. Cela est dû au fait que le traitement d’un tel message utilise des transactions internes pour <xref:System.ServiceModel.Channels.ReceiveContext> et que MSMQ ne prend pas en charge le traitement asynchrone. Pour contourner ce problème, vous pouvez ajouter un <xref:System.ServiceModel.Description.SynchronousReceiveBehavior> au point de terminaison pour forcer le traitement synchrone ou affecter la valeur 1 à <xref:System.ServiceModel.Description.DispatcherSynchronizationBehavior.MaxPendingReceives%2A>.

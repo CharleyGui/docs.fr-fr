@@ -2,28 +2,28 @@
 title: Poison Message Handling in MSMQ 4,0
 ms.date: 03/30/2017
 ms.assetid: ec8d59e3-9937-4391-bb8c-fdaaf2cbb73e
-ms.openlocfilehash: cc4da0deea0de2cd8b3bb8e8f2ba9b8a17e3cc60
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 0a9d4ec9657bacdbcb1273791dc7a593a9565c25
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919397"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094954"
 ---
 # <a name="poison-message-handling-in-msmq-40"></a>Poison Message Handling in MSMQ 4,0
 Cet exemple montre comment assurer la gestion des messages incohérents dans un service. Cet exemple est basé sur l’exemple de [liaison MSMQ transactionnelle](../../../../docs/framework/wcf/samples/transacted-msmq-binding.md) . Cet exemple utilise `netMsmqBinding`. Le service est une application console auto-hébergée qui permet d'observer le service qui reçoit les messages mis en file d'attente.
 
  Dans le cadre d'une communication en file d'attente, le client communique avec le service à l'aide d'une file d'attente. Cela signifie que le client envoie ses messages à cette file d'attente. Le service reçoit des messages de la file d'attente. Par conséquent, dans le cadre d'une communication en file d'attente, il n'est pas nécessaire que le service et le client s'exécutent simultanément.
 
- Un message incohérent est un message qui est lu à plusieurs reprises à partir d’une file d’attente lorsque le service qui le lit ne parvient pas à le traiter et met donc fin à la transaction sous laquelle le message est lu. Dans ce cas, le message est de nouveau réessayé. Cela peut théoriquement continuer indéfiniment en cas de problème avec le message. Notez que cela peut uniquement se produire lorsque vous utilisez des transactions pour lire à partir de la file d'attente et appeler l'opération de service.
+ Un message incohérent est un message qui est lu à plusieurs reprises à partir d’une file d’attente lorsque le service qui le lit ne parvient pas à le traiter et met donc fin à la transaction sous laquelle le message est lu. Dans ce cas, le message est de nouveau réessayé. Cela peut théoriquement continuer indéfiniment en cas de problème avec le message. Cela peut se produire uniquement lorsque vous utilisez des transactions pour lire à partir de la file d’attente et appeler l’opération de service.
 
  Selon la version de MSMQ, NetMsmqBinding prend en charge la détection limitée ou complète des messages incohérents. Une fois que le message a été détecté comme étant incohérent, il est ensuite traité de plusieurs façons. À nouveau, NetMsmqBinding prend en charge la gestion limitée à la gestion complète de messages incohérents selon la version de MSMQ.
 
- Cet exemple illustre les fonctionnalités d’empoisonnement limitées fournies sur la plateforme Windows Server 2003 et Windows XP, ainsi que les fonctionnalités incohérentes complètes fournies sur Windows Vista. Dans les deux exemples, l'objectif est de déplacer le message incohérent de la file d'attente vers une autre file qui peut ensuite être prise en charge par un service de message incohérent.
+ Cet exemple illustre les fonctionnalités d’empoisonnement limitées fournies sur la plateforme Windows Server 2003 et Windows XP, ainsi que les fonctionnalités incohérentes complètes fournies sur Windows Vista. Dans les deux exemples, l’objectif est de déplacer le message incohérent hors de la file d’attente vers une autre file d’attente. Cette file d’attente peut ensuite être desservie par un service de message incohérent.
 
 ## <a name="msmq-v40-poison-handling-sample"></a>Exemple de gestion de message incohérent dans MSMQ v4.0
- Dans Windows Vista, MSMQ fournit une fonctionnalité de sous-file d’attente de messages incohérents qui peut être utilisée pour stocker les messages incohérents. Cet exemple illustre la meilleure pratique pour gérer les messages incohérents à l’aide de Windows Vista.
+ Dans Windows Vista, MSMQ offre une sous-file d’attente de messages incohérents qui peut être utilisée pour stocker les messages incohérents. Cet exemple illustre la meilleure pratique pour gérer les messages incohérents à l’aide de Windows Vista.
 
- La détection de messages incohérents dans Windows Vista est très complexe. Il existe 3 propriétés qui aident à la détection. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est nombre de fois qu'un message donné est relu à partir de la file d'attente et est distribué à l'application pour traitement. Un message est relu à partir de la file d'attente lorsqu'il est remis dans celle-ci parce qu'il ne peut pas être distribué à l'application ou l'application restaure la transaction dans l'opération de service. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> est le nombre de fois où le message est déplacé vers la file d'attente des nouvelles tentatives. Lorsque <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est atteint, le message est déplacé dans la file d'attente des nouvelles tentatives. La propriété <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> correspond à l'intervalle après lequel le message est déplacé de la file d'attente des nouvelles tentatives vers la file d'attente principale. La propriété <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est réinitialisée à 0. Le message est réessayé. Si toutes les tentatives de lecture du message ont échoué, le message est alors marqué comme étant incohérent.
+ La détection de messages incohérents dans Windows Vista est sophistiquée. Il existe 3 propriétés qui aident à la détection. <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est nombre de fois qu'un message donné est relu à partir de la file d'attente et est distribué à l'application pour traitement. Un message est relu à partir de la file d'attente lorsqu'il est remis dans celle-ci parce qu'il ne peut pas être distribué à l'application ou l'application restaure la transaction dans l'opération de service. <xref:System.ServiceModel.MsmqBindingBase.MaxRetryCycles%2A> est le nombre de fois où le message est déplacé vers la file d'attente des nouvelles tentatives. Lorsque <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est atteint, le message est déplacé dans la file d'attente des nouvelles tentatives. La propriété <xref:System.ServiceModel.MsmqBindingBase.RetryCycleDelay%2A> correspond à l'intervalle après lequel le message est déplacé de la file d'attente des nouvelles tentatives vers la file d'attente principale. La propriété <xref:System.ServiceModel.MsmqBindingBase.ReceiveRetryCount%2A> est réinitialisée à 0. Le message est réessayé. Si toutes les tentatives de lecture du message ont échoué, le message est alors marqué comme étant incohérent.
 
  Une fois que le message est marqué comme étant incohérent, il est traité en fonction des paramètres dans l'énumération <xref:System.ServiceModel.MsmqBindingBase.ReceiveErrorHandling%2A>. Pour rappeler les valeurs possibles :
 
@@ -31,11 +31,11 @@ Cet exemple montre comment assurer la gestion des messages incohérents dans un 
 
 - Drop : permet de supprimer le message.
 
-- Move : permet de déplacer le message vers la sous-file d'attente de messages incohérents. Cette valeur est disponible uniquement sur Windows Vista.
+- Move : déplace le message vers la sous-file d’attente de messages incohérents. Cette valeur est disponible uniquement sur Windows Vista.
 
 - Reject : permet de rejeter le message en le renvoyant dans la file d'attente de lettres mortes de l'expéditeur. Cette valeur est disponible uniquement sur Windows Vista.
 
- L'exemple montre comment utiliser la disposition `Move` pour le message incohérent. `Move` permet de déplacer le message vers la sous-file d'attente de messages incohérents.
+ L'exemple montre comment utiliser la disposition `Move` pour le message incohérent. `Move` provoque le déplacement du message vers la sous-file d’attente de messages incohérents.
 
  Le contrat de service est `IOrderProcessor`, qui définit un service monodirectionnel qui peut être utilisé avec des files d'attente.
 
@@ -48,7 +48,7 @@ public interface IOrderProcessor
 }
 ```
 
- L'opération de service affiche un message indiquant qu'elle traite la commande. Pour illustrer la fonctionnalité de message incohérent, l’opération de service `SubmitPurchaseOrder` lève une exception pour restaurer la transaction sur un appel aléatoire du service. Le message est alors remis dans la file d'attente. Le message est par la suite marqué comme étant incohérent. La configuration est définie pour déplacer le message incohérent vers  la sous-file d'attente de messages incohérents.
+ L'opération de service affiche un message indiquant qu'elle traite la commande. Pour illustrer la fonctionnalité de message incohérent, l’opération de service `SubmitPurchaseOrder` lève une exception pour restaurer la transaction sur un appel aléatoire du service. Le message est alors remis dans la file d'attente. Le message est par la suite marqué comme étant incohérent. La configuration est configurée pour déplacer le message incohérent vers la sous-file d’attente de messages incohérents.
 
 ```csharp
 // Service class that implements the service contract.
@@ -206,7 +206,7 @@ public class OrderProcessorService : IOrderProcessor
     }
 ```
 
- Contrairement au service de traitement des commandes qui lit les messages de la file d'attente de commande, le service de message incohérent lit les messages de la sous-file d'attente de messages incohérents. La file d'attente de messages incohérents est une sous-file d'attente de la file d'attente principale ; elle est appelée « poison » et est générée automatiquement par MSMQ. Pour y accéder, indiquez le nom de la file d'attente principale suivi de « ; » et du nom de la sous-file d'attente (dans ce cas « poison »), tel qu'indiqué dans l'exemple de configuration suivant.
+ Contrairement au service de traitement des commandes qui lit les messages de la file d’attente de commandes, le service de message incohérent lit les messages à partir de la sous-file d’attente empoisonnée. La file d’attente de messages incohérents est une sous-file d’attente de la file d’attente principale, appelée « incohérent » et générée automatiquement par MSMQ. Pour y accéder, indiquez le nom de la file d’attente principale suivi par un « ; » et le nom de la sous-file d’attente, dans ce cas « poison », comme indiqué dans l’exemple de configuration suivant.
 
 > [!NOTE]
 > Dans l'exemple pour MSMQ v3.0, le nom de la file d'attente de messages incohérents n'est pas une sous-file d'attente, mais la file d'attente vers laquelle nous avons déplacé le message.
@@ -309,7 +309,7 @@ Processing Purchase Order: 23e0b991-fbf9-4438-a0e2-20adf93a4f89
 
      Assurez-vous que le point de terminaison est associé à la liaison en définissant l'attribut bindingConfiguration du point de terminaison.
 
-2. Assurez-vous de modifier la configuration sur PoisonMessageServer, le serveur et le client avant d'exécuter l'exemple.
+2. Avant d’exécuter l’exemple, assurez-vous de modifier la configuration sur PoisonMessageServer, sur le serveur et sur le client.
 
     > [!NOTE]
     > L'affectation de `security mode` à `None` revient à affecter `MsmqAuthenticationMode` à la sécurité `MsmqProtectionLevel`, `Message` et `None`.  

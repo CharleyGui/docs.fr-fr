@@ -6,15 +6,15 @@ helpviewer_keywords:
 - WCF, privacy information
 - privacy information [WCF]
 ms.assetid: c9553724-f3e7-45cb-9ea5-450a22d309d9
-ms.openlocfilehash: 30ea92f09bc655796b6bc268212b6d9e0e05bd9b
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: b724ff1ce85442f64980fdc972188705992d5a4f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76919334"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094980"
 ---
 # <a name="windows-communication-foundation-privacy-information"></a>Informations de confidentialité relatives à Windows Communication Foundation
-Microsoft s’engage à protéger la confidentialité des utilisateurs finals. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
+Microsoft s’engage à protéger la confidentialité de l’utilisateur final. Lorsque vous générez une application à l’aide de Windows Communication Foundation (WCF), version 3,0, votre application peut avoir un impact sur la confidentialité de vos utilisateurs finaux. Par exemple, votre application peut recueillir des informations de contact utilisateur de manière explicite ou elle peut demander ou envoyer des informations sur Internet à votre site Web. Si vous incorporez la technologie Microsoft dans votre application, cette technologie peut avoir son propre comportement qui peut affecter la confidentialité. WCF n’envoie pas d’informations à Microsoft à partir de votre application, à moins que vous ou l’utilisateur final ne choisissiez de nous l’envoyer.  
   
 ## <a name="wcf-in-brief"></a>WCF en bref  
  WCF est une infrastructure de messagerie distribuée utilisant l’infrastructure de Microsoft .NET qui permet aux développeurs de créer des applications distribuées. Les messages transmis entre deux applications contiennent des informations d'en-tête et de corps.  
@@ -44,7 +44,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'authentification peut entraîner l'établissement d'une session sécurisée entre les points de terminaison communicants. La session est identifiée par un GUID valide pendant toute la durée de vie de la session de sécurité. Le tableau suivant indique ce qui est conservé, et à quel emplacement.  
   
-|Données|Storage|  
+|Données|Stockage|  
 |----------|-------------|  
 |Informations d'identification de présentation, telles que nom d'utilisateur, certificats X.509, jetons Kerberos et références aux informations d'identification.|Mécanismes de gestion des informations d'identification Windows standard tels que le magasin de certificats Windows.|  
 |Informations d'appartenance utilisateur, telles que noms d'utilisateur et mots de passe.|Fournisseurs d’appartenances ASP.NET.|  
@@ -56,7 +56,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  L'audit note également lorsque l'administrateur modifie la configuration d'enregistrement des messages (activation ou désactivation), car l'enregistrement des messages peut enregistrer des données spécifiques à l'application dans les en-têtes et les corps. Pour Windows XP, un enregistrement est enregistré dans le journal des événements de l’application. Pour Windows Vista et Windows Server 2003, un enregistrement est enregistré dans le journal des événements de sécurité.  
   
-## <a name="transactions"></a>transactions  
+## <a name="transactions"></a>Transactions  
  La fonctionnalité transactions fournit des services transactionnels à une application WCF.  
   
  Les en-têtes de transaction utilisés dans la propagation de transaction peuvent contenir des ID de transaction ou des ID d'inscription, qui sont des GUID.  
@@ -70,7 +70,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Les sessions fiables sont implémentées à l'aide du protocole WS-RM (WS-ReliableMessaging). Elles ajoutent des en-têtes WS-RM qui contiennent des informations de session, utilisées pour identifier tous les messages associés à une session fiable particulière. Chaque session WS-RM a un identificateur, qui est un GUID.  
   
- Aucune information personnelle n'est conservée sur l'ordinateur de l'utilisateur final.  
+ Aucune information personnelle n’est conservée sur l’ordinateur de l’utilisateur final.  
   
 ## <a name="queued-channels"></a>Canaux mis en file d'attente  
  Les files d'attente stockent des messages d'une application émettrice pour le compte d'une application réceptrice et envoient ultérieurement ces messages à l'application réceptrice. Elles aident à garantir le transfert des messages des applications émettrices aux applications réceptrices lorsque, par exemple, l'application réceptrice est transitoire. WCF prend en charge la mise en file d’attente à l’aide de Microsoft Message Queuing (MSMQ) en tant que transport.  
@@ -80,7 +80,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
  Aucune information n’est conservée sur l’ordinateur de l’utilisateur final par la fonctionnalité de canaux en file d’attente, car elle utilise Message Queuing comme infrastructure de mise en file d’attente.  
   
 ## <a name="com-integration"></a>Intégration COM+  
- Cette fonctionnalité encapsule les fonctionnalités COM et COM+ existantes pour créer des services compatibles avec les services WCF. Cette fonctionnalité n’utilise pas d’en-tête spécifique et ne conserve pas de données sur l’ordinateur de l’utilisateur final.  
+ Cette fonctionnalité encapsule les fonctionnalités COM et COM+ existantes pour créer des services compatibles avec les services WCF. Cette fonctionnalité n’utilise pas d’en-têtes spécifiques et ne conserve pas les données sur l’ordinateur de l’utilisateur final.  
   
 ## <a name="com-service-moniker"></a>Moniker de service COM  
  Cela fournit un wrapper non managé à un client WCF standard. Cette fonctionnalité n’a pas d’en-têtes spécifiques sur le câble et ne conserve pas de données sur l’ordinateur.  
@@ -88,7 +88,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="peer-channel"></a>Canal homologue  
  Un canal homologue permet le développement d’applications à parties égales à l’aide de WCF. La messagerie pluripartite se produit dans le contexte d'une maille. Les mailles sont identifiées par un nom que les nœuds peuvent joindre. Chaque nœud du canal homologue crée un écouteur TCP à un port spécifié par l'utilisateur et établit des connexions avec d'autres nœuds dans la maille afin de garantir la résilience. Pour se connecter à d'autres nœuds de la maille, les nœuds échangent également certaines données, y compris l'adresse d'écouteur et les adresses IP de l'ordinateur, avec d'autres nœuds de la maille. Les messages envoyés dans la maille peuvent contenir des informations de sécurité relatives à l'expéditeur afin d'empêcher l'usurpation et la falsification de message.  
   
- Aucune information personnelle n'est stockée sur l'ordinateur de l'utilisateur final.  
+ Aucune information personnelle n’est stockée sur l’ordinateur de l’utilisateur final.  
   
 ## <a name="it-professional-experience"></a>Expérience professionnelle en informatique  
   
@@ -127,13 +127,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Clés qui sont supprimées :  
   
- \- Pour xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust"  
+ \- pour xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust"  
   
  wst:BinarySecret  
   
  wst:Entropy  
   
- \- Pour xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Password  
   
@@ -141,7 +141,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  Informations potentiellement personnelles qui sont supprimées :  
   
- \- Pour xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns:wsse="http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
+ \- pour xmlns : wsse = "http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.1.xsd" et xmlns : wsse = "http://docs.oasis-open.org/wss/2005/xx/oasis-2005xx-wss-wssecurity-secext-1.1.xsd"  
   
  wsse:Username  
   
@@ -163,15 +163,15 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  >  
   
- \<Conditions NotBefore="[dateTime]" NotOnOrAfter="[dateTime]">  
+ \<conditions NotBefore = "[dateTime]" NotOnOrAfter = "[dateTime]" >  
   
- \<AudienceRestrictionCondition>  
+ \<AudienceRestrictionCondition >  
   
- \<Audience>[uri]\</Audience>+  
+ \<audience > [URI]\</audience > +  
   
- \</AudienceRestrictionCondition>*  
+ \</AudienceRestrictionCondition > *  
   
- \<DoNotCacheCondition />*  
+ \<DoNotCacheCondition/> *  
   
  <\!--type de base abstrait  
   
@@ -179,13 +179,13 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  -->  
   
- \</Conditions>?  
+ \<>/conditions ?  
   
  > de Conseil \<  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>*  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > *  
   
- \<Assertion>[assertion]\</Assertion>*  
+ \<assertion > [assertion]\</assertion > *  
   
  [indifférent]*  
   
@@ -211,19 +211,19 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  `</NameIdentifier>?`  
   
- \<SubjectConfirmation>  
+ \<SubjectConfirmation >  
   
- \<ConfirmationMethod>[anyUri]\</ConfirmationMethod>+  
+ \<ConfirmationMethod > [anyURI]\</ConfirmationMethod > +  
   
- \<SubjectConfirmationData>[any]\</SubjectConfirmationData>?  
+ \<SubjectConfirmationData > [Any]\</SubjectConfirmationData >?  
   
  \<DS : KeyInfo >...\</DS : KeyInfo >?  
   
- \</SubjectConfirmation>?  
+ \<>/SubjectConfirmation ?  
   
- \</Subject>  
+ \</Subject >  
   
- \</SubjectStatement>*  
+ \</SubjectStatement > *  
   
  -->  
   
@@ -255,7 +255,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  />*  
   
- \</AuthenticationStatement>*  
+ \</AuthenticationStatement > *  
   
  \<AttributeStatement >  
   
@@ -273,7 +273,7 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  \</attribute > +  
   
- \</AttributeStatement>*  
+ \</AttributeStatement > *  
   
  \<AuthorizationDecisionStatement  
   
@@ -289,22 +289,22 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
   
  > de preuve \<  
   
- \<AssertionIDReference>[ID]\</AssertionIDReference>+  
+ \<AssertionIDReference > [ID]\</AssertionIDReference > +  
   
- \<Assertion>[assertion]\</Assertion>+  
+ \<assertion > [assertion]\</assertion > +  
   
  \<>/Evidence ?  
   
- \</AuthorizationDecisionStatement>*  
+ \</AuthorizationDecisionStatement > *  
   
- \</Assertion>  
+ \</assertion >  
   
 #### <a name="information-removed-from-message-bodies-when-logging-decryptedunencrypted-messages"></a>Informations supprimées des corps de messages lors de l'enregistrement des messages déchiffrés/non chiffrés  
  Comme décrit précédemment, WCF supprime les clés et les informations potentiellement personnelles connues des en-têtes de message pour les messages déchiffrés/non chiffrés. En outre, WCF supprime les clés et les informations potentiellement personnelles connues des corps de message pour les éléments et actions du corps de la liste suivante, qui décrivent les messages de sécurité impliqués dans l’échange de clés.  
   
  Pour les espaces de noms suivants :  
   
- xmlns:wst="http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns:wst="http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
+ xmlns : WST = "http://schemas.xmlsoap.org/ws/2004/04/trust" et xmlns : WST = "http://schemas.xmlsoap.org/ws/2005/02/trust" (par exemple, si aucune action n’est disponible)  
   
  Les informations sont supprimées pour ces éléments de corps, qui impliquent l'échange de clé :  
   
@@ -359,17 +359,17 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 #### <a name="no-information-is-removed-from-application-specific-headers-and-body-data"></a>Aucune information n'est supprimé des données de corps et en-têtes spécifiques aux applications  
  WCF n’effectue pas le suivi des informations personnelles dans les en-têtes spécifiques à l’application (par exemple, les chaînes de requête) ou les données de corps (par exemple, le numéro de carte de crédit).  
   
- Lorsque l'enregistrement des messages est activé, les informations personnelles contenues dans des en-têtes spécifiques aux application et les informations de corps peuvent être visibles dans les journaux. Là encore, le responsable du déploiement d'applications est chargé de définir les listes ACL sur les fichiers de configuration et les fichiers journaux. Il peut également désactiver l'enregistrement s'il ne souhaite pas que ces informations soient visibles, ou il peut éliminer ces informations des fichiers journaux par filtrage après leur enregistrement.  
+ Lorsque l'enregistrement des messages est activé, les informations personnelles contenues dans des en-têtes spécifiques aux application et les informations de corps peuvent être visibles dans les journaux. Là encore, le responsable du déploiement d'applications est chargé de définir les listes ACL sur les fichiers de configuration et les fichiers journaux. Ils peuvent également désactiver la journalisation s’ils ne souhaitent pas que ces informations soient visibles, ou filtrer ces informations à partir des fichiers journaux après leur enregistrement.  
   
 ### <a name="service-model-tracing"></a>Suivi du modèle de service  
  La source de suivi de modèle de service (<xref:System.ServiceModel>) autorise le suivi des activités et événements liés au traitement des messages. Cette fonctionnalité utilise la fonctionnalité de diagnostic du .NET Framework de <xref:System.Diagnostics>. Comme avec la propriété <xref:System.ServiceModel.Configuration.DiagnosticSection.MessageLogging%2A>, l'emplacement et sa liste ACL sont configurables par l'utilisateur à l'aide de fichiers de configuration d'application .NET Framework. Comme avec l'enregistrement des messages, l'emplacement des fichiers est toujours configuré lorsque l'administrateur active le suivi ; par conséquent, l'administrateur contrôle la liste ACL.  
   
- Les suivis contiennent des en-têtes de messages lorsqu'un message est dans la portée. On applique les mêmes règles de masquage des informations potentiellement personnelles dans les en-têtes de messages que celles décrites dans la section précédente : les informations personnelles précédemment identifiées sont supprimées par défaut des en-têtes dans les suivis. L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent modifier la configuration afin d'enregistrer les informations potentiellement personnelles. Toutefois, les informations personnelles contenues dans les en-têtes spécifiques aux applications sont enregistrées dans les suivis. Le responsable du déploiement d'applications est chargé de définir les listes ACL sur les fichiers de configuration et les fichiers de suivi. Il peut également désactiver le suivi s'il ne souhaite pas que ces informations soient visibles, ou il peut éliminer ces informations des fichiers de suivi par filtrage après leur enregistrement.  
+ Les suivis contiennent des en-têtes de messages lorsqu'un message est dans la portée. On applique les mêmes règles de masquage des informations potentiellement personnelles dans les en-têtes de messages que celles décrites dans la section précédente : les informations personnelles précédemment identifiées sont supprimées par défaut des en-têtes dans les suivis. L'administrateur d'ordinateur et le responsable du déploiement d'applications doivent modifier la configuration afin d'enregistrer les informations potentiellement personnelles. Toutefois, les informations personnelles contenues dans les en-têtes spécifiques aux applications sont enregistrées dans les suivis. Le responsable du déploiement d'applications est chargé de définir les listes ACL sur les fichiers de configuration et les fichiers de suivi. Ils peuvent également désactiver le suivi pour masquer ces informations ou filtrer ces informations à partir des fichiers de trace après leur enregistrement.  
   
  Dans le cadre du suivi ServiceModel, des ID uniques (nommés ID d'activité, et correspondant en général à un GUID) relient différentes activités à mesure qu'un message parcoure différentes parties de l'infrastructure.  
   
 #### <a name="custom-trace-listeners"></a>Écouteurs de suivi personnalisés  
- Pour l'enregistrement des messages et le suivi, un écouteur de suivi personnalisé peut être configuré de façon à envoyer des suivis et des messages sur le câble (par exemple à une base de données distante). Le responsable du déploiement d'applications est chargé de configurer les écouteurs personnalisés ou de déléguer cette opération aux utilisateurs. Il est également responsable des informations personnelles exposées à l'emplacement distant et de l'application correcte des listes ACL à cet emplacement.  
+ Pour l'enregistrement des messages et le suivi, un écouteur de suivi personnalisé peut être configuré de façon à envoyer des suivis et des messages sur le câble (par exemple à une base de données distante). Le responsable du déploiement d'applications est chargé de configurer les écouteurs personnalisés ou de déléguer cette opération aux utilisateurs. Ils sont également responsables des informations personnelles exposées à l’emplacement distant et pour l’application correcte des listes de contrôle d’accès à cet emplacement.  
   
 ### <a name="other-features-for-it-professionals"></a>Autres fonctionnalités pour les professionnels de l'informatique  
  WCF dispose d’un fournisseur WMI qui expose les informations de configuration de l’infrastructure WCF par le biais de WMI (fourni avec Windows). Par défaut, l'interface WMI est accessible aux administrateurs.  
@@ -404,4 +404,4 @@ Microsoft s’engage à protéger la confidentialité des utilisateurs finals. L
 ## <a name="see-also"></a>Voir aussi
 
 - [Windows Communication Foundation](index.md)
-- [Security](./feature-details/security.md)
+- [Sécurité](./feature-details/security.md)

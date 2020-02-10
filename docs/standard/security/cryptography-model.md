@@ -6,18 +6,18 @@ helpviewer_keywords:
 - cryptography [.NET Framework], model
 - encryption [.NET Framework], model
 ms.assetid: 12fecad4-fbab-432a-bade-2f05976a2971
-ms.openlocfilehash: 964c63e01a6b09e63e305e9a10dca46e62c18648
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: f878f73497b83aaf31f2ba3b23cca1f685867b3e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965956"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095266"
 ---
 # <a name="net-framework-cryptography-model"></a>Modèle de chiffrement de .NET Framework
 
 .NET Framework fournit des implémentations de nombreux algorithmes de chiffrement standard. Ces algorithmes sont faciles à utiliser et leurs propriétés par défaut sont les plus sûres possible. En outre, le modèle de chiffrement .NET Framework de l'héritage d'objets, de la conception orientée flux et de la configuration, est très extensible.
 
-## <a name="object-inheritance"></a>Héritage d'objets
+## <a name="object-inheritance"></a>Héritage d'objet
 
 Le système de sécurité .NET Framework implémente un modèle extensible d’héritage de classes dérivées. Cette hiérarchie se présente comme suit :
 
@@ -41,7 +41,7 @@ Prenez comme exemple d'implémentation les algorithmes symétriques. La base de 
 
 <xref:System.Security.Cryptography.Aes> est hérité par deux classes : <xref:System.Security.Cryptography.AesCryptoServiceProvider> et <xref:System.Security.Cryptography.AesManaged>. La classe <xref:System.Security.Cryptography.AesCryptoServiceProvider> est un wrapper pour l'implémentation de l'API de chiffrement Windows (CAPI) d'AES. La classe <xref:System.Security.Cryptography.AesManaged> est écrite entièrement en code managé. Il existe également l'implémentation Cryptography Next Generation (CNG), en plus des implémentations CAPI et managées. <xref:System.Security.Cryptography.ECDiffieHellmanCng> est un exemple d'algorithme CNG. Les algorithmes CNG sont disponibles sur Windows Vista et versions ultérieures.
 
-Vous pouvez choisir l'implémentation qui vous convient le mieux.  Les implémentations managées sont disponibles sur toutes les plateformes qui prennent en charge .NET Framework.  Les implémentations CAPI sont disponibles sur les anciens systèmes d'exploitation et ne sont plus développées. L'implémentation CNG est la plus récente et c'est elle qui fait l'objet des derniers développements en date. Toutefois, les implémentations managées ne sont pas certifiées par les normes FIPS et peuvent être plus lentes que les classes wrapper.
+Vous pouvez choisir l'implémentation qui vous convient le mieux. Les implémentations managées sont disponibles sur toutes les plateformes qui prennent en charge .NET Framework. Les implémentations CAPI sont disponibles sur les systèmes d’exploitation plus anciens et ne sont plus développées. CNG est l’implémentation la plus récente où un nouveau développement aura lieu. Toutefois, les implémentations managées ne sont pas certifiées par les normes FIPS et peuvent être plus lentes que les classes wrapper.
 
 ## <a name="stream-design"></a>Conception orientée flux
 
@@ -75,5 +75,5 @@ Voici une liste des algorithmes recommandés pour chaque application :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Cryptographic Services](../../../docs/standard/security/cryptographic-services.md)
+- [Services de chiffrement](../../../docs/standard/security/cryptographic-services.md)
 - [Appliquer les protocoles de chiffrement, les algorithmes et le code source en C, par Bruce Schneier](https://www.schneier.com/books/applied_cryptography/)

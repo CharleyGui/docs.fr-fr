@@ -18,12 +18,12 @@ helpviewer_keywords:
 - nested message processing [WPF]
 - reentrancy [WPF]
 ms.assetid: 02d8fd00-8d7c-4604-874c-58e40786770b
-ms.openlocfilehash: 550ba74c7ceba16c2040932918364ae2a59ea665
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 87dcfa22bcce730c5a9b61721c3a846a08146475
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794273"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094499"
 ---
 # <a name="threading-model"></a>Modèle de thread
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] est conçu pour épargner aux développeurs les difficultés d’utilisation des threads. Par conséquent, la majorité des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] développeurs n’auront pas à écrire une interface qui utilise plusieurs threads. Comme les programmes multithreads sont complexes et difficiles à déboguer, il est préférable de les éviter quand des solutions à thread unique existent.
@@ -58,7 +58,7 @@ ms.locfileid: "76794273"
 ### <a name="a-single-threaded-application-with-a-long-running-calculation"></a>Une application à thread unique avec un calcul de longue durée
  La plupart des interfaces utilisateur graphiques (GUI) passent une grande partie de leur temps d’inactivité lors de l’attente des événements qui sont générés en réponse aux interactions de l’utilisateur. Avec une programmation minutieuse, cette durée d’inactivité peut être utilisée de façon constructive, sans affecter la réactivité de la [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Le modèle de thread [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] ne permet pas à l’entrée d’interrompre une opération qui se produit dans le thread [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Cela signifie que vous devez vous assurer de retourner régulièrement à la <xref:System.Windows.Threading.Dispatcher> pour traiter les événements d’entrée en attente avant qu’ils ne soient obsolètes.
 
- Prenons l'exemple suivant :
+ Prenons l’exemple suivant :
 
  ![Capture d’écran montrant le Threading des nombres premiers.](./media/threading-model/threading-prime-numbers.png)
 
@@ -99,7 +99,7 @@ ms.locfileid: "76794273"
 
  Cette méthode vérifie si le nombre impair suivant est un nombre premier. S’il s’agit d’un premier, la méthode met directement à jour la `bigPrime`<xref:System.Windows.Controls.TextBlock> pour refléter sa découverte. Nous pouvons procéder ainsi, car le calcul est effectué dans le même thread que celui utilisé pour créer le composant. Si nous avions choisi d’utiliser un thread distinct pour le calcul, nous devrions utiliser un mécanisme de synchronisation plus complexe et exécuter la mise à jour dans le thread [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]. Nous montrerons cette situation plus loin.
 
- Pour obtenir le code source complet de cet exemple, consultez l' [exemple application à thread unique avec calcul de longue durée](https://go.microsoft.com/fwlink/?LinkID=160038) .
+ Pour obtenir le code source complet de cet exemple, consultez l' [exemple application à thread unique avec calcul de longue durée](https://github.com/Microsoft/WPF-Samples/tree/master/Threading/SingleThreadedApplication) .
 
 <a name="weather_sim"></a>
 ### <a name="handling-a-blocking-operation-with-a-background-thread"></a>Gestion d’une opération bloquante avec un thread d’arrière-plan
@@ -217,4 +217,4 @@ ms.locfileid: "76794273"
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Application à thread unique avec un exemple de calcul de longue durée](https://go.microsoft.com/fwlink/?LinkID=160038)
+- [Application à thread unique avec un exemple de calcul de longue durée](https://github.com/Microsoft/WPF-Samples/tree/master/Threading/SingleThreadedApplication)

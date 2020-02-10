@@ -2,16 +2,16 @@
 title: Activités d'accès aux bases de données
 ms.date: 03/30/2017
 ms.assetid: 174a381e-1343-46a8-a62c-7c2ae2c4f0b2
-ms.openlocfilehash: eec368803eeacb2bab729bcd6d57cc7fc6107256
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: ed3f0ad3f2fd19f622c9cb0faf7d5cd864b81995
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74710859"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094642"
 ---
 # <a name="database-access-activities"></a>Activités d'accès aux bases de données
 
-Les activités d'accès aux bases de données vous permettent d'accéder à une base de données dans un workflow. Ces activités permettent d’accéder aux bases de données afin de récupérer ou de modifier des informations et d’utiliser [ADO.net](https://go.microsoft.com/fwlink/?LinkId=166081) pour accéder à la base de données.
+Les activités d'accès aux bases de données vous permettent d'accéder à une base de données dans un workflow. Ces activités permettent d’accéder aux bases de données afin de récupérer ou de modifier des informations et d’utiliser [ADO.net](../../data/adonet/index.md) pour accéder à la base de données.
 
 > [!IMPORTANT]
 > Les exemples peuvent déjà être installés sur votre ordinateur. Recherchez le répertoire (par défaut) suivant avant de continuer.
@@ -78,8 +78,8 @@ Public class DbUpdate: AsyncCodeActivity
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|Sql|Commande SQL à exécuter.|
-|Parameters|Collection des paramètres de la requête SQL.|
+|SQL|Commande SQL à exécuter.|
+|Paramètres|Collection des paramètres de la requête SQL.|
 |AffectedRecords|Nombre d'enregistrements affectés par la dernière opération.|
 
 ## <a name="dbqueryscalar"></a>DbQueryScalar
@@ -132,9 +132,9 @@ public class DbQueryScalar<TResult> : AsyncCodeActivity<TResult>
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|Sql|Commande SQL à exécuter.|
-|Parameters|Collection des paramètres de la requête SQL.|
-|Résultat|Scalaire obtenu une fois la requête exécutée. Cet argument est de type `TResult`.|
+|SQL|Commande SQL à exécuter.|
+|Paramètres|Collection des paramètres de la requête SQL.|
+|Résultats|Scalaire obtenu une fois la requête exécutée. Cet argument est de type `TResult`.|
 
 ## <a name="dbquery"></a>DbQuery
 
@@ -192,11 +192,11 @@ public class DbQuery<TResult> : AsyncCodeActivity<IList<TResult>> where TResult 
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|Sql|Commande SQL à exécuter.|
-|Parameters|Collection des paramètres de la requête SQL.|
+|SQL|Commande SQL à exécuter.|
+|Paramètres|Collection des paramètres de la requête SQL.|
 |Mapper|Fonction de mappage (<xref:System.Func%601><`DbDataReader`, `TResult`>) qui prend un enregistrement dans le `DataReader` obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type `TResult` à ajouter à la collection `Result`.<br /><br /> Dans ce cas, le mappage est effectué en seule impulsion d'exécution, mais il ne peut pas être créé de façon déclarative à l'aide du concepteur.|
 |MapperFunc|Fonction de mappage (<xref:System.Activities.ActivityFunc%601><`DbDataReader`, `TResult`>) qui prend un enregistrement dans le `DataReader` obtenu en tant que résultat de l’exécution de la requête et retourne une instance d’un objet de type `TResult` à ajouter à la collection `Result`.<br /><br /> Dans ce cas, le mappage est effectué en plusieurs impulsions d'exécution. Cette fonction peut être sérialisée en XAML et créée de façon déclarative (toute activité existante peut participer au mappage).|
-|Résultat|Liste des objets obtenus en résultat de l'exécution de la requête et de l'exécution de la fonction de mappage pour chaque d'enregistrement de `DataReader`.|
+|Résultats|Liste des objets obtenus en résultat de l'exécution de la requête et de l'exécution de la fonction de mappage pour chaque d'enregistrement de `DataReader`.|
 
 ## <a name="dbquerydataset"></a>DbQueryDataSet
 
@@ -246,9 +246,9 @@ public class DbQueryDataSet : AsyncCodeActivity<DataSet>
 |ConnectionString|Chaîne de connexion utilisée pour se connecter à la base de données. Si cet argument est défini, `ProviderName` doit également être défini.|
 |ConfigName|Nom de la section du fichier de configuration où les informations de connexion sont stockées. Lorsque cet argument est défini, `ProviderName` et `ConnectionString` ne sont pas requis.|
 |CommandType|Type du <xref:System.Data.Common.DbCommand> à exécuter.|
-|Sql|Commande SQL à exécuter.|
-|Parameters|Collection des paramètres de la requête SQL.|
-|Résultat|<xref:System.Data.DataSet> obtenu une fois la requête exécutée.|
+|SQL|Commande SQL à exécuter.|
+|Paramètres|Collection des paramètres de la requête SQL.|
+|Résultats|<xref:System.Data.DataSet> obtenu une fois la requête exécutée.|
 
 ## <a name="configuring-connection-information"></a>Configuration des informations de connexion
 
@@ -320,7 +320,7 @@ Le script Setup.cmd appelle le fichier de script CreateDb.sql, lequel contient d
 
 1. Exécutez le fichier Cleanup.cmd du dossier d’exemples dans une invite de commandes.
 
-##### <a name="to-run-the-sample"></a>Pour exécuter l’exemple
+##### <a name="to-run-the-sample"></a>Exécution de l'exemple
 
 1. Ouvrir la solution dans Visual Studio 2010
 

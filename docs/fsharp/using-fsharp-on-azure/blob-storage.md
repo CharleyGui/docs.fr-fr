@@ -3,24 +3,24 @@ title: Bien démarrer avec le stockage Blob Azure en F#
 description: Stockez des données non structurées dans le Cloud avec le stockage d’objets BLOB Azure.
 author: sylvanc
 ms.date: 09/20/2016
-ms.openlocfilehash: 90ec0d63b11ad00c53a1740211e9a6509582e863
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 79f6a559ac603b0544916764126a988d3f3f43d7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75935505"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092627"
 ---
 # <a name="get-started-with-azure-blob-storage-using-f"></a>Prise en main du stockage d’objets BLOB Azure à l’aide de F\#
 
-Le stockage Blob Azure est un service qui stocke les données non structurées dans le cloud en tant qu’objets/objets blob. Le stockage Blob permet de stocker n’importe quel type de données texte ou binaires, par exemple un document, un fichier multimédia ou un programme d’installation d’application. Le stockage Blob est également appelé stockage d’objets.
+Le stockage d’objets blob Azure est un service qui stocke des données non structurées dans le cloud en tant qu’objets/blobs. Ce service peut stocker tout type de données texte ou binaires, par exemple, un document, un fichier multimédia ou un programme d’installation d’application. Le stockage d’objets blob est également appelé Stockage Blob.
 
 Cet article explique comment effectuer des tâches courantes à l’aide du stockage d’objets BLOB. Les exemples sont écrits à F# l’aide de la bibliothèque cliente de stockage Azure pour .net. Les tâches traitées incluent le chargement, la liste, le téléchargement et la suppression d’objets BLOB.
 
-Pour obtenir une vue d’ensemble conceptuelle du stockage d’objets BLOB, consultez [le guide .net pour le stockage d’objets BLOB](/azure/storage/storage-dotnet-how-to-use-blobs).
+Pour obtenir une vue d’ensemble conceptuelle du stockage d’objets BLOB, consultez [le guide .net pour le stockage d’objets BLOB](/azure/storage/blobs/storage-quickstart-blobs-dotnet).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/storage-create-storage-account). Vous avez également besoin de votre clé d’accès de stockage pour ce compte.
+Pour utiliser ce guide, vous devez d’abord [créer un compte de stockage Azure](/azure/storage/common/storage-account-create). Vous avez également besoin de votre clé d’accès de stockage pour ce compte.
 
 ## <a name="create-an-f-script-and-start-f-interactive"></a>Créer un F# script et démarrer F# interactive
 
@@ -28,13 +28,13 @@ Les exemples de cet article peuvent être utilisés dans une F# application ou u
 
 Ensuite, utilisez un [Gestionnaire de package](package-management.md) comme [Paket](https://fsprojects.github.io/Paket/) ou [NuGet](https://www.nuget.org/) pour installer les packages `WindowsAzure.Storage` et `Microsoft.WindowsAzure.ConfigurationManager`, ainsi que les `WindowsAzure.Storage.dll` de référence et `Microsoft.WindowsAzure.Configuration.dll` dans votre script à l’aide d’une directive `#r`.
 
-### <a name="add-namespace-declarations"></a>Ajouter des déclarations d’espace de noms
+### <a name="add-namespace-declarations"></a>Ajout de déclarations d'espaces de noms
 
 Ajoutez les instructions `open` suivantes au début du fichier `blobs.fsx` :
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L1-L5)]
 
-### <a name="get-your-connection-string"></a>Obtention de votre chaîne de connexion
+### <a name="get-your-connection-string"></a>Obtenir votre chaîne de connexion
 
 Vous avez besoin d’une chaîne de connexion de stockage Azure pour ce didacticiel. Pour plus d’informations sur les chaînes de connexion, consultez [configurer des chaînes de connexion de stockage](/azure/storage/storage-configure-connection-string).
 
@@ -72,7 +72,7 @@ Le type de `CloudBlobClient` vous permet de récupérer des conteneurs et des ob
 
 Vous êtes maintenant prêt à écrire du code qui lit et écrit des données dans le Blob Storage.
 
-## <a name="create-a-container"></a>Créer un conteneur
+## <a name="create-a-container"></a>Créez un conteneur.
 
 Cet exemple montre comment créer un conteneur, si celui-ci n’existe pas encore :
 
@@ -102,14 +102,14 @@ Vous pouvez également nommer des objets BLOB avec des informations de chemin d�
 
 Par exemple, prenez l’ensemble d’objets blob de blocs suivant, situé dans un conteneur nommé `photos`:
 
-*photo1.jpg*\
-*2015/architecture/description.txt*\
-*2015/architecture/photo3.jpg*\
-*2015/architecture/photo4.jpg*\
-*2016/architecture/photo5.jpg*\
-*2016/architecture/photo6.jpg*\
-*2016/architecture/description.txt*\
-*2016/photo7.jpg*\
+*PHOTO1. jpg*\
+*2015/architecture/Description. txt*\
+*2015/architecture/Photo3. jpg*\
+*2015/architecture/Photo4. jpg*\
+*2016/architecture/Photo5. jpg*\
+*2016/architecture/Photo6. jpg*\
+*2016/architecture/Description. txt*\
+\ *2016/Photo7. jpg*
 
 Lorsque vous appelez `ListBlobs` sur un conteneur (comme dans l’exemple ci-dessus), une liste hiérarchique est retournée. S’il contient à la fois des objets `CloudBlobDirectory` et `CloudBlockBlob`, représentant respectivement les répertoires et les objets BLOB du conteneur, le résultat obtenu ressemble à ceci :
 
@@ -146,7 +146,7 @@ Vous pouvez également utiliser la méthode `DownloadToStream` pour télécharge
 
 [!code-fsharp[BlobStorage](~/samples/snippets/fsharp/azure/blob-storage.fsx#L103-L106)]
 
-## <a name="delete-blobs"></a>Supprimer les objets blob
+## <a name="delete-blobs"></a>Suppression d’objets blob
 
 Pour supprimer un objet BLOB, commencez par obtenir une référence d’objet BLOB, puis appelez la méthode `Delete` dessus.
 
@@ -196,8 +196,8 @@ Pour plus d’informations, consultez [gestion de l’accès concurrentiel dans 
 
 Chaque objet blob du stockage Azure doit résider dans un conteneur. Le conteneur fait partie du nom d'objet blob. Par exemple, `mydata` est le nom du conteneur dans ces exemples d’URI d’objet blob :
 
-- https://storagesample.blob.core.windows.net/mydata/blob1.txt
-- https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg
+- `https://storagesample.blob.core.windows.net/mydata/blob1.txt`
+- `https://storagesample.blob.core.windows.net/mydata/photos/myphoto.jpg`
 
 Un conteneur doit posséder un nom DNS valide, conforme aux règles de nommage suivantes :
 
@@ -220,7 +220,7 @@ Par défaut, les données d’objets blob de votre compte de stockage sont acces
 
 Le stockage Azure prend en charge le chiffrement des données BLOB à la fois sur le client et sur le serveur.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Maintenant que vous connaissez les bases du stockage d’objets blob, consultez les liens suivants pour en savoir plus.
 
@@ -229,7 +229,7 @@ Maintenant que vous connaissez les bases du stockage d’objets blob, consultez 
 - [ F# AzureStorageTypeProvider](https://fsprojects.github.io/AzureStorageTypeProvider/)\
 Fournisseur F# de type qui peut être utilisé pour explorer des ressources de stockage Azure d’objets BLOB, de table et de file d’attente et pour appliquer facilement des opérations CRUD sur ceux-ci.
 
-- [FSharp.Azure.Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
+- [FSharp. Azure. Storage](https://github.com/fsprojects/FSharp.Azure.Storage)\
 F# API pour l’utilisation du service de stockage de table Microsoft Azure
 
 - [Explorateur stockage Microsoft Azure (Mase)](/azure/vs-azure-tools-storage-manage-with-storage-explorer)\
@@ -238,13 +238,12 @@ Une application autonome et gratuite de Microsoft qui vous permet de travailler 
 ### <a name="blob-storage-reference"></a>Documentation de référence sur le stockage d’objets blob
 
 - [API de stockage Azure pour .NET](/dotnet/api/overview/azure/storage)
-- [Référence de l'API REST des services de Stockage Azure](/rest/api/storageservices/Azure-Storage-Services-REST-API-Reference)
+- [Azure Storage Services REST API Reference](/rest/api/storageservices/) (Informations de référence de l’API REST des services Stockage Azure)
 
 ### <a name="related-guides"></a>Guides connexes
 
-- [Prise en main avec le stockage d’objets BLOB Azure dansC#](https://azure.microsoft.com/resources/samples/storage-blob-dotnet-getting-started/)
-- [Transfert de données avec l’utilitaire de ligne de commande AzCopy sur Windows](/azure/storage/common/storage-use-azcopy)
-- [Transfert de données avec l’utilitaire de ligne de commande AzCopy sur Linux](/azure/storage/common/storage-use-azcopy-linux)
+- [Exemples de stockage d’objets blob Azure pour .NET](https://docs.microsoft.com/samples/azure-samples/storage-blob-dotnet-getting-started/storage-blob-dotnet-getting-started/)
+- [Bien démarrer avec AzCopy](/azure/storage/common/storage-use-azcopy-v10)
 - [Configuration des chaînes de connexion du Stockage Azure](/azure/storage/common/storage-configure-connection-string)
 - [Blog de l'équipe Azure Storage](https://docs.microsoft.com/archive/blogs/windowsazurestorage/)
 - [Démarrage rapide : utiliser .NET pour créer un objet BLOB dans le stockage d’objets](/azure/storage/blobs/storage-quickstart-blobs-dotnet)

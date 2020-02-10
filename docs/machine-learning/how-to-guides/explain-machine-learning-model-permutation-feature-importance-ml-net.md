@@ -1,32 +1,32 @@
 ---
-title: Expliquer les prédictions de modèle à l’aide de la technique PFI (Permutation Feature Importance)
+title: Interpréter les modèles ML.NET avec l’importance des fonctionnalités de permutation
 description: Comprendre l’importance des caractéristiques des modèles avec l’option Permutation Feature Importance dans ML.NET
-ms.date: 08/29/2019
+ms.date: 01/30/2020
 author: luisquintanilla
 ms.author: luquinta
 ms.custom: mvc,how-to
-ms.openlocfilehash: 4bad8b0ed17a34ba290bf9c00d65cc3f000a2acf
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: c1163a41cd2feb0e8785ae9d4c6a71dfbedf3f12
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73976688"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092614"
 ---
-# <a name="explain-model-predictions-using-permutation-feature-importance"></a>Expliquer les prédictions de modèle à l’aide de la technique PFI (Permutation Feature Importance)
+# <a name="interpret-model-predictions-using-permutation-feature-importance"></a>Interpréter les prédictions de modèle à l’aide de la fonctionnalité de permutation
 
-Découvrez comment expliquer les prédictions de modèle Machine Learning ML.NET en comprenant la contribution des caractéristiques aux prédictions à l’aide de la technique PFI (Permutation Feature Importance).
+À l’aide de permutation Feature importance (PFI), Découvrez comment interpréter les prédictions de modèle de Machine Learning ML.NET. PFI donne la contribution relative de chaque fonctionnalité à une prédiction.
 
 Les modèles Machine Learning sont souvent considérés comme des boîtes noires qui prennent des entrées et génèrent une sortie. Les interactions ou étapes intermédiaires entre les caractéristiques qui influent sur la sortie sont rarement comprises. Le machine learning faisant petit à petit son apparition dans les différents aspects de la vie quotidienne, tels que la santé, il est extrêmement important de comprendre pourquoi un modèle Machine Learning prend telle ou telle décision. Par exemple, si les diagnostics sont effectués par un modèle Machine Learning, les professionnels de la santé doivent pouvoir étudier les facteurs qui ont contribué à l’établissement de ces diagnostics. La fourniture du bon diagnostic peut s’avérer importante quant à la possibilité pour le patient de jouir ou non d’une récupération rapide. Ainsi, plus le niveau d’explicabilité d’un modèle est élevé, plus grande est la confiance des professionnels de la santé quand ils acceptent ou rejettent les décisions prises par le modèle.
 
-Différentes techniques sont utilisées pour expliquer les modèles, dont PFI. PFI est une technique utilisée pour expliquer les modèles de classification et de régression inspirés par le [papier de *forêts aléatoires* de Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (voir la section 10). Sur un plan général, elle permute aléatoirement les données à raison d’une caractéristique à la fois pour l’ensemble du jeu de données et calcule la diminution de la métrique de performances d’intérêt. Plus le changement est élevé, plus la caractéristique concernée est importante.
+Différentes techniques sont utilisées pour expliquer les modèles, dont PFI. PFI est une technique utilisée pour expliquer les modèles de classification et de régression inspirés par le [papier de *forêts aléatoires* de Breiman](https://www.stat.berkeley.edu/~breiman/randomforest2001.pdf) (voir la section 10). À un niveau élevé, il fonctionne en permutant aléatoirement les données d’une fonctionnalité à la fois pour l’ensemble du jeu de données et en calculant dans quelle mesure la métrique de performance utile diminue. Plus la modification est importante, et plus la fonctionnalité l’est également.
 
 De plus, les caractéristiques les plus importantes étant ainsi mises en valeur, les générateurs de modèle peuvent se concentrer sur l’utilisation d’une partie des caractéristiques plus significatives qui sont susceptibles de réduire le bruit et la durée de l’entraînement.
 
-## <a name="load-the-data"></a>Charger les données
+## <a name="load-the-data"></a>Chargement des données
 
 Les caractéristiques dans le jeu de données utilisé pour cet échantillon sont indiquées dans les colonnes 1 à 12. L’objectif est de prédire `Price`.
 
-| Colonne | Fonction | Description
+| Colonne | Fonctionnalité | Description
 | --- | --- | --- |
 | 1 | CrimeRate | Taux de criminalité par habitant
 | 2 | ResidentialZones | Zones résidentielles en ville
@@ -158,7 +158,7 @@ foreach (var feature in featureImportanceMetrics)
 
 L’affichage des valeurs de chacune des caractéristiques dans `featureImportanceMetrics` aboutirait à une sortie similaire à celle ci-dessous. N’oubliez pas que vous devez vous attendre à voir des résultats différents, car ces valeurs varient en fonction des données fournies.
 
-| Fonction | Changement du coefficient de détermination |
+| Fonctionnalité | Changement du coefficient de détermination |
 |:--|:--:|
 HighwayAccess       |   -0,042731
 StudentTeacherRatio |   -0,012730

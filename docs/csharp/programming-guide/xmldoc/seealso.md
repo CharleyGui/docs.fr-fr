@@ -12,12 +12,12 @@ helpviewer_keywords:
 - cross-references [C#], tags
 - <seealso> C# XML tag
 ms.assetid: 8e157f3f-f220-4fcf-9010-88905b080b18
-ms.openlocfilehash: ad22b423d085a152f47c4e34d7ee4247ef9836b8
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e24d5910ab21f01aebb5a32ce7646cf56886a81a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789681"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093459"
 ---
 # <a name="seealso-c-programming-guide"></a>\<seealso > (C# Guide de programmation)
 
@@ -27,13 +27,13 @@ ms.locfileid: "76789681"
 <seealso cref="member"/>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - cref = " `member`"
 
-  Référence à un membre ou un champ qu’il est possible d’appeler à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe, et qu’il passe `member` au nom d’élément dans le code XML de sortie. `member` doit être placé entre guillemets doubles (" ").
+  Référence à un membre ou à un champ qui peut être appelé à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe, et qu’il passe `member` au nom d’élément dans le code XML de sortie. `member` doit être placé entre guillemets doubles (" ").
 
-  Pour plus d’informations sur la façon de créer une référence cref à un type générique, consultez [\<see>](./see.md).
+  Pour plus d’informations sur la création d’une référence cref à un type générique, consultez [attribut cref](./cref-attribute.md).
 
 ## <a name="remarks"></a>Notes
 
@@ -43,7 +43,7 @@ Compilez avec [-doc](../../language-reference/compiler-options/doc-compiler-opti
 
 ## <a name="example"></a>Exemple
 
-Pour obtenir un exemple d’utilisation de \<seealso>, consultez [\<summary>](./summary.md).
+Pour obtenir un exemple d’utilisation de [seealso>, consultez \<](./summary.md)summary>\<.
 
 ## <a name="see-also"></a>Voir aussi
 

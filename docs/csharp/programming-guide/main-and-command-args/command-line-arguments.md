@@ -4,12 +4,12 @@ ms.date: 07/20/2015
 helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
-ms.openlocfilehash: e73eeeeb0e613d45b2ce31e744803bb75ba2a3c2
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d6775263e6f1afb227aa263b01d60f5181da74f3
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75700638"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093508"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
 
@@ -38,13 +38,13 @@ Il est également possible d’utiliser le type C# `long`, qui sert d’alias �
 long num = long.Parse(args[0]);
 ```
 
-Vous pouvez également utiliser la méthode `ToInt64` de la classe `Convert` pour obtenir le même résultat :
+Vous pouvez également utiliser la méthode `Convert` de la classe `ToInt64` pour obtenir le même résultat :
 
 ```csharp
 long num = Convert.ToInt64(s);
 ```
 
-Pour plus d'informations, consultez les rubriques <xref:System.Int64.Parse%2A> et <xref:System.Convert>.
+Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.
 
 ## <a name="example"></a>Exemple
 
@@ -78,6 +78,6 @@ Pour compiler et exécuter l’application à partir d’une invite de commandes
 - <xref:System.Environment?displayProperty=nameWithType>
 - [Guide de programmation C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Comment Dsplay des arguments de ligne de commande](how-to-display-command-line-arguments.md)
+- [Comment afficher les arguments de ligne de commande](how-to-display-command-line-arguments.md)
 - [Valeurs de retour Main()](main-return-values.md)
 - [Classes](../classes-and-structs/classes.md)

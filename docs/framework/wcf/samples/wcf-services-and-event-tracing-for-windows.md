@@ -2,12 +2,12 @@
 title: WCF Services et suivi d'événements Windows
 ms.date: 03/30/2017
 ms.assetid: eda4355d-0bd0-4dc9-80a2-d2c832152272
-ms.openlocfilehash: 93663cbc33b6fab9b34bb02187e5b04192f5c13d
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 5bf965ad6a9997ec0603325f246679cf42662a52
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715267"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094811"
 ---
 # <a name="wcf-services-and-event-tracing-for-windows"></a>WCF Services et suivi d'événements Windows
 Cet exemple montre comment utiliser le traçage analytique dans Windows Communication Foundation (WCF) pour émettre des événements dans Suivi d’v nements pour Windows (ETW). Les traces analytiques sont des événements émis à des points clés dans la pile WCF qui permettent de résoudre les problèmes des services WCF dans l’environnement de production.
@@ -34,7 +34,7 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 
 5. Dans le client test WCF, ajoutez le service en sélectionnant **fichier**, puis **Ajouter un service**.
 
-     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. La valeur par défaut est `http://localhost:1378/Calculator.svc`,
+     Ajoutez l'adresse du point de terminaison dans la zone d'entrée. Par défaut, il s’agit de `http://localhost:1378/Calculator.svc`.
 
 6. Ouvrez l'application Observateur d'événements.
 
@@ -70,7 +70,7 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
 
 #### <a name="to-cleanup-optional"></a>Pour effectuer un nettoyage (facultatif)
 
-1. Ouvrez l’Observateur d’événements.
+1. Ouvrez Observateur d'événements.
 
 2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, puis **application-serveur-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.
 
@@ -89,4 +89,4 @@ Cet exemple montre comment utiliser le traçage analytique dans Windows Communic
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

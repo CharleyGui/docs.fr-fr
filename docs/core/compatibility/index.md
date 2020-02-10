@@ -1,13 +1,13 @@
 ---
-title: Types de modifications avec rupture-.NET Core
+title: Types de changements cassants
 description: Découvrez comment .NET Core tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
 ms.date: 06/10/2019
-ms.openlocfilehash: 76d04504c4476f0f7517a633cfbf1c0aa9d5797e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 1c5790e39754b91aacbde9e87ed99f9dcc36ce9f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76738573"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092978"
 ---
 # <a name="changes-that-affect-compatibility"></a>Modifications qui affectent la compatibilité
 
@@ -194,7 +194,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
 ## <a name="behavioral-changes"></a>Changements de comportement
 
-### <a name="assemblies"></a>Assemblies
+### <a name="assemblies"></a>Assemblys
 
 - ✔️ **autorisé : rendre un assembly portable quand les mêmes plateformes sont toujours prises en charge**
 
@@ -270,7 +270,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Dans la plupart des cas, la suppression d’un attribut (comme <xref:System.NonSerializedAttribute>) est un changement cassant.
 
-## <a name="platform-support"></a>Prise en charge de plateforme
+## <a name="platform-support"></a>Plateforme prise en charge
 
 - ✔️ **autorisé : prise en charge d’une opération sur une plateforme qui n’était pas prise en charge précédemment**
 

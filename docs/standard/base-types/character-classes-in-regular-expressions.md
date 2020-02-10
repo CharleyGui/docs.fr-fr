@@ -12,12 +12,12 @@ helpviewer_keywords:
 - characters, matching syntax
 - .NET Framework regular expressions, character classes
 ms.assetid: 0f8bffab-ee0d-4e0e-9a96-2b4a252bb7e4
-ms.openlocfilehash: cd9d3f69f8135b608ced91c34f747600352bafe1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 047d0ea7b3783f8cf45afde2a15470adda94cd6e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711452"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095045"
 ---
 # <a name="character-classes-in-regular-expressions"></a>Classes de caractères dans les expressions régulières
 
@@ -27,7 +27,7 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
   
 - Groupes de caractères négatifs. Un caractère de la chaîne d'entrée ne doit pas correspondre à l'un des jeux de caractères spécifié. Pour plus d’informations, consultez [Groupe de caractères négatif](#NegativeGroup).  
   
-- N'importe quel caractère. Le caractère `.` (point) dans une expression régulière est un caractère générique qui correspond à n'importe quel caractère sauf `\n`. Pour plus d’informations, consultez [N’importe quel caractère](#AnyCharacter).  
+- Tout caractère. Le caractère `.` (point) dans une expression régulière est un caractère générique qui correspond à n'importe quel caractère sauf `\n`. Pour plus d’informations, consultez [N’importe quel caractère](#AnyCharacter).  
   
 - Catégorie Unicode générale ou bloc nommé. Un caractère de la chaîne d'entrée doit être membre d'une catégorie Unicode particulière ou doit figurer dans une plage contiguë de caractères Unicode pour aboutir à une correspondance. Pour plus d’informations, consultez [Catégorie Unicode ou bloc Unicode](#CategoryOrBlock).  
   
@@ -71,7 +71,7 @@ Une classe de caractères définit un jeu de caractères, chacun d'entre eux pou
 
 Quelques modèles d'expressions régulières courants qui contiennent des classes de caractères positifs apparaissent dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`[aeiou]`|Mettre en correspondance toutes les voyelles.|  
 |`[\p{P}\d]`|Mettre en correspondance tous les signes de ponctuation et chiffres décimaux.|  
@@ -84,10 +84,10 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
   
  L'expression régulière `gr[ae]y\s\S+?[\s|\p{P}]` est définie comme suit :  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`gr`|Mettre en correspondance les caractères littéraux « gr ».|  
-|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
+|`[ae]`|Mettre en correspondance un « a » ou un « e ».|  
 |`y\s`|Mettre en correspondance le caractère littéral « y » suivi d'un espace blanc.|  
 |`\S+?`|Mettre en correspondance un ou plusieurs caractères autres que des espaces blancs, mais le moins possible.|  
 |`[\s\p{P}]`|Mettre en correspondance un espace blanc ou un signe de ponctuation.|  
@@ -99,7 +99,7 @@ Quelques modèles d'expressions régulières courants qui contiennent des classe
   
  L'expression régulière `\b[A-Z]\w*\b` est définie comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`[A-Z]`|Mettre en correspondance une majuscule de A à Z.|  
@@ -127,14 +127,14 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  Deux ou plusieurs plages de caractères peuvent être concaténées. Par exemple, pour spécifier la plage de chiffres décimaux de « 0 » à « 9 », la plage de lettres minuscules de « a » à « f » et la plage de lettres majuscules de « A » à « F », utilisez `[0-9a-fA-F]`.  
   
- Le premier caractère (`^`) d'un groupe de caractères négatif est obligatoire et indique que le groupe de caractères est un groupe de caractères négatif et non positif.  
+ Le caractère de signe insertion de début (`^`) dans un groupe de caractères négatif est obligatoire et indique que le groupe de caractères est un groupe de caractères négatif et non un groupe de caractères positif.  
   
 > [!IMPORTANT]
-> Un groupe de caractères négatifs d'un plus grand modèle d'expressions régulières n'est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
+> Un groupe de caractères négatifs d’un plus grand modèle d’expressions régulières n’est pas une assertion de largeur nulle. Autrement dit, après avoir évalué le groupe de caractères négatif, le moteur des expressions régulières avance d'un caractère dans la chaîne d'entrée.  
   
  Quelques modèles d'expressions régulières courants qui contiennent des groupes de caractères négatifs apparaissent dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`[^aeiou]`|Mettre en correspondance tous les caractères, à l'exception des voyelles.|  
 |`[^\p{P}\d]`|Mettre en correspondance tous les caractères, à l'exception des signes de ponctuation et des chiffres décimaux.|  
@@ -146,7 +146,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  L'expression régulière `\bth[^o]\w+\b` est définie comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`th`|Mettre en correspondance les caractères littéraux « th ».|  
@@ -158,7 +158,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="any-character-"></a>N’importe quel caractère : .  
  Le point (.) correspond à n'importe quel caractère à l'exception de `\n` (caractère de saut de ligne, \u000A), avec les deux qualifications suivantes :  
   
-- Si un modèle d'expression régulière est modifié par l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> ou si la partie du modèle qui contient la classe de caractères `.` est modifiée par l'option `s`, `.` correspond à n'importe quel caractère. Pour plus d’informations, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
+- Si un modèle d'expression régulière est modifié par l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> ou si la partie du modèle qui contient la classe de caractères `.` est modifiée par l'option `s`, `.` correspond à n'importe quel caractère. Pour plus d'informations, consultez [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
      L'exemple suivant illustre le comportement différent de la classe de caractères `.` par défaut et avec l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType>. L'expression régulière `^.+` commence au début de la chaîne et correspond à tous les caractères. Par défaut, la correspondance se termine à la fin de la première ligne ; le modèle d'expression régulière correspond au retour chariot, à `\r` ou à \u000D, mais il ne correspond pas à `\n`. Étant donné que l'option <xref:System.Text.RegularExpressions.RegexOptions.Singleline?displayProperty=nameWithType> interprète la chaîne d'entrée entière comme une ligne unique, il correspond à chaque caractère de la chaîne d'entrée, notamment `\n`.  
   
@@ -174,7 +174,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
      [!code-vb[Conceptual.RegEx.Language.CharacterClasses#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regex.language.characterclasses/vb/any1.vb#4)]  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère, l'élément de langage `.` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère, l'élément de langage `.` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
 <a name="CategoryOrBlock"></a>   
 ## <a name="unicode-category-or-unicode-block-p"></a>Catégorie Unicode ou bloc Unicode : \p{}  
@@ -193,7 +193,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  L'expression régulière `\b(\p{IsGreek}+(\s)?)+\p{Pd}\s(\p{IsBasicLatin}+(\s)?)+` est définie comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`\p{IsGreek}+`|Mettre en correspondance un ou plusieurs caractères grecs.|  
@@ -226,7 +226,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="word-character-w"></a>Caractère de mot : \w  
  `\w` correspond à n'importe quel caractère alphabétique. Un caractère de mot est un membre d'une des catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
@@ -240,7 +240,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
  Si un comportement conforme à ECMAScript est spécifié, `\w` est équivalent à `[a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère alphabétique, l'élément de langage `\w` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère alphabétique, suivi par un caractère alphabétique spécifique. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère alphabétique, l'élément de langage `\w` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère alphabétique, suivi par un caractère alphabétique spécifique. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
  L'exemple suivant utilise l'élément de langage `\w` pour le faire corresponde à des caractères en double dans un mot. L'exemple définit un modèle d'expression régulière, `(\w)\1`, qui peut être interprété comme suit.  
   
@@ -260,7 +260,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
   
  En d’autres termes, il correspond à n’importe quel caractère à l’exception de ceux inclus dans les catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |Ll|Letter, Lowercase|  
 |Lu|Letter, Uppercase|  
@@ -274,7 +274,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
  Si un comportement conforme à ECMAScript est spécifié, `\W` est équivalent à `[^a-zA-Z_0-9]`. Pour plus d’informations sur les expressions régulières ECMAScript, consultez la section « Comportement de correspondance ECMAScript » dans [Options des expressions régulières](../../../docs/standard/base-types/regular-expression-options.md).  
   
 > [!NOTE]
-> Étant donné qu'il correspond à n'importe quel caractère non alphabétique, l'élément de langage `\W` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère non alphabétique suivi d'un caractère non alphabétique spécifique. Pour plus d’informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
+> Étant donné qu'il correspond à n'importe quel caractère non alphabétique, l'élément de langage `\W` est souvent utilisé avec un quantificateur limitatif si un modèle d'expression régulière essaie de correspondre plusieurs fois à n'importe quel caractère non alphabétique suivi d'un caractère non alphabétique spécifique. Pour plus d'informations, consultez [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md).  
   
  L'exemple suivant illustre la classe de caractères `\W`.  Il définit un modèle d'expression régulière, `\b(\w+)(\W){1,2}`, qui correspond à un mot suivi d'un ou deux caractères non alphabétiques, comme un espace ou un signe de ponctuation. L'expression régulière est interprétée comme indiqué dans le tableau suivant.  
   
@@ -293,7 +293,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="whitespace-character-s"></a>Espace : \s  
  `\s` correspond à n'importe quel espace. Il est équivalent aux séquences d'échappement et catégories Unicode répertoriées dans le tableau suivant.  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |`\f`|Saut de page, \u000C.|  
 |`\n`|Saut de ligne, \u000A.|  
@@ -380,7 +380,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 ## <a name="supported-unicode-general-categories"></a>Catégories générales Unicode prises en charge  
  La norme Unicode définit les catégories générales répertoriées dans le tableau suivant. Pour plus d’informations, consultez les sous-rubriques « Format de fichier UCD » et « Valeurs des catégories générales » dans la [Base de données de caractères Unicode](https://www.unicode.org/reports/tr44/).  
   
-|Catégorie|Description|  
+|Category|Description|  
 |--------------|-----------------|  
 |`Lu`|Letter, Uppercase|  
 |`Ll`|Letter, Lowercase|  
@@ -439,7 +439,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |0250 - 02AF|`IsIPAExtensions`|  
 |02B0 - 02FF|`IsSpacingModifierLetters`|  
 |0300 - 036F|`IsCombiningDiacriticalMarks`|  
-|0370 - 03FF|`IsGreek`<br /><br /> \- ou -<br /><br /> `IsGreekandCoptic`|  
+|0370 - 03FF|`IsGreek`<br /><br /> -ou-<br /><br /> `IsGreekandCoptic`|  
 |0400 - 04FF|`IsCyrillic`|  
 |0500 - 052F|`IsCyrillicSupplement`|  
 |0530 - 058F|`IsArmenian`|  
@@ -483,7 +483,7 @@ où *premierCaractère* est le caractère qui commence la plage et *dernierCarac
 |2000 - 206F|`IsGeneralPunctuation`|  
 |2070 - 209F|`IsSuperscriptsandSubscripts`|  
 |20A0 - 20CF|`IsCurrencySymbols`|  
-|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> \- ou -<br /><br /> `IsCombiningMarksforSymbols`|  
+|20D0 - 20FF|`IsCombiningDiacriticalMarksforSymbols`<br /><br /> -ou-<br /><br /> `IsCombiningMarksforSymbols`|  
 |2100 - 214F|`IsLetterlikeSymbols`|  
 |2150 - 218F|`IsNumberForms`|  
 |2190 - 21FF|`IsArrows`|  

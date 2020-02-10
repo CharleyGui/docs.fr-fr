@@ -8,12 +8,12 @@ helpviewer_keywords:
 - bool data type [C#]
 - Boolean [C#]
 ms.assetid: 551cfe35-2632-4343-af49-33ad12da08e2
-ms.openlocfilehash: 577ccd3bb9a20964dcdfc79ef2028854e4a55dc6
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 720ece2f7f47961e0ab6ebf03c8afeb5fa3a6271
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75342701"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093264"
 ---
 # <a name="bool-c-reference"></a>bool (C# référence)
 
@@ -46,5 +46,5 @@ Pour plus d’informations, consultez [la section type bool](~/_csharplang/spec/
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Tableaux des types intégrés](../keywords/built-in-types-table.md)
+- [Types de valeur](value-types.md)
 - [Opérateurs true et false](../operators/true-false-operators.md)

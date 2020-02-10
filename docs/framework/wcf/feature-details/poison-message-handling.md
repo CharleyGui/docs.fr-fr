@@ -2,28 +2,28 @@
 title: Gestion des messages incohérents
 ms.date: 03/30/2017
 ms.assetid: 8d1c5e5a-7928-4a80-95ed-d8da211b8595
-ms.openlocfilehash: 389d0651438036cd23d30cf7dd866956ac8e5dae
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 378849815617f6556a7d9cc7e89c6697bfdd895d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921200"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094993"
 ---
 # <a name="poison-message-handling"></a>Gestion des messages incohérents
 Un *message incohérent* est un message qui a dépassé le nombre maximal de tentatives de remise à l’application. Cette situation peut survenir lorsqu'une application basée sur file d'attente ne peut pas traiter un message car des erreurs se sont produites. Pour faire face aux demandes de fiabilité, une application en file d’attente reçoit des messages sous une transaction. L’abandon de la transaction dans laquelle un message en file d’attente a été reçu laisse le message dans la file d’attente afin qu’une nouvelle tentative de remise puisse être effectuée sous une nouvelle transaction. Si le problème qui a provoqué l'abandon de la transaction n'est pas résolu, l'application réceptrice peut être bloquée dans une réception et un abandon en boucle du même message jusqu'à ce que le nombre maximal de tentatives de remise soit dépassé et qu'un message incohérent soit généré.  
   
- Un message peut devenir incohérent pour de nombreuses raisons. Les raisons les plus courantes sont spécifiques à l'application. Par exemple, si une application lit un message à partir d'une file d'attente et exécute un traitement de base de données, il est possible qu'elle ne parvienne pas à obtenir un verrou sur la base de données, provoquant ainsi l'abandon de la transaction. Parce que la transaction de base de données a été abandonnée, le message reste dans la file d'attente, ce qui conduit l'application à relire le message une deuxième fois et à tenter de nouveau d'acquérir un verrou sur la base de données. Les messages peuvent également devenir incohérents s'ils contiennent des informations non valides. Par exemple, une commande fournisseur peut contenir un numéro de client non valide. Dans ces cas-là, l’application peut abandonner volontairement la transaction et forcer le message à devenir un message incohérent.  
+ Un message peut devenir incohérent pour de nombreuses raisons. Les raisons les plus courantes sont spécifiques à l’application. Par exemple, si une application lit un message à partir d'une file d'attente et exécute un traitement de base de données, il est possible qu'elle ne parvienne pas à obtenir un verrou sur la base de données, provoquant ainsi l'abandon de la transaction. Parce que la transaction de base de données a été abandonnée, le message reste dans la file d'attente, ce qui conduit l'application à relire le message une deuxième fois et à tenter de nouveau d'acquérir un verrou sur la base de données. Les messages peuvent également devenir incohérents s'ils contiennent des informations non valides. Par exemple, une commande fournisseur peut contenir un numéro de client non valide. Dans ces cas-là, l’application peut abandonner volontairement la transaction et forcer le message à devenir un message incohérent.  
   
  Dans de rares occasions, des messages peuvent ne pas être distribués à l'application. La couche Windows Communication Foundation (WCF) peut détecter un problème avec le message, par exemple si le message contient une trame incorrecte, des informations d’identification de message non valides qui lui sont associées ou un en-tête d’action non valide. Dans ces cas-là, l'application ne reçoit jamais le message ; toutefois, ce dernier peut encore devenir un message incohérent et être traité manuellement.  
   
 ## <a name="handling-poison-messages"></a>Gestion des messages incohérents  
- Dans WCF, la gestion des messages incohérents fournit un mécanisme permettant à une application réceptrice de traiter les messages qui ne peuvent pas être distribués à l’application, ou les messages qui sont envoyés à l’application, mais qui ne peuvent pas être traités en raison de la spécificité de l’application. principales. La gestion des messages incohérents est configurée par les propriétés suivantes dans chacune des liaisons en file d’attente disponibles :  
+ Dans WCF, la gestion des messages incohérents fournit un mécanisme permettant à une application réceptrice de traiter les messages qui ne peuvent pas être distribués à l’application ou les messages envoyés à l’application, mais qui ne peuvent pas être traités en raison d’une application spécifique principales. Configurez la gestion des messages incohérents avec les propriétés suivantes dans chacune des liaisons mises en file d’attente disponibles :  
   
-- `ReceiveRetryCount`. Valeur entière qui indique le nombre maximal de nouvelles tentatives de remise d'un message à partir de la file d'attente d'application à l'application. La valeur par défaut est 5. Elle est suffisante dans les cas où une nouvelle tentative immédiate résout le problème (par exemple, en cas d'interblocage temporaire sur une base de données).  
+- `ReceiveRetryCount`. Valeur entière qui indique le nombre maximal de nouvelles tentatives de remise d'un message à partir de la file d'attente d'application à l'application. La valeur par défaut est 5. Elle est suffisante dans les cas où une nouvelle tentative immédiate résout le problème (par exemple, en cas d'interblocage temporaire sur une base de données).  
   
 - `MaxRetryCycles`. Valeur entière qui indique le nombre maximal de cycles de nouvelle tentative. Un cycle de nouvelle tentative implique le transfert d'un message de la file d'attente d'application vers la sous-file d'attente de nouvel essai et, après un délai configurable, de la sous-file d'attente de nouvel essai vers la file d'attente d'application afin de retenter la remise. La valeur par défaut est 2. Sur Windows Vista, le message est essayé au maximum (`ReceiveRetryCount` + 1) * (`MaxRetryCycles` + 1) fois. `MaxRetryCycles` est ignorée sur Windows Server 2003 et Windows XP.  
   
-- `RetryCycleDelay`. Délai entre les cycles de nouvelle tentative. La valeur par défaut est de 30 minutes. `MaxRetryCycles` et `RetryCycleDelay` fournissent ensemble un mécanisme permettant de gérer un problème qui peut être résolu en cas de nouvelle tentative après un délai périodique. Par exemple, cela permet de gérer le verrouillage d’un ensemble de lignes dans la validation de transaction en attente SQL Server.  
+- `RetryCycleDelay`. Délai entre les cycles de nouvelle tentative. La valeur par défaut est 30 minutes. `MaxRetryCycles` et `RetryCycleDelay` fournissent ensemble un mécanisme permettant de gérer un problème qui peut être résolu en cas de nouvelle tentative après un délai périodique. Par exemple, cela permet de gérer le verrouillage d’un ensemble de lignes dans la validation de transaction en attente SQL Server.  
   
 - `ReceiveErrorHandling`. Énumération qui indique l'action à effectuer pour un message qui n'a pas pu être remis une fois le nombre maximal de tentatives effectué. Les valeurs peuvent être Fault, Drop, Reject et Move. L'option par défaut est Fault.  
   
@@ -31,11 +31,11 @@ Un *message incohérent* est un message qui a dépassé le nombre maximal de ten
   
 - Supprimer. Cette option supprime le message empoisonné ; celui-ci n'est jamais remis à l'application. Si la propriété `TimeToLive` du message a expiré à ce stade, le message peut apparaître dans la file d'attente de lettres mortes de l'expéditeur. Sinon, il n'apparaît nulle part. Cette option indique que l'utilisateur n'a pas spécifié quoi faire en cas de perte du message.  
   
-- Reject. Cette option est disponible uniquement sur Windows Vista. Elle fait en sorte que Message Queuing (MSMQ) renvoie un accusé de réception négatif au gestionnaire de files d'attente émetteur, signalant que l'application ne peut pas recevoir le message. Le message est placé dans la file d'attente de lettres mortes du gestionnaire de files d'attente émetteur.  
+- Reject. Cette option est disponible uniquement sur Windows Vista. Cela indique à Message Queuing (MSMQ) d’envoyer un accusé de réception négatif au gestionnaire de files d’attente d’envoi, que l’application ne peut pas recevoir le message. Le message est placé dans la file d'attente de lettres mortes du gestionnaire de files d'attente émetteur.  
   
 - Move. Cette option est disponible uniquement sur Windows Vista. Elle déplace le message incohérent vers une file d'attente de messages incohérents pour un traitement ultérieur par une application de gestion de messages incohérents. La file d'attente de messages incohérents est une sous-file d'attente de la file d'attente d'application. Une application de gestion des messages incohérents peut être un service WCF qui lit les messages en dehors de la file d’attente de messages incohérents. La file d’attente de messages incohérents est une sous-file d’attente de la file d’attente de l’application. elle peut être adressée comme net. msmq://\<*nom-machine*>/*applicationQueue*;p oison, où *machine-name* est le nom de l’ordinateur sur lequel la file d’attente réside et *applicationQueue* est le nom de la file d’attente spécifique à l’application.  
   
- Voici le nombre maximal de tentatives de remise effectuées pour un message :  
+Voici le nombre maximal de tentatives de remise effectuées pour un message :  
   
 - ((ReceiveRetryCount + 1) * (MaxRetryCycles + 1)) sur Windows Vista.  
   

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - dynamic layout [WPF interoperability]
 - device-independent pixels
 ms.assetid: 3c574597-bbde-440f-95cc-01371f1a5d9d
-ms.openlocfilehash: 9f97639447284b792d52cf4aa25b81f584d7291a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 89ed57a787b93a1326b4accd3bb1bc5ff9a825fd
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787903"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095149"
 ---
 # <a name="layout-considerations-for-the-windowsformshost-element"></a>Considérations sur la disposition de l'élément WindowsFormsHost
 Cette rubrique décrit comment l’élément <xref:System.Windows.Forms.Integration.WindowsFormsHost> interagit avec le système de disposition [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -31,8 +31,8 @@ Cette rubrique décrit comment l’élément <xref:System.Windows.Forms.Integrat
 |Fonctionnalité de disposition|Description|  
 |--------------------|-----------------|  
 |Redimensionnement automatique|Certaines Windows Forms contrôles se redimensionnent pour afficher correctement leur contenu. Pour plus d’informations, consultez [vue d’ensemble de la propriété AutoSize](../../winforms/controls/autosize-property-overview.md).|  
-|Ancrage et ancrage|Les contrôles Windows Forms prennent en charge le positionnement et le dimensionnement en fonction du conteneur parent. Pour plus d'informations, consultez les rubriques <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> et <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
-|Échelle automatique|Les contrôles de conteneur se redimensionnent eux-mêmes et leurs enfants en fonction de la résolution du périphérique de sortie ou de la taille, en pixels, de la police de conteneur par défaut. Pour plus d’informations, consultez [mise à l’échelle automatique dans Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
+|Ancrage et ancrage|Les contrôles Windows Forms prennent en charge le positionnement et le dimensionnement en fonction du conteneur parent. Pour plus d’informations, consultez <xref:System.Windows.Forms.Control.Anchor%2A?displayProperty=nameWithType> et <xref:System.Windows.Forms.Control.Dock%2A?displayProperty=nameWithType>.|  
+|Mise à l’échelle automatique|Les contrôles de conteneur se redimensionnent eux-mêmes et leurs enfants en fonction de la résolution du périphérique de sortie ou de la taille, en pixels, de la police de conteneur par défaut. Pour plus d’informations, consultez [mise à l’échelle automatique dans Windows Forms](../../winforms/automatic-scaling-in-windows-forms.md).|  
 |Conteneurs de disposition|Les contrôles <xref:System.Windows.Forms.FlowLayoutPanel> et <xref:System.Windows.Forms.TableLayoutPanel> réorganisent leurs contrôles enfants et leur taille en fonction de leur contenu.|  
   
 ## <a name="layout-limitations"></a>Limitations de la disposition  
@@ -103,6 +103,6 @@ Cette rubrique décrit comment l’élément <xref:System.Windows.Forms.Integrat
 - <xref:System.Windows.Forms.Integration.ElementHost>
 - <xref:System.Windows.Forms.Integration.WindowsFormsHost>
 - [Procédure pas à pas : organisation des contrôles Windows Forms dans WPF](walkthrough-arranging-windows-forms-controls-in-wpf.md)
-- [Organiser des contrôles de Windows Forms dans WPF, exemple](https://go.microsoft.com/fwlink/?LinkID=159971)
+- [Organiser des contrôles de Windows Forms dans WPF, exemple](https://github.com/microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/WpfLayoutHostingWfWithXaml)
 - [Mappage de propriétés Windows Forms et WPF](windows-forms-and-wpf-property-mapping.md)
 - [Migration et interopérabilité](migration-and-interoperability.md)

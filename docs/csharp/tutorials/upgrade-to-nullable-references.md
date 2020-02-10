@@ -4,18 +4,18 @@ description: Ce didacticiel avancé montre comment migrer du code existant avec 
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: e480cfa7c041d18a2bdaf8caa2468165e855186e
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 4edeab7b2a4211d50c424f567ad7df6ced0bf4ce
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740469"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093303"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
 
 C# 8 introduit les **types référence Nullable**, qui viennent compléter les types référence de la même façon que les types valeur Nullable complètent les types valeur. Pour déclarer une variable comme étant un **type référence Nullable**, on ajoute `?` au type. Par exemple, `string?` représente une `string` Nullable. Vous pouvez utiliser ces nouveaux types pour exprimer plus clairement votre intention de conception : certaines variables *doivent toujours avoir une valeur*, d’autres *peuvent ne pas en avoir*. Toutes les variables existantes d’un type de référence sont interprétées comme un type de référence non nullable. 
 
-Dans ce tutoriel, vous allez apprendre à :
+Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
@@ -24,7 +24,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
 > - Contrôler les contextes d’annotation nullable.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -40,7 +40,7 @@ Votre objectif de migration d’un projet doit être de tirer parti des nouvelle
 
 ## <a name="upgrade-the-projects-to-c-8"></a>Mettre à niveau les projets vers C# 8
 
-La première étape consiste à déterminer l’étendue de la tâche de migration. Commencez par la mise à niveau du projet vers C# 8.0 (ou version ultérieure). Ajoutez l’élément `LangVersion` aux deux fichiers csproj pour le projet web et le projet de test unitaire :
+La première étape consiste à déterminer l’étendue de la tâche de migration. Commencez par la mise à niveau du projet vers C# 8.0 (ou version ultérieure). Ajoutez l’élément `LangVersion` au PropertyGroup dans les deux fichiers csproj pour le projet Web et le projet de test unitaire :
 
 ```xml
 <LangVersion>8.0</LangVersion>

@@ -2,12 +2,12 @@
 title: Byrefs
 description: En savoir plus sur les types ByRef et de F#type ByRef dans, qui sont utilisés pour la programmation de bas niveau.
 ms.date: 11/04/2019
-ms.openlocfilehash: 05a40059ad5b72829233b0c4135c76eb1cff4da5
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 2d98d325dc4ad26548fb2cc6aa5b872e152ee0a8
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965813"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092786"
 ---
 # <a name="byrefs"></a>Byrefs
 
@@ -114,17 +114,17 @@ C#prend en charge les mots clés `in ref` et `out ref`, en plus de `ref` retourn
 |------------|---------|
 |`ref` valeur de retour|`outref<'T>`|
 |`ref readonly` valeur de retour|`inref<'T>`|
-|paramètre `in ref`|`inref<'T>`|
-|paramètre `out ref`|`outref<'T>`|
+|Paramètre `in ref`|`inref<'T>`|
+|Paramètre `out ref`|`outref<'T>`|
 
 Le tableau suivant répertorie F# les émissions :
 
 |F#composer|Construction émise|
 |------------|-----------------|
-|argument `inref<'T>`|attribut `[In]` sur l’argument|
+|Argument `inref<'T>`|attribut `[In]` sur l’argument|
 |`inref<'T>` retourner|`modreq` attribut sur la valeur|
 |`inref<'T>` dans l’emplacement ou l’implémentation abstraits|`modreq` de l’argument ou du retour|
-|argument `outref<'T>`|attribut `[Out]` sur l’argument|
+|Argument `outref<'T>`|attribut `[Out]` sur l’argument|
 
 ### <a name="type-inference-and-overloading-rules"></a>Inférence de type et règles de surcharge
 
@@ -188,7 +188,7 @@ let squareAndPrint (data : byref<int>) =
 ```
 
 Pour retourner une valeur ByRef, la variable qui contient la valeur doit être plus longue que la portée actuelle.
-En outre, pour retourner ByRef, utilisez & valeur (où la valeur est une variable qui dure plus longtemps que la portée actuelle).
+En outre, pour retourner ByRef, utilisez `&value` (où la valeur est une variable qui dure plus longtemps que la portée actuelle).
 
 ```fsharp
 let mutable sum = 0
@@ -252,4 +252,4 @@ let test () =
     ()
 ```
 
-Cela vous empêche d’obtenir des résultats différents selon que vous compilez avec des optimisations activées ou désactivées.
+Cela vous empêche d’obtenir des résultats différents selon que vous compilez avec des optimisations ou non.

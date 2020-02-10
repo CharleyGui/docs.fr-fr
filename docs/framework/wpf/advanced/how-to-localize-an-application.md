@@ -9,12 +9,12 @@ helpviewer_keywords:
 - LocBaml tool [WPF]
 - applications [WPF], localizing
 ms.assetid: 5001227e-9326-48a4-9dcd-ba1b89ee6653
-ms.openlocfilehash: 26c09e547205e7819ebb43d6e34b6e18d6d9ff98
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 7e034e92e1ff2b9bec0eaf8e0f3330f7a832a7e5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73460840"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095162"
 ---
 # <a name="how-to-localize-an-application"></a>Guide pratique pour localiser une application
 Ce didacticiel explique comment créer une application localisée à l'aide de l'outil LocBaml.  
@@ -23,11 +23,11 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
 > L'outil LocBaml n'est pas une application prête pour la production. Il est présenté comme un exemple qui fait appel à un certain nombre d'API de localisation et montre comment vous pouvez écrire un outil de localisation.  
   
 <a name="Introduction"></a>   
-## <a name="overview"></a>Vue d'ensemble  
+## <a name="overview"></a>Vue d’ensemble  
  Ce document vous propose une approche pas à pas pour localiser une application. Tout d'abord, vous allez préparer votre application de façon à pouvoir extraire le texte qui sera traduit. Une fois le texte traduit, vous le fusionnerez dans une nouvelle copie de l'application d'origine.  
   
 <a name="Requirements"></a>   
-## <a name="requirements"></a>spécifications  
+## <a name="requirements"></a>Spécifications  
  Au cours de cette discussion, vous allez utiliser Microsoft Build Engine (MSBuild), qui est un compilateur qui s’exécute à partir de la ligne de commande.  
   
  De même, vous serez invité à utiliser un fichier de projet. Pour obtenir des instructions sur l’utilisation de MSBuild et des fichiers projet, consultez [génération et déploiement](../app-development/building-and-deploying-wpf-applications.md).  
@@ -64,7 +64,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 <a name="create_dll"></a>   
 ## <a name="create-the-neutral-language-resources-satellite-assembly"></a>Créer l'assembly satellite de ressources de langage neutre  
- Après avoir configuré l'application pour générer un assembly satellite de ressources de langage neutre, vous devez générer l'application. Cela a pour effet de générer l'assembly d'application principal, ainsi que l'assembly satellite de ressources de langage neutre dont a besoin LocBaml pour la localisation. Pour générer l'application :  
+ Après avoir configuré l'application pour générer un assembly satellite de ressources de langage neutre, vous devez générer l'application. Cela a pour effet de générer l'assembly d'application principal, ainsi que l'assembly satellite de ressources de langage neutre dont a besoin LocBaml pour la localisation. Pour générer l’application :  
   
 1. Compilez HelloApp pour créer une bibliothèque de liens dynamiques (DLL) :  
   
@@ -81,7 +81,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
 <a name="build_locbaml"></a>   
 ## <a name="build-the-locbaml-tool"></a>Générer l'outil LocBaml  
   
-1. Tous les fichiers nécessaires à la génération de LocBaml se trouvent dans les exemples [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Téléchargez les C# fichiers à partir de l' [exemple d’outil LocBaml](https://go.microsoft.com/fwlink/?LinkID=160016).  
+1. Tous les fichiers nécessaires à la génération de LocBaml se trouvent dans les exemples [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Téléchargez les C# fichiers à partir de l' [exemple d’outil LocBaml](https://github.com/microsoft/WPF-Samples/tree/master/Tools/LocBaml).  
   
 2. Dans la ligne de commande, exécutez le fichier de projet (locbaml.csproj) pour générer l'outil :  
   
@@ -137,7 +137,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
    2. **Resource Key**. Identificateur de la ressource localisée.  
   
-   3. **Catégorie** : Type de valeur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
+   3. **Catégorie**. Type de valeur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
    4. **Lisibilité** : Indique si la valeur peut être lue par un localisateur. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
@@ -145,15 +145,15 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
    6. **Comments**. Description supplémentaire de la valeur pour aider à déterminer comment une valeur est localisée. Consultez [attributs et commentaires de localisation](localization-attributes-and-comments.md).  
   
-   7. **Value**. valeur de texte à traduire dans la culture souhaitée.  
+   7. **Valeur**. valeur de texte à traduire dans la culture souhaitée.  
   
    Le tableau suivant montre comment ces champs sont mappés par rapport aux valeurs délimitées du fichier .csv :  
   
-   |BAML name|Resource key|Category|Readability|Modifiability|Comments|valeur|  
+   |BAML name|Resource key|Category|Lisibilité|Modifiability|Commentaires|Valeur|  
    |---------------|------------------|--------------|-----------------|-------------------|--------------|-----------|
-   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignore|false|false||#Text1;#Text2|
-   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|aucune.|true|true||Hello World|
-   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|aucune.|true|true||Goodbye World|
+   |HelloApp.g.en-US.resources:window1.baml|Stack1:System.Windows.Controls.StackPanel.$Content|Ignorer|FALSE|FALSE||#Text1;#Text2|
+   |HelloApp.g.en-US.resources:window1.baml|Text1:System.Windows.Controls.TextBlock.$Content|None|TRUE|TRUE||Hello World|
+   |HelloApp.g.en-US.resources:window1.baml|Text2:System.Windows.Controls.TextBlock.$Content|None|TRUE|TRUE||Goodbye World|
   
    Notez que toutes les valeurs du champ de **Commentaires** ne contiennent aucune valeur ; Si un champ n’a pas de valeur, il est vide. Notez également que l’élément de la première ligne n’est ni lisible ni modifiable et qu’il a « ignore » comme valeur de **catégorie** , ce qui indique que la valeur n’est pas localisable.  
   
@@ -186,7 +186,7 @@ Ce didacticiel explique comment créer une application localisée à l'aide de l
   
 6. Copiez l'assembly satellite généré dans le nouveau dossier.  
   
-7. Pour tester le nouvel assembly satellite, vous devez modifier la culture sous laquelle votre application s'exécutera. Vous pouvez le faire de deux façons :  
+7. Pour tester le nouvel assembly satellite, vous devez modifier la culture sous laquelle votre application s'exécutera. Vous pouvez le faire de deux façons :  
   
     - Modifiez les paramètres régionaux de votre système d’exploitation (**Démarrez** &#124; **le panneau** &#124; de configuration **Options régionales et linguistiques**).  
   

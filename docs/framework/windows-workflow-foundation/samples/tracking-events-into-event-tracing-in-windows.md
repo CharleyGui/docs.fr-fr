@@ -2,12 +2,12 @@
 title: Événements de suivi dans Event Tracing for Windows
 ms.date: 03/30/2017
 ms.assetid: f812659b-0943-45ff-9430-4defa733182b
-ms.openlocfilehash: fe50476eedef505258c2e6818e75a32c06ed6fa6
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: 2c397bcfa809a1306e9c31bf3f652b055d997f38
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715927"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094577"
 ---
 # <a name="tracking-events-into-event-tracing-in-windows"></a>Événements de suivi dans Event Tracing for Windows
 
@@ -57,7 +57,7 @@ Le participant de suivi s'abonne à un sous-ensemble des enregistrements de suiv
 
 5. Dans le client test WCF, sélectionnez **Ajouter un service** dans le menu **fichier** .
 
-    Ajoutez l'adresse du point de terminaison dans la zone d'entrée. La valeur par défaut est `http://localhost:53797/SampleWorkflowService.xamlx`,
+    Ajoutez l'adresse du point de terminaison dans la zone d'entrée. Par défaut, il s’agit de `http://localhost:53797/SampleWorkflowService.xamlx`.
 
 6. Ouvrez l'application Observateur d'événements.
 
@@ -125,7 +125,7 @@ Le modèle de suivi de contrôle d'état émet des enregistrements d'instance de
 
 #### <a name="to-clean-up-optional"></a>Pour nettoyer (facultatif)
 
-1. Ouvrez l’Observateur d’événements.
+1. Ouvrez Observateur d'événements.
 
 2. Accédez à **Observateur d’événements**, **journaux des applications et des services**, **Microsoft**, **Windows**, serveur d’applications **-applications**. Cliquez avec le bouton droit sur **analyse** et sélectionnez **désactiver le journal**.
 
@@ -138,7 +138,7 @@ Le modèle de suivi de contrôle d'état émet des enregistrements d'instance de
 > [!NOTE]
 > Un problème connu de l'Observateur d'événements est qu'il lui arrive de ne pas parvenir à décoder des événements ETW. Un message d'erreur semblable au suivant s'affiche éventuellement.
 >
-> La description de l’ID d’événement \<> de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui a déclenché cet événement n'est pas installé sur l'ordinateur local ou l'installation est endommagée. Vous pouvez installer ou réparer le composant sur l'ordinateur local.
+> La description de l’ID d’événement \<> de la source Microsoft-Windows-serveur d’applications-applications est introuvable. Le composant qui déclenche cet événement n’est pas installé sur votre ordinateur local, ou l’installation est endommagée. Vous pouvez installer ou réparer le composant sur l’ordinateur local.
 >
 > Si vous rencontrez cette erreur, cliquez sur Actualiser dans le volet Actions. Le décodage de l'événement doit maintenant s'effectuer correctement.
 
@@ -153,4 +153,4 @@ Le modèle de suivi de contrôle d'état émet des enregistrements d'instance de
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

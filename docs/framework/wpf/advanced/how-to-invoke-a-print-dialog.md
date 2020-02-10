@@ -8,12 +8,12 @@ helpviewer_keywords:
 - invoking print dialogs [WPF]
 - print dialogs [WPF], invoking
 ms.assetid: e3a2c84c-74fe-45a4-8501-5813f9dbfed2
-ms.openlocfilehash: 6d7bc322079718d17a921ef34af79145b021e3a7
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: f7ef3312d876324b44b055d70fd22e3fba075ec6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636092"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77095173"
 ---
 # <a name="how-to-invoke-a-print-dialog"></a>Comment : appeler une boîte de dialogue Imprimer
 Pour permettre l’impression à partir de votre application, vous pouvez simplement créer et ouvrir un objet <xref:System.Windows.Controls.PrintDialog>.  
@@ -24,7 +24,7 @@ Pour permettre l’impression à partir de votre application, vous pouvez simple
  [!code-csharp[printdialog#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PrintDialog/CSharp/Window1.xaml.cs#1)]
  [!code-vb[printdialog#1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/PrintDialog/visualbasic/window1.xaml.vb#1)]  
   
- Une fois que la boîte de dialogue est ouverte, les utilisateurs peuvent choisir parmi les imprimantes installées sur leur ordinateur. Ils auront également la possibilité de sélectionner [Microsoft XPS document Writer](https://go.microsoft.com/fwlink/?LinkId=147319) pour créer un fichier XPS (XML Paper Specification) au lieu d’imprimer.  
+ Une fois que la boîte de dialogue est ouverte, les utilisateurs peuvent choisir parmi les imprimantes installées sur leur ordinateur. Ils auront également la possibilité de sélectionner [Microsoft XPS document Writer](/windows/win32/printdocs/microsoft-xps-document-writer) pour créer un fichier XPS (XML Paper Specification) au lieu d’imprimer.  
   
 > [!NOTE]
 > Le contrôle <xref:System.Windows.Controls.PrintDialog?displayProperty=nameWithType> de WPF, qui est abordé dans cette rubrique, ne doit pas être confondu avec le composant <xref:System.Windows.Forms.PrintDialog?displayProperty=nameWithType> de Windows Forms.  
@@ -36,4 +36,4 @@ Pour permettre l’impression à partir de votre application, vous pouvez simple
 - <xref:System.Windows.Controls.PrintDialog>
 - [Documents dans WPF](documents-in-wpf.md)
 - [Vue d’ensemble de l’impression](printing-overview.md)
-- [Microsoft XPS document Writer](https://go.microsoft.com/fwlink/?LinkId=147319)
+- [Microsoft XPS document Writer](/windows/win32/printdocs/microsoft-xps-document-writer)

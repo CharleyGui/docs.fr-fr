@@ -11,16 +11,16 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 72bc867bf0a789279da9a01f97c85d96b78684ed
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ac4dafef92bbc900d291a5b653c55ba295f1a6d6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75444346"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093225"
 ---
 # <a name="enumeration-types-c-reference"></a>Types énumérationC# (référence)
 
-Un type d’énumération (ou un type enum) est un type valeur défini par un ensemble de constantes nommées du type [numérique intégral](integral-numeric-types.md) sous-jacent. Pour définir un type d’énumération, utilisez le mot clé `enum` et spécifiez les noms des *membres enum*:
+Un type d' *énumération* (ou un *type enum*) est un [type valeur](value-types.md) défini par un ensemble de constantes nommées du type [numérique intégral](integral-numeric-types.md) sous-jacent. Pour définir un type d’énumération, utilisez le mot clé `enum` et spécifiez les noms des *membres enum*:
 
 ```csharp
 enum Season
@@ -88,6 +88,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 ## <a name="see-also"></a>Voir aussi
 
 - [Informations de référence sur C#](../index.md)
-- [Chaînes de format d'énumération](../../../standard/base-types/enumeration-format-strings.md)
+- [Chaînes de format d’énumération](../../../standard/base-types/enumeration-format-strings.md)
 - [Conventions d’affectation des noms enum](../../../standard/design-guidelines/names-of-classes-structs-and-interfaces.md#naming-enumerations)
 - [switch, instruction](../keywords/switch.md)

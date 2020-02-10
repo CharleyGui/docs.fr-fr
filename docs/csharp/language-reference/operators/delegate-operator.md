@@ -1,5 +1,5 @@
 ---
-title: opérateur délégué - Référence C#
+title: opérateur delegate - Référence C#
 ms.date: 07/18/2019
 helpviewer_keywords:
 - delegate [C#]
@@ -11,7 +11,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 10/29/2019
 ms.locfileid: "73039044"
 ---
-# <a name="delegate-operator-c-reference"></a>opérateur délégué (Référence C#)
+# <a name="delegate-operator-c-reference"></a>opérateur delegate (Référence C#)
 
 L’opérateur `delegate` crée une méthode anonyme qui peut être convertie en un type délégué :
 

@@ -1,22 +1,22 @@
 ---
-title: WMI Provider
+title: Fournisseur WMI
 ms.date: 03/30/2017
 ms.assetid: 462f0db3-f4a4-4a4b-ac26-41fc25c670a4
-ms.openlocfilehash: 4db8873397b0136de88d00ebe62c429aee260911
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a170a20212791d789af589c1ff99dcd1abad1c9e
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715005"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094772"
 ---
-# <a name="wmi-provider"></a>WMI Provider
+# <a name="wmi-provider"></a>Fournisseur WMI
 Cet exemple montre comment collecter des données à partir de services Windows Communication Foundation (WCF) au moment de l’exécution à l’aide du fournisseur Windows Management Instrumentation (WMI) intégré à WCF. Cet exemple montre également comment ajouter un objet WMI défini par l'utilisateur à un service. L’exemple active le fournisseur WMI pour la [prise en main](../../../../docs/framework/wcf/samples/getting-started-sample.md) et montre comment collecter des données à partir du service `ICalculator` au moment de l’exécution.  
   
  WMI est l'implémentation de Microsoft de la norme WBEM (Web-Based Enterprise Management). Pour plus d’informations sur le kit de développement logiciel (SDK) WMI, consultez [Windows Management Instrumentation](/windows/desktop/WmiSdk/wmi-start-page). WBEM est une norme d'industrie qui détermine comment les applications exposent l'instrumentation de gestion aux outils de gestion externes.  
   
  WCF implémente un fournisseur WMI, un composant qui expose l’instrumentation au moment de l’exécution par le biais d’une interface compatible WBEM. Les outils de gestion peuvent se connecter aux services au moment de l'exécution par l'intermédiaire de l'interface. WCF expose des attributs de services tels que les adresses, les liaisons, les comportements et les écouteurs.  
   
- Le fournisseur WMI intégré est activé dans le fichier de configuration de l'application. Cette opération s’effectue via l’attribut `wmiProviderEnabled` de l' [\<Diagnostics](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) dans la section [\<system. ServiceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , comme illustré dans l’exemple de configuration suivant :  
+ Le fournisseur WMI intégré est activé dans le fichier de configuration de l'application. Cette opération s’effectue via l’attribut `wmiProviderEnabled` de l' [>\<Diagnostics](../../../../docs/framework/configure-apps/file-schema/wcf/diagnostics.md) dans la section [\<system. ServiceModel >](../../../../docs/framework/configure-apps/file-schema/wcf/system-servicemodel.md) , comme illustré dans l’exemple de configuration suivant :  
   
 ```xml  
 <system.serviceModel>  
@@ -32,7 +32,8 @@ Cet exemple montre comment collecter des données à partir de services Windows 
  L'ajout d'objets WMI à un service permet de révéler des informations définies par l'utilisateur en même temps que les informations du fournisseur WMI intégré. Cela s'effectue en publiant le schéma du service dans WMI en utilisant l'application Installutil.exe. Des instructions plus détaillées sont disponibles dans les instructions d'installation à la fin de cette rubrique.  
   
 ## <a name="accessing-wmi-information"></a>Accès aux informations WMI  
- Les données WMI sont accessibles de plusieurs façons différentes. Microsoft fournit des API WMI pour les scripts, les C++ applications Visual Basic, les applications et les .NET Framework (https://docs.microsoft.com/windows/desktop/wmisdk/using-wmi).  
+
+Les données WMI sont accessibles de plusieurs façons différentes. Microsoft fournit des API WMI pour les scripts, les C++ applications Visual Basic, les applications et les .NET Framework. Pour plus d’informations, consultez [utilisation de WMI](/windows/desktop/wmisdk/using-wmi).
   
  Cet exemple utilise deux scripts Java : un pour énumérer des services qui s'exécutent sur l'ordinateur avec certaines de leurs propriétés et le second pour consulter les données WMI définies par l'utilisateur. Le script ouvre une connexion au fournisseur WMI, analyse les données et affiche les données rassemblées.  
   
@@ -145,4 +146,4 @@ cscript EnumerateCustomObjects.js
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de surveillance AppFabric](https://go.microsoft.com/fwlink/?LinkId=193959)
+- [Exemples de surveillance AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383407(v=azure.10))

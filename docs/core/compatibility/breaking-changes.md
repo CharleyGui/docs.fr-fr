@@ -1,13 +1,13 @@
 ---
-title: Modifications avec rupture .NET Core
+title: Changements cassants
 description: En savoir plus sur les modifications avec rupture dans chaque version de .NET Core.
 ms.date: 11/27/2019
-ms.openlocfilehash: c03054972a5e1cd427e069c65fa8e8b601af5894
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 664d83f5bfa455764de8823c4bbdb4a2018e1875
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937344"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093069"
 ---
 # <a name="breaking-change-selectors"></a>Sélecteurs de modification avec rupture
 

@@ -1,14 +1,14 @@
 ---
-title: Créer une application de tableau de matchs avec Infer.NET et la programmation probabiliste
-description: Découvrez comment utiliser la programmation probabiliste avec Infer.NET pour créer une application de tableau de matchs basée sur une version simplifiée de TrueSkill.
-ms.date: 05/06/2019
+title: Application Infer.NET match-up App-programmation probabiliste
+description: Découvrez comment utiliser la programmation probabiliste avec Infer.NET pour créer une application de liste de correspondance de jeu basée sur une version simplifiée de TrueSkill.
+ms.date: 01/30/2020
 ms.custom: mvc,how-to
-ms.openlocfilehash: 69515c7b3518c35bf84335c453408b1466f93f34
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 8e489d61c5e6cca53ba12b13fddd0b73c7f85ef9
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72774545"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092601"
 ---
 # <a name="create-a-game-match-up-list-app-with-infernet-and-probabilistic-programming"></a>Créer une application de tableau de matchs avec Infer.NET et la programmation probabiliste
 
@@ -18,13 +18,13 @@ Ce guide pratique porte sur la programmation probabiliste avec Infer.NET. La pro
 
 La programmation probabiliste permet de créer des modèles statistiques de processus réels.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - Configuration d’un environnement de développement local
 
   Ce guide pratique suppose de disposer d’un ordinateur utilisable pour le développement. Le didacticiel .NET [Hello World en 10 minutes](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) contient des instructions pour la configuration de votre environnement de développement local sur MacOS, Windows ou Linux.
 
-## <a name="create-your-app"></a>Créer une application
+## <a name="create-your-app"></a>Créer votre application
 
 1. Ouvrez une invite de commandes et exécutez les commandes suivantes :
 
@@ -51,7 +51,7 @@ Listons les compétences déduites des joueurs, ainsi que leur écart, qui mesur
 
 *Exemples de données de résultats des matchs*
 
-Partie |Gagnant | Perdant
+Game |Gagnant | Perdant
 ---------|----------|---------
  1 | Joueur 0 | Joueur 1
  2 | Joueur 0 | Joueur 3
@@ -126,7 +126,7 @@ namespace myApp
 }
 ```
 
-## <a name="run-your-app"></a>Exécuter votre application
+## <a name="run-your-app"></a>Exécutez l'application.
 
 Dans votre invite de commandes, exécutez la commande suivante :
 

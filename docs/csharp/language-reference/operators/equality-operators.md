@@ -15,12 +15,12 @@ helpviewer_keywords:
 - inequality operator [C#]
 - not equals operator [C#]
 - '!= operator [C#]'
-ms.openlocfilehash: 6771edcca8159b0805018c16167b25c287d3152c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 14bb8227a4a6c8beff6ab04c58d8e1a43db69856
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743743"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093134"
 ---
 # <a name="equality-operators-c-reference"></a>Opérateurs d’égalité (référence C#)
 
@@ -75,7 +75,7 @@ Les délégués qui sont produits à partir de l’évaluation d’[expressions 
 
 ## <a name="inequality-operator-"></a>Opérateur d’inégalité !=
 
-L’opérateur d’inégalité `!=` retourne `true` si ses opérandes ne sont pas égaux, `false` dans le cas contraire. Pour les opérandes des [types intégrés](../keywords/built-in-types-table.md), l’expression `x != y` produit le même résultat que l’expression `!(x == y)`. Pour plus d’informations sur l’égalité des types, consultez la section [Opérateur d’égalité](#equality-operator-).
+L’opérateur d’inégalité `!=` retourne `true` si ses opérandes ne sont pas égaux, `false` dans le cas contraire. Pour les opérandes des [types intégrés](../builtin-types/built-in-types.md), l’expression `x != y` produit le même résultat que l’expression `!(x == y)`. Pour plus d’informations sur l’égalité des types, consultez la section [Opérateur d’égalité](#equality-operator-).
 
 L’exemple suivant illustre l’utilisation de l’opérateur `!=` :
 

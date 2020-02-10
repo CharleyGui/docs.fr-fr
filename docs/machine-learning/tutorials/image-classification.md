@@ -1,15 +1,15 @@
 ---
-title: 'Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé'
+title: 'Didacticiel : modèle de classification d’image ML.NET à partir de TensorFlow'
 description: Découvrez comment transférer les connaissances d’un modèle TensorFlow existant dans un nouveau modèle de classification d’image ML.NET. Le modèle TensorFlow a été formé pour classifier les images en milliers de catégories. Le modèle ML.NET utilise l’apprentissage de transfert pour classer les images en moins de catégories plus larges.
-ms.date: 11/15/2019
+ms.date: 01/30/2020
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: 5fe47c42d0cf24ebfdc33a937e1afbd11a976680
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: f5ec31f8bfdc089d275588b228c8ce6f28a44201
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738953"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77092549"
 ---
 # <a name="tutorial-generate-an-mlnet-image-classification-model-from-a-pre-trained-tensorflow-model"></a>Didacticiel : générer un modèle de classification d’images ML.NET à partir d’un modèle TensorFlow pré-formé
 
@@ -19,7 +19,7 @@ Le modèle TensorFlow a été formé pour classifier les images en milliers de c
 
 Pour entraîner un modèle de [Classification d’images](https://en.wikipedia.org/wiki/Outline_of_object_recognition) à partir de zéro, il faut définir des millions de paramètres, disposer d’une multitude de données d’apprentissage étiquetées et posséder une grande quantité de ressources de calcul (des centaines d’heures GPU). S’il n’est pas aussi efficace que l’apprentissage d’un modèle personnalisé à partir de zéro, l’apprentissage par transfert permet de raccourcir ce processus : il s’agit de travailler avec des milliers (et non des millions) d’images étiquetées et de créer assez vite un modèle personnalisé (en une heure sur un ordinateur sans GPU). Ce didacticiel met à l’échelle ce processus plus en détail, en utilisant seulement une douzaine d’images de formation.
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
 > * Comprendre le problème
@@ -35,7 +35,7 @@ Le transfert d’apprentissage est le processus qui consiste à utiliser les con
 
 Pour ce didacticiel, vous utilisez une partie d’un modèle TensorFlow, formé pour classifier les images en mille catégories, dans un modèle ML.NET qui classe les images en trois catégories.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2017) avec la charge de travail « développement multiplateforme .net Core » installée.
 * [Le fichier .zip du répertoire de ressources du tutoriel](https://github.com/dotnet/samples/blob/master/machine-learning/tutorials/TransferLearningTF/image-classifier-assets.zip)
@@ -43,7 +43,7 @@ Pour ce didacticiel, vous utilisez une partie d’un modèle TensorFlow, formé 
 
 ## <a name="select-the-right-machine-learning-task"></a>Sélectionner la tâche de Machine Learning appropriée
 
-### <a name="deep-learning"></a>Deep Learning
+### <a name="deep-learning"></a>Apprentissage approfondi
 
 Le [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) est un sous-ensemble du Machine Learning, qui révolutionne des domaines comme la Vision par ordinateur et la Reconnaissance vocale.
 
@@ -74,7 +74,7 @@ Le `Inception model` est formé pour classer les images en milliers de catégori
 
 * Aliment
 * Jouet
-* Appareil
+* Appliance
 
 Ce didacticiel utilise le modèle d’apprentissage profond du [modèle](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip) TensorFlow, un modèle de reconnaissance d’image populaire formé sur le jeu de données `ImageNet`. Le modèle TensorFlow classifie les images entières en mille classes, telles que « parapluie », « Jersey » et « lave-vaisselle ».
 
@@ -112,9 +112,9 @@ toaster2.png    appliance
 Les images d’apprentissage et de test se trouvent dans les dossiers de ressources que vous allez télécharger dans un fichier zip. Elles appartiennent à Wikimedia Commons.
 > *[Wikimedia Commons](https://commons.wikimedia.org/w/index.php?title=Main_Page&oldid=313158208), le dépôt de fichiers multimédias sous licence libre.* Extrait le 10:48, le 17 octobre 2018 de : https://commons.wikimedia.org/wiki/Pizza https://commons.wikimedia.org/wiki/Toaster https://commons.wikimedia.org/wiki/Teddy_bear
 
-## <a name="setup"></a>Programme d'installation
+## <a name="setup"></a>Programme d’installation
 
-### <a name="create-a-project"></a>Créer un projet
+### <a name="create-a-project"></a>Création d’un projet
 
 1. Créer une **application console .NET Core** appelée « TransferLearningTF ».
 
@@ -135,7 +135,7 @@ Les images d’apprentissage et de test se trouvent dans les dossiers de ressour
 
 1. Téléchargez le [modèle Inception](https://storage.googleapis.com/download.tensorflow.org/models/inception5h.zip) et décompressez-le.
 
-1. Copiez le contenu décompressé du répertoire `inception5h` dans le répertoire `assets/inception` de votre projet *TransferLearningTF*. Ce répertoire contient le modèle et les fichiers d’aide supplémentaires nécessaires à ce tutoriel, comme le montre l’image suivante :
+1. Copiez le contenu décompressé du répertoire `inception5h` dans le répertoire *de votre projet*TransferLearningTF`assets/inception`. Ce répertoire contient le modèle et les fichiers d’aide supplémentaires nécessaires à ce tutoriel, comme le montre l’image suivante :
 
    ![Contenu du répertoire Inception](./media/image-classification/inception-files.png)
 
@@ -340,7 +340,7 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
 
     [!code-csharp[SaveModel](../../../samples/machine-learning/tutorials/TransferLearningTF/Program.cs#ReturnModel)]
 
-## <a name="run-the-application"></a>Exécutez l’application !
+## <a name="run-the-application"></a>Exécutez l’application !
 
 1. Ajoutez l’appel à `GenerateModel` dans la méthode `Main` après la création de la classe MLContext :
 
@@ -364,11 +364,11 @@ Un pipeline de modèle ML.NET est une chaîne d’estimateurs. Notez qu’aucune
     Image: toaster3.jpg predicted as: appliance with score: 0.9646884
     ```
 
-Félicitations ! Vous avez maintenant correctement créé un modèle de Machine Learning pour la classification d’images en appliquant l’apprentissage de transfert à un modèle de `TensorFlow` dans ML.NET.
+Félicitations ! Vous avez maintenant correctement créé un modèle de Machine Learning pour la classification d’images en appliquant l’apprentissage de transfert à un modèle de `TensorFlow` dans ML.NET.
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/TransferLearningTF).
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > * Comprendre le problème

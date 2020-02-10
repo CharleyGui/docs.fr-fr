@@ -1,13 +1,13 @@
 ---
-title: Modifications avec rupture de chiffrement-.NET Core
+title: Modifications avec rupture de chiffrement
 description: Répertorie les modifications avec rupture de chiffrement dans .NET Core.
 ms.date: 09/20/2019
-ms.openlocfilehash: 4b13985a12ee0530edd3a0960923aafef1696d90
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: fcef4b65245a5dd9219cbdbb548ca575a823a949
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116468"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093030"
 ---
 # <a name="cryptography-breaking-changes"></a>Modifications avec rupture de chiffrement
 

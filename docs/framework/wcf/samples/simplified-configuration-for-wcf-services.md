@@ -2,12 +2,12 @@
 title: Configuration simplifiée pour WCF Services
 ms.date: 03/30/2017
 ms.assetid: 1e39ec25-18a3-4fdc-b6a3-9dfafbd60112
-ms.openlocfilehash: a1188ad9ed56ebb24754785546b6a5b54cd2b840
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: d303d298ca45504968b4b37bd2835381b7e2eee5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74715429"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77094902"
 ---
 # <a name="simplified-configuration-for-wcf-services"></a>Configuration simplifiée pour WCF Services
 Cet exemple montre comment implémenter et configurer un service et un client standard à l’aide de Windows Communication Foundation (WCF). Cet exemple constitue la base de tous les autres exemples de technologie de base.  
@@ -80,5 +80,5 @@ Cet exemple montre comment implémenter et configurer un service et un client st
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemples de gestion de AppFabric](https://go.microsoft.com/fwlink/?LinkId=193960)
+- [Exemples de gestion de AppFabric](https://docs.microsoft.com/previous-versions/appfabric/ff383405(v=azure.10))
 - [Configuration simplifiée](../../../../docs/framework/wcf/simplified-configuration.md)

@@ -1,13 +1,13 @@
 ---
-title: Catégories de changements cassants - .NET Core
+title: Catégories de changements cassants
 description: Découvrez comment les changements cassants sont catégorisés dans .NET Core.
 ms.date: 06/10/2019
-ms.openlocfilehash: 32cf55dc3ba0b16bae8cfe6179211150b2c90e2c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b273ebbb82da803cde66ea34760aa1779c6c1ca5
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75343599"
+ms.lasthandoff: 02/09/2020
+ms.locfileid: "77093043"
 ---
 # <a name="breaking-change-categories"></a>Catégories de changements cassants
 
