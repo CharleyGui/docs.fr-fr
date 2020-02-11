@@ -1,5 +1,5 @@
 ---
-title: opérateur par défaut - référence C#
+title: opérateur default - référence C#
 description: Utiliser l’opérateur par défaut pour produire la valeur par défaut d’un type
 ms.date: 08/01/2019
 helpviewer_keywords:
@@ -11,7 +11,7 @@ ms.contentlocale: fr-FR
 ms.lasthandoff: 01/15/2020
 ms.locfileid: "75964617"
 ---
-# <a name="default-operator-c-reference"></a>opérateur par défaut (référence C#)
+# <a name="default-operator-c-reference"></a>opérateur default (référence C#)
 
 L’opérateur `default` produit la [valeur par défaut](../builtin-types/default-values.md) d’un type. L’argument de l’opérateur `default` doit avoir le nom d’un type ou d’un paramètre de type.
 
