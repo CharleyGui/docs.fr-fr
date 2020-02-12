@@ -1,17 +1,15 @@
 ---
 title: Frameworks cibles dans des projets de type SDK-.NET
 description: Découvrez les frameworks cibles pour les applications et bibliothèques .NET Core.
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
 ms.technology: dotnet-standard
-ms.openlocfilehash: 957671644ae333180b0c1ba4aae6d6e17ae6478b
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 33beb5606cbf857cc41b739f256482b0298f1fb1
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838211"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124596"
 ---
 # <a name="target-frameworks-in-sdk-style-projects"></a>Frameworks cibles dans les projets de style SDK
 
@@ -29,11 +27,11 @@ Pour les frameworks cibles basés sur le package (par exemple, .NET Standard et 
 
 Le tableau ci-dessous définit les frameworks cibles les plus courants, la façon dont ils sont référencés et la version de [.NET Standard](net-standard.md) qu’ils implémentent. Ces versions de framework cible sont les dernières versions stables. Les préversions ne sont pas mentionnées. Un moniker du framework cible est un format de jeton standardisé pour la spécification du framework cible d’une bibliothèque ou d’une application .NET.
 
-| Framework cible      | Dernière <br/> Version stable | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
+| Framework cible      | Latest <br/> Version stable | Moniker du Framework cible | Implémenté <br/> Version .NET Standard |
 | :-------------------: | :-------------------------: | :----------------------------: | :-------------------------------------: |
-| .NET Standard         | 2.1                         | netstandard 2.1                 | Non applicable                                     |
+| .NET Standard         | 2.1                         | netstandard 2.1                 | N/A                                     |
 | .NET Core             | 3.1                         | netcoreapp 3.1                  | 2.1                                     |
-| .NET Framework        | 4.8                         | net48                          | 2.0                                     |
+| .NET Framework        | 4.8                         | net48                          | 2                                     |
 
 ## <a name="supported-target-framework-versions"></a>Versions de framework cible prises en charge
 
@@ -118,7 +116,7 @@ La liste complète des symboles de préprocesseur pour les frameworks cibles de 
 
 Les frameworks cibles suivants sont dépréciés. Les packages ciblant ces frameworks cibles doivent migrer vers les versions de remplacement indiquées.
 
-| TFM déprécié                                                                             | Replacement |
+| TFM déprécié                                                                             | Remplacement |
 | ------------------------------------------------------------------------------------------ | ----------- |
 | aspnet50<br>aspnetcore50<br>dnxcore50<br>dnx<br>dnx45<br>dnx451<br>dnx452                  | netcoreapp  |
 | dotnet<br>dotnet50<br>dotnet51<br>dotnet52<br>dotnet53<br>dotnet54<br>dotnet55<br>dotnet56 | netstandard |

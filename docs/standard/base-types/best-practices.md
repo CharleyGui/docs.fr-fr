@@ -10,12 +10,12 @@ helpviewer_keywords:
 - .NET Framework regular expressions, best practices
 - regular expressions, best practices
 ms.assetid: 618e5afb-3a97-440d-831a-70e4c526a51c
-ms.openlocfilehash: cb1764d1a6f363f3011268eae5fbcb2c76d9cc89
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 9b09f5a2505888c6154a58a3512c94c51f89295b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937997"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124420"
 ---
 # <a name="best-practices-for-regular-expressions-in-net"></a>Meilleures pratiques pour les expressions régulières dans .NET
 
@@ -102,7 +102,7 @@ Par défaut, les 15 derniers modèles d’expressions régulières statiques ut
 
 L'expression régulière `\p{Sc}+\s*\d+` utilisée dans cet exemple vérifie que la chaîne d'entrée se compose d'un symbole monétaire et d'au moins un chiffre décimal. Le modèle est défini comme indiqué dans le tableau suivant.
 
-|Motif|Description|
+|Modèle|Description|
 |-------------|-----------------|
 |`\p{Sc}+`|Mettre en correspondance un ou plusieurs caractères dans la catégorie Unicode symbole, devise.|
 |`\s*`|Correspond à zéro, un ou plusieurs espaces blancs.|
@@ -123,7 +123,7 @@ L’exemple suivant compare les performances des expressions régulières compil
 
 Le modèle d'expression régulière utilisé dans l'exemple, `\b(\w+((\r?\n)|,?\s))*\w+[.?:;!]`, est défini comme indiqué dans le tableau suivant.
 
-|Motif|Description|
+|Modèle|Description|
 |-------------|-----------------|
 |`\b`|Commencer la correspondance à la limite d'un mot.|
 |`\w+`|Mettre en correspondance un ou plusieurs caractères alphabétiques.|
@@ -167,7 +167,7 @@ La prise en charge de la rétroaction confère aux expressions régulières leur
 
 Les performances des applications sont souvent altérées par l'utilisation de la rétroaction, même si ce processus n'est pas essentiel pour une correspondance. Par exemple, l'expression régulière `\b\p{Lu}\w*\b` établit une correspondance entre tous les mots qui commencent par une majuscule, comme indiqué dans le tableau suivant.
 
-|Motif|Description|
+|Modèle|Description|
 |-|-|
 |`\b`|Commencer la correspondance à la limite d'un mot.|
 |`\p{Lu}`|Mettre en correspondance une majuscule.|
@@ -176,7 +176,7 @@ Les performances des applications sont souvent altérées par l'utilisation de l
 
 Étant donné qu'une limite de mot est différente d'un caractère alphabétique et qu'elle n'est pas un sous-ensemble de ce dernier, il est impossible que le moteur des expressions régulières franchisse une limite de mot lors de la mise en correspondance de caractères alphabétiques. Cela signifie que, pour cette expression régulière, une rétroaction ne peut jamais contribuer à la réussite globale d'une correspondance. Elle risque en revanche de diminuer les performances, étant donné que le moteur des expressions régulières doit impérativement enregistrer sont état pour chaque correspondance préliminaire d'un caractère alphabétique trouvée.
 
-Si vous concluez que le retour arrière n'est pas nécessaire, vous pouvez le désactiver à l'aide de l'élément de langage `(?>subexpression)`. L'exemple suivant analyse une chaîne d'entrée à l'aide de deux expressions régulières. La première, `\b\p{Lu}\w*\b`, utilise la rétroaction. La seconde, `\b\p{Lu}(?>\w*)\b`, désactive la rétroaction. Comme l'indique la sortie de l'exemple, les résultats obtenus sont identiques.
+Si vous déterminez que la rétroaction n’est pas nécessaire, vous pouvez la désactiver à l’aide de l’élément de langage `(?>subexpression)`, appelé groupe atomique. L'exemple suivant analyse une chaîne d'entrée à l'aide de deux expressions régulières. La première, `\b\p{Lu}\w*\b`, utilise la rétroaction. La seconde, `\b\p{Lu}(?>\w*)\b`, désactive la rétroaction. Comme l'indique la sortie de l'exemple, les résultats obtenus sont identiques.
 
 [!code-csharp[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/cs/backtrack2.cs#10)]
 [!code-vb[Conceptual.RegularExpressions.BestPractices#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.bestpractices/vb/backtrack2.vb#10)]
@@ -190,7 +190,7 @@ Par exemple, le modèle d'expression régulière `^[0-9A-Z]([-.\w]*[0-9A-Z])*\$$
 
 Dans ces cas, vous pouvez optimiser les performances des expressions régulières en supprimant les quantificateurs imbriqués et en remplaçant la sous-expression externe par une assertion de préanalyse ou de postanalyse de largeur nulle. Les assertions de préanalyse et de postanalyse sont des points d'ancrage. Elles ne déplacent pas le pointeur dans la chaîne d'entrée, mais elles vérifient en amont et en aval si une condition spécifiée est remplie. Par exemple, l'expression régulière de numéro de référence peut être réécrite sous la forme `^[0-9A-Z][-.\w]*(?<=[0-9A-Z])\$$`. Ce modèle d'expression régulière est défini comme indiqué dans le tableau suivant.
 
-|Motif|Description|
+|Modèle|Description|
 |-------------|-----------------|
 |`^`|Commencer la correspondance au début de la chaîne d'entrée.|
 |`[0-9A-Z]`|Mettre en correspondance un caractère alphanumérique. Le numéro de référence doit au minimum comporter ce caractère.|
@@ -206,7 +206,7 @@ L'exemple suivant illustre l'utilisation de cette expression régulière pour fa
 
 Le langage d’expression régulière dans .NET comprend les éléments de langage suivants, que vous pouvez utiliser pour éliminer les quantificateurs imbriqués. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-|élément Language|Description|
+|Élément du langage|Description|
 |----------------------|-----------------|
 |`(?=` `subexpression` `)`|Préanalyse positive de largeur nulle. Effectuer une préanalyse de la position actuelle pour déterminer si `subexpression` correspond à la chaîne d'entrée.|
 |`(?!` `subexpression` `)`|Préanalyse négative de largeur nulle. Effectuer une préanalyse de la position actuelle pour déterminer si `subexpression` ne correspond pas à la chaîne d'entrée.|
@@ -240,7 +240,7 @@ Toutefois, l'utilisation de ces éléments de langage n'est pas sans effet. Ils 
 
 Souvent, les constructions de regroupement sont utilisées dans une expression régulière uniquement pour que les quantificateurs puissent leur être appliqués. Les groupes capturés par ces sous-expressions ne sont alors pas utilisés par la suite. Par exemple, l'expression régulière `\b(\w+[;,]?\s?)+[.?!]` est conçue pour capturer une phrase entière. Le tableau suivant décrit les éléments de langage dans ce modèle d'expression régulière et leur effet sur les <xref:System.Text.RegularExpressions.Match> des objets <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> et les collections <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>.
 
-|Motif|Description|
+|Modèle|Description|
 |-------------|-----------------|
 |`\b`|Commencer la correspondance à la limite d'un mot.|
 |`\w+`|Mettre en correspondance un ou plusieurs caractères alphabétiques.|
@@ -271,7 +271,7 @@ Vous pouvez désactiver les captures de l'une des façons suivantes :
 
 ## <a name="related-topics"></a>Rubriques connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Comportement détaillé des expressions régulières](../../../docs/standard/base-types/details-of-regular-expression-behavior.md)|Aborde l’implémentation du moteur d’expression régulière dans .NET. Cette rubrique traite de la flexibilité des expressions régulières. Elle explique la responsabilité du développeur pour que le fonctionnement efficace et fiable du moteur des expressions régulières soit garanti.|
 |[Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Aborde la rétroaction et la façon dont elle affecte les performances des expressions régulières, ainsi que les éléments de langage, qui offrent des alternatives à la rétroaction.|

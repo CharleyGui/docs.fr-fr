@@ -9,12 +9,12 @@ helpviewer_keywords:
 - loading non-resource files
 - application management [WPF]
 ms.assetid: 43adb517-21a7-4df3-98e8-09e9cdf764c4
-ms.openlocfilehash: 0fec72bdedbcc2c84d8bc65e72391366e42d82be
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: a98c97a4aa95fb956a2ca6d417e009a281a938b6
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76739157"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124479"
 ---
 # <a name="pack-uris-in-wpf"></a>URI à en-tête pack dans WPF
 
@@ -44,7 +44,7 @@ Pour fournir un mécanisme cohérent pour identifier et charger ces types de fic
 
 ## <a name="the-pack-uri-scheme"></a>Schéma URI à en-tête pack
 
-Le schéma d’URI à en-tête pack est utilisé par la spécification [Open Packaging Conventions](https://go.microsoft.com/fwlink/?LinkID=71255) (OPC), qui décrit un modèle d’organisation et d’identification du contenu. Les éléments clés de ce modèle sont des packages et des parties, où un *package* est un conteneur logique pour une ou plusieurs *parties*logiques. La figure suivante illustre ce concept.
+Le schéma d’URI à en-tête pack est utilisé par la spécification [Open Packaging Conventions](https://www.ecma-international.org/publications/standards/Ecma-376.htm) (OPC), qui décrit un modèle d’organisation et d’identification du contenu. Les éléments clés de ce modèle sont des packages et des parties, où un *package* est un conteneur logique pour une ou plusieurs *parties*logiques. La figure suivante illustre ce concept.
 
 ![Diagramme Package et pièces](./media/pack-uris-in-wpf/wpf-package-parts-diagram.png)
 
@@ -334,7 +334,7 @@ Tableau 2 : URI à en-tête pack relatifs dans le balisage
 
 ### <a name="using-pack-uris-in-code"></a>Utilisation d’URI à en-tête pack dans le code
 
-Vous spécifiez un URI à en-tête pack dans le code en instanciant la classe <xref:System.Uri> et en passant l’URI à en-tête pack en tant que paramètre au constructeur. Cela est illustré par l'exemple suivant.
+Vous spécifiez un URI à en-tête pack dans le code en instanciant la classe <xref:System.Uri> et en passant l’URI à en-tête pack en tant que paramètre au constructeur. Cette opération est illustrée dans l’exemple suivant.
 
 ```csharp
 Uri uri = new Uri("pack://application:,,,/File.xaml");
@@ -433,7 +433,7 @@ L’exemple suivant montre comment utiliser un URI pour spécifier l’icône d�
 
 [!code-xaml[WindowIconSnippets#WindowIconSetXAML](~/samples/snippets/xaml/VS_Snippets_Wpf/WindowIconSnippets/XAML/MainWindow.xaml#windowiconsetxaml)]
 
-Pour plus d'informations, consultez <xref:System.Windows.Window.Icon%2A>.
+Pour plus d’informations, consultez <xref:System.Windows.Window.Icon%2A>.
 
 <a name="Loading_Image__Audio__and_Video_Files"></a>
 

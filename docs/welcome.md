@@ -1,16 +1,14 @@
 ---
 title: Bienvenue dans .NET
 description: Bien démarrer avec la famille de technologies .NET.
-author: mairaw
-ms.author: mairaw
 ms.date: 12/03/2019
 ms.custom: updateeachrelease
-ms.openlocfilehash: 15daaafed02ab1132a3c82c12efa6fad0e0a6db2
-ms.sourcegitcommit: a4f9b754059f0210e29ae0578363a27b9ba84b64
+ms.openlocfilehash: 20332f4dcc0664287873a27e0064a4765b1ecde7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/05/2019
-ms.locfileid: "74838128"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124219"
 ---
 # <a name="welcome-to-net"></a>Bienvenue dans .NET
 
@@ -18,7 +16,7 @@ Consultez [Bien démarrer avec .NET Core](core/get-started.md) pour apprendre à
 
 Créez de nombreux types d’applications avec .NET, notamment des applications cloud et IoT ainsi que des jeux en utilisant des outils multiplateformes gratuits. Vos applications peuvent s’exécuter sur Android, iOS, Linux, Mac OS et Windows. Déployez vos applications sur des serveurs ou des postes de travail et publiez-les sur des magasins d’applications afin de les déployer sur des appareils mobiles. .NET est accessible aux étudiants et aux amateurs qui souhaitent rejoindre une communauté de développeurs internationaux enthousiastes et désireux d’apporter leur contribution aux nombreuses technologies .NET.
 
-## <a name="news"></a>Informations
+## <a name="news"></a>Actualités
 
 Pour plus d’informations sur .NET, consultez les blogs suivants :
 
@@ -48,7 +46,7 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 - [Guide .NET Core](core/index.md)
 - [Guide du .NET Framework](framework/index.md)
 - [Guide C#](csharp/index.yml)
-- [Guide F#](fsharp/index.yml)
+- [F# Guide](fsharp/index.yml)
 - [Guide Visual Basic](visual-basic/index.yml)
 - [Guide ML.NET](machine-learning/index.yml)
 - [.NET pour Apache Spark](spark/index.yml)
@@ -56,19 +54,19 @@ Cette documentation couvre les plateformes et les langages compatibles avec .NET
 
 Vous pouvez également parcourir les [informations de référence sur l’API .NET](/dotnet/api).
 
-## <a name="videos"></a>Vidéos
+## <a name="videos"></a>Videos
 
 Explorez des vidéos sur le Web, les appareils C#mobiles, les postes de travail, les machine learning, les conteneurs, l’ancrage, l’accès aux données, etc. :
 
 [Série de vidéos .NET 101](https://dotnet.microsoft.com/learn/videos)
 
-## <a name="open-source"></a>Ouvrir la source
+## <a name="open-source"></a>Open source
 
 Cette documentation est entièrement [open source](https://github.com/dotnet/docs). Vous pouvez y contribuer comme vous le souhaitez, du signalement de problèmes à la création de rubriques de documentation. Par ailleurs, .NET est en grande partie également open source. La liste suivante présente les principaux dépôts .NET GitHub :
 
 - [Page d’accueil de .NET Core](https://github.com/dotnet/core)
 - [Runtime .NET Core](https://github.com/dotnet/runtime)
-- [SDK .NET Core](https://github.com/dotnet/sdk)
+- [Kit de développement logiciel (SDK) .NET Core](https://github.com/dotnet/sdk)
 - [Plateforme de compilateur Roslyn (C# et Visual Basic) et outils IDE](https://github.com/dotnet/roslyn)
 - [Compilateur F# et outils IDE](https://github.com/dotnet/fsharp)
 - [Windows Forms](https://github.com/dotnet/winforms)

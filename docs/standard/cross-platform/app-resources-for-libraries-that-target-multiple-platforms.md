@@ -12,14 +12,12 @@ helpviewer_keywords:
 - resources, for multiple platforms
 - targeting multiple platforms, resources for
 ms.assetid: 72c76f0b-7255-4576-9261-3587f949669c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: b32c2e354ea48e25ddb0aa561eb576cbfd89e3fb
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 3bf475117a85c2fced260dcc9460d55cd7007277
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204742"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123660"
 ---
 # <a name="app-resources-for-libraries-that-target-multiple-platforms"></a>Ressources d'application pour les bibliothèques qui ciblent des plateformes multiples
 Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) .NET Framework pour vous assurer que les ressources de vos bibliothèques de classes sont accessibles à partir de plusieurs plateformes. Ce type de projet est disponible dans Visual Studio 2012 et cible le sous-ensemble portable de la bibliothèque de classes .NET Framework. L’utilisation d’une bibliothèque de classes portable garantit que votre bibliothèque est accessible à partir des applications de bureau, des applications Silverlight, des applications de Windows Phone et des applications du Windows 8. x Store.
@@ -61,11 +59,11 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
 |BornLength|12|
 |Embauché|Date d'embauche|
 |HiredLength|12|
-|ID|ID|
+|id|id|
 |ID.Length|12|
-|Nom|Nom|
+|Name|Name|
 |NameLength|25|
-|Titre|Base de données des employés|
+|Intitulé|Base de données des employés|
 
  Le code suivant définit une classe `UILibrary` qui utilise la Gestionnaire des ressources Wrapper nommée `resources` générée par Visual Studio lorsque le **modificateur d’accès** pour le fichier devient **public**. La classe UILibrary analyse les données de chaîne selon les besoins. . Notez que la classe est dans l'espace de noms `MyCompany.Employees`.
 
@@ -90,9 +88,9 @@ Vous pouvez utiliser le type de projet de [bibliothèque de classes Portable](..
 |BornLength|20|
 |Embauché|Date d'embauche|
 |HiredLength|16|
-|ID|ID|
-|Nom|Nom|
-|Titre|Base de données des employés|
+|id|id|
+|Name|Nom|
+|Intitulé|Base de données des employés|
 
  Le code suivant illustre de quelle manière la classe `UILibrary` et ses ressources sont accessibles à partir d'une application en mode console. Elle nécessite l’ajout d’une référence à UILibrary. dll au projet d’application console.
 

@@ -1,18 +1,16 @@
 ---
 title: .NET Standard
 description: Découvrez .NET Standard, ses versions et les implémentations de .NET qui le prennent en charge.
-author: mairaw
-ms.author: mairaw
 ms.date: 09/23/2019
 ms.technology: dotnet-standard
 ms.custom: updateeachrelease
 ms.assetid: c044882c-af15-45f2-96d1-534557a5ee9b
-ms.openlocfilehash: 6a4406775056b76dfa789911b8bb14e84dbc8eea
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 25490d5063a1f6c31b76af30ac6d37de6cb8c07f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738654"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124635"
 ---
 # <a name="net-standard"></a>.NET Standard
 
@@ -60,7 +58,7 @@ Il existe deux règles principales de contrôle de version :
 - Additive : les versions de .NET Standard sont des cercles logiquement concentriques : les versions plus élevées intègrent toutes les API des versions précédentes. Il n’y a pas de ruptures entre les versions.
 - Immuable : une fois livrées, les versions de .NET Standard sont figées. Les nouvelles API sont disponibles d’abord dans les implémentations de .NET spécifiques, comme .NET Core. Si le comité de révision de .NET Standard estime que les nouvelles API doivent être disponibles pour les implémentations de .NET, elles sont ajoutées dans une nouvelle version de .NET Standard.
 
-## <a name="specification"></a>Spécification
+## <a name="specification"></a>Caractéristique
 
 La spécification de .NET Standard est un ensemble d’API normalisé. La spécification est gérée par les entités chargées de l’implémentation de .NET, en particulier Microsoft (inclut .NET Framework, .NET Core et Mono) et Unity. Un processus de commentaires publics est utilisé dans le cadre de l’établissement des nouvelles versions de .NET Standard via [GitHub](https://github.com/dotnet/standard).
 
@@ -88,7 +86,7 @@ Les packages NuGet ciblent un ou plusieurs [frameworks](frameworks.md). Les pack
 
 Le métapackage [`NETStandard.Library`](https://www.nuget.org/packages/NETStandard.Library/) référence l’ensemble complet des packages NuGet qui définissent .NET Standard.  La méthode la plus courante pour cibler `netstandard` consiste à référencer ce métapackage. Il décrit et donne accès à la quarantaine de bibliothèques .NET et les API associées qui définissent .NET Standard. Vous pouvez référencer d’autres packages qui ciblent `netstandard` pour avoir accès à d’autres API.
 
-### <a name="versioning"></a>Gestion de version
+### <a name="versioning"></a>Contrôle de version
 
 La spécification n’est pas singulière, mais représente un ensemble d’API dont la croissance est incrémentielle et les versions linéaires. La première version de la norme établit un ensemble d’API de référence. Les versions ultérieures ajoutent des API et héritent des API définies par les versions précédentes. Il n’existe aucune disposition établie pour supprimer des API de la norme.
 

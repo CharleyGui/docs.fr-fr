@@ -7,26 +7,26 @@ dev_langs:
 helpviewer_keywords:
 - hosting WPF content in Win32 window [WPF]
 ms.assetid: 38ce284a-4303-46dd-b699-c9365b22a7dc
-ms.openlocfilehash: ff95b330ff67e916a4d27ef841e757998d847c8b
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 418c5a4708a7842e5e441235738b73a009c9c956
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76735310"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124544"
 ---
 # <a name="walkthrough-hosting-wpf-content-in-win32"></a>Procédure pas à pas : hébergement de contenu WPF dans Win32
 [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] propose un environnement de création d'applications élaboré. Toutefois, lorsque vous investissez dans du code Win32, il peut être plus efficace d’ajouter des fonctionnalités de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] à votre application que de réécrire votre code d’origine. [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] fournit un mécanisme simple pour héberger du contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans une fenêtre Win32.  
   
- Ce didacticiel explique comment écrire un exemple d’application, [hébergeant du contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004), qui héberge [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu dans une fenêtre Win32. Vous pouvez étendre cet exemple pour héberger n’importe quelle fenêtre Win32. Étant donné qu’il implique la combinaison de code managé et non managé, l’application C++est écrite en/cli.  
+ Ce didacticiel explique comment écrire un exemple d’application, [hébergeant du contenu WPF dans un exemple de fenêtre Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32HostingWPFPage), qui héberge [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] contenu dans une fenêtre Win32. Vous pouvez étendre cet exemple pour héberger n’importe quelle fenêtre Win32. Étant donné qu’il implique la combinaison de code managé et non managé, l’application C++est écrite en/cli.  
 
 <a name="requirements"></a>   
-## <a name="requirements"></a>Configuration requise  
+## <a name="requirements"></a>Spécifications  
  Ce didacticiel suppose une connaissance de base des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] et de la programmation Win32. Pour une présentation de base de la programmation de [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)], consultez [prise en main](../getting-started/index.md). Pour une introduction à la programmation Win32, vous devez référencer l’un des nombreux ouvrages sur le sujet, en particulier *Programming Windows* de Charles Petzold.  
   
  Étant donné que l’exemple qui accompagne ce didacticiel est implémenté C++en/CLI, ce didacticiel suppose que vous êtes familiarisé avec l' C++ utilisation de pour programmer l’API Windows, ainsi qu’une compréhension de la programmation de code managé. La connaissance de C++la fonction/CLI est utile, mais pas essentielle.  
   
 > [!NOTE]
-> Ce didacticiel comprend plusieurs exemples de code tirés de l'exemple associé. Cependant, pour une meilleure lecture, il n'inclut pas la totalité de l'exemple de code. Pour obtenir l’exemple de code complet, consultez [Hébergement de contenu WPF dans un exemple de fenêtre Win32](https://go.microsoft.com/fwlink/?LinkID=160004).  
+> Ce didacticiel comprend plusieurs exemples de code tirés de l'exemple associé. Cependant, pour une meilleure lecture, il n'inclut pas la totalité de l'exemple de code. Pour obtenir l’exemple de code complet, consultez [Hébergement de contenu WPF dans un exemple de fenêtre Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32HostingWPFPage).  
   
 <a name="basic_procedure"></a>   
 ## <a name="the-basic-procedure"></a>Procédure de base  

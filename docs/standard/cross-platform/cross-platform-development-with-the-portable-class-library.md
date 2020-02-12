@@ -7,44 +7,42 @@ helpviewer_keywords:
 - targeting multiple platforms
 - multiple platforms, targeting
 ms.assetid: c31e1663-c164-4e65-b66d-d3aa8750a154
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e5b6a32aa465700fb316bf2269c4d057ff823443
-ms.sourcegitcommit: 2701302a99cafbe0d86d53d540eb0fa7e9b46b36
+ms.openlocfilehash: dd5e5612de15a499c0dce34dc30faa6fd5731c17
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/28/2019
-ms.locfileid: "64590332"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124531"
 ---
-# <a name="cross-platform-development-with-the-portable-class-library"></a>Le développement multiplateforme avec la bibliothèque de classes Portable
+# <a name="cross-platform-development-with-the-portable-class-library"></a>Développement multiplateforme avec la bibliothèque de classes portables
 
-Le type de projet de bibliothèque de classes portables dans Visual Studio vous permet de construire rapidement et facilement des applications multiplateformes et bibliothèques pour les plateformes Microsoft.
+Le type de projet de bibliothèque de classes portables dans Visual Studio vous permet de créer rapidement et facilement des bibliothèques et des applications multiplateformes pour les plateformes Microsoft.
 
 [!INCLUDE[standard](../../../includes/pcl-to-standard.md)]
 
-Les bibliothèques de classes portables vous aident à réduire le temps et les coûts de développement et de test du code. Utilisez ce type de projet pour écrire et générer des assemblys .NET Framework portables et ensuite référencer ces assemblys à partir d’applications qui ciblent plusieurs plateformes telles que le .NET Framework, iOS ou Mac.
+Les bibliothèques de classes portables vous aident à réduire le temps et les coûts de développement et de test du code. Utilisez ce type de projet pour écrire et générer des assemblys de .NET Framework portable, puis référencez ces assemblys à partir d’applications qui ciblent plusieurs plateformes, telles que le .NET Framework, iOS ou Mac.
 
-Même après avoir créé un projet de bibliothèque de classes portables dans Visual Studio et commencé à le développer, vous pouvez modifier les plateformes cibles. Visual Studio compile votre bibliothèque avec les nouveaux assemblys, ce qui vous permet d’identifier les modifications que vous souhaitez apporter dans votre code.
+Même après avoir créé un projet de bibliothèque de classes portables dans Visual Studio et commencé à le développer, vous pouvez modifier les plateformes cibles. Visual Studio compile votre bibliothèque avec les nouveaux assemblys, ce qui vous permet d’identifier les modifications que vous devez apporter dans votre code.
 
-## <a name="create-a-portable-class-library-project"></a>Créer un projet de bibliothèque de classes Portable
+## <a name="create-a-portable-class-library-project"></a>Créer un projet de bibliothèque de classes portables
 
-Pour créer une bibliothèque de classes Portable, utilisez le modèle fourni dans Visual Studio. Créez un projet (**fichier** > **nouveau projet**), puis, dans le **nouveau projet** boîte de dialogue, sélectionnez votre langage de programmation (Visual c# ou Visual Basic). Ensuite, sélectionnez le **bibliothèque de classes (Portable héritée)** modèle. Entrez un nom pour votre projet et choisissez **OK**.
+Pour créer une bibliothèque de classes portables, utilisez le modèle fourni dans Visual Studio. Créez un projet (**fichier** > **nouveau projet**) et, dans la boîte de dialogue **nouveau projet** , sélectionnez votre langage de programmation ( C# visuel ou Visual Basic). Ensuite, sélectionnez le modèle **bibliothèque de classes (portable hérité)** . Entrez un nom pour votre projet, puis choisissez **OK**.
 
-Le **ajouter une bibliothèque de classes Portable** boîte de dialogue s’affiche. Choisissez deux ou plusieurs cibles, puis **OK**.
+La boîte de dialogue **Ajouter une bibliothèque de classes portables** s’affiche. Choisissez au moins deux cibles, puis choisissez **OK**.
 
-![Ajouter des cibles de bibliothèques de classes portables dans Visual Studio](media/add-portable-class-library.png)
+![Ajouter des cibles de bibliothèque de classes portables dans Visual Studio](media/add-portable-class-library.png)
 
-## <a name="change-targets"></a>Modifiez les cibles
+## <a name="change-targets"></a>Modifier les cibles
 
-Vous pouvez modifier les plateformes cibles d’un projet de bibliothèque de classes portable lors de sa création ou après avoir démarré le développement. Si vous souhaitez modifier les cibles après avoir créé votre projet, dans **l’Explorateur de solutions**, ouvrez le menu contextuel pour votre projet de bibliothèque de classes portables (pas la solution), puis choisissez **propriétés** . Dans la page de propriétés de projet, le **bibliothèque** onglet indique les plateformes que votre projet cible actuellement.
+Vous pouvez modifier les plateformes cibles d’un projet de bibliothèque de classes portable lorsque vous le créez ou après avoir démarré le développement. Si vous souhaitez modifier les cibles après avoir créé votre projet, dans **Explorateur de solutions**, ouvrez le menu contextuel de votre projet de bibliothèque de classes portable (pas la solution), puis choisissez **Propriétés**. Dans la page Propriétés du projet, l’onglet **bibliothèque** affiche les plateformes actuellement ciblées par votre projet.
 
-![Propriétés du projet bibliothèque de classes portables dans Visual Studio](media/pcl-project-properties.png)
+![Propriétés de projet pour la bibliothèque de classes portables dans Visual Studio](media/pcl-project-properties.png)
 
-Pour ajouter ou supprimer des cibles, choisissez le **modification** bouton, puis sélectionnez et désactivez les cases à cocher appropriées.
+Pour ajouter ou supprimer des cibles, cliquez sur le bouton **modifier** , puis activez et désactivez les cases à cocher appropriées.
 
 Quand vous modifiez les cibles, les API disponibles pour le développement de votre projet changent en conséquence. Visual Studio indique les erreurs et les avertissements éventuellement engendrés par la modification des cibles.
 
-Si vous souhaitez évaluer la portabilité de vos assemblys avant d’apporter des modifications dans Visual Studio, vous pouvez utiliser la [Analyseur de portabilité .NET](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b).
+Si vous souhaitez évaluer la portabilité de vos assemblys avant d’apporter des modifications dans Visual Studio, vous pouvez utiliser l' [Analyseur de portabilité .net](https://visualstudiogallery.msdn.microsoft.com/1177943e-cfb7-4822-a8a6-e56c7905292b).
 
 ## <a name="supported-types-and-members"></a>Types et membres pris en charge
 
@@ -64,7 +62,7 @@ Si un membre est pris en charge dans la bibliothèque de classes portables et po
 
 Pour rendre les assemblys de bibliothèque de classes portables compatibles sur toutes les plateformes prises en charge, certains membres ont été légèrement modifiés dans la bibliothèque de classes portables.
 
-## <a name="use-the-portable-class-library"></a>Utiliser la bibliothèque de classes Portable
+## <a name="use-the-portable-class-library"></a>Utiliser la bibliothèque de classes portables
 
 Après avoir créé votre projet de bibliothèque de classes portables, vous n'avez plus qu'à le référencer à partir d'autres projets. Vous pouvez référencer le projet ou des assemblys spécifiques qui contiennent les classes auxquelles vous souhaitez accéder.
 
@@ -72,17 +70,17 @@ Pour exécuter une application qui référence un assembly de bibliothèque de c
 
 ### <a name="deploy-a-universal-windows-app"></a>Déployer une application Windows universelle
 
-Lorsque vous créez une application Windows universelle qui fait référence à un assembly de bibliothèque de classes Portable, tout ce dont vous avez besoin pour déployer l’application est inclus dans le package d’application et aucune étape supplémentaire n’est requis.
+Lorsque vous créez une application Windows universelle qui fait référence à un assembly de bibliothèque de classes portable, tout ce dont vous avez besoin pour déployer l’application est inclus dans le package d’application et aucune autre étape n’est requise.
 
-### <a name="deploy-a-net-framework-app"></a>Déployer .NET Application Framework
+### <a name="deploy-a-net-framework-app"></a>Déployer une application .NET Framework
 
 Quand vous déployez une application .NET Framework qui référence un assembly de bibliothèque de classes portables, vous devez spécifier une dépendance sur la version appropriée du .NET Framework. En spécifiant cette dépendance, vous êtes assuré que la version requise est installée avec votre application.
 
-- Pour créer une dépendance avec un déploiement ClickOnce : Dans **l’Explorateur de solutions**, choisissez le nœud de projet pour le projet que vous souhaitez publier. (Il s'agit du projet qui référence le projet de bibliothèque de classes portables.) Dans la barre de menus, choisissez **projet** > **propriétés**, puis choisissez le **publier** onglet. Sur le **publier** page, choisissez **conditions préalables**. Sélectionnez la version requise du .NET Framework en tant que composant requis.
+- Pour créer une dépendance avec un déploiement ClickOnce : dans **Explorateur de solutions**, choisissez le nœud de projet pour le projet que vous souhaitez publier. (Il s’agit du projet qui référence le projet de bibliothèque de classes portables.) Dans la barre de menus, choisissez **projet** > **Propriétés**, puis choisissez l’onglet **publier** . Sur la page **publier** , choisissez **composants requis**. Sélectionnez la version requise du .NET Framework en tant que composant requis.
 
-- Pour créer une dépendance avec un projet d’installation : Dans **l’Explorateur de solutions**, choisissez le projet d’installation. Dans la barre de menus, choisissez **projet** > **propriétés** > **conditions préalables**. Sélectionnez la version requise du .NET Framework en tant que composant requis.
+- Pour créer une dépendance avec un projet d’installation : dans **Explorateur de solutions**, choisissez le projet d’installation. Dans la barre de menus, choisissez **projet** > **Propriétés** > **composants requis**. Sélectionnez la version requise du .NET Framework en tant que composant requis.
 
-Pour plus d’informations sur le déploiement d’applications .NET Framework, consultez [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md).
+Pour plus d’informations sur le déploiement d’applications .NET Framework, consultez le [Guide de déploiement pour les développeurs](../../../docs/framework/deployment/deployment-guide-for-developers.md).
 
 ## <a name="see-also"></a>Voir aussi
 

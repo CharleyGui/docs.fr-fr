@@ -10,12 +10,12 @@ helpviewer_keywords:
 - message boxes [WPF]
 - modal dialog boxes [WPF]
 ms.assetid: 0d23d544-a393-4a02-a3aa-d8cd5d3d6511
-ms.openlocfilehash: 9ec6716fefdc8de75d7e523c56ae0b3a02c8cf02
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: bce2eed5f0e78c16b85b399e588c3d0d68ce7cb7
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424641"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123712"
 ---
 # <a name="dialog-boxes-overview"></a>Vue d’ensemble des boîtes de dialogue
 En général, les applications autonomes ont une fenêtre principale qui affiche les données principales sur lesquelles l’application s’exécute et expose les fonctionnalités permettant de traiter ces données par le biais de [!INCLUDE[TLA#tla_ui](../../../../includes/tlasharptla-ui-md.md)] mécanismes tels que des barres de menus, des barres d’outils et des barres d’État. Une application non triviale peut également afficher des fenêtres supplémentaires pour effectuer les opérations suivantes :  
@@ -32,7 +32,7 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
   
  En revanche, une boîte de dialogue non *modale* n’empêche pas un utilisateur d’activer d’autres fenêtres pendant qu’elle est ouverte. Par exemple, si un utilisateur souhaite rechercher des occurrences d’un mot particulier dans un document, une fenêtre principale peut ouvrir une boîte de dialogue pour l’inviter à spécifier le mot qu’il recherche. Puisque rechercher un mot n’empêche pas l’utilisateur de modifier le document, la boîte de dialogue n’a pas besoin d’être modale. Une boîte de dialogue non modale au moins fournit un bouton **Fermer** pour fermer la boîte de dialogue, et peut fournir des boutons supplémentaires pour exécuter des fonctions spécifiques, comme un bouton **suivant** pour rechercher le mot suivant qui correspond aux critères de recherche d’une recherche de mots.  
   
- Windows Presentation Foundation (WPF) vous permet de créer plusieurs types de boîtes de dialogue, notamment des boîtes de message, des boîtes de dialogue communes et des boîtes de dialogue personnalisées. Cette rubrique décrit chaque, et l' [exemple de boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984) fournit des exemples correspondants.  
+ Windows Presentation Foundation (WPF) vous permet de créer plusieurs types de boîtes de dialogue, notamment des boîtes de message, des boîtes de dialogue communes et des boîtes de dialogue personnalisées. Cette rubrique décrit chaque, et l' [exemple de boîte de dialogue](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox) fournit des exemples correspondants.  
 
 <a name="Message_Boxes"></a>   
 ## <a name="message-boxes"></a>Boîtes de message  
@@ -55,9 +55,9 @@ En général, les applications autonomes ont une fenêtre principale qui affiche
  [!code-csharp[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/csharp/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/CSharp/Window1.xaml.cs#msgboxshowandresultcodebehind1)]
  [!code-vb[DialogBoxesOverviewSnippets#MsgBoxShowAndResultCODEBEHIND1](~/samples/snippets/visualbasic/VS_Snippets_Wpf/DialogBoxesOverviewSnippets/VisualBasic/window1.xaml.vb#msgboxshowandresultcodebehind1)]  
   
- Pour plus d’informations sur l’utilisation des boîtes de message, consultez exemple de <xref:System.Windows.MessageBox>, [MessageBox](https://go.microsoft.com/fwlink/?LinkID=160023)et de [boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984).  
+ Pour plus d’informations sur l’utilisation des boîtes de message, consultez exemple de <xref:System.Windows.MessageBox>, [MessageBox](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/MessageBox)et de [boîte de dialogue](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox).  
   
- Bien que <xref:System.Windows.MessageBox> puisse offrir une expérience utilisateur simple de boîte de dialogue, l’avantage de l’utilisation de <xref:System.Windows.MessageBox> est le seul type de fenêtre qui peut être affiché par les applications qui s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle (voir [sécurité](../security-wpf.md)), par exemple le navigateur XAML applications (XBAP).  
+ Bien que <xref:System.Windows.MessageBox> puisse offrir une expérience utilisateur simple de boîte de dialogue, l’avantage de l’utilisation de <xref:System.Windows.MessageBox> est que est le seul type de fenêtre qui peut être affiché par les applications qui s’exécutent dans un bac à sable (sandbox) de sécurité de confiance partielle (voir [sécurité](../security-wpf.md)), telles que les applications de navigateur XAML (XBAP).  
   
  La plupart des boîtes de dialogue affichent et recueillent des données plus complexes que le résultat d’une boîte de message, notamment du texte, une sélection (cases à cocher), une sélection mutuellement exclusive (boutons radio) et une sélection dans une liste (zones de liste, zones de liste modifiable, zones de liste déroulante). Pour ces, Windows Presentation Foundation (WPF) fournit plusieurs boîtes de dialogue communes et vous permet de créer vos propres boîtes de dialogue, bien que l’utilisation de soit limitée aux applications qui s’exécutent avec un niveau de confiance totale.  
   
@@ -118,7 +118,7 @@ Bien que les boîtes de dialogue communes soient utiles (et doivent être utilis
 <a name="Creating_a_Modal_Custom_Dialog_Box"></a>   
 ### <a name="creating-a-modal-custom-dialog-box"></a>Création d’une boîte de dialogue personnalisée modale
 
-Cette rubrique montre comment utiliser <xref:System.Windows.Window> pour créer une implémentation de boîte de dialogue modale standard, à l’aide de la boîte de dialogue `Margins` comme exemple (consultez exemple de [boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984)). La boîte de dialogue `Margins` est présentée dans la figure suivante.  
+Cette rubrique montre comment utiliser <xref:System.Windows.Window> pour créer une implémentation de boîte de dialogue modale standard, à l’aide de la boîte de dialogue `Margins` comme exemple (consultez exemple de [boîte de dialogue](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox)). La boîte de dialogue `Margins` est présentée dans la figure suivante.  
   
  ![Boîte de dialogue marges avec des champs pour définir la marge de gauche, la marge supérieure, la marge droite et la marge inférieure.](./media/dialog-boxes-overview/margin-size-dialog-box.png)  
   
@@ -295,7 +295,7 @@ La fenêtre propriétaire doit ensuite s’inscrire pour cet événement et le g
   
 - Cliquez sur le bouton **Fermer** dans la barre de titre.  
   
-- en appuyant sur Alt+F4 ;  
+- Un appui sur Alt+F4  
   
 - Choisissez **Fermer** dans le menu **système** .  
   
@@ -307,4 +307,4 @@ Votre code peut également appeler <xref:System.Windows.Window.Close%2A> lorsque
 ## <a name="see-also"></a>Voir aussi
 
 - [Vue d’ensemble de Popup](../controls/popup-overview.md)
-- [Exemple de boîte de dialogue](https://go.microsoft.com/fwlink/?LinkID=159984)
+- [Exemple de boîte de dialogue](https://github.com/Microsoft/WPF-Samples/tree/master/Windows/DialogBox)

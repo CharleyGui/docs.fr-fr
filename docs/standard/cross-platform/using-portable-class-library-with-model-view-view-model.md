@@ -9,14 +9,12 @@ helpviewer_keywords:
 - Portable Class Library [.NET Framework], and MVVM
 - MVVM, and Portable Class Library
 ms.assetid: 41a0b9f8-15a2-431a-bc35-e310b2953b03
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 87e756445255f1bd2417a06dfa611eba23208575
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: f5312177b9f437d9b5474d38fca80db6fc45245b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74716753"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123673"
 ---
 # <a name="using-portable-class-library-with-model-view-view-model"></a>Utilisation de la Bibliothèque de classes portable avec le modèle d'affichage Modèle-Affichage
 Vous pouvez utiliser la [bibliothèque de classes Portable](../../../docs/standard/cross-platform/cross-platform-development-with-the-portable-class-library.md) .NET Framework pour implémenter le modèle MVVM (Model-View-View Model) et partager des assemblys sur plusieurs plateformes.
@@ -86,7 +84,7 @@ Vous pouvez utiliser la [bibliothèque de classes Portable](../../../docs/standa
  [!code-csharp[PortableClassLibraryMVVM#5](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainpageviewmodel.cs#5)]
  [!code-vb[PortableClassLibraryMVVM#5](../../../samples/snippets/visualbasic/VS_Snippets_CLR/portableclasslibrarymvvm/vb/customerviewmodel.vb#5)]  
   
-### <a name="view"></a>Consultez la rubrique .  
+### <a name="view"></a>Affichage  
  À partir d’une application .NET Framework 4,5, d’une application Windows 8. x Store, d’une application basée sur Silverlight ou d’une application Windows Phone 7,5, vous pouvez référencer l’assembly qui contient les projets de modèle et de modèle de vue.  Vous créez ensuite une vue qui interagit avec le modèle de vue. L’exemple suivant montre une application simplifiée Windows Presentation Foundation (WPF) qui récupère et met à jour les données à partir du modèle de vue. Vous pouvez créer des affichages similaires dans les applications du Windows Store Silverlight, Windows Phone ou Windows 8. x.  
   
  [!code-xaml[PortableClassLibraryMVVM#6](../../../samples/snippets/csharp/VS_Snippets_CLR/portableclasslibrarymvvm/cs/mainwindow.xaml#6)]  

@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Animer une valeur BorderThickness'
+title: 'Comment : animer une valeur BorderThickness'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -8,23 +8,23 @@ helpviewer_keywords:
 - border thickness [WPF], animating changes to
 - animation [WPF], changes to border thickness
 ms.assetid: fd021978-f74b-4e7b-a7f7-3987dcad9e0f
-ms.openlocfilehash: 10e177d1f6d6add4638ce14af900e75d7e363890
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 4533ce6f2a1fe7243267ee8d638e2ad0a4f9cf3a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61911238"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124661"
 ---
-# <a name="how-to-animate-a-borderthickness-value"></a>Procédure : Animer une valeur BorderThickness
-Cet exemple montre comment animer les modifications apportées à l’épaisseur d’une bordure à l’aide de la <xref:System.Windows.Media.Animation.ThicknessAnimation> classe.  
+# <a name="how-to-animate-a-borderthickness-value"></a>Comment : animer une valeur BorderThickness
+Cet exemple montre comment animer les modifications apportées à l’épaisseur d’une bordure à l’aide de la classe <xref:System.Windows.Media.Animation.ThicknessAnimation>.  
   
 ## <a name="example"></a>Exemple  
- L’exemple suivant anime l’épaisseur d’une bordure à l’aide de <xref:System.Windows.Media.Animation.ThicknessAnimation>. L’exemple utilise le <xref:System.Windows.Controls.Border.BorderThickness%2A> propriété du <xref:System.Windows.Controls.Border>.  
+ L’exemple suivant anime l’épaisseur d’une bordure à l’aide de <xref:System.Windows.Media.Animation.ThicknessAnimation>. L’exemple utilise la propriété <xref:System.Windows.Controls.Border.BorderThickness%2A> de <xref:System.Windows.Controls.Border>.  
   
  [!code-csharp[BasicAnimations_snip#ThicknessAnimationWholePage](~/samples/snippets/csharp/VS_Snippets_Wpf/BasicAnimations_snip/CSharp/ThicknessAnimationExample.cs#thicknessanimationwholepage)]
  [!code-vb[BasicAnimations_snip#ThicknessAnimationWholePage](~/samples/snippets/visualbasic/VS_Snippets_Wpf/BasicAnimations_snip/VisualBasic/ThicknessAnimationExample.vb#thicknessanimationwholepage)]  
   
- Pour obtenir un exemple complet, consultez [Galerie d’exemples d’Animation](https://go.microsoft.com/fwlink/?LinkID=159969).  
+ Pour obtenir l’exemple complet, consultez [Galerie d’exemples d’animations](https://github.com/Microsoft/WPF-Samples/tree/master/Animation/AnimationExamples).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -32,5 +32,5 @@ Cet exemple montre comment animer les modifications apportées à l’épaisseur
 - <xref:System.Windows.Controls.Border.BorderThickness%2A>
 - <xref:System.Windows.Controls.Border>
 - [Vue d’ensemble de l’animation](../graphics-multimedia/animation-overview.md)
-- [L’animation et minutage des rubriques de procédures](../graphics-multimedia/animation-and-timing-how-to-topics.md)
+- [Rubriques de procédures relatives à l’animation et au minutage](../graphics-multimedia/animation-and-timing-how-to-topics.md)
 - [Animer l’épaisseur d’une bordure à l’aide d’images clés](../graphics-multimedia/how-to-animate-the-thickness-of-a-border-by-using-key-frames.md)

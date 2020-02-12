@@ -10,17 +10,17 @@ helpviewer_keywords:
 - XAML browser applications (XBAP)
 - browser-hosted applications [WPF]
 ms.assetid: 3a7a86a8-75d5-4898-96b9-73da151e5e16
-ms.openlocfilehash: bec7e14ceed867e89c3117efbc245938356b9d78
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 825b689dea145d18035344cd902ea1b8a50e82c3
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76742282"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124206"
 ---
 # <a name="wpf-xaml-browser-applications-overview"></a>Vue d'ensemble des applications de navigateur XAML
 <a name="introduction"></a>Les applications de navigateur XAML (XBAP) associent les fonctionnalités des applications Web et des applications clientes riches. À l’instar des applications Web, les applications XBAP peuvent être déployées sur un serveur web et démarrées à partir d’Internet Explorer ou de Firefox. Comme les applications clientes riches, les XBAP peuvent tirer parti des fonctionnalités de WPF. Le développement d’applications XBAP est également semblable au développement d’applications clientes complètes. Cette rubrique fournit une présentation simple et détaillée du développement XBAP et décrit les différences de développement entre les applications XBAP et les applications clientes complètes standard.
 
- Cette rubrique contient les sections suivantes :
+ Cette rubrique contient les sections suivantes :
 
 - [Création d’une nouvelle application de navigateur XAML (XBAP)](#creating_a_new_xaml_browser_application_xbap)
 
@@ -91,7 +91,7 @@ ms.locfileid: "76742282"
 
 <a name="communicating_with_the_host_web_page"></a>
 ## <a name="communicating-with-the-host-web-page"></a>Communication avec la page web hôte
- Lorsque l’application est hébergée dans un cadre HTML, vous pouvez communiquer avec la page web qui contient l’application XBAP. Pour ce faire, récupérez la propriété <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> de <xref:System.Windows.Interop.BrowserInteropHelper>. Cette propriété renvoie un objet de script qui représente la fenêtre HTML. Vous pouvez consulter les propriétés, méthodes et événements sur [l’objet de fenêtre](https://go.microsoft.com/fwlink/?LinkId=160274) en utilisant la syntaxe de point normale. Vous pouvez également accéder aux méthodes de script et aux variables globales. L’exemple suivant montre comment récupérer l’objet de script et fermer le navigateur.
+ Lorsque l’application est hébergée dans un cadre HTML, vous pouvez communiquer avec la page web qui contient l’application XBAP. Pour ce faire, récupérez la propriété <xref:System.Windows.Interop.BrowserInteropHelper.HostScript%2A> de <xref:System.Windows.Interop.BrowserInteropHelper>. Cette propriété renvoie un objet de script qui représente la fenêtre HTML. Vous pouvez consulter les propriétés, méthodes et événements sur [l’objet de fenêtre](https://developer.mozilla.org/en-US/docs/Web/API/Window) en utilisant la syntaxe de point normale. Vous pouvez également accéder aux méthodes de script et aux variables globales. L’exemple suivant montre comment récupérer l’objet de script et fermer le navigateur.
 
  [!code-csharp[XbapBrowserInterop#10](~/samples/snippets/csharp/VS_Snippets_Wpf/xbapbrowserinterop/cs/page1.xaml.cs#10)]
  [!code-vb[XbapBrowserInterop#10](~/samples/snippets/visualbasic/VS_Snippets_Wpf/xbapbrowserinterop/vb/page1.xaml.vb#10)]
@@ -101,7 +101,7 @@ ms.locfileid: "76742282"
 
 1. Dans Visual Studio, ouvrez les propriétés du projet.
 
-2. Sous l’onglet **Sécurité**, cliquez sur **Avancé**.
+2. Dans l’onglet **Sécurité**, cliquez sur **Avancé**.
 
      La boîte de dialogue Paramètres de sécurité avancés apparaît.
 
@@ -113,7 +113,7 @@ ms.locfileid: "76742282"
 
      La boîte de dialogue Options Internet apparaît.
 
-6. Cliquez sur l'onglet **Avancé**.
+6. Cliquez sur l’onglet **Avancé**.
 
 7. Dans la liste des **paramètres** sous **Sécurité**, cochez la case **Autoriser l’exécution du contenu actif dans les fichiers de mon ordinateur**.
 
@@ -168,14 +168,14 @@ ms.locfileid: "76742282"
 
 |Zone de sécurité|Comportement|Obtention de la confiance totale|
 |-------------------|--------------|------------------------|
-|Ordinateur local|Confiance totale automatique|Aucune action n’est requise.|
+|Ordinateur local|Confiance totale automatique|Aucune action n'est nécessaire.|
 |Intranet et sites de confiance|Invite pour la confiance totale|Signez l’application XBAP avec un certificat afin que l’utilisateur consulte la source dans l’invite.|
 |Internet|Échec avec "Confiance non accordée"|Signez l’application XBAP avec un certificat.|
 
 > [!NOTE]
 > Le comportement décrit dans le tableau précédent concerne les applications XBAP de confiance totale qui ne suivent pas le modèle de déploiement approuvé ClickOnce.
 
- Il est recommandé d’utiliser le modèle de déploiement approuvé ClickOnce pour déployer une application XBAP de confiance totale. Ce modèle permet d’accorder automatiquement une confiance totale à votre application XBAP, quelle que soit la zone de sécurité, afin que l’utilisateur ne reçoive aucune invite. Dans le cadre de ce modèle, vous devez signer votre application avec un certificat d’un éditeur approuvé. Pour plus d’informations, consultez les articles [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview) et [Présentation de la signature de code](https://go.microsoft.com/fwlink/?LinkId=166327).
+ Il est recommandé d’utiliser le modèle de déploiement approuvé ClickOnce pour déployer une application XBAP de confiance totale. Ce modèle permet d’accorder automatiquement une confiance totale à votre application XBAP, quelle que soit la zone de sécurité, afin que l’utilisateur ne reçoive aucune invite. Dans le cadre de ce modèle, vous devez signer votre application avec un certificat d’un éditeur approuvé. Pour plus d’informations, consultez les articles [Vue d’ensemble du déploiement d’applications approuvées](/visualstudio/deployment/trusted-application-deployment-overview) et [Présentation de la signature de code](https://docs.microsoft.com/previous-versions/windows/internet-explorer/ie-developer/platform-apis/ms537361(v=vs.85)).
 
 <a name="xbap_start_time_performance_considerations"></a>
 ## <a name="xbap-start-time-performance-considerations"></a>Considérations relatives au temps de démarrage des applications XPAB

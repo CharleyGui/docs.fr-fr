@@ -29,12 +29,12 @@ helpviewer_keywords:
 - attribute syntax [XAML]
 - XAML [WPF], property element syntax
 ms.assetid: 67cce290-ca26-4c41-a797-b68aabc45479
-ms.openlocfilehash: 2c6a8662236b614545e7fb8545b7b60e1b08b6bd
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 38c77086075e79c0ec5b4b1564ed753eded23b34
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559831"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124492"
 ---
 # <a name="xaml-syntax-in-detail"></a>Syntaxe XAML en détail
 Cette rubrique définit les termes utilisés pour décrire les éléments de la syntaxe XAML. Ces termes sont fréquemment utilisés dans la suite de cette documentation, à la fois pour la documentation WPF et pour les autres infrastructures qui utilisent XAML ou les concepts XAML de base activés par la prise en charge du langage XAML au niveau de System. Xaml. Cette rubrique développe la terminologie de base présentée dans la rubrique [vue d’ensemble du langage XAML (WPF)](../../../desktop-wpf/fundamentals/xaml.md).  
@@ -43,7 +43,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
 ## <a name="the-xaml-language-specification"></a>Spécification du langage XAML  
  La terminologie de syntaxe XAML définie ici est également définie ou référencée dans la spécification du langage XAML. XAML est un langage basé sur XML qui suit ou s’étend sur les règles de structure XML. Une partie de la terminologie est partagée à partir de ou basée sur la terminologie couramment utilisée pour décrire le langage XML ou le modèle d’objet de document XML.  
   
- Pour plus d’informations sur la spécification du langage XAML, téléchargez [\[\]MS-XAML](https://go.microsoft.com/fwlink/?LinkId=114525) à partir du centre de téléchargement Microsoft.  
+ Pour plus d’informations sur la spécification du langage XAML, téléchargez [\[\]MS-XAML](https://download.microsoft.com/download/0/A/6/0A6F7755-9AF5-448B-907D-13985ACCF53E/[MS-XAML].pdf) à partir du centre de téléchargement Microsoft.  
   
 <a name="xaml_and_clr"></a>   
 ## <a name="xaml-and-clr"></a>XAML et CLR  
@@ -269,7 +269,7 @@ Cette rubrique définit les termes utilisés pour décrire les éléments de la 
 - Vous pouvez également utiliser la syntaxe d’élément de propriété pour les propriétés jointes. Toutefois, pour la syntaxe d’élément de propriété typique, le *TypeName* que vous spécifiez est l’élément objet qui contient l’élément de propriété. Si vous faites référence à une propriété jointe, *TypeName* est la classe qui définit la propriété jointe, et non l’élément objet conteneur.  
   
 <a name="attached_events"></a>   
-## <a name="attached-events"></a>Événements joints  
+## <a name="attached-events"></a>Événements attachés  
  Les événements attachés sont un autre concept de programmation introduit en XAML, où les événements peuvent être définis par un type spécifique, mais les gestionnaires peuvent être attachés à n’importe quel élément objet. Dans l’implémentation WOF, souvent le type qui définit un événement attaché est un type statique qui définit un service, et parfois ces événements attachés sont exposés par un alias d’événement routé dans des types qui exposent le service. Les gestionnaires pour les événements attachés sont spécifiés par le biais de la syntaxe d’attribut. Comme pour les événements attachés, la syntaxe d’attribut est développée pour les événements attachés afin d’autoriser un *TypeName*. *EventName* usage, où *TypeName* est la classe qui fournit `Add` et `Remove` accesseurs de gestionnaire d’événements pour l’infrastructure d’événements attachée, et *EventName* est le nom de l’événement.  
   
 <a name="anatomy_of_a_xaml_page_root_element"></a>   

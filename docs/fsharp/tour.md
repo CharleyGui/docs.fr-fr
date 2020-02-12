@@ -1,13 +1,13 @@
 ---
-title: Présentation de F#
+title: Visite guidée de F#
 description: Examiner certaines des fonctionnalités clés de la langue dans cette visite guidée avec exemples de code de programmation F#.
-ms.date: 11/06/2018
-ms.openlocfilehash: cfea2827dcec65f9e3606e8528179029e1f2db84
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 02/09/2020
+ms.openlocfilehash: ac2eef40e2dbc494e41a9760f0a70edb0f7ce399
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423806"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124570"
 ---
 # <a name="tour-of-f"></a>Présentation de F\#
 
@@ -51,7 +51,7 @@ Et voici à quoi ressemble la manipulation de [chaînes](./language-reference/st
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L186-L203)]
 
-À compter de F# 4.1, vous pouvez également créer `struct` tuples.  Ils interagissent également avec les tuples C# 7/Visual Basic 15, qui sont également `struct` des tuples :
+Vous pouvez également créer des `struct` des tuples.  Ils interagissent également avec les tuples C# 7/Visual Basic 15, qui sont également `struct` des tuples :
 
 [!code-fsharp[Tuples](~/samples/snippets/fsharp/tour.fs#L205-L218)]
 
@@ -100,7 +100,7 @@ Les [enregistrements](./language-reference/records.md) sont un agrégat des vale
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L507-L559)]
 
-À compter de F# 4.1, vous pouvez également représenter des enregistrements sous la forme `struct`s.  Cette opération s’effectue avec l’attribut `[<Struct>]` :
+Vous pouvez également représenter des enregistrements comme des structs. Cette opération s’effectue avec l’attribut `[<Struct>]` :
 
 [!code-fsharp[Records](~/samples/snippets/fsharp/tour.fs#L561-L568)]
 
@@ -138,6 +138,10 @@ Si vous ne suivez pas le problème ci-dessus, une erreur de compilation se produ
 [!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L705-L742)]
 
 Vous avez peut-être remarqué l’utilisation du modèle de `_`.  C’est ce que l’on appelle le [modèle de caractère générique](./language-reference/pattern-matching.md#wildcard-pattern), qui est un moyen de dire « je ne me préoccupe pas de quoi ».  Bien que pratique, vous pouvez contourner accidentellement une correspondance de modèle exhaustive et ne plus tirer parti des mises en œuvre au moment de la compilation si vous n’êtes pas prudent dans l’utilisation de `_`.  Il est préférable de l’utiliser lorsque vous ne vous souciez pas de certains éléments d’un type décomposé lors de la mise en correspondance d’un modèle ou de la clause finale quand vous avez énuméré tous les cas significatifs dans une expression de critères spéciaux.
+
+Dans l’exemple suivant, le cas de `_` est utilisé en cas d’échec d’une opération d’analyse.
+
+[!code-fsharp[PatternMatching](~/samples/snippets/fsharp/tour.fs#L744-L762)]
 
 Les [modèles actifs](./language-reference/active-patterns.md) sont une autre construction puissante à utiliser avec les critères spéciaux.  Elles vous permettent de partitionner les données d’entrée dans des formulaires personnalisés, en les décomposant au niveau du site d’appel de correspondance du modèle.  Elles peuvent également être paramétrées, ce qui permet de définir la partition en tant que fonction.  Le développement de l’exemple précédent pour la prise en charge des modèles actifs ressemble à ceci :
 

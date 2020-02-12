@@ -11,20 +11,18 @@ helpviewer_keywords:
 ms.assetid: b96bed40-8946-4285-8fe4-88045ab854ed
 ms.topic: tutorial
 ms.custom: mvc,vs-dotnet
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 232605850c65aebd9aafdc9b76c90af42f2c901c
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bc47405636c4727f502caf1f6e27050367eda74a
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76746978"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124336"
 ---
 # <a name="tutorial-create-your-first-wpf-application-in-visual-studio-2019"></a>Didacticiel : créer votre première application WPF dans Visual Studio 2019
 
 Cet article vous montre comment développer une application de bureau Windows Presentation Foundation (WPF) qui comprend les éléments communs à la plupart des applications WPF : balisage XAML Extensible Application Markup Language (XAML), code-behind, définitions d’application, contrôles, disposition, liaison de données et styles. Pour développer l’application, vous allez utiliser Visual Studio. 
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
 > - Créez un projet WPF.
@@ -42,7 +40,7 @@ Dans ce didacticiel, vous apprendrez à :
 >
 > Vous pouvez basculer le langage de code de l’exemple de C# code entre et Visual Basic à l’aide du sélecteur de langue en haut de cette page.
 
-## <a name="prerequisites"></a>Composants requis
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Visual Studio 2019](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail **développement .net Desktop** installée.
 
@@ -215,7 +213,7 @@ Dans cette section, vous allez ajouter deux pages et une image à l’applicatio
 
     2. Dans la boîte de dialogue **Ajouter un élément existant** , définissez le filtre de fichiers sur **tous les fichiers** ou **fichiers image**, accédez au fichier image que vous souhaitez utiliser, puis sélectionnez **Ajouter**.
 
-## <a name="build-and-run-the-application"></a>Générez et exécutez l'application.
+## <a name="build-and-run-the-application"></a>Génération et exécution de l’application
 
 1. Pour générer et exécuter l’application, appuyez sur **F5** ou sélectionnez **Démarrer le débogage** dans le menu **Déboguer** .
 
@@ -478,7 +476,7 @@ L’illustration suivante montre les deux pages de l’application `ExpenseIt` a
 > - [Globalisation et localisation pour WPF](../advanced/wpf-globalization-and-localization-overview.md)
 > - [Performances WPF](../advanced/optimizing-wpf-application-performance.md)
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans cette procédure pas à pas, vous avez appris un certain nombre de techniques pour la création d’une interface utilisateur à l’aide d’Windows Presentation Foundation (WPF). Vous devez maintenant avoir une compréhension de base des blocs de construction d’une application .NET liée aux données. Pour plus d’informations sur les modèles d’architecture et de programmation WPF, consultez les rubriques suivantes :
 

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Panel control [WPF], about Panel control
 - controls [WPF], Panel
 ms.assetid: f73644af-9941-4611-8754-6d4cef03fc44
-ms.openlocfilehash: d77ce78fe914bf300c5b33019d7cf67aa4ad74c3
-ms.sourcegitcommit: 9c3a4f2d3babca8919a1e490a159c1500ba7a844
+ms.openlocfilehash: d0962793854a6066112eb987fbdb3f703617787f
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/12/2019
-ms.locfileid: "72291446"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124414"
 ---
 # <a name="panels-overview"></a>Vue d'ensemble de Panel
 les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui contrôlent le rendu des éléments (taille et dimensions, position et disposition de leur contenu enfant). L' [!INCLUDE[TLA#tla_winclient](../../../../includes/tlasharptla-winclient-md.md)] fournit un certain nombre d’éléments <xref:System.Windows.Controls.Panel> prédéfinis, ainsi que la possibilité de construire des éléments <xref:System.Windows.Controls.Panel> personnalisés.  
@@ -62,7 +62,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  Chaque élément Panel encapsule sa propre fonctionnalité spéciale, comme indiqué dans le tableau suivant.  
   
-|Nom de l'élément|Élément Panel d’IU ?|Description|  
+|Nom de l’élément|Élément Panel d’IU ?|Description|  
 |------------------|---------------|-----------------|  
 |<xref:System.Windows.Controls.Canvas>|Oui|Définit une zone dans laquelle vous pouvez positionner explicitement des éléments enfants par coordonnées relatives à la zone de <xref:System.Windows.Controls.Canvas>.|  
 |<xref:System.Windows.Controls.DockPanel>|Oui|Définit une zone dans laquelle vous pouvez organiser des éléments enfants horizontalement ou verticalement, les uns par rapport aux autres.|  
@@ -93,15 +93,15 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
  Vous trouverez des descriptions plus détaillées et des exemples d’utilisation de chacun de ces éléments ci-dessous.  
   
 <a name="Panels_overview_Canvas_subsection"></a>   
-### <a name="canvas"></a>Zone de dessin  
- L’élément <xref:System.Windows.Controls.Canvas> permet de positionner le contenu en fonction des coordonnées absolues *x* et *y*. Les éléments peuvent être dessinés dans un emplacement unique, ou s’ils occupent les mêmes coordonnées, l’ordre dans lequel ils apparaissent dans le balisage détermine l’ordre dans lequel ils sont dessinés.  
+### <a name="canvas"></a>Canevas  
+ L’élément <xref:System.Windows.Controls.Canvas> permet de positionner le contenu en fonction des coordonnées absolues *x* et *y* . Les éléments peuvent être dessinés dans un emplacement unique, ou s’ils occupent les mêmes coordonnées, l’ordre dans lequel ils apparaissent dans le balisage détermine l’ordre dans lequel ils sont dessinés.  
   
  <xref:System.Windows.Controls.Canvas> fournit la prise en charge de la disposition la plus souple des <xref:System.Windows.Controls.Panel>. Les propriétés de hauteur et de largeur sont utilisées pour définir la zone du canevas, et les éléments à l’intérieur de sont des coordonnées absolues relatives à la zone du <xref:System.Windows.Controls.Canvas>parent. Quatre propriétés jointes, <xref:System.Windows.Controls.Canvas.Left%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Top%2A?displayProperty=nameWithType>, <xref:System.Windows.Controls.Canvas.Right%2A?displayProperty=nameWithType> et <xref:System.Windows.Controls.Canvas.Bottom%2A?displayProperty=nameWithType>, permettent de contrôler précisément le positionnement des objets au sein d’une <xref:System.Windows.Controls.Canvas>, ce qui permet au développeur de positionner et de réorganiser les éléments avec précision sur l’écran.  
   
 #### <a name="cliptobounds-within-a-canvas"></a>Propriété ClipToBounds à l’intérieur d’un élément Canvas  
  <xref:System.Windows.Controls.Canvas> pouvez positionner des éléments enfants à n’importe quelle position sur l’écran, même aux coordonnées qui se trouvent en dehors de leur propre <xref:System.Windows.FrameworkElement.Height%2A> et de <xref:System.Windows.FrameworkElement.Width%2A>. En outre, <xref:System.Windows.Controls.Canvas> n’est pas affecté par la taille de ses enfants. Par conséquent, il est possible qu’un élément enfant redessine d’autres éléments en dehors du rectangle englobant du <xref:System.Windows.Controls.Canvas>parent. Le comportement par défaut d’un <xref:System.Windows.Controls.Canvas> consiste à autoriser le dessin des enfants en dehors des limites du <xref:System.Windows.Controls.Canvas>parent. Si ce comportement n’est pas souhaitable, la propriété <xref:System.Windows.UIElement.ClipToBounds%2A> peut avoir la valeur `true`. <xref:System.Windows.Controls.Canvas> est alors découpé à sa propre taille. <xref:System.Windows.Controls.Canvas> est le seul élément de disposition qui permet aux enfants d’être dessinés en dehors de ses limites.  
   
- Ce comportement est illustré en images dans l’[exemple de comparaison des propriétés Width](https://go.microsoft.com/fwlink/?LinkID=160050).  
+ Ce comportement est illustré en images dans l’[exemple de comparaison des propriétés Width](https://github.com/Microsoft/WPF-Samples/tree/master/Elements/WidthProperties).  
   
 #### <a name="defining-and-using-a-canvas"></a>Définition et utilisation d’un élément Canvas  
  Une <xref:System.Windows.Controls.Canvas> peut être instanciée simplement à l’aide d' [!INCLUDE[TLA#tla_xaml](../../../../includes/tlasharptla-xaml-md.md)] ou de code. L’exemple suivant montre comment utiliser <xref:System.Windows.Controls.Canvas> pour positionner le contenu de manière absolue. Ce code génère trois carrés de 100 pixels de côté. Le premier carré est rouge, et la position de son angle supérieur gauche (*x, y*) est définie sur (0, 0). Le deuxième carré est vert, et la position de son angle supérieur gauche est définie sur (100, 100), juste en dessous et à droite du premier carré. Le troisième carré est bleu, et la position de son angle supérieur gauche est définie sur (50, 50). Il englobe ainsi le quart inférieur droit du premier carré et le quart supérieur gauche du deuxième. Comme le troisième carré est disposé en dernier, il apparaît au-dessus des deux autres carrés, c’est-à-dire que les parties qui se chevauchent prennent la couleur de ce troisième carré.  
@@ -136,7 +136,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  L’application compilée produit une nouvelle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]IU qui ressemble à ceci.  
   
- ![Scénario classique d’utilisation de l’élément DockPanel.](./media/panel-intro-dockpanel.PNG "panel_intro_dockpanel")  
+ ![Scénario DockPanel classique.](./media/panel-intro-dockpanel.PNG "panel_intro_dockpanel")  
   
 <a name="Panels_overview_Grid_subsection"></a>   
 ### <a name="grid"></a>Grille  
@@ -156,7 +156,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  L’application compilée produit une nouvelle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]IU qui ressemble à ceci.  
   
- ![Élément Grid classique.](./media/avalon-run-dialog.PNG "avalon_run_dialog")  
+ ![Élément de grille classique.](./media/avalon-run-dialog.PNG "avalon_run_dialog")  
   
 <a name="Panels_overview_StackPanel_subsection"></a>   
 ### <a name="stackpanel"></a>StackPanel  
@@ -174,7 +174,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  La différence de comportement du rendu peut être observée dans cette image.  
   
- ![Capture d’écran : StackPanel et DockPanel](./media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
+ ![Capture d’écran : capture d’écran StackPanel et DockPanel](./media/layout-smiley-stackpanel.PNG "layout_smiley_stackpanel")  
   
 #### <a name="defining-and-using-a-stackpanel"></a>Définition et utilisation d’un élément StackPanel  
  L’exemple suivant montre comment utiliser un <xref:System.Windows.Controls.StackPanel> pour créer un ensemble de boutons positionnés verticalement. Pour le positionnement horizontal, définissez la propriété <xref:System.Windows.Controls.StackPanel.Orientation%2A> sur <xref:System.Windows.Controls.Orientation.Horizontal>.  
@@ -184,7 +184,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  L’application compilée produit une nouvelle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]IU qui ressemble à ceci.  
   
- ![Élément StackPanel standard.](./media/panel-intro-stackpanel.PNG "panel_intro_stackpanel")  
+ ![Élément StackPanel typique.](./media/panel-intro-stackpanel.PNG "panel_intro_stackpanel")  
   
 <a name="Panels_overview_VirtualizingStackPanel_subsection"></a>   
 #### <a name="virtualizingstackpanel"></a>Élément VirtualizingStackPanel  
@@ -209,7 +209,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  L’application compilée produit une nouvelle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]IU qui ressemble à ceci.  
   
- ![Élément WrapPanel standard.](./media/wrappanel-element.PNG "WrapPanel_Element")  
+ ![Élément WrapPanel classique.](./media/wrappanel-element.PNG "WrapPanel_Element")  
   
 <a name="Panels_nested_panel_elements"></a>   
 ## <a name="nested-panel-elements"></a>Éléments Panel imbriqués  
@@ -224,7 +224,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  L’application compilée produit une nouvelle [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]IU qui ressemble à ceci.  
   
- ![IU tirant parti d’éléments Panel imbriqués.](./media/nested-panels.PNG "nested_panels")  
+ ![Interface utilisateur qui tire parti des panneaux imbriqués.](./media/nested-panels.PNG "nested_panels")  
   
 <a name="Panels_custom_panel_elements"></a>   
 ## <a name="custom-panel-elements"></a>Éléments Panel personnalisés  
@@ -232,7 +232,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
   
  De même, les comportements de disposition personnalisés basés sur des classes dérivées (comme <xref:System.Windows.Controls.Canvas> ou <xref:System.Windows.Controls.Grid>) peuvent être définis en remplaçant leurs méthodes <xref:System.Windows.FrameworkElement.ArrangeOverride%2A> et <xref:System.Windows.FrameworkElement.MeasureOverride%2A>.  
   
- Le balisage suivant montre comment créer un élément <xref:System.Windows.Controls.Panel> personnalisé. Cette nouvelle <xref:System.Windows.Controls.Panel>, définie comme `PlotPanel`, prend en charge le positionnement des éléments enfants à l’aide de coordonnées *x* et *y*codées en dur. Dans cet exemple, un élément <xref:System.Windows.Shapes.Rectangle> (non affiché) est positionné au niveau du traçage point 50 (*x*) et 50 (*y*).  
+ Le balisage suivant montre comment créer un élément <xref:System.Windows.Controls.Panel> personnalisé. Cette nouvelle <xref:System.Windows.Controls.Panel>, définie comme `PlotPanel`, prend en charge le positionnement des éléments enfants à l’aide de coordonnées *x* et *y* codées en dur. Dans cet exemple, un élément <xref:System.Windows.Shapes.Rectangle> (non affiché) est positionné au niveau du traçage point 50 (*x*) et 50 (*y*).  
   
  [!code-cpp[PlotPanel#1](~/samples/snippets/cpp/VS_Snippets_Wpf/PlotPanel/CPP/PlotPanel.cpp#1)]
  [!code-csharp[PlotPanel#1](~/samples/snippets/csharp/VS_Snippets_Wpf/PlotPanel/CSharp/PlotPanel.cs#1)]
@@ -244,7 +244,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
 ## <a name="localizationglobalization-support"></a>Prise en charge de la localisation/globalisation  
  [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] prend en charge un certain nombre de fonctionnalités qui facilitent la création d’IU [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)] localisables.  
   
- Tous les éléments Panel prennent en charge en mode natif la propriété <xref:System.Windows.FrameworkElement.FlowDirection%2A>, qui peut être utilisée pour réacheminer dynamiquement du contenu en fonction des paramètres régionaux ou des paramètres de langue d’un utilisateur. Pour plus d'informations, consultez <xref:System.Windows.FrameworkElement.FlowDirection%2A>.  
+ Tous les éléments Panel prennent en charge en mode natif la propriété <xref:System.Windows.FrameworkElement.FlowDirection%2A>, qui peut être utilisée pour réacheminer dynamiquement du contenu en fonction des paramètres régionaux ou des paramètres de langue d’un utilisateur. Pour plus d’informations, consultez <xref:System.Windows.FrameworkElement.FlowDirection%2A>.  
   
  La propriété <xref:System.Windows.Window.SizeToContent%2A> fournit un mécanisme qui permet aux développeurs d’applications d’anticiper les besoins en [!INCLUDE[TLA2#tla_ui](../../../../includes/tla2sharptla-ui-md.md)]localisés. À l’aide de la valeur <xref:System.Windows.SizeToContent.WidthAndHeight> de cette propriété, un parent <xref:System.Windows.Window> toujours dimensionné dynamiquement pour s’adapter au contenu et n’est pas limité par des restrictions artificielles de hauteur ou de largeur.  
   
@@ -257,7 +257,7 @@ les éléments de <xref:System.Windows.Controls.Panel> sont des composants qui c
 - [Procédure pas à pas : ma première application de bureau WPF](../getting-started/walkthrough-my-first-wpf-desktop-application.md)
 - [Galerie de dispositions WPF, exemple](https://go.microsoft.com/fwlink/?LinkID=160054)
 - [Disposition](../advanced/layout.md)
-- [Exemple de galerie de contrôles WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [Exemple de galerie de contrôles WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/ControlsAndLayout)
 - [Vue d'ensemble de l'alignement, des marges et du remplissage](../advanced/alignment-margins-and-padding-overview.md)
 - [Créer un exemple de panneau d’habillage du contenu personnalisé](https://go.microsoft.com/fwlink/?LinkID=159979)
 - [Vue d’ensemble des propriétés jointes](../advanced/attached-properties-overview.md)

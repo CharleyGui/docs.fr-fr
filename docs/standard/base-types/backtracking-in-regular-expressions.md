@@ -17,15 +17,15 @@ helpviewer_keywords:
 - strings [.NET Framework], regular expressions
 - parsing text with regular expressions, backtracking
 ms.assetid: 34df1152-0b22-4a1c-a76c-3c28c47b70d8
-ms.openlocfilehash: a11e3501aa57fc81a28d27d1280d299f99e1dea1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e7922294db1236e697df80203583b2dbb3e41a01
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711517"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124440"
 ---
 # <a name="backtracking-in-regular-expressions"></a>Rétroaction dans les expressions régulières
-La rétroaction se produit quand un modèle d’expression régulière contient des [quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) ou des [constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md) facultatifs, et que le moteur d’expression régulière retourne à un état enregistré précédent pour poursuivre la recherche d’une correspondance. La rétroaction est essentielle à la puissance des expressions régulières ; elle permet aux expressions d'être puissantes et flexibles et de correspondre à des modèles très complexes. Cependant, cette puissance a un coût. La rétroaction est souvent le facteur le plus important qui affecte les performances du moteur des expressions régulières. Heureusement, le développeur contrôle le comportement du moteur des expressions régulières et comment il utilise la rétroaction. Cette rubrique explique comment la rétroaction fonctionne et comment elle peut être activée.  
+La rétroaction se produit quand un modèle d’expression régulière contient des [quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md) ou des [constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md) facultatifs, et que le moteur d’expression régulière retourne à un état enregistré précédent pour poursuivre la recherche d’une correspondance. La rétroaction est essentielle à la puissance des expressions régulières ; elle permet aux expressions d'être puissantes et flexibles et de correspondre à des modèles très complexes. Cependant, cette puissance a un coût. La rétroaction est souvent le facteur le plus important qui affecte les performances du moteur des expressions régulières. Heureusement, le développeur contrôle le comportement du moteur des expressions régulières et comment il utilise la rétroaction. Cette rubrique explique comment la rétroaction fonctionne et comment elle peut être activée.  
   
 > [!NOTE]
 > En général, un automate fini non déterministe comme le moteur d’expression régulière de .NET fait peser la responsabilité de la conception d’expressions régulières efficaces et rapides sur le développeur.  
@@ -33,14 +33,14 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
 ## <a name="linear-comparison-without-backtracking"></a>Comparaison linéaire sans rétroaction  
  Si un modèle d'expression régulière ne possède pas de quantificateur facultatif ou de construction d'alternative, le moteur des expressions régulières s'exécute en temps linéaire. Autrement dit, une fois que le moteur des expressions régulières correspond au premier élément de langage dans le modèle avec du texte dans la chaîne d'entrée, il tente de correspondre à l'élément de langage suivant dans le modèle avec le caractère ou le groupe suivant de caractères dans la chaîne d'entrée. Cela se poursuit jusqu'à ce que la correspondance réussisse ou échoue. Dans les deux cas, le moteur des expressions régulières avance d'un caractère à la fois dans la chaîne d'entrée.  
   
- L'exemple suivant illustre cette situation. L'expression régulière `e{2}\w\b` recherche deux occurrences de la lettre « e » suivie de n'importe quel caractère de mot suivi d'une limite de mot.  
+ L'exemple suivant en est l'illustration. L'expression régulière `e{2}\w\b` recherche deux occurrences de la lettre « e » suivie de n'importe quel caractère de mot suivi d'une limite de mot.  
   
  [!code-csharp[Conceptual.RegularExpressions.Backtracking#1](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/cs/backtracking1.cs#1)]
  [!code-vb[Conceptual.RegularExpressions.Backtracking#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking1.vb#1)]  
   
  Bien que cette expression régulière inclue le quantificateur `{2}`, elle est évaluée de façon linéaire. Le moteur des expressions régulières ne revient pas en arrière, car `{2}` n'est pas un quantificateur facultatif ; il spécifie un nombre exact et pas un nombre variable de fois que la sous-expression précédente doit correspondre. Par conséquent, le moteur des expressions régulières tente de correspondre au modèle d'expression régulière avec la chaîne d'entrée comme indiqué dans le tableau suivant.  
   
-|Opération|Position dans le modèle|Position dans la chaîne|Résultat|  
+|Opération|Position dans le modèle|Position dans la chaîne|Résultats|  
 |---------------|-------------------------|------------------------|------------|  
 |1|e|"besoin d'un roseau" (index 0)|Pas de correspondance.|  
 |2|e|"esoin d'un roseau" (index 1)|Correspondance possible.|  
@@ -60,7 +60,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
 |16|e|"seau" (index 11)|Correspondance possible.|  
 |17|e{2}|"au" (index 12)|Correspondance possible.|  
 |18|\w|"u" (index 13)|Correspondance possible.|  
-|19|\b|"" (index 14)|Correspondance .|  
+|19|\b|"" (index 14)|Correspondance|  
   
  Si un modèle d'expression régulière n'inclut aucun quantificateur facultatif ou construction d'alternative, le nombre maximal de comparaisons requises pour correspondre au modèle d'expression régulière avec la chaîne d'entrée équivaut à peu près au nombre de caractères dans la chaîne d'entrée. Dans ce cas, le moteur des expressions régulières utilise 19 comparaisons pour identifier les correspondances possibles dans cette chaîne de 13 caractères.  En d'autres termes, le moteur des expressions régulières s'exécute en temps quasi linéaire s'il ne contient pas de quantificateur facultatif ou de construction d'alternative.   
 
@@ -92,18 +92,18 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
  [!code-csharp[Conceptual.RegularExpressions.Backtracking#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/cs/backtracking3.cs#3)]
  [!code-vb[Conceptual.RegularExpressions.Backtracking#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking3.vb#3)]  
   
- Comme la sortie de l'exemple indique, il a fallu presque deux fois plus de temps au moteur des expressions régulières pour constater qu'une chaîne d'entrée ne correspondait pas au modèle que pour identifier une chaîne correspondante. Cela est dû au fait qu'une correspondance infructueuse représente toujours le pire des scénarios. Le moteur des expressions régulières doit utiliser l'expression régulière pour suivre tous les chemins d'accès possibles dans les données avant qu'il puisse conclure que la correspondance est infructueuse, et les parenthèses imbriquées créent plusieurs chemins d'accès supplémentaires dans les données. Le moteur des expressions régulières conclut que la deuxième chaîne ne correspondait pas au modèle en procédant comme suit :  
+ Comme la sortie de l'exemple indique, il a fallu presque deux fois plus de temps au moteur des expressions régulières pour constater qu'une chaîne d'entrée ne correspondait pas au modèle que pour identifier une chaîne correspondante. Cela est dû au fait qu'une correspondance infructueuse représente toujours le pire des scénarios. Le moteur des expressions régulières doit utiliser l'expression régulière pour suivre tous les chemins d'accès possibles dans les données avant qu'il puisse conclure que la correspondance est infructueuse, et les parenthèses imbriquées créent plusieurs chemins d'accès supplémentaires dans les données. Le moteur des expressions régulières conclut que la deuxième chaîne ne correspondait pas au modèle en procédant comme suit :  
   
-- Il vérifie qu'il était au début de la chaîne, puis fait correspondre les cinq premiers caractères dans la chaîne avec le modèle `a+`. Il détermine ensuite qu'il n'y a aucun groupe supplémentaire de caractères « a » dans la chaîne. Enfin, il effectue en test pour déterminer la fin de la chaîne. Étant donné qu'il reste un caractère supplémentaire dans la chaîne, la correspondance échoue. Cette correspondance infructueuse requiert 9 comparaisons. Le moteur des expressions régulières enregistre également des informations d'état de ses correspondances de « a » (que nous appellerons correspondance 1), « aa » (correspondance 2), « aaa » (correspondance 3) et « aaaa » (correspondance 4).  
+- Il vérifie qu'il était au début de la chaîne, puis fait correspondre les cinq premiers caractères dans la chaîne avec le modèle `a+`. Il détermine ensuite qu'il n'y a aucun groupe supplémentaire de caractères « a » dans la chaîne. Enfin, il effectue en test pour déterminer la fin de la chaîne. Étant donné qu'il reste un caractère supplémentaire dans la chaîne, la correspondance échoue. Cette correspondance infructueuse requiert 9 comparaisons. Le moteur des expressions régulières enregistre également des informations d'état de ses correspondances de « a » (que nous appellerons correspondance 1), « aa » (correspondance 2), « aaa » (correspondance 3) et « aaaa » (correspondance 4).  
   
 - Il revient à la correspondance 4 enregistrée précédemment. Il détermine qu'il y a un caractère « a » supplémentaire à assigner à un groupe capturé supplémentaire. Enfin, il effectue en test pour déterminer la fin de la chaîne. Étant donné qu'il reste un caractère supplémentaire dans la chaîne, la correspondance échoue. Cette correspondance infructueuse requiert 4 comparaisons. Jusqu'à présent, un total de 13 comparaisons ont été effectuées.  
   
 - Il revient à la correspondance 3 enregistrée précédemment. Il détermine qu'il y a deux caractères « a » supplémentaires à assigner à un groupe capturé supplémentaire. Toutefois, le test de fin de chaîne échoue. Il revient ensuite à la correspondance 3 et tente de faire correspondre les deux caractères « a » supplémentaire dans deux groupes capturés supplémentaires. Le test de fin de chaîne échoue encore. Ces correspondances infructueuses requièrent 12 comparaisons. Jusqu'à présent, un total de 25 comparaisons ont été effectuées.  
   
- La comparaison de la chaîne d'entrée avec l'expression régulière continue de cette façon jusqu'à ce que le moteur des expressions régulières ait tenté toutes les combinaisons possibles des correspondances et conclue qu'il n'existe aucune correspondance. À cause des quantificateurs imbriqués, cette comparaison correspond à une opération O(2<sup>n</sup>) ou exponentielle, où *n* est le nombre de caractères dans la chaîne d’entrée. Cela signifie que dans le pire des cas, une chaîne d'entrée de 30 caractères requiert environ 1 073 741 824 comparaisons et une chaîne d'entrée de 40 caractères requiert environ 1 099 511 627 776 comparaisons. Si vous utilisez des chaînes de longueurs identiques ou supérieures, l'exécution des méthodes d'expression régulières peut prendre très longtemps lorsqu'elles traitent une entrée qui ne correspond pas au modèle d'expression régulière. 
+ La comparaison de la chaîne d'entrée avec l'expression régulière continue de cette façon jusqu'à ce que le moteur des expressions régulières ait tenté toutes les combinaisons possibles des correspondances et conclue qu'il n'existe aucune correspondance. À cause des quantificateurs imbriqués, cette comparaison correspond à une opération O(2<sup>n</sup>) ou exponentielle, où *n* est le nombre de caractères dans la chaîne d’entrée. Cela signifie que dans le pire des cas, une chaîne d'entrée de 30 caractères requiert environ 1 073 741 824 comparaisons et une chaîne d'entrée de 40 caractères requiert environ 1 099 511 627 776 comparaisons. Si vous utilisez des chaînes de longueurs identiques ou supérieures, l'exécution des méthodes d'expression régulières peut prendre très longtemps lorsqu'elles traitent une entrée qui ne correspond pas au modèle d'expression régulière. 
 
 ## <a name="controlling-backtracking"></a>Contrôle de la rétroaction  
- La rétroaction vous permet de créer des expressions régulières puissantes et flexibles. Toutefois, comme la section précédente l'indiquait, ces avantages peuvent s'accompagner de performances médiocres. Pour empêcher la rétroaction excessive, vous devez définir un intervalle de délai d'attente lorsque vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> ou appelez une méthode de mise en correspondance statique d'expression régulière. Cette situation est présentée dans la section suivante. Par ailleurs, .NET Core prend en charge trois éléments de langage d’expression régulière qui limitent ou suppriment le retour arrière et prennent en charge des expressions régulières complexes avec une perte de performances faible ou nulle : les [sous-expressions sans retour arrière](#nonbacktracking-subexpression), les [assertions arrière](#lookbehind-assertions) et les [assertions avant](#lookahead-assertions). Pour plus d’informations sur chaque élément de langage, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+ La rétroaction vous permet de créer des expressions régulières puissantes et flexibles. Toutefois, comme la section précédente l'indiquait, ces avantages peuvent s'accompagner de performances médiocres. Pour empêcher la rétroaction excessive, vous devez définir un intervalle de délai d'attente lorsque vous instanciez un objet <xref:System.Text.RegularExpressions.Regex> ou appelez une méthode de mise en correspondance statique d'expression régulière. Cette situation est présentée dans la section suivante. En outre, .NET prend en charge trois éléments de langage d’expression régulière qui limitent ou suppriment la rétroaction et qui prennent en charge des expressions régulières complexes avec peu ou pas de dégradation des performances : les [groupes atomiques](#atomic-groups), les [assertions de postanalyse](#lookbehind-assertions)et les [assertions de préanalyse](#lookahead-assertions). Pour plus d’informations sur chaque élément de langage, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
 
 ### <a name="defining-a-time-out-interval"></a>Définir un intervalle de délai d'attente  
  À partir de .NET Framework 4.5, vous pouvez définir un intervalle de délai d’attente qui représente la durée maximale pendant laquelle le moteur d’expression régulière recherche une correspondance avant d’abandonner la tentative et de lever une exception <xref:System.Text.RegularExpressions.RegexMatchTimeoutException>. Vous spécifiez l'intervalle de délai d'attente en donnant une valeur <xref:System.TimeSpan> au constructeur <xref:System.Text.RegularExpressions.Regex.%23ctor%28System.String%2CSystem.Text.RegularExpressions.RegexOptions%2CSystem.TimeSpan%29?displayProperty=nameWithType> pour les expressions régulières d'instances. De plus, chaque méthode de mise en correspondance statique possède une surcharge avec un paramètre <xref:System.TimeSpan> qui vous permet de spécifier une valeur de délai d'attente. Par défaut, l'intervalle de délai d'attente est défini sur <xref:System.Text.RegularExpressions.Regex.InfiniteMatchTimeout?displayProperty=nameWithType> et le moteur des expressions régulières n'expire pas.  
@@ -118,8 +118,8 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
  [!code-csharp[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/cs/ctor1.cs#1)]
  [!code-vb[System.Text.RegularExpressions.Regex.ctor#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.text.regularexpressions.regex.ctor/vb/ctor1.vb#1)]  
 
-### <a name="nonbacktracking-subexpression"></a>Sous-expression non rétroactive  
- L’élément Language`)` `(?>` sous- *expression* supprime la rétroaction dans une sous-expression. Cela permet d'éviter les problèmes de performances associés liés à des correspondances infructueuses.  
+### <a name="atomic-groups"></a>Groupes atomiques
+ L’élément Language`)` `(?>` sous- *expression* supprime la rétroaction dans la sous-expression. Une fois qu’il a été mis en correspondance, il n’accorde aucune partie de sa correspondance à la rétroaction suivante. Par exemple, dans le modèle `(?>\w*\d*)1`, si le `1` ne peut pas être mis en correspondance, le `\d*` n’abandonnera aucune de ses correspondances, même si cela signifie qu’il permettrait aux `1` de correspondre. Les groupes atomiques peuvent aider à éviter les problèmes de performances associés aux correspondances ayant échoué.
   
  L'exemple suivant montre comment la suppression de la rétroaction améliore les performances lors de l'utilisation de quantificateurs imbriqués. Il mesure le temps nécessaire pour que le moteur des expressions régulières détermine qu'une chaîne d'entrée ne correspond pas à deux expressions régulières. La première expression régulière utilise la rétroaction pour tenter de mettre en correspondance une chaîne qui contient une ou plusieurs occurrences d'un ou plusieurs chiffres hexadécimaux, suivi d'un signe deux-points, suivi d'un ou plusieurs chiffres hexadécimaux, suivi de deux signes deux-points. La seconde expression régulière est identique à la première, à ceci près qu'elle désactive la rétroaction. Comme la sortie de l'exemple l'indique, l'amélioration des performances due à la désactivation de la rétroaction est considérable.  
   
@@ -127,7 +127,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
  [!code-vb[Conceptual.RegularExpressions.Backtracking#4](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.backtracking/vb/backtracking4.vb#4)]  
 
 ### <a name="lookbehind-assertions"></a>assertions de postanalyse  
- .NET comporte deux éléments de langage, `(?<=`*sous-expression*`)` and `(?<!`*sous-expression*`)`, qui correspondent aux caractères précédents de la chaîne d’entrée. Les deux éléments de langage sont des assertions de largeur nulle ; c’est-à-dire qu’ils déterminent si le ou les caractères qui précèdent immédiatement le caractère actuel peuvent être mis en correspondance par la *sous-expression*, sans avancer ou utiliser la rétroaction.  
+ .NET comporte deux éléments de langage, `(?<=`*sous-expression*`)` and `(?<!`*sous-expression*`)`, qui correspondent aux caractères précédents de la chaîne d’entrée. Les deux éléments de langage sont des assertions de largeur nulle ; c'est-à-dire qu'ils déterminent si le ou les caractères qui précèdent immédiatement le caractère actuel peuvent être mis en correspondance par la *sous-expression*, sans avancer ou utiliser la rétroaction.  
   
  `(?<=` sous- *expression* `)` est une assertion de postanalyse positive ; autrement dit, le ou les caractères situés avant la position actuelle doivent correspondre à la sous- *expression*. `(?<!`*sous-expression*`)` est une assertion de postanalyse négative ; c'est-à-dire que le ou les caractères situés avant la position actuelle ne doivent pas correspondre à la *sous-expression*. Les assertions de postanalyse positive et négative sont très utiles quand la *sous-expression* est un sous-ensemble de la sous-expression précédente.  
   
@@ -138,7 +138,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
   
  Le premier modèle d'expression régulière, `^[0-9A-Z]([-.\w]*[0-9A-Z])*@`, est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Démarrer la correspondance au début de la chaîne.|  
 |`[0-9A-Z]`|Mettre en correspondance un caractère alphanumérique. Cette comparaison ne respecte pas la casse, parce que la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> .|  
@@ -149,7 +149,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
   
  Le second modèle d'expression régulière, `^[0-9A-Z][-.\w]*(?<=[0-9A-Z])@`, utilise une assertion de postanalyse positive. Il est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Démarrer la correspondance au début de la chaîne.|  
 |`[0-9A-Z]`|Mettre en correspondance un caractère alphanumérique. Cette comparaison ne respecte pas la casse, parce que la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> .|  
@@ -158,7 +158,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
 |`@`|Mettre en correspondance une arobase (« \@ »).|  
 
 ### <a name="lookahead-assertions"></a>assertions de préanalyse  
- .NET comporte deux éléments de langage, `(?=`*sous-expression*`)` and `(?!`*sous-expression*`)`, qui correspondent aux caractères suivants de la chaîne d’entrée. Les deux éléments de langage sont des assertions de largeur nulle ; c’est-à-dire qu’ils déterminent si le ou les caractères qui suivent immédiatement le caractère actuel peuvent être mis en correspondance par la *sous-expression*, sans avancer ou utiliser la rétroaction.  
+ .NET comporte deux éléments de langage, `(?=`*sous-expression*`)` and `(?!`*sous-expression*`)`, qui correspondent aux caractères suivants de la chaîne d’entrée. Les deux éléments de langage sont des assertions de largeur nulle ; c'est-à-dire qu'ils déterminent si le ou les caractères qui suivent immédiatement le caractère actuel peuvent être mis en correspondance par la *sous-expression*, sans avancer ou utiliser la rétroaction.  
   
  `(?=` `)` sous- *expression* est une assertion de préanalyse positive ; autrement dit, le ou les caractères situés après la position actuelle doivent correspondre à la sous- *expression*. `(?!`*sous-expression*`)` est une assertion de préanalyse négative ; c'est-à-dire que le ou les caractères situés après la position actuelle ne doivent pas correspondre à la *sous-expression*. Les assertions de préanalyse positive et négative sont très utiles quand la *sous-expression* est un sous-ensemble de la sous-expression suivante.  
   
@@ -169,7 +169,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
   
  Le premier modèle d'expression régulière, `^(([A-Z]\w*)+\.)*[A-Z]\w*$`, est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Démarrer la correspondance au début de la chaîne.|  
 |`([A-Z]\w*)+\.`|Mettre en correspondance un caractère alphabétique (A-Z) suivi de zéro, un ou plusieurs caractères alphabétiques une ou plusieurs fois, suivi d'un point. Cette comparaison ne respecte pas la casse, parce que la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> .|  
@@ -179,7 +179,7 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
   
  Le second modèle d'expression régulière, `^((?=[A-Z])\w+\.)*[A-Z]\w*$`, utilise une assertion de préanalyse positive. Il est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Démarrer la correspondance au début de la chaîne.|  
 |`(?=[A-Z])`|Effectuer une préanalyse du premier caractère et continuer la mise en correspondance s'il est alphabétique (A-Z). Cette comparaison ne respecte pas la casse, parce que la méthode <xref:System.Text.RegularExpressions.Regex.IsMatch%2A?displayProperty=nameWithType> est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType> .|  
@@ -194,4 +194,4 @@ La rétroaction se produit quand un modèle d’expression régulière contient 
 - [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
 - [Quantificateurs](../../../docs/standard/base-types/quantifiers-in-regular-expressions.md)
 - [Constructions d’alternative](../../../docs/standard/base-types/alternation-constructs-in-regular-expressions.md)
-- [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)
+- [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md)

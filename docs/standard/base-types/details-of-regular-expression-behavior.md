@@ -9,12 +9,12 @@ helpviewer_keywords:
 - regular expressions, behavior
 - .NET Framework regular expressions, behavior
 ms.assetid: 0ee1a6b8-caac-41d2-917f-d35570021b10
-ms.openlocfilehash: af812e1e42d57c349e94b5992b768636857d2a0c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 504e315dda4e76f56a88d97149b1515b6743668b
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348280"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124349"
 ---
 # <a name="details-of-regular-expression-behavior"></a>Comportement détaillé des expressions régulières
 
@@ -46,7 +46,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      Les versions gourmande et paresseuse de cette expression régulière sont définies comme indiqué dans le tableau suivant :
 
-    |Motif|Description|
+    |Modèle|Description|
     |-------------|-----------------|
     |`.+` (quantificateur gourmand)|Mettre en correspondance au moins une occurrence de n’importe quel caractère. Le moteur d’expression régulière recherche alors la chaîne entière, puis effectue une rétroaction si nécessaire pour trouver le reste du modèle.|
     |`.+?` (quantificateur paresseux)|Mettre en correspondance au moins une occurrence de n’importe quel caractère, mais une quantité la plus petite possible.|
@@ -62,7 +62,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      L'expression régulière `\b[A-Z]+\b(?=\P{P})` est définie comme indiqué dans le tableau suivant.
 
-    |Motif|Description|
+    |Modèle|Description|
     |-------------|-----------------|
     |`\b`|Commencer la correspondance à la limite d'un mot.|
     |`[A-Z]+`|Mettre en correspondance un caractère alphabétique une ou plusieurs fois. Cette comparaison ne respecte pas la casse car la méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> est appelée avec l'option <xref:System.Text.RegularExpressions.RegexOptions.IgnoreCase?displayProperty=nameWithType>.|
@@ -78,7 +78,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      Le modèle d'expression régulière `\b(?!non)\w+\b` est défini comme indiqué dans le tableau suivant.
 
-    |Motif|Description|
+    |Modèle|Description|
     |-------------|-----------------|
     |`\b`|Commencer la correspondance à la limite d'un mot.|
     |`(?!non)`|Préanalyser pour garantir que la chaîne actuelle ne commence pas par « non ». Si c’est le cas, la correspondance échoue.|
@@ -94,7 +94,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.
 
-    |Motif|Description|
+    |Modèle|Description|
     |-------------|-----------------|
     |`^`|Commencer la correspondance au début d’une ligne.|
     |`(?<Pvt>\<PRIVATE\>\s)?`|Mettre en correspondance zéro ou une occurrence de la chaîne `<PRIVATE>` suivie d’un espace blanc. Assigner la correspondance à un groupe de capture nommé `Pvt`.|
@@ -106,7 +106,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
 - Définitions de groupe d’équilibrage : `(?<`*nom1*`-`*nom2*`>` sous- *expression*`)`. Cette fonctionnalité permet au moteur d’expression régulière d’effectuer un suivi des constructions imbriquées telles que les parenthèses ou les crochets ouvrants et fermants. Pour obtenir un exemple, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
-- Sous-expressions non rétroactives (également appelées sous-expressions gourmandes) : `(?>`*sous-expression*`)`. Cette fonctionnalité permet au moteur de rétroaction de garantir qu’une sous-expression correspond uniquement à la première correspondance trouvée pour cette sous-expression, comme si l’expression s’exécutait indépendamment de l’expression qui la contient. Si vous n’utilisez pas cette construction, les recherches rétroactives à partir de la plus grande expression peuvent modifier le comportement d’une sous-expression. Par exemple, l’expression régulière `(a+)\w` trouve un ou plusieurs caractères « a », ainsi qu’un caractère de mot qui suit la séquence de caractères « a », puis assigne la séquence de caractères « a » au premier groupe de capture. Toutefois, si le dernier caractère de la chaîne d’entrée est également un « a », il est mis en correspondance par l’élément de langage `\w` et n’est pas inclus dans le groupe capturé.
+- Groupes atomiques :`)`de `(?>`sous- *expression* . Cette fonctionnalité permet au moteur de rétroaction de garantir qu’une sous-expression correspond uniquement à la première correspondance trouvée pour cette sous-expression, comme si l’expression s’exécutait indépendamment de l’expression qui la contient. Si vous n’utilisez pas cette construction, les recherches rétroactives à partir de la plus grande expression peuvent modifier le comportement d’une sous-expression. Par exemple, l’expression régulière `(a+)\w` met en correspondance un ou plusieurs caractères « a », ainsi qu’un caractère de mot qui suit la séquence de caractères « a », et assigne la séquence de caractères « a » au premier groupe de capture. Toutefois, si le dernier caractère de la chaîne d’entrée est également un « a », il est mis en correspondance par l’élément de langage `\w` et n’est pas inclus dans le groupe capturé.
 
      [!code-csharp[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking2.cs#7)]
      [!code-vb[Conceptual.RegularExpressions.Design#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking2.vb#7)]
@@ -116,7 +116,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
      [!code-csharp[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.design/cs/nonbacktracking1.cs#8)]
      [!code-vb[Conceptual.RegularExpressions.Design#8](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.design/vb/nonbacktracking1.vb#8)]
 
-     Pour plus d’informations sur les sous-expressions non rétroactives, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
+     Pour plus d’informations sur les groupes atomiques, consultez [constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).
 
 - La mise en correspondance de droite à gauche est spécifiée en fournissant l’option <xref:System.Text.RegularExpressions.RegexOptions.RightToLeft?displayProperty=nameWithType> à une méthode de mise en correspondance de constructeur de classe ou d’instance statique <xref:System.Text.RegularExpressions.Regex>. Cette fonctionnalité s’avère utile lors de la recherche de droite à gauche au lieu de gauche à droite, ou dans les cas où il est plus efficace de commencer une correspondance dans la partie droite du modèle plutôt que la partie gauche. Comme l’illustre l’exemple suivant, l’utilisation de la mise en correspondance de droite à gauche peut modifier le comportement des quantificateurs gourmands. L’exemple effectue deux recherches d’une phrase qui se termine par un nombre. La recherche de gauche à droite qui utilise le quantificateur gourmand `+` trouve l’un des six chiffres dans la phrase, tandis que la recherche de droite à gauche trouve les six chiffres. Pour obtenir une description du modèle d’expression régulière, consultez l’exemple qui illustre les quantificateurs paresseux plus haut dans cette section.
 
@@ -132,7 +132,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
      L'expression régulière ``^[A-Z0-9]([-!#$%&'.*+/=?^`{}|~\w])*(?<=[A-Z0-9])$`` est définie comme indiqué dans le tableau suivant.
 
-    |Motif|Description|
+    |Modèle|Description|
     |-------------|-----------------|
     |`^`|Commencer la correspondance au début de la chaîne.|
     |`[A-Z0-9]`|Mettre en correspondance n’importe quel caractère numérique ou alphanumérique. (La comparaison respecte la casse.)|
@@ -144,7 +144,7 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----------|-----------------|
 |[Rétroaction](../../../docs/standard/base-types/backtracking-in-regular-expressions.md)|Fournit des informations sur la manière dont la rétroaction d’expression régulière se ramifie pour trouver d’autres correspondances.|
 |[Compilation et réutilisation](../../../docs/standard/base-types/compilation-and-reuse-in-regular-expressions.md)|Fournit des informations sur la compilation et la réutilisation des expressions régulières pour augmenter les performances.|
@@ -154,6 +154,6 @@ Le moteur d’expression régulière du .NET Framework est un analyseur d’expr
 |[Exemples d'expressions régulières](../../../docs/standard/base-types/regular-expression-examples.md)|Contient des exemples de code qui illustrent l’utilisation des expressions régulières dans des applications courantes.|
 |[Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)|Fournit des informations sur le jeu de caractères, d’opérateurs et de constructions permettant de définir des expressions régulières.|
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.Text.RegularExpressions?displayProperty=nameWithType>

@@ -7,15 +7,15 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], how-to topics
 ms.assetid: 006aa461-fe37-4cd8-860a-d38d76e8b9f7
-ms.openlocfilehash: d3d5116a2fa2198661050a1c1adbae9512cd078a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82da07620135224b5f7353f2acce087d939c1855
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790882"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124232"
 ---
 # <a name="textbox-how-to-topics"></a>Rubriques "Comment utiliser le TextBox"
-Cette section fournit des exemples qui montrent comment accomplir des tâches courantes à l’aide de la <xref:System.Windows.Controls.TextBox> contrôle.  
+Cette section fournit des exemples qui montrent comment accomplir des tâches courantes à l’aide du contrôle <xref:System.Windows.Controls.TextBox>.  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Créer un contrôle TextBox multiligne](how-to-create-a-multiline-textbox-control.md)  
@@ -32,7 +32,7 @@ Cette section fournit des exemples qui montrent comment accomplir des tâches co
  [Utiliser la vérification de l'orthographe avec un menu contextuel](how-to-use-spell-checking-with-a-context-menu.md)  
  [Ajouter un filigrane à un TextBox](how-to-add-a-watermark-to-a-textbox.md)  
   
-## <a name="reference"></a>Référence  
+## <a name="reference"></a>Informations de référence  
  <xref:System.Windows.Controls.TextBox>  
   
  <xref:System.Windows.Controls.RichTextBox>  
@@ -43,5 +43,5 @@ Cette section fournit des exemples qui montrent comment accomplir des tâches co
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Exemple de galerie de contrôles WPF](https://go.microsoft.com/fwlink/?LinkID=160053)
+- [Exemple de galerie de contrôles WPF](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/ControlsAndLayout)
 - [Styles et modèles TextBox](textbox-styles-and-templates.md)

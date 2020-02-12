@@ -7,24 +7,24 @@ helpviewer_keywords:
 - Win32 code [WPF], WPF interoperation
 - interoperability [WPF], Win32
 ms.assetid: 555e55a7-0851-4ec8-b1c6-0acba7e9b648
-ms.openlocfilehash: 1fdc0c9ccf1464d7519a4c5935520de1206ca9bb
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 0aecde96d182e12ab72b1a6cba129ab1d8a28391
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76794156"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77123777"
 ---
 # <a name="walkthrough-host-a-wpf-clock-in-win32"></a>Procédure pas à pas : héberger une horloge WPF dans Win32
 
 Pour placer des [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] dans des applications Win32, utilisez <xref:System.Windows.Interop.HwndSource>, qui fournit le HWND qui contient le contenu de votre [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)]. Tout d’abord, vous créez le <xref:System.Windows.Interop.HwndSource>, en lui attribuant des paramètres similaires à CreateWindow. Ensuite, vous indiquez à la <xref:System.Windows.Interop.HwndSource> à propos du contenu [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] souhaité. Enfin, vous récupérez le HWND à partir du <xref:System.Windows.Interop.HwndSource>. Cette procédure pas à pas montre comment créer un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] mixte dans une application Win32 qui réimplémente la boîte de dialogue **des propriétés de date et d’heure** du système d’exploitation.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Consultez [interopérabilité WPF et Win32](wpf-and-win32-interoperation.md).
 
-## <a name="how-to-use-this-tutorial"></a>Utilisation de ce didacticiel
+## <a name="how-to-use-this-tutorial"></a>Comment utiliser ce didacticiel
 
-Ce didacticiel se concentre sur les étapes importantes de la production d’une application d’interopérabilité. Ce didacticiel est associé à un exemple, l' [exemple d’interopérabilité de l’horloge Win32](https://go.microsoft.com/fwlink/?LinkID=160051), mais cet échantillon reflète le produit final. Ce didacticiel décrit les étapes comme si vous travailliez avec un projet Win32 existant, peut-être un projet préexistant, et que vous ajoutiez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hébergé à votre application. Vous pouvez comparer votre produit final avec l' [exemple d’interopérabilité de l’horloge Win32](https://go.microsoft.com/fwlink/?LinkID=160051).
+Ce didacticiel se concentre sur les étapes importantes de la production d’une application d’interopérabilité. Ce didacticiel est associé à un exemple, l' [exemple d’interopérabilité de l’horloge Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock), mais cet échantillon reflète le produit final. Ce didacticiel décrit les étapes comme si vous travailliez avec un projet Win32 existant, peut-être un projet préexistant, et que vous ajoutiez un [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] hébergé à votre application. Vous pouvez comparer votre produit final avec l' [exemple d’interopérabilité de l’horloge Win32](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock).
 
 ## <a name="a-walkthrough-of-windows-presentation-framework-inside-win32-hwndsource"></a>Procédure pas à pas de Windows Presentation Foundation dans Win32 (HwndSource)
 
@@ -232,10 +232,10 @@ Le résultat final ressemble à ceci :
 
 ![Boîte de dialogue Propriétés de date et heure du résultat final](./media/walkthrough-hosting-a-wpf-clock-in-win32/final-result-date-time-properties-dialog.png)
 
-Pour comparer votre résultat final au code qui a produit cette capture d’écran, consultez [exemple d’interopérabilité Win32 Clock](https://go.microsoft.com/fwlink/?LinkID=160051).
+Pour comparer votre résultat final au code qui a produit cette capture d’écran, consultez [exemple d’interopérabilité Win32 Clock](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock).
 
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Windows.Interop.HwndSource>
 - [Interopérabilité WPF et Win32](wpf-and-win32-interoperation.md)
-- [Interopérabilité Win32 Clock, exemple](https://go.microsoft.com/fwlink/?LinkID=160051)
+- [Interopérabilité Win32 Clock, exemple](https://github.com/Microsoft/WPF-Samples/tree/master/Migration%20and%20Interoperability/Win32Clock)

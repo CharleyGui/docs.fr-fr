@@ -7,12 +7,12 @@ helpviewer_keywords:
 - .NET application deployment [WPF], deploying with Firefox add-ons
 - .NET Framework Assistant for Firefox
 ms.assetid: 2403403b-9b14-48e9-b70d-fa288a3c9081
-ms.openlocfilehash: 687f61bd3ec7d10c6aa66c20cd5eb58fcc56f18a
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 56f5f633092d8aa0bfabdb0570ec26f14221838d
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636365"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124609"
 ---
 # <a name="firefox-add-ons-to-support-net-application-deployment"></a>Modules complémentaires de Firefox pour la prise en charge du déploiement d'applications .NET
 Le plug-in Windows Presentation Foundation (WPF) pour Firefox et l’Assistant .NET Framework pour Firefox autorisent les applications de navigateur XAML (XBAP), les [!INCLUDE[TLA2#tla_xaml](../../../../includes/tla2sharptla-xaml-md.md)]libres et les applications ClickOnce à fonctionner avec le navigateur Mozilla Firefox.  
@@ -31,7 +31,7 @@ Le plug-in Windows Presentation Foundation (WPF) pour Firefox et l’Assistant .
   
 - Signale toutes les versions installées du .NET Framework ou simplement la version la plus récente.  
   
- L’Assistant .NET Framework pour Firefox est inclus dans le .NET Framework 3,5 SP1. Pour plus d’informations sur la suppression de l’Assistant .NET Framework pour Firefox, consultez [Comment supprimer l’assistant .NET Framework pour Firefox](https://go.microsoft.com/fwlink/?LinkId=177944).  
+ L’Assistant .NET Framework pour Firefox est inclus dans le .NET Framework 3,5 SP1. Pour plus d’informations sur la suppression de l’Assistant .NET Framework pour Firefox, consultez [Comment supprimer l’assistant .NET Framework pour Firefox](https://support.microsoft.com/help/963707/how-to-remove-the-net-framework-assistant-for-firefox).  
   
 ## <a name="see-also"></a>Voir aussi
 
