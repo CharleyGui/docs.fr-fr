@@ -7,32 +7,32 @@ helpviewer_keywords:
 - controls [WPF], TextBox
 - TextBox control [WPF], how-to topics
 ms.assetid: 006aa461-fe37-4cd8-860a-d38d76e8b9f7
-ms.openlocfilehash: d3d5116a2fa2198661050a1c1adbae9512cd078a
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: 82da07620135224b5f7353f2acce087d939c1855
+ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61790882"
+ms.lasthandoff: 02/11/2020
+ms.locfileid: "77124232"
 ---
-# <a name="textbox-how-to-topics"></a><span data-ttu-id="eb3ee-102">Rubriques "Comment utiliser le TextBox"</span><span class="sxs-lookup"><span data-stu-id="eb3ee-102">TextBox How-to Topics</span></span>
-<span data-ttu-id="eb3ee-103">Cette section fournit des exemples qui montrent comment accomplir des tâches courantes à l’aide de la <xref:System.Windows.Controls.TextBox> contrôle.</span><span class="sxs-lookup"><span data-stu-id="eb3ee-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.TextBox> control.</span></span>  
+# <a name="textbox-how-to-topics"></a><span data-ttu-id="0c954-102">Rubriques "Comment utiliser le TextBox"</span><span class="sxs-lookup"><span data-stu-id="0c954-102">TextBox How-to Topics</span></span>
+<span data-ttu-id="0c954-103">Cette section fournit des exemples qui montrent comment accomplir des tâches courantes à l’aide du contrôle <xref:System.Windows.Controls.TextBox>.</span><span class="sxs-lookup"><span data-stu-id="0c954-103">This section provides examples that demonstrate how to accomplish common tasks using the <xref:System.Windows.Controls.TextBox> control.</span></span>  
   
-## <a name="in-this-section"></a><span data-ttu-id="eb3ee-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="eb3ee-104">In This Section</span></span>  
- [<span data-ttu-id="eb3ee-105">Créer un contrôle TextBox multiligne</span><span class="sxs-lookup"><span data-stu-id="eb3ee-105">Create a Multiline TextBox Control</span></span>](how-to-create-a-multiline-textbox-control.md)  
- [<span data-ttu-id="eb3ee-106">Détecter la modification du texte figurant dans un TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-106">Detect When Text in a TextBox Has Changed</span></span>](how-to-detect-when-text-in-a-textbox-has-changed.md)  
- [<span data-ttu-id="eb3ee-107">Activer des tabulations dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-107">Enable Tab Characters in a TextBox Control</span></span>](how-to-enable-tab-characters-in-a-textbox-control.md)  
- [<span data-ttu-id="eb3ee-108">Obtenir une collection de lignes à partir d'un TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-108">Get a Collection of Lines from a TextBox</span></span>](how-to-get-a-collection-of-lines-from-a-textbox.md)  
- [<span data-ttu-id="eb3ee-109">Mettre un contrôle TextBox en lecture seule</span><span class="sxs-lookup"><span data-stu-id="eb3ee-109">Make a TextBox Control Read-Only</span></span>](how-to-make-a-textbox-control-read-only.md)  
- [<span data-ttu-id="eb3ee-110">Positionner le curseur au début ou à la fin du texte dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-110">Position the Cursor at the Beginning or End of Text in a TextBox Control</span></span>](position-the-cursor-at-the-beginning-or-end-of-text.md)  
- [<span data-ttu-id="eb3ee-111">Récupérer une sélection de texte</span><span class="sxs-lookup"><span data-stu-id="eb3ee-111">Retrieve a Text Selection</span></span>](how-to-retrieve-a-text-selection.md)  
- [<span data-ttu-id="eb3ee-112">Définir le focus dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-112">Set Focus in a TextBox Control</span></span>](how-to-set-focus-in-a-textbox-control.md)  
- [<span data-ttu-id="eb3ee-113">Définir le texte d’un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-113">Set the Text Content of a TextBox Control</span></span>](how-to-set-the-text-content-of-a-textbox-control.md)  
- [<span data-ttu-id="eb3ee-114">Activer la vérification de l'orthographe dans un contrôle d'édition de texte</span><span class="sxs-lookup"><span data-stu-id="eb3ee-114">Enable Spell Checking in a Text Editing Control</span></span>](how-to-enable-spell-checking-in-a-text-editing-control.md)  
- [<span data-ttu-id="eb3ee-115">Utiliser un menu contextuel personnalisé avec un TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-115">Use a Custom Context Menu with a TextBox</span></span>](how-to-use-a-custom-context-menu-with-a-textbox.md)  
- [<span data-ttu-id="eb3ee-116">Utiliser la vérification de l'orthographe avec un menu contextuel</span><span class="sxs-lookup"><span data-stu-id="eb3ee-116">Use Spell Checking with a Context Menu</span></span>](how-to-use-spell-checking-with-a-context-menu.md)  
- [<span data-ttu-id="eb3ee-117">Ajouter un filigrane à un TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-117">Add a Watermark to a TextBox</span></span>](how-to-add-a-watermark-to-a-textbox.md)  
+## <a name="in-this-section"></a><span data-ttu-id="0c954-104">Dans cette section</span><span class="sxs-lookup"><span data-stu-id="0c954-104">In This Section</span></span>  
+ [<span data-ttu-id="0c954-105">Créer un contrôle TextBox multiligne</span><span class="sxs-lookup"><span data-stu-id="0c954-105">Create a Multiline TextBox Control</span></span>](how-to-create-a-multiline-textbox-control.md)  
+ [<span data-ttu-id="0c954-106">Détecter la modification du texte figurant dans un TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-106">Detect When Text in a TextBox Has Changed</span></span>](how-to-detect-when-text-in-a-textbox-has-changed.md)  
+ [<span data-ttu-id="0c954-107">Activer des tabulations dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-107">Enable Tab Characters in a TextBox Control</span></span>](how-to-enable-tab-characters-in-a-textbox-control.md)  
+ [<span data-ttu-id="0c954-108">Obtenir une collection de lignes à partir d'un TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-108">Get a Collection of Lines from a TextBox</span></span>](how-to-get-a-collection-of-lines-from-a-textbox.md)  
+ [<span data-ttu-id="0c954-109">Mettre un contrôle TextBox en lecture seule</span><span class="sxs-lookup"><span data-stu-id="0c954-109">Make a TextBox Control Read-Only</span></span>](how-to-make-a-textbox-control-read-only.md)  
+ [<span data-ttu-id="0c954-110">Positionner le curseur au début ou à la fin du texte dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-110">Position the Cursor at the Beginning or End of Text in a TextBox Control</span></span>](position-the-cursor-at-the-beginning-or-end-of-text.md)  
+ [<span data-ttu-id="0c954-111">Récupérer une sélection de texte</span><span class="sxs-lookup"><span data-stu-id="0c954-111">Retrieve a Text Selection</span></span>](how-to-retrieve-a-text-selection.md)  
+ [<span data-ttu-id="0c954-112">Définir le focus dans un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-112">Set Focus in a TextBox Control</span></span>](how-to-set-focus-in-a-textbox-control.md)  
+ [<span data-ttu-id="0c954-113">Définir le texte d’un contrôle TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-113">Set the Text Content of a TextBox Control</span></span>](how-to-set-the-text-content-of-a-textbox-control.md)  
+ [<span data-ttu-id="0c954-114">Activer la vérification de l'orthographe dans un contrôle d'édition de texte</span><span class="sxs-lookup"><span data-stu-id="0c954-114">Enable Spell Checking in a Text Editing Control</span></span>](how-to-enable-spell-checking-in-a-text-editing-control.md)  
+ [<span data-ttu-id="0c954-115">Utiliser un menu contextuel personnalisé avec un TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-115">Use a Custom Context Menu with a TextBox</span></span>](how-to-use-a-custom-context-menu-with-a-textbox.md)  
+ [<span data-ttu-id="0c954-116">Utiliser la vérification de l'orthographe avec un menu contextuel</span><span class="sxs-lookup"><span data-stu-id="0c954-116">Use Spell Checking with a Context Menu</span></span>](how-to-use-spell-checking-with-a-context-menu.md)  
+ [<span data-ttu-id="0c954-117">Ajouter un filigrane à un TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-117">Add a Watermark to a TextBox</span></span>](how-to-add-a-watermark-to-a-textbox.md)  
   
-## <a name="reference"></a><span data-ttu-id="eb3ee-118">Référence</span><span class="sxs-lookup"><span data-stu-id="eb3ee-118">Reference</span></span>  
+## <a name="reference"></a><span data-ttu-id="0c954-118">Informations de référence</span><span class="sxs-lookup"><span data-stu-id="0c954-118">Reference</span></span>  
  <xref:System.Windows.Controls.TextBox>  
   
  <xref:System.Windows.Controls.RichTextBox>  
@@ -41,7 +41,7 @@ ms.locfileid: "61790882"
   
  <xref:System.Windows.Controls.PasswordBox>  
   
-## <a name="see-also"></a><span data-ttu-id="eb3ee-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="eb3ee-119">See also</span></span>
+## <a name="see-also"></a><span data-ttu-id="0c954-119">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="0c954-119">See also</span></span>
 
-- [<span data-ttu-id="eb3ee-120">Exemple de galerie de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="eb3ee-120">WPF Controls Gallery Sample</span></span>](https://go.microsoft.com/fwlink/?LinkID=160053)
-- [<span data-ttu-id="eb3ee-121">Styles et modèles TextBox</span><span class="sxs-lookup"><span data-stu-id="eb3ee-121">TextBox Styles and Templates</span></span>](textbox-styles-and-templates.md)
+- [<span data-ttu-id="0c954-120">Exemple de galerie de contrôles WPF</span><span class="sxs-lookup"><span data-stu-id="0c954-120">WPF Controls Gallery Sample</span></span>](https://github.com/Microsoft/WPF-Samples/tree/master/Getting%20Started/ControlsAndLayout)
+- [<span data-ttu-id="0c954-121">Styles et modèles TextBox</span><span class="sxs-lookup"><span data-stu-id="0c954-121">TextBox Styles and Templates</span></span>](textbox-styles-and-templates.md)
