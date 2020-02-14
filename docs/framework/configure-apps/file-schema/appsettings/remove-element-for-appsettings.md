@@ -7,14 +7,12 @@ helpviewer_keywords:
 - remove Element
 - <remove> Element
 ms.assetid: 218c4464-e007-4539-803f-7c8b0a909fd8
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a0fcdb75aa733a9d7634ec1c3b31dcbbb87e090e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 83abbdbf0d3e4dfd16c0e8c649200c4ecc7329f7
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088721"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215497"
 ---
 # <a name="remove-element-for-appsettings"></a>\<supprimer > élément de \<appSettings >
 
@@ -46,7 +44,7 @@ Supprime les paramètres d’application personnalisés.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None
 
 ## <a name="example"></a>Exemple
 

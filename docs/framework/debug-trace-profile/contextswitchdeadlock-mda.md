@@ -12,14 +12,12 @@ helpviewer_keywords:
 - message pumping
 - context switching deadlocks
 ms.assetid: 26dfaa15-9ddb-4b0a-b6da-999bba664fa6
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7bcdb235ff2a73514c5bb3ad7abc3f4c3fc8e441
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e3fc4a2cb35cdcc713ba0ef362071083af08a27b
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052923"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217559"
 ---
 # <a name="contextswitchdeadlock-mda"></a>Assistant Débogage managé contextSwitchDeadlock
 
@@ -29,7 +27,7 @@ L'Assistant Débogage managé `contextSwitchDeadlock` est activé quand un inter
 
 Le symptôme le plus courant est l'absence de retour suite à un appel sur un composant COM non managé à partir d'un code managé.  Un autre symptôme est l'augmentation de l'utilisation de la mémoire dans le temps.
 
-## <a name="cause"></a>Cause
+## <a name="cause"></a>Cause :
 
 La cause la plus probable est qu'un thread cloisonné ne pompe pas les messages. Soit le thread cloisonné attend sans pomper les messages, soit il effectue des opérations de longue durée qui empêchent le pompage de la file d'attente des messages.
 
@@ -50,7 +48,7 @@ Pour déterminer si l'Assistant Débogage managé est faussement activé, désac
 > [!NOTE]
 > Cet Assistant Débogage managé est défini par défaut pour Visual Studio. Pour plus d’informations sur la désactivation des MDA, consultez [diagnostic des erreurs avec les Assistants Débogage managé](diagnosing-errors-with-managed-debugging-assistants.md#enable-and-disable-mdas).
 
-## <a name="resolution"></a>Résolution :
+## <a name="resolution"></a>Résolution
 
 Appliquez les règles COM relatives au pompage des messages de thread cloisonné.
 
@@ -58,7 +56,7 @@ Appliquez les règles COM relatives au pompage des messages de thread cloisonné
 
 Cet Assistant Débogage managé n'a aucun effet sur le CLR. Il fournit uniquement des informations sur les contextes COM.
 
-## <a name="output"></a>Sortie
+## <a name="output"></a>Output
 
 Message décrivant le contexte actuel et le contexte cible.
 

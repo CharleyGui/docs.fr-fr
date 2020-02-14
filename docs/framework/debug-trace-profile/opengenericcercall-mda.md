@@ -10,14 +10,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), CER calls
 - generics [.NET Framework], open generic CER calls
 ms.assetid: da3e4ff3-2e67-4668-9720-fa776c97407e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 44b6ee3e4f74a523c1e902a4eb48a64b11eb3937
-ms.sourcegitcommit: 9b2ef64c4fc10a4a10f28a223d60d17d7d249ee8
+ms.openlocfilehash: de1735103314dfedbabe27623f579ce2c1e728af
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/26/2019
-ms.locfileid: "72960899"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217278"
 ---
 # <a name="opengenericcercall-mda"></a>openGenericCERCall (MDA)
 
@@ -27,7 +25,7 @@ L’Assistant Débogage managé `openGenericCERCall` est activé pour signaler q
 
 Le code de la région d’exécution limitée ne s’exécute pas quand un thread est abandonné ou quand un domaine d’application est déchargé.
 
-## <a name="cause"></a>Cause
+## <a name="cause"></a>Cause :
 
 Au moment de la compilation JIT, une instanciation contenant un type de référence d’objet est seulement représentative, car le code obtenu est partagé et chacune des variables de type de référence d’objet peut être n’importe quel type de référence d’objet. Ceci peut empêcher la préparation de certaines ressources préalablement à l’exécution.
 
@@ -45,7 +43,7 @@ N’utilisez pas de variables de type générique qui sont du type de référenc
 
 Cet Assistant Débogage managé n'a aucun effet sur le CLR.
 
-## <a name="output"></a>Sortie
+## <a name="output"></a>Output
 
 Voici un exemple de sortie de cet Assistant Débogage managé :
   

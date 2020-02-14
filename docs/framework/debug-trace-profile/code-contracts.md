@@ -7,14 +7,12 @@ dev_langs:
 helpviewer_keywords:
 - Code contracts
 ms.assetid: 84526045-496f-489d-8517-a258cf76f040
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 103d668dd7a7436fd1acdccdc0afc2431ed8372a
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: b60f992cf9d934ed622c89a49c491a80377fb6fe
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73975006"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216713"
 ---
 # <a name="code-contracts"></a>Contrats de code
 
@@ -38,7 +36,7 @@ La plupart des méthodes dans la classe de contrat sont compilées de façon con
 
 Pour obtenir des outils et des instructions détaillées sur l’utilisation des contrats de code, consultez [contrats de code](https://marketplace.visualstudio.com/items?itemName=RiSEResearchinSoftwareEngineering.CodeContractsforNET) sur le site Visual Studio Marketplace.
 
-## <a name="preconditions"></a>Conditions préalables
+## <a name="preconditions"></a>Preconditions
 
 Vous pouvez spécifier des conditions préalables à l'aide de la méthode <xref:System.Diagnostics.Contracts.Contract.Requires%2A?displayProperty=nameWithType>. Les conditions préalables définissent l'état à l'appel d'une méthode. Elles sont généralement utilisées pour indiquer des valeurs de paramètre valides. Tous les membres spécifiés dans les conditions préalables doivent être au moins aussi accessibles que la méthode elle-même. Autrement, la condition préalable risque de ne pas être comprise par tous les appelants de la méthode. La condition ne doit pas avoir d'effets secondaires. Le comportement au moment de l'exécution des conditions préalables non réussies est déterminé par l'analyseur au moment de l'exécution.
 
@@ -147,7 +145,7 @@ Les méthodes suivantes peuvent être utilisées uniquement au sein de post-cond
       Comme avec la méthode <xref:System.Diagnostics.Contracts.Contract.OldValue%2A>, vous pouvez omettre le paramètre de type générique chaque fois que le compilateur est en mesure de déduire son type. Le module de réécriture de contrat remplace l'appel de méthode par la valeur du paramètre `out`. La méthode <xref:System.Diagnostics.Contracts.Contract.ValueAtReturn%2A> peut apparaître uniquement dans des post-conditions. L’argument de la méthode doit être un paramètre `out` ou un champ d’un paramètre `out` de structure. Ce dernier est également utile pour faire référence aux champs dans la post-condition d'un constructeur de structure.
 
       > [!NOTE]
-      > Actuellement, les outils d'analyse de contrat de code ne vérifient pas si les paramètres `out` sont correctement initialisés et ignorent leur mention dans la post-condition. Si, dans l'exemple précédent, la ligne après le contrat avait utilisé la valeur de `x` au lieu de lui assigner un nombre entier, un compilateur n'aurait donc pas généré l'erreur correspondante. Toutefois, dans une build où le symbole de préprocesseur CONTRACTS_FULL n’est pas défini (telle qu’une build de mise en production), le compilateur génère une erreur.
+      > Actuellement, les outils d'analyse de contrat de code ne vérifient pas si les paramètres `out` sont correctement initialisés et ignorent leur mention dans la post-condition. Si, dans l'exemple précédent, la ligne après le contrat avait utilisé la valeur de `x` au lieu de lui assigner un nombre entier, un compilateur n'aurait donc pas généré l'erreur correspondante. Toutefois, dans une build où le symbole de préprocesseur CONTRACTS_FULL n'est pas défini (tel qu'une version finale), le compilateur génère une erreur.
 
 ## <a name="invariants"></a>Invariants
 
@@ -169,7 +167,7 @@ Les invariants sont définis de façon conditionnelle par le symbole de préproc
 
 <a name="usage_guidelines"></a>
 
-## <a name="usage-guidelines"></a>Indications relatives à l'utilisation
+## <a name="usage-guidelines"></a>Instructions d’utilisation
 
 ### <a name="contract-ordering"></a>Classement de contrat
 

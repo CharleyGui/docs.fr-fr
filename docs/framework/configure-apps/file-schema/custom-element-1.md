@@ -6,21 +6,19 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: e62056c6-b351-40eb-afc0-cc13fc44e45e
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ac2d01121e81b545556fb082fa7b82c31cccf9da
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1d0431085a04d3fb817dfe0883779acc4d693084
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73118833"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214784"
 ---
 # <a name="custom-element-for-singletagsectionhandler"></a>Élément personnalisé pour SingleTagSectionHandler
 
 Définit des paramètres dans une section de configuration personnalisée définie par une \<section > élément et utilise la classe <xref:System.Configuration.SingleTagSectionHandler>.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; *\<sectionName>*
+&nbsp;&nbsp; *\<* de la >
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -28,7 +26,7 @@ Définit des paramètres dans une section de configuration personnalisée défin
 <sectionName key="value" key2="value2" ... />
 ```
 
-## <a name="attributes"></a>Attributes
+## <a name="attributes"></a>Attributs
 
 Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
@@ -40,9 +38,9 @@ Les attributs et les valeurs d’attribut sont définis par l’utilisateur.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-Aucun
+None
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L’élément\<de l’élément de **>** est un élément personnalisé défini par un [ **\<section >** ](section-element.md) balise dans l’élément [ **\<configSections >** ](configsections-element-for-configuration.md) . Le système de configuration retourne un objet <xref:System.Collections.IDictionary> lorsque vous appelez <xref:System.Configuration.Configuration.GetSection(System.String)?displayProperty=nameWithType>.
 
@@ -62,7 +60,7 @@ L’exemple suivant déclare un élément personnalisé appelé **\<sampleSectio
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

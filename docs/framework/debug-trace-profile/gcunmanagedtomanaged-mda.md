@@ -12,14 +12,12 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - unmanaged to managed garbage collection
 ms.assetid: 103eb3a3-1cf0-4406-8a9a-a7798fdc22d1
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1679f87276262a08f5717ea81d263f4600542971
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: dd4080870ae88da8d4e2055369cd36f3981f2eac
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052759"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216456"
 ---
 # <a name="gcunmanagedtomanaged-mda"></a>Assistant Débogage managé gcUnmanagedToManaged
 L'Assistant Débogage managé (MDA) `gcUnmanagedToManaged` déclenche une opération garbage collection chaque fois qu'un thread effectue la transition du code non managé au code managé.  
@@ -27,16 +25,16 @@ L'Assistant Débogage managé (MDA) `gcUnmanagedToManaged` déclenche une opéra
 ## <a name="symptoms"></a>Symptômes  
  Une application exécutant des composants utilisateur non managés à l'aide de COM et d'appels de code non managé provoque une violation d'accès non déterministe dans le CLR.  
   
-## <a name="cause"></a>Cause  
+## <a name="cause"></a>Cause :  
  Si une application exécute des composants utilisateur non managés, il se peut que ces composants aient endommagé le tas obtenu à l'issue d'une opération garbage collection. Cela provoque une violation d'accès dans le CLR quand le garbage collector tente de parcourir le graphique d'objet.  
   
-## <a name="resolution"></a>Résolution :  
+## <a name="resolution"></a>Résolution  
  L'activation de cet assistant réduit la durée entre le moment où le composant non managé endommage le tas obtenu à l'issue d'une opération garbage collection et le moment de la violation d'accès en obligeant l'exécution d'une opération garbage collection avant chaque transition managée.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Provoque une opération garbage collection chaque fois qu’un thread effectue la transition du code non managé au code managé.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Cet Assistant Débogage managé ne produit aucune sortie.  
   
 ## <a name="configuration"></a>Configuration  

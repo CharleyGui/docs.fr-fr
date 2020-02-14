@@ -9,14 +9,12 @@ helpviewer_keywords:
 - secure coding, exception handling
 - exception handling, security
 ms.assetid: 1f3da743-9742-47ff-96e6-d0dd1e9e1c19
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 256d9c9b825081e3bcfafd6e0e09de825d046d20
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: e0465f2eb6be61e161f5e6b8cadf629a53f11906
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894545"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215785"
 ---
 # <a name="securing-exception-handling"></a>Sécurisation de la gestion des exceptions
 Dans Visual C++ et Visual Basic, une expression de filtre plus haut dans la pile s’exécute avant toute instruction **finally** . Le bloc **catch** associé à ce filtre s’exécute après l’instruction **finally** . Pour plus d’informations, consultez [utilisation d’exceptions filtrées par l’utilisateur](../../standard/exceptions/using-user-filtered-exception-handlers.md). Cette section examine les implications en matière de sécurité de cet ordre. Prenons l’exemple de pseudocode suivant qui illustre l’ordre dans lequel les instructions de filtre et les instructions **finally** s’exécutent.  
@@ -136,7 +134,7 @@ YourObject.YourMethod()
 }  
 ```  
   
- Cela ne résout pas le problème, car l’instruction **finally** n’a `FilterFunc` pas été exécutée avant le contrôle obtient.  
+ Cela ne résout pas le problème, car l’instruction **finally** n’a pas été exécutée avant que le `FilterFunc` soit le contrôle.  
   
  L’exemple suivant résout le problème en s’assurant que la clause **finally** a été exécutée avant d’offrir une exception aux blocs de filtres d’exception des appelants.  
   

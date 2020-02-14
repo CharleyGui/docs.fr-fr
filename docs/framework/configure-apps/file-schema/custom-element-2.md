@@ -6,14 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - custom element
 ms.assetid: 2303031f-4c1d-4df4-bca1-e9bd96ca40dc
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d73c07d58bb226346cb99a1fe50b12bb0e7e746e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: e5c5c6cf5744aa385e6f6700cad623751a4d7427
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73118544"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215479"
 ---
 # <a name="custom-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>Élément personnalisé pour NameValueSectionHandler et DictionarySectionHandler
 
@@ -24,7 +22,7 @@ Définit les paramètres des sections de configuration personnalisées qui utili
 
 ## <a name="attributes"></a>Attributs
 
-aucune.
+None
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -76,7 +74,7 @@ Le premier élément personnalisé est **\<dictionarySample >** , qui contient l
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

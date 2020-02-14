@@ -7,14 +7,12 @@ helpviewer_keywords:
 - sectionGroup Element
 - <sectionGroup> Element
 ms.assetid: 6c27f9e2-809c-4bc9-aca9-72f90360e7a3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 746a997e162b0fd370a249b8d039be623b57d77f
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: eb221027470fe6e485f8fcc4b939b71e4f219712
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089006"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215262"
 ---
 # <a name="sectiongroup-element-for-configsections"></a>\<l’élément sectionGroup > pour \<configSections >
 
@@ -74,7 +72,7 @@ L’exemple suivant montre comment déclarer un groupe de sections et déclarer 
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

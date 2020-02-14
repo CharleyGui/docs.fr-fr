@@ -7,21 +7,19 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6112d87afcca8b2f54508d03d3ea4c0781d7e475
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 47d7648aae08544890a4dd2e42cedbf68a8acc72
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119267"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214734"
 ---
 # <a name="appsettings-element-for-configuration"></a>\<élément > appSettings pour la configuration de \<>
 
 Contient des paramètres d’application personnalisés. Il s’agit d’une section de configuration prédéfinie fournie par le .NET Framework.
 
 [ **\<configuration>** ](../configuration-element.md)   
-&nbsp;&nbsp; **\<appSettings>**
+&nbsp;&nbsp; **\<appSettings >**
 
 ## <a name="syntax"></a>Syntaxe
 
@@ -35,7 +33,7 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 
 |           | Description |
 | --------- | ----------- |
-| **fichier**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans la **\<ajouter des >** , **\<supprimer >** , et **\<effacer** les éléments de > et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Notez que le runtime ignore l’attribut si le fichier spécifié est introuvable. |
+| **file**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans la **\<ajouter des >** , **\<supprimer >** , et **\<effacer** les éléments de > et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Notez que le runtime ignore l’attribut si le fichier spécifié est introuvable. |
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -51,7 +49,7 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 | [ **\<clear>** ](clear-element-for-appsettings.md) | Efface tous les paramètres d’application précédemment définis. |
 | [ **\<remove>** ](remove-element-for-appsettings.md) | Supprime un paramètre d’application défini précédemment. |
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 L’élément **\<appSettings >** stocke des informations de configuration d’application personnalisées, telles que des chaînes de connexion de base de données, des chemins d’accès aux fichiers, des URL de service Web XML ou d’autres informations de configuration personnalisée pour une application. Les paires clé/valeur spécifiées dans l’élément **\<appSettings >** sont accessibles dans le code à l’aide de la classe <xref:System.Configuration.ConfigurationSettings>.
 
@@ -80,7 +78,7 @@ L’exemple suivant montre un fichier de configuration d’application qui conso
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

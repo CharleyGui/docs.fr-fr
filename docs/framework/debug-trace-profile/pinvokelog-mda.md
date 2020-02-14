@@ -9,14 +9,12 @@ helpviewer_keywords:
 - PInvokeLog MDA
 - managed debugging assistants (MDAs), platform invoke
 ms.assetid: b830444a-5003-49fe-b89b-b8bee22f7b1a
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 0883849eee12922601e50c2337bb0048d77cab68
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 12d7f60bcaedc5a97a7718610f40188547f87050
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052375"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216132"
 ---
 # <a name="pinvokelog-mda"></a>Assistant Débogage managé pInvokeLog
 L’Assistant Débogage managé (MDA) `pInvokeLog` est activé pour chaque signature d’appel de code non managé unique utilisée pendant l’exécution.  
@@ -24,7 +22,7 @@ L’Assistant Débogage managé (MDA) `pInvokeLog` est activé pour chaque signa
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Message indiquant la signature d’appel de code non managé utilisée lors de l’exécution.  
   
 ## <a name="configuration"></a>Configuration  

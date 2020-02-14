@@ -1,5 +1,5 @@
 ---
-title: <section> d'élément
+title: <section> element
 ms.date: 05/01/2017
 f1_keywords:
 - http://schemas.microsoft.com/.NetConfiguration/v2.0#configuration/configSections/section
@@ -8,14 +8,12 @@ helpviewer_keywords:
 - section Element
 - <section> Element
 ms.assetid: ec7d4110-2403-47ac-8218-499bfe9d5ddb
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 8c1675540df6844f98572c11cfb140bff23b31a8
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 8785523d664294e3ca3792fb0f84d739d1f1a376
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74089017"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215730"
 ---
 # <a name="section-element"></a>\<section > élément
 
@@ -52,8 +50,8 @@ Les attributs suivants s’appliquent uniquement aux applications ASP.NET. Le sy
 
 |                     | Description |
 | ------------------- | ----------- |
-| **allowDefinition** | Spécifie le fichier de configuration dans lequel la section peut être utilisée. Utilisez l'une des valeurs suivantes :<br><br>**Importe**<br>Autorise l’utilisation de la section dans n’importe quel fichier de configuration. Il s'agit de la valeur par défaut.<br>**MachineOnly**<br>Autorise uniquement l’utilisation de la section dans le fichier de configuration de l’ordinateur (*machine. config*).<br>**MachineToApplication**<br>Autorise l’utilisation de la section dans le fichier de configuration de l’ordinateur ou dans le fichier de configuration de l’application. |
-| **allowLocation**   | Détermine si la section peut être utilisée dans le **\<emplacement >** élément. Utilisez l'une des valeurs suivantes :<br><br>**true**<br>Autorise l’utilisation de la section dans le **\<emplacement >** élément. Il s'agit de la valeur par défaut.<br>**false**<br>N’autorise pas l’utilisation de la section dans le **\<emplacement >** élément. |
+| **allowDefinition** | Spécifie le fichier de configuration dans lequel la section peut être utilisée. Utilisez l’une des valeurs suivantes :<br><br>**Importe**<br>Autorise l’utilisation de la section dans n’importe quel fichier de configuration. Il s’agit de la valeur par défaut.<br>**MachineOnly**<br>Autorise uniquement l’utilisation de la section dans le fichier de configuration de l’ordinateur (*machine. config*).<br>**MachineToApplication**<br>Autorise l’utilisation de la section dans le fichier de configuration de l’ordinateur ou dans le fichier de configuration de l’application. |
+| **allowLocation**   | Détermine si la section peut être utilisée dans le **\<emplacement >** élément. Utilisez l’une des valeurs suivantes :<br><br>**true**<br>Autorise l’utilisation de la section dans le **\<emplacement >** élément. Il s’agit de la valeur par défaut.<br>**false**<br>N’autorise pas l’utilisation de la section dans le **\<emplacement >** élément. |
 
 ## <a name="parent-elements"></a>Éléments parents
 
@@ -63,11 +61,11 @@ Les attributs suivants s’appliquent uniquement aux applications ASP.NET. Le sy
 | [ **\<de sectionGroup >** Appartient](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
 
 > [!NOTE]
-> Une **section\<** élément est un élément enfant de **\<configSections >** ou **\<sectionGroup >** , mais pas les deux.
+> Une **section\<>** élément est un élément enfant de **\<configSections >** ou **\<sectionGroup >** , mais pas les deux.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None
 
 ## <a name="remarks"></a>Notes
 
@@ -92,7 +90,7 @@ L’exemple suivant montre comment définir une section de configuration et déf
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

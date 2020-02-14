@@ -14,14 +14,12 @@ helpviewer_keywords:
 - garbage collection, run-time errors
 - delegates [.NET Framework], garbage collection
 ms.assetid: 398b0ce0-5cc9-4518-978d-b8263aa21e5b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f7f5a6ef2d4e8d4a987ed74a6a04e31f87cc46f3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: eb14e0df5396d92eb223dde2e562684c4c318295
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052936"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217569"
 ---
 # <a name="callbackoncollecteddelegate-mda"></a>callbackOnCollectedDelegate (MDA)
 L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si un délégué est marshalé du code managé vers du code non managé en tant que pointeur de fonction et si un rappel est placé sur ce pointeur de fonction après la récupération du délégué par le garbage collector.  
@@ -31,20 +29,20 @@ L'Assistant Débogage managé (MDA) `callbackOnCollectedDelegate` est activé si
   
  Les échecs ne surviennent pas de façon cohérente : tantôt l'appel sur le pointeur de fonction aboutit, tantôt il échoue. Un échec peut se produire dans une situation de surcharge uniquement ou sur un nombre aléatoire de tentatives.  
   
-## <a name="cause"></a>Cause  
+## <a name="cause"></a>Cause :  
  Le délégué à partir duquel le pointeur de fonction a été créé et ensuite exposé au code non managé a été récupéré par le garbage collector. Quand le composant non managé tente d'appeler sur le pointeur de fonction, il génère une violation d'accès.  
   
  L'échec est aléatoire, car il dépend du moment où l'opération garbage collection se produit. Si un délégué peut faire l'objet d'une opération garbage collection, celle-ci peut avoir lieu après le rappel et, dans ce cas, l'appel aboutit. Dans d'autres cas où l'opération garbage collection se produit avant le rappel, le rappel génère une violation d'accès et le programme s'arrête.  
   
  La probabilité d’avoir un échec dépend du laps de temps entre le marshaling du délégué et le rappel sur le pointeur de fonction, ainsi que de la fréquence des opérations garbage collection. L’échec est sporadique si le laps de temps entre le marshaling du délégué et le rappel résultant est court. Cela est généralement le cas si la méthode non managée qui reçoit le pointeur de fonction ne l'enregistre pas pour une utilisation ultérieure, mais le rappelle immédiatement pour terminer son opération avant d'être retournée. De la même façon, davantage d'opérations garbage collection se produisent quand un système est en surcharge, ce qui rend plus probable l'exécution d'une opération garbage collection avant le rappel.  
   
-## <a name="resolution"></a>Résolution :  
+## <a name="resolution"></a>Résolution  
  Quand un délégué a été marshalé en tant que pointeur de fonction non managé, le garbage collector ne peut pas effectuer le suivi de sa durée de vie. Votre code doit alors conserver une référence au délégué pendant toute la durée de vie du pointeur de fonction non managé. Pour cela, vous devez d'abord identifier le délégué qui a été collecté. Si l'Assistant Débogage managé est activé, il fournit le nom de type du délégué. Utilisez ce nom pour rechercher votre code d'appel de code non managé ou les signatures COM qui transmettent ce délégué au code non managé. Le délégué incriminé est transmis par l'un de ces sites d'appel. Vous pouvez également activer l’Assistant Débogage managé `gcUnmanagedToManaged` pour forcer une opération garbage collection avant chaque rappel dans le runtime. Vous êtes ainsi certain qu’une opération garbage collection se produit toujours avant le rappel. Une fois que vous savez quel délégué a été collecté, modifiez votre code pour conserver une référence à ce délégué dans le code managé pendant toute la durée de vie du pointeur de fonction non managé ayant été marshalé.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Quand les délégués sont marshalés en tant que pointeurs de fonction, le runtime alloue un thunk qui effectue la transition du code non managé au code managé. Ce thunk est en fait ce que le code non managé appelle avant que le délégué managé soit finalement appelé. Si l’Assistant Débogage managé `callbackOnCollectedDelegate` n’est pas activé, le code de marshaling non managé est supprimé quand le délégué est collecté. Si l’Assistant Débogage managé `callbackOnCollectedDelegate` est activé, le code de marshaling non managé n’est pas immédiatement supprimé quand le délégué est collecté. Au lieu de cela, les 1 000 dernières instances restent actives par défaut et sont modifiées pour activer l'Assistant Débogage managé au moment de l'appel. Le thunk est finalement supprimé après la collecte de 1 001 délégués marshalés supplémentaires.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  L'Assistant Débogage managé signale le nom de type du délégué qui a été collecté avant une tentative de rappel sur son pointeur de fonction non managé.  
   
 ## <a name="configuration"></a>Configuration  

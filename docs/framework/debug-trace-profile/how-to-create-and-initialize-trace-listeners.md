@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer et initialiser les écouteurs de trace'
+title: 'Comment : créer et initialiser les écouteurs de la trace'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,14 @@ helpviewer_keywords:
 - tracing [.NET Framework], trace listeners
 - logs, trace listeners
 ms.assetid: 21726de1-61ee-4fdc-9dd0-3be49324d066
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a67bd2c0daa8acc81113a1e38ea463753ae34077
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: ce0df0af32d6798c89c8db6761d18febc1c398bb
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052727"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217441"
 ---
-# <a name="how-to-create-and-initialize-trace-listeners"></a>Procédure : Créer et initialiser les écouteurs de trace
+# <a name="how-to-create-and-initialize-trace-listeners"></a>Comment : créer et initialiser les écouteurs de la trace
 
 Les classes <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.Trace?displayProperty=nameWithType> envoient des messages à des objets appelés écouteurs qui reçoivent et traitent ces messages. L'un de ces écouteurs, <xref:System.Diagnostics.DefaultTraceListener?displayProperty=nameWithType>, est automatiquement créé et initialisé lors de l'activation du traçage ou du débogage. Si vous voulez que la sortie de <xref:System.Diagnostics.Trace> ou <xref:System.Diagnostics.Debug> soit dirigée vers d'autres sources, créez et initialisez des écouteurs de suivi supplémentaires.
 
@@ -99,5 +97,5 @@ Vous pouvez créer des écouteurs de suivi dans un [fichier de configuration d�
 
 - [Écouteurs de suivi](trace-listeners.md)
 - [Commutateurs de suivi](trace-switches.md)
-- [Guide pratique : Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
 - [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)

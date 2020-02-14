@@ -1,14 +1,13 @@
 ---
 title: Commande dotnet vstest
 description: La commande dotnet vstest permet de générer un projet et l’ensemble de ses dépendances.
-author: mairaw
 ms.date: 05/30/2018
-ms.openlocfilehash: ffe3807be2c35fb4d6b46b83ed84200433f551d8
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: c3838617ed539cf56f2840b826e9de58833820fd
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117521"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215311"
 ---
 # <a name="dotnet-vstest"></a>dotnet vstest
 
@@ -18,7 +17,7 @@ ms.locfileid: "71117521"
 
 `dotnet-vstest` - Exécute les tests à partir des fichiers spécifiés.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 <!-- markdownlint-disable MD025 -->
 
@@ -77,7 +76,7 @@ Utilisez des adaptateurs de test personnalisés à partir d’un chemin d’acc�
 
 `--Platform|/Platform:<Platform type>`
 
-Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs valides sont `x86`, `x64` et `ARM`.
+Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs correctes sont `x86`, `x64` et `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 
@@ -165,7 +164,7 @@ Utilisez des adaptateurs de test personnalisés à partir d’un chemin d’acc�
 
 `--Platform|/Platform:<Platform type>`
 
-Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs valides sont `x86`, `x64` et `ARM`.
+Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs correctes sont `x86`, `x64` et `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 
@@ -241,7 +240,7 @@ Utilisez des adaptateurs de test personnalisés à partir d’un chemin d’acc�
 
 `--Platform|/Platform:<Platform type>`
 
-Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs valides sont `x86`, `x64` et `ARM`.
+Architecture de plateforme cible utilisée pour l’exécution des tests. Les valeurs correctes sont `x86`, `x64` et `ARM`.
 
 `--Framework|/Framework:<Framework Version>`
 

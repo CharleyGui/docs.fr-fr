@@ -7,14 +7,12 @@ helpviewer_keywords:
 - executable image for debugging
 - debugging [.NET Framework], executable images for
 ms.assetid: 7d90ea7a-150f-4f97-98a7-f9c26541b9a3
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 1b64bd1e112932f394bb473a21642d37e28e39d3
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 44d512a8ebec0e21e33f51c07428331e5e22b7bf
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052500"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217341"
 ---
 # <a name="making-an-image-easier-to-debug-in-net"></a>Rendre une image plus facile à déboguer dans .NET
 
@@ -42,7 +40,7 @@ AllowOptimize=0
 
 Vous pouvez définir la valeur de chaque option sur 0 ou 1. Les options absentes ont 0 comme valeur par défaut. La définition de `GenerateTrackingInfo` sur 1 et de `AllowOptimize` sur 0 est ce qui permet le débogage le plus facile.
 
-À partir de la version .NET Framework 2,0, le compilateur JIT génère toujours des informations de suivi, quelle `GenerateTrackingInfo`que soit la valeur `AllowOptimize` de ; Toutefois, la valeur est toujours un effet. Quand vous utilisez le générateur d’images natives [Ngen.exe (Native Image Generator)](../tools/ngen-exe-native-image-generator.md) pour précompiler l’image native sans optimisation, le fichier .ini doit être présent dans le dossier cible avec `AllowOptimize=0` quand Ngen.exe s’exécute. Si vous avez précompilé un assembly sans optimisation, vous devez supprimer le code précompilé à l’aide de l’option **/Uninstall** de Ngen. exe avant de réexécuter Ngen. exe pour précompiler le code comme optimisé. Si le fichier. ini n’est pas présent dans le dossier, Ngen. exe précompile par défaut le code comme optimisé.
+À partir de la version .NET Framework 2,0, le compilateur JIT génère toujours des informations de suivi, quelle que soit la valeur de `GenerateTrackingInfo`; Toutefois, la valeur `AllowOptimize` a toujours un effet. Quand vous utilisez le générateur d’images natives [Ngen.exe (Native Image Generator)](../tools/ngen-exe-native-image-generator.md) pour précompiler l’image native sans optimisation, le fichier .ini doit être présent dans le dossier cible avec `AllowOptimize=0` quand Ngen.exe s’exécute. Si vous avez précompilé un assembly sans optimisation, vous devez supprimer le code précompilé à l’aide de l’option **/Uninstall** de Ngen. exe avant de réexécuter Ngen. exe pour précompiler le code comme optimisé. Si le fichier. ini n’est pas présent dans le dossier, Ngen. exe précompile par défaut le code comme optimisé.
 
 <xref:System.Diagnostics.DebuggableAttribute?displayProperty=nameWithType> contrôle les paramètres pour un assembly. **DebuggableAttribute** comprend deux champs qui contrôlent si le compilateur JIT doit optimiser et/ou générer des informations de suivi. À partir de la version .NET Framework 2,0, le compilateur JIT génère toujours des informations de suivi.
 

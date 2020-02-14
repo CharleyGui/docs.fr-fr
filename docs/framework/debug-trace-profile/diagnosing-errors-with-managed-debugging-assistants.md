@@ -1,5 +1,5 @@
 ---
-title: Diagnostic d'erreurs avec les Assistants de débogage managés
+title: Diagnostic d'erreurs avec les Assistants Débogage managé
 ms.date: 08/14/2018
 f1_keywords:
 - EHMDA
@@ -29,14 +29,12 @@ helpviewer_keywords:
 - output, managed debugging assistants
 - errors [.NET Framework], managed debugging assistants
 ms.assetid: 76994ee6-9fa9-4059-b813-26578d24427c
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6cb2a240a2e7e82b7015eb7a6d99c2117fa63045
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 712fbbe9e0ad291385e8eef321c5e8a2fa092a5d
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052899"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216554"
 ---
 # <a name="diagnose-errors-with-managed-debugging-assistants"></a>Diagnostiquer les erreurs avec les assistants débogage managés
 
@@ -70,7 +68,7 @@ Le tableau suivant répertorie les MDA fournis avec l' .NET Framework :
 |[releaseHandleFailed](releasehandlefailed-mda.md)|[reportAvOnComRelease](reportavoncomrelease-mda.md)|
 |[streamWriterBufferedDataLost](streamwriterbuffereddatalost-mda.md)|[virtualCERCall](virtualcercall-mda.md)|
 
-Par défaut, le .NET Framework active une partie des Assistants Débogage managé pour tous les débogueurs managés. Vous pouvez afficher l’ensemble par défaut dans Visual Studio en choisissant**paramètres des exceptions** **Windows** > dans le menu **Déboguer** , puis en développant la liste **assistants de débogage managés** .
+Par défaut, le .NET Framework active une partie des Assistants Débogage managé pour tous les débogueurs managés. Vous pouvez afficher l’ensemble par défaut dans Visual Studio en choisissant **Windows** > les **paramètres d’exception** dans le menu **Déboguer** , puis en développant la liste **Assistants Débogage managé** .
 
 ![Fenêtre Paramètres d’exception dans Visual Studio](./media/diagnosing-errors-with-managed-debugging-assistants/exception-settings-mdas.png)
 
@@ -79,11 +77,11 @@ Par défaut, le .NET Framework active une partie des Assistants Débogage manag�
 Vous pouvez activer et désactiver les Assistants Débogage managé en utilisant une clé de Registre, une variable d'environnement et des paramètres de configuration d'application. Vous devez activer la clé de Registre ou la variable d'environnement pour utiliser les paramètres de configuration d'application.
 
 > [!TIP]
-> Au lieu de désactiver les MDA, vous pouvez empêcher Visual Studio d’afficher la boîte de dialogue Assistant Débogage managé chaque fois qu’une notification MDA est reçue. Pour ce faire, choisissez Paramètres des exceptions **Windows** > dans le menu **Déboguer** , développez la liste **Assistants Débogage managé** , puis activez ou désactivez la case à cocher **arrêter la levée en cas** d'**exception** pour le MDA individuel.
+> Au lieu de désactiver les MDA, vous pouvez empêcher Visual Studio d’afficher la boîte de dialogue Assistant Débogage managé chaque fois qu’une notification MDA est reçue. Pour ce faire, choisissez **Windows** > les paramètres d’exception dans le menu **Déboguer** , développez la liste **assistants débogage managés** , puis activez ou désactivez la case à cocher **arrêter la levée en cas** d' **exception** pour l’Assistant Débogage managé.
 
 ### <a name="registry-key"></a>Clé de Registre
 
-Pour activer les MDA, ajoutez **HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\\.** Sous-clé NETFramework\MDA (type REG_SZ, valeur 1) dans le Registre Windows. Copiez l’exemple suivant dans un fichier texte nommé *MDAEnable. reg*. Ouvrez l’éditeur du Registre Windows (RegEdit. exe), puis, dans le menu **fichier** , choisissez **Importer**. Sélectionnez le fichier *MDAEnable. reg* pour activer les MDA sur cet ordinateur. La définition de la sous-clé sur la valeur de chaîne **1** (pas la valeur DWORD **1**) active la lecture des paramètres MDA à partir du fichier *applicationName. suffixe*. MDA. config. Par exemple, le fichier de configuration MDA pour le bloc-notes est nommé Notepad. exe. MDA. config.
+Pour activer les MDA, ajoutez le **\\HKEY_LOCAL_MACHINE \Software\Microsoft.** Sous-clé NETFramework\MDA (type REG_SZ, valeur 1) dans le Registre Windows. Copiez l’exemple suivant dans un fichier texte nommé *MDAEnable. reg*. Ouvrez l’éditeur du Registre Windows (RegEdit. exe), puis, dans le menu **fichier** , choisissez **Importer**. Sélectionnez le fichier *MDAEnable. reg* pour activer les MDA sur cet ordinateur. La définition de la sous-clé sur la valeur de chaîne **1** (pas la valeur DWORD **1**) active la lecture des paramètres MDA à partir du fichier *applicationName. suffixe*. MDA. config. Par exemple, le fichier de configuration MDA pour le bloc-notes est nommé Notepad. exe. MDA. config.
 
 ```text
 Windows Registry Editor Version 5.00
@@ -129,7 +127,7 @@ En cas de conflit de paramètres, les paramètres les plus récents remplacent l
 
 ### <a name="application-specific-configuration-settings"></a>Paramètres de configuration spécifiques à l’application
 
-Vous pouvez activer, désactiver et configurer certains Assistants séparément dans le fichier de configuration d'Assistant Débogage managé propre à l'application. Vous ne pouvez utiliser un fichier de configuration d'application pour configurer des Assistants Débogage managé que si la clé de Registre MDA ou la variable d'environnement COMPLUS_MDA est définie. En règle générale, le fichier de configuration d'application se trouve dans le même répertoire que le fichier exécutable (.exe) de l'application. Le format du nom de fichier est *nom_application*.mda.config ; par exemple, notepad.exe.mda.config. Les Assistants qui sont activés dans le fichier de configuration d'application peuvent avoir des attributs ou des éléments qui permettent de contrôler le comportement de l'Assistant concerné.
+Vous pouvez activer, désactiver et configurer certains Assistants séparément dans le fichier de configuration d'Assistant Débogage managé propre à l'application. Vous ne pouvez utiliser un fichier de configuration d'application pour configurer des Assistants Débogage managé que si la clé de Registre MDA ou la variable d'environnement COMPLUS_MDA est définie. En règle générale, le fichier de configuration d'application se trouve dans le même répertoire que le fichier exécutable (.exe) de l'application. Le nom de fichier prend la forme *applicationName*. MDA. config ; par exemple, Notepad. exe. MDA. config. Les assistants qui sont activés dans le fichier de configuration de l’application peuvent avoir des attributs ou des éléments conçus spécifiquement pour contrôler le comportement de l’Assistant.
 
 L’exemple suivant montre comment activer et configurer le [marshaling](marshaling-mda.md):
 
@@ -148,7 +146,7 @@ L’exemple suivant montre comment activer et configurer le [marshaling](marshal
 </mdaConfig>
 ```
 
-L’Assistant Débogage managé `Marshaling` émet des informations sur le type managé qui est marshalé en un type non managé pour chaque transition de code managé vers un code non managé dans l’application. L' `Marshaling` Assistant Débogage managé peut également filtrer les noms des champs de méthode et de structure fournis dans les éléments enfants **methodFilter** et **fieldFilter** , respectivement.
+L’Assistant Débogage managé `Marshaling` émet des informations sur le type managé qui est marshalé en un type non managé pour chaque transition de code managé vers un code non managé dans l’application. L’Assistant Débogage managé `Marshaling` peut également filtrer les noms des champs de méthode et de structure fournis dans les éléments enfants **methodFilter** et **fieldFilter** , respectivement.
 
 L’exemple suivant montre comment activer plusieurs Assistants Débogage managé à l’aide de leurs paramètres par défaut :
 
@@ -170,11 +168,11 @@ L’exemple suivant montre comment activer plusieurs Assistants Débogage manag�
 
 Lorsqu’un Assistant Débogage managé est activé, il est actif même lorsque votre code ne s’exécute pas sous un débogueur. Si un événement d'Assistant Débogage managé est déclenché en l'absence de débogueur, le message de l'événement est présenté dans une boîte de dialogue d'exception non gérée, bien qu'il ne s'agisse pas d'une exception non gérée. Pour éviter l'affichage de la boîte de dialogue, supprimez les paramètres de désactivation de l'Assistant Débogage managé quand votre code ne s'exécute pas dans un environnement de débogage.
 
-Lorsque votre code s’exécute dans l’environnement de développement intégré (IDE) de Visual Studio, vous pouvez éviter la boîte de dialogue d’exception qui s’affiche pour les événements MDA spécifiques. Pour ce faire, dans le **menu Déboguer** , choisissez**paramètres d’exception** **Windows** > . Dans la fenêtre Paramètres d’exception, développez la liste **Assistants Débogage managé** , puis désactivez la case à cocher **arrêter la levée en cas** d' **exception** pour chaque MDA. Vous pouvez également utiliser cette boîte de dialogue pour *activer* l’affichage des boîtes de dialogue d’exception d’Assistant Débogage managé.
+Lorsque votre code s’exécute dans l’environnement de développement intégré (IDE) de Visual Studio, vous pouvez éviter la boîte de dialogue d’exception qui s’affiche pour les événements MDA spécifiques. Pour ce faire, dans le menu **Déboguer** , choisissez **Windows** > **paramètres d’exception**. Dans la fenêtre Paramètres d’exception, développez la liste **Assistants Débogage managé** , puis désactivez la case à cocher **arrêter la levée en cas** d' **exception** pour chaque MDA. Vous pouvez également utiliser cette boîte de dialogue pour *activer* l’affichage des boîtes de dialogue d’exception d’Assistant Débogage managé.
 
 ## <a name="mda-output"></a>Sortie de l'Assistant Débogage managé
 
-La sortie de l’Assistant Débogage managé est semblable à l’exemple suivant, `PInvokeStackImbalance` qui montre la sortie de l’Assistant Débogage managé :
+La sortie de l’Assistant Débogage managé est semblable à l’exemple suivant, qui montre la sortie de l’Assistant Débogage managé `PInvokeStackImbalance` :
 
 **Un appel à la fonction PInvoke’MDATest ! MDATest. Program :: StdCall’a déséquilibré la pile. Cela est probablement dû au fait que la signature PInvoke managée ne correspond pas à la signature cible non managée. Vérifiez que la Convention d’appel et les paramètres de la signature PInvoke correspondent à la signature non managée cible.**
 

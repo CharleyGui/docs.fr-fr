@@ -1,5 +1,5 @@
 ---
-title: HttpWebRequest. _HttpResponse, champ
+title: HttpWebRequest. _HttpResponse Field
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: eab9b789-beb4-4c28-b2d8-78debc7ba129
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d993021ccb87ccafb5f6f2fc4c6c7c288288adae
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 236298921ecd286ddba4e74dbce1b63e96055412
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120076"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215095"
 ---
 # <a name="httpwebrequest_httpresponse-field"></a>HttpWebRequest.\_le champ HttpResponse
 
@@ -34,9 +32,9 @@ internal HttpWebResponse _HttpResponse
 > 
 > Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
 **Assembly :** Système (dans System. dll)
 

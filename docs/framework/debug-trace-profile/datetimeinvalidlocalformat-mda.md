@@ -12,14 +12,12 @@ helpviewer_keywords:
 - time formatting
 - UTC formatting
 ms.assetid: c4a942bb-2651-4b65-8718-809f892a0659
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 32217b9e681179c246560ff5b51b65b4f4e044d5
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 2fdace8a9c7bcc090fd801be3bd717e4a2b34a87
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052886"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217550"
 ---
 # <a name="datetimeinvalidlocalformat-mda"></a>dateTimeInvalidLocalFormat (MDA)
 L’Assistant Débogage managé (MDA, Managed Debugging Assistant) `dateTimeInvalidLocalFormat` est activé quand une instance de <xref:System.DateTime> stockée en temps universel (UTC, Universal Coordinated Time) est mise en forme à l’aide d’un format conçu uniquement pour des instances de <xref:System.DateTime> locales. Cet Assistant Débogage managé n’est pas activé pour les instances de <xref:System.DateTime> par défaut ou non spécifiées.  
@@ -32,10 +30,10 @@ DateTime myDateTime = DateTime.UtcNow;
 Serialize(myDateTime.ToString("yyyy-MM-dd'T'HH:mm:ss.fffffffzzz"));  
 ```  
   
-### <a name="cause"></a>Cause  
+### <a name="cause"></a>Cause :  
  Le format « z » pour la méthode <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, par exemple, « +10:00 » pour l’heure de Sydney. Comme tel, il ne produit un résultat significatif que si <xref:System.DateTime> a une valeur locale. S’il s’agit d’une valeur en heure UTC, <xref:System.DateTime.ToString%2A?displayProperty=nameWithType> inclut l’offset de fuseau horaire local, mais il n’affiche pas et n’ajuste pas le spécificateur de fuseau horaire.  
   
-### <a name="resolution"></a>Résolution :  
+### <a name="resolution"></a>Résolution  
  Les instances de <xref:System.DateTime> en temps universel doivent être mises en forme d’une façon qui indique qu’elles sont au format UTC. Le format recommandé consiste à utiliser un « Z » pour désigner l’heure UTC :  
   
 ```csharp
@@ -53,7 +51,7 @@ Serialize(myDateTime.ToString("o"));
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n’affecte pas le runtime.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Il n’y a aucune sortie spéciale résultant de l’activation de cet Assistant Débogage managé. Toutefois, la pile des appels peut être utilisée pour déterminer l’emplacement de l’appel à <xref:System.DateTime.ToString%2A> qui a activé l’Assistant Débogage managé.  
   
 ## <a name="configuration"></a>Configuration  
@@ -78,7 +76,7 @@ String serialized = XMLConvert.ToString(myDateTime);
   
  Pour cet exemple précis, passez `XmlDateTimeSerializationMode.RoundtripKind` à l’appel `ToString` sur `XmlConvert`. Les données sont sérialisées en heure UTC.  
   
- Si vous utilisez un <xref:System.Data.DataSet>, affectez la valeur <xref:System.Data.DataSetDateTime.Utc> à la propriété <xref:System.Data.DataColumn.DateTimeMode%2A> sur l’objet <xref:System.Data.DataColumn>.  
+ Si vous utilisez un <xref:System.Data.DataSet>, affectez la valeur <xref:System.Data.DataColumn.DateTimeMode%2A> à la propriété <xref:System.Data.DataColumn> sur l’objet <xref:System.Data.DataSetDateTime.Utc>.  
   
 ```csharp
 DateTime myDateTime = DateTime.UtcNow;  

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - add Element
 - <add> Element
 ms.assetid: 8734efdc-00f6-4a65-bba6-084c5bc65246
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 865c693bf8f23bf050064ac097b72aa6fa3b371e
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 5c7de79ec626966e71d461dd3865b294a8979db2
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088746"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214809"
 ---
 # <a name="add-element-for-appsettings"></a>\<ajoutez > élément pour \<appSettings >
 
@@ -37,7 +35,7 @@ Ajoute un paramètre d’application personnalisé.
 |           | Description |
 | --------- | ----------- |
 | **key**   | Attribut requis.<br><br>Spécifie le nom de la clé à ajouter. |
-| **valeur** | Attribut requis.<br><br>Spécifie la valeur de la clé à ajouter. |
+| **value** | Attribut requis.<br><br>Spécifie la valeur de la clé à ajouter. |
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -47,7 +45,7 @@ Ajoute un paramètre d’application personnalisé.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None
 
 ## <a name="example"></a>Exemple
 

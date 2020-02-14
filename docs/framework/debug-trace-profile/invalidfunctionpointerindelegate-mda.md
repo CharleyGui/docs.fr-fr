@@ -11,14 +11,12 @@ helpviewer_keywords:
 - MDAs (managed debugging assistants), marshaling
 - invalid function pointers
 ms.assetid: 99ae44f1-783e-49a9-9009-24f54bbd0f09
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6e3e64a720d12426fb066619b46c73402d1113e0
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 723f51e14c314bde40c34d629ba7fc4f6276c633
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052626"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217382"
 ---
 # <a name="invalidfunctionpointerindelegate-mda"></a>invalidFunctionPointerInDelegate (MDA)
 L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé quand un pointeur de fonction non valide est transmis pour créer un délégué sur un pointeur de fonction natif.  
@@ -26,16 +24,16 @@ L'Assistant Débogage managé `invalidFunctionPointerInDelegate` est activé qua
 ## <a name="symptoms"></a>Symptômes  
  Violations d'accès ou endommagement de mémoire inattendu pendant l'utilisation d'un délégué sur un pointeur de fonction.  
   
-## <a name="cause"></a>Cause  
+## <a name="cause"></a>Cause :  
  Un pointeur de fonction non valide a été spécifié.  
   
-## <a name="resolution"></a>Résolution :  
+## <a name="resolution"></a>Résolution  
  Spécifiez un pointeur de fonction valide.  
   
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Pointeur de fonction non valide.  
   
 ## <a name="configuration"></a>Configuration  

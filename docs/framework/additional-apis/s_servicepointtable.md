@@ -1,5 +1,5 @@
 ---
-title: ServicePointManager. s_ServicePointTable, champ
+title: ServicePointManager. s_ServicePointTable Field
 ms.date: 05/01/2017
 topic_type:
 - apiref
@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 24459679-291c-401a-9def-e42b29466fcf
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 68445f4a290b9f4fe2696e35cda391b6c0ee8f85
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 272a0c113fd70d804c763ba0e7e6e9a4a4ee04ce
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120003"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214918"
 ---
 # <a name="servicepointmanagers_servicepointtable-field"></a>ServicePointManager. s\_champ ServicePointTable
 
@@ -34,9 +32,9 @@ private static Hashtable s_ServicePointTable
 > 
 > Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
 **Assembly :** Système (dans System. dll)
 

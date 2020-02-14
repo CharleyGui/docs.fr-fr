@@ -9,14 +9,12 @@ helpviewer_keywords:
 - security-transparent code
 - security [.NET Framework], security-transparent code
 ms.assetid: 5fd8f46d-3961-46a7-84af-2eb1f48e75cf
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: efd3954b63a6683e04bd9143ca3523cdbace506d
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 8f232a7724ad831818627cbfc2845ea808a3fcfd
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894529"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215805"
 ---
 # <a name="security-transparent-code-level-1"></a>Code transparent de sécurité, niveau 1
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -64,15 +62,15 @@ ms.locfileid: "70894529"
 |Attribut|Description|  
 |---------------|-----------------|  
 |<xref:System.Security.SecurityTransparentAttribute>|Autorisé uniquement au niveau de l'assembly. Identifie tous les types et membres de l'assembly comme étant transparents de sécurité. L'assembly ne peut pas contenir de code critique de sécurité.|  
-|<xref:System.Security.SecurityCriticalAttribute>|Quand il est utilisé au niveau de l'assembly sans la propriété <xref:System.Security.SecurityCriticalAttribute.Scope%2A>, identifie par défaut l'ensemble du code contenu dans l'assembly comme étant transparent de sécurité, mais indique que l'assembly peut contenir du code critique de sécurité.<br /><br /> Quand il est utilisé au niveau de classe, identifie la classe ou la méthode comme étant critique de sécurité, mais pas les membres de la classe. Pour faire en sorte que tous les membres soient critiques de sécurité, affectez à la propriété <xref:System.Security.SecurityCriticalAttribute.Scope%2A> la valeur <xref:System.Security.SecurityCriticalScope.Everything>.<br /><br /> Quand il est utilisé au niveau du membre, l'attribut s'applique uniquement à ce membre.<br /><br /> La classe ou le membre identifié comme étant critique de sécurité peut opérer des élévations de privilèges. **Important :**  Dans la transparence de niveau 1, les types et membres critiques de sécurité sont traités en tant que critiques sécurisés quand ils sont appelés en dehors de l'assembly. Vous devez protéger les types et les membres critiques de sécurité avec une demande de liaison pour la confiance totale afin d'éviter une élévation de privilèges non autorisée.|  
-|<xref:System.Security.SecuritySafeCriticalAttribute>|Identifie le code critique de sécurité auquel le code transparent de sécurité de l'assembly peut accéder. À défaut, le code transparent de sécurité ne peut pas accéder aux membres critiques de sécurité privés ou internes du même assembly. Cela aurait une influence sur le code critique de sécurité et pourrait occasionner des élévations de privilèges inattendues. Le code critique sécurisé doit subir un audit de sécurité rigoureux. **Remarque :**  Les types et membres critiques sécurisés doivent valider les autorisations des appelants pour déterminer s'ils disposent de l'autorité pour accéder aux ressources protégées.|  
+|<xref:System.Security.SecurityCriticalAttribute>|Quand il est utilisé au niveau de l'assembly sans la propriété <xref:System.Security.SecurityCriticalAttribute.Scope%2A>, identifie par défaut l'ensemble du code contenu dans l'assembly comme étant transparent de sécurité, mais indique que l'assembly peut contenir du code critique de sécurité.<br /><br /> Quand il est utilisé au niveau de classe, identifie la classe ou la méthode comme étant critique de sécurité, mais pas les membres de la classe. Pour faire en sorte que tous les membres soient critiques de sécurité, affectez à la propriété <xref:System.Security.SecurityCriticalAttribute.Scope%2A> la valeur <xref:System.Security.SecurityCriticalScope.Everything>.<br /><br /> Quand il est utilisé au niveau du membre, l'attribut s'applique uniquement à ce membre.<br /><br /> La classe ou le membre identifié comme étant critique de sécurité peut opérer des élévations de privilèges. **Important :**  Dans la transparence de niveau 1, les types et membres critiques de sécurité sont traités comme étant critiques sécurisés lorsqu’ils sont appelés à partir de l’extérieur de l’assembly. Vous devez protéger les types et les membres critiques de sécurité avec une demande de liaison pour la confiance totale afin d'éviter une élévation de privilèges non autorisée.|  
+|<xref:System.Security.SecuritySafeCriticalAttribute>|Identifie le code critique de sécurité auquel le code transparent de sécurité de l'assembly peut accéder. À défaut, le code transparent de sécurité ne peut pas accéder aux membres critiques de sécurité privés ou internes du même assembly. Cela aurait une influence sur le code critique de sécurité et pourrait occasionner des élévations de privilèges inattendues. Le code critique sécurisé doit subir un audit de sécurité rigoureux. **Remarque :**  Les types et membres critiques sécurisés doivent valider les autorisations des appelants pour déterminer si l’appelant est habilité à accéder aux ressources protégées.|  
   
  L'attribut <xref:System.Security.SecuritySafeCriticalAttribute> permet au code transparent de sécurité d'accéder aux membres critiques de sécurité du même assembly. Considérez le code transparent de sécurité et le code critique de sécurité de votre assembly comme séparés en deux assemblys. Le code transparent de sécurité ne serait pas en mesure de distinguer les membres privés ou internes du code critique de sécurité. De plus, l'accès à l'interface publique du code critique de sécurité faire généralement l'objet d'un audit. Vous ne trouveriez probablement pas logique qu'un état privé ou interne soit accessible en dehors de l'assembly ; vous préféreriez que l'état reste isolé. L'attribut <xref:System.Security.SecuritySafeCriticalAttribute> garantit l'isolation de l'état entre le code transparent de sécurité et le code critique de sécurité tout en offrant la possibilité de substituer l'isolation quand cela est nécessaire. Le code transparent de sécurité ne peut pas accéder au code critique de sécurité privé ou interne à moins que ces membres aient été marqués avec <xref:System.Security.SecuritySafeCriticalAttribute>. Avant d'appliquer <xref:System.Security.SecuritySafeCriticalAttribute>, auditez ce membre comme s'il était exposé publiquement.  
   
 ### <a name="assembly-wide-annotation"></a>Annotation à l'échelle de l'assembly  
  Le tableau suivant décrit les effets de l'utilisation d'attributs de sécurité au niveau de l'assembly.  
   
-|Assembly (attribut)|État de l'assembly|  
+|Attribut d’assembly|État de l'assembly|  
 |------------------------|--------------------|  
 |Aucun attribut sur un assembly de niveau de confiance partielle|Tous les types et membres sont transparents.|  
 |Aucun attribut sur un assembly de niveau de confiance totale (dans le Global Assembly Cache ou identifié comme étant de confiance totale dans le `AppDomain`)|Tous les types sont transparents et tous les membres sont critiques sécurisés.|  

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - add Element
 - <add> Element
 ms.assetid: 0d4ddb53-eb2b-49c0-9c33-a8dec5c39b46
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ac07fc9ba6f030209a5e0d0160689fab95bc1b4a
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 57722f3518fad12cb8e6e35d68f40bb8465bdd86
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088763"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215434"
 ---
 # <a name="add-element-for-namevaluesectionhandler-and-dictionarysectionhandler"></a>\<ajouter un élément > pour NameValueSectionHandler et DictionarySectionHandler
 
@@ -35,7 +33,7 @@ Ajoute des paramètres d’application personnalisés. Chaque **\<ajouter >** ba
 | Attribut | Description |
 | --------- | ----------- |
 | **key**   | Attribut requis.<br><br>Spécifie le nom du paramètre. |
-| **valeur** | Attribut requis.<br><br>Spécifie la valeur du paramètre. |
+| **value** | Attribut requis.<br><br>Spécifie la valeur du paramètre. |
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -45,7 +43,7 @@ Ajoute des paramètres d’application personnalisés. Chaque **\<ajouter >** ba
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None
 
 ## <a name="example"></a>Exemple
 
@@ -62,7 +60,7 @@ L’exemple suivant montre comment définir une section de configuration personn
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

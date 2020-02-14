@@ -13,14 +13,12 @@ helpviewer_keywords:
 - display attributes for debugger
 - DebuggerBrowsableAttribute attribute
 ms.assetid: 72bb7aa9-459b-42c4-9163-9312fab4c410
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: c27732de448e19c4227062706c7a7d73c98e5f19
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: ca118bffb045a0e7e3a5084916a0ff8020ebda90
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69966874"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216494"
 ---
 # <a name="enhancing-debugging-with-the-debugger-display-attributes"></a>Amélioration du débogage avec les attributs d'affichage de débogueur
 
@@ -47,7 +45,7 @@ Par exemple, si un objet C# a un `ToString()` substitué, le débogueur appelle 
 
 - <xref:System.Diagnostics.DebuggerBrowsableState.Never> indique que le membre n’est pas affiché dans la fenêtre de données.  Par exemple, l’utilisation de cette valeur pour <xref:System.Diagnostics.DebuggerBrowsableAttribute> sur un champ supprime le champ de la hiérarchie ; le champ n’est pas affiché quand vous développez le type englobant en cliquant sur le signe plus (+) pour l’instance de type.
 
-- <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> indique que le membre est affiché mais n’est pas développé par défaut.  Il s’agit du comportement par défaut.
+- <xref:System.Diagnostics.DebuggerBrowsableState.Collapsed> indique que le membre est affiché mais n’est pas développé par défaut.  Il s'agit du comportement par défaut.
 
 - <xref:System.Diagnostics.DebuggerBrowsableState.RootHidden> indique que le membre proprement dit n’est pas affiché, mais ses objets constituants sont affichés s’il s’agit d’un tableau ou d’une collection.
 
@@ -97,7 +95,7 @@ class MyHashtable : Hashtable
 
 ### <a name="description"></a>Description
 
-L’exemple de code suivant peut être affiché dans Visual Studio pour voir les résultats de l' <xref:System.Diagnostics.DebuggerDisplayAttribute>application <xref:System.Diagnostics.DebuggerBrowsableAttribute>des attributs <xref:System.Diagnostics.DebuggerTypeProxyAttribute> , et.
+L’exemple de code suivant peut être affiché dans Visual Studio pour voir les résultats de l’application des attributs <xref:System.Diagnostics.DebuggerDisplayAttribute>, <xref:System.Diagnostics.DebuggerBrowsableAttribute>et <xref:System.Diagnostics.DebuggerTypeProxyAttribute>.
 
 ### <a name="code"></a>Code
 

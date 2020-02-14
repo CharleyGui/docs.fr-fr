@@ -13,17 +13,15 @@ helpviewer_keywords:
 - performance monitoring, tracing code
 - Trace class, instrumentation for .NET applications
 ms.assetid: 773b6fc4-9013-4322-b728-5dec7a72e743
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9e1b8d5cb25445ffc3ce08e8c73e1d3742067e21
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.openlocfilehash: 1dd7317e38b6bee44dda75319c9f7c2a6567e3b4
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
-ms.locfileid: "73196708"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216039"
 ---
 # <a name="tracing-and-instrumenting-applications"></a>Traçage et instrumentation d'applications
-Le traçage vous permet de surveiller le fonctionnement de votre application pendant son exécution. Vous pouvez ajouter l'instrumentation de traçage et de débogage à votre application .NET Framework au moment du développement, et utiliser cette instrumentation pendant le développement de l'application et après son déploiement. Utilisez les classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> pour enregistrer les informations relatives aux erreurs et à l'exécution de l'application dans des journaux, des fichiers texte ou d'autres appareils en vue d'une analyse ultérieure.  
+Le suivi est un moyen de surveiller l’exécution de votre application pendant son exécution . Vous pouvez ajouter l'instrumentation de traçage et de débogage à votre application .NET Framework au moment du développement, et utiliser cette instrumentation pendant le développement de l'application et après son déploiement. Utilisez les classes <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> et <xref:System.Diagnostics.TraceSource?displayProperty=nameWithType> pour enregistrer les informations relatives aux erreurs et à l'exécution de l'application dans des journaux, des fichiers texte ou d'autres appareils en vue d'une analyse ultérieure.  
   
  Le terme *instrumentation* fait référence à la capacité de surveiller ou de mesurer le niveau de performance d’un produit et de diagnostiquer les erreurs éventuelles. En programmation, c'est la capacité d'une application à incorporer les éléments suivants :  
   
@@ -31,7 +29,7 @@ Le traçage vous permet de surveiller le fonctionnement de votre application pen
   
 - **Débogage** : repérage et résolution des erreurs de programmation dans une application en cours de développement. Pour plus d’informations, consultez [Débogage](/visualstudio/debugger/debugger-feature-tour).  
   
-- **Compteurs de performance** : composants qui vous permettent de suivre les performances de votre application. Pour plus d’informations, consultez [Compteurs de performance](performance-counters.md).  
+- **Compteurs de performance** : composants qui vous permettent de suivre les performances de votre application. Pour plus d’informations, consultez [Compteurs de performances](performance-counters.md).  
   
 - **Journaux des événements** : composants qui vous permettent de recevoir et de suivre les principaux événements liés à l’exécution de votre application. Pour plus d'informations, consultez la classe <xref:System.Diagnostics.EventLog>.  
   
@@ -44,7 +42,7 @@ Le traçage vous permet de surveiller le fonctionnement de votre application pen
  Avec les classes <xref:System.Diagnostics.Trace> et <xref:System.Diagnostics.Debug>, vous pouvez surveiller et analyser les performances d'une application pendant le développement ou après le déploiement. Par exemple, utilisez la classe <xref:System.Diagnostics.Trace> pour suivre des actions particulières au fur et à mesure qu'elles se produisent dans une application déployée (comme la création de nouvelles connexions de base de données) et ainsi surveiller les performances de l'application.  
   
 ## <a name="code-tracing-and-debugging"></a>Traçage et débogage de code  
- Pendant la phase de développement, utilisez les méthodes de sortie de la classe <xref:System.Diagnostics.Debug> pour afficher des messages dans la fenêtre Sortie de l'environnement de développement intégré (IDE) de Visual Studio. Par exemple :  
+ Pendant la phase de développement, utilisez les méthodes de sortie de la classe <xref:System.Diagnostics.Debug> pour afficher des messages dans la fenêtre Sortie de l'environnement de développement intégré (IDE) de Visual Studio. Par exemple :  
   
 ```vb  
 Trace.WriteLine("Hello World!")  
@@ -60,7 +58,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
  Cela vous permet de déboguer vos applications et d'optimiser leurs performances en fonction de leur comportement dans votre environnement de test. Déboguez votre application dans votre version debug en activant l'attribut conditionnel <xref:System.Diagnostics.Debug> pour recevoir toutes les données de sortie de débogage. Une fois que votre application est finalisée, compilez votre version release sans activer l’attribut conditionnel <xref:System.Diagnostics.Debug>. Ainsi, le compilateur n’inclura pas votre code de débogage dans le fichier exécutable final. Pour plus d’informations, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md). Pour plus d’informations sur les différentes configurations de build de votre application, consultez [Compilation et génération](/visualstudio/ide/compiling-and-building-in-visual-studio).  
   
- Vous pouvez aussi tracer l'exécution du code dans une application installée, en utilisant les méthodes de la classe <xref:System.Diagnostics.Trace>. L’ajout de [commutateurs de suivi](trace-switches.md) dans votre code vous permet de vérifier que le suivi est effectué et son niveau d’exécution. Vous pouvez ainsi surveiller l'état de votre application dans un environnement de production, ce qui est particulièrement important dans le cas d'une application professionnelle qui utilise plusieurs composants exécutés sur différents ordinateurs. Vous pouvez contrôler la manière dont les commutateurs sont utilisés après le déploiement par le biais du fichier de configuration. Pour plus d’informations, consultez [Guide pratique pour Créer, initialiser et configurer des commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md).  
+ Vous pouvez aussi tracer l'exécution du code dans une application installée, en utilisant les méthodes de la classe <xref:System.Diagnostics.Trace>. En plaçant des [Commutateurs de suivi](trace-switches.md) dans votre code, vous pouvez contrôler le traçage et son importance. Vous pouvez ainsi surveiller l’état de votre application dans un environnement de production, ce qui est particulièrement important dans une application qui utilise plusieurs composants s’exécutant sur plusieurs ordinateurs. Vous pouvez contrôler la manière dont les commutateurs sont utilisés après le déploiement par le biais du fichier de configuration. Pour plus d’informations, consultez [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md).  
   
  Quand vous développez une application pour laquelle vous envisagez d'utiliser la fonctionnalité de traçage, vous incluez généralement des messages de traçage et de débogage dans le code de l'application. Quand vous êtes prêt à déployer l’application, compilez votre build de mise en production sans activer l’attribut conditionnel **Debug**. Cependant, vous pouvez activer l’attribut conditionnel **Trace** pour que le compilateur inclue votre code de suivi dans le fichier exécutable. Pour plus d’informations, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md).  
   
@@ -81,7 +79,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
 1. Déterminez la sortie de traçage que vous souhaitez obtenir sur place après avoir déployé l'application.  
   
-2. Créez un jeu de commutateurs. Pour plus d’informations, consultez [Guide pratique pour Configurez les commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md).  
+2. Créez un jeu de commutateurs. Pour plus d’informations, consultez la rubrique [Procédure : configuration de commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md).  
   
 3. Ajoutez les instructions de trace au code de l'application.  
   
@@ -111,7 +109,7 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
  Grâce aux instructions de trace, vous ne perdez pas de temps à analyser, modifier et recompiler le code source d’origine, ni à essayer de reproduire l’erreur d’exécution dans l’environnement de débogage. Rappelez-vous que l'instrumentation d'une application est utile pour afficher les erreurs, mais aussi pour surveiller les performances.  
   
 ## <a name="strategic-placement-of-trace-statements"></a>Placement stratégique des instructions de trace  
- Choisissez avec soin les endroits où vous allez placer les instructions de trace qui seront utilisées au moment de l'exécution. Vous devez déterminer quelles informations de traçage seront les plus utiles dans une application déployée afin que tous les scénarios de traçage probables soient traités de manière adéquate. Les applications utilisant la fonctionnalité de traçage étant très diverses, il n'existe pas d'instructions générales pour placer stratégiquement des instructions de trace. Pour plus d’informations sur le placement des instructions de suivi, consultez [procédure : Ajoutez des instructions de trace dans le](how-to-add-trace-statements-to-application-code.md)de code de l’application.  
+ Vous devez apporter un soin particulier lors du placement de vos instructions de suivi à utiliser au moment de l'exécution. Vous devez réfléchir aux informations de suivi susceptibles d'être nécessaires dans une application déployée, de sorte que tous les scénarios de suivi probables soient convenablement traités. Toutefois, étant donné que les applications qui utilisent le suivi varient considérablement, il n'existe aucune recommandation générale concernant le positionnement stratégique du suivi. Pour plus d’informations sur la façon de placer des instructions de suivi, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md).  
   
 ## <a name="output-from-tracing"></a>Sortie de trace  
  La sortie de suivi est collectée par des objets appelés *écouteurs*. Un écouteur est un objet qui reçoit la sortie de trace et qui l'écrit dans une cible de sortie (généralement une fenêtre, un journal ou un fichier texte). Quand un écouteur de la trace est créé, il est en principe ajouté à la collection <xref:System.Diagnostics.Trace.Listeners%2A?displayProperty=nameWithType>, ce qui permet à l’écouteur de recevoir toutes les données de sortie de trace.  
@@ -120,11 +118,11 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
  Les six membres <xref:System.Diagnostics.Debug> et méthodes <xref:System.Diagnostics.Trace> qui écrivent des informations de traçage sont répertoriés dans le tableau suivant.  
   
-|Méthode|Sortie|  
+|Méthode|Output|  
 |------------|------------|  
 |**Assert**|Le texte spécifié ou, si aucun texte n'est spécifié, la pile des appels. La sortie est écrite uniquement si la condition spécifiée en tant qu’argument dans l’instruction **Assert** a la valeur **false**.|  
 |**Échec**|Le texte spécifié ou, si aucun texte n'est spécifié, la pile des appels.|  
-|**Write**|Le texte spécifié.|  
+|**Écrire**|Le texte spécifié.|  
 |**WriteIf**|Le texte spécifié si la condition spécifiée en tant qu’argument dans l’instruction **WriteIf** est satisfaite.|  
 |**WriteLine**|Le texte spécifié et un retour chariot.|  
 |**WriteLineIf**|Le texte spécifié et un retour chariot si la condition spécifiée en tant qu’argument dans l’instruction **WriteLineIf** est satisfaite.|  
@@ -133,10 +131,10 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
   
  Vous pouvez générer des résultats personnalisés en implémentant votre propre écouteur. Par exemple, créez un écouteur de la trace personnalisé qui affiche les messages dans une boîte de message ou qui se connecte à une base de données pour ajouter les messages à une table. Tous les écouteurs personnalisés doivent prendre en charge les six méthodes mentionnées ci-dessus. Pour plus d'informations sur la création d'écouteurs définis par le développeur, voir <xref:System.Diagnostics.TraceListener> dans la documentation .NET Framework.  
   
- Les méthodes **Write** et **WriteLine** écrivent toujours le texte que vous spécifiez. **Assert**, **WriteIf** et **WriteLineIf** nécessitent un argument booléen qui contrôle si elles écrivent le texte spécifié. Elles écrivent le texte spécifié uniquement si l’expression a la valeur **true** (pour **WriteIf** et **WriteLineIf**) ou **false** (pour **Assert**). La méthode **Fail** écrit toujours le texte spécifié. Pour plus d’informations, consultez [Guide pratique pour Ajoutez des instructions de suivi à la](how-to-add-trace-statements-to-application-code.md) du code de l’application et à la référence de .NET Framework.  
+ Les méthodes **Write** et **WriteLine** écrivent toujours le texte que vous spécifiez. **Assert**, **WriteIf** et **WriteLineIf** nécessitent un argument booléen qui contrôle si elles écrivent le texte spécifié. Elles écrivent le texte spécifié uniquement si l’expression a la valeur **true** (pour **WriteIf** et **WriteLineIf**) ou **false** (pour **Assert**). La méthode **Fail** écrit toujours le texte spécifié. Pour plus d’informations, consultez [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md) et la référence .NET Framework.  
   
 ## <a name="security-concerns"></a>Problèmes de sécurité  
- Si vous ne désactivez pas le traçage et le débogage avant de déployer votre application ASP.NET, celle-ci peut dévoiler des informations exploitables par un programme malveillant. Pour plus d’informations, consultez [Guide pratique pour Compilez de manière conditionnelle avec trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md), la [compilation et la génération](/visualstudio/ide/compiling-and-building-in-visual-studio), et [Comment : Créer, initialiser et configurer des commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md). Vous pouvez également configurer le débogage via IIS (Internet Information Services).  
+ Si vous ne désactivez pas le traçage et le débogage avant de déployer votre application ASP.NET, celle-ci peut dévoiler des informations exploitables par un programme malveillant. Pour plus d’informations, consultez [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md), [Compilation et génération](/visualstudio/ide/compiling-and-building-in-visual-studio) et [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md). Vous pouvez également configurer le débogage via IIS (Internet Information Services).  
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -144,10 +142,10 @@ System.Diagnostics.Debug.WriteLine("Hello World!");
 - <xref:System.Diagnostics.TraceSource>
 - [Contrats de code](code-contracts.md)
 - [Types de projets C#, F# et Visual Basic](/visualstudio/debugger/debugging-preparation-csharp-f-hash-and-visual-basic-project-types)
-- [Guide pratique : Ajouter des instructions de trace au code de l’application](how-to-add-trace-statements-to-application-code.md)
-- [Guide pratique : effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md)
-- [Guide pratique : Créer, initialiser et configurer des commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md)
-- [Guide pratique : Créer et initialiser les sources de trace](how-to-create-and-initialize-trace-sources.md)
-- [Guide pratique : Utilisez TraceSource et des filtres avec des écouteurs de suivi](how-to-use-tracesource-and-filters-with-trace-listeners.md)
+- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](how-to-compile-conditionally-with-trace-and-debug.md)
+- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md)
+- [Guide pratique pour créer et initialiser des sources de suivi](how-to-create-and-initialize-trace-sources.md)
+- [Guide pratique pour utiliser un TraceSource et des filtres avec des écouteurs de suivi](how-to-use-tracesource-and-filters-with-trace-listeners.md)
 - [Écouteurs de suivi](trace-listeners.md)
 - [Commutateurs de suivi](trace-switches.md)

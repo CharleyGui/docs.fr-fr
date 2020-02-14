@@ -10,14 +10,12 @@ helpviewer_keywords:
 - SafeHandle class, run-time errors
 - MDAs (managed debugging assistants), handles
 ms.assetid: 44cd98ba-95e5-40a1-874d-e8e163612c51
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 41f6b67ff63d096cc1fa2c599abb06c9c1129952
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 265344cb100a41cde5443cd0914dc66271aabf93
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052309"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216114"
 ---
 # <a name="releasehandlefailed-mda"></a>releaseHandleFailed (MDA)
 L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avertir les développeurs que la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> d'une classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> retourne la valeur `false`.  
@@ -25,7 +23,7 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
 ## <a name="symptoms"></a>Symptômes  
  Fuites de ressources ou de mémoire.  Si la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> de la classe dérivée de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle> échoue, il est possible que la ressource encapsulée par la classe n'ait pas pu être libérée ou nettoyée.  
   
-## <a name="cause"></a>Cause  
+## <a name="cause"></a>Cause :  
  Les utilisateurs doivent fournir l'implémentation de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> s'ils créent des classes qui dérivent de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle>. Les circonstances sont donc spécifiques à chaque ressource. Toutefois, il existe certaines exigences :  
   
 - Les types <xref:System.Runtime.InteropServices.SafeHandle> et <xref:System.Runtime.InteropServices.CriticalHandle> représentent des wrappers autour de ressources de processus essentielles. Une fuite de mémoire finirait par rendre le processus inutilisable.  
@@ -34,7 +32,7 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
   
 - Un échec survenant pendant l’exécution de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> empêche la libération de la ressource, et constitue un bogue dans l’implémentation de la méthode <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A> elle-même. C'est au programmeur qu'il revient de s'assurer que le contrat est respecté, même si ce code appelle du code créé par un autre utilisateur pour exécuter sa fonction.  
   
-## <a name="resolution"></a>Résolution :  
+## <a name="resolution"></a>Résolution  
  Passez en revue le code utilisant le type <xref:System.Runtime.InteropServices.SafeHandle> (ou <xref:System.Runtime.InteropServices.CriticalHandle>) spécifique qui a déclenché la notification de l’Assistant Débogage managé et recherchez les endroits où la valeur du handle brut est extraite de <xref:System.Runtime.InteropServices.SafeHandle> et copiée ailleurs. C'est la cause de la plupart des échecs dans les implémentations de <xref:System.Runtime.InteropServices.SafeHandle> ou de <xref:System.Runtime.InteropServices.CriticalHandle>, car le runtime n'effectue plus de suivi de l'utilisation de la valeur du handle brut. Si la copie du handle brut est fermée par la suite, cela peut provoquer l'échec d'un appel ultérieur à <xref:System.Runtime.InteropServices.SafeHandle.ReleaseHandle%2A>, car c'est le même handle, désormais non valide, qui fait l'objet d'une tentative de fermeture.  
   
  Une duplication de handle incorrecte peut se produire dans plusieurs cas :  
@@ -52,7 +50,7 @@ L'Assistant Débogage managé (MDA) `releaseHandleFailed` est activé pour avert
 ## <a name="effect-on-the-runtime"></a>Effet sur le runtime  
  Cet Assistant Débogage managé n'a aucun effet sur le CLR.  
   
-## <a name="output"></a>Sortie  
+## <a name="output"></a>Output  
  Message indiquant qu’un <xref:System.Runtime.InteropServices.SafeHandle> ou un <xref:System.Runtime.InteropServices.CriticalHandle> n’a pas réussi à libérer correctement le handle. Par exemple :  
   
 ```output

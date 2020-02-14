@@ -7,14 +7,12 @@ helpviewer_keywords:
 - security-transparent code
 - security-critical code
 ms.assetid: 4d05610a-0da6-4f08-acea-d54c9d6143c0
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ea782b346f6c53664a8aeb736c7d7a4509d83985
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 7ac5660c2c431505f4992f5e687974c2b9d06672
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73974942"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216996"
 ---
 # <a name="security-transparent-code-level-2"></a>Code transparent de sécurité, niveau 2
 
@@ -72,7 +70,7 @@ Les règles suivantes s'appliquent à l'utilisation d'attributs au niveau de l'a
 
 Le tableau suivant compare le comportement au niveau de l’assembly pour le niveau 2 avec le niveau 1.
 
-|Assembly (attribut)|Niveau 2|Niveau 1|
+|Attribut d’assembly|Niveau 2|Niveau 1|
 |------------------------|-------------|-------------|
 |Aucun attribut sur un assembly de niveau de confiance partielle|Les types et les membres sont transparents par défaut, mais peuvent être critiques de sécurité ou critiques sécurisés.|Tous les types et membres sont transparents.|
 |Aucun attribut|Si vous ne spécifiez aucun attribut, le common language runtime détermine les règles de transparence à votre place. Tous les types et membres sont critiques de sécurité, sauf si le fait d'être critique de sécurité va à l'encontre d'une règle d'héritage.|Sur un assembly d'un niveau de confiance totale (dans le Global Assembly Cache ou s'il est identifié comme étant entièrement fiable dans le `AppDomain`) tous les types sont transparents et tous les membres sont critiques sécurisés.|

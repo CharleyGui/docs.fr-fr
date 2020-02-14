@@ -1,7 +1,7 @@
 ---
 title: Types numériques à virgule flottante - Référence C#
-description: Vue d’ensemble des types virgule flottante C# intégrés
-ms.date: 10/22/2019
+description: 'En savoir plus sur les types C# à virgule flottante intégrés : float, double et Decimal'
+ms.date: 02/10/2020
 f1_keywords:
 - float
 - float_CSharpKeyword
@@ -18,12 +18,12 @@ helpviewer_keywords:
 - floating-point numbers [C#], float keyword
 - double data type [C#]
 - decimal keyword [C#]
-ms.openlocfilehash: 9c8b11f9337ee9de90f2d4d96b5be162713bfcbd
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 95b7f266654bbbcdcd0f81e3aa11cfc94af9f0e5
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093212"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215251"
 ---
 # <a name="floating-point-numeric-types-c-reference"></a>Types numériques à virgule flottante (Référence C#)
 
@@ -50,19 +50,21 @@ La valeur par défaut pour tous les types virgule flottante est zéro, `0`. Chac
 
 Le type `decimal` fournit une plus grande précision et une plage de valeurs plus petite que `float` et `double`, ce qui le rend particulièrement approprié aux calculs financiers et monétaires.
 
-Vous pouvez combiner des types [intégraux](integral-numeric-types.md) et des types virgule flottante dans une expression. Dans ce cas, les types intégraux sont convertis en types virgule flottante. L’évaluation de l’expression est exécutée d’après les règles suivantes :
+Vous pouvez mélanger les types [intégraux](integral-numeric-types.md) et les types `float` et `double` dans une expression. Dans ce cas, les types intégraux sont convertis implicitement en un des types à virgule flottante et, si nécessaire, le type de `float` est implicitement converti en `double`. L'expression est évaluée de la manière suivante :
 
-- Si l’un des types à virgule flottante est `double`, l’expression prend la valeur `double`, ou la valeur [bool](bool.md) dans les comparaisons d’égalité et relationnelles.
-- S’il n’existe aucun type de `double` dans l’expression, l’expression prend la valeur `float`, ou la valeur [bool](bool.md) dans les comparaisons d’égalité et relationnelles.
+- S’il existe `double` type dans l’expression, l’expression prend la valeur `double`ou [`bool`](bool.md) dans les comparaisons d’égalité et relationnelles.
+- S’il n’existe aucun type de `double` dans l’expression, l’expression prend la valeur `float`ou `bool` dans les comparaisons d’égalité et relationnelles.
 
-Une expression à virgule flottante peut contenir les ensembles de valeurs suivants :
+Vous pouvez également mélanger des types intégraux et le type de `decimal` dans une expression. Dans ce cas, les types intégraux sont convertis implicitement en type `decimal` et l’expression prend la valeur `decimal`ou `bool` dans les comparaisons d’égalité et d’égalité.
 
-- Zéro positif et négatif
-- Infini positif et négatif
-- Valeur NaN (N’est pas un nombre)
-- L’ensemble fini de valeurs différentes de zéro
+Vous ne pouvez pas mélanger le type de `decimal` avec les types de `float` et de `double` dans une expression. Dans ce cas, si vous souhaitez effectuer des opérations arithmétiques, de comparaison ou d’égalité, vous devez convertir explicitement les opérandes à partir de ou en type `decimal`, comme le montre l’exemple suivant :
 
-Pour plus d’informations sur ces valeurs, consultez IEEE Standard for Binary Floating-Point Arithmetic, disponible sur le site web de [l’IEEE](https://www.ieee.org).
+```csharp-interactive
+double a = 1.0;
+decimal b = 2.1m;
+Console.WriteLine(a + (double)b);
+Console.WriteLine((decimal)a + b);
+```
 
 Vous pouvez utiliser des [chaînes au format numérique standard](../../../standard/base-types/standard-numeric-format-strings.md) ou des [chaînes au format numérique personnalisées](../../../standard/base-types/custom-numeric-format-strings.md) pour mettre en forme une valeur à virgule flottante.
 

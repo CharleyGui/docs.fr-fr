@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 25c08217-fdeb-44b9-9cd6-1b4955d6e602
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 5a9041ab75836b4239d492987e94c9104133e9bf
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9620eb25837a5cf6dd592f4222e0fa5a13751278
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120035"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214938"
 ---
 # <a name="connectiongroup-class"></a>ConnectionGroup, classe
 
@@ -34,9 +32,9 @@ internal class ConnectionGroup
 > 
 > Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
 **Assembly :** Système (dans System. dll)
 

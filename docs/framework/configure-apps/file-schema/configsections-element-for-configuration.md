@@ -7,25 +7,23 @@ helpviewer_keywords:
 - configSections Element
 - <configSections> Element
 ms.assetid: 9f963c1b-dc3f-4220-a8b6-2dd7a5a8e039
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 6024144b6f12df22369366f04c3cbad02c5011d5
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5b71eb81769db1188f97b1646a608df172ff56c5
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73119013"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214827"
 ---
 # <a name="configsections-element-for-configuration"></a>\<configSections > élément de configuration de \<>
 
 Contient la section de configuration et les déclarations d’espace de noms.
 
 [ **\<configuration>** ](configuration-element.md)   
-&nbsp;&nbsp; **\<configSections>**
+&nbsp;&nbsp; **\<configSections >**
 
-## <a name="attributes"></a>Attributes
+## <a name="attributes"></a>Attributs
 
-Aucun
+None
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -37,12 +35,12 @@ Aucun
 
 |     | Description |
 | --- | ----------- |
-| [ **\<section>** ](section-element.md) | Contient une déclaration de section de configuration. |
-| [ **\<sectionGroup>** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
+| [ **\<section >** ](section-element.md) | Contient une déclaration de section de configuration. |
+| [ **\<de sectionGroup >** ](sectiongroup-element-for-configsections.md) | Définit un espace de noms pour les sections de configuration. |
 | [ **\<remove>** ](remove-element-for-configsections.md) | Supprime un groupe de sections ou de sections prédéfini. |
 | [ **\<clear>** ](clear-element-for-configsections.md) | Efface toutes les sections et tous les groupes de sections précédemment définis. |
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes
 
 Si cet élément se trouve dans un fichier de configuration, il doit s’agir du premier élément enfant de l’élément de **> de configuration\<** .
 
@@ -62,7 +60,7 @@ L’exemple suivant montre comment définir une section de configuration et déf
 </configuration>
 ```
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
 Cet élément peut être utilisé dans le fichier de configuration de l’application, le fichier de configuration de l’ordinateur (*machine. config*) et les fichiers *Web. config* qui ne sont pas au niveau du répertoire de l’application.
 

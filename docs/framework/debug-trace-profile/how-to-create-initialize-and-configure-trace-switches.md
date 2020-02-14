@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Créer, initialiser et configurer les commutateurs de trace'
+title: 'Comment : créer, initialiser et configurer les commutateurs de traçage'
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -11,16 +11,14 @@ helpviewer_keywords:
 - tracing [.NET Framework], enabling or disabling
 - Web.config configuration file, trace switches
 ms.assetid: 5a0e41bf-f99c-4692-8799-f89617f5bcf9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 13f89af41520fa023d8841d6dc6d7766e2abe6da
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 358e34b2ce5d896ba02b343ce060604f2d42eeeb
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052714"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216477"
 ---
-# <a name="how-to-create-initialize-and-configure-trace-switches"></a>Procédure : Créer, initialiser et configurer les commutateurs de trace
+# <a name="how-to-create-initialize-and-configure-trace-switches"></a>Comment : créer, initialiser et configurer les commutateurs de traçage
 Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie de traçage, et de la filtrer.  
   
 <a name="create"></a>   
@@ -54,7 +52,7 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
 ## <a name="configuring-trace-switches"></a>Configuration des commutateurs de suivi  
  Après avoir distribué votre application, vous gardez la possibilité d'activer ou de désactiver la sortie de trace en configurant les commutateurs de trace dans votre application. Pour configurer un commutateur, il faut modifier sa valeur à partir d'une source externe une fois qu'il a été initialisé. Vous pouvez modifier les valeurs des objets commutateur à l'aide du fichier de configuration. Vous configurez un commutateur de trace pour pouvoir l'activer et le désactiver ou pour définir le niveau de trace associé, qui détermine la quantité et le type de messages qu'il transmet aux écouteurs.  
   
- Vos commutateurs sont configurés à l'aide du fichier .config. Pour une application web, il s'agit du fichier Web.config associé au projet. Dans une application Windows, ce fichier est nommé « (nom_application).exe.config ». Dans une application déployée, ce fichier doit résider dans le même dossier que le fichier exécutable.  
+ Vos commutateurs sont configurés à l'aide du fichier .config. Pour une application web, il s'agit du fichier Web.config associé au projet. Dans une application Windows, ce fichier est nommé (nom de l’application). exe. config. Dans une application déployée, ce fichier doit résider dans le même dossier que l’exécutable.  
   
  Quand votre application exécute le code qui crée pour la première fois une instance d'un commutateur, elle recherche dans le fichier de configuration des informations sur le niveau de trace défini pour le commutateur indiqué. Le système de traçage examine le fichier de configuration une seule fois pour un commutateur donné (la première fois que votre application crée le commutateur).  
   
@@ -75,11 +73,11 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
   
 2. Si votre projet ne contient pas de fichier de configuration (app.config ou Web.config), dans le menu **Projet**, sélectionnez **Ajouter un nouvel élément**.  
   
-    - **Visual Basic :** Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **fichier de configuration**de l’application.  
+    - **Visual Basic** : dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Fichier de configuration de l’application**.  
   
          Le fichier de configuration de l'application est créé, puis ouvert. Il s'agit d'un document XML dont l'élément racine est `<configuration>.`  
   
-    - **Visuel C#:** Dans la boîte de dialogue **Ajouter un nouvel élément** , choisissez **fichier XML**. Nommez ce fichier **app.config**. Dans l'éditeur XML, après la déclaration XML, ajoutez les balises suivantes :  
+    - **Visual C#**  : dans la boîte de dialogue **Ajouter un nouvel élément**, choisissez **Fichier XML**. Nommez ce fichier **app. config**. Dans l’éditeur XML, après la déclaration XML, ajoutez le code XML suivant :  
   
         ```xml  
         <configuration>  
@@ -128,6 +126,6 @@ Les commutateurs de trace vous permettent d'activer ou de désactiver la sortie 
 ## <a name="see-also"></a>Voir aussi
 
 - [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
-- [Guide pratique pour Ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
+- [Guide pratique pour ajouter des instructions de suivi au code d’application](how-to-add-trace-statements-to-application-code.md)
 - [Commutateurs de suivi](trace-switches.md)
 - [Schéma des paramètres de trace et de débogage](../configure-apps/file-schema/trace-debug/index.md)

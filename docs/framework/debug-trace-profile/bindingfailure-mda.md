@@ -9,14 +9,12 @@ helpviewer_keywords:
 - managed debugging assistants (MDAs), binding failures
 - BindingFailure MDA
 ms.assetid: 26ada5af-175c-4576-931a-9f07fa1723e9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 93c426cce792c8f30a3551e2d4626736dd67278f
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: e3a9a915d25cbe5f052f039055167cf3ae4bf424
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052945"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77216919"
 ---
 # <a name="bindingfailure-mda"></a>Assistant Débogage managé bindingFailure
 
@@ -26,7 +24,7 @@ L’Assistant débogage managé (MDA) `bindingFailure` est activé quand le char
 
 Le code a tenté de charger un assembly à l’aide d’une référence statique ou de l’une des méthodes de chargeur, telles que <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.LoadFrom%2A?displayProperty=nameWithType>. L’assembly n’est pas chargé et une exception <xref:System.IO.FileNotFoundException> ou <xref:System.IO.FileLoadException> est levée.
 
-## <a name="cause"></a>Cause
+## <a name="cause"></a>Cause :
 
 Un échec de liaison se produit quand le runtime ne peut pas charger un assembly. Un échec de liaison peut être dû à l’une des situations suivantes :
 
@@ -40,7 +38,7 @@ Un échec de liaison se produit quand le runtime ne peut pas charger un assembly
 
 - Les informations d’identification de l’utilisateur ne fournissent pas les autorisations requises pour lire le fichier.
 
-## <a name="resolution"></a>Résolution :
+## <a name="resolution"></a>Résolution
 
 La première étape consiste à déterminer pourquoi le CLR n’a pas pu établir de liaison avec l’assembly demandé. Il existe de nombreuses raisons pour lesquelles le runtime est susceptible de ne pas avoir trouvé ou chargé l’assembly demandé, parmi lesquelles les scénarios répertoriés dans la section Cause. Nous vous recommandons d’effectuer les actions suivantes pour éliminer la cause de l’échec de liaison :
 
@@ -64,7 +62,7 @@ La première étape consiste à déterminer pourquoi le CLR n’a pas pu établi
 
 Cet Assistant Débogage managé n'a aucun effet sur le CLR. Il signale uniquement des données relatives aux échecs de liaison.
 
-## <a name="output"></a>Sortie
+## <a name="output"></a>Output
 
 L’Assistant Débogage managé signale l’assembly dont le chargement a échoué, notamment le chemin demandé et/ou le nom complet, le contexte de liaison, le domaine d’application dans lequel le chargement a été demandé et la raison de l’échec.
 

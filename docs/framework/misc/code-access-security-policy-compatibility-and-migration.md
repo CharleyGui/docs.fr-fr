@@ -5,14 +5,12 @@ helpviewer_keywords:
 - policy migration, compatibility
 - CLR policy migration
 ms.assetid: 19cb4d39-e38a-4262-b507-458915303115
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 9563dae9ba5d144300549e7f33f5f5a9feb1d410
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 949739b3336a9182eef583cc405e60e09d7ec09d
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70205626"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217158"
 ---
 # <a name="code-access-security-policy-compatibility-and-migration"></a>Compatibilité de la stratégie de sécurité d'accès du code et migration
 
@@ -26,7 +24,7 @@ Vous pouvez éviter les avertissements et les erreurs comme suit :
 
    \- ou -
 
-- Utilisation de l' [ \<élément de configuration NetFx40_LegacySecurityPolicy >](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) pour choisir le comportement de stratégie CAS hérité.
+- L’utilisation de l' [\<NetFx40_LegacySecurityPolicy > élément de configuration](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) pour s’abonner au comportement de stratégie CAS hérité.
 
 Cette rubrique contient les sections suivantes :
 
@@ -36,9 +34,9 @@ Cette rubrique contient les sections suivantes :
 
 - [Erreurs et avertissements](#errors_and_warnings)
 
-- [Passage Remplacement des appels obsolètes](#migration)
+- [Migration : remplacement des appels obsolètes](#migration)
 
-- [Compatibilité Utilisation de l’option stratégie CAS héritée](#compatibility)
+- [Compatibilité : utilisation de l’option de stratégie CAS héritée](#compatibility)
 
 <a name="explicit_use"></a>
 
@@ -46,7 +44,7 @@ Cette rubrique contient les sections suivantes :
 
 Les membres qui manipulent directement la stratégie de sécurité ou nécessitent la stratégie CAS en mode bac à sable (sandbox) sont obsolètes et généreront des erreurs par défaut.
 
-En voici quelques exemples :
+En voici quelques exemples :
 
 - <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType>
 
@@ -110,11 +108,11 @@ Exceptions runtime :
 
 <a name="migration"></a>
 
-## <a name="migration-replacement-for-obsolete-calls"></a>Passage Remplacement des appels obsolètes
+## <a name="migration-replacement-for-obsolete-calls"></a>Migration : remplacement des appels obsolètes
 
 ### <a name="determining-an-assemblys-trust-level"></a>Détermination du niveau de confiance d'un assembly
 
-La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations ou le niveau de confiance d'un assembly ou d'un domaine d'application. Le .NET Framework 4 expose les propriétés utiles suivantes qui n’ont pas besoin de résoudre la stratégie de sécurité:
+La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations ou le niveau de confiance d'un assembly ou d'un domaine d'application. Le .NET Framework 4 expose les propriétés utiles suivantes qui n’ont pas besoin de résoudre la stratégie de sécurité :
 
 - <xref:System.Reflection.Assembly.PermissionSet%2A?displayProperty=nameWithType>
 
@@ -126,23 +124,23 @@ La stratégie CAS est souvent utilisée pour déterminer le jeu d'autorisations 
 
 ### <a name="application-domain-sandboxing"></a>Utilisation de bac à sable (sandbox) pour les domaines d'application
 
-La méthode <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> est généralement utilisée pour la mise en bac à sable (sandbox) des assemblys dans un domaine d'application. Le .NET Framework 4 expose les membres qui n’ont pas à <xref:System.Security.Policy.PolicyLevel> être utilisés à cette fin. Pour plus d'informations, voir [Procédure : exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md).
+La méthode <xref:System.AppDomain.SetAppDomainPolicy%2A?displayProperty=nameWithType> est généralement utilisée pour la mise en bac à sable (sandbox) des assemblys dans un domaine d'application. Le .NET Framework 4 expose les membres qui n’ont pas besoin d’utiliser <xref:System.Security.Policy.PolicyLevel> à cet effet. Pour plus d’informations, consultez [Comment : exécuter du code d’un degré de confiance partiel dans un bac à sable (sandbox)](how-to-run-partially-trusted-code-in-a-sandbox.md).
 
 ### <a name="determining-a-safe-or-reasonable-permission-set-for-partially-trusted-code"></a>Détermination d'un jeu d'autorisations sécurisé ou raisonnable pour le code d'un niveau de confiance partiel
 
-Les hôtes doivent souvent déterminer les autorisations qui sont appropriées pour l'utilisation de bacs à sable (sandbox) pour le code hébergé. Avant la .NET Framework 4, la stratégie cas fournissait une manière de le faire <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType> avec la méthode. En remplacement, .NET Framework 4 fournit la <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType> méthode, qui retourne un jeu d’autorisations standard sécurisé pour la preuve fournie.
+Les hôtes doivent souvent déterminer les autorisations qui sont appropriées pour l'utilisation de bacs à sable (sandbox) pour le code hébergé. Avant la .NET Framework 4, la stratégie CAS offrait une manière de le faire avec la méthode <xref:System.Security.SecurityManager.ResolvePolicy%2A?displayProperty=nameWithType>. En remplacement, .NET Framework 4 fournit la méthode <xref:System.Security.SecurityManager.GetStandardSandbox%2A?displayProperty=nameWithType>, qui retourne un jeu d’autorisations standard sécurisé pour la preuve fournie.
 
-### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Scénarios sans bac à sable (sandbox): Surcharges pour les chargements d’assembly
+### <a name="non-sandboxing-scenarios-overloads-for-assembly-loads"></a>Scénarios autres que le mode bac à sable (sandbox) : surcharges pour les chargements d'assemblys
 
-La raison de l'utilisation d'une surcharge de chargement d'assembly peut être de recourir à des paramètres qui ne sont pas autrement disponibles, au lieu d'utiliser le sandbox pour l'assembly. À partir du .NET Framework 4, les surcharges de chargement d’assembly qui <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> ne nécessitent pas d’objet en tant que <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>paramètre, par exemple, permettent ce scénario.
+La raison de l'utilisation d'une surcharge de chargement d'assembly peut être de recourir à des paramètres qui ne sont pas autrement disponibles, au lieu d'utiliser le sandbox pour l'assembly. À partir du .NET Framework 4, les surcharges de chargement d’assembly qui ne requièrent pas un objet <xref:System.Security.Policy.Evidence?displayProperty=nameWithType> en tant que paramètre, par exemple, <xref:System.AppDomain.ExecuteAssembly%28System.String%2CSystem.String%5B%5D%2CSystem.Byte%5B%5D%2CSystem.Configuration.Assemblies.AssemblyHashAlgorithm%29?displayProperty=nameWithType>, permettent ce scénario.
 
 Si vous voulez utiliser un bac à sable (sandbox) pour un assembly, utilisez la surcharge <xref:System.AppDomain.CreateDomain%28System.String%2CSystem.Security.Policy.Evidence%2CSystem.AppDomainSetup%2CSystem.Security.PermissionSet%2CSystem.Security.Policy.StrongName%5B%5D%29?displayProperty=nameWithType>.
 
 <a name="compatibility"></a>
 
-## <a name="compatibility-using-the-cas-policy-legacy-option"></a>Compatibilité Utilisation de l’option stratégie CAS héritée
+## <a name="compatibility-using-the-cas-policy-legacy-option"></a>Compatibilité : utilisation de l'option de stratégie CAS héritée
 
-L’élément de [configuration NetFx40_LegacySecurityPolicy > vous permet de spécifier qu’un processus ou une bibliothèque utilise la stratégie CAS héritée. \<](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) Quand vous activez cet élément, les surcharges de stratégie et de preuve fonctionnent comme dans les versions antérieures du Framework.
+Le [\<NetFx40_LegacySecurityPolicy > élément de configuration](../configure-apps/file-schema/runtime/netfx40-legacysecuritypolicy-element.md) vous permet de spécifier qu’un processus ou une bibliothèque utilise la stratégie CAS héritée. Quand vous activez cet élément, les surcharges de stratégie et de preuve fonctionnent comme dans les versions antérieures du Framework.
 
 > [!NOTE]
 > Le comportement de la stratégie CAS est spécifié par version du runtime ; la modification de la stratégie CAS pour une version du runtime n'affecte donc pas la stratégie CAS d'une autre version.

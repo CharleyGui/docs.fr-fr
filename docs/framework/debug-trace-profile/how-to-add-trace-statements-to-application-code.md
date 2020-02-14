@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Ajouter des instructions de trace dans le code d’une application'
+title: "Comment : ajouter des instructions de traçage dans le code d'une application"
 ms.date: 03/30/2017
 dev_langs:
 - csharp
@@ -13,17 +13,15 @@ helpviewer_keywords:
 - trace switches, conditional writes based on switches
 - WriteIf method
 ms.assetid: f3a93fa7-1717-467d-aaff-393e5c9828b4
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 4517da87603dcdd398d536cd9bf9e441430be375
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 21df0e8129505e50e6b7f29c4f4f5aea94f380e3
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71052737"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77217467"
 ---
-# <a name="how-to-add-trace-statements-to-application-code"></a>Procédure : Ajouter des instructions de trace dans le code d’une application
-Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert**et **Fail**. Ces méthodes peuvent être divisées en deux catégories : Les instructions **Write**, **WriteLine**et **Fail** émettent toutes la sortie sans condition, tandis que **WriteIf**, **WriteLineIf**et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
+# <a name="how-to-add-trace-statements-to-application-code"></a>Comment : ajouter des instructions de traçage dans le code d'une application
+Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permettant d’écrire la sortie dans des écouteurs : **Write**, **WriteIf**, **WriteLine**, **WriteLineIf**, **Assert** et **Fail**. Ces méthodes peuvent être réparties en deux catégories : **Write**, **WriteLine** et **Fail** émettent toutes la sortie de manière inconditionnelle, tandis que **WriteIf**, **WriteLineIf** et **Assert** testent une condition booléenne, et écrivent ou n’écrivent pas en fonction de la valeur de la condition. **WriteIf** et **WriteLineIf** émettent une sortie si la condition est `true` et **Assert** émet une sortie si la condition est `false`.  
   
  Quand vous concevez votre stratégie de débogage et de traçage, vous devez tenir compte de l'apparence souhaitée de la sortie. Si plusieurs instructions **Write** sont remplies avec des informations sans rapport, le journal créé est difficile à lire. D’un autre côté, si vous utilisez **WriteLine** pour placer des instructions connexes sur des lignes distinctes, il peut être difficile de déterminer les informations associées. En règle générale, utilisez plusieurs instructions **Write** si vous voulez combiner des informations provenant de plusieurs sources pour créer un message informatif unique et utilisez l’instruction **WriteLine** quand vous voulez créer un message unique et complet.  
   
@@ -69,7 +67,7 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
   
 ### <a name="to-verify-that-certain-conditions-exist-either-before-or-after-you-execute-a-method"></a>Pour vérifier que certaines conditions sont réunies avant ou après l'exécution d'une méthode  
   
-1. Appelez la méthode <xref:System.Diagnostics.Trace.Assert%2A>.  
+1. Appelez la méthode <xref:System.Diagnostics.Trace.Assert%2A> .  
   
     ```vb  
     Dim i As Integer = 4  
@@ -91,6 +89,6 @@ Les méthodes utilisées le plus souvent pour le suivi sont les méthodes permet
 - <xref:System.Diagnostics.Trace.WriteIf%2A?displayProperty=nameWithType>
 - <xref:System.Diagnostics.Trace.WriteLineIf%2A?displayProperty=nameWithType>
 - [Suivi et instrumentation d’applications](tracing-and-instrumenting-applications.md)
-- [Guide pratique : Créer, initialiser et configurer des commutateurs de trace](how-to-create-initialize-and-configure-trace-switches.md)
+- [Guide pratique pour créer, initialiser et configurer des commutateurs de suivi](how-to-create-initialize-and-configure-trace-switches.md)
 - [Commutateurs de suivi](trace-switches.md)
 - [Écouteurs de suivi](trace-listeners.md)

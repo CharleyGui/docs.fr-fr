@@ -1,5 +1,5 @@
 ---
-title: 'Procédure : Exécuter du code partiellement fiable dans un bac à sable (sandbox)'
+title: "Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)"
 ms.date: 03/30/2017
 helpviewer_keywords:
 - partially trusted code
@@ -8,16 +8,14 @@ helpviewer_keywords:
 - restricted security environment
 - code security, sandboxing
 ms.assetid: d1ad722b-5b49-4040-bff3-431b94bb8095
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: e8b1db291fbaf19ae9086fe1e2b76a475d198e19
-ms.sourcegitcommit: 5ae5a1a9520b8b8b6164ad728d396717f30edafc
+ms.openlocfilehash: 0191846f5589b0162ba342161fb5919ff20099d4
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/11/2019
-ms.locfileid: "70894562"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215863"
 ---
-# <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Procédure : Exécuter du code partiellement fiable dans un bac à sable (sandbox)
+# <a name="how-to-run-partially-trusted-code-in-a-sandbox"></a>Comment : exécuter du code d'un niveau de confiance partiel dans un bac à sable (sandbox)
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
   
  L'utilisation de bac à sable (sandbox) consiste à exécuter du code dans un environnement de sécurité restreint qui limite les autorisations d'accès accordées au code. Par exemple, si une bibliothèque managée provient d'une source qui n'est pas totalement fiable, vous ne devez pas l'exécuter comme ayant un niveau de confiance totale. Au lieu de cela, placez le code dans un bac à sable (sandbox) qui limite ses autorisations à ceux qui en ont besoin (par exemple, l'autorisation <xref:System.Security.Permissions.SecurityPermissionFlag.Execution>).  
@@ -90,7 +88,7 @@ AppDomain.CreateDomain( string friendlyName,
         params StrongName[] fullTrustAssemblies)  
     ```  
   
-     Informations complémentaires :  
+     Informations supplémentaires :  
   
     - Il s'agit de la seule surcharge de la méthode <xref:System.AppDomain.CreateDomain%2A> prenant un <xref:System.Security.PermissionSet> comme paramètre, et donc la seule surcharge qui vous permet de charger une application dans un paramètre de confiance partielle.  
   
@@ -106,7 +104,7 @@ AppDomain.CreateDomain( string friendlyName,
     AppDomain newDomain = AppDomain.CreateDomain("Sandbox", null, adSetup, permSet, fullTrustAssembly);  
     ```  
   
-5. Chargez le code dans le <xref:System.AppDomain> bac à sable (sandbox) que vous avez créé. Vous pouvez le faire de deux façons :  
+5. Chargez le code dans le <xref:System.AppDomain> bac à sable (sandbox) que vous avez créé. Cette opération peut être réalisée de deux manières :  
   
     - Appelez la méthode <xref:System.AppDomain.ExecuteAssembly%2A> pour l'assembly.  
   
@@ -116,7 +114,7 @@ AppDomain.CreateDomain( string friendlyName,
   
     - Vous pouvez utiliser une base de code qui pointe vers un emplacement qui ne contient pas votre assembly.  
   
-    - Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), ce qui vous permet de créer une instance d'une classe critique. (Cela se produit chaque fois que votre assembly n'a pas de marquages de transparence et est chargé avec un niveau de confiance totale.) Vous devez donc vous assurer de ne créer que du code fiable avec cette fonction. Nous vous recommandons de créer uniquement des instances de classes d'un niveau de confiance totale dans le nouveau domaine d'application.  
+    - Vous pouvez effectuer la création sous un <xref:System.Security.CodeAccessPermission.Assert%2A> pour la confiance totale (<xref:System.Security.Permissions.PermissionState.Unrestricted?displayProperty=nameWithType>), ce qui vous permet de créer une instance d'une classe critique. (Cela se produit chaque fois que votre assembly n’a pas de marquages de transparence et qu’il est chargé avec un niveau de confiance totale.) Par conséquent, vous devez veiller à créer uniquement le code que vous approuvez avec cette fonction, et nous vous recommandons de créer uniquement des instances de classes de confiance totale dans le nouveau domaine d’application.  
   
     ```csharp
     ObjectHandle handle = Activator.CreateInstanceFrom(  

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - clear Element
 - <clear> Element
 ms.assetid: 6d18c7be-27db-438b-8fb5-765d396b0b7b
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: d321f3169344e9aa40d65b1722a533549de5315a
-ms.sourcegitcommit: 7f8eeef060ddeb2cabfa52843776faf652c5a1f5
+ms.openlocfilehash: 266d32ccb8b322f0472e0f552f9c0fc877c9a78e
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/14/2019
-ms.locfileid: "74088734"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214802"
 ---
 # <a name="clear-element-for-appsettings"></a>\<> élément Clear pour \<appSettings >
 
@@ -34,7 +32,7 @@ Efface les paramètres d’application personnalisés.
 
 ## <a name="attributes"></a>Attributs
 
-aucune.
+None
 
 ## <a name="parent-element"></a>Élément parent
 
@@ -44,7 +42,7 @@ aucune.
 
 ## <a name="child-elements"></a>Éléments enfants
 
-aucune.
+None
 
 ## <a name="example"></a>Exemple
 

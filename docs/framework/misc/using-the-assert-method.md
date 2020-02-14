@@ -16,14 +16,12 @@ helpviewer_keywords:
 - permissions [.NET Framework], overriding security checks
 - permissions [.NET Framework], assertions
 ms.assetid: 1e40f4d3-fb7d-4f19-b334-b6076d469ea9
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: f43ba2963ec447e5193da73452537b2539c51857
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 2bc46714a508990c5ae31b50e7d19a287da2c5c0
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206042"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215816"
 ---
 # <a name="using-the-assert-method"></a>Utilisation de la méthode Assert
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -41,7 +39,7 @@ ms.locfileid: "70206042"
   
  Pour effectuer des assertions, votre code doit disposer de l'autorisation faisant l'objet de l'assertion et de <xref:System.Security.Permissions.SecurityPermission>, qui représente le droit d'effectuer des assertions. Il est possible d'effectuer une assertion pour une autorisation qui n'a pas été octroyée à votre code. Toutefois, une telle assertion serait inutile puisque la vérification de sécurité échouerait avant même que l'assertion n'ait pu faire en sorte qu'elle réussisse.  
   
- L’illustration suivante montre ce qui se passe lorsquevous utilisez Assert. Supposons que les instructions suivantes soient vraies concernant les assemblys A, B, C, E et F, et les deux autorisations P1 et P1A :  
+ L’illustration suivante montre ce qui se passe lorsque vous utilisez **Assert**. Supposons que les instructions suivantes soient vraies concernant les assemblys A, B, C, E et F, et les deux autorisations P1 et P1A :  
   
 - P1A représente le droit de lire les fichiers .txt présents sur le lecteur C.  
   
@@ -61,16 +59,16 @@ ms.locfileid: "70206042"
   
  Dans ce scénario, la méthode A appelle B, B appelle C, C appelle E, et E appelle F. la méthode C déclare l’autorisation de lire des fichiers sur le lecteur C (autorisation P1), et la méthode E demande l’autorisation de lire les fichiers. txt sur le lecteur C (autorisation P1A). Quand la demande en F est rencontrée au moment de l’exécution, un parcours de pile est effectué pour vérifier les autorisations de tous les appelants de F, en commençant par E. E a reçu l’autorisation P1A, le parcours de pile continue donc à examiner les autorisations de C, où l’assertion de C est découverte. Étant donné que l'autorisation demandée (P1A) est un sous-ensemble de l'autorisation ayant fait l'objet de l'assertion (P1), le parcours de pile s'arrête et la vérification de sécurité réussit automatiquement. Il n'est pas important que les assemblys A et B ne disposent pas de l'autorisation P1A. En procédant à l'assertion de P1, la méthode C garantit que ses appelants puissent accéder à la ressource protégée par P1, même s'ils n'ont pas reçu l'autorisation d'y accéder.  
   
- Si vous concevez une bibliothèque de classes et si une classe accède à une ressource protégée, vous devez, dans la plupart des cas, effectuer une demande de sécurité exigeant que les appelants de la classe possèdent l'autorisation appropriée. Si la classe effectue ensuite une opération pour laquelle vous savez que la plupart de ses appelants n’auront pas d’autorisation, et si vous êtes disposé à prendre la responsabilité de laisser ces appelants appeler votre code, vous pouvez déclarer l’autorisation en appelant la méthode Assert sur un objet d’autorisation qui représente l’opération exécutée par le code. L' utilisation de la méthode Assert permet aux appelants qui n’ont pas normalement pu le faire d’appeler votre code. Par conséquent, si vous procédez à l'assertion d'une autorisation, soyez sûr d'effectuer au préalable les vérifications de sécurité appropriées pour empêcher une utilisation abusive de votre composant.  
+ Si vous concevez une bibliothèque de classes et si une classe accède à une ressource protégée, vous devez, dans la plupart des cas, effectuer une demande de sécurité exigeant que les appelants de la classe possèdent l'autorisation appropriée. Si la classe effectue ensuite une opération pour laquelle vous savez que la plupart de ses appelants n’ont pas l’autorisation. Si vous êtes prêt à prendre la responsabilité de laisser ces appelants appeler votre code, vous pouvez déclarer l’autorisation en appelant la méthode **Assert** sur un objet d’autorisation qui représente l’opération exécutée par le code. L’utilisation de la méthode **Assert** permet aux appelants qui n’ont pas normalement pu le faire d’appeler votre code. Par conséquent, si vous procédez à l'assertion d'une autorisation, soyez sûr d'effectuer au préalable les vérifications de sécurité appropriées pour empêcher une utilisation abusive de votre composant.  
   
- Supposons, par exemple, que votre classe de bibliothèque hautement approuvée possède une méthode qui supprime les fichiers. Elle accède au fichier en appelant une fonction Win32 non managée. Un appelant appelle la méthode **Delete** de votre code, en passant le nom du fichier à supprimer, C:\test.txt. Dans la méthode **Delete** , votre code crée un <xref:System.Security.Permissions.FileIOPermission> objet représentant l’accès en écriture à C:\test.txt. (l'accès en écriture est nécessaire pour supprimer un fichier). Votre code appelle ensuite une vérification de sécurité impérative en appelant la méthode **Demand** de l’objet **FileIOPermission** . Si l'un des appelants de la pile des appels n'a pas cette autorisation, une <xref:System.Security.SecurityException> est levée. Si aucune exception n'est levée, vous savez que tous les appelants ont le droit d'accéder à C:\Test.txt. Comme vous pensez que la plupart de vos appelants ne sont pas autorisés à accéder à du code non managé, votre code crée <xref:System.Security.Permissions.SecurityPermission> ensuite un objet qui représente le droit d’appeler du code non managé et appelle la méthode Assert de l’objet. Enfin, il appelle la fonction non managée Win32 pour supprimer C:\Text.txt, puis retourne le contrôle à l'appelant.  
+ Supposons, par exemple, que votre classe de bibliothèque hautement approuvée possède une méthode qui supprime les fichiers. Elle accède au fichier en appelant une fonction Win32 non managée. Un appelant appelle la méthode **Delete** de votre code, en passant le nom du fichier à supprimer, C:\test.txt. Dans la méthode **Delete** , votre code crée un objet <xref:System.Security.Permissions.FileIOPermission> représentant l’accès en écriture à C:\test.txt. (L’accès en écriture est requis pour supprimer un fichier.) Votre code appelle ensuite une vérification de sécurité impérative en appelant la méthode **Demand** de l’objet **FileIOPermission** . Si l'un des appelants de la pile des appels n'a pas cette autorisation, une <xref:System.Security.SecurityException> est levée. Si aucune exception n'est levée, vous savez que tous les appelants ont le droit d'accéder à C:\Test.txt. Comme vous pensez que la plupart de vos appelants ne sont pas autorisés à accéder à du code non managé, votre code crée ensuite un objet <xref:System.Security.Permissions.SecurityPermission> qui représente le droit d’appeler du code non managé et appelle la méthode **Assert** de l’objet. Enfin, il appelle la fonction non managée Win32 pour supprimer C:\Text.txt, puis retourne le contrôle à l'appelant.  
   
 > [!CAUTION]
 > Vous devez être sûr que votre code n'utilise pas d'assertions s'il peut être utilisé par un autre code pour accéder à une ressource protégée par l'autorisation faisant l'objet de l'assertion. Par exemple, dans le code qui écrit dans un fichier dont le nom est spécifié par l’appelant en tant que paramètre, vous ne devez pas déclarer l' **autorisation FileIOPermission** pour écrire dans les fichiers, car votre code est ouvert à une utilisation incorrecte par un tiers.  
   
- Lorsque vous utilisez la syntaxe de sécurité impérative, l' appel de la méthode Assert sur plusieurs autorisations dans la même méthode entraîne la levée d’une exception de sécurité. Au lieu de cela, vous devez créer un objet PermissionSet, lui passer les autorisations individuelles que vous souhaitez appeler, puis appeler la méthode Assert sur l’objet PermissionSet. Vous pouvez appeler la méthode Assert plusieurs fois lorsque vous utilisez la syntaxe de sécurité déclarative.  
+ Lorsque vous utilisez la syntaxe de sécurité impérative, l’appel de la méthode **Assert** sur plusieurs autorisations dans la même méthode entraîne la levée d’une exception de sécurité. Au lieu de cela, vous devez créer un objet **PermissionSet** , lui passer les autorisations individuelles que vous souhaitez appeler, puis appeler la méthode **Assert** sur l’objet **PermissionSet** . Vous pouvez appeler la méthode **Assert** plusieurs fois lorsque vous utilisez la syntaxe de sécurité déclarative.  
   
- L’exemple suivant illustre la syntaxe déclarative pour la substitution des vérifications de sécurité à l’aide de la méthode Assert. Notez que la syntaxe **FileIOPermissionAttribute** accepte deux valeurs: une <xref:System.Security.Permissions.SecurityAction> Énumération et l’emplacement du fichier ou du répertoire auquel l’autorisation doit être accordée. L’appel à **Assert** entraîne la réussie des `C:\Log.txt` demandes d’accès à, même si l’autorisation d’accès au fichier n’est pas activée pour les appelants.  
+ L’exemple suivant illustre la syntaxe déclarative pour la substitution des vérifications de sécurité à l’aide de la méthode **Assert** . Notez que la syntaxe **FileIOPermissionAttribute** accepte deux valeurs : une énumération <xref:System.Security.Permissions.SecurityAction> et l’emplacement du fichier ou du répertoire auquel l’autorisation doit être accordée. L’appel à **Assert** entraîne des demandes d’accès aux `C:\Log.txt`, même si l’autorisation d’accès au fichier n’est pas activée pour les appelants.  
   
 ```vb  
 Option Explicit  
@@ -119,7 +117,7 @@ namespace LogUtil
 }   
 ```  
   
- Les fragments de code suivants illustrent la syntaxe impérative pour la substitution des vérifications de sécurité à l’aide de la méthode Assert. Dans cet exemple, une instance de l’objet **FileIOPermission** est déclarée. Le constructeur reçoit **FileIOPermissionAccess. AllAccess** pour définir le type d’accès autorisé, suivi d’une chaîne décrivant l’emplacement du fichier. Une fois l’objet **FileIOPermission** défini, il vous suffit d’appeler sa méthode Assert pour remplacer la vérification de sécurité.  
+ Les fragments de code suivants illustrent la syntaxe impérative pour la substitution des vérifications de sécurité à l’aide de la méthode **Assert** . Dans cet exemple, une instance de l’objet **FileIOPermission** est déclarée. Le constructeur reçoit **FileIOPermissionAccess. AllAccess** pour définir le type d’accès autorisé, suivi d’une chaîne décrivant l’emplacement du fichier. Une fois l’objet **FileIOPermission** défini, il vous suffit d’appeler sa méthode **Assert** pour remplacer la vérification de sécurité.  
   
 ```vb  
 Option Explicit  

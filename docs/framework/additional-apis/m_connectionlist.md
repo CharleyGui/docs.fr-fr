@@ -10,14 +10,12 @@ api_location:
 api_type:
 - Assembly
 ms.assetid: 186083cf-8dff-4600-a2ab-6fed4b4de6af
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: a06e535c554f765161d619d97f2e70072fbd0d5c
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: d53eeb54d212adb011dae138e103ea5b30f7fb99
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120017"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215539"
 ---
 # <a name="connectiongroupm_connectionlist-field"></a>ConnectionGroup. m\_champ ConnectionList
 
@@ -34,9 +32,9 @@ private ArrayList m_ConnectionList
 > 
 > Microsoft ne prend pas en charge l’utilisation de ce champ dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Net>
+**Espace de noms :** <xref:System.Net>
 
 **Assembly :** Système (dans System. dll)
 

@@ -7,14 +7,12 @@ helpviewer_keywords:
 - secure coding, wrapper code
 - code security, wrapper code
 ms.assetid: 1df6c516-5bba-48bd-b450-1070e04b7389
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: ee78c1c1f92515472bb3ea3ce77405a5e3447fd9
-ms.sourcegitcommit: 2d792961ed48f235cf413d6031576373c3050918
+ms.openlocfilehash: 3d38a4d4fd33798cf5987f5ce67305725ad9daec
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/31/2019
-ms.locfileid: "70206101"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215843"
 ---
 # <a name="securing-wrapper-code"></a>Sécurisation du code wrapper
 [!INCLUDE[net_security_note](../../../includes/net-security-note-md.md)]  
@@ -71,18 +69,18 @@ ms.locfileid: "70206101"
   
  La sécurité déclarative propose les vérifications de sécurité suivantes :  
   
-- <xref:System.Security.Permissions.SecurityAction.Demand> spécifie le parcours de pile de sécurité d'accès du code. Tous les appelants sur la pile doivent avoir l'autorisation ou l'identité spécifiée pour passer. La **demande** se produit à chaque appel, car la pile peut contenir des appelants différents. Si vous appelez une méthode de façon répétée, cette vérification de sécurité se produit à chaque fois. **La demande** constitue une bonne protection contre les attaques malveillantes; le code non autorisé qui tente de l’utiliser sera détecté.  
+- <xref:System.Security.Permissions.SecurityAction.Demand> spécifie le parcours de pile de sécurité d'accès du code. Tous les appelants sur la pile doivent avoir l'autorisation ou l'identité spécifiée pour passer. La **demande** se produit à chaque appel, car la pile peut contenir des appelants différents. Si vous appelez une méthode de façon répétée, cette vérification de sécurité se produit à chaque fois. **La demande** constitue une bonne protection contre les attaques malveillantes ; le code non autorisé qui tente de l’utiliser sera détecté.  
   
 - [LinkDemand](link-demands.md) se produit au moment de la compilation juste-à-temps (JIT) et vérifie uniquement l’appelant immédiat. Cette vérification de sécurité ne vérifie pas l'appelant de l'appelant. Une fois cette vérification effectuée, il n'y a pas de charge de sécurité supplémentaire, quel que soit le nombre d'appels effectués par l'appelant. Cependant, il n'y a pas non plus de protection contre les attaques malveillantes. Avec **LinkDemand**, tout code qui réussit le test et peut référencer votre code peut endommager la sécurité en permettant à du code malveillant d’appeler à l’aide du code autorisé. Par conséquent, n’utilisez pas **LinkDemand** , sauf si toutes les faiblesses possibles peuvent être soigneusement évitées.  
   
     > [!NOTE]
-    > Dans le .NET Framework 4, les demandes de liaison ont été remplacées par <xref:System.Security.SecurityRuleSet.Level2> l’attribut dans les <xref:System.Security.SecurityCriticalAttribute> assemblys. Est <xref:System.Security.SecurityCriticalAttribute> équivalent à une demande de liaison pour la confiance totale; Toutefois, elle affecte également les règles d’héritage. Pour plus d’informations sur cette modification, consultez [code transparent de sécurité, niveau 2](security-transparent-code-level-2.md).  
+    > Dans le .NET Framework 4, les demandes de liaison ont été remplacées par l’attribut <xref:System.Security.SecurityCriticalAttribute> dans les assemblys <xref:System.Security.SecurityRuleSet.Level2>. Le <xref:System.Security.SecurityCriticalAttribute> est équivalent à une demande de liaison pour la confiance totale ; Toutefois, elle affecte également les règles d’héritage. Pour plus d’informations sur cette modification, consultez [code transparent de sécurité, niveau 2](security-transparent-code-level-2.md).  
   
- Les précautions supplémentaires requises lors de l’utilisation de **LinkDemand** doivent être programmées individuellement; le système de sécurité peut aider à la mise en œuvre. La moindre erreur fait apparaître une défaillance en matière de sécurité. Tout le code autorisé qui utilise votre code doit prendre en charge l'implémentation de la sécurité supplémentaire en effectuant les opérations suivantes :  
+ Les précautions supplémentaires requises lors de l’utilisation de **LinkDemand** doivent être programmées individuellement ; le système de sécurité peut aider à la mise en œuvre. La moindre erreur fait apparaître une défaillance en matière de sécurité. Tout le code autorisé qui utilise votre code doit prendre en charge l'implémentation de la sécurité supplémentaire en effectuant les opérations suivantes :  
   
 - Limiter l'accès du code appelant à la classe ou à l'assembly.  
   
-- Placer les mêmes vérifications de sécurité sur le code appelant que celles figurant dans le code appelé et forcer ses appelants à effectuer les vérifications. Par exemple, si vous écrivez du code qui appelle une méthode protégée par un **LinkDemand** pour <xref:System.Security.Permissions.SecurityPermission> le avec l' <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> indicateur spécifié, votre méthode doit également créer un **LinkDemand** (ou une **demande**, ce qui est plus fort) pour ce autorisées. L’exception est si votre code utilise la méthode protégée par **LinkDemand**d’une manière limitée que vous décidez d’être sécurisée, étant donné les autres mécanismes de protection de la sécurité (tels que les demandes) dans votre code. Dans ce cas exceptionnel, l'appelant prend la responsabilité d'affaiblir la protection de la sécurité sur le code sous-jacent.  
+- Placer les mêmes vérifications de sécurité sur le code appelant que celles figurant dans le code appelé et forcer ses appelants à effectuer les vérifications. Par exemple, si vous écrivez du code qui appelle une méthode protégée par un **LinkDemand** pour la <xref:System.Security.Permissions.SecurityPermission> avec l’indicateur <xref:System.Security.Permissions.SecurityPermissionFlag.UnmanagedCode> spécifié, votre méthode doit également créer un **LinkDemand** (ou une **demande**, ce qui est plus fort) pour cette autorisation. L’exception est si votre code utilise la méthode protégée par **LinkDemand**d’une manière limitée que vous décidez d’être sécurisée, étant donné les autres mécanismes de protection de la sécurité (tels que les demandes) dans votre code. Dans ce cas exceptionnel, l'appelant prend la responsabilité d'affaiblir la protection de la sécurité sur le code sous-jacent.  
   
 - Veiller à ce que les appelants de votre code ne puissent pas tromper celui-ci et lui faire appeler le code protégé de leur part. En d'autres termes, les appelants ne peuvent pas forcer le code autorisé à passer des paramètres spécifiques au code protégé ou pour obtenir de ce dernier des résultats.  
   

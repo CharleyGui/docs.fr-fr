@@ -4,12 +4,12 @@ description: Suivez les didacticiels pour apprendre .NET Core et générer des a
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: 4e0acc357453d3bd3fb877e357264cc1aa715e4c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: e9fc5544904fc5a1304dcce135e01b1895d3446b
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920428"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215181"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET Core et les outils de kit SDK .NET Core en explorant ces didacticiels
 
@@ -41,12 +41,12 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 - [Organisation et test de projets avec la CLI .NET Core](testing-with-cli.md)
 - [Prise en main de F#](../../fsharp/get-started/get-started-command-line.md)
 
-## <a name="other"></a>Autre
+## <a name="other"></a>Autres
 
 - [Effectuer des tests unitaires dans .NET Core à l’aide de dotnet test](../testing/unit-testing-with-dotnet-test.md)
 - [Tests unitaires avec MSTest et .NET Core](../testing/unit-testing-with-mstest.md)
 - [Développement de bibliothèques avec des outils multiplateformes](libraries.md)
 - [Hébergement .NET Core à partir du code natif](netcore-hosting.md)
-- [Créer un modèle personnalisé pour dotnet new](cli-templates-create-item-template.md)
+- [Créer des modèles pour l’interface CLI](cli-templates-create-item-template.md)
 
 Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).

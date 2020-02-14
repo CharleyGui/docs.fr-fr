@@ -1,7 +1,5 @@
 ---
 title: Méthode XmlReader. CreateSqlReader (System. Xml)
-author: mairaw
-ms.author: mairaw
 ms.date: 10/17/2019
 topic_type:
 - apiref
@@ -11,14 +9,14 @@ api_location:
 - system.xml.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 302be4eff32d2c96a1571d291e0b289e77694db8
-ms.sourcegitcommit: 1f12db2d852d05bed8c53845f0b5a57a762979c8
+ms.openlocfilehash: c65ef7c073175488c11c5e912a44d46fd4319209
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/18/2019
-ms.locfileid: "72584133"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215448"
 ---
-# <a name="xmlreadercreatesqlreader-method"></a>Méthode XmlReader. CreateSqlReader
+# <a name="xmlreadercreatesqlreader-method"></a>XmlReader.CreateSqlReader, méthode
 
 Crée une instance de <xref:System.Xml.XmlReader> à l’aide du flux, des paramètres et des informations de contexte d’analyse spécifiés.
 
@@ -38,7 +36,7 @@ internal static XmlReader CreateSqlReader(Stream input,
 - `inputContext` <xref:System.Xml.XmlParserContext>  
   Les informations de contexte nécessaires à l'analyse du fragment XML. Cette valeur peut être `null`.
 
-## <a name="returns"></a>Returns (Retours)
+## <a name="returns"></a>Retours
 
 <xref:System.Xml.XmlReader>  
 Objet permettant de lire les données XML contenues dans le flux de données.
@@ -50,9 +48,9 @@ Objet permettant de lire les données XML contenues dans le flux de données.
 >
 > Microsoft ne prend pas en charge l’utilisation de cette méthode dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Xml>
+**Espace de noms :** <xref:System.Xml>
 
 **Assembly :** System. Xml. dll
 

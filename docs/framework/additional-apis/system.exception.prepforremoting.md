@@ -1,7 +1,5 @@
 ---
 title: Exception. PrepForRemoting, méthode (System)
-author: mairaw
-ms.author: mairaw
 ms.date: 10/08/2019
 topic_type:
 - apiref
@@ -11,14 +9,14 @@ api_location:
 - mscorlib.dll
 api_type:
 - Assembly
-ms.openlocfilehash: 057390d64f70d3cb8eba7d4b29b94570fdca77e3
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.openlocfilehash: ce1c24578690a1643b7f5af0e44eaae95ed7b0a2
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72405031"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77214899"
 ---
-# <a name="exceptionprepforremoting-method"></a>Exception. PrepForRemoting, méthode
+# <a name="exceptionprepforremoting-method"></a>Exception.PrepForRemoting, méthode
 
 Conserve la trace de la pile côté serveur en l’ajoutant au message avant que l’exception ne soit levée à nouveau sur le site d’appel client.
 
@@ -26,7 +24,7 @@ Conserve la trace de la pile côté serveur en l’ajoutant au message avant que
 internal Exception PrepForRemoting();
 ```
 
-## <a name="returns"></a>Returns (Retours)
+## <a name="returns"></a>Retours
 
 <xref:System.Exception>  
 Cette instance de l'objet <xref:System.Exception>.
@@ -38,9 +36,9 @@ Cette instance de l'objet <xref:System.Exception>.
 >
 > Microsoft ne prend pas en charge l’utilisation de cette méthode dans une application de production en l’absence de toute circonstance.
 
-## <a name="requirements"></a>spécifications
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System>
+**Espace de noms :** <xref:System>
 
 **Assembly :** mscorlib. dll (dans mscorlib. dll)
 

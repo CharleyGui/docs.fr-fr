@@ -1,5 +1,5 @@
 ---
-title: Datamemberlisteditor, classe
+title: DataMemberListEditor, classe
 ms.date: 03/30/2017
 ms.technology: dotnet-winforms
 api_name:
@@ -11,18 +11,16 @@ api_type:
 ms.assetid: c11d5231-78f2-45a7-9210-3b2d0969370e
 topic_type:
 - apiref
-author: mairaw
-ms.author: mairaw
-ms.openlocfilehash: 7b79da7832a797cce0163de42363f0d3812a2376
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: d0f8063dd85537f81a1ae145b4526e10ad90b77e
+ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61675388"
+ms.lasthandoff: 02/14/2020
+ms.locfileid: "77215609"
 ---
-# <a name="datamemberlisteditor-class"></a>Datamemberlisteditor, classe
+# <a name="datamemberlisteditor-class"></a>DataMemberListEditor, classe
 
-Fournit une interface utilisateur de la liste déroulante pour la modification des propriétés d’objets liés aux données (objets qui ont une valeur non-null `DataSource` propriété) en répertoriant toutes les propriétés de la `DataSource` objet pour sélectionner la source de la valeur à partir de.  
+Fournit une interface utilisateur déroulante pour modifier les propriétés des objets liés aux données (objets qui ont une propriété `DataSource` non null) en répertoriant toutes les propriétés de l’objet `DataSource` pour sélectionner la source de la valeur à partir de.  
   
 ## <a name="syntax"></a>Syntaxe
   
@@ -31,17 +29,17 @@ internal class DataMemberListEditor : UITypeEditor
 ```
 
 > [!WARNING]
-> Le `DataMemberListEditor` classe est interne et n’est pas destinée à être utilisé directement dans votre code.
+> La classe `DataMemberListEditor` est interne et n’est pas destinée à être utilisée directement dans votre code.
 > 
-> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en toute circonstance.
+> Microsoft ne prend pas en charge l’utilisation de cette classe dans une application de production en l’absence de toute circonstance.
   
-## <a name="requirements"></a>Configuration requise
+## <a name="requirements"></a>Spécifications
 
-**Espace de noms :** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
+**Espace de noms :** <xref:System.Windows.Forms.Design?displayProperty=nameWithType>  
   
-**Assembly :** System.Design (dans System.Design.dll)  
+**Assembly :** System. Design (dans System. Design. dll)  
   
-**Versions du .NET framework :** Disponible à partir de 2.0.  
+**Versions de .NET Framework :** Disponible depuis 2,0.  
   
 ## <a name="see-also"></a>Voir aussi
 
