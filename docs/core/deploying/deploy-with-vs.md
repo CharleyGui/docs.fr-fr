@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet
-ms.openlocfilehash: 23dc0f691c8a8d80a0bd2a5d301ace0d129007af
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 11a322278ce3ff38964fe2fa389e0b4a58897ec4
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920892"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449021"
 ---
 # <a name="deploy-net-core-apps-with-visual-studio"></a>Déployer des applications .NET Core avec Visual Studio
 
@@ -24,7 +24,7 @@ Les sections suivantes montrent comment utiliser Microsoft Visual Studio pour cr
 - Déploiement autonome
 - Déploiement autonome avec des dépendances tierces
 
-Pour plus d’informations sur l’utilisation de Visual Studio pour développer des applications .NET Core, consultez [dépendances et exigences de .net Core](../install/dependencies.md?tabs=netcore30&pivots=os-windows).
+Pour plus d’informations sur l’utilisation de Visual Studio pour développer des applications .NET Core, consultez [dépendances et exigences de .net Core](../install/dependencies.md?pivots=os-windows).
 
 ## <a name="framework-dependent-deployment"></a>Déploiement dépendant du framework
 
@@ -32,7 +32,7 @@ Le déploiement d’un déploiement dépendant du framework sans dépendances ti
 
 1. créer le projet ;
 
-   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Sélectionnez le bouton **OK**.
+   Sélectionnez **Fichier** > **Nouveau** > **Projet**. Dans la boîte de dialogue **Nouveau projet**, développez les catégories de projet de votre langage (C# ou Visual Basic) au sein du volet des types de projet **Installé**, choisissez **.NET Core**, puis sélectionnez le modèle **Application console (.NET Core)** dans le volet central. Entrez un nom de projet, tel que « FDD », dans la zone de texte **Nom**. Cliquez sur le bouton **OK**.
 
 1. Ajoutez le code source de l’application.
 
@@ -110,7 +110,7 @@ Une fois le débogage effectué, vous pouvez publier votre déploiement autonome
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 et versions antérieures](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15.6 et versions antérieures](#tab/vs156)
 
 Après avoir débogué et testé le programme, créez les fichiers à déployer avec votre application pour chaque plateforme ciblée.
 
@@ -176,7 +176,7 @@ Voici le fichier *csproj* complet pour ce projet.
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 et versions ultérieures](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15.7 et versions ultérieures](#tab/vs157)
 
 Après avoir débogué et testé le programme, créez les fichiers à déployer avec votre application pour chaque plateforme ciblée. Cela implique la création d’un profil distinct pour chaque plateforme cible.
 
@@ -216,7 +216,7 @@ Pour chaque plateforme ciblée par votre application, effectuez ce qui suit :
 
 Répétez ces étapes pour définir les plateformes cibles supplémentaires ciblées par votre application.
 
-Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour effectuer cette opération :
+Vous avez configuré vos profils et êtes maintenant prêt à publier votre application. Pour ce faire :
 
    1. Si la fenêtre **Publier** n’est pas ouverte, cliquez avec le bouton droit sur le projet (pas la solution) dans l’**Explorateur de solutions**, puis sélectionnez **Publier**.
 
@@ -274,7 +274,7 @@ L’exécution d’un déploiement autonome avec une ou plusieurs dépendances t
 
 Voici le fichier *csproj* complet pour ce projet :
 
-# <a name="visual-studio-156-and-earliertabvs156"></a>[Visual Studio 15.6 et versions antérieures](#tab/vs156)
+# <a name="visual-studio-156-and-earlier"></a>[Visual Studio 15.6 et versions antérieures](#tab/vs156)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">
@@ -289,7 +289,7 @@ Voici le fichier *csproj* complet pour ce projet :
 </Project>
 ```
 
-# <a name="visual-studio-157-and-latertabvs157"></a>[Visual Studio 15.7 et versions ultérieures](#tab/vs157)
+# <a name="visual-studio-157-and-later"></a>[Visual Studio 15.7 et versions ultérieures](#tab/vs157)
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

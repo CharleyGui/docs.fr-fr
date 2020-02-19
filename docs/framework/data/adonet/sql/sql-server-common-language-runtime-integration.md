@@ -2,12 +2,12 @@
 title: Intégration CLR SQL Server
 ms.date: 03/30/2017
 ms.assetid: c7a324c4-160d-44c2-b593-641af06eca61
-ms.openlocfilehash: 77b40c6a1576b87d9bb4a7eb4b1ee3df8828b892
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 12ae15d72644e314aa694f8d169bc8f45fa284a2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70780859"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452342"
 ---
 # <a name="sql-server-common-language-runtime-integration"></a>Intégration CLR SQL Server
 SQL Server 2005 a introduit l'intégration du composant Common Language Runtime (CLR) de .NET Framework pour Microsoft Windows. Cela signifie que vous pouvez écrire des procédures stockées, des déclencheurs, des types définis par l'utilisateur, des fonctions définies par l'utilisateur, des agrégats définis par l'utilisateur et des fonctions de flux évaluées par une table, en utilisant tout langage .NET Framework, notamment Microsoft Visual Basic .NET et Microsoft Visual C#. L'espace de noms <xref:Microsoft.SqlServer.Server> contient un ensemble de nouvelles API permettant au code managé d'interagir avec l'environnement Microsoft SQL Server.  
@@ -16,25 +16,25 @@ SQL Server 2005 a introduit l'intégration du composant Common Language Runtime
   
  Cette section a uniquement pour but de fournir les informations indispensables pour commencer à programmer avec l'intégration de CLR dans SQL Server et n'est nullement exhaustive. Pour obtenir des informations plus détaillées, voir la documentation en ligne de SQL Server pour la version de SQL Server que vous utilisez.  
   
- **Documentation en ligne de SQL Server**  
+ **Documentation SQL Server**  
   
-1. [Concepts de programmation de l’intégration du Common Language Runtime (CLR)](https://go.microsoft.com/fwlink/?LinkId=115240)  
+1. [Concepts de programmation pour l’intégration du CLR](/sql/relational-databases/clr-integration/common-language-runtime-clr-integration-programming-concepts)  
   
 ## <a name="in-this-section"></a>Dans cette section  
  [Introduction à l’intégration CLR SQL Server](introduction-to-sql-server-clr-integration.md)  
  Fournit une présentation de l'intégration de CLR dans SQL Server. Fournit des liens vers d'autres rubriques.  
   
  [Fonctions CLR définies par l’utilisateur](clr-user-defined-functions.md)  
- Décrit comment implémenter et utiliser les différents types de fonctions CLR : fonctions table, fonctions scalaires et fonctions d'agrégation définies par l'utilisateur.  
+ Explique comment implémenter et utiliser les différents types de fonctions CLR : fonctions table, scalaires et d'agrégation définies par l'utilisateur.  
   
  [Types CLR définis par l’utilisateur](clr-user-defined-types.md)  
- Décrit comment implémenter et utiliser des types CLR définis par l'utilisateur. Fournit des liens vers d'autres rubriques.  
+ Explique comment implémenter et utiliser les types CLR définis par l'utilisateur. Fournit des liens vers d'autres rubriques.  
   
- [Procédures stockées CLR](clr-stored-procedures.md)  
- Décrit comment implémenter et utiliser des procédures stockées CLR. Fournit des liens vers d'autres rubriques.  
+ [Procédures stockées du CLR](clr-stored-procedures.md)  
+ Explique comment implémenter et utiliser les procédures stockées CLR. Fournit des liens vers d'autres rubriques.  
   
  [Déclencheurs CLR](clr-triggers.md)  
- Décrit comment implémenter et utiliser des déclencheurs CLR. Fournit des liens vers d'autres rubriques.  
+ Explique comment implémenter et utiliser les déclencheurs CLR. Fournit des liens vers d'autres rubriques.  
   
  [Connexion de contexte](the-context-connection.md)  
  Décrit la connexion de contexte.  

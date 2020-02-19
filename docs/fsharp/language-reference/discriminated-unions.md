@@ -2,12 +2,12 @@
 title: Unions discriminées
 description: Découvrez comment utiliser F# des unions discriminées.
 ms.date: 05/16/2016
-ms.openlocfilehash: 79da6c6ff9d3699818014d86f6c95edc3e43b4c1
-ms.sourcegitcommit: a2d0e1f66367367065bc8dc0dde488ab536da73f
+ms.openlocfilehash: 539e2843c0bbc8c5ac9c0597ffc5443f8cd127f8
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/18/2019
-ms.locfileid: "71083042"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452641"
 ---
 # <a name="discriminated-unions"></a>Unions discriminées
 
@@ -28,7 +28,7 @@ type [accessibility-modifier] type-name =
 
 Les unions discriminées sont semblables aux types Union dans d’autres langages, mais il existe des différences. Comme avec un type d’Union C++ dans ou un type variant dans Visual Basic, les données stockées dans la valeur ne sont pas fixes ; Il peut s’agir de l’une des différentes options distinctes. Contrairement aux unions dans ces autres langages, toutefois, chacune des options possibles reçoit un *identificateur de cas*. Les identificateurs de cas sont des noms pour les différents types de valeurs possibles que les objets de ce type peuvent avoir ; les valeurs sont facultatives. Si les valeurs ne sont pas présentes, le cas est équivalent à un cas d’énumération. Si des valeurs sont présentes, chaque valeur peut être une valeur unique d’un type spécifié ou un tuple qui agrège plusieurs champs du même type ou de types différents. Vous pouvez attribuer un nom à un champ individuel, mais le nom est facultatif, même si d’autres champs dans le même cas sont nommés.
 
-L’accessibilité des unions discriminées est `public`par défaut.
+L’accessibilité des unions discriminées par défaut est `public`.
 
 Par exemple, considérez la déclaration suivante d’un type de forme.
 
@@ -39,7 +39,7 @@ type Shape =
     | Prism of width : float * float * height : float
 ```
 
-Le code précédent déclare une forme d’union discriminée, qui peut avoir des valeurs de l’un des trois cas : Rectangle, cercle et prisme. Chaque cas a un ensemble de champs différent. Le rectangle a deux champs nommés, de type `float`, dont la largeur et la longueur sont les noms. La casse du cercle n’a qu’un seul champ nommé, RADIUS. Le cas Prism comporte trois champs, dont deux (largeur et hauteur) sont des champs nommés. Les champs sans nom sont appelés champs anonymes.
+Le code précédent déclare une forme d’union discriminée, qui peut avoir des valeurs de l’un des trois cas : rectangle, cercle et prisme. Chaque cas a un ensemble de champs différent. La casse du rectangle a deux champs nommés, de type `float`, qui ont les noms Width et length. La casse du cercle n’a qu’un seul champ nommé, RADIUS. Le cas Prism comporte trois champs, dont deux (largeur et hauteur) sont des champs nommés. Les champs sans nom sont appelés champs anonymes.
 
 Vous construisez des objets en fournissant des valeurs pour les champs nommés et anonymes conformément aux exemples suivants.
 
@@ -49,9 +49,9 @@ let circ = Circle (1.0)
 let prism = Prism(5., 2.0, height = 3.0)
 ```
 
-Ce code montre que vous pouvez utiliser les champs nommés dans l’initialisation, ou vous pouvez vous appuyer sur l’ordre des champs dans la déclaration et simplement fournir les valeurs de chaque champ. L’appel de constructeur `rect` pour dans le code précédent utilise les champs nommés, mais l’appel de `circ` constructeur pour utilise le classement. Vous pouvez mélanger les champs ordonnés et les champs nommés, comme dans la `prism`construction de.
+Ce code montre que vous pouvez utiliser les champs nommés dans l’initialisation, ou vous pouvez vous appuyer sur l’ordre des champs dans la déclaration et simplement fournir les valeurs de chaque champ. L’appel de constructeur pour `rect` dans le code précédent utilise les champs nommés, mais l’appel de constructeur pour `circ` utilise le classement. Vous pouvez mélanger les champs ordonnés et les champs nommés, comme dans la construction de `prism`.
 
-Le `option` type est une union discriminée simple dans la F# bibliothèque principale. Le `option` type est déclaré comme suit.
+Le type de `option` est une union discriminée simple dans F# la bibliothèque principale. Le type de `option` est déclaré comme suit.
 
 ```fsharp
 // The option type is a discriminated union.
@@ -60,24 +60,24 @@ type Option<'a> =
     | None
 ```
 
-Le code précédent spécifie que le `Option` type est une union discriminée qui a deux cas `Some` , `None`et. Le `Some` cas a une valeur associée qui se compose d’un champ anonyme dont le type est représenté par le `'a`paramètre de type. Le `None` cas n’a aucune valeur associée. Par conséquent `option` , le type spécifie un type générique qui a une valeur d’un certain type ou aucune valeur. Le type `Option` a également un alias de type minuscule `option`,, qui est plus couramment utilisé.
+Le code précédent spécifie que le type `Option` est une union discriminée qui a deux cas, `Some` et `None`. La `Some` cas a une valeur associée qui se compose d’un champ anonyme dont le type est représenté par le paramètre de type `'a`. Le cas de `None` n’a aucune valeur associée. Par conséquent, le type de `option` spécifie un type générique qui a une valeur d’un certain type ou aucune valeur. Le type `Option` possède également un alias de type minuscule, `option`, qui est plus couramment utilisé.
 
-Les identificateurs de cas peuvent être utilisés comme constructeurs pour le type d’union discriminée. Par exemple, le code suivant est utilisé pour créer des valeurs du `option` type.
+Les identificateurs de cas peuvent être utilisés comme constructeurs pour le type d’union discriminée. Par exemple, le code suivant est utilisé pour créer des valeurs du type `option`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2001.fs)]
 
-Les identificateurs de cas sont également utilisés dans les expressions de critères spéciaux. Dans une expression de critères spéciaux, les identificateurs sont fournis pour les valeurs associées aux cas individuels. Par exemple, dans le code suivant, `x` est l’identificateur en fonction de la valeur associée à la `Some` casse du `option` type.
+Les identificateurs de cas sont également utilisés dans les expressions de critères spéciaux. Dans une expression de critères spéciaux, les identificateurs sont fournis pour les valeurs associées aux cas individuels. Par exemple, dans le code suivant, `x` est l’identificateur étant donné la valeur associée à la casse `Some` du type de `option`.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2002.fs)]
 
 Dans les expressions de critères spéciaux, vous pouvez utiliser des champs nommés pour spécifier des correspondances d’union discriminée. Pour le type de forme qui a été déclaré précédemment, vous pouvez utiliser les champs nommés comme le montre le code suivant pour extraire les valeurs des champs.
 
 ```fsharp
-let getShapeHeight shape =
+let getShapeWidth shape =
     match shape with
-    | Rectangle(height = h) -> h
+    | Rectangle(width = w) -> w
     | Circle(radius = r) -> 2. * r
-    | Prism(height = h) -> h
+    | Prism(width = w) -> w
 ```
 
 Normalement, les identificateurs de cas peuvent être utilisés sans les qualifier avec le nom de l’Union. Si vous souhaitez que le nom soit toujours qualifié avec le nom de l’Union, vous pouvez appliquer l’attribut [RequireQualifiedAccess](https://msdn.microsoft.com/visualfsharpdocs/conceptual/core.requirequalifiedaccessattribute-class-[fsharp]) à la définition du type d’Union.
@@ -111,7 +111,7 @@ let someFunctionUsingShaderProgram (ShaderProgram id) =
 
 ## <a name="struct-discriminated-unions"></a>Unions discriminées de struct
 
-Vous pouvez également représenter des unions discriminées comme des structs.  Cette opération s’effectue avec `[<Struct>]` l’attribut.
+Vous pouvez également représenter des unions discriminées comme des structs.  Cette opération s’effectue avec l’attribut `[<Struct>]`.
 
 ```fsharp
 [<Struct>]
@@ -132,7 +132,7 @@ type Multicase =
 
 ## <a name="using-discriminated-unions-instead-of-object-hierarchies"></a>Utilisation d’unions discriminées au lieu de hiérarchies d’objets
 
-Vous pouvez souvent utiliser une union discriminée comme alternative plus simple à une petite hiérarchie d’objets. Par exemple, l’union discriminée suivante peut être utilisée à la place `Shape` d’une classe de base qui a des types dérivés pour Circle, Square, etc.
+Vous pouvez souvent utiliser une union discriminée comme alternative plus simple à une petite hiérarchie d’objets. Par exemple, l’union discriminée suivante peut être utilisée à la place d’une classe de base `Shape` qui a des types dérivés pour Circle, Square, etc.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2003.fs)]
 
@@ -140,7 +140,7 @@ Au lieu d’une méthode virtuelle pour calculer une zone ou un périmètre, com
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2004.fs)]
 
-La sortie est la suivante :
+La sortie se présente comme suit :
 
 ```console
 Area of circle that has radius 15.000000: 706.858347
@@ -150,7 +150,7 @@ Area of rectangle that has height 5.000000 and width 10.000000 is 50.000000
 
 ## <a name="using-discriminated-unions-for-tree-data-structures"></a>Utilisation d’unions discriminées pour les structures de données d’arborescence
 
-Les unions discriminées peuvent être récursives, ce qui signifie que l’Union elle-même peut être incluse dans le type d’un ou de plusieurs cas. Les unions discriminées récursives peuvent être utilisées pour créer des structures d’arborescence, qui sont utilisées pour modéliser des expressions dans des langages de programmation. Dans le code suivant, une union discriminée récursive est utilisée pour créer une structure de données d’arborescence binaire. L’Union se compose de deux cas `Node`,, qui est un nœud avec une valeur entière et des sous-arborescences gauche et `Tip`droite, et, qui termine l’arborescence.
+Les unions discriminées peuvent être récursives, ce qui signifie que l’Union elle-même peut être incluse dans le type d’un ou de plusieurs cas. Les unions discriminées récursives peuvent être utilisées pour créer des structures d’arborescence, qui sont utilisées pour modéliser des expressions dans des langages de programmation. Dans le code suivant, une union discriminée récursive est utilisée pour créer une structure de données d’arborescence binaire. L’Union se compose de deux cas, `Node`, qui est un nœud avec une valeur entière et des sous-arborescences de gauche et de droite, et `Tip`, qui termine l’arborescence.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2005.fs)]
 
@@ -158,7 +158,7 @@ Dans le code précédent, `resultSumTree` a la valeur 10. L’illustration suiva
 
 ![Diagramme qui affiche l’arborescence pour myTree.](../media/discriminated-unions/tree-structure-mytree.png)
 
-Les unions discriminées fonctionnent bien si les nœuds de l’arborescence sont hétérogènes. Dans le code suivant, le type `Expression` représente l’arborescence de syntaxe abstraite d’une expression dans un langage de programmation simple qui prend en charge l’addition et la multiplication de nombres et de variables. Certains des cas d’Union ne sont pas récursifs et représentent des nombres`Number`() ou des`Variable`variables (). D’autres cas sont récursifs et représentent des opérations`Add` ( `Multiply`et), où les opérandes sont également des expressions. La `Evaluate` fonction utilise une expression de correspondance pour traiter de manière récursive l’arborescence de syntaxe.
+Les unions discriminées fonctionnent bien si les nœuds de l’arborescence sont hétérogènes. Dans le code suivant, le type `Expression` représente l’arborescence de syntaxe abstraite d’une expression dans un langage de programmation simple qui prend en charge l’addition et la multiplication de nombres et de variables. Certains des cas d’Union ne sont pas récursifs et représentent des nombres (`Number`) ou des variables (`Variable`). D’autres cas sont récursifs et représentent des opérations (`Add` et `Multiply`), où les opérandes sont également des expressions. La fonction `Evaluate` utilise une expression de correspondance pour traiter de manière récursive l’arborescence de syntaxe.
 
 [!code-fsharp[Main](~/samples/snippets/fsharp/lang-ref-1/snippet2006.fs)]
 
@@ -207,4 +207,4 @@ Les attributs suivants sont généralement affichés dans des unions discriminé
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F#](index.md)

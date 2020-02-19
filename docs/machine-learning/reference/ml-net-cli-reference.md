@@ -2,23 +2,23 @@
 title: Informations de référence sur les commandes CLI ML.NET
 description: Vue d’ensemble, exemples et informations de référence sur la commande auto-train dans l’outil CLI ML.NET.
 ms.date: 12/18/2019
-ms.openlocfilehash: 5e59eba91721b26622360818a73adb07a654dc28
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.openlocfilehash: 537f8d361c170378f5fe8cf454320831d7c8cbf2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
-ms.locfileid: "75636118"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449697"
 ---
 # <a name="the-mlnet-cli-command-reference"></a>Informations de référence sur la commande CLI ML.NET
 
-La commande `auto-train` est la commande principale fournie par l’outil CLI ML.NET. La commande vous permet de générer un modèle de bonne qualité ML.NET à l’aide de Machine Learning automatisée (AutoML), C# ainsi que l’exemple de code pour exécuter/noter ce modèle. En outre, le C# code permettant d’effectuer l’apprentissage du modèle est généré pour vous afin de Rechercher l’algorithme et les paramètres du modèle.
+La commande `auto-train` est la commande principale fournie par l’outil CLI ML.NET. La commande vous permet de générer un modèle de bonne qualité ML.NET à l’aide de l’Machine Learning automatisée (AutoML C# ), ainsi que l’exemple de code permettant d’exécuter/noter ce modèle. En outre, le C# code permettant d’effectuer l’apprentissage du modèle est généré pour vous afin de Rechercher l’algorithme et les paramètres du modèle.
 
 > [!NOTE]
 > Cette rubrique fait référence à l’interface CLI ML.NET et au moteur AutoML ML.NET, actuellement en préversion. Les ressources sont donc susceptibles d’être changées.
 
-## <a name="overview"></a>Vue d'ensemble de
+## <a name="overview"></a>Vue d’ensemble
 
-Exemple d'utilisation :
+Exemple d’utilisation :
 
 ```console
 mlnet auto-train --task regression --dataset "cars.csv" --label-column-name price
@@ -106,7 +106,7 @@ Simple chaîne fournissant le problème de ML à résoudre. Par exemple, toutes 
 
 Une seule tâche de ML doit être fournie dans cet argument.
 
-## <a name="dataset"></a>Groupe de données
+## <a name="dataset"></a>Dataset
 
 `--dataset | -d` (chaîne)
 
@@ -179,7 +179,7 @@ Avec cet argument, vous pouvez ignorer des colonnes existantes dans le fichier d
 
 Spécifiez les noms des colonnes que vous souhaitez ignorer. Utilisez « ,  » (virgule avec espace) ou «   » (espace) pour séparer plusieurs noms de colonne. Vous pouvez utiliser des guillemets pour les noms de colonnes contenant des espaces (par exemple, "utilisateur connecté").
 
-Exemple :
+Exemple :
 
 `--ignore-columns email, address, id, logged_in`
 
@@ -188,7 +188,7 @@ Exemple :
 `--has-header | -h` (booléen)
 
 Spécifiez si le ou les fichiers de jeu de données ont une ligne d’en-tête.
-Les valeurs possibles sont :
+Les valeurs possibles sont les suivantes :
 
 - `true`
 - `false`
@@ -207,7 +207,7 @@ Cet argument définit la durée maximale (en secondes) dont dispose le processus
 
 La durée nécessaire pour les itérations peut varier selon la taille du jeu de données.
 
-## <a name="cache"></a>d'instance/de clé
+## <a name="cache"></a>Cache
 
 `--cache | -c` (chaîne)
 
@@ -217,7 +217,7 @@ Pour les jeux de données petits et moyens, l’utilisation du cache peut consid
 
 Toutefois, pour les grands jeux de données, le chargement de toutes les données en mémoire peut avoir un impact négatif dans la mesure où vous risquez de manquer de mémoire. Si vous effectuez un entraînement avec de grands fichiers de jeu de données sans utiliser de cache, ML.NET récupère des blocs de données du lecteur sous forme de flux s’il doit charger davantage de données.
 
-Vous pouvez spécifier les valeurs suivantes :
+Vous pouvez spécifier les valeurs suivantes :
 
 `on`: force l’utilisation du cache lors de l’apprentissage.
 `off`: force le cache à ne pas être utilisé lors de l’apprentissage.
@@ -237,7 +237,7 @@ Le fichier de modèle ML.NET (fichier .ZIP) reçoit également le même nom.
 
 `--output-path | -o` (chaîne)
 
-Emplacement/dossier racine où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
+Emplacement/dossier racine où placer la sortie générée. L'emplacement par défaut est le répertoire actif.
 
 ## <a name="verbosity"></a>Commentaires
 
@@ -245,7 +245,7 @@ Emplacement/dossier racine où placer la sortie générée. La valeur par défau
 
 Définit le niveau de détail de la sortie standard.
 
-Les valeurs autorisées sont :
+Les valeurs autorisées sont les suivantes :
 
 - `q[uiet]`
 - `m[inimal]` (par défaut)

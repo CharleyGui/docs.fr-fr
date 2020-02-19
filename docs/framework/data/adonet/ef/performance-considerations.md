@@ -2,12 +2,12 @@
 title: Remarques sur les performances (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 61913f3b-4f42-4d9b-810f-2a13c2388a4a
-ms.openlocfilehash: 2b116a22c0f422377246d8cc0b2d647fd78a289b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 6cd0adb7963b3cfc05fcd6f30d8a7039a50f9485
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039857"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452459"
 ---
 # <a name="performance-considerations-entity-framework"></a>Remarques sur les performances (Entity Framework)
 Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Framework et fournit des points à prendre en considération pour vous aider à améliorer les performances des applications Entity Framework.  
@@ -15,11 +15,11 @@ Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Fra
 ## <a name="stages-of-query-execution"></a>Étapes de l'exécution des requêtes  
  Pour mieux comprendre les performances des requêtes dans Entity Framework, il est utile de comprendre les opérations qui se produisent lorsqu’une requête s’exécute sur un modèle conceptuel et retourne des données sous la forme d’objets. Le tableau ci-dessous décrit cette série d'opérations.  
   
-|Opération|Coût relatif|Fréquence|Comments|  
+|Opération|Coût relatif|Fréquence|Commentaires|  
 |---------------|-------------------|---------------|--------------|  
 |Chargement des métadonnées|Modéré|Une fois dans chaque domaine d'application.|Les métadonnées de modèle et de mappage utilisées par Entity Framework sont chargées dans un <xref:System.Data.Metadata.Edm.MetadataWorkspace>. Ces métadonnées sont mises en cache globalement et sont disponibles pour d'autres instances d'<xref:System.Data.Objects.ObjectContext> dans le même domaine d'application.|  
 |Ouverture de la connexion de base de données|Modéré<sup>1</sup>|Autant que nécessaire.|Étant donné qu’une connexion ouverte à la base de données consomme une ressource précieuse, le Entity Framework s’ouvre et ferme la connexion à la base de données uniquement si nécessaire. Vous pouvez également ouvrir explicitement la connexion. Pour plus d’informations, consultez [gestion des connexions et des transactions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).|  
-|Génération d'affichages|Haute|Une fois dans chaque domaine d'application. (Ils peuvent être prégénérés.)|Avant qu’Entity Framework puisse exécuter une requête sur un modèle conceptuel ou enregistrer des modifications apportées à la source de données, il doit générer un ensemble d’affichages des requêtes locaux pour accéder à la base de données. En raison du coût élevé de la génération de ces affichages, vous pouvez prégénérer les affichages et les ajouter au projet au moment du design. Pour plus d’informations, consultez [procédure : prégénérer des vues pour améliorer les performances des requêtes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).|  
+|Génération d'affichages|Élevé|Une fois dans chaque domaine d'application. (Ils peuvent être prégénérés.)|Avant qu’Entity Framework puisse exécuter une requête sur un modèle conceptuel ou enregistrer des modifications apportées à la source de données, il doit générer un ensemble d’affichages des requêtes locaux pour accéder à la base de données. En raison du coût élevé de la génération de ces affichages, vous pouvez prégénérer les affichages et les ajouter au projet au moment du design. Pour plus d’informations, consultez [procédure : prégénérer des vues pour améliorer les performances des requêtes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896240(v=vs.100)).|  
 |Préparation de la requête|Modéré<sup>2</sup>|Une fois pour chaque requête individuelle.|Inclut les coûts relatifs à la composition de la commande de requête, à la génération d’une arborescence de commandes basée sur les métadonnées de modèle et de mappage et à la définition de la forme des données retournées. Comme les commandes de requête Entity SQL et LINQ sont à présent mises en cache, il est possible d'exécuter ultérieurement une même requête pour économiser du temps. Vous pouvez toujours utiliser des requêtes LINQ compilées pour réduire ce coût dans les exécutions ultérieures et les requêtes compilées peuvent être plus efficaces que les requêtes LINQ qui sont automatiquement mises en cache. Pour plus d’informations, consultez [requêtes compilées (LINQ to Entities)](./language-reference/compiled-queries-linq-to-entities.md). Pour obtenir des informations générales sur l’exécution des requêtes LINQ, consultez [LINQ to Entities](./language-reference/linq-to-entities.md). **Remarque :**  LINQ to Entities requêtes qui appliquent l’opérateur `Enumerable.Contains` aux collections en mémoire ne sont pas automatiquement mises en cache. Le paramétrage des collections en mémoire dans les requêtes LINQ compilées n’est pas autorisé.|  
 |Exécution de la requête|Faible<sup>2</sup>|Une fois pour chaque requête.|Coût de l'exécution de la commande sur la source de données à l'aide du fournisseur de données ADO.NET. Comme la plupart des sources de données mettent en cache les plans de requête, les exécutions ultérieures des mêmes requêtes permettent d'économiser du temps.|  
 |Chargement et validation de types|Faible<sup>3</sup>|Une fois pour chaque instance <xref:System.Data.Objects.ObjectContext>.|Les types sont chargés et validés par rapport aux types que le modèle conceptuel définit.|  
@@ -32,12 +32,12 @@ Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Fra
   
  <sup>3</sup> le coût total augmente proportionnellement au nombre d’objets retournés par la requête.  
   
- <sup>4</sup> cette surcharge n’est pas requise pour les requêtes EntityClient, car les requêtes EntityClient renvoient un <xref:System.Data.EntityClient.EntityDataReader> au lieu d’objets. Pour plus d’informations, consultez [fournisseur EntityClient pour le Entity Framework](entityclient-provider-for-the-entity-framework.md).  
+ <sup>4</sup> cette surcharge n’est pas requise pour les requêtes EntityClient, car les requêtes EntityClient renvoient un <xref:System.Data.EntityClient.EntityDataReader> au lieu d’objets. Pour plus d’informations, consultez la page [Fournisseur EntityClient pour Entity Framework](entityclient-provider-for-the-entity-framework.md).  
   
 ## <a name="additional-considerations"></a>Considérations supplémentaires  
  D’autres considérations pouvant affecter les performances des applications Entity Framework sont exposées ci-dessous.  
   
-### <a name="query-execution"></a>Exécution de la requête  
+### <a name="query-execution"></a>Exécution des requêtes  
  Comme les requêtes peuvent consommer beaucoup de ressources, considérez à quel point dans votre code et sur quel ordinateur une requête est exécutée.  
   
 #### <a name="deferred-versus-immediate-execution"></a>Exécution différée / exécution immédiate  
@@ -128,7 +128,7 @@ Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Fra
   
  Tenez compte des éléments suivants lors de l'utilisation de très grands modèles :  
   
- Le format des métadonnées .NET limite le nombre de caractères de la chaîne utilisateur dans un binaire donné à 16,777,215 (0xFFFFFF). Si vous générez des vues pour un modèle très volumineux et que le fichier de vue atteint cette limite de taille, vous obtiendrez le « pas d’espace logique restant pour la création de chaînes utilisateur supplémentaires ». erreur de compilation. Cette limitation s'applique à tous les binaires gérés. Pour plus d’informations, consultez le [blog](https://go.microsoft.com/fwlink/?LinkId=201476) qui montre comment éviter l’erreur lors de l’utilisation de modèles volumineux et complexes.  
+ Le format des métadonnées .NET limite le nombre de caractères de la chaîne utilisateur dans un binaire donné à 16,777,215 (0xFFFFFF). Si vous générez des vues pour un modèle très volumineux et que le fichier de vue atteint cette limite de taille, vous obtiendrez le « pas d’espace logique restant pour la création de chaînes utilisateur supplémentaires ». erreur de compilation. Cette limitation s'applique à tous les binaires gérés. Pour plus d’informations, consultez le [blog](https://docs.microsoft.com/archive/blogs/appfabriccat/solving-the-no-logical-space-left-to-create-more-user-strings-error-and-improving-performance-of-pre-generated-views-in-visual-studio-net4-entity-framework) qui montre comment éviter l’erreur lors de l’utilisation de modèles volumineux et complexes.  
   
 #### <a name="consider-using-the-notracking-merge-option-for-queries"></a>Envisager d’utiliser l’option de fusion NoTracking pour les requêtes  
  Effectuer le suivi des objets retournés dans le contexte de l'objet a un coût obligatoire. Les objets doivent être joints à une instance <xref:System.Data.Objects.ObjectContext> pour que les modifications apportées aux objets soient détectées et pour garantir que plusieurs demandes pour la même entité logique retournent la même instance de l'objet. Si vous n’envisagez pas de mettre à jour ou de supprimer des objets et que vous n’avez pas besoin de la gestion des identités, envisagez d’utiliser l' <xref:System.Data.Objects.MergeOption.NoTracking> options de fusion lorsque vous exécutez des requêtes.  
@@ -145,13 +145,13 @@ Cette rubrique décrit les caractéristiques de performance d'ADO.NET Entity Fra
  Lorsque votre application exécute une série de requêtes d’objet ou appelle fréquemment <xref:System.Data.Objects.ObjectContext.SaveChanges%2A> pour conserver les opérations de création, de mise à jour et de suppression dans la source de données, le Entity Framework doit continuellement ouvrir et fermer la connexion à la source de données. En pareils cas, envisagez d'ouvrir manuellement la connexion au démarrage de ces opérations et de fermer ou supprimer la connexion une fois les opérations terminées. Pour plus d’informations, consultez [gestion des connexions et des transactions](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/bb896325(v=vs.100)).  
   
 ## <a name="performance-data"></a>Données de performance  
- Certaines données de performances de la Entity Framework sont publiées dans les publications suivantes sur le blog de l' [équipe ADO.net](https://go.microsoft.com/fwlink/?LinkId=91905):  
+ Certaines données de performances de la Entity Framework sont publiées dans les publications suivantes sur le blog de l' [équipe ADO.net](https://docs.microsoft.com/archive/blogs/adonet/):  
   
-- [Exploration des performances de la Entity Framework ADO.NET-partie 1](https://go.microsoft.com/fwlink/?LinkId=123907)  
+- [Exploration des performances de la Entity Framework ADO.NET-partie 1](https://docs.microsoft.com/archive/blogs/adonet/exploring-the-performance-of-the-ado-net-entity-framework-part-1)  
   
-- [Exploration des performances de l’Entity Framework ADO.NET – partie 2](https://go.microsoft.com/fwlink/?LinkId=123909)  
+- [Exploration des performances de l’Entity Framework ADO.NET – partie 2](https://docs.microsoft.com/archive/blogs/adonet/exploring-the-performance-of-the-ado-net-entity-framework-part-2)  
   
-- [Comparaison des performances de Entity Framework ADO.NET](https://go.microsoft.com/fwlink/?LinkID=123913)  
+- [Comparaison des performances de Entity Framework ADO.NET](https://docs.microsoft.com/archive/blogs/adonet/ado-net-entity-framework-performance-comparison)  
   
 ## <a name="see-also"></a>Voir aussi
 

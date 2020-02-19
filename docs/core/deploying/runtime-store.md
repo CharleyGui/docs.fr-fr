@@ -2,12 +2,12 @@
 title: Magasin de packages de runtime
 description: Découvrez comment utiliser le magasin de packages de runtime et les manifestes cibles utilisés par .NET Core.
 ms.date: 08/12/2017
-ms.openlocfilehash: 8c58ccdb90e5ae9830313f52c19f58629ea5b0a2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7a833ed95147608c6fb403f8f0dec179d2a73833
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76737787"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448956"
 ---
 # <a name="runtime-package-store"></a>Magasin de packages de runtime
 
@@ -122,11 +122,11 @@ Spécifiez les manifestes cibles dans le fichier projet uniquement quand l’env
 
 Le magasin implicite ASP.NET Core s’applique uniquement à ASP.NET Core 2.0. Nous vous recommandons fortement de baser les applications sur ASP.NET Core 2.1 et version ultérieure, car le magasin implicite n’est **pas** utilisé dans ce cas. ASP.NET Core 2.1 et les versions ultérieures utilisent le framework partagé.
 
-La fonctionnalité de magasin de packages de runtime est implicitement utilisée par une application ASP.NET Core quand celle-ci est déployée en tant qu’application [à déploiement dépendant du framework](index.md#framework-dependent-deployments-fdd). Les cibles dans [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) contiennent les manifestes référençant le magasin de packages implicite sur le système cible. De plus, toute application à déploiement dépendant du framework qui est tributaire du package `Microsoft.AspNetCore.All` aboutit à une application publiée qui contient uniquement l’application et ses composants et non les packages listés dans le métapackage `Microsoft.AspNetCore.All`. Ces packages sont censés être présents sur le système cible.
+La fonctionnalité de magasin de packages de runtime est implicitement utilisée par une application ASP.NET Core quand celle-ci est déployée en tant qu’application [à déploiement dépendant du framework](index.md#publish-runtime-dependent). Les cibles dans [`Microsoft.NET.Sdk.Web`](https://github.com/aspnet/websdk) contiennent les manifestes référençant le magasin de packages implicite sur le système cible. De plus, toute application à déploiement dépendant du framework qui est tributaire du package `Microsoft.AspNetCore.All` aboutit à une application publiée qui contient uniquement l’application et ses composants et non les packages listés dans le métapackage `Microsoft.AspNetCore.All`. Ces packages sont censés être présents sur le système cible.
 
 Le magasin de packages de runtime est installé sur l’hôte quand le SDK .NET Core est installé. D’autres programmes d’installation peuvent fournir le magasin de packages de runtime, notamment les installations Zip/tarball du SDK .NET Core, `apt-get`, Red Hat Yum, le bundle .NET Core Windows Server Hosting et les installations de magasin de packages de runtime manuelles.
 
-Quand vous déployez une application [à déploiement dépendant du framework](index.md#framework-dependent-deployments-fdd), vérifiez que le SDK .NET Core est installé sur l’environnement cible. Si l’application est déployée sur un environnement qui n’a pas ASP.NET Core, vous pouvez ne pas utiliser le magasin implicite en définissant **\<PublishWithAspNetCoreTargetManifest>** sur `false` dans le fichier projet, comme dans l’exemple suivant :
+Quand vous déployez une application [à déploiement dépendant du framework](index.md#publish-runtime-dependent), vérifiez que le SDK .NET Core est installé sur l’environnement cible. Si l’application est déployée sur un environnement qui n’a pas ASP.NET Core, vous pouvez ne pas utiliser le magasin implicite en définissant **\<PublishWithAspNetCoreTargetManifest>** sur `false` dans le fichier projet, comme dans l’exemple suivant :
 
 ```xml
 <PropertyGroup>
@@ -135,7 +135,7 @@ Quand vous déployez une application [à déploiement dépendant du framework](i
 ```
 
 > [!NOTE]
-> Dans le cas des applications [à déploiement autonome](index.md#self-contained-deployments-scd), le système peut ne pas contenir les packages de manifestes nécessaires. Par conséquent, **\<PublishWithAspNetCoreTargetManifest>** ne peut pas être défini avec la valeur `true` pour une application à déploiement autonome.
+> Dans le cas des applications [à déploiement autonome](index.md#publish-self-contained), le système peut ne pas contenir les packages de manifestes nécessaires. Par conséquent, **\<PublishWithAspNetCoreTargetManifest>** ne peut pas être défini avec la valeur `true` pour une application à déploiement autonome.
 
 Si vous déployez une application et que le déploiement comprend une dépendance de manifeste (l’assembly est présent dans le dossier *bin*), le magasin de packages de runtime *n’est pas utilisé* sur l’hôte pour cet assembly. L’assembly dans le dossier *bin* est utilisé indépendamment de sa présence dans le magasin de packages de runtime sur l’hôte.
 

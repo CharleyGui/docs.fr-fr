@@ -2,12 +2,12 @@
 title: Fonctionnalités de simplification de WCF
 ms.date: 03/30/2017
 ms.assetid: 4535a511-6064-4da0-b361-80262a891663
-ms.openlocfilehash: dd944ad2963e29fd3aa9254f3a37f2c2b98ce70d
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 28a05053fda8380b55a1a9eee20119b8c4cfccfe
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802386"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452654"
 ---
 # <a name="wcf-simplification-features"></a>Fonctionnalités de simplification de WCF
 
@@ -78,7 +78,7 @@ WCF prend désormais en charge le développement Contrat en premier. L’outil S
 
 ## <a name="add-service-reference-from-a-portable-subset-project"></a>Ajouter une référence de service d'un projet de sous-ensemble portable
 
-Les projets de sous-ensemble portables permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (Desktop, Silverlight, Windows Phone et XBOX). Les projets de sous-ensemble portables référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET Framework qui peut être utilisé sur n’importe quelle implémentation .NET. L'expérience du développeur est identique à celle de l'ajout d'une référence de service dans une autre application cliente WCF. Pour plus d’informations, consultez [Ajouter une référence de service dans un projet de sous-ensemble portable](add-service-reference-in-a-portable-subset-project.md).
+Les projets de sous-ensemble portables permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs implémentations .NET (Desktop, Silverlight, Windows Phone et Xbox). Les projets de sous-ensemble portables référencent uniquement les bibliothèques portables .NET qui sont des assemblys qui peuvent être utilisés sur n’importe quelle implémentation .NET. L'expérience du développeur est identique à celle de l'ajout d'une référence de service dans une autre application cliente WCF. Pour plus d’informations, consultez [Ajouter une référence de service dans un projet de sous-ensemble portable](add-service-reference-in-a-portable-subset-project.md).
 
 ## <a name="aspnet-compatibility-mode-default-changed"></a>Modification de la valeur par défaut pour le mode de compatibilité ASP.NET
 
@@ -94,7 +94,7 @@ WCF fournit le mode de compatibilité ASP.NET pour accorder aux développeurs l'
 
 Le tableau suivant décrit les paramètres qui ont changé et où trouver des informations supplémentaires.
 
-|Property|On|Nouvelle valeur par défaut|Plus d’informations|
+|Propriété|Il en va|Nouvelle valeur par défaut|Informations complémentaires|
 |--------------|--------|-----------------|----------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 secondes|Cette propriété détermine la durée pendant laquelle une connexion TCP peut s’authentifier à l’aide du protocole de tramage .NET. Un client doit envoyer des données initiales avant que le serveur dispose de suffisamment d'informations pour exécuter l'authentification. Ce délai d'attente est volontairement plus petit que le ReceiveTimeout (10 minutes) afin que les clients non authentifiés malveillants ne conservent pas longtemps les connexions occupées au serveur. La valeur par défaut correspond à 30 secondes. Pour plus d’informations sur <xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|16 * nombre de processeurs|Cette propriété de niveau socket décrit le nombre de demandes en "attente d'acceptation" à mettre en file d'attente. Si la file d’attente du backlog d’écoute est remplie, les nouvelles demandes de socket sont rejetées. Pour plus d’informations sur <xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|

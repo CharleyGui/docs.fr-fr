@@ -5,12 +5,12 @@ helpviewer_keywords:
 - globalization [WPF], about globalization
 - localization [WPF], about localization
 ms.assetid: 56e5a5c8-6c96-4d19-b8e1-a5be1dc564af
-ms.openlocfilehash: 665daa14b543a357b17747a7d9d34dac2224711d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: ba49b3ec0f6edebff6278f4e90ae22baba9f1edf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124557"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452667"
 ---
 # <a name="wpf-globalization-and-localization-overview"></a>Vue d’ensemble de la globalisation et de la localisation WPF
 
@@ -215,11 +215,11 @@ Sur les fenêtres allemandes, si ce fichier Resources. dll est placé dans un do
 |Code|BAML d’origine en anglais|BAML localisé|
 |Ressources indépendantes de la langue|Autres ressources en anglais|Autres ressources localisées en allemand|
 
-Le .NET Framework choisit automatiquement l’assembly de ressources satellites à charger en fonction de l' `Thread.CurrentThread.CurrentUICulture`de l’application. Par défaut, il s’agit de la culture de votre système d’exploitation Windows. Par conséquent, si vous utilisez des fenêtres en allemand, le fichier de-DE\MyDialog.resources.dll se charge, si vous utilisez des fenêtres en anglais, le en-US\MyDialog.resources.dll est chargé. Vous pouvez définir la ressource de secours ultime pour votre application en spécifiant le NeutralResourcesLanguage dans le AssemblyInfo de votre projet.\*. Par exemple, si vous spécifiez :
+.NET choisit automatiquement l’assembly de ressources satellites à charger en fonction de l' <xref:System.Threading.Thread.CurrentUICulture%2A?displayProperty=nameWithType>de l’application. Par défaut, il s’agit de la culture de votre système d’exploitation Windows. Si vous utilisez des fenêtres en allemand, le fichier *fichier de-DE\MyDialog.resources.dll* est chargé. Si vous utilisez des fenêtres en anglais, le fichier *en-US\MyDialog.resources.dll* est chargé. Vous pouvez définir la ressource de secours ultime pour votre application en spécifiant l’attribut `NeutralResourcesLanguage` dans le fichier *AssemblyInfo* de votre projet. Par exemple, si vous spécifiez :
 
 `[assembly: NeutralResourcesLanguage("en-US", UltimateResourceFallbackLocation.Satellite)]`
 
-le fichier en-US\MyDialog.resources.dll sera utilisé avec la version allemande de Windows si un fichier de-DE\MyDialog.resources.dll ou un fichier de\MyDialog.resources.dll sont tous deux indisponibles.
+le fichier *en-US\MyDialog.resources.dll* est alors utilisé avec les fenêtres en allemand si aucun des fichiers suivants n’est disponible : *fichier de-DE\MyDialog.resources.dll* ou *DE\MyDialog.resources.dll*.
 
 ### <a name="microsoft-saudi-arabia-homepage"></a>Page d’accueil de Microsoft pour l’Arabie Saoudite
 
