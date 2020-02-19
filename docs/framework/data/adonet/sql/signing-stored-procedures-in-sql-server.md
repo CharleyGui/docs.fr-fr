@@ -2,22 +2,22 @@
 title: Signature de procédures stockées dans SQL Server
 ms.date: 01/05/2018
 ms.assetid: eeed752c-0084-48e5-9dca-381353007a0d
-ms.openlocfilehash: 8dc62527be7273d3ce3222d4d261b81bc40b1e19
-ms.sourcegitcommit: d2e1dfa7ef2d4e9ffae3d431cf6a4ffd9c8d378f
+ms.openlocfilehash: 0131655d06a6ef543ea460d04739401538cac04b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/07/2019
-ms.locfileid: "70791812"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452355"
 ---
 # <a name="signing-stored-procedures-in-sql-server"></a>Signature de procédures stockées dans SQL Server
 
-Une signature numérique est un condensat des données qui est chiffré avec la clé privée du signataire. La clé privée garantit que la signature numérique est unique à son porteur ou propriétaire. Vous pouvez signer des procédures stockées, des fonctions (à l’exception des fonctions table incluses), des déclencheurs et des assemblys.
+Une signature numérique est un condensé de données chiffrées avec la clé privée du signataire. La clé privée garantit que la signature numérique est la propriété unique de son détenteur ou propriétaire. Vous pouvez signer des procédures stockées, des fonctions (à l’exception des fonctions table incluses), des déclencheurs et des assemblys.
 
 Vous pouvez signer une procédure stockée avec un certificat ou une clé asymétrique. Cela est très utile lorsque des autorisations ne peuvent pas être héritées par le biais du chaînage des propriétés ou lorsque ce dernier est rompu, comme avec SQL dynamique. Vous pouvez ensuite créer un utilisateur mappé au certificat, en accordant au certificat des autorisations d’utilisateur sur les objets auxquels la procédure stockée doit accéder.
 
-Vous pouvez également créer une connexion mappée sur le même certificat, puis accorder les autorisations de niveau serveur nécessaires à cette connexion, ou ajouter la connexion à un ou plusieurs rôles serveur fixes. Cela est conçu pour éviter d’activer `TRUSTWORTHY` le paramètre de base de données pour les scénarios dans lesquels des autorisations de niveau supérieur sont nécessaires.
+Vous pouvez également créer une connexion mappée sur le même certificat, puis accorder les autorisations de niveau serveur nécessaires à cette connexion, ou ajouter la connexion à un ou plusieurs rôles serveur fixes. Cela est conçu pour éviter d’activer le paramètre de base de données `TRUSTWORTHY` pour les scénarios dans lesquels des autorisations de niveau supérieur sont nécessaires.
 
-Lorsque la procédure stockée est exécutée, SQL Server associe les autorisations de l’utilisateur et/ou de la connexion du certificat à celles de l’appelant. Contrairement à `EXECUTE AS` la clause, elle ne modifie pas le contexte d’exécution de la procédure. Les fonctions intégrées qui retournent les noms d'accès et d'utilisateur retournent le non de l'appelant, et non celui de l'utilisateur du certificat.
+Lorsque la procédure stockée est exécutée, SQL Server associe les autorisations de l’utilisateur et/ou de la connexion du certificat à celles de l’appelant. Contrairement à la clause `EXECUTE AS`, elle ne modifie pas le contexte d’exécution de la procédure. Les fonctions intégrées qui retournent les noms d'accès et d'utilisateur retournent le non de l'appelant, et non celui de l'utilisateur du certificat.
 
 ## <a name="creating-certificates"></a>Création de certificats
 
@@ -39,9 +39,9 @@ Si le module a besoin d’autorisations supplémentaires au niveau de la base de
 
 Si le module a besoin d’autorisations supplémentaires au niveau du serveur :
 
-1. Copiez le certificat dans `master` la base de données.
+1. Copiez le certificat dans la base de données `master`.
 
-1. Créez une connexion associée à ce certificat à l’aide de l' `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]` instruction Transact-SQL.
+1. Créez une connexion associée à ce certificat à l’aide de l’instruction Transact-SQL `CREATE LOGIN [userName] FROM CERTIFICATE [certificateName]`.
 
 1. Accordez au certificat de connexion les autorisations requises au niveau du serveur.
 
@@ -50,12 +50,12 @@ Si le module a besoin d’autorisations supplémentaires au niveau du serveur :
 
 ## <a name="external-resources"></a>Ressources externes
 
-Pour plus d'informations, voir les ressources ci-dessous.
+Pour plus d'informations, consultez les ressources ci-dessous.
 
 |Ressource|Description|
 |--------------|-----------------|
-|[Connexion au Module](https://go.microsoft.com/fwlink/?LinkId=98590) documentation en ligne de SQL Server|Décrit la signature de module, en fournissant un exemple de scénario et des liens vers les rubriques pertinentes relatives à Transact-SQL.|
-|[Signature de procédures stockées à l’aide d’un certificat](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate) dans documentation en ligne de SQL Server|Propose un didacticiel de signature d'une procédure stockée à l'aide d'un certificat.|
+|[Signature de module](https://docs.microsoft.com/previous-versions/sql/sql-server-2008/ms345102(v=sql.100))|Décrit la signature de module, en fournissant un exemple de scénario et des liens vers les articles Transact-SQL pertinents.|
+|[Signature de procédures stockées à l’aide d’un certificat](/sql/relational-databases/tutorial-signing-stored-procedures-with-a-certificate)|Propose un didacticiel de signature d'une procédure stockée à l'aide d'un certificat.|
 
 ## <a name="see-also"></a>Voir aussi
 
@@ -63,7 +63,7 @@ Pour plus d'informations, voir les ressources ci-dessous.
 - [Vue d’ensemble de la sécurité SQL Server](overview-of-sql-server-security.md)
 - [Scénarios de sécurité des applications dans SQL Server](application-security-scenarios-in-sql-server.md)
 - [Gestion des autorisations avec les procédures stockées dans SQL Server](managing-permissions-with-stored-procedures-in-sql-server.md)
-- [Écriture de code SQL dynamique sécurisé dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
+- [Écriture d’une instruction SQL dynamique sécurisée dans SQL Server](writing-secure-dynamic-sql-in-sql-server.md)
 - [Personnalisation des autorisations avec l’emprunt d’identité dans SQL Server](customizing-permissions-with-impersonation-in-sql-server.md)
 - [Modification des données avec les procédures stockées](../modifying-data-with-stored-procedures.md)
 - [Vue d’ensemble d’ADO.NET](../ado-net-overview.md)

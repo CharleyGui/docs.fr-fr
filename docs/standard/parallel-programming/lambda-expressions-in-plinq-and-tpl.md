@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Action delegate, creating with lambda expression
 - lambda expressions, with Action and Func
 ms.assetid: 645b2c17-29d0-4ffa-8684-430743cc2f2d
-ms.openlocfilehash: d1b716e977702d03db176da70be00a1e5c789a4b
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 4e5be295a52edc1a7f0a0a3aa98f55335ae3e31b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129033"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452998"
 ---
 # <a name="lambda-expressions-in-plinq-and-tpl"></a>Expressions lambda en PLINQ et dans la bibliothèque parallèle de tâches
 
@@ -26,11 +26,11 @@ La bibliothèque parallèle de tâches (TPL) contient de nombreuses méthodes qu
 
 ## <a name="func-delegate"></a>Func (délégué)
 
-Un délégué `Func` encapsule une méthode qui renvoie une valeur. Dans une signature Func, le dernier paramètre de type ou celui le plus à droite spécifie toujours le type de renvoi. L’une des causes courantes d’erreurs de compilation consiste à tenter de transmettre deux paramètres d’entrée à un <xref:System.Func%602?displayProperty=nameWithType>. En fait, ce type ne prend qu’un paramètre d’entrée. La bibliothèque de classes Framework définit 17 versions de `Func` : <xref:System.Func%601?displayProperty=nameWithType>, <xref:System.Func%602?displayProperty=nameWithType>, <xref:System.Func%603?displayProperty=nameWithType>, et ainsi de suite jusqu'à <xref:System.Func%6017?displayProperty=nameWithType>.
+Un délégué `Func` encapsule une méthode qui renvoie une valeur. Dans une signature de `Func`, le dernier paramètre de type, ou le plus à droite, spécifie toujours le type de retour. L’une des causes courantes d’erreurs de compilation consiste à tenter de transmettre deux paramètres d’entrée à un <xref:System.Func%602?displayProperty=nameWithType>. En fait, ce type ne prend qu’un paramètre d’entrée. .NET définit 17 versions de `Func`: <xref:System.Func%601?displayProperty=nameWithType>, <xref:System.Func%602?displayProperty=nameWithType>, <xref:System.Func%603?displayProperty=nameWithType>, et ainsi de suite jusqu’à <xref:System.Func%6017?displayProperty=nameWithType>.
 
 ## <a name="action-delegate"></a>Action (délégué)
 
-Un délégué <xref:System.Action?displayProperty=nameWithType> encapsule une méthode (Sub en Visual Basic) qui ne retourne pas de valeur, ou retourne [void](../../csharp/language-reference/keywords/void.md). Dans une signature de type Action, les paramètres de type représentent uniquement des paramètres d’entrée. Comme pour Func, la bibliothèque de classes Framework définit 17 versions d’Action, à partir d’une version qui n’a aucun paramètre de type dans une version qui possède 16 paramètres de type.
+Un délégué <xref:System.Action?displayProperty=nameWithType> encapsule une méthode (Sub dans Visual Basic) qui ne retourne pas de valeur. Dans une signature de type `Action`, les paramètres de type représentent uniquement des paramètres d’entrée. Comme `Func`, .NET définit 17 versions de `Action`, à partir d’une version qui n’a pas de paramètres de type jusqu’à une version avec 16 paramètres de type.
 
 ## <a name="example"></a>Exemple
 

@@ -9,22 +9,22 @@ helpviewer_keywords:
 - Web service binding [WPF]
 - data binding [WPF], Web service
 ms.assetid: 77e2d373-69ba-4cbd-b6f5-2c83c38fc98b
-ms.openlocfilehash: 76fa13d4a12362d04c832fd59ee69db5a6811029
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 3a3f6edc974448ddab9fe30e97bdc1130d3b97dc
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454457"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449970"
 ---
 # <a name="how-to-bind-to-a-web-service"></a>Comment : effectuer une liaison à un service Web
 Cet exemple montre comment effectuer une liaison à des objets retournés par les appels de méthode de service Web.  
   
 ## <a name="example"></a>Exemple  
- Cet exemple utilise le [service de contenu MSDN/TechNet Publishing System (MTPS)](https://go.microsoft.com/fwlink/?LinkId=95677) pour récupérer la liste des langues prises en charge par un document spécifié.  
+ Cet exemple utilise le service de contenu MSDN/TechNet Publishing System (MTPS) pour récupérer la liste des langues prises en charge par un document spécifié.  
   
  Avant d’appeler un service Web, vous devez créer une référence à celui-ci. Pour créer une référence Web au service MTPS à l’aide de Visual Studio, procédez comme suit :  
   
-1. Ouvrez votre projet dans Visual Studio.  
+1. Ouvrez votre projet dans Visual Studio.  
   
 2. Dans le menu **projet** , cliquez sur **Ajouter une référence Web**.  
   

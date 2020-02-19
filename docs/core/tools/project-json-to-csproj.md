@@ -3,12 +3,12 @@ title: Comparaison entre project.json et csproj
 description: Consultez le mappage entre éléments project.json et csproj.
 author: natemcmaster
 ms.date: 03/13/2017
-ms.openlocfilehash: c31590cf34990867b81af4d073846c2952928798
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: abe515007b47b415ac33e3350a29edced1784d68
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714132"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451103"
 ---
 # <a name="a-mapping-between-projectjson-and-csproj-properties"></a>Mappage entre propriétés project.json et csproj
 
@@ -30,7 +30,7 @@ Le nouveau format, \*.csproj, est un format basé sur XML. L’exemple suivant m
 
 ## <a name="common-top-level-properties"></a>Propriétés communes de niveau supérieur
 
-### <a name="name"></a>nom
+### <a name="name"></a>name
 
 ```json
 {
@@ -38,7 +38,7 @@ Le nouveau format, \*.csproj, est un format basé sur XML. L’exemple suivant m
 }
 ```
 
-N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple, `MyProjectName.csproj`.
+N'est plus pris en charge. Dans csproj, cette propriété est déterminée par le nom du fichier projet, qui correspond généralement au nom du répertoire. Par exemple : `MyProjectName.csproj`.
 
 Par défaut, le nom de fichier du projet spécifie également la valeur des propriétés `<AssemblyName>` et `<PackageId>`.
 
@@ -52,7 +52,7 @@ Par défaut, le nom de fichier du projet spécifie également la valeur des prop
 `<AssemblyName>` a une valeur différente de `<PackageId>` si la propriété `buildOptions\outputName` est définie dans project.json.
 Pour plus d’informations, consultez [Autres options communes de génération](#other-common-build-options).
 
-### <a name="version"></a>Version de
+### <a name="version"></a>version
 
 ```json
 {
@@ -141,7 +141,7 @@ Utilisez la propriété `TargetFrameworks` pour définir votre liste de framewor
 </PropertyGroup>
 ```
 
-## <a name="dependencies"></a>dépendances
+## <a name="dependencies"></a>dependencies
 
 > [!IMPORTANT]
 > Si la dépendance est un **projet** et non un package, le format est différent.
@@ -337,7 +337,7 @@ Dans MSBuild, tous les projets sont *portables* pendant la génération, mais pe
 
 `dotnet publish --framework netcoreapp1.0 --runtime osx.10.11-x64`
 
-Pour plus d’informations, consultez [Déploiements autonomes](../deploying/index.md#self-contained-deployments-scd).
+Pour plus d’informations, consultez [Déploiements autonomes](../deploying/index.md#publish-self-contained).
 
 ## <a name="tools"></a>outils
 
@@ -488,7 +488,7 @@ Voir aussi [Fichiers](#files).
 Il n’existe aucun équivalent de l’élément `owners` dans MSBuild.
 Pour `summary`, vous pouvez utiliser la propriété MSBuild `<Description>`, même si la valeur de `summary` n’est pas migrée automatiquement vers cette propriété, étant donné que cette propriété est mappée à l’élément [`description`](#other-common-root-level-options).
 
-## <a name="scripts"></a>scripts
+## <a name="scripts"></a>Scripts
 
 ```json
 {
@@ -561,7 +561,7 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 </PropertyGroup>
 ```
 
-## <a name="shared"></a>partagées
+## <a name="shared"></a>shared
 
 ```json
 {
@@ -572,7 +572,7 @@ Toutefois, vous pouvez définir toutes ces valeurs dans le csproj ainsi que les 
 Non pris en charge dans csproj. Vous devez inclure à la place des fichiers de contenu dans votre fichier *.nuspec*.
 Pour plus d’informations, consultez [Inclusion de fichiers de contenu](/nuget/schema/nuspec#including-content-files).
 
-## <a name="files"></a>fichiers
+## <a name="files"></a>files
 
 Dans *project.json*, la build et le pack peuvent être étendus pour effectuer la compilation et l’incorporation à partir de dossiers différents.
 Dans MSBuild, cela s’effectue à l’aide d’[éléments](/visualstudio/msbuild/common-msbuild-project-items). L’exemple suivant illustre une conversion courante :
