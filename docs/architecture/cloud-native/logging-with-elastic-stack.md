@@ -1,20 +1,37 @@
 ---
 title: Journalisation avec Elastic Stack
 description: Journalisation à l’aide de la pile élastique, Logstash et Kibana
-ms.date: 09/23/2019
-ms.openlocfilehash: 989834925bc08541bf484e1a4567a56ac324872f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 02/05/2020
+ms.openlocfilehash: 6863c66b63854fe3ecaabe2919beded2926ea64c
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087067"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448910"
 ---
 # <a name="logging-with-elastic-stack"></a>Journalisation avec Elastic Stack
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
 Il existe de nombreux outils de journalisation centralisés et leur coût est inférieur à celui des outils open source gratuits, à des options plus coûteuses. Dans de nombreux cas, les outils gratuits sont aussi bons ou mieux que les offres payantes. L’un de ces outils est une combinaison de trois composants Open Source : la recherche élastique, Logstash et Kibana.
+
 Ces outils sont appelés pile élastique ou pile ELK.
+
+## <a name="elastic-stack"></a>Pile élastique
+
+La pile élastique est une option puissante pour la collecte d’informations à partir d’un cluster Kubernetes. Kubernetes prend en charge l’envoi de journaux à un point de terminaison Elasticsearch. dans la [plupart](https://kubernetes.io/docs/tasks/debug-application-cluster/logging-elasticsearch-kibana/)des cas, vous devez commencer par définir les variables d’environnement, comme illustré dans la figure 7-5 :
+
+```kubernetes
+KUBE_LOGGING_DESTINATION=elasticsearch
+KUBE_ENABLE_NODE_LOGGING=true
+```
+
+**Figure 7-5**. Variables de configuration pour Kubernetes
+
+Cette opération installe Elasticsearch sur le cluster et cible l’envoi de tous les journaux de cluster vers ce dernier.
+
+![un exemple de tableau de bord Kibana présentant les résultats d’une requête sur les journaux ingérés à partir de Kubernetes](./media/kibana-dashboard.png)
+**Figure 7-6**. Exemple de tableau de bord Kibana indiquant les résultats d’une requête sur les journaux qui sont ingérés à partir de Kubernetes
 
 ## <a name="what-are-the-advantages-of-elastic-stack"></a>Quels sont les avantages de la pile élastique ?
 
@@ -24,7 +41,7 @@ La pile élastique fournit une journalisation centralisée dans une solution clo
 
 Le premier composant est [Logstash](https://www.elastic.co/products/logstash). Cet outil est utilisé pour collecter des informations de journalisation à partir d’une grande variété de sources différentes. Par exemple, Logstash peut lire les journaux à partir du disque et recevoir également des messages des bibliothèques de journalisation telles que [Serilog](https://serilog.net/). Logstash peut effectuer un filtrage et une expansion de base sur les journaux au fur et à mesure de leur arrivée. Par exemple, si vos journaux contiennent des adresses IP, Logstash peut être configuré pour effectuer une recherche géographique et obtenir un pays ou même une ville d’origine pour ce message.
 
-Serilog est une bibliothèque de journalisation pour les langages .NET, qui permet la journalisation paramétrée. Au lieu de générer un message de journalisation qui incorpore des champs, les paramètres sont conservés séparément. Cela permet un filtrage et une recherche plus intelligents. Un exemple de configuration Serilog pour l’écriture dans Logstash apparaît dans la figure 7-2.
+Serilog est une bibliothèque de journalisation pour les langages .NET, qui permet la journalisation paramétrée. Au lieu de générer un message de journalisation qui incorpore des champs, les paramètres sont conservés séparément. Cela permet un filtrage et une recherche plus intelligents. Un exemple de configuration Serilog pour l’écriture dans Logstash apparaît dans la figure 7-7.
 
 ```csharp
 var log = new LoggerConfiguration()
@@ -32,9 +49,9 @@ var log = new LoggerConfiguration()
          .CreateLogger();
 ```
 
-**Figure 7-2** Configuration de Serilog pour écrire des informations de journal directement dans logstash sur HTTP
+**Figure 7-7**. Configuration de Serilog pour écrire des informations de journal directement dans logstash sur HTTP
 
-Logstash utilise une configuration telle que celle illustrée dans la figure 7-3.
+Logstash utilise une configuration telle que celle illustrée dans la figure 7-8.
 
 ```
 input {
@@ -52,7 +69,7 @@ output {
 }
 ```
 
-**Figure 7-3** : configuration Logstash pour la consommation des journaux à partir de Serilog
+**Figure 7-8**. Une configuration Logstash pour la consommation des journaux à partir de Serilog
 
 Dans les scénarios où une manipulation de journal étendue n’est pas nécessaire, il existe une alternative à Logstash appelée [temps](https://www.elastic.co/products/beats). Le temps est une famille d’outils qui peuvent recueillir un large éventail de données à partir des journaux vers les données réseau et les informations de temps d’activité. De nombreuses applications utilisent à la fois les Logstash et les temps.
 
@@ -64,7 +81,7 @@ La recherche élastique est un moteur de recherche puissant qui peut indexer les
 
 Les messages de journal qui ont été conçus pour contenir des paramètres ou dont les paramètres ont été fractionnés à l’aide du traitement Logstash peuvent être interrogés directement, car Elasticsearch conserve ces informations.
 
-Une requête qui recherche les 10 premières pages visitées par `jill@example.com`s’affiche dans la figure 7-4.
+Une requête qui recherche les 10 premières pages visitées par `jill@example.com`s’affiche dans la figure 7-9.
 
 ```
 "query": {
@@ -82,7 +99,7 @@ Une requête qui recherche les 10 premières pages visitées par `jill@example.c
   }
 ```
 
-**Figure 7-4** : requête Elasticsearch pour rechercher les 10 premières pages visitées par un utilisateur
+**Figure 7-9**. Requête Elasticsearch pour rechercher les 10 premières pages visitées par un utilisateur
 
 ## <a name="visualizing-information-with-kibana-web-dashboards"></a>Visualisation des informations avec les tableaux de bord Web Kibana
 
@@ -96,7 +113,7 @@ Une option avec moins de surcharge consiste à utiliser l’un des nombreux cont
 
 Une autre option est une [offre de kit en tant que service récemment annoncée](https://devops.com/logz-io-unveils-azure-open-source-elk-monitoring-solution/).
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - [Installer la pile élastique sur Azure](https://docs.microsoft.com/azure/virtual-machines/linux/tutorial-elasticsearch)
 

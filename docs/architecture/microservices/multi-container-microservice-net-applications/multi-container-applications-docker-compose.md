@@ -2,12 +2,12 @@
 title: Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 description: Comment spécifier la composition des microservices pour une application multiconteneur avec docker-compose.yml.
 ms.date: 10/02/2018
-ms.openlocfilehash: f9cab35ac8e11ca89a83f646c29bf72f84e66ef4
-ms.sourcegitcommit: ed3f926b6cdd372037bbcc214dc8f08a70366390
+ms.openlocfilehash: 26b7362112c12583377db9f8fa516ee8ce3b1ac2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/16/2020
-ms.locfileid: "76116542"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450698"
 ---
 # <a name="defining-your-multi-container-application-with-docker-composeyml"></a>Définition de votre application à plusieurs conteneurs avec docker-compose.yml
 
@@ -463,7 +463,7 @@ Pour cela, l’équipe .NET fournit trois variantes de base dans [dotnet/core](h
 1. **sdk** : pour les scénarios de développement et de build
 1. **aspnet** : pour les scénarios de production ASP.NET
 1. **runtime** : pour les scénarios de production .NET
-1. **runtime-deps** : pour les scénarios de production des [applications autonomes](../../../core/deploying/index.md#self-contained-deployments-scd).
+1. **runtime-deps** : pour les scénarios de production des [applications autonomes](../../../core/deploying/index.md#publish-self-contained).
 
 Pour accélérer le démarrage, les images de runtime définissent aussi automatiquement aspnetcore\_urls sur le port 80 et utilisent Ngen pour créer un cache d’image native d’assemblys.
 

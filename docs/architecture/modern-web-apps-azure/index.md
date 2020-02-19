@@ -3,21 +3,23 @@ title: Architecturer des applications web modernes avec ASP.NET Core et Azure
 description: Un guide qui fournit une aide de bout en bout sur la création d’applications web monolithiques avec ASP.NET Core et Azure.
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 739dd607aaa45f73e777a30c6495e329236fee17
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.date: 12/4/2019
+ms.openlocfilehash: c19e5e90cfb96463f744cfb064abe72ee5db2e9f
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "70296291"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449324"
 ---
 # <a name="architect-modern-web-applications-with-aspnet-core-and-azure"></a>Architecturer des applications web modernes avec ASP.NET Core et Azure
 
-![Image de la couverture du guide Architecturer des applications web modernes.](./media/index/web-application-guide-cover-image.png)
+![Image de couverture du livre du Guide des applications Web modernes de l’architecte.](./media/index/web-application-guide-cover-image.png)
+
+**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
 
 PUBLIÉ PAR
 
-Division Développeurs Microsoft, équipes produit .NET et Visual Studio
+Division Développeur Microsoft, équipes produit .NET et Visual Studio
 
 Division de Microsoft Corporation
 
@@ -25,19 +27,19 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 par Microsoft Corporation
+Copyright © 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
-Certains exemples décrits dans ce document ne sont fournis qu’à titre d’illustration et sont purement fictifs. Toute ressemblance ou tout lien avec le monde réel sont purement fortuits et involontaires.
+Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » à l’adresse https://www.microsoft.com sont des marques du groupe de sociétés Microsoft.
 
 Mac et macOS sont des marques commerciales d’Apple Inc.
 
-Le logo de Docker représentant une baleine est une marque déposée de Docker, Inc. Utilisé sous autorisation.
+Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. utilisée par l’autorisation.
 
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
@@ -83,7 +85,7 @@ La création d’applications web avec ASP.NET Core, hébergées dans Azure, off
 
 Ce guide fournit une aide de bout en bout sur la création d’applications web *monolithiques* avec ASP.NET Core et Azure. Dans ce contexte, « monolithiques » fait référence au fait que ces applications sont déployées comme une seule unité, pas comme une collection d’applications et de services qui interagissent.
 
-Ce guide est complémentaire à [« _Architecture des microservices .NET. pour les applications .NET en conteneur_ »](../microservices/index.md), qui est davantage consacré à Docker, aux microservices et au déploiement de conteneurs pour héberger des applications d’entreprise.
+Ce guide est complémentaire aux [_microservices .net. Architecture pour les applications .NET en conteneur_](../microservices/index.md) , qui se concentre sur l’ancrage, les microservices et le déploiement de conteneurs pour héberger des applications d’entreprise.
 
 ### <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET. Architecture pour les applications .NET en conteneur
 
@@ -92,7 +94,7 @@ Ce guide est complémentaire à [« _Architecture des microservices .NET. pour l
 - **Exemple d’application**  
   <https://aka.ms/microservicesarchitecture>
 
-## <a name="who-should-use-this-guide"></a>Public visé par ce guide
+## <a name="who-should-use-this-guide"></a>À qui s'adresse ce guide ?
 
 Le public visé par ce guide est principalement constitué de développeurs, de responsables du développement et d’architectes qui sont intéressés par la création d’applications web modernes avec des technologies et des services Microsoft dans le cloud.
 
@@ -104,7 +106,7 @@ Ce guide a été condensé en un document relativement court, qui est consacré 
 
 N’hésitez pas à faire connaître ce guide pour favoriser une compréhension partagée de ces considérations et de ces opportunités. Le fait que chacun utilise un même ensemble de terminologie et de principes sous-jacents permet d’obtenir plus facilement une application cohérente des modèles et des pratiques en matière d’architecture.
 
-## <a name="references"></a>Références
+## <a name="references"></a>References
 
 - **Choix entre .NET Core et .NET Framework pour les applications serveur**  
   [https://docs.microsoft.com/dotnet/standard/choosing-core-framework-server](../../standard/choosing-core-framework-server.md)

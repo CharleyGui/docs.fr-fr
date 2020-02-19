@@ -1,30 +1,30 @@
 ---
 title: Azure Monitor
 description: L’utilisation de Azure Monitor pour obtenir une visibilité de votre système est en cours d’exécution.
-ms.date: 09/23/2019
-ms.openlocfilehash: 27503627217c71e4090674945830f6332b202a5b
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.date: 02/05/2020
+ms.openlocfilehash: 961331011db4e59583438a2dbdf366bbe0e34261
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74281649"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448915"
 ---
 # <a name="azure-monitor"></a>Azure Monitor
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Aucun autre fournisseur de Cloud n’a été aussi mature qu’une solution de surveillance des applications Cloud telle qu’elle a été trouvée dans Azure. Azure Monitor est un nom de parapluie pour un ensemble d’outils conçus pour offrir une visibilité de l’état de votre système, ainsi que des informations sur les problèmes et l’optimisation de votre application.
+Aucun autre fournisseur de Cloud n’a été aussi mature qu’une solution de surveillance des applications Cloud telle qu’elle a été trouvée dans Azure. Azure Monitor est un nom de parapluie pour un ensemble d’outils conçus pour offrir une visibilité de l’état de votre système, des informations sur les problèmes et l’optimisation de votre application.
 
 ![Azure Monitor, collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.](./media/azure-monitor.png)
-**Figure 7-9**. Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.
+**Figure 7-12**. Azure Monitor, une collection d’outils pour fournir un aperçu du fonctionnement d’une application Cloud native.
 
 ## <a name="gathering-logs-and-metrics"></a>Collecte des journaux et des métriques
 
 La première étape d’une solution de surveillance consiste à rassembler le plus de données possible. Plus le nombre de données pouvant être recueillies est important, plus les Insights peuvent être obtenues. L’instrumentation des systèmes a toujours été difficile. Le protocole SNMP (simple Network Management Protocol) était le protocole Gold standard pour la collecte d’informations au niveau de l’ordinateur, mais il nécessitait beaucoup de connaissance et de configuration. Heureusement, une grande partie de ce travail a été éliminée, car les métriques les plus courantes sont collectées automatiquement par Azure Monitor.
 
-Les métriques et les événements au niveau de l’application ne peuvent pas être instrumentés automatiquement, car ils sont locaux à l’application déployée. Pour rassembler ces mesures, des kits de développement logiciel ( [SDK) et des API sont disponibles](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) pour signaler directement ces informations, par exemple lorsqu’un client s’inscrit ou termine une commande. Les exceptions peuvent également être capturées et renvoyées dans Azure Monitor via Application Insights. Les kits de développement logiciel (SDK) prennent en charge la plupart des langages disponibles dans les applications Cloud natives, y compris Go, Python, JavaScript et les langages .NET.
+Les métriques et les événements au niveau de l’application ne peuvent pas être instrumentés automatiquement, car ils sont spécifiques à l’application déployée. Pour rassembler ces mesures, des kits de développement logiciel ( [SDK) et des API sont disponibles](https://docs.microsoft.com/azure/azure-monitor/app/api-custom-events-metrics) pour signaler directement ces informations, par exemple lorsqu’un client s’inscrit ou termine une commande. Les exceptions peuvent également être capturées et renvoyées dans Azure Monitor via Application Insights. Les kits de développement logiciel (SDK) prennent en charge la plupart des langages disponibles dans les applications Cloud natives, y compris Go, Python, JavaScript et les langages .NET.
 
-L’objectif ultime de la collecte d’informations sur l’état de votre application est de s’assurer que vos utilisateurs finaux ont une bonne expérience. Quelle est la meilleure façon de savoir si les utilisateurs rencontrent des problèmes que d’effectuer des [tests Web externes](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability)? Ces tests peuvent être aussi simples que l’utilisation d’une commande ping sur votre site Web à partir d’emplacements du monde ou en tant qu’agents qui se connectent au site et effectuent des actions.
+L’objectif ultime de la collecte d’informations sur l’état de votre application est de s’assurer que vos utilisateurs finaux ont une bonne expérience. Quelle est la meilleure façon de savoir si les utilisateurs rencontrent des problèmes que d’effectuer des [tests Web externes](https://docs.microsoft.com/azure/azure-monitor/app/monitor-web-app-availability)? Ces tests peuvent être aussi simples que l’utilisation d’une commande ping sur votre site Web à partir d’emplacements du monde entier ou en cas de connexion des agents au site et de simulation des actions des utilisateurs.
 
 ## <a name="reporting-data"></a>Données de rapport
 
@@ -43,7 +43,7 @@ StormEvents
 ```
 
 ![le résultat de la requête Application Insights](./media/azure-monitor.png)
-la **Figure 7-10**. Résultat de la requête de Application Insights.
+la **Figure 7-13**. Résultat de la requête de Application Insights.
 
 Il existe un [terrain pour expérimenter](https://dataexplorer.azure.com/clusters/help/databases/Samples) les requêtes Kusto, ce qui constitue un excellent point de départ pour passer une heure ou deux. La lecture des [exemples de requêtes](https://docs.microsoft.com/azure/kusto/query/samples) peut également être instructive.
 
@@ -52,28 +52,33 @@ Il existe un [terrain pour expérimenter](https://dataexplorer.azure.com/cluster
 Il existe plusieurs technologies de tableau de bord différentes qui peuvent être utilisées pour mettre en surface les informations de Azure Monitor. Le plus simple consiste peut-être simplement à exécuter des requêtes dans Application Insights et à [tracer les données dans un graphique](https://docs.microsoft.com/azure/azure-monitor/learn/tutorial-app-dashboards).
 
 ![un exemple de Application Insights graphiques incorporés dans le tableau de bord Azure principal](./media/azure-monitor.png)
-**Figure 7-11**. Voici un exemple de Application Insights graphiques incorporés dans le tableau de bord principal Azure.
+**Figure 7-14**. Voici un exemple de Application Insights graphiques incorporés dans le tableau de bord principal Azure.
 
-Ces graphiques peuvent ensuite être incorporés dans le Portail Azure correctement à l’aide de la fonctionnalité de tableau de bord. Pour les utilisateurs ayant des exigences plus précises, telles que la possibilité d’accéder à plusieurs niveaux de données Azure Monitor données sont disponibles pour les [Power bi](https://powerbi.microsoft.com/). Power BI est un outil d’analyse décisionnelle à la pointe du secteur, qui peut agréger des données à partir de nombreuses sources de données différentes.
+Ces graphiques peuvent ensuite être incorporés dans le Portail Azure correctement à l’aide de la fonctionnalité de tableau de bord. Pour les utilisateurs ayant des exigences plus précises, telles que la possibilité d’accéder à plusieurs niveaux de données, Azure Monitor données sont disponibles pour les [Power bi](https://powerbi.microsoft.com/). Power BI est un outil d’analyse décisionnelle à la pointe du secteur, qui peut agréger des données à partir de nombreuses sources de données différentes.
 
 ![un exemple Power BI tableau de bord](./media/azure-monitor.png)
-**Figure 7-12**. Exemple Power BI tableau de bord.
+**Figure 7-15**. Exemple Power BI tableau de bord.
 
 ## <a name="alerts"></a>Alertes
 
 Parfois, le fait d’avoir des tableaux de bord de données est insuffisant. Si personne n’est en éveil pour regarder les tableaux de bord, il peut toujours y avoir plusieurs heures avant que le problème soit résolu, voire détecté. À cette fin, Azure Monitor fournit également une solution d' [alerte](https://docs.microsoft.com/azure/azure-monitor/platform/alerts-overview)de pointe. Les alertes peuvent être déclenchées par un large éventail de conditions, notamment :
 
-- Valeurs de métriques
-- Requêtes de recherche dans les journaux
-- Événements du journal d’activité
-- Intégrité de la plateforme Azure sous-jacente
-- Tests de disponibilité des sites Web
+- Valeurs de métrique
+- Requêtes de recherche de journal
+- Événements du journal d'activité
+- Contrôle d’intégrité de la plateforme Azure sous-jacente
+- Tests de disponibilité des sites web
 
 Lorsqu’elles sont déclenchées, les alertes peuvent effectuer une grande variété de tâches. Du côté simple, les alertes peuvent simplement envoyer une notification par courrier électronique à une liste de diffusion ou un message texte à une personne. Des alertes plus impliquées peuvent déclencher un flux de travail dans un outil tel que PagerDuty, qui est à l’origine de l’appel d’une application particulière. Les alertes peuvent déclencher des actions dans [Microsoft Flow](https://flow.microsoft.com/) le déverrouillage des possibilités presque illimitées pour les flux de travail.
 
-Comme les causes courantes des alertes sont identifiées, les alertes peuvent être améliorées avec des détails sur les causes courantes des alertes et les étapes à suivre pour les résoudre. Les déploiements d’applications natives dans le Cloud extrêmement éprouvés peuvent choisir de déclencher des tâches d’auto-réparation, qui effectuent des actions telles que la suppression de nœuds défaillants d’un groupe identique ou le déclenchement d’une activité de mise à l’échelle automatique. Il se peut qu’il ne soit plus nécessaire de réveiller le personnel sur 2AM pour résoudre un problème de site actif, car le système sera en mesure de s’adapter pour compenser ou au moins LIMP, jusqu’à ce que quelqu’un arrive au travail le lendemain matin.
+Comme les causes courantes des alertes sont identifiées, les alertes peuvent être améliorées avec des détails sur les causes courantes des alertes et les étapes à suivre pour les résoudre. Les déploiements d’applications Cloud-natives très matures peuvent choisir de déclencher des tâches de réparation spontanée, qui effectuent des actions telles que la suppression de nœuds défaillants d’un groupe identique ou le déclenchement d’une activité de mise à l’échelle automatique. Il se peut qu’il ne soit plus nécessaire de réveiller le personnel sur 2AM pour résoudre un problème de site actif, car le système sera en mesure de s’adapter pour compenser ou au moins LIMP, jusqu’à ce que quelqu’un arrive au travail le lendemain matin.
 
 Azure Monitor s’appuie automatiquement sur Machine Learning pour comprendre les paramètres de fonctionnement normaux des applications déployées. Cela lui permet de détecter les services qui fonctionnent en dehors de leurs paramètres normaux. Par exemple, le trafic de jour de la semaine classique sur le site peut être de 10 000 demandes par minute. Puis, pour une semaine donnée, soudain, le nombre de demandes atteint un nombre de demandes 20 000 très inhabituelles par minute. La [détection intelligente](https://docs.microsoft.com/azure/azure-monitor/app/proactive-diagnostics) remarquera cet écart par rapport à la norme et déclenchera une alerte. En même temps, l’analyse des tendances est suffisamment intelligente pour éviter de déclencher des faux positifs lorsque la charge du trafic est attendue.
+
+## <a name="references"></a>References
+
+- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/overview)
+- [Smart Alert Management-allumage-vidéo](https://oxfordcomputergroup.com/resourceso365-security-native-cloud-authentication/)
 
 >[!div class="step-by-step"]
 >[Précédent](monitoring-azure-kubernetes.md)

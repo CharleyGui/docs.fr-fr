@@ -3,13 +3,13 @@ title: Utiliser des données dans les applications ASP.NET Core
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Utilisation de données dans les applications ASP.NET Core
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: d3c91f594eedd2636cbf08285f0dee352bc4835a
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 12/04/2019
+ms.openlocfilehash: f37bdca688559236d9b07b97f7ee7459b3be4f39
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777117"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449346"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -200,9 +200,9 @@ private void ConfigureOrder(EntityTypeBuilder<Order> builder)
 }
 ```
 
-Dans cet exemple, la propriété `ShipToAddress` est de type `Address`. `Address` est un objet de valeur doté de plusieurs propriétés telles que `Street` et `City`. EF Core mappe l’objet `Order` à sa table avec une colonne par propriété `Address`, en faisant précéder chaque nom de colonne par le nom de la propriété. Dans cet exemple, la table `Order` doit inclure des colonnes telles que `ShipToAddress_Street` et `ShipToAddress_City`.
+Dans cet exemple, la propriété `ShipToAddress` est de type `Address`. `Address` est un objet de valeur doté de plusieurs propriétés telles que `Street` et `City`. EF Core mappe l’objet `Order` à sa table avec une colonne par propriété `Address`, en faisant précéder chaque nom de colonne par le nom de la propriété. Dans cet exemple, la table `Order` doit inclure des colonnes telles que `ShipToAddress_Street` et `ShipToAddress_City`. Il est également possible de stocker des types détenus dans des tables distinctes, si vous le souhaitez.
 
-[EF Core 2.2 prend désormais en charge les collections d’entités détenues](https://docs.microsoft.com/ef/core/what-is-new/ef-core-2.2#collections-of-owned-entities)
+En savoir plus sur la [prise en charge des entités](/ef/core/modeling/owned-entities)détenues dans EF Core.
 
 ### <a name="resilient-connections"></a>Connexions résilientes
 
@@ -242,7 +242,7 @@ Toutefois, si votre code lance une transaction à l’aide de BeginTransaction, 
 
 System.InvalidOperationException : La stratégie d’exécution configurée « SqlServerRetryingExecutionStrategy » ne prend pas en charge les transactions lancées par l’utilisateur. Utilisez la stratégie d’exécution retournée par « DbContext. Database. CreateExecutionStrategy () » pour exécuter toutes les opérations dans la transaction comme une unité renouvelable.
 
-La solution consiste à appeler manuellement la stratégie d’exécution EF avec un délégué représentant tout ce qui doit être exécuté. Si une défaillance passagère se produit, la stratégie d’exécution appelle à nouveau le délégué. Le code suivant montre comment implémenter cette approche :
+La solution consiste à appeler manuellement la stratégie d’exécution EF avec un délégué représentant tout ce qui doit être exécuté. En cas d’échec passager, la stratégie d’exécution appelle de nouveau le délégué. Le code suivant montre comment implémenter cette approche :
 
 ```csharp
 // Use of an EF Core resiliency strategy when using multiple DbContexts
@@ -350,7 +350,7 @@ Azure Cosmos DB est un service de base de données NoSQL entièrement géré qui
 
 **Figure 8-2.** Azure Cosmos DB Organisation des ressources.
 
-Le langage de requête Azure Cosmos DB est une interface simple mais puissante pour l’interrogation de documents JSON. Il prend en charge un sous-ensemble de la grammaire ANSI SQL et ajoute l’intégration étroite de l’appel de fonction, de la construction d’objet, des tableaux et des objets JavaScript.
+Le langage de requête Azure Cosmos DB est une interface simple mais puissante pour l’interrogation de documents JSON. Le langage prend en charge un sous-ensemble de syntaxe ANSI SQL et ajoute une intégration approfondie des objets JavaScript, des tableaux, de la construction d'objets et de l'appel de fonctions.
 
 **Références : Azure Cosmos DB**
 

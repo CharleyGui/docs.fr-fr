@@ -3,13 +3,13 @@ title: Architectures courantes des applications web
 description: Architecturer des applications web modernes avec ASP.NET Core et Azure | Explorer les architectures courantes des applications web
 author: ardalis
 ms.author: wiwagn
-ms.date: 01/30/2019
-ms.openlocfilehash: 6a4e971c1cb19a12710ad7893378a49758b4016e
-ms.sourcegitcommit: 68a4b28242da50e1d25aab597c632767713a6f81
+ms.date: 12/04/2019
+ms.openlocfilehash: 7ec0d9cece40ba8a99e8ab5e028f7ac491ed6f4d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/06/2019
-ms.locfileid: "74884239"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450174"
 ---
 # <a name="common-web-application-architectures"></a>Architectures courantes des applications web
 
@@ -40,7 +40,7 @@ Pour résoudre ces problèmes, les applications se transforment souvent en solut
 
 ## <a name="what-are-layers"></a>Qu’est-ce qu’une architecture en couches ?
 
-Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Basée sur le principe de séparation des préoccupations, cette solution contribue à maintenir le code base parfaitement organisé à mesure qu’il grossit, ce qui permet aux développeurs de retrouver facilement les fonctionnalités implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
+Quand une application devient complexe, un moyen de gérer cette complexité est de scinder l’application selon ses responsabilités ou préoccupations. Cela respecte le principe de séparation des préoccupations et peut aider à maintenir une structure de code en pleine croissance, afin que les développeurs puissent facilement trouver où certaines fonctionnalités sont implémentées. L’architecture en couches offre d’autres avantages que la simple organisation du code.
 
 En effet, l’organisation du code en couches permet également la réutilisation des fonctionnalités communes de bas niveau dans l’ensemble de l’application. Cette possibilité est intéressante, car elle réduit la quantité de code à écrire et permet la standardisation de l’application sur une implémentation unique, selon le principe [DRY (« Ne vous répétez pas »)](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
@@ -99,8 +99,7 @@ L’approche la plus simple pour mettre à l’échelle une application web dans
 
 Les applications conçues selon le principe d’inversion des dépendances et les principes DDD (conception pilotée par le domaine) présentent au final plus ou moins la même architecture. Les noms donnés à cette architecture ont beaucoup varié au fil des années. Au début, on l’a nommée architecture hexagonale, puis architecture ports-adaptateurs. Plus récemment, on l’a appelée [architecture en oignon](https://jeffreypalermo.com/blog/the-onion-architecture-part-1/) ou [architecture propre](https://8thlight.com/blog/uncle-bob/2012/08/13/the-clean-architecture.html). Cette dernière désignation, architecture propre, est celle utilisée pour qualifier l’architecture utilisée dans ce livre électronique.
 
-> [!NOTE]
-> Ce terme s’applique aussi bien aux applications conçues selon les principes DDD qu’à celles qui ne le sont pas. Les premières peuvent être désignées sous le terme combiné « architecture DDD propre ».
+L’application de référence eShopOnWeb utilise l’approche propre à l’architecture pour organiser son code en projets. Vous pouvez trouver un modèle de solution que vous pouvez utiliser comme point de départ pour votre propre ASP.NET Core sur le référentiel GitHub [/cleanarchitecture](https://github.com/ardalis/cleanarchitecture) .
 
 L’architecture propre met la logique métier et le modèle d’application au centre même de l’application. Au lieu que la logique métier dépende des préoccupations de l’accès aux données ou d’une autre infrastructure, cette dépendance est inversée : les détails de l’infrastructure et de l’implémentation dépendent du noyau de l’application. Cela s’obtient par la définition d’abstractions, ou interfaces, dans la couche Noyau de l’application, lesquels sont ensuite implémentés par les types définis dans la couche Infrastructure. Cette architecture est souvent représentée sous la forme d’une série de cercles concentriques, à l’image des couches d’un oignon. La figure 5-7 montre un exemple de ce style de représentation architecturale.
 
@@ -169,9 +168,9 @@ Dans une application ASP.NET Core MVC, la couche Interface utilisateur est le po
 
 ### <a name="ui-layer-types"></a>Types de la couche Interface utilisateur
 
-- Contrôleurs
-- Filtres.
-- Affichages
+- Controllers
+- Filtres
+- Les vues
 - ViewModels
 - Démarrage
 
@@ -186,7 +185,7 @@ Vous pouvez créer une application (ou service) web unique et monolithique, et l
 
 Pour gérer ce modèle, vous déployez un seul conteneur pour représenter l’application. Pour effectuer une mise à l’échelle, vous ajoutez simplement des copies supplémentaires avec un équilibreur de charge en frontal. Cette simplicité provient de la gestion d’un seul déploiement dans un seul conteneur ou une seule machine virtuelle.
 
-![Figure 5-13](./media/image5-13.png)
+![Figure 5-13](./media/image5-13.png)
 
 Vous pouvez inclure plusieurs couches internes, composants ou bibliothèques dans chaque conteneur, comme illustré dans la figure 5-13. Cependant, d’après le principe des conteneurs selon lequel « _un conteneur fait une chose et la fait dans un seul processus_ », ce modèle monolithique peut être une source de conflit.
 
@@ -198,7 +197,7 @@ En plus du problème de la mise à l’échelle globale, quand des modifications
 
 L’approche architecturale monolithique est fréquemment choisie pour le développement dans les organisations. Beaucoup de ces organisations sont satisfaites des résultats obtenus, mais certaines se heurtent aux limites de ce modèle d’architecture. Les organisations ont souvent conçu leurs applications d’après ce modèle, car les outils et l’infrastructure étaient trop complexes pour concevoir des architectures orientées services (SOA). Par ailleurs, elles ne voyaient pas la nécessité de changer de modèle tant que leur application ne grossissait pas trop. Si vous vous heurtez aux limites de l’approche monolithique, la prochaine étape logique pour vous est peut-être de scinder votre application pour mieux tirer parti des conteneurs et des microservices.
 
-![Figure 5-14](./media/image5-14.png)
+![Figure 5-14](./media/image5-14.png)
 
 Le déploiement d’applications monolithiques dans Microsoft Azure est possible en utilisant des machines virtuelles dédiées pour chaque instance. Avec [Azure Virtual Machine Scale Sets](https://docs.microsoft.com/azure/virtual-machine-scale-sets/), vous pouvez facilement mettre à l’échelle les machines virtuelles. [Azure App Service](https://azure.microsoft.com/services/app-service/) peut également exécuter des applications monolithiques et facilement mettre à l’échelle des instances sans nécessiter une gestion des machines virtuelles. Azure App Service peut également exécuter des instances uniques de conteneurs Docker, ce qui simplifie le déploiement. Avec Docker, vous pouvez déployer une seule machine virtuelle comme hôte Docker et exécuter plusieurs instances. Vous pouvez gérer la mise à l’échelle à l’aide de l’équilibreur de charge Azure, comme indiqué dans la figure 5-14.
 
@@ -212,7 +211,7 @@ Le déploiement de mises à jour comme images Docker est beaucoup plus rapide et
 
 Comme les conteneurs sont immuables de par leur conception même, il n’y a pas de risques d’endommagement des machines virtuelles, au contraire des scripts de mise à jour qui peuvent oublier de prendre en compte une configuration ou un fichier spécifique sur le disque.
 
-Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Vous ne direz plus : « Comment cela se fait-il que cela fonctionne sur ma machine, mais pas en production ? ».
+Vous pouvez utiliser des conteneurs Docker pour effectuer un déploiement monolithique d’applications web simples. Cela a pour effet d’améliorer les pipelines d’intégration continue et de déploiement continu et cela contribuer à la réussite du déploiement en production. Plus de « il fonctionne sur mon ordinateur, pourquoi ne fonctionne-t-il pas en production ? »
 
 Une architecture basée sur des microservices présente de nombreux avantages, mais ces avantages se payent par une complexité accrue. Dans certains cas, les coûts l’emportent sur les avantages, de sorte qu’il est préférable d’utiliser une application à déploiement monolithique s’exécutant dans un petit nombre de conteneurs, voire dans un seul conteneur.
 
@@ -260,24 +259,22 @@ networks:
       name: nat
 ```
 
-Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Dockerfile` de `Web` :
+Le fichier `docker-compose.yml` référence le `Dockerfile` dans le projet `Web`. Le `Dockerfile` sert à spécifier le conteneur de base qui sera utilisé et la façon dont l’application sera configurée dans ce dernier. Voici le `Web` de `Dockerfile` :
 
 ```Dockerfile
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
 WORKDIR /app
 
+COPY *.sln .
 COPY . .
 WORKDIR /app/src/Web
 RUN dotnet restore
 
 RUN dotnet publish -c Release -o out
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:2.2 AS runtime
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS runtime
 WORKDIR /app
 COPY --from=build /app/src/Web/out ./
-
-# Optional: Set this here if not setting it from docker-compose.yml
-# ENV ASPNETCORE_ENVIRONMENT Development
 
 ENTRYPOINT ["dotnet", "Web.dll"]
 ```
@@ -298,7 +295,7 @@ Si vous voulez ajouter la prise en charge de Docker à votre application à l’
   <https://jeffreypalermo.com/blog/the-onion-architecture-part-1/>
 - **Le modèle référentiel**  
   <https://deviq.com/repository-pattern/>
-- **Exemple d’une solution d’architecture propre**  
+- **Modèle de solution d’architecture propre**  
   <https://github.com/ardalis/cleanarchitecture>
 - **Architecting Microservices (livre électronique)**  
   <https://aka.ms/MicroservicesEbook>
