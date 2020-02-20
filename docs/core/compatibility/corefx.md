@@ -2,36 +2,40 @@
 title: Modifications importantes de la bibliothèque de classes de base
 description: Répertorie les dernières modifications apportées à .NET CoreFx, la bibliothèque de classes de base.
 ms.date: 09/20/2019
-ms.openlocfilehash: 9e8a00abfae8bf8f5301a4879cb5274492a2b6fd
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 7c59f2a96545e74e4099b6078ff52009740699c6
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093082"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449549"
 ---
-# <a name="corefx-breaking-changes"></a><span data-ttu-id="ba045-103">Modifications avec rupture CoreFx</span><span class="sxs-lookup"><span data-stu-id="ba045-103">CoreFx breaking changes</span></span>
+# <a name="corefx-breaking-changes"></a><span data-ttu-id="fb9dc-103">Modifications avec rupture CoreFx</span><span class="sxs-lookup"><span data-stu-id="fb9dc-103">CoreFx breaking changes</span></span>
 
-<span data-ttu-id="ba045-104">CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="ba045-104">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
+<span data-ttu-id="fb9dc-104">CoreFx fournit les primitives et d’autres types généraux utilisés par .NET Core.</span><span class="sxs-lookup"><span data-stu-id="fb9dc-104">CoreFx provides the primitives and other general types used by .NET Core.</span></span>
 
-<span data-ttu-id="ba045-105">Les modifications avec rupture suivantes sont documentées sur cette page :</span><span class="sxs-lookup"><span data-stu-id="ba045-105">The following breaking changes are documented on this page:</span></span>
+<span data-ttu-id="fb9dc-105">Les modifications avec rupture suivantes sont documentées sur cette page :</span><span class="sxs-lookup"><span data-stu-id="fb9dc-105">The following breaking changes are documented on this page:</span></span>
 
-- [<span data-ttu-id="ba045-106">API qui signalent la version du produit et non de la version du fichier</span><span class="sxs-lookup"><span data-stu-id="ba045-106">APIs that report version now report product and not file version</span></span>](#apis-that-report-version-now-report-product-and-not-file-version)
-- [<span data-ttu-id="ba045-107">Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive</span><span class="sxs-lookup"><span data-stu-id="ba045-107">Custom EncoderFallbackBuffer instances cannot fall back recursively</span></span>](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively)
-- [<span data-ttu-id="ba045-108">Modifications du comportement de l’analyse et de la mise en forme à virgule flottante</span><span class="sxs-lookup"><span data-stu-id="ba045-108">Floating point formatting and parsing behavior changes</span></span>](#floating-point-formatting-and-parsing-behavior-changed)
-- [<span data-ttu-id="ba045-109">Les opérations d’analyse de virgule flottante n’échouent plus ou lèvent une exception OverflowException</span><span class="sxs-lookup"><span data-stu-id="ba045-109">Floating-point parsing operations no longer fail or throw an OverflowException</span></span>](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception)
-- [<span data-ttu-id="ba045-110">InvalidAsynchronousStateException déplacé vers un autre assembly</span><span class="sxs-lookup"><span data-stu-id="ba045-110">InvalidAsynchronousStateException moved to another assembly</span></span>](#invalidasynchronousstateexception-moved-to-another-assembly)
-- [<span data-ttu-id="ba045-111">NET Core 3,0 suit les meilleures pratiques Unicode lors du remplacement de séquences d’octets UTF-8 incorrectes</span><span class="sxs-lookup"><span data-stu-id="ba045-111">NET Core 3.0 follows Unicode best practices when replacing ill-formed UTF-8 byte sequences</span></span>](#net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences)
-- [<span data-ttu-id="ba045-112">TypeDescriptionProviderAttribute déplacé vers un autre assembly</span><span class="sxs-lookup"><span data-stu-id="ba045-112">TypeDescriptionProviderAttribute moved to another assembly</span></span>](#typedescriptionproviderattribute-moved-to-another-assembly)
-- [<span data-ttu-id="ba045-113">ZipArchiveEntry ne gère plus les archives avec des tailles d’entrée incohérentes</span><span class="sxs-lookup"><span data-stu-id="ba045-113">ZipArchiveEntry no longer handles archives with inconsistent entry sizes</span></span>](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes)
-- [<span data-ttu-id="ba045-114">Le type d’exception du sérialiseur JSON est passé de JsonException à NotSupportedException</span><span class="sxs-lookup"><span data-stu-id="ba045-114">JSON serializer exception type changed from JsonException to NotSupportedException</span></span>](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception)
-- [<span data-ttu-id="ba045-115">Modification de la sémantique de (String) NULL dans Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="ba045-115">Change in semantics of (string)null in Utf8JsonWriter</span></span>](#change-in-semantics-of-stringnull-in-utf8jsonwriter)
-- [<span data-ttu-id="ba045-116">Les méthodes JsonEncodedText. Encode ont un argument JavaScriptEncoder supplémentaire</span><span class="sxs-lookup"><span data-stu-id="ba045-116">JsonEncodedText.Encode methods have an additional JavaScriptEncoder argument</span></span>](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument)
-- [<span data-ttu-id="ba045-117">Signature de JsonFactoryConverter. CreateConverter modifiée</span><span class="sxs-lookup"><span data-stu-id="ba045-117">JsonFactoryConverter.CreateConverter signature changed</span></span>](#jsonfactoryconvertercreateconverter-signature-changed)
-- [<span data-ttu-id="ba045-118">Modifications de l’API JsonElement</span><span class="sxs-lookup"><span data-stu-id="ba045-118">JsonElement API changes</span></span>](#jsonelement-api-changes)
-- [<span data-ttu-id="ba045-119">Champs privés ajoutés aux types struct intégrés</span><span class="sxs-lookup"><span data-stu-id="ba045-119">Private fields added to built-in struct types</span></span>](#private-fields-added-to-built-in-struct-types)
-- [<span data-ttu-id="ba045-120">Modification de la valeur par défaut de UseShellExecute</span><span class="sxs-lookup"><span data-stu-id="ba045-120">Change in default value of UseShellExecute</span></span>](#change-in-default-value-of-useshellexecute)
+| <span data-ttu-id="fb9dc-106">Modification avec rupture</span><span class="sxs-lookup"><span data-stu-id="fb9dc-106">Breaking change</span></span> | <span data-ttu-id="fb9dc-107">Version introduite</span><span class="sxs-lookup"><span data-stu-id="fb9dc-107">Version introduced</span></span> |
+| - | :-: |
+| [<span data-ttu-id="fb9dc-108">API qui signalent la version du produit et non de la version du fichier</span><span class="sxs-lookup"><span data-stu-id="fb9dc-108">APIs that report version now report product and not file version</span></span>](#apis-that-report-version-now-report-product-and-not-file-version) | <span data-ttu-id="fb9dc-109">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-109">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-110">Les instances EncoderFallbackBuffer personnalisées ne peuvent pas être rétablies de manière récursive</span><span class="sxs-lookup"><span data-stu-id="fb9dc-110">Custom EncoderFallbackBuffer instances cannot fall back recursively</span></span>](#custom-encoderfallbackbuffer-instances-cannot-fall-back-recursively) | <span data-ttu-id="fb9dc-111">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-111">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-112">Modifications du comportement de l’analyse et de la mise en forme à virgule flottante</span><span class="sxs-lookup"><span data-stu-id="fb9dc-112">Floating point formatting and parsing behavior changes</span></span>](#floating-point-formatting-and-parsing-behavior-changed) | <span data-ttu-id="fb9dc-113">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-113">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-114">Les opérations d’analyse de virgule flottante n’échouent plus ou lèvent une exception OverflowException</span><span class="sxs-lookup"><span data-stu-id="fb9dc-114">Floating-point parsing operations no longer fail or throw an OverflowException</span></span>](#floating-point-parsing-operations-no-longer-fail-or-throw-an-overflowexception) | <span data-ttu-id="fb9dc-115">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-115">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-116">InvalidAsynchronousStateException déplacé vers un autre assembly</span><span class="sxs-lookup"><span data-stu-id="fb9dc-116">InvalidAsynchronousStateException moved to another assembly</span></span>](#invalidasynchronousstateexception-moved-to-another-assembly) | <span data-ttu-id="fb9dc-117">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-117">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-118">NET Core 3,0 suit les meilleures pratiques Unicode lors du remplacement de séquences d’octets UTF-8 incorrectes</span><span class="sxs-lookup"><span data-stu-id="fb9dc-118">NET Core 3.0 follows Unicode best practices when replacing ill-formed UTF-8 byte sequences</span></span>](#net-core-30-follows-unicode-best-practices-when-replacing-ill-formed-utf-8-byte-sequences) | <span data-ttu-id="fb9dc-119">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-119">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-120">TypeDescriptionProviderAttribute déplacé vers un autre assembly</span><span class="sxs-lookup"><span data-stu-id="fb9dc-120">TypeDescriptionProviderAttribute moved to another assembly</span></span>](#typedescriptionproviderattribute-moved-to-another-assembly) | <span data-ttu-id="fb9dc-121">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-121">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-122">ZipArchiveEntry ne gère plus les archives avec des tailles d’entrée incohérentes</span><span class="sxs-lookup"><span data-stu-id="fb9dc-122">ZipArchiveEntry no longer handles archives with inconsistent entry sizes</span></span>](#ziparchiveentry-no-longer-handles-archives-with-inconsistent-entry-sizes) | <span data-ttu-id="fb9dc-123">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-123">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-124">Le type d’exception du sérialiseur JSON est passé de JsonException à NotSupportedException</span><span class="sxs-lookup"><span data-stu-id="fb9dc-124">JSON serializer exception type changed from JsonException to NotSupportedException</span></span>](#json-serializer-exception-type-changed-from-jsonexception-to-notsupportedexception) | <span data-ttu-id="fb9dc-125">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-125">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-126">Modification de la sémantique de (String) NULL dans Utf8JsonWriter</span><span class="sxs-lookup"><span data-stu-id="fb9dc-126">Change in semantics of (string)null in Utf8JsonWriter</span></span>](#change-in-semantics-of-stringnull-in-utf8jsonwriter) | <span data-ttu-id="fb9dc-127">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-127">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-128">Les méthodes JsonEncodedText. Encode ont un argument JavaScriptEncoder supplémentaire</span><span class="sxs-lookup"><span data-stu-id="fb9dc-128">JsonEncodedText.Encode methods have an additional JavaScriptEncoder argument</span></span>](#jsonencodedtextencode-methods-have-an-additional-javascriptencoder-argument) | <span data-ttu-id="fb9dc-129">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-129">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-130">Signature de JsonFactoryConverter. CreateConverter modifiée</span><span class="sxs-lookup"><span data-stu-id="fb9dc-130">JsonFactoryConverter.CreateConverter signature changed</span></span>](#jsonfactoryconvertercreateconverter-signature-changed) | <span data-ttu-id="fb9dc-131">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-131">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-132">Modifications de l’API JsonElement</span><span class="sxs-lookup"><span data-stu-id="fb9dc-132">JsonElement API changes</span></span>](#jsonelement-api-changes) | <span data-ttu-id="fb9dc-133">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-133">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-134">FieldInfo. SetValue lève une exception pour les champs statiques, en initialisation seule</span><span class="sxs-lookup"><span data-stu-id="fb9dc-134">FieldInfo.SetValue throws exception for static, init-only fields</span></span>](#fieldinfosetvalue-throws-exception-for-static-init-only-fields) | <span data-ttu-id="fb9dc-135">3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-135">3.0</span></span> |
+| [<span data-ttu-id="fb9dc-136">Champs privés ajoutés aux types struct intégrés</span><span class="sxs-lookup"><span data-stu-id="fb9dc-136">Private fields added to built-in struct types</span></span>](#private-fields-added-to-built-in-struct-types) | <span data-ttu-id="fb9dc-137">2.1</span><span class="sxs-lookup"><span data-stu-id="fb9dc-137">2.1</span></span> |
+| [<span data-ttu-id="fb9dc-138">Modification de la valeur par défaut de UseShellExecute</span><span class="sxs-lookup"><span data-stu-id="fb9dc-138">Change in default value of UseShellExecute</span></span>](#change-in-default-value-of-useshellexecute) | <span data-ttu-id="fb9dc-139">2.1</span><span class="sxs-lookup"><span data-stu-id="fb9dc-139">2.1</span></span> |
+| [<span data-ttu-id="fb9dc-140">UnauthorizedAccessException levée par FileSystemInfo. Attributes</span><span class="sxs-lookup"><span data-stu-id="fb9dc-140">UnauthorizedAccessException thrown by FileSystemInfo.Attributes</span></span>](#unauthorizedaccessexception-thrown-by-filesysteminfoattributes) | <span data-ttu-id="fb9dc-141">1.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-141">1.0</span></span> |
 
-## <a name="net-core-30"></a><span data-ttu-id="ba045-121">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="ba045-121">.NET Core 3.0</span></span>
+## <a name="net-core-30"></a><span data-ttu-id="fb9dc-142">.NET Core 3.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-142">.NET Core 3.0</span></span>
 
 [!INCLUDE[APIs that report version now report product and not file version](~/includes/core-changes/corefx/3.0/version-information-changes.md)]
 
@@ -65,13 +69,9 @@ ms.locfileid: "77093082"
 
 ***
 
-## <a name="net-core-30-preview-9"></a><span data-ttu-id="ba045-122">.NET Core 3,0 Preview 9</span><span class="sxs-lookup"><span data-stu-id="ba045-122">.NET Core 3.0 Preview 9</span></span>
-
 [!INCLUDE[JSON serializer exception type changed from JsonException to NotSupportedException](~/includes/core-changes/corefx/3.0/serializer-throws-notsupportedexception.md)]
 
 ***
-
-## <a name="net-core-30-preview-8"></a><span data-ttu-id="ba045-123">.NET Core 3,0 Preview 8</span><span class="sxs-lookup"><span data-stu-id="ba045-123">.NET Core 3.0 Preview 8</span></span>
 
 [!INCLUDE[Change in semantics of (string)null in Utf8JsonWriter](~/includes/core-changes/corefx/3.0/change-in-null-in-utf8jsonwriter.md)]
 
@@ -85,18 +85,26 @@ ms.locfileid: "77093082"
 
 ***
 
-## <a name="net-core-30-preview-7"></a><span data-ttu-id="ba045-124">.NET Core 3,0 Preview 7</span><span class="sxs-lookup"><span data-stu-id="ba045-124">.NET Core 3.0 Preview 7</span></span>
-
 [!INCLUDE[JsonElement API changes](~/includes/core-changes/corefx/3.0/jsonelement-api-changes.md)]
 
 ***
 
-## <a name="net-core-21"></a><span data-ttu-id="ba045-125">.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="ba045-125">.NET Core 2.1</span></span>
+[!INCLUDE [FieldInfo.SetValue throws exception for static, init-only fields](~/includes/core-changes/corefx/3.0/fieldinfo-setvalue-exception.md)]
+
+***
+
+## <a name="net-core-21"></a><span data-ttu-id="fb9dc-143">.NET Core 2.1</span><span class="sxs-lookup"><span data-stu-id="fb9dc-143">.NET Core 2.1</span></span>
 
 [!INCLUDE[Private fields added to built-in struct types](~/includes/core-changes/corefx/2.1/instantiate-struct.md)]
 
 ***
 
 [!INCLUDE[Change in default value of UseShellExecute](~/includes/core-changes/corefx/2.1/process-start-changes.md)]
+
+***
+
+## <a name="net-core-10"></a><span data-ttu-id="fb9dc-144">.NET Core 1.0</span><span class="sxs-lookup"><span data-stu-id="fb9dc-144">.NET Core 1.0</span></span>
+
+[!INCLUDE [UnauthorizedAccessException thrown by FileSystemInfo.Attributes](~/includes/core-changes/corefx/1.0/filesysteminfo-attributes-exceptions.md)]
 
 ***
