@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: 6e1c7881aa415ea54307d80214001a2f0fe5b4a6
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: af1b374cd14d5070194c035024ce2328c9016646
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920465"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503543"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>Prise en main de .NET Core à l’aide de l’CLI .NET Core
 
@@ -19,7 +19,7 @@ Cet article vous montre comment commencer à développer des applications .NET C
 
 Si vous n’êtes pas familiarisé avec le CLI .NET Core, consultez la [vue d’ensemble de CLI .net Core](../tools/index.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables requises
 
 - [Kit SDK .NET Core 3,1](https://dotnet.microsoft.com/download) ou versions ultérieures.
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -28,7 +28,7 @@ Si vous n’êtes pas familiarisé avec le CLI .NET Core, consultez la [vue d’
 
 Vous pouvez [afficher ou télécharger l’exemple de code](https://github.com/dotnet/samples/tree/master/core/console-apps/HelloMsBuild) à partir du dépôt GitHub dotnet/samples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-Ouvrez une invite de commandes et créez un dossier nommé *Hello*. Accédez au dossier créé et tapez ce qui suit :
+Ouvrez une invite de commandes et créez un dossier nommé *Hello*. Accédez au dossier que vous avez créé et tapez ce qui suit.
 
 ```dotnetcli
 dotnet new console
@@ -64,17 +64,25 @@ Suivons une procédure pas à pas rapide :
 
     [dotnet Run](../tools/dotnet-run.md) appelle [dotnet Build](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, puis appelle `dotnet <assembly.dll>` pour exécuter l’application cible.
     
-    ```console
+    ```dotnetcli
     dotnet run
+    ```
 
+    Vous recevez la sortie suivante.
+
+    ```console
     Hello World!
     ```
     
     Vous pouvez également exécuter `dotnet build` pour compiler le code sans exécuter les applications console de génération. Il en résulte une application compilée, sous la forme d’un fichier DLL, en fonction du nom du projet. Dans ce cas, le fichier créé est nommé *Hello. dll*. Cette application peut être exécutée avec `dotnet bin\Debug\netcoreapp3.1\Hello.dll` sur Windows (utilisez `/` pour les systèmes non-Windows).
     
-    ```console
+    ```dotnetcli
     dotnet bin\Debug\netcoreapp3.1\Hello.dll
+    ```
 
+    Vous recevez la sortie suivante.
+
+    ```console
     Hello World!
     ```
     
@@ -98,8 +106,13 @@ Modifions un peu le programme. Les nombres Fibonacci sont amusants. nous allons 
 
 03. Exécutez le programme en passant un paramètre à l’application. Lorsque vous utilisez la commande `dotnet` pour exécuter une application, ajoutez `--` à la fin. Tout ce qui se trouve à droite de `--` est passé en tant que paramètre à l’application. Dans l’exemple suivant, la valeur `John` est passée à l’application.
 
+    ```dotnetcli
+    dotnet run -- John
+    ```
+
+    Vous recevez la sortie suivante.
+
     ```console
-    $ dotnet run -- John
     Hello John!
     Fibonacci Numbers 1-15:
     1: 0
@@ -119,7 +132,7 @@ Modifions un peu le programme. Les nombres Fibonacci sont amusants. nous allons 
     15: 377
     ```
 
-Et voilà ! Vous pouvez modifier *Program.cs* comme vous le souhaitez.
+Et le tour est joué ! Vous pouvez modifier *Program.cs* comme vous le souhaitez.
 
 ## <a name="working-with-multiple-files"></a>Utilisation de plusieurs fichiers
 
@@ -135,10 +148,15 @@ Les fichiers uniques conviennent parfaitement aux programmes simples et uniques,
 
 03. Exécutez [dotnet Build](../tools/dotnet-build.md) pour compiler les modifications.
 
-04. Exécutez votre application en exécutant [dotnet Run](../tools/dotnet-run.md). Voici la sortie du programme :
+04. Exécutez votre application en exécutant [dotnet Run](../tools/dotnet-run.md).
+
+    ```dotnetcli
+    dotnet run
+    ```
+
+    Vous recevez la sortie suivante.
 
     ```console
-    $ dotnet run
     0
     1
     1
@@ -156,12 +174,17 @@ Les fichiers uniques conviennent parfaitement aux programmes simples et uniques,
     377
     ```
 
-## <a name="publish-your-app"></a>Publier une application
+## <a name="publish-your-app"></a>Publier votre application
 
 Une fois que vous êtes prêt à distribuer votre application, utilisez la commande [dotnet Publish](../tools/dotnet-publish.md) pour générer le dossier de _publication_ dans _bin\\Debug\\netcoreapp 3.1\\Publish\\_ (utilisez `/` pour les systèmes non-Windows). Vous pouvez distribuer le contenu du dossier _publish_ sur d'autres plates-formes tant qu'elles ont déjà installé le runtime dotnet.
 
-```console
+```dotnetcli
 dotnet publish
+```
+
+Vous recevez une sortie similaire à ce qui suit.
+
+```console
 Microsoft (R) Build Engine version 16.4.0+e901037fe for .NET Core
 Copyright (C) Microsoft Corporation. All rights reserved.
 
@@ -174,9 +197,13 @@ La sortie ci-dessus peut varier en fonction de votre dossier actuel et du systè
 
 Vous pouvez exécuter votre application publiée avec la commande [dotnet](../tools/dotnet.md) :
 
-```console
+```dotnetcli
 dotnet bin\Debug\netcoreapp3.1\publish\Hello.dll
+```
 
+Vous recevez la sortie suivante.
+
+```console
 Hello World!
 ```
 
@@ -190,7 +217,7 @@ Hello World!
 
 ## <a name="conclusion"></a>Conclusion
 
-Et voilà ! À présent, vous pouvez commencer à utiliser les concepts de base que vous avez appris ici pour créer vos propres programmes.
+Et le tour est joué ! À présent, vous pouvez commencer à utiliser les concepts de base que vous avez appris ici pour créer vos propres programmes.
 
 ## <a name="see-also"></a>Voir aussi
 

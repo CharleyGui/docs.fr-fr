@@ -5,12 +5,12 @@ ms.date: 12/17/2019
 author: billwagner
 ms.author: wiwagn
 ms.custom: updateeachrelease
-ms.openlocfilehash: 82fbccdec0323b54d313960279fcbfeeb6033319
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 71c11825981c6259a779e1ac8f947a41618e922d
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920399"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503461"
 ---
 # <a name="how-to-remove-the-net-core-runtime-and-sdk"></a>Guide pratique pour supprimer un SDK et un Runtime .NET Core
 
@@ -28,10 +28,17 @@ En règle générale, vous avez uniquement besoin de la dernière version du SDK
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
+
+En exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+Vous recevez une sortie similaire à ce qui suit :
 
 ```console
-C:\> dotnet --list-sdks
 2.1.200-preview-007474 [C:\Program Files\dotnet\sdk]
 2.1.200-preview-007480 [C:\Program Files\dotnet\sdk]
 2.1.200-preview-007509 [C:\Program Files\dotnet\sdk]
@@ -47,8 +54,17 @@ C:\> dotnet --list-sdks
 2.1.400-preview-009063 [C:\Program Files\dotnet\sdk]
 2.1.400-preview-009088 [C:\Program Files\dotnet\sdk]
 2.1.400-preview-009171 [C:\Program Files\dotnet\sdk]
+```
 
-C:\> dotnet --list-runtimes
+Et en exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-runtimes
+```
+
+Vous recevez une sortie similaire à ce qui suit :
+
+```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.0 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.1 [C:\Program Files\dotnet\shared\Microsoft.AspNetCore.All]
@@ -66,10 +82,17 @@ Microsoft.NETCore.App 2.1.1 [C:\Program Files\dotnet\shared\Microsoft.NETCore.Ap
 Microsoft.NETCore.App 2.1.2 [C:\Program Files\dotnet\shared\Microsoft.NETCore.App]
 ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
+
+En exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+Vous recevez une sortie similaire à ce qui suit :
 
 ```console
-$ dotnet --list-sdks
 1.0.1 [/usr/share/dotnet/sdk]
 1.0.4 [/usr/share/dotnet/sdk]
 2.0.0-preview1-005977 [/usr/share/dotnet/sdk]
@@ -79,8 +102,17 @@ $ dotnet --list-sdks
 2.1.300-preview2-008530 [/usr/share/dotnet/sdk]
 2.1.300 [/usr/share/dotnet/sdk]
 2.1.301 [/usr/share/dotnet/sdk]
+```
 
-$ dotnet --list-runtimes
+Et en exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-runtimes
+```
+
+Vous recevez une sortie similaire à ce qui suit :
+
+```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [/usr/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.0 [/usr/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.1 [/usr/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -100,10 +132,17 @@ Microsoft.NETCore.App 2.1.0 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 Microsoft.NETCore.App 2.1.1 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 ```
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
+
+En exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+Vous recevez une sortie similaire à ce qui suit :
 
 ```console
-$ dotnet --list-sdks
 1.0.1 [/usr/local/share/dotnet/sdk]
 1.0.4 [/usr/local/share/dotnet/sdk]
 2.0.0-preview1-005977 [/usr/local/share/dotnet/sdk]
@@ -113,8 +152,17 @@ $ dotnet --list-sdks
 2.1.300-preview2-008530 [/usr/local/share/dotnet/sdk]
 2.1.300 [/usr/local/share/dotnet/sdk]
 2.1.301 [/usr/local/share/dotnet/sdk]
+```
 
-$ dotnet --list-runtimes
+Et en exécutant la commande suivante :
+
+```dotnetcli
+dotnet --list-runtimes
+```
+
+Vous recevez une sortie similaire à ce qui suit :
+
+```console
 Microsoft.AspNetCore.All 2.1.0-preview2-final [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -138,7 +186,7 @@ Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ## <a name="uninstall-net-core"></a>Désinstaller .NET Core
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 .NET Core utilise la boîte de dialogue **Ajout/Suppression de programmes** de Windows pour supprimer des versions du SDK et du Runtime .NET Core. L’illustration suivante montre la boîte de dialogue **Ajout/Suppression de programmes** qui répertorie les différentes versions du SDK et du Runtime .NET installées.
 
@@ -146,7 +194,7 @@ Microsoft.NETCore.App 2.1.1 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 Sélectionnez la version que vous souhaitez supprimer de votre machine et cliquez sur **Désinstaller**.
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 Sur Linux, il y a davantage d’options pour désinstaller le SDK ou le Runtime .NET Core. La meilleure méthode pour désinstaller .NET Core est de reprendre celle que vous aviez utilisée pour installer .NET Core. Les différences de processus sont fonction de la distribution que vous avez choisie et de la méthode d’installation.
 
@@ -189,7 +237,7 @@ sudo rm -rf /usr/share/dotnet/host/fxr/1.0.1
 
 Les répertoires parents du SDK et du Runtime sont répertoriés dans la sortie à l’aide des commandes `dotnet --list-sdks` et `dotnet --list-runtimes`, comme illustré plus haut.
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 Sur Mac, supprimez les SDK et les Runtimes séparément, en supprimant le répertoire contenant la version en question. Par exemple, pour supprimer la version 1.0.1 du SDK et du Runtime, utilisez les commandes bash suivantes :
 

@@ -1,27 +1,23 @@
 ---
 title: Commande dotnet pack
 description: La commande dotnet pack crée des packages NuGet pour votre projet .NET Core.
-ms.date: 08/08/2019
-ms.openlocfilehash: 057d1029e5c933912c43c178b6db8a8498f2ed57
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 865262f1eb314f9b7e8ee713c573a965e89ded93
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734123"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503645"
 ---
 # <a name="dotnet-pack"></a>dotnet pack
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
-
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet pack` : Place le code dans un package NuGet.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet pack [<PROJECT>|<SOLUTION>] [-c|--configuration] [--force] [--include-source] [--include-symbols] [--interactive]
@@ -63,13 +59,13 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 ## <a name="options"></a>Options
 
-- **`-c|--configuration {Debug|Release}`**
+- **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut est `Debug`.
+  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
 
 - **`--force`**
 
-  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*. Option disponible à partir du kit SDK .NET Core 2.0.
+  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*.
 
 - **`-h|--help`**
 
@@ -93,11 +89,11 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--no-dependencies`**
 
-  Ignore les références entre projets et restaure uniquement le projet racine. Option disponible à partir du kit SDK .NET Core 2.0.
+  Ignore les références entre projets et restaure uniquement le projet racine.
 
 - **`--no-restore`**
 
-  N’effectue pas de restauration implicite à l’exécution de la commande. Option disponible à partir du kit SDK .NET Core 2.0.
+  N’effectue pas de restauration implicite à l’exécution de la commande.
 
 - **`--nologo`**
 
@@ -109,7 +105,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
 
 - **`--runtime <RUNTIME_IDENTIFIER>`**
 
-  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Option disponible à partir du kit SDK .NET Core 2.0.
+  Spécifie le runtime cible pour lequel restaurer les packages. Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md).
 
 - **`-s|--serviceable`**
 
@@ -167,7 +163,7 @@ Par défaut, les projets web ne peuvent pas être ajoutés dans un package. Pour
   dotnet pack -p:TargetFrameworks=net45
   ```
 
-- Empaqueter le projet et utiliser un runtime spécifique (Windows 10) pour l’opération de restauration (SDK .NET Core 2.0 et versions ultérieures) :
+- Empaqueter le projet et utiliser un Runtime spécifique (Windows 10) pour l’opération de restauration :
 
   ```dotnetcli
   dotnet pack --runtime win10-x64

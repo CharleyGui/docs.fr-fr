@@ -2,27 +2,23 @@
 title: Commande dotnet nuget push
 description: La commande dotnet nuget push exécute un envoi (push) d’un package sur le serveur et le publie.
 author: karann-msft
-ms.date: 12/04/2019
-ms.openlocfilehash: a352120efa199b871e67eb8ba2442bd69a9fc4ed
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 02/14/2020
+ms.openlocfilehash: d4ef8e58908fe488c712debff3b313ac0908b43e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789885"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503659"
 ---
 # <a name="dotnet-nuget-push"></a>dotnet nuget push
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
 ## <a name="name"></a>Name
 
 `dotnet nuget push` - Exécute un push d’un package sur le serveur et le publie.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet nuget push [<ROOT>] [-d|--disable-buffering] [--force-english-output] [--interactive] [-k|--api-key] [-n|--no-symbols]
@@ -36,69 +32,69 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
 
 ## <a name="arguments"></a>Arguments
 
-* **`ROOT`**
+- **`ROOT`**
 
   Spécifie le chemin de fichier au package devant faire l’objet d’un envoi (push).
 
 ## <a name="options"></a>Options
 
-* **`-d|--disable-buffering`**
+- **`-d|--disable-buffering`**
 
   Désactive la mise en mémoire tampon pendant le transfert push vers un serveur HTTP(S) afin de réduire l’utilisation de la mémoire.
 
-* **`--force-english-output`**
+- **`--force-english-output`**
 
   Force l’application à s’exécuter avec les paramètres régionaux Anglais (culture indifférente).
 
-* **`-h|--help`**
+- **`-h|--help`**
 
   Affiche une aide brève pour la commande.
 
-* **`--interactive`**
+- **`--interactive`**
 
   Autorise la commande pour bloquer et exige une action manuelle pour des opérations comme l'authentification. Option disponible à partir du SDK .NET Core 2.2.
 
-* **`-k|--api-key <API_KEY>`**
+- **`-k|--api-key <API_KEY>`**
 
   Clé d’API pour le serveur.
 
-* **`-n|--no-symbols`**
+- **`-n|--no-symbols`**
 
   N’envoie pas les symboles (même s’ils sont présents).
 
-* **`--no-service-endpoint`**
+- **`--no-service-endpoint`**
 
   N’ajoute pas « api/v2/package » à l’URL source. Option disponible à partir du kit SDK .NET Core 2.1.
 
-* **`-s|--source <SOURCE>`**
+- **`-s|--source <SOURCE>`**
 
   Spécifie l’URL du serveur. Cette option est obligatoire, sauf si la valeur de configuration de `DefaultPushSource` est définie dans le fichier de configuration NuGet.
 
-* **`--skip-duplicate`**
+- **`--skip-duplicate`**
 
   Lors du push de plusieurs packages sur un serveur HTTP (S), traite toute réponse de conflit 409 comme un avertissement afin que l’envoi puisse continuer. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
-* **`-sk|--symbol-api-key <API_KEY>`**
+- **`-sk|--symbol-api-key <API_KEY>`**
 
   Clé d’API pour le serveur de symboles.
 
-* **`-ss|--symbol-source <SOURCE>`**
+- **`-ss|--symbol-source <SOURCE>`**
 
   Spécifie l’URL du serveur de symboles.
 
-* **`-t|--timeout <TIMEOUT>`**
+- **`-t|--timeout <TIMEOUT>`**
 
   Spécifie le délai d’attente, en secondes, pour effectuer un push vers un serveur. La valeur par défaut est 300 secondes (5 minutes). Si vous spécifiez 0 (zéro seconde), la valeur par défaut s’applique.
 
 ## <a name="examples"></a>Exemples
 
-* Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant une clé API :
+- Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant une clé API :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a
   ```
 
-* Appuyez sur *foo. nupkg* sur le serveur NuGet officiel, en spécifiant une clé API :
+- Appuyez sur *foo. nupkg* sur le serveur NuGet officiel, en spécifiant une clé API :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://api.nuget.org/v3/index.json
@@ -110,25 +106,25 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
   dotnet nuget push foo.nupkg -k 4003d786-cc37-4004-bfdf-c4f3e8ef9b3a -s https://customsource/
   ```
 
-* Effectuer une transmission de type push de *foo.nupkg* vers la source de push par défaut :
+- Effectuer une transmission de type push de *foo.nupkg* vers la source de push par défaut :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg
   ```
 
-* Effectuer une transmission de type push de *foo.symbols.nupkg* vers la source de symboles par défaut :
+- Effectuer une transmission de type push de *foo.symbols.nupkg* vers la source de symboles par défaut :
 
   ```dotnetcli
   dotnet nuget push foo.symbols.nupkg
   ```
 
-* Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant un délai d’attente de 360 secondes :
+- Envoie (push) *foo.nupkg* à la source de push par défaut, en spécifiant un délai d’attente de 360 secondes :
 
   ```dotnetcli
   dotnet nuget push foo.nupkg --timeout 360
   ```
 
-* Effectuer une transmission de type push de tous les fichiers *.nupkg* du répertoire actif vers la source de push par défaut :
+- Effectuer une transmission de type push de tous les fichiers *.nupkg* du répertoire actif vers la source de push par défaut :
 
   ```dotnetcli
   dotnet nuget push *.nupkg
@@ -138,7 +134,7 @@ La commande `dotnet nuget push` exécute un push d’un package sur le serveur e
   > Si cette commande ne fonctionne pas, cela peut être dû à un bogue qui existait dans les versions antérieures du SDK (Kit SDK .NET Core 2.1 et versions antérieures).
   > Pour résoudre ce problème, mettez à niveau votre version du SDK ou exécutez la commande suivante à la place : `dotnet nuget push **/*.nupkg`
 
-* Exécute un push de tous les fichiers *. nupkg* même si une réponse de conflit 409 est retournée par un serveur http (S) :
+- Exécute un push de tous les fichiers *. nupkg* même si une réponse de conflit 409 est retournée par un serveur http (S) :
 
   ```dotnetcli
   dotnet nuget push *.nupkg --skip-duplicate

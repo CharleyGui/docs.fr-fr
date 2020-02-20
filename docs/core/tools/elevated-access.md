@@ -3,12 +3,12 @@ title: Accès de niveau élevé pour les commandes dotnet
 description: Découvrez les bonnes pratiques concernant les commandes dotnet qui nécessitent un accès de niveau élevé.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: cf7c93a0adcae7092a61a6fc6046cd45cf00bf58
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.openlocfilehash: 1cf29012736e5b6d858ca22dc2a9b97e7e8e33ef
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
-ms.locfileid: "71216303"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503566"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Accès de niveau élevé pour les commandes dotnet
 
@@ -29,14 +29,14 @@ Les instructions suivantes montrent la méthode recommandée pour installer, ex�
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+# <a name="windows"></a>[Windows](#tab/windows)
 
 ### <a name="install-the-global-tool"></a>Installer l’outil global
 
 Si le dossier `%ProgramFiles%\dotnet-tools` existe déjà, effectuez les étapes suivantes pour vérifier si le groupe « Utilisateurs » est autorisé à écrire ou à modifier ce répertoire :
 
 - Cliquez avec le bouton droit sur le dossier `%ProgramFiles%\dotnet-tools`, puis sélectionnez **Propriétés**. La boîte de dialogue **Propriétés communes** s’ouvre. 
-- Sélectionnez l’onglet **Sécurité**. Sous **Noms de groupes ou d’utilisateurs**, vérifiez que le groupe « Utilisateurs » est autorisé à écrire ou à modifier le répertoire. 
+- Sélectionnez l’onglet **sécurité** . Sous **groupes ou noms d’utilisateurs**, vérifiez si le groupe « utilisateurs » a l’autorisation d’écrire ou de modifier le répertoire. 
 - Si le groupe « Utilisateurs » peut modifier le répertoire ou y écrire des données, utilisez un nom de répertoire autre que *dotnet-tools* lorsque vous installez les outils.
 
 Pour installer les outils, exécutez la commande suivante dans l’invite de commandes avec élévation de privilèges. Cela va créer le dossier *dotnet-tools* pendant l’installation.
@@ -73,11 +73,11 @@ TOOLCOMMAND
 dotnet tool uninstall PACKAGEID --tool-path "%ProgramFiles%\dotnet-tools"
 ```
 
-# <a name="linuxtablinux"></a>[Linux](#tab/linux)
+# <a name="linux"></a>[Linux](#tab/linux)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
-# <a name="macostabmacos"></a>[macOS](#tab/macos)
+# <a name="macos"></a>[macOS](#tab/macos)
 
 [!INCLUDE [elevated-access-unix](../../../includes/elevated-access-unix.md)]
 
@@ -93,14 +93,14 @@ Pendant le développement, vous aurez peut-être besoin de privilèges élevés 
 
 - Utilisation d’un fichier exécutable généré (fournit les meilleures performances de démarrage) :
 
-   ```bash
+   ```dotnetcli
    dotnet build
    sudo ./bin/Debug/netcoreapp3.0/APPLICATIONNAME
    ```
     
 - Utilisation de la commande [dotnet run](dotnet-run.md) avec l’indicateur `—no-build` pour éviter de générer de nouveaux fichiers binaires :
 
-   ```bash
+   ```dotnetcli
    dotnet build
    sudo dotnet run --no-build
    ```

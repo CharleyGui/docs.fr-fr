@@ -2,18 +2,18 @@
 title: Prise en main F# avec les outils en ligne de commande
 description: Apprenez à créer une solution à plusieurs projets simple sur F# à l’aide de l’CLI .net Core sur n’importe quel système d’exploitation (Windows, MacOS ou Linux).
 ms.date: 03/26/2018
-ms.openlocfilehash: aa3ed84660a951eeafc11a00ea3831f587b6d876
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 6f67314f49150e20b18734f21f24daa3ce856922
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559485"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504147"
 ---
 # <a name="get-started-with-f-with-the-net-core-cli"></a>Prise en main F# de avec le CLI .net Core
 
 Cet article explique comment vous pouvez commencer avec F# sur n’importe quel système d’exploitation (Windows, MacOS ou Linux) avec le CLI .net core. Il passe par la création d’une solution à projets multiples avec une bibliothèque de classes appelée par une application console.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Pour commencer, vous devez installer la dernière [Kit SDK .net Core](https://dotnet.microsoft.com/download).
 
@@ -102,7 +102,7 @@ La structure de répertoire suivante est générée après l’exécution de la 
             └── Library.fsproj
 ```
 
-Remplacez le contenu du fichier `Program.fs` avec le code suivant :
+Remplacez le contenu du fichier `Program.fs` par le code suivant :
 
 ```fsharp
 open System
@@ -135,7 +135,7 @@ Restaurez les dépendances NuGet, `dotnet restore` et exécutez `dotnet build` p
 
 Remplacez le répertoire par le projet de console `src/App` et exécutez le projet en passant `Hello World` en tant qu’arguments :
 
-```console
+```dotnetcli
 cd src/App
 dotnet run Hello World
 ```
@@ -149,6 +149,6 @@ I used to be Hello but now I'm ""Hello"" thanks to JSON.NET!
 I used to be World but now I'm ""World"" thanks to JSON.NET!
 ```
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Consultez ensuite la [visite guidée de F# ](../tour.md) pour en savoir plus sur les F# différentes fonctionnalités.

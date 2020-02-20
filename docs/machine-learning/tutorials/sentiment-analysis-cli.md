@@ -6,12 +6,12 @@ ms.author: cesardl
 ms.date: 12/23/2019
 ms.custom: mvc
 ms.topic: tutorial
-ms.openlocfilehash: caf12296b208b3d2e57c3a74300cced225e4db66
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 38ca93f62a066bade988a89b704fca26368b0b2b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738760"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504158"
 ---
 # <a name="analyze-sentiment-using-the-mlnet-cli"></a>Analyser les sentiments à l’aide de la CLI ML.NET
 
@@ -48,7 +48,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 1. Téléchargez le [fichier zip du jeu de données UCI Sentiment Labeled Sentences (voir les citations dans la remarque ci-dessous)](https://archive.ics.uci.edu/ml/machine-learning-databases/00331/sentiment%20labelled%20sentences.zip) et décompressez-le dans un dossier de votre choix.
 
     > [!NOTE]
-    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015 et hébergé dans le référentiel Machine Learning UCI-Dua, D. et karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml ]. Irvine, Californie : Université de Californie, School of Information and Computer Science.
+    > Les jeux de données utilisés dans ce tutoriel incluent un jeu de données provenant de « From Group to Individual Labels using Deep Features » (Kotzias et al,. KDD 2015 et hébergé dans le référentiel Machine Learning UCI-Dua, D. et karra Taniskidou, E. (2017). Référentiel UCI Machine Learning [http://archive.ics.uci.edu/ml]. Irvine, Californie : Université de Californie, School of Information and Computer Science.
 
 2. Copiez le fichier `yelp_labelled.txt` dans un dossier que vous avez créé précédemment (par exemple, `/cli-test`).
 
@@ -83,7 +83,7 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 1. Exécutez la commande CLI ML.NET suivante :
 
     ```console
-    mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
+    mlnet auto-train --task binary-classification --dataset "yelp_labelled.txt" --label-column-index 1 --has-header false --max-exploration-time 10
     ```
 
     Cette commande exécute la **commande `mlnet auto-train`**  :
@@ -97,11 +97,11 @@ Nous allons utiliser un jeu de données existant issu d’un scénario « Analy
 
     <!-- markdownlint-disable MD023 MD025 -->
 
-    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+    # <a name="windows"></a>[Windows](#tab/windows)
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-powershell.gif)
 
-    # <a name="macos-bashtabmacosbash"></a>[macOS Bash](#tab/macosbash)
+    # <a name="macos-bash"></a>[macOS Bash](#tab/macosbash)
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/mlnet-auto-train-binary-classification-bash.gif)
 
@@ -174,42 +174,42 @@ Toutes les ressources listées ci-dessus seront décrites dans les étapes suiva
     }
     ```
 
-- La première ligne de code crée simplement un objet `MLContext`, qui est nécessaire pour exécuter le code ML.NET.
+    - La première ligne de code crée simplement un objet `MLContext`, qui est nécessaire pour exécuter le code ML.NET.
 
-- La deuxième ligne de code est commentée, car vous n’avez pas besoin d’entraîner le modèle dans la mesure où celui-ci a déjà été entraîné automatiquement par l’outil CLI et enregistré dans le fichier .zip sérialisé du modèle. Toutefois, si vous souhaitez afficher les commentaires pour savoir *comment le modèle a été entraîné* par la CLI, vous pouvez décommenter cette ligne et exécuter/déboguer le code d’entraînement utilisé pour ce modèle ML spécifique.
+    - La deuxième ligne de code est commentée, car vous n’avez pas besoin d’entraîner le modèle dans la mesure où celui-ci a déjà été entraîné automatiquement par l’outil CLI et enregistré dans le fichier .zip sérialisé du modèle. Toutefois, si vous souhaitez afficher les commentaires pour savoir *comment le modèle a été entraîné* par la CLI, vous pouvez décommenter cette ligne et exécuter/déboguer le code d’entraînement utilisé pour ce modèle ML spécifique.
 
-- Dans la troisième ligne de code, vous chargez le modèle du fichier .zip de modèle sérialisé à l’aide de l’API `mlContext.Model.Load()`, en fournissant le chemin de ce fichier.
+    - Dans la troisième ligne de code, vous chargez le modèle du fichier .zip de modèle sérialisé à l’aide de l’API `mlContext.Model.Load()`, en fournissant le chemin de ce fichier.
 
-- Dans la quatrième ligne de code, vous chargez le code pour créer l’objet `PredictionEngine` avec l’API `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)`. Vous avez besoin de l’objet `PredictionEngine` chaque fois que vous souhaitez effectuer une prédiction ciblant un exemple de données unique (dans ce cas, un seul élément de texte pour prédire le sentiment).
+    - Dans la quatrième ligne de code, vous chargez le code pour créer l’objet `PredictionEngine` avec l’API `mlContext.Model.CreatePredictionEngine<TSrc,TDst>(ITransformer mlModel)`. Vous avez besoin de l’objet `PredictionEngine` chaque fois que vous souhaitez effectuer une prédiction ciblant un exemple de données unique (dans ce cas, un seul élément de texte pour prédire le sentiment).
 
-- La cinquième ligne de code spécifie où vous créez cet *exemple de données unique* à utiliser pour la prédiction, en appelant la fonction `CreateSingleDataSample()`. Étant donné que l’outil CLI ne sait pas quel type d’exemple de données utiliser, au sein de cette fonction, il charge la première ligne du jeu de données. Toutefois, dans ce cas, vous pouvez également créer vos propres données « codées en dur » au lieu de l’implémentation actuelle de la fonction `CreateSingleDataSample()`, en mettant à jour ce code plus simple pour implémenter cette fonction :
+    - La cinquième ligne de code spécifie où vous créez cet *exemple de données unique* à utiliser pour la prédiction, en appelant la fonction `CreateSingleDataSample()`. Étant donné que l’outil CLI ne sait pas quel type d’exemple de données utiliser, au sein de cette fonction, il charge la première ligne du jeu de données. Toutefois, dans ce cas, vous pouvez également créer vos propres données « codées en dur » au lieu de l’implémentation actuelle de la fonction `CreateSingleDataSample()`, en mettant à jour ce code plus simple pour implémenter cette fonction :
 
-    ```csharp
-    private static ModelInput CreateSingleDataSample()
-    {
-        ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
-        return sampleForPrediction;
-    }
-    ```
+        ```csharp
+        private static ModelInput CreateSingleDataSample()
+        {
+            ModelInput sampleForPrediction = new ModelInput() { Col0 = "The ML.NET CLI is great for getting started. Very cool!", Label = true };
+            return sampleForPrediction;
+        }
+        ```
 
 1. Exécutez le projet, soit en utilisant l’exemple de données initialement chargé de la première ligne du jeu de données, soit en fournissant votre propre exemple de données personnalisées codées en dur. Vous devez obtenir une prédiction comparable à ceci :
 
-    # <a name="windowstabwindows"></a>[Fenêtres](#tab/windows)
+    # <a name="windows"></a>[Windows](#tab/windows)
 
     Exécutez l’application console à partir de Visual Studio en appuyant sur F5 (bouton de lecture) :
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/sample-cli-prediction-execution.png))
 
-    # <a name="macos-bashtabmacosbash"></a>[macOS Bash](#tab/macosbash)
+    # <a name="macos-bash"></a>[macOS Bash](#tab/macosbash)
 
     Exécutez l’application console à partir de l’invite de commandes en tapant les commandes suivantes :
 
-     ```bash
-     cd SampleBinaryClassification
-     cd SampleBinaryClassification.ConsoleApp
+    ```dotnetcli
+    cd SampleBinaryClassification
+    cd SampleBinaryClassification.ConsoleApp
 
-     dotnet run
-     ```
+    dotnet run
+    ```
 
     ![Commande auto-train de l’interface CLI ML.NET dans PowerShell](./media/mlnet-cli/sample-cli-prediction-execution-bash.png))
 
@@ -248,7 +248,7 @@ Plus important encore, pour ce scénario particulier (modèle « Analyse des se
 
 Il est intéressant de comparer la configuration d’algorithme et de pipeline choisie dans le tutoriel avec le code généré par l’outil CLI. Selon la durée d’itération et de recherche de meilleurs modèles, l’algorithme choisi peut être différent, tout comme sa configuration d’hyperparamètres et de pipeline.
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
 > - Préparer vos données pour la tâche ML sélectionnée (problème à résoudre)

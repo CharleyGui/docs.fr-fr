@@ -4,12 +4,12 @@ description: En savoir plus sur les expressions de critères spéciaux en langag
 ms.date: 04/10/2019
 ms.technology: csharp-fundamentals
 ms.assetid: 1e575c32-2e2b-4425-9dca-7d118f3ed15b
-ms.openlocfilehash: ff84ddd4f07fb77dc9fe648a495a441ed8f9198b
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: db509a0ebf1e205e9996ba8102757fe8c0b9ea3a
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039364"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501627"
 ---
 # <a name="pattern-matching"></a>Critères spéciaux
 
@@ -136,3 +136,7 @@ Les *constructions de critères spéciaux* permettent de gérer facilement le fl
 Les critères spéciaux peuvent être utilisés avec tous les types de données. Vous écrivez des expressions qui examinent l’objet et vous prenez des décisions de flux de contrôle en fonction de ces conditions.
 
 Comparez le code de cet exemple avec la conception qui résulterait de la création d’une hiérarchie de classes pour une `Shape` abstraite et des formes dérivées spécifiques, chacune avec sa propre implémentation d’une méthode virtuelle pour calculer la surface. Les expressions de critères spéciaux vous seront souvent d’une grande utilité quand vous voudrez manipuler des données en gérant les questions de stockage de données séparément des questions de comportement.
+
+## <a name="see-also"></a>Voir aussi
+
+- [Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données](tutorials/pattern-matching.md)

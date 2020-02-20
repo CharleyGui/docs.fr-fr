@@ -1,21 +1,17 @@
 ---
 title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
-ms.date: 06/26/2019
-ms.openlocfilehash: 715a33a8a1aa13a2a76f9d4522413dcc72e4b4aa
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 02/14/2020
+ms.openlocfilehash: 186f1ea07718a8e178f88c3d079cf6e2f1f8660b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451354"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503758"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
-
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
 ## <a name="name"></a>Name
 
@@ -41,9 +37,9 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 ## <a name="options"></a>Options
 
-* **`-c|--configuration {Debug|Release}`**
+* **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut est `Debug`. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
+  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet. Cette option est uniquement requise durant le nettoyage si vous l’avez spécifiée au moment de la génération.
 
 * **`-f|--framework <FRAMEWORK>`**
 
@@ -67,7 +63,7 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Nettoie le dossier de sortie du runtime spécifié. Cette option est utilisée à la création d’un [déploiement autonome](../deploying/index.md#publish-self-contained). Option disponible à partir du kit SDK .NET Core 2.0.
+  Nettoie le dossier de sortie du runtime spécifié. Cette option est utilisée à la création d’un [déploiement autonome](../deploying/index.md#publish-self-contained).
 
 * **`-v|--verbosity <LEVEL>`**
 

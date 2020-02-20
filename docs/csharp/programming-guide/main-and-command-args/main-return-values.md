@@ -4,12 +4,12 @@ ms.date: 08/02/2017
 helpviewer_keywords:
 - Main method [C#], return values
 ms.assetid: c2f5a1d8-1676-4bea-bc7e-44a97e72d5bc
-ms.openlocfilehash: 21e780470f455ac133fd4d11ae43c63a4b18c582
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: eaa78c33613093bb0e108870669392d07d346a95
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712037"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504000"
 ---
 # <a name="main-return-values-c-programming-guide"></a>Valeurs de retour de Main() (Guide de programmation C#)
 
@@ -39,8 +39,11 @@ Ensuite, créez un script PowerShell pour exécuter l’application et afficher 
 
 Comme le code retourne zéro, le fichier de commandes indique la réussite. Toutefois, si vous modifiez MainReturnValTest.cs pour qu’il retourne une valeur différente de zéro, puis que vous recompilez le programme, l’exécution suivante du script PowerShell indique un échec.
 
-```powershell
+```dotnetcli
 dotnet run
+```
+
+```powershell
 if ($LastExitCode -eq 0) {
     Write-Host "Execution succeeded"
 } else
@@ -50,7 +53,7 @@ if ($LastExitCode -eq 0) {
 Write-Host "Return value = " $LastExitCode
 ```
 
-## <a name="sample-output"></a>Résultat de l'exemple
+## <a name="sample-output"></a>Exemple de sortie
 
 ```txt
 Execution succeeded
@@ -95,6 +98,6 @@ Quand le point d’entrée de l’application retourne `Task` ou `Task<int>`, le
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
 - [Comment afficher les arguments de ligne de commande](./how-to-display-command-line-arguments.md)

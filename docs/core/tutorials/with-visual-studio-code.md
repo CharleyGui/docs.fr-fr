@@ -3,21 +3,21 @@ title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: fdf26d67ca06ffb5ae9f8c12aa29819280770d5c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: acd1c300545bc6c107552576180afd7dec6b7382
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715320"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503521"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 1. Installez [Visual Studio Code](https://code.visualstudio.com/).
-2. Installez le [SDK .NET Core](https://dotnet.microsoft.com/download).
+2. Installez le [kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download).
 3. Installez l’[extension C#](https://marketplace.visualstudio.com/items?itemName=ms-vscode.csharp) pour Visual Studio Code. Pour plus d’informations sur l’installation d’extensions pour Visual Studio Code, consultez [Place de marché des extensions VS Code](https://code.visualstudio.com/docs/editor/extension-gallery).
 
 ## <a name="hello-world"></a>Hello World
@@ -56,7 +56,7 @@ Commençons par un programme « Hello World » simple sur .NET Core :
 
 Vous pouvez également regarder un court didacticiel vidéo pour plus d’informations sur la configuration sur [Windows](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core), [macOS](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-using-CSharp-and-NET-Core-on-MacOS) ou [Linux](https://channel9.msdn.com/Blogs/dotnet/Get-started-with-VS-Code-Csharp-dotnet-Core-Ubuntu).
 
-## <a name="debug"></a>Déboguer
+## <a name="debug"></a>Débogage
 
 1. Ouvrez *Program.cs* en cliquant dessus. La première fois que vous ouvrez un fichier C# dans Visual Studio Code, [OmniSharp](https://www.omnisharp.net/) se charge dans l’éditeur.
 
@@ -129,12 +129,17 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
 5. Enregistrez vos modifications et exécutez à nouveau votre programme. Le nouveau message devrait apparaître avec la chaîne ajoutée.
 
+    ```dotnetcli
+    dotnet run
+    ```
+
+    Vous obtenez la sortie suivante :
+
     ```console
-    > dotnet run
     Hello World! Happy coding!
     ```
 
-## <a name="faq"></a>Forum aux questions
+## <a name="faq"></a>Questions fréquentes (FAQ)
 
 ### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Je n’ai pas les ressources nécessaires pour générer et déboguer du code C# dans Visual Studio Code. Mon débogueur indique « Aucune configuration ».
 

@@ -1,27 +1,23 @@
 ---
 title: Commande dotnet sln
 description: La commande dotnet-sln offre une option pratique pour ajouter, supprimer et répertorier des projets dans un fichier solution.
-ms.date: 10/29/2019
-ms.openlocfilehash: e344deaae0867202a79a3c38df48a2be8d4d7d13
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: dc0e2f294076ea649f150b076ac279cdc5d224a0
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733085"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503592"
 ---
 # <a name="dotnet-sln"></a>dotnet sln
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
-
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet sln` : Modifie un fichier solution .NET Core.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] [command] [-h|--help]
@@ -49,13 +45,13 @@ dotnet new sln
 
   Affiche une aide brève pour la commande.
 
-## <a name="commands"></a>Commands
+## <a name="commands"></a>Commandes
 
 ### `add`
 
 Ajoute un ou plusieurs projets au fichier solution.
 
-#### <a name="synopsis"></a>Résumé
+#### <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] add [--in-root] [-s|--solution-folder] <PROJECT_PATH>
@@ -90,7 +86,7 @@ dotnet sln add [-h|--help]
 
 Supprime un ou plusieurs projets du fichier solution.
 
-#### <a name="synopsis"></a>Résumé
+#### <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet sln [<SOLUTION_FILE>] remove <PROJECT_PATH>
@@ -117,7 +113,7 @@ dotnet sln [<SOLUTION_FILE>] remove [-h|--help]
 
 Liste tous les projets dans un fichier solution.
 
-#### <a name="synopsis"></a>Résumé
+#### <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet sln list [-h|--help]

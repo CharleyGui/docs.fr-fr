@@ -1,23 +1,23 @@
 ---
 title: Commande dotnet msbuild
 description: La commande dotnet msbuild fournit l’accès à la ligne de commande MSbuild.
-ms.date: 12/03/2018
-ms.openlocfilehash: dae1e9f0ca355166d41c11fbafb80c7c9fb29748
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 28a32a460d644d3e22f16b5dd9416222ae466e2e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733200"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503678"
 ---
 # <a name="dotnet-msbuild"></a>dotnet msbuild
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet msbuild` : Génère un projet et l’ensemble de ses dépendances.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 `dotnet msbuild <msbuild_arguments> [-h]`
 
@@ -31,25 +31,25 @@ La commande [dotnet build](dotnet-build.md) est équivalente à `dotnet msbuild 
 
 ## <a name="examples"></a>Exemples
 
-* Générer un projet et ses dépendances :
+- Générer un projet et ses dépendances :
 
   ```dotnetcli
   dotnet msbuild
   ```
 
-* Générer un projet et ses dépendances à l’aide de la configuration Release :
+- Générer un projet et ses dépendances à l’aide de la configuration Release :
 
   ```dotnetcli
   dotnet msbuild -property:Configuration=Release
   ```
 
-* Exécuter la cible de publication et effectuer une publication pour le RID `osx.10.11-x64` :
+- Exécuter la cible de publication et effectuer une publication pour le RID `osx.10.11-x64` :
 
   ```dotnetcli
   dotnet msbuild -target:Publish -property:RuntimeIdentifiers=osx.10.11-x64
   ```
 
-* Consultez la totalité du projet avec toutes les cibles incluses par le kit SDK :
+- Consultez la totalité du projet avec toutes les cibles incluses par le kit SDK :
 
   ```dotnetcli
   dotnet msbuild -preprocess

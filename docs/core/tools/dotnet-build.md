@@ -1,27 +1,23 @@
 ---
 title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
-ms.date: 10/14/2019
-ms.openlocfilehash: ec37d82c9e22a59acf7617f80a7491c0bcab89c9
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 9f9a78ec0a6a25c54c8a727c05081ce6835514ee
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734310"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503763"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
-
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet build` : Génère un projet et l’ensemble de ses dépendances.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet build [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--force]
@@ -75,7 +71,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 ## <a name="options"></a>Options
 
-- **`-c|--configuration {Debug|Release}`**
+- **`-c|--configuration <CONFIGURATION>`**
 
   Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
 
@@ -85,7 +81,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--force`**
 
-  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*. Disponible à partir du kit SDK .NET Core 2.0.
+  Force la résolution de toutes les dépendances même si la dernière restauration a réussi. Définir cet indicateur revient à supprimer le fichier *project.assets.json*.
 
 - **`-h|--help`**
 
@@ -105,7 +101,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--no-restore`**
 
-  N’exécute pas de restauration implicite pendant la génération. Disponible à partir du kit SDK .NET Core 2.0.
+  N’exécute pas de restauration implicite pendant la génération.
 
 - **`--nologo`**
 

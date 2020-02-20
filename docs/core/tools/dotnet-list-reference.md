@@ -1,27 +1,23 @@
 ---
 title: Commande dotnet list reference
 description: La commande dotnet list reference est une option pratique pour lister des références entre projets.
-ms.date: 06/26/2019
-ms.openlocfilehash: 496cbcd8fa4d921e30b363904ad0273bd5ebacd5
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: 43c4dbc94b33e717c6ba0a1c1c5317ac006f5bba
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733224"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503715"
 ---
 # <a name="dotnet-list-reference"></a>dotnet list reference
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
-
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet list reference` : répertorie des références entre projets.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 `dotnet list [<PROJECT>|<SOLUTION>] reference [-h|--help]`
 

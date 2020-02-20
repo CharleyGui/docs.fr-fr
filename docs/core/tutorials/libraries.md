@@ -3,18 +3,18 @@ title: Développer des bibliothèques avec le CLI .NET Core
 description: Découvrez comment créer des bibliothèques .NET Core à l’aide de l’CLI .NET Core. Vous allez créer une bibliothèque prenant en charge plusieurs frameworks.
 author: cartermp
 ms.date: 05/01/2017
-ms.openlocfilehash: a7c0175d29f483571578b58d698dd790cf66f7f4
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: c23c1f027b4d6d09c50eb2257d34f72ec56302f4
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920443"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503510"
 ---
 # <a name="develop-libraries-with-the-net-core-cli"></a>Développer des bibliothèques avec le CLI .NET Core
 
 Cet article explique comment écrire des bibliothèques pour .NET à l’aide de l’CLI .NET Core. L’interface CLI fournit une expérience efficace et de bas niveau qui fonctionne sur tous les systèmes d’exploitation pris en charge. Vous pouvez toujours créer des bibliothèques avec Visual Studio, et si c’est ce que vous préférez, [consultez le guide Visual Studio](library-with-visual-studio.md).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables requises
 
 [Le SDK .NET Core et l’interface CLI](https://dotnet.microsoft.com/download) doivent être installés sur votre ordinateur.
 
@@ -28,7 +28,7 @@ En outre, si vous souhaitez prendre en charge des cibles de .NET Framework plus 
 | 4.6                    | Pack de ciblage .NET Framework 4.6                      |
 | 4.5.2                  | Pack du développeur .NET Framework 4.5.2                    |
 | 4.5.1                  | Pack du développeur .NET Framework 4.5.1                    |
-| 4,5                    | SDK Windows pour Windows 8         |
+| 4.5                    | SDK Windows pour Windows 8         |
 | 4.0                    | SDK pour Windows 7 et .NET Framework 4         |
 | 2.0, 3.0 et 3.5      | Runtime .NET Framework 3.5 SP1 (ou version Windows 8+) |
 
@@ -75,15 +75,15 @@ Si vous voulez atteindre le nombre maximal de développeurs et de projets, utili
 | ---------------------- | -------- |
 | .NET Framework 2.0     | `net20`  |
 | .NET Framework 3.0     | `net30`  |
-| .NET Framework 3.5     | `net35`  |
+| .NET Framework 3.5     | `net35`  |
 | .NET Framework 4.0     | `net40`  |
-| .NET Framework 4.5     | `net45`  |
-| .NET Framework 4.5.1   | `net451` |
-| .NET Framework 4.5.2   | `net452` |
-| .NET Framework 4.6     | `net46`  |
+| .NET Framework 4.5     | `net45`  |
+| .NET Framework 4.5.1   | `net451` |
+| .NET Framework 4.5.2   | `net452` |
+| .NET Framework 4.6     | `net46`  |
 | .NET Framework 4.6.1   | `net461` |
 | .NET Framework 4.6.2   | `net462` |
-| .NET Framework 4.7     | `net47`  |
+| .NET Framework 4.7     | `net47`  |
 | .NET Framework 4.8     | `net48`  |
 
 Insérez ensuite ce Moniker du Framework cible dans la section `TargetFramework` de votre fichier projet. Par exemple, voici comment écrire une bibliothèque qui cible .NET Framework 4,0 :
@@ -96,7 +96,7 @@ Insérez ensuite ce Moniker du Framework cible dans la section `TargetFramework`
 </Project>
 ```
 
-Et voilà ! Bien que cela soit compilé uniquement pour .NET Framework 4, vous pouvez utiliser la bibliothèque sur des versions plus récentes de .NET Framework.
+Et le tour est joué ! Bien que cela soit compilé uniquement pour .NET Framework 4, vous pouvez utiliser la bibliothèque sur des versions plus récentes de .NET Framework.
 
 ## <a name="how-to-multitarget"></a>Comment multicibler
 
@@ -220,7 +220,7 @@ Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous 
 
 1. Configurez votre solution. Pour cela, utilisez la commande suivante :
 
-   ```bash
+   ```dotnetcli
    mkdir SolutionWithSrcAndTest
    cd SolutionWithSrcAndTest
    dotnet new sln
@@ -241,7 +241,7 @@ Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous 
 
 1. Accédez au répertoire du projet de test et ajoutez une référence à `MyProject.Test` à partir de `MyProject`.
 
-   ```bash
+   ```dotnetcli
    cd MyProject.Test
    dotnet add reference ../MyProject/MyProject.csproj
    ```
@@ -257,7 +257,7 @@ Il est important de pouvoir effectuer des tests sur plusieurs plateformes. Vous 
 
 1. Exécutez la commande `dotnet test` pour vérifier que xUnit s’exécute. Si vous avez choisi d’utiliser MSTest, le Test Runner de console MSTest doit s’exécuter à la place.
 
-Et voilà ! Vous pouvez maintenant tester votre bibliothèque sur toutes les plateformes à l’aide d’outils en ligne de commande. Maintenant que vous avez tout configuré, le test de votre bibliothèque est très simple :
+Et le tour est joué ! Vous pouvez maintenant tester votre bibliothèque sur toutes les plateformes à l’aide d’outils en ligne de commande. Maintenant que vous avez tout configuré, le test de votre bibliothèque est très simple :
 
 1. Apportez des modifications à votre bibliothèque.
 1. Exécutez les tests à partir de la ligne de commande, dans votre répertoire de test, avec la commande `dotnet test`.
@@ -300,7 +300,7 @@ Les scénarios de consommation tels que celui-ci signifient que les API auxquell
 
 Vous pouvez exécuter les commandes suivantes dans votre terminal pour produire la même structure que ce guide :
 
-```console
+```dotnetcli
 mkdir AwesomeLibrary && cd AwesomeLibrary
 dotnet new sln
 mkdir AwesomeLibrary.Core && cd AwesomeLibrary.Core && dotnet new classlib

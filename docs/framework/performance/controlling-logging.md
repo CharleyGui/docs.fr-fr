@@ -4,12 +4,12 @@ ms.date: 03/30/2017
 helpviewer_keywords:
 - CLR ETW events, logging
 ms.assetid: ce13088e-3095-4f0e-9f6b-fad30bbd3d41
-ms.openlocfilehash: 180cce516a1209711430429a46cb5b718b29f1d9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e7d7d6e60b2f582a579f5811225f4027c37c7876
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75716106"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504100"
 ---
 # <a name="controlling-net-framework-logging"></a>Contrôle de l'enregistrement .NET Framework
 
@@ -17,7 +17,7 @@ Vous pouvez utiliser le suivi d'événements pour Windows (ETW) pour enregistrer
 
 - Outils en ligne de commande [Logman](/windows-server/administration/windows-commands/logman) et [Tracerpt](/windows-server/administration/windows-commands/tracerpt_1) qui sont inclus dans le système d’exploitation Windows.
 
-- Outils en ligne de commande [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) du [Windows Performance Toolkit](/windows-hardware/test/wpt/). Pour plus d’informations sur Xperf, consultez le [blog des performances de Windows](https://blogs.msdn.microsoft.com/pigscanfly/tag/xperf/).
+- Outils en ligne de commande [Xperf](/windows-hardware/test/wpt/xperf-command-line-reference) du [Windows Performance Toolkit](/windows-hardware/test/wpt/). Pour plus d’informations sur Xperf, consultez le [blog des performances de Windows](https://docs.microsoft.com/archive/blogs/pigscanfly/).
 
 Pour capturer des informations sur les événements du CLR, le fournisseur du CLR doit être installé sur votre ordinateur. Pour confirmer que le fournisseur est bien installé, tapez `logman query providers` à l'invite de commandes. La liste des fournisseurs est affichée. Cette liste doit contenir une entrée pour le fournisseur du CLR, comme suit.
 
@@ -27,7 +27,7 @@ Provider                                 GUID
 .NET Common Language Runtime    {E13C0D23-CCBC-4E12-931B-D9CC2EEE27E4}.
 ```
 
-Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil). Ouvrez la fenêtre d'invite de commandes en tant qu'administrateur. Remplacez le répertoire de l’invite par le dossier .NET Framework 4 (%WINDIR%\Microsoft.NET\Framework [64] \v4.\<version .NET > \). Ce dossier contient le fichier ETW.man du CLR. À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.
+Si le fournisseur du CLR n’apparaît pas dans la liste, vous pouvez l’installer sur Windows Vista et les systèmes d’exploitation ultérieurs à l’aide de l’outil en ligne de commande Windows [Wevtutil](/windows-server/administration/windows-commands/wevtutil). Ouvrez la fenêtre d’invite de commandes en tant qu’administrateur. Remplacez le répertoire de l’invite par le dossier .NET Framework 4 (%WINDIR%\Microsoft.NET\Framework [64] \v4.\<version .NET > \). Ce dossier contient le fichier ETW.man du CLR. À l'invite de commandes, tapez la commande suivante pour installer le fournisseur du CLR.
 
 `wevtutil im CLR-ETW.man`
 
@@ -45,7 +45,7 @@ Pour activer la journalisation, un utilisateur doit spécifier trois éléments�
 
 ### <a name="to-capture-clr-etw-events-using-logman"></a>Pour capturer les événements ETW du CLR à l'aide de Logman
 
-1. À l'invite de commandes, tapez :
+1. À l’invite de commandes, tapez :
 
      `logman start clrevents -p {e13c0d23-ccbc-4e12-931b-d9cc2eee27e4} 0x1CCBD 0x5 -ets -ct perf`
 
@@ -69,7 +69,7 @@ Pour activer la journalisation, un utilisateur doit spécifier trois éléments�
 
 ### <a name="to-capture-clr-etw-events-using-xperf"></a>Pour capturer les événements ETW du CLR à l’aide de Xperf
 
-1. À l'invite de commandes, tapez :
+1. À l’invite de commandes, tapez :
 
      `xperf -start clr -on e13c0d23-ccbc-4e12-931b-d9cc2eee27e4:0x1CCBD:5 -f clrevents.etl`
 
@@ -87,7 +87,7 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ### <a name="to-view-clr-etw-events-using-tracerpt"></a>Pour afficher les événements ETW du CLR à l'aide de Tracerpt
 
-- À l'invite de commandes, tapez :
+- À l’invite de commandes, tapez :
 
      `tracerpt clrevents.etl`
 
@@ -95,7 +95,7 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ### <a name="to-view-clr-etw-events-using-xperf"></a>Pour afficher les événements ETW du CLR à l’aide de Xperf
 
-- À l'invite de commandes, tapez :
+- À l’invite de commandes, tapez :
 
      `xperf clrevents.etl`
 
@@ -103,7 +103,7 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ### <a name="to-convert-the-etl-file-to-a-comma-separated-value-file"></a>Pour convertir le fichier .etl en fichier .csv
 
-- À l'invite de commandes, tapez :
+- À l’invite de commandes, tapez :
 
      `xperf -i clrevents.etl -f clrevents.csv`
 
@@ -111,5 +111,5 @@ Utilisez les commandes répertoriées ci-dessous pour afficher les événements 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Windows Performance Toolkit](/windows-hardware/test/wpt/)
+- [Kit de performances Windows](/windows-hardware/test/wpt/)
 - [Événements ETW dans le Common Language Runtime](etw-events-in-the-common-language-runtime.md)

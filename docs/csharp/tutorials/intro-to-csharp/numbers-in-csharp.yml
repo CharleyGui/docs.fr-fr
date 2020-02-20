@@ -11,12 +11,12 @@ metadata:
   nextTutorialTitle: Branches et boucles en C#
   displayType: two-column
   interactive: csharp
-  ms.openlocfilehash: b417ba7ff340019c74b0c3430242f59d6217b07f
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.openlocfilehash: 48268c6e839ae4f72aae0e872c837b153325b68b
+  ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/12/2019
-  ms.locfileid: "73969365"
+  ms.lasthandoff: 02/20/2020
+  ms.locfileid: "77504013"
 items:
 - durationInMinutes: 1
   content: >
@@ -61,7 +61,7 @@ items:
     Commencez par explorer ces différentes opérations. Modifiez la troisième ligne pour tester chacune de ces opérations. Après chaque modification, cliquez sur le bouton **exécuter** .
 
 
-    Soustraction :
+    Soustraction :
 
 
     ```csharp
@@ -71,7 +71,7 @@ items:
     ```
 
 
-    Multiplication :
+    Multiplication :
 
 
     ```csharp
@@ -81,7 +81,7 @@ items:
     ```
 
 
-    Division :
+    Division :
 
 
     ```csharp
@@ -192,7 +192,7 @@ items:
   content: >
     Ce dernier exemple a montré que la division d’entiers tronque le résultat.
 
-    Vous pouvez obtenir le **reste** à l’aide de l’opérateur **modulo**, à savoir le caractère `%` :
+    Vous pouvez récupérer le **reste** à l’aide de l’opérateur de **reste** , le caractère `%` :
 
 
     ```csharp

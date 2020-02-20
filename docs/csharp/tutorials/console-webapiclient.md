@@ -1,18 +1,18 @@
 ---
 title: Crée un client REST à l’aide de .NET Core
-description: Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#.
+description: Ce didacticiel vous présente un certain nombre de fonctionnalités dans .NET Core et le langage C#.
 ms.date: 01/09/2020
 ms.assetid: 51033ce2-7a53-4cdd-966d-9da15c8204d2
-ms.openlocfilehash: eb7946d669de60c3469ca8098e40b159082ea270
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: f85d50b222d06caa045e22b452d0902aaac66088
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921086"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503973"
 ---
 # <a name="rest-client"></a>Client REST
 
-Ce didacticiel vous présente un certain nombre de fonctionnalités de .NET Core et du langage C#. Vous apprendrez à :
+Ce didacticiel vous présente un certain nombre de fonctionnalités dans .NET Core et le langage C#. Vous apprendrez à :
 
 * Notions de base du CLI .NET Core.
 * Une présentation des fonctionnalités du langage C#.
@@ -27,7 +27,7 @@ Ce didacticiel présente de nombreuses fonctionnalités. Nous allons les constru
 
 Si vous préférez utiliser l’[exemple final](https://github.com/dotnet/samples/tree/master/csharp/getting-started/console-webapiclient) pour cette rubrique, vous pouvez le télécharger. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Conditions préalables requises
 
 Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Linux, Mac OS ou dans un conteneur Docker.
 Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), qui est un éditeur de plateforme open source, multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
@@ -51,7 +51,7 @@ L’un des objectifs de conception clés de .NET Core consiste à réduire la ta
 
 Vous aurez besoin du package `System.Runtime.Serialization.Json` pour cette application. Ajoutez-le à votre projet en exécutant la commande [CLI .net](../../core/tools/dotnet-add-package.md) suivante :
 
-```console
+```dotnetcli
 dotnet add package System.Text.Json
 ```
 

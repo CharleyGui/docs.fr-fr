@@ -2,12 +2,12 @@
 title: Attributs
 description: Découvrez comment F# les attributs permettent d’appliquer des métadonnées à une construction de programmation.
 ms.date: 05/16/2016
-ms.openlocfilehash: 223263f5789b0fc7eb2b3ef2905f6436980bd14a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: 1e42dc61d44f31930a7b34799f28a68a2db69c8c
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424799"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504114"
 ---
 # <a name="attributes"></a>Attributs
 
@@ -77,11 +77,11 @@ Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement 
     <td><pre lang="fsharp"><code>let function1 x : [&lt;return: Obsolete&gt;] int = x + 1</code></pre></td>
   </tr>
   <tr>
-    <td>champ</td>
+    <td>field</td>
     <td><pre lang="fsharp"><code>[&lt;field: DefaultValue&gt;] val mutable x: int</code></pre></td>
   </tr>
   <tr>
-    <td>Propriété</td>
+    <td>propriété</td>
     <td><pre lang="fsharp"><code>[&lt;property: Obsolete&gt;] this.MyProperty = x</code></pre></td>
   </tr>
   <tr>
@@ -92,12 +92,12 @@ Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement 
     <td>type</td>
     <td>
         <pre lang="fsharp"><code>
-[&lt;type: StructLayout(Sequential)&gt;]
+[&lt;type: StructLayout(LayoutKind.Sequential)&gt;]
 type MyStruct =
-struct
-x : byte
-y : int
-end</code></pre>
+  struct
+    val x : byte
+    val y : int
+  end</code></pre>
     </td>
   </tr>
 </table>

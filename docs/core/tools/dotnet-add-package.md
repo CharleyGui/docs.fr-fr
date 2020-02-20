@@ -1,27 +1,23 @@
 ---
 title: Commande dotnet add package
 description: La commande « dotnet add package » est une option pratique pour ajouter une référence de package NuGet à un projet.
-ms.date: 06/26/2019
-ms.openlocfilehash: 210dcf0efe06672264ebfa297589bdb387591a42
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.date: 02/14/2020
+ms.openlocfilehash: cb44805f91ac4047dd50fd7e88d4eac5f15f2508
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733331"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503800"
 ---
 # <a name="dotnet-add-package"></a>dotnet add package
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 1. x et versions ultérieures
+**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-<!-- todo: uncomment when all CLI commands are reviewed
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
--->
-
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet add package` : Ajoute une référence de package à un fichier projet.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 `dotnet add [<PROJECT>] package <PACKAGE_NAME> [-h|--help] [-f|--framework] [--interactive] [-n|--no-restore] [--package-directory] [-s|--source] [-v|--version]`
 

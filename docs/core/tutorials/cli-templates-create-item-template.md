@@ -5,12 +5,12 @@ author: thraka
 ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
-ms.openlocfilehash: fa0ae18221c33d196960239411f8860a561b20ee
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 5f4038e863d9bb59df470d3516c08fd2ad29c078
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75340368"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503559"
 ---
 # <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
 
@@ -26,7 +26,7 @@ Dans cette partie de la série, vous découvrirez comment :
 > * Tester un modèle d’élément
 > * Désinstaller un modèle d'élément
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 * [SDK .NET Core 2.2](https://dotnet.microsoft.com/download) ou versions ultérieures.
 * Lisez l’article de référence [Modèles personnalisés pour dotnet new](../tools/custom-templates.md).
@@ -41,7 +41,7 @@ Cette série utilise un « dossier de travail » dans lequel se trouve votre s
 
 Tout d’abord, créez le dossier parent, le nom n’a pas d’importance. Puis, créez un sous-dossier nommé _working_. Dans le dossier _working_, créez un sous-dossier nommé _templates_.
 
-Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure des dossiers doit ressembler à ce qui suit :
+Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure des dossiers doit ressembler à ce qui suit.
 
 ```console
 parent_folder
@@ -89,7 +89,7 @@ Les modèles sont reconnus dans .NET Core par un dossier et un fichier de config
 
 Lorsque vous créez un modèle, tous les fichiers et dossiers du dossier de modèle sont inclus dans le modèle, à l’exception du dossier de configuration spécial. Ce dossier de configuration est nommé _.template.config_.
 
-Tout d’abord, créez un sous-dossier nommé _.template.config_ et accédez-y. Créez ensuite un nouveau fichier nommé _template.json_. La structure des dossiers doit ressembler à ce qui suit :
+Tout d’abord, créez un sous-dossier nommé _.template.config_ et accédez-y. Créez ensuite un nouveau fichier nommé _template.json_. La structure des dossiers doit ressembler à ceci :
 
 ```console
 working
@@ -99,7 +99,7 @@ working
                 template.json
 ```
 
-Ouvrez le fichier _template.json_ avec votre éditeur de texte favori, puis collez le code JSON suivant et enregistrez-le :
+Ouvrez le fichier _template. JSON_ avec votre éditeur de texte favori, puis collez le code JSON suivant et enregistrez-le.
 
 ```json
 {
@@ -151,8 +151,13 @@ Worker Service                                    worker                [C#]    
 
 Maintenant que vous avez un modèle d’élément installé, testez-le. Accédez au dossier _test/_ et créez une application console avec `dotnet new console`. Cela génère un projet fonctionnel que vous pouvez facilement tester à l’aide de la commande `dotnet run`.
 
+```dotnetcli
+dotnet new console
+```
+
+Vous recevez une sortie similaire à ce qui suit.
+
 ```console
-C:\test> dotnet new console
 The template "Console Application" was created successfully.
 
 Processing post-creation actions...
@@ -162,15 +167,27 @@ Running 'dotnet restore' on C:\test\test.csproj...
 Restore succeeded.
 ```
 
+Exécutez le projet avec.
+
+```dotnetcli
+dotnet run
+```
+
+Vous recevez la sortie suivante.
+
 ```console
-C:\test> dotnet run
 Hello World!
 ```
 
 Ensuite, exécutez `dotnet new stringext` pour générer _CommonExtensions.cs_ à partir du modèle.
 
+```dotnetcli
+dotnet new stringext
+```
+
+Vous recevez la sortie suivante.
+
 ```console
-C:\test> dotnet new stringext
 The template "Example templates: string extensions" was created successfully.
 ```
 
@@ -182,19 +199,29 @@ Console.WriteLine("Hello World!".Reverse());
 
 Réexécutez le programme et vous verrez que le résultat est inversé.
 
+```dotnetcli
+dotnet run
+```
+
+Vous recevez la sortie suivante.
+
 ```console
-C:\test> dotnet run
 !dlroW olleH
 ```
 
-Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NET Core. Pour préparer la partie suivante de cette série de tutoriels, vous devez désinstaller le modèle que vous avez créé. Veillez à supprimer également tous les fichiers du dossier _test_. Vous revenez à un nouvel état prêt pour la section principale suivante de ce tutoriel.
+Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NET Core. Pour préparer la partie suivante de cette série de tutoriels, vous devez désinstaller le modèle que vous avez créé. Veillez à supprimer également tous les fichiers du dossier _test_. Vous revenez à un nouvel état prêt pour la section principale suivante de ce tutoriel.
 
 ## <a name="uninstall-the-template"></a>Désinstaller le modèle
 
 Étant donné que vous avez installé le modèle par chemin de fichier, vous devez le désinstaller avec le chemin de fichier **absolu**. Vous pouvez consulter la liste des modèles installés en exécutant la commande `dotnet new -u`. Votre modèle doit être listé en dernier. Utilisez le chemin indiqué pour désinstaller votre modèle à l’aide de la commande `dotnet new -u <ABSOLUTE PATH TO TEMPLATE DIRECTORY>`.
 
+```dotnetcli
+dotnet new -u
+```
+
+Vous recevez une sortie similaire à ce qui suit.
+
 ```console
-C:\working> dotnet new -u
 Template Instantiation Commands for .NET Core CLI
 
 Currently installed items:
@@ -222,11 +249,13 @@ Currently installed items:
       Example templates: string extensions (stringext) C#
 ```
 
-```console
-C:\working> dotnet new -u C:\working\templates\extensions
+Pour désinstaller un modèle, exécutez la commande suivante.
+
+```dotnetcli
+dotnet new -u C:\working\templates\extensions
 ```
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Dans ce tutoriel, vous avez créé un modèle d’élément. Pour savoir comment créer un modèle de projet, poursuivez cette série de tutoriels.
 

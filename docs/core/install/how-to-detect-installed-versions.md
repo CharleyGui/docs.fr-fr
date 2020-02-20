@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 8ce2710d71c56f182e936f898e25539bc50d3827
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 3efc54cea7e10bc21a472a7fa9d4026e305be79a
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75341355"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503831"
 ---
 # <a name="how-to-check-that-net-core-is-already-installed"></a>Comment vérifier que .NET Core est déjà installé
 
@@ -23,13 +23,17 @@ En cas d’échec d’une commande de cet article, le runtime ou le kit de déve
 
 ## <a name="check-sdk-versions"></a>Vérifier les versions du SDK
 
-Vous pouvez voir quelles versions du kit SDK .NET Core sont actuellement installées avec un terminal. Ouvrez un terminal et exécutez la commande `dotnet --list-sdks`.
+Vous pouvez voir quelles versions du kit SDK .NET Core sont actuellement installées avec un terminal. Ouvrez un terminal et exécutez la commande suivante.
+
+```dotnetcli
+dotnet --list-sdks
+```
+
+Vous recevez une sortie similaire à ce qui suit.
 
 ::: zone pivot="os-windows"
 
 ```console
-dotnet --list-sdks
-
 2.1.500 [C:\program files\dotnet\sdk]
 2.1.502 [C:\program files\dotnet\sdk]
 2.1.504 [C:\program files\dotnet\sdk]
@@ -45,8 +49,6 @@ dotnet --list-sdks
 ::: zone pivot="os-linux"
 
 ```bash
-dotnet --list-sdks
-
 2.1.500 [/home/user/dotnet/sdk]
 2.1.502 [/home/user/dotnet/sdk]
 2.1.504 [/home/user/dotnet/sdk]
@@ -62,8 +64,6 @@ dotnet --list-sdks
 ::: zone pivot="os-macos"
 
 ```bash
-dotnet --list-sdks
-
 2.1.500 [/usr/local/share/dotnet/sdk]
 2.1.502 [/usr/local/share/dotnet/sdk]
 2.1.504 [/usr/local/share/dotnet/sdk]
@@ -78,13 +78,17 @@ dotnet --list-sdks
 
 ## <a name="check-runtime-versions"></a>Vérifier les versions du Runtime
 
-Vous pouvez voir quelles versions du Runtime .NET Core sont actuellement installées avec la commande `dotnet --list-runtimes`.
+Vous pouvez voir quelles versions du Runtime .NET Core sont actuellement installées avec la commande suivante.
+
+```dotnetcli
+dotnet --list-runtimes
+```
+
+Vous recevez une sortie similaire à ce qui suit.
 
 ::: zone pivot="os-windows"
 
 ```console
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [c:\program files\dotnet\shared\Microsoft.AspNetCore.All]
@@ -113,8 +117,6 @@ Microsoft.WindowsDesktop.App 3.1.0 [c:\program files\dotnet\shared\Microsoft.Win
 ::: zone pivot="os-linux"
 
 ```bash
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [/home/user/dotnet/shared/Microsoft.AspNetCore.All]
@@ -141,8 +143,6 @@ Microsoft.NETCore.App 3.1.0 [/home/user/dotnet/shared/Microsoft.NETCore.App]
 ::: zone pivot="os-macos"
 
 ```bash
-dotnet --list-runtimes
-
 Microsoft.AspNetCore.All 2.1.7 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.1.13 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
 Microsoft.AspNetCore.All 2.2.0 [/usr/local/share/dotnet/shared/Microsoft.AspNetCore.All]
@@ -166,11 +166,11 @@ Microsoft.NETCore.App 3.1.0 [/usr/local/share/dotnet/shared/Microsoft.NETCore.Ap
 
 ::: zone-end
 
-## <a name="more-information"></a>En savoir plus
+## <a name="more-information"></a>Informations complémentaires
 
 Vous pouvez voir les versions du kit de développement logiciel (SDK) et les versions du runtime à l’aide de la commande `dotnet --info`. Vous obtiendrez également d’autres informations relatives à l’environnement, telles que la version du système d’exploitation et l’identificateur de Runtime (RID).
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Installez le Runtime .net Core](runtime.md).
 - [Installez le kit SDK .net Core](sdk.md).
