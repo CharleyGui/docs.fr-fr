@@ -1,13 +1,13 @@
 ---
 title: Implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core
-description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer les détails d’implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core.
-ms.date: 10/08/2018
-ms.openlocfilehash: b70ede6b47cbf990d0435aef841416c68f6439b4
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+description: Architecture des microservices .NET pour les applications .NET en conteneur | Explorez les détails d’implémentation de la couche de persistance de l’infrastructure, à l’aide de Entity Framework Core.
+ms.date: 01/30/2020
+ms.openlocfilehash: 63579dc74ba52551bc1ee02a57337c1b17fdf396
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737920"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502496"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implémenter la couche de persistance de l’infrastructure avec Entity Framework Core
 
@@ -241,7 +241,7 @@ Notez que l’utilisation de la durée de vie singleton pour le dépôt peut vou
 - **Cesar de la Torre. Comparaison ASP.NET Core les durées de vie du service de conteneur IoC avec les portées d’instance de conteneur IoC Autofac** \
   <https://devblogs.microsoft.com/cesardelatorre/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/>
 
-## <a name="table-mapping"></a>Mappage de tables
+## <a name="table-mapping"></a>Mappage de table
 
 Le mappage de tables identifie les données de table à interroger et enregistrer dans la base de données. Précédemment, vous avez vu comment les entités de domaine (par exemple, un produit ou domaine de commande) pouvaient servir à générer un schéma de base de données associé. EF est en grande partie conçu autour du concept de *conventions*. Les conventions répondent aux questions telles que « Quel sera le nom d’une table ? » ou « Quelle propriété est la clé primaire ? » Les conventions sont généralement basées sur des noms conventionnels, par exemple il est classique que la clé primaire soit une propriété qui se termine par Id.
 
@@ -273,49 +273,73 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 {
     public void Configure(EntityTypeBuilder<Order> orderConfiguration)
     {
-            orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
+        orderConfiguration.ToTable("orders", OrderingContext.DEFAULT_SCHEMA);
 
-            orderConfiguration.HasKey(o => o.Id);
+        orderConfiguration.HasKey(o => o.Id);
 
-            orderConfiguration.Ignore(b => b.DomainEvents);
+        orderConfiguration.Ignore(b => b.DomainEvents);
 
-            orderConfiguration.Property(o => o.Id)
-                .ForSqlServerUseSequenceHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
+        orderConfiguration.Property(o => o.Id)
+            .UseHiLo("orderseq", OrderingContext.DEFAULT_SCHEMA);
 
-            //Address Value Object persisted as owned entity type supported since EF Core 2.0
-            orderConfiguration.OwnsOne(o => o.Address);
+        //Address value object persisted as owned entity type supported since EF Core 2.0
+        orderConfiguration
+            .OwnsOne(o => o.Address, a =>
+            {
+                a.WithOwner();
+            });
 
-            orderConfiguration.Property<DateTime>("OrderDate").IsRequired();
-            orderConfiguration.Property<int?>("BuyerId").IsRequired(false);
-            orderConfiguration.Property<int>("OrderStatusId").IsRequired();
-            orderConfiguration.Property<int?>("PaymentMethodId").IsRequired(false);
-            orderConfiguration.Property<string>("Description").IsRequired(false);
+        orderConfiguration
+            .Property<int?>("_buyerId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("BuyerId")
+            .IsRequired(false);
 
-            var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+        orderConfiguration
+            .Property<DateTime>("_orderDate")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("OrderDate")
+            .IsRequired();
 
-            // DDD Patterns comment:
-            //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
-            navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+        orderConfiguration
+            .Property<int>("_orderStatusId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("OrderStatusId")
+            .IsRequired();
 
-            orderConfiguration.HasOne<PaymentMethod>()
-                .WithMany()
-                .HasForeignKey("PaymentMethodId")
-                .IsRequired(false)
-                .OnDelete(DeleteBehavior.Restrict);
+        orderConfiguration
+            .Property<int?>("_paymentMethodId")
+            .UsePropertyAccessMode(PropertyAccessMode.Field)
+            .HasColumnName("PaymentMethodId")
+            .IsRequired(false);
 
-            orderConfiguration.HasOne<Buyer>()
-                .WithMany()
-                .IsRequired(false)
-                .HasForeignKey("BuyerId");
+        orderConfiguration.Property<string>("Description").IsRequired(false);
 
-            orderConfiguration.HasOne(o => o.OrderStatus)
-                .WithMany()
-                .HasForeignKey("OrderStatusId");
+        var navigation = orderConfiguration.Metadata.FindNavigation(nameof(Order.OrderItems));
+
+        // DDD Patterns comment:
+        //Set as field (New since EF 1.1) to access the OrderItem collection property through its field
+        navigation.SetPropertyAccessMode(PropertyAccessMode.Field);
+
+        orderConfiguration.HasOne<PaymentMethod>()
+            .WithMany()
+            .HasForeignKey("_paymentMethodId")
+            .IsRequired(false)
+            .OnDelete(DeleteBehavior.Restrict);
+
+        orderConfiguration.HasOne<Buyer>()
+            .WithMany()
+            .IsRequired(false)
+            .HasForeignKey("_buyerId");
+
+        orderConfiguration.HasOne(o => o.OrderStatus)
+            .WithMany()
+            .HasForeignKey("_orderStatusId");
     }
 }
 ```
 
-Vous pouvez définir tous les mappages de l’API Fluent au sein de la même méthode OnModelCreating, mais il est recommandé de partitionner ce code et d’avoir plusieurs classes de configuration, une par entité, comme indiqué dans l’exemple. Plus précisément pour les modèles particulièrement volumineux, il est recommandé d’avoir des classes de configuration distinctes pour la configuration de différents types d’entités.
+Vous pouvez définir tous les mappages de l’API Fluent au sein de la même méthode `OnModelCreating`, mais il est recommandé de partitionner ce code et d’avoir plusieurs classes de configuration, une par entité, comme illustré dans l’exemple. En particulier pour les modèles volumineux, il est recommandé d’avoir des classes de configuration distinctes pour la configuration de différents types d’entités.
 
 Le code dans l’exemple montre quelques déclarations et mappages explicites. Toutefois, les conventions EF Core effectuant un grand nombre de ces mappages automatiquement, le code réel nécessaire dans votre cas peut être moindre.
 
@@ -333,7 +357,7 @@ L’algorithme Hi/Lo décrit un mécanisme permettant d’obtenir un lot d’ID 
 
 - Il génère un identificateur contrôlable de visu, contrairement aux techniques qui utilisent des GUID.
 
-EF Core prend en charge [HiLo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) avec la méthode ForSqlServerUseSequenceHiLo, comme indiqué dans l’exemple précédent.
+EF Core prend en charge [Hilo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) avec la méthode `UseHiLo`, comme indiqué dans l’exemple précédent.
 
 ### <a name="map-fields-instead-of-properties"></a>Mapper des champs au lieu de propriétés
 
@@ -410,6 +434,7 @@ public class BasketWithItemsSpecification : BaseSpecification<Basket>
     {
         AddInclude(b => b.Items);
     }
+
     public BasketWithItemsSpecification(string buyerId)
         : base(b => b.BuyerId == buyerId)
     {
@@ -445,7 +470,7 @@ public IEnumerable<T> List(ISpecification<T> spec)
 
 En plus de l’encapsulation de la logique de filtrage, la spécification peut spécifier la forme des données à retourner, dont les propriétés à remplir.
 
-Même si nous ne recommandons pas de retourner des données IQueryable à partir d’un référentiel, vous pouvez parfaitement les utiliser dans le référentiel pour générer un jeu de résultats. Vous pouvez voir cette approche utilisée dans la méthode List ci-dessus, qui utilise des expressions IQueryable intermédiaires pour générer la liste des fichiers Include de la requête avant d’exécuter la requête avec les critères de la spécification sur la dernière ligne.
+Bien que nous ne recommandons pas de retourner des `IQueryable` à partir d’un référentiel, il est tout à fait parfait de les utiliser dans le référentiel pour créer un ensemble de résultats. Vous pouvez voir cette approche utilisée dans la méthode List ci-dessus, qui utilise des expressions `IQueryable` intermédiaires pour générer la liste des includes de la requête avant d’exécuter la requête avec les critères de la spécification sur la dernière ligne.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 

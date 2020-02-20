@@ -1,13 +1,13 @@
 ---
 title: Quel système d’exploitation cibler avec les conteneurs .NET
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Quel système d’exploitation cibler avec les conteneurs .NET
-ms.date: 01/07/2019
-ms.openlocfilehash: dcf91f5ab808a8704201979f6bab1140c3343bce
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: a09e3981ece478a9795c0f27acc98d604864cdd5
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73736906"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501859"
 ---
 # <a name="what-os-to-target-with-net-containers"></a>Quel système d’exploitation cibler avec les conteneurs .NET
 
@@ -34,10 +34,10 @@ Au moment d’ajouter le nom de l’image à votre fichier Dockerfile, vous pouv
 
 | Image | Commentaires |
 |-------|----------|
-| mcr.microsoft.com/dotnet/core/runtime:2.2 | Architecture multi-architecture .NET Core 2,2 : prend en charge Linux et Windows nano Server en fonction de l’hôte de la station d’accueil. |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2 | Architecture multi-architecture ASP.NET Core 2,2 : prend en charge Linux et Windows nano Server en fonction de l’hôte de l’ordinateur de la station d’accueil. <br/> L’image aspnetcore a quelques optimisations pour ASP.NET Core. |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-alpine | Runtime .NET Core 2.2 uniquement sur la distribution Linux Alpine |
-| mcr.microsoft.com/dotnet/core/aspnet:2.2-nanoserver-1803 | Runtime .NET Core 2.2 uniquement sur Windows Nano Server (Windows Server version 1803) |
+| mcr.microsoft.com/dotnet/core/runtime:3.1 | Architecture multi-architecture .NET Core 3,1 : prend en charge Linux et Windows nano Server en fonction de l’hôte de la station d’accueil. |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1 | Architecture multi-architecture ASP.NET Core 3,1 : prend en charge Linux et Windows nano Server en fonction de l’hôte de l’ordinateur de la station d’accueil. <br/> L’image aspnetcore a quelques optimisations pour ASP.NET Core. |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim | .NET Core 3,1 Runtime uniquement sur Linux Debian distribution |
+| mcr.microsoft.com/dotnet/core/aspnet:3.1-nanoserver-1809 | .NET Core 3,1 Runtime uniquement sur Windows nano Server (Windows Server version 1809) |
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 

@@ -2,14 +2,13 @@
 title: Stockage sécurisé des secrets d’application en phase de développement
 description: Sécurité dans les microservices .NET et les applications web - Ne stockez pas vos secrets d’application, tels que mots de passe, chaînes de connexion ou clés API, dans le contrôle de code source. Découvrez les options que vous pouvez utiliser dans ASP.NET Core, en particulier comment gérer les « secrets utilisateur ».
 author: mjrousos
-ms.author: wiwagn
-ms.date: 10/19/2018
-ms.openlocfilehash: fe8e7fa11c9a4f4cae133c2e09f9e4b4dd40a546
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.date: 01/30/2020
+ms.openlocfilehash: 1ef2246746b9165f1564fa7be64ff7eb28eb1d32
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68675696"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501800"
 ---
 # <a name="store-application-secrets-safely-during-development"></a>Stocker des secrets d’application en toute sécurité pendant le développement
 
@@ -21,7 +20,7 @@ Vous devez distinguer les secrets destinés à accéder aux ressources de dével
 
 Pour les développeurs, l’un des moyens de maintenir les secrets en dehors du code source est de définir des secrets basés sur des chaînes prenant la forme de [variables d’environnement](/aspnet/core/security/app-secrets#environment-variables) sur leurs machines de développement. Quand vous utilisez des variables d’environnement pour stocker des secrets avec des noms hiérarchisés (tels que ceux imbriqués dans des sections de configuration), vous devez nommer les variables de façon à inclure la hiérarchie complète de leurs sections, en les séparant de deux-points (:).
 
-Par exemple, le fait d’affecter la valeur `Debug` à une variable d’environnement `Logging:LogLevel:Default` équivaudrait à une valeur de configuration du fichier JSON suivant :
+Par exemple, le fait d’affecter la valeur `Logging:LogLevel:Default` à une variable d’environnement `Debug` équivaudrait à une valeur de configuration du fichier JSON suivant :
 
 ```json
 {
@@ -39,7 +38,7 @@ Notez que les variables d’environnement sont couramment stockées en texte cla
 
 ## <a name="store-secrets-with-the-aspnet-core-secret-manager"></a>Stocker des secrets à l’aide de l’outil Secret Manager d’ASP.NET Core
 
-L’outil [Secret Manager](/aspnet/core/security/app-secrets#secret-manager) d’ASP.NET Core offre un autre moyen de maintenir les secrets en dehors du code source. Pour utiliser l’outil Secret Manager, installez le package **Microsoft.Extensions.Configuration.SecretManager** dans votre fichier projet. Une fois cette dépendance présente et restaurée, vous pouvez utiliser la commande `dotnet user-secrets` pour définir la valeur des secrets à partir de la ligne de commande. Ces secrets sont alors stockés dans un fichier JSON dans le répertoire du profil de l’utilisateur (les détails varient selon le système d’exploitation), à l’écart du code source.
+L’outil ASP.NET Core [secret Manager](/aspnet/core/security/app-secrets#secret-manager) fournit une autre méthode pour conserver les secrets en dehors du code source **pendant le développement**. Pour utiliser l’outil Secret Manager, installez le package **Microsoft.Extensions.Configuration.SecretManager** dans votre fichier projet. Une fois cette dépendance présente et restaurée, vous pouvez utiliser la commande `dotnet user-secrets` pour définir la valeur des secrets à partir de la ligne de commande. Ces secrets sont alors stockés dans un fichier JSON dans le répertoire du profil de l’utilisateur (les détails varient selon le système d’exploitation), à l’écart du code source.
 
 Les secrets définis par l’outil Secret Manager sont organisés par la propriété `UserSecretsId` du projet qui utilise les secrets. Par conséquent, veillez à définir la propriété UserSecretsId dans votre fichier projet, comme indiqué dans l’extrait de code ci-dessous. La valeur par défaut est un GUID assigné par Visual Studio, mais la chaîne réelle n’a pas d’importance tant qu’elle est unique sur votre ordinateur.
 

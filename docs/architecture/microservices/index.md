@@ -1,19 +1,19 @@
 ---
 title: Microservices .NET. Architecture pour les applications .NET en conteneur
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Les microservices sont des services modulables qui peuvent se déployer indépendamment. Les conteneurs Docker (pour Linux et Windows) simplifient le déploiement et les tests en regroupant un service et ses dépendances dans une seule unité, laquelle est ensuite exécutée dans un environnement isolé.
-ms.date: 01/07/2019
-ms.openlocfilehash: 7fa4935fe56ca873a5311812637964083e34170e
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.date: 01/30/2020
+ms.openlocfilehash: 5da167de1ffd2169aea44b9872281e71c87927b1
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73089907"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502630"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET : architecture pour les applications .NET en conteneurs
 
 ![Couverture de livre](./media/cover-small.png)
 
-**ÉDITION v2.2** - Mise à jour vers ASP.NET Core 2.2
+**Edition v 3.1** -mise à jour vers ASP.net Core 3,1
 
 Ce guide est une introduction au développement d’applications basées sur les microservices et à la gestion de celles-ci au moyen de conteneurs. Il traite de la conception architecturale et des approches d’implémentation utilisant .NET Core et les conteneurs Docker.
 
@@ -47,7 +47,7 @@ Après avoir examiné ce guide, votre prochaine étape consistera à vous famili
 
 ## <a name="version"></a>Version
 
-Ce guide a été modifié afin de couvrir la version **.NET Core 2.2** ainsi que les nombreuses mises à jour supplémentaires liées à la même « vague » technologique (c’est-à-dire Azure et autres technologies tierces) qui coïncident d’un point de vue chronologique avec .NET Core 2.2. C’est pourquoi la version du livre a également été mise à jour avec la version **2.2**.
+Ce guide a été révisé pour couvrir la version **3,1 de .net Core** , ainsi que de nombreuses mises à jour supplémentaires liées aux mêmes « vagues » de technologies (c’est-à-dire, Azure et des technologies tierces) qui coïncident avec la version 3,1 de .net core. C’est la raison pour laquelle la version du livre a également été mise à jour vers la version **3,1**.
 
 ## <a name="what-this-guide-does-not-cover"></a>Sujets non abordés dans ce guide
 
@@ -58,7 +58,7 @@ Ce guide ne traite pas du cycle de vie des applications, de DevOps, des pipeline
 - **Containerized Docker Application Lifecycle with Microsoft Platform and Tools** (livre électronique téléchargeable)  
     <https://aka.ms/dockerlifecycleebook>
 
-## <a name="who-should-use-this-guide"></a>Public visé par ce guide
+## <a name="who-should-use-this-guide"></a>À qui s'adresse ce guide ?
 
 Nous avons rédigé ce guide à l’intention des développeurs et des architectes de solutions qui n’ont pas d’expérience en matière développement d’applications Docker et d’architecture basée sur les microservices. Ce guide s’adresse à vous si votre intention est d’apprendre à architecturer, concevoir et implémenter des applications de type preuve de concept avec les technologies de développement Microsoft (plus particulièrement .NET Core) et des conteneurs Docker.
 
@@ -146,9 +146,9 @@ Participants et réviseurs :
 >
 > **Charles Lowell**, ingénieur logiciel, équipe VS CAT, Microsoft
 >
-> **Miguel Veloso**, consultant en chef, Turing Challenge
+> **Miguel Veloso**, ingénieur de développement logiciel chez des concepts simples
 
-## <a name="copyright"></a>Copyright
+## <a name="copyright"></a>copyright
 
 TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/microservicesebook>
 
@@ -162,13 +162,13 @@ One Microsoft Way
 
 Redmond, Washington 98052-6399
 
-Copyright © 2019 par Microsoft Corporation
+Copyright © 2020 par Microsoft Corporation
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite ou transmise sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans ce document, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
-Certains exemples décrits dans ce document ne sont fournis qu’à titre d’illustration et sont purement fictifs. Toute ressemblance ou tout lien avec le monde réel sont purement fortuits et involontaires.
+Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » à l’adresse <https://www.microsoft.com> sont des marques du groupe de sociétés Microsoft.
 
@@ -179,4 +179,4 @@ Le logo de la baleine de l’arrimeur est une marque déposée de Dockr, Inc. ut
 Toutes les autres marques et tous les autres logos sont la propriété de leurs propriétaires respectifs.
 
 >[!div class="step-by-step"]
->[Suivant](container-docker-introduction/index.md)
+>[Next](container-docker-introduction/index.md)

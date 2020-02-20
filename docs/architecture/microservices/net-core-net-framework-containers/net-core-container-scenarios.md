@@ -1,13 +1,13 @@
 ---
 title: Quand choisir .NET Core pour les conteneurs Docker
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Quand choisir .NET Core pour les conteneurs Docker
-ms.date: 09/11/2018
-ms.openlocfilehash: d17b6b7620f485f09f8f18ac792418a48ae40037
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 01/30/2020
+ms.openlocfilehash: b3cb1eefe739b4ffdbbdd0bdcb3c74b51862704b
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920978"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501845"
 ---
 # <a name="when-to-choose-net-core-for-docker-containers"></a>Quand choisir .NET Core pour les conteneurs Docker
 
@@ -35,11 +35,11 @@ Outre les IDE et les éditeurs, vous pouvez utiliser le [CLI .net Core](../../..
 
 Les conteneurs sont couramment utilisés avec une architecture de microservices, même s’ils peuvent aussi servir à organiser en conteneurs les services ou applications web qui suivent un modèle d’architecture. Vous pouvez utiliser le .NET Framework dans les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est parfait pour les conteneurs et les architectures de microservices. Quand vous créez et déployez un conteneur, son image est beaucoup plus petite avec .NET Core qu’avec le .NET Framework.
 
-## <a name="creating-and-deploying-microservices-on-containers"></a>Création et déploiement de microservices dans des conteneurs
+## <a name="create-and-deploy-microservices-on-containers"></a>Créer et déployer des microservices sur des conteneurs
 
-Vous pouvez utiliser le .NET Framework classique pour créer des applications basées sur des microservices (sans conteneurs) en suivant des processus ordinaires. De cette façon, comme .NET Framework est déjà installé et partagé entre les processus, ceux-ci démarrent rapidement du fait de leur légèreté. En revanche, si vous utilisez des conteneurs, l’image pour le .NET Framework classique est aussi basée sur Windows Server Core, ce qui la rend trop lourde pour une approche de microservices dans des conteneurs.
+Vous pouvez utiliser le .NET Framework classique pour créer des applications basées sur des microservices (sans conteneurs) en suivant des processus ordinaires. De cette façon, comme .NET Framework est déjà installé et partagé entre les processus, ceux-ci démarrent rapidement du fait de leur légèreté. En revanche, si vous utilisez des conteneurs, l’image pour le .NET Framework classique est aussi basée sur Windows Server Core, ce qui la rend trop lourde pour une approche de microservices dans des conteneurs. Toutefois, les équipes cherchent des opportunités pour améliorer l’expérience des utilisateurs .NET Framework. Récemment, la taille des [images de conteneur Windows Server Core a été réduite à > 40% de moins](https://devblogs.microsoft.com/dotnet/we-made-windows-server-core-container-images-40-smaller). 
 
-A contrario, .NET Core est le meilleur choix si vous adoptez un système orienté microservices basé sur des conteneurs, car .NET Core se est léger. De plus, les images de conteneur qui lui sont associées, que ce soit l’image Linux ou l’image Windows Nano, sont légères et petites, ce qui permet aux conteneurs de démarrer rapidement.
+D’un autre côté, .NET Core est le meilleur candidat si vous utilisez un système orienté microservices basé sur des conteneurs, car .NET Core est léger. En outre, les images de conteneur associées, pour Linux ou Windows nano Server, sont légères et petites, ce qui rend les conteneurs clairs et rapides à démarrer.
 
 Un microservice doit être le petit possible de façon à être léger pendant son exécution, à offrir un faible encombrement, à présenter un contexte limité réduit (voir DDD, [Conception pilotée par le modèle](https://en.wikipedia.org/wiki/Domain-driven_design)), à ne pas être une source de problèmes et à démarrer et à s’arrêter rapidement. Pour remplir ces conditions, vous devez utiliser des images de conteneur petites et rapides à instancier à l’instar de l’image de conteneur .NET Core.
 

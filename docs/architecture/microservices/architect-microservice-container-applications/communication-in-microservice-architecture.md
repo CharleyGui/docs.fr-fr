@@ -1,13 +1,13 @@
 ---
 title: Communication dans une architecture de microservices
 description: Explorez les différents modes de communication entre les microservices, et découvrez les implications des modes synchrone et asynchrone.
-ms.date: 09/20/2018
-ms.openlocfilehash: 7bd45e0b8f8ea3330cf8d2b613e54111cc72f14f
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.date: 01/30/2020
+ms.openlocfilehash: f2d6e78966bb7d5f481de6db0ab1dcfe2812a1b5
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966975"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503316"
 ---
 # <a name="communication-in-a-microservice-architecture"></a>Communication dans une architecture de microservices
 
@@ -61,7 +61,7 @@ Si votre microservice doit déclencher une action supplémentaire dans un autre 
 
 Enfin (et c’est là que la plupart des problèmes se posent durant la génération de microservices), si votre microservice initial a besoin de données détenues à l’origine par d’autres microservices, ne vous fiez pas à l’utilisation de requêtes synchrones pour ces données. À la place, répliquez ou propagez ces données (seulement les attributs nécessaires) dans la base de données du service initial en utilisant une cohérence à terme (généralement à l’aide d’événements d’intégration, comme cela est expliqué dans les prochaines sections).
 
-Comme indiqué dans la section [Identification des limites du modèle de domaine pour chaque microservice](identify-microservice-domain-model-boundaries.md), la duplication des données entre plusieurs microservices n’est pas une conception incorrecte. Bien au contraire, en procédant ainsi, vous pouvez traduire les données dans le langage ou les termes spécifiques de cet autre domaine ou contexte délimité. Par exemple, dans l’application [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers), vous avez un microservice nommé identity.api qui est responsable de la plupart des données de l’utilisateur avec une entité nommée User. Cependant, quand vous devez stocker des données relatives à l’utilisateur dans le microservice Ordering, vous les stockez sous la forme d’une autre entité nommée Buyer. L’entité Buyer partage la même identité avec l’entité User d’origine, mais elle ne doit avoir que les quelques attributs nécessaires au domaine Ordering, et non pas la totalité du profil de l’utilisateur.
+Comme indiqué plus haut dans la section [identification des limites du modèle de domaine pour chaque microservice](identify-microservice-domain-model-boundaries.md) , la duplication de certaines données sur plusieurs microservices n’est pas une conception incorrecte, en revanche, lorsque vous procédez ainsi, vous pouvez convertir les données dans la langue ou les termes de ce domaine ou de ce contexte limité supplémentaires. Par exemple, dans l' [application eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) , vous avez un microservice nommé `identity-api` qui est responsable de la plupart des données de l’utilisateur avec une entité nommée `User`. Toutefois, lorsque vous devez stocker des données relatives à l’utilisateur dans le microservice `Ordering`, vous le stockez sous la forme d’une autre entité nommée `Buyer`. L’entité `Buyer` partage la même identité avec l’entité `User` d’origine, mais elle ne peut avoir que les quelques attributs requis par le domaine `Ordering`, et non l’ensemble du profil utilisateur.
 
 Vous pouvez utiliser n’importe quel protocole pour communiquer et propager des données de façon asynchrone entre les microservices pour avoir une cohérence à terme. Comme cela a été mentionné, vous pouvez utiliser des événements d’intégration avec un bus d’événements ou un courtier de messages, ou vous pouvez même utiliser HTTP en interrogeant les autres services. Cela n’a pas d’importance. La règle importante est de ne pas créer de dépendances synchrones entre vos microservices.
 

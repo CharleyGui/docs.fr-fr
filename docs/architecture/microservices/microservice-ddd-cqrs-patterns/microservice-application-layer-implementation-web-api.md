@@ -1,13 +1,13 @@
 ---
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
-description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre l’injection de dépendances et les modèles de médiateur, et leurs détails d’implémentation dans la couche Application de l’API web.
-ms.date: 10/08/2018
-ms.openlocfilehash: 08cb409b06a54c6b30afa393a817e14bd64fbcbf
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
+ms.date: 01/30/2020
+ms.openlocfilehash: a88f3bfd11ea06df085ca82ed7265cb37006fc31
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "73737529"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502448"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
 
@@ -92,11 +92,9 @@ public void ConfigureServices(IServiceCollection services)
 {
     // Register out-of-the-box framework services.
     services.AddDbContext<CatalogContext>(c =>
-    {
-        c.UseSqlServer(Configuration["ConnectionString"]);
-    },
-    ServiceLifetime.Scoped
-    );
+        c.UseSqlServer(Configuration["ConnectionString"]),
+        ServiceLifetime.Scoped);
+
     services.AddMvc();
     // Register custom application dependencies.
     services.AddScoped<IMyCustomRepository, MyCustomSQLRepository>();
@@ -114,7 +112,7 @@ Quand vous utilisez l’injection de dépendances dans .NET Core, vous pouvez av
 - **Matthew King. Inscription de services avec scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
 
-- **Kristian Hellang. Scrutor.** Dépôt GitHub. \
+- **Kristian Hellang. Scrutor.** GitHub repo. \
   <https://github.com/khellang/Scrutor>
 
 #### <a name="use-autofac-as-an-ioc-container"></a>Utiliser Autofac comme conteneur IoC
@@ -289,7 +287,7 @@ En gros, la classe de commande contient toutes les données dont vous avez besoi
 
 Autre caractéristique des commandes : elles sont immuables, car l’usage veut qu’elles soient traitées directement par le modèle de domaine. Elles n’ont pas besoin de changer au cours de leur durée de vie prévue. Dans une classe C#, l’immuabilité implique d’éviter toute méthode setter ou autre méthode qui modifie l’état interne.
 
-Gardez à l’esprit que si vous prévoyez ou que vous vous attendez à ce que les commandes subissent un processus de sérialisation/désérialisation, les propriétés doivent avoir une méthode setter privée et l’attribut `[DataMember]` (ou `[JsonProperty]`), sans quoi le désérialiseur ne peut pas reconstruire l’objet au niveau de la destination avec les valeurs nécessaires.
+N’oubliez pas que si vous envisagez ou pensez que les commandes passent par un processus de sérialisation/désérialisation, les propriétés doivent avoir un accesseur Set privé et l’attribut `[DataMember]` (ou `[JsonProperty]`). Dans le cas contraire, le désérialiseur ne pourra pas reconstruire l’objet à la destination avec les valeurs requises. Vous pouvez également utiliser des propriétés réellement en lecture seule si la classe a un constructeur avec des paramètres pour toutes les propriétés, avec la Convention d’affectation de noms la casse mixte habituelle et annoter le constructeur comme `[JsonConstructor]`. Toutefois, cette option requiert davantage de code.
 
 Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, `CreateOrderCommand` n’a pas d’ID de commande, car la commande n’a pas encore été créée.
 
@@ -313,9 +311,9 @@ public class UpdateOrderStatusCommand
 
 Certains développeurs séparent leurs objets de demande d’interface utilisateur de leurs objets de transfert de données, mais il ne s’agit que d’une question de préférence. Cette séparation est fastidieuse et n’ajoute pas de valeur. Les objets ont presque exactement la même forme. Par exemple, dans eShopOnContainers, certaines commandes viennent directement du côté client.
 
-### <a name="the-command-handler-class"></a>La classe de gestionnaire de commandes
+### <a name="the-command-handler-class"></a>La classe du gestionnaire de commandes
 
-Vous devez implémenter une classe de gestionnaire de commandes spécifique pour chaque commande. Le modèle fonctionne ainsi et c’est là que vous allez utiliser l’objet de commande, les objets de domaine et les objets de dépôt d’infrastructure. Le gestionnaire de commandes est en fait le cœur de la couche Application en termes de CQRS et DDD. Toutefois, toute la logique de domaine doit être contenue dans les classes de domaine : au sein des racines d’agrégat (entités racine), des entités enfants ou des [services de domaine](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/), mais pas dans le gestionnaire de commandes, qui est une classe de la couche Application.
+Vous devez implémenter une classe de gestionnaire de commandes spécifique pour chaque commande. C’est ainsi que le modèle fonctionne, et c’est là que vous allez utiliser l’objet de commande, les objets de domaine et les objets de référentiel d’infrastructure. Le gestionnaire de commandes est en fait le cœur de la couche Application en termes de CQRS et DDD. Toutefois, toute la logique de domaine doit être contenue dans les classes de domaine (dans les racines d’agrégat (entités racine), les entités enfants ou les [services de domaine](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/), mais pas dans le gestionnaire de commandes, qui est une classe de la couche application.
 
 La classe du gestionnaire de commandes offre une base solide pour appliquer le principe de responsabilité unique mentionné dans une des sections précédentes.
 
@@ -813,7 +811,7 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 
-- **MediatR.** Dépôt GitHub. \
+- **MediatR.** GitHub repo. \
   <https://github.com/jbogard/MediatR>
 
 - **CQRS with MediatR and AutoMapper** \
@@ -839,7 +837,7 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="fluent-validation"></a>Validation fluide
 
-- **Jeremy Skinner. FluentValidation.** Dépôt GitHub. \
+- **Jeremy Skinner. FluentValidation.** GitHub repo. \
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]

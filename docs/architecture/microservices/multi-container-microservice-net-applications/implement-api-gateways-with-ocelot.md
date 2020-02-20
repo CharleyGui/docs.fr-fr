@@ -1,26 +1,24 @@
 ---
 title: Implémentation de passerelles d’API avec Ocelot
 description: Découvrez comment implémenter des passerelles d’API avec Ocelot et comment utiliser Ocelot dans un environnement basé sur un conteneur.
-ms.date: 10/02/2018
-ms.openlocfilehash: c0bcd240b6bd190dd02266c7faaf9fd668eb23bb
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.date: 01/30/2020
+ms.openlocfilehash: 0eb834829a418cfa1ccdf13c5fc8849f6855c4ba
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777308"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502417"
 ---
 # <a name="implement-api-gateways-with-ocelot"></a>Implémenter des passerelles API avec Ocelot
 
-L’application de microservice de référence [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) utilise [Ocelot](https://github.com/ThreeMammals/Ocelot), une passerelle d’API simple et légère que vous pouvez déployer partout avec vos microservices/conteneurs, par exemple dans l’un des environnements suivants utilisés par eShopOnContainers :
-
-- Hôte Docker, sur votre PC de développement local, localement ou dans le cloud.
-- Cluster Kubernetes, localement ou dans le cloud managé, tel qu’Azure Kubernetes Service (AKS).
-- Cluster Service Fabric, localement ou dans le cloud.
-- Cloud Service Fabric, comme PaaS/Serverless dans Azure.
+> [!IMPORTANT]
+> L’application de microservice de référence [eShopOnContainers](https://github.com/dotnet-architecture/eShopOnContainers) utilise actuellement les fonctionnalités fournies par [Envoy](https://www.envoyproxy.io/) pour implémenter la passerelle d’API au lieu des [Ocelot](https://github.com/ThreeMammals/Ocelot)référencés précédemment.
+> Nous avons fait ce choix de conception en raison de la prise en charge intégrée du protocole WebSocket par Envoy, requise par les nouvelles communications gRPC entre les services implémentées dans eShopOnContainers.
+> Toutefois, nous avons conservé cette section dans le guide pour vous permettre de considérer Ocelot comme une passerelle d’API simple, efficace et légère, adaptée aux scénarios de production.
 
 ## <a name="architect-and-design-your-api-gateways"></a>Structurer et concevoir les passerelles d’API
 
-Le diagramme d’architecture suivant illustre l’implémentation de passerelles d’API avec Ocelot dans eShopOnContainers.
+Le diagramme d’architecture suivant montre comment les passerelles d’API ont été implémentées avec Ocelot dans eShopOnContainers.
 
 ![Diagramme montrant l’architecture eShopOnContainers.](./media/implement-api-gateways-with-ocelot/eshoponcontainers-architecture.png)
 
@@ -89,7 +87,7 @@ La requête HTTP finit par exécuter ce type de code C# qui accède à la base 
 En ce qui concerne l’URL du microservice, lorsque les conteneurs sont déployés sur votre PC de développement local (hôte de l’ancrage local), le conteneur de chaque microservice a toujours un port interne (généralement le port 80) spécifié dans son fichier dockerfile, comme dans l’fichier dockerfile suivant :
 
 ```Dockerfile
-FROM microsoft/aspnetcore:2.0.5 AS base
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
 WORKDIR /app
 EXPOSE 80
 ```
@@ -105,7 +103,7 @@ Toutefois, lors du développement, vous souhaitez accéder directement au micros
 Voici un exemple de fichier `docker-compose.override.yml` pour le microservice de catalogue :
 
 ```yml
-catalog.api:
+catalog-api:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
     - ASPNETCORE_URLS=http://0.0.0.0:80
@@ -123,10 +121,10 @@ Normalement, vous ne devez pas déployer avec l’amarrage-compose dans un envir
 Exécutez le microservice de catalogue dans votre hôte d’ancrage local. Exécutez la solution eShopOnContainers complète à partir de Visual Studio (elle exécute tous les services dans les fichiers dockr-compose) ou démarrez le microservice de catalogue avec la commande dockr-compose suivante dans CMD ou PowerShell positionnée au niveau du dossier où les `docker-compose.yml` et `docker-compose.override.yml` sont placés.
 
 ```console
-docker-compose run --service-ports catalog.api
+docker-compose run --service-ports catalog-api
 ```
 
-Cette commande exécute uniquement le conteneur de service catalog.api, ainsi que les dépendances qui sont spécifiées dans docker-compose.yml. Dans ce cas, le conteneur SQL Server et le conteneur RabbitMQ.
+Cette commande exécute uniquement le conteneur de service Catalog-API, ainsi que les dépendances spécifiées dans docker-compose. yml. Dans ce cas, le conteneur SQL Server et le conteneur RabbitMQ.
 
 Ensuite, vous pouvez accéder directement au microservice de catalogue et voir ses méthodes par le biais de l’interface utilisateur Swagger qui accède directement à ce port « externe », dans ce cas `http://localhost:5101/swagger`:
 
@@ -142,7 +140,7 @@ Toutefois, la communication à accès direct au microservice, dans le cas prése
 
 Ocelot est essentiellement un ensemble de middlewares que vous pouvez appliquer dans un ordre spécifique.
 
-Ocelot est conçu pour fonctionner uniquement avec ASP.NET Core. Il cible netstandard2.0 et peut donc être utilisé partout où .NET Standard 2.0 est pris en charge, notamment le runtime .NET Core 2.0 et le runtime .NET Framework 4.6.1 et versions ultérieures.
+Ocelot est conçu pour fonctionner uniquement avec ASP.NET Core. Il cible `netstandard2.0` afin qu’il puisse être utilisé partout où .NET Standard 2,0 est pris en charge, y compris le Runtime .NET Core 2,0 et le Runtime .NET Framework 4.6.1.
 
 Installez Ocelot et ses dépendances dans votre projet ASP.NET Core avec le [package NuGet d’Ocelot](https://www.nuget.org/packages/Ocelot/), à partir de Visual Studio.
 
@@ -150,7 +148,7 @@ Installez Ocelot et ses dépendances dans votre projet ASP.NET Core avec le [pac
 Install-Package Ocelot
 ```
 
-Dans eShopOnContainers, son implémentation de passerelle d’API est un simple projet WebHost ASP.NET Core, et les intergiciels de Ocelot gèrent toutes les fonctionnalités de la passerelle d’API, comme illustré dans l’image suivante :
+Dans eShopOnContainers, son implémentation de passerelle d’API est un simple projet WebHost ASP.NET Core, et l’intergiciel (middleware) de Ocelot gère toutes les fonctionnalités de la passerelle API, comme illustré dans l’image suivante :
 
 ![Capture d’écran de Explorateur de solutions montrant le projet de passerelle d’API ocelot.](./media/implement-api-gateways-with-ocelot/ocelotapigw-base-project.png)
 
@@ -207,7 +205,7 @@ Voici un exemple simplifié de [Rerouter le fichier de configuration](https://gi
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "catalog.api",
+          "Host": "catalog-api",
           "Port": 80
         }
       ],
@@ -219,7 +217,7 @@ Voici un exemple simplifié de [Rerouter le fichier de configuration](https://gi
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],
@@ -249,7 +247,7 @@ Par exemple, nous allons nous concentrer sur l’un des reroutages dans le. JSON
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],
@@ -318,7 +316,7 @@ De plus, comme vous pouvez le voir dans le fichier docker-compose.override.yml s
 mobileshoppingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5200:80"
   volumes:
@@ -327,7 +325,7 @@ mobileshoppingapigw:
 mobilemarketingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5201:80"
   volumes:
@@ -336,7 +334,7 @@ mobilemarketingapigw:
 webshoppingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5202:80"
   volumes:
@@ -345,7 +343,7 @@ webshoppingapigw:
 webmarketingapigw:
   environment:
     - ASPNETCORE_ENVIRONMENT=Development
-    - IdentityUrl=http://identity.api
+    - IdentityUrl=http://identity-api
   ports:
     - "5203:80"
   volumes:
@@ -362,13 +360,13 @@ En divisant la passerelle d’API en plusieurs passerelles d’API, différentes
 
 Maintenant, si vous exécutez eShopOnContainers avec les passerelles d’API (incluses par défaut dans Visual Studio lors de l’ouverture de la solution eShopOnContainers-ServicesAndWebApps. sln ou si vous exécutez « docker-compose up »), les exemples d’itinéraires suivants seront exécutés.
 
-Par exemple, lors de la visite de l’URL en amont `http://localhost:5202/api/v1/c/catalog/items/2/` prise en charge par la passerelle API webshoppingapigw, vous obtenez le même résultat à partir de l’URL interne en aval `http://catalog.api/api/v1/2` dans l’hôte Docker, comme dans le navigateur suivant.
+Par exemple, lors de la visite de l’URL en amont `http://localhost:5202/api/v1/c/catalog/items/2/` prise en charge par la passerelle API webshoppingapigw, vous obtenez le même résultat à partir de l’URL interne en aval `http://catalog-api/api/v1/2` dans l’hôte Docker, comme dans le navigateur suivant.
 
 ![Capture d’écran d’un navigateur montrant une réponse passant par la passerelle d’API.](./media/implement-api-gateways-with-ocelot/access-microservice-through-url.png)
 
 **Figure 6-35.** Accès à un microservice via une URL fournie par la passerelle d’API
 
-En raisons des tests ou du débogage, si vous souhaitez accéder directement au conteneur Docker Catalog (uniquement dans l’environnement de développement) sans passer par la passerelle d’API, dans la mesure où « catalog.api » est une résolution DNS interne à l’hôte Docker (découverte de service gérée par les noms de service docker-compose), la seule façon d’accéder directement au conteneur est via le port externe publié dans le fichier docker-compose.override.yml, qui est fourni uniquement pour les tests de développement, comme `http://localhost:5101/api/v1/Catalog/items/1` dans le navigateur suivant.
+En raison de raisons de test ou de débogage, si vous souhaitez accéder directement au conteneur de l’ancrage du catalogue (uniquement dans l’environnement de développement) sans passer par la passerelle d’API, dans la mesure où « Catalog-API » est une résolution DNS interne à l’hôte de l’ordinateur de la station d’accueil (la détection du service est gérée par les noms de service de l’ancrage-compose), le seul moyen d’accéder directement au conteneur est de passer par le port externe publié dans docker-compose. override. yml, qui est fourni uniquement pour les tests de développement, tels que `http://localhost:5101/api/v1/Catalog/items/1`
 
 ![Capture d’écran d’un navigateur montrant une réponse directe à l’API Catalog.](./media/implement-api-gateways-with-ocelot/direct-access-microservice-testing.png)
 
@@ -426,7 +424,7 @@ La manière de sécuriser par authentification n’importe quel service au nivea
       "DownstreamScheme": "http",
       "DownstreamHostAndPorts": [
         {
-          "Host": "basket.api",
+          "Host": "basket-api",
           "Port": 80
         }
       ],

@@ -1,13 +1,13 @@
 ---
 title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
-ms.date: 01/07/2019
-ms.openlocfilehash: 33f2918df5b63cc4bd54ddb84900c6bd91e9f77e
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 01/30/2020
+ms.openlocfilehash: 5ffc7e791df8cbc999c6ababf62670bae46e1d5e
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921005"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502837"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
 
@@ -31,7 +31,7 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Registre (registry)** : service qui fournit l’accès aux dépôts. Le registre par défaut utilisé pour la plupart des images publiques est [Docker Hub](https://hub.docker.com/) (propriété de l’organisation Docker). Un registre contient généralement des dépôts de plusieurs équipes. Les entreprises utilisent souvent des registres privés pour stocker et gérer les images qu’elles ont créées. Azure Container Registry est un autre exemple de registre.
 
-**Image multi-arch**: pour l’architecture mutualisée, est une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle s’exécute l’Assistant, par exemple lorsqu’un fichier dockerfile demande une image **de base à partir de MCR.Microsoft.com/dotnet/Core/SDK :2.2** à partir du Registre, il obtient en fait **2,2-SDK-Server-1709**, **2,2-SDK-Server-1803**, **2,2-SDK-Server-1809** ou **2,2-SDK-Stretch**, en fonction du système d’exploitation et de la version de l’ordinateur.
+**Image multi-** architecture : pour l’architecture mutualisée, il s’agit d’une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle l’outil de connexion est en cours d’exécution. Par exemple, lorsqu’un fichier dockerfile demande une image **de base de MCR.Microsoft.com/dotnet/Core/SDK :3.1** à partir du Registre, il obtient en fait **3,1-SDK-** -1909, **3,1-SDK-Server-1809** ou **3,1-SDK-Buster-Slim**, en fonction du système d’exploitation et de la version du service d’installation.
 
 **Docker Hub** : registre public dans lequel vous pouvez charger et manipuler des images. Docker Hub fournit un hébergement d’images Docker, des registres publics ou privés, des déclencheurs de build et des webhooks, et l’intégration avec GitHub et Bitbucket.
 

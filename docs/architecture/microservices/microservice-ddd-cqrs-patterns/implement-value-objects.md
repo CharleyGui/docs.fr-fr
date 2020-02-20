@@ -1,13 +1,13 @@
 ---
 title: Implémentation d’objets de valeur
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez les explications détaillées et les options disponibles pour implémenter des objets de valeur à l’aide des nouvelles fonctionnalités d’Entity Framework.
-ms.date: 10/08/2018
-ms.openlocfilehash: 70c92fe86fda20ed4e909b945b843e8e71092f09
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.date: 01/30/2020
+ms.openlocfilehash: 4ace5c141b1cbd2dcfefb7ea7165a4006b130479
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899772"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502511"
 ---
 # <a name="implement-value-objects"></a>Implémenter des objets de valeur
 
@@ -131,13 +131,13 @@ public class Address : ValueObject
 
 Comme vous pouvez le voir, cette implémentation de l’objet de valeur Address n’a pas d’identité, et donc pas de champ ID, ni dans la classe Address ni dans la classe ValueObject.
 
-L’absence de champ ID dans une classe utilisée par Entity Framework n’était pas possible avant EF Core 2.0. Il est maintenant beaucoup plus simple d’implémenter correctement des objets de valeur sans ID. C’est précisément ce que nous allons expliquer dans la section suivante.
+Il n’est pas possible d’avoir un champ d’ID dans une classe à utiliser par Entity Framework (EF) tant que EF Core 2,0, ce qui permet d’implémenter de meilleurs objets de valeur sans ID. C’est précisément ce que nous allons expliquer dans la section suivante.
 
-On pourrait penser que, comme ils sont immuables, les objets de valeur doivent être en lecture seule (avec des propriétés get-only). C’est exact. Toutefois, ils sont généralement sérialisés et désérialisés dans les files d’attente ; or, s’ils sont en lecture seule, le désérialiseur arrête l’affectation de valeurs. Pour des raisons pratiques, nous allons simplement les laisser définis comme privés, ce qui constitue un niveau de lecture seule suffisant.
+Il peut être allégué que les objets de valeur, qui sont immuables, doivent être en lecture seule (autrement dit, ont des propriétés d’accès en lecture seule) et cela est effectivement vrai. Toutefois, ils sont généralement sérialisés et désérialisés dans les files d’attente ; or, s’ils sont en lecture seule, le désérialiseur arrête l’affectation de valeurs. Pour des raisons pratiques, nous allons simplement les laisser définis comme privés, ce qui constitue un niveau de lecture seule suffisant.
 
-## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20"></a>Comment rendre des objets de valeur persistants dans la base de données avec EF Core 2.0
+## <a name="how-to-persist-value-objects-in-the-database-with-ef-core-20-and-later"></a>Comment conserver des objets de valeur dans la base de données avec EF Core 2,0 et versions ultérieures
 
-Vous venez de voir comment définir un objet de valeur dans votre modèle de domaine. Mais comment faire pour le rendre persistant dans la base de données au moyen d’Entity Framework (EF) Core, qui cible généralement les entités avec l’identité ?
+Vous venez de voir comment définir un objet de valeur dans votre modèle de domaine. Mais comment pouvez-vous réellement la conserver dans la base de données à l’aide de Entity Framework Core, car elle cible généralement les entités avec l’identité ?
 
 ### <a name="background-and-older-approaches-using-ef-core-11"></a>Informations générales et anciennes approches avec EF Core 1.1
 
@@ -160,11 +160,11 @@ void ConfigureAddress(EntityTypeBuilder<Address> addressConfiguration)
 
 Toutefois, la persistance de cet objet de valeur dans la base de données s’apparente à une entité normale dans une autre table.
 
-EF Core 2.0 offre de nouveaux moyens plus efficaces de rendre les objets de valeur persistants.
+Avec EF Core 2,0 et versions ultérieures, il existe de nouvelles méthodes et de meilleures façons de conserver les objets de valeur.
 
-## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20"></a>Rendre les objets de valeur persistants en tant que types d’entité détenus dans EF Core 2.0
+## <a name="persist-value-objects-as-owned-entity-types-in-ef-core-20-and-later"></a>Conserver les objets de valeur en tant que types d’entité détenus dans EF Core 2,0 et versions ultérieures
 
-Même si des écarts existent entre le modèle d’objet de valeur canonique dans DDD et le type d’entité détenu dans EF Core, il s’agit actuellement de la meilleure façon de rendre les objets de valeur persistants avec EF Core 2.0. Les limitations sont présentées à la fin de cette section.
+Même avec certains écarts entre le modèle d’objet de valeur canonique dans DDD et le type d’entité détenu dans EF Core, il s’agit actuellement de la meilleure façon de rendre les objets de valeur persistants avec EF Core 2,0 et versions ultérieures. Les limitations sont présentées à la fin de cette section.
 
 La fonctionnalité des types d’entité détenus est proposée dans EF Core depuis la version 2.0.
 
@@ -178,7 +178,7 @@ L’identité des instances de types détenus ne leur appartient pas entièremen
 
 - la propriété de navigation pointant vers les types ;
 
-- dans le cas de collections de types détenus, un composant indépendant (non pris en charge dans EF Core 2.0 ; prise en charge prévue dans la version 2.2).
+- Dans le cas des collections de types détenus, un composant indépendant (pris en charge dans EF Core 2,2 et versions ultérieures).
 
 Par exemple, dans le modèle de domaine Ordering d’eShopOnContainers, dans le cadre de l’entité Order, l’objet de valeur Address est implémenté comme type d’entité détenu au sein de l’entité du propriétaire, qui est l’entité Order. Address est un type dont la propriété d’identité n’est pas définie dans le modèle de domaine. Il est utilisé comme propriété du type Order pour spécifier l’adresse d’expédition d’une commande particulière.
 
@@ -238,7 +238,7 @@ orderConfiguration.OwnsOne(p => p.Address)
                             .Property(p=>p.City).HasColumnName("ShippingCity");
 ```
 
-Il est possible de chaîner la méthode `OwnsOne` dans un mappage fluent. Dans l’exemple hypothétique suivant, `OrderDetails` détient `BillingAddress` et `ShippingAddress`, qui sont tous deux des types `Address`. `OrderDetails` est alors détenu par le type `Order`.
+Il est possible de chaîner la méthode `OwnsOne` dans un mappage Fluent. Dans l’exemple hypothétique suivant, `OrderDetails` détient `BillingAddress` et `ShippingAddress`, qui sont tous deux des types `Address`. `OrderDetails` est alors détenu par le type `Order`.
 
 ```csharp
 orderConfiguration.OwnsOne(p => p.OrderDetails, cb =>
@@ -275,7 +275,7 @@ public class Address
 
 - L’identité (clé) d’une instance de type détenu dans notre pile est un composite de l’identité du type du propriétaire et de la définition du type détenu.
 
-#### <a name="owned-entities-capabilities"></a>Fonctionnalités des entités détenues :
+#### <a name="owned-entities-capabilities"></a>Fonctionnalités des entités détenues
 
 - Les types détenus peuvent référencer d’autres entités, qu’elles soient détenues (types détenus imbriqués) ou non (propriétés de navigation de référence régulières à d’autres entités).
 
@@ -283,27 +283,27 @@ public class Address
 
 - Le fractionnement de table est configuré par convention, mais vous pouvez le refuser en mappant le type détenu à une autre table à l’aide de ToTable.
 
-- Un chargement hâtif est effectué automatiquement sur les types détenus. Il est donc inutile d’appeler Include() sur la requête.
+- Le chargement hâtif est effectué automatiquement sur les types détenus, autrement dit, il n’est pas nécessaire d’appeler `.Include()` sur la requête.
 
-- Cela peut être configuré avec l’attribut \[Owned\] dans EF Core 2.1
+- Peut être configuré avec l’attribut `[Owned]`, à l’aide de EF Core 2,1 et versions ultérieures.
 
-#### <a name="owned-entities-limitations"></a>Limitations des entités détenues :
+- Peut gérer des collections de types détenus (à l’aide de la version 2,2 et versions ultérieures).
 
-- Vous ne pouvez pas créer un DbSet\<T\> d’un type détenu (par conception).
+#### <a name="owned-entities-limitations"></a>Limitations des entités détenues
 
-- Vous ne pouvez pas appeler ModelBuilder.Entity\<T\>() sur des types détenus (actuellement par conception).
+- Vous ne pouvez pas créer un `DbSet<T>` d’un type détenu (par conception).
 
-- Il n’y a pas de collections de types détenus dans EF Core 2.1 et versions antérieures, mais leur prise en charge est prévue dans la version 2.2.
+- Vous ne pouvez pas appeler `ModelBuilder.Entity<T>()` sur des types détenus (actuellement par conception).
 
-- Les types détenus facultatifs (acceptant une valeur Null) qui sont mappés avec le propriétaire dans la même table (à l’aide du fractionnement de table) ne sont pas pris en charge. Cela est dû au fait que le mappage est effectué pour chaque propriété, et nous n’avons pas de sentinelle séparée pour traiter globalement la valeur complexe Null.
+- Aucune prise en charge des types facultatifs (autrement dit, Nullable) qui sont mappés avec le propriétaire dans la même table (autrement dit, en utilisant le fractionnement de table). Cela est dû au fait que le mappage est effectué pour chaque propriété, et nous n’avons pas de sentinelle séparée pour traiter globalement la valeur complexe Null.
 
 - Le mappage d’héritage pour les types détenus n’est pas pris en charge, mais vous pouvez normalement mapper deux types feuilles des mêmes hiérarchies d’héritage en tant que types détenus différents. EF Core ne réalise pas qu’ils font partie de la même hiérarchie.
 
 #### <a name="main-differences-with-ef6s-complex-types"></a>Principales différences avec les types complexes d’EF6
 
-- Le fractionnement de table est facultatif, c’est-à-dire que les types peuvent éventuellement être mappés à une table distincte tout en restant des types détenus.
+- Le fractionnement de table est facultatif, autrement dit, ils peuvent éventuellement être mappés à une table distincte et sont toujours des types détenus.
 
-- Ils peuvent référencer d’autres entités (et donc constituer la partie dépendante des relations à d’autres types non détenus).
+- Ils peuvent référencer d’autres entités (autrement dit, ils peuvent agir comme côté dépendant sur des relations avec d’autres types non détenus).
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
@@ -316,8 +316,11 @@ public class Address
 - **Vaughn Vernon. Implémentation de la conception pilotée par le domaine.** (Livre incluant une discussion sur les objets de valeur) \
   <https://www.amazon.com/Implementing-Domain-Driven-Design-Vaughn-Vernon/dp/0321834577/>
 
+- **Types d’entités Détenues** \
+  <https://docs.microsoft.com/ef/core/modeling/owned-entities>
+
 - **Propriétés cachées** \
-  [https://docs.microsoft.com/ef/core/modeling/shadow-properties](/ef/core/modeling/shadow-properties)
+  <https://docs.microsoft.com/ef/core/modeling/shadow-properties>
 
 - **Types complexes et/ou objets de valeur**. Discussion dans le dépôt GitHub EF Core (onglet des problèmes) \
   <https://github.com/dotnet/efcore/issues/246>

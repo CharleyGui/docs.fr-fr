@@ -1,13 +1,13 @@
 ---
 title: Surveillance de l’intégrité
 description: Explorez un moyen d’implémenter la supervision de l’intégrité.
-ms.date: 01/07/2019
-ms.openlocfilehash: f1d63e04bbea95fcf0a9f9d3b50aef0e7d4a830e
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: a91e51af66049f9774365cd56b90ab792a4dd4fc
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73732901"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502685"
 ---
 # <a name="health-monitoring"></a>Surveillance de l’intégrité
 
@@ -19,7 +19,7 @@ Dans le modèle standard, les services envoient des rapports sur leur état, et 
 
 ## <a name="implement-health-checks-in-aspnet-core-services"></a>Implémenter des vérifications d’intégrité dans les services ASP.NET Core
 
-Quand vous développez une application web ou de microservice ASP.NET Core, vous pouvez utiliser la fonctionnalité de vérification de l’intégrité intégrée qui a été publiée dans ASP .NET Core 2.2. Comme nombre de fonctionnalités ASP.NET Core, la fonctionnalité de vérification de l’intégrité est accompagnée d’un ensemble de services et d’un middleware (intergiciel).
+Lorsque vous développez un microservice ou une application Web ASP.NET Core, vous pouvez utiliser la fonctionnalité de contrôles d’intégrité intégrée publiée dans ASP .NET Core 3,1 ([Microsoft. extensions. Diagnostics. HealthChecks](https://www.nuget.org/packages/Microsoft.Extensions.Diagnostics.HealthChecks)). Comme nombre de fonctionnalités ASP.NET Core, la fonctionnalité de vérification de l’intégrité est accompagnée d’un ensemble de services et d’un middleware (intergiciel).
 
 Le middleware et les services de vérification de l’intégrité sont simples d’emploi. Leurs fonctionnalités vous permettent de vérifier si chaque ressource externe nécessaire pour votre application (par exemple, une base de données SQL Server ou une API distante) fonctionne correctement. Avec cette fonctionnalité, vous pouvez également déterminer à quel moment une ressource est considérée comme saine, comme nous l’expliquerons plus tard.
 
@@ -27,20 +27,23 @@ Pour utiliser cette fonctionnalité efficacement, vous devez d’abord configure
 
 ### <a name="use-the-healthchecks-feature-in-your-back-end-aspnet-microservices"></a>Utiliser la fonctionnalité HealthChecks dans vos microservices ASP.NET back-end
 
-Dans cette section, vous allez apprendre comment la fonctionnalité HealthChecks est utilisée dans un exemple d’application d’API web ASP.NET Core 2.2. L’implémentation de cette fonctionnalité dans un microservice à grande échelle comme eShopOnContainers est expliquée dans la section ultérieure. Pour commencer, vous devez définir ce qui constitue un état intègre pour chaque microservice. Dans l’exemple d’application, les microservices sont sains si l’API du microservice est accessible via HTTP et que sa base de données SQL Server associée est également disponible.
+Dans cette section, vous allez découvrir comment la fonctionnalité HealthChecks, telle qu’elle est implémentée dans [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks), est utilisée dans un exemple d’application d’API Web 3,1 ASP.net core. L’implémentation de cette fonctionnalité dans des microservices à grande échelle comme eShopOnContainers est expliquée dans la section suivante. Pour commencer, vous devez définir ce qui constitue un état intègre pour chaque microservice. Dans l’exemple d’application, les microservices sont sains si l’API du microservice est accessible via HTTP et que sa base de données SQL Server associée est également disponible.
 
-Dans .NET Core 2.2, avec les API intégrées, vous pouvez configurer les services et ajouter une vérification d’intégrité pour le microservice et sa base de données SQL Server dépendante de cette façon :
+Dans .NET Core 3,1, avec les API intégrées, vous pouvez configurer les services, ajouter un contrôle d’intégrité pour le microservice et sa base de données de SQL Server dépendante de cette façon :
 
 ```csharp
-// Startup.cs from .NET Core 2.2 Web Api sample
+// Startup.cs from .NET Core 3.1 Web API sample
 //
 public void ConfigureServices(IServiceCollection services)
 {
     //...
     // Registers required services for health checks
     services.AddHealthChecks()
-    // Add a health check for a SQL database
-    .AddCheck("MyDatabase", new SqlConnectionHealthCheck(Configuration["ConnectionStrings:DefaultConnection"]));
+        // Add a health check for a SQL Server database
+        .AddSqlServer(
+            configuration["ConnectionString"],
+            name: "OrderingDB-check",
+            tags: new string[] { "orderingdb" });
 }
 ```
 
@@ -98,17 +101,26 @@ public class SqlConnectionHealthCheck : IHealthCheck
 }
 ```
 
-Notez que dans le code précédent, `Select 1` est la requête utilisée pour vérifier l’intégrité de la base de données. Pour superviser la disponibilité de vos microservices, les orchestrateurs tels que Kubernetes et Service Fabric effectuent régulièrement des vérifications d’intégrité en envoyant des requêtes pour tester les microservices. Il est important que vos requêtes de base de données soient systématiquement efficaces afin que ces opérations soient rapides et n’entraînent pas une utilisation accrue des ressources.
+Notez que dans le code précédent, `Select 1` est la requête utilisée pour vérifier l’intégrité de la base de données. Pour surveiller la disponibilité de vos microservices, les orchestrateurs comme Kubernetes effectuent périodiquement des contrôles d’intégrité en envoyant des demandes pour tester les microservices. Il est important que vos requêtes de base de données soient systématiquement efficaces afin que ces opérations soient rapides et n’entraînent pas une utilisation accrue des ressources.
 
-Enfin, créez un middleware qui répond au chemin d’url « /hc » :
+Enfin, ajoutez un intergiciel qui répond au chemin de l’URL `/hc`:
 
 ```csharp
-// Startup.cs from .NET Core 2.2 Web Api sample
+// Startup.cs from .NET Core 3.1 Web Api sample
 //
 public void Configure(IApplicationBuilder app, IHostingEnvironment env)
 {
     //…
-    app.UseHealthChecks("/hc");
+    app.UseEndpoints(endpoints =>
+    {
+        //...
+        endpoints.MapHealthChecks("/hc", new HealthCheckOptions()
+        {
+            Predicate = _ => true,
+            ResponseWriter = UIResponseWriter.WriteHealthCheckUIResponse
+        });
+        //...
+    });
     //…
 }
 ```
@@ -119,7 +131,7 @@ Quand le point de terminaison `<yourmicroservice>/hc` est appelé, il exécute t
 
 Les microservices dans eShopOnContainers s’appuient sur plusieurs services pour effectuer leurs tâches. Par exemple, le microservice `Catalog.API` d’eShopOnContainers dépend de nombreux services, tels que Stockage Blob Azure, SQL Server et RabbitMQ. Ainsi, plusieurs vérifications d’intégrité y sont ajoutées à l’aide de la méthode `AddCheck()`. Pour chaque service dépendant, une implémentation `IHealthCheck` personnalisée qui définit son état d’intégrité respectif doit être ajoutée.
 
-Le projet open source [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) résout ce problème en fournissant des implémentations de vérification d’intégrité personnalisées pour chacun de ces services d’entreprise qui s’appuient sur .NET Core 2.2. Chaque vérification d’intégrité est disponible en tant que package NuGet individuel qui peut être facilement ajouté au projet. eShopOnContainers les utilise largement dans tous ses microservices.
+Le projet open source [AspNetCore. Diagnostics. HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks) résout ce problème en fournissant des implémentations de contrôle d’intégrité personnalisées pour chacun de ces services d’entreprise basés sur .net Core 3,1. Chaque vérification d’intégrité est disponible en tant que package NuGet individuel qui peut être facilement ajouté au projet. eShopOnContainers les utilise largement dans tous ses microservices.
 
 Par exemple, dans le microservice `Catalog.API`, les packages NuGet suivants ont été ajoutés :
 
@@ -175,7 +187,7 @@ public static IServiceCollection AddCustomHealthCheck(this IServiceCollection se
 }
 ```
 
-Enfin, nous ajoutons le middleware HealthCheck pour écouter le point de terminaison « /hc » :
+Enfin, ajoutez l’intergiciel (middleware) de vérification pour écouter le point de terminaison « /HC » :
 
 ```csharp
 // HealthCheck middleware
@@ -199,7 +211,7 @@ Dans ce test, vous pouvez voir que le microservice `Catalog.API` (exécuté sur 
 
 ## <a name="use-watchdogs"></a>Utiliser des pilotes de surveillance
 
-Un pilote de surveillance est un service distinct qui peut surveiller l’intégrité et la charge parmi les services, et fournir des informations sur l’intégrité des microservices en interrogeant la bibliothèque `HealthChecks` présentée plus haut. Cela peut vous aider à éviter des erreurs qui ne sont pas détectées dans l’affichage d’un seul service. Les pilotes de surveillance sont également un bon emplacement de stockage pour le code qui peut effectuer des actions de correction dans des conditions connues sans intervention de l’utilisateur.
+Un pilote de surveillance est un service distinct qui peut surveiller l’intégrité et la charge parmi les services, et fournir des informations sur l’intégrité des microservices en interrogeant la bibliothèque `HealthChecks` présentée plus haut. Cela permet d’éviter des erreurs qui ne seraient pas détectées à partir de l’affichage d’un service unique. Les agents de surveillance sont également un bon moyen d’héberger du code capable d’effectuer des actions de correction dans des conditions connues, sans nécessiter l’intervention d’un utilisateur.
 
 L’exemple eShopOnContainers contient une page web qui affiche des exemples de rapports de vérification d’intégrité, comme illustré à la Figure 8-9. Il s’agit du pilote de surveillance le plus simple que vous pouvez avoir, car il ne fait qu’afficher l’état des microservices et des applications web dans eShopOnContainers. En règle générale, un pilote de surveillance exécute aussi certaines actions quand il détecte des états non intègres.
 
@@ -259,13 +271,13 @@ Par exemple, la plupart des orchestrateurs peuvent utiliser des vérifications d
 
 La surveillance de l’intégrité est particulièrement importante quand un orchestrateur effectue une mise à niveau d’application. Certains orchestrateurs (comme Azure Service Fabric) mettent à jour les services par étapes. Par exemple, ils peuvent mettre à jour un cinquième de la surface du cluster pour chaque mise à niveau d’application. L’ensemble de nœuds mis à niveau en même temps est appelé *domaine de mise à niveau*. Une fois que chaque domaine de mise à niveau a été mis à niveau et est disponible pour les utilisateurs, le domaine doit passer les vérifications d’intégrité avant que le déploiement continue dans le domaine de mise à niveau suivant.
 
-Un autre aspect de l’intégrité des services est la création de rapports de métriques à partir d’un service. Il s’agit d’une fonctionnalité avancée du modèle d’intégrité de certains orchestrateurs, comme Service Fabric. Les métriques sont importantes quand vous utilisez un orchestrateur, car elles aident à équilibrer l’utilisation des ressources. Elles sont également un indicateur de l’intégrité du système. Par exemple, une application inclut de nombreux microservices et chaque instance fournit une métrique de demandes par seconde (RPS). Si un service utilise davantage de ressources (mémoire, processeur, etc.) qu’un autre service, l’orchestrateur peut déplacer des instances du service dans le cluster pour mieux équilibrer l’utilisation des ressources entre les services.
+L’intégrité du service inclut un autre aspect : le rapport de mesures à partir du service. Il s’agit d’une fonctionnalité avancée du modèle d’intégrité de certains orchestrateurs, comme Service Fabric. Les métriques sont importantes quand vous utilisez un orchestrateur, car elles aident à équilibrer l’utilisation des ressources. Les mesures peuvent aussi servir d’indicateur de l’intégrité du système. Par exemple, une application inclut de nombreux microservices et chaque instance fournit une métrique de demandes par seconde (RPS). Si un service utilise davantage de ressources (mémoire, processeur, etc.) qu’un autre service, l’orchestrateur peut déplacer des instances du service dans le cluster pour mieux équilibrer l’utilisation des ressources entre les services.
 
 Notez qu’Azure Service Fabric fournit son propre [modèle de vérification d’intégrité](/azure/service-fabric/service-fabric-health-introduction), qui est plus performant que les vérifications d’intégrité simples.
 
 ## <a name="advanced-monitoring-visualization-analysis-and-alerts"></a>Surveillance avancée : visualisation, analyse et alertes
 
-La dernière partie de la surveillance est la visualisation du flux d’événements, la création de rapports sur les performances des services et l’envoi d’alertes quand un problème est détecté. Différentes solutions sont disponibles pour cet aspect de la surveillance.
+La dernière partie de la surveillance consiste en la visualisation du flux d’événements, la création de rapports sur les performances de service et la génération d’alertes en cas de détection d’un problème. Vous pouvez utiliser différentes solutions pour cet aspect de la surveillance.
 
 Vous pouvez utiliser des applications personnalisées simples qui affichent l’état de vos services. C’est le cas de la page personnalisée présentée dans la section sur [AspNetCore.Diagnostics.HealthChecks](https://github.com/Xabaril/AspNetCore.Diagnostics.HealthChecks). Vous pouvez aussi utiliser des outils plus avancés comme [Azure Monitor](https://azure.microsoft.com/services/monitor/) pour déclencher des alertes en fonction du flux d’événements.
 
@@ -279,7 +291,7 @@ Pour finir, si vous stockez tous les flux d’événements, vous pouvez utiliser
 - **Présentation de la supervision de l’intégrité de Service Fabric** \
   [https://docs.microsoft.com/azure/service-fabric/service-fabric-health-introduction](/azure/service-fabric/service-fabric-health-introduction)
 
-- **Azure Monitor**  
+- **Azure Monitor** \
   <https://azure.microsoft.com/services/monitor/>
 
 >[!div class="step-by-step"]

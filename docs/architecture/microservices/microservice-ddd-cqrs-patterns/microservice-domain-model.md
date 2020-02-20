@@ -1,13 +1,13 @@
 ---
 title: Conception d’un modèle de domaine de microservice
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Comprendre les concepts clés de la conception d’un modèle de domaine orienté DDD.
-ms.date: 10/08/2018
-ms.openlocfilehash: 3a02059064305ca148b7909923e2f51e60ee54d5
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: 628fb5c76362ec8f48367b3d69d16ea6ebd24f09
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737461"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502334"
 ---
 # <a name="design-a-microservice-domain-model"></a>Concevoir un modèle de domaine de microservice
 
@@ -74,9 +74,9 @@ Une entité dans un microservice peut ne pas être une entité dans un autre mic
 
 Une personne désignée par un prénom et un nom est généralement une entité, car elle a une identité, même si ce prénom et ce nom coïncident avec un autre ensemble de valeurs, par exemple s’ils font également référence à une autre personne.
 
-Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et les ORM comme EF, alors que dans les bases de données orientées document, ils sont plus faciles à implémenter et à utiliser.
+Les objets de valeur sont difficiles à gérer dans les bases de données relationnelles et ORM comme Entity Framework (EF), tandis que dans les bases de données orientées document, ils sont plus faciles à implémenter et à utiliser.
 
-EF Core 2.0 inclut la fonctionnalité [Entités détenues](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting), qui facilite la gestion des objets de valeur, comme nous le verrons en détail par la suite.
+EF Core 2,0 et versions ultérieures incluent la fonctionnalité [entités détenues](https://devblogs.microsoft.com/dotnet/announcing-entity-framework-core-2-0/#owned-entities-and-table-splitting) qui facilite la gestion des objets de valeur, comme nous le verrons plus tard.
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 

@@ -2,44 +2,44 @@
 title: Maillages de service-gRPC pour les développeurs WCF
 description: Utilisation d’une maille de service pour acheminer et équilibrer les demandes vers les services gRPC dans un cluster Kubernetes.
 ms.date: 09/02/2019
-ms.openlocfilehash: cc4855b1ed27e29076e4f13f5c5d3dffa63a6554
-ms.sourcegitcommit: 5fb5b6520b06d7f5e6131ec2ad854da302a28f2e
+ms.openlocfilehash: a29d6893e585c7eb60c847cef0149afeeaebcdab
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/03/2019
-ms.locfileid: "74711273"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503383"
 ---
 # <a name="service-meshes"></a>Maillages de service
 
 Une maille de service est un composant d’infrastructure qui prend le contrôle des demandes de service de routage au sein d’un réseau. Les maillages de service peuvent gérer tous les types de problèmes au niveau du réseau au sein d’un cluster Kubernetes, notamment :
 
 - Détection du service
-- Équilibrage de charge
-- Tolérance de pannes
+- Équilibrage de la charge
+- Tolérance de panne
 - Chiffrement
-- Analyse
+- Surveillance
 
-Les maillages de service Kubernetes fonctionnent en ajoutant un conteneur supplémentaire, appelé *proxy de side-car*, à chaque Pod inclus dans la maille. Le proxy prend en charge la gestion de toutes les demandes réseau entrantes et sortantes, ce qui permet à la configuration et à la gestion de la mise en réseau de rester séparées des conteneurs d’applications et, dans de nombreux cas, sans nécessiter de modification du code de l’application.
+Les maillages de service Kubernetes fonctionnent en ajoutant un conteneur supplémentaire, appelé *proxy de side-car*, à chaque Pod inclus dans la maille. Le proxy prend en charge la gestion de toutes les demandes réseau entrantes et sortantes. Vous pouvez alors conserver la configuration et la gestion des aspects de la mise en réseau séparément des conteneurs d’applications. Dans de nombreux cas, cette séparation ne nécessite aucune modification du code de l’application.
 
-Prenons l' [exemple du chapitre précédent](kubernetes.md#test-the-application), où les requêtes gRPC de l’application Web ont toutes été routées vers une seule instance du service gRPC. Cela est dû au fait que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache pendant la durée de vie de l’instance `HttpClientHandler`. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients, mais cela complique considérablement le code de l’application sans ajouter de valeur commerciale ou client.
+Dans l' [exemple du chapitre précédent](kubernetes.md#test-the-application), les demandes gRPC de l’application Web étaient toutes acheminées vers une seule instance du service gRPC. Cela est dû au fait que le nom d’hôte du service est résolu en une adresse IP et que cette adresse IP est mise en cache pendant la durée de vie de l’instance `HttpClientHandler`. Il peut être possible de contourner ce risque en gérant manuellement les recherches DNS ou en créant plusieurs clients. Toutefois, cette solution de contournement compliquerait le code de l’application sans ajouter de valeur commerciale ou client.
 
-À l’aide d’un maillage de service, les demandes du conteneur d’application sont envoyées au proxy side-car, qui peut les distribuer intelligemment sur toutes les instances de l’autre service. La maille peut également :
+Lorsque vous utilisez un maillage de service, les demandes du conteneur d’application sont envoyées au proxy side-car. Le proxy side-car peut ensuite les distribuer intelligemment sur toutes les instances de l’autre service. La maille peut également :
 
 - Réagir en toute transparence aux défaillances des instances individuelles d’un service.
-- Gérer la sémantique des nouvelles tentatives pour les échecs d’appels ou de délais d’attente
+- Gérez la sémantique des nouvelles tentatives pour les échecs d’appels ou de délais d’attente.
 - Rediriger les demandes ayant échoué vers une autre instance sans revenir à l’application cliente.
 
-La capture d’écran suivante montre l’application StockWeb en cours d’exécution avec la maille du service Linkerd, sans aucune modification du code de l’application, ou même l’image de l’arrimeur utilisée. La seule modification requise était l’ajout d’une annotation au déploiement dans les fichiers YAML pour les services `stockdata` et `stockweb`.
+La capture d’écran suivante montre l’application StockWeb en cours d’exécution avec la maille de service Linkerd. Aucune modification n’est apportée au code de l’application, et l’image de l’Ancreur n’est pas utilisée. La seule modification requise était l’ajout d’une annotation au déploiement dans les fichiers YAML pour les services `stockdata` et `stockweb`.
 
 ![StockWeb avec maillage de service](media/service-mesh/stockweb-servicemesh-screenshot.png)
 
-Vous pouvez voir à partir de la colonne de serveur que les demandes de l’application StockWeb ont été routées vers les deux réplicas du service StockData, bien qu’elles proviennent d’une instance de `HttpClient` unique dans le code de l’application. En fait, si vous examinez le code, vous verrez que toutes les demandes 100 au service StockData sont effectuées simultanément à l’aide de la même instance de `HttpClient`, mais avec la maille de service, ces demandes sont équilibrées entre plusieurs instances de service disponibles.
+Vous pouvez voir à partir de la colonne de **serveur** que les demandes de l’application StockWeb ont été routées vers les deux réplicas du service stockdata, bien qu’elles proviennent d’une instance de `HttpClient` unique dans le code de l’application. En fait, si vous examinez le code, vous verrez que toutes les demandes 100 au service StockData sont effectuées simultanément à l’aide de la même instance de `HttpClient`. Avec la maille de service, ces demandes sont équilibrées entre plusieurs instances de service disponibles.
 
-Les maillages de service s’appliquent uniquement au trafic au sein d’un cluster. Pour les clients externes, consultez [le chapitre suivant, équilibrage de charge](load-balancing.md).
+Les maillages de service s’appliquent uniquement au trafic au sein d’un cluster. Pour les clients externes, consultez le chapitre suivant, [équilibrage de charge](load-balancing.md).
 
 ## <a name="service-mesh-options"></a>Options de maillage de service
 
-Trois implémentations de maille de service à usage général peuvent actuellement être utilisées avec Kubernetes : Istio, Linkerd et consulaire Connect. Les trois fournissent le routage/proxy des demandes, le chiffrement du trafic, la résilience, l’authentification hôte à hôte et le contrôle du trafic.
+Trois implémentations de maille de service à usage général peuvent actuellement être utilisées avec Kubernetes : [Istio](https://istio.io), [Linkerd](https://linkerd.io)et [consulaire Connect](https://consul.io/mesh.html). Les trois fournissent le routage/proxy des demandes, le chiffrement du trafic, la résilience, l’authentification hôte à hôte et le contrôle du trafic.
 
 Le choix d’un maillage de service dépend de plusieurs facteurs :
 
@@ -47,18 +47,12 @@ Le choix d’un maillage de service dépend de plusieurs facteurs :
 - La nature du cluster, sa taille, le nombre de services déployés et le volume de trafic au sein du réseau du cluster.
 - Facilité de déploiement et de gestion de la maille et de son utilisation avec les services.
 
-Pour plus d’informations sur chaque maille de service, vous pouvez accéder à partir de leurs sites Web respectifs.
-
-- [**Istio** -istio.IO](https://istio.io)
-- [**Linkerd** -linkerd.IO](https://linkerd.io)
-- [**Consul** -consul.IO/Mesh.html](https://consul.io/mesh.html)
-
 ## <a name="example-add-linkerd-to-a-deployment"></a>Exemple : Ajouter Linkerd à un déploiement
 
 Dans cet exemple, vous allez apprendre à utiliser la maille du service Linkerd avec l’application *StockKube* de [la section précédente](kubernetes.md).
-Pour suivre cet exemple, vous devez [installer l’interface CLI Linkerd](https://linkerd.io/2/getting-started/#step-1-install-the-cli). Les fichiers binaires Windows peuvent être téléchargés à partir de la section GitHub releases. Veillez à utiliser la version **stable** la plus récente et non une des versions de périphérie.
+Pour suivre cet exemple, vous devez [installer l’interface CLI Linkerd](https://linkerd.io/2/getting-started/#step-1-install-the-cli). Vous pouvez télécharger les fichiers binaires Windows à partir de la section qui répertorie les versions de GitHub. Veillez à utiliser la version *stable* la plus récente et non une des versions de périphérie.
 
-Une fois l’interface CLI Linkerd installée, suivez les instructions [*prise en main* sur le site Web Linkerd] pour installer les composants Linkerd sur votre cluster Kubernetes. Les instructions sont directes et l’installation ne doit prendre que quelques minutes sur une instance Kubernetes locale.
+Une fois l’interface CLI Linkerd installée, suivez les instructions [prise en main](https://linkerd.io/2/getting-started/index.html) pour installer les composants Linkerd sur votre cluster Kubernetes. Les instructions sont simples et l’installation ne doit prendre que quelques minutes sur une instance Kubernetes locale.
 
 ### <a name="add-linkerd-to-kubernetes-deployments"></a>Ajouter Linkerd à des déploiements Kubernetes
 
@@ -80,7 +74,7 @@ linkerd inject stockweb.yml | kubectl apply -f -
 
 ### <a name="inspect-services-in-the-linkerd-dashboard"></a>Inspecter les services dans le tableau de bord Linkerd
 
-Lancez le tableau de bord Linkerd à l’aide de l’interface de commande `linkerd`.
+Ouvrez le tableau de bord Linkerd à l’aide de l’interface de commande `linkerd`.
 
 ```console
 linkerd dashboard
@@ -90,7 +84,7 @@ Le tableau de bord fournit des informations détaillées sur tous les services q
 
 ![Tableau de bord Linkerd présentant les applications StockKube](media/service-mesh/linkerd-screenshot.png)
 
-Si vous augmentez le nombre de réplicas du service StockData gRPC comme indiqué dans l’exemple suivant, et actualisez la page StockWeb dans le navigateur, vous devriez voir une combinaison d’ID dans la colonne serveur, indiquant que les demandes sont servies par toutes les instances disponibles .
+Si vous augmentez le nombre de réplicas du service StockData gRPC comme indiqué dans l’exemple suivant, et actualisez la page StockWeb dans le navigateur, vous devriez voir une combinaison d’ID dans la colonne **serveur** . Cette combinaison indique que toutes les instances disponibles servent les demandes.
 
 ```yaml
 apiVersion: apps/v1

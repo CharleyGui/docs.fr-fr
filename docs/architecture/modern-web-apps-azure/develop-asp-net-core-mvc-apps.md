@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 3b1409fbb924638f0148c74a678d482aeb732357
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: a18b4dfc60c7d3971136f73f333b7225735710b3
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449442"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503946"
 ---
 # <a name="develop-aspnet-core-mvc-apps"></a>Développer des applications ASP.NET Core MVC
 
@@ -546,7 +546,7 @@ Une approche hybride consiste à utiliser DDD pour les zones transactionnelles o
 
 ## <a name="deployment"></a>Déploiement
 
-Le processus de déploiement de votre application ASP.NET Core, quel que soit l’endroit où elle sera hébergée, comprend plusieurs étapes. La première consiste à publier l’application, ce que vous pouvez faire à l’aide de la commande CLI dotnet publish. Cette commande compile l’application et place tous les fichiers nécessaires à l’exécution de l’application dans un dossier désigné. Si vous déployez votre application à partir de Visual Studio, cette étape est automatique. Le dossier publish contient les fichiers .exe et .dll pour l’application et ses dépendances. Une application autonome inclut également une version du runtime .NET. Les applications ASP.NET Core comprennent aussi les fichiers de configuration, les ressources du client statiques et les vues MVC.
+Le processus de déploiement de votre application ASP.NET Core, quel que soit l’endroit où elle sera hébergée, comprend plusieurs étapes. La première étape consiste à publier l’application, qui peut être effectuée à l’aide de la commande `dotnet publish` CLI. Cette commande compile l’application et place tous les fichiers nécessaires à l’exécution de l’application dans un dossier désigné. Si vous déployez votre application à partir de Visual Studio, cette étape est automatique. Le dossier publish contient les fichiers .exe et .dll pour l’application et ses dépendances. Une application autonome inclut également une version du runtime .NET. Les applications ASP.NET Core comprennent aussi les fichiers de configuration, les ressources du client statiques et les vues MVC.
 
 Les applications ASP.NET Core sont des applications console qui doivent être démarrées au moment du démarrage du serveur et redémarrés en cas de blocage de l’application (ou du serveur). Un gestionnaire de processus peut être utilisé pour automatiser ce processus. Les gestionnaires de processus les plus courants pour ASP.NET Core sont Nginx et Apache sur Linux et IIS ou Windows Service sur Windows.
 

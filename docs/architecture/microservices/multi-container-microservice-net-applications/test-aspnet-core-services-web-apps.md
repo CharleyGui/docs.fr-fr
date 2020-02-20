@@ -1,13 +1,13 @@
 ---
 title: Test d’applications web et de services ASP.NET Core
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer une architecture pour le test d’applications web et de services ASP.NET Core dans des conteneurs.
-ms.date: 10/02/2018
-ms.openlocfilehash: 324b71d830bca43be71e8847fe2dd1b8b1593556
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: ab3ae6276ea4e4c741731f050913d956046271ca
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739482"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77501986"
 ---
 # <a name="testing-aspnet-core-services-and-web-apps"></a>Test d’applications web et de services ASP.NET Core
 
@@ -68,7 +68,7 @@ Contrairement aux tests unitaires, les tests d’intégration rencontrent souven
 
 Étant donné que les tests d’intégration utilisent de plus grands segments de code que les tests unitaires, et comme les tests d’intégration reposent sur des éléments d’infrastructure, ils ont tendance à être beaucoup plus lents que les tests unitaires. Par conséquent, il est conseillé de limiter le nombre de tests d’intégration que vous écrivez et exécutez.
 
-ASP.NET Core inclut un web hôte de test intégré qui peut être utilisé pour gérer les requêtes HTTP sans surcharger le réseau. Vous pouvez donc exécuter ces tests plus rapidement lorsque vous utilisez un hôte web réel. L’hôte web de test (TestServer) est disponible dans un composant NuGet, sous le nom de Microsoft.AspNetCore.TestHost. Il peut être ajouté aux projets de test d’intégration et utilisé pour héberger les applications ASP.NET Core.
+ASP.NET Core comprend un hôte Web de test intégré qui peut être utilisé pour gérer les requêtes HTTP sans surcharge du réseau, ce qui signifie que vous pouvez exécuter ces tests plus rapidement que lors de l’utilisation d’un hôte Web réel. L’hôte web de test (TestServer) est disponible dans un composant NuGet, sous le nom de Microsoft.AspNetCore.TestHost. Il peut être ajouté aux projets de test d’intégration et utilisé pour héberger les applications ASP.NET Core.
 
 Comme vous pouvez le voir dans le code suivant, lorsque vous créez des tests d’intégration pour des contrôleurs ASP.NET Core, vous instanciez les contrôleurs via l’hôte de test. Ceci est comparable à une requête HTTP, avec toutefois, une exécution plus rapide.
 
@@ -140,8 +140,6 @@ Les tests de l’application de référence (eShopOnContainers) ont été récem
 
 3. Les **tests fonctionnels et d’intégration des applications**, qui se concentrent sur l’intégration des microservices, avec des cas de test qui exercent plusieurs microservices. Ces tests se trouvent dans le projet **Application.FunctionalTests**.
 
-4. Les **tests de charge**, qui se concentrent sur les temps de réponse pour chaque microservice. Ces tests se trouvent dans le projet **LoadTest** et nécessite Visual Studio 2017 Enterprise Edition.
-
 Les tests unitaires et les tests d’intégration par microservice se trouvent dans le dossier de test de chaque microservice, et les tests d’application et de charge sont contenus sous le dossier de test du dossier de solution, comme l’illustre la figure 6-25.
 
 ![Capture d’écran de VS désignant certains des projets de test dans la solution.](./media/test-aspnet-core-services-web-apps/eshoponcontainers-test-folder-structure.png)
@@ -160,9 +158,9 @@ services:
     image: redis:alpine
   rabbitmq:
     image: rabbitmq:3-management-alpine
-  sql.data:
-    image: microsoft/mssql-server-linux:2017-latest
-  nosql.data:
+  sqldata:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+  nosqldata:
     image: mongo
 ```
 
@@ -179,13 +177,13 @@ services:
     ports:
       - "15672:15672"
       - "5672:5672"
-  sql.data:
+  sqldata:
     environment:
       - SA_PASSWORD=Pass@word
       - ACCEPT_EULA=Y
     ports:
       - "5433:1433"
-  nosql.data:
+  nosqldata:
     ports:
       - "27017:27017"
 ```

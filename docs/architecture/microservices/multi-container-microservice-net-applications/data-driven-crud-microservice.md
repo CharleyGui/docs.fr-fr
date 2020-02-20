@@ -1,13 +1,13 @@
 ---
 title: Création d’un microservice CRUD simple piloté par les données
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Comprendre le processus de création d’un simple microservice (piloté par les données) CRUD dans le contexte d’une application de microservices.
-ms.date: 01/07/2019
-ms.openlocfilehash: 56cec488c22b0f3b45b9c1dae9d2f4fd7ef7beaa
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.date: 01/30/2020
+ms.openlocfilehash: b72d7defed81e57e2971c5e2b53df2d86b2dc947
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737339"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77502354"
 ---
 # <a name="creating-a-simple-data-driven-crud-microservice"></a>Création d’un microservice CRUD simple piloté par les données
 
@@ -39,7 +39,7 @@ Pour implémenter un microservice CRUD simple à l’aide de .NET Core et de Vis
 
 ![Capture d’écran de Visual Studio montrant la configuration du projet.](./media/data-driven-crud-microservice/create-asp-net-core-web-api-project.png)
 
-**Figure 6-6.** Création d’un projet d’API web ASP.NET Core dans Visual Studio
+**Figure 6-6.** Création d’un projet d’API Web ASP.NET Core dans Visual Studio 2019
 
 Pour créer un projet d’API web ASP.NET Core, commencez par sélectionner une application web ASP.NET Core, puis sélectionnez le type d’API. Après avoir créé le projet, vous pouvez implémenter vos contrôleurs MVC comme vous le feriez dans n’importe quel autre projet d’API web, à l’aide de l’API Entity Framework ou d’une autre API. Dans un nouveau projet d’API web, vous pouvez voir que la seule dépendance de ce microservice se trouve au niveau d’ASP.NET Core. En interne, au sein de la dépendance *Microsoft. AspNetCore. All* , elle référence Entity Framework et de nombreux autres packages NuGet .net Core, comme illustré dans la figure 6-7.
 
@@ -129,12 +129,27 @@ public class CatalogController : ControllerBase
 
     // GET api/v1/[controller]/items[?pageSize=3&pageIndex=10]
     [HttpGet]
-    [Route("[action]")]
+    [Route("items")]
     [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
-    public async Task<IActionResult> Items([FromQuery]int pageSize = 10,
-                                           [FromQuery]int pageIndex = 0)
-
+    [ProducesResponseType(typeof(IEnumerable<CatalogItem>), (int)HttpStatusCode.OK)]
+    [ProducesResponseType((int)HttpStatusCode.BadRequest)]
+    public async Task<IActionResult> ItemsAsync(
+        [FromQuery]int pageSize = 10,
+        [FromQuery]int pageIndex = 0,
+        string ids = null)
     {
+        if (!string.IsNullOrEmpty(ids))
+        {
+            var items = await GetItemsByIdsAsync(ids);
+
+            if (!items.Any())
+            {
+                return BadRequest("ids value invalid. Must be comma-separated list of numbers");
+            }
+
+            return Ok(items);
+        }
+
         var totalItems = await _catalogContext.CatalogItems
             .LongCountAsync();
 
@@ -155,7 +170,7 @@ public class CatalogController : ControllerBase
 }
 ```
 
-##### <a name="saving-data"></a>Enregistrement de données
+##### <a name="saving-data"></a>Enregistrement des données
 
 Les données sont créées, supprimées et modifiées dans la base de données à l’aide d’instances de vos classes d’entité. Vous pouvez ajouter du code similaire à celui de l’exemple codé en dur suivant (il s’agit ici de données fictives) dans vos contrôleurs d’API web.
 
@@ -172,7 +187,7 @@ Dans ASP.NET Core, vous pouvez utiliser une injection de dépendances prête à 
 
 Dans l’exemple situé au-dessus de la classe `CatalogController`, nous allons injecter un objet de type `CatalogContext`, ainsi que d’autres objets via le constructeur `CatalogController()`.
 
-L’un des éléments importants à configurer pour le projet d’API web est l’inscription de la classe DbContext auprès du conteneur IoC du service. Pour cela, dans la classe `Startup`, appelez la méthode `services.AddDbContext<DbContext>()` à l’intérieur de la méthode `ConfigureServices()`, comme indiqué dans l’exemple suivant :
+L’un des éléments importants à configurer pour le projet d’API web est l’inscription de la classe DbContext auprès du conteneur IoC du service. En général, vous le faites dans la classe `Startup` en appelant la méthode `services.AddDbContext<DbContext>()` à l’intérieur de la méthode `ConfigureServices()`, comme indiqué dans l’exemple **simplifié** suivant :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -240,9 +255,9 @@ Dans les fichiers docker-compose.yml ou docker-compose.override.yml, vous pouvez
 # docker-compose.override.yml
 
 #
-catalog.api:
+catalog-api:
   environment:
-    - ConnectionString=Server=sql.data;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
+    - ConnectionString=Server=sqldata;Database=Microsoft.eShopOnContainers.Services.CatalogDb;User Id=sa;Password=Pass@word
     # Additional environment variables for this service
   ports:
     - "5101:80"
@@ -268,11 +283,11 @@ L’évolution des exigences métier peut entraîner l’ajout de collections de
 
 La gestion de version permet à une API web d’indiquer les fonctionnalités et les ressources qu’elle expose. Une application cliente peut ensuite envoyer des requêtes à une version précise d’une fonctionnalité ou d’une ressource. Il existe plusieurs méthodes pour implémenter la gestion de version :
 
-- Gestion des versions d’URI
+- Contrôle de version d’URI
 
-- Gestion des versions de chaîne de requête
+- Contrôle de version de chaîne de requête
 
-- Gestion des versions d’en-tête
+- Contrôle de version d’en-tête
 
 La gestion des versions de chaîne de requête et d’URI sont les plus simples à implémenter. La gestion des versions d’en-tête est une bonne méthode. Toutefois, elle n’est pas aussi explicite et directe que la gestion des versions d’URI. Étant donné que la gestion des versions d’URI est la plus simple et la plus explicite, c’est elle qu’utilise l’exemple d’application eShopOnContainers.
 
@@ -350,7 +365,7 @@ La documentation sur les API d’interface utilisateur Swagger générées par S
 
 Actuellement, Swashbuckle se compose de cinq packages NuGet internes situés sous le métapackage général [Swashbuckle.AspNetCore](https://www.nuget.org/packages/Swashbuckle.AspNetCore) des applications ASP.NET Core.
 
-Quand vous avez installé ces packages NuGet dans votre projet d’API web, vous devez configurer Swagger dans la classe Startup, comme dans le code suivant (simplifié) :
+Après avoir installé ces packages NuGet dans votre projet d’API Web, vous devez configurer Swagger dans la classe Startup, comme dans le code **simplifié** suivant :
 
 ```csharp
 public class Startup
@@ -366,12 +381,11 @@ public class Startup
         services.AddSwaggerGen(options =>
         {
             options.DescribeAllEnumsAsStrings();
-            options.SwaggerDoc("v1", new Swashbuckle.AspNetCore.Swagger.Info
+            options.SwaggerDoc("v1", new OpenApiInfo
             {
                 Title = "eShopOnContainers - Catalog HTTP API",
                 Version = "v1",
-                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample",
-                TermsOfService = "Terms Of Service"
+                Description = "The Catalog Microservice HTTP API. This is a Data-Driven/CRUD microservice sample"
             });
         });
 
@@ -395,7 +409,7 @@ public class Startup
 
 Après cela, vous pouvez démarrer votre application et parcourir les points de terminaison JSON et d’interface utilisateur Swagger suivants à l’aide d’URL de ce type :
 
-```url
+```console
   http://<your-root-url>/swagger/v1/swagger.json
 
   http://<your-root-url>/swagger/

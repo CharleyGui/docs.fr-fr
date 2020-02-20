@@ -2,16 +2,16 @@
 title: Comparaison de WCF à gRPC-gRPC pour les développeurs WCF
 description: Comparaison des frameworks WCF et gRPC pour la création d’applications distribuées.
 ms.date: 09/02/2019
-ms.openlocfilehash: 312492dcce4bdef61feff0bf924c6df287b9c676
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 4f54db76c9512b770b4dd993496d95437dd89753
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73966954"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77503338"
 ---
 # <a name="comparing-wcf-to-grpc"></a>Comparaison de WCF et de gRPC
 
-Le chapitre précédent doit vous avoir donné un aperçu de Protobuf et de la façon dont gRPC gère les messages. Avant de procéder à une conversion détaillée de WCF en gRPC, il est important de savoir comment la gamme de fonctionnalités actuellement disponibles dans WCF est gérée dans gRPC, ainsi que les solutions de contournement que vous pouvez utiliser lorsqu’il n’apparaît pas comme équivalent à gRPC. En particulier, ce chapitre aborde les sujets suivants :
+Le chapitre précédent vous a donné un aperçu de Protobuf et explique comment gRPC gère les messages. Avant de travailler dans une conversion détaillée de Windows Communication Foundation (WCF) vers gRPC, il est important de savoir comment les fonctionnalités disponibles dans WCF sont gérées dans gRPC et les solutions de contournement que vous pouvez utiliser lorsqu’il n’existe aucun équivalent gRPC. En particulier, ce chapitre aborde les sujets suivants :
 
 - Opérations et méthodes
 - Liaisons et transports
@@ -37,12 +37,12 @@ service Greeter {
   rpc SayHello (HelloRequest) returns (HelloReply);
 }
 
-// The request message containing the user's name.
+// The request message that contains the user's name.
 message HelloRequest {
   string name = 1;
 }
 
-// The response message containing the greetings.
+// The response message that contains the greetings.
 message HelloReply {
   string message = 1;
 }
