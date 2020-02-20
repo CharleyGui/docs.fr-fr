@@ -5,12 +5,12 @@ helpviewer_keywords:
 - loadFromRemoteSources element
 - <loadFromRemoteSources> element
 ms.assetid: 006d1280-2ac3-4db6-a984-a3d4e275046a
-ms.openlocfilehash: a4dbcd0a0b848e5ef57965b5b3f4fcee9161b724
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 454314bf1002a9648f669cc708c8ac42461fccaf
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116564"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452264"
 ---
 # <a name="loadfromremotesources-element"></a>\<élément loadFromRemoteSources >
 Spécifie si les assemblys chargés à partir de sources distantes doivent bénéficier d’une confiance totale dans .NET Framework 4 et versions ultérieures.
@@ -40,13 +40,13 @@ Spécifie si les assemblys chargés à partir de sources distantes doivent bén�
   
 ## <a name="enabled-attribute"></a>attribut activé  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|N’accordez pas une confiance totale aux applications à partir de sources distantes. Il s'agit de la valeur par défaut.|  
+|`false`|N’accordez pas une confiance totale aux applications à partir de sources distantes. Il s’agit de la valeur par défaut.|  
 |`true`|Accordez une confiance totale aux applications à partir de sources distantes.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ None.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -89,17 +89,17 @@ Si `enabled` n’a pas la valeur `true`, une <xref:System.IO.FileLoadException> 
 
 L’affectation de la valeur `true` à l’élément `<loadFromRemoteSources>` empêche la levée de cette exception. Elle vous permet de spécifier que vous ne comptez pas sur les common language runtime pour mettre en sandbox les assemblys chargés pour la sécurité, et qu’ils peuvent être autorisés à s’exécuter en mode confiance totale.
 
-## <a name="notes"></a>Notes
+## <a name="notes"></a>Remarques
 
 - Dans le .NET Framework 4,5 et versions ultérieures, les assemblys sur les partages réseau locaux s’exécutent en mode de confiance totale par défaut ; vous n’avez pas besoin d’activer l’élément `<loadFromRemoteSources>`.
 
 - Si une application a été copiée à partir du Web, elle est marquée par Windows comme étant une application Web, même si elle réside sur l’ordinateur local. Vous pouvez modifier cette désignation en modifiant ses propriétés de fichier, ou vous pouvez utiliser l’élément `<loadFromRemoteSources>` pour accorder une confiance totale à l’assembly. Vous pouvez également utiliser la méthode <xref:System.Reflection.Assembly.UnsafeLoadFrom%2A> pour charger un assembly local que le système d’exploitation a marqué comme ayant été chargé à partir du Web.
 
-- Vous pouvez obtenir un <xref:System.IO.FileLoadException> dans une application qui s’exécute dans une application Windows Virtual PC. Cela peut se produire lorsque vous essayez de charger un fichier à partir de dossiers liés sur l’ordinateur hôte. Cela peut également se produire lorsque vous essayez de charger un fichier à partir d’un dossier lié à [services Bureau à distance](https://go.microsoft.com/fwlink/?LinkId=182775) (services Terminal Server). Pour éviter l’exception, affectez à `enabled` la valeur `true`.
+- Vous pouvez obtenir un <xref:System.IO.FileLoadException> dans une application qui s’exécute dans une application Windows Virtual PC. Cela peut se produire lorsque vous essayez de charger un fichier à partir de dossiers liés sur l’ordinateur hôte. Cela peut également se produire lorsque vous essayez de charger un fichier à partir d’un dossier lié à [services Bureau à distance](/windows/win32/termserv/terminal-services-portal) (services Terminal Server). Pour éviter l’exception, affectez à `enabled` la valeur `true`.
 
-## <a name="configuration-file"></a>fichier de configuration
+## <a name="configuration-file"></a>Fichier de configuration
 
-Cet élément est généralement utilisé dans le fichier de configuration de l’application, mais peut être utilisé dans d’autres fichiers de configuration en fonction du contexte. Pour plus d’informations, consultez l’article [utilisations plus implicites de la stratégie cas : loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839) dans le blog sur la sécurité .net.  
+Cet élément est généralement utilisé dans le fichier de configuration de l’application, mais peut être utilisé dans d’autres fichiers de configuration en fonction du contexte. Pour plus d’informations, consultez l’article [utilisations plus implicites de la stratégie cas : loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources) dans le blog sur la sécurité .net.  
 
 ## <a name="example"></a>Exemple
 
@@ -115,7 +115,7 @@ L’exemple suivant montre comment accorder une confiance totale aux assemblys c
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Utilisations plus implicites de la stratégie CAS : loadFromRemoteSources](https://go.microsoft.com/fwlink/p/?LinkId=266839)
+- [Utilisations plus implicites de la stratégie CAS : loadFromRemoteSources](https://docs.microsoft.com/archive/blogs/shawnfa/more-implicit-uses-of-cas-policy-loadfromremotesources)
 - [Guide pratique pour exécuter du code d’un niveau de confiance partiel dans un bac à sable (sandbox)](../../../misc/how-to-run-partially-trusted-code-in-a-sandbox.md)
 - [Schéma des paramètres d’exécution](index.md)
 - [Schéma des fichiers de configuration](../index.md)

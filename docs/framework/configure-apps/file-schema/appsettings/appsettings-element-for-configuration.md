@@ -7,12 +7,12 @@ helpviewer_keywords:
 - appSettings Element
 - <appSettings> Element
 ms.assetid: 39694cc4-6b84-45a6-9329-385a0d8b48fe
-ms.openlocfilehash: 47d7648aae08544890a4dd2e42cedbf68a8acc72
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: e1f285aae10a89fa49846534d5b47e15920294ea
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77214734"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452277"
 ---
 # <a name="appsettings-element-for-configuration"></a>\<élément > appSettings pour la configuration de \<>
 
@@ -33,7 +33,7 @@ Contient des paramètres d’application personnalisés. Il s’agit d’une sec
 
 |           | Description |
 | --------- | ----------- |
-| **file**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans la **\<ajouter des >** , **\<supprimer >** , et **\<effacer** les éléments de > et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Notez que le runtime ignore l’attribut si le fichier spécifié est introuvable. |
+| **file**  | Attribut facultatif.<br><br>Spécifie un chemin d’accès relatif à un fichier externe contenant les paramètres de configuration d’application personnalisés. Le fichier spécifié contient le même type de paramètres que ceux spécifiés dans la **\<ajouter des >** , **\<supprimer >** , et **\<effacer** les éléments de > et utilise le même format de paire clé/valeur que ces éléments.<br><br>Le chemin d’accès spécifié est relatif au fichier de configuration principal. Pour une application Windows Forms, il s’agit du dossier binaire (tel que */bin/debug*), et non de l’emplacement du fichier de configuration de l’application. Pour les applications Web Forms, le chemin d’accès est relatif à la racine de l’application, où se trouve le fichier *Web. config* .<br><br>Le runtime ignore l’attribut si le fichier spécifié est introuvable. |
 
 ## <a name="parent-element"></a>Élément parent
 

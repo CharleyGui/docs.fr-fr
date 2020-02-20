@@ -1,777 +1,729 @@
 ---
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
-ms.date: 05/06/2019
-ms.openlocfilehash: c9529e135f48c80f445c91038294a3e7266486f1
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.date: 02/13/2020
+ms.openlocfilehash: f11512acf5a1fdc4bde49b3d1212ccf6335dff8b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73420480"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451328"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
 ## <a name="name"></a>Name
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
-## <a name="synopsis"></a>Résumé
-
-<!-- markdownlint-disable MD025 -->
-
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name] [--nuget-source] [-o|--output] [-u|--uninstall] [Template options]
+dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name] 
+    [--nuget-source] [-o|--output] [-u|--uninstall] [--update-apply] [--update-check] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
 ```
-
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
-
-```dotnetcli
-dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [--nuget-source] [-o|--output] [-u|--uninstall] [Template options]
-dotnet new <TEMPLATE> [-l|--list] [--type]
-dotnet new [-h|--help]
-```
-
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
-
-```dotnetcli
-dotnet new <TEMPLATE> [--force] [-i|--install] [-lang|--language] [-n|--name] [-o|--output] [-u|--uninstall] [Template options]
-dotnet new <TEMPLATE> [-l|--list] [--type]
-dotnet new [-h|--help]
-```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```dotnetcli
-dotnet new <TEMPLATE> [-lang|--language] [-n|--name] [-o|--output] [-all|--show-all] [-h|--help] [Template options]
-dotnet new <TEMPLATE> [-l|--list]
-dotnet new [-all|--show-all]
-dotnet new [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Description
 
-La commande `dotnet new` offre un moyen pratique d’initialiser un projet .NET Core valide.
+La commande `dotnet new` crée un projet .NET Core ou d’autres artefacts basés sur un modèle.
 
 La commande appelle le [moteur de modèles](https://github.com/dotnet/templating) pour créer les artefacts sur le disque en fonction du modèle et des options spécifiés.
 
 ## <a name="arguments"></a>Arguments
 
-`TEMPLATE`
+- **`TEMPLATE`**
 
-Modèle à instancier quand la commande est appelée. Vous pouvez passer des options spécifiques pour chaque modèle. Pour plus d'informations, consultez [Options de modèle](#template-options).
+  Modèle à instancier quand la commande est appelée. Vous pouvez passer des options spécifiques pour chaque modèle. Pour plus d'informations, consultez [Options de modèle](#template-options).
 
-Si la valeur `TEMPLATE` ne correspond pas exactement au texte des colonnes **Modèles** ou **Nom court**, une comparaison de sous-chaîne est exécutée sur ces deux colonnes.
+  Vous pouvez exécuter `dotnet new --list` pour afficher la liste de tous les modèles installés. Si la valeur de `TEMPLATE` ne correspond pas exactement au texte de la colonne **Templates** ou **Short Name** de la table retournée, une correspondance de sous-chaîne est effectuée sur ces deux colonnes.
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+  À compter du kit de développement logiciel (SDK) .NET Core 3,0, l’interface CLI recherche des modèles dans NuGet.org quand vous appelez la commande `dotnet new` dans les conditions suivantes :
 
-La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l` pour obtenir une liste des modèles disponibles. Le tableau suivant présente les modèles préinstallés avec le SDK .NET Core 2.2.100. Le langage par défaut pour le modèle est indiqué entre crochets.
+  - Si l’interface CLI ne trouve pas de correspondance de modèle lors de l’appel de `dotnet new`, pas encore partielle.
+  - Si une version plus récente du modèle est disponible. Dans ce cas, le projet ou l’artefact est créé, mais l’interface CLI vous avertit d’une version mise à jour du modèle.
 
-| Modèles                                    | Nom court        | Langue     | Balises                                  |
-|----------------------------------------------|-------------------|--------------|---------------------------------------|
-| Application console                          | `console`         | [C#], F#, VB | Communes/Console                        |
-| Bibliothèque de classes                                | `classlib`        | [C#], F#, VB | Communes/Bibliothèque                        |
-| Projet de test unitaire                            | `mstest`          | [C#], F#, VB | Test/MSTest                           |
-| Projet de test NUnit 3                         | `nunit`           | [C#], F#, VB | Test/NUnit                            |
-| Élément de test NUnit 3                            | `nunit-test`      | [C#], F#, VB | Test/NUnit                            |
-| Projet de test xUnit                           | `xunit`           | [C#], F#, VB | Test/xUnit                            |
-| Page Razor                                   | `page`            | [C#]         | Web/ASP.NET                           |
-| ViewImports MVC                              | `viewimports`     | [C#]         | Web/ASP.NET                           |
-| ViewStart MVC                                | `viewstart`       | [C#]         | Web/ASP.NET                           |
-| ASP.NET Core vide                           | `web`             | [C#], F#     | Web/vides                             |
-| Application web ASP.NET Core (Model-View-Controller) | `mvc`             | [C#], F#     | Web/MVC                               |
-| Application web ASP.NET Core                         | `webapp`, `razor` | [C#]         | Web/MVC/Razor Pages                   |
-| ASP.NET Core avec Angular                    | `angular`         | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core avec React.js                   | `react`           | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core avec React.js et Redux         | `reactredux`      | [C#]         | Web/MVC/SPA                           |
-| Bibliothèque de classes Razor                          | `razorclasslib`   | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor |
-| API web ASP.NET Core                         | `webapi`          | [C#], F#     | Web/WebAPI                            |
-| fichier global.json                             | `globaljson`      |              | Config                                |
-| Configuration NuGet                                 | `nugetconfig`     |              | Config                                |
-| Configuration Web                                   | `webconfig`       |              | Config                                |
-| Fichier solution                                | `sln`             |              | Solution                              |
+  La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l` pour obtenir une liste des modèles disponibles. Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
-
-La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l` pour obtenir une liste des modèles disponibles. Le tableau suivant présente les modèles préinstallés avec le SDK .NET Core 2.1.300. Le langage par défaut pour le modèle est indiqué entre crochets.
-
-| Modèles                                    | Nom court      | Langue     | Balises                                  |
-|----------------------------------------------|-----------------|--------------|---------------------------------------|
-| Application console                          | `console`       | [C#], F#, VB | Communes/Console                        |
-| Bibliothèque de classes                                | `classlib`      | [C#], F#, VB | Communes/Bibliothèque                        |
-| Projet de test unitaire                            | `mstest`        | [C#], F#, VB | Test/MSTest                           |
-| Projet de test xUnit                           | `xunit`         | [C#], F#, VB | Test/xUnit                            |
-| Page Razor                                   | `page`          | [C#]         | Web/ASP.NET                           |
-| ViewImports MVC                              | `viewimports`   | [C#]         | Web/ASP.NET                           |
-| ViewStart MVC                                | `viewstart`     | [C#]         | Web/ASP.NET                           |
-| ASP.NET Core vide                           | `web`           | [C#], F#     | Web/vides                             |
-| Application web ASP.NET Core (Model-View-Controller) | `mvc`           | [C#], F#     | Web/MVC                               |
-| Application web ASP.NET Core                         | `razor`         | [C#]         | Web/MVC/Razor Pages                   |
-| ASP.NET Core avec Angular                    | `angular`       | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core avec React.js                   | `react`         | [C#]         | Web/MVC/SPA                           |
-| ASP.NET Core avec React.js et Redux         | `reactredux`    | [C#]         | Web/MVC/SPA                           | 
-| Bibliothèque de classes Razor                          | `razorclasslib` | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor |
-| API web ASP.NET Core                         | `webapi`        | [C#], F#     | Web/WebAPI                            |
-| fichier global.json                             | `globaljson`    |              | Config                                |
-| Configuration NuGet                                 | `nugetconfig`   |              | Config                                |
-| Configuration Web                                   | `webconfig`     |              | Config                                |
-| Fichier solution                                | `sln`           |              | Solution                              |
-
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
-
-La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l` pour obtenir une liste des modèles disponibles. Le tableau suivant présente les modèles préinstallés avec le SDK .NET Core 2.0.0. Le langage par défaut pour le modèle est indiqué entre crochets.
-
-| Modèles                                    | Nom court    | Langue     | Balises                |
-|----------------------------------------------|---------------|--------------|---------------------|
-| Application console                          | `console`     | [C#], F#, VB | Communes/Console      |
-| Bibliothèque de classes                                | `classlib`    | [C#], F#, VB | Communes/Bibliothèque      |
-| Projet de test unitaire                            | `mstest`      | [C#], F#, VB | Test/MSTest         |
-| Projet de test xUnit                           | `xunit`       | [C#], F#, VB | Test/xUnit          |
-| ASP.NET Core vide                           | `web`         | [C#], F#     | Web/vides           |
-| Application web ASP.NET Core (Model-View-Controller) | `mvc`         | [C#], F#     | Web/MVC             |
-| Application web ASP.NET Core                         | `razor`       | [C#]         | Web/MVC/Razor Pages |
-| ASP.NET Core avec Angular                    | `angular`     | [C#]         | Web/MVC/SPA         |
-| ASP.NET Core avec React.js                   | `react`       | [C#]         | Web/MVC/SPA         |
-| ASP.NET Core avec React.js et Redux         | `reactredux`  | [C#]         | Web/MVC/SPA         |
-| API web ASP.NET Core                         | `webapi`      | [C#], F#     | Web/WebAPI          |
-| fichier global.json                             | `globaljson`  |              | Config              |
-| Configuration NuGet                                 | `nugetconfig` |              | Config              |
-| Configuration Web                                   | `webconfig`   |              | Config              |
-| Fichier solution                                | `sln`         |              | Solution            |
-| Page Razor                                   | `page`        |              | Web/ASP.NET         |
-| ViewImports MVC                              | `viewimports` |              | Web/ASP.NET         |
-| ViewStart MVC                                | `viewstart`   |              | Web/ASP.NET         |
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-La commande contient une liste par défaut de modèles. Utilisez `dotnet new -all` pour obtenir une liste des modèles disponibles. Le tableau suivant présente les modèles préinstallés avec le SDK .NET Core 1.0.1. Le langage par défaut pour le modèle est indiqué entre crochets.
-
-| Modèles            | Nom court    | Langue | Balises           |
-|----------------------|---------------|----------|----------------|
-| Application console  | `console`     | [C#], F# | Communes/Console |
-| Bibliothèque de classes        | `classlib`    | [C#], F# | Communes/Bibliothèque |
-| Projet de test unitaire    | `mstest`      | [C#], F# | Test/MSTest    |
-| Projet de test xUnit   | `xunit`       | [C#], F# | Test/xUnit     |
-| ASP.NET Core vide   | `web`         | [C#]     | Web/vides      |
-| Application web ASP.NET Core | `mvc`         | [C#], F# | Web/MVC        |
-| API web ASP.NET Core | `webapi`      | [C#]     | Web/WebAPI     |
-| Configuration NuGet         | `nugetconfig` |          | Config         |
-| Configuration Web           | `webconfig`   |          | Config         |
-| Fichier solution        | `sln`         |          | Solution       |
-
----
+| Modèles                                    | Nom court                      | Langage     | Balises                                  | Présent |
+|----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
+| Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
+| Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
+| Application WPF                              | [WPF](#wpf)                     | [C#]         | Commun/WPF                            | 3.0        |
+| Bibliothèque de classes WPF                            | [wpflib](#wpf)                  | [C#]         | Commun/WPF                            | 3.0        |
+| Bibliothèque de contrôles personnalisés WPF                   | [wpfcustomcontrollib](#wpf)     | [C#]         | Commun/WPF                            | 3.0        |
+| Bibliothèque de contrôles utilisateur WPF                     | [wpfusercontrollib](#wpf)       | [C#]         | Commun/WPF                            | 3.0        |
+| Application Windows Forms (WinForms)         | [WinForms](#winforms)           | [C#]         | Common/WinForms                       | 3.0        |
+| Bibliothèque de classes Windows Forms (WinForms)       | [winformslib](#winforms)        | [C#]         | Common/WinForms                       | 3.0        |
+| Service Worker                               | [collabor](#web-others)           | [C#]         | Commun/Worker/Web                     | 3.0        |
+| Projet de test unitaire                            | [MSTest](#test)                 | [C#], F#, VB | Test/MSTest                           | 1.0        |
+| Projet de test NUnit 3                         | [nunit](#nunit)                  | [C#], F#, VB | Test/NUnit                            | 2.1.400    |
+| Élément de test NUnit 3                            | `nunit-test`                    | [C#], F#, VB | Test/NUnit                            | 2.2        |
+| Projet de test xUnit                           | [xUnit](#test)                  | [C#], F#, VB | Test/xUnit                            | 1.0        |
+| Composant Razor                              | `razorcomponent`                | [C#]         | Web/ASP.NET                           | 3.0        |
+| Page Razor                                   | [page](#page)                   | [C#]         | Web/ASP.NET                           | 2        |
+| ViewImports MVC                              | [viewimports](#namespace)       | [C#]         | Web/ASP.NET                           | 2        |
+| ViewStart MVC                                | `viewstart`                     | [C#]         | Web/ASP.NET                           | 2        |
+| Application de serveur éblouissante                            | [blazorserver](#blazorserver)   | [C#]         | Web/éblouissant                            | 3.0        |
+| ASP.NET Core vide                           | [web](#web)                     | [C#], F#     | Web/vides                             | 1.0        |
+| Application web ASP.NET Core (Model-View-Controller) | [mvc](#web-options)             | [C#], F#     | Web/MVC                               | 1.0        |
+| Application web ASP.NET Core                         | [webapp, Razor](#web-options)   | [C#]         | Web/MVC/Razor Pages                   | 2,2, 2,0   |
+| ASP.NET Core avec Angular                    | [oblique](#spa)                 | [C#]         | Web/MVC/SPA                           | 2        |
+| ASP.NET Core avec React.js                   | [réagir](#spa)                   | [C#]         | Web/MVC/SPA                           | 2        |
+| ASP.NET Core avec React.js et Redux         | [reactredux](#reactredux)       | [C#]         | Web/MVC/SPA                           | 2        |
+| Bibliothèque de classes Razor                          | [razorclasslib](#razorclasslib) | [C#]         | Web/Razor/Library/Bibliothèque de classes Razor | 2.1        |
+| API web ASP.NET Core                         | [webapi](#webapi)               | [C#], F#     | Web/WebAPI                            | 1.0        |
+| ASP.NET Core Service gRPC                    | [GRPC](#web-others)             | [C#]         | Web/gRPC                              | 3.0        |
+| Fichier de mémoire tampon de protocole                         | [proto](#namespace)             |              | Web/gRPC                              | 3.0        |
+| fichier gitignore dotnet                        | `gitignore`                     |              | Config                                | 3.0        |
+| fichier global.json                             | [globaljson](#globaljson)       |              | Config                                | 2        |
+| Configuration NuGet                                 | `nugetconfig`                   |              | Config                                | 1.0        |
+| fichier manifeste de l’outil local dotnet              | `tool-manifest`                 |              | Config                                | 3.0        |
+| Configuration Web                                   | `webconfig`                     |              | Config                                | 1.0        |
+| Fichier solution                                | `sln`                           |              | Solution                              | 1.0        |
 
 ## <a name="options"></a>Options
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+- **`--dry-run`**
 
-`--dry-run`
+  Affiche un résumé de ce qui se passerait si la commande donnée était exécutée. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
-Affiche un récapitulatif de ce qui se passerait si la commande donnée était exécutée (si cela donnerait lieu à la création d’un modèle).
+- **`--force`**
 
-`--force`
+  Force le contenu à être généré même s’il change les fichiers existants. Cela est obligatoire lorsque le modèle choisi remplace les fichiers existants dans le répertoire de sortie.
 
-Force le contenu à être généré même s’il change les fichiers existants. Ceci est nécessaire quand le répertoire de sortie contient déjà un projet.
+- **`-h|--help`**
 
-`-h|--help`
+  Affiche l’aide pour la commande. Elle peut être appelée pour la commande `dotnet new` elle-même ou pour n’importe quel modèle. Par exemple : `dotnet new mvc --help`.
 
-Affiche l’aide pour la commande. Elle peut être appelée pour la commande `dotnet new` elle-même ou pour n’importe quel modèle, par exemple, `dotnet new mvc --help`.
+- **`-i|--install <PATH|NUGET_ID>`**
 
-`-i|--install <PATH|NUGET_ID>`
+  Installe un pack de modèles à partir du `PATH` ou `NUGET_ID` fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [exemples](#examples) .
+  
+  Si une version du modèle a déjà été installée lorsque vous exécutez cette commande, le modèle sera mis à jour vers la version spécifiée, ou vers la version stable la plus récente si aucune version n’a été spécifiée.
 
-Installe un pack source ou de modèle à partir du `PATH` ou `NUGET_ID` fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [Exemples](#examples).
+  Pour plus d’informations sur la création de modèles personnalisés, consultez [Modèles personnalisés pour dotnet new](custom-templates.md).
 
-Pour plus d’informations sur la création de modèles personnalisés, consultez [Modèles personnalisés pour dotnet new](custom-templates.md).
+- **`-l|--list`**
 
-`-l|--list`
+  Liste les modèles contenant le nom spécifié. Si aucun nom n’est spécifié, répertorie tous les modèles.
 
-Liste les modèles contenant le nom spécifié. Si elle est appelée pour la commande `dotnet new`, elle liste les modèles disponibles dans le répertoire donné. Par exemple, si le répertoire contient déjà un projet, elle ne liste pas tous les modèles de projet.
+- **`-lang|--language {C#|F#|VB}`**
 
-`-lang|--language {C#|F#|VB}`
+  Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
 
-Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
+  > [!NOTE]
+  > Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, mettez la valeur du paramètre de langue entre guillemets. Par exemple : `dotnet new console -lang "F#"`.
 
-> [!NOTE]
-> Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, vous devez placer la valeur de paramètre de langage entre guillemets doubles, par exemple `dotnet new console -lang "F#"`.
+- **`-n|--name <OUTPUT_NAME>`**
 
-`-n|--name <OUTPUT_NAME>`
+  Le nom de la sortie créée. Si aucun nom n’est spécifié, le nom du répertoire actif est utilisé.
 
-Le nom de la sortie créée. Si aucun nom n’est spécifié, le nom du répertoire actif est utilisé.
+- **`--nuget-source`**
 
-`--nuget-source`
+  Spécifie une source NuGet à utiliser pendant l’installation. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,1.
 
-Spécifie une source NuGet à utiliser pendant l’installation.
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
-`-o|--output <OUTPUT_DIRECTORY>`
+  Emplacement où placer la sortie générée. L'emplacement par défaut est le répertoire actif.
 
-Emplacement où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
+- **`--type`**
 
-`--type`
+  Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont « project », « item » ou « other ».
 
-Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont « project », « item » ou « other ».
+- **`-u|--uninstall [PATH|NUGET_ID]`**
 
-`-u|--uninstall <PATH|NUGET_ID>`
+  Désinstalle un pack de modèles au `PATH` ou `NUGET_ID` fourni. Lorsque la valeur de `<PATH|NUGET_ID>` n’est pas spécifiée, tous les packs de modèles actuellement installés et leurs modèles associés sont affichés. Lorsque vous spécifiez `NUGET_ID`, n’incluez pas le numéro de version.
 
-Désinstalle un pack source ou de modèle au `PATH` ou `NUGET_ID` fourni. Quand vous excluez la valeur `<PATH|NUGET_ID>`, tous les packs de modèles actuellement installés sont affichés, ainsi que les modèles qui leur sont associés.
+  Si vous ne spécifiez pas de paramètre pour cette option, la commande répertorie les modèles installés et fournit des détails à leur sujet.
 
-> [!NOTE]
-> Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* fonctionne, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne fonctionne pas.
-> En outre, n’incluez pas de barre oblique finale après le répertoire dans votre chemin d’accès au modèle.
+  > [!NOTE]
+  > Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* fonctionne, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne fonctionne pas.
+  > N’incluez pas de barre oblique finale de répertoire finale dans le chemin d’accès de votre modèle.
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+- **`--update-apply`**
 
-`--force`
+  Vérifie si des mises à jour sont disponibles pour les packs de modèles qui sont actuellement installés et les installe. Disponible à partir du kit SDK .NET Core 3.0.
 
-Force le contenu à être généré même s’il change les fichiers existants. Ceci est nécessaire quand le répertoire de sortie contient déjà un projet.
+- **`--update-check`**
 
-`-h|--help`
-
-Affiche l’aide pour la commande. Elle peut être appelée pour la commande `dotnet new` elle-même ou pour n’importe quel modèle, par exemple, `dotnet new mvc --help`.
-
-`-i|--install <PATH|NUGET_ID>`
-
-Installe un pack source ou de modèle à partir du `PATH` ou `NUGET_ID` fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [Exemples](#examples).
-
-Pour plus d’informations sur la création de modèles personnalisés, consultez [Modèles personnalisés pour dotnet new](custom-templates.md).
-
-`-l|--list`
-
-Liste les modèles contenant le nom spécifié. Si elle est appelée pour la commande `dotnet new`, elle liste les modèles disponibles dans le répertoire donné. Par exemple, si le répertoire contient déjà un projet, elle ne liste pas tous les modèles de projet.
-
-`-lang|--language {C#|F#|VB}`
-
-Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
-
-> [!NOTE]
-> Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, vous devez placer la valeur de paramètre de langage entre guillemets doubles, par exemple `dotnet new console -lang "F#"`.
-
-`-n|--name <OUTPUT_NAME>`
-
-Le nom de la sortie créée. Si aucun nom n’est spécifié, le nom du répertoire actif est utilisé.
-
-`--nuget-source`
-
-Spécifie une source NuGet à utiliser pendant l’installation.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Emplacement où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
-
-`--type`
-
-Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont « project », « item » ou « other ».
-
-`-u|--uninstall <PATH|NUGET_ID>`
-
-Désinstalle un pack source ou de modèle au `PATH` ou `NUGET_ID` fourni.
-
-> [!NOTE]
-> Pour désinstaller un modèle à l’aide de `PATH`, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* fonctionne, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne fonctionne pas.
-> En outre, n’incluez pas de barre oblique finale après le répertoire dans votre chemin d’accès au modèle.
-
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
-
-`--force`
-
-Force le contenu à être généré même s’il change les fichiers existants. Ceci est nécessaire quand le répertoire de sortie contient déjà un projet.
-
-`-h|--help`
-
-Affiche l’aide pour la commande. Elle peut être appelée pour la commande `dotnet new` elle-même ou pour n’importe quel modèle, par exemple, `dotnet new mvc --help`.
-
-`-i|--install <PATH|NUGET_ID>`
-
-Installe un pack source ou de modèle à partir du `PATH` ou `NUGET_ID` fourni. Si vous souhaitez installer une préversion d’un package de modèle, vous devez spécifier la version au format `<package-name>::<package-version>`. Par défaut, `dotnet new` passe \* pour la version, qui représente la dernière version stable du package. Consultez un exemple dans la section [Exemples](#examples).
-
-Pour plus d’informations sur la création de modèles personnalisés, consultez [Modèles personnalisés pour dotnet new](custom-templates.md).
-
-`-l|--list`
-
-Liste les modèles contenant le nom spécifié. Si elle est appelée pour la commande `dotnet new`, elle liste les modèles disponibles dans le répertoire donné. Par exemple, si le répertoire contient déjà un projet, elle ne liste pas tous les modèles de projet.
-
-`-lang|--language {C#|F#|VB}`
-
-Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
-
-> [!NOTE]
-> Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, vous devez placer la valeur de paramètre de langage entre guillemets doubles, par exemple `dotnet new console -lang "F#"`.
-
-`-n|--name <OUTPUT_NAME>`
-
-Le nom de la sortie créée. Si aucun nom n’est spécifié, le nom du répertoire actif est utilisé.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Emplacement où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
-
-`--type`
-
-Filtre les modèles en fonction des types disponibles. Les valeurs prédéfinies sont « project », « item » ou « other ».
-
-`-u|--uninstall <PATH|NUGET_ID>`
-
-Désinstalle un pack source ou de modèle au `PATH` ou `NUGET_ID` fourni.
-
-> [!NOTE]
-> Pour désinstaller un modèle à l’aide de `PATH` source, vous devez qualifier le chemin d’accès avec un nom complet. Par exemple, *C:/Users/\<USER>/Documents/Templates/GarciaSoftware.ConsoleTemplate.CSharp* fonctionne, mais *./GarciaSoftware.ConsoleTemplate.CSharp* à partir du dossier conteneur ne fonctionne pas. En outre, n’incluez pas de barre oblique finale après le répertoire dans votre chemin d’accès au modèle.
-> 
-> Si vous ne parvenez pas à déterminer l’argument `PATH` ou `NUGET_ID` nécessaire pour désinstaller un modèle, l’exécution de `dotnet new --uninstall` sans argument répertorie tous les modèles installés et l’argument requis pour les désinstaller.
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-`-all|--show-all`
-
-Affiche tous les modèles pour un type de projet spécifique lors de l’exécution dans le contexte de la commande `dotnet new` seule. Lors de l’exécution dans le contexte d’un modèle spécifique, comme `dotnet new web -all`, `-all` est interprété comme un indicateur de création forcée. Ceci est nécessaire quand le répertoire de sortie contient déjà un projet.
-
-`-h|--help`
-
-Affiche l’aide pour la commande. Elle peut être appelée pour la commande `dotnet new` elle-même ou pour n’importe quel modèle, par exemple, `dotnet new mvc --help`.
-
-`-l|--list`
-
-Liste les modèles contenant le nom spécifié. Si elle est appelée pour la commande `dotnet new`, elle liste les modèles disponibles dans le répertoire donné. Par exemple, si le répertoire contient déjà un projet, elle ne liste pas tous les modèles de projet.
-
-`-lang|--language {C#|F#}`
-
-Langage du modèle à créer. Le langage accepté diffère selon le modèle (voir les valeurs par défaut dans la section [arguments](#arguments)). Non valide pour certains modèles.
-
-> [!NOTE]
-> Certains interpréteurs interprètent la commande `#` comme un caractère spécial. Dans ce cas, vous devez placer la valeur de paramètre de langage entre guillemets doubles, par exemple `dotnet new console -lang "F#"`.
-
-`-n|--name <OUTPUT_NAME>`
-
-Le nom de la sortie créée. Si aucun nom n’est spécifié, le nom du répertoire actif est utilisé.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Emplacement où placer la sortie générée. La valeur par défaut correspond au répertoire actif.
-
----
+  Vérifie si des mises à jour sont disponibles pour les packs de modèles qui sont actuellement installés. Disponible à partir du kit SDK .NET Core 3.0.
 
 ## <a name="template-options"></a>Options de modèle
 
 Chaque modèle de projet peut présenter d’autres options disponibles. Les modèles de base ont les options supplémentaires suivantes :
 
-# <a name="net-core-22tabnetcore22"></a>[.NET Core 2.2](#tab/netcore22)
+### <a name="console"></a>console
 
-**console**
+- **`-f|--framework <FRAMEWORK>`**
 
-`--langVersion <VERSION_NUMBER>` - Définit la propriété `LangVersion` dans le fichier de projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3. Non pris en charge pour F#.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Disponible à partir du kit SDK .NET Core 3.0.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
-**angular, react, reactredux**
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+- **`--langVersion <VERSION_NUMBER>`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Définit la propriété `LangVersion` dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3. Non pris en charge pour F#. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. Cette option s’applique uniquement si `IndividualAuth` ou `OrganizationalAuth` ne sont pas utilisés.
+  Pour obtenir la liste des C# versions par défaut, consultez [valeurs par défaut](../../csharp/language-reference/configure-language-version.md#defaults).
 
-**razorclasslib**
+- **`--no-restore`** 
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  S’il est spécifié, n’exécute pas de restauration implicite pendant la création du projet. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
-**classlib**
+***
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp2.2` pour créer une bibliothèque de classes .NET Core ou `netstandard2.0` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
+### <a name="classlib"></a>classlib
 
-`--langVersion <VERSION_NUMBER>` - Définit la propriété `LangVersion` dans le fichier de projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3. Non pris en charge pour F#.
+- **`-f|--framework <FRAMEWORK>`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp<version>` pour créer une bibliothèque de classes .NET Core ou `netstandard<version>` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
 
-**mstest, xunit**
+- **`--langVersion <VERSION_NUMBER>`**
 
-`-p|--enable-pack` : permet l’empaquetage pour le projet à l’aide de [dotnet pack](dotnet-pack.md).
+  Définit la propriété `LangVersion` dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3. Non pris en charge pour F#. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Pour obtenir la liste des C# versions par défaut, consultez [valeurs par défaut](../../csharp/language-reference/configure-language-version.md#defaults).
 
-**nunit**
+- **`--no-restore`**
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp2.1`.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`-p|--enable-pack` : permet l’empaquetage pour le projet à l’aide de [dotnet pack](dotnet-pack.md).
+***
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+### <a name="wpf"></a>WPF, wpflib, wpfcustomcontrollib, wpfusercontrollib
 
-**page**
+- **`-f|--framework <FRAMEWORK>`**
 
-`-na|--namespace <NAMESPACE_NAME>` - Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1. 
 
-`-np|--no-pagemodel` : crée la page sans modèle de page.
+- **`--langVersion <VERSION_NUMBER>`**
 
-**viewimports**
+  Définit la propriété `LangVersion` dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3.
 
-`-na|--namespace <NAMESPACE_NAME>` - Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+  Pour obtenir la liste des C# versions par défaut, consultez [valeurs par défaut](../../csharp/language-reference/configure-language-version.md#defaults).
 
-**web**
+- **`--no-restore`**
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+***
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. Cette option s’applique uniquement si `IndividualAuth` ou `OrganizationalAuth` ne sont pas utilisés.
+### <a name="winforms"></a>WinForms, winformslib
 
-**mvc, webapp**
+- **`--langVersion <VERSION_NUMBER>`**
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+  Définit la propriété `LangVersion` dans le fichier projet créé. Par exemple, choisissez `--langVersion 7.3` pour utiliser C# 7.3.
 
-- `None` : aucune authentification (configuration par défaut).
-- `Individual` : authentification individuelle.
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `MultiOrg` : authentification d’organisation pour plusieurs abonnés.
-- `Windows` : authentification Windows.
+  Pour obtenir la liste des C# versions par défaut, consultez [valeurs par défaut](../../csharp/language-reference/configure-language-version.md#defaults).
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+- **`--no-restore`**
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`-rp|--reset-password-policy-id <ID>` : ID de stratégie de réinitialisation du mot de passe pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+***
 
-`-ep|--edit-profile-policy-id <ID>` : ID de stratégie de modification du profil pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+### <a name="web-others"></a>Worker, GRPC
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg` ou `MultiOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C`, `SingleOrg` ou `MultiOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1. 
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+- **`--exclude-launch-settings`**
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+  Exclut *launchSettings. JSON* du modèle généré.
 
-`--callback-path <PATH>` : chemin de demande dans le chemin de base de l’application de l’URI de redirection. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `/signin-oidc`.
+- **`--no-restore`**
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+***
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg` ou `MultiOrg` ne sont pas utilisés.
+### <a name="test"></a>MSTest, xUnit
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option disponible depuis le kit de développement logiciel (SDK) .NET Core 3,0.
 
-**webapi**
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
 
-- `None` : aucune authentification (configuration par défaut).
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `Windows` : authentification Windows.
+- **`-p|--enable-pack`**
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+  Active l’empaquetage pour le projet à l’aide de [dotnet Pack](dotnet-pack.md).
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`--no-restore`**
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C` ou `SingleOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+***
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+### <a name="nunit"></a>nunit
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler.
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg` ou `MultiOrg` ne sont pas utilisés.
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
+  | 2.2         | `netcoreapp2.2` |
+  | 2.1         | `netcoreapp2.1` |
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+- **`-p|--enable-pack`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Active l’empaquetage pour le projet à l’aide de [dotnet Pack](dotnet-pack.md).
 
-**globaljson**
+- **`--no-restore`**
 
-`--sdk-version <VERSION_NUMBER>` : spécifie la version du SDK .NET Core à utiliser dans le fichier *global.json*.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+***
 
-**console, angular, react, reactredux, razorclasslib**
+### <a name="page"></a>page
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`-na|--namespace <NAMESPACE_NAME>`**
 
-**classlib**
+  Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp2.1` pour créer une bibliothèque de classes .NET Core ou `netstandard2.0` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
+- **`-np|--no-pagemodel`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Crée la page sans PageModel.
 
-**mstest, xunit**
+***
 
-`-p|--enable-pack` : permet l’empaquetage pour le projet à l’aide de [dotnet pack](dotnet-pack.md).
+### <a name="namespace"></a>viewimports, proto
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`-na|--namespace <NAMESPACE_NAME>`**
 
-**globaljson**
+  Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
 
-`--sdk-version <VERSION_NUMBER>` : spécifie la version du SDK .NET Core à utiliser dans le fichier *global.json*.
+***
 
-**web**
+### <a name="blazorserver"></a>blazorserver
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Type de l’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. Cette option s’applique uniquement si `IndividualAuth` ou `OrganizationalAuth` ne sont pas utilisés.
+  - `None` : aucune authentification (configuration par défaut).
+  - `Individual` : authentification individuelle.
+  - `IndividualB2C` : authentification individuelle avec Azure AD B2C.
+  - `SingleOrg` : authentification d’organisation pour un seul abonné.
+  - `MultiOrg` : authentification d’organisation pour plusieurs abonnés.
+  - `Windows` : authentification Windows.
 
-**webapi**
+- **`--aad-b2c-instance <INSTANCE>`**
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+  Instance Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
 
-- `None` : aucune authentification (configuration par défaut).
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `Windows` : authentification Windows.
+- **`-ssp|--susi-policy-id <ID>`**
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+  ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`-rp|--reset-password-policy-id <ID>`**
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+  ID de la stratégie de réinitialisation du mot de passe pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C` ou `SingleOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+- **`-ep|--edit-profile-policy-id <ID>`**
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+  ID de stratégie de modification de profil pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+- **`--aad-instance <INSTANCE>`**
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+  Instance Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg` ou `MultiOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+- **`--client-id <ID>`**
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+  ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C`, `SingleOrg` ou `MultiOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`--domain <DOMAIN>`**
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg` ou `MultiOrg` ne sont pas utilisés.
+  Domaine du locataire d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
 
-**mvc, razor**
+- **`--tenant-id <ID>`**
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+  ID TenantId de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
 
-- `None` : aucune authentification (configuration par défaut).
-- `Individual` : authentification individuelle.
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `MultiOrg` : authentification d’organisation pour plusieurs abonnés.
-- `Windows` : authentification Windows.
+- **`--callback-path <PATH>`**
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+  Chemin d’accès de la requête dans le chemin d’accès de base de l’application de l’URI de redirection. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `/signin-oidc`.
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`-r|--org-read-access`**
 
-`-rp|--reset-password-policy-id <ID>` : ID de stratégie de réinitialisation du mot de passe pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
 
-`-ep|--edit-profile-policy-id <ID>` : ID de stratégie de modification du profil pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`--exclude-launch-settings`**
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg` ou `MultiOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+  Exclut *launchSettings. JSON* du modèle généré.
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C`, `SingleOrg` ou `MultiOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+- **`--no-https`**
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg`ou `MultiOrg` ne sont pas utilisés pour `--auth`.
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+- **`-uld|--use-local-db`**
 
-`--callback-path <PATH>` : chemin de demande dans le chemin de base de l’application de l’URI de redirection. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `/signin-oidc`.
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+- **`--no-restore`**
 
-`--exclude-launch-settings` - Exclure *launchSettings.json* du modèle généré.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`--use-browserlink` : inclut BrowserLink dans le projet.
+***
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+### <a name="web"></a>web
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`--exclude-launch-settings`**
 
-`--no-https` - Le projet ne nécessite pas le protocole HTTPS. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg` ou `MultiOrg` ne sont pas utilisés.
+  Exclut *launchSettings. JSON* du modèle généré.
 
-**page**
+- **`-f|--framework <FRAMEWORK>`**
 
-`-na|--namespace <NAMESPACE_NAME>` - Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option non disponible dans le kit de développement logiciel (SDK) .NET Core 2,2.
 
-`-np|--no-pagemodel` : crée la page sans modèle de page.
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
-**viewimports**
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
+  | 2.1         | `netcoreapp2.1` |
 
-`-na|--namespace <NAMESPACE_NAME>` - Espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+- **`--no-restore`**
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-**console, angular, react, reactredux**
+- **`--no-https`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  Désactive le protocole HTTPs.
 
-**classlib**
+***
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp2.0` pour créer une bibliothèque de classes .NET Core ou `netstandard2.0` pour créer une bibliothèque de classes .NET Standard. La valeur par défaut est `netstandard2.0`.
+### <a name="web-options"></a>MVC, WebApp
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
 
-**mstest, xunit**
+  Type de l’authentification à utiliser. Les valeurs possibles sont les suivantes :
 
-`-p|--enable-pack` : permet l’empaquetage pour le projet à l’aide de [dotnet pack](dotnet-pack.md).
+  - `None` : aucune authentification (configuration par défaut).
+  - `Individual` : authentification individuelle.
+  - `IndividualB2C` : authentification individuelle avec Azure AD B2C.
+  - `SingleOrg` : authentification d’organisation pour un seul abonné.
+  - `MultiOrg` : authentification d’organisation pour plusieurs abonnés.
+  - `Windows` : authentification Windows.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`--aad-b2c-instance <INSTANCE>`**
 
-**globaljson**
+  Instance Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
 
-`--sdk-version <VERSION_NUMBER>` : spécifie la version du SDK .NET Core à utiliser dans le fichier *global.json*.
+- **`-ssp|--susi-policy-id <ID>`**
 
-**web**
+  ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+- **`-rp|--reset-password-policy-id <ID>`**
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+  ID de la stratégie de réinitialisation du mot de passe pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-**webapi**
+- **`-ep|--edit-profile-policy-id <ID>`**
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+  ID de stratégie de modification de profil pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
 
-- `None` : aucune authentification (configuration par défaut).
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `Windows` : authentification Windows.
+- **`--aad-instance <INSTANCE>`**
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+  Instance Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg` ou `MultiOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`--client-id <ID>`**
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+  ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C`, `SingleOrg` ou `MultiOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C` ou `SingleOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+- **`--domain <DOMAIN>`**
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+  Domaine du locataire d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+- **`--tenant-id <ID>`**
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+  ID TenantId de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+- **`--callback-path <PATH>`**
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+  Chemin d’accès de la requête dans le chemin d’accès de base de l’application de l’URI de redirection. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `/signin-oidc`.
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+- **`-r|--org-read-access`**
 
-**mvc, razor**
+  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Les valeurs possibles sont :
+- **`--exclude-launch-settings`**
 
-- `None` : aucune authentification (configuration par défaut).
-- `Individual` : authentification individuelle.
-- `IndividualB2C` : authentification individuelle avec Azure AD B2C.
-- `SingleOrg` : authentification d’organisation pour un seul abonné.
-- `MultiOrg` : authentification d’organisation pour plusieurs abonnés.
-- `Windows` : authentification Windows.
+  Exclut *launchSettings. JSON* du modèle généré.
 
-`--aad-b2c-instance <INSTANCE>` : instance d’Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+- **`--no-https`**
 
-`-ssp|--susi-policy-id <ID>` : ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si `Individual`, `IndividualB2C`, `SingleOrg` ou `MultiOrg` ne sont pas utilisés.
 
-`-rp|--reset-password-policy-id <ID>` : ID de stratégie de réinitialisation du mot de passe pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+- **`-uld|--use-local-db`**
 
-`-ep|--edit-profile-policy-id <ID>` : ID de stratégie de modification du profil pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
 
-`--aad-instance <INSTANCE>` : instance d’Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg` ou `MultiOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`--client-id <ID>` : ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C`, `SingleOrg` ou `MultiOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option disponible depuis le kit de développement logiciel (SDK) .NET Core 3,0.
 
-`--domain <DOMAIN>` : domaine de l’abonné d’annuaire. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `qualified.domain.name`.
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
-`--tenant-id <ID>` : ID d’abonné de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
 
-`--callback-path <PATH>` : chemin de demande dans le chemin de base de l’application de l’URI de redirection. À utiliser avec l’authentification `SingleOrg` ou `IndividualB2C`. La valeur par défaut est `/signin-oidc`.
+- **`--no-restore`**
 
-`-r|--org-read-access` : accorde à cette application un accès en lecture au répertoire. S’applique uniquement à l’authentification `SingleOrg` ou `MultiOrg`.
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`--use-launch-settings` : inclut *launchSettings.json* dans la sortie de modèle générée.
+- **`--use-browserlink`**
 
-`--use-browserlink` : inclut BrowserLink dans le projet.
+  Comprend BrowserLink dans le projet. Option non disponible dans le kit de développement logiciel (SDK) .NET Core 2,2 et 3,1.
 
-`-uld|--use-local-db` : spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`.
+***
 
-`--no-restore` - N’exécute aucune restauration implicite pendant la création du projet.
+### <a name="spa"></a>angulaire, réaction
 
-**page**
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
 
-`-na|--namespace <NAMESPACE_NAME>` : espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+  Type de l’authentification à utiliser. Disponible à partir du kit SDK .NET Core 3.0. 
+  
+  Les valeurs possibles sont les suivantes :
 
-`-np|--no-pagemodel` : crée la page sans modèle de page.
+  - `None` : aucune authentification (configuration par défaut).
+  - `Individual` : authentification individuelle.
 
-**viewimports**
+- **`--exclude-launch-settings`**
 
-`-na|--namespace <NAMESPACE_NAME>` : espace de noms pour le code généré. La valeur par défaut est `MyApp.Namespace`.
+  Exclut *launchSettings. JSON* du modèle généré. 
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+- **`--no-restore`**
 
-**console, xunit, mstest, web, webapi**
+  N’exécute pas de restauration implicite pendant la création du projet.
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp1.0` ou `netcoreapp1.1`. La valeur par défaut est `netcoreapp1.0`.
+- **`--no-https`**
 
-**classlib**
+  Désactive le protocole HTTPs. Cette option s’applique uniquement si l’authentification est `None`.
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp1.0`, `netcoreapp1.1` ou `netstandard1.0` à `netstandard1.6`. La valeur par défaut est `netstandard1.4`.
+- **`-uld|--use-local-db`**
 
-**mvc**
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `Individual` ou `IndividualB2C`. Disponible à partir du kit SDK .NET Core 3.0.
 
-`-f|--framework <FRAMEWORK>` : spécifie le [framework](../../standard/frameworks.md) à cibler. Valeurs : `netcoreapp1.0` ou `netcoreapp1.1`. La valeur par défaut est `netcoreapp1.0`.
+- **`-f|--framework <FRAMEWORK>`**
 
-`-au|--auth <AUTHENTICATION_TYPE>` : type d’authentification à utiliser. Valeurs : `None` ou `Individual`. La valeur par défaut est `None`.
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option non disponible dans le kit de développement logiciel (SDK) .NET Core 2,2.
 
-`-uld|--use-local-db` : spécifie s’il convient ou non d’utiliser LocalDB au lieu de SQLite. Valeurs : `true` ou `false`. La valeur par défaut est `false`.
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
 
----
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
+  | 2.1         | `netcoreapp2.0` |
+
+***
+
+### <a name="reactredux"></a>reactredux
+
+- **`--exclude-launch-settings`**
+
+  Exclut *launchSettings. JSON* du modèle généré. 
+
+- **`-f|--framework <FRAMEWORK>`**
+
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option non disponible dans le kit de développement logiciel (SDK) .NET Core 2,2.
+
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
+
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
+  | 2.1         | `netcoreapp2.0` |
+
+- **`--no-restore`**
+
+  N’exécute pas de restauration implicite pendant la création du projet.
+
+- **`--no-https`**
+
+  Désactive le protocole HTTPs.
+
+***
+
+### <a name="razorclasslib"></a>razorclasslib
+
+- **`--no-restore`**
+
+  N’exécute pas de restauration implicite pendant la création du projet.
+
+- **`-s|--support-pages-and-views`**
+
+  Prend en charge l’ajout de pages et de vues Razor traditionnelles en plus des composants de cette bibliothèque. Disponible à partir du kit SDK .NET Core 3.0.
+
+***
+  
+### <a name="webapi"></a>webapi
+
+- **`-au|--auth <AUTHENTICATION_TYPE>`**
+
+  Type de l’authentification à utiliser. Les valeurs possibles sont les suivantes :
+
+  - `None` : aucune authentification (configuration par défaut).
+  - `IndividualB2C` : authentification individuelle avec Azure AD B2C.
+  - `SingleOrg` : authentification d’organisation pour un seul abonné.
+  - `Windows` : authentification Windows.
+
+- **`--aad-b2c-instance <INSTANCE>`**
+
+  Instance Azure Active Directory B2C à laquelle se connecter. À utiliser avec l’authentification `IndividualB2C`. La valeur par défaut est `https://login.microsoftonline.com/tfp/`.
+
+- **`-ssp|--susi-policy-id <ID>`**
+
+  ID de la stratégie de connexion et d’inscription pour ce projet. À utiliser avec l’authentification `IndividualB2C`.
+
+- **`--aad-instance <INSTANCE>`**
+
+  Instance Azure Active Directory à laquelle se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `https://login.microsoftonline.com/`.
+
+- **`--client-id <ID>`**
+
+  ID client pour ce projet. À utiliser avec l’authentification `IndividualB2C` ou `SingleOrg`. La valeur par défaut est `11111111-1111-1111-11111111111111111`.
+
+- **`--domain <DOMAIN>`**
+
+  Domaine du locataire d’annuaire. À utiliser avec l’authentification `IndividualB2C` ou `SingleOrg`. La valeur par défaut est `qualified.domain.name`.
+
+- **`--tenant-id <ID>`**
+
+  ID TenantId de l’annuaire auquel se connecter. À utiliser avec l’authentification `SingleOrg`. La valeur par défaut est `22222222-2222-2222-2222-222222222222`.
+
+- **`-r|--org-read-access`**
+
+  Permet à cette application d’accéder en lecture à l’annuaire. S’applique uniquement à l’authentification `SingleOrg`.
+
+- **`--exclude-launch-settings`**
+
+  Exclut *launchSettings. JSON* du modèle généré.
+
+- **`--no-https`**
+
+  Désactive le protocole HTTPs. `app.UseHsts` et `app.UseHttpsRedirection` ne sont pas ajoutés à `Startup.Configure`. Cette option s’applique uniquement si `IndividualB2C` ou `SingleOrg` ne sont pas utilisés pour l’authentification.
+
+- **`-uld|--use-local-db`**
+
+  Spécifie que la base de données locale doit être utilisée à la place de SQLite. S’applique uniquement à l’authentification `IndividualB2C`.
+
+- **`-f|--framework <FRAMEWORK>`**
+
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. Option non disponible dans le kit de développement logiciel (SDK) .NET Core 2,2.
+
+  Le tableau suivant répertorie les valeurs par défaut en fonction du numéro de version du kit de développement logiciel (SDK) que vous utilisez :
+
+  | Version du SDK | Valeur par défaut   |
+  |-------------|-----------------|
+  | 3.1         | `netcoreapp3.1` |
+  | 3.0         | `netcoreapp3.0` |
+  | 2.1         | `netcoreapp2.1` |
+
+- **`--no-restore`**
+
+  N’exécute pas de restauration implicite pendant la création du projet.
+
+***
+
+### <a name="globaljson"></a>globaljson
+
+- **`--sdk-version <VERSION_NUMBER>`**
+
+  Spécifie la version de la kit SDK .NET Core à utiliser dans le fichier *global. JSON* .
+
+***
 
 ## <a name="examples"></a>Exemples
 
-Créez un projet d’application console C# en spécifiant le nom du modèle :
+- Créez un projet d’application console C# en spécifiant le nom du modèle :
 
-`dotnet new "Console Application"`
+  ```dotnetcli
+  dotnet new "Console Application"
+  ```
 
-Créez un projet d’application console F# dans le répertoire actif :
+- Créez un projet d’application console F# dans le répertoire actif :
 
-`dotnet new console -lang F#`
+  ```dotnetcli
+  dotnet new console -lang F#
+  ```
 
-Créez un projet de bibliothèque de classes .NET Standard dans le répertoire spécifié (disponible uniquement avec le SDK .NET Core 2.0 ou ultérieur) :
+- Créez un projet de bibliothèque de classes .NET Standard dans le répertoire spécifié :
 
-`dotnet new classlib -lang VB -o MyLibrary`
+  ```dotnetcli
+  dotnet new classlib -lang VB -o MyLibrary
+  ```
 
-Créez un projet ASP.NET Core C# MVC dans le répertoire actif sans authentification :
+- Créez un projet ASP.NET Core C# MVC dans le répertoire actif sans authentification :
 
-`dotnet new mvc -au None`
+  ```dotnetcli
+  dotnet new mvc -au None
+  ```
 
-Créez un projet xUnit :
+- Créez un projet xUnit :
 
-`dotnet new xunit`
+  ```dotnetcli
+  dotnet new xunit
+  ```
 
-Répertoriez tous les modèles disponibles pour MVC :
+- Répertorier tous les modèles disponibles pour les modèles d’application à page unique (SPA) :
 
-`dotnet new mvc -l`
+  ```dotnetcli
+  dotnet new spa -l
+  ```
 
-Liste de tous les modèles correspondant à la sous-chaîne *we*. Aucune correspondance exacte n’a été trouvée, donc la recherche de sous-chaîne est exécutée sur les colonnes Nom court et Nom.
+- Liste de tous les modèles correspondant à la sous-chaîne *we*. Aucune correspondance exacte n’a été trouvée, donc la recherche de sous-chaîne est exécutée sur les colonnes Nom court et Nom.
 
-`dotnet new we -l`
+  ```dotnetcli
+  dotnet new we -l
+  ```
 
-Tentative d’appel du modèle correspondant à *ng*. Si aucune correspondance exacte n’est trouvée, listez les modèles qui correspondent partiellement.
+- Tentative d’appel du modèle correspondant à *ng*. Si aucune correspondance exacte n’est trouvée, listez les modèles qui correspondent partiellement.
 
-`dotnet new ng`
+  ```dotnetcli
+  dotnet new ng
+  ```
 
-Installez la version 2.0 des modèles d’application monopage pour ASP.NET Core (option de commande disponible pour .NET Core  SDK 1.1 et versions ultérieures uniquement) :
+- Installez la version 2,0 des modèles SPA pour ASP.NET Core :
 
-`dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0`
+  ```dotnetcli
+  dotnet new -i Microsoft.DotNet.Web.Spa.ProjectTemplates::2.0.0
+  ```
 
-Créez un fichier *global.json* dans le répertoire actif en définissant la version du SDK sur 2.0.0 (disponible uniquement avec le SDK .NET Core 2.0 ou ultérieure) :
+- Répertoriez les modèles installés et les détails les concernant, notamment comment les désinstaller :
 
-`dotnet new globaljson --sdk-version 2.0.0`
+  ```dotnetcli
+  dotnet new -u
+  ```
+
+- Créez un *global. JSON* dans le répertoire actif en définissant la version du kit de développement logiciel (SDK) sur 3.1.101 :
+
+  ```dotnetcli
+  dotnet new globaljson --sdk-version 3.1.101
+  ```
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 12/04/2018
-ms.openlocfilehash: 917b51e0cf36cca45135fda4a084eb2bca62e835
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 9495288658fa102df8f0fbd643e2fcdf49d8f3b3
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73100694"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451978"
 ---
 # <a name="whats-new-in-net-core-22"></a>Nouveautés de .NET Core 2.2
 
@@ -18,11 +18,11 @@ ms.locfileid: "73100694"
 
 ## <a name="new-deployment-mode"></a>Nouveau mode de déploiement
 
-À partir de .NET Core 2.2, vous pouvez déployer des [exécutables dépendants du framework](../deploying/index.md#framework-dependent-executables-fde), qui sont des fichiers **.exe** au lieu de fichiers **.dll**. Comme les déploiements dépendants du framework, les exécutables dépendants du framework dépendent toujours de la présence d’une version de .NET Core partagée à l’échelle du système pour s’exécuter. Votre application ne comporte que votre code et les éventuelles dépendances tierces. Contrairement aux déploiements dépendants du framework, les exécutables dépendants du framework sont propres à la plateforme.
+À partir de .NET Core 2.2, vous pouvez déployer des [exécutables dépendants du framework](../deploying/index.md#publish-runtime-dependent), qui sont des fichiers **.exe** au lieu de fichiers **.dll**. Comme les déploiements dépendants du framework, les exécutables dépendants du framework dépendent toujours de la présence d’une version de .NET Core partagée à l’échelle du système pour s’exécuter. Votre application ne comporte que votre code et les éventuelles dépendances tierces. Contrairement aux déploiements dépendants du framework, les exécutables dépendants du framework sont propres à la plateforme.
 
 Ce nouveau mode de déploiement présente le net avantage de créer un exécutable au lieu d’une bibliothèque, ce qui permet d’exécuter directement l’application, sans appeler `dotnet` au préalable.
 
-## <a name="core"></a>Principal
+## <a name="core"></a>Core
 
 **Gérer les événements dans les services de runtime**
 

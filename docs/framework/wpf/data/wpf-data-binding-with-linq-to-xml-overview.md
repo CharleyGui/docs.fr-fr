@@ -2,12 +2,12 @@
 title: Liaison de données avec LINQ to XML
 ms.date: 10/22/2019
 ms.topic: conceptual
-ms.openlocfilehash: 3c5567c81d2097a1524f5bbbf9010836ca8c0646
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 65e1524a88f1920c037b2747b0bbe30386951635
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733821"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452732"
 ---
 # <a name="overview-of-wpf-data-binding-with-linq-to-xml"></a>Vue d’ensemble de la liaison de données WPF avec LINQ to XML
 
@@ -34,7 +34,7 @@ La liaison de données WPF permet à un élément d'interface utilisateur d'asso
 |Cible de liaison|Élément d'interface utilisateur à associer à la source de données. Les éléments visuels dans WPF sont dérivés de la classe <xref:System.Windows.UIElement>.|
 |Propriété cible|*Propriété de dépendance* de la cible de liaison qui reflète la valeur de la source de liaison de données. Les propriétés de dépendance sont directement prises en charge par la classe <xref:System.Windows.DependencyObject>, de laquelle <xref:System.Windows.UIElement> dérive.|
 |Source de liaison|Objet source pour une ou plusieurs valeurs qui sont fournies à l'élément d'interface utilisateur pour la présentation. WPF prend automatiquement en charge les types suivants comme sources de liaison : objets CLR, objets de données ADO.NET, données XML (à partir de requêtes XPath ou LINQ to XML) ou un autre objet <xref:System.Windows.DependencyObject>.|
-|Chemin d'accès à la source|Propriété de la source de liaison qui est résolue à la valeur ou à l'ensemble de valeurs qui doit être lié(e).|
+|Chemin source|Propriété de la source de liaison qui est résolue à la valeur ou à l'ensemble de valeurs qui doit être lié(e).|
 
 Une propriété de dépendance est un concept spécifique à WPF qui représente une propriété calculée de manière dynamique d'un élément d'interface utilisateur. Par exemple, les propriétés de dépendance ont souvent des valeurs par défaut ou des valeurs fournies par un élément parent. Ces propriétés spéciales sont secondées par des instances de la classe <xref:System.Windows.DependencyProperty> (et non par des champs, comme avec les propriétés standard). Pour plus d’informations, consultez [Vue d’ensemble des propriétés de dépendance](../advanced/dependency-properties-overview.md).
 
@@ -91,4 +91,4 @@ Pour implémenter la liaison dynamique WPF, les propriétés dynamiques seront u
 - [Propriétés dynamiques LINQ to XML](linq-to-xml-dynamic-properties.md)
 - [Intégration du format XAML au format WPF](../advanced/xaml-in-wpf.md)
 - [Liaison de données (WPF)](/dotnet/framework/wpf/data/data-binding-wpf)
-- [Utilisation de la balise de workflow](https://go.microsoft.com/fwlink/?LinkId=98685)
+- [Utilisation de la balise de workflow](https://docs.microsoft.com/previous-versions/dotnet/netframework-3.5/ms735921(v=vs.90))

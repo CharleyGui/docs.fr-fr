@@ -2,15 +2,15 @@
 title: Considérations sur la sécurité (Entity Framework)
 ms.date: 03/30/2017
 ms.assetid: 84758642-9b72-4447-86f9-f831fef46962
-ms.openlocfilehash: 9a560db5dbcb7a87a1c933febfb8bf676cc8816b
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: e2e1fc75049d41b50aa59092fe1aa21e8cdab659
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73968418"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452485"
 ---
 # <a name="security-considerations-entity-framework"></a>Considérations sur la sécurité (Entity Framework)
-Cette rubrique décrit les considérations relatives à la sécurité qui sont spécifiques au développement, au déploiement et à l’exécution d’applications Entity Framework. Vous devez également suivre les recommandations relatives à la création d’applications .NET Framework sécurisées. Pour plus d’informations, consultez [vue d’ensemble](../security-overview.md)de la sécurité.  
+Cette rubrique décrit les considérations relatives à la sécurité qui sont spécifiques au développement, au déploiement et à l’exécution d’applications Entity Framework. Vous devez également suivre les recommandations relatives à la création d’applications .NET Framework sécurisées. Pour plus d’informations, consultez [Vue d’ensemble de la sécurité](../security-overview.md).  
   
 ## <a name="general-security-considerations"></a>Considérations générales sur la sécurité  
  Les considérations de sécurité suivantes s’appliquent à toutes les applications qui utilisent le Entity Framework.  
@@ -27,7 +27,7 @@ Cette rubrique décrit les considérations relatives à la sécurité qui sont s
  Pendant l'opération d'ouverture de session, les informations qui sont basées sur le mot de passe de l'utilisateur sont passées au serveur via bibliothèques réseau de la source de données sous-jacente. Un fournisseur malveillant peut voler les informations d'identification de l'utilisateur, générer des requêtes malveillantes ou falsifier le jeu de résultats.  
   
 #### <a name="encrypt-your-connection-to-protect-sensitive-data"></a>Chiffrez votre connexion pour protéger les données sensibles.  
- Le Entity Framework ne gère pas directement le chiffrement des données. Si les utilisateurs accèdent aux données via un réseau public, votre application doit établir une connexion chiffrée à la source de données pour augmenter la sécurité. Pour plus d'informations, voir la documentation relative à la sécurité pour votre source de données. Pour obtenir une SQL Server source de données, consultez [chiffrement des connexions à SQL Server](https://go.microsoft.com/fwlink/?LinkId=119544).  
+ Le Entity Framework ne gère pas directement le chiffrement des données. Si les utilisateurs accèdent aux données via un réseau public, votre application doit établir une connexion chiffrée à la source de données pour augmenter la sécurité. Pour plus d'informations, voir la documentation relative à la sécurité pour votre source de données. Pour obtenir une SQL Server source de données, consultez [chiffrement des connexions à SQL Server](https://docs.microsoft.com/previous-versions/sql/sql-server-2008-r2/ms189067(v=sql.105)).  
   
 #### <a name="secure-the-connection-string"></a>Sécurisez la chaîne de connexion.  
  La protection de l'accès à votre source de données représente l'un de vos principaux objectifs lorsque vous sécurisez une application. Une chaîne de connexion présente une vulnérabilité potentielle si elle n'est pas sécurisée ou si elle n'est pas correctement construite. Lorsque vous stockez les informations de connexion au format texte brut ou que vous les conservez dans la mémoire, vous risquez de compromettre l'ensemble de votre système. Les méthodes recommandées pour sécuriser des chaînes de connexion sont les suivantes :  
@@ -81,7 +81,7 @@ Cette rubrique décrit les considérations relatives à la sécurité qui sont s
  L’Entity Framework n’applique aucune autorisation de sécurité et appelle le code d’objet de données fourni par l’utilisateur dans le processus, qu’il soit approuvé ou non. Assurez-vous que l'authentification et l'autorisation du client sont effectuées par la banque de données et par votre application.  
   
 #### <a name="restrict-access-to-all-configuration-files"></a>Limitez l'accès à tous les fichiers de configuration.  
- Un administrateur doit limiter l’accès en écriture à tous les fichiers qui spécifient la configuration d’une application, y compris à enterprisesec. config, à Security. config, à machine. conf et au fichier de configuration de l’application \<> d' *application*. exe. config.  
+ Un administrateur doit limiter l’accès en écriture à tous les fichiers qui spécifient la configuration d’une application, y compris à enterprisesec. config, à Security. config, à machine. conf et au fichier de configuration de l’application \<*application*>. exe. config.  
   
  Le nom invariant du fournisseur est modifiable dans le fichier app. config. L’application cliente doit prendre la responsabilité d’accéder au fournisseur sous-jacent par le biais du modèle de fabrique de fournisseurs standard en utilisant un nom fort.  
   
@@ -137,7 +137,7 @@ Cette rubrique décrit les considérations relatives à la sécurité qui sont s
 #### <a name="prevent-type-safety-violations"></a>Évitez les violations de la cohérence des types.  
  Si la sécurité de type n’est pas respectée, le Entity Framework ne peut pas garantir l’intégrité des données dans les objets. Les violations de la cohérence des types peuvent se produire si vous permettez à des applications non approuvées de s'exécuter avec une sécurité d'accès du code d'un niveau de confiance totale.  
   
-#### <a name="handle-exceptions"></a>Gestion des exceptions.  
+#### <a name="handle-exceptions"></a>Traitez les exceptions.  
  Accédez aux méthodes et aux propriétés d'un <xref:System.Data.Objects.ObjectContext> dans un bloc try-catch. L'interception d'exceptions empêche des exceptions non gérées d'exposer aux utilisateurs de votre application des entrées dans <xref:System.Data.Objects.ObjectStateManager> ou dans les informations de modèle (telles que les noms de tables).  
   
 ## <a name="security-considerations-for-aspnet-applications"></a>Considérations sur la sécurité pour les applications ASP.NET  

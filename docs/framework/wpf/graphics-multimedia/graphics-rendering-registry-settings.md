@@ -8,12 +8,12 @@ helpviewer_keywords:
 - troubleshooting graphics rendering [WPF]
 - graphics [WPF], rendering
 ms.assetid: f4b41b42-327d-407c-b398-3ed5f505df8b
-ms.openlocfilehash: 53f25be3bc38d88aa7723f6a0858317ee5ce6143
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 04bf2d2ec78a02e8fd3d71200c64a807b874bc97
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559649"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452602"
 ---
 # <a name="graphics-rendering-registry-settings"></a>Paramètres du Registre pour le rendu des graphiques
 Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le rendu des graphiques [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] qui affectent les applications [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)].  
@@ -24,7 +24,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
   
 <a name="xpdmandwddm"></a>   
 ## <a name="what-are-xpdm-and-wddm"></a>Que sont XPDM et WDDM ?  
- Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le modèle de pilote d’affichage de Microsoft Windows XP et WDDM est le modèle de pilote d’affichage Windows. WDDM est disponible sur les ordinateurs exécutant Windows Vista et Windows 7. XPDM est disponible sur les ordinateurs exécutant Windows Vista, Microsoft Windows XP et Microsoft Windows Server 2003. Pour plus d'informations sur le modèle WDDM, consultez [Guide de conception Windows Vista Display Driver Model](https://go.microsoft.com/fwlink/?LinkId=178394).  
+ Certains paramètres du Registre pour le rendu des graphiques ont des valeurs par défaut différentes selon que votre carte vidéo utilise un pilote XPDM ou WDDM. XPDM est le modèle de pilote d’affichage de Microsoft Windows XP et WDDM est le modèle de pilote d’affichage Windows. WDDM est disponible sur les ordinateurs exécutant Windows Vista et Windows 7. XPDM est disponible sur les ordinateurs exécutant Windows Vista, Microsoft Windows XP et Microsoft Windows Server 2003. Pour plus d’informations sur WDDM, consultez le [Guide de conception du modèle WDDM (Windows Display Driver Model)](/windows-hardware/drivers/display/windows-vista-display-driver-model-design-guide).  
   
 <a name="registry_settings"></a>   
 ## <a name="registry-settings"></a>Paramètres du Registre  
@@ -42,7 +42,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 <a name="disablehardwareacceleration"></a>   
 ## <a name="disable-hardware-acceleration-option"></a>Option Désactiver l’accélération matérielle  
   
-|Clé du Registre|Type de valeur|  
+|Clé de Registre|Type de valeur|  
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\DisableHWAcceleration`|DWORD|  
   
@@ -53,7 +53,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 <a name="maxmultisample"></a>   
 ## <a name="maximum-multisample-value"></a>Valeur d’échantillonnage multiple maximale  
   
-|Clé du Registre|Type de valeur|  
+|Clé de Registre|Type de valeur|  
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\MaxMultisampleType`|DWORD|  
   
@@ -66,9 +66,9 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 <a name="requiredvideodriverdatesetting"></a>   
 ## <a name="required-video-driver-date-setting"></a>Paramètre Date de pilote vidéo requise  
   
-|Clé du Registre|Type de valeur|  
+|Clé de Registre|Type de valeur|  
 |------------------|----------------|  
-|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|Chaîne|  
+|`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\RequiredVideoDriverDate`|String|  
   
  En novembre 2004, Microsoft a publié une nouvelle version des instructions de test des pilotes. les pilotes écrits après cette date offrent une meilleure stabilité. Par défaut, [!INCLUDE[TLA2#tla_winclient](../../../../includes/tla2sharptla-winclient-md.md)] utilise le pipeline d’accélération matérielle pour ces pilotes et revient au rendu logiciel pour les pilotes XPDM publiés avant cette date.  
   
@@ -85,7 +85,7 @@ Cette rubrique fournit une vue d’ensemble des paramètres du Registre pour le 
 <a name="usereferencerasterizeroption"></a>   
 ## <a name="use-reference-rasterizer-option"></a>Option Utiliser le rastériseur de référence  
   
-|Clé du Registre|Type de valeur|  
+|Clé de Registre|Type de valeur|  
 |------------------|----------------|  
 |`HKEY_CURRENT_USER\SOFTWARE\Microsoft\Avalon.Graphics\UseReferenceRasterizer`|DWORD|  
   

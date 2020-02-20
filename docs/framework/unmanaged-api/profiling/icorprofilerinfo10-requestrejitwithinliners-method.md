@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 5822136eb1a7f582bcfae901a99775950e586198
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 99b6893854c358720259095bf3c0270cb3676483
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863177"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452173"
 ---
 # <a name="icorprofilerinfo10requestrejitwithinliners-method"></a>ICorProfilerInfo10 :: RequestReJITWithInliners, méthode
 
@@ -31,7 +31,7 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
                                   [in, size_is(cFunctions)]  mdMethodDef methodIds[]);
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `dwRejitFlags`
 
@@ -53,9 +53,9 @@ HRESULT RequestReJITWithInliners( [in]                       DWORD       dwRejit
 
 [Requestrejit,](icorprofilerinfo4-requestrejit-method.md) n’effectue aucun suivi des méthodes Inline. Le profileur devait bloquer l’incorporation ou le suivi des Inlines et appeler `RequestReJIT` pour tous les Inlines afin de s’assurer que chaque instance d’une méthode Inline était ReJITted. Cela pose un problème avec ReJIT lors de l’attachement, car le profileur n’est pas présent pour surveiller l’incorporation. Cette méthode peut être appelée pour garantir que l’ensemble complet des Inlines sera également ReJITted.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?pivots=os-windows).
 
 **En-tête :** CorProf.idl, CorProf.h
 

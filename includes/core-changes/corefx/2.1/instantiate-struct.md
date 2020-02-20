@@ -1,16 +1,16 @@
 ---
-ms.openlocfilehash: f09a593160b21a9a22a8e7c7faeffdaaab41db85
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: dc5f608dc9eb4635e1282a9ca5e15ff1bf7d0e0d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344873"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449550"
 ---
 ### <a name="private-fields-added-to-built-in-struct-types"></a>Champs privés ajoutés aux types struct intégrés
 
 Les champs privés ont été ajoutés aux types struct intégrés dans les [assemblys de référence](../../../../docs/standard/assembly/reference-assemblies.md). Par conséquent, dans C#, les types struct doivent toujours être instanciés à l’aide de l' [opérateur New](../../../../docs/csharp/language-reference/operators/new-operator.md) ou du [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal), ou en initialisant chacun des champs privés.
 
-#### <a name="change-description"></a>Description des modifications
+#### <a name="change-description"></a>Modifier la description
 
 Dans .NET Core 2,0 et versions antérieures, certains types struct intégrés, par exemple, <xref:System.ConsoleKeyInfo>, pouvaient être instanciés sans utiliser l’opérateur `new` ou le [littéral par défaut](../../../../docs/csharp/language-reference/operators/default.md#default-literal) dans C#. Cela était dû au fait que les [assemblys](../../../../docs/standard/assembly/reference-assemblies.md) de C# référence utilisés par le compilateur ne contenaient pas les champs privés pour les structs. Tous les champs privés pour les types struct .NET sont ajoutés aux assemblys de référence à partir de .NET Core 2,1.
 
@@ -61,7 +61,7 @@ for (int i = 0; i < keys.Length; i++)
 }
 ```
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 CoreFx
 
@@ -413,7 +413,7 @@ CoreFx
 
 <!--
 
-### Affected APIs
+#### Affected APIs
 
 - `T:System.ConsoleKeyInfo`
 - `T:System.Memory{T}`

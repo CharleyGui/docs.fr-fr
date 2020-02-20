@@ -2,12 +2,12 @@
 title: Migration .NET Core à partir de project.json
 description: Apprenez à migrer un ancien projet .NET Core à l’aide de project.json
 ms.date: 07/19/2017
-ms.openlocfilehash: f81d01c052c3632c48a5f961be86eab686c2074e
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8a9dc05c82fd5476a70ee36a294a287abbfb68c4
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714354"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450685"
 ---
 # <a name="migrating-net-core-projects-from-projectjson"></a>Migration de projets .NET Core à partir de project.json
 
@@ -23,7 +23,7 @@ Ce document s’applique uniquement aux projets .NET Core plus anciens qui utili
 
 La migration à partir de *project.json* vers *.csproj* peut être effectuée à l’aide de l’une des méthodes suivantes :
 
-- [Visual Studio](#visual-studio)
+- [Visual Studio](#visual-studio)
 - [Outil de ligne de commande dotnet migrate](#dotnet-migrate)
 
 Les deux méthodes utilisant le même moteur sous-jacent pour migrer les projets, les résultats obtenus sont donc identiques dans les deux cas. Dans la plupart des cas, l’utilisation de l’une de ces deux méthodes pour migrer *Project. JSON* vers *csproj* est la seule chose nécessaire et aucune autre modification manuelle du fichier projet n’est nécessaire. Le fichier *.csproj* obtenu porte le même nom que le répertoire le contenant.
@@ -65,7 +65,7 @@ Vous obtiendrez cette erreur si vous avez un fichier *global. JSON* dans le rép
 Si vous utilisez encore DNX pour le développement .NET Core, votre processus de migration doit être effectué en deux étapes :
 
 1. Utilisez les [conseils de migration DNX existants](from-dnx.md) pour la migration à partir de DNX vers la CLI prenant en charge project-json.
-2. Suivez les étapes de la section précédente pour la migration de *project.json* vers *.csproj*.  
+2. Suivez les étapes de la section précédente pour la migration de *project.json* vers *.csproj*.
 
 > [!NOTE]
 > DNX a été officiellement déprécié lors de la version Preview 1 de la CLI .NET Core.
@@ -80,7 +80,7 @@ Le format csproj .NET Core est modifié et évolue avec chaque nouvelle version 
 - Supprimez les instructions `<Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" />` et `<Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />` en haut et en bas du projet. Ces instructions d’importation étant indiquées implicitement par le SDK, il est inutile qu’elles figurent dans le projet.
 - Si vous avez `Microsoft.NETCore.App` ou `NETStandard.Library` `<PackageReference>` éléments de votre projet, vous devez les supprimer. Ces références de package sont [indiquées implicitement par le SDK](https://aka.ms/sdkimplicitrefs).
 - Supprimez le `Microsoft.NET.Sdk` `<PackageReference>` élément, s’il existe. La référence SDK est fournie par l’attribut `Sdk` sur l’élément `<Project>`.
-- Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../tools/csproj.md#default-compilation-includes-in-net-core-projects). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
+- Supprimez les modèles [Glob](https://en.wikipedia.org/wiki/Glob_(programming)) qui sont [indiqués implicitement par le SDK](../project-sdk/overview.md#default-compilation-includes). En laissant ces modèles Glob dans votre projet, une erreur se produit lors de la génération, car les éléments de compilation sont dupliqués.
 
 Une fois ces étapes effectuées, votre projet doit être entièrement compatible avec le format csproj .NET Core final.
 

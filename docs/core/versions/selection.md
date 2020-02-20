@@ -4,12 +4,12 @@ description: Découvrez comment .NET Core recherche et choisit automatiquement l
 author: thraka
 ms.author: adegeo
 ms.date: 06/26/2019
-ms.openlocfilehash: 546725db907937dea6fe0739656fb585a8855644
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 55f04ce81f63753831fca8fa2e44811c44049733
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713971"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450997"
 ---
 # <a name="select-the-net-core-version-to-use"></a>Sélectionner la version .NET Core à utiliser
 
@@ -78,7 +78,7 @@ Les versions cibles de .Net Framework Standard sont également plafonnées à la
 
 ## <a name="framework-dependent-apps-roll-forward"></a>Les applications dépendantes du framework font l’objet d’une restauration par progression
 
-Lorsque vous exécutez une application à partir d’une source avec [`dotnet run`](../tools/dotnet-run.md), à partir d’un [**déploiement dépendant du framework**](../deploying/index.md#framework-dependent-deployments-fdd) avec [`dotnet myapp.dll`](../tools/dotnet.md#description), ou à partir d’un [**exécutable dépendant du framework**](../deploying/index.md#framework-dependent-executables-fde) avec `myapp.exe`, l’exécutable `dotnet` est l’**hôte** de l’application.
+Lorsque vous exécutez une application à partir d’une source avec [`dotnet run`](../tools/dotnet-run.md), à partir d’un [**déploiement dépendant du framework**](../deploying/index.md#publish-runtime-dependent) avec [`dotnet myapp.dll`](../tools/dotnet.md#description), ou à partir d’un [**exécutable dépendant du framework**](../deploying/index.md#publish-runtime-dependent) avec `myapp.exe`, l’exécutable `dotnet` est l’**hôte** de l’application.
 
 L’hôte choisit la dernière version de correctif installée sur la machine. Par exemple, si vous avez spécifié `netcoreapp2.0` dans votre fichier projet et que `2.0.4` est le dernier runtime .NET installé, le runtime `2.0.4` est utilisé.
 
@@ -91,7 +91,7 @@ Voici quelques exemples d’utilisation pour illustrer le comportement, si vous 
 - 2.0 est spécifié. Aucune version 2.0.* n’est installée. La version 2.2.2 correspond à la version de runtime 2.x installée la plus élevée. La version 2.2.2 est utilisée.
 - 2.0 est spécifié. Aucune version 2.x n’est installée. La version 3.0.0 est installée. Un message d’erreur s’affiche.
 
-La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Considérez le scénario suivant :
+La restauration par progression de la version mineure présente un effet secondaire qui peut toucher les utilisateurs finaux. Examinez le cas suivant :
 
 1. L’application spécifie que 2.0 est obligatoire.
 2. En cas d’exécution, la version 2.0.* n’est pas installée, mais la version 2.2.2 l’est. La version 2.2.2 sera utilisée.
@@ -101,7 +101,7 @@ Il est possible que les versions 2.0.5 et 2.2.2 se comportent différemment, en 
 
 ## <a name="self-contained-deployments-include-the-selected-runtime"></a>Les déploiements autonomes incluent le runtime sélectionné
 
-Vous pouvez publier une application en tant que [**distribution autonome**](../deploying/index.md#self-contained-deployments-scd). Cette approche regroupe le runtime et les bibliothèques .NET Core avec votre application. Les déploiements autonomes ne dépendent pas des environnements d’exécution. La sélection de la version du runtime se produit au moment de la publication, et non au moment de l’exécution.
+Vous pouvez publier une application en tant que [**distribution autonome**](../deploying/index.md#publish-self-contained). Cette approche regroupe le runtime et les bibliothèques .NET Core avec votre application. Les déploiements autonomes ne dépendent pas des environnements d’exécution. La sélection de la version du runtime se produit au moment de la publication, et non au moment de l’exécution.
 
 Le processus de publication sélectionne la dernière version de correctif de la famille de runtime donnée. Par exemple, `dotnet publish` sélectionne .NET Core 2.0.4 s’il s’agit de la dernière version de correctif de la famille du runtime .NET Core 2.0. La version cible de .Net Framework (y compris les derniers correctifs de sécurité installés) est empaquetée avec l’application.
 

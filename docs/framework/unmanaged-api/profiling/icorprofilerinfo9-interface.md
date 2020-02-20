@@ -3,12 +3,12 @@ title: Interface ICorProfilerInfo9
 ms.date: 08/06/2019
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 371e85ce8f5d7b420a30ac842ec658949e47d30e
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 431a546fb4a3b92b379e273553f0caf540ba1473
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76861643"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449730"
 ---
 # <a name="icorprofilerinfo9-interface"></a>Interface ICorProfilerInfo9
 
@@ -22,8 +22,8 @@ Sous-classe de [ICorProfilerInfo8](icorprofilerinfo8-interface.md) qui fournit d
 |[Méthode GetILToNativeMapping3](icorprofilerinfo9-getiltonativemapping3-method.md)| À partir de l’adresse de début du code natif, retourne les informations de mappage natives à IL pour cette version JIT du code. |
 |[Méthode GetCodeInfo4](icorprofilerinfo9-getcodeinfo4-method.md)| À partir de l’adresse de début du code natif, retourne les blocs de mémoire virtuelle qui stockent ce code. |
 
-## <a name="requirements"></a>Configuration requise pour  
-**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).  
+## <a name="requirements"></a>Spécifications  
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?pivots=os-windows).  
 **En-tête :** CorProf.idl, CorProf.h  
 **Versions de .net :** [!INCLUDE[net_core](../../../../includes/net-core-22-md.md)]  
 

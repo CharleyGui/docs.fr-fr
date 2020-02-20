@@ -2,12 +2,12 @@
 title: Vue d’ensemble d’Entity Framework
 ms.date: 09/17/2018
 ms.assetid: a2166b3d-d8ba-4a0a-8552-6ba1e3eaaee0
-ms.openlocfilehash: b68db4f139330ccc1da5057498a37a08d00ba266
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: ff0c85da89c44834620831c041df3ccdcaf8282f
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73738506"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452524"
 ---
 # <a name="entity-framework-overview"></a>Présentation de Entity Framework
 
@@ -20,9 +20,9 @@ Le Entity Framework permet aux développeurs de travailler avec des données sou
 
  Le modèle physique est perfectionné par les administrateurs de bases de données pour améliorer les performances, mais les programmeurs qui écrivent du code d'application limitent principalement leur utilisation du modèle logique à l'écriture de requêtes SQL et à l'appel de procédures stockées. Les modèles de domaine sont généralement utilisés comme un outil permettant de capturer et de communiquer les besoins d’une application, fréquemment sous la forme de diagrammes inertes qui sont consultés et passés en revue dans les phases préliminaires d’un projet, puis abandonnés. De nombreuses équipes de développement ne créent pas de modèle conceptuel et commencent en spécifiant des tables, des colonnes et des clés dans une base de données relationnelle.
 
- Le Entity Framework donne vie aux modèles en permettant aux développeurs d’interroger des entités et des relations dans le modèle de domaine (appelé modèle *conceptuel* dans le Entity Framework) tout en s’appuyant sur le Entity Framework pour convertir ces opérations en source de données : commandes spécifiques. Cela libère les applications des dépendances codées en dur sur une source de données particulière.
+ Le Entity Framework donne vie aux modèles en permettant aux développeurs d’interroger des entités et des relations dans le modèle de domaine (appelé modèle *conceptuel* dans le Entity Framework) tout en s’appuyant sur le Entity Framework pour convertir ces opérations en commandes spécifiques à la source de données. Cela libère les applications des dépendances codées en dur sur une source de données particulière.
 
- Lorsque vous utilisez Code First, le modèle conceptuel est mappé au modèle de stockage dans le code. Le Entity Framework peut déduire le modèle conceptuel en fonction des types d’objets et des configurations supplémentaires que vous définissez. Les métadonnées de mappage sont générées au moment de l'exécution selon une combinaison de la manière dont vous avez défini vos types de domaine et données de configuration supplémentaires que vous fournissez dans le code. Entity Framework génère la base de données selon les besoins en fonction des métadonnées. Pour plus d’informations, consultez [création et mappage d’un modèle conceptuel](https://go.microsoft.com/fwlink/?LinkID=235382).
+ Lorsque vous utilisez Code First, le modèle conceptuel est mappé au modèle de stockage dans le code. Le Entity Framework peut déduire le modèle conceptuel en fonction des types d’objets et des configurations supplémentaires que vous définissez. Les métadonnées de mappage sont générées au moment de l'exécution selon une combinaison de la manière dont vous avez défini vos types de domaine et données de configuration supplémentaires que vous fournissez dans le code. Entity Framework génère la base de données selon les besoins en fonction des métadonnées. Pour plus d’informations, consultez [création d’un modèle](/ef/ef6/modeling/).
 
  Lorsque vous utilisez Entity Data Model Tools, le modèle conceptuel, le modèle de stockage et les mappages entre les deux sont exprimés dans les schémas basés sur XML et sont définis dans les fichiers qui ont les extensions de nom correspondantes :
 
@@ -47,9 +47,9 @@ Plus qu'une simple solution de mappage relationnel objet supplémentaire, Entity
 
 - LINQ to Entities. Fournit la prise en charge de LINQ (Language-Integrated Query) pour interroger des types d’entités définis dans un modèle conceptuel. Pour plus d’informations, consultez [LINQ to Entities](./language-reference/linq-to-entities.md).
 
-- [!INCLUDE[esql](../../../../../includes/esql-md.md)]., Dialecte SQL indépendant du stockage qui fonctionne directement avec les entités dans le modèle conceptuel et qui prend en charge les concepts de Entity Data Model. [!INCLUDE[esql](../../../../../includes/esql-md.md)] est utilisé à la fois avec les requêtes d’objet et les requêtes exécutées à l’aide du fournisseur EntityClient. Pour plus d’informations, consultez [Entity SQL vue d’ensemble](./language-reference/entity-sql-overview.md).
+- [!INCLUDE[esql](../../../../../includes/esql-md.md)]. Dialecte SQL indépendant du stockage qui fonctionne directement avec les entités dans le modèle conceptuel et qui prend en charge les concepts de Entity Data Model. [!INCLUDE[esql](../../../../../includes/esql-md.md)] est utilisé à la fois avec les requêtes d’objet et les requêtes exécutées à l’aide du fournisseur EntityClient. Pour plus d’informations, consultez [Entity SQL vue d’ensemble](./language-reference/entity-sql-overview.md).
 
-Le Entity Framework contient le fournisseur de données EntityClient. Ce fournisseur gère les connexions, traduit les requêtes d’entité en requêtes spécifiques à la source de données et retourne un lecteur de données que le Entity Framework utilise pour matérialiser des données d’entité dans des objets. Lorsque la matérialisation d'objets n'est pas requise, le fournisseur EntityClient peut également être utilisé comme un fournisseur de données ADO.NET standard en permettant aux applications d'exécuter des requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] et d'utiliser le lecteur de données en lecture seule retournées. Pour plus d’informations, consultez [fournisseur EntityClient pour le Entity Framework](entityclient-provider-for-the-entity-framework.md).
+Le Entity Framework contient le fournisseur de données EntityClient. Ce fournisseur gère les connexions, traduit les requêtes d’entité en requêtes spécifiques à la source de données et retourne un lecteur de données que le Entity Framework utilise pour matérialiser des données d’entité dans des objets. Lorsque la matérialisation d'objets n'est pas requise, le fournisseur EntityClient peut également être utilisé comme un fournisseur de données ADO.NET standard en permettant aux applications d'exécuter des requêtes [!INCLUDE[esql](../../../../../includes/esql-md.md)] et d'utiliser le lecteur de données en lecture seule retournées. Pour plus d’informations, consultez la page [Fournisseur EntityClient pour Entity Framework](entityclient-provider-for-the-entity-framework.md).
 
 Le diagramme suivant illustre l'architecture Entity Framework pour l'accès aux données :
 
@@ -59,7 +59,7 @@ Les outils de Entity Data Model peuvent générer une classe dérivée de `Syste
 
 ## <a name="data-providers"></a>Fournisseurs de données
 
-Le fournisseur `EntityClient` étend le modèle de fournisseur ADO.NET en accédant aux données en termes d’entités conceptuelles et de relations. Il exécute des requêtes qui utilisent [!INCLUDE[esql](../../../../../includes/esql-md.md)]. [!INCLUDE[esql](../../../../../includes/esql-md.md)] fournit le langage de requête sous-jacent qui permet à `EntityClient` de communiquer avec la base de données. Pour plus d’informations, consultez [fournisseur EntityClient pour le Entity Framework](entityclient-provider-for-the-entity-framework.md).
+Le fournisseur `EntityClient` étend le modèle de fournisseur ADO.NET en accédant aux données en termes d’entités conceptuelles et de relations. Il exécute des requêtes qui utilisent [!INCLUDE[esql](../../../../../includes/esql-md.md)]. [!INCLUDE[esql](../../../../../includes/esql-md.md)] fournit le langage de requête sous-jacent qui permet à `EntityClient` de communiquer avec la base de données. Pour plus d’informations, consultez la page [Fournisseur EntityClient pour Entity Framework](entityclient-provider-for-the-entity-framework.md).
 
 Le Entity Framework comprend un Fournisseur de données SqlClient mis à jour qui prend en charge les arborescences de commandes canoniques. Pour plus d’informations, consultez [SqlClient pour le Entity Framework](sqlclient-for-the-entity-framework.md).
 

@@ -3,12 +3,12 @@ title: Résoudre les problèmes d’utilisation de l’outil .NET Core
 description: Découvrez les problèmes courants liés à l’exécution des outils .NET Core et des solutions possibles.
 author: kdollard
 ms.date: 09/23/2019
-ms.openlocfilehash: df896405a122050acba220923eee58e87e0b75b6
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 45139c3441b84964b937d5d1cc63a018f8d1f0fb
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/21/2019
-ms.locfileid: "74282505"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451075"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Résoudre les problèmes d’utilisation de l’outil .NET Core
 
@@ -44,7 +44,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
 
     Les outils globaux peuvent être installés dans le répertoire par défaut ou dans un emplacement spécifique. Les répertoires par défaut sont :
 
-    | Système d’exploitation          | Chemin d'accès                          |
+    | Système d''exploitation          | Path                          |
     |-------------|-------------------------------|
     | Linux/macOS | `$HOME/.dotnet/tools`         |
     | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -73,7 +73,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
 
 ### <a name="runtime-not-found"></a>Runtime introuvable
 
-Les outils .NET Core sont des [applications dépendantes du Framework](../deploying/index.md#framework-dependent-deployments-fdd), ce qui signifie qu’elles s’appuient sur un Runtime .net Core installé sur votre ordinateur. Si le runtime attendu est introuvable, ils suivent les règles de restauration par progression normales du Runtime .NET Core, telles que :
+Les outils .NET Core sont des [applications dépendantes du Framework](../deploying/index.md#publish-runtime-dependent), ce qui signifie qu’elles s’appuient sur un Runtime .net Core installé sur votre ordinateur. Si le runtime attendu est introuvable, ils suivent les règles de restauration par progression normales du Runtime .NET Core, telles que :
 
 * Une application restaure par progression le correctif le plus élevé de la version principale et secondaire spécifiée.
 * S’il n’existe aucun Runtime correspondant avec un numéro de version principale et secondaire correspondant, la version mineure supérieure suivante est utilisée.

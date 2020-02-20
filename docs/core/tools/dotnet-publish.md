@@ -2,12 +2,12 @@
 title: Commande dotnet publish
 description: La commande dotnet publish publie votre projet .NET Core dans un répertoire.
 ms.date: 05/29/2018
-ms.openlocfilehash: 4612c8cd1f63550905ef7c6d94af050892b1620c
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+ms.openlocfilehash: 0653a7b1e1abd6d7ffd3d21a0410279235b43a28
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117616"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451290"
 ---
 # <a name="dotnet-publish"></a>dotnet publish
 
@@ -17,11 +17,11 @@ ms.locfileid: "71117616"
 
 `dotnet publish` - Empaquette l’application et ses dépendances dans un dossier en vue d’un déploiement sur un système d’hébergement.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-build] [--no-dependencies]
@@ -29,7 +29,7 @@ dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--ma
 dotnet publish [-h|--help]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--manifest] [--no-dependencies]
@@ -37,7 +37,7 @@ dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [--force] [--ma
 dotnet publish [-h|--help]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet publish [<PROJECT>] [-c|--configuration] [-f|--framework] [-o|--output] [-r|--runtime] [-v|--verbosity]
@@ -68,7 +68,7 @@ Projet à publier. Chemin et nom de fichier d’un fichier projet [C#](csproj.md
 
 ## <a name="options"></a>Options
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `-c|--configuration {Debug|Release}`
 
@@ -113,7 +113,7 @@ Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas be
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#publish-self-contained). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 
@@ -123,7 +123,7 @@ Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[ui
 
 Définit le suffixe de version qui remplace l’astérisque (`*`) dans le champ de version du fichier projet.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `-c|--configuration {Debug|Release}`
 
@@ -164,7 +164,7 @@ Publie le runtime .NET Core avec votre application ; ainsi, vous n’avez pas be
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#publish-self-contained). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 
@@ -174,7 +174,7 @@ Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[ui
 
 Définit le suffixe de version qui remplace l’astérisque (`*`) dans le champ de version du fichier projet.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `-c|--configuration {Debug|Release}`
 
@@ -199,7 +199,7 @@ Si le chemin est relatif, le répertoire de sortie généré est relatif à l’
 
 `-r|--runtime <RUNTIME_IDENTIFIER>`
 
-Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#self-contained-deployments-scd). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#framework-dependent-deployments-fdd).
+Publie l’application pour un runtime donné. Cette option est utilisée pour créer un [déploiement autonome (SCD)](../deploying/index.md#publish-self-contained). Pour connaître les identificateurs de runtime, consultez le [catalogue des identificateurs de runtime](../rid-catalog.md). Par défaut, vous publiez un [déploiement dépendant du framework (FDD)](../deploying/index.md#publish-runtime-dependent).
 
 `-v|--verbosity <LEVEL>`
 

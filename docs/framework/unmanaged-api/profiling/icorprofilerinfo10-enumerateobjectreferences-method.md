@@ -11,12 +11,12 @@ api_type:
 - COM
 author: davmason
 ms.author: davmason
-ms.openlocfilehash: 7fd62e0d3d9173f3b75882131e57126075c0677f
-ms.sourcegitcommit: b11efd71c3d5ce3d9449c8d4345481b9f21392c6
+ms.openlocfilehash: 9aadf9701444d215291b6fc19cc8cd61ca832837
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/29/2020
-ms.locfileid: "76863307"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452238"
 ---
 # <a name="icorprofilerinfo10enumerateobjectreferences-method"></a>ICorProfilerInfo10 :: EnumerateObjectReferences, méthode
 
@@ -30,7 +30,7 @@ HRESULT EnumerateObjectReferences( [in] ObjectID objectId,
                                    [in] void* clientData);
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
 - `objectId`
 
@@ -48,9 +48,9 @@ HRESULT EnumerateObjectReferences( [in] ObjectID objectId,
 
 La méthode `EnumerateObjectReferences` est semblable à [ObjectReferences](icorprofilercallback-objectreferences-method.md), à ceci près qu’elle parcourt les références à la demande pour le profileur au lieu de préallouer un tableau pour stocker les références.
 
-## <a name="requirements"></a>Configuration requise pour
+## <a name="requirements"></a>Configuration requise
 
-**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?tabs=netcore30&pivots=os-windows).
+**Plateformes :** Consultez [systèmes d’exploitation pris en charge par .net Core](../../../core/install/dependencies.md?pivots=os-windows).
 
 **En-tête :** CorProf.idl, CorProf.h
 

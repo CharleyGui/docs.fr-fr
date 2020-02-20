@@ -5,12 +5,12 @@ helpviewer_keywords:
 - <PreferComInsteadOfManagedRemoting> element
 - PreferComInsteadOfManagedRemoting element
 ms.assetid: a279a42a-c415-4e79-88cf-64244ebda613
-ms.openlocfilehash: 47c568a8d6e89a195414552b3db5953ee61d1e55
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1376df4efd56734f2b8da9bd76033afcce8a285b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73116014"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452251"
 ---
 # <a name="prefercominsteadofmanagedremoting-element"></a>\<élément PreferComInsteadOfManagedRemoting >
 Spécifie si le runtime utilisera COM Interop au lieu de la communication à distance pour tous les appels au-delà des limites du domaine d’application.  
@@ -36,13 +36,13 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
   
 ## <a name="enabled-attribute"></a>Attribut enabled  
   
-|valeur|Description|  
+|Valeur|Description|  
 |-----------|-----------------|  
-|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s'agit de la valeur par défaut.|  
+|`false`|Le runtime utilise la communication à distance au-delà des limites du domaine d’application. Il s’agit de la valeur par défaut.|  
 |`true`|Le runtime utilisera COM Interop à travers les limites du domaine d’application.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun(e).  
+ None.  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
@@ -54,7 +54,7 @@ Spécifie si le runtime utilisera COM Interop au lieu de la communication à dis
 ## <a name="remarks"></a>Notes  
  Lorsque vous affectez à l’attribut `enabled` la valeur `true`, le runtime se comporte comme suit :  
   
-- Le runtime n’appelle pas [IUnknown :: QueryInterface](https://go.microsoft.com/fwlink/?LinkID=144867) pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) lorsqu’une interface [IUnknown](https://go.microsoft.com/fwlink/?LinkId=148003) entre dans le domaine via une interface com. Au lieu de cela, il construit un wrapper RCW ( [Runtime Callable Wrapper](../../../../standard/native-interop/runtime-callable-wrapper.md) ) autour de l’objet.  
+- Le runtime n’appelle pas [IUnknown :: QueryInterface](/windows/win32/api/unknwn/nf-unknwn-iunknown-queryinterface(q)) pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) lorsqu’une interface [IUnknown](/windows/win32/api/unknwn/nn-unknwn-iunknown) entre dans le domaine via une interface com. Au lieu de cela, il construit un wrapper RCW ( [Runtime Callable Wrapper](../../../../standard/native-interop/runtime-callable-wrapper.md) ) autour de l’objet.  
   
 - Le runtime retourne E_NOINTERFACE lorsqu’il reçoit un appel de `QueryInterface` pour une interface [IManagedObject](../../../unmanaged-api/hosting/imanagedobject-interface.md) pour tout wrapper CCW ( [COM Callable Wrapper](../../../../standard/native-interop/com-callable-wrapper.md) ) qui a été créé dans ce domaine.  
   

@@ -1,13 +1,13 @@
 ---
 title: Ajouts au format csproj pour .NET Core
-description: Découvrir les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
+description: En savoir plus sur les différences entre les fichiers csproj existants et les fichiers csproj .NET Core
 ms.date: 04/08/2019
-ms.openlocfilehash: 202c1867ae6404db074e6196b28ffe5f453ef5bf
-ms.sourcegitcommit: feb42222f1430ca7b8115ae45e7a38fc4a1ba623
+ms.openlocfilehash: 2fb00e830380c5c4cbf7b6dcd2c8a585e1617b4b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/02/2020
-ms.locfileid: "76965605"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451367"
 ---
 # <a name="additions-to-the-csproj-format-for-net-core"></a>Ajouts au format csproj pour .NET Core
 
@@ -35,7 +35,7 @@ Comme les métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` sont im
 
 - Quand vous ciblez .NET Core ou .NET Standard, n’incluez jamais de référence explicite aux métapackages `Microsoft.NETCore.App` ou `NETStandard.Library` via un élément `<PackageReference>` dans votre fichier projet.
 - Si vous avez besoin d’une version spécifique du runtime quand vous ciblez .NET Core, vous devez utiliser la propriété `<RuntimeFrameworkVersion>` dans votre projet (par exemple, `1.0.4`) au lieu de référencer le métapackage.
-  - Cela peut se produire si vous utilisez des [déploiements autonomes](../deploying/index.md#self-contained-deployments-scd) et que vous devez utiliser une version de correctif spécifique du runtime 1.0.0 LTS, par exemple.
+  - Cela peut se produire si vous utilisez des [déploiements autonomes](../deploying/index.md#publish-self-contained) et que vous devez utiliser une version de correctif spécifique du runtime 1.0.0 LTS, par exemple.
 - Si vous avez besoin d’une version spécifique du métapackage `NETStandard.Library` quand vous ciblez .NET Standard, vous pouvez utiliser la propriété `<NetStandardImplicitPackageVersion>` et définir la version dont vous avez besoin.
 - Vous ne devez pas ajouter ni mettre à jour explicitement les références au métapackage `Microsoft.NETCore.App` ou `NETStandard.Library` dans les projets .NET Framework. Si une version de `NETStandard.Library` est nécessaire lors de l’utilisation d’un package NuGet basé sur .NET Standard, NuGet installe automatiquement cette version.
 
@@ -55,12 +55,12 @@ Lorsque vous référencez les packages `Microsoft.AspNetCore.App` ou `Microsoft.
 
 > Problème connu : le Kit SDK .NET Core 2.1 prend uniquement en charge cette syntaxe si le projet utilise également Microsoft.NET.Sdk.Web. Ce problème est résolu dans le SDK .NET Core 2.2.
 
-Ces références aux métapackages ASP.NET Core ont un comportement légèrement différent de celui de la plupart des packages NuGet normaux. Les [déploiements dépendant du framework](../deploying/index.md#framework-dependent-deployments-fdd) d’applications qui utilisent ces métapackages tirent automatiquement parti du framework partagé ASP.NET Core. Quand vous utilisez les métapackages **aucune** des ressources des packages NuGet ASP.NET Core référencés n’est déployée avec l’application — le framework partagé ASP.NET Core contient ces ressources. Les ressources présentes dans le framework partagé sont optimisées pour la plateforme cible afin d’améliorer la vitesse de démarrage des applications. Pour plus d’informations sur le framework partagé, consultez [Empaquetage de la distribution de .NET Core](../distribution-packaging.md).
+Ces références aux métapackages ASP.NET Core ont un comportement légèrement différent de celui de la plupart des packages NuGet normaux. Les [déploiements dépendant du framework](../deploying/index.md#publish-runtime-dependent) d’applications qui utilisent ces métapackages tirent automatiquement parti du framework partagé ASP.NET Core. Quand vous utilisez les métapackages **aucune** des ressources des packages NuGet ASP.NET Core référencés n’est déployée avec l’application — le framework partagé ASP.NET Core contient ces ressources. Les ressources présentes dans le framework partagé sont optimisées pour la plateforme cible afin d’améliorer la vitesse de démarrage des applications. Pour plus d’informations sur le framework partagé, consultez [Empaquetage de la distribution de .NET Core](../distribution-packaging.md).
 
 Si une version *est* spécifiée, elle est traitée comme la version *minimale* du framework partagé ASP.NET Core pour les déploiements dépendant du framework, et comme une version *exacte* pour les déploiements autonomes. Cela peut avoir les conséquences suivantes :
 
 - Si la version d’ASP.NET Core installée sur le serveur est inférieure à la version spécifiée sur PackageReference, le processus .NET Core n’est pas lancé. Les mises à jour du métapackage sont souvent disponibles sur NuGet.org avant que des mises à jour soient publiées dans les environnements d’hébergement comme Azure. La mise à jour de la version sur PackageReference avec ASP.NET Core peut entraîner l’échec d’une application déployée.
-- Si l’application est déployée comme un [déploiement autonome](../deploying/index.md#self-contained-deployments-scd), cette application ne peut pas contenir les dernières mises à jour de sécurité pour .NET Core. Quand une version n’est pas spécifiée, le Kit SDK peut inclure automatiquement la dernière version ASP.NET Core dans le déploiement autonome.
+- Si l’application est déployée comme un [déploiement autonome](../deploying/index.md#publish-self-contained), cette application ne peut pas contenir les dernières mises à jour de sécurité pour .NET Core. Quand une version n’est pas spécifiée, le Kit SDK peut inclure automatiquement la dernière version ASP.NET Core dans le déploiement autonome.
 
 ## <a name="default-compilation-includes-in-net-core-projects"></a>Inclusions de compilation par défaut dans les projets .NET Core
 
@@ -72,9 +72,9 @@ Le tableau suivant montre les éléments et les modèles [Glob](https://en.wikip
 
 | Élément           | Inclure Glob                              | Exclure Glob                                                  | Supprimer Glob              |
 |-------------------|-------------------------------------------|---------------------------------------------------------------|----------------------------|
-| Compile           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | Non applicable                      |
-| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | Non applicable                      |
-| Aucun              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
+| Compiler           | \*\*/\*.cs (ou autres extensions de langage) | \*\*/\*.user ;  \*\*/\*.\*proj ;  \*\*/\*.sln ;  \*\*/\*.vssscc  | N/A                      |
+| EmbeddedResource  | \*\*/\*.resx                              | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | N/A                      |
+| None              | \*\*/\*                                   | \*\*/\*.user ; \*\*/\*.\*proj ; \*\*/\*.sln ; \*\*/\*.vssscc     | \*\*/\*.cs; \*\*/\*.resx   |
 
 > [!NOTE]
 > **Exclure Glob** exclut toujours les dossiers `./bin` et `./obj`, respectivement représentés par les propriétés MSBuild `$(BaseOutputPath)` et `$(BaseIntermediateOutputPath)`. Dans l’ensemble, toutes les exclusions sont représentées par `$(DefaultItemExcludes)`.
@@ -266,7 +266,7 @@ Spécifie la version du package obtenu. Accepte toutes les formes de la chaîne 
 
 Spécifie le nom du package obtenu. Si non spécifié, l’opération `pack` utilise par défaut le `AssemblyName` ou le nom du répertoire comme nom du package.
 
-### <a name="title"></a>Titre
+### <a name="title"></a>Intitulé
 
 Titre convivial du package, généralement utilisé dans les affichages de l’interface utilisateur comme sur nuget.org et dans le gestionnaire de package de Visual Studio. Si non spécifié, l’ID de package est utilisé à la place.
 
@@ -282,17 +282,21 @@ Description longue du package pour l’affichage de l’interface utilisateur.
 
 Description longue de l'assembly. Si `PackageDescription` n’est pas spécifié, cette propriété est également utilisée comme description du package.
 
-### <a name="copyright"></a>Copyright
+### <a name="copyright"></a>copyright
 
 Détails de copyright pour le package.
 
 ### <a name="packagerequirelicenseacceptance"></a>PackageRequireLicenseAcceptance
 
-Valeur booléenne qui spécifie si le client doit inviter l’utilisateur à accepter la licence du package avant d’installer le package. La valeur par défaut est `false`.
+Valeur booléenne qui spécifie si le client doit inviter l’utilisateur à accepter la licence du package avant d’installer le package. Par défaut, il s’agit de `false`.
+
+### <a name="developmentdependency"></a>DevelopmentDependency
+
+Valeur booléenne qui spécifie si le package est marqué en tant que dépendance de développement uniquement, ce qui empêche l’inclusion du package en tant que dépendance dans d’autres packages. Avec PackageReference (NuGet 4.8 +), cet indicateur signifie également que les éléments multimédias de compilation sont exclus de la compilation. Pour plus d'informations, voir [Prise en charge de DevelopmentDependency pour PackageReference](https://github.com/NuGet/Home/wiki/DevelopmentDependency-support-for-PackageReference).
 
 ### <a name="packagelicenseexpression"></a>PackageLicenseExpression
 
-[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple, `Apache-2.0`.
+[Identificateur de licence SPDX](https://spdx.org/licenses/) ou expression. Par exemple : `Apache-2.0`.
 
 Voici la liste complète des [identificateurs de licence SPDX](https://spdx.org/licenses/). NuGet.org n’accepte que les licences approuvées OSI et FSF avec une expression de type licence.
 
@@ -396,7 +400,7 @@ Cette valeur booléenne spécifie si les assemblys de sortie de la génération 
 
 ### <a name="includecontentinpack"></a>IncludeContentInPack
 
-Cette valeur booléenne indique si tous les éléments qui ont un type `Content` sont automatiquement inclus dans le package obtenu. La valeur par défaut est `true`.
+Cette valeur booléenne indique si tous les éléments qui ont un type `Content` sont automatiquement inclus dans le package obtenu. Par défaut, il s’agit de `true`.
 
 ### <a name="buildoutputtargetfolder"></a>BuildOutputTargetFolder
 
@@ -429,7 +433,7 @@ Les [attributs d’assembly](../../standard/assembly/set-attributes.md) qui figu
 
 Comme indiqué dans le tableau suivant, chaque attribut a une propriété qui contrôle son contenu et un autre qui désactive sa génération :
 
-| Attribute                                                      | Les               | Propriété permettant de désactiver                             |
+| Attribut                                                      | Propriété               | Propriété permettant de désactiver                             |
 |----------------------------------------------------------------|------------------------|-------------------------------------------------|
 | <xref:System.Reflection.AssemblyCompanyAttribute>              | `Company`              | `GenerateAssemblyCompanyAttribute`              |
 | <xref:System.Reflection.AssemblyConfigurationAttribute>        | `Configuration`        | `GenerateAssemblyConfigurationAttribute`        |
@@ -446,7 +450,7 @@ Remarques :
 
 - Le comportement par défaut de `AssemblyVersion` et `FileVersion` consiste à prendre la valeur de `$(Version)` sans suffixe. Par exemple, si `$(Version)` est `1.2.3-beta.4`, alors la valeur serait `1.2.3`.
 - `InformationalVersion` utilise par défaut la valeur de `$(Version)`.
-- `$(SourceRevisionId)` est ajouté à `InformationalVersion` si la propriété est présente. Cela peut être désactivé à l’aide de `IncludeSourceRevisionInInformationalVersion`.
+- `InformationalVersion` est ajouté à `$(SourceRevisionId)` si la propriété est présente. Cela peut être désactivé à l’aide de `IncludeSourceRevisionInInformationalVersion`.
 - Les propriétés `Copyright` et `Description` sont également utilisées pour les métadonnées NuGet.
 - `Configuration` est partagé avec le processus de génération et défini par le biais du paramètre `--configuration` des commandes `dotnet`.
 

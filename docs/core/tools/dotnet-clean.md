@@ -2,12 +2,12 @@
 title: Commande dotnet clean
 description: La commande dotnet clean nettoie le répertoire actif.
 ms.date: 06/26/2019
-ms.openlocfilehash: 736c0bba5d156e919534f1ad811641e815b3ffac
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 715a33a8a1aa13a2a76f9d4522413dcc72e4b4aa
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76734254"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451354"
 ---
 # <a name="dotnet-clean"></a>dotnet clean
 
@@ -17,11 +17,11 @@ ms.locfileid: "76734254"
 [!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
 -->
 
-## <a name="name"></a>Nom
+## <a name="name"></a>Name
 
 `dotnet clean` : Nettoie la sortie d’un projet.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
 dotnet clean [<PROJECT>|<SOLUTION>] [-c|--configuration] [-f|--framework] [--interactive]
@@ -67,7 +67,7 @@ Projet ou solution MSBuild à nettoyer. Si vous ne spécifiez pas de fichier pro
 
 * **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
-  Nettoie le dossier de sortie du runtime spécifié. Cette option est utilisée à la création d’un [déploiement autonome](../deploying/index.md#self-contained-deployments-scd). Option disponible à partir du kit SDK .NET Core 2.0.
+  Nettoie le dossier de sortie du runtime spécifié. Cette option est utilisée à la création d’un [déploiement autonome](../deploying/index.md#publish-self-contained). Option disponible à partir du kit SDK .NET Core 2.0.
 
 * **`-v|--verbosity <LEVEL>`**
 

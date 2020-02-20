@@ -2,14 +2,14 @@
 title: <behaviorExtensions>
 ms.date: 03/30/2017
 ms.assetid: 59f2791a-c78f-40d7-aa80-0d9cd10135d9
-ms.openlocfilehash: bcf1f1dcdba50c3e7fba8eb170132d0cf47c4271
-ms.sourcegitcommit: 68653db98c5ea7744fd438710248935f70020dfb
+ms.openlocfilehash: 39dc92d65a41d223ebd39aec3dc59871ad1fd101
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/22/2019
-ms.locfileid: "69919817"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448683"
 ---
-# <a name="behaviorextensions"></a>\<behaviorExtensions>
+# <a name="behaviorextensions"></a>\<behaviorExtensions >
 Les extensions de comportement permettent la création d'éléments de comportement définis par l'utilisateur. Ces éléments peuvent être utilisés avec les éléments de comportement standard Windows Communication Foundation (WCF). La section `behaviorExtensions` définit l'élément tel qu'il peut être utilisé dans la configuration. Voici un exemple d'une extension de comportement typique.  
   
 ```xml  
@@ -49,7 +49,7 @@ Les extensions de comportement permettent la création d'éléments de comportem
   
  Un intrus peut exploiter l'ordre de recherche du CLR et exécuter le code non autorisé. L’utilisation de noms complets (forts) identifie de manière unique un type et renforce considérablement la sécurité de votre système.  
   
- Pour plus d’informations, consultez [Comment le runtime localise les assemblys](https://go.microsoft.com/fwlink/?LinkId=95336) et <xref:System.AppDomain.TypeResolve>.  
+ Pour plus d’informations, consultez [Comment le runtime localise les assemblys et les](../../../deployment/how-the-runtime-locates-assemblies.md) <xref:System.AppDomain.TypeResolve>.  
   
 ## <a name="see-also"></a>Voir aussi
 

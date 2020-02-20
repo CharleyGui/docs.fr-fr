@@ -5,12 +5,12 @@ helpviewer_keywords:
 - WCF [WCF], what's new
 - Windows Communication Foundation [WCF], what's new
 ms.assetid: 7e93fe73-af93-46b5-9f63-32f761ee40cf
-ms.openlocfilehash: e01b3a39a004e963e5bb66c5fa71433cb4e7204a
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: b22266efe2e775acd04c400cf9da50bffab28183
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802373"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449502"
 ---
 # <a name="whats-new-in-windows-communication-foundation-45"></a>Nouveautés dans Windows Communication Foundation 4.5
 
@@ -36,7 +36,7 @@ WCF prend désormais en charge le développement Contrat en premier. Svcutil. ex
 
 ### <a name="add-service-reference-from-a-portable-subset-project"></a>Ajouter une référence de service d'un projet de sous-ensemble portable
 
-Les projets portables du sous-ensemble permettent aux programmeurs d'assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs plateformes .NET (de bureau, Silverlight, Windows Phone et XBOX). Les projets de sous-ensemble portables référencent uniquement les bibliothèques portables .NET qui sont un assembly .NET Framework qui peut être utilisé sur n’importe quelle plateforme .NET. L'expérience du développeur est identique à celle de l'ajout d'une référence de service dans une autre application cliente WCF. Pour plus d’informations, consultez [Ajouter une référence de service dans un projet de sous-ensemble portable](add-service-reference-in-a-portable-subset-project.md).
+Les projets de sous-ensemble portables permettent aux programmeurs d’assembly .NET de maintenir une arborescence source unique et le système de génération tout en prenant en charge plusieurs plateformes .NET (Desktop, Silverlight, Windows Phone et Xbox). Les projets de sous-ensemble portables référencent uniquement les bibliothèques portables .NET qui sont des assemblys qui peuvent être utilisés sur n’importe quelle plateforme .NET. L'expérience du développeur est identique à celle de l'ajout d'une référence de service dans une autre application cliente WCF. Pour plus d’informations, consultez [Ajouter une référence de service dans un projet de sous-ensemble portable](add-service-reference-in-a-portable-subset-project.md).
 
 ### <a name="aspnet-compatibility-mode-default-changed"></a>Modification de la valeur par défaut pour le mode de compatibilité ASP.NET
 
@@ -72,13 +72,13 @@ Certaines piles de traitement WSDL tierces ne peuvent pas traiter les documents 
 
 ## <a name="websocket-support"></a>Prise en charge de WebSocket
 
-WebSockets est une technologie qui fournit la véritable communication bidirectionnelle sur les ports 80 et 443 avec des caractéristiques de performances semblables à TCP. Deux nouvelles liaisons ont été ajoutées pour prendre en charge les communications via un transport WebSocket. Voir <xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>. Pour plus d’informations, consultez : [liaisons fournies par le système](system-provided-bindings.md).
+WebSockets est une technologie qui fournit la véritable communication bidirectionnelle sur les ports 80 et 443 avec des caractéristiques de performances semblables à TCP. Deux nouvelles liaisons ont été ajoutées pour prendre en charge les communications via un transport WebSocket. <xref:System.ServiceModel.NetHttpBinding> et <xref:System.ServiceModel.NetHttpsBinding>. Pour plus d’informations, consultez : [liaisons fournies par le système](system-provided-bindings.md).
 
 ## <a name="new-transport-default-values"></a>Valeurs par défaut pour le nouveau transport
 
 Le tableau suivant décrit les paramètres qui ont changé et où trouver des informations supplémentaires.
 
-|Property|On|Nouvelle valeur par défaut|Pour plus d'informations, consultez .|
+|Propriété|Il en va|Nouvelle valeur par défaut|Pour plus d’informations, consultez|
 |--------------|--------|-----------------|------------------------------|
 |channelInitializationTimeout|<xref:System.ServiceModel.NetTcpBinding>|30 secondes|<xref:System.ServiceModel.Channels.ConnectionOrientedTransportBindingElement.ChannelInitializationTimeout%2A>|
 |listenBacklog|<xref:System.ServiceModel.NetTcpBinding>|12 * nombre de processeurs|<xref:System.ServiceModel.NetTcpBinding.ListenBacklog%2A>|

@@ -2,12 +2,12 @@
 title: Enregistrements anonymes
 description: Apprenez à utiliser la construction et à utiliser des enregistrements anonymes, une fonctionnalité de langage qui facilite la manipulation des données.
 ms.date: 06/12/2019
-ms.openlocfilehash: 0a7a819cc471c6579feacd621ed15aa89a6423ba
-ms.sourcegitcommit: 79a2d6a07ba4ed08979819666a0ee6927bbf1b01
+ms.openlocfilehash: 061fd3279c84b9a3161c687d9392947ee7ce9c83
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/28/2019
-ms.locfileid: "74569473"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77453024"
 ---
 # <a name="anonymous-records"></a>Enregistrements anonymes
 
@@ -229,10 +229,10 @@ Vous pouvez sérialiser des enregistrements anonymes de la même façon que vous
 ```fsharp
 open Newtonsoft.Json
 
-let phillip = {| name="Phillip"; age=28 |}
-JsonConvert.SerializeObject(phillip)
+let phillip' = {| name="Phillip"; age=28 |}
+let philStr = JsonConvert.SerializeObject(phillip') 
 
-let phillip = JsonConvert.DeserializeObject<{|name: string; age: int|}>(str)
+let phillip = JsonConvert.DeserializeObject<{|name: string; age: int|}>(philStr)
 printfn "Name: %s Age: %d" phillip.name phillip.age
 ```
 
@@ -253,7 +253,7 @@ for ng in nameGrouping do
 
 Il existe une multitude d’autres API utilisées dans .NET qui nécessitent l’utilisation du passage d’un type anonyme. Les enregistrements anonymes sont un outil qui vous aide à les utiliser.
 
-## <a name="limitations"></a>Limitations
+## <a name="limitations"></a>Limites
 
 L’utilisation des enregistrements anonymes est soumise à certaines restrictions. Certains sont inhérents à leur conception, mais d’autres sont susceptibles d’être modifiés.
 

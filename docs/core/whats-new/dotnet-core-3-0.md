@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 92d97ca3efe761c879d0940a02342edb5a8180f0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 60794c4f8a5f9aeb7a4b3cd58c0c9f00e03fa9e7
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920377"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450978"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -19,9 +19,9 @@ Cet article décrit les nouveautés de .NET Core 3.0. Une des principales améli
 
 .NET Core 3.0 prend en charge C# 8.0. Il est fortement recommandé d’utiliser [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/vs/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou ultérieure, [Visual Studio pour Mac 8,3](/visualstudio/mac/install-preview) ou version ultérieure, ou [Visual Studio code](https://code.visualstudio.com/) avec l'  **C# extension**la plus récente.
 
-[Téléchargez et commencez à utiliser .NET Core 3.0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
+[Téléchargez et commencez à utiliser .net Core 3,0](https://aka.ms/netcore3download) pour le moment sur Windows, MacOS ou Linux.
 
-Pour plus d’informations sur la version, consultez l' [annonce de .NET Core 3.0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
+Pour plus d’informations sur la version, consultez l' [annonce de .net Core 3,0](https://devblogs.microsoft.com/dotnet/announcing-net-core-3-0/).
 
 .NET Core RC1 a été considéré comme une production prête par Microsoft et a été entièrement pris en charge. Si vous utilisez une version préliminaire, vous devez passer à la version RTM pour une prise en charge continue.
 
@@ -54,7 +54,7 @@ Si vous utilisez Visual Studio, vous avez besoin de [Visual Studio 2019](https:
 
 ### <a name="default-executables"></a>Exécutables par défaut
 
-.NET Core génère désormais des [exécutables dépendant du framework](../deploying/index.md#framework-dependent-executables-fde) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#self-contained-deployments-scd) produisaient un exécutable.
+.NET Core génère désormais des [exécutables dépendant du framework](../deploying/index.md#publish-runtime-dependent) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#publish-self-contained) produisaient un exécutable.
 
 Lors de l’étape `dotnet build` ou `dotnet publish`, un exécutable est créé, qui correspond à l’environnement et à la plateforme du Kit de développement que vous utilisez. Vous pouvez obtenir le même résultat avec ces exécutables, comme vous le feriez avec d’autres exécutables natifs comme :
 
@@ -74,7 +74,7 @@ Pour publier un exécutable monofichier, définissez `PublishSingleFile` dans vo
 </PropertyGroup>
 ```
 
-\- ou -
+-ou-
 
 ```dotnetcli
 dotnet publish -r win10-x64 -p:PublishSingleFile=true
@@ -254,7 +254,7 @@ Le programme d’installation MSI pour Windows a changé à compter de .NET Core
 
 Pour plus d’informations sur la gestion des versions, consultez [Vue d’ensemble de la gestion des versions .NET Core](../versions/index.md).
 
-### <a name="windows-desktop"></a>Bureau Windows
+### <a name="windows-desktop"></a>Ordinateurs Windows
 
 .NET Core 3.0 prend en charge les applications de bureau Windows utilisant Windows Presentation Foundation (WPF) et Windows Forms. Ces infrastructures prennent également en charge l’utilisation de contrôles modernes et le style Fluent à partir de la bibliothèque XAML de l’interface utilisateur Windows (WinUI) via des [îles XAML](/windows/uwp/xaml-platform/xaml-host-controls).
 
@@ -301,7 +301,7 @@ Windows offre une API native riche sous la forme d’API C plates, de COM et de 
 
 [MSIX](https://docs.microsoft.com/windows/msix/) est un nouveau format de package d’application Windows. Il peut être utilisé pour déployer des applications de poste de travail .NET Core 3.0 pour Windows 10.
 
-Le [projet de package d’application Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), disponible dans Visual Studio 2019, vous permet de créer des packages MSIX avec des applications .NET Core [autonomes](../deploying/index.md#self-contained-deployments-scd).
+Le [projet de package d’application Windows](https://docs.microsoft.com/windows/uwp/porting/desktop-to-uwp-packaging-dot-net), disponible dans Visual Studio 2019, vous permet de créer des packages MSIX avec des applications .NET Core [autonomes](../deploying/index.md#publish-self-contained).
 
 Le fichier projet .NET Core doit spécifier les runtimes pris en charge dans la propriété `<RuntimeIdentifiers>` :
 
@@ -380,7 +380,7 @@ Tous les types de clés, tels que *RSA*, *DSA*, *ECDsa* et *ECDiffieHellman*, pr
 - **Clé publique**
   - X.509 SubjectPublicKeyInfo
 
-- **Clé privée**
+- **Private key**
   - PKCS#8 PrivateKeyInfo
   - PKCS#8 EncryptedPrivateKeyInfo
 
@@ -389,7 +389,7 @@ Les clés RSA prennent également en charge :
 - **Clé publique**
   - PKCS#1 RSAPublicKey
 
-- **Clé privée**
+- **Private key**
   - PKCS#1 RSAPrivateKey
 
 Les méthodes d’exportation produisent des données binaires encodées au format DER, tout comme les méthodes d’importation. Si une clé est stockée au format PEM compatible avec le texte, l’appelant devra décoder le contenu au format base64 avant d’appeler une méthode d’importation.
@@ -517,7 +517,7 @@ La nouvelle prise en charge de JSON intégrée est la haute performance, une fai
 * [Comment sérialiser et désérialiser JSON dans .net](../../standard/serialization/system-text-json-how-to.md).
 * [Comment migrer de Newtonsoft. JSON vers System. Text. JSON](../../standard/serialization/system-text-json-migrate-from-newtonsoft-how-to.md)
 
-### <a name="http2-support"></a>Prise en charge de HTTP/2
+### <a name="http2-support"></a>Assistance HTTP/2
 
 Le type <xref:System.Net.Http.HttpClient?displayProperty=nameWithType> prend en charge le protocole HTTP/2. Si HTTP/2 est activé, la version du protocole HTTP est négociée par le biais de TLS/ALPN, et HTTP/2 n’est utilisée que si le serveur le choisit.
 
@@ -533,7 +533,7 @@ Souvent, lorsque vous développez une application, vous souhaiterez utiliser une
 
 [!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Passez en revue les modifications avec rupture entre .NET Core 2,2 et 3,0.](../compatibility/2.2-3.0.md)
 - [Passez en revue les dernières modifications apportées à .NET Core 3,0 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-30)

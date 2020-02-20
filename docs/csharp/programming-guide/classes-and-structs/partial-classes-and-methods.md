@@ -6,12 +6,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: ea8d95c41df236897761ace1062ec325a069d52b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e359913aad4b8cea001a894d4ba5720fab54d42b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714743"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451913"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
@@ -60,7 +60,7 @@ Les éléments suivants sont fusionnés à partir de toutes les définitions de 
 
 - attributs de classe
 
-- Membres
+- membres
 
 Observez, par exemple, les déclarations suivantes :
 
@@ -110,7 +110,7 @@ Il y a plusieurs règles à respecter quand vous utilisez des définitions de cl
 
 Pour plus d’informations, consultez [Contraintes sur les paramètres de type](../generics/constraints-on-type-parameters.md).
 
-## <a name="example-1"></a>Exemple 1
+## <a name="example-1"></a>Exemple 1
 
 ### <a name="description"></a>Description
 
@@ -120,7 +120,7 @@ Dans l’exemple suivant, les champs et le constructeur de la classe `Coords` so
 
 [!code-csharp[csProgGuideObjects#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#17)]
 
-## <a name="example-2"></a>Exemple 2
+## <a name="example-2"></a>Exemple 2
 
 ### <a name="description"></a>Description
 
@@ -151,7 +151,7 @@ partial void onNameChanged()
 }
 ```
 
-- Une déclaration de méthode partielle doit commencer par le mot clé contextuel [partial](../../language-reference/keywords/partial-type.md), et la méthode doit retourner [void](../../language-reference/keywords/void.md).
+- Une déclaration de méthode partielle doit commencer par le mot clé contextuel [partial](../../language-reference/keywords/partial-type.md), et la méthode doit retourner [void](../../language-reference/builtin-types/void.md).
 
 - Les méthodes partielles peuvent avoir des paramètres [in](../../language-reference/keywords/in-parameter-modifier.md) ou [ref](../../language-reference/keywords/ref.md), mais pas [out](../../language-reference/keywords/out-parameter-modifier.md).
 

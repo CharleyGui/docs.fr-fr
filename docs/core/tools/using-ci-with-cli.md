@@ -2,12 +2,12 @@
 title: Intégration continue (CI) avec des kit SDK .NET Core et des outils
 description: Découvrez comment utiliser la kit SDK .NET Core et ses outils sur le serveur de builds avec intégration continue.
 ms.date: 05/18/2017
-ms.openlocfilehash: bdb3913cbe588377d9fbee0f1c054e682629ac96
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 6e23a21dd36422a095e56519c9aa28ce2549f7b2
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215231"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451036"
 ---
 # <a name="using-net-core-sdk-and-tools-in-continuous-integration-ci"></a>Utilisation du SDK et des outils .NET Core avec l’intégration continue
 
@@ -32,7 +32,7 @@ Le script d’installation est automatisé pour s’exécuter au début de la g�
 > [!NOTE]
 > **Azure DevOps Services**
 >
-> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/dependencies.md?tabs=netcore30&pivots=os-linux).
+> Lorsque vous utilisez le script d’installation, les dépendances natives ne sont pas installées automatiquement. Vous devez installer les dépendances natives si le système d’exploitation ne les possède pas. Pour plus d’informations, consultez [.net Core Dependencies and Requirements](../install/dependencies.md).
 
 ## <a name="ci-setup-examples"></a>Exemples de configuration de l’intégration continue
 

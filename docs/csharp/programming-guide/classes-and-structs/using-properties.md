@@ -6,12 +6,12 @@ helpviewer_keywords:
 - get accessor [C#]
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
-ms.openlocfilehash: 5f4697ea518e7fe03df4ecac9d748386a8ac6313
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d873f626b660bb6bd94710add4543e21e11823d6
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705403"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77452017"
 ---
 # <a name="using-properties-c-programming-guide"></a>Utilisation de propriétés (Guide de programmation C#)
 
@@ -53,7 +53,7 @@ Dans le segment de code précédent, si vous n’assignez pas de valeur à la pr
 
 ## <a name="the-set-accessor"></a>Accesseur Set
 
-L’accesseur `set` ressemble à une méthode dont le type de retour est [void](../../language-reference/keywords/void.md). Il utilise un paramètre implicite nommé `value`, dont le type est celui de la propriété. Dans l’exemple ci-dessous, un accesseur `set` est ajouté à la propriété `Name` :
+L’accesseur `set` ressemble à une méthode dont le type de retour est [void](../../language-reference/builtin-types/void.md). Il utilise un paramètre implicite nommé `value`, dont le type est celui de la propriété. Dans l’exemple ci-dessous, un accesseur `set` est ajouté à la propriété `Name` :
 
 [!code-csharp[csProgGuideProperties#12](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#12)]
 
@@ -65,9 +65,9 @@ Il s’agit d’une erreur d’utiliser le nom de paramètre implicite, `value`,
 
 ## <a name="remarks"></a>Notes
 
-Les propriétés peuvent être marquées comme étant `public`, `private`, `protected`, `internal`, `protected internal` ou `private protected`. Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder à la propriété. Les accesseurs `get` et `set` d’une même propriété peuvent avoir des modificateurs d’accès différents. Par exemple, l’accesseur `get` peut être `public` pour autoriser l’accès en lecture seule en dehors du type, tandis que l’accesseur `set` peut être `private` ou `protected`. Pour plus d’informations, consultez [Modificateurs d’accès](./access-modifiers.md).
+Les propriétés peuvent être marquées comme étant `public`, `private`, `protected`, `internal`, `protected internal` ou `private protected`. Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder à la propriété. Les accesseurs `get` et `set` d’une même propriété peuvent avoir des modificateurs d’accès différents. Par exemple, l’accesseur `get` peut être `public` pour autoriser l’accès en lecture seule en dehors du type, tandis que l’accesseur `set` peut être `private` ou `protected`. Pour plus d’informations, consultez la page [Modificateurs d’accès](./access-modifiers.md).
 
-Une propriété peut être déclarée en tant que propriété statique à l’aide du mot clé `static`. La propriété devient ainsi accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).
+Une propriété peut être déclarée en tant que propriété statique à l’aide du mot clé `static`. La propriété devient ainsi accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md).
 
 Une propriété peut être marquée comme étant une propriété virtuelle à l’aide du mot clé [virtual](../../language-reference/keywords/virtual.md). Cela permet aux classes dérivées de substituer le comportement de la propriété à l’aide du mot clé [override](../../language-reference/keywords/override.md). Pour plus d'informations sur ces options, consultez [Héritage](inheritance.md).
 
@@ -110,5 +110,5 @@ Dans cet exemple, deux classes, `Cube` et `Square`, implémentent une classe abs
 
 - [Guide de programmation C#](../index.md)
 - [Propriétés](properties.md)
-- [Propriétés de l’interface](interface-properties.md)
+- [Propriété d’une interface](interface-properties.md)
 - [Propriétés implémentées automatiquement](auto-implemented-properties.md)

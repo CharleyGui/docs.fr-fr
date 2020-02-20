@@ -9,12 +9,12 @@ helpviewer_keywords:
 - Visual C#, keywords
 - '@ keyword'
 ms.assetid: e929b0f2-4b92-4d37-8060-23d323b098ad
-ms.openlocfilehash: 4919aed8f5b1d134f3bbfce437228d1a67911a1b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 2d6a514e52b25e65d9fd8a1efc3f930ce8f08178
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345431"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77450815"
 ---
 # <a name="c-keywords"></a>Mots clés C#
 
@@ -26,7 +26,7 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |---|---|---|---|  
 |[abstract](abstract.md)|[as](../operators/type-testing-and-cast.md#as-operator)|[base](base.md)|[bool](../builtin-types/bool.md)|  
 |[break](break.md)|[byte](../builtin-types/integral-numeric-types.md)|[case](switch.md)|[catch](try-catch.md)|  
-|[char](../builtin-types/char.md)|[checked](checked.md)|[classe](class.md)|[const](const.md)|  
+|[char](../builtin-types/char.md)|[checked](checked.md)|[class](class.md)|[const](const.md)|  
 |[continue](continue.md)|[decimal](../builtin-types/floating-point-numeric-types.md)|[default](default.md)|[delegate](../builtin-types/reference-types.md)|  
 |[do](do.md)|[double](../builtin-types/floating-point-numeric-types.md)|[else](if-else.md)|[enum](../builtin-types/enum.md)|  
 |[event](event.md)|[explicit](../operators/user-defined-conversion-operators.md)|[extern](extern.md)|[false](../builtin-types/bool.md)|  
@@ -34,7 +34,7 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[foreach](foreach-in.md)|[goto](goto.md)|[if](if-else.md)|[implicit](../operators/user-defined-conversion-operators.md)|  
 |[in](in.md)|[int](../builtin-types/integral-numeric-types.md)|[interface](interface.md)|[internal](internal.md)|
 |[is](is.md)|[lock](lock-statement.md)|[long](../builtin-types/integral-numeric-types.md)|[namespace](namespace.md)|
-|[new](../operators/new-operator.md)|[null](null.md)|[object](../builtin-types/reference-types.md)|[operator](../operators/operator-overloading.md)|
+|[nouveau](../operators/new-operator.md)|[null](null.md)|[object](../builtin-types/reference-types.md)|[operator](../operators/operator-overloading.md)|
 |[out](out.md)|[override](override.md)|[params](params.md)|[private](private.md)|
 |[protected](protected.md)|[public](public.md)|[readonly](readonly.md)|[ref](ref.md)|
 |[return](return.md)|[sbyte](../builtin-types/integral-numeric-types.md)|[sealed](sealed.md)|[short](../builtin-types/integral-numeric-types.md)||
@@ -42,7 +42,7 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[struct](struct.md)|[switch](switch.md)|[this](this.md)|[throw](throw.md)|
 |[true](../builtin-types/bool.md)|[try](try-catch.md)|[typeof](../operators/type-testing-and-cast.md#typeof-operator)|[uint](../builtin-types/integral-numeric-types.md)|
 |[ulong](../builtin-types/integral-numeric-types.md)|[unchecked](unchecked.md)|[unsafe](unsafe.md)|[ushort](../builtin-types/integral-numeric-types.md)|
-|[using](using.md)|[using static](using-static.md)|[virtual](virtual.md)|[void](void.md)|
+|[using](using.md)|[using static](using-static.md)|[virtual](virtual.md)|[void](../builtin-types/void.md)|
 |[volatile](volatile.md)|[while](while.md)|
 
 ## <a name="contextual-keywords"></a>Mots clés contextuels
@@ -56,11 +56,11 @@ Les mots clés sont des identificateurs réservés prédéfinis, qui ont des sig
 |[descending](descending.md)|[dynamic](../builtin-types/reference-types.md)|[equals](equals.md)|
 |[from](from-clause.md)|[get](get.md)|[global](../operators/namespace-alias-qualifier.md)|
 |[group](group-clause.md)|[into](into.md)|[join](join-clause.md)|
-|[let](let-clause.md)|[nameof](../operators/nameof.md)|[on](on.md)|
+|[let](let-clause.md)|[nameof](../operators/nameof.md)|[actif](on.md)|
 |[orderby](orderby-clause.md)|[partial (type)](partial-type.md)|[partial (méthode)](partial-method.md)|
 |[remove](remove.md)|[select](select-clause.md)|[set](set.md)|
-|[non managé (contrainte de type générique)](where-generic-type-constraint.md)|[valeur](value.md)|[var](var.md)|
-|[when (condition de filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
+|[non managé (contrainte de type générique)](where-generic-type-constraint.md)|[value](value.md)|[var](var.md)|
+|[when (condition du filtre)](when.md)|[where (contrainte de type générique)](where-generic-type-constraint.md)|[where (clause de requête)](where-clause.md)|
 |[yield](yield.md)| | |
   
 ## <a name="see-also"></a>Voir aussi

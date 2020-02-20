@@ -2,21 +2,21 @@
 title: <tcpTransport>
 ms.date: 03/30/2017
 ms.assetid: 8fcd18c1-9958-42e7-b442-7903f7bdb563
-ms.openlocfilehash: 7101719f77a03909d9a38dca93100ec90c1add13
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: f2c1335795ffd3cb395a7006bfaeb3cf7b39636b
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921384"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77448619"
 ---
-# <a name="tcptransport"></a>\<tcpTransport>
+# <a name="tcptransport"></a>\<tcpTransport >
 Définit un transport TCP qui peut être utilisé par un canal pour transférer des messages pour une liaison personnalisée.  
   
 [ **\<configuration>** ](../configuration-element.md)\
 &nbsp;&nbsp;[ **\<> System. serviceModel**](system-servicemodel.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<
+&nbsp;&nbsp;&nbsp;&nbsp;[**liaisons**](bindings.md)\<>\
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<[**customBinding >** ](custombinding.md)\
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **\**
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\< **>\**
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\<**tcpTransport >**  
   
 ## <a name="syntax"></a>Syntaxe  
@@ -48,7 +48,7 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
   
 ### <a name="attributes"></a>Attributs  
   
-|Attribute|Description|  
+|Attribut|Description|  
 |---------------|-----------------|  
 |channelInitializationTimeout|Obtient ou définit la limite de temps pour initialiser un canal à accepter.  Durée maximale de l'état d'initialisation du canal avant sa déconnexion (en secondes). Ce quota comprend le temps qu’une connexion TCP peut effectuer pour s’authentifier à l’aide du protocole de tramage de message .NET. Un client doit envoyer des données initiales avant que le serveur dispose de suffisamment d'informations pour exécuter l'authentification. La valeur par défaut est 30 secondes.|  
 |connectionBufferSize|Obtient ou définit la taille de la mémoire tampon utilisée pour transmettre un bloc du message sérialisé sur le câble depuis le client ou le service.|  
@@ -61,19 +61,19 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 |maxPendingAccepts|Obtient ou définit le nombre maximal d'opérations d'acception asynchrones en attente qui sont disponibles pour traiter les connexions entrantes au service.|  
 |maxPendingConnections|Obtient ou définit le nombre maximal de connexions en attente de distribution sur le service.|  
 |maxReceivedMessageSize|Obtient et définit la taille de message maximale autorisée qui peut être reçue.|  
-|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. La valeur par défaut est `false`,<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
-|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. La valeur par défaut est `false`,<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339).<br /><br /> Cette propriété s’applique uniquement à Windows XP SP2 et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service. Pour plus d’informations sur la configuration de Teredo, voir [vue d’ensemble de Teredo](https://go.microsoft.com/fwlink/?LinkId=95339). Pour plus d’informations, consultez [centres de technologie Windows Server 2003](https://go.microsoft.com/fwlink/?LinkId=49888).|  
+|portSharingEnabled|Valeur booléenne qui spécifie si le partage de port TCP est activé pour cette connexion. Si la valeur affectée est `false`, chaque liaison utilisera son propre port exclusif. Par défaut, il s’agit de `false`.<br /><br /> Ce paramètre ne concerne que les services. Les clients ne sont pas affectés.<br /><br /> L'utilisation de ce paramètre requiert l'activation du service de partage de port TCP de Windows Communication Foundation (WCF) en modifiant son type de démarrage sur Manuel ou Automatique|  
+|teredoEnabled|Valeur booléenne qui spécifie si Teredo (technologie d'adressage de clients placés derrière des pare-feu) est activé. Par défaut, il s’agit de `false`.<br /><br /> Cette propriété active Teredo pour le socket TCP sous-jacent. Pour plus d’informations, voir [vue d’ensemble de Teredo](https://docs.microsoft.com/previous-versions/windows/it-pro/windows-xp/bb457011(v=technet.10)).<br /><br /> Cette propriété s’applique uniquement à Windows XP SP2 et Windows Server 2003. Windows Vista possède une option de configuration au niveau de l’ordinateur pour Teredo. par conséquent, lors de l’exécution de Vista, cette propriété est ignorée. Pour que Teredo fonctionne, la pile Microsoft IPv6 doit être installée et configurée correctement sur les ordinateurs clients et de service.|  
 |transferMode|Obtient ou définit une valeur qui indique si les messages sont mis en mémoire tampon ou transmis en continu par le transport orienté connexion.|  
 |connectionPoolSettings|Spécifie des paramètres de pool de connexions supplémentaires pour une liaison de canal nommé.|  
   
 ### <a name="child-elements"></a>Éléments enfants  
- Aucun  
+ None  
   
 ### <a name="parent-elements"></a>Éléments parents  
   
 |Élément|Description|  
 |-------------|-----------------|  
-|[\<binding>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
+|[liaison de \<>](bindings.md)|Définit toutes les fonctions de liaison d’une liaison personnalisée.|  
   
 ## <a name="remarks"></a>Notes  
  Ce transport utilise des URI au format "net.tcp://nom_hôte:port/chemin". Les autres composants URI sont facultatifs.  
@@ -88,7 +88,7 @@ Définit un transport TCP qui peut être utilisé par un canal pour transférer 
 - <xref:System.ServiceModel.Channels.CustomBinding>
 - [Transports](../../../wcf/feature-details/transports.md)
 - [Choix d’un transport](../../../wcf/feature-details/choosing-a-transport.md)
-- [Liaisons](../../../wcf/bindings.md)
+- [Bindings](../../../wcf/bindings.md)
 - [Extension de liaisons](../../../wcf/extending/extending-bindings.md)
 - [Liaisons personnalisées](../../../wcf/extending/custom-bindings.md)
-- [\<customBinding>](custombinding.md)
+- [\<customBinding >](custombinding.md)

@@ -2,12 +2,12 @@
 title: Modèle d’extensibilité des outils CLI .NET Core
 description: Découvrez comment vous pouvez étendre le CLI .NET Core.
 ms.date: 04/12/2017
-ms.openlocfilehash: 74da895fb3a3f6c77640a2b9a64acdb2894a954b
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 56a9cedc090ddca446c0ee1a60f2ca49590e7635
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920526"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451153"
 ---
 # <a name="net-core-cli-extensibility-model"></a>Modèle d’extensibilité des outils CLI .NET Core
 
@@ -32,7 +32,7 @@ L’interface CLI peut être étendue de trois manières principales :
 Les trois mécanismes d’extensibilité présentés ci-dessus ne sont pas exclusifs. Vous pouvez utiliser un seul, une partie ou la totalité d’entre eux. Le choix de la méthode dépend en grande partie de l’objectif de votre extension.
 
 ## <a name="per-project-based-extensibility"></a>Extensibilité par projet
-Les outils par projet sont des [déploiements dépendants du framework](../deploying/index.md#framework-dependent-deployments-fdd) qui sont distribués dans les packages NuGet. Les outils sont uniquement disponibles dans le contexte du projet qui les référence et pour lequel ils sont restaurés. Les appels en dehors du contexte du projet (par exemple, en dehors du répertoire qui contient le projet) échouent parce que la commande est introuvable.
+Les outils par projet sont des [déploiements dépendants du framework](../deploying/index.md#publish-runtime-dependent) qui sont distribués dans les packages NuGet. Les outils sont uniquement disponibles dans le contexte du projet qui les référence et pour lequel ils sont restaurés. Les appels en dehors du contexte du projet (par exemple, en dehors du répertoire qui contient le projet) échouent parce que la commande est introuvable.
 
 Ces outils sont parfaits pour les serveurs de build, puisque rien en dehors du fichier projet n’est nécessaire. Le processus de génération exécute la restauration pour le projet qu’il génère, et des outils seront disponibles. Les projets de langage, tels que F#, figurent également dans cette catégorie puisque chaque projet ne peut être écrit que dans un langage.
 

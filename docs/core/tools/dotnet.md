@@ -1,13 +1,13 @@
 ---
 title: Commande dotnet
 description: En savoir plus sur la commande dotnet (le pilote générique pour le CLI .NET Core) et son utilisation.
-ms.date: 06/04/2018
-ms.openlocfilehash: 7674529980623caa2291987bdeba52f50ce2fc2c
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 02/13/2020
+ms.openlocfilehash: 364978465b63401907b46ead64dbceb2f15c8169
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920547"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451166"
 ---
 # <a name="dotnet-command"></a>Commande dotnet
 
@@ -17,18 +17,18 @@ ms.locfileid: "76920547"
 
 `dotnet` - Outil de gestion du code source et des ressources binaires .NET.
 
-## <a name="synopsis"></a>Résumé
+## <a name="synopsis"></a>Synopsis
 
 <!-- markdownlint-disable MD025 -->
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
     [-d|--diagnostics] [--fx-version] [-h|--help] [--info] [--list-runtimes] [--list-sdks] [--roll-forward-on-no-candidate-fx] [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--depsfile]
@@ -36,7 +36,7 @@ dotnet [command] [arguments] [--additional-deps] [--additionalprobingpath] [--de
     [--runtimeconfig] [-v|--verbosity] [--version]
 ```
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 ```dotnetcli
 dotnet [command] [arguments] [--additionalprobingpath] [--depsfile] [-d|--diagnostics]
@@ -53,7 +53,7 @@ Vous pouvez utiliser `dotnet` pour exécuter des applications en spécifiant une
 
 ## <a name="options"></a>Options
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `--additional-deps <PATH>`
 
@@ -95,7 +95,7 @@ Affiche les kits de développement logiciel .NET Core installés.
 
 `--roll-forward-on-no-candidate-fx <N>`
 
-Définit le comportement quand le framework partagé requis n’est pas disponible. `N` peut être :
+Définit le comportement quand le framework partagé requis n’est pas disponible. Voici à quoi `N` peut correspondre :
 
 - `0` : désactiver l’extrapolation même pour les versions mineures.
 - `1` : extrapoler la version mineure, mais pas la version majeure. Il s'agit du comportement par défaut.
@@ -117,7 +117,7 @@ Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[ui
 
 Affiche la version du SDK .NET Core en cours d’utilisation.
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `--additional-deps <PATH>`
 
@@ -167,7 +167,7 @@ Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[ui
 
 Affiche la version du SDK .NET Core en cours d’utilisation.
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `--additionalprobingpath <PATH>`
 
@@ -215,9 +215,9 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 ### <a name="general"></a>Général
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
-| Command                                       | Fonction                                                            |
+| Commande                                       | Fonction                                                            |
 | --------------------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)               | Génère une application .NET Core.                                     |
 | [dotnet build-server](dotnet-build-server.md) | Interagit avec les serveurs démarrés par une build.                          |
@@ -234,9 +234,9 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 | [dotnet store](dotnet-store.md)               | Stocke les assemblys dans le magasin de packages de runtime.                     |
 | [dotnet test](dotnet-test.md)                 | Exécute des tests à l’aide d’un lanceur de tests.                                     |
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
-| Command                             | Fonction                                                            |
+| Commande                             | Fonction                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)     | Génère une application .NET Core.                                     |
 | [dotnet clean](dotnet-clean.md)     | Nettoie les sorties de build.                                              |
@@ -252,9 +252,9 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 | [dotnet store](dotnet-store.md)     | Stocke les assemblys dans le magasin de packages de runtime.                     |
 | [dotnet test](dotnet-test.md)       | Exécute des tests à l’aide d’un lanceur de tests.                                     |
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
-| Command                             | Fonction                                                            |
+| Commande                             | Fonction                                                            |
 | ----------------------------------- | ------------------------------------------------------------------- |
 | [dotnet build](dotnet-build.md)     | Génère une application .NET Core.                                     |
 | [dotnet clean](dotnet-clean.md)     | Nettoie les sorties de build.                                              |
@@ -272,7 +272,7 @@ Affiche la version du SDK .NET Core en cours d’utilisation.
 
 ### <a name="project-references"></a>Références de projets
 
-Command | Fonction
+Commande | Fonction
 --- | ---
 [dotnet add reference](dotnet-add-reference.md) | Ajoute une référence au projet.
 [dotnet list reference](dotnet-list-reference.md) | Liste les références du projet.
@@ -280,29 +280,29 @@ Command | Fonction
 
 ### <a name="nuget-packages"></a>Packages NuGet
 
-Command | Fonction
+Commande | Fonction
 --- | ---
 [dotnet add package](dotnet-add-package.md) | Ajoute un package NuGet.
 [dotnet remove package](dotnet-remove-package.md) | Supprime un package NuGet.
 
 ### <a name="nuget-commands"></a>Commandes NuGet
 
-Command | Fonction
+Commande | Fonction
 --- | ---
 [dotnet nuget delete](dotnet-nuget-delete.md) | Supprime ou retire un package du serveur.
 [dotnet nuget locals](dotnet-nuget-locals.md) | Efface ou liste les ressources NuGet locales telles que le cache de requête HTTP, le cache temporaire ou le dossier de packages globaux à l’échelle de l’ordinateur.
 [dotnet nuget push](dotnet-nuget-push.md) | Effectue une transmission de type push d’un package sur le serveur et le publie.
 
-### <a name="global-tools-commands"></a>Outils et commandes globaux
+### <a name="global-tool-path-and-local-tools-commands"></a>Commandes globales, de chemin d’accès d’outil et d’outils locaux
 
-Les [outils globaux .NET Core](global-tools.md) sont disponibles à partir de .NET Core SDK 2.1.300 :
+Les outils sont des applications console qui sont installées à partir de packages NuGet et sont appelées à partir de l’invite de commandes. Vous pouvez écrire vous-même des outils ou installer des outils écrits par des tiers. Les outils sont également appelés outils globaux, outils de chemin d’accès d’outil et outils locaux. Pour plus d’informations, consultez [vue d’ensemble des outils .net Core](global-tools.md). Les outils globaux et de chemin d’accès aux outils sont disponibles à partir de kit SDK .NET Core 2,1. Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.
 
-Command | Fonction
+Commande | Fonction
 --- | ---
-[dotnet tool install](dotnet-tool-install.md) | Installe un outil global sur votre ordinateur.
-[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux actuellement installés dans le répertoire par défaut de votre machine ou à l’emplacement du chemin spécifié.
-[dotnet tool uninstall](dotnet-tool-uninstall.md) | Désinstalle un outil global de votre ordinateur.
-[dotnet tool update](dotnet-tool-update.md) | Met à jour un outil global sur votre ordinateur.
+[dotnet tool install](dotnet-tool-install.md) | Installe un outil sur votre ordinateur.
+[dotnet tool list](dotnet-tool-list.md) | Répertorie tous les outils globaux, de chemin d’accès d’outil ou locaux actuellement installés sur votre ordinateur.
+[dotnet tool uninstall](dotnet-tool-uninstall.md) | Désinstalle un outil de votre ordinateur.
+[dotnet tool update](dotnet-tool-update.md) | Met à jour un outil qui est installé sur votre ordinateur.
 
 ### <a name="additional-tools"></a>Outils supplémentaires
 
@@ -340,7 +340,7 @@ Exécutez une DLL d’application, par exemple `myapp.dll` :
 
 ## <a name="environment-variables"></a>Variables d'environnement
 
-# <a name="net-core-21tabnetcore21"></a>[.NET Core 2.1](#tab/netcore21)
+# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
 
 `DOTNET_PACKAGES`
 
@@ -362,7 +362,7 @@ Spécifie si le runtime .NET Core, le framework partagé ou le SDK sont résolus
 
 Désactive la restauration par progression d’une version mineure, si la valeur est `0`. Pour plus d'informations, consultez [Restauration par progression](../whats-new/dotnet-core-2-1.md#roll-forward).
 
-# <a name="net-core-20tabnetcore20"></a>[.NET Core 2.0](#tab/netcore20)
+# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
 
 `DOTNET_PACKAGES`
 
@@ -380,7 +380,7 @@ Spécifie si les données concernant l’utilisation des outils .NET Core doiven
 
 Spécifie si le runtime .NET Core, le framework partagé ou le SDK sont résolus à partir de l’emplacement global. Si elle n’est pas définie, la valeur par défaut est `true`. Définie sur `false` pour ne pas résoudre depuis l’emplacement global et avoir des installations .NET Core (les valeurs `0` ou `false` sont acceptées). Pour plus d’informations sur la recherche multiniveau, consultez [Recherche SharedFX multiniveau](https://github.com/dotnet/core-setup/blob/master/Documentation/design-docs/multilevel-sharedfx-lookup.md).
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
 
 `DOTNET_PACKAGES`
 

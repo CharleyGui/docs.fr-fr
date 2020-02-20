@@ -9,19 +9,19 @@ helpviewer_keywords:
 - initializing trace sources
 - configuration files [.NET Framework], trace sources
 ms.assetid: f88dda6f-5fda-45be-9b3c-745a9b708c4d
-ms.openlocfilehash: ae5e98a1ebf3753b24127f96ed563eba27eea2fb
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: cc2987499aa094960c08d220940fe1aed5440b2d
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77217422"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77449957"
 ---
 # <a name="how-to-create-and-initialize-trace-sources"></a>Comment : créer et initialiser les sources de trace
 La classe <xref:System.Diagnostics.TraceSource> est utilisée par les applications pour produire des traces qui peuvent être associées à l'application. <xref:System.Diagnostics.TraceSource> fournit des méthodes de traçage qui vous permettent de tracer facilement des événements et des données, ainsi que de fournir des traces d'information. Il est possible de créer et d'initialiser une sortie de trace <xref:System.Diagnostics.TraceSource> en utilisant ou non les fichiers de configuration. Cette rubrique fournit des instructions pour les deux options. Toutefois, nous vous recommandons d'utiliser des fichiers de configuration pour simplifier la reconfiguration des traces produites par les sources de trace au moment de l'exécution.  
   
 ### <a name="to-create-and-initialize-a-trace-source-using-a-configuration-file"></a>Pour créer et initialiser une source de trace à l'aide d'un fichier de configuration  
   
-1. Créez un projet d'application console Visual Studio et remplacez le code fourni par le code suivant. Ce code consigne les erreurs et les avertissements et renvoie certains d'entre eux vers la console et d'autres vers le fichier myListener créé par les entrées dans le fichier de configuration.  
+1. Créez un projet d’application console Visual Studio (.NET Framework) et remplacez le code fourni par le code suivant. Ce code consigne les erreurs et les avertissements et renvoie certains d'entre eux vers la console et d'autres vers le fichier myListener créé par les entrées dans le fichier de configuration.  
   
      [!code-csharp[TraceSourceExample1#1](../../../samples/snippets/csharp/VS_Snippets_CLR/tracesourceexample1/cs/program.cs#1)]
      [!code-vb[TraceSourceExample1#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR/tracesourceexample1/vb/program.vb#1)]  

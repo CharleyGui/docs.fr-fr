@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - operator keyword [C#]
 - operator overloading [C#]
-ms.openlocfilehash: eb4639b7cede59e6ca1e315f54ce805947f03327
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.openlocfilehash: 1475852d312fa16980f25347fc9a864cb1659221
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
-ms.locfileid: "75937198"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451926"
 ---
 # <a name="operator-overloading-c-reference"></a>Surcharge d’opérateur (référence C#)
 
@@ -43,7 +43,7 @@ Le tableau suivant fournit des informations sur la possibilité de surcharge des
 |[a&#91;i&#93;](member-access-operators.md#indexer-operator-)|L’accès à un élément n’est pas considéré comme un opérateur surchargeable, mais vous pouvez définir un [indexeur](../../programming-guide/indexers/index.md).|
 |[(T)x](type-testing-and-cast.md#cast-operator-)|L’opérateur de cast ne peut pas être surchargé, mais vous pouvez définir de nouveaux opérateurs de conversion. Pour plus d’informations, consultez [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md).|
 |[+=](arithmetic-operators.md#compound-assignment), [-=](arithmetic-operators.md#compound-assignment), [\*=](arithmetic-operators.md#compound-assignment), [/=](arithmetic-operators.md#compound-assignment), [%=](arithmetic-operators.md#compound-assignment), [&=](boolean-logical-operators.md#compound-assignment), [&#124;=](boolean-logical-operators.md#compound-assignment), [^=](boolean-logical-operators.md#compound-assignment), [\<\<=](bitwise-and-shift-operators.md#compound-assignment), [>>=](bitwise-and-shift-operators.md#compound-assignment)|Les opérateurs d’assignation composée ne peuvent pas être surchargés explicitement. Toutefois, quand vous surchargez un opérateur binaire, l’opérateur d’assignation composée correspondant, le cas échéant, est aussi implicitement surchargé. Par exemple, `+=` est évalué à l’aide de l’opérateur `+`, qui peut être surchargé.|
-|[^ ](member-access-operators.md#index-from-end-operator-)x, [x = y](assignment-operator.md), [x. y](member-access-operators.md#member-access-operator-), [c ? t : f](conditional-operator.md), [x ?? y](null-coalescing-operator.md), [x ?? = y](null-coalescing-operator.md), [x.. y](member-access-operators.md#range-operator-), [x-> y](pointer-related-operators.md#pointer-member-access-operator--), [=>](lambda-operator.md), [f (x)](member-access-operators.md#invocation-operator-), [as](type-testing-and-cast.md#as-operator), [await](await.md), [coché](../keywords/checked.md), [désactivé](../keywords/unchecked.md), [par défaut](default.md), [délégué](delegate-operator.md), [est](type-testing-and-cast.md#is-operator), [nameof](nameof.md), [New](new-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Ces opérateurs ne peuvent pas être surchargés.|
+|[^ x](member-access-operators.md#index-from-end-operator-), [x = y](assignment-operator.md), [x. y](member-access-operators.md#member-access-operator-), [c ? t : f](conditional-operator.md), [x ?? y](null-coalescing-operator.md), [x ?? = y](null-coalescing-operator.md), [x.. y](member-access-operators.md#range-operator-), [x-> y](pointer-related-operators.md#pointer-member-access-operator--), [=>](lambda-operator.md), [f (x)](member-access-operators.md#invocation-operator-), [As](type-testing-and-cast.md#as-operator), [await](await.md), [activé](../keywords/checked.md), [désactivé,](../keywords/unchecked.md) [par défaut](default.md), [délégué](delegate-operator.md), [est](type-testing-and-cast.md#is-operator), [nameof](nameof.md), [New](new-operator.md), [sizeof](sizeof.md), [stackalloc](stackalloc.md), [typeof](type-testing-and-cast.md#typeof-operator)|Ces opérateurs ne peuvent pas être surchargés.|
 
 > [!NOTE]
 > Les opérateurs de comparaison doivent être surchargés par paires. Autrement dit, si l’un des opérateurs d’une paire est surchargé, l’autre doit également l’être. Il s’agit de paires telles que les suivantes :
@@ -64,4 +64,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Informations de référence sur C#](../index.md)
 - [Opérateurs C#](index.md)
 - [Opérateurs de conversion définie par l’utilisateur](user-defined-conversion-operators.md)
+- [Directives de conception-surcharges d’opérateur](../../../standard/design-guidelines/operator-overloads.md)
+- [Directives de conception-opérateurs d’égalité](../../../standard/design-guidelines/equality-operators.md)
 - Article [Why are overloaded operators always static in C#?](https://docs.microsoft.com/archive/blogs/ericlippert/why-are-overloaded-operators-always-static-in-c)

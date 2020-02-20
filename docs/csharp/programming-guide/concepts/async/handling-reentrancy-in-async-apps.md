@@ -2,12 +2,12 @@
 title: Gestion de la réentrance dans Async Apps (C#)
 ms.date: 07/20/2015
 ms.assetid: 47c5075e-c448-45ce-9155-ed4e7e98c677
-ms.openlocfilehash: 9a6189624eff988ec6b0ac8a93330d591ed46a8c
-ms.sourcegitcommit: 559259da2738a7b33a46c0130e51d336091c2097
+ms.openlocfilehash: 67fbbd294ffe6219b58065f974543b2dd483a92c
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/22/2019
-ms.locfileid: "72772038"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451861"
 ---
 # <a name="handling-reentrancy-in-async-apps-c"></a>Gestion de la réentrance dans Async Apps (C#)
 
@@ -28,10 +28,10 @@ Quand vous incluez du code asynchrone dans votre application, vous devez prendre
 - [Examen et exécution de l’exemple d’application](#BKMD_SettingUpTheExample)
 
 > [!NOTE]
-> Pour exécuter l’exemple, vous devez avoir Visual Studio version 2012 ou ultérieure et .NET Framework version 4.5 ou ultérieure installés sur votre ordinateur.
+> Pour exécuter l’exemple, vous devez disposer de Visual Studio 2012 ou version ultérieure et .NET Framework 4,5 ou version ultérieure installée sur votre ordinateur.
 
 > [!NOTE]
-> La version 1,2 de TLS (Transport Layer Security) est désormais la version minimale à utiliser dans le développement de votre application. Si votre application cible une version du .NET Framework antérieure à 4,7, reportez-vous à l’article suivant pour [les meilleures pratiques de Transport Layer Security (TLS) avec le .NET Framework](../../../../framework/network-programming/tls.md) 
+> La version 1,2 de TLS (Transport Layer Security) est désormais la version minimale à utiliser dans le développement de votre application. Si votre application cible une version de .NET Framework antérieure à 4,7, reportez-vous à l’article suivant pour [les meilleures pratiques de Transport Layer Security (TLS) avec le .NET Framework](../../../../framework/network-programming/tls.md).
 
 ## <a name="BKMK_RecognizingReentrancy"></a> Identification de la réentrance
 
@@ -576,9 +576,9 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
 1. Démarrez Visual Studio.
 
-2. Dans la barre de menus, sélectionnez **Fichier**, **Nouveau**, **Projet**.
+2. Dans le menu principal, sélectionnez **Fichier**, **Nouveau**, **Projet**.
 
-     La boîte de dialogue **Nouveau projet** s'affiche.
+     La boîte de dialogue **Nouveau projet** s’affiche.
 
 3. Dans le volet **Modèles installés**, développez **Visual C#** , puis développez **Windows**.
 
@@ -730,5 +730,5 @@ La section suivante fournit le code pour générer l’exemple comme une applica
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Procédure pas à pas : accès au web avec Async et Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Procédure pas à pas : accès au web avec Async et Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
 - [Programmation asynchrone avec Async et Await (C#)](./index.md)

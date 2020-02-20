@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - readonly keyword [C#]
 ms.assetid: 2f8081f6-0de2-4903-898d-99696c48d2f4
-ms.openlocfilehash: f9fa6f893e7f999564c4dcb43d40755547d3c793
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c3db8f7791e510768608e834339526fb82771979
+ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713116"
+ms.lasthandoff: 02/19/2020
+ms.locfileid: "77451939"
 ---
 # <a name="readonly-c-reference"></a>readonly (référence C#)
 
@@ -54,7 +54,7 @@ Vous pouvez affecter une valeur à un champ `readonly` uniquement dans les conte
 Ces contextes de constructeur sont également les seuls contextes dans lesquels il est possible de passer un champ `readonly` en tant que paramètre [out](out-parameter-modifier.md) ou [ref](ref.md) .
 
 > [!NOTE]
-> Le mot clé `readonly` est différent du mot clé [const](const.md). Un champ `const` ne peut être initialisé qu'au moment de la déclaration du champ. Un champ `readonly` peut être assigné plusieurs fois dans la déclaration de champ et dans un constructeur. C'est pourquoi, les champs `readonly` peuvent avoir des valeurs différentes en fonction du constructeur utilisé. De même, alors qu’un champ `const` est une constante au moment de la compilation, le champ `readonly` peut être utilisé pour des constantes au moment de l’exécution, comme dans l’exemple suivant :
+> Le mot clé `readonly` est différent du mot clé [const](const.md). Un champ `const` ne peut être initialisé qu'au moment de la déclaration du champ. Un champ `readonly` peut être assigné plusieurs fois dans la déclaration de champ et dans un constructeur. C'est pourquoi, les champs `readonly` peuvent avoir des valeurs différentes en fonction du constructeur utilisé. De même, si un champ `const` est une constante de compilation, le champ `readonly` peut être utilisé pour les constantes Runtime, comme dans l’exemple suivant :
 >
 > ```csharp
 > public static readonly uint timeStamp = (uint)DateTime.Now.Ticks;
@@ -70,7 +70,7 @@ p2.y = 66;        // Error
 
 vous obtiendrez le message d’erreur du compilateur :
 
-`A readonly field cannot be assigned to (except in a constructor or a variable initializer)`
+**Un champ ReadOnly ne peut pas être assigné (sauf s’il s’agit d’un constructeur ou d’un initialiseur de variable)**
 
 ## <a name="readonly-struct-example"></a>Exemple de struct readonly
 
@@ -157,9 +157,9 @@ Vous pouvez également consulter les propositions de spécification de langage 
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)
 - [const](const.md)
-- [Champs](../../programming-guide/classes-and-structs/fields.md)
+- [Fields](../../programming-guide/classes-and-structs/fields.md)
