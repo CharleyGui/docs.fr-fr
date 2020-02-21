@@ -1,84 +1,95 @@
 ---
 title: Commande dotnet tool update
-description: La commande dotnet tool update met à jour l’outil global .NET Core spécifié sur votre machine.
-ms.date: 05/29/2018
-ms.openlocfilehash: b10ce39c8b9d4df23243bcf672454a455e34eec1
-ms.sourcegitcommit: a4b10e1f2a8bb4e8ff902630855474a0c4f1b37a
+description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET Core spécifié sur votre ordinateur.
+ms.date: 02/14/2020
+ms.openlocfilehash: 50bb366fedfb0ea69b8b6007ff89e366b4f689de
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/19/2019
-ms.locfileid: "71117537"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543415"
 ---
-# <a name="dotnet-tool-update"></a><span data-ttu-id="28188-103">dotnet tool update</span><span class="sxs-lookup"><span data-stu-id="28188-103">dotnet tool update</span></span>
+# <a name="dotnet-tool-update"></a><span data-ttu-id="bf7a2-103">dotnet tool update</span><span class="sxs-lookup"><span data-stu-id="bf7a2-103">dotnet tool update</span></span>
 
-[!INCLUDE [topic-appliesto-net-core-21plus.md](../../../includes/topic-appliesto-net-core-21plus.md)]
+<span data-ttu-id="bf7a2-104">**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures</span><span class="sxs-lookup"><span data-stu-id="bf7a2-104">**This article applies to:** ✔️ .NET Core 2.1 SDK and later versions</span></span>
 
-## <a name="name"></a><span data-ttu-id="28188-104">Name</span><span class="sxs-lookup"><span data-stu-id="28188-104">Name</span></span>
+## <a name="name"></a><span data-ttu-id="bf7a2-105">Name</span><span class="sxs-lookup"><span data-stu-id="bf7a2-105">Name</span></span>
 
-<span data-ttu-id="28188-105">`dotnet tool update` - Met à jour l’[outil global .NET Core](global-tools.md) spécifié sur votre machine.</span><span class="sxs-lookup"><span data-stu-id="28188-105">`dotnet tool update` - Updates the specified [.NET Core Global Tool](global-tools.md) on your machine.</span></span>
+<span data-ttu-id="bf7a2-106">`dotnet tool update` : met à jour l' [outil .net Core](global-tools.md) spécifié sur votre ordinateur.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-106">`dotnet tool update` - Updates the specified [.NET Core tool](global-tools.md) on your machine.</span></span>
 
-## <a name="synopsis"></a><span data-ttu-id="28188-106">Résumé</span><span class="sxs-lookup"><span data-stu-id="28188-106">Synopsis</span></span>
+## <a name="synopsis"></a><span data-ttu-id="bf7a2-107">Synopsis</span><span class="sxs-lookup"><span data-stu-id="bf7a2-107">Synopsis</span></span>
 
 ```dotnetcli
-dotnet tool update <PACKAGE_NAME> <-g|--global> [--configfile] [--framework] [-v|--verbosity]
-dotnet tool update <PACKAGE_NAME> <--tool-path> [--configfile] [--framework] [-v|--verbosity]
+dotnet tool update <PACKAGE_NAME> <-g|--global> [--configfile] [--framework] [-v|--verbosity] [--add-source]
+dotnet tool update <PACKAGE_NAME> <--tool-path> [--configfile] [--framework] [-v|--verbosity] [--add-source]
+dotnet tool update <PACKAGE_NAME> [--configfile] [--framework] [-v|--verbosity] [--add-source]
 dotnet tool update <-h|--help>
 ```
 
-## <a name="description"></a><span data-ttu-id="28188-107">Description</span><span class="sxs-lookup"><span data-stu-id="28188-107">Description</span></span>
+## <a name="description"></a><span data-ttu-id="bf7a2-108">Description</span><span class="sxs-lookup"><span data-stu-id="bf7a2-108">Description</span></span>
 
-<span data-ttu-id="28188-108">La commande `dotnet tool update` vous offre un moyen de mettre à jour des outils globaux .NET Core sur votre machine vers la dernière version stable du package.</span><span class="sxs-lookup"><span data-stu-id="28188-108">The `dotnet tool update` command provides a way for you to update .NET Core Global Tools on your machine to the latest stable version of the package.</span></span> <span data-ttu-id="28188-109">La commande désinstalle et réinstalle un outil en le mettant à jour.</span><span class="sxs-lookup"><span data-stu-id="28188-109">The command uninstalls and reinstalls a tool, effectively updating it.</span></span> <span data-ttu-id="28188-110">Pour utiliser la commande, vous devez soit spécifier que vous voulez mettre à jour un outil à partir d’une installation à l’échelle de l’utilisateur en utilisant l’option `--global`, soit spécifier un chemin vers l’emplacement auquel l’outil est installé à l’aide de l’option `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="28188-110">To use the command, you either have to specify that you want to update a tool from a user-wide installation using the `--global` option or specify a path to where the tool is installed using the `--tool-path` option.</span></span>
+<span data-ttu-id="bf7a2-109">La commande `dotnet tool update` vous permet de mettre à jour les outils .NET Core sur votre ordinateur vers la dernière version stable du package.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-109">The `dotnet tool update` command provides a way for you to update .NET Core tools on your machine to the latest stable version of the package.</span></span> <span data-ttu-id="bf7a2-110">La commande désinstalle et réinstalle un outil en le mettant à jour.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-110">The command uninstalls and reinstalls a tool, effectively updating it.</span></span> <span data-ttu-id="bf7a2-111">Pour utiliser la commande, vous spécifiez l’une des options suivantes :</span><span class="sxs-lookup"><span data-stu-id="bf7a2-111">To use the command, you specify one of the following options:</span></span>
 
-## <a name="arguments"></a><span data-ttu-id="28188-111">Arguments</span><span class="sxs-lookup"><span data-stu-id="28188-111">Arguments</span></span>
+* <span data-ttu-id="bf7a2-112">Pour mettre à jour un outil global qui a été installé à l’emplacement par défaut, utilisez l’option `--global`</span><span class="sxs-lookup"><span data-stu-id="bf7a2-112">To update a global tool that was installed in the default location, use the `--global` option</span></span>
+* <span data-ttu-id="bf7a2-113">Pour mettre à jour un outil global qui a été installé dans un emplacement personnalisé, utilisez l’option `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-113">To update a global tool that was installed in a custom location, use the `--tool-path` option.</span></span>
+* <span data-ttu-id="bf7a2-114">Pour mettre à jour un outil local, omettez les options `--global` et `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-114">To update a local tool, omit the `--global` and `--tool-path` options.</span></span>
 
-`PACKAGE_NAME`
+<span data-ttu-id="bf7a2-115">**Les outils locaux sont disponibles à partir de kit SDK .NET Core 3,0.**</span><span class="sxs-lookup"><span data-stu-id="bf7a2-115">**Local tools are available starting with .NET Core SDK 3.0.**</span></span>
 
-<span data-ttu-id="28188-112">Nom/ID du package NuGet qui contient l’outil global .NET Core à mettre à jour.</span><span class="sxs-lookup"><span data-stu-id="28188-112">Name/ID of the NuGet package that contains the .NET Core Global Tool to update.</span></span> <span data-ttu-id="28188-113">Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).</span><span class="sxs-lookup"><span data-stu-id="28188-113">You can find the package name using the [dotnet tool list](dotnet-tool-list.md) command.</span></span>
+## <a name="arguments"></a><span data-ttu-id="bf7a2-116">Arguments</span><span class="sxs-lookup"><span data-stu-id="bf7a2-116">Arguments</span></span>
 
-## <a name="options"></a><span data-ttu-id="28188-114">Options</span><span class="sxs-lookup"><span data-stu-id="28188-114">Options</span></span>
+- **`PACKAGE_NAME`**
 
-`--add-source <SOURCE>`
+  <span data-ttu-id="bf7a2-117">Nom/ID du package NuGet qui contient l’outil Global .NET Core à mettre à jour.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-117">Name/ID of the NuGet package that contains the .NET Core global tool to update.</span></span> <span data-ttu-id="bf7a2-118">Vous pouvez trouver le nom du package à l’aide de la commande [dotnet tool list](dotnet-tool-list.md).</span><span class="sxs-lookup"><span data-stu-id="bf7a2-118">You can find the package name using the [dotnet tool list](dotnet-tool-list.md) command.</span></span>
 
-<span data-ttu-id="28188-115">Ajoute une source de package NuGet supplémentaire à utiliser pendant l’installation.</span><span class="sxs-lookup"><span data-stu-id="28188-115">Adds an additional NuGet package source to use during installation.</span></span>
+## <a name="options"></a><span data-ttu-id="bf7a2-119">Options</span><span class="sxs-lookup"><span data-stu-id="bf7a2-119">Options</span></span>
 
-`--configfile <FILE>`
+- **`--add-source <SOURCE>`**
 
-<span data-ttu-id="28188-116">Fichier de configuration NuGet (*nuget.config*) à utiliser.</span><span class="sxs-lookup"><span data-stu-id="28188-116">The NuGet configuration (*nuget.config*) file to use.</span></span>
+  <span data-ttu-id="bf7a2-120">Ajoute une source de package NuGet supplémentaire à utiliser pendant l’installation.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-120">Adds an additional NuGet package source to use during installation.</span></span>
 
-`--framework <FRAMEWORK>`
+- **`--configfile <FILE>`**
 
-<span data-ttu-id="28188-117">Spécifie le [framework cible](../../standard/frameworks.md) pour lequel mettre à jour l’outil.</span><span class="sxs-lookup"><span data-stu-id="28188-117">Specifies the [target framework](../../standard/frameworks.md) to update the tool for.</span></span>
+  <span data-ttu-id="bf7a2-121">Fichier de configuration NuGet (*nuget.config*) à utiliser.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-121">The NuGet configuration (*nuget.config*) file to use.</span></span>
 
-`-g|--global`
+- **`--framework <FRAMEWORK>`**
 
-<span data-ttu-id="28188-118">Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="28188-118">Specifies that the update is for a user-wide tool.</span></span> <span data-ttu-id="28188-119">Non combinable avec l’option `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="28188-119">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="28188-120">Si vous ne spécifiez pas cette option, vous devez spécifier l’option `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="28188-120">If you don't specify this option, you must specify the `--tool-path` option.</span></span>
+  <span data-ttu-id="bf7a2-122">Spécifie le [framework cible](../../standard/frameworks.md) pour lequel mettre à jour l’outil.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-122">Specifies the [target framework](../../standard/frameworks.md) to update the tool for.</span></span>
 
-`-h|--help`
+- **`-g|--global`**
 
-<span data-ttu-id="28188-121">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="28188-121">Prints out a short help for the command.</span></span>
+  <span data-ttu-id="bf7a2-123">Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-123">Specifies that the update is for a user-wide tool.</span></span> <span data-ttu-id="bf7a2-124">Non combinable avec l’option `--tool-path`.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-124">Can't be combined with the `--tool-path` option.</span></span> <span data-ttu-id="bf7a2-125">L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-125">Omitting both `--global` and `--tool-path` specifies that the tool to be updated is a local tool.</span></span> 
 
-`--tool-path <PATH>`
+- **`-h|--help`**
 
-<span data-ttu-id="28188-122">Spécifie l’emplacement d’installation de l’outil global.</span><span class="sxs-lookup"><span data-stu-id="28188-122">Specifies the location where the Global Tool is installed.</span></span> <span data-ttu-id="28188-123">Le chemin peut être absolu ou relatif.</span><span class="sxs-lookup"><span data-stu-id="28188-123">PATH can be absolute or relative.</span></span> <span data-ttu-id="28188-124">Non combinable avec l’option `--global`.</span><span class="sxs-lookup"><span data-stu-id="28188-124">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="28188-125">Si vous ne spécifiez pas cette option, vous devez spécifier l’option `--global`.</span><span class="sxs-lookup"><span data-stu-id="28188-125">If you don't specify this option, you must specify the `--global` option.</span></span>
+  <span data-ttu-id="bf7a2-126">Affiche une aide brève pour la commande.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-126">Prints out a short help for the command.</span></span>
 
-`-v|--verbosity <LEVEL>`
+- **`--tool-path <PATH>`**
 
-<span data-ttu-id="28188-126">Définit le niveau de détail de la commande.</span><span class="sxs-lookup"><span data-stu-id="28188-126">Sets the verbosity level of the command.</span></span> <span data-ttu-id="28188-127">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="28188-127">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
+  <span data-ttu-id="bf7a2-127">Spécifie l’emplacement d’installation de l’outil Global.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-127">Specifies the location where the global tool is installed.</span></span> <span data-ttu-id="bf7a2-128">Le chemin peut être absolu ou relatif.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-128">PATH can be absolute or relative.</span></span> <span data-ttu-id="bf7a2-129">Non combinable avec l’option `--global`.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-129">Can't be combined with the `--global` option.</span></span> <span data-ttu-id="bf7a2-130">L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-130">Omitting both `--global` and `--tool-path` specifies that the tool to be updated is a local tool.</span></span> 
 
-## <a name="examples"></a><span data-ttu-id="28188-128">Exemples</span><span class="sxs-lookup"><span data-stu-id="28188-128">Examples</span></span>
+- **`-v|--verbosity <LEVEL>`**
 
-<span data-ttu-id="28188-129">Met à jour l’outil global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) :</span><span class="sxs-lookup"><span data-stu-id="28188-129">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool:</span></span>
+  <span data-ttu-id="bf7a2-131">Définit le niveau de détail de la commande.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-131">Sets the verbosity level of the command.</span></span> <span data-ttu-id="bf7a2-132">Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-132">Allowed values are `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]`, and `diag[nostic]`.</span></span>
 
-`dotnet tool update -g dotnetsay`
+## <a name="examples"></a><span data-ttu-id="bf7a2-133">Exemples</span><span class="sxs-lookup"><span data-stu-id="bf7a2-133">Examples</span></span>
 
-<span data-ttu-id="28188-130">Met à jour l’outil global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un dossier Windows spécifique :</span><span class="sxs-lookup"><span data-stu-id="28188-130">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool located on a specific Windows folder:</span></span>
+- **`dotnet tool update -g dotnetsay`**
 
-`dotnet tool update dotnetsay --tool-path c:\global-tools`
+  <span data-ttu-id="bf7a2-134">Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) .</span><span class="sxs-lookup"><span data-stu-id="bf7a2-134">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool.</span></span>
 
-<span data-ttu-id="28188-131">Met à jour l’outil global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un dossier Linux/macOS spécifique :</span><span class="sxs-lookup"><span data-stu-id="28188-131">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) Global Tool located on a specific Linux/macOS folder:</span></span>
+- **`dotnet tool update dotnetsay --tool-path c:\global-tools`**
 
-`dotnet tool update dotnetsay --tool-path ~/bin`
+  <span data-ttu-id="bf7a2-135">Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Windows spécifique.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-135">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool located in a specific Windows directory.</span></span>
 
-## <a name="see-also"></a><span data-ttu-id="28188-132">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="28188-132">See also</span></span>
+- **`dotnet tool update dotnetsay --tool-path ~/bin`**
 
-- [<span data-ttu-id="28188-133">Outils globaux .NET Core</span><span class="sxs-lookup"><span data-stu-id="28188-133">.NET Core Global Tools</span></span>](global-tools.md)
+  <span data-ttu-id="bf7a2-136">Met à jour l’outil Global [dotnetsay](https://www.nuget.org/packages/dotnetsay/) situé dans un répertoire Linux/MacOS spécifique.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-136">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) global tool located in a specific Linux/macOS directory.</span></span>
+
+- **`dotnet tool update dotnetsay`**
+
+  <span data-ttu-id="bf7a2-137">Met à jour l’outil local [dotnetsay](https://www.nuget.org/packages/dotnetsay/) installé pour le répertoire actif.</span><span class="sxs-lookup"><span data-stu-id="bf7a2-137">Updates the [dotnetsay](https://www.nuget.org/packages/dotnetsay/) local tool installed for the current directory.</span></span>
+
+## <a name="see-also"></a><span data-ttu-id="bf7a2-138">Voir aussi</span><span class="sxs-lookup"><span data-stu-id="bf7a2-138">See also</span></span>
+
+- [<span data-ttu-id="bf7a2-139">Outils .NET Core</span><span class="sxs-lookup"><span data-stu-id="bf7a2-139">.NET Core tools</span></span>](global-tools.md)
