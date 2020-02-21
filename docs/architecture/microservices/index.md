@@ -2,12 +2,12 @@
 title: Microservices .NET. Architecture pour les applications .NET en conteneur
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Les microservices sont des services modulables qui peuvent se déployer indépendamment. Les conteneurs Docker (pour Linux et Windows) simplifient le déploiement et les tests en regroupant un service et ses dépendances dans une seule unité, laquelle est ensuite exécutée dans un environnement isolé.
 ms.date: 01/30/2020
-ms.openlocfilehash: 5da167de1ffd2169aea44b9872281e71c87927b1
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 1337fe56e78e03a85627737bd52a089fd946b842
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502630"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543532"
 ---
 # <a name="net-microservices-architecture-for-containerized-net-applications"></a>Microservices .NET : architecture pour les applications .NET en conteneurs
 
@@ -21,7 +21,7 @@ Pour faciliter la prise en main, ce guide met en lumière une application de ré
 
 ## <a name="action-links"></a>Liens d'action
 
-- Téléchargez ce livre électronique dans le format de votre choix (version anglaise uniquement) : | [PDF](https://aka.ms/microservicesebook) | [MOBI](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-mobi) | [EPUB](https://dotnet.microsoft.com/download/thank-you/microservices-architecture-ebook-epub) |
+- Ce livre électronique est également disponible au [Téléchargement](https://aka.ms/microservicesebook) au format PDF (version anglaise uniquement).
 
 - Clonez/dupliquez (fork) l’application de référence [eShopOnContainers sur GitHub](https://github.com/dotnet-architecture/eShopOnContainers)
 
@@ -78,9 +78,7 @@ L’objectif de l’application est de présenter des modèles architecturaux. *
 
 ## <a name="send-us-your-feedback"></a>Envoyez-nous vos commentaires !
 
-Nous avons rédigé ce guide pour vous aider à comprendre l’architecture des applications en conteneur et des microservices dans .NET. Le guide et l’application de référence associée étant voués à évoluer, nous faisons bon accueil à vos commentaires ! Si vous avez des commentaires à formuler sur la façon dont ce guide peut être amélioré, communiquez-les nous à l’adresse :
-
-[dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com)
+Nous avons rédigé ce guide pour vous aider à comprendre l’architecture des applications en conteneur et des microservices dans .NET. Le guide et l’application de référence associée étant voués à évoluer, nous faisons bon accueil à vos commentaires ! Si vous avez des commentaires sur la façon dont ce guide peut être amélioré, envoyez vos commentaires sur <https://aka.ms/ebookfeedback>.
 
 ## <a name="credits"></a>Crédits
 
@@ -149,8 +147,6 @@ Participants et réviseurs :
 > **Miguel Veloso**, ingénieur de développement logiciel chez des concepts simples
 
 ## <a name="copyright"></a>copyright
-
-TÉLÉCHARGEMENT disponible à l’adresse suivante : <https://aka.ms/microservicesebook>
 
 PUBLIÉ PAR
 

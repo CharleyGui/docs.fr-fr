@@ -2,12 +2,12 @@
 title: Présentation des applications cloud natives
 description: Moderniser des applications .NET existantes avec des conteneurs Cloud et Windows Azure | Qu’en est-il des applications Cloud natives ?
 ms.date: 04/28/2018
-ms.openlocfilehash: cf4c3b24a4eeb62ed84a5fccb294b675d38fcc36
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: d2a7f89e347d75ddbdae84c8eb57e32447b83297
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
-ms.locfileid: "72318441"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543545"
 ---
 # <a name="what-about-cloud-native-applications"></a>Présentation des applications cloud natives
 
@@ -41,7 +41,10 @@ L' [application à 12 facteurs](https://12factor.net/) (une collection de modèl
 
 [CNCF (Cloud Native Computing Foundation)](https://www.cncf.io/) est un promoteur principal des principes natifs du Cloud. Microsoft est [membre du CNCF](https://azure.microsoft.com/blog/announcing-cncf/).
 
-Pour obtenir un exemple de définition et pour plus d’informations sur les caractéristiques des applications Cloud natives, consultez l’article Gartner [sur l’architecture et la conception d’applications Cloud natives](https://www.gartner.com/doc/3181919/architect-design-cloudnative-applications). Pour obtenir des conseils spécifiques de Microsoft sur la façon d’implémenter une application Cloud native, consultez [microservices .net : architecture pour les applications .net en conteneur](https://aka.ms/microservicesebook).
+Pour obtenir des instructions détaillées sur la conception et le développement d’applications Cloud natives, lisez les livres électroniques gratuits suivants :
+
+* [Architecture des applications .NET natives Cloud pour Azure](../../cloud-native/introduction.md)
+* [Microservices .net : architecture pour les applications .net en conteneur](../../microservices/index.md).
 
 Le facteur le plus important à prendre en compte si vous migrez une application complète vers le modèle natif du Cloud est que vous devez remanier une architecture basée sur des microservices. Cela nécessite clairement un investissement significatif en développement, en raison du processus de refactorisation important impliqué. Cette option est généralement choisie pour les applications stratégiques qui ont besoin de nouveaux niveaux d’évolutivité et d’agilité à long terme. Toutefois, vous pouvez commencer à passer à Cloud-Native en ajoutant des microservices pour quelques nouveaux scénarios et finalement refactoriser l’application en tant que microservices. Il s’agit d’une approche incrémentielle qui est la meilleure option pour certains scénarios.
 

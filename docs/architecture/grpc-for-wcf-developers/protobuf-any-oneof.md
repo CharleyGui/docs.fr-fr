@@ -2,20 +2,20 @@
 title: Protobuf tous les champs et OneOf pour les types variant-gRPC pour les développeurs WCF
 description: Découvrez comment utiliser le type any et le mot clé OneOf pour représenter des types d’objets variants dans des messages.
 ms.date: 09/09/2019
-ms.openlocfilehash: af3ba22c238aa80a8c6119f62d5d8914770cad68
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 6fe7acbd1ec35289f7ad6f3acee8509ab934619d
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971614"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543194"
 ---
 # <a name="protobuf-any-and-oneof-fields-for-variant-types"></a>Protobuf tous les champs et OneOf pour les types variant
 
-La gestion des types de propriétés dynamiques (autrement dit, les propriétés de type `object`) dans WCF est compliquée. Les sérialiseurs doivent être spécifiés, les attributs [KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) doivent être fournis, et ainsi de suite.
+La gestion des types de propriétés dynamiques (autrement dit, les propriétés de type `object`) dans Windows Communication Foundation (WCF) est complexe. Par exemple, vous devez spécifier des sérialiseurs et fournir des attributs [KnownType](xref:System.Runtime.Serialization.KnownTypeAttribute) .
 
-Protobuf fournit deux options plus simples pour traiter les valeurs qui peuvent être de plus d’un type. Le type de `Any` peut représenter n’importe quel type de message Protobuf connu, tandis que le mot clé `oneof` vous permet de spécifier qu’une seule plage de champs peut être définie dans un message donné.
+La mémoire tampon de protocole (Protobuf) fournit deux options plus simples pour traiter les valeurs qui peuvent être de plusieurs types. Le type de `Any` peut représenter n’importe quel type de message Protobuf connu. Vous pouvez utiliser le mot clé `oneof` pour spécifier qu’une seule plage de champs peut être définie dans un message.
 
-## <a name="any"></a>Tous
+## <a name="any"></a>Quelconque
 
 `Any` est l’un des « types connus » d’Protobuf : une collection de types de messages utiles et réutilisables avec des implémentations dans toutes les langues prises en charge. Pour utiliser le type de `Any`, vous devez importer la définition de la `google/protobuf/any.proto`.
 
@@ -58,11 +58,11 @@ public void FormatChangeNotification(ChangeNotification change)
 }
 ```
 
-Le `Descriptor` champ statique sur chaque type généré est utilisé par le code de réflexion interne de Protobuf pour résoudre `Any` types de champs. Il existe également une méthode `TryUnpack<T>`, mais qui crée une instance non initialisée de `T` même en cas d’échec. il est donc préférable d’utiliser la méthode `Is` comme indiqué ci-dessus.
+Le code de réflexion interne de Protobuf utilise le champ statique `Descriptor` sur chaque type généré pour résoudre `Any` types de champs. Il y a également une méthode `TryUnpack<T>`, mais cela crée une instance non initialisée de `T` même en cas d’échec. Il est préférable d’utiliser la méthode `Is` comme indiqué plus haut.
 
 ## <a name="oneof"></a>Oneof
 
-Les champs OneOf sont une fonctionnalité de langage : le mot clé `oneof` est géré par le compilateur lors de la génération de la classe de message. L’utilisation de `oneof` pour spécifier le message `ChangeNotification` peut se présenter comme suit :
+Les champs OneOf sont une fonctionnalité de langage : le compilateur gère le mot clé `oneof` lors de la génération de la classe message. L’utilisation de `oneof` pour spécifier le message `ChangeNotification` peut se présenter comme suit :
 
 ```protobuf
 message Stock {
@@ -105,7 +105,7 @@ public void FormatChangeNotification(ChangeNotification change)
 }
 ```
 
-La définition d’un champ qui fait partie d’un `oneof` jeu efface automatiquement tous les autres champs de l’ensemble. Vous ne pouvez pas utiliser `repeated` avec `oneof`. Au lieu de cela, vous pouvez créer un message imbriqué avec le champ répété ou le `oneof` défini pour contourner cette limitation.
+La définition de n’importe quel champ qui fait partie d’un `oneof` jeu efface automatiquement tous les autres champs de l’ensemble. Vous ne pouvez pas utiliser `repeated` avec `oneof`. Au lieu de cela, vous pouvez créer un message imbriqué avec le champ répété ou le `oneof` défini pour contourner cette limitation.
 
 >[!div class="step-by-step"]
 >[Précédent](protobuf-reserved.md)
