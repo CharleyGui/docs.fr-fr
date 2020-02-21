@@ -2,15 +2,17 @@
 title: CLI .NET Core
 titleSuffix: ''
 description: Vue d’ensemble de la CLI .NET Core et de ses fonctionnalités.
-ms.date: 08/14/2017
-ms.openlocfilehash: b0a8e0dd8cf77bb6f7567c27e9972f62515ec0f2
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.date: 02/13/2020
+ms.openlocfilehash: 1078d68ddc088274fa14b0094a81765f7af69dad
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920476"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543312"
 ---
 # <a name="net-core-cli-overview"></a>Présentation de CLI .NET Core
+
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
 L’interface de ligne de commande (CLI) .NET Core est un chaîne d’outils multiplateforme pour le développement, la génération, l’exécution et la publication d’applications .NET Core.
 
@@ -20,13 +22,9 @@ Le CLI .NET Core est inclus dans le [Kit SDK .net Core](../sdk.md). Pour savoir 
 
 Les commandes suivantes sont installées par défaut :
 
-<!-- markdownlint-disable MD025 -->
+### <a name="basic-commands"></a>Commandes de base
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
-**Commandes de base**
-
-- [new](dotnet-new.md)
+- [nouveau](dotnet-new.md)
 - [restore](dotnet-restore.md)
 - [build](dotnet-build.md)
 - [publish](dotnet-publish.md)
@@ -34,13 +32,13 @@ Les commandes suivantes sont installées par défaut :
 - [test](dotnet-test.md)
 - [vstest](dotnet-vstest.md)
 - [pack](dotnet-pack.md)
-- [migrate](dotnet-migrate.md)
+- [migrer](dotnet-migrate.md)
 - [clean](dotnet-clean.md)
 - [sln](dotnet-sln.md)
 - [help](dotnet-help.md)
 - [store](dotnet-store.md)
 
-**Commandes de modification de projets**
+### <a name="project-modification-commands"></a>Commandes de modification de projet
 
 - [add package](dotnet-add-package.md)
 - [add reference](dotnet-add-reference.md)
@@ -48,7 +46,7 @@ Les commandes suivantes sont installées par défaut :
 - [remove reference](dotnet-remove-reference.md)
 - [list reference](dotnet-list-reference.md)
 
-**Commandes avancées**
+### <a name="advanced-commands"></a>Commandes avancées
 
 - [nuget delete](dotnet-nuget-delete.md)
 - [nuget locals](dotnet-nuget-locals.md)
@@ -56,64 +54,26 @@ Les commandes suivantes sont installées par défaut :
 - [msbuild](dotnet-msbuild.md)
 - [dotnet install script](dotnet-install-script.md)
 
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
+### <a name="tool-management-commands"></a>Commandes de gestion des outils
 
-**Commandes de base**
+- [installation de l’outil](dotnet-tool-install.md)
+- [liste d’outils](dotnet-tool-list.md)
+- [mise à jour de l’outil](dotnet-tool-update.md)
+- [restauration](global-tools.md#install-a-local-tool) **de l’outil disponible à partir de kit SDK .net Core 3,0**
+- [exécution](global-tools.md#invoke-a-local-tool) **de l’outil disponible à partir de kit SDK .net Core 3,0**
+- [désinstallation de l’outil](dotnet-tool-uninstall.md)
 
-- [new](dotnet-new.md)
-- [restore](dotnet-restore.md)
-- [build](dotnet-build.md)
-- [publish](dotnet-publish.md)
-- [run](dotnet-run.md)
-- [test](dotnet-test.md)
-- [vstest](dotnet-vstest.md)
-- [pack](dotnet-pack.md)
-- [migrate](dotnet-migrate.md)
-- [clean](dotnet-clean.md)
-- [sln](dotnet-sln.md)
-
-**Commandes de modification de projets**
-
-- [add package](dotnet-add-package.md)
-- [add reference](dotnet-add-reference.md)
-- [remove package](dotnet-remove-package.md)
-- [remove reference](dotnet-remove-reference.md)
-- [list reference](dotnet-list-reference.md)
-
-**Commandes avancées**
-
-- [nuget delete](dotnet-nuget-delete.md)
-- [nuget locals](dotnet-nuget-locals.md)
-- [nuget push](dotnet-nuget-push.md)
-- [msbuild](dotnet-msbuild.md)
-- [dotnet install script](dotnet-install-script.md)
-
----
-
-L’interface CLI adopte un modèle d’extensibilité qui vous permet de spécifier des outils supplémentaires pour vos projets. Pour plus d’informations, consultez la rubrique [Modèle d’extensibilité des outils CLI .NET Core](extensibility.md).
+Les outils sont des applications console qui sont installées à partir de packages NuGet et sont appelées à partir de l’invite de commandes. Vous pouvez écrire vous-même des outils ou installer des outils écrits par des tiers. Les outils sont également appelés outils globaux, outils de chemin d’accès d’outil et outils locaux. Pour plus d’informations, consultez [vue d’ensemble des outils .net Core](global-tools.md).
 
 ## <a name="command-structure"></a>Structure de commande
 
 La structure de commande CLI se compose du [pilote (« dotnet »)](#driver), de la [commande](#command) et éventuellement des [arguments](#arguments) et [options](#options) de la commande. Ce modèle apparaît dans la plupart des opérations de l’interface CLI, notamment la création d’une application console et son exécution à partir de la ligne de commande, comme le montrent les commandes suivantes, exécutées à partir d’un répertoire nommé *my_app* :
 
-# <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
-
 ```dotnetcli
 dotnet new console
 dotnet build --output /build_output
 dotnet /build_output/my_app.dll
 ```
-
-# <a name="net-core-1xtabnetcore1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```dotnetcli
-dotnet new console
-dotnet restore
-dotnet build --output /build_output
-dotnet /build_output/my_app.dll
-```
-
----
 
 ### <a name="driver"></a>Pilote
 
@@ -129,7 +89,7 @@ dotnet build
 
 D’abord, le pilote détermine la version du kit SDK à utiliser. S’il n’existe pas de ['global.json'](global-json.md), la dernière version du SDK disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
 
-### <a name="command"></a>Command
+### <a name="command"></a>Commande
 
 La commande exécute une action. Par exemple, `dotnet build` génère le code. `dotnet publish` publie le code. Les commandes sont implémentées comme une application console à l’aide d’une convention `dotnet {command}`.
 
@@ -141,11 +101,7 @@ Les arguments que vous passez sur la ligne de commande sont les arguments de la 
 
 Les options que vous passez sur la ligne de commande sont les options de la commande appelée. Par exemple, lorsque vous exécutez `dotnet publish --output /build_output`, l’option `--output` et sa valeur sont passés à la commande `publish`.
 
-## <a name="migration-from-projectjson"></a>Migration à partir de project.json
-
-Si vous avez utilisé les outils Preview 2 pour produire des projets *project.json*, consultez la rubrique [dotnet migrate](dotnet-migrate.md) pour plus d’informations sur la migration de votre projet vers MSBuild/ *.csproj*. Pour les projets .NET Core créés avant la version des outils de Preview 2, mettez à jour manuellement le projet en suivant les instructions dans [Migration de DNX vers l’interface CLI .NET Core (project.json)](../migration/from-dnx.md), puis utilisez `dotnet migrate` ou mettez directement à niveau vos projets.
-
 ## <a name="see-also"></a>Voir aussi
 
 - [référentiel GitHub dotnet/SDK](https://github.com/dotnet/sdk/)
-- [Guide d’installation de .NET Core](https://aka.ms/dotnetcoregs)
+- [Guide d’installation de .NET Core](../install/sdk.md)

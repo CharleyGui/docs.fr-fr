@@ -2,14 +2,14 @@
 title: Analyseur d’API .NET
 description: Découvrez comment l’analyseur d’API .NET peut aider à détecter les problèmes de compatibilité de plateforme et les API déconseillées.
 author: oliag
-ms.date: 04/26/2019
+ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: efbfa89f431bd02cdf86b8eff8704aec63a29b6c
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: f6cf2d8109c564447972afd18c6d6d587711304b
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124245"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77542622"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -24,7 +24,7 @@ L’analyseur d’API est fourni sous la forme d’un package NuGet [Microsoft.D
 
 - Visual Studio 2017 et versions ultérieures, ou Visual Studio pour Mac (toutes les versions).
 
-## <a name="discovering-deprecated-apis"></a>Découverte des API déconseillées
+## <a name="discover-deprecated-apis"></a>Détecter les API déconseillées
 
 ### <a name="what-are-deprecated-apis"></a>Que sont les API déconseillées ?
 
@@ -36,7 +36,21 @@ La famille .NET est un ensemble de grands produits, qui sont constamment mis à 
 
 L’analyseur d’API utilise des codes d’erreur propres aux API, qui commencent par DE (de l’anglais « Deprecation Error »), ce qui permet de contrôler l’affichage des différents avertissements. Les API déconseillées identifiées par l’analyseur sont définies dans le référentiel [dotnet/plateforme-compat](https://github.com/dotnet/platform-compat).
 
-### <a name="using-the-api-analyzer"></a>Utiliser l’analyseur d’API
+### <a name="add-the-api-analyzer-to-your-project"></a>Ajouter l’analyseur d’API à votre projet
+
+1. Ouvrez Visual Studio.
+2. Ouvrez le projet sur lequel vous souhaitez exécuter l’analyseur.
+3. Dans **Explorateur de solutions**, cliquez avec le bouton droit sur votre projet et choisissez **gérer les packages NuGet**. (Cette option est également disponible dans le menu **Projet**.)
+4. Sous l’onglet Gestionnaire de package NuGet :
+   1. Sélectionnez « nuget.org » comme source du package.
+   2. Accédez à l’onglet **Parcourir** .
+   3. Sélectionnez **Inclure la préversion**.
+   4. Recherchez **Microsoft. dotnet. Analyzers. Compatibility**.
+   5. Sélectionnez ce package dans la liste.
+   6. Sélectionnez le bouton **Installer**. 
+   7. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
+
+### <a name="use-the-api-analyzer"></a>Utiliser l’analyseur d’API
 
 Lorsqu’une API déconseillée, par exemple, <xref:System.Net.WebClient>, est utilisée dans un code, l’analyseur d’API la souligne d’un trait vert ondulé. Lorsque vous placez le curseur sur l’appel d’API, une ampoule donne des informations sur les API déconseillées, comme dans l’exemple suivant :
 
@@ -50,14 +64,14 @@ En cliquant sur l’ID, vous accédez à une page web présentant des informatio
 
 Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >** . Il existe deux moyens de supprimer les avertissements : 
 
-- [localement (dans la source)](#suppressing-warnings-locally) ;
-- [globalement (dans un fichier de suppression)](#suppressing-warnings-globally) – recommandé.
+- [localement (dans la source)](#suppress-warnings-locally) ;
+- [globalement (dans un fichier de suppression)](#suppress-warnings-globally) – recommandé.
 
-### <a name="suppressing-warnings-locally"></a>Supprimer les avertissements localement
+### <a name="suppress-warnings-locally"></a>Supprimer les avertissements localement
 
 Pour supprimer des avertissements localement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >**  > **dans la source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
 
-### <a name="suppressing-warnings-globally"></a>Supprimer les avertissements globalement
+### <a name="suppress-warnings-globally"></a>Supprimer les avertissements globalement
 
 Pour supprimer des avertissements globalement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >**  > **dans le fichier de suppression**.
 
@@ -69,7 +83,7 @@ Un fichier *GlobalSuppressions.cs* est ajouté à votre projet après la premiè
 
 La suppression globale est la méthode recommandée pour garantir une utilisation cohérente de l’API d’un projet à l’autre.
 
-## <a name="discovering-cross-platform-issues"></a>Détecter des problèmes multiplateformes
+## <a name="discover-cross-platform-issues"></a>Détection des problèmes inter-plateformes
 
 Tout comme les API déconseillées, l’analyseur identifie toutes les API non multiplateformes. Par exemple, <xref:System.Console.WindowWidth?displayProperty=nameWithType> fonctionne sous Windows, mais pas sous Linux ou macOS. L’ID de diagnostic apparaît dans la fenêtre **Liste d’erreurs**. Vous pouvez supprimer cet avertissement en cliquant avec le bouton droit et en sélectionnant **Actions rapides et refactorisations**. Contrairement au cas des API déconseillées, dans lequel deux options sont proposées (continuer d’utiliser le membre déconseillé et supprimer les avertissements, ou ne pas l’utiliser du tout), ici, si vous développez votre code pour certaines plateformes seulement, vous pouvez supprimer les avertissements de toutes les autres plateformes sur lesquelles vous n’envisagez pas d’exécuter votre code. Il vous suffit pour cela de modifier votre fichier projet et d’ajouter la propriété `PlatformCompatIgnore`, qui liste toutes les plateformes à ignorer. Les valeurs acceptées sont les suivantes : `Linux`, `macOS` et `Windows`.
 

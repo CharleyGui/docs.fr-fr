@@ -1,13 +1,13 @@
 ---
 title: Attributs
 description: Découvrez comment F# les attributs permettent d’appliquer des métadonnées à une construction de programmation.
-ms.date: 05/16/2016
-ms.openlocfilehash: 1e42dc61d44f31930a7b34799f28a68a2db69c8c
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.date: 02/19/2020
+ms.openlocfilehash: 77b84713ab9360166b3634d406993cf209c8a623
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77504114"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543636"
 ---
 # <a name="attributes"></a>Attributs
 
@@ -70,28 +70,28 @@ Bien qu’il ne soit généralement pas nécessaire de spécifier explicitement 
   </tr>
   <tr>
     <td>assembly</td>
-    <td><pre lang="fsharp"><code>[&lt;assembly: AssemblyVersionAttribute("1.0.0.0")&gt;]</code></pre></td>
+    <td><pre><code class="lang-fsharp">[&lt;assembly: AssemblyVersion("1.0.0.0")&gt;]</code></pre></td>
   </tr>
   <tr>
     <td>return</td>
-    <td><pre lang="fsharp"><code>let function1 x : [&lt;return: Obsolete&gt;] int = x + 1</code></pre></td>
+    <td><pre><code class="lang-fsharp">let function1 x : [&lt;return: MyCustomAttributeThatWorksOnReturns&gt;] int = x + 1</code></pre></td>
   </tr>
   <tr>
     <td>field</td>
-    <td><pre lang="fsharp"><code>[&lt;field: DefaultValue&gt;] val mutable x: int</code></pre></td>
+    <td><pre><code class="lang-fsharp">[&lt;DefaultValue&gt;] val mutable x: int</code></pre></td>
   </tr>
   <tr>
     <td>propriété</td>
-    <td><pre lang="fsharp"><code>[&lt;property: Obsolete&gt;] this.MyProperty = x</code></pre></td>
+    <td><pre><code class="lang-fsharp">[&lt;Obsolete&gt;] this.MyProperty = x</code></pre></td>
   </tr>
   <tr>
     <td>param</td>
-    <td><pre lang="fsharp"><code>member this.MyMethod([&lt;param: Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td>
+    <td><pre><code class="lang-fsharp">member this.MyMethod([&lt;Out&gt;] x : ref&lt;int&gt;) = x := 10</code></pre></td>
   </tr>
   <tr>
     <td>type</td>
     <td>
-        <pre lang="fsharp"><code>
+        <pre><code class="lang-fsharp">
 [&lt;type: StructLayout(LayoutKind.Sequential)&gt;]
 type MyStruct =
   struct

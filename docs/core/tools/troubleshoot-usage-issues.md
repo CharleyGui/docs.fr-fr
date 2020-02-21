@@ -2,13 +2,13 @@
 title: Résoudre les problèmes d’utilisation de l’outil .NET Core
 description: Découvrez les problèmes courants liés à l’exécution des outils .NET Core et des solutions possibles.
 author: kdollard
-ms.date: 09/23/2019
-ms.openlocfilehash: 45139c3441b84964b937d5d1cc63a018f8d1f0fb
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.date: 02/14/2020
+ms.openlocfilehash: ab5d1be8f201ea283f8537f18886feab46157127
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451075"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543272"
 ---
 # <a name="troubleshoot-net-core-tool-usage-issues"></a>Résoudre les problèmes d’utilisation de l’outil .NET Core
 
@@ -59,7 +59,7 @@ Le nom de l’exécutable détermine la façon dont vous appelez l’outil. Le t
   * Si vous avez installé le kit de développement logiciel (SDK) .NET Core 3,0 et que vous avez défini la variable d’environnement `DOTNET_ADD_GLOBAL_TOOLS_TO_PATH` sur `false`.
   * Si vous avez installé le kit de développement logiciel (SDK) .NET Core 2,2 ou des versions antérieures, et que vous avez défini la variable d’environnement `DOTNET_SKIP_FIRST_TIME_EXPERIENCE` sur `true`.
 
-  Pour plus d’informations sur les outils globaux, consultez [vue d’ensemble des outils globaux .net Core](global-tools.md).
+  Pour plus d’informations, consultez [outils .net Core](global-tools.md).
 
 * Outils locaux
 
@@ -137,9 +137,6 @@ Les outils .NET Core qui sont en version préliminaire doivent être spécifiés
 dotnet tool install -g --version 1.1.0-pre <toolName>
 ```
 
-> [!NOTE]
-> L’équipe CLI .NET Core prévoit d’ajouter un commutateur `--preview` dans une prochaine version pour faciliter ce travail.
-
 ### <a name="package-isnt-a-net-core-tool"></a>Le package n’est pas un outil .NET Core
 
 * Un package NuGet portant ce nom a été trouvé, mais il ne s’agissait pas d’un outil .NET Core.
@@ -162,4 +159,4 @@ L’échec est généralement dû au fait que le nom de l’outil n’est pas co
 
 ## <a name="see-also"></a>Voir aussi
 
-* [Vue d’ensemble des outils globaux .NET Core](global-tools.md)
+* [Outils .NET Core](global-tools.md)

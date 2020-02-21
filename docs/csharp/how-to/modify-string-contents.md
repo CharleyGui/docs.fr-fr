@@ -3,12 +3,12 @@ title: Comment modifier le contenu d’une C# chaîne-Guide
 ms.date: 02/26/2018
 helpviewer_keywords:
 - strings [C#], modifying
-ms.openlocfilehash: 539e313173d46c2c92399cefe94207c8beed03b4
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: ecedd9a9027aa925c753f8e187d611b19d3db991
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973253"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543259"
 ---
 # <a name="how-to-modify-string-contents-in-c"></a>Comment modifier le contenu d’une chaîne en C\#
 
@@ -62,12 +62,13 @@ L’exemple suivant montre comment remplacer un jeu de caractères dans une cha�
 
 [!code-csharp-interactive[replace creates a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#6)]
 
-## <a name="unsafe-modifications-to-string"></a>Modifications unsafe d’une chaîne
+## <a name="programmatically-build-up-string-content"></a>Créer un contenu de chaîne par programmation
 
-Le code **unsafe** vous permet de modifier une chaîne « sur place » une fois celle-ci créée. Ce code ignore les nombreuses fonctionnalités de .NET conçues pour réduire certains types de bogues dans le code. Vous devez utiliser du code unsafe pour modifier une chaîne sur place, car la classe string est par conception un type **immuable**. Une fois la chaîne créée, sa valeur ne change pas. Pour contourner cette propriété, le code unsafe accède à la mémoire utilisée par un `string` et la modifie sans recourir aux méthodes `string` normales.
-L’exemple suivant est fourni dans les rares cas où vous souhaiteriez modifier une chaîne sur place à l’aide de code unsafe. L’exemple montre comment utiliser le mot clé `fixed`. Le mot clé `fixed` empêche le garbage collector (GC) de déplacer l’objet string en mémoire pendant que le code accède à la mémoire à l’aide du pointeur unsafe. Il montre également un effet secondaire possible des opérations risquées effectuées sur les chaînes, lié à la façon dont le compilateur C# stocke (intègre) les chaînes en interne. En général, il est préférable de ne pas utiliser cette technique, sauf en cas d’absolue nécessité. Pour plus d’informations, consultez les articles sur [unsafe](../language-reference/keywords/unsafe.md) et [fixed](../language-reference/keywords/fixed-statement.md). Les informations de référence sur l’API pour <xref:System.String.Intern%2A> comprennent des informations sur la centralisation des chaînes.
+Étant donné que les chaînes sont immuables, les exemples précédents créent tous des chaînes temporaires ou des tableaux de caractères. Dans les scénarios à hautes performances, il peut être souhaitable d’éviter ces allocations de tas. .NET Core fournit une méthode <xref:System.String.Create%2A?displayProperty=nameWithType> qui vous permet de remplir par programmation le contenu des caractères d’une chaîne via un rappel tout en évitant les allocations de chaînes temporaires intermédiaires.
 
-[!code-csharp[unsafe ways to create a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+[!code-csharp[using string.Create to programmatically build the string content for a new string](../../../samples/snippets/csharp/how-to/strings/ModifyStrings.cs#7)]
+
+Vous pouvez modifier une chaîne dans un bloc fixe avec du code non sécurisé, mais il est **fortement** déconseillé de modifier le contenu de la chaîne après la création d’une chaîne. Cela entraînera une rupture des choses de manière imprévisible. Par exemple, si quelqu’un met en interne une chaîne qui a le même contenu que le vôtre, il obtiendra votre copie et ne s’attendra pas à ce que vous modifiiez sa chaîne.
 
 Vous pouvez essayer ces exemples en examinant le code dans notre [dépôt GitHub](https://github.com/dotnet/samples/tree/master/snippets/csharp/how-to/strings). Vous pouvez aussi télécharger les exemples [sous forme de fichier zip](https://github.com/dotnet/samples/raw/master/snippets/csharp/how-to/strings.zip).
 

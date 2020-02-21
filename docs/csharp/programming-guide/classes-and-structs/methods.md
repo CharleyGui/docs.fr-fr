@@ -5,12 +5,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 8c90f06bfadc528bd9575ead30e6b01263055fe8
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 8348e080d833e79dd364aee511ac7d05fb53d1cc
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76743907"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543558"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
@@ -21,7 +21,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 ## <a name="method-signatures"></a>Signatures de méthode
 
-Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md) ou un [struct](../../language-reference/keywords/struct.md) en spécifiant le niveau d'accès comme `public` ou `private`, les modificateurs facultatifs comme `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et les éventuels paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
+Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/keywords/struct.md)ou une [interface](../interfaces/index.md) en spécifiant le niveau d’accès, tel que `public` ou `private`, des modificateurs facultatifs tels que `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
 
 > [!NOTE]
 > Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.
@@ -60,7 +60,7 @@ L'exemple produit essentiellement la même chose que l'exemple précédent, dans
 
 Pour plus d’informations sur le passage de types référence par référence et par valeur, consultez [Passage de paramètres de type référence ](./passing-reference-type-parameters.md) et [Types référence](../../language-reference/keywords/reference-types.md).
 
-## <a name="return-values"></a>Valeurs de retour
+## <a name="return-values"></a>Valeurs retournées
 
 Les méthodes peuvent retourner une valeur à l'appelant. Si le type de retour, le type répertorié avant le nom de la méthode, n'est pas `void`, la méthode peut retourner la valeur à l'aide du mot clé `return` . Une instruction avec le mot clé `return` suivi d'une valeur qui correspond au type de retour retourne cette valeur à l'appelant de la méthode.
 
@@ -132,7 +132,7 @@ La méthode `startButton_Click` est un exemple de méthode async dont le type de
 
 [!code-csharp[csAsyncMethod#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csasyncmethod/cs/mainwindow.xaml.cs#2)]
 
-Une méthode async ne peut pas déclarer de paramètres [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md), mais elle peut appeler des méthodes qui ont ces paramètres.
+Une méthode async ne peut déclarer aucun paramètre [ref](../../language-reference/keywords/ref.md) ou [out](../../language-reference/keywords/out-parameter-modifier.md), mais elle peut appeler des méthodes qui ont de tels paramètres.
 
 Pour plus d’informations sur les méthodes async, consultez [Programmation asynchrone avec async et await](../concepts/async/index.md), [Flux de contrôle dans les programmes Async](../concepts/async/control-flow-in-async-programs.md) et [Types de retour Async](../concepts/async/async-return-types.md).
 
@@ -157,7 +157,7 @@ Un itérateur exécute une itération personnalisée sur une collection, comme u
 
 Vous appelez un itérateur depuis le code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md) .
 
-Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
+Le type de retour d'un itérateur peut être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>ou <xref:System.Collections.Generic.IEnumerator%601>.
 
 Pour plus d'informations, consultez [Itérateurs](../concepts/iterators.md).
 

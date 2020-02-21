@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: d36909e06bd9a3de0940c4c1b2b9eacbf9cafe7f
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: ba50eb222d9eab6bffbb8ebfdf0ecf47951ce719
+ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740593"
+ms.lasthandoff: 02/21/2020
+ms.locfileid: "77543519"
 ---
 # <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
 
@@ -69,6 +69,8 @@ export PATH=$PATH:$HOME/dotnet
 >
 > En outre, ajoutez `export DOTNET_ROOT=$HOME/dotnet` à la fin du fichier.
 
+Cette approche vous permet d’installer différentes versions dans des emplacements distincts et de choisir explicitement celle qui doit être utilisée par l’application.
+
 ::: zone-end
 
 ::: zone pivot="os-windows"
@@ -85,6 +87,25 @@ dotnet-install.ps1 -Channel 3.1 -Runtime aspnetcore
 
 > [!NOTE]
 > La commande ci-dessus installe le runtime ASP.NET Core pour une compatibilité maximale. Le runtime ASP.NET Core comprend également le Runtime .NET Core standard.
+
+## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
+
+Pour extraire le runtime et rendre les commandes CLI .NET Core disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire .net core. Ensuite, créez un répertoire dans lequel effectuer l’installation, par exemple `%USERPROFILE%\dotnet`. Enfin, extrayez le fichier zip téléchargé dans ce répertoire.
+
+Par défaut, les commandes et applications CLI .NET Core n’utilisent pas .NET Core de cette manière. Vous devez choisir explicitement de l’utiliser. Pour ce faire, modifiez les variables d’environnement à l’aide desquelles une application est démarrée :
+
+```console
+set DOTNET_ROOT=%USERPROFILE%\dotnet
+set PATH=%USERPROFILE%\dotnet;%PATH%
+```
+
+Cette approche vous permet d’installer plusieurs versions dans des emplacements distincts, puis de choisir explicitement l’emplacement d’installation qu’une application doit utiliser en exécutant l’application avec des variables d’environnement qui pointent à cet emplacement.
+
+Même lorsque ces variables d’environnement sont définies, .NET Core prend toujours en compte l’emplacement d’installation globale par défaut lors de la sélection du meilleur Framework pour l’exécution de l’application. La valeur par défaut est généralement `C:\Program Files\dotnet`, que les programmes d’installation utilisent. Vous pouvez indiquer à l’exécution d’utiliser uniquement l’emplacement d’installation personnalisé en définissant également cette variable d’environnement :
+
+```console
+set DOTNET_MULTILEVEL_LOOKUP=0
+```
 
 ::: zone-end
 
@@ -124,6 +145,6 @@ Microsoft fournit des images adaptées à des scénarios particuliers. Par exemp
 
 Pour plus d’informations sur l’utilisation de .NET Core dans un conteneur d’ancrage, consultez [Introduction à .net et à l’ancreur](../docker/introduction.md) et aux [exemples](https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md).
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 - [Comment vérifier si .net Core est déjà installé](how-to-detect-installed-versions.md).
