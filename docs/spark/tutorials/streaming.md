@@ -5,18 +5,18 @@ author: mamccrea
 ms.author: mamccrea
 ms.date: 12/04/2019
 ms.topic: tutorial
-ms.openlocfilehash: d0fe79ef79125c06be9acd8ba80001a33e150adb
-ms.sourcegitcommit: 32a575bf4adccc901f00e264f92b759ced633379
+ms.openlocfilehash: 83d44af080d95ab6f9311ddd3ca4860806757436
+ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/04/2019
-ms.locfileid: "74802846"
+ms.lasthandoff: 02/20/2020
+ms.locfileid: "77504046"
 ---
 # <a name="tutorial-structured-streaming-with-net-for-apache-spark"></a>Didacticiel : diffusion en continu structurée avec .NET pour Apache Spark 
 
 Ce didacticiel vous apprend à appeler Spark Structured streaming à l’aide de .NET pour Apache Spark. Spark Structured streaming est la prise en charge par Apache Spark du traitement des flux de données en temps réel. Le traitement des flux de données consiste à analyser les données actives à mesure qu’elles sont produites.
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 
 > [!div class="checklist"]
 >
@@ -24,15 +24,15 @@ Dans ce didacticiel, vous apprendrez à :
 > * Utiliser netcat pour créer un flux de données
 > * Utiliser des fonctions définies par l’utilisateur et SparkSQL pour analyser les données de streaming
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
 S’il s’agit de votre première application .NET pour Apache Spark, commencez par le [didacticiel prise en main](get-started.md) pour vous familiariser avec les principes de base.
 
-## <a name="create-a-console-application"></a>Créer une application console
+## <a name="create-a-console-application"></a>Création d’une application console
 
 1. À l’invite de commandes, exécutez les commandes suivantes pour créer une nouvelle application console :
 
-   ```console
+   ```dotnetcli
    dotnet new console -o mySparkStreamingApp
    cd mySparkStreamingApp
    ```
@@ -41,7 +41,7 @@ S’il s’agit de votre première application .NET pour Apache Spark, commencez
 
 1. Pour utiliser .NET pour Apache Spark dans une application, installez le package Microsoft. Spark. Dans votre console, exécutez la commande suivante :
 
-   ```console
+   ```dotnetcli
    dotnet add package Microsoft.Spark
    ```
 
@@ -55,7 +55,7 @@ L’un des moyens les plus populaires pour tester le traitement des flux est d�
 
 2. Pour démarrer une nouvelle connexion, ouvrez une nouvelle console et exécutez la commande suivante, qui se connecte à localhost sur le port 9999.
 
-   Sur Windows :
+   Sur Windows :
 
    ```console
    nc -vvv -l -p 9999
@@ -166,7 +166,7 @@ Ce didacticiel utilise l’exemple [StructuredNetworkCharacterCount.cs](https://
 * [StructuredNetworkWordCountWindowed.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredNetworkWordCountWindowed.cs): nombre de mots sur les données avec une logique de fenêtrage
 * [StructuredKafkaWordCount.cs](https://github.com/dotnet/spark/blob/master/examples/Microsoft.Spark.CSharp.Examples/Sql/Streaming/StructuredKafkaWordCount.cs): nombre de mots sur les données diffusées en continu à partir de Kafka
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Passez à l’article suivant pour apprendre à déployer votre application .NET pour Apache Spark sur Databricks.
 > [!div class="nextstepaction"]
