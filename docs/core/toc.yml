@@ -250,17 +250,23 @@
   items:
     - name: Vue d'ensemble
       href: tools/index.md
-    - name: Outils
+    - name: Outils globaux et locaux
       expanded: true
       items:
-        - name: Outils globaux
-          expanded: true
+        - name: Guide pratique pour gérer les outils
+          href: tools/global-tools.md
+        - name: Tutoriels
           items:
-            - name: Vue d'ensemble
-              href: tools/global-tools.md
-            - name: Créer un outil global
+            - name: Créer un outil
+              displayName: tools
               href: tools/global-tools-how-to-create.md
-        - name: Résoudre les problèmes d’utilisation des outils
+            - name: Installer et utiliser un outil global
+              displayName: tools
+              href: tools/global-tools-how-to-use.md
+            - name: Installer et utiliser un outil local
+              displayName: tools
+              href: tools/local-tools-how-to-use.md
+        - name: Dépanner les outils
           href: tools/troubleshoot-usage-issues.md
     - name: Accès avec élévation des privilèges
       href: tools/elevated-access.md
@@ -320,6 +326,10 @@
               href: tools/dotnet-tool-install.md
             - name: "dotnet\_tool\_list"
               href: tools/dotnet-tool-list.md
+            - name: dotnet tool restore
+              href: tools/dotnet-tool-restore.md
+            - name: dotnet tool run
+              href: tools/dotnet-tool-run.md
             - name: dotnet tool uninstall
               href: tools/dotnet-tool-uninstall.md
             - name: "dotnet\_tool update"
@@ -398,7 +408,7 @@
           href: dependency-loading/loading-resources.md
         - name: Charger des bibliothèques non managées
           href: dependency-loading/loading-unmanaged.md
-    - name: Didacticiels
+    - name: Tutoriels
       items:
         - name: Créer une application .NET Core avec des plug-ins
           href: tutorials/creating-app-with-plugin-support.md
