@@ -49,25 +49,7 @@
     - name: Installer la fonctionnalité IntelliSense localisée
       href: install/localized-intellisense.md
 - name: Prise en main
-  items:
-    - name: Prise en main
-      href: get-started.md
-    - name: 'Prise en main de C# et Visual Studio Code'
-      href: tutorials/with-visual-studio-code.md
-    - name: Bien démarrer avec .NET Core sur macOS en utilisant Visual Studio Code
-      href: tutorials/using-on-macos.md
-    - name: Créer votre première application console dans Visual Studio
-      href: tutorials/with-visual-studio.md
-    - name: Déboguer une application en utilisant Visual Studio
-      href: tutorials/debugging-with-visual-studio.md
-    - name: Publier une application avec Visual Studio
-      href: tutorials/publishing-with-visual-studio.md
-    - name: Créer une bibliothèque .NET Standard dans Visual Studio
-      href: tutorials/library-with-visual-studio.md
-    - name: Tester une bibliothèque .NET Standard dans Visual Studio
-      href: tutorials/testing-library-with-visual-studio.md
-    - name: Consommer une bibliothèque .NET Standard dans Visual Studio
-      href: tutorials/consuming-library-with-visual-studio.md
+  href: get-started.md
 - name: Nouveautés de .NET Core
   items:
     - name: "Nouveautés de .NET Core\_3.1"
@@ -87,12 +69,28 @@
   items:
     - name: Vue d'ensemble
       href: tutorials/index.md
-    - name: Bien démarrer avec .NET Core à l’aide de Visual Studio pour Mac
-      href: tutorials/using-on-mac-vs.md
-    - name: Générer une solution .NET Core complète sur macOS
-      href: tutorials/using-on-mac-vs-full-solution.md
+    - name: Bien démarrer avec .NET Core à l’aide de Visual Studio
+      href: tutorials/with-visual-studio.md
+    - name: Bien démarrer avec .NET Core à l’aide de Visual Studio Code
+      href: tutorials/with-visual-studio-code.md
     - name: Bien démarrer avec .NET Core à l’aide de l’interface CLI
       href: tutorials/cli-create-console-app.md
+    - name: Bien démarrer avec .NET Core à l’aide de Visual Studio Code sur macOS
+      href: tutorials/using-on-macos.md
+    - name: Bien démarrer avec .NET Core à l’aide de Visual Studio pour Mac
+      href: tutorials/using-on-mac-vs.md
+    - name: Déboguer une application en utilisant Visual Studio
+      href: tutorials/debugging-with-visual-studio.md
+    - name: Publier une application avec Visual Studio
+      href: tutorials/publishing-with-visual-studio.md
+    - name: Créer une bibliothèque .NET Standard dans Visual Studio
+      href: tutorials/library-with-visual-studio.md
+    - name: Tester une bibliothèque .NET Standard dans Visual Studio
+      href: tutorials/testing-library-with-visual-studio.md
+    - name: Consommer une bibliothèque .NET Standard dans Visual Studio
+      href: tutorials/consuming-library-with-visual-studio.md
+    - name: Générer une solution .NET Core complète sur macOS
+      href: tutorials/using-on-mac-vs-full-solution.md
     - name: "Organiser et tester des projets avec l’interface\_CLI .NET Core"
       href: tutorials/testing-with-cli.md
     - name: Développer des bibliothèques avec des outils multiplateformes
@@ -408,7 +406,7 @@
           href: dependency-loading/loading-resources.md
         - name: Charger des bibliothèques non managées
           href: dependency-loading/loading-unmanaged.md
-    - name: Tutoriels
+    - name: Didacticiels
       items:
         - name: Créer une application .NET Core avec des plug-ins
           href: tutorials/creating-app-with-plugin-support.md
