@@ -3,12 +3,12 @@ title: Vue d’ensemble du SDK de projet .NET Core
 description: En savoir plus sur les kits de développement logiciel (SDK) de projet .NET Core.
 ms.date: 02/02/2020
 ms.topic: conceptual
-ms.openlocfilehash: b1b839f81b1b4a8d20dbb34d3d2fc000c64acb8a
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: c41b25bf7933e7b1f6cb50da5e52dc0b312f5c74
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77453803"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626248"
 ---
 # <a name="net-core-project-sdks"></a>Kits de développement logiciel (SDK) de projet .NET Core
 
@@ -32,7 +32,7 @@ Vous pouvez également créer votre propre kit de développement logiciel (SDK) 
 
 ## <a name="project-files"></a>Fichiers projet
 
-Les projets .NET Core sont basés sur le format [MSBuild](/visualstudio/msbuild/msbuild) . Les fichiers projet, qui ont des extensions telles que C# *. csproj* pour les projets F# et *. fsproj* pour les projets, sont au format XML. L’élément racine d’un fichier projet MSBuild est l’élément de [projet](/msbuild/project-element-msbuild) . L’élément `Project` a un attribut `Sdk` facultatif qui spécifie le kit de développement logiciel (SDK) et la version à utiliser. Pour utiliser les outils .NET Core et générer votre code, affectez à l’attribut `Sdk` l’un des ID figurant dans le tableau kits de développement logiciel ( [SDK) disponibles](#available-sdks) .
+Les projets .NET Core sont basés sur le format [MSBuild](/visualstudio/msbuild/msbuild) . Les fichiers projet, qui ont des extensions telles que C# *. csproj* pour les projets F# et *. fsproj* pour les projets, sont au format XML. L’élément racine d’un fichier projet MSBuild est l’élément de [projet](/visualstudio/msbuild/project-element-msbuild) . L’élément `Project` a un attribut `Sdk` facultatif qui spécifie le kit de développement logiciel (SDK) et la version à utiliser. Pour utiliser les outils .NET Core et générer votre code, affectez à l’attribut `Sdk` l’un des ID figurant dans le tableau kits de développement logiciel ( [SDK) disponibles](#available-sdks) .
 
 ```xml
 <Project Sdk="Microsoft.NET.Sdk">

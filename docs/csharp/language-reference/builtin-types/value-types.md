@@ -8,16 +8,16 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: 6b96d65f657f2af1af5c9a245e956640ee06260e
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 76f4a3ed929e3ac8e3e6cc74158e75af7a6c8cf2
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76748516"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625945"
 ---
 # <a name="value-types-c-reference"></a>Types valeur (C# référence)
 
-Les types *valeur* et les [types référence](../keywords/reference-types.md) sont les deux catégories C# principales de types. Une variable d’un type valeur contient une instance du type. Cela diffère d’une variable d’un type référence, qui contient une référence à une instance du type. Par défaut, lors de l' [assignation](../operators/assignment-operator.md), le passage d’un argument à une méthode ou le retour d’un résultat de méthode, les valeurs des variables sont copiées. Dans le cas des variables de type valeur, les instances de type correspondantes sont copiées. L’exemple suivant illustre ce comportement :
+Les types *valeur* et les [types référence](../keywords/reference-types.md) sont les deux catégories C# principales de types. Une variable d’un type valeur contient une instance du type. Cela diffère d’une variable d’un type référence, qui contient une référence à une instance du type. Par défaut, lors de l' [assignation](../operators/assignment-operator.md), en passant un argument à une méthode et en retournant un résultat de méthode, les valeurs des variables sont copiées. Dans le cas des variables de type valeur, les instances de type correspondantes sont copiées. L’exemple suivant illustre ce comportement :
 
 [!code-csharp[copy of values](~/samples/csharp/language-reference/builtin-types/ValueTypes.cs#ValueTypeCopied)]
 
@@ -34,7 +34,7 @@ Si un type valeur contient un membre de données d’un type référence, seule 
 
 Un type valeur peut être l’un des deux types suivants :
 
-- [type structure](../keywords/struct.md), qui encapsule les données et les fonctionnalités associées
+- [type structure](struct.md), qui encapsule les données et les fonctionnalités associées
 - [type énumération](enum.md), qui est défini par un ensemble de constantes nommées et qui représente un choix ou une combinaison de choix
 
 Un [type valeur nullable](nullable-value-types.md) `T?` représente toutes les valeurs de son type valeur sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Vous ne pouvez pas assigner `null` à une variable d’un type valeur, sauf s’il s’agit d’un type valeur Nullable.

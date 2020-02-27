@@ -5,18 +5,18 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: 95735d5032a8896570918b991f12b853af88fb68
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a2f5300f9647823cf2c9ac2a4a5c7c888c7dd245
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705481"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626579"
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
 Une définition de classe ou de struct s’apparente à un plan qui spécifie ce que le type peut faire. Un objet est fondamentalement un bloc de mémoire qui a été alloué et configuré selon le plan. Un programme peut créer de nombreux objets de la même classe. Les objets sont également appelés instances. Ils peuvent être stockés dans une variable nommée, dans un tableau ou dans une collection. Le code client est le code qui utilise ces variables pour appeler les méthodes et accéder aux propriétés publiques de l’objet. Dans un langage orienté objet tel que C#, un programme classique se compose de plusieurs objets qui interagissent de façon dynamique.  
   
 > [!NOTE]
-> Les types statiques se comportent différemment de ce qui est décrit ici. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).
+> Les types statiques se comportent différemment de ce qui est décrit ici. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md).
   
 ## <a name="struct-instances-vs-class-instances"></a>Instances struct et instances de classe  
  Étant donné que les classes sont des types référence, une variable d’un objet de classe conserve une référence à l’adresse de l’objet sur le tas managé. Si un deuxième objet du même type est assigné au premier objet, les deux variables font référence à l’objet à cette adresse. Ce point est abordé en détail plus loin dans cette rubrique.  
@@ -47,8 +47,8 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
   
 - Pour déterminer si les valeurs des champs dans deux instances de classe sont égales, vous pouvez utiliser la méthode <xref:System.Object.Equals%2A> ou l’[opérateur ==](../../language-reference/operators/equality-operators.md#equality-operator-). Toutefois, utilisez-les uniquement si la classe les a substitués ou surchargés pour fournir une définition personnalisée de ce que signifie « égalité » pour les objets de ce type. La classe peut également implémenter l’interface <xref:System.IEquatable%601> ou <xref:System.Collections.Generic.IEqualityComparer%601>. Les deux interfaces fournissent des méthodes qui peuvent être utilisées pour tester l’égalité des valeurs. Quand vous concevez vos propres classes qui substituent `Equals`, veillez à suivre les instructions indiquées dans [comment définir l’égalité des valeurs pour un type](../statements-expressions-operators/how-to-define-value-equality-for-a-type.md) et <xref:System.Object.Equals%28System.Object%29?displayProperty=nameWithType>.
   
-## <a name="related-sections"></a>Rubriques connexes  
- Pour plus d'informations, consultez .  
+## <a name="related-sections"></a>Sections connexes  
+ Pour plus d'informations :  
   
 - [Classes](./classes.md)  
   
@@ -65,7 +65,7 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 - [Guide de programmation C#](../index.md)
 - [object](../../language-reference/builtin-types/reference-types.md)
 - [Héritage](./inheritance.md)
-- [classe](../../language-reference/keywords/class.md)
-- [struct](../../language-reference/keywords/struct.md)
-- [new, opérateur](../../language-reference/operators/new-operator.md)
+- [class](../../language-reference/keywords/class.md)
+- [struct](../../language-reference/builtin-types/struct.md)
+- [Opérateur new](../../language-reference/operators/new-operator.md)
 - [Système de type commun](../../../standard/base-types/common-type-system.md)

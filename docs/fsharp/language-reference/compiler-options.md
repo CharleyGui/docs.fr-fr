@@ -2,16 +2,18 @@
 title: Options du compilateur
 description: Utilisez F# les options de ligne de commande du compilateur pour contrôler la F# compilation de vos applications et bibliothèques.
 ms.date: 12/10/2018
-ms.openlocfilehash: d0f4d1ca5ae45af25d6c304a2920d5c457700b1a
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: ecaae538a5db2f5dfefa79cb8e7b8b51d39c440d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73424758"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628876"
 ---
 # <a name="compiler-options"></a>Options du compilateur
 
-Cette rubrique décrit les F# options de ligne de commande du compilateur FSC. exe. L’environnement de compilation peut également être contrôlé en définissant les propriétés du projet.
+Cette rubrique décrit les F# options de ligne de commande du compilateur FSC. exe.
+
+L’environnement de compilation peut également être contrôlé en définissant les propriétés du projet. Pour les projets ciblant .NET Core, la propriété « Other Flags », `<OtherFlags>...</OtherFlags>` dans `.fsproj`, est utilisée pour spécifier des options de ligne de commande supplémentaires.
 
 ## <a name="compiler-options-listed-alphabetically"></a>Options du compilateur classées par ordre alphabétique
 
@@ -26,7 +28,7 @@ Le tableau suivant présente les options du compilateur classées par ordre alph
 |`--crossoptimize[+|-]`|Active ou désactive les optimisations entre modules.|
 |<code>--delaysign[+&#124;-]</code>|Diffère la signature de l’assembly en utilisant uniquement la partie publique de la clé de nom fort.<br /><br />Cette option de compilateur est équivalente C# à l’option de compilateur du même nom. Pour plus d’informations, [ &#47;consultez &#40;options&#35; &#41;du compilateur delaysign C](https://msdn.microsoft.com/library/ta1sxwy8.aspx).|
 |<code>--checked[+&#124;-]</code>|Active ou désactive la génération de contrôles de dépassement de capacité.<br /><br />Cette option de compilateur est équivalente C# à l’option de compilateur du même nom. Pour plus d’informations, [ &#47;consultez &#40;options&#35; &#41;du compilateur C vérifiées](https://msdn.microsoft.com/library/h25wtyxf.aspx).|
-|<code>--debug[+&#124;-]</code><br /><br /><code>-g[+&#124;-]</code><br /><br /><code>--debug:[full&#124;pdbonly]</code><br /><br /><code>-g: [full&#124;pdbonly]</code>|Active ou désactive la génération d’informations de débogage, ou spécifie le type d’informations de débogage à générer. La valeur par défaut est Full, ce qui permet l’attachement à un programme en cours d’exécution. Choisissez **pdbonly** pour obtenir des informations de débogage limitées stockées dans un fichier PDB (base de données du programme).<br /><br />Équivaut à l' C# option de compilateur du même nom. Pour plus d'informations, voir<br /><br />[déboguez &#40;les&#41;options du compilateur C.&#35; &#47;](https://msdn.microsoft.com/library/8cw0bt21.aspx)|
+|<code>--debug[+&#124;-]</code><br /><br /><code>-g[+&#124;-]</code><br /><br /><code>--debug:[full&#124;pdbonly]</code><br /><br /><code>-g: [full&#124;pdbonly]</code>|Active ou désactive la génération d’informations de débogage, ou spécifie le type d’informations de débogage à générer. La valeur par défaut est Full, ce qui permet l’attachement à un programme en cours d’exécution. Choisissez **pdbonly** pour obtenir des informations de débogage limitées stockées dans un fichier PDB (base de données du programme).<br /><br />Équivaut à l' C# option de compilateur du même nom. Pour plus d'informations, consultez la rubrique<br /><br />[déboguez &#40;les&#41;options du compilateur C.&#35; &#47;](https://msdn.microsoft.com/library/8cw0bt21.aspx)|
 |`--define:symbol`<br /><br />`-d:symbol`|Définit un symbole à utiliser dans la compilation conditionnelle.|
 |<code>--deterministic[+&#124;-]</code>|Produit un assembly déterministe (y compris le GUID de la version du module et l’horodateur). Cette option ne peut pas être utilisée avec les numéros de version génériques et ne prend en charge que les types de débogage intégrés et portables|
 |`--doc:xmldoc-filename`|Indique au compilateur de générer des commentaires de documentation XML dans le fichier spécifié. Pour plus d’informations, consultez [XML Documentation](xml-documentation.md).<br /><br />Cette option de compilateur est équivalente C# à l’option de compilateur du même nom. Pour plus d’informations, [ &#47;consultez &#40;les&#35; options&#41;du compilateur doc C](https://msdn.microsoft.com/library/3260k4x7.aspx).|
@@ -69,7 +71,7 @@ Le tableau suivant présente les options du compilateur classées par ordre alph
 
 ## <a name="related-articles"></a>Articles connexes
 
-|Titre|Description|
+|Intitulé|Description|
 |-----|-----------|
 |[Options F# Interactive](fsharp-interactive-options.md)|Décrit les options de ligne de commande prises F# en charge par l’interpréteur, FSI. exe.|
 |[Informations de référence sur les propriétés de projet](/visualstudio/ide/reference/project-properties-reference)|Décrit l’interface utilisateur pour les projets, y compris les pages de propriétés de projet qui fournissent des options de génération.|
