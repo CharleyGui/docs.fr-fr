@@ -5,12 +5,12 @@ helpviewer_keywords:
 - methods [C#]
 - C# language, methods
 ms.assetid: cc738f07-e8cd-4683-9585-9f40c0667c37
-ms.openlocfilehash: 8348e080d833e79dd364aee511ac7d05fb53d1cc
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 114fa2973c50be9a4199db9729e3cd9ea6122866
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543558"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626527"
 ---
 # <a name="methods-c-programming-guide"></a>Méthodes (Guide de programmation C#)
 
@@ -21,7 +21,7 @@ Une méthode est un bloc de code qui contient une série d'instructions. Un prog
 
 ## <a name="method-signatures"></a>Signatures de méthode
 
-Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/keywords/struct.md)ou une [interface](../interfaces/index.md) en spécifiant le niveau d’accès, tel que `public` ou `private`, des modificateurs facultatifs tels que `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
+Les méthodes sont déclarées dans une [classe](../../language-reference/keywords/class.md), un [struct](../../language-reference/builtin-types/struct.md)ou une [interface](../interfaces/index.md) en spécifiant le niveau d’accès, tel que `public` ou `private`, des modificateurs facultatifs tels que `abstract` ou `sealed`, la valeur de retour, le nom de la méthode et tous les paramètres de méthode. Ces parties forment ensemble la signature de la méthode.
 
 > [!NOTE]
 > Un type de retour d'une méthode ne fait pas partie de la signature de la méthode à des fins de surcharge de méthode. Toutefois, il fait partie de la signature de la méthode lors de la détermination de la compatibilité entre un délégué et la méthode vers laquelle il pointe.

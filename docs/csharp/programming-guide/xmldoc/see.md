@@ -10,12 +10,12 @@ helpviewer_keywords:
 - cross-references [C#]
 - see C# XML tag
 ms.assetid: 0200de01-7e2f-45c4-9094-829d61236383
-ms.openlocfilehash: 17d1d344b9a27ffd4995fa4849ee6d5ce7f90f29
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: f4834f88c646b44269f8290c2ad08698c34e714a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789702"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627670"
 ---
 # <a name="see-c-programming-guide"></a>\<consultez > (C# Guide de programmation)
 
@@ -25,11 +25,11 @@ ms.locfileid: "76789702"
 <see cref="member"/>
 ```
 
-## <a name="parameters"></a>Parameters
+## <a name="parameters"></a>Paramètres
 
-- cref = " `member`"
+- CREF = "`member`"
 
-  Référence à un membre ou un champ qu’il est possible d’appeler à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe, et qu’il passe `member` au nom d’élément dans le code XML de sortie. Placez le *membre* entre guillemets doubles (" ").
+  Référence à un membre ou à un champ qui peut être appelé à partir de l’environnement de compilation actuel. Le compilateur vérifie que l’élément de code donné existe, et qu’il passe `member` au nom d’élément dans le code XML de sortie. Placez le *membre* entre guillemets doubles (" ").
 
 ## <a name="remarks"></a>Notes
 

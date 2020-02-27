@@ -6,12 +6,12 @@ helpviewer_keywords:
 - data sources [Windows Forms], binding to Windows Forms controls
 - DataGridView control [Windows Forms], data binding
 ms.assetid: f4f46009-cec2-441b-8668-6b5af057558b
-ms.openlocfilehash: d5fab6acc53e5b8be247e958bdba78f0d3647fdc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: d49a718e42a989c731cdf748fb63a6305ee096bf
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744116"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626323"
 ---
 # <a name="how-to-bind-data-to-the-windows-forms-datagridview-control-using-the-designer"></a>Comment : lier des données au contrôle DataGridView Windows Forms à l'aide du concepteur
 Vous pouvez utiliser le concepteur pour connecter un contrôle <xref:System.Windows.Forms.DataGridView> à des sources de données de plusieurs variétés différentes, notamment des bases de données, des objets métier ou des services Web. Quand vous liez le contrôle à une source de données à l’aide du concepteur, le contrôle est automatiquement lié à un composant de <xref:System.Windows.Forms.BindingSource> qui représente la source de données. En outre, les colonnes sont générées automatiquement dans le contrôle pour faire correspondre les informations de schéma fournies par la source de données.
@@ -24,13 +24,13 @@ Vous pouvez utiliser le concepteur pour connecter un contrôle <xref:System.Wind
 
 ## <a name="to-bind-the-control-to-a-data-source"></a>Pour lier le contrôle à une source de données
 
-1. Cliquez sur le glyphe de balise active (![glyphe de balise active](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) dans le coin supérieur droit du contrôle de <xref:System.Windows.Forms.DataGridView>.
+1. Cliquez sur le glyphe actions du concepteur (![petite flèche noire](./media/designer-actions-glyph.gif)) dans le coin supérieur droit du contrôle <xref:System.Windows.Forms.DataGridView>.
 
 2. Cliquez sur la flèche déroulante correspondant à l’option **Choisir la Source de données**.
 
 3. Si votre projet ne dispose pas déjà d’une source de données, cliquez **Ajouter la source de données projet** et suivez les étapes indiquées par l’Assistant.
 
-     Pour plus d’informations, consultez la page [Assistant Configuration de source de données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/w4dd7z6t(v=vs.120)). Votre nouvelle source de données s’affiche dans la liste déroulante **Choisir la source de données**. Si votre nouvelle source de données contient un seul membre, comme une table de base de données unique, le contrôle est automatiquement lié à ce membre. Sinon, passez à l'étape suivante.
+     Pour plus d’informations, consultez la page [Assistant Configuration de source de données](https://docs.microsoft.com/previous-versions/visualstudio/visual-studio-2013/w4dd7z6t(v=vs.120)). Votre nouvelle source de données s’affiche dans la liste déroulante **Choisir la source de données**. Si votre nouvelle source de données contient un seul membre, comme une table de base de données unique, le contrôle est automatiquement lié à ce membre. Sinon, passez à l’étape suivante.
 
 4. Développez les nœuds **Autres sources de données** et **Sources de données du projet** si cela n’est pas déjà fait, puis sélectionnez la source de données à laquelle lier le contrôle.
 

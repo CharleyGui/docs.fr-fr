@@ -2,12 +2,12 @@
 title: Orchestrer des microservices et des applications multiconteneurs pour un haut niveau de scalabilité et de disponibilité
 description: Découvrez les options qui permettent d’orchestrer des microservices et des applications multiconteneurs pour fournir une scalabilité et une disponibilité élevées. Découvrez également les possibilités offertes par Azure Dev Spaces durant le développement du cycle de vie des applications Kubernetes.
 ms.date: 01/30/2020
-ms.openlocfilehash: f9e91d3958e2d567e68257c377f76cc3c2325a0b
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ea204941a461794fbeeb2482aa11973b79437027
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502983"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628499"
 ---
 # <a name="orchestrate-microservices-and-multi-container-applications-for-high-scalability-and-availability"></a>Orchestrer des microservices et des applications multiconteneurs pour un haut niveau de scalabilité et de disponibilité
 
@@ -36,7 +36,7 @@ Les concepts de cluster et de planificateur sont étroitement liés : les produi
 ## <a name="software-platforms-for-container-clustering-orchestration-and-scheduling"></a>Plateformes logicielles pour le clustering, l’orchestration et la planification de conteneurs
 
 |     |   |
-|-----|---|
+|:---:|---|
 | **Kubernetes** <br> ![une image du logo Kubernetes.](./media/scalable-available-multi-container-microservice-applications/kubernetes-container-orchestration-system-logo.png) | [*Kubernetes*](https://kubernetes.io/) est un produit open source qui offre des fonctionnalités allant de l’infrastructure de cluster et la planification de conteneurs aux fonctionnalités d’orchestration. Il vous permet d’automatiser le déploiement, la mise à l’échelle et le fonctionnement de conteneurs d’application entre des clusters d’hôtes. <br><br> *Kubernetes* fournit une infrastructure orientée conteneur, qui regroupe les conteneurs d’application dans des unités logiques pour en faciliter la gestion et la découverte. <br><br> *Kubernetes* est suffisamment mature dans Linux, mais il l’est moins dans Windows. |
 | **Azure Kubernetes Service (AKS)** <br> ![une image du logo du service Azure Kubernetes.](./media/scalable-available-multi-container-microservice-applications/azure-kubernetes-service-logo.png) | [AKS](https://azure.microsoft.com/services/kubernetes-service/) est un service d’orchestration de conteneur Kubernetes géré dans Azure qui simplifie la gestion, le déploiement et les opérations d’un cluster Kubernetes. |
 

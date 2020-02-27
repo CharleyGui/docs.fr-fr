@@ -8,12 +8,12 @@ helpviewer_keywords:
 - controls [Windows Forms], manipulating
 - BindingNavigator control [Windows Forms], adding buttons
 ms.assetid: faa33042-186e-4bb2-8798-17ceb987ec62
-ms.openlocfilehash: ac862d163f1bd8b66f29160d836bc459e4bf4081
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0305df5e7566f9441ce09fa3346a8b2dc67c8943
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745129"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627966"
 ---
 # <a name="how-to-add-load-save-and-cancel-buttons-to-the-windows-forms-bindingnavigator-control"></a>Comment : ajouter des boutons Charger, Enregistrer et Annuler au contrôle BindingNavigator Windows Forms
 
@@ -35,7 +35,7 @@ Dans la procédure suivante, un contrôle <xref:System.Windows.Forms.TextBox> es
 
 5. Sélectionnez le contrôle <xref:System.Windows.Forms.BindingNavigator>.
 
-6. Cliquez sur le glyphe de balise active (![glyphe de balise active](./media/vs-winformsmttagglyph.gif "VS_WinFormSmtTagGlyph")) pour afficher la boîte de dialogue **tâches BindingNavigator** et sélectionner **modifier les éléments**.
+6. Cliquez sur le glyphe actions du concepteur (![petite flèche noire](./media/designer-actions-glyph.gif)) pour afficher la boîte de dialogue **tâches BindingNavigator** et sélectionnez **modifier les éléments**.
 
      L **'éditeur de collections Items** s’affiche.
 

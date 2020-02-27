@@ -2,12 +2,12 @@
 title: Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 description: Découvrez comment effectuer un lift-and-shift et moderniser les applications existantes avec le cloud Azure et des conteneurs dans ce livre électronique.
 ms.date: 04/28/2018
-ms.openlocfilehash: fa20e606c9a1364fbdf8c9a58c8703420d9e65a9
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 9439de84dd46ac3153d951378764d10184c33a52
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714570"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628383"
 ---
 # <a name="modernize-existing-net-applications-with-azure-cloud-and-windows-containers-2nd-edition"></a>Moderniser les applications .NET existantes avec le cloud Azure et des conteneurs Windows (2ème édition)
 
@@ -19,7 +19,7 @@ Divisions de Microsoft Corporation
 One Microsoft Way  
 Redmond, Washington 98052-6399  
 
-Copyright © 2018 Microsoft Corporation  
+Copyright © 2020 par Microsoft Corporation  
 
 Tous droits réservés. Aucune partie du contenu de ce document ne peut être reproduite sous quelque forme ou par quelque moyen que ce soit sans l’autorisation écrite de l’éditeur.
 
@@ -29,7 +29,7 @@ Si vous avez des questions liées à ce livre, envoyez un e-mail à [dotnet-arch
 
 Ce document est fourni « en l’état » et exprime les points de vue et les opinions de son auteur. Les points de vue, les opinions et les informations exprimés dans cet ouvrage, notamment l’URL et autres références à des sites web Internet, peuvent faire l’objet de modifications sans préavis.
 
-Certains exemples décrits dans ce document ne sont fournis qu’à titre d’illustration et sont purement fictifs. Toute ressemblance ou tout lien avec le monde réel sont purement fortuits et involontaires.
+Certains exemples sont fournis à titre indicatif uniquement et sont fictifs. Toute association ou lien est purement involontaire ou fortuit.
 
 Microsoft et les marques commerciales mentionnées dans la page web « Marques » sur <https://www.microsoft.com> sont des marques du groupe Microsoft. Toutes les autres marques sont la propriété de leurs propriétaires respectifs.
 
@@ -97,7 +97,7 @@ Le tableau 1-1 décrit les principaux avantages et les raisons de choisir chaque
 | SQL ou n’importe quelle base de données relationnelle sur une machine virtuelle | Azure SQL Database Managed Instance ou autre base de données managée dans le cloud. | Bases de données affinées par microservice, basées sur Azure SQL Database, Azure Cosmos DB ou autre base de données managée dans le cloud |
 | **Avantages**|
 | <li>Pas de refonte de l’architecture, pas de nouveau code <li> Moins de travail pour une migration rapide <li> Plus petit dénominateur commun pris en charge dans Azure <li> Garanties de disponibilité de base <li> Après être passé au cloud, il est plus facile de moderniser encore plus | <li> Aucune refonte de l’architecture <li> Changements de code/configuration minimes <li> Déploiement amélioré et meilleure agilité de DevOps pour la production de nouvelles versions grâce aux conteneurs <li> Densité accrue et coûts de déploiement inférieurs <li> Portabilité des applications et des dépendances <li> Flexibilité des cibles d’hôte : approches PaaS ou IaaS | <li> Architecte pour le cloud, vous bénéficiez des meilleurs avantages du cloud, mais un nouveau code est nécessaire <li> Approches natives pour le cloud avec des microservices <li> Applications stratégiques modernes, résilientes au cloud et hyper-scalables <li> Services entièrement gérés <li> Optimisé pour la mise à l’échelle <li> Optimisé pour une agilité autonome par sous-système <li> S’appuyant sur le déploiement et sur DevOps |
-| **Difficultés éventuelles** |
+| **Défis** |
 | <li> Valeur cloud inférieure, autre que la variation des dépenses d’exploitation ou la fermeture de centres de données <li> Peu géré : aucune mise à jour corrective du système d’exploitation ou du middleware ; peut utiliser des solutions d’infrastructure, telles que Terraform, Spinnaker ou marionnette | <li> La conteneurisation est une étape supplémentaire dans le processus d’apprentissage pour les développeurs et les opérations informatiques <li> Les pipelines DevOps et CI/CD sont généralement un « must » pour cette approche. Si actuellement absent de la culture de l’organisation, risque d’être une difficulté supplémentaire| <li> Nécessite une réarchitecture pour les applications cloud natives et les architectures de microservices, plus généralement une refactorisation de code importante ou une réécriture lors de la modernisation (augmentation du temps et du budget)|
 > **Tableau 1-1.** Avantages et difficultés éventuelles des parcours de modernisation pour les applications et les services .NET existants
 
@@ -150,9 +150,9 @@ Pour les scénarios de modernisation, vous avez probablement une application opt
 
 Ensuite, comme scénario idéal pour de nombreuses applications .NET Framework existantes à migrer, vous pouvez migrer vers une application optimisée pour le cloud pour obtenir des avantages significatifs avec peu de travail. Cette approche vous permet aussi d’être prêt pour Cloud natif comme éventuelle évolution future. La figure 1-6 en montre un exemple.
 
-![Exemple de scénario d’applications Optimisées pour le cloud, avec des conteneurs Windows et des services managés](./media/image1-6.png)
+![Exemple de scénario d’applications optimisées pour le cloud, avec des conteneurs Windows et des services managés](./media/image1-6.png)
 
-**Figure 1-6.** Exemple de scénario d’applications Optimisées pour le cloud, avec des conteneurs Windows et des services managés
+**Figure 1-6.** Exemple de scénario d’applications optimisées pour le cloud, avec des conteneurs Windows et des services managés
 
 Pour aller encore plus loin, vous pouvez étendre votre application Optimisée pour le cloud en ajoutant quelques microservices pour des scénarios spécifiques. Ainsi, vous accéderiez partiellement au niveau du modèle Cloud natif, qui n’est pas le sujet central du présent guide.
 
@@ -179,7 +179,7 @@ Ce guide ne vous montre pas comment créer des applications cloud natives, par e
 - **Architecture des applications web modernes avec ASP.NET Core et Azure** (livre électronique téléchargeable) \
   <https://aka.ms/webappebook>
 
-## <a name="who-should-use-this-guide"></a>À qui s'adresse ce guide ?
+## <a name="who-should-use-this-guide"></a>Public visé par ce guide
 
 Ce guide a été écrit pour les développeurs et les architectes de solutions qui veulent moderniser des applications web ASP.NET ou des services WCF existants basés sur le .NET Framework, de façon à obtenir une meilleure agilité dans la livraison des applications.
 
@@ -202,4 +202,4 @@ Ces exemples d’applications ont une seconde version, avec le code modernisé, 
 Ce guide a été écrit pour vous aider à comprendre les options dont vous disposez pour améliorer et moderniser des applications web .NET existantes. Le guide et les exemples d’applications associés sont en constante évolution. Vos commentaires sont les bienvenus. Si vous avez des commentaires à formuler sur la façon dont ce guide peut être amélioré, envoyez-les à l’adresse : [dotnet-architecture-ebooks-feedback@service.microsoft.com](mailto:dotnet-architecture-ebooks-feedback@service.microsoft.com?subject=Feedback%20for%20.NET%20Container%20&%20Microservices%20Architecture%20book).
 
 >[!div class="step-by-step"]
->[Suivant](lift-and-shift-existing-apps-azure-iaas.md) <!-- Next Chapter -->
+>[Next](lift-and-shift-existing-apps-azure-iaas.md) <!-- Next Chapter -->

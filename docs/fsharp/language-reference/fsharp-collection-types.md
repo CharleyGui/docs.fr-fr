@@ -2,12 +2,12 @@
 title: Types de collection
 description: En savoir F# plus sur les types de collections et leurs différences par rapport aux types de collections du .NET Framework.
 ms.date: 05/16/2016
-ms.openlocfilehash: e5735efbffb1010f3886f3b32800a61e2d3b0d36
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: df34a18e7762c52e169aa8a69709ae16064c134d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344569"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628863"
 ---
 # <a name="f-collection-types"></a>Types de collection F#
 
@@ -19,29 +19,29 @@ Les types de collections diffèrent également dans le type de la structure de d
 
 Le tableau suivant présente F# les types de collections.
 
-|Type|Description|Liens associés|
+|Type|Description|Liens connexes|
 |----|-----------|-------------|
-|[List](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Série immuable et ordonnée d’éléments du même type. Implémenté en tant que liste liée.|[Listes](lists.md)<br /><br />[Module List](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
-|[Matrice](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Collection mutable de taille fixe, de base zéro d’éléments de données consécutifs qui sont tous du même type.|[Tableaux](arrays.md)<br /><br />[Module de tableau](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Module Array2D](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Module Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
-|[seq](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Série logique d’éléments qui sont tous d’un type. Les séquences sont particulièrement utiles lorsque vous disposez d’une collection de données volumineuse et ordonnée, mais que vous n’envisagez pas nécessairement d’utiliser tous les éléments. Les éléments de séquence individuels sont calculés uniquement en fonction des besoins, de sorte qu’une séquence peut être plus performante qu’une liste si tous les éléments ne sont pas utilisés. Les séquences sont représentées par le type de `seq<'T>`, qui est un alias pour `IEnumerable<T>`. Par conséquent, tout type de .NET Framework qui implémente `System.Collections.Generic.IEnumerable<'T>` peut être utilisé comme une séquence.|[Séquences](sequences.md)<br /><br />[Module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
-|[Carte](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Dictionnaire immuable d’éléments. Les éléments sont accessibles par clé.|[Module de mappage](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
-|[Set](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Ensemble immuable basé sur des arborescences binaires, où la comparaison est la F# fonction de comparaison structurelle qui utilise potentiellement des implémentations de l’interface `System.IComparable` sur des valeurs de clés.|[Définir le module](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
+|[Liste](https://msdn.microsoft.com/library/c627b668-477b-4409-91ed-06d7f1b3e4a7)|Série immuable et ordonnée d’éléments du même type. Implémenté en tant que liste liée.|[Listes](lists.md)<br /><br />[Module List](https://msdn.microsoft.com/library/a2264ba3-2d45-40dd-9040-4f7aa2ad9788)|
+|[Tableau](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)|Collection mutable de taille fixe, de base zéro d’éléments de données consécutifs qui sont tous du même type.|[Tableaux](arrays.md)<br /><br />[Module de tableau](https://msdn.microsoft.com/library/0cda8040-9396-40dd-8dcd-cf48542165a1)<br /><br />[Module Array2D](https://msdn.microsoft.com/library/ae1a9746-7817-4430-bcdb-a79c2411bbd3)<br /><br />[Module Array3D](https://msdn.microsoft.com/library/c8355e2d-add8-48a4-8aa6-1c57ae74c560)|
+|[séquentiel](https://msdn.microsoft.com/library/2f0c87c6-8a0d-4d33-92a6-10d1d037ce75)|Série logique d’éléments qui sont tous d’un type. Les séquences sont particulièrement utiles lorsque vous disposez d’une collection de données volumineuse et ordonnée, mais que vous n’envisagez pas nécessairement d’utiliser tous les éléments. Les éléments de séquence individuels sont calculés uniquement en fonction des besoins, de sorte qu’une séquence peut être plus performante qu’une liste si tous les éléments ne sont pas utilisés. Les séquences sont représentées par le type de `seq<'T>`, qui est un alias pour `IEnumerable<T>`. Par conséquent, tout type de .NET Framework qui implémente `System.Collections.Generic.IEnumerable<'T>` peut être utilisé comme une séquence.|[Séquences](sequences.md)<br /><br />[Module Seq](https://msdn.microsoft.com/library/54e8f059-ca52-4632-9ae9-49685ee9b684)|
+|[Map](https://msdn.microsoft.com/library/975316ea-55e3-4987-9994-90897ad45664)|Dictionnaire immuable d’éléments. Les éléments sont accessibles par clé.|[Module de mappage](https://msdn.microsoft.com/library/bfe61ead-f16c-416f-af98-56dbcbe23e4f)|
+|[Définir](https://msdn.microsoft.com/library/50cebdce-0cd7-4c5c-8ebc-f3a9e90b38d8)|Ensemble immuable basé sur des arborescences binaires, où la comparaison est la F# fonction de comparaison structurelle qui utilise potentiellement des implémentations de l’interface `System.IComparable` sur des valeurs de clés.|[Définir le module](https://msdn.microsoft.com/library/61efa732-d55d-4c32-993f-628e2f98e6a0)|
 
 ### <a name="table-of-functions"></a>Table des fonctions
 
 Cette section compare les fonctions qui sont disponibles sur F# les types de collection. La complexité de calcul de la fonction est donnée, où N est la taille de la première collection et M est la taille de la deuxième collection, le cas échéant. Un tiret (-) indique que cette fonction n’est pas disponible dans la collection. Étant donné que les séquences sont évaluées tardivement, une fonction telle que Seq. distinct peut être O (1), car elle est retournée immédiatement, bien qu’elle affecte toujours les performances de la séquence lors de l’énumération.
 
-|Fonction|Tableau|Liste|Séquence|Carte|Définir|Description|
+|Fonction|Array|List|Séquence|Mappage|Définissez|Description|
 |--------|-----|----|--------|---|---|-----------|
-|append|O(M)|O(N)|O(N)|-|-|Retourne une nouvelle collection qui contient les éléments de la première collection, suivis des éléments de la deuxième collection.|
-|ajouter|-|-|-|O (log N)|O (log N)|Retourne une nouvelle collection avec l’élément ajouté.|
-|moyenne|O(N)|O(N)|O(N)|-|-|Retourne la moyenne des éléments dans la collection.|
+|append|O(N)|O(N)|O(N)|-|-|Retourne une nouvelle collection qui contient les éléments de la première collection, suivis des éléments de la deuxième collection.|
+|add|-|-|-|O (log N)|O (log N)|Retourne une nouvelle collection avec l’élément ajouté.|
+|average|O(N)|O(N)|O(N)|-|-|Retourne la moyenne des éléments dans la collection.|
 |averageBy|O(N)|O(N)|O(N)|-|-|Retourne la moyenne des résultats de la fonction fournie appliquée à chaque élément.|
 |blit,|O(N)|-|-|-|-|Copie une section d’un tableau.|
 |cache|-|-|O(N)|-|-|Calcule et stocke les éléments d’une séquence.|
 |cast|-|-|O(N)|-|-|Convertit les éléments dans le type spécifié.|
-|choisissez|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée `f` à chaque élément `x` de la liste. Retourne la liste qui contient les résultats pour chaque élément où la fonction retourne `Some(f(x))`.|
-|collecter|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée à chaque élément de la collection, concatène tous les résultats et retourne la liste combinée.|
+|choose|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée `f` à chaque élément `x` de la liste. Retourne la liste qui contient les résultats pour chaque élément où la fonction retourne `Some(f(x))`.|
+|collect|O(N)|O(N)|O(N)|-|-|Applique la fonction donnée à chaque élément de la collection, concatène tous les résultats et retourne la liste combinée.|
 |compareWith|-|-|O(N)|-|-|Compare deux séquences à l’aide de la fonction de comparaison donnée, élément par élément.|
 |concat|O(N)|O(N)|O(N)|-|-|Combine l’énumération d’énumérations donnée comme une énumération concaténée unique.|
 |contains|-|-|-|-|O (log N)|Retourne la valeur true si l’ensemble contient l’élément spécifié.|
@@ -49,20 +49,20 @@ Cette section compare les fonctions qui sont disponibles sur F# les types de col
 |count|-|-|-|-|O(N)|Retourne le nombre d'éléments figurant dans le jeu.|
 |countBy (|-|-|O(N)|-|-|Applique une fonction génératrice de clé à chaque élément d’une séquence et retourne une séquence qui produit des clés uniques et leur nombre d’occurrences dans la séquence d’origine.|
 |copy|O(N)|-|O(N)|-|-|Copie la collection.|
-|créer|O(N)|-|-|-|-|Crée un tableau d’éléments entiers qui sont tous initialement la valeur donnée.|
+|create|O(N)|-|-|-|-|Crée un tableau d’éléments entiers qui sont tous initialement la valeur donnée.|
 |delay|-|-|O(1)|-|-|Retourne une séquence qui est créée à partir de la spécification différée donnée d’une séquence.|
 |différence|-|-|-|-|O (M &#42; log N)|Retourne un nouvel ensemble avec les éléments du deuxième jeu supprimé du premier jeu.|
 |distinct|||O(1)&#42;|||Retourne une séquence qui ne contient aucune entrée en double conformément aux comparaisons de hachage et d’égalité génériques sur les entrées. Si un élément se trouve plusieurs fois dans la séquence, les occurrences ultérieures sont ignorées.|
 |distinctBy|||O(1)&#42;|||Retourne une séquence qui ne contient aucune entrée en double conformément aux comparaisons de hachage et d’égalité génériques sur les clés retournées par la fonction de génération de clé donnée. Si un élément se trouve plusieurs fois dans la séquence, les occurrences ultérieures sont ignorées.|
-|vide|O(1)|O(1)|O(1)|O(1)|O(1)|Crée une collection vide.|
-|existe ;|O(N)|O(N)|O(N)|O (log N)|O (log N)|Teste si un élément de la séquence répond au prédicat donné.|
+|empty|O(1)|O(1)|O(1)|O(1)|O(1)|Crée une collection vide.|
+|exists|O(N)|O(N)|O(N)|O (log N)|O (log N)|Teste si un élément de la séquence répond au prédicat donné.|
 |exists2|O (min (N, M))|-|O (min (N, M))|||Teste si une paire d’éléments correspondants des séquences d’entrée répond au prédicat donné.|
 |fill|O(N)|||||Définit une plage d’éléments du tableau à la valeur donnée.|
-|filtre|O(N)|O(N)|O(N)|O(N)|O(N)|Retourne une nouvelle collection qui contient uniquement les éléments de la collection pour lesquels le prédicat donné retourne `true`.|
-|find|O(N)|O(N)|O(N)|O (log N)|-|Retourne le premier élément pour lequel la fonction donnée retourne `true`. Retourne `System.Collections.Generic.KeyNotFoundException` si aucun élément de ce type n’existe.|
+|Filter|O(N)|O(N)|O(N)|O(N)|O(N)|Retourne une nouvelle collection qui contient uniquement les éléments de la collection pour lesquels le prédicat donné retourne `true`.|
+|trouver|O(N)|O(N)|O(N)|O (log N)|-|Retourne le premier élément pour lequel la fonction donnée retourne `true`. Retourne `System.Collections.Generic.KeyNotFoundException` si aucun élément de ce type n’existe.|
 |findIndex|O(N)|O(N)|O(N)|-|-|Retourne l’index du premier élément du tableau qui répond au prédicat donné. Déclenche `System.Collections.Generic.KeyNotFoundException` si aucun élément ne répond au prédicat.|
 |FindKey (|-|-|-|O (log N)|-|Évalue la fonction sur chaque mappage de la collection et retourne la clé pour le premier mappage où la fonction retourne `true`. Si aucun élément de ce type n’existe, cette fonction déclenche `System.Collections.Generic.KeyNotFoundException`.|
-|replier|O(N)|O(N)|O(N)|O(N)|O(N)|Applique une fonction à chaque élément de la collection, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Si la fonction d’entrée est f et que les éléments sont i0... Dans, cette fonction calcule f (... (f s I0)...) dans.|
+|Fold|O(N)|O(N)|O(N)|O(N)|O(N)|Applique une fonction à chaque élément de la collection, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Si la fonction d’entrée est f et que les éléments sont i0... Dans, cette fonction calcule f (... (f s I0)...) dans.|
 |fold2|O(N)|O(N)|-|-|-|Applique une fonction aux éléments correspondants de deux collections, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Les collections doivent avoir des tailles identiques. Si la fonction d’entrée est f et que les éléments sont i0... Dans et j0... jN, cette fonction calcule f (... (f s I0 J0)...) Dans jN.|
 |foldBack|O(N)|O(N)|-|O(N)|O(N)|Applique une fonction à chaque élément de la collection, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Si la fonction d’entrée est f et que les éléments sont i0... Dans, cette fonction calcule f i0 (... (f dans s).|
 |foldBack2|O(N)|O(N)|-|-|-|Applique une fonction aux éléments correspondants de deux collections, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Les collections doivent avoir des tailles identiques. Si la fonction d’entrée est f et que les éléments sont i0... Dans et j0... jN, cette fonction calcule f i0 J0 (... (f dans jN s).|
@@ -112,7 +112,7 @@ Cette section compare les fonctions qui sont disponibles sur F# les types de col
 |vérifier|O(N)|O(N)|O(N)|-|-|Applique une fonction à chaque élément de la collection, en utilisant un thread d’un argument d’accumulation par le biais du calcul. Cette opération applique la fonction au deuxième argument et au premier élément de la liste. L’opération passe ensuite ce résultat dans la fonction avec le deuxième élément, et ainsi de suite. Enfin, l’opération retourne la liste des résultats intermédiaires et le résultat final.|
 |scanBack|O(N)|O(N)|-|-|-|Ressemble à l’opération foldBack, mais retourne les résultats intermédiaires et finaux.|
 |singleton|-|-|O(1)|-|O(1)|Retourne une séquence qui produit un seul élément.|
-|définir|O(1)|-|-|-|-|Affecte la valeur spécifiée à un élément d’un tableau.|
+|set|O(1)|-|-|-|-|Affecte la valeur spécifiée à un élément d’un tableau.|
 |skip|-|-|O(N)|-|-|Retourne une séquence qui ignore N éléments de la séquence sous-jacente, puis produit les éléments restants de la séquence.|
 |skipWhile|-|-|O(N)|-|-|Retourne une séquence qui, lorsqu’elle est itérée, ignore les éléments de la séquence sous-jacente pendant que le prédicat donné retourne `true` puis produit les éléments restants de la séquence.|
 |sort|Moyenne O (N log N)<br /><br />O (N ^ 2) pire cas|O (N log N)|O (N log N)|-|-|Trie la collection par valeur d’élément. Les éléments sont comparés à l’aide de [compare](https://msdn.microsoft.com/library/295e1320-0955-4c3d-ac31-288fa80a658c).|
@@ -122,7 +122,7 @@ Cette section compare les fonctions qui sont disponibles sur F# les types de col
 |sortInPlaceWith|Moyenne O (N log N)<br /><br />O (N ^ 2) pire cas|-|-|-|-|Trie les éléments d’un tableau en le mutant sur place et en utilisant la fonction de comparaison donnée comme ordre.|
 |sortWith|Moyenne O (N log N)<br /><br />O (N ^ 2) pire cas|O (N log N)|-|-|-|Trie les éléments d’une collection, en utilisant la fonction de comparaison donnée comme ordre et en retournant une nouvelle collection.|
 |sub|O(N)|-|-|-|-|Génère un tableau qui contient la sous-plage donnée spécifiée par l’index de départ et la longueur.|
-|sum|O(N)|O(N)|O(N)|-|-|Retourne la somme des éléments de la collection.|
+|Sum|O(N)|O(N)|O(N)|-|-|Retourne la somme des éléments de la collection.|
 |sumBy|O(N)|O(N)|O(N)|-|-|Retourne la somme des résultats générés en appliquant la fonction à chaque élément de la collection.|
 |comporte|-|O(1)|-|-|-|Retourne la liste sans son premier élément.|
 |take|-|-|O(N)|-|-|Retourne les éléments de la séquence jusqu’à un nombre spécifié.|
@@ -147,4 +147,4 @@ Cette section compare les fonctions qui sont disponibles sur F# les types de col
 ## <a name="see-also"></a>Voir aussi
 
 - [Types F#](fsharp-types.md)
-- [Informations de référence du langage F#](index.md)
+- [Informations de référence sur le langage F#](index.md)

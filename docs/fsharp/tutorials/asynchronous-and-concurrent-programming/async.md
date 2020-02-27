@@ -2,12 +2,12 @@
 title: Programmation asynchrone
 description: Découvrez comment F# fournit une prise en charge propre pour l’asynchronie basée sur un modèle de programmation au niveau du langage dérivé des concepts de programmation fonctionnelle de base.
 ms.date: 12/17/2018
-ms.openlocfilehash: 471566befd69f330fb9254dbd57b19569d9f9ad3
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 7021d7936d10f9ea6fceb4aa56db3285d21624ad
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75344663"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628850"
 ---
 # <a name="async-programming-in-f"></a>Programmation asynchrone en F\#
 
@@ -33,13 +33,13 @@ Si vous considérez le mot « Asynchronous » comme Etymology, deux éléments
 - « a », ce qui signifie « non ».
 - « synchrone », ce qui signifie « en même temps ».
 
-Lorsque vous regroupez ces deux termes, vous verrez que « asynchrone » signifie « pas en même temps ». C’est tout ! Il n’y a aucune implication de l’accès concurrentiel ou du parallélisme dans cette définition. Cela est également vrai dans la pratique.
+Lorsque vous regroupez ces deux termes, vous verrez que « asynchrone » signifie « pas en même temps ». Et voilà ! Il n’y a aucune implication de l’accès concurrentiel ou du parallélisme dans cette définition. Cela est également vrai dans la pratique.
 
 En pratique, les calculs asynchrones dans F# sont planifiés pour s’exécuter indépendamment du déroulement du programme principal. Cela n’implique pas la concurrence ou le parallélisme, et n’implique pas non plus qu’un calcul se produit toujours en arrière-plan. En fait, les calculs asynchrones peuvent même s’exécuter de façon synchrone, en fonction de la nature du calcul et de l’environnement dans lequel le calcul s’exécute.
 
 Le principal pas à pas est que les calculs asynchrones sont indépendants du processus principal du programme. Bien qu’il existe peu de garanties quant au moment ou à l’exécution d’un calcul asynchrone, il existe des approches pour l’orchestration et la planification. Le reste de cet article explore les concepts fondamentaux F# de l’asynchronie et explique comment utiliser les types, les fonctions et les F#expressions intégrés à.
 
-## <a name="core-concepts"></a>Concepts principaux
+## <a name="core-concepts"></a>Principaux concepts
 
 Dans F#, la programmation asynchrone est centrée autour de trois concepts fondamentaux :
 
@@ -69,7 +69,7 @@ let main argv =
     0
 ```
 
-Dans l’exemple, la fonction `printTotalFileBytes` est de type `string -> Async<unit>`. L’appel de la fonction n’exécute pas réellement le calcul asynchrone. Au lieu de cela, elle retourne un `Async<unit>` qui agit comme une *spécification* du travail qui doit s’exécuter de façon asynchrone. Elle appelle `Async.AwaitTask` dans son corps, qui convertit le résultat de <xref:System.IO.File.WriteAllBytesAsync%2A> en type approprié.
+Dans l’exemple, la fonction `printTotalFileBytes` est de type `string -> Async<unit>`. L’appel de la fonction n’exécute pas réellement le calcul asynchrone. Au lieu de cela, elle retourne un `Async<unit>` qui agit comme une *spécification* du travail qui doit s’exécuter de façon asynchrone. Elle appelle `Async.AwaitTask` dans son corps, qui convertit le résultat de <xref:System.IO.File.ReadAllBytesAsync%2A> en type approprié.
 
 Une autre ligne importante est l’appel à `Async.RunSynchronously`. Il s’agit de l’une des fonctions de démarrage de module Async que vous devrez appeler si vous souhaitez réellement exécuter F# un calcul asynchrone.
 
@@ -150,7 +150,7 @@ Signature :
 computation: Async<'T> - timeout: ?int -> Async<Async<'T>>
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Lorsque vous souhaitez exécuter plusieurs calculs asynchrones simultanément plutôt qu’un à la fois, mais que vous ne les avez pas planifiés en parallèle.
 - Lorsque vous souhaitez lier la durée de vie d’un calcul enfant à celle d’un calcul parent.
@@ -170,7 +170,7 @@ Signature :
 computation: Async<unit> - cancellationToken: ?CancellationToken -> unit
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Lorsque vous devez mettre à jour un événement sur le thread appelant au milieu d’un calcul asynchrone.
 
@@ -188,7 +188,7 @@ Signature :
 computation: Async<'T> - taskCreationOptions: ?TaskCreationOptions - cancellationToken: ?CancellationToken -> Task<'T>
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Lorsque vous devez appeler une API .NET qui attend un <xref:System.Threading.Tasks.Task%601> pour représenter le résultat d’un calcul asynchrone.
 
@@ -245,7 +245,7 @@ Signature :
 task: Task<'T>  -> Async<'T>
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Lorsque vous consommez une API .NET qui retourne un <xref:System.Threading.Tasks.Task%601> dans un F# calcul asynchrone.
 
@@ -263,7 +263,7 @@ Signature :
 computation: Async<'T> -> Async<Choice<'T, exn>>
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Lorsque vous effectuez un travail asynchrone qui peut échouer avec une exception et que vous souhaitez gérer cette exception dans l’appelant.
 
@@ -281,7 +281,7 @@ Signature :
 computation: Async<'T> -> Async<unit>
 ```
 
-Utilisation :
+Quand utiliser :
 
 - Quand vous avez un calcul asynchrone dont le résultat n’est pas nécessaire. Cela est analogue au code `ignore` pour le code non asynchrone.
 

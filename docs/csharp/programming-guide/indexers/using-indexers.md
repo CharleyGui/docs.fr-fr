@@ -4,16 +4,16 @@ ms.date: 10/03/2018
 helpviewer_keywords:
 - indexers [C#], about indexers
 ms.assetid: df70e1a2-3ce3-4aba-ad80-4b2f3538699f
-ms.openlocfilehash: bf290681395460bec10be45c4eaa1f165e453caf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 17162a0dc959a85c03a5cb5757e2b91fe10b0ab3
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75702894"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628161"
 ---
 # <a name="using-indexers-c-programming-guide"></a>Utiliser des indexeurs (Guide de programmation C#)
 
-Les indexeurs simplifient, d’un point de vue syntaxique, la création d’une [classe](../../language-reference/keywords/class.md), d’un [struct](../../language-reference/keywords/struct.md) ou d’une [interface](../../language-reference/keywords/interface.md) auxquels les applications clientes peuvent accéder exactement comme à un tableau. Le plus souvent, les indexeurs sont implémentés dans les types dont l’objectif premier est d’encapsuler une collection ou un tableau interne. Prenons l’exemple d’une classe `TempRecord` qui représente la température, en Fahrenheit, enregistrée à 10 moments différents sur une période de 24 heures. Elle contient un tableau `temps` de type `float[]` pour stocker les valeurs de température. En implémentant un indexeur dans cette classe, les clients peuvent accéder aux températures dans une instance `TempRecord` sous la forme `float temp = tr[4]` et non sous la forme `float temp = tr.temps[4]`. La notation d’indexeur simplifie non seulement la syntaxe pour les applications clientes, mais elle permet également aux autres développeurs de comprendre de façon plus intuitive l’objectif de la classe.  
+Les indexeurs simplifient, d’un point de vue syntaxique, la création d’une [classe](../../language-reference/keywords/class.md), d’un [struct](../../language-reference/builtin-types/struct.md) ou d’une [interface](../../language-reference/keywords/interface.md) auxquels les applications clientes peuvent accéder exactement comme à un tableau. Le plus souvent, les indexeurs sont implémentés dans les types dont l’objectif premier est d’encapsuler une collection ou un tableau interne. Prenons l’exemple d’une classe `TempRecord` qui représente la température, en Fahrenheit, enregistrée à 10 moments différents sur une période de 24 heures. Elle contient un tableau `temps` de type `float[]` pour stocker les valeurs de température. En implémentant un indexeur dans cette classe, les clients peuvent accéder aux températures dans une instance `TempRecord` sous la forme `float temp = tr[4]` et non sous la forme `float temp = tr.temps[4]`. La notation d’indexeur simplifie non seulement la syntaxe pour les applications clientes, mais elle permet également aux autres développeurs de comprendre de façon plus intuitive l’objectif de la classe.  
   
 Pour déclarer un indexeur sur une classe ou un struct, utilisez le mot clé [this](../../language-reference/keywords/this.md), comme dans l’exemple suivant :
 
@@ -46,7 +46,7 @@ public int this[int index]   // Indexer declaration
 
 Cet indexeur portera le nom `TheItem`. Si vous ne précisez pas le nom de l’attribut, `Item` est utilisé comme nom par défaut.  
   
-## <a name="example-1"></a>Exemple 1  
+## <a name="example-1"></a>Exemple 1  
   
 L’exemple suivant montre comment déclarer un champ de tableau privé `temps`, et un indexeur. L’indexeur permet d’accéder directement à l’instance `tempRecord[i]`. Comme alternative à l’utilisation de l’indexeur, vous pouvez déclarer le tableau comme membre [public](../../language-reference/keywords/public.md) et accéder directement à ses membres, `tempRecord.temps[i]`.  
   
@@ -58,7 +58,7 @@ L’exemple suivant montre comment déclarer un champ de tableau privé `temps`,
 
 C# ne limite pas le type de paramètre d’indexeur au type entier. Par exemple, il peut être utile d’utiliser une chaîne avec un indexeur. Il est possible d’implémenter un tel indexeur en recherchant la chaîne dans la collection et en retournant la valeur appropriée. Comme les accesseurs peuvent être surchargés, les versions chaîne et entier peuvent coexister.  
   
-## <a name="example-2"></a>Exemple 2  
+## <a name="example-2"></a>Exemple 2  
   
 L’exemple suivant déclare une classe qui stocke les jours de la semaine. Un accesseur `get` prend une chaîne, le nom d’un jour, et retourne l’entier correspondant. Par exemple, « Sunday » retourne 0, « Monday » retourne 1 et ainsi de suite.  
   

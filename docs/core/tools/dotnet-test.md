@@ -2,16 +2,16 @@
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
 ms.date: 05/29/2018
-ms.openlocfilehash: 909815151265117395c6d8d13b4443a245c05f9e
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 890d1fc3fd9d47f2bdcd63f2a25248c3edd705e4
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451192"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626045"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
-[!INCLUDE [topic-appliesto-net-core-all](../../../includes/topic-appliesto-net-core-all.md)]
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
 ## <a name="name"></a>Name
 
@@ -19,36 +19,15 @@ ms.locfileid: "77451192"
 
 ## <a name="synopsis"></a>Synopsis
 
-<!-- markdownlint-disable MD025 -->
-
-# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
-
 ```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
-    [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] 
-    [-v|--verbosity] [-- <RunSettings arguments>]
+dotnet test [<PROJECT>] [-a|--test-adapter-path] [--blame]
+    [-c|--configuration] [--collect] [-d|--diag] [-f|--framework]
+    [--filter] [-l|--logger] [--no-build] [--no-restore]
+    [-o|--output] [-r|--results-directory] [-s|--settings]
+    [-t|--list-tests] [-v|--verbosity] [-- <RunSettings arguments>]
 
 dotnet test [-h|--help]
 ```
-
-# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
-
-```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [--collect] [-d|--diag] [-f|--framework] [--filter]
-    [-l|--logger] [--no-build] [--no-restore] [-o|--output] [-r|--results-directory] [-s|--settings] [-t|--list-tests] [-v|--verbosity]
-
-dotnet test [-h|--help]
-```
-
-# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-```dotnetcli
-dotnet test [<PROJECT>] [-a|--test-adapter-path] [-c|--configuration] [-d|--diag] [-f|--framework] [--filter] [-l|--logger] [--no-build] [-o|--output] [-s|--settings] [-t|--list-tests]  [-v|--verbosity]
-
-dotnet test [-h|--help]
-```
-
----
 
 ## <a name="description"></a>Description
 
@@ -60,213 +39,103 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 ## <a name="arguments"></a>Arguments
 
-`PROJECT`
+- **`PROJECT`**
 
-Chemin du projet de test. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
+  Chemin du projet de test. Si aucune valeur n’est spécifiée, le répertoire actif est utilisé par défaut.
 
 ## <a name="options"></a>Options
 
-# <a name="net-core-21"></a>[.NET Core 2.1](#tab/netcore21)
+- **`a|--test-adapter-path <PATH_TO_ADAPTER>`**
 
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
+  Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
 
-Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
+- **`-blame`**
 
-`--blame`
+  Exécute les tests en mode responsable. Cette option est utile pour isoler les tests problématiques qui provoquent le blocage de l’hôte de test. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
 
-Exécute les tests en mode responsable. Cette option s’avère utile pour isoler les tests responsables du plantage de l’hôte. Elle crée un fichier de sortie dans le répertoire actif nommé *Sequence.xml* qui capture l’ordre d’exécution des tests avant le plantage.
+- **`c|--configuration {Debug|Release}`**
 
-`-c|--configuration {Debug|Release}`
+  Définit la configuration de build. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
 
-Définit la configuration de build. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
+- **`-collect <DATA_COLLECTOR_FRIENDLY_NAME>`**
 
-`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
+  Active le collecteur de données pour la série de tests. Pour plus d’informations, consultez [Monitor and analyze test run](https://aka.ms/vstest-collect) (Surveiller et analyser la série de tests).
 
-Active le collecteur de données pour la série de tests. Pour plus d’informations, consultez [Monitor and analyze test run](https://aka.ms/vstest-collect) (Surveiller et analyser la série de tests).
+- **`d|--diag <PATH_TO_DIAGNOSTICS_FILE>`**
 
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
+  Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
 
-Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
+- **`f|--framework <FRAMEWORK>`**
 
-`-f|--framework <FRAMEWORK>`
+  Recherche des binaires de test pour un [framework](../../standard/frameworks.md) spécifique.
 
-Recherche des binaires de test pour un [framework](../../standard/frameworks.md) spécifique.
+- **`--filter <EXPRESSION>`**
 
-`--filter <EXPRESSION>`
+  Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
 
-Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
+- **`h|--help`**
 
-`-h|--help`
+  Affiche une aide brève pour la commande.
 
-Affiche une aide brève pour la commande.
+- **`l|--logger <LoggerUri/FriendlyName>`**
 
-`-l|--logger <LoggerUri/FriendlyName>`
+  Spécifie un enregistreur d’événements pour les résultats de tests.
 
-Spécifie un enregistreur d’événements pour les résultats de tests.
+- **`--no-build`**
 
-`--no-build`
+  Ne génère pas le projet de test avant son exécution. Il définit également implicitement l’indicateur-`--no-restore`.
 
-Ne génère pas le projet de test avant son exécution. L’indicateur `--no-restore` est également défini implicitement.
+- **`--no-restore`**
 
-`--no-restore`
+  N’effectue pas de restauration implicite à l’exécution de la commande.
 
-N’effectue pas de restauration implicite à l’exécution de la commande.
+- **`-o|--output <OUTPUT_DIRECTORY>`**
 
-`-o|--output <OUTPUT_DIRECTORY>`
+  Répertoire dans lequel rechercher les binaires à exécuter.
 
-Répertoire dans lequel rechercher les binaires à exécuter.
+- **`-r|--results-directory <PATH>`**
 
-`-r|--results-directory <PATH>`
+  Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé.
 
-Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé.
+- **`-s|--settings <SETTINGS_FILE>`**
 
-`-s|--settings <SETTINGS_FILE>`
+  Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
 
-Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
+- **`-t|--list-tests`**
 
-`-t|--list-tests`
+  Répertorie tous les tests découverts dans le projet actuel.
 
-Répertorie tous les tests découverts dans le projet actuel.
+- **`-v|--verbosity <LEVEL>`**
 
-`-v|--verbosity <LEVEL>`
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
 
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
+- arguments `RunSettings`
 
-`RunSettings arguments`
+  Les arguments sont passés en tant que `RunSettings` configurations pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
 
-Arguments passés en tant que paramètres RunSettings pour le test. Les arguments sont spécifiés en tant que paires `[name]=[value]` après "-- " (notez l’espace après --). Un espace est utilisé pour séparer plusieurs paires `[name]=[value]`.
+  Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
 
-Exemple : `dotnet test -- MSTest.DeploymentEnabled=false MSTest.MapInconclusiveToFailed=True`
-
-Pour plus d’informations sur RunSettings, consultez [vstest.console.exe: Passing RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
-
-# <a name="net-core-20"></a>[.NET Core 2.0](#tab/netcore20)
-
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
-
-Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
-
-`-c|--configuration {Debug|Release}`
-
-Définit la configuration de build. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
-
-`--collect <DATA_COLLECTOR_FRIENDLY_NAME>`
-
-Active le collecteur de données pour la série de tests. Pour plus d’informations, consultez [Monitor and analyze test run](https://aka.ms/vstest-collect) (Surveiller et analyser la série de tests).
-
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
-
-Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
-
-`-f|--framework <FRAMEWORK>`
-
-Recherche des binaires de test pour un [framework](../../standard/frameworks.md) spécifique.
-
-`--filter <EXPRESSION>`
-
-Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
-
-`-h|--help`
-
-Affiche une aide brève pour la commande.
-
-`-l|--logger <LoggerUri/FriendlyName>`
-
-Spécifie un enregistreur d’événements pour les résultats de tests.
-
-`--no-build`
-
-Ne génère pas le projet de test avant son exécution. L’indicateur `--no-restore` est également défini implicitement.
-
-`--no-restore`
-
-N’effectue pas de restauration implicite à l’exécution de la commande.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Répertoire dans lequel rechercher les binaires à exécuter.
-
-`-r|--results-directory <PATH>`
-
-Répertoire où les résultats de test doivent être placés. Si le répertoire spécifié n’existe pas, il est créé.
-
-`-s|--settings <SETTINGS_FILE>`
-
-Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
-
-`-t|--list-tests`
-
-Répertorie tous les tests découverts dans le projet actuel.
-
-`-v|--verbosity <LEVEL>`
-
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
-
-# <a name="net-core-1x"></a>[.NET Core 1.x](#tab/netcore1x)
-
-`-a|--test-adapter-path <PATH_TO_ADAPTER>`
-
-Utilise les adaptateurs de tests personnalisés à partir du chemin spécifié dans la série de tests.
-
-`-c|--configuration {Debug|Release}`
-
-Définit la configuration de build. La valeur par défaut est `Debug`, mais la configuration de votre projet peut remplacer ce paramètre du kit SDK par défaut.
-
-`-d|--diag <PATH_TO_DIAGNOSTICS_FILE>`
-
-Active le mode de diagnostic pour la plateforme de test et écrit des messages de diagnostic dans le fichier spécifié.
-
-`-f|--framework <FRAMEWORK>`
-
-Recherche des binaires de test pour un [framework](../../standard/frameworks.md) spécifique.
-
-`--filter <EXPRESSION>`
-
-Filtre les tests dans le projet actuel à l’aide de l’expression donnée. Pour plus de détails, consultez la section [Détails de l’option de filtre](#filter-option-details). Pour plus d’informations et des exemples sur la façon d’utiliser le filtrage de test unitaire sélectif, consultez [Exécution de tests unitaires sélectifs](../testing/selective-unit-tests.md).
-
-`-h|--help`
-
-Affiche une aide brève pour la commande.
-
-`-l|--logger <LoggerUri/FriendlyName>`
-
-Spécifie un enregistreur d’événements pour les résultats de tests.
-
-`--no-build`
-
-Ne génère pas le projet de test avant son exécution.
-
-`-o|--output <OUTPUT_DIRECTORY>`
-
-Répertoire dans lequel rechercher les binaires à exécuter.
-
-`-s|--settings <SETTINGS_FILE>`
-
-Fichier `.runsettings` à utiliser pour exécuter les tests. [Configurez des tests unitaires à l’aide d’un fichier `.runsettings`.](/visualstudio/test/configure-unit-tests-by-using-a-dot-runsettings-file)
-
-`-t|--list-tests`
-
-Répertorie tous les tests découverts dans le projet actuel.
-
-`-v|--verbosity <LEVEL>`
-
-Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`.
-
----
+  Pour plus d’informations, consultez [VSTest. Console. exe : passage de RunSettings args](https://github.com/Microsoft/vstest-docs/blob/master/docs/RunSettingsArguments.md).
 
 ## <a name="examples"></a>Exemples
 
-Exécutez les tests du projet dans le répertoire actif :
+- Exécutez les tests du projet dans le répertoire actif :
 
-`dotnet test`
+  ```dotnetcli
+  dotnet test
+  ```
 
-Exécuter les tests dans le projet `test1` :
+- Exécuter les tests dans le projet `test1` :
 
-`dotnet test ~/projects/test1/test1.csproj`
+  ```dotnetcli
+  dotnet test ~/projects/test1/test1.csproj
+  ```
 
-Exécutez les tests du projet dans le répertoire actif et générez un fichier de résultats des tests au format trx :
+- Exécutez les tests du projet dans le répertoire actif et générez un fichier de résultats des tests au format trx :
 
-`dotnet test --logger trx`
+  ```dotnetcli
+  dotnet test --logger trx
+  ```
 
 ## <a name="filter-option-details"></a>Détails de l’option de filtre
 

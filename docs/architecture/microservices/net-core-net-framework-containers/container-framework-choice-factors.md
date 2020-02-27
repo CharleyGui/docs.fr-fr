@@ -2,12 +2,12 @@
 title: 'Table de décision : versions de .NET Framework à utiliser pour Docker'
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Table de décision, versions de .NET Framework à utiliser pour Docker
 ms.date: 09/11/2018
-ms.openlocfilehash: 0087d80c2d949daf14e1edd773dd310f47c508a9
-ms.sourcegitcommit: 289e06e904b72f34ac717dbcc5074239b977e707
+ms.openlocfilehash: 8ffe2b7bc0bee976d3a63b274994dbcc8aef0c61
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/17/2019
-ms.locfileid: "71039679"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628317"
 ---
 # <a name="decision-table-net-frameworks-to-use-for-docker"></a>Table de décision : versions de .NET Framework à utiliser pour Docker
 
@@ -27,7 +27,7 @@ La table de décision ci-dessous vous indique s’il convient d’utiliser .NET 
 | ASP.NET 4 (MVC 5, API web 2 et Web Forms) | -- | .NET Framework |
 | Services SignalR | .NET Core 2.1 ou version ultérieure | .NET Framework <br/> .NET Core 2.1 ou version ultérieure |
 | WCF, WF et autres frameworks existants | WCF dans .NET Core (bibliothèque cliente uniquement) | .NET Framework <br/> WCF dans .NET Core (bibliothèque cliente uniquement) |
-| Consommation des services Azure | .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) | .NET Framework <br/> .NET Core <br/> (tous les services Azure fourniront les SDK clients pour .NET Core) |
+| Consommation des services Azure | .NET Core <br/> (enfin, la plupart des services Azure fourniront des kits de développement logiciel client pour .NET Core) | .NET Framework <br/> .NET Core <br/> (enfin, la plupart des services Azure fourniront des kits de développement logiciel client pour .NET Core) |
 
 >[!div class="step-by-step"]
 >[Précédent](net-framework-container-scenarios.md)

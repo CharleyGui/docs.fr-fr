@@ -5,17 +5,15 @@ helpviewer_keywords:
 - WCF [WCF], documentation
 - Windows Communication Foundation [WCF], documentation
 ms.assetid: 2aa18c85-a4fd-4bb9-986a-a8249e4f8e0e
-ms.openlocfilehash: 12408bd9f10e7ed147a6c1adc0497d3b8d797e42
-ms.sourcegitcommit: 628e8147ca10187488e6407dab4c4e6ebe0cac47
+ms.openlocfilehash: 705e571e11fa7c8276fcb48d15ed0160fbda2bc5
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72319822"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628759"
 ---
 # <a name="guide-to-the-documentation"></a>Guide de la documentation
 Vous trouverez ici des conseils sur la documentation de Windows Communication Foundation (WCF). Les documents liés sont des points de départ recommandés regroupés en fonction d'intérêts et de niveaux d'expertise spécifiques.  
-  
- Pour installer une version autonome de la documentation et une visionneuse d’aide, téléchargez le [Microsoft Windows SDK v 7,1](https://go.microsoft.com/fwlink/?LinkID=194146&clcid=0x409).  
   
 ## <a name="new-to-windows-communication-foundation-programming"></a>Nouveautés concernant la programmation WCF (Windows Communication Foundation)  
   
@@ -39,7 +37,7 @@ Vous trouverez ici des conseils sur la documentation de Windows Communication Fo
   
 - La configuration à l’aide de fichiers XML est un moyen principal de programmer des services et des clients WCF. Pour obtenir de la documentation de référence sur les éléments XML utilisés dans les fichiers de configuration, consultez [schéma de configuration WCF](../configure-apps/file-schema/wcf/index.md).  
   
-## <a name="troubleshooting"></a>Résolution des problèmes  
+## <a name="troubleshooting"></a>Dépannage  
  Pour plus d’informations sur la résolution des problèmes WCF courants, consultez [démarrage rapide de WCF Troubleshooting](wcf-troubleshooting-quickstart.md).  
   
 ## <a name="using-windows-communication-foundation-with-other-technologies"></a>Utilisation de WCF (Windows Communication Foundation) avec d'autres technologies  

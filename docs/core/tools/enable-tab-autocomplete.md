@@ -1,23 +1,23 @@
 ---
-title: Activer la saisie semi-automatique via la touche TAB
+title: Activer la saisie semi-automatique via la touche Tab
 description: Cet article vous explique comment activer la saisie semi-automatique via la touche TAB pour l’interface CLI .NET Core dans PowerShell, Bash et zsh.
 author: thraka
 ms.author: adegeo
 ms.date: 11/03/2019
-ms.openlocfilehash: 649b723c2abfa74443a16914594284a77e0eafc0
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 6614f11a9c4eb1b1aac4dd8dac8d05d15262bd0c
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920534"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626006"
 ---
 # <a name="how-to-enable-tab-completion-for-the-net-core-cli"></a>Activation de la saisie semi-automatique via la touche TAB pour l’interface CLI .NET Core
 
-À compter du SDK .NET Core 2.0, l’interface CLI .NET Core prend en charge la saisie semi-automatique via la touche TAB. Cet article décrit comment configurer la saisie semi-automatique via la touche TAB pour trois des interpréteurs de commandes : PowerShell, Bash et zsh. D’autres interpréteurs de commandes peuvent prendre en charge la saisie semi-automatique. Consultez leur documentation pour configurer la saisie semi-automatique ; les étapes devraient être similaires à la procédure décrite dans cet article.
+**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-[!INCLUDE [topic-appliesto-net-core-2plus](~/includes/topic-appliesto-net-core-2plus.md)]
+Cet article décrit comment configurer la saisie semi-automatique via la touche TAB pour trois des interpréteurs de commandes : PowerShell, Bash et zsh. Pour les autres shells, reportez-vous à leur documentation sur la configuration de la saisie semi-automatique par tabulation.
 
-Une fois activée, la complétion par la touche Tab dans l’interface CLI .NET Core se déclenche en tapant une commande `dotnet` dans l’interpréteur de commandes, puis en appuyant sur la touche Tab. La ligne de commande actuelle est envoyée à la commande `dotnet complete`, et les résultats sont traités par votre interpréteur de commandes. Vous pouvez tester les résultats sans activer la saisie semi-automatique via la touche TAB en envoyant une instruction directement à la commande `dotnet complete`. Par exemple :
+Une fois la configuration terminée, la saisie semi-automatique via la touche Tab pour le CLI .NET Core est déclenchée en tapant une commande de `dotnet` dans l’interpréteur de commandes, puis en appuyant sur la touche TAB. La ligne de commande actuelle est envoyée à la commande `dotnet complete`, et les résultats sont traités par votre interpréteur de commandes. Vous pouvez tester les résultats sans activer la saisie semi-automatique via la touche TAB en envoyant une instruction directement à la commande `dotnet complete`. Par exemple :
 
 ```console
 > dotnet complete "dotnet a"
@@ -34,7 +34,7 @@ Si cette commande ne fonctionne pas, vérifiez que le kit SDK .NET Core 2.0 ou v
 
 Voici quelques exemples de saisie semi-automatique via la touche TAB :
 
-Input                                | devient                                                                     | car
+Entrée                                | devient                                                                     | car
 :------------------------------------|:----------------------------------------------------------------------------|:--------------------------------
 `dotnet a⇥`                          | `dotnet add`                                                                 | `add` est la première sous-commande, par ordre alphabétique.
 `dotnet add p⇥`                      | `dotnet add --help`                                                          | La saisie semi-automatique renvoie des sous-chaînes et `--help` s’affiche en premier, par ordre alphabétique.
@@ -58,7 +58,7 @@ Register-ArgumentCompleter -Native -CommandName dotnet -ScriptBlock {
  }
 ```
 
-## <a name="bash"></a>échapper avec une barre oblique inverse
+## <a name="bash"></a>bash
 
 Pour ajouter la saisie semi-automatique via la touche TAB à votre interpréteur de commandes **bash** pour l’interface CLI .NET Core, ajoutez le code suivant à votre fichier `.bashrc` :
 

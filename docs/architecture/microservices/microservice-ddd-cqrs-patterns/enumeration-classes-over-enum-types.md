@@ -2,12 +2,12 @@
 title: Utilisation de classes d’énumération plutôt que de types enum
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Découvrez comment utiliser des classes d’énumération pour contourner certaines limitations des types enum.
 ms.date: 10/08/2018
-ms.openlocfilehash: 6752adb28b1bd0982c66fa2d021b04b999447c6e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 82bd80d19b3b73eb2f45ede8cc7ad4593c688277
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337678"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628460"
 ---
 # <a name="use-enumeration-classes-instead-of-enum-types"></a>Utiliser des classes d’énumération à la place de types enum
 
@@ -81,12 +81,6 @@ public class CardType : Enumeration
 ```
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
-
-- **Enum’s are evil—update** \
-  <https://www.planetgeek.ch/2009/07/01/enums-are-evil/>
-
-- **Daniel dur. Comment les énumérations sont réparties sur les maladies, et comment les y remédier** \
-  <https://codecraft.co/2012/10/29/how-enums-spread-disease-and-how-to-cure-it/>
 
 - **Jimmy bogard. Classes d’énumération** \
   <https://lostechies.com/jimmybogard/2008/08/12/enumeration-classes/>

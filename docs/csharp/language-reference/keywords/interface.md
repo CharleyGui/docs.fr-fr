@@ -6,16 +6,16 @@ f1_keywords:
 helpviewer_keywords:
 - interface keyword [C#]
 ms.assetid: 7da38e81-4f99-4bc5-b07d-c986b687eeba
-ms.openlocfilehash: b315d1f04c9e74700afba8ee7871b23ab4b2fd28
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 473f5f8e226f0a144746ac943afcffdccd4777c7
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744693"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625850"
 ---
 # <a name="no-loc-textinterface-c-reference"></a>:::no-loc text="interface"::: (C# référence)
 
-Une interface définit un contrat. Tout [`class`](class.md) ou [`struct`](struct.md) qui implémente ce contrat doit fournir une implémentation des membres définis dans l’interface. À partir C# de 8,0, une interface peut définir une implémentation par défaut pour les membres. Elle peut également définir des membres de [`static`](static.md) pour fournir une implémentation unique pour les fonctionnalités communes.
+Une interface définit un contrat. Tout [`class`](class.md) ou [`struct`](../builtin-types/struct.md) qui implémente ce contrat doit fournir une implémentation des membres définis dans l’interface. À partir C# de 8,0, une interface peut définir une implémentation par défaut pour les membres. Elle peut également définir des membres de [`static`](static.md) pour fournir une implémentation unique pour les fonctionnalités communes.
 
 Dans l’exemple suivant, la classe `ImplementationClass` doit implémenter une méthode nommée `SampleMethod` qui n’a aucun paramètre et qui retourne `void`.
 
@@ -78,6 +78,4 @@ Pour plus d’informations, consultez la section [interfaces](~/_csharplang/spec
 - [Interfaces](../../programming-guide/interfaces/index.md)
 - [Utilisation de propriétés](../../programming-guide/classes-and-structs/using-properties.md)
 - [Utilisation d’indexeurs](../../programming-guide/indexers/using-indexers.md)
-- [class](class.md)
-- [struct](struct.md)
 - [Interfaces](../../programming-guide/interfaces/index.md)

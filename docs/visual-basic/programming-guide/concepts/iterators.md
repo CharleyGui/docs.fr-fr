@@ -2,18 +2,18 @@
 title: Itérateurs
 ms.date: 07/20/2015
 ms.assetid: f26b5c1e-fe9d-4004-b287-da7919d717ae
-ms.openlocfilehash: 465a8e6650c3d015520164030a146c9502ebe603
-ms.sourcegitcommit: 17ee6605e01ef32506f8fdc686954244ba6911de
+ms.openlocfilehash: 2789ac66690ebfd472b9bae5ccf08b1bdfaa0922
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/22/2019
-ms.locfileid: "74353736"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628733"
 ---
 # <a name="iterators-visual-basic"></a>Itérateurs (Visual Basic)
 
 Un *itérateur* peut être utilisé pour parcourir des collections, comme des listes et des tableaux.
 
-Une méthode d’itérateur ou un accesseur `get` effectue une itération personnalisée sur une collection. Une méthode Iterator utilise l’instruction [yield](../../../visual-basic/language-reference/statements/yield-statement.md) pour retourner chaque élément un par un. Quand une instruction `Yield` est atteinte, l’emplacement actuel dans le code est mémorisé. L’exécution est redémarrée à partir de cet emplacement lors de l’appel suivant de la fonction d’itérateur.
+Une méthode d’itérateur ou un accesseur `get` effectue une itération personnalisée sur une collection. Une méthode Iterator utilise l’instruction [yield](../../../visual-basic/language-reference/statements/yield-statement.md) pour retourner chaque élément un par un. Quand une instruction `Yield` est atteinte, l’emplacement actif dans le code est mémorisé. L’exécution est redémarrée à partir de cet emplacement lors de l’appel suivant de la fonction d’itérateur.
 
 Vous consommez un itérateur à partir du code client à l’aide d’un [for each... Instruction Next](../../../visual-basic/language-reference/statements/for-each-next-statement.md) , ou à l’aide d’une requête LINQ.
 
@@ -259,7 +259,7 @@ Si le corps de `For Each` (au lieu de la méthode Iterator) lève une exception,
 
 ## <a name="BKMK_AnonymousMethods"></a>Méthodes anonymes
 
-Dans Visual Basic, une fonction anonyme peut être une fonction d’itérateur. L’exemple suivant illustre ces actions.
+Dans Visual Basic, une fonction anonyme peut être une fonction d’itérateur. L'exemple suivant illustre ce comportement.
 
 ```vb
 Dim iterateSequence = Iterator Function() _
@@ -435,7 +435,7 @@ Bien que vous écriviez un itérateur comme une méthode, le compilateur le trad
 
 Pour voir ce que fait le compilateur, vous pouvez utiliser l’outil Ildasm.exe pour afficher le code du langage intermédiaire Microsoft généré pour une méthode d’itérateur.
 
-Lorsque vous créez un itérateur pour une [classe](../../../csharp/language-reference/keywords/class.md) ou un [struct](../../../csharp/language-reference/keywords/struct.md), vous n’avez pas à implémenter l’ensemble de l’interface <xref:System.Collections.IEnumerator>. Quand le compilateur détecte l’itérateur, il génère automatiquement les méthodes `Current`, `MoveNext` et `Dispose` de l’interface <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
+Lorsque vous créez un itérateur pour une [classe](../../language-reference/statements/class-statement.md) ou un [struct](../../language-reference/statements/structure-statement.md), vous n’avez pas à implémenter l’ensemble de l’interface <xref:System.Collections.IEnumerator>. Quand le compilateur détecte l’itérateur, il génère automatiquement les méthodes `Current`, `MoveNext` et `Dispose` de l’interface <xref:System.Collections.IEnumerator> ou <xref:System.Collections.Generic.IEnumerator%601>.
 
 À chaque itération successive de la boucle `For Each…Next` (ou de l’appel direct à `IEnumerator.MoveNext`), le corps du code de l’itérateur suivant reprend après l’instruction `Yield` précédente. Il passe ensuite à l’instruction de `Yield` suivante jusqu’à ce que la fin du corps de l’itérateur soit atteinte, ou jusqu’à ce qu’une instruction `Exit Function` ou `Return` soit rencontrée.
 

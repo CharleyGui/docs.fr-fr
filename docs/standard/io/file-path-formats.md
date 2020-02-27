@@ -9,12 +9,12 @@ helpviewer_keywords:
 - I/O, long paths
 - long paths
 - path formats, Windows
-ms.openlocfilehash: 258cf59fb8383fe131f4a0e78dac6189e1d9c91e
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b3510be5d417b555d2db163636eac5ce0c0779e4
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75337672"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628044"
 ---
 # <a name="file-path-formats-on-windows-systems"></a>Formats de chemin de fichier sur les systèmes Windows
 
@@ -26,7 +26,7 @@ Un chemin DOS standard peut être constitué de trois composants :
 
 - Une lettre de volume ou de lecteur suivie du séparateur de volumes (`:`).
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
-- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
+- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin de fichier et le nom de fichier.
 
 Si les trois composants sont présents, le chemin est absolu. Si aucune lettre de lecteur ou de volume n’est spécifiée et que le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) précède les noms de répertoires, le chemin est relatif à la racine du lecteur actif. Sinon, le chemin est relatif au répertoire actif. Le tableau suivant présente certains chemins de répertoire et de fichier.
 
@@ -49,6 +49,8 @@ L’exemple suivant illustre la différence entre les chemins absolus et relatif
 [!code-csharp[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/cs/paths.cs)]
 [!code-vb[absolute-and-relative-paths](~/samples/snippets/standard/io/file-names/vb/paths.vb)]
 
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
+
 ## <a name="unc-paths"></a>Chemins UNC
 
 Les chemins respectant la convention d’affectation de noms (UNC), qui sont utilisés pour accéder aux ressources réseau, ont le format suivant :
@@ -56,7 +58,7 @@ Les chemins respectant la convention d’affectation de noms (UNC), qui sont uti
 - Un nom de serveur ou d’hôte, précédé de \\\\. Le nom du serveur peut être un nom d’ordinateur NetBIOS ou une adresse IP/FQDN (IPv4 et IPv6 sont pris en charge).
 - Un nom de partage, séparé du nom d’hôte par \\. Ensemble, le serveur et le partage forment le volume.
 - Un nom de répertoire. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare les sous-répertoires au sein de la hiérarchie de répertoires imbriqués.
-- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin et le nom de fichier.
+- Un nom de fichier facultatif. Le [caractère de séparation de répertoires](<xref:System.IO.Path.DirectorySeparatorChar>) sépare le chemin de fichier et le nom de fichier.
 
 Voici quelques exemples de chemins UNC :
 

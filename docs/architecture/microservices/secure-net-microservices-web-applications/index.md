@@ -3,12 +3,12 @@ title: Sécurisation des microservices .NET et des applications web
 description: 'Sécurité dans les microservices .NET et les applications web : Découvrez les options d’authentification dans les applications web ASP.NET Core.'
 author: mjrousos
 ms.date: 01/30/2020
-ms.openlocfilehash: f82212956f5492a51ec99d092e1a5131d1b31313
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 0ac2591f8650e9f8cf29560735a9ec803d29ee4f
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77501653"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628330"
 ---
 # <a name="make-secure-net-microservices-and-web-applications"></a>Sécuriser les microservices .NET et les applications web
 
@@ -135,8 +135,8 @@ Dans tous les cas, vous devez effectuer une procédure d’inscription d’appli
 
 Pour plus d’informations sur la configuration de votre application pour un fournisseur externe, voir [authentification du fournisseur externe dans la documentation ASP.net Core](/aspnet/core/security/authentication/social/)).
 
-> [!TIP]
-Tous les détails sont traités par l’intergiciel et les services d’autorisation mentionnés précédemment. Par conséquent, il vous suffit de choisir l’option d’authentification du **compte d’utilisateur individuel** lorsque vous créez le projet d’application Web de code ASP.net dans Visual Studio, comme le montre la figure 9-3, en plus de l’inscription des fournisseurs d’authentification mentionnés précédemment.
+>[!TIP]
+>Tous les détails sont traités par l’intergiciel et les services d’autorisation mentionnés précédemment. Par conséquent, il vous suffit de choisir l’option d’authentification du **compte d’utilisateur individuel** lorsque vous créez le projet d’application Web de code ASP.net dans Visual Studio, comme le montre la figure 9-3, en plus de l’inscription des fournisseurs d’authentification mentionnés précédemment.
 
 ![Capture d’écran de la boîte de dialogue Nouvelle ASP.NET Core application Web.](./media/index/select-individual-user-account-authentication-option.png)
 

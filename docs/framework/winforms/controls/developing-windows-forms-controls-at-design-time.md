@@ -12,12 +12,12 @@ ms.assetid: e5a8e088-7ec8-4fd9-bcb3-9078fd134829
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: dac049ea6a51037daa0e23dc93476e4410b2df06
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 7626e1efbb30ef3bfe9b5b1278c0adb18dd5944b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76745982"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628707"
 ---
 # <a name="develop-windows-forms-controls-at-design-time"></a>Développer des contrôles Windows Forms au moment du design
 
@@ -36,7 +36,7 @@ Montre comment créer un contrôle composite simple dans C#.
 [Procédure pas à pas : héritage d’un contrôle de Windows Forms](walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md)\
 Montre comment créer un contrôle Windows Forms simple à l’aide de l’héritage dans C#.
 
-[Procédure pas à pas : exécution de tâches courantes à l’aide de balises actives sur des contrôles Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md)\
+[Procédure pas à pas : effectuer des tâches courantes à l’aide d’actions de concepteur](perform-common-tasks-design-actions.md)\
 Montre comment utiliser la fonctionnalité de balise active sur les contrôles Windows Forms.
 
 [Procédure pas à pas : sérialisation de collections de types standard avec DesignerSerializationVisibilityAttribute](serializing-collections-designerserializationvisibilityattribute.md)\
@@ -81,13 +81,13 @@ Explique la signification et l’utilisation de la liste d’erreurs au moment d
 [Dépannage de la création de contrôles et de composants](troubleshooting-control-and-component-authoring.md)\
 Montre comment diagnostiquer et résoudre les problèmes courants qui peuvent se produire quand vous créez un composant ou un contrôle personnalisé.
 
-## <a name="reference"></a>Référence
+## <a name="reference"></a>Informations de référence
 
 - <xref:System.Windows.Forms.Control?displayProperty=nameWithType>
 
 - <xref:System.Windows.Forms.UserControl?displayProperty=nameWithType>
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
 [Développement de contrôles Windows Forms personnalisés avec le .NET Framework](developing-custom-windows-forms-controls.md)\
 Explique comment créer vos propres contrôles personnalisés avec le .NET Framework.

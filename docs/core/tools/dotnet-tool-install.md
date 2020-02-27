@@ -2,12 +2,12 @@
 title: Commande dotnet tool install
 description: La commande d’installation de l’outil dotnet installe l’outil .NET Core spécifié sur votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: 2705defe9b77009ca1411da28dd86d144ccc19e6
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 837d12bc807ad95ccdbd9c0e087c7d45418c6e74
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543467"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626032"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
@@ -30,7 +30,7 @@ dotnet tool install <-h|--help>
 
 La commande `dotnet tool install` vous permet d’installer les outils .NET Core sur votre ordinateur. Pour utiliser la commande, vous spécifiez l’une des options d’installation suivantes :
 
-* Pour installer un outil Global à l’emplacement par défaut, utilisez l’option `--tool-path`.
+* Pour installer un outil Global à l’emplacement par défaut, utilisez l’option `--global`.
 * Pour installer un outil Global dans un emplacement personnalisé, utilisez l’option `--tool-path`.
 * Pour installer un outil local, omettez les options `--global` et `--tool-path`.
 

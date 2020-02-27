@@ -20,20 +20,20 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: d5ca0593d802d331d980cf35c701e0a79d54abee
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 6b65d7e79e4eac30171eb0aad650f7c1e3880e30
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163096"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77627268"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Types référence intégrés (Référence C#)
 
 C# a un nombre de types référence intégrés. Ils ont des mots clés ou des opérateurs qui sont synonymes pour un type dans la bibliothèque .NET. 
 
-## <a name="the-object-type"></a>Type d’objet
+## <a name="the-object-type"></a>Type d’objet.
 
-Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type `object` est convertie en un type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md). 
+Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type `object` est convertie en un type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md). 
 
 ## <a name="the-string-type"></a>Type de chaîne
 
@@ -97,9 +97,9 @@ Les littéraux de chaîne peuvent contenir tout littéral de caractère. Les sé
 ```csharp-interactive
 string a = "\\\u0066\n F";
 Console.WriteLine(a);
-\\ Output:
-\\ \f
-\\  F
+// Output:
+// \f
+//  F
 ```
 
 > [!NOTE]
@@ -170,7 +170,7 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Mots clés C#](../keywords/index.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)

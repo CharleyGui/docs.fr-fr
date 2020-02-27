@@ -1,29 +1,29 @@
 ---
 title: Migrer les services duplex WCF vers gRPC-gRPC pour les développeurs WCF
-description: Découvrez comment migrer différentes formes de service duplex WCF vers des services de streaming gRPC.
+description: Découvrez comment migrer diverses formes de services duplex WCF vers des services de streaming gRPC.
 ms.date: 09/02/2019
-ms.openlocfilehash: e2248df20e5c2d8f96055d42ba684749251154bd
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 5737f02044ab9e4064f632164db764541a9c4d31
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73971882"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628538"
 ---
 # <a name="migrate-wcf-duplex-services-to-grpc"></a>Migrer les services duplex WCF vers gRPC
 
-Maintenant que les concepts de base sont en place, cette section aborde les services gRPC de *diffusion en continu* plus compliqués.
+Maintenant que vous avez un sens des concepts de base, dans cette section, vous allez examiner les services gRPC de *diffusion en continu* plus compliqués.
 
-Il existe plusieurs façons d’utiliser les services duplex dans Windows Communication Foundation (WCF). Certains services sont initiés par le client, puis diffusent en continu des données à partir du serveur. D’autres services duplex intégral peuvent impliquer une communication bidirectionnelle continue comme l’exemple « calculatrice » classique dans la documentation WCF. Ce chapitre prend en compte deux implémentations de « cotations boursières » WCF possibles et les migre vers gRPC : l’un à l’aide d’un RPC de diffusion de serveur et l’autre à l’aide d’un RPC de streaming bidirectionnel.
+Il existe plusieurs façons d’utiliser les services duplex dans Windows Communication Foundation (WCF). Certains services sont initiés par le client, puis diffusent en continu des données à partir du serveur. D’autres services duplex intégral peuvent impliquer une communication bidirectionnelle continue, comme l’exemple de calculatrice classique dans la documentation WCF. Ce chapitre prend en compte deux implémentations possibles de l’application de cotations boursières WCF et les migre vers gRPC : une qui utilise un RPC de streaming de serveur et une autre qui utilise un RPC de streaming bidirectionnel.
 
 ## <a name="server-streaming-rpc"></a>RPC de streaming de serveur
 
-Dans l' [exemple de solution SIMPLESTOCKTICKER WCF](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker), *SimpleStockPriceTicker*, il existe un service duplex dans lequel le client démarre la connexion avec une liste de symboles boursiers, et le serveur utilise l' *interface de rappel* pour envoyer des mises à jour dès qu’elles sont disponibles. Le client implémente cette interface pour répondre aux appels à partir du serveur.
+Dans l' [exemple de solution WCF SimpleStockTicker](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/SimpleStockTickerSample/wcf/SimpleStockTicker), SimpleStockPriceTicker, il existe un service duplex pour lequel le client démarre la connexion avec une liste de symboles boursiers, et le serveur utilise l' *interface de rappel* pour envoyer des mises à jour dès qu’elles sont disponibles. Le client implémente cette interface pour répondre aux appels à partir du serveur.
 
 ### <a name="the-wcf-solution"></a>La solution WCF
 
-La solution WCF est implémentée en tant que serveur NetTCP auto-hébergé dans une application console .NET Framework 4. x.
+La solution WCF est implémentée en tant que serveur net. TCP auto-hébergé dans un .NET Framework 4. *x* application console.
 
-#### <a name="the-servicecontract"></a>ServiceContract
+#### <a name="servicecontract"></a>ServiceContract
 
 ```csharp
 [ServiceContract(SessionMode = SessionMode.Required, CallbackContract = typeof(ISimpleStockTickerCallback))]
@@ -34,7 +34,7 @@ public interface ISimpleStockTickerService
 }
 ```
 
-Le service a une méthode unique sans type de retour, car il utilisera l’interface de rappel `ISimpleStockTickerCallback` pour envoyer des données au client en temps réel.
+Le service a une méthode unique sans type de retour, car il utilise l’interface de rappel `ISimpleStockTickerCallback` pour envoyer des données au client en temps réel.
 
 #### <a name="the-callback-interface"></a>Interface de rappel
 
@@ -47,13 +47,13 @@ public interface ISimpleStockTickerCallback
 }
 ```
 
-Les implémentations de ces interfaces se trouvent dans la solution, ainsi que les dépendances externes factices pour fournir des données de test.
+Vous pouvez trouver les implémentations de ces interfaces dans la solution, ainsi que les dépendances externes factices pour fournir des données de test.
 
 ### <a name="grpc-streaming"></a>diffusion en continu gRPC
 
-La méthode gRPC pour gérer les données en temps réel est différente. Un appel du client au serveur peut créer un flux persistant, qui peut être surveillé pour les messages arrivant de manière asynchrone. Malgré la différence, les flux peuvent être un moyen plus intuitif de traiter ces données et sont plus pertinents dans la programmation moderne avec l’accent sur LINQ, les flux réactifs, la programmation fonctionnelle, etc.
+Le processus de gRPC pour le traitement des données en temps réel est différent du processus WCF. Un appel du client au serveur peut créer un flux persistant, qui peut être surveillé pour les messages arrivant de manière asynchrone. Malgré la différence, les flux peuvent être un moyen plus intuitif de traiter ces données et sont plus pertinents dans la programmation moderne, qui met l’accent sur LINQ, les flux réactifs, la programmation fonctionnelle, etc.
 
-La définition de service a besoin de deux messages : un pour la demande et un pour le flux. Le service retourne un flux de `StockTickerUpdate` message à l’aide du mot clé `stream` dans sa déclaration de `return`. Il est recommandé d’ajouter une `Timestamp` à la mise à jour pour afficher l’heure exacte du changement de prix.
+La définition de service a besoin de deux messages : un pour la demande et un pour le flux. Le service retourne un flux de `StockTickerUpdate` message avec le mot clé `stream` dans sa déclaration de `return`. Nous vous recommandons d’ajouter une `Timestamp` à la mise à jour pour afficher l’heure exacte du changement de prix.
 
 #### <a name="simple_stock_tickerproto"></a>simple_stock_ticker. proto
 
@@ -81,9 +81,9 @@ message StockTickerUpdate {
 }
 ```
 
-### <a name="implement-the-simplestockticker"></a>Implémenter SimpleStockTicker
+### <a name="implement-simplestockticker"></a>Implémenter SimpleStockTicker
 
-Réutilisez le `StockPriceSubscriber` factice du projet WCF en copiant les trois classes de la bibliothèque de classes `TraderSys.StockMarket` dans une nouvelle bibliothèque de classes .NET Standard dans la solution cible. Pour mieux suivre les meilleures pratiques, ajoutez un type de `Factory` pour créer des instances de ce dernier et inscrire le `IStockPriceSubscriberFactory` avec les services d’injection de dépendances de ASP.NET Core.
+Réutilisez le `StockPriceSubscriber` factice du projet WCF en copiant les trois classes de la bibliothèque de classes `TraderSys.StockMarket` dans une nouvelle bibliothèque de classes .NET Standard dans la solution cible. Pour mieux suivre les meilleures pratiques, ajoutez un type de `Factory` pour créer des instances de celui-ci, puis inscrivez le `IStockPriceSubscriberFactory` auprès des services d’injection de dépendances ASP.NET Core.
 
 #### <a name="the-factory-implementation"></a>Implémentation de la fabrique
 
@@ -102,7 +102,7 @@ public class StockPriceSubscriberFactory : IStockPriceSubscriberFactory
 }
 ```
 
-#### <a name="registering-the-factory"></a>Inscription de la fabrique
+#### <a name="register-the-factory"></a>Inscrire la fabrique
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -112,7 +112,7 @@ public void ConfigureServices(IServiceCollection services)
 }
 ```
 
-À présent, cette classe peut être utilisée pour implémenter le service gRPC StockTicker.
+Cette classe peut maintenant être utilisée pour implémenter le `StockTickerService`gRPC.
 
 #### <a name="stocktickerservicecs"></a>StockTickerService.cs
 
@@ -149,7 +149,7 @@ public class StockTickerService : Protos.SimpleStockTicker.SimpleStockTickerBase
         }
         catch (Exception e)
         {
-            // Handle any errors due to broken connection etc.
+            // Handle any errors caused by broken connection, etc.
             _logger.LogError($"Failed to write message: {e.Message}");
         }
     }
@@ -163,21 +163,21 @@ public class StockTickerService : Protos.SimpleStockTicker.SimpleStockTickerBase
 }
 ```
 
-Comme vous pouvez le voir, bien que la déclaration dans le fichier `.proto` indique que la méthode retourne un flux de messages `StockTickerUpdate`, en fait, elle retourne un `Task`vanille. Le travail de création du flux est géré par le code généré et les bibliothèques Runtime gRPC, qui fournissent le flux de réponse `IServerStreamWriter<StockTickerUpdate>`, prêt à être utilisé.
+Comme vous pouvez le voir, bien que la déclaration dans le fichier `.proto` indique que la méthode retourne un flux de messages `StockTickerUpdate`, elle retourne en fait un `Task`. Le travail de création du flux est géré par le code généré et les bibliothèques Runtime gRPC, qui fournissent le flux de réponse `IServerStreamWriter<StockTickerUpdate>`, prêt à être utilisé.
 
 Contrairement à un service duplex WCF, où l’instance de la classe de service reste active pendant que la connexion est ouverte, le service gRPC utilise la tâche retournée pour maintenir le service actif. La tâche ne peut pas se terminer tant que la connexion n’est pas fermée.
 
 Le service peut indiquer à quel moment le client a fermé la connexion à l’aide de l' `CancellationToken` à partir du `ServerCallContext`. Une méthode statique simple, `AwaitCancellation`, est utilisée pour créer une tâche qui se termine lorsque le jeton est annulé.
 
-Dans la méthode `Subscribe`, récupérez un `StockPriceSubscriber` et ajoutez un gestionnaire d’événements qui écrit dans le flux de réponse. Attendez ensuite que la connexion soit fermée, avant de supprimer immédiatement le `subscriber` pour empêcher qu’il tente d’écrire des données dans le flux fermé.
+Dans la méthode `Subscribe`, récupérez un `StockPriceSubscriber` et ajoutez un gestionnaire d’événements qui écrit dans le flux de réponse. Attendez ensuite que la connexion soit fermée avant de supprimer immédiatement le `subscriber` pour l’empêcher d’essayer d’écrire des données dans le flux fermé.
 
-La méthode `WriteUpdateAsync` a un `try`bloc /`catch` pour gérer les erreurs qui peuvent se produire lors de l’écriture d’un message dans le flux. Il s’agit d’un point important à prendre en compte dans les connexions persistantes sur les réseaux, qui peuvent être interrompues à n’importe quelle milliseconde, que ce soit intentionnellement ou en raison d’une défaillance.
+La méthode `WriteUpdateAsync` a un `try`/bloc `catch` pour gérer les erreurs qui peuvent se produire lors de l’écriture d’un message dans le flux. Cette considération est importante dans les connexions persistantes sur les réseaux, qui peuvent être interrompues à n’importe quelle milliseconde, que ce soit intentionnellement ou en raison d’une défaillance quelque part.
 
-### <a name="using-the-stocktickerservice-from-a-client-application"></a>Utilisation du StockTickerService à partir d’une application cliente
+### <a name="use-stocktickerservice-from-a-client-application"></a>Utiliser StockTickerService à partir d’une application cliente
 
 Suivez les mêmes étapes de la section précédente pour créer une bibliothèque de classes de client partageable à partir du fichier `.proto`. Dans l’exemple, il existe une application console .NET Core 3,0 qui montre comment utiliser le client.
 
-#### <a name="example-programcs"></a>Exemple de Program.cs
+#### <a name="example-programcs"></a>Exemple avec Program.cs
 
 ```csharp
 class Program
@@ -206,16 +206,16 @@ class Program
 
 Dans ce cas, la méthode `Subscribe` sur le client généré n’est pas asynchrone. Le flux est créé et utilisable immédiatement, car sa méthode `MoveNext` est asynchrone et la première fois qu’il est appelé, il ne se termine pas tant que la connexion n’est pas active.
 
-Le flux est passé à une méthode `DisplayAsync` Async ; l’application attend ensuite que l’utilisateur appuie sur une touche, puis annule la méthode `DisplayAsync` et attend la fin de la tâche avant de quitter.
+Le flux est passé à une méthode de `DisplayAsync` asynchrone. L’application attend ensuite que l’utilisateur appuie sur une touche, puis annule la méthode `DisplayAsync` et attend la fin de la tâche avant de quitter.
 
 > [!NOTE]
-> Ce code utilise la nouvelle C# syntaxe 8 « using DECLARATION » pour supprimer le flux et le canal quand la méthode `Main` se termine. C’est une petite modification, mais une bonne chose qui réduit les retraits et les lignes vides.
+> Ce code utilise la nouvelle C# syntaxe de déclaration de 8 `using` pour supprimer le flux et le canal quand la méthode `Main` se termine. C’est une petite modification, mais une bonne chose qui réduit les retraits et les lignes vides.
 
 #### <a name="consume-the-stream"></a>Utiliser le flux
 
-WCF utilisait des interfaces de rappel pour permettre au serveur d’appeler des méthodes directement sur le client. les flux gRPC fonctionnent différemment. Le client itère au sein du flux retourné et traite les messages, comme s’ils étaient retournés par une méthode locale retournant un `IEnumerable`.
+WCF utilise des interfaces de rappel pour permettre au serveur d’appeler des méthodes directement sur le client. les flux gRPC fonctionnent différemment. Le client itère au sein du flux retourné et traite les messages, comme s’ils étaient retournés par une méthode locale retournant un `IEnumerable`.
 
-Le type de `IAsyncStreamReader<T>` fonctionne très bien comme un `IEnumerator<T>`: il existe une méthode `MoveNext` qui retourne la valeur true tant qu’il y a plus de données, et une propriété `Current` qui retourne la valeur la plus récente. La seule différence est que la méthode `MoveNext` retourne un `Task<bool>` au lieu d’une seule `bool`. La méthode d’extension `ReadAllAsync` encapsule le flux dans une C# `IAsyncEnumerable` standard de 8 qui peut être utilisée avec la nouvelle syntaxe de `await foreach`.
+Le type de `IAsyncStreamReader<T>` fonctionne très bien comme un `IEnumerator<T>`. Il existe une méthode `MoveNext` qui retourne la valeur true tant qu’il y a plus de données, et une propriété `Current` qui retourne la valeur la plus récente. La seule différence est que la méthode `MoveNext` retourne un `Task<bool>` au lieu d’une seule `bool`. La méthode d’extension `ReadAllAsync` encapsule le flux dans une C# `IAsyncEnumerable` standard de 8 qui peut être utilisée avec la nouvelle syntaxe de `await foreach`.
 
 ```csharp
 static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, CancellationToken token)
@@ -239,9 +239,9 @@ static async Task DisplayAsync(IAsyncStreamReader<StockTickerUpdate> stream, Can
 ```
 
 > [!TIP]
-> La section sur les [bibliothèques clientes](client-libraries.md#iobservable) à la fin de ce chapitre explique comment ajouter une méthode d’extension et des classes pour encapsuler `IAsyncStreamReader<T>` dans une `IObservable<T>` pour les développeurs qui utilisent des modèles de programmation réactifs.
+> Pour les développeurs qui utilisent des modèles de programmation réactifs, la section sur les [bibliothèques clientes](client-libraries.md#iobservable) à la fin de ce chapitre montre comment ajouter une méthode d’extension et des classes pour encapsuler `IAsyncStreamReader<T>` dans un `IObservable<T>`.
 
-Là encore, veillez à intercepter les exceptions ici en raison de la possibilité d’une défaillance du réseau, ainsi que des <xref:System.OperationCanceledException> qui seront inévitablement levées, car le code utilise un <xref:System.Threading.CancellationToken> pour rompre la boucle. Le type de `RpcException` contient de nombreuses informations utiles sur les erreurs d’exécution gRPC, y compris les `StatusCode`. Pour plus d’informations, consultez [ *gestion des erreurs* dans le chapitre 4](error-handling.md).
+Là encore, veillez à intercepter les exceptions ici en raison de la possibilité d’une défaillance du réseau, et en raison de la <xref:System.OperationCanceledException> qui sera inévitablement levée, car le code utilise un <xref:System.Threading.CancellationToken> pour rompre la boucle. Le type de `RpcException` contient de nombreuses informations utiles sur les erreurs d’exécution gRPC, y compris les `StatusCode`. Pour plus d’informations, consultez [ *gestion des erreurs* dans le chapitre 4](error-handling.md).
 
 ## <a name="bidirectional-streaming"></a>Diffusion bidirectionnelle
 
@@ -270,9 +270,9 @@ public interface IFullStockTickerService
 
 L’interface de rappel reste la même.
 
-L’implémentation de ce modèle dans gRPC est moins simple, car il existe désormais deux flux de données avec des messages transmis : un du client au serveur et un autre du serveur au client. Il n’est pas possible d’utiliser plusieurs méthodes pour implémenter l’opération d’ajout et de suppression, mais plusieurs types de messages peuvent être transmis sur un seul flux, en utilisant le type `Any` ou `oneof` mot clé, qui a été traité dans le [chapitre 3](protobuf-any-oneof.md).
+L’implémentation de ce modèle dans gRPC est moins simple, car il existe désormais deux flux de données avec des messages transmis : un du client au serveur et un autre du serveur au client. Il n’est pas possible d’utiliser plusieurs méthodes pour implémenter les opérations d’ajout et de suppression, mais vous pouvez passer plusieurs types de messages sur un seul flux à l’aide du type de `Any` ou du mot clé `oneof`, qui ont été abordés dans le [chapitre 3](protobuf-any-oneof.md).
 
-Dans le cas d’un ensemble spécifique de types acceptables, `oneof` est une meilleure façon de le faire. Utilisez une `ActionMessage` qui peut contenir un `AddSymbolRequest` ou un `RemoveSymbolRequest`.
+Dans le cas où un ensemble spécifique de types est acceptable, `oneof` est une meilleure façon de le faire. Utilisez une `ActionMessage` qui peut contenir un `AddSymbolRequest` ou un `RemoveSymbolRequest`:
 
 ```protobuf
 message ActionMessage {
@@ -291,7 +291,7 @@ message RemoveSymbolRequest {
 }
 ```
 
-Déclarez un service de streaming bidirectionnel qui prend un flux de messages `ActionMessage`.
+Déclarez un service de streaming bidirectionnel qui prend un flux de messages `ActionMessage` :
 
 ```protobuf
 service FullStockTicker {
@@ -299,7 +299,7 @@ service FullStockTicker {
 }
 ```
 
-L’implémentation de ce service est similaire à l’exemple précédent, sauf que le premier paramètre de la méthode `Subscribe` est désormais un `IAsyncStreamReader<ActionMessage>`, qui peut être utilisé pour gérer les demandes `Add` et `Remove`.
+L’implémentation de ce service est similaire à celle de l’exemple précédent, sauf que le premier paramètre de la méthode `Subscribe` est désormais un `IAsyncStreamReader<ActionMessage>`, qui peut être utilisé pour gérer les demandes `Add` et `Remove` :
 
 ```csharp
 public override async Task Subscribe(IAsyncStreamReader<ActionMessage> requestStream, IServerStreamWriter<StockTickerUpdate> responseStream, ServerCallContext context)
@@ -332,7 +332,7 @@ private async Task WriteUpdateAsync(IServerStreamWriter<StockTickerUpdate> strea
     }
     catch (Exception e)
     {
-        // Handle any errors due to broken connection etc.
+        // Handle any errors caused by broken connection, etc.
         _logger.LogError($"Failed to write message: {e.Message}");
     }
 }
@@ -345,7 +345,7 @@ private static Task AwaitCancellation(CancellationToken token)
 }
 ```
 
-La classe `ActionMessage` que gRPC a généré pour nous garantit qu’une seule des propriétés `Add` et `Remove` peut être définie, et la recherche de celle qui n’est pas `null` est un moyen valide de trouver le type de message utilisé, mais il existe une meilleure méthode. La génération de code a également créé une `enum ActionOneOfCase` dans la classe `ActionMessage`, qui ressemble à ceci :
+La classe `ActionMessage` que gRPC a générée garantit qu’une seule des propriétés `Add` et `Remove` peut être définie. La recherche d’une valeur n’est pas `null` est un moyen valide de déterminer quel type de message est utilisé, mais il existe un meilleur moyen de le faire. La génération de code a également créé une `enum ActionOneOfCase` dans la classe `ActionMessage`, qui ressemble à ceci :
 
 ```csharp
 public enum ActionOneofCase {
@@ -355,7 +355,7 @@ public enum ActionOneofCase {
 }
 ```
 
-La propriété `ActionCase` sur l’objet `ActionMessage` peut être utilisée avec une instruction `switch` pour déterminer quel champ est défini.
+La propriété `ActionCase` sur l’objet `ActionMessage` peut être utilisée avec une instruction `switch` pour déterminer quel champ est défini :
 
 ```csharp
 private async Task HandleActions(IAsyncStreamReader<ActionMessage> requestStream, IFullStockPriceSubscriber subscriber, CancellationToken token)
@@ -382,13 +382,13 @@ private async Task HandleActions(IAsyncStreamReader<ActionMessage> requestStream
 ```
 
 > [!TIP]
-> L’instruction `switch` a un cas `default` qui enregistre un avertissement en cas de détection d’une valeur de `ActionOneOfCase` inconnue. Cela peut être utile pour indiquer qu’un client utilise une version plus récente du fichier `.proto` qui a ajouté d’autres actions. C’est l’une des raisons pour lesquelles l’utilisation d’un `switch` est meilleure que le test de `null` sur des champs connus.
+> L’instruction `switch` a un cas `default` qui enregistre un avertissement si elle rencontre une valeur de `ActionOneOfCase` inconnue. Cela peut être utile pour indiquer qu’un client utilise une version plus récente du fichier `.proto` qui a ajouté d’autres actions. C’est l’une des raisons pour lesquelles l’utilisation d’un `switch` est meilleure que le test de `null` sur des champs connus.
 
-### <a name="use-the-fullstocktickerservice-from-a-client-application"></a>Utiliser FullStockTickerService à partir d’une application cliente
+### <a name="use-fullstocktickerservice-from-a-client-application"></a>Utiliser FullStockTickerService à partir d’une application cliente
 
-Il existe une simple application WPF .NET Core 3,0 pour illustrer l’utilisation de ce client plus complexe. L’application complète est disponible [sur GitHub](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTicker).
+Il existe une simple application WPF .NET Core 3,0 qui illustre l’utilisation de ce client plus complexe. Vous pouvez trouver l’application complète sur [GitHub](https://github.com/dotnet-architecture/grpc-for-wcf-developers/tree/master/FullStockTickerSample/grpc/FullStockTicker).
 
-Le client est utilisé dans la classe `MainWindowViewModel`, qui obtient une instance du type `FullStockTicker.FullStockTickerClient` à partir de l’injection de dépendances.
+Le client est utilisé dans la classe `MainWindowViewModel`, qui obtient une instance du type `FullStockTicker.FullStockTickerClient` à partir de l’injection de dépendance :
 
 ```csharp
 public class MainWindowViewModel : IAsyncDisposable, INotifyPropertyChanged
@@ -433,7 +433,7 @@ public async Task Remove(PriceViewModel priceViewModel)
 > [!IMPORTANT]
 > La définition de la valeur d’un champ `oneof` sur un message efface automatiquement tous les champs qui ont été définis précédemment.
 
-Le flux de réponses est géré dans une méthode `async`, et la `Task` retourne est conservée pour être supprimée lorsque la fenêtre est fermée.
+Le flux de réponses est géré dans une méthode `async`. La `Task` elle retourne est conservée pour être supprimée lorsque la fenêtre est fermée :
 
 ```csharp
 private async Task HandleResponsesAsync(CancellationToken token)
@@ -460,12 +460,12 @@ private async Task HandleResponsesAsync(CancellationToken token)
 }
 ```
 
-### <a name="client-clean-up"></a>Nettoyage du client
+### <a name="client-cleanup"></a>Nettoyage du client
 
-Lorsque la fenêtre est fermée et que le `MainWindowViewModel` est supprimé (à partir de l’événement `Closed` de `MainWindow`), il est recommandé de supprimer correctement l’objet `AsyncDuplexStreamingCall`. En particulier, la méthode `CompleteAsync` sur le `RequestStream` doit être appelée pour fermer correctement le flux sur le serveur. L’exemple suivant illustre la méthode `DisposeAsync` de l’exemple de modèle d’affichage :
+Lorsque la fenêtre est fermée et que le `MainWindowViewModel` est supprimé (à partir de l’événement `Closed` de `MainWindow`), nous vous recommandons de supprimer correctement l’objet `AsyncDuplexStreamingCall`. En particulier, la méthode `CompleteAsync` sur le `RequestStream` doit être appelée pour fermer correctement le flux sur le serveur. Cet exemple illustre la méthode `DisposeAsync` de l’exemple de modèle d’affichage :
 
 ```csharp
-public ValueTask DisposeAsync()
+public async ValueTask DisposeAsync()
 {
     try
     {

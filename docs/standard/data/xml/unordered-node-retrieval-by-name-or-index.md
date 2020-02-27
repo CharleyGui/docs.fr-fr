@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: 8c6819b4c1628d9e09a9bbf96ae8d5edbb6c643d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 577de6b60e579b37eb54ea69de72f3534f1d23ac
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710074"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628902"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Extraction de nœuds non triés par leur nom ou par l'index
 **XmlNamedNodeMap**, appelé NamedNodeMap dans la spécification du World Wide Web Consortium (W3C), est requis pour gérer un ensemble non trié de nœuds tout en permettant de référencer les nœuds par leur nom ou sur base de l’index. Le seul moyen d’accéder à un **XmlNamedNodeMap** est le retour de **XmlNamedNodeMap** par une méthode ou une propriété. Trois méthodes ou propriétés retournent **XmlNamedNodeMap** :  
@@ -115,7 +115,7 @@ class test {
 }  
 ```  
   
- Pour examiner un exemple de code supplémentaire qui illustre la suppression d'un attribut **d’AttributeCollection**, consultez [Méthode XmlNamedNodeMap.RemoveNamedItem](Overload:System.Xml.XmlNamedNodeMap.RemoveNamedItem). Pour plus d'informations sur les propriétés et méthodes, consultez [Membres XmlNamedNodeMap](AllMembers.T:System.Xml.XmlNamedNodeMap).  
+ Pour examiner un exemple de code supplémentaire qui illustre la suppression d'un attribut **d’AttributeCollection**, consultez [Méthode XmlNamedNodeMap.RemoveNamedItem](xref:System.Xml.XmlNamedNodeMap.RemoveNamedItem%2A). Pour plus d'informations sur les propriétés et méthodes, consultez [Membres XmlNamedNodeMap](xref:System.Xml.XmlNamedNodeMap).  
   
 ## <a name="see-also"></a>Voir aussi
 

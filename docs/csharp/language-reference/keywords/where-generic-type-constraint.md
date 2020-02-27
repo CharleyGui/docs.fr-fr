@@ -6,12 +6,12 @@ f1_keywords:
 - whereconstraint_CSharpKeyword
 helpviewer_keywords:
 - where (generic type constraint) [C#]
-ms.openlocfilehash: 19bf7682916336173ed93619fb6f0ff1242a1b30
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: d236420c5019f7529b729155b13df50807dc1dab
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712804"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626709"
 ---
 # <a name="where-generic-type-constraint-c-reference"></a>where (contrainte de type générique) (Référence C#)
 
@@ -32,7 +32,7 @@ La clause `where` peut spécifier que le type est une `class` ou un `struct`. La
 
 [!code-csharp[using the class and struct constraints](~/samples/snippets/csharp/keywords/GenericWhereConstraints.cs#3)]
 
-La clause `where` peut inclure la contrainte `notnull`. La contrainte de `notnull` limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](struct.md) ou un type référence non Nullable. La contrainte de `notnull` est disponible à C# partir de 8,0 pour le code compilé dans un [contexte de`nullable enable`](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type viole la contrainte de `notnull`, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement dans un contexte de `nullable enable`. 
+La clause `where` peut inclure la contrainte `notnull`. La contrainte de `notnull` limite le paramètre de type aux types non nullables. Ce type peut être un type [valeur](../builtin-types/value-types.md) ou un type référence non Nullable. La contrainte de `notnull` est disponible à C# partir de 8,0 pour le code compilé dans un [contexte de`nullable enable`](../../nullable-references.md#nullable-contexts). Contrairement à d’autres contraintes, si un argument de type viole la contrainte de `notnull`, le compilateur génère un avertissement au lieu d’une erreur. Les avertissements sont générés uniquement dans un contexte de `nullable enable`.
 
 > [!IMPORTANT]
 > Les déclarations génériques qui incluent la contrainte `notnull` peuvent être utilisées dans un contexte oublie Nullable, mais le compilateur n’applique pas la contrainte.
@@ -71,7 +71,7 @@ Pour plus d’informations sur la syntaxe et l’utilisation de contraintes, con
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Introduction aux génériques](../../programming-guide/generics/index.md)
 - [new, contrainte](./new-constraint.md)

@@ -1,24 +1,24 @@
 ---
 title: Propriétés d'interface - Guide de programmation C#
-ms.date: 07/20/2015
+ms.date: 01/31/2020
 helpviewer_keywords:
 - properties [C#], on interfaces
 - interfaces [C#], properties
 ms.assetid: 6503e9ed-33d7-44ec-b4c1-cc16c084b795
-ms.openlocfilehash: ff892a35f4be6600c00bc0c72c2f789ef6eb4408
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5798b80526f34e923e2eaab43847b98f6c64e14b
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705533"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626618"
 ---
 # <a name="interface-properties-c-programming-guide"></a>Propriétés d'interface (Guide de programmation C#)
 
-Des propriétés peuvent être déclarées dans une [interface](../../language-reference/keywords/interface.md). L’exemple ci-dessous porte sur un accesseur de propriété d’interface :
+Des propriétés peuvent être déclarées dans une [interface](../../language-reference/keywords/interface.md). L’exemple suivant déclare un accesseur de propriété d’interface :
 
-[!code-csharp[csProgGuideProperties#14](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#14)]
+[!code-csharp[DeclareProperties](~/samples/snippets/csharp/interfaces/properties.cs#DeclareInterfaceProperties)]
 
-L’accesseur d’une propriété d’interface n’a pas de corps. Par conséquent, les accesseurs visent à indiquer si la propriété est en lecture-écriture, en lecture seule ou en écriture seule.
+Les propriétés d’interface n’ont généralement pas de corps. Les accesseurs indiquent si la propriété est en lecture-écriture, en lecture seule ou en écriture seule. Contrairement aux classes et aux structs, la déclaration des accesseurs sans corps ne déclare pas de [propriété implémentée automatiquement](auto-implemented-properties.md). À partir C# de 8,0, une interface peut définir une implémentation par défaut pour les membres, y compris les propriétés. La définition d’une implémentation par défaut pour une propriété dans une interface est rare, car les interfaces ne peuvent pas définir des champs de données d’instance.
 
 ## <a name="example"></a>Exemple
 
@@ -26,23 +26,24 @@ Dans cet exemple, l’interface `IEmployee` a une propriété en lecture-écritu
 
 Vous pouvez utiliser le nom qualifié complet de la propriété, qui fait référence à l’interface dans laquelle le membre est déclaré. Par exemple :
 
-[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#ExplicitImplementation)]
 
-Ceci s’appelle une [implémentation d’interface explicite](../interfaces/explicit-interface-implementation.md). Par exemple, si la classe `Employee` implémente deux interfaces, `ICitizen` et `IEmployee`, et que les deux interfaces ont la même propriété `Name`, l’implémentation de membre d’interface explicite est nécessaire. Autrement dit, la déclaration de propriété suivante :
+L’exemple précédent illustre l' [implémentation d’interface explicite](../interfaces/explicit-interface-implementation.md). Par exemple, si la classe `Employee` implémente deux interfaces, `ICitizen` et `IEmployee`, et que les deux interfaces ont la même propriété `Name`, l’implémentation de membre d’interface explicite est nécessaire. Autrement dit, la déclaration de propriété suivante :
 
-[!code-csharp[csProgGuideProperties#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#16)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#ExplicitImplementation)]
 
 implémente la propriété `Name` dans l’interface `IEmployee`, alors que la déclaration suivante :
 
-[!code-csharp[csProgGuideProperties#17](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#17)]
+[!code-csharp[ExplicitProperties](~/samples/snippets/csharp/interfaces/properties.cs#CitizenImplementation)]
 
 implémente la propriété `Name` dans l’interface `ICitizen`.
 
-[!code-csharp[csProgGuideProperties#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#15)]
+[!code-csharp[Example](~/samples/snippets/csharp/interfaces/properties.cs#PropertyExample)]
+[!code-csharp[Example](~/samples/snippets/csharp/interfaces/properties.cs#UseProperty)]
 
 **`210 Hazem Abolrous`**
 
-## <a name="sample-output"></a>Résultat de l'exemple
+## <a name="sample-output"></a>Exemple de sortie
 
 ```console
 Enter number of employees: 210

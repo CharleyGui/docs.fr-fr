@@ -1,36 +1,39 @@
 ---
 title: Gestion des versions du langage C# - Guide C#
-description: Découvrez comment la version du langage C# est déterminée en fonction de votre projet, et les différentes valeurs que vous pouvez y ajuster manuellement.
-ms.date: 07/10/2019
-ms.openlocfilehash: 3c1035d983660ea0a945e4d4b7b72c69736c90cb
-ms.sourcegitcommit: 19014f9c081ca2ff19652ca12503828db8239d48
+description: En savoir plus sur C# la façon dont la version du langage est déterminée en fonction de votre projet et des raisons qui sous-tendent ce choix. Découvrez comment remplacer manuellement la valeur par défaut.
+ms.date: 02/21/2020
+ms.openlocfilehash: 2be76fdac471a7175b661d896b0da2910b3609f3
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/04/2020
-ms.locfileid: "76980130"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626762"
 ---
 # <a name="c-language-versioning"></a>Gestion des versions du langage C#
 
-Le compilateur C# le plus récent détermine une version du langage par défaut en fonction du ou des frameworks cibles de votre projet. La raison est que le langage C# peut avoir des fonctionnalités qui reposent sur des types ou des composants d’exécution qui ne sont pas disponibles dans chaque implémentation .NET. Cela garantit aussi que quelle que soit la cible sur laquelle votre projet est créé, vous obtenez la version de langage compatible la plus récente par défaut.
+Le compilateur C# le plus récent détermine une version du langage par défaut en fonction du ou des frameworks cibles de votre projet. Visual Studio ne fournit pas d’interface utilisateur pour modifier la valeur, mais vous pouvez la modifier en modifiant le fichier *csproj* . Le choix de la valeur par défaut garantit que vous utilisez la dernière version de langage compatible avec votre Framework cible. Vous bénéficiez d’un accès aux fonctionnalités de langage les plus récentes compatibles avec la cible de votre projet. Ce choix par défaut garantit également que vous n’utilisez pas un langage qui requiert des types ou un comportement d’exécution non disponible dans votre version cible de .NET Framework. Si vous choisissez une version de langue plus récente que la valeur par défaut, il est difficile de diagnostiquer les erreurs de compilation et d’exécution.
 
-Les règles de cet article s’appliquent au compilateur fourni avec Visual Studio 2019 ou le kit de développement logiciel (SDK) .NET Core 3,0. Les compilateurs C# qui sont installés en même temps que Visual Studio 2017 ou les versions antérieures du kit SDK .NET Core ciblent C# 7.0 par défaut. 
+C#8,0 (et versions ultérieures) est pris en charge uniquement sur .NET Core 3. x et les versions plus récentes. La plupart des fonctionnalités les plus récentes requièrent des fonctionnalités de bibliothèque et d’exécution introduites dans .NET Core 3. x :
+
+- L’implémentation par défaut des membres d’interface requiert de nouvelles fonctionnalités dans le CLR .NET Core 3,0.
+- Les flux asynchrones nécessitent les nouveaux types <xref:System.IAsyncDisposable?displayProperty=nameWithType>, <xref:System.Collections.Generic.IAsyncEnumerable%601?displayProperty=nameWithType>et <xref:System.Collections.Generic.IAsyncEnumerator%601?displayProperty=nameWithType>.
+- Les index et les plages nécessitent les nouveaux types <xref:System.Index?displayProperty=nameWithType> et <xref:System.Range?displayProperty=nameWithType>.
+- Les types de référence Nullable utilisent plusieurs [attributs](../nullable-attributes.md) pour fournir de meilleurs avertissements. Ces attributs ont été ajoutés dans .NET Core 3,0. D’autres frameworks cibles n’ont pas été annotés avec l’un de ces attributs. Cela signifie que les avertissements Nullable peuvent ne pas refléter avec précision les problèmes potentiels.
 
 ## <a name="defaults"></a>Valeurs par défaut
 
 Le compilateur détermine une valeur par défaut en fonction de ces règles :
 
-|Version cible de .NET Framework|Version de|Version du langage C# par défaut|
+|Framework cible|version|Version du langage C# par défaut|
 |----------------|-------|---------------------------|
-|.NET Core|3|C# 8.0|
+|.NET Core|3.x|C# 8.0|
 |.NET Core|2.x|C# 7.3|
 |.NET Standard|2.1|C# 8.0|
-|.NET Standard|2.0|C# 7.3|
+|.NET Standard|2|C# 7.3|
 |.NET Standard|1.x|C# 7.3|
-|.NET Framework|toutes les|C# 7.3|
+|.NET Framework|all|C# 7.3|
 
-## <a name="default-for-previews"></a>Valeur par défaut pour les préversions
-
-Lorsqu’il s’agit d’une préversion cible pour laquelle il existe une préversion du langage correspondante, c’est cette dernière qui est utilisée. Vous avez ainsi l’assurance de pouvoir utiliser les fonctionnalités les plus récentes dont le fonctionnement est garanti avec cette préversion dans n’importe quel environnement sans affecter vos projets qui ciblent une version finale de .NET Core.
+Lorsqu’il s’agit d’une préversion cible pour laquelle il existe une préversion du langage correspondante, c’est cette dernière qui est utilisée. Vous utilisez les fonctionnalités les plus récentes avec cette préversion dans n’importe quel environnement, sans affecter les projets qui ciblent une version .NET Core publiée.
 
 ## <a name="override-a-default"></a>Remplacer les valeurs par défaut
 
@@ -64,13 +67,13 @@ Pour configurer plusieurs projets, vous pouvez créer un fichier **Directory. Bu
 </Project>
 ```
 
-Maintenant, les builds de chaque sous-répertoire du répertoire contenant ce fichier vont utiliser la préversion de C#. Pour plus d’informations, consultez l’article sur [Personnaliser votre build](/visualstudio/msbuild/customize-your-build).
+Les builds dans tous les sous-répertoires du répertoire contenant ce fichier utiliseront la version préliminaire C# . Pour plus d’informations, consultez l’article sur [Personnaliser votre build](/visualstudio/msbuild/customize-your-build).
 
 ## <a name="c-language-version-reference"></a>Informations de référence sur la version du langage C#
 
-Le tableau suivant montre toutes les versions actuelles du langage C#. Votre compilateur peut ne pas nécessairement comprendre chaque valeur si celle-ci est plus ancienne. Si vous installez .NET Core 3.0, vous avez accès à toutes les versions listées.
+Le tableau suivant montre toutes les versions actuelles du langage C#. Votre compilateur peut ne pas nécessairement comprendre chaque valeur si elle est plus ancienne. Si vous installez .NET Core 3,0 ou une version ultérieure, vous avez accès à tout ce qui est listé.
 
-|Value|Signification|
+|Valeur|Signification|
 |------------|-------------|
 |preview|Le compilateur accepte toute la syntaxe de langage valide de la dernière préversion.|
 |latest|Le compilateur accepte la syntaxe de la dernière version publiée du compilateur (versions mineures incluses).|

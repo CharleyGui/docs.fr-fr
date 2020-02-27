@@ -6,12 +6,12 @@ helpviewer_keywords:
 - developer's guide, deploying .NET Framework
 - deployment [.NET Framework], developer's guide
 ms.assetid: 094d043e-33c4-40ba-a503-e0b20b55f4cf
-ms.openlocfilehash: 597bfd2c16f6289a2bcb931c3896918dcb6d9a4d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 26c168040b0fa5e975e64a7518b0d0bf250c4711
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77094135"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628122"
 ---
 # <a name="net-framework-deployment-guide-for-developers"></a>Guide de déploiement du .NET Framework pour les développeurs
 Cette rubrique fournit des informations destinées aux développeurs qui souhaitent installer une version du .NET Framework (du .NET Framework 4.5 au [!INCLUDE[net_current](../../../includes/net-current-version.md)]) avec leurs applications.
@@ -55,8 +55,8 @@ Lorsque vous êtes prêt à publier votre application sur un serveur web ou dans
 
 |Stratégie de déploiement de votre application|Méthodes de déploiement disponibles|Redistribuable du .NET Framework à utiliser|
 |--------------------------------------|----------------------------------|-------------------------------------------|
-|Installation à partir du web|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Programme d’installation web](#redistributable-packages)|
-|Installation à partir d'un disque|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Offline installer](#redistributable-packages)|
+|Installation à partir du web|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Web installer](#redistributable-packages)|
+|Installation à partir d'un disque|- [InstallAware](#installaware-deployment)<br />- [InstallShield](#installshield-deployment)<br />- [Ensemble d'outils WiX](#wix)<br />- [Installation manuelle](#installing_manually)|[Programme d’installation hors connexion](#redistributable-packages)|
 |Installation à partir d'un réseau local (pour applications d'entreprise)|- [ClickOnce](#clickonce-deployment)|[Programme d'installation web](#redistributable-packages) (voir [ClickOnce](#clickonce-deployment) pour connaître les restrictions) ou [programme d'installation hors connexion](#redistributable-packages)|
 
 ## <a name="redistributable-packages"></a>Packages redistribuables
@@ -134,21 +134,7 @@ InstallAware génère l’application Windows (APPX), Windows Installer (MSI), l
 
 ### <a name="installshield-deployment"></a>Déploiement d'InstallShield
 
-Dans Visual Studio, choisissez le déploiement d'InstallShield et ajoutez une dépendance sur le .NET Framework :
-
-1. Dans la barre de menus de Visual Studio, choisissez **Fichier**, **Nouveau**, **Projet**.
-
-2. Dans le volet gauche de la boîte de dialogue **Nouveau projet** , choisissez **Autres types de projets**, **Configuration et déploiement**, **InstallShield LE**.
-
-3. Dans la zone **Nom** , tapez un nom pour votre projet, puis choisissez **OK**.
-
-4. Si vous créez un projet d’installation et de déploiement pour la première fois, choisissez **Accéder à InstallShield** ou **Activer InstallShield Limited Edition** pour télécharger InstallShield Limited Edition pour votre version de Microsoft Visual Studio. Redémarrez Visual Studio.
-
-5. Ouvrez l' **Assistant Projet** et choisissez **Fichiers d'application** pour ajouter la sortie de projet. Vous pouvez configurer d'autres attributs de projet à l'aide de cet Assistant.
-
-6. Accédez à **Configuration d'installation requise** , puis sélectionnez les systèmes d'exploitation et la version du .NET Framework que vous voulez installer.
-
-7. Ouvrez le menu contextuel pour votre projet d'installation et choisissez **Générer**.
+InstallShield génère des programmes d’installation de packages d’applications Windows (MSIX, APPX), de packages d’Windows Installer (MSI) et de code natif (EXE). InstallShield fournit également l’intégration de Visual Studio. Pour plus d’informations, consultez le site Web [InstallShield](https://www.flexerasoftware.com/install/products/installshield.html) .
 
 <a name="wix"></a>
 

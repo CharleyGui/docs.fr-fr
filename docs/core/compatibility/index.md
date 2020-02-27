@@ -2,12 +2,12 @@
 title: Types de changements cassants
 description: Découvrez comment .NET Core tente de maintenir la compatibilité pour les développeurs sur les versions de .NET et quel type de modification est considéré comme une modification avec rupture.
 ms.date: 06/10/2019
-ms.openlocfilehash: 1c5790e39754b91aacbde9e87ed99f9dcc36ce9f
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: bf0cc35d69e6bb501640455604a99a1f48962c4a
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77092978"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628590"
 ---
 # <a name="changes-that-affect-compatibility"></a>Modifications qui affectent la compatibilité
 
@@ -49,7 +49,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   L' *ancien* assembly doit être marqué avec le <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> qui pointe vers le nouvel assembly.
 
-- ✔️ **autorisées : la modification d’un type [struct](../../csharp/language-reference/keywords/struct.md) en type `readonly struct`**
+- ✔️ **autorisées : la modification d’un type [struct](../../csharp/language-reference/builtin-types/struct.md) en type `readonly struct`**
 
   La modification d’un type de `readonly struct` en type de `struct` n’est pas autorisée.
 
@@ -77,11 +77,11 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
   Il existe une exception à la règle pour la suppression de l’interface : vous pouvez ajouter l’implémentation d’une interface qui dérive de l’interface supprimée. Par exemple, vous pouvez supprimer <xref:System.IDisposable> si le type ou l’interface implémente désormais <xref:System.ComponentModel.IComponent>, qui implémente <xref:System.IDisposable>.
 
-- ❌ **interdite : remplacement d’un type de `readonly struct` par un type [struct](../../csharp/language-reference/keywords/struct.md)**
+- ❌ **interdite : remplacement d’un type de `readonly struct` par un type [struct](../../csharp/language-reference/builtin-types/struct.md)**
 
   Toutefois, la modification d’un type de `struct` en type `readonly struct` est autorisée.
 
-- ❌ **interdite : la modification d’un type [struct](../../csharp/language-reference/keywords/struct.md) en type `ref struct`, et vice versa**
+- ❌ **interdite : la modification d’un type [struct](../../csharp/language-reference/builtin-types/struct.md) en type `ref struct`, et vice versa**
 
 - ❌ **interdite : réduction de la visibilité d’un type**
 
@@ -300,7 +300,7 @@ Les modifications de cette catégorie modifient la surface d’exposition publiq
 
 - ✔️ **autorisé : ajout de [paramètres](../../csharp/language-reference/keywords/params.md) à un paramètre**
 
-- ❌ **interdite : modification d’un [struct](../../csharp/language-reference/keywords/struct.md) en [classe](../../csharp/language-reference/keywords/class.md) et vice versa**
+- ❌ **interdite : modification d’un [struct](../../csharp/language-reference/builtin-types/struct.md) en [classe](../../csharp/language-reference/keywords/class.md) et vice versa**
 
 - ❌ **interdite : ajout du mot clé [checked](../../csharp/language-reference/keywords/virtual.md) à un bloc de code**
 

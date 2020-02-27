@@ -4,12 +4,12 @@ description: Suivez les didacticiels pour apprendre .NET Core et générer des a
 author: richlander
 ms.date: 03/16/2017
 titleSuffix: ''
-ms.openlocfilehash: e9fc5544904fc5a1304dcce135e01b1895d3446b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 84784787465bec43cc460d34ca84e4baa5a15d7d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215181"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625932"
 ---
 # <a name="learn-net-core-and-the-net-core-sdk-tools-by-exploring-these-tutorials"></a>Découvrez .NET Core et les outils de kit SDK .NET Core en explorant ces didacticiels
 
@@ -48,5 +48,6 @@ Les didacticiels disponibles pour découvrir .NET Core sont les suivants.
 - [Développement de bibliothèques avec des outils multiplateformes](libraries.md)
 - [Hébergement .NET Core à partir du code natif](netcore-hosting.md)
 - [Créer des modèles pour l’interface CLI](cli-templates-create-item-template.md)
+- [Créer et utiliser des outils pour l’interface CLI](../tools/global-tools-how-to-create.md)
 
 Pour obtenir des didacticiels sur le développement d’applications web ASP.NET Core, consultez la [Documentation ASP.NET Core](/aspnet/core/).

@@ -4,12 +4,12 @@ description: Explique la conformité à la norme FIPS (.NET Core normes FIPS (Fe
 ms.date: 11/20/2019
 author: Rick-Anderson
 ms.author: riande
-ms.openlocfilehash: cf640c857e79ae811dd38d57a0e5301b7bc96572
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: 84d6edc6975af0484bb67999ad5891eaf4db057d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74205065"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77626956"
 ---
 # <a name="net-core-federal-information-processing-standard-fips-compliance"></a>Conformité de .NET Core normes FIPS (Federal Information Processing Standard) (FIPS)
 
@@ -28,4 +28,4 @@ Pour plus d’informations sur la conformité FIPS, consultez les articles suiva
 
 * [Conformité Windows FIPS](/windows/security/threat-protection/fips-140-validation)
 * [Configuration de Windows pour la conformité FIPS](/windows/security/threat-protection/security-policy-settings/system-cryptography-use-fips-compliant-algorithms-for-encryption-hashing-and-signing)
-* [10,2. FEDERAL INFORMATION PROCESSING STANDARD (FIPS)](https://access.redhat.com/documentation/red_hat_enterprise_linux/6/html/security_guide/sect-security_guide-federal_standards_and_regulations-federal_information_processing_standard)
+* [Chapitre 8. Normes et réglementations fédérales Red Hat Enterprise Linux 7](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/security_guide/chap-federal_standards_and_regulations)

@@ -3,12 +3,12 @@ title: Vue d’ensemble de global.json
 description: Découvrez comment utiliser le fichier global.json pour définir la version du kit SDK .NET Core pendant l’exécution de commandes CLI .NET Core.
 ms.date: 01/14/2020
 ms.custom: updateeachrelease
-ms.openlocfilehash: 8582c495be58e38ca19320f14e20f8c511a9c821
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 70257566e1ff30f5c97212a5e0e3c308c27738b7
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920511"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625993"
 ---
 # <a name="globaljson-overview"></a>Vue d’ensemble de global.json
 
@@ -24,15 +24,15 @@ Le kit SDK .NET Core recherche un fichier *global.json* dans le répertoire de t
 
 ## <a name="globaljson-schema"></a>Schéma de global.json
 
-### <a name="sdk"></a>sdk
+### <a name="sdk"></a>SDK
 
-Type : `object`
+Entrez : `object`
 
 Spécifie des informations sur le kit SDK .NET Core à sélectionner.
 
-#### <a name="version"></a>Version de
+#### <a name="version"></a>version
 
-- Type : `string`
+- Entrez : `string`
 
 - Disponible depuis : .NET Core 1,0 SDK.
 
@@ -45,7 +45,7 @@ Ce champ :
 
 #### <a name="allowprerelease"></a>allowPrerelease
 
-- Type : `boolean`
+- Entrez : `boolean`
 
 - Disponible depuis : .NET Core 3,0 SDK.
 
@@ -58,7 +58,7 @@ Si vous ne définissez pas cette valeur explicitement, la valeur par défaut var
 
 #### <a name="rollforward"></a>Restauration par progression
 
-- Type : `string`
+- Entrez : `string`
 
 - Disponible depuis : .NET Core 3,0 SDK.
 
@@ -73,7 +73,7 @@ Pour comprendre les stratégies disponibles et leur comportement, prenez en comp
 
 Le tableau suivant indique les valeurs possibles pour la clé de `rollForward` :
 
-| Value         | Comportement |
+| Valeur         | Comportement |
 | ------------- | ---------- |
 | `patch`       | Utilise la version spécifiée. <br> S’il est introuvable, restaure le niveau de correctif le plus récent. <br> S’il est introuvable, échoue. <br><br> Cette valeur est le comportement hérité des versions antérieures du kit de développement logiciel (SDK). |
 | `feature`     | Utilise le niveau de correctif le plus récent pour la plage de fonctionnalités, mineure et principale spécifiée. <br> S’il est introuvable, restaure la bande de fonctionnalités supérieure suivante au sein du même niveau principal/secondaire et utilise le niveau de correctif le plus récent pour cette bande de fonctionnalités. <br> S’il est introuvable, échoue. |
@@ -147,7 +147,7 @@ dotnet new globaljson --sdk-version 3.0.100
 > [!NOTE]
 > Les règles de correspondance sont régies par le point d’entrée `dotnet.exe`, qui est courant pour tous les runtimes installés .NET Core installés. Les règles de correspondance pour la dernière version installée du Runtime .NET Core sont utilisées lorsque plusieurs runtimes sont installés côte à côte.
 
-## <a name="net-core-3xtabnetcore3x"></a>[.NET Core 3. x](#tab/netcore3x)
+## <a name="net-core-3x"></a>[.NET Core 3.x](#tab/netcore3x)
 
 À compter de .NET Core 3,0, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 
@@ -160,7 +160,7 @@ dotnet new globaljson --sdk-version 3.0.100
   - Si aucune valeur de `rollFoward` n’est définie, elle utilise `latestPatch` comme stratégie de `rollForward` par défaut. Sinon, vérifiez chaque valeur et son comportement dans la section [restauration par progression](#rollforward) .
   - Si les versions préliminaires sont prises en compte et quel est le comportement par défaut quand `allowPrerelease` n’est pas défini est décrit dans la section [allowPrerelease](#allowprerelease) .
 
-## <a name="net-core-2xtabnetcore2x"></a>[.NET Core 2.x](#tab/netcore2x)
+## <a name="net-core-2x"></a>[.NET Core 2.x](#tab/netcore2x)
 
 Dans le SDK .NET Core 2. x, les règles suivantes s’appliquent lors de la détermination de la version du kit de développement logiciel (SDK) à utiliser :
 
@@ -182,17 +182,19 @@ Les versions du kit SDK .NET Core comprises entre `2.1.100` et `2.1.201` ont ét
 
 ---
 
-## <a name="troubleshooting-build-warnings"></a>Résolutions des problèmes liés aux avertissements de build
+## <a name="troubleshoot-build-warnings"></a>Résoudre les avertissements de build
 
-> [!WARNING]
-> Vous utilisez une préversion du kit SDK .NET Core. Vous pouvez définir la version du kit SDK via un fichier global.json dans le projet actif. Pour plus d’informations, consultez <https://go.microsoft.com/fwlink/?linkid=869452>
+* L’avertissement suivant indique que votre projet a été compilé à l’aide d’une version préliminaire du kit SDK .NET Core :
 
-Cet avertissement indique que votre projet a été compilé à l’aide d’une version préliminaire du kit SDK .NET Core. Les versions du kit SDK .NET Core jouissent d’une image et d’un engagement de qualité. Toutefois, si vous ne souhaitez pas utiliser une version préliminaire, vérifiez les différentes stratégies que vous pouvez utiliser avec le kit de développement logiciel (SDK) .NET Core 3,0 ou une version ultérieure dans la section [allowPrerelease](#allowprerelease) . Pour les ordinateurs sur lesquels le runtime ou le kit de développement logiciel (SDK) .NET Core 3,0 ou version ultérieure n’a jamais été installé, vous devez créer un fichier *global. JSON* et spécifier la version exacte que vous souhaitez utiliser.
+  > Vous utilisez une préversion du kit SDK .NET Core. Vous pouvez définir la version du kit SDK via un fichier global.json dans le projet actif. Pour plus d’informations, consultez <https://go.microsoft.com/fwlink/?linkid=869452>.
 
-> [!WARNING]
-> Le projet de démarrage '{startupProject}' cible le framework '.NETCoreApp' version '{targetFrameworkVersion}'. Cette version des outils en ligne de commande Entity Framework Core .NET prend uniquement en charge la version 2.0 ou supérieure. Pour plus d’informations sur l’utilisation d’anciennes versions des outils, consultez <https://go.microsoft.com/fwlink/?linkid=871254>.
+  Les versions du kit SDK .NET Core jouissent d’une image et d’un engagement de qualité. Toutefois, si vous ne souhaitez pas utiliser une version préliminaire, vérifiez les différentes stratégies que vous pouvez utiliser avec le kit de développement logiciel (SDK) .NET Core 3,0 ou une version ultérieure dans la section [allowPrerelease](#allowprerelease) . Pour les ordinateurs sur lesquels le runtime ou le kit de développement logiciel (SDK) .NET Core 3,0 ou version ultérieure n’a jamais été installé, vous devez créer un fichier *global. JSON* et spécifier la version exacte que vous souhaitez utiliser.
 
-À partir du kit SDK .NET Core 2.1 (version 2.1.300), la commande `dotnet ef` est incluse dans le kit SDK. Cet avertissement indique que votre projet cible EF Core 1.0 ou 1.1, qui n’est pas compatible avec le kit SDK .NET Core 2.1 (et les versions ultérieures). Pour compiler votre projet, installez le kit SDK .NET Core 2.0 (version 2.1.201) ou une version antérieure sur votre ordinateur et définissez la version du SDK à utiliser dans le fichier *global.json*. Pour plus d’informations sur la commande `dotnet ef`, consultez [Outils en ligne de commande EF Core .NET](/ef/core/miscellaneous/cli/dotnet).
+* L’avertissement suivant indique que votre projet cible EF Core 1,0 ou 1,1, ce qui n’est pas compatible avec le kit de développement logiciel (SDK) .NET Core 2,1 et les versions ultérieures :
+
+  > Le projet de démarrage '{startupProject}' cible le framework '.NETCoreApp' version '{targetFrameworkVersion}'. Cette version des outils en ligne de commande Entity Framework Core .NET prend uniquement en charge la version 2.0 ou supérieure. Pour plus d’informations sur l’utilisation des versions antérieures des outils, consultez <https://go.microsoft.com/fwlink/?linkid=871254>.
+
+  À partir du kit SDK .NET Core 2.1 (version 2.1.300), la commande `dotnet ef` est incluse dans le kit SDK. Pour compiler votre projet, installez le kit de développement logiciel (SDK) .NET Core 2,0 (version 2.1.201) ou version antérieure sur votre ordinateur et définissez la version du kit de développement logiciel (SDK) de votre choix à l’aide du fichier *global. JSON* . Pour plus d’informations sur la commande `dotnet ef`, consultez [Outils en ligne de commande EF Core .NET](/ef/core/miscellaneous/cli/dotnet).
 
 ## <a name="see-also"></a>Voir aussi
 

@@ -10,12 +10,12 @@ ms.assetid: d5c9edc7-cf30-4a97-8ebe-201d569340f8
 author: jillre
 ms.author: jillfra
 manager: jillfra
-ms.openlocfilehash: 3b88f64fca8d3f11308f1cbfde97de2e6c2f22cc
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: 0b68a70b55cbf03d480fd388a637a4caf78b6eaa
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76740221"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628798"
 ---
 # <a name="walkthrough-arrange-controls-on-windows-forms-using-snaplines"></a>Procédure pas à pas : Organisation des contrôles sur Windows Forms à l’aide de lignes d’alignement
 
@@ -124,7 +124,7 @@ Vous pouvez utiliser des lignes d’alignement pour aligner les contrôles group
 
 ## <a name="align-a-label-to-a-controls-text"></a>Aligner une étiquette sur le texte d’un contrôle
 
-1. Faites glisser un contrôle <xref:System.Windows.Forms.TextBox> de la **boîte à outils** vers le formulaire. Lorsque vous déposez le contrôle <xref:System.Windows.Forms.TextBox> dans le formulaire, cliquez sur le glyphe de balise active et sélectionnez l’option **définir le texte sur TextBox1** . Pour plus d’informations, consultez [procédure pas à pas : exécution de tâches courantes à l’aide de balises actives sur des contrôles Windows Forms](performing-common-tasks-using-smart-tags-on-wf-controls.md).
+1. Faites glisser un contrôle <xref:System.Windows.Forms.TextBox> de la **boîte à outils** vers le formulaire. Lorsque vous déposez le contrôle <xref:System.Windows.Forms.TextBox> dans le formulaire, cliquez sur le glyphe de balise active et sélectionnez l’option **définir le texte sur TextBox1** . Pour plus d’informations, consultez [procédure pas à pas : effectuer des tâches courantes à l’aide d’actions de concepteur](perform-common-tasks-design-actions.md).
 
 2. Faites glisser un contrôle <xref:System.Windows.Forms.Label> de la **boîte à outils** vers le formulaire.
 
@@ -180,7 +180,7 @@ Aucune lignes d’alignement n’apparaît et le contrôle n’est pas aligné s
 
 4. Sélectionnez un contrôle dans votre formulaire et déplacez-le autour des autres contrôles. Notez que les lignes d’alignement n’apparaissent pas.
 
-## <a name="next-steps"></a>Étapes suivantes :
+## <a name="next-steps"></a>Étapes suivantes
 
 Les lignes d’alignement (SnapLines) offrent un moyen intuitif d’aligner les contrôles sur votre formulaire. Suggestions pour des recherches approfondies :
 

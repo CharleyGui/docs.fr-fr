@@ -3,12 +3,12 @@ title: CLI .NET Core
 titleSuffix: ''
 description: Vue d’ensemble de la CLI .NET Core et de ses fonctionnalités.
 ms.date: 02/13/2020
-ms.openlocfilehash: 1078d68ddc088274fa14b0094a81765f7af69dad
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: c491088f26a9aa1c065414e76fb0b80d554380b4
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543312"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77625980"
 ---
 # <a name="net-core-cli-overview"></a>Présentation de CLI .NET Core
 
@@ -87,7 +87,7 @@ Lorsque vous fournissez une commande au pilote, `dotnet.exe` démarre le process
 dotnet build
 ```
 
-D’abord, le pilote détermine la version du kit SDK à utiliser. S’il n’existe pas de ['global.json'](global-json.md), la dernière version du SDK disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
+D’abord, le pilote détermine la version du kit SDK à utiliser. S’il n’existe aucun fichier [global. JSON](global-json.md) , la version la plus récente du kit de développement logiciel (SDK) disponible est utilisée. Il s’agit peut-être d’une préversion ou d’une version stable, selon la plus récente qui se trouve sur l’ordinateur.  Une fois que la version du SDK est déterminée, elle exécute la commande.
 
 ### <a name="command"></a>Commande
 

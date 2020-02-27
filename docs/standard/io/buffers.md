@@ -7,12 +7,12 @@ helpviewer_keywords:
 - I/O [.NET], buffers
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: e42f165bfedec3b1fa54615ee7e2a2028f40aadb
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 5b98e3e2d41d3e49a28db6393f15f13c3579b06d
+ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960494"
+ms.lasthandoff: 02/26/2020
+ms.locfileid: "77628076"
 ---
 # <a name="work-with-buffers-in-net"></a>Utiliser des mémoires tampons dans .NET
 
@@ -51,8 +51,8 @@ Cette méthode d’écriture utilise le `Memory<T>`/`Span<T>` mémoire tampon fo
 
 <xref:System.Buffers.ReadOnlySequence%601> est un struct qui peut représenter une séquence contiguë ou non contiguë de `T`. Il peut être construit à partir de :
 
-1. `T[]`
-1. `ReadOnlyMemory<T>`
+1. Une variable de type `T[]`.
+1. Une variable de type `ReadOnlyMemory<T>`.
 1. Paire de nœuds de liste liés <xref:System.Buffers.ReadOnlySequenceSegment%601> et index pour représenter la position de début et de fin de la séquence.
 
 La troisième représentation est la plus intéressante, car elle a une incidence sur les performances de diverses opérations sur le `ReadOnlySequence<T>`:
@@ -115,6 +115,8 @@ L’exemple suivant analyse une longueur d’entier Big-endian de 4 octets à pa
 
 [!code-csharp[](~/samples/snippets/csharp/buffers/MyClass.cs?name=snippet5)]
 
+[!INCLUDE [localized code comments](../../../includes/code-comments-loc.md)]
+
 ##### <a name="process-text-data"></a>Traiter des données texte
 
 L’exemple suivant :
@@ -146,7 +148,7 @@ Il existe plusieurs résultats inhabituels lors du traitement d’un `ReadOnlySe
 - Deux `SequencePosition` ne peuvent pas être comparés, ce qui complique la tâche :
   - Savoir si une position est supérieure ou inférieure à une autre position.
   - Écrivez des algorithmes d’analyse.
-- `ReadOnlySequence<T>` est plus grand qu’une référence d’objet et doit être passé par in ou [ref](../../csharp/language-reference/keywords/ref.md) dans la mesure [du](../../csharp/language-reference/keywords/in-parameter-modifier.md) possible. Le passage de `ReadOnlySequence<T>` par `in` ou `ref` réduit les copies du [struct](../../csharp/language-reference/keywords/struct.md).
+- `ReadOnlySequence<T>` est plus grand qu’une référence d’objet et doit être passé par in ou [ref](../../csharp/language-reference/keywords/ref.md) dans la mesure [du](../../csharp/language-reference/keywords/in-parameter-modifier.md) possible. Le passage de `ReadOnlySequence<T>` par `in` ou `ref` réduit les copies du [struct](../../csharp/language-reference/builtin-types/struct.md).
 - Segments vides :
   - Sont valides dans un `ReadOnlySequence<T>`.
   - Peut apparaître lors de l’itération à l’aide de la méthode `ReadOnlySequence<T>.TryGet`.
