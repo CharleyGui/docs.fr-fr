@@ -1,13 +1,13 @@
 ---
 title: Visite guidée du langage C# - Guide du langage C#
-description: Vous débutez en C# ? Découvrez les principes de base du langage.
+description: Novice en C# ? Découvrez les principes de base du langage.
 ms.date: 04/05/2019
-ms.openlocfilehash: e2d7af3a35dc9d4fdeddf9eb742d155ab33094b4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: b510342f957a259a6c7763441778461b3dd4ef1e
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711660"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673288"
 ---
 # <a name="a-tour-of-the-c-language"></a>Visite guidée du C# langage
 
@@ -42,7 +42,7 @@ Hello, World
 ```
 
 > [!IMPORTANT]
-> La commande `csc` effectue la compilation pour la totalité du framework ; elle n’est pas nécessairement disponible sur toutes les plateformes.
+> La commande `csc` effectue la compilation pour la totalité de l’infrastructure ; elle n’est pas nécessairement disponible sur toutes les plateformes.
 
 Le programme « Hello, World » commence par une directive `using` qui fait référence à l’espace de noms `System`. Les espaces de noms représentent un moyen hiérarchique d’organiser les bibliothèques et les programmes C#. Les espaces de noms contiennent des types et d’autres espaces de noms ; par exemple, l’espace de noms `System` contient plusieurs types, notamment la classe `Console` référencée dans le programme, et d’autres espaces de noms, tels que `IO` et `Collections`. Une directive `using` qui fait référence à un espace de noms donné permet l’utilisation non qualifiée des types membres de cet espace de noms. En raison de la directive `using`, le programme peut utiliser `Console.WriteLine` comme raccourci pour `System.Console.WriteLine`.
 
@@ -64,14 +64,12 @@ Il y a beaucoup d’autres choses à apprendre sur C#. Les rubriques suivantes f
   - On utilise des ***instructions*** pour exprimer les actions d’un programme.
 - [Classes et objets](classes-and-objects.md)
   - Les ***classes*** représentent le type le plus fondamental de C#. Les ***objets*** sont des instances d’une classe. Les classes sont générées à l’aide de ***membres***, qui sont également traités dans cette rubrique.
-- [Structures](structs.md)
-  - Les ***structures*** sont des structures de données qui, contrairement aux classes, sont des types valeur.
 - [Tableaux](arrays.md)
-  - Un ***tableau*** est une structure de données qui contient un certain nombre de variables qui sont accessibles par des indices calculés.
+  - Un ***tableau*** est une structure de données contenant un certain nombre de variables accessibles par le biais d’indices calculés.
 - [Interfaces](interfaces.md)
-  - Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas les implémentations des membres qu’elle définit, elle indique simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
+  - Une ***interface*** définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas d’implémentations des membres qu’elle définit ; elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
 - [Délégués](delegates.md)
-  - Un ***type délégué*** représente des références aux méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
+  - Un ***type délégué*** représente des références à des méthodes avec une liste de paramètres et un type de retour particuliers. Les délégués permettent de traiter les méthodes en tant qu’entités qui peuvent être affectées à des variables et passées comme paramètres. Les délégués sont similaires au concept de pointeurs de fonction dans d’autres langages, mais, contrairement aux pointeurs de fonction, les délégués sont orientés objet et de type sécurisé.
 - [Attributs](attributes.md)
   - Les ***attributs*** permettent aux programmes de spécifier des informations déclaratives supplémentaires sur les types, les membres et d’autres entités.
   
@@ -79,4 +77,4 @@ Il y a beaucoup d’autres choses à apprendre sur C#. Les rubriques suivantes f
 > Ces articles s’appliquent à C# 7,0 et versions ultérieures. Certaines fonctionnalités ne sont peut-être pas disponibles dans les versions antérieures.
 
 > [!div class="step-by-step"]
-> [Suivant](program-structure.md)
+> [Next](program-structure.md)

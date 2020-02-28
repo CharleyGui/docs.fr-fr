@@ -2,12 +2,12 @@
 title: Noms d’identificateurs
 description: Découvrez les règles relatives aux noms d’identificateurs valides dans le langage de programmation C#.
 ms.date: 08/21/2018
-ms.openlocfilehash: f8a27ddae0437ed037b59f76d60dc7e420ddc2eb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: bef6e2ea285b5391af3350ae42a4105d140c6d1b
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69589355"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673366"
 ---
 # <a name="identifier-names"></a>Noms d’identificateurs
 
@@ -19,7 +19,7 @@ Vous pouvez déclarer des identificateurs qui correspondent à des mots clés C#
 
 Pour une définition complète des identificateurs valides, consultez la rubrique [Identificateurs dans la spécification du langage C#](../../../../_csharplang/spec/lexical-structure.md#identifiers).
 
-## <a name="naming-conventions"></a>Conventions d'attribution d'un nom
+## <a name="naming-conventions"></a>Conventions d’affectation de noms
 
 En plus des règles, un certain nombre de [conventions de nommage](../../../standard/design-guidelines/naming-guidelines.md) des identificateurs sont utilisées dans les API .NET. Par convention, les programmes C# utilisent `PascalCase` pour les noms de types, les espaces de noms et tous les membres publics. De plus, les conventions suivantes sont communément respectées :
 
@@ -36,9 +36,9 @@ En plus des règles, un certain nombre de [conventions de nommage](../../../stan
 
 - [Guide de programmation C#](../index.md)
 - [À l’intérieur d’un programme C#](./index.md)
-- [Référence C#](../../language-reference/index.md)
+- [Informations de référence sur C#](../../language-reference/index.md)
 - [Classes](../classes-and-structs/classes.md)
-- [Structs](../classes-and-structs/structs.md)
+- [Types de structures](../../language-reference/builtin-types/struct.md)
 - [Espaces de noms](../namespaces/index.md)
 - [Interfaces](../interfaces/index.md)
 - [Délégués](../delegates/index.md)

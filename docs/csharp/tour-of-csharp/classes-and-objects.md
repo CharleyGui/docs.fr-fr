@@ -1,14 +1,14 @@
 ---
 title: Classes et objets dans C# - Visite guidée du langage C#
-description: Novice en matière de langage C# ? Lisez cette présentation des classes, des objets et de l’héritage
+description: Novice en C# ? Lisez cette présentation des classes, des objets et de l’héritage
 ms.date: 08/10/2016
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: be8e760b19b7ca5305918ecfdbf9ad797d7e76b2
-ms.sourcegitcommit: 6f28b709592503d27077b16fff2e2eacca569992
-ms.translationtype: HT
+ms.openlocfilehash: e5078135ab22445ac636c6edc3d46570be8fcaf5
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/28/2019
-ms.locfileid: "70105632"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673301"
 ---
 # <a name="classes-and-objects"></a>Classes et objets
 
@@ -258,7 +258,7 @@ Le ou les accesseurs d’une propriété peuvent être virtuels. Lorsqu’une d�
 
 Un *indexeur* est un membre qui permet l’indexation des objets de la même façon en tant que tableau. Un indexeur est déclaré comme une propriété, sauf que le nom du membre est `this`, suivi d’une liste de paramètres écrits entre les délimiteurs `[` et `]`. Les paramètres sont disponibles dans le ou les accesseurs de l’indexeur. Similaires aux propriétés, les indexeurs peuvent être en lecture-écriture, en lecture seule et en écriture seule, et les accesseurs d’un indexeur peuvent être virtuels.
 
-La classe `MyList<T>` déclare un indexeur en lecture-écriture unique qui prend un paramètre `int`. L’indexeur rend possible l’indexation des instances `MyList<T>` avec des valeurs `int`. Exemple :
+La classe `MyList<T>` déclare un indexeur en lecture-écriture unique qui prend un paramètre `int`. L’indexeur rend possible l’indexation des instances `MyList<T>` avec des valeurs `int`. Par exemple :
 
 [!code-csharp[ListExample3](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L109-L117)]
 
@@ -298,4 +298,4 @@ L’instruction `using` fournit une meilleure approche pour la destruction d’o
 
 > [!div class="step-by-step"]
 > [Précédent](statements.md)
-> [Suivant](structs.md)
+> [Suivant](arrays.md)

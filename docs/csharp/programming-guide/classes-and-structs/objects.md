@@ -5,12 +5,12 @@ helpviewer_keywords:
 - objects [C#], about objects
 - variables [C#]
 ms.assetid: af4a5230-fbf3-4eea-95e1-8b883c2f845c
-ms.openlocfilehash: a2f5300f9647823cf2c9ac2a4a5c7c888c7dd245
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 09b290713f3bc2a7a7824bb19c98138943ad5b2c
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626579"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673379"
 ---
 # <a name="objects-c-programming-guide"></a>Objets (Guide de programmation C#)
 Une définition de classe ou de struct s’apparente à un plan qui spécifie ce que le type peut faire. Un objet est fondamentalement un bloc de mémoire qui a été alloué et configuré selon le plan. Un programme peut créer de nombreux objets de la même classe. Les objets sont également appelés instances. Ils peuvent être stockés dans une variable nommée, dans un tableau ou dans une collection. Le code client est le code qui utilise ces variables pour appeler les méthodes et accéder aux propriétés publiques de l’objet. Dans un langage orienté objet tel que C#, un programme classique se compose de plusieurs objets qui interagissent de façon dynamique.  
@@ -52,8 +52,6 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
   
 - [Classes](./classes.md)  
   
-- [Structures](./structs.md)  
-  
 - [Constructeurs](./constructors.md)  
   
 - [Finaliseurs](./destructors.md)  
@@ -66,6 +64,6 @@ Une définition de classe ou de struct s’apparente à un plan qui spécifie ce
 - [object](../../language-reference/builtin-types/reference-types.md)
 - [Héritage](./inheritance.md)
 - [class](../../language-reference/keywords/class.md)
-- [struct](../../language-reference/builtin-types/struct.md)
+- [Types de structures](../../language-reference/builtin-types/struct.md)
 - [Opérateur new](../../language-reference/operators/new-operator.md)
 - [Système de type commun](../../../standard/base-types/common-type-system.md)

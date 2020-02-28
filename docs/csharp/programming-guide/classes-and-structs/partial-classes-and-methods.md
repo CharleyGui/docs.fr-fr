@@ -6,12 +6,12 @@ helpviewer_keywords:
 - partial classes [C#]
 - C# language, partial classes and methods
 ms.assetid: 804cecb7-62db-4f97-a99f-60975bd59fa1
-ms.openlocfilehash: 641c2e3adfb3dabaa300e94b203aa6c4c4b509d2
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 50b192d5a7416a982f41d0c3ac13e9c1bfe3397c
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628187"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673353"
 ---
 # <a name="partial-classes-and-methods-c-programming-guide"></a>Classes et méthodes partielles (Guide de programmation C#)
 
@@ -173,6 +173,6 @@ Pour plus d’informations, consultez [Types partiels](~/_csharplang/spec/classe
 
 - [Guide de programmation C#](../index.md)
 - [Classes](./classes.md)
-- [Structures](./structs.md)
+- [Types de structures](../../language-reference/builtin-types/struct.md)
 - [Interfaces](../interfaces/index.md)
 - [partial (type)](../../language-reference/keywords/partial-type.md)

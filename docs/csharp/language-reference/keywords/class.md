@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - class keyword [C#]
 ms.assetid: b95d8815-de18-4c3f-a8cc-a0a53bdf8690
-ms.openlocfilehash: 187a49131e903e00cab54d9db43b6cd8eb359a3a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 500160d3bc9280b866e5f5ba24c5edc623e752c1
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713691"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673093"
 ---
 # <a name="class-c-reference"></a>class (référence C#)
 
@@ -32,16 +32,16 @@ Le langage C# ne permet qu'un seul héritage. Cela signifie qu’une classe peut
 
 |Héritage|Exemple|
 |-----------------|-------------|
-|Aucun|`class ClassA { }`|
-|Single|`class DerivedClass: BaseClass { }`|
-|Aucun, implémente deux interfaces|`class ImplClass: IFace1, IFace2 { }`|
-|Unique, implémente une seule interface|`class ImplDerivedClass: BaseClass, IFace1 { }`|
+|None|`class ClassA { }`|
+|Unique|`class DerivedClass : BaseClass { }`|
+|Aucun, implémente deux interfaces|`class ImplClass : IFace1, IFace2 { }`|
+|Unique, implémente une seule interface|`class ImplDerivedClass : BaseClass, IFace1 { }`|
 
 Les classes que vous déclarez directement dans un espace de noms, non imbriquées dans d’autres classes, peuvent être [public](./public.md) ou [internal](./internal.md). Par défaut, les classes sont `internal`.
 
 Les membres de classe, notamment les classes imbriquées, peuvent être [public](public.md), [protected internal](protected-internal.md), [protected](protected.md), [internal](internal.md), [private](private.md) ou [private protected](private-protected.md). Par défaut, ils sont `private`.
 
-Pour plus d’informations, consultez [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
+Pour plus d’informations, consultez la page [Modificateurs d’accès](../../programming-guide/classes-and-structs/access-modifiers.md).
 
 Vous pouvez déclarer des classes génériques qui ont des paramètres de type. Pour plus d’informations, consultez [Classes génériques](../../programming-guide/generics/generic-classes.md).
 
@@ -51,7 +51,7 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Constantes](../../programming-guide/classes-and-structs/constants.md)
 
-- [Champs](../../programming-guide/classes-and-structs/fields.md)
+- [Fields](../../programming-guide/classes-and-structs/fields.md)
 
 - [Finaliseurs](../../programming-guide/classes-and-structs/destructors.md)
 
@@ -71,9 +71,9 @@ Une classe peut contenir les déclarations des membres suivants :
 
 - [Interfaces](../../programming-guide/interfaces/index.md)
 
-- [Structures](../../programming-guide/classes-and-structs/structs.md)
+- [Types de structures](../builtin-types/struct.md)
 
-- [Énumérations](../builtin-types/enum.md)
+- [Types énumération](../builtin-types/enum.md)
 
 ## <a name="example"></a>Exemple
 
@@ -81,7 +81,7 @@ L’exemple suivant explique comment déclarer des champs, des constructeurs et 
 
 [!code-csharp[csrefKeywordsTypes#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsTypes/CS/keywordsTypes.cs#5)]
 
-## <a name="comments"></a>Comments
+## <a name="comments"></a>Commentaires
 
 Notez que, dans l’exemple précédant, les champs privés (`name` et `age`) ne sont accessibles que par le biais de la méthode publique de la classe `Child`. Par exemple, vous ne pouvez pas imprimer le nom de l’enfant à partir de la méthode `Main` en utilisant une instruction comme celle-ci :
 
@@ -101,7 +101,7 @@ Notez enfin que pour l’objet créé à l’aide du constructeur sans paramètr
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Informations de référence sur C#](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
 - [Types référence](./reference-types.md)

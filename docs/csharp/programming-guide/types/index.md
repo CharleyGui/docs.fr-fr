@@ -11,12 +11,12 @@ helpviewer_keywords:
 - C# language, types
 - strong typing [C#]
 ms.assetid: f782d7cc-035e-4500-b1b1-36a9881130ad
-ms.openlocfilehash: ade2cba857a1a32039f8fd07881f13f63f0dbe1a
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: a094e6e8ab9094fb14ce9a2ca8a180cbf9b273cb
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628135"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673392"
 ---
 # <a name="types-c-programming-guide"></a>Types (Guide de programmation C#)
 
@@ -113,7 +113,7 @@ Vous utilisez le mot clé [struct](../../language-reference/builtin-types/struct
 
 [!code-csharp[csProgGuideObjects#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideObjects/CS/Objects.cs#1)]
 
-Pour plus d’informations sur les structs, consultez [Structs](../classes-and-structs/structs.md). Pour plus d’informations sur les types valeur, consultez [types valeur](../../language-reference/builtin-types/value-types.md).
+Pour plus d’informations sur les structs, consultez [types structure](../../language-reference/builtin-types/struct.md). Pour plus d’informations sur les types valeur, consultez [types valeur](../../language-reference/builtin-types/value-types.md).
 
 L’autre catégorie de types valeur est [enum](../../language-reference/builtin-types/enum.md). Un enum définit un jeu de constantes intégrales nommées. Par exemple l’énumération <xref:System.IO.FileMode?displayProperty=nameWithType> dans la bibliothèque de classes du .NET contient un ensemble d’entiers constants nommés qui spécifient comment un fichier doit être ouvert. Ceci est défini comme indiqué dans l’exemple suivant :
 
@@ -123,7 +123,7 @@ La constante `System.IO.FileMode.Create` a la valeur 2. Toutefois, le nom est be
 
 Toutes les énumérations héritent de <xref:System.Enum?displayProperty=nameWithType>, qui hérite de <xref:System.ValueType?displayProperty=nameWithType>. Toutes les règles qui s’appliquent aux structs s’appliquent également aux enums. Pour plus d’informations sur les enums, consultez [types énumération](../../language-reference/builtin-types/enum.md).
 
-### <a name="reference-types"></a>Types référence
+### <a name="reference-types"></a>Types de références
 
 Un type qui est défini comme une [classe](../../language-reference/keywords/class.md), un [délégué](../../language-reference/builtin-types/reference-types.md), un tableau ou une [interface](../../language-reference/keywords/interface.md) est un *type référence*. Au moment de l’exécution, quand vous déclarez une variable de type référence, celle-ci contient la valeur [null](../../language-reference/keywords/null.md) tant que vous n’avez pas explicitement créé un objet à l’aide de l’opérateur [new](../../language-reference/operators/new-operator.md) ou que vous ne lui avez pas assigné un objet créé ailleurs à l’aide de `new`, comme indiqué dans l’exemple suivant :
 
@@ -205,3 +205,4 @@ Pour plus d'informations, voir les rubriques suivantes :
 - [Guide de programmation C#](../index.md)
 - [Conversion des types de données XML](../../../standard/data/xml/conversion-of-xml-data-types.md)
 - [Types intégraux](../../language-reference/builtin-types/integral-numeric-types.md)
+ 

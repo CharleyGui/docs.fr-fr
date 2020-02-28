@@ -10,12 +10,12 @@ helpviewer_keywords:
 - objects [C#]
 - C# language, classes
 ms.assetid: cc39dbda-8754-423e-b5b1-16a1db0734c0
-ms.openlocfilehash: 301ba292010470208e92a225c1014bcb50497106
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: afd9e688bd716375bafb370fad4af082a9498411
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714819"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673418"
 ---
 # <a name="classes-and-structs-c-programming-guide"></a>Classes et structs (Guide de programmation C#)
 Les classes et structs sont deux des constructions de base du système de type commun dans le .NET Framework. Chacun est en substance une structure de données qui encapsule un ensemble de données et de comportements constituant une unité logique. Les données et comportements sont les *membres* de la classe ou du struct, et ils incluent ses méthodes, propriétés, événements, etc., comme indiqué plus loin dans cette rubrique.  
@@ -28,7 +28,7 @@ Les classes et structs sont deux des constructions de base du système de type c
   
  En général, les classes sont utilisées pour modéliser des comportements plus complexes, ou des données destinées à être modifiées après la création d’un objet de classe. Les structs conviennent mieux aux petites structures de données contenant principalement des données qui ne sont pas censées être modifiées après que la structure a été créé.  
   
- Pour plus d’informations, consultez [Classes](./classes.md), [Objets](./objects.md) et [Structs](./structs.md).  
+ Pour plus d’informations, consultez [classes](./classes.md), [objets](./objects.md)et [types de structures](../../language-reference/builtin-types/struct.md).  
   
 ## <a name="example"></a>Exemple  
  Dans l’exemple suivant, `CustomClass` dans l’espace de noms `ProgrammingGuide` a trois membres : un constructeur d’instance, une propriété nommée `Number` et une méthode nommée `Multiply`. La méthode `Main` de la classe `Program` crée une instance (objet) de `CustomClass`, et la méthode et la propriété de l’objet sont accessibles avec la notation par points.
@@ -40,10 +40,10 @@ Les classes et structs sont deux des constructions de base du système de type c
   
  Pour plus d’informations sur les classes, consultez les pages [Classes](./classes.md) et [Objets](./objects.md).  
   
-### <a name="members"></a>Members  
+### <a name="members"></a>Membres  
  Tous les champs, méthodes, constantes, propriétés et événements doivent être déclarés dans un type ; ils sont appelés *membres* du type. En C#, il n’existe aucune variable ou méthode globale, à la différence d’autres langages. Même le point d’entrée d’un programme, la méthode `Main`, doit être déclaré dans une classe ou un struct. La liste suivante inclut tous les types de membres qui peuvent être déclarés dans une classe ou un struct.  
   
-- [Champs](./fields.md)  
+- [Fields](./fields.md)  
   
 - [Constantes](./constants.md)  
   
@@ -64,21 +64,21 @@ Les classes et structs sont deux des constructions de base du système de type c
 - [Types imbriqués](./nested-types.md)  
   
 ### <a name="accessibility"></a>Accessibilité  
- Certaines méthodes et propriétés sont censées être appelées ou accessibles par le code qui se trouve à l’extérieur de votre classe ou de votre struct, connu sous le terme de *code client*. D’autres méthodes et propriétés peuvent être uniquement utilisables dans la classe ou le struct proprement dits. Il est important de limiter l’accessibilité de votre code afin que seul le code client prévu puisse y accéder. Vous pouvez spécifier l’accessibilité de vos types et de leurs membres vis-à-vis du code client à l’aide des modificateurs d’accès [public](../../language-reference/keywords/public.md), [protected](../../language-reference/keywords/protected.md), [internal](../../language-reference/keywords/internal.md), [protected internal](../../language-reference/keywords/protected-internal.md), [private](../../language-reference/keywords/private.md) et [private protected](../../language-reference/keywords/private-protected.md). L’accessibilité par défaut est `private`. Pour plus d’informations, consultez [Modificateurs d’accès](./access-modifiers.md).  
+ Certaines méthodes et propriétés sont censées être appelées ou accessibles par le code qui se trouve à l’extérieur de votre classe ou de votre struct, connu sous le terme de *code client*. D’autres méthodes et propriétés peuvent être uniquement utilisables dans la classe ou le struct proprement dits. Il est important de limiter l’accessibilité de votre code afin que seul le code client prévu puisse y accéder. Vous pouvez spécifier l’accessibilité de vos types et de leurs membres vis-à-vis du code client à l’aide des modificateurs d’accès [public](../../language-reference/keywords/public.md), [protected](../../language-reference/keywords/protected.md), [internal](../../language-reference/keywords/internal.md), [protected internal](../../language-reference/keywords/protected-internal.md), [private](../../language-reference/keywords/private.md) et [private protected](../../language-reference/keywords/private-protected.md). L’accessibilité par défaut est `private`. Pour plus d’informations, consultez la page [Modificateurs d’accès](./access-modifiers.md).  
   
 ### <a name="inheritance"></a>Héritage  
  Les classes (mais pas les structs) prennent en charge le concept d'héritage. Une classe qui dérive d’une autre classe (la *classe de base*) contient automatiquement tous les membres publics, protégés et internes de la classe de base, sauf ses constructeurs et finaliseurs. Pour plus d’informations, consultez les pages [Héritage](./inheritance.md) et [Polymorphisme](./polymorphism.md).  
   
- Les classes peuvent être déclarées comme [abstraites](../../language-reference/keywords/abstract.md), ce qui signifie qu’une ou plusieurs de leurs méthodes n’ont aucune implémentation. Bien que les classes abstraites ne puissent pas être instanciées directement, elles peuvent servir de classes de base à d’autres classes qui fournissent l’implémentation manquante. Les classes peuvent également être déclarées comme [scellées](../../language-reference/keywords/sealed.md) pour empêcher d’autres classes d’hériter d’elles. Pour plus d’informations, consultez [Classes abstract et sealed, et membres de classe](./abstract-and-sealed-classes-and-class-members.md).  
+ Les classes peuvent être déclarées comme [abstraites](../../language-reference/keywords/abstract.md), ce qui signifie qu’une ou plusieurs de leurs méthodes n’ont aucune implémentation. Bien que les classes abstraites ne puissent pas être instanciées directement, elles peuvent servir de classes de base à d’autres classes qui fournissent l’implémentation manquante. Les classes peuvent également être déclarées comme [scellées](../../language-reference/keywords/sealed.md) pour empêcher d’autres classes d’hériter d’elles. Pour plus d’informations, consultez [Classes abstract et sealed et membres de classe](./abstract-and-sealed-classes-and-class-members.md).  
   
 ### <a name="interfaces"></a>Interfaces  
- Les classes et les structs peuvent hériter de plusieurs interfaces. Pour un type, hériter d’une interface signifie implémenter toutes les méthodes définies dans l’interface. Pour plus d'informations, consultez [Interfaces](../interfaces/index.md).  
+ Les classes et les structs peuvent hériter de plusieurs interfaces. Pour un type, hériter d’une interface signifie implémenter toutes les méthodes définies dans l’interface. Pour plus d’informations, consultez [Interfaces](../interfaces/index.md).  
   
 ### <a name="generic-types"></a>Types génériques  
- Les classes et structs peuvent être définis avec un ou plusieurs paramètres de type. Le code client fournit le type lorsqu’il crée une instance du type. Par exemple, la classe <xref:System.Collections.Generic.List%601> de l’espace de noms <xref:System.Collections.Generic> est définie avec un seul paramètre de type. Le code client crée une instance d’une `List<string>` ou d’une `List<int>` pour spécifier le type que contiendra la liste. Pour plus d’informations, consultez [Génériques](../generics/index.md).  
+ Les classes et structs peuvent être définis avec un ou plusieurs paramètres de type. Le code client fournit le type lorsqu’il crée une instance du type. Par exemple, la classe <xref:System.Collections.Generic.List%601> de l’espace de noms <xref:System.Collections.Generic> est définie avec un seul paramètre de type. Le code client crée une instance d’une `List<string>` ou d’une `List<int>` pour spécifier le type que contiendra la liste. Pour plus d’informations, consultez la page [Génériques](../generics/index.md).  
   
 ### <a name="static-types"></a>Types statiques  
- Les classes (mais pas les structs) peuvent être déclarées comme [statiques](../../language-reference/keywords/static.md). Une classe statique ne peut contenir que des membres statiques et ne peut pas être instanciée avec le mot clé new. Une copie de la classe est chargée en mémoire au chargement du programme, et ses membres sont accessibles par le biais du nom de la classe. Les classes et les structs peuvent contenir des membres statiques. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).  
+ Les classes (mais pas les structs) peuvent être déclarées comme [statiques](../../language-reference/keywords/static.md). Une classe statique ne peut contenir que des membres statiques et ne peut pas être instanciée avec le mot clé new. Une copie de la classe est chargée en mémoire au chargement du programme, et ses membres sont accessibles par le biais du nom de la classe. Les classes et les structs peuvent contenir des membres statiques. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md).  
   
 ### <a name="nested-types"></a>Types imbriqués  
  Une classe ou un struct peut être imbriqué dans une autre classe ou un autre struct. Pour plus d’informations, consultez [Types imbriqués](./nested-types.md).  
@@ -87,16 +87,16 @@ Les classes et structs sont deux des constructions de base du système de type c
  Vous pouvez définir une partie d'une classe, d'un struct ou d'une méthode dans un fichier de code et une autre partie dans un fichier de code séparé. Pour plus d’informations, consultez [Classes et méthodes partielles](./partial-classes-and-methods.md).  
   
 ### <a name="object-initializers"></a>Initialiseurs d'objets  
- Vous pouvez instancier et initialiser des objets de classe et de struct, ainsi que des collections d'objets, sans appeler explicitement leur constructeur. Pour plus d’informations, consultez la page [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md).  
+ Vous pouvez instancier et initialiser des objets de classe et de struct, ainsi que des collections d'objets, sans appeler explicitement leur constructeur. Pour plus d’informations, consultez [Initialiseurs d’objets et de collections](./object-and-collection-initializers.md).  
   
 ### <a name="anonymous-types"></a>Types anonymes  
- Dans les situations où il n’est pas pratique ou nécessaire de créer une classe nommée, par exemple pour remplir une liste avec des structures de données qu’il n’est pas nécessaire de conserver ou de transmettre à une autre méthode, on utilise des types anonymes. Pour plus d’informations, consultez [Types anonymes](./anonymous-types.md).  
+ Dans les situations où il n’est pas pratique ou nécessaire de créer une classe nommée, par exemple pour remplir une liste avec des structures de données qu’il n’est pas nécessaire de conserver ou de transmettre à une autre méthode, on utilise des types anonymes. Pour plus d’informations, consultez la page [Types anonymes](./anonymous-types.md).  
   
 ### <a name="extension-methods"></a>Méthodes d'extension  
- Vous pouvez « étendre » une classe sans créer de classe dérivée en créant un type séparé dont les méthodes peuvent être appelées comme si elles appartenaient au type d’origine. Pour plus d’informations, consultez [Méthodes d’extension](./extension-methods.md).  
+ Vous pouvez « étendre » une classe sans créer de classe dérivée en créant un type séparé dont les méthodes peuvent être appelées comme si elles appartenaient au type d’origine. Pour plus d’informations, consultez la page [Méthodes d’extension](./extension-methods.md).  
   
 ### <a name="implicitly-typed-local-variables"></a>Variables locales implicitement typées  
- Dans une méthode de classe ou de struct, vous pouvez utiliser le type implicite pour indiquer au compilateur de déterminer le type approprié au moment de la compilation. Pour plus d’informations, consultez [Variables locales implicitement typées](./implicitly-typed-local-variables.md).  
+ Dans une méthode de classe ou de struct, vous pouvez utiliser le type implicite pour indiquer au compilateur de déterminer le type approprié au moment de la compilation. Pour plus d’informations, consultez la page [Variables locales implicitement typées](./implicitly-typed-local-variables.md).  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  

@@ -4,12 +4,12 @@ description: Découvrez les types de base (numérique, chaîne et objet) disponi
 ms.date: 10/10/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 95c686ba-ae4f-440e-8e94-0dbd6e04d11f
-ms.openlocfilehash: 10230394ece27a2a34be1075abcdbd3765995aeb
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: bb2177026afb2eef2e14ece0c306bfd3ffe7af39
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628564"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673262"
 ---
 # <a name="types-variables-and-values"></a>Types, variables et valeurs
 
@@ -82,9 +82,10 @@ Il est important de comprendre ces deux points fondamentaux à propos du systèm
   
 - Le système prend en charge le principe d’héritage. Les types peuvent dériver d’autres types, appelés *types de base*. Le type dérivé hérite (avec certaines restrictions) des méthodes, des propriétés et des autres membres du type de base. Le type de base peut, à son tour, dériver d’un autre type, auquel cas le type dérivé hérite des membres des deux types de base dans sa hiérarchie d’héritage. Tous les types, y compris les types numériques intégrés tels que <xref:System.Int32> (mot clé C# : `int`), dérivent au final d’un seul type de base, qui est <xref:System.Object> (mot clé C# : `object`). Cette hiérarchie de types unifiée est appelée [Système de type commun](../standard/common-type-system.md) (CTS). Pour plus d’informations sur l’héritage dans C#, consultez [Héritage](programming-guide/classes-and-structs/inheritance.md).  
   
-- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés fournis dans la bibliothèque de classes .NET Framework, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé [struct](language-reference/builtin-types/struct.md) sont des types valeur ; tous les types numériques intégrés sont des **structs**. Pour plus d’informations sur les types valeur, consultez [Structs](structs.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](programming-guide/classes-and-structs/classes.md). Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.
+- Chaque type du CTS est défini comme *type valeur* ou *type référence*. Cela inclut tous les types personnalisés dans la bibliothèque de classes .NET, ainsi que les types définis par l’utilisateur. Les types que vous définissez à l’aide du mot clé `struct` ou `enum` sont des types valeur. Pour plus d’informations sur les types valeur, consultez [types valeur](language-reference/builtin-types/value-types.md). Les types que vous définissez à l’aide du mot clé [class](language-reference/keywords/class.md) sont des types référence. Pour plus d’informations sur les types référence, consultez [Classes](programming-guide/classes-and-structs/classes.md). Les types référence et les types valeur ont des règles différentes lors de la compilation et un comportement différent au moment de l’exécution.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Structures](structs.md)
+- [Types de structures](language-reference/builtin-types/struct.md)
+- [Types énumération](language-reference/builtin-types/enum.md)
 - [Classes](programming-guide/classes-and-structs/classes.md)

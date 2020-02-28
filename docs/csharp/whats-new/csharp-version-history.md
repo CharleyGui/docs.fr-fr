@@ -3,12 +3,12 @@ title: Histoire du langage C# | Guide C#
 description: À quoi ressemblait le langage dans ses versions antérieures et comment a-t-il évolué depuis ?
 author: erikdietrich
 ms.date: 09/20/2017
-ms.openlocfilehash: 83934d9c8194d5109cea0e847d287c01c32a2955
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: 9114395a5c6cfd8df5da18024921c35828947e0b
+ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73739105"
+ms.lasthandoff: 02/27/2020
+ms.locfileid: "77673275"
 ---
 # <a name="the-history-of-c"></a>Histoire du langage C\#
 
@@ -37,7 +37,7 @@ C# version 1.0 semblait dénué de fonctionnalités, par rapport à aujourd’h
 Les principales fonctionnalités du langage C# 1.0 étaient les suivantes :
 
 - [Classes](../programming-guide/classes-and-structs/classes.md)
-- [Structures](../programming-guide/classes-and-structs/structs.md)
+- [Structures](../language-reference/builtin-types/struct.md)
 - [Interfaces](../programming-guide/interfaces/index.md)
 - [Événements](../events-overview.md)
 - [Propriétés](../properties.md)
@@ -173,4 +173,4 @@ Toutes ces fonctionnalités offrent de nouvelles capacités appréciables aux d�
 
 Par ailleurs, les utilisations de C# sont de plus en plus larges. .NET Core cible à présent n’importe quel système d’exploitation et garde les yeux rivés sur le cloud et la portabilité.  Ces nouvelles fonctions occupent sans aucun doute les pensées des concepteurs du langage, en plus des fonctionnalités à venir.
 
-_Article_ [_initialement publié sur le blog NDepend_](https://blog.ndepend.com/c-versions-look-language-history/) _, avec l’aimable autorisation d’Erik Dietrich et de Patrick Smacchia._
+_Article_ [_publié à l’origine sur le blog NDepend, avec l'_ ](https://blog.ndepend.com/c-versions-look-language-history/)_aimable aimable de Erik Dietrich et Patrick Smacchia._
