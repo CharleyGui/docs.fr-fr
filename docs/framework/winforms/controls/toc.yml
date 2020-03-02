@@ -1181,7 +1181,7 @@
           href: walkthrough-authoring-a-composite-control-with-visual-csharp.md
         - name: "Procédure pas à pas\_: Hériter d’un contrôle"
           href: walkthrough-inheriting-from-a-windows-forms-control-with-visual-csharp.md
-        - name: "Procédure pas à pas\_: Effectuer des tâches courantes à l’aide de balises actives"
+        - name: "Procédure pas à pas\_: Effectuer des tâches courantes avec des actions de conception"
           href: perform-common-tasks-design-actions.md
         - name: "Procédure pas à pas\_: Sérialiser des collections de types standard"
           href: serializing-collections-designerserializationvisibilityattribute.md
