@@ -121,5 +121,7 @@
       href: resources/index.md
     - name: Glossaire
       href: resources/glossary.md
+    - name: Ressources de formation Azure
+      href: resources/azure-training-concepts-model-builder.md
     - name: Télémétrie CLI
       href: resources/ml-net-cli-telemetry.md
