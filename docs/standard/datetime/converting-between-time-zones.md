@@ -12,12 +12,12 @@ helpviewer_keywords:
 - converting times
 - local time conversions
 ms.assetid: a51e1a3b-c983-4320-b31a-1f9fa3cf824a
-ms.openlocfilehash: d0b38523f054598ba6fb1f05a0183bc4ccff2120
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: fbb59dbe364763209f44a4e2241d1d5275036c40
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132564"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156021"
 ---
 # <a name="converting-times-between-time-zones"></a>Conversion d’heures entre fuseaux horaires
 
@@ -57,7 +57,7 @@ Toutes ces méthodes prennent <xref:System.DateTime> valeurs en tant que paramè
 
 ## <a name="converting-utc-to-a-designated-time-zone"></a>Conversion de l’heure UTC dans un fuseau horaire désigné
 
-Pour convertir l’heure UTC en heure locale, consultez la section « conversion de l’heure UTC en heure locale » qui suit. Pour convertir l’heure UTC et l’heure dans n’importe quel fuseau horaire que vous désignez, appelez la méthode <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A>. Cette méthode accepte deux paramètres :
+Pour convertir l’heure UTC en heure locale, consultez la section « conversion de l’heure UTC en heure locale » qui suit. Pour convertir l’heure UTC et l’heure dans n’importe quel fuseau horaire que vous désignez, appelez la méthode <xref:System.TimeZoneInfo.ConvertTimeFromUtc%2A>. La méthode accepte deux paramètres :
 
 - L’heure UTC à convertir. Il doit s’agir d’une valeur <xref:System.DateTime> dont la propriété <xref:System.DateTime.Kind%2A> a la valeur `Unspecified` ou `Utc`.
 
@@ -109,7 +109,7 @@ Les valeurs de date et d’heure représentées par <xref:System.DateTimeOffset>
 Par exemple, si la date et l’heure d’une demande de page web de l’utilisateur sont connues et sont sérialisées comme chaîne au format MM/jj/aaaa hh:mm:ss zzzz, la méthode `ReturnTimeOnServer` qui suit convertit cette valeur de date et d’heure en date et heure sur le serveur web.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/cs/TimeConversions.cs#1)]
-[!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions.vb#1)] 
+[!code-vb[System.DateTimeOffset.Conceptual.OffsetConversions#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.OffsetConversions/vb/TimeConversions.vb#1)]
 
 Si la chaîne « 9/1/2007 5:32:07 -05:00 », qui représente la date et l’heure d’un fuseau horaire cinq heures avant l’heure UTC, est passée à la méthode, elle retourne 9/1/2007 3:32:07 AM-07:00 pour un serveur situé dans le fuseau horaire Pacifique (États-Unis).
 

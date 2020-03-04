@@ -5,12 +5,12 @@ dev_langs:
 - csharp
 - vb
 ms.date: 10/10/2018
-ms.openlocfilehash: 32784f7d4b9e3a93eb7f81b4829b39c1a06ef949
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 2397bf999ba97fe0c011de180e05be4177894365
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920395"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239883"
 ---
 # <a name="whats-new-in-net-core-21"></a>Nouveautés de .NET Core 2.1
 
@@ -23,7 +23,7 @@ ms.locfileid: "76920395"
 - [Améliorations de la compilation JIT](#jit-compiler-improvements)
 - [Modifications d'API](#api-changes)
 
-## <a name="tooling"></a>Outillage
+## <a name="tooling"></a>Outils
 
 Le Kit SDK.NET Core 2.1 (2.1.300), les outils inclus avec .NET Core 2.1, intègrent les modifications et améliorations suivantes :
 
@@ -77,7 +77,7 @@ Une fois installé, l’outil peut être exécuté à partir de la ligne de comm
 
 ### <a name="tool-management-with-the-dotnet-tool-command"></a>Gestion des outils avec la commande `dotnet tool`
 
-Dans le SDK .NET Core 2.1, toutes les opérations avec les outils utilisent la commande `dotnet tool`. Les options ci-dessous sont disponibles :
+Dans le SDK .NET Core 2.1, toutes les opérations avec les outils utilisent la commande `dotnet tool`. Les options suivantes sont disponibles :
 
 - [`dotnet tool install`](../tools/dotnet-tool-install.md) pour installer un outil.
 
@@ -169,25 +169,25 @@ Vous pouvez activer la compilation à plusieurs niveaux de deux manières.
 
 .NET Core 2.1 inclut certains nouveaux types qui facilitent l’utilisation de tableaux et d’autres types de mémoire beaucoup plus efficaces. Ces nouveaux types incluent :
 
-- Voir <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
+- <xref:System.Span%601?displayProperty=nameWithType> et <xref:System.ReadOnlySpan%601?displayProperty=nameWithType>.
 
-- Voir <xref:System.Memory%601?displayProperty=nameWithType> et <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>.
+- <xref:System.Memory%601?displayProperty=nameWithType> et <xref:System.ReadOnlyMemory%601?displayProperty=nameWithType>.
 
 Sans ces types, lorsque vous passez des éléments de ce type comme une partie d’un tableau ou d’une section d’une mémoire tampon, vous devez créer une copie d’une partie des données avant de les passer à une méthode. Ces types fournissent une représentation virtuelle des données, qui supprime les opérations supplémentaires d’allocation de mémoire et de copie.
 
 L’exemple suivant utilise une instance <xref:System.Span%601> et <xref:System.Memory%601> pour fournir une représentation virtuelle de 10 éléments d’un tableau.
 
-[!code-csharp[Span\<T>](~/samples/core/whats-new/whats-new-in-21/cs/program.cs)]
+[!code-csharp[Span\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/program.cs)]
 
-[!code-vb[Memory\<T>](~/samples/core/whats-new/whats-new-in-21/vb/program.vb)]
+[!code-vb[Memory\<T>](~/samples/snippets/core/whats-new/whats-new-in-21/vb/program.vb)]
 
 ### <a name="brotli-compression"></a>Compression de Brotli
 
 .NET Core 2.1 prend en charge la compression et la décompression de Brotli. Brotli est un algorithme de compression sans perte à usage général, défini dans [RFC 7932](https://www.ietf.org/rfc/rfc7932.txt), et pris en charge par la plupart des navigateurs web et les principaux serveurs web. Vous pouvez utiliser une classe <xref:System.IO.Compression.BrotliStream?displayProperty=nameWithType> basée sur les flux ou des classes hautes performances <xref:System.IO.Compression.BrotliEncoder?displayProperty=nameWithType> et <xref:System.IO.Compression.BrotliDecoder?displayProperty=nameWithType> basées sur la portée. L'exemple suivant montre une compression avec la classe <xref:System.IO.Compression.BrotliStream> :
 
-[!code-csharp[Brotli compression](~/samples/core/whats-new/whats-new-in-21/cs/brotli.cs#1)]
+[!code-csharp[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/csharp/brotli.cs#1)]
 
-[!code-vb[Brotli compression](~/samples/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
+[!code-vb[Brotli compression](~/samples/snippets/core/whats-new/whats-new-in-21/vb/brotli.vb#1)]
 
 Le comportement de <xref:System.IO.Compression.BrotliStream> est identique à <xref:System.IO.Compression.DeflateStream> et <xref:System.IO.Compression.GZipStream>, ce qui facilite la convertir du code qui appelle ces API pour <xref:System.IO.Compression.BrotliStream>.
 
@@ -244,6 +244,10 @@ Vous pouvez également utiliser une variable d’environnement pour désactiver 
 Sous Windows, vous pouvez également choisir d’utiliser <xref:System.Net.Http.WinHttpHandler?displayProperty=nameWithType>, repose sur une implémentation native, ou la classe <xref:System.Net.Http.SocketsHttpHandler> en passant une instance de la classe au constructeur <xref:System.Net.Http.HttpClient>.
 
 Sous Linux et macOS, vous pouvez uniquement configurer <xref:System.Net.Http.HttpClient> par processus. Sous Linux, vous devez déployer [libcurl](https://curl.haxx.se/libcurl/) si vous souhaitez utiliser l’ancienne implémentation <xref:System.Net.Http.HttpClient>. (Il est installé avec .NET Core 2.0.)
+
+### <a name="breaking-changes"></a>Changements cassants
+
+Pour plus d’informations sur les modifications avec rupture, consultez [modifications avec rupture pour la migration de la version 2,0 vers 2,1](../compatibility/2.0-2.1.md).
 
 ## <a name="see-also"></a>Voir aussi
 

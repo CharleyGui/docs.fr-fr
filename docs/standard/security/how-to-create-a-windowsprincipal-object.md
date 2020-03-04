@@ -11,12 +11,12 @@ helpviewer_keywords:
 - security [.NET Framework], principals
 - principal objects, creating
 ms.assetid: 56eb10ca-e61d-4ed2-af7a-555fc4c25a25
-ms.openlocfilehash: d409c0e9a2a6564e5fb16e4e2c72ab661ae2d5ce
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 30af18b7d7b86621586c7da66eda1b37356d5565
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706160"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159778"
 ---
 # <a name="how-to-create-a-windowsprincipal-object"></a>Comment : créer un objet WindowsPrincipal
 Il existe deux façons de créer un objet <xref:System.Security.Principal.WindowsPrincipal>, selon que le code doit effectuer une ou plusieurs validations basées sur les rôles.  
@@ -40,13 +40,13 @@ Il existe deux façons de créer un objet <xref:System.Security.Principal.Window
 2. Une fois la stratégie définie, utilisez la propriété statique <xref:System.Threading.Thread.CurrentPrincipal%2A?displayProperty=nameWithType> pour récupérer le principal qui encapsule l'utilisateur Windows actuel. Étant donné que le type de retour de la propriété est <xref:System.Security.Principal.IPrincipal>, vous devez caster le résultat vers un type <xref:System.Security.Principal.WindowsPrincipal>. Le code suivant initialise un nouvel objet <xref:System.Security.Principal.WindowsPrincipal> vers la valeur du principal associé au thread actuel.  
   
     ```csharp  
-    WindowsPrincipal myPrincipal =   
+    WindowsPrincipal myPrincipal =
         (WindowsPrincipal) Thread.CurrentPrincipal;  
     ```  
   
     ```vb  
     Dim myPrincipal As WindowsPrincipal = _  
-        CType(Thread.CurrentPrincipal, WindowsPrincipal)   
+        CType(Thread.CurrentPrincipal, WindowsPrincipal)
     ```  
   
 3. Quand l'objet principal a été créé, vous pouvez utiliser plusieurs méthodes pour le valider.  

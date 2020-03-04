@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 65455ef3-9120-412c-819b-d0f59f88ac09
-ms.openlocfilehash: ac7e1b68f3f43a0c84c7330666825207e5b90004
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e54990785cafd6061c6d53c13af6476a4b46e20e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711049"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160350"
 ---
 # <a name="converting-strings-to-net-framework-data-types"></a>Conversion de chaînes en types de données .NET Framework
 Si vous souhaitez convertir une chaîne en un type de données .NET Framework, utilisez la méthode **XmlConvert** conforme aux exigences de l’application. Pour une liste de toutes les méthodes de conversion disponibles dans la classe **XmlConvert**, consultez <xref:System.Xml.XmlConvert>.  
@@ -20,7 +20,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
   
  Le tableau suivant répertorie les types de données .NET Framework et les types de chaînes retournés à l'aide du mappage de types de données XSD (XML Schema Definition). Ces types .NET Framework ne peuvent pas être traités à l'aide de **System.Convert**.  
   
-|Type .NET Framework|Chaîne retournée|  
+|Type .NET Framework|Chaîne retournée|  
 |-------------------------|---------------------|  
 |Boolean|"true", "false"|  
 |Single.PositiveInfinity|"INF"|  
@@ -28,7 +28,7 @@ Si vous souhaitez convertir une chaîne en un type de données .NET Framework, u
 |Double.PositiveInfinity|"INF"|  
 |Double.NegativeInfinity|"-INF"|  
 |DateTime|Le format est « yyyy-MM-ddTHH:mm:sszzzzzz » et ses sous-ensembles.|  
-|TimeSpan|Le format est PnYnMnTnHnMnS, c'est-à-dire que `P2Y10M15DT10H30M20S` indique une durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
+|Timespan|Le format est PnYnMnTnHnMnS, c'est-à-dire que `P2Y10M15DT10H30M20S` indique une durée de 2 années, 10 mois, 15 jours, 10 heures, 30 minutes et 20 secondes.|  
   
 > [!NOTE]
 > Durant la conversion de l'un des types .NET Framework répertoriés dans ce tableau vers une chaîne à l'aide de la méthode **ToString**, la chaîne retournée n'est pas le type de base, mais le type de chaîne XSD (XML Schema Definition).  
@@ -83,11 +83,11 @@ writer.WriteElementString("Number", XmlConvert.ToString(value));
   
  Examinons, par exemple, le code XML suivant :  
   
- **Entrée**  
+ **Input**  
   
 ```xml  
 <Boolean>true</Boolean>  
-<Boolean>1</Boolean>   
+<Boolean>1</Boolean>
 ```  
   
  Tous deux peuvent être reconnus par le code suivant, et **bvalue** est **System.Boolean.True** :  

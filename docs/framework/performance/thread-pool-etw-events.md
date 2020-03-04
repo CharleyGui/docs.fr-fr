@@ -5,12 +5,12 @@ helpviewer_keywords:
 - thread pool events [.NET Framework]
 - ETW, thread pool events (CLR)
 ms.assetid: f2a21e3a-3b6c-4433-97f3-47ff16855ecc
-ms.openlocfilehash: e1deb17dfdfea4c8b66eb8d836a10bf888727e1a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 249d0607ddd280bcb4e9cf3ef34b28ff8ada3b04
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715901"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240491"
 ---
 # <a name="thread-pool-etw-events"></a>Événements ETW de pool de threads
 Ces événements collectent des informations sur les threads de travail et d'E/S.  
@@ -27,13 +27,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 ### <a name="threadpoolworkerthreadstart-and-threadpoolworkerthreadstop"></a>ThreadPoolWorkerThreadStart et ThreadPoolWorkerThreadStop  
  Le tableau ci-dessous indique le mot clé et le niveau de ces événements. (Pour plus d'informations, consultez [CLR ETW Keywords and Levels](clr-etw-keywords-and-levels.md).)  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-|-|-|  
 |`ThreadPoolWorkerThreadStart`|50|Un thread de travail est créé.|  
 |`ThreadPoolWorkerThreadStop`|51|Un thread de travail est arrêté.|  
@@ -54,13 +54,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 #### <a name="threadpoolworkerthreadadjustmentsample"></a>ThreadPoolWorkerThreadAdjustmentSample  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`ThreadPoolWorkerThreadAdjustmentSample`|54|Fait référence à la collecte d'informations pour un exemple. Autrement dit, une mesure de débit avec un certain niveau d’accès concurrentiel à un instant donné.|  
   
@@ -74,13 +74,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 #### <a name="threadpoolworkerthreadadjustmentadjustment"></a>ThreadPoolWorkerThreadAdjustmentAdjustment  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`ThreadPoolWorkerThreadAdjustmentAdjustment`|55|Enregistre une modification dans le contrôle, quand l'algorithme d'injection de thread (hill-climbing) détermine qu'une modification du niveau d'accès concurrentiel a eu lieu.|  
   
@@ -90,19 +90,19 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 |----------------|---------------|-----------------|  
 |AverageThroughput|win:Double|Débit moyen d'un échantillon de mesures|  
 |NewWorkerThreadCount|win:UInt32|Nouveau nombre de threads de travail actifs|  
-|Raison|win:UInt32|Raison de l'ajustement<br /><br /> 0x00 – Préchauffage<br /><br /> 0x01 – Initialisation<br /><br /> 0x02 – Déplacement aléatoire<br /><br /> 0x03 – Déplacement vers le haut<br /><br /> 0x04 – Point de changement<br /><br /> 0x05 – Stabilisation<br /><br /> 0x06 – Privation<br /><br /> 0x07 – Thread expiré|  
+|Motif|win:UInt32|Raison de l'ajustement<br /><br /> 0x00 – Préchauffage<br /><br /> 0x01 – Initialisation<br /><br /> 0x02 – Déplacement aléatoire<br /><br /> 0x03 – Déplacement vers le haut<br /><br /> 0x04 – Point de changement<br /><br /> 0x05 – Stabilisation<br /><br /> 0x06 – Privation<br /><br /> 0x07 – Thread expiré|  
 |ClrInstanceID|Win:UInt16|ID unique de l'instance de CLR ou CoreCLR.|  
   
 #### <a name="threadpoolworkerthreadadjustmentstats"></a>ThreadPoolWorkerThreadAdjustmentStats  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Description|  
+|Événement|ID de l’événement|Description|  
 |-----------|--------------|-----------------|  
 |`ThreadPoolWorkerThreadAdjustmentStats`|56|Rassemble des données sur le pool de threads.|  
   
@@ -128,13 +128,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 ### <a name="iothreadcreate_v1"></a>IOThreadCreate_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-|-|-|  
 |`IOThreadCreate_V1`|44|Un thread d'E/S est créé dans le pool de threads.|  
   
@@ -149,13 +149,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 ### <a name="iothreadretire_v1"></a>IOThreadRetire_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`IOThreadRetire_V1`|46|Un thread d'E/S devient candidat au retrait.|  
   
@@ -170,13 +170,13 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 ### <a name="iothreadunretire_v1"></a>IOThreadUnretire_V1  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
 |`IOThreadUnretire_V1`|47|Le retrait d’un thread d'E/S est annulé en raison d'une E/S qui se produit au cours d’une période d'attente après que le thread est devenu un candidat au retrait.|  
   
@@ -191,15 +191,15 @@ Ces événements collectent des informations sur les threads de travail et d'E/S
 ### <a name="iothreadterminate"></a>IOThreadTerminate  
  Le tableau suivant montre les mots clés et les niveaux.  
   
-|Mot clé pour déclencher l'événement|Niveau|  
+|Mot clé pour déclencher l'événement|Level|  
 |-----------------------------------|-----------|  
 |`ThreadingKeyword` (0x10000)|Informatif (4)|  
   
  Le tableau ci-dessous montre les informations liées aux événements.  
   
-|Event|ID de l'événement|Moment du déclenchement|  
+|Événement|ID de l’événement|Moment du déclenchement|  
 |-----------|--------------|-----------------|  
-|`IOThreadTerminate`|45|Un thread d'E/S est créé dans le pool de threads.|  
+|`IOThreadTerminate`|45|Un thread d’e/s se termine dans le pool de threads.|  
   
  Le tableau ci-dessous montre les données liées aux événements.  
   

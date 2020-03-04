@@ -11,12 +11,12 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 427550e1fbeb38cefbb4afe97d80e198ac2d6cb0
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: adda4ed2ab5c59e3518b8e724044529a79840ad0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73127631"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156476"
 ---
 # <a name="how-to-reference-a-strong-named-assembly"></a>Comment : référencer un assembly avec nom fort
 Le référencement de types ou de ressources dans un assembly avec nom fort est généralement un processus transparent. Vous pouvez effectuer la référence au moment de la compilation (liaison anticipée) ou au moment de l’exécution.  
@@ -28,9 +28,9 @@ Une référence au moment de la compilation se produit lorsque vous indiquez au 
   
 ## <a name="make-a-compile-time-reference-to-a-strong-named-assembly"></a>Créer une référence au moment de la compilation à un assembly avec nom fort  
 
-À l’invite de commandes, tapez la commande suivante :  
+À l'invite de commande, tapez la commande suivante :  
 
-\<*commande_compilateur*>  **/reference:** \<*nom_assembly*>  
+\<*commande_compilateur*> **/reference:**\<*nom_assembly*>  
 
 Dans cette commande, *commande_compilateur* est la commande du compilateur pour le langage que vous utilisez, et *nom_assembly* est le nom de l’assembly avec nom fort référencé. Vous pouvez également utiliser d’autres options du compilateur, telles que **/t:library**, qui permet de créer un assembly de bibliothèque.  
 
@@ -44,12 +44,12 @@ csc /t:library myAssembly.cs /reference:myLibAssembly.dll
   
 Quand vous effectuez une référence au moment de l’exécution à un assembly avec nom fort, par exemple à l’aide de la méthode <xref:System.Reflection.Assembly.Load%2A?displayProperty=nameWithType> ou <xref:System.Reflection.Assembly.GetType%2A?displayProperty=nameWithType>, vous devez utiliser le nom complet de l’assembly avec nom fort référencé. La syntaxe d’un nom complet est la suivante :  
 
-\<*nom_assembly*> **,** \<*numéro_version*> **,** \<*culture*> **,** \<*jeton_clé_publique*>  
+\<*nom de l’assembly*>**,** \<*numéro de version*>**,** \<*culture*>, \<jeton **de** *clé publique*>  
 
-Exemple :  
+Par exemple :  
 
 ```console
-myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33   
+myDll, Version=1.1.0.0, Culture=en, PublicKeyToken=03689116d3a4ae33
 ```  
 
 Dans cet exemple, `PublicKeyToken` est la forme hexadécimale du jeton de clé publique. S’il n’existe aucune valeur de culture, utilisez `Culture=neutral`.  
@@ -73,11 +73,11 @@ Dim myDll As Assembly = _
 
 Vous pouvez imprimer le format hexadécimal de la clé publique et du jeton de clé publique pour un assembly spécifique en utilisant la commande [Strong Name (Sn.exe)](../../framework/tools/sn-exe-strong-name-tool.md) suivante :  
 
-**sn -Tp \<** *assembly* **>**  
+**>** de l' *assembly* **sn-TP \<**  
 
 Si vous avez un fichier de clé publique, vous pouvez utiliser la commande suivante (notez la différence de casse de l’option de ligne de commande) à la place :  
 
-**sn -tp \<** *fichier de clé publique* **>**  
+**sn-tp \<fichier de** *clé publique* **>**  
 
 ## <a name="see-also"></a>Voir aussi
 

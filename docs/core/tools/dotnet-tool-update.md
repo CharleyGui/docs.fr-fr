@@ -2,18 +2,18 @@
 title: Commande dotnet tool update
 description: La commande de mise à jour de l’outil dotnet met à jour l’outil .NET Core spécifié sur votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: 50bb366fedfb0ea69b8b6007ff89e366b4f689de
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 80e807a0fc06ad762334f888e701f6d9c448369a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543415"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156944"
 ---
 # <a name="dotnet-tool-update"></a>dotnet tool update
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet tool update` : met à jour l' [outil .net Core](global-tools.md) spécifié sur votre ordinateur.
 
@@ -58,7 +58,7 @@ La commande `dotnet tool update` vous permet de mettre à jour les outils .NET C
 
 - **`-g|--global`**
 
-  Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local. 
+  Spécifie que la mise à jour concerne un outil à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.
 
 - **`-h|--help`**
 
@@ -66,7 +66,7 @@ La commande `dotnet tool update` vous permet de mettre à jour les outils .NET C
 
 - **`--tool-path <PATH>`**
 
-  Spécifie l’emplacement d’installation de l’outil Global. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local. 
+  Spécifie l’emplacement d’installation de l’outil Global. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission de `--global` et `--tool-path` spécifie que l’outil à mettre à jour est un outil local.
 
 - **`-v|--verbosity <LEVEL>`**
 

@@ -4,12 +4,12 @@ description: Ce didacticiel avancé montre comment migrer du code existant avec 
 ms.date: 02/19/2019
 ms.technology: csharp-null-safety
 ms.custom: mvc
-ms.openlocfilehash: 4edeab7b2a4211d50c424f567ad7df6ced0bf4ce
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 38619f9efa5da1f9b3264b3d4240103f0869afea
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093303"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240026"
 ---
 # <a name="tutorial-migrate-existing-code-with-nullable-reference-types"></a>Didacticiel : migrer du code existant avec des types de référence Nullable
 
@@ -24,7 +24,7 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 > - Gérer l’interface entre les contextes compatibles avec nullable et non compatibles avec nullable.
 > - Contrôler les contextes d’annotation nullable.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -77,11 +77,11 @@ Ces deux directives vous aident à concentrer vos efforts de migration. Les aver
 
 La classe `NewsStoryViewModel` est un objet de transfert de données (DTO) et deux des propriétés sont des chaînes de lecture/écriture :
 
-[!code-csharp[InitialViewModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#StarterViewModel)]
+[!code-csharp[InitialViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#StarterViewModel)]
 
 Ces deux propriétés provoquent `CS8618`, « Propriété non-nullable initialisée ». Cela est suffisamment clair : les deux propriétés `string` ont la valeur par défaut `null` lorsqu’un `NewsStoryViewModel` est construit. Il est important de découvrir comment les objets `NewsStoryViewModel` sont construits. En examinant cette classe, vous ne pouvez pas savoir si la valeur `null` fait partie de la conception, ou si ces objets sont définis sur des valeurs non null lors de leur création. Les articles de presse sont créés dans la méthode `GetNews` de la classe `NewsService` :
 
-[!code-csharp[StarterCreateNewsItem](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
+[!code-csharp[StarterCreateNewsItem](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#CreateNewsItem)]
 
 Il se passe beaucoup de choses dans le bloc de code précédent. Cette application utilise le package NuGet [AutoMapper](https://automapper.org/) pour construire un élément d’article de presse à partir d’un `ISyndicationItem`. Vous avez découvert que les éléments d’articles de presse sont construits et que les propriétés sont définies dans cette seule instruction. Cela signifie que la conception de `NewsStoryViewModel` indique que ces propriétés ne doivent jamais avoir la valeur `null`. Ces propriétés doivent être des **types de référence non nullable**. C’est ce qui correspond le mieux à l’intention de conception d’origine. En fait, tout `NewsStoryViewModel` *est* correctement instancié avec des valeurs non null. Ce qui fait du code d’initialisation suivant un correctif valide :
 
@@ -96,15 +96,15 @@ public class NewsStoryViewModel
 
 L’attribution de `Title` et `Uri` à `default` qui est `null` pour le type `string` ne change pas le comportement d’exécution du programme. `NewsStoryViewModel` est toujours construit avec des valeurs null, mais maintenant le compilateur ne signale aucun avertissement. **L’opérateur indulgent en null**, le caractère `!` qui suit l’expression `default` indique au compilateur que l’expression précédente n’est pas null. Cette technique peut être utile lorsque d’autres modifications forcent beaucoup plus les modifications apportées à une base de code, mais dans cette application, il existe une solution relativement rapide et plus performante : faire de la `NewsStoryViewModel` un type immuable dans lequel toutes les propriétés sont définies dans le constructeur. Dans `NewsStoryViewModel`, effectuez les changements suivants :
 
-[!code-csharp[FinishedViewModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
+[!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/ViewModels/NewsStoryViewModel.cs#FinishedViewModel)]
 
 Une fois cette opération effectuée, vous devez mettre à jour le code qui configure AutoMapper afin qu’il utilise le constructeur, plutôt que de définir des propriétés. Ouvrez `NewsService.cs` et recherchez le code suivant en bas du fichier :
 
-[!code-csharp[StarterAutoMapper](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
+[!code-csharp[StarterAutoMapper](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
 Ce code mappe les propriétés de l’objet `ISyndicationItem` aux propriétés `NewsStoryViewModel`. Vous souhaitez qu’AutoMapper assure le mappage à l’aide d’un constructeur à la place. Remplacez le code ci-dessus par la configuration Automapper suivante :
 
-[!code-csharp[FinishedViewModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
+[!code-csharp[FinishedViewModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ConfigureAutoMapper)]
 
 Notez qu’étant donné que cette classe est petite, et que vous l’avez examinée avec soin, vous devez activer la directive `#nullable enable` au-dessus de cette déclaration de classe. La modification apportée au constructeur peut avoir rompu quelque chose, il est donc judicieux d’exécuter tous les tests et de tester l’application avant de continuer.
 
@@ -112,11 +112,11 @@ Le premier ensemble de modifications vous a montré comment effectuer la détect
 
 Parfois, la structure d’une classe fournit des différents indices sur l’intention. Ouvrez le fichier *Error.cshtml.cs* dans le dossier *Pages*. `ErrorViewModel` contient le code suivant :
 
-[!code-csharp[StarterErrorModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Error.cshtml.cs#StartErrorModel)]
+[!code-csharp[StarterErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Error.cshtml.cs#StartErrorModel)]
 
 Ajouter la directive `#nullable enable` avant la déclaration de classe et une directive `#nullable restore` après. Vous obtiendrez un avertissement indiquant que `RequestId` n’est pas initialisé. En examinant la classe, vous devez décider que la propriété `RequestId` doit avoir la valeur null dans certains cas. L’existence de la propriété `ShowRequestId` indique que des valeurs manquantes sont possibles. Étant donné que `null` est valide, ajoutez `?` sur le type `string` pour indiquer que la propriété `RequestId` est un *type de référence nullable*. La classe finale se présente comme suit :
 
-[!code-csharp[FinishedErrorModel](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Error.cshtml.cs#ErrorModel)]
+[!code-csharp[FinishedErrorModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Error.cshtml.cs#ErrorModel)]
 
 Vérifiez les utilisations de la propriété, et vous voyez que dans la page associée, la présence de la valeur null est vérifiée dans la propriété avant de la restituer dans le balisage. C’est une utilisation sécurisée d’un type de référence nullable, donc vous en avez terminé avec cette classe.
 
@@ -124,27 +124,27 @@ Vérifiez les utilisations de la propriété, et vous voyez que dans la page ass
 
 Fréquemment, le correctif pour un ensemble d’avertissements crée de nouveaux avertissements dans le code connexe. Nous allons voir les avertissements en action en corrigeant la classe `index.cshtml.cs`. Ouvrez le fichier `index.cshtml.cs` et examinez le code. Ce fichier contient le code sous-jacent à la page d’index :
 
-[!code-csharp[StarterIndexModel](~/samples/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
+[!code-csharp[StarterIndexModel](~/samples/snippets/csharp/tutorials/nullable-reference-migration/start/SimpleFeedReader/Pages/Index.cshtml.cs#IndexModelStart)]
 
 Ajoutez la directive `#nullable enable` et vous verrez deux avertissements. Ni la propriété `ErrorText` ni la propriété `NewsItems` ne sont initialisées. Un examen de cette classe vous permettra de croire que les deux propriétés doivent être des types de référence Nullable : les deux ont des méthodes setter privées. Une seule exactement est attribuée dans la méthode `OnGet`. Avant d’apporter des modifications, examinez les consommateurs de ces deux propriétés. Dans la page elle-même, `ErrorText` est comparé à la valeur null avant de générer le balisage d’éventuelles erreurs. La collection `NewsItems` est vérifiée par rapport à `null` et afin de garantir que la collection comporte des éléments. Un correctif rapide serait d’attribuer le type de référence nullable aux deux propriétés. Un meilleur correctif consisterait à attribuer un type de référence non nullable à la collection et d’ajouter des éléments à la collection existante lors de la récupération des articles de presse. Le premier correctif consiste à ajouter `?` au type `string` pour `ErrorText` :
 
-[!code-csharp[UpdateErrorText](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
+[!code-csharp[UpdateErrorText](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#UpdateErrorText)]
 
 Cette modification ne se propage pas à d’autre code, étant donné que tout accès à la propriété `ErrorText` a été déjà protégé par les contrôles de la valeur null. Ensuite, initialisez la liste `NewsItems` et supprimez la méthode setter de propriété, pour en faire une propriété en lecture seule :
 
-[!code-csharp[InitializeNewsItems](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#InitializeNewsItems)]
+[!code-csharp[InitializeNewsItems](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#InitializeNewsItems)]
 
 Cela a résolu l’avertissement, mais a introduit une erreur. La liste `NewsItems` est désormais **correcte par construction**, mais le code qui définit la liste dans `OnGet` doit changer pour correspondre à la nouvelle API. Au lieu d’une attribution, appelez `AddRange` pour ajouter les éléments d’articles de presse à la liste existante :
 
-[!code-csharp[AddRange](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#AddRange)]
+[!code-csharp[AddRange](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Pages/Index.cshtml.cs#AddRange)]
 
 Utiliser `AddRange` au lieu d’une attribution signifie que la méthode `GetNews` peut retourner `IEnumerable` au lieu de `List`. Cela permet d’économiser une attribution. Modifiez la signature de la méthode et supprimez l’appel `ToList`, comme indiqué dans l’exemple de code suivant :
 
-[!code-csharp[GetNews](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#GetNewsFinished)]
+[!code-csharp[GetNews](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#GetNewsFinished)]
 
 La modification de la signature rompt aussi l’un des tests. Ouvrez le fichier `NewsServiceTests.cs` dans le dossier `Services` du projet `SimpleFeedReader.Tests`. Accédez au test `Returns_News_Stories_Given_Valid_Uri` et modifiez le type de la variable `result` sur `IEnumerable<NewsItem>`. La modification du type signifie que la propriété `Count` n’est plus disponible, par conséquent, remplacez la propriété `Count` dans `Assert` avec un appel à `Any()` :
 
-[!code-csharp[FixTests](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader.Tests/Services/NewsServiceTests.cs#FixTestSignature)]
+[!code-csharp[FixTests](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader.Tests/Services/NewsServiceTests.cs#FixTestSignature)]
 
 Vous devrez ajouter une instruction `using System.Linq` au début du fichier également.
 
@@ -159,7 +159,7 @@ Cet ensemble de modifications met en évidence une attention particulière lors 
 
 Vous avez apporté des modifications à la classe `NewsService`, donc activez l’annotation `#nullable enable` pour cette classe. Cela ne génère aucun nouvel avertissements. Toutefois, l’examen attentif de la classe permet d’illustrer certaines des limitations de l’analyse du flux du compilateur. Examinez le constructeur :
 
-[!code-csharp[ServiceConstructor](~/samples/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ServiceConstructor)]
+[!code-csharp[ServiceConstructor](~/samples/snippets/csharp/tutorials/nullable-reference-migration/finished/SimpleFeedReader/Services/NewsService.cs#ServiceConstructor)]
 
 Le paramètre `IMapper` est typé comme référence non nullable. Il est appelé par le code d’infrastructure ASP.NET Core, donc le compilateur ne sait pas vraiment que `IMapper` ne sera jamais null. Le conteneur d’injection de dépendance (DI) ASP.NET Core par défaut lève une exception s’il ne peut pas résoudre un service nécessaire, afin que le code soit correct. Le compilateur ne peut pas valider tous les appels à vos API publiques, même si votre code est compilé avec des contextes d’annotation nullable activés. En outre, vos bibliothèques peuvent être utilisées par des projets qui n’utilisent pas encore des types de référence nullable. Validez les entrées dans les API publiques même si vous les avez déclarées en tant que types non nullable.
 

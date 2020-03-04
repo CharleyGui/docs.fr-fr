@@ -13,12 +13,12 @@ helpviewer_keywords:
 - application development [.NET Framework], globalization
 - culture, globalization
 ms.assetid: 4e919934-6b19-42f2-b770-275a4fae87c9
-ms.openlocfilehash: 953d8d3055dff48cd943b748771f20803a4d6573
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1055b10d0e3e971a6b0963c1ed950fef903ac5bd
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120891"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239948"
 ---
 # <a name="globalization"></a>Globalisation
 
@@ -66,7 +66,7 @@ Dans la mesure du possible, vous devez traiter les chaînes comme des chaînes e
 > [!TIP]
 > Vous pouvez utiliser la classe <xref:System.Globalization.StringInfo> pour travailler sur les éléments de texte plutôt que sur les caractères individuels d’une chaîne.
 
-Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Or, ce caractère peut être représenté de deux façons différentes : soit en tant qu’unité de code unique (U+00C0), soit en tant que caractère composite (deux unités de code : U+0021 et U+007E). Dans ce cas, le caractère est représenté dans l’instance de la chaîne par deux objets <xref:System.Char>, U+0021 et U+007E. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
+Pendant les opérations de recherche et de comparaison de chaînes, l’erreur courante à éviter est de traiter les chaînes comme des ensembles de caractères, chacun représenté par un objet <xref:System.Char>. De fait, un même caractère peut être constitué d’un ou plusieurs objets <xref:System.Char>. Ces caractères se trouvent généralement dans des chaînes de cultures dont les alphabets comportent des caractères extérieurs à la plage de caractères latins de base Unicode (de U+0021 à U+007E). L’exemple suivant recherche l’index du caractère LETTRE MAJUSCULE LATINE A AVEC ACCENT GRAVE (U+00C 0) dans une chaîne. Toutefois, ce caractère peut être représenté de deux façons différentes : en tant qu’unité de code unique (U + 00C0) ou en tant que caractère composite (deux unités de code : U + 0041 et U + 0300). Dans ce cas, le caractère est représenté dans l’instance de chaîne par deux objets <xref:System.Char>, U + 0041 et U + 0300. L’exemple de code appelle les surcharges <xref:System.String.IndexOf%28System.Char%29?displayProperty=nameWithType> et <xref:System.String.IndexOf%28System.String%29?displayProperty=nameWithType> pour rechercher la position de ce caractère dans l’instance de la chaîne, mais elles retournent des résultats différents. Le premier appel de méthode comporte un argument <xref:System.Char> ; il effectue une comparaison ordinale et ne peut donc pas trouver de correspondance. Le deuxième appel comporte un argument <xref:System.String> ; il effectue une comparaison dépendante de la culture et trouve donc une correspondance.
 
 [!code-csharp[Conceptual.Globalization#18](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.globalization/cs/search1.cs#18)]
 [!code-vb[Conceptual.Globalization#18](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.globalization/vb/search1.vb#18)]
@@ -104,12 +104,12 @@ La comparaison de chaînes dépendante de la culture est définie par l’objet 
 
 .NET utilise des tables pour effectuer des tris dépendants de la culture sur les données de chaîne. Le contenu de ces tables, qui comportent des données de pondération de tri et de normalisation de chaînes, est déterminé par la version de la norme Unicode implémentée par une version déterminée de .NET. Le tableau suivant répertorie les versions d’Unicode implémentées par les versions indiquées de .NET. Notez que cette liste de versions d’Unicode prises en charge s’applique uniquement à la comparaison et au tri de caractères ; elle ne s’applique pas à la classification des caractères Unicode par catégorie. Pour plus d’informations, consultez la section « Chaînes et norme Unicode » de l’article <xref:System.String>.
 
-|Version du .NET Framework|Système d'exploitation|Version d’Unicode|
+|Version du .NET Framework|Système d’exploitation|Version d’Unicode|
 |----------------------------|----------------------|---------------------|
-|.NET Framework 2.0|Tous les systèmes d’exploitation|Unicode 4.1|
-|.NET Framework 3.0|Tous les systèmes d’exploitation|Unicode 4.1|
-|.NET Framework 3.5|Tous les systèmes d’exploitation|Unicode 4.1|
-|.NET Framework 4|Tous les systèmes d’exploitation|Unicode 5.0|
+|.NET Framework 2.0|Tous les systèmes d'exploitation|Unicode 4.1|
+|.NET Framework 3.0|Tous les systèmes d'exploitation|Unicode 4.1|
+|.NET Framework 3.5|Tous les systèmes d'exploitation|Unicode 4.1|
+|.NET Framework 4|Tous les systèmes d'exploitation|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur Windows 7|Unicode 5.0|
 |.NET Framework 4.5 et ultérieur sur les systèmes d’exploitation Windows 8 et versions ultérieures|Unicode 6.3.0|
 |.NET Core (toutes les versions)|En fonction de la version de la norme Unicode prise en charge par le système d’exploitation sous-jacent.|

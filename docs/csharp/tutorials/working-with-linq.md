@@ -4,18 +4,18 @@ description: Ce didacticiel vous apprend à générer des séquences avec LINQ, 
 ms.date: 10/29/2018
 ms.technology: csharp-linq
 ms.assetid: 0db12548-82cb-4903-ac88-13103d70aa77
-ms.openlocfilehash: 8984fdf0ff26726b6d05e8bee8a9e8ae1c350ea7
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: ece001e82c0aa44a91999bea78d2fd695ff9362b
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75345608"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240013"
 ---
 # <a name="work-with-language-integrated-query-linq"></a>Utiliser LINQ (Language-Integrated Query)
 
 ## <a name="introduction"></a>Introduction
 
-Ce tutoriel vous présente les fonctionnalités de .NET Core et du langage C#. Voici ce que vous allez apprendre :
+Ce tutoriel vous présente les fonctionnalités de .NET Core et du langage C#. Vous découvrirez comment effectuer les actions suivantes :
 
 - Générer des séquences avec LINQ.
 - Méthodes d’écriture qui peuvent être facilement utilisées dans les requêtes LINQ.
@@ -29,7 +29,7 @@ Dans notre cas, c’est une façon plaisante d’envisager la manipulation de s�
 
 Ce didacticiel comporte plusieurs étapes. Après chaque étape, vous pourrez exécuter l’application et voir la progression. Vous pouvez également voir l’[exemple terminé](https://github.com/dotnet/samples/blob/master/csharp/getting-started/console-linq) dans le dépôt GitHub dotnet/samples. Pour obtenir des instructions de téléchargement, consultez [Exemples et didacticiels](../../samples-and-tutorials/index.md#viewing-and-downloading-samples).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation sur la page de [téléchargement de .net Core](https://dotnet.microsoft.com/download) . Vous pouvez exécuter cette application sur Windows, Ubuntu Linux ou OS X, ou dans un conteneur d’ancrage. Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio code](https://code.visualstudio.com/) qui est un éditeur multiplateforme Open source. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
@@ -173,13 +173,13 @@ public static IEnumerable<T> InterleaveSequenceWith<T> (this IEnumerable<T> firs
 
 On peut voir l’ajout du modificateur `this` au premier argument de la méthode. Cela signifie que vous appelez la méthode comme s’il s’agissait d’une méthode membre du type du premier argument. Cette déclaration de méthode suit également un idiome standard selon lequel les types d’entrée et de sortie sont `IEnumerable<T>`. Cette pratique permet d’enchaîner les méthodes LINQ afin d’exécuter des requêtes plus complexes.
 
-Bien entendu, le jeu ayant été coupé en deux, il faut réunir les deux moitiés. Dans le code, cela signifie énumérer d’un seul coup les deux séquences acquises avec <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A>, en intercalant ( *`interleaving`* ) les éléments pour créer une seule séquence : le jeu de cartes battu. Pour écrire une méthode LINQ qui fonctionne avec deux séquences, vous devez comprendre comment <xref:System.Collections.Generic.IEnumerable%601> fonctionne.
+Bien entendu, le jeu ayant été coupé en deux, il faut réunir les deux moitiés. Dans le code, cela signifie énumérer d’un seul coup les deux séquences acquises avec <xref:System.Linq.Enumerable.Take%2A> et <xref:System.Linq.Enumerable.Skip%2A>, en intercalant (*`interleaving`*) les éléments pour créer une seule séquence : le jeu de cartes battu. Pour écrire une méthode LINQ qui fonctionne avec deux séquences, vous devez comprendre comment <xref:System.Collections.Generic.IEnumerable%601> fonctionne.
 
 L’interface <xref:System.Collections.Generic.IEnumerable%601> possède une seule méthode : <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A>. L’objet retourné par <xref:System.Collections.Generic.IEnumerable%601.GetEnumerator%2A> a une méthode permettant d’atteindre l’élément suivant et une propriété qui récupère l’élément actif dans la séquence. Vous allez utiliser ces deux membres pour énumérer la collection et retourner les éléments. Cette méthode Interleave sera une méthode d’itération ; par conséquent, au lieu de créer une collection et de la retourner, vous allez utiliser la syntaxe `yield return` présentée ci-dessus.
 
 Voici l’implémentation de cette méthode :
 
-[!CODE-csharp[InterleaveSequenceWith](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet1)]
+[!CODE-csharp[InterleaveSequenceWith](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet1)]
 
 Maintenant que vous avez écrit cette méthode, revenez à la méthode `Main` et mélangez le jeu une fois :
 
@@ -213,7 +213,7 @@ Combien de battages faut-il compter pour remettre le jeu dans l’ordre d’orig
 
 Vous ne devriez pas avoir de problèmes à écrire une méthode qui détermine si deux séquences sont égales. La structure est similaire à celle de la méthode que vous avez écrite pour mélanger le jeu. Seulement, cette fois, au lieu d’utiliser l’instruction `yield return` sur chaque élément, vous allez comparer les éléments correspondants de chaque séquence. Une fois que la séquence aura été énumérée en entier, si tous les éléments correspondent, les séquences sont les mêmes :
 
-[!CODE-csharp[SequenceEquals](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet2)]
+[!CODE-csharp[SequenceEquals](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet2)]
 
 Cet exemple montre un autre terme LINQ : les méthodes terminales. Elles prennent une séquence en entrée (ou, dans ce cas, deux séquences) et retournent une valeur scalaire unique. Les méthodes terminales sont toujours la dernière méthode de la chaîne de méthodes d’une requête LINQ ; d’où le nom « terminal ».
 
@@ -267,7 +267,7 @@ N’oubliez pas que nous avons généré le jeu d’origine à l’aide d’une 
 
 Dans votre fichier `Extensions.cs`, tapez ou copiez la méthode d’extension ci-dessous. Elle crée un fichier nommé `debug.log` au sein de votre répertoire de projet et enregistre la requête en cours d’exécution dans le fichier journal. Elle peut être ajoutée à une requête pour marquer le fait qu’elle s’est exécutée.
 
-[!CODE-csharp[LogQuery](../../../samples/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
+[!CODE-csharp[LogQuery](../../../samples/snippets/csharp/getting-started/console-linq/extensions.cs?name=snippet3)]
 
 Vous verrez une ligne ondulée rouge sous `File`, ce qui signifie qu’elle n’existe pas. Elle ne sera pas compilée, puisque le compilateur ne sait pas ce qu’est `File`. Pour résoudre ce problème, veillez à ajouter la ligne de code suivante sous la première ligne dans `Extensions.cs` :
 
@@ -329,7 +329,7 @@ Remarquez que vous n’écrivez pas dans le journal à chaque fois que vous acc�
 
 Vous pouvez améliorer les performances du code en réduisant le nombre d’exécutions effectuées. L’un des correctifs les plus simples consiste à mettre en *cache* les résultats de la requête LINQ d’origine qui construit le jeu de cartes. Actuellement, les requêtes sont réexécutées chaque fois que la boucle do-while effectue une itération, construisant et battant de nouveau le jeu de cartes à chaque fois. Pour mettre en cache le jeu de cartes, vous pouvez utiliser les méthodes LINQ <xref:System.Linq.Enumerable.ToArray%2A> et <xref:System.Linq.Enumerable.ToList%2A> ; ajoutées aux requêtes, elles effectuent les actions voulues, mais en stockant respectivement les résultats dans un tableau ou dans une liste. Ajoutez la méthode LINQ <xref:System.Linq.Enumerable.ToArray%2A> aux deux requêtes et réexécutez le programme :
 
-[!CODE-csharp[Main](../../../samples/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
+[!CODE-csharp[Main](../../../samples/snippets/csharp/getting-started/console-linq/Program.cs?name=snippet1)]
 
 Le mélange extérieur est descendu à 30 requêtes. Si vous repassez au mélange intérieur, vous constaterez des améliorations similaires : il ne comporte plus que 162 requêtes.
 

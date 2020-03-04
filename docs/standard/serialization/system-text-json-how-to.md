@@ -9,12 +9,12 @@ helpviewer_keywords:
 - serializing objects
 - serialization
 - objects, serializing
-ms.openlocfilehash: fdca8d957bb2453e90652af1dfe5ef99b33b1b2c
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 8025f84f2425f5b91e08b28ddb24d105d8c4d1a3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76163200"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159583"
 ---
 # <a name="how-to-serialize-and-deserialize-marshal-and-unmarshal-json-in-net"></a>Comment sérialiser et désérialiser (marshaler et démarshaler) JSON dans .NET
 
@@ -24,7 +24,7 @@ Les instructions et l’exemple de code utilisent directement la bibliothèque, 
 
 La majeure partie de l’exemple de code de sérialisation définit <xref:System.Text.Json.JsonSerializerOptions.WriteIndented?displayProperty=nameWithType> de façon à ce qu’il `true` « plutôt imprimer » le JSON (avec mise en retrait et espace blanc pour la lisibilité humaine). Pour une utilisation en production, vous acceptez généralement la valeur par défaut de `false` pour ce paramètre.
 
-## <a name="namespaces"></a>Espaces de noms des
+## <a name="namespaces"></a>Espaces de noms
 
 L’espace de noms <xref:System.Text.Json> contient tous les points d’entrée et les principaux types. L’espace de noms <xref:System.Text.Json.Serialization> contient des attributs et des API pour les scénarios avancés et la personnalisation propres à la sérialisation et à la désérialisation. Les exemples de code présentés dans cet article requièrent des directives `using` pour l’un de ces espaces de noms ou les deux :
 
@@ -61,7 +61,7 @@ Voici un exemple de classe qui contient des collections et une classe imbriquée
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/WeatherForecast.cs?name=SnippetWFWithPOCOs)]
 
-La sortie JSON de la sérialisation d’une instance du type précédent ressemble à l’exemple suivant. La sortie JSON est minimisés par défaut : 
+La sortie JSON de la sérialisation d’une instance du type précédent ressemble à l’exemple suivant. La sortie JSON est minimisés par défaut :
 
 ```json
 {"Date":"2019-08-01T00:00:00-07:00","TemperatureCelsius":25,"Summary":"Hot","DatesAvailable":["2019-08-01T00:00:00-07:00","2019-08-02T00:00:00-07:00"],"TemperatureRanges":{"Cold":{"High":20,"Low":-10},"Hot":{"High":60,"Low":20}},"SummaryWords":["Cool","Windy","Humid"]}
@@ -191,7 +191,7 @@ Par défaut, les noms de propriété et les clés de dictionnaire sont inchangé
 * [Convertir tous les noms de propriété en casse mixte](#use-camel-case-for-all-json-property-names)
 * [Implémenter une stratégie d’attribution de noms de propriété personnalisée](#use-a-custom-json-property-naming-policy)
 * [Convertir les clés du dictionnaire en casse mixte](#camel-case-dictionary-keys)
-* [Convertir des enums en chaînes et casse mixte](#enums-as-strings) 
+* [Convertir des enums en chaînes et casse mixte](#enums-as-strings)
 
 Pour les autres scénarios qui nécessitent un traitement spécial des noms et des valeurs de propriété JSON, vous pouvez [implémenter des convertisseurs personnalisés](system-text-json-converters-how-to.md).
 
@@ -378,11 +378,11 @@ Pour exclure toutes les propriétés de valeur null, affectez la valeur `true`à
 
 Voici un exemple d’objet pour sérialiser et la sortie JSON :
 
-|Les |Value  |
+|Propriété |Valeur  |
 |---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00|
 | TemperatureCelsius| 25 |
-| Récapitulatif| null|
+| Résumé| null|
 
 ```json
 {
@@ -507,7 +507,7 @@ Dans l’exemple de scénario précédent, les deux approches entraînent l’in
 ```
 
 > [!IMPORTANT]
-> Ces approches fournissent la sérialisation polymorphe uniquement pour l’objet racine à sérialiser, et non pour les propriétés de cet objet racine. 
+> Ces approches fournissent la sérialisation polymorphe uniquement pour l’objet racine à sérialiser, et non pour les propriétés de cet objet racine.
 
 Vous pouvez obtenir la sérialisation polymorphe pour les objets de niveau inférieur si vous les définissez en tant que type `object`. Par exemple, supposons que votre classe `WeatherForecast` possède une propriété nommée `PreviousForecast` qui peut être définie en tant que type `WeatherForecast` ou `object`:
 
@@ -566,7 +566,7 @@ L’exemple suivant montre le code JSON qui résulte du code précédent :
 }
 ```
 
-Pour plus d’informations sur **la sérialisation**polymorphe et sur la **désérialisation**, consultez [How to Migrate from Newtonsoft.Json to System.Text.Json](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
+Pour plus d’informations sur **la sérialisation**polymorphe et sur la **désérialisation**, consultez [How to Migrate from Newtonsoft. JSON to System. Text. JSON](system-text-json-migrate-from-newtonsoft-how-to.md#polymorphic-serialization).
 
 ## <a name="allow-comments-and-trailing-commas"></a>Autoriser les commentaires et les virgules de fin
 
@@ -634,14 +634,14 @@ Si vous désérialisez le JSON indiqué dans le type indiqué, les propriétés 
 
 Lorsque vous désérialisez le JSON indiqué plus haut dans ce type d’exemple, les données supplémentaires deviennent des paires clé-valeur de la propriété `ExtensionData` :
 
-|Les |Value  |Remarques  |
+|Propriété |Valeur  |Remarques  |
 |---------|---------|---------|
 | Date    | DE 8/1/2019 12:00:00 À 07:00||
 | TemperatureCelsius| 0 | Incompatibilité sensible à la casse (`temperatureCelsius` dans le JSON), la propriété n’est donc pas définie. |
-| Récapitulatif | Très chargé ||
+| Résumé | Très chargé ||
 | ExtensionData | temperatureCelsius : 25 |Étant donné que le cas ne correspondait pas, cette propriété JSON est un extra et devient une paire clé-valeur dans le dictionnaire.|
 || DatesAvailable:<br>  DE 8/1/2019 12:00:00 À 07:00<br>DE 8/2/2019 12:00:00 À 07:00 |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
-| |SummaryWords:<br>Cool<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
+| |SummaryWords:<br>À froid<br>Venteux<br>Humide |Une propriété supplémentaire du JSON devient une paire clé-valeur, avec un tableau comme objet de valeur.|
 
 Lorsque l’objet cible est sérialisé, les paires de valeurs de clés de données d’extension deviennent des propriétés JSON comme elles étaient dans le JSON entrant :
 
@@ -712,7 +712,7 @@ L’exemple suivant montre comment utiliser la classe <xref:System.Text.Json.Jso
 Le code précédent :
 
 * Suppose que le JSON à analyser se trouve dans une chaîne nommée `jsonString`.
-* Calcule une qualité moyenne pour les objets d’un tableau de `Students` qui ont une propriété `Grade`. 
+* Calcule une qualité moyenne pour les objets d’un tableau de `Students` qui ont une propriété `Grade`.
 * Affecte une catégorie par défaut de 70 pour les étudiants qui n’ont pas de qualité.
 * Compte les étudiants en incrémentant une variable de `count` à chaque itération. Une alternative consiste à appeler <xref:System.Text.Json.JsonElement.GetArrayLength%2A>, comme indiqué dans l’exemple suivant :
 
@@ -732,7 +732,7 @@ Le code précédent :
 
 * Lit un fichier JSON, charge les données dans un `JsonDocument`et écrit le format JSON (Pretty-imprimed) dans un fichier.
 * Utilise <xref:System.Text.Json.JsonDocumentOptions> pour spécifier que les commentaires dans le JSON d’entrée sont autorisés mais ignorés.
-* Lorsque vous avez terminé, appelle <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> sur le writer. Une alternative consiste à laisser l’enregistreur se vider lorsqu’il est supprimé. 
+* Lorsque vous avez terminé, appelle <xref:System.Text.Json.Utf8JsonWriter.Flush%2A> sur le writer. Une alternative consiste à laisser l’enregistreur se vider lorsqu’il est supprimé.
 
 Voici un exemple d’entrée JSON à traiter par l’exemple de code :
 
@@ -769,7 +769,7 @@ Le code précédent :
 * Suppose que le fichier est encodé au format UTF-16 et le transcode en UTF-8. Un fichier encodé au format UTF-8 peut être lu directement dans un `ReadOnlySpan<byte>`, à l’aide du code suivant :
 
   ```csharp
-  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName); 
+  ReadOnlySpan<byte> jsonReadOnlySpan = File.ReadAllBytes(fileName);
   ```
 
   Si le fichier contient une marque d’ordre d’octet UTF-8 (BOM), supprimez-le avant de passer les octets au `Utf8JsonReader`, puisque le lecteur attend du texte. Dans le cas contraire, la marque d’octet est considérée comme JSON non valide et le lecteur lève une exception.

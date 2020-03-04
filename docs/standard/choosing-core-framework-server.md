@@ -3,12 +3,12 @@ title: Choisir entre .NET Core et .NET Framework pour les applications serveur
 description: Guide sur l’implémentation de .NET à envisager pour générer une application serveur dans .NET.
 author: cartermp
 ms.date: 06/19/2018
-ms.openlocfilehash: c202e42a46c4a72bdceca1fb250170d381603a8d
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.openlocfilehash: 0b6bf4c2eb66aa4de497923a0a16b65a955ba6fc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/11/2020
-ms.locfileid: "77124622"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159973"
 ---
 # <a name="choosing-between-net-core-and-net-framework-for-server-apps"></a>Choix entre .NET Core et .NET Framework pour les applications serveur
 
@@ -47,7 +47,7 @@ Il existe de nombreuses plateformes d’infrastructure. [Azure Service Fabric](h
 
 Pour plus d’informations sur l’architecture de microservices, consultez [microservices .net. Architecture pour les applications .NET en conteneur](../architecture/microservices/index.md).
 
-### <a name="containers"></a>Containers
+### <a name="containers"></a>Conteneurs
 
 Les conteneurs sont couramment utilisés conjointement avec une architecture en microservices. Les conteneurs peuvent également servir à mettre en conteneur des applications ou services web qui suivent un modèle d’architecture. Le .NET Framework peut être utilisé pour les conteneurs Windows, mais par sa modularité et sa légèreté, .NET Core est un meilleur choix pour les conteneurs. Quand vous créez et déployez un conteneur, la taille de son image est beaucoup plus petite avec .NET Core qu’avec le .NET Framework. Grâce à sa nature multiplateforme, vous pouvez déployer des applications serveur sur des conteneurs Docker Linux, par exemple.
 
@@ -75,7 +75,7 @@ Dans la plupart des cas, vous ne devez pas migrer vos applications existantes ve
 
 Les bibliothèques adoptent rapidement .NET Standard. .NET standard permet de partager du code sur toutes les implémentations de .NET, y compris .NET Core. Avec .NET 2.0 Standard, cela est encore plus simple :
 
-- La surface de l’API est désormais beaucoup plus grande. 
+- La surface de l’API est désormais beaucoup plus grande.
 - Un mode de compatibilité du .NET Framework a été introduit. Ce mode de compatibilité permet aux projets .NET Standard/.NET Core de référencer des bibliothèques .NET Framework. Pour en savoir plus sur le mode de compatibilité, consultez [Annonce de .NET 2.0 Standard](https://devblogs.microsoft.com/dotnet/announcing-net-standard-2-0/).
 
 Ainsi, seulement dans les cas où les bibliothèques ou les packages NuGet utilisent des technologies qui ne sont pas disponibles dans .NET Standard/.NET Core, vous devez utiliser le .NET Framework.
@@ -86,7 +86,7 @@ Certaines technologies du .NET Framework ne sont pas disponibles dans .NET Core.
 
 - Applications Web Forms ASP.NET : Web Forms ASP.NET n’est disponible que dans le .NET Framework. ASP.NET Core ne peut pas être utilisé pour Web Forms ASP.NET. Il n’est pas prévu d’intégrer Web Forms ASP.NET à .NET Core.
 
-- Applications Pages Web ASP.NET : le framework Pages Web ASP.NET n’est pas inclus dans ASP.NET Core. 
+- Applications Pages Web ASP.NET : le framework Pages Web ASP.NET n’est pas inclus dans ASP.NET Core.
 
 - Implémentation des services WCF. Même s’il existe une [bibliothèque cliente WCF](https://github.com/dotnet/wcf) pour utiliser des services WCF à partir de .NET Core, l’implémentation serveur WCF est disponible uniquement sur le .NET Framework. Ce scénario ne fait pas partie du plan actuel pour .NET Core, mais il est envisagé pour l’avenir.
 

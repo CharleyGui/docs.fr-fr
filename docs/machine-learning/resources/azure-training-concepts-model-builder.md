@@ -2,15 +2,15 @@
 title: Ressources de formation Azure sur le générateur de modèles
 description: Guide des ressources pour Azure Machine Learning
 ms.topic: reference
-ms.date: 02/25/2020
+ms.date: 02/27/2020
 ms.author: luquinta
 author: luisquintanilla
-ms.openlocfilehash: a0a75283cdc7402c67b6bfb0799189fa34cd39a7
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 866fd5a90d13f85f2f8a1aa45ff0e1efb0096642
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77675204"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159297"
 ---
 # <a name="model-builder-azure-training-resources"></a>Ressources de formation Azure sur le générateur de modèles
 
@@ -43,7 +43,7 @@ Pour créer un espace de travail Azure Machine Learning, les conditions suivante
 
     Le générateur de modèles peut utiliser l’un des types de calcul optimisés GPU suivants :
 
-    | Size | Processeurs virtuels | Mémoire : Gio | Stockage temporaire (SSD) en Gio | GPU | Mémoire GPU : Gio | Disques de données max. | Nombre max de cartes réseau |
+    | Taille | Processeurs virtuels | Mémoire : Gio | Stockage temporaire (SSD) en Gio | GPU | Mémoire GPU : Gio | Disques de données max. | Nombre max de cartes réseau |
     |---|---|---|---|---|---|---|---|
     | Standard_NC12   | 12 | 112 | 680  | 2 | 24 | 48 | 2 |
     | Standard_NC24   | 24 | 224 | 1440 | 4 | 48 | 64 | 4 |
@@ -52,7 +52,7 @@ Pour créer un espace de travail Azure Machine Learning, les conditions suivante
 
 ## <a name="training"></a>Entrainement
 
-La formation sur Azure est disponible uniquement pour le scénario de classification d’image du générateur de modèles. L’algorithme utilisé pour l’apprentissage de ces modèles est un réseau neuronal profond basé sur l’architecture ResNet50. Pendant la formation, les ressources nécessaires pour former le modèle sont approvisionnées et le modèle est formé. Ce processus prend quelques minutes et la durée peut varier en fonction de la taille du calcul sélectionné et de la quantité de données. Vous pouvez suivre la progression de vos exécutions en sélectionnant le lien « analyser l’exécution actuelle en Portail Azure » dans Visual Studio.
+La formation sur Azure est disponible uniquement pour le scénario de classification d’image du générateur de modèles. L’algorithme utilisé pour l’apprentissage de ces modèles est un réseau neuronal profond basé sur l’architecture ResNet50. Le processus d’apprentissage prend un certain temps et la durée peut varier en fonction de la taille du calcul sélectionné et de la quantité de données. La première fois qu’un modèle est formé, vous pouvez vous attendre à un temps de formation légèrement plus long, car les ressources doivent être approvisionnées. Vous pouvez suivre la progression de vos exécutions en sélectionnant le lien « analyser l’exécution actuelle en Portail Azure » dans Visual Studio.
 
 ## <a name="results"></a>Résultats
 
@@ -64,12 +64,26 @@ Une fois l’apprentissage terminé, deux projets sont ajoutés à votre solutio
   - bestModel. Onnx : version sérialisée du modèle au format ONNX (Open neuronal Network Exchange). ONNX est un format Open source pour les modèles AI qui prend en charge l’interopérabilité entre les infrastructures telles que ML.NET, PyTorch et TensorFlow.
   - bestModelMap. JSON : liste des catégories utilisées lors de l’élaboration de prédictions pour mapper la sortie du modèle à une catégorie de texte.
   - MLModel. zip : version sérialisée du pipeline de prédiction ML.NET qui utilise la version sérialisée du modèle *bestModel. Onnx* pour effectuer des prédictions et mapper des sorties à l’aide du fichier `bestModelMap.json`.
-  
-## <a name="troubleshooting"></a>Dépannage
+
+## <a name="use-the-machine-learning-model"></a>Utiliser le modèle de Machine Learning
+
+Les classes `ModelInput` et `ModelOutput` dans le projet de *modèle* définissent respectivement le schéma de l’entrée et de la sortie attendues du modèle.
+
+Dans un scénario de classification d’images, le `ModelInput` contient deux colonnes :
+
+- `ImageSource`: chemin d’accès de la chaîne de l’emplacement de l’image.
+- `Label`: catégorie réelle à laquelle l’image appartient. `Label` est utilisé uniquement en tant qu’entrée lors de l’apprentissage et n’a pas besoin d’être fourni lors de l’élaboration de prédictions.
+
+Le `ModelOutput` contient deux colonnes :
+
+- `Prediction`: catégorie prédite de l’image.
+- `Score`: liste des probabilités pour toutes les catégories (la valeur la plus élevée appartient au `Prediction`).
+
+## <a name="troubleshooting"></a>Résolution des problèmes
 
 ### <a name="cannot-create-compute"></a>Impossible de créer le calcul
 
 Si une erreur se produit lors de la création de Azure Machine Learning calcul, il se peut que la ressource de calcul existe toujours, dans un état d’erreur. Si vous essayez de recréer la ressource de calcul portant le même nom, l’opération échoue. Pour corriger cette erreur, vous avez le choix entre plusieurs possibilités :
 
-* Créer le calcul avec un nom différent
-* Accéder au Portail Azure et supprimer la ressource de calcul d’origine
+- Créer le calcul avec un nom différent
+- Accéder au Portail Azure et supprimer la ressource de calcul d’origine

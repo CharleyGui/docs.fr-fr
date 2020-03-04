@@ -2,25 +2,25 @@
 title: Commande dotnet new
 description: La commande dotnet new crée des projets .NET Core basés sur le modèle spécifié.
 ms.date: 02/13/2020
-ms.openlocfilehash: f11512acf5a1fdc4bde49b3d1212ccf6335dff8b
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: d3c609419596b123f5bfb3ca85cf292a61154a70
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77451328"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157217"
 ---
 # <a name="dotnet-new"></a>dotnet new
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet new` : crée un projet, un fichier de configuration ou une solution en fonction du modèle spécifié.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name] 
+dotnet new <TEMPLATE> [--dry-run] [--force] [-i|--install] [-lang|--language] [-n|--name]
     [--nuget-source] [-o|--output] [-u|--uninstall] [--update-apply] [--update-check] [Template options]
 dotnet new <TEMPLATE> [-l|--list] [--type]
 dotnet new [-h|--help]
@@ -47,7 +47,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
   La commande contient une liste par défaut de modèles. Utilisez `dotnet new -l` pour obtenir une liste des modèles disponibles. Le tableau suivant répertorie les modèles qui sont préinstallés avec le kit SDK .NET Core. Le langage par défaut pour le modèle est indiqué entre crochets. Cliquez sur le lien nom abrégé pour afficher les options de modèle spécifiques.
 
-| Modèles                                    | Nom court                      | Langage     | Balises                                  | Présent |
+| Modèles                                    | Nom court                      | Langue     | Balises                                  | Présent |
 |----------------------------------------------|---------------------------------|--------------|---------------------------------------|------------|
 | Application console                          | [console](#console)             | [C#], F#, VB | Communes/Console                        | 1.0        |
 | Bibliothèque de classes                                | [classlib](#classlib)           | [C#], F#, VB | Communes/Bibliothèque                        | 1.0        |
@@ -155,7 +155,7 @@ La commande appelle le [moteur de modèles](https://github.com/dotnet/templating
 
 Chaque modèle de projet peut présenter d’autres options disponibles. Les modèles de base ont les options supplémentaires suivantes :
 
-### <a name="console"></a>console
+### <a name="console"></a>de fournisseur
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -174,7 +174,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
   Pour obtenir la liste des C# versions par défaut, consultez [valeurs par défaut](../../csharp/language-reference/configure-language-version.md#defaults).
 
-- **`--no-restore`** 
+- **`--no-restore`**
 
   S’il est spécifié, n’exécute pas de restauration implicite pendant la création du projet. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,2.
 
@@ -202,7 +202,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1. 
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
 - **`--langVersion <VERSION_NUMBER>`**
 
@@ -234,7 +234,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`-f|--framework <FRAMEWORK>`**
 
-  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1. 
+  Spécifie le [Framework](../../standard/frameworks.md) à cibler. La valeur par défaut est `netcoreapp3.1`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 3,1.
 
 - **`--exclude-launch-settings`**
 
@@ -294,7 +294,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 ***
 
-### <a name="page"></a>page
+### <a name="page"></a>du compte client
 
 - **`-na|--namespace <NAMESPACE_NAME>`**
 
@@ -503,7 +503,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`-au|--auth <AUTHENTICATION_TYPE>`**
 
-  Type de l’authentification à utiliser. Disponible à partir du kit SDK .NET Core 3.0. 
+  Type de l’authentification à utiliser. Disponible à partir du kit SDK .NET Core 3.0.
   
   Les valeurs possibles sont les suivantes :
 
@@ -512,7 +512,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré. 
+  Exclut *launchSettings. JSON* du modèle généré.
 
 - **`--no-restore`**
 
@@ -544,7 +544,7 @@ Chaque modèle de projet peut présenter d’autres options disponibles. Les mod
 
 - **`--exclude-launch-settings`**
 
-  Exclut *launchSettings. JSON* du modèle généré. 
+  Exclut *launchSettings. JSON* du modèle généré.
 
 - **`-f|--framework <FRAMEWORK>`**
 

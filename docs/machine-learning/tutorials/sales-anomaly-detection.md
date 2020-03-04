@@ -4,21 +4,21 @@ description: Découvrez comment créer une application de détection des anomali
 ms.date: 11/15/2019
 ms.topic: tutorial
 ms.custom: mvc, title-hack-0612
-ms.openlocfilehash: fe2904dee349f32feb115ea533adbb4b1d8b7140
-ms.sourcegitcommit: 81ad1f09b93f3b3e6706a7f2e4ddf50ef229ea3d
+ms.openlocfilehash: c3fd4aa715a64a20f1eff9b789f6a87eaa749163
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/20/2019
-ms.locfileid: "74204938"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239987"
 ---
 # <a name="tutorial-detect-anomalies-in-product-sales-with-mlnet"></a>Didacticiel : détecter les anomalies dans les ventes de produits avec ML.NET
 
 Découvrez comment créer une application de détection des anomalies pour des données de ventes de produit. Ce didacticiel crée une application de console .NET Core à l’aide de C# dans Visual Studio.
 
-Dans ce didacticiel, vous apprendrez à :
+Dans ce tutoriel, vous allez apprendre à :
 > [!div class="checklist"]
 >
-> * Charger les données
+> * Chargement des données
 > * Créer une transformation pour la détection d’anomalie de pics
 > * Détecter des anomalies de pics avec la transformation
 > * Créer une transformation pour la détection d’anomalie de points de changement
@@ -26,7 +26,7 @@ Dans ce didacticiel, vous apprendrez à :
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 * [Visual Studio 2017 version 15,6 ou ultérieure](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) avec la charge de travail « développement multiplateforme .net Core » installée.
 
@@ -36,11 +36,11 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 > Le format de données dans `product-sales.csv` est basé sur le jeu de données « Shampoo Sales Over a Three Year Period », disponible sur DataMarket et fourni dans la bibliothèque TSDL (Time Series Data Library) créée par Rob Hyndman.
 > Ce jeu de données est concédé sous la licence Open par défaut de DataMarket.
 
-## <a name="create-a-console-application"></a>Créer une application console
+## <a name="create-a-console-application"></a>Création d’une application console
 
 1. Créez une **application console .NET Core** appelée « ProductSalesAnomalyDetection ».
 
-2. Créez un répertoire nommé *Données* dans votre projet pour y enregistrer les fichiers du jeu de données.
+2. Créez un répertoire nommé *Data* dans votre projet pour enregistrer les fichiers du jeu de données.
 
 3. Installez le **package NuGet Microsoft.ML** :
 
@@ -48,7 +48,7 @@ Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/sampl
 
 4. Ajoutez les instructions `using` suivantes en tête de votre fichier *Program.cs* :
 
-    [!code-csharp[AddUsings](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddUsings "Add necessary usings")]
+    [!code-csharp[AddUsings](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#AddUsings "Add necessary usings")]
 
 ### <a name="download-your-data"></a>Télécharger vos données
 
@@ -90,7 +90,7 @@ Ajoutez une nouvelle classe à votre projet :
 
 4. Supprimez la définition de classe existante et ajoutez le code suivant, lequel contient deux classes (`ProductSalesData` et `ProductSalesPrediction`), au fichier *ProductSalesData.cs* :
 
-    [!code-csharp[DeclareTypes](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/ProductSalesData.cs#DeclareTypes "Declare data record types")]
+    [!code-csharp[DeclareTypes](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/ProductSalesData.cs#DeclareTypes "Declare data record types")]
 
     `ProductSalesData` spécifie une classe de données d’entrée. L’attribut [LoadColumn](xref:Microsoft.ML.Data.LoadColumnAttribute.%23ctor%28System.Int32%29) spécifie les colonnes (par index de colonne) du jeu de données qui doivent être chargées.
 
@@ -103,35 +103,35 @@ Ajoutez une nouvelle classe à votre projet :
 
 6. Ajoutez le code suivant à la ligne juste au-dessus de la méthode `Main` pour spécifier ces chemins :
 
-    [!code-csharp[Declare global variables](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DeclareGlobalVariables "Declare global variables")]
+    [!code-csharp[Declare global variables](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#DeclareGlobalVariables "Declare global variables")]
 
 ### <a name="initialize-variables-in-main"></a>Initialiser les variables dans Principal
 
 1. Remplacez la ligne `Console.WriteLine("Hello World!")` dans la méthode `Main` par le code suivant pour déclarer et initialiser la variable `mlContext` :
 
-    [!code-csharp[CreateMLContext](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateMLContext "Create the ML Context")]
+    [!code-csharp[CreateMLContext](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CreateMLContext "Create the ML Context")]
 
     La [classe MLContext](xref:Microsoft.ML.MLContext) est un point de départ pour toutes les opérations ML.NET, et l’initialisation de `mlContext` crée un environnement ML.NET qui peut être partagé par les objets de flux de travail de création de modèle. Sur le plan conceptuel, elle est similaire à `DBContext` dans Entity Framework.
 
-### <a name="load-the-data"></a>Charger les données
+### <a name="load-the-data"></a>Chargement des données
 
 Les données dans ML.NET sont représentées en tant que [classe IDataView](xref:Microsoft.ML.IDataView). `IDataView` est un moyen flexible et efficace de décrire des données tabulaires (numériques et texte). Les données peuvent être chargées à partir d’un fichier texte ou d’autres sources (par exemple, fichiers journaux ou de base de données SQL) dans un objet `IDataView`.
 
 1. Ajoutez le code suivant comme prochaine ligne de la méthode `Main()` :
 
-    [!code-csharp[LoadData](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#LoadData "loading dataset")]
+    [!code-csharp[LoadData](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#LoadData "loading dataset")]
 
     [LoadFromTextFile()](xref:Microsoft.ML.TextLoaderSaverCatalog.LoadFromTextFile%60%601%28Microsoft.ML.DataOperationsCatalog,System.String,System.Char,System.Boolean,System.Boolean,System.Boolean,System.Boolean%29) définit le schéma de données et lit le fichier. Elle prend les variables de chemin de données et retourne un `IDataView`.
 
 ## <a name="time-series-anomaly-detection"></a>Détection des anomalies de série chronologique
 
-La détection d’anomalie signale des événements ou des comportements inattendus ou inhabituels. Elle fournit des indices sur la localisation des problèmes potentiels et vous aide à déterminer si une situation est « étrange ».
+La détection d’anomalies signale des événements ou comportements inattendus ou inhabituels. Elle fournit des indices sur la localisation des problèmes potentiels et vous aide à déterminer si une situation est « étrange ».
 
 ![Exemple de détection d’anomalie « est-ce étrange ».](./media/sales-anomaly-detection/time-series-anomaly-detection.png)
 
 La détection d’anomalie est le processus d’identification des valeurs hors norme dans une série chronologique donnée, c’est-à-dire les points dont le comportement est inattendu ou « étrange ».
 
-La détection d’anomalie peut se révéler utile dans de nombreux cas. Par exemple :
+La détection d’anomalie peut se révéler utile dans de nombreux cas. Exemple :
 
 Si vous disposez d’une voiture, vous souhaiterez peut-être en savoir : cette jauge d’huile est-elle normale ou est-ce que j’ai une fuite ?
 Si vous surveillez la consommation d’énergie, voulez-vous en savoir : existe-t-il une panne ?
@@ -158,7 +158,7 @@ L’objectif est d’identifier les poussées d’activité, par définition sou
 
 Ajoutez la méthode suivante à `Program.cs` :
 
-[!code-csharp[CreateEmptyDataView](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEmptyDataView)]
+[!code-csharp[CreateEmptyDataView](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CreateEmptyDataView)]
 
 La méthode `CreateEmptyDataView()` produit un objet de vue de données vide avec le bon schéma à utiliser comme entrée à la méthode `IEstimator.Fit()`.
 
@@ -181,25 +181,25 @@ La méthode `DetectSpike()` :
 
 1. Utilisez [IidSpikeEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidSpikeEstimator) pour entraîner le modèle à la détection de pics. Ajoutez-le à la méthode `DetectSpike()` avec le code suivant :
 
-    [!code-csharp[AddSpikeTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddSpikeTrainer)]
+    [!code-csharp[AddSpikeTrainer](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#AddSpikeTrainer)]
 
 1. Créez la transformation de détection de pics en ajoutant ce qui suit comme ligne de code suivante dans la méthode `DetectSpike()` :
 
-    [!code-csharp[TrainModel1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel1)]
+    [!code-csharp[TrainModel1](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#TrainModel1)]
 
 1. Ajoutez la ligne de code suivante pour transformer les données `productSales` comme prochaine ligne de la méthode `DetectSpike()` :
 
-    [!code-csharp[TransformData1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TransformData1)]
+    [!code-csharp[TransformData1](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#TransformData1)]
 
     Le code précédent utilise la méthode [Transform()](xref:Microsoft.ML.ITransformer.Transform%2A) pour prédire plusieurs lignes d’entrée d’un jeu de données.
 
 1. Convertissez vos données `transformedData` en `IEnumerable` fortement typé pour faciliter l’affichage. Utilisez pour cela la méthode [CreateEnumerable()](xref:Microsoft.ML.DataOperationsCatalog.CreateEnumerable%2A) avec le code suivant :
 
-    [!code-csharp[CreateEnumerable1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEnumerable1)]
+    [!code-csharp[CreateEnumerable1](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CreateEnumerable1)]
 
 1. Créez une ligne d’en-tête d’affichage à l’aide du code <xref:System.Console.WriteLine?displayProperty=nameWithType> suivant :
 
-    [!code-csharp[DisplayHeader1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayHeader1)]
+    [!code-csharp[DisplayHeader1](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#DisplayHeader1)]
 
     Les informations suivantes apparaissent dans vos résultats de détection des pics :
 
@@ -207,13 +207,13 @@ La méthode `DetectSpike()` :
     * `Score` est la valeur de `ProductSales` pour un point de données spécifique dans le jeu de données.
     * `P-Value` où « P » correspond à la probabilité. Plus la p-value est proche de 0, plus il est probable que le point de données soit une anomalie.
 
-1. Utilisez le code suivant pour effectuer une itération dans le `predictions` `IEnumerable` et afficher les résultats :
+1. Utilisez le code suivant pour itérer au sein du `IEnumerable` `predictions` et afficher les résultats :
 
-    [!code-csharp[DisplayResults1](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayResults1)]
+    [!code-csharp[DisplayResults1](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#DisplayResults1)]
 
 1. Ajoutez l’appel à la méthode `DetectSpike()` dans la méthode `Main()` :
 
-    [!code-csharp[CallDetectSpike](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CallDetectSpike)]
+    [!code-csharp[CallDetectSpike](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CallDetectSpike)]
 
 ## <a name="spike-detection-results"></a>Résultats de la détection des pics
 
@@ -287,23 +287,23 @@ La méthode `DetectChangepoint()` exécute les tâches suivantes :
 
 1. Créez [iidChangePointEstimator](xref:Microsoft.ML.Transforms.TimeSeries.IidChangePointEstimator) dans la méthode `DetectChangepoint()` avec le code suivant :
 
-    [!code-csharp[AddChangepointTrainer](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#AddChangepointTrainer)]
+    [!code-csharp[AddChangepointTrainer](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#AddChangepointTrainer)]
 
 1. Comme vous l’avez fait précédemment, créez la transformation à partir de l’estimateur en ajoutant la ligne de code suivante dans la méthode `DetectChangePoint()` :
 
-    [!code-csharp[TrainModel2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TrainModel2)]
+    [!code-csharp[TrainModel2](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#TrainModel2)]
 
 1. Utilisez la méthode `Transform()` pour transformer les données en ajoutant le code suivant à `DetectChangePoint()` :
 
-    [!code-csharp[TransformData2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#TransformData2)]
+    [!code-csharp[TransformData2](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#TransformData2)]
 
 1. Comme précédemment, convertissez vos données `transformedData` en `IEnumerable` fortement typé pour faciliter l’affichage. Utilisez pour cela la méthode `CreateEnumerable()` avec le code suivant :
 
-    [!code-csharp[CreateEnumerable2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CreateEnumerable2)]
+    [!code-csharp[CreateEnumerable2](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CreateEnumerable2)]
 
 1. Créez un en-tête d’affichage en ajoutant la ligne de code suivante comme prochaine ligne de la méthode `DetectChangePoint()` :
 
-    [!code-csharp[DisplayHeader2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayHeader2)]
+    [!code-csharp[DisplayHeader2](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#DisplayHeader2)]
 
     Les informations suivantes apparaissent dans vos résultats de détection des points de changement :
 
@@ -312,13 +312,13 @@ La méthode `DetectChangepoint()` exécute les tâches suivantes :
     * `P-Value` où « P » correspond à la probabilité. Plus la P-value est proche de 0, plus il est probable que le point de données soit une anomalie.
     * `Martingale value` permet d’identifier le « degré d’étrangeté » d’un point de données en fonction de la séquence de valeurs P.
 
-1. Effectuez une itération dans le `predictions` `IEnumerable` et affichez les résultats avec le code suivant :
+1. Itérez au sein du `IEnumerable` `predictions` et affichez les résultats avec le code suivant :
 
-    [!code-csharp[DisplayResults2](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#DisplayResults2)]
+    [!code-csharp[DisplayResults2](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#DisplayResults2)]
 
 1. Ajoutez l’appel suivant à la méthode `DetectChangepoint()` dans la méthode `Main()` :
 
-    [!code-csharp[CallDetectChangepoint](~/samples/machine-learning/tutorials/ProductSalesAnomalyDetection/Program.cs#CallDetectChangepoint)]
+    [!code-csharp[CallDetectChangepoint](~/samples/snippets/machine-learning/ProductSalesAnomalyDetection/csharp/Program.cs#CallDetectChangepoint)]
 
 ## <a name="change-point-detection-results"></a>Résultats de la détection des points de changement
 
@@ -367,14 +367,14 @@ Alert   Score   P-Value Martingale value
 0       651.90  0.14    0.09
 ```
 
-Félicitations ! Vous venez de générer des modèles de machine learning pour détecter des anomalies (pics et points de changement) dans des données de ventes.
+Félicitations ! Vous venez de générer des modèles de machine learning pour détecter des anomalies (pics et points de changement) dans des données de ventes.
 
 Vous trouverez le code source de ce tutoriel dans le référentiel [dotnet/samples](https://github.com/dotnet/samples/tree/master/machine-learning/tutorials/ProductSalesAnomalyDetection).
 
-Dans ce didacticiel, vous avez appris à :
+Dans ce didacticiel, vous avez appris à :
 > [!div class="checklist"]
 >
-> * Charger les données
+> * Chargement des données
 > * Entraîner le modèle pour détecter des pics
 > * Détecter des pics avec le modèle entraîné
 > * Entraîner le modèle pour détecter des points de changement

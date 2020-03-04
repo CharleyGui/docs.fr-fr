@@ -2,12 +2,12 @@
 title: 'Didacticiel : créer une solution .NET Core dans macOS à l’aide de Visual Studio Code'
 description: Ce document présente les étapes et les flux de travail permettant de créer une solution .NET Core à l’aide de Visual Studio Code.
 ms.date: 12/19/2019
-ms.openlocfilehash: e3c210d4391c0e3c9c3455ecf23dd138abdb4363
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: f5da16d413ddc25587ff35550fe9f308dc87f4bb
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741540"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156593"
 ---
 # <a name="tutorial-create-a-net-core-solution-in-macos-using-visual-studio-code"></a>Didacticiel : créer une solution .NET Core dans macOS à l’aide de Visual Studio Code
 
@@ -18,7 +18,7 @@ Ce document présente les étapes et les flux de travail permettant de créer un
 
 ## <a name="prerequisites"></a>Composants requis
 
-Installez le [SDK .NET Core](https://dotnet.microsoft.com/download). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
+Installez le [kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download). Ce SDK .NET Core inclut la dernière version du framework et du runtime .NET Core.
 
 Installez [Visual Studio Code](https://code.visualstudio.com). Au cours de cet article, vous allez également installer des extensions Visual Studio Code pour améliorer l’expérience de développement de .NET Core.
 
@@ -155,7 +155,7 @@ Le fait de déclarer la valeur 42 n’est pas égal à 19+23 (ou 42) quand vo
 À partir du dossier *golden*, exécutez les commandes suivantes :
 
 ```dotnetcli
-dotnet restore 
+dotnet restore
 dotnet test test-library/test-library.csproj
 ```
 

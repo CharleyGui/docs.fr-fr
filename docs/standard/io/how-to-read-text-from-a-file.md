@@ -12,15 +12,15 @@ helpviewer_keywords:
 - data streams, reading text from files
 - I/O [.NET Framework], reading text from files
 ms.assetid: ed180baa-dfc6-4c69-a725-46e87edafb27
-ms.openlocfilehash: 49ea989a2b11c6572dc08970cf96e2df5f4fa024
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 8676e5f0acd0646b4854df7dde060ec15548ec3e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75706658"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155722"
 ---
 # <a name="how-to-read-text-from-a-file"></a>Comment : lire du texte à partir d’un fichier
-Les exemples suivants montrent comment lire le texte de façon synchrone et asynchrone à partir d'un fichier texte à l'aide du .NET pour les applications de bureau. Dans les deux exemples, lorsque vous créez l’instance de la classe <xref:System.IO.StreamReader>, vous fournissez le chemin d’accès relatif ou absolu au fichier. 
+Les exemples suivants montrent comment lire le texte de façon synchrone et asynchrone à partir d'un fichier texte à l'aide du .NET pour les applications de bureau. Dans les deux exemples, lorsque vous créez l’instance de la classe <xref:System.IO.StreamReader>, vous fournissez le chemin d’accès relatif ou absolu au fichier.
   
 > [!NOTE]
 > Ces exemples de code ne s’appliquent pas au développement d’applications UWP, car le Windows Runtime fournit des types de flux différents pour la lecture et l’écriture des fichiers. Pour obtenir un exemple qui montre comment lire le texte d’un fichier dans une application UWP, consultez [démarrage rapide : lecture et écriture de fichiers](https://docs.microsoft.com/previous-versions/windows/apps/hh758325(v=win.10)). Pour obtenir des exemples qui montrent comment effectuer une conversion entre des flux de .NET Framework et des flux de Windows Runtime, consultez [Comment : effectuer une conversion entre des flux de .NET Framework et des](../../../docs/standard/io/how-to-convert-between-dotnet-streams-and-winrt-streams.md)flux de Windows Runtime.  
@@ -34,7 +34,7 @@ L’exemple suivant montre une opération de lecture synchrone dans une applicat
  [!code-csharp[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.basicio.textfiles/cs/source3.cs#3)]
  [!code-vb[Conceptual.BasicIO.TextFiles#3](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.basicio.textfiles/vb/source3.vb#3)]  
   
-## <a name="example-asynchronous-read-in-a-wpf-app"></a>Exemple : lecture asynchrone dans une application WPF 
+## <a name="example-asynchronous-read-in-a-wpf-app"></a>Exemple : lecture asynchrone dans une application WPF
  L’exemple suivant montre une opération de lecture asynchrone dans une application WPF (Windows Presentation Foundation).  
   
 > [!IMPORTANT]
@@ -57,4 +57,4 @@ L’exemple suivant montre une opération de lecture synchrone dans une applicat
 - [Comment : écrire du texte dans un fichier](../../../docs/standard/io/how-to-write-text-to-a-file.md)  
 - [Comment : lire les caractères d’une chaîne](../../../docs/standard/io/how-to-read-characters-from-a-string.md)  
 - [Comment : écrire des caractères dans une chaîne](../../../docs/standard/io/how-to-write-characters-to-a-string.md)  
-- [E/S de fichier et de flux](../../../docs/standard/io/index.md)
+- [Fichier et flux de données E/S](../../../docs/standard/io/index.md)

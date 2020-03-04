@@ -3,12 +3,12 @@ title: Vue d’ensemble du SDK .NET Core
 description: Découvrez le Kit SDK .NET Core, un ensemble de bibliothèques et d’outils permettant de créer des projets .NET Core.
 ms.date: 07/31/2019
 ms.technology: dotnet-cli
-ms.openlocfilehash: 09b32b0065326af54da935a810764f93248618af
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: c2723e0e28c889f91f79ea3c0b26aa38f69fb41c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920596"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157464"
 ---
 # <a name="net-core-sdk-overview"></a>Vue d’ensemble du SDK .NET Core
 

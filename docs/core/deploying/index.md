@@ -2,18 +2,18 @@
 title: Publication d’applications
 description: En savoir plus sur les méthodes de publication d’une application .NET Core. .NET Core peut publier des applications spécifiques à une plateforme ou multiplateforme. Vous pouvez publier une application en tant qu’application autonome ou dépendante du Runtime. Chaque mode affecte la façon dont un utilisateur exécute votre application.
 ms.date: 01/31/2020
-ms.openlocfilehash: 696cca436c73601a3e7825033152d43a659a7dce
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 3b9c3b7f29af12477874b7a31ef0de4750719de0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448982"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157933"
 ---
 # <a name="net-core-application-publishing-overview"></a>Vue d’ensemble de la publication d’applications .NET Core
 
 Les applications que vous créez avec .NET Core peuvent être publiées dans deux modes différents, et le mode affecte la façon dont un utilisateur exécute votre application.
 
-La publication de votre application en tant que *contenu autonome* produit une application qui comprend le runtime et les bibliothèques .net Core, ainsi que votre application et ses dépendances. Les utilisateurs de l’application peuvent l’exécuter sur un ordinateur sur lequel le Runtime .NET Core n’est pas installé. 
+La publication de votre application en tant que *contenu autonome* produit une application qui comprend le runtime et les bibliothèques .net Core, ainsi que votre application et ses dépendances. Les utilisateurs de l’application peuvent l’exécuter sur un ordinateur sur lequel le Runtime .NET Core n’est pas installé.
 
 La publication de votre application en tant que *dépendant du runtime* produit une application qui comprend uniquement votre application et ses dépendances. Les utilisateurs de l’application doivent installer séparément le Runtime .NET Core.
 
@@ -132,7 +132,7 @@ Vous contrôlez la version de .NET Core qui est déployée avec votre applicatio
   > Vous pouvez réduire la taille de votre déploiement sur les systèmes Linux d’environ 28 Mo en utilisant le [*mode de globalisation de la globalisation*](https://github.com/dotnet/runtime/blob/master/docs/design/features/globalization-invariant-mode.md).net core. Cela force votre application à traiter toutes les cultures comme la [culture dite indifférente](xref:System.Globalization.CultureInfo.InvariantCulture?displayProperty=nameWithType).
 
 - **Il est plus difficile de mettre à jour la version .net Core**\
-Le Runtime .NET Core (distribué avec votre application) peut uniquement être mis à niveau en publiant une nouvelle version de votre application. Vous êtes responsable de la fourniture d’une version mise à jour de votre application pour les correctifs de sécurité pour le Runtime .NET Core. 
+Le Runtime .NET Core (distribué avec votre application) peut uniquement être mis à niveau en publiant une nouvelle version de votre application. Vous êtes responsable de la fourniture d’une version mise à jour de votre application pour les correctifs de sécurité pour le Runtime .NET Core.
 
 ### <a name="examples"></a>Exemples
 

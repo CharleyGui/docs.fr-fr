@@ -7,19 +7,19 @@ helpviewer_keywords:
 - Task Parallel Library, dataflows
 - Windows Forms, and TPL
 ms.assetid: 9c65cdf7-660c-409f-89ea-59d7ec8e127c
-ms.openlocfilehash: b6f4b933f76834f48d522d9c97fb0c9b5c24e13d
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 794253514edf63f02276e1ece21c60a85c534390
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73139921"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159765"
 ---
 # <a name="walkthrough-using-dataflow-in-a-windows-forms-application"></a>Procédure pas à pas : utilisation de flux de données dans une application Windows Forms
 Ce document montre comment créer un réseau de blocs de flux de données qui effectuent un traitement des images dans une application Windows Forms.  
   
  Dans cet exemple, on charge des fichiers image à partir du dossier spécifié, on crée une image composite, et on affiche le résultat. L’exemple utilise le modèle de flux de données pour acheminer les images via le réseau. Dans le modèle de flux de données, les composants indépendants d’un programme communiquent entre eux en envoyant des messages. Lorsqu’un composant reçoit un message, il effectue une action, puis transmet le résultat à un autre composant. Comparez cela avec le modèle de flux de contrôle, dans lequel une application utilise des structures de contrôle (par exemple, des instructions conditionnelles, des boucles, etc.) pour contrôler l’ordre des opérations dans un programme.  
   
-## <a name="prerequisites"></a>Configuration requise  
+## <a name="prerequisites"></a>Composants requis  
  Lisez la rubrique [Flux de données](../../../docs/standard/parallel-programming/dataflow-task-parallel-library.md) avant de démarrer cette procédure pas à pas.  
 
 [!INCLUDE [tpl-install-instructions](../../../includes/tpl-install-instructions.md)]
@@ -35,7 +35,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
 - [Exemple complet](#complete)  
   
-<a name="winforms"></a>   
+<a name="winforms"></a>
 ## <a name="creating-the-windows-forms-application"></a>Création de l’application Windows Forms  
  Cette section décrit comment créer l’application Windows Forms de base et ajouter des contrôles au formulaire principal.  
   
@@ -49,9 +49,9 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
 4. Ajoutez un deuxième contrôle <xref:System.Windows.Forms.ToolStripButton> au contrôle <xref:System.Windows.Forms.ToolStrip>. Définissez la propriété <xref:System.Windows.Forms.ToolStripItem.DisplayStyle%2A> sur <xref:System.Windows.Forms.ToolStripItemDisplayStyle.Text>, la propriété <xref:System.Windows.Forms.ToolStripItem.Text%2A> sur **Annuler** et la propriété <xref:System.Windows.Forms.ToolStripItem.Enabled%2A> sur `False`.  
   
-5. Ajoutez un objet <xref:System.Windows.Forms.PictureBox> au formulaire principal. Affectez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.  
+5. Ajoutez un objet <xref:System.Windows.Forms.PictureBox> au formulaire principal. Attribuez à la propriété <xref:System.Windows.Forms.Control.Dock%2A> la valeur <xref:System.Windows.Forms.DockStyle.Fill>.  
   
-<a name="network"></a>   
+<a name="network"></a>
 ## <a name="creating-the-dataflow-network"></a>Création du réseau de flux de données  
  Cette section décrit comment créer le réseau de flux de données qui effectue le traitement des images.  
   
@@ -84,7 +84,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  Le tableau ci-dessous décrit les membres du réseau.  
   
-|Membre|Tapez|Description|  
+|Membre|Type|Description|  
 |------------|----------|-----------------|  
 |`loadBitmaps`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Prend un chemin d’accès à un dossier en entrée, et produit une collection d’objets <xref:System.Drawing.Bitmap> en sortie.|  
 |`createCompositeBitmap`|<xref:System.Threading.Tasks.Dataflow.TransformBlock%602>|Prend une collection d’objets <xref:System.Drawing.Bitmap> en entrée, et produit une bitmap composite en sortie.|  
@@ -101,7 +101,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
  Cet exemple utilise un jeton d’annulation partagé au lieu de définir la propriété <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>, car cette dernière annule définitivement l’exécution du bloc de flux de données<xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A>. Cet exemple explique comment un jeton d’annulation permet de réutiliser un réseau de flux de données plusieurs fois, même lorsque l’utilisateur annule une ou plusieurs opérations. Vous trouverez un exemple utilisant <xref:System.Threading.Tasks.Dataflow.DataflowBlockOptions.CancellationToken%2A> pour annuler définitivement l’exécution d’un bloc de flux de données sur la page [Guide pratique : annuler un bloc de flux de données](../../../docs/standard/parallel-programming/how-to-cancel-a-dataflow-block.md).  
   
-<a name="ui"></a>   
+<a name="ui"></a>
 ## <a name="connecting-the-dataflow-network-to-the-user-interface"></a>Connexion du réseau de flux de données à l’interface utilisateur  
  Cette section décrit comment connecter le réseau de flux de données à l’interface utilisateur. La création de l’image composite et l’annulation de l’opération sont lancées à partir des boutons **Choisir le dossier** et **Annuler**. Lorsque l’utilisateur clique sur l’un de ces boutons, l’action appropriée est lancée de manière asynchrone.  
   
@@ -119,7 +119,7 @@ Ce document montre comment créer un réseau de blocs de flux de données qui ef
   
      [!code-csharp[TPLDataflow_CompositeImages#7](../../../samples/snippets/csharp/VS_Snippets_Misc/tpldataflow_compositeimages/cs/compositeimages/form1.cs#7)]  
   
-<a name="complete"></a>   
+<a name="complete"></a>
 ## <a name="the-complete-example"></a>Exemple complet  
  L'exemple suivant présente le code complet pour cette visite.  
   

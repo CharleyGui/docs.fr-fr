@@ -3,17 +3,17 @@ title: Gestion d'espaces de noms dans un document XML
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: 682643fc-b848-4e42-8c0d-50deeaeb5f2a
-ms.openlocfilehash: 64ef9fd4ca3a9a83b9cd3eba9cb952b0f668e9f0
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7b219788895ab2f89fa285c2e1b7de62639bfcf9
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710698"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160038"
 ---
 # <a name="managing-namespaces-in-an-xml-document"></a>Gestion d'espaces de noms dans un document XML
 Les espaces de noms XML associent les noms d'éléments et d'attributs dans un document XML à des URI prédéfinis et personnalisés. Pour créer ces associations, définissez des préfixes pour des URI d'espace de noms et utilisez ces préfixes pour qualifier des noms d'élément et d'attribut dans des données XML. Les espaces de noms empêchent les conflits entre les noms d'élément et d'attribut et permettent aux éléments et attributs de même nom d'être gérés différemment et validés différemment.  
   
-<a name="declare"></a>   
+<a name="declare"></a>
 ## <a name="declaring-namespaces"></a>Déclaration d'espaces de noms  
  Pour déclarer un espace de noms sur un élément, utilisez l'attribut `xmlns:` :  
   
@@ -30,7 +30,7 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
   
  Pour indiquer qu'un élément fait partie d'un espace de noms particulier, ajoutez-lui le préfixe de l'espace de noms. Par exemple, si un élément `Author` appartient à l'espace de noms `mybook`, il est déclaré comme suit : `<mybook:Author>`.  
   
-<a name="scope"></a>   
+<a name="scope"></a>
 ## <a name="declaration-scope"></a>Portée de la déclaration  
  Un espace de noms est effectif à partir de son point de déclaration jusqu'à la fin de l'élément dans lequel il a été déclaré. Dans cet exemple, l'espace de noms défini dans l'élément `BOOK` ne s'applique pas aux éléments situés en dehors de l'élément `BOOK`, tels que l'élément `Publisher` :  
   
@@ -65,17 +65,17 @@ Les espaces de noms XML associent les noms d'éléments et d'attributs dans un d
   
  Voici quelques tâches de recherche et de gestion que vous pouvez effectuer avec la classe <xref:System.Xml.XmlNamespaceManager>. Pour obtenir plus d'informations et des exemples, suivez les liens à la page de référence de chaque méthode ou propriété.  
   
-|Vers|Utiliser|  
+|Pour|Utilisez|  
 |--------|---------|  
-|Ajouter un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
-|Supprimer un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
-|Rechercher l'URI de l'espace de noms par défaut|Propriété<xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
-|Rechercher l'URI du préfixe d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
-|Rechercher le préfixe de l'URI d'un espace de noms|Méthode <xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
-|Obtenir une liste des espaces de noms dans le nœud actuel|Méthode <xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
+|Ajouter un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.AddNamespace%2A>|  
+|Supprimer un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.RemoveNamespace%2A>|  
+|Rechercher l'URI de l'espace de noms par défaut|Propriété <xref:System.Xml.XmlNamespaceManager.DefaultNamespace%2A>|  
+|Rechercher l'URI du préfixe d'un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.LookupNamespace%2A>|  
+|Rechercher le préfixe de l'URI d'un espace de noms|Méthode<xref:System.Xml.XmlNamespaceManager.LookupPrefix%2A>|  
+|Obtenir une liste des espaces de noms dans le nœud actuel|Méthode<xref:System.Xml.XmlNamespaceManager.GetNamespacesInScope%2A>|  
 |Définir la portée d'un espace de noms|Méthodes <xref:System.Xml.XmlNamespaceManager.PushScope%2A> et <xref:System.Xml.XmlNamespaceManager.PopScope%2A>|  
-|Vérifier si un préfixe est défini dans la portée actuelle|Méthode <xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
-|Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété<xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
+|Vérifier si un préfixe est défini dans la portée actuelle|Méthode<xref:System.Xml.XmlNamespaceManager.HasNamespace%2A>|  
+|Obtenir la table de noms utilisée pour rechercher les préfixes et les URI|Propriété <xref:System.Xml.XmlNamespaceManager.NameTable%2A>|  
   
 ## <a name="see-also"></a>Voir aussi
 

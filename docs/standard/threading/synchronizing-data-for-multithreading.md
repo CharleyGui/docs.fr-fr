@@ -7,12 +7,12 @@ helpviewer_keywords:
 - threading [.NET], synchronizing threads
 - managed threading
 ms.assetid: b980eb4c-71d5-4860-864a-6dfe3692430a
-ms.openlocfilehash: ecc1e234b03cb45075c40ff6698f71f8ce18d0de
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a70bd3070d8b1dcd06e55d330a01d29071293f6c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73128981"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159388"
 ---
 # <a name="synchronizing-data-for-multithreading"></a>Synchronisation des données pour le multithreading
 
@@ -30,7 +30,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
   
  Le common language runtime fournit un modèle de thread dans lequel les classes se répartissent en plusieurs catégories qui peuvent être synchronisées de différentes manières, selon les besoins. Le tableau suivant indique le type de prise en charge de la synchronisation fourni pour les champs et méthodes dans une catégorie de synchronisation donnée.  
   
-|Category|Champs globaux|Champs statiques|Méthodes statiques|Champs d’instance|Méthodes d’instance|Blocs de code spécifiques|  
+|Catégorie|Champs globaux|Champs statiques|Méthodes statiques|Champs d'instance|Méthodes d’instance|Blocs de code spécifiques|  
 |--------------|-------------------|-------------------|--------------------|---------------------|----------------------|--------------------------|  
 |Aucune synchronisation|Non|Non|Non|Non|Non|Non|  
 |Contexte synchronisé|Non|Non|Non|Oui|Oui|Non|  
@@ -64,7 +64,7 @@ Le .NET fournit plusieurs stratégies pour synchroniser l’accès aux membres s
  Dans les deux cas, si une exception est déclenchée dans le bloc de code, le verrou acquis par l’instruction **lock** ou **SyncLock** est automatiquement libéré. Les compilateurs C# et Visual Basic émettent un bloc **try**/**finally** avec **Monitor.Enter** au début de la tentative, et **Monitor.Exit** dans le bloc **finally**. Si une exception est déclenchée dans le bloc **lock** ou **SyncLock**, le gestionnaire **finally** s’exécute pour vous permettre d’effectuer d’éventuelles tâches de nettoyage.  
   
 ## <a name="synchronized-context"></a>Contexte synchronisé  
- 
+
 Dans les applications .NET Framework et Xamarin uniquement, vous pouvez utiliser <xref:System.Runtime.Remoting.Contexts.SynchronizationAttribute> sur n’importe quel <xref:System.ContextBoundObject> pour synchroniser l’ensemble des champs et méthodes d’instance. Tous les objets d’un même domaine de contexte partagent le même verrou. Plusieurs threads sont autorisés à accéder aux méthodes et champs, mais un seul thread est autorisé à la fois.  
   
 ## <a name="see-also"></a>Voir aussi

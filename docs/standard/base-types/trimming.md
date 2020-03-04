@@ -15,12 +15,12 @@ helpviewer_keywords:
 - TrimStart method
 - removing characters
 ms.assetid: ab248dab-70d4-4413-81c6-542d153fd195
-ms.openlocfilehash: 66a4945f536c2f30d61a878e6449a6b0f6b45f22
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: bdbe267bb178e90c0008422e6543a23178c2c4d8
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132895"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159986"
 ---
 # <a name="trimming-and-removing-characters-from-strings-in-net"></a>Suppression d’espaces et de caractères dans .NET
 Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mots incluant des espaces vides (également appelés espaces blancs) à chaque extrémité du mot. Dans ce cas, vous pouvez utiliser l’une des méthodes de suppression de la classe **System.String** pour supprimer n’importe quel nombre d’espaces ou d’autres caractères à partir d’une position spécifiée dans la chaîne. Le tableau suivant décrit les méthodes de suppression disponibles.  
@@ -32,7 +32,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
 |<xref:System.String.TrimStart%2A?displayProperty=nameWithType>|Supprime les caractères spécifiés dans un tableau de caractères à partir du début d’une chaîne.|  
 |<xref:System.String.Remove%2A?displayProperty=nameWithType>|Supprime un nombre spécifié de caractères à partir de la position d’index spécifiée dans une chaîne.|  
   
-## <a name="trim"></a>Trim
+## <a name="trim"></a>SupprEspace
 
  Vous pouvez facilement supprimer les espaces blancs situés aux deux extrémités d’une chaîne à l’aide de la méthode <xref:System.String.Trim%2A?displayProperty=nameWithType>, comme indiqué dans l’exemple suivant.  
   
@@ -77,7 +77,7 @@ Si vous analysez une phrase en mots individuels, vous risquez d’obtenir des mo
   
  Ce code affiche `World!` dans la console.  
   
-## <a name="remove"></a>Remove 
+## <a name="remove"></a>Supprimer
 
  La méthode <xref:System.String.Remove%2A?displayProperty=nameWithType> supprime un nombre spécifié de caractères en commençant à la position spécifiée dans une chaîne existante. Cette méthode suppose un index de base zéro.  
   

@@ -1,19 +1,19 @@
 ---
 title: Commande dotnet test
 description: La commande dotnet test est utilisée pour exécuter des tests unitaires dans un projet donné.
-ms.date: 05/29/2018
-ms.openlocfilehash: 890d1fc3fd9d47f2bdcd63f2a25248c3edd705e4
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.date: 02/27/2020
+ms.openlocfilehash: 6e906ab396a788905c99f50e73390b765b240efc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626045"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157009"
 ---
 # <a name="dotnet-test"></a>dotnet test
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet test` - Pilote de test .NET utilisée pour exécuter des tests unitaires.
 
@@ -147,14 +147,14 @@ Les projets de test spécifient l’application Test Runner à l’aide d’un �
 
 | Infrastructure de test | Propriétés prises en charge                                                                                      |
 | -------------- | --------------------------------------------------------------------------------------------------------- |
-| MSTest         | <ul><li>FullyQualifiedName</li><li>Name</li><li>ClassName</li><li>Priority</li><li>TestCategory</li></ul> |
-| xUnit          | <ul><li>FullyQualifiedName</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
+| MSTest         | <ul><li>Nom complet</li><li>Nom</li><li>ClassName</li><li>Priorité</li><li>TestCategory</li></ul> |
+| xUnit          | <ul><li>Nom complet</li><li>DisplayName</li><li>Caractéristiques</li></ul>                                   |
 
 La section `<operator>` décrit la relation entre la propriété et la valeur :
 
 | Opérateur | Fonction        |
 | :------: | --------------- |
-| `=`      | Concordance exacte     |
+| `=`      | Correspondance exacte     |
 | `!=`     | Pas de correspondance exacte |
 | `~`      | Contient        |
 | `!~`     | Ne contient pas    |
@@ -167,7 +167,7 @@ Les expressions peuvent être associées à des opérateurs conditionnels :
 
 | Opérateur            | Fonction |
 | ------------------- | -------- |
-| <code>&#124;</code> | OR       |
+| <code>&#124;</code> | - OU -       |
 | `&`                 | AND      |
 
 Vous pouvez mettre des expressions entre parenthèses quand vous utilisez des opérateurs conditionnels (par exemple, `(Name~TestMethod1) | (Name~TestMethod2)`).

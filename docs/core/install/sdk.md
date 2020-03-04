@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: 4a6c8b27812e9f60e52132169dda0464c24abcc2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 0aa323533dd9136372c2bbc330c9c3056fdf428c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75740566"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157569"
 ---
 # <a name="install-the-net-core-sdk"></a>Installer le kit SDK .NET Core
 
@@ -35,6 +35,19 @@ Windows possède des programmes d’installation autonomes qui peuvent être uti
 macOS possède des programmes d’installation autonomes qui peuvent être utilisés pour installer le kit de développement logiciel (SDK) .NET Core 3,1 :
 
 - [Processeurs x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+
+## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
+
+Comme alternative aux programmes d’installation macOS pour .NET Core, vous pouvez télécharger et installer manuellement le kit de développement logiciel (SDK).
+
+Pour extraire le kit de développement logiciel (SDK) et rendre les commandes de CLI .NET Core disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire de .net core. Ensuite, ouvrez un terminal et exécutez les commandes suivantes. Il est supposé que le runtime est téléchargé dans le fichier `~/Downloads/dotnet-sdk.pkg`.
+
+```bash
+mkdir -p $HOME/dotnet
+sudo installer -pkg ~/Downloads/dotnet-sdk.pkg -target $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
 
 ::: zone-end
 
@@ -104,6 +117,25 @@ Lors de l’installation ou de la modification de Visual Studio, sélectionnez u
 - La charge de travail **développement .net Desktop** dans la section **Desktop & mobile** .
 
 [![Windows Visual Studio 2019 avec charge de travail .NET Core](media/install-sdk/windows-install-visual-studio-2019.png)](media/install-sdk/windows-install-visual-studio-2019.png#lightbox)
+
+## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
+
+Pour extraire le runtime et rendre les commandes CLI .NET Core disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire .net core. Ensuite, créez un répertoire dans lequel effectuer l’installation, par exemple `%USERPROFILE%\dotnet`. Enfin, extrayez le fichier zip téléchargé dans ce répertoire.
+
+Par défaut, les commandes et applications CLI .NET Core n’utilisent pas .NET Core de cette manière. Vous devez choisir explicitement de l’utiliser. Pour ce faire, modifiez les variables d’environnement à l’aide desquelles une application est démarrée :
+
+```console
+set DOTNET_ROOT=%USERPROFILE%\dotnet
+set PATH=%USERPROFILE%\dotnet;%PATH%
+```
+
+Cette approche vous permet d’installer plusieurs versions dans des emplacements distincts, puis de choisir explicitement l’emplacement d’installation qu’une application doit utiliser en exécutant l’application avec des variables d’environnement qui pointent à cet emplacement.
+
+Même lorsque ces variables d’environnement sont définies, .NET Core prend toujours en compte l’emplacement d’installation globale par défaut lors de la sélection du meilleur Framework pour l’exécution de l’application. La valeur par défaut est généralement `C:\Program Files\dotnet`, que les programmes d’installation utilisent. Vous pouvez indiquer à l’exécution d’utiliser uniquement l’emplacement d’installation personnalisé en définissant également cette variable d’environnement :
+
+```console
+set DOTNET_MULTILEVEL_LOOKUP=0
+```
 
 ::: zone-end
 
@@ -186,6 +218,7 @@ Pour plus d’informations sur l’utilisation de .NET Core dans un conteneur d�
 
 ::: zone pivot="os-macos"
 
+- [Utilisation de la notaire Catalina MacOS](macos-notarization-issues.md).
 - [Didacticiel : prise en main de MacOS](../tutorials/using-on-mac-vs.md).
 - [Didacticiel : créer une application avec Visual Studio code](../tutorials/with-visual-studio-code.md).
 - [Didacticiel : conteneur d’une application .net Core](../docker/build-container.md).

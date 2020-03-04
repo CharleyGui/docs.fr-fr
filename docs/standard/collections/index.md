@@ -10,12 +10,12 @@ helpviewer_keywords:
 - Collections classes
 - collections [.NET Framework]
 ms.assetid: 60cc581f-1db5-445b-ba04-a173396bf872
-ms.openlocfilehash: 9b868bd5ed77788cd9b44c11623ae38eba58153c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3ca340e19d7340d7bea133fa62c6d8bbc3c0512a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711361"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160389"
 ---
 # <a name="collections-and-data-structures"></a>Collections et structures de données
 Des données similaires peuvent souvent être gérées plus efficacement quand elles sont stockées et manipulées en tant que collection. Vous pouvez utiliser la classe <xref:System.Array?displayProperty=nameWithType>, ou les classes qui se trouvent dans les espaces de noms <xref:System.Collections>, <xref:System.Collections.Generic>, <xref:System.Collections.Concurrent> et System.Collections.Immutable, pour ajouter, supprimer et modifier des éléments individuels ou une série d’éléments dans une collection.  
@@ -24,7 +24,7 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
   
  À compter de .NET Framework 4, les collections de l’espace de noms <xref:System.Collections.Concurrent> fournissent des opérations thread-safe efficaces pour accéder aux éléments de collection de plusieurs threads. Les classes de collection immuable de l’espace de noms System.Collections.Immutable ([NuGet package](https://www.nuget.org/packages/System.Collections.Immutable)) sont thread-safe, car les opérations sont effectuées sur une copie de la collection d’origine et celle-ci ne peut donc pas être modifiée.  
 
-<a name="BKMK_Commoncollectionfeatures"></a>   
+<a name="BKMK_Commoncollectionfeatures"></a>
 ## <a name="common-collection-features"></a>Fonctionnalités communes à toutes les collections  
  Toutes les collections fournissent des méthodes pour l'ajout, la suppression ou la recherche d'éléments au sein d'une collection. De plus, toutes les collections qui implémentent directement ou indirectement l'interface <xref:System.Collections.ICollection> ou <xref:System.Collections.Generic.ICollection%601> partagent les fonctionnalités suivantes :  
   
@@ -54,10 +54,10 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
   
      Les types de collections non génériques de l'espace de noms <xref:System.Collections> fournissent une certaine cohérence de thread pour la synchronisation, généralement exposée par des membres <xref:System.Collections.ICollection.SyncRoot%2A> et <xref:System.Collections.ICollection.IsSynchronized%2A>. Ces collections ne sont pas thread-safe par défaut. Si vous avez besoin d'un accès multithread évolutif et efficace pour une collection, utilisez l'une des classes de l'espace de noms <xref:System.Collections.Concurrent> ou envisagez d'utiliser une collection immuable. Pour plus d’informations, consultez [Collections thread-safe](../../../docs/standard/collections/thread-safe/index.md).  
   
-<a name="BKMK_Choosingacollection"></a>   
+<a name="BKMK_Choosingacollection"></a>
 ## <a name="choosing-a-collection"></a>Choix d'une collection  
  En règle générale, vous devez utiliser des collections génériques. Le tableau suivant décrit certains scénarios courants concernant les collections, ainsi que les classes de collection que vous pouvez utiliser pour ces scénarios. Si vous ne connaissez pas encore les collections génériques, ce tableau vous aidera à choisir la collection générique qui répond le mieux à vos besoins.  
- 
+
 |Je souhaite :|Options de collection générique|Options de collection non générique|Options de collection thread-safe ou immuable|  
 |-|-|-|-|  
 |Stocker les éléments sous forme de paires clé/valeur pour une recherche rapide par clé|<xref:System.Collections.Generic.Dictionary%602>|<xref:System.Collections.Hashtable><br /><br /> (Collection de paires clé/valeur organisées en fonction du code de hachage de la clé).|<xref:System.Collections.Concurrent.ConcurrentDictionary%602><br /><br /> <xref:System.Collections.ObjectModel.ReadOnlyDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableDictionary%602>|  
@@ -69,13 +69,13 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |Collection triée|<xref:System.Collections.Generic.SortedList%602>|<xref:System.Collections.SortedList>|<xref:System.Collections.Immutable.ImmutableSortedDictionary%602><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
 |Ensemble de fonctions mathématiques|<xref:System.Collections.Generic.HashSet%601><br /><br /> <xref:System.Collections.Generic.SortedSet%601>|Aucune recommandation|<xref:System.Collections.Immutable.ImmutableHashSet%601><br /><br /> <xref:System.Collections.Immutable.ImmutableSortedSet%601>|  
   
-<a name="BKMK_RelatedTopics"></a>   
+<a name="BKMK_RelatedTopics"></a>
 ## <a name="related-topics"></a>Rubriques connexes  
   
 |Titre|Description|  
 |-----------|-----------------|  
 |[Sélection d’une classe de collection](../../../docs/standard/collections/selecting-a-collection-class.md)|Décrit les différentes collections et permet d'en sélectionner une pour votre scénario.|  
-|[Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Décrit les types de collection génériques et non génériques fréquemment utilisés, tels que <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
+|[Types de collection couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Décrit les types de collection génériques et non génériques fréquemment utilisés, tels que <xref:System.Array?displayProperty=nameWithType>, <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> et <xref:System.Collections.Generic.Dictionary%602?displayProperty=nameWithType>.|  
 |[Quand utiliser les collections génériques](../../../docs/standard/collections/when-to-use-generic-collections.md)|Traite de l'utilisation des types de collections génériques.|  
 |[Comparaisons et tris dans les collections](../../../docs/standard/collections/comparisons-and-sorts-within-collections.md)|Aborde l'utilisation des comparaisons d'égalité et de tri dans les collections.|  
 |[Types de collections triées](../../../docs/standard/collections/sorted-collection-types.md)|Aborde les caractéristiques et les performances des collections triées.|  
@@ -83,8 +83,8 @@ Des données similaires peuvent souvent être gérées plus efficacement quand e
 |[Collections thread-safe](../../../docs/standard/collections/thread-safe/index.md)|Décrit les types de collections tels que <xref:System.Collections.Concurrent.BlockingCollection%601?displayProperty=nameWithType> et <xref:System.Collections.Concurrent.ConcurrentBag%601?displayProperty=nameWithType> qui prennent en charge l'accès simultané sécurisé et efficace de plusieurs threads.|  
 |System.Collections.Immutable|Présente les collections immuables et fournit des liens vers les types de collection.|  
   
-<a name="BKMK_Reference"></a>   
-## <a name="reference"></a>Reference  
+<a name="BKMK_Reference"></a>
+## <a name="reference"></a>Référence  
  <xref:System.Array?displayProperty=nameWithType>  
  <xref:System.Collections?displayProperty=nameWithType>  
  <xref:System.Collections.Concurrent?displayProperty=nameWithType>  

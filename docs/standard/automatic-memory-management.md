@@ -12,12 +12,12 @@ helpviewer_keywords:
 - managed heap
 - runtime, automatic memory management
 ms.assetid: d4850de5-fa63-4936-a250-5678d118acba
-ms.openlocfilehash: d112bf6d145893bd7b0f99e2b233fc83e72fe227
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 1038f16dca507e58005189c9558a9ec8dae4b34f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73140565"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159700"
 ---
 # <a name="automatic-memory-management"></a>Automatic Memory Management
 La gestion automatique de la mémoire est un des services que le Common Language Runtime fournit au cours de [l'exécution managée](../../docs/standard/managed-execution-process.md). Le Garbage collector du Common Language Runtime gère l’allocation et la libération de mémoire pour une application. Les développeurs n’ont donc plus à écrire du code pour exécuter leurs tâches de gestion de mémoire lors du développement d’applications managées. La gestion automatique de la mémoire permet d'éliminer des problèmes fréquents tels que l'oubli de libération d'un objet ou les fuites de mémoire ou encore les tentatives d'accès à la mémoire à la recherche d'un objet qui a déjà été libéré. Cette section décrit la façon dont le « garbage collector » alloue et libère la mémoire.  
@@ -27,7 +27,7 @@ La gestion automatique de la mémoire est un des services que le Common Language
   
  L'allocation de mémoire à partir du tas managé est plus rapide que l'allocation de mémoire non managée. Étant donné que le runtime alloue de la mémoire pour un objet en ajoutant une valeur à un pointeur, elle est pratiquement aussi rapide que l'allocation de mémoire à partir de la pile. En outre, puisque les nouveaux objets auxquels un espace mémoire est alloué sont stockés à la suite dans le tas managé, une application peut accéder très rapidement aux objets.  
   
-<a name="cpconautomaticmemorymanagementreleasingmemoryanchor1"></a>   
+<a name="cpconautomaticmemorymanagementreleasingmemoryanchor1"></a>
 ## <a name="releasing-memory"></a>Libération de la mémoire  
  Le moteur d'optimisation du « garbage collector » détermine le meilleur moment pour lancer une opération garbage collection sur base des allocations de mémoire effectuées. Lorsque le « garbage collector » effectue une opération garbage collection, il libère la mémoire pour les objets qui ne sont plus utilisées par l'application. Il détermine les objets qui ne sont plus utilisés en examinant les racines de l'application. Chaque application possède un jeu de racines. Chaque racine fait référence à un objet du tas managé ou, à défaut, a la valeur Null. Les racines de l’application comprennent des champs statiques, des variables et des paramètres locaux sur la pile d’un thread et des Registres du processeur. Le Garbage collector a accès à la liste des racines actives entretenues par le [compilateur juste-à-temps (JIT)](../../docs/standard/managed-execution-process.md) et le runtime. En utilisant cette liste, il examine des racines d'application et crée, au cours du processus, un graphique qui contient tous les objets accessibles à partir des racines.  
   
@@ -52,5 +52,5 @@ La gestion automatique de la mémoire est un des services que le Common Language
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.GC>
-- [Nettoyage de la mémoire](../../docs/standard/garbage-collection/index.md)
+- [Garbage collection](../../docs/standard/garbage-collection/index.md)
 - [Processus d'exécution managée](../../docs/standard/managed-execution-process.md)

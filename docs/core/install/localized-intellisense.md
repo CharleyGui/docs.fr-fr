@@ -2,12 +2,12 @@
 title: Installer des fichiers IntelliSense localisés
 description: Découvrez comment configurer votre ordinateur de développement pour utiliser des fichiers IntelliSense localisés pour les projets .NET Core dans Visual Studio.
 ms.date: 01/23/2020
-ms.openlocfilehash: 58b462507edf953a6c28aadbb9e3239a5cbe05b2
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: e45e225e58865ca2b529000ada0984fbeca850f3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76733649"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157711"
 ---
 # <a name="how-to-install-localized-intellisense-files-for-net-core"></a>Comment installer des fichiers IntelliSense localisés pour .NET Core
 
@@ -35,14 +35,14 @@ ms.locfileid: "76733649"
 1. Accédez au dossier IntelliSense .NET Core.
 
    1. Accédez au dossier d’installation de .NET Core. Par défaut, il se trouve sous *%ProgramFiles%\dotnet\packs*.
-   1. Choisissez le kit de développement logiciel (SDK) pour lequel vous souhaitez installer IntelliSense et accédez au chemin d’accès associé. Les options suivantes sont disponibles :
+   1. Choisissez le kit de développement logiciel (SDK) pour lequel vous souhaitez installer IntelliSense et accédez au chemin d’accès associé. Vous disposez des options suivantes :
 
       | Type de kit de développement logiciel (SDK)        | Chemin d'accès                               |
       | --------------- | ---------------------------------- |
       | .NET Core       | *Microsoft. Netcore. app. Ref*        |
       | Bureau Windows | *Microsoft. WindowsDesktop. app. Ref* |
       | .NET Standard   | *Netstandard. Library. Ref*          |
-   
+
    1. Accédez à la version pour laquelle vous souhaitez installer la fonctionnalité IntelliSense localisée. Par exemple, *3.1.0*.
    1. Ouvrez le dossier *ref* .
    1. Ouvrez le dossier moniker. Par exemple, *netcoreapp 3.1*.
@@ -116,9 +116,9 @@ Une fois que vous avez installé les modules linguistiques souhaités, modifiez 
 
 1. Sous le nœud **environnement** , choisissez **paramètres internationaux**.
 
-1. Dans la liste déroulante **langue** , sélectionnez la langue de votre choix. Cliquez sur **OK**. 
+1. Dans la liste déroulante **langue** , sélectionnez la langue de votre choix. Choisissez **OK**.
 
-1. Une boîte de dialogue vous informe que vous devez redémarrer Visual Studio pour que les modifications prennent effet. Cliquez sur **OK**.
+1. Une boîte de dialogue vous informe que vous devez redémarrer Visual Studio pour que les modifications prennent effet. Choisissez **OK**.
 
 1. Redémarrez Visual Studio.
 

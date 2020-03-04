@@ -7,12 +7,12 @@ helpviewer_keywords:
 - await keyword [C#]
 - await [C#]
 ms.assetid: 50725c24-ac76-4ca7-bca1-dd57642ffedb
-ms.openlocfilehash: 6dc058f3850e30d8c424d4372c47b127c7d361b6
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 156c07561406caed6ebb4a354a5cc2b484c832db
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712739"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239506"
 ---
 # <a name="await-operator-c-reference"></a>Opérateur await (informations de référence sur C#)
 
@@ -20,7 +20,7 @@ L’opérateur `await` suspend l’évaluation de la méthode [async](../keyword
 
 Dans l’exemple suivant, la méthode <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A?displayProperty=nameWithType> retourne l’instance `Task<byte[]>`, qui représente une opération asynchrone qui produit un tableau d’octets au moment où elle se termine. Tant que l’opération n’est pas terminée, l’opérateur `await` suspend la méthode `DownloadDocsMainPageAsync`. Quand la méthode `DownloadDocsMainPageAsync` est suspendue, le contrôle est retourné à la méthode `Main`, qui est l’appelant de `DownloadDocsMainPageAsync`. La méthode `Main` s’exécute jusqu’à ce qu’elle ait besoin du résultat de l’opération asynchrone effectuée par la méthode `DownloadDocsMainPageAsync`. Une fois que tous les octets ont été obtenus par <xref:System.Net.Http.HttpClient.GetByteArrayAsync%2A>, le reste de la méthode `DownloadDocsMainPageAsync` est évalué. Après cela, le reste de la méthode `Main` est évalué.
 
-[!code-csharp[await example](~/samples/csharp/language-reference/operators/AwaitOperator.cs)]
+[!code-csharp[await example](~/samples/snippets/csharp/language-reference/operators/AwaitOperator.cs)]
 
 L’exemple précédent utilise la [méthode async `Main`](../../programming-guide/main-and-command-args/index.md), qui est possible à partir C# de 7,1. Pour plus d’informations, consultez la section [Opérateur await dans la méthode Main](#await-operator-in-the-main-method).
 

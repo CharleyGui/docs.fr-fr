@@ -15,12 +15,12 @@ helpviewer_keywords:
 - String.ToUpper method
 - culture parameter
 ms.assetid: 822d551c-c69a-4191-82f4-183d82c9179c
-ms.openlocfilehash: b5289074724e3afd7356599738eeba648f25ca06
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 7b2dee03619e24c5a2845699a06e88abab0c594b
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120845"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160129"
 ---
 # <a name="performing-culture-insensitive-case-changes"></a>Exécution de changements de casse indépendants de la culture
 Les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType>, <xref:System.String.ToLower%2A?displayProperty=nameWithType>, <xref:System.Char.ToUpper%2A?displayProperty=nameWithType> et <xref:System.Char.ToLower%2A?displayProperty=nameWithType> fournissent des surcharges qui n’acceptent pas de paramètres. Par défaut, ces surcharges sans paramètres effectuent des changements de casse basés sur la valeur de la <xref:System.Globalization.CultureInfo.CurrentCulture%2A?displayProperty=nameWithType>. Cela produit des résultats de la casse qui peuvent varier selon la culture. Pour indiquer clairement si vous souhaitez que les changements de casse soient ou non dépendants de la culture, vous devez utiliser les surcharges de ces méthodes qui vous demandent de spécifier explicitement un paramètre `culture`. Pour les changements de casse dépendants de la culture, spécifiez `CultureInfo.CurrentCulture` pour le paramètre `culture`. Pour les changements de casse indépendants de la culture, spécifiez `CultureInfo.InvariantCulture` pour le paramètre `culture`.  
@@ -41,7 +41,7 @@ End Function
 ```  
   
 ```csharp  
-static object LookupKey(string key)   
+static object LookupKey(string key)
 {  
     return internalHashtable[key.ToLower()];  
 }  
@@ -56,7 +56,7 @@ End Function
 ```  
   
 ```csharp  
-static object LookupKey(string key)   
+static object LookupKey(string key)
 {  
     return internalHashtable[key.ToLower(CultureInfo.InvariantCulture)];  
 }  

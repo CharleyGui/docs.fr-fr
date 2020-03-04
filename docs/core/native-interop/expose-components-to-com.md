@@ -8,22 +8,22 @@ helpviewer_keywords:
 ms.assetid: 21271167-fe7f-46ba-a81f-a6812ea649d4
 author: jkoritzinsky
 ms.author: jekoritz
-ms.openlocfilehash: 8d9b8eb274777a0ed019a207c6e8610cc73ec390
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: f6665e18e51af96761941e419fabc409e4b9391d
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73973309"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240972"
 ---
 # <a name="exposing-net-core-components-to-com"></a>Exposition de composants .NET Core à COM
 
-Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été considérablement simplifié par rapport au .NET Framework. Le processus suivant vous guide tout au long de l’exposition d’une classe à COM. Ce didacticiel vous montre comment effectuer les opérations suivantes :
+Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été considérablement simplifié par rapport au .NET Framework. Le processus suivant vous guide tout au long de l’exposition d’une classe à COM. Ce didacticiel vous explique les procédures suivantes :
 
 - Exposer une classe à COM à partir de .NET Core.
 - Générer un serveur COM dans le cadre de la génération de votre bibliothèque .NET Core.
 - Générer automatiquement un manifeste de serveur côte à côte pour COM sans registre.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 - Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
@@ -32,21 +32,35 @@ Dans .NET Core, le processus d’exposition de vos objets .NET à COM a été co
 La première étape consiste à créer la bibliothèque.
 
 1. Créez un nouveau dossier et, dans ce dossier, exécutez la commande suivante :
-    
+
     ```dotnetcli
     dotnet new classlib
     ```
 
 2. Ouvrez `Class1.cs`.
 3. Ajoutez `using System.Runtime.InteropServices;` en haut du fichier.
-4. Créez une interface nommée `IServer`. Exemple :
+4. Créez une interface nommée `IServer`. Par exemple :
 
-   [!code-csharp[The IServer interface](~/samples/core/extensions/COMServerDemo/COMContract/IServer.cs)]
+   ```csharp
+   using System;
+   using System.Runtime.InteropServices;
 
-5. Ajoutez l’attribut `[Guid("<IID>")]` à l’interface, avec le GUID d’interface pour l’interface COM que vous implémentez. Par exemple, `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Notez que ce GUID doit être unique, car il s’agit du seul identificateur de cette interface pour COM. Dans Visual Studio, vous pouvez générer un GUID en accédant à Outils > Créer un GUID pour ouvrir l’outil Créer un GUID.
+   [ComVisible(true)]
+   [Guid(ContractGuids.ServerInterface)]
+   [InterfaceType(ComInterfaceType.InterfaceIsIUnknown)]
+   public interface IServer
+   {
+       /// <summary>
+       /// Compute the value of the constant Pi.
+       /// </summary>
+       double ComputePi();
+   }
+   ```
+
+5. Ajoutez l’attribut `[Guid("<IID>")]` à l’interface, avec le GUID d’interface pour l’interface COM que vous implémentez. Par exemple : `[Guid("fe103d6e-e71b-414c-80bf-982f18f6c1c7")]`. Notez que ce GUID doit être unique, car il s’agit du seul identificateur de cette interface pour COM. Dans Visual Studio, vous pouvez générer un GUID en accédant à Outils > Créer un GUID pour ouvrir l’outil Créer un GUID.
 6. Ajoutez l’attribut `[InterfaceType]` à l’interface et spécifiez les interfaces COM de base que votre interface doit implémenter.
 7. Créez une classe nommée `Server` qui implémente `IServer`.
-8. Ajoutez l’attribut `[Guid("<CLSID>")]` à la classe, avec le GUID de l’identificateur de classe pour la classe COM que vous implémentez. Par exemple, `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Comme avec le GUID d’interface, ce GUID doit être unique, car il est le seul identificateur de cette interface pour COM.
+8. Ajoutez l’attribut `[Guid("<CLSID>")]` à la classe, avec le GUID de l’identificateur de classe pour la classe COM que vous implémentez. Par exemple : `[Guid("9f35b6f5-2c05-4e7f-93aa-ee087f6e7ab6")]`. Comme avec le GUID d’interface, ce GUID doit être unique, car il est le seul identificateur de cette interface pour COM.
 9. Ajoutez l’attribut `[ComVisible(true)]` à la fois à l’interface et à la classe.
 
 > [!IMPORTANT]
@@ -55,7 +69,7 @@ La première étape consiste à créer la bibliothèque.
 ## <a name="generate-the-com-host"></a>Générer l’hôte COM
 
 1. Ouvrez le fichier projet `.csproj` et ajoutez `<EnableComHosting>true</EnableComHosting>` à l’intérieur d’une balise `<PropertyGroup></PropertyGroup>`.
-2. Générez le projet.
+2. créer le projet ;
 
 La sortie résultante a un fichier `ProjectName.dll`, `ProjectName.deps.json`, `ProjectName.runtimeconfig.json` et `ProjectName.comhost.dll`.
 
@@ -66,7 +80,7 @@ Ouvrez une invite de commandes avec élévation de privilèges et exécutez `reg
 ## <a name="enabling-regfree-com"></a>Activation de COM sans registre
 
 1. Ouvrez le fichier projet `.csproj` et ajoutez `<EnableRegFreeCom>true</EnableRegFreeCom>` à l’intérieur d’une balise `<PropertyGroup></PropertyGroup>`.
-2. Générez le projet.
+2. créer le projet ;
 
 La sortie résultante a un fichier `ProjectName.X.manifest`. Ce fichier est le manifeste côte à côte à utiliser avec COM sans registre.
 

@@ -7,12 +7,12 @@ f1_keywords:
 helpviewer_keywords:
 - is keyword [C#]
 ms.assetid: bc62316a-d41f-4f90-8300-c6f4f0556e43
-ms.openlocfilehash: 1a1f539e80f8d843f40640fa798cf6122f316a9f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: a72f3b87e7558c594ef8a94bd0eadcc4664206b9
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75715241"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239649"
 ---
 # <a name="is-c-reference"></a>is (référence C#)
 
@@ -36,7 +36,7 @@ Lorsque vous utilisez le modèle de type pour rechercher des critères spéciaux
    expr is type varname
 ```
 
-où *expr* est une expression qui correspond à une instance d’un type, où *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et où *varname* est l’objet dans lequel le résultat de *expr* est converti si le test `is` a la valeur `true`. 
+Où *expr* est une expression qui prend la valeur d’une instance d’un certain type, *type* est le nom du type dans lequel le résultat de *expr* doit être converti, et *varname* est l’objet vers lequel le résultat de *expr* est converti si le test `is` est `true`. 
 
 L’expression `is` est `true` si *expr* n’est pas `null` et que l’une des conditions suivantes est remplie :
 
@@ -70,7 +70,7 @@ Le code équivalent sans critères spéciaux nécessite une attribution distinct
 
 ### <a name="constant-pattern"></a>Modèle de constante
 
-Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée. Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md). À compter de C# 7.0, il est également pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
+Lorsque vous utilisez des critères spéciaux avec le modèle de constante, `is` teste si une expression est égale à une constante spécifiée. Avec C# 6 et les versions antérieures, le modèle de constante est pris en charge par l’instruction [switch](switch.md). À compter de C# 7.0, il est également pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
 
 ```csharp
    expr is constant
@@ -94,7 +94,7 @@ L’exemple suivant combine le modèle de type et le modèle de constante pour t
 
 [!code-csharp[is#7](../../../../samples/snippets/csharp/language-reference/keywords/is/is-const-pattern7.cs#7)]
 
-La vérification de `null` peut être effectuée à l’aide du modèle de constante. Le mot clé `null` est pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
+La vérification de `null` peut être effectuée à l’aide du modèle de constante. Le mot clé `null` est pris en charge par l’instruction `is`. Sa syntaxe est la suivante :
 
 ```csharp
    expr is null
@@ -106,15 +106,21 @@ L’exemple suivant illustre une comparaison des vérifications de `null` :
 
 ### <a name="var-pattern"></a>Modèle de variable
 
-Le modèle `var` est de type « catch-all », c’est-à-dire qu’il peut prendre tous les types et valeurs. La valeur de *expr* est toujours affectée à une variable locale de même type que le type de *expr* au moment de la compilation. Le résultat de l’expression `is` est toujours `true`. Sa syntaxe est la suivante :
+Une correspondance de modèle avec le modèle de `var` est toujours réussie. Sa syntaxe est la suivante :
 
 ```csharp
    expr is var varname
 ```
 
-L’exemple suivant utilise le modèle de variable pour assigner une expression à une variable nommée `obj`. Il affiche ensuite la valeur et le type de `obj`.
+Où la valeur de *expr* est toujours assignée à une variable locale nommée *varname*. *varname* est une variable du même type que le type au moment de la compilation de *expr*. 
+
+Si *expr* prend la valeur `null`, l’expression `is` produit `true` et assigne `null` à *varname*. Le modèle var est l’une des quelques utilisations de `is` qui produit `true` pour une valeur `null`.
+
+Vous pouvez utiliser le modèle de `var` pour créer une variable temporaire dans une expression booléenne, comme le montre l’exemple suivant :
 
 [!code-csharp[is#8](../../../../samples/snippets/csharp/language-reference/keywords/is/is-var-pattern8.cs#8)]
+
+Dans l’exemple précédent, la variable temporaire est utilisée pour stocker le résultat d’une opération coûteuse. La variable peut ensuite être utilisée plusieurs fois.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
   

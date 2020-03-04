@@ -3,12 +3,12 @@ title: Modèles courants pour les délégués
 description: Découvrez les modèles courants pour l’utilisation de délégués dans votre code afin d’éviter un couplage important entre vos composants.
 ms.date: 06/20/2016
 ms.assetid: 0ff8fdfd-6a11-4327-b061-0f2526f35b43
-ms.openlocfilehash: 174ae4129464c9d2e787048793cec764121ca4aa
-ms.sourcegitcommit: 944ddc52b7f2632f30c668815f92b378efd38eea
+ms.openlocfilehash: 40e6ced7337e32d6e9b67b12a15ad7e03a77c4b6
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/03/2019
-ms.locfileid: "73454080"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239870"
 ---
 # <a name="common-patterns-for-delegates"></a>Modèles courants pour les délégués
 
@@ -54,15 +54,15 @@ Dans cette conception, le composant de journal principal peut être une classe n
 
 Commençons par quelque chose de simple : l’implémentation initiale acceptera les nouveaux messages et les écrira à l’aide de n’importe quel délégué attaché. Vous pouvez démarrer avec un délégué qui écrit des messages dans la console.
 
-[!code-csharp[LoggerImplementation](../../samples/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
+[!code-csharp[LoggerImplementation](../../samples/snippets/csharp/delegates-and-events/Logger.cs#FirstImplementation "A first Logger implementation.")]
 
 La classe statique ci-dessus est la chose la plus simple qui peut fonctionner. Nous devons écrire l’implémentation unique pour la méthode qui écrit des messages dans la console : 
 
-[!code-csharp[LogToConsole](../../samples/csharp/delegates-and-events/LoggingMethods.cs#LogToConsole "A Console logger.")]
+[!code-csharp[LogToConsole](../../samples/snippets/csharp/delegates-and-events/LoggingMethods.cs#LogToConsole "A Console logger.")]
 
 Pour finir, nous devons raccorder le délégué en l’attachant au délégué WriteMessage déclaré dans l’enregistreur d’événements :
 
-[!code-csharp[ConnectDelegate](../../samples/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
+[!code-csharp[ConnectDelegate](../../samples/snippets/csharp/delegates-and-events/Program.cs#ConnectDelegate "Connect to the delegate")]
 
 ## <a name="practices"></a>Méthodes
 
@@ -72,18 +72,18 @@ L’utilisation des types délégués définis dans le Core Framework permet aux
 
 Les interfaces utilisées sont le plus minimal et flexible possible : pour créer un enregistreur d’événements de sortie, vous devez créer une méthode. Il peut s’agir d’une méthode statique ou d’une méthode d’instance. Elle peut avoir n’importe quel accès.
 
-## <a name="formatting-output"></a>Mise en forme de sortie
+## <a name="formatting-output"></a>Mise en forme de la sortie
 
 Nous allons maintenant rendre cette première version un peu plus robuste et commencer à créer d’autres mécanismes de journalisation.
 
 Ensuite, nous ajouterons quelques arguments à la méthode `LogMessage()` pour que notre classe de journal crée des messages plus structurés :
 
-[!code-csharp[Severity](../../samples/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
-[!code-csharp[NextLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
+[!code-csharp[Severity](../../samples/snippets/csharp/delegates-and-events/Logger.cs#Severity "Define severities")]
+[!code-csharp[NextLogger](../../samples/snippets/csharp/delegates-and-events/Logger.cs#LoggerTwo "Refine the Logger")]
 
 Maintenant, utilisons cet argument `Severity` pour filtrer les messages envoyés à la sortie du journal. 
 
-[!code-csharp[FinalLogger](../../samples/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
+[!code-csharp[FinalLogger](../../samples/snippets/csharp/delegates-and-events/Logger.cs#LoggerFinal "Finish the Logger")]
 
 ## <a name="practices"></a>Méthodes
 
@@ -97,11 +97,11 @@ Le composant journal commence à prendre forme. Ajoutons un autre moteur de sort
 
 Voici cet enregistreur d’événements basé sur fichier :
 
-[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
+[!code-csharp[FileLogger](../../samples/snippets/csharp/delegates-and-events/FileLogger.cs#FileLogger "Log to files")]
 
 Une fois que nous avons créé cette classe, nous pouvons l’instancier, et elle attache sa méthode LogMessage au composant enregistreur d’événements :
 
-[!code-csharp[FileLogger](../../samples/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
+[!code-csharp[FileLogger](../../samples/snippets/csharp/delegates-and-events/Program.cs#FileLogger "Log to files")]
 
 Ces deux méthodes ne s’excluent pas mutuellement. Nous pourrions attacher les deux méthodes de journalisation et générer des messages dans la console et dans un fichier :
 
@@ -153,4 +153,4 @@ Nous venons de voir le début d’un composant de journal qui peut être étendu
 
 La classe Logger peut apporter des améliorations ou des modifications sans introduire de modifications avec rupture. Comme toute classe, vous ne pouvez pas modifier l’API publique sans risque de modifications avec rupture. Toutefois, le couplage entre l’enregistreur d’événements et les moteurs de sortie étant uniquement par l’intermédiaire du délégué, aucun autre type (tel que les interfaces ou classes de base) n’est appelé. Le couplage est aussi réduit que possible.
 
-[Suivant](events-overview.md)
+[Next](events-overview.md)

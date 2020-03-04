@@ -14,12 +14,12 @@ helpviewer_keywords:
 - events [.NET Core]
 - events [.NET Framework]
 ms.assetid: b6f65241-e0ad-4590-a99f-200ce741bb1f
-ms.openlocfilehash: a53a8123db64948503bd6d2da9a27fc414dc1e1f
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.openlocfilehash: b8ed028bc1edabf14d7b2dd67d94b28d574d2eb4
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
-ms.locfileid: "73423526"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159622"
 ---
 # <a name="handling-and-raising-events"></a>Gestion et déclenchement d'événements
 
@@ -27,7 +27,7 @@ Les événements dans .NET Framework sont basés sur le modèle délégué. Le m
   
  Pour plus d’informations sur la gestion des événements dans les applications Windows 8.x Store, consultez [Vue d’ensemble des événements et des événements routés](https://docs.microsoft.com/previous-versions/windows/apps/hh758286(v=win.10)).  
   
-## <a name="events"></a>événements
+## <a name="events"></a>Événements
 
 Un événement est un message envoyé par un objet pour signaler la présence d’une action. L'action peut être provoquée par l'intervention de l'utilisateur, telle qu'un clic de bouton, ou être déclenchée par une autre logique de programme, comme la modification d’une valeur de propriété. L’objet qui déclenche l’événement est appelé *l’émetteur d’événements*. L'émetteur d'événements ne connaît pas l'objet, ni la méthode qui recevront (géreront) les événements qu'il déclenche. L'événement est généralement un membre de l'émetteur d'événements ; par exemple, l'événement <xref:System.Web.UI.WebControls.Button.Click> est membre de la classe <xref:System.Web.UI.WebControls.Button>, et l'événement <xref:System.ComponentModel.INotifyPropertyChanged.PropertyChanged> est membre de la classe qui implémente l'interface <xref:System.ComponentModel.INotifyPropertyChanged>.  
   
@@ -55,7 +55,7 @@ Pour les scénarios dans lesquels les délégués <xref:System.EventHandler> et 
 [!code-csharp[EventsOverview#4](~/samples/snippets/csharp/VS_Snippets_CLR/eventsoverview/cs/programtruncated.cs#4)]
 [!code-vb[EventsOverview#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#4)]  
   
-## <a name="event-data"></a>Données d'événement
+## <a name="event-data"></a>Données d’événement
 
 Les données associées à un événement peuvent être obtenues via une classe de données d'événement. .NET fournit plusieurs classes de données d'événement que vous pouvez utiliser dans vos applications. Par exemple, la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> est la classe de données d'événement pour l'événement <xref:System.IO.Ports.SerialPort.DataReceived?displayProperty=nameWithType>. .NET suit un modèle d'affectation de nom qui veut que toutes les classes de données d'évènement se terminent par `EventArgs`. Pour savoir quelle classe de données d'événement est associée à un événement, il suffit d'examiner le délégué de l'événement. Par exemple, le délégué <xref:System.IO.Ports.SerialDataReceivedEventHandler> inclut la classe <xref:System.IO.Ports.SerialDataReceivedEventArgs> comme paramètre.  
   
@@ -78,7 +78,7 @@ L'exemple suivant présente une méthode de gestionnaire d'événements nommée 
 [!code-vb[EventsOverview#2](~/samples/snippets/visualbasic/VS_Snippets_CLR/eventsoverview/vb/module1truncated.vb#2)]  
   
 ## <a name="static-and-dynamic-event-handlers"></a>Gestionnaires d’événements statiques et dynamiques  
- 
+
 .NET permet aux abonnés de s’inscrire pour les notifications d’événements statiques ou dynamiques. Les gestionnaires d’événements statiques sont en vigueur pendant toute la durée de vie de la classe dont ils gèrent les événements. Les gestionnaires d’événements dynamiques sont explicitement activés et désactivés pendant l’exécution du programme, généralement en réponse à une logique de programme conditionnelle. Par exemple, ils peuvent être utilisés si les notifications d’événements sont nécessaires uniquement dans certaines conditions ou si une application fournit plusieurs gestionnaires d’événements et les conditions d’exécution définissent le gestionnaire approprié à utiliser. L'exemple de la section précédente indique comment ajouter dynamiquement un gestionnaire d'événements. Pour plus d’informations, consultez [Événements](../../visual-basic/programming-guide/language-features/events/index.md) (en Visual Basic) et [Événements](../../csharp/programming-guide/events/index.md) (en C#).  
   
 ## <a name="raising-multiple-events"></a>Déclenchement de plusieurs événements  

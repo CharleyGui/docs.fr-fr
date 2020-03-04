@@ -3,18 +3,18 @@ title: Porter des bibliothèques vers .NET Core
 description: Découvrez comment porter des projets de bibliothèque de .NET Framework vers .NET Core.
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 646587120de2e51280c2af4de36bf3a6b0f60c2d
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 68fe36e543d949dc76bdb0c19ef3482936ad9e79
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920607"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157529"
 ---
 # <a name="port-net-framework-libraries-to-net-core"></a>Porter des bibliothèques .NET Framework vers .NET Core
 
 Découvrez comment porter .NET Framework code de bibliothèque vers .NET Core, où il s’exécute sur plusieurs plateformes et étend la portée des applications qui l’utilisent.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Cet article suppose que vous :
 
@@ -33,7 +33,7 @@ Cet article explique comment .NET Core définit et utilise les packages et comme
 [Développer des bibliothèques avec des outils multiplateformes](../tutorials/libraries.md)\
 Cet article explique comment écrire des bibliothèques à l’aide de l’CLI .NET Core.
 
-[Ajouts au format *csproj* pour .NET Core](../tools/csproj.md)\
+[Ajouts au format* csproj* pour .NET Core](../tools/csproj.md)\
 Cet article décrit les modifications qui ont été apportées au fichier projet dans le cadre du passage à *csproj* et à MSBuild.
 
 [Porter du code vers .NET Core - Analyser les dépendances tierces](third-party-deps.md)\
@@ -91,13 +91,13 @@ Cette approche est peut-être la meilleure pour les projets complexes et de gran
    - Faut-il refactoriser le code ?
    - Pour les types qui ne sont pas portables, existe-t-il des API alternatives qui accomplissent la même tâche ? Par exemple, si vous utilisez la classe <xref:System.Net.WebClient>, vous pouvez utiliser la classe <xref:System.Net.Http.HttpClient> à la place.
    - Existe-t-il d’autres API portables permettant d’accomplir une tâche, même s’il ne s’agit pas d’un remplacement immédiat ? Par exemple, si vous utilisez <xref:System.Xml.Schema.XmlSchema> pour analyser le code XML, mais que vous n’avez pas besoin de la découverte du schéma XML, vous pouvez utiliser des API <xref:System.Xml.Linq> et implémenter vous-même l’analyse au lieu de vous appuyer sur une API.
-1. Si vous avez des assemblys difficiles à porter, est-il intéressant de les laisser sur le .NET Framework pour l’instant ? Voici quelques éléments à prendre en compte :
+1. Si vous avez des assemblys difficiles à porter, est-il intéressant de les laisser sur le .NET Framework pour l’instant ? Voici quelques possibilités d’opérations à prendre en considération :
    - Certaines des fonctionnalités de votre bibliothèque pourraient ne pas être compatibles avec .NET Core, car elles dépendent trop des fonctionnalités propres à .NET Framework ou à Windows. Est-il intéressant de laisser cette fonctionnalité derrière pour l’instant et de publier une version .NET Core temporaire de votre bibliothèque avec moins de fonctionnalités tant que des ressources ne sont pas disponibles pour le portage des fonctionnalités ?
    - Une refactorisation serait-elle utile ?
 1. Est-il raisonnable d’écrire votre propre implémentation d’une API .NET Framework non disponible ?
    Vous pouvez envisager de copier, de modifier et d’utiliser du code à partir de la [source de référence .NET Framework](https://github.com/Microsoft/referencesource). Le code source de référence est sous [licence du MIT](https://github.com/Microsoft/referencesource/blob/master/LICENSE.txt), ce qui vous laisse la liberté d’utiliser la source comme base pour votre propre code. Veillez simplement à mentionner correctement ce qui est propriété de Microsoft dans votre code.
 1. Répétez ce processus si nécessaire pour les différents projets.
- 
+
 La phase d’analyse peut prendre un certain temps, selon la taille de votre code base. Passer du temps sur cette phase pour déterminer précisément l’étendue des modifications nécessaires et pour développer un plan fait en général gagner du temps à long terme, en particulier en cas de code base complexe.
 
 Votre plan peut impliquer des modifications importantes de votre code base tout en continuant à cibler .NET Framework 4.7.2, ce qui en fait une version plus structurée de l’approche précédente. La mise en œuvre du plan dépend du code base.
@@ -111,10 +111,10 @@ Il est probable que vous allez combiner les approches ci-dessus de façon diffé
 La meilleure façon de vérifier que tout fonctionne quand vous avez porté votre code est de tester votre code quand vous l’avez porté sur .NET Core. Pour cela, vous devez utiliser une infrastructure de test qui génère et exécute des tests pour .NET Core. Vous avez actuellement trois options :
 
 - [xUnit](https://xunit.github.io/)
-  - [Bien démarrer](https://xunit.github.io/docs/getting-started-dotnet-core.html)
+  - [Prise en main](https://xunit.github.io/docs/getting-started-dotnet-core.html)
   - [Outil pour convertir un projet MSTest en xUnit](https://github.com/dotnet/codeformatter/tree/master/src/XUnitConverter)
 - [NUnit](https://nunit.org/)
-  - [Bien démarrer](https://github.com/nunit/docs/wiki/Installation)
+  - [Prise en main](https://github.com/nunit/docs/wiki/Installation)
   - [Billet de blog sur la migration de MSTest vers NUnit](https://www.florian-rappl.de/News/Page/275/convert-mstest-to-nunit)
 - [MSTest](/visualstudio/test/unit-test-basics)
 

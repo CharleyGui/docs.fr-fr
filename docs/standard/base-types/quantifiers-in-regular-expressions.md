@@ -14,12 +14,12 @@ helpviewer_keywords:
 - quantifiers
 - lazy quantifiers
 ms.assetid: 36b81212-6511-49ed-a8f1-ff080415312f
-ms.openlocfilehash: a7a870ac32385bf5015f1a95c0246fed6a5c9c05
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: f1627248cbed0f03c6fb76ce660f9b2bf7764781
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73084235"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160012"
 ---
 # <a name="quantifiers-in-regular-expressions"></a>quantificateurs dans les expressions régulières
 Les quantificateurs spécifient le nombre d’instances d’un caractère, groupe ou classe de caractères devant être présentes dans l’entrée pour qu’une correspondance soit trouvée.  Le tableau suivant répertorie les quantificateurs pris en charge par .NET.  
@@ -54,7 +54,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`91*`|Mettre en correspondance un « 9 » suivi de zéro, ou plus, caractère « 1 ».|  
@@ -71,7 +71,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`an+`|Mettre en correspondance un « a » suivi d’un ou plusieurs caractères « n ».|  
@@ -88,7 +88,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`an?`|Mettre en correspondance un « a » suivi de zéro ou un caractère « n ».|  
@@ -104,7 +104,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`\d+`|Mettre en correspondance un ou plusieurs chiffres décimaux.|  
@@ -122,7 +122,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`\d{2,}`|Mettre en correspondance au moins deux chiffres décimaux.|  
@@ -147,7 +147,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`\w*?`|Correspond à zéro, un ou plusieurs caractères alphabétiques, mais le moins de caractères possible.|  
@@ -173,7 +173,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Mettre en correspondance le début du flux d’entrée.|  
 |`\s*`|Correspond à zéro, un ou plusieurs espaces blancs.|  
@@ -192,7 +192,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`(\w{3,}?\.)`|Mettre en correspondance au moins 3 caractères alphabétiques, mais le moins de caractères possible, suivis d’un point ou d’un point final. Il s'agit du premier groupe de capture.|  
@@ -214,7 +214,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Le modèle d’expression régulière est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`[A-Z]`|Mettre en correspondance une majuscule de A à Z.|  
@@ -222,7 +222,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
 |`{1,10}`|Mettre en correspondance le modèle précédent entre 1 et 10 fois.|  
 |`[.!?]`|Mettre en correspondance un signe de ponctuation « . », « ! » ou « ? ».|  
   
-<a name="Greedy"></a>   
+<a name="Greedy"></a>
 ## <a name="greedy-and-lazy-quantifiers"></a>Quantificateurs gourmands et paresseux  
  De nombreux quantificateurs existent en deux versions :  
   
@@ -258,7 +258,7 @@ Les quantificateurs spécifient le nombre d’instances d’un caractère, group
   
  Pour voir la différence pratique entre un groupe de capture qui définit un nombre minimal et un nombre maximal de captures et un groupe de capture qui définit un nombre fixe de captures, examinez les modèles d’expressions régulières `(a\1|(?(1)\1)){0,2}` et `(a\1|(?(1)\1)){2}`. Les deux expressions régulières se composent d’un seul groupe de capture, qui est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`(a\1`|Mettre en correspondance « a » avec la valeur du premier groupe capturé …|  
 |<code>&#124;(?(1)</code>|… ou tester si le premier groupe capturé a été défini. (Notez que la construction `(?(1)` ne définit pas un groupe de capture.)|  

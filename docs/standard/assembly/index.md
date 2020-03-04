@@ -12,16 +12,16 @@ helpviewer_keywords:
 - assemblies [.NET Framework]
 - version boundaries
 - type boundaries
-ms.openlocfilehash: 968eaf2befb44eb893699d1114b315a4f5df3097
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: f85fef37ac952c91ac73570f26d80d8a46f4eedf
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921367"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156503"
 ---
 # <a name="assemblies-in-net"></a>Assemblys dans .NET
 
-Les assemblys constituent les unités fondamentales de déploiement, de contrôle de version, de réutilisation, de portée d’activation et d’autorisations de sécurité pour. Applications basées sur le réseau. Un assembly est une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Les assemblys prennent la forme de fichiers exécutables ( *. exe*) ou de bibliothèques de liens dynamiques ( *. dll*), et sont les blocs de construction des applications .net. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type.
+Les assemblys constituent les unités fondamentales de déploiement, de contrôle de version, de réutilisation, de portée d’activation et d’autorisations de sécurité pour. Applications basées sur le réseau. Un assembly est une collection de types et de ressources conçus pour opérer ensemble et former une unité logique de fonctionnalité. Les assemblys prennent la forme de fichiers exécutables (*. exe*) ou de bibliothèques de liens dynamiques (*. dll*), et sont les blocs de construction des applications .net. Ils fournissent au Common Language Runtime les informations dont il a besoin pour connaître les implémentations de type.
 
 Dans .NET Core et .NET Framework, vous pouvez créer un assembly à partir d’un ou de plusieurs fichiers de code source. Dans .NET Framework, les assemblys peuvent contenir un ou plusieurs modules. Cela permet de planifier des projets plus volumineux de manière à ce que plusieurs développeurs puissent travailler sur des modules ou des fichiers de code source distincts, qui sont combinés pour créer un assembly unique. Pour plus d’informations sur les modules, consultez [Comment : générer un assembly multifichier](../../framework/app-domains/build-multifile-assembly.md).
 
@@ -85,7 +85,7 @@ Chaque assembly possède un fichier manifeste de l' *assembly* . À l’instar d
 Pour utiliser un assembly dans une application, vous devez lui ajouter une référence. Une fois qu’un assembly est référencé, tous les types, propriétés, méthodes et autres membres accessibles de ses espaces de noms sont disponibles pour votre application comme si leur code faisaient partie de votre fichier source.
 
 > [!NOTE]
-> La plupart des assemblys à partir de la bibliothèque de classes .NET sont référencés automatiquement. Si un assembly système n’est pas automatiquement référencé, pour .NET Core, vous pouvez ajouter une référence au package NuGet qui contient l’assembly. Utilisez le gestionnaire de package NuGet dans Visual Studio ou ajoutez un élément [\<PackageReference >](../../core/tools/dependencies.md#the-new-packagereference-element) pour l’assembly au projet *. csproj* ou *. vbproj* . Dans .NET Framework, vous pouvez ajouter une référence à l’assembly à l’aide de la boîte de dialogue **Ajouter une référence** dans Visual Studio, ou en utilisant l' [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) option de ligne de commande `-reference` pour les compilateurs ou [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
+> La plupart des assemblys à partir de la bibliothèque de classes .NET sont référencés automatiquement. Si un assembly système n’est pas automatiquement référencé, pour .NET Core, vous pouvez ajouter une référence au package NuGet qui contient l’assembly. Utilisez le gestionnaire de package NuGet dans Visual Studio ou ajoutez un élément [\<PackageReference >](../../core/tools/dependencies.md#the-packagereference-element) pour l’assembly au projet *. csproj* ou *. vbproj* . Dans .NET Framework, vous pouvez ajouter une référence à l’assembly à l’aide de la boîte de dialogue **Ajouter une référence** dans Visual Studio, ou en utilisant l' [C#](../../csharp/language-reference/compiler-options/reference-compiler-option.md) option de ligne de commande `-reference` pour les compilateurs ou [Visual Basic](../../visual-basic/reference/command-line-compiler/reference.md) .
 
 Dans C#, vous pouvez utiliser deux versions du même assembly dans une même application. Pour plus d’informations, consultez [extern alias](../../csharp/language-reference/keywords/extern-alias.md).
 
@@ -104,7 +104,7 @@ Dans C#, vous pouvez utiliser deux versions du même assembly dans une même app
 |[Émettre des méthodes et des assemblys dynamiques](../../../docs/framework/reflection-and-codedom/emitting-dynamic-methods-and-assemblies.md)|Comment créer des assemblys dynamiques.|
 |[Méthode de localisation des assemblys par le runtime](../../../docs/framework/deployment/how-the-runtime-locates-assemblies.md)|Comment le .NET Framework résout les références d’assembly au moment de l’exécution.|
 
-## <a name="reference"></a>Reference
+## <a name="reference"></a>Référence
 
 <xref:System.Reflection.Assembly?displayProperty=nameWithType>
 

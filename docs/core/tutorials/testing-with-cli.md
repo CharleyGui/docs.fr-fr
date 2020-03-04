@@ -3,12 +3,12 @@ title: Organisation et test de projets avec la CLI .NET Core
 description: Ce didacticiel explique comment organiser et tester des projets .NET Core à partir de la ligne de commande.
 author: cartermp
 ms.date: 09/10/2018
-ms.openlocfilehash: 11d13ad1d74c69cdfe0626bda8823dd0609da85f
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 0d61e0fc004cfcb6d78c49475c7b7f0f523aad2c
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76920418"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239909"
 ---
 # <a name="organizing-and-testing-projects-with-the-net-core-cli"></a>Organisation et test de projets avec la CLI .NET Core
 
@@ -65,23 +65,23 @@ Créez la structure de dossiers suivante avec le contenu de fichier indiqué :
 
 *IPet.cs* :
 
-[!code-csharp[IPet interface](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/IPet.cs)]
+[!code-csharp[IPet interface](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/IPet.cs)]
 
 *Dog.cs* :
 
-[!code-csharp[Dog class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Dog.cs)]
+[!code-csharp[Dog class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/Dog.cs)]
 
 *Cat.cs* :
 
-[!code-csharp[Cat class](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Pets/Cat.cs)]
+[!code-csharp[Cat class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Pets/Cat.cs)]
 
 *Program.cs* :
 
-[!code-csharp[Main](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/Program.cs)]
+[!code-csharp[Main](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/Program.cs)]
 
 *NewTypes.csproj* :
 
-[!code-xml[NewTypes csproj](../../../samples/core/console-apps/NewTypesMsBuild/src/NewTypes/NewTypes.csproj)]
+[!code-xml[NewTypes csproj](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/src/NewTypes/NewTypes.csproj)]
 
 Exécutez la commande suivante :
 
@@ -120,7 +120,7 @@ Vous pouvez également ajouter manuellement la référence de projet en ajoutant
 
 *NewTypesTests.csproj* :
 
-[!code-xml[NewTypesTests csproj](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/NewTypesTests.csproj)]
+[!code-xml[NewTypesTests csproj](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/test/NewTypesTests/NewTypesTests.csproj)]
 
 Le fichier *NewTypesTests.csproj* contient les éléments suivants :
 
@@ -217,7 +217,7 @@ Test execution time: 1.7000 Seconds
 
 Remplacez les assertions de vos tests `Assert.NotEqual` par `Assert.Equal` :
 
-[!code-csharp[PetTests class](../../../samples/core/console-apps/NewTypesMsBuild/test/NewTypesTests/PetTests.cs)]
+[!code-csharp[PetTests class](../../../samples/snippets/core/tutorials/testing-with-cli/csharp/test/NewTypesTests/PetTests.cs)]
 
 Réexécutez les tests avec la commande `dotnet test` et observez la sortie suivante :
 

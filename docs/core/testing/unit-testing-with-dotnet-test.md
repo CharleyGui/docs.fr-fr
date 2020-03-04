@@ -4,12 +4,12 @@ description: Apprenez les concepts des tests unitaires dans C# et .NET Core de m
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: 226db54047747fbd065c64f5e4812094921c7f62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: c9e3d63a2cf4f560591459833340b729ffec1b95
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75714234"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240894"
 ---
 # <a name="unit-testing-c-in-net-core-using-dotnet-test-and-xunit"></a>Effectuer des tests unitaires de C# dans .NET Core à l’aide de dotnet test et de xUnit
 
@@ -33,7 +33,7 @@ Dans cette section, une solution qui contient les projets source et de test est 
 Les instructions suivantes fournissent les étapes permettant de créer la solution de test. Consultez [commandes pour créer une solution de test](#create-test-cmd) pour obtenir des instructions sur la création d’une solution de test en une seule étape.
 
 * Ouvrez une fenêtre d’interpréteur de commandes.
-* Exécutez la commande suivante : .
+* Exécutez la commande suivante :
 
   ```dotnetcli
   dotnet new sln -o unit-testing-using-dotnet-test
@@ -41,7 +41,7 @@ Les instructions suivantes fournissent les étapes permettant de créer la solut
 
   La commande [`dotnet new sln`](../tools/dotnet-new.md) crée une nouvelle solution dans le répertoire *Unit-testing-using-dotnet-test* .
 * Remplacez le répertoire par le dossier *Unit-testing-using-dotnet-test* .
-* Exécutez la commande suivante : .
+* Exécutez la commande suivante :
 
   ```dotnetcli
   dotnet new classlib -o PrimeService
@@ -124,7 +124,7 @@ dotnet sln add ./PrimeService.Tests/PrimeService.Tests.csproj
 
 Suivez les instructions pour « remplacer le code dans *PrimeService.cs* par le code suivant » dans la section précédente.
 
-## <a name="create-a-test"></a>Créez un test
+## <a name="create-a-test"></a>Créer un test
 
 Une approche courante du développement piloté par les tests (TDD) consiste à écrire un test avant d’implémenter le code cible. Ce didacticiel utilise l’approche TDD. La méthode `IsPrime` peut être appelée, mais elle n’est pas implémentée. Un appel de test à `IsPrime` échoue. Avec TDD, un test est écrit et connu comme ayant échoué. Le code cible est mis à jour pour que le test réussisse. Vous continuez à répéter cette approche, en écrivant un test qui a échoué, puis en mettant à jour le code cible pour qu’il réussisse.
 
@@ -175,7 +175,7 @@ public bool IsPrime(int candidate)
 }
 ```
 
-Exécutez `dotnet test`. Le test est réussi.
+Exécutez `dotnet test`. Le test réussit.
 
 ### <a name="add-more-tests"></a>Ajouter d’autres tests
 
@@ -207,7 +207,7 @@ public void IsPrime_InputIs1_ReturnFalse()
 
 par le code suivant :
 
-[!code-csharp[Sample_TestCode](../../../samples/core/getting-started/unit-testing-using-dotnet-test/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
+[!code-csharp[Sample_TestCode](../../../samples/snippets/core/testing/unit-testing-using-dotnet-test/csharp/PrimeService.Tests/PrimeService_IsPrimeShould.cs?name=Sample_TestCode)]
 
 Dans le code précédent, `[Theory]` et `[InlineData]` permettent de tester plusieurs valeurs inférieures à deux. Deux est le plus petit nombre premier.
 

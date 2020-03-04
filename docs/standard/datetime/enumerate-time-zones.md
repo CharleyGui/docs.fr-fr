@@ -9,12 +9,12 @@ helpviewer_keywords:
 - time zones [.NET Framework], enumerating
 - enumerating time zones [.NET Framework]
 ms.assetid: bb7a42ab-6bd9-4c5c-b734-5546d51f8669
-ms.openlocfilehash: 662e389f4fecc77244e378f1c0672935403fa456
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: aa8962c8aea208778983610041937dc3f75c1f1e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129121"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159440"
 ---
 # <a name="how-to-enumerate-time-zones-present-on-a-computer"></a>Comment : énumérer les fuseaux horaires présents sur un ordinateur
 
@@ -25,7 +25,7 @@ Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir
 
 ### <a name="to-enumerate-the-time-zones-present-on-the-local-system"></a>Pour énumérer les fuseaux horaires présents sur le système local
 
-1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType>. La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> d’objets <xref:System.TimeZoneInfo>. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Exemple :
+1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> d’objets <xref:System.TimeZoneInfo>. Les entrées de la collection sont triées en fonction de leur <xref:System.TimeZoneInfo.DisplayName%2A> propriété. Par exemple :
 
    [!code-csharp[System.TimeZone2.Concepts#1](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.TimeZone2.Concepts/CS/TimeZone2Concepts.cs#1)]
    [!code-vb[System.TimeZone2.Concepts#1](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.TimeZone2.Concepts/VB/TimeZone2Concepts.vb#1)]
@@ -37,7 +37,7 @@ Pour utiliser correctement un fuseau horaire désigné, le système doit pouvoir
 
 ### <a name="to-present-the-user-with-a-list-of-time-zones-present-on-the-local-system"></a>Pour présenter à l’utilisateur une liste des fuseaux horaires présents sur le système local
 
-1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType>. La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> d’objets <xref:System.TimeZoneInfo>.
+1. Appelez la méthode <xref:System.TimeZoneInfo.GetSystemTimeZones%2A?displayProperty=nameWithType> . La méthode retourne une collection générique <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> d’objets <xref:System.TimeZoneInfo>.
 
 2. Assignez la collection retournée à l’étape 1 à la propriété `DataSource` d’un contrôle de liste Windows Forms ou ASP.NET.
 
@@ -55,11 +55,11 @@ L’exemple démarre une application Windows qui affiche les fuseaux horaires d�
 La plupart des contrôles de liste (tels que le contrôle <xref:System.Windows.Forms.ListBox?displayProperty=nameWithType> ou <xref:System.Web.UI.WebControls.BulletedList?displayProperty=nameWithType>) vous permettent d’assigner une collection de variables objet à leur propriété `DataSource` à condition que cette collection implémente l’interface <xref:System.Collections.IEnumerable>. (La classe de <xref:System.Collections.ObjectModel.ReadOnlyCollection%601> générique effectue cette.) Pour afficher un objet individuel dans la collection, le contrôle appelle la méthode `ToString` de cet objet pour extraire la chaîne utilisée pour représenter l’objet. Dans le cas d’objets <xref:System.TimeZoneInfo>, la méthode `ToString` retourne le nom complet de l’objet <xref:System.TimeZoneInfo> (la valeur de sa propriété <xref:System.TimeZoneInfo.DisplayName%2A>).
 
 > [!NOTE]
-> Étant donné que les contrôles de liste appellent la méthode `ToString` d’un objet, vous pouvez assigner une collection d’objets <xref:System.TimeZoneInfo> au contrôle, faire en sorte que le contrôle affiche un nom explicite pour chaque objet et récupérer l’objet <xref:System.TimeZoneInfo> que l’utilisateur a sélectionné. Cela élimine le besoin d’extraire une chaîne pour chaque objet de la collection, d’assigner la chaîne à une collection qui est à son tour affectée à la propriété `DataSource` du contrôle, de récupérer la chaîne sélectionnée par l’utilisateur, puis d’utiliser cette chaîne pour extraire l’objet qui elle décrit. 
+> Étant donné que les contrôles de liste appellent la méthode `ToString` d’un objet, vous pouvez assigner une collection d’objets <xref:System.TimeZoneInfo> au contrôle, faire en sorte que le contrôle affiche un nom explicite pour chaque objet et récupérer l’objet <xref:System.TimeZoneInfo> que l’utilisateur a sélectionné. Cela élimine le besoin d’extraire une chaîne pour chaque objet de la collection, d’assigner la chaîne à une collection qui est à son tour affectée à la propriété `DataSource` du contrôle, de récupérer la chaîne sélectionnée par l’utilisateur, puis d’utiliser cette chaîne pour extraire l’objet qu’elle décrit.
 
 ## <a name="compiling-the-code"></a>Compilation du code
 
-Cet exemple nécessite :
+Cet exemple nécessite :
 
 - Que les espaces de noms suivants soient importés :
 

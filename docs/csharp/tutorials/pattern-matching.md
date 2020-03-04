@@ -4,18 +4,18 @@ description: Ce tutoriel avancé montre comment utiliser des techniques de crit�
 ms.date: 03/13/2019
 ms-technology: csharp-whats-new
 ms.custom: mvc
-ms.openlocfilehash: ca7ae63a038fce0b2569e7a4bd1805765bc23d44
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: fd08e707402bfcd552997111a9c3fa58841a5466
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039191"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240052"
 ---
 # <a name="tutorial-using-pattern-matching-features-to-extend-data-types"></a>Didacticiel : utilisation des fonctionnalités de critères spéciaux pour étendre des types de données
 
 C# 7 a introduit des fonctionnalités de critères spéciaux de base. Elles ont été étendues dans C# 8 par de nouvelles expressions et de nouveaux modèles. Il est possible d’écrire des fonctionnalités qui se comportent comme si des types provenant potentiellement d’autres bibliothèques avaient été étendus. Une autre utilisation des modèles consiste à créer des fonctionnalités requises par une application qui ne sont pas essentielles pour le type étendu.
 
-Dans ce tutoriel, vous allez apprendre à :
+Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
@@ -23,7 +23,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > - Utiliser des expressions de critères spéciaux pour implémenter des comportements en fonction des types et des valeurs de propriété.
 > - Combiner des critères spéciaux avec d’autres techniques pour créer des algorithmes complets.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
@@ -41,7 +41,7 @@ Prenons une grande zone métropolitaine qui utilise des péages et des tarifs he
 
 À partir de cette brève description, vous avez peut-être rapidement esquissé une hiérarchie d’objets pour modéliser ce système. Cependant, les données proviennent de plusieurs sources, et notamment d’autres systèmes de gestion de l’immatriculation des véhicules. Ils fournissent des classes différentes pour modéliser ces données, sans proposer de modèle objet unique. Dans ce tutoriel, nous allons utiliser ces classes simplifiées pour modéliser les données sur les véhicules issues de ces systèmes externes, comme dans le code suivant :
 
-[!code-csharp[ExternalSystems](~/samples/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
+[!code-csharp[ExternalSystems](~/samples/snippets/csharp/tutorials/patterns/start/toll-calculator/ExternalSystems.cs)]
 
 Vous pouvez télécharger l’exemple de démarrage à partir du référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/start). Comme on peut le voir, les classes de véhicules proviennent de différents systèmes et utilisent différents espaces de noms. Aucune classe de base commune, autre que `System.Object`, n’est exploitable.
 
@@ -298,24 +298,24 @@ Pour cette fonctionnalité, nous allons utiliser les critères spéciaux, mais e
 
 Le tableau suivant montre les combinaisons de valeurs d’entrée et le multiplicateur tarifaire :
 
-| Jour        | Heure         | Sens | Multiplicateur |
+| jour        | Heure         | Direction | Premium |
 | ---------- | ------------ | --------- |--------:|
-| Semaine    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 2,00  |
-| Semaine    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |
-| Semaine    | Journée      | Vers l’intérieur de la ville   | x 1,50  |
-| Semaine    | Journée      | Vers l’extérieur de la ville  | x 1,50  |
-| Semaine    | Heure de pointe du soir | Vers l’intérieur de la ville   | x 1,00  |
-| Semaine    | Heure de pointe du soir | Vers l’extérieur de la ville  | x 2,00  |
-| Semaine    | Nuit    | Vers l’intérieur de la ville   | x 0,75  |
-| Semaine    | Nuit    | Vers l’extérieur de la ville  | x 0,75  |
-| Weekend    | Heure de pointe du matin | Vers l’intérieur de la ville   | x 1,00  |
-| Weekend    | Heure de pointe du matin | Vers l’extérieur de la ville  | x 1,00  |
-| Weekend    | Journée      | Vers l’intérieur de la ville   | x 1,00  |
-| Weekend    | Journée      | Vers l’extérieur de la ville  | x 1,00  |
-| Weekend    | Heure de pointe du soir | Vers l’intérieur de la ville   | x 1,00  |
-| Weekend    | Heure de pointe du soir | Vers l’extérieur de la ville  | x 1,00  |
-| Weekend    | Nuit    | Vers l’intérieur de la ville   | x 1,00  |
-| Weekend    | Nuit    | Vers l’extérieur de la ville  | x 1,00  |
+| Jour de la semaine    | Heure de pointe du matin | entrante   | x 2,00  |
+| Jour de la semaine    | Heure de pointe du matin | en sortie  | x 1,00  |
+| Jour de la semaine    | Journée      | entrante   | x 1,50  |
+| Jour de la semaine    | Journée      | en sortie  | x 1,50  |
+| Jour de la semaine    | Heure de pointe du soir | entrante   | x 1,00  |
+| Jour de la semaine    | Heure de pointe du soir | en sortie  | x 2,00  |
+| Jour de la semaine    | Nuit    | entrante   | x 0,75  |
+| Jour de la semaine    | Nuit    | en sortie  | x 0,75  |
+| Week-end    | Heure de pointe du matin | entrante   | x 1,00  |
+| Week-end    | Heure de pointe du matin | en sortie  | x 1,00  |
+| Week-end    | Journée      | entrante   | x 1,00  |
+| Week-end    | Journée      | en sortie  | x 1,00  |
+| Week-end    | Heure de pointe du soir | entrante   | x 1,00  |
+| Week-end    | Heure de pointe du soir | en sortie  | x 1,00  |
+| Week-end    | Nuit    | entrante   | x 1,00  |
+| Week-end    | Nuit    | en sortie  | x 1,00  |
 
 Les trois variables produisent 16 combinaisons différentes. On peut simplifier l’expression switch finale en associant certaines conditions.
 
@@ -337,17 +337,17 @@ private static bool IsWeekDay(DateTime timeOfToll) =>
 
 La méthode fonctionne, mais elle est répétitive. On peut la simplifier comme dans le code suivant :
 
-[!code-csharp[IsWeekDay](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
+[!code-csharp[IsWeekDay](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#IsWeekDay)]
 
 Ensuite, ajoutons une fonction similaire pour catégoriser l’heure dans les blocs :
 
-[!code-csharp[GetTimeBand](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
+[!code-csharp[GetTimeBand](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#GetTimeBand)]
 
 La méthode précédente n’utilise pas les critères spéciaux. Le code est plus clair avec une cascade bien connue d’instructions `if`. On ajoute en revanche un `enum` privé pour convertir chaque plage de temps en une valeur discrète.
 
 Maintenant que nous avons créé ces méthodes, utilisons une autre expression `switch` avec le **modèle de tuple** pour calculer le multiplicateur tarifaire. On pourrait concevoir une expression `switch` comportant les 16 branches :
 
-[!code-csharp[FullTuplePattern](~/samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
+[!code-csharp[FullTuplePattern](~/samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#TuplePatternOne)]
 
 Le code ci-dessus fonctionne, mais on peut le simplifier. Les huit combinaisons du weekend correspondent au même péage. Elles sont remplaçables par la ligne suivante :
 
@@ -380,12 +380,12 @@ public decimal PeakTimePremium(DateTime timeOfToll, bool inbound) =>
 
 Enfin, on peut supprimer les deux branches des heures de pointe au tarif normal, ce qui permet de remplacer `false` par un discard (`_`) dans la branche switch finale. On obtient la méthode suivante une fois terminée :
 
-[!code-csharp[SimplifiedTuplePattern](../../../samples/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
+[!code-csharp[SimplifiedTuplePattern](../../../samples/snippets/csharp/tutorials/patterns/finished/toll-calculator/TollCalculator.cs#FinalTuplePattern)]
 
 Cet exemple met en évidence un des avantages des critères spéciaux : les branches du modèle sont évaluées dans l’ordre. Si vous les réorganisez de telle sorte qu’une branche antérieure gère un des cas suivants, le compilateur vous avertit que le code est inaccessible. Grâce à ces règles de langage, nous avons pu effectuer facilement les simplifications précédentes sans craindre de modifier le code.
 
 Les critères spéciaux rendent certains types de code plus lisibles et offrent une alternative aux techniques orientées objet quand vous ne pouvez pas ajouter de code à vos classes. Le cloud est à l’origine d’une séparation entre les données et les fonctionnalités. La *forme* des données et les *opérations* effectuées sur ces dernières ne sont pas nécessairement décrites ensemble. Dans ce tutoriel, nous avons exploité les données existantes d’une manière totalement différente de leur fonction d’origine. Les critères spéciaux offrent la possibilité d’écrire des fonctionnalités qui remplacent ces types, même sans pouvoir les étendre.
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Vous pouvez télécharger le code terminé dans référentiel GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/patterns/finished). Explorez les modèles par vous-même et ajoutez cette technique à vos activités de codage régulières. Ces techniques représentent une autre façon d’aborder les problèmes et de créer de nouvelles fonctionnalités.

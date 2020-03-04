@@ -10,12 +10,12 @@ helpviewer_keywords:
 - enumeration format strings
 - formatting [.NET Framework], enumeration
 ms.assetid: dd1ff672-1052-42cf-8666-4924fb6cd1a1
-ms.openlocfilehash: c32fd9d59f61b6befe94ff9eb85b0c39ce926adb
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: da7634758f5c4319fa18612d216682dc141318fd
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348265"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155956"
 ---
 # <a name="enumeration-format-strings"></a>Chaînes de format d’énumération
 
@@ -48,7 +48,7 @@ Affiche l’entrée d’énumération comme valeur entière dans la représentat
 
 Affiche l’entrée d’énumération comme valeur hexadécimale. La valeur est représentée avec des zéros interligne si nécessaire, pour vérifier que la chaîne de résultat a deux caractères pour chaque octet dans le [type numérique sous-jacent](xref:System.Enum.GetUnderlyingType%2A) du type d’énumération. L’exemple suivant illustre le spécificateur de format X. Dans l’exemple, le type sous-jacent des deux <xref:System.ConsoleColor> et <xref:System.IO.FileAttributes> est <xref:System.Int32> ou un entier de 32 bits (ou 4 octets), ce qui produit une chaîne de résultat de 8 caractères.
 
-[!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]      
+[!code-csharp[Formatting.Enum#4](~/samples/snippets/csharp/VS_Snippets_CLR/Formatting.Enum/cs/enum1.cs#4)]
 [!code-vb[Formatting.Enum#4](~/samples/snippets/visualbasic/VS_Snippets_CLR/Formatting.Enum/vb/enum1.vb#4)]
 
 ## <a name="example"></a>Exemple

@@ -9,12 +9,12 @@ dev_langs:
 helpviewer_keywords:
 - exceptions, best practices
 ms.assetid: f06da765-235b-427a-bfb6-47cd219af539
-ms.openlocfilehash: 6a165c3e0f41603ef7233669d7148dd44b1d3ce6
-ms.sourcegitcommit: 3094dcd17141b32a570a82ae3f62a331616e2c9c
+ms.openlocfilehash: 1de231b01e3fa97e78a87ae6b0595a9b5536374e
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/01/2019
-ms.locfileid: "71696767"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160168"
 ---
 # <a name="best-practices-for-exceptions"></a>Bonnes pratiques pour les exceptions
 
@@ -56,7 +56,7 @@ Une classe peut fournir des méthodes ou propriétés qui vous permettent d’é
 
 Un autre moyen d’éviter les exceptions est de retourner Null (ou une valeur par défaut) pour les cas d’erreur très répandus au lieu de lever une exception. Un cas d'erreur très répandu peut être considéré comme un flux de contrôle normal. En retournant null (ou une valeur par défaut) dans ces cas-là, vous réduisez l'impact sur les performances d'une application.
 
-Pour les types valeur, s’il faut utiliser `Nullable<T>` ou une valeur par défaut comme indicateur d’erreur est quelque chose à prendre en compte pour votre application particulière. À l’aide de `Nullable<Guid>`, `default` devient `null` au lieu de `Guid.Empty`. Parfois, l’ajout de `Nullable<T>` peut éclaircir les choses, lorsqu’une valeur est présente ou absente. Autres fois, l’ajout de `Nullable<T>` peut créer des cas supplémentaires qui ne sont pas nécessaires et uniquement servir pour créer les sources potentielles d’erreurs. 
+Pour les types valeur, s’il faut utiliser `Nullable<T>` ou une valeur par défaut comme indicateur d’erreur est quelque chose à prendre en compte pour votre application particulière. À l’aide de `Nullable<Guid>`, `default` devient `null` au lieu de `Guid.Empty`. Parfois, l’ajout de `Nullable<T>` peut éclaircir les choses, lorsqu’une valeur est présente ou absente. Autres fois, l’ajout de `Nullable<T>` peut créer des cas supplémentaires qui ne sont pas nécessaires et uniquement servir pour créer les sources potentielles d’erreurs.
 
 ## <a name="throw-exceptions-instead-of-returning-an-error-code"></a>Lever des exceptions au lieu de retourner un code d’erreur
 
@@ -64,7 +64,7 @@ Les exceptions font en sorte que les échecs ne passent pas inaperçus parce que
 
 ## <a name="use-the-predefined-net-exception-types"></a>Utiliser les types d’exception .NET prédéfinis
 
-N'introduisez une nouvelle classe d'exception que quand aucune classe d'exception prédéfinie ne s'applique. Exemple :
+N'introduisez une nouvelle classe d'exception que quand aucune classe d'exception prédéfinie ne s'applique. Par exemple :
 
 - Levez une exception <xref:System.InvalidOperationException> si un appel de jeu de propriétés ou de méthode n'est pas approprié étant donné l'état actuel de l'objet.
 
@@ -72,7 +72,7 @@ N'introduisez une nouvelle classe d'exception que quand aucune classe d'exceptio
 
 ## <a name="end-exception-class-names-with-the-word-exception"></a>Terminer les noms de classes d’exception par le mot `Exception`
 
-Quand une exception personnalisée est nécessaire, nommez-la de manière appropriée et dérivez-la de la classe <xref:System.Exception>. Exemple :
+Quand une exception personnalisée est nécessaire, nommez-la de manière appropriée et dérivez-la de la classe <xref:System.Exception>. Par exemple :
 
 [!code-cpp[Conceptual.Exception.Handling#4](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#4)]
 [!code-csharp[Conceptual.Exception.Handling#4](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#4)]
@@ -88,7 +88,7 @@ Utilisez au moins les trois constructeurs communs pendant la création de vos pr
 
 - <xref:System.Exception.%23ctor%28System.String%2CSystem.Exception%29>, qui accepte un message de type chaîne et une exception interne.
 
-Pour voir un exemple, consultez [Comment : Créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md).
+Pour obtenir un exemple, consultez [Guide pratique : créer des exceptions définies par l’utilisateur](how-to-create-user-defined-exceptions.md).
 
 ## <a name="ensure-that-exception-data-is-available-when-code-executes-remotely"></a>Vérifier que les données d’exception sont disponibles quand le code s’exécute à distance
 
@@ -113,7 +113,7 @@ Le message d’erreur que l’utilisateur voit est dérivé de la propriété <x
 Pour les applications localisées, vous devez fournir une chaîne de message localisée pour chaque exception que votre application peut lever. Vous utilisez des fichiers de ressources pour fournir les messages d’erreur localisés. Pour plus d’informations sur la localisation d’applications et la récupération de chaînes localisées, consultez les articles suivants :
 
 - [Comment : créer des exceptions définies par l’utilisateur avec des messages d’exception localisés](how-to-create-localized-exception-messages.md)
-- [Ressources dans des applications de bureau](../../framework/resources/index.md) 
+- [Ressources dans des applications de bureau](../../framework/resources/index.md)
 - <xref:System.Resources.ResourceManager?displayProperty=nameWithType>
 
 ## <a name="in-custom-exceptions-provide-additional-properties-as-needed"></a>Dans les exceptions personnalisées, fournir des propriétés supplémentaires si nécessaire
@@ -126,7 +126,7 @@ La trace de la pile commence à l'instruction où l'exception est levée et se t
 
 ## <a name="use-exception-builder-methods"></a>Utiliser des méthodes de générateur d’exceptions
 
-Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation. Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent. Exemple :
+Il est fréquent qu'une classe lève la même exception à partir de différents endroits de son implémentation. Pour éviter un excès de code, utilisez des méthodes d'assistance qui créent une exception et la retournent. Par exemple :
 
 [!code-cpp[Conceptual.Exception.Handling#6](~/samples/snippets/cpp/VS_Snippets_CLR/conceptual.exception.handling/cpp/source.cpp#6)]
 [!code-csharp[Conceptual.Exception.Handling#6](~/samples/snippets/csharp/VS_Snippets_CLR/conceptual.exception.handling/cs/source.cs#6)]

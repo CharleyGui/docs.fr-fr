@@ -5,18 +5,18 @@ author: BillWagner
 ms.author: wiwagn
 ms.date: 12/10/2019
 ms.custom: vs-dotnet
-ms.openlocfilehash: a82934fd2ea9568681a3bec82c3b15513decc926
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bdd6e28713bdece2bd144e6763bd84d719e91449
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76741567"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156632"
 ---
 # <a name="publish-your-net-core-hello-world-application-with-visual-studio"></a>Publier votre application de Hello World .NET Core avec Visual Studio
 
 Dans [créer une application Hello World avec .net core dans Visual Studio](with-visual-studio.md), vous avez créé une application console Hello World. Dans [déboguer votre application Hello World avec Visual Studio](debugging-with-visual-studio.md), vous l’avez testée à l’aide du débogueur Visual Studio. Maintenant que vous savez qu’elle fonctionne comme prévu, vous pouvez la publier afin que les autres utilisateurs puissent l’exécuter. La publication crée l’ensemble des fichiers qui sont nécessaires pour exécuter votre application. Pour déployer les fichiers, copiez-les sur l’ordinateur cible.
 
-## <a name="publish-the-app"></a>Publier l'application
+## <a name="publish-the-app"></a>Publier l’application
 
 1. Vérifiez que Visual Studio génère la version release de votre application. Si nécessaire, modifiez le paramètre de configuration de la génération dans la barre d’outils de **Debug** en **Release**.
 
@@ -25,15 +25,15 @@ Dans [créer une application Hello World avec .net core dans Visual Studio](with
 1. Cliquez avec le bouton droit sur le projet **HelloWorld** (et non pas sur la solution HelloWorld) et sélectionnez **Publier** dans le menu. (Vous pouvez également sélectionner **publier HelloWorld** dans le menu principal **générer** .)
 
    ![Menu contextuel Publier de Visual Studio](media/publishing-with-visual-studio/publish-context-menu.png)
-   
+
 1. Sur la page **choisir une cible de publication** , sélectionnez **dossier**, puis créer un **Profil**.
 
    ![Choisir une cible de publication dans Visual Studio](media/publishing-with-visual-studio/pick-publish-target.png)
-   
+
 1. Dans la page de **publication**, sélectionnez **Publier**.
 
    ![Fenêtre Publier de Visual Studio](media/publishing-with-visual-studio/publish-page.png)
-   
+
 ## <a name="inspect-the-files"></a>Inspecter les fichiers
 
 Le processus de publication crée un déploiement dépendant du Framework, qui est un type de déploiement dans lequel l’application publiée s’exécute sur n’importe quelle plateforme prise en charge par .NET Core avec .NET Core installé sur le système. Les utilisateurs peuvent exécuter l’application publiée en double-cliquant sur l’exécutable ou en lançant la commande `dotnet HelloWorld.dll` à partir d’une invite de commandes.
@@ -59,7 +59,7 @@ Dans les étapes suivantes, vous allez examiner les fichiers créés par le proc
          Il s’agit de la version de [déploiement dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-deployment) de l’application. Pour exécuter cette bibliothèque de liens dynamiques, entrez `dotnet HelloWorld.dll` à l’invite de commandes.
 
       * *HelloWorld. exe*
-      
+
          Il s’agit de la version [exécutable dépendante du Framework](../deploying/deploy-with-cli.md#framework-dependent-executable) de l’application. Pour l’exécuter, entrez `HelloWorld.exe` à l’invite de commandes.
 
       * *HelloWorld.pdb* (facultatif pour le déploiement)

@@ -9,12 +9,12 @@ helpviewer_keywords:
 - '?: operator [C#]'
 - conditional operator (?:) [C#]
 ms.assetid: e83a17f1-7500-48ba-8bee-2fbc4c847af4
-ms.openlocfilehash: 60156585dd21d5d2f9c9f3916452bb8574ddd4e4
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 6e8fde8c210b2c33cc514167be7face657cbb618
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712726"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239377"
 ---
 # <a name="-operator-c-reference"></a>Opérateur ?: (référence C#)
 
@@ -36,7 +36,7 @@ L’opérateur conditionnel est associatif à droite ; autrement dit, une expres
 a ? b : c ? d : e
 ```
 
-est évaluée comme étant
+est évaluée comme
 
 ```csharp
 a ? b : (c ? d : e)
@@ -51,7 +51,7 @@ a ? b : (c ? d : e)
 
 L’exemple suivant illustre l’utilisation de l’opérateur conditionnel :
 
-[!code-csharp-interactive[non ref conditional](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
+[!code-csharp-interactive[non ref conditional](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalValue)]
 
 ## <a name="conditional-ref-expression"></a>Expression ref conditionnelle
 
@@ -69,13 +69,13 @@ Dans le cas de l’expression ref conditionnelle, `consequent` et `alternative` 
 
 L’exemple suivant illustre l’utilisation de l’expression ref conditionnelle :
 
-[!code-csharp-interactive[conditional ref](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
+[!code-csharp-interactive[conditional ref](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#ConditionalRef)]
 
 ## <a name="conditional-operator-and-an-ifelse-statement"></a>Opérateur conditionnel et instruction `if..else`
 
 L’utilisation de l’opérateur conditionnel au lieu d’une instruction [if-else](../keywords/if-else.md) peut entraîner un code plus concis dans les cas où vous avez besoin de calculer une valeur de manière conditionnelle. L’exemple suivant montre deux façons de classer un entier comme négatif ou non :
 
-[!code-csharp[conditional and if-else](~/samples/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
+[!code-csharp[conditional and if-else](~/samples/snippets/csharp/language-reference/operators/ConditionalOperator.cs#CompareWithIf)]
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 

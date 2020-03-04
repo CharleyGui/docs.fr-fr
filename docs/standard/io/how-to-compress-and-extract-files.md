@@ -10,12 +10,12 @@ helpviewer_keywords:
 - compression
 - compress files
 ms.assetid: e9876165-3c60-4c84-a272-513e47acf579
-ms.openlocfilehash: 6345b467e9ade085a38de6dc9758b1bd99d1ae62
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 5aa25e265ed6ffb613e9916414c6f2335a4aaf57
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708100"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159375"
 ---
 # <a name="how-to-compress-and-extract-files"></a>Guide pratique pour compresser et extraire des fichiers
 
@@ -31,9 +31,9 @@ Les exemples suivants présentent certaines des opérations que vous pouvez effe
 
 ## <a name="example-1-create-and-extract-a-zip-file"></a>Exemple 1 : créer et extraire un fichier. zip
 
-L’exemple suivant montre comment créer et extraire un fichier *.zip* à l’aide de la classe <xref:System.IO.Compression.ZipFile>. Cet exemple compresse le contenu d’un dossier dans un nouveau fichier *.zip*, puis extrait ce fichier zip dans un nouveau dossier. 
+L’exemple suivant montre comment créer et extraire un fichier *.zip* à l’aide de la classe <xref:System.IO.Compression.ZipFile>. Cet exemple compresse le contenu d’un dossier dans un nouveau fichier *.zip*, puis extrait ce fichier zip dans un nouveau dossier.
 
-Pour exécuter l’exemple, créez un dossier *start* dans le dossier de votre programme, puis placez-y les fichiers à compresser. 
+Pour exécuter l’exemple, créez un dossier *start* dans le dossier de votre programme, puis placez-y les fichiers à compresser.
 
 Si vous obtenez l’erreur de build indiquant que le nom « FichierZip» n’existe pas dans le contexte actuel, ajoutez une référence à l’assembly `System.IO.Compression.FileSystem` à votre projet.
 
@@ -42,13 +42,13 @@ Si vous obtenez l’erreur de build indiquant que le nom « FichierZip» n’ex
 
 ## <a name="example-2-extract-specific-file-extensions"></a>Exemple 2 : extraire des extensions de fichier spécifiques
 
-L’exemple suivant montre comment parcourir le contenu d’un fichier *.zip* existant et en extraire les fichiers ayant une extension *.txt*. Il utilise la classe <xref:System.IO.Compression.ZipArchive> pour accéder au fichier zip, et la classe <xref:System.IO.Compression.ZipArchiveEntry> pour inspecter chaque entrée. La méthode d’extension <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> de l’objet <xref:System.IO.Compression.ZipArchiveEntry> est disponible dans la classe <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>. 
+L’exemple suivant montre comment parcourir le contenu d’un fichier *.zip* existant et en extraire les fichiers ayant une extension *.txt*. Il utilise la classe <xref:System.IO.Compression.ZipArchive> pour accéder au fichier zip, et la classe <xref:System.IO.Compression.ZipArchiveEntry> pour inspecter chaque entrée. La méthode d’extension <xref:System.IO.Compression.ZipFileExtensions.ExtractToFile%2A> de l’objet <xref:System.IO.Compression.ZipArchiveEntry> est disponible dans la classe <xref:System.IO.Compression.ZipFileExtensions?displayProperty=nameWithType>.
 
-Pour exécuter l’exemple, placez un fichier *.zip* appelé *result.zip* dans le dossier de votre programme. Lorsque vous y êtes invité, fournissez le nom du dossier vers lequel extraire les fichiers. 
+Pour exécuter l’exemple, placez un fichier *.zip* appelé *result.zip* dans le dossier de votre programme. Lorsque vous y êtes invité, fournissez le nom du dossier vers lequel extraire les fichiers.
 
 Si vous obtenez l’erreur de build indiquant que le nom « FichierZip» n’existe pas dans le contexte actuel, ajoutez une référence à l’assembly `System.IO.Compression.FileSystem` à votre projet.
 
-Si vous obtenez l’erreur indiquant que le type 'ArchiveZip' est défini dans un assembly qui n’est pas référencé, ajoutez une référence à l’assembly `System.IO.Compression` de votre projet. 
+Si vous obtenez l’erreur indiquant que le type 'ArchiveZip' est défini dans un assembly qui n’est pas référencé, ajoutez une référence à l’assembly `System.IO.Compression` de votre projet.
 
 > [!IMPORTANT]
 > Lors de la décompression des fichiers, vous devez rechercher les chemins malveillants qui risquent d’extraire les fichiers en dehors du répertoire. Il s’agit d’une attaque par chemin transversal. L’exemple suivant montre comment rechercher les chemins malveillants et garantir une décompression sûre.
@@ -77,4 +77,4 @@ Vous pouvez également utiliser les classes <xref:System.IO.Compression.GZipStre
 - <xref:System.IO.Compression.ZipArchiveEntry>  
 - <xref:System.IO.Compression.DeflateStream>  
 - <xref:System.IO.Compression.GZipStream>  
-- [E/S de fichier et de flux](../../../docs/standard/io/index.md)
+- [Fichier et flux de données E/S](../../../docs/standard/io/index.md)

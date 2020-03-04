@@ -2,18 +2,18 @@
 title: Commande dotnet tool uninstall
 description: La commande de désinstallation de l’outil dotnet désinstalle l’outil .NET Core spécifié de votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: 82dad0206d9c3e2ef0f41c353f4a608f10e4f127
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 7a15c169c73cf5a743e0fa6f47645d6bccedbde3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543441"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157043"
 ---
 # <a name="dotnet-tool-uninstall"></a>dotnet tool uninstall
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet tool uninstall`-désinstalle l' [outil .net Core](global-tools.md) spécifié de votre ordinateur.
 
@@ -46,7 +46,7 @@ La commande `dotnet tool uninstall` vous permet de désinstaller les outils .NET
 
 - **`-g|--global`**
 
-  Spécifie que l’outil à supprimer se trouve dans une installation à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission de `--global` et `--tool-path` spécifie que l’outil à supprimer est un outil local. 
+  Spécifie que l’outil à supprimer se trouve dans une installation à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission de `--global` et `--tool-path` spécifie que l’outil à supprimer est un outil local.
 
 - **`-h|--help`**
 
@@ -54,7 +54,7 @@ La commande `dotnet tool uninstall` vous permet de désinstaller les outils .NET
 
 - **`--tool-path <PATH>`**
 
-  Spécifie l’emplacement de désinstallation de l’outil. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission de `--global` et `--tool-path` spécifie que l’outil à supprimer est un outil local. 
+  Spécifie l’emplacement de désinstallation de l’outil. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission de `--global` et `--tool-path` spécifie que l’outil à supprimer est un outil local.
 
 ## <a name="examples"></a>Exemples
 

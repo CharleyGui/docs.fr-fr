@@ -8,12 +8,12 @@ helpviewer_keywords:
 - runtime callable wrappers
 - interoperation with unmanaged code, COM wrappers
 ms.assetid: 7e542583-1e31-4e10-b523-8cf2f29cb4a4
-ms.openlocfilehash: 70ed4176872e18ccafa00808630fcc51337b8479
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 0b448379fba965060fdf3bf067e65374f40d1fc2
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73123211"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156008"
 ---
 # <a name="runtime-callable-wrapper"></a>Wrapper pouvant être appelé par le runtime
 Le common language runtime expose les objets COM via un proxy appelé wrapper RCW. Même si le wrapper RCW est un objet ordinaire pour les clients .NET, sa fonction principale est de marshaler les appels entre un client .NET et un objet COM.  
@@ -31,9 +31,9 @@ L’image suivante montre le processus d’accès aux objets COM par le biais d
  Le wrapper standard applique les règles de marshaling intégrées. Par exemple, quand un client .NET passe un type String dans le cadre d’un argument à un objet non managé, le wrapper convertit la chaîne en un type BSTR. Si l'objet COM retourne un BSTR à son appelant managé, l'appelant reçoit une chaîne (String). Le client et le serveur envoient et reçoivent des données qui leur sont familières. Les autres types ne nécessitent pas de conversion. Par exemple, un wrapper standard passera toujours un entier de 4 octets d'un code managé à un code non managé sans convertir le type.  
   
 ## <a name="marshaling-selected-interfaces"></a>Marshaling d’interfaces sélectionnées  
- L’objectif principal du [wrapper RCW](runtime-callable-wrapper.md) est de masquer les différences entre les modèles de programmation managé et non managé. Pour créer une transition transparente, le wrapper RCW consomme les interfaces COM sélectionnées sans les exposer au client .NET, comme indiqué dans l'illustration suivante. 
+ L’objectif principal du [wrapper RCW](runtime-callable-wrapper.md) est de masquer les différences entre les modèles de programmation managé et non managé. Pour créer une transition transparente, le wrapper RCW consomme les interfaces COM sélectionnées sans les exposer au client .NET, comme indiqué dans l'illustration suivante.
 
- L’image suivante montre les interfaces COM et le wrapper RCW : 
+ L’image suivante montre les interfaces COM et le wrapper RCW :
   
  ![Capture d’écran du wrapper RCW avec des interfaces.](./media/runtime-callable-wrapper/runtime-callable-wrapper-interfaces.gif)  
   
@@ -53,7 +53,7 @@ L’image suivante montre le processus d’accès aux objets COM par le biais d
 |Interface|Description|  
 |---------------|-----------------|  
 |**IConnectionPoint** et **IConnectionPointContainer**|Le wrapper RCW convertit les objets qui exposent le style d'événement point de connexion en événements basés sur le délégué.|  
-|**IDispatchEx** (.NET Framework uniquement) |Si la classe implémente **IDispatchEx**, le wrapper RCW implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel de la casse des membres.|  
+|**IDispatchEx** (.NET Framework uniquement) |Si la classe implémente **IDispatchEx**, le wrapper RCW implémente **IExpando**. L’interface **IDispatchEx** est une extension de l’interface **IDispatch** qui, contrairement à l’interface **IDispatch**, permet l’énumération, l’ajout, la suppression et l’appel sensible à la casse des membres.|  
 |**IEnumVARIANT**|Permet aux types COM qui prennent en charge les énumérations d'être traités comme des collections.|  
   
 ## <a name="see-also"></a>Voir aussi
@@ -61,4 +61,4 @@ L’image suivante montre le processus d’accès aux objets COM par le biais d
 - [Wrappers COM](com-wrappers.md)
 - [Wrapper CCW (COM Callable Wrapper)](com-callable-wrapper.md)
 - [Récapitulatif de la conversion d’une bibliothèque de types en assembly](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/k83zzh38(v=vs.100))
-- [Importation d'une bibliothèque de types sous la forme d'un assembly](../../framework/interop/importing-a-type-library-as-an-assembly.md)
+- [Importation d’une bibliothèque de types sous la forme d’un assembly](../../framework/interop/importing-a-type-library-as-an-assembly.md)

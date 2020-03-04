@@ -5,12 +5,12 @@ author: richlander
 ms.date: 06/20/2016
 ms.technology: dotnet-standard
 ms.assetid: 7b77b6c1-8367-4602-bff3-91e4c05ac643
-ms.openlocfilehash: bfa9c24ef4cd2c418c91e00318aa47b889078d40
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.openlocfilehash: d4444b6d080afa92a4e7fd9f30c5f9358f02f0ef
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
-ms.locfileid: "74552660"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159232"
 ---
 # <a name="framework-libraries"></a>Bibliothèques de framework
 
@@ -52,7 +52,7 @@ Les bibliothèques de classes de base fournissent les types les plus fondamentau
 
 * <xref:System.Net.Http.HttpClient> : API qui permet d’envoyer des requêtes HTTP et de recevoir des réponses HTTP d’une ressource identifiée par un URI.
 * <xref:System.Xml.Linq.XDocument> : API qui permet de charger et d’interroger des documents XML avec LINQ.
-* <xref:System.IO.StreamReader> : API qui permet de lire des fichiers. 
+* <xref:System.IO.StreamReader> : API qui permet de lire des fichiers.
 * <xref:System.IO.StreamWriter> : API qui permet d’écrire des fichiers.
 
 ## <a name="app-model-apis"></a>API de modèle d’application

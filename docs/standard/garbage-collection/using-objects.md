@@ -10,16 +10,16 @@ helpviewer_keywords:
 - try/finally block
 - garbage collection, encapsulating resources
 ms.assetid: 81b2cdb5-c91a-4a31-9c83-eadc52da5cf0
-ms.openlocfilehash: 979cd782e5ab094b6dea010fc7a0b27caa390e67
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: c5232aa89064c514e71f3a18bc754159e9c9b15b
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73141343"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160277"
 ---
 # <a name="using-objects-that-implement-idisposable"></a>Utilisation d’objets implémentant IDisposable
 
-Le récupérateur de mémoire du Common Language Runtime libère la mémoire utilisée par les objets managés, mais les types qui utilisent des ressources non managées implémentent l'interface <xref:System.IDisposable> pour permettre à la mémoire allouée à ces ressources non managées d'être récupérée. Une fois que vous avez fini d'utiliser un objet qui implémente <xref:System.IDisposable>, vous devez appeler l'implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> de l'objet. Vous pouvez le faire de deux façons :  
+Le récupérateur de mémoire du Common Language Runtime libère la mémoire utilisée par les objets managés, mais les types qui utilisent des ressources non managées implémentent l'interface <xref:System.IDisposable> pour permettre à la mémoire allouée à ces ressources non managées d'être récupérée. Une fois que vous avez fini d'utiliser un objet qui implémente <xref:System.IDisposable>, vous devez appeler l'implémentation de <xref:System.IDisposable.Dispose%2A?displayProperty=nameWithType> de l'objet. Vous pouvez le faire de deux façons :  
   
 - Avec l’instruction `using`C# ou l’instruction `Using`Visual Basic.  
   
@@ -56,7 +56,7 @@ L'exemple suivant est similaire à l'exemple précédent, mais il utilise un blo
 [!code-csharp[Conceptual.Disposable#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.disposable/cs/using5.cs#6)]
 [!code-vb[Conceptual.Disposable#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.disposable/vb/using5.vb#6)]  
   
-Vous pouvez suivre ce modèle de base si vous choisissez d’implémenter (ou que vous devez implémenter) un bloc `try/finally`, car votre langage de programmation ne prend pas en charge l’instruction `using`, mais autorise des appels directs à la méthode <xref:System.IDisposable.Dispose%2A>. 
+Vous pouvez suivre ce modèle de base si vous choisissez d’implémenter (ou que vous devez implémenter) un bloc `try/finally`, car votre langage de programmation ne prend pas en charge l’instruction `using`, mais autorise des appels directs à la méthode <xref:System.IDisposable.Dispose%2A>.
   
 ## <a name="see-also"></a>Voir aussi
 

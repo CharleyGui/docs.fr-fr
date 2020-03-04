@@ -2,12 +2,12 @@
 title: Implémenter des connexions SQL à Entity Framework Core résilientes
 description: Découvrez comment implémenter des connexions SQL à Entity Framework Core résilientes. Cette technique est particulièrement importante lors de l’utilisation d’Azure SQL Database dans le cloud.
 ms.date: 10/16/2018
-ms.openlocfilehash: 0ded30469bb4985fed7b60938756046531c8feea
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: 7a047edca21d63a451e90f407b23f3358d461330
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76777059"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241063"
 ---
 # <a name="implement-resilient-entity-framework-core-sql-connections"></a>Implémenter des connexions SQL à Entity Framework Core résilientes
 
@@ -49,7 +49,7 @@ Si vous essayez d’exécuter cette transaction lors de l’utilisation d’une 
 
 > System.InvalidOperationException : La stratégie d’exécution configurée « SqlServerRetryingExecutionStrategy » ne prend pas en charge les transactions lancées par l’utilisateur. Utilisez la stratégie d’exécution retournée par « DbContext.Database.CreateExecutionStrategy() » pour exécuter toutes les opérations de la transaction en tant qu’ensemble pouvant être retenté.
 
-La solution consiste à appeler manuellement la stratégie d’exécution EF avec un délégué représentant tout ce qui doit être exécuté. Si une défaillance passagère se produit, la stratégie d’exécution appelle à nouveau le délégué. Par exemple, le code suivant montre comment elle est implémentée dans eShopOnContainers avec plusieurs DbContexts (\_catalogContext et IntegrationEventLogContext) quand un produit est mis à jour puis que l’objet ProductPriceChangedIntegrationEvent est enregistré, ce qui nécessite d’utiliser un autre DbContext.
+La solution consiste à appeler manuellement la stratégie d’exécution EF avec un délégué représentant tout ce qui doit être exécuté. En cas d’échec passager, la stratégie d’exécution appelle de nouveau le délégué. Par exemple, le code suivant montre comment elle est implémentée dans eShopOnContainers avec plusieurs DbContexts (\_catalogContext et IntegrationEventLogContext) quand un produit est mis à jour puis que l’objet ProductPriceChangedIntegrationEvent est enregistré, ce qui nécessite d’utiliser un autre DbContext.
 
 ```csharp
 public async Task<IActionResult> UpdateProduct(
@@ -154,4 +154,4 @@ public class ResilientTransaction
 
 >[!div class="step-by-step"]
 >[Précédent](implement-retries-exponential-backoff.md)
->[Suivant](explore-custom-http-call-retries-exponential-backoff.md)
+>[Suivant](use-httpclientfactory-to-implement-resilient-http-requests.md)

@@ -1,15 +1,15 @@
 ---
-title: Utilisez HttpClientFactory pour implémenter des requêtes HTTP résilientes
+title: Utiliser HttpClientFactory pour implémenter des requêtes HTTP résilientes
 description: Découvrez comment utiliser HttpClientFactory, disponible à partir de .NET Core 2.1, pour créer des instances `HttpClient`, ce qui facilite son utilisation dans vos applications.
 ms.date: 08/08/2019
-ms.openlocfilehash: 1a6d65509d669166e73ad907b506bae7fa26536d
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 7028a23a8945802d7ec0129b70b2840d03acfba1
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900323"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241050"
 ---
-# <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Utilisez HttpClientFactory pour implémenter des requêtes HTTP résilientes
+# <a name="use-httpclientfactory-to-implement-resilient-http-requests"></a>Utiliser HttpClientFactory pour implémenter des requêtes HTTP résilientes
 
 `HttpClientFactory` est une fabrique rigide, disponible depuis .NET Core 2.1, qui permet la création d’instances <xref:System.Net.Http.HttpClient> à utiliser dans vos applications.
 
@@ -198,5 +198,5 @@ Jusqu’à ce stade, le code indiqué effectue simplement des requêtes Http nor
   <https://github.com/dotnet/extensions/issues/1345>
 
 >[!div class="step-by-step"]
->[Précédent](explore-custom-http-call-retries-exponential-backoff.md)
+>[Précédent](implement-resilient-entity-framework-core-sql-connections.md)
 >[Suivant](implement-http-call-retries-exponential-backoff-polly.md)

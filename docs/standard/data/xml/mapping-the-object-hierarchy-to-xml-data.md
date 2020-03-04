@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 450e350b-6a68-4634-a2a5-33f4dc33baf0
-ms.openlocfilehash: 2ca5f27bdea75f6c6ce8f954f553b6a58a1a9204
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 642a7e5321d0150865f74a66a811914bc9f5d21d
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124248"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160025"
 ---
 # <a name="mapping-the-object-hierarchy-to-xml-data"></a>Mappage de la hiérarchie d'objets à des données XML
 Quand un document XML est en mémoire, sa représentation conceptuelle est une arborescence. Pour la programmation, vous disposez d’une hiérarchie d’objets pour accéder aux nœuds de l’arborescence. L'exemple suivant illustre la manière dont le contenu XML se transforme en nœuds.  
@@ -20,7 +20,7 @@ Quand un document XML est en mémoire, sa représentation conceptuelle est une a
   
  Supposons l'exemple de code XML simple suivant :  
   
- **Entrée**  
+ **Input**  
   
 ```xml  
 <book>  
@@ -37,7 +37,7 @@ Représentation sous forme d’arborescence de nœuds book et title
   
  L'exemple suivant lit dans les données XML et écrit le texte différent, en fonction du type de nœud. En utilisant comme entrée le fichier de données XML **items.xml** :  
   
- **Entrée**  
+ **Input**  
   
 ```xml  
 <?xml version="1.0"?>  
@@ -68,8 +68,8 @@ Public Class Sample
         Dim reader As XmlTextReader = Nothing  
   
         Try  
-            ' Load the reader with the data file and   
-            'ignore all white space nodes.   
+            ' Load the reader with the data file and
+            'ignore all white space nodes.
             reader = New XmlTextReader(filename)  
             reader.WhitespaceHandling = WhitespaceHandling.None  
   
@@ -122,7 +122,7 @@ public class Sample
   
         try  
         {  
-            // Load the reader with the data file and ignore   
+            // Load the reader with the data file and ignore
             // all white space nodes.  
             reader = new XmlTextReader(filename);  
             reader.WhitespaceHandling = WhitespaceHandling.None;  

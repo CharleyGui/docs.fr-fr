@@ -11,12 +11,12 @@ helpviewer_keywords:
 - enumeration type [C#]
 - bit flags [C#]
 ms.assetid: bbeb9a0f-e9b3-41ab-b0a6-c41b1a08974c
-ms.openlocfilehash: 4377d113a18d23c8a0f9a669e6112f1a8223cc79
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 77c7b7bd7f3e59fbe782755c829f18cf1cefc725
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450867"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239818"
 ---
 # <a name="enumeration-types-c-reference"></a>Types énumérationC# (référence)
 
@@ -54,7 +54,7 @@ Vous utilisez un type d’énumération pour représenter un choix à partir d�
 
 Si vous souhaitez qu’un type énumération représente une combinaison de choix, définissez des membres enum pour ces choix de manière à ce qu’un choix individuel soit un champ de bits. Autrement dit, les valeurs associées à ces membres enum doivent être les puissances de deux. Ensuite, vous pouvez utiliser les [opérateurs logiques au niveau du bit `|` ou `&`](../operators/bitwise-and-shift-operators.md#enumeration-logical-operators) pour combiner des choix ou croiser des combinaisons de choix, respectivement. Pour indiquer qu’un type énumération déclare des champs de bits, appliquez l’attribut [Flags](xref:System.FlagsAttribute) à celui-ci. Comme le montre l’exemple suivant, vous pouvez également inclure des combinaisons typiques dans la définition d’un type énumération.
 
-[!code-csharp[enum flags](~/samples/csharp/language-reference/builtin-types/EnumType.cs#Flags)]
+[!code-csharp[enum flags](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Flags)]
 
 Pour obtenir plus d’informations et des exemples, consultez la page de référence des API <xref:System.FlagsAttribute?displayProperty=nameWithType> et les [membres non exclusifs et la section attribut flags](/dotnet/api/system.enum#non-exclusive-members-and-the-flags-attribute) de la page de référence de l’API <xref:System.Enum?displayProperty=nameWithType>.
 
@@ -68,7 +68,7 @@ Le type de <xref:System.Enum?displayProperty=nameWithType> est la classe de base
 
 Pour tout type énumération, il existe des conversions explicites entre le type énumération et son type intégral sous-jacent. Si vous [effectuez un cast](../operators/type-testing-and-cast.md#cast-operator-) d’une valeur enum en son type sous-jacent, le résultat est la valeur intégrale associée d’un membre Enum.
 
-[!code-csharp[enum conversions](~/samples/csharp/language-reference/builtin-types/EnumType.cs#Conversions)]
+[!code-csharp[enum conversions](~/samples/snippets/csharp/language-reference/builtin-types/EnumType.cs#Conversions)]
 
 Utilisez la méthode <xref:System.Enum.IsDefined%2A?displayProperty=nameWithType> pour déterminer si un type énumération contient un membre enum avec l’certaine valeur associée.
 

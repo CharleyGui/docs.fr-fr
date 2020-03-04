@@ -8,12 +8,12 @@ helpviewer_keywords:
 - threading [.NET Framework],exceptions in managed threads
 - managed threading
 ms.assetid: 11294769-2e89-43cb-890e-ad4ad79cfbee
-ms.openlocfilehash: 2c3215fd42e8cf6d6427d23f94c14db4230ddd02
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 6c14c60b30f8f70aa5e888ed45d6f867154e18d8
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138061"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159648"
 ---
 # <a name="exceptions-in-managed-threads"></a>Exceptions dans les threads managés
 À partir du .NET Framework version 2.0, le common language runtime permet à la plupart des exceptions non prises en charge dans les threads de poursuivre naturellement. Dans la plupart des cas, cela signifie que l’exception non prise en charge provoque l’arrêt de l’application.  
@@ -41,7 +41,7 @@ ms.locfileid: "73138061"
   
  Le fait d’autoriser les exceptions non prises en charge dans les threads à poursuivre naturellement, jusqu’à ce que le système d’exploitation arrête le programme, expose à de tels problèmes lors du développement et des tests. Les rapports d’erreurs sur les arrêts du programme prennent en charge le débogage.  
   
-<a name="ChangeFromPreviousVersions"></a>   
+<a name="ChangeFromPreviousVersions"></a>
 ## <a name="change-from-previous-versions"></a>Changements par rapport aux versions antérieures  
  La modification la plus importante concerne les threads managés. Dans les versions 1.0 et 1.1 du .NET Framework, le common language runtime représente une protection pour les exceptions non prises en charge dans les situations suivantes :  
   

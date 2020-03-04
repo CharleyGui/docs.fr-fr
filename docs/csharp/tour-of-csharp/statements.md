@@ -1,14 +1,14 @@
 ---
 title: Instructions C# - Visite guidée du langage C#
 description: Vous créez les actions d’un programme C# à l’aide d’instructions
-ms.date: 11/06/2016
+ms.date: 02/27/2020
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
-ms.openlocfilehash: 26b151bc116dde9120757f954bdcf3aee041c5f5
-ms.sourcegitcommit: 8699383914c24a0df033393f55db3369db728a7b
-ms.translationtype: HT
+ms.openlocfilehash: ced13b1bfd17977acb98bf33c0a477161cf08a93
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/15/2019
-ms.locfileid: "65634544"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159102"
 ---
 # <a name="statements"></a>Instructions
 
@@ -20,11 +20,11 @@ Les *instructions de déclaration* sont utilisées pour déclarer des variables 
 
 Les *instructions d’expression* sont utilisées pour évaluer des expressions. Les expressions qui peuvent être utilisées en tant qu’instructions comprennent les appels de méthode, les allocations d’objet avec l’opérateur `new`, les affectations avec `=` et les opérateurs d’assignation composée, les opérations d’incrémentation et de décrémentation à l’aide des opérateurs `++` et `--` et les expressions `await`.
 
-Les *instructions de sélection* sont utilisées pour sélectionner un nombre d’instructions possibles pour l’exécution en fonction de la valeur d’une expression. Dans ce groupe, ce sont les instructions `if` et `switch`.
+Les *instructions de sélection* sont utilisées pour sélectionner un nombre d’instructions possibles pour l’exécution en fonction de la valeur d’une expression. Ce groupe contient les instructions `if` et `switch`.
 
-Les *instructions d’itération* servent à exécuter à plusieurs reprises une instruction incorporée. Dans ce groupe, ce sont les instructions `while`, `do`, `for` et `foreach`.
+Les *instructions d’itération* servent à exécuter à plusieurs reprises une instruction incorporée. Ce groupe contient les instructions `while`, `do`, `for`et `foreach`.
 
-Les *instructions de saut* sont utilisées pour transférer le contrôle. Dans ce groupe, ce sont les instructions `break`, `continue`, `goto`, `throw`, `return` et `yield`.
+Les *instructions de saut* sont utilisées pour transférer le contrôle. Ce groupe contient les instructions `break`, `continue`, `goto`, `throw`, `return`et `yield`.
 
 L’instruction `try`...`catch` est utilisée pour intercepter les exceptions qui se produisent pendant l’exécution d’un bloc, et l’instruction `try`...`finally` permet de spécifier que le code de finalisation est toujours exécuté, qu’une exception se soit produite ou non.
 

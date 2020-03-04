@@ -3,16 +3,16 @@ title: Accès de niveau élevé pour les commandes dotnet
 description: Découvrez les bonnes pratiques concernant les commandes dotnet qui nécessitent un accès de niveau élevé.
 author: wli3
 ms.date: 06/26/2019
-ms.openlocfilehash: fe33cbe966d175f71ba350737b283c1e83f64fa6
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 4aff9badfa8ad9b83adc4496d4ebd6df29252e36
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543428"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156762"
 ---
 # <a name="elevated-access-for-dotnet-commands"></a>Accès de niveau élevé pour les commandes dotnet
 
-Les bonnes pratiques guident les développeurs dans l’écriture de logiciels qui nécessitent des privilèges peu élevés. Toutefois, certains logiciels, comme les outils de supervision des performances, nécessitent des autorisations d’administrateur en raison de règles liées au système d’exploitation. Le guide qui suit décrit les scénarios pris en charge pour l’écriture de tels logiciels avec .NET Core. 
+Les bonnes pratiques guident les développeurs dans l’écriture de logiciels qui nécessitent des privilèges peu élevés. Toutefois, certains logiciels, comme les outils de supervision des performances, nécessitent des autorisations d’administrateur en raison de règles liées au système d’exploitation. Le guide qui suit décrit les scénarios pris en charge pour l’écriture de tels logiciels avec .NET Core.
 
 Les commandes suivantes peuvent être exécutées avec des privilèges élevés :
 
@@ -35,8 +35,8 @@ Les instructions suivantes montrent la méthode recommandée pour installer, ex�
 
 Si le dossier `%ProgramFiles%\dotnet-tools` existe déjà, effectuez les étapes suivantes pour vérifier si le groupe « Utilisateurs » est autorisé à écrire ou à modifier ce répertoire :
 
-- Cliquez avec le bouton droit sur le dossier `%ProgramFiles%\dotnet-tools`, puis sélectionnez **Propriétés**. La boîte de dialogue **Propriétés communes** s’ouvre. 
-- Sélectionnez l’onglet **sécurité** . Sous **groupes ou noms d’utilisateurs**, vérifiez si le groupe « utilisateurs » a l’autorisation d’écrire ou de modifier le répertoire. 
+- Cliquez avec le bouton droit sur le dossier `%ProgramFiles%\dotnet-tools`, puis sélectionnez **Propriétés**. La boîte de dialogue **Propriétés communes** s’ouvre.
+- Sélectionnez l’onglet **sécurité** . Sous **groupes ou noms d’utilisateurs**, vérifiez si le groupe « utilisateurs » a l’autorisation d’écrire ou de modifier le répertoire.
 - Si le groupe « Utilisateurs » peut modifier le répertoire ou y écrire des données, utilisez un nom de répertoire autre que *dotnet-tools* lorsque vous installez les outils.
 
 Pour installer les outils, exécutez la commande suivante dans l’invite de commandes avec élévation de privilèges. Cela va créer le dossier *dotnet-tools* pendant l’installation.
@@ -97,7 +97,7 @@ Pendant le développement, vous aurez peut-être besoin de privilèges élevés 
    dotnet build
    sudo ./bin/Debug/netcoreapp3.0/APPLICATIONNAME
    ```
-    
+
 - Utilisation de la commande [dotnet run](dotnet-run.md) avec l’indicateur `—no-build` pour éviter de générer de nouveaux fichiers binaires :
 
    ```dotnetcli

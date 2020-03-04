@@ -2,18 +2,18 @@
 title: Commande dotnet tool list
 description: La commande de liste d’outils dotnet répertorie les outils .NET Core qui sont installés sur votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: bb74cfeaf441cf8a1a030d97d16655f85d8267d1
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: f231dcfe64a925f75f948d508e7a2d83befd9a00
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543454"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156983"
 ---
 # <a name="dotnet-tool-list"></a>dotnet tool list
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet tool list`-répertorie tous les [outils .net Core](global-tools.md) du type spécifié actuellement installé sur votre ordinateur.
 
@@ -40,7 +40,7 @@ La commande `dotnet tool list` vous permet de répertorier tous les outils globa
 
 - **`-g|--global`**
 
-  Répertorie les outils globaux à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission des `--global` et des `--tool-path` répertorie les outils locaux. 
+  Répertorie les outils globaux à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission des `--global` et des `--tool-path` répertorie les outils locaux.
 
 - **`-h|--help`**
 
@@ -48,7 +48,7 @@ La commande `dotnet tool list` vous permet de répertorier tous les outils globa
 
 - **`--tool-path <PATH>`**
 
-  Spécifie un emplacement personnalisé où trouver les outils globaux. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission des `--global` et des `--tool-path` répertorie les outils locaux. 
+  Spécifie un emplacement personnalisé où trouver les outils globaux. Le chemin peut être absolu ou relatif. Non combinable avec l’option `--global`. L’omission des `--global` et des `--tool-path` répertorie les outils locaux.
 
 ## <a name="examples"></a>Exemples
 

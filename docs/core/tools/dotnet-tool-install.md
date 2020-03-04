@@ -2,18 +2,18 @@
 title: Commande dotnet tool install
 description: La commande d’installation de l’outil dotnet installe l’outil .NET Core spécifié sur votre ordinateur.
 ms.date: 02/14/2020
-ms.openlocfilehash: 837d12bc807ad95ccdbd9c0e087c7d45418c6e74
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 641e6a2753b1cf3bfc334ba2495342f7c42421fc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77626032"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156972"
 ---
 # <a name="dotnet-tool-install"></a>dotnet tool install
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,1 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet tool install` : installe l' [outil .net Core](global-tools.md) spécifié sur votre ordinateur.
 
@@ -38,7 +38,7 @@ La commande `dotnet tool install` vous permet d’installer les outils .NET Core
 
 Les outils globaux sont installés par défaut dans les répertoires suivants lorsque vous spécifiez l’option `-g` ou `--global` :
 
-| Système d''exploitation          | Path                          |
+| Système d''exploitation          | Chemin d'accès                          |
 |-------------|-------------------------------|
 | Linux/macOS | `$HOME/.dotnet/tools`         |
 | Windows     | `%USERPROFILE%\.dotnet\tools` |
@@ -73,7 +73,7 @@ Pour plus d’informations, consultez [installer un outil local](global-tools.md
 
 - **`-g|--global`**
 
-  Spécifie que l’installation est à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission des `--global` et `--tool-path` spécifie une installation de l’outil local. 
+  Spécifie que l’installation est à l’échelle de l’utilisateur. Non combinable avec l’option `--tool-path`. L’omission des `--global` et `--tool-path` spécifie une installation de l’outil local.
 
 - **`-h|--help`**
 
@@ -81,7 +81,7 @@ Pour plus d’informations, consultez [installer un outil local](global-tools.md
 
 - **`tool-path <PATH>`**
 
-  Spécifie l’emplacement d’installation de l’outil global. Le chemin peut être absolu ou relatif. Si le chemin n’existe pas, la commande essaie de le créer. L’omission des `--global` et `--tool-path` spécifie une installation de l’outil local. 
+  Spécifie l’emplacement d’installation de l’outil global. Le chemin peut être absolu ou relatif. Si le chemin n’existe pas, la commande essaie de le créer. L’omission des `--global` et `--tool-path` spécifie une installation de l’outil local.
 
 - **`-v|--verbosity <LEVEL>`**
 

@@ -3,12 +3,12 @@ title: Glossaire .NET
 description: Découvrez la signification de certains termes utilisés dans la documentation .NET.
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
-ms.openlocfilehash: 822d6c9513d49dcc6bc57421003441d9bcc7c281
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: 8da1d858835210590a80a624fb8989fbfe8e0a91
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921112"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160090"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -22,11 +22,11 @@ Semblable au compilateur [JIT](#jit), ce compilateur convertit également le lan
 
 Consultez [CoreRT](#corert) et [.NET Native](#net-native).
 
-## <a name="aspnet"></a>ASP.NET 
+## <a name="aspnet"></a>ASP.NET
 
 Implémentation ASP.NET d’origine fournie avec .NET Framework.
 
-ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core. C’est le contexte qui détermine la signification véhiculée par le terme. Reportez-vous à ASP.NET 4.x lorsque vous souhaitez indiquer clairement que vous n’utilisez pas ASP.NET pour les deux implémentations. 
+ASP.NET est parfois un terme général qui désigne les deux implémentations d’ASP.NET, y compris ASP.NET Core. C’est le contexte qui détermine la signification véhiculée par le terme. Reportez-vous à ASP.NET 4.x lorsque vous souhaitez indiquer clairement que vous n’utilisez pas ASP.NET pour les deux implémentations.
 
 Voir [Documentation d’ASP.NET](/aspnet/#pivot=aspnet).
 
@@ -38,7 +38,7 @@ Voir [Documentation ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>assembly
 
-Fichier *.dll*/ *.exe* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
+Fichier *.dll*/*.exe* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
 
 Un assembly peut inclure des types comme des interfaces, des classes, des structures, des énumérations et des délégués. Les assemblys qui se trouvent dans le dossier *bin* d’un projet sont parfois appelés *binaires*. Voir aussi [bibliothèque](#library).
 
@@ -78,7 +78,7 @@ Tous les logiciels d’exécution, outils de développement et ressources de com
 
 Le terme « écosystème .NET » diffère des termes tels que « pile .NET » en ce sens qu’il inclut les bibliothèques et les applications tierces. Voici un exemple dans une phrase :
 
-- « L’objectif de [.NET Standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .NET. » 
+- « L’objectif de [.NET Standard](#net-standard) est d’établir une meilleure uniformité dans l’écosystème .NET. »
 
 ## <a name="framework"></a>framework
 
@@ -86,7 +86,7 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [framework cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 
@@ -96,7 +96,7 @@ Dans la documentation existante, « framework » fait parfois référence à u
 
 Garbage collector.
 
-Le garbage collector est une implémentation de la gestion automatique de la mémoire.  Le GC libère la mémoire occupée par les objets qui ne sont plus en cours d’utilisation. 
+Le garbage collector est une implémentation de la gestion automatique de la mémoire.  Le GC libère la mémoire occupée par les objets qui ne sont plus en cours d’utilisation.
 
 Consultez [Nettoyage de la mémoire](garbage-collection/index.md).
 
@@ -123,7 +123,7 @@ Une implémentation de .NET inclut les composants suivants :
 
 Exemples d’implémentations de .NET :
 
-- [.NET Framework](#net-framework)
+- [.NET Framework](#net-framework)
 - [.NET Core](#net-core)
 - [Plateforme Windows universelle (UWP)](#uwp)
 
@@ -157,7 +157,7 @@ Terme générique désignant [.NET Standard](#net-standard), ainsi que toutes le
 
 Consultez le [Guide de .NET](index.md).
 
-## <a name="net-core"></a>.NET Core 
+## <a name="net-core"></a>.NET Core
 
 Implémentation multiplateforme, hautes performances et open source de .NET. Inclut CoreCLR (Core Common Language Runtime), CoreRT (Core AOT Runtime, en cours de développement), la bibliothèque de classes de base et le SDK Core.
 
@@ -211,24 +211,24 @@ Un package NuGet &mdash; ou simplement un package &mdash; est un fichier *.zip* 
 
 Le fichier *.zip* porte l’extension *.nupkg* et peut contenir des composants, tels que des fichiers *.dll* et des fichiers *.xml*, à utiliser avec plusieurs frameworks et versions cibles. Quand ils sont installés dans une application ou une bibliothèque, les composants appropriés sont sélectionnés en fonction du framework cible spécifié par l’application ou la bibliothèque. Les composants qui définissent l’interface se trouvent dans le dossier *ref*, tandis que les ressources qui définissent l’implémentation se trouvent dans le dossier *lib*.
 
-## <a name="platform"></a>Plate-forme
+## <a name="platform"></a>plateforme
 
 Système d’exploitation et le matériel sur lequel il s’exécute, tel que Windows, macOS, Linux, iOS et Android.
 
 Voici quelques exemples d’utilisation dans des phrases :
 
-- « .NET Core est une implémentation multiplateforme de .NET ». 
+- « .NET Core est une implémentation multiplateforme de .NET ».
 - « Les profils de bibliothèque de classes portable représentent les plateformes Microsoft, alors que .NET Standard est indépendant de la plateforme. »
 
 La documentation .NET utilise fréquemment « plateforme .NET » pour désigner soit une implémentation de .NET, soit la pile .NET y compris toutes les implémentations. Ces deux utilisations ayant tendance à être confondues avec la signification principale (système d’exploitation/matériel), nous envisageons de les supprimer de la documentation.
 
-## <a name="runtime"></a>Runtime
+## <a name="runtime"></a>runtime
 
 Environnement d’exécution d’un programme managé.
 
 Le système d’exploitation fait partie de l’environnement d’exécution, mais pas du runtime .NET. Voici quelques exemples de runtimes .NET :
 
-- Common Language Runtime (CLR)
+- CLR (Common Language Runtime)
 - Core Common Language Runtime (CoreCLR)
 - .NET Native (pour la plateforme Windows universelle)
 - Runtime Mono
@@ -239,13 +239,13 @@ Parfois, la documentation de .NET utilise « runtime » pour désigner une imp
 - « Les bibliothèques destinées à s’exécuter sur plusieurs runtimes doivent cibler ce framework. » (s’applique à .NET Standard)
 - « Les différents runtimes .NET implémentent des versions spécifiques de .NET Standard. … Chaque version du runtime .NET publie la version .NET Standard la plus élevée qu’elle prend en charge... »
 
-Nous envisageons de supprimer cette utilisation incohérente. 
+Nous envisageons de supprimer cette utilisation incohérente.
 
 ## <a name="stack"></a>pile
 
 Ensemble de technologies de programmation qui sont utilisées conjointement pour générer et exécuter des applications.
 
-L’expression « la pile .NET » fait référence à .NET Standard et à toutes les implémentations de .NET. L’expression « une pile .NET » peut faire référence à une implémentation de .NET. 
+L’expression « la pile .NET » fait référence à .NET Standard et à toutes les implémentations de .NET. L’expression « une pile .NET » peut faire référence à une implémentation de .NET.
 
 ## <a name="target-framework"></a>version cible de .NET Framework
 
@@ -274,7 +274,7 @@ Implémentation de .NET qui sert à générer des logiciels et des applications 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de .NET](index.md)
-- [.NET Framework Guide](../framework/index.md) (Guide du .NET Framework)
+- [Guide du .NET Framework](../framework/index.md)
 - [.NET Core](../core/index.md)
 - [ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)
 - [ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)

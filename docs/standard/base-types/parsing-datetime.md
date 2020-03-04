@@ -14,12 +14,12 @@ helpviewer_keywords:
 - base types, parsing strings
 - DateTime object
 - time strings
-ms.openlocfilehash: 16daa0ef3133b6cd04dc48b7f79fd365098e4bdf
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 9555304e570226b2ed3b040735cf099b5a018f93
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75348071"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156541"
 ---
 # <a name="parsing-date-and-time-strings-in-net"></a>Analyse des chaînes de date et d’heure dans .NET
 
@@ -72,7 +72,7 @@ Toutefois, bien que vous puissiez utiliser les surcharges de la méthode <xref:S
 
 [!code-csharp[Parsing.DateAndTime#3](../../../samples/snippets/csharp/how-to/conversions/StringToDateTime.cs#3)]
 [!code-vb[Parsing.DateAndTime#3](../../../samples/snippets/visualbasic/how-to/conversions/Program.vb#3)]
- 
+
 ## <a name="parseexact"></a>ParseExact
 
 La méthode <xref:System.DateTime.ParseExact%2A?displayProperty=nameWithType> convertit une chaîne en un objet <xref:System.DateTime> si elle est conforme à l’un des modèles de chaîne spécifiés. Quand une chaîne qui ne correspond pas aux formats spécifiés est transmise vers cette méthode, une <xref:System.FormatException> est levée. Vous pouvez spécifier un des spécificateurs de format standard de date et d’heure ou une combinaison de spécificateurs de format personnalisé de date et d’heure. En utilisant les spécificateurs de format personnalisé, vous pouvez construire une chaîne de reconnaissance personnalisée. Pour obtenir une explication des spécificateurs, consultez les rubriques relatives aux [chaînes de format de date et d’heure standard](standard-date-and-time-format-strings.md) et aux [chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md).  
@@ -86,8 +86,8 @@ Chaque surcharge des méthodes <xref:System.DateTime.Parse%2A> et <xref:System.D
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Parsing Strings](parsing-strings.md)
+- [Analyse de chaînes](parsing-strings.md)
 - [Mise en forme des types](formatting-types.md)
 - [Conversion de type dans .NET](type-conversion.md)
 - [Formats de date et d’heure standard](standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d’heure personnalisées](custom-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure personnalisées](custom-date-and-time-format-strings.md)

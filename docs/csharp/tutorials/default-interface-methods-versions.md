@@ -4,18 +4,18 @@ description: Ce tutoriel avancé explore comment vous pouvez ajouter de manière
 ms.date: 05/06/2019
 ms.technlogy: csharp-advanced-concepts
 ms.custom: mvc
-ms.openlocfilehash: b9194b769a3ba6d2906d6177c2363d6093b85188
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 0f11c85be6e53d512b3794496db29803c4a10679
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039250"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240387"
 ---
 # <a name="tutorial-update-interfaces-with-default-interface-methods-in-c-80"></a>Didacticiel : mettre à jour les interfaces avec les C# méthodes d’interface par défaut dans 8,0
 
 Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Le scénario le plus courant consiste à ajouter de manière sécurisée des membres à une interface déjà publiée et utilisée par de nombreux clients.
 
-Dans ce tutoriel, vous allez apprendre à :
+Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
@@ -23,19 +23,19 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Créer des implémentations paramétrables pour fournir une plus grande flexibilité
 > * Permettre aux implémenteurs de fournir une implémentation plus spécifique sous la forme d’un remplacement
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019) ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download).
 
-## <a name="scenario-overview"></a>Vue d’ensemble du scénario
+## <a name="scenario-overview"></a>Présentation du scénario
 
 Ce tutoriel commence par la version 1 d’une bibliothèque de relation client. Vous pouvez obtenir l’application de démarrage à partir de notre [dépôt samples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship). L’entreprise qui a créé cette bibliothèque espérait la voir adoptée par les clients ayant des applications existantes. Elle a fourni des définitions d’interface minimales destinées à être implémentées par les utilisateurs de sa bibliothèque. Voici la définition d’interface pour un client :
 
-[!code-csharp[InitialCustomerInterface](~/samples/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/ICustomer.cs?name=SnippetICustomerVersion1)]
+[!code-csharp[InitialCustomerInterface](~/samples/snippets/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/ICustomer.cs?name=SnippetICustomerVersion1)]
 
 Elle a défini une deuxième interface qui représente une commande :
 
-[!code-csharp[InitialOrderInterface](~/samples/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/IOrder.cs?name=SnippetIorderVersion1)]
+[!code-csharp[InitialOrderInterface](~/samples/snippets/csharp/tutorials/default-interface-members-versions/starter/customer-relationship/IOrder.cs?name=SnippetIorderVersion1)]
 
 À partir de ces interfaces, l’équipe a pu générer une bibliothèque pour les utilisateurs permettant de créer une meilleure expérience pour ses clients. Son objectif était de créer une relation plus étroite avec les clients existants et d’améliorer ses relations avec les nouveaux clients.
 
@@ -53,15 +53,15 @@ La mise à niveau doit fournir la fonctionnalité permettant de définir deux pr
 
 Tout d’abord, ajoutez la nouvelle méthode à l’implémentation :
 
-[!code-csharp[InitialOrderInterface](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionOne)]
+[!code-csharp[InitialOrderInterface](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionOne)]
 
 L’auteur de la bibliothèque a écrit un premier test pour vérifier l’implémentation :
 
-[!code-csharp[TestDefaultImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetTestDefaultImplementation)]
+[!code-csharp[TestDefaultImplementation](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetTestDefaultImplementation)]
 
 Notez la partie suivante du test :
 
-[!code-csharp[TestDefaultImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetHighlightCast)]
+[!code-csharp[TestDefaultImplementation](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetHighlightCast)]
 
 Ce cast de `SampleCustomer` en `ICustomer` est nécessaire. La classe `SampleCustomer` n’a pas besoin de fournir une implémentation pour `ComputeLoyaltyDiscount` ; elle est fournie par l’interface `ICustomer`. Toutefois, la classe `SampleCustomer` n’hérite pas les membres de ses interfaces. Cette règle n’a pas changé. Pour qu’il soit possible d’appeler n’importe quelle méthode déclarée et implémentée dans l’interface, la variable doit être du même type que l’interface, `ICustomer` dans cet exemple.
 
@@ -69,13 +69,13 @@ Ce cast de `SampleCustomer` en `ICustomer` est nécessaire. La classe `SampleCus
 
 C’est un bon début. Toutefois, l’implémentation par défaut est trop restrictive. De nombreux consommateurs de ce système peuvent choisir des seuils différents pour le nombre d’achats, une durée différente pour la qualité de membre ou un pourcentage de remise différent. Vous pouvez procurer une meilleure expérience de mise à niveau à davantage de clients en fournissant un moyen de définir ces paramètres. Nous allons ajouter une méthode statique qui définit ces trois paramètres de contrôle de l’implémentation par défaut :
 
-[!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionTwo)]
+[!code-csharp[VersionTwoImplementation](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetLoyaltyDiscountVersionTwo)]
 
 De nombreuses nouvelles fonctionnalités de langage sont présentées dans ce petit fragment de code. Les interfaces peuvent maintenant inclure des membres statiques, notamment des champs et des méthodes. Différents modificateurs d’accès sont également activés. Les champs supplémentaires sont privés, tandis que la nouvelle méthode est publique. Tout modificateur est autorisé sur les membres d’interface.
 
 Les applications qui utilisent la formule générale pour le calcul de la remise de fidélité, mais des paramètres différents, n’ont pas besoin de fournir une implémentation personnalisée ; elles peuvent définir les arguments par le biais d’une méthode statique. Par exemple, le code suivant définit une « évaluation du client » qui récompense tout client membre depuis plus d’un mois :
 
-[!code-csharp[SetLoyaltyThresholds](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetSetLoyaltyThresholds)]
+[!code-csharp[SetLoyaltyThresholds](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/Program.cs?name=SnippetSetLoyaltyThresholds)]
 
 ## <a name="extend-the-default-implementation"></a>Étendre l’implémentation par défaut
 
@@ -83,11 +83,11 @@ Le code que vous avez ajouté jusqu’à présent a fourni une implémentation p
 
 Imaginez une start-up qui souhaite attirer de nouveaux clients. Elle offre une remise de 50 % sur la première commande d’un nouveau client. Pour leur part, les clients existants bénéficient de la remise standard. L’auteur de la bibliothèque doit déplacer l’implémentation par défaut vers une méthode `protected static` afin que toute classe qui implémente cette interface puisse réutiliser le code dans son implémentation. L’implémentation par défaut du membre d’interface appelle également cette méthode partagée :
 
-[!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetFinalVersion)]
+[!code-csharp[VersionTwoImplementation](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/ICustomer.cs?name=SnippetFinalVersion)]
 
 Dans une implémentation d’une classe qui implémente cette interface, le remplacement peut appeler la méthode d’assistance statique et étendre cette logique pour fournir la remise « nouveau client » :
 
-[!code-csharp[VersionTwoImplementation](~/samples/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/SampleCustomer.cs?name=SnippetOverrideAndExtend)]
+[!code-csharp[VersionTwoImplementation](~/samples/snippets/csharp/tutorials/default-interface-members-versions/finished/customer-relationship/SampleCustomer.cs?name=SnippetOverrideAndExtend)]
 
 Vous pouvez voir l’intégralité du code terminé dans notre [dépôt d’exemples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/finished/customer-relationship). Vous pouvez obtenir l’application de démarrage à partir de notre [dépôt samples sur GitHub](https://github.com/dotnet/samples/tree/master/csharp/tutorials/default-interface-members-versions/starter/customer-relationship).
 

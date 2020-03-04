@@ -3,12 +3,12 @@ title: Intégration de XML aux données relationnelles et à ADO.NET
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: f6ebb1a1-f2ca-49b9-92c9-0150940cf6e6
-ms.openlocfilehash: 373e28d1fffd8c47acb4acb70271db056aa3a27b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 30b788c77a2352d0d02ee772ab3f428381facd9f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709931"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155618"
 ---
 # <a name="xml-integration-with-relational-data-and-adonet"></a>Intégration de XML aux données relationnelles et à ADO.NET
 LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et contient des données XML. L'avantage de **XmlDataDocument** est de fournir une passerelle entre les données relationnelles et hiérarchiques. Il s’agit d’un **XmlDocument** qui peut être lié à un **DataSet** et les deux classes peuvent synchroniser des changements apportés aux données contenues dans ces deux classes. Un **XmlDocument** lié à un **DataSet** permet à du XML de s'intégrer à des données relationnelles, et il n'est pas nécessaire que vos données soient représentées soit sous la forme XML, soit dans un format relationnel. Vous pouvez effectuer les deux sans être limité à une représentation unique des données.  
@@ -27,7 +27,7 @@ LaLa classe **XmlDataDocument** est une classe dérivée de **XmlDocument** et c
   
  Comme **XmlDataDocument** est hérité à partir d'un **XmlDocument**, il fournit une implémentation du DOM W3C. Le fait que **XmlDataDocument** soit associé à un sous-ensemble de ses données et les stocke dans un **DataSet** ne restreint ni ne modifie en aucune manière+ son utilisation en tant que **XmlDocument**. Le code écrit pour consommer un **XmlDocument** fonctionne sans altération par rapport à un **XmlDataDocument**. Le **DataSet** fournit la vue relationnelle des mêmes données en définissant des tableaux, des colonnes, des relations et des contraintes, et correspond à un magasin autonome de données utilisateur en mémoire.  
   
- L’illustration suivante montre les différentes associations entre, d’une part, les données XML et, d’autre part, **DataSet** et **XmlDataDocument** : 
+ L’illustration suivante montre les différentes associations entre, d’une part, les données XML et, d’autre part, **DataSet** et **XmlDataDocument** :
   
  ![Diagramme illustrant les différentes associations avec le jeu de données XML.](./media/xml-integration-with-relational-data-and-adonet/xml-integration-relational-data-adodotnet.gif)  
   

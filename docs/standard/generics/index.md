@@ -26,12 +26,12 @@ helpviewer_keywords:
 - generic types
 - generic type parameters
 ms.assetid: 2994d786-c5c7-4666-ab23-4c83129fe39c
-ms.openlocfilehash: f04b6fcd1641a53efe75d38ab7122967bff6a58d
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 7f20e5108ad8bff602f5b761e65f093d987f2608
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708369"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156307"
 ---
 # <a name="generics-in-net"></a>Génériques en .NET
 
@@ -84,7 +84,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
   
 - Sécurité de type. Grâce aux génériques, le compilateur se charge de la cohérence des types à votre place. Il est inutile d'écrire du code pour tester le type de données nécessaire, car il est appliqué au moment de la compilation. Ainsi, le besoin d'un cast de type et le risque d'erreurs au moment de l'exécution sont réduits.  
   
-- Moins de code est nécessaire et il est plus facile de le réutiliser. Il n'est pas nécessaire d'hériter d'un type de base et de substituer des membres. Par exemple, <xref:System.Collections.Generic.LinkedList%601> peut être utilisé immédiatement. Vous pouvez créer une liste liée de chaînes à l'aide de la déclaration de variable suivante :  
+- Moins de code est nécessaire et il est plus facile de le réutiliser. Il n'est pas nécessaire d'hériter d'un type de base et de substituer des membres. Par exemple, <xref:System.Collections.Generic.LinkedList%601> peut être utilisé immédiatement. Vous pouvez créer une liste liée de chaînes à l'aide de la déclaration de variable suivante :  
   
      [!code-cpp[HowToGeneric#24](../../../samples/snippets/cpp/VS_Snippets_CLR/HowToGeneric/cpp/source2.cpp#24)]
      [!code-csharp[HowToGeneric#24](../../../samples/snippets/csharp/VS_Snippets_CLR/HowToGeneric/CS/source2.cs#24)]
@@ -124,7 +124,7 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
   
  Le Common Language Runtime fournit de nouveaux codes d'opérations et préfixes pour la prise en charge des types génériques dans le langage MSIL (Microsoft Intermediate Language), notamment <xref:System.Reflection.Emit.OpCodes.Stelem>, <xref:System.Reflection.Emit.OpCodes.Ldelem>, <xref:System.Reflection.Emit.OpCodes.Unbox_Any>, <xref:System.Reflection.Emit.OpCodes.Constrained>et <xref:System.Reflection.Emit.OpCodes.Readonly>.  
   
- Visual C++, C# et Visual Basic fournissent une prise en charge complète de la définition et de l'utilisation des génériques. Pour plus d'informations sur la prise en charge des langages, consultez [Types génériques en Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Introduction aux génériques](../../csharp/programming-guide/generics/index.md) et [Vue d'ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp). 
+ Visual C++, C# et Visual Basic fournissent une prise en charge complète de la définition et de l'utilisation des génériques. Pour plus d'informations sur la prise en charge des langages, consultez [Types génériques en Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md), [Introduction aux génériques](../../csharp/programming-guide/generics/index.md) et [Vue d'ensemble des génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp).
 
 ## <a name="nested-types-and-generics"></a>Types imbriqués et génériques  
  Un type qui est imbriqué dans un type générique peut dépendre des paramètres de type du type générique englobant. Le Common Language Runtime considère que les types imbriqués sont génériques, même s'ils n'ont pas leurs propres paramètres de type générique. Lorsque vous créez une instance d'un type imbriqué, vous devez spécifier les arguments de type pour tous les types génériques englobants.  
@@ -137,14 +137,14 @@ Les génériques vous permettent d'adapter une méthode, une classe ou une struc
 |[Délégués génériques pour la manipulation de tableaux et de listes](../../../docs/standard/generics/delegates-for-manipulating-arrays-and-lists.md)|Aborde les délégués génériques pour les conversions, les prédicats de recherche et les actions à effectuer sur les éléments d'un tableau ou d'une collection.|  
 |[Interfaces génériques](../../../docs/standard/generics/interfaces.md)|Traite des interfaces génériques qui fournissent des fonctionnalités communes à plusieurs familles de types génériques.|  
 |[Covariance et contravariance](../../../docs/standard/generics/covariance-and-contravariance.md)|Aborde la covariance et la contravariance dans les paramètres de type générique.|  
-|[Types de collections couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Fournit des informations récapitulatives sur les caractéristiques et les scénarios d’utilisation des types de collections de .NET, notamment les types génériques.|  
+|[Types de collection couramment utilisés](../../../docs/standard/collections/commonly-used-collection-types.md)|Fournit des informations récapitulatives sur les caractéristiques et les scénarios d’utilisation des types de collections de .NET, notamment les types génériques.|  
 |[Quand utiliser les collections génériques](../../../docs/standard/collections/when-to-use-generic-collections.md)|Traite des règles générales permettant de déterminer le moment auquel utiliser des types de collections génériques.|  
 |[Guide pratique pour définir un type générique avec l'émission de réflexion](../../../docs/framework/reflection-and-codedom/how-to-define-a-generic-type-with-reflection-emit.md)|Explique comment générer des assemblys dynamiques qui incluent des types et des méthodes génériques.|  
 |[Generic Types in Visual Basic](../../visual-basic/programming-guide/language-features/data-types/generic-types.md)|Explique la fonction des génériques pour les utilisateurs de Visual Basic et fournit des procédures concernant l'utilisation et la définition des types génériques.|  
 |[Introduction aux génériques](../../csharp/programming-guide/generics/index.md)|Fournit une vue d'ensemble de la définition et de l'utilisation des types génériques pour les utilisateurs de C#.|  
 |[Vue d’ensemble de génériques dans Visual C++](/cpp/windows/overview-of-generics-in-visual-cpp)|Explique la fonction des génériques pour les utilisateurs C++, y compris les différences entre les génériques et les modèles.|  
 
-## <a name="reference"></a>Reference  
+## <a name="reference"></a>Référence  
  <xref:System.Collections.Generic>  
   
  <xref:System.Collections.ObjectModel>  

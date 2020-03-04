@@ -1,14 +1,14 @@
 ---
 title: Tableaux C# - Visite guidée du langage C#
 description: Les tableaux constituent le type de collection le plus simple du langage C#
-ms.date: 08/10/2016
+ms.date: 02/27/2020
 ms.assetid: a440704c-9e88-4c75-97dd-bfe30ca0fb97
-ms.openlocfilehash: 195df1f31c71ee7a202a3b57076775c4f717d399
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 3e045c0933a21beab6958c7851546ba6e0b55ef9
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673314"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159193"
 ---
 # <a name="arrays"></a>Tableaux
 
@@ -25,7 +25,7 @@ Cet exemple crée et utilise un ***tableau unidimensionnel***. C# prend égaleme
 [!code-csharp[ArrayRank](../../../samples/snippets/csharp/tour/arrays/Program.cs#L24-L26)]
 
 Le tableau `a1` contient 10 éléments, le tableau `a2` en contient 50 (10 x 5) et le tableau `a3` en contient 100 (10 × 5 × 2).
-Le type d’élément d’un tableau peut être de n’importe quel type, y compris un type tableau. Un tableau avec des éléments d’un type tableau est parfois appelé un ***tableau en escalier***, car les longueurs des tableaux d’éléments ne sont pas nécessairement pas les mêmes. L’exemple suivant alloue un tableau de tableaux de `int` :
+Le type d’élément d’un tableau peut être de n’importe quel type, y compris un type tableau. Un tableau avec des éléments d’un type tableau est parfois appelé ***tableau en escalier*** , car les longueurs des tableaux d’éléments ne doivent pas nécessairement être identiques. L’exemple suivant alloue un tableau de tableaux de `int` :
 
 [!code-csharp[ArrayAllocation](../../../samples/snippets/csharp/tour/arrays/Program.cs#L31-L34)]
 
@@ -35,11 +35,11 @@ L’opérateur new autorise la spécification des valeurs initiales des élémen
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L39-L39)]
 
-Notez que la longueur du tableau est déduite à partir du nombre d’expressions entre { et }. Les déclarations locales des champs et variables peuvent être abrégées davantage afin de ne pas avoir à redéclarer le type tableau.
+La longueur du tableau est déduite du nombre d’expressions entre {et}. Les déclarations locales des champs et variables peuvent être abrégées davantage afin de ne pas avoir à redéclarer le type tableau.
 
 [!code-csharp[ArrayInitialization](../../../samples/snippets/csharp/tour/arrays/Program.cs#L44-L44)]
 
-Les deux exemples précédents sont équivalents à ce qui suit :
+Les deux exemples précédents sont équivalents au code suivant :
 
 [!code-csharp[ArrayAssignment](../../../samples/snippets/csharp/tour/arrays/Program.cs#L49-L53)]
 

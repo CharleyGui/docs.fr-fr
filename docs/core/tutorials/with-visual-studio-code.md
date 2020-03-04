@@ -3,18 +3,18 @@ title: Prise en main de C# et Visual Studio Code
 description: Découvrez comment créer et déboguer votre première application .NET Core en C# à l’aide de Visual Studio Code.
 author: kendrahavens
 ms.date: 12/05/2018
-ms.openlocfilehash: acd1c300545bc6c107552576180afd7dec6b7382
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: ef7134e26c1ded3926faa51748c1b6d4a461008f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503521"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156606"
 ---
 # <a name="get-started-with-c-and-visual-studio-code"></a>Prise en main de C# et Visual Studio Code
 
 .NET Core vous offre une plateforme rapide et évolutive pour la création d’applications qui s’exécutent sur Windows, Linux et Mac OS. Utilisez Visual Studio Code avec l’extension de langage C# pour une expérience d’édition puissante avec prise en charge complète de C# IntelliSense (saisie semi-automatique intelligente de code).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 1. Installez [Visual Studio Code](https://code.visualstudio.com/).
 2. Installez le [kit de développement logiciel (SDK) .NET Core](https://dotnet.microsoft.com/download).
@@ -113,7 +113,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
 
     ```csharp
     using System;
-    
+
     namespace HelloWorld
     {
         class Program
@@ -139,7 +139,7 @@ Vous pouvez également regarder un court didacticiel vidéo pour plus d’inform
     Hello World! Happy coding!
     ```
 
-## <a name="faq"></a>Questions fréquentes (FAQ)
+## <a name="faq"></a>FAQ
 
 ### <a name="im-missing-required-assets-to-build-and-debug-c-in-visual-studio-code-my-debugger-says-no-configuration"></a>Je n’ai pas les ressources nécessaires pour générer et déboguer du code C# dans Visual Studio Code. Mon débogueur indique « Aucune configuration ».
 

@@ -7,12 +7,12 @@ helpviewer_keywords:
 - I/O [.NET], buffers
 author: rick-anderson
 ms.author: riande
-ms.openlocfilehash: 5b98e3e2d41d3e49a28db6393f15f13c3579b06d
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: f939164cd56b2fb2feeeb171236b0e1171327e19
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628076"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160116"
 ---
 # <a name="work-with-buffers-in-net"></a>Utiliser des mémoires tampons dans .NET
 

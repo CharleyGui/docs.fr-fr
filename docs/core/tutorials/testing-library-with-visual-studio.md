@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.custom: vs-dotnet, seodoc18
-ms.openlocfilehash: 3a4f25b0d250469102fdac6ee960e42b2d969aed
-ms.sourcegitcommit: f8c36054eab877de4d40a705aacafa2552ce70e9
+ms.openlocfilehash: 307261088f5c7c69c0e69fbd6b99940c04842eec
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/31/2019
-ms.locfileid: "75559576"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156619"
 ---
 # <a name="test-a-net-standard-library-with-net-core-in-visual-studio"></a>Tester une bibliothèque .NET Standard avec .NET Core dans Visual Studio
 
@@ -29,7 +29,7 @@ Pour créer le projet de test unitaire, procédez comme suit :
 
    1. Dans la page **Ajouter un nouveau projet** , entrez **MSTest** dans la zone de recherche. Choisissez **C#** ou **Visual Basic** dans la liste langue, puis choisissez **toutes les plateformes** dans la liste plateforme. Choisissez le modèle **projet de test MSTest (.net Core)** , puis choisissez **suivant**.
 
-   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibraryTest** dans la zone **nom du projet** . Choisissez ensuite **Créer**.
+   1. Dans la page **configurer votre nouveau projet** , entrez **StringLibraryTest** dans la zone **nom du projet** . Sélectionnez ensuite **Créer**.
 
    > [!NOTE]
    > En plus d’un MSTest, vous pouvez également créer des projets de test xUnit et nUnit pour .NET Core dans Visual Studio.
@@ -54,13 +54,13 @@ Pour créer le projet de test unitaire, procédez comme suit :
 
     ```vb
     Imports Microsoft.VisualStudio.TestTools.UnitTesting
-    
+
     Namespace StringLibraryTest
         <TestClass>
         Public Class UnitTest1
             <TestMethod>
             Sub TestSub()
-    
+
             End Sub
         End Class
     End Namespace
@@ -79,7 +79,7 @@ Pour créer le projet de test unitaire, procédez comme suit :
    > [!div class="mx-imgBorder"]
    > ![menu contextuel des dépendances StringLibraryTest](./media/testing-library-with-visual-studio/add-reference-context-menu.png)
 
-1. Dans la boîte de dialogue **Gestionnaire de références**, développez le nœud **Projets**, cochez la case en regard de **StringLibrary**. L’ajout d’une référence à l’assembly `StringLibrary` permet au compilateur de trouver les méthodes **StringLibrary**. Sélectionnez le bouton **OK**. Une référence est ajoutée à votre projet de bibliothèque de classes, `StringLibrary`.
+1. Dans la boîte de dialogue **Gestionnaire de références**, développez le nœud **Projets**, cochez la case en regard de **StringLibrary**. L’ajout d’une référence à l’assembly `StringLibrary` permet au compilateur de trouver les méthodes **StringLibrary**. Cliquez sur le bouton **OK**. Une référence est ajoutée à votre projet de bibliothèque de classes, `StringLibrary`.
 
    ![Boîte de dialogue Gestionnaire de références dans Visual Studio](./media/testing-library-with-visual-studio/project-reference-manager.png)
 

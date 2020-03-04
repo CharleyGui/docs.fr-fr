@@ -6,12 +6,12 @@ dev_langs:
 author: thraka
 ms.author: adegeo
 ms.date: 01/27/2020
-ms.openlocfilehash: 60794c4f8a5f9aeb7a4b3cd58c0c9f00e03fa9e7
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 6e85c2c3e796ae59a13f944bd4913e4b7316c56a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77450978"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156567"
 ---
 # <a name="whats-new-in-net-core-30"></a>Nouveautés de .NET Core 3.0
 
@@ -54,12 +54,40 @@ Si vous utilisez Visual Studio, vous avez besoin de [Visual Studio 2019](https:
 
 ### <a name="default-executables"></a>Exécutables par défaut
 
-.NET Core génère désormais des [exécutables dépendant du framework](../deploying/index.md#publish-runtime-dependent) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#publish-self-contained) produisaient un exécutable.
+.NET Core génère désormais des [exécutables dépendants du runtime](../deploying/index.md#publish-runtime-dependent) par défaut. Ce comportement est nouveau pour les applications qui utilisent une version .NET Core installée de façon globale. Auparavant, seuls les [déploiements autonomes](../deploying/index.md#publish-self-contained) produisaient un exécutable.
 
-Lors de l’étape `dotnet build` ou `dotnet publish`, un exécutable est créé, qui correspond à l’environnement et à la plateforme du Kit de développement que vous utilisez. Vous pouvez obtenir le même résultat avec ces exécutables, comme vous le feriez avec d’autres exécutables natifs comme :
+Pendant `dotnet build` ou `dotnet publish`, un fichier exécutable (appelé **apphost**) est créé et correspond à l’environnement et à la plateforme du kit de développement logiciel (SDK) que vous utilisez. Vous pouvez obtenir le même résultat avec ces exécutables, comme vous le feriez avec d’autres exécutables natifs comme :
 
 - Vous pouvez double-cliquer sur l’exécutable.
 - Vous pouvez lancer l’application directement à partir d’une invite de commandes, par exemple `myapp.exe` sous Windows, et `./myapp` sous Linux et macOS.
+
+### <a name="macos-apphost-and-notarization"></a>macOS appHost et notaireisation
+
+*macOS uniquement*
+
+À partir de la kit SDK .NET Core authentifiée 3,0 pour macOS, le paramètre permettant de générer un fichier exécutable par défaut (appelé appHost) est désactivé par défaut. Pour plus d’informations, voir [la rubrique sur les téléchargements et les projets MacOS Catalina et l’impact sur les téléchargements et les projets .net Core](../install/macos-notarization-issues.md).
+
+Lorsque le paramètre appHost est activé, .NET Core génère un exécutable Mach-O natif quand vous générez ou publiez. Votre application s’exécute dans le contexte de appHost lorsqu’elle est exécutée à partir du code source avec la commande `dotnet run`, ou en démarrant directement l’exécutable Mach-O.
+
+Sans appHost, la seule façon dont un utilisateur peut démarrer une application [dépendante du runtime](../deploying/index.md#publish-runtime-dependent) est d’utiliser la commande `dotnet <filename.dll>`. Un appHost est toujours créé lorsque vous publiez votre application [autonome](../deploying/index.md#publish-self-contained).
+
+Vous pouvez soit configurer appHost au niveau du projet, soit basculer la appHost d’une commande `dotnet` spécifique avec le paramètre `-p:UseAppHost` :
+
+- Fichier projet
+
+  ```xml
+  <PropertyGroup>
+    <UseAppHost>true</UseAppHost>
+  </PropertyGroup>
+  ```
+
+- Paramètre de ligne de commande
+
+  ```dotnetcli
+  dotnet run -p:UseAppHost=true
+  ```
+
+Pour plus d’informations sur le paramètre `UseAppHost`, consultez [propriétés MSBuild pour Microsoft. net. SDK](../project-sdk/msbuild-props.md#useapphost).
 
 ### <a name="single-file-executables"></a>Exécutable monofichier
 
@@ -533,7 +561,7 @@ Souvent, lorsque vous développez une application, vous souhaiterez utiliser une
 
 [!code-csharp[Http2Context](~/samples/snippets/core/whats-new/whats-new-in-30/cs/http.cs#AppContext)]
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Passez en revue les modifications avec rupture entre .NET Core 2,2 et 3,0.](../compatibility/2.2-3.0.md)
 - [Passez en revue les dernières modifications apportées à .NET Core 3,0 pour les applications Windows Forms.](../compatibility/winforms.md#net-core-30)

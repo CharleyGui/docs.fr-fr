@@ -10,23 +10,23 @@ helpviewer_keywords:
 - serialization
 - objects, serializing
 - converters
-ms.openlocfilehash: f72d2d83d701b20648140900d65c9098a8abb721
-ms.sourcegitcommit: 5d769956a04b6d68484dd717077fabc191c21da5
+ms.openlocfilehash: 310967f39c3aa7a46d79087bcbf0cb016f7d7284
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/17/2020
-ms.locfileid: "76164058"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159570"
 ---
 # <a name="how-to-write-custom-converters-for-json-serialization-marshalling-in-net"></a>Comment écrire des convertisseurs personnalisés pour la sérialisation JSON (marshaling) dans .NET
 
-Cet article explique comment créer des convertisseurs personnalisés pour les classes de sérialisation JSON fournies dans l’espace de noms <xref:System.Text.Json>. Pour une présentation de `System.Text.Json`, consultez [sérialisation et désérialisation de JSON dans .net](system-text-json-how-to.md).
+Cet article explique comment créer des convertisseurs personnalisés pour les classes de sérialisation JSON fournies dans l’espace de noms <xref:[!OP.NO-LOC(System.Text.Json)]>. Pour une présentation de `[!OP.NO-LOC(System.Text.Json)]`, consultez [sérialisation et désérialisation de JSON dans .net](system-text-json-how-to.md).
 
-Un *convertisseur* est une classe qui convertit un objet ou une valeur vers et à partir de JSON. L’espace de noms `System.Text.Json` possède des convertisseurs intégrés pour la plupart des types primitifs qui mappent aux primitives JavaScript. Vous pouvez écrire des convertisseurs personnalisés :
+Un *convertisseur* est une classe qui convertit un objet ou une valeur vers et à partir de JSON. L’espace de noms `[!OP.NO-LOC(System.Text.Json)]` possède des convertisseurs intégrés pour la plupart des types primitifs qui mappent aux primitives JavaScript. Vous pouvez écrire des convertisseurs personnalisés :
 
 * Pour remplacer le comportement par défaut d’un convertisseur intégré. Par exemple, vous pouvez souhaiter que `DateTime` valeurs soient représentées par le format mm/jj/aaaa au lieu du format ISO 8601-1:2019 par défaut.
 * Pour prendre en charge un type valeur personnalisé. Par exemple, un struct `PhoneNumber`.
 
-Vous pouvez également écrire des convertisseurs personnalisés pour personnaliser ou étendre `System.Text.Json` avec une fonctionnalité non incluse dans la version actuelle. Les scénarios suivants sont abordés plus loin dans cet article :
+Vous pouvez également écrire des convertisseurs personnalisés pour personnaliser ou étendre `[!OP.NO-LOC(System.Text.Json)]` avec une fonctionnalité non incluse dans la version actuelle. Les scénarios suivants sont abordés plus loin dans cet article :
 
 * [Désérialiser les types inférés en propriétés d’objet](#deserialize-inferred-types-to-object-properties).
 * [Dictionnaire de prise en charge avec clé non-chaîne](#support-dictionary-with-non-string-key).
@@ -58,7 +58,7 @@ L’exemple suivant est un convertisseur qui remplace la sérialisation par déf
 
 ## <a name="sample-factory-pattern-converter"></a>Exemple de convertisseur de modèle de fabrique
 
-Le code suivant illustre un convertisseur personnalisé qui fonctionne avec `Dictionary<Enum,TValue>`. Le code suit le modèle de fabrique, car le premier paramètre de type générique est `Enum` et le second est ouvert. La méthode `CanConvert` retourne `true` uniquement pour un `Dictionary` avec deux paramètres génériques, le premier étant un type `Enum`. Le convertisseur interne obtient un convertisseur existant pour gérer le type fourni au moment de l’exécution pour `TValue`. 
+Le code suivant illustre un convertisseur personnalisé qui fonctionne avec `Dictionary<Enum,TValue>`. Le code suit le modèle de fabrique, car le premier paramètre de type générique est `Enum` et le second est ouvert. La méthode `CanConvert` retourne `true` uniquement pour un `Dictionary` avec deux paramètres génériques, le premier étant un type `Enum`. Le convertisseur interne obtient un convertisseur existant pour gérer le type fourni au moment de l’exécution pour `TValue`.
 
 [!code-csharp[](~/samples/snippets/core/system-text-json/csharp/DictionaryTKeyEnumTValueConverter.cs)]
 
@@ -68,47 +68,47 @@ Le code précédent est identique à ce qui est affiché dans le [dictionnaire d
 
 Les étapes suivantes expliquent comment créer un convertisseur en suivant le modèle de base :
 
-* Créez une classe qui dérive de <xref:System.Text.Json.Serialization.JsonConverter%601> où `T` est le type à sérialiser et à désérialiser.
-* Substituez la méthode `Read` pour désérialiser le JSON entrant et le convertir en type `T`. Utilisez la <xref:System.Text.Json.Utf8JsonReader> transmise à la méthode pour lire le JSON.
-* Substituez la méthode `Write` pour sérialiser l’objet entrant de type `T`. Utilisez le <xref:System.Text.Json.Utf8JsonWriter> qui est passé à la méthode pour écrire le JSON.
+* Créez une classe qui dérive de <xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverter%601> où `T` est le type à sérialiser et à désérialiser.
+* Substituez la méthode `Read` pour désérialiser le JSON entrant et le convertir en type `T`. Utilisez la <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonReader> transmise à la méthode pour lire le JSON.
+* Substituez la méthode `Write` pour sérialiser l’objet entrant de type `T`. Utilisez le <xref:[!OP.NO-LOC(System.Text.Json)].Utf8JsonWriter> qui est passé à la méthode pour écrire le JSON.
 * Substituez la méthode `CanConvert` uniquement si nécessaire. L’implémentation par défaut retourne `true` lorsque le type à convertir est de type `T`. Par conséquent, les convertisseurs qui prennent uniquement en charge le type `T` n’ont pas besoin de substituer cette méthode. Pour obtenir un exemple de convertisseur qui doit substituer cette méthode, consultez la section sur la [désérialisation polymorphe](#support-polymorphic-deserialization) plus loin dans cet article.
 
-Vous pouvez faire référence au [code source des convertisseurs intégrés](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters/) en tant qu’implémentations de référence pour l’écriture de convertisseurs personnalisés.
+Vous pouvez faire référence au [code source des convertisseurs intégrés](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/[!OP.NO-LOC(System.Text.Json)]/src/[!OP.NO-LOC(System/Text/Json)]/Serialization/Converters/) en tant qu’implémentations de référence pour l’écriture de convertisseurs personnalisés.
 
 ## <a name="steps-to-follow-the-factory-pattern"></a>Étapes pour suivre le modèle de fabrique
 
 Les étapes suivantes expliquent comment créer un convertisseur en suivant le modèle de fabrique :
 
-* Créez une classe qui dérive de <xref:System.Text.Json.Serialization.JsonConverterFactory>.
-* Substituez la méthode `CanConvert` pour retourner la valeur true lorsque le type à convertir est un qui peut être géré par le convertisseur. Par exemple, si le convertisseur est destiné à `List<T>` il peut uniquement gérer `List<int>`, `List<string>`et `List<DateTime>`. 
+* Créez une classe qui dérive de <xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterFactory>.
+* Substituez la méthode `CanConvert` pour retourner la valeur true lorsque le type à convertir est un qui peut être géré par le convertisseur. Par exemple, si le convertisseur est destiné à `List<T>` il peut uniquement gérer `List<int>`, `List<string>`et `List<DateTime>`.
 * Substituez la méthode `CreateConverter` pour retourner une instance d’une classe de convertisseur qui gérera le type-conversion fourni au moment de l’exécution.
-* Créez la classe de convertisseur instanciée par la méthode `CreateConverter`. 
+* Créez la classe de convertisseur instanciée par la méthode `CreateConverter`.
 
 Le modèle de fabrique est requis pour les génériques ouverts, car le code permettant de convertir un objet vers et à partir d’une chaîne n’est pas le même pour tous les types. Un convertisseur pour un type générique ouvert (`List<T>`, par exemple) doit créer un convertisseur pour un type générique fermé (`List<DateTime>`, par exemple) en arrière-plan. Le code doit être écrit pour gérer chaque type de générique fermé que le convertisseur peut gérer.
 
-Le type de `Enum` est semblable à un type générique ouvert : un convertisseur pour `Enum` doit créer un convertisseur pour un `Enum` spécifique (`WeekdaysEnum`, par exemple) en arrière-plan. 
+Le type de `Enum` est semblable à un type générique ouvert : un convertisseur pour `Enum` doit créer un convertisseur pour un `Enum` spécifique (`WeekdaysEnum`, par exemple) en arrière-plan.
 
 ## <a name="error-handling"></a>Gestion des erreurs
 
-Si vous devez lever une exception dans le code de gestion des erreurs, envisagez de lever une <xref:System.Text.Json.JsonException> sans message. Ce type d’exception crée automatiquement un message qui comprend le chemin d’accès à la partie du JSON qui a provoqué l’erreur. Par exemple, l’instruction `throw new JsonException();` produit un message d’erreur comme dans l’exemple suivant :
+Si vous devez lever une exception dans le code de gestion des erreurs, envisagez de lever une <xref:[!OP.NO-LOC(System.Text.Json)].JsonException> sans message. Ce type d’exception crée automatiquement un message qui comprend le chemin d’accès à la partie du JSON qui a provoqué l’erreur. Par exemple, l’instruction `throw new JsonException();` produit un message d’erreur comme dans l’exemple suivant :
 
 ```
-Unhandled exception. System.Text.Json.JsonException: 
-The JSON value could not be converted to System.Object. 
+Unhandled exception. [!OP.NO-LOC(System.Text.Json)].JsonException:
+The JSON value could not be converted to System.Object.
 Path: $.Date | LineNumber: 1 | BytePositionInLine: 37.
 ```
 
-Si vous fournissez un message (par exemple, `throw new JsonException("Error occurred")`, l’exception fournit toujours le chemin d’accès dans la propriété <xref:System.Text.Json.JsonException.Path>.
+Si vous fournissez un message (par exemple, `throw new JsonException("Error occurred")`, l’exception fournit toujours le chemin d’accès dans la propriété <xref:[!OP.NO-LOC(System.Text.Json)].JsonException.Path>.
 
 ## <a name="register-a-custom-converter"></a>Inscrire un convertisseur personnalisé
 
 *Inscrire* un convertisseur personnalisé pour que les méthodes `Serialize` et `Deserialize` l’utilisent. Choisissez l’une des approches suivantes :
 
-* Ajoutez une instance de la classe de convertisseur à la collection <xref:System.Text.Json.JsonSerializerOptions.Converters?displayProperty=nameWithType>.
-* Appliquez l’attribut [[JsonConverter]](xref:System.Text.Json.Serialization.JsonConverterAttribute) aux propriétés qui requièrent le convertisseur personnalisé.
-* Appliquez l’attribut [[JsonConverter]](xref:System.Text.Json.Serialization.JsonConverterAttribute) à une classe ou un struct qui représente un type valeur personnalisé.
+* Ajoutez une instance de la classe de convertisseur à la collection <xref:[!OP.NO-LOC(System.Text.Json)].JsonSerializerOptions.Converters?displayProperty=nameWithType>.
+* Appliquez l’attribut [[JsonConverter]](xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterAttribute) aux propriétés qui requièrent le convertisseur personnalisé.
+* Appliquez l’attribut [[JsonConverter]](xref:[!OP.NO-LOC(System.Text.Json)].Serialization.JsonConverterAttribute) à une classe ou un struct qui représente un type valeur personnalisé.
 
-## <a name="registration-sample---converters-collection"></a>Exemple d’inscription-collection Converters 
+## <a name="registration-sample---converters-collection"></a>Exemple d’inscription-collection Converters
 
 Voici un exemple qui rend le <xref:System.ComponentModel.DateTimeOffsetConverter> par défaut pour les propriétés de type <xref:System.DateTimeOffset>:
 
@@ -296,7 +296,7 @@ Le [dossier tests unitaires](https://github.com/dotnet/runtime/blob/81bf79fd9aa7
 * [Convertisseur Int32 qui autorise les valeurs de chaîne et de nombre lors de la désérialisation](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Int32.cs)
 * [Convertisseur enum](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Enum.cs)
 * [Répertorier\<le convertisseur T > qui accepte les données externes](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.List.cs)
-* [Long [] convertisseur qui fonctionne avec une liste de nombres délimités par des virgules](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs) 
+* [Long [] convertisseur qui fonctionne avec une liste de nombres délimités par des virgules](https://github.com/dotnet/runtime/blob/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/tests/Serialization/CustomConverterTests.Array.cs)
 
 Si vous devez créer un convertisseur qui modifie le comportement d’un convertisseur intégré existant, vous pouvez faire en sorte que [le code source du convertisseur existant](https://github.com/dotnet/runtime/tree/81bf79fd9aa75305e55abe2f7e9ef3f60624a3a1/src/libraries/System.Text.Json/src/System/Text/Json/Serialization/Converters) serve de point de départ pour la personnalisation.
 

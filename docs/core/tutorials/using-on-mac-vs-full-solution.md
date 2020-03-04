@@ -2,12 +2,12 @@
 title: Créer une solution .NET Core complète à l’aide de Visual Studio pour Mac
 description: Cet article vous guide tout au long de la création d’une solution .NET Core qui comprend une bibliothèque réutilisable et des tests unitaires.
 ms.date: 12/19/2019
-ms.openlocfilehash: dea23da33912de849f0dcbe1e2f6fa3edb3a5e24
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 8c9fcca404a3875b6bb7f9cf20551a017ff553c5
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215203"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239961"
 ---
 # <a name="build-a-complete-net-core-solution-on-macos-using-visual-studio-for-mac"></a>Créez une solution .NET Core complète sur macOS à l’aide de Visual Studio pour Mac
 
@@ -21,7 +21,7 @@ Ce didacticiel vous montre comment créer une application qui accepte un terme d
 > - Dans Visual Studio pour Mac, sélectionnez **Aide** > **Signaler un problème** dans le menu ou **Signaler un problème** sur l’écran d’accueil, ce qui ouvre une fenêtre permettant de soumettre un rapport de bogue. Vous pouvez effectuer le suivi de vos commentaires dans le portail de la [communauté des développeurs](https://developercommunity.visualstudio.com/spaces/41/index.html).
 > - Pour soumettre une suggestion, sélectionnez **Aide** > **Faire une suggestion** dans le menu ou **Faire une suggestion** sur l’écran d’accueil, ce qui vous amène à la [page web de la communauté des développeurs Visual Studio pour Mac](https://developercommunity.visualstudio.com/content/idea/post.html?space=41).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 - [Kit SDK .NET Core 3,1 ou version ultérieure](https://dotnet.microsoft.com/download)
 - [Visual Studio 2019 pour Mac](https://visualstudio.microsoft.com/vs/mac/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link)
@@ -35,14 +35,14 @@ Pour plus d’informations sur les conditions préalables requises, consultez [.
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pour Mac boîte de dialogue Nouveau projet](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project.png)
 
-1. Nommez le projet « TextUtils » (un nom court pour « Utilitaires texte ») et la solution « WordCounter ». Laissez la case **Créez un répertoire de projet dans le répertoire de la solution** cochée. Sélectionnez **Create** (Créer).
+1. Nommez le projet « TextUtils » (un nom court pour « Utilitaires texte ») et la solution « WordCounter ». Laissez la case **Créez un répertoire de projet dans le répertoire de la solution** cochée. Sélectionnez **Créer**.
 
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pour Mac options de la boîte de dialogue Nouveau projet](./media/using-on-mac-vs-full-solution/visual-studio-mac-new-project-options.png)
 
 1. Dans le panneau **solution** , développez le nœud `TextUtils` pour afficher le fichier de classe fourni par le modèle *Class1.cs*. Ctrl + cliquez sur le fichier, sélectionnez **Renommer** dans le menu contextuel, puis renommez le fichier *WordCount.cs*. Ouvrez le fichier et remplacez le contenu par le code suivant :
 
-   [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/TextUtils/WordCount.cs)]
+   [!code-csharp[Main](../../../samples/snippets/core/tutorials/using-on-mac-vs-full-solution/csharp/TextUtils/WordCount.cs)]
 
 1. Enregistrez le fichier à l’aide de l’une des trois méthodes suivantes : utilisez <kbd>&#8984;</kbd> le raccourci clavier+<kbd>s</kbd>, sélectionnez **fichier** > **Enregistrer** dans le menu ou cliquez avec le touche CTRL enfoncée sur l’onglet du fichier, puis sélectionnez **Enregistrer** dans le menu contextuel. L’image suivante présente la fenêtre de l’IDE :
 
@@ -84,7 +84,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
    > [!div class="mx-imgBorder"]
    > ![boîte de dialogue Modifier les références Mac de Visual Studio](./media/using-on-mac-vs-full-solution/visual-studio-mac-edit-references.png)
 
-1. Dans le projet **TestLibrary**, renommez le fichier *UnitTest1.cs* *TextUtilsTests.cs*.
+1. Dans le projet **TestLibrary**, renommez le fichier *UnitTest1.cs**TextUtilsTests.cs*.
 
 1. Ouvrez le fichier et remplacez le code par le code suivant :
 
@@ -162,7 +162,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pour Mac échec du test attendu](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-failure.png)
 
-1. Modifiez la méthode de test `CountInstancesCorrectly` en remplaçant `Assert.NotEqual` par `Assert.Equal`. Enregistrez le fichier . Réexécutez les tests. Tous les tests sont concluants.
+1. Modifiez la méthode de test `CountInstancesCorrectly` en remplaçant `Assert.NotEqual` par `Assert.Equal`. Enregistrez le fichier. Réexécutez les tests. Tous les tests sont concluants.
 
    > [!div class="mx-imgBorder"]
    > ![Visual Studio pour Mac passes de test attendues](./media/using-on-mac-vs-full-solution/visual-studio-mac-unit-test-pass.png)
@@ -175,7 +175,7 @@ Les tests unitaires effectuent des tests logiciels automatisés pendant le déve
 
 1. Ouvrez le fichier *Program.cs*. Remplacez le code par le code suivant :
 
-   [!code-csharp[Main](../../../samples/core/tutorials/using-on-mac-vs-full-solution/WordCounter/WordCounterApp/Program.cs)]
+   [!code-csharp[Main](../../../samples/snippets/core/tutorials/using-on-mac-vs-full-solution/csharp/WordCounterApp/Program.cs)]
 
 1. Cliquez sur le projet `WordCounterApp`, puis sélectionnez **exécuter le projet** dans le menu contextuel. Lorsque vous exécutez l’application, indiquez les valeurs du mot de recherche et la chaîne d’entrée à l’invite dans la fenêtre de console. L’application indique le nombre de fois où le terme de recherche apparaît dans la chaîne.
 

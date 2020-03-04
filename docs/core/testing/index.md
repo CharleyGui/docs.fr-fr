@@ -4,12 +4,12 @@ description: Cet article offre une courte vue d’ensemble des tests unitaires p
 author: ardalis
 ms.author: wiwagn
 ms.date: 08/30/2017
-ms.openlocfilehash: 41f4457e636ca495b78109803ca66680e72d007e
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: 1263bfe337b9d6609c0ca7df70aa299a61a7f1a0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75899897"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157399"
 ---
 # <a name="unit-testing-in-net-core-and-net-standard"></a>Tests unitaires dans .NET Core et .NET Standard
 
@@ -23,9 +23,9 @@ Vous pouvez utiliser des modèles de projet de test unitaire .NET Core 2.0 et u
 
 ## <a name="what-are-unit-tests"></a>Que sont les tests unitaires ?
 
-L’utilisation de tests automatisés est un très bon moyen de vérifier qu’une application logicielle se comporte comme ses auteurs l’avaient prévu. Il existe plusieurs types de tests pour les applications logicielles. Citons par exemple les tests d’intégration, les tests web, les tests de charge, etc. Les **tests unitaires** testent les méthodes et les composants logiciels individuels. Les tests unitaires doivent uniquement tester le code sous le contrôle du développeur. Ils ne doivent pas tester les problèmes d’infrastructure. Les problèmes d’infrastructure comprennent les bases de données, les systèmes de fichiers et les ressources réseau. 
+L’utilisation de tests automatisés est un très bon moyen de vérifier qu’une application logicielle se comporte comme ses auteurs l’avaient prévu. Il existe plusieurs types de tests pour les applications logicielles. Citons par exemple les tests d’intégration, les tests web, les tests de charge, etc. Les **tests unitaires** testent les méthodes et les composants logiciels individuels. Les tests unitaires doivent uniquement tester le code sous le contrôle du développeur. Ils ne doivent pas tester les problèmes d’infrastructure. Les problèmes d’infrastructure comprennent les bases de données, les systèmes de fichiers et les ressources réseau.
 
-Par ailleurs, n’oubliez pas qu’il existe des bonnes pratiques pour écrire des tests. Par exemple, le [développement piloté par les tests (TDD)](https://deviq.com/test-driven-development/) est lorsqu’un test unitaire est écrit avant le code qu’il est destiné à vérifier. Le développement TDD est comme créer le plan d’un livre avant de l’écrire. Il est conçu pour aider les développeurs à écrire du code plus simple, plus lisible et plus efficace. 
+Par ailleurs, n’oubliez pas qu’il existe des bonnes pratiques pour écrire des tests. Par exemple, le [développement piloté par les tests (TDD)](https://deviq.com/test-driven-development/) est lorsqu’un test unitaire est écrit avant le code qu’il est destiné à vérifier. Le développement TDD est comme créer le plan d’un livre avant de l’écrire. Il est conçu pour aider les développeurs à écrire du code plus simple, plus lisible et plus efficace.
 
 > [!NOTE]
 > L’équipe ASP.NET suit [ces conventions](https://github.com/dotnet/aspnetcore/wiki/Engineering-guidelines#unit-tests-and-functional-tests) pour aider les développeurs à trouver des noms qui conviennent pour les méthodes et les classes de test.
@@ -40,11 +40,11 @@ Les projets de test unitaire .NET Core sont pris en charge pour :
 
 - [C#](../../csharp/index.yml)
 - [F#](../../fsharp/index.yml)
-- [Visual Basic](../../visual-basic/index.yml) 
+- [Visual Basic](../../visual-basic/index.yml)
 
 Vous pouvez également choisir entre :
 
-- [xUnit](https://xunit.github.io) 
+- [xUnit](https://xunit.github.io)
 - [NUnit](https://nunit.org)
 - [MSTest](https://github.com/Microsoft/testfx-docs)
 

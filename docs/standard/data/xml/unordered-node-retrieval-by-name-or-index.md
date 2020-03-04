@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 2038a90b-92af-4a0a-baaa-08e688d95194
-ms.openlocfilehash: 577de6b60e579b37eb54ea69de72f3534f1d23ac
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: 55ea0e31bb8a2863dc0e0eb30f6ca5700c3110b8
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77628902"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78155735"
 ---
 # <a name="unordered-node-retrieval-by-name-or-index"></a>Extraction de nœuds non triés par leur nom ou par l'index
 **XmlNamedNodeMap**, appelé NamedNodeMap dans la spécification du World Wide Web Consortium (W3C), est requis pour gérer un ensemble non trié de nœuds tout en permettant de référencer les nœuds par leur nom ou sur base de l’index. Le seul moyen d’accéder à un **XmlNamedNodeMap** est le retour de **XmlNamedNodeMap** par une méthode ou une propriété. Trois méthodes ou propriétés retournent **XmlNamedNodeMap** :  
@@ -87,7 +87,7 @@ class test {
         // Print out the number of attributes and their names.  
         Console.WriteLine( "Number of Attributes: "+ac.Count );  
         for( int i = 0; i < ac.Count; i++ )  
-            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );   
+            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );
   
         // Get the 'attr1' from child1.  
         XmlAttribute attr = doc.DocumentElement.ChildNodes[0].Attributes[0];  
@@ -97,9 +97,9 @@ class test {
   
         // 'attr1' will be removed from 'child1' and added to 'child2'.  
         // Print out the number of attributes and their names.  
-        Console.WriteLine( "Number of Attributes: "+ac.Count );          
+        Console.WriteLine( "Number of Attributes: "+ac.Count );
         for( int i = 0; i < ac.Count; i++ )  
-            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );   
+            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );
   
         // Create a new attribute and add to the collection.  
         XmlAttribute attr2 = doc.CreateAttribute( "attr4" );  
@@ -107,9 +107,9 @@ class test {
         ac.SetNamedItem( attr2 );  
   
         // Print out the number of attributes and their names.  
-        Console.WriteLine( "Number of Attributes: "+ac.Count );          
+        Console.WriteLine( "Number of Attributes: "+ac.Count );
         for( int i = 0; i < ac.Count; i++ )  
-            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );           
+            Console.WriteLine( (i+1) + ".  Attribute Name: '" +ac[i].Name+ "'  Attribute Value:  '"+ ac[i].Value +"'" );
   
     }  
 }  

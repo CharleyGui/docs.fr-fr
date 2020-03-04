@@ -15,12 +15,12 @@ helpviewer_keywords:
 - constructs, alternation
 - .NET Framework regular expressions, alternation constructs
 ms.assetid: 071e22e9-fbb0-4ecf-add1-8d2424f9f2d1
-ms.openlocfilehash: 8db9ef72415f148aca2c975fc4e8b70421e3adc3
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 02664bd2812f89649ec933483161263bae530a75
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711556"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159687"
 ---
 # <a name="alternation-constructs-in-regular-expressions"></a>Constructions d'alternative dans les expressions régulières
 
@@ -42,12 +42,12 @@ Tout comme la classe de caractères positive, le caractère `|` peut être utili
 
 L’expression régulière qui utilise le caractère `|`, `\bgr(a|e)y\b`, est interprétée comme indiqué dans le tableau suivant :
 
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
-|`gr`|Mettre en correspondance les caractères « gr ».|  
-|<code>(a&#124;e)</code>|Mettre en correspondance un « a » ou un « e ».|  
-|`y\b`|Mettre en correspondance un « y » à la limite d'un mot.|  
+|`gr`|Mettre en correspondance les caractères « gr ».|  
+|<code>(a&#124;e)</code>|Mettre en correspondance un « a » ou un « e ».|  
+|`y\b`|Mettre en correspondance un « y » à la limite d'un mot.|  
 
 Le caractère `|` peut également être utilisé pour effectuer une correspondance de type inclusif/exclusif avec plusieurs caractères ou sous-expressions, qui peuvent inclure toute combinaison de caractère littéraux et éléments de langage d’expressions régulières. (La classe de caractères ne fournit pas cette fonctionnalité.) L’exemple suivant utilise le caractère `|` pour extraire un numéro de sécurité sociale (SSN) américain, qui est un nombre de 9 chiffres au format *ddd*-*DD*-*dddd*ou un numéro d’identification d’employeur (Ein) américain, qui est un nombre de 9 chiffres au format *JJ*-*ddddddd*.
 
@@ -56,24 +56,24 @@ Le caractère `|` peut également être utilisé pour effectuer une correspondan
 
 L’expression régulière `\b(\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprétée comme indiqué dans le tableau suivant :
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
-|<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Mettre en correspondance l'un ou l'autre des éléments suivants : deux chiffres décimaux suivis d'un trait d'union suivi de sept chiffres décimaux, ou alors trois chiffres décimaux, un trait d'union, deux chiffres décimaux, un autre trait d'union et quatre chiffres décimaux.|  
+|<code>(\d{2}-\d{7}&#124;\d{3}-\d{2}-\d{4})</code>|Mettre en correspondance l'un ou l'autre des éléments suivants : deux chiffres décimaux suivis d'un trait d'union suivi de sept chiffres décimaux, ou alors trois chiffres décimaux, un trait d'union, deux chiffres décimaux, un autre trait d'union et quatre chiffres décimaux.|  
 |`\d`|Terminer la correspondance à la limite d'un mot.|  
   
-<a name="Conditional_Expr"></a>   
+<a name="Conditional_Expr"></a>
 ## <a name="conditional-matching-with-an-expression"></a>Correspondance conditionnelle avec une expression
 
-Cet élément de langage tente de mettre en correspondance un modèle parmi deux fournis selon qu'il parvient ou non à mettre en correspondance un modèle initial. Sa syntaxe est la suivante :  
+Cet élément de langage tente de mettre en correspondance un modèle parmi deux fournis selon qu'il parvient ou non à mettre en correspondance un modèle initial. Sa syntaxe est la suivante :  
 
 `(?(` *expression* `)` *oui* `|` *non* `)`
 
-où *expression* est le modèle initial à faire correspondre, *oui* est le modèle à faire correspondre si l' *expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si l' *expression* n'est pas mise en correspondance. Le moteur d'expressions régulières traite *expression* comme une assertion de largeur nulle ; c'est-à-dire que le moteur d'expressions régulières n'avance pas dans le flux d'entrée après avoir évalué l' *expression*. Par conséquent, cette construction est équivalente à la suivante :
+où *expression* est le modèle initial à faire correspondre, *oui* est le modèle à faire correspondre si *l’expression* est mise en correspondance, et *no* est le modèle facultatif à faire correspondre si *l’expression* n’est pas mise en correspondance. Le moteur d’expression régulière traite l’*expression* comme une assertion de largeur nulle ; c’est-à-dire que le moteur d’expression régulière n’avance pas dans le flux d’entrée après avoir évalué l’*expression*. Par conséquent, cette construction est équivalente à la suivante :
 
 `(?(?=` *expression* `)` *oui* `|` *non* `)`
 
-où `(?=`*expression*`)` est une construction d'assertion de largeur nulle. (Pour plus d’informations, consultez [constructions de regroupement](grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète l' *expression* comme une ancre (assertion de largeur nulle), l' *expression* doit être une assertion de largeur nulle (pour plus d’informations, consultez [ancres](anchors-in-regular-expressions.md)) ou une sous-expression qui est également contenue dans *Oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui*.  
+où `(?=`*expression*`)` est une construction d’assertion de largeur nulle. (Pour plus d’informations, consultez [constructions de regroupement](grouping-constructs-in-regular-expressions.md).) Étant donné que le moteur des expressions régulières interprète l' *expression* comme une ancre (assertion de largeur nulle), l' *expression* doit être une assertion de largeur nulle (pour plus d’informations, consultez [ancres](anchors-in-regular-expressions.md)) ou une sous-expression qui est également contenue dans *Oui*. Sinon, aucune correspondance ne peut être établie avec le modèle *oui*.  
   
 > [!NOTE]
 > Si *expression* est un groupe de capture nommé ou numéroté, la construction alternative est interprétée comme un test de capture. Pour plus d’informations, consultez la section suivante, [Correspondance conditionnelle basée sur un groupe de capture valide](#Conditional_Group). En d'autres termes, le moteur des expressions régulières ne tente pas de mettre en correspondance la sous-chaîne capturée, mais à la place teste la présence ou l'absence du groupe.  
@@ -85,7 +85,7 @@ L’exemple suivant est une variante de celui donné dans la section [Critères 
 
 Le modèle d’expression régulière `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant :
 
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`(?(\d{2}-)`|Déterminer si les trois caractères suivants se composent de deux chiffres suivis d'un trait d'union.|  
@@ -96,17 +96,17 @@ Le modèle d’expression régulière `\b(?(\d{2}-)\d{2}-\d{7}|\d{3}-\d{2}-\d{4}
 <a name="Conditional_Group"></a>
 ## <a name="conditional-matching-based-on-a-valid-captured-group"></a>Correspondance conditionnelle selon un groupe capturé valide
 
-Cet élément de langage essaie de faire correspondre l'un de deux modèles selon qu'il peut correspondre à un groupe capturé spécifié. Sa syntaxe est la suivante :
+Cet élément de langage essaie de faire correspondre l'un de deux modèles selon qu'il peut correspondre à un groupe capturé spécifié. Sa syntaxe est la suivante :
 
 `(?(` *nom* `)` *oui* `|` *non* `)`
 
-ou
+or
 
 *nombre* de `(?(` `)` *oui* `|` *non* `)`
 
-où *nom* est le nom et *numéro* est le numéro d'un groupe de capture, *oui* est l'expression à faire correspondre si *nom* ou *nombre* a une correspondance et *non* est l'expression facultative à faire correspondre dans le cas contraire.
+où *nom* est le nom et *numéro* est le numéro d’un groupe de capture, *oui* est l’expression à faire correspondre si *nom* ou *nombre* a une correspondance et *non* est l’expression facultative à faire correspondre dans le cas contraire.
 
-Si le *nom* ne correspond pas au nom d'un groupe de capture utilisé dans le modèle d'expression régulière, la construction alternative est interprétée comme un test d'expression, comme expliqué dans la section précédente. En général, cela signifie que l' *expression* prend la valeur `false`. Si le *nombre* ne correspond pas à un groupe de capture numéroté utilisé dans le modèle d'expression régulière, le moteur des expressions régulières lève une <xref:System.ArgumentException>.
+Si le *nom* ne correspond pas au nom d'un groupe de capture utilisé dans le modèle d'expression régulière, la construction alternative est interprétée comme un test d'expression, comme expliqué dans la section précédente. En général, cela signifie que *l’expression* prend la valeur `false`. Si le *nombre* ne correspond pas à un groupe de capture numéroté utilisé dans le modèle d'expression régulière, le moteur des expressions régulières lève une <xref:System.ArgumentException>.
 
 L’exemple suivant est une variante de celui donné dans la section [Critères spéciaux de type inclusif/exclusif avec &#124;](#Either_Or). Il utilise un groupe de capture nommé `n2` qui se compose de deux chiffres suivis d'un trait d'union. La construction d'alternative tests si ce groupe de capture a été mis en correspondance dans la chaîne d'entrée. Si c'est le cas, la construction alternative essaie de mettre en correspondance les sept derniers chiffres d'un numéro d'identification de l'employeur (EIN) américain. Si ce n'est le cas, il essaie de faire correspondre un numéro de sécurité sociale (SSN) américain.
 
@@ -115,7 +115,7 @@ L’exemple suivant est une variante de celui donné dans la section [Critères 
 
 Le modèle d’expression régulière `\b(?<n2>\d{2}-)?(?(n2)\d{7}|\d{3}-\d{2}-\d{4})\b` est interprété comme indiqué dans le tableau suivant :
 
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`(?<n2>\d{2}-)?`|Mettre en correspondance zéro ou une occurrence de deux chiffres suivis d'un trait d'union. Nommer ce groupe de capture `n2`.|  

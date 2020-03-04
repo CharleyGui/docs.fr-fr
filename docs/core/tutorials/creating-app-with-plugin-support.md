@@ -4,27 +4,27 @@ description: Découvrez comment créer une application .NET Core qui prend en ch
 author: jkoritzinsky
 ms.author: jekoritz
 ms.date: 10/16/2019
-ms.openlocfilehash: 32205a507bc95b2f8a2f75368aab3fde710249ee
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: eae792ddaa6655bfdcd932d3cb695f9dafa68130
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76787852"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240842"
 ---
 # <a name="create-a-net-core-application-with-plugins"></a>Créer une application .NET Core avec des plug-ins
 
-Ce didacticiel vous montre comment créer un <xref:System.Runtime.Loader.AssemblyLoadContext> personnalisé pour charger les plug-ins. Un <xref:System.Runtime.Loader.AssemblyDependencyResolver> est utilisé pour résoudre les dépendances du plug-in. Le didacticiel isole correctement les dépendances du plug-in à partir de l’application d’hébergement. Vous allez apprendre à :
+Ce didacticiel vous montre comment créer un <xref:System.Runtime.Loader.AssemblyLoadContext> personnalisé pour charger les plug-ins. Un <xref:System.Runtime.Loader.AssemblyDependencyResolver> est utilisé pour résoudre les dépendances du plug-in. Le didacticiel isole correctement les dépendances du plug-in à partir de l’application d’hébergement. Vous découvrirez comment effectuer les actions suivantes :
 
 - Structurer un projet de façon à prendre en charge les plug-ins.
 - Créer un <xref:System.Runtime.Loader.AssemblyLoadContext> personnalisé pour charger chaque plug-in.
 - Utiliser le type <xref:System.Runtime.Loader.AssemblyDependencyResolver?displayProperty=fullName> pour permettre aux plug-ins d’avoir des dépendances.
 - Créer des plug-ins qui peuvent être facilement déployés en copiant simplement les artefacts de build.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 - Installez le [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download) ou une version plus récente.
 
-## <a name="create-the-application"></a>Créer l’application
+## <a name="create-the-application"></a>Création de l'application
 
 La première étape consiste à créer l’application :
 
@@ -34,7 +34,7 @@ La première étape consiste à créer l’application :
     dotnet new console -o AppWithPlugin
     ```
 
-2. Pour faciliter la création du projet, créez un fichier solution Visual Studio dans le même dossier. Exécutez la commande suivante : .
+2. Pour faciliter la création du projet, créez un fichier solution Visual Studio dans le même dossier. Exécutez la commande suivante :
 
     ```dotnetcli
     dotnet new sln
@@ -105,7 +105,7 @@ La prochaine étape de la procédure de création d’une application avec plug-
 
 Dans le dossier racine du projet, exécutez `dotnet new classlib -o PluginBase`. De même, exécutez `dotnet sln add PluginBase/PluginBase.csproj` pour ajouter le projet au fichier solution. Supprimez le fichier `PluginBase/Class1.cs` et créez-en un nouveau dans le dossier `PluginBase` sous le nom `ICommand.cs` avec la définition d’interface suivante :
 
-[!code-csharp[the-plugin-interface](~/samples/core/extensions/AppWithPlugin/PluginBase/ICommand.cs)]
+[!code-csharp[the-plugin-interface](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/PluginBase/ICommand.cs)]
 
 Cette interface `ICommand` est l’interface que tous les plug-ins vont implémenter.
 
@@ -187,7 +187,7 @@ static IEnumerable<ICommand> CreateCommands(Assembly assembly)
 
 Désormais, l’application peut charger et instancier correctement des commandes à partir d’assemblys de plug-in chargés, mais elle ne peut toujours pas charger les assemblys de plug-in. Créez un fichier nommé *PluginLoadContext.cs* dans le dossier *AppWithPlugin* avec le contenu suivant :
 
-[!code-csharp[loading-plugins](~/samples/core/extensions/AppWithPlugin/AppWithPlugin/PluginLoadContext.cs)]
+[!code-csharp[loading-plugins](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/AppWithPlugin/PluginLoadContext.cs)]
 
 Le type `PluginLoadContext` dérive de <xref:System.Runtime.Loader.AssemblyLoadContext>. Le type de `AssemblyLoadContext` est un type spécial dans le runtime qui permet aux développeurs d’isoler les assemblys chargés dans différents groupes pour s’assurer que les versions d’assembly ne sont pas en conflit. Par ailleurs, un `AssemblyLoadContext` personnalisé peut choisir les différents chemins à partir desquels les assemblys seront chargés et substituer le comportement par défaut. `PluginLoadContext` utilise une instance du type `AssemblyDependencyResolver` introduit dans .NET Core 3.0 pour résoudre les noms d’assembly en chemins. L’objet `AssemblyDependencyResolver` est construit avec le chemin d’une bibliothèque de classes .NET. Il résout les assemblys et les bibliothèques natives dans leurs chemins relatifs en se basant sur le fichier *.deps.json* de la bibliothèque de classes dont le chemin a été transmis au constructeur `AssemblyDependencyResolver`. Le `AssemblyLoadContext` personnalisé permet aux plug-ins d’avoir leurs propres dépendances, tandis que `AssemblyDependencyResolver` facilite le chargement des dépendances.
 
@@ -218,7 +218,7 @@ En utilisant une instance `PluginLoadContext` différente pour chaque plug-in, l
 De retour dans le dossier racine, effectuez les opérations suivantes :
 
 1. Exécutez la commande suivante pour créer un projet de bibliothèque de classes nommé `HelloPlugin`:
-    
+
     ```dotnetcli
     dotnet new classlib -o HelloPlugin
     ```
@@ -231,7 +231,7 @@ De retour dans le dossier racine, effectuez les opérations suivantes :
 
 3. Remplacez le fichier *HelloPlugin/Class1.cs* par un fichier nommé *HelloCommand.cs* avec le contenu suivant :
 
-[!code-csharp[the-hello-plugin](~/samples/core/extensions/AppWithPlugin/HelloPlugin/HelloCommand.cs)]
+[!code-csharp[the-hello-plugin](~/samples/snippets/core/tutorials/creating-app-with-plugin-support/csharp/HelloPlugin/HelloCommand.cs)]
 
 Ouvrez maintenant le fichier *HelloPlugin.csproj*. Celui-ci doit se présenter comme suit :
 

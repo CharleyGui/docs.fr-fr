@@ -14,17 +14,17 @@ helpviewer_keywords:
 - uppercase
 - lowercase
 ms.assetid: 6805f81b-e9ad-4387-9f4c-b9bdb21b87c0
-ms.openlocfilehash: 91fc0022eae3f036e0ec046ea12446871926ab27
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 135cfa815c10d1a9dd9056604a4601678da9d5c4
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711465"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159349"
 ---
 # <a name="changing-case-in-net"></a>Changement de casse dans .NET
 Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne pouvez jamais être sûr de la casse qu'il utilisera pour entrer les données. Souvent, vous voulez que les chaînes aient une casse cohérente, en particulier si vous les affichez dans l'interface utilisateur. Le tableau suivant décrit trois méthodes de changement de la casse : Les deux premières méthodes fournissent une surcharge qui accepte une culture.  
   
-|Nom de la méthode|Utiliser|  
+|Nom de la méthode|Utilisez|  
 |-----------------|---------|  
 |<xref:System.String.ToUpper%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en majuscules.|  
 |<xref:System.String.ToLower%2A?displayProperty=nameWithType>|Convertit tous les caractères d'une chaîne en minuscules.|  
@@ -33,7 +33,7 @@ Si vous écrivez une application qui accepte l'entrée d'un utilisateur, vous ne
 > [!WARNING]
 > Notez que les méthodes <xref:System.String.ToUpper%2A?displayProperty=nameWithType> et <xref:System.String.ToLower%2A?displayProperty=nameWithType> ne doivent pas être utilisées pour convertir des chaînes pour les comparer ou pour tester leur égalité. Pour plus d'informations, consultez la section [Comparaison de chaînes de casse mixte](#Comparing).  
   
-<a name="Comparing"></a>   
+<a name="Comparing"></a>
 ## <a name="comparing-strings-of-mixed-case"></a>Comparaison de chaînes de casse mixte  
  Pour comparer des chaînes de casse mixte et déterminer leur classement, appelez une des surcharges de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec un paramètre `comparisonType` et spécifiez une valeur <xref:System.StringComparison.CurrentCultureIgnoreCase?displayProperty=nameWithType>, <xref:System.StringComparison.InvariantCultureIgnoreCase?displayProperty=nameWithType> ou <xref:System.StringComparison.OrdinalIgnoreCase?displayProperty=nameWithType> pour l’argument `comparisonType`. Pour une comparaison en utilisant une culture spécifique autre que la culture actuelle, appelez une surcharge de la méthode <xref:System.String.CompareTo%2A?displayProperty=nameWithType> avec les paramètres `culture` et `options`, et spécifiez une valeur <xref:System.Globalization.CompareOptions.IgnoreCase?displayProperty=nameWithType> pour l'argument `options`.  
   

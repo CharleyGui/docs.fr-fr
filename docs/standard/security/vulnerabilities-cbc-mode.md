@@ -3,16 +3,16 @@ title: Vulnérabilité de déchiffrement CBC
 description: Découvrez comment détecter et atténuer les vulnérabilités de temporisation avec le déchiffrement symétrique en mode CBC (Cipher-Block-chaînage) à l’aide du remplissage.
 ms.date: 06/12/2018
 author: blowdart
-ms.openlocfilehash: 87f8e3c53e4d06f6a4edc7670891ac83ec8d65ab
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 4616ef9015b47ff232a17f058c7a0f1449f42e81
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75705845"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159960"
 ---
 # <a name="timing-vulnerabilities-with-cbc-mode-symmetric-decryption-using-padding"></a>Vulnérabilités de temporisation avec le déchiffrement symétrique en mode CBC à l’aide du remplissage
 
-Microsoft est convaincu qu’il n’est plus sûr de déchiffrer les données chiffrées à l’aide du mode de chiffrement symétrique (CBC) du chiffrement symétrique lorsque le remplissage vérifiable a été appliqué sans assurer d’abord l’intégrité du texte chiffré, à l’exception des propres. Ce jugement est basé sur la recherche chiffrée actuellement connue. 
+Microsoft est convaincu qu’il n’est plus sûr de déchiffrer les données chiffrées à l’aide du mode de chiffrement symétrique (CBC) du chiffrement symétrique lorsque le remplissage vérifiable a été appliqué sans assurer d’abord l’intégrité du texte chiffré, à l’exception des propres. Ce jugement est basé sur la recherche chiffrée actuellement connue.
 
 ## <a name="introduction"></a>Introduction
 
@@ -28,7 +28,7 @@ Les chiffrements basés sur les blocs ont une autre propriété, appelée mode, 
 
 Une personne malveillante peut utiliser un remplissage Oracle, en association avec la façon dont les données CBC sont structurées, envoyer des messages légèrement modifiés au code qui expose l’Oracle et continuer à envoyer des données jusqu’à ce que Oracle leur indique que les données sont correctes. À partir de cette réponse, l’attaquant peut déchiffrer le message octet par octet.
 
-Les réseaux informatiques modernes sont de qualité telle qu’une personne malveillante peut détecter des différences très petites (moins de 0,1 ms) dans le temps d’exécution sur les systèmes distants. Les applications qui supposent qu’un déchiffrement réussi ne peut se produire que lorsque les données n’ont pas été falsifiées peuvent être vulnérables aux attaques d’outils conçus pour observer les différences de déchiffrement réussi et infructueuse. Bien que cette différence de synchronisation puisse être plus significative dans certains langages ou bibliothèques que d’autres, il est maintenant supposé qu’il s’agit d’une menace pratique pour tous les langages et bibliothèques lorsque la réponse de l’application aux défaillances est prise en compte.
+Les réseaux informatiques modernes sont de qualité telle qu’une personne malveillante peut détecter des différences très petites (moins de 0,1 ms) dans le temps d’exécution sur les systèmes distants.Les applications qui supposent qu’un déchiffrement réussi ne peut se produire que lorsque les données n’ont pas été falsifiées peuvent être vulnérables aux attaques d’outils conçus pour observer les différences de déchiffrement réussi et infructueuse. Bien que cette différence de synchronisation puisse être plus significative dans certains langages ou bibliothèques que d’autres, il est maintenant supposé qu’il s’agit d’une menace pratique pour tous les langages et bibliothèques lorsque la réponse de l’application aux défaillances est prise en compte.
 
 Cette attaque repose sur la possibilité de modifier les données chiffrées et de tester le résultat avec Oracle. La seule façon d’atténuer l’attaque consiste à détecter les modifications apportées aux données chiffrées et à refuser d’effectuer des actions sur celui-ci. La méthode standard pour effectuer cette opération consiste à créer une signature pour les données et à valider cette signature avant l’exécution des opérations. La signature doit être vérifiable, elle ne peut pas être créée par l’attaquant, sinon elle modifie les données chiffrées, puis calcule une nouvelle signature en fonction des données modifiées. Un type commun de signature appropriée est appelé code d’authentification de message à hachage par clé (HMAC). Un HMAC diffère d’une somme de contrôle en ce qu’il prend une clé secrète, connue uniquement de la personne qui produit le code HMAC et à la personne qui le valide. Sans possession de la clé, vous ne pouvez pas produire un HMAC correct. Lorsque vous recevez vos données, vous pouvez utiliser les données chiffrées, calculer indépendamment le HMAC à l’aide de la clé secrète que vous et le partage de l’expéditeur, puis comparer le HMAC qu’il a envoyé à celui que vous avez calculé. Cette comparaison doit être en temps constant, sinon vous avez ajouté une autre solution de détection d’Oracle, ce qui permet un type d’attaque différent.
 

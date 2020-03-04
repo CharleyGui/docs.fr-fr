@@ -4,12 +4,12 @@ description: Comprendre le fonctionnement de la gestion de version C# et .NET
 ms.date: 01/08/2017
 ms.technology: csharp-advanced-concepts
 ms.assetid: aa8732d7-5cd0-46e1-994a-78017f20d861
-ms.openlocfilehash: 3fadbc1257ae758fc220685fa074a4fa68b20ba1
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: ee123893ac8baa0a55bdf69ce49fb6fcb87601b4
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039654"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240000"
 ---
 # <a name="versioning-in-c"></a>Gestion de versions en C\#
 
@@ -19,7 +19,7 @@ Dans ce didacticiel, vous allez apprendre la signification de la gestion de vers
 
 En tant que développeur ayant créé des bibliothèques .NET pour une utilisation publique, vous avez probablement été confronté à des situations où vous deviez déployer de nouvelles mises à jour. Votre manière de procéder est très importante, car vous devez assurer une transition fluide du code existant vers la nouvelle version de votre bibliothèque. Voici quelques points à prendre en compte lors de la création d’une version :
 
-### <a name="semantic-versioning"></a>Gestion sémantique des versions
+### <a name="semantic-versioning"></a>Gestion sémantique de version
 
 La [gestion sémantique de version](https://semver.org/) (SemVer en abrégé) est une convention d’affectation de noms appliquée à des versions de votre bibliothèque pour indiquer des événements jalons spécifiques.
 Dans l’idéal, les informations de version ajoutées à votre bibliothèque doivent aider les développeurs à déterminer la compatibilité avec les projets qui utilisent des versions antérieures de cette même bibliothèque.
@@ -53,7 +53,7 @@ Plus il est facile pour vos utilisateurs d’effectuer la mise à niveau vers la
 ### <a name="application-configuration-file"></a>Fichier de configuration de l'application
 
 En tant que développeur .NET, il est très probable que vous ayez rencontré [le fichier `app.config`](../framework/configure-apps/file-schema/index.md), présent dans la plupart des types de projets.
-Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. Vous devez généralement concevoir vos bibliothèques de manière à ce que les informations susceptibles d’être modifiées régulièrement soient stockées dans le fichier `app.config`. ainsi, lorsque ces informations sont mises à jour, le fichier de configuration des versions antérieures doit simplement être remplacé par le nouveau sans la nécessité de recompiler la bibliothèque.
+Ce simple fichier de configuration peut s’avérer très utile pour améliorer le déploiement de nouvelles mises à jour. En général, vous devez concevoir vos bibliothèques de telle sorte que les informations qui sont susceptibles d’être modifiées régulièrement sont stockées dans le fichier `app.config`. ainsi, lorsque ces informations sont mises à jour, le fichier de configuration des versions antérieures doit simplement être remplacé par le nouveau sans avoir besoin de recompiler la bibliothèque.
 
 ## <a name="consuming-libraries"></a>Utilisation des bibliothèques
 
@@ -82,7 +82,7 @@ Vous utilisez le modificateur `new` pour masquer les membres hérités d’une c
 
 Prenons l’exemple suivant :
 
-[!code-csharp[Sample usage of the 'new' modifier](~/samples/csharp/versioning/new/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'new' modifier](~/samples/snippets/csharp/versioning/new/Program.cs#sample)]
 
 **Sortie**
 
@@ -100,7 +100,7 @@ Quand aucun modificateur `new` n’est spécifié, une classe dérivée masque p
 
 Le modificateur `override` indique qu’une implémentation dérivée étend l’implémentation d’un membre de classe de base au lieu de la masquer. Le modificateur `virtual` doit être appliqué au membre de classe de base.
 
-[!code-csharp[Sample usage of the 'override' modifier](../../samples/csharp/versioning/override/Program.cs#sample)]
+[!code-csharp[Sample usage of the 'override' modifier](../../samples/snippets/csharp/versioning/override/Program.cs#sample)]
 
 **Sortie**
 

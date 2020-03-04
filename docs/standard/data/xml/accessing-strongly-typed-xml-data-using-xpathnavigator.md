@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: 898e0f52-8a7c-4d1f-afcd-6ffb28b050b4
-ms.openlocfilehash: ec08b668bf54c5460e078bbb27bfbc370aff4e4a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e6ec30e3c7c2318b199122cd63c7f56584707a98
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75711179"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78158049"
 ---
 # <a name="accessing-strongly-typed-xml-data-using-xpathnavigator"></a>Accès à des données XML fortement typées à l'aide de XPathNavigator
 En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.Xml.XPath.XPathNavigator> peut contenir des données fortement typées correspondant aux types CLR (Common Language Runtime) courants. Conformément au modèle de données XPath 2.0, seuls les éléments et les attributs peuvent contenir des données fortement typées. La classe <xref:System.Xml.XPath.XPathNavigator> offre des mécanismes d'accès aux données dans un objet <xref:System.Xml.XPath.XPathDocument> ou <xref:System.Xml.XmlDocument> sous la forme de données fortement typées et des mécanismes de conversion d'un type de données en un autre.  
@@ -32,7 +32,7 @@ En tant qu’instance du modèle de données XPath 2.0, la classe <xref:System.
 ## <a name="xpathnavigator-typed-accessors"></a>Accesseurs typés XPathNavigator  
  Le tableau suivant illustre les différentes propriétés et méthodes de la classe <xref:System.Xml.XPath.XPathNavigator> pouvant être utilisées pour accéder aux informations sur le type à propos d'un nœud.  
   
-|Les|Description|  
+|Propriété|Description|  
 |--------------|-----------------|  
 |<xref:System.Xml.XPath.XPathNavigator.XmlType%2A>|Contient les informations sur le type de schéma XML pour le nœud s'il est valide.|  
 |<xref:System.Xml.XPath.XPathNavigator.SchemaInfo%2A>|Contient le jeu d’informations de post-validation de schéma du nœud ajouté après validation, notamment les informations sur le type de schéma XML et sur la validité.|  
@@ -111,9 +111,9 @@ Console.WriteLine(navigator.SchemaInfo.SchemaElement.MinOccurs);
  L'exemple prend également le schéma `books.xsd` comme entrée.  
   
 ```xml  
-<xs:schema xmlns="http://www.contoso.com/books"   
-attributeFormDefault="unqualified" elementFormDefault="qualified"   
-targetNamespace="http://www.contoso.com/books"   
+<xs:schema xmlns="http://www.contoso.com/books"
+attributeFormDefault="unqualified" elementFormDefault="qualified"
+targetNamespace="http://www.contoso.com/books"
 xmlns:xs="http://www.w3.org/2001/XMLSchema">  
     <xs:simpleType name="publishedType">  
         <xs:restriction base="xs:date">  

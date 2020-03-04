@@ -6,12 +6,12 @@ f1_keywords:
 helpviewer_keywords:
 - = operator [C#]
 ms.assetid: d802a6d5-32f0-42b8-b180-12f5a081bfc1
-ms.openlocfilehash: 19f74e6835ae555a3a38aa6ca8679948c7f290dd
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 790249c4cc85128f529bd88a4bf27d8b75121aaa
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75712752"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239533"
 ---
 # <a name="assignment-operators-c-reference"></a>Opérateurs d’assignationC# (référence)
 
@@ -23,7 +23,7 @@ L’opérateur d’assignation `=` est associatif à droite, autrement dit, une 
 a = b = c
 ```
 
-est évaluée comme étant
+est évaluée comme
 
 ```csharp
 a = (b = c)
@@ -31,13 +31,13 @@ a = (b = c)
 
 L’exemple suivant illustre l’utilisation de l’opérateur d’assignation avec une variable locale, une propriété et un élément d’indexeur comme opérande de gauche :
 
-[!code-csharp-interactive[simple assignment](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
+[!code-csharp-interactive[simple assignment](~/samples/snippets/csharp/language-reference/operators/AssignmentOperator.cs#Simple)]
 
 ## <a name="ref-assignment-operator"></a>Opérateur d'assignation ref
 
 À partir de C# 7.3, vous pouvez utiliser l’opérateur d’assignation ref `= ref` pour réaffecter une variable [locale ref](../keywords/ref.md#ref-locals) ou une variable [locale ref readonly](../keywords/ref.md#ref-readonly-locals). L’exemple suivant illustre l’utilisation de l’opérateur d’assignation ref :
 
-[!code-csharp[ref assignment operator](~/samples/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
+[!code-csharp[ref assignment operator](~/samples/snippets/csharp/language-reference/operators/AssignmentOperator.cs#RefAssignment)]
 
 Dans le cas de l’opérateur d’assignation de référence, les deux opérandes doivent être du même type.
 
@@ -49,7 +49,7 @@ Pour un opérateur binaire `op`, une expression d’assignation composée du for
 x op= y
 ```
 
-est équivalent à
+équivaut à :
 
 ```csharp
 x = x op y

@@ -11,19 +11,19 @@ dev_langs:
 - csharp
 - vb
 - cpp
-ms.openlocfilehash: 64f3a51b29a7116c736fea0e76465a4a73c640c2
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.openlocfilehash: 9998e69e8bf1505bcfc7a9103e9d89616dad9633
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75738768"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160311"
 ---
 # <a name="how-to-sign-an-assembly-with-a-strong-name"></a>Comment : signer un assembly avec un nom fort
 
 > [!NOTE]
 > Bien que .NET Core prenne en charge les assemblys avec nom fort et que tous les assemblys de la bibliothèque .NET Core soient signés, la majorité des assemblys tiers n’ont pas besoin de noms forts. Pour plus d’informations, consultez [signature avec nom fort](https://github.com/dotnet/runtime/blob/master/docs/project/strong-name-signing.md) sur GitHub.
 
-Il existe plusieurs façons de signer un assembly avec un nom fort :  
+Il existe plusieurs façons de signer un assembly avec un nom fort :  
   
 - À l'aide de l'onglet **Signature** dans la boîte de dialogue **Propriétés** d'un projet dans Visual Studio. Il s'agit de la façon la plus facile et la plus pratique de signer un assembly avec un nom fort.  
   
@@ -52,7 +52,7 @@ Il existe plusieurs façons de signer un assembly avec un nom fort :
   
 À l' [invite de commandes développeur pour Visual Studio](../../framework/tools/developer-command-prompt-for-vs.md), entrez la commande suivante :  
 
-**al** **/out :** \<*AssemblyName*>  *\<moduleName >* **/keyfile :** \<*keyfilename*>  
+**al** **/out :**\<*AssemblyName*> *\<moduleName >* **/keyfile :**\<*keyfilename*>  
 
 Où :  
 
@@ -73,9 +73,9 @@ Pour plus d'informations sur l'utilisation de cet outil, consultez [Assembly Lin
 ## <a name="sign-an-assembly-with-a-strong-name-by-using-attributes"></a>Signer un assembly avec un nom fort à l’aide d’attributs  
   
 1. Ajoutez l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute?displayProperty=nameWithType> ou <xref:System.Reflection.AssemblyKeyNameAttribute> à votre fichier de code source et spécifiez le nom du fichier ou du conteneur qui contient la paire de clés à utiliser lors de la signature de l'assembly avec un nom fort.  
-   
+
 2. Compilez le fichier de code source normalement.  
-   
+
    > [!NOTE]
    > Les compilateurs C# et Visual Basic génèrent des avertissements (CS1699 et BC41008, respectivement) lorsqu'ils rencontrent l'attribut <xref:System.Reflection.AssemblyKeyFileAttribute> ou <xref:System.Reflection.AssemblyKeyNameAttribute> dans le code source. Vous pouvez ignorer les avertissements.  
 

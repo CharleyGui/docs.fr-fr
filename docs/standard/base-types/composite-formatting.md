@@ -13,12 +13,12 @@ helpviewer_keywords:
 - composite formatting
 - objects [.NET Framework], formatting multiple objects
 ms.assetid: 87b7d528-73f6-43c6-b71a-f23043039a49
-ms.openlocfilehash: ae0ba0bf15b6a02df5130d34d277322897826697
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: b1ec8cfc0f8c6e660d716c51bf3c3387b73a278f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75338513"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159310"
 ---
 # <a name="composite-formatting"></a>Mise en forme composite
 
@@ -31,7 +31,7 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
 - <xref:System.String.Format%2A?displayProperty=nameWithType>, qui retourne une chaîne de résultat mise en forme.  
   
-- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, qui ajoute une chaîne de résultat mise en forme à un objet <xref:System.Text.StringBuilder>.   
+- <xref:System.Text.StringBuilder.AppendFormat%2A?displayProperty=nameWithType>, qui ajoute une chaîne de résultat mise en forme à un objet <xref:System.Text.StringBuilder>.
 - Certaines surcharges de la méthode <xref:System.Console.WriteLine%2A?displayProperty=nameWithType>, qui affichent une chaîne de résultat mise en forme sur la console.  
   
 - Certaines surcharges de la méthode <xref:System.IO.TextWriter.WriteLine%2A?displayProperty=nameWithType>, qui écrivent la chaîne de résultat mise en forme dans un flux ou un fichier. Les classes dérivées de <xref:System.IO.TextWriter>, telles que <xref:System.IO.StreamWriter> et <xref:System.Web.UI.HtmlTextWriter>, partagent également ces fonctionnalités.  
@@ -85,11 +85,11 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
   
  Le tableau suivant répertorie les types ou les catégories de types dans la bibliothèque de classes .NET Framework qui prennent en charge un ensemble prédéfini de chaînes de format, et fournit des liens vers les rubriques qui répertorient les chaînes de format prises en charge. Notez que la mise en forme de chaînes est un mécanisme extensible qui permet de définir de nouvelles chaînes de format pour tous les types existants et de définir un ensemble de chaînes de format pris en charge par un type défini par l'application. Pour plus d'informations, consultez les rubriques sur l'interface <xref:System.IFormattable> et <xref:System.ICustomFormatter>.  
   
-|Type ou catégorie de type|Consultez .|  
+|Type ou catégorie de type|Consultez|  
 |---------------------------|---------|  
-|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
-|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)|  
-|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
+|Types de date et d'heure (<xref:System.DateTime>, <xref:System.DateTimeOffset>)|[Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)<br /><br /> [Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)|  
+|Types d'énumération (tous les types dérivés de <xref:System.Enum?displayProperty=nameWithType>)|[Chaînes de format d’énumération](../../../docs/standard/base-types/enumeration-format-strings.md)|  
+|Types numériques (<xref:System.Numerics.BigInteger>, <xref:System.Byte>, <xref:System.Decimal>, <xref:System.Double>, <xref:System.Int16>, <xref:System.Int32>, <xref:System.Int64>, <xref:System.SByte>, <xref:System.Single>, <xref:System.UInt16>, <xref:System.UInt32>, <xref:System.UInt64>)|[Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)<br /><br /> [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)|  
 |<xref:System.Guid>|<xref:System.Guid.ToString%28System.String%29?displayProperty=nameWithType>|  
 |<xref:System.TimeSpan>|[Chaînes de format TimeSpan standard](../../../docs/standard/base-types/standard-timespan-format-strings.md)<br /><br /> [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)|  
   
@@ -164,10 +164,10 @@ La fonctionnalité de mise en forme composite est prise en charge par les métho
 - [Interpolation de chaîne (C#)](../../csharp/language-reference/tokens/interpolated.md)
 - [Interpolation de chaîne (Visual Basic)](../../visual-basic/programming-guide/language-features/strings/interpolated-strings.md)
 - [Mise en forme des types](../../../docs/standard/base-types/formatting-types.md)
-- [Standard Numeric Format Strings](../../../docs/standard/base-types/standard-numeric-format-strings.md)
-- [Custom Numeric Format Strings](../../../docs/standard/base-types/custom-numeric-format-strings.md)
-- [Chaînes de format de date et d'heure standard](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
-- [Chaînes de format de date et d’heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
+- [Chaînes de format numériques standard](../../../docs/standard/base-types/standard-numeric-format-strings.md)
+- [Chaînes de format numériques personnalisées](../../../docs/standard/base-types/custom-numeric-format-strings.md)
+- [Standard Date and Time Format Strings](../../../docs/standard/base-types/standard-date-and-time-format-strings.md)
+- [Chaînes de format de date et d'heure personnalisées](../../../docs/standard/base-types/custom-date-and-time-format-strings.md)
 - [Chaînes de format TimeSpan standard](../../../docs/standard/base-types/standard-timespan-format-strings.md)
 - [Chaînes de format TimeSpan personnalisées](../../../docs/standard/base-types/custom-timespan-format-strings.md)
-- [Enumeration Format Strings](../../../docs/standard/base-types/enumeration-format-strings.md)
+- [Chaînes de format d’énumération](../../../docs/standard/base-types/enumeration-format-strings.md)

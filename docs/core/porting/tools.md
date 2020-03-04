@@ -3,12 +3,12 @@ title: Outils de portage vers .NET Core
 description: Découvrez certains des outils que vous pouvez utiliser pour effectuer un portage vers .NET Core
 author: cartermp
 ms.date: 12/07/2018
-ms.openlocfilehash: 3b71c31b4f26b278b2bd1088adc8e9f64d28ab7b
-ms.sourcegitcommit: 9c54866bcbdc49dbb981dd55be9bbd0443837aa2
+ms.openlocfilehash: 98b3a29f2287414b2cd323f1cbf2225905592b26
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/14/2020
-ms.locfileid: "77215193"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157516"
 ---
 # <a name="tools-to-help-with-porting-to-net-core"></a>Outils facilitant le portage vers .NET Core
 
@@ -21,5 +21,5 @@ Les outils présentés dans cet article peuvent vous être utiles dans le cadre 
 
 En outre, vous pouvez essayer de porter des solutions plus petites ou des projets individuels au format de fichier de projet .NET Core avec l’outil [CsprojToVs2017](https://github.com/hvanbakel/CsprojToVs2017).
 
-> [!WARNING] 
+> [!WARNING]
 > CsprojToVs2017 est un outil tiers. Il n’existe aucune garantie que cet outil fonctionne pour tous vos projets, et il peut entraîner de légères modifications du comportement dont vous dépendez. CsprojToVs2017 doit être utilisé comme un _point de départ_ qui automatise les tâches de base pouvant être automatisées. Ce n’est pas une solution garantie pour la migration de formats de fichiers projet.

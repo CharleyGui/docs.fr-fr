@@ -1,14 +1,14 @@
 ---
 title: Classes et objets dans C# - Visite guidée du langage C#
-description: Novice en C# ? Lisez cette présentation des classes, des objets et de l’héritage
-ms.date: 08/10/2016
+description: Vous débutez en C# ? Lire cette vue d’ensemble des classes, des objets et de l’héritage
+ms.date: 02/27/2020
 ms.assetid: 63a89bde-0f05-4bc4-b0cd-4f693854f0cd
-ms.openlocfilehash: e5078135ab22445ac636c6edc3d46570be8fcaf5
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: c178e11b5667905f75538555c8a309e2fdb4a9ef
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673301"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159180"
 ---
 # <a name="classes-and-objects"></a>Classes et objets
 
@@ -16,7 +16,7 @@ Les *Classes* sont le type le plus fondamental de C#. Une classe est une structu
 
 Les nouvelles classes sont créées à l’aide des déclarations de classe. Une déclaration de classe commence par un en-tête qui spécifie les attributs et modificateurs de la classe, le nom de la classe, la classe de base (si fournie) et les interfaces implémentées par la classe. L’en-tête est suivi par le corps de la classe, qui se compose d’une liste de déclarations de membres écrites entre les délimiteurs `{` et `}`.
 
-Voici une déclaration d’une classe simple nommée `Point` :
+Le code suivant illustre une déclaration d’une classe simple nommée `Point`:
 
 [!code-csharp[PointClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L11)]
 
@@ -24,13 +24,13 @@ Les instances de classes sont créées à l’aide de l’opérateur `new`, qui 
 
 [!code-csharp[PointExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L9-L10)]
 
-La mémoire occupée par un objet est automatiquement libérée lorsque l’objet n’est plus accessible. Il n’est ni possible ni nécessaire de libérer explicitement des objets dans C#.
+La mémoire occupée par un objet est automatiquement libérée lorsque l’objet n’est plus accessible. Il n’est ni nécessaire ni possible de libérer explicitement des objets C#dans.
 
 ## <a name="members"></a>Membres
 
 Les membres d’une classe sont des membres statiques ou membres d’instance. Les membres statiques appartiennent à des classes, et les membres d’instance appartiennent à des objets (instances de classes).
 
-Vous trouverez ci-dessous une vue d’ensemble des types de membres qu'une classe peut contenir.
+La liste suivante fournit une vue d’ensemble des types de membres qu’une classe peut contenir.
 
 - Constantes
   - Valeurs constantes associées à la classe
@@ -55,20 +55,20 @@ Vous trouverez ci-dessous une vue d’ensemble des types de membres qu'une class
 
 ## <a name="accessibility"></a>Accessibilité
 
-Chaque membre d’une classe a une accessibilité associée, qui contrôle les régions du texte du programme qui sont en mesure d’accéder au membre. Il existe six formes possibles d’accessibilité. Ils sont résumés ci-dessous.
+Chaque membre d’une classe a une accessibilité associée, qui contrôle les zones de texte de programme qui peuvent accéder au membre. Il existe six formes possibles d’accessibilité. Les modificateurs d’accès sont résumés ci-dessous.
 
 - `public`
-  - Accès non limité
+  - L’accès n’est pas limité.
 - `protected`
-  - Accès limité à cette classe ou aux classes dérivées de cette classe
+  - L’accès est limité à cette classe ou aux classes dérivées de cette classe.
 - `internal`
-  - Accès limité à l’assembly actuel (.exe, .dll, etc.)
+  - L’accès est limité à l’assembly actuel (. exe,. dll, etc.).
 - `protected internal`
-  - Accès limité à la classe conteneur, aux classes dérivées de la classe conteneur ou aux classes dans le même assembly
+  - L’accès est limité à la classe conteneur, aux classes dérivées de la classe conteneur ou aux classes au sein du même assembly.
 - `private`
-  - Accès limité à cette classe
+  - L’accès est limité à cette classe.
 - `private protected`
-  - Accès limité à la classe conteneur ou aux classes dérivées du type conteneur dans le même assembly
+  - L’accès est limité à la classe conteneur ou aux classes dérivées du type conteneur dans le même assembly.
 
 ## <a name="type-parameters"></a>Paramètres de type
 
@@ -76,7 +76,7 @@ Une définition de classe peut spécifier un jeu de paramètres de type en faisa
 
 [!code-csharp[Pair](~/samples/snippets/csharp/tour/classes-and-objects/Pair.cs#L3-L7)]
 
-Un type de classe déclaré pour prendre des paramètres de type est appelé un *type de classe générique*. Les types struct, interface et délégué peuvent également être génériques.
+Un type de classe déclaré pour prendre des paramètres de type est appelé un *type de classe générique*. Les types struct, interface et Delegate peuvent également être génériques.
 Lorsque la classe générique est utilisée, des arguments de type doivent être fournis pour chacun des paramètres de type :
 
 [!code-csharp[PairExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L15-L17)]
@@ -89,9 +89,9 @@ Une déclaration de classe peut spécifier une classe de base en faisant suivre 
 
 [!code-csharp[Point3DClass](~/samples/snippets/csharp/tour/classes-and-objects/Point.cs#L3-L20)]
 
-Une classe hérite des membres de sa classe de base. L’héritage signifie qu’une classe contient implicitement tous les membres de sa classe de base, à l’exception des constructeurs d’instance et statiques et des finaliseurs de la classe de base. Une classe dérivée peut ajouter des membres hérités, mais ne peut pas supprimer la définition d’un membre hérité. Dans l’exemple précédent, `Point3D` hérite des champs `x` et `y` de `Point`, et chaque instance de `Point3D` contient trois champs, `x`, `y` et `z`.
+Une classe hérite des membres de sa classe de base. L’héritage signifie qu’une classe contient implicitement tous les membres de sa classe de base, à l’exception des constructeurs d’instance et statiques et des finaliseurs de la classe de base. Une classe dérivée peut ajouter de nouveaux membres aux membres qu’elle hérite, mais elle ne peut pas supprimer la définition d’un membre hérité. Dans l’exemple précédent, `Point3D` hérite des champs `x` et `y` de `Point`, et chaque instance de `Point3D` contient trois champs, `x`, `y` et `z`.
 
-Il existe une conversion implicite d’un type de classe vers un de ses types de classe de base. Par conséquent, une variable d’un type de classe peut référencer une instance de cette classe ou une instance d’une classe dérivée. Par exemple, pour les déclarations de classe précédentes, une variable de type `Point` peut faire référence à un objet `Point` ou `Point3D` :
+Il existe une conversion implicite d’un type de classe vers un de ses types de classe de base. Une variable d’un type de classe peut référencer une instance de cette classe ou une instance de toute classe dérivée. Par exemple, pour les déclarations de classe précédentes, une variable de type `Point` peut faire référence à un objet `Point` ou `Point3D` :
 
 [!code-csharp[Point3DExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L22-L23)]
 
@@ -99,11 +99,11 @@ Il existe une conversion implicite d’un type de classe vers un de ses types de
 
 Un *champ* est une variable qui est associée à une classe ou une instance d’une classe.
 
-Un champ déclaré avec le modificateur static définit un champ statique. Un champ statique identifie exactement un seul emplacement de stockage. Quel que soit le nombre d’instances d’une classe qui sont créées, il n’existe qu’une seule copie d’un champ statique.
+Un champ déclaré avec le modificateur static définit un champ statique. Un champ statique identifie exactement un seul emplacement de stockage. Quel que soit le nombre d’instances d’une classe qui sont créées, il n’y a qu’une seule copie d’un champ statique.
 
 Un champ déclaré sans le modificateur static définit un champ d’instance. Chaque instance d’une classe contient une copie distincte de tous les champs d’instance de cette classe.
 
-Dans l’exemple suivant, chaque instance de la classe `Color` possède une copie distincte des champs d’instance `r`, `g` et `b`, mais il existe une seule copie des champs statiques `Black`, `White`, `Red`, `Green` et `Blue` :
+Dans l’exemple suivant, chaque instance de la classe `Color` dispose d’une copie distincte des champs d’instance `r`, `g`et `b`, mais il n’existe qu’une seule copie des champs statiques `Black`, `White`, `Red`, `Green`et `Blue` :
 
 [!code-csharp[ColorClass](~/samples/snippets/csharp/tour/classes-and-objects/Color.cs#L3-L17)]
 
@@ -113,11 +113,11 @@ Comme indiqué dans l’exemple précédent, les *champs en lecture seule* peuve
 
 Une *méthode* est un membre qui implémente un calcul ou une action qui peut être effectuée par un objet ou une classe. Les *méthodes statiques* sont accessibles à travers la classe. Les *méthodes d’instance* sont accessibles via des instances de la classe.
 
-Les méthodes peuvent avoir une liste de *paramètres*, qui représentent des valeurs ou des références variables passées à la méthode et un *type de retour*, qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` si elle ne retourne pas de valeur.
+Les méthodes peuvent avoir une liste de *paramètres*, qui représentent des valeurs ou des références variables passées à la méthode et un *type de retour*, qui spécifie le type de la valeur calculée et retournée par la méthode. Le type de retour d’une méthode est `void` s’il ne retourne pas de valeur.
 
 Comme les types, les méthodes peuvent également être un jeu de paramètres de type pour lesquels les arguments de type doivent être spécifiés lorsque la méthode est appelée. Contrairement aux types, les arguments de type peuvent souvent être déduits à partir des arguments d’un appel de méthode et n’ont pas à être fournis explicitement.
 
-La *signature* d’une méthode doit être unique dans la classe dans laquelle la méthode est déclarée. La signature d’une méthode se compose du nom de la méthode, du nombre de paramètres de type et du nombre, des modificateurs et des types de ses paramètres. La signature d'une méthode n'inclut pas le type de retour.
+La *signature* d’une méthode doit être unique dans la classe dans laquelle la méthode est déclarée. La signature d’une méthode se compose du nom de la méthode, du nombre de paramètres de type et du nombre, des modificateurs et des types de ses paramètres. La signature d’une méthode n’inclut pas le type de retour.
 
 ### <a name="parameters"></a>Paramètres
 
@@ -135,11 +135,11 @@ Un *paramètre de sortie* est utilisé pour passer des arguments par référence
 
 [!code-csharp[OutExample](~/samples/snippets/csharp/tour/classes-and-objects/OutExample.cs#L3-L17)]
 
-Un *tableau de paramètres* autorise le passage d’un nombre variable d’arguments à une méthode. Un tableau de paramètres est déclaré avec le modificateur `params`. Seul le dernier paramètre d’une méthode peut être un tableau de paramètres, et le type d’un tableau de paramètres doit être un type tableau unidimensionnel. Les méthodes Write et WriteLine de la classe <xref:System.Console?displayProperty=nameWithType> sont de bons exemples d’utilisation des tableaux de paramètres. Vous les déclarez de la façon suivante.
+Un *tableau de paramètres* autorise le passage d’un nombre variable d’arguments à une méthode. Un tableau de paramètres est déclaré avec le modificateur `params`. Seul le dernier paramètre d’une méthode peut être un tableau de paramètres, et le type d’un tableau de paramètres doit être un type tableau unidimensionnel. Les méthodes Write et WriteLine de la classe <xref:System.Console?displayProperty=nameWithType> sont de bons exemples d’utilisation des tableaux de paramètres. Elles sont déclarées comme suit.
 
 [!code-csharp[ConsoleExample](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L78-L83)]
 
-Dans une méthode qui utilise un tableau de paramètres, le tableau de paramètres se comporte exactement comme un paramètre ordinaire de type tableau. Toutefois, dans un appel à une méthode avec un tableau de paramètres, il est possible de passer un argument unique de type tableau de paramètres ou n’importe quel nombre d’arguments du type d’élément du tableau de paramètres. Dans ce cas, une instance de tableau est automatiquement créée et initialisée avec les arguments donnés. Cet exemple
+Dans une méthode qui utilise un tableau de paramètres, le tableau de paramètres se comporte exactement comme un paramètre ordinaire de type tableau. Toutefois, dans un appel d’une méthode avec un tableau de paramètres, il est possible de passer un argument unique du type de tableau de paramètres ou un nombre quelconque d’arguments du type d’élément du tableau de paramètres. Dans ce cas, une instance de tableau est automatiquement créée et initialisée avec les arguments donnés. Cet exemple
 
 [!code-csharp[StringFormat](~/samples/snippets/csharp/tour/classes-and-objects/Program.cs#L55-L55)]
 
@@ -155,21 +155,21 @@ Un corps de méthode peut déclarer des variables qui sont spécifiques à l’a
 
 [!code-csharp[Squares](~/samples/snippets/csharp/tour/classes-and-objects/Squares.cs#L3-L17)]
 
-C# requiert qu’une variable locale soit *assignée de manière définitive* avant de pouvoir obtenir sa valeur. Par exemple, si la déclaration du `i` précédent n’inclut pas de valeur initiale, le compilateur signale une erreur pour les utilisations ultérieures de `i`, car `i` ne serait pas assigné de manière définitive à ces points dans le programme.
+C# requiert qu’une variable locale soit *assignée de manière définitive* avant de pouvoir obtenir sa valeur. Par exemple, si la déclaration de la `i` précédente n’inclut pas de valeur initiale, le compilateur signale une erreur pour les utilisations suivantes de `i`, car `i` n’est pas définitivement assignée à ces points dans le programme.
 
-Une méthode peut utiliser les instructions `return` pour retourner le contrôle à son appelant. Dans une méthode retournant `void`, les instructions `return` ne peuvent pas spécifier une expression. Dans une méthode avec un type de retour non void, les instructions `return` doivent inclure une expression qui calcule la valeur de retour.
+Une méthode peut utiliser les instructions `return` pour retourner le contrôle à son appelant. Dans une méthode qui retourne `void`, les instructions `return` ne peuvent pas spécifier une expression. Dans une méthode avec un type de retour non void, les instructions `return` doivent inclure une expression qui calcule la valeur de retour.
 
 ### <a name="static-and-instance-methods"></a>Méthodes statiques et d’instance
 
-Une méthode déclarée avec un modificateur statique est une *méthode statique*. Une méthode statique n’opère pas sur une instance spécifique et permet uniquement d’accéder directement à des membres statiques.
+Une méthode déclarée avec un modificateur statique est une *méthode statique*. Une méthode statique ne fonctionne pas sur une instance spécifique et peut uniquement accéder directement aux membres statiques.
 
-Une méthode déclarée sans un modificateur statique est une *méthode d’instance*. Une méthode d’instance opère sur une instance spécifique et peut accéder aux membres statiques et d’instance. L’instance sur laquelle une méthode d’instance a été appelée est explicitement accessible en tant que `this`. Une erreur consiste à faire référence à `this` dans une méthode statique.
+Une méthode déclarée sans un modificateur statique est une *méthode d’instance*. Une méthode d’instance opère sur une instance spécifique et peut accéder aux membres statiques et d’instance. L’instance sur laquelle une méthode d’instance a été appelée est explicitement accessible en tant que `this`. Il s’agit d’une erreur qui consiste à faire référence à `this` dans une méthode statique.
 
 La classe `Entity` suivante a à la fois des statiques et des membres d’instance.
 
 [!code-csharp[Entity](~/samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L16-L36)]
 
-Chaque instance `Entity` contient un numéro de série (et probablement d’autres informations qui ne sont pas indiquées ici). Le constructeur `Entity` (qui est similaire à une méthode d’instance) initialise la nouvelle instance avec le numéro de série suivant. Étant donné que le constructeur est un membre d’instance, il est autorisé à accéder à la fois au champ d’instance `serialNo` et au champ statique `nextSerialNo`.
+Chaque `Entity` instance contient un numéro de série (et probablement d’autres informations qui ne sont pas indiquées ici). Le constructeur `Entity` (qui est similaire à une méthode d’instance) initialise la nouvelle instance avec le numéro de série suivant. Étant donné que le constructeur est un membre d’instance, il est autorisé à accéder à la fois au champ d’instance `serialNo` et au champ statique `nextSerialNo`.
 
 Les méthodes statiques `GetNextSerialNo` et `SetNextSerialNo` peuvent accéder au champ statique `nextSerialNo`, mais ce serait une erreur pour eux d’accéder directement au champ d’instance `serialNo`.
 
@@ -177,7 +177,7 @@ L’exemple suivant illustre l’utilisation de la classe d’entité.
 
 [!code-csharp[EntityExample](~/samples/snippets/csharp/tour/classes-and-objects/Entity.cs#L3-L15)]
 
-Notez que les méthodes statiques `SetNextSerialNo` et `GetNextSerialNo` sont appelées sur la classe alors que la méthode d’instance `GetSerialNo` est appelée sur les instances de la classe.
+Les méthodes statiques `SetNextSerialNo` et `GetNextSerialNo` sont appelées sur la classe, tandis que la méthode d’instance `GetSerialNo` est appelée sur des instances de la classe.
 
 ### <a name="virtual-override-and-abstract-methods"></a>Méthodes virtuelles, de substitution et abstraites
 
@@ -189,7 +189,7 @@ Une méthode virtuelle peut être *substituée* dans une classe dérivée. Lorsq
 
 Une *méthode abstraite* est une méthode virtuelle sans implémentation. Une méthode abstraite est déclarée avec le modificateur abstract et est autorisée uniquement dans une classe qui est également déclarée comme étant abstract. Une méthode abstraite doit être remplacée dans chaque classe dérivée non abstraite.
 
-L’exemple suivant déclare une classe abstraite, `Expression`, qui représente un nœud d’arborescence de l’expression et trois classes dérivées, `Constant`, `VariableReference` et `Operation`, qui implémentent des nœuds d’arborescence de l’expression pour les références variables, les constantes et les opérations arithmétiques. (Cela est similaire aux types arborescence de l’expression, mais ne les confondez pas).
+L’exemple suivant déclare une classe abstraite, `Expression`, qui représente un nœud d’arborescence de l’expression et trois classes dérivées, `Constant`, `VariableReference` et `Operation`, qui implémentent des nœuds d’arborescence de l’expression pour les références variables, les constantes et les opérations arithmétiques. (Cet exemple est similaire à, mais ne doit pas être confondu avec les types d’arborescence d’expression).
 
 [!code-csharp[ExpressionClass](~/samples/snippets/csharp/tour/classes-and-objects/Expressions.cs#L3-L61)]
 
@@ -207,7 +207,7 @@ Le programme suivant utilise les classes `Expression` pour évaluer l’expressi
 
 ### <a name="method-overloading"></a>Surcharge de méthode
 
-La *surcharge* de méthode permet d’avoir plusieurs méthodes dans la même classe avec le même nom, tant qu’elles ont des signatures uniques. Lors de la compilation d’un appel à une méthode surchargée, le compilateur utilise *la résolution de surcharge* pour déterminer la méthode spécifique à appeler. La résolution de surcharge trouve la méthode qui correspond le mieux aux arguments ou signale une erreur si aucune meilleure correspondance ne peut être trouvée. L’exemple suivant montre la résolution de surcharge en action. Le commentaire pour chaque appel de la méthode `UsageExample` affiche une méthode qui est réellement appelée.
+La *surcharge* de méthode permet d’avoir plusieurs méthodes dans la même classe avec le même nom, tant qu’elles ont des signatures uniques. Lors de la compilation d’un appel à une méthode surchargée, le compilateur utilise *la résolution de surcharge* pour déterminer la méthode spécifique à appeler. La résolution de surcharge trouve la méthode qui correspond le mieux aux arguments ou signale une erreur si aucune meilleure correspondance ne peut être trouvée. L’exemple suivant montre la résolution de surcharge en action. Le commentaire pour chaque appel de la méthode `UsageExample` indique la méthode appelée.
 
 [!code-csharp[OverloadUsage](~/samples/snippets/csharp/tour/classes-and-objects/Overloading.cs#L3-L41)]
 
@@ -215,9 +215,9 @@ Comme le montre l’exemple, une méthode particulière peut toujours être sél
 
 ## <a name="other-function-members"></a>Autres fonctions membres
 
-Les membres qui contiennent du code exécutable sont collectivement regroupés sous les *membres de fonction* d’une classe. La section précédente décrit les méthodes qui sont du type principal des fonctions membres. Cette section décrit les autres types de fonctions membres pris en charge par C# : constructeurs, propriétés, indexeurs, événements, opérateurs et finaliseurs.
+Les membres qui contiennent du code exécutable sont collectivement regroupés sous les *membres de fonction* d’une classe. La section précédente décrit les méthodes, qui sont les principaux types de fonctions membres. Cette section décrit les autres types de fonctions membres pris en charge par C# : constructeurs, propriétés, indexeurs, événements, opérateurs et finaliseurs.
 
-L’exemple suivant représente une classe générique nommée `MyList<T>`, qui implémente une liste d’objets évolutive. La classe contient plusieurs exemples des types les plus courants de membres de fonction.
+L’exemple suivant montre une classe générique appelée `MyList<T>`, qui implémente une liste d’objets pouvant être augmentée. La classe contient plusieurs exemples des types les plus courants de membres de fonction.
 
 > [!NOTE]
 > Cet exemple crée une classe `MyList`, ce qui n’est pas la même chose que la classe <xref:System.Collections.Generic.List%601?displayProperty=nameWithType> standard .NET. S’il ne permet pas de remplacer cette classe, il illustre en revanche les concepts nécessaires à cette visite guidée.
@@ -226,7 +226,7 @@ L’exemple suivant représente une classe générique nommée `MyList<T>`, qui 
 
 ### <a name="constructors"></a>Constructeurs
 
-C# prend en charge les constructeurs statiques et d’instance. Un *constructeur d’instance* est un membre qui implémente les actions requises pour initialiser une instance d’une classe. Un *constructeur statique* est un membre qui implémente les actions requises pour initialiser une classe lui-même lorsqu’il est chargé.
+C# prend en charge les constructeurs statiques et d’instance. Un *constructeur d’instance* est un membre qui implémente les actions requises pour initialiser une instance d’une classe. Un *constructeur statique* est un membre qui implémente les actions requises pour initialiser une classe lorsqu’elle est chargée pour la première fois.
 
 Un constructeur est déclaré comme une méthode sans aucun type de retour et le même nom que la classe contenante. Si une déclaration de constructeur comprend un modificateur static, elle déclare un constructeur statique. Dans le cas contraire, elle déclare un constructeur d’instance.
 
@@ -234,11 +234,11 @@ Les constructeurs d’instance peuvent être surchargés et avoir des paramètre
 
 [!code-csharp[ListExample1](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L95-L96)]
 
-Contrairement aux autres membres, les constructeurs d’instance ne sont pas hérités, et une classe n’a aucun constructeur d’instance autre que ceux réellement déclarés dans la classe. Si aucun constructeur d’instance n’est fourni pour une classe, un constructeur vide sans paramètre est fourni automatiquement.
+Contrairement à d’autres membres, les constructeurs d’instance ne sont pas hérités et une classe n’a pas de constructeurs d’instance autres que ceux réellement déclarés dans la classe. Si aucun constructeur d’instance n’est fourni pour une classe, un constructeur vide sans paramètre est fourni automatiquement.
 
 ### <a name="properties"></a>Propriétés
 
-Les *propriétés* sont une extension naturelle des champs. Les deux sont des membres nommés avec des types associés, et la syntaxe pour accéder aux champs et propriétés est la même. Toutefois, contrairement aux champs, les propriétés ne désignent pas des emplacements de stockage. Au lieu de cela, les propriétés ont des *accesseurs* qui spécifient les instructions à exécuter lorsque les valeurs sont lues ou écrites.
+Les *propriétés* sont une extension naturelle des champs. Les deux sont des membres nommés avec des types associés, et la syntaxe pour accéder aux champs et propriétés est la même. Toutefois, contrairement aux champs, les propriétés ne désignent pas les emplacements de stockage. Au lieu de cela, les propriétés ont des *accesseurs* qui spécifient les instructions à exécuter lorsque les valeurs sont lues ou écrites.
 
 Une propriété est déclarée comme un champ, sauf que la déclaration se termine avec un accesseur get et/ou un accesseur set écrit entre les délimiteurs `{` et `}` au lieu de se terminer par un point-virgule. Une propriété qui a un accesseur get et un accesseur set est une *propriété en lecture-écriture*, une propriété qui possède uniquement un accesseur get est une *propriété en lecture seule*, et une propriété qui possède uniquement un accesseur set est une *propriété en écriture seule*.
 
@@ -246,7 +246,7 @@ Un accesseur get correspond à une méthode sans paramètre avec une valeur de r
 
 Un accesseur set correspond à une méthode avec un paramètre unique nommé valeur et aucun type de retour. Lorsqu’une propriété est référencée en tant que cible d’une assignation ou qu’opérande de ++ ou --, l’accesseur set est appelé avec un argument qui fournit la nouvelle valeur.
 
-La classe `MyList<T>` déclare deux propriétés, `Count` et `Capacity`, qui sont respectivement en lecture seule et en lecture-écriture. En voici un exemple d’utilisation :
+La classe `MyList<T>` déclare deux propriétés, `Count` et `Capacity`, qui sont respectivement en lecture seule et en lecture-écriture. Le code suivant est un exemple d’utilisation de ces propriétés :
 
 [!code-csharp[ListExample2](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L101-L104)]
 
@@ -268,7 +268,7 @@ Les indexeurs peuvent être surchargés, ce qui signifie qu’une classe peut d�
 
 Un *événement* est un membre qui permet à une classe ou un objet de fournir des notifications. Un événement est déclaré comme un champ, sauf que la déclaration inclut un mot-clé d’événement et que le type doit être un type délégué.
 
-Dans une classe qui déclare un membre d’événement, l’événement se comporte comme un champ d’un type délégué (à condition que l’événement n’est pas abstrait et ne déclare pas d’accesseurs). Le champ stocke une référence à un délégué qui représente les gestionnaires d’événements qui ont été ajoutés à l’événement. Si aucun gestionnaire d’événements n’est présent, le champ est `null`.
+Dans une classe qui déclare un membre d’événement, l’événement se comporte de la même façon qu’un champ d’un type délégué (à condition que l’événement ne soit pas abstrait et ne déclare pas d’accesseurs). Le champ stocke une référence à un délégué qui représente les gestionnaires d’événements qui ont été ajoutés à l’événement. Si aucun gestionnaire d’événements n’est présent, le champ est `null`.
 
 La classe `MyList<T>` déclare un membre d’événement unique appelé `Changed`, qui indique qu’un nouvel élément a été ajouté à la liste. L’événement Changed est déclenché par la méthode virtuelle `OnChanged`, qui vérifie si l’événement est `null` (ce qui signifie qu’aucun gestionnaire n’est présent). La notion de déclenchement d’un événement est équivalente à l’appel de délégué représenté par l’événement. Par conséquent, il n’existe aucune construction de langage particulière pour déclencher des événements.
 
@@ -276,7 +276,7 @@ Les clients réagissent aux événements via les *gestionnaires d’événements
 
 [!code-csharp[EventExample](~/samples/snippets/csharp/tour/classes-and-objects/ListBasedExamples.cs#L132-L148)]
 
-Pour les scénarios avancés où le contrôle du stockage sous-jacent d’un événement est souhaité, une déclaration d’événement peut fournir explicitement des accesseurs `add` et `remove`, qui sont plutôt similaires à l’accesseur `set` d’une propriété.
+Pour les scénarios avancés où le contrôle du stockage sous-jacent d’un événement est souhaité, une déclaration d’événement peut fournir explicitement des accesseurs `add` et `remove`, qui sont similaires à l’accesseur `set` d’une propriété.
 
 ### <a name="operators"></a>Opérateurs
 
@@ -292,7 +292,7 @@ La première `Console.WriteLine` génère `True`, car les deux listes contiennen
 
 Un *finaliseur* est un membre qui implémente les actions requises pour finaliser une instance d’une classe. Les finaliseurs ne peuvent pas avoir de paramètres, ils ne peuvent pas avoir de modificateurs d’accessibilité et ils ne peuvent pas être appelés explicitement. Le finaliseur pour une instance est appelé automatiquement lors du nettoyage de la mémoire (garbage collection).
 
-Le récupérateur de mémoire est libre de déterminer quand collecter des objets et exécuter des finaliseurs. Plus précisément, le timing des appels du finaliseur n’est pas déterministe, et les finaliseurs ne peuvent être exécutés sur n’importe quel thread. Pour ces raisons et d’autres, les classes doivent implémenter des finaliseurs uniquement lorsqu’aucune des autres solutions n’est envisageable.
+Le récupérateur de mémoire est libre de déterminer quand collecter des objets et exécuter des finaliseurs. Plus précisément, le minutage des appels du finaliseur n’est pas déterministe, et les finaliseurs peuvent être exécutés sur n’importe quel thread. Pour ces raisons et d’autres, les classes doivent implémenter des finaliseurs uniquement lorsqu’aucune des autres solutions n’est envisageable.
 
 L’instruction `using` fournit une meilleure approche pour la destruction d’objets.
 

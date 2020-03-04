@@ -4,12 +4,12 @@ description: Architecturer des applications web modernes avec ASP.NET Core et Az
 author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
-ms.openlocfilehash: f37bdca688559236d9b07b97f7ee7459b3be4f39
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.openlocfilehash: 5a38ca94b6df676858e7cb058272e450aaf1572e
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77449346"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78241037"
 ---
 # <a name="working-with-data-in-aspnet-core-apps"></a>Utilisation de données dans les applications ASP.NET Core
 
@@ -261,7 +261,7 @@ await strategy.ExecuteAsync(async () =>
 
         // Save to EventLog only if product price changed
         if (raiseProductPriceChangedEvent)
-        await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
+            await _integrationEventLogService.SaveEventAsync(priceChangedEvent);
         transaction.Commit();
     }
 });

@@ -16,12 +16,12 @@ helpviewer_keywords:
 - Date data type, converting
 - local time conversions
 ms.assetid: b605ff97-0c45-4c24-833f-4c6a3e8be64c
-ms.openlocfilehash: 428553f75db2cca6705ac72873e86e120e94d134
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 5c19296f75e9e002e88263c5e5efa9917e185ebc
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73132590"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156034"
 ---
 # <a name="converting-between-datetime-and-datetimeoffset"></a>Conversion entre DateTime et DateTimeOffset
 
@@ -99,7 +99,7 @@ Pour indiquer qu’une valeur <xref:System.DateTimeOffset> représente l’heure
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#7)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#7](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#7)]
 
-Vous pouvez également utiliser la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> pour convertir une valeur de <xref:System.DateTimeOffset> en une valeur de <xref:System.DateTime> locale. La propriété <xref:System.DateTime.Kind%2A> de la valeur <xref:System.DateTime> retournée est <xref:System.DateTimeKind.Local>. Le code suivant utilise la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> lors de la conversion d’une valeur <xref:System.DateTimeOffset> dont le décalage correspond à celui du fuseau horaire local. 
+Vous pouvez également utiliser la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> pour convertir une valeur de <xref:System.DateTimeOffset> en une valeur de <xref:System.DateTime> locale. La propriété <xref:System.DateTime.Kind%2A> de la valeur <xref:System.DateTime> retournée est <xref:System.DateTimeKind.Local>. Le code suivant utilise la propriété <xref:System.DateTimeOffset.LocalDateTime%2A?displayProperty=nameWithType> lors de la conversion d’une valeur <xref:System.DateTimeOffset> dont le décalage correspond à celui du fuseau horaire local.
 
 [!code-csharp[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/csharp/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/cs/Conversions.cs#10)]
 [!code-vb[System.DateTimeOffset.Conceptual.Conversions#10](../../../samples/snippets/visualbasic/VS_Snippets_CLR_System/system.DateTimeOffset.Conceptual.Conversions/vb/Conversions.vb#10)]

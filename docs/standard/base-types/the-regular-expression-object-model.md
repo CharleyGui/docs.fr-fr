@@ -35,15 +35,15 @@ helpviewer_keywords:
 - pattern-matching with regular expressions, classes
 - GroupCollection class
 ms.assetid: 49a21470-64ca-4b5a-a889-8e24e3c0af7e
-ms.openlocfilehash: e637b2527ce0f7e1b48b713549cb87b2c13881db
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 8956be3cf8f96a8dd255f378d4927404c172c908
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73124811"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159999"
 ---
 # <a name="the-regular-expression-object-model"></a>Modèle objet d'expression régulière
-<a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Elle contient les sections suivantes :  
+<a name="introduction"></a> Cette rubrique décrit le modèle objet utilisé avec les expressions régulières .NET. Elle contient les sections suivantes :  
   
 - [Moteur d’expression régulière](#Engine)  
   
@@ -57,19 +57,19 @@ ms.locfileid: "73124811"
   
 - [Capture individuelle](#the_individual_capture)  
   
-<a name="Engine"></a>   
+<a name="Engine"></a>
 ## <a name="the-regular-expression-engine"></a>Moteur d'expression régulière  
  Le moteur d’expression régulière dans .NET est représenté par la classe <xref:System.Text.RegularExpressions.Regex>. Le moteur d'expression régulière prend en charge l'analyse et la compilation d'une expression régulière, ainsi que les opérations qui mettent en correspondance le modèle d'expression régulière avec une chaîne d'entrée. Le moteur est le composant central du modèle objet des expressions régulières .NET.  
   
  Vous pouvez utiliser le moteur d'expression régulière de deux façons :  
   
-- En appelant les méthodes statiques de la classe <xref:System.Text.RegularExpressions.Regex>. Les paramètres des méthodes comprennent la chaîne d'entrée et le modèle d'expression régulière. Le moteur d'expression régulière met en cache les expressions régulières utilisées dans les appels de méthode statique ; les appels répétés de méthodes d'expression régulière statiques qui utilisent la même expression régulière offrent donc des performances relativement bonnes.  
+- En appelant les méthodes statiques de la classe <xref:System.Text.RegularExpressions.Regex>. Les paramètres des méthodes comprennent la chaîne d’entrée et le modèle d’expression régulière. Le moteur d'expression régulière met en cache les expressions régulières utilisées dans les appels de méthode statique ; les appels répétés de méthodes d'expression régulière statiques qui utilisent la même expression régulière offrent donc des performances relativement bonnes.  
   
 - En instanciant un objet <xref:System.Text.RegularExpressions.Regex>, via la transmission d'une expression régulière au constructeur de classe. Dans ce cas, l'objet <xref:System.Text.RegularExpressions.Regex> est immuable (lecture seule) et représente un moteur d'expression régulière étroitement lié à une expression régulière unique. Comme les expressions régulières utilisées par les instances de <xref:System.Text.RegularExpressions.Regex> ne sont pas mises en cache, vous ne devez pas instancier un objet <xref:System.Text.RegularExpressions.Regex> plusieurs fois avec la même expression régulière.  
   
  Vous pouvez appeler les méthodes de la classe <xref:System.Text.RegularExpressions.Regex> pour effectuer les opérations suivantes :  
   
-- Déterminer si une chaîne correspond à un modèle d'expression régulière.  
+- Déterminer si une chaîne correspond à un modèle d’expression régulière.  
   
 - Extraire une correspondance unique ou la première correspondance.  
   
@@ -89,7 +89,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `^\d{3}-\d{2}-\d{4}$` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Mettre en correspondance le début de la chaîne d'entrée.|  
 |`\d{3}`|Mettre en correspondance trois chiffres décimaux.|  
@@ -107,7 +107,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `\b(\w+)\W+(\1)\b` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`(\w+)`|Mettre en correspondance un ou plusieurs caractères alphabétiques. Il s'agit du premier groupe de capture.|  
@@ -129,7 +129,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `\b\d+\.\d{2}\b` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`\d+`|Mettre en correspondance un ou plusieurs chiffres décimaux.|  
@@ -139,7 +139,7 @@ ms.locfileid: "73124811"
   
  Le modèle de remplacement `$$$&` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Chaîne de remplacement|  
+|Modèle|Chaîne de remplacement|  
 |-------------|------------------------|  
 |`$$`|Caractère du signe dollar ($).|  
 |`$&`|Sous-chaîne entière mise en correspondance.|  
@@ -152,18 +152,18 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `\b\d{1,2}\.\s` est interprété comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`\d{1,2}`|Mettre en correspondance un ou deux chiffres décimaux.|  
 |`\.`|Mettre en correspondance un point.|  
 |`\s`|Mettre en correspondance un espace blanc.|  
   
-<a name="Match_and_MCollection"></a>   
+<a name="Match_and_MCollection"></a>
 ## <a name="the-matchcollection-and-match-objects"></a>Objets MatchCollection et Match  
  Les méthodes d'expression régulière retournent deux objets qui font partie du modèle objet d'expression régulière : l'objet <xref:System.Text.RegularExpressions.MatchCollection> et l'objet <xref:System.Text.RegularExpressions.Match>.  
   
-<a name="the_match_collection"></a>   
+<a name="the_match_collection"></a>
 ### <a name="the-match-collection"></a>Collection de correspondances  
  La méthode <xref:System.Text.RegularExpressions.Regex.Matches%2A?displayProperty=nameWithType> retourne un objet <xref:System.Text.RegularExpressions.MatchCollection> qui contient des objets <xref:System.Text.RegularExpressions.Match> représentant toutes les correspondances trouvées par le moteur d'expression régulière, dans l'ordre dans lequel elles se produisent dans la chaîne d'entrée. En l'absence de correspondance, la méthode retourne un objet <xref:System.Text.RegularExpressions.MatchCollection> sans membres. La propriété <xref:System.Text.RegularExpressions.MatchCollection.Item%2A?displayProperty=nameWithType> vous permet d'accéder à des membres spécifiques de la collection en fonction de leur index, qui est compris entre zéro et la valeur de la propriété <xref:System.Text.RegularExpressions.MatchCollection.Count%2A?displayProperty=nameWithType> moins une unité. <xref:System.Text.RegularExpressions.MatchCollection.Item%2A> est l'indexeur de la collection (en C#) et la propriété par défaut (en Visual Basic).  
   
@@ -174,7 +174,7 @@ ms.locfileid: "73124811"
  [!code-csharp[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/matchcollection1.cs#6)]
  [!code-vb[Conceptual.RegularExpressions.ObjectModel#6](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/matchcollection1.vb#6)]  
   
-<a name="the_match"></a>   
+<a name="the_match"></a>
 ### <a name="the-match"></a>Classe Match  
  La classe <xref:System.Text.RegularExpressions.Match> représente le résultat d'une correspondance d'expression régulière unique. Vous pouvez accéder aux objets <xref:System.Text.RegularExpressions.Match> de deux façons :  
   
@@ -215,7 +215,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `\b\d+(,\d{3})*\.\d{2}\b` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`\d+`|Mettre en correspondance un ou plusieurs chiffres décimaux.|  
@@ -228,7 +228,7 @@ ms.locfileid: "73124811"
   
  [Retour au début](#introduction)  
   
-<a name="GroupCollection"></a>   
+<a name="GroupCollection"></a>
 ## <a name="the-group-collection"></a>Collection de groupes  
  La propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType> retourne un objet <xref:System.Text.RegularExpressions.GroupCollection> qui contient des objets <xref:System.Text.RegularExpressions.Group> représentant des groupes capturés dans une même correspondance. Le premier objet <xref:System.Text.RegularExpressions.Group> de la collection (index 0) représente la correspondance entière. Chaque objet qui suit représente le résultat d'un groupe de capture spécifique.  
   
@@ -246,7 +246,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `\b(\w+)\s(\d{1,2}),\s(\d{4})\b` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`(\w+)`|Mettre en correspondance un ou plusieurs caractères alphabétiques. Il s'agit du premier groupe de capture.|  
@@ -259,7 +259,7 @@ ms.locfileid: "73124811"
   
  [Retour au début](#introduction)  
   
-<a name="the_captured_group"></a>   
+<a name="the_captured_group"></a>
 ## <a name="the-captured-group"></a>Groupe capturé  
  La classe <xref:System.Text.RegularExpressions.Group> représente le résultat d'un groupe de capture spécifique. Les objets de groupe qui représentent les groupes de capture définis dans une expression régulière sont retournés par la propriété <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> de l'objet <xref:System.Text.RegularExpressions.GroupCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Match.Groups%2A?displayProperty=nameWithType>. La propriété <xref:System.Text.RegularExpressions.GroupCollection.Item%2A> représente l'indexeur (en C#) et la propriété par défaut (en Visual Basic) de la classe <xref:System.Text.RegularExpressions.Group>. Vous pouvez également récupérer des membres spécifiques en itérant la collection à l'aide de la construction `foreach` ou `For Each`. La section précédente propose un exemple.  
   
@@ -275,7 +275,7 @@ ms.locfileid: "73124811"
   
  Le modèle d'expression régulière `^(?<name>\w+):(?<value>\w+)` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Commencer la correspondance au début de la chaîne d'entrée.|  
 |`(?<name>\w+)`|Mettre en correspondance un ou plusieurs caractères alphabétiques. Le nom de ce groupe de capture est `name`.|  
@@ -288,25 +288,25 @@ ms.locfileid: "73124811"
   
 - Si le quantificateur `*` ou `*?` (qui spécifie zéro correspondance, ou plus) est appliqué à un groupe, un groupe de capture peut ne pas avoir de correspondance dans la chaîne d'entrée. En l'absence de texte capturé, les propriétés de l'objet <xref:System.Text.RegularExpressions.Group> sont définies comme indiqué dans le tableau suivant.  
   
-    |Propriété de groupe|valeur|  
+    |Propriété de groupe|Valeur|  
     |--------------------|-----------|  
     |`Success`|`false`|  
     |`Value`|<xref:System.String.Empty?displayProperty=nameWithType>|  
     |`Length`|0|  
   
-     L'exemple suivant illustre cette situation. Dans le modèle d'expression régulière `aaa(bbb)*ccc`, le premier groupe de capture (la sous-chaîne « bbb ») peut être mis en correspondance zéro fois, ou plus. Comme la chaîne d’entrée « aaaccc » correspond au modèle, le groupe de capture ne possède pas de correspondance.  
+     L'exemple suivant en est l'illustration. Dans le modèle d'expression régulière `aaa(bbb)*ccc`, le premier groupe de capture (la sous-chaîne « bbb ») peut être mis en correspondance zéro fois, ou plus. Comme la chaîne d’entrée « aaaccc » correspond au modèle, le groupe de capture ne possède pas de correspondance.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/nocapture1.cs#11)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#11](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/nocapture1.vb#11)]  
   
-- Les quantificateurs peuvent mettre en correspondance plusieurs occurrences d'un modèle défini par un groupe de capture. Dans ce cas, les propriétés `Value` et `Length` d'un objet <xref:System.Text.RegularExpressions.Group> ne contiennent des informations que sur la dernière sous-chaîne capturée. Par exemple, l'expression régulière suivante met en correspondance une phrase unique qui se termine par un point. Elle utilise deux constructions de regroupement : la première capture des mots individuels ainsi qu'un espace blanc, tandis que la seconde capture des mots individuels. Comme le montre le résultat de l'exemple, bien que l'expression régulière parvienne à capturer une phrase entière, le second groupe capture uniquement le dernier mot.  
+- Les quantificateurs peuvent mettre en correspondance plusieurs occurrences d’un modèle défini par un groupe de capture. Dans ce cas, les propriétés `Value` et `Length` d'un objet <xref:System.Text.RegularExpressions.Group> ne contiennent des informations que sur la dernière sous-chaîne capturée. Par exemple, l'expression régulière suivante met en correspondance une phrase unique qui se termine par un point. Elle utilise deux constructions de regroupement : la première capture des mots individuels ainsi qu'un espace blanc, tandis que la seconde capture des mots individuels. Comme le montre le résultat de l'exemple, bien que l'expression régulière parvienne à capturer une phrase entière, le second groupe capture uniquement le dernier mot.  
   
      [!code-csharp[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/csharp/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/cs/lastcapture1.cs#12)]
      [!code-vb[Conceptual.RegularExpressions.ObjectModel#12](../../../samples/snippets/visualbasic/VS_Snippets_CLR/conceptual.regularexpressions.objectmodel/vb/lastcapture1.vb#12)]  
   
  [Retour au début](#introduction)  
   
-<a name="CaptureCollection"></a>   
+<a name="CaptureCollection"></a>
 ## <a name="the-capture-collection"></a>Collection de captures  
  L'objet <xref:System.Text.RegularExpressions.Group> ne contient des informations que sur la dernière capture. Toutefois, l'ensemble complet des captures effectuées par un groupe de capture est récupérable de l'objet <xref:System.Text.RegularExpressions.CaptureCollection> retourné par la propriété <xref:System.Text.RegularExpressions.Group.Captures%2A?displayProperty=nameWithType>. Chaque membre de la collection est un objet <xref:System.Text.RegularExpressions.Capture> qui représente une capture effectuée par ce groupe de capture, dans l'ordre dans lequel ils ont été capturés (donc, dans l'ordre dans lequel les chaînes capturées ont été mises en correspondance de la gauche vers la droite dans la chaîne d'entrée). Vous pouvez récupérer des objets <xref:System.Text.RegularExpressions.Capture> spécifiques de la collection de deux façons :  
   
@@ -328,7 +328,7 @@ ms.locfileid: "73124811"
   
  [Retour au début](#introduction)  
   
-<a name="the_individual_capture"></a>   
+<a name="the_individual_capture"></a>
 ## <a name="the-individual-capture"></a>Capture individuelle  
  La classe <xref:System.Text.RegularExpressions.Capture> contient le résultat d'une capture de sous-expression unique. La propriété <xref:System.Text.RegularExpressions.Capture.Value%2A?displayProperty=nameWithType> contient le texte mis en correspondance, tandis que la propriété <xref:System.Text.RegularExpressions.Capture.Index%2A?displayProperty=nameWithType> indique la position, en base zéro, dans la chaîne d'entrée à laquelle commence la sous-chaîne mise en correspondance.  
   
@@ -339,7 +339,7 @@ ms.locfileid: "73124811"
   
  L'expression régulière est définie comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\w+`|Mettre en correspondance un ou plusieurs caractères alphabétiques.|  
 |`(\s\w+)*`|Mettre en correspondance zéro occurrence, ou plus, d'un espace blanc suivi d'un ou plusieurs caractères alphabétiques. Ce modèle met en correspondance les noms de ville composés de plusieurs mots. Il s'agit du troisième groupe de capture.|  

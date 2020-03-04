@@ -3,17 +3,17 @@ title: Fragment d’arborescence résultat dans Transformations
 ms.date: 03/30/2017
 ms.technology: dotnet-standard
 ms.assetid: df363480-ba02-4233-9ddf-8434e421c4f1
-ms.openlocfilehash: 33d66b0a835be8bacab76ef9295ce8158385d8d1
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: e454c1194e8c280042857f106e22d0d0509417e3
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710256"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156359"
 ---
 # <a name="result-tree-fragment-in-transformations"></a>Fragment d’arborescence résultat dans Transformations
 
 > [!NOTE]
-> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](migrating-from-the-xsltransform-class.md).
+> La classe <xref:System.Xml.Xsl.XslTransform> est obsolète dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT (Extensible Stylesheet Language Transformation) à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez les pages [Utiliser la classe XslCompiledTransform](using-the-xslcompiledtransform-class.md) et [Migrer à partir de la classe XslTransform](migrating-from-the-xsltransform-class.md).
 
  Les fragments d'arborescence résultat ne sont rien d'autre qu'un type spécial de collection de nœuds. Vous pouvez effectuer sur ces collections toutes les fonctions pouvant être effectuées sur une collection de nœuds. Vous pouvez également convertir un fragment d’arborescence résultat en une collection de nœuds à l’aide la fonction `node-set()`, puis l’utiliser ensuite partout où il est possible d’utiliser une collection de nœuds.
 
@@ -111,7 +111,7 @@ Voici un autre exemple présentant une variable au format RTF, et donc un type d
 
 Le résultat de la transformation du XML avec cette feuille de style est illustré dans la sortie suivante.
 
-## <a name="output"></a>Output
+## <a name="output"></a>Sortie
 
 ```xml
 <first_book xmlns:user="urn:books">Book1</first_book>
@@ -140,7 +140,7 @@ Dans l'exemple suivant, `$var` est une variable qui est une arborescence de nœu
     </xsl:variable>
 
     <xsl:template match="/">
-            <xsl:for-each select="msxsl:node-set($states)"/> 
+            <xsl:for-each select="msxsl:node-set($states)"/>
     </xsl:template>
 </xsl:stylesheet>
 ```
@@ -167,8 +167,8 @@ Voici un autre exemple d'une variable qui correspond à un RTF, et donc de fragm
 <![CDATA[
     string func(XPathNodeIterator it)
     {
-        it.MoveNext(); 
-        return it.Current.Value; 
+        it.MoveNext();
+        return it.Current.Value;
         //it.Current returns XPathNavigator positioned on the current node
     }
 

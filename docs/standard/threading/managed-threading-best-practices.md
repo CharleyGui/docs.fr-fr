@@ -10,12 +10,12 @@ helpviewer_keywords:
 - threading [.NET Framework], best practices
 - managed threading
 ms.assetid: e51988e7-7f4b-4646-a06d-1416cee8d557
-ms.openlocfilehash: 26b0535fa918a802dd0922554ae197ba10396d56
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: a76cc40f308ac2f636a650cd4a17da0e94e23a34
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73129565"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160259"
 ---
 # <a name="managed-threading-best-practices"></a>Bonnes pratiques pour le threading managé
 Le multithreading nécessite une programmation attentive. Pour réduire la complexité de la plupart des tâches, il vous suffit de mettre en file d’attente les requêtes à exécuter par les threads d’un pool de threads. Cet article vous permet de remédier aux situations plus complexes, telles que la coordination du travail de plusieurs threads ou la gestion des threads bloqués.  
@@ -26,7 +26,7 @@ Le multithreading nécessite une programmation attentive. Pour réduire la compl
 ## <a name="deadlocks-and-race-conditions"></a>Interblocages et conditions de concurrence  
  Le multithreading résout les problèmes de débit et de réactivité, mais, ce faisant, occasionne de nouveaux problèmes : les interblocages et les conditions de concurrence.  
   
-### <a name="deadlocks"></a>Interblocages (deadlocks)  
+### <a name="deadlocks"></a>Blocages  
  Un interblocage se produit lorsque chacun des deux threads tente de verrouiller une ressource déjà verrouillée par l’autre thread. Aucun des deux threads ne peut donc poursuivre l’exécution.  
   
  De nombreuses méthodes des classes de threading managé fournissent des délais d’expiration conçus pour faciliter la détection des interblocages. Par exemple, le code ci-après tente d’acquérir un verrou sur un objet nommé `lockObject`. Si le verrou n’est pas obtenu en 300 millisecondes, <xref:System.Threading.Monitor.TryEnter%2A?displayProperty=nameWithType> retourne `false`.  
@@ -107,7 +107,7 @@ Utilisez la propriété <xref:System.Environment.ProcessorCount?displayProperty=
     ```  
   
     ```csharp  
-    lock(lockObject)   
+    lock(lockObject)
     {  
         myField++;  
     }  

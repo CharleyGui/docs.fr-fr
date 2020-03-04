@@ -7,12 +7,12 @@ helpviewer_keywords:
 ms.assetid: d899d43c-335a-433e-a589-cd187192984f
 dev_langs:
 - CSharp
-ms.openlocfilehash: 9a7cdd0b9e5bd12d5730d92f39c2432bdc84a18e
-ms.sourcegitcommit: 9b552addadfb57fab0b9e7852ed4f1f1b8a42f8e
+ms.openlocfilehash: a2dde9f795dfe31ff6ef821272a0d5e8d20e8b2f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 04/23/2019
-ms.locfileid: "61795029"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159947"
 ---
 # <a name="basic-serialization"></a>Sérialisation de base
 
@@ -65,7 +65,7 @@ Si la portabilité est une exigence, utilisez plutôt le <xref:System.Runtime.Se
 ```xml  
 <SOAP-ENV:Envelope  
   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
-  xmlns:xsd="http://www.w3.org/2001/XMLSchema"   
+  xmlns:xsd="http://www.w3.org/2001/XMLSchema"
   xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  
   xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"  
   SOAP-ENV:encodingStyle=  
@@ -86,7 +86,7 @@ Si la portabilité est une exigence, utilisez plutôt le <xref:System.Runtime.Se
 Il est important de noter que l’attribut [Serializable](xref:System.SerializableAttribute) ne peut pas être hérité. Si vous dérivez une nouvelle classe à partir de `MyObject`, elle doit également être marquée avec l'attribut. Sinon, elle ne peut pas être sérialisée. Par exemple, quand vous tentez de sérialiser une instance de la classe ci-dessous, vous obtenez un <xref:System.Runtime.Serialization.SerializationException> vous informant que le type `MyStuff` n’est pas marqué comme sérialisable.  
   
 ```csharp  
-public class MyStuff : MyObject   
+public class MyStuff : MyObject
 {  
   public int n3;  
 }  

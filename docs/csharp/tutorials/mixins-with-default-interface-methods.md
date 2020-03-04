@@ -3,18 +3,18 @@ title: Créer des types mixin à l’aide de méthodes d’interface par défaut
 description: À l’aide des membres d’interface par défaut, vous pouvez étendre les interfaces avec des implémentations par défaut facultatives pour les implémenteurs.
 ms.technology: csharp-advanced-concepts
 ms.date: 10/04/2019
-ms.openlocfilehash: f97410124a4ca5bbb10972ab5e7942fa4af68d72
-ms.sourcegitcommit: cdf5084648bf5e77970cbfeaa23f1cab3e6e234e
+ms.openlocfilehash: aaf8d34e27c9c56d95560656eb7a7b24b152c053
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/01/2020
-ms.locfileid: "76921447"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240104"
 ---
 # <a name="tutorial-mix-functionality-in-when-creating-classes-using-interfaces-with-default-interface-methods"></a>Didacticiel : combiner les fonctionnalités dans lors de la création de classes à l’aide d’interfaces avec les méthodes d’interface par défaut
 
 Depuis C# 8.0 sur .NET Core 3.0, vous pouvez définir une implémentation lorsque vous déclarez un membre d’une interface. Cette fonctionnalité offre de nouvelles fonctionnalités qui vous permettent de définir des implémentations par défaut pour les fonctionnalités déclarées dans les interfaces. Les classes peuvent choisir quand remplacer les fonctionnalités, quand utiliser les fonctionnalités par défaut et quand ne pas déclarer la prise en charge des fonctionnalités discrètes.
 
-Dans ce tutoriel, vous allez apprendre à :
+Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 > [!div class="checklist"]
 >
@@ -22,7 +22,7 @@ Dans ce tutoriel, vous allez apprendre à :
 > * Créez des classes qui utilisent les implémentations par défaut.
 > * Créez des classes qui remplacent une partie ou la totalité des implémentations par défaut.
 
-## <a name="prerequisites"></a>Prerequisites
+## <a name="prerequisites"></a>Composants requis
 
 Vous devez configurer votre ordinateur pour exécuter .NET Core, y compris le C# compilateur 8,0. Le C# compilateur 8,0 est disponible à partir de [Visual Studio 2019 version 16,3](https://visualstudio.microsoft.com/downloads/?utm_medium=microsoft&utm_source=docs.microsoft.com&utm_campaign=inline+link&utm_content=download+vs2019)ou du [Kit de développement logiciel (SDK) .net Core 3,0](https://dotnet.microsoft.com/download/dotnet-core) ou version ultérieure.
 
@@ -53,21 +53,21 @@ Créons le code pour illustrer ces différences.
 
 Commencez par créer l’interface qui définit le comportement de toutes les lumières :
 
-[!code-csharp[Declare base interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
+[!code-csharp[Declare base interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetILightInterfaceV1)]
 
 Un dispositif d’éclairage de surcharge de base peut implémenter cette interface comme indiqué dans le code suivant :
 
-[!code-csharp[First overhead light](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
+[!code-csharp[First overhead light](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetOverheadLightV1)]
 
 Dans ce didacticiel, le code ne pilote pas les appareils IoT, mais émule ces activités en écrivant des messages sur la console. Vous pouvez explorer le code sans automatiser votre maison.
 
 Ensuite, nous allons définir l’interface pour une lumière qui peut s’éteindre automatiquement après un délai d’attente :
 
-[!code-csharp[pure Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
+[!code-csharp[pure Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/UnusedExampleCode.cs?name=SnippetPureTimerInterface)]
 
 Vous pouvez ajouter une implémentation de base à la lumière de la surcharge, mais une meilleure solution consiste à modifier cette définition d’interface pour fournir une implémentation `virtual` par défaut :
 
-[!code-csharp[Timer interface](~/samples/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
+[!code-csharp[Timer interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ITimerLight.cs?name=SnippetTimerLightFinal)]
 
 En ajoutant cette modification, la classe `OverheadLight` peut implémenter la fonction timer en déclarant la prise en charge de l’interface :
 
@@ -77,7 +77,7 @@ public class OverheadLight : ITimerLight { }
 
 Un type de lumière différent peut prendre en charge un protocole plus sophistiqué. Il peut fournir sa propre implémentation pour `TurnOnFor`, comme illustré dans le code suivant :
 
-[!code-csharp[Override the timer function](~/samples/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
+[!code-csharp[Override the timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/HalogenLight.cs?name=SnippetHalogenLight)]
 
 Contrairement aux méthodes de la classe virtuelle de substitution, la déclaration de `TurnOnFor` dans la classe `HalogenLight` n’utilise pas le mot clé `override`.
 
@@ -85,19 +85,19 @@ Contrairement aux méthodes de la classe virtuelle de substitution, la déclarat
 
 Les avantages des méthodes d’interface par défaut deviennent plus clairs lorsque vous introduisez des fonctionnalités plus avancées. L’utilisation d’interfaces vous permet de mélanger et de faire correspondre des fonctionnalités. Il permet également à chaque auteur de classe de choisir entre l’implémentation par défaut et une implémentation personnalisée. Nous allons ajouter une interface avec une implémentation par défaut pour une lumière clignotante :
 
-[!code-csharp[Define the blinking light interface](~/samples/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
+[!code-csharp[Define the blinking light interface](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/IBlinkingLight.cs?name=SnippetBlinkingLight)]
 
 L’implémentation par défaut permet à tout éclairage de clignoter. La lumière de la surcharge peut ajouter des fonctionnalités de minuterie et de clignotement à l’aide de l’implémentation par défaut :
 
-[!code-csharp[Use the default blink function](~/samples/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
+[!code-csharp[Use the default blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/OverheadLight.cs?name=SnippetOverheadLight)]
 
 Un nouveau type de lumière, le `LEDLight` prend en charge la fonction de minuteur et la fonction Blink directement. Ce style clair implémente à la fois les interfaces `ITimerLight` et `IBlinkingLight`, et remplace la méthode `Blink` :
 
-[!code-csharp[Override the blink function](~/samples/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
+[!code-csharp[Override the blink function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/LEDLight.cs?name=SnippetLEDLight)]
 
 Une `ExtraFancyLight` peut prendre en charge les fonctions de clignotement et de minuteur directement :
 
-[!code-csharp[Override the blink and timer function](~/samples/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
+[!code-csharp[Override the blink and timer function](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ExtraFancyLight.cs?name=SnippetExtraFancyLight)]
 
 Le `HalogenLight` que vous avez créé précédemment ne prend pas en charge le clignotement. Par conséquent, n’ajoutez pas le `IBlinkingLight` à la liste des interfaces prises en charge.
 
@@ -105,21 +105,21 @@ Le `HalogenLight` que vous avez créé précédemment ne prend pas en charge le 
 
 Nous allons ensuite écrire du code de test. Vous pouvez utiliser la fonctionnalité C#de mise en [correspondance des modèles](../pattern-matching.md) de pour déterminer les capacités d’un éclairage en examinant les interfaces qu’il prend en charge.  La méthode suivante exerce les fonctionnalités prises en charge de chaque lumière :
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
+[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetTestLightFunctions)]
 
 Le code suivant dans votre méthode `Main` crée chaque type de lumière dans la séquence et teste ce qui est clair :
 
-[!code-csharp[Test a light's capabilities](~/samples/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
+[!code-csharp[Test a light's capabilities](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/Program.cs?name=SnippetMainMethod)]
 
 ## <a name="how-the-compiler-determines-best-implementation"></a>Comment le compilateur détermine la meilleure implémentation
 
 Ce scénario montre une interface de base sans implémentation. L’ajout d’une méthode dans l’interface `ILight` introduit de nouvelles complexités. Les règles de langage régissant les méthodes d’interface par défaut réduisent l’effet sur les classes concrètes qui implémentent plusieurs interfaces dérivées. Nous allons améliorer l’interface d’origine avec une nouvelle méthode pour montrer comment cela modifie son utilisation. Chaque témoin lumineux peut signaler son état d’alimentation comme une valeur énumérée :
 
-[!code-csharp[Enumeration for power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
+[!code-csharp[Enumeration for power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetPowerStatus)]
 
 L’implémentation par défaut suppose une alimentation secteur :
 
-[!code-csharp[Report a default power status](~/samples/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
+[!code-csharp[Report a default power status](~/samples/snippets/csharp/tutorials/mixins-with-interfaces/ILight.cs?name=SnippetILightInterface)]
 
 Ces modifications sont compilées correctement, même si le `ExtraFancyLight` déclare la prise en charge de l’interface `ILight` et des deux interfaces dérivées, `ITimerLight` et `IBlinkingLight`. Il n’y a qu’une seule implémentation « la plus proche » déclarée dans l’interface `ILight`. Toute classe qui a déclaré une substitution devient l’implémentation « la plus proche ». Vous avez vu des exemples dans les classes précédentes qui a remplacé les membres d’autres interfaces dérivées.
 

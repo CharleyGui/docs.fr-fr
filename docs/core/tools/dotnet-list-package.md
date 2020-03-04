@@ -2,25 +2,25 @@
 title: Commande dotnet list package
 description: La commande 'dotnet list package' est pratique pour lister les références de packages à un projet ou à une solution.
 ms.date: 02/14/2020
-ms.openlocfilehash: bd275c308c3a213661d5cc6c7e60817620f076a5
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: 1cb52b8de10b2eef2ef7465f04316e9446318763
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503739"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157230"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
 **Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,2 et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet list package` - Liste toutes les références de package d’un projet ou d’une solution.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch] 
+dotnet list [<PROJECT>|<SOLUTION>] package [--config] [--framework] [--highest-minor] [--highest-patch]
    [--include-prerelease] [--include-transitive] [--interactive] [--outdated] [--source]
 dotnet list package [-h|--help]
 ```

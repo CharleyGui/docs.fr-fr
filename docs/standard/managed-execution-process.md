@@ -10,12 +10,12 @@ helpviewer_keywords:
 - managed execution process
 - common language runtime, managed execution process
 ms.assetid: 476b03dc-2b12-49a7-b067-41caeaa2f533
-ms.openlocfilehash: 0ce7182af33a795188d01ac457b9d45b8ad305dd
-ms.sourcegitcommit: 42ed59871db1f29a32b3d8e7abeb20e6eceeda7c
+ms.openlocfilehash: 46a266849f137076170287aeb10becedf83ccf78
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/10/2019
-ms.locfileid: "74960387"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160220"
 ---
 # <a name="managed-execution-process"></a>Processus d'exécution managée
 <a name="introduction"></a> Le processus d'exécution managé inclut les étapes suivantes,qui sont décrites en détail plus loin dans cette rubrique :  
@@ -36,15 +36,15 @@ ms.locfileid: "74960387"
   
      Le Common Language Runtime fournit l'infrastructure qui permet à l'exécution d'avoir lieu et les services pouvant être utilisés pendant l'exécution.  
   
-<a name="choosing_a_compiler"></a>   
+<a name="choosing_a_compiler"></a>
 ## <a name="choosing-a-compiler"></a>Choix d'un compilateur  
  Pour bénéficier des avantages qu'offre le Common Language Runtime (CLR), vous devez utiliser un ou plusieurs compilateurs de langage ciblant le runtime, tels que les compilateurs Visual Basic, C#, Visual C++, F# ou l'un des nombreux compilateurs tiers tels que les compilateurs Eiffel, Perl ou COBOL.  
   
- Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d'informations, consultez [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md).  
+ Dans la mesure où il représente un environnement d'exécution multilangage, le runtime prend en charge une grande variété de types de données et de fonctionnalités de langage. Le compilateur de langage que vous utilisez détermine les fonctionnalités du runtime qui sont disponibles et que vous utilisez pour concevoir votre code. C'est votre compilateur et non le runtime qui établit la syntaxe à laquelle votre code doit se conformer. Si votre composant doit être entièrement utilisable par des composants écrits dans d’autres langages, les types exportés de votre composant doivent exposer uniquement les fonctionnalités de langage qui font partie de la spécification [Language Independence and Language-Independent Components](../../docs/standard/language-independence-and-language-independent-components.md) . Vous pouvez utiliser l'attribut <xref:System.CLSCompliantAttribute> pour vous assurer que votre code est conforme CLS. Pour plus d’informations, consultez [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md).  
   
  [Retour au début](#introduction)  
   
-<a name="compiling_to_msil"></a>   
+<a name="compiling_to_msil"></a>
 ## <a name="compiling-to-msil"></a>Compilation en MSIL  
  Lors d'une compilation destinée à produire du code managé, le compilateur convertit le code source en langage MSIL (Microsoft Intermediate Language), un jeu d'instructions indépendant du processeur qui peut être converti efficacement en code natif. MSIL inclut des instructions pour le chargement, le stockage, l'initialisation et l'appel de méthodes sur des objets, ainsi que des instructions pour la réalisation d'opérations arithmétiques et logiques, le flux de contrôle, l'accès direct à la mémoire, la gestion des exceptions et d'autres opérations. Avant d'exécuter du code, vous devez d'abord convertir le MSIL en code spécifique au processeur, généralement à l'aide d'un [compilateur juste-à-temps (JIT)](#compiling_msil_to_native_code). Dans la mesure où le Common Language Runtime fournit un ou plusieurs compilateurs JIT pour chaque architecture d'ordinateur qu'il prend en charge, le même jeu d'instructions MSIL peut être traité par un compilateur JIT et exécuté sur toute architecture prise en charge.  
   
@@ -52,7 +52,7 @@ ms.locfileid: "74960387"
   
  [Retour au début](#introduction)  
   
-<a name="compiling_msil_to_native_code"></a>   
+<a name="compiling_msil_to_native_code"></a>
 ## <a name="compiling-msil-to-native-code"></a>Compilation du MSIL en code natif  
  Avant de pouvoir exécuter le langage MSIL (MicroSoft Intermediate Language), vous devez le compiler en code natif avec le Common Language Runtime pour l'architecture de l'ordinateur cible. Le .NET Framework propose deux méthodes pour effectuer cette conversion :  
   
@@ -89,7 +89,7 @@ ms.locfileid: "74960387"
   
  [Retour au début](#introduction)  
   
-<a name="running_code"></a>   
+<a name="running_code"></a>
 ## <a name="running-code"></a>Exécution de code  
  Le Common Language Runtime fournit l'infrastructure qui permet à l'exécution managée d'avoir lieu et les services pouvant être utilisés pendant l'exécution. Pour qu'une méthode puisse être exécutée, elle doit d'abord être compilée en un code spécifique au processeur. Chaque méthode pour laquelle le MSIL a été généré est compilée juste-à-temps quand elle est appelée pour la première fois, puis s'exécute. Quand la méthode est exécutée la fois suivante, le code natif existant traité par le compilateur JIT est exécuté. Le processus de compilation JIT puis d'exécution du code est répété jusqu'à ce que l'exécution soit complètement terminée.  
   
@@ -107,11 +107,11 @@ ms.locfileid: "74960387"
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Vue d’ensemble](../../docs/framework/get-started/overview.md)
+- [Vue d'ensemble](../../docs/framework/get-started/overview.md)
 - [Indépendance du langage et composants indépendants du langage](../../docs/standard/language-independence-and-language-independent-components.md)
 - [Métadonnées et composants autodescriptifs](../../docs/standard/metadata-and-self-describing-components.md)
 - [Ilasm.exe (assembleur IL)](../../docs/framework/tools/ilasm-exe-il-assembler.md)
-- [Security](../../docs/standard/security/index.md)
+- [Sécurité](../../docs/standard/security/index.md)
 - [Interopération avec du code non managé](../../docs/framework/interop/index.md)
 - [Déploiement](../../docs/framework/deployment/net-framework-applications.md)
 - [Assemblys dans .NET](assembly/index.md)

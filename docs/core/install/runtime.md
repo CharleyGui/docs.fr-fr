@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 zone_pivot_groups: operating-systems-set-one
-ms.openlocfilehash: ba50eb222d9eab6bffbb8ebfdf0ecf47951ce719
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: a41bbdf5419585f06773583dbe82ab0d84ebaa4c
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543519"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157634"
 ---
 # <a name="install-the-net-core-runtime"></a>Installer le Runtime .NET Core
 
@@ -35,6 +35,19 @@ Windows possède des programmes d’installation autonomes qui peuvent être uti
 macOS possède des programmes d’installation autonomes qui peuvent être utilisés pour installer le Runtime .NET Core 3,1 :
 
 - [Processeurs x64 (64 bits)](https://dotnet.microsoft.com/download/dotnet-core/3.1)
+
+## <a name="download-and-manually-install"></a>Télécharger et installer manuellement
+
+Comme alternative aux programmes d’installation macOS pour .NET Core, vous pouvez télécharger et installer manuellement le Runtime.
+
+Pour installer le runtime et activer les commandes CLI .NET Core disponibles sur le terminal, commencez par [Télécharger](#all-net-core-downloads) une version binaire de .net core. Ensuite, ouvrez un terminal et exécutez les commandes suivantes. Il est supposé que le runtime est téléchargé dans le fichier `~/Downloads/dotnet-runtime.pkg`.
+
+```bash
+mkdir -p $HOME/dotnet
+sudo installer -pkg ~/Downloads/dotnet-runtime.pkg -target $HOME/dotnet
+export DOTNET_ROOT=$HOME/dotnet
+export PATH=$PATH:$HOME/dotnet
+```
 
 ::: zone-end
 
@@ -64,7 +77,7 @@ export PATH=$PATH:$HOME/dotnet
 > - **Interpréteur**de commandes bash : *~/. bash_profile*, *~ fichier/.bashrc*
 > - **Shell Korn**: *~/.kshrc* ou *. Profile*
 > - **Z Shell**: *~/.zshrc* ou *. zprofile*
-> 
+>
 > Modifiez le fichier source approprié pour votre shell et ajoutez `:$HOME/dotnet` à la fin de l’instruction `PATH` existante. Si aucune instruction `PATH` n’est incluse, ajoutez une nouvelle ligne avec `export PATH=$PATH:$HOME/dotnet`.
 >
 > En outre, ajoutez `export DOTNET_ROOT=$HOME/dotnet` à la fin du fichier.
@@ -145,6 +158,6 @@ Microsoft fournit des images adaptées à des scénarios particuliers. Par exemp
 
 Pour plus d’informations sur l’utilisation de .NET Core dans un conteneur d’ancrage, consultez [Introduction à .net et à l’ancreur](../docker/introduction.md) et aux [exemples](https://github.com/dotnet/dotnet-docker/blob/master/samples/README.md).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 - [Comment vérifier si .net Core est déjà installé](how-to-detect-installed-versions.md).

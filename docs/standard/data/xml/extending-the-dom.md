@@ -6,12 +6,12 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: b5489c96-4afd-439a-a25d-fc82eb4a148d
-ms.openlocfilehash: 41b6959843e866b89da46a9cedfb54a2f5ed001a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 11c7e8c8d2ea3b49fe73ab4dde4e2ccc8bc917ff
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75710880"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78159674"
 ---
 # <a name="extending-the-dom"></a>Extension du DOM
 
@@ -42,9 +42,9 @@ End Class 'LineInfoDocument
 ```
 
 ```csharp
-class LineInfoDocument : XmlDocument 
+class LineInfoDocument : XmlDocument
 {
-    public override XmlElement CreateElement(string prefix, string localname, string nsURI) 
+    public override XmlElement CreateElement(string prefix, string localname, string nsURI)
     {
         LineInfoElement elem = new LineInfoElement(prefix, localname, nsURI, this);
         return elem;
@@ -220,7 +220,7 @@ public class Test {
 }
 ```
 
-#### <a name="input"></a>Input
+#### <a name="input"></a>Entrée
 
 book.xml
 
@@ -232,7 +232,7 @@ book.xml
 </book>
 ```
 
-#### <a name="output"></a>Output
+#### <a name="output"></a>Sortie
 
 ```console
 Number of elements in book.xml: 3

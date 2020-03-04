@@ -6,18 +6,18 @@ dev_langs:
 - csharp
 - vb
 ms.assetid: de2f0dce-6b98-4908-bba7-ed150cc50355
-ms.openlocfilehash: 5cd733d557dabe66145fdbb848c473411d63c62b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 34ffb9923337bbad90b2170a16d610d26c7f6f23
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75709619"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160194"
 ---
 # <a name="xsltargumentlist-for-style-sheet-parameters-and-extension-objects"></a>XsltArgumentList pour les paramètres de feuille de style et les objets d'extension
 La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (Extensible Stylesheet Language for Transformations) et des objets d'extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
   
 > [!NOTE]
-> Les classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XsltArgumentList> sont obsolètes dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez [Utilisation de la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migration depuis la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
+> Les classes <xref:System.Xml.Xsl.XslTransform> et <xref:System.Xml.Xsl.XsltArgumentList> sont obsolètes dans .NET Framework 2.0. Vous pouvez effectuer des transformations XSLT à l'aide de la classe <xref:System.Xml.Xsl.XslCompiledTransform>. Pour plus d'informations, consultez les pages [Utiliser la classe XslCompiledTransform](../../../../docs/standard/data/xml/using-the-xslcompiledtransform-class.md) et [Migrer à partir de la classe XslTransform](../../../../docs/standard/data/xml/migrating-from-the-xsltransform-class.md).  
   
  La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT et des objets d’extension XSLT. Lorsqu’ils sont transmis à la méthode <xref:System.Xml.Xsl.XslTransform.Transform%2A>, ces paramètres et ces objets d’extension peuvent être appelés à partir des feuilles de style.  
   
@@ -38,7 +38,7 @@ La classe <xref:System.Xml.Xsl.XsltArgumentList> contient des paramètres XSLT (
   
 |Type W3C|Classe .NET Framework équivalente (type)|Type XPath ou type XSLT|  
 |--------------|----------------------------------------------|-----------------------------|  
-|Chaîne|System.String|XPath|  
+|String|System.String|XPath|  
 |Boolean|System.Boolean|XPath|  
 |Number|System.Double|XPath|  
 |Fragment d’arborescence résultat|System.Xml.XPath.XPathNavigator|XSLT|  
@@ -137,7 +137,7 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a>Input  
+### <a name="input"></a>Entrée  
  order.xml  
   
 ```xml  
@@ -169,12 +169,12 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Output  
+### <a name="output"></a>Sortie  
   
 ```xml  
 <order>  
-   <total>36.9</total>   
-   15% discount if paid by: 5/6/2001 5:01:15 PM   
+   <total>36.9</total>
+   15% discount if paid by: 5/6/2001 5:01:15 PM
 </order>  
 ```  
   
@@ -305,7 +305,7 @@ public class Sample
 }  
 ```  
   
-### <a name="input"></a>Input  
+### <a name="input"></a>Entrée  
  number.xml  
   
 ```xml  
@@ -317,7 +317,7 @@ public class Sample
   <circle>  
     <radius>37.5</radius>  
   </circle>  
-</data>    
+</data>
 ```  
   
  circle.xsl  
@@ -332,7 +332,7 @@ public class Sample
     <circle>  
     <xsl:copy-of select="node()"/>  
        <circumference>  
-          <xsl:value-of select="myObj:Circumference(radius)"/>          
+          <xsl:value-of select="myObj:Circumference(radius)"/>
        </circumference>  
     </circle>  
   </xsl:for-each>  
@@ -341,7 +341,7 @@ public class Sample
 </xsl:stylesheet>  
 ```  
   
-### <a name="output"></a>Output  
+### <a name="output"></a>Sortie  
  `<circles xmlns:myObj="urn:myObj">`  
   
  `<circle>`  

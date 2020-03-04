@@ -8,17 +8,17 @@ ms.assetid: 51f8ffa3-c253-4201-a3d3-c4fad85ae097
 dev_langs:
 - csharp
 - cpp
-ms.openlocfilehash: 7b9fd4e89d1d3290dfc17f52de392c4ee9092d02
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: 215636a9617a2723d8ab69640c1d3e69491a7d87
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73138595"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160363"
 ---
 # <a name="type-forwarding-in-the-common-language-runtime"></a>Transfert de type dans le Common Language Runtime
 Le transfert de type vous permet de déplacer un type vers un autre assembly sans avoir à recompiler les applications utilisant l’assembly d’origine.  
   
- Par exemple, supposons qu’une application utilise la classe `Example` dans un assembly nommé *Utility. dll*. Les développeurs de *Utility. dll* peuvent décider de refactoriser l’assembly et, dans le processus, ils peuvent déplacer la classe `Example` vers un autre assembly. Si l’ancienne version de *Utility. dll* est remplacée par la nouvelle version de *Utility. dll* et son assembly associé, l’application qui utilise la classe `Example` échoue, car elle ne peut pas localiser la classe `Example` dans la nouvelle version de *Utility. dll* .  
+ Par exemple, supposons qu’une application utilise la classe `Example` dans un assembly nommé *Utility. dll*. Les développeurs de *Utility. dll* peuvent décider de refactoriser l’assembly et, dans le processus, ils peuvent déplacer la classe `Example` vers un autre assembly. Si l’ancienne version de *Utility. dll* est remplacée par la nouvelle version de *Utility. dll* et son assembly associé, l’application qui utilise la classe `Example` échoue, car elle ne peut pas localiser la classe `Example` dans la nouvelle version de *Utility. dll*.  
   
  Les développeurs de *Utility. dll* peuvent éviter cela en transférant les demandes de la classe `Example`, à l’aide de l’attribut <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute>. Si l’attribut a été appliqué à la nouvelle version de *Utility. dll*, les demandes de la classe `Example` sont transférées à l’assembly qui contient désormais la classe. L’application existante continue à fonctionner normalement, sans nouvelle compilation.  
   
@@ -29,19 +29,19 @@ Le transfert de type vous permet de déplacer un type vers un autre assembly san
  Le transfert de type se décompose en quatre étapes :  
   
 1. Déplacez le code source associé au type de l’assembly d’origine à l’assembly de destination.  
-   
+
 2. Dans l’assembly où se trouvait le type, ajoutez un <xref:System.Runtime.CompilerServices.TypeForwardedToAttribute> pour le type qui a été déplacé. Le code suivant représente l’attribut pour un type nommé `Example` qui a été déplacé.  
-   
+
    ```cpp  
     [assembly:TypeForwardedToAttribute(Example::typeid)]  
    ```
-   
+
    ```csharp  
     [assembly:TypeForwardedToAttribute(typeof(Example))]  
    ```  
-   
+
 3. Compilez l’assembly qui contient désormais le type.  
-   
+
 4. Recompilez l’assembly dans lequel le type se trouvait, avec une référence à l’assembly qui contient désormais le type. Par exemple, si vous compilez C# un fichier à partir de la ligne de commande, utilisez l’option [-Reference (C# options du compilateur)](../../csharp/language-reference/compiler-options/reference-compiler-option.md) pour spécifier l’assembly qui contient le type. Dans C++, utilisez la directive [#using](/cpp/preprocessor/hash-using-directive-cpp) dans le fichier source pour spécifier l’assembly contenant le type.  
   
 ## <a name="see-also"></a>Voir aussi

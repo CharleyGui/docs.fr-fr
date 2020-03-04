@@ -13,15 +13,15 @@ helpviewer_keywords:
 - base streams
 - streams, backing stores
 ms.assetid: da761658-a535-4f26-a452-b30df47f73d5
-ms.openlocfilehash: 689cc9537cd7a5fe6a677d42e5790bbcf1b3aefa
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.openlocfilehash: 3f18712793254f4942c092c87a3e64c73b492ae0
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75708146"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160103"
 ---
 # <a name="compose-streams"></a>Composer des flux
-Un *magasin de stockage* est un support de stockage, au même titre qu’un disque ou qu’une mémoire. Chaque magasin de stockage implémente son propre flux en tant qu’implémentation de la classe <xref:System.IO.Stream>. 
+Un *magasin de stockage* est un support de stockage, au même titre qu’un disque ou qu’une mémoire. Chaque magasin de stockage implémente son propre flux en tant qu’implémentation de la classe <xref:System.IO.Stream>.
 
 Chaque type de flux lit et écrit des octets depuis et vers le magasin de stockage donné. Les flux qui se connectent aux magasins de stockage sont appelés des *flux de base*. Les flux de base comprennent des constructeurs qui ont les paramètres nécessaires pour connecter le flux au magasin de stockage. Par exemple, <xref:System.IO.FileStream> comprend des constructeurs qui spécifient un paramètre de chemin, qui indique la façon dont le fichier est partagé par les processus.  
 

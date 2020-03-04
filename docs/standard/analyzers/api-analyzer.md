@@ -4,12 +4,12 @@ description: Découvrez comment l’analyseur d’API .NET peut aider à détect
 author: oliag
 ms.date: 02/20/2020
 ms.technology: dotnet-standard
-ms.openlocfilehash: f6cf2d8109c564447972afd18c6d6d587711304b
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: e214c91f2beebc7f3b3324f4879deba9a5623f86
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77542622"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156132"
 ---
 # <a name="net-api-analyzer"></a>Analyseur d’API .NET
 
@@ -20,7 +20,7 @@ L’analyseur d’API est fourni sous la forme d’un package NuGet [Microsoft.D
 > [!NOTE]
 > L’analyseur d’API .NET est toujours en préversion.
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 - Visual Studio 2017 et versions ultérieures, ou Visual Studio pour Mac (toutes les versions).
 
@@ -47,7 +47,7 @@ L’analyseur d’API utilise des codes d’erreur propres aux API, qui commence
    3. Sélectionnez **Inclure la préversion**.
    4. Recherchez **Microsoft. dotnet. Analyzers. Compatibility**.
    5. Sélectionnez ce package dans la liste.
-   6. Sélectionnez le bouton **Installer**. 
+   6. Sélectionnez le bouton **Installer**.
    7. Cliquez sur le bouton **OK** dans la boîte de dialogue **Aperçu des modifications**, puis sur le bouton **J’accepte** dans la boîte de dialogue **Acceptation de la licence** si vous acceptez les termes du contrat de licence pour les packages répertoriés.
 
 ### <a name="use-the-api-analyzer"></a>Utiliser l’analyseur d’API
@@ -56,24 +56,24 @@ Lorsqu’une API déconseillée, par exemple, <xref:System.Net.WebClient>, est u
 
 ![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/green-squiggle.jpg)
 
-La fenêtre **Liste d’erreurs** contient des avertissements avec un ID unique par API déconseillée, comme dans l’exemple suivant (`DE004`) : 
+La fenêtre **Liste d’erreurs** contient des avertissements avec un ID unique par API déconseillée, comme dans l’exemple suivant (`DE004`) :
 
 ![« Capture d’écran de la fenêtre Liste d’erreurs montrant l’ID et la description de l’avertissement »](media/api-analyzer/warnings-id-and-descriptions.jpg "Liste d’erreurs fenêtre qui contient des avertissements.")
 
 En cliquant sur l’ID, vous accédez à une page web présentant des informations détaillées sur la raison pour laquelle l’API a été déconseillée, ainsi que des suggestions d’autres API utilisables.
 
-Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >** . Il existe deux moyens de supprimer les avertissements : 
+Pour supprimer des avertissements, cliquez sur le membre en surbrillance et sélectionnez **Supprimer \<ID de diagnostic >**. Il existe deux moyens de supprimer les avertissements :
 
 - [localement (dans la source)](#suppress-warnings-locally) ;
 - [globalement (dans un fichier de suppression)](#suppress-warnings-globally) – recommandé.
 
 ### <a name="suppress-warnings-locally"></a>Supprimer les avertissements localement
 
-Pour supprimer des avertissements localement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >**  > **dans la source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
+Pour supprimer des avertissements localement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >** > **dans la source**. La directive du préprocesseur d’avertissement [#pragma](../../csharp/language-reference/preprocessor-directives/preprocessor-pragma-warning.md) est ajoutée à votre code source dans l’étendue définie : ![« Capture d’écran du code encadré par #pragma warning disable »](media/api-analyzer/suppress-in-source.jpg)
 
 ### <a name="suppress-warnings-globally"></a>Supprimer les avertissements globalement
 
-Pour supprimer des avertissements globalement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >**  > **dans le fichier de suppression**.
+Pour supprimer des avertissements globalement, cliquez sur le membre dont vous souhaitez supprimer les avertissements, puis sélectionnez **Actions rapides et refactorisations** > **Supprimer *ID de diagnostic*\<ID de diagnostic >** > **dans le fichier de suppression**.
 
 ![« Capture d’écran de l’API WebClient avec une ligne verte ondulée et une ampoule à gauche »](media/api-analyzer/suppress-in-sup-file.jpg)
 

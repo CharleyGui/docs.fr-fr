@@ -2,12 +2,12 @@
 title: 'Didacticiel : créer un outil .NET Core'
 description: Découvrez comment créer un outil .NET Core. Un outil est une application console installée à l’aide de l’CLI .NET Core.
 ms.date: 02/12/2020
-ms.openlocfilehash: 558bf9e37efc8de68a61f1384fababe342ab7d66
-ms.sourcegitcommit: 771c554c84ba38cbd4ac0578324ec4cfc979cf2e
+ms.openlocfilehash: 88cc3be7b149834ace0c5f3ba8ac8c039199908f
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/21/2020
-ms.locfileid: "77543402"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78156723"
 ---
 # <a name="tutorial-create-a-net-core-tool-using-the-net-core-cli"></a>Didacticiel : créer un outil .NET Core à l’aide de l’CLI .NET Core
 
@@ -19,7 +19,7 @@ L’outil que vous allez créer est une application console qui accepte un messa
 
 Il s’agit de la première d’une série de trois didacticiels. Dans ce didacticiel, vous allez créer et empaqueter un outil. Dans les deux didacticiels suivants, vous [Utilisez l’outil comme un outil Global](global-tools-how-to-use.md) et vous [Utilisez l’outil comme outil local](local-tools-how-to-use.md).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 - [Kit SDK .NET Core 3,1](https://dotnet.microsoft.com/download) ou une version ultérieure.
 
@@ -27,28 +27,22 @@ Il s’agit de la première d’une série de trois didacticiels. Dans ce didact
   
 - Un éditeur de texte ou un éditeur de code de votre choix.
 
-## <a name="create-a-project"></a>Création d’un projet
+## <a name="create-a-project"></a>Créer un projet
 
 1. Ouvrez une invite de commandes et créez un dossier nommé *repository*.
 
-1. Accédez au dossier du *référentiel* et entrez la commande suivante, en remplaçant `<name>` par une valeur unique pour que le nom du projet soit unique. 
+1. Accédez au dossier du *référentiel* , puis entrez la commande suivante :
 
    ```dotnetcli
-   dotnet new console -n botsay-<name>
+   dotnet new console -n microsoft.botsay
    ```
 
-   Par exemple, vous pouvez exécuter la commande suivante :
+   La commande crée un nouveau dossier nommé *Microsoft. botsay* dans le dossier du *référentiel* .
 
-   ```dotnetcli
-   dotnet new console -n botsay-nancydavolio
-   ```
-
-   La commande crée un dossier nommé *botsay-\<nom >* dans le dossier du *référentiel* .
-
-1. Accédez au dossier *botsay-\<name >* .
+1. Accédez au dossier *Microsoft. botsay* .
 
    ```console
-   cd botsay-<name>
+   cd microsoft.botsay
    ```
 
 ## <a name="add-the-code"></a>Ajouter le code
@@ -137,7 +131,7 @@ Il s’agit de la première d’une série de trois didacticiels. Dans ce didact
 
 1. Enregistrez vos modifications.
 
-## <a name="test-the-application"></a>Test de l’application
+## <a name="test-the-application"></a>Tester l'application
 
 Exécutez le projet et observez le résultat. Essayez ces variations sur la ligne de commande pour afficher des résultats différents :
 
@@ -151,9 +145,9 @@ Tous les arguments après le délimiteur `--` sont passés à votre application.
 
 ## <a name="package-the-tool"></a>Empaqueter l’outil
 
-Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vous devez modifier le fichier projet. 
+Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vous devez modifier le fichier projet.
 
-1. Ouvrez le fichier *botsay-\<nom >. csproj* et ajoutez trois nouveaux nœuds XML à la fin du nœud `<PropertyGroup>` :
+1. Ouvrez le fichier *Microsoft. botsay. csproj* et ajoutez trois nouveaux nœuds XML à la fin du nœud `<PropertyGroup>` :
 
    ```xml
    <PackAsTool>true</PackAsTool>
@@ -190,15 +184,15 @@ Avant de pouvoir empaqueter et distribuer l’application en tant qu’outil, vo
    dotnet pack
    ```
 
-   Le *nom botsay-\<>. 1.0.0. nupkg* est créé dans le dossier identifié par la valeur `<PackageOutputPath>` à partir du *nom de l'\<botsay >. csproj* , qui est dans cet exemple le dossier *./nupkg* .
+   Le fichier *Microsoft. botsay. 1.0.0. nupkg* est créé dans le dossier identifié par la valeur `<PackageOutputPath>` du fichier *Microsoft. botsay. csproj* , qui, dans cet exemple, est le dossier *./nupkg* .
   
    Lorsque vous souhaitez libérer un outil publiquement, vous pouvez le télécharger sur `https://www.nuget.org`. Une fois que l’outil est disponible sur NuGet, les développeurs peuvent installer l’outil à l’aide de la commande d’installation de l' [outil dotnet](dotnet-tool-install.md) . Pour ce didacticiel, vous installez le package directement à partir du dossier local *nupkg* . il n’est donc pas nécessaire de charger le package dans NuGet.
 
-## <a name="troubleshoot"></a>Dépanner
+## <a name="troubleshoot"></a>Dépannage
 
 Si vous obtenez un message d’erreur lors de la suite du didacticiel, consultez [résoudre les problèmes d’utilisation de l’outil .net Core](troubleshoot-usage-issues.md).
 
-## <a name="next-steps"></a>Étapes suivantes
+## <a name="next-steps"></a>Étapes suivantes :
 
 Dans ce didacticiel, vous avez créé une application console et l’avez empaquetée en tant qu’outil. Pour savoir comment utiliser l’outil comme un outil Global, passez au didacticiel suivant.
 

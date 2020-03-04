@@ -13,12 +13,12 @@ helpviewer_keywords:
 - constructs, substitutions
 - substitutions
 ms.assetid: d1f52431-1c7d-4dc6-8792-6b988256892e
-ms.openlocfilehash: db0e2234055c6869c4cf55196d9f3b62a6996c96
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.openlocfilehash: 3562bd113ae4c9a3f721d8858a5d3625ef548d3a
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
-ms.locfileid: "73972060"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78160076"
 ---
 # <a name="substitutions-in-regular-expressions"></a>Substitutions dans les expressions régulières
 Les substitutions sont des éléments de langage reconnus uniquement dans des modèles de remplacement. Elles utilisent un modèle d'expression régulière pour définir tout ou partie du texte qui doit remplacer le texte correspondant dans la chaîne d'entrée. Le modèle de remplacement peut se composer d’une ou plusieurs substitutions avec des caractères littéraux. Les modèles de remplacement sont fournis aux surcharges de la méthode <xref:System.Text.RegularExpressions.Regex.Replace%2A?displayProperty=nameWithType> qui a un paramètre `replacement` et à la méthode <xref:System.Text.RegularExpressions.Match.Result%2A?displayProperty=nameWithType> . Les méthodes remplacent le modèle correspondant par le modèle défini par le paramètre `replacement` .  
@@ -60,7 +60,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Le modèle d'expression régulière `\p{Sc}*(\s?\d+[.,]?\d*)\p{Sc}*` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\p{Sc}*`|Mettre en correspondance zéro ou plusieurs caractères de symbole monétaire.|  
 |`\s?`|Mettre en correspondance zéro ou des espaces blancs.|  
@@ -83,7 +83,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Le modèle d'expression régulière `\p{Sc}*(?<amount>\s?\d[.,]?\d*)\p{Sc}*` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\p{Sc}*`|Mettre en correspondance zéro ou plusieurs caractères de symbole monétaire.|  
 |`\s?`|Mettre en correspondance zéro ou des espaces blancs.|  
@@ -102,7 +102,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Le modèle d'expression régulière `\b(\d+)(\.(\d+))?` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Démarrer la correspondance au début d'une limite de mot.|  
 |`(\d+)`|Mettre en correspondance un ou plusieurs chiffres décimaux. Il s'agit du premier groupe de capture.|  
@@ -120,7 +120,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Le modèle d'expression régulière `^(\w+\s?)+$` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`^`|Commencer la correspondance au début de la chaîne d'entrée.|  
 |`(\w+\s?)+`|Mettre en correspondance le modèle d'un ou plusieurs caractères de mot, suivis de zéro ou d'un espace blanc, une ou plusieurs fois.|  
@@ -138,13 +138,13 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"aa1bb2cc3dd4ee5"` contient cinq correspondances. Le tableau suivant illustre comment la substitution ``$` `` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Faire correspondre à|Position|Chaîne avant la correspondance|Chaîne de résultat|  
+|Correspond|Position|Chaîne avant la correspondance|Chaîne de résultat|  
 |-----------|--------------|-------------------------|-------------------|  
 |1|2|aa|aa**aa**bb2cc3dd4ee5|  
 |2|5|aa1bb|aaaabb**aa1bb**cc3dd4ee5|  
 |3|8|aa1bb2cc|aaaabbaa1bbcc**aa1bb2cc**dd4ee5|  
 |4|11|aa1bb2cc3dd|aaaabbaa1bbccaa1bb2ccdd**aa1bb2cc3dd**ee5|  
-|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**| 
+|5|14|aa1bb2cc3dd4ee|aaaabbaa1bbccaa1bb2ccddaa1bb2cc3ddee**aa1bb2cc3dd4ee**|
 
 ## <a name="substituting-the-text-after-the-match"></a>Substitution du texte après la correspondance  
  La substitution `$'` remplace la chaîne correspondante par la chaîne d'entrée entière après la correspondance. Autrement dit, elle duplique la chaîne d'entrée après la correspondance en supprimant le texte correspondant. N'importe quel texte qui précède le texte correspondant est inchangé dans la chaîne de résultat. S'il n'y a pas de correspondance, la substitution  `$'` n'a aucun effet.  
@@ -156,7 +156,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"aa1bb2cc3dd4ee5"` contient cinq correspondances. Le tableau suivant illustre comment la substitution `$'` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Faire correspondre à|Position|Chaîne après la correspondance|Chaîne de résultat|  
+|Correspond|Position|Chaîne après la correspondance|Chaîne de résultat|  
 |-----------|--------------|------------------------|-------------------|  
 |1|2|bb2cc3dd4ee5|aa**bb2cc3dd4ee5**bb2cc3dd4ee5|  
 |2|5|cc3dd4ee5|aabb2cc3dd4ee5bb**cc3dd4ee5**cc3dd4ee5|  
@@ -174,7 +174,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Le modèle d'expression régulière `\b(\w+)\s\1\b` est défini comme indiqué dans le tableau suivant.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer la correspondance à la limite d'un mot.|  
 |`(\w+)`|Mettre en correspondance un ou plusieurs caractères alphabétiques. Il s'agit du premier groupe de capture.|  
@@ -192,7 +192,7 @@ Les substitutions sont des éléments de langage reconnus uniquement dans des mo
   
  Dans cet exemple, la chaîne d'entrée `"ABC123DEF456"` contient deux correspondances. Le tableau suivant illustre comment la substitution `$_` entraîne le remplacement de chaque correspondance dans la chaîne d'entrée par le moteur des expressions régulières. Le texte inséré est affiché en gras dans la colonne de résultats.  
   
-|Faire correspondre à|Position|Faire correspondre à|Chaîne de résultat|  
+|Correspond|Position|Correspond|Chaîne de résultat|  
 |-----------|--------------|-----------|-------------------|  
 |1|3|123|ABC**ABC123DEF456**DEF456|  
 |2|5|456|ABCABC123DEF456DEF**ABC123DEF456**|  

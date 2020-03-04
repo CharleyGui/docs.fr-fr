@@ -6,12 +6,12 @@ ms.author: adegeo
 ms.date: 12/05/2019
 ms.technology: dotnet-cli
 ms.custom: updateeachrelease
-ms.openlocfilehash: af1b374cd14d5070194c035024ce2328c9016646
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: fe69521a6ac88055e3e8c8502a7e19a72667dbef
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503543"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78240855"
 ---
 # <a name="get-started-with-net-core-using-the-net-core-cli"></a>Prise en main de .NET Core à l’aide de l’CLI .NET Core
 
@@ -19,7 +19,7 @@ Cet article vous montre comment commencer à développer des applications .NET C
 
 Si vous n’êtes pas familiarisé avec le CLI .NET Core, consultez la [vue d’ensemble de CLI .net Core](../tools/index.md).
 
-## <a name="prerequisites"></a>Conditions préalables requises
+## <a name="prerequisites"></a>Composants requis
 
 - [Kit SDK .NET Core 3,1](https://dotnet.microsoft.com/download) ou versions ultérieures.
 - Un éditeur de texte ou un éditeur de code de votre choix.
@@ -40,30 +40,30 @@ Suivons une procédure pas à pas rapide :
 01. `dotnet new console`
 
     [dotnet New](../tools/dotnet-new.md) crée un fichier projet *Hello. csproj* à jour avec les dépendances nécessaires à la création d’une application console. Il crée également un *Program.cs*, un fichier de base contenant le point d’entrée de l’application.
-    
+
     *Bonjour. csproj*:
-    
-    [!code-xml[Hello.csproj](~/samples/core/console-apps/HelloMsBuild/Hello.csproj)]
-    
+
+    [!code-xml[Hello.csproj](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Hello.csproj)]
+
     Le fichier projet spécifie tout ce qui est nécessaire pour restaurer les dépendances et générer le programme.
-    
+
     - L’élément `<OutputType>` spécifie que nous créons un exécutable, en d’autres termes une application console.
     - L’élément `<TargetFramework>` spécifie l’implémentation .NET que nous ciblons. Dans un scénario avancé, vous pouvez spécifier plusieurs frameworks cibles et y effectuer une génération globale en une seule opération. Dans ce didacticiel, nous allons nous contenter de créer uniquement pour .NET Core 3,1.
-    
+
     *Program.cs* :
-    
-    [!code-csharp[Program.cs](~/samples/core/console-apps/HelloMsBuild/Program.cs)]
-    
+
+    [!code-csharp[Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/HelloMsBuild/csharp/Program.cs)]
+
     Le programme commence par `using System`, ce qui signifie « placer tout ce qui se trouve dans l’espace de noms `System` dans la portée de ce fichier ». L’espace de noms `System` comprend la classe `Console`.
-    
+
     Ensuite, nous définissons un espace de noms appelé `Hello`. Vous pouvez le modifier à votre gré. Une classe nommée `Program` est définie dans cet espace de noms, avec une méthode `Main` qui prend un tableau de chaînes nommé `args`. Ce tableau contient la liste des arguments passés lors de l’exécution du programme. Comme c’est le cas, ce tableau n’est pas utilisé et le programme écrit simplement le texte « Hello World ! » dans la console. Plus tard, nous apporterons des modifications au code qui utilisent cet argument.
-    
+
     `dotnet new` appelle [dotnet Restore](../tools/dotnet-restore.md) implicitement. `dotnet restore` appelle [NuGet](https://www.nuget.org/) (gestionnaire de package .NET) pour restaurer l’arborescence de dépendances. NuGet analyse le fichier *Hello.csproj*, télécharge les dépendances définies dans le fichier (ou les récupère dans un cache sur votre ordinateur) et écrit le fichier *obj/project.assets.json*, nécessaire pour compiler et exécuter l’exemple.
 
 02. `dotnet run`
 
     [dotnet Run](../tools/dotnet-run.md) appelle [dotnet Build](../tools/dotnet-build.md) pour s’assurer que les cibles de génération ont été générées, puis appelle `dotnet <assembly.dll>` pour exécuter l’application cible.
-    
+
     ```dotnetcli
     dotnet run
     ```
@@ -73,9 +73,9 @@ Suivons une procédure pas à pas rapide :
     ```console
     Hello World!
     ```
-    
+
     Vous pouvez également exécuter `dotnet build` pour compiler le code sans exécuter les applications console de génération. Il en résulte une application compilée, sous la forme d’un fichier DLL, en fonction du nom du projet. Dans ce cas, le fichier créé est nommé *Hello. dll*. Cette application peut être exécutée avec `dotnet bin\Debug\netcoreapp3.1\Hello.dll` sur Windows (utilisez `/` pour les systèmes non-Windows).
-    
+
     ```dotnetcli
     dotnet bin\Debug\netcoreapp3.1\Hello.dll
     ```
@@ -85,7 +85,7 @@ Suivons une procédure pas à pas rapide :
     ```console
     Hello World!
     ```
-    
+
     Lorsque l’application est compilée, un fichier exécutable spécifique au système d’exploitation a été créé avec l' `Hello.dll`. Sur Windows, ce serait `Hello.exe`; sur Linux ou macOS, ce serait `hello`. Dans l’exemple ci-dessus, le fichier est nommé avec `Hello.exe` ou `Hello`. Vous pouvez exécuter cet exécutable directement.
 
     ```console
@@ -100,7 +100,7 @@ Modifions un peu le programme. Les nombres Fibonacci sont amusants. nous allons 
 
 01. Remplacez le contenu du fichier *Program.cs* par le code suivant :
 
-    [!code-csharp[Fibonacci](~/samples/core/console-apps/fibonacci-msbuild/Program.cs)]
+    [!code-csharp[Fibonacci](~/samples/snippets/core/tutorials/cli-create-console-app/fibonacci-msbuild/csharp/Program.cs)]
 
 02. Exécutez [dotnet Build](../tools/dotnet-build.md) pour compiler les modifications.
 
@@ -140,11 +140,11 @@ Les fichiers uniques conviennent parfaitement aux programmes simples et uniques,
 
 01. Ajoutez un nouveau fichier nommé *FibonacciGenerator.cs* dans le répertoire *Hello* avec le code suivant :
 
-    [!code-csharp[Fibonacci Generator](~/samples/core/console-apps/FibonacciBetterMsBuild/FibonacciGenerator.cs)]
+    [!code-csharp[Fibonacci Generator](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/FibonacciGenerator.cs)]
 
 02. Modifiez la méthode `Main` dans votre fichier *Program.cs* pour instancier la nouvelle classe et appelez sa méthode comme dans l’exemple suivant :
 
-    [!code-csharp[New Program.cs](~/samples/core/console-apps/FibonacciBetterMsBuild/Program.cs)]
+    [!code-csharp[New Program.cs](~/samples/snippets/core/tutorials/cli-create-console-app/FibonacciBetterMsBuild/csharp/Program.cs)]
 
 03. Exécutez [dotnet Build](../tools/dotnet-build.md) pour compiler les modifications.
 
@@ -174,7 +174,7 @@ Les fichiers uniques conviennent parfaitement aux programmes simples et uniques,
     377
     ```
 
-## <a name="publish-your-app"></a>Publier votre application
+## <a name="publish-your-app"></a>Publier une application
 
 Une fois que vous êtes prêt à distribuer votre application, utilisez la commande [dotnet Publish](../tools/dotnet-publish.md) pour générer le dossier de _publication_ dans _bin\\Debug\\netcoreapp 3.1\\Publish\\_ (utilisez `/` pour les systèmes non-Windows). Vous pouvez distribuer le contenu du dossier _publish_ sur d'autres plates-formes tant qu'elles ont déjà installé le runtime dotnet.
 

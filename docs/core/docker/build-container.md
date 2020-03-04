@@ -4,12 +4,12 @@ description: Dans ce didacticiel, vous allez apprendre à créer un conteneur po
 ms.date: 01/09/2020
 ms.topic: tutorial
 ms.custom: mvc
-ms.openlocfilehash: 17d3dfbe58770b19a75be1dad3ae03406584992c
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.openlocfilehash: e1904430a591b0e74a69d50a53869a130fc0a248
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
-ms.locfileid: "75900111"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157828"
 ---
 # <a name="tutorial-containerize-a-net-core-app"></a>Didacticiel : conteneur d’une application .NET Core
 
@@ -21,7 +21,7 @@ Vous apprendrez à :
 >
 > - Créer et publier une application .NET Core simple
 > - Créer et configurer un Dockerfile pour .NET Core
-> - Créer une image Docker
+> - Générer une image Docker
 > - Créer et exécuter un conteneur Docker
 
 Vous découvrirez la création d’un conteneur Docker et les tâches de déploiement pour une application .NET Core. La *plateforme Docker* utilise le *moteur Docker* pour générer et empaqueter rapidement des applications comme *images Docker*. Ces images sont écrites au format *Dockerfile* pour être déployées et exécutées dans un conteneur en couches.
@@ -29,7 +29,7 @@ Vous découvrirez la création d’un conteneur Docker et les tâches de déploi
 > [!TIP]
 > Si vous utilisez une application de ASP.NET Core existante, consultez le didacticiel [apprendre à déconteneurr une application ASP.net Core](/aspnet/core/host-and-deploy/docker/building-net-docker-images) .
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Composants requis
 
 Installez les éléments requis suivants :
 
@@ -141,7 +141,7 @@ dotnet publish -c Release
 
 Cette commande compile votre application dans le dossier *publish*. Le chemin du dossier *publish* à partir du dossier de travail doit être `.\app\bin\Release\netcoreapp3.1\publish\`
 
-Dans le dossier de l' *application* , accédez à la liste des répertoires du dossier de publication pour vérifier que le fichier *MyApp. dll* a été créé. 
+Dans le dossier de l' *application* , accédez à la liste des répertoires du dossier de publication pour vérifier que le fichier *MyApp. dll* a été créé.
 
 ```console
 > dir bin\Release\netcoreapp3.1\publish
@@ -258,7 +258,7 @@ mcr.microsoft.com/dotnet/core/aspnet    3.1                 38db0eb8f648        
 
 Chaque commande dans le *Dockerfile* a généré une couche et créé une valeur **IMAGE ID**. La valeur **IMAGE ID** finale (la vôtre sera différente) est **ddcc6646461b**, et vous allez ensuite créer un conteneur basé sur cette image.
 
-## <a name="create-a-container"></a>Créer un conteneur
+## <a name="create-a-container"></a>Créez un conteneur.
 
 Maintenant que vous disposez d’une image qui contient votre application, vous pouvez créer un conteneur. Vous pouvez créer un conteneur de deux manières. Tout d’abord, créez un conteneur arrêté.
 
@@ -370,7 +370,7 @@ CONTAINER ID        IMAGE               COMMAND                  CREATED        
 
 La commande `docker run` vous permet également de modifier la commande `ENTRYPOINT` depuis le *Dockerfile* , puis d’exécuter un autre élément, mais uniquement pour ce conteneur. Par exemple, utilisez la commande suivante pour exécuter `bash` ou `cmd.exe`. Modifiez la commande selon vos besoins.
 
-#### <a name="windows"></a>Portail
+#### <a name="windows"></a>Windows
 
 Dans cet exemple, `ENTRYPOINT` est remplacé par `cmd.exe`. Appuyez sur <kbd>CTRL</kbd>+<kbd>C</kbd> pour terminer le processus et arrêter le conteneur.
 
@@ -437,7 +437,7 @@ Au cours de ce didacticiel, vous avez créé des conteneurs et des images. Si vo
     > docker stop CONTAINER_NAME
     ```
 
-03. Supprimer le conteneur
+03. Supprimer un conteneur
 
     ```console
     > docker rm CONTAINER_NAME

@@ -2,26 +2,26 @@
 title: Commande dotnet run
 description: La commande dotnet run fournit une option pratique pour exécuter votre application à partir du code source.
 ms.date: 02/19/2020
-ms.openlocfilehash: 415d7079db6a3da80c4fcf2074307ea760e84982
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.openlocfilehash: e442ed56d676ffd189ef6d394d840cea671c2dc6
+ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77503606"
+ms.lasthandoff: 02/28/2020
+ms.locfileid: "78157074"
 ---
 # <a name="dotnet-run"></a>dotnet run
 
 **Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet run` - Exécute le code source sans commandes explicites de compilation ou de démarrage.
 
 ## <a name="synopsis"></a>Synopsis
 
 ```dotnetcli
-dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile] 
-    [--no-build] [--no-dependencies] [--no-launch-profile] [--no-restore] [-p|--project] 
+dotnet run [-c|--configuration] [-f|--framework] [--force] [--interactive] [--launch-profile]
+    [--no-build] [--no-dependencies] [--no-launch-profile] [--no-restore] [-p|--project]
     [-r|--runtime] [-v|--verbosity] [[--] [application arguments]]
 dotnet run [-h|--help]
 ```
@@ -102,7 +102,7 @@ Pour exécuter l’application, la commande `dotnet run` résout les dépendance
 
 - **`-v|--verbosity <LEVEL>`**
 
-  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `m`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,1. 
+  Définit le niveau de détail de la commande. Les valeurs autorisées sont `q[uiet]`, `m[inimal]`, `n[ormal]`, `d[etailed]` et `diag[nostic]`. La valeur par défaut est `m`. Disponible depuis le kit de développement logiciel (SDK) .NET Core 2,1.
 
 ## <a name="examples"></a>Exemples
 

@@ -4,12 +4,12 @@ description: En savoir plus sur les modèles d’événement .NET et comment cr�
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 8a3133d6-4ef2-46f9-9c8d-a8ea8898e4c9
-ms.openlocfilehash: a050dc9a11470ff3b71488ce2ab4b92e607aa9b0
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 517e46ffec163a9bd49baa58fc0b37b54b2b2809
+ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037172"
+ms.lasthandoff: 03/03/2020
+ms.locfileid: "78239857"
 ---
 # <a name="standard-net-event-patterns"></a>Modèles d’événement .NET standard
 
@@ -40,7 +40,7 @@ L’utilisation d’un modèle d’événement offre certains avantages en mati�
 
 Voici la déclaration d’argument d’événement initiale pour trouver un fichier recherché : 
 
-[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
+[!code-csharp[EventArgs](../../samples/snippets/csharp/events/Program.cs#EventArgsV1 "Define event arguments")]
 
 Bien que ce type ressemble à un petit type « données uniquement », vous devez suivre la convention et faire de lui un type référence (`class`). Cela signifie que l’objet d’argument sera passé par référence, et que les mises à jour des données seront visibles par tous les abonnés. La première version est un objet immuable. Il vaut mieux rendre immuables les propriétés dans votre argument d’événement. Ainsi, un abonné ne peut pas changer les valeurs avant qu’un autre abonné ne les voit. (Il existe des exceptions, comme vous le verrez ci-dessous.)  
 
@@ -48,21 +48,21 @@ Ensuite, nous devons créer la déclaration d’événement dans la classe FileS
 
 Nous allons remplir la classe FileSearcher pour rechercher les fichiers qui correspondent à un modèle et déclencher l’événement approprié quand une correspondance est détectée.
 
-[!code-csharp[FileSearcher](../../samples/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
+[!code-csharp[FileSearcher](../../samples/snippets/csharp/events/Program.cs#FileSearcherV1 "Create the initial file searcher")]
 
 ## <a name="defining-and-raising-field-like-events"></a>Définition et déclenchement d’événements de type champ
 
 Pour ajouter un événement à votre classe, le plus simple consiste à déclarer cet événement en tant que champ public, comme dans l’exemple précédent :
 
-[!code-csharp[DeclareEvent](../../samples/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
+[!code-csharp[DeclareEvent](../../samples/snippets/csharp/events/Program.cs#DeclareEvent "Declare the file found event")]
 
 Ce code semble déclarer un champ public, ce qui semble être une mauvaise pratique orientée objet. Vous devez protéger l’accès aux données par l’intermédiaire des propriétés ou méthodes. Bien que cela semble être une mauvaise pratique, le code généré par le compilateur crée en fait des wrappers pour que les objets d’événements soient accessibles uniquement de manière sécurisée. Les seules opérations disponibles sur un événement de type champ sont l’ajout de gestionnaire :
 
-[!code-csharp[DeclareEventHandler](../../samples/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
+[!code-csharp[DeclareEventHandler](../../samples/snippets/csharp/events/Program.cs#DeclareEventHandler "Declare the file found event handler")]
 
 et la suppression de gestionnaire :
 
-[!code-csharp[RemoveEventHandler](../../samples/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
+[!code-csharp[RemoveEventHandler](../../samples/snippets/csharp/events/Program.cs#RemoveHandler "Remove the event handler")]
 
 Notez qu’il existe une variable locale pour le gestionnaire. Si vous utilisiez le corps de l’expression lambda, la suppression ne fonctionnerait pas correctement. Il s’agirait d’une autre instance du délégué, et l’opération ne ferait rien en mode silencieux.
 
@@ -86,7 +86,7 @@ Une fois que tous les abonnés ont vu l’événement déclenché, le composant 
 
 Implémentons la première version pour cet exemple. Vous devez ajouter un champ booléen nommé `CancelRequested` au type `FileFoundArgs` :
 
-[!code-csharp[EventArgs](../../samples/csharp/events/Program.cs#EventArgs "Update event arguments")]
+[!code-csharp[EventArgs](../../samples/snippets/csharp/events/Program.cs#EventArgs "Update event arguments")]
 
 Ce nouveau champ est automatiquement initialisé avec `false`, la valeur par défaut pour un champ booléen, pour éviter tout risque d’annulation accidentelle. Le seul autre changement à apporter au composant consiste à vérifier l’indicateur après le déclenchement de l’événement, pour voir si l’un des abonnés a demandé une annulation :
 
@@ -124,29 +124,29 @@ Cette opération pourrait prendre beaucoup de temps dans un répertoire contenan
 
 Nous allons commencer par créer la nouvelle classe dérivée EventArgs pour signaler le nouveau répertoire et la progression. 
 
-[!code-csharp[DirEventArgs](../../samples/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
+[!code-csharp[DirEventArgs](../../samples/snippets/csharp/events/Program.cs#SearchDirEventArgs "Define search directory event arguments")]
 
 Là encore, nous pouvons suivre les recommandations pour créer un type référence immuable pour les arguments d’événements.
 
 Maintenant, définissons l’événement. Cette fois-ci, nous utiliserons une syntaxe différente. En plus d’utiliser la syntaxe du champ, nous pouvons créer explicitement la propriété, avec des gestionnaires d’ajout et de suppression. Dans cet exemple, nous n’aurons pas besoin de code supplémentaire dans ces gestionnaires, mais cet exemple montre comment les créer.
 
-[!code-csharp[Declare event with add and remove handlers](../../samples/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
+[!code-csharp[Declare event with add and remove handlers](../../samples/snippets/csharp/events/Program.cs#DeclareSearchEvent "Declare the event with add and remove handlers")]
 
 Le code que nous écrivons ici reflète en grande partie le code généré par le compilateur pour les définitions d’événements de champs que nous avons vu précédemment. Nous créons l’événement à l’aide d’une syntaxe très similaire à celle utilisée pour les [propriétés](properties.md). Notez que les gestionnaires ont des noms différents : `add` et `remove`. Il sont appelés pour s’abonner à l’événement ou pour annuler un abonnement. Notez que vous devez également déclarer un champ de stockage privé pour stocker la variable d’événement. Il est initialisé avec la valeur null.
 
 Ensuite, nous allons ajouter la surcharge de la méthode `Search` qui parcourt les sous-répertoires et déclenche les deux événements. Le moyen le plus simple consiste à utiliser un argument par défaut pour indiquer que nous souhaitons rechercher dans tous les répertoires :
 
-[!code-csharp[SearchImplementation](../../samples/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
+[!code-csharp[SearchImplementation](../../samples/snippets/csharp/events/Program.cs#FinalImplementation "Implementation to search directories")]
 
 À ce stade, nous pouvons exécuter l’application qui appelle la surcharge pour rechercher dans tous les sous-répertoires. Il n’existe aucun abonné sur le nouvel événement `ChangeDirectory`, mais l’utilisation de l’idiome `?.Invoke()` garantit que cela fonctionne correctement.
 
  Ajoutons un gestionnaire pour écrire une ligne qui affiche la progression dans la fenêtre de la console. 
 
-[!code-csharp[Search](../../samples/csharp/events/Program.cs#Search "Declare event handler")]
+[!code-csharp[Search](../../samples/snippets/csharp/events/Program.cs#Search "Declare event handler")]
 
 Nous avons vu des modèles qui sont suivis dans tout l’écosystème .NET.
 En apprenant ces modèles et ces conventions, vous écrirez rapidement du code C# et .NET idiomatique.
 
 Dans le prochain article, nous allons voir quelques changements apportés à ces modèles dans la version la plus récente de .NET.
 
-[Suivant](modern-events.md)
+[Next](modern-events.md)
