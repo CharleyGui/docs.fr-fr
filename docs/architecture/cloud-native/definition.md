@@ -1,221 +1,221 @@
 ---
 title: Définition du Cloud Native
-description: En savoir plus sur les piliers fondamentaux qui fournissent le socle pour les systèmes natifs du Cloud
+description: Renseignez-vous sur les piliers fondamentaux qui fournissent le socle des systèmes cloud-indigènes
 author: robvet
 ms.date: 08/20/2019
 ms.openlocfilehash: 27191a67b2964ac2e1636a4d7dc55d5314b78439
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73087541"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401570"
 ---
-# <a name="defining-cloud-native"></a>Définition du Cloud Native
+# <a name="defining-cloud-native"></a>Définir le nuage natif
 
 [!INCLUDE [book-preview](../../../includes/book-preview.md)]
 
-Arrêtez ce que vous effectuez et le texte 10 de vos collègues. Demandez-lui de définir le terme « cloud native ». Bonne chance, vous obtiendrez huit réponses différentes. Il est intéressant de vous intéresser six mois à partir de maintenant, comme les technologies et les pratiques Cloud-natives évoluent, donc leur définition.
+Arrêtez ce que vous faites et envoyez un texto à 10 de vos collègues. Demandez-leur de définir le terme « Cloud Native ». Bonne chance que vous obteniez huit réponses différentes. Fait intéressant, dans six mois, à mesure que les technologies et les pratiques du cloud évolueront, leur définition évoluera également.
 
-Cloud Native concerne la modification de la façon dont nous pensons à la construction de systèmes d’entreprise essentiels.
+Cloud natif est tout au sujet de changer la façon dont nous pensons à construire des systèmes d’affaires critiques.
 
-Les systèmes Cloud natifs sont conçus pour adopter un changement rapide, une grande échelle et une résilience.
+Les systèmes cloud-indigènes sont conçus pour englober le changement rapide, à grande échelle et la résilience.
 
-La Fondation Cloud Native Computing fournit une [définition officielle](https://github.com/cncf/foundation/blob/master/charter.md):
+La Cloud Native Computing Foundation fournit une [définition officielle](https://github.com/cncf/foundation/blob/master/charter.md):
 
-> *Les technologies Cloud-natives permettent aux organisations de créer et d’exécuter des applications évolutives dans des environnements dynamiques et modernes, tels que des clouds publics, privés et hybrides. Les conteneurs, les maillages de service, les microservices, l’infrastructure immuable et les API déclaratives illustrent cette approche.*
+> *Les technologies cloud-natives permettent aux organisations de construire et d’exécuter des applications évolutives dans des environnements modernes et dynamiques tels que les nuages publics, privés et hybrides. Les conteneurs, les maillages de service, les microservices, les infrastructures immuables et les API déclaratives illustrent cette approche.*
 
-> *Ces techniques permettent aux systèmes faiblement couplés qui sont résilients, gérables et observables. Combinée à une automatisation robuste, elle permet aux ingénieurs d’apporter des modifications très importantes et prévisibles avec un acharnement minimal.*
+> *Ces techniques permettent des systèmes vaguement couplés qui sont résilients, gérables et observables. Combinés à une automatisation robuste, ils permettent aux ingénieurs d’apporter des changements à fort impact fréquemment et de façon prévisible avec un minimum de labeur.*
 
-Les applications sont devenues de plus en plus complexes avec les utilisateurs qui demandent de plus en plus. Les utilisateurs attendent une réactivité rapide, des fonctionnalités novatrices et des temps d’arrêt nuls. Les problèmes de performances, les erreurs récurrentes et l’incapacité à se déplacer rapidement ne sont plus acceptables. Ils seront facilement déplacés vers votre concurrent.
+Les applications sont devenues de plus en plus complexes avec des utilisateurs exigeant de plus en plus. Les utilisateurs s’attendent à une réactivité rapide, des fonctionnalités innovantes et à zéro temps d’arrêt. Les problèmes de performance, les erreurs récurrentes et l’incapacité de se déplacer rapidement ne sont plus acceptables. Ils se déplaceront facilement vers votre concurrent.
 
-Cloud native est une grande partie de la *Vitesse* et de l' *agilité*. Les systèmes d’entreprise évoluent de l’activation des fonctionnalités métier aux armes de transformation stratégique, accélérant ainsi la rapidité et la croissance de l’entreprise. Il est impératif de mettre les idées sur le marché immédiatement.
+Cloud natif est beaucoup sur la *vitesse* et *l’agilité*. Les systèmes d’affaires évoluent de la capacité d’affaires de habilitation à des armes de transformation stratégique, en accélérant la vitesse et la croissance de l’entreprise. Il est impératif d’obtenir des idées sur le marché immédiatement.
 
-Voici quelques sociétés qui ont implémenté ces techniques. Réfléchissez à la vitesse, à l’agilité et à l’évolutivité qu’ils ont atteints.
+Voici quelques entreprises qui ont mis en œuvre ces techniques. Pensez à la vitesse, l’agilité et l’évolutivité qu’ils ont atteint.
 
-| Société | Final |
+| Company | Expérience |
 | :-------- | :-------- |
-| [Netflix](https://www.infoq.com/news/2013/06/netflix/) | A plus de 600 services en production. Déploie une centaine de fois par jour. |
-| [Uber](https://eng.uber.com/micro-deploy/) | A plus de 1 000 services stockés en production. Déploie plusieurs milliers de générations chaque semaine. |
-| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | Compte plus de 300 services en production. Effectue presque 1 000 modifications par jour. |
+| [Netflix](https://www.infoq.com/news/2013/06/netflix/) | A plus de 600 services en production. Déploiement cent fois par jour. |
+| [Uber](https://eng.uber.com/micro-deploy/) | Plus de 1 000 services sont stockés en production. Déploie plusieurs milliers de builds chaque semaine. |
+| [WeChat](https://www.cs.columbia.edu/~ruigu/papers/socc18-final100.pdf) | A plus de 300 services en production. Fait près de 1000 changements par jour. |
 
-Comme vous pouvez le voir, Netflix, uber et WeChat exposent des systèmes qui se composent de centaines de microservices indépendants. Ce style architectural leur permet de répondre rapidement aux conditions du marché. Ils peuvent mettre à jour instantanément de petites zones d’une application en temps réel et complexes, et mettre à l’échelle individuellement ces zones en fonction des besoins.
+Comme vous pouvez le voir, Netflix, Uber et WeChat exposent des systèmes qui se composent de centaines de microservices indépendants. Ce style architectural leur permet de répondre rapidement aux conditions du marché. Ils peuvent instantanément mettre à jour de petites zones d’une application complexe et en direct, et les échelles individuellement au besoin.
 
-La vitesse et l’agilité du Cloud Native proviennent d’un certain nombre de facteurs. Le plus important est l’infrastructure cloud. Cinq piliers fondamentaux supplémentaires, illustrés à la figure 1-3, fournissent également socle pour les systèmes natifs du Cloud.
+La vitesse et l’agilité des nuages natifs proviennent d’un certain nombre de facteurs. L’infrastructure cloud est avant tout avant tout. Cinq autres piliers fondamentaux indiqués dans la figure 1-3 constituent également le socle des systèmes natifs du nuage.
 
-![Piliers natifs du Cloud](./media/cloud-native-foundational-pillars.png)
+![Piliers fondamentaux cloud-indigènes](./media/cloud-native-foundational-pillars.png)
 
-**Figure 1-3**. Piliers natifs du Cloud
+**Figure 1-3**. Piliers fondamentaux cloud-indigènes
 
-Prenons un certain temps pour mieux comprendre l’importance de chaque pilier.
+Prenons le temps de mieux comprendre l’importance de chaque pilier.
 
-## <a name="the-cloud"></a>Le Cloud...
+## <a name="the-cloud"></a>Le nuage...
 
-Les systèmes Cloud natifs tirent pleinement parti du modèle de service Cloud.
+Les systèmes cloud-natifs tirent pleinement parti du modèle de service cloud.
 
-Conçu pour prospérer dans un environnement Cloud dynamique et virtualisé, ces systèmes font largement appel à l’infrastructure de calcul [PaaS (Platform as a service)](https://azure.microsoft.com/overview/what-is-paas/) et aux services gérés. Ils considèrent l’infrastructure *sous-jacente comme étant* approvisionnée en quelques minutes et redimensionnée, mise à l’échelle, déplacée ou détruite à la demande, via l’automatisation.
+Conçus pour prospérer dans un environnement cloud dynamique et virtualisé, ces systèmes utilisent largement [Platform as a Service (PaaS)](https://azure.microsoft.com/overview/what-is-paas/) d’infrastructure de calcul et de services gérés. Ils traitent l’infrastructure sous-jacente comme *jetable* - provisionnée en quelques minutes et redimensionnée, réduite, déplacée ou détruite à la demande - par l’automatisation.
 
-Considérez le concept DevOps largement accepté des [animaux et des bovins](https://medium.com/@Joachim8675309/devops-concepts-pets-vs-cattle-2380b5aab313). Dans un centre de données traditionnel, les serveurs sont traités comme des *animaux familiers*: un ordinateur physique, avec un nom explicite et un soignent pour. Vous mettez à l’échelle en ajoutant des ressources supplémentaires sur le même ordinateur (montée en puissance). Si le serveur devient malade, vous devez le remettre en état d’intégrité. Si le serveur devient indisponible, tout le monde le remarque.
+Considérez le concept largement accepté DevOps de [Pets vs Cattle](https://medium.com/@Joachim8675309/devops-concepts-pets-vs-cattle-2380b5aab313). Dans un centre de données traditionnel, les serveurs sont traités comme *des animaux de compagnie*: une machine physique, un nom significatif, et soignés. Vous évoluez en ajoutant plus de ressources à la même machine (mise à l’échelle). Si le serveur tombe malade, vous l’allaitez de nouveau à la santé. Si le serveur devient indisponible, tout le monde s’en rend compte.
 
-Le modèle de service des *bovins* est différent. Vous configurez chaque instance comme un ordinateur virtuel ou un conteneur. Ils sont identiques et reçoivent un identificateur système tel que service-01, service-02, etc. Vous pouvez mettre à l’échelle en créant davantage d’entre elles (montée en charge). Lorsque l’un d’eux devient indisponible, personne ne le remarque.
+Le modèle de service *de bétail* est différent. Vous disposez chaque instance comme une machine ou un conteneur virtuel. Ils sont identiques et ont attribué un identifiant de système tel que Service-01, Service-02, et ainsi de suite. Vous évoluez en créant plus d’entre eux (mise à l’échelle). Quand on devient indisponible, personne ne s’en rend compte.
 
-Le modèle bovins intègre l' *infrastructure immuable*. Les serveurs ne sont pas réparés ni modifiés. En cas de défaillance ou de mise à jour, il est détruit et un nouveau est approvisionné, le tout à l’aide de l’automatisation.
+Le modèle du bétail englobe *l’infrastructure immuable.* Les serveurs ne sont pas réparés ou modifiés. Si l’on échoue ou nécessite une mise à jour, il est détruit et un nouveau est fourni - le tout fait via l’automatisation.
 
-Les systèmes Cloud natifs adoptent le modèle de service des bovins. Ils continuent à s’exécuter au fur et à mesure que l’infrastructure est mise à l’échelle, sans tenir compte des machines sur lesquelles elles sont exécutées.
+Les systèmes cloud-indigènes adoptent le modèle de service de bétail. Ils continuent à fonctionner à mesure que l’infrastructure s’insinuvait ou sortent sans égard aux machines sur lesquelles ils fonctionnent.
 
-La plateforme Cloud Azure prend en charge ce type d’infrastructure hautement élastique avec des fonctionnalités de mise à l’échelle automatique, de réparation automatique et de surveillance.
+La plate-forme cloud Azure prend en charge ce type d’infrastructure très élastique avec des capacités automatiques d’échelle, d’auto-guérison et de surveillance.
 
 ## <a name="modern-design"></a>Conception moderne
 
-Comment conceviez-vous une application Cloud Native ? À quoi ressemble votre architecture ? Quels sont les principes, les modèles et les meilleures pratiques que vous respectez ? Quelles sont les préoccupations en matière d’infrastructure et de fonctionnement ?
+Comment concevriez-vous une application cloud-native ? À quoi ressemblerait votre architecture ? À quels principes, modèles et pratiques exemplaires adhéreriez-vous? Quelles seraient les préoccupations en matière d’infrastructure et d’exploitation?
 
-### <a name="the-twelve-factor-application"></a>Application à 12 facteurs
+### <a name="the-twelve-factor-application"></a>L’application à douze facteurs
 
-L' [application à 12 facteurs](https://12factor.net/)est une méthodologie largement acceptée pour la construction d’applications basées sur le Cloud. Il décrit un ensemble de principes et de pratiques que les développeurs suivent pour créer des applications optimisées pour les environnements Cloud modernes. Une attention particulière est accordée à la portabilité entre les environnements et l’automatisation déclarative.
+Une méthodologie largement acceptée pour la construction d’applications basées sur le cloud est [l’application Douze facteurs](https://12factor.net/). Il décrit un ensemble de principes et de pratiques que les développeurs suivent pour construire des applications optimisées pour les environnements cloud modernes. Une attention particulière est accordée à la portabilité entre les environnements et l’automatisation déclarative.
 
-Bien qu’applicables à n’importe quelle application Web, de nombreux praticiens la considèrent comme une base solide pour la création d’applications Cloud natives. Les systèmes basés sur ces principes peuvent être déployés et mis à l’échelle rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements de marché.
+Bien qu’il soit applicable à toute application Web, de nombreux praticiens la considèrent comme une base solide pour la construction d’applications cloud-native. Les systèmes fondés sur ces principes peuvent se déployer et s’étendre rapidement et ajouter des fonctionnalités pour réagir rapidement aux changements du marché.
 
-Le tableau suivant met en évidence la méthodologie à douze facteurs :
+Le tableau suivant met en évidence la méthodologie des douze facteurs :
 
-|    |  Facteur | Explication  |
+|    |  Factor | Explication  |
 | :-------- | :-------- | :-------- |
-| 1 | Base de code | Une seule base de code pour chaque microservice, stockée dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements (AQ, intermédiaire, production). |
-| 2 | Dépendances | Chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système. |
-| 3 | Configurations  | Les informations de configuration sont déplacées hors du microservice et sont externalisées à l’aide d’un outil de gestion de la configuration en dehors du code. Le même déploiement peut se propager dans les environnements avec la configuration correcte appliquée.  |
-| 4 | Services de stockage | Les ressources auxiliaires (magasins de données, caches, courtiers de messages) doivent être exposées via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.  |
-| 5 | Build, Release, exécuter | Chaque version doit appliquer une séparation stricte entre les étapes de génération, de mise en œuvre et d’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration. Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. |
-| 6 | Processus | Chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données. |
+| 1 | Code Base | Une base de code unique pour chaque microservice, stockée dans son propre référentiel. Suivi avec contrôle de version, il peut se déployer dans plusieurs environnements (QA, Mise en scène, production). |
+| 2 | Les dépendances | Chaque microservice isole et emballe ses propres dépendances, embrassant les changements sans avoir d’impact sur l’ensemble du système. |
+| 3 | Configurations  | Les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de configuration en dehors du code. Le même déploiement peut se propager à travers les environnements avec la configuration correcte appliquée.  |
+| 4 | Services d’accompagnement | Les ressources auxiliaires (magasins de données, caches, courtiers de messages) doivent être exposées via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.  |
+| 5 | Construire, Libérer, Exécuter | Chaque version doit appliquer une séparation stricte à travers la construction, la libération et les étapes d’exécution. Chacun doit être étiqueté avec une pièce d’identité unique et soutenir la possibilité de faire marche arrière. Les systèmes CI/CD modernes aident à remplir ce principe. |
+| 6 | Processus | Chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externes de l’état requis à un service d’accompagnement tel qu’un cache distribué ou un magasin de données. |
 | 7 | Liaison de port | Chaque microservice doit être autonome avec ses interfaces et fonctionnalités exposées sur son propre port. Cela permet d’isoler les autres microservices. |
-| 8 | Concurrence | Les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible. |
-| 9 | Disposability | Les instances de service doivent être jetables, favorisant des Démarrages rapides pour augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence. |
-| 10 | Parité dev/prod | Conservez les environnements tout au long du cycle de vie des applications comme possible, en évitant les raccourcis coûteux. Ici, l’adoption de conteneurs peut contribuer de façon considérable en promouvant le même environnement d’exécution. |
-| 11 | Journalisation | Traitez les journaux générés par les microservices en tant que flux d’événements. Traitez-les avec une agrégation d’événements et Propagez les données aux outils de gestion des journaux et de l’exploration de données, comme Azure Monitor ou Splunk, et enfin un archivage à long terme. |
-| 12 | Processus d’administration | Exécuter des tâches d’administration/de gestion en tant que processus unique. Les tâches peuvent inclure le nettoyage des données et l’extraction des analytiques pour un rapport. Les outils qui exécutent ces tâches doivent être appelés à partir de l’environnement de production, mais séparément de l’application. |
+| 8 | Accès concurrentiel | Les services s’étendent sur un grand nombre de petits processus identiques (copies) par opposition à l’échelle d’une seule grande instance sur la machine la plus puissante disponible. |
+| 9 | Disposition | Les instances de service devraient être jetables, favorisant les startups rapides pour augmenter les possibilités d’évolutivité et les arrêts gracieux de laisser le système dans un état correct. Les conteneurs Docker ainsi qu’un orchestrateur satisfont intrinsèquement à cette exigence. |
+| 10 | Parité Dev/Prod | Gardez les environnements à travers le cycle de vie de l’application aussi semblables que possible, en évitant les raccourcis coûteux. Ici, l’adoption de conteneurs peut grandement contribuer en promouvant le même environnement d’exécution. |
+| 11 | Journalisation | Traitez les journaux générés par les microservices sous forme de flux d’événements. Traitez-les avec un agrégateur d’événements et propagez les données à des outils de gestion des données et des journaux comme Azure Monitor ou Splunk et éventuellement archivage à long terme. |
+| 12 | Processus d’administration | Exécuter des tâches administratives/gestion comme processus ponctuaux. Les tâches peuvent inclure le nettoyage des données et l’analyse de traction pour un rapport. Les outils exécutant ces tâches doivent être invoqués à partir de l’environnement de production, mais séparément de l’application. |
 
-Dans le livre, [au-delà de l’application à douze facteurs](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), l’auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrit en 2011). En outre, le livre fournit trois facteurs supplémentaires qui reflètent la conception d’applications Cloud modernes du jour.
+Dans le livre [Beyond the Twelve-Factor App](https://content.pivotal.io/blog/beyond-the-twelve-factor-app), l’auteur Kevin Hoffman détaille chacun des 12 facteurs originaux (écrits en 2011). En outre, le livre fournit trois facteurs supplémentaires qui reflètent la conception moderne de l’application cloud d’aujourd’hui.
 
 |    |  Nouveau facteur | Explication  |
 | :-------- | :-------- | :-------- |
-| 13 | Première API | Faites de tout un service. Supposons que votre code sera consommé par un client frontal, une passerelle ou un autre service. |
-| 14 | Télémétrie | Sur une station de travail, vous bénéficiez d’une visibilité détaillée de votre application et de son comportement. Dans le Cloud, vous ne le pouvez pas. Assurez-vous que votre conception comprend la collecte des données de surveillance, spécifiques à un domaine et à l’intégrité/au système. |
-| 15 | Authentification/autorisation  | Implémentez l’identité à partir du début. Envisagez [les fonctionnalités RBAC (contrôle d’accès en fonction du rôle)](https://docs.microsoft.com/azure/role-based-access-control/overview) disponibles dans les clouds publics.  |
+| 13 | API d’abord | Faites de tout un service. Supposons que votre code sera consommé par un client front-end, passerelle, ou un autre service. |
+| 14 | Télémétrie | Sur un poste de travail, vous avez une grande visibilité sur votre application et son comportement. Dans le nuage, vous n’avez pas. Assurez-vous que votre conception comprend la collecte de données de surveillance, spécifiques au domaine et de santé/système. |
+| 15 | Authentification/ Autorisation  | Implémentez l’identité dès le début. Considérez les fonctionnalités [RBAC (contrôle d’accès basé sur les rôles)](https://docs.microsoft.com/azure/role-based-access-control/overview) disponibles dans les nuages publics.  |
 
-Nous allons nous référer à la plupart des plus de 12 facteurs dans ce chapitre et dans le livre.
+Nous nous référerons à bon nombre des 12 facteurs de ce chapitre et tout au long du livre.
 
-### <a name="critical-design-considerations"></a>Considérations relatives à la conception critique
+### <a name="critical-design-considerations"></a>Considérations de conception critiques
 
-Outre les conseils fournis dans le cadre de la méthodologie de douze facteurs, vous devez prendre plusieurs décisions de conception critiques lors de la construction de systèmes distribués.
+Au-delà des directives fournies à partir de la méthodologie à douze facteurs, il y a plusieurs décisions de conception critiques que vous devez prendre lors de la construction de systèmes distribués.
 
 *Communication*
 
-Comment les applications clientes frontales communiquent-elles avec les services principaux back-end ? Autorisez-vous la communication directe ? Ou pouvez-vous faire abstraction des services principaux avec une façade de passerelle qui assure la flexibilité, le contrôle et la sécurité ?
+Comment les applications client frontales communiqueront-elles avec les services de base adossés ? Autoriserez-vous la communication directe? Ou, pourriez-vous abstraction des services back-end avec une façade passerelle qui offre de la flexibilité, le contrôle et la sécurité?
 
-Comment les services centraux principaux communiquent-ils entre eux ? Autorisez-vous les appels HTTP directs qui mènent au couplage et à l’impact sur les performances et l’agilité ? Ou peut-être envisagez-vous une messagerie découplée avec des technologies de file d’attente et de rubrique ?
+Comment les services de base back-end communiqueront-ils entre eux? Autoriserez-vous les appels HTTP directs qui mènent au couplage et à l’impact des performances et de l’agilité ? Ou pourriez-vous envisager la messagerie découplée avec les technologies de file d’attente et de sujet?
 
-La communication est traitée en détail dans le chapitre 4, *modèles de communication natifs du Cloud*.
+La communication est couverte en détail Chapitre 4, *Cloud-Native Communication Patterns*.
 
 *Résilience*
 
-Une architecture de microservices déplace votre système du processus in-process vers la communication réseau. Dans un environnement distribué, que allez-vous faire lorsque le service B ne répond pas à un appel du service A ? Que se passe-t-il lorsque le service C devient temporairement indisponible et que d’autres services appellent la pile informatique et dégradent les performances du système ?
+Une architecture de microservices déplace votre système de la communication en cours à la communication en réseau. Dans un environnement distribué, que feriez-vous lorsque le service B ne répond pas à un appel du service A? Que se passe-t-il lorsque le service C devient temporairement indisponible et que d’autres services l’appellent empiler et dégrader les performances du système?
 
-La résilience est traitée en détail dans le chapitre 6, *résilience Cloud-Native*.
+La résilience est couverte en détail Chapitre 6, *Cloud-Native Resiliency*.
 
 *Données distribuées*
 
-Par défaut, chaque microservice encapsule ses propres données, exposant les opérations via son interface publique. Si c’est le cas, comment interroger les données ou implémenter une transaction sur plusieurs services ?
+Par conception, chaque microservice encapsule ses propres données, exposant les opérations via son interface publique. Dans l’affirmative, comment interrogez-vous des données ou implémentez-vous une transaction sur plusieurs services ?
 
-Les données distribuées sont traitées en détail dans le chapitre 5, *modèles de données natifs du Cloud*.
+Les données distribuées sont couvertes en détail Chapitre 5, *Cloud-Native Data Patterns*.
 
 *Identité*
 
-Comment votre service identifie-t-il les personnes qui y accèdent et les autorisations dont il dispose ?
+Comment votre service identifiera-t-il qui y accède et quelles autorisations ils ont?
 
-L’identité est traitée en détail dans le chapitre 8, *identité*.
+L’identité est couverte en détail Chapitre 8, *Identité*.
 
 ## <a name="microservices"></a>Microservices
 
-Les systèmes Cloud natifs intègrent des microservices, un style architectural populaire pour la construction d’applications modernes.
+Les systèmes cloud-indigènes embrassent les microservices, un style architectural populaire pour la construction d’applications modernes.
 
-Créé comme un ensemble distribué de petits services indépendants qui interagissent via une infrastructure partagée, les microservices partagent les caractéristiques suivantes :
+Construits comme un ensemble distribué de petits services indépendants qui interagissent à travers un tissu partagé, les microservices partagent les caractéristiques suivantes :
 
-- Chaque implémente une fonctionnalité métier spécifique dans un contexte de domaine plus large.
+- Chacun met en œuvre une capacité d’entreprise spécifique dans un contexte de domaine plus large.
 
-- Chaque est développé de façon autonome et peut être déployé indépendamment.
+- Chacun est développé de manière autonome et peut être déployé indépendamment.
 
-- Chaque est autonome et incorpore sa propre technologie de stockage de données (SQL, NoSQL) et la plateforme de programmation.
+- Chacun est autonome encapsulant sa propre technologie de stockage de données (SQL, NoSQL) et la plate-forme de programmation.
 
-- Chaque s’exécute dans son propre processus et communique avec d’autres personnes à l’aide de protocoles de communication standard tels que HTTP/HTTPs, WebSockets ou [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol).
+- Chacun fonctionne dans son propre processus et communique avec d’autres en utilisant des protocoles de communication standard tels que HTTP/HTTPS, WebSockets, ou [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol).
 
-- Elles se composent ensemble pour former une application.
+- Ils composent ensemble pour former une application.
 
-La figure 1-4 compare une approche d’application monolithique avec une approche de microservices. Notez comment le monolithe se compose d’une architecture en couches, qui s’exécute dans un processus unique. Il utilise généralement une base de données relationnelle. Toutefois, l’approche de microservices sépare les fonctionnalités en services indépendants qui incluent la logique et les données. Chaque microservice héberge son propre magasin de banques.
+La figure 1-4 oppose une approche d’application monolithique à une approche de microservices. Notez comment le monolithe est composé d’une architecture en couches, qui s’exécute en un seul processus. Il consomme généralement une base de données relationnelle. L’approche du microservice, cependant, sépare la fonctionnalité en services indépendants qui incluent la logique et les données. Chaque microservice héberge sa propre datastore.
 
-![Déploiement monolithique et microservices](./media/monolithic-vs-microservices.png)
+![Déploiement monolithique par rapport aux microservices](./media/monolithic-vs-microservices.png)
 
-**Figure 1-4.** Déploiement monolithique et microservices
+**Figure 1-4.** Déploiement monolithique par rapport aux microservices
 
-Notez comment les microservices favorisent le principe « une base de code, une application » de l' [application à 12 facteurs](https://12factor.net/), abordé plus haut dans le chapitre.
+Notez comment les microservices font la promotion du principe « Une base de code, une application » de la [demande à douze facteurs](https://12factor.net/), dont il a été question plus tôt dans le chapitre.
 
-> *Le facteur \#1 spécifie «un code base unique pour chaque microservice, stocké dans son propre référentiel. Suivi avec le contrôle de version, il peut être déployé dans plusieurs environnements.*
+> *Le \#facteur 1 spécifie « Une base de code unique pour chaque microservice, stockée dans son propre référentiel. Suivi avec le contrôle de version, il peut se déployer dans plusieurs environnements."*
 
-### <a name="why-microservices"></a>Pourquoi les microservices ?
+### <a name="why-microservices"></a>Intérêt des microservices
 
-Les microservices offrent de l’agilité.
+Les microservices assurent l’agilité.
 
-Plus haut dans ce chapitre, nous avons comparé une application de commerce électronique créée comme un monolithe à celle-ci avec des microservices. Dans l’exemple, nous avons vu des avantages clairs :
+Plus tôt dans le chapitre, nous avons comparé une application de commerce électronique construite comme un monolithe à celle avec les microservices. Dans l’exemple, nous avons vu quelques avantages évidents :
 
-- Chaque microservice a un cycle de vie autonome et peut évoluer indépendamment et le déployer fréquemment. Vous n’avez pas besoin d’attendre une version trimestrielle pour déployer une nouvelle fonctionnalité ou une mise à jour. Vous pouvez mettre à jour une petite zone d’une application complexe avec moins de risques de perturber l’ensemble du système.
+- Chaque microservice a un cycle de vie autonome et peut évoluer de façon indépendante et se déployer fréquemment. Vous n’avez pas à attendre une version trimestrielle pour déployer une nouvelle fonctionnalité ou mise à jour. Vous pouvez mettre à jour une petite zone d’une application complexe avec moins de risque de perturber l’ensemble du système.
 
-- Chaque microservice peut être mis à l’échelle indépendamment. Au lieu de mettre à l’échelle l’application entière en tant qu’unité unique, vous augmentez la charge des services qui requièrent davantage de puissance de traitement ou de bande passante réseau. Cette approche fine de la mise à l’échelle offre un meilleur contrôle de votre système et permet de réduire les coûts globaux lorsque vous mettez à l’échelle des parties de votre système, et non pas de tout.
+- Chaque microservice peut évoluer de façon indépendante. Au lieu d’étendre l’ensemble de l’application en tant qu’unité unique, vous n’az pas d’échelle uniquement les services qui nécessitent plus de puissance de traitement ou de bande passante réseau. Cette approche à haute graine à l’échelle fournit un meilleur contrôle de votre système et aide à réduire les coûts globaux que vous échelle des parties de votre système, pas tout.
 
-Les microservices .net sont un excellent guide de référence pour comprendre les microservices [: architecture pour les applications .net en conteneur](https://docs.microsoft.com/dotnet/standard/microservices-architecture/). Le livre explore en profondeur la conception et l’architecture de microservices. Il s’agit d’un complément pour une [architecture de référence de microservice à pile complète](https://github.com/dotnet-architecture/eShopOnContainers) , disponible en téléchargement gratuit à partir de Microsoft.
+Un excellent guide de référence pour comprendre les microservices est [.NET Microservices: Architecture for Containerized .NET Applications](https://docs.microsoft.com/dotnet/standard/microservices-architecture/). Le livre plonge profondément dans le design et l’architecture des microservices. C’est un compagnon pour une [architecture de référence de microservice pleine pile](https://github.com/dotnet-architecture/eShopOnContainers) disponible en téléchargement gratuit de Microsoft.
 
-### <a name="developing-microservices"></a>Développement de microservices
+### <a name="developing-microservices"></a>Développer des microservices
 
-Les microservices peuvent être créés avec n’importe quelle plateforme de développement moderne.
+Les microservices peuvent être créés avec n’importe quelle plate-forme de développement moderne.
 
-La plateforme Microsoft .NET Core est un excellent choix. Gratuit et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement de microservices. .NET Core est multiplateforme. Les applications peuvent être générées et exécutées sur Windows, macOS et la plupart des versions de Linux.
+La plate-forme Microsoft .NET Core est un excellent choix. Libre et open source, il dispose de nombreuses fonctionnalités intégrées pour simplifier le développement des microservices. .NET Core est multi-plateforme. Les applications peuvent être construites et exécutées sur Windows, macOS, et la plupart des saveurs de Linux.
 
-.NET Core est très performant et a bien été évalué par rapport à node. js et à d’autres plateformes concurrentes. Il est intéressant de faire en sorte que [TechEmpower](https://www.techempower.com/) ait mené un ensemble complet de [tests de performances](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) sur de nombreuses plateformes et infrastructures d’application Web. .NET Core est évalué dans le Top 10, bien au-dessus de node. js et d’autres plates-formes concurrentes.
+.NET Core est très performant et a obtenu de bons résultats par rapport à Node.js et d’autres plates-formes concurrentes. Fait intéressant, [TechEmpower](https://www.techempower.com/) a effectué un vaste ensemble de repères de performance sur de nombreuses [plateformes](https://www.techempower.com/benchmarks/#section=data-r17&hw=ph&test=plaintext) et cadres d’applications Web. .NET Core a marqué dans le top 10 - bien au-dessus de Node.js et d’autres plates-formes concurrentes.
 
-.NET Core est géré par Microsoft et la communauté .NET sur GitHub.
+.NET Core est maintenu par Microsoft et la communauté .NET sur GitHub.
 
-## <a name="containers"></a>Conteneurs
+## <a name="containers"></a>Containers
 
-De nos jours, il est naturel d’entendre le terme *conteneur* mentionné dans toute conversation concernant le *Cloud Native*. Dans le livre, le [Cloud Native patterns](https://www.manning.com/books/cloud-native-patterns), auteur Cornelia Davis observe cela, « les conteneurs sont un excellent activateur des logiciels natifs du Cloud ». Le Cloud Native Computing Foundation place le conteneur de microservices en tant que première étape de leur [carte de piste Cloud Native](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) pour les entreprises qui commencent leur parcours Cloud-native.
+Aujourd’hui, il est naturel d’entendre le *conteneur* terme mentionné dans toute conversation concernant *le nuage natif*. Dans le livre, [Cloud Native Patterns](https://www.manning.com/books/cloud-native-patterns), l’auteur Cornelia Davis observe que, "Les conteneurs sont un grand facilitateur de logiciels cloud-native." La Cloud Native Computing Foundation place la conteneurisation des microservices comme première étape de sa [carte Cloud-Native Trail](https://raw.githubusercontent.com/cncf/trailmap/master/CNCF_TrailMap_latest.png) - des conseils pour les entreprises qui commencent leur voyage en nuage.
 
-Le conteneur d’un microservice est simple et simple. Le code, ses dépendances et le runtime sont empaquetés dans un fichier binaire appelé [image de conteneur](https://docs.docker.com/glossary/?term=image). Les images sont stockées dans un [Registre de conteneurs](https://caylent.com/container-registries/), qui agit en tant que référentiel ou bibliothèque pour les images. Un registre peut être situé sur votre ordinateur de développement, dans votre centre de données ou dans un cloud public. L’arrimeur gère lui-même un registre public par le biais de l' [ancrage Hub](https://hub.docker.com/). Le Cloud Azure dispose d’un [Registre de conteneurs](https://azure.microsoft.com/services/container-registry/) pour stocker des images de conteneur à proximité des applications Cloud qui les exécuteront.
+La conteneurisation d’un microservice est simple et simple. Le code, ses dépendances et le temps d’exécution sont emballés dans un binaire appelé une [image de conteneur](https://docs.docker.com/glossary/?term=image). Les images sont stockées dans un [registre de conteneurs,](https://caylent.com/container-registries/)qui agit comme un dépôt ou une bibliothèque pour les images. Un registre peut être situé sur votre ordinateur de développement, dans votre centre de données ou dans un nuage public. Docker lui-même tient un registre public via [Docker Hub](https://hub.docker.com/). Le cloud Azure dispose [d’un registre des conteneurs](https://azure.microsoft.com/services/container-registry/) pour stocker des images de conteneurs à proximité des applications cloud qui les exécuteront.
 
-Si nécessaire, vous transformez l’image en instance de conteneur en cours d’exécution. L’instance s’exécute sur tout ordinateur sur lequel est installé un moteur d' [exécution de conteneur](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) . Vous pouvez avoir autant d’instances du service en conteneur que nécessaire.
+En cas de besoin, vous transformez l’image en une instance de conteneur en cours d’exécution. L’instance fonctionne sur n’importe quel ordinateur qui a un moteur [de temps d’exécution de conteneur](https://kubernetes.io/docs/setup/production-environment/container-runtimes/) installé. Vous pouvez avoir autant d’instances du service conteneurisé que nécessaire.
 
-La figure 1-5 montre trois microservices différents, chacun dans son propre conteneur, s’exécutant sur un seul hôte.
+La figure 1-5 montre trois microservices différents, chacun dans son propre conteneur, fonctionnant sur un seul hôte.
 
 ![plusieurs conteneurs s’exécutant sur un hôte de conteneurs](./media/hosting-mulitple-containers.png)
 
 **Figure 1-5**. plusieurs conteneurs s’exécutant sur un hôte de conteneurs
 
-Notez que chaque conteneur gère son propre ensemble de dépendances et d’exécution, ce qui peut être différent. Ici, nous voyons différentes versions du microservice du produit qui s’exécutent sur le même hôte. Chaque conteneur partage une partie du système d’exploitation, de la mémoire et du processeur de l’hôte sous-jacent, mais est isolée les unes des autres.
+Notez comment chaque conteneur maintient son propre ensemble de dépendances et de temps d’exécution, ce qui peut être différent. Ici, nous voyons différentes versions du microservice produit en cours d’exécution sur le même hôte. Chaque conteneur partage une tranche du système d’exploitation, de la mémoire et du processeur d’hôte sous-jacent, mais est isolé les uns des autres.
 
-Notez la manière dont le modèle de conteneur adopte le principe de « dépendances » de l' [application à douze facteurs](https://12factor.net/).
+Notez dans quelle mesure le modèle de conteneurs embrasse le principe des « dépendances » de [l’application douze facteurs](https://12factor.net/).
 
-> *Le facteur \#2 spécifie que chaque microservice isole et conditionne ses propres dépendances, en adoptant des modifications sans affecter l’ensemble du système.»*
+> *Le \#facteur 2 précise que « chaque microservice isole et emballe ses propres dépendances, embrassant les changements sans avoir d’impact sur l’ensemble du système».*
 
-Les conteneurs prennent en charge les charges de travail Linux et Windows. Azure Cloud adopte les deux. Ce qui est intéressant, c’est qu’il s’agit de Linux, et non de Windows Server, qui est devenu le système d’exploitation le plus populaire dans Azure.
+Les conteneurs prennent en charge les charges de travail Linux et Windows. Le nuage Azure embrasse ouvertement les deux. Fait intéressant, c’est Linux, pas Windows Server, qui est devenu le système d’exploitation le plus populaire en Azure.
 
-Bien qu’il existe plusieurs fournisseurs de conteneurs, l’arrimeur a capturé la part du marché de lion. L’entreprise a mis en place le déplacement du conteneur logiciel. Elle est devenue la norme de facto pour l’empaquetage, le déploiement et l’exécution d’applications Cloud natives.
+Alors que plusieurs vendeurs de conteneurs existent, Docker a capturé la part du lion du marché. La société a été le moteur du mouvement des conteneurs logiciels. Il est devenu la norme de facto pour l’emballage, le déploiement et l’exécution d’applications cloud-native.
 
-### <a name="why-containers"></a>Pourquoi les conteneurs ?
+### <a name="why-containers"></a>Pourquoi les conteneurs?
 
-Les conteneurs assurent la portabilité et garantissent la cohérence entre les environnements. En encapsulant tout dans un package unique, vous *isolez* le microservice et ses dépendances de l’infrastructure sous-jacente.
+Les conteneurs offrent une portabilité et garantissent la cohérence entre les environnements. En encapsulant tout en un seul paquet, vous *isolez* le microservice et ses dépendances de l’infrastructure sous-jacente.
 
-Vous pouvez déployer ce même conteneur dans n’importe quel environnement ayant le moteur d’exécution de l’ancrage. Les charges de travail en conteneur éliminent également les dépenses liées à la préconfiguration de chaque environnement avec des infrastructures, des bibliothèques logicielles et des moteurs d’exécution.
+Vous pouvez déployer ce même conteneur dans n’importe quel environnement qui a le moteur De temps d’exécution Docker. Les charges de travail conteneurisées éliminent également les dépenses de pré-configuration de chaque environnement avec des cadres, des bibliothèques de logiciels et des moteurs de temps d’exécution.
 
-En partageant le système d’exploitation sous-jacent et les ressources de l’hôte, les conteneurs ont un encombrement bien plus faible qu’une machine virtuelle complète. La taille plus petite augmente la *densité*, ou le nombre de microservices, qu’un hôte donné peut exécuter en même temps.
+En partageant le système d’exploitation sous-jacent et les ressources d’accueil, les conteneurs ont une empreinte beaucoup plus faible qu’une machine virtuelle complète. La plus petite taille augmente la *densité,* ou le nombre de microservices, qu’un hôte donné peut exécuter à un moment donné.
 
-### <a name="container-orchestration"></a>Orchestration de conteneur
+### <a name="container-orchestration"></a>Orchestration de conteneurs
 
-Tandis que les outils tels que l’amarrage créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs s’effectue à l’aide d’un programme logiciel spécial appelé Orchestrator de conteneur. En cas de fonctionnement à l’échelle, l’orchestration de conteneur est essentielle.
+Bien que des outils tels que Docker créent des images et exécutent des conteneurs, vous avez également besoin d’outils pour les gérer. La gestion des conteneurs se fait avec un logiciel spécial appelé un orchestrateur de conteneurs. Lorsqu’il fonctionne à l’échelle, l’orchestration de conteneurs est essentielle.
 
-La figure 1-6 montre les tâches de gestion fournies par les orchestrateurs de conteneurs.
+La figure 1-6 montre les tâches de gestion que les orchestrateurs de conteneurs fournissent.
 
 ![Ce que font les orchestrateurs de conteneurs](./media/what-container-orchestrators-do.png)
 
@@ -225,120 +225,120 @@ Le tableau suivant décrit les tâches d’orchestration courantes.
 
 |  Tâches | Explication  |
 | :-------- | :-------- |
-| Planification | Approvisionner automatiquement des instances de conteneur.|
-| Affinité/anti-affinité | Approvisionner des conteneurs à proximité ou éloignés les uns des autres, ce qui contribue à la disponibilité et aux performances. |
+| Planification | Fourniture automatique d’instances de conteneurs.|
+| Affinité/anti-affinité | Conteneurs d’approvisionnement à proximité ou loin les uns des autres, aidant la disponibilité et la performance. |
 | Surveillance de l’intégrité | Détectez et corrigez automatiquement les défaillances.|
-| Basculement | Reconfigurer automatiquement l’instance défaillante sur des machines saines.|
+| Basculement | Automatiquement reprovision échoué instance à des machines saines.|
 | Mise à l'échelle | Ajoutez ou supprimez automatiquement l’instance de conteneur pour répondre à la demande.|
-| Mise en réseau | Gérez une superposition de mise en réseau pour la communication de conteneur.|
-| Découverte de service | Activez les conteneurs pour les localiser.|
-| Mises à niveau propagées | Coordonner les mises à niveau incrémentielles avec un déploiement sans temps d’arrêt. Annule automatiquement les modifications problématiques.|
+| Mise en réseau | Gérer une superposition de réseautage pour la communication des conteneurs.|
+| Découverte de service | Permettre aux conteneurs de se localiser les uns les autres.|
+| Mises à niveau propagées | Coordonner les mises à niveau incrémentielles avec zéro déploiement en temps d’arrêt. Annulez automatiquement les modifications problématiques.|
 
-Notez comment les orchestrateurs adoptent les principes de disposability et d’accès concurrentiel de l' [application à 12 facteurs](https://12factor.net/), abordés plus haut dans ce chapitre.
+Notez comment les orchestrateurs adoptent les principes d’aliénation et de concordance de [l’application à douze facteurs](https://12factor.net/), discutés plus tôt dans le chapitre.
 
-> *Le facteur \#9 spécifie que les «instances de service doivent être jetables, favorisant les Démarrages rapides afin d’augmenter les possibilités d’évolutivité et les arrêts progressifs pour que le système reste dans un état correct. Les conteneurs de l’arrimeur avec un orchestrateur répondent fondamentalement à cette exigence.»*
+> *Le \#facteur 9 précise que « les instances de service doivent être jetables, favorisant les startups rapides pour augmenter les possibilités d’évolutivité et les arrêts gracieux pour laisser le système dans un état correct. Les conteneurs Docker ainsi qu’un orchestrateur satisfont intrinsèquement à cette exigence.*
 
-> *Le facteur \#8 spécifie que les services sont mis à l’échelle sur un grand nombre de petits processus identiques (copies) au lieu de mettre à l’échelle une seule grande instance sur la machine la plus puissante disponible.»*
+> *Le \#facteur 8 précise que « les services s’étendent sur un grand nombre de petits processus identiques (copies) par opposition à l’échelle d’une seule grande instance sur la machine la plus puissante disponible. »*
 
-Bien que plusieurs orchestrateurs de conteneurs existent, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde Cloud-native. Il s’agit d’une plate-forme portable, extensible et open source pour la gestion des charges de travail en conteneur.
+Bien qu’il existe plusieurs orchestrateurs de conteneurs, [Kubernetes](https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/) est devenu la norme de facto pour le monde cloud-natif. Il s’agit d’une plate-forme portable, extensible, open-source pour gérer les charges de travail conteneurisées.
 
-Vous pouvez héberger votre propre instance de Kubernetes, mais vous serez alors responsable de l’approvisionnement et de la gestion de ses ressources, ce qui peut être complexe. Le Cloud Azure offre Kubernetes en tant que service managé, [service Kubernetes Azure (AKS)](https://azure.microsoft.com/services/kubernetes-service/). Un service géré vous permet de tirer pleinement parti de ses fonctionnalités, sans avoir à l’installer ni à le maintenir à jour.
+Vous pouvez héberger votre propre exemple de Kubernetes, mais vous seriez responsable de l’approvisionnement et de la gestion de ses ressources - ce qui peut être complexe. Le cloud Azure dispose de Kubernetes comme un service géré, [Azure Kubernetes Service (AKS)](https://azure.microsoft.com/services/kubernetes-service/). Un service géré vous permet de tirer pleinement parti de ses fonctionnalités, sans avoir à l’installer et à l’entretenir.
 
-Azure Kubernetes services est abordé en détail dans le chapitre 2, *mise à l’échelle des applications Cloud natives*.
+Azure Kubernetes Services est couvert en détail Chapitre 2, *Scaling Cloud-Native Applications*.
 
-## <a name="backing-services"></a>Services de stockage
+## <a name="backing-services"></a>Services de soutien
 
-Les systèmes Cloud natifs dépendent de nombreuses ressources accessoires différentes, telles que les magasins de données, les courtiers de messages, la surveillance et les services d’identité. Ces services sont appelés [services de stockage](https://12factor.net/backing-services).
+Les systèmes cloud-natifs dépendent de nombreuses ressources auxiliaires différentes, telles que les magasins de données, les courtiers en messages, la surveillance et les services d’identité. Ces services sont connus sous le nom [de services de soutien](https://12factor.net/backing-services).
 
- La figure 1-7 illustre de nombreux services de stockage courants consommés par les systèmes Cloud natifs.
+ La figure 1-7 montre de nombreux services d’accompagnement courants que les systèmes cloud-autochtones consomment.
 
-![Services de stockage courants](./media/common-backing-services.png)
+![Services de soutien communs](./media/common-backing-services.png)
 
-**Figure 1-7**. Services de stockage courants
+**Figure 1-7**. Services de soutien communs
 
-Les services de sauvegarde promeuvent le principe « abandon » de l' [application à 12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
+Les services de soutien favorisent le principe de « l’apatridie » de [l’application à douze facteurs](https://12factor.net/), dont il a été question plus tôt dans le chapitre.
 
->Le *facteur \#6* spécifie que chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externaliser l’État requis sur un service de sauvegarde, tel qu’un cache distribué ou un magasin de données.»
+>*Le \#facteur 6* précise que « chaque microservice doit s’exécuter dans son propre processus, isolé des autres services en cours d’exécution. Externes de l’état requis à un service d’accompagnement tel qu’un cache distribué ou un magasin de données.
 
-Vous pouvez héberger vos propres services de stockage, mais vous serez alors responsable de la gestion des licences, de l’approvisionnement et de la gestion de ces ressources.
+Vous pourriez héberger vos propres services d’accompagnement, mais vous seriez responsable de l’octroi de licences, de la fourniture et de la gestion de ces ressources.
 
-Les fournisseurs de Cloud offrent un large éventail de *services de stockage gérés.* Au lieu de détenir le service, il vous suffit de l’utiliser. Le fournisseur opère la ressource à l’échelle et assume la responsabilité des performances, de la sécurité et de la maintenance. La surveillance, la redondance et la disponibilité sont intégrées au service. Les fournisseurs prennent entièrement en charge leurs services gérés : ouvrez un ticket pour résoudre votre problème.
+Les fournisseurs de cloud offrent un assortiment riche de services de *support gérés.* Au lieu de posséder le service, vous le consommez simplement. Le fournisseur exploite la ressource à grande échelle et assume la responsabilité de la performance, de la sécurité et de l’entretien. La surveillance, la redondance et la disponibilité sont intégrées au service. Les fournisseurs prennent pleinement en charge leurs services gérés - ouvrez un billet et ils résolvent votre problème.
 
-Les systèmes Cloud natifs favorisent les services de stockage gérés des fournisseurs de Cloud. Les économies en temps et en main-d’œuvre sont très intéressantes. Le risque opérationnel lié à l’hébergement de vos propres problèmes peut être rapidement coûteux.
+Les systèmes cloud-native favorisent les services de support gérés des fournisseurs de cloud. Les économies de temps et de main-d’œuvre sont grandes. Le risque opérationnel d’accueillir le vôtre et de rencontrer des problèmes peut coûter cher rapidement.
 
-Une meilleure pratique consiste à traiter un service de sauvegarde en tant que *ressource attachée*, liée de manière dynamique à un microservice avec des informations (URL et informations d’identification) stockées dans une configuration externe. Ce guide est écrit dans l’application à [12 facteurs](https://12factor.net/), décrite plus haut dans le chapitre.
+Une meilleure pratique consiste à traiter un service d’accompagnement comme une *ressource jointe,* dynamiquement liée à un microservice avec des informations (une URL et des informations d’identification) stockées dans une configuration externe. Ces directives sont énoncées dans la [demande à douze facteurs](https://12factor.net/), discutée plus tôt dans le chapitre.
 
->Le *facteur \#4* spécifie que les services de stockage doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.»
+>*Le \#facteur 4* précise que les services de support "doivent être exposés via une URL adressable. Cela découple la ressource de l’application, ce qui lui permet d’être interchangeable.
 
->Le *facteur \#3* spécifie que les informations de configuration sont déplacées hors du microservice et externalisées via un outil de gestion de la configuration en dehors du code.»
+>*Le \#facteur 3* précise que « les informations de configuration sont déplacées hors du microservice et externalisées par un outil de gestion de configuration en dehors du code. »
 
-Avec ce modèle, un service de sauvegarde peut être attaché et détaché sans modification du code. Vous pouvez promouvoir un microservice de l’AQ en un environnement intermédiaire. Vous mettez à jour la configuration du microservice pour pointer vers les services de stockage dans un environnement intermédiaire et injectez les paramètres dans votre conteneur par le biais d’une variable d’environnement.
+Avec ce modèle, un service de sauvegarde peut être attaché et détaché sans modifications de code. Vous pouvez promouvoir un microservice de l’AQ à un environnement de mise en scène. Vous mettez à jour la configuration du microservice pour indiquer les services d’accompagnement dans la mise en scène et injecter les paramètres dans votre conteneur à travers une variable d’environnement.
 
-Les fournisseurs de Cloud fournissent des API qui vous permettent de communiquer avec leurs services de stockage propriétaires. Ces bibliothèques encapsulent la plomberie et la complexité. En communiquant directement avec ces API, vous associez étroitement votre code au service de sauvegarde. Il est recommandé d’isoler les détails d’implémentation de l’API du fournisseur. Introduisez une couche d’intermédiation ou une API intermédiaire qui expose des opérations génériques à votre code de service. Ce couplage faible vous permet de permuter un service de sauvegarde pour un autre ou de déplacer votre code vers un cloud public différent sans avoir à apporter de modifications au code du service principal.
+Les fournisseurs de cloud vous permettent de communiquer avec leurs services de soutien exclusifs. Ces bibliothèques résument la plomberie et la complexité. Communiquer directement avec ces API couplera étroitement votre code au service d’accompagnement. Il s’agit d’une meilleure pratique pour isoler les détails de mise en œuvre de l’API fournisseur. Introduisez une couche d’intermédiation, ou API intermédiaire, exposant les opérations génériques à votre code de service. Ce couplage lâche vous permet d’échanger un service de sauvegarde contre un autre ou de déplacer votre code vers un cloud public différent sans avoir à apporter des modifications au code de service principal.
 
-Les services de stockage sont présentés en détail dans le chapitre 5, les *modèles de données natifs du Cloud*et le chapitre 4, *modèles de communication natifs dans le Cloud*.
+Les services d’accompagnement sont discutés en détail Chapitre 5, *Cloud-Native Data Patterns*, et Chapitre 4, *Cloud-Native Communication Patterns*.
 
-## <a name="automation"></a>Automation
+## <a name="automation"></a>Automatisation
 
-Comme vous l’avez vu, les systèmes Cloud natifs intègrent des microservices, des conteneurs et une conception de système moderne pour obtenir une vitesse et une agilité. Mais ce n’est qu’une partie de l’histoire. Comment approvisionner les environnements Cloud sur lesquels ces systèmes s’exécutent ? Comment déployez-vous rapidement des fonctionnalités et des mises à jour d’application ? Comment faire pour arrondir l’image complète ?
+Comme vous l’avez vu, les systèmes cloud-natifs adoptent des microservices, des conteneurs et la conception moderne du système pour atteindre la vitesse et l’agilité. Mais, ce n’est qu’une partie de l’histoire. Comment approvisionnementz-vous dans les environnements cloud sur lesquels ces systèmes fonctionnent ? Comment déployez-vous rapidement des fonctionnalités et des mises à jour d’applications ? Comment pouvez-vous compléter l’image complète?
 
-Entrez la pratique d' [infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code)ou IaC.
+Entrez dans la pratique largement acceptée de [l’infrastructure en tant que Code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), ou IaC.
 
-Avec IaC, vous automatisez l’approvisionnement de la plateforme et le déploiement d’applications. Vous appliquez essentiellement des pratiques de conception de logiciels, telles que le test et la gestion des versions, à vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles.
+Avec IaC, vous automatisez la provision de la plate-forme et le déploiement d’applications. Vous appliquez essentiellement des pratiques d’ingénierie logicielle telles que les tests et la version de vos pratiques DevOps. Votre infrastructure et vos déploiements sont automatisés, cohérents et reproductibles.
 
 ### <a name="automating-infrastructure"></a>Automatisation de l’infrastructure
 
-Des outils comme [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform et [Azure CLI](https://docs.microsoft.com/cli/azure/), vous permettent de générer un script de façon déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrables et dynamiques. Le script est géré et archivé dans le contrôle de code source en tant qu’artefact de votre projet. Vous appelez le script pour approvisionner une infrastructure cohérente et reproductible dans des environnements système, comme l’assurance qualité, la mise en lots et la production.
+Des outils comme [Azure Resource Manager](https://azure.microsoft.com/documentation/articles/resource-group-overview/), Terraform et [azure CLI](https://docs.microsoft.com/cli/azure/), vous permettent de script de manière déclarative de l’infrastructure cloud dont vous avez besoin. Les noms de ressources, les emplacements, les capacités et les secrets sont paramétrés et dynamiques. Le script est version et vérifié dans le contrôle source comme un artefact de votre projet. Vous invoquez le script pour fournir une infrastructure cohérente et répétable entre les environnements du système, tels que l’AQ, la mise en scène et la production.
 
-En coulisses, IaC est idempotent, ce qui signifie que vous pouvez exécuter le même script sur et sans effets secondaires. Si l’équipe doit apporter une modification, elle modifie et réexécute le script. Seules les ressources mises à jour sont affectées.
+Sous le capot, IaC est idempotent, ce qui signifie que vous pouvez exécuter le même script encore et encore sans effets secondaires. Si l’équipe doit apporter un changement, elle modifie et réexécute le script. Seules les ressources mises à jour sont affectées.
 
-Dans l’article [qu’est-ce que l’infrastructure en tant que code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), l’auteur Sam Guckenheimer décrit comment, les équipes qui implémentent IaC peuvent fournir rapidement et à grande échelle des environnements stables. Les équipes évitent la configuration manuelle des environnements et appliquent la cohérence en représentant l’état souhaité de leurs environnements via du code. Les déploiements d’infrastructure avec IaC sont reproductibles et évitent les problèmes d’exécution dus à une dérive de la configuration ou à des dépendances manquantes. Les équipes DevOps peuvent collaborer avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de prise en charge rapidement, de manière fiable et à grande échelle.»
+Dans l’article, [Qu’est-ce que l’infrastructure comme code](https://docs.microsoft.com/azure/devops/learn/what-is-infrastructure-as-code), Auteur Sam Guckenheimer décrit comment, "Les équipes qui mettent en œuvre IaC peut fournir des environnements stables rapidement et à l’échelle. Les équipes évitent la configuration manuelle des environnements et imposent la cohérence en représentant l’état souhaité de leurs environnements via le code. Les déploiements d’infrastructure avec IaC sont reproductibles et préviennent les problèmes de temps d’exécution causés par la dérive de configuration ou les dépendances manquantes. Les équipes de DevOps peuvent travailler ensemble avec un ensemble unifié de pratiques et d’outils pour fournir des applications et leur infrastructure de soutien rapidement, de manière fiable et à grande échelle.
 
 ### <a name="automating-deployments"></a>Automatisation des déploiements
 
-L' [application à 12 facteurs](https://12factor.net/), abordée précédemment, appelle des étapes distinctes lors de la transformation du code complet en une application en cours d’exécution.
+[L’application Douze facteurs](https://12factor.net/), discutée plus tôt, appelle à des étapes distinctes lors de la transformation du code terminé en une application en cours d’exécution.
 
-> Le *facteur \#5* spécifie que chaque version doit appliquer une séparation stricte entre les étapes de la build, de la mise en œuvre et de l’exécution. Chaque doit être marqué d’un ID unique et prendre en charge la possibilité d’effectuer une restauration.»
+> *Le \#facteur 5* précise que « chaque version doit appliquer une séparation stricte à travers les étapes de construction, de libération et d’exécution. Chacun doit être étiqueté avec une pièce d’identité unique et soutenir la possibilité de revenir en arrière.
 
-Les systèmes d’intégration continue et de CD modernes aident à respecter ce principe. Ils fournissent des étapes de déploiement distinctes et permettent de garantir un code cohérent et de qualité accessible aux utilisateurs.
+Les systèmes CI/CD modernes aident à remplir ce principe. Ils fournissent des étapes de déploiement distinctes et aident à assurer un code cohérent et de qualité facilement accessible aux utilisateurs.
 
-La figure 1-8 illustre la séparation au sein du processus de déploiement.
+La figure 1-8 indique la séparation tout au long du processus de déploiement.
 
-![Étapes de déploiement dans un pipeline CI/CD](./media/build-release-run-pipeline.png)
+![Déploiements Étapes dans le pipeline CI/CD](./media/build-release-run-pipeline.png)
 
 **Figure 1-8**. Étapes de déploiement dans un pipeline CI/CD
 
-Dans l’illustration précédente, portez une attention particulière à la séparation des tâches.
+Dans le chiffre précédent, portez une attention particulière à la séparation des tâches.
 
-Le développeur construit une fonctionnalité dans son environnement de développement, en itérant au sein de ce que l’on appelle la « boucle interne » de code, d’exécution et de débogage. Une fois terminé, ce code fait l’objet d’un *Push* dans un référentiel de code, tel que GitHub, Azure DevOps ou bitbucket.
+Le développeur construit une fonctionnalité dans leur environnement de développement, itérant à travers ce qu’on appelle la « boucle intérieure » du code, de l’exécution et du débogé. Une fois terminé, ce code est *poussé* dans un référentiel de code, comme GitHub, Azure DevOps, ou BitBucket.
 
-L’envoi (push) déclenche une étape de génération qui transforme le code en artefact binaire. Le travail est implémenté avec un pipeline d' [intégration continue (ci)](https://martinfowler.com/articles/continuousIntegration.html) . Il génère, teste et empaquette automatiquement l’application.
+La poussée déclenche une étape de construction qui transforme le code en un artefact binaire. Les travaux sont mis en œuvre avec un pipeline [d’intégration continue (CI).](https://martinfowler.com/articles/continuousIntegration.html) Il construit automatiquement, teste et emballe l’application.
 
-L’étape de mise en production récupère l’artefact binaire, applique les informations de configuration de l’environnement et de l’application externes et produit une version immuable. La version est déployée dans un environnement spécifié. Le travail est implémenté avec un pipeline de [livraison continue (CD)](https://martinfowler.com/bliki/ContinuousDelivery.html) . Chaque version doit être identifiable. Vous pouvez indiquer « ce déploiement exécute la version 2.1.1 de l’application ».
+L’étape de sortie capte l’artefact binaire, applique des informations externes sur l’application et la configuration de l’environnement, et produit une version immuable. Le rejet est déployé dans un environnement spécifié. Les travaux sont mis en œuvre avec un pipeline [de livraison continue (CD).](https://martinfowler.com/bliki/ContinuousDelivery.html) Chaque version doit être identifiable. Vous pouvez dire : « Ce déploiement est en cours d’exécution Version 2.1.1 de l’application. »
 
-Enfin, la fonctionnalité publiée est exécutée dans l’environnement d’exécution cible. Les mises en production sont immuables, ce qui signifie que toute modification doit créer une nouvelle mise en production.
+Enfin, la fonction libérée est exécutée dans l’environnement d’exécution cible. Les versions sont immuables, ce qui signifie que toute modification doit créer une nouvelle version.
 
-En appliquant ces pratiques, les organisations ont radicalement évolué la manière dont elles accompagnent les logiciels. De nombreuses versions trimestrielles ont été déplacées vers des mises à jour à la demande. L’objectif est de détecter les problèmes au début du cycle de développement lorsqu’ils sont moins coûteux à résoudre. Plus la durée entre les intégrations est longue, plus les problèmes de résolution sont élevés.  Avec la cohérence dans le processus d’intégration, les équipes peuvent valider les modifications de code plus fréquemment, ce qui permet une meilleure collaboration et une meilleure qualité des logiciels.
+Appliquant ces pratiques, les organisations ont radicalement évolué leur façon d’expédier des logiciels. Beaucoup sont passés des communiqués trimestriels aux mises à jour à la demande. L’objectif est d’attraper les problèmes au début du cycle de développement quand ils sont moins coûteux à résoudre. Plus la durée entre les intégrations est longue, plus les problèmes deviennent coûteux à résoudre.  Avec la cohérence dans le processus d’intégration, les équipes peuvent valider des modifications de code plus fréquemment, conduisant à une meilleure collaboration et la qualité logicielle.
 
 ### <a name="azure-pipelines"></a>Azure Pipelines
 
-Le Cloud Azure comprend un nouveau service CI/CD, intitulé [Azure pipelines](https://azure.microsoft.com/services/devops/pipelines/), qui fait partie de l’offre [Azure DevOps](https://azure.microsoft.com/services/devops/) présentée dans la figure 1-9.
+Le cloud Azure comprend un nouveau service CI/CD intitulé [Azure Pipelines](https://azure.microsoft.com/services/devops/pipelines/), qui fait partie de l’offre [Azure DevOps](https://azure.microsoft.com/services/devops/) présentée dans la figure 1-9.
 
-![Azure Pipelines dans DevOps](./media/devops-components.png)
+![Azure Pipelines à DevOps](./media/devops-components.png)
 
 **Figure 1-9**. Offres Azure DevOps
 
-Azure Pipelines est un service Cloud qui combine l’intégration continue (CI) et la livraison continue (CD). Vous pouvez tester, générer et envoyer automatiquement votre code à n’importe quelle cible.
+Azure Pipelines est un service cloud qui allie intégration continue (CI) et livraison continue (CD). Vous pouvez automatiquement tester, construire et expédier votre code à n’importe quelle cible.
 
-Vous définissez votre pipeline dans le code d’un fichier YAML avec le reste du code de votre application.
+Vous définissez votre pipeline dans le code dans un fichier YAML aux côtés du reste du code de votre application.
 
-- La version du pipeline est gérée avec votre code et suit la même structure de branchement.
-- Vous pouvez valider vos modifications à l’aide de révisions de code dans les requêtes de tirage et les stratégies de build de branche.
-- Chaque branche que vous utilisez peut personnaliser la stratégie de génération en modifiant le fichier Azure-pipelines. yml.
-- Le fichier de pipeline est archivé dans le contrôle de version et peut être examiné en cas de problème.
+- Le pipeline est versionné avec votre code et suit la même structure de ramification.
+- Vous obtenez la validation de vos modifications grâce à des révisions de code dans les demandes de traction et les stratégies d’accumulation de succursales.
+- Chaque branche que vous utilisez peut personnaliser la stratégie de construction en modifiant le fichier azure-pipelines.yml.
+- Le fichier de pipeline est contrôlé dans le contrôle de la version et peut faire l’objet d’une enquête en cas de problème.
 
-Le service Azure Pipelines prend en charge la plupart des fournisseurs GIT et peut générer des pipelines de déploiement pour les applications écrites sur les plateformes Linux, macOS ou Windows. Il prend en charge Java, .NET, JavaScript, Python, PHP, Go, XCode et C++.
+Le service Azure Pipelines prend en charge la plupart des fournisseurs Git et peut générer des pipelines de déploiement pour des applications écrites sur les plateformes Linux, macOS ou Windows. Il comprend la prise en charge de Java, .NET, JavaScript, Python, PHP, Go, XCode et C.
 
 >[!div class="step-by-step"]
->[Précédent](introduction.md)
->[Suivant](candidate-apps.md)
+>[Suivant précédent](introduction.md)
+>[Next](candidate-apps.md)

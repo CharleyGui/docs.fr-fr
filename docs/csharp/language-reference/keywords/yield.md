@@ -8,15 +8,15 @@ helpviewer_keywords:
 - yield keyword [C#]
 ms.assetid: 1089194f-9e53-46a2-8642-53ccbe9d414d
 ms.openlocfilehash: e3c9e37e7b543eaddae837a85604c4ba91fbc744
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712778"
 ---
 # <a name="yield-c-reference"></a>yield (Référence C#)
 
-Quand vous utilisez le [mot clé contextuel](index.md#contextual-keywords) `yield` dans une instruction, vous indiquez que la méthode, l’opérateur ou l’accesseur `get` dans lequel il apparaît est un itérateur. L'utilisation de `yield` pour définir un itérateur rend une classe explicite supplémentaire inutile (la classe qui contient l'état d'une énumération ; pour obtenir un exemple, consultez <xref:System.Collections.Generic.IEnumerator%601>) lorsque vous implémentez les modèles <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> pour un type de collection personnalisé.
+Lorsque vous utilisez le `yield` [mot clé contextuel](index.md#contextual-keywords) dans une instruction, vous indiquez que la méthode, l'opérateur ou l'accesseur `get` dans lequel il apparaît est un itérateur. L'utilisation de `yield` pour définir un itérateur rend une classe explicite supplémentaire inutile (la classe qui contient l'état d'une énumération ; pour obtenir un exemple, consultez <xref:System.Collections.Generic.IEnumerator%601>) lorsque vous implémentez les modèles <xref:System.Collections.IEnumerable> et <xref:System.Collections.IEnumerator> pour un type de collection personnalisé.
 
 L'exemple suivant montre les deux formulaires de l'instruction `yield`.
 
@@ -25,7 +25,7 @@ yield return <expression>;
 yield break;
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Utilisez une instruction `yield return` pour retourner chaque élément un par un.
 
@@ -41,7 +41,7 @@ La déclaration d’un itérateur doit respecter les exigences suivantes :
 
 - Le type de retour doit être <xref:System.Collections.IEnumerable>, <xref:System.Collections.Generic.IEnumerable%601>, <xref:System.Collections.IEnumerator>, ou <xref:System.Collections.Generic.IEnumerator%601>.
 
-- La déclaration ne peut pas avoir [de](in-parameter-modifier.md) paramètres [ref](ref.md) ou [out](out-parameter-modifier.md) .
+- La déclaration ne peut avoir aucun paramètre [in, ](in-parameter-modifier.md) [ref](ref.md) ou [out](out-parameter-modifier.md).
 
 Le type `yield` d'un itérateur qui retourne <xref:System.Collections.IEnumerable> ou <xref:System.Collections.IEnumerator> est `object`.  Si l'itérateur retourne <xref:System.Collections.Generic.IEnumerable%601> ou <xref:System.Collections.Generic.IEnumerator%601>, il doit exister une conversion implicite du type de l'expression dans l'instruction `yield return` au paramètre de type générique.
 
@@ -77,7 +77,7 @@ Dans une itération de la boucle `foreach`, la méthode <xref:System.Collections
 
 À chaque itération suivante de la boucle `foreach`, l'exécution du corps de l'itérateur reprend à partir de l'emplacement où elle s'est interrompue, et s'arrête encore lorsqu'elle atteint une instruction `yield return`. La boucle `foreach` se termine lorsque à la fin de la méthode Iterator ou lorsqu'une instruction `yield break` est atteinte.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant comprend une instruction `yield return` située dans une boucle `for`. Chaque itération du corps d’instruction `foreach` dans la méthode `Main` crée un appel à la fonction d’itérateur `Power`. Chaque appel à la fonction d'itérateur continue vers l'exécution suivante de l'instruction `yield return`, qui se produit pendant l'itération suivante de la boucle `for`.
 
@@ -85,7 +85,7 @@ Le type de retour de la méthode Iterator est <xref:System.Collections.IEnumerab
 
 [!code-csharp[csrefKeywordsContextual#5](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsContextual/CS/csrefKeywordsContextual.cs#5)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L'exemple suivant illustre un accesseur `get` qui est un itérateur. Dans cet exemple, chaque instruction `yield return` retourne une instance d'une classe définie par l'utilisateur.
 
@@ -97,7 +97,7 @@ L'exemple suivant illustre un accesseur `get` qui est un itérateur. Dans cet ex
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../../language-reference/index.md)
+- [Référence C](../../language-reference/index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [foreach, in](foreach-in.md)
 - [Itérateurs](../../iterators.md)

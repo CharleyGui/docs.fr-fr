@@ -5,10 +5,10 @@ helpviewer_keywords:
 - expression-bodied members[C#]
 - C# language, expresion-bodied members
 ms.openlocfilehash: f212bb707d3dd2d4a7cc917d335a83cff01ed0cf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75711985"
 ---
 # <a name="expression-bodied-members-c-programming-guide"></a>Membres expression-bodied (Guide de programmation C#)
@@ -23,11 +23,11 @@ où *expression* est une expression valide.
 
 La prise en charge des définitions de corps d’expression a été introduite pour les méthodes et les propriétés en lecture seule dans C# 6 et a été étendue dans C# 7.0. Vous pouvez utiliser des définitions de corps d’expression avec les membres de type listés dans le tableau suivant :
 
-|Member  |Prise en charge à compter de |
+|Membre  |Prise en charge à compter de |
 |---------|---------|
 |[Méthode](#methods)  |C# 6 |
-|[Propriété en lecture seule](#read-only-properties)   |C# 6  |
-|[Property](#properties)  |C# 7.0 |
+|[Propriété de lecture seulement](#read-only-properties)   |C# 6  |
+|[Propriété](#properties)  |C# 7.0 |
 |[Constructeur](#constructors)   |C# 7.0 |
 |[Finaliseur](#finalizers)     |C# 7.0 |
 |[Indexeur](#indexers)       |C# 7.0 |
@@ -86,9 +86,9 @@ Pour plus d’informations, consultez [Finaliseurs (Guide de programmation C#)](
 
 ## <a name="indexers"></a>Indexeurs
 
-Comme avec les propriétés, les accesseurs `get` et `set` sont constitués de définitions de corps d’expression si l’accesseur `get` se compose d’une expression unique qui retourne une valeur ou l’accesseur `set` effectue une assignation simple.
+Comme pour les `get` propriétés, l’indexeur et `set` `get` les accesseurs se composent de définitions `set` du corps d’expression si l’accesseur se compose d’une seule expression qui renvoie une valeur ou l’accesseur effectue une affectation simple.
 
-L’exemple suivant définit une classe nommée `Sports` qui inclut un tableau <xref:System.String> interne contenant les noms de plusieurs sports. Les accesseurs `get` et `set` sont implémentés en tant que définitions de corps d’expression.
+L’exemple suivant définit une classe nommée `Sports` qui inclut un tableau <xref:System.String> interne contenant les noms de plusieurs sports. L’indexeur `get` `set` et les accesseurs sont mis en œuvre comme définitions du corps d’expression.
 
 [!code-csharp[expression-bodied-indexer](../../../../samples/snippets/csharp/programming-guide/classes-and-structs/expr-bodied-indexers.cs#1)]
 

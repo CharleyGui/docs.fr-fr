@@ -7,10 +7,10 @@ f1_keywords:
 helpviewer_keywords:
 - fixed keyword [C#]
 ms.openlocfilehash: e527e8a54a739391d18b180532372b5b70f34d37
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713518"
 ---
 # <a name="fixed-statement-c-reference"></a>fixed, instruction (référence C#)
@@ -62,7 +62,7 @@ fixed (byte* ps = srcarray, pd = dstarray)
 }
 ```
 
-Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, utilisez l’[`stackalloc`opérateur](../operators/stackalloc.md).
+Vous pouvez allouer de la mémoire à la pile, où elle n’est pas soumise au nettoyage de la mémoire et n’a donc pas besoin d’être épinglée. Pour ce faire, utilisez [ `stackalloc` l’opérateur](../operators/stackalloc.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -70,9 +70,9 @@ Pour plus d’informations, consultez la section [Instructions fixes](~/_csharpl
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
-- [unsafe](unsafe.md)
+- [Dangereux](unsafe.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
-- [Mémoires tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)
+- [Tampons de taille fixe](../../programming-guide/unsafe-code-pointers/fixed-size-buffers.md)

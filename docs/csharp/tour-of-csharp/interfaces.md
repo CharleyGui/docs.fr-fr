@@ -4,15 +4,15 @@ description: Les interfaces définissent des contrats implémentés par les type
 ms.date: 02/27/2020
 ms.assetid: a9bf82f4-efd1-4216-bd34-4ef0fa48c968
 ms.openlocfilehash: 62d94462fa481379cf70d63a598deb7f36be204f
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78159128"
 ---
 # <a name="interfaces"></a>Interfaces
 
-Une ***interface*** définit un contrat qui peut être implémenté par des classes et des structs. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas d’implémentations des membres qu’elle définit ; elle spécifie simplement les membres qui doivent être fournis par les classes ou les structs qui implémentent l’interface.
+Une ***interface*** définit un contrat qui peut être implémenté par des classes et structures. Une interface peut contenir des méthodes, des propriétés, des événements et des indexeurs. Une interface ne fournit pas les implémentations des membres qu’elle définit, elle spécifie simplement les membres qui doivent être fournis par des classes ou des structs qui implémentent l’interface.
 
 Les interfaces peuvent utiliser ***l’héritage multiple***. Dans l’exemple suivant, l’interface `IComboBox` hérite à la fois de `ITextBox` et `IListBox`.
 
@@ -26,7 +26,7 @@ Lorsqu’une classe ou un struct implémente une interface spécifique, les inst
 
 [!code-csharp[InterfacesThree](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L33-L35)]
 
-Dans les cas où une instance n’est pas statiquement connue pour implémenter une interface particulière, les casts de type dynamique peuvent être utilisés. Par exemple, les instructions suivantes utilisent des casts de type dynamiques pour obtenir les implémentations des interfaces `IControl` et `IDataBound` d’un objet. Étant donné que le type réel au moment de l’exécution de l’objet est `EditBox`, les casts réussissent.
+Dans les cas où une instance n’est pas statiquement connue pour implémenter une interface particulière, des moulages de type dynamique peuvent être utilisés. Par exemple, les instructions suivantes utilisent des casts de type dynamiques pour obtenir les implémentations des interfaces `IControl` et `IDataBound` d’un objet. Étant donné que le type réel au moment de l’exécution de l’objet est `EditBox`, les casts réussissent.
 
 [!code-csharp[InterfacesFour](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L40-L42)]
 
@@ -39,5 +39,5 @@ Les membres d’interface explicites sont accessibles uniquement via le type int
 [!code-csharp[InterfacesFive](../../../samples/snippets/csharp/tour/interfaces/Program.cs#L71-L74)]
 
 >[!div class="step-by-step"]
->[Précédent](arrays.md)
->[Suivant](delegates.md)
+>[Suivant précédent](arrays.md)
+>[Next](delegates.md)

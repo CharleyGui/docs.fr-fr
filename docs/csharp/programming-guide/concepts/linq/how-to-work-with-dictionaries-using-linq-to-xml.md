@@ -1,18 +1,18 @@
 ---
-title: Comment utiliser des dictionnaires à l’aide deC#LINQ to XML ()
+title: Comment travailler avec des dictionnaires utilisant LINQ à XML (C)
 ms.date: 07/20/2015
 ms.assetid: 57bcefe3-8433-4d3b-935a-511c9bcbdfa8
 ms.openlocfilehash: 1a98293f208e80e969362fca27014ecd2e5c4183
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75347227"
 ---
-# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Comment utiliser des dictionnaires à l’aide deC#LINQ to XML ()
+# <a name="how-to-work-with-dictionaries-using-linq-to-xml-c"></a>Comment travailler avec des dictionnaires utilisant LINQ à XML (C)
 Il est souvent plus pratique de convertir différentes structures de données au format XML et du format XML en d’autres structures de données. Cette rubrique présente une implémentation spécifique de cette approche générale en convertissant un objet <xref:System.Collections.Generic.Dictionary%602> au format XML et inversement.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple utilise une forme de construction fonctionnelle dans laquelle une requête projette de nouveaux objets <xref:System.Xml.Linq.XElement> et la collection obtenue est passée comme argument au constructeur de l’objet <xref:System.Xml.Linq.XElement> Root.  
   
 ```csharp  
@@ -39,7 +39,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant crée un dictionnaire à partir de données XML.  
   
 ```csharp  

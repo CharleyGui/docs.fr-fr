@@ -3,10 +3,10 @@ title: Terminologie Docker
 description: Architecture des microservices .NET pour les applications .NET en conteneur | Terminologie Docker
 ms.date: 01/30/2020
 ms.openlocfilehash: 5ffc7e791df8cbc999c6ababf62670bae46e1d5e
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77502837"
 ---
 # <a name="docker-terminology"></a>Terminologie Docker
@@ -17,7 +17,7 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Dockerfile** : fichier texte contenant des instructions pour la création d’une image Docker. C’est comme un script de commandes, la première ligne indique l’image de base avec laquelle commencer, puis suivez les instructions pour installer les programmes requis, copier les fichiers et ainsi de suite, jusqu’à ce que vous obteniez l’environnement de travail dont vous avez besoin.
 
-**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez créer des images avec la commande Docker **docker build**.
+**Création (build)** : action de créer une image conteneur sur la base des informations et du contexte fournis par le fichier Dockerfile associé, plus des fichiers supplémentaires dans le dossier où l’image est créée. Vous pouvez créer des images à l’aide de la commande **docker build** de Docker.
 
 **Conteneur (container)** : instance d’une image Docker. Un conteneur représente l’exécution d’une application, d’un processus ou d’un service. Il renferme une image Docker, un environnement d’exécution et un ensemble standard d’instructions. Pour mettre un service à l’échelle, vous créez plusieurs instances d’un conteneur à partir de la même image. Cela peut également être fait par un traitement par lots, qui passe des paramètres différents à chaque instance.
 
@@ -27,11 +27,11 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Build en plusieurs étapes** : fonctionnalité, depuis Docker 17.05 ou une version ultérieure, qui permet de réduire la taille des images finales. En quelques phrases, avec un build en plusieurs étapes vous pouvez utiliser, par exemple, une grande image de base, qui contient le SDK pour compiler et publier l’application, puis utilisez le dossier de publication avec une petite image de base runtime uniquement, pour produire une image finale beaucoup plus petite
 
-**Dépôt (repository)** : collection d’images Docker associées, identifiées par une balise qui indique la version de chaque image. Certains dépôts contiennent plusieurs variantes d’une image spécifique, telles qu’une image contenant des kits de développement logiciel (lourd), une image contenant uniquement des runtimes (plus légère), etc. Ces variantes peuvent être marquées avec des balises. Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows.
+**Dépôt (repository)** : collection d’images Docker associées, identifiées par une balise qui indique la version de chaque image. Certains repos contiennent plusieurs variantes d’une image spécifique, comme une image contenant des SDK (plus lourd), une image contenant uniquement des runtimes (plus léger), etc. Ces variantes peuvent être marquées avec des étiquettes. Un dépôt peut contenir des variantes de plateforme, comme une image Linux et une image Windows.
 
 **Registre (registry)** : service qui fournit l’accès aux dépôts. Le registre par défaut utilisé pour la plupart des images publiques est [Docker Hub](https://hub.docker.com/) (propriété de l’organisation Docker). Un registre contient généralement des dépôts de plusieurs équipes. Les entreprises utilisent souvent des registres privés pour stocker et gérer les images qu’elles ont créées. Azure Container Registry est un autre exemple de registre.
 
-**Image multi-** architecture : pour l’architecture mutualisée, il s’agit d’une fonctionnalité qui simplifie la sélection de l’image appropriée, en fonction de la plateforme sur laquelle l’outil de connexion est en cours d’exécution. Par exemple, lorsqu’un fichier dockerfile demande une image **de base de MCR.Microsoft.com/dotnet/Core/SDK :3.1** à partir du Registre, il obtient en fait **3,1-SDK-** -1909, **3,1-SDK-Server-1809** ou **3,1-SDK-Buster-Slim**, en fonction du système d’exploitation et de la version du service d’installation.
+**Image multi-arc**: Pour la multi-architecture, c’est une fonctionnalité qui simplifie la sélection de l’image appropriée, selon la plate-forme où Docker est en cours d’exécution. Par exemple, lorsqu’un Dockerfile demande une image de base **de mcr.microsoft.com/dotnet/core/sdk:3.1** du registre, il obtient en fait **3,1-sdk-nanoserver-1909**, **3.1-sdk-nanoserver-1809** ou **3.1-sdk-buster-slim**, selon le système d’exploitation et la version où Docker est en cours d’exécution.
 
 **Docker Hub** : registre public dans lequel vous pouvez charger et manipuler des images. Docker Hub fournit un hébergement d’images Docker, des registres publics ou privés, des déclencheurs de build et des webhooks, et l’intégration avec GitHub et Bitbucket.
 
@@ -47,8 +47,8 @@ Cette section liste les termes et les définitions que vous devez connaître ava
 
 **Cluster** : collection d’hôtes Docker exposés en tant qu’hôte Docker virtuel unique, ce qui permet la mise à l’échelle de l’application en fonction du nombre d’instances des services répartis entre les différents hôtes au sein du cluster. Vous pouvez créer des clusters Docker avec Kubernetes, Azure Service Fabric, Docker Swarm et Mesosphere DC/OS.
 
-**Orchestrator** : outil qui simplifie la gestion des clusters et des hôtes Docker. Les orchestrateurs vous permettent de gérer leurs images, conteneurs et hôtes par le biais d’une interface CLI ou d’une interface utilisateur graphique. Vous pouvez gérer la mise en réseau des conteneurs, les configurations, l’équilibrage de charge, la découverte des services, la haute disponibilité, la configuration des hôtes Docker, et bien plus encore. Un orchestrateur gère l’exécution, la distribution, la mise à l’échelle et la réparation des charges de travail dans une collection de nœuds. En règle générale, les produits Orchestrator sont les mêmes produits qui fournissent l’infrastructure de cluster, comme Kubernetes et Azure Service Fabric, entre autres offres sur le marché.
+**Orchestrator** : outil qui simplifie la gestion des clusters et des hôtes Docker. Les orchestrateurs vous permettent de gérer leurs images, conteneurs et hôtes à travers un CLI ou une interface utilisateur graphique. Vous pouvez gérer la mise en réseau des conteneurs, les configurations, l’équilibrage de charge, la découverte des services, la haute disponibilité, la configuration des hôtes Docker, et bien plus encore. Un orchestrateur gère l’exécution, la distribution, la mise à l’échelle et la réparation des charges de travail dans une collection de nœuds. En règle générale, les produits Orchestrator sont les mêmes produits qui fournissent l’infrastructure de cluster, comme Kubernetes et Azure Service Fabric, entre autres offres sur le marché.
 
 >[!div class="step-by-step"]
->[Précédent](docker-defined.md)
->[Suivant](docker-containers-images-registries.md)
+>[Suivant précédent](docker-defined.md)
+>[Next](docker-containers-images-registries.md)

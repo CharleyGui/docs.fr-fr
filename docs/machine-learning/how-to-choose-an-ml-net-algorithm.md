@@ -4,10 +4,10 @@ description: Découvrez comment choisir un algorithme ML.NET pour votre modèle 
 ms.topic: overview
 ms.date: 06/05/2019
 ms.openlocfilehash: 0fed33203c02303e37e47f548e08ec131eeb1c77
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75739993"
 ---
 # <a name="how-to-choose-an-mlnet-algorithm"></a>Guide pratique pour choisir un algorithme ML.NET
@@ -38,7 +38,7 @@ Les algorithmes linéaires font plusieurs passages sur les données d’entraîn
 
 **Entraîneurs linéaires**
 
-|Algorithme|Propriétés|Entraîneurs|
+|Algorithm|Propriétés|Entraîneurs|
 |---------|----------|--------|
 |Averaged perceptron|Idéal pour la classification de texte|<xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>|
 |Stochastic Dual coordinated ascent|Performances par défaut satisfaisantes sans réglage nécessaire|<xref:Microsoft.ML.Trainers.SdcaLogisticRegressionBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedBinaryTrainer> <xref:Microsoft.ML.Trainers.SdcaMaximumEntropyMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaNonCalibratedMulticlassTrainer> <xref:Microsoft.ML.Trainers.SdcaRegressionTrainer>|
@@ -61,7 +61,7 @@ Les arbres de décision boostés sont un ensemble de petits arbres où chaque ar
 
 **Entraîneurs d’arbre de décision**
 
-|Algorithme|Propriétés|Entraîneurs|
+|Algorithm|Propriétés|Entraîneurs|
 |---------|----------|--------|
 |Light gradient boosted machine|Entraîneur d’arbre de classification binaire le plus rapide et le plus précis. Hautement réglable|<xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer> <xref:Microsoft.ML.Trainers.LightGbm.LightGbmMulticlassTrainer> <xref:Microsoft.ML.Trainers.LightGbm.LightGbmRegressionTrainer> <xref:Microsoft.ML.Trainers.LightGbm.LightGbmRankingTrainer>|
 |Fast tree|À utiliser pour les données d’image caractérisées. Résilient aux données non équilibrées. Hautement réglable | <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer> <xref:Microsoft.ML.Trainers.FastTree.FastTreeRegressionTrainer> <xref:Microsoft.ML.Trainers.FastTree.FastTreeTweedieTrainer> <xref:Microsoft.ML.Trainers.FastTree.FastTreeRankingTrainer>|
@@ -78,7 +78,7 @@ Les arbres de décision boostés sont un ensemble de petits arbres où chaque ar
 
 Ces entraîneurs créent un entraîneur multiclasse à partir d’un entraîneur binaire. À utiliser avec <xref:Microsoft.ML.Trainers.AveragedPerceptronTrainer>, <xref:Microsoft.ML.Trainers.LbfgsLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.SymbolicSgdLogisticRegressionBinaryTrainer>, <xref:Microsoft.ML.Trainers.LightGbm.LightGbmBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastTreeBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.FastForestBinaryTrainer>, <xref:Microsoft.ML.Trainers.FastTree.GamBinaryTrainer>.
 
-|Algorithme|Propriétés|Entraîneurs|
+|Algorithm|Propriétés|Entraîneurs|
 |---------|----------|--------|
 |One versus all|Ce classifieur multiclasse entraîne un seul classifieur binaire par classe, ce qui distingue cette classe de toutes les autres classes. Adaptation limitée selon le nombre de classes à catégoriser|[OneVersusAllTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.OneVersusAllTrainer) |
 |Pairwise coupling|Ce classifieur multiclasse entraîne un algorithme de classification binaire sur chaque paire de classes. Adaptation limitée selon le nombre de classes, du fait que chaque combinaison de deux classes doit être entraînée.|[PairwiseCouplingTrainer\<BinaryClassificationTrainer>](xref:Microsoft.ML.Trainers.PairwiseCouplingTrainer)|

@@ -8,19 +8,19 @@ helpviewer_keywords:
 - override keyword [C#]
 ms.assetid: dd1907a8-acf8-46d3-80b9-c2ca4febada8
 ms.openlocfilehash: acad3aa3b196c184132ad1acdf52b18a799b0896
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713246"
 ---
 # <a name="override-c-reference"></a>override (référence C#)
 
 Le modificateur `override` est nécessaire pour étendre ou modifier l’implémentation abstraite ou virtuelle d’une méthode, d’une propriété, d’un indexeur ou d’un événement hérités.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
-Dans cet exemple, la classe `Square` doit fournir une implémentation substituée de `GetArea`, car `GetArea` est héritée de la classe `Shape` abstraite :
+Dans cet exemple, `Square` la classe doit fournir `GetArea` `GetArea` une mise en `Shape` œuvre primordiale de parce qu’est hérité de la classe abstraite:
 
 [!code-csharp[csrefKeywordsModifiers#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsModifiers/CS/csrefKeywordsModifiers.cs#1)]
 
@@ -36,7 +36,7 @@ Une déclaration de propriété de substitution doit spécifier exactement les m
 
 Pour plus d’informations sur l’utilisation du mot clé `override`, consultez [Gestion de version avec les mots clés override et new](../../programming-guide/classes-and-structs/versioning-with-the-override-and-new-keywords.md) et [Savoir quand utiliser les mots clés override et new](../../programming-guide/classes-and-structs/knowing-when-to-use-override-and-new-keywords.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Cet exemple définit une classe de base nommée `Employee` et une classe dérivée nommée `SalesEmployee`. La classe `SalesEmployee` inclut un champ supplémentaire (`salesbonus`) et substitue la méthode `CalculatePay` afin de la prendre en compte.
 
@@ -48,12 +48,12 @@ Cet exemple définit une classe de base nommée `Employee` et une classe dériv�
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Héritage](../../programming-guide/classes-and-structs/inheritance.md)
 - [Mots clés C#](index.md)
 - [Modificateurs](index.md)
-- [abstract](abstract.md)
-- [virtual](virtual.md)
+- [Abstrait](abstract.md)
+- [Virtuel](virtual.md)
 - [new (modificateur)](new-modifier.md)
 - [Polymorphisme](../../programming-guide/classes-and-structs/polymorphism.md)

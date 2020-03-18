@@ -3,17 +3,17 @@ title: Vue d’ensemble de la classe XAttribute (C#)
 ms.date: 07/20/2015
 ms.assetid: 5a630f24-f9ad-400e-831e-c14ebfc9e142
 ms.openlocfilehash: 7a806314664c6319fc45cff0dddedbe38027059d
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635663"
 ---
 # <a name="xattribute-class-overview-c"></a>Vue d’ensemble de la classe XAttribute (C#)
 Les attributs sont des paires nom/valeur associées à un élément. La classe <xref:System.Xml.Linq.XAttribute> représente des attributs XML.  
   
-## <a name="overview"></a>Vue d'ensemble de  
- L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête LINQ pour une collection d’attributs a une apparence très semblable à une expression de requête LINQ pour une collection d’éléments.  
+## <a name="overview"></a>Vue d’ensemble  
+ L'utilisation des attributs dans [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] est semblable à l'utilisation des éléments. Leurs constructeurs sont similaires. Les méthodes que vous utilisez pour en récupérer des collections sont similaires. Une expression de requête LINQ pour une collection d’attributs ressemble beaucoup à une expression de requête LINQ pour une collection d’éléments.  
   
  L'ordre dans lequel les attributs ont été ajoutés à un élément est conservé. Autrement dit, lorsque vous itérez au sein des attributs, vous les voyez dans l'ordre dans lequel ils ont été ajoutés.  
   
@@ -22,7 +22,7 @@ Les attributs sont des paires nom/valeur associées à un élément. La classe <
   
 |Constructeur|Description|  
 |-----------------|-----------------|  
-|`XAttribute(XName name, object content)`|Elle crée un objet <xref:System.Xml.Linq.XAttribute>. L'argument `name` spécifie le nom de l'attribut ; l'argument `content` spécifie le contenu de l'attribut.|  
+|`XAttribute(XName name, object content)`|Crée un objet <xref:System.Xml.Linq.XAttribute>. L'argument `name` spécifie le nom de l'attribut ; l'argument `content` spécifie le contenu de l'attribut.|  
   
 ### <a name="creating-an-element-with-an-attribute"></a>Création d'un élément avec un attribut  
  Le code suivant illustre la tâche courante de création d’un élément qui contient un attribut :  
@@ -34,7 +34,7 @@ XElement phone = new XElement("Phone",
 Console.WriteLine(phone);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Phone Type="Home">555-555-5555</Phone>  
@@ -60,7 +60,7 @@ XElement c = new XElement("Customers",
 Console.WriteLine(c);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Customers>  

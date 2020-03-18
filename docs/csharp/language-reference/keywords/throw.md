@@ -10,17 +10,17 @@ helpviewer_keywords:
 - throw keyword [C#]
 ms.assetid: 5ac4feef-4b1a-4c61-aeb4-61d549e5dd42
 ms.openlocfilehash: 04d3138e3390627355b4b2d4e25c6b00248cec1a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75713051"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399335"
 ---
 # <a name="throw-c-reference"></a>throw (référence C#)
 
 Signale l’occurrence d’une exception pendant l’exécution du programme.  
   
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 La syntaxe de `throw` est :
 
@@ -47,9 +47,9 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
 
 ## <a name="the-throw-expression"></a>Expression `throw`
 
-À compter de C# 7.0, `throw` peut être utilisé comme expression et comme instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge. Elles incluent notamment :
+À compter de C# 7.0, `throw` peut être utilisé comme expression et comme instruction. Ainsi, une exception peut être levée dans des contextes qui n’étaient précédemment pas pris en charge. notamment :
 
-- [l’opérateur conditionnel](../operators/conditional-operator.md) : l’exemple suivant utilise une expression `throw` pour lever une exception <xref:System.ArgumentException> si une méthode reçoit un tableau de chaînes vide. Avant C# 7.0, cette logique devait figurer dans une instruction `if`/`else`.
+- [l’opérateur conditionnel](../operators/conditional-operator.md). l’exemple suivant utilise une expression `throw` pour lever une exception <xref:System.ArgumentException> si une méthode reçoit un tableau de chaînes vide. Avant C# 7.0, cette logique devait figurer dans une instruction `if`/`else`.
 
    [!code-csharp[csrefKeyword#4](~/samples/snippets/csharp/language-reference/keywords/throw/conditional.cs#1)]
 
@@ -67,8 +67,8 @@ Les appelants de méthode utilisent alors un bloc `try-catch` ou `try-catch-fina
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [try-catch](try-catch.md)
 - [Mots clés C#](index.md)
-- [Guide pratique pour lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [Comment : Jeter explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)

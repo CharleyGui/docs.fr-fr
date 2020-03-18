@@ -1,108 +1,108 @@
 ---
-title: Journalisation et suivi-.NET Core
-description: Présentation de la journalisation et du suivi de .NET Core.
+title: Enregistrement et traçage - .NET Core
+description: Une introduction à l’enregistrement et au traçage de base de .NET.
 ms.date: 08/05/2019
 ms.openlocfilehash: 392b88c9ea3c31c919a605ac0a5c886f7d63f79a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75714424"
 ---
-# <a name="net-core-logging-and-tracing"></a>Journalisation et suivi .NET Core
+# <a name="net-core-logging-and-tracing"></a>.NET Core logging and tracing
 
-La journalisation et le suivi sont en fait deux noms pour la même technique. La technique simple a été utilisée depuis les premiers jours d’ordinateurs. Cela implique simplement l’instrumentation d’une application pour écrire la sortie à consommer ultérieurement.
+L’exploitation forestière et le traçage sont vraiment deux noms pour la même technique. La technique simple a été utilisée depuis les premiers jours des ordinateurs. Il s’agit simplement d’instrumenter une application pour écrire la sortie à consommer plus tard.
 
-## <a name="reasons-to-use-logging-and-tracing"></a>Raisons pour utiliser la journalisation et le suivi
+## <a name="reasons-to-use-logging-and-tracing"></a>Raisons d’utiliser l’enregistrement et le traçage
 
-Cette technique simple est étonnamment puissante. Il peut être utilisé dans les situations où un débogueur échoue :
+Cette technique simple est étonnamment puissante. Il peut être utilisé dans les situations où un débbuggeur échoue :
 
-- Les problèmes survenant sur de longues périodes de temps peuvent être difficiles à déboguer avec un débogueur traditionnel. Les journaux permettent d’obtenir des informations détaillées sur de longues périodes de temps. En revanche, les débogueurs sont limités à l’analyse en temps réel.
-- Les applications multithread et les applications distribuées sont souvent difficiles à déboguer.  L’attachement d’un débogueur tend à modifier les comportements. Les journaux détaillés peuvent être analysés en fonction des besoins pour comprendre les systèmes complexes.
-- Les problèmes dans les applications distribuées peuvent provenir d’une interaction complexe entre de nombreux composants et il n’est pas judicieux de connecter un débogueur à chaque partie du système.
-- De nombreux services ne doivent pas être bloqués. L’attachement d’un débogueur provoque souvent des échecs de dépassement de délai.
-- Les problèmes ne sont pas toujours prévus. La journalisation et le suivi sont conçus pour une faible surcharge, afin que les programmes puissent toujours être enregistrées en cas de problème.
+- Les problèmes qui se produisent sur de longues périodes de temps, peuvent être difficiles à déboquer avec un débbugger traditionnel. Les journaux permettent un examen post-mortem détaillé couvrant de longues périodes de temps. En revanche, les débbuggeurs sont limités à l’analyse en temps réel.
+- Les applications multi-threaded et les applications distribuées sont souvent difficiles à déboiffer.  L’attachement d’un débbuggeur tend à modifier les comportements. Les journaux détaillés peuvent être analysés au besoin pour comprendre les systèmes complexes.
+- Les problèmes dans les applications distribuées peuvent résulter d’une interaction complexe entre de nombreux composants et il peut ne pas être raisonnable de connecter un débbugger à chaque partie du système.
+- De nombreux services ne devraient pas être bloqués. L’attachement d’un débogueur provoque souvent des échecs de délai d’attente.
+- Les problèmes ne sont pas toujours prévus. L’enregistrement et le traçage sont conçus pour les frais généraux faibles afin que les programmes puissent toujours être consigné en cas de problème.
 
-## <a name="net-core-apis"></a>API .NET Core
+## <a name="net-core-apis"></a>.NET Core API
 
 ### <a name="print-style-apis"></a>API de style d’impression
 
-Les classes <xref:System.Console?displayProperty=nameWithType>, <xref:System.Diagnostics.Trace?displayProperty=nameWithType>et <xref:System.Diagnostics.Debug?displayProperty=nameWithType> fournissent chacune des API de style d’impression similaires pratiques pour la journalisation.
+Les <xref:System.Console?displayProperty=nameWithType> <xref:System.Diagnostics.Trace?displayProperty=nameWithType>, <xref:System.Diagnostics.Debug?displayProperty=nameWithType> , et les classes fournissent chacune des API de style d’impression similaires pratique pour l’enregistrement.
 
-Vous avez le choix de l’API de style d’impression à utiliser. :
+Le choix de l’API de style d’impression à utiliser est à vous. :
 
 - <xref:System.Console?displayProperty=nameWithType>
-  - Toujours activé et écrit toujours sur la console.
+  - Toujours activé et écrit toujours à la console.
   - Utile pour les informations que votre client peut avoir besoin de voir dans la version.
-  - Étant donné qu’il s’agit de l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Ce code de débogage n’est souvent jamais archivé dans le contrôle de code source.
+  - Parce que c’est l’approche la plus simple, elle est souvent utilisée pour le débogage temporaire ad hoc. Ce code de débaillement n’est souvent jamais enregistré au contrôle de source.
 - <xref:System.Diagnostics.Trace?displayProperty=nameWithType>
-  - Activé uniquement lorsque `TRACE` est défini.
-  - Écrit dans les <xref:System.Diagnostics.Trace.Listeners>attachés, par défaut, le <xref:System.Diagnostics.DefaultTraceListener>.
-  - Utilisez cette API lors de la création de journaux qui seront activés dans la plupart des builds.
+  - Activé uniquement `TRACE` lorsque vous êtes défini.
+  - Écrit à <xref:System.Diagnostics.Trace.Listeners>ci-joint <xref:System.Diagnostics.DefaultTraceListener>, par défaut le .
+  - Utilisez cette API lors de la création de journaux qui seront activés dans la plupart des versions.
 - <xref:System.Diagnostics.Debug?displayProperty=nameWithType>
-  - Activé uniquement lorsque `DEBUG` est défini.
-  - Écrit dans un débogueur attaché.
-  - Sur `*nix` écrit dans stderr si `COMPlus_DebugWriteToStdErr` est défini.
-  - Utilisez cette API lors de la création de journaux qui seront activés uniquement dans les versions Debug.
+  - Activé uniquement `DEBUG` lorsque vous êtes défini.
+  - Écrit à un débbuggeur attaché.
+  - Sur `*nix` écrit à stderr si `COMPlus_DebugWriteToStdErr` est réglé.
+  - Utilisez cette API lors de la création de journaux qui ne seront activés que dans les constructions de débogé.
 
-### <a name="logging-events"></a>Événements de journalisation
+### <a name="logging-events"></a>Événements d’exploitation forestière
 
-Les API suivantes sont plus orientées événement. Au lieu d’enregistrer des chaînes simples, elles consignent des objets d’événement.
+Les API suivantes sont plus orientées vers l’événement. Plutôt que d’enregistrer des chaînes simples, ils enregistrent des objets d’événement.
 
 - <xref:System.Diagnostics.Tracing.EventSource?displayProperty=nameWithType>
-  - EventSource est l’API principale de suivi .NET Core racine.
-  - Disponible dans toutes les versions de .NET Standard.
-  - Autorise uniquement le suivi des objets sérialisables.
-  - Écrit dans les [écouteurs d’événements](xref:System.Diagnostics.Tracing.EventListener)attachés.
-  - .NET Core fournit des écouteurs pour :
-    - EventPipe de .NET Core sur toutes les plateformes
-    - [Suivi d’v nements pour Windows (ETW)](/windows/win32/etw/event-tracing-portal)
-    - [Infrastructure de suivi LTTng pour Linux](https://lttng.org/)
+  - EventSource est la principale racine .NET Core traçant API.
+  - Disponible dans toutes les versions .NET Standard.
+  - Permet seulement de retracer des objets sérialisables.
+  - Écrit aux [auditeurs de l’événement ci-joint](xref:System.Diagnostics.Tracing.EventListener).
+  - .NET Core fournit aux auditeurs pour :
+    - .NET Core’s EventPipe sur toutes les plateformes
+    - [Suivi d'événements pour Windows (ETW)](/windows/win32/etw/event-tracing-portal)
+    - [Cadre de traçage LTTng pour Linux](https://lttng.org/)
 
 - <xref:System.Diagnostics.DiagnosticSource?displayProperty=nameWithType>
-  - Inclus dans .NET Core et en tant que [package NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource) pour .NET Framework.
-  - Permet le suivi en cours des objets non sérialisables.
-  - Comprend un pont pour permettre l’écriture de champs sélectionnés d’objets journalisés dans une <xref:System.Diagnostics.Tracing.EventSource>.
+  - Inclus dans .NET Core et comme un [paquet NuGet](https://www.nuget.org/packages/System.Diagnostics.DiagnosticSource) pour .NET Framework.
+  - Permet le traçage en cours d’objets non sérialisables.
+  - Inclut un pont pour permettre l’écriture de <xref:System.Diagnostics.Tracing.EventSource>certains champs d’objets enregistrés à un .
 
 - <xref:System.Diagnostics.Activity?displayProperty=nameWithType>
-  - Fournit un moyen définitif d’identifier les messages du journal qui résultent d’une activité ou d’une transaction spécifique. Cet objet peut être utilisé pour mettre en corrélation les journaux entre différents services.
+  - Fournit un moyen définitif d’identifier les messages journalaux résultant d’une activité ou d’une transaction spécifique. Cet objet peut être utilisé pour corréler les journaux entre différents services.
 
 - <xref:System.Diagnostics.EventLog?displayProperty=nameWithType>
   - Windows uniquement.
-  - Écrit des messages dans le journal des événements Windows.
-  - Les administrateurs système attendent que des messages d’erreur d’application irrécupérables s’affichent dans le journal des événements Windows.
+  - Écrit des messages au journal d’événements Windows.
+  - Les administrateurs système s’attendent à ce que les messages d’erreur d’application mortels apparaissent dans le journal d’événements Windows.
 
-## <a name="ilogger-and-logging-frameworks"></a>Frameworks ILogger et Logging
+## <a name="ilogger-and-logging-frameworks"></a>Cadres ILogger et exploitation forestière
 
-Les API de bas niveau ne sont peut-être pas le bon choix pour vos besoins de journalisation. Vous pouvez envisager d’utiliser un Framework de journalisation.
+Les API de bas niveau peuvent ne pas être le bon choix pour vos besoins d’enregistrement. Vous voudrez peut-être envisager un cadre d’exploitation forestière.
 
-L’interface de <xref:Microsoft.Extensions.Logging.ILogger> a été utilisée pour créer une interface de journalisation commune dans laquelle les enregistreurs d’événements peuvent être insérés via l’injection de dépendances.
+L’interface <xref:Microsoft.Extensions.Logging.ILogger> a été utilisée pour créer une interface d’enregistrement commune où les enregistreurs peuvent être insérés par injection de dépendance.
 
-Par exemple, pour vous permettre de choisir le meilleur choix pour votre application `ASP.NET` offre la prise en charge d’une sélection de frameworks intégrés et tiers :
+Par exemple, vous permettre de faire le `ASP.NET` meilleur choix pour votre application offre un support pour une sélection de cadres intégrés et tiers:
 
-- [ASP.NET intégrés aux fournisseurs de journalisation](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
-- [ASP.NET fournisseurs de journalisation tiers](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
+- [ASP.NET construit dans les fournisseurs d’exploitation forestière](/aspnet/core/fundamentals/logging/#built-in-logging-providers)
+- [ASP.NET fournisseurs d’exploitation forestière tiers](/aspnet/core/fundamentals/logging/#third-party-logging-providers)
 
-## <a name="logging-related-references"></a>Références associées à la journalisation
+## <a name="logging-related-references"></a>Références liées à l’exploitation forestière
 
-- [Guide pratique pour effectuer une compilation conditionnelle avec Trace et Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
+- [Comment : effectuer une compilation conditionnelle avec Trace et Debug](../../framework/debug-trace-profile/how-to-compile-conditionally-with-trace-and-debug.md)
 
-- [Guide pratique pour ajouter des instructions de suivi au code d’application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
+- [Comment : ajouter des instructions de traçage dans le code d'une application](../../framework/debug-trace-profile/how-to-add-trace-statements-to-application-code.md)
 
-- La [journalisation ASP.net](/aspnet/core/fundamentals/logging) fournit une vue d’ensemble des techniques de journalisation qu’elle prend en charge.
+- [ASP.NET l’exploitation forestière](/aspnet/core/fundamentals/logging) donne un aperçu des techniques d’exploitation forestière qu’il prend en charge.
 
-- L’interpolation de chaîne peut simplifier l’écriture du code de journalisation. [ C# ](../../csharp/language-reference/tokens/interpolated.md)
+- [L’interpolation des chaînes de CMD](../../csharp/language-reference/tokens/interpolated.md) peut simplifier l’écriture de code d’enregistrement.
 
-- La propriété <xref:System.Exception.Message?displayProperty=nameWithType> est utile pour la journalisation des exceptions.
+- La <xref:System.Exception.Message?displayProperty=nameWithType> propriété est utile pour les exceptions d’enregistrement.
 
-- La classe <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> peut être utile pour fournir des informations de pile dans vos journaux.
+- La <xref:System.Diagnostics.StackTrace?displayProperty=nameWithType> classe peut être utile pour fournir des informations de pile dans vos journaux.
 
-## <a name="performance-considerations"></a>Considérations sur les performances
+## <a name="performance-considerations"></a>Considérations relatives aux performances
 
-La mise en forme des chaînes peut prendre un temps de traitement de l’UC notable.
+La mise en forme des cordes peut prendre un temps de traitement CPU notable.
 
-Dans les applications critiques pour les performances, il est recommandé de :
+Dans les applications critiques de performance, il est recommandé que vous :
 
-- Évitez un grand nombre de journaux quand aucun n’est à l’écoute. Évitez de créer des messages de journalisation coûteux en vérifiant si la journalisation est activée en premier.
-- Consignez uniquement ce qui est utile.
-- Différer la mise en forme complète à l’étape d’analyse.
+- Évitez beaucoup de connexion lorsque personne n’écoute. Évitez de construire des messages d’enregistrement coûteux en vérifiant si l’enregistrement est activé en premier.
+- Enregistrez seulement ce qui est utile.
+- Reportez le formatage de fantaisie à l’étape de l’analyse.

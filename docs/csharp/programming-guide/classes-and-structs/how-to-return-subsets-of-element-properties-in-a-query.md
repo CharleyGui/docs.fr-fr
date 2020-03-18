@@ -1,17 +1,17 @@
 ---
-title: Comment retourner des sous-ensembles de propriétés d’élément dans un C# Guide de programmation de requêtes
+title: Comment retourner les sous-ensembles de propriétés d’éléments dans une requête - Guide de programmation C
 ms.date: 07/20/2015
 helpviewer_keywords:
 - anonymous types [C#], for subsets of element properties
 ms.assetid: fabdf349-f443-4e3f-8368-6c471be1dd7b
 ms.openlocfilehash: 27a2626fc46307a7195040adf746d8d8757d2f82
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75714856"
 ---
-# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Comment retourner des sous-ensembles de propriétés d’éléments dans uneC# requête (Guide de programmation)
+# <a name="how-to-return-subsets-of-element-properties-in-a-query-c-programming-guide"></a>Comment retourner les sous-ensembles de propriétés d’éléments dans une requête (Guide de programmation C)
 Utilisez un type anonyme dans une expression de requête lorsque les deux conditions suivantes s’appliquent :  
   
 - Vous souhaitez retourner uniquement certaines propriétés de chaque élément source.  
@@ -24,7 +24,7 @@ Utilisez un type anonyme dans une expression de requête lorsque les deux condit
 select student.ID;  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’exemple suivant montre comment utiliser un type anonyme pour retourner uniquement un sous-ensemble des propriétés de chaque élément source qui répond à la condition spécifiée.  
   
  [!code-csharp[csProgGuideLINQ#31](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideLINQ/CS/csRef30LangFeatures_2.cs#31)]  

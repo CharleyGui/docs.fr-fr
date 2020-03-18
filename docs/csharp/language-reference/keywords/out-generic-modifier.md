@@ -6,10 +6,10 @@ helpviewer_keywords:
 - out keyword [C#]
 ms.assetid: f8c20dec-a8bc-426a-9882-4076b1db1e00
 ms.openlocfilehash: 97ddae2efe55be89840f7a483c18d61259020283
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713284"
 ---
 # <a name="out-generic-modifier-c-reference"></a>out (modificateur générique) (référence C#)
@@ -54,5 +54,5 @@ Dans un délégué générique, un type peut être déclaré comme étant covari
 ## <a name="see-also"></a>Voir aussi
 
 - [Variance dans les interfaces génériques](../../programming-guide/concepts/covariance-contravariance/variance-in-generic-interfaces.md)
-- [in](in-generic-modifier.md)
+- [Dans](in-generic-modifier.md)
 - [Modificateurs](index.md)

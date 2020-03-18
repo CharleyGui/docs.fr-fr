@@ -4,10 +4,10 @@ description: L’API de ML automatisé ML.NET automatise le processus de génér
 ms.date: 12/18/2019
 ms.custom: mvc,how-to
 ms.openlocfilehash: b322c484282d025033d747d2093f7b5b4d216fde
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75636560"
 ---
 # <a name="how-to-use-the-mlnet-automated-machine-learning-api"></a>Guide pratique pour utiliser l’API de machine learning automatisé ML.NET
@@ -21,7 +21,7 @@ Le machine learning automatisé (AutoML) automatise le processus d’application
 
 Le machine learning automatisé prend en charge le chargement d’un jeu de données dans un [IDataView](xref:Microsoft.ML.IDataView). Les données peuvent se présenter sous la forme de fichiers de valeurs séparées par une tabulation (TSV) et de fichiers de valeurs séparées par une virgule (CSV).
 
-Exemple :
+Exemple :
 
 ```csharp
 using Microsoft.ML;
@@ -37,7 +37,7 @@ Avant de créer une expérience, déterminer le type de problème de machine lea
 
 * Classification binaire
 * Classification multiclasse
-* Régression
+* régression ;
 * Recommandation
 
 ## <a name="create-experiment-settings"></a>Créer les paramètres de l’expérience
@@ -56,7 +56,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
   var experimentSettings = new MulticlassExperimentSettings();
   ```
 
-* Régression
+* régression ;
 
   ```csharp
   var experimentSettings = new RegressionExperimentSettings();
@@ -72,7 +72,7 @@ Créez les paramètres de l’expérience pour le type de tâche de ML détermin
 
 Les expériences sont largement configurables. Consultez la [documentation sur l’API AutoML](https://docs.microsoft.com/dotnet/api/microsoft.ml.automl?view=ml-dotnet-preview) pour obtenir la liste complète des paramètres de configuration.
 
-Quelques exemples :
+Voici quelques exemples :
 
 1. Spécifier la durée maximale pendant laquelle l’expérience est autorisée à s’exécuter.
 
@@ -117,11 +117,11 @@ Vous trouverez la liste des entraîneurs pris en charge par tâche de ML en cliq
 * [Algorithmes de classification binaire pris en charge](xref:Microsoft.ML.AutoML.BinaryClassificationTrainer)
 * [Algorithmes de classification multiclasse pris en charge](xref:Microsoft.ML.AutoML.MulticlassClassificationTrainer)
 * [Algorithmes de régression pris en charge](xref:Microsoft.ML.AutoML.RegressionTrainer)
-* [Algorithmes de recommandation pris en charge](xref:Microsoft.ML.AutoML.RecommendationTrainer)
+* [Algorithmes de recommandation soutenus](xref:Microsoft.ML.AutoML.RecommendationTrainer)
 
 ## <a name="optimizing-metric"></a>Métrique d’optimisation
 
-La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, détermine la métrique à optimiser pendant l’entraînement du modèle. La métrique d’optimisation que vous pouvez sélectionner est déterminée par le type de tâche que vous choisissez. Voici la liste des métriques disponibles.
+La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, détermine la métrique à optimiser pendant l’entraînement du modèle. La métrique d’optimisation que vous pouvez sélectionner est déterminée par le type de tâche que vous choisissez. Vous trouverez plus bas une liste des métriques disponibles.
 
 |[Classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric) | [Classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric) |[Recommandation de régression &](xref:Microsoft.ML.AutoML.RegressionMetric)
 |-- |-- |--
@@ -137,13 +137,13 @@ La métrique d’optimisation, comme illustré dans l’exemple ci-dessus, déte
 ## <a name="data-pre-processing-and-featurization"></a>Prétraitement et caractérisation des données
 
 > [!NOTE]
-> La colonne de fonctionnalité ne prend en charge que les types de <xref:System.Boolean>, <xref:System.Single>et <xref:System.String>.
+> La colonne de fonctionnalités <xref:System.Single>ne <xref:System.String>supportait que les types de <xref:System.Boolean>, , et .
 
 Le prétraitement des données a lieu par défaut et les étapes suivantes sont effectuées automatiquement :
 
 1. Supprimer les caractéristiques dépourvues d’informations utiles
 
-    Supprimer des jeux d’entraînement et de validation les caractéristiques dépourvues d’informations utiles. Celles-ci incluent les caractéristiques dont toutes les valeurs sont manquantes, dont toutes les lignes ont la même valeur ou présentant une cardinalité très élevée (par exemple, hachages, ID ou GUID).
+    Suppression des caractéristiques sans informations utiles dans les jeux d’entraînement et de validation. Il s’agit des caractéristiques dont toutes les valeurs sont manquantes, ayant la même valeur dans toutes les lignes ou présentant une cardinalité très élevée (par exemple des hachages, des ID ou des GUID).
 
 1. Indication et imputation des valeurs manquantes
 
@@ -151,9 +151,9 @@ Le prétraitement des données a lieu par défaut et les étapes suivantes sont 
 
 1. Générer des caractéristiques supplémentaires
 
-    Pour les fonctionnalités de texte : fonctionnalités de conteneur de mots utilisant unigrammes et trois caractères-grammes.
+    Pour les fonctions de texte : Caractéristiques du sac de mot à l’aide d’unigrammes et de tri-caractère-grammes.
 
-    Pour les fonctionnalités catégoriques : l’encodage à chaud pour les fonctionnalités de cardinalité faible et l’encodage à hachage à chaud pour les fonctionnalités catégoriques de cardinalité élevée.
+    Pour les caractéristiques catégoriques: Un-chaud codage pour les caractéristiques de faible cardinalité, et un-chaud-hachage codage pour les caractéristiques catégoriques de haute cardinalité.
 
 1. Transformations et encodages
 
@@ -195,7 +195,7 @@ Explorez d’autres surcharges pour `Execute()` si vous souhaitez passer des don
 
 ## <a name="training-modes"></a>Modes d’entraînement
 
-### <a name="training-dataset"></a>Jeu de données d'apprentissage
+### <a name="training-dataset"></a>Jeu de données d’entraînement
 
 AutoML met à votre disposition une méthode d’exécution d’expérience surchargée qui vous permet de fournir des données d’entraînement. En interne, le ML automatisé divise les données en fractionnements entraînement/validation.
 
@@ -211,7 +211,7 @@ Utilisez un jeu de données de validation personnalisé si un fractionnement al�
 experiment.Execute(trainDataView, validationDataView);
 ```
 
-## <a name="explore-model-metrics"></a>Explorer les métriques de modèle
+## <a name="explore-model-metrics"></a>Explorer les métriques du modèle
 
 Après chaque itération d’une expérience de ML, les métriques relatives à la tâche concernée sont stockées.
 
@@ -227,7 +227,7 @@ Voici toutes les métriques disponibles par tâche de ML :
 
 * [Métriques de classification binaire](xref:Microsoft.ML.AutoML.BinaryClassificationMetric)
 * [Métriques de classification multiclasse](xref:Microsoft.ML.AutoML.MulticlassClassificationMetric)
-* [Mesure de la régression & les mesures de recommandation](xref:Microsoft.ML.AutoML.RegressionMetric)
+* [Mesures de recommandation & de régression](xref:Microsoft.ML.AutoML.RegressionMetric)
 
 ## <a name="see-also"></a>Voir aussi
 

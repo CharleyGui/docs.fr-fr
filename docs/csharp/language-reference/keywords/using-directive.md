@@ -5,10 +5,10 @@ helpviewer_keywords:
 - using directive [C#]
 ms.assetid: b42b8e61-5e7e-439c-bb71-370094b44ae8
 ms.openlocfilehash: 4f7ddad8c3dc12391ef6bf345a73ebb384400b38
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77093147"
 ---
 # <a name="using-directive-c-reference"></a>using, directive (référence C#)
@@ -35,7 +35,7 @@ La directive `using` a trois utilisations :
     using Project = PC.MyCompany.Project;
     ```
 
-Le mot clé `using` est également utilisé pour créer des *instructions using*, qui garantissent que les objets <xref:System.IDisposable> tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [Instruction using](using-statement.md).
+Le mot clé `using` est également utilisé pour créer des *instructions using<xref:System.IDisposable>, qui garantissent que les objets * tels que les fichiers et les polices sont gérés correctement. Pour plus d’informations, consultez [Instruction using](using-statement.md).
 
 ## <a name="using-static-type"></a>Utilisation du type statique
 
@@ -53,7 +53,7 @@ class Program
 }
 ```
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 La portée d'une directive `using` se limite au fichier dans lequel elle apparaît.
 
@@ -95,9 +95,9 @@ Pour plus d’informations, consultez [Directives using](~/_csharplang/spec/name
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Utilisation d’espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
+- [Utilisation de Namespaces](../../programming-guide/namespaces/using-namespaces.md)
 - [Mots clés C#](index.md)
 - [Espaces de noms](../../programming-guide/namespaces/index.md)
-- [using, instruction](using-statement.md)
+- [à l’aide de l’Énoncé](using-statement.md)

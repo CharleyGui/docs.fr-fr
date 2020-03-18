@@ -1,18 +1,18 @@
 ---
-title: LINQ to XML et autres Technologies3 XML
+title: LINQ à XML vs Autres technologies XML3
 ms.date: 07/20/2015
 ms.assetid: 01b8e746-12d3-471d-b811-7539e4547784
 ms.openlocfilehash: 4cade6ecbee95ee288db34246986858609697731
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635676"
 ---
 # <a name="linq-to-xml-vs-other-xml-technologies"></a>Comparaison de LINQ to XML et des autres technologies XML
 Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux technologies XML suivantes : <xref:System.Xml.XmlReader>, XSLT, MSXML et XmlLite. Ces informations peuvent vous aider à décider de la technologie à utiliser.  
   
- Pour une comparaison entre les [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] et le Document Object Model (DOM), consultez [LINQ to XML et DOM (C#)](./linq-to-xml-vs-dom.md).  
+ Pour une [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] comparaison avec le modèle d’objet de document (DOM), voir [LINQ à XML vs DOM (C)](./linq-to-xml-vs-dom.md).  
   
 ## <a name="linq-to-xml-vs-xmlreader"></a>Comparaison de LINQ to XML et de XmlReader  
  <xref:System.Xml.XmlReader> est un analyseur rapide, avant uniquement et sans mise en cache.  
@@ -50,7 +50,7 @@ Cette rubrique compare [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] aux
   
  Le principal avantage de XmlLite est sa légèreté et sa rapidité d'analyse XML. De plus, il est sécurisé dans la plupart des scénarios. Sa surface de menace est très faible. Si vous devez analyser des documents non approuvés et que vous souhaitez vous protéger contre les attaques de type déni de service ou exposition de données, XmlLite peut constituer un bon choix.  
   
- XmlLite n’est pas intégré à LINQ (Language-Integrated Query). Elle ne produit pas les améliorations de productivité des programmeurs qui sont la force de motivation derrière LINQ.  
+ XmlLite n’est pas intégré à la requête intégrée aux langues (LINQ). Il ne donne pas aux programmeurs des améliorations de la productivité qui sont la force de motivation derrière LINQ.  
   
 ## <a name="see-also"></a>Voir aussi
 

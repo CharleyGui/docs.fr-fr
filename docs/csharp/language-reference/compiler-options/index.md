@@ -11,10 +11,10 @@ helpviewer_keywords:
 - Visual C#, compiler options
 ms.assetid: d3403556-1816-4546-a782-e8223a772e44
 ms.openlocfilehash: 787f9c5fff79eb67e2d74043782532c1fc4034b5
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73972746"
 ---
 # <a name="c-compiler-options"></a>Options du compilateur C#
@@ -23,22 +23,22 @@ Le compilateur produit des fichiers exécutables (.exe), des bibliothèques de l
 
 Chaque option du compilateur est disponible sous deux formes : **-option** et **/option**. La documentation présente uniquement la forme **-option**.
 
-Dans Visual Studio, vous définissez les options du compilateur dans le fichier *Web. config* . Pour plus d’informations, consultez [\<compilateur> Élément](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
+Dans Visual Studio, vous définissez des options de compilateur dans le fichier *web.config.* Pour plus d’informations, voir [ \<compilateur> Element](../../../framework/configure-apps/file-schema/compiler/compiler-element.md).
 
-## <a name="in-this-section"></a>Dans cette section
+## <a name="in-this-section"></a>Contenu de cette section
 
-- [Génération à partir de la ligne de commande avec CSC. exe](command-line-building-with-csc-exe.md) Informations sur la création d' C# une application visuelle à partir de la ligne de commande.
+- [Bâtiment de la ligne de commandement avec csc.exe](command-line-building-with-csc-exe.md) Informations sur la construction d’une application Visual C à partir de la ligne de commande.
 
-- [Comment définir des variables d’environnement pour la ligne de commande Visual Studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Fournit la procédure d’exécution de *vsvars32. bat* pour activer les générations à partir de la ligne de commande.
+- [Comment définir les variables de l’environnement pour la ligne de commandement visual studio](how-to-set-environment-variables-for-the-visual-studio-command-line.md) Fournit des étapes pour courir *vsvars32.bat* pour permettre des builds de ligne de commande.
 
-- [Options du compilateur classées par catégorie C# ](listed-by-category.md) Liste catégorique des options du compilateur.
+- [Options de compilateur CD répertoriées par catégorie](listed-by-category.md) Une liste catégorique des options de compilateur.
 
-- [Options du compilateur classées par ordre alphabétique C# ](listed-alphabetically.md) Liste alphabétique des options du compilateur.
+- [Options de compilateur C énumérés par ordre alphabétique](listed-alphabetically.md) Une liste alphabétique des options de compilateur.
 
-## <a name="related-sections"></a>Rubriques connexes
+## <a name="related-sections"></a>Sections connexes
 
-- [Générer, page du concepteur de projets](/visualstudio/ide/reference/build-page-project-designer-csharp) Définition des propriétés qui régissent la compilation, la génération et le débogage de votre projet. Contient des informations sur les étapes de génération personnalisée dans les projets Visual C#.
+- [Page de construction, concepteur de projet](/visualstudio/ide/reference/build-page-project-designer-csharp) Définir des propriétés qui régissent la façon dont votre projet est compilé, construit et débogé. Contient des informations sur les étapes de génération personnalisée dans les projets Visual C#.
 
-- [Builds par défaut et personnalisées](/visualstudio/ide/compiling-and-building-in-visual-studio) Informations sur les types de build et les configurations.
+- [Builds par défaut et personnalisés](/visualstudio/ide/compiling-and-building-in-visual-studio) Informations sur les types et configurations de construction.
 
-- [Préparation et gestion des builds](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procédures de génération dans l’environnement de développement Visual Studio.
+- [Préparation et gestion des constructions](/visualstudio/ide/building-and-cleaning-projects-and-solutions-in-visual-studio) Procédures de construction dans l’environnement de développement Visual Studio.

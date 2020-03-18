@@ -4,16 +4,16 @@ description: En savoir plus sur les types de frameworks prenant en charge les ar
 ms.date: 06/20/2016
 ms.technology: csharp-advanced-concepts
 ms.assetid: e9c85021-0d36-48af-91b7-aaaa66f22654
-ms.openlocfilehash: 157e97594f27345ac96fe91f7dd6f29907c2c7ac
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 8483c46dde3ea97138e55ab84a5924a3d2578730
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037618"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146084"
 ---
 # <a name="framework-types-supporting-expression-trees"></a>Types de frameworks prenant en charge les arborescences d’expressions
 
-[Précédent -- Explication des arborescences d’expressions](expression-trees-explained.md)
+[Précédent – Explication des arborescences d’expressions](expression-trees-explained.md)
 
 Il existe une longue liste de classes dans le framework .NET Core qui fonctionnent avec des arborescences d’expressions.
 Vous pouvez voir la liste complète dans <xref:System.Linq.Expressions>.
@@ -65,5 +65,5 @@ Il existe des types de nœuds Expression qui mappent à presque tous les éléme
 3. Examinez la classe `ExpressionVisitor` pour générer une arborescence d’expressions modifiée.
 
 Vous trouverez davantage de choses à mesure que vous examinez chacune de ces trois zones. Vous trouverez invariablement ce dont vous avez besoin si vous commencez avec l’une de ces trois étapes.
- 
- [Suivant -- Exécution d’arborescences d’expressions](expression-trees-execution.md)
+
+ [Suivant – Exécution d’arborescences d’expressions](expression-trees-execution.md)

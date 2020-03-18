@@ -153,7 +153,7 @@
               href: icorprofilercallback-runtimethreadresumed-method.md
             - name: 'RuntimeThreadSuspended, méthode'
               href: icorprofilercallback-runtimethreadsuspended-method.md
-            - name: Shutdown Method
+            - name: 'Shutdown, méthode'
               href: icorprofilercallback-shutdown-method.md
             - name: 'ThreadAssignedToOSThread, méthode'
               href: icorprofilercallback-threadassignedtoosthread-method.md

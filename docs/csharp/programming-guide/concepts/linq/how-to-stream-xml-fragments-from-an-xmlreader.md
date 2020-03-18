@@ -1,15 +1,15 @@
 ---
-title: Comment diffuser des fragments XML en continu à partirC#d’un XmlReader ()
+title: Comment diffuser des fragments de XML à partir d’un XmlReader (C)
 ms.date: 07/20/2015
 ms.assetid: 4a8f0e45-768a-42e2-bc5f-68bdf0e0a726
 ms.openlocfilehash: f7914d33622518f983a685dd2e844a25fd3ca15f
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75714655"
 ---
-# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Comment diffuser des fragments XML en continu à partirC#d’un XmlReader ()
+# <a name="how-to-stream-xml-fragments-from-an-xmlreader-c"></a>Comment diffuser des fragments de XML à partir d’un XmlReader (C)
 
 Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de charger l’intégralité de l’arborescence XML en mémoire. Cette rubrique montre comment diffuser des fragments en continu à l'aide d'un objet <xref:System.Xml.XmlReader>.  
   
@@ -19,12 +19,12 @@ Lorsque vous devez traiter de grands fichiers XML, il peut être impossible de c
   
  Si vous souhaitez créer une arborescence partielle, vous pouvez instancier un objet <xref:System.Xml.XmlReader>, positionner le lecteur sur le nœud que vous souhaitez convertir en une arborescence <xref:System.Xml.Linq.XElement>, puis créer l'objet <xref:System.Xml.Linq.XElement>.  
   
-La rubrique [Comment diffuser en continu des fragments XML avec accès aux informationsC#d’en-tête ()](./how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple sur la façon de diffuser un document plus complexe.
+Le sujet [Comment diffuser des fragments de XML avec accès à des informations d’en-tête (C)](./how-to-stream-xml-fragments-with-access-to-header-information.md) contient des informations et un exemple sur la façon de diffuser un document plus complexe.
   
- La rubrique Guide pratique [pour effectuer une transformation de diffusion en continuC#de documents XML volumineux ()](./how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ to XML pour transformer des documents XML extrêmement volumineux tout en conservant un faible encombrement mémoire.  
+ Le sujet [Comment effectuer la transformation en continu de grands documents XML (C)](./how-to-perform-streaming-transform-of-large-xml-documents.md) contient un exemple d’utilisation de LINQ à XML pour transformer des documents XML extrêmement grands tout en maintenant une petite empreinte mémoire.  
   
-## <a name="example"></a>Exemple  
- Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l’interroger à l’aide d’une requête LINQ. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
+## <a name="example"></a> Exemple  
+ Cet exemple crée une méthode d'axe personnalisée. Vous pouvez l’interroger en utilisant une requête LINQ. La méthode d'axe personnalisée, `StreamRootChildDoc`, est une méthode conçue spécifiquement pour lire un document qui possède un élément `Child` à répétition.  
   
 ```csharp  
 static IEnumerable<XElement> StreamRootChildDoc(StringReader stringReader)  
@@ -74,7 +74,7 @@ static void Main(string[] args)
 }  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 bbb  

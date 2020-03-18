@@ -10,27 +10,27 @@ helpviewer_keywords:
 - statements [C#]
 ms.assetid: 20f8469d-5a6a-4084-ad90-0856b7e97e45
 ms.openlocfilehash: b339158848dac30f8c87a372b44574f6114a6aed
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75698636"
 ---
 # <a name="statements-expressions-and-operators-c-programming-guide"></a>Instructions, expressions et opérateurs (guide de programmation C#)
 
 Le code C# qui comprend une application se compose d’instructions à base de mots clés, d’expressions et d’opérateurs. Cette section contient des informations concernant ces éléments fondamentaux d’un programme C#.
 
- Pour plus d'informations, consultez .
+ Pour plus d'informations, consultez les pages suivantes :
 
-- [Instructions](statements.md)
+- [Déclarations](statements.md)
 
 - [Expressions](expressions.md)
 
-  - [Membres expression-bodied](expression-bodied-members.md)
+  - [Membres porteurs d’expression](expression-bodied-members.md)
 
 - [Fonctions anonymes](anonymous-functions.md)
 
-- [Comparaisons d’égalité](equality-comparisons.md)
+- [Comparaisons sur l’égalité](equality-comparisons.md)
 
 ## <a name="c-language-specification"></a>Spécification du langage C#
 
@@ -39,4 +39,4 @@ Le code C# qui comprend une application se compose d’instructions à base de m
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Cast et conversions de types](../types/casting-and-type-conversions.md)
+- [Conversions de casting et de type](../types/casting-and-type-conversions.md)

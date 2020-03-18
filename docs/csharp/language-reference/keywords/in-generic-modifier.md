@@ -5,10 +5,10 @@ helpviewer_keywords:
 - contravariance, in keyword [C#]
 - in keyword [C#]
 ms.openlocfilehash: 57da13f6dc6719166b9051afeb2532ba5fbeff3a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713484"
 ---
 # <a name="in-generic-modifier-c-reference"></a>in (modificateur générique) (Référence C#)
@@ -44,5 +44,5 @@ L’exemple de code suivant montre comment déclarer, instancier et invoquer un 
 ## <a name="see-also"></a>Voir aussi
 
 - [out](out-generic-modifier.md)
-- [Covariance et contravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
+- [Covariance et Contravariance](../../programming-guide/concepts/covariance-contravariance/index.md)
 - [Modificateurs](index.md)

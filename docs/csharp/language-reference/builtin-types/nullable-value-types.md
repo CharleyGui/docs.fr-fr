@@ -1,126 +1,126 @@
 ---
-title: Types valeur Nullable- C# référence
-description: En savoir C# plus sur les types valeur Nullable et leur utilisation
+title: Types de valeur nuls - Référence C
+description: Renseignez-vous sur les types de valeur nulS de C et sur la façon de les utiliser
 ms.date: 11/04/2019
 helpviewer_keywords:
 - nullable value types [C#]
-ms.openlocfilehash: 9b7a1e7e639608248b4b465bd440247b4061f52e
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: a84b3d60269491846b783e5046a84a1d14e258a1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239792"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399587"
 ---
-# <a name="nullable-value-types-c-reference"></a>Types valeur Nullable (C# référence)
+# <a name="nullable-value-types-c-reference"></a>Types de valeur nuls (référence C)
 
-Un *type valeur nullable* `T?` représente toutes les valeurs de son [type valeur](value-types.md) sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Par exemple, vous pouvez assigner l’une des trois valeurs suivantes à une variable `bool?` : `true`, `false`ou `null`. Un type valeur sous-jacent `T` ne peut pas être un type valeur Nullable lui-même.
+Un *type* `T?` de valeur in nullable représente toutes les valeurs de son type `T` de [valeur](value-types.md) sous-jacente et une valeur [nulle](../keywords/null.md) supplémentaire. Par exemple, vous pouvez attribuer l’une `bool?` des `true` `false`trois `null`valeurs suivantes à une variable : , , ou . Un type `T` de valeur sous-jacent ne peut pas être un type de valeur nul lui-même.
 
 > [!NOTE]
-> C#8,0 introduit la fonctionnalité de types référence Nullable. Pour plus d’informations, consultez [types de référence Nullable](../../nullable-references.md). Les types valeur Nullable sont disponibles à partir C# de 2.
+> C 8.0 introduit la fonction de type de référence nul. Pour plus d’informations, voir [Les types de référence Nullable](../../nullable-references.md). Les types de valeur nulles sont disponibles à partir de C 2.
 
-Tout type valeur Nullable est une instance de la structure <xref:System.Nullable%601?displayProperty=nameWithType> générique. Vous pouvez faire référence à un type valeur Nullable avec un type sous-jacent `T` dans l’un des formulaires interchangeables suivants : `Nullable<T>` ou `T?`.
+Tout type de valeur in nullable est un exemple de la structure générique. <xref:System.Nullable%601?displayProperty=nameWithType> Vous pouvez vous référer à un type `T` de valeur nul avec `Nullable<T>` un `T?`type sous-jacent dans l’un des formulaires interchangeables suivants : ou .
 
-En général, vous utilisez un type valeur Nullable lorsque vous devez représenter la valeur indéfinie d’un type valeur sous-jacent. Par exemple, une variable booléenne ou `bool`peut être `true` ou `false`. Toutefois, dans certaines applications, une valeur de variable peut être indéfinie ou manquante. Par exemple, un champ de base de données peut contenir `true` ou `false`, ou il peut ne contenir aucune valeur, autrement dit, `NULL`. Vous pouvez utiliser le type de `bool?` dans ce scénario.
+Vous utilisez généralement un type de valeur inquérable lorsque vous devez représenter la valeur indéfinie d’un type de valeur sous-jacent. Par exemple, un Boolean, ou `bool`, `true` `false`variable ne peut être soit ou . Toutefois, dans certaines applications, une valeur variable peut être indéfinie ou manquante. Par exemple, un champ `true` `false`de base de données peut contenir ou, ou il peut ne contenir aucune valeur du tout, c’est-à-dire, `NULL`. Vous pouvez `bool?` utiliser le type dans ce scénario.
 
 ## <a name="declaration-and-assignment"></a>Déclaration et affectation
 
-Comme un type valeur est implicitement convertible en type valeur Nullable correspondant, vous pouvez assigner une valeur à une variable d’un type valeur Nullable comme vous le feriez pour son type valeur sous-jacent. Vous pouvez également affecter la valeur `null`. Par exemple :
+Comme un type de valeur est implicitement convertible au type de valeur nullable correspondant, vous pouvez attribuer une valeur à une variable d’un type de valeur nul, comme vous le feriez pour son type de valeur sous-jacente. Vous pouvez également affecter la valeur `null`. Par exemple :
 
-[!code-csharp[declare and assign](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Declaration)]
+[!code-csharp[declare and assign](snippets/NullableValueTypes.cs#Declaration)]
 
-La valeur par défaut d’un type valeur Nullable représente `null`, autrement dit, il s’agit d’une instance dont la propriété <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> retourne `false`.
+La valeur par défaut d’un type de valeur nul représente, `null`c’est-à-dire, c’est une instance dont <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> la propriété retourne `false`.
 
-## <a name="examination-of-an-instance-of-a-nullable-value-type"></a>Examen d’une instance d’un type valeur Nullable
+## <a name="examination-of-an-instance-of-a-nullable-value-type"></a>Examen d’un cas de type de valeur nul
 
-À partir C# de 7,0, vous pouvez utiliser l' [opérateur`is` avec un modèle de type](../operators/type-testing-and-cast.md#type-testing-with-pattern-matching) pour examiner à la fois une instance d’un type valeur Nullable pour `null` et récupérer une valeur d’un type sous-jacent :
+En commençant par le C 7.0, vous pouvez utiliser [ `is` l’opérateur avec un](../operators/type-testing-and-cast.md#type-testing-with-pattern-matching) `null` modèle de type pour examiner à la fois une instance d’un type de valeur nul pour et récupérer une valeur d’un type sous-jacent :
 
-[!code-csharp-interactive[use pattern matching](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#PatternMatching)]
+[!code-csharp-interactive[use pattern matching](snippets/NullableValueTypes.cs#PatternMatching)]
 
-Vous pouvez toujours utiliser les propriétés en lecture seule suivantes pour examiner et obtenir la valeur d’une variable de type valeur Nullable :
+Vous pouvez toujours utiliser les propriétés suivantes pour examiner et obtenir une valeur d’une variable de type valeur nulle :
 
-- <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType> indique si une instance d’un type valeur Nullable a une valeur de son type sous-jacent.
+- <xref:System.Nullable%601.HasValue%2A?displayProperty=nameWithType>indique si un cas de type de valeur nulle a une valeur de son type sous-jacent.
 
 - <xref:System.Nullable%601.Value%2A?displayProperty=nameWithType> obtient la valeur d’un type sous-jacent si <xref:System.Nullable%601.HasValue%2A> est `true`. Si <xref:System.Nullable%601.HasValue%2A> est `false`, la propriété <xref:System.Nullable%601.Value%2A> lève une <xref:System.InvalidOperationException>.
 
-L’exemple suivant utilise la propriété `HasValue` pour tester si la variable contient une valeur avant de l’afficher :
+L’exemple suivant `HasValue` utilise la propriété pour vérifier si la variable contient une valeur avant de l’afficher :
 
-[!code-csharp-interactive[use HasValue](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#HasValue)]
+[!code-csharp-interactive[use HasValue](snippets/NullableValueTypes.cs#HasValue)]
 
-Vous pouvez également comparer une variable d’un type valeur Nullable avec `null` au lieu d’utiliser la propriété `HasValue`, comme le montre l’exemple suivant :
+Vous pouvez également comparer une variable d’un type de valeur nul avec `null` au lieu d’utiliser la `HasValue` propriété, comme le montre l’exemple suivant :
 
-[!code-csharp-interactive[use comparison with null](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#CompareWithNull)]
+[!code-csharp-interactive[use comparison with null](snippets/NullableValueTypes.cs#CompareWithNull)]
 
-## <a name="conversion-from-a-nullable-value-type-to-an-underlying-type"></a>Conversion d’un type valeur Nullable en un type sous-jacent
+## <a name="conversion-from-a-nullable-value-type-to-an-underlying-type"></a>Conversion d’un type de valeur in nullable à un type sous-jacent
 
-Si vous souhaitez assigner une valeur d’un type valeur Nullable à une variable de type valeur n’acceptant pas les valeurs NULL, vous devrez peut-être spécifier la valeur à assigner à la place de `null`. Utilisez l' [opérateur de fusion null `??`](../operators/null-coalescing-operator.md) pour ce faire (vous pouvez également utiliser la méthode <xref:System.Nullable%601.GetValueOrDefault(%600)?displayProperty=nameWithType> dans le même but) :
+Si vous souhaitez attribuer une valeur d’un type de valeur nul à une variable de type valeur `null`non annulable, vous devrez peut-être spécifier la valeur à attribuer à la place de . Utilisez [l’opérateur `??` de fusion nulle](../operators/null-coalescing-operator.md) pour le faire <xref:System.Nullable%601.GetValueOrDefault(%600)?displayProperty=nameWithType> (vous pouvez également utiliser la méthode dans le même but):
 
-[!code-csharp-interactive[?? operator](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#NullCoalescing)]
+[!code-csharp-interactive[?? operator](snippets/NullableValueTypes.cs#NullCoalescing)]
 
-Si vous souhaitez utiliser la valeur [par défaut](default-values.md) du type de valeur sous-jacent à la place de `null`, utilisez la méthode <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType>.
+Si vous souhaitez utiliser la valeur [par défaut](default-values.md) `null`du type <xref:System.Nullable%601.GetValueOrDefault?displayProperty=nameWithType> de valeur sous-jacente à la place de , utilisez la méthode.
 
-Vous pouvez également effectuer un cast explicite d’un type valeur Nullable vers un type non Nullable, comme le montre l’exemple suivant :
+Vous pouvez également lancer explicitement un type de valeur nul à un type non annulable, comme l’exemple suivant le montre :
 
-[!code-csharp[explicit cast](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Cast)]
+[!code-csharp[explicit cast](snippets/NullableValueTypes.cs#Cast)]
 
-Au moment de l’exécution, si la valeur d’un type valeur Nullable est `null`, le cast explicite lève une <xref:System.InvalidOperationException>.
+Au moment de l’exécution, si la `null`valeur d’un <xref:System.InvalidOperationException>type de valeur nul est , le casting explicite jette un .
 
-Un type valeur n’acceptant pas les valeurs NULL `T` est implicitement convertible en type valeur Nullable correspondant `T?`.
+Un type `T` de valeur non annulable est implicitement `T?`convertible au type de valeur nullable correspondant .
 
 ## <a name="lifted-operators"></a>Opérateurs levés
 
-Les [opérateurs](../operators/index.md) unaires et binaires prédéfinis ou tous les opérateurs surchargés pris en charge par un type valeur `T` sont également pris en charge par le type valeur nullable correspondant `T?`. Ces opérateurs, également appelés *opérateurs levés*, produisent `null` si l’un des opérandes ou les deux sont `null`; dans le cas contraire, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Par exemple :
+Les opérateurs prédéfinis non classés et [binaires](../operators/index.md) ou tout `T` opérateur surchargé qui sont pris `T?`en charge par un type de valeur sont également pris en charge par le type de valeur nulle correspondant . Ces opérateurs, également connus sous `null` le nom `null` *d’opérateurs levés,* produisent si l’un ou les deux opérands sont ; autrement, l’opérateur utilise les valeurs contenues de ses opérandes pour calculer le résultat. Par exemple :
 
-[!code-csharp[lifted operators](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#LiftedOperator)]
+[!code-csharp[lifted operators](snippets/NullableValueTypes.cs#LiftedOperator)]
 
 > [!NOTE]
-> Pour le type de `bool?`, les opérateurs `&` et `|` prédéfinis ne suivent pas les règles décrites dans cette section : le résultat d’une évaluation d’opérateur peut être non null, même si l’un des opérandes est `null`. Pour plus d’informations, voir la section [Opérateurs logiques booléens Nullable](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) de l’article [Opérateurs logiques booléens](../operators/boolean-logical-operators.md).
+> Pour `bool?` le type, les `&` prédéfinis et `|` les opérateurs ne suivent pas les règles décrites dans cette section: le `null`résultat d’une évaluation de l’opérateur peut être non-null même si l’un des opérands est . Pour plus d’informations, voir la section [Opérateurs logiques booléens Nullable](../operators/boolean-logical-operators.md#nullable-boolean-logical-operators) de l’article [Opérateurs logiques booléens](../operators/boolean-logical-operators.md).
 
-Pour les [opérateurs de comparaison](../operators/comparison-operators.md) `<`, `>`, `<=`et `>=`, si l’un des opérandes ou les deux sont `null`, le résultat est `false`; dans le cas contraire, les valeurs contenues des opérandes sont comparées. Ne partez pas du principe que parce qu’une comparaison spécifique (par exemple `<=`) retourne `false`, la comparaison opposée (`>`) retourne `true`. L’exemple suivant montre que 10 n’est
+Pour [comparison operators](../operators/comparison-operators.md) `<`les opérateurs `>` `<=`de `>=`comparaison , , , et `null`, si `false`l’un ou les deux opérands sont , le résultat est; autrement, les valeurs contenues des opérandes sont comparées. Ne partez pas du principe que parce qu’une comparaison spécifique (par exemple `<=`) retourne `false`, la comparaison opposée (`>`) retourne `true`. L’exemple suivant montre que 10 n’est
 
-- ni supérieur ou égal à `null`
-- ni inférieur à `null`
+- ni plus grand ni égal à`null`
+- ni moins que`null`
 
-[!code-csharp-interactive[relational and equality operators](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#ComparisonOperators)]
+[!code-csharp-interactive[relational and equality operators](snippets/NullableValueTypes.cs#ComparisonOperators)]
 
-Pour l' [opérateur d’égalité](../operators/equality-operators.md#equality-operator-) `==`, si les deux opérandes sont `null`, le résultat est `true`, si un seul des opérandes est `null`, le résultat est `false`; dans le cas contraire, les valeurs contenues des opérandes sont comparées.
+Pour [l’opérateur](../operators/equality-operators.md#equality-operator-) `==`de l’égalité `null`, si `true`les deux opérandes sont `null`, le `false`résultat est , si un seul des opérands est , le résultat est; autrement, les valeurs contenues des opérandes sont comparées.
 
-Pour l' [opérateur d’inégalité](../operators/equality-operators.md#inequality-operator-) `!=`, si les deux opérandes sont `null`, le résultat est `false`, si un seul des opérandes est `null`, le résultat est `true`; dans le cas contraire, les valeurs contenues des opérandes sont comparées.
+Pour [l’opérateur](../operators/equality-operators.md#inequality-operator-) `!=`d’inégalité , `null`si les `false`deux opérandes sont , `null`le résultat `true`est , si un seul des opérands est , le résultat est ; autrement, les valeurs contenues des opérandes sont comparées.
 
-S’il existe une [conversion définie par l’utilisateur](../operators/user-defined-conversion-operators.md) entre deux types valeur, la même conversion peut également être utilisée entre les types valeur Nullable correspondants.
+S’il existe une [conversion définie par l’utilisateur](../operators/user-defined-conversion-operators.md) entre deux types de valeurs, la même conversion peut également être utilisée entre les types de valeur nuls correspondants.
 
 ## <a name="boxing-and-unboxing"></a>Boxing et unboxing
 
-Une instance d’un type valeur Nullable `T?` est [convertie](../../programming-guide/types/boxing-and-unboxing.md) comme suit :
+Une instance d’un `T?` type de valeur nulle est [boxée](../../programming-guide/types/boxing-and-unboxing.md) comme suit :
 
 - Si <xref:System.Nullable%601.HasValue%2A> retourne `false`, la référence null est générée.
-- Si <xref:System.Nullable%601.HasValue%2A> retourne `true`, la valeur correspondante du type valeur sous-jacent `T` est boxed, et non l’instance de <xref:System.Nullable%601>.
+- Si <xref:System.Nullable%601.HasValue%2A> `true`les rendements , la `T` valeur correspondante du type <xref:System.Nullable%601>de valeur sous-jacente est en boîte, et non l’exemple de .
 
-Vous pouvez effectuer une conversion unboxing d’une valeur boxed d’un type valeur `T` vers le type valeur Nullable correspondant `T?`, comme le montre l’exemple suivant :
+Vous pouvez déballer une valeur `T` en boîte d’un `T?`type de valeur au type de valeur nullable correspondant, comme le montre l’exemple suivant :
 
-[!code-csharp-interactive[boxing and unboxing](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#Boxing)]
+[!code-csharp-interactive[boxing and unboxing](snippets/NullableValueTypes.cs#Boxing)]
 
-## <a name="how-to-identify-a-nullable-value-type"></a>Comment identifier un type valeur Nullable
+## <a name="how-to-identify-a-nullable-value-type"></a>Comment identifier un type de valeur nul
 
-L’exemple suivant montre comment déterminer si une instance de <xref:System.Type?displayProperty=nameWithType> représente un type valeur Nullable construit, autrement dit, le type <xref:System.Nullable%601?displayProperty=nameWithType> avec un paramètre de type spécifié `T`:
+L’exemple suivant montre comment <xref:System.Type?displayProperty=nameWithType> déterminer si une instance représente un <xref:System.Nullable%601?displayProperty=nameWithType> type de valeur `T`nulle construit, c’est-à-dire le type avec un paramètre de type spécifié :
 
-[!code-csharp-interactive[whether Type is nullable](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsTypeNullable)]
+[!code-csharp-interactive[whether Type is nullable](snippets/NullableValueTypes.cs#IsTypeNullable)]
 
-Comme le montre l’exemple, vous utilisez l’opérateur [typeof](../operators/type-testing-and-cast.md#typeof-operator) pour créer une instance <xref:System.Type?displayProperty=nameWithType>.
+Comme l’exemple le montre, vous utilisez <xref:System.Type?displayProperty=nameWithType> le [type d’opérateur](../operators/type-testing-and-cast.md#typeof-operator) pour créer une instance.
 
-Si vous souhaitez déterminer si une instance est d’un type valeur Nullable, n’utilisez pas la méthode <xref:System.Object.GetType%2A?displayProperty=nameWithType> pour obtenir une instance <xref:System.Type> à tester avec le code précédent. Quand vous appelez la méthode <xref:System.Object.GetType%2A?displayProperty=nameWithType> sur une instance d’un type valeur Nullable, l’instance est [convertie](#boxing-and-unboxing) en <xref:System.Object>. La conversion boxing d’une instance non null d’un type valeur Nullable équivaut au boxing d’une valeur du type sous-jacent, <xref:System.Object.GetType%2A> retourne une instance <xref:System.Type> qui représente le type sous-jacent d’un type valeur Nullable :
+Si vous souhaitez déterminer si une instance est d’un type <xref:System.Object.GetType%2A?displayProperty=nameWithType> de valeur <xref:System.Type> nulle, n’utilisez pas la méthode pour obtenir une instance à tester avec le code précédent. Lorsque vous <xref:System.Object.GetType%2A?displayProperty=nameWithType> appelez la méthode sur une instance d’un type <xref:System.Object>de valeur nulle, l’instance est en [boîte](#boxing-and-unboxing) à . Comme la boxe d’un cas non nul d’un type de valeur <xref:System.Object.GetType%2A> nulle <xref:System.Type> équivaut à la boxe d’une valeur du type sous-jacent, renvoie une instance qui représente le type sous-jacent d’un type de valeur nul:
 
-[!code-csharp-interactive[GetType example](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#GetType)]
+[!code-csharp-interactive[GetType example](snippets/NullableValueTypes.cs#GetType)]
 
-En outre, n’utilisez pas l’opérateur [is](../operators/type-testing-and-cast.md#is-operator) pour déterminer si une instance est d’un type valeur Nullable. Comme le montre l’exemple suivant, vous ne pouvez pas distinguer les types d’une instance de type valeur Nullable et son instance de type sous-jacent avec l’opérateur `is` :
+En outre, ne pas utiliser [l’opérateur est](../operators/type-testing-and-cast.md#is-operator) pour déterminer si une instance est d’un type de valeur nulle. Comme l’indique l’exemple suivant, vous ne pouvez pas distinguer les `is` types d’instance de type valeur nul et son exemple de type sous-jacent avec l’opérateur :
 
-[!code-csharp-interactive[is operator example](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsOperator)]
+[!code-csharp-interactive[is operator example](snippets/NullableValueTypes.cs#IsOperator)]
 
-Vous pouvez utiliser le code présenté dans l’exemple suivant pour déterminer si une instance est d’un type valeur Nullable :
+Vous pouvez utiliser le code présenté dans l’exemple suivant pour déterminer si une instance est d’un type de valeur nul :
 
-[!code-csharp-interactive[whether an instance is of a nullable type](~/samples/snippets/csharp/language-reference/builtin-types/NullableValueTypes.cs#IsInstanceNullable)]
+[!code-csharp-interactive[whether an instance is of a nullable type](snippets/NullableValueTypes.cs#IsInstanceNullable)]
 
 > [!NOTE]
-> Les méthodes décrites dans cette section ne sont pas applicables dans le cas des [types référence Nullable](../../nullable-references.md).
+> Les méthodes décrites dans cet article ne s’appliquent pas dans le cas des types de [référence nuls](../../nullable-references.md).
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -128,15 +128,15 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 - [Types Nullable](~/_csharplang/spec/types.md#nullable-types)
 - [Opérateurs levés](~/_csharplang/spec/expressions.md#lifted-operators)
-- [Conversions Nullable implicites](~/_csharplang/spec/conversions.md#implicit-nullable-conversions)
-- [Conversions Nullable explicites](~/_csharplang/spec/conversions.md#explicit-nullable-conversions)
+- [Conversions implicites annulables](~/_csharplang/spec/conversions.md#implicit-nullable-conversions)
+- [Conversions annulées explicites](~/_csharplang/spec/conversions.md#explicit-nullable-conversions)
 - [Opérateurs de conversion levés](~/_csharplang/spec/conversions.md#lifted-conversion-operators)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Que signifie réellement « Lifted » ?](https://docs.microsoft.com/archive/blogs/ericlippert/what-exactly-does-lifted-mean)
+- [Référence C#](../index.md)
+- [Que signifie réellement « lifted » ?](https://docs.microsoft.com/archive/blogs/ericlippert/what-exactly-does-lifted-mean)
 - <xref:System.Nullable%601?displayProperty=nameWithType>
 - <xref:System.Nullable?displayProperty=nameWithType>
 - <xref:System.Nullable.GetUnderlyingType%2A?displayProperty=nameWithType>
-- [Types de référence Nullable](../../nullable-references.md)
+- [Types références Nullables](../../nullable-references.md)

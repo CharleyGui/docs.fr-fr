@@ -5,10 +5,10 @@ author: billwagner
 ms.author: wiwagn
 ms.date: 08/30/2017
 ms.openlocfilehash: a685ed8a56393fb6e1c1b9400f0ed4bcef15f9b5
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75714278"
 ---
 # <a name="unit-testing-f-libraries-in-net-core-using-dotnet-test-and-mstest"></a>Effectuer des tests unitaires des bibliothèques F# dans .NET Core à l’aide de dotnet test et de MSTest
@@ -20,7 +20,7 @@ Ce didacticiel vous guide pas à pas dans la création d’un exemple de solutio
 ## <a name="creating-the-source-project"></a>Création du projet source
 
 Ouvrez une fenêtre d’interpréteur de commandes. Créez un répertoire appelé *unit-testing-with-fsharp* qui contiendra la solution.
-Dans ce nouveau répertoire, exécutez `dotnet new sln` pour créer une nouvelle solution. Ceci permet de simplifier la gestion de la bibliothèque de classes et du projet de test unitaire.
+Dans ce nouveau répertoire, exécutez `dotnet new sln` pour créer une solution. Ceci permet de simplifier la gestion de la bibliothèque de classes et du projet de test unitaire.
 Dans le répertoire de la solution, créez un répertoire *MathService*. La structure du répertoire et des fichiers jusqu’ici est indiquée ci-dessous :
 
 ```
@@ -29,14 +29,14 @@ Dans le répertoire de la solution, créez un répertoire *MathService*. La stru
     /MathService
 ```
 
-Faites du *MathService* le répertoire actif et exécutez `dotnet new classlib -lang "F#"` pour créer le projet source.  Vous allez créer une implémentation défaillante du service Math :
+Accédez au répertoire *MathService* et exécutez `dotnet new classlib -lang "F#"` pour créer le projet source.  Vous allez créer une implémentation défaillante du service Math :
 
 ```fsharp
 module MyMath =
     let squaresOfOdds xs = raise (System.NotImplementedException("You haven't written a test yet!"))
 ```
 
-Accédez de nouveau au répertoire *unit-testing-with-fsharp*. Exécutez `dotnet sln add .\MathService\MathService.fsproj` pour ajouter le projet de bibliothèque de classes à la solution.
+Accédez de nouveau au répertoire *unit-testing-with-fsharp*. Exécutez `dotnet sln add .\MathService\MathService.fsproj` pour ajouter le projet de la bibliothèque de classes à la solution.
 
 ## <a name="creating-the-test-project"></a>Création du projet de test
 
@@ -51,7 +51,7 @@ Ensuite, créez le répertoire *MathService.Tests*. La structure du répertoire 
     /MathService.Tests
 ```
 
-Faites du répertoire *MathService. tests* le répertoire actif et créez un projet à l’aide de `dotnet new mstest -lang "F#"`. Vous obtenez un projet de test qui utilise MSTest comme framework de test. Le modèle généré configure le Test Runner dans *MathServiceTests.fsproj* :
+Accédez au répertoire *MathService.Tests* et créez un projet à l’aide de `dotnet new mstest -lang "F#"`. Vous obtenez un projet de test qui utilise MSTest comme framework de test. Le modèle généré configure le Test Runner dans *MathServiceTests.fsproj* :
 
 ```xml
 <ItemGroup>
@@ -82,7 +82,7 @@ La solution finale se présente comme suit :
         MathServiceTests.fsproj
 ```
 
-Exécutez `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` dans le répertoire *Unit-Testing-with-FSharp* .
+Exécutez `dotnet sln add .\MathService.Tests\MathService.Tests.fsproj` dans le répertoire *unit-testing-with-fsharp*.
 
 ## <a name="creating-the-first-test"></a>Création du premier test
 
@@ -106,7 +106,7 @@ type TestClass () =
      member this.FailEveryTime() = Assert.IsTrue(false)
 ```
 
-L’attribut `[<TestClass>]` désigne une classe qui contient des tests. L’attribut `[<TestMethod>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *Unit-Testing-with-FSharp* , exécutez `dotnet test` pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner MSTest contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
+L’attribut `[<TestClass>]` désigne une classe qui contient des tests. L’attribut `[<TestMethod>]` désigne une méthode de test qui est exécutée par le Test Runner. À partir du répertoire *unit-testing-with-fsharp*, exécutez `dotnet test` pour générer les tests et la bibliothèque de classes, puis exécutez les tests. Le Test Runner MSTest contient le point d’entrée de programme qui permet d’exécuter vos tests. `dotnet test` démarre le Test Runner à l’aide du projet de test unitaire que vous avez créé.
 
 Ces deux tests illustrent les tests de réussite et d’échec les plus basiques. `My test` réussit et `Fail every time` échoue. À présent, créez un test pour la méthode `squaresOfOdds`. La méthode `squaresOfOdds` retourne une liste des carrés de toutes les valeurs de nombre entier impair qui font partie de la séquence d’entrée. Au lieu d’essayer d’écrire toutes ces fonctions simultanément, vous pouvez créer de manière itérative des tests qui valident les fonctionnalités. La réussite de chaque test correspond à la création de la fonctionnalité nécessaire pour la méthode.
 
@@ -185,4 +185,4 @@ Vous avez créé une petite bibliothèque et un ensemble de tests unitaires pour
 - [dotnet new](../tools/dotnet-new.md)
 - [dotnet sln](../tools/dotnet-sln.md)
 - [dotnet add reference](../tools/dotnet-add-reference.md)
-- [dotnet test](../tools/dotnet-test.md)
+- [test dotnet](../tools/dotnet-test.md)

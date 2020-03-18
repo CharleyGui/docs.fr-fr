@@ -1,18 +1,18 @@
 ---
-title: Comment écrire des données d’objet dans un fichier XMLC#()
+title: Comment écrire des données d’objet à un fichier XML (C)
 ms.date: 07/20/2015
 ms.assetid: 7681eb98-703d-4005-a369-26a7bca0f894
-ms.openlocfilehash: 475e9398f20a2a4db9fb537d0b8d44f0273e980b
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: f7ffb47a22d3cd94cd7cb6f702b64180a8790eb4
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75346446"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79167506"
 ---
-# <a name="how-to-write-object-data-to-an-xml-file-c"></a>Comment écrire des données d’objet dans un fichier XMLC#()
+# <a name="how-to-write-object-data-to-an-xml-file-c"></a>Comment écrire des données d’objet à un fichier XML (C)
 Cet exemple écrit l’objet d’une classe dans un fichier XML en utilisant la classe <xref:System.Xml.Serialization.XmlSerializer>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 public class XMLWrite  
@@ -25,14 +25,14 @@ public class XMLWrite
   
     public class Book  
     {  
-        public String title;   
+        public String title;
     }  
   
     public static void WriteXML()  
     {  
         Book overview = new Book();  
         overview.title = "Serialization Overview";  
-        System.Xml.Serialization.XmlSerializer writer =   
+        System.Xml.Serialization.XmlSerializer writer =
             new System.Xml.Serialization.XmlSerializer(typeof(Book));  
   
         var path = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments) + "//SerializationOverview.xml";  
@@ -58,11 +58,11 @@ public class XMLWrite
   
 - Le disque est plein (<xref:System.IO.IOException>).  
   
-## <a name="net-framework-security"></a>Sécurité .NET Framework  
+## <a name="net-framework-security"></a>Sécurité du .NET Framework  
  Cet exemple crée un fichier s’il n’existe pas déjà. Si une application doit créer un fichier, elle doit disposer de l’autorisation `Create` pour accéder au dossier. Si le fichier existe déjà, l’application a uniquement besoin de l’autorisation `Write`, qui est une autorisation de niveau inférieur. Quand cela est possible, il est plus sûr de créer le fichier au cours du déploiement et de n’accorder l’autorisation `Read` que sur un seul fichier, plutôt que l’autorisation `Create` sur un dossier.  
   
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.IO.StreamWriter>
-- [Comment lire des données d’objet à partir d’unC#fichier XML ()](./how-to-read-object-data-from-an-xml-file.md)
+- [Comment lire les données d’objets à partir d’un fichier XML (C)](./how-to-read-object-data-from-an-xml-file.md)
 - [Sérialisation (C#)](./index.md)

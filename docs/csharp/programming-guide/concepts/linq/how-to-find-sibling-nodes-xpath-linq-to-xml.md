@@ -1,22 +1,22 @@
 ---
-title: Comment rechercher des nœuds frères (XPath-LINQ to XML)C#()
+title: Comment trouver des nœuds frères et sœurs (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: e2c73d10-a8ca-4e11-b5aa-d055de285874
-ms.openlocfilehash: 24bad37151f3d63b03ec28c0fbea95bef02ab614
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: c201dcea5e6d148ae0998eb27d4e42df5b15309f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141015"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169205"
 ---
-# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Comment rechercher des nœuds frères (XPath-LINQ to XML)C#()
+# <a name="how-to-find-sibling-nodes-xpath-linq-to-xml-c"></a>Comment trouver des nœuds frères et sœurs (XPath-LINQ à XML) (C)
 Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un nom spécifique. La collection résultante peut inclure le nœud de contexte si celui-ci a également le nom spécifique.  
   
  L’expression XPath est la suivante :  
   
  `../Book`  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple recherche d'abord un élément `Book`, puis tous les éléments frères nommés `Book`. La collection résultante inclut le nœud de contexte.  
   
  Cet exemple utilise le document XML suivant : [Exemple de fichier XML : Livres (LINQ to XML)](./sample-xml-file-books-linq-to-xml.md).  
@@ -24,7 +24,7 @@ Vous souhaiterez peut-être rechercher tous les frères d'un nœud qui ont un no
 ```csharp  
 XDocument books = XDocument.Load("Books.xml");  
   
-XElement book =   
+XElement book =
     books  
     .Root  
     .Elements("Book")  
@@ -49,7 +49,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 Results are identical  
@@ -59,7 +59,7 @@ Results are identical
   <Genre>Computer</Genre>  
   <Price>44.95</Price>  
   <PublishDate>2000-10-01</PublishDate>  
-  <Description>An in-depth look at creating applications   
+  <Description>An in-depth look at creating applications
       with XML.</Description>  
 </Book>  
 <Book id="bk102">  
@@ -68,8 +68,8 @@ Results are identical
   <Genre>Fantasy</Genre>  
   <Price>5.95</Price>  
   <PublishDate>2000-12-16</PublishDate>  
-  <Description>A former architect battles corporate zombies,   
-      an evil sorceress, and her own childhood to become queen   
+  <Description>A former architect battles corporate zombies,
+      an evil sorceress, and her own childhood to become queen
       of the world.</Description>  
 </Book>  
 ```  

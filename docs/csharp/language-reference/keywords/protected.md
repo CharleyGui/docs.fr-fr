@@ -8,23 +8,23 @@ helpviewer_keywords:
 - protected keyword [C#]
 ms.assetid: 05ce3794-6675-4025-bddb-eaaa0ec22892
 ms.openlocfilehash: bec619d4f49bd26daa742c18c830909c14948adf
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713181"
 ---
 # <a name="protected-c-reference"></a>protected (référence C#)
 
 Le mot clé `protected` est un modificateur d’accès de membre.
 
- > Cette page traite de l’accès `protected`. Le mot clé `protected` fait également partie des modificateurs d’accès [`protected internal`](protected-internal.md) et [`private protected`](private-protected.md).
+ > Cette page traite de l’accès `protected`. Le `protected` mot clé fait [`protected internal`](protected-internal.md) [`private protected`](private-protected.md) également partie des modificateurs et d’accès.
 
 Un membre protégé est accessible dans sa classe et par les instances de la classe dérivée.
 
 Pour obtenir une comparaison de `protected` et des autres modificateurs d’accès, consultez [Niveaux d’accessibilité](accessibility-levels.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Un membre protégé d’une classe de base est accessible dans une classe dérivée uniquement si l’accès s’effectue par le biais du type de la classe dérivée. Prenons l’exemple de l’extrait de code suivant :
 
@@ -34,7 +34,7 @@ L’instruction `a.x = 10` génère une erreur, car elle est appelée dans la m�
 
 Les membres de struct ne peuvent pas être protégés, car le struct ne peut pas être hérité.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans cet exemple, la classe `DerivedPoint` est dérivée de `Point`. Vous pouvez donc accéder aux membres protégés de la classe de base directement à partir de la classe dérivée.
 
@@ -52,13 +52,13 @@ Pour plus d’informations, consultez [Accessibilité déclarée](~/_csharplang/
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Modificateurs d’accès](access-modifiers.md)
 - [Niveaux d’accessibilité](accessibility-levels.md)
 - [Modificateurs](index.md)
 - [public](public.md)
-- [private](private.md)
-- [internal](internal.md)
+- [Privé](private.md)
+- [Interne](internal.md)
 - [Problèmes de sécurité pour les mots clés virtuels internes](https://docs.microsoft.com/previous-versions/dotnet/netframework-4.0/heyd8kky(v=vs.100))

@@ -8,10 +8,10 @@ helpviewer_keywords:
 - writing LINQ queries
 ms.assetid: 2962a610-419a-4276-9ec8-4b7f2af0c081
 ms.openlocfilehash: f2135c6c3649ba2fc87e3b49770439688a58269b
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73418052"
 ---
 # <a name="walkthrough-writing-queries-in-c-linq"></a>Procédure pas à pas : écriture de requêtes en C# (LINQ)
@@ -26,11 +26,11 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 1. Démarrez Visual Studio.  
   
-2. Dans la barre de menus, sélectionnez **Fichier**, **Nouveau**, **Projet**.  
+2. Dans le menu principal, sélectionnez **Fichier**, **Nouveau**, **Projet**.  
   
-     La boîte de dialogue **Nouveau projet** s'affiche.  
+     La boîte de dialogue **Nouveau projet** s’affiche.  
   
-3. Développez **Installé**, **Modèles**, **Visual C#** , puis choisissez **Application console**.  
+3. Développez **Installé**, **Modèles**, **Visual C#**, puis choisissez **Application console**.  
   
 4. Dans la zone de texte **Nom**, entrez un nom différent ou acceptez le nom par défaut, puis choisissez le bouton **OK**.  
   
@@ -63,7 +63,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 #### <a name="to-create-a-simple-query"></a>Pour créer une requête simple  
   
-- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus d’informations sur `var`, consultez [Variables locales implicitement typées](../../classes-and-structs/implicitly-typed-local-variables.md).)  
+- Dans la méthode `Main` de l’application, créez une requête simple qui, quand elle est exécutée, produit une liste de tous les étudiants dont la note pour le premier test est supérieure à 90. Notez que, puisque l’objet `Student` entier est sélectionné, le type de la requête est `IEnumerable<Student>`. Bien que le code puisse également utiliser un type implicite à l’aide du mot clé [var](../../../language-reference/keywords/var.md), les types explicites sont utilisés pour illustrer clairement les résultats. (Pour plus `var`d’informations sur , voir [implicitement Typé variables locales](../../classes-and-structs/implicitly-typed-local-variables.md).)  
   
      Notez également que la variable de portée de la requête, `student`, sert de référence à chaque `Student` dans la source, en fournissant l’accès au membre pour chaque objet.  
   
@@ -115,7 +115,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
     Console.WriteLine("{0}, {1} {2}", student.Last, student.First, student.Scores[0]);  
     ```  
   
-     Pour plus d’informations, consultez [orderby, clause](../../../language-reference/keywords/orderby-clause.md).  
+     Pour plus d’informations, voir [clause d’ordre](../../../language-reference/keywords/orderby-clause.md).  
   
 #### <a name="to-group-the-results"></a>Pour regrouper les résultats  
   
@@ -129,7 +129,7 @@ Cette procédure pas à pas présente les fonctionnalités du langage C# utilis
   
 3. Exécutez l’application et affichez les résultats dans la fenêtre de **console**.  
   
-     Pour plus d’informations, consultez [group, clause](../../../language-reference/keywords/group-clause.md).  
+     Pour plus d’informations, voir [clause de groupe](../../../language-reference/keywords/group-clause.md).  
   
 #### <a name="to-make-the-variables-implicitly-typed"></a>Pour rendre les variables implicitement typées  
   

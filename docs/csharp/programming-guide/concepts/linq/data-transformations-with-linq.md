@@ -11,14 +11,14 @@ helpviewer_keywords:
 - data transformations [LINQ in C#]
 ms.assetid: 674eae9e-bc72-4a88-aed3-802b45b25811
 ms.openlocfilehash: 393e3bd24c4bc8b89064e01e1048b24254f5f83b
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635949"
 ---
 # <a name="data-transformations-with-linq-c"></a>Transformations de données avec LINQ (C#)
-LINQ (Language-Integrated Query) n’est pas seulement la récupération des données. C’est également un outil puissant pour la transformation de données. À l’aide d’une requête LINQ, vous pouvez utiliser une séquence source comme entrée et la modifier de nombreuses façons pour créer une séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais la fonctionnalité la plus puissante des requêtes LINQ est peut-être la possibilité de créer des types. Cette opération est effectuée dans la clause [select](../../../language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  
+La requête intégrée en langue (LINQ) ne consiste pas seulement à récupérer des données. C’est également un outil puissant pour la transformation de données. En utilisant une requête LINQ, vous pouvez utiliser une séquence source comme entrée et la modifier de plusieurs façons pour créer une nouvelle séquence de sortie. Vous pouvez modifier la séquence elle-même sans modifier les éléments eux-mêmes en les triant et en les regroupant. Mais peut-être la caractéristique la plus puissante des requêtes LINQ est la capacité de créer de nouveaux types. Cette opération est effectuée dans la clause [select](../../../language-reference/keywords/select-clause.md). Par exemple, il est possible de réaliser les tâches suivantes :  
   
 - Fusionner plusieurs séquences d’entrée en une séquence de sortie unique ayant un nouveau type.  
   
@@ -31,7 +31,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Voici une liste non exhaustive d’exemples. Bien sûr, ces transformations peuvent être combinées de plusieurs façons dans la même requête. Par ailleurs, la séquence de sortie d’une requête peut être utilisée comme séquence d’entrée pour une nouvelle requête.  
   
 ## <a name="joining-multiple-inputs-into-one-output-sequence"></a>Combinaison de plusieurs entrées en une séquence de sortie  
- Vous pouvez utiliser une requête LINQ pour créer une séquence de sortie qui contient des éléments issus de plusieurs séquences d’entrée. L’exemple suivant montre comment combiner deux structures de données en mémoire, mais les mêmes principes peuvent être appliqués pour combiner des données provenant de sources XML, SQL ou DataSet. Prenons l’exemple des deux types de classe suivants :  
+ Vous pouvez utiliser une requête LINQ pour créer une séquence de sortie qui contient des éléments de plus d’une séquence d’entrée. L’exemple suivant montre comment combiner deux structures de données en mémoire, mais les mêmes principes peuvent être appliqués pour combiner des données provenant de sources XML, SQL ou DataSet. Prenons l’exemple des deux types de classe suivants :  
   
  [!code-csharp[CsLINQGettingStarted#7](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#7)]  
   
@@ -61,7 +61,7 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
  Pour plus d’informations, consultez [Initialiseurs d’objets et de collections](../../classes-and-structs/object-and-collection-initializers.md) et [Types anonymes](../../classes-and-structs/anonymous-types.md).  
   
 ## <a name="transforming-in-memory-objects-into-xml"></a>Transformation d’objets en mémoire en XML  
- Les requêtes LINQ facilitent la transformation des données entre les structures de données en mémoire, les bases de données SQL, les jeux de données ADO.NET et les flux ou documents XML. L’exemple suivant transforme des objets d’une structure de données en mémoire en éléments XML.  
+ Les requêtes LINQ facilitent la transformation des données entre les structures de données en mémoire, les bases de données SQL, les ADO.NET les ensembles de données et les flux ou documents XML. L’exemple suivant transforme des objets d’une structure de données en mémoire en éléments XML.  
   
  [!code-csharp[CsLINQGettingStarted#9](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsLINQGettingStarted/CS/Class1.cs#9)]  
   
@@ -104,4 +104,4 @@ LINQ (Language-Integrated Query) n’est pas seulement la récupération des don
 - [LINQ to DataSet](../../../../framework/data/adonet/linq-to-dataset.md)
 - [LINQ to XML (C#)](./linq-to-xml-overview.md)
 - [Expressions de requête LINQ](../../../linq/index.md)
-- [select, clause](../../../language-reference/keywords/select-clause.md)
+- [clause de sélection](../../../language-reference/keywords/select-clause.md)

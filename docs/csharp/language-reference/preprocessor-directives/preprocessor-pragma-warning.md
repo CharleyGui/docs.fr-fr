@@ -7,10 +7,10 @@ helpviewer_keywords:
 - '#pragma warning [C#]'
 ms.assetid: 723493d5-9753-4cec-babb-54e2b8eb36b6
 ms.openlocfilehash: 5620ea9e5f31c22e26bee95a450335bb179ced25
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712466"
 ---
 # <a name="pragma-warning-c-reference"></a>#pragma warning (référence C#)
@@ -23,7 +23,7 @@ ms.locfileid: "75712466"
 #pragma warning restore warning-list  
 ```  
   
-## <a name="parameters"></a>Parameters  
+## <a name="parameters"></a>Paramètres  
  `warning-list`  
  Liste de numéros d’avertissement séparés par des virgules. Le préfixe « CS » est facultatif.  
   
@@ -32,7 +32,7 @@ ms.locfileid: "75712466"
 > [!NOTE]
 > Pour trouver les numéros d’avertissement dans Visual Studio, générez votre projet, puis recherchez les numéros d’avertissement dans la fenêtre **Sortie**.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp
 // pragma_warning.cs  
@@ -60,7 +60,7 @@ public class D
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
-- [Directives de préprocesseur C#](./index.md)
+- [Directives de préprocesseur de CMD](./index.md)
 - [Erreurs du compilateur C#](../compiler-messages/index.md)

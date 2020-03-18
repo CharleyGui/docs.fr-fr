@@ -1,15 +1,15 @@
 ---
-title: Comment étendre la procédure pas à pas Async à l’aide deC#Task. WhenAll ()
+title: Comment étendre la procédure pas à pas async en utilisant Task.WhenAll (C)
 ms.date: 07/20/2015
 ms.assetid: f6927ef2-dc6c-43f8-bc82-bbeac42de423
 ms.openlocfilehash: afd7dda4e876b7faa54ae4a8e62d640d2b9aaf07
-ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/12/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73970035"
 ---
-# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Comment étendre la procédure pas à pas Async à l’aide deC#Task. WhenAll ()
+# <a name="how-to-extend-the-async-walkthrough-by-using-taskwhenall-c"></a>Comment étendre la procédure pas à pas async en utilisant Task.WhenAll (C)
 
 Vous pouvez améliorer les performances de la solution async fournie dans [Procédure pas à pas : accès au web avec Async et Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md) à l’aide de la méthode <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>. Cette méthode attend de manière asynchrone plusieurs opérations, qui sont représentées sous la forme d’une collection de tâches.
 
@@ -173,7 +173,7 @@ Vous appliquez la méthode `Task.WhenAll` à une collection de tâches. L’appl
 
 - Pour l’une ou l’autre solution, appuyez sur la touche F5 pour exécuter le programme, puis choisissez le bouton **Démarrer** . La sortie doit ressembler à celle des solutions async fournies dans [Procédure pas à pas : accès au web avec Async et Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md). Toutefois, notez que les sites web apparaissent à chaque fois dans un ordre différent.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Le code suivant montre les extensions du projet qui utilise la méthode `GetURLContentsAsync` pour télécharger du contenu à partir du web.
 
@@ -315,7 +315,7 @@ namespace AsyncExampleWPF_WhenAll
 }
 ```
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Le code suivant montre les extensions du projet qui utilise la méthode `HttpClient.GetByteArrayAsync` pour télécharger du contenu à partir du web.
 
@@ -440,4 +440,4 @@ namespace AsyncExampleWPF_HttpClient_WhenAll
 ## <a name="see-also"></a>Voir aussi
 
 - <xref:System.Threading.Tasks.Task.WhenAll%2A?displayProperty=nameWithType>
-- [Procédure pas à pas : accès au web avec Async et Await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)
+- [Procédure pas à pas : accès au web avec async et await (C#)](./walkthrough-accessing-the-web-by-using-async-and-await.md)

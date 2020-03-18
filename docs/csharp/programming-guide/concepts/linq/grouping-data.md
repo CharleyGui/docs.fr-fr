@@ -3,10 +3,10 @@ title: Regroupement des données (C#)
 ms.date: 07/20/2015
 ms.assetid: e414e9e4-343a-4e6e-858f-4a30c5e64492
 ms.openlocfilehash: 7ef3d3c9097d7a9478605565518ac8975feb9fe2
-ms.sourcegitcommit: 7bc6887ab658550baa78f1520ea735838249345e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/03/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75635741"
 ---
 # <a name="grouping-data-c"></a>Regroupement des données (C#)
@@ -20,9 +20,9 @@ Le regroupement consiste à placer des données dans des groupes afin que les é
   
 ## <a name="methods"></a>Méthodes  
   
-|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Plus d’informations|  
+|Nom de la méthode|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-----------------|-----------------|---------------------------------|----------------------|  
-|GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`group … by`<br /><br /> \- ou -<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
+|GroupBy|Regroupe les éléments qui partagent un attribut commun. Chaque groupe est représenté par un objet <xref:System.Linq.IGrouping%602>.|`group … by`<br /><br /> -ou-<br /><br /> `group … by … into …`|<xref:System.Linq.Enumerable.GroupBy%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.GroupBy%2A?displayProperty=nameWithType>|  
 |ToLookup|Insère des éléments dans un <xref:System.Linq.Lookup%602> (un dictionnaire de type un-à-plusieurs) basé sur une fonction de sélecteur de clés.|Non applicable.|<xref:System.Linq.Enumerable.ToLookup%2A?displayProperty=nameWithType>|  
   
 ## <a name="query-expression-syntax-example"></a>Exemple de syntaxe d’expression de requête  
@@ -65,7 +65,7 @@ foreach (var group in query)
 - [Vue d’ensemble des opérateurs de requête standard (C#)](./standard-query-operators-overview.md)
 - [group, clause](../../../language-reference/keywords/group-clause.md)
 - [Créer un groupe imbriqué](../../../linq/create-a-nested-group.md)
-- [Comment regrouper des fichiers par extension (LINQC#) ()](./how-to-group-files-by-extension-linq.md)
+- [Comment regrouper les fichiers par extension (LINQ) (C)](./how-to-group-files-by-extension-linq.md)
 - [Regrouper les résultats d’une requête](../../../linq/group-query-results.md)
 - [Effectuer une sous-requête sur une opération de regroupement](../../../linq/perform-a-subquery-on-a-grouping-operation.md)
-- [Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)
+- [Comment diviser un fichier en plusieurs fichiers en utilisant des groupes (LINQ) (C)](./how-to-split-a-file-into-many-files-by-using-groups-linq.md)

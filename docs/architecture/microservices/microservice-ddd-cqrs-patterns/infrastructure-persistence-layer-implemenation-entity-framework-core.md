@@ -1,13 +1,13 @@
 ---
 title: Implémentation de la couche de persistance de l’infrastructure avec Entity Framework Core
-description: Architecture des microservices .NET pour les applications .NET en conteneur | Explorez les détails d’implémentation de la couche de persistance de l’infrastructure, à l’aide de Entity Framework Core.
+description: .NET Microservices Architecture for Containerized .NET Applications (fr) Explorez les détails de la mise en œuvre de la couche de persistance de l’infrastructure, à l’aide de Entity Framework Core.
 ms.date: 01/30/2020
 ms.openlocfilehash: 63579dc74ba52551bc1ee02a57337c1b17fdf396
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
-ms.locfileid: "77502496"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79401626"
 ---
 # <a name="implement-the-infrastructure-persistence-layer-with-entity-framework-core"></a>Implémenter la couche de persistance de l’infrastructure avec Entity Framework Core
 
@@ -23,21 +23,21 @@ Dans la mesure où une introduction à EF Core est déjà disponible dans la doc
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Entity Framework Core** \
+- **Base du cadre de l’entité** \
   [https://docs.microsoft.com/ef/core/](/ef/core/)
 
-- **Bien démarrer avec ASP.NET Core et Entity Framework Core en utilisant Visual Studio** \
+- **Commencer avec ASP.NET Core et Entity Framework Core à l’aide de Visual Studio** \
   [https://docs.microsoft.com/aspnet/core/data/ef-mvc/](/aspnet/core/data/ef-mvc/)
 
 - **Classe DbContext** \
   [https://docs.microsoft.com/dotnet/api/microsoft.entityframeworkcore.dbcontext](xref:Microsoft.EntityFrameworkCore.DbContext)
 
-- **Comparer EF Core et EF 6.x** \
+- **Comparez EF Core & EF6.x** \
   [https://docs.microsoft.com/ef/efcore-and-ef6/index](/ef/efcore-and-ef6/index)
 
 ## <a name="infrastructure-in-entity-framework-core-from-a-ddd-perspective"></a>Infrastructure dans Entity Framework Core à partir d’une perspective DDD
 
-D’un point de vue DDD, une fonctionnalité importante d’EF est la possibilité d’utiliser les entités de domaine OCT, également désignées dans la terminologie EF sous le nom *d’entités Code First*  OCT. Si vous utilisez des entités de domaine OCT, vos classes de modèle de domaine ignorent la persistance, selon les principes [d’ignorance de la persistance](https://deviq.com/persistence-ignorance/) et [d’ignorance de l’infrastructure](https://ayende.com/blog/3137/infrastructure-ignorance).
+D’un point de vue DDD, une fonctionnalité importante d’EF est la possibilité d’utiliser les entités de domaine OCT, également désignées dans la terminologie EF sous le nom *d’entités Code First * OCT. Si vous utilisez des entités de domaine OCT, vos classes de modèle de domaine ignorent la persistance, selon les principes [d’ignorance de la persistance](https://deviq.com/persistence-ignorance/) et [d’ignorance de l’infrastructure](https://ayende.com/blog/3137/infrastructure-ignorance).
 
 Selon les modèles DDD, vous devez encapsuler le comportement et les règles du domaine au sein de la classe d’entité pour qu’elle puisse contrôler les règles, les validations et les invariants lors de l’accès à toute collection. Par conséquent, il est déconseillé dans DDD d’autoriser un accès public à des collections d’objets de valeur ou d’entités enfants. Au lieu de cela, vous pouvez exposer des méthodes qui contrôlent comment et quand vos champs et collections de propriétés peuvent être mis à jour, ainsi que le comportement et les actions qui doivent se produire à ce moment-là.
 
@@ -174,11 +174,11 @@ Toutefois, l’implémentation de dépôts personnalisés présente plusieurs av
 
 Dans la figure 7-18, vous pouvez voir les différences entre ne pas utiliser de référentiels (utilisation directe de DbContext EF) et l’utilisation de référentiels qui facilitent la simulation de ces référentiels.
 
-![Diagramme montrant les composants et le flux de données dans les deux référentiels.](./media/infrastructure-persistence-layer-implemenation-entity-framework-core/custom-repo-versus-db-context.png)
+![Diagramme montrant les composants et le flux de données dans les deux dépôts.](./media/infrastructure-persistence-layer-implemenation-entity-framework-core/custom-repo-versus-db-context.png)
 
 **Figure 7-18**. Utilisation de dépôts personnalisés par rapport à un simple DbContext
 
-La figure 7-18 montre que l’utilisation d’un référentiel personnalisé ajoute une couche d’abstraction qui peut être utilisée pour faciliter les tests en simulant le référentiel. Il existe plusieurs alternatives lors de la simulation. Vous pouvez simuler uniquement les dépôts ou l’intégralité d’une unité de travail. Généralement, la simulation des dépôts uniquement est suffisante, et la tâche complexe d’abstraction et de simulation de l’intégralité d’une unité de travail n’est pas nécessaire.
+La figure 7-18 montre que l’utilisation d’un référentiel personnalisé ajoute une couche d’abstraction qui peut être utilisée pour faciliter les tests en se moquant du référentiel. Il existe plusieurs alternatives lors de la simulation. Vous pouvez simuler uniquement les dépôts ou l’intégralité d’une unité de travail. Généralement, la simulation des dépôts uniquement est suffisante, et la tâche complexe d’abstraction et de simulation de l’intégralité d’une unité de travail n’est pas nécessaire.
 
 Plus tard, quand nous nous concentrerons sur la couche d’application, vous verrez comment fonctionne l’injection de dépendances dans ASP.NET Core et comment elle est implémentée lors de l’utilisation de dépôts.
 
@@ -232,13 +232,13 @@ Notez que l’utilisation de la durée de vie singleton pour le dépôt peut vou
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application** \
+- **Mise en œuvre du dépôt et de l’unité des modèles de travail dans une application MVC ASP.NET** \
   <https://www.asp.net/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
-- **Jonathan Allen. Stratégies d’implémentation pour le modèle de référentiel avec Entity Framework, dapper et Chain** \
+- **Jonathan Allen. Stratégies de mise en œuvre pour le modèle de dépôt avec cadre d’entité, Dapper, et chaîne** \
   <https://www.infoq.com/articles/repository-implementation-strategies>
 
-- **Cesar de la Torre. Comparaison ASP.NET Core les durées de vie du service de conteneur IoC avec les portées d’instance de conteneur IoC Autofac** \
+- **Cesar de la Torre. Comparaison ASP.NET durée de vie du service de conteneurs Core IoC avec les portées d’instance de conteneurs Autofac IoC** \
   <https://devblogs.microsoft.com/cesardelatorre/comparing-asp-net-core-ioc-service-life-times-and-autofac-ioc-instance-scopes/>
 
 ## <a name="table-mapping"></a>Mappage de table
@@ -339,7 +339,7 @@ class OrderEntityTypeConfiguration : IEntityTypeConfiguration<Order>
 }
 ```
 
-Vous pouvez définir tous les mappages de l’API Fluent au sein de la même méthode `OnModelCreating`, mais il est recommandé de partitionner ce code et d’avoir plusieurs classes de configuration, une par entité, comme illustré dans l’exemple. En particulier pour les modèles volumineux, il est recommandé d’avoir des classes de configuration distinctes pour la configuration de différents types d’entités.
+Vous pouvez définir toutes les cartes fluentes de l’API dans la même `OnModelCreating` méthode, mais il est conseillé de partitionner ce code et d’avoir plusieurs classes de configuration, une par entité, comme indiqué dans l’exemple. Surtout pour les grands modèles, il est conseillé d’avoir des classes de configuration séparées pour configurer différents types d’entités.
 
 Le code dans l’exemple montre quelques déclarations et mappages explicites. Toutefois, les conventions EF Core effectuant un grand nombre de ces mappages automatiquement, le code réel nécessaire dans votre cas peut être moindre.
 
@@ -357,7 +357,7 @@ L’algorithme Hi/Lo décrit un mécanisme permettant d’obtenir un lot d’ID 
 
 - Il génère un identificateur contrôlable de visu, contrairement aux techniques qui utilisent des GUID.
 
-EF Core prend en charge [Hilo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) avec la méthode `UseHiLo`, comme indiqué dans l’exemple précédent.
+EF Core prend en `UseHiLo` charge [HiLo](https://stackoverflow.com/questions/282099/whats-the-hi-lo-algorithm) avec la méthode, comme le montre l’exemple précédent.
 
 ### <a name="map-fields-instead-of-properties"></a>Mapper des champs au lieu de propriétés
 
@@ -470,28 +470,28 @@ public IEnumerable<T> List(ISpecification<T> spec)
 
 En plus de l’encapsulation de la logique de filtrage, la spécification peut spécifier la forme des données à retourner, dont les propriétés à remplir.
 
-Bien que nous ne recommandons pas de retourner des `IQueryable` à partir d’un référentiel, il est tout à fait parfait de les utiliser dans le référentiel pour créer un ensemble de résultats. Vous pouvez voir cette approche utilisée dans la méthode List ci-dessus, qui utilise des expressions `IQueryable` intermédiaires pour générer la liste des includes de la requête avant d’exécuter la requête avec les critères de la spécification sur la dernière ligne.
+Bien que nous ne `IQueryable` recommandons pas de revenir d’un référentiel, il est parfaitement bien de les utiliser dans le référentiel pour construire un ensemble de résultats. Vous pouvez voir cette approche utilisée dans la `IQueryable` méthode Liste ci-dessus, qui utilise des expressions intermédiaires pour constituer la liste des inclus de la requête avant d’exécuter la requête avec les critères de spécification sur la dernière ligne.
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Table Mapping** \
+- **Cartographie de table** \
   [https://docs.microsoft.com/ef/core/modeling/relational/tables](/ef/core/modeling/relational/tables)
 
-- **Use HiLo to generate keys with Entity Framework Core** \
+- **Utilisez HiLo pour générer des clés avec Entity Framework Core** \
   <https://www.talkingdotnet.com/use-hilo-to-generate-keys-with-entity-framework-core/>
 
-- **Backing Fields** \
+- **Champs de soutien** \
   [https://docs.microsoft.com/ef/core/modeling/backing-field](/ef/core/modeling/backing-field)
 
-- **Steve Smith. Collections encapsulées dans Entity Framework Core** \
+- **Steve Smith. Collections encapsulées dans le noyau cadre d’entité** \
   <https://ardalis.com/encapsulated-collections-in-entity-framework-core>
 
-- **Propriétés cachées** \
+- **Propriétés d’ombre** \
   [https://docs.microsoft.com/ef/core/modeling/shadow-properties](/ef/core/modeling/shadow-properties)
 
-- **The Specification pattern** \
+- **Le modèle de spécification** \
   <https://deviq.com/specification-pattern/>
 
 > [!div class="step-by-step"]
-> [Précédent](infrastructure-persistence-layer-design.md)
-> [Suivant](nosql-database-persistence-infrastructure.md)
+> [Suivant précédent](infrastructure-persistence-layer-design.md)
+> [Next](nosql-database-persistence-infrastructure.md)

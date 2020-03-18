@@ -13,12 +13,12 @@ helpviewer_keywords:
 - parameters [C#], optional
 - named and optional arguments [C#]
 ms.assetid: 839c960c-c2dc-4d05-af4d-ca5428e54008
-ms.openlocfilehash: 3685482caebd892c460a3cc2ecf3a22acbe3c9ec
-ms.sourcegitcommit: c2d9718996402993cf31541f11e95531bc68bad0
+ms.openlocfilehash: 15b685248730c1f742035612a201d97d180bbc41
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/27/2020
-ms.locfileid: "77673405"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399811"
 ---
 # <a name="named-and-optional-arguments-c-programming-guide"></a>Arguments nommés et facultatifs (Guide de programmation C#)
 C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vous permettent de spécifier un argument pour un paramètre particulier en associant l’argument avec le nom du paramètre plutôt qu’avec la position du paramètre dans la liste de paramètres. Les *arguments facultatifs* vous permettent d’omettre des arguments pour certains paramètres. Les deux techniques peuvent être utilisées avec les méthodes, les indexeurs, les constructeurs et les délégués.  
@@ -40,7 +40,7 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
   
  Les arguments nommés améliorent également la lisibilité de votre code en identifiant ce que chaque argument représente. Dans l’exemple de méthode ci-dessous, `sellerName` ne peut pas être une valeur Null ou un espace blanc. `sellerName` et `productName` étant tous deux des types de chaînes, au lieu d’envoyer les arguments par position, il est plus logique d’utiliser des arguments nommés pour lever l’ambiguïté entre les deux et réduire les risques de confusion pour toute personne lisant le code.
   
- Les arguments nommés, quand ils sont utilisés avec des arguments de position, sont valides tant que : 
+ Les arguments nommés, quand ils sont utilisés avec des arguments de position, sont valides tant que :
 
 - Ils ne sont pas suivis d’arguments de position, ou
 
@@ -50,14 +50,14 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
 
  `PrintOrderDetails(sellerName: "Gift Shop", 31, productName: "Red Mug");`
   
- Les arguments positionnels qui suivent les arguments nommés non ordonnés ne sont pas valides.
+ Les arguments de position qui suivent les arguments hors ordonnance nommés sont invalides.
 
  ```csharp
  // This generates CS1738: Named argument specifications must appear after all fixed arguments have been specified.
  PrintOrderDetails(productName: "Red Mug", 31, "Gift Shop");
  ```
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Le code suivant implémente les exemples de cette section, ainsi que d’autres exemples.  
   
  [!code-csharp[csProgGuideNamedAndOptional#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/program.cs#1)]  
@@ -92,7 +92,7 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
 > [!NOTE]
 > Vous pouvez aussi déclarer des paramètres facultatifs à l’aide de la classe <xref:System.Runtime.InteropServices.OptionalAttribute> .NET. Les paramètres `OptionalAttribute` ne nécessitent pas de valeur par défaut.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Dans l’exemple suivant, le constructeur associé à `ExampleClass` a un seul paramètre, qui est facultatif. La méthode d’instance `ExampleMethod` a un paramètre obligatoire (`required`) et deux paramètres facultatifs (`optionalstr` et `optionalint`). Le code dans `Main` montre les différentes façons dont le constructeur et la méthode peuvent être appelés.  
   
  [!code-csharp[csProgGuideNamedAndOptional#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/optional.cs#2)]  
@@ -112,23 +112,23 @@ C# 4 introduit des arguments nommés et facultatifs. Les *arguments nommés* vou
   
  [!code-csharp[csProgGuideNamedAndOptional#13](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csprogguidenamedandoptional/cs/namedandoptcom.cs#13)]  
   
- Pour plus d’informations et d’exemples, consultez [comment utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md) et [Comment accéder aux objets C# Office Interop à l’aide des fonctionnalités](../interop/how-to-access-office-onterop-objects.md)de.  
+ Pour plus d’informations et d’exemples, consultez [Comment utiliser les arguments nommés et facultatifs dans la programmation du Bureau](./how-to-use-named-and-optional-arguments-in-office-programming.md) et comment accéder aux objets [interop Office en utilisant les fonctionnalités C .](../interop/how-to-access-office-onterop-objects.md)  
   
 ## <a name="overload-resolution"></a>Résolution de surcharge  
  L’utilisation d’arguments nommés et facultatifs affecte la résolution de surcharge des manières suivantes :  
   
-- Une méthode, un indexeur ou un constructeur est un candidat pour l’exécution si chacun de ses paramètres est facultatif ou correspond, par son nom ou sa position, à un seul argument dans l’instruction appelante, et que cet argument peut être converti vers le type du paramètre.  
+- Une méthode, un indexeur ou un constructeur est un candidat pour l’exécution si chacun de ses paramètres est facultatif ou correspond, par nom ou par position, à un seul argument dans l’instruction appelante, et que cet argument peut être converti vers le type du paramètre.  
   
 - Si plusieurs candidats sont trouvés, les règles de résolution de surcharge des conversions préférées sont appliquées aux arguments qui sont explicitement spécifiés. Les arguments omis pour les paramètres facultatifs sont ignorés.  
   
-- Si deux candidats sont jugés de qualité équivalente, la préférence va à celui qui n’a pas de paramètres facultatifs pour lesquels des arguments ont été omis dans l’appel. Ceci s’explique par l’application d’une préférence générale dans la résolution de surcharge en faveur des candidats qui ont le moins de paramètres.  
+- Si deux candidats sont jugés de qualité équivalente, la préférence va à celui qui n’a pas de paramètres facultatifs pour lesquels des arguments ont été omis dans l’appel. Ceci est une conséquence d’une préférence générale dans la résolution de la surcharge pour les candidats qui ont le moins de paramètres.  
   
 ## <a name="c-language-specification"></a>Spécification du langage C#  
  [!INCLUDE[CSharplangspec](~/includes/csharplangspec-md.md)]  
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Comment utiliser des arguments nommés et facultatifs dans la programmation Office](./how-to-use-named-and-optional-arguments-in-office-programming.md)
+- [Comment utiliser les arguments nommés et facultatifs dans la programmation du Bureau](./how-to-use-named-and-optional-arguments-in-office-programming.md)
 - [Utilisation du type dynamic](../types/using-type-dynamic.md)
 - [Utilisation de constructeurs](./using-constructors.md)
-- [Utilisation d’indexeurs](../indexers/using-indexers.md)
+- [Utilisation des indexeurs](../indexers/using-indexers.md)

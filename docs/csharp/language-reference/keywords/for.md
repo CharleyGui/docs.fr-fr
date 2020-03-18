@@ -1,5 +1,5 @@
 ---
-title: pour une instruction C# -Reference
+title: pour déclaration - Référence C
 ms.date: 06/13/2018
 f1_keywords:
 - for
@@ -8,10 +8,10 @@ helpviewer_keywords:
 - for keyword [C#]
 ms.assetid: 34041a40-2c87-467a-9ffb-a0417d8f67a8
 ms.openlocfilehash: fc6a23cabd93323cacc33dfc4388116881c1fc84
-ms.sourcegitcommit: 93762e1a0dae1b5f64d82eebb7b705a6d566d839
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/27/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74552269"
 ---
 # <a name="for-c-reference"></a>for (référence C#)
@@ -109,7 +109,7 @@ Pour plus d’informations, voir la section [Instruction for](~/_csharplang/spec
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [foreach, in](foreach-in.md)

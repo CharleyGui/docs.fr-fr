@@ -1,12 +1,12 @@
 ---
 title: Implémentation de la couche Application de microservices à l’aide de l’API web
-description: Comprendre l’injection de dépendances et les modèles de médiateur et leurs détails d’implémentation dans la couche d’application de l’API Web.
+description: Comprendre les modèles d’injection de dépendance et de mediator et leurs détails de mise en œuvre dans la couche d’application Web API.
 ms.date: 01/30/2020
 ms.openlocfilehash: a88f3bfd11ea06df085ca82ed7265cb37006fc31
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77502448"
 ---
 # <a name="implement-the-microservice-application-layer-using-the-web-api"></a>Implémenter la couche Application des microservices avec l’API web
@@ -17,7 +17,7 @@ Comme mentionné précédemment, la couche Application peut être implémentée 
 
 Par exemple, le code de la couche Application du microservice Ordering est directement implémenté dans le cadre du projet **Ordering.API** (un projet d’API web ASP.NET Core), comme le montre la figure 7-23.
 
-:::image type="complex" source="./media/microservice-application-layer-implementation-web-api/ordering-api-microservice.png" alt-text="Capture d’écran du microservice Ordering. API dans le Explorateur de solutions.":::
+:::image type="complex" source="./media/microservice-application-layer-implementation-web-api/ordering-api-microservice.png" alt-text="Capture d’écran du microservice Ordering.API dans la Solution Explorer.":::
 La vue Explorateur de solutions du microservice Ordering.API, montrant les sous-dossiers sous le dossier Application : Comportements, Commandes, DomainEventHandlers, IntegrationEvents, Modèles, Requêtes et Validations.
 :::image-end:::
 
@@ -109,10 +109,10 @@ Quand vous utilisez l’injection de dépendances dans .NET Core, vous pouvez av
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Matthew King. Inscription de services avec scrutor** \
+- **Matthieu King. Services d’enregistrement auprès de Scrutor** \
   <https://www.mking.net/blog/registering-services-with-scrutor>
 
-- **Kristian Hellang. Scrutor.** GitHub repo. \
+- **Le Hellang Kristian. Scrutor.** Dépôt GitHub. \
   <https://github.com/khellang/Scrutor>
 
 #### <a name="use-autofac-as-an-ioc-container"></a>Utiliser Autofac comme conteneur IoC
@@ -164,7 +164,7 @@ Le type d’étendue d’instance détermine la façon dont une instance est par
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Introduction à l’injection de dépendances dans ASP.NET Core** \
+- **Introduction à l’injection de dépendance dans ASP.NET cœur** \
   [https://docs.microsoft.com/aspnet/core/fundamentals/dependency-injection](/aspnet/core/fundamentals/dependency-injection)
 
 - **Autofac.** Documentation officielle. \
@@ -181,11 +181,11 @@ Le modèle Commande est intrinsèquement lié au modèle CQRS présenté précé
 
 Comme le montre la figure 7-24, le modèle se base sur l’acceptation des commandes du côté client, leur traitement en fonction des règles du modèle de domaine et enfin, sur la persistance des états avec les transactions.
 
-![Diagramme montrant le workflow de haut niveau du client au niveau de la base de données.](./media/microservice-application-layer-implementation-web-api/high-level-writes-side.png)
+![Diagramme montrant le flux de données de haut niveau d’un client à l’autre.](./media/microservice-application-layer-implementation-web-api/high-level-writes-side.png)
 
 **Figure 7-24**. Vue générale des commandes ou du « côté transactionnel » d’un modèle CQRS
 
-La figure 7-24 montre que l’application d’interface utilisateur envoie une commande via l’API qui obtient une `CommandHandler`, qui dépend du modèle de domaine et de l’infrastructure, pour mettre à jour la base de données.
+La figure 7-24 montre que l’application d’interface utilisateur `CommandHandler`envoie une commande via l’API qui arrive à un , qui dépend du modèle de domaine et de l’infrastructure, pour mettre à jour la base de données.
 
 ### <a name="the-command-class"></a>La classe de commande
 
@@ -205,7 +205,7 @@ Vous envoyez une commande à un seul récepteur ; vous ne publiez pas une comma
 
 Une commande est implémentée avec une classe qui contient des champs ou collections de données contenant toutes les informations nécessaires à son exécution. Une commande est un type spécial d’objet de transfert de données, particulièrement utilisé pour demander des modifications ou des transactions. La commande elle-même se base sur les informations exactes nécessaires à son traitement et rien de plus.
 
-L’exemple suivant illustre la classe `CreateOrderCommand` simplifiée. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
+L’exemple suivant `CreateOrderCommand` montre la classe simplifiée. Il s’agit d’une commande immuable utilisée dans le microservice de passation de commandes dans eShopOnContainers.
 
 ```csharp
 // DDD and CQRS patterns comment
@@ -287,9 +287,9 @@ En gros, la classe de commande contient toutes les données dont vous avez besoi
 
 Autre caractéristique des commandes : elles sont immuables, car l’usage veut qu’elles soient traitées directement par le modèle de domaine. Elles n’ont pas besoin de changer au cours de leur durée de vie prévue. Dans une classe C#, l’immuabilité implique d’éviter toute méthode setter ou autre méthode qui modifie l’état interne.
 
-N’oubliez pas que si vous envisagez ou pensez que les commandes passent par un processus de sérialisation/désérialisation, les propriétés doivent avoir un accesseur Set privé et l’attribut `[DataMember]` (ou `[JsonProperty]`). Dans le cas contraire, le désérialiseur ne pourra pas reconstruire l’objet à la destination avec les valeurs requises. Vous pouvez également utiliser des propriétés réellement en lecture seule si la classe a un constructeur avec des paramètres pour toutes les propriétés, avec la Convention d’affectation de noms la casse mixte habituelle et annoter le constructeur comme `[JsonConstructor]`. Toutefois, cette option requiert davantage de code.
+Gardez à l’esprit que si vous avez l’intention ou s’attendre à ce que les commandes `[DataMember]` passent `[JsonProperty]`par un processus de sérialisation / déséialisation, les propriétés doivent avoir un setter privé, et l’attribut (ou). Sinon, le deserializer ne sera pas en mesure de reconstruire l’objet à destination avec les valeurs requises. Vous pouvez également utiliser des propriétés vraiment lu-seulement si la classe a un constructeur avec des paramètres pour toutes `[JsonConstructor]`les propriétés, avec la convention habituelle de nommage camelCase, et annoter le constructeur comme . Toutefois, cette option nécessite plus de code.
 
-Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, `CreateOrderCommand` n’a pas d’ID de commande, car la commande n’a pas encore été créée.
+Par exemple, la classe de commande pour la création d’une commande est probablement similaire en termes de données à la commande que vous souhaitez créer, mais vous n’avez probablement pas besoin des mêmes attributs. Par exemple, `CreateOrderCommand` n’a pas d’id de commande, parce que la commande n’a pas encore été créée.
 
 De nombreuses classes de commande peuvent être simples, car elles n’ont besoin que de quelques champs sur un état qui doit être modifié. C’est le cas si vous passez simplement l’état d’une commande de « En cours » à « Payée » ou « Livrée » à l’aide d’une commande semblable à la suivante :
 
@@ -311,9 +311,9 @@ public class UpdateOrderStatusCommand
 
 Certains développeurs séparent leurs objets de demande d’interface utilisateur de leurs objets de transfert de données, mais il ne s’agit que d’une question de préférence. Cette séparation est fastidieuse et n’ajoute pas de valeur. Les objets ont presque exactement la même forme. Par exemple, dans eShopOnContainers, certaines commandes viennent directement du côté client.
 
-### <a name="the-command-handler-class"></a>La classe du gestionnaire de commandes
+### <a name="the-command-handler-class"></a>La classe de gestionnaire de commandement
 
-Vous devez implémenter une classe de gestionnaire de commandes spécifique pour chaque commande. C’est ainsi que le modèle fonctionne, et c’est là que vous allez utiliser l’objet de commande, les objets de domaine et les objets de référentiel d’infrastructure. Le gestionnaire de commandes est en fait le cœur de la couche Application en termes de CQRS et DDD. Toutefois, toute la logique de domaine doit être contenue dans les classes de domaine (dans les racines d’agrégat (entités racine), les entités enfants ou les [services de domaine](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/), mais pas dans le gestionnaire de commandes, qui est une classe de la couche application.
+Vous devez implémenter une classe de gestionnaire de commandes spécifique pour chaque commande. C’est ainsi que fonctionne le modèle, et c’est là que vous allez utiliser l’objet de commande, les objets de domaine et les objets de dépôt d’infrastructure. Le gestionnaire de commandes est en fait le cœur de la couche Application en termes de CQRS et DDD. Cependant, toute la logique du domaine doit être contenue dans les classes de domaine , dans les racines agrégées (entités racinaires), entités pour enfants, ou [services de domaine,](https://lostechies.com/jimmybogard/2008/08/21/services-in-domain-driven-design/)mais pas dans le gestionnaire de commande, qui est une classe à partir de la couche d’application.
 
 La classe du gestionnaire de commandes offre une base solide pour appliquer le principe de responsabilité unique mentionné dans une des sections précédentes.
 
@@ -337,7 +337,7 @@ L’important ici est que, quand une commande est en cours de traitement, toute 
 
 Lorsque les gestionnaires de commandes deviennent complexes, avec trop de logique, un « code smell » peut se produire. Passez-les en revue et si vous trouvez la logique de domaine, refactorisez le code pour déplacer ce comportement de domaine vers les méthodes des objets de domaine (entité racine et enfant de l’agrégat).
 
-En guise d’exemple de classe de gestionnaire de commandes, le code suivant montre la même `CreateOrderCommandHandler` classe que celle que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
+À titre d’exemple d’une classe de `CreateOrderCommandHandler` gestionnaire de commande, le code suivant affiche la même classe que vous avez vue au début de ce chapitre. Nous voulons ici mettre en exergue la méthode Handle et les opérations effectuées avec les objets/agrégats du modèle de domaine.
 
 ```csharp
 public class CreateOrderCommandHandler
@@ -396,19 +396,19 @@ Il s’agit des étapes supplémentaires que doit suivre un gestionnaire de comm
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Mark Seemann. Au niveau des limites, les applications ne sont pas orientées objet** \
+- **Mark Seemann. Aux limites, les applications ne sont pas orientées vers les objets** \
   <https://blog.ploeh.dk/2011/05/31/AttheBoundaries,ApplicationsareNotObject-Oriented/>
 
-- **Commands and events** \
+- **Commandes et événements** \
   <https://cqrs.nu/Faq/commands-and-events>
 
 - **What does a command handler do?** \
   <https://cqrs.nu/Faq/command-handlers>
 
-- **Jimmy bogard. Modèles de commande de domaine : gestionnaires** \
+- **Jimmy Bogard. Modèles de commandement de domaine - Handlers** \
   <https://jimmybogard.com/domain-command-patterns-handlers/>
 
-- **Jimmy bogard. Modèles de commande de domaine-**  \ de validation
+- **Jimmy Bogard. Modèles de commande de domaine - Validation** \
   <https://jimmybogard.com/domain-command-patterns-validation/>
 
 ## <a name="the-command-process-pipeline-how-to-trigger-a-command-handler"></a>Pipeline du processus de commande : comment déclencher un gestionnaire de commandes
@@ -425,11 +425,11 @@ Les deux autres options principales, qui sont recommandées, sont les suivantes�
 
 Comme le montre la figure 7-25, dans une approche CQRS, vous utilisez un médiateur intelligent, similaire à un bus en mémoire, suffisamment intelligent pour effectuer une redirection vers le gestionnaire de commandes approprié en fonction du type de commande ou d’objet de transfert de données reçu. Les flèches noires entre les composants représentent les dépendances entre les objets (dans de nombreux cas, injectées par injection de dépendances) avec leurs interactions associées.
 
-![Diagramme montrant un flot de données plus détaillé entre le client et la base de données.](./media/microservice-application-layer-implementation-web-api/mediator-cqrs-microservice.png)
+![Diagramme montrant un flux de données plus détaillé d’un client à l’autre.](./media/microservice-application-layer-implementation-web-api/mediator-cqrs-microservice.png)
 
 **Figure 7-25**. Utilisation du modèle Médiateur dans le processus dans un microservice CQRS unique
 
-Le diagramme ci-dessus montre un zoom avant à partir de l’image 7-24 : le contrôleur ASP.NET Core envoie la commande au pipeline de commande de médiateur, afin qu’ils obtiennent le gestionnaire approprié.
+Le diagramme ci-dessus montre un zoom-in de l’image 7-24: le contrôleur ASP.NET Core envoie la commande au pipeline de commande de MediatR, afin qu’ils arrivent au gestionnaire approprié.
 
 L’utilisation du modèle Médiateur prend tout son sens dans les applications d’entreprise, où les demandes de traitement peuvent devenir compliquées. Vous avez besoin de pouvoir ajouter un nombre ouvert de problèmes transversaux comme la journalisation, les validations, l’audit et la sécurité. Dans ce cas, vous pouvez compter sur un pipeline de médiateur (consultez [Modèle Médiateur](https://en.wikipedia.org/wiki/Mediator_pattern)) pour fournir un moyen à ces comportements supplémentaires ou problèmes transversaux.
 
@@ -437,13 +437,13 @@ Un médiateur est un objet qui encapsule le « comment » de ce processus : i
 
 Les éléments décoratifs et les comportements sont similaires à la [programmation orientée aspect](https://en.wikipedia.org/wiki/Aspect-oriented_programming), uniquement appliquée à un pipeline de processus spécifique géré par le composant médiateur. Les aspects en programmation orientée aspect qui implémentent des problèmes transversaux sont appliqués selon les *tisseurs d’aspect* injectés au moment de la compilation ou en fonction de l’interception des appels d’objet. Les deux approches usuelles de la programmation orientée aspect sont parfois considérées comme « magiques », car il n’est pas facile de voir comment leur travail est effectué. Lorsque qu’il s’agit de traiter des problèmes ou bogues graves, la programmation orientée aspect peut rendre le débogage difficile. En revanche, ces éléments décoratifs/comportements sont explicites et uniquement appliqués dans le contexte du médiateur, donc le débogage est beaucoup plus prévisible et facile.
 
-Par exemple, dans le microservice de passation de commandes eShopOnContainers, nous avons implémenté deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs). L’implémentation des comportements est expliquée dans la section suivante en illustrant la façon dont eShopOnContainers utilise les [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors) [médiateurr 3](https://www.nuget.org/packages/MediatR/3.0.0) .
+Par exemple, dans le microservice de passation de commandes eShopOnContainers, nous avons implémenté deux exemples de comportements, une classe [LogBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/LoggingBehavior.cs) et une classe [ValidatorBehavior](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/Behaviors/ValidatorBehavior.cs). La mise en œuvre des comportements est expliquée dans la section suivante en montrant comment eShopOnContainers utilise les [comportements](https://github.com/jbogard/MediatR/wiki/Behaviors) [MediatR 3](https://www.nuget.org/packages/MediatR/3.0.0) .
 
 ### <a name="use-message-queues-out-of-proc-in-the-commands-pipeline"></a>Utiliser de files d’attente de messages (hors processus) dans le pipeline de commandes
 
 Un autre choix consiste à utiliser des messages asynchrones basés sur des services Broker ou des files d’attente de messages, comme le montre la figure 7-26. Vous pouvez aussi combiner cette option avec le composant médiateur juste avant le gestionnaire de commandes.
 
-![Diagramme montrant le flux de données à l’aide d’une file d’attente de messages haute disponibilité.](./media/microservice-application-layer-implementation-web-api/add-ha-message-queue.png)
+![Diagramme montrant le flux de données à l’aide d’une file d’attente de message HA.](./media/microservice-application-layer-implementation-web-api/add-ha-message-queue.png)
 
 **Figure 7-26**. Utilisation de files d’attente de messages (communication hors processus et entre processus) avec des commandes CQRS
 
@@ -457,7 +457,7 @@ De plus, les commandes asynchrones sont des commandes unidirectionnelles, inutil
 
 > \[Burtsev Alexey\] Je trouve beaucoup de code où les informaticiens utilisent une gestion de commandes asynchrone ou des messages de commande unidirectionnels sans aucune raison de le faire (ils n’effectuent pas une opération longue, ils n’exécutent pas du code asynchrone externe, ils ne franchissent même pas la limite de l’application pour utiliser un bus de messages). Pourquoi introduisent-ils cette complexité inutile ? En fait, je n’ai jamais vu un exemple de code CQRS avec des gestionnaires de commandes bloquants jusqu’à présent, même si cela fonctionnerait parfaitement dans la plupart des cas.
 >
-> \[Greg Young\] \[...\] une commande asynchrone n’existe pas ; Il s’agit en fait d’un autre événement. Si je dois accepter ce que vous m’envoyez et déclencher un événement si je ne suis pas d’accord, alors ce n’est plus vous qui me dites de faire quelque chose, \[c’est-à-dire que ce n’est pas une commande\]. Mais vous qui me dites que quelque chose a été fait. La différence peut sembler légère dans un premier temps, mais ses implications sont nombreuses.
+> \[Greg\] \[Young ... \] une commande asynchrone n’existe pas; c’est en fait un autre événement. Si je dois accepter ce que vous m’envoyez et déclencher un événement si je ne suis pas d’accord, alors ce n’est plus vous qui me dites de faire quelque chose, \[c’est-à-dire que ce n’est pas une commande\]. Mais vous qui me dites que quelque chose a été fait. La différence peut sembler légère dans un premier temps, mais ses implications sont nombreuses.
 
 Les commandes asynchrones augmentent considérablement la complexité d’un système, car il n’existe aucun moyen simple d’indiquer des échecs. Ainsi, les commandes asynchrones ne sont pas recommandées si ce n’est quand il existe des besoins de mise à l’échelle ou dans des cas spéciaux de communication des microservices internes par le biais d’une messagerie. Le cas échéant, vous devez concevoir un système de création de rapports et de récupération distinct pour les échecs.
 
@@ -475,9 +475,9 @@ L’utilisation du modèle Médiateur vous aide à réduire le couplage et à is
 
 Jimmy Bogard a précisé une autre bonne raison d’utiliser le modèle Médiateur quand il a révisé ce guide :
 
-> Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande, réponse. Nous avons constaté que cet aspect est très utile pour créer des tests qui se comportent de manière cohérente.
+> Je pense qu’il est intéressant de mentionner les tests ici : le modèle ouvre une fenêtre cohérente sur le comportement de votre système. Demande, réponse. Nous avons trouvé cet aspect très précieux dans la construction de tests de comportement constants.
 
-Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez en fait l’objet médiateur. Si vous n’utilisez pas l’objet médiateur, vous devez injecter toutes les dépendances de ce contrôleur, comme un objet enregistreur d’événements et d’autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
+Tout d’abord, examinons un exemple de contrôleur WebAPI dans lequel vous utilisez en fait l’objet médiateur. Si vous n’utilisiez pas l’objet médiateur, vous auriez besoin d’injecter toutes les dépendances pour ce contrôleur, des choses comme un objet bûcheron et d’autres. Ainsi, le constructeur est assez complexe. En revanche, si vous utilisez l’objet médiateur, le constructeur de votre contrôleur peut être beaucoup plus simple, avec seulement quelques dépendances plutôt que de nombreuses dépendances si vous n’en avez qu’une par opération transversale, comme dans l’exemple suivant :
 
 ```csharp
 public class MyMicroserviceController : Controller
@@ -506,7 +506,7 @@ public async Task<IActionResult> ExecuteBusinessOperation([FromBody]RunOpCommand
 
 ### <a name="implement-idempotent-commands"></a>Implémenter des commandes idempotentes
 
-Dans **eShopOnContainers**, un exemple plus avancé que le précédent envoie un objet CreateOrderCommand à partir du microservice Ordering. Toutefois, étant donné que le processus d’entreprise de commande est un peu plus complexe et, dans notre cas, il commence dans le microservice du panier, cette action consistant à soumettre l’objet CreateOrderCommand est effectuée à partir d’un gestionnaire d’événements d’intégration nommé [UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) au lieu d’un contrôleur WebAPI simple appelé à partir de l’application cliente, comme dans l’exemple plus simple précédent.
+Dans **eShopOnContainers**, un exemple plus avancé que le précédent envoie un objet CreateOrderCommand à partir du microservice Ordering. Mais puisque le processus d’affaires de commande est un peu plus complexe et, dans notre cas, il commence réellement dans le microservice de panier, cette action de soumettre l’objet CreateOrderCommand est effectuée à partir d’un gestionnaire d’intégration-événement nommé [UserCheckoutAcceptedIntegrationEventHandler](https://github.com/dotnet-architecture/eShopOnContainers/blob/dev/src/Services/Ordering/Ordering.API/Application/IntegrationEvents/EventHandling/UserCheckoutAcceptedIntegrationEventHandler.cs) au lieu d’un contrôleur WebAPI simple appelé de l’application client comme dans l’exemple plus simple précédent.
 
 Néanmoins, l’action d’envoi de la commande à MediatR est assez similaire, comme le montre le code suivant.
 
@@ -760,7 +760,7 @@ public class ValidatorBehavior<TRequest, TResponse>
 
 Ce comportement déclenche ici une exception si la validation échoue, mais vous pouvez aussi retourner un objet résultant, qui contient le résultat de la commande si elle a réussi, ou les messages de validation si elle a échoué. Ceci faciliterait probablement l’affichage des résultats de la validation à l’utilisateur.
 
-Ensuite, en fonction de la bibliothèque [FluentValidation](https://github.com/JeremySkinner/FluentValidation), nous avons créé une validation pour les données transférées avec CreateOrderCommand, comme dans le code suivant :
+Ensuite, sur la base de la bibliothèque [FluentValidation,](https://github.com/JeremySkinner/FluentValidation) nous avons créé la validation des données transmises avec CreateOrderCommand, comme dans le code suivant :
 
 ```csharp
 public class CreateOrderCommandValidator : AbstractValidator<CreateOrderCommand>
@@ -801,35 +801,35 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="the-mediator-pattern"></a>Le modèle Médiateur
 
-- **Mediator pattern** \
+- **Modèle de médiateur** \
   [https://en.wikipedia.org/wiki/Mediator\_pattern](https://en.wikipedia.org/wiki/Mediator_pattern)
 
 ##### <a name="the-decorator-pattern"></a>Le modèle Élément décoratif
 
-- **Decorator pattern** \
+- **Modèle de décorateur** \
   [https://en.wikipedia.org/wiki/Decorator\_pattern](https://en.wikipedia.org/wiki/Decorator_pattern)
 
 ##### <a name="mediatr-jimmy-bogard"></a>MediatR (Jimmy Bogard)
 
-- **MediatR.** GitHub repo. \
+- **MediatR.** Dépôt GitHub. \
   <https://github.com/jbogard/MediatR>
 
-- **CQRS with MediatR and AutoMapper** \
+- **CQRS avec MediatR et AutoMapper** \
   <https://lostechies.com/jimmybogard/2015/05/05/cqrs-with-mediatr-and-automapper/>
 
 - **Put your controllers on a diet: POSTs and commands.** \
   <https://lostechies.com/jimmybogard/2013/12/19/put-your-controllers-on-a-diet-posts-and-commands/>
 
-- **Tackling cross-cutting concerns with a mediator pipeline** \
+- **S’attaquer aux préoccupations transversales avec un pipeline de médiateurs** \
   <https://lostechies.com/jimmybogard/2014/09/09/tackling-cross-cutting-concerns-with-a-mediator-pipeline/>
 
-- **CQRS and REST: the perfect match** \
+- **CQRS et REST : le match parfait** \
   <https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match/>
 
-- **MediatR Pipeline Examples** \
+- **Exemples de pipeline MediatR** \
   <https://lostechies.com/jimmybogard/2016/10/13/mediatr-pipeline-examples/>
 
-- **Vertical Slice Test Fixtures for MediatR and ASP.NET Core** \
+- **Appareils d’essai de tranches verticales pour MediatR et ASP.NET Core** \
   <https://lostechies.com/jimmybogard/2016/10/24/vertical-slice-test-fixtures-for-mediatr-and-asp-net-core/>
 
 - **MediatR Extensions for Microsoft Dependency Injection Released** \
@@ -837,9 +837,9 @@ De la même façon, vous pouvez implémenter d’autres comportements pour d’a
 
 ##### <a name="fluent-validation"></a>Validation fluide
 
-- **Jeremy Skinner. FluentValidation.** GitHub repo. \
+- **Jeremy Skinner. FluentValidation.** Dépôt GitHub. \
   <https://github.com/JeremySkinner/FluentValidation>
 
 > [!div class="step-by-step"]
-> [Précédent](microservice-application-layer-web-api-design.md)
-> [Suivant](../implement-resilient-applications/index.md)
+> [Suivant précédent](microservice-application-layer-web-api-design.md)
+> [Next](../implement-resilient-applications/index.md)

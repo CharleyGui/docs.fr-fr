@@ -8,10 +8,10 @@ helpviewer_keywords:
 - C# language, interoperability
 ms.assetid: 238bb95a-e962-4026-bbd5-197055bdb8ee
 ms.openlocfilehash: 3a70d2ae077552bab536e96367cab0fda1661310
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75712050"
 ---
 # <a name="interoperability-c-programming-guide"></a>Interopérabilité (Guide de programmation C#)
@@ -23,10 +23,10 @@ L’interopérabilité vous permet de préserver et de tirer parti d’investiss
  [Vue d’ensemble de l’interopérabilité](./interoperability-overview.md)  
  Décrit les méthodes qui permettent l’interopérabilité entre le code managé et le code non managé en C#.  
   
- [Comment accéder aux objets Office Interop à l' C# aide des fonctionnalités](./how-to-access-office-onterop-objects.md)  
+ [Comment accéder aux objets Office Interop à l’aide des fonctionnalités C#](./how-to-access-office-onterop-objects.md)  
  Décrit les fonctionnalités introduites dans Visual C# pour faciliter la programmation Office.  
   
- [Utilisation des propriétés indexées dans la programmation de COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)  
+ [Comment utiliser des propriétés indexées dans la programmation COM Interop](./how-to-use-indexed-properties-in-com-interop-rogramming.md)  
  Explique comment utiliser des propriétés indexées pour accéder aux propriétés COM qui ont des paramètres.  
   
  [Comment utiliser l’appel de code non managé pour lire un fichier WAV](./how-to-use-platform-invoke-to-play-a-wave-file.md)  
@@ -46,5 +46,5 @@ Pour plus d’informations, consultez [Concepts de base](~/_csharplang/spec/unsa
 
 - <xref:System.Runtime.InteropServices.Marshal.ReleaseComObject%2A?displayProperty=nameWithType>
 - [Guide de programmation C#](../index.md)
-- [Interopération avec du code non managé](../../../framework/interop/index.md)
+- [Interopération avec code non traité](../../../framework/interop/index.md)
 - [Procédure pas à pas : programmation Office](./walkthrough-office-programming.md)

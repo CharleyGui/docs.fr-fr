@@ -4,18 +4,18 @@ description: Découvrez la différence entre les délégués et les événements
 ms.date: 06/20/2016
 ms.technology: csharp-fundamentals
 ms.assetid: 0fdc8629-2fdb-4a7c-a433-5b9d04eaf911
-ms.openlocfilehash: ff90af1d2b1a92f06eed58228f8e8ca5ff6b93ca
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.openlocfilehash: 04738ac2dd82da9c577e88598d0bb737a93333c1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73037316"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79146176"
 ---
 # <a name="distinguishing-delegates-and-events"></a>Différenciation des délégués et des événements
 
 [Précédent](modern-events.md)
 
-Les développeurs qui découvrent la plateforme .NET Core éprouvent souvent des difficultés quand il faut choisir entre une conception basée sur les `delegates` et une conception basée sur les `events`. Il s’agit d’un concept difficile, car ces deux fonctionnalités linguistiques sont très similaires. Les événements sont même générés à l’aide de la prise en charge linguistique des délégués. 
+Les développeurs qui découvrent la plateforme .NET Core éprouvent souvent des difficultés quand il faut choisir entre une conception basée sur les `delegates` et une conception basée sur les `events`. Il s’agit d’un concept difficile, car ces deux fonctionnalités linguistiques sont très similaires. Les événements sont même générés à l’aide de la prise en charge linguistique des délégués.
 
 Elles offrent tous deux un scénario de liaison tardive : elles autorisent les scénarios où un composant communique en appelant une méthode qui est connue uniquement au moment de l’exécution. Toutes deux prennent en charge les méthodes à abonnés uniques et multiples. On utilise parfois le terme de prise en charge singlecast et multicast. Toutes deux prennent en charge une syntaxe similaire pour l’ajout et la suppression de gestionnaires. Pour finir, le déclenchement d’un événement et l’appel d’un délégué utilisent exactement la même syntaxe d’appel de méthode. Qui plus est, elles prennent toutes deux en charge la même syntaxe de méthode `Invoke()` pour une utilisation avec l’opérateur `?.`.
 
@@ -23,7 +23,7 @@ Avec tous ces similitudes, il est facile d’avoir des difficultés à détermin
 
 ## <a name="listening-to-events-is-optional"></a>La détection d’événements est facultative
 
-Pour déterminer laquelle de ces deux fonctionnalités utiliser, il convient avant tout de savoir s’il doit y avoir un abonné attaché ou non. Si votre code doit appeler le code fourni par l’abonné, vous devez utiliser un modèle basé sur les délégués. Si votre code peut effectuer tout son travail sans appeler les abonnés, vous devez utiliser un modèle basé sur les événements. 
+Pour déterminer laquelle de ces deux fonctionnalités utiliser, il convient avant tout de savoir s’il doit y avoir un abonné attaché ou non. Si votre code doit appeler le code fourni par l’abonné, vous devez utiliser un modèle basé sur les délégués. Si votre code peut effectuer tout son travail sans appeler les abonnés, vous devez utiliser un modèle basé sur les événements.
 
 Examinez les exemples fournis dans cette section. Le code que vous avez créé à l’aide de `List.Sort()` doit disposer d’une fonction de comparaison pour trier correctement les éléments. Des requêtes LINQ doivent être fournies avec les délégués pour identifier les éléments à retourner. Tous deux ont une conception basée sur des délégués.
 
@@ -38,7 +38,7 @@ Une autre considération à prendre en compte est le prototype de méthode souha
 
 Notez que ces heuristiques peuvent souvent être toutes deux présentes : si votre méthode déléguée retourne une valeur, elle aura probablement un impact sur l’algorithme.
 
-## <a name="event-listeners-often-have-longer-lifetimes"></a>Les détecteurs d’événements ont souvent des durées de vie plus longues 
+## <a name="event-listeners-often-have-longer-lifetimes"></a>Les détecteurs d’événements ont souvent des durées de vie plus longues
 
 Il s’agit d’une justification légèrement plus faible. Toutefois, vous constaterez peut-être que les conceptions basées sur les événements sont plus naturelles quand la source de l’événement déclenche des événements durant une période prolongée. Vous pouvez voir des exemples de ceci pour les contrôles d’expérience utilisateur sur de nombreux systèmes. Une fois que vous vous êtes abonné à un événement, la source de l’événement peut déclencher des événements pendant toute la durée de vie du programme.
 (Vous pouvez vous désabonner à des événements quand vous n’en avez plus besoin.)

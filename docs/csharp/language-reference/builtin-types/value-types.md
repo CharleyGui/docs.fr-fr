@@ -1,5 +1,5 @@
 ---
-title: Types valeur- C# référence
+title: Types de valeur - Référence C
 ms.date: 01/22/2020
 f1_keywords:
 - cs.valuetypes
@@ -8,55 +8,55 @@ helpviewer_keywords:
 - types [C#], value types
 - C# language, value types
 ms.assetid: 471eb994-2958-49d5-a6be-19b4313f80a3
-ms.openlocfilehash: a2b9dce3b0ca5e66cfc0fbdbbf8f341abca0b636
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 406e5b8bbe0802146a65bb4b9a053e753a7827ee
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239727"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399580"
 ---
-# <a name="value-types-c-reference"></a>Types valeur (C# référence)
+# <a name="value-types-c-reference"></a>Types de valeur (référence C)
 
-Les types *valeur* et les [types référence](../keywords/reference-types.md) sont les deux catégories C# principales de types. Une variable d’un type valeur contient une instance du type. Cela diffère d’une variable d’un type référence, qui contient une référence à une instance du type. Par défaut, lors de l' [assignation](../operators/assignment-operator.md), en passant un argument à une méthode et en retournant un résultat de méthode, les valeurs des variables sont copiées. Dans le cas des variables de type valeur, les instances de type correspondantes sont copiées. L’exemple suivant illustre ce comportement :
+*Les types* de valeur et [les types de référence](../keywords/reference-types.md) sont les deux principales catégories de types de C. Une variable d’un type de valeur contient une instance du type. Cela diffère d’une variable d’un type de référence, qui contient une référence à une instance du type. Par défaut, en [affectation,](../operators/assignment-operator.md)en passant un argument à une méthode, et en retournant un résultat de méthode, les valeurs variables sont copiées. Dans le cas des variables de type valeur, les instances de type correspondant sont copiées. L’exemple suivant illustre ce comportement :
 
-[!code-csharp[copy of values](~/samples/snippets/csharp/language-reference/builtin-types/ValueTypes.cs#ValueTypeCopied)]
+[!code-csharp[copy of values](snippets/ValueTypes.cs#ValueTypeCopied)]
 
-Comme le montre l’exemple précédent, les opérations sur une variable de type valeur affectent uniquement cette instance du type valeur, stockée dans la variable.
+Comme l’exemple précédent l’indique, les opérations sur une variable de type valeur n’affectent que cette instance du type de valeur, stockée dans la variable.
 
-Si un type valeur contient un membre de données d’un type référence, seule la référence à l’instance du type référence est copiée lorsqu’une instance de type valeur est copiée. La copie et l’instance de type valeur d’origine ont accès à la même instance de type référence. L’exemple suivant illustre ce comportement :
+Si un type de valeur contient un membre de données d’un type de référence, seule la référence à l’instance du type de référence est copiée lorsqu’une instance de type valeur est copiée. La copie et l’instance de type valeur originale ont accès à la même instance de type de référence. L’exemple suivant illustre ce comportement :
 
-[!code-csharp[shallow copy](~/samples/snippets/csharp/language-reference/builtin-types/ValueTypes.cs#ShallowCopy)]
+[!code-csharp[shallow copy](snippets/ValueTypes.cs#ShallowCopy)]
 
 > [!NOTE]
-> Pour que votre code soit moins sujet aux erreurs et plus robuste, définissez et utilisez des types de valeurs immuables. Cet article utilise des types de valeur mutable uniquement à des fins de démonstration.
+> Pour rendre votre code moins sujet aux erreurs et plus robuste, définissez et utilisez des types de valeur immuables. Cet article utilise des types de valeur mutables uniquement à des fins de démonstration.
 
-## <a name="kinds-of-value-types"></a>Genres de types valeur
+## <a name="kinds-of-value-types"></a>Types de types de valeur
 
-Un type valeur peut être l’un des deux types suivants :
+Un type de valeur peut être l’un des deux types suivants :
 
-- [type structure](struct.md), qui encapsule les données et les fonctionnalités associées
-- [type énumération](enum.md), qui est défini par un ensemble de constantes nommées et qui représente un choix ou une combinaison de choix
+- un [type de structure](struct.md), qui encapsule les données et les fonctionnalités connexes
+- un [type d’énumération](enum.md), qui est défini par un ensemble de constantes nommées et représente un choix ou une combinaison de choix
 
-Un [type valeur nullable](nullable-value-types.md) `T?` représente toutes les valeurs de son type valeur sous-jacent `T` et une valeur [null](../keywords/null.md) supplémentaire. Vous ne pouvez pas assigner `null` à une variable d’un type valeur, sauf s’il s’agit d’un type valeur Nullable.
+Un `T?` [type de valeur in nullable](nullable-value-types.md) `T` représente toutes les valeurs de son type de valeur sous-jacente et une valeur [nulle](../keywords/null.md) supplémentaire. Vous ne `null` pouvez pas attribuer à une variable d’un type de valeur, à moins qu’il ne s’agit d’un type de valeur nul.
 
-## <a name="built-in-value-types"></a>Types valeur intégrés
+## <a name="built-in-value-types"></a>Types de valeur intégrés
 
-C#fournit les types valeur intégrés suivants, également appelés *types simples*:
+C fournit les types de valeur intégré suivants, également connus sous le nom *de types simples*:
 
 - [Types numériques intégraux](integral-numeric-types.md)
 - [Types numériques à virgule flottante](floating-point-numeric-types.md)
-- [booléen](bool.md) qui représente une valeur booléenne
-- [char](char.md) qui représente un caractère Unicode UTF-16
+- [bool](bool.md) qui représente une valeur Boolean
+- [char](char.md) qui représente un personnage Unicode UTF-16
 
-Tous les types simples sont des types structure et diffèrent des autres types de structure en ce qu’ils autorisent certaines opérations supplémentaires :
+Tous les types simples sont des types de structure et diffèrent des autres types de structure en ce qu’ils permettent certaines opérations supplémentaires:
 
-- Vous pouvez utiliser des littéraux pour fournir une valeur d’un type simple. Par exemple, `'A'` est un littéral de type `char`, tandis que `2001` est un littéral de type `int`.
+- Vous pouvez utiliser des littérals pour fournir une valeur d’un type simple. Par exemple, `'A'` est un littéral de type `char`, tandis que `2001` est un littéral de type `int`.
 
-- Vous pouvez déclarer des constantes des types simples avec le mot clé [const](../keywords/const.md). Il n’est pas possible d’avoir des constantes d’autres types de structure.
+- Vous pouvez déclarer des constantes des types simples avec le mot clé [const](../keywords/const.md). Il n’est pas possible d’avoir des constantes d’autres types de structures.
 
-- Les expressions constantes, dont les opérandes sont toutes des constantes des types simples, sont évaluées au moment de la compilation.
+- Les expressions constantes, dont les opérands sont toutes des constantes des types simples, sont évaluées au moment de la compilation.
 
-À partir C# de 7,0 C# , prend en charge les [tuples de valeur](../../tuples.md). Un tuple de valeur est un type valeur, mais pas un type simple.
+Commençant par C 7.0, C ' prend en charge [les tuples de valeur](../../tuples.md). Un tuple de valeur est un type de valeur, mais pas un type simple.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -68,6 +68,6 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C#](../index.md)
 - <xref:System.ValueType?displayProperty=nameWithType>
 - [Types référence](../keywords/reference-types.md)

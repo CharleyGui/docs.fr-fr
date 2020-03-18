@@ -1,35 +1,35 @@
 ---
-title: Modifications avec rupture Windows Forms
-description: Répertorie les dernières modifications apportées à Windows Forms pour .NET Core.
+title: Formulaires Windows brisant les changements
+description: Répertorie les modifications de rupture dans les formulaires Windows pour .NET Core.
 ms.date: 01/08/2020
 ms.openlocfilehash: 7fba78382d011bc9d489924fa185a44e598c5a76
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
-ms.locfileid: "77093017"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399097"
 ---
-# <a name="breaking-changes-in-windows-forms"></a>Modifications avec rupture dans Windows Forms
+# <a name="breaking-changes-in-windows-forms"></a>Briser les changements dans les formulaires Windows
 
-La prise en charge de Windows Forms a été ajoutée à .NET Core dans la version 3,0. Cet article répertorie les modifications avec rupture pour Windows Forms par la version de .NET Core dans laquelle elles ont été introduites. Si vous effectuez la mise à niveau d’une application Windows Forms à partir d' .NET Framework ou d’une version antérieure de .NET Core (3,0 ou version ultérieure), cet article s’applique à vous.
+Windows Forms support a été ajouté à .NET Core dans la version 3.0. Cet article répertorie les modifications de rupture pour les formulaires Windows par la version .NET Core dans laquelle ils ont été introduits. Si vous mise à niveau d’une application Windows Forms à partir de .NET Framework ou d’une version précédente de .NET Core (3.0 ou plus tard), cet article s’applique à vous.
 
-Les modifications avec rupture suivantes sont documentées sur cette page :
+Les modifications de rupture suivantes sont documentées sur cette page :
 
 - [Contrôles supprimés](#removed-controls)
-- [Événement CellFormatting non déclenché si l’info-bulle est affichée](#cellformatting-event-not-raised-if-tooltip-is-shown)
-- [Control. DefaultFont remplacé par Segoe UI 9 PT](#default-control-font-changed-to-segoe-ui-9-pt)
+- [CellFormatting événement non soulevé si tooltip est montré](#cellformatting-event-not-raised-if-tooltip-is-shown)
+- [Control.DefaultFont changé en Segoe UI 9 pt](#default-control-font-changed-to-segoe-ui-9-pt)
 - [Modernisation du FolderBrowserDialog](#modernization-of-the-folderbrowserdialog)
-- [SerializableAttribute supprimé de certains types de Windows Forms](#serializableattribute-removed-from-some-windows-forms-types)
+- [SerializableAttribute supprimé de certains types de formulaires Windows](#serializableattribute-removed-from-some-windows-forms-types)
 - [Commutateur de compatibilité AllowUpdateChildControlIndexForTabControls non pris en charge](#allowupdatechildcontrolindexfortabcontrols-compatibility-switch-not-supported)
-- [Commutateur de compatibilité DomainUpDown. UseLegacyScrolling non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
-- [Commutateur de compatibilité DoNotLoadLatestRichEditControl non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
+- [DomainUpDown.UseLegacyScrolling commutation compatibilité non pris en charge](#domainupdownuselegacyscrolling-compatibility-switch-not-supported)
+- [DoNotLoadLatestRichEditControl commutateur de compatibilité non pris en charge](#donotloadlatestricheditcontrol-compatibility-switch-not-supported)
 - [Commutateur de compatibilité DoNotSupportSelectAllShortcutInMultilineTextBox non pris en charge](#donotsupportselectallshortcutinmultilinetextbox-compatibility-switch-not-supported)
 - [Commutateur de compatibilité DontSupportReentrantFilterMessage non pris en charge](#dontsupportreentrantfiltermessage-compatibility-switch-not-supported)
 - [Commutateur de compatibilité EnableVisualStyleValidation non pris en charge](#enablevisualstylevalidation-compatibility-switch-not-supported)
-- [Commutateur de compatibilité UseLegacyContextMenuStripSourceControlValue non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
+- [UtiliserLegacyContextMenuStripSourceControlValue commutateur de compatibilité non pris en charge](#uselegacycontextmenustripsourcecontrolvalue-compatibility-switch-not-supported)
 - [Commutateur de compatibilité UseLegacyImages non pris en charge](#uselegacyimages-compatibility-switch-not-supported)
-- [Changement d’accès pour AccessibleObject. RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
-- [API dupliquées supprimées de Windows Forms](#duplicated-apis-removed-from-windows-forms)
+- [Changement d’accès pour AccessibleObject.RuntimeIDFirstItem](#change-of-access-for-accessibleobjectruntimeidfirstitem)
+- [API dupliquée supprimée des formulaires Windows](#duplicated-apis-removed-from-windows-forms)
 
 ## <a name="net-core-31"></a>.NET Core 3.1
 
@@ -97,4 +97,4 @@ Les modifications avec rupture suivantes sont documentées sur cette page :
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Portage d’une application Windows Forms vers .NET Core](../porting/winforms.md)
+- [Port a Windows Forms app to .NET Core](../porting/winforms.md)

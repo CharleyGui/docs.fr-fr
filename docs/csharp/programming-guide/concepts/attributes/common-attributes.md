@@ -3,22 +3,22 @@ title: Attributs courants (C#)
 ms.date: 07/20/2015
 ms.assetid: 785a0526-6c0e-4599-8c61-ccdc88dd9965
 ms.openlocfilehash: 7988dad410c6e51869ec9d7e40d94e874443a5f8
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69595463"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399755"
 ---
 # <a name="common-attributes-c"></a>Attributs courants (C#)
 Cette rubrique décrit les attributs le plus couramment utilisés dans les programmes C#.  
   
 - [Attributs globaux](#Global)  
   
-- [Attribut Obsolete](#Obsolete)  
+- [Attribut obsolète](#Obsolete)  
   
 - [Attribut Conditional](#Conditional)  
   
-- [Attributs d’informations de l’appelant](#CallerInfo)  
+- [Attributs Info De l’appelant](#CallerInfo)  
   
 ## <a name="Global"></a> Attributs globaux  
  La plupart des attributs sont appliqués à des éléments de langage spécifiques, tels que les classes ou les méthodes. Toutefois, certains attributs sont globaux : ils s’appliquent à la totalité d’un assembly ou d’un module. Par exemple, l’attribut <xref:System.Reflection.AssemblyVersionAttribute> peut être utilisé pour incorporer des informations de version dans un assembly, de la manière suivante :  
@@ -72,8 +72,8 @@ Cette rubrique décrit les attributs le plus couramment utilisés dans les progr
 |<xref:System.Reflection.AssemblyConfigurationAttribute>|Définit un attribut personnalisé qui spécifie une configuration d’assembly (telles que retail ou debug) pour un manifeste d’assembly.|  
 |<xref:System.Reflection.AssemblyDefaultAliasAttribute>|Définit un alias par défaut convivial pour un manifeste d’assembly.|  
   
-## <a name="Obsolete"></a> Attribut Obsolete  
- L’attribut `Obsolete` est utilisé pour marquer une entité de programme comme étant une entité dont l’utilisation n’est plus recommandée. Chaque utilisation d’une entité marquée comme obsolète génère par la suite un avertissement ou une erreur, selon la façon dont l’attribut est configuré. Par exemple :  
+## <a name="Obsolete"></a>Attribut obsolète  
+ L’attribut `Obsolete` est utilisé pour marquer une entité de programme comme étant une entité dont l’utilisation n’est plus recommandée. Chaque utilisation d’une entité marquée comme obsolète génère par la suite un avertissement ou une erreur, selon la façon dont l’attribut est configuré. Par exemple :  
   
 ```csharp  
 [System.Obsolete("use class B")]  
@@ -111,7 +111,7 @@ b.NewMethod();
   
  `Obsolete` est un attribut à usage unique et peut être appliqué à toute entité qui autorise des attributs. `Obsolete` est un alias pour <xref:System.ObsoleteAttribute>.  
   
-## <a name="Conditional"></a> Attribut Conditional  
+## <a name="Conditional"></a>Attribut conditionnel  
  Avec l’attribut `Conditional`, l’exécution d’une méthode dépend d’un identificateur de prétraitement. L’attribut `Conditional` est un alias pour <xref:System.Diagnostics.ConditionalAttribute>, et peut être appliqué à une méthode ou une classe d’attributs.  
   
  Dans cet exemple, `Conditional` est appliqué à une méthode pour activer ou désactiver l’affichage d’informations de diagnostic spécifiques au programme :  
@@ -216,7 +216,7 @@ class SampleClass
 }  
 ```  
   
-## <a name="CallerInfo"></a> Attributs d’informations de l’appelant  
+## <a name="CallerInfo"></a>Attributs Info De l’appelant  
  À l'aide des attributs d'informations de l'appelant, vous pouvez obtenir des informations sur l'appelant d'une méthode. Vous pouvez obtenir le chemin du fichier de code source, le numéro de ligne dans le code source, ainsi que le nom de membre de l’appelant.  
   
  Pour obtenir des informations de membre de l’appelant, vous utilisez les attributs qui sont appliqués aux paramètres facultatifs. Chaque paramètre facultatif spécifie une valeur par défaut. Le tableau suivant répertorie les attributs d'informations de l'appelant définis dans l'espace de noms <xref:System.Runtime.CompilerServices?displayProperty=nameWithType> :  

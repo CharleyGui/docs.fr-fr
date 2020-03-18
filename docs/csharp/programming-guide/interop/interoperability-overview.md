@@ -9,10 +9,10 @@ helpviewer_keywords:
 - platform invoke
 ms.assetid: c025b2e0-2357-4c27-8461-118f0090aeff
 ms.openlocfilehash: 2c9eb2a8e6c2db8dc06ebe48ca6eb37d5cf638e7
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75700729"
 ---
 # <a name="interoperability-overview-c-programming-guide"></a>Vue d'ensemble de l'interopérabilité (Guide de programmation C#)
@@ -21,7 +21,7 @@ Cette rubrique décrit les méthodes qui permettent une interopérabilité entre
 ## <a name="platform-invoke"></a>Appel de plateforme  
  L’*appel de code non managé* est un service qui permet au code managé d’appeler des fonctions non managées implémentées dans des bibliothèques de liens dynamiques (DLL), telles que celles de l’API Windows Microsoft. Il localise et appelle une fonction exportée, puis marshale ses arguments (entiers, chaînes, tableaux, structures, etc) au-delà des limites d’interopérabilité, selon les besoins.  
   
-Pour plus d’informations, consultez [consommation de fonctions DLL non managées](../../../framework/interop/consuming-unmanaged-dll-functions.md) et [utilisation de l’appel de code non managé pour lire un fichier WAV](./how-to-use-platform-invoke-to-play-a-wave-file.md).
+Pour plus d’informations, voir [Consuming Unmanaged DLL Functions](../../../framework/interop/consuming-unmanaged-dll-functions.md) and [How to use platform invoke to play a WAV file](./how-to-use-platform-invoke-to-play-a-wave-file.md).
   
 > [!NOTE]
 > Le [common language runtime](../../../standard/clr.md) (CLR) gère l’accès aux ressources système. Le fait d’appeler du code non managé extérieur au CLR contourne ce mécanisme, ce qui présente un risque de sécurité. Par exemple, du code non managé peut appeler directement des ressources dans du code non managé en contournant les mécanismes de sécurité CLR. Pour plus d’informations, consultez [Sécurité dans .NET](../../../standard/security/index.md).  
@@ -59,9 +59,9 @@ Pour plus d’informations, consultez [consommation de fonctions DLL non managé
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Amélioration des performances d’interopérabilité](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)
+- [Améliorer les performances d’interopérabilité](https://docs.microsoft.com/previous-versions/msp-n-p/ff647812%28v=pandp.10%29)
 - [Introduction à l’interopérabilité entre COM et .NET](/office/client-developer/outlook/pia/introduction-to-interoperability-between-com-and-net)
-- [Introduction à COM Interop dans Visual Basic](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
+- [Introduction à COM Interop en Visual Basic](../../../visual-basic/programming-guide/com-interop/introduction-to-com-interop.md)
 - [Marshaling entre du code managé et non managé](../../../framework/interop/interop-marshaling.md)
-- [Interopération avec du code non managé](../../../framework/interop/index.md)
+- [Interopération avec code non traité](../../../framework/interop/index.md)
 - [Guide de programmation C#](../index.md)

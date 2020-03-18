@@ -3,15 +3,15 @@ title: Commande dotnet list package
 description: La commande 'dotnet list package' est pratique pour lister les références de packages à un projet ou à une solution.
 ms.date: 02/14/2020
 ms.openlocfilehash: 1cb52b8de10b2eef2ef7465f04316e9446318763
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78157230"
 ---
 # <a name="dotnet-list-package"></a>dotnet list package
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,2 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.2 SDK et les versions ultérieures
 
 ## <a name="name"></a>Nom
 
@@ -77,7 +77,7 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 
 - **`--framework <FRAMEWORK>`**
 
-  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
+  Affiche uniquement les packages applicables au [framework cible](../../standard/frameworks.md) spécifié. Pour spécifier plusieurs frameworks, exécutez l’option plusieurs fois. Par exemple : `--framework netcoreapp2.2 --framework netstandard2.0`.
 
 - **`-h|--help`**
 
@@ -101,7 +101,7 @@ Le fichier projet ou solution à traiter. Si aucun fichier n’est spécifié, l
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--outdated`**
 

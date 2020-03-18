@@ -1,15 +1,15 @@
 ---
 title: opérateur par défaut - référence C#
-description: Utiliser l’opérateur par défaut pour produire la valeur par défaut d’un type
+description: Utilisez l’opérateur par défaut pour produire la valeur par défaut d’un type
 ms.date: 08/01/2019
 helpviewer_keywords:
 - default keyword [C#]
-ms.openlocfilehash: ba4c02caa53a9d532be4012a4543a25cd41b6023
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 0d37fe952e71e74f014872231a2e58663dea9d18
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78239311"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399482"
 ---
 # <a name="default-operator-c-reference"></a>opérateur par défaut (référence C#)
 
@@ -17,22 +17,22 @@ L’opérateur `default` produit la [valeur par défaut](../builtin-types/defaul
 
 L’exemple suivant illustre l’utilisation de l’opérateur `default` :
 
-[!code-csharp-interactive[default of T](~/samples/snippets/csharp/language-reference/operators/DefaultOperator.cs#WithOperand)]
+[!code-csharp-interactive[default of T](snippets/DefaultOperator.cs#WithOperand)]
 
-Vous utilisez également le mot clé `default` comme étiquette de cas par défaut dans une [instruction`switch`](../keywords/switch.md).
+Vous utilisez `default` également le mot clé comme étiquette de cas par défaut dans une [ `switch` déclaration](../keywords/switch.md).
 
 ## <a name="default-literal"></a>littéral par défaut
 
 À partir de C# 7.1, vous pouvez utiliser le littéral `default` pour produire la valeur par défaut d'un type lorsque le compilateur peut déduire le type d'expression. L’expression littérale `default` génère la même valeur que l’expression `default(T)`, où `T` est le type déduit. Vous pouvez utiliser le littéral `default` dans les cas suivants :
 
 - Dans l'affectation ou l'initialisation d'une variable.
-- Dans la déclaration de la valeur par défaut d’un [paramètre de méthode facultatif](../../methods.md#optional-parameters-and-arguments).
+- Dans la déclaration de la valeur par défaut pour un [paramètre de méthode facultatif](../../methods.md#optional-parameters-and-arguments).
 - Dans un appel de méthode pour fournir une valeur d'argument.
-- Dans une [instruction`return`](../keywords/return.md) ou en tant qu’expression dans un [membre d’expression](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
+- Dans [ `return` ](../keywords/return.md) une déclaration ou comme une expression dans un [membre expression-corps](../../programming-guide/statements-expressions-operators/expression-bodied-members.md).
 
 L’exemple suivant illustre l’utilisation du littéral `default` :
 
-[!code-csharp-interactive[default literal](~/samples/snippets/csharp/language-reference/operators/DefaultOperator.cs#DefaultLiteral)]
+[!code-csharp-interactive[default literal](snippets/DefaultOperator.cs#DefaultLiteral)]
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -42,7 +42,7 @@ Pour plus d’informations sur le littéral `default`, voir la [proposition de f
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
-- [Valeurs par défaut C# des types](../builtin-types/default-values.md)
+- [Référence C#](../index.md)
+- [Opérateurs CMD](index.md)
+- [Valeurs par défaut des types C](../builtin-types/default-values.md)
 - [Génériques en .NET](../../../standard/generics/index.md)

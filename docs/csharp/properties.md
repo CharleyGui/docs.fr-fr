@@ -4,11 +4,11 @@ description: En savoir plus sur les propriétés C#, notamment les fonctionnali
 ms.technology: csharp-fundamentals
 ms.date: 04/25/2018
 ms.openlocfilehash: bda8a4f58f71b57248296dd4ba9f9bf4cbed40d4
-ms.sourcegitcommit: ad800f019ac976cb669e635fb0ea49db740e6890
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/29/2019
-ms.locfileid: "73039745"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399412"
 ---
 # <a name="properties"></a>Propriétés
 
@@ -73,7 +73,7 @@ Cette assignation lève une exception `ArgumentException`. Étant donné qu’un
 
 Vous pouvez employer cette même syntaxe pour valider d’autres éléments dans votre scénario. Vous pouvez notamment vérifier les relations entre plusieurs propriétés ou effectuer une validation par rapport à des conditions externes. Toute instruction C# valide peut être utilisée dans un accesseur de propriété.
 
-### <a name="read-only"></a>Propriétés en lecture seule
+### <a name="read-only"></a>Lecture seule
 
 Jusqu’ici, nous avons vu uniquement des définitions de propriétés qui sont en lecture-écriture dans des accesseurs publics. Ce n’est pas la seule accessibilité valide pour les propriétés.
 Vous pouvez créer des propriétés en lecture seule, ou assigner une accessibilité différente aux accesseurs set et get. Supposons que votre classe `Person` doit uniquement autoriser la modification de la valeur de la propriété `FirstName` à partir des autres méthodes de cette classe. Vous pouvez alors assigner l’accessibilité `private` au lieu de `public` à l’accesseur set :
@@ -141,12 +141,12 @@ Il existe un dernier scénario où vous devrez écrire du code dans un accesseur
 
 [!code-csharp[invalidating the cache correctly](../../samples/snippets/csharp/properties/Person.cs#15)]
 
-L’opérateur `?.` est appelé *opérateur conditionnel Null*. Il recherche une référence null avant d’évaluer le côté droit de l’opérateur. Au final, s’il n’y a pas d’abonné à l’événement `PropertyChanged`, le code devant déclencher l’événement n’est pas exécuté. Dans ce cas précis, il lèverait une exception `NullReferenceException` sans cette vérification. Pour plus d’informations, consultez [`events`](events-overview.md). Cet exemple utilise également le nouvel opérateur `nameof` pour convertir le symbole de nom de propriété en sa représentation textuelle.
+L’opérateur `?.` est appelé *opérateur conditionnel Null*. Il recherche une référence null avant d’évaluer le côté droit de l’opérateur. Au final, s’il n’y a pas d’abonné à l’événement `PropertyChanged`, le code devant déclencher l’événement n’est pas exécuté. Dans ce cas précis, il lèverait une exception `NullReferenceException` sans cette vérification. Pour plus d’informations, voir [`events`](events-overview.md). Cet exemple utilise également le nouvel opérateur `nameof` pour convertir le symbole de nom de propriété en sa représentation textuelle.
 L’utilisation de `nameof` peut vous éviter des erreurs dues à la saisie incorrecte du nom de propriété.
 
 L’implémentation de <xref:System.ComponentModel.INotifyPropertyChanged> est un autre exemple de cas où vous pouvez écrire du code dans vos accesseurs pour prendre en charge les scénarios souhaités.
 
-## <a name="summing-up"></a>Récapitulatif
+## <a name="summing-up"></a>Résumé
 
 Les propriétés sont une forme de champs intelligents dans une classe ou un objet. De l’extérieur de l’objet, elles apparaissent sous la forme de champs dans l’objet. Toutefois, les propriétés peuvent être implémentées avec toutes les fonctionnalités C#.
 Vous pouvez écrire du code qui remplit les exigences de validation, d’accessibilité, d’évaluation différée ou toute autre exigence requise dans vos scénarios.

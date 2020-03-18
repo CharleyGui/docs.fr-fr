@@ -20,37 +20,37 @@ helpviewer_keywords:
 - pointer increment [C#]
 - pointer decrement [C#]
 - pointer comparison [C#]
-ms.openlocfilehash: 51e6aeda7699d9e2fe3c46ced93e1783a52e6743
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 7c95fe07220a78b388a5c6850e4123feb029d951
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78238960"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399545"
 ---
 # <a name="pointer-related-operators-c-reference"></a>Opérateurs associés au pointeur (référence C#)
 
 Vous pouvez utiliser les opérateurs suivants avec les pointeurs :
 
-- Opérateur unaire [`&` (address-of)](#address-of-operator-) : pour obtenir l’adresse d’une variable
-- Opérateur unaire [`*` (indirection du pointeur)](#pointer-indirection-operator-) : pour obtenir la variable pointée par un pointeur
-- Opérateurs [`->` (accès aux membres)](#pointer-member-access-operator--) et [`[]` (accès aux éléments)](#pointer-element-access-operator-)
-- Opérateurs arithmétiques [`+`, `-`, `++` et `--`](#pointer-arithmetic-operators)
-- Opérateurs de comparaison [`==`, `!=`, `<`, `>`, `<=` et `>=`](#pointer-comparison-operators)
+- Opérateur non intentionnel [ `&` (adresse)](#address-of-operator-) : obtenir l’adresse d’une variable
+- Opérateur unary [ `*` (indirection pointeur)](#pointer-indirection-operator-) : obtenir la variable pointue par un pointeur
+- Les [ `->` opérateurs (d’accès des membres)](#pointer-member-access-operator--) et [ `[]` (d’accès aux éléments)](#pointer-element-access-operator-)
+- Opérateurs arithmétiques [ `+`, `-` `++`, , et`--`](#pointer-arithmetic-operators)
+- Les [ `==`opérateurs `!=` `<`de `>` `<=`comparaison , , , , et`>=`](#pointer-comparison-operators)
 
 Pour plus d’informations sur les types de pointeurs, consultez [Types pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md).
 
 > [!NOTE]
-> Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs unsafe doit être compilé avec l’option de compilateur [`-unsafe`](../compiler-options/unsafe-compiler-option.md).
+> Toutes les opérations impliquant des pointeurs nécessitent un contexte [unsafe](../keywords/unsafe.md). Le code qui contient des blocs [`-unsafe`](../compiler-options/unsafe-compiler-option.md) dangereux doit être compilé avec l’option compilateur.
 
-## <a name="address-of-operator-"></a> Opérateur address-of &amp;
+## <a name="address-of-operator-"></a>Adresse de l’opérateur&amp;
 
 L’opérateur unaire `&` retourne l’adresse de son opérande :
 
-[!code-csharp[address of local](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOf)]
+[!code-csharp[address of local](snippets/PointerOperators.cs#AddressOf)]
 
-L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable déplaçable si vous « corrigez », ou « épinglez », avec une [instruction`fixed`](../keywords/fixed-statement.md). L’adresse obtenue est valide uniquement à l’intérieur du bloc d’une instruction `fixed`. L’exemple suivant montre comment utiliser une instruction `fixed` et l’opérateur `&` :
+L’opérande de l’opérateur `&` doit être une variable fixe. Les variables *fixes* se trouvent dans des emplacements de stockage qui ne sont pas affectés par le [récupérateur de mémoire](../../../standard/garbage-collection/index.md). Dans l’exemple précédent, la variable locale `number` est une variable fixe, car elle se trouve dans la pile. Les variables qui se trouvent dans des emplacements de stockage pouvant être affectés par le récupérateur de mémoire (par exemple, en étant déplacés) sont appelées variables *déplaçables*. Les champs d’objet et les éléments de tableau sont des exemples de variables déplaçables. Vous pouvez obtenir l’adresse d’une variable mobile si vous "fixez", ou "pin", il avec une [ `fixed` déclaration](../keywords/fixed-statement.md). L’adresse obtenue n’est valable `fixed` qu’à l’intérieur du bloc d’une déclaration. L’exemple suivant montre `fixed` comment utiliser `&` une déclaration et l’opérateur :
 
-[!code-csharp[address of fixed](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddressOfFixed)]
+[!code-csharp[address of fixed](snippets/PointerOperators.cs#AddressOfFixed)]
 
 Vous ne pouvez pas obtenir l’adresse d’une constante ou d’une valeur.
 
@@ -62,7 +62,7 @@ L’opérateur binaire `&` calcule la [logique AND](boolean-logical-operators.md
 
 L’opérateur unaire d’indirection de pointeur `*` permet d’obtenir la variable vers laquelle pointe son opérande. Il est également appelé « opérateur de déréférence ». L’opérande de l’opérateur `*` doit être un type de pointeur.
 
-[!code-csharp[pointer indirection](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#PointerIndirection)]
+[!code-csharp[pointer indirection](snippets/PointerOperators.cs#PointerIndirection)]
 
 Vous ne pouvez pas appliquer l’opérateur `*` à une expression de type `void*`.
 
@@ -70,7 +70,7 @@ L’opérateur binaire `*` calcule le [produit](arithmetic-operators.md#multipli
 
 ## <a name="pointer-member-access-operator--"></a>Opérateur d’accès aux membres de pointeur ->
 
-L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-operator-). Autrement dit, si `x` est un pointeur de type `T*` et `y` est un membre accessible de type `T`, une expression de la forme
+L’opérateur `->` associe l’[indirection de pointeur](#pointer-indirection-operator-) à l’[accès aux membres](member-access-operators.md#member-access-operator-). Autrement dit, `x` si est `T*` un `y` pointeur de `T`type et est un membre accessible de type , une expression de la forme
 
 ```csharp
 x->y
@@ -84,7 +84,7 @@ x->y
 
 L’exemple suivant illustre l’utilisation de l’opérateur `->` :
 
-[!code-csharp[pointer member access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#MemberAccess)]
+[!code-csharp[pointer member access](snippets/PointerOperators.cs#MemberAccess)]
 
 Vous ne pouvez pas appliquer l’opérateur `->` à une expression de type `void*`.
 
@@ -94,9 +94,9 @@ Pour une expression `p` d’un type pointeur, l’accès à un élément de poin
 
 L’exemple suivant montre comment accéder à des éléments tableau avec un pointeur et l’opérateur `[]` :
 
-[!code-csharp[pointer element access](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#ElementAccess)]
+[!code-csharp[pointer element access](snippets/PointerOperators.cs#ElementAccess)]
 
-L’exemple utilise l’[opérateur `stackalloc`](stackalloc.md) pour allouer un bloc de mémoire à la pile.
+L’exemple utilise [ `stackalloc` l’opérateur](stackalloc.md) pour allouer un bloc de mémoire sur la pile.
 
 > [!NOTE]
 > L’opérateur d’accès aux éléments de pointeur ne recherche pas les erreurs de dépassement des limites.
@@ -124,11 +124,11 @@ Pour un pointeur `p` de type `T*` et une expression `n` d’un type implicitemen
 - Les expressions `p + n` et `n + p` produisent un pointeur de type `T*` qui est obtenu en ajoutant `n * sizeof(T)` à l’adresse fournie par `p`.
 - L’expression `p - n` produit un pointeur de type `T*` qui est obtenu en soustrayant `n * sizeof(T)` de l’adresse fournie par `p`.
 
-L’[opérateur `sizeof`](sizeof.md) permet d’obtenir la taille d’un type en octets.
+[ `sizeof` L’opérateur](sizeof.md) obtient la taille d’un type d’octets.
 
 L’exemple suivant illustre l’utilisation de l’opérateur `+` avec un pointeur :
 
-[!code-csharp[pointer addition](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#AddNumber)]
+[!code-csharp[pointer addition](snippets/PointerOperators.cs#AddNumber)]
 
 ### <a name="pointer-subtraction"></a>Soustraction de pointeur
 
@@ -136,17 +136,17 @@ Pour deux pointeurs `p1` et `p2` de type `T*`, l’expression `p1 - p2` produit 
 
 L’exemple suivant montre la soustraction d’un pointeur :
 
-[!code-csharp[pointer subtraction](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#SubtractPointers)]
+[!code-csharp[pointer subtraction](snippets/PointerOperators.cs#SubtractPointers)]
 
 ### <a name="pointer-increment-and-decrement"></a>Incrémenter et décrémenter des pointeurs
 
 L’opérateur d’incrémentation `++`[ajoute](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 à son opérande de pointeur. L’opérateur de décrémentation `--`[soustrait](#addition-or-subtraction-of-an-integral-value-to-or-from-a-pointer) 1 de son opérande de pointeur.
 
-Les deux opérateurs sont pris en charge sous deux formes : suffixée (`p++` et `p--`) et préfixée (`++p` et `--p`). Le résultat de `p++` et `p--` est la valeur de `p` *avant* l’opération. Le résultat de `++p` et `--p` est la valeur de `p` *après* l’opération.
+Les deux opérateurs sont pris en charge sous deux formes : suffixée (`p++` et `p--`) et préfixée (`++p` et `--p`). Le résultat de `p++` et `p--` correspond à la valeur de `p` *avant* l’opération. Le résultat de `++p` et `--p` correspond à la valeur de `p` *après* l’opération.
 
 L’exemple suivant montre le comportement des opérateurs d’incrémentation suffixés et préfixés :
 
-[!code-csharp[pointer increment](~/samples/snippets/csharp/language-reference/operators/PointerOperators.cs#Increment)]
+[!code-csharp[pointer increment](snippets/PointerOperators.cs#Increment)]
 
 ## <a name="pointer-comparison-operators"></a>Opérateurs de comparaison de pointeur
 
@@ -154,7 +154,7 @@ Vous pouvez utiliser les opérateurs `==`, `!=`, `<`, `>`, `<=` et `>=` pour com
 
 Pour plus d’informations sur le comportement de ces opérateurs pour les opérandes d’autres types, consultez les articles [Opérateurs d’égalité](equality-operators.md) et [Opérateurs de comparaison](comparison-operators.md).
 
-## <a name="operator-precedence"></a>Priorité des opérateurs
+## <a name="operator-precedence"></a>Précédence des opérateurs
 
 La liste suivante présente les opérateurs relatifs aux pointeurs par ordre de précédence, de la plus élevée à la plus basse :
 
@@ -166,7 +166,7 @@ La liste suivante présente les opérateurs relatifs aux pointeurs par ordre de 
 
 Utilisez des parenthèses (`()`) pour modifier l’ordre d’évaluation imposé par la précédence des opérateurs.
 
-Pour obtenir la liste complète C# des opérateurs classés par niveau de priorité, consultez la section priorité d' [ C# ](index.md) [opérateur](index.md#operator-precedence) de l’article opérateurs.
+Pour la liste complète des opérateurs C’commandés par niveau de préséance, voir la section [De préséance de l’opérateur](index.md#operator-precedence) de [l’article des opérateurs C.](index.md)
 
 ## <a name="operator-overloadability"></a>Capacité de surcharge de l’opérateur
 
@@ -181,16 +181,16 @@ Pour plus d’informations, consultez les sections suivantes de la [spécificati
 - [Indirection de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-indirection)
 - [Accès aux membres de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-member-access)
 - [Accès aux éléments de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-element-access)
-- [Arithmétique sur les pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
+- [Arithmétique des pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-arithmetic)
 - [Incrémentation et décrémentation des pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-increment-and-decrement)
-- [Comparaison de pointeurs](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
+- [Comparaison de pointeur](~/_csharplang/spec/unsafe-code.md#pointer-comparison)
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
+- [Référence C#](../index.md)
+- [Opérateurs CMD](index.md)
 - [Types de pointeur](../../programming-guide/unsafe-code-pointers/pointer-types.md)
 - [mot clé unsafe](../keywords/unsafe.md)
-- [Mot clé fixed](../keywords/fixed-statement.md)
+- [mot-clé fixe](../keywords/fixed-statement.md)
 - [Opérateur stackalloc](stackalloc.md)
-- [Opérateur sizeof](sizeof.md)
+- [sizeof, opérateur](sizeof.md)

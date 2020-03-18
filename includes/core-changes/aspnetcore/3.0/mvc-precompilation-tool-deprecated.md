@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: 1e081c9f37fbd7ab754ce44ba89d7aa5cabfc219
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901689"
 ---
-### <a name="mvc-precompilation-tool-deprecated"></a>MVC : outil de précompilation déconseillé
+### <a name="mvc-precompilation-tool-deprecated"></a>MVC : Outil de précomplification déprécié
 
-Dans ASP.NET Core 1,1, le package `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` (outil de précompilation MVC) a été introduit pour ajouter la prise en charge de la compilation au moment de la publication des fichiers Razor (fichiers *. cshtml* ). Dans ASP.NET Core 2,1, le [Kit de développement logiciel (SDK) Razor](/aspnet/core/razor-pages/sdk?view=aspnetcore-2.1) a été introduit pour s’étendre sur les fonctionnalités de l’outil de précompilation. Le kit de développement logiciel (SDK) Razor a ajouté la prise en charge de la compilation et de la publication des fichiers Razor. Le kit de développement logiciel (SDK) vérifie l’exactitude des fichiers *. cshtml* au moment de la génération, tout en améliorant le temps de démarrage de l’application. Le kit de développement logiciel (SDK) Razor est activé par défaut et aucun geste n’est nécessaire pour commencer à l’utiliser.
+Dans ASP.NET Core 1.1, `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` le paquet (outil de précomplation MVC) a été introduit pour ajouter de la prise en charge de la compilation en temps de publication des fichiers Razor (fichiers *.cshtml).* Dans ASP.NET Core 2.1, le [Razor SDK](/aspnet/core/razor-pages/sdk?view=aspnetcore-2.1) a été introduit pour étendre les fonctionnalités de l’outil de précomplation. Le Razor SDK a ajouté un support pour la compilation des fichiers Razor. Le SDK vérifie la justesse des fichiers *.cshtml* au moment de la construction tout en améliorant le temps de démarrage de l’application. Le Razor SDK est allumé par défaut, et aucun geste n’est nécessaire pour commencer à l’utiliser.
 
-Dans ASP.NET Core 3,0, l’outil de précompilation MVC ASP.NET Core 1,1-Era a été supprimé. Les versions antérieures du package continueront de recevoir des correctifs de sécurité et bogues importants dans la version corrective.
+Dans ASP.NET Core 3.0, l’outil ASP.NET de précomplation MVC de l’ère Core 1.1 a été supprimé. Les versions plus tôt de paquet continueront à recevoir des corrections importantes de bogue et de sécurité dans la version de correction.
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,27 +18,27 @@ Dans ASP.NET Core 3,0, l’outil de précompilation MVC ASP.NET Core 1,1-Era a �
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le package `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` a été utilisé pour précompiler les vues Razor MVC.
+Le `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` paquet a été utilisé pour pré-compiler des vues de rasoir de MVC.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Le kit de développement logiciel (SDK) Razor prend en charge cette fonctionnalité en mode natif. Le package `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` n’est plus mis à jour.
+Le Razor SDK prend en charge cette fonctionnalité. Le `Microsoft.AspNetCore.Mvc.Razor.ViewCompilation` paquet n’est plus mis à jour.
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-Le kit de développement logiciel (SDK) Razor offre plus de fonctionnalités et vérifie l’exactitude des fichiers *. cshtml* au moment de la génération. Le SDK améliore également le temps de démarrage de l’application.
+Le Razor SDK fournit plus de fonctionnalités et vérifie la justesse des fichiers *.cshtml* au moment de la construction. Le SDK améliore également le temps de démarrage de l’application.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Pour les utilisateurs de ASP.NET Core 2,1 ou version ultérieure, mettez à jour pour utiliser la prise en charge native pour la précompilation dans le [Kit de développement logiciel (SDK) Razor](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0). Si des bogues ou des fonctionnalités manquantes empêchent la migration vers le kit de développement logiciel (SDK) Razor, ouvrez un problème dans [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues).
+Pour les utilisateurs de ASP.NET Core 2.1 ou plus tard, mettre à jour pour utiliser le support natif pour la précomplation dans le [Razor SDK](/aspnet/core/razor-pages/sdk?view=aspnetcore-3.0). Si des bogues ou des fonctionnalités manquantes empêchent la migration vers le Razor SDK, ouvrez un problème à [dotnet/aspnetcore](https://github.com/dotnet/aspnetcore/issues).
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 ASP.NET Core
 
 #### <a name="affected-apis"></a>API affectées
 
-Aucun
+None
 
 <!-- 
 

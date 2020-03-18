@@ -7,10 +7,10 @@ helpviewer_keywords:
 - C# language, implicitly typed arrays
 ms.assetid: e05be95c-6732-403d-ae42-b35f057cbbea
 ms.openlocfilehash: 943760af30422cd333fdff65cdf678108c9d9564
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75705715"
 ---
 # <a name="implicitly-typed-arrays-c-programming-guide"></a>Tableaux implicitement typés (Guide de programmation C#)
@@ -34,9 +34,9 @@ Quand vous créez un type anonyme qui contient un tableau, le tableau doit être
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de programmation C#](../index.md)
-- [Variables locales implicitement typées](../classes-and-structs/implicitly-typed-local-variables.md)
+- [Variables locales implicitement dactylographiques](../classes-and-structs/implicitly-typed-local-variables.md)
 - [Tableaux](./index.md)
 - [Types anonymes](../classes-and-structs/anonymous-types.md)
 - [Initialiseurs d’objets et de collections](../classes-and-structs/object-and-collection-initializers.md)
-- [var](../../language-reference/keywords/var.md)
+- [Var](../../language-reference/keywords/var.md)
 - [LINQ en C#](../../linq/index.md)

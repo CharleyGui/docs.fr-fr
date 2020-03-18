@@ -4,31 +4,31 @@ description: Découvrez les nouvelles fonctionnalités disponibles dans la versi
 ms.date: 02/20/2019
 ms.assetid: fd41596d-d0c2-4816-b94d-c4d00a5d0243
 ms.openlocfilehash: a6ac5c00ceb2ce8e5e56e2a86a8cde937d5108e2
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
-ms.locfileid: "77448632"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399692"
 ---
 # <a name="whats-new-in-c-70"></a>Nouveautés de C# 7.0
 
 C# 7.0 ajoute un certain nombre de nouvelles fonctionnalités au langage C# :
 
-- [Variables `out`](#out-variables)
+- [`out`Variables](#out-variables)
   - Vous pouvez déclarer des valeurs `out` inline comme arguments de la méthode dans laquelle elles sont utilisées.
 - [Tuples](#tuples)
   - Vous pouvez créer des types légers et sans nom qui contiennent plusieurs champs publics. Les compilateurs et les outils de l’IDE comprennent la sémantique de ces types.
 - [Éléments ignorés](#discards)
   - Les éléments ignorés sont les variables temporaires en écriture seule utilisées dans les attributions quand vous ne vous souciez pas de la valeur assignée. Ils s’avèrent utiles lors de la déconstruction de tuples et de types définis par l’utilisateur, ainsi que lors de l’appel de méthodes avec des paramètres `out`.
-- [Critères spéciaux](#pattern-matching)
+- [Filtrage](#pattern-matching)
   - Vous pouvez créer une logique de branchement basée sur des types arbitraires et les valeurs des membres de ces types.
-- [Variables locales et retours `ref`](#ref-locals-and-returns)
+- [`ref`habitants et les retours](#ref-locals-and-returns)
   - Les valeurs de retour et les variables locales de méthode peuvent être des références à un autre stockage.
 - [Fonctions locales](#local-functions)
   - Vous pouvez imbriquer des fonctions dans d’autres fonctions afin de limiter leur portée et leur visibilité.
 - [Autres membres expression-bodied](#more-expression-bodied-members)
   - La liste des membres pouvant être créés à l’aide d’expressions s’est allongée.
-- [Expressions `throw`](#throw-expressions)
+- [`throw`Expressions](#throw-expressions)
   - Vous pouvez lever des exceptions dans les constructions de code qui n’étaient pas autorisées auparavant, car `throw` était une instruction.
 - [Types de retour async généralisés](#generalized-async-return-types)
   - Les méthodes déclarées avec le modificateur `async` peuvent retourner d’autres types en plus de `Task` et de `Task<T>`.
@@ -114,7 +114,7 @@ Les expressions de critères spéciaux étendent ce concept de manière à vous 
 
 Les critères spéciaux prennent en charge les expressions `is` et les expressions `switch`. L’une ou l’autre permettent d’inspecter un objet et ses propriétés afin de déterminer s’il correspond au modèle recherché. Vous utilisez le mot clé `when` pour spécifier des règles supplémentaires pour le modèle.
 
-L’expression de modèle `is` étend l’[opérateur `is`](../language-reference/keywords/is.md#pattern-matching-with-is) classique pour interroger un objet sur son type et assigner le résultat dans une seule instruction. Le code suivant vérifie si une variable est un `int`, et si tel est le cas, il l’ajoute à la somme actuelle :
+L’expression `is` du modèle étend [ `is` l’opérateur](../language-reference/keywords/is.md#pattern-matching-with-is) familier pour interroger un objet sur son type et attribuer le résultat dans une instruction. Le code suivant vérifie si une variable est un `int`, et si tel est le cas, il l’ajoute à la somme actuelle :
 
 ```csharp
 if (input is int count)
@@ -211,7 +211,7 @@ Il est possible d’utiliser la même technique avec les méthodes `async` pour 
 [!code-csharp[TaskExample](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#TaskExample "Task returning method with local function")]
 
 > [!NOTE]
-> Certaines des conceptions prises en charge par les fonctions locales peuvent également être effectuées à l’aide d’*expressions lambda*. Pour plus d’informations, consultez [fonctions locales et expressions lambda](../local-functions-vs-lambdas.md).
+> Certaines des conceptions prises en charge par les fonctions locales peuvent également être effectuées à l’aide d’*expressions lambda*. Pour plus d’informations, voir [fonctions locales vs expressions lambda](../local-functions-vs-lambdas.md).
 
 ## <a name="more-expression-bodied-members"></a>Autres membres expression-bodied
 
@@ -228,7 +228,7 @@ La modification d’une méthode en un membre expression-bodied est une [modific
 
 ## <a name="throw-expressions"></a>Expressions throw
 
-En C#, `throw` a toujours été une instruction. Étant donné que `throw` est une instruction, et non pas une expression, certaines constructions C# ne pouvaient pas l’utiliser. Il s’agit notamment des expressions conditionnelles, des expressions de fusion null, ainsi que de certaines expressions lambda. L’ajout de membres expression-bodied ajoute des emplacements supplémentaires où les expressions `throw` seraient utiles. Pour vous permettre d’écrire n’importe laquelle de ces constructions, C# 7.0 introduit les [*expressions throw*](../language-reference/keywords/throw.md#the-throw-expression).
+En C#, `throw` a toujours été une instruction. Étant donné que `throw` est une instruction, et non pas une expression, certaines constructions C# ne pouvaient pas l’utiliser. Il s’agit notamment des expressions conditionnelles, des expressions de fusion null, ainsi que de certaines expressions lambda. L’ajout de membres expression-bodied ajoute des emplacements supplémentaires où les expressions `throw` seraient utiles. Pour que vous puissiez écrire l’une de ces constructions, C 7.0 introduit [*des expressions de lancer*](../language-reference/keywords/throw.md#the-throw-expression).
 
 Cet ajout facilite l’écriture de code davantage basé sur des expressions. Vous n’avez pas besoin d’instructions supplémentaires pour la vérification des erreurs.
 
@@ -236,12 +236,12 @@ Cet ajout facilite l’écriture de code davantage basé sur des expressions. Vo
 
 Le retour d’un objet `Task` à partir de méthodes async peut introduire des goulots d’étranglement au niveau des performances dans certains chemins. `Task` est un type référence. Si vous l’utilisez, vous allouez donc un objet. Dans les cas où une méthode déclarée avec le modificateur `async` retourne un résultat mis en cache, ou si elle s’exécute de manière synchrone, le coût en termes de temps induit par les allocations supplémentaires peut s’avérer significatif dans les sections de code critiques pour les performances. Cela peut devenir coûteux si ces allocations se produisent dans des boucles serrées.
 
-La nouvelle fonctionnalité du langage signifie que les types de retour des méthodes async ne se limitent pas à `Task`, `Task<T>` et `void`. Le type retourné doit toujours correspondre au modèle async, ce qui signifie qu’une méthode `GetAwaiter` doit être accessible. Comme un exemple concret, le type de `ValueTask` a été ajouté à .NET pour utiliser cette nouvelle fonctionnalité de langage :
+La nouvelle fonctionnalité du langage signifie que les types de retour des méthodes async ne se limitent pas à `Task`, `Task<T>` et `void`. Le type retourné doit toujours correspondre au modèle async, ce qui signifie qu’une méthode `GetAwaiter` doit être accessible. Comme exemple concret, `ValueTask` le type a été ajouté à .NET pour faire usage de cette nouvelle fonctionnalité linguistique:
 
 [!code-csharp[UsingValueTask](~/samples/snippets/csharp/new-in-7/AsyncWork.cs#UsingValueTask "Using ValueTask")]
 
 > [!NOTE]
-> Vous devez ajouter le package NuGet [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) pour pouvoir utiliser le type <xref:System.Threading.Tasks.ValueTask%601>.
+> Vous devez ajouter le [`System.Threading.Tasks.Extensions`](https://www.nuget.org/packages/System.Threading.Tasks.Extensions/) paquet NuGet <xref:System.Threading.Tasks.ValueTask%601> afin d’utiliser le type.
 
 Cette amélioration s’avère particulièrement utile pour les auteurs de bibliothèques afin d’éviter d’allouer un `Task` dans le code critique pour les performances.
 

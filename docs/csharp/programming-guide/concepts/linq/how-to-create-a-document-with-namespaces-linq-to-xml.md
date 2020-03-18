@@ -1,18 +1,18 @@
 ---
-title: Comment créer un document avec des espaces de nomsC#() (LINQ to XML)
+title: Comment créer un document avec des espaces de nom (C) (LINQ à XML)
 ms.date: 07/20/2015
 ms.assetid: 37e63c57-f86d-47ac-88a7-2c2d107def30
 ms.openlocfilehash: 429b0b0b41f2201b983f931e469b25ff406b91ac
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "74141326"
 ---
-# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Comment créer un document avec des espaces de nomsC#() (LINQ to XML)
+# <a name="how-to-create-a-document-with-namespaces-c-linq-to-xml"></a>Comment créer un document avec des espaces de nom (C) (LINQ à XML)
 Cette rubrique montre comment créer des documents avec des espaces de noms.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Pour créer un élément ou un attribut qui se trouve dans un espace de noms, vous devez d'abord déclarer et initialiser un objet <xref:System.Xml.Linq.XNamespace>. Vous devez ensuite utiliser la surcharge d'opérateur d'addition pour combiner l'espace de noms avec le nom local, exprimé sous la forme de chaîne.  
   
  L'exemple suivant crée un document avec un espace de noms. Par défaut, [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] sérialise ce document avec un espace de noms par défaut.  
@@ -26,7 +26,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root xmlns="http://www.adventure-works.com">  
@@ -34,7 +34,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant crée un document avec un espace de noms. Il crée également un attribut qui déclare l'espace de noms avec un préfixe d'espace de noms. Pour créer un attribut qui déclare un espace de noms avec un préfixe, vous devez créer un attribut où le nom de l'attribut est le préfixe d'espace de noms, et ce nom est dans l'espace de noms <xref:System.Xml.Linq.XNamespace.Xmlns%2A>. La valeur de cet attribut est l'URI de l'espace de noms.  
   
 ```csharp  
@@ -47,7 +47,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  
@@ -55,7 +55,7 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant illustre la création d'un document qui contient deux espaces de noms. L'un est l'espace de noms par défaut. L'autre est un espace de noms avec un préfixe.  
   
  Grâce à l’inclusion d’attributs d’espaces de noms dans l’élément racine, les espaces de noms sont sérialisés de sorte que `http://www.adventure-works.com` soit l’espace de noms par défaut et `www.fourthcoffee.com` soit sérialisé avec le préfixe « fc ». Pour créer un attribut qui déclare un espace de noms par défaut, vous devez créer un attribut avec le nom « xmlns », sans espace de noms. La valeur de l'attribut est l'URI de l'espace de noms par défaut.  
@@ -76,7 +76,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <Root xmlns="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -88,7 +88,7 @@ Console.WriteLine(root);
 </Root>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L'exemple suivant crée un document qui contient deux espaces de noms, tous deux avec des préfixes d'espaces de noms.  
   
 ```csharp  
@@ -106,7 +106,7 @@ XElement root = new XElement(aw + "Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com" xmlns:fc="www.fourthcoffee.com">  
@@ -118,7 +118,7 @@ Console.WriteLine(root);
 </aw:Root>  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Une autre approche permettant d'obtenir les mêmes résultats consiste à utiliser des noms développés au lieu de déclarer et de créer un objet <xref:System.Xml.Linq.XNamespace>.  
   
  Cette approche a des implications en termes de performances. Chaque fois que vous passez une chaîne qui contient un nom développé à [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)], [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] doit analyser le nom, rechercher l’espace de noms atomisé et rechercher le nom atomisé. Ce processus consomme du temps de processeur. Si les performances sont importantes, vous souhaiterez peut-être déclarer et utiliser un objet <xref:System.Xml.Linq.XNamespace> de manière explicite.  
@@ -134,7 +134,7 @@ XElement root = new XElement("{http://www.adventure-works.com}Root",
 Console.WriteLine(root);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```xml  
 <aw:Root xmlns:aw="http://www.adventure-works.com">  

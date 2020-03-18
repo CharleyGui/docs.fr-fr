@@ -1,14 +1,14 @@
 ---
 title: Guide .NET Core
-description: .NET Core est une implémentation modulaire et hautement performante de .NET pour la création d’applications Windows, Linux et macOS. Découvrez .NET Core pour démarrer.
+description: .NET Core est une implémentation modulaire et haute performance de .NET pour créer des applications Windows, Linux et macOS. Découvrez .NET Core pour démarrer.
 author: richlander
 ms.date: 12/04/2019
 ms.custom: updateeachrelease
 ms.openlocfilehash: 3db98d21a7cdc80d8a98b23782a81ffa37520937
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "75740747"
 ---
 # <a name="net-core-guide"></a>Guide .NET Core
@@ -21,32 +21,32 @@ Consultez les [Tutoriels .NET Core](tutorials/index.md) pour apprendre à créer
 
 ## <a name="download-net-core"></a>Télécharger .NET Core
 
-Téléchargez le [Kit SDK .net Core](https://www.microsoft.com/net/download) pour essayer .net Core sur votre ordinateur Windows, MacOS ou Linux. Et si vous préférez utiliser les conteneurs de l’ancrage, visitez le hub de l' [ancreur .net Core](https://hub.docker.com/_/microsoft-dotnet-core/).
+Téléchargez le [.NET Core SDK](https://www.microsoft.com/net/download) pour essayer .NET Core sur votre Windows, macOS ou Linux machine. Et si vous préférez utiliser des conteneurs Docker, visitez le [.NET Core Docker Hub](https://hub.docker.com/_/microsoft-dotnet-core/).
 
 Toutes les versions de .NET Core sont disponibles sur [Téléchargements de .NET Core](https://dotnet.microsoft.com/download/dotnet-core) si vous recherchez une autre version de .NET Core.
 
 ## <a name="net-core-31"></a>.NET Core 3.1
 
-La dernière version est .NET Core 3,1. 3,1 comprend des améliorations mineures par rapport à .NET Core 3,0. Toutefois, .NET Core 3,1 est une [version prise en charge à long terme](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Pour plus d’informations sur la version 3,1 de .NET Core, consultez [what’s New in .net core 3,1](./whats-new/dotnet-core-3-1.md).
+La dernière version est .NET Core 3.1. 3.1 comprend des améliorations mineures au-dessus de .NET Core 3.0, cependant, .NET Core 3.1 est une [version soutenue à long terme](https://dotnet.microsoft.com/platform/support/policy/dotnet-core). Pour plus d’informations sur la version .NET Core 3.1, voir [Ce qui est nouveau dans .NET Core 3.1](./whats-new/dotnet-core-3-1.md).
 
 ## <a name="create-your-first-application"></a>Créer votre première application
 
-Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Entrez les commandes de `dotnet` suivantes pour créer et exécuter C# une application :
+Après avoir installé le SDK .NET Core, ouvrez une invite de commandes. Entrez `dotnet` les commandes suivantes pour créer et exécuter une application CMD :
 
 ```dotnetcli
 dotnet new console
 dotnet run
 ```
 
-Vous devez voir la sortie suivante :
+Vous devez normalement voir la sortie suivante.
 
 ```output
 Hello World!
 ```
 
-## <a name="support"></a>Prise en charge de
+## <a name="support"></a>Support
 
-.NET Core est [pris en charge par Microsoft](https://dotnet.microsoft.com/platform/support/policy), sur Windows, MacOS et Linux. La sécurité et la qualité sont mises à jour plusieurs fois par an, en général, tous les mois.
+.NET Core est [pris en charge par Microsoft](https://dotnet.microsoft.com/platform/support/policy), sur Windows, macOS et Linux. La sécurité et la qualité sont mises à jour plusieurs fois par an, en général, tous les mois.
 
 Les distributions binaires .NET Core sont générées et testées sur des serveurs managés par Microsoft dans Azure et elles sont prises en charge comme tous les produits Microsoft.
 
