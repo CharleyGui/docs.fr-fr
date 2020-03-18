@@ -1,8 +1,8 @@
-- name: Guide du .NET Framework
+- name: Guide .NET Framework
   href: index.md
 - name: Nouveautés
   href: whats-new/
-- name: Bien démarrer
+- name: Prise en main
   href: get-started/
 - name: Guide d’installation
   href: install/
@@ -11,7 +11,7 @@
 - name: Guide de développement
   href: development-guide.md
   items:
-    - name: Domaines d'application et assemblys
+    - name: Domaines d’application et assemblys
       href: app-domains/
     - name: Ressources dans des applications de bureau
       href: resources/
@@ -20,8 +20,9 @@
     - name: Données et modélisation
       href: data/
     - name: Applications clientes
-      href: develop-client-apps.md
       items:
+        - name: Vue d'ensemble
+          href: develop-client-apps.md
         - name: Windows Presentation Foundation
           href: wpf/
         - name: Windows Forms
@@ -36,11 +37,11 @@
       href: 64-bit-apps.md
     - name: Applications web avec ASP.NET
       href: develop-web-apps-with-aspnet.md
-    - name: Programmation réseau dans le .NET Framework
+    - name: Programmation réseau
       href: network-programming/
-    - name: Configuration d'applications
+    - name: Configurer des applications
       href: configure-apps/
-    - name: Compilation d'applications avec .NET Native
+    - name: Compiler des applications avec .NET Native
       href: net-native/
     - name: 'Débogage, traçage et profilage'
       href: debug-trace-profile/
@@ -52,7 +53,7 @@
       href: reflection-and-codedom/
     - name: Managed Extensibility Framework (MEF)
       href: mef/
-    - name: Interopération avec du code non managé
+    - name: Interopérer avec du code non managé
       href: interop/
     - name: Informations de référence sur les API non managées
       href: unmanaged-api/
