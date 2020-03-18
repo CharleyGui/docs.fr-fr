@@ -1,15 +1,15 @@
 ---
-title: Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()
+title: Comment diviser un fichier en plusieurs fichiers en utilisant des groupes (LINQ) (C)
 ms.date: 07/20/2015
 ms.assetid: 8179b91c-d778-4e57-884f-77fe5a8e4e40
-ms.openlocfilehash: 934b6385a8634c23a4e29098367c9aaa7355f11c
-ms.sourcegitcommit: 30a558d23e3ac5a52071121a52c305c85fe15726
+ms.openlocfilehash: 654b444c26f2868c4e2b0e2893a639ebc6cacabf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 12/25/2019
-ms.locfileid: "75347317"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168568"
 ---
-# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Comment fractionner un fichier en plusieurs fichiers à l’aide de groupes (LINQC#) ()
+# <a name="how-to-split-a-file-into-many-files-by-using-groups-linq-c"></a>Comment diviser un fichier en plusieurs fichiers en utilisant des groupes (LINQ) (C)
 Cet exemple montre comment fusionner le contenu de deux fichiers, puis créer un ensemble de fichiers qui organisent les données d’une nouvelle façon.  
   
 ### <a name="to-create-the-data-files"></a>Pour créer le fichier de données  
@@ -44,7 +44,7 @@ Cet exemple montre comment fusionner le contenu de deux fichiers, puis créer un
     El Yassir, Mehdi  
     ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ```csharp  
 class SplitWithGroups  
@@ -92,7 +92,7 @@ class SplitWithGroups
         Console.ReadKey();  
     }  
 }  
-/* Output:   
+/* Output:
     A  
        Aw, Kam Foo  
     B  

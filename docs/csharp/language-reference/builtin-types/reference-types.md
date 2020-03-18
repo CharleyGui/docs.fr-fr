@@ -20,20 +20,20 @@ helpviewer_keywords:
 - '@ string literal'
 - string literals [C#]
 - string keyword [C#]
-ms.openlocfilehash: 6b65d7e79e4eac30171eb0aad650f7c1e3880e30
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.openlocfilehash: c2c03f47babd9ccf87eb60d33b9d65d1a9c82e2e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
-ms.locfileid: "77627268"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79399643"
 ---
 # <a name="built-in-reference-types-c-reference"></a>Types référence intégrés (Référence C#)
 
-C# a un nombre de types référence intégrés. Ils ont des mots clés ou des opérateurs qui sont synonymes pour un type dans la bibliothèque .NET. 
+C# a un nombre de types référence intégrés. Ils ont des mots clés ou des opérateurs qui sont synonymes pour un type dans la bibliothèque .NET.
 
 ## <a name="the-object-type"></a>Type d’objet.
 
-Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Quand une variable de type `object` est convertie en un type valeur, elle est dite *unboxed*. Pour plus d’informations, consultez [Boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md). 
+Le type `object` est un alias de <xref:System.Object?displayProperty=nameWithType> dans .NET. Dans le système de type unifié de C#, tous les types (les types référence et valeur, prédéfinis ou définis par l’utilisateur) héritent directement ou indirectement du type <xref:System.Object?displayProperty=nameWithType>. Vous pouvez assigner des valeurs de tout type aux variables de type `object`. Toute variable `object` peut être attribuée à sa valeur par défaut à l’aide du littéral `null`. Quand une variable d’un type valeur est convertie en type objet, elle est dite *boxed*. Lorsqu’une variable `object` de type est convertie en type de valeur, on dit qu’elle *n’est pas boxée.* Pour plus d’informations, consultez [Conversion boxing et unboxing](../../programming-guide/types/boxing-and-unboxing.md).
 
 ## <a name="the-string-type"></a>Type de chaîne
 
@@ -67,14 +67,14 @@ string b = "h";
 b += "ello";
 ```
 
-L' [opérateur](../operators/member-access-operators.md#indexer-operator-) `[]` peut être utilisé pour l’accès en lecture seule aux caractères individuels d’une chaîne. Les valeurs d’index valides commencent à `0` et doivent être inférieures à la longueur de la chaîne :
+`[]` [L’opérateur](../operators/member-access-operators.md#indexer-operator-) peut être utilisé pour l’accès rélu à des caractères individuels d’une chaîne. Les valeurs indiciels valides commencent et doivent être inférieures à `0` la longueur de la chaîne :
 
 ```csharp
 string str = "test";
 char x = str[2];  // x = 's';
 ```
 
-De la même façon, l’opérateur `[]` peut également être utilisé pour itérer au sein de chaque caractère dans une chaîne :
+De la même `[]` manière, l’opérateur peut également être utilisé pour itérer sur chaque personnage dans une chaîne:
 
 ```csharp-interactive
 string str = "test";
@@ -84,7 +84,7 @@ for (int i = 0; i < str.Length; i++)
   Console.Write(str[i] + " ");
 }
 // Output: t e s t
-``` 
+```
 
 Les littéraux de chaîne sont de type `string` et peuvent être écrits sous deux formes, entre guillemets et entre `@`. Les littéraux de chaîne entre guillemets sont placés entre guillemets doubles (") :
 
@@ -136,7 +136,7 @@ Dans .NET, les types `System.Action` et `System.Func` fournissent des définitio
 
 Un `delegate` est un type référence qui peut être utilisé pour encapsuler une méthode anonyme ou nommée. Les délégués sont comparables aux pointeurs fonction en C++, mais ils offrent l’avantage d’être sûrs et de type sécurisé. Pour les applications de délégués, consultez [Délégués](../../programming-guide/delegates/index.md) et [Délégués génériques](../../programming-guide/generics/generic-delegates.md). Les délégués sont la base des [événements](../../programming-guide/events/index.md). Un délégué peut être instancié en l’associant à une méthode nommée ou anonyme.
 
-Le délégué doit être instancié avec une méthode ou une expression lambda qui a un type de retour compatible et des paramètres d’entrée. Pour plus d’informations sur le degré de variance autorisé dans la signature de méthode, consultez [Variance dans les délégués](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pour une utilisation avec des méthodes anonymes, le délégué et le code à lui associer sont déclarés ensemble. 
+Le délégué doit être instancié avec une méthode ou une expression lambda qui a un type de retour compatible et des paramètres d’entrée. Pour plus d’informations sur le degré de variance autorisé dans la signature de méthode, consultez [Variance dans les délégués](../../programming-guide/concepts/covariance-contravariance/using-variance-in-delegates.md). Pour une utilisation avec des méthodes anonymes, le délégué et le code à lui associer sont déclarés ensemble.
 
 ## <a name="the-dynamic-type"></a>Type dynamique
 
@@ -170,15 +170,15 @@ L’exemple suivant utilise `dynamic` dans plusieurs déclarations. La méthode 
 
 ### <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
+- [Référence C](../index.md)
 - [Mots clés C#](../keywords/index.md)
 - [Événements](../../programming-guide/events/index.md)
 - [Utilisation du type dynamic](../../programming-guide/types/using-type-dynamic.md)
 - [Bonnes pratiques pour l’utilisation de chaînes](../../../standard/base-types/best-practices-strings.md)
-- [Opérations de chaînes de base](../../../standard/base-types/basic-string-operations.md)
-- [Création de chaînes](../../../standard/base-types/creating-new.md)
-- [Opérateurs de test et de cast de type](../operators/type-testing-and-cast.md)
-- [Comment effectuer un cast en toute sécurité à l’aide de critères spéciaux et des opérateurs As et is](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
+- [Opérations de base des cordes](../../../standard/base-types/basic-string-operations.md)
+- [Création de nouvelles chaînes](../../../standard/base-types/creating-new.md)
+- [Opérateurs de conversion et de test de type](../operators/type-testing-and-cast.md)
+- [Comment lancer en toute sécurité en utilisant l’appariement des motifs et le comme et est les opérateurs](../../how-to/safely-cast-using-pattern-matching-is-and-as-operators.md)
 - [Procédure pas à pas : création et utilisation d’objets dynamiques](../../programming-guide/types/walkthrough-creating-and-using-dynamic-objects.md)
 - <xref:System.Object?displayProperty=nameWithType>
 - <xref:System.String?displayProperty=nameWithType>

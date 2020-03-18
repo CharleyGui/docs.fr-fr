@@ -14,17 +14,17 @@ helpviewer_keywords:
 - padding strings
 ms.assetid: 84a9f142-3244-4c90-ba02-21af9bbaff71
 ms.openlocfilehash: 2cf114296005456f354d286aa2804fa8a95160dc
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73127624"
 ---
 # <a name="padding-strings-in-net"></a>Remplissage de chaînes dans .NET
 
 Utilisez l’une des méthodes <xref:System.String> suivantes pour créer une chaîne qui se compose d’une chaîne d’origine remplie à l’aide de caractères de début ou de fin sur une longueur totale spécifiée. Le caractère de remplissage peut être un espace ou un caractère spécifié. La chaîne résultante apparaît alignée à droite ou à gauche. Si la longueur de la chaîne d’origine est déjà égale ou supérieure à la longueur totale souhaitée, les méthodes de remplissage retournent la chaîne d’origine inchangée. Pour plus d’informations, consultez les sections **Retours** des deux surcharges des méthodes <xref:System.String.PadLeft%2A?displayProperty=nameWithType> et <xref:System.String.PadRight%2A?displayProperty=nameWithType>.
   
-|Nom de la méthode|Utilisez|  
+|Nom de la méthode|Utilisation|  
 |-----------------|---------|  
 |<xref:System.String.PadLeft%2A?displayProperty=nameWithType>|Remplit une chaîne à l’aide de caractères de début sur une longueur totale spécifiée.|  
 |<xref:System.String.PadRight%2A?displayProperty=nameWithType>|Remplit une chaîne à l’aide de caractères de fin sur une longueur totale spécifiée.|  
@@ -49,4 +49,4 @@ Utilisez l’une des méthodes <xref:System.String> suivantes pour créer une ch
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Opérations de chaînes de base](../../../docs/standard/base-types/basic-string-operations.md)
+- [Opérations de base des cordes](../../../docs/standard/base-types/basic-string-operations.md)

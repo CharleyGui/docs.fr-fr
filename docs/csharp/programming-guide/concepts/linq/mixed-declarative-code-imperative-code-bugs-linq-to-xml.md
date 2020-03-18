@@ -2,12 +2,12 @@
 title: Bogues liés à l’utilisation combinée de code déclaratif et de code impératif (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: fada62d0-0680-4e73-945a-2b00d7a507af
-ms.openlocfilehash: 30760999a264c81e16104c0c9b112d442ce66121
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.openlocfilehash: 76a9bb5abf6ce2700a2a0698ebc109f65e2b7eb1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
-ms.locfileid: "69591622"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79168347"
 ---
 # <a name="mixed-declarative-codeimperative-code-bugs-linq-to-xml-c"></a>Bogues mixtes code déclaratif/code impératif (LINQ to XML) (C#)
 [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)] contient diverses méthodes qui vous permettent de modifier directement une arborescence XML. Vous pouvez ajouter des éléments, supprimer des éléments, modifier le contenu d'un élément, ajouter des attributs, et ainsi de suite. Cette interface de programmation est décrite dans [Modification d’arborescences XML (LINQ to XML) (C#)](./in-memory-xml-tree-modification-vs-functional-construction-linq-to-xml.md). Si vous itérez au sein de l'un des axes, tels que <xref:System.Xml.Linq.XContainer.Elements%2A>, et que vous modifiez l'arborescence XML à mesure que vous parcourez l'axe, vous pouvez constater des bogues étranges.  
@@ -17,7 +17,7 @@ ms.locfileid: "69591622"
 ## <a name="definition-of-the-problem"></a>Définition du problème  
  Lorsque vous écrivez du code qui itère au sein d’une collection avec LINQ, vous écrivez du code dans un style déclaratif. Cela correspond davantage à décrire *ce que* vous voulez obtenir, plutôt que *comment* vous voulez l’obtenir. Si vous écrivez du code qui 1) obtient le premier élément, 2) le teste pour une certaine condition, 3) le modifie et 4) le replace dans la liste, il s'agit de code impératif. Vous indiquez à l’ordinateur *comment* faire ce que vous voulez faire.  
   
- Le mélange de ces styles de code dans la même opération entraîne des problèmes. Considérez ce qui suit :  
+ Le mélange de ces styles de code dans la même opération entraîne des problèmes. Tenez compte des éléments suivants :  
   
  Supposez que vous avez une liste liée avec trois éléments (a, b et c) :  
   
@@ -110,7 +110,7 @@ foreach (XElement e in root.Elements().ToList())
 Console.WriteLine(root);  
 ```  
   
- Ce code génère la sortie suivante :  
+ Ce code produit la sortie suivante :  
   
 ```xml  
 <Root />  
@@ -146,12 +146,12 @@ var z =
   
  Il vous incombe d'éviter ce genre de problèmes.  
   
-## <a name="guidance"></a>Conseils  
+## <a name="guidance"></a>Assistance  
  En premier lieu, ne mélangez pas de code déclaratif et impératif.  
   
  Même si vous connaissez exactement la sémantique de vos collections et la sémantique des méthodes qui modifient l'arborescence XML, si vous écrivez du code intelligent qui évite ces catégories de problèmes, votre code devra être maintenu par d'autres développeurs dans le futur et ils n'auront peut-être pas la même vision du problème que vous. Si vous combinez des styles de codage déclaratifs et impératifs, votre code sera plus fragile.  
   
- Si vous écrivez du code qui matérialise une collection afin d'éviter ces problèmes, ajoutez des commentaires appropriés à votre code de sorte que les programmeurs de maintenance comprennent le problème.  
+ Si vous écrivez du code qui matérialise une collection afin d'éviter ces problèmes, ajoutez des commentaires appropriés à votre code de sorte que les programmeurs de maintenance comprennent le problème.   
   
  En second lieu, si les performances et autres considérations le permettent, utilisez uniquement du code déclaratif. Ne modifiez pas votre arborescence XML existante. Générez-en une nouvelle.  
   
@@ -167,4 +167,3 @@ XElement newRoot = new XElement("Root",
 );  
 Console.WriteLine(newRoot);  
 ```  
- 

@@ -4,11 +4,11 @@ description: La liste suivante est une compilation des principaux termes Machine
 ms.topic: reference
 ms.date: 07/31/2019
 ms.openlocfilehash: 32ccb6df1cb08db45ebd25a0d1c0ea4396a6c50b
-ms.sourcegitcommit: 9a97c76e141333394676bc5d264c6624b6f45bcf
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/08/2020
-ms.locfileid: "75739876"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79398936"
 ---
 # <a name="machine-learning-glossary-of-important-terms"></a>Glossaire Machine Learning des principaux termes
 
@@ -36,7 +36,7 @@ Dans ML.NET, un catalogue est une collection de fonctions d’extension, regroup
 
 Par exemple, chaque tâche de machine learning (classification binaire, régression, classement, etc.) dispose d’un catalogue d’algorithmes de machine learning (entraîneurs). Le catalogue des entraîneurs de classification binaire est : <xref:Microsoft.ML.BinaryClassificationCatalog.BinaryClassificationTrainers>.
 
-## <a name="classification"></a>Classification
+## <a name="classification"></a>classification ;
 
 Lorsque les données sont utilisées pour prédire une catégorie, la tâche [Apprentissage automatique supervisé](#supervised-machine-learning) est appelée classification. [Classification binaire](#binary-classification) fait référence à la prédiction de deux catégories uniquement (par exemple, la classification d’une image en tant qu’image de « chat » ou de « chien »). [Classification multiclasse](#multiclass-classification) fait référence à la prédiction de plusieurs catégories (par exemple, lors de la classification d’une image en tant qu’image d’une race spécifique de chien).
 
@@ -64,11 +64,11 @@ Méthode .NET qui fait partie d’une classe, mais qui est définie en dehors de
 
 Les méthodes d’extension sont largement utilisées dans ML.NET pour construire des instances d’[estimateurs](#estimator).
 
-## <a name="feature"></a>Composant
+## <a name="feature"></a>Fonctionnalité
 
 Propriété mesurable du phénomène mesuré, en général, une valeur (double) numérique. Plusieurs fonctionnalités sont appelées **vecteur de fonctionnalité** et sont généralement stockées en tant que `double[]`. Les fonctionnalités définissent les principales caractéristiques du phénomène mesuré. Pour plus d’informations, consultez l’article Wikipédia [Fonctionnalité](https://en.wikipedia.org/wiki/Feature_(machine_learning)).
 
-## <a name="feature-engineering"></a>Ingénierie de fonctionnalité
+## <a name="feature-engineering"></a>Ingénierie des caractéristiques
 
 L’ingénierie de fonctionnalité est le processus qui consiste à définir un ensemble de [fonctionnalités](#feature) et à développer des logiciels qui produisent des vecteurs de fonctionnalité à partir des données de phénomène disponibles, par exemple, l’extraction d’une fonctionnalité. Pour plus d’informations, consultez l’article Wikipédia [Feature engineering](https://en.wikipedia.org/wiki/Feature_engineering).
 
@@ -80,7 +80,7 @@ Dans une [classification](#classification), une métrique d’évaluation qui é
 
 Un paramètre d’un algorithme d’apprentissage automatique. Par exemple, le nombre d’arbres à assimiler dans une forêt décisionnelle ou la taille d’étape dans un algorithme de jambage descendant dégradé. Les valeurs des *hyperparamètres* sont définies avant l’apprentissage du modèle et régissent le processus de recherche des paramètres de la fonction de prédiction, par exemple, les points de comparaison dans un arbre de décision ou les pondérations dans un modèle de régression linéaire. Pour plus d’informations, consultez l’article Wikipédia [Hyperparamètre](https://en.wikipedia.org/wiki/Hyperparameter_(machine_learning)).
 
-## <a name="label"></a>Ajouter des contrôles
+## <a name="label"></a>Étiquette
 
 L’élément à prédire avec le modèle d’apprentissage automatique. Par exemple, la race d’un chien ou le futur cours d’une action.
 
@@ -94,7 +94,7 @@ Une fonction de perte est la différence entre les valeurs d’étiquette d’en
 
 Différents entraîneurs peuvent être configurés avec différentes fonctions de perte.
 
-## <a name="mean-absolute-error-mae"></a>Erreur absolue moyenne (MAE)
+## <a name="mean-absolute-error-mae"></a>Erreur d'absolue moyenne
 
 Dans une [régression](#regression), une métrique d’évaluation qui représente la moyenne de toutes les erreurs du modèle, où l’erreur de modèle est la distance entre la valeur d’[étiquette](#label) prédite et la valeur d’étiquette correcte.
 
@@ -122,7 +122,7 @@ Un vecteur de [fonctionnalité](#feature) constitué uniquement de valeurs numé
 
 Toutes les opérations nécessaires pour adapter un modèle à un jeu de données. Un pipeline se compose des étapes d’importation, de transformation, de fonctionnalisation et d’apprentissage des données. Une fois son apprentissage terminé, le pipeline se transforme en modèle.
 
-## <a name="precision"></a>Précision
+## <a name="precision"></a>Precision
 
 Dans une [classification](#classification), la précision d’une classe correspond au nombre d’éléments correctement prévus comme appartenant à cette classe, divisé par le nombre total d’éléments prévus comme appartenant à la classe.
 
@@ -135,13 +135,13 @@ Dans une [classification](#classification), le rappel d’une classe correspond 
  La régularisation pénalise un modèle linéaire en raison de sa trop grande complexité. Il existe deux types de régularisation :
 
 - La régularisation $L_1$ attribue une pondération nulle aux caractéristiques non significatives. La taille du modèle enregistré peut être plus petite après ce type de régularisation.
-- $L _2 $ régularisation réduit la plage de poids pour les fonctionnalités non significatives. Il s’agit d’un processus plus général qui est moins sensible aux valeurs hors norme.
+- la régularisation de $L 2 $ minimise la plage de poids pour les caractéristiques insignifiantes. Il s’agit d’un processus plus général et moins sensible aux valeurs aberrantes.
 
-## <a name="regression"></a>Régression
+## <a name="regression"></a>régression ;
 
 Une tâche [Apprentissage automatique supervisé](#supervised-machine-learning) où la sortie est une valeur réelle, par exemple, double. Exemple : prédiction de cours d’actions. Pour plus d’informations, consultez la section [Régression](tasks.md#regression) de la rubrique [Tâches d’apprentissage automatique](tasks.md).
 
-## <a name="relative-absolute-error"></a>Erreur d'absolue relative
+## <a name="relative-absolute-error"></a>Erreur absolue relative
 
 Dans une [régression](#regression), une métrique d’évaluation correspondant à la somme de toutes les erreurs absolues, divisée par la somme des distances entre les valeurs d’[étiquette](#label) correctes et la moyenne de toutes les valeurs d’étiquette correctes.
 
@@ -161,7 +161,7 @@ Le score est le processus qui consiste à appliquer de nouvelles données à un 
 
 Une sous-classe d’apprentissage automatique dans laquelle un modèle souhaité prévoit l’étiquette pour les données encore invisibles. Exemples : classification, régression et prédiction structurée. Pour plus d’informations, consultez l’article Wikipédia [Apprentissage supervisé](https://en.wikipedia.org/wiki/Supervised_learning).
 
-## <a name="training"></a>Formation
+## <a name="training"></a>Entrainement
 
 Le processus d’identification d’un [modèle](#model) pour un jeu de données d’apprentissage spécifique. Pour un modèle linéaire, cela signifie rechercher les pondérations. Pour un arbre, cette opération implique l’identification des points de fractionnement.
 

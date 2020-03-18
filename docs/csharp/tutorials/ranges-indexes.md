@@ -1,19 +1,19 @@
 ---
 title: Explorer les plages de données à l’aide d’index et de plages
 description: Ce tutoriel avancé vous apprend à explorer les données à l’aide d’index et de plages pour examiner les tranches d’un jeu de données séquentiel.
-ms.date: 09/20/2019
+ms.date: 03/11/2020
 ms.technology: csharp-fundamentals
 ms.custom: mvc
-ms.openlocfilehash: 5b6277763cfccfc75947f6fa0534964389b1dea3
-ms.sourcegitcommit: 43d10ef65f0f1fd6c3b515e363bde11a3fcd8d6d
+ms.openlocfilehash: 82aad968e2efc437c82a7c8250bcd108b60b09e1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 03/03/2020
-ms.locfileid: "78240039"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156492"
 ---
 # <a name="indices-and-ranges"></a>Index et plages
 
-Les plages et les index fournissent une syntaxe concise pour accéder à des éléments ou des plages uniques dans une séquence.
+Les gammes et les indices fournissent une syntaxe succincte pour accéder à des éléments ou des plages uniques dans une séquence.
 
 Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
@@ -25,14 +25,14 @@ Ce didacticiel vous montre comment effectuer les opérations suivantes :
 
 ## <a name="language-support-for-indices-and-ranges"></a>Prise en charge linguistique pour les index et les plages
 
-Cette prise en charge de langage s’appuie sur deux nouveaux types et deux nouveaux opérateurs :
+Ce support linguistique repose sur deux nouveaux types et deux nouveaux opérateurs :
 
 - <xref:System.Index?displayProperty=nameWithType> représente un index au sein d’une séquence.
-- L’index de l’opérateur end `^`, qui spécifie qu’un index est relatif à la fin d’une séquence.
+- L’indice de `^`l’opérateur final , qui précise qu’un indice est relatif à la fin d’une séquence.
 - <xref:System.Range?displayProperty=nameWithType> représente une sous-plage d’une séquence.
-- L’opérateur de plage `..`, qui spécifie le début et la fin d’une plage comme opérandes.
+- L’opérateur `..`de gamme , qui spécifie le début et la fin d’une gamme comme ses opérands.
 
-Commençons par les règles concernant les indices. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. Notez que `sequence[^0]` lève une exception, tout comme `sequence[sequence.Length]`. Pour n’importe quel nombre `n`, l’index `^n` est le même que l’index `sequence[sequence.Length - n]`.
+Commençons par les règles concernant les indices. Prenons pour exemple un tableau `sequence`. L’index `0` est identique à l’index `sequence[0]`. L’index `^0` est identique à l’index `sequence[sequence.Length]`. L’expression `sequence[^0]` ne jeter une `sequence[sequence.Length]` exception, tout comme le fait. Pour n’importe quel nombre `n`, l’index `^n` est identique à l’index `sequence[sequence.Length - n]`.
 
 ```csharp
 string[] words = new string[]
@@ -54,7 +54,7 @@ Vous pouvez récupérer le dernier mot avec l’index `^1`. Ajoutez le code suiv
 
 [!code-csharp[LastIndex](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_LastIndex)]
 
-Une plage spécifie son *début* et sa *fin*. Les plages sont exclusives, ce qui signifie que la *fin* n’est pas incluse dans la plage. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière. 
+Une plage spécifie son *début* et sa *fin*. Les plages sont exclusives, ce qui signifie que la *fin* n’est pas incluse dans la gamme. La plage `[0..^0]` représente la plage dans son intégralité, tout comme `[0..sequence.Length]` représente la plage entière.
 
 Le code suivant crée une sous-plage qui comporte les mots « quick », « brown » et « fox » et va de `words[1]` à `words[3]`. L’élément `words[4]` n’est pas dans la plage. Ajoutez le code suivant à la même méthode. Copiez-le et collez-le en bas de la fenêtre interactive.
 
@@ -76,20 +76,22 @@ L’exemple suivant montre un grand nombre des raisons de ces choix. Modifiez `x
 
 [!code-csharp[SemanticsExamples](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_Semantics)]
 
-## <a name="type-support-for-indices-and-ranges"></a>Prise en charge des types d’index et de plages
+## <a name="type-support-for-indices-and-ranges"></a>Type de support pour les indices et les plages
 
-Les index et les plages fournissent une syntaxe claire et concise permettant d’accéder à un élément unique ou à une sous-plage d’éléments dans une séquence. Une expression d’index retourne généralement le type des éléments d’une séquence. Une expression de plage retourne généralement le même type de séquence que la séquence source.
+Les index et les plages fournissent une syntaxe claire et concise pour accéder à un seul élément ou à une sous-gamme d’éléments dans une séquence. Une expression d’index renvoie généralement le type des éléments d’une séquence. Une expression de plage renvoie généralement le même type de séquence que la séquence source.
 
-Si un type fournit un [indexeur](../programming-guide/indexers/index.md) avec un paramètre <xref:System.Index> ou <xref:System.Range>, il prend explicitement en charge les index ou les plages, respectivement. Lorsque le type fournit un indexeur qui accepte un seul paramètre <xref:System.Range>, il peut choisir de retourner un autre type de séquence, tel que <xref:System.Span%601?displayProperty=nameWithType>.
+Tout type qui fournit à <xref:System.Index> <xref:System.Range> un [indexeur](../programming-guide/indexers/index.md) un ou un paramètre prend explicitement en charge les indices ou les plages respectivement. Un indexeur qui <xref:System.Range> prend un seul paramètre peut <xref:System.Span%601?displayProperty=nameWithType>retourner un type de séquence différent, tel que .
 
-Un type est **compté** s’il a une propriété nommée `Length` ou `Count` avec un accesseur Get accessible et un type de retour `int`. Un type pouvant être compté qui ne prend pas explicitement en charge les index ou les plages peut fournir une prise en charge implicite pour eux. Pour plus d’informations, consultez les sections prise en charge d' [index implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et [prise en charge de plage implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la [proposition](~/_csharplang/proposals/csharp-8.0/ranges.md). Les plages utilisant la prise en charge de plage implicite retournent le même type de séquence que la séquence source.
+Un type est **comptabilisable** `Length` s’il a une propriété nommée ou `Count` avec un getter accessible et un type de retour de `int`. Un type de comptage qui ne prend pas explicitement en charge les indices ou les plages peut leur fournir un support implicite. Pour plus d’informations, consultez les sections de support implicite de [l’indice](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-index-support) et de [la portée implicite](~/_csharplang/proposals/csharp-8.0/ranges.md#implicit-range-support) de la note de proposition de [fonctionnalité](~/_csharplang/proposals/csharp-8.0/ranges.md). Les plages utilisant le support implicite de portée renvoient le même type de séquence que la séquence source.
 
-Par exemple, les types .NET suivants prennent en charge les index et les plages : <xref:System.Array>, <xref:System.String>, <xref:System.Span%601>et <xref:System.ReadOnlySpan%601>. Le <xref:System.Collections.Generic.List%601> prend en charge les index mais ne prend pas en charge les plages.
+Par exemple, les types .NET suivants prennent <xref:System.String> <xref:System.Span%601>en <xref:System.ReadOnlySpan%601>charge les indices et les gammes: , , et . Les <xref:System.Collections.Generic.List%601> indices prennent en charge les indices mais ne prennent pas en charge les plages.
 
-## <a name="scenarios-for-indices-and-ranges"></a>Scénarios pour les index et les plages
+<xref:System.Array>a un comportement plus nuancé. Les tableaux à dimension unique prennent en charge à la fois les indices et les gammes. Les tableaux multidimensionnels ne le font pas. L’indexeur d’un tableau multidimensionnel a plusieurs paramètres, pas un seul paramètre. Les tableaux déchiquetés, aussi appelés un éventail de tableaux, prennent en charge les gammes et les indexeurs. L’exemple suivant montre comment itérer une sous-section rectangulaire d’un tableau déchiqueté. Il itère la section dans le centre, à l’exclusion des trois premières et dernières rangées, et les deux premières et dernières colonnes de chaque rangée sélectionnée:
 
-L’utilisation de plages et d’index est fréquente pour effectuer une analyse sur une sous-plage d’une séquence entière. La nouvelle syntaxe permet de mieux lire la sous-plage exactement impliquée. La fonction locale `MovingAverage` prend un <xref:System.Range> comme argument. La méthode énumère ensuite simplement cette plage lors du calcul des valeurs minimale, maximale et moyenne. Essayez le code suivant dans votre projet :
+[!code-csharp[JaggedArrays](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_JaggedArrays)]
+
+## <a name="scenarios-for-indices-and-ranges"></a>Scénarios pour indices et gammes
+
+Vous utilisez souvent des plages et des indices lorsque vous souhaitez analyser une sous-gamme d’une séquence plus grande. La nouvelle syntaxe permet de mieux lire la sous-plage exactement impliquée. La fonction locale `MovingAverage` prend un <xref:System.Range> comme argument. La méthode énumère ensuite simplement cette plage lors du calcul des valeurs minimale, maximale et moyenne. Essayez le code suivant dans votre projet :
 
 [!code-csharp[MovingAverages](~/samples/snippets/csharp/tutorials/RangesIndexes/IndicesAndRanges.cs#IndicesAndRanges_MovingAverage)]
-
-Vous pouvez télécharger le code terminé à partir du dépôt GitHub [dotnet/samples](https://github.com/dotnet/samples/tree/master/csharp/tutorials/RangesIndexes).

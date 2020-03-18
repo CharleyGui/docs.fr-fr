@@ -1,22 +1,22 @@
 ---
-title: Guide pratique pour rechercher des éléments connexes (XPath-LINQ to XMLC#) ()
+title: Comment trouver des éléments connexes (XPath-LINQ à XML) (C)
 ms.date: 07/20/2015
 ms.assetid: 41b386ee-562d-4841-bd6b-e44a7eb69f26
-ms.openlocfilehash: cdc281d0b08ee7b7f93ac28b14e82fa113a3379d
-ms.sourcegitcommit: fbb8a593a511ce667992502a3ce6d8f65c594edf
+ms.openlocfilehash: f74c338019c0451ab5e3ac0d8da10392ae5601ed
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/16/2019
-ms.locfileid: "74141036"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169231"
 ---
-# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Guide pratique pour rechercher des éléments connexes (XPath-LINQ to XMLC#) ()
+# <a name="how-to-find-related-elements-xpath-linq-to-xml-c"></a>Comment trouver des éléments connexes (XPath-LINQ à XML) (C)
 Cette rubrique montre comment obtenir un élément en sélectionnant un attribut auquel il est fait référence par la valeur d'un autre élément.  
   
  L’expression XPath est la suivante :  
   
  `.//Customer[@CustomerID=/Root/Orders/Order[12]/CustomerID]`  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple recherche le douzième élément `Order`, puis recherche le client associé à cette commande.  
   
  Notez que l’indexation dans une liste en .NET est en base « zéro ». L'indexation dans une collection de nœuds dans un prédicat XPath est basée sur « un ». Cet exemple reflète cette différence.  
@@ -64,7 +64,7 @@ else
 Console.WriteLine(customer1);  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 Results are identical  
@@ -83,4 +83,3 @@ Results are identical
   </FullAddress>  
 </Customer>  
 ```  
- 

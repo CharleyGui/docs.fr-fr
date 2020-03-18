@@ -4,11 +4,11 @@ description: Découvrez la signification de certains termes utilisés dans la do
 ms.date: 01/22/2019
 ms.technology: dotnet-standard
 ms.openlocfilehash: 8da1d858835210590a80a624fb8989fbfe8e0a91
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78160090"
+ms.lasthandoff: 03/15/2020
+ms.locfileid: "79400434"
 ---
 # <a name="net-glossary"></a>Glossaire .NET
 
@@ -38,7 +38,7 @@ Voir [Documentation ASP.NET Core](/aspnet/#pivot=core).
 
 ## <a name="assembly"></a>assembly
 
-Fichier *.dll*/*.exe* qui contient une collection d’API pouvant être appelées par les applications ou d’autres assemblys.
+Un fichier *.dll*/*.exe* qui peut contenir une collection d’API qui peuvent être appelés par des applications ou d’autres assemblages.
 
 Un assembly peut inclure des types comme des interfaces, des classes, des structures, des énumérations et des délégués. Les assemblys qui se trouvent dans le dossier *bin* d’un projet sont parfois appelés *binaires*. Voir aussi [bibliothèque](#library).
 
@@ -46,7 +46,7 @@ Un assembly peut inclure des types comme des interfaces, des classes, des struct
 
 Common Language Runtime.
 
-La signification exacte dépend du contexte, mais ce terme fait généralement référence au runtime de .NET Framework. Le CLR gère l’allocation et la gestion de la mémoire. Le CLR est également une machine virtuelle qui non seulement exécute des applications, mais aussi génère et compile du code à la volée à l’aide d’un compilateur [JIT](#jit). L’implémentation CLR Microsoft actuelle est Windows uniquement.
+La signification exacte dépend du contexte, mais ce terme fait généralement référence au runtime de .NET Framework. Le CLR gère l’allocation et la gestion de la mémoire. Le CLR est également une machine virtuelle qui non seulement exécute des applications, mais génère et compile également du code à la volée à l’aide d’un compilateur [JIT.](#jit) L’implémentation CLR Microsoft actuelle est Windows uniquement.
 
 ## <a name="coreclr"></a>CoreCLR
 
@@ -58,7 +58,7 @@ Ce CLR repose sur la même base de code que le CLR. À l’origine, CoreCLR éta
 
 Bibliothèque de classes de base .NET Core
 
-Ensemble de bibliothèques qui composent le système.\* (et à des espaces de noms Microsoft.\*) limités. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source de la bibliothèque de classes de base .NET Core se trouve dans le [référentiel du Runtime .net Core](https://github.com/dotnet/runtime). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
+Un ensemble de bibliothèques qui composent le système. \* (et dans une mesure\*limitée Microsoft. ) namespaces. La bibliothèque de classes de base est un framework de niveau inférieur à usage général sur lequel reposent les frameworks d’applications de niveau supérieur, tels qu’ASP.NET Core. Le code source du .NET Core BCL est contenu dans le [référentiel .NET Core runtime](https://github.com/dotnet/runtime). Toutefois, la plupart des API .NET Core étant également disponibles dans .NET Framework, vous pouvez considérer CoreFX comme une duplication (fork) de la bibliothèque de classes de base .NET Framework.
 
 ## <a name="corert"></a>CoreRT
 
@@ -66,7 +66,7 @@ Runtime .NET Core.
 
 Contrairement à CLR/CoreCLR, CoreRT n’est pas une machine virtuelle, ce qui signifie qu’il n’inclut pas les fonctionnalités de génération et d’exécution de code à la volée en raison de l’absence d’un compilateur [JIT](#jit). Toutefois, il inclut le [GC](#gc) et les fonctionnalités RTTI (identification du type au moment de l’exécution) et de réflexion. Toutefois, son système de type est conçu pour que les métadonnées de réflexion ne soient pas nécessaires. Cela permet d’avoir une chaîne d’outils [AOT](#aot) qui peut écarter les métadonnées superflues et (surtout) identifier le code que l’application n’utilise pas. CoreRT est en cours de développement.
 
-Consultez [Introduction à .net native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
+Voir [Intro à .NET Native et CoreRT](https://github.com/dotnet/corert/blob/master/Documentation/intro-to-corert.md).
 
 ## <a name="cross-platform"></a>interplateformes
 
@@ -86,8 +86,8 @@ En général, ensemble complet d’API qui facilite le développement et le dép
 
 Le mot « framework » a une signification technique plus spécifique dans les termes suivants :
 
-- [.NET Framework](#net-framework)
-- [framework cible](#target-framework)
+- [.CADRE NET](#net-framework)
+- [cadre cible](#target-framework)
 - [TFM (moniker de la version cible de .Net Framework)](#tfm)
 
 Dans la documentation existante, « framework » fait parfois référence à une [implémentation de .NET](#implementation-of-net). Par exemple, un article peut appeler .NET Core un framework. Nous envisageons d’éliminer de la documentation cet usage qui prête à confusion.
@@ -123,7 +123,7 @@ Une implémentation de .NET inclut les composants suivants :
 
 Exemples d’implémentations de .NET :
 
-- [.NET Framework](#net-framework)
+- [.CADRE NET](#net-framework)
 - [.NET Core](#net-core)
 - [Plateforme Windows universelle (UWP)](#uwp)
 
@@ -167,7 +167,7 @@ Consultez [.NET Core](../core/index.md).
 
 Chaîne d’outils multiplateforme pour développer des applications .NET Core.
 
-Consultez [CLI .net Core](../core/tools/index.md).
+Voir [.NET Core CLI](../core/tools/index.md).
 
 ## <a name="net-core-sdk"></a>SDK .NET Core
 
@@ -269,12 +269,12 @@ Consultez [Versions cibles de .NET Framework](frameworks.md).
 
 Plateforme Windows universelle.
 
-Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites C++en C#,, Visual Basic et JavaScript. Lorsque vous C# utilisez et Visual Basic, les API .net sont fournies par .net core.
+Implémentation de .NET qui sert à générer des logiciels et des applications Windows tactiles modernes pour l’Internet des objets (IoT). Elle vise à unifier les différents types d’appareils que vous pouvez cibler, y compris les PC, les tablettes, les phablettes, les téléphones et même la Xbox. UWP fournit de nombreux services, comme un magasin d’applications centralisé, un environnement d’exécution (AppContainer) et un ensemble d’API Windows à utiliser à la place de Win32 (WinRT). Les applications peuvent être écrites en C, C, Visual Basic et JavaScript. Lors de l’utilisation de C et Visual Basic, les API .NET sont fournis par .NET Core.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Guide de .NET](index.md)
 - [Guide du .NET Framework](../framework/index.md)
 - [.NET Core](../core/index.md)
-- [ASP.NET Overview](/aspnet/index#pivot=aspnet) (Vue d’ensemble d’ASP.NET)
+- [Vue d’ensemble ASP.NET](/aspnet/index#pivot=aspnet)
 - [ASP.NET Core Overview](/aspnet/index#pivot=core) (Vue d’ensemble d’ASP.NET Core)

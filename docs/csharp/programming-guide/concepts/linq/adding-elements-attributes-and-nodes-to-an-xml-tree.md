@@ -2,12 +2,12 @@
 title: Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (C#)
 ms.date: 07/20/2015
 ms.assetid: db911e4f-40aa-499a-9500-a9763bb6df56
-ms.openlocfilehash: fee03dd2ba0818778afb3447e8930a2c2567b067
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.openlocfilehash: 20d8d9d9c592f5f570d7c94298dcee41763c1f1f
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
-ms.locfileid: "66486239"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79169573"
 ---
 # <a name="adding-elements-attributes-and-nodes-to-an-xml-tree-c"></a>Ajout d’éléments, d’attributs et de nœuds à une arborescence XML (C#)
 Vous pouvez ajouter du contenu (éléments, attributs, commentaires, instructions de traitement, texte et CData) à une arborescence XML existante.  
@@ -27,7 +27,7 @@ Vous pouvez ajouter du contenu (éléments, attributs, commentaires, instruction
 |<xref:System.Xml.Linq.XNode.AddAfterSelf%2A>|Ajoute du contenu après l'objet <xref:System.Xml.Linq.XNode>.|  
 |<xref:System.Xml.Linq.XNode.AddBeforeSelf%2A>|Ajoute du contenu avant l'objet <xref:System.Xml.Linq.XNode>.|  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
   
 ### <a name="description"></a>Description  
  L'exemple suivant crée deux arborescences XML, puis modifie l'une des arborescences.  
@@ -35,7 +35,7 @@ Vous pouvez ajouter du contenu (éléments, attributs, commentaires, instruction
 ### <a name="code"></a>Code  
   
 ```csharp  
-XElement srcTree = new XElement("Root",   
+XElement srcTree = new XElement("Root",
     new XElement("Element1", 1),  
     new XElement("Element2", 2),  
     new XElement("Element3", 3),  

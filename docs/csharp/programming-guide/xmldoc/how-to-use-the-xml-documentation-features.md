@@ -1,26 +1,26 @@
 ---
-title: Guide pratique pour utiliser les fonctionnalités de la C# documentation XML-Guide de programmation
+title: Comment utiliser les fonctionnalités de documentation XML - Guide de programmation C
 ms.date: 06/01/2018
 helpviewer_keywords:
 - XML documentation [C#]
 - C# language, XML documentation features
 ms.assetid: 8f33917b-9577-4c9a-818a-640dbbb0b399
-ms.openlocfilehash: 57034fb835d4c82b5bf658e61ec78ef226c2551e
-ms.sourcegitcommit: 13e79efdbd589cad6b1de634f5d6b1262b12ab01
+ms.openlocfilehash: e279b13d9216120e25f454faa14dc71ad24c74ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/28/2020
-ms.locfileid: "76789770"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156998"
 ---
 # <a name="how-to-use-the-xml-documentation-features"></a>Comment utiliser les fonctionnalités de la documentation XML
 
 L’exemple suivant montre un type qui a été documenté.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 [!code-csharp[csProgGuideDocComments#15](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideDocComments/CS/DocComments.cs#15)]
 
-L’exemple génère un fichier *. xml* avec le contenu suivant.
+L’exemple génère un fichier *.xml* avec le contenu suivant.
 
 ```xml
 <?xml version="1.0"?>
@@ -62,7 +62,7 @@ L’exemple génère un fichier *. xml* avec le contenu suivant.
             </summary>
             <param name="s"> Parameter description for s goes here.</param>
             <seealso cref="T:System.String">
-            You can use the cref attribute on any tag to reference a type or member 
+            You can use the cref attribute on any tag to reference a type or member
             and the compiler will check that the reference exists.
             </seealso>
         </member>
@@ -120,7 +120,7 @@ Le début de la documentation XML est symbolisé par trois barres obliques (//
 
 - La documentation doit être dans un format XML correct. Si le XML n’est pas correct, un avertissement est généré. En outre, un commentaire indiquant qu’une erreur s’est produite est ajouté au fichier de documentation.
 
-- Les développeurs sont libres de créer leur propre jeu de balises. Il existe un [ensemble recommandé de balises](recommended-tags-for-documentation-comments.md). Certaines des balises recommandées ont des significations spéciales :
+- Les développeurs sont libres de créer leur propre jeu de balises. Il ya un [ensemble recommandé de balises](recommended-tags-for-documentation-comments.md). Certaines des balises recommandées ont des significations spéciales :
 
   - La balise \<param> est utilisée pour décrire les paramètres. Quand elle est utilisée, le compilateur vérifie que le paramètre existe et que tous les paramètres sont décrits dans la documentation. Si ce n’est pas le cas, le compilateur émet un avertissement.
 
@@ -133,8 +133,8 @@ Le début de la documentation XML est symbolisé par trois barres obliques (//
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Guide de programmation C#](../index.md)
-- [-doc (C# options du compilateur)](../../language-reference/compiler-options/doc-compiler-option.md)
-- [Commentaires de documentation XML](./index.md)
+- [Guide de programmation CMD](../index.md)
+- [-doc (options de compilateur de C)](../../language-reference/compiler-options/doc-compiler-option.md)
+- [Commentaires sur la documentation XML](./index.md)
 - [Processeur de documentation DocFX](https://dotnet.github.io/docfx/)
 - [Processeur de documentation Sandcastle](https://github.com/EWSoftware/SHFB)

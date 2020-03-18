@@ -3,11 +3,11 @@ title: Personnalisation du marshaling de paramètres - .NET
 description: Découvrez comment personnaliser la façon dont .NET marshale vos paramètres en une représentation native.
 ms.date: 01/18/2019
 ms.openlocfilehash: ff646ad942cf051ce90cd75b24c8562e536182d9
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
-ms.locfileid: "78159609"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79400364"
 ---
 # <a name="customizing-parameter-marshaling"></a>Personnalisation du marshaling de paramètres
 
@@ -62,7 +62,7 @@ De plus, si votre type est marqué `[ComVisible(true)]` ou que vous marshalez le
 
 ### <a name="marshaling-to-a-variant"></a>Marshaling vers un `VARIANT`
 
-Si votre API native accepte une `VARIANT` Win32, vous pouvez utiliser le format <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> sur votre `object` paramètre pour marshaler vos objets comme `VARIANT`. Pour connaître les correspondances entre les types .NET et les types [, voir la documentation `object`Personnaliser les champs ](customize-struct-marshaling.md#marshaling-systemobjects)`VARIANT`.
+Si votre API native accepte une `VARIANT` Win32, vous pouvez utiliser le format <xref:System.Runtime.InteropServices.UnmanagedType.Struct?displayProperty=nameWithType> sur votre `object` paramètre pour marshaler vos objets comme `VARIANT`. Pour connaître les correspondances entre les types .NET et les types `VARIANT`, voir la documentation [Personnaliser les champs `object`](customize-struct-marshaling.md#marshaling-systemobjects).
 
 ### <a name="custom-marshalers"></a>Marshaleurs personnalisés
 

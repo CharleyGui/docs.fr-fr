@@ -9,10 +9,10 @@ helpviewer_keywords:
 - application domains, resource monitoring
 ms.assetid: 318bedf8-7f35-4f00-b34a-2b7b8e3fa315
 ms.openlocfilehash: 54e300bef1818fd08f27d7920eec68ee1f2c45bb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141381"
 ---
 # <a name="application-domain-resource-monitoring"></a>Analyse de ressource de domaine d'application
@@ -29,7 +29,7 @@ ARM peut être activé de quatre façons : en fournissant un fichier de configu
 
 Dès que ARM est activé, il commence à collecter des données sur tous les domaines d'application du processus. Si un domaine d'application a été créé avant l'activation de ARM, les données cumulatives démarrent avec l'activation de ARM, pas au moment de la création du domaine d'application. Une fois activé, ARM ne peut pas être désactivé.
 
-- Vous pouvez activer ARM au démarrage du CLR en ajoutant l’élément [\<appDomainResourceMonitoring>](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md) au fichier de configuration, puis en définissant l’attribut `enabled` sur `true`. La valeur `false` (valeur par défaut) signifie uniquement que ARM n'est pas activé au démarrage. Vous pouvez l'activer ultérieurement à l'aide de l'un des autres mécanismes d'activation.
+- Vous pouvez activer ARM à la startup CLR en ajoutant [ \<l’appDomainResourceMonitoring](../../../docs/framework/configure-apps/file-schema/runtime/appdomainresourcemonitoring-element.md)>`true`élément au fichier de configuration, et en définissant l’attribut `enabled` à . La valeur `false` (valeur par défaut) signifie uniquement que ARM n'est pas activé au démarrage. Vous pouvez l'activer ultérieurement à l'aide de l'un des autres mécanismes d'activation.
 
 - L’hôte peut activer ARM en demandant l’interface d’hébergement [ICLRAppDomainResourceMonitor](../../../docs/framework/unmanaged-api/hosting/iclrappdomainresourcemonitor-interface.md). Une fois cette interface obtenue avec succès, ARM est activé.
 
@@ -57,7 +57,7 @@ ARM fournit le temps processeur total utilisé par un domaine d’application ai
 
   - Événements ETW : événement `AppDomainMemAllocated`, champ `Allocated`.
 
-- **Mémoire managée, en octets, qui est référencée par un domaine d'application et qui a survécu à la collecte bloquante complète la plus récente** : ce nombre est exact uniquement après une collecte bloquante complète. (Contrairement aux collections simultanées, qui se produisent en arrière-plan et ne bloquent pas l’application.) Par exemple, la surcharge de la méthode <xref:System.GC.Collect?displayProperty=nameWithType> provoque une collection bloquante complète.
+- **Mémoire managée, en octets, qui est référencée par un domaine d'application et qui a survécu à la collecte bloquante complète la plus récente** : ce nombre est exact uniquement après une collecte bloquante complète. (Cela contraste avec les collections simultanées, qui se produisent en arrière-plan et ne bloquent pas l’application.) Par exemple, <xref:System.GC.Collect?displayProperty=nameWithType> la surcharge de méthode provoque une collecte complète de blocage.
 
   - API managée : propriété <xref:System.AppDomain.MonitoringSurvivedMemorySize%2A?displayProperty=nameWithType>.
 
@@ -77,7 +77,7 @@ ARM fournit le temps processeur total utilisé par un domaine d’application ai
 
 Pour déterminer quand la quantité de mémoire ayant survécu est exacte, vous devez savoir quand une collecte bloquante complète s'est produite. La méthode utilisée pour cela dépend de l'API que vous utilisez pour examiner les statistiques ARM.
 
-#### <a name="managed-api"></a>API managée
+#### <a name="managed-api"></a>API gérée
 
 Si vous utilisez les propriétés de la classe <xref:System.AppDomain>, vous pouvez utiliser la méthode <xref:System.GC.RegisterForFullGCNotification%2A?displayProperty=nameWithType> afin de vous inscrire pour la notification des collectes complètes. Le seuil que vous utilisez n'est pas important, car vous attendez l'achèvement d'une collecte plutôt que l'approche d'une collecte. Vous pouvez ensuite appeler la méthode <xref:System.GC.WaitForFullGCComplete%2A?displayProperty=nameWithType>, qui se bloque jusqu'à ce qu'une collecte complète soit terminée. Vous pouvez créer un thread qui appelle la méthode dans une boucle et effectue toutes les analyses nécessaires chaque fois que la méthode est retournée.
 

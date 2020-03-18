@@ -5,12 +5,12 @@ helpviewer_keywords:
 - single-dimensional arrays [C#]
 - arrays [C#], single-dimensional
 ms.assetid: 2cec1196-1de0-49d2-baf2-c607c33310e8
-ms.openlocfilehash: 8f093d22da789c6df750475e47a3b4e4685c5651
-ms.sourcegitcommit: de17a7a0a37042f0d4406f5ae5393531caeb25ba
+ms.openlocfilehash: bd4ab53a9cb53e5cf636601bff5ac64a10a310a6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2020
-ms.locfileid: "76744209"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79170349"
 ---
 # <a name="single-dimensional-arrays-c-programming-guide"></a>Tableaux unidimensionnels (Guide de programmation C#)
 
@@ -31,7 +31,7 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
  [!code-csharp[csProgGuideArrays#6](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideArrays/CS/Arrays.cs#6)]  
   
  Un tableau de chaînes peut être initialisé de la même manière. Voici une déclaration d’un tableau de chaînes où chaque élément du tableau est initialisé par un nom de jour de la semaine :  
- 
+
  ```csharp
  string[] weekDays = new string[] { "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" };
  ```
@@ -54,7 +54,7 @@ Vous pouvez déclarer un tableau unidimensionnel de cinq entiers comme indiqué 
   
  Le résultat de cette instruction varie selon que `SomeType` est un type valeur ou un type référence. S’il s’agit d’un type de valeur, l’instruction crée un tableau de 10 éléments, chacun ayant le type `SomeType`. Si `SomeType` est un type référence, l’instruction crée un tableau de 10 éléments dont chacun est initialisé avec une référence null.  
   
-Pour plus d’informations sur les types valeur et les types référence, consultez types [valeur](../../language-reference/builtin-types/value-types.md) et [types référence](../../language-reference/keywords/reference-types.md).
+Pour plus d’informations sur les types de valeur et les types de référence, voir [les types de valeur](../../language-reference/builtin-types/value-types.md) et les types de [référence](../../language-reference/keywords/reference-types.md).
   
 ## <a name="see-also"></a>Voir aussi
 
@@ -62,4 +62,4 @@ Pour plus d’informations sur les types valeur et les types référence, consul
 - [Guide de programmation C#](../index.md)
 - [Tableaux](./index.md)
 - [Tableaux multidimensionnels](./multidimensional-arrays.md)
-- [Tableaux en escalier](./jagged-arrays.md)
+- [Arrays déchiquetés](./jagged-arrays.md)

@@ -4,20 +4,20 @@ description: Apprenez à utiliser l’héritage dans les bibliothèques et appli
 ms.date: 07/05/2018
 ms.technology: csharp-fundamentals
 ms.assetid: aeb68c74-0ea0-406f-9fbe-2ce02d47ef31
-ms.openlocfilehash: b69da841c7c7a2e518191ad34f2ff5b368899728
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.openlocfilehash: b72badb7833e018dfcbf5d2583b17f17c800c382
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
-ms.locfileid: "73120130"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "79156751"
 ---
 # <a name="inheritance-in-c-and-net"></a>Héritage dans C# et .NET
 
 Ce didacticiel vous présente l’héritage dans C#. L’héritage est une fonctionnalité des langages de programmation orientés objet qui vous permet de définir une classe de base qui fournit des fonctionnalités spécifiques (données et comportement) et de définir des classes dérivées qui héritent ou substituent cette fonctionnalité.
 
-## <a name="prerequisites"></a>Configuration requise
+## <a name="prerequisites"></a>Conditions préalables requises
 
-Ce didacticiel part du principe que vous avez installé le kit SDK .NET Core. Visitez la page des [téléchargements .net Core](https://dotnet.microsoft.com/download) pour le télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
+Ce tutoriel suppose que vous avez installé le .NET Core SDK. Visitez la page [.NET Core Downloads](https://dotnet.microsoft.com/download) pour la télécharger. Il vous faut également un éditeur de code. Ce didacticiel utilise [Visual Studio Code](https://code.visualstudio.com), mais vous pouvez utiliser l’éditeur de code de votre choix.
 
 ## <a name="running-the-examples"></a>Exécution des exemples
 
@@ -141,7 +141,7 @@ Le tableau suivant répertorie les catégories de types que vous pouvez créer e
 
 | Catégorie de type | Hérite implicitement de                                                      |
 | ------------- | ----------------------------------------------------------------------------- |
-| classe         | <xref:System.Object>                                                          |
+| class         | <xref:System.Object>                                                          |
 | struct        | <xref:System.ValueType>, <xref:System.Object>                                 |
 | enum          | <xref:System.Enum>, <xref:System.ValueType>, <xref:System.Object>             |
 | délégué      | <xref:System.MulticastDelegate>, <xref:System.Delegate>, <xref:System.Object> |
@@ -165,7 +165,7 @@ Une relation « est un » basée sur l’héritage est préférablement appliqu�
 
 ## <a name="designing-the-base-class-and-derived-classes"></a>Conception de la classe de base et des classes dérivées
 
-Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous allez définir une classe de base, `Publication`, qui représente une publication de tout type, tel qu’un livre, un magazine, un journal, un journal, un article, etc. Vous définirez également une classe `Book` qui dérive de `Publication`. Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
+Examinons le processus de conception d’une classe de base et de ses classes dérivées. Dans cette section, vous définirez `Publication`une classe de base, qui représente une publication de toute nature, comme un livre, un magazine, un journal, un journal, un article, etc. Vous définirez également `Book` une classe `Publication`qui dérive de . Vous pourriez facilement étendre l’exemple pour définir d’autres classes dérivées, comme `Magazine`, `Journal`, `Newspaper` et `Article`.
 
 ### <a name="the-base-publication-class"></a>Classe Publication de base
 
@@ -291,7 +291,7 @@ Vous pouvez ensuite dériver des classes qui représentent des formes spécifiqu
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#2)]
 
-L'exemple suivant utilise les objets dérivés de `Shape`. Elle instancie un tableau d’objets dérivés de `Shape` et appelle les méthodes statiques de la classe `Shape` qui encapsule les valeurs de propriété de retour de `Shape`. Le runtime récupère les valeurs de propriétés substituées des types dérivés. L’exemple convertit également chaque objet `Shape` dans le tableau en son type dérivé et, si la conversion réussit, récupère les propriétés de cette sous-classe particulière de `Shape`. 
+L'exemple suivant utilise les objets dérivés de `Shape`. Elle instancie un tableau d’objets dérivés de `Shape` et appelle les méthodes statiques de la classe `Shape` qui encapsule les valeurs de propriété de retour de `Shape`. Le runtime récupère les valeurs de propriétés substituées des types dérivés. L’exemple convertit également chaque objet `Shape` dans le tableau en son type dérivé et, si la conversion réussit, récupère les propriétés de cette sous-classe particulière de `Shape`.
 
 [!code-csharp[Inheritance](../../../samples/snippets/csharp/tutorials/inheritance/shape.cs#3)]
 

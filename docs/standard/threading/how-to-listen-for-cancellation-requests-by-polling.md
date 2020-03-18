@@ -9,16 +9,16 @@ helpviewer_keywords:
 - cancellation, how to poll for requests
 ms.assetid: c7f2f022-d08e-4e00-b4eb-ae84844cb1bc
 ms.openlocfilehash: df76674e3003bbb77ef062e90b1dc3283f681d35
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73138028"
 ---
 # <a name="how-to-listen-for-cancellation-requests-by-polling"></a>Comment : écouter les demandes d'annulation par l'interrogation
 L’exemple suivant montre une manière dont un code utilisateur peut interroger un jeton d’annulation à intervalles réguliers pour voir si une annulation a été demandée à partir du thread appelant. Cet exemple utilise le type <xref:System.Threading.Tasks.Task?displayProperty=nameWithType>, mais le même modèle s’applique aux opérations asynchrones créées directement par le type <xref:System.Threading.ThreadPool?displayProperty=nameWithType> ou par le type <xref:System.Threading.Thread?displayProperty=nameWithType>.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  L’interrogation requiert une boucle ou un code récursif qui peut lire régulièrement la valeur de la propriété booléenne <xref:System.Threading.CancellationToken.IsCancellationRequested%2A>. Si vous utilisez le type <xref:System.Threading.Tasks.Task?displayProperty=nameWithType> et que vous attendez que la tâche se termine sur le thread appelant, vous pouvez utiliser la méthode <xref:System.Threading.CancellationToken.ThrowIfCancellationRequested%2A> pour vérifier la propriété et lever l’exception. En utilisant cette méthode, vous garantissez que la bonne exception est levée en réponse à une requête. Si vous utilisez un <xref:System.Threading.Tasks.Task>, il vaudra alors mieux appeler cette méthode plutôt que de lever manuellement un <xref:System.OperationCanceledException>. Si vous ne devez pas lever l’exception, vous pouvez simplement vérifier la propriété et le retour de la méthode si la propriété est `true`.  
   
  [!code-csharp[Cancellation#11](../../../samples/snippets/csharp/VS_Snippets_Misc/cancellation/cs/cancellationex11.cs#11)]

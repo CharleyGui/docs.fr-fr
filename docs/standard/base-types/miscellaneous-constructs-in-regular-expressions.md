@@ -11,10 +11,10 @@ helpviewer_keywords:
 - regular expressions, miscellaneous constructs
 ms.assetid: 7d10d11f-680f-4721-b047-fb136316b4cd
 ms.openlocfilehash: a43ce44e11a9231dee2961ee02bac745d9ca71cb
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "73141600"
 ---
 # <a name="miscellaneous-constructs-in-regular-expressions"></a>Constructions diverses dans les expressions régulières
@@ -38,7 +38,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
  Toute modification des options d’expression régulière définies par la construction `(?imnsx-imnsx)` reste en vigueur jusqu’à la fin du groupe englobant.  
   
 > [!NOTE]
-> La construction de regroupement `(?imnsx-imnsx:`*sous-expression*`)` fournit une fonctionnalité identique pour une sous-expression. Pour plus d'informations, consultez [Grouping Constructs](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
+> La `(?imnsx-imnsx:`construction de`)` groupement *de sous-expression* fournit des fonctionnalités identiques pour une sous-expression. Pour plus d’informations, consultez [Constructions de regroupement](../../../docs/standard/base-types/grouping-constructs-in-regular-expressions.md).  
   
  L’exemple suivant utilise les options `i`, `n` et `x` pour activer le non-respect de la casse et les captures explicites, et pour ignorer l’espace blanc dans le modèle d’expression régulière au milieu d’une expression régulière.  
   
@@ -47,7 +47,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
   
  L’exemple définit deux expressions régulières. La première, `\b(D\w+)\s(d\w+)\b`, correspond à deux mots consécutifs qui commencent par un « D » majuscule et un « d » minuscule. La seconde expression régulière, `\b(D\w+)(?ixn) \s (d\w+) \b`, utilise des options inline pour modifier ce modèle, comme décrit dans le tableau suivant. Une comparaison des résultats confirme l’effet de la construction `(?ixn)`.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`(D\w+)`|Mettre en correspondance un « D » majuscule suivi d’un ou de plusieurs caractères alphabétiques. Il s’agit du premier groupe de capture.|  
@@ -57,11 +57,11 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
 |`\b`|Mettre en correspondance la limite d'un mot.|  
   
 ## <a name="inline-comment"></a>Commentaire inline  
- La construction `(?#` *commentaire*`)` vous permet d’inclure un commentaire inline dans une expression régulière. Le moteur d’expression régulière n’utilise aucune partie du commentaire dans la mise en correspondance du modèle, bien que le commentaire soit inclus dans la chaîne retournée par la méthode <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType>. Le commentaire se termine à la première parenthèse fermante.  
+ La `(?#` construction *de commentaires* `)` vous permet d’inclure un commentaire en ligne dans une expression régulière. Le moteur d’expression régulière n’utilise aucune partie du commentaire dans la mise en correspondance du modèle, bien que le commentaire soit inclus dans la chaîne retournée par la méthode <xref:System.Text.RegularExpressions.Regex.ToString%2A?displayProperty=nameWithType>. Le commentaire se termine à la première parenthèse fermante.  
   
  L’exemple suivant répète le premier modèle d’expression régulière de l’exemple de la section précédente. Il ajoute deux commentaires inline à l’expression régulière pour indiquer si la comparaison respecte la casse. Le modèle d’expression régulière, `\b((?# case-sensitive comparison)D\w+)\s(?ixn)((?#case-insensitive comparison)d\w+)\b`, est défini comme suit.  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\b`|Commencer à la limite d'un mot.|  
 |`(?# case-sensitive comparison)`|Commentaire. Il n’affecte pas le comportement de mise correspondance du modèle.|  
@@ -82,7 +82,7 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
   
  `\{\d+(,-*\d+)*(\:\w{1,4}?)*\}(?x) # Looks for a composite format item.`  
   
-|Motif|Description|  
+|Modèle|Description|  
 |-------------|-----------------|  
 |`\{`|Mettre en correspondance une accolade ouvrante.|  
 |`\d+`|Mettre en correspondance un ou plusieurs chiffres décimaux.|  
@@ -99,4 +99,4 @@ Les expressions régulières dans .NET incluent trois constructions de langage d
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Langage des expressions régulières - Aide-mémoire](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
+- [Langage d’expression régulière - Référence rapide](../../../docs/standard/base-types/regular-expression-language-quick-reference.md)
