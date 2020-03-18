@@ -10,10 +10,10 @@ metadata:
   displayType: two-column
   interactive: csharp
   ms.openlocfilehash: f7fd68120defbfcda6ac11e14bc749bf4d69c109
-  ms.sourcegitcommit: f348c84443380a1959294cdf12babcb804cfa987
+  ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
   ms.translationtype: MT
   ms.contentlocale: fr-FR
-  ms.lasthandoff: 11/12/2019
+  ms.lasthandoff: 03/14/2020
   ms.locfileid: "73969391"
 items:
 - durationInMinutes: 1
@@ -22,7 +22,7 @@ items:
 - title: Créer des listes
   durationInMinutes: 2
   content: >
-    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **entrer le mode Focus** . Ensuite, tapez le bloc de code suivant dans la fenêtre interactive (remplacez `<name>` par votre nom), puis sélectionnez **exécuter**:
+    Exécutez le code suivant dans la fenêtre interactive. Sélectionnez le bouton **De mode Focus Enter.** Ensuite, tapez le bloc de code `<name>` suivant dans la fenêtre interactive (remplacer par votre nom) et sélectionnez **Run**:
 
 
     ```csharp
@@ -38,7 +38,7 @@ items:
     ```
 
 
-    Si vous exécutez cette procédure sur votre environnement, vous devez suivre les instructions relatives à la [version locale](arrays-and-collections.md) .
+    Si vous exécutez ceci sur votre environnement, vous devriez suivre les instructions pour la [version locale](arrays-and-collections.md) à la place.
 
 
     Vous avez créé une liste de chaînes, ajouté trois noms à cette liste et affiché les noms en majuscules. Vous utilisez des concepts que vous avez appris dans les tutoriels précédents pour lire la liste en boucle.
@@ -106,7 +106,7 @@ items:
     ```
 
 
-    Sélectionnez **exécuter** à nouveau pour afficher les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
+    Sélectionnez **Exécuter** à nouveau pour voir les résultats. En C#, les index commencent à partir de 0, de sorte que le plus grand index valide correspond au nombre d’éléments de la liste moins un.
 
 
     > [!NOTE]
@@ -230,13 +230,13 @@ items:
 
     > Cette expérience de codage en ligne est en mode d’aperçu. Si vous rencontrez des problèmes, veuillez les signaler [sur le référentiel dotnet/try](https://github.com/dotnet/try/issues).
 - content: >
-    Vous avez terminé le tutoriel interactif sur les listes, qui terminait l’introduction du tutoriel interactif sur C#. Vous pouvez consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section « étapes suivantes » vous ramène à ces didacticiels.
+    Vous avez terminé le tutoriel interactif sur les listes, qui terminait l’introduction du tutoriel interactif sur C#. Vous pouvez consulter le [site .NET](https://dotnet.microsoft.com/learn/dotnet/hello-world-tutorial/intro) pour télécharger le kit SDK .NET Core, créer un projet sur votre ordinateur et continuer à coder. La section "Prochaines étapes" vous ramène à ces tutoriels.
 
 
     Pour plus d’informations sur les [collections .NET](../../../standard/collections/index.md), consultez les articles suivants :
 
     - [Sélectionner un type de collection](../../../standard/collections/selecting-a-collection-class.md)
 
-    - [Types de collections couramment utilisés](../../../standard/collections/commonly-used-collection-types.md)
+    - [Types de collecte couramment utilisés](../../../standard/collections/commonly-used-collection-types.md)
 
     - [Quand utiliser les collections génériques](../../../standard/collections/when-to-use-generic-collections.md)

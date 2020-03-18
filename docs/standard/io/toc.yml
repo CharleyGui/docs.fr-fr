@@ -6,29 +6,29 @@
     - name: Tâches d’E/S courantes
       href: common-i-o-tasks.md
       items:
-        - name: "Procédure\_: Copier des répertoires"
+        - name: "Comment\_: copier des répertoires"
           href: how-to-copy-directories.md
-        - name: "Procédure\_: énumérer des répertoires et des fichiers"
+        - name: 'Comment : énumérer des répertoires et des fichiers'
           href: how-to-enumerate-directories-and-files.md
-        - name: "Procédure\_: lire et écrire dans un fichier de données créé récemment"
+        - name: "Comment\_: lire et écrire dans un fichier de données créé récemment"
           href: how-to-read-and-write-to-a-newly-created-data-file.md
-        - name: "Procédure\_: ouvrir un fichier journal et y ajouter des éléments"
+        - name: 'Comment : ouvrir un fichier journal et y ajouter des éléments'
           href: how-to-open-and-append-to-a-log-file.md
-        - name: "Procédure\_: écrire du texte dans un fichier"
+        - name: 'Comment : écrire du texte dans un fichier'
           href: how-to-write-text-to-a-file.md
-        - name: "Procédure\_: lire le texte d’un fichier"
+        - name: "Comment\_: lire du texte dans un fichier"
           href: how-to-read-text-from-a-file.md
-        - name: "Procédure\_: lire les caractères d’une chaîne"
+        - name: 'Comment : lire les caractères d''une chaîne'
           href: how-to-read-characters-from-a-string.md
-        - name: "Procédure\_: écrire des caractères dans une chaîne"
+        - name: 'Comment : écrire des caractères dans une chaîne'
           href: how-to-write-characters-to-a-string.md
-        - name: "Procédure\_: ajouter ou supprimer des entrées dans la liste de contrôle d’accès"
+        - name: "Comment\_: ajouter ou supprimer des entrées dans la liste de contrôle d'accès"
           href: how-to-add-or-remove-access-control-list-entries.md
-        - name: "Procédure\_: compresser et extraire des fichiers"
+        - name: 'Comment : compresser et extraire des fichiers'
           href: how-to-compress-and-extract-files.md
         - name: Composition de flux
           href: composing-streams.md
-        - name: "Procédure\_: effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime"
+        - name: "Comment\_: effectuer une conversion entre les flux .NET Framework et les flux Windows Runtime"
           href: how-to-convert-between-dotnet-streams-and-winrt-streams.md
     - name: E/S sur fichier asynchrones
       href: asynchronous-file-i-o.md
@@ -39,28 +39,28 @@
       items:
         - name: Types d'isolation
           href: types-of-isolation.md
-        - name: "Procédure\_: obtenir des magasins pour le stockage isolé"
+        - name: Obtention de magasins
           href: how-to-obtain-stores-for-isolated-storage.md
-        - name: "Procédure\_: énumérer des magasins pour le stockage isolé"
+        - name: Énumération de magasins
           href: how-to-enumerate-stores-for-isolated-storage.md
-        - name: "Procédure\_: supprimer des magasins dans le stockage isolé"
+        - name: Suppression de magasins
           href: how-to-delete-stores-in-isolated-storage.md
-        - name: "Procédure\_: anticiper des conditions d’espace insuffisant avec le stockage isolé"
+        - name: 'Comment : anticiper des conditions d''espace insuffisant avec le stockage isolé'
           href: how-to-anticipate-out-of-space-conditions-with-isolated-storage.md
-        - name: "Procédure\_: créer des fichiers et des répertoires dans un stockage isolé"
+        - name: 'Comment : créer des fichiers et des répertoires dans un stockage isolé'
           href: how-to-create-files-and-directories-in-isolated-storage.md
-        - name: "Procédure\_: rechercher des fichiers et des répertoires existants dans un stockage isolé"
+        - name: 'Comment : rechercher des fichiers et des répertoires existants dans un stockage isolé'
           href: how-to-find-existing-files-and-directories-in-isolated-storage.md
-        - name: "Procédure\_: lire et écrire des fichiers dans un stockage isolé"
+        - name: Lecture et écriture dans des fichiers
           href: how-to-read-and-write-to-files-in-isolated-storage.md
-        - name: "Procédure\_: supprimer des fichiers et des répertoires dans un stockage isolé"
+        - name: 'Comment : supprimer des fichiers et des répertoires dans un stockage isolé'
           href: how-to-delete-files-and-directories-in-isolated-storage.md
     - name: Canaux
       href: pipe-operations.md
       items:
-        - name: "Procédure\_: utiliser des canaux anonymes pour la communication entre processus en local"
+        - name: "Comment\_: utiliser des canaux anonymes pour la communication entre processus en local"
           href: how-to-use-anonymous-pipes-for-local-interprocess-communication.md
-        - name: "Procédure\_: utiliser des canaux nommés pour la communication entre processus en réseau"
+        - name: "Comment\_: utiliser des canaux nommés pour la communication entre processus en réseau"
           href: how-to-use-named-pipes-for-network-interprocess-communication.md
     - name: Pipelines
       href: pipelines.md
