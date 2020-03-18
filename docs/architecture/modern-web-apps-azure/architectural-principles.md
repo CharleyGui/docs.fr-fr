@@ -5,16 +5,16 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 12/04/2019
 ms.openlocfilehash: ffc890bf8cd6b07bd70d8fc7b2b8cfeaf474ae35
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77450269"
 ---
 # <a name="architectural-principles"></a>Principes de l’architecture
 
 > « Si les bâtisseurs bâtissaient des bâtiments comme les programmeurs écrivent des programmes, le premier pivert passant par là détruirait la civilisation. »  
-> _\- Gerald Weinberg_
+> _\-Gérald Weinberg_
 
 Quand vous architecturez et que vous concevez des solutions logicielles, vous devez penser à leur maintenabilité. Les principes présentés dans cette section peuvent vous aider à prendre des décisions en matière d’architecture aboutissant à des applications propres et maintenables. D’une façon générale, ces principes vous guident dans la création d’applications à partir de composants individuels qui ne sont pas étroitement couplés à d’autres parties de votre application, mais qui communiquent plutôt via des interfaces explicites ou des systèmes de messages.
 
@@ -34,7 +34,7 @@ Dans les classes, l’encapsulation est obtenue en limitant l’accès externe �
 
 ### <a name="dependency-inversion"></a>Inversion des dépendances
 
-Le sens de la dépendance au sein de l’application doit être celui de l’abstraction, et non pas des détails d’implémentation. La plupart des applications sont écrites de telle sorte que les dépendances de compilation aillent dans le sens de l’exécution du runtime. Ceci produit un graphe des dépendances directes. Autrement dit, si le module A appelle une fonction dans le module B, qui appelle une fonction dans le module C, alors, au moment de la compilation, un dépend de B, ce qui dépend de C, comme le montre la figure 4-1.
+Le sens de la dépendance au sein de l’application doit être celui de l’abstraction, et non pas des détails d’implémentation. La plupart des applications sont écrites de telle sorte que les dépendances de compilation aillent dans le sens de l’exécution du runtime. Ceci produit un graphe des dépendances directes. Autrement dit, si le module A appelle une fonction dans le module B, qui appelle une fonction dans le module C, puis au moment de compiler A dépendra de B, qui dépendra de C, comme indiqué dans la figure 4-1.
 
 ![Graphique de dépendance directe](./media/image4-1.png)
 
@@ -46,17 +46,17 @@ L’application du principe d’inversion de dépendance permet à A d’appeler
 
 **Figure 4-2.** Graphe des dépendances inversées.
 
-L' **inversion des dépendances** est une partie essentielle de la création d’applications faiblement couplées, car les détails de l’implémentation peuvent être écrits pour dépendre et implémenter des abstractions de niveau supérieur, plutôt que l’inverse. Les applications qui en résultent sont plus faciles à tester, plus modulaires et plus maintenables. La pratique de *l’injection de dépendances* est rendue possible par le respect du principe d’inversion des dépendances.
+**L’inversion de dépendance** est un élément clé de la construction d’applications vaguement couplées, puisque les détails de la mise en œuvre peuvent être écrits pour dépendre et mettre en œuvre des abstractions de plus haut niveau, plutôt que l’inverse. Les applications qui en résultent sont plus faciles à tester, plus modulaires et plus maintenables. La pratique de *l’injection de dépendances* est rendue possible par le respect du principe d’inversion des dépendances.
 
 ### <a name="explicit-dependencies"></a>Dépendances explicites
 
-**Les méthodes et les classes doivent demander explicitement tous les objets de collaboration dont ils ont besoin pour fonctionner correctement.** Les constructeurs de classe offrent une occasion pour les classes d’identifier les éléments dont ils ont besoin pour être dans un état valide et pour fonctionner correctement. Si vous définissez des classes qui peuvent être construites et appelées, mais que ne fonctionnera correctement que si certains composants globaux ou d’infrastructure sont en place, ces classes sont *malhonnêtes* avec leurs clients. Le contrat du constructeur indique au client qu’il a seulement besoin des choses spécifiées (éventuellement de rien si la classe utilise seulement un constructeur sans paramètre), mais lors de l’exécution, il apparaît que l’objet avait en fait besoin d’autre chose.
+**Les méthodes et les classes doivent demander explicitement tous les objets de collaboration dont ils ont besoin pour fonctionner correctement.** Les constructeurs de classe offrent une occasion pour les classes d’identifier les éléments dont ils ont besoin pour être dans un état valide et pour fonctionner correctement. Si vous définissez des classes qui peuvent être construites et appelées, mais qui ne fonctionneront correctement que si certains composants globaux ou d’infrastructure sont en place, ces classes sont *malhonnêtes* avec leurs clients. Le contrat du constructeur indique au client qu’il a seulement besoin des choses spécifiées (éventuellement de rien si la classe utilise seulement un constructeur sans paramètre), mais lors de l’exécution, il apparaît que l’objet avait en fait besoin d’autre chose.
 
 En suivant le principe des dépendances explicites, vos classes et vos méthodes sont honnêtes avec leurs clients quant à ce dont elles ont besoin pour fonctionner. Ceci rend votre code mieux autodocumenté et vos contrats de codage plus conviviaux, car les utilisateurs leur font alors confiance dès lors qu’ils fournissent ce qui est nécessaire sous la forme de paramètres de méthode ou de constructeur, les objets avec lesquels ils travaillent se comportant alors correctement à l’exécution.
 
 ### <a name="single-responsibility"></a>Responsabilité unique
 
-Le principe de responsabilité unique s’applique à la conception orientée objet, mais il peut également être considéré comme un principe d’architecture similaire à la séparation des responsabilités. Il stipule que les objets ne doivent avoir qu’une seule responsabilité et qu’une seule raison de changer. Plus précisément, le seul cas où l’objet doit changer est quand la façon dont il effectue ce dont il est responsable doit être mise à jour. Le fait de suivre ce principe permet de produire des systèmes plus faiblement couplés et modulaires, étant donné que de nombreux genres de nouveaux comportements peuvent être implémentés en tant que nouvelles classes, plutôt qu’en ajoutant une responsabilité supplémentaire aux classes existantes. Ajouter de nouvelles classes est toujours plus sûr que modifier des classes existantes, car aucun code ne dépend déjà des nouvelles classes.
+Le principe de responsabilité unique s’applique à la conception orientée objet, mais il peut également être considéré comme un principe d’architecture similaire à la séparation des responsabilités. Il stipule que les objets ne doivent avoir qu’une seule responsabilité et qu’une seule raison de changer. Plus précisément, le seul cas où l’objet doit changer est quand la façon dont il effectue ce dont il est responsable doit être mise à jour. En suivant ce principe aide à produire des systèmes plus vaguement couplés et modulaires, puisque de nombreux types de nouveaux comportements peuvent être mis en œuvre comme de nouvelles classes, plutôt que d’ajouter une responsabilité supplémentaire aux classes existantes. Ajouter de nouvelles classes est toujours plus sûr que modifier des classes existantes, car aucun code ne dépend déjà des nouvelles classes.
 
 Dans une application monolithique, nous pouvons appliquer le principe de responsabilité unique à un haut niveau aux couches de l’application. La responsabilité de la présentation doit rester dans le projet d’interface utilisateur, alors que la responsabilité de l’accès aux données doit être conservée au sein d’un projet d’infrastructure. La logique métier doit être conservée dans le projet central de l’application, où elle peut être facilement testée et évoluer indépendamment des autres responsabilités.
 
@@ -75,7 +75,7 @@ Au lieu de dupliquer la logique, encapsulez-la dans une construction de programm
 
 ### <a name="persistence-ignorance"></a>Ignorance de la persistance
 
-**L’ignorance de la persistance** fait référence aux types qui doivent être stockés, mais dont le code n’est pas affecté par le choix de la technologie de stockage. Ces types dans .NET sont parfois appelés des OCT (objets CLR traditionnels), car ils n’ont pas besoin d’hériter d’une classe de base particulière ni d’implémenter une interface particulière. L’ignorance de la persistance est pratique, car elle permet au même modèle métier d’être stocké de plusieurs façons, ce qui offre davantage de flexibilité à l’application. Les choix de persistance peuvent changer au fil du temps, d’une technologie de base de données à l’autre, ou des formes de persistance supplémentaires peuvent être nécessaires en plus de ce que l’application a démarré (par exemple, à l’aide d’un cache Redims ou Azure Cosmos DB en plus d’un base de données relationnelle).
+**L’ignorance de la persistance** fait référence aux types qui doivent être stockés, mais dont le code n’est pas affecté par le choix de la technologie de stockage. Ces types dans .NET sont parfois appelés des OCT (objets CLR traditionnels), car ils n’ont pas besoin d’hériter d’une classe de base particulière ni d’implémenter une interface particulière. L’ignorance de la persistance est pratique, car elle permet au même modèle métier d’être stocké de plusieurs façons, ce qui offre davantage de flexibilité à l’application. Les choix de persistance peuvent changer au fil du temps, d’une technologie de base de données à une autre, ou d’autres formes de persistance pourraient être nécessaires en plus de tout ce que l’application a commencé avec (par exemple, en utilisant un cache Redis ou Azure Cosmos DB en plus d’un base de données relationnelle).
 
 Voici quelques exemples de violation de ce principe :
 
@@ -95,15 +95,15 @@ La nécessité pour les classes de n’avoir aucune des caractéristiques ou auc
 
 ### <a name="bounded-contexts"></a>Contextes délimités
 
-Les **contextes délimités** sont un modèle essentiel dans la conception pilotée par le domaine. Elles offrent un moyen de maîtriser la complexité dans les applications ou les organisations de grande ampleur en la fractionnant en modules conceptuels distincts. Chaque module conceptuel représente ensuite un contexte qui est séparé des autres contextes (par conséquent, délimité) et peut évoluer indépendamment. Chaque contexte délimité doit idéalement être libre de choisir ses propres noms pour les concepts qu’il contient, et doit avoir un accès exclusif à son propre magasin de persistance.
+Les **contextes délimités** sont un modèle essentiel dans la conception pilotée par le domaine. Elles offrent un moyen de maîtriser la complexité dans les applications ou les organisations de grande ampleur en la fractionnant en modules conceptuels distincts. Chaque module conceptuel représente alors un contexte séparé d’autres contextes (d’où, délimité) et qui peut évoluer de façon indépendante. Chaque contexte délimité doit idéalement être libre de choisir ses propres noms pour les concepts qu’il contient, et doit avoir un accès exclusif à son propre magasin de persistance.
 
 Au minimum, les applications web individuelles doivent s’efforcer d’être leur propre contexte délimité, avec leur propre magasin de persistance pour leur modèle métier, au lieu de partager une base de données avec d’autres applications. La communication entre des contextes délimités se fait via des interfaces de programmation et non pas via une base de données partagée, ce qui permet à la logique métier et aux événements de se dérouler en réponse aux modifications qui se produisent. Les contextes délimités correspondent étroitement aux microservices, qui dans l’idéal sont également implémentés sous la forme de leurs propre contexte délimité individuel.
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- [Modèles de conception JAVA : principes](https://java-design-patterns.com/principles/)
+- [Modèles de conception JAVA: Principes](https://java-design-patterns.com/principles/)
 - [Contexte délimité](https://martinfowler.com/bliki/BoundedContext.html)
 
 >[!div class="step-by-step"]
->[Précédent](choose-between-traditional-web-and-single-page-apps.md)
->[Suivant](common-web-application-architectures.md)
+>[Suivant précédent](choose-between-traditional-web-and-single-page-apps.md)
+>[Next](common-web-application-architectures.md)

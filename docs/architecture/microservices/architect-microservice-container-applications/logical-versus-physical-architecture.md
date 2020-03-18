@@ -3,10 +3,10 @@ title: Architecture logique et architecture physique
 description: Comprendre les différences entre l’architecture logique et l’architecture physique.
 ms.date: 09/20/2018
 ms.openlocfilehash: 8d1bfca190eb9b18d46625fa4afdec963eb07054
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71834398"
 ---
 # <a name="logical-architecture-versus-physical-architecture"></a>Architecture logique et architecture physique
@@ -25,7 +25,7 @@ Par conséquent, un microservice métier ou un contexte délimité est une archi
 
 Comme le montre la figure 4-8, le microservice métier du catalogue pourrait être composé de plusieurs services ou processus. Il pourrait s’agir de plusieurs services d’API web ASP.NET ou de tout autre type de service utilisant HTTP ou un autre protocole. Plus important encore, les services pourraient partager les mêmes données, dès lors que ces services sont cohésifs pour le même domaine métier.
 
-![Diagramme du microservice du catalogue d’entreprise avec des serveurs physiques.](./media/logical-versus-physical-architecture/multiple-physical-services.png)
+![Diagramme du microservice d’affaires de catalogue avec des serveurs physiques.](./media/logical-versus-physical-architecture/multiple-physical-services.png)
 
 **Figure 4-8**. Microservice métier avec plusieurs services physiques
 
@@ -34,5 +34,5 @@ Les services de l’exemple partagent le même modèle de données, car le servi
 En bref, l’architecture logique des microservices n’a pas toujours à coïncider avec l’architecture du déploiement physique. Dans ce guide, quand nous mentionnons un microservice, nous entendons par là un microservice métier ou logique, qui peut correspondre à un ou plusieurs services (physiques). Dans la plupart des cas, il s’agit d’un seul service, mais il peut y en avoir plus.
 
 >[!div class="step-by-step"]
->[Précédent](data-sovereignty-per-microservice.md)
->[Suivant](distributed-data-management.md)
+>[Suivant précédent](data-sovereignty-per-microservice.md)
+>[Next](distributed-data-management.md)

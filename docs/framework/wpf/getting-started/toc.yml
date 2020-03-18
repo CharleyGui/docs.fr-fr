@@ -1,11 +1,11 @@
-- name: Prise en main
+- name: Commencer
   href: index.md
   items:
     - name: "Présentation de WPF dans Visual Studio\_2015"
       href: introduction-to-wpf-in-vs.md
     - name: "Nouveautés de WPF version\_4.5"
       href: whats-new.md
-    - name: "Procédure pas à pas\_: Ma première application de bureau WPF"
+    - name: "Procédure pas à pas\_: ma première application de bureau WPF"
       href: walkthrough-my-first-wpf-desktop-application.md
     - name: "Procédures pas\_à\_pas WPF"
       href: wpf-walkthroughs.md

@@ -9,10 +9,10 @@ helpviewer_keywords:
 - -target compiler options [C#], /target:exe
 ms.assetid: bda5717d-1b91-4848-956b-fcf85c30e432
 ms.openlocfilehash: 6087a64bea5a59bfcfc5372f6a9d6eb8b9c940cb
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606455"
 ---
 # <a name="-targetexe-c-compiler-options"></a>-target:exe (Options du compilateur C#)
@@ -24,7 +24,7 @@ L’option **-target:exe** indique au compilateur de créer une application cons
 -target:exe  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  L’option **-target:exe** est activée par défaut. Le fichier exécutable est créé avec l’extension .exe.  
   
  Utilisez [-target:winexe](./target-winexe-compiler-option.md) pour créer un programme exécutable Windows.  
@@ -43,9 +43,9 @@ L’option **-target:exe** indique au compilateur de créer une application cons
   
 3. Modifiez la propriété **Type de sortie**.  
   
- Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Chacune des lignes de commande suivantes compile `in.cs` et crée `in.exe` :  
   
 ```console  
@@ -55,5 +55,5 @@ csc in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-target (Options du compilateur C#)](./target-compiler-option.md)
-- [Options du compilateur C#](./index.md)
+- [-cible (Options compilateur C)](./target-compiler-option.md)
+- [Options de compilateur C](./index.md)

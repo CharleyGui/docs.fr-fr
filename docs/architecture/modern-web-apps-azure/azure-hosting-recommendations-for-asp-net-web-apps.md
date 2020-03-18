@@ -5,20 +5,20 @@ author: ardalis
 ms.author: wiwagn
 ms.date: 06/06/2019
 ms.openlocfilehash: 5587b8b20da8a6801d77b722e9c3326f6e695574
-ms.sourcegitcommit: 14ad34f7c4564ee0f009acb8bfc0ea7af3bc9541
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/01/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73416712"
 ---
 # <a name="azure-hosting-recommendations-for-aspnet-core-web-apps"></a>Recommandations sur l’hébergement Azure pour les applications web ASP.NET Core
 
 > « Les leaders métier ne passent plus par les départements informatiques pour obtenir des applications du cloud (également appelées SaaS) et les paient comme ils paient un abonnement à un magazine. Quand ils n’ont plus besoin du service, ils peuvent annuler l’abonnement sans se retrouver avec du matériel inutilisé dans un coin. »  
-> _\- Daryl Plummer, analyste chez Gartner_
+> _\-Daryl Plummer, analyste chez Gartner_
 
 Quels que soient les besoins et l’architecture de votre application, Microsoft Azure peut la prendre en charge. Vos besoins d’hébergement peuvent être aussi simples que ceux d’un site web statique ou aussi complexes que ceux d’une application sophistiquée constituée de dizaines de services. Pour les applications ASP.NET Core monolithiques et les services qui les prennent en charge, il existe plusieurs configurations connues qui sont recommandées. Les suggestions présentées dans cet article sont regroupées en fonction du type de ressource à héberger, qu’il s’agisse d’applications complètes, de processus individuels ou de données.
 
-## <a name="web-applications"></a>Applications Web
+## <a name="web-applications"></a>Applications web
 
 Les applications web peuvent être hébergées avec :
 
@@ -26,7 +26,7 @@ Les applications web peuvent être hébergées avec :
 
 - Conteneurs (plusieurs options)
 
-- Des machines virtuelles
+- Machines virtuelles (VM)
 
 Entre tous, App Service Web Apps constitue l’approche recommandée pour la plupart des scénarios, y compris les applications conteneur simples. Pour les architectures de microservices, envisagez une approche basée sur les conteneurs. Si vous avez besoin de contrôler davantage les machines qui exécutent votre application, envisagez le service Machines virtuelles Azure.
 
@@ -44,7 +44,7 @@ App Service Web Apps offre une plateforme entièrement managée, optimisée pour
 
 - Intégration Visual Studio.
 
-Azure App Service est le meilleur choix pour la plupart des applications web. Le déploiement et la gestion sont intégrés à la plateforme, les sites peuvent évoluer rapidement pour gérer des charges de trafic élevées, et l’équilibrage de charge et le gestionnaire de trafic intégrés offrent une haute disponibilité. Vous pouvez déplacer facilement des sites existants vers Azure App Service avec un outil de migration en ligne, utiliser une application open source de la galerie d’applications web, ou créer un site en utilisant le framework et les outils de votre choix. La fonctionnalité WebJobs facilite l’ajout du traitement de travaux en arrière-plan à votre application web App Service. Si vous disposez d’une application ASP.NET hébergée localement à l’aide d’une base de données locale, il existe un chemin clair pour migrer l’application vers une application web App Service avec Azure SQL Database (ou un accès sécurisé à votre serveur de base de données local, si vous préférez).
+Azure App Service est le meilleur choix pour la plupart des applications web. Le déploiement et la gestion sont intégrés à la plateforme, les sites peuvent rapidement gérer des volumes importants de trafic et le gestionnaire d'équilibrage de charge et de trafic assurent une haute disponibilité. Vous pouvez déplacer facilement des sites existants vers Azure App Service avec un outil de migration en ligne, utiliser une application open source de la galerie d’applications web, ou créer un site en utilisant le framework et les outils de votre choix. La fonctionnalité WebJobs facilite l’ajout du traitement de travaux en arrière-plan à votre application web App Service. Si vous disposez d’une application ASP.NET hébergée localement à l’aide d’une base de données locale, il existe un chemin clair pour migrer l’application vers une application web App Service avec Azure SQL Database (ou un accès sécurisé à votre serveur de base de données local, si vous préférez).
 
 ![Stratégie de migration recommandée pour les applications .NET locales vers Azure App Service](./media/image1-6.png)
 
@@ -78,18 +78,18 @@ Le développement avec des conteneurs offre de nombreux avantages, notamment qua
 
 ### <a name="azure-kubernetes-service"></a>Azure Kubernetes Service
 
-Azure Kubernetes Service (AKS) gère votre environnement Kubernetes hébergé, ce qui vous permet de déployer et de gérer de manière simple et rapide les applications en conteneur sans pour autant maîtriser l’orchestration de conteneurs. Il élimine aussi les contraintes liées aux opérations et à la maintenance continues en provisionnant, en mettant à niveau et en mettant à l’échelle les ressources à la demande, sans déconnecter vos applications.
+Azure Kubernetes Service (AKS) gère votre environnement Kubernetes hébergé, accélérant et facilitant ainsi le déploiement et la gestion des applications conteneurisées sans expertise d’orchestration de conteneur. Il élimine également la charge des opérations en cours et la maintenance par configuration, la mise à niveau et la mise à l’échelle des ressources à la demande, sans déconnecter vos applications.
 
-AKS réduit la complexité et les frais de fonctionnement liés à la gestion d’un cluster Kubernetes en déléguant une grande partie de cette responsabilité à Azure. En tant que service Kubernetes hébergé, Azure gère les tâches critiques à votre place, notamment l’analyse du fonctionnement et la maintenance. Par ailleurs, vous payez uniquement pour les nœuds d’agent de vos clusters, pas pour les maîtres. En tant que service Kubernetes géré, AKS fournit :
+AKS permet de réduire la complexité et la surcharge opérationnelle de la gestion d’un cluster Kubernetes en déléguant une grande partie de cette responsabilité à Azure. En tant que service Kubernetes hébergé, Azure gère pour vous des tâches critiques telles que l’analyse de l'intégrité et la maintenance. Par ailleurs, vous payez uniquement pour les nœuds d’agent de vos clusters, pas pour les maîtres. En tant que service Kubernetes géré, AKS fournit :
 
 - Des mises à niveau de version et des mises à jour correctives Kubernetes automatisées.
 - Une mise à l’échelle simplifiée des clusters.
 - Un plan de contrôle hébergé avec auto-réparation (maîtres).
 - Une réduction des coûts : vous payez uniquement pour les nœuds de pool d’agents qui s’exécutent.
 
-La gestion des nœuds de votre cluster AKS étant assurée par Azure, vous n’avez plus besoin d’effectuer de nombreuses tâches manuelles, comme les mises à niveau de cluster. Comme Azure gère ces tâches de maintenance critiques à votre place, AKS ne fournit pas d’accès direct (comme avec SSH) au cluster.
+Comme Azure gère la gestion des nœuds de votre cluster AKS, vous n’avez plus besoin d'effectuer les tâches manuellement, notamment les mises à niveau du cluster. Comme Azure gère ces tâches de maintenance critiques à votre place, AKS ne fournit pas d’accès direct (comme avec SSH) au cluster.
 
-Les équipes qui tirent parti d’AKS peuvent également tirer parti d’Azure Dev Spaces. Azure Dev Spaces aide les équipes à se concentrer sur le développement et l’itération rapide de leur application de microservices en leur permettant de travailler directement avec leur application ou architecture de microservices entière exécutée dans ACS. Azure Dev Spaces offre également un moyen de mettre à jour de façon indépendante et isolée les différentes parties de votre architecture de microservices sans affecter le reste du cluster AKS ou d’autres développeurs.
+Les équipes qui tirent parti d’AKS peuvent également tirer parti d’Azure Dev Spaces. Grâce à Azure Dev Spaces, les équipes peuvent se concentrer sur le développement et l’itération rapide de leur application de microservices en exploitant directement leur architecture complète de microservices ou une application en cours d’exécution dans AKS. Azure Dev Spaces permet également de mettre à jour de façon indépendante certaines parties de votre architecture de microservices, sans affecter le reste du cluster AKS ou d’autres développeurs.
 
 ![Exemple de flux de travail Azure Dev Spaces](./media/image1-9.gif)
 
@@ -116,7 +116,7 @@ Azure propose un large éventail d’options de stockage des données, afin que 
 
 Pour les données transactionnelles relationnelles, les bases de données Azure SQL Database sont la meilleure option. Pour de hautes performances avec les données qui sont principalement en lecture, un cache Redis s’appuyant sur une base de données Azure SQL Database est une bonne solution.
 
-Les données JSON non structurées peuvent être stockées de différentes façons, de SQL Database des colonnes aux objets BLOB ou aux tables dans le stockage Azure, pour Azure Cosmos DB. Azure Cosmos DB offre les meilleures fonctionnalités d’interrogation et est l’option recommandée pour un grand nombre de documents JSON qui doivent prendre en charge l’interrogation.
+Les données JSON non structurées peuvent être stockées de diverses façons, des colonnes sqL Database aux Blobs ou Tables in Azure Storage, en passant par Azure Cosmos DB. Parmi ceux-ci, Azure Cosmos DB offre la meilleure fonctionnalité de requête, et est l’option recommandée pour un grand nombre de documents basés sur JSON qui doivent prendre en charge les requêtes.
 
 Les données basées sur des commandes ou des événements transitoires pour orchestrer le comportement des applications peuvent utiliser Azure Service Bus ou Stockage File d’attente Azure. Azure Service Bus offre davantage de souplesse et est le service recommandé pour les échanges complexes de messages au sein des applications et entre elles.
 
@@ -124,13 +124,13 @@ Les données basées sur des commandes ou des événements transitoires pour orc
 
 Les exigences de votre application doivent dicter son architecture. Il existe de nombreux services Azure différents. Aussi, il est important de choisir le bon. Microsoft propose une galerie d’architectures de référence pour aider à identifier des architectures classiques optimisées pour les scénarios courants. Vous pouvez adopter une architecture de référence qui correspond de près aux exigences de votre application ou qui constitue au moins un point de départ.
 
-La figure 11-1 illustre un exemple d’architecture de référence. Ce diagramme décrit une approche recommandée pour l’architecture d’un site web de système de gestion de contenu Sitecore optimisé pour le marketing.
+La figure 11-1 montre un exemple d’architecture de référence. Ce diagramme décrit une approche recommandée pour l’architecture d’un site web de système de gestion de contenu Sitecore optimisé pour le marketing.
 
 ![Figure 11-1](./media/image11-2.png)
 
 **Figure 11-1.** Architecture de référence d’un site web de marketing Sitecore.
 
-**Informations de référence : recommandations sur l’hébergement Azure**
+**Références - Recommandations d’hébergement Azure**
 
 - Architectures de solutions Azure\
   <https://azure.microsoft.com/solutions/architecture/>

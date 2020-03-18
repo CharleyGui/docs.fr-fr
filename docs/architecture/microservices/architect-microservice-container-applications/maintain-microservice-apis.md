@@ -3,10 +3,10 @@ title: Création, évolution et version des contrats et des API de microservices
 description: Créez des API et des contrats de microservices en tenant compte de l’évolution et de la gestion de versions, car les besoins changent.
 ms.date: 09/20/2018
 ms.openlocfilehash: 1972d02d8bf7935c71bfd383707ae19ea2baded9
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68672896"
 ---
 # <a name="creating-evolving-and-versioning-microservice-apis-and-contracts"></a>Création, évolution et version des contrats et des API de microservices
@@ -25,15 +25,15 @@ Enfin, si vous utilisez une architecture REST, [Hypermedia](https://www.infoq.co
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Scott Hanselman. ASP.NET Core RESTful Web API versioning made easy** \
+- **Scott Hanselman. ASP.NET version WEB API RESTful de base facilitée** \
   <https://www.hanselman.com/blog/ASPNETCoreRESTfulWebAPIVersioningMadeEasy.aspx>
 
-- **Gestion des versions d’une API web RESTful** \
+- **Version d’une API Web RESTful** \
   <https://docs.microsoft.com/azure/architecture/best-practices/api-design#versioning-a-restful-web-api>
 
-- **Roy Fielding. Versioning, Hypermedia, and REST** \
+- **Roy Fielding. Version, Hypermedia, et REST** \
   <https://www.infoq.com/articles/roy-fielding-on-versioning>
 
 >[!div class="step-by-step"]
->[Précédent](asynchronous-message-based-communication.md)
->[Suivant](microservices-addressability-service-registry.md)
+>[Suivant précédent](asynchronous-message-based-communication.md)
+>[Next](microservices-addressability-service-registry.md)

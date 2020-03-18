@@ -1,26 +1,26 @@
 ---
 ms.openlocfilehash: 4dcb357570cb6597fde86c9e8f2acb74364cfaa3
-ms.sourcegitcommit: 5a28f8eb071fcc09b045b0c4ae4b96898673192e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/31/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73198422"
 ---
-### <a name="session-state-obsolete-apis-removed"></a>État de session : API obsolètes supprimées
+### <a name="session-state-obsolete-apis-removed"></a>État de la session : Les API obsolètes supprimées
 
-Les API obsolètes pour la configuration des cookies de session ont été supprimées. Pour plus d’informations, consultez [ASPNET/announcements # 257](https://github.com/aspnet/Announcements/issues/257).
+Les API obsolètes pour configurer les cookies de session ont été supprimés. Pour plus d’informations, voir [aspnet/Annonces 257](https://github.com/aspnet/Announcements/issues/257).
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-Cette modification applique la cohérence entre les API pour la configuration des fonctionnalités qui utilisent des cookies.
+Ce changement applique la cohérence entre les API pour configurer les fonctionnalités qui utilisent des cookies.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Migrez l’utilisation des API supprimées vers leurs remplacements plus récents. Prenons l’exemple suivant dans `Startup.ConfigureServices` :
+Migrer l’utilisation des API supprimées à leurs nouveaux remplacements. Prenons l’exemple suivant dans `Startup.ConfigureServices` :
 
 ```csharp
 public void ConfigureServices(ServiceCollection services)

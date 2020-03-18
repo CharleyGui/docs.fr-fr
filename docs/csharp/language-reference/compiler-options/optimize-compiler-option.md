@@ -13,10 +13,10 @@ helpviewer_keywords:
 - o compiler option [C#]
 ms.assetid: 6dd5b6f2-cd1d-4593-a9f4-1c2ed9404ca0
 ms.openlocfilehash: bec99ca582070a99fd8b734ef8a7b9e71d945488
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606602"
 ---
 # <a name="-optimize-c-compiler-options"></a>-optimize (Options du compilateur C#)
@@ -28,10 +28,10 @@ L’option **-optimize** active ou désactive les optimisations effectuées par 
 -optimize[+ | -]  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  **-optimize** indique aussi au Common Language Runtime d’optimiser le code au moment de l’exécution.  
   
- Par défaut, les optimisations sont désactivées. Pour activer les optimisations, spécifiez **-optimize+** .  
+ Par défaut, les optimisations sont désactivées. Pour activer les optimisations, spécifiez **-optimize+**.  
   
  Quand vous créez un module destiné à être utilisé par un assembly, utilisez les mêmes paramètres **-optimize** que ceux de l’assembly.  
   
@@ -47,9 +47,9 @@ L’option **-optimize** active ou désactive les optimisations effectuées par 
   
 3. Modifiez la propriété **Optimiser le code**.  
   
- Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.Optimize%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez `t2.cs` et activez les optimisations du compilateur :  
   
 ```console  
@@ -58,5 +58,5 @@ csc t2.cs -optimize
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

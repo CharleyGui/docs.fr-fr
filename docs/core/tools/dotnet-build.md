@@ -3,17 +3,17 @@ title: Commande dotnet build
 description: La commande dotnet build permet de générer un projet et l’ensemble de ses dépendances.
 ms.date: 02/14/2020
 ms.openlocfilehash: 9f9a78ec0a6a25c54c8a727c05081ce6835514ee
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503763"
 ---
 # <a name="dotnet-build"></a>dotnet build
 
-**Cet article s’applique à :** ✔️ Kit de développement logiciel (SDK) .net Core 2. x et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.x SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet build` : Génère un projet et l’ensemble de ses dépendances.
 
@@ -29,19 +29,19 @@ dotnet build [-h|--help]
 
 ## <a name="description"></a>Description
 
-La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les binaires incluent le code du projet dans des fichiers de langage intermédiaire (IL) avec une extension *. dll* .  En fonction du type de projet et des paramètres, d’autres fichiers peuvent être inclus, par exemple :
+La commande `dotnet build` génère le projet et ses dépendances dans un ensemble de fichiers binaires. Les binaires incluent le code du projet dans les fichiers de langue intermédiaire (IL) avec une extension *.dll.*  Selon le type de projet et les paramètres, d’autres fichiers peuvent être inclus, tels que :
 
-- Exécutable qui peut être utilisé pour exécuter l’application, si le type de projet est un exécutable ciblant .NET Core 3,0 ou une version ultérieure.
-- Fichiers de symboles utilisés pour le débogage avec une extension *. pdb* .
-- Un fichier *. DEPS. JSON* , qui répertorie les dépendances de l’application ou de la bibliothèque.
-- Un fichier *. runtimeconfig. JSON* , qui spécifie le runtime partagé et sa version pour une application.
-- Les autres bibliothèques dont le projet dépend (par le biais de références de projet ou de références de package NuGet).
+- Un exécutant qui peut être utilisé pour exécuter l’application, si le type de projet est un ciblage exécutable .NET Core 3.0 ou plus tard.
+- Fichiers de symbole utilisés pour débogage avec une extension *.pdb.*
+- Un fichier *.deps.json,* qui répertorie les dépendances de l’application ou de la bibliothèque.
+- Un fichier *.runtimeconfig.json,* qui spécifie le temps d’exécution partagé et sa version pour une application.
+- Autres bibliothèques dont dépend le projet (via des références de projet ou des références de paquets NuGet).
 
-Pour les projets exécutables ciblant des versions antérieures à .NET Core 3,0, les dépendances de bibliothèque de NuGet ne sont généralement pas copiées dans le dossier de sortie.  Ils sont résolus à partir du dossier des packages globaux NuGet au moment de l’exécution. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Pour créer une version de l’application qui peut être déployée, vous devez la publier (par exemple, à l’aide de la commande [dotnet Publish](dotnet-publish.md) ). Pour plus d’informations, consultez la page [Déploiement d’applications .NET Core](../deploying/index.md).
+Pour les projets exécutables ciblant les versions antérieures à .NET Core 3.0, les dépendances de la bibliothèque de NuGet ne sont généralement PAS copiées dans le dossier de sortie.  Ils sont résolus à partir du dossier de paquets numériques NuGet au moment de l’exécution. Par conséquent, le produit de `dotnet build` ne peut pas être transféré en l’état vers un autre ordinateur pour exécution. Pour créer une version de l’application qui peut être déployée, vous devez la publier (par exemple, avec la commande [de publication dotnet).](dotnet-publish.md) Pour plus d’informations, voir [.NET Core Application Deployment](../deploying/index.md).
 
-Pour les projets exécutables ciblant .NET Core 3,0 et versions ultérieures, les dépendances de bibliothèque sont copiées dans le dossier de sortie. Cela signifie que s’il n’existe aucune autre logique spécifique à la publication (telle que les projets Web), la sortie de la génération doit être déployée.
+Pour les projets exécutables ciblant .NET Core 3.0 et plus tard, les dépendances de la bibliothèque sont copiées dans le dossier de sortie. Cela signifie que s’il n’y a pas d’autre logique spécifique à la publication (comme les projets Web), la sortie de construction devrait être déployable.
 
-La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est créé quand la commande [`dotnet restore`](dotnet-restore.md) est exécutée. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec le kit de développement logiciel (SDK) .NET Core 1. x, vous deviez exécuter explicitement `dotnet restore` avant d’exécuter `dotnet build`. À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
+La génération requiert le fichier *project.assets.json* qui répertorie les dépendances de votre application. Le fichier est [`dotnet restore`](dotnet-restore.md) créé lors de l’exécution. Si le fichier de ressources est absent, les outils ne peuvent pas résoudre les assemblys de référence, ce qui entraîne des erreurs. Avec .NET Core 1.x SDK, `dotnet restore` vous `dotnet build`avez besoin de courir explicitement avant de courir . À compter du SDK .NET Core 2.0, `dotnet restore` s’exécute implicitement quand vous exécutez `dotnet build`. Si vous souhaitez désactiver la restauration implicite au moment d’exécuter la commande de génération, vous pouvez passer l’option `--no-restore`.
 
 [!INCLUDE[dotnet restore note + options](~/includes/dotnet-restore-note-options.md)]
 
@@ -53,7 +53,7 @@ La possibilité d’exécuter le projet ou non est déterminée par la propriét
 </PropertyGroup>
 ```
 
-Pour produire une bibliothèque, omettez la propriété `<OutputType>` ou remplacez sa valeur par `Library`. La DLL IL d’une bibliothèque ne contient pas de points d’entrée et ne peut pas être exécutée.
+Pour produire une bibliothèque, `<OutputType>` omettre la `Library`propriété ou changer sa valeur en . L’IL DLL pour une bibliothèque ne contient pas de points d’entrée et ne peut pas être exécuté.
 
 ### <a name="msbuild"></a>MSBuild
 
@@ -61,7 +61,7 @@ La commande `dotnet build` utilise MSBuild pour générer le projet. Elle prend 
 
 En plus de ses options, la commande `dotnet build` accepte des options MSBuild, comme `-p` pour définir des propriétés ou `-l` pour définir un enregistreur d’événements. Pour plus d’informations sur ces options, consultez [Informations de référence sur la ligne de commande MSBuild](/visualstudio/msbuild/msbuild-command-line-reference). Ou vous pouvez également utiliser la commande [dotnet msbuild](dotnet-msbuild.md).
 
-L’exécution de `dotnet build` est équivalente à l’exécution de `dotnet msbuild -restore`; Toutefois, le niveau de détail par défaut de la sortie est différent.
+Courir `dotnet build` équivaut `dotnet msbuild -restore`à courir; cependant, la verbosité par défaut de la sortie est différente.
 
 ## <a name="arguments"></a>Arguments
 
@@ -73,7 +73,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`-c|--configuration <CONFIGURATION>`**
 
-  Définit la configuration de build. La valeur par défaut pour la plupart des projets est `Debug`, mais vous pouvez remplacer les paramètres de configuration de build dans votre projet.
+  Définit la configuration de build. La valeur par `Debug`défaut pour la plupart des projets est, mais vous pouvez remplacer les paramètres de configuration de construction dans votre projet.
 
 - **`-f|--framework <FRAMEWORK>`**
 
@@ -89,7 +89,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--interactive`**
 
-  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Disponible à partir du kit SDK .NET Core 3.0.
+  Permet à la commande de s’arrêter et d’attendre une action ou une entrée utilisateur. Par exemple, pour effectuer une authentification. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`--no-dependencies`**
 
@@ -105,11 +105,11 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
 
 - **`--nologo`**
 
-  N’affiche pas la bannière de démarrage ni le message de copyright. Disponible à partir du kit SDK .NET Core 3.0.
+  N’affiche pas la bannière de démarrage ni le message de copyright. Option disponible à partir du kit SDK .NET Core 3.0.
 
 - **`-o|--output <OUTPUT_DIRECTORY>`**
 
-  Répertoire dans lequel placer les fichiers binaires générés. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs frameworks cibles (via la propriété `TargetFrameworks`), vous devez également définir des `--framework` lorsque vous spécifiez cette option.
+  Répertoire dans lequel placer les fichiers binaires générés. S’il n’est pas spécifié, le chemin d'accès par défaut est `./bin/<configuration>/<framework>/`.  Pour les projets avec plusieurs `TargetFrameworks` cadres cibles (via `--framework` la propriété), vous devez également définir lorsque vous spécifiez cette option.
 
 - **`-r|--runtime <RUNTIME_IDENTIFIER>`**
 
@@ -149,7 +149,7 @@ Le fichier projet ou solution à générer. Si vous ne spécifiez pas de fichier
   dotnet build --source c:\packages\mypackages
   ```
 
-- Générez le projet et définissez la version 1.2.3.4 comme paramètre de build à l’aide de l' [option `-p` MSBuild](#msbuild):
+- Générer le projet et définissez la version 1.2.3.4 comme un paramètre de build à l’aide de l’`-p` [option MSBuild](#msbuild) :
 
   ```dotnetcli
   dotnet build -p:Version=1.2.3.4

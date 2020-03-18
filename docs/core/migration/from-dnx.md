@@ -3,10 +3,10 @@ title: Migration de DNX vers l’interface CLI .NET Core
 description: Migrez des outils DNX vers les outils de l’interface CLI .NET Core.
 ms.date: 06/20/2016
 ms.openlocfilehash: 31317f110ae1e8586b78becd757d0a8ff07f1459
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503820"
 ---
 # <a name="migrating-from-dnx-to-net-core-cli-projectjson"></a>Migration de DNX vers l’interface CLI .NET Core (project.json)
@@ -30,9 +30,9 @@ Les outils ont fait l’objet de modifications générales dont il convient tout
 ### <a name="no-more-dnvm"></a>Disparition de DNVM
 DNVM (*DotNet Version Manager*) était un script bash/PowerShell qui servait à installer un DNX sur un ordinateur. Il permettait aux utilisateurs d’obtenir les DNX dont ils avaient à partir du flux qu’ils spécifiaient (ou ceux par défaut), mais aussi de marquer un certain DNX comme étant « actif », ce qui le plaçait sur le $PATH pour la session donnée. Les différents outils pouvaient ainsi être utilisés.
 
-DNVM a été supprimé, car son ensemble de fonctionnalités a été rendu redondant par les modifications apportées au CLI .NET Core.
+DNVM a été abandonnée parce que son ensemble de fonctionnalités a été redondant par les changements à venir dans le CLI de base .NET.
 
-L’interface CLI est intégrée de deux manières :
+L’OPC est emballé de deux façons principales :
 
 1. Programmes d’installation natifs pour une plateforme donnée
 2. Script d’installation pour les autres cas (comme les serveurs CI)
@@ -53,7 +53,7 @@ Le tableau ci-dessous montre la correspondance entre les commandes DNX/DNU et le
 | dnu pack                       | `dotnet pack`    | Empaquète votre code dans un package NuGet.                                                                        |
 | DNX \[commande] (par exemple, « dnx web ») | N/A\*          | Dans le contexte de DNX, exécute une commande telle que définie dans le fichier project.json.                                                     |
 | dnu install                    | N/A\*          | Dans le contexte de DNX, installe un package en tant que dépendance.                                                            |
-| dnu restore                    | `dotnet restore` | Restaure les dépendances spécifiées dans votre fichier project.json. ([voir la remarque](#dotnet-restore-note))                                                            |
+| dnu restore                    | `dotnet restore` | Restaure les dépendances spécifiées dans votre fichier project.json. ([voir note](#dotnet-restore-note))                                                            |
 | dnu publish                    | `dotnet publish` | Publie votre application pour le déploiement dans l’une des trois formes possibles (portable, portable avec natif et autonome). |
 | dnu wrap                       | N/A\*          | Dans le contexte de DNX, encapsule un fichier project.json dans un fichier csproj.                                                                    |
 | dnu commands                   | N/A\*          | Dans le contexte de DNX, gère les commandes installées globalement.                                                           |
@@ -69,7 +69,7 @@ DNU reposait sur un concept appelé « commandes globales ». Il s’agissait 
 L’interface CLI ne prend pas en charge ce concept. En revanche, il prend en charge l’ajout de commandes par projet qui peuvent être appelées à l’aide de la syntaxe `dotnet <command>` bien connue.
 
 ### <a name="installing-dependencies"></a>Installer les dépendances
-À partir de v1, le CLI .NET Core n’a pas de commande `install` pour l’installation des dépendances. Pour installer un package à partir de NuGet, vous devez l’ajouter en tant que dépendance à votre fichier `project.json`, puis exécuter `dotnet restore` ([voir la remarque](#dotnet-restore-note)).
+En date de v1, le CLI .NET Core n’a pas de `install` commande pour installer des dépendances. Pour installer un package à partir de NuGet, vous devez l’ajouter en tant que dépendance à votre fichier `project.json`, puis exécuter `dotnet restore` ([voir la remarque](#dotnet-restore-note)).
 
 ### <a name="running-your-code"></a>Exécution de votre code
 Il existe deux façons principales d’exécuter du code. La première consiste à partir de la source, avec `dotnet run`. Contrairement à `dnx run`, aucune compilation en mémoire n’est effectuée. En fait, `dotnet build` est appelé pour générer le code, puis le fichier binaire généré est exécuté.
@@ -84,7 +84,7 @@ Outre l’utilisation de nouvelles commandes pendant que vous travaillez sur vot
 3. Migrez les API DNX vers leurs équivalents BCL.
 
 ### <a name="changing-the-globaljson-file"></a>Modification du fichier global.json
-Le fichier `global.json` fait office de fichier de solution pour les projets RC1 et RC2 (ou ultérieurs). Pour que les CLI .NET Core (ainsi que Visual Studio) différencient la version RC1 et les versions ultérieures, elles utilisent la propriété `"sdk": { "version" }` pour faire la distinction entre le projet RC1 et les versions ultérieures. Si `global.json` ne contient pas ce nœud, il est supposé être de la dernière version.
+Le fichier `global.json` fait office de fichier de solution pour les projets RC1 et RC2 (ou ultérieurs). Afin que le CLI .NET Core (ainsi que Visual Studio) fasse la distinction `"sdk": { "version" }` entre RC1 et les versions ultérieures, ils utilisent la propriété pour faire la distinction quel projet est RC1 ou plus tard. Si `global.json` ne contient pas ce nœud, il est supposé être de la dernière version.
 
 Pour mettre à jour le fichier `global.json`, supprimez la propriété ou définissez-la avec la version exacte des outils que vous voulez utiliser, en l’occurrence, **1.0.0-preview2-003121** :
 

@@ -9,14 +9,14 @@ helpviewer_keywords:
 - /lib compiler option [C#]
 ms.assetid: b0efcc88-e8aa-4df4-a00b-8bdef70b7673
 ms.openlocfilehash: 0c230147be055170ca015f27bd42bb096399405d
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606820"
 ---
 # <a name="-lib-c-compiler-options"></a>-lib (Options du compilateur C#)
-L’option **-lib** spécifie l’emplacement des assemblys référencés au moyen de l’option [-reference (Options du compilateur C#)](./reference-compiler-option.md).  
+**L’option -lib** spécifie l’emplacement des assemblages référencés au moyen de [l’option de référence (Options compilateurs C).](./reference-compiler-option.md)  
   
 ## <a name="syntax"></a>Syntaxe  
   
@@ -31,7 +31,7 @@ L’option **-lib** spécifie l’emplacement des assemblys référencés au moy
  `dir2`  
  Un ou plusieurs répertoires supplémentaires où rechercher des références d’assembly. Séparez les noms des répertoires supplémentaires par une virgule, sans espace.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  Le compilateur recherche les références d’assembly qui ne sont pas complètes dans l’ordre suivant :  
   
 1. Répertoire de travail actuel. Il s’agit du répertoire à partir duquel le compilateur est appelé.  
@@ -58,9 +58,9 @@ L’option **-lib** spécifie l’emplacement des assemblys référencés au moy
   
 3. Modifiez le contenu de la zone de liste.  
   
- Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.ReferencePath%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez t2.cs pour créer un fichier .exe. Le compilateur recherche les références d’assembly dans le répertoire de travail et dans le répertoire racine du lecteur C.  
   
 ```console  
@@ -69,5 +69,5 @@ csc -lib:c:\ -reference:t2.dll t2.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

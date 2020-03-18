@@ -3,19 +3,19 @@ title: Requêtes compilées statiquement (LINQ to XML) (C#)
 ms.date: 07/20/2015
 ms.assetid: 3bf558fe-0705-479d-86d4-00188f5fcf9c
 ms.openlocfilehash: 98725cece1006ba13afb64bb8ae17ae6e62c53cf
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253030"
 ---
 # <a name="statically-compiled-queries-linq-to-xml-c"></a>Requêtes compilées statiquement (LINQ to XML) (C#)
 L'un des principaux avantages de LINQ to XML en terme de performance, par rapport à <xref:System.Xml.XmlDocument>, est que les requêtes dans LINQ to XML sont compilées statiquement, tandis que les requêtes XPath doivent être interprétées lors de l'exécution. Cette fonctionnalité étant intégrée dans LINQ to XML, vous n'avez pas à effectuer d'étapes supplémentaires pour en bénéficier, mais il est utile de comprendre cette distinction pour pouvoir choisir entre ces deux technologies. Cette rubrique explique en quoi consiste la différence.  
   
-## <a name="statically-compiled-queries-vs-xpath"></a>Requêtes compilées statiquement et XPath  
+## <a name="statically-compiled-queries-vs-xpath"></a>Requêtes compilées statiquement et Xpath  
  L'exemple suivant montre comment obtenir les éléments descendants avec un nom spécifié et avec un attribut avec une valeur spécifiée.  
   
- L’expression XPath équivalente est la suivante :`//Address[@Type='Shipping']`
+ Ce qui suit est l’expression équivalente XPath:`//Address[@Type='Shipping']`
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -43,7 +43,7 @@ foreach (XElement el in list1)
     Console.WriteLine(el);  
 ```  
   
- La méthode <xref:System.Linq.Enumerable.Where%2A> est une méthode d'extension. Pour plus d’informations, consultez la page [Méthodes d’extension](../../classes-and-structs/extension-methods.md). <xref:System.Linq.Enumerable.Where%2A> étant une méthode d'extension, la requête ci-dessus est compilée comme si elle était écrite comme suit :  
+ La méthode <xref:System.Linq.Enumerable.Where%2A> est une méthode d'extension. Pour plus d’informations, consultez [Méthodes d’extension](../../classes-and-structs/extension-methods.md). <xref:System.Linq.Enumerable.Where%2A> étant une méthode d'extension, la requête ci-dessus est compilée comme si elle était écrite comme suit :  
   
 ```csharp  
 XDocument po = XDocument.Load("PurchaseOrders.xml");  
@@ -62,7 +62,7 @@ foreach (XElement el in list1)
 > [!NOTE]
 > Ces exemples sont représentatifs du code susceptible d'être écrit par le compilateur. L'implémentation réelle peut différer légèrement de ces exemples, mais la performance sera identique ou similaire à celle de ces exemples.  
   
-## <a name="executing-xpath-expressions-with-xmldocument"></a>Exécution d'expressions XPath avec XmlDocument  
+## <a name="executing-xpath-expressions-with-xmldocument"></a>Exécution d’expressions XPath avec XmlDocument  
  L'exemple suivant utilise <xref:System.Xml.XmlDocument> pour produire les mêmes résultats que les exemples précédents :  
   
 ```csharp  

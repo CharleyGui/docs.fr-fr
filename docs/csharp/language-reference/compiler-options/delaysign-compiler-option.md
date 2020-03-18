@@ -9,10 +9,10 @@ helpviewer_keywords:
 - /delaysign compiler option [C#]
 ms.assetid: bcb058eb-2933-4e7f-b356-5c941db4de75
 ms.openlocfilehash: 9fdc02c22d9d8c8a709155e43a17ebf0d86dfd69
-ms.sourcegitcommit: 7b1ce327e8c84f115f007be4728d29a89efe11ef
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/13/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70970448"
 ---
 # <a name="-delaysign-c-compiler-options"></a>-delaysign (Options du compilateur C#)
@@ -31,9 +31,9 @@ Cette option fait en sorte que le compilateur réserve de l’espace dans le fic
 
 Utilisez **-delaysign-** si vous souhaitez obtenir un assembly complètement signé. Utilisez **-delaysign+** si vous souhaitez uniquement placer la clé publique dans l’assembly. **-delaysign-** est l’option par défaut.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-L’option **-delaysign** est sans effet sauf si elle est utilisée avec [-keyfile](./keyfile-compiler-option.md) ou [-keycontainer](./keycontainer-compiler-option.md).
+**L’option -delaysign n’a** aucun effet à moins d’être utilisée avec [-keyfile](./keyfile-compiler-option.md) ou [-keycontainer](./keycontainer-compiler-option.md).
 
 Les options **-delaysign** et **-publicsign** s’excluent mutuellement.
 
@@ -48,10 +48,10 @@ Pour plus d’informations, consultez [Création et utilisation d’assemblys av
 1. Ouvrez la page **Propriétés** du projet.
 1. Modifiez la propriété **Différer la signature uniquement**.
 
-Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.
+Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.DelaySign%2A>.
 
 ## <a name="see-also"></a>Voir aussi
 
 - [Option -publicsign C#](publicsign-compiler-option.md)
-- [Options du compilateur C#](index.md)
+- [Options de compilateur C](index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

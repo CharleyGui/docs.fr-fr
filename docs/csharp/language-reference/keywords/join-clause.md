@@ -9,10 +9,10 @@ helpviewer_keywords:
 - join keyword [C#]
 ms.assetid: 76e9df84-092c-41a6-9537-c3f1cbd7f0fb
 ms.openlocfilehash: 8e52e9db241392b67818b7316767dd97bd38432a
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713402"
 ---
 # <a name="join-clause-c-reference"></a>join, clause (référence C#)
@@ -55,7 +55,7 @@ Pour plus d’informations, consultez [Effectuer des jointures groupées](../../
 
 ## <a name="left-outer-join"></a>Jointure externe gauche
 
-Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure externe gauche dans LINQ, utilisez la méthode `DefaultIfEmpty` en association avec une jointure groupée pour spécifier un élément côté droit par défaut à produire si un élément côté gauche n’a pas de correspondance. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :
+Dans une jointure externe gauche, tous les éléments de la séquence source de gauche sont retournés, même si aucun élément correspondant ne se trouve dans la séquence de droite. Pour effectuer une jointure extérieure gauche `DefaultIfEmpty` dans LINQ, utilisez la méthode en combinaison avec une jointure de groupe pour spécifier un élément latéral droit par défaut à produire si un élément du côté gauche n’a pas de correspondances. Vous pouvez utiliser `null` comme valeur par défaut pour tous les types référence ou vous pouvez spécifier un type par défaut défini par l’utilisateur. L’exemple suivant montre un type par défaut défini par l’utilisateur :
 
 [!code-csharp[cscsrefQueryKeywords#27](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#27)]
 
@@ -71,7 +71,7 @@ Vous pouvez effectuer des non-équijointures, des jointures croisées et d’aut
 
 ## <a name="joins-on-object-collections-vs-relational-tables"></a>Jointures sur des collections d’objets et sur des tables relationnelles
 
-Dans une expression de requête LINQ, les opérations de jointure sont effectuées sur les collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans LINQ, les clauses de `join` explicites sont uniquement requises lorsque deux séquences sources ne sont pas liées par une relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.
+Dans une expression de requête LINQ, les opérations de jointure sont effectuées sur les collections d’objets. Les collections d’objets ne peuvent pas être « jointes » exactement de la même façon que deux tables relationnelles. Dans LINQ, `join` les clauses explicites ne sont requises que lorsque deux séquences sources ne sont liées par aucune relation. Quand vous travaillez avec [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], les tables avec des clés étrangères sont représentées dans le modèle objet en tant que propriétés de la table principale. Par exemple, dans la base de données Northwind, la table Customer a une relation de clé étrangère avec la table Orders. Quand vous mappez les tables au modèle objet, la classe Customer a une propriété Orders qui contient la collection de commandes associées à ce client. En réalité, la jointure a déjà été effectuée pour vous.
 
 Pour plus d’informations sur l’interrogation de tables liées dans le contexte de [!INCLUDE[vbtecdlinq](~/includes/vbtecdlinq-md.md)], consultez [Procédure : mapper des relations de base de données](../../../framework/data/adonet/sql/linq/how-to-map-database-relationships.md).
 
@@ -79,25 +79,25 @@ Pour plus d’informations sur l’interrogation de tables liées dans le contex
 
 Vous pouvez tester l’égalité de plusieurs valeurs en utilisant une clé composite. Pour plus d’informations, consultez [Effectuer des opérations de jointure à l’aide de clés composites](../../linq/join-by-using-composite-keys.md). Vous pouvez aussi utiliser des clés composites dans une clause `group`.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant compare les résultats d’une jointure interne, d’une jointure groupée et d’une jointure externe gauche sur les mêmes sources de données en utilisant les mêmes clés de correspondance. Du code supplémentaire est ajouté à ces exemples pour clarifier les résultats dans l’affichage de la console.
 
 [!code-csharp[cscsrefQueryKeywords#23](~/samples/snippets/csharp/VS_Snippets_VBCSharp/CsCsrefQueryKeywords/CS/Join.cs#23)]
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.Join%2A>. Une clause `join` qui n’est pas suivie de `into` se traduit par l’appel de la méthode <xref:System.Linq.Enumerable.GroupJoin%2A>.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Mots clés de requête (LINQ)](query-keywords.md)
-- [LINQ (Language Integrated Query)](../../linq/index.md)
-- [Opérations de jointure](../../programming-guide/concepts/linq/join-operations.md)
+- [Mots-clés de requête (LINQ)](query-keywords.md)
+- [Requête intégrée linguistique (LINQ)](../../linq/index.md)
+- [Rejoindre les opérations](../../programming-guide/concepts/linq/join-operations.md)
 - [group, clause](group-clause.md)
 - [Effectuer des jointures externes gauches](../../linq/perform-left-outer-joins.md)
-- [Effectuer des jointures internes](../../linq/perform-inner-joins.md)
+- [Effectuer des jointures intérieures](../../linq/perform-inner-joins.md)
 - [Effectuer des jointures groupées](../../linq/perform-grouped-joins.md)
-- [Classer les résultats d’une clause Join](../../linq/order-the-results-of-a-join-clause.md)
-- [Effectuer des opérations de jointure à l’aide de clés composites](../../linq/join-by-using-composite-keys.md)
+- [Classer les résultats d’une clause join](../../linq/order-the-results-of-a-join-clause.md)
+- [Effectuer des jointures à l’aide de clés composites](../../linq/join-by-using-composite-keys.md)
 - [Systèmes de base de données compatibles pour Visual Studio](/visualstudio/data-tools/installing-database-systems-tools-and-samples)

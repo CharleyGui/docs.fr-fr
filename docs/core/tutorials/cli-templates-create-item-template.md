@@ -6,13 +6,13 @@ ms.date: 06/25/2019
 ms.topic: tutorial
 ms.author: adegeo
 ms.openlocfilehash: 5f4038e863d9bb59df470d3516c08fd2ad29c078
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503559"
 ---
-# <a name="tutorial-create-an-item-template"></a>Didacticiel : créer un modèle d’élément
+# <a name="tutorial-create-an-item-template"></a>Tutorial: Créer un modèle d’élément
 
 Avec .NET Core, vous pouvez créer et déployer des modèles qui génèrent des projets, des fichiers et même des ressources. Ce tutoriel est le premier d’une série qui vous apprend comment créer, installer et désinstaller des modèles à utiliser avec la commande `dotnet new`.
 
@@ -33,7 +33,7 @@ Dans cette partie de la série, vous découvrirez comment :
 
   L’article de référence explique les notions de base sur les modèles et la façon dont ils sont créés. Certaines de ces informations seront répétées ici.
 
-* Ouvrez un terminal et accédez au dossier _working\templates_ .
+* Ouvrez un terminal et accédez au dossier _working\templates_.
 
 ## <a name="create-the-required-folders"></a>Créer les dossiers requis
 
@@ -41,7 +41,7 @@ Cette série utilise un « dossier de travail » dans lequel se trouve votre s
 
 Tout d’abord, créez le dossier parent, le nom n’a pas d’importance. Puis, créez un sous-dossier nommé _working_. Dans le dossier _working_, créez un sous-dossier nommé _templates_.
 
-Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure des dossiers doit ressembler à ce qui suit.
+Ensuite, créez un dossier sous le dossier parent nommé _test_. La structure du dossier doit ressembler à ce qui suit.
 
 ```console
 parent_folder
@@ -54,7 +54,7 @@ parent_folder
 
 Un modèle d’élément est un type spécifique de modèle qui contient un ou plusieurs fichiers. Ces types de modèles sont utiles lorsque vous souhaitez générer un fichier de configuration, de code ou de solution. Dans cet exemple, vous allez créer une classe qui ajoute une méthode d’extension au type de chaîne.
 
-Dans votre terminal, accédez au dossier _working\templates_ et créez un sous-dossier nommé _Extensions_. Entrez dans le dossier.
+Dans votre terminal, accédez au dossier _working\templates_ et créez un sous-dossier nommé _extensions_. Entrez dans le dossier.
 
 ```console
 working
@@ -85,7 +85,7 @@ Maintenant que le contenu du modèle est créé, vous devez créer la configurat
 
 ## <a name="create-the-template-config"></a>Créer la configuration du modèle
 
-Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce didacticiel, votre dossier de modèles se trouve dans _working\templates\extensions_.
+Les modèles sont reconnus dans .NET Core par un dossier et un fichier de configuration spécifiques qui se trouvent à la racine de votre modèle. Dans ce tutoriel, votre dossier de modèle se trouve dans _working\templates\extensions_.
 
 Lorsque vous créez un modèle, tous les fichiers et dossiers du dossier de modèle sont inclus dans le modèle, à l’exception du dossier de configuration spécial. Ce dossier de configuration est nommé _.template.config_.
 
@@ -99,7 +99,7 @@ working
                 template.json
 ```
 
-Ouvrez le fichier _template. JSON_ avec votre éditeur de texte favori, puis collez le code JSON suivant et enregistrez-le.
+Ouvrez le _template.json_ avec votre éditeur de texte préféré et collez dans le code JSON suivant et enregistrez-le.
 
 ```json
 {
@@ -122,8 +122,8 @@ L’élément `classifications` représente la colonne **tags** que vous voyez l
 
 Maintenant que vous avez un fichier _.template.config/template.json_ valide, votre modèle est prêt à être installé. Dans votre terminal, accédez au dossier _extensions_ et exécutez la commande suivante pour installer le modèle situé dans le dossier actuel :
 
-* **Sous Windows** : `dotnet new -i .\`
-* **Sous Linux ou macOS** : `dotnet new -i ./`
+* **Sur Windows**:`dotnet new -i .\`
+* **Sur Linux ou macOS**:`dotnet new -i ./`
 
 Cette commande génère la liste des modèles installés, qui doivent inclure le vôtre.
 
@@ -155,7 +155,7 @@ Maintenant que vous avez un modèle d’élément installé, testez-le. Accédez
 dotnet new console
 ```
 
-Vous recevez une sortie similaire à ce qui suit.
+Vous obtenez la sortie similaire à ce qui suit.
 
 ```console
 The template "Console Application" was created successfully.
@@ -167,13 +167,13 @@ Running 'dotnet restore' on C:\test\test.csproj...
 Restore succeeded.
 ```
 
-Exécutez le projet avec.
+Exécuter le projet avec.
 
 ```dotnetcli
 dotnet run
 ```
 
-Vous recevez la sortie suivante.
+Vous obtenez la sortie suivante.
 
 ```console
 Hello World!
@@ -185,7 +185,7 @@ Ensuite, exécutez `dotnet new stringext` pour générer _CommonExtensions.cs_ �
 dotnet new stringext
 ```
 
-Vous recevez la sortie suivante.
+Vous obtenez la sortie suivante.
 
 ```console
 The template "Example templates: string extensions" was created successfully.
@@ -203,7 +203,7 @@ Réexécutez le programme et vous verrez que le résultat est inversé.
 dotnet run
 ```
 
-Vous recevez la sortie suivante.
+Vous obtenez la sortie suivante.
 
 ```console
 !dlroW olleH
@@ -219,7 +219,7 @@ Félicitations ! Vous avez créé et déployé un modèle d’élément avec .NE
 dotnet new -u
 ```
 
-Vous recevez une sortie similaire à ce qui suit.
+Vous obtenez la sortie similaire à ce qui suit.
 
 ```console
 Template Instantiation Commands for .NET Core CLI

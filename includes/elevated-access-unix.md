@@ -1,9 +1,9 @@
 ---
 ms.openlocfilehash: 85f50b221e7ecb1ebd6fa539894ab7aabed8d362
-ms.sourcegitcommit: b5c59eaaf8bf48ef3ec259f228cb328d6d4c0ceb
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "67540101"
 ---
 ### <a name="install-the-global-tool"></a>Installer l’outil global

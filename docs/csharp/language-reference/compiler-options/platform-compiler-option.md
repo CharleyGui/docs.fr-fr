@@ -9,10 +9,10 @@ helpviewer_keywords:
 - /platform compiler option [C#]
 ms.assetid: c290ff5e-47f4-4a85-9bb3-9c2525b0be04
 ms.openlocfilehash: 5150e871d75c3c34dab10f10cdac3d8322d7a834
-ms.sourcegitcommit: 205b9a204742e9c77256d43ac9d94c3f82909808
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/10/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70849870"
 ---
 # <a name="-platform-c-compiler-options"></a>-platform (Options du compilateur C#)
@@ -30,7 +30,7 @@ Spécifie la version du CLR (Common Language Runtime) qui peut exécuter l’ass
 `string` \
 anycpu (valeur par défaut), anycpu32bitpreferred, ARM, x64, x86 ou Itanium.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
 - **anycpu** (valeur par défaut) compile votre assembly pour qu’il s’exécute sur n’importe quelle plateforme. Votre application s’exécute en tant que processus 64 bits dans la mesure du possible et repasse en 32 bits quand seul ce mode est disponible.
 
@@ -69,11 +69,11 @@ Pour plus d’informations sur le développement d’une application s’exécut
 3. Modifiez la propriété **Plateforme cible** puis, pour les projets qui ciblent le .NET Framework 4.5, cochez ou décochez la case **Préférer 32 bits**.
 
 > [!NOTE]
-> `-platform`n’est pas disponible dans l’environnement de développement C# de Visual Express.
+> `-platform`n’est pas disponible dans l’environnement de développement dans Visual C Express.
 
-Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.
+Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.PlatformTarget%2A>.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser l’option **-platform** pour préciser que l’application doit être exécutée par le CLR 64 bits sur un système d’exploitation Windows 64 bits.
 
@@ -83,5 +83,5 @@ csc -platform:anycpu filename.cs
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](index.md)
+- [Options de compilateur C](index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

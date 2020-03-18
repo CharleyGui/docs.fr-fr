@@ -1,40 +1,40 @@
 ---
 ms.openlocfilehash: ae5a5fbf97ed4a03de7d35b9d5d5ca8de3aebc39
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394039"
 ---
-### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Mise en cache : les types « pubternal » ResponseCaching sont devenus internes
+### <a name="caching-responsecaching-pubternal-types-changed-to-internal"></a>Caching: ResponseCaching "pubternal" types changés à l’interne
 
-Dans ASP.NET Core 3,0, les types « pubternal » dans `ResponseCaching` ont été changés en `internal`.
+Dans ASP.NET Core 3.0, les types de `ResponseCaching` "pubternal" ont été changés en `internal`.
 
-En outre, les implémentations par défaut de `IResponseCachingPolicyProvider` et `IResponseCachingKeyProvider` ne sont plus ajoutées aux services dans le cadre de la méthode `AddResponseCaching`.
+En outre, les `IResponseCachingPolicyProvider` implémentations par défaut `IResponseCachingKeyProvider` et `AddResponseCaching` ne sont plus ajoutées aux services dans le cadre de la méthode.
 
-#### <a name="change-description"></a>Modifier la description
+#### <a name="change-description"></a>Description de la modification
 
-Dans ASP.NET Core, les types « pubternal » sont déclarés comme `public`, mais résident dans un espace de noms avec le suffixe `.Internal`. Bien que ces types soient publics, ils n’ont aucune stratégie de prise en charge et sont soumis à des modifications avec rupture. Malheureusement, l’utilisation accidentelle de ces types est courante, entraînant des modifications avec rupture de ces projets et limitant la capacité à gérer l’infrastructure.
+Dans ASP.NET Core, les types "pubternal" `public` sont déclarés comme mais `.Internal`résident dans un namespace suffixed avec . Bien que ces types soient publics, ils n’ont pas de politique de soutien et sont sujets à des changements de rupture. Malheureusement, l’utilisation accidentelle de ces types a été courante, ce qui a entraîné la rupture des changements à ces projets et la limitation de la capacité de maintenir le cadre.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Ces types étaient visibles publiquement, mais ne sont pas pris en charge.
+Ces types étaient visibles publiquement, mais non pris en compte.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces types sont maintenant `internal`.
+Ces types `internal`sont maintenant .
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-L’étendue `internal` reflète mieux la stratégie non prise en charge.
+La `internal` portée reflète mieux la politique non étayée.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Copiez les types utilisés par votre application ou bibliothèque.
+Copiez les types qui sont utilisés par votre application ou votre bibliothèque.
 
 #### <a name="category"></a>Category
 

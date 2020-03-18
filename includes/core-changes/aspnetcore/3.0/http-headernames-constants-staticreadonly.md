@@ -1,16 +1,16 @@
 ---
 ms.openlocfilehash: 31e7f84a787d255a474f4c2b1fa3068903dbed52
-ms.sourcegitcommit: 7088f87e9a7da144266135f4b2397e611cf0a228
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/11/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75901909"
 ---
-### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP : les constantes HeaderNames ont été modifiées en ReadOnly statique
+### <a name="http-headernames-constants-changed-to-static-readonly"></a>HTTP: HeaderNames constantes changé à statique readonly
 
-À partir de ASP.NET Core 3,0 Preview 5, les champs de <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> changés de `const` à `static readonly`.
+À partir de ASP.NET Core 3.0 Aperçu 5, `const` `static readonly`les champs dans <xref:Microsoft.Net.Http.Headers.HeaderNames?displayProperty=fullName> changé de .
 
-Pour plus d’informations, consultez [dotnet/aspnetcore # 9514](https://github.com/dotnet/aspnetcore/issues/9514).
+Pour discussion, voir [dotnet/aspnetcore 9514](https://github.com/dotnet/aspnetcore/issues/9514).
 
 #### <a name="version-introduced"></a>Version introduite
 
@@ -18,30 +18,30 @@ Pour plus d’informations, consultez [dotnet/aspnetcore # 9514](https://github.
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Ces champs servent à `const`.
+Ces champs étaient `const`autrefois .
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-Ces champs sont désormais `static readonly`.
+Ces champs `static readonly`sont maintenant .
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-La modification :
+Le changement:
 
-* Empêche l’incorporation des valeurs dans les limites de l’assembly, ce qui permet d’obtenir des corrections de valeurs en fonction des besoins.
-* Active les vérifications d’égalité de référence plus rapides.
+* Empêche les valeurs d’être intégrées au-delà des limites de l’assemblage, ce qui permet des corrections de valeur au besoin.
+* Permet des contrôles plus rapides de l’égalité des références.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Recompilation sur 3,0. Le code source qui utilise ces champs de la manière suivante ne peut plus le faire :
+Recomplez contre 3.0. Le code source utilisant ces champs de la manière suivante ne peut plus le faire :
 
-* En tant qu’argument d’attribut
-* En tant que `case` dans une instruction `switch`
-* Lors de la définition d’un autre `const`
+* Comme argument d’attribut
+* Comme `case` un `switch` dans une déclaration
+* Lors de la définition d’un autre`const`
 
-Pour contourner la modification avec rupture, basculez vers à l’aide de constantes de nom d’en-tête ou de littéraux de chaîne définis automatiquement.
+Pour contourner le changement de rupture, passez à l’utilisation de constantes de noms d’en-tête auto-définies ou de littérals de cordes.
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 ASP.NET Core
 

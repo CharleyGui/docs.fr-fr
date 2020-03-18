@@ -3,10 +3,10 @@ title: Partitionnement des données (C#)
 ms.date: 07/20/2015
 ms.assetid: 2a5c507b-fe22-443c-a768-dec7f9ec568d
 ms.openlocfilehash: d9330e9973b2f25903e1f81a7296362e2a7c756b
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69591592"
 ---
 # <a name="partitioning-data-c"></a>Partitionnement des données (C#)
@@ -20,7 +20,7 @@ Le partitionnement dans LINQ désigne l’opération consistant à diviser une s
   
 ## <a name="operators"></a>Opérateurs  
   
-|Nom d'opérateur|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
+|Nom de l’opérateur|Description|Syntaxe d'expression de requête C#|Informations complémentaires|  
 |-------------------|-----------------|---------------------------------|----------------------|  
 |Ignorer|Ignore les éléments jusqu’à une position spécifiée dans une séquence.|Non applicable.|<xref:System.Linq.Enumerable.Skip%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.Skip%2A?displayProperty=nameWithType>|  
 |SkipWhile|Ignore les éléments basés sur une fonction de prédicat jusqu’à un élément qui ne remplit pas la condition.|Non applicable.|<xref:System.Linq.Enumerable.SkipWhile%2A?displayProperty=nameWithType><br /><br /> <xref:System.Linq.Queryable.SkipWhile%2A?displayProperty=nameWithType>|  

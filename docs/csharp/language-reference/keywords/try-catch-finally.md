@@ -9,10 +9,10 @@ helpviewer_keywords:
 - try-catch statement [C#]
 ms.assetid: a1b443b0-ff7a-43ab-b835-0cc9bfbd15ca
 ms.openlocfilehash: 5d98f6967595c7c32b23ba5422a8d9ca79f7f54c
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713038"
 ---
 # <a name="try-catch-finally-c-reference"></a>try-catch-finally (référence C#)
@@ -21,7 +21,7 @@ ms.locfileid: "75713038"
 
  Pour plus d’informations et des exemples sur la génération répétée d’exceptions, consultez [try-catch](try-catch.md) et [Génération d’exceptions](../../../standard/exceptions/index.md). Pour plus d’informations sur le bloc `finally`, consultez [try-finally](try-finally.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 [!code-csharp[csrefKeywordsExceptions#1](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csrefKeywordsExceptions/CS/csrefKeywordsExceptions.cs#1)]  
 
@@ -31,10 +31,10 @@ Pour plus d’informations, consultez la section [Instruction try](~/_csharplang
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](index.md)
 - [Instructions try, throw et catch (C++)](/cpp/cpp/try-throw-and-catch-statements-cpp)
-- [throw](throw.md)
-- [Guide pratique pour lever explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
-- [using, instruction](using-statement.md)
+- [Jeter](throw.md)
+- [Comment : Jeter explicitement des exceptions](../../../standard/exceptions/how-to-explicitly-throw-exceptions.md)
+- [à l’aide de l’Énoncé](using-statement.md)

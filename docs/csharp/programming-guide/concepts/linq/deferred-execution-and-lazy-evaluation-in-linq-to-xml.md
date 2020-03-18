@@ -3,10 +3,10 @@ title: Exécution et évaluation différées dans LINQ to XML (C#)
 ms.date: 07/20/2015
 ms.assetid: 8683d1b4-b7ec-407b-be12-906ebe958a09
 ms.openlocfilehash: 9cf28afb5b7b8b3047c8b1b21915ffe7409eb25e
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69594566"
 ---
 # <a name="deferred-execution-and-lazy-evaluation-in-linq-to-xml-c"></a>Exécution et évaluation différées dans LINQ to XML (C#)
@@ -35,7 +35,7 @@ Les opérations de requête et d'axe sont souvent implémentées pour utiliser l
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : Chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
+- [Didacticiel : chaînage de requêtes (C#)](./deferred-execution-and-lazy-evaluation-in-linq-to-xml.md)
 - [Concepts et terminologie (transformation fonctionnelle) (C#)](./concepts-and-terminology-functional-transformation.md)
 - [Opérations d’agrégation (C#)](./aggregation-operations.md)
-- [yield](../../../language-reference/keywords/yield.md)
+- [Rendement](../../../language-reference/keywords/yield.md)

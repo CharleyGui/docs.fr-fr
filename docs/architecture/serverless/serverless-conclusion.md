@@ -1,33 +1,33 @@
 ---
-title: Principales clés-applications sans serveur
-description: Sans serveur offre de nombreux avantages et a ses propres défis. Résumé des principales préversions de ce guide.
+title: Principaux plats à emporter - Applications sans serveur
+description: Serverless offre de nombreux avantages et a ses propres défis. Un résumé des plats à emporter clés de ce guide.
 author: JEREMYLIKNESS
 ms.author: jeliknes
 ms.date: 06/26/2018
 ms.openlocfilehash: ae9fc47bf07a7e28688942b856b4743ae7aadc36
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/08/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69577242"
 ---
 # <a name="conclusion"></a>Conclusion
 
-Les points clés suivants sont les conclusions les plus importantes de ce guide.
+Les principaux plats à emporter suivants sont les conclusions les plus importantes de ce guide.
 
-**Avantages de l’utilisation sans serveur.** Les solutions sans serveur offrent un avantage important en matière de réduction des coûts, car les serveurs sans serveur sont implémentés dans un modèle de paiement à l’utilisation. Sans serveur, il est possible de mettre à l’échelle, de tester et de déployer des composants individuels de votre application de manière indépendante. Sans serveur est conçu de manière unique pour implémenter les architectures de microservices et s’intègre entièrement dans un pipeline DevOps.
+**Avantages de l’utilisation sans serveur.** Les solutions sans serveur offrent l’avantage important des économies de coûts parce que sans serveur est implémenté dans un modèle de pay-per-use. Serverless permet d’échelle, de test et de déploiement indépendants de composants individuels de votre application. Serverless est particulièrement adapté pour implémenter des architectures de microservices et s’intègre pleinement dans un pipeline DevOps.
 
-**Code en tant qu’unité de déploiement.** Sans serveur, le matériel, le système d’exploitation et le runtime sont éloignés de l’application. Sans serveur permet de se concentrer sur la logique métier dans le code en tant qu’unité de déploiement.
+**Code en tant qu’unité de déploiement.** Serverless abstraits le matériel, OS, et le temps d’exécution loin de l’application. Serverless permet de se concentrer sur la logique métier dans le code comme unité de déploiement.
 
-**Déclencheurs et liaisons.** Sans serveur facilite l’intégration avec le stockage, les API et d’autres ressources de Cloud. Azure Functions fournit des déclencheurs pour exécuter du code et des liaisons pour interagir avec les ressources.
+**Déclencheurs et fixations.** Serverless facilite l’intégration avec le stockage, les API et d’autres ressources cloud. Azure Functions fournit des déclencheurs pour exécuter le code et les liaisons pour interagir avec les ressources.
 
-**Microservices** : L’architecture de microservices devient l’approche préférée pour les applications stratégiques distribuées et volumineuses ou complexes qui sont basées sur plusieurs sous-systèmes indépendants sous la forme de services autonomes. Dans une architecture basée sur des microservices, l’application est construite sous la forme d’une collection de services qui peuvent être développés, testés, mis à niveau, déployés et mis à l’échelle de manière indépendante. Sans serveur est une architecture bien adaptée à la création de ces services.
+**Microservices.** L’architecture des microservices devient l’approche privilégiée pour les applications distribuées et importantes ou complexes de mission critiques qui sont basées sur de multiples sous-systèmes indépendants sous la forme de services autonomes. Dans une architecture basée sur le microservice, l’application est conçue comme une collection de services qui peuvent être développés, testés, versions, déployés et mis à l’échelle indépendamment. Serverless est une architecture bien adaptée à la construction de ces services.
 
-**Plates-formes sans serveur.** Sans serveur, il ne s’agit pas seulement du code. Les plateformes qui prennent en charge les architectures sans serveur incluent les flux de travail sans serveur et l’orchestration, les services de messagerie et d’événements sans serveur, ainsi que les bases de données sans serveur.
+**Plates-formes sans serveur.** Serverless n’est pas seulement sur le code. Les plates-formes qui prennent en charge les architectures sans serveur comprennent des flux de travail et des orchestrations sans serveur, des services de messagerie et d’événements sans serveur, ainsi que des bases de données sans serveur.
 
-**Défis sans serveur.** Sans serveur introduit les défis liés au développement d’applications distribuées, telles que les modèles de données fragmentés et indépendants, la résilience, le contrôle de version et la découverte de service. Sans serveur, il peut être préférable d’utiliser des processus ou des composants de longue durée qui tirent parti d’un couplage plus étroit.
+**Défis sans serveur.** Serverless introduit des défis liés au développement d’applications distribuées, tels que des modèles de données fragmentés et indépendants, la résilience, la version et la découverte de services. Serverless peut ne pas être idéalement adapté aux processus ou composants à long terme qui bénéficient d’un couplage plus serré.
 
-**Sans serveur en tant qu’outil, pas dans la boîte à outils.** Sans serveur, il ne s’agit pas de la solution exclusive à l’architecture des applications. Il s’agit d’un outil qui peut être exploité dans le cadre d’une application hybride qui peut contenir des niveaux traditionnels, des back-ends de monolithe et des conteneurs. Sans serveur peut être utilisé pour améliorer les solutions existantes et n’est pas une approche tout ou rien du développement d’applications.
+**Sans serveur comme un outil, pas la boîte à outils.** Serverless n’est pas la solution exclusive à l’architecture d’application. Il s’agit d’un outil qui peut être exploité dans le cadre d’une application hybride qui peut contenir des niveaux traditionnels, des extrémités arrière monolithe, et des conteneurs. Serverless peut être utilisé pour améliorer les solutions existantes et n’est pas une approche tout ou rien au développement d’applications.
 
 >[!div class="step-by-step"]
 >[Précédent](serverless-business-scenarios.md)

@@ -2,12 +2,12 @@
 title: Conception de la couche de persistance de l’infrastructure
 description: Architecture des microservices .NET pour les applications .NET conteneurisées | Explorer le modèle de référentiel dans la conception de la couche de persistance de l’infrastructure.
 ms.date: 10/08/2018
-ms.openlocfilehash: f1c5df1cc5672760374610a416ae22b45cd76c25
-ms.sourcegitcommit: 22be09204266253d45ece46f51cc6f080f2b3fd6
+ms.openlocfilehash: e10c8c1569089d5c8274df655ad7a12f2ebb7c22
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 11/07/2019
-ms.locfileid: "73737945"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "78846807"
 ---
 # <a name="design-the-infrastructure-persistence-layer"></a>Concevoir la couche de persistance de l’infrastructure
 
@@ -33,11 +33,11 @@ Si l’utilisateur apporte des modifications, les données à mettre à jour pas
 
 Il est important de souligner à nouveau que vous devez définir seulement un référentiel pour chaque racine d’agrégat, comme illustré dans la figure 7-17. Pour atteindre l’objectif de la racine d’agrégat visant à maintenir la cohérence transactionnelle entre tous les objets au sein de l’agrégat, vous ne devez jamais créer un dépôt pour chaque table dans la base de données.
 
-![Diagramme montrant les relations entre domaine et autre infrastructure.](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
+![Diagramme montrant les relations du domaine et d’autres infrastructures.](./media/infrastructure-persistence-layer-design/repository-aggregate-database-table-relationships.png)
 
 **Figure 7-17**. Relation entre les dépôts, les agrégats et les tables de base de données
 
-Le diagramme ci-dessus montre les relations entre les couches de domaine et d’infrastructure : l’agrégat des achats dépend du IBuyerRepository et de l’agrégat de commandes dépend des interfaces IOrderRepository, ces interfaces étant implémentées dans la couche d’infrastructure par les dépôts correspondants qui dépendent de UnitOfWork, également implémenté ici, qui accède aux tables de la couche données.
+Le diagramme ci-dessus montre les relations entre les couches de domaine et d’infrastructure : l’agrégat d’acheteur dépend de l’IBuyerRepository et l’agrégat de commande dépend des interfaces IOrderRepository, ces interfaces sont implémentées dans la couche d’infrastructure par les dépôts correspondants qui dépendent d’UnitOfWork, également mis en œuvre là-bas, qui accède aux tables du niveau de données.
 
 ### <a name="enforce-one-aggregate-root-per-repository"></a>Appliquer une seule racine d’agrégat par référentiel
 
@@ -110,16 +110,13 @@ Les référentiels peuvent être utiles, mais ils ne sont pas critiques pour vot
 
 ### <a name="repository-pattern"></a>Modèle de référentiel
 
-- **The Repository pattern** \
-  <https://deviq.com/repository-pattern/>
-
-- **Edward Hieatt et Rob me. Modèle de référentiel.** \
+- **Edward Hieatt et Rob moi. Modèle de dépôt.** \
   <https://martinfowler.com/eaaCatalog/repository.html>
 
-- **The Repository pattern** \
+- **Le modèle de dépôt** \
   <https://docs.microsoft.com/previous-versions/msp-n-p/ff649690(v=pandp.10)>
 
-- **Eric Evans. Conception pilotée par domaine : la complexité du logiciel est plus complexe.** (Un livre, qui inclut une présentation du modèle de référentiel) \
+- **Eric Evans. Conception axée sur le domaine : s’attaquer à la complexité au cœur du logiciel.** (Un livre, qui inclut une présentation du modèle de référentiel) \
   <https://www.amazon.com/Domain-Driven-Design-Tackling-Complexity-Software/dp/0321125215/>
 
 ### <a name="unit-of-work-pattern"></a>Modèle Unité de travail
@@ -127,9 +124,9 @@ Les référentiels peuvent être utiles, mais ils ne sont pas critiques pour vot
 - **Martin Fowler. Modèle d’unité de travail.** \
   <https://martinfowler.com/eaaCatalog/unitOfWork.html>
 
-- **Implementing the Repository and Unit of Work Patterns in an ASP.NET MVC Application** \
+- **Mise en œuvre du dépôt et de l’unité des modèles de travail dans une application MVC ASP.NET** \
   <https://docs.microsoft.com/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application>
 
 >[!div class="step-by-step"]
->[Précédent](domain-events-design-implementation.md)
->[Suivant](infrastructure-persistence-layer-implemenation-entity-framework-core.md)
+>[Suivant précédent](domain-events-design-implementation.md)
+>[Next](infrastructure-persistence-layer-implemenation-entity-framework-core.md)

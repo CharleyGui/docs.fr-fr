@@ -3,10 +3,10 @@ title: Annotations LINQ to XML3
 ms.date: 07/20/2015
 ms.assetid: 54e7b9d0-07f5-488f-9065-b6e6b870f810
 ms.openlocfilehash: 5f1940be2fc126ff9e9c7a4cb37e5cc7fc95d3c3
-ms.sourcegitcommit: d8ebe0ee198f5d38387a80ba50f395386779334f
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/05/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66689944"
 ---
 # <a name="linq-to-xml-annotations"></a>Annotations LINQ to XML

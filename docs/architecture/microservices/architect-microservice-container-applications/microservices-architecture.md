@@ -1,15 +1,15 @@
 ---
-title: Architecture en microservices
+title: Architecture de microservices
 description: Architecture des microservices .NET pour applications .NET conteneurisées | Vue générale de l’architecture des microservices.
 ms.date: 09/20/2018
 ms.openlocfilehash: d1c58d218be9e5f8c0ae8ae732f9bdd06674a2c2
-ms.sourcegitcommit: 8a0fe8a2227af612f8b8941bdb8b19d6268748e7
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/03/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71834382"
 ---
-# <a name="microservices-architecture"></a>Architecture en microservices
+# <a name="microservices-architecture"></a>Architecture de microservices
 
 Comme son nom l’indique, une architecture en microservices est une approche de la création d’une application serveur sous la forme d’un ensemble de petits services. Cela signifie qu’une architecture de microservices est principalement orientée vers le back-end, même si l’approche est également utilisée pour le front-end. Chaque service s’exécute dans son propre processus et communique avec d’autres processus avec des protocoles comme HTTP/HTTPS, WebSockets ou [AMQP](https://en.wikipedia.org/wiki/Advanced_Message_Queuing_Protocol). Chaque microservice implémente une fonctionnalité métier ou de domaine spécifique de bout en bout dans une certaine limite de contexte, et chacun doit être développé de manière autonome et pouvoir être déployé indépendamment. Enfin, chaque microservice doit avoir son modèle de données de domaine et sa logique de domaine associés (souveraineté et gestion des données décentralisée). Il peut être basé sur différentes technologies de stockage de données (SQL, NoSQL) et sur différents langages de programmation.
 
@@ -23,7 +23,7 @@ Un autre avantage est que les microservices peuvent monter en charge (scale out)
 
 **Figure 4-6**. Déploiement monolithique comparé à l’approche par microservices
 
-Comme le montre la figure 4-6, dans l’approche monolithique traditionnelle, l’application se met à l’échelle en clonant l’application entière dans plusieurs serveurs/machines virtuelles. Dans l’approche liée aux microservices, les fonctionnalités sont séparées en services plus petits, pour permettre à chaque service d’être scalable indépendamment. L’approche de microservices permet des modifications agiles et une itération rapide de chaque microservice, car vous pouvez modifier des zones spécifiques et de petite taille d’applications complexes, volumineuses et évolutives.
+Comme le montre la figure 4-6, dans l’approche monolithique traditionnelle, l’application s’évolue en clonant l’ensemble de l’application dans plusieurs serveurs/VM. Dans l’approche liée aux microservices, les fonctionnalités sont séparées en services plus petits, pour permettre à chaque service d’être scalable indépendamment. L’approche des microservices permet des changements agiles et une itération rapide de chaque microservice, car vous pouvez modifier des zones spécifiques, petites d’applications complexes, grandes et évolutives.
 
 Le fait d’architecturer des applications basées sur des microservices à granularité fine permet des pratiques d’intégration continue et de livraison continue. Il accélère également l’ajout de nouvelles fonctions dans l’application. La composition d’applications avec une granularité fine vous permet également d’exécuter et de tester des microservices de façon isolée, et de les faire évoluer de façon autonome tout en maintenant des contrats clairs entre eux. Tant que vous ne changez pas les contrats ou les interfaces, vous pouvez changer l’implémentation interne de n’importe quel microservice ou ajouter de nouvelles fonctionnalités sans perturber le fonctionnement des autres microservices.
 
@@ -43,21 +43,21 @@ Parmi ces aspects, seuls les trois premiers sont couverts ou présentés dans ce
 
 ## <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Mark Russinovich. Microservices : une révolution d’application alimentée par le Cloud** \
+- **Mark Russinovich. Microservices: Une révolution d’applications alimentée par le cloud** \
   <https://azure.microsoft.com/blog/microservices-an-application-revolution-powered-by-the-cloud/>
 
-- **Martin Fowler. \ de microservices**
+- **Martin Fowler. Microservices** \
   <https://www.martinfowler.com/articles/microservices.html>
 
-- **Martin Fowler. Conditions préalables pour les microservices** \
+- **Martin Fowler. Conditions préalables microservice** \
   <https://martinfowler.com/bliki/MicroservicePrerequisites.html>
 
-- **Jimmy Nilsson. Segmentation du Cloud Computing** \
+- **Jimmy Nilsson. Calcul en nuage Chunk** \
   <https://www.infoq.com/articles/CCC-Jimmy-Nilsson>
 
-- **Cesar de la Torre. Cycle de vie des applications de l’arrimeur en conteneur avec la plateforme et les outils Microsoft** (livre électronique téléchargeable) \
+- **Cesar de la Torre. Cycle de vie d’application Docker conteneurisé avec plateforme et outils Microsoft** (e-book téléchargeable)
   <https://aka.ms/dockerlifecycleebook>
 
 >[!div class="step-by-step"]
->[Précédent](service-oriented-architecture.md)
->[Suivant](data-sovereignty-per-microservice.md)
+>[Suivant précédent](service-oriented-architecture.md)
+>[Next](data-sovereignty-per-microservice.md)

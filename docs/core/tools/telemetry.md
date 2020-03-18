@@ -4,10 +4,10 @@ description: Découvrez les fonctionnalités de télémétrie du kit SDK .NET Co
 author: KathleenDollard
 ms.date: 08/27/2019
 ms.openlocfilehash: 9d5d7ff09ade89712f2fbbe35224851bb1c28b4c
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78156684"
 ---
 # <a name="net-core-sdk-telemetry"></a>Télémétrie du kit SDK .NET Core
@@ -16,7 +16,7 @@ Le kit [SDK .NET Core](index.md) comprend une fonctionnalité de télémétrie q
 
 Les données collectées sont anonymes et publiées de manière groupée selon les termes de la [licence Creative Commons Attribution](https://creativecommons.org/licenses/by/4.0/).
 
-## <a name="scope"></a>Portée
+## <a name="scope"></a>Étendue
 
 `dotnet` a deux fonctions : exécuter les applications et exécuter les commandes CLI. Les informations de télémétrie *ne sont pas collectées* quand vous utilisez `dotnet` pour démarrer une application au format suivant :
 
@@ -56,13 +56,13 @@ La fonctionnalité de télémétrie collecte les données suivantes :
 
 | Versions du SDK | Données |
 |--------------|------|
-| Tout          | Horodatage de l’appel. |
-| Tout          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
-| Tout          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
-| Tout          | Système d’exploitation et version. |
-| Tout          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
-| Tout          | Version du kit SDK .NET Core. |
-| Tout          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
+| Tous          | Horodatage de l’appel. |
+| Tous          | Commande appelée (par exemple, « build »), hachée à partir de la version 2.1. |
+| Tous          | Adresse IP de trois octets utilisée pour déterminer l’emplacement géographique. |
+| Tous          | Système d’exploitation et version. |
+| Tous          | ID du runtime (RID) sur lequel le kit SDK s’exécute. |
+| Tous          | Version du kit SDK .NET Core. |
+| Tous          | Profil de télémétrie : valeur facultative utilisée uniquement avec l’adhésion explicite de l’utilisateur et employée en interne par Microsoft. |
 | >=2.0        | Arguments et options de commande : plusieurs arguments et options sont collectés (pas de chaînes arbitraires). Consultez [options collectées](#collected-options). Hachage après la version 2.1.300. |
 | >=2.0         | Si le SDK est en cours d’exécution dans un conteneur. |
 | >=2.0         | Frameworks cibles (tirés de l’événement `TargetFramework`), hachés à partir de la version 2.1. |
@@ -90,13 +90,13 @@ Certaines commandes envoient des données supplémentaires. Un sous-ensemble de 
 
 Un sous-ensemble de commandes envoie les options sélectionnées si elles sont utilisées, ainsi que leurs valeurs :
 
-| Option                  | Commands                                                                                       |
+| Option                  | Commandes                                                                                       |
 |-------------------------|------------------------------------------------------------------------------------------------|
 | `--verbosity`           | Toutes les commandes                                                                                   |
 | `--language`            | `dotnet new`                                                                                   |
 | `--configuration`       | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`                  |
 | `--framework`           | `dotnet build`, `dotnet clean`, `dotnet publish`, `dotnet run`, `dotnet test`, `dotnet vstest` |
-| `--runtime`             | `dotnet build`, `dotnet publish`                                                              |
+| `--runtime`             | `dotnet build`,  `dotnet publish`                                                              |
 | `--platform`            | `dotnet vstest`                                                                                |
 | `--logger`              | `dotnet vstest`                                                                                |
 | `--sdk-package-version` | `dotnet migrate`                                                                               |
@@ -128,7 +128,7 @@ at Microsoft.DotNet.Cli.Program.ProcessArgs(String[] args, ITelemetry telemetryC
 at Microsoft.DotNet.Cli.Program.Main(String[] args)
 ```
 
-### <a name="avoid-inadvertent-disclosure-of-information"></a>Éviter la divulgation involontaire des informations
+### <a name="avoid-inadvertent-disclosure-of-information"></a>Éviter la divulgation involontaire d’informations
 
 Les contributeurs .NET Core et les autres personnes exécutant une version du kit SDK .NET Core qu’ils ont eux-mêmes créée doivent prendre en considération le chemin du code source de leur kit SDK. Si un plantage se produit pendant l’utilisation d’un kit SDK .NET Core qui correspond à une build de débogage personnalisée ou qui est configurée avec des fichiers de symboles de build personnalisés, le chemin des fichiers sources du SDK de la machine de build est collecté dans le rapport des appels de procédure et n’est pas haché.
 

@@ -7,10 +7,10 @@ helpviewer_keywords:
 - properties [C#], about properties
 ms.assetid: f7f67b05-0983-4cdb-96af-1855d24c967c
 ms.openlocfilehash: d873f626b660bb6bd94710add4543e21e11823d6
-ms.sourcegitcommit: 700ea803fb06c5ce98de017c7f76463ba33ff4a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/19/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77452017"
 ---
 # <a name="using-properties-c-programming-guide"></a>Utilisation de propriétés (Guide de programmation C#)
@@ -49,7 +49,7 @@ L’accesseur `get` peut être utilisé pour retourner la valeur du champ ou pou
 
 [!code-csharp[csProgGuideProperties#11](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#11)]
 
-Dans le segment de code précédent, si vous n’assignez pas de valeur à la propriété `Name`, elle retourne la valeur `NA`.
+Dans le segment de code précédent, si `Name` vous n’attribuez `NA`pas une valeur à la propriété, il retournera la valeur .
 
 ## <a name="the-set-accessor"></a>Accesseur Set
 
@@ -63,11 +63,11 @@ Quand vous assignez une valeur à la propriété, l’accesseur `set` est appel�
 
 Il s’agit d’une erreur d’utiliser le nom de paramètre implicite, `value`, pour une déclaration de variable locale dans un accesseur `set`.
 
-## <a name="remarks"></a>Notes
+## <a name="remarks"></a>Notes 
 
-Les propriétés peuvent être marquées comme étant `public`, `private`, `protected`, `internal`, `protected internal` ou `private protected`. Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder à la propriété. Les accesseurs `get` et `set` d’une même propriété peuvent avoir des modificateurs d’accès différents. Par exemple, l’accesseur `get` peut être `public` pour autoriser l’accès en lecture seule en dehors du type, tandis que l’accesseur `set` peut être `private` ou `protected`. Pour plus d’informations, consultez la page [Modificateurs d’accès](./access-modifiers.md).
+Les propriétés peuvent être marquées comme étant `public`, `private`, `protected`, `internal`, `protected internal` ou `private protected`. Ces modificateurs d’accès définissent comment les utilisateurs de la classe peuvent accéder à la propriété. Les accesseurs `get` et `set` d’une même propriété peuvent avoir des modificateurs d’accès différents. Par exemple, l’accesseur `get` peut être `public` pour autoriser l’accès en lecture seule en dehors du type, tandis que l’accesseur `set` peut être `private` ou `protected`. Pour plus d’informations, consultez [Modificateurs d’accès](./access-modifiers.md).
 
-Une propriété peut être déclarée en tant que propriété statique à l’aide du mot clé `static`. La propriété devient ainsi accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez [Classes statiques et membres de classe statique](./static-classes-and-static-class-members.md).
+Une propriété peut être déclarée en tant que propriété statique à l’aide du mot clé `static`. La propriété devient ainsi accessible à tout moment aux appelants, même s’il n’existe aucune instance de la classe. Pour plus d’informations, consultez la page [Classes statiques et membres de classes statiques](./static-classes-and-static-class-members.md).
 
 Une propriété peut être marquée comme étant une propriété virtuelle à l’aide du mot clé [virtual](../../language-reference/keywords/virtual.md). Cela permet aux classes dérivées de substituer le comportement de la propriété à l’aide du mot clé [override](../../language-reference/keywords/override.md). Pour plus d'informations sur ces options, consultez [Héritage](inheritance.md).
 
@@ -76,15 +76,15 @@ Un propriété qui se substitue à une propriété virtuelle peut aussi être [s
 > [!NOTE]
 > Il s’agit d’une erreur d’utiliser un modificateur [virtual](../../language-reference/keywords/virtual.md), [abstract](../../language-reference/keywords/abstract.md) ou [override](../../language-reference/keywords/override.md) sur un accesseur de propriété [static](../../language-reference/keywords/static.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Cet exemple illustre les propriétés d’instance, statiques et en lecture seule. Il accepte le nom de l’employé à partir du clavier, incrémente `NumberOfEmployees` de 1 et affiche le nom et le numéro de l’employé.
 
 [!code-csharp[csProgGuideProperties#2](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#2)]
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
-Cet exemple montre comment accéder à une propriété d’une classe de base qui est masquée par une autre propriété qui porte le même nom dans une classe dérivée :
+Cet exemple montre comment accéder à une propriété dans une classe de base qui est cachée par une autre propriété qui porte le même nom dans une classe dérivée :
 
 [!code-csharp[csProgGuideProperties#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideProperties/CS/Properties.cs#3)]
 
@@ -100,7 +100,7 @@ Voici les points importants de l’exemple précédent :
 
      Pour plus d’informations sur le masquage des membres, consultez [new, modificateur](../../language-reference/keywords/new-modifier.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Dans cet exemple, deux classes, `Cube` et `Square`, implémentent une classe abstract, `Shape`, et remplacent sa propriété `Area` abstract. Notez l’utilisation du modificateur [override](../../language-reference/keywords/override.md) sur les propriétés. Le programme accepte le côté (« side ») comme entrée et calcule les surfaces (« areas ») du carré (« square ») et du cube. De même, il accepte la surface (« area ») comme entrée et calcule le côté (« side ») correspondant du carré (« square ») et du cube.
 

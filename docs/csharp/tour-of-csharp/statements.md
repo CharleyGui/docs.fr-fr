@@ -4,10 +4,10 @@ description: Vous créez les actions d’un programme C# à l’aide d’instruc
 ms.date: 02/27/2020
 ms.assetid: 5409c379-5622-4fae-88b5-1654276ea8d4
 ms.openlocfilehash: ced13b1bfd17977acb98bf33c0a477161cf08a93
-ms.sourcegitcommit: 00aa62e2f469c2272a457b04e66b4cc3c97a800b
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/28/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "78159102"
 ---
 # <a name="statements"></a>Instructions
@@ -20,11 +20,11 @@ Les *instructions de déclaration* sont utilisées pour déclarer des variables 
 
 Les *instructions d’expression* sont utilisées pour évaluer des expressions. Les expressions qui peuvent être utilisées en tant qu’instructions comprennent les appels de méthode, les allocations d’objet avec l’opérateur `new`, les affectations avec `=` et les opérateurs d’assignation composée, les opérations d’incrémentation et de décrémentation à l’aide des opérateurs `++` et `--` et les expressions `await`.
 
-Les *instructions de sélection* sont utilisées pour sélectionner un nombre d’instructions possibles pour l’exécution en fonction de la valeur d’une expression. Ce groupe contient les instructions `if` et `switch`.
+Les *instructions de sélection* sont utilisées pour sélectionner un nombre d’instructions possibles pour l’exécution en fonction de la valeur d’une expression. Ce groupe `if` contient `switch` les et les déclarations.
 
-Les *instructions d’itération* servent à exécuter à plusieurs reprises une instruction incorporée. Ce groupe contient les instructions `while`, `do`, `for`et `foreach`.
+Les *instructions d’itération* servent à exécuter à plusieurs reprises une instruction incorporée. Ce groupe `while`contient `do` `for`le `foreach` , , et les déclarations.
 
-Les *instructions de saut* sont utilisées pour transférer le contrôle. Ce groupe contient les instructions `break`, `continue`, `goto`, `throw`, `return`et `yield`.
+Les *instructions de saut* sont utilisées pour transférer le contrôle. Ce groupe `break`contient `continue` `goto`le `throw` `return`, `yield` , , , et les déclarations.
 
 L’instruction `try`...`catch` est utilisée pour intercepter les exceptions qui se produisent pendant l’exécution d’un bloc, et l’instruction `try`...`finally` permet de spécifier que le code de finalisation est toujours exécuté, qu’une exception se soit produite ou non.
 
@@ -109,5 +109,5 @@ La liste suivante décrit les types d’instructions qui peuvent être utilisés
  [!code-csharp[UsingStatement](../../../samples/snippets/csharp/tour/statements/Program.cs#L198-L206)]
 
 >[!div class="step-by-step"]
->[Précédent](expressions.md)
->[Suivant](classes-and-objects.md)
+>[Suivant précédent](expressions.md)
+>[Next](classes-and-objects.md)

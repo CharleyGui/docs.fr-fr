@@ -3,17 +3,17 @@ title: Effectuer une itération dans des collections (C#)
 ms.date: 08/14/2018
 ms.assetid: c93f6dd4-e72a-4a06-be1c-a98b3255b734
 ms.openlocfilehash: aceedd11466c75cedad3c67224c3a5595b4cabfa
-ms.sourcegitcommit: 44a7cd8687f227fc6db3211ccf4783dc20235e51
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/26/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77626268"
 ---
 # <a name="iterators-c"></a>Itérateurs (C#)
 
 Un *itérateur* peut être utilisé pour parcourir des collections, comme des listes et des tableaux.
 
-Une méthode d’itérateur ou un accesseur `get` effectue une itération personnalisée sur une collection. Une méthode d’itérateur utilise l’instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actif dans le code est mémorisé. L’exécution est redémarrée à partir de cet emplacement lors de l’appel suivant de la fonction d’itérateur.
+Une méthode d’itérateur ou un accesseur `get` effectue une itération personnalisée sur une collection. Une méthode d’itérateur utilise l’instruction [yield return](../../language-reference/keywords/yield.md) pour retourner chaque élément un par un. Quand une instruction `yield return` est atteinte, l’emplacement actuel dans le code est mémorisé. L’exécution est redémarrée à partir de cet emplacement lors de l’appel suivant de la fonction d’itérateur.
 
 Vous consommez un itérateur à partir du code client en utilisant une instruction [foreach](../../language-reference/keywords/foreach-in.md) ou une requête LINQ.
 
@@ -324,11 +324,11 @@ public class Stack<T> : IEnumerable<T>
 
 Un itérateur peut être une méthode ou un accesseur `get`. Un itérateur ne peut pas être présent dans un événement, un constructeur d’instance, un constructeur statique ou un finaliseur statique.
 
-Une conversion implicite doit exister à partir du type d’expression dans l’instruction `yield return` vers l’argument de type pour le `IEnumerable<T>` retourné par l’itérateur.
+Une conversion implicite doit exister du `yield return` type d’expression `IEnumerable<T>` dans la déclaration à l’argument de type pour le retourné par l’itérateur.
 
 En C#, une méthode d’itérateur ne peut avoir aucun paramètre `in`, `ref` ou `out`.
 
-Dans C#, `yield` n’est pas un mot réservé et a une signification spéciale uniquement lorsqu’il est utilisé avant un mot clé `return` ou `break`.
+Dans C, `yield` n’est pas un mot réservé et n’a une signification particulière que lorsqu’il est utilisé avant un `return` ou `break` un mot clé.
 
 ## <a name="technical-implementation"></a>Implémentation technique
 
@@ -359,6 +359,6 @@ Les itérateurs vous permettent de conserver la simplicité d’une boucle `fore
 - <xref:System.Collections.Generic>
 - <xref:System.Collections.Generic.IEnumerable%601>
 - [foreach, in](../../language-reference/keywords/foreach-in.md)
-- [yield](../../language-reference/keywords/yield.md)
-- [Utilisation de foreach avec des tableaux](../arrays/using-foreach-with-arrays.md)
+- [Rendement](../../language-reference/keywords/yield.md)
+- [Utiliser foreach avec des tableaux](../arrays/using-foreach-with-arrays.md)
 - [Génériques](../generics/index.md)

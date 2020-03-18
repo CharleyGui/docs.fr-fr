@@ -8,10 +8,10 @@ helpviewer_keywords:
 - unsafe compiler option [C#]
 - /unsafe compiler option [C#]
 ms.openlocfilehash: 146299fda103567b111c66400c17edf36addd843
-ms.sourcegitcommit: c4e9d05644c9cb89de5ce6002723de107ea2e2c4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 05/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "65877991"
 ---
 # <a name="-unsafe-c-compiler-options"></a>-unsafe (Options du compilateur C#)
@@ -24,7 +24,7 @@ L’option de compilateur **-unsafe** permet la compilation de code utilisant le
 -unsafe  
 ```  
   
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes 
 
 Pour plus d’informations sur le code unsafe, consultez [Pointeurs et code unsafe](../../programming-guide/unsafe-code-pointers/index.md).  
   
@@ -48,7 +48,7 @@ Ouvrez le fichier .csproj d’un projet et ajoutez les éléments suivants :
 
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.CSharpProjectConfigurationProperties3.AllowUnsafeBlocks%2A>.  
   
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 Compilez `in.cs` selon le mode non sécurisé :  
   
@@ -58,5 +58,5 @@ csc -unsafe in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](index.md)
+- [Options de compilateur C](index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

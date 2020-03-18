@@ -1,15 +1,15 @@
 ---
-title: 'Exemple de fichier XML : Commandes fournisseur consolidées2'
+title: 'Exemple de fichiers XML : Commandes fournisseur consolidées2'
 ms.date: 07/20/2015
 ms.assetid: 9d9698a5-95f2-4564-813b-ba536cdf3bfb
 ms.openlocfilehash: abd9a8f49cbd1308dfb1c043f310601decf64336
-ms.sourcegitcommit: 155012a8a826ee8ab6aa49b1b3a3b532e7b7d9bd
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 06/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "66483797"
 ---
-# <a name="sample-xml-file-consolidated-purchase-orders"></a>Exemple de fichier XML : Commandes fournisseur consolidées
+# <a name="sample-xml-file-consolidated-purchase-orders"></a>Exemple de fichiers XML : Commandes fournisseur consolidées
 Le fichier XML suivant est utilisé dans différents exemples dans la documentation [!INCLUDE[sqltecxlinq](~/includes/sqltecxlinq-md.md)]. Ce fichier est un ensemble de commandes fournisseur avec différentes formes provenant de plusieurs sociétés. Les commandes fournisseur de chaque société sont dans des espaces de noms distincts.  
   
 ## <a name="consolidatedpurchaseordersxml"></a>ConsolidatedPurchaseOrders.xml  

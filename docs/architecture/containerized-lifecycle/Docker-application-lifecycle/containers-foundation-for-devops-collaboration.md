@@ -3,19 +3,19 @@ title: Conteneurs comme fondement de la collaboration DevOps
 description: Découvrez le rôle clé des conteneurs pour rationaliser DevOps.
 ms.date: 02/15/2019
 ms.openlocfilehash: 8258f4331212d92376d64fef318adcdff492f61f
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73094501"
 ---
 # <a name="containers-as-the-foundation-for-devops-collaboration"></a>Conteneurs comme fondement de la collaboration DevOps
 
 Compte tenu de la nature-même des conteneurs et de la technologie Docker, les développeurs peuvent facilement partager leurs logiciels et leurs dépendances avec le personnel informatique et des environnements de production tout en éliminant l’excuse classique « Ça fonctionne sur ma machine ». Les conteneurs résolvent les conflits d’applications entre les différents environnements. Indirectement, les conteneurs et Docker rapprochent les développeurs et le personnel informatique, en facilitant leur collaboration efficace. Adopter le workflow de conteneur offre à de nombreux clients la continuité DevOps qu’ils recherchaient mais qu’ils devaient auparavant implémenter par le biais d’une configuration plus complexe pour les pipelines de mise en production et de build. Les conteneurs simplifient les pipelines de build/test/déploiement dans DevOps.
 
-![Diagramme montrant la propriété du cycle de vie d’une application de station d’accueil.](./media/containers-foundation-for-devops-collaboration/persona-workloads-docker-container-lifecycle.png)
+![Diagramme montrant la propriété du cycle de vie d’une application Docker.](./media/containers-foundation-for-devops-collaboration/persona-workloads-docker-container-lifecycle.png)
 
-**Figure 2-1.** Charges de travail principales par « personne » dans le cycle de vie des applications Docker conteneurisées
+**Figure 2-1.** Charges de travail principales par « personne » dans le cycle de vie des applications Docker conteneurisées
 
 Avec les conteneurs Docker, les développeurs possèdent ce qui se trouve dans le conteneur (application, service et dépendances aux frameworks et composants) et déterminent la façon dont les conteneurs et services se comportent ensemble comme une application composée d’une collection de services. Les interdépendances des différents conteneurs sont définies dans un fichier `docker-compose.yml` ou ce qui pourrait être appelé *manifeste de déploiement*. Entre temps, les équipes informatiques (professionnels de l’informatique et gestion informatique) peuvent se concentrer sur la gestion des environnements de production, l’infrastructure, la scalabilité, la supervision et enfin la garantie que les applications sont fournies correctement aux utilisateurs finaux, sans avoir à connaître le contenu des différents conteneurs. D’où le nom « conteneur », qui rappelle l’analogie avec les conteneurs de transport du monde réel. Par conséquent, les propriétaires du contenu d’un conteneur n’ont pas à se préoccuper de la façon dont le conteneur sera expédié, tandis que la société de transport achemine un conteneur de son point d’origine jusqu’à sa destination sans connaître le contenu ou sans s’y intéresser. De la même façon, les développeurs peuvent créer et posséder le contenu d’un conteneur Docker sans avoir à se préoccuper des mécanismes de « transport ».
 
@@ -57,9 +57,9 @@ Si vous pouvez répondre à toutes ces questions, vous serez mieux préparé pou
 
 La figure 2-2 présente un workflow plus détaillé d’un cycle de vie d’application Docker, en s’intéressant particulièrement, dans cet exemple, à des activités et ressources DevOps spécifiques.
 
-![Diagramme montrant le cycle de vie générique de bout en bout d’une application Dockr.](./media/containers-foundation-for-devops-collaboration/generic-end-to-enddpcker-app-life-cycle.png)
+![Diagramme montrant le cycle de vie générique de bout en bout d’une application Docker.](./media/containers-foundation-for-devops-collaboration/generic-end-to-enddpcker-app-life-cycle.png)
 
-**Figure 2-2.** Workflow général du cycle de vie d’application conteneurisée Docker
+**Figure 2-2.** Workflow général du cycle de vie d’application conteneurisée Docker
 
 Tout commence par le développeur, qui démarre l’écriture de code dans le workflow de la boucle interne. L’étape de la boucle interne est celle où les développeurs définissent tout ce qui se produit avant de pousser (push) le code vers le dépôt de code (par exemple, un système de gestion du code source comme Git). Une fois la validation effectuée, le dépôt déclenche l’intégration continue (CI) et le reste du workflow.
 
@@ -92,5 +92,5 @@ Voici quelques-uns des principaux avantages fournis par un workflow DevOps solid
 - Affecter une connexion de type « plug and play » correcte à un grand nombre de vos investissements DevOps existants, notamment les investissements en open source.
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[Suivant](../Microsoft-platform-tools-containerized-apps/index.md)
+>[Suivant précédent](index.md)
+>[Next](../Microsoft-platform-tools-containerized-apps/index.md)

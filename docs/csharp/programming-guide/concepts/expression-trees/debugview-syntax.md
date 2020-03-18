@@ -9,13 +9,13 @@ helpviewer_keywords:
 - expression trees
 - debugview
 ms.openlocfilehash: ba695fc808108c49a4eee3c70a305b24c91769d8
-ms.sourcegitcommit: d6e27023aeaffc4b5a3cb4b88685018d6284ada4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/09/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "67661717"
 ---
-# <a name="debugview-syntax"></a>Syntaxe `DebugView`
+# <a name="debugview-syntax"></a>Syntaxe de `DebugView`
 
 La propriété `DebugView` (disponible uniquement lors du débogage) fournit un rendu de la chaîne d’arborescences d’expression. La plupart de la syntaxe est assez simple à comprendre ; les cas spéciaux sont décrits dans les sections suivantes.
 
@@ -50,11 +50,11 @@ Pour les types numériques comportant des suffixes standard comme littéraux C#
 | Type | Mot clé | Suffixe |
 |--|--|--|
 | <xref:System.UInt32?displayProperty=nameWithType> | [uint](../../../language-reference/builtin-types/integral-numeric-types.md) | U |
-| <xref:System.Int64?displayProperty=nameWithType> | [long](../../../language-reference/builtin-types/integral-numeric-types.md) | L |
-| <xref:System.UInt64?displayProperty=nameWithType> | [ulong](../../../language-reference/builtin-types/integral-numeric-types.md) | UL |
-| <xref:System.Double?displayProperty=nameWithType> | [double](../../../language-reference/builtin-types/floating-point-numeric-types.md) | D |
-| <xref:System.Single?displayProperty=nameWithType> | [float](../../../language-reference/builtin-types/floating-point-numeric-types.md) | F |
-| <xref:System.Decimal?displayProperty=nameWithType> | [decimal](../../../language-reference/builtin-types/floating-point-numeric-types.md) | M |
+| <xref:System.Int64?displayProperty=nameWithType> | [Long](../../../language-reference/builtin-types/integral-numeric-types.md) | L |
+| <xref:System.UInt64?displayProperty=nameWithType> | [Ulong](../../../language-reference/builtin-types/integral-numeric-types.md) | UL |
+| <xref:System.Double?displayProperty=nameWithType> | [Double](../../../language-reference/builtin-types/floating-point-numeric-types.md) | D |
+| <xref:System.Single?displayProperty=nameWithType> | [Flotteur](../../../language-reference/builtin-types/floating-point-numeric-types.md) | F |
+| <xref:System.Decimal?displayProperty=nameWithType> | [Decimales](../../../language-reference/builtin-types/floating-point-numeric-types.md) | M |
 
 ### <a name="examples"></a>Exemples
 

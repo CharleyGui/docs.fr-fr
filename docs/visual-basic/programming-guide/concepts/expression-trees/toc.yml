@@ -1,11 +1,11 @@
 - name: Arborescences de l’expression
   href: index.md
   items:
-    - name: "Procédure\_: exécuter des arborescences d’expressions"
+    - name: "Comment\_: exécuter des arborescences d’expression"
       href: how-to-execute-expression-trees.md
-    - name: "Procédure\_: modifier des arborescences d’expressions"
+    - name: "Comment\_: modifier des arborescences d'expression"
       href: how-to-modify-expression-trees.md
-    - name: "Procédure\_: utiliser des arborescences d’expressions dans le but de générer des requêtes dynamiques"
+    - name: "Comment\_: utiliser des arborescences d’expression pour générer des requêtes dynamiques"
       href: how-to-use-expression-trees-to-build-dynamic-queries.md
     - name: Débogage d’arborescences d’expressions
       href: debugging-expression-trees-in-visual-studio.md

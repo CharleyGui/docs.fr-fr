@@ -4,11 +4,11 @@ description: Découvrez comment effectuer des jointures internes à l’aide de 
 ms.date: 12/01/2016
 ms.assetid: 45bceed6-f549-4114-a9b1-b44feb497742
 ms.openlocfilehash: a3e8e9bd97ec630797bc48a3302b27ed45d9103e
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857955"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "61659837"
 ---
 # <a name="perform-inner-joins"></a>Effectuer des jointures internes
 
@@ -20,7 +20,7 @@ Cet article explique comment effectuer quatre variations d’une jointure intern
 
 - Une jointure interne qui met en corrélation des éléments de deux sources de données sur la base d’une clé *composite*. Une clé composite, qui est une clé composée de plusieurs valeurs, permet de mettre en corrélation des éléments sur la base de plusieurs propriétés.
 
-- Une  *jointure multiple* dans laquelle les opérations de jointure consécutives sont ajoutées les unes aux autres.
+- Une * jointure multiple* dans laquelle les opérations de jointure consécutives sont ajoutées les unes aux autres.
 
 - Une jointure interne qui est implémentée à l’aide d’une jointure groupée.
 

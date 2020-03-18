@@ -5,10 +5,10 @@ helpviewer_keywords:
 - command-line arguments [C#]
 ms.assetid: 0e597e0d-ea7a-41ba-a38a-0198122f3c26
 ms.openlocfilehash: d6775263e6f1afb227aa263b01d60f5181da74f3
-ms.sourcegitcommit: 011314e0c8eb4cf4a11d92078f58176c8c3efd2d
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/09/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77093508"
 ---
 # <a name="command-line-arguments-c-programming-guide"></a>Arguments de ligne de commande (Guide de programmation C#)
@@ -20,7 +20,7 @@ Vous pouvez envoyer des arguments à la méthode `Main` en définissant la méth
 [!code-csharp[csProgGuideMain#3](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class3.cs#3)]
 
 > [!NOTE]
-> Pour activer les arguments de ligne de commande dans la méthode `Main` dans une application Windows Forms, vous devez modifier manuellement la signature de `Main` dans *Program.cs*. Le code généré par le Concepteur Windows Forms crée un `Main` sans paramètre d’entrée. Vous pouvez également utiliser <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> ou <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pour accéder aux arguments de ligne de commande à partir de n’importe quel emplacement d’une application console ou Windows.
+> Pour activer les arguments `Main` de la ligne de commande dans la `Main` méthode d’une application Windows Forms, vous devez modifier manuellement la signature de dans *program.cs*. Le code généré par le Concepteur Windows Forms crée un `Main` sans paramètre d’entrée. Vous pouvez également utiliser <xref:System.Environment.CommandLine%2A?displayProperty=nameWithType> ou <xref:System.Environment.GetCommandLineArgs%2A?displayProperty=nameWithType> pour accéder aux arguments de ligne de commande à partir de n’importe quel emplacement d’une application console ou Windows.
 
 Le paramètre de la méthode `Main` est un tableau <xref:System.String> qui représente les arguments de ligne de commande. En général, vous déterminez s’il existe des arguments en testant la propriété `Length`, par exemple :
 
@@ -38,7 +38,7 @@ Il est également possible d’utiliser le type C# `long`, qui sert d’alias �
 long num = long.Parse(args[0]);
 ```
 
-Vous pouvez également utiliser la méthode `Convert` de la classe `ToInt64` pour obtenir le même résultat :
+Vous pouvez également utiliser la méthode `ToInt64` de la classe `Convert` pour obtenir le même résultat :
 
 ```csharp
 long num = Convert.ToInt64(s);
@@ -46,13 +46,13 @@ long num = Convert.ToInt64(s);
 
 Pour plus d’informations, consultez <xref:System.Int64.Parse%2A> et <xref:System.Convert>.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser des arguments de ligne de commande dans une application console. L’application prend un argument au moment de l’exécution, le convertit en entier, puis calcule la factorielle du nombre. Si aucun argument n’est fourni, l’application affiche un message pour expliquer comment le programme doit être utilisé.
 
 Pour compiler et exécuter l’application à partir d’une invite de commandes, procédez comme suit :
 
-1. Collez le code suivant dans un éditeur de texte, puis enregistrez le fichier en tant que fichier texte sous le nom *Factorial.cs*.
+1. Coller le code suivant dans n’importe quel éditeur de texte, puis enregistrer le fichier comme un fichier texte avec le nom *Factorial.cs*.
 
      [!code-csharp[csProgGuideMain#16](~/samples/snippets/csharp/VS_Snippets_VBCSharp/csProgGuideMain/CS/Class1.cs#16)]
 
@@ -62,7 +62,7 @@ Pour compiler et exécuter l’application à partir d’une invite de commandes
   
      `csc Factorial.cs`  
   
-     Si votre application n’a pas d’erreurs de compilation, un fichier exécutable nommé *factori. exe* est créé.
+     Si votre application n’a pas d’erreurs de compilation, un fichier exécutable qui s’appelle *Factorial.exe* est créé.
   
 4. Entrez la commande suivante pour calculer la factorielle de 3 :
   
@@ -78,6 +78,6 @@ Pour compiler et exécuter l’application à partir d’une invite de commandes
 - <xref:System.Environment?displayProperty=nameWithType>
 - [Guide de programmation C#](../index.md)
 - [Main() et arguments de ligne de commande](index.md)
-- [Comment afficher les arguments de ligne de commande](how-to-display-command-line-arguments.md)
+- [Comment afficher les arguments de la ligne de commande](how-to-display-command-line-arguments.md)
 - [Valeurs de retour Main()](main-return-values.md)
 - [Classes](../classes-and-structs/classes.md)

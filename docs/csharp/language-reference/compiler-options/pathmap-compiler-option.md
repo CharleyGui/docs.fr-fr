@@ -8,10 +8,10 @@ helpviewer_keywords:
 - pathmap compiler option [C#]
 - /pathmap compiler option [C#]
 ms.openlocfilehash: 48e96d2ec2ccbea83d573c0eb3630b1591c407a9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606626"
 ---
 # <a name="-pathmap-c-compiler-options"></a>-pathmap (Options du compilateur C#)
@@ -32,7 +32,7 @@ L’option de compilateur **-pathmap** spécifie comment mapper des chemins phys
 
 Pour spécifier plusieurs chemins sources mappés, séparez-les par des virgules.
 
-## <a name="remarks"></a>Remarques
+## <a name="remarks"></a>Notes 
 
 Le compilateur écrit le chemin source dans sa sortie dans les cas suivants :
 
@@ -42,7 +42,7 @@ Le compilateur écrit le chemin source dans sa sortie dans les cas suivants :
 
 Cette option mappe chaque chemin physique de l’ordinateur sur lequel le compilateur s’exécute à un chemin correspondant qui doit être écrit dans les fichiers de sortie.
 
-## <a name="example"></a>Exemples
+## <a name="example"></a> Exemple
 
 Compilez `t.cs` dans le répertoire **C:\\work\\tests** et mappez ce répertoire à **\publish** dans la sortie :
 
@@ -52,5 +52,5 @@ csc -pathmap:C:\work\tests=\publish t.cs
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

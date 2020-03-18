@@ -12,10 +12,10 @@ helpviewer_keywords:
 - resource compiler option [C#]
 ms.assetid: 5212666e-98ab-47e4-a497-b5545ab15c7f
 ms.openlocfilehash: e14bf59f5922a918b627af22c052c8efd9081e84
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69602527"
 ---
 # <a name="-resource-c-compiler-options"></a>-resource (Options du compilateur C#)
@@ -35,9 +35,9 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
  Nom logique de la ressource. Il s’agit du nom utilisé pour charger la ressource. La valeur par défaut est le nom du fichier.  
   
  `accessibility-modifier` (facultatif)  
- Accessibilité de la ressource : publique ou privée. La valeur par défaut est « public ».  
+ Accessibilité de la ressource : publique ou privée. La valeur par défaut est public.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  Utilisez [-linkresource](./linkresource-compiler-option.md) pour lier une ressource à un assembly sans ajouter le fichier de ressources au fichier de sortie.  
   
  Par défaut, les ressources sont publiques dans l’assembly quand elles sont créées à l’aide du compilateur C#. Pour rendre les ressources privées, spécifiez le modificateur d’accessibilité `private`. Aucune accessibilité autre `public` ou `private` n’est autorisée.  
@@ -56,11 +56,11 @@ Incorpore la ressource spécifiée dans le fichier de sortie.
   
 3. Sélectionnez **Action de génération** pour le fichier dans la fenêtre **Propriétés**.  
   
-4. Définissez **Action de génération**  sur **Ressource incorporée**.  
+4. Définissez **Action de génération ** sur **Ressource incorporée**.  
   
  Pour plus d'informations sur la façon de définir cette option du compilateur par programme, consultez <xref:VSLangProj80.FileProperties2.BuildAction%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez `in.cs` et attachez le fichier de ressources `rf.resource` :  
   
 ```console  
@@ -69,5 +69,5 @@ csc -resource:rf.resource in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

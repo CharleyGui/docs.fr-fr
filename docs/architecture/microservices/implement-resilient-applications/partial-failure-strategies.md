@@ -3,10 +3,10 @@ title: Stratégies pour la gestion d’une défaillance partielle
 description: Découvrez plusieurs stratégies pour gérer normalement les défaillances partielles.
 ms.date: 10/16/2018
 ms.openlocfilehash: e96fe99ab44b924460e01abaad30aa3e2432117a
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68674506"
 ---
 # <a name="strategies-to-handle-partial-failure"></a>Stratégies pour gérer une défaillance partielle
@@ -19,7 +19,7 @@ Les stratégies pour la gestion des défaillances partielles sont les suivantes.
 
 **Contournez les délais d’attente réseau**. En général, les clients doivent être conçus pour ne pas se bloquer indéfiniment et pour toujours utiliser des délais d’expiration lors de l’attente d’une réponse. L’utilisation de délais d’expiration garantit que les ressources ne sont jamais bloquées indéfiniment.
 
-**Utilisez le modèle Disjoncteur**. Dans cette approche, le processus client suit le nombre de requêtes ayant échoué. Si le taux d’erreurs dépasse une limite configurée, un « disjoncteur » est déclenché de sorte que les autres tentatives échouent immédiatement. (L’échec d’un grand nombre de requêtes est le signe que le service n’est pas disponible et qu’il est inutile d’envoyer des requêtes.) Après un délai d’expiration, le client doit réessayer. Si les nouvelles requêtes réussissent, fermez le disjoncteur.
+**Utilisez le modèle Disjoncteur**. Dans cette approche, le processus client suit le nombre de requêtes ayant échoué. Si le taux d’erreurs dépasse une limite configurée, un « disjoncteur » est déclenché de sorte que les autres tentatives échouent immédiatement. (Si un grand nombre de demandes échouent, cela suggère que le service n’est pas disponible et que l’envoi de demandes est inutile.) Après une période de temps mort, le client devrait essayer à nouveau et, si les nouvelles demandes sont acceptées, fermer le disjoncteur.
 
 **Fournissez des solutions de secours**. Dans cette approche, le processus client exécute la logique de secours en cas d’échec d’une requête, comme le retour de données mises en cache ou d’une valeur par défaut. Il s’agit d’une approche appropriée pour les requêtes, mais qui est plus complexe pour les mises à jour ou les commandes.
 
@@ -33,15 +33,15 @@ Les stratégies pour la gestion des défaillances partielles sont les suivantes.
 - **Ajout de résilience et optimisation des performances**\
   <https://docs.microsoft.com/previous-versions/msp-n-p/jj591574(v=pandp.10)>
 
-- **Cloisonnement.** Dépôt GitHub. Implémentation de la stratégie de Polly.\
+- **Cloison.** Dépôt GitHub. Implémentation de la stratégie de Polly.
   <https://github.com/App-vNext/Polly/wiki/Bulkhead>
 
-- **Conception d’applications résilientes pour Azure**\
+- **Concevoir des applications résilientes pour Azure**\
   [https://docs.microsoft.com/azure/architecture/resiliency/](/azure/architecture/resiliency/)
 
-- **Gestion des erreurs temporaires**\
+- **Manipulation transitoire des défauts**\
   [https://docs.microsoft.com/azure/architecture/best-practices/transient-faults](/azure/architecture/best-practices/transient-faults)
 
 >[!div class="step-by-step"]
->[Précédent](handle-partial-failure.md)
->[Suivant](implement-retries-exponential-backoff.md)
+>[Suivant précédent](handle-partial-failure.md)
+>[Next](implement-retries-exponential-backoff.md)

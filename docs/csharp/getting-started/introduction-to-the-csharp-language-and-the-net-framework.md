@@ -7,13 +7,13 @@ helpviewer_keywords:
 - Visual C#, about
 ms.assetid: 0a2dff4e-cd84-42ff-8141-e89889b24081
 ms.openlocfilehash: d2fd879203932ea3f2211e38a2efdd626928962b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713909"
 ---
-# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Présentation du C# langage et du .NET Framework
+# <a name="introduction-to-the-c-language-and-the-net-framework"></a>Introduction à la langue C et au cadre .NET
 
 C# est un langage élégant et de type sécurisé orienté objet qui permet aux développeurs de créer toute une gamme d’applications sûres et solides exécutées dans le .NET Framework. Vous pouvez utiliser C# pour créer des applications clientes Windows, services Web XML, composants distribués, applications client-serveur, applications de base de données et bien plus encore. Visual C# fournit un éditeur de code avancé, des concepteurs d’interface utilisateur pratiques, un débogueur intégré et de nombreux autres outils pour faciliter le développement d’applications basées sur le langage C# et le .NET Framework.  
   
@@ -22,7 +22,7 @@ C# est un langage élégant et de type sécurisé orienté objet qui permet aux 
   
 ## <a name="c-language"></a>langage C#
 
-La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe de l’accolade de C# sera instantanément reconnue à toute personne connaissant bien C, C++ou Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. C#la syntaxe simplifie un grand nombre des complexités de et fournit des C++ fonctionnalités puissantes telles que les types valeur Nullable, les énumérations, les délégués, les expressions lambda et l’accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions LINQ (Language-Integrated Query) font de la requête fortement typée une construction de langage de première classe.  
+La syntaxe C# est très expressive, mais elle est également simple et facile à apprendre. La syntaxe bouclée de Cmd sera immédiatement reconnaissable à toute personne familière avec C, C OU Java. Les développeurs qui connaissent un de ces langages peuvent généralement commencer à travailler efficacement en C# en très peu de temps. La syntaxe C simplifie bon nombre des complexités de la Cmd et fournit des caractéristiques puissantes telles que des types de valeur nuls, des énumérations, des délégués, des expressions lambda et un accès direct à la mémoire. C# prend en charge des méthodes et types génériques qui fournissent de meilleures performances et plus de sécurité pour les types, et des itérateurs, qui permettent aux implémenteurs de classes de collection de définir des comportements d’itération personnalisés qui peuvent être utilisés facilement par le code client. Les expressions de requêtes intégrées par la langue (LINQ) font de la requête fortement tapée une construction linguistique de première classe.  
   
  En tant que langage orienté objet, C# prend en charge les concepts d’encapsulation, d’héritage et de polymorphisme. Toutes les variables et méthodes, y compris la méthode `Main`, le point d’entrée de l’application, sont encapsulées dans des définitions de classe. Une classe peut hériter directement d'une classe parent, mais peut implémenter un nombre quelconque d'interfaces. Les méthodes qui substituent des méthodes virtuelles dans une classe parente requièrent le mot-clé `override` pour éviter toute redéfinition accidentelle. En C#, un struct est comme une classe légère : il s’agit d’un type alloué par la pile qui peut implémenter des interfaces mais ne prend pas en charge l’héritage.  
   
@@ -36,9 +36,9 @@ La syntaxe C# est très expressive, mais elle est également simple et facile à
   
 - Commentaires de documentation XML inline.  
   
-- LINQ (Language-Integrated Query), qui fournit des fonctionnalités de requête intégrées sur diverses sources de données.  
+- Requête intégrée en langue (LINQ), qui offre des capacités de requête intégrées dans une variété de sources de données.  
   
- Si vous devez interagir avec d’autres logiciels Windows, comme des objets COM ou des DLL Win32 natives, vous pouvez pour cela utiliser un processus C# appelé « Interop ». L’interopérabilité permet aux programmes C# de faire presque tout ce qu’une application native C++ peut faire. C#prend même en charge les pointeurs et le concept de code « unsafe » dans les cas où l’accès direct à la mémoire est essentiel.  
+ Si vous devez interagir avec d’autres logiciels Windows, comme des objets COM ou des DLL Win32 natives, vous pouvez pour cela utiliser un processus C# appelé « Interop ». L’interopérabilité permet aux programmes C# de faire presque tout ce qu’une application native C++ peut faire. C’prend même en charge les pointeurs et le concept de code "dangereux" pour les cas où l’accès direct à la mémoire est essentiel.  
   
  Le processus de génération de C# est simple par rapport à C et C++ et plus souple qu’avec Java. Il n’existe aucun fichier d’en-tête distinct, et les types et méthodes n’ont pas à être déclarés dans un ordre particulier. Un fichier source C# peut définir un nombre quelconque de classes, structs, interfaces et événements.  
   
@@ -48,15 +48,15 @@ La syntaxe C# est très expressive, mais elle est également simple et facile à
   
 - Pour plus d’informations sur des aspects spécifiques du langage C#, consultez la [Référence de C#](../language-reference/index.md).  
   
-- Pour plus d’informations sur LINQ, consultez [LINQ (Language-Integrated Query)](../programming-guide/concepts/linq/index.md).  
+- Pour plus d’informations sur LINQ, voir [LINQ (Question intégrée des langues)](../programming-guide/concepts/linq/index.md).  
 
 ## <a name="net-framework-platform-architecture"></a>Architecture de la plateforme .NET Framework
 
  C# s’exécute sur le .NET Framework, un composant intégral de Windows qui inclut un système d’exécution virtuel appelé Common Language Runtime (CLR) et un ensemble unifié de bibliothèques de classes. CLR est l’implémentation commerciale par Microsoft de la Common Language Infrastructure (CLI), une norme internationale qui sert de base pour la création d’environnements de développement et d’exécution dans lesquels les langages et bibliothèques fonctionnent ensemble en toute transparence.  
   
- Le code source écrit en C# est compilé dans un [langage intermédiaire (IL)](../../standard/managed-code.md) qui est conforme à la spécification CLI. Le code de langage intermédiaire et les ressources, comme les bitmaps et les chaînes, sont stockés sur disque dans un fichier exécutable appelé assembly, généralement avec l’extension .exe ou .dll. Un assembly contient un manifeste qui fournit des informations sur les types de l’assembly, sa version, sa culture et ses conditions de sécurité.  
+ Le code source écrit dans le C est compilé dans une [langue intermédiaire (IL)](../../standard/managed-code.md) qui est conforme à la spécification CLI. Le code de langage intermédiaire et les ressources, comme les bitmaps et les chaînes, sont stockés sur disque dans un fichier exécutable appelé assembly, généralement avec l’extension .exe ou .dll. Un assembly contient un manifeste qui fournit des informations sur les types de l’assembly, sa version, sa culture et ses conditions de sécurité.  
   
- Lorsque le programme C# est exécuté, l’assembly est chargé dans CLR, qui peut prendre différentes mesures selon les informations contenues dans le manifeste. Ensuite, si les exigences de sécurité sont satisfaites, le CLR effectue une compilation juste-à-temps (JIT) pour convertir le code IL en instructions machine natives. CLR fournit également d’autres services connexes liés au nettoyage automatique de la mémoire (garbage collection), à la gestion des exceptions et à la gestion des ressources. Le code exécuté par le CLR est parfois appelé « code managé », contrairement à « code non managé », qui est compilé dans un langage machine natif ciblant un système spécifique. Le diagramme suivant illustre les relations de compilation et d’exécution des fichiers de code source de C#, les bibliothèques de classes .NET Framework, les assemblys et CLR.  
+ Lorsque le programme C# est exécuté, l’assembly est chargé dans CLR, qui peut prendre différentes mesures selon les informations contenues dans le manifeste. Ensuite, si les exigences de sécurité sont remplies, le CLR effectue la compilation Just-In-Time (JIT) pour convertir le code IL en instructions de machine native. CLR fournit également d’autres services connexes liés au nettoyage automatique de la mémoire (garbage collection), à la gestion des exceptions et à la gestion des ressources. Le code qui est exécuté par le CLR est parfois appelé «code géré», contrairement au «code non géré», qui est compilé dans la langue de la machine native qui cible un système spécifique. Le diagramme suivant illustre les relations de compilation et d’exécution des fichiers de code source de C#, les bibliothèques de classes .NET Framework, les assemblys et CLR.  
   
  ![Du code source C# à l'exécution machine](./media/introduction-to-the-csharp-language-and-the-net-framework/net-architecture-relationships.png)  
   
@@ -68,4 +68,4 @@ La syntaxe C# est très expressive, mais elle est également simple et facile à
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Prise en main avec VisualC#](/visualstudio/ide/quickstart-csharp-console)
+- [Mise en route de Visual C#](/visualstudio/ide/quickstart-csharp-console)

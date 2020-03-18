@@ -5,10 +5,10 @@ ms.technology: csharp-fundamentals
 ms.date: 07/18/2016
 ms.assetid: 0b0c4b0f-4a47-4f66-9b8e-f5c63b195960
 ms.openlocfilehash: 23d193faf9702628698fe558f6667aeb130e8916
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73100668"
 ---
 # <a name="deconstructing-tuples-and-other-types"></a>Déconstruction de tuples et d’autres types
@@ -97,7 +97,7 @@ L’exemple suivant déconstruit un objet `Person` en quatre chaînes (le préno
 
 ## <a name="deconstructing-a-user-defined-type-with-an-extension-method"></a>Déconstruction d’un type défini par l’utilisateur avec une méthode d’extension
 
-Si vous n’avez pas créé une classe, un struct ou une interface, vous pouvez néanmoins déconstruire des objets de ce type en implémentant une ou plusieurs `Deconstruct`[méthodes d’extension](programming-guide/classes-and-structs/extension-methods.md) pour retourner les valeurs qui vous intéressent.
+Si vous n’avez pas créé une classe, un struct ou une interface, vous pouvez néanmoins déconstruire des objets de ce type en implémentant une ou plusieurs `Deconstruct` [méthodes d’extension](programming-guide/classes-and-structs/extension-methods.md) pour retourner les valeurs qui vous intéressent.
 
 L’exemple suivant définit deux méthodes d’extension `Deconstruct` pour la classe <xref:System.Reflection.PropertyInfo?displayProperty=nameWithType>. La première retourne un ensemble de valeurs qui indique les caractéristiques de la propriété, notamment son type, si elle est statique ou d’instance, si elle est en lecture seule et si elle est indexée. La seconde indique l’accessibilité de la propriété. Comme l’accessibilité des accesseurs get et set peut varier, des valeurs booléennes indiquent si la propriété a des accesseurs get et set distincts et, le cas échéant, s’ils ont la même accessibilité. S’il n’existe qu’un seul accesseur, ou si les deux accesseurs get et set ont la même accessibilité, la variable `access` indique l’accessibilité de la propriété comme un tout. Sinon, l’accessibilité des accesseurs get et set est indiquée par les variables `getAccess` et `setAccess`.
 

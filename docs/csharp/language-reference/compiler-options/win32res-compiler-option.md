@@ -10,10 +10,10 @@ helpviewer_keywords:
 - win32res compiler option [C#]
 ms.assetid: 3c33f750-6948-4c7e-a27e-bef98f77255b
 ms.openlocfilehash: 39f02c4c2e060c4be40002a2f48b0da31004a9ae
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606197"
 ---
 # <a name="-win32res-c-compiler-options"></a>-win32res (Options du compilateur C#)
@@ -29,7 +29,7 @@ L’option **-win32res** insère une ressource Win32 dans le fichier de sortie.
  `filename`  
  Fichier de ressources que vous voulez ajouter à votre fichier de sortie.  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  Un fichier de ressources Win32 peut être créé avec le [compilateur de ressources](../../language-reference/compiler-options/resource-compiler-option.md). Le compilateur de ressources est appelé lorsque vous compilez un programme Visual C++ ; un fichier .res est alors créé à partir du fichier .rc.  
   
  Une ressource Win32 peut contenir des informations sur la version ou le fichier bitmap (icône) qui permettent d’identifier votre application dans l’Explorateur de fichiers. Si vous ne spécifiez pas l’option **-win32res**, le compilateur génère des informations de version en fonction de la version de l’assembly.  
@@ -44,7 +44,7 @@ L’option **-win32res** insère une ressource Win32 dans le fichier de sortie.
   
 3. Cliquez sur le bouton **Fichier de ressources** et choisissez un fichier à l’aide de la zone de liste modifiable.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez `in.cs` et attachez un fichier de ressources Win32 `rf.res` afin de générer le fichier `in.exe` :  
   
 ```console  
@@ -53,5 +53,5 @@ csc -win32res:rf.res in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Options du compilateur C#](./index.md)
+- [Options de compilateur C](./index.md)
 - [Gestion des propriétés des projets et des solutions](/visualstudio/ide/managing-project-and-solution-properties)

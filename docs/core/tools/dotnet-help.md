@@ -3,17 +3,17 @@ title: Commande dotnet help
 description: La commande dotnet help affiche une documentation en ligne plus détaillée pour la commande spécifiée.
 ms.date: 02/14/2020
 ms.openlocfilehash: f5d9221ae18653451a3bf97dc82fae396ae4e288
-ms.sourcegitcommit: f38e527623883b92010cf4760246203073e12898
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 02/20/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "77503730"
 ---
 # <a name="dotnet-help-reference"></a>dotnet help reference
 
-**Cet article s’applique à : ✔️ le kit de** développement logiciel (SDK) .net Core 2,0 et versions ultérieures
+**Cet article s’applique à:** ✔️ .NET Core 2.0 SDK et les versions ultérieures
 
-## <a name="name"></a>Name
+## <a name="name"></a>Nom
 
 `dotnet help` : affiche une documentation en ligne plus détaillée pour la commande spécifiée.
 

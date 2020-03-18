@@ -3,10 +3,10 @@ title: Conception de la couche Application de microservices et de l’API web
 description: Architecture de microservices .NET pour les applications .NET conteneurisées | Brève explication des principes SOLID pour la conception de la couche Application.
 ms.date: 10/08/2018
 ms.openlocfilehash: 3c3b9f74e76e01deafa1f97de5d3250d57716014
-ms.sourcegitcommit: f20dd18dbcf2275513281f5d9ad7ece6a62644b4
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 07/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "68676516"
 ---
 # <a name="design-the-microservice-application-layer-and-web-api"></a>Concevoir la couche Application de microservices et l’API web
@@ -35,15 +35,15 @@ Un autre guide serait nécessaire pour couvrir les principes SOLID de façon app
 
 #### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **SOLID: Fundamental OOP Principles** \
+- **SOLID: Principes fondamentaux OOP** \
   <https://deviq.com/solid/>
 
-- **Inversion of Control Containers and the Dependency Injection pattern** \
+- **Inversion des conteneurs de contrôle et le modèle d’injection de dépendance** \
   <https://martinfowler.com/articles/injection.html>
 
-- **Steve Smith. New is Glue** \
+- **Steve Smith. Nouveau est Glue** \
   <https://ardalis.com/new-is-glue>
 
 > [!div class="step-by-step"]
-> [Précédent](nosql-database-persistence-infrastructure.md)
-> [Suivant](microservice-application-layer-implementation-web-api.md)
+> [Suivant précédent](nosql-database-persistence-infrastructure.md)
+> [Next](microservice-application-layer-implementation-web-api.md)

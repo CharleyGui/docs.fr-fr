@@ -8,17 +8,17 @@ helpviewer_keywords:
 - by keyword [C#]
 ms.assetid: efe6f0e3-be40-4df2-a144-c7db968ae052
 ms.openlocfilehash: 4fa32a0dbfd8210ef8537aee849a55414b107a7b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713735"
 ---
 # <a name="by-c-reference"></a>by (Référence C#)
 
-Le mot clé contextuel `by` est utilisé dans la clause `group` dans une expression de requête pour spécifier la façon dont les éléments retournés doivent être groupés. Pour plus d’informations, consultez [group, clause](./group-clause.md).
+Le mot clé contextuel `by` est utilisé dans la clause `group` dans une expression de requête pour spécifier la façon dont les éléments retournés doivent être groupés. Pour plus d’informations, voir [clause de groupe](./group-clause.md).
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant illustre l’utilisation du mot clé contextuel `by` dans une clause `group` pour spécifier que les étudiants doivent être groupés en fonction de la première lettre de leur nom.
 

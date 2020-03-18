@@ -7,7 +7,7 @@
       href: architecture-comparison.md
     - name: Modèles d'hébergement
       href: hosting-models.md
-    - name: Structure de projet
+    - name: Structure du projet
       href: project-structure.md
     - name: Démarrage
       href: app-startup.md
@@ -15,13 +15,13 @@
       href: components.md
     - name: 'Pages, routage et dispositions'
       href: pages-routing-layouts.md
-    - name: Gestion de l'état
+    - name: Gestion de l’état
       href: state-management.md
     - name: Formulaires et validation
       href: forms-validation.md
     - name: Traitement des données
       href: data.md
-    - name: Middlewares
+    - name: Intergiciel (middleware)
       href: middleware.md
     - name: Configuration
       href: config.md

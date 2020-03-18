@@ -9,10 +9,10 @@ helpviewer_keywords:
 - /target compiler options [C#], /target:library
 ms.assetid: c5670e88-2126-47c1-8d1c-217923837d17
 ms.openlocfilehash: c947b2015c19d0809cab4535e989ee83ebf17fd9
-ms.sourcegitcommit: 986f836f72ef10876878bd6217174e41464c145a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/19/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "69606392"
 ---
 # <a name="-targetlibrary-c-compiler-options"></a>-target:library (Options du compilateur C#)
@@ -24,7 +24,7 @@ L’option **-target:library** indique au compilateur de créer une bibliothèqu
 -target:library  
 ```  
   
-## <a name="remarks"></a>Remarques  
+## <a name="remarks"></a>Notes   
  La DLL est créée avec l’extension .dll.  
   
  Sauf spécification contraire avec l’option [-out](./out-compiler-option.md), le fichier de sortie prend le nom du premier fichier d’entrée.  
@@ -41,9 +41,9 @@ L’option **-target:library** indique au compilateur de créer une bibliothèqu
   
 3. Modifiez la propriété **Type de sortie**.  
   
- Pour plus d’informations sur la définition de cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
+ Pour plus d’informations sur la façon de définir cette option du compilateur par programmation, consultez <xref:VSLangProj80.ProjectProperties3.OutputType%2A>.  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Compilez `in.cs`, en créant `in.dll` :  
   
 ```console  
@@ -52,5 +52,5 @@ csc -target:library in.cs
   
 ## <a name="see-also"></a>Voir aussi
 
-- [-target (Options du compilateur C#)](./target-compiler-option.md)
-- [Options du compilateur C#](./index.md)
+- [-cible (Options compilateur C)](./target-compiler-option.md)
+- [Options de compilateur C](./index.md)

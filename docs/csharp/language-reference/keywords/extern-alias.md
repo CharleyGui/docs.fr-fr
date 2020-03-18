@@ -9,10 +9,10 @@ helpviewer_keywords:
 - aliases, extern keyword
 ms.assetid: f487bf4f-c943-4fca-851b-e540c83d9027
 ms.openlocfilehash: 86202333484933d7449b0c4d8c5a3f1a63cd7775
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75713549"
 ---
 # <a name="extern-alias-c-reference"></a>extern alias (référence C#)
@@ -42,8 +42,8 @@ Il se peut que vous deviez référencer deux versions d’assemblys qui ont le m
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Référence C#](../index.md)
+- [Référence C](../index.md)
 - [Guide de programmation C#](../../programming-guide/index.md)
 - [Mots clés C#](./index.md)
-- [::, opérateur](../operators/namespace-alias-qualifier.md)
-- [-reference (Options du compilateur C#)](../compiler-options/reference-compiler-option.md)
+- [:: Opérateur](../operators/namespace-alias-qualifier.md)
+- [-référence (Options compilateur C)](../compiler-options/reference-compiler-option.md)

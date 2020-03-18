@@ -4,17 +4,17 @@ description: Découvrez comment effectuer des opérations de jointure à l'aide 
 ms.date: 12/01/2016
 ms.assetid: da70b54d-3213-45eb-8437-fbe75cbcf935
 ms.openlocfilehash: 460a52da7e0c0a47b77d4c64e76641bae9da7cd6
-ms.sourcegitcommit: 5dcfeb59179e81071f54840d4902cbe00b184294
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/24/2019
-ms.locfileid: "54857513"
+ms.lasthandoff: 03/14/2020
+ms.locfileid: "61659876"
 ---
 # <a name="join-by-using-composite-keys"></a>Effectuer des jointures à l’aide de clés composites
 
 Cet exemple montre comment effectuer des opérations de jointure où vous voulez utiliser plusieurs clés pour définir une correspondance. Ceci s’effectue à l’aide d’une clé composite. Vous créez une clé composite en tant que type anonyme ou typé nommé avec les valeurs que vous voulez comparer. Si la variable de requête doit être passée au-delà des limites de la méthode, utilisez un type nommé qui substitue <xref:System.Object.Equals%2A> et <xref:System.Object.GetHashCode%2A> pour la clé. Les noms des propriétés et l’ordre dans lequel elles se trouvent doivent être identiques dans chaque clé.
 
-## <a name="example"></a>Exemple
+## <a name="example"></a> Exemple
 
 L’exemple suivant montre comment utiliser une clé composite pour joindre les données de trois tables :
 
@@ -38,6 +38,6 @@ Vous pouvez aussi utiliser des clés composites dans une clause `group`.
 
 ## <a name="see-also"></a>Voir aussi
 
-- [LINQ (Language Integrated Query)](index.md)
-- [join, clause](../language-reference/keywords/join-clause.md)
+- [Requête intégrée linguistique (LINQ)](index.md)
+- [clause d’adhésion](../language-reference/keywords/join-clause.md)
 - [group, clause](../language-reference/keywords/group-clause.md)

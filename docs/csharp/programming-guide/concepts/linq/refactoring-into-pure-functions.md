@@ -3,10 +3,10 @@ title: Refactorisation dans des fonctions pures (C#)
 ms.date: 07/20/2015
 ms.assetid: 2944a0d4-fd33-4e2e-badd-abb0f9be2fcc
 ms.openlocfilehash: 4cf91ff078bd1c4582daa05475a91c4a4ecaba3e
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253113"
 ---
 # <a name="refactoring-into-pure-functions-c"></a>Refactorisation dans des fonctions pures (C#)
@@ -24,7 +24,7 @@ L'un des aspects importants des transformations fonctionnelles pures consiste à
   
  L'une des manières de basculer vers la programmation fonctionnelle consiste à refactoriser le code existant afin d'éliminer les effets secondaires indésirables et les dépendances externes. De cette manière, vous pouvez créer des versions avec fonctions pures du code existant.  
   
- Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Tutoriel : Manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md) montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactoriser à l’aide d’une fonction pure.  
+ Cette rubrique explique ce qu'est et ce que n'est pas une fonction pure. Le [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md) montre comment manipuler un document WordprocessingML et inclut deux exemples illustrant comment refactoriser à l’aide d’une fonction pure.  
   
 ## <a name="eliminating-side-effects-and-external-dependencies"></a>Suppression des effets secondaires et des dépendances externes  
  Les exemples suivants comparent deux fonctions non pures et une fonction pure.  
@@ -115,4 +115,4 @@ class Program
 ## <a name="see-also"></a>Voir aussi
 
 - [Introduction aux transformations fonctionnelles pures (C#)](./introduction-to-pure-functional-transformations.md)
-- [Comparaison de la programmation fonctionnelle et de la programmation impérative (C#)](./functional-programming-vs-imperative-programming.md)
+- [Programmation fonctionnelle vs programmation impérative (C)](./functional-programming-vs-imperative-programming.md)

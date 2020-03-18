@@ -1,15 +1,15 @@
 ---
-title: Recommandations générales
+title: Règle générale
 description: Architecture de microservices .NET pour les applications .NET en conteneur | Recommandations générales
 ms.date: 09/11/2018
 ms.openlocfilehash: 2fa66d7593b764a8df4d9acc20f93d3f8fb26174
-ms.sourcegitcommit: 559fcfbe4871636494870a8b716bf7325df34ac5
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/30/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "73089651"
 ---
-# <a name="general-guidance"></a>Recommandations générales
+# <a name="general-guidance"></a>Règle générale
 
 Cette section indique brièvement dans quels cas choisir .NET Core ou .NET Framework. Vous trouverez des détails complémentaires sur ces choix dans les sections suivantes.
 
@@ -37,12 +37,12 @@ Le fait d’utiliser le .NET Framework sur Docker peut améliorer vos expérienc
 
 ### <a name="additional-resources"></a>Ressources supplémentaires
 
-- **Livre électronique : moderniser les applications .NET Framework existantes avec des conteneurs Windows et Azure**  
+- **E-book: Moderniser les applications cadres .NET existantes avec Azure et Windows Containers**  
     https://aka.ms/liftandshiftwithcontainersebook
 
 - **Exemples d’application : Modernisation d’applications web ASP.NET héritées à l’aide de conteneurs Windows**  
     https://aka.ms/eshopmodernizing
 
 >[!div class="step-by-step"]
->[Précédent](index.md)
->[Suivant](net-core-container-scenarios.md)
+>[Suivant précédent](index.md)
+>[Next](net-core-container-scenarios.md)

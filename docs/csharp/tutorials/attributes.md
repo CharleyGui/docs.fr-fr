@@ -1,15 +1,15 @@
 ---
-title: 'Didacticiel : utiliser les attributs-C#'
+title: 'Tutorial: Utiliser des attributs - C #'
 description: Découvrez comment les attributs fonctionnent en C#.
 author: mgroves
 ms.technology: csharp-fundamentals
 ms.date: 03/06/2017
 ms.assetid: b152cf36-76e4-43a5-b805-1a1952e53b79
 ms.openlocfilehash: 24cb7d35a89fda78511dc4ba725b69c5d601a008
-ms.sourcegitcommit: 7e2128d4a4c45b4274bea3b8e5760d4694569ca1
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/14/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75937471"
 ---
 # <a name="use-attributes-in-c"></a>Utiliser des attributs en C\#
@@ -20,8 +20,8 @@ Considérez l’attribut `[Obsolete]`. Vous pouvez l’appliquer aux classes, st
 
 Dans ce didacticiel, vous allez voir comment ajouter des attributs à votre code, comment créer et utiliser vos propres attributs et comment utiliser des attributs qui sont intégrés à .NET Core.
 
-## <a name="prerequisites"></a>Configuration requise
-Vous devez configurer votre ordinateur pour exécuter .NET core. Vous trouverez les instructions d’installation dans la page [téléchargements .net Core](https://dotnet.microsoft.com/download) .
+## <a name="prerequisites"></a>Conditions préalables requises
+Vous devez configurer votre ordinateur pour exécuter .NET core. Vous pouvez trouver les instructions d’installation sur la page [.NET Core Downloads.](https://dotnet.microsoft.com/download)
 Vous pouvez exécuter cette application sur Windows, Ubuntu Linux, Mac OS ou dans un conteneur Docker.
 Vous devez installer l’éditeur de code de votre choix. Les descriptions ci-dessous utilisent [Visual Studio Code](https://code.visualstudio.com/), un éditeur open source et multiplateforme. Cependant, vous pouvez utiliser les outils avec lesquels vous êtes le plus à l’aise.
 
@@ -31,7 +31,7 @@ Maintenant que vous avez installé tous les outils, créez une nouvelle applicat
 
 `dotnet new console`
 
-Cette commande permet de créer des fichiers de projet .NET Core. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
+Cette commande créera des fichiers de projets de base .NET à os nus. Vous devez exécuter `dotnet restore` pour restaurer les dépendances nécessaires à la compilation de ce projet.
 
 [!INCLUDE[DotNet Restore Note](~/includes/dotnet-restore-note.md)]
 
@@ -85,16 +85,16 @@ Les attributs peuvent être utilisés sur plusieurs « cibles ». Les exemples
 * Assembly
 * Classe
 * Constructeur
-* délégué
+* Déléguer
 * Enum
-* Event
+* Événement
 * Champ
 * GenericParameter
 * Interface
 * Méthode
-* Module, mot clé
+* Module
 * Paramètre
-* Les
+* Propriété
 * ReturnValue
 * Struct
 
@@ -141,12 +141,12 @@ Voici quelques attributs importants générés dans les bibliothèques de classe
 * `[Conditional]`. Cet attribut se trouve dans l'espace de noms `System.Diagnostics`. Cet attribut peut être appliqué aux méthodes (ou classes d’attributs). Vous devez transmettre une chaîne au constructeur.
 Si cette chaîne ne correspond pas à une directive `#define`, les appels à cette méthode (mais pas la méthode proprement dite) sont supprimés par le compilateur C#. Cela est généralement utilisé pour le débogage (diagnostic).
 
-* `[CallerMemberName]`. Cet attribut peut être utilisé sur les paramètres et se trouve dans l’espace de noms `System.Runtime.CompilerServices`. Il s’agit d’un attribut utilisé pour injecter le nom de la méthode qui appelle une autre méthode. Cela est généralement utilisé comme moyen d’éliminer les « chaînes magiques » lors de l’implémentation de INotifyPropertyChanged dans divers frameworks d’interface utilisateur. En tant qu’exemple :
+* `[CallerMemberName]`. Cet attribut peut être utilisé sur les paramètres et se trouve dans l’espace de noms `System.Runtime.CompilerServices`. Il s’agit d’un attribut utilisé pour injecter le nom de la méthode qui appelle une autre méthode. Cela est généralement utilisé comme moyen d’éliminer les « chaînes magiques » lors de l’implémentation de INotifyPropertyChanged dans divers frameworks d’interface utilisateur. Par exemple :
 
 [!code-csharp[Using CallerMemberName when implementing INotifyPropertyChanged](../../../samples/snippets/csharp/tutorials/attributes/Program.cs#CallerMemberName1)]
 
 Dans le code ci-dessus, il est inutile d’avoir une chaîne littérale `"Name"`. Cela peut vous aider à éviter les bogues liés aux fautes de frappe et rend également plus simple la refactorisation/les changements de nom.
 
-## <a name="summary"></a>Récapitulatif
+## <a name="summary"></a>Résumé
 
 Si les attributs offrent à C# la puissance déclarative, ils constituent une forme de code de type métadonnées et n’agissent pas par eux-mêmes.

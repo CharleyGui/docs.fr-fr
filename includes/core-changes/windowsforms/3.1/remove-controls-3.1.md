@@ -1,20 +1,20 @@
 ---
 ms.openlocfilehash: 10811a90887624a731c58d557e1dd196ae2c9207
-ms.sourcegitcommit: 09b4090b78f52fd09b0e430cd4b26576f1fdf96e
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/22/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "76508657"
 ---
 ### <a name="removed-controls"></a>Contrôles supprimés
 
-À compter de .NET Core 3,1, certains contrôles de Windows Forms ne sont plus disponibles.
+À partir de .NET Core 3.1, certains contrôles Windows Forms ne sont plus disponibles.
 
-#### <a name="change-description"></a>Description des modifications
+#### <a name="change-description"></a>Description de la modification
 
-À compter de .NET Core 3,1, les différents contrôles de Windows Forms ne sont plus disponibles. Les contrôles de remplacement qui offrent une meilleure conception et une meilleure prise en charge ont été introduits dans .NET Framework 2,0. Les contrôles déconseillés ont été précédemment supprimés des boîtes à outils du concepteur, mais ils étaient toujours disponibles pour être utilisés.
+À partir de .NET Core 3.1, les différents contrôles Windows Forms ne sont plus disponibles. Des contrôles de remplacement qui ont une meilleure conception et un meilleur soutien ont été introduits dans le cadre .NET 2.0. Les commandes dépréciées ont déjà été supprimées des boîtes à outils de concepteur, mais étaient toujours disponibles pour être utilisées.
 
-Les types suivants ne sont plus disponibles :
+Les types suivants ne sont plus disponibles :
 
 - <xref:System.Windows.Forms.Menu>
 - <xref:System.Windows.Forms.Menu.MenuItemCollection>
@@ -51,19 +51,19 @@ Les types suivants ne sont plus disponibles :
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Chaque contrôle supprimé a un contrôle de remplacement recommandé. Reportez-vous au tableau suivant :
+Chaque contrôle supprimé a un contrôle de remplacement recommandé. Consultez le tableau suivant :
 
-| Contrôle supprimé (API) | Remplacement recommandé | API associées supprimées |
+| Contrôle supprimé (API) | Remplacement recommandé | API associées qui sont supprimées |
 |-|-|-|
-| DataGrid | DataGridView | DataGridCell, DataGridRow, DataGridTableCollection, DataGridColumnCollection, DataGridTableStyle, DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, DataGridBoolColumn, DataGridTextBox, GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
-| ToolBar | ToolStrip | ToolBarAppearance |
-| ToolBarButton | ToolStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
+| DataGrid | DataGridView | DataGridCell, DataGridRow, DataGridTableCollection, DataGridColumnCollection, DataGridTableStyle, DataGridColumnStyle, DataGridLineStyle, DataGridParentRowsLabel, DataGridParentRowsLabelStyle, DataGridBoolColumn, DataGridTextBoxBox, GridColumnStylesCollection, GridTableStylesCollection, HitTestType |
+| ToolBar | ToolStrip | ToolBarAppearance (en) |
+| Toolbarbutton | OutilsStripButton | ToolBarButtonClickEventArgs, ToolBarButtonClickEventHandler, ToolBarButtonStyle, ToolBarTextAlign|
 | ContextMenu | ContextMenuStrip | |
-| Menu | ToolStripDropDown, ToolStripDropDownMenu | MenuItemCollection |
+| Menu | OutilsStripDropDown, ToolStripDropDownMenu | MenuItemCollection |
 | MainMenu | MenuStrip | |
 | MenuItem | ToolStripMenuItem | |
 
-#### <a name="category"></a>Catégorie
+#### <a name="category"></a>Category
 
 Windows Forms
 

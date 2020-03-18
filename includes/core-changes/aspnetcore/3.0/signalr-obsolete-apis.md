@@ -1,36 +1,36 @@
 ---
 ms.openlocfilehash: 2a65caedea2af65796267aa145e275ebff814bf8
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394090"
 ---
-### <a name="signalr-usesignalr-and-useconnections-methods-marked-obsolete"></a>Signalr : méthodes UseSignalR et UseConnections marquées comme obsolètes
+### <a name="signalr-usesignalr-and-useconnections-methods-marked-obsolete"></a>SignalR: Méthodes UseSignalR et UseConnections marquées obsolètes
 
-Les méthodes `UseConnections` et `UseSignalR` et les classes `ConnectionsRouteBuilder` et `HubRouteBuilder` sont marquées comme obsolètes dans ASP.NET Core 3,0.
+Les `UseConnections` méthodes `UseSignalR` et `ConnectionsRouteBuilder` les `HubRouteBuilder` classes et sont marqués comme obsolètes dans ASP.NET Core 3.0.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Le routage du concentrateur signalr a été configuré à l’aide de `UseSignalR` ou `UseConnections`.
+Le routage du hub `UseSignalR` SignalR a été configuré à l’aide ou `UseConnections`.
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
-L’ancienne méthode de configuration du routage a été obsolète et remplacée par le routage des points de terminaison.
+L’ancienne façon de configurer le routage a été obsolète et remplacé par un itinéraire de point de terminaison.
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-Le middleware est déplacé vers le nouveau système de routage des points de terminaison. L’ancienne méthode d’ajout d’un intergiciel (middleware) est obsolète.
+Middleware est déplacé vers le nouveau système de routage de point final. L’ancienne façon d’ajouter middleware est obsolète.
 
 #### <a name="recommended-action"></a>Action recommandée
 
 Remplacez `UseSignalR` par `UseEndpoints` :
 
-**Ancien code :**
+**Ancien code:**
 
 ```csharp
 app.UseSignalR(routes =>
@@ -39,7 +39,7 @@ app.UseSignalR(routes =>
 });
 ```
 
-**Nouveau code :**
+**Nouveau code :**
 
 ```csharp
 app.UseEndpoints(endpoints =>

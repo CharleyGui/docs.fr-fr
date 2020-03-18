@@ -11,17 +11,17 @@ helpviewer_keywords:
 - global keyword [C#]
 ms.assetid: 698b5a73-85cf-4e0e-9e8e-6496887f8527
 ms.openlocfilehash: a18e52ea05d49bf2b3a468923f1433f09fff9a8b
-ms.sourcegitcommit: 5f236cd78cf09593c8945a7d753e0850e96a0b80
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 01/07/2020
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "75712674"
 ---
 # <a name="-operator-c-reference"></a>Opérateur :: (référence C#)
 
-Utilisez le qualificateur d’alias d’espace de noms `::` pour accéder à un membre d’un espace de noms avec alias. Vous pouvez utiliser le qualificateur `::` uniquement entre deux identificateurs. L’identificateur de gauche peut être un des alias suivants :
+Utilisez le nomspace `::` alias qualifier pour accéder à un membre d’un espace nom alias. Vous ne `::` pouvez utiliser le qualificatif qu’entre deux identificateurs. L’identificateur de gauche peut être un des alias suivants :
 
-- Alias d’espace de noms créé avec une [directive using alias](../keywords/using-directive.md):
+- Un alias namespace créé avec une [directive alias utilisant](../keywords/using-directive.md):
 
   ```csharp
   using forwinforms = System.Drawing;
@@ -56,7 +56,7 @@ Utilisez le qualificateur d’alias d’espace de noms `::` pour accéder à un 
   > [!NOTE]
   > Le mot clé `global` est l’alias d’espace de noms global seulement quand il s’agit de l’identificateur de gauche du qualificateur `::`.
 
-Vous pouvez également utiliser l' [opérateur d’accès aux membres `.`](member-access-operators.md#member-access-operator-) pour accéder à un membre d’un espace de noms avec alias. Toutefois, l’opérateur `.` est également utilisé pour accéder à un membre de type. Le qualificateur `::` garantit que son identificateur de gauche référence toujours un alias d’espace de noms, même s’il existe un type ou un espace de noms portant le même nom.
+Vous pouvez également utiliser [l’opérateur `.` d’accès](member-access-operators.md#member-access-operator-) membre pour accéder à un membre d’un espace nom alias. Toutefois, `.` l’opérateur est également utilisé pour accéder à un membre type. Le qualificateur `::` garantit que son identificateur de gauche référence toujours un alias d’espace de noms, même s’il existe un type ou un espace de noms portant le même nom.
 
 ## <a name="c-language-specification"></a>spécification du langage C#
 
@@ -64,6 +64,6 @@ Pour plus d’informations, consultez la section [Qualificateurs d’alias d’e
 
 ## <a name="see-also"></a>Voir aussi
 
-- [Informations de référence sur C#](../index.md)
-- [Opérateurs C#](index.md)
-- [Utilisation des espaces de noms](../../programming-guide/namespaces/using-namespaces.md)
+- [Référence C#](../index.md)
+- [Opérateurs CMD](index.md)
+- [Using Namespaces](../../programming-guide/namespaces/using-namespaces.md)

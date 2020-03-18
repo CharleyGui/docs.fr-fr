@@ -3,10 +3,10 @@ title: Refactorisation à l’aide d’une méthode d’extension (C#)
 ms.date: 07/20/2015
 ms.assetid: c5fc123d-af10-4a2f-b8e4-db921efb2639
 ms.openlocfilehash: 8546c2cb834107cf2e099af40f9a7df4d5858b4b
-ms.sourcegitcommit: 4e2d355baba82814fa53efd6b8bbb45bfe054d11
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/04/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "70253093"
 ---
 # <a name="refactoring-using-an-extension-method-c"></a>Refactorisation à l’aide d’une méthode d’extension (C#)
@@ -14,7 +14,7 @@ Cet exemple se base sur l’exemple précédent, [Récupération du texte des pa
   
  L'exemple précédent utilisait l'opérateur de requête standard <xref:System.Linq.Enumerable.Aggregate%2A> pour concaténer plusieurs chaînes dans une chaîne. Toutefois, il est plus commode d'écrire une méthode d'extension pour cela, car la requête résultante est plus petite et plus simple.  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  Cet exemple traite un document WordprocessingML, récupère les paragraphes, le style de chaque paragraphe et le texte de chaque paragraphe. Cet exemple se base sur les exemples précédents de ce didacticiel.  
   
  L'exemple contient plusieurs surcharges de la méthode `StringConcatenate`.  
@@ -62,7 +62,7 @@ public static class LocalExtensions
 }  
 ```  
   
-## <a name="example"></a>Exemples  
+## <a name="example"></a> Exemple  
  Il existe quatre surcharges de la méthode `StringConcatenate`. Une surcharge prend simplement une collection de chaînes et retourne une seule chaîne. Une autre surcharge prend une collection d'un type quelconque et un délégué qui projette depuis un singleton de la collection vers une chaîne. Il existe deux surcharges supplémentaires qui vous permettent de spécifier une chaîne de séparation.  
   
  Le code suivant utilise les quatre surcharges.  
@@ -78,7 +78,7 @@ Console.WriteLine("{0}", intNumbers.StringConcatenate(i => i.ToString()));
 Console.WriteLine("{0}", intNumbers.StringConcatenate(i => i.ToString(), ":"));  
 ```  
   
- Cet exemple génère la sortie suivante :  
+ Cet exemple produit la sortie suivante :  
   
 ```output  
 onetwothree  
@@ -87,7 +87,7 @@ one:two:three:
 1:2:3:  
 ```  
   
-## <a name="example"></a>Exemple  
+## <a name="example"></a> Exemple  
  À présent, l’exemple peut être modifié pour tirer parti de la nouvelle méthode d’extension :  
   
 ```csharp  
@@ -248,5 +248,5 @@ StyleName:Code >Hello World<
   
 ## <a name="see-also"></a>Voir aussi
 
-- [Tutoriel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
+- [Didacticiel : manipulation de contenu dans un document WordprocessingML (C#)](./shape-of-wordprocessingml-documents.md)
 - [Refactorisation dans des fonctions pures (C#)](./refactoring-into-pure-functions.md)

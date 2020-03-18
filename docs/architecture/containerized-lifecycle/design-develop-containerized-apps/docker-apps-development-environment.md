@@ -3,10 +3,10 @@ title: Environnement de développement pour les applications Docker
 description: Découvrez les options les plus importantes des outils de développement qui prennent en charge le cycle de développement Docker.
 ms.date: 02/15/2019
 ms.openlocfilehash: 35236e75f47e830d0970ca9cfd074d9a69e6f85c
-ms.sourcegitcommit: 56f1d1203d0075a461a10a301459d3aa452f4f47
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 09/24/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "71214292"
 ---
 # <a name="development-environment-for-docker-apps"></a>Environnement de développement pour les applications Docker
@@ -46,5 +46,5 @@ Vous pouvez développer des applications Docker en utilisant les outils Microsof
 En fait, vous pouvez utiliser n’importe quel langage moderne pris en charge par Docker dans Linux ou Windows.
 
 >[!div class="step-by-step"]
->[Précédent](deploy-azure-kubernetes-service.md)
->[Suivant](docker-apps-inner-loop-workflow.md)
+>[Suivant précédent](deploy-azure-kubernetes-service.md)
+>[Next](docker-apps-inner-loop-workflow.md)

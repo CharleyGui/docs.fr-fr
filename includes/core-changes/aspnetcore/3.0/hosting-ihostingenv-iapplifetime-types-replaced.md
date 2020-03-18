@@ -1,36 +1,36 @@
 ---
 ms.openlocfilehash: be1fad236dd3eed047b010e93285aec8bc607b61
-ms.sourcegitcommit: 2e95559d957a1a942e490c5fd916df04b39d73a9
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
 ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 10/16/2019
+ms.lasthandoff: 03/14/2020
 ms.locfileid: "72394330"
 ---
-### <a name="hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced"></a>Hébergement : types IHostingEnvironment et IApplicationLifetime marqués comme obsolètes et remplacés
+### <a name="hosting-ihostingenvironment-and-iapplicationlifetime-types-marked-obsolete-and-replaced"></a>Hébergement: IHostingEnvironment et IApplicationLifetime types marqués obsolètes et remplacés
 
-De nouveaux types ont été introduits pour remplacer les types `IHostingEnvironment` et `IApplicationLifetime` existants.
+De nouveaux types ont `IHostingEnvironment` été `IApplicationLifetime` introduits pour remplacer les types existants et les types.
 
 #### <a name="version-introduced"></a>Version introduite
 
-3,0
+3.0
 
 #### <a name="old-behavior"></a>Ancien comportement
 
-Il existe deux types `IHostingEnvironment` et `IApplicationLifetime` différents de `Microsoft.Extensions.Hosting` et `Microsoft.AspNetCore.Hosting`.
+Il y `IHostingEnvironment` avait `IApplicationLifetime` deux `Microsoft.Extensions.Hosting` `Microsoft.AspNetCore.Hosting`différents et les types de et .
 
 #### <a name="new-behavior"></a>Nouveau comportement
 
 Les anciens types ont été marqués comme obsolètes et remplacés par de nouveaux types.
 
-#### <a name="reason-for-change"></a>Motif de modification
+#### <a name="reason-for-change"></a>Raison du changement
 
-Lorsque `Microsoft.Extensions.Hosting` a été introduite dans ASP.NET Core 2,1, certains types, comme `IHostingEnvironment` et `IApplicationLifetime`, ont été copiés à partir de `Microsoft.AspNetCore.Hosting`. Certaines modifications de l’ASP.NET Core 3,0 entraînent l’inclusion à la fois des espaces de noms `Microsoft.Extensions.Hosting` et `Microsoft.AspNetCore.Hosting` dans les applications. Toute utilisation de ces types dupliqués provoque une erreur du compilateur « référence ambiguë » lorsque les deux espaces de noms sont référencés.
+Quand `Microsoft.Extensions.Hosting` a été introduit dans ASP.NET Core 2.1, certains types comme `IHostingEnvironment` et `IApplicationLifetime` ont été copiés à partir de `Microsoft.AspNetCore.Hosting`. Certains ASP.NET les modifications de Core 3.0 `Microsoft.Extensions.Hosting` `Microsoft.AspNetCore.Hosting` font que les applications incluent à la fois les espaces nominaux et les noms. Toute utilisation de ces types en double provoque une erreur de compilateur de « référence ambigue » lorsque les deux espaces nom sont référencés.
 
 #### <a name="recommended-action"></a>Action recommandée
 
-Remplacement des utilisations des anciens types par les types nouvellement introduits comme indiqué ci-dessous :
+Remplacé tous les usages des anciens types avec les types nouvellement introduits comme ci-dessous:
 
-**Types obsolètes (avertissement) :**
+**Types obsolètes (avertissement) :**
 
 - <xref:Microsoft.Extensions.Hosting.IHostingEnvironment?displayProperty=nameWithType>
 - <xref:Microsoft.AspNetCore.Hosting.IHostingEnvironment?displayProperty=nameWithType>
@@ -39,14 +39,14 @@ Remplacement des utilisations des anciens types par les types nouvellement intro
 - <xref:Microsoft.Extensions.Hosting.EnvironmentName?displayProperty=nameWithType>
 - <xref:Microsoft.AspNetCore.Hosting.EnvironmentName?displayProperty=nameWithType>
 
-**Nouveaux types :**
+**Nouveaux types:**
 
 - <xref:Microsoft.Extensions.Hosting.IHostEnvironment?displayProperty=nameWithType>
 - `Microsoft.AspNetCore.Hosting.IWebHostEnvironment : IHostEnvironment`
 - <xref:Microsoft.Extensions.Hosting.IHostApplicationLifetime?displayProperty=nameWithType>
 - <xref:Microsoft.Extensions.Hosting.Environments?displayProperty=nameWithType>
 
-Les nouvelles méthodes d’extension `IHostEnvironment` `IsDevelopment` et `IsProduction` se trouvent dans l’espace de noms `Microsoft.Extensions.Hosting`. Cet espace de noms devra peut-être être ajouté à votre projet.
+Les `IHostEnvironment` `IsDevelopment` nouvelles `IsProduction` méthodes et `Microsoft.Extensions.Hosting` d’extension sont dans l’espace nom. Cet espace de nom peut devoir être ajouté à votre projet.
 
 #### <a name="category"></a>Category
 

@@ -3,10 +3,10 @@ title: Concepts de programmation (C#)
 ms.date: 07/20/2015
 ms.assetid: 3227afd5-4794-484b-b83b-0f1f94a0476b
 ms.openlocfilehash: 3fcb1ca76c49919b00b74d955b7aadaa2e882f2a
-ms.sourcegitcommit: 1b020356e421a9314dd525539da12463d980ce7a
-ms.translationtype: HT
+ms.sourcegitcommit: 7588136e355e10cbc2582f389c90c127363c02a5
+ms.translationtype: MT
 ms.contentlocale: fr-FR
-ms.lasthandoff: 08/30/2019
+ms.lasthandoff: 03/15/2020
 ms.locfileid: "70168341"
 ---
 # <a name="programming-concepts-c"></a>Concepts de programmation (C#)
@@ -14,7 +14,7 @@ Cette section explique les concepts de programmation du langage C#.
   
 ## <a name="in-this-section"></a>Dans cette section  
   
-|Titre|Description|  
+|Intitulé|Description|  
 |-----------|-----------------|  
 |[Assemblys dans .NET](../../../standard/assembly/index.md)|Explique comment créer et utiliser des assemblys.|  
 |[Programmation asynchrone avec Async et Await (C#)](./async/index.md)|Explique comment écrire des solutions asynchrones à l’aide des mots clés [async](../../language-reference/keywords/async.md) et [await](../../language-reference/operators/await.md) en C#. Comprend une procédure pas à pas.|  
@@ -29,8 +29,8 @@ Cette section explique les concepts de programmation du langage C#.
 |[Réflexion (C#)](./reflection.md)|Explique comment utiliser la réflexion pour créer dynamiquement une instance d’un type, pour lier le type à un objet existant ou pour obtenir le type d’un objet existant, et comment invoquer ses méthodes ou accéder à ses champs et propriétés.|  
 |[Sérialisation (C#)](./serialization/index.md)|Décrit les concepts clés de la sérialisation binaire, XML et SOAP.|  
   
-## <a name="related-sections"></a>Rubriques connexes  
+## <a name="related-sections"></a>Sections connexes  
   
 |||  
 |---|---|  
-|[Conseils relatifs aux performances](../../../framework/performance/performance-tips.md) | Décrit plusieurs règles de base qui peuvent aider à augmenter les performances des applications.|
+|[Conseils de performance](../../../framework/performance/performance-tips.md) | Décrit plusieurs règles de base qui peuvent aider à augmenter les performances des applications.|

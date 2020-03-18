@@ -48,7 +48,7 @@
       items:
         - name: Base de données par microservice
           href: database-per-microservice.md
-        - name: Données relationnelles et données NoSQL
+        - name: Modèles d'exploration de données relationnels et données NoSQL
           href: relational-vs-nosql-data.md
         - name: Mise en cache dans une application cloud native
           href: azure-caching.md
